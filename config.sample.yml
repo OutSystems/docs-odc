@@ -1,0 +1,19 @@
+build:
+    title:
+    input-folder: src
+    output-folder: build
+    related-title: See Also   
+publish:
+    url: https://success.outsystems.com/
+    root_path: Documentation/
+    toc_url: https://success.outsystems.com/
+    toc_root_path: Documentation/
+reference:
+    assemble-folder: 
+        - src/ref/lang/auto
+        - src/ref/apis/auto
+checktoc:
+    url: https://success.outsystems.com/
+    root_path: ""
+    mindtouch-toc-path: Documentation/
+    auto-toc-path: Documentation/Unlisted/Technical_Communication/Wiki_Tree_next
