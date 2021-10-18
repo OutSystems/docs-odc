@@ -3,10 +3,9 @@ summary: Check how to debug functionality exposed by a producer Module being con
 tags:
 ---
 
-# Debugging Producer Modules
+# Debugging Library producers
 
-
-When you are debugging a producer Module the debugger will not stop in any breakpoints set in the consumer Module unless you also start a debug session in the consumer Module.
+When you are debugging a producer Library the debugger will not stop in any breakpoints set in the consumer Module unless you also start a debug session in the consumer Module.
 
 <div class="info" markdown="1">
 
@@ -20,23 +19,23 @@ The procedure for debugging producer Modules differs depending on the type of ex
 
 ### Pre-Requisites { #pre-requisites }
 
-Your consumer Module must fulfill the following conditions:
+Your consumer Porject must fulfill the following conditions:
 
-* It must be a consumer of a Client or Server Action from the producer Module by referencing it.
-* The reference to the producer Module is up-to-date.
-* You have permissions to publish the consumer Module.
+* It must be a consumer of a Client or Server Action from the producer Library by referencing it.
+* The dependency to the producer Library is up-to-date.
+* You have permissions to publish the consumer Library.
 
-### How to debug the producer Module
+### How to debug the producer Library
 
-To debug the functionality being exposed in a public Action by the producer Module, follow these steps:
+To debug the functionality being exposed in a public Action by the producer Library, follow these steps:
 
-1. Open the **producer Module** and set the entry Module for debugging to be the consumer Module. You can set the entry Module in the Debugger pane or in the Debugger menu, by choosing the "Select Entry Module..." option.
+1. Open the **producer Library** and set the entry Module for debugging to be the consumer Module. You can set the entry Module in the Debugger pane or in the Debugger menu, by choosing the "Select Entry Module..." option.
 
     *Note:* If the desired consumer is not in the list, check the [pre-requisites](<#pre-requisites>) listed above.
 
 1. Place breakpoints where you want the execution to stop. The execution will only stop on breakpoints of the producer Module.
 
-1. Start the debugger in the producer Module. If the producer Module is part of a mobile app, the **consumer Module** will automatically be opened; if it's part of a web application, you can open the **consumer Module** in a browser.
+1. Start the debugger in the producer Module. If the producer Library is part of a mobile app, the **consumer Library** will automatically be opened; if it's part of a web application, you can open the **consumer Module** in a browser.
 
 1. Interact with the application to execute the functionality that calls the producer logic where the breakpoints are set.
 

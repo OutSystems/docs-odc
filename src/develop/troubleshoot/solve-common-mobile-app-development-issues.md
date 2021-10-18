@@ -57,7 +57,7 @@ The transition between two given screens takes too long.
 This behavior can have the following cause:
 
 Slow operations being done in On Initialize screen event handler
-:   Slow operations like calling native plugin actions or invoking server actions are being done in the On Initialize event handler of the destination screen. Since this event occurs before the screen DOM is loaded, this might have an impact on the screen load time.   
+:   Slow operations like calling native plugin actions or invoking server actions are being done in the On Initialize event handler of the destination screen. Since this event occurs before the screen DOM is loaded, this might have an impact on the screen load time.
 
 #### Possible Solutions
 
