@@ -36,16 +36,6 @@ You can translate the following elements of your app:
 * Validation messages, widget confirmation messages, and empty state messages
 * Static entities. Check [Working with Static Entities](translate-your-app.md#working-with-static-entities) for important notes.
 
-## Translating systems components
-
-You can translate systems components. See the forum blog post [System Components Translations](https://www.outsystems.com/forums/discussion/10760/system-components-translations/) for instructions. 
-
-<div class="info" markdown="">
-
-You need to define at least one locale to be able to export the text resources from a system component.
-
-</div>
-
 ## Training resources
 
 Check out the [Multi-Language in OutSystems](https://www.outsystems.com/training/courses/182/multi-language-in-outsystems/) training section for video resources and demos.

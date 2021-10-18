@@ -11,7 +11,6 @@ When working with Screen Templates you may see the following warning message: **
 If you are using one of the [built-in Application Templates](<../../application-templates/intro.md>):
 
 * Select a compatible Screen Template. The Screen Templates that come with Service Studio are compatible with the built-in Application Templates.
-* [Create your Screen Templates](<../screen-templates-create/intro.md>) and use your (custom) Theme as the base.
 
 If the Screen Template was compatible with your module, but now it's not:
  
