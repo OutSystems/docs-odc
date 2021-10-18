@@ -1,5 +1,0 @@
----
-tags: 
----
-
-# Managing Extensions

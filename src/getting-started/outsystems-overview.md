@@ -12,7 +12,7 @@ The following graphic shows a sample setup. On the right, you see a typical conf
 
 In an OutSystems Cloud environment, Service Studio resides on a developer's local Windows or Mac system. Integration Studio also resides on a local system, but it's supported on Windows only at this time. The Platform Server, Service Center, and LifeTime reside in the OutSystems Cloud.  
 
-## Consoles
+## Development tools
 
 * **Service Studio:** The visual development tool where you create, change, and deploy your applications. You install Service Studio on your local Windows or Mac system. See [Service Studio overview](service-studio.md) for more information.
 
@@ -20,22 +20,10 @@ In an OutSystems Cloud environment, Service Studio resides on a developer's loca
 
 * **Integration Studio:** The development tool where you can create connectors to integrate OutSystems applications with other enterprise systems. You install this tool on a developer's local system. Integration Studio is only supported on Windows at this time. See [Getting Started](intro.md) for more information.
 
-* **Service Center:** The administration console that allows you to access and manage all settings in your OutSystems environment. It allows you to manage application versioning, runtime auditing, logging, and monitoring. Service Center resides in the OutSystems Cloud.
 
-    After you install Service Studio, click the gear icon or go to **Environment** > **Environment Management** to access Service Center. The Service Center URL has the format: https://*environment-name*.outsystemscloud.com/ServiceCenter.
- 
-  ![](images/service-center-link.png)
+## DevOps tools
 
-
-* **LifeTime:** The centralized console for managing the infrastructure, environments, applications, IT users, and security. LifeTime resides in the OutSystems Cloud.
-
-    After you install Service Studio, click the gear icon to go to Service Center. In **Service Center**, in the upper right corner, click **Manage all environments in LifeTime** to access LifeTime.
-
-    ![](images/lifetime-new-free.png)
-
-
-## Platform Server
-The Platform Server takes care of the steps to generate, build, package and deploy your applications. In an OutSystems Cloud environment, the Platform Server resides in the OutSystems Cloud, so you don't need to install or manage it.
+* **Portal:**
 
 ## Typical environments
 

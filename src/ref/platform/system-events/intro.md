@@ -1,6 +1,0 @@
----
-tags: 
-summary: 
----
-
-# System Events

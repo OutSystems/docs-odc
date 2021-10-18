@@ -37,22 +37,6 @@ Once you create a new application or access an existing one, you navigate to the
 
 ![Service Studio app details](images/service-studio-app-details.png)
 
-In the app detail screen you have the following areas:
-
-## App details
-
-Edit button
-:   Click to edit the name, description, icon, and bootstrap color of your application.
-
-Delete button
-:   Click to delete the app from your environment.
-
-Download button
-:   Click to download your app as an OutSystems Application Pack `.oap` file)
-
-Test In Browser button
-:   Click to open your application quickly in a browser for testing.
-
 ## App tabs
 
 Develop tab

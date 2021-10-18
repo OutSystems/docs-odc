@@ -1,5 +1,0 @@
----
-tags: 
----
-
-# Exposed REST API
