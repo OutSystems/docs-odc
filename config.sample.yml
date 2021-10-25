@@ -8,6 +8,8 @@ publish:
     root_path: Documentation/
     toc_url: https://success.outsystems.com/
     toc_root_path: Documentation/
+    skip_toc_publish: False
+    skip_edit_links: True
 reference:
     assemble-folder: 
         - src/ref/lang/auto
