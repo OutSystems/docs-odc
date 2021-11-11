@@ -44,13 +44,13 @@ Now we’re going to create an entity called **Task** with three attributes: **D
 
 
 
-3. Verify that OutSystems has correctly identified  **Data Type** of the new **Description** entity as** Text**. Change the entity **Length** to **100** and **Is Mandatory** to **Yes**. 
+3. Verify that OutSystems has correctly identified  **Data Type** of the new **Description** entity as **Text**. Change the entity **Length** to **100** and **Is Mandatory** to **Yes**. 
 
 ![Set entity attribute parameters](images/set-entity-attribute-parameters.png "Set entity attribute parameters") 
 
 
 
-4. In the same way add an** Entity Attribute** called **DueDate** to the **Task** entity. Verify that Service Studio has identified its **Data Type** as **Date**. As above, set **Is Mandatory** to **Yes**.
+4. In the same way add an **Entity Attribute** called **DueDate** to the **Task** entity. Verify that Service Studio has identified its **Data Type** as **Date**. As above, set **Is Mandatory** to **Yes**.
 5. Add a third **Entity Attribute** called **IsComplete** to the **Task** entity. Verify that **Service Studio** has identified its **Data Type** as **Boolean** and that **Is Mandatory** is set to **No**. 
 
 ![Set IsComplete entity attribute parameters](images/set-entity-attribute-parameter-boolean.png "Set IsComplete entity attribute parameters") 
@@ -86,7 +86,7 @@ You may double-click either of the created screens to see how the entity has bee
 
 EAP reportedly will not have roles. They still appear in the interface, so they are documented here.
 
-<</div>
+</div>
 
 
 
@@ -96,16 +96,13 @@ EAP reportedly will not have roles. They still appear in the interface, so they 
 
 2. In the same manner, select **TaskDetail** in the **MainFlow** and click **Anonymous** in the **Roles** area. 
 
-    <div class="info" markdown="1">
+<div class="info" markdown="1">
 
+During the publish process you will receive the following security warning: You're exposing a Server Action for public access and without authentication. Consider removing the Anonymous Role from this Screen.
 
-    During the publish process you will receive the following security warning: You're exposing a Server Action for public access and without authentication. Consider removing the Anonymous Role from this Screen.
+For most business apps, access to interface screens is restricted to registered users. Before deployment to the quality or production environments, the role of these screens should be changed back to the default so they are not anonymous.
 
-
-    For most business apps, access to interface screens is restricted to registered users. Before deployment to the quality or production environments, the role of these screens should be changed back to the default so they are not anonymous.
-
-
-    </div>
+</div>
 
 3. Click the green **1-Click-Publish** button in the top center of the workspace so you can test your app to see if it works as expected.
 
@@ -122,15 +119,15 @@ In order for other apps to use the functionality of **TaskList**, it must be exp
 
 ![Make Data entity public](images/make-data-entity-public.png "Make Data entity public") 
 
-2. In the **Logic** tab right-click **Service Actions** and click **Add Service Action** to create the **AddTask **service action.
+2. In the **Logic** tab right-click **Service Actions** and click **Add Service Action** to create the **AddTask** service action.
 
 ![Add a service action](images/add-service-action.png "Add a service action") 
 
-3. Right-click the **AddTask **service action, select  **Add Input Parameter** and call it **DueDate**. Verify that OutSystems identifies its **Data Type** as **Date** and set **IsMandatory** to **Yes**.
+3. Right-click the **AddTask** service action, select  **Add Input Parameter** and call it **DueDate**. Verify that OutSystems identifies its **Data Type** as **Date** and set **IsMandatory** to **Yes**.
 
 ![Add an input parameter to the service action](images/add-service-action-input-parameter.png "Add an inpute parameter to the service action") 
 
-4. In the same way, add a second input parameter to the **AddTask **service action and call it **Description**. Verify that OutSystems identifies its **Data Type** as **Text** and set **IsMandatory** to **Yes**.
+4. In the same way, add a second input parameter to the **AddTask** service action and call it **Description**. Verify that OutSystems identifies its **Data Type** as **Text** and set **IsMandatory** to **Yes**.
 
 ![Add a second input parameter to the service action](images/add-second-service-action-input-parameter.png "Add a second input parameter to the service action") 
 
@@ -181,7 +178,8 @@ All procedures and screens from this point forward are taken from O11 and must b
     * OSUIMobileBase
     * OSUIMobiliePhone
     * OSUIMobileTablet
-5. In the **Interface** tab right-click **UIFlow**, select **Add UI Flow** and give it the name **UIFlow1**. \
+5. In the **Interface** tab right-click **UIFlow**, select **Add UI Flow** and give it the name **UIFlow1**. 
+
 ![Add UI flow](images/add-ui-flow.png "Add UI flow") 
 
 6. Click the **Theme** dropdown and select **OutsystemsUI**.
@@ -222,7 +220,7 @@ In this case the source is provided by input parameters and structures to receiv
 
 ![Add input parameter to timeline](images/add-input-paramter-to-timeline.png "Add input parameter to timeline") 
 
-5. Select the **Source** input parameter, scroll down the **Data Type** options, and select **List…
+5. Select the **Source** input parameter, scroll down the **Data Type** options, and select **List…**
 
 **![Change data type to source](images/change-data-type-to-list.png "Change data type to source") 
 
@@ -232,7 +230,7 @@ In this case the source is provided by input parameters and structures to receiv
 
 7. Drag the **Source** input parameter of the **Timeline** block to add two columns to the table and set the source of the the table to these input parameters.
 
-![Drag block source to table](images/drag-block-source to table.png "Drag block source to table") 
+![Drag block source to table](images/drag-block-source-to-table.png "Drag block source to table") 
 
 8. Select the table in the canvas, click the **Event** dropdown, and select **onchange**.
 
