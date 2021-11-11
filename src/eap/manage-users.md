@@ -51,7 +51,7 @@ The permission model enables you to:
 
 ## Authentication
 
-<div class="info" markdown="1">
+<divclass="info" markdown="1">
 During EAP, only IT User accounts are being used.
 </div>
 
