@@ -1,5 +1,5 @@
 
-# **End-to-end tutorial for public EAP**
+# End-to-end tutorial for public EAP
 
 In this tutorial you will create three apps: a Web app called **Calendar** that will uses **TaskList** to provide service actions of creating tasks and changing their status, along with a library called **Timeline**.
 
@@ -16,11 +16,11 @@ To create **TaskList**:
 
 1. Launch **Service Studio**, click **New Application**, and select **Web App** and click **Next**.  
 
-![Create Web App](images/create-service.png "Create Web App") 
+    ![Create Web App](images/create-service.png "Create Web App") 
  
-2. In the next screen call the app **TaskList** and give it a short description. You may choose a color to customize the app’s interface and upload a customized icon. Then click **Create App**.  
+1. In the next screen call the app **TaskList** and give it a short description. You may choose a color to customize the app’s interface and upload a customized icon. Then click **Create App**.  
 
-![Fill in basic app information](images/fill-in-app-basic-information.png "Fill in basic app information")
+    ![Fill in basic app information](images/fill-in-app-basic-information.png "Fill in basic app information")
 
 
 
@@ -34,26 +34,26 @@ Now we’re going to create an entity called **Task** with three attributes: **D
 
 1. Go to the **Data** tab, right-click **Entities**, click **Add Entity**, and name it **Task**. 
 
-![Add entity to database](images/add-entity.png "Add entity to database") 
+    ![Add entity to database](images/add-entity.png "Add entity to database") 
 
 
 
-2. Right-click the new **Task** entity, select **Add Entity Attribute**, and name it **Description**. 
+1. Right-click the new **Task** entity, select **Add Entity Attribute**, and name it **Description**. 
 
-![Add entity attribute](images/add-entity-attribute.png "Add entity attribute") 
-
-
-
-3. Verify that OutSystems has correctly identified  **Data Type** of the new **Description** entity as **Text**. Change the entity **Length** to **100** and **Is Mandatory** to **Yes**. 
-
-![Set entity attribute parameters](images/set-entity-attribute-parameters.png "Set entity attribute parameters") 
+    ![Add entity attribute](images/add-entity-attribute.png "Add entity attribute") 
 
 
 
-4. In the same way add an **Entity Attribute** called **DueDate** to the **Task** entity. Verify that Service Studio has identified its **Data Type** as **Date**. As above, set **Is Mandatory** to **Yes**.
-5. Add a third **Entity Attribute** called **IsComplete** to the **Task** entity. Verify that **Service Studio** has identified its **Data Type** as **Boolean** and that **Is Mandatory** is set to **No**. 
+1. Verify that OutSystems has correctly identified  **Data Type** of the new **Description** entity as **Text**. Change the entity **Length** to **100** and **Is Mandatory** to **Yes**. 
 
-![Set IsComplete entity attribute parameters](images/set-entity-attribute-parameter-boolean.png "Set IsComplete entity attribute parameters") 
+    ![Set entity attribute parameters](images/set-entity-attribute-parameters.png "Set entity attribute parameters") 
+
+
+
+1. In the same way add an **Entity Attribute** called **DueDate** to the **Task** entity. Verify that Service Studio has identified its **Data Type** as **Date**. As above, set **Is Mandatory** to **Yes**.
+1. Add a third **Entity Attribute** called **IsComplete** to the **Task** entity. Verify that **Service Studio** has identified its **Data Type** as **Boolean** and that **Is Mandatory** is set to **No**. 
+
+    ![Set IsComplete entity attribute parameters](images/set-entity-attribute-parameter-boolean.png "Set IsComplete entity attribute parameters") 
 
 ### Create list and detail screens from **Task** entity
 
@@ -63,19 +63,19 @@ With the **Task** entity created, it is now time to give users a way to view and
 
 1. Select the **Interface** tab, double-click **MainFlow**, and verify that **MainFlow** appears in the top right corner of the central working canvas. 
 
-![MainFlow canvas](images/main-flow-canvas.png "MainFlow canvas") 
+    ![MainFlow canvas](images/main-flow-canvas.png "MainFlow canvas") 
 
-2. Return to the **Data** tab and drag the **Task** entity onto the **MainFlow** canvas.  
+1. Return to the **Data** tab and drag the **Task** entity onto the **MainFlow** canvas.  
 
-![Drag the task entity to the canvas](images/drag-task-entity-to-canvas.png "Drag the task entity to the canvas") 
+    ![Drag the task entity to the canvas](images/drag-task-entity-to-canvas.png "Drag the task entity to the canvas") 
 
-3. OutSystems creates two interface screens, as seen below. 
+1. OutSystems creates two interface screens, as seen below. 
 
-![Two screen in MainFlow](images/two-screens-in-main-flow.png "Two screen in MainFlow") 
+    ![Two screen in MainFlow](images/two-screens-in-main-flow.png "Two screen in MainFlow") 
 
-You may double-click either of the created screens to see how the entity has been expressed. The **Tasks** screen is shown below. 
+    You may double-click either of the created screens to see how the entity has been expressed. The **Tasks** screen is shown below. 
     
-![Tasks list screen](images/task-list-screen.png "Tasks list screen") 
+    ![Tasks list screen](images/task-list-screen.png "Tasks list screen") 
 
 
 
@@ -92,19 +92,19 @@ EAP reportedly will not have roles. They still appear in the interface, so they 
 
 1. Go to the **Interface** tab and select **Tasks** in the **MainFlow**. Click **Anonymous** in the **Roles** area so it it is easier to test the app during development.
 
-![Set Task entity to anonymous](images/set-task-entity-to-anonymous.png "Set Task entity to anonymous") 
+    ![Set Task entity to anonymous](images/set-task-entity-to-anonymous.png "Set Task entity to anonymous") 
 
-2. In the same manner, select **TaskDetail** in the **MainFlow** and click **Anonymous** in the **Roles** area. 
+1. In the same manner, select **TaskDetail** in the **MainFlow** and click **Anonymous** in the **Roles** area. 
 
-<div class="info" markdown="1">
+    <div class="info" markdown="1">
 
-During the publish process you will receive the following security warning: You're exposing a Server Action for public access and without authentication. Consider removing the Anonymous Role from this Screen.
+    During the publish process you will receive the following security warning: You're exposing a Server Action for public access and without authentication. Consider removing the Anonymous Role from this Screen.
 
-For most business apps, access to interface screens is restricted to registered users. Before deployment to the quality or production environments, the role of these screens should be changed back to the default so they are not anonymous.
+    For most business apps, access to interface screens is restricted to registered users. Before deployment to the quality or production environments, the role of these screens should be changed back to the default so they are not anonymous.
 
-</div>
+    </div>
 
-3. Click the green **1-Click-Publish** button in the top center of the workspace so you can test your app to see if it works as expected.
+1. Click the green **1-Click-Publish** button in the top center of the workspace so you can test your app to see if it works as expected.
 
 When the app is published click the blue **Open in browser** button. There you can add a task, set it to completed, and verify that it appears as expected in the task list.
 
@@ -117,35 +117,35 @@ In order for other apps to use the functionality of **TaskList**, it must be exp
 
 1. From the **Data** tab select the **Task** entity and change the **Public** property to **Yes** so it can be consumed, or added as a dependency, to other apps.
 
-![Make Data entity public](images/make-data-entity-public.png "Make Data entity public") 
+    ![Make Data entity public](images/make-data-entity-public.png "Make Data entity public") 
 
-2. In the **Logic** tab right-click **Service Actions** and click **Add Service Action** to create the **AddTask** service action.
+1. In the **Logic** tab right-click **Service Actions** and click **Add Service Action** to create the **AddTask** service action.
 
-![Add a service action](images/add-service-action.png "Add a service action") 
+    ![Add a service action](images/add-service-action.png "Add a service action") 
 
-3. Right-click the **AddTask** service action, select  **Add Input Parameter** and call it **DueDate**. Verify that OutSystems identifies its **Data Type** as **Date** and set **IsMandatory** to **Yes**.
+1. Right-click the **AddTask** service action, select  **Add Input Parameter** and call it **DueDate**. Verify that OutSystems identifies its **Data Type** as **Date** and set **IsMandatory** to **Yes**.
 
-![Add an input parameter to the service action](images/add-service-action-input-parameter.png "Add an inpute parameter to the service action") 
+    ![Add an input parameter to the service action](images/add-service-action-input-parameter.png "Add an inpute parameter to the service action") 
 
-4. In the same way, add a second input parameter to the **AddTask** service action and call it **Description**. Verify that OutSystems identifies its **Data Type** as **Text** and set **IsMandatory** to **Yes**.
+1. In the same way, add a second input parameter to the **AddTask** service action and call it **Description**. Verify that OutSystems identifies its **Data Type** as **Text** and set **IsMandatory** to **Yes**.
 
-![Add a second input parameter to the service action](images/add-second-service-action-input-parameter.png "Add a second input parameter to the service action") 
+    ![Add a second input parameter to the service action](images/add-second-service-action-input-parameter.png "Add a second input parameter to the service action") 
 
-5. Go to the **Data** tab and drag the **CreateTask** entity attribute to the flashing blue node in the **AddTask** logic flow.
+1. Go to the **Data** tab and drag the **CreateTask** entity attribute to the flashing blue node in the **AddTask** logic flow.
 
-![Add CreateTask to flow](images/add-create-task-to-flow.png "Add CreateTask to flow") 
+    ![Add CreateTask to flow](images/add-create-task-to-flow.png "Add CreateTask to flow") 
 
-6. Select the **CreateTask** entity action that you just dragged into the flow and expand the **Source** options in the property editor to view the required sources, **Description** and **DueDate**.
+1. Select the **CreateTask** entity action that you just dragged into the flow and expand the **Source** options in the property editor to view the required sources, **Description** and **DueDate**.
 
-![Expand the CreateTask Sources](images/expand-createtask-source.png "Expand the CreateTask Sources") 
+    ![Expand the CreateTask Sources](images/expand-createtask-source.png "Expand the CreateTask Sources") 
 
-7. Click the **Description** dropdown and accept the option suggested by OutSystems.
+1. Click the **Description** dropdown and accept the option suggested by OutSystems.
 
-![Set description source](images/add-create-task-source.png "Set description source") 
+    ![Set description source](images/add-create-task-source.png "Set description source") 
 
-8. In a like manner accept the option suggested by OutSystems in the **DueDate** dropdown.
+1. In a like manner accept the option suggested by OutSystems in the **DueDate** dropdown.
 
-![Set DueDate source](images/add-second-create-task-source.png "Set DueDate source") 
+    ![Set DueDate source](images/add-second-create-task-source.png "Set DueDate source") 
 
 
 Click the **1-Click Publish** button to make **TaskList** available for other apps.
@@ -159,40 +159,41 @@ Intro: what is a library.
 
 1. Close the TaskList app and create a new **Library** called **TimeLine**.
 
-![Create library](images/create-library.png "Create library") 
+    ![Create library](images/create-library.png "Create library") 
 
-2. Add OutSystems UI as a dependency to the **Timeline** library.  First search for “OutSystems” in other apps.
+1. Add OutSystems UI as a dependency to the **Timeline** library.  First search for “OutSystems” in other apps.
 
-![Search for dependencies in other apps](images/search-for-dependencies-in-other-apps.png "Search for dependencies in other apps") 
+    ![Search for dependencies in other apps](images/search-for-dependencies-in-other-apps.png "Search for dependencies in other apps") 
 
-<div class="info" markdown="1">
+    <div class="info" markdown="1">
 
-All procedures and screens from this point forward are taken from O11 and must be changed. 
+    All procedures and screens from this point forward are taken from O11 and must be changed. 
 
-</div>
-3. Select OutSystemUI and click **Add Dependency**.
+    </div>
+    
+1. Select OutSystemUI and click **Add Dependency**.
 
-![Add dependency](images/add-dependency.png "Add dependency") 
+    ![Add dependency](images/add-dependency.png "Add dependency") 
 
-4. In a like manner at the other three OutSystems UI themes:
+1. In a like manner at the other three OutSystems UI themes:
     * OSUIMobileBase
     * OSUIMobiliePhone
     * OSUIMobileTablet
-5. In the **Interface** tab right-click **UIFlow**, select **Add UI Flow** and give it the name **UIFlow1**. 
+1. In the **Interface** tab right-click **UIFlow**, select **Add UI Flow** and give it the name **UIFlow1**. 
 
-![Add UI flow](images/add-ui-flow.png "Add UI flow") 
+    ![Add UI flow](images/add-ui-flow.png "Add UI flow") 
 
-6. Click the **Theme** dropdown and select **OutsystemsUI**.
+1. Click the **Theme** dropdown and select **OutsystemsUI**.
 
-![Select theme for flow](images/select-theme-for-flow.png "Select theme for flow") 
+    ![Select theme for flow](images/select-theme-for-flow.png "Select theme for flow") 
 
-7. Create a reusable UI that has a table widget. Right-click **UIFlow1**, select **Add Block**, and name it **Timeline**.
+1. Create a reusable UI that has a table widget. Right-click **UIFlow1**, select **Add Block**, and name it **Timeline**.
 
-![Add block for flow](images/add-block-to-uiflow.png "Add block for flow") 
+    ![Add block for flow](images/add-block-to-uiflow.png "Add block for flow") 
 
-8. Set the **Timeline** block **Public** property to **Yes** and then drag a **Table** widget to the canvas.  
+1. Set the **Timeline** block **Public** property to **Yes** and then drag a **Table** widget to the canvas.  
 
-![Add table to timeline block](images/add-table-to-timeline-block.png "Add table to timeline block") 
+    ![Add table to timeline block](images/add-table-to-timeline-block.png "Add table to timeline block") 
 
 
 
@@ -206,68 +207,68 @@ In this case the source is provided by input parameters and structures to receiv
 
 1. In the **Data** tab, right-click **Structures**, call it **TimelineEntry**, and set the **Public** attribute to **Yes**. 
 
-![Add structure](images/add-structure.png "Add structure") 
+    ![Add structure](images/add-structure.png "Add structure") 
 
-2. Right-click the **TimelineEntry** structure, select **Add Structure Attribute**, call it **Description**, and set the **Is Mandatory** attribute to **Yes**. Verify that OutSystems identified its **Data Type** as **Text**.
+1. Right-click the **TimelineEntry** structure, select **Add Structure Attribute**, call it **Description**, and set the **Is Mandatory** attribute to **Yes**. Verify that OutSystems identified its **Data Type** as **Text**.
 
-![Add structure attribute](images/add-structure-attribute.png "Add structure attribute") 
+    ![Add structure attribute](images/add-structure-attribute.png "Add structure attribute") 
 
-3. In a similar manner, right-click the **TimelineEntry** structure, select **Add Structure Attribute**, and call it **Date**, and set the **Is Mandatory** attribute to **Yes**. Verify that OutSystems identified its **Data Type** as **Date**.
+1. In a similar manner, right-click the **TimelineEntry** structure, select **Add Structure Attribute**, and call it **Date**, and set the **Is Mandatory** attribute to **Yes**. Verify that OutSystems identified its **Data Type** as **Date**.
 
-![Add date structure attribute](images/add-date-structure-attribute.png "Add date structure attribute") 
+    ![Add date structure attribute](images/add-date-structure-attribute.png "Add date structure attribute") 
 
-4. In the **Interface** tab right-click **Add Input Parameter** and call it **Source**.
+1. In the **Interface** tab right-click **Add Input Parameter** and call it **Source**.
 
-![Add input parameter to timeline](images/add-input-paramter-to-timeline.png "Add input parameter to timeline") 
+    ![Add input parameter to timeline](images/add-input-paramter-to-timeline.png "Add input parameter to timeline") 
 
-5. Select the **Source** input parameter, scroll down the **Data Type** options, and select **List…**
+1. Select the **Source** input parameter, scroll down the **Data Type** options, and select **List…**
 
-**![Change data type to source](images/change-data-type-to-list.png "Change data type to source") 
+    ![Change data type to source](images/change-data-type-to-list.png "Change data type to source") 
 
-6. In the **Element Type Window**, scroll down to the **Structures** folder, select the **TimelineEntry** structure you previously created, and click **Select**.
+1. In the **Element Type Window**, scroll down to the **Structures** folder, select the **TimelineEntry** structure you previously created, and click **Select**.
 
-![List element type](images/list-element-type-window.png "List element type") 
+    ![List element type](images/list-element-type-window.png "List element type") 
 
-7. Drag the **Source** input parameter of the **Timeline** block to add two columns to the table and set the source of the the table to these input parameters.
+1. Drag the **Source** input parameter of the **Timeline** block to add two columns to the table and set the source of the the table to these input parameters.
 
-![Drag block source to table](images/drag-block-source-to-table.png "Drag block source to table") 
+    ![Drag block source to table](images/drag-block-source-to-table.png "Drag block source to table") 
 
-8. Select the table in the canvas, click the **Event** dropdown, and select **onchange**.
+1. Select the table in the canvas, click the **Event** dropdown, and select **onchange**.
 
-![Select onchange table event](images/select-onchange-table-event.png "Select onchange table event")  
-
-
-<div class="info" markdown="1">
-
-A **New on Sort** is only available for aggregates that cannot be used in a library.
-
-</div>
+    ![Select onchange table event](images/select-onchange-table-event.png "Select onchange table event")  
 
 
+    <div class="info" markdown="1">
 
-9. Right-click the **Timeline** block, select **Add Client Action**,  and call it **ListSort**.
+    A **New on Sort** is only available for aggregates that cannot be used in a library.
 
-![Add event handler](images/add-event-handler.png "Add event handler") 
+    </div>
 
-10. Select the table in the canvas, click the **Handler** dropdown, and select **ListSort**.
 
-![Make listsort the handler](images/make-listsort-the-handler.png "Make listsort the handler")  
 
-11. Drag the **Run Client Action** widget from the toolbox to the flashing blue node in the logic flow on the canvas.
+1. Right-click the **Timeline** block, select **Add Client Action**,  and call it **ListSort**.
 
-![Drag client action](images/drag-client-action.png "Drag client action") 
+    ![Add event handler](images/add-event-handler.png "Add event handler") 
 
-12. Scroll down to the **ListSort** action in the **Select Action** window and click **Select**.
+1. Select the table in the canvas, click the **Handler** dropdown, and select **ListSort**.
 
-![Select action window](images/select-action-window.png "Select action window") 
+    ![Make listsort the handler](images/make-listsort-the-handler.png "Make listsort the handler")  
 
-13. With the **ListSort** action selected, click the **List** attribute dropdown and accept the OutSystems suggestion of **Source**.
+1. Drag the **Run Client Action** widget from the toolbox to the flashing blue node in the logic flow on the canvas.
 
-![List sort attribute](images/list-sort-attribute.png "List sort attribute") 
+    ![Drag client action](images/drag-client-action.png "Drag client action") 
 
-14. In a like manner, select **Date** as the **By** attribute.
+1. Scroll down to the **ListSort** action in the **Select Action** window and click **Select**.
 
-![Set by attribute](images/set-by-attribute.png "Set by attribute") 
+    ![Select action window](images/select-action-window.png "Select action window") 
+
+1. With the **ListSort** action selected, click the **List** attribute dropdown and accept the OutSystems suggestion of **Source**.
+
+    ![List sort attribute](images/list-sort-attribute.png "List sort attribute") 
+
+1. In a like manner, select **Date** as the **By** attribute.
+
+    ![Set by attribute](images/set-by-attribute.png "Set by attribute") 
 
 
 At this point click the **1-Click Publish** button to make this library available to other apps in your environment.
@@ -288,7 +289,7 @@ To create the calendar app:
 
 
 1. Return to the Applications
-2. Create Web app and name it **Calendar**.
+1. Create Web app and name it **Calendar**.
 
 
 ### Create onboarding screen
@@ -299,19 +300,19 @@ With the **Calendar** app created, begin with adding an onboarding screen.
 
 1. Drag the **Screen** widget from the toolbox to the canvas. 
 
-![Drag screen for Calendar app](images/drag-screen-for-calendar-app.png "Drag screen for Calendar app") 
+    ![Drag screen for Calendar app](images/drag-screen-for-calendar-app.png "Drag screen for Calendar app") 
 
-2. In the **New Screen** window, choose the **Onboardings** category, select the **Onboarding** **with animation** template, and click **Create Screen**.
+1. In the **New Screen** window, choose the **Onboardings** category, select the **Onboarding** **with animation** template, and click **Create Screen**.
 
-![Onboarding screen](images/create-onboarding-screen.png "Onboarding screen") 
+    ![Onboarding screen](images/create-onboarding-screen.png "Onboarding screen") 
 
-3. Click the **Get Started** button and change the default **On Click** event to **New Screen**.
+1. Click the **Get Started** button and change the default **On Click** event to **New Screen**.
 
-![Set onclick action](images/set-on-click-for-onboarding.png "Set onclick action") 
+    ![Set onclick action](images/set-on-click-for-onboarding.png "Set onclick action") 
 
-4. In the **New Screen** window, select the **Empty** template, call it **HomePage**, and click **Create Screen**.
+1. In the **New Screen** window, select the **Empty** template, call it **HomePage**, and click **Create Screen**.
 
-![Create Homepage](images/create-homepage.png "Create Homepage") 
+    ![Create Homepage](images/create-homepage.png "Create Homepage") 
 
 
 
@@ -323,19 +324,19 @@ The **Calendar** app uses UI elements from the library app and data from the ser
 
 1. Type **Timeline** in the search bar (in the upper right of the **Service Studio** workspace) and click **Search in other Modules**.
 
-![Search for timeline block dependency](images/search-for-timeline-block.png "Search for timeline block dependency") 
+    ![Search for timeline block dependency](images/search-for-timeline-block.png "Search for timeline block dependency") 
 
-2. In the **Search in other Modules** window filter the search results by **Block** and select the **Timeline** app you created earlier. Then click **Add Dependency**.
+1. In the **Search in other Modules** window filter the search results by **Block** and select the **Timeline** app you created earlier. Then click **Add Dependency**.
 
-![Add timeline block dependency](images/add-timeline-block-dependency.png "Add timeline block dependency") 
+    ![Add timeline block dependency](images/add-timeline-block-dependency.png "Add timeline block dependency") 
 
-3. The UI element brought in from the **Timeline** library now needs a source for its data, which the app can consume from the **Task** entity you created in the **TasksList** app you created earlier. So as before, search for **Task** in the search bar, select **Search in other Modules,** sort by **Entity**, select the **Task** entity from the **TasksList** app, and click **Add Dependency**.
+1. The UI element brought in from the **Timeline** library now needs a source for its data, which the app can consume from the **Task** entity you created in the **TasksList** app you created earlier. So as before, search for **Task** in the search bar, select **Search in other Modules,** sort by **Entity**, select the **Task** entity from the **TasksList** app, and click **Add Dependency**.
 
-![Add tasks entity dependency](images/add-tasks-entity-dependency.png "Add tasks entity dependency") 
+    ![Add tasks entity dependency](images/add-tasks-entity-dependency.png "Add tasks entity dependency") 
 
-4. Now add the functionality to add a task. Search for **AddTask**, as above, and then click **Add Dependency**.
+1. Now add the functionality to add a task. Search for **AddTask**, as above, and then click **Add Dependency**.
 
-![Add addtask dependency](images/add-addtask-dependency.png "Add addtask dependency") 
+    ![Add addtask dependency](images/add-addtask-dependency.png "Add addtask dependency") 
 
 
 
@@ -345,41 +346,41 @@ The **Calendar** app uses UI elements from the library app and data from the ser
 
 1. In the **Data** tab, drag the Data aggregate to the canvas. Then click **1-Click Publish**. 
 
-![Drag task entity to main screen](images/drag-task-entity-to-mainscreen.png "Drag task entity to main screen") 
+    ![Drag task entity to main screen](images/drag-task-entity-to-mainscreen.png "Drag task entity to main screen") 
 
-2. Drag the **Timeline** block to the **MainContent** area in the **Homepage** canvas. 
+1. Drag the **Timeline** block to the **MainContent** area in the **Homepage** canvas. 
 
-![Drag timeline block to main screen](images/drag-timeline-block-to-main-area.png "Drag timeline block to main screen") 
+    ![Drag timeline block to main screen](images/drag-timeline-block-to-main-area.png "Drag timeline block to main screen") 
 
 
-The resulting table, as can be seen, requires a source for data. 
+    The resulting table, as can be seen, requires a source for data. 
     
-![Missing data source](images/missing-source-for-data.png "Missing data source") 
+    ![Missing data source](images/missing-source-for-data.png "Missing data source") 
 
 
-3. In the **Interface** tab right click **Homepage** and select **Fetch Data from Database** and call it **GetTasks**. 
+1. In the **Interface** tab right click **Homepage** and select **Fetch Data from Database** and call it **GetTasks**. 
 
-![Fetch data from database](images/fetch-data-from-database.png "Fetch data from database") 
+    ![Fetch data from database](images/fetch-data-from-database.png "Fetch data from database") 
 
-4. With **Homepage** selected, click the table on the canvas and select **Expression Editor** from the **Source** dropdown. 
+1. With **Homepage** selected, click the table on the canvas and select **Expression Editor** from the **Source** dropdown. 
 
-![Select expression editor for source](images/select-expression-editor-for-source.png "Select expression editor for source") 
+    ![Select expression editor for source](images/select-expression-editor-for-source.png "Select expression editor for source") 
 
-5. In the **Expression Editor** window double-click **List** under the **GetTasks** folder to add the expression GetTasks.List. Then click **Close**. 
+1. In the **Expression Editor** window double-click **List** under the **GetTasks** folder to add the expression GetTasks.List. Then click **Close**. 
 
-![Expression editor](images/expression-editor.png "Expression editor") 
+    ![Expression editor](images/expression-editor.png "Expression editor") 
 
-6. Drag a **Button** widget to the **Click to add actions** area of the canvas change the button **Text** to **Add Tasks**. 
+1. Drag a **Button** widget to the **Click to add actions** area of the canvas change the button **Text** to **Add Tasks**. 
 
-![Drag button](images/add-button.png "Drag button") 
+    ![Drag button](images/add-button.png "Drag button") 
 
-7. Double-click the new **Add Tasks** button to see the **AddTaskonClick** action flow in the canvas. From the **Logic** tab drag the **AddTask** server action to the flashing blue node.
+1. Double-click the new **Add Tasks** button to see the **AddTaskonClick** action flow in the canvas. From the **Logic** tab drag the **AddTask** server action to the flashing blue node.
 
-![Add task button](images/add-addtask-action.png "Add task button") 
+    ![Add task button](images/add-addtask-action.png "Add task button") 
 
-8. Click the **DueDate** parameter dropdown and accept CurrDate(). In the **Description** parameter type an appropriate name such as **Calendar App**.
+1. Click the **DueDate** parameter dropdown and accept CurrDate(). In the **Description** parameter type an appropriate name such as **Calendar App**.
 
-![Add task parameters](images/addtask-parameters.png "Add task parameters") 
+    ![Add task parameters](images/addtask-parameters.png "Add task parameters") 
 
 
 Now click the **1-Click Publish** button to test the app.
