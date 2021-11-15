@@ -5,7 +5,7 @@ tags: outsystems-11; neo; deploy apps; portal
 
 # Neo onboarding for OutSystems developers   
 
-This article summarizes behavior that developers familiar with OutSystems 11 may find helpful when learning to use Neo.
+This article summarizes behavior that developers familiar with OutSystems 11 may find helpful when learning Neo.
 
 ## Overview
 
@@ -25,9 +25,9 @@ The new Neo Portal consolidates your app and user management experience in one p
 
 ## Build once, deploy many times
 
-The Neo architecture changes the way your apps are deployed. Instead of deploying to environments, you deploy your apps to stages. A stage (Dev, QA or Prod) is a tenant namespace within a cluster where your apps run. Each stage resides in a separate cluster, and the Platform Service also resides in its own cluster. 
+The Neo architecture changes the way your apps are deployed. Instead of deploying to environments, you deploy your apps to stages. A stage (Dev, QA or Prod) is a tenant namespace within a cluster where your apps run. Each stage resides in a separate cluster, and the Platform Service resides in its own cluster. 
 
-Service Studio connects to the Platform Service, where you develop and build your apps. When you publish an app in Service Studio, the target deployment stage is always Dev. You can no longer connect Service Studio to other stages (QA or Prod). When you publish (1CP) in Service Studio, your app is built and deployed to Dev, and a portable app pod is also created. This app pod contains everything needed to run your app. When you’re ready to promote the app to another stage (QA or Prod), you promote the app pod, without any need to rebuild code. Staging always follows the sequence: Dev to QA to Prod. 
+Service Studio connects to the Platform Service, where you develop and build your apps. When you publish an app in Service Studio, the target deployment stage is always Dev. You can no longer connect Service Studio to other stages (QA or Prod). When you publish (1CP) in Service Studio, your app is built and deployed to Dev, and a portable app pod is created. This app pod contains everything needed to run your app. When you’re ready to promote the app to another stage (QA or Prod), you promote the app pod, without any need to rebuild code. Staging always follows the sequence: Dev to QA to Prod. 
 
 See ![Deploy apps](deploy-apps.md) for more information. 
  
