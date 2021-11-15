@@ -1,27 +1,30 @@
 ---
-summary: Monitor and troubleshoot applications.  
+summary: Learn how to create an app that consumes elements from other projects.
 tags:
 ---
 
 # Task 3: Create a calendar app
 
-The calendar app will use the library and service previously created. It will include:
+The calendar app will use the Library and app previously created. It will include:
 
 * An onboarding screen
-* Use the Timeline block of the library
-* Show data from the DataList service
+* Use the Timeline block of the Library
+* Show data from the DataList app
+
+## Before you begin
+
+Make sure you completed [Task 2: Create a Library App](tutorial-2-create-library.md) before continuing.
+
+## Create a Web app
 
 To create the calendar app:
 
 1. Return to the Applications
 1. Create Web app and name it **Calendar**.
 
+## Create onboarding screen
 
-### Create onboarding screen
-
-With the **Calendar** app created, begin with adding an onboarding screen.
-
-
+With the **Calendar** app created, begin with adding an onboarding screen:
 
 1. Drag the **Screen** widget from the toolbox to the canvas. 
 
@@ -40,12 +43,9 @@ With the **Calendar** app created, begin with adding an onboarding screen.
     ![Create Homepage](images/create-homepage.png "Create Homepage") 
 
 
-
-### Add Dependencies
+## Add Dependencies
 
 The **Calendar** app uses UI elements from the library app and data from the service app. In order to use them they have to be added as dependencies, as follows:
-
-
 
 1. Type **Timeline** in the search bar (in the upper right of the **Service Studio** workspace) and click **Search in other Modules**.
 
@@ -64,10 +64,9 @@ The **Calendar** app uses UI elements from the library app and data from the ser
     ![Add addtask dependency](images/add-addtask-dependency.png "Add addtask dependency") 
 
 
+## Use dependencies in Calendar
 
-### Use dependencies in Calendar
-
-
+Follow these steps:
 
 1. In the **Data** tab, drag the Data aggregate to the canvas. Then click **1-Click Publish**. 
 
@@ -113,5 +112,5 @@ Now click the **1-Click Publish** button to test the app.
 
 ## Next steps
 
-Customize UI styles
-
+Congratulations, you have finished this tutorial.
+Learn more about [deploying your app to the next stage](deploy-apps.md).
