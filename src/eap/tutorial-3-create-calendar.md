@@ -1,6 +1,6 @@
 ---
 summary: Monitor and troubleshoot applications.  
-tags: monitor aps; review log files
+tags:
 ---
 
 # Task 3: Create a calendar app

@@ -24,14 +24,14 @@ The following table lists elements and their possible Public property values.
 | Blocks | No | Yes | 
 | Client Actions| No | Yes | 
 | Images | No | No | 
-| Local entities | No | N/A | 
-| Processes | No | N/A | 
+| Local entities | No | Not applicable | 
+| Processes | No | Not applicable | 
 | Resources | No | No | 
-| Roles | No | N/A | 
+| Roles | No | Not applicable | 
 | Screens | Yes | No | 
 | Scripts | No | No | 
 | Server Actions | No | Yes | 
-| Service Actions | Yes | N/A | 
+| Service Actions | Yes | Not applicable | 
 | Static Entities | Yes | Yes | 
 | Structures | No | No | 
 | Themes | No | Yes | 

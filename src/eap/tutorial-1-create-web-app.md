@@ -1,6 +1,6 @@
 ---
 summary: Monitor and troubleshoot applications.  
-tags: monitor aps; review log files
+tags: 
 ---
 
 # Task 1: Create a Web App
@@ -21,7 +21,6 @@ To create **TaskList**:
 1. In the next screen call the app **TaskList** and give it a short description. You may choose a color to customize the app’s interface and upload a customized icon. Then click **Create App**.  
 
     ![Fill in basic app information](images/fill-in-app-basic-information.png "Fill in basic app information")
-
 
 
 ### Create data model
