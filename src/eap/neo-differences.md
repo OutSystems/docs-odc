@@ -19,7 +19,7 @@ Neo delivers a modern architecture based on best practices in cloud-native infra
 
 ## Consolidated portal
 
-The Neo Portal consolidates your app and user management experience in one place. The portal consolidates functionality that previously existed across apps such as  LifeTime and Service Center.  (LYNNE REMOVED USERS AND COSOLES SINCE SONSOLES DON'T EXIST ANYWAHERE JUST INTERNALLY.)
+The Neo Portal consolidates your app and user management experience in one place. The portal consolidates functionality that previously existed across apps such as  LifeTime and Service Center.
 
 ![portal-deployments](images/portal-deployments.png "Deploy apps")
 
