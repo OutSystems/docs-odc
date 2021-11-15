@@ -2,9 +2,9 @@
 summary: Monitor and troubleshoot applications.  
 tags: monitor aps; review log files
 ---
-# Task 2: Create a library app
+# Task 2: Create a Library App
 
-In Neo, apps can have strong dependencies to libraries only. A Web App can't have a strong dependency to another Web App. Libraries are versioned and apps reuse elements from a specific library version. For more information about reusing elements in Neo, see [Reuse elements across apps](reuse-elements.md).
+In Neo, apps can have strong dependencies to libraries only. Libraries are versioned and apps reuse elements from a specific library version. For more information about reusing elements in Neo, see [Reuse elements across apps](reuse-elements.md).
 
 This task walks you through creating a library and exposing an element for reuse.
 
