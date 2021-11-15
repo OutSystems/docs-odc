@@ -5,9 +5,9 @@ build:
     related-title: See Also   
 publish:
     url: https://success.outsystems.com/
-    root_path: Documentation/
+    root_path: Documentation/Project_Neo
     toc_url: https://success.outsystems.com/
-    toc_root_path: Documentation/
+    toc_root_path: Documentation/Project_Neo
     skip_toc_publish: False
     skip_edit_links: True
 reference:
@@ -17,5 +17,5 @@ reference:
 checktoc:
     url: https://success.outsystems.com/
     root_path: ""
-    mindtouch-toc-path: Documentation/
-    auto-toc-path: Documentation/Unlisted/Technical_Communication/Wiki_Tree_next
+    mindtouch-toc-path: Documentation/Project_Neo
+    auto-toc-path: Documentation/Project_Neo

@@ -1,5 +1,5 @@
 ---
-summary: Monitor and troubleshoot applications.  
+summary: Learn how to create your first Web app.
 tags: 
 ---
 
@@ -9,8 +9,9 @@ In this tutorial you will create three apps: a Web app called **Calendar** that 
 
 Both TaskList and Timeline will contain reusable components available to every app during development. 
 
-
 The TaskList Web app provides service actions which, among other things, can be used to expose a service to be reused by other applications inside the same OutSystems environment.
+
+## Create the Web app
 
 To create **TaskList**: 
 
@@ -22,43 +23,32 @@ To create **TaskList**:
 
     ![Fill in basic app information](images/fill-in-app-basic-information.png "Fill in basic app information")
 
-
-### Create data model
+## Create data model
 
 Entities are elements that allow you to persist information in the database and to implement your database model. Think of them as database tables or views.  An Entity is defined through Entity Attributes that store the information related to it. Examples of entity attributes are Name, Address, Zip Code, City, among others.
 
 Now we’re going to create an entity called **Task** with three attributes: **Description**, **DueDate**, and **IsCompleted**.
 
-
-
 1. Go to the **Data** tab, right-click **Entities**, click **Add Entity**, and name it **Task**. 
 
     ![Add entity to database](images/add-entity.png "Add entity to database") 
-
-
 
 1. Right-click the new **Task** entity, select **Add Entity Attribute**, and name it **Description**. 
 
     ![Add entity attribute](images/add-entity-attribute.png "Add entity attribute") 
 
-
-
 1. Verify that OutSystems has correctly identified  **Data Type** of the new **Description** entity as **Text**. Change the entity **Length** to **100** and **Is Mandatory** to **Yes**. 
 
     ![Set entity attribute parameters](images/set-entity-attribute-parameters.png "Set entity attribute parameters") 
-
-
 
 1. In the same way add an **Entity Attribute** called **DueDate** to the **Task** entity. Verify that Service Studio has identified its **Data Type** as **Date**. As above, set **Is Mandatory** to **Yes**.
 1. Add a third **Entity Attribute** called **IsComplete** to the **Task** entity. Verify that **Service Studio** has identified its **Data Type** as **Boolean** and that **Is Mandatory** is set to **No**. 
 
     ![Set IsComplete entity attribute parameters](images/set-entity-attribute-parameter-boolean.png "Set IsComplete entity attribute parameters") 
 
-### Create list and detail screens from **Task** entity
+## Create list and detail screens from **Task** entity
 
 With the **Task** entity created, it is now time to give users a way to view and change items in the task list. 
-
-
 
 1. Select the **Interface** tab, double-click **MainFlow**, and verify that **MainFlow** appears in the top right corner of the central working canvas. 
 
@@ -68,7 +58,7 @@ With the **Task** entity created, it is now time to give users a way to view and
 
     ![Drag the task entity to the canvas](images/drag-task-entity-to-canvas.png "Drag the task entity to the canvas") 
 
-1. OutSystems creates two interface screens, as seen below. 
+1. OutSystems creates two interface screens, as seen below.
 
     ![Two screen in MainFlow](images/two-screens-in-main-flow.png "Two screen in MainFlow") 
 
@@ -76,18 +66,14 @@ With the **Task** entity created, it is now time to give users a way to view and
     
     ![Tasks list screen](images/task-list-screen.png "Tasks list screen") 
 
-
-
-
-### Change roles of screens to anonymous for testing
+<!--
+## Change roles of screens to anonymous for testing
 
 <div class="info" markdown="1">
 
 EAP reportedly will not have roles. They still appear in the interface, so they are documented here.
 
 </div>
-
-
 
 1. Go to the **Interface** tab and select **Tasks** in the **MainFlow**. Click **Anonymous** in the **Roles** area so it it is easier to test the app during development.
 
@@ -102,17 +88,15 @@ EAP reportedly will not have roles. They still appear in the interface, so they 
     For most business apps, access to interface screens is restricted to registered users. Before deployment to the quality or production environments, the role of these screens should be changed back to the default so they are not anonymous.
 
     </div>
+-->
 
 1. Click the green **1-Click-Publish** button in the top center of the workspace so you can test your app to see if it works as expected.
 
 When the app is published click the blue **Open in browser** button. There you can add a task, set it to completed, and verify that it appears as expected in the task list.
 
+## Expose **Task** entity for use in other applications
 
-### Expose **Task** entity for use in other applications
-
-In order for other apps to use the functionality of **TaskList**, it must be exposed for consumption.
-
-
+In order for other projects to use the functionality of **TaskList**, it must be exposed for consumption.
 
 1. From the **Data** tab select the **Task** entity and change the **Public** property to **Yes** so it can be consumed, or added as a dependency, to other apps.
 
@@ -146,8 +130,8 @@ In order for other apps to use the functionality of **TaskList**, it must be exp
 
     ![Set DueDate source](images/add-second-create-task-source.png "Set DueDate source") 
 
+Click the **1-Click Publish** button to make **TaskList** available for other projects.
 
-Click the **1-Click Publish** button to make **TaskList** available for other apps.
+## Next step
 
-
-
+After follow the steps above, go to [Task 2: Create a Library App](tutorial-2-create-library.md) and follow the steps to complete the tutorial.

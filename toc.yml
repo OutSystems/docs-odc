@@ -1,8 +1,10 @@
 
 - href: eap/neo-differences.md
-- href: eap/tutorial-1-create-web-app.md
-- href: eap/tutorial-2-create-library.md
-- href: eap/tutorial-3-create-calendar.md
+- href: eap/tutorial-intro.md
+- topics: 
+    - href: eap/tutorial-1-create-web-app.md
+    - href: eap/tutorial-2-create-library.md
+    - href: eap/tutorial-3-create-calendar.md
 - href: eap/reuse-elements.md
 - href: eap/manage-users.md
 - href: eap/deploy-apps.md

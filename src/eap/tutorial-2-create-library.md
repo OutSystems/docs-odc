@@ -1,18 +1,26 @@
 ---
-summary: Monitor and troubleshoot applications.  
+summary: Learn how to create a Library to expose elements to other projects. 
 tags: 
 ---
-# Task 2: Create a Library App
+# Task 2: Create a Library
 
-In Neo, apps can have strong dependencies to libraries only. Libraries are versioned and apps reuse elements from a specific library version. For more information about reusing elements in Neo, see [Reuse elements across apps](reuse-elements.md).
+In Neo, apps can have strong dependencies to Libraries only. <!--Libraries are versioned and projects reuse elements from a specific Library version-->. For more information about reusing elements in Neo, see [Reuse elements across apps](reuse-elements.md).
 
-This task walks you through creating a library and exposing an element for reuse.
+This task walks you through creating a Library and exposing an element for reuse.
 
-1. Close the TaskList app and create a new **Library** called **TimeLine**.
+## Before you begin
+
+Make sure you completed [Task 1: Create a Web App](tutorial-1-create-web-app.md) before continuing.
+
+## Create a Library and a Block
+
+Follow these steps
+
+1. Close the TaskList app and create a new **Library** called `TimeLine`.
 
     ![Create library](images/create-library.png "Create library") 
 
-1. Add OutSystems UI as a dependency to the **Timeline** library.  First search for “OutSystems” in other apps.
+1. Add OutSystems UI as a dependency to the **Timeline** library. First search for `OutSystems` in other apps.
 
     ![Search for dependencies in other apps](images/search-for-dependencies-in-other-apps.png "Search for dependencies in other apps") 
 
@@ -22,14 +30,15 @@ This task walks you through creating a library and exposing an element for reuse
 
     </div>
     
-1. Select OutSystemUI and click **Add Dependency**.
+1. Select **OutSystemsUI** and click **Add Dependency**.
 
     ![Add dependency](images/add-dependency.png "Add dependency") 
 
 1. In a like manner at the other three OutSystems UI themes:
-    * OSUIMobileBase
-    * OSUIMobiliePhone
-    * OSUIMobileTablet
+    * **OSUIMobileBase**
+    * **OSUIMobiliePhone**
+    * **OSUIMobileTablet**
+
 1. In the **Interface** tab right-click **UIFlow**, select **Add UI Flow** and give it the name **UIFlow1**. 
 
     ![Add UI flow](images/add-ui-flow.png "Add UI flow") 
@@ -38,7 +47,7 @@ This task walks you through creating a library and exposing an element for reuse
 
     ![Select theme for flow](images/select-theme-for-flow.png "Select theme for flow") 
 
-1. Create a reusable UI that has a table widget. Right-click **UIFlow1**, select **Add Block**, and name it **Timeline**.
+1. Create a reusable UI that has a table widget. Right-click **UIFlow1**, select **Add Block**, and name it `Timeline`.
 
     ![Add block for flow](images/add-block-to-uiflow.png "Add block for flow") 
 
@@ -46,31 +55,29 @@ This task walks you through creating a library and exposing an element for reuse
 
     ![Add table to timeline block](images/add-table-to-timeline-block.png "Add table to timeline block") 
 
+## Create a source for the table
 
-### Create a source for the table
-
-After you drag the table to the canvas, OutSystems warns you that it requires a source. Normally the source is an entity. However, entities are not available in library apps, and libraries must be stateless.
+After you drag the table to the canvas, OutSystems warns you that it requires a source. Normally the source is an entity. However, entities are not available in libraries, and libraries must be stateless.
 
 In this case the source is provided by input parameters and structures to receive data.
 
-
-1. In the **Data** tab, right-click **Structures**, call it **TimelineEntry**, and set the **Public** attribute to **Yes**. 
+1. In the **Data** tab, right-click **Structures**, call it `TimelineEntry`, and set the **Public** attribute to **Yes**. 
 
     ![Add structure](images/add-structure.png "Add structure") 
 
-1. Right-click the **TimelineEntry** structure, select **Add Structure Attribute**, call it **Description**, and set the **Is Mandatory** attribute to **Yes**. Verify that OutSystems identified its **Data Type** as **Text**.
+1. Right-click the **TimelineEntry** structure, select **Add Structure Attribute**, call it `Description`, and set the **Is Mandatory** attribute to **Yes**. Verify that OutSystems identified its **Data Type** as **Text**.
 
     ![Add structure attribute](images/add-structure-attribute.png "Add structure attribute") 
 
-1. In a similar manner, right-click the **TimelineEntry** structure, select **Add Structure Attribute**, and call it **Date**, and set the **Is Mandatory** attribute to **Yes**. Verify that OutSystems identified its **Data Type** as **Date**.
+1. In a similar manner, right-click the **TimelineEntry** structure, select **Add Structure Attribute**, and call it `Date`, and set the **Is Mandatory** attribute to **Yes**. Verify that OutSystems identified its **Data Type** as **Date**.
 
     ![Add date structure attribute](images/add-date-structure-attribute.png "Add date structure attribute") 
 
-1. In the **Interface** tab right-click **Add Input Parameter** and call it **Source**.
+1. In the **Interface** tab right-click **Add Input Parameter** and call it `Source`.
 
     ![Add input parameter to timeline](images/add-input-paramter-to-timeline.png "Add input parameter to timeline") 
 
-1. Select the **Source** input parameter, scroll down the **Data Type** options, and select **List…**
+1. Select the **Source** input parameter, scroll down the **Data Type** options, and select **List…**.
 
     ![Change data type to source](images/change-data-type-to-list.png "Change data type to source") 
 
@@ -78,7 +85,7 @@ In this case the source is provided by input parameters and structures to receiv
 
     ![List element type](images/list-element-type-window.png "List element type") 
 
-1. Drag the **Source** input parameter of the **Timeline** block to add two columns to the table and set the source of the the table to these input parameters.
+1. Drag the **Source** input parameter of the **Timeline** block to add two columns to the table and set the source of the table to these input parameters.
 
     ![Drag block source to table](images/drag-block-source-to-table.png "Drag block source to table") 
 
@@ -89,12 +96,12 @@ In this case the source is provided by input parameters and structures to receiv
 
     <div class="info" markdown="1">
 
-    A **New on Sort** is only available for aggregates that cannot be used in a library.
+    A **New on Sort** is only available for aggregates that cannot be used in a Library.
 
     </div>
 
 
-1. Right-click the **Timeline** block, select **Add Client Action**,  and call it **ListSort**.
+1. Right-click the **Timeline** block, select **Add Client Action**,  and call it `ListSort`.
 
     ![Add event handler](images/add-event-handler.png "Add event handler") 
 
@@ -118,5 +125,8 @@ In this case the source is provided by input parameters and structures to receiv
 
     ![Set by attribute](images/set-by-attribute.png "Set by attribute") 
 
-At this point click the **1-Click Publish** button to make this library available to other apps in your environment.
+At this point click the **1-Click Publish** button to make this Library available to other projects in your environment.
 
+## Next step
+
+After follow the steps above, go to [Task 3: Create a calendar app](tutorial-3-create-calendar.md) and follow the steps to complete the tutorial.
