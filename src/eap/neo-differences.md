@@ -38,7 +38,7 @@ See ![Deploy apps](deploy-apps.md) for more information.
 
 **No more modules** -- Neo doesn't include the concept of modules. An app is no longer broken into separate modules, as recommended in OutSystems 11. This change is part of a longer-term strategy that aims to simplify dependencies, minimize code conflicts, and streamline collaboration. 
 
-**Element reuse**--In Neo, the way you reuse elements across apps and projects differs from OutSystems 11. Neo prevents you from creating strong dependencies between apps. You can only have strong dependencies between an app and a library. 
+**Element reuse** -- In Neo, the way you reuse elements across apps and projects differs from OutSystems 11. Neo prevents you from creating strong dependencies between apps. You can only have strong dependencies between an app and a library. 
 
 Note the following behavior when developing your apps in Neo:
 
