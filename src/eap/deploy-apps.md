@@ -17,7 +17,7 @@ When you publish an app to the Dev stage, the build service creates a container 
 
 To promote an app to the QA or Prod stage:
 
-1. Go to the Portal.
+1. Go to the Neo Portal.
 2. Go to **Delivery** > **Deployments**.
 3. Select the app you want to promote, and then follow the guided staging process in the UI.
 

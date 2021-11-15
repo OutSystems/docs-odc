@@ -12,7 +12,7 @@ You can share public elements across your OutSystems applications to accelerate 
 
 Weak dependencies (for example, reusing a static entity) can exist between the following app types: 
 
-* Two web apps or mobile apps -- Web and mobile apps can share Service Actions, entities, status entities, and screens.
+* Two Web Apps or Mobile Apps -- Web and Mobile Apps can share Service Actions, entities, status entities, and screens.
 
 ## Public elements
 
