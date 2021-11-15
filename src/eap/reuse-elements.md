@@ -1,6 +1,6 @@
 ---
 summary: Summary of Neo differences for OutSystems 11 users.  
-tags: 
+tags: outsystems 11; resuse; app depenencies; public elements 
 ---
 
 # Reuse elements across apps
@@ -10,7 +10,7 @@ You can share public elements across your OutSystems applications to accelerate 
 * Library (producer) and a web or mobile app (consumer) -- You can share Client Actions and Server Actions in libraries (producer), and use them in apps (consumer). Apps can’t be a producer when sharing Client and Server Actions. 
 * Two libraries -- Libraries can be producers or consumers.
 
-Weak dependencies (for example, reusing a static entity) can exist between the following app types:. 
+Weak dependencies (for example, reusing a static entity) can exist between the following app types: 
 
 * Two web apps or mobile apps -- Web and mobile apps can share Service Actions, entities, status entities, and screens.
 
@@ -42,16 +42,6 @@ The following table lists elements and their possible Public property values.
 ## Manage libraries
 
 A library is a collection of artifacts or reusable elements of code that allow you to implement shared functionality across applications. Apps that consume library elements are locked to a specific library version. When the library is updated in Dev, updates to consumer apps occur based on the type of change and the type of dependency. When “breaking” changes (changes that break a consumer app) occur, the newest library version gets applied automatically to consumer apps in the Dev stage. Apps in other stages (QA or Prod) are not updated automatically, nor are they impacted by changes made to the version in Dev.
-
-The following table summarizes behavior based on the type of dependency (strong or weak) and the type of change (breaking or non-breaking). 
-
-
-## In progress
-| Dependency type | Change type & example]  |  Producer app behavior | Consumer app behavior | 
-| ----------- | ----------- | ----------- |  ----------- |
-| Strong dependency | Breaking change. Example: In a (producer) library, delete and replace  | TBD | TBD | 
-| TBD| TBD | TBD | TBD | 
-| TBD | TBD | TBD | TBD |
 
 ## Expose a Server Action in an app
 

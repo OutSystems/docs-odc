@@ -1,20 +1,11 @@
 ---
 summary: Summary of Neo differences for OutSystems 11 users.  
-tags: 
+tags: outsystems-11; neo; deploy apps; portal 
 ---
 
 # Neo onboarding for OutSystems developers   
 
-This article summarizes behavior that developers familiar with OutSystems 11 may find helpful when using the Neo. It covers the following topics:
-
-* Overview
-* Consolidated portal
-* Build once, deploy many times
-* Projects, apps, libraries, and reuse 
-* Debugging changes in Service Studio
-* Timers in Service Studio
-* Neo differences by task
-* Terminology mapping
+This article summarizes behavior that developers familiar with OutSystems 11 may find helpful when learning to use Neo.
 
 ## Overview
 
@@ -26,39 +17,38 @@ Neo delivers a modern architecture based on best practices in cloud-native infra
 * Modern, industry-standard technologies that allow you to quickly deploy and maintain your apps
 * The ability to take advantage of the latest Neo versions without disruption
 
-**add overview graphic here** -- confirm correct level of transparency about infrastructure
-
-
 ## Consolidated portal
 
-The new Neo Portal consolidates your app and user management experience in one place. The Portal consolidates functionality that previously existed across the LifeTime, Service Center, and Users consoles. 
+The new Neo Portal consolidates your app and user management experience in one place. The Portal will consolidate functionality that previously existed across consoles, including LifeTime, Service Center, and Users. 
 
 ![portal-deployments](images/portal-deployments.png "Deploy apps") 
 
 ## Build once, deploy many times
 
-The new Neo architecture changes the app deployment process. Instead of deploying to environments, you deploy your apps to stages. A stage (Dev, QA or Prod) is a tenant namespace within a cluster where your apps run. Each stage resides in a separate cluster, and no development or code compiling occurs within the context of a stage. Development and build activities occur in a separate cluster. 
+The Neo architecture changes the way your apps are deployed. Instead of deploying to environments, you deploy your apps to stages. A stage (Dev, QA or Prod) is a tenant namespace within a cluster where your apps run. Each stage resides in a separate cluster, and the Platform Service also resides in its own cluster. 
 
-Service Studio connects to the Platform Service, which is where you develop your apps. When you publish an app in Service Studio, the target deployment stage is always Dev. You can no longer connect Service Studio to other stages (QA or Prod). When you publish (1CP) in Service Studio, your app is built and deployed to Dev, and a portable app pod is also created. This app pod contains everything needed to run your app. When you’re ready to promote the app to another stage (QA or Prod), you promote the app pod, without any need to rebuild code. The staging always follows the sequence Dev to QA to Prod. 
+Service Studio connects to the Platform Service, where you develop and build your apps. When you publish an app in Service Studio, the target deployment stage is always Dev. You can no longer connect Service Studio to other stages (QA or Prod). When you publish (1CP) in Service Studio, your app is built and deployed to Dev, and a portable app pod is also created. This app pod contains everything needed to run your app. When you’re ready to promote the app to another stage (QA or Prod), you promote the app pod, without any need to rebuild code. Staging always follows the sequence: Dev to QA to Prod. 
+
+See ![Deploy apps](deploy-apps.md) for more information. 
+ 
 
 ## Projects, libraries, and element reuse  
 
-**Projects and libraries** -- Neo introduces the term project to the Service Studio hieararchy. When you begin development in Service Studio, you create a project. Your project holds your web or mobile app, and, optionally, any libraries associated with it. In later Neo versions, projects can include services as well. Apps always reuse elements from a specific library version, and once deployed to the QA or Prod stage, are locked to that version. Any updates made in Dev do not impact apps deployed to the QA or Prod stage. 
+**Projects and libraries** -- Neo introduces the term project to the Service Studio hierarchy. When you begin development in Service Studio, you create a project. Your project holds your web or mobile app, and, optionally, any libraries associated with it. In later Neo versions, projects can include services. Apps always reuse elements from a specific library version, and once deployed to the QA or Prod stage, are locked to that version. Any updates made in Dev do not impact apps deployed to the QA or Prod stage. 
 
-**No more modules** -- Neo doesn't include the concept of modules. An app is no longer broken into separate modules, as recommended in OutSystems 11. This change is part of a  longer-term strategy that aims to simplify dependencies, minimize code conflicts, and streamline collaboration. 
+**No more modules** -- Neo doesn't include the concept of modules. An app is no longer broken into separate modules, as recommended in OutSystems 11. This change is part of a longer-term strategy that aims to simplify dependencies, minimize code conflicts, and streamline collaboration. 
 
 **Element reuse**--In Neo, the way you reuse elements across apps and projects differs from OutSystems 11. Neo prevents you from creating strong dependencies between apps. You can only have strong dependencies between an app and a library. 
 
 Note the following behavior when developing your apps in Neo:
 
-
 * Dependencies between apps are always weak, which means:
-    * Entities shared between apps, being weak dependencies, are read-only; in Neo, create a Service Action to share an entity as read/write
+    * Entities shared between apps are read-only; in Neo, create a Service Action to share an entity as read/write
     * The delete rule for foreign keys is always set to ignore when sharing entities between apps
-* Apps can only have strong dependencies to libraries 
-* Libraries are versioned and consumed at the version level; for example, app A can consume library v1 and app B can consume library v2 
+* Web or mobile apps can only have strong dependencies to libraries 
+* Web or mobile apps consume a specific library version; for example, app A can consume library v1 and app B can consume library v2 
 * Libraries aren't staged or deployed
-* Many elements that could be public in OutSystems 11 can't be public in Neo; See XX for more information.
+* Many elements that could be public in OutSystems 11 can't be public in Neo; See [Reuse elements across apps](reuse-elements.md) for more information.
 * Modules don't exist in Neo 
 
 The following screen capture shows your options when creating a project in Service Studio.
@@ -69,13 +59,9 @@ The following screen capture shows your options when creating a project in Servi
 
 In Neo, when you debug an app in Service Studio, you see an Entry app field instead of an Entry module one. Because modules no longer exist, your debugging entry point is at the app level. For an app that doesn't consume any library elements, you only see the current app as an entry point option. When an app reuses elements in a library, the producer library appears in the Entry app list. When debugging a library, the **Start debugging** option is only available when the library is consumed by an app. 
 
-**could use more info?** 
-
 ## Timers in Service Studio
 
 In Neo at this point, you can only set timers in Service Studio. You can't set timers in the Portal, as you could in LifeTime in OutSystems 11. Additionally, the format of timers has changed. 
-
-**add example**
 
 ## Neo differences by task
 
@@ -98,11 +84,11 @@ The following table summarizes terminology differences between OutSystems 11 and
 
 | OutSystems 11 name | Project Neo name | Notes | 
 | ----------- | ----------- | ----------- |
-| Environment | Stage | In Neo, the infrastructure where you develop and run your apps is fundamentally different. However, these terms (environment and stage), both represent the place where you deploy your apps to Dev, QA, and Prod. See xxx for more information about deploying apps in Neo. | 
-| Reactive web app | Web app | All web apps are reactive in Neo. Neo doesn't support traditional web apps. | 
+| environment | stage | In Neo, the infrastructure where you develop and run your apps is fundamentally different. However, these terms (environment and stage), both represent the place where you deploy your apps to Dev, QA, and Prod. See [Deploy apps](deploy-apps.md) for more information about deploying apps in Neo. | 
+| reactive web app | web app | All web apps are reactive in Neo. Neo doesn't support traditional web apps. | 
 | app | project | In Neo, projects contain your web app, and, optionally, a library or libraries. In future Neo versions, projects will also include services. |
 | site properties | settings | Eventually, you'll configure Neo settings in the Portal | 
-| N/A | organization | In Neo, an organization maps to a tenant, and can represent a company or a unit within a company. | 
+| N/A | organization | In Neo, an organization maps to a tenant, and can represent a company or a unit or group within a company. | 
 | module | N/A | Modules don't exist in Neo. | 
 
 

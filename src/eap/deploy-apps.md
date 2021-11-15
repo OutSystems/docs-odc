@@ -1,6 +1,6 @@
 ---
 summary: Summary of Neo differences for OutSystems 11 users.  
-tags: 
+tags: deploy apps 
 ---
 
 # Deploy your apps
