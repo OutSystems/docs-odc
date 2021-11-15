@@ -15,12 +15,12 @@ The calendar app will use the Library and app previously created. It will includ
 
 Make sure you completed [Task 2: Create a Library App](tutorial-2-create-library.md) before continuing.
 
-## Create a Web app
+## Create a Web App
 
 To create the calendar app:
 
 1. Return to the Applications
-1. Create Web app and name it **Calendar**.
+1. Create Web App and name it **Calendar**.
 
 ## Create onboarding screen
 
@@ -45,7 +45,7 @@ With the **Calendar** app created, begin with adding an onboarding screen:
 
 ## Add Dependencies
 
-The **Calendar** app uses UI elements from the library app and data from the service app. In order to use them they have to be added as dependencies, as follows:
+The **Calendar** app uses UI elements from the Library app and data from the service app. In order to use them they have to be added as dependencies, as follows:
 
 1. Type **Timeline** in the search bar (in the upper right of the **Service Studio** workspace) and click **Search in other Modules**.
 
@@ -55,7 +55,7 @@ The **Calendar** app uses UI elements from the library app and data from the ser
 
     ![Add timeline block dependency](images/add-timeline-block-dependency.png "Add timeline block dependency") 
 
-1. The UI element brought in from the **Timeline** library now needs a source for its data, which the app can consume from the **Task** entity you created in the **TasksList** app you created earlier. So as before, search for **Task** in the search bar, select **Search in other Modules,** sort by **Entity**, select the **Task** entity from the **TasksList** app, and click **Add Dependency**.
+1. The UI element brought in from the **Timeline** Library now needs a source for its data, which the app can consume from the **Task** entity you created in the **TasksList** app you created earlier. So as before, search for **Task** in the search bar, select **Search in other Modules,** sort by **Entity**, select the **Task** entity from the **TasksList** app, and click **Add Dependency**.
 
     ![Add tasks entity dependency](images/add-tasks-entity-dependency.png "Add tasks entity dependency") 
 

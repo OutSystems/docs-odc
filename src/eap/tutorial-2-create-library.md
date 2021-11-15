@@ -18,9 +18,9 @@ Follow these steps
 
 1. Close the TaskList app and create a new **Library** called `TimeLine`.
 
-    ![Create library](images/create-library.png "Create library") 
+    ![Create Library](images/create-library.png "Create library") 
 
-1. Add OutSystems UI as a dependency to the **Timeline** library. First search for `OutSystems` in other apps.
+1. Add OutSystems UI as a dependency to the **Timeline** Library. First search for `OutSystems` in other apps.
 
     ![Search for dependencies in other apps](images/search-for-dependencies-in-other-apps.png "Search for dependencies in other apps") 
 

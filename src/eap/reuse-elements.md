@@ -7,7 +7,7 @@ tags: outsystems 11; resuse; app depenencies; public elements
 
 You can share public elements across your OutSystems applications to accelerate development  and enable consistency across your app catalog. Sharing elements creates dependencies between producer and consumer apps. In Neo, strong dependencies (for example, those in which a consumer executes logic from a producer) can only exist between the following app types: 
 
-* Library (producer) and a web or mobile app (consumer) -- You can share Client Actions and Server Actions in libraries (producer), and use them in apps (consumer). Apps can’t be a producer when sharing Client and Server Actions. 
+* Library (producer) and a Web or Mobile App (consumer) -- You can share Client Actions and Server Actions in libraries (producer), and use them in apps (consumer). Apps can’t be a producer when sharing Client and Server Actions. 
 * Two libraries -- Libraries can be producers or consumers.
 
 Weak dependencies (for example, reusing a static entity) can exist between the following app types: 
@@ -38,7 +38,7 @@ The following table lists elements and their possible Public property values.
 
 ## Manage libraries
 
-A library is a collection of artifacts or reusable elements of code that allow you to implement shared functionality across applications. Apps that consume library elements are locked to a specific library version. When the library is updated in Dev, updates to consumer apps occur based on the type of change and the type of dependency. When “breaking” changes (changes that break a consumer app) occur, the newest library version gets applied automatically to consumer apps in the Dev stage. Apps in other stages (QA or Prod) are not updated automatically, nor are they impacted by changes made to the version in Dev.
+A Library is a collection of artifacts or reusable elements of code that allow you to implement shared functionality across applications. Apps that consume Library elements are locked to a specific Library version. When the Library is updated in Dev, updates to consumer apps occur based on the type of change and the type of dependency. When “breaking” changes (changes that break a consumer app) occur, the newest library version gets applied automatically to consumer apps in the Dev stage. Apps in other stages (QA or Prod) are not updated automatically, nor are they impacted by changes made to the version in Dev.
 
 ## Expose a Server Action in an app
 
@@ -47,4 +47,4 @@ You can’t share (that is, expose as Public) a Server Action from within an app
 1. Right-click the Server Action.
 2. Select Expose as Service Action. This creates a Service Action that invokes the Server Action and its properties.  
 
-Alternatively, you can create the Server Action in a library, and have your app consume it.
+Alternatively, you can create the Server Action in a Library, and have your app consume it.

@@ -7,7 +7,7 @@ tags:
 
 Follow this tutorial to learn the basics of how to develop apps with OutSystems.
 
-In this tutorial you will create three projects: a Web app called **Calendar** that will use **TaskList** to provide service actions of creating tasks and changing their status, along with a library called **Timeline**.
+In this tutorial you will create three projects: a Web App called **Calendar** that will use **TaskList** to provide service actions of creating tasks and changing their status, along with a Library called **Timeline**.
 
 Both TaskList and Timeline will contain reusable components available to other projects during development. 
 

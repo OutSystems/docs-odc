@@ -17,7 +17,7 @@ Users are associated with an organization account. When users authenticate, thei
 
 ### Benefits
 
-he following are some benefits of using the OutSystems identity service:
+The following are some benefits of using the OutSystems identity service:
 
 * Information is stored in a centralized location
 * More secure because it manages all background identity
