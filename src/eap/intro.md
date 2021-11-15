@@ -13,4 +13,3 @@ Neo delivers a modern architecture based on best practices in cloud-native infra
 * Modern, industry-standard technologies that allow you to quickly deploy and maintain your apps
 * The ability to take advantage of the latest Neo versions without disruption
 
-**add overview graphic here** -- confirm correct level of transparency about  infrastructure, to balance highlighting benefits vs. revealing the secret sauce

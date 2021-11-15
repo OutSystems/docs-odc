@@ -19,9 +19,6 @@ Weak dependencies (for example, reusing a static entity) can exist between the f
 To expose and share a public element for reuse, you set the element’s Public property to Yes. Some elements can’t be shared, and in such cases, the element’s Public property is set to No and can’t be changed. For example, a Server Action within an app can’t be set to Public. 
 The following table lists elements and their possible Public property values.
 
-To expose and share a public element for reuse, you set the element’s Public property to Yes. Some elements can’t be shared, and in such cases, the element’s Public property is set to No and can’t be changed. For example, a Server Action within an app can’t be set to Public. 
-The following table lists elements and their possible Public property values.
-
 | Element type | Can element be public in apps?  | Can element be public in libraries? | 
 | ----------- | ----------- | ----------- |
 | Blocks | No | Yes | 
