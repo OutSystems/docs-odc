@@ -29,7 +29,7 @@ The Neo architecture changes the way your apps are deployed. Instead of deployin
 
 Service Studio connects to the Platform Service, where you develop and build your apps. When you publish an app in Service Studio, the target deployment stage is always Dev. You can no longer connect Service Studio to other stages (QA or Prod). When you publish (1CP) in Service Studio, your app is built and deployed to Dev, and a portable app pod is created. This app pod contains everything needed to run your app. When you’re ready to promote the app to another stage (QA or Prod), you promote the app pod, without any need to rebuild code. Staging always follows the sequence: Dev to QA to Prod. 
 
-See ![Deploy apps](deploy-apps.md) for more information. 
+See [Deploy apps](deploy-apps.md) for more information. 
  
 
 ## Projects, libraries, and element reuse  
