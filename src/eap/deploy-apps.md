@@ -5,9 +5,9 @@ tags: deploy apps
 
 # Deploy your apps
 
-You deploy your OutSystems applications to stages, which are tenant namespaces where a containerized app runs. By default, your OutSystems infrastructure includes three stages: development (Dev), Quality Assurance (QA), and production (Prod). Apps you publish during development reside in the Dev stage. For example, when you use the One-Click Publish button in Service Studio, you compile the app and publish it to the Dev stage. The QA stage is where your teams can conduct more thorough app testing. The Prod stage is where users interact with and access your application in production. 
+You deploy your OutSystems applications to stages, which are tenant namespaces where a containerized app runs. By default, your OutSystems infrastructure includes three stages: development (Dev), Quality Assurance (QA), and production (Prod). Apps you publish during development reside in the Dev stage. For example, when you use the 1-Click Publish button in Service Studio, you compile the app and publish it to the Dev stage. The QA stage is where your teams can conduct more thorough app testing. The Prod stage is where users interact with and access your application in production.
 
-Apps in each stage are isolated from each other. Thus when you publish an app to Dev, no impact occurs to existing versions in QA or Prod. Additionally, promoting apps to QA or Prod does not impact versions of the app running in Dev. Each stage is also isolated from changes made to the OutSystems Platform Service. Updates to the OutSystems Platform Service version in your infrastructure, which is a transparent process handled by OutSystems, do not impact apps running in QA or Prod. 
+Apps in each stage are isolated from each other. Thus when you publish an app to Dev, no impact occurs to existing versions in QA or Prod. Additionally, promoting apps to QA or Prod does not impact versions of the app running in Dev. Each stage is also isolated from changes made to the OutSystems Platform Service. Updates to the OutSystems Platform Service version in your infrastructure, which is a transparent process handled by OutSystems, do not impact apps running in QA or Prod.
 
 ## Build once, deploy many times
 

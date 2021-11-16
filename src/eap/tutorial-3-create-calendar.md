@@ -3,7 +3,7 @@ summary: Learn how to create an app that consumes elements from other projects.
 tags:
 ---
 
-# Task 3: Create a calendar app
+# Task 3: Create a consumer Web App
 
 The calendar app will use the Library and app previously created. It will include:
 
