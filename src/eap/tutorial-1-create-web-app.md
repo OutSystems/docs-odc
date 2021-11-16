@@ -5,13 +5,13 @@ tags:
 
 # Task 1: Create a Web App
  
-In this tutorial you will create three apps: a Web App called **Calendar** that will use **TaskList** to provide service actions of creating tasks and changing their status, along with a Library called **Timeline**.
+This tutorial walks you through creating three apps: a Web App called **Calendar** that will use **TaskList** to provide service actions. Additionally, you'll create a Library called **Timeline**.
 
-Both TaskList and Timeline will contain reusable components available to every app during development. 
+Both TaskList and Timeline will contain reusable elements available to every app during development. 
 
-The TaskList Web App provides service actions which, among other things, can be used to expose a service to be reused by other applications inside the same OutSystems environment.
+The TaskList Web App provides service actions which, among other things, can expose a service to be reused by other applications inside the same OutSystems environment.
 
-## Create the Web app
+## Create the Web App
 
 To create **TaskList**: 
 

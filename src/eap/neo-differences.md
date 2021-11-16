@@ -35,7 +35,7 @@ See [Deploy apps](deploy-apps.md) for more information.
 
 **Projects and Libraries** -- Neo introduces the term Project to the Service Studio hierarchy. When you begin development in Service Studio, you create a Project. Your Project holds your Web or Mobile App, and, optionally, any Libraries associated with it. In later Neo versions, Projects can include Services. Apps always reuse elements from a specific Library version, and once deployed to the QA or Prod stage, are locked to that version. Any updates made in Dev do not impact apps deployed to the QA or Prod stage.
 
-**No more modules** -- Neo doesn't include the concept of modules. An app is no longer broken into separate modules, as recommended in OutSystems 11. This change is part of a longer-term strategy that aims to simplify dependencies, minimize code conflicts, and streamline collaboration.
+**Single-module apps** -- Neo has single-module apps. App are no longer broken into separate modules, as recommended in OutSystems 11. This change is part of a longer-term strategy that aims to simplify dependencies, minimize code conflicts, and streamline collaboration.
 
 **Element reuse** -- In Neo, the way you reuse elements across apps and Projects differs from OutSystems 11. Neo prevents you from creating strong dependencies between Web or Mobile Apps. You can only have strong dependencies between a Web or Mobile app and a Library.
 
