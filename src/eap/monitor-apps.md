@@ -5,19 +5,28 @@ tags: monitor aps; review log files
 
 # Monitor Apps
 
-OutSystems provides a unified experience where you can monitor the health of all your applications. And then, from the same section you can identify any unexpected behaviors before they become issues that impact the performance of your systems or apps.
+OutSystems provides a unified experience where you can monitor the health of all your applications. And then, from the same section you can identify any unexpected behaviors that might impact the performance of your systems or apps.
 
-The goal is to reduce the effort it takes for you to:
+Several log files are available to help you identify a problem, determine the root cause, and and then fix the problem.
 
-* Detect app problems such as performance and unavailability.
-* Understand what’s causing the anomaly in your application such as a configuration problem.
-
-Using the Monitoring functions makes it easier and quicker for you to locate and fix the issues. You can use the Monitoring functions during all stages of development to monitor and troubleshoot applications. You can also access capabilities to check for application governance, user management, and performance.
+At the top of each log file, you can set filters to narrow the scope of your results. Inmost cases,To the right of each log entry,  a **Detail** link provides stack trace information. On some logs, an **Excel** link enables you to  export your results to Excel for further analysis.
 
 Currently, the following log files are available:
 
-* **General Log** - shows the timestamp, app name, app key, message, and source
-* **Error Log** - shows the timestamp, app name, app key, message, source, and error key
-* **Integration Log** - shows the timestamp, app name, app key, type, source, action, endpoint, duration, log key/ID, and the error key/ID
+**Error Log** - helps you understand errors that are occurring during runtime. This log shows the following information:
 
-A detail button to the right of each log entry, provides additional information.
+* System related issues or exceptions from an application due to issues in its logic
+* Errors from user devices trying to access the app
+* Security exceptions such as when an unregistered user tries to access a page
+  
+**General Log** - helps you understand the probable causes slowing down your environment. This log shows the following information:
+
+* System errors that force a process to terminate
+* Application issues such as a slow query warnings
+* Activity logs showing which users are logging into an environment as well as  publishing or deploying
+
+**Integration Log** - helps you understand how quickly the environment is responding to incoming requests and external services. This log shows the following information:
+
+* The amount of time it takes to expose an action in a given period
+* The amount of time it takes to consume an action in a given period
+  
