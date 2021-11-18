@@ -7,13 +7,13 @@ tags: user-management; authentication; lifecycle-management
 
 OutSystems users are given permissions so that they can perform tasks such as to create and manage users and to monitor and troubleshoot applications.
 
-Currently all users have the same permissions enabling you to access and use all the available functionality. This means you can perform tasks that are usually restricted to only those with the proper permissions. For example, you can add users to your organization.
+Currently all users have the same permissions enabling access and use of all the available functionality. This means you can perform tasks that are usually restricted to only those with the proper permissions. For example, adding users to your organization.
 
 ## Authentication
 
-OutSystems knows who you are through your identity. Identities are unique and enable us to identify a user in OutSystems.  We can identify users in environments, apps, and tools. In addition, by using your identity, you no longer need to re-authenticate while using the same account.
+Authentication is the process of identifying and validating users who want to access OutSystems. To secure your apps OutSystems uses keyCloacks. Keycloaks are a tool that makes securing your applications easier and provides the correct access to a user.  We can identify users in environments, apps, and tools.
 
-Users are associated with an organization account. When users authenticate, their credentials are verified. The OutSystems identity service authenticates users against the Organization account to which they are associated. Once authenticated, users continue on their journey.
+Users are associated with and authenticated against their organization account. When users authenticate, their credentials are verified. UOnce authenticated, users continue on their journey and if they switch apps, they don't need to re-authenticate.
 
 ### Benefits
 
