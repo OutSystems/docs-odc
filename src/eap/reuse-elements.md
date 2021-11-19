@@ -1,11 +1,11 @@
 ---
-summary: Summary of Neo differences for OutSystems 11 users.  
+summary: Reuse elements to share across apps.  
 tags: outsystems 11; resuse; app depenencies; public elements 
 ---
 
-# Reuse elements across apps
+# Reuse elements across apps  [WIP]
 
-You can share public elements across your OutSystems applications to accelerate development  and enable consistency across your app catalog. Sharing elements creates dependencies between producer and consumer apps. In Neo, strong dependencies (for example, those in which a consumer executes logic from a producer) can only exist between the following app types: 
+You can share public elements across your applications to accelerate development and enable consistency across apps. Sharing elements creates dependencies between producer and consumer apps. In Project Neo, strong dependencies (for example, those in which a consumer executes logic from a producer) can only exist between the following app types: 
 
 * Library (producer) and a Web or Mobile App (consumer) -- You can share Client Actions and Server Actions in libraries (producer), and use them in apps (consumer). Apps can’t be a producer when sharing Client and Server Actions. 
 * Two libraries -- Libraries can be producers or consumers.
@@ -36,9 +36,11 @@ The following table lists elements and their possible Public property values.
 | Structures | No | No | 
 | Themes | No | Yes | 
 
-## Manage libraries
+## Libraries
 
-A Library is a collection of artifacts or reusable elements of code that allow you to implement shared functionality across applications. Apps that consume Library elements are locked to a specific Library version. When the Library is updated in Dev, updates to consumer apps occur based on the type of change and the type of dependency. When “breaking” changes (changes that break a consumer app) occur, the newest library version gets applied automatically to consumer apps in the Dev stage. Apps in other stages (QA or Prod) are not updated automatically, nor are they impacted by changes made to the version in Dev.
+Project Neo elevates Libraries to a top-level concept. Libraries exist at the same level as Web Apps and Mobile Apps, and they have their own lifecycle. Apps can consume different versions of a Library, and you can choose which version an app uses. For example, you can make a branding change by updating the style guide in a Library. Then, you can roll out that change one app at a time, rather than updating all apps at once. Deployed apps can coexist with old and new branding, based on the Library version each app consumes. 
+
+When a Library is updated in Dev, updates to consumer apps occur based on the type of change and the type of dependency. When “breaking” changes (changes that break a consumer app) occur, the newest library version gets applied automatically to consumer apps in the Dev stage. Apps in other stages (QA or Prod) are not updated automatically, nor are they impacted by changes made to the version in Dev.
 
 ## Expose a Server Action in an app
 
