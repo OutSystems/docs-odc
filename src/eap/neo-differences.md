@@ -3,7 +3,8 @@ summary: Summary of Neo differences for OutSystems 11 users.
 tags: outsystems-11; neo; deploy apps; portal 
 ---
 
-# Project Neo overview for OutSystems developers [WIP]
+# Neo onboarding for OutSystems developers
+(change to "Project Neo" in title after MindTouch changes)
 
 This article summarizes behavior that developers familiar with OutSystems 11 may find helpful when learning about Project Neo.
 
