@@ -11,7 +11,7 @@ Currently all users have the same permissions enabling access and use of all the
 
 ## Authentication
 
-Authentication is the process of identifying and validating users who want to access OutSystems. To secure your apps OutSystems uses Keycloacks. Keycloaks are a tool that makes securing your applications easier and provides the correct access to a user. We can identify users in apps tools.
+Authentication is the process of identifying and validating users who want to access OutSystems. To secure your apps OutSystems uses Keycloacks. Keycloaks are a tool that makes securing your applications easier and provides the correct access to a user. We can identify users in apps and tools.
 
 Users are associated with and authenticated against their organization account. When users authenticate, their credentials are verified. Once authenticated, users continue on their journey and if they switch apps, they don't need to re-authenticate.
 
