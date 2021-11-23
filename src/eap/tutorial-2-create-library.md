@@ -20,19 +20,21 @@ Follow these steps
 
     ![Create Library](images/create-library-ss.png "Create library") 
 
-1. Add OutSystems UI as a dependency to the **Timeline** Library. First search for `OutSystems` in other apps.
+1. Add OutSystems UI as a dependency to the **Timeline** Library. First search for `OutSystems` in publich elements.
 
     ![Search for dependencies in other apps](images/search-for-dependencies-in-other-apps-ss.png "Search for dependencies in other apps") 
+
+        
+1. Select **OutSystemsUI Theme** and click **Add Element**.
+
+    ![Add dependency](images/add-dependency-ss.png "Add dependency") 
 
     <div class="info" markdown="1">
 
     All procedures and screens from this point forward are taken from O11 and must be changed. 
 
     </div>
-    
-1. Select **OutSystemsUI Theme** and click **Add Dependency**.
 
-    ![Add dependency](images/add-dependency-ss.png "Add dependency") 
 
 1. In a like manner at the other three OutSystems UI themes:
     * **OSUIMobileBase**
