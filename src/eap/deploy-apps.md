@@ -3,14 +3,13 @@ summary: Deploy your apps to stages using the Portal.
 tags:
 ---
 
-# Deploy your apps [WIP]
+# Deploy your apps
 
 In Project Neo, you deploy your applications to stages. A stage (Dev, QA or Prod) is a step within your continuous delivery pipeline that includes Runtime resources. Project Neo includes three stages by default: development (Dev), Quality Assurance (QA), and production (Prod). 
 
-In Project Neo, when you click 1-Click Publish in Service Studio, your code builds and is stored in a single code repository. The code is containerized, deployed to the Dev stage, and a container image is stored in the registry. When you're ready to promote your app to the next stage (for example, from Dev to QA), your app is deployed without the need to recompile code.
+Project Neo has a single code repository. When you click 1-Click Publish in Service Studio,The code is containerized, deployed to the Dev stage, and a container image is stored in a registry. When you're ready to promote your app to the next stage (for example, from Dev to QA), your app is deployed without the need to recompile code.
 
-Apps in each stage are isolated from each other. When you publish an app to Dev, apps running in QA or Prod aren't impacted. Additionally, when you promote apps to QA or Prod, apps in Dev aren't impacted. Each stage is also isolated from the Platform. Project Neo separates Platform and Runtime resources, allowing development to scale independently of apps deployed to stages, and enabling pain-free upgrades.
-
+Apps in each stage are isolated from each other. When you publish an app to Dev, apps running in QA or Prod aren't impacted. Additionally, when you promote apps to QA or Prod, apps in Dev aren't impacted. Each stage is also isolated from the Platform. Project Neo separates Platform and Runtime resources, allowing development to scale independently of apps deployed to stages, and enabling pain-free upgrades. It's also possible to have multiple versions of an app or Library running simultaneously in a stage or in different stages.
 
 ## Promoting apps
 

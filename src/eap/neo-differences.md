@@ -36,8 +36,9 @@ In contrast, OutSystems 11 has a code repository per environment (Dev, QA, and P
 
 ## App-level development
 
-Project Neo removes the concept of modules. You can't break apps into separate modules, as was recommended in OutSystems 11. This change is part of a longer-term strategy that aims to simplify dependencies, minimize code conflicts, and streamline collaboration.
+Project Neo removes the concept of modules. You don't break apps into separate modules, as was recommended in OutSystems 11. This change is part of a longer-term strategy that aims to simplify dependencies, minimize code conflicts, and streamline collaboration.
 
+This change cascades through the Service Studio interface in numerous ways, such as when searching within an app, and 
 
 ## Libraries 
 
@@ -63,23 +64,28 @@ The following screen capture shows your options when creating an app in Service 
 
 ## Debugging changes in Service Studio
 
-When debugging apps in Service Studio, you see the following differences in Project Neo:
+In Project Neo, note the following differences when debugging applications in Service Studio:
 
-* The debug entry point now refers to the Entry App and not the Entry Module, as modules don't exist in Project Neo
-* When debugging an app the Entry App only shows the current app
-* When debugging a Library the Entry App lists the Apps that consume that Library
-
-In Project Neo, when you debug an app in Service Studio, you see an Entry app field instead of an Entry module field. Because modules no longer exist, your debugging entry point is at the app level. For a Web or Mobile App that doesn't consume any Library elements, you only see the current app as an entry point option. When an app reuses elements in a Library, the producer Library appears in the Entry app list. When debugging a Library, the **Start debugging** option is only available when the Library is consumed by an app.
+* The debug entry point refers to the Entry app, not to the Entry module; modules don't exist in Project Neo
+* When debugging an app, the Entry app shows only the current app
+* When debugging a Library, the Entry app lists the apps that consume the you're debugging
 
 ## Timers in Service Studio
 
 Currently you can set timers in Service Studio. The format of timers differs from OutSystems 11. The UI for setting timers in Service Studio walks you through the valid values and formats.
+
+The following screen capture shows an example of setting a timer in Service Studio to run four times daily. 
+
+![Set timer](images/timers-ss.png "Set a timer")
+
 
 Note the following related to timers in Project Neo:
 
 * Currently, you can set timers in Service Studio, but not in the Portal
 * Timers are set in UTC (Coordinated Universal Time)
 * The "Weekday of month" option doesn't exist in Project Neo 
+
+
 
 ## Project Neo differences by task
 
@@ -88,9 +94,9 @@ The following table lists tasks you can complete in the Portal, as well as the i
 | Task | In O11 | In Project Neo |
 | ----------- | ----------- | ----------- |
 | Deploy an application to QA or Production | LifeTime, where you deploy apps to the QA or Production environment. | **Portal** > **Delivery** > **Deployments**. In Project Neo, you deploy to the QA or Prod stage. |
-| Configure apps when deploying. Includes timers, site properties, email | LifeTime | **Portal** > **Apps** |
+| Configure apps when deploying. Includes timers and email | LifeTime | **Portal** > **Apps** |
 | View apps and app details. Delete and deactivate apps | LifeTime | **Portal** > **Apps** |
-| Manage app dependencies | LifeTime & Service Studio | In Project Neo, you see errors in Service Studio when dependencies break. |
+| Manage app dependencies | Service Studio | In Project Neo, you see errors in Service Studio when dependencies break. |
 | Manage IT users, roles, and permissions | LifeTime | **Portal** > **Users & access**. |
 | Manage end users | Users console | **Portal** > **Users & access** |
 | View logs and audit information; set logging levels | LifeTime | **Portal** > **Monitoring** |

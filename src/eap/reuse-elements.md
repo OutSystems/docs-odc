@@ -5,9 +5,9 @@ tags:
 
 # Reuse elements across apps
 
-You can share public elements across your applications to accelerate development and enable consistency across apps. Sharing elements creates dependencies between producer and consumer apps. In Project Neo, strong dependencies (for example, those in which a consumer executes logic from a producer) can only exist between the following app types: 
+You can share public elements across your apps to accelerate development and enable consistency. Sharing elements creates dependencies between producer and consumer apps. In Project Neo, strong dependencies (for example, those in which a consumer executes logic from a producer) can only exist between the following app types: 
 
-* Library (producer) and a Web or Mobile App (consumer) -- You can share Client Actions and Server Actions in libraries (producer), and use them in apps (consumer). Apps can’t be a producer when sharing Client and Server Actions. 
+* Library (producer) and an app (consumer); the app can be a Web or Mobile App  -- You can share Client Actions and Server Actions in libraries (producer), and use them in apps (consumer). Apps can’t be a producer when sharing Client and Server Actions. 
 * Two libraries -- Libraries can be producers or consumers.
 
 Weak dependencies (for example, reusing a static entity) can exist between the following app types: 
@@ -38,7 +38,7 @@ The following table lists elements and their possible Public property values.
 
 ## Libraries
 
-Project Neo elevates Libraries to a top-level concept. Libraries exist at the same level as Web Apps and Mobile Apps, and they have their own lifecycle. Apps can consume different versions of a Library, and you can choose which version an app uses. For example, you can make a branding change by updating the style guide in a Library. Then, you can roll out that change one app at a time, rather than updating all apps at once. Deployed apps can coexist with old and new branding, based on the Library version each app consumes. 
+Project Neo elevates Libraries to a top-level concept. Libraries exist at the same level as apps (Web or Mobile), and they have their own lifecycle. Apps can consume different versions of a Library, and you can choose which version an app uses. For example, you can make a branding change by updating the style guide in a Library. Then, you can roll out that change one app at a time, rather than updating all apps at once. Deployed apps can coexist with old and new branding, based on the Library version each app consumes. 
 
 When a Library is updated in Dev, updates to consumer apps occur based on the type of change and the type of dependency. When “breaking” changes (changes that break a consumer app) occur, the newest library version gets applied automatically to consumer apps in the Dev stage. Apps in other stages (QA or Prod) aren't updated automatically, nor are they impacted by changes made to the version in Dev.
 
