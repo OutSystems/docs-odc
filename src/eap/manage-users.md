@@ -11,9 +11,9 @@ Currently all users have the same permissions enabling you to access and use all
 
 ## Authentication
 
-OutSystems knows who you are through your identity. Identities are unique and enable us to identify a user in OutSystems.  We can identify users in environments, apps, and tools. In addition, by using your identity, you no longer need to re-authenticate while using the same account.
+OutSystems knows who you are through your identity. Identities are unique and enable us to identify a user in OutSystems. We can identify users in environments, apps, and tools. In addition, by using your identity, you no longer need to re-authenticate while using the same account.
 
-Users are associated with an organization account. When users authenticate, their credentials are verified. The OutSystems identity service authenticates users against the Organization account to which they are associated. Once authenticated, users continue on their journey.
+Users are associated with an organization account. When users authenticate, their credentials are verified. The OutSystems identity service authenticates users against the Organization account to which they're associated. Once authenticated, users continue on their journey.
 
 ### Benefits
 
