@@ -1,17 +1,17 @@
 ---
-summary: Introduction to user management.  
-tags:
+summary: Introduction to user and life cycle management.  
+tags: user-management; authentication; lifecycle-management
 ---
 
 # Manage Users
 
-OutSystems users are given permissions so that they can perform tasks such as to create and manage users and to monitor and troubleshoot applications.
+OutSystems users are given permissions so that they can perform tasks such as to create and manage users, create apps, and to monitor and troubleshoot applications.
 
 Currently all users have the same permissions enabling access and use of all the available functionality. This means you can perform tasks that are usually restricted to only those with the proper permissions. For example, adding users to your organization.
 
 ## Authentication
 
-Authentication is the process of identifying and validating users who want to access OutSystems. To secure your apps OutSystems uses Keycloacks. Keycloaks are a tool that makes securing your applications easier and provides the correct access to a user. We can identify users in apps and tools.
+Authentication is the process of identifying and validating users who want to access OutSystems. OutSystems uses keycloacks, a tool that allows single sign-on with identity and access management. Keycloacks verify that users have access to the apps and files, requested by checking what a particular user can access and maintain.
 
 Users are associated with and authenticated against their organization account. When users authenticate, their credentials are verified. Once authenticated, users continue on their journey and if they switch apps, they don't need to re-authenticate.
 
