@@ -45,7 +45,7 @@ With the **Calendar** app created, begin with adding an onboarding screen:
 
 ## Add Dependencies
 
-The **Calendar** app uses UI elements from the Library app and data from the service app. In order to use them they have to be added as dependencies, as follows:
+The **Calendar** app uses UI elements from the Library app and data from the service app. To use them they have to be added as dependencies, as follows:
 
 1. Type **Timeline** in the search bar (in the upper right of the **Service Studio** workspace) and click **Search in other Modules**.
 

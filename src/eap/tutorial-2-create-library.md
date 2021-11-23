@@ -59,7 +59,7 @@ Follow these steps
 
 ## Create a source for the table
 
-After you drag the table to the canvas, OutSystems warns you that it requires a source. Normally the source is an entity. However, entities are not available in libraries, and libraries must be stateless.
+After you drag the table to the canvas, OutSystems warns you that it requires a source. Normally the source is an entity. However, entities aren't available in libraries, and libraries must be stateless.
 
 In this case the source is provided by input parameters and structures to receive data.
 

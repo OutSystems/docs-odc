@@ -25,7 +25,7 @@ To create **TaskList**:
 
 ## Create data model
 
-Entities are elements that allow you to persist information in the database and to implement your database model. Think of them as database tables or views.  An Entity is defined through Entity Attributes that store the information related to it. Examples of entity attributes are Name, Address, Zip Code, City, among others.
+Entities are elements that allow you to persist information in the database and to implement your database model. Think of them as database tables or views. An Entity is defined through Entity Attributes that store the information related to it. Examples of entity attributes are Name, Address, Zip Code, City, among others.
 
 Now we’re going to create an entity called **Task** with three attributes: **Description**, **DueDate**, and **IsCompleted**.
 
@@ -48,7 +48,7 @@ Now we’re going to create an entity called **Task** with three attributes: **D
 
 ## Create list and detail screens from **Task** entity
 
-With the **Task** entity created, it is now time to give users a way to view and change items in the task list. 
+With the **Task** entity created, it's now time to give users a way to view and change items in the task list. 
 
 1. Select the **Interface** tab, double-click **MainFlow**, and verify that **MainFlow** appears in the top right corner of the central working canvas. 
 
