@@ -5,7 +5,7 @@ tags: monitor aps; review log files
 
 # Monitor Apps
 
-OutSystems provides a unified experience where you can monitor the health of all your applications. And then, from the same section you can identify any unexpected behaviors before they become issues that impact the performance of your systems or apps.
+OutSystems provides a unified experience where you can monitor your applications. And then, from the same section you can identify any unexpected behaviors before they become issues that impact the performance of your systems or apps.
 
 The goal is to reduce the effort it takes for you to:
 

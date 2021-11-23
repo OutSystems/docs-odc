@@ -3,7 +3,7 @@ summary: Reuse elements to share across apps.
 tags: outsystems 11; resuse; app depenencies; public elements 
 ---
 
-# Reuse elements across apps  [WIP]
+# Reuse elements across apps
 
 You can share public elements across your applications to accelerate development and enable consistency across apps. Sharing elements creates dependencies between producer and consumer apps. In Project Neo, strong dependencies (for example, those in which a consumer executes logic from a producer) can only exist between the following app types: 
 
@@ -12,7 +12,7 @@ You can share public elements across your applications to accelerate development
 
 Weak dependencies (for example, reusing a static entity) can exist between the following app types: 
 
-* Two Web Apps or Mobile Apps -- Web and Mobile Apps can share Service Actions, entities, status entities, and screens.
+* Two apps (Web Apps or Mobile Apps) -- Web and Mobile Apps can share Service Actions, entities, status entities, and screens.
 
 ## Public elements
 

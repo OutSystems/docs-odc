@@ -3,7 +3,8 @@ summary: Summary of Neo differences for OutSystems 11 users.
 tags: outsystems-11; neo; deploy apps; portal 
 ---
 
-# Project Neo overview for OutSystems developers [WIP]
+# Neo onboarding for OutSystems developers
+(change to "Project Neo" in title after MindTouch changes)
 
 This article summarizes behavior that developers familiar with OutSystems 11 may find helpful when learning about Project Neo.
 
@@ -27,13 +28,11 @@ The Portal for Project Neo consolidates your app and user management experience 
   
 ## Build once, deploy many times
 
-Project Neo has a centralized code repository, which enables you to build your app once, and then deploy it to multiple environments (called stages in Project Neo). In Project Neo, when you click 1-Click Publish in Service Studio, your code builds and is stored in a single code repository. The code is containerized, deployed to the Dev stage, and a container image is stored in the registry. When you're ready to promote your app to the next stage (for example, from Dev to QA), your app is deployed without the need to recompile code. Service Studio connects to the Platform endpoint, and not to each stage.   
+Project Neo uses the term "stage" instead of "environment." A stage (Dev, QA or Prod) is a step within your continuous delivery pipeline that includes Runtime resources. Project Neo separates Platform and Runtime resources, allowing development to scale independently of apps deployed to stages. 
 
-Project Neo uses the term stage instead of environment. A stage (Dev, QA or Prod) is a step within your continuous delivery pipeline that includes Runtime resources. Project Neo separates Platform and Runtime resources, allowing development to scale independently of apps deployed to stages. 
+Project Neo has a centralized code repository, which enables you to build your app once, and then deploy it to multiple stages. In Project Neo, when you click 1-Click Publish in Service Studio, your code builds and your app gets deployed to the Dev stage. A container image also gets saved in a registry. When you're ready to promote your app to the next stage (for example, from Dev to QA), the version that exists in the registry gets promoted without the need to recompile any code. In Project Neo, Service Studio connects to the Platform, which pushes content to the Dev stage. Service Studio does not connect to the QA or Prod stage. 
 
 In contrast, OutSystems 11 has a code repository per environment (Dev, QA, and Prod), which requires rebuilding each time you deploy to a new environment. Additionally, in OutSystems 11, Service Studio connects to each environment where you build and deploy your apps.   
-
-See [Deploy apps](deploy-apps.md) for more information. 
 
 ## App-level development
 
