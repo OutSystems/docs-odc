@@ -1,6 +1,6 @@
 ---
-summary: Monitor and troubleshoot applications.  
-tags: monitor aps; review log files
+summary: Monitor and troubleshoot applications.
+tags: 
 ---
 
 # Monitor Apps
@@ -9,7 +9,7 @@ OutSystems provides a unified experience where you can monitor the health of all
 
 Several log files are available to help you identify a problem, determine the root cause, and and then fix the problem.
 
-At the top of each log file, you can set filters to narrow the scope of your results. Inmost cases,To the right of each log entry,  a **Detail** link provides stack trace information. On some logs, an **Excel** link enables you to  export your results to Excel for further analysis.
+At the top of each log file, you can set filters to narrow the scope of your results. Inmost cases,To the right of each log entry, a **Detail** link provides stack trace information. On some logs, an **Excel** link enables you to export your results to Excel for further analysis.
 
 Currently, the following log files are available:
 
@@ -18,15 +18,14 @@ Currently, the following log files are available:
 * System related issues or exceptions from an application due to issues in its logic
 * Errors from user devices trying to access the app
 * Security exceptions such as when an unregistered user tries to access a page
-  
+
 **General Log** - helps you understand the probable causes slowing down your environment. This log shows the following information:
 
 * System errors that force a process to terminate
 * Application issues such as a slow query warnings
-* Activity logs showing which users are logging into an environment as well as  publishing or deploying
+* Activity logs showing which users are logging into an environment as well as publishing or deploying
 
 **Integration Log** - helps you understand how quickly the environment is responding to incoming requests and external services. This log shows the following information:
 
 * The amount of time it takes to expose an action in a given period
 * The amount of time it takes to consume an action in a given period
-  
