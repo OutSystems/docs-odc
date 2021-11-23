@@ -4,7 +4,7 @@ tags:
 ---
 
 # Neo onboarding for OutSystems developers
-(change to "Project Neo" in title after MindTouch changes)
+#### ***change title to "Project Neo" after MindTouch changes***
 
 This article summarizes behavior that developers familiar with OutSystems 11 may find helpful when learning about Project Neo.
 
@@ -76,6 +76,7 @@ Currently you can set timers in Service Studio. The format of timers differs fro
 
 The following screen capture shows an example of setting a timer in Service Studio to run four times daily. 
 
+#### ***this is a temporary graphic***
 ![Set timer](images/timers-ss.png "Set a timer")
 
 
