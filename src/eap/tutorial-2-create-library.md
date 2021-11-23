@@ -30,7 +30,7 @@ Follow these steps
 
     </div>
     
-1. Select **OutSystemsUI** and click **Add Dependency**.
+1. Select **OutSystemsUI Theme** and click **Add Dependency**.
 
     ![Add dependency](images/add-dependency-ss.png "Add dependency") 
 
@@ -101,11 +101,11 @@ In this case the source is provided by input parameters and structures to receiv
     </div>
 
 
-1. Right-click the **Timeline** block, select **Add Client Action**,  and call it `ListSort`.
+1. Right-click the **Timeline** block, select **Add Client Action**,  and call it `SortList`.
 
     ![Add event handler](images/add-event-handler-ss.png "Add event handler") 
 
-1. Select the table in the canvas, click the **Handler** dropdown, and select **ListSort**.
+1. Select the table in the canvas, click the **Handler** dropdown, and select **SortList**.
 
     ![Make listsort the handler](images/make-listsort-the-handler-ss.png "Make listsort the handler")  
 
@@ -117,7 +117,7 @@ In this case the source is provided by input parameters and structures to receiv
 
     ![Select action window](images/select-action-window-ss.png "Select action window") 
 
-1. With the **ListSort** action selected, click the **List** attribute dropdown and accept the OutSystems suggestion of **Source**.
+1. With the **SortList** action selected, click the **List** attribute dropdown and accept the OutSystems suggestion of **Source**.
 
     ![List sort attribute](images/list-sort-attribute-ss.png "List sort attribute") 
 
