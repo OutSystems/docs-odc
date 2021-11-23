@@ -1,6 +1,6 @@
 ---
-summary: Introduction to user and life cycle management.  
-tags: user-management; authentication; lifecycle-management
+summary: Introduction to user management.  
+tags:
 ---
 
 # Manage Users
@@ -11,9 +11,9 @@ Currently all users have the same permissions enabling access and use of all the
 
 ## Authentication
 
-Authentication is the process of identifying and validating users who want to access OutSystems. To secure your apps OutSystems uses keyCloacks. Keycloaks are a tool that makes securing your applications easier and provides the correct access to a user.  We can identify users in environments, apps, and tools.
+Authentication is the process of identifying and validating users who want to access OutSystems. To secure your apps OutSystems uses Keycloacks. Keycloaks are a tool that makes securing your applications easier and provides the correct access to a user. We can identify users in environments, apps, and tools.
 
-Users are associated with and authenticated against their organization account. When users authenticate, their credentials are verified. UOnce authenticated, users continue on their journey and if they switch apps, they don't need to re-authenticate.
+Users are associated with and authenticated against their organization account. When users authenticate, their credentials are verified. Once authenticated, users continue on their journey and if they switch apps, they don't need to re-authenticate.
 
 ### Benefits
 
