@@ -1,6 +1,6 @@
 ---
 summary: Summary of Neo differences for OutSystems 11 users.  
-tags: outsystems-11; neo; deploy apps; portal 
+tags:
 ---
 
 # Neo onboarding for OutSystems developers

@@ -1,6 +1,6 @@
 ---
 summary: Deploy your apps to stages using the Portal.   
-tags: deploy apps 
+tags:
 ---
 
 # Deploy your apps [WIP]

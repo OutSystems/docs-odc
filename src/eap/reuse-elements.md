@@ -1,6 +1,6 @@
 ---
 summary: Reuse elements to share across apps.  
-tags: outsystems 11; resuse; app depenencies; public elements 
+tags:
 ---
 
 # Reuse elements across apps
