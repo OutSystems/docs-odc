@@ -49,11 +49,12 @@ In Project Neo, the way you reuse elements across apps differs from OutSystems 1
 
 Note the following regarding reuse in Project Neo:
 
-* Dependencies between app (Web Apps or Mobile Apps) are always weak, which means:
-    * Entities shared between apps are read-only; in Project Neo, create a Service Action to share an entity as read/write
-    * The delete rule for foreign keys is always set to ignore when sharing entities between apps
-* Web or Mobile Apps can have strong dependencies only to Libraries; See [Reuse elements across apps](reuse-elements.md) for more information 
-* Web or Mobile Apps consume a specific Library version; for example, app A can consume Library v1 and app B can consume Library v2
+* Dependencies between apps (Web Apps or Mobile Apps) are always weak, which means that Entities shared between apps are always read-only; in Project Neo, to write to Entities, create a Service Action
+* Relationships between Entities in different apps work differently. In Project Neo:
+    * The delete rule is always set to ignore
+    * A database constraint is not created in the database, as is done with OutSystems 11 
+* Apps (Web or Mobile) can have strong dependencies to Libraries only; See [Reuse elements across apps](reuse-elements.md) for more information 
+* Apps (Web or Mobile) consume a specific Library version; for example, app A can consume Library v1 and app B can consume Library v2
 * Many elements that could be public in OutSystems 11 can't be public in Project Neo; See [Reuse elements across apps](reuse-elements.md) for more information.
 
 The following screen capture shows your options when creating an app in Service Studio.
@@ -61,6 +62,12 @@ The following screen capture shows your options when creating an app in Service 
 ![Create Web App](images/create-service-ss.png "Create Web App")
 
 ## Debugging changes in Service Studio
+
+When debugging apps in Service Studio, you see the following differences in Project Neo:
+
+* The debug entry point now refers to the Entry App and not the Entry Module, as modules don't exist in Project Neo
+* When debugging an app the Entry App only shows the current app
+* When debugging a Library the Entry App lists the Apps that consume that Library
 
 In Project Neo, when you debug an app in Service Studio, you see an Entry app field instead of an Entry module field. Because modules no longer exist, your debugging entry point is at the app level. For a Web or Mobile App that doesn't consume any Library elements, you only see the current app as an entry point option. When an app reuses elements in a Library, the producer Library appears in the Entry app list. When debugging a Library, the **Start debugging** option is only available when the Library is consumed by an app.
 
