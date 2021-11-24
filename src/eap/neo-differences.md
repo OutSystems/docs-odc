@@ -4,7 +4,6 @@ tags:
 ---
 
 # Neo onboarding for OutSystems developers
-#### ***change title to "Project Neo" after MindTouch changes***
 
 This article summarizes behavior that developers familiar with OutSystems 11 may find helpful when learning about Project Neo.
 
