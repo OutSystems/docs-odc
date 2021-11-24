@@ -5,7 +5,7 @@ tags:
 
 # Monitor Apps
 
-OutSystems provides a unified experience where you can monitor the health of all your applications. And then, from the same section you can identify any unexpected behaviors that might impact the performance of your systems or apps.
+
 
 Log files are available to help you identify a problem, determine the root cause, and then fix the problem. At the top of each log file, you can set filters to narrow the scope of your results.
 

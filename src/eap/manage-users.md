@@ -11,18 +11,3 @@ Currently all users have the same permissions enabling access and use of all the
 
 ## Authentication
 
-Authentication is the process of identifying and validating users who want to access OutSystems. OutSystems uses keycloacks, a tool that allows single sign-on with identity and access management. Keycloacks verify that users have access to the apps and files, requested by checking what a particular user can access and maintain.
-
-Users are associated with and authenticated against their organization account. When users authenticate, their credentials are verified. Once authenticated, users continue on their journey and if they switch apps, they don't need to re-authenticate.
-
-### Benefits
-
-The following are some benefits of using the OutSystems identity service:
-
-* Information is stored in a centralized location
-* More secure because it manages all background identity
-* One user - one identity - one login streamlining the log in process
-* Onboarding new users is easier:
-    * Send the user an email with login information
-    * Users enter their personal information including their name, their email, and a password
-  
