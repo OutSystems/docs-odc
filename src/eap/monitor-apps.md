@@ -5,9 +5,13 @@ tags:
 
 # Monitor Apps
 
+OutSystems provides a unified experience where you can monitor your systems and apps. And then, from the same section you can identify any unexpected behaviors that might impact the performance of your systems or apps.
 
+As a best practice, monitor systems and apps during all stages of development. Check application governance, user management, and performance.
 
-Log files are available to help you identify a problem, determine the root cause, and then fix the problem. At the top of each log file, you can set filters to narrow the scope of your results.
+Several log files are available to help you identify problems like performance or availability, determine the root cause, and then fix the problem. The goal is to help you identify what's causing the problem such as a configuration issue.
+
+At the top of each log file, you can set filters to narrow the scope of your results. In most cases,to the right of each log entry, a Detail link provides stack trace information.
 
 Currently, the following log files are available:
 
@@ -23,4 +27,7 @@ Currently, the following log files are available:
 * Application issues such as a slow query warnings
 * Activity logs showing which users are logging into an app as well as publishing or deploying
 
-**Integration Log** - helps you understand how quickly your app is responding to incoming requests and external services. This log shows the the amount of time it takes to complete an action in a given period.
+**Integration Log** - helps you understand how quickly your app is responding to incoming requests and external services. This log shows the the amount of time it takes to complete actions in a given period. For example, this log shows how long it takes to get:
+
+* User information for a Rest (consume) action
+* HTML for a SOAP (Expose) action
