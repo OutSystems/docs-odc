@@ -3,7 +3,7 @@ summary: Summary of Neo differences for OutSystems 11 users.
 tags:
 ---
 
-# Onboarding for OutSystems developers
+# Onboarding for OutSystems developers 
 
 This article summarizes behavior that developers familiar with OutSystems 11 may find helpful when learning about Project Neo.
 
