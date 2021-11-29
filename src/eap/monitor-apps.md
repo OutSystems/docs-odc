@@ -5,11 +5,11 @@ tags:
 
 # Monitor Apps
 
-OutSystems provides a unified experience where you can monitor your systems and apps. And then, from the same section you can identify any unexpected behaviors that might impact the performance of your systems or apps.
+OutSystems provides a unified experience where you can monitor your systems and apps. And then, from the same section you can identify any unexpected behaviors that might impact your systems or apps.
 
-As a best practice, monitor systems and apps during all stages of development. Check application governance, user management, and performance.
+As a best practice, monitor systems and apps during all stages of development.
 
-Several log files are available to help you identify problems like performance or availability, determine the root cause, and then fix the problem. The goal is to help you identify what's causing the problem such as a configuration issue.
+Several log files are available to help you identify problems like performance or availability, determine the root cause, and then fix the problem. The goal is to help you understand what's causing the anomaly in your application such as an integration error.
 
 At the top of each log file, you can set filters to narrow the scope of your results. In most cases,to the right of each log entry, a Detail link provides stack trace information.
 
