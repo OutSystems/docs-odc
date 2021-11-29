@@ -4,7 +4,7 @@ tags:
 ---
 # Task 2: Create a Library
 
-In Neo, apps can have strong dependencies to Libraries only. <!--Libraries are versioned and projects reuse elements from a specific Library version. -->For more information about reusing elements in Neo, see [Reuse elements across apps](reuse-elements.md).
+In Project Neo, apps can have strong dependencies to Libraries only. <!--Libraries are versioned and projects reuse elements from a specific Library version. -->For more information about reusing elements in Project Neo, see [Reuse elements across apps](reuse-elements.md).
 
 This task walks you through creating a Library and exposing an element for reuse.
 
