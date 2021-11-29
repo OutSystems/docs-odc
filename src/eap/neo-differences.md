@@ -1,5 +1,5 @@
 ---
-summary: Summary of Neo differences for OutSystems 11 users.  
+summary: Summary of Project Neo differences for OutSystems 11 users.  
 tags:
 ---
 
