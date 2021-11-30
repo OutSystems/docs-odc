@@ -1,8 +1,8 @@
-
-ummary: Getting started with UI design
-tags:
 ---
 
+summary: Getting started with UI design
+tags: UI, design,  
+---
 # UI Overview
 
 Before designing the UI for your application, it is important to learn about elements. This document provides an overview of the following terms:
