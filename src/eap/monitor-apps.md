@@ -1,23 +1,33 @@
 ---
-summary: Monitor and troubleshoot applications.  
-tags: monitor aps; review log files
+summary: Monitor and troubleshoot applications.
+tags: 
 ---
 
 # Monitor Apps
 
-OutSystems provides a unified experience where you can monitor your applications. And then, from the same section you can identify any unexpected behaviors before they become issues that impact the performance of your systems or apps.
+OutSystems provides a unified experience where you can monitor your systems and apps. And then, from the same section you can identify any unexpected behaviors that might impact your systems or apps.
 
-The goal is to reduce the effort it takes for you to:
+As a best practice, monitor systems and apps during all stages of development.
 
-* Detect app problems such as performance and unavailability.
-* Understand what’s causing the anomaly in your application such as a configuration problem.
+Several log files are available to help you identify problems like performance or availability, determine the root cause, and then fix the problem. The goal is to help you understand what's causing the anomaly in your application such as an integration error.
 
-Using the Monitoring functions makes it easier and quicker for you to locate and fix the issues. You can use the Monitoring functions during all stages of development to monitor and troubleshoot applications. You can also access capabilities to check for application governance, user management, and performance.
+At the top of each log file, you can set filters to narrow the scope of your results. In most cases,to the right of each log entry, a Detail link provides stack trace information.
 
 Currently, the following log files are available:
 
-* **General Log** - shows the timestamp, app name, app key, message, and source
-* **Error Log** - shows the timestamp, app name, app key, message, source, and error key
-* **Integration Log** - shows the timestamp, app name, app key, type, source, action, endpoint, duration, log key/ID, and the error key/ID
+**Error Log** - helps you understand errors that are occurring during runtime. This log shows the following information:
 
-A detail button to the right of each log entry, provides additional information.
+* System related issues or exceptions from an application due to issues in its logic
+* Errors from user devices trying to access the app
+* Security exceptions such as when an unregistered user tries to access a page
+
+**General Log** - helps you understand the probable causes slowing down your app. This log shows the following information:
+
+* System errors that force a process to terminate
+* Application issues such as a slow query warnings
+* Activity logs showing which users are logging into an app as well as publishing or deploying
+
+**Integration Log** - helps you understand how quickly your app is responding to incoming requests and external services. This log shows the the amount of time it takes to complete actions in a given period. For example, this log shows how long it takes to get:
+
+* User information for a Rest (consume) action
+* HTML for a SOAP (Expose) action

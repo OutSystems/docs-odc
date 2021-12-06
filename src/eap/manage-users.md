@@ -5,24 +5,24 @@ tags: user-management; authentication; lifecycle-management
 
 # Manage Users
 
-OutSystems users are given permissions so that they can perform tasks such as to create and manage users and to monitor and troubleshoot applications.
+OutSystems users are given permissions to perform tasks like creating and managing users, creating apps, and monitoring or troubleshooting applications.
 
-Currently all users have the same permissions enabling you to access and use all the available functionality. This means you can perform tasks that are usually restricted to only those with the proper permissions. For example, you can add users to your organization.
+Currently all users have the same permissions enabling access and use of all the available functionality. This means you can perform tasks that are usually restricted to only those with the proper permissions. For example, like adding users to your organization.
 
 ## Authentication
 
-OutSystems knows who you are through your identity. Identities are unique and enable us to identify a user in OutSystems. We can identify users in environments, apps, and tools. In addition, by using your identity, you no longer need to re-authenticate while using the same account.
+Authentication is the process of identifying and validating users who want access to OutSystems tool and apps. OutSystems uses keycloacks, a tool that allows single sign-on with identity and access management. Keycloacks verify that users have access to the apps and files they requesting by checking the database to verify what a particular user can access and maintain.
 
-Users are associated with an organization account. When users authenticate, their credentials are verified. The OutSystems identity service authenticates users against the Organization account to which they're associated. Once authenticated, users continue on their journey.
+Users are associated with and authenticated against their organization account. When users authenticate, their credentials are verified. Once authenticated, users continue on their journey and if they switch apps, they don't need to re-authenticate.
 
-### Benefits
+## Benefits
 
 The following are some benefits of using the OutSystems identity service:
 
 * Information is stored in a centralized location
-* More secure because it manages all background identity
-* One user - one identity - one login streamlining the log in process
+* Apps are more secure because the identify service  manages all background identity
+* One user - one identity - one login streamlining the login process
 * Onboarding new users is easier:
-    * Send the user an email with login information
+    * Users receive an email with login information
     * Users enter their personal information including their name, their email, and a password
   
