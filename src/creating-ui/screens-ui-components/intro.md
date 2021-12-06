@@ -1,7 +1,6 @@
 ---
-
-summary: Getting started with UI design
-tags: UI, design,  
+summary:
+tags:
 ---
 # UI Overview
 

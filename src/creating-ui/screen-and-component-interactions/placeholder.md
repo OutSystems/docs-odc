@@ -1,6 +1,6 @@
 ---
-summary: Write a summary here for google search.  
-tags: add tags here 
+summary:
+tags:
 ---
 
 # Sample file
