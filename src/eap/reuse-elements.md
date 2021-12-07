@@ -13,6 +13,10 @@ You can share public elements across your apps to accelerate development and ena
 Weak dependencies (for example, reusing a static entity) can exist between the following app types:
  
 * Two apps (Web Apps or Mobile Apps) -- Web and Mobile Apps can share Service Actions, entities, status entities, and screens.
+
+## Libraries
+ 
+Project Neo elevates Libraries to a top-level concept. Libraries exist at the same level as apps (Web or Mobile), and they have their own lifecycle. Apps can consume different versions of a Library, and you can choose which version an app uses. For example, you can make a branding change by updating the style guide in a Library. Then, you can roll out that change one app at a time, rather than updating all apps at once. Deployed apps can coexist with old and new branding, based on the Library version each app consumes.
  
 ## Public elements
  
@@ -36,10 +40,6 @@ The following table lists elements and their possible Public property values.
 | Structures | No | No |
 | Themes | No | Yes |
  
-## Libraries
- 
-Project Neo elevates Libraries to a top-level concept. Libraries exist at the same level as apps (Web or Mobile), and they have their own lifecycle. Apps can consume different versions of a Library, and you can choose which version an app uses. For example, you can make a branding change by updating the style guide in a Library. Then, you can roll out that change one app at a time, rather than updating all apps at once. Deployed apps can coexist with old and new branding, based on the Library version each app consumes.
- 
 ## Expose a Server Action in an app
  
 You can’t share (that is, expose as Public) a Server Action from within an app. However, to achieve the same outcome:
@@ -47,3 +47,10 @@ You can’t share (that is, expose as Public) a Server Action from within an app
 1. Right-click the Server Action.
 2. Select Expose as Service Action. This creates a Service Action that invokes the Server Action and its properties.  
  
+
+## View app reuse in the Portal
+Use the Project Neo Portal to view a list of apps deployed to each stage. When you click an app, you see the following details about it:
+
+* The stage on which it's deployed (Dev, QA, or Prod)
+* The app's consumers or producers  
+
