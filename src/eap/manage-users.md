@@ -23,13 +23,13 @@ Currently all users have the same permissions enabling access and use of all the
 
 <div lass="info" markdown="1">
 
-This document uses the terms "IT user" and "end user" to clearly identify the differences.
+This document uses the terms "Technical user" and "End user" to clearly identify the differences. A Technical user can be developers or administrators who use utSystems tools.
 
 </div>
 
-## IT user (admin)
+## Technical user
 
-Once an IT user (admin) logs into the portal, they can:
+Once a Technical user logs into the portal, they can:
 
 * Access all the IT users
 * Invite other users by sending them an email
@@ -39,14 +39,14 @@ Once an IT user (admin) logs into the portal, they can:
 
 ## End users
 
-For end users to access the system, the IT (admin) user accesses the end users portal and enters the end users email address.
+For end users to access the system, the Technical user accesses the end users portal and enters the end users email address.
 
 * End users receive an email invite with a link to set their user name and password
 * End users are logged into the portal and see a list of available apps
 
 ## Password Requirements
 
-The following list shows  the minimum password rules y when defining a password.
+The following list shows the minimum password rules y when defining a password.
 
 * The password must be at least 10 characters long
 * The password must contain at least:
