@@ -23,7 +23,7 @@ Currently all users have the same permissions enabling access and use of all the
 
 <div lass="info" markdown="1">
 
-This document uses the terms "Technical user" and "End user" to clearly identify the differences. A Technical user can be developers or administrators who use utSystems tools.
+To identify different users, this document uses "Technical user" and "End user".  A Technical user can be developers or administrators who uses OutSystems tools.
 
 </div>
 
@@ -31,7 +31,7 @@ This document uses the terms "Technical user" and "End user" to clearly identify
 
 Once a Technical user logs into the portal, they can:
 
-* Access all the IT users
+* Access all developer or administrative users
 * Invite other users by sending them an email
     * When the user receives email, they click on the link
     * Users set their name and password and complete their profile
@@ -46,7 +46,7 @@ For end users to access the system, the Technical user accesses the end users po
 
 ## Password Requirements
 
-The following list shows the minimum password rules y when defining a password.
+The following list shows the minimum password rules when defining a password.
 
 * The password must be at least 10 characters long
 * The password must contain at least:
@@ -63,6 +63,6 @@ The best password is one that is hard for other people to figure out. As a best 
 
 ## Authentication
 
-Authentication is the process of identifying and validating users who want access to OutSystems tool and apps. OutSystems uses keycloacks, a tool that allows single sign-on with identity and access management. Keycloacks verify that users have access to the apps and files they requesting by checking the database to verify what a particular user can access and maintain.
+Authentication is the process of identifying and validating users who want access to OutSystems tool and apps. OutSystems uses a keycloak, a tool that allows single sign-on with identity and access management. A keycloak verifies that users have access to the apps and files they are requesting by checking the database to verify what a particular user can access and maintain.
 
-Users are associated with and authenticated their organizations tenant. When users authenticate, their credentials are verified. Once authenticated, users continue on their journey and if they switch apps, they don't need to re-authenticate.
+Users are associated with and authenticated against the organization to which they are a member.  When users authenticate, their credentials are verified. Once authenticated, users continue on their journey and if they switch apps, they don't need to re-authenticate.
