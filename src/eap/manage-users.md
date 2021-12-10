@@ -23,7 +23,7 @@ Currently all users have the same permissions enabling access and use of all the
 
 <div lass="info" markdown="1">
 
-To identify different users, this document uses "Technical user" and "End user".  A Technical user can be developers or administrators who uses OutSystems tools.
+To identify different users, this document uses "Technical user" and "End user".  A Technical user can be developers or administrators who use OutSystems tools.
 
 </div>
 
