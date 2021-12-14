@@ -5,7 +5,7 @@ tags: user-management; authentication; lifecycle-management
 
 # Manage Users
 
-This article provides an overview of how users set their user names and passwords, and how authentication works in OutSystems.
+This article provides an overview of how users set their names and passwords, and how authentication works in OutSystems.
 
 With the OutSystems identity service:
 
@@ -23,7 +23,7 @@ Currently all users have the same permissions enabling access and use of all the
 
 <div lass="info" markdown="1">
 
-To identify different users, this document uses "Technical user" and "End user".  A Technical user can be developers or administrators who use OutSystems tools.
+To identify different users, this document uses "Technical user" and "End user".  A Technical user can be developers or administrators who use OutSystems tools. An End user is  someone that uses the apps built from OutSystems tools.
 
 </div>
 
@@ -39,10 +39,26 @@ Once a Technical user logs into the portal, they can:
 
 ## End users
 
-For end users to access the system, the Technical user accesses the end users portal and enters the end users email address.
+For End users to access the system, the Technical user accesses the End users portal and enters the End users email address.
 
-* End users receive an email invite with a link to set their user name and password
+* End users receive an email invite with a link for them to set their name and password
 * End users are logged into the portal and see a list of available apps
+
+<div class="info" markdown="1">
+
+Email addresses sometimes referred to as user names cannot be changed.
+
+</div>
+
+### Deactivating users
+
+For security purposes or if a user is on an extended leave, you might want deactivate their account. When you deactivate a user, they cannot login and their permissions are suspended.
+
+To deactivate a user, from the Users & Access portal, select the user, and then click **Deactivate user**. You can verify the user is deactivated, by selecting **Inactive** from the **Status** drop down. A list of all Inactive users displays.
+
+### Resetting passwords
+
+For security, only users can change their passwords. To initiate the change password process, from the Users & Access portal, select the user whose password needs to be set, and click **Reset password**. An email is generated and sent to the user for them to create a new password.
 
 ## Password Requirements
 
