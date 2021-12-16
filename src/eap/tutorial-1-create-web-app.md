@@ -15,9 +15,9 @@ The TaskList Web App provides service actions which, among other things, can exp
 
 To create **TaskList**: 
 
-1. Launch **Service Studio**, click **New Application**, and select **Web App** and click **Next**.  
+1. Launch **Service Studio**, click **Create**, and select **Web App** and click **Next**.  
 
-    ![Create Web App](images/create-service-ss.png "Create Web App") 
+    ![Create Web App](images/create-web-app-ss.png "Create Web App") 
  
 1. In the next screen call the app **TaskList** and give it a short description. You may choose a color to customize the app’s interface and upload a customized icon. Then click **Create App**.  
 
