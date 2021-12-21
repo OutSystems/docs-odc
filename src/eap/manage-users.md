@@ -17,6 +17,8 @@ With the OutSystems identity service:
     * Users enter their personal information including their name, their email, and a password
     * Users manage their own profiles
   
+![OutSystems Identity Service](images/manage-users-identy-service.png)
+
 OutSystems users are given permissions to perform tasks like creating and managing users, creating apps, and monitoring or troubleshooting applications.
 
 Currently all users have the same permissions enabling access and use of all the available functionality. This means you can perform tasks that are usually restricted to only those with the proper permissions. For example, like adding users to your OutSystems or organization account.
