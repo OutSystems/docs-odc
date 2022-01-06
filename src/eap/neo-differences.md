@@ -73,8 +73,7 @@ In Project Neo, note the following differences when debugging applications in Se
 Currently you can set timers in Service Studio. The format of timers differs from OutSystems 11. The UI for setting timers in Service Studio walks you through the valid values and formats.
  
 The following screen capture shows an example of setting a timer in Service Studio to run four times daily.
- 
-#### ***this is a temporary graphic***
+
 ![Set timer](images/timers-ss.png "Set a timer")
  
  
