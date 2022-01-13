@@ -23,15 +23,9 @@ OutSystems users are given permissions to perform tasks like creating and managi
 
 Currently all users have the same permissions enabling access and use of all the available functionality. This means you can perform tasks that are usually restricted to only those with the proper permissions. For example, like adding users to your OutSystems or organization account.
 
-<div lass="info" markdown="1">
+## Organization (Technical) user
 
-To identify different users, this document uses "Technical user" and "End user".  A Technical user can be developers or administrators who use OutSystems tools. An End user is  someone that uses the apps built from OutSystems tools.
-
-</div>
-
-## Technical user
-
-Once a Technical user logs into the portal, they can:
+Once an Organization user logs into the portal, they can:
 
 * Access all developer or administrative users
 * Invite other users by sending them an email
@@ -39,26 +33,19 @@ Once a Technical user logs into the portal, they can:
     * Users set their name and password and complete their profile
     * Users are logged into the portal and see a list of available apps
 
-## End users
-
-For End users to access the system, the Technical user accesses the End users portal and enters the End users email address.
-
-* End users receive an email invite with a link for them to set their name and password
-* End users are logged into the portal and see a list of available apps
-
 <div class="info" markdown="1">
 
 Email addresses sometimes referred to as user names cannot be changed.
 
 </div>
 
-### Deactivating users
+## Deactivating users
 
 For security purposes or if a user is on an extended leave, you might want deactivate their account. When you deactivate a user, they cannot login and their permissions are suspended.
 
 To deactivate a user, from the Users & Access portal, select the user, and then click **Deactivate user**. You can verify the user is deactivated, by selecting **Inactive** from the **Status** drop down. A list of all Inactive users displays.
 
-### Resetting passwords
+## Resetting passwords
 
 For security, only users can change their passwords. To initiate the change password process, from the Users & Access portal, select the user whose password needs to be set, and click **Reset password**. An email is generated and sent to the user for them to create a new password.
 
