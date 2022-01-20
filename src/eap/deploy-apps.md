@@ -11,17 +11,6 @@ Project Neo has a single code repository. When you 1-Click Publish in Service St
 
 Apps in each stage are isolated from each other. When you publish an app to Dev, apps running in QA or Prod aren't impacted. Similarly, when you promote apps to QA or Prod, apps in Dev aren't impacted. Each stage is also isolated from the Platform. Project Neo separates Platform and Runtime resources, allowing development to scale independently of apps deployed to stages.
 
-## Deploying apps
-
-To deploy an app to the QA or Prod stage:
-
-1. Go to the Portal Project Neo.
-1. Click **Delivery** > **Deployments**.
-1. Click **Deploy now**, and select a stage from the drop-down menu.
-1. Select the app you want to deploy, and click **Next**.
-1. Select the app Version you want to deploy, and click **Next**.
-1. Review your selected deployments, and click **Deploy now**.
-
 ## View deployment status
 
 The portal allows you to view the status of apps deployed from **Delivery** > **Deployments**. The apps list is filtered by stage, and you can further filter by status or date.
