@@ -4,6 +4,12 @@ tags:
 ---
 
 # Task 1: Create a Web App
+
+<div class="info" markdown="1">
+
+Project Neo documentation is under construction. It's frequently updated and expanded. Leave your feedback and help us building the most usefull content.
+
+</div>
  
 This tutorial walks you through creating three apps: a Web App called **Calendar** that will use **TaskList** to provide service actions. Additionally, you'll create a Library called **Timeline**.
 

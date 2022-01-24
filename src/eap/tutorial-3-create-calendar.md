@@ -5,6 +5,12 @@ tags:
 
 # Task 3: Create a consumer Web App
 
+<div class="info" markdown="1">
+
+Project Neo documentation is under construction. It's frequently updated and expanded. Leave your feedback and help us building the most usefull content.
+
+</div>
+
 The calendar app will use the Library and app previously created. It will include:
 
 * An onboarding screen

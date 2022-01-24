@@ -4,7 +4,13 @@ tags:
 ---
 
 # Reuse elements across apps
- 
+
+<div class="info" markdown="1">
+
+Project Neo documentation is under construction. It's frequently updated and expanded. Leave your feedback and help us building the most usefull content.
+
+</div>
+
 You can share public elements across your apps to accelerate development and enable consistency. Sharing elements creates dependencies between producer and consumer apps.
 
 **Strong dependencies** (for example, those in which a consumer executes logic from a producer) can only exist between the following app types:

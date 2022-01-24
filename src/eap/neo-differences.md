@@ -4,6 +4,12 @@ tags:
 ---
 # Onboarding for OutSystems developers
  
+<div class="info" markdown="1">
+
+Project Neo documentation is under construction. It's frequently updated and expanded. Leave your feedback and help us building the most usefull content.
+
+</div>
+
 This article summarizes behavior that developers familiar with OutSystems 11 may find helpful when learning about Project Neo.
  
 ## Overview

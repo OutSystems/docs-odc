@@ -5,6 +5,12 @@ tags:
 
 # Monitor apps
 
+<div class="info" markdown="1">
+
+Project Neo documentation is under construction. It's frequently updated and expanded. Leave your feedback and help us building the most usefull content.
+
+</div>
+
 OutSystems provides a unified experience where you can monitor your systems and apps and identify any unexpected behaviors. As a best practice, monitor systems and apps during all stages of development.
 
 Several log files are available to help you identify problems like performance or availability, determine the root cause, and then fix the problem. The goal is to help you understand what's causing the anomaly in your application such as an integration error.

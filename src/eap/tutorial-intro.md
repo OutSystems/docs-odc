@@ -5,6 +5,12 @@ tags:
 
 # Tutorial
 
+<div class="info" markdown="1">
+
+Project Neo documentation is under construction. It's frequently updated and expanded. Leave your feedback and help us building the most usefull content.
+
+</div>
+
 Follow this tutorial to learn the basics of how to develop apps with OutSystems.
 
 In this tutorial you will create three projects: a Web App called **Calendar** that will use **TaskList** to provide service actions of creating tasks and changing their status, along with a Library called **Timeline**.

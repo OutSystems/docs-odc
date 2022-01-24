@@ -4,6 +4,12 @@ tags:
 ---
 # Task 2: Create a Library
 
+<div class="info" markdown="1">
+
+Project Neo documentation is under construction. It's frequently updated and expanded. Leave your feedback and help us building the most usefull content.
+
+</div>
+
 In Project Neo, apps can have strong dependencies to Libraries only. <!--Libraries are versioned and projects reuse elements from a specific Library version. -->For more information about reusing elements in Project Neo, see [Reuse elements across apps](reuse-elements.md).
 
 This task walks you through creating a Library and exposing an element for reuse.

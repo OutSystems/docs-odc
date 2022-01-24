@@ -5,6 +5,12 @@ tags:
 
 # Deploy your apps
 
+<div class="info" markdown="1">
+
+Project Neo documentation is under construction. It's frequently updated and expanded. Leave your feedback and help us building the most usefull content.
+
+</div>
+
 In Project Neo, you deploy your applications to stages. A stage is a step within your continuous delivery pipeline that includes Runtime resources. Project Neo includes three stages by default: development, quality assurance (QA), and production.
 
 Project Neo has a single code repository. When you 1-Click Publish in Service Studio, your app is containerized, deployed to the development stage, and a container image is stored in a registry. When you're ready to promote your app to a next stage your app deploys without the need to recompile code.

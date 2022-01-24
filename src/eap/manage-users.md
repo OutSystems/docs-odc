@@ -5,6 +5,12 @@ tags: user-management; authentication; lifecycle-management
 
 # Manage users
 
+<div class="info" markdown="1">
+
+Project Neo documentation is under construction. It's frequently updated and expanded. Leave your feedback and help us building the most usefull content.
+
+</div>
+
 This article provides an overview of how users set their names and passwords, and how authentication works in OutSystems.
 
 With the OutSystems identity service:
