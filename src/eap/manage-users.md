@@ -55,7 +55,7 @@ You can verify the user is deactivated, by selecting **Inactive** from the **Sta
 
 For security purposes, only users can change their passwords. To initiate the change password process, from the **Users & Access** portal, select the user whose password needs to be set, and click **Reset password**. An email is generated and sent to the user for them to create a new password.
 
-## Password Requirements
+## Password requirements
 
 The password must be at least 10 characters long. Additionally, the password must contain at least:
 
@@ -69,4 +69,4 @@ The password must be at least 10 characters long. Additionally, the password mus
 
 Authentication is the process of identifying and validating users who want access to OutSystems tools and apps. OutSystems uses Keycloak, an open source identity and access management solution.
 
-Users are associated with and authenticated against the organization to which they are a member. When users authenticate, their credentials are verified. Once authenticated, users continue on their journey and if they switch apps, they don't need to re-authenticate.
+Users are associated with and authenticated against the organization to which they're a member. When users authenticate, their credentials are verified. Once authenticated, users continue their journey and if they switch apps, they don't need to re-authenticate.
