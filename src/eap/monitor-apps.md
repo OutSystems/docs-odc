@@ -27,7 +27,4 @@ Currently, the following log files are available:
 * Application issues such as a slow query warnings
 * Activity logs showing which users are logging into an app as well as publishing or deploying
 
-**Integration Log** - helps you understand how quickly your app is responding to incoming requests and external services. This log shows the the amount of time it takes to complete actions in a given period. For example, this log shows how long it takes to get:
-
-* User information for a Rest (consume) action
-* HTML for a SOAP (Expose) action
+**Integration Log** - helps you understand how quickly your app is responding to incoming requests and external services. This log shows the the amount of time it takes to complete actions in a given period.
