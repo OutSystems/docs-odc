@@ -72,16 +72,7 @@ With the **Task** entity created, it's now time to give users a way to view and 
     
     ![Tasks list screen](images/task-list-screen-ss.png "Tasks list screen") 
 
-<!--
-## Change roles of screens to anonymous for testing
-
-<div class="info" markdown="1">
-
-EAP reportedly will not have roles. They still appear in the interface, so they are documented here.
-
-</div>
-
-1. Go to the **Interface** tab and select **Tasks** in the **MainFlow**. Click **Anonymous** in the **Roles** area so it it is easier to test the app during development.
+1. Go to the **Interface** tab and select **Tasks** in the **MainFlow**. Click **Anonymous** in the **Roles** area to test the app during development.
 
     ![Set Task entity to anonymous](images/set-task-entity-to-anonymous-ss.png "Set Task entity to anonymous") 
 
@@ -89,12 +80,11 @@ EAP reportedly will not have roles. They still appear in the interface, so they 
 
     <div class="info" markdown="1">
 
-    During the publish process you will receive the following security warning: You're exposing a Server Action for public access and without authentication. Consider removing the Anonymous Role from this Screen.
+    During the publish process you may receive the following security warning: "You're exposing a Server Action for public access and without authentication. Consider removing the Anonymous Role from this Screen."
 
-    For most business apps, access to interface screens is restricted to registered users. Before deployment to the quality or production environments, the role of these screens should be changed back to the default so they are not anonymous.
+    For most business apps, only registered users can access screens. Before deployment to the quality or production environments, set the users roles of screens by checking **Registered** and clearing the selection from **Anonymous**.
 
     </div>
--->
 
 Click the green **1-Click-Publish** button in the top center of the workspace so you can test your app to see if it works as expected.
 
@@ -140,4 +130,4 @@ Click the **1-Click Publish** button to make **TaskList** available for other pr
 
 ## Next step
 
-After follow the steps above, go to [Task 2: Create a Library App](tutorial-2-create-library.md) and follow the steps to complete the tutorial.
+After following the steps above, go to [Task 2: Create a Library App](tutorial-2-create-library.md) and follow the steps to complete the tutorial.

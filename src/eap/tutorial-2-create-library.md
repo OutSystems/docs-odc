@@ -137,4 +137,4 @@ At this point click the **1-Click Publish** button to make this Library availabl
 
 ## Next step
 
-After follow the steps above, go to [Task 3: Create a consumer Web App](tutorial-3-create-calendar.md) and follow the steps to complete the tutorial.
+After following the steps above, go to [Task 3: Create a consumer Web App](tutorial-3-create-calendar.md) and follow the steps to complete the tutorial.
