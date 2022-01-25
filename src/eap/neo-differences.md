@@ -1,5 +1,5 @@
 ---
-summary: Summary of Project Neo differences for OutSystems 11 users.  
+summary: Summary of Project Neo differences for OutSystems 11 developers.  
 tags:
 ---
 # Onboarding for OutSystems developers
@@ -32,11 +32,11 @@ The Portal for Project Neo consolidates your app and user management experience 
  
 ## Build once, deploy many times
  
-Project Neo uses the term "stage" instead of "environment." A stage (Dev, QA or Prod) is a step within your continuous delivery pipeline that includes Runtime resources. Project Neo separates Platform and Runtime resources, allowing development to scale independently of apps deployed to stages.
+Project Neo uses the term "stage" instead of "environment". A stage (Development, Test or Production) is a step within your continuous delivery pipeline that includes Runtime resources. Project Neo separates Platform and Runtime resources, allowing development to scale independently of apps deployed to stages.
  
-Project Neo has a centralized code repository, which enables you to build your app once, and then deploy it to multiple stages. In Project Neo, when you click 1-Click Publish in Service Studio, your code builds and your app gets deployed to the Dev stage. A container image also gets saved in a registry. When you're ready to promote your app to the next stage (for example, from Dev to QA), the version that exists in the registry gets promoted without the need to recompile any code. In Project Neo, Service Studio connects to the Platform, which pushes content to the Dev stage. Service Studio does not connect to the QA or Prod stage.
+Project Neo has a centralized code repository, which enables you to build your app once, and then deploy it to multiple stages. In Project Neo, when you click 1-Click Publish in Service Studio, your code builds and your app gets deployed to the Dev stage. A container image also gets saved in a registry. When you're ready to promote your app to the next stage (for example, from Development to Test), the version that exists in the registry gets promoted without the need to recompile any code. In Project Neo, Service Studio connects to the Platform, which pushes content to the Dev stage. Service Studio doesn't connect to the Test or Production stage.
  
-In contrast, OutSystems 11 has a code repository per environment (Dev, QA, and Prod), which requires rebuilding each time you deploy to a new environment. Additionally, in OutSystems 11, Service Studio connects to each environment where you build and deploy your apps.  
+In contrast, OutSystems 11 has a code repository per environment (Development, Test, and Production), which requires rebuilding each time you deploy to a new environment. Additionally, in OutSystems 11, Service Studio connects to each environment where you build and deploy your apps.  
  
 ## App-level development
  
@@ -57,7 +57,7 @@ Note the following regarding reuse in Project Neo:
 * Dependencies between apps (Web Apps or Mobile Apps) are always weak, which means that Entities shared between apps are always read-only; in Project Neo, to write to Entities, create a Service Action
 * Relationships between Entities in different apps work differently. In Project Neo:
     * The delete rule is always set to ignore
-    * A database constraint is not created in the database, as is done with OutSystems 11
+    * A database constraint isn't created in the database, as is done with OutSystems 11
 * Apps (Web or Mobile) can have strong dependencies to Libraries only; See [Reuse elements across apps](reuse-elements.md) for more information
 * Apps (Web or Mobile) consume a specific Library version; for example, app A can consume Library v1 and app B can consume Library v2
 * Many elements that could be public in OutSystems 11 can't be public in Project Neo; See [Reuse elements across apps](reuse-elements.md) for more information.
@@ -85,9 +85,9 @@ The following screen capture shows an example of setting a timer in Service Stud
  
 Note the following related to timers in Project Neo:
  
-* Currently, you can set timers in Service Studio, but not in the Portal
-* Timers are set in UTC (Coordinated Universal Time)
-* The "Weekday of month" option doesn't exist in Project Neo
+* Currently, you can set timers in Service Studio, but not in the Portal.
+* Timers are set in UTC (Coordinated Universal Time).
+* The "Weekday of month" option doesn't exist in Project Neo.
  
   
 ## Project Neo differences by task
@@ -96,13 +96,12 @@ The following table lists tasks you can complete in the Portal, as well as the i
  
 | Task | In O11 | In Project Neo |
 | ----------- | ----------- | ----------- |
-| Deploy an application to QA or Production | LifeTime, where you deploy apps to the QA or Production environment. | **Portal** > **Delivery** > **Deployments**. In Project Neo, you deploy to the QA or Prod stage. |
+| Deploy an application to another stage.| LifeTime, where you deploy apps to the Test or Production environment. | **Portal** > **Delivery** > **Deployments**. In Project Neo, you deploy to the Test or Production stage. |
 | Configure apps when deploying. Includes timers and email | LifeTime | **Portal** > **Apps** |
 | View apps and app details. Delete and deactivate apps | LifeTime | **Portal** > **Apps** |
-| Manage app dependencies | Service Studio | In Project Neo, you see errors in Service Studio when dependencies break. |
 | Manage IT users, roles, and permissions | LifeTime | **Portal** > **Users & access**. |
 | Manage end users | Users console | **Portal** > **Users & access** |
-| View logs and audit information; set logging levels | LifeTime | **Portal** > **Monitoring** |
+| View logs and audit information | LifeTime | **Portal** > **Monitoring** |
 | Access Forge components | Forge URL | **Portal** > **Forge** |
  
 ## Terminology mapping
@@ -111,6 +110,6 @@ The following table summarizes terminology differences between OutSystems 11 and
  
 | OutSystems 11 name | Project Neo name | Notes |
 | ----------- | ----------- | ----------- |
-| environment | stage | In Project Neo, the infrastructure where you develop and run your apps is fundamentally different. However, these terms (environment and stage), both represent the place where you deploy your apps to Dev, QA, and Prod. See [Deploy apps](deploy-apps.md) for more information about deploying apps in Project Neo. |
-| Reactive Web App | Web App | All Web Apps are reactive in Project Neo. Traditional Web Apps are not supported. |
+| environment | stage | In Project Neo, the infrastructure where you develop and run your apps is fundamentally different. However, these terms (environment and stage), both represent the place where you deploy your apps to Development, Test, and Production. See [Deploy apps](deploy-apps.md) for more information about deploying apps in Project Neo. |
+| Reactive Web App | Web App | All Web Apps are reactive in Project Neo. Traditional Web Apps aren't supported. |
 | module | N/A | Modules don't exist in Project Neo. |
