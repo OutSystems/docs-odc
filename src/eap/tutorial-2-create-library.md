@@ -10,7 +10,7 @@ Project Neo documentation is under construction. It's frequently updated and exp
 
 </div>
 
-In Project Neo, apps can have strong dependencies to Libraries only. <!--Libraries are versioned and projects reuse elements from a specific Library version. -->For more information about reusing elements in Project Neo, see [Reuse elements across apps](reuse-elements.md).
+In Project Neo, apps can have strong dependencies to Libraries only. For more information about reusing elements in Project Neo, see [Reuse elements across apps](reuse-elements.md).
 
 This task walks you through creating a Library and exposing an element for reuse.
 
@@ -20,38 +20,26 @@ Make sure you completed [Task 1: Create a Web App](tutorial-1-create-web-app.md)
 
 ## Create a Library and a Block
 
-Follow these steps
+Follow these steps to continue with the tutorial.
 
-1. Close the TaskList app and create a new **Library** called `TimeLine`.
+1. Close the TaskList app and create a new **Library** called `Timeline`.
 
     ![Create Library](images/create-library-ss.png "Create library") 
 
-1. Add OutSystems UI as a dependency to the **Timeline** Library. First search for `OutSystems` in publich elements.
+1. Add OutSystems UI as a dependency to the **Timeline** Library. First search for `OutSystems` in public elements.
 
     ![Search for dependencies in other apps](images/search-for-dependencies-in-other-apps-ss.png "Search for dependencies in other apps") 
 
-        
 1. Select **OutSystemsUI Theme** and click **Add Element**.
 
     ![Add dependency](images/add-dependency-ss.png "Add dependency") 
 
-    <div class="info" markdown="1">
 
-    All procedures and screens from this point forward are taken from O11 and must be changed. 
-
-    </div>
-
-
-1. In a like manner at the other three OutSystems UI themes:
-    * **OSUIMobileBase**
-    * **OSUIMobiliePhone**
-    * **OSUIMobileTablet**
-
-1. In the **Interface** tab right-click **UIFlow**, select **Add UI Flow** and give it the name **UIFlow1**. 
+1. In the **Interface** tab right-click **UI Flows**, select **Add UI Flow** and name it **UIFlow1**. 
 
     ![Add UI flow](images/add-ui-flow-ss.png "Add UI flow") 
 
-1. Click the **Theme** dropdown and select **OutsystemsUI**.
+1. Click the **Theme** dropdown and select **OutSystemsUI**.
 
     ![Select theme for flow](images/select-theme-for-flow-ss.png "Select theme for flow") 
 
