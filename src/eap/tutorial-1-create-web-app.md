@@ -35,7 +35,7 @@ Entities are elements that allow you to persist information in the database and 
 
 Now we’re going to create an entity called **Task** with three attributes: **Description**, **DueDate**, and **IsCompleted**.
 
-1. Go to the **Data** tab, right-click **Entities**, click **Add Entity**, and name it **Task**. 
+1. Go to the **Data** tab, right-click **Entities**, click **Add Entity to Database**, and name it **Task**. 
 
     ![Add entity to database](images/add-entity-ss.png "Add entity to database") 
 
@@ -120,7 +120,7 @@ In order for other projects to use the functionality of **TaskList**, it must be
 
     ![Add a second input parameter to the service action](images/add-second-service-action-input-parameter-ss.png "Add a second input parameter to the service action") 
 
-1. Go to the **Data** tab and drag the **CreateTask** entity attribute to the flashing blue node in the **AddTask** logic flow.
+1. Go to the **Data** tab and drag the **CreateTask** entity action to the flashing blue node in the **AddTask** logic flow.
 
     ![Add CreateTask to flow](images/add-create-task-to-flow-ss.png "Add CreateTask to flow") 
 
