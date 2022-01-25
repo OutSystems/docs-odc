@@ -19,6 +19,7 @@ Project Neo Portal provides an interface that guides you:
 1. Click **Open support case**.
 
     ![Open a support case in Project Neo Portal](images/neo-support-pl.png)
+    
 1. Ensure you're logged in, preferably using the same email that you're using in Project Neo. If necessary, sign up for a new account.
 1. Select **Report an incident**.
 1. When selecting the Infrastructure / Environment choose the activation code displayed in step 1. If the activation code isn't listed, type it at **Other Infrastructure**.
