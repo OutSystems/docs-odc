@@ -14,7 +14,7 @@ Project Neo documentation is under construction. It's frequently updated and exp
 This article provides an overview of the
 infrasturcture architecture of Project Neo.
 
-## OutSystems overview
+## Project Neo's cloud-native architecture
 Project Neo is cloud-native. This means that the infrastructure of both the development **Platform**, for building and deploying applications, and **Runtime**, for hosting and running the deployed applications, live in the cloud. 
 
 ### Platform 
@@ -32,11 +32,11 @@ Both the Platform and each of the Runtime stages have isolated, encrypted, and s
 
 ![infrastructure-architecture-runtime](images/infrastructure-architecture-runtime.png "Platform")
 
-## OutSystems cloud infrastructure
+## Cloud-native infrastructure
 Project Neo's cloud-native infrastructure lives in Amazon Web Services (AWS) Virginia region.
 
 ### Key Technologies
-The following is an overview of the best-in-class cloud technologies Project Neo uses.
+The following is an overview of the best-in-class cloud technologies that Project Neo uses.
 
 #### Kubernetes
  The beating heart of both the Platform and each of the Runtime stages is the **Kubernetes cluster**. Powered by Amazon's Elastic Kubernetes Service (EKS), clusters are isolated but scalable and self-healing compute capacity.
