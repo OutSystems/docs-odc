@@ -19,7 +19,10 @@ infrasturcture architecture of Project Neo.
 Project Neo is cloud-native. This means that the infrastructure of both the development **Platform**, for building and deploying applications, and **Runtime**, for hosting and running the deployed applications, live in the cloud. 
 
 ### Platform 
+The development **Platform** comprises multiple services, each responsible for specific functions to facilitate the building and deployment of applications. All the Platform services benefit from a resilient microservices design with a web service interface. Developers, DevOps, and Architects interact with these services using tools such as Service Studio and the Project Neo Portal.
+
 An example of a service is Build Services, triggered by a developer clicking the 1-Click Publish (1CP) button in Service Studio, which takes the visual language model developed in Service Studio (.oml file) and turns it into a compiled application to deploy. All the Platform services benefit from automatic recoveries and continuous upgrades, leveraging the cloud-native architecture.
+
 
 ![infrastructure-architecture-platform](images/infrastructure-architecture-platform.png "Platform")
 
