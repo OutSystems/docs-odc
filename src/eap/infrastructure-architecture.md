@@ -1,6 +1,5 @@
 ---
-summary: Overview of the
-infrasturcture architecture of Project Neo.
+summary: Overview of the infrasturcture architecture of Project Neo.
 tags: 
 ---
 
