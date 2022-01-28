@@ -10,6 +10,8 @@ tags:
 
 Project Neo documentation is under construction. It's frequently updated and expanded. Leave your feedback and help us build the most useful content.
 
+</div>
+
 This article provides an overview of the
 infrasturcture architecture of Project Neo.
 
