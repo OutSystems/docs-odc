@@ -29,7 +29,11 @@ Additionally, identity service facilitates onboarding by enabling new users to:
 
 OutSystems users are given permissions to perform tasks such as creating and managing users, creating apps, and monitoring or troubleshooting applications.
 
-Currently all users have the same permissions enabling access and use of all the available functionality. This means you can perform tasks that are usually restricted to only those with the proper permissions. For example, like adding users to your OutSystems or organization account.
+<div class="warning" markdown="1">
+
+Currently in the Project Neo Early Access Program, all users have the same permissions for enabling access and use of all the available functionalities. This means that all users can perform tasks that are usually restricted to a subset of admin users.
+
+</div>
 
 ## Organization (Technical) user
 
