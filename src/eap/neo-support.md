@@ -7,23 +7,28 @@ tags:
 
 <div class="info" markdown="1">
 
-Project Neo documentation is under construction. It's frequently updated and expanded. Leave your feedback and help us building the most useful content.
+Project Neo documentation is under construction. It's frequently updated and expanded. Leave your feedback and help us build the most useful content.
 
 </div>
 
 During your participation on the Project Neo Early Access Program (EAP), we encourage you to submit any bugs and contribute to our product's continuous improvement.
 
-Project Neo Portal provides an interface that guides you:
+<div class="info" markdown="1">
 
-1. Under help, click **Support**, your activation code is displayed.
-1. Click **Open support case**.
+Ensure you're signed in before opening a support case. To sign in, use the same email address that you're using in Project Neo. If necessary, sign up for a new account.
+
+</div>
+
+To open a support case, follow these steps in Project Neo Portal:
+
+1. Click the Help icon and select **Support**. Take a note of your activation code.
 
     ![Open a support case in Project Neo Portal](images/neo-support-pl.png)
 
-1. Ensure you're logged in, preferably using the same email that you're using in Project Neo. If necessary, sign up for a new account.
+1. Click **Open support case**.
 
 1. Select **Report an incident**.
 
-1. When selecting the Infrastructure / Environment choose the activation code displayed in step 1. If the activation code isn't listed, type it at **Other Infrastructure**.
+1. When selecting the **Infrastructure** / **Environment** choose your activation code. If the activation code isn't listed, enter it in **Other Infrastructure**.
 
-1. Fill in the rest form.
+1. Fill in the rest of the form.
