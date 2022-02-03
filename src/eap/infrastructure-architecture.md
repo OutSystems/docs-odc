@@ -3,7 +3,7 @@ summary: Overview of the infrasturcture architecture of Project Neo.
 tags: 
 ---
 
-# Infrastructure architecture
+# Project Neo's cloud-native architecture
 
 <div class="info" markdown="1">
 
@@ -11,8 +11,7 @@ Project Neo documentation is under construction. It's frequently updated and exp
 
 </div>
 
-This article provides an overview of the
-infrasturcture architecture of Project Neo.
+This article provides an overview of Project Neo's cloud-native architecture.
 
 ## Project Neo's cloud-native architecture
 Project Neo is cloud-native. This means that the infrastructure of both the development **Platform**, for building and deploying applications, and the independent **Runtime**, for hosting and running the deployed applications, live in the cloud.
@@ -54,25 +53,21 @@ The following diagram shows the high-level architecture of the Runtime. This dia
 
 ![Runtime](images/infrastructure-architecture-runtime.png) 
 
-## Cloud-native infrastructure
-
-Where in the cloud does the infrastructure for the OutSystems cloud platform live? For the Project Neo Early Access Programme (EAP), Amazon Web Services (AWS) Virginia region.
-
-### Key technologies
+## Key technologies of the cloud-native infrastructure
 
 The following is an overview of the best-in-class cloud technologies that Project Neo uses.
 
-#### Kubernetes
+### Kubernetes
 
 The beating heart of both the Platform and each of the Runtime stages is the **Kubernetes cluster**. 
 
 Powered by AWS Elastic Kubernetes Service (EKS), the Platform and each of the Runtime stages use a cluster: an isolated, scalable, and self-healing compute capacity. 
 
-##### Platform cluster
+#### Platform cluster
 
 For the Platform, each service creates one or more jobs in the Platform cluster to process. For example, for the Build Service, these jobs would include generating the compiled code from the OutSystems visual language model (.oml file), optimizing the compiled code, and then generating the compiled application. Jobs are finite tasks running in the Platform cluster that facilitate the building and deployment of applications (_Job 1 Job 2 Job 3 (...) Job N_ in the [Platform diagram](#platform)). The Platform cluster compute capacity is scalable, which means multiple developers can use the Build Service or any other service concurrently without any performance degradation of the Platform. This lets multiple teams rapidly scale the development process independently of the deployed applications.
 
-##### Runtime cluster
+#### Runtime cluster
 
 **Applications** run in each cluster of each of the Runtime stages (_App 1 App 2 App 3 (...) App N_ in the [Runtime diagram](#runtime), this happens to be the Production stage). 
 
@@ -82,9 +77,9 @@ Each application is packaged into a separate container, making the infrastructur
 
 Application containers running in the Production stage cluster are replicated across multiple availability zones (AZs) to ensure **high availability (HA)** for applications running in production. 
 
-#### Databases and data stores
+### Databases and data stores
 
-##### Platform data
+#### Platform data
 
 Service Studio and Project Neo Portal connect to the Platform API Gateway, which handles all the requests to the Platform services. Each service creates one or more jobs for the cluster to process, which make calls to the databases and data stores through the Data Service service—think of this as a data access layer. 
 
@@ -97,17 +92,17 @@ The following table lists and describes the Platform databases and data stores.
 | Configuration and metadata from the Platform Build Service. | DynamoDB | A fully managed, serverless, key-value NoSQL database designed to run high-performance applications at any scale. | HA by default. |
 | Current and historic application container images. | Elastic Container Registry (ECR) | A fully-managed Docker container registry that makes it easy to store, share, and deploy container images. | HA by default. |
 
-##### Runtime data
+#### Runtime data
 
 Each Runtime stage has an isolated Amazon Aurora database that scales for both compute and storage and has High Availability through replication across multiple AZs. High data durability is ensured through data replication across multiple AZs.
 
-##### Platform to Runtime
+#### Platform to Runtime
 
 In addition to storing the application container image in the Elastic Container Registry (ECR), the Build Service passes it to the Application Deployment service on the specified Runtime stage for deployment. The Application Deployment service coordinates the deployment of the application container to the cluster.
 
 The idea of "Build once, deploy anywhere"—the build process not making strong assumptions about the environment the application is to be deployed into—is a foundational part of the **continuous delivery** approach to software development.
 
-### Logging, Monitoring, and Analytics
+## Logging, monitoring, and analytics
 
 Logs and metrics are collected from each of the application containers running in each Runtime stage cluster. Logs can be filtered on the Project Neo Portal between a user-defined time range and with a text search that uses Elasticsearch capabilities.
 
