@@ -52,7 +52,7 @@ In Project Neo, the **Runtime** is independent of the Platform and comprises mul
 
 The following diagram shows the high-level architecture of the Runtime. This diagram represents the Production stage with users connecting.
 
-![Runtime](images/infrastructure-architecture-platform.png) 
+![Runtime](images/infrastructure-architecture-runtime.png) 
 
 ## Cloud-native infrastructure
 
@@ -76,7 +76,7 @@ For the Platform, each service creates one or more jobs in the Platform cluster 
 
 **Applications** run in each cluster of each of the Runtime stages (_App 1 App 2 App 3 (...) App N_ in the [Runtime diagram](#runtime), this happens to be the Production stage). 
 
-To run on a Kubernetes cluster, applications are packaged into a **container**—a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings. In the example of the Build Service jobs in the previous section, the compiled application generated is a **container image**. An instance of a container image is a container.
+To run on a Kubernetes cluster, applications are packaged into a **container**—a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings.<sup>[[1]](https://www.docker.com/resources/what-container)</sup> In the example of the Build Service jobs in the previous section, the compiled application generated is a **container image**. An instance of a container image is a container.
 
 Each application is packaged into a separate container, making the infrastructure resilient to individual resource-intensive application(s) that degrade the performance of other applications.
 
