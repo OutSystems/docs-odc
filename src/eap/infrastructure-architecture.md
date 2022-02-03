@@ -1,9 +1,9 @@
 ---
-summary: Overview of the infrasturcture architecture of Project Neo.
+summary: Overview of the infrastructure architecture of Project Neo.
 tags: 
 ---
 
-# Project Neo's cloud-native architecture
+# Cloud-native architecture of Project Neo
 
 <div class="info" markdown="1">
 
@@ -14,6 +14,7 @@ Project Neo documentation is under construction. It's frequently updated and exp
 This article provides an overview of Project Neo's cloud-native architecture.
 
 ## Project Neo's cloud-native architecture
+
 Project Neo is cloud-native. This means that the infrastructure of both the development **Platform**, for building and deploying applications, and the independent **Runtime**, for hosting and running the deployed applications, live in the cloud.
 
 ### OutSystems cloud platform
@@ -59,7 +60,7 @@ The following is an overview of the best-in-class cloud technologies that Projec
 
 ### Kubernetes
 
-The beating heart of both the Platform and each of the Runtime stages is the **Kubernetes cluster**. 
+The core of both the Platform and each of the Runtime stages is the **Kubernetes cluster**. 
 
 Powered by AWS Elastic Kubernetes Service (EKS), the Platform and each of the Runtime stages use a cluster: an isolated, scalable, and self-healing compute capacity. 
 
