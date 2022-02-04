@@ -30,7 +30,7 @@ In addition to access to **Service Studio**, each customer is granted access to 
 
 The following diagram shows the high-level architecture of the OutSystems cloud platform.
 
-![OutSystems cloud platform](images/infrastructure-architecture-cloud.png)
+![OutSystems cloud platform](images/infrastructure-architecture-cloud-diag.png)
 
 Each OutSystems cloud platform is isolated by network namespace, ensuring complete network isolation. All internal requests between the Platform and Runtime stages are made over Transport Layer Security (TLS) through NATS, a secure messaging system. All external requests to both the Platform and the Production stage of the Runtime go through a Content Delivery Network (CDN) and Web Application Firewall (WAF).
 
@@ -44,7 +44,7 @@ All the Platform services are multi-tenant and benefit from automatic recoveries
 
 The following diagram shows the high-level architecture of the development Platform.
 
-![Platform](images/infrastructure-architecture-platform.png) 
+![Platform](images/infrastructure-architecture-platform-diag.png) 
 
 #### Runtime { #runtime }
 
@@ -52,7 +52,7 @@ In Project Neo, the **Runtime** is independent of the Platform and comprises mul
 
 The following diagram shows the high-level architecture of the Runtime. It represents the Production stage with users connecting.
 
-![Runtime](images/infrastructure-architecture-runtime.png) 
+![Runtime](images/infrastructure-architecture-runtime-diag.png) 
 
 ## Key technologies of the cloud-native infrastructure
 
@@ -76,7 +76,7 @@ The compute capacity is adjusted in real-time, with no user interaction required
 
 The following diagram represents how auto scaling works inside the Platform cluster.
 
-![Platform Autoscale](images/infrastructure-architecture-platform-autoscale.png) 
+![Platform Autoscale](images/infrastructure-architecture-platform-autoscale-diag.png) 
 
 The **auto scale controller** monitors the CPU and RAM metrics of each running job. It continuously benchmarks these metrics against the cluster compute capacity allocated to each job and can take one of two scaling actions:
 
@@ -103,7 +103,7 @@ The compute capacity is adjusted in real-time, with no user interaction required
 
 The following diagram represents how auto scaling works inside the Platform cluster. It shows the Production stage as application containers are replicated across multiple AZs.
 
-![Runtime Autoscale](images/infrastructure-architecture-runtime-autoscale.png) 
+![Runtime Autoscale](images/infrastructure-architecture-runtime-autoscale-diag.png) 
 
 The **auto scale controller** continuously monitors the CPU and RAM metrics of each of the application containers. It continuously benchmarks these metrics against the cluster compute capacity allocated to each application container and can take one of two scaling actions:
 
@@ -133,7 +133,7 @@ Each Runtime stage has an isolated Amazon Aurora database that scales for both c
 
 The following diagram shows how this is achieved.
 
-![DB Autoscale](images/infrastructure-architecture-db-autoscale.png) 
+![DB Autoscale](images/infrastructure-architecture-db-autoscale-diag.png) 
 
 With the Amazon Aurora database architecture, compute and storage is decoupled.
 
