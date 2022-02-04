@@ -50,7 +50,7 @@ The following diagram shows the high-level architecture of the development Platf
 
 In Project Neo, the **Runtime** is independent of the Platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed applications. The default Runtime setup is a Development stage, a Test stage, and a Production stage. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
 
-The following diagram shows the high-level architecture of the Runtime. This diagram represents the Production stage with users connecting.
+The following diagram shows the high-level architecture of the Runtime. It represents the Production stage with users connecting.
 
 ![Runtime](images/infrastructure-architecture-runtime.png) 
 
@@ -66,7 +66,24 @@ Powered by AWS Elastic Kubernetes Service (EKS), the Platform and each of the Ru
 
 #### Platform cluster
 
-For the Platform, each service creates one or more jobs in the Platform cluster to process. For example, for the Build Service, these jobs would include generating the compiled code from the OutSystems visual language model (.oml file), optimizing the compiled code, and then generating the compiled application. Jobs are finite tasks running in the Platform cluster that facilitate the building and deployment of applications (_Job 1 Job 2 Job 3 (...) Job N_ in the [Platform diagram](#platform)). The Platform cluster compute capacity is scalable, which means multiple developers can use the Build Service or any other service concurrently without any performance degradation of the Platform. This lets multiple teams rapidly scale the development process independently of the deployed applications.
+For the Platform, each service creates one or more jobs in the Platform cluster to process. For example, for the Build Service, these jobs would include generating the compiled code from the OutSystems visual language model (.oml file), optimizing the compiled code, and then generating the compiled application. Jobs are finite tasks running in the Platform cluster that facilitate the building and deployment of applications (_Job 1 Job 2 Job 3 (...) Job N_ in the [Platform diagram](#platform)).
+
+##### Auto scaling
+
+The compute capacity for each running Platform service job is scalable, which means multiple developers can use the Build Service or any other service concurrently without any performance degradation of the Platform. This lets multiple teams rapidly scale the development process independently of the deployed applications.
+
+The compute capacity is adjusted in real-time, with no user interaction required.
+
+The following diagram represents how auto scaling works inside the Platform cluster.
+
+![Platform Autoscale](images/infrastructure-architecture-platform-autoscale.png) 
+
+The **auto scale controller** monitors the CPU and RAM metrics of each running job. It continuously benchmarks these metrics against the cluster compute capacity allocated to each job and can take one of two scaling actions:
+
+* Replicate the running job to optimize the use of the allocated compute capacity.
+* Allocate additional cluster compute capacity to the running job if the CPU and RAM metrics for the job exceed a threshold.
+
+Because the overall compute capacity for the isolated Platform cluster is resourced from a multi-tenant pool, it is scalable.
 
 #### Runtime cluster
 
@@ -76,7 +93,24 @@ To run on a Kubernetes cluster, applications are packaged into a **container**â€
 
 Each application is packaged into a separate container, making the infrastructure resilient to individual resource-intensive application(s) that degrade the performance of other applications.
 
-Application containers running in the Production stage cluster are replicated across multiple availability zones (AZs) to ensure **high availability (HA)** for applications running in production. 
+Application containers running in the Production stage cluster are replicated across multiple availability zones (AZs) to ensure **high availability (HA)** for applications running in production. The CDN is responsible for load-balancing users across AZs. 
+
+##### Auto scaling
+
+The compute capacity for each application container running in each Runtime stage is scalable. This lets each of your applications scale independently.
+
+The compute capacity is adjusted in real-time, with no user interaction required.
+
+The following diagram represents how auto scaling works inside the Platform cluster. It shows the Production stage as application containers are replicated across multiple AZs.
+
+![Runtime Autoscale](images/infrastructure-architecture-runtime-autoscale.png) 
+
+The **auto scale controller** continuously monitors the CPU and RAM metrics of each of the application containers. It continuously benchmarks these metrics against the cluster compute capacity allocated to each application container and can take one of two scaling actions:
+
+* Replicate the application container to optimize the use of the allocated compute capacity and distribution across AZs.
+* Allocate additional cluster compute capacity to the application container if the CPU and RAM metrics for the application container exceed a threshold.
+
+Because the overall compute capacity for the isolated Runtime stage cluster is resourced from a multi-tenant pool, it is scalable.
 
 ### Databases and data stores
 
@@ -95,7 +129,17 @@ The following table lists and describes the Platform databases and data stores.
 
 #### Runtime data
 
-Each Runtime stage has an isolated Amazon Aurora database that scales for both compute and storage and has High Availability through replication across multiple AZs. High data durability is ensured through data replication across multiple AZs.
+Each Runtime stage has an isolated Amazon Aurora database that scales for both compute and storage and has HA through instance replication across multiple AZs. High data durability is ensured through data replication across multiple AZs.
+
+The following diagram shows how this is achieved.
+
+![DB Autoscale](images/infrastructure-architecture-db-autoscale.png) 
+
+With the Amazon Aurora database architecture, compute and storage is decoupled.
+
+Amazon Aurora auto scaling adjusts the number of Aurora instance replicas using single-master replication. A replica is added if  CPU utilization exceeds a threshold.
+
+Cluster storage volumes automatically scale as the amount of data stored increases.
 
 #### Platform to Runtime
 
