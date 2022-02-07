@@ -50,7 +50,7 @@ The following diagram shows the high-level architecture of the development Platf
 
 In Project Neo, the **Runtime** is independent of the Platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed applications. The default Runtime setup is a Development stage, a Test stage, and a Production stage. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
 
-The following diagram shows the high-level architecture of the Runtime. It represents the Production stage with users connecting.
+The following diagram shows the high-level architecture of the Runtime. It shows the Production stage with users connecting.
 
 ![Runtime](images/cloud-architecture-runtime-diag.png) 
 
@@ -74,11 +74,11 @@ The compute capacity for each running Platform service job is scalable, which me
 
 The compute capacity is adjusted in real-time, with no user interaction required.
 
-The following diagram represents how auto scaling works inside the Platform cluster.
+The following diagram shows how auto scaling works inside the Platform cluster.
 
 ![Platform Autoscale](images/cloud-architecture-platform-k8s-diag.png) 
 
-The **auto scale controller** monitors the CPU and RAM metrics of each running job. It continuously benchmarks these metrics against the cluster compute capacity allocated to each job and can take one of two scaling actions:
+The **auto scale controller** monitors the CPU and RAM metrics of each running job. It continuously benchmarks these metrics against the cluster compute capacity allocated to each job and can:
 
 * Replicate the running job to optimize the use of the allocated compute capacity.
 * Allocate additional cluster compute capacity to the running job if the CPU and RAM metrics for the job exceed a threshold.
@@ -87,7 +87,7 @@ Because the overall compute capacity for the isolated Platform cluster is resour
 
 #### Runtime cluster
 
-**Applications** run in each cluster of each of the Runtime stages (_App 1 App 2 App 3 (...) App N_ in the [Runtime diagram](#runtime), this is the Production stage. 
+**Applications** run in each cluster of each of the Runtime stages (_App 1 App 2 App 3 (...) App N_ in the [Runtime diagram](#runtime)).
 
 To run on a Kubernetes cluster, applications are packaged into a **container**—a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings.<sup>[[1]](https://www.docker.com/resources/what-container)</sup> In the example of the Build Service jobs in the previous section, the compiled application generated is a **container image**. An instance of a container image is a container.
 
@@ -101,11 +101,11 @@ The compute capacity for each application container running in each Runtime stag
 
 The compute capacity is adjusted in real-time, with no user interaction required.
 
-The following diagram shows how auto scaling works inside the Platform cluster. It shows the Production stage as application containers are replicated across multiple AZs.
+The following diagram shows how auto scaling works inside the Runtime cluster. It shows the Production stage as application containers are replicated across multiple AZs.
 
 ![Runtime Autoscale](images/cloud-architecture-runtime-scale-diag.png) 
 
-The **auto scale controller** continuously monitors the CPU and RAM metrics of each application container. It continuously benchmarks these metrics against the cluster compute capacity allocated to each application container and can: 
+The **auto scale controller** monitors the CPU and RAM metrics of each application container. It continuously benchmarks these metrics against the cluster compute capacity allocated to each application container and can: 
 
 * Replicate the application container to optimize the use of the allocated compute capacity and distribution across AZs.
 * Allocate additional cluster compute capacity to the application container if the CPU and RAM metrics for the application container exceed a threshold.
@@ -116,7 +116,7 @@ The overall compute capacity for the isolated Runtime stage cluster is scalable 
 
 #### Platform data
 
-Service Studio and the Project Neo Portal connect to the Platform API Gateway, which handles all the requests to the Platform services. Each service creates one or more jobs for the cluster to process, which makes calls to the databases and data stores through the Data Service service—think of this as a data access layer. 
+Service Studio and the Project Neo Portal connect to the Platform API Gateway, which handles all the requests to the Platform services. Each service creates one or more jobs for the cluster to process, which make calls to the databases and data stores through the Data Service service—think of this as a data access layer. 
 
 The following table lists and describes the Platform databases and data stores.
 
