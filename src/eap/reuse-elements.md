@@ -21,7 +21,7 @@ You can share public elements across your apps to accelerate development and ena
  
 **Weak dependencies** (for example, reusing a static entity) can exist between the following app types:
  
-* Web Apps or Mobile Apps. Web and Mobile Apps can share Service Actions, entities, status entities, and screens.
+* Web Apps or Mobile Apps. Web and Mobile Apps can share Service Actions, Entities, Static Entities, and Screens.
 
 ## Libraries
  
@@ -46,6 +46,7 @@ The following table lists elements and their possible Public property values.
 | Scripts         | No                              | No                                   |
 | Server Actions  | No                              | Yes                                  |
 | Service Actions | Yes                             | Not applicable                       |
+| Entities        | Yes                             | Not applicable                       |
 | Static Entities | Yes                             | Yes                                  |
 | Structures      | No                              | No                                   |
 | Themes          | No                              | Yes                                  |
@@ -61,7 +62,7 @@ This creates a Service Action that invokes the Server Action and its properties.
  
 ## View app reuse in the Portal
 
-You can view a list of apps and the stage on which they are deployed in the Project Neo Portal. When you click an app, you see the following details:
+You can view a list of apps and the stage on which they're deployed in the Project Neo Portal. When you click an app, you see the following details:
 
 * The stage on which the app is deployed
 * The app's consumers or producers
