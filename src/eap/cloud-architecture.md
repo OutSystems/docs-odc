@@ -78,12 +78,12 @@ The following diagram shows how auto scaling works inside the Platform cluster.
 
 ![Platform Autoscale](images/cloud-architecture-platform-k8s-diag.png) 
 
-The **auto scale controller** monitors the CPU and RAM metrics of each running job. It continuously benchmarks these metrics against the cluster compute capacity allocated to each job and can:
+The **auto scale controller** monitors the CPU and RAM metrics of each running job. It continuously checks these metrics against the cluster compute capacity allocated to each job and can:
 
 * Replicate the running job to optimize the use of the allocated compute capacity.
 * Allocate additional cluster compute capacity to the running job if the CPU and RAM metrics for the job exceed a threshold.
 
-Because the overall compute capacity for the isolated Platform cluster is resourced from a multi-tenant pool, it is scalable.
+Because the overall compute capacity for the isolated Platform cluster is resourced from a multi-tenant pool, it's scalable.
 
 #### Runtime cluster
 
@@ -105,12 +105,12 @@ The following diagram shows how auto scaling works inside the Runtime cluster. I
 
 ![Runtime Autoscale](images/cloud-architecture-runtime-scale-diag.png) 
 
-The **auto scale controller** monitors the CPU and RAM metrics of each application container. It continuously benchmarks these metrics against the cluster compute capacity allocated to each application container and can: 
+The **auto scale controller** monitors the CPU and RAM metrics of each application container. It continuously checks these metrics against the cluster compute capacity allocated to each application container and can: 
 
 * Replicate the application container to optimize the use of the allocated compute capacity and distribution across AZs.
 * Allocate additional cluster compute capacity to the application container if the CPU and RAM metrics for the application container exceed a threshold.
 
-The overall compute capacity for the isolated Runtime stage cluster is scalable because it is resourced from a multi-tenant pool.
+The overall compute capacity for the isolated Runtime stage cluster is scalable because it's resourced from a multi-tenant pool.
 
 ### Databases and data stores
 
