@@ -21,7 +21,7 @@ Project Neo is cloud-native. This means that the infrastructure of both the deve
 
 In addition to access to **Service Studio**, each customer is granted access to an **OutSystems cloud platform**. This consists of the following:
 
-* Access to the **Project Neo Portal**.
+* Access to the [**Project Neo Portal**](neo-differences.md#neo-portal).
 * Access to multi-tenant development **Platform** services.
 * A default Runtime setup of three stages: a **Development** stage, a **Test** stage, and a **Production** stage.
 * A set of isolated, encrypted, and scalable databases and data stores for the Platform services data.
@@ -32,11 +32,11 @@ The following diagram shows the high-level architecture of the OutSystems cloud 
 
 ![OutSystems cloud platform](images/cloud-architecture-diag.png)
 
-Each OutSystems cloud platform is isolated by network namespace, ensuring complete network isolation. All internal requests between the Platform and Runtime stages are made over Transport Layer Security (TLS) through NATS, a secure messaging system. All external requests to both the Platform and the Production stage of the Runtime go through a Content Delivery Network (CDN) and Web Application Firewall (WAF).
+All internal requests between the Platform and Runtime stages are made over Transport Layer Security (TLS) through NATS, a secure messaging system. All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF).
 
 #### Platform { #platform }
 
-The development **Platform** comprises multiple services, each responsible for specific functions that facilitate the building and deployment of applications. All the Platform services benefit from a resilient microservices design with a web service interface. Developers, DevOps engineers, and architects interact with these services using tools such as Service Studio and the Project Neo Portal.
+The development **Platform** comprises multiple services, each responsible for specific functions that facilitate the building and deployment of applications. All the Platform services benefit from a resilient microservices design with a RESTful API web service interface. Developers, DevOps engineers, and architects interact with these services using tools such as Service Studio and the Project Neo Portal.
 
 An example of a service is the Build Service. Triggered by a developer clicking the 1-Click Publish button in Service Studio, the Build Service takes the visual language model developed in Service Studio (.oml file) and turns it into a compiled application to deploy. 
 
@@ -93,7 +93,7 @@ To run on a Kubernetes cluster, applications are packaged into a **container**â€
 
 Each application is packaged into a separate container, making the infrastructure resilient to individual resource-intensive application(s) that degrade the performance of other applications.
 
-Application containers running in the Production stage cluster are replicated across multiple availability zones (AZs) to ensure **high availability (HA)** for applications running in production. The CDN is responsible for load-balancing users across AZs. 
+Application containers running in the Production stage cluster are replicated across multiple availability zones (AZs) to ensure **high availability (HA)** for applications running in production.
 
 ##### Auto scaling
 
@@ -137,8 +137,6 @@ The following diagram shows how this is achieved.
 
 With the Amazon Aurora database architecture, compute and storage is decoupled.
 
-Amazon Aurora auto scaling adjusts the number of Aurora instance replicas using single-master replication. A replica is added if  CPU utilization exceeds a threshold.
-
 Cluster storage volumes automatically scale as the amount of data stored increases.
 
 #### Platform to Runtime
@@ -149,7 +147,7 @@ The idea of "Build once, deploy anywhere"â€”the build process not making strong 
 
 ## Logging, monitoring, and analytics
 
-Logs and metrics are collected from each of the application containers running in each Runtime stage cluster. Logs can be filtered on the Project Neo Portal between a user-defined time range and with a text search that uses Elasticsearch capabilities.
+Logs and metrics are collected from each of the application containers running in each Runtime stage cluster. Logs can be filtered on the Project Neo Portal between a user-defined time range and with a text search.
 
 Automatic monitoring by EKS replaces unhealthy application containers running in each Runtime stage cluster with a replica.
 

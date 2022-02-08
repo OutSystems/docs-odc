@@ -23,9 +23,9 @@ Project Neo delivers a modern architecture based on best practices in cloud-nati
 * Disaster recovery, with app-level high availability configuration  
 * The ability to take advantage of the latest Project Neo versions with pain-free upgrades
  
-## Unified experience
+## Unified experience  { #neo-portal }
  
-The Portal for Project Neo consolidates your app and user management experience in one place. It consolidates functionality that previously existed across LifeTime, Service Center, and the Users application.
+The Project Neo Portal consolidates your app and user management experience in one place. It consolidates functionality that previously existed across LifeTime, Service Center, and the Users application.
  
 ![portal-deployments](images/portal-deployments-ss.png "Deploy apps")
  
