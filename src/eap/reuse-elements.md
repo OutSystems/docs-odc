@@ -48,7 +48,7 @@ The following table lists elements and their possible Public property values.
 | Service Actions | Yes                             | Not applicable                       |
 | Entities        | Yes                             | Not applicable                       |
 | Static Entities | Yes                             | Yes                                  |
-| Structures      | No                              | No                                   |
+| Structures      | Yes                             | Yes                                  |
 | Themes          | No                              | Yes                                  |
  
 ## Expose a Server Action in an app
