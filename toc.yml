@@ -6,5 +6,6 @@
 - href: eap/deploy-apps.md
 - href: eap/monitor-apps.md
 - href: eap/neo-support.md
-- href: eap/cloud-architecture.md
-
+- href: eap/architecture/intro.md
+- topics:
+  - href: eap/architecture/networking.md
