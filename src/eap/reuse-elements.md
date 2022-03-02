@@ -35,21 +35,21 @@ The following table lists elements and their possible Public property values.
  
 | Element type    | Can elements be public in apps? | Can elements be public in libraries? |
 | --------------- | ------------------------------- | ------------------------------------ |
-| Blocks          | No                              | Yes                                  |
-| Client Actions  | No                              | Yes                                  |
-| Images          | No                              | No                                   |
-| Local entities  | No                              | Not applicable                       |
-| Processes       | No                              | Not applicable                       |
-| Resources       | No                              | No                                   |
-| Roles           | No                              | Not applicable                       |
-| Screens         | Yes                             | No                                   |
-| Scripts         | No                              | No                                   |
-| Server Actions  | No                              | Yes                                  |
-| Service Actions | Yes                             | Not applicable                       |
-| Entities        | Yes                             | Not applicable                       |
-| Static Entities | Yes                             | Yes                                  |
-| Structures      | Yes                             | Yes                                  |
-| Themes          | No                              | Yes                                  |
+| Blocks                    | No                              | Yes                                  |
+| Client Actions            | No                              | Yes                                  |
+| Images                    | No                              | No                                   |
+| Local storage Entities    | No                              | Not applicable                       |
+| Processes                 | No                              | Not applicable                       |
+| Resources                 | No                              | No                                   |
+| Roles                     | No                              | Not applicable                       |
+| Screens                   | Yes                             | No                                   |
+| Scripts                   | No                              | No                                   |
+| Server Actions            | No                              | Yes                                  |
+| Service Actions           | Yes                             | Not applicable                       |
+| Entities                  | Yes                             | Not applicable                       |
+| Static Entities           | Yes                             | Yes                                  |
+| Structures                | Yes                             | Yes                                  |
+| Themes                    | No                              | Yes                                  |
  
 ## Expose a Server Action in an app
  
