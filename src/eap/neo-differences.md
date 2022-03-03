@@ -43,9 +43,7 @@ Project Neo removes the concept of modules. You don't break apps into separate m
  
 ## Libraries
  
-Project Neo elevates Libraries to a top-level concept. Libraries exist at the same level as Web Apps and Mobile Apps, and they have their own lifecycle. At this point, developers can choose whether to use the latest version of a Library or an earlier version.  
- 
-In a later Project Neo version, apps will be able to consume different versions of a Library, and developers will be able to choose which version an app uses. For example, you can make a branding change by updating the style guide in a Library. Then, you can roll out that change one app at a time, rather than updating all apps at once. Deployed apps can coexist with old and new branding, based on the Library version each app consumes.
+Project Neo elevates Libraries to a top-level concept. Libraries exist at the same level as Web Apps and Mobile Apps, and they have their own lifecycle. 
  
 ## Element reuse
  

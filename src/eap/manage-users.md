@@ -67,6 +67,6 @@ The password must be at least 10 characters long. Additionally, the password mus
 
 ## Authentication
 
-Authentication is the process of identifying and validating users who want access to OutSystems tools and apps. OutSystems uses Keycloak, an open source identity and access management solution, to authenticate users.
+Authentication is the process of identifying and validating users who want access to OutSystems tools and apps.
 
 Users are associated with and authenticated against the organization to which they're a member. When users provide username and password, their credentials are verified. Once authenticated, users can switch apps without needing reauthentication.
