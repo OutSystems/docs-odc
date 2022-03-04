@@ -9,3 +9,9 @@
 - href: eap/architecture/intro.md
 - topics:
   - href: eap/architecture/networking.md
+
+# Building apps
+- href: eap/building-apps/intro.md
+- topics:
+# Data in OutSystems apps
+    - href: eap/building-apps/data/intro.md
