@@ -11,5 +11,4 @@ Project Neo documentation is under construction. It's frequently updated and exp
 
 </div>
 
-
 Project Neo lets you use various tools to speed up the development of your apps.

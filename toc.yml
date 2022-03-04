@@ -1,4 +1,3 @@
-
 - href: eap/neo-differences.md
 - href: eap/reuse-elements.md
 - href: eap/manage-users.md
@@ -9,9 +8,10 @@
 - href: eap/architecture/intro.md
 - topics:
   - href: eap/architecture/networking.md
-
 # Building apps
 - href: eap/building-apps/intro.md
 - topics:
-# Data in OutSystems apps
+    # Data in OutSystems apps
     - href: eap/building-apps/data/intro.md
+    # UI
+    - href: eap/building-apps/ui/intro.md
