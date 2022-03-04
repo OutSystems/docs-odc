@@ -28,11 +28,13 @@ The following diagram shows the high-level architecture of the OutSystems cloud 
 
 ![OutSystems cloud platform](images/cloud-architecture-diag.png)
 
-All internal requests between the Platform and Runtime stages are made over Transport Layer Security (TLS) through NATS, a secure messaging system. All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). See [Cloud-native network architecture and security of Project Neo](networking.md) to learn more.
+All internal requests between the Platform and Runtime stages are made through NATS, a secure messaging system. All external requests to both the Platform and each of the Runtime stages go through a Web Application Firewall (WAF) and Content Delivery Network (CDN). All internal and external requests are fully encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of Project Neo](networking.md) to learn more.
 
 #### Platform { #platform }
 
-The development **Platform** comprises multiple services, each responsible for specific functions that facilitate the building and deployment of applications. All the Platform services benefit from a resilient microservices design with a REST API web service interface. Developers, DevOps engineers, and architects interact with these services using tools such as Service Studio and the Project Neo Portal.
+The development **Platform** comprises multiple services, each responsible for specific functions that facilitate the building and deployment of applications. All the Platform services benefit from a resilient microservices design with a REST API web service interface. Developers, DevOps engineers, and architects interact with these services using tools such as Service Studio and the Project Neo Portal. 
+
+The Platform **Load Balancer** handles all requests to the services. 
 
 An example of a service is the Build Service. Triggered by a developer clicking the 1-Click Publish button in Service Studio, the Build Service takes the visual language model developed in Service Studio (.oml file) and turns it into a compiled application to deploy. 
 
@@ -46,7 +48,9 @@ The following diagram shows the high-level architecture of the development Platf
 
 In Project Neo, the **Runtime** is independent of the Platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed applications. The default Runtime setup is a Development stage, a Test stage, and a Production stage. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
 
-The following diagram shows the high-level architecture of the Runtime. It shows the Production stage with users connecting.
+The Runtime **Load Balancer** handles all requests to the applications.
+
+The following diagram shows the high-level architecture of the Runtime.
 
 ![Runtime](images/cloud-architecture-runtime-diag.png) 
 
@@ -62,11 +66,11 @@ Powered by AWS Elastic Kubernetes Service (EKS), the Platform and each of the Ru
 
 #### Platform cluster { #platform-cluster }
 
-For the Platform, each service creates one or more jobs in the Platform cluster to process. For example, for the Build Service, these jobs would include generating the compiled code from the OutSystems visual language model (.oml file), optimizing the compiled code, and then generating the compiled application. Jobs are finite tasks running in the Platform cluster that facilitate the building and deployment of applications (_Job 1 Job 2 Job 3 (...) Job N_ in the [Platform diagram](#platform)).
+To run on a Kubernetes cluster, each Platform service into packaged into a **container**—a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings. 
 
 ##### Auto scaling
 
-The compute capacity for each running Platform service job is scalable, which means multiple developers can use the Build Service or any other service concurrently without any performance degradation of the Platform. This lets multiple teams rapidly scale the development process independently of the deployed applications.
+The compute capacity for each running Platform service is scalable, which means multiple developers can use the Build Service or any other service concurrently without any performance degradation of the Platform. This lets multiple teams rapidly scale the development process independently of the deployed applications.
 
 The compute capacity is adjusted in real-time, with no user interaction required.
 
@@ -74,18 +78,16 @@ The following diagram shows how auto scaling works inside the Platform cluster.
 
 ![Platform Autoscale](images/cloud-architecture-platform-k8s-diag.png) 
 
-The **auto scale controller** monitors the CPU and RAM metrics of each running job. It continuously checks these metrics against the cluster compute capacity allocated to each job and can:
+The **auto scale controller** monitors the CPU and RAM metrics of each running service. It continuously checks these metrics against the cluster compute capacity allocated to each service and can:
 
-* Replicate the running job to optimize the use of the allocated compute capacity.
-* Allocate additional cluster compute capacity to the running job if the CPU and RAM metrics for the job exceed a threshold.
+* Replicate the running service to optimize the use of the allocated compute capacity.
+* Allocate additional cluster compute capacity to the running service if the CPU and RAM metrics for the service exceed a threshold.
 
 Because the overall compute capacity for the isolated Platform cluster is resourced from a multi-tenant pool, it's scalable.
 
 #### Runtime cluster
 
-**Applications** run in each cluster of each of the Runtime stages (_App 1 App 2 App 3 (...) App N_ in the [Runtime diagram](#runtime)).
-
-To run on a Kubernetes cluster, applications are packaged into a **container**—a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings. In the example of the Build Service jobs in the previous section, the compiled application generated is a **container image**. An instance of a container image is a container.
+In the example of the Build Service in the [previous section](#platform), the compiled application generated is a **container image**. An instance of a container image is a container.
 
 Each application is packaged into a separate container, making the infrastructure resilient to individual resource-intensive application(s) that degrade the performance of other applications.
 
@@ -97,7 +99,7 @@ The compute capacity for each application container running in each Runtime stag
 
 The compute capacity is adjusted in real-time, with no user interaction required.
 
-The following diagram shows how auto scaling works inside the Runtime cluster. It shows the Production stage as application containers are replicated across multiple AZs.
+The following diagram shows how auto scaling works inside the Runtime cluster.
 
 ![Runtime Autoscale](images/cloud-architecture-runtime-scale-diag.png) 
 
@@ -112,7 +114,7 @@ The overall compute capacity for the isolated Runtime stage cluster is scalable 
 
 #### Platform data
 
-Service Studio and the Project Neo Portal connect to the Platform API Gateway, which handles all the requests to the Platform services. Each service creates one or more jobs for the cluster to process, which make calls to the databases and data stores through the Data Service service—think of this as a data access layer. 
+Each Platform service make calls to the databases and data stores.
 
 The following table lists and describes the Platform databases and data stores.
 
@@ -137,7 +139,7 @@ Cluster storage volumes automatically scale as the amount of data stored increas
 
 #### Platform to Runtime
 
-In addition to storing the application container image in the Elastic Container Registry (ECR), the Build Service passes it to the Application Deployment service on the specified Runtime stage for deployment. The Application Deployment service coordinates the deployment of the application container to the cluster.
+In addition to storing the application container image in the Elastic Container Registry (ECR), the Build Service passes it to the specified Runtime stage for deployment.
 
 The idea of "Build once, deploy anywhere"—the build process not making strong assumptions about the environment the application is to be deployed into—is a foundational part of the **continuous delivery** approach to software development.
 

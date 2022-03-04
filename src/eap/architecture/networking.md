@@ -45,13 +45,13 @@ The Identity Service verifies that each request comes from an [authorized and au
 
 ### Load Balancer
 
-When the Platform Load Balancer receives a request, it routes it to the target endpoint of the target multi-tenant Platform service. The Load Balancer of the Controller directs the request to a replica of the job using the round-robin method.
+When the Platform Load Balancer receives a request, it routes it to the target endpoint of the target multi-tenant Platform service. The Load Balancer directs the request to a service container replica using the round-robin method.
 
-When the Runtime Load Balancer receives a request, it routes it to the target endpoint of the target application container. The load balancer of the Controller directs the request to a application container replica in a given AZ using the round-robin method.
+When the Runtime Load Balancer receives a request, it routes it to the target endpoint of the target application container. The Load Balancer directs the request to a application container replica in a given AZ using the round-robin method.
 
 ## Request route
 
-Requests to both the Platform and Runtime first go through a Web Application Firewall (WAF), which filters malicious requests. The firewall runs on a Content Deployment Network (CDN), responsible for routing the request. In the case of a Platform request, the request gets routed to the target endpoint of the target multi-tenant Platform service, instantiated as [a job](intro.md#platform-cluster). In the case of a Runtime request, the request gets routed to the target endpoint of the target application container. The intermediaries between the CDN and the endpoint are the Identity Service, responsible for user identity authentication and authorization, and Load Balancer.
+Requests to both the Platform and Runtime first go through a Web Application Firewall (WAF), which filters malicious requests. The firewall runs on a Content Deployment Network (CDN), responsible for routing the request. In the case of a Platform request, the request gets routed to the target endpoint of the target multi-tenant Platform service. In the case of a Runtime request, the request gets routed to the target endpoint of the target application. The intermediaries between the CDN and the endpoint are the Identity Service, responsible for user identity authentication and authorization, and Load Balancer.
  
 As a request is sent over HTTPS, each step is fully encrypted using Transport Layer Security (TLS).
 
