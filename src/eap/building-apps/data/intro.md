@@ -15,7 +15,7 @@ This article introduces the concepts of entities and optimized tools for retriev
 
 ## Visual tools
 
-Project Neo uses relational databases for business data. Each stage (Development, Test, Production) where your apps use data [has a customer-isolated PostgreSQL database](../../architecture/intro.md).
+Project Neo uses relational databases for business data. Each stage (Development, Test, Production) where your apps use data has an isolated database.
 
 Service Studio provides a set of visual tools for modeling and retrieving data. These visual tools are an interface to the OutSystems visual language and abstract interaction with the relational databases. Project Neo lets you focus on development and business value, because the database management is automatic and happens in the background.
 
