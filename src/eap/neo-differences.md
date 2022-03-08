@@ -21,7 +21,7 @@ Project Neo delivers a modern architecture based on best practices in cloud-nati
 * Scalable and reliable apps, built and deployed in a modern infrastructure that includes Linux containers and Kubernetes
 * Built-in security with end-to-end encryption  
 * Disaster recovery, with app-level high availability configuration  
-* The ability to take advantage of the latest Project Neo versions with pain-free upgrades
+* The ability to take advantage of the latest Project Neo releases with pain-free upgrades
  
 ## Unified experience  { #neo-portal }
  
@@ -33,7 +33,7 @@ The Project Neo Portal consolidates your app and user management experience in o
  
 Project Neo uses the term **stage** instead of **environment**. A stage (Development, Test or Production) is a step within your continuous delivery pipeline that includes Runtime resources. Project Neo separates Platform and Runtime resources, allowing development to scale independently of apps deployed to different stages.
  
-Project Neo has a centralized code repository, which enables you to build your app once, and then deploy it to multiple stages. In Project Neo, when you click the 1-Click Publish button in Service Studio, your code builds and your app is deployed to the Development stage. A container image is also saved in a registry. When you're ready to promote your app to the next stage (for example, from Development to Test), the version that exists in the registry is promoted without the need to recompile any code. In Project Neo, Service Studio connects to the Platform, which pushes content to the Development stage. Service Studio doesn't connect to the Test or Production stage.
+Project Neo has a centralized code repository, which enables you to build your app once, and then deploy it to multiple stages. In Project Neo, when you click the 1-Click Publish button in Service Studio, your code builds and your app is deployed to the Development stage. A container image is also saved in a registry. When you're ready to promote your app to the next stage (for example, from Development to Test), the revision that exists in the registry is promoted without the need to recompile any code. In Project Neo, Service Studio connects to the Platform, which pushes content to the Development stage. Service Studio doesn't connect to the Test or Production stage.
  
 In contrast, OutSystems 11 has a code repository per environment (Development, Test, and Production), which requires rebuilding each time you deploy to a new environment. Additionally, in OutSystems 11, Service Studio connects to each environment where you build and deploy your apps.  
  
@@ -56,7 +56,7 @@ Note the following regarding reuse in Project Neo:
     * The delete rule is always set to **ignore**
     * A database constraint isn't created in the database, as is done with OutSystems 11
 * Apps (Web or Mobile) can have strong dependencies to Libraries only; See [Reuse elements across apps](reuse-elements.md) for more information
-* Apps (Web or Mobile) consume a specific Library version. For example, app A can consume Library v1 and app B can consume Library v2
+* Apps (Web or Mobile) consume a specific Library revision. For example, app A can consume Library v1 and app B can consume Library v2
 * Many elements that could be public in OutSystems 11 can't be public in Project Neo; See [Reuse elements across apps](reuse-elements.md) for more information.
  
 The following screen capture shows options when creating an app in Service Studio.

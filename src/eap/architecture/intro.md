@@ -120,7 +120,7 @@ The following table lists and describes the Platform databases and data stores.
 
 | Data stored | Service used | Service description (via AWS) | Availability |
 | - | - | - | - |
-| Application version and dependency information. | Amazon Aurora | A PostgreSQL-compatible relational database built for the cloud. | HA by default (Aurora Serverless). High data durability by default (Aurora Serverless). |
+| Application revisions and dependency information. | Amazon Aurora | A PostgreSQL-compatible relational database built for the cloud. | HA by default (Aurora Serverless). High data durability by default (Aurora Serverless). |
 | Current and historic application revisions, in the form of .oml files, stored as blob data. | S3 | An object storage service offering industry-leading scalability, data availability, security, and performance. | HA by default. |
 | Configuration and metadata from the Platform Build Service. | DynamoDB | A fully managed, serverless, key-value NoSQL database designed to run high-performance applications at any scale. | HA by default. |
 | Current and historic application container images. | Elastic Container Registry (ECR) | A fully-managed Docker container registry that makes it easy to store, share, and deploy container images. | HA by default. |
