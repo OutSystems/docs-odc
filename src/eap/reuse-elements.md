@@ -1,5 +1,5 @@
 ---
-summary: Reuse elements to share across apps.  
+summary: Learn what elements can be shared accross app types to achieve a solid app architecture. 
 tags:
 ---
 
