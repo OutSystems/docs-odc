@@ -18,16 +18,16 @@ Project Neo is a cloud-native, application development platform that provides a 
  
 Project Neo delivers a modern architecture based on best practices in cloud-native infrastructure, management, and operations. Benefits include:
  
-* Scalable and reliable apps, built and deployed in a modern infrastructure that includes Linux containers and Kubernetes
-* Built-in security with end-to-end encryption  
-* Disaster recovery, with app-level high availability configuration  
-* The ability to take advantage of the latest Project Neo releases with pain-free upgrades
+* Scalable and reliable apps, built and deployed in a [modern container infrastructure](../../build/eap/architecture/intro.md).
+* Built-in security with end-to-end encryption.
+* Disaster recovery, with app-level high availability configuration.  
+* The ability to take advantage of the latest Project Neo releases with pain-free upgrades.
  
 ## Unified experience  { #neo-portal }
  
 The Project Neo Portal consolidates your app and user management experience in one place. It consolidates functionality that previously existed across LifeTime, Service Center, and the Users application.
  
-![portal-deployments](images/portal-deployments-pl.png "Deploy apps")
+![Deploy apps](images/portal-deployments-pl.png)
  
 ## Build once, deploy many times
  
@@ -51,12 +51,12 @@ In Project Neo, the way you reuse elements across apps differs from OutSystems 1
  
 Note the following regarding reuse in Project Neo:
  
-* Dependencies between apps (Web Apps or Mobile Apps) are always weak, which means that Entities shared between apps are always read-only; in Project Neo, to write to Entities, you must create a Service Action
-* Relationships between Entities in different apps work differently. In Project Neo:
-    * The delete rule is always set to **ignore**
-    * A database constraint isn't created in the database, as is done with OutSystems 11
-* Apps (Web or Mobile) can have strong dependencies to Libraries only; See [Reuse elements across apps](building-apps/reuse-elements.md) for more information
-* Apps (Web or Mobile) consume a specific Library revision. For example, app A can consume Library v1 and app B can consume Library v2
+* Dependencies between apps (Web Apps or Mobile Apps) are always weak, which means that entities shared between apps are always read-only; in Project Neo, to write to entities, you must create a service action.
+* Relationships between entities in different apps work differently. In Project Neo:
+    * The delete rule is always set to **ignore**.
+    * A database constraint isn't created in the database, as is done with OutSystems 11.
+* Apps (Web or Mobile) can have strong dependencies to Libraries only; See [Reuse elements across apps](building-apps/reuse-elements.md) for more information.
+* Apps (Web or Mobile) consume a specific Library revision. For example, app A can consume Library v1 and app B can consume Library v2.
 * Many elements that could be public in OutSystems 11 can't be public in Project Neo; See [Reuse elements across apps](building-apps/reuse-elements.md) for more information.
  
  
@@ -65,8 +65,8 @@ Note the following regarding reuse in Project Neo:
 In Project Neo, note the following differences when debugging applications in Service Studio:
  
 * The debug entry point refers to the Entry app, not to the Entry module. Modules don't exist in Project Neo.
-* When debugging an app, the Entry app only shows the current app
-* When debugging a Library, the Entry app lists the apps that consume the Library you're debugging
+* When debugging an app, the Entry app only shows the current app.
+* When debugging a Library, the Entry app lists the apps that consume the Library you're debugging.
  
 ## Timers in Service Studio
  
@@ -74,12 +74,11 @@ Currently you can set timers in Service Studio. The format of timers in Project 
  
 The following screen capture shows an example of setting a timer in Service Studio to run four times daily.
 
-![Set timer](images/timers-ss.png "Set a timer")
+![Set a timer](images/timers-ss.png)
  
  
 Note the following related to timers in Project Neo:
  
-* Currently, you can set timers in Service Studio, but not in the Portal.
 * Timers are set in UTC (Coordinated Universal Time).
 * The "Weekday of month" option doesn't exist in Project Neo.
  
