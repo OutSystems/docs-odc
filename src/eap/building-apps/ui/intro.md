@@ -24,7 +24,7 @@ The OutSystems UI framework integrates with Service Studio. In Service Studio, y
 
 ## OutSystems UI framework
 
-The OutSystems UI framework Is the base of all user interfaces. The framework supports all apps. The UI framework is fully integrated, responsive by default, with many possibilities to extend screen templates and UI patterns.
+The OutSystems UI framework is the base of all user interfaces. The framework supports all apps. The UI framework is fully integrated, responsive by default, with many possibilities to extend screen templates and UI patterns.
 
 All framework elements follow a cohesive and defined set of rules, such as colors, headings, margins, and paddings, that come from what you define in your CSS. The framework comes With dozens of responsive UI patterns that integrate with OutSystems, so that you can build the UI for your app using low code. 
 
