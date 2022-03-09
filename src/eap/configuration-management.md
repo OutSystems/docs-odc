@@ -37,7 +37,7 @@ The values you change take effect when the Apply process (asynchronous setting) 
 
 Settings exist in both apps and Libraries. When developers create an app in Service Studio, they create the settings and enter default values. You can modify the configuration values from the Project Neo Portal. From the Project Neo Portal menu, click **Configuration**. An accordion format displays a list of configurations by type such as Settings and Timers.
 
-![configuration management screen](images/configuration-menu-portal.png)
+![configuration management screen](images/configuration-menu-pl.png)
 
 A bubble to the right of the name shows the number of configurations. To see the list of Settings, click the down arrow and open the accordion. A list of Settings displays. To change values, click a setting. When you click on the setting, a sidebar opens and displays the current values. Remember settings are stage-specific.
 
