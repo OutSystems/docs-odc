@@ -88,7 +88,7 @@ Note the following related to timers in Project Neo:
  
 The following table lists tasks you can complete in the Portal, as well as the interface used for the same task in OutSystems 11.
  
-| Task | In O11 | In Project Neo |
+| Task | In OutSystems 11 | In Project Neo |
 | ----------- | ----------- | ----------- |
 | Deploy an application to another stage.| LifeTime | **Portal** > **Delivery** > **Deployments**.|
 | [Apps configuration management](configuration-management.md) | LifeTime | **Portal** > **Apps** |
