@@ -29,7 +29,7 @@ The graphic below shows an example of the structure of an entity.
 
 ![Entity structure](images/data-entity-ss.png)
 
-Enumerations in OutSystems are static entities. A static entity stores a predefined list of values. An example of such data is a list of priorities with "low", "medium", and "high".
+Enumerations in OutSystems are static entities. A static entity stores a predefined list of values. An example of such data is a list of priorities with `Low`, `Medium`, and `High`.
 
 Entities can have different relationships between other entities and static entities, like one-to-one, one-to-many, or many-to-many. Business concepts in an app are usually in separate but connected entities. A common example is when apps have information about customers, orders, and vendors as separate entities. Those entities link to each other with the key attributes and entity relationships.
 
