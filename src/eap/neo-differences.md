@@ -90,13 +90,12 @@ The following table lists tasks you can complete in the Portal, as well as the i
  
 | Task | In O11 | In Project Neo |
 | ----------- | ----------- | ----------- |
-| Deploy an application to another stage.| LifeTime, where you deploy apps to the Test or Production environment. | **Portal** > **Delivery** > **Deployments**. In Project Neo, you deploy to the Test or Production stage. |
-| Configure apps when deploying. Includes timers and email | LifeTime | **Portal** > **Apps** |
+| Deploy an application to another stage.| LifeTime | **Portal** > **Delivery** > **Deployments**.|
+| [Apps configuration management](configuration-management.md) | LifeTime | **Portal** > **Apps** |
 | View apps and app details. Delete and deactivate apps | LifeTime | **Portal** > **Apps** |
 | Manage IT users, roles, and permissions | LifeTime | **Portal** > **Users & access**. |
 | Manage end users | Users console | **Portal** > **Users & access** |
 | View logs and audit information | LifeTime | **Portal** > **Monitoring** |
-| Access Forge components | Forge URL | **Portal** > **Forge** |
  
 ## Terminology mapping
  
