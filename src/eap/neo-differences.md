@@ -27,7 +27,7 @@ Project Neo delivers a modern architecture based on best practices in cloud-nati
  
 The Project Neo Portal consolidates your app and user management experience in one place. It consolidates functionality that previously existed across LifeTime, Service Center, and the Users application.
  
-![portal-deployments](images/portal-deployments-ss.png "Deploy apps")
+![portal-deployments](images/portal-deployments-pl.png "Deploy apps")
  
 ## Build once, deploy many times
  
@@ -59,9 +59,6 @@ Note the following regarding reuse in Project Neo:
 * Apps (Web or Mobile) consume a specific Library revision. For example, app A can consume Library v1 and app B can consume Library v2
 * Many elements that could be public in OutSystems 11 can't be public in Project Neo; See [Reuse elements across apps](building-apps/reuse-elements.md) for more information.
  
-The following screen capture shows options when creating an app in Service Studio.
- 
-![Create Web App](images/create-service-ss.png "Create Web App")
  
 ## Debugging changes in Service Studio
  
