@@ -26,7 +26,7 @@ In addition to access to **Service Studio**, each customer is granted access to 
 
 The following diagram shows the high-level architecture of the OutSystems cloud platform.
 
-![OutSystems cloud platform](images/cloud-architecture-diag.png)
+![Architecture of the OutSystems cloud platform](images/cloud-architecture-diag.png "Architecture of the OutSystems cloud platform")
 
 All internal requests between the Platform and Runtime stages are made through NATS, a secure messaging system. All external requests to both the Platform and each of the Runtime stages go through a Web Application Firewall (WAF) and Content Delivery Network (CDN). All internal and external requests are fully encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of Project Neo](networking.md) to learn more.
 
