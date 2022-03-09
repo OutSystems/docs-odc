@@ -21,7 +21,7 @@ A goal of Project Neo is to decrease complexity and increase productivity by mak
 
 You can override the configuration values from Service Studio in non-development stages. For example, in Service Studio a default value is set. When you deploy your app to Test, you can change the configuration values to mirror production values for testing and troubleshooting. Then when you move this configuration to Production you can change your values using real data. The changes you make are specific to a stage. This process occurs without needing to publish your application again.
 
-![configuration management-how-works screen](images/configuration-management-works-diag.png)
+![How configuration management works](images/configuration-management-works-diag.png "How configuration management works")
 
 Configurations can use one of the following values:
 
@@ -31,13 +31,13 @@ Configurations can use one of the following values:
 
 The values you change take effect when the Apply process (asynchronous setting) completes. The Apply process saves the new values and updates the configuration.
 
-![configuration management apply changes](images/apply-changes-process-diag.png)
+![Apply configurations](images/apply-changes-process-diag.png "Apply configurations")
 
 ## Managing settings
 
 Settings exist in both apps and Libraries. When developers create an app in Service Studio, they create the settings and enter default values. You can modify the configuration values from the Project Neo Portal. From the Project Neo Portal menu, click **Configuration**. An accordion format displays a list of configurations by type such as Settings and Timers.
 
-![configuration management screen](images/configuration-menu-pl.png)
+![Configuration management screen](images/configuration-menu-pl.png "Configuration management screen")
 
 A bubble to the right of the name shows the number of configurations. To see the list of Settings, click the down arrow and open the accordion. A list of Settings displays. To change values, click a setting. When you click on the setting, a sidebar opens and displays the current values. Remember settings are stage-specific.
 

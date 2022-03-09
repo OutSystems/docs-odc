@@ -27,7 +27,7 @@ Project Neo delivers a modern architecture based on best practices in cloud-nati
  
 The Project Neo Portal consolidates your app and user management experience in one place. It consolidates functionality that previously existed across LifeTime, Service Center, and the Users application.
  
-![Deploy apps](images/portal-deployments-pl.png)
+![Deploy apps](images/portal-deployments-pl.png "Deploy apps")
  
 ## Build once, deploy many times
  
@@ -74,7 +74,7 @@ Currently you can set timers in Service Studio. The format of timers in Project 
  
 The following screen capture shows an example of setting a timer in Service Studio to run four times daily.
 
-![Set a timer](images/timers-ss.png)
+![Set a timer](images/timers-ss.png "Set a timer")
  
  
 Note the following related to timers in Project Neo:

@@ -23,7 +23,7 @@ To open a support case, follow these steps in Project Neo Portal:
 
 1. Click the Help icon and select **Support**. Take a note of your activation code.
 
-    ![Open a support case in Project Neo Portal](images/neo-support-pl.png)
+    ![Open a support case in Project Neo Portal](images/neo-support-pl.png "Open a support case in Project Neo Portal")
 
 1. Click **Open support case**.
 

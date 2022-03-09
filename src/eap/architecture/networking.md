@@ -67,7 +67,7 @@ An example of an HTTPS request is when a developer clicks the 1-Click Publish bu
 
 The platform is available at `<customername>.outsystems.dev`.
 
-![Platform network architecture](images/cloud-network-platform-diag.png)
+![Platform network architecture](images/cloud-network-platform-diag.png "Platform network architecture")
 
 Legend: gray line - network route of a request; dotted blue line - network route of a response.
 
@@ -79,6 +79,6 @@ An example of an HTTPS request is when a user submits a form in an app. The requ
 
 The applications are available at `<customername>.outsystems.app/appname`.
 
-![Runtime network architecture](images/cloud-network-runtime-diag.png) 
+![Runtime network architecture](images/cloud-network-runtime-diag.png "Runtime network architecture") 
 
 Legend: gray line - network route of a request; dotted blue line - network route of a response.
