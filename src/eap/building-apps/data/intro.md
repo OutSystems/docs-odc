@@ -13,15 +13,13 @@ Project Neo documentation is under construction. It's frequently updated and exp
 
 This article introduces the concepts of entities and optimized tools for retrieving data.
 
-## Visual tools
-
 Project Neo uses relational databases for business data. Each stage (Development, Test, Production) where your apps use data has an isolated database.
 
-Service Studio provides a set of visual tools for modeling and retrieving data. These visual tools are an interface to the OutSystems visual language and abstract interaction with the relational databases. Project Neo lets you focus on development and business value, because the database management is automatic and happens in the background.
+Service Studio allows modeling and retrieving data in a visual interface that abstracts the relational databases. Project Neo lets you focus on development and business value, because the database management is automatic and happens in the background.
 
 ## Modeling data
 
-Entity is a visual language tool for database operations. Each entity is a table. Attributes of an entity are columns. A record of an attribute is data in the table row.  
+An entity is a visual language tool for database operations. Each entity is a table. Attributes of an entity are columns. A record of an attribute is data in the table row.  
 
 You model data in Service Studio by creating new entities and adding attributes. For example, a name of your entity could be Customer, with attributes Name, Email, Address. Service Studio helps you in modeling, by setting the correct data type based on the name. Each entity provides a CRUD interface as a set of actions you can use.
 
