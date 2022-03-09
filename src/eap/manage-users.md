@@ -25,7 +25,7 @@ Additionally, identity service facilitates onboarding by enabling new users to:
 * Enter their personal information including their name, email, and a password
 * Manage profiles
   
-![OutSystems Identity Service](images/manage-users-identy-service.png)
+![OutSystems Identity Service](images/manage-users-diag.png)
 
 OutSystems users are given permissions to perform tasks such as creating and managing users, creating apps, and monitoring or troubleshooting applications.
 
