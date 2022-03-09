@@ -10,6 +10,7 @@
   - href: eap/architecture/networking.md
 # Building apps
 - href: eap/building-apps/intro.md
+- href: eap/building-apps/reuse-elements.md
 - topics:
     # Data in OutSystems apps
     - href: eap/building-apps/data/intro.md
