@@ -55,9 +55,9 @@ Note the following regarding reuse in Project Neo:
 * Relationships between Entities in different apps work differently. In Project Neo:
     * The delete rule is always set to **ignore**
     * A database constraint isn't created in the database, as is done with OutSystems 11
-* Apps (Web or Mobile) can have strong dependencies to Libraries only; See [Reuse elements across apps](reuse-elements.md) for more information
+* Apps (Web or Mobile) can have strong dependencies to Libraries only; See [Reuse elements across apps](building-apps/reuse-elements.md) for more information
 * Apps (Web or Mobile) consume a specific Library revision. For example, app A can consume Library v1 and app B can consume Library v2
-* Many elements that could be public in OutSystems 11 can't be public in Project Neo; See [Reuse elements across apps](reuse-elements.md) for more information.
+* Many elements that could be public in OutSystems 11 can't be public in Project Neo; See [Reuse elements across apps](building-apps/reuse-elements.md) for more information.
  
 The following screen capture shows options when creating an app in Service Studio.
  
