@@ -42,7 +42,7 @@ All the Platform services are multi-tenant and benefit from automatic recoveries
 
 The following diagram shows the high-level architecture of the development Platform.
 
-![Platform](images/cloud-architecture-platform-diag.png) 
+![Architecture of the development Platform](images/cloud-architecture-platform-diag.png "Architecture of the development Platform") 
 
 #### Runtime { #runtime }
 
@@ -52,7 +52,7 @@ The Runtime **Load Balancer** handles all requests to the applications.
 
 The following diagram shows the high-level architecture of the Runtime.
 
-![Runtime](images/cloud-architecture-runtime-diag.png) 
+![Architecture of the Runtime](images/cloud-architecture-runtime-diag.png "Architecture of the Runtime") 
 
 ## Key technologies of the cloud-native infrastructure
 
@@ -76,7 +76,7 @@ The compute capacity is adjusted in real-time, with no user interaction required
 
 The following diagram shows how auto scaling works inside the Platform cluster.
 
-![Platform Autoscale](images/cloud-architecture-platform-k8s-diag.png) 
+![Autoscaling of the development Platform](images/cloud-architecture-platform-k8s-diag.png "Autoscaling of the development Platform") 
 
 The **auto scale controller** monitors the CPU and RAM metrics of each running service. It continuously checks these metrics against the cluster compute capacity allocated to each service and can:
 
@@ -101,7 +101,7 @@ The compute capacity is adjusted in real-time, with no user interaction required
 
 The following diagram shows how auto scaling works inside the Runtime cluster.
 
-![Runtime Autoscale](images/cloud-architecture-runtime-scale-diag.png) 
+![Autoscaling of the runtime apps](images/cloud-architecture-runtime-scale-diag.png "Autoscaling of the runtime apps") 
 
 The **auto scale controller** monitors the CPU and RAM metrics of each application container. It continuously checks these metrics against the cluster compute capacity allocated to each application container and can: 
 
@@ -118,9 +118,9 @@ Each Platform service make calls to the databases and data stores.
 
 The following table lists and describes the Platform databases and data stores.
 
-| Data stored | Service used | Service description (via AWS) | Availability |
+| Data stored | Service used | Service description | Availability |
 | - | - | - | - |
-| Application revisions and dependency information. | Amazon Aurora | A PostgreSQL-compatible relational database built for the cloud. | HA by default (Aurora Serverless). High data durability by default (Aurora Serverless). |
+| Application revisions and dependency information. | Amazon Aurora | A PostgreSQL-compatible relational database built for the cloud. | High availability and high data durability by default (Aurora Serverless). |
 | Current and historic application revisions, in the form of .oml files, stored as blob data. | S3 | An object storage service offering industry-leading scalability, data availability, security, and performance. | HA by default. |
 | Configuration and metadata from the Platform Build Service. | DynamoDB | A fully managed, serverless, key-value NoSQL database designed to run high-performance applications at any scale. | HA by default. |
 | Current and historic application container images. | Elastic Container Registry (ECR) | A fully-managed Docker container registry that makes it easy to store, share, and deploy container images. | HA by default. |
@@ -131,7 +131,7 @@ Each Runtime stage has an isolated Amazon Aurora database that scales for both c
 
 The following diagram shows how this is achieved.
 
-![DB Autoscale](images/cloud-architecture-db-scale-diag.png) 
+![Database autoscaling](images/cloud-architecture-db-scale-diag.png "Database autoscaling") 
 
 With the Amazon Aurora database architecture, compute and storage is decoupled.
 
@@ -145,7 +145,7 @@ The idea of "Build once, deploy anywhere"—the build process not making strong 
 
 ## Logging, monitoring, and analytics
 
-Logs and metrics are collected from each of the application containers running in each Runtime stage cluster. Logs can be filtered on the Project Neo Portal between a user-defined time range and with a text search.
+Logs and metrics are collected from each of the application containers running in each Runtime stage cluster. Logs can be filtered on the Project Neo Portal.
 
 Automatic monitoring by EKS replaces unhealthy application containers running in each Runtime stage cluster with a replica.
 
