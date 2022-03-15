@@ -13,13 +13,18 @@ Project Neo documentation is under construction. It's frequently updated and exp
 
 This article provides an overview of how users set their names and passwords, and how authentication works in OutSystems.
 
-OutSystems identity service:
+## Authentication
 
-* Stores information in a centralized location
+Authentication is the process of identifying and validating users who want access to OutSystems tools and apps.
+
+Users are associated with and authenticated against the organization to which they're a member. When users provide username and password, their credentials are verified. Once authenticated, users can switch apps without needing reauthentication. In Prject Neo, user management and authentication is ensured by the Identity Service.
+
+OutSystems Identity Service:
+
+* Stores information in a secure, centralized location
 * Manages all background identity for accessing apps
-* Makes the login process more effective
 
-Additionally, identity service facilitates onboarding by enabling new users to:
+Additionally, Identity Service facilitates onboarding by enabling new users to:
 
 * Receive an email with login instructions
 * Enter their personal information including their name, email, and a password
@@ -35,24 +40,21 @@ Currently in the Project Neo Early Access Program, all users have the same permi
 
 </div>
 
-## Organization (Technical) user
+## IT users
 
-Once an Organization user logs into the portal, they can:
+Once logged in, IT users can:
 
-* Access all developer or administrative users
-* Invite other users (via email) to complete their profile
-* Sign into the portal and see a list of available apps
 * Access a list of available apps
+* Create and change apps
+* Deploy apps accross stages
+* [Configure apps](./configuration-management.md)
+* View application logs
+* View and manage all other IT users
 
-<div class="info" markdown="1">
-
-You can't change a username if that username is an email address.
-
-</div>
 
 ## Deactivating users
 
-For security purposes or if a user is on an extended leave, you might want to deactivate their account. When you deactivate a user, Project Neo blocks them from signing in to the portal and suspends their permissions.
+For security purposes or if a user is on an extended leave, you might want to deactivate their account. When you deactivate a user, their permissions are suspended and they can't log into Service Studio or Portal.
 
 To deactivate a user, check the options available from **Portal** > **Users & Access**.
 
@@ -64,9 +66,3 @@ The password must be at least 10 characters long. Additionally, the password mus
 * One lower case letter
 * One numeric digit
 * One special character from this set ("!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", ")
-
-## Authentication
-
-Authentication is the process of identifying and validating users who want access to OutSystems tools and apps.
-
-Users are associated with and authenticated against the organization to which they're a member. When users provide username and password, their credentials are verified. Once authenticated, users can switch apps without needing reauthentication.
