@@ -11,4 +11,6 @@ Project Neo documentation is under construction. It's frequently updated and exp
 
 </div>
 
-Project Neo lets you use various tools to speed up the development of your apps.
+Project Neo redefines the developer experience by enabling organizations to build cloud applications that scale. OutSystems combines state-of-the-art, cloud-native architecture and modern CI/CD practices.
+
+As a developer, you have tools for different stages of app development. Most of the app budding happens in Service Studio, the OutSystems IDE. You can deploy and manage apps from the Project Neo Portal.
