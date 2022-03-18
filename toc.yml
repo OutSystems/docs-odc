@@ -12,6 +12,9 @@
 - topics:
     # Data in OutSystems apps
     - href: eap/building-apps/data/intro.md
+    - topics:
+      # Data modeling
+      - href: eap/building-apps/data/modeling.md 
     # UI
     - href: eap/building-apps/ui/intro.md
     - topics:
