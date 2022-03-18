@@ -14,5 +14,8 @@
     - href: eap/building-apps/data/intro.md
     # UI
     - href: eap/building-apps/ui/intro.md
+    - topics:
+      # Screen
+      - href: eap/building-apps/ui/screen.md
     # Reuse elements across apps
     - href: eap/building-apps/reuse-elements.md
