@@ -17,7 +17,7 @@ This article provides an overview of how users set their names and passwords, an
 
 Authentication is the process of identifying and validating users who want access to OutSystems tools and apps.
 
-Users are associated with and authenticated against the organization to which they're a member. When users provide username and password, their credentials are verified. Once authenticated, users can switch apps without needing reauthentication. In Prject Neo, user management and authentication is ensured by the Identity Service.
+Users are associated with and authenticated against the organization to which they're a member. When users provide username and password, their credentials are verified. Once authenticated, users can switch apps without needing reauthentication. In Project Neo, user management and authentication is ensured by the Identity Service.
 
 OutSystems Identity Service:
 
