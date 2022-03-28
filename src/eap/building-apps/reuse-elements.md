@@ -1,5 +1,5 @@
 ---
-summary: Learn what elements can be shared accross app types to achieve a solid app architecture. 
+summary: Learn what elements can be shared across app types to achieve a solid app architecture. 
 tags:
 ---
 

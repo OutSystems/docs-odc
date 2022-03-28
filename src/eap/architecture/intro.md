@@ -36,7 +36,7 @@ The development **Platform** comprises multiple services, each responsible for s
 
 The Platform **Load Balancer** handles all requests to the services. 
 
-An example of a service is the Build Service. Triggered by a developer clicking the 1-Click Publish button in Service Studio, the Build Service takes the visual language model developed in Service Studio (.oml file) and turns it into a compiled app to deploy. 
+An example of a service is the Build Service. Triggered by a developer clicking the 1-Click Publish button in Service Studio, the Build Service takes the visual language model (.oml file) and compiles it to a deployable app. 
 
 All the Platform services are multi-tenant and benefit from automatic recoveries and continuous upgrades.
 
@@ -66,11 +66,11 @@ Powered by AWS Elastic Kubernetes Service (EKS), the Platform and each of the Ru
 
 #### Platform cluster { #platform-cluster }
 
-To run on a Kubernetes cluster, each Platform service into packaged into a **container**—a lightweight, standalone, executable package of software that includes everything needed to run an app: code, runtime, system tools, system libraries, and settings. 
+To run on a Kubernetes cluster, each Platform service into packaged into a **container**. A container is a lightweight, standalone, executable package of software. It includes everything the app needs to run: code, runtime, system tools, system libraries, and settings. 
 
 ##### Auto scaling
 
-The compute capacity for each running Platform service is scalable, which means multiple developers can use the Build Service or any other service concurrently without any performance degradation of the Platform. This lets multiple teams rapidly scale the development process independently of the deployed apps.
+The compute capacity for each running Platform service is scalable. Many developers can use the Build Service or any other service concurrently without any performance degradation of the Platform. This lets multiple teams rapidly scale the development process independently of the deployed apps.
 
 The following diagram shows how auto scaling works inside the Platform cluster.
 
@@ -114,7 +114,7 @@ The overall compute capacity for the isolated Runtime stage cluster is scalable 
 
 #### Platform data
 
-Each Platform service make calls to the databases and data stores.
+Each Platform service makes calls to the databases and data stores.
 
 The following table lists and describes the Platform databases and data stores.
 
@@ -143,7 +143,7 @@ Build Service stores the app container image and passes the image to a Runtime s
 
 ## Logging, monitoring, and analytics
 
-The auto scale controller collects logs and metrics from each of the app containers running in each Runtime stage cluster. Developers and DevOps engineers can filter logs on the on the Project Neo Portal.
+The auto-scale controller collects logs and metrics from each of the app containers running in each Runtime stage cluster. Developers and DevOps engineers can filter logs on the Project Neo Portal.
 
 Automatic monitoring by EKS replaces unhealthy app containers running in each Runtime stage cluster with a replica.
 

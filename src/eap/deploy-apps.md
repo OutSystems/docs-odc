@@ -24,5 +24,5 @@ You can find a list of the apps' deployment history and status by navigating to 
 An app's deployment status can be one of the following:
 
 * Running: the deployment is in progress, wait for it to finish.
-* Finished with errors: the deployment has finished but it wasn't sucessfull. Review the errors.
+* Finished with errors: the deployment has finished but it wasn't successful. Review the errors.
 * Finished successfully: the deployment finished successfully. The app is available on the deployed stage.

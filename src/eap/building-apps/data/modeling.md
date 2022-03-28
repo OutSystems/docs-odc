@@ -51,7 +51,7 @@ A logical data model is independent of a specific database.
 
 The physical data model is a schema for how the app data is stored in the database. 
 
-It provides a final design that can be implemented as a relational database, including associative tables illustrating the relationships between entities and the primary and foreign keys used to maintain those relationships.
+It provides a final design for implementation as a relational database. It includes associative tables illustrating the relationships between entities and the primary and foreign keys to maintain those relationships.
 
 Project Neo automatically converts the logical data model you design in Service Studio to a physical data model for you. It makes this conversion based on data modeling design best practices.
 

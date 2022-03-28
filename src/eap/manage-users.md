@@ -46,7 +46,7 @@ Once logged in, IT users can:
 
 * Access a list of available apps
 * Create and change apps
-* Deploy apps accross stages
+* Deploy apps across stages
 * [Configure apps](./configuration-management.md)
 * View application logs
 * View and manage all other IT users

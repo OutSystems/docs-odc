@@ -13,7 +13,7 @@ Project Neo documentation is under construction. It's frequently updated and exp
 
 OutSystems UI enables you to quickly create applications that are professionally designed and provide a great user experience. OutSystems UI optimizes screen templates enabling you to quickly build screens for your apps that are adaptive for any device. The screens you build enable your users to see data, access menus, and navigate between screens.
 
-When creating the UI for your applications, typically designers create screen mockups using their design tool of choice.  Developers then use those screen mockups to create the application screens and UI elements in Service Studio.
+When creating the UI for your applications, typically designers create screen mockups using their design tool of choice. Developers then use those screen mockups to create the application screens and UI elements in Service Studio.
 
 Project Neo comes with:
 

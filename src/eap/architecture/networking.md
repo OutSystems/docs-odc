@@ -15,7 +15,7 @@ This article provides an overview of Project Neo cloud-native network architectu
 
 Project Neo is cloud-native. This means that the infrastructure of both the development Platform, for building and deploying apps, and the independent Runtime, for hosting and running the deployed apps, live in the cloud. See [Cloud-native architecture of Project Neo](intro.md) to learn more.
 
-A secure cloud-native network connects the cloud-native architecture. The network architecture of the Development, Test and Production stages of the Runtime are identical.
+A secure cloud-native network connects the cloud-native architecture. The network architecture of the Development, Test and Production stages of the Runtime is identical.
 
 ## Key technologies
 
@@ -47,7 +47,7 @@ The Identity Service verifies that each request comes from an [authorized and au
 
 When the Platform Load Balancer receives a request, it routes it to the target endpoint of the target multi-tenant Platform service. The Load Balancer directs the request to a service container replica using the round-robin method.
 
-When the Runtime Load Balancer receives a request, it routes it to the target endpoint of the target app container. The Load Balancer directs the request to a app container replica in a given AZ using the round-robin method.
+When the Runtime Load Balancer receives a request, it routes it to the target endpoint of the target app container. The Load Balancer directs the request to an app container replica in a given AZ using the round-robin method.
 
 ## Request route
 
@@ -73,7 +73,7 @@ Legend: gray line - network route of a request; dotted blue line - network route
 
 ### Runtime
 
-Apps run as app containers in the Runtime that have secure REST API endpoints. HTTPS secures the communication between the client and the browser. 
+Apps run as app containers in the Runtime with secure REST API endpoints. HTTPS secures the communication between the client and the browser. 
 
 An example of an HTTPS request is when a user submits a form in an app. The request accesses a secure endpoint that the app container exposes.
 
