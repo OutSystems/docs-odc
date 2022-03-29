@@ -18,7 +18,7 @@ The data model is an important step for developers to think about when building 
 Designing a good data model helps you build a high-quality app. Some main benefits of a good data model include:
 
 * **A common understanding** - good isolation of business concepts allows for a common understanding between business stakeholders and developers. This streamlines communication of requirements and provides for easy data discovery by the business, for example, to build dashboards and use data lakes.
-* **Enforcing business rules** - important business rules can be directly enforced in the data model. For example, there can only be one customer record for a given VAT number.
+* **Enforcing business requirements** - important business requirements can be directly enforced in the data model. For example, there can only be one customer record for a given VAT number.
 * **Accelerate development** - a clear relationship with business concepts makes it easier to build screens and use UI patterns that carry the relevant data to the business.
 * **Lightweight apps** - good isolation of business concepts means developers can build targeted queries against smaller data sets. 
 * **Data integrity** - creating data relationships instead of duplicating attributes ensures consistent data and simpler application logic.
