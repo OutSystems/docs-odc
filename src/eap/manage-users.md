@@ -60,9 +60,9 @@ To deactivate a user, check the options available from **Portal** > **Users & Ac
 
 ## Password requirements
 
-The password must be at least 10 characters long. Additionally, the password must contain at least:
+The password must be at least 12 characters long. Additionally, the password must contain at least:
 
 * One upper case letter
 * One lower case letter
 * One numeric digit
-* One special character from this set ("!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", ")
+* One special character from this set: `!` `\` `#` `$` `%` `&` `'` `(` `)` `*` `+` `,` `-` `.` `/` `:` `;` `<` `=` `>` `?` `@` `[`
