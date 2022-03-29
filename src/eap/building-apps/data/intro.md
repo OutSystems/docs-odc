@@ -17,11 +17,11 @@ Project Neo uses relational databases for business data. Each stage (Development
 
 Service Studio allows modeling and retrieving data in a visual interface that abstracts the relational databases. Project Neo lets you focus on development and business value, because the database management is automatic and happens in the background.
 
-## Modeling data
+## Data modeling
 
 An entity is a visual language tool for database operations. Each entity is a table. Attributes of an entity are columns. A record of an attribute is data in the table row.  
 
-You model data in Service Studio by creating new entities and adding attributes. For example, a name of your entity could be Customer, with attributes Name, Email, Address. Service Studio helps you in modeling, by setting the correct data type based on the name. Each entity provides a CRUD interface as a set of actions you can use.
+You model data in Service Studio by creating new entities and adding attributes. For example, a name of your entity could be Customer, with attributes `Name`, `Email`, `Address`. Service Studio helps you in modeling, by setting the correct data type based on the name. Each entity provides a CRUD interface as a set of actions you can use.
 
 The graphic below shows an example of the structure of an entity.
 
