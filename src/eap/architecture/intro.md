@@ -36,9 +36,9 @@ The development **Platform** comprises multiple services, each responsible for s
 
 The Platform **Load Balancer** handles all requests to the services. 
 
-An example of a service is the Build Service. Triggered by a developer clicking the 1-Click Publish button in Service Studio, the Build Service takes the visual language model (.oml file) and compiles it to a deployable app. 
+An example of a service is the Build Service. Triggered by a developer clicking the 1-Click Publish in Service Studio, the Build Service takes the visual language model (.oml file) and compiles it to a deployable app. 
 
-All the Platform services are multi-tenant and benefit from automatic recoveries and continuous upgrades.
+All the Platform services are multi-tenant and benefit from automatic recovery and continuous upgrades.
 
 The following diagram shows the high-level architecture of the development Platform.
 
@@ -50,13 +50,13 @@ In Project Neo, the **Runtime** is independent of the Platform and comprises mul
 
 The Runtime **Load Balancer** handles all requests to the apps.
 
-The following diagram shows the high-level architecture of the Runtime.
+The following diagram shows the high-level Runtime architecture.
 
-![Architecture of the Runtime](images/cloud-architecture-runtime-diag.png "Architecture of the Runtime") 
+![Runtime architecture](images/cloud-architecture-runtime-diag.png "Runtime architecture") 
 
 ## Key technologies of the cloud-native infrastructure
 
-The following is an overview of the cloud technologies that Project Neo uses.
+The following is an overview of the cloud technologies used by Project Neo.
 
 ### Kubernetes
 
@@ -66,7 +66,7 @@ Powered by AWS Elastic Kubernetes Service (EKS), the Platform and each of the Ru
 
 #### Platform cluster { #platform-cluster }
 
-To run on a Kubernetes cluster, each Platform service into packaged into a **container**. A container is a lightweight, standalone, executable package of software. It includes everything the app needs to run: code, runtime, system tools, system libraries, and settings. 
+To run on a Kubernetes cluster, each Platform service into packaged into a **container**. A container is a lightweight, standalone, executable software package. It includes everything the app needs to run: code, runtime, system tools, system libraries, and settings. 
 
 ##### Auto scaling
 
@@ -76,12 +76,12 @@ The following diagram shows how auto scaling works inside the Platform cluster.
 
 ![Autoscaling of the development Platform](images/cloud-architecture-platform-k8s-diag.png "Autoscaling of the development Platform") 
 
-The **auto scale controller** monitors the CPU and RAM metrics of each running service. It continuously checks these metrics against the cluster compute capacity allocated to each service and can:
+The **auto scale controller** monitors the CPU and RAM metrics of each running service. It continuously checks these metrics against the cluster compute capacity allocated to each service. It can:
 
 * Replicate the running service to optimize the use of the allocated compute capacity.
 * Allocate additional cluster compute capacity to the running service if the CPU and RAM metrics for the service exceed a threshold.
 
-The auto scale controller makes the adjustment in real-time, with no user interaction required.
+The auto scale controller makes the adjustment in real time, with no user interaction required.
 
 The isolated Platform cluster resources its overall compute capacity from a multi-tenant pool. This means it's scalable.
 
@@ -95,18 +95,18 @@ The auto scale controller replicates app containers running in each cluster of e
 
 ##### Auto scaling
 
-The compute capacity for each app container running in each Runtime stage is scalable. This lets each of your apps scale independently.
+The compute capacity for each app container running in each Runtime stage is scalable. This lets each app scale independently.
 
-The following diagram shows how auto scaling works inside the Runtime cluster.
+The following diagram illustrates how auto scaling works inside the Runtime cluster.
 
 ![Autoscaling of the runtime apps](images/cloud-architecture-runtime-scale-diag.png "Autoscaling of the runtime apps") 
 
-The **auto scale controller** monitors the CPU and RAM metrics of each app container. It continuously checks these metrics against the cluster compute capacity allocated to each app container and can: 
+The **auto scale controller** monitors the CPU and RAM metrics of each app container. It continuously checks these metrics against the cluster compute capacity allocated to each app container. It can: 
 
 * Replicate the app container to optimize the use of the allocated compute capacity and distribution across AZs.
 * Allocate additional cluster compute capacity to the app container if the CPU and RAM metrics for the app container exceed a threshold.
 
-The auto scale controller makes the adjustment in real-time, with no user interaction required.
+The auto scale controller makes the adjustment in real time, with no user interaction required.
 
 The overall compute capacity for the isolated Runtime stage cluster is scalable because it's resourced from a multi-tenant pool.
 
@@ -116,9 +116,9 @@ The overall compute capacity for the isolated Runtime stage cluster is scalable 
 
 Each Platform service makes calls to the databases and data stores.
 
-The following table lists and describes the Platform databases and data stores.
+The following table describes the Platform databases and data stores.
 
-| Data stored | Service used | Service description | Availability |
+| Data Stored | Service Used | Service Description | Availability |
 | - | - | - | - |
 | App revisions and dependency information. | Amazon Aurora | A PostgreSQL-compatible relational database built for the cloud. | High availability and high data durability by default (Aurora Serverless). |
 | Current and historic app revisions, in the form of .oml files, stored as blob data. | S3 | An object storage service offering industry-leading scalability, data availability, security, and performance. | HA by default. |
