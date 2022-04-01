@@ -5,7 +5,7 @@ tags:
 
 # Creating screens
 
-This document describes the process you follow to create a screen. When you build an app, you want all your screens to have the same look and feel. When users are familiar with the screen design, they work more efficiently.
+This article describes the process you follow to create a screen. When you build an app, you want all your screens to have the same look and feel. When users are familiar with the screen design, they work more efficiently.
 
 You can create a screen using any of the following methods:
 
