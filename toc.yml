@@ -21,8 +21,8 @@
     - href: eap/building-apps/ui/intro.md
     - topics:
       # Screen
-      - href: eap/building-apps/ui/screen.md
+      - href: eap/building-apps/ui/screen-about.md
       # Creating screens
-      - href: eap/building-apps/ui/creating.md
+      - href: eap/building-apps/ui/screen-creating.md
     # Reuse elements across apps
     - href: eap/building-apps/reuse-elements.md
