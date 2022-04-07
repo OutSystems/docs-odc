@@ -1,6 +1,8 @@
 ---
 summary: Understanding the process to create a screen.  
 tags:
+locale: en-us
+guid: 307bedf5-9192-4d23-ac0d-dfa98a76be6b
 ---
 
 # Creating screens

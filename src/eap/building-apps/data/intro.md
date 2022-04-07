@@ -1,6 +1,8 @@
 ---
 summary: Learn more about visual tools for modeling and retrieving data.
 tags:
+locale: en-us
+guid: e74f9938-8b24-441b-8512-b3ccfda522b4
 ---
 
 # Data in OutSystems apps

@@ -1,6 +1,8 @@
 ---
 summary: Monitor and troubleshoot applications.
 tags: 
+locale: en-us
+guid: ca7cae65-c466-4d93-bab6-85ac740519c0
 ---
 
 # Monitor apps

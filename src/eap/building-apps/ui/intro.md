@@ -1,6 +1,8 @@
 ---
 summary: Learn how OutSystems UI speeds up the development of user interface and provides solid user experience.  
 tags:
+locale: en-us
+guid: bd056d16-4d8d-4b0b-ade7-9dc0ffc6f487
 ---
 
 # User interface

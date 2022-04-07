@@ -1,6 +1,8 @@
 ---
 summary: Overview of the cloud-native network architecture and security of Project Neo.
 tags: 
+locale: en-us
+guid: e87fb27d-9186-436d-ac97-a2ea960c119d
 ---
 
 # Network and security of Project Neo

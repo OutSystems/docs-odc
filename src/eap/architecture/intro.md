@@ -1,6 +1,8 @@
 ---
 summary: Overview of the infrastructure architecture of Project Neo.
 tags: 
+locale: en-us
+guid: 9a0cb62a-f11b-4d1a-9e79-0ca7d398e57b
 ---
 
 # Cloud-native architecture of Project Neo

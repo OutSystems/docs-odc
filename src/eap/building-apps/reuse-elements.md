@@ -1,6 +1,8 @@
 ---
 summary: Learn what elements can be shared across app types to achieve a solid app architecture. 
 tags:
+locale: en-us
+guid: 7e20ed99-3098-4d7c-b7fd-1a5794f8377d
 ---
 
 # Reuse elements across apps

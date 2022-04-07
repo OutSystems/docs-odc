@@ -1,6 +1,8 @@
 ---
 summary: Learn how to submit incident reports during Project Neo Early Access Program.
 tags:
+locale: en-us
+guid: 634139a1-76d1-44c8-a0bf-9c4ba0dc1b9d
 ---
 
 # Open a support case during Project Neo EAP

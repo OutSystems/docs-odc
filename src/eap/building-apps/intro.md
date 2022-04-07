@@ -1,6 +1,8 @@
 ---
 summary: Learn more about building apps in Project Neo.  
 tags:
+locale: en-us
+guid: 8ed3a740-284e-4650-9502-29f3a53bfd29
 ---
 
 # Building apps

@@ -1,6 +1,8 @@
 ---
 summary: Introduction to user and life cycle management.  
 tags: user-management; authentication; lifecycle-management
+locale: en-us
+guid: 9e0fb9b7-d2b0-419f-a5d8-5b5ed730da5e
 ---
 
 # Manage users
