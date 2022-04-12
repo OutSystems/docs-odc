@@ -49,6 +49,12 @@ Entities can be complex and require many attributes. You add attributes, map eac
 
 A logical data model is independent of a specific database.
 
+<div class="info" markdown="1">
+
+OutSystems can accelerate app development when you use some data types. An example is email. To define an email address use the email data type in an attribute. If you then drop the entity with the email data type to UI flow, the resulting screens come with the built-in validation for email addresses.
+
+</div>
+
 ### Physical data model
 
 The physical data model is a schema for how the app data is stored in the database. 
