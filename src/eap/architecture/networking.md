@@ -71,8 +71,6 @@ The platform is available at `<customername>.outsystems.dev`.
 
 ![Platform network architecture](images/cloud-network-platform-diag.png "Platform network architecture")
 
-Legend: gray line - network route of a request; dotted blue line - network route of a response.
-
 ### Runtime
 
 Apps run as app containers in the Runtime with secure REST API endpoints. HTTPS secures the communication between the client and the browser. 
@@ -82,5 +80,3 @@ An example of an HTTPS request is when a user submits a form in an app. The requ
 The apps are available at `<customername>.outsystems.app/appname`.
 
 ![Runtime network architecture](images/cloud-network-runtime-diag.png "Runtime network architecture") 
-
-Legend: gray line - network route of a request; dotted blue line - network route of a response.
