@@ -39,11 +39,13 @@ You identify and isolate business concepts, or business entities, and map the re
 
 ![Conceptual relationship](images/data-modeling-conceptual-relationship-diag.png)
 
+You should isolate business concepts to the greatest extent possible so developers can build targeted queries against small data sets. For example, `Employee` can be seperated to two entities: `Employee` and `Employee Photo`. This isolation is particularly important when one of the entities contains binary data. The entities are connected by establishing a relationship in the data model.
+
 ### Logical data model
 
 The logical data model is less abstract than the conceptual data model. It provides a further level of detail about the entities and their relationships.
 
-Entities can be complex and require many attributes. You add attributes, map each attribute to a data type and define relationships between entities. For example, an `Order` entity that has `Description`, `DueDate`, `CreatedOn`, and `ShippedOn` attributes. The `Description` attribute is data type text. An example of an entity relationship at the logical level is: each `Order Receipt` belongs to one `Order`, each `Order` has at most one `Order Receipt`.
+Entities can be complex and require many attributes. You add attributes, map each attribute to a data type and define relationships between entities. For example, an `Order` entity that has `Description`, `DueDate`, `CreatedOn`, and `ShippedOn` attributes. The `Description` attribute is data type text. An example of an entity relationship at the logical level is: an `Order Receipt` always belongs to one `Order`, an `Order` can have only one associated `Order Receipt`.
 
 ![Logical relationship](images/data-modeling-logical-relationship-diag.png)
 

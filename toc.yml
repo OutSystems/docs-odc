@@ -15,6 +15,9 @@
     - topics:
       # Data modeling
       - href: eap/building-apps/data/modeling.md 
+      - topics:
+        # Entity relationships
+        - href: eap/building-apps/data/relationships.md
       # Sharing data
       - href: eap/building-apps/data/sharing.md 
     # UI
