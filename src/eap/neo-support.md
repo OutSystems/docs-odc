@@ -3,6 +3,7 @@ summary: Learn how to submit incident reports during Project Neo Early Access Pr
 tags:
 locale: en-us
 guid: 634139a1-76d1-44c8-a0bf-9c4ba0dc1b9d
+app_type: traditional web apps, mobile apps, reactive web apps
 ---
 
 # Open a support case during Project Neo EAP

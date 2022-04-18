@@ -3,6 +3,7 @@ summary: Learn more about the concepts of creating relationships between entitie
 tags:
 locale: en-us
 guid: 34840e6f-13be-4db8-ae48-dd118a9fe303
+app_type: traditional web apps, mobile apps, reactive web apps
 ---
 
 # Relationships between entities

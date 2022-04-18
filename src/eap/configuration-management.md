@@ -3,6 +3,7 @@ summary: Learn how Project Neo Portal lets you adjust the configuration values f
 tags:
 locale: en-us
 guid: e32e1f5f-83b6-4b00-a593-83ba5017fc16
+app_type: traditional web apps, mobile apps, reactive web apps
 ---
 
 # Configuration management

@@ -3,6 +3,7 @@ summary: Summary of Project Neo differences for OutSystems 11 developers.
 tags:
 locale: en-us
 guid: cb10aa0f-4e5b-4a29-92ce-03fbc813bc14
+app_type: traditional web apps, mobile apps, reactive web apps
 ---
 # Onboarding for OutSystems developers
  

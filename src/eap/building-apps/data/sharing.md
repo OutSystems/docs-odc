@@ -3,6 +3,7 @@ summary: Learn more about the concepts of sharing data defined in OutSystems.
 tags:
 locale: en-us
 guid: dcc95e95-aa1d-4c97-a2fa-24a18fb753e2
+app_type: traditional web apps, mobile apps, reactive web apps
 ---
 
 # Sharing data defined in OutSystems

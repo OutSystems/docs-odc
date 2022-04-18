@@ -3,6 +3,7 @@ summary: Learn what elements can be shared across app types to achieve a solid a
 tags:
 locale: en-us
 guid: 7e20ed99-3098-4d7c-b7fd-1a5794f8377d
+app_type: traditional web apps, mobile apps, reactive web apps
 ---
 
 # Reuse elements across apps

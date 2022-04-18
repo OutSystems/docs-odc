@@ -3,6 +3,7 @@ summary: Learn how OutSystems UI speeds up the development of user interface and
 tags:
 locale: en-us
 guid: bd056d16-4d8d-4b0b-ade7-9dc0ffc6f487
+app_type: traditional web apps, mobile apps, reactive web apps
 ---
 
 # User interface
