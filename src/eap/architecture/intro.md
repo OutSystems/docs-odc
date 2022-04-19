@@ -3,7 +3,7 @@ summary: Overview of the infrastructure architecture of Project Neo.
 tags: 
 locale: en-us
 guid: 9a0cb62a-f11b-4d1a-9e79-0ca7d398e57b
-app_type: traditional web apps, mobile apps, reactive web apps
+app_type: mobile apps, reactive web apps
 ---
 
 # Cloud-native architecture of Project Neo

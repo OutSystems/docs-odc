@@ -3,7 +3,7 @@ summary: Learn more about the benefits and concepts of designing a good data mod
 tags:
 locale: en-us
 guid: 5b4d315b-86c8-4c5d-964b-56b758aeee49
-app_type: traditional web apps, mobile apps, reactive web apps
+app_type: mobile apps, reactive web apps
 ---
 
 # Data modeling

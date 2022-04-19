@@ -3,7 +3,7 @@ summary: Learn how you can use screens to accelerate app development.
 tags: 
 locale: en-us
 guid: 573b9486-bcb4-4888-9be6-d3e8e96b6dc8
-app_type: traditional web apps, mobile apps, reactive web apps
+app_type: mobile apps, reactive web apps
 ---
 
 # Screens

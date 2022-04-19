@@ -3,7 +3,7 @@ summary: Learn more about building apps in Project Neo.
 tags:
 locale: en-us
 guid: 8ed3a740-284e-4650-9502-29f3a53bfd29
-app_type: traditional web apps, mobile apps, reactive web apps
+app_type: mobile apps, reactive web apps
 ---
 
 # Building apps

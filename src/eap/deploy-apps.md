@@ -3,7 +3,7 @@ summary: Deploy your apps to stages using the Portal.
 tags:
 locale: en-us
 guid: d0aa50bf-0378-4bb9-8c4f-71b37092dd8b
-app_type: traditional web apps, mobile apps, reactive web apps
+app_type: mobile apps, reactive web apps
 ---
 
 # Deploy your apps

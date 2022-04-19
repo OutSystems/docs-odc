@@ -3,7 +3,7 @@ summary: Overview of the cloud-native network architecture and security of Proje
 tags: 
 locale: en-us
 guid: e87fb27d-9186-436d-ac97-a2ea960c119d
-app_type: traditional web apps, mobile apps, reactive web apps
+app_type: mobile apps, reactive web apps
 ---
 
 # Network and security of Project Neo

@@ -3,7 +3,7 @@ summary: Learn more about visual tools for modeling and retrieving data.
 tags:
 locale: en-us
 guid: e74f9938-8b24-441b-8512-b3ccfda522b4
-app_type: traditional web apps, mobile apps, reactive web apps
+app_type: mobile apps, reactive web apps
 ---
 
 # Data in OutSystems apps
