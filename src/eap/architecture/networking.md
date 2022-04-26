@@ -44,7 +44,7 @@ All internal requests between the Platform and Runtime stages get made through N
 
 ### Identity Service
 
-The Identity Service verifies that each request comes from an [authorized and authenticated user](../manage-users.md).
+The Identity Service verifies that each request comes from an [authorized and authenticated user](../configuration-management/manage-users.md).
 
 ### Load Balancer
 

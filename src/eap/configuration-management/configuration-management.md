@@ -20,13 +20,17 @@ Being able to make changes to an app in use is critical in cases where you can't
 
 ## How configuration management works
 
-A goal of Project Neo is to decrease complexity and increase productivity by making it easy to make changes from the Project Neo Portal. Developers create configurations with default values in Service Studio. From the Project Neo Portal, you select the stage on which you want to work. Then you can view and modify some configuration values for apps deployed on that stage.
+A goal of Project Neo is to decrease complexity and increase productivity by making it easy to make changes from the Project Neo Portal. 
+
+User management is a configuration that's often necessary for both developers and applçication end-users. Either because a new app was deployed to a stage, or because new users need to be added. Find more about it in [Manage Users](./manage-users.md).
+
+For applicantion configurations, developers create configurations with default values in Service Studio. From the Project Neo Portal, you select the stage on which you want to work. Then you can view and modify some configuration values for apps deployed on that stage.
 
 You can override the configuration values from Service Studio in non-development stages. For example, in Service Studio a default value is set. When you deploy your app to Test, you can change the configuration values to mirror production values for testing and troubleshooting. Then when you move this configuration to Production you can change your values using real data. The changes you make are specific to a stage. This process occurs without needing to publish your application again.
 
 ![How configuration management works](images/configuration-management-works-diag.png "How configuration management works")
 
-Configurations can use one of the following values:
+App configurations can use one of the following values:
 
 * **Default** - is the value set in Service Studio for the configuration. You can use this value in the Development, Test, or Production stages.
 
@@ -34,13 +38,13 @@ Configurations can use one of the following values:
 
 The values you change take effect when the Apply process (asynchronous setting) completes. The Apply process saves the new values and updates the configuration.
 
-![Apply configurations](images/apply-changes-process-diag.png "Apply configurations")
+![Apply configurations](images/configuration-management-apply-diag.png "Apply configurations")
 
 ## Managing settings
 
 Settings exist in both apps and Libraries. When developers create an app in Service Studio, they create the settings and enter default values. You can modify the configuration values from the Project Neo Portal. From the Project Neo Portal menu, click **Configuration**. An accordion format displays a list of configurations by type such as Settings and Timers.
 
-![Configuration management screen](images/configuration-menu-pl.png "Configuration management screen")
+![Configuration management screen](images/configuration-management-pl.png "Configuration management screen")
 
 A bubble to the right of the name shows the number of configurations. To see the list of Settings, click the down arrow and open the accordion. A list of Settings displays. To change values, click a setting. When you click on the setting, a sidebar opens and displays the current values. Remember settings are stage-specific.
 

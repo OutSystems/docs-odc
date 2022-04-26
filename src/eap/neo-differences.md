@@ -21,7 +21,7 @@ Project Neo is a cloud-native, application development platform that provides a 
  
 Project Neo delivers a modern architecture based on best practices in cloud-native infrastructure, management, and operations. Benefits include:
  
-* Scalable and reliable apps, built and deployed in a [modern container infrastructure](../../build/eap/architecture/intro.md).
+* Scalable and reliable apps, built and deployed in a [modern container infrastructure](./architecture/intro.md).
 * Built-in security with end-to-end encryption.
 * Disaster recovery, with app-level high availability configuration.  
 * The ability to take advantage of the latest Project Neo releases with pain-free upgrades.
@@ -93,7 +93,7 @@ The following table lists tasks you can complete in the Portal, as well as the i
 | Task | In OutSystems 11 | In Project Neo |
 | ----------- | ----------- | ----------- |
 | Deploy an application to another stage.| LifeTime | **Portal** > **Delivery** > **Deployments**.|
-| [Apps configuration management](configuration-management.md) | LifeTime | **Portal** > **Apps** |
+| [Apps configuration management](./configuration-management/configuration-management.md) | LifeTime | **Portal** > **Apps** |
 | View apps and app details. Delete and deactivate apps | LifeTime | **Portal** > **Apps** |
 | Manage IT users, roles, and permissions | LifeTime | **Portal** > **Users & access**. |
 | Manage end users | Users console | **Portal** > **Users & access** |
