@@ -1,5 +1,5 @@
 ---
-summary: Learn how OutSystems UI speeds up the development of user interface and provides solid user experience.  
+summary: Learn how OutSystems UI speeds up the development of user interfaces and provides a solid user experience.  
 tags:
 locale: en-us
 guid: bd056d16-4d8d-4b0b-ade7-9dc0ffc6f487
@@ -14,22 +14,22 @@ Project Neo documentation is under construction. It's frequently updated and exp
 
 </div>
 
-OutSystems UI enables you to quickly create applications that are professionally designed and provide a great user experience. OutSystems UI optimizes screen templates enabling you to quickly build screens for your apps that are adaptive for any device. The screens you build enable your users to see data, access menus, and navigate between screens.
+OutSystems UI enables you to quickly create applications that are professionally designed and provide a great user experience. OutSystems UI optimizes screen templates enabling you to quickly build screens for your apps that are adaptive for any device. The screens you build enable users to see data, access menus, and navigate between screens.
 
-When creating the UI for your applications, typically designers create screen mockups using their design tool of choice. Developers then use those screen mockups to create the application screens and UI elements in Service Studio.
+When creating the UI for your applications, typically designers create screen mockups using a design tool. Developers then use those screen mockups to create the application screens and UI elements in Service Studio.
 
 Project Neo comes with:
 
 * Built-in screen templates that provide both UI and functionality
 * UI patterns that help you build your screens
 
-The OutSystems UI framework integrates with Service Studio. In Service Studio, you have access to screen templates and UI patterns. You can start building your UI with a screen template and then drag UI patterns onto your screen. You can also make any changes to the UI and logic. This helps you to quickly build screens and create a seamless experience for your apps. The layouts and UI adapt to the device size.
+The OutSystems UI framework integrates with Service Studio. From Service Studio, you can access screen templates and UI patterns. You can start building your UI with a screen template and then drag UI patterns onto your screen. You can also make any changes to the UI and logic. This helps you to quickly build screens and create a seamless experience for your apps. The layouts and UI adapt to the device size.
 
 ## OutSystems UI framework
 
 The OutSystems UI framework is the base of all user interfaces. The framework supports all apps. The UI framework is fully integrated, responsive by default, with many possibilities to extend screen templates and UI patterns.
 
-All framework elements follow a cohesive and defined set of rules, such as colors, headings, margins, and paddings, that come from what you define in your CSS. The framework comes With dozens of responsive UI patterns that integrate with OutSystems, so that you can build the UI for your app using low code. 
+All framework elements follow a cohesive and defined set of rules, such as colors, headings, margins, and paddings, that comes from your CSS. The framework comes With dozens of responsive UI patterns that integrate with OutSystems, so that you can build the UI for your app using low code. 
 
 Following is a list of key features of the UI Framework:
 
@@ -45,7 +45,7 @@ Following is a list of key features of the UI Framework:
 
 A screen template includes a combination of pre-assembled elements that follow best practices to meet a functional need. Rather than starting with a blank screen, use a screen template as a starting point to build your own user interface.
 
-Service Studio comes with default screen templates based on the OutSystems UI framework. The templates also come with sample data that helps you see how the screen looks. Each screen template can include layouts, buttons, images, tables, components, styles, and logic.
+Service Studio comes with default screen templates based on the OutSystems UI framework. The templates also come with sample data that lets you see how the screen looks. Each screen template can include layouts, buttons, images, tables, components, styles, and logic.
 
 Screen templates are customizable, enabling you to create a user interface with your own data to customize your user's experience. You can quickly make changes and create your own screen templates.
 
@@ -71,3 +71,7 @@ Additionally, you can change the structure to display something else or remove u
 UI patterns are available in many different categories such as content, navigation, and interaction. Following is a sample of some UI Patterns:
 
 ![ui patterns](images/ui-patterns-diag.png)
+
+You can find many patterns in the toolbox of Service Studio. Open a screen for editing and drag a pattern from the toolbox: 
+  
+![Adding UI patterns to the screen](images/ui-patterns-screen-ss.png)

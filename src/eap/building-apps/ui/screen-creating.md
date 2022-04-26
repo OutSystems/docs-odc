@@ -12,9 +12,9 @@ This article describes the process you follow to create a screen. When you build
 
 You can create a screen using any of the following methods:
 
-* From a screen template based on a use case.
-* From an empty screen template that comes with a basic layout.
-* Using scaffolding (accelerators) to add an entity to a screen.
+* From a screen template based on a use case
+* From an empty screen template that comes with a basic layout
+* Using scaffolding (accelerators) to add an entity to a screen
 
 When a screen is open in the main window (menu block), you can:
 
