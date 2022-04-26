@@ -20,10 +20,10 @@ When you move your data model design from the conceptual phase to the logical ph
 
 By default, Project Neo automatically creates an entity with the `Id` attribute. The `Id` attribute uniquely identifies each record in the entity. It's the primary key in the physical data model. 
 
-Developers create an entity relationship between entity A and entity B by changing the **Data Type** of an attribute in entity B to `<entity A> Id`. In OutSystems this attribute in entity B is called the reference attribute. It's the foreign key in the physical data model. When a developer defines a reference attribute, OutSystems automatically:
+Developers create an entity relationship between entity A and entity B by changing the **Data Type** of an attribute in entity B to `<entity A> Id`. In OutSystems this attribute in entity B is called the reference attribute. It's the foreign key in the physical data model. When a developer defines a reference attribute, OutSystems automatically creates:
 
-1. Creates the entity relationship.
-1. Creates a relationship index to improve the performance of your app.
+1. Entity relationship.
+1. Relationship index to improve the performance of your app.
 
 A relationship between two entities can be:
 
@@ -35,7 +35,7 @@ A relationship between two entities can be:
 
 A **one-to-one** relationship between two entities indicates that one record in entity A corresponds to one record in entity B and one record in entity B has only one associated record in entity A.
 
-For example, consider the relationship between `Order` and `OrderReceipt`:
+For example, consider the relationship between `Order` and `OrderReceipt` entities:
 
 * An `Order` always belongs to one `OrderReceipt`
 * An `OrderReceipt` can have only one associated `Order`
@@ -48,7 +48,7 @@ The following entity diagram shows a one-to-one relationship.
 
 A **one-to-many** relationship between two entities indicates that one record in entity A corresponds to multiple records in entity B, but one record in entity B has only one associated record in entity A.
 
-For example, consider the relationship between `Customer` and `Order`:
+For example, consider the relationship between `Customer` and `Order` entities:
 
 * A `Customer` has one or more associated `Order`
 * An `Order` belongs to one `Customer`
@@ -61,7 +61,7 @@ The following entity diagram shows a one-to-many relationship.
 
 A **many-to-many** relationship between two entities indicates that one record in entity A corresponds to multiple records in entity B and a record in entity B can have more than one associated record in entity A. In this situation, you must create a third entity with one reference attribute for entity A and one reference attribute for entity B. A many-to-many relationship is, in fact, two one-to-many relationships with this third entity.
 
-For example, consider the relationship between `Order` and `Product`.
+For example, consider the relationship between `Order` and `Product` entities:
 
 * An `Order` can have multiple `Product`
 * A `Product` can have more than one associated `Order`
@@ -78,24 +78,24 @@ When you create a relationship between entity A and entity B, you must specify t
 
 ### Protect  
 
-When you set the **Delete Rule** to **Protect**, it prevents deletion of records in entity A while there are associated records in entity B.
+When you set the delete rule of the reference attribute to protect, it prevents deletion of records in entity A while there are associated records in entity B.
 
 The **Protect** value is commonly used when the user can delete entity data directly from an app screen.
 
-For example, when you set the **Delete Rule** to **Protect** between `Customer` and `Order`, a user can't delete customer records that have associated orders.
+For example, when you set the delete rule of the reference attribute to protect between `Customer` and `Order` entities, a user can't delete customer records that have associated orders.
 
 ### Delete
 
-When you set the **Delete Rule** to **Delete** it guarantees that when a record of entity A is deleted, all the associated records in entity B are also deleted. This mechanism is commonly known as cascade delete.
+When you set the delete rule of the reference attribute to delete it guarantees that when a record of entity A is deleted, all the associated records in entity B are also deleted. This mechanism is commonly known as cascade delete.
 
 You can use the **Delete** value when you implement a data purging mechanism, where you need to automatically cascade a delete across the whole data model.
 
-For example, when you set the **Delete Rule** to **Delete** between `Order` and `OrderItems`, when an order is deleted, all related order items are automatically deleted.
+For example, when you set the delete rule of the reference attribute to delete between `Order` and `OrderItems` entities, when an order is deleted, all related order items are automatically deleted.
 
 ### Ignore
 
-When you set the **Delete Rule** to **Ignore** it enables you to delete records in entity A but keep the associated records in entity B.
+When you set the delete rule of the reference attribute to ignore it enables you to delete records in entity A but keep the associated records in entity B.
 
 You can use the **Ignore** value when implementing a historical data archiving mechanism.
 
-For example, suppose every operation performed on `Order` is audited to `OrderHistory`. Setting the **Delete Rule** to **Ignore** between `Order` and `OrderHistory` allows you to delete an order and retain the associated audit record.
+For example, suppose every operation performed on `Order` is audited to `OrderHistory`. Setting the the delete rule of the reference attribute to ignore between `Order` and `OrderHistory` entities allows you to delete an order and retain the associated audit record.
