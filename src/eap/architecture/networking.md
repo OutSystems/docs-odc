@@ -26,11 +26,11 @@ The following is an overview of the cloud technologies that Project Neo uses for
 
 ### CDN
 
-A globally distributed set of servers, CDN ensures a low network latency for routing requests. The CDN verifies the public key certificate attached to the request, `outsystems.dev` for the Platform and `outsystems.app` for the Runtime.
+A globally distributed set of servers, Content Delivery Network (CDN) ensures a low network latency for routing requests. The CDN verifies the public key certificate attached to the request, `outsystems.dev` for the Platform and `outsystems.app` for the Runtime.
 
 #### WAF
 
-The WAF runs on the CDN and protects the Platform and the Runtime against common web exploits and bots. It has policies in place to protect against:
+The Web Application Firewall (WAF) runs on the CDN and protects the Platform and the Runtime against common web exploits and bots. It has policies in place to protect against:
 
 * Known malicious accesses or patterns.
 * Denial-of-Service (DoS) and Distributed-Denial-of-Service (DDoS) attacks.
@@ -44,23 +44,23 @@ All internal requests between the Platform and Runtime stages get made through N
 
 ### Identity Service
 
-The Identity Service verifies that each request comes from an [authorized and authenticated user](../configuration-management/manage-users.md).
+The Identity Service verifies that each request comes from an [authenticated user](identity.md).
 
 ### Load Balancer
 
 When the Platform Load Balancer receives a request, it routes it to the target endpoint of the target multi-tenant Platform service. The Load Balancer directs the request to a service container replica using the round-robin method.
 
-When the Runtime Load Balancer receives a request, it routes it to the target endpoint of the target app container. The Load Balancer directs the request to an app container replica in a given AZ using the round-robin method.
+When the Runtime Load Balancer receives a request, it routes it to the target endpoint of the target app container. The Load Balancer directs the request to an app container replica in a given Availability Zone (AZ) using the round-robin method.
 
 ## Request route
 
-Requests to both the Platform and Runtime first go through a Web Application Firewall (WAF), which filters malicious requests. The firewall runs on a Content Delivery Network (CDN), responsible for routing the request. In the case of a Platform request, the request gets routed to the target endpoint of the target multi-tenant Platform service. In the case of a Runtime request, the request gets routed to the target endpoint of the target app. The intermediaries between the CDN and the endpoint are the Identity Service, responsible for user identity authentication and authorization, and Load Balancer.
+Requests to both the Platform and Runtime first go through a WAF, which filters malicious requests. The firewall runs on a CDN, responsible for routing the request. In the case of a Platform request, the request gets routed to the target endpoint of the target multi-tenant Platform service. In the case of a Runtime request, the request gets routed to the target endpoint of the target app. The intermediaries between the CDN and the endpoint are the Identity Service, responsible for user identity authentication and authorization, and Load Balancer.
 
 Each request is HTTPS so fully encrypted using Transport Layer Security (TLS).
 
 In the network architecture, the data of both the Platform and Runtime for each customer is network isolated. Each Kubernetes cluster running in each Runtime stage is namespace-isolated, meaning each customer's app containers are network isolated.
 
-Requests to external data (available via REST API) get routed through a NAT gateway, one per Availability Zone (AZ), each with a public IP address.
+Requests to external data (available via REST API) get routed through a NAT gateway, one per AZ, each with a public IP address.
 
 ### Platform
 
