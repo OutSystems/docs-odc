@@ -88,16 +88,17 @@ Note the following related to timers in Project Neo:
   
 ## Project Neo differences by task
  
-The following table lists tasks you can complete in the Portal, as well as the interface used for the same task in OutSystems 11.
+The following table lists tasks in the Project Neo compared to OutSystems 11.
  
 | Task | In OutSystems 11 | In Project Neo |
 | ----------- | ----------- | ----------- |
 | Deploy an application to another stage.| LifeTime | **Portal** > **Delivery** > **Deployments**.|
 | [Apps configuration management](./configuration-management/configuration-management.md) | LifeTime | **Portal** > **Apps** |
 | View apps and app details. Delete and deactivate apps | LifeTime | **Portal** > **Apps** |
-| Manage IT users, roles, and permissions | LifeTime | **Portal** > **Users & access**. |
+| Manage IT users, roles, and permissions | LifeTime | **Portal** > **Users & access** |
 | Manage end users | Users console | **Portal** > **Users & access** |
 | View logs and audit information | LifeTime | **Portal** > **Monitoring** |
+| Set access to end-user with specific roles to a screen in Service Studio | screen > **Roles** | screen > **Authorization** > **Accessible by** |
  
 ## Terminology mapping
  
