@@ -142,3 +142,4 @@ In the logic of server actions, use **CheckROLENAMERole()** function in the cond
 #### Restricting access to data
 
 Use **CheckROLENAMERole()** function in expressions to verify that the user of the app has a role. For example, you can create a filter in an aggregate with the expression `CheckAdminsRole() = True`. The aggregate now returns data if the signed-in user has an "Admin" role.
+
