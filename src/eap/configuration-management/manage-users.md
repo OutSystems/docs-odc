@@ -66,7 +66,7 @@ IT users with the OutSystems administrator permission can:
 
 For security purposes or if a user is on an extended leave, you might want to deactivate their account. When you deactivate a user, their permissions are suspended and they can't log into Service Studio, the Portal or the apps.
 
-To deactivate a user, from the  **Portal** select **Users & Access**, search for a user and look for options in the side menu.
+To deactivate a user, from the  **Portal** select **Users & Access**, search for a user and look for the option.
 
 ## Use and manage end-user roles
 
