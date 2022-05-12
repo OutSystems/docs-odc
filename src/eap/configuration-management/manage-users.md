@@ -82,7 +82,9 @@ Here is how you can use roles:
 
 1. In Service Studio, create some end-user roles.
 2. In the Portal, assign end-user roles to users.
-3. In Service Studio, use end-user roles to control access. 
+3. In Service Studio, use end-user roles to control access.
+
+![How you can use roles](images/use-roles-diag.png "How you can use roles")
 
 <div class="info" markdown="1">
 
@@ -116,6 +118,8 @@ After you assign roles to your end-users, you can:
 * Allow or block access to a screen
 * Restrict access to data
 * Restrict logic flows
+
+![Control access in your app](images/control-access-in-your-app-diag.png "Control access in your app")
 
 <div class="warning" markdown="1">
 
