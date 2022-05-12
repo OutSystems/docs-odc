@@ -151,3 +151,4 @@ The auto-scale controller collects logs and metrics from each of the app contain
 Automatic monitoring by EKS replaces unhealthy app containers running in each Runtime stage cluster with a replica.
 
 Automated monitoring supports Site Reliability Engineering (SRE) on the Platform.
+
