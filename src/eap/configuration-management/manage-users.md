@@ -36,6 +36,12 @@ Currently in the Project Neo Early Access Program, all **IT users** have admin p
 
 ![User management](images/manage-users-diag.png "User management")
 
+The following features aren't available in the EAP at the moment:
+
+* Change password
+* Deactivate user
+* Delete user
+
 ## Add new users to your organization
 
 From the Portal, select **Users & Access** > **Users** > then click **Invite users**. The user receives an invitation email to join the organization. New users must set up their password. The password must be at least 12 characters long, and contain at least:
@@ -61,12 +67,6 @@ IT users with the OutSystems administrator permission can:
 * [Configure apps](./configuration-management.md)
 * View application logs
 * View and manage all other IT and end users
-
-## Deactivate users
-
-For security purposes or if a user is on an extended leave, you might want to deactivate their account. When you deactivate a user, their permissions are suspended and they can't log into Service Studio, the Portal or the apps.
-
-To deactivate a user, from the  **Portal** select **Users & Access**, search for a user and look for the option.
 
 ## Use and manage end-user roles
 
