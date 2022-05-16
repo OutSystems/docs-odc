@@ -29,5 +29,7 @@
       - href: eap/building-apps/ui/screen-about.md
       # Creating screens
       - href: eap/building-apps/ui/screen-creating.md
+      # UI interactions
+      - href: eap/building-apps/ui/ui-interactions.md
     # Reuse elements across apps
     - href: eap/building-apps/reuse-elements.md
