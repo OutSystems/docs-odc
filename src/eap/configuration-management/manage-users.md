@@ -72,12 +72,6 @@ IT users with the OutSystems administrator permission can:
 
 End-user roles let you control access to screens and operations of your app.
 
-<div class="info" markdown="1">
-
-If the end-user roles aren't available in your Portal and Service Studio, expect an onboarding communication soon. OutSystems is currently in the process of releasing this feature to the EAP customers.
-
-</div>
-
 Here is how you can use roles:
 
 1. In Service Studio, create some end-user roles.
@@ -88,7 +82,7 @@ Here is how you can use roles:
 
 <div class="info" markdown="1">
 
-Functions to add and revoke user roles are currently available in the Portal only.
+Adding and revoking user roles is currently available in the Portal only.
 
 </div>
 
