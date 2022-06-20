@@ -51,12 +51,12 @@ The following table lists elements and their possible Public property values.
 | Service Actions           | Yes                             | Not applicable                       |
 | Entities                  | Yes                             | Not applicable                       |
 | Static Entities           | Yes                             | Yes                                  |
-| Structures                | Yes                             | Yes                                  |
+| Structures                | No. However, structures become public if you use them in Service Actions as parameters. | No. However, structures become public if you use them in Service Actions as parameters. |
 | Themes                    | No                              | Yes                                  |
- 
+
 ## Expose a Server Action in an app
  
-You can't set as **Public** a Server Action from within an app. However, to achieve the same outcome:
+You can't set a Server Action as **Public** from within an app. However, to achieve the same outcome:
  
 1. Right-click the Server Action.
 2. Select **Expose as Service Action**.
