@@ -20,21 +20,7 @@ This document provides an overview of using log files and activities to ensure y
 
 ## Logs
 
-Apps generate logs to help you identify issues and determine the root cause of the problem. At the top of each log file, you can set filters to narrow the scope of your results. You can filter by stage, app, user, severity, date/time, and free text. The logs include a Log Detail page that shows more information. Some log entries have a link to the stack trace information. By default, you see the logs from the development stage.
-
-Error log helps you understand the errors that are occurring during runtime. The error log shows the following information:
-
-* System-related issues or exceptions from an application due to issues in its logic
-* Errors from user devices trying to access the app
-* Security exceptions such as when an unregistered user tries to access a page
-
-General log helps you understand the probable causes of why your app is slow. The general log  shows the following information:
-
-* System errors that force a process to terminate
-* Application issues such as a slow query warning
-* Activity logs with miscellaneous information
-
-Integration log helps you understand how quickly your app is responding to incoming requests and external services. This log shows the amount of time it takes to complete an action.
+Apps generate logs to help you identify issues and determine the root cause of the problem. At the top of each log file, you can set filters to narrow the scope of your results. You can filter by stage, app, user, severity, date/time, and free text. The logs include a detail page that shows more information. Some log entries have a link to the stack trace information. By default, you see the logs from the development stage.
 
 <div class="info" markdown="1">
 
