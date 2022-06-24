@@ -30,13 +30,13 @@ Users in Project Neo can have IT (organizational) permissions and end-user (app)
 
 <div class="warning" markdown="1">
 
-Currently in the Project Neo Early Access Program, all **IT users** have admin permissions.
+Currently in Project Neo Early all **IT users** have admin permissions.
 
 </div>
 
 ![User management](images/manage-users-diag.png "User management")
 
-The following features aren't available in the EAP at the moment:
+The following features aren't currently available:
 
 * Change password
 * Deactivate user
