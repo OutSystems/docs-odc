@@ -1,7 +1,8 @@
 - href: eap/neo-differences.md
 - href: eap/configuration-management/configuration-management.md
+- href: eap/configuration-management/manage-users.md
 - topics:
-    - href: eap/configuration-management/manage-users.md
+  - href: eap/configuration-management/manage-roles.md
 - href: eap/deploy-apps.md
 - href: eap/monitor-apps.md
 - href: eap/neo-support.md
