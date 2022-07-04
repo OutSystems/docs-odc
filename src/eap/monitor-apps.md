@@ -16,17 +16,27 @@ Project Neo documentation is under construction. It's frequently updated and exp
 
 OutSystems provides a unified experience for monitoring your systems and apps and identifying unexpected behaviors. As a best practice, you should monitor systems and apps during all stages. The **Activities** and **Logs** screens are available in Project Neo Portal.
 
-This document provides an overview of using log files and activities to ensure your apps are working correctly. 
+This document provides an overview of using log files and activities to ensure your apps are working correctly.
 
 ## Logs
 
-Apps generate logs to help you identify issues and determine the root cause of the problem. At the top of each log file, you can set filters to narrow the scope of your results. You can filter by stage, app, user, severity, date/time, and free text. The logs include a detail page that shows more information. Some log entries have a link to the stack trace information. By default, you see the logs from the development stage.
+By default, you see the logs from the development stage. Apps generate logs to help you identify issues and determine the root cause of the problem. The list displays a maximum of 100 logs in descending order sorted by start date/time.
+
+At the top of the log list, you can set filters to narrow the scope of your results. You can filter by stage, app, severity, date/time, and free text. The logs include a detail page that shows the user, stack trace information if there is an error and the logs and activities related to the same request. 
 
 <div class="info" markdown="1">
 
 Access the logs screen from **Portal** > **Logs**.
 
 </div>
+
+The following screenshot shows Log entries for the current settings. 
+
+![Log entries](images/log-listing-pl.png)
+
+The following shows the stack trace error along with the related logs and activities for an error. 
+
+![Detail of a log](images/log-detail-pl.png)
 
 ## Activities
 
@@ -36,18 +46,28 @@ Apps generate activities to ensure your apps are working as expected. Reviewing 
 * The performance of the app and any issues by checking for slow queries, screens, and integrations
 * Tracing related to the user requests
 
-By default, activities run in the development stage for any activity that started in the last 12 hours. The lists show the app, the type of activity, the action that run, when the action started, and how long it took to run. The list displays a maximum of 100 activities in descending order sorted by start date/time. You can set filters to narrow the scope of your results. You can filter by stage, apps, free text, date/time, activity type, and duration.
+By default, you see activities that ran in the development stage during the past 12 hours. The lists show the app, the type of activity, the action that ran, when the action started, and how long it took to run. The list displays a maximum of 100 activities in descending order sorted by start date/time. You can set filters to narrow the scope of your results. You can filter by stage, apps, free text, date/time, activity type, and duration. You can also access a detailed page that shows logs and activities related to the same request.
 
-Some activities that show in the list include: 
+In addition, you can sort the list by the type of activity, such as:
 
-* Consumed and Exposed Integration
-* Service actions
-* Screen data actions
-* Server actions
-* Client actions
+* Consumed REST integration
+* Exposed REST integration
+* Screen action
+* Server action
+* Client action
+* SQL
+* Timer
 
 <div class="info" markdown="1">
 
 Access the activities screen from **Portal** > **Activities**.
 
 </div>
+
+The following shows the Activities for the current settings. 
+
+![Activity entries](images/activities-listing-pl.png)
+
+The following shows related logs and activities for an activity.
+
+![Detail of activity](images/activities-detail-pl.png)
