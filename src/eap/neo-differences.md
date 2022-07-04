@@ -84,7 +84,25 @@ Note the following related to timers in Project Neo:
  
 * Timers are set in UTC (Coordinated Universal Time).
 * The "Weekday of month" option doesn't exist in Project Neo.
- 
+
+## Time
+
+The date and time an app user sees in their app is determined by the device's time zone. If an app user opens the app on a computer in Boston MA, and it shows the time as 1:00 pm (UTC-4). When another app user opens the same app in Lisbon, Portugal, they see the time as 6:00 pm (UTC+1). Project Neo automatically converts the time to the local time.
+
+In Project Neo, date and time data is stored with the UTC time zone, to ensure all date and time calculations are accurate in all the time zones. Project Neo stores date and time data types in the database with a time zone offset.
+
+![Saving time in UTC in Project Neo](images/time-save-to-server-diag.png)
+
+When the data gets returned to the devices, the time displays in the local time for both devices.
+
+![Getting tie in UTC in Project Neo](images/time-get-from-server-diag.png)
+
+The following list provides additional guidance: 
+
+* Client-side calls return the device date and time.
+* Server-side calls return the current date in UTC. 
+* SQL query calls return the current date and time in UTC. 
+* Daylight Savings Time (DST) is ignored and the time zone for evaluating a function is UTC. 
   
 ## Project Neo differences by task
  
