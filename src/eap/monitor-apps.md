@@ -48,7 +48,7 @@ Apps generate activities to ensure your apps are working as expected. Reviewing 
 
 By default, you see activities that ran in the development stage during the past 12 hours. The lists show the app, the type of activity, the action that ran, when the action started, and how long it took to run. The list displays a maximum of 100 activities in descending order sorted by start date/time. You can set filters to narrow the scope of your results. You can filter by stage, apps, free text, date/time, activity type, and duration. You can also access a detailed page that shows logs and activities related to the same request.
 
-In addition, you can sort the list by the type of activity, such as:
+Types of activity include:
 
 * Consumed REST integration
 * Exposed REST integration
