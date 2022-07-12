@@ -1,5 +1,7 @@
 - href: eap/neo-differences.md
 - href: eap/configuration-management/configuration-management.md
+- topics:
+  - href: eap/configuration-management/set-as-secret.md
 - href: eap/configuration-management/manage-users.md
 - topics:
   - href: eap/configuration-management/manage-roles.md
