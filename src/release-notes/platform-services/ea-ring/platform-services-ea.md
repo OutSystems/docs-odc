@@ -7,11 +7,16 @@ app_type: mobile apps, reactive web apps
 ---
 
 <div class="hidden"><h1>Project Neo Early Access ring</h1></div>
+
 <h2 id="project_neo_ea_1">Project Neo Early Access ring release 1</h2>
+
 <div class="info">
+  
 Released on Jan 17, 2023
+  
 </div>
-<h3 id="new_in_project_neo_ea_1">New</h3> 
+
+<h3 id="new_in_project_neo_ea_1">New in Project Neo Early Access ring release 1</h3> 
 <ul>
 <li>It is now possible to consume REST APIs using Swagger specifications that have enum elements. (RSBO-872)</li>
 <li>Added support for accent-sensitive Linguistic sorts on Oracle databases. (RSAT-1844)</li>
