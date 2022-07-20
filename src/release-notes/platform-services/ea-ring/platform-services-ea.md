@@ -10,7 +10,7 @@ app_type: mobile apps, reactive web apps
 
 <h2 id="project_neo_ea_1">Project Neo Early Access ring release 1</h2>
 
-<div class="info">
+<div class="info"> 
   
 Released on Jan 17, 2023
   
