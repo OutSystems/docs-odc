@@ -37,5 +37,7 @@
     # Reuse elements across apps
     - href: eap/building-apps/reuse-elements.md
 # Release notes (under testing)
-- href: release-notes/platform-services/ea-ring/platform-services-ea.md
-- href: release-notes/platform-services/ga-ring/platform-services-ga.md
+- href: release-notes/platform-services/intro.md
+- topics:
+    - href: release-notes/platform-services/ea-ring/platform-services-ea.md
+    - href: release-notes/platform-services/ga-ring/platform-services-ga.md
