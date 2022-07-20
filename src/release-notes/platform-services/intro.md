@@ -8,7 +8,7 @@ app_type: mobile apps, reactive web apps
 
 # Project Neo release notes
 
-OutSystems release notes list the new features, improvements and bug fixes released in each ring.
+OutSystems release notes list the new features, improvements and bug fixes released in each ring. 
 
 The following articles provide the release notes for each ring:
 
