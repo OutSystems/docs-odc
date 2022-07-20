@@ -2,7 +2,7 @@
 summary: 
 tags:
 locale: en-us
-guid: b5d808e4-e4f9-4448-bbb8-558d0963509b
+guid: 43ad22e9-647a-4704-9d11-9059a3b304cd
 app_type: mobile apps, reactive web apps
 ---
 
