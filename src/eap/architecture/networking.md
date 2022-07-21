@@ -24,13 +24,15 @@ A secure cloud-native network connects the cloud-native architecture. The networ
 
 The following is an overview of the cloud technologies that Project Neo uses for networking and network security.
 
-### CDN
+### CDN (Content Delivery Network)
 
-A globally distributed set of servers, Content Delivery Network (CDN) ensures a low network latency for routing requests. The CDN verifies the public key certificate attached to the request, `outsystems.dev` for the Platform and `outsystems.app` for the Runtime.
+A CDN is a globally distributed set of servers that ensures a low network latency for routing requests. The CDN verifies the public key certificate attached to the request, `outsystems.dev` for the Platform and `outsystems.app` or the [custom domain](../custom-domains.md) being used for the Runtime. 
 
-#### WAF
+The CDN verifies the public key certificate attached to the request. The Platform certificate is `outsystems.dev` and the Runtime certificate is `outsystems.app` or the [custom domain](../custom-domains.md).
 
-The Web Application Firewall (WAF) runs on the CDN and protects the Platform and the Runtime against common web exploits and bots. It has policies in place to protect against:
+#### WAF (Web Application Firewall)
+
+The WAF runs on the CDN and protects the Platform and the Runtime against common web exploits and bots. It has policies in place to protect against:
 
 * Known malicious accesses or patterns.
 * Denial-of-Service (DoS) and Distributed-Denial-of-Service (DDoS) attacks.
@@ -78,6 +80,6 @@ Apps run as app containers in the Runtime with secure REST API endpoints. HTTPS 
 
 An example of an HTTPS request is when a user submits a form in an app. The request accesses a secure endpoint that the app container exposes.
 
-The apps are available at `<customername>.outsystems.app/appname`.
+The apps are available at `<customername>.outsystems.app/appname` and on all the active custom domains (such as `apps.customername.com/appname`).
 
 ![Runtime network architecture](images/cloud-network-runtime-diag.png "Runtime network architecture") 
