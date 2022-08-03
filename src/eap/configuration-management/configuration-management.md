@@ -16,10 +16,6 @@ Project Neo documentation is under construction. It's frequently updated and exp
 
 For DevOps activities, Project Neo Portal lets you adjust the configuration values in your app for each stage (such as development, test, and production). Changes to configuration values don't require you to deploy your app. This increases the speed in which changes to the app are available to customers and reduces the number of times a deployment is necessary.
 
-User management is a configuration that's often necessary for both developers and end-users. Find more about it in [Manage Users](./manage-users.md).
-
-Being able to make changes to an app in use is critical in cases where you can't change a property after deployment.
-
 ## How configuration management works
 
 For app configurations, developers create settings with default values in Service Studio. From the Project Neo Portal, you select the stage on which you want to work. Then you can view and modify some configuration and settings values for apps deployed on that stage.

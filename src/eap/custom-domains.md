@@ -23,7 +23,7 @@ For each stage in which you deploy apps, Project Neo comes with a **built-in** O
 | Test        | `<customername>-test.outsystems.app` |
 | Production  | `<customername>.outsystems.app`      |
 
-Apps are always accessible to end-users through built-in domains. For example, an app named MyApp deployed to the Development stage is accessible at `<customername>-dev.outsystems.app/MyApp`. If you want to restrict access, you can use [end-user roles](configuration-management/manage-roles.md).
+Apps are always accessible to end-users through built-in domains. For example, an app named MyApp deployed to the Development stage is accessible at `<customername>-dev.outsystems.app/MyApp`. If you want to restrict access to some parts of an app, you can use [end-user roles](building-apps/secure-app-with-roles.md).
 
 In addition, Project Neo lets you make your apps accessible to end-users through your organization's domain(s). Your apps in a given stage can be available through one or more custom domains you add to that stage. Each custom domain must be unique to a customer and stage.
 

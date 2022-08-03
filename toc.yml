@@ -3,8 +3,6 @@
 - topics:
   - href: eap/configuration-management/set-as-secret.md
 - href: eap/configuration-management/manage-users.md
-- topics:
-  - href: eap/configuration-management/manage-roles.md
 - href: eap/deploy-apps.md
 - href: eap/monitor-apps.md
 - href: eap/custom-domains.md
@@ -37,6 +35,8 @@
       - href: eap/building-apps/ui/ui-interactions.md
     # Reuse elements across apps
     - href: eap/building-apps/reuse-elements.md
+    # Secure your app by using roles
+    - href: eap/building-apps/secure-app-with-roles.md
 # Release notes (under testing) 
 - href: release-notes/platform-services/intro.md
 - topics:
