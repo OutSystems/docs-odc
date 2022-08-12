@@ -102,8 +102,43 @@ The following list provides additional guidance:
 * Client-side calls return the device date and time.
 * Server-side calls return the current date in UTC. 
 * SQL query calls return the current date and time in UTC. 
-* Daylight Savings Time (DST) is ignored and the time zone for evaluating a function is UTC. 
-  
+* Daylight Savings Time (DST) is ignored and the time zone for evaluating a function is UTC.
+
+## SQL queries with pattern matching operators
+
+As a Project Neo developer, you need to pay attention to how you write case and accent insensitive queries (CIAI). This is because Project Neo uses Aurora PostgreSQL, which is a case and accent sensitive database (CSAS). To allow case and accent insensitive text operations (CIAI), PostgreSQL introduces the concept of [non-deterministic collations](https://www.postgresql.org/docs/12/collation.html).
+
+<div class="info">
+
+This section applies to the SQL logic element only.
+
+</div>
+
+The non-deterministic collation in Project Neo is, by default, defined at the singular level and for all the columns that Project Neo creates This means:
+
+* The SQL database operators (=, <>, >, >=, <, <=) are CIAI and the default comparison in Project Neo.
+* The pattern matching operators of LIKE, SIMILAR, and REGEX aren't supported through non-deterministic collations.
+
+The **pattern matching operators aren't supported and result in runtime errors**. For example, you get an error like "DataBaseException Error in advanced query SQL1 (...) with nondeterministic collations, in which these operators are not supported."
+
+**For pattern matching operators use the function caseaccent_normalize** directly in the SQL Node (AdvancedQuery), in each pattern matching operator.
+
+Here is an example for LIKE:
+
+    select * from table
+    where caseaccent_normalize(col1 collate "default")
+    LIKE caseaccent_normalize(col2 collate "default");
+
+The `collate "default"` part is only needed when the pattern is applied to a column with non-deterministic collation, which is in all the text-based columns. You can skip `collate "default"` in something that uses literals like:
+
+    select * from table
+        where caseaccent_normalize(col1 collate "default")
+        LIKE caseaccent_normalize('%something'); 
+
+Here is an example for **regexp_replace**:
+
+    select regexp_replace(caseaccent_normalize(col1 collate "default"), '.stuff to replace.', '') from table;
+
 ## Project Neo differences by task
  
 The following table lists tasks in the Project Neo compared to OutSystems 11.
