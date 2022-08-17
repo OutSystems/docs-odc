@@ -37,7 +37,7 @@
     # Secure your app by using roles
     - href: eap/building-apps/secure-app-with-roles.md
 # Release notes (under testing) 
-- href: release-notes/platform-services/intro.md
-- topics:
-    - href: release-notes/platform-services/ea-ring/platform-services-ea.md
-    - href: release-notes/platform-services/ga-ring/platform-services-ga.md
+#- href: release-notes/platform-services/intro.md
+#- topics:
+    #- href: release-notes/platform-services/ea-ring/platform-services-ea.md
+    #- href: release-notes/platform-services/ga-ring/platform-services-ga.md
