@@ -26,9 +26,7 @@ The following is an overview of the cloud technologies that Project Neo uses for
 
 ### CDN (Content Delivery Network)
 
-A CDN is a globally distributed set of servers that ensures a low network latency for routing requests. The CDN verifies the public key certificate attached to the request, `outsystems.dev` for the Platform and `outsystems.app` or the custom domains for the Runtime. 
-
-The CDN verifies the public key certificate attached to the request. The Platform certificate is `outsystems.dev` and the Runtime certificate is `outsystems.app` or the custom domains.
+A CDN is a globally distributed set of servers that ensures a low network latency for routing requests. The CDN verifies the public key certificate attached to the request, `outsystems.dev` for the Platform and `outsystems.app` for the Runtime.
 
 #### WAF (Web Application Firewall)
 
