@@ -80,6 +80,6 @@ Apps run as app containers in the Runtime with secure REST API endpoints. HTTPS 
 
 An example of an HTTPS request is when a user submits a form in an app. The request accesses a secure endpoint that the app container exposes.
 
-The apps are available at `<customername>.outsystems.app/appname` and on all the active custom domains (such as `apps.customername.com/appname`).
+The apps are available at `<customername>.outsystems.app/appname`.
 
 ![Runtime network architecture](images/cloud-network-runtime-diag.png "Runtime network architecture") 
