@@ -5,7 +5,8 @@
 - href: eap/configuration-management/manage-users.md
 - href: eap/deploy-apps.md
 - href: eap/monitor-apps.md
-- href: eap/external-idps.md
+# Remove until feature available for all customers, see TK-6054
+# - href: eap/external-idps.md
 - href: eap/neo-support.md
 - href: eap/architecture/intro.md
 - topics:
