@@ -25,7 +25,7 @@ In addition to access to **Service Studio**, each Project Neo customer has acces
 * A standard Runtime setup of three stages: **Development**, **Test**, and **Production**.
 * A set of isolated, encrypted, and scalable databases and data stores for the Platform services data. Secret data such as API keys are stored in a secret manager.
 * An isolated, encrypted, and scalable relational database for each Runtime stage. 
-* An **Identity Service** to keep [user identities secure](identity.md).
+* A built-in **Identity Service** to keep [user identities secure](identity.md).
 
 The following diagram shows the high-level architecture of the OutSystems cloud platform.
 
