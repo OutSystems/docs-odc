@@ -18,7 +18,7 @@ This article provides an overview of architecture of the Identity Service of Pro
 
 The Identity Service is the built-in identity provider (IdP) of the Platform and the Runtime. It verifies each HTTPS request comes from an authenticated and authorized user for the Platform services and your apps.
 
-In addition, Project Neo lets you use an external, self-managed OpenID Connect (OIDC) IdP as the authentication provider for the Platform services. 
+In addition, you can use an external, self-managed OpenID Connect (OIDC) IdP as the authentication provider for the Platform services and your apps. 
 
 ## Authentication and authorization
 
@@ -65,4 +65,4 @@ If any of the conditions (1)-(6) fail, the Identity Service or external IdP **re
 
 The **ID** token contains information about the identity of the authenticated user, such as name and email. The **access** token contains information about the user's permissions. Transfer of JWTs between the client and Identity Service or external IdP is over the OAuth 2 protocol.
 
-In the diagram, a user using Project Neo Portal to access another REST API endpoint in another Platform service is a valid example. 
+In the diagram, a user using Project Neo Portal to access another REST API endpoint in another Platform service is a valid example. As is a user using a browser to access a REST API endpoint on a protected screen in an app.
