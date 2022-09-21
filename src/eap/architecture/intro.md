@@ -140,7 +140,7 @@ You can store secret data for your apps as secret settings in a secret manager.
 
 Build Service stores the app container image and passes the image to a Runtime stage for deployment. OutSystems follows the "Build once, deploy anywhere" **continuous delivery** principle, which makes Project Neo an efficient cloud product.
 
-## Logging, monitoring, and analytics
+## Logging, monitoring, and analytics { #logging-monitoring-analytics }
 
 The auto-scale controller collects logs and metrics from each of the app containers running in each Runtime stage cluster. Developers and DevOps engineers can filter logs on the Project Neo Portal.
 
