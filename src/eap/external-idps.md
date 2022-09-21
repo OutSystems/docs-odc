@@ -89,9 +89,11 @@ After you apply an external IdP to stage(s) (Dev, QA, Prod) in the Portal, you m
 
 After you complete the steps, [promote](deploy-apps.md) the revision of the app to the stage(s) where the provider is active.
 
+If you revert the provider for stage(s) back to the built-in provider, you must change the login flow for the apps back to that shown in Step 1.
+
 <div class="info" markdown="1">
 
-If you revert the provider for stage(s) back to the built-in provider, you must change the login flow for the apps back to that shown in Step 1.
+When granting end-users new roles, end-users must log out and log in for new roles to be available.
 
 </div>
 
