@@ -45,7 +45,7 @@ The following table lists elements and their possible Public property values.
 | Processes                 | No                              | Not applicable                       |
 | Resources                 | No                              | No                                   |
 | Roles                     | No                              | Not applicable                       |
-| Screens                   | Yes                             | No                                   |
+| Screens                   | Yes                             | Not Applicable                                   |
 | Scripts                   | No                              | No                                   |
 | Server Actions            | No                              | Yes                                  |
 | Service Actions           | Yes                             | Not applicable                       |
