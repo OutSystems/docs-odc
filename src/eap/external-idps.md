@@ -47,6 +47,7 @@ A Project Neo admin can configure an external IdP. Navigate to the **Identity pr
 
     </div>
 
+1. If your provider uses different attribute names, then in the **Claim Mapping** section overwrite the prefilled **Name** and **Email** fields. Otherwise, skip this step. For more guidance, see your provider's support documentation.
 1. Click **Save**. Project Neo tests the configuration and on success adds the provider to the list of available providers. If the test fails, a notification with the error displays.
 
 ## Apply an external IdP
