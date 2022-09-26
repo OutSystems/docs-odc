@@ -38,6 +38,11 @@
     - href: eap/building-apps/reuse-elements.md
     # Secure your app by using roles
     - href: eap/building-apps/secure-app-with-roles.md
+# Forge
+- href: eap/forge/intro.md
+- topics:
+  - href: eap/forge/submit.md
+  - href: eap/forge/install.md
 # Release notes (under testing) 
 #- href: release-notes/platform-services/intro.md
 #- topics:
