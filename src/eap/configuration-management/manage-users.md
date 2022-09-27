@@ -38,12 +38,6 @@ The **Project Neo Portal** is the central place to manage users. In Portal you c
 
 ![User management](images/manage-users-diag.png "User management")
 
-The following features aren't currently available:
-
-* Change password
-* Deactivate user
-* Delete user
-
 ## Add new users to your organization
 
 <div class="info" markdown="1">
