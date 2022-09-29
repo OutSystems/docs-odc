@@ -14,4 +14,4 @@ Project Neo documentation is under construction. It's frequently updated and exp
 
 </div>
 
-Forge is a repository of reusable software assets such as libraries, web apps, and mobile apps. Available to OutSystems developers, partners, prospects, and customers, Forge powers app development with high-quality assets. Shared with the entire OutSystems community Forge helps members overcome technical challenges and helps to solve business use cases.
+Forge is a repository of reusable software assets such as libraries, web apps, and mobile apps. Available to OutSystems developers, partners, prospects, and customers, Forge powers app development with high-quality assets. The shared assets in Forge help members overcome technical challenges and helps to solve business use cases.
