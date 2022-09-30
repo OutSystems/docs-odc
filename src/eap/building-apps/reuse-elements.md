@@ -30,8 +30,8 @@ You can share public elements across your apps to accelerate development and ena
  
 Project Neo elevates Libraries to a top-level concept. Libraries exist at the same level as apps (Web or Mobile), and they have their own lifecycle. For example, you can make a branding change by updating the style guide in a Library.
  
-## Public elements
- 
+## Public elements { #public-elements }
+
 To expose and share a public element for reuse, you set the element's **Public** property to **Yes**. Some elements can't be shared, and in such cases, the element's **Public** property is set to **No** and can't be changed.
 
 The following table lists elements and their possible Public property values.

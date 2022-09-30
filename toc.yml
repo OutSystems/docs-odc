@@ -38,6 +38,40 @@
     - href: eap/building-apps/reuse-elements.md
     # Secure your app by using roles
     - href: eap/building-apps/secure-app-with-roles.md
+    # Logic
+    - href: eap/building-apps/logic/intro.md
+    - topics:
+      # Use public elements
+      - href: eap/building-apps/logic/use-public-elements.md
+# Reference
+- href: eap/reference/intro.md
+- topics:
+    # Libraries
+    - href: eap/reference/libraries/intro.md
+    - topics:
+        - href: eap/reference/libraries/binarydata.md
+        - href: eap/reference/libraries/datetime.md
+        - href: eap/reference/libraries/http.md
+        - href: eap/reference/libraries/math.md
+        - href: eap/reference/libraries/sanitization.md
+        - href: eap/reference/libraries/security.md
+        - href: eap/reference/libraries/text.md
+        - href: eap/reference/libraries/textdictionary.md
+        - href: eap/reference/libraries/url.md
+        - href: eap/reference/libraries/xml.md
+        - href: eap/reference/libraries/zip.md
+    # Built-in functions
+    - href: eap/reference/built-in-functions/intro.md
+    - topics:
+        - href: eap/reference/built-in-functions/data-conversion.md
+        - href: eap/reference/built-in-functions/dateandtime.md
+        - href: eap/reference/built-in-functions/email.md
+        - href: eap/reference/built-in-functions/format.md
+        - href: eap/reference/built-in-functions/math.md
+        - href: eap/reference/built-in-functions/numeric.md
+        - href: eap/reference/built-in-functions/organization.md
+        - href: eap/reference/built-in-functions/text.md
+        - href: eap/reference/built-in-functions/url.md
 # Forge
 - href: eap/forge/intro.md
 - topics:
