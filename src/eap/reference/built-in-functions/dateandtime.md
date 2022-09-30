@@ -5,7 +5,7 @@ app_type: mobile apps, reactive web apps
 ---
 # Date and Time
 
-## AddDays { #AddDays }
+## AddDays
 
 Adds 'n' days to 'dt' and returns a valid Date Time.  
 
@@ -38,7 +38,7 @@ AddDays(#2015-02-28#, 1) = #2015-03-01 00:00:00#
 AddDays(#2016-02-28#, 1) = #2016-02-29 00:00:00#
 ```
 
-## AddHours { #AddHours }
+## AddHours
 
 Adds 'n' hours to 'dt' and returns a valid Date Time.  
 
@@ -69,7 +69,7 @@ AddHours(#1982-05-21 22:20:30#, 1) = #1982-05-21 23:20:30#
 AddHours(#2001-10-12 23:20:00#, 5) = #2001-10-13 04:20:00#
 ```
 
-## AddMinutes { #AddMinutes }
+## AddMinutes
 
 Adds 'n' minutes to 'dt' and returns a valid Date Time.  
 
@@ -100,7 +100,7 @@ AddMinutes(#1982-05-21 22:20:30#, 1) = #1982-05-21 22:21:30#
 AddMinutes(#2001-10-12 23:55:00#, 5) = #2001-10-13 00:00:00#
 ```
 
-## AddMonths { #AddMonths }
+## AddMonths
 
 Adds 'n' months to 'dt' and returns a valid Date Time.  
 
@@ -133,7 +133,7 @@ AddMonths(#2003-01-31#, 1) = #2003-02-28#
 AddMonths(#2004-01-31#, 1) = #2004-02-29#
 ```
 
-## AddSeconds { #AddSeconds }
+## AddSeconds
 
 Adds 'n' seconds to 'dt' and returns a valid Date Time.  
 
@@ -164,7 +164,7 @@ AddSeconds(#2015-05-21 22:20:30#, 60) = #2015-05-21 22:21:30#
 AddSeconds(#2003-10-21 23:59:50#, 11) = #2003-10-22 00:00:01#
 ```
 
-## AddYears { #AddYears }
+## AddYears
 
 Adds 'n' years to 'dt' and returns a valid Date Time.  
 
@@ -196,7 +196,7 @@ AddYears(#2004-02-29#, 1) = #2005-02-28 00:00:00#
 AddYears(#2004-02-29#, 4) = #2008-02-29 00:00:00#
 ```
 
-## BuildDateTime { #BuildDateTime }
+## BuildDateTime
 
 Returns a Date Time made up of the Date 'd' and Time 't'.  
 
@@ -226,7 +226,7 @@ Type: DateTime
 BuildDateTime(#2015-07-14#, #12:30:34#) = #2015-07-14 12:30:34#
 ```
 
-## CurrDate { #CurrDate }
+## CurrDate
 
 * Client-side calls return the device date and time.
 * Server-side calls return the current date in UTC.
@@ -244,7 +244,7 @@ Available in:
 
 Type: Date  
 
-## CurrDateTime { #CurrDateTime }
+## CurrDateTime
 
 * Client-side calls return the device date and time.
 * Server-side calls return the current date in UTC.
@@ -262,7 +262,7 @@ Available in:
 
 Type: DateTime  
 
-## CurrTime { #CurrTime }
+## CurrTime
 
 * Client-side calls return the device date and time.
 * Server-side calls return the current date in UTC.
@@ -306,7 +306,7 @@ Type: Integer
 Day(#2015-07-14#) = 14
 ```
 
-## DayOfWeek { #DayOfWeek }
+## DayOfWeek
 
 Returns the week day of 'dt', ranging from 0 (Sunday) to 6 (Saturday).  
 
@@ -332,7 +332,7 @@ Type: Integer
 DayOfWeek(#2001-09-14#) = 5
 ```
 
-## DiffDays { #DiffDays }
+## DiffDays
 
 Returns the difference in days between 'dt1' and 'dt2'; i.e. how many days have passed between these two dates:  
   
@@ -379,7 +379,7 @@ DiffDays(#2014-03-30 00:00:00#, #2014-03-31 00:00:00#) = 1, assuming the GMT+1 t
 DiffDays(#2014-10-25 00:00:00#, #2014-10-26 00:00:00#) = 1, assuming the GMT+1 time zone (2014 Daylight Saving Time ends in Europe on October 26 of 2014). If your server is in a different time zone, you will get different results.
 ```
 
-## DiffHours { #DiffHours }
+## DiffHours
 
 Returns the difference in hours between 'dt1' and 'dt2'; i.e. how many hours have passed between these two dates:  
   
@@ -423,7 +423,7 @@ DiffHours(#2006-03-25 15:00:00#, #2006-03-26 15:00:00#) = 24, assuming the GMT+1
 DiffHours(#2006-10-28 15:00:00#, #2006-10-29 15:00:00#) = 24, assuming the GMT+1 time zone (2006 Daylight Saving Time ends in Europe on October 29 of 2006). If your server is in a different time zone, you will get different results.
 ```
 
-## DiffMinutes { #DiffMinutes }
+## DiffMinutes
 
 Returns the difference in minutes between 'dt1' and 'dt2'; i.e. how many minutes have passed between these two dates:  
   
@@ -468,7 +468,7 @@ DiffMinutes(#2006-03-25 15:00:00#, #2006-03-26 15:00:00#) = 1440, assuming the G
 DiffMinutes(#2006-10-28 15:00:00#, #2006-10-29 15:00:00#) = 1440, assuming the GMT+1 time zone (2006 Daylight Saving Time ends in Europe on October 29 of 2006). If your server is in a different time zone, you will get different results.
 ```
 
-## DiffSeconds { #DiffSeconds }
+## DiffSeconds
 
 Returns the difference in seconds between 'dt1' and 'dt2'; i.e. how many seconds have passed between these two dates:  
   
@@ -510,7 +510,7 @@ DiffSeconds(#2006-03-25 15:00:00#, #2006-03-26 15:00:00# ) = 86400, assuming the
 DiffSeconds(#2006-10-28 15:00:00#, #2006-10-29 15:00:00#) = 86400, assuming the GMT+1 time zone (2006 Daylight Saving Time ends in Europe on October 29 of 2006). If your server is in a different time zone, you will get different results.
 ```
 
-## Hour { #Hour }
+## Hour
 
 Returns the hour of 'dt'.  
 
@@ -536,7 +536,7 @@ Type: Integer
 Hour(#1982-05-21 22:20:30#) = 22
 ```
 
-## Minute { #Minute }
+## Minute
 
 Returns the minute of 'dt'.  
 
@@ -562,7 +562,7 @@ Type: Integer
 Minute(#1982-05-21 22:20:30#) = 20
 ```
 
-## Month { #Month }
+## Month
 
 Returns the month of 'dt'.  
 
@@ -622,7 +622,7 @@ Type: Date
 NewDate(2002, 6, 3) = #2002-06-03#
 ```
 
-## NewDateTime { #NewDateTime }
+## NewDateTime
 
 Returns a Date Time made up of year 'y', month 'mo', day 'd', hour 'h', minute 'mi' and second 's'.  
 
@@ -668,7 +668,7 @@ Type: DateTime
 NewDateTime(2002, 6, 3, 22, 0, 59) = #2002-06-03 22:00:59#
 ```
 
-## NewTime { #NewTime }
+## NewTime
 
 Returns a Time made up of hour 'h', minute 'm' and second 's'.  
 
@@ -728,7 +728,7 @@ Type: Integer
 Second(#2015-05-21 22:20:30#) = 30
 ```
 
-## Year { #Year }
+## Year
 
 Returns the year of 'dt'.  
 

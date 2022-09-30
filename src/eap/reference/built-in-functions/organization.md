@@ -5,7 +5,7 @@ app_type: mobile apps, reactive web apps
 ---
 # Organization
 
-## GetCurrentLocale { #GetCurrentLocale }
+## GetCurrentLocale
 
 Returns the name of the current language locale of the user session. The name of the language locale is used for presentation purposes and follows the RFC 1766 standard format.  
 
@@ -25,7 +25,7 @@ Type: Text
 GetCurrentLocale() = "en-US"
 ```
 
-## GetUserAgent { #GetUserAgent }
+## GetUserAgent
 
 Returns the user agent, as indicated by the header of the HTTP message.  
 
@@ -46,7 +46,7 @@ GetUserAgent() = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML,
 GetUserAgent() = "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko"
 ```
 
-## GetAppName { #GetAppName }
+## GetAppName
 
 Returns the name of the app that is processing the request.
 

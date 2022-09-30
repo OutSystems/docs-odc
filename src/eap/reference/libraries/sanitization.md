@@ -11,7 +11,7 @@ Library that provides methods to help you avoid code injection in HTML, JavaScri
 
 ## Actions
 
-### BuildSafe_InClauseIntegerList { #BuildSafe_InClauseIntegerList }
+### BuildSafe_InClauseIntegerList
 
 Returns a comma-delimited text value containing all the integer values provided as input. The returned value can be safely used in a SQL &quot;IN&quot; clause.
 
@@ -42,7 +42,7 @@ BuildSafe_InClauseIntegerList(ListB) = "0"
 
 For more information, check [Building Dynamic SQL Statements the Right Way](https://success.outsystems.com/Documentation/Best_Practices/Development/Building_Dynamic_SQL_Statements_the_Right_Way).
 
-### BuildSafe_InClauseTextList { #BuildSafe_InClauseTextList }
+### BuildSafe_InClauseTextList
 
 Returns a comma-delimited text value with the encoded version of all the text values provided as input. The returned value can be safely used in a SQL &quot;IN&quot; clause.
 
@@ -73,7 +73,7 @@ BuildSafe_InClauseTextList(ListB) = "''"
 
 For more information, check [Building Dynamic SQL Statements the Right Way](https://success.outsystems.com/Documentation/Best_Practices/Development/Building_Dynamic_SQL_Statements_the_Right_Way).
 
-### SanitizeHtml { #SanitizeHtml }
+### SanitizeHtml
 
 Sanitizes the provided HTML using the HtmlSanitizer NuGet package.  
 Note: The underlying library was recently changed from OWASP Java HTML Sanitizer Project. Check the [Release Notes](<https://success.outsystems.com/Support/Release_Notes/11/Platform_Server>) for a summary of what changed.
@@ -90,7 +90,7 @@ SanitizedHtml
 :   Type: Text.  
     The sanitized HTML.
 
-### VerifyJavascriptLiteral { #VerifyJavascriptLiteral }
+### VerifyJavascriptLiteral
 
 Ensures the provided JavaScript only contains JavaScript/JSON literals such as string, array, or Object literals. If it contains anything else, an INVALID JAVASCRIPT LITERAL exception is thrown. Learn more about JavaScript literals in the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Literals).
 
@@ -106,7 +106,7 @@ SanitizedJavascriptLiteral
 :   Type: Text.  
     The sanitized JavaScript literal.
 
-### VerifySqlLiteral { #VerifySqlLiteral }
+### VerifySqlLiteral
 
 **Deprecated**. Ensures the provided SQL only contains literals. If it contains anything else, an INVALID SQL LITERAL exception is thrown.
 
@@ -125,7 +125,7 @@ SanitizedSqlLiteral
 
 ## Structures
 
-### IntegerLiteral { #Structure_IntegerLiteral }
+### IntegerLiteral
 
 Simple structure holding a long integer value. Used as a record definition when providing a list of IntegerLiteral records to include in a SQL &quot;IN&quot; clause.
 
@@ -135,7 +135,7 @@ Value
 :   Type: LongInteger. Mandatory.  
     An integer value to consider when creating a SQL &quot;IN&quot; clause.
 
-### TextLiteral { #Structure_TextLiteral }
+### TextLiteral
 
 Simple structure holding a text value. Used as a record definition when providing a list of TextLiteral records to include in a SQL &quot;IN&quot; clause.
 

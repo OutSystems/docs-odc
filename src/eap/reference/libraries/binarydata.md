@@ -12,7 +12,7 @@ The OutSystems BinaryData library provides actions to manipulate binary data, su
 
 ## Actions
 
-### Base64ToBinary { #Base64ToBinary }
+### Base64ToBinary
 
 Converts Base64 Text into BinaryData.
 
@@ -28,7 +28,7 @@ Binary
 :   Type: BinaryData.  
     Result of conversion from Base64 Text to BinaryData.
 
-### BinaryDataSize { #BinaryDataSize }
+### BinaryDataSize
 
 Returns the size in bytes of a binary content.
 
@@ -44,7 +44,7 @@ Size
 :   Type: Integer.  
     Size in bytes of binary content.
 
-### BinaryDataToText { #BinaryDataToText }
+### BinaryDataToText 
 
 Reads the content of a text file using a given encoding. If no encoding is supplied, the system's default ANSI encoding will be used.
 
@@ -64,7 +64,7 @@ Text
 :   Type: Text.  
     Result of conversion from BinaryData to Text.
 
-### BinaryToBase64 { #BinaryToBase64 }
+### BinaryToBase64
 
 Converts BinaryData into Base64 Text.
 
@@ -80,7 +80,7 @@ Base64
 :   Type: Text.  
     Result of conversion from BinaryData to Base64 Text.
 
-### Compare { #Compare }
+### Compare
 
 Performs a binary comparison between two Binary Data contents.
 
@@ -100,7 +100,7 @@ Equal
 :   Type: Boolean.  
     True if the two binary contents are equal. False otherwise.
 
-### ConvertEncoding { #ConvertEncoding }
+### ConvertEncoding
 
 Converts a range of bytes in a BinaryData from one encoding to another.
 
@@ -124,7 +124,7 @@ ConvertedBytes
 :   Type: BinaryData.  
     The converted byte array.
 
-### TextToBinaryData { #TextToBinaryData }
+### TextToBinaryData 
 
 Converts a Text into binary content. If no encoding is supplied, the system's default ANSI encoding will be used.
 
@@ -144,7 +144,7 @@ BinaryData
 :   Type: BinaryData.  
     Result of conversion from Text to BinaryData.
 
-### BinaryDataToHex { #BinaryDataToHex }
+### BinaryDataToHex
 
 Converts the given binary data to hexadecimal representation.
 

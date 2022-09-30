@@ -12,7 +12,7 @@
 - topics:
   - href: eap/architecture/networking.md
   - href: eap/architecture/identity.md
-# Building apps
+# Building apps 
 - href: eap/building-apps/intro.md
 - topics:
     # Data in OutSystems apps

@@ -5,7 +5,7 @@ app_type: mobile apps, reactive web apps
 ---
 # Text
 
-## Chr { #Chr }
+## Chr
 
 Returns a single-character string corresponding to the 'c' character code.  
 
@@ -31,7 +31,7 @@ Type: Text
 Chr(88) = "X"
 ```
 
-## EncodeHtml { #EncodeHtml }
+## EncodeHtml
 
 Replaces special characters in a string so that you can use it in HTML literals. Use this function when using un-escaped expressions that contain content provided by end users.  
   
@@ -65,7 +65,7 @@ EncodeHtml("Hello" + NewLine() + "World!") = "Hello<br/>World!"
 Value = "<dl><dt>" + EncodeHtml(ArticleTitle) + "</dt><dd>" + EncodeHtml(ArticleDescription) + "</dd></dl>"
 ```
 
-## EncodeJavaScript { #EncodeJavaScript }
+## EncodeJavaScript
 
 Replaces special characters in a string so that you can use it in JavaScript literals. Use this function when using un-escaped expressions that contain content provided by end users.  
   
@@ -98,7 +98,7 @@ EncodeJavaScript("<>") = "\x3c\x3e"
 Script = "ChangeContainerContent('" + ModalTitle.Id + "', '" + EncodeJavaScript(Title) + "');"
 ```
 
-## EncodeSql { #EncodeSql }
+## EncodeSql
 
 Replaces special characters in a string literal so that you can use it in a SQL statement. Use this function when the Expand Inline property of a Query Parameter is enabled to escape content provided by end users.  
   
@@ -132,7 +132,7 @@ Statement = SELECT {Users}.[Username], {Users}.[Firstname], {Users}.[Lastname] F
 extraFilters = If(lastnameFilter <> "", "AND [Users].{Lastname} like '%" + EncodeSql(lastnameFilter) + "%'", "")
 ```
 
-## EncodeUrl { #EncodeUrl }
+## EncodeUrl
 
 Replaces all non-alphanumeric characters in a string, i.e. characters outside of the [0-9a-zA-Z] range, so that you can safely use it in URL parameter values. Use this function to build URLs in your app that may contain content provided by end users, e.g. when dynamically building URLs to an external site.  
 
@@ -165,7 +165,7 @@ EncodeUrl("Company A&A") = "Company+A%26A"
 ExternalUrl = "http://www.example.com/?company=" + EncodeUrl(CompanyName)
 ```
 
-## Index { #Index }
+## Index
 
 Returns the zero-based position in Text 't' where 'search' Text can be found. Returns -1 if 'search' is not found or if 'search' is empty.  
 
@@ -220,7 +220,7 @@ Index("First string", "") = -1
 Index("", "") = -1
 ```
 
-## Length { #Length }
+## Length
 
 Returns the number of characters in Text 't'.  
 
@@ -261,7 +261,7 @@ Available in:
 
 Type: Text  
 
-## Replace { #Replace }
+## Replace
 
 Returns Text 't' after replacing all Text occurrences of 'search' with 'replace'.  
 
@@ -297,7 +297,7 @@ Replace("First string", "First", "Second") = "Second string"
 Replace("First string", "First", "") = " string"
 ```
 
-## Substr { #Substr }
+## Substr
 
 Returns a sub-string of 't' beginning at 'start' zero-based position and with 'length' characters.  
 
@@ -335,7 +335,7 @@ Substr("First string", Length("First string"), 0) = ""
 Substr("First string", 2, 0) = ""
 ```
 
-## ToLower { #ToLower }
+## ToLower
 
 Converts Text 't' to the equivalent lowercase text.  
 
@@ -361,7 +361,7 @@ Type: Text
 ToLower("First string") = "first string"
 ```
 
-## ToUpper { #ToUpper }
+## ToUpper
 
 Converts Text 't' to the equivalent uppercase text.  
 
@@ -414,7 +414,7 @@ Trim(" First string ") = "First string"
 Trim("First string ") = "First string"
 ```
 
-## TrimEnd { #TrimEnd }
+## TrimEnd
 
 Removes all trailing space characters (' ') from Text 't'.  
 
@@ -441,7 +441,7 @@ TrimEnd(" First string ") = " First string"
 TrimEnd("First string ") = "First string"
 ```
 
-## TrimStart { #TrimStart }
+## TrimStart
 
 Removes all leading space characters (' ') from Text 't'.  
 

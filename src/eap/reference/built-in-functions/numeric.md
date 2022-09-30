@@ -5,7 +5,7 @@ app_type: mobile apps, reactive web apps
 ---
 # Numeric
 
-## Max { #Max }
+## Max
 
 Returns the largest number of 'n' and 'm'.  
 
@@ -36,7 +36,7 @@ Max(-10.89, -2.3) = -2.3
 Max(10.89, 2.3) = 10.89
 ```
 
-## Min { #Min }
+## Min
 
 Returns the smallest number of 'n' and 'm'.  
 
@@ -67,7 +67,7 @@ Min(-10.89, -2.3) = -10.89
 Min(10.89, 2.3) = 2.3
 ```
 
-## Sign { #Sign }
+## Sign
 
 Returns -1 if 'n' is negative; 1 if 'n' is positive; 0 if 'n' is 0.  
 

@@ -11,7 +11,7 @@ OutSystems Text library provides functionality to manipulate texts as, for examp
 
 ## Actions
 
-### Format_DateTime { #Format_DateTime }
+### Format_DateTime 
 
 Formats a DateTime by replacing the allowed keywords with their values.  
 Available Keywords:  
@@ -43,7 +43,7 @@ FormattedDateTime
 :   Type: Text.  
     The Text with the formatted Date Time according to the specified Format.
 
-### Regex_Replace { #Regex_Replace }
+### Regex_Replace
 
 Replaces all occurrences of a specified regular expression pattern with a replacement string.
 
@@ -79,7 +79,7 @@ Result
 :   Type: Text.  
     The modified character string.
 
-### Regex_Search { #Regex_Search }
+### Regex_Search
 
 Searches the input string for an occurrence of a regular expression.
 
@@ -119,7 +119,7 @@ FirstIndex
 :   Type: Integer.  
     Index of the first occurrence of Pattern in Text.
 
-### String_Join { #String_Join }
+### String_Join
 
 Concatenates all the strings in a List, yielding a single string. The individual elements are separated, in the resulting string, by the string Separator.
 
@@ -139,7 +139,7 @@ Text
 :   Type: Text.  
     Result of concatenation.
 
-### String_LastIndexOf { #String_LastIndexOf }
+### String_LastIndexOf
 
 Reports the index position of the last occurrence of a specified Pattern within a Text.
 
@@ -159,7 +159,7 @@ Position
 :   Type: Integer.  
     The index position of the pattern if it was found, or -1 if it was not. If the Text is empty, the returned Position is 0.
 
-### String_Split { #String_Split }
+### String_Split
 
 Splits a string into individual elements delimited by any of the characters in Delimiters.
 
@@ -179,7 +179,7 @@ List
 :   Type: RecordList of [Text](<#Structure_Text>).  
     List of strings that results from splitting the original Text.
 
-### StringBuilder_Append { #StringBuilder_Append }
+### StringBuilder_Append
 
 Appends a string to a StringBuilder.
 
@@ -193,7 +193,7 @@ String
 :   Type: Text. Mandatory.  
     The string to append to the StringBuilder's buffer.
 
-### StringBuilder_Create { #StringBuilder_Create }
+### StringBuilder_Create
 
 Creates a StringBuilder. Use it if you need to create a string by repeatedly appending substrings. A StringBuilder optimizes memory management when dealing with highly dynamic strings.
 
@@ -209,7 +209,7 @@ StringBuilder
 :   Type: Object.  
     The StringBuilder instance. Use it as input to the other StringBuilder Actions.
 
-### StringBuilder_ToString { #StringBuilder_ToString }
+### StringBuilder_ToString 
 
 Returns the content of the StringBuilder's buffer.
 
@@ -228,7 +228,7 @@ String
 
 ## Structures
 
-### Text { #Structure_Text }
+### Text
 
 Structure with single Text attribute
 

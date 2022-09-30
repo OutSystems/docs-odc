@@ -12,7 +12,7 @@ The OutSystems Math library provides actions to compute complex math functions, 
 
 ## Actions
 
-### Floor { #Floor }
+### Floor
 Returns the largest long value less than or equal to the decimal number 'Number'
 
 _Inputs_
@@ -31,7 +31,7 @@ _Examples_
 ```
 Floor(7.03) = 7
 ```
-### Ceiling { #Ceiling }
+### Ceiling
 Returns the smallest long value that is greater than or equal to the decimal number 'Number'.
 
 _Inputs_
@@ -50,7 +50,7 @@ _Examples_
 ```
 Ceiling(7.03) = 8
 ```
-### LogE { #LogE }
+### LogE
 Returns the logarithm of a specified decimal number (‘Number') in log base E.
 
 _Inputs_
@@ -67,7 +67,7 @@ The logarithm of the specified given number in log base E.
 
 _Exception message:_ The input number must be positive.
 
-### Log10 { #Log10 }
+### Log10
 Returns the logarithm of a specified decimal number (‘Number') in log base 10.
 
 _Inputs_
@@ -84,7 +84,7 @@ The logarithm of the specified given number in log base 10.
 
 _Exception message:_ The input number must be positive.
 
-### Log2 { #Log2 }
+### Log2
 Returns the logarithm of a specified decimal number (‘Number') in log base 2.
 
 Inputs:
@@ -101,7 +101,7 @@ The logarithm of the specified given number in log base 2.
 
 _Exception message:_ The input number must be positive.
 
-### Random { #Random }
+### Random
 
 Generates a random number using a pseudorandom number generator, within a range defined by a minimum value (‘MinVal') and maximum value ('MaxVal').
 

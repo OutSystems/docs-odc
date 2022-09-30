@@ -5,7 +5,7 @@ app_type: mobile apps, reactive web apps
 ---
 # Math
 
-## Abs { #Abs }
+## Abs
 
 Returns the absolute value (unsigned magnitude) of the decimal number 'n'.  
 
@@ -31,7 +31,7 @@ Type: Decimal
 Abs(-10.89) = 10.89
 ```
 
-## Mod { #Mod }
+## Mod
 
 Returns the remainder of decimal division of 'n' by 'm'.  
 
@@ -62,7 +62,7 @@ Mod(10, 3) = 1
 Mod(4, 3.5) = 0.5
 ```
 
-## Power { #Power }
+## Power
 
 Returns 'n' raised to the power of 'm'.  
 
@@ -94,7 +94,7 @@ Power(-10.89, 2.3) = 0
 Power(-10.89, -5) = -6.52920946044017E-06
 ```
 
-## Round { #Round }
+## Round 
 
 Returns the Decimal number 'n' rounded to a specific number of 'fractional digits'.  
 
@@ -118,7 +118,7 @@ Use it to specify the number of fractional digits that n has to be rounded to. T
 
 Type: Decimal  
 
-## Sqrt { #Sqrt }
+## Sqrt 
 
 Returns the square root of the Decimal number 'n'.  
 
@@ -144,7 +144,7 @@ Type: Decimal
 Sqrt(2.3) = 1.51657508881031
 ```
 
-## Trunc { #Trunc }
+## Trunc
 
 Returns the Decimal number 'n' truncated to integer removing the decimal part of 'n'.  
 

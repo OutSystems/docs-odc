@@ -12,7 +12,7 @@ The OutSystems DateTime library provides actions to access and manipulate DateTi
 
 ## Actions
 
-### DiffMonths { #DiffMonths }
+### DiffMonths
 
 Returns the difference in months between 'Datetime1' and ‘Datetime2'; i.e. the number of months between the two dates.
 
@@ -42,7 +42,7 @@ DiffMonths(#2022-08-31#, #2022-09-01) = 1
 DiffMonths(#2022-08-10#, #2022-07-20) = -1
 DiffMonths(#2022-08-20#, #2022-08-10) = 0
 ```
-### DiffQuarters { #DiffQuarters }
+### DiffQuarters
 
 Returns the difference in quarters between ‘Datetime1' and 'Datetime2'; i.e. the number of quarters between the two dates.
 
@@ -73,7 +73,7 @@ DiffQuarters(#2022-01-01#, #2022-02-01) = 0
 DiffQuarters(#2022-04-01#, #2022-03-28) = -1
 ```
 
-### DiffWeeks { #DiffWeeks }
+### DiffWeeks
 
 Returns the difference in weeks between ‘Datetime1' and ‘Datetime2'; i.e. the number of weeks between the two dates.
 
@@ -104,7 +104,7 @@ DiffWeeks(#2022-08-18#, #2022-08-25) = 1
 DiffWeeks(#2022-08-18#, #2022-08-10) = -1
 ```
 
-### DiffYears { #DiffYears }
+### DiffYears
 
 Returns the difference in years between ‘Datetime1' and ‘Datetime2'; i.e. the number of years between the two dates.
 
@@ -135,7 +135,7 @@ DiffYears(#2022-08-18#, #2022-08-25) = 0
 DiffYears(#2022-01-01#, #2021-12-31) = -1
 ```
 
-### GetTicks { #GetTicks }
+### GetTicks 
 
 Returns the number of ticks of 'Datetime’. A single tick represents 100 nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond.
 
@@ -151,7 +151,7 @@ Ticks; data type Long Integer
 
 The number of ticks of the given datetime.
 
-### Quarter { #DiffMonths }
+### Quarter
 
 Returns the quarter of ‘Datetime’. 
 
@@ -171,7 +171,7 @@ _Examples_
 ```
 Quarter(#2022-01-01#) = 1
 ```
-### IsLeapYear { #IsLeapYear }
+### IsLeapYear 
 
 Returns true if the year of ‘Datetime’ is a leap year.
 

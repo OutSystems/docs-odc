@@ -11,7 +11,7 @@ The OutSystems URL library provides actions to manipulate URLs, such as decoding
 
 ## Actions
 
-### DecodeURL { #DecodeURL }
+### DecodeURL
 Converts a string that has been encoded for transmission in a URL into a decoded text value.
 
 _Inputs_
@@ -26,7 +26,7 @@ DecodedText; data type Text
 
 The decoded text.
 
-### GetURLProtocol { #GetURLProtocol }
+### GetURLProtocol
 Returns the protocol of the given URL.
 
 _Inputs_     
@@ -41,7 +41,7 @@ Protocol; data type Text
 
 The protocol of the given URL.
 
-### GetURLHost { #GetURLHost }
+### GetURLHost
 Returns the host of the given URL.
 
 _Inputs_     
@@ -56,7 +56,7 @@ Host; data type Text
 
 The host of the given URL.
 
-### IsURLRelative { #IsURLRelative }
+### IsURLRelative
 Returns true if the given URL is a relative URL.
 
 _Inputs_     
@@ -71,7 +71,7 @@ IsRelative; data type Boolean
 
 True if the given URL is a relative URL.
 
-### GetRelativeURL { #GetRelativeURL }
+### GetRelativeURL
 Returns the relative URL from the base URL.
 
 _Inputs_     

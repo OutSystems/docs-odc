@@ -7,7 +7,7 @@ app_type: mobile apps, reactive web apps
 ---
 # Data Conversion
 
-## BooleanToInteger { #booleantointeger }
+## BooleanToInteger
 
 Converts Boolean 'b' to an Integer value, either 1 if 'b' is True or 0 if 'b' is False.  
 
@@ -34,7 +34,7 @@ BooleanToInteger(True) = 1
 BooleanToInteger(False) = 0
 ```
 
-## BooleanToText { #booleantotext }
+## BooleanToText
 
 Converts Boolean 'b' to a Text value, either "True" or "False".  
 
@@ -61,7 +61,7 @@ BooleanToText(True) = "True"
 BooleanToText(False) = "False"
 ```
 
-## DateTimeToDate { #datetimetodate }
+## DateTimeToDate
 
 Converts Date Time 'dt' to a Date value dropping the Time component.  
 
@@ -87,7 +87,7 @@ Type: Date
 DateTimeToDate(#2013-11-30 22:20:30#) = #2013-11-30#
 ```
 
-## DateTimeToText { #datetimetotext }
+## DateTimeToText
 
 Converts Date Time 'dt' to a Text value in the format specified in the environment configuration (by default, "yyyy-MM-dd HH:mm:ss").  
 
@@ -115,7 +115,7 @@ DateTimeToText(#2015-05-21#) = "2015-05-21 00:00:00"
 DateTimeToText(#22:20:30#) = "1900-01-01 22:20:30"
 ```
 
-## DateTimeToTime { #datetimetotime }
+## DateTimeToTime
 
 Converts Date Time 'dt' to a Time value dropping the Date component.  
 
@@ -141,7 +141,7 @@ Type: Time
 DateTimeToTime(#1982-05-21 22:20:30#) = #22:20:30#
 ```
 
-## DateToDateTime { #datetodatetime }
+## DateToDateTime
 
 Converts Date 'd' to a Date Time value, adding the Time component (#00:00:00#).  
 
@@ -167,7 +167,7 @@ Type: DateTime
 DateToDateTime(#2001-09-14#) = #2001-09-14 00:00:00#
 ```
 
-## DateToText { #datetotext }
+## DateToText
 
 Converts Date 'd' to a Text value in the format specified in the environment configuration (by default, "yyyy-MM-dd").  
 
@@ -194,7 +194,7 @@ DateToText(#2010-05-17#) = "2010-05-17"
 DateToText(#2010-05-17 22:30:32#) = "2010-05-17"
 ```
 
-## DecimalToBoolean { #decimaltoboolean }
+## DecimalToBoolean
 
 Converts Decimal 'd' to a Boolean value. Decimal value of 0.0 is False. Any other value is True.  
 
@@ -221,7 +221,7 @@ DecimalToBoolean(0.0) = False
 DecimalToBoolean(0.05) = True
 ```
 
-## DecimalToInteger { #decimaltointeger }
+## DecimalToInteger
 
 Converts Decimal 'd' to an Integer value.  
 In client-side and server-side logic, the function rounds the input using the round half to even method. In Aggregate expressions the function truncates to the integer part of the input.  
@@ -263,7 +263,7 @@ DecimalToInteger(134) = 134
 DecimalToInteger(12345678999.9) = Arithmetic Overflow Error
 ```
 
-## DecimalToIntegerValidate { #decimaltointegervalidate }
+## DecimalToIntegerValidate
 
 Returns true if Decimal 'd' can be converted to an Integer value.  
 
@@ -294,7 +294,7 @@ DecimalToIntegerValidate(134) = True
 DecimalToIntegerValidate(12345678999.9) = False
 ```
 
-## DecimalToLongInteger { #decimaltolonginteger }
+## DecimalToLongInteger
 
 Converts Decimal 'd' to a Long Integer value.  
 In client-side and server-side logic, the function rounds the input using the round half to even method. In Aggregate expressions the function truncates to the integer part of the input.  
@@ -336,7 +336,7 @@ DecimalToLongInteger(134) = 134
 DecimalToLongInteger(157898999999988844444.2) = Arithmetic Overflow Error
 ```
 
-## DecimalToLongIntegerValidate { #decimaltolongintegervalidate }
+## DecimalToLongIntegerValidate
 
 Returns true if Decimal 'd' can be converted to a Long Integer value.  
 
@@ -367,7 +367,7 @@ DecimalToLongIntegerValidate(134) = True
 DecimalToLongIntegerValidate(157898999999988844444.2) = False
 ```
 
-## DecimalToText { #decimaltotext }
+## DecimalToText
 
 Converts Decimal 'd' to a Text value.  
 
@@ -394,7 +394,7 @@ DecimalToText(200.482) = "200.482"
 DecimalToText(200) = "200"
 ```
 
-## LongIntegerToInteger { #longintegertointeger }
+## LongIntegerToInteger
 
 Converts Long Integer 'l' to an Integer value. If 'l' is outside the boundaries of the Integer values, the function will return the Integer default value. To check if the conversion is possible you can use the LongIntegerToIntegerValidate function.  
 
@@ -421,7 +421,7 @@ LongIntegerToInteger(3000) = 3000
 LongIntegerToInteger(5645245584135987412) = 0
 ```
 
-## LongIntegerToIntegerValidate { #longintegertointegervalidate }
+## LongIntegerToIntegerValidate
 
 Returns true if Long Integer 'l' can be converted to an Integer value.  
 
@@ -448,7 +448,7 @@ LongIntegerToIntegerValidate(3000) = True
 LongIntegerToIntegerValidate(5645245584135987412) = False
 ```
 
-## LongIntegerToIdentifier { #longintegertoidentifier }
+## LongIntegerToIdentifier 
 
 Converts Long Integer 'l' to a Long Integer Identifier.  
 
@@ -474,7 +474,7 @@ Type: EntityReferenceLongInteger
 LongIntegerToIdentifier(5090493034304) = 5090493034304
 ```
 
-## LongIntegerToText { #longintegertotext }
+## LongIntegerToText
 
 Converts Long Integer 'l' to a Text value.  
 
@@ -500,7 +500,7 @@ Type: Text
 LongIntegerToText(5092039102) = "5092039102"
 ```
 
-## IdentifierToInteger { #identifiertointeger }
+## IdentifierToInteger
 
 Converts Identifier 'Id' to an Integer value.  
 
@@ -526,7 +526,7 @@ Type: Integer
 IdentifierToInteger(GetUserId()) = 504 (the result may be different in your module)
 ```
 
-## IdentifierToLongInteger { #identifiertolonginteger }
+## IdentifierToLongInteger
 
 Converts Identifier 'Id' to a Long Integer value.  
 
@@ -552,7 +552,7 @@ Type: LongInteger
 IdentifierToLongInteger(GetUserId()) = 30 (the result may be different in your module)
 ```
 
-## IdentifierToText { #identifiertotext }
+## IdentifierToText 
 
 Converts Identifier 'Id' to a Text value.  
 
@@ -578,7 +578,7 @@ Type: Text
 IdentifierToText(GetUserId()) = "30" (the result may be different in your module)
 ```
 
-## IntegerToBoolean { #integertoboolean }
+## IntegerToBoolean
 
 Converts Integer 'i' to a Boolean value. Boolean value of 0 is False. Any other value is True.  
 
@@ -606,7 +606,7 @@ IntegerToBoolean(-10) = True
 IntegerToBoolean(0) = False
 ```
 
-## IntegerToDecimal { #integertodecimal }
+## IntegerToDecimal
 
 Converts Integer 'i' to a Decimal value.  
 
@@ -632,7 +632,7 @@ Type: Decimal
 IntegerToDecimal(200) = 200
 ```
 
-## IntegerToIdentifier { #integertoidentifier }
+## IntegerToIdentifier
 
 Converts Integer 'i' to an Integer Identifier.  
 
@@ -658,7 +658,7 @@ Type: EntityReference
 IntegerToIdentifier(5) = 5
 ```
 
-## IntegerToText { #integertotext }
+## IntegerToText
 
 Converts Integer 'i' to a Text value.  
 
@@ -684,7 +684,7 @@ Type: Text
 IntegerToText(200) = "200"
 ```
 
-## NullDate { #nulldate }
+## NullDate
 
 Returns a null Date value.  
 
@@ -704,7 +704,7 @@ Type: Date
 NullDate() = #1900-01-01#
 ```
 
-## NullIdentifier { #nullidentifier }
+## NullIdentifier
 
 Returns a null Identifier valid for Integer and Long Integer Identifiers.  
 
@@ -724,7 +724,7 @@ Type: EntityReference
 NullIdentifier() = 0
 ```
 
-## NullObject { #nullobject }
+## NullObject
 
 Returns a null Object value.  
 
@@ -744,7 +744,7 @@ Type: Object
 ObjectVariable = NullObject()
 ```
 
-## NullBinary { #nullbinary }
+## NullBinary
 
 Returns a null Binary Data value.  
 
@@ -764,7 +764,7 @@ Type: BinaryData
 BinaryDataVariable = NullBinary()
 ```
 
-## NullTextIdentifier { #nulltextidentifier }
+## NullTextIdentifier
 
 Returns a null Text Identifier.  
 
@@ -784,7 +784,7 @@ Type: EntityReferenceText
 NullTextIdentifier() = ""
 ```
 
-## TextToDate { #texttodate }
+## TextToDate 
 
 Converts Text 't' to a Date value.  
 If 't' can't be converted to a valid Date value, the function will return the Date default value. To check if the conversion is possible you can use the TextToDateValidate function.  
@@ -817,7 +817,7 @@ TextToDate("2002/02/31") = #1900-01-01#
 TextToDate("10000.01.01") = #1900-01-01#
 ```
 
-## TextToDateTime { #texttodatetime }
+## TextToDateTime
 
 Converts Text 't' to a Date Time value.  
 If 't' can't be converted to a valid Date Time value, the function will return a Date Time default value. To check if the conversion is possible you can use the TextToDateTimeValidate function.  
@@ -852,7 +852,7 @@ TextToDateTime("2002-01-01") = #2002-01-01 00:00:00#
 TextToDateTime("01-01-01") = #1900-01-01 00:00:00#
 ```
 
-## TextToDateTimeValidate { #texttodatetimevalidate }
+## TextToDateTimeValidate
 
 Returns true if Text 't' can be converted to a Date Time value.  
 
@@ -885,7 +885,7 @@ TextToDateTimeValidate("2002-01-01") = True
 TextToDateTimeValidate("01-01-01") = False
 ```
 
-## TextToDateValidate { #texttodatevalidate }
+## TextToDateValidate
 
 Returns true if Text 't' can be converted to a Date value.  
 
@@ -916,7 +916,7 @@ TextToDateValidate("2002/02/31") = False
 TextToDateValidate("10000.01.01") = False
 ```
 
-## TextToDecimal { #texttodecimal }
+## TextToDecimal
 
 Converts Text 't' to a Decimal value. The only allowed decimal separator is "." (period).  
 If 't' is outside the boundaries of Decimal values, the function returns the Decimal default value. However, if you use TextToDecimal in an Aggregate and 't' is outside the boundaries of Decimal values, the function throws an exception. To check if the conversion is possible, use the TextToDecimalValidate function.  
@@ -948,7 +948,7 @@ TextToDecimal("0.99999999") = 0.99999999
 TextToDecimal("abc") = 0
 ```
 
-## TextToDecimalValidate { #texttodecimalvalidate }
+## TextToDecimalValidate
 
 Returns true if Text 't' can be converted to a Decimal value.  
 
@@ -979,7 +979,7 @@ TextToDecimalValidate("0.99999999") = True
 TextToDecimalValidate("abc") = False
 ```
 
-## TextToIdentifier { #texttoidentifier }
+## TextToIdentifier
 
 Converts Text 't' to a Text Identifier.  
 
@@ -1005,7 +1005,7 @@ Type: EntityReferenceText
 TextToIdentifier("NEW") = 'NEW'
 ```
 
-## TextToInteger { #texttointeger }
+## TextToInteger
 
 Converts Text 't' to an Integer value.  
 If 't' is outside the boundaries of Integer values, the function returns the Integer default value. However, if you use TextToInteger in an Aggregate and 't' is outside the boundaries of Integer values, the function throws an exception. To check if the conversion is possible, use the TextToIntegerValidate function.
@@ -1035,7 +1035,7 @@ TextToInteger("200.482") = 0
 TextToInteger("not a number") = 0
 ```
 
-## TextToLongInteger { #texttolonginteger }
+## TextToLongInteger
 
 Converts Text 't' to a Long Integer value.  
 If 't' is outside the boundaries of Long Integer values, the function returns the Long Integer default value. However, if you use TextToLongInteger in an Aggregate and 't' is outside the boundaries of Long Integer values, the function throws an exception. To check if the conversion is possible, use the TextToLongIntegerValidate function.
@@ -1065,7 +1065,7 @@ TextToLongInteger("56452455841359874121") = 0
 TextToLongInteger("not a number") = 0
 ```
 
-## TextToIntegerValidate { #texttointegervalidate }
+## TextToIntegerValidate
 
 Returns true if Text 't' can be converted to an Integer value.  
 
@@ -1094,7 +1094,7 @@ TextToIntegerValidate("200.482") = False
 TextToIntegerValidate("not a number") = False
 ```
 
-## TextToLongIntegerValidate { #texttolongintegervalidate }
+## TextToLongIntegerValidate
 
 Returns true if Text 't' can be converted to a Long Integer value.  
 
@@ -1123,7 +1123,7 @@ TextToLongIntegerValidate("56452455841359874121") = False
 TextToLongIntegerValidate("not a number") = False
 ```
 
-## TextToTime { #texttotime }
+## TextToTime 
 
 Converts Text 't' to a Time value.  
 If 't' can't be converted to a valid Time value, the function will return the Time default value. To check if the conversion is possible you can use the TextToTimeValidate function.  
@@ -1154,7 +1154,7 @@ TextToTime("0-0-0") = #00:00:00#
 TextToTime("abc") = #00:00:00#
 ```
 
-## TextToTimeValidate { #texttotimevalidate }
+## TextToTimeValidate
 
 Returns true if Text 't' can be converted to a Time value.  
 
@@ -1183,7 +1183,7 @@ TextToTimeValidate("0-0-0") = False
 TextToTimeValidate("abc") = False
 ```
 
-## TimeToText { #timetotext }
+## TimeToText
 
 Converts Time 't' to a Text value in the format "HH:mm:ss".  
 
@@ -1210,7 +1210,7 @@ TimeToText(#12:30:24#) = "12:30:24"
 TimeToText(#2015-07-02 12:30:34#) = "12:30:34"
 ```
 
-## ToObject { #toobject }
+## ToObject
 
 Converts expression 'exp' to an Object value.  
 

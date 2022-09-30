@@ -5,7 +5,7 @@ app_type: mobile apps, reactive web apps
 ---
 # Format
 
-## FormatCurrency { #FormatCurrency }
+## FormatCurrency
 
 Builds a Text output of the specified Currency 'value', preceded by the currency 'symbol', using 'decimal_digits' after the decimal point. The decimal point is specified using 'decimal_separator', while the thousands can be separated with the 'group_separator'.  
   
@@ -59,7 +59,7 @@ FormatCurrency(12345.67, "$", 2, ",", ".") = "$12.345,67"
 FormatCurrency(-12345.67, "$", 2, ",", ".") = "$-12.345,67"
 ```
 
-## FormatDecimal { #FormatDecimal }
+## FormatDecimal
 
 Builds a Text output of the specified Decimal 'value', using 'decimal_digits' after the decimal point. The decimal point is specified using 'decimal_separator', while the thousands can be separated with the 'group_separator'.  
   
@@ -109,7 +109,7 @@ FormatDecimal(12345.67, 2, ",", ".") = "12.345,67"
 FormatDecimal(-12345.67, 2, ",", ".") = "-12.345,67"
 ```
 
-## FormatPercent { #FormatPercent }
+## FormatPercent
 
 Builds a Text output of the specified Decimal 'value', followed by '%' using 'decimal_digits' after the decimal point. The decimal point is specified using 'decimal_separator'.  
   
@@ -154,7 +154,7 @@ FormatPercent(12345.6789, 2, ",") = "1234567,89%"
 FormatPercent(-12345.6789, 2, ",") = "-1234567,89%"
 ```
 
-## FormatPhoneNumber { #FormatPhoneNumber }
+## FormatPhoneNumber
 
 Builds a Text output of the specified phone number Text 'value', starting with the international separator 'int_separator', followed by the first 'int_code_digits' of 'value', then the 'area_separator', then the following 'area_code_digits' of 'value', then the 'phone_separator' and finally the following 'phone_digits' of 'value'.  
 
@@ -204,7 +204,7 @@ Type: Text
 FormatPhoneNumber("351214153737", 3, 2, 7, "+", "-", ".") = "+351-21.4153737"
 ```
 
-## FormatText { #FormatText }
+## FormatText
 
 Builds a Text output of the specified Text 'value', by limiting it to the specified 'max_chars' count. If 'value' has less than the 'min_chars' characters limit, enough 'padding_char' characters are added to expand the length to that limit. In this case, 'left_padding' determines where the padding should be added.  
 
@@ -250,7 +250,7 @@ FormatText("12345", 10, 20, True, "#") = "#####12345"
 FormatText("12345", 10, 20, False, "#") = "12345#####"
 ```
 
-## FormatDateTime { #FormatDateTime }
+## FormatDateTime
 
 Builds a Text output of the specified Date Time 'value' using the specified 'format'. Formatting pattern can be any combination of the following:  
 Day:  
