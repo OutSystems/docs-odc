@@ -38,7 +38,7 @@
     - href: eap/building-apps/reuse-elements.md
     # Secure your app by using roles
     - href: eap/building-apps/secure-app-with-roles.md
-    # Logic
+    # Logic 
     - href: eap/building-apps/logic/intro.md
     - topics:
       # Use public elements

@@ -2,7 +2,7 @@
 summary: Extend your app with public elements to make your app do more for your users.
 tags:
 locale: en-us
-guid: 7ae0d274-cced-49dc-8a2f-0c3116db74f7
+guid: abe6d7fc-04ae-45ed-8630-cf3e7e9b86ef
 app_type: mobile apps, reactive web apps
 ---
 
