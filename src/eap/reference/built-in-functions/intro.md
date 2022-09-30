@@ -1,5 +1,5 @@
 ---
-summary: Built-in functions
+summary: When designing the business logic of your apps, you can use built-in functions.
 tags:
 locale: en-us
 guid: 2eda09fd-8f1d-4a0d-a724-0bdb5f35d398
