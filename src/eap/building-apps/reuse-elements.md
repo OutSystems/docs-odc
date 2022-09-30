@@ -40,6 +40,8 @@ The following table lists elements and their possible Public property values.
 | --------------- | ------------------------------- | ------------------------------------ |
 | Blocks                    | No                              | Yes                                  |
 | Client Actions            | No                              | Yes                                  |
+| Entities                  | Yes                             | Not applicable                       |
+| Exceptions                | No                             | No                       |
 | Images                    | No                              | No                                   |
 | Local storage Entities    | No                              | Not applicable                       |
 | Processes                 | No                              | Not applicable                       |
@@ -49,7 +51,6 @@ The following table lists elements and their possible Public property values.
 | Scripts                   | No                              | No                                   |
 | Server Actions            | No                              | Yes                                  |
 | Service Actions           | Yes                             | Not applicable                       |
-| Entities                  | Yes                             | Not applicable                       |
 | Static Entities           | Yes                             | Yes                                  |
 | Structures                | No. However, structures become public if you use them in Service Actions as parameters. | No. However, structures become public if you use them in Server Actions as parameters. |
 | Themes                    | No                              | Yes                                  |
