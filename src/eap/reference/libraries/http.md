@@ -1,14 +1,14 @@
 ---
-summary: Provides actions to manipulate HTTP Requests and Responses.
+summary: Provides actions to manipulate HTTP requests and responses.
 tags: 
 locale: en-us
 guid: 8ab99495-136e-4261-a791-bee1c58d4a79
 app_type: mobile apps, reactive web apps
 ---
 
-# HTTPRequestHandler API
+# HTTPRequestHandler
 
-Provides actions to manipulate HTTP Requests and Responses.
+Provides actions to manipulate HTTP requests and responses.
 
 ## Actions
 

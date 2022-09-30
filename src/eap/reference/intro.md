@@ -38,7 +38,7 @@ Action | Description | Available as function?
 [IsLeapYear](<libraries/datetime.md#IsLeapYear>) | Returns true if the year of ‘Datetime’ is a leap year. | Yes
 
 ### HTTP
-Provides actions to manipulate HTTP Requests and Responses.
+Provides actions to manipulate HTTP requests and responses.
 
 Action | Description | Available as function?
 ---|---|---
