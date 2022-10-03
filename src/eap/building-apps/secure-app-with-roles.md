@@ -25,7 +25,7 @@ When setting up roles for end-users, consider the following:
  
 ## How to use roles
 
-This is an overview if how to use roles:
+This is an overview of how to use roles:
 
 1. In Service Studio, create end-user roles.
 2. In Portal, assign end-user roles to users.
@@ -35,7 +35,7 @@ This is an overview if how to use roles:
 
 ### Create end-user roles
 
-Create roles in Service Studio, during design time. Go to the **Logic** tab > **Roles** > right-click the **Roles** folder > select **Add Role**. When Service Studio creates a role, it also creates a set of related actions you can use to [manage roles during runtime](#manage-roles-in-app-runtime).
+Create roles in Service Studio, during design time. Go to the **Logic** tab > **Roles** > right-click the **Roles** folder > select **Add Role**. When Service Studio creates a role, it also creates a set of related actions you can use to manage roles during runtime.
 
 ### Assign roles to users through Portal
 
