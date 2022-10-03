@@ -42,7 +42,7 @@ The following table lists elements and their possible Public property values.
 | Client Actions            | No                              | Yes                                  |
 | Entities                  | Yes                             | Not applicable                       |
 | Exceptions                | No                             | No                       |
-| Images                    | No                              | No                                   |
+| Images                    | No                              | Yes                                  |
 | Local storage Entities    | No                              | Not applicable                       |
 | Processes                 | No                              | Not applicable                       |
 | Resources                 | No                              | No                                   |
