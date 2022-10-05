@@ -79,7 +79,8 @@ After you apply an external IdP to stage(s) (Dev, QA, Prod) in the Portal, you m
 
     ![Built-in provider flow](images/built-in-provider-flow-ss.png "Built-in provider flow")
 
-1. To delete the built-in login screen, delete the **Common\Login**  element.
+1. To delete the built-in login screen, delete the **Common\Login**  element from the login action.
+1. Navigate to the **Add public elements** icon on the top toolbar of Service Studio or use the **Ctrl+Q** shortcut. Search for the **GetExternalLoginURL** action, select it, and click **Add**.
 1. Click the **Logic** tab. Expand the **Client Actions** folder. Drag the **GetExternalLoginURL** action in place after the **LastRequest** element.
 1. For the **IdentityProvider** setting, use the name of the provider you applied in the Portal. It takes the form of a string. For example, `"providerA"`.
 1. Drag a **Destination** element from the toolbox bar to end the flow. A **Select Destination** popup screen displays. Expand the **UI Flows** > **Common** folder and select **RedirectToURL**.
