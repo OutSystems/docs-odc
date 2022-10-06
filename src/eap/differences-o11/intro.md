@@ -5,6 +5,7 @@ locale: en-us
 guid: cb10aa0f-4e5b-4a29-92ce-03fbc813bc14
 app_type: mobile apps, reactive web apps
 ---
+
 # Onboarding for OutSystems developers
  
 <div class="info" markdown="1">
@@ -21,7 +22,7 @@ Project Neo is a cloud-native, application development platform that provides a 
  
 Project Neo delivers a modern architecture based on best practices in cloud-native infrastructure, management, and operations. Benefits include:
  
-* Scalable and reliable apps, built and deployed in a [modern container infrastructure](./architecture/intro.md).
+* Scalable and reliable apps, built and deployed in a [modern container infrastructure](./../architecture/intro.md).
 * Built-in security with end-to-end encryption.
 * Disaster recovery, with app-level high availability configuration.  
 * The ability to take advantage of the latest Project Neo releases with pain-free upgrades.
@@ -58,9 +59,9 @@ Note the following regarding reuse in Project Neo:
 * Relationships between entities in different apps work differently. In Project Neo:
     * The delete rule is always set to **ignore**.
     * A database constraint isn't created in the database, as is done with OutSystems 11.
-* Apps (Web or Mobile) can have strong dependencies to Libraries only; See [Reuse elements across apps](building-apps/reuse-elements.md) for more information.
+* Apps (Web or Mobile) can have strong dependencies to Libraries only; See [Reuse elements across apps](../building-apps/reuse-elements.md) for more information.
 * Apps (Web or Mobile) consume a specific Library revision. For example, app A can consume Library v1 and app B can consume Library v2.
-* Many elements that could be public in OutSystems 11 can't be public in Project Neo; See [Reuse elements across apps](building-apps/reuse-elements.md) for more information.
+* Many elements that could be public in OutSystems 11 can't be public in Project Neo; See [Reuse elements across apps](../building-apps/reuse-elements.md) for more information.
  
  
 ## Debugging changes in Service Studio
@@ -104,41 +105,6 @@ The following list provides additional guidance:
 * SQL query calls return the current date and time in UTC. 
 * Daylight Savings Time (DST) is ignored and the time zone for evaluating a function is UTC.
 
-## SQL queries with pattern matching operators
-
-As a Project Neo developer, you need to pay attention to how you write case and accent insensitive queries (CIAI). This is because Project Neo uses Aurora PostgreSQL, which is a case and accent sensitive database (CSAS). To allow case and accent insensitive text operations (CIAI), PostgreSQL introduces the concept of [non-deterministic collations](https://www.postgresql.org/docs/12/collation.html).
-
-<div class="info">
-
-This section applies to the SQL logic element only.
-
-</div>
-
-The non-deterministic collation in Project Neo is, by default, defined at the singular level and for all the columns that Project Neo creates This means:
-
-* The SQL database operators (=, <>, >, >=, <, <=) are CIAI and the default comparison in Project Neo.
-* The pattern matching operators of LIKE, SIMILAR, and REGEX aren't supported through non-deterministic collations.
-
-The **pattern matching operators aren't supported and result in runtime errors**. For example, you get an error like "DataBaseException Error in advanced query SQL1 (...) with nondeterministic collations, in which these operators are not supported."
-
-**For pattern matching operators use the function caseaccent_normalize** directly in the SQL Node (AdvancedQuery), in each pattern matching operator.
-
-Here is an example for LIKE:
-
-    select * from table
-    where caseaccent_normalize(col1 collate "default")
-    LIKE caseaccent_normalize(col2 collate "default");
-
-The `collate "default"` part is only needed when the pattern is applied to a column with non-deterministic collation, which is in all the text-based columns. You can skip `collate "default"` in something that uses literals like:
-
-    select * from table
-        where caseaccent_normalize(col1 collate "default")
-        LIKE caseaccent_normalize('%something'); 
-
-Here is an example for **regexp_replace**:
-
-    select regexp_replace(caseaccent_normalize(col1 collate "default"), '.stuff to replace.', '') from table;
-
 ## Project Neo differences by task
  
 The following table lists tasks in the Project Neo compared to OutSystems 11.
@@ -146,7 +112,7 @@ The following table lists tasks in the Project Neo compared to OutSystems 11.
 | Task | In OutSystems 11 | In Project Neo |
 | ----------- | ----------- | ----------- |
 | Deploy an application to another stage.| LifeTime | **Portal** > **Delivery** > **Deployments**.|
-| [Apps configuration management](./configuration-management/configuration-management.md) | LifeTime | **Portal** > **Apps** |
+| [Apps configuration management](./../configuration-management/configuration-management.md) | LifeTime | **Portal** > **Apps** |
 | View apps and app details. Delete and deactivate apps | LifeTime | **Portal** > **Apps** |
 | Manage IT users, roles, and permissions | LifeTime | **Portal** > **Users & access** |
 | Manage end users | Users console | **Portal** > **Users & access** |
@@ -159,7 +125,7 @@ The following table summarizes terminology differences between OutSystems 11 and
  
 | OutSystems 11 name | Project Neo name | Notes |
 | ----------- | ----------- | ----------- |
-| environment | stage | In Project Neo, the infrastructure where you develop and run your apps is fundamentally different. However, these terms (environment and stage), both represent the place where you deploy your apps to Development, Test, and Production. See [Deploy apps](deploy-apps.md) for more information about deploying apps in Project Neo. |
+| environment | stage | In Project Neo, the infrastructure where you develop and run your apps is fundamentally different. However, these terms (environment and stage), both represent the place where you deploy your apps to Development, Test, and Production. See [Deploy apps](../deploy-apps.md) for more information about deploying apps in Project Neo. |
 | Reactive Web App | Web App | All Web Apps are reactive in Project Neo. Traditional Web Apps aren't supported. |
 | Module | N/A | Modules don't exist in Project Neo. |
 | Site Properties | Settings | Site Properties is Settings in Project Neo. |

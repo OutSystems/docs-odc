@@ -20,7 +20,7 @@ Project Neo is cloud-native. This means that the infrastructure of both the deve
 
 In addition to access to **Service Studio**, each Project Neo customer has access to an **OutSystems cloud platform**. This consists of the following:
 
-* Access to the [**Project Neo Portal**](../neo-differences.md#neo-portal).
+* Access to the Project Neo Portal.
 * Access to multi-tenant development **Platform** services.
 * A standard Runtime setup of three stages: **Development**, **Test**, and **Production**.
 * A set of isolated, encrypted, and scalable databases and data stores for the Platform services data. Secret data such as API keys are stored in a secret manager.

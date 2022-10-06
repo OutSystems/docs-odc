@@ -232,7 +232,7 @@ BuildDateTime(#2015-07-14#, #12:30:34#) = #2015-07-14 12:30:34#
 * Server-side calls return the current date in UTC.
 * SQL query calls return the current date and time in UTC.
 
-See [here](../../neo-differences.md#time) for further detail.
+See [here](../../differences-o11/intro.md#time) for further detail.
 
 Available in:  
 
@@ -250,7 +250,7 @@ Type: Date
 * Server-side calls return the current date in UTC.
 * SQL query calls return the current date and time in UTC.
 
-See [here](../../neo-differences.md#time) for further detail.
+See [here](../../differences-o11/intro.md#time) for further detail.
 
 Available in:  
 
@@ -268,7 +268,7 @@ Type: DateTime
 * Server-side calls return the current date in UTC.
 * SQL query calls return the current date and time in UTC.
 
-See [here](../../neo-differences.md#time) for further detail.
+See [here](../../differences-o11/intro.md#time) for further detail.
 
 Available in:  
 

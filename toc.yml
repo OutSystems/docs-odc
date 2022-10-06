@@ -1,4 +1,6 @@
-- href: eap/neo-differences.md
+- href: eap/differences-o11/intro.md
+- topics: 
+  - href: eap/differences-o11/differences-sql.md
 - href: eap/configuration-management/configuration-management.md
 - topics:
   - href: eap/configuration-management/set-as-secret.md
