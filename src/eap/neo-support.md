@@ -30,7 +30,7 @@ To open a support case, follow these steps in Project Neo Portal:
 
 1. Click **Open support case**.
 
-1. Select **Report an incident**.
+1. Select **Report an issue**.
 
 1. When selecting the **Infrastructure** / **Environment** choose your activation code. If the activation code isn't listed, enter it in **Other Infrastructure**.
 
