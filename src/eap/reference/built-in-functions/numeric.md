@@ -24,7 +24,6 @@ n
 m
 :    Type: Decimal. Mandatory.  
 
-
 ### Output
 
 Type: Decimal  
@@ -54,7 +53,6 @@ n
 
 m
 :    Type: Decimal. Mandatory.  
-
 
 ### Output
 

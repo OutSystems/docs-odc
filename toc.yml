@@ -55,6 +55,7 @@
     - href: eap/reference/libraries/datetime.md
     - href: eap/reference/libraries/http.md
     - href: eap/reference/libraries/math.md
+    - href: eap/reference/libraries/rest.md
     - href: eap/reference/libraries/sanitization.md
     - href: eap/reference/libraries/security.md
     - href: eap/reference/libraries/text.md

@@ -171,6 +171,7 @@ _Examples_
 ```
 Quarter(#2022-01-01#) = 1
 ```
+
 ### IsLeapYear 
 
 Returns true if the year of ‘Datetime’ is a leap year.

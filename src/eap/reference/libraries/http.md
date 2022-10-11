@@ -109,7 +109,6 @@ HttpEquiv
 Content
 :   Type: Text. Mandatory.  
     
-
 ### AddMetaTag
 
 Adds a &lt;meta&gt; tag to the HTML of the current HTTP response.  
@@ -302,19 +301,15 @@ If SEO rules are being applied, the URL displayed in the user's browser is retur
 *Outputs*
 
 RawURL
-:   Type: Text.  
-    
+:   Type: Text.    
 
 ### GetReferrerURL
-
-
 
 *Outputs*
 
 ReferrerURL
 :   Type: Text.  
     
-
 ### GetRequest_AddArgument
 
 Builds the arguments string for an HTTP request with method GET, adding a new parameter to the arguments string.
@@ -338,6 +333,7 @@ Value
 ArgumentsOut
 :   Type: Text.  
     Inputed arguments string concatenated with the pair &lt;argument name&gt; = &lt;argument value&gt;.
+
 
 ### GetRequest_Submit
 
@@ -503,8 +499,6 @@ Languages
 
 ### GetValueFromInputId
 
-
-
 *Inputs*
 
 InputId
@@ -519,8 +513,6 @@ Value
 
 ### GetValueFromInputIdDecoded
 
-
-
 *Inputs*
 
 InputId
@@ -532,7 +524,6 @@ InputId
 Value
 :   Type: Text.  
     
-
 ### IsAjaxRequest
 
 Returns true if this is running in an AJAX request.  
@@ -764,7 +755,6 @@ This method has no effect in Ajax Requests.
 Title
 :   Type: Text. Mandatory.  
     
-
 ### SetRequestTimeout
 
 Sets the timeout of the current HTTP request.
@@ -831,11 +821,7 @@ BinaryContent
 
 ### UserLanguage
 
-
-
 *Attributes*
 
 Value
-:   Type: Text (50). Mandatory.  
-    
-
+:   Type: Text (50). Mandatory.

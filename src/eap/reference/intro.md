@@ -103,6 +103,25 @@ Action | Description | Available as function?
 [Log2](libraries/math.md#Log2) | Returns the logarithm of a specified decimal number (‘Number') in log base 2. | Yes
 [Random](libraries/math.md#Random) | Generates a random number using a pseudorandom number generator, within a range defined by a minimum value (‘MinVal') and maximum value ('MaxVal'). | Yes
 
+### REST
+The OutSystems REST API provides actions to access and manipulate the REST request and response. These actions should be used in the OnBeforeRequestAdvanced and OnAfterResponseAdvanced REST callbacks.
+
+Action | Description | Available as function?
+---|---|---
+[Request_AddHeader](<libraries/rest.md#Request_AddHeader>) | Adds a header to the current REST request. | No
+[Request_GetActionName](<libraries/rest.md#Request_GetActionName>) | Returns the action name from the REST request. | Yes
+[Request_GetHeaders](<libraries/rest.md#Request_GetHeaders>) | Returns the list of headers from the current REST request. | Yes
+[Request_GetURL](<libraries/rest.md#Request_GetURL>) | Returns the request URL from the REST request. | Yes
+[Request_RemoveHeader](<libraries/rest.md#Request_RemoveHeader>) | Removes a header from the current REST request, if applicable. | No
+[Request_SetCookie](<libraries/rest.md#Request_SetCookie>) | Sets a cookie in the REST request. | No
+[Request_SetURL](<libraries/rest.md#Request_SetURL>) | Sets the request URL for the current REST request. The URL should be set before other properties in advanced REST extensibility or they may be lost. | No
+[Response_GetActionName](<libraries/rest.md#Response_GetActionName>) | Returns the action name from the REST response. | Yes
+[Response_GetBodyAsBinary](<libraries/rest.md#Response_GetBodyAsBinary>) | Returns the REST response body as binary data. | Yes
+[Response_GetBodyAsText](<libraries/rest.md#Response_GetBodyAsText>) | Returns the REST response body as text. | Yes
+[Response_GetStatusCode](<libraries/rest.md#Response_GetStatusCode>) | Returns the status code of the REST response. | Yes
+[Response_SetBodyAsBinary](<libraries/rest.md#XResponse_SetBodyAsBinary>) | Sets the REST response body with a binary data object. | No
+[Response_SetBodyAsText](<libraries/rest.md#Response_SetBodyAsText>) | Sets the REST response body with a text object. | No
+
 ### Sanitization
 Library that provides methods to help you avoid code injection in HTML, JavaScript, and SQL snippets that need to include untrusted content, for example, content gathered from end users.
 
