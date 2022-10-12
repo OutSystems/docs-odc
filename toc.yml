@@ -80,8 +80,6 @@
 - topics:
   - href: eap/forge/submit.md
   - href: eap/forge/install.md
-# Known issues
-- href: eap/known-issues/intro.md
 # Release notes (under testing) 
 #- href: release-notes/platform-services/intro.md
 #- topics:
