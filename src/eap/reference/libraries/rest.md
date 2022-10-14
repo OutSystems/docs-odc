@@ -6,7 +6,7 @@ guid: 67ca3d20-f19a-4cbc-8070-e73e1b63d6ba
 app_type: mobile apps, reactive web apps
 ---
 # REST
-
+ 
 The OutSystems REST library provides actions to access and manipulate the REST request and response. These actions should be used in the OnBeforeRequestAdvanced and OnAfterResponseAdvanced REST callbacks.
 
 ## Actions

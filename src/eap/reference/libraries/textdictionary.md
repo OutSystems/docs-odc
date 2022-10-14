@@ -1,6 +1,6 @@
 ---
 locale: en-us
-guid: e6b6ad2d-c6c0-4a5e-8034-1b36411c04ef
+guid: 7623020f-4c3f-4b6e-ad44-257d4b13fc1b
 app_type: mobile apps, reactive web apps
 ---
 # TextDictionary
