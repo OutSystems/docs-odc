@@ -36,6 +36,8 @@
       - href: eap/building-apps/ui/screen-creating.md
       # UI interactions
       - href: eap/building-apps/ui/ui-interactions.md
+      # Custom authentication flows
+      - href: eap/building-apps/ui/custom-auth.md
     # Reuse elements across apps
     - href: eap/building-apps/reuse-elements.md
     # Secure your app by using roles
@@ -63,7 +65,12 @@
     - href: eap/reference/libraries/url.md
     - href: eap/reference/libraries/xml.md
     - href: eap/reference/libraries/zip.md
-  # Built-in functions  
+  # System actions 
+  - href: eap/reference/system-actions/intro.md
+  - topics:
+    - href: eap/reference/system-actions/auth.md
+    - href: eap/reference/system-actions/user.md
+  # Built-in functions
   - href: eap/reference/built-in-functions/intro.md
   - topics:
     - href: eap/reference/built-in-functions/data-conversion.md

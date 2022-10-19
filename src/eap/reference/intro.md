@@ -389,3 +389,47 @@ When designing the business logic of your apps, you can use built-in functions. 
 | --- | --- |
 | [GetBookmarkableURL](built-in-functions/url.md#GetBookmarkableURL) | Returns the URL of the screen that is currently being processed.|
 | [GetOwnerURLPath](built-in-functions/url.md#GetOwnerURLPath) | Returns the URL path of the module that owns the element that is being processed.|
+
+## System actions
+When designing the business logic of your apps, you can use built-in system actions. They're available in:
+
+* **Client Actions** > **(System)** folder in the Logic tab in Service Studio.
+* **Server Actions** > **(System)** folder in the Logic tab in Service Studio.
+
+### Authentication
+Authentication actions for built-in and/or external identity providers.
+
+Action | Description | Client or Server? | Available as function?
+---|---|---|---
+[Login](./system-actions/auth.md#login) | Performs a login in to the built-in identity provider using a username and password. If RememberDevice is true, keeps the user logged in for 2 weeks or until a Logout is performed. User profile information is synchronized to the User entity before this action is finished. Throws an exception if the built-in identity provider is disabled for the current app. | Client | No
+[GetExternalLoginURL](./system-actions/auth.md#getexternalloginurl)(*) | Returns the URL to which the user should be redirected in order to login in an external provider. | Client | No
+[Logout](./system-actions/auth.md#logout) | Logs out the user from the built-in identity provider. | Client | No
+[GetExternalLogoutURL](./system-actions/auth.md#getexternallogouturl)(*) | Returns the URL where the user can log out of an external identity provider, if one is configured, or "" otherwise. | Client | No
+
+<div class="info" markdown="1">
+
+(*) You must first add this action due to a temporary technical limitation. Navigate to the **Add public elements** icon on the top toolbar of Service Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
+
+</div>
+
+### User
+User actions for built-in and/or external identity providers.
+
+Action | Description | Client or Server? | Available as function?
+---|---|---|---
+[ChangePassword](./system-actions/user.md#changepassword) | Allows a logged-in user to change their password. Throws an exception if the built-in identity provider is disabled for the current app. | Client | No
+[FinishUserRegistration](./system-actions/user.md#finishuserregistration)(*) | Sets the user as active and their password in the built-in identity provider and logs the user in.<br/>Call the action StartUserRegistration to register the user and obtain a temporary password. | Client | No
+[GetPasswordComplexityPolicy](./system-actions/user.md#getpasswordcomplexitypolicy) | Gets the configured password policy for the built-in identity provider. Used to enable client-side validation in a user registration flow. Throws an exception if the built-in identity provider is disabled for the current app. | Client | No
+[GetUserProfile](./system-actions/user.md#getuserprofile) | Returns logged-in user's information from the identity provider and updates the user entity with that information. | Client | No
+[IsExternalUser](./system-actions/user.md#isexternaluser) | Returns logged-in user's information from the identity provider and updates the user entity with that information. | Client | Yes
+[ResetPassword](./system-actions/user.md#resetpassword) | Allows a user to reset their password using a verification code received via email. Throws an exception if the built-in identity provider is disabled for the current app. | Client | No
+[SendResetPasswordEmail](./system-actions/user.md#sendresetpasswordemail) | Triggers the reset password flow, which sends an email to the user with a verification code used to reset the password. Throws an exception if the built-in identity provider is disabled for the current app. | Client | No
+[StartUserRegistration](./system-actions/user.md#startuserregistration)(*) | Registers the user in the built-in identity provider by creating the user as inactive and setting a temporary password. Synchronises the User entity with the identity provider.<br/>Call the action FinishUserRegistration to activate the user and change the password.<br/>It throws an exception if the built-in identity provider is disabled for the current app. | Server | No
+[UpdateUserProfile](./system-actions/user.md#updateuser) | Allows a logged-in user to edit profile information. The user email can't be changed using this action. Throws an exception if the built-in identity provider is disabled for the current app. | Server | No
+[ValidatePasswordComplexity](./system-actions/user.md#validatepasswordcomplexity) | Validates a user's password against the password complexity policy. Throws an exception if the built-in identity provider is disabled for the current app. | Client | No
+
+<div class="info" markdown="1">
+
+(*) You must first add this action due to a temporary technical limitation. Navigate to the **Add public elements** icon on the top toolbar of Service Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
+
+</div>
