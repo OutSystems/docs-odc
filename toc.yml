@@ -36,6 +36,8 @@
       - href: eap/building-apps/ui/screen-creating.md
       # UI interactions
       - href: eap/building-apps/ui/ui-interactions.md
+      # Customize UI styles
+      - href: eap/building-apps/ui/customize-ui-styles.md
       # Custom authentication flows
       - href: eap/building-apps/ui/custom-auth.md
     # Reuse elements across apps
