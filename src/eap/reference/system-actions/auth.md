@@ -19,7 +19,7 @@ Performs a login in to the built-in identity provider using a username and passw
 _Inputs_
 
 **Username**
-:   Type: Text. Mandatory       
+:   Type: Text. Mandatory
     Name of the user logging in.
 
 **Password**
@@ -29,7 +29,7 @@ _Inputs_
 _Outputs_
 
 **UserLoginResult**
-:   Type: Structure.  
+:   Type: Structure.
     Result of the user login action. Returns a user identifier if the user was successfully logged in. Returns a failure reason if unsuccessful.
 
 ### GetExternalLoginURL
@@ -89,13 +89,13 @@ Throws an exception if no external identity provider is configured for the curre
 _Inputs_
 
 **CallbackURL**
-:   Type: Text.       
+:   Type: Text.
     URL called after the logout process. The provider will redirect users to this URL after a successful login.
 
 _Outputs_
 
 **ExternalLogoutURL**
-:   Type: Text.  
+:   Type: Text.
     Value of the URL where the user can log out of an external provider, if one is configured, or "" otherwise.Use a RedirectToURL node in your flow, after the action, to redirect the user to this URL.
 
 ## Structures
@@ -105,13 +105,13 @@ _Outputs_
 *Attributes*
 
 RetryAfterSeconds
-:   Type: Integer.
-    
+:   Type: Integer
+
 Success
 :   Type: Boolean
 
 UserId
-:   Type: User Identifier    
+:   Type: User Identifier
 
 UserLoginFailureReason
 :   Type: UserLoginFailureReason

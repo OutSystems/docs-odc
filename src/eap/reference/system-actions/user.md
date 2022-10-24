@@ -203,17 +203,17 @@ _Outputs_
 
 Success
 :   Type: Boolean
-    
+
 ChangePasswordFailureReason
 :   Type: ChangePasswordFailureReason
-    
+
 ### FinishUserRegistrationResult
 
 *Attributes*
 
 Success
 :   Type: Boolean
-    
+
 UserId
 :   Type: User Identifier
 
@@ -226,7 +226,7 @@ FinishUserRegistrationFailureReason
 
 MinimumLength
 :   Type: Integer
-    
+
 UpperCaseLetterRequired
 :   Type: Boolean
 
@@ -245,7 +245,7 @@ SpecialCharacterRequired
 
 IsValid
 :   Type: Boolean
-    
+
 MissingLowerCaseLetter
 :   Type: Boolean
 
