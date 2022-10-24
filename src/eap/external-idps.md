@@ -61,7 +61,7 @@ To apply an added external IdP, navigate to the **Identity providers** tab in th
 
     <div class="info" markdown="1">
 
-    When you switch the IdP for your Platform services or apps, all signed-in users get logged out after their current access token expires. They have to log back in using the newly applied provider.
+    When you switch the IdP for your Platform services or apps, all signed-in users get logged out when their current access token expires. They have to log back in using the newly applied provider. For the Platform services, they may have to wait several minutes to log back in while new certificates are processed.
 
     </div>
 
@@ -69,7 +69,13 @@ To apply an added external IdP, navigate to the **Identity providers** tab in th
     * Click the **Replace provider** button to confirm. 
     * Click the **Cancel** to exit.
 
-Once Project Neo applies the provider successfully, a notification displays and users can start authenticating with the provider. If the provider was applied to the Platform services, you now have to log back in to the Portal.
+Once Project Neo applies the provider successfully, a notification displays.
+
+<div class="info" markdown="1">
+
+When a provider is applied to the Platform services, new certificates are processed. This process may take several minutes. When it completes, you can log back into the Portal.
+
+</div>
 
 ## Use external IdP in an app { #in-an-app }
 
