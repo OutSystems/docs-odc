@@ -55,7 +55,7 @@ A Project Neo admin can configure an external IdP. Navigate to the **Identity pr
 To apply an added external IdP, navigate to the **Identity providers** tab in the Portal. Then follow these steps:
 
 1. Click on the card of the provider you want to apply as the provider for the Platform services, your apps, or both.
-1. Copy the relevant pair(s) of **Redirect URLs** to the list of permitted redirects in the setup page of your external provider. See your provider's support documentation for further guidance.
+1. Copy the pair(s) of **Redirect URLs** to the list of permitted redirects in the setup page of your external provider. You should copy the pair(s) for both the built-in domain and any active [custom domains](./custom-domains.md). See your provider's support documentation for further guidance.
 1. Check the summary of the configuration details. If you want to proceed, click the **Apply provider** button.
 1. Check the boxes of where you want to apply the provider and then click **Next**.
 

@@ -47,11 +47,17 @@ To add a custom domain, navigate to the **Domains** tab in the Project Neo Porta
 
 <div class="warning" markdown="1">
 
-You must complete these steps within 72 hours else the CNAME records expires and you must restart the process.
+You must complete these steps within 72 hours else the CNAME records expire and you must restart the process.
 
 </div>
 
-Once Project Neo detects the provided CNAME records in the domain's DNS records, ownership is validated and traffic routed from the domain to your apps. This may take up to 20 minutes, before which the domain may not ready to use and an error displayed if visiting an app through it. Once ownership is validated, the status of the domain changes to **Active** and it's ready to use.
+<div class="info" markdown="1">
+
+For each external identity provider in use by your apps, a new pair of redirect URLs is generated for this domain. You must add the new pair of redirect URLs to each active external provider to ensure end-users maintain the ability to authenticate. See the [external IdP documentation](./external-idps.md#apply-an-external-idp) for guidance on how to do this. If end-users lose their ability to authenticate, they get 401 errors when trying to access the apps. You can diagnose the problem by looking at the [logs](../eap/monitor-apps.md#logs).
+
+</div>
+
+Once Project Neo detects the provided CNAME records in the domain's DNS records, ownership is validated and traffic routed from the domain to your apps. This may take up to 20 minutes, before which the domain may not be ready to use and an error displayed if visiting an app through it. Once ownership is validated, the status of the domain changes to **Active** and it's ready to use.
 
 Project Neo generates a public X.509 certificate to enable TLS communication over the domain. The generated certificate is valid for 395 days. If the provided CNAME records remain in the domain's DNS records, Project Neo automatically renews the certificate before expiry.
 
@@ -83,7 +89,7 @@ To delete a custom domain, navigate to the **Domains** tab in the Project Neo Po
 1. Click the dropdown menu and select the stage for which you want to add a domain. The list of domains displays showing the built-in domain and any custom domains already added to the selected stage.
 1. Click the card of the custom domain you want to delete. The **Set up your domain** screen launches and you see the status next to the domain name.
 1. Click the ellipsis to the right of the domain status and select **Delete domain**.
-1. Before confirming the deletion of the domain review the information in the popup box. Then do one of the following:
+1. Before confirming the deletion of the domain, review the information in the popup box. Then do one of the following:
      * Click the **Delete domain** button to confirm.
      * Click the **Cancel** button to exit.
 
