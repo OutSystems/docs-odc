@@ -27,7 +27,7 @@ Apps are always accessible to end-users through built-in domains. For example, a
 
 In addition, Project Neo lets you make your apps accessible to end-users through your organization's domain(s). Your apps in a given stage can be available through one or more custom domains you add to that stage. Each custom domain must be unique to a customer and stage.
 
-You can add top-level domains (such as `example.com`), subdomains (such as `dev.example.com`), and multi-level subdomains (such as `neo.dev.example.com`).
+You can add top-level domains (such as `example.com`), subdomains (such as `dev.example.com`), and multi-level subdomains (such as `neo.dev.example.com`). When you add a custom domain to a stage, all apps deployed to that stage will be accessible through the domain.    
 
 The following table shows a possible setup for a customer who wants one custom subdomain for each stage:
 
