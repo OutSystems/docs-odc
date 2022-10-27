@@ -26,7 +26,16 @@
         # Entity relationships
         - href: eap/building-apps/data/relationships.md
       # Sharing data
-      - href: eap/building-apps/data/sharing.md 
+      - href: eap/building-apps/data/sharing.md
+    # Mobile apps
+    - href: eap/building-apps/mobile/intro.md
+    - topics:
+      # Create a mobile package
+      - href: eap/building-apps/mobile/creating-mobile-package.md
+      # Progressive web app 
+      - href: eap/building-apps/mobile/pwa.md
+      # Keeping apps up to date for your users 
+      - href: eap/building-apps/mobile/apps-up-to-date.md 
     # UI
     - href: eap/building-apps/ui/intro.md
     - topics:
