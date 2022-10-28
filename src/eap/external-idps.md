@@ -79,25 +79,65 @@ When a provider is applied to the Platform services, new certificates are proces
 
 ## Use external IdP in an app { #in-an-app }
 
-After you apply an external IdP to stage(s) (Dev, QA, Prod) in the Portal, you must modify the end-user login flow for each app in which you want to use it. For each app you want to modify, open it in Service Studio and follow these steps:
+After you apply an external IdP to stage(s) (Dev, QA, Prod) in the Portal, you must modify the end-user login and logout flow for each app in which you want to use it. 
+
+One solution is to replace the built-in provider with the external provider. For each app, open it in Service Studio and follow the steps in the **Modify main user login flow**, **Modify user info bar login flow** and **Modify user info bar logout flow** sections below.
+
+### Modify main user login flow
 
 1. To load the login action onto the canvas, click the **Interface** tab, then expand the **UI Flows** > **Common** folder and double-click **OnException**. You see the end-user login flow for the built-in provider.
 
     ![Built-in provider flow](images/built-in-provider-flow-ss.png "Built-in provider flow")
 
-1. To delete the built-in login screen, delete the **Common\Login**  element from the login action.
+1. To delete the built-in login screen, delete the **Common\Login**  element from the logic flow.
+
 1. Navigate to the **Add public elements** icon on the top toolbar of Service Studio or use the **Ctrl+Q** shortcut. Search for the [**GetExternalLoginURL** action](./reference/system-actions/auth.md#getexternallogouturl), select it, and click **Add**.
+
 1. Click the **Logic** tab. Expand the **Client Actions** > **(System)** folder. Drag the **GetExternalLoginURL** action in place after the **LastRequest** element.
+
 1. For the **IdentityProvider** setting, use the name of the provider you applied in the Portal. It takes the form of a string. For example, `"providerA"`.
+
 1. Drag a **Destination** element from the toolbox bar to end the flow. A **Select Destination** popup screen displays. Expand the **UI Flows** > **Common** folder and select **RedirectToURL**.
 
     ![External provider flow](images/external-provider-flow-ss.png "Built-in provider flow")
 
 1. In the Properties pane for the **RedirectToURL** action, set the **URL** setting to `GetExternalLoginURL.ExternalLoginURL`. This is where the user is redirected to perform the login.
 
-After you complete the steps, [promote](deploy-apps.md) the revision of the app to the stage(s) where the provider is active.
+### Modify user info bar login flow
 
-If you revert the provider for stage(s) back to the built-in provider, you must change the login flow for the apps back to that shown in Step 1.
+1. Click the **Interface** tab, then expand the **UI Flows** > **Common** folder and double-click **UserInfo**. You see the user info block which by default displays in the right corner of the top bar of your published app.
+
+1. Click the **Login** text. Hover over the **Text** button and then click the **Link** button. The **Properties** pane displays to the right of the canvas.
+
+1. In the **On Click** setting select **New Client Action** from the dropdown. A new client action is created, set in the **On Click** setting and displayed on the canvas.
+
+1. Click the **Logic** tab. Expand the **Client Actions** > **(System)** folder. Drag the **GetExternalLoginURL** action in place after the **Start** element.
+
+1. For the **IdentityProvider** setting, use the name of the provider you applied in the Portal. It takes the form of a string. For example, `"providerA"`.
+
+1. Delete the **End** element. Drag a **Destination** element from the toolbox bar to end the flow. A **Select Destination** popup screen displays. Expand the **UI Flows** > **Common** folder and select **RedirectToURL**.
+
+    ![New UserInfo action](images/new-userinfo-action-ss.png "New UserInfo action")
+
+1. In the Properties pane for the **RedirectToURL** action, set the **URL** setting to `GetExternalLoginURL.ExternalLoginURL`. This is where the user is redirected to perform the login.
+
+### Modify user info bar logout flow
+
+1. Click the **Interface** tab, then expand the **UI Flows** > **Common** > **UserInfo** folder and double-click **ClientLogout**. You see the logout action for the user info bar.
+
+    ![ClientLogout](images/clientlogout-ss.png "ClientLogout")
+
+1. To delete the built-in logout action, delete the **Logout** element from the logic flow.
+
+1. Navigate to the **Add public elements** icon on the top toolbar of Service Studio or use the **Ctrl+Q** shortcut. Search for the [**GetExternalLogoutURL** action](./reference/system-actions/auth.md#getexternallogouturl), select it, and click **Add**.
+
+    ![ClientLogout Modified](images/clientlogout-mod-ss.png "ClientLogout Modified")
+
+1. Click the **Logic** tab. Expand the **Client Actions** > **(System)** folder. Drag the **GetExternalLogoutURL** action in place after the **Start** element.
+
+After you complete all the steps in all the sections, republish and [promote](deploy-apps.md) the revision of the app to the stage(s) where the provider is active.
+
+If you revert the provider for stage(s) back to the built-in provider, you must also revert the end-user login and logout flow for the apps back to the original state.
 
 ## Edit an external IdP
 
