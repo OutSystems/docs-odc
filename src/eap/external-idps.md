@@ -29,17 +29,17 @@ In the Portal on the **Users** tab, you can manage users associated with a provi
 Before you begin configuring an external provider for use in Project Neo, you need to get the following information from the provider:
 
 * URL of the OpenID configuration
-* Provider credentials, like client ID and client secret
+* Provider credentials. Your provider might use different names for these fields such as **Application ID** for the **Client ID** field and **Client secret** or **Value** for the **Client secret (secret value)** field. For more guidance, see your provider's support documentation (for example, [Azure AD](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-credentials) or [Okta](https://help.okta.com/en-us/Content/Topics/Apps/Apps_App_Integration_Wizard_OIDC.htm)).
 
 ## Add an external IdP
 
 A Project Neo admin can configure an external IdP. Navigate to the **Identity providers** tab in the Portal. You see listed the built-in provider and any external IdPs already added. Follow these steps:
 
-1. To launch the **New provider** configuration screen, click the **Add OpenID Connect provider** button.
+1. To launch the **New provider** configuration screen, click the **Add Provider** > **OpenID Connect** button.
 1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters. It's for your own reference.
-1. Enter the URL of the OpenID configuration in the **Well-known endpoint** field. 
+1. Enter the URL of the OpenID configuration in the **Discovery endpoint** field. 
 1. Click **Get details**. Project Neo retrieves the JSON of the OpenID configuration and shows a preview. 
-1. Enter the credentials for the provider in the **Client ID** and **Client secret** fields. Then, select PKCE if your provider supports it.
+1. Enter the credentials for the provider in the **Client ID** and **Client secret (secret value)** fields. For more guidance, see your provider's support documentation (for example, [Azure AD](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) or [Okta](https://help.okta.com/en-us/Content/Topics/Apps/Apps_App_Integration_Wizard_OIDC.htm)). Then, select **PKCE** if your provider supports it.
 
     <div class="info" markdown="1">
 
@@ -55,7 +55,6 @@ A Project Neo admin can configure an external IdP. Navigate to the **Identity pr
 To apply an added external IdP, navigate to the **Identity providers** tab in the Portal. Then follow these steps:
 
 1. Click on the card of the provider you want to apply as the provider for the Platform services, your apps, or both.
-1. Copy the pair(s) of **Redirect URLs** to the list of permitted redirects in the setup page of your external provider. You should copy the pair(s) for both the built-in domain and any active [custom domains](./custom-domains.md). See your provider's support documentation for further guidance.
 1. Check the summary of the configuration details. If you want to proceed, click the **Apply provider** button.
 1. Check the boxes of where you want to apply the provider and then click **Next**.
 
@@ -69,9 +68,11 @@ To apply an added external IdP, navigate to the **Identity providers** tab in th
     * Click the **Replace provider** button to confirm. 
     * Click the **Cancel** to exit.
 
-Once Project Neo applies the provider successfully, a notification displays.
+    Once Project Neo applies the provider successfully, a notification displays.
 
-<div class="info" markdown="1">
+1. Copy the pair(s) of **Redirect URLs** to the list of permitted redirects in the setup page of your external provider. You should copy the pair(s) for both the built-in domain and any active [custom domains](custom-domains.md). See your provider's support documentation for further guidance (for example, [Azure AD](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-redirect-uri) or [Okta](https://help.okta.com/en-us/Content/Topics/Apps/Apps_App_Integration_Wizard_OIDC.htm)).
+
+<div class="info" markdown="1"> 
 
 When a provider is applied to the Platform services, new certificates are processed. This process may take several minutes. When it completes, you can log back into the Portal.
 
