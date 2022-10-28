@@ -88,9 +88,7 @@ Note the following related to timers in Project Neo:
 
 ## Time
 
-The date and time a user sees in their app is determined by the device's time zone. When a user opens an app on their computer in Boston, MA, it shows the time as 5:00 am (UTC-4). When a user opens the same app n their computer in Lisbon, Portugal, they see the time as 10:00 am (UTC+1).
-
-In Project Neo, date and time data is stored with the UTC time zone, to ensure all date and time calculations are accurate in all the time zones. Project Neo stores date and time data types in the database with a time zone offset.
+In Project Neo, date and time data is stored in UTC. The date and time a user sees in their app is determined by the device's time zone. When a user opens an app on their computer in Boston, MA, it shows the time as 5:00 am (UTC-4). When a user opens the same app on their computer in Lisbon, Portugal, they see the time as 10:00 am (UTC+1).
 
 ![Saving time in UTC in Project Neo](images/time-save-to-server-diag.png)
 
@@ -107,7 +105,7 @@ The following list provides additional guidance:
 
 ## Project Neo differences by task
  
-The following table lists tasks in the Project Neo compared to OutSystems 11.
+The following table lists tasks in Project Neo compared to OutSystems 11.
  
 | Task | In OutSystems 11 | In Project Neo |
 | ----------- | ----------- | ----------- |
