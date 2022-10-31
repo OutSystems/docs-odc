@@ -27,6 +27,8 @@
         - href: eap/building-apps/data/relationships.md
       # Sharing data
       - href: eap/building-apps/data/sharing.md
+      # Data types
+      - href: eap/building-apps/data/data-types.md
     # Mobile apps
     - href: eap/building-apps/mobile/intro.md
     - topics:

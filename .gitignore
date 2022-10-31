@@ -5,3 +5,4 @@ rules/
 .vs/*
 config.yml
 .vscode/settings.json
+.DS_Store
