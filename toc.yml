@@ -4,6 +4,7 @@
 - href: eap/configuration-management/configuration-management.md
 - topics:
   - href: eap/configuration-management/set-as-secret.md
+  - href: eap/configuration-management/configure-emails.md
 - href: eap/configuration-management/manage-users.md
 - href: eap/deploy-apps.md
 - href: eap/monitor-apps.md
@@ -51,6 +52,8 @@
       - href: eap/building-apps/ui/customize-ui-styles.md
       # Custom authentication flows
       - href: eap/building-apps/ui/custom-auth.md
+    # Emails
+    - href: eap/building-apps/emails/intro.md
     # Reuse elements across apps
     - href: eap/building-apps/reuse-elements.md
     # Secure your app by using roles
