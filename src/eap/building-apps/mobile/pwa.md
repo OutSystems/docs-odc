@@ -26,6 +26,7 @@ The main benefits of PWAs:
  
 PWA in OutSystems is a distribution mode for mobile apps. You can simultaneously distribute a mobile app as a native mobile app and as a PWA.
 
+
 ## PWA is active by default
 
 Select **Phone App** or **Tablet App** when you're creating a new app in Service Studio that you want to offer users as a PWA. By default, the progressive web app (PWA) distribution is always active.

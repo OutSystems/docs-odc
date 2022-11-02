@@ -63,6 +63,12 @@
     - topics:
       # Use public elements
       - href: eap/building-apps/logic/use-public-elements.md
+# Extensibility
+- href: eap/extensibility/intro.md
+- topics:
+  - href: eap/extensibility/plugins/intro.md
+  - topics:
+    - href: eap/extensibility/plugins/camera/intro.md
 # Reference
 - href: eap/reference/intro.md
 - topics:
