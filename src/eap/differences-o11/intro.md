@@ -127,3 +127,5 @@ The following table summarizes terminology differences between OutSystems 11 and
 | Reactive Web App | Web App | All Web Apps are reactive in Project Neo. Traditional Web Apps aren't supported. |
 | Module | N/A | Modules don't exist in Project Neo. |
 | Site Properties | Settings | Site Properties is Settings in Project Neo. |
+
+
