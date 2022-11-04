@@ -108,7 +108,7 @@ The following list provides additional guidance:
 The following table lists tasks in Project Neo compared to OutSystems 11.
  
 | Task | In OutSystems 11 | In Project Neo |
-| ----------- | ----------- | ----------- |
+| :----------- | :----------- | :----------- |
 | Deploy an application to another stage.| LifeTime | **Portal** > **Delivery** > **Deployments**.|
 | [Apps configuration management](./../configuration-management/configuration-management.md) | LifeTime | **Portal** > **Apps** |
 | View apps and app details. Delete and deactivate apps | LifeTime | **Portal** > **Apps** |
@@ -122,7 +122,7 @@ The following table lists tasks in Project Neo compared to OutSystems 11.
 The following table summarizes terminology differences between OutSystems 11 and Project Neo.
  
 | OutSystems 11 name | Project Neo name | Notes |
-| ----------- | ----------- | ----------- |
+| :----------- | :----------- | :----------- |
 | environment | stage | In Project Neo, the infrastructure where you develop and run your apps is fundamentally different. However, these terms (environment and stage), both represent the place where you deploy your apps to Development, Test, and Production. See [Deploy apps](../deploy-apps.md) for more information about deploying apps in Project Neo. |
 | Reactive Web App | Web App | All Web Apps are reactive in Project Neo. Traditional Web Apps aren't supported. |
 | Module | N/A | Modules don't exist in Project Neo. |
