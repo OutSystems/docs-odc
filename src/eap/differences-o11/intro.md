@@ -90,11 +90,11 @@ Note the following related to timers in Project Neo:
 
 In Project Neo, date and time data is stored in UTC. The date and time a user sees in their app is determined by the device's time zone. When a user opens an app on their computer in Boston, MA, it shows the time as 5:00 am (UTC-4). When a user opens the same app on their computer in Lisbon, Portugal, they see the time as 10:00 am (UTC+1).
 
-![Saving time in UTC in Project Neo](images/time-save-to-server-diag.png)
+![Saving time in UTC in Project Neo](images/utc-save-to-server-diag.png)
 
 When users call built-in functions, the server returns the data to the devices. The time displays on both devices in the local time.
 
-![Getting tie in UTC in Project Neo](images/time-get-from-server-diag.png)
+![Getting tie in UTC in Project Neo](images/utc-get-from-server-diag.png)
 
 The following list provides additional guidance: 
 
@@ -127,5 +127,3 @@ The following table summarizes terminology differences between OutSystems 11 and
 | Reactive Web App | Web App | All Web Apps are reactive in Project Neo. Traditional Web Apps aren't supported. |
 | Module | N/A | Modules don't exist in Project Neo. |
 | Site Properties | Settings | Site Properties is Settings in Project Neo. |
-
-
