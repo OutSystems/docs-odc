@@ -22,7 +22,7 @@ For app configurations, developers create settings with default values in Servic
 
 You can override the configuration values from Service Studio in non-development stages. When you deploy your app to Test, you can change the configuration values to mirror production values for testing and troubleshooting. Then when you move this configuration to Production you can change your values using real data. The changes you make are specific to a stage. This process occurs without needing to publish your app again.
 
-![How configuration management works](images/configuration-management-works-diag.png "How configuration management works")
+![How configuration management works](images/config-management-works-diag.png "How configuration management works")
 
 App configurations can use one of the following values:
 
@@ -32,7 +32,7 @@ App configurations can use one of the following values:
 
 The values you change take effect when the asynchronous apply process completes. The apply process saves the new values and updates the configuration.
 
-![Apply configurations](images/configuration-management-apply-diag.png "Apply configurations")
+![Apply configurations](images/config-management-apply-diag.png "Apply configurations")
 
 ## Managing settings
 
