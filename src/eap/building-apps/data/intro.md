@@ -28,7 +28,7 @@ You model data in Service Studio by creating new entities and adding attributes.
 
 The graphic below shows an example of the structure of an entity.
 
-![Entity structure](images/data-entity-ss.png "Entity structure")
+![Entity structure](images/entity-structure-ss.png "Entity structure")
 
 Enumerations in OutSystems are static entities. A static entity stores a predefined list of values. An example of such data is a list of priorities with `Low`, `Medium`, and `High`.
 
