@@ -29,7 +29,7 @@ In addition to access to **Service Studio**, each Project Neo customer has acces
 
 The following diagram shows the high-level architecture of the OutSystems cloud platform.
 
-![Architecture of the OutSystems cloud platform](images/cloud-architecture-diag.png "Architecture of the OutSystems cloud platform")
+![Architecture of the OutSystems cloud platform](images/cloud-native-architecture-diag.png "Architecture of the OutSystems cloud platform")
 
  NATS, a secure messaging system, handles all internal requests between the Platform and Runtime stages. All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of Project Neo](networking.md) to learn more.
 
@@ -45,7 +45,7 @@ All the Platform services are multi-tenant and benefit from automatic recovery a
 
 The following diagram shows the high-level architecture of the development Platform.
 
-![Architecture of the development Platform](images/cloud-architecture-platform-diag.png "Architecture of the development Platform") 
+![Architecture of the development Platform](images/cloud-native-architecture-platform-diag.png "Architecture of the development Platform") 
 
 #### Runtime { #runtime }
 
@@ -55,7 +55,7 @@ The Runtime **Load Balancer** handles all requests to the apps.
 
 The following diagram shows the high-level Runtime architecture.
 
-![Runtime architecture](images/cloud-architecture-runtime-diag.png "Runtime architecture") 
+![Runtime architecture](images/cloud-native-architecture-runtime-diag.png "Runtime architecture") 
 
 ## Key technologies of the cloud-native infrastructure
 
@@ -77,7 +77,7 @@ The compute capacity for each running Platform service is scalable. Many develop
 
 The following diagram shows how auto scaling works inside the Platform cluster.
 
-![Autoscaling of the development Platform](images/cloud-architecture-platform-k8s-diag.png "Autoscaling of the development Platform") 
+![Autoscaling of the development Platform](images/cloud-native-architecture-platform-k8s-diag.png "Autoscaling of the development Platform") 
 
 The **auto scale controller** monitors the CPU and RAM usage of each running service. It continuously checks the usage against the cluster compute capacity allocated to each service. It can:
 
@@ -102,7 +102,7 @@ The compute capacity for each app container running in each Runtime stage is sca
 
 The following diagram illustrates how auto scaling works inside the Runtime cluster.
 
-![Autoscaling of the runtime apps](images/cloud-architecture-runtime-scale-diag.png "Autoscaling of the runtime apps") 
+![Autoscaling of the runtime apps](images/cloud-native-architecture-runtime-scale-diag.png "Autoscaling of the runtime apps") 
 
 The **auto scale controller** monitors the CPU and RAM usage of each app container. It continuously checks the usage against the cluster compute capacity allocated to each app container. It can: 
 
