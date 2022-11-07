@@ -49,7 +49,7 @@ The Identity Service follows the OIDC standard, an identity layer built on top o
 
 The following diagram shows an example of a user authentication and authorization flow. It shows a developer using **Service Studio** (client) to access a REST API endpoint exposed by **Service 1** (a Platform service).
 
-![Identity flow](images/identity-flow-with-authorization-diag.png)
+![Identity flow](images/identity-flow-authorization-diag.png)
 
 The Identity Service or external IdP checks the following conditions to **verify access token**:
 
