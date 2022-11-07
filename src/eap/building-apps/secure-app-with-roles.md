@@ -31,7 +31,7 @@ This is an overview of how to use roles:
 2. In Portal, assign end-user roles to users.
 3. In Service Studio, use end-user roles to control access to the parts of the app. You can also grant and revoke a role to any user programmatically.
 
-![How you can use roles](images/use-roles-diag.png "How you can use roles")
+![How you can use roles](images/how-to-use-roles-diag.png "How you can use roles")
 
 ### Create end-user roles
 
@@ -48,7 +48,7 @@ You can also assign roles at the same time you invite new users to your organiza
 After you create a role, Service Studio also creates the following actions to let you manage the roles during the app runtime, in the app logic. These actions let you programmatically check, grant, or revoke a role.
 
 | Action             | Example           | Description                                             |
-| ------------------ | ----------------- | ------------------------------------------------------- |
+| :------------------ | :----------------- | :------------------------------------------------------- |
 | CheckROLENAMERole* | CheckManagerRole  | Returns True if the current user has the ROLENAME role. |
 | GrantROLENAMERole  | GrantManagerRole  | Grants ROLENAME to the user with the UserId.            |
 | RevokeROLENAMERole | RevokeManagerRole | Revokes ROLENAME from the user with the UserId.          |
@@ -65,7 +65,7 @@ After you assign roles to your end-users, you can:
 * Restrict access to data
 * Restrict logic flows
 
-![Control access in your app](images/control-access-in-your-app-diag.png "Control access in your app")
+![Control access in your app](images/control-access-in-your-app-end-user-roles-diag.png "Control access in your app")
 
 <div class="warning" markdown="1">
 
