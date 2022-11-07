@@ -61,6 +61,13 @@
     - topics:
       # Use public elements
       - href: eap/building-apps/logic/use-public-elements.md
+    # Timers
+    - href: eap/building-apps/timers/intro.md
+    - topics:
+      # Run
+      - href: eap/building-apps/timers/timer-create-run.md
+      # Monitor
+      - href: eap/building-apps/timers/timer-monitor.md
 # Extensibility
 - href: eap/extensibility/intro.md
 - topics:
