@@ -20,7 +20,7 @@ In addition, you can use an external, self-managed IdP as the authentication pro
 
 When you successfully configure and save an external IdP to Project Neo, it becomes an option for use as the active provider for the Platform services, your apps, or both. You can use a different active provider for the Platform services and each stage your apps are deployed to. You must use the same provider for all the apps deployed to a given stage. The following diagram shows an example setup.
 
-![External IdPs concept](images/external-idps-diag.png "External IdPs concept")
+![External IdPs concept](images/external-idps-setup-example-diag.png "External IdPs concept")
 
 In the Portal on the **Users** tab, you can manage users associated with a provider.
 
