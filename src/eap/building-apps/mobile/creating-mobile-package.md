@@ -21,12 +21,6 @@ After you can create a mobile app in Service Studio, you can create a mobile app
 1. Create your production mobile package.
 1. Distribute your app by submitting it as a package to an app store or sharing it internally for a direct download. 
 
-<div class="info" markdown="1">
-
-The progressive web app (PWA) distribution is always active. You can preview your PWA by using the QR codes in Service Studio and Portal.
-
-</div>
-
 ## Creating an iOS or Android Package
 
 Go to Portal and in the app details page, click **Mobile distribution**. To create a package click **Create package**. From the same screen, you can create an iOS or Android package. The two packages can process at the same time. Once you click the **Create Package** button, the Portal displays a screen for you to provide configuration information. On first use, Portal prefills some iOS and Android configuration fields for you.
