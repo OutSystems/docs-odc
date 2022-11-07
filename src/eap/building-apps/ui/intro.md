@@ -70,7 +70,7 @@ Additionally, you can change the structure to display something else or remove u
 
 UI patterns are available in many different categories such as content, navigation, and interaction. Following is a sample of some UI Patterns:
 
-![ui patterns](images/ui-patterns-diag.png)
+![ui patterns](images/ui-patterns-sample-diag.png)
 
 You can find many patterns in the toolbox of Service Studio. Open a screen for editing and drag a pattern from the toolbox: 
   
