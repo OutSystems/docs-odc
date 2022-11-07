@@ -84,3 +84,4 @@ In Service Studio, developers define which systems you want to integrate with so
 To access the list of REST integrations, go to the **Configuration** tab for your app. From here you can get access to the Consumed REST APIs. The bubble to the right of the section name shows the number of APIs in each category.
 
 When you click **Consumed REST APIs**, a list of the consumed APIs displays. To manage a Consumed REST integration, click on the integration name. The sidebar opens for you to make updates. When you apply your changes, Project Neo saves them, and your new Consumed REST integrations settings are available.
+
