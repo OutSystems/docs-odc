@@ -70,7 +70,7 @@ An example of an HTTPS request is when a developer clicks the 1-Click Publish bu
 
 The platform is available at `<customername>.outsystems.dev`.
 
-![Platform network architecture](images/cloud-network-platform-diag.png "Platform network architecture")
+![Platform network architecture](images/cloud-network-security-platform-diag.png "Platform network architecture")
 
 ### Runtime
 
@@ -80,4 +80,4 @@ An example of an HTTPS request is when a user submits a form in an app. The requ
 
 The apps are available at `<customername>.outsystems.app/appname` and on all the active custom domains (such as `apps.example.com/appname`).
 
-![Runtime network architecture](images/cloud-network-runtime-diag.png "Runtime network architecture") 
+![Runtime network architecture](images/cloud-network-security-runtime-diag.png "Runtime network architecture") 
