@@ -11,7 +11,7 @@ app_type:
 Forge assets become available only after they go through a submission and approval process. Once an asset is in Forge, users can install it in their organization. The asset is then accessible in Service Studio. The label displays additional information on the details page. A Forge asset can have any of the following labels.
 
 | Label / button | Description                                                                               |
-| -------------- | ----------------------------------------------------------------------------------------- |
+| :-------------- | :----------------------------------------------------------------------------------------- |
 | Install        | The asset is ready to install                                                             |
 | Installing     | The asset is installing                                                                   |
 | Installed      | The asset is installed and is ready to use                                                |
