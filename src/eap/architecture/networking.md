@@ -1,28 +1,22 @@
 ---
-summary: Overview of the cloud-native network architecture and security of Project Neo.
+summary: Overview of the cloud-native network architecture and security of OutSystems Developer Cloud.
 tags: 
 locale: en-us
 guid: e87fb27d-9186-436d-ac97-a2ea960c119d
 app_type: mobile apps, reactive web apps
 ---
 
-# Network and security of Project Neo
+# Network and security of OutSystems Developer Cloud
 
-<div class="info" markdown="1">
+This article provides an overview of OutSystems Developer Cloud cloud-native network architecture and security.
 
-Project Neo documentation is under construction. It's frequently updated and expanded.
-
-</div>
-
-This article provides an overview of Project Neo cloud-native network architecture and security.
-
-Project Neo is cloud-native. This means that the infrastructure of both the development Platform, for building and deploying apps, and the independent Runtime, for hosting and running the deployed apps, live in the cloud. See [Cloud-native architecture of Project Neo](intro.md) to learn more.
+OutSystems Developer Cloud is cloud-native. This means that the infrastructure of both the development Platform, for building and deploying apps, and the independent Runtime, for hosting and running the deployed apps, live in the cloud. See [Cloud-native architecture of OutSystems Developer Cloud](intro.md) to learn more.
 
 A secure cloud-native network connects the cloud-native architecture. The network architecture of the Development, Test and Production stages of the Runtime is identical.
 
 ## Key technologies
 
-The following is an overview of the cloud technologies that Project Neo uses for networking and network security.
+The following is an overview of the cloud technologies that OutSystems Developer Cloud uses for networking and network security.
 
 ### CDN (Content Delivery Network)
 
@@ -64,9 +58,9 @@ Requests to external data (available via REST API) get routed through a NAT gate
 
 ### Platform
 
-The Platform uses microservices based on REST API. When Service Studio and the Project Neo Portal send HTTPS requests, the requests reach the secure endpoints that the Platform exposes. The requests use the smallest network bandwidth for the data transfer.
+The Platform uses microservices based on REST API. When ODC Studio and ODC Portal send HTTPS requests, the requests reach the secure endpoints that the Platform exposes. The requests use the smallest network bandwidth for the data transfer.
 
-An example of an HTTPS request is when a developer clicks the 1-Click Publish button in Service Studio. The request accesses a secure endpoint in Build Service.
+An example of an HTTPS request is when a developer clicks the 1-Click Publish button in ODC Studio. The request accesses a secure endpoint in Build Service.
 
 The platform is available at `<customername>.outsystems.dev`.
 

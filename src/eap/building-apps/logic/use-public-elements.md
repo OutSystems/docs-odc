@@ -8,17 +8,17 @@ app_type: mobile apps, reactive web apps
 
 # Use public elements
 
-You can use public elements to extend the capabilities of your app. Public elements are elements [shared by members of your organization](../reuse-elements.md#public-elements) or packaged into libraries that come bundled with Project Neo.
+You can use public elements to extend the capabilities of your app. Public elements are elements [shared by members of your organization](../reuse-elements.md#public-elements) or packaged into libraries that come bundled with OutSystems Developer Cloud (ODC).
 
-For example, you can use elements in the HTTP library to extend your app to handle HTTP requests and responses. The HTTP library comes bundled with Project Neo.
+For example, you can use elements in the HTTP library to extend your app to handle HTTP requests and responses. The HTTP library comes bundled with ODC.
 
 ## Add public elements
 
-To use public elements, you must first add them to your app. Navigate to the **Add public elements** icon on the top toolbar of Service Studio or use the **Ctrl+Q** shortcut. In the selection window, you can filter by name, description, and type of element. Select the element or elements you want to add and click **Add**.
+To use public elements, you must first add them to your app. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. In the selection window, you can filter by name, description, and type of element. Select the element or elements you want to add and click **Add**.
 
 ### Libraries
 
-Project Neo elevates libraries to a top-level concept. Libraries exist at the same level as apps, and they have their own lifecycle.
+ODC elevates libraries to a top-level concept. Libraries exist at the same level as apps, and they have their own lifecycle.
 
 You can build you own libraries, but there are many provided by OutSystems available out of the box. You can find a list of currently available libraries in the [reference documentation](../../reference/intro.md#libraries).
 

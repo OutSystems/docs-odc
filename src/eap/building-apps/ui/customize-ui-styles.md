@@ -8,12 +8,6 @@ app_type: mobile apps, web apps
 
 # Customize UI styles
 
-<div class="info" markdown="1">
-
-Project Neo documentation is under construction. It's frequently updated and expanded.
-
-</div>
-
 Users interact with your apps through the user interface (UI). As a developer, your goal is to follow UI standards defined by your organization but also to create an app that looks good and is easy to use.
 
 In the UI, you define the structure of how your apps look when built. OutSystems provides a UI framework which is the base. On top of the framework, you apply the styles you want to customize and incorporate into your design.  
@@ -34,9 +28,3 @@ When styling your app follow your organization's guidelines to make it easier fo
 * **Themes** - Let you make changes to the look and feel of your app. A theme includes layouts you can use for screens, the global style sheet, the grid definition for positioning, and the size of the elements on the screen. You can add, delete, or modify any of the components that are part of the theme.
 * **Responsive UI** - OutSystems provides a responsive UI which means you can build apps that work on all devices and your apps display correctly. The OutSystems UI theme comes with different rules for each type of device. Using different adaptive patterns and actions, you can define how you want your apps to respond.
 * **Right-to-left (RTL) display** - Most apps display content on the screen from the left to the right. But some languages are read right to left (for example, Arabic and Hebrew). By making a few simple changes such as the locale, OutSystems patterns adjust automatically from left-to-right to right-to-left.
-
-
-
-
-
-

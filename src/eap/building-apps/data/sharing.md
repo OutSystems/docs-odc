@@ -8,12 +8,6 @@ app_type: mobile apps, reactive web apps
 
 # Sharing data defined in OutSystems
 
-<div class="info" markdown="1">
-
-Project Neo documentation is under construction. It's frequently updated and expanded.
-
-</div>
-
 This article introduces the concepts of sharing data defined in OutSystems.
 
 You typically want to share the data stored in the database of your app:
@@ -32,7 +26,7 @@ To manipulate data you use a server action to wrap entity actions: the CRUD inte
 
 An example of a server action to meet a business need is an audit trail for data in your app. When a user creates, deletes or updates a customer record in an app, an audit record is inserted into a dedicated audit entity. An e-mail could also be sent to the administrator.
 
-Service Studio lets you define the logic flow of a server action in a visual and intuitive way. 
+ODC Studio lets you define the logic flow of a server action in a visual and intuitive way. 
 
 ## Producer app
 
@@ -60,4 +54,4 @@ To manipulate entity data in a consumer app, you create a server action in the p
 
 ## Sharing data with external systems
 
-You share data with external systems by creating and exposing REST services. Service Studio provides a simple interface to create and define REST methods in your app. The result is a lightweight, fast, and secure JSON-based REST API that follows the industry-standard Swagger specification. You configure an external system to consume these methods directly.
+You share data with external systems by creating and exposing REST services. ODC Studio provides a simple interface to create and define REST methods in your app. The result is a lightweight, fast, and secure JSON-based REST API that follows the industry-standard Swagger specification. You configure an external system to consume these methods directly.

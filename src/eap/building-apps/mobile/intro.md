@@ -8,7 +8,7 @@ app_type: mobile apps, reactive web apps
 
 # Mobile apps
 
-Project Neo lets you build mobile apps faster and for the future. With OutSystems for mobile, you can build:
+OutSystems Developer Cloud (ODC) lets you build mobile apps faster and for the future. With OutSystems for mobile, you can build:
 
 * A mobile app: These are applications that users install on their phones, have access to the device’s sensors, can work offline, and have a UX designed for a native experience.
 

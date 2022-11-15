@@ -10,12 +10,6 @@ app_type: mobile apps, reactive web apps
 
 Plugins provide important functionalities to native mobile apps, letting you use many of the hardware capabilities of mobile devices. You can add notifications, use camera or global positioning services, read QR codes, and more.
 
-<div class="info" markdown="1">
-
-Documentation is under construction. It's frequently updated and expanded.
-
-</div>
-
 ## The list of supported mobile plugins
 
 The table shows the OutSystems-supported mobile plugins that you can find in the Forge repository. Some of them are already supported when distributing your app as a Progressive Web App (PWA).
@@ -41,7 +35,7 @@ To install a supported plugin from Forge:
 
 1. Find the plugin you want to use in the [list of supported mobile plugins](#the-list-of-supported-mobile-plugins).
 
-1. In **Portal** > **Forge** find the plugin and open the details page. 
+1. In **ODC Portal** > **Forge** find the plugin and open the details page. 
 
 1. Click **Install** and follow the instructions to install the plugin. Optionally, install the demo app that comes with the plugin.
 

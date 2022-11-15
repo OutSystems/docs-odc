@@ -8,13 +8,13 @@ app_type: mobile apps, reactive web apps
 
 # SQL queries compared to OutSystems 11
 
-In OutSystems 11, you can choose to use SQL Server, Azure SQL Database, Oracle or DB2 as the database for your apps. In Project Neo, your apps use Aurora PostgreSQL.
+In OutSystems 11, you can choose to use SQL Server, Azure SQL Database, Oracle or DB2 as the database for your apps. In OutSystems Developer Cloud (ODC), your apps use Aurora PostgreSQL.
 
-Where SQL Server and Azure SQL Database are relational database systems, Aurora PostgreSQL is an object-relational database. This means in Project Neo you can build SQL queries with complex data types and object inheritance.
+Where SQL Server and Azure SQL Database are relational database systems, Aurora PostgreSQL is an object-relational database. This means in ODC you can build SQL queries with complex data types and object inheritance.
 
-In Project Neo you build SQL queries for your apps using the SQL logic element as in OutSystems 11. But because of the different underlying database technology when you build SQL queries there are some important syntax differences. The following table shows the main ones.
+In ODC you build SQL queries for your apps using the SQL logic element as in OutSystems 11. But because of the different underlying database technology when you build SQL queries there are some important syntax differences. The following table shows the main ones.
 
-Topic | OutSystems 11 example (SQL Server or Azure SQL Database) | Project NEO equivalent (Aurora PostgreSQL)
+Topic | OutSystems 11 example (SQL Server or Azure SQL Database) | ODC equivalent (Aurora PostgreSQL)
 ---|---|---
 Comparison of Time data type | `[…] WHERE {UseCase_Time}.[Time] > '11:01:41'` | `[…] WHERE {UseCase_Time}.[Time]::time > '11:01:41'`
 Concatenate text string | `[…] WHERE {Org}.[Name] = 'First' + 'Last'` | `[…] WHERE {Org}.[Name] = 'First' \|\| 'Last'`
@@ -32,9 +32,9 @@ UPDATE | `UPDATE {Products}`<br/>`SET {Products}.[Name] = 'abc'`<br/>`WHERE {Pro
 
 You need to pay attention to how you write case and accent insensitive SQL queries. Aurora PostgreSQL is a case and accent sensitive database. To allow case and accent insensitive text operations (CIAI), PostgreSQL introduces the concept of [non-deterministic collations](https://www.postgresql.org/docs/12/collation.html).
 
-The non-deterministic collation in Project Neo is, by default, defined at the singular level and for all the columns that Project Neo creates. This means:
+The non-deterministic collation in ODC is, by default, defined at the singular level and for all the columns that ODC creates. This means:
 
-* The SQL database operators (=, <>, >, >=, <, <=) are CIAI and the default comparison in Project Neo.
+* The SQL database operators (=, <>, >, >=, <, <=) are CIAI and the default comparison in ODC.
 * The pattern matching operators of LIKE, SIMILAR, and REGEX aren't supported through non-deterministic collations.
 
 The **pattern matching operators aren't supported and result in runtime errors**. For example, you get an error like "DataBaseException Error in advanced query SQL1 (...) with nondeterministic collations, in which these operators are not supported."

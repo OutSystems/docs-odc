@@ -18,7 +18,7 @@ See [Adding plugins](../intro.md#adding-plugins) to learn how to install and ref
 
 ## Demo app
 
-Install **Camera Sample App** from Forge and open the app in Service Studio. The demo app contains logic for common use cases, which you can examine and recreate in your apps. For example, the demo app shows how to:
+Install **Camera Sample App** from Forge and open the app in ODC (OutSystems Developer Cloud) Studio. The demo app contains logic for common use cases, which you can examine and recreate in your apps. For example, the demo app shows how to:
 
 * Take a single picture
 * Take multiple pictures
@@ -51,14 +51,14 @@ You can start by defining a variable of the **Binary Data** data type to hold th
 
 ![UI setup for taking pictures](images/camera-ui-setup-ss.png?width=700)
 
-For more guidance on how to create an interface, see the UI accelerators that come with the Camera Plugin. In Service Studio, navigate to **Interface** > **UI FLows** > **Camera Plugin** > **Camera Plugin**, and drag these Blocks to your Screen:
+For more guidance on how to create an interface, see the UI accelerators that come with the Camera Plugin. In ODC Studio, navigate to **Interface** > **UI FLows** > **Camera Plugin** > **Camera Plugin**, and drag these Blocks to your Screen:
 
 * **ChooseImage**
 * **TakePicture**
 
 ### Creating logic to take a picture
 
-The Camera Plugin actions are in the **Logic** tab of Service Studio, in **Client Actions** >  **CameraPlugin**.
+The Camera Plugin actions are in the **Logic** tab of ODC Studio, in **Client Actions** >  **CameraPlugin**.
 
 To prevent errors, it's a best practice to first check if the plugin is available (1) with the action **CheckCameraPlugin**. If the plugin isn't available to the app, display an error to the user. Otherwise, open the camera with **TakePicture** to let users take a picture (2). In the **TakePicture** action you can set the parameters for quality, width, back of front camera, and more.
 
@@ -68,7 +68,7 @@ Check if taking pictures on the device works by verifying the value of **TakePic
 
 ## Opening a picture from the gallery
 
-Let users choose a picture from the device gallery with the **ChooseGalleryPicture** action. The action is in the **Logic** tab of Service Studio, in **Client Actions** >  **CameraPlugin**.
+Let users choose a picture from the device gallery with the **ChooseGalleryPicture** action. The action is in the **Logic** tab of ODC Studio, in **Client Actions** >  **CameraPlugin**.
 
 The action **ChooseGalleryPicture** opens an image browser to let users select an image (1). [Check for errors](#handling-errors) by verifying **ChooseGalleryPicture.Success** is **True** (2). After users select the image, the binary data of the image is in the variable **ChooseGalleryPicture.ImageCaptured.** (3).
 

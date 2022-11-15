@@ -29,7 +29,7 @@ You can use existing screen templates to create your screens. Screen templates h
 
 Scaffolding is an accelerator that creates two screens when you drag an entity onto a UI flow. One screen is an overview, and the other is a detailed screen to edit entity records. Both screens have some built-in functionality like pagination and sorting.
 
-When you create a new app, the app includes some default UI flows in Service Studio > **Interface** > **UI flows**:
+When you create a new app, the app includes some default UI flows in ODC (OutSystems Developer Cloud) Studio > **Interface** > **UI flows**:
 
 * **Common** - contains UI and logic the app reuses in screens and blocks. For example, menus, information about the signed-in user, and the sign-in logic.
 * **Layouts** - contain blocks that define the design of the screens.
@@ -41,4 +41,4 @@ If you don't see **MainFlow**, a different flow may be the default.
 
 </div>
 
-Periodically during development, it's important to save your work. When you click 1-Click Publish, OutSystems saves and builds your app in the development stage. You can access your app from a web browser by clicking the screen and selecting **Open in Browser**. You can continue making changes in Service Studio, publish your app, and then refresh the page to see your updates.
+Periodically during development, it's important to save your work. When you click 1-Click Publish, OutSystems saves and builds your app in the development stage. You can access your app from a web browser by clicking the screen and selecting **Open in Browser**. You can continue making changes in ODC Studio, publish your app, and then refresh the page to see your updates.

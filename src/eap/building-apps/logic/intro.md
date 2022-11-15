@@ -7,4 +7,5 @@ app_type: mobile apps, reactive web apps
 ---
 
 # Logic
+
 In OutSystems, the logic of your apps is implemented through **Actions**. While developing your apps, you can create your own custom actions and use the actions OutSystems provides you.

@@ -8,13 +8,7 @@ app_type: mobile apps, reactive web apps
 
 # Custom authentication flows
 
-<div class="info" markdown="1">
-
-Project Neo documentation is under construction. It's frequently updated and expanded.
-
-</div>
-
-Most apps share certain common authentication functionalities that let end-users login, change password, recover password, or edit profile information. In Project Neo, these functionalities come in pre-built screens that you can use and edit. These are available in the **UI Flows** > **Common** folder in the **Interface** tab in Service Studio.
+Most apps share certain common authentication functionalities that let end-users login, change password, recover password, or edit profile information. In OutSystems Developer Cloud (ODC), these functionalities come in pre-built screens that you can use and edit. These are available in the **UI Flows** > **Common** folder in the **Interface** tab in ODC Studio.
 
 Screen name | Description
 ---|---
@@ -30,10 +24,9 @@ For example, you may want to create a branded login screen by editing the pre-bu
 Each screen is built on top of one or more system actions. You can find more information about these authentication and user system actions in the [reference documentation](../../reference/intro.md#system-actions).
 
 ## Blocks 
-There are also pre-built blocks available to use and edit. You can use the them in pre-built screens or in screens you create. Like the pre-built screens, these are also available in the **UI Flows** > **Common** folder in the **Interface** tab in Service Studio.
+There are also pre-built blocks available to use and edit. You can use the them in pre-built screens or in screens you create. Like the pre-built screens, these are also available in the **UI Flows** > **Common** folder in the **Interface** tab in ODC Studio.
 
 Block name | Description
 ---|---
 UserInfo | Displays the currently logged in user and allows to log out. If no user is logged in, it links to the login screen.
 PasswordPolicy | Block that verifies and informs the user on the status of the password's validation.
-

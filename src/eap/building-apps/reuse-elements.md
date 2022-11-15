@@ -8,12 +8,6 @@ app_type: mobile apps, reactive web apps
 
 # Reuse elements across apps
 
-<div class="info" markdown="1">
-
-Project Neo documentation is under construction. It's frequently updated and expanded.
-
-</div>
-
 You can share public elements across your apps to accelerate development and enable consistency. Sharing elements creates dependencies between producer and consumer apps.
 
 **Strong dependencies** (for example, those in which a consumer executes logic from a producer) can only exist between the following app types:
@@ -28,7 +22,7 @@ You can share public elements across your apps to accelerate development and ena
 
 ## Libraries
  
-Project Neo elevates Libraries to a top-level concept. Libraries exist at the same level as apps (Web or Mobile), and they have their own lifecycle. For example, you can make a branding change by updating the style guide in a Library.
+OutSystems Developer Cloud (ODC) elevates Libraries to a top-level concept. Libraries exist at the same level as apps (Web or Mobile), and they have their own lifecycle. For example, you can make a branding change by updating the style guide in a Library.
  
 ## Public elements { #public-elements }
 
@@ -65,9 +59,9 @@ You can't set a Server Action as **Public** from within an app. However, to achi
 
 This creates a Service Action that invokes the Server Action and its properties.  
  
-## View app reuse in the Portal
+## View app reuse in the ODC Portal
 
-You can view a list of apps and the stage on which they're deployed in the Project Neo Portal. When you click an app, you see the following details:
+You can view a list of apps and the stage on which they're deployed in the ODC Portal. When you click an app, you see the following details:
 
 * The stage on which the app is deployed
 * The app's consumers or producers

@@ -16,12 +16,6 @@ Applies only to mobile apps.
 
 When you click the **1-Click Publish** button, the updates to the mobile app that you deploy to a production stage become available. The users can continue using the app as the app updates automatically. The mobile app detects the updates when the app connects to the server. Only mobile app packages generated from a stage receive the new developments and changes published in that same stage.
 
-<div class="info" markdown="1">
-
-Project Neo documentation is under construction. It's frequently updated and expanded.
-
-</div>
-
 ## Detecting a new app version
 
 To be up to date with the version on the server, there are several instances when the app checks for a new version. These instances are:

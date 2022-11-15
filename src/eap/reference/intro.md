@@ -393,8 +393,8 @@ When designing the business logic of your apps, you can use built-in functions. 
 ## System actions
 When designing the business logic of your apps, you can use built-in system actions. They're available in:
 
-* **Client Actions** > **(System)** folder in the Logic tab in Service Studio.
-* **Server Actions** > **(System)** folder in the Logic tab in Service Studio.
+* **Client Actions** > **(System)** folder in the Logic tab in ODC Studio.
+* **Server Actions** > **(System)** folder in the Logic tab in ODC Studio.
 
 ### Authentication
 Authentication actions for built-in and/or external identity providers.
@@ -408,7 +408,7 @@ Action | Description | Client or Server? | Available as function?
 
 <div class="info" markdown="1">
 
-(*) You must first add this action due to a temporary technical limitation. Navigate to the **Add public elements** icon on the top toolbar of Service Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
+(*) You must first add this action due to a temporary technical limitation. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
 
 </div>
 
@@ -430,6 +430,6 @@ Action | Description | Client or Server? | Available as function?
 
 <div class="info" markdown="1">
 
-(*) You must first add this action due to a temporary technical limitation. Navigate to the **Add public elements** icon on the top toolbar of Service Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
+(*) You must first add this action due to a temporary technical limitation. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
 
 </div>

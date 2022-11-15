@@ -1,5 +1,5 @@
 ---
-summary: Conceptual information on the architecture of the user authentication and authorization flow of the Identity Service of Project Neo. 
+summary: Conceptual information on the architecture of the user authentication and authorization flow of the Identity Service of OutSystems Developer Cloud. 
 tags: 
 locale: en-us
 guid: 5f50a67f-d8c9-444a-9615-090062255870
@@ -8,13 +8,7 @@ app_type: mobile apps, reactive web apps
 
 # Architecture of authentication and authorization mechanism
 
-<div class="info" markdown="1">
-
-Project Neo documentation is under construction. It's frequently updated and expanded.
-
-</div>
-
-This article provides an overview of architecture of the Identity Service of Project Neo.
+This article provides an overview of architecture of the Identity Service of OutSystems Developer Cloud (ODC).
 
 The Identity Service is the built-in identity provider (IdP) of the Platform and the Runtime. It verifies each HTTPS request comes from an authenticated and authorized user for the Platform services and your apps.
 
@@ -24,15 +18,15 @@ In addition, you can use an external, self-managed OpenID Connect (OIDC) IdP as 
 
 **Authentication** is the process of verifying a user's identity. Once authenticated, **authorization** is the process of verifying what a user can access.
 
-Your organization's developers, DevOps engineers and architects are granted **organization permissions** to use Service Studio and the Project Neo Portal to access the Platform services.
+Your organization's developers, DevOps engineers and architects are granted **organization permissions** to use ODC Studio and ODC Portal to access the Platform services.
 
-Users of your apps are given **app roles** to access secured screens, data and logic flows. Developers create app roles in Service Studio and assign them to users in the Project Neo Portal. 
+Users of your apps are given **app roles** to access secured screens, data and logic flows. Developers create app roles in ODC Studio and assign them to users in ODC Portal. 
 
 Go to [User management](../configuration-management/manage-users.md) for more information on user permissions and roles.
 
 ## Secure endpoints
 
-The Platform uses microservices based on REST API. When Service Studio and the Project Neo Portal send **HTTPS requests**, the requests reach the **secure endpoints** the Platform exposes. An example of a request is when a developer clicks the 1-Click Publish button in Service Studio. The request accesses a secure endpoint in Build Service.
+The Platform uses microservices based on REST API. When ODC Studio and ODC Portal send **HTTPS requests**, the requests reach the **secure endpoints** the Platform exposes. An example of a request is when a developer clicks the 1-Click Publish button in ODC Studio. The request accesses a secure endpoint in Build Service.
 
 Apps run in containers in the Runtime and expose secure REST API endpoints. For example, when a user submits a form in an app it's sent as a HTTPS request to the corresponding endpoint.
 
@@ -47,7 +41,7 @@ The Identity Service follows the OIDC standard, an identity layer built on top o
 
 ## User flow
 
-The following diagram shows an example of a user authentication and authorization flow. It shows a developer using **Service Studio** (client) to access a REST API endpoint exposed by **Service 1** (a Platform service).
+The following diagram shows an example of a user authentication and authorization flow. It shows a developer using **ODC Studio** (client) to access a REST API endpoint exposed by **Service 1** (a Platform service).
 
 ![Identity flow](images/identity-flow-authorization-diag.png)
 
@@ -65,4 +59,4 @@ If any of the conditions (1)-(6) fail, the Identity Service or external IdP **re
 
 The **ID** token contains information about the identity of the authenticated user, such as name and email. The **access** token contains information about the user's permissions. Transfer of JWTs between the client and Identity Service or external IdP is over the OAuth 2 protocol.
 
-In the diagram, a user using Project Neo Portal to access another REST API endpoint in another Platform service is a valid example. As is a user using a browser to access a REST API endpoint on a protected screen in an app.
+In the diagram, a user working in ODC Portal to access another REST API endpoint in another Platform service is a valid example. As is a user working in a browser to access a REST API endpoint on a protected screen in an app.

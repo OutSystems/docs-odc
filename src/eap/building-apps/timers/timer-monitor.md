@@ -7,7 +7,7 @@ app_type: web apps, mobile apps
 
 # Monitor Timers
 
-OutSystems logs  enable you to display information for a stage, an app, or all apps.
+OutSystems logs enable you to display information for a stage, an app, or all apps.
 
 Timer logs display the following:
 
@@ -17,7 +17,7 @@ Timer logs display the following:
 
 You can sort the log list by severity and display any combination of errors, warnings, and informational messages.  
 
-To view the logs go to the Portal and then from the left Nav panel select **Monitoring** > **Logs**.
+To view the logs go to the ODC (OutSystems Developer Cloud) Portal and then from the left Nav panel select **Monitoring** > **Logs**.
 
 Logs also provide detail information for each message. To access the detail information for a message, click on the **message time**. The detail page opens, and you can see:
 
@@ -28,4 +28,4 @@ Logs also provide detail information for each message. To access the detail info
   
 Toward the bottom of the page there is a list of related logs and activities. You can use this information to continue to research the root cause of the problem.
 
-To better understand how Timers work  in OutSystems, see  [Use Timers](intro.md).
+To better understand how Timers work  in OutSystems, see [Use Timers](intro.md).

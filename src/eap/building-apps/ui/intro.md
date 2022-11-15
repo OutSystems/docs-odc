@@ -8,22 +8,16 @@ app_type: mobile apps, reactive web apps
 
 # User interface
 
-<div class="info" markdown="1">
-
-Project Neo documentation is under construction. It's frequently updated and expanded.
-
-</div>
-
 OutSystems UI enables you to quickly create applications that are professionally designed and provide a great user experience. OutSystems UI optimizes screen templates enabling you to quickly build screens for your apps that are adaptive for any device. The screens you build enable users to see data, access menus, and navigate between screens.
 
-When creating the UI for your applications, typically designers create screen mockups using a design tool. Developers then use those screen mockups to create the application screens and UI elements in Service Studio.
+When creating the UI for your applications, typically designers create screen mockups using a design tool. Developers then use those screen mockups to create the application screens and UI elements in ODC Studio.
 
-Project Neo comes with:
+OutSystems Developer Cloud (ODC) comes with:
 
 * Built-in screen templates that provide both UI and functionality
 * UI patterns that help you build your screens
 
-The OutSystems UI framework integrates with Service Studio. From Service Studio, you can access screen templates and UI patterns. You can start building your UI with a screen template and then drag UI patterns onto your screen. You can also make any changes to the UI and logic. This helps you to quickly build screens and create a seamless experience for your apps. The layouts and UI adapt to the device size.
+The OutSystems UI framework integrates with ODC Studio. From ODC Studio, you can access screen templates and UI patterns. You can start building your UI with a screen template and then drag UI patterns onto your screen. You can also make any changes to the UI and logic. This helps you to quickly build screens and create a seamless experience for your apps. The layouts and UI adapt to the device size.
 
 ## OutSystems UI framework
 
@@ -45,7 +39,7 @@ Following is a list of key features of the UI Framework:
 
 A screen template includes a combination of pre-assembled elements that follow best practices to meet a functional need. Rather than starting with a blank screen, use a screen template as a starting point to build your own user interface.
 
-Service Studio comes with default screen templates based on the OutSystems UI framework. The templates also come with sample data that lets you see how the screen looks. Each screen template can include layouts, buttons, images, tables, components, styles, and logic.
+ODC Studio comes with default screen templates based on the OutSystems UI framework. The templates also come with sample data that lets you see how the screen looks. Each screen template can include layouts, buttons, images, tables, components, styles, and logic.
 
 Screen templates are customizable, enabling you to create a user interface with your own data to customize your user's experience. You can quickly make changes and create your own screen templates.
 
@@ -62,7 +56,7 @@ Screen templates are available for all applications. The following is a list of 
 
 ## UI patterns
 
-Since OutSystems UI is preinstalled, Service Studio has access to many pre-built patterns for common UI patterns. For example, to use an accordion or gallery pattern, drag it to a screen.
+Since OutSystems UI is preinstalled, ODC Studio has access to many pre-built patterns for common UI patterns. For example, to use an accordion or gallery pattern, drag it to a screen.
 
 Patterns provide a standardized way to present content. When you use a standard pattern, it speeds up the development of your user interface. Patterns are available for all your apps. If you want to change the look and feel, you can edit the Cascading Style Sheet (CSS).
 
@@ -72,6 +66,6 @@ UI patterns are available in many different categories such as content, navigati
 
 ![ui patterns](images/ui-patterns-sample-diag.png)
 
-You can find many patterns in the toolbox of Service Studio. Open a screen for editing and drag a pattern from the toolbox: 
+You can find many patterns in the toolbox of ODC Studio. Open a screen for editing and drag a pattern from the toolbox: 
   
 ![Adding UI patterns to the screen](images/ui-patterns-screen-ss.png)

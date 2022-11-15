@@ -29,7 +29,7 @@ Once you have the data, you are ready to display the data. To display the data, 
 
 ## Refreshing data in the UI
 
-If you build your apps with screen templates or accelerators that contain sample data, you probably want to replace the data with your data. In Service Studio you can use logic to refresh data, get data from existing data sources, and provide current data to your users.
+If you build your apps with screen templates or accelerators that contain sample data, you probably want to replace the data with your data. In ODC (OutSystems Developer Cloud) Studio you can use logic to refresh data, get data from existing data sources, and provide current data to your users.
 
 In cases where your widget supports automatic data replacement (forms, tables, lists, and gallery widgets), you can drag the new entity that contains your data to the widget. Then verify that data shows correctly and that the app is without errors.
 

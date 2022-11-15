@@ -8,12 +8,6 @@ app_type: mobile apps, reactive web apps
 
 # Data modeling
 
-<div class="info" markdown="1">
-
-Project Neo documentation is under construction. It's frequently updated and expanded.
-
-</div>
-
 This article introduces the concepts of designing a data model.
 
 The data model is an important step for developers to think about when building an app that uses data.
@@ -64,15 +58,15 @@ The physical data model is a schema for how the app data is stored in the databa
 
 It provides a final design for implementation as a relational database. It includes associative tables illustrating the relationships between entities and the primary and foreign keys to maintain those relationships.
 
-Project Neo automatically converts the logical data model you design in Service Studio to a physical data model for you. It makes this conversion based on data modeling design best practices.
+OutSystems Developer Cloud (ODC) automatically converts the logical data model you design in ODC Studio to a physical data model for you. It makes this conversion based on data modeling design best practices.
 
 If you update the logical data model, it updates the physical data model. 
 
-## Data modeling in Service Studio
+## Data modeling in ODC Studio
 
-Service Studio provides tools to design a data model efficiently. By abstracting the need to manipulate the physical data model directly, Project Neo lets you get to the first usable version of your app quickly.
+ODC Studio provides tools to design a data model efficiently. By abstracting the need to manipulate the physical data model directly, ODC lets you get to the first usable version of your app quickly.
 
-There are three steps to designing the data model for an app in Project Neo.
+There are three steps to designing the data model for an app in ODC.
 
 1. Add entities.
 1. Add attributes to the entities.
@@ -82,7 +76,7 @@ The following diagram illustrates those steps.
 
 ![Design steps](images/data-model-design-steps-diag.png)
 
-When you change the data model in Service Studio, changes in the database are only reflected when you publish or deploy your app to another stage.
+When you change the data model in ODC Studio, changes in the database are only reflected when you publish or deploy your app to another stage.
 
 ### Entities and attributes
 
@@ -90,20 +84,20 @@ Entities can contain multiple attributes of different basic data types. The foll
 
 ![Data types](images/data-model-data-types-diag.png)
 
-You start to design your app data model by adding entities and attributes. Service Studio provides a simple interface to add, modify, delete and rename entities and their attributes.
+You start to design your app data model by adding entities and attributes. ODC Studio provides a simple interface to add, modify, delete and rename entities and their attributes.
 
 You can add static entities for entities with a predefined or constant set of values. For example, in an order app, you can create order priorities under a `Priorities` static entity: `Low`, `Medium`, and `High`. The app user can't modify data contained in static entities in the app. 
 
-Another way to add entities and attributes is to import them from an Excel file using the **Import Entities from excel** developer accelerator in Service Studio. In an Excel file, each tab is an entity and each column an attribute. If your data is available in an Excel file, this can speed up the data model design process.
+Another way to add entities and attributes is to import them from an Excel file using the **Import Entities from excel** developer accelerator in ODC Studio. In an Excel file, each tab is an entity and each column an attribute. If your data is available in an Excel file, this can speed up the data model design process.
 
 ### Entity relationships
 
 Entities are often related. The relationships between entities are as important to your app data model as the entities themselves.
 
-By default, Project Neo automatically creates an entity with the `Id` attribute. The `Id` attribute uniquely identifies each record in the entity. It's the primary key in the physical data model. Developers create an entity relationship by defining a reference attribute in the related entity. It's the foreign key in the physical data model.
+By default, ODC automatically creates an entity with the `Id` attribute. The `Id` attribute uniquely identifies each record in the entity. It's the primary key in the physical data model. Developers create an entity relationship by defining a reference attribute in the related entity. It's the foreign key in the physical data model.
 
 You can enforce the referential integrity of your app data model by setting the delete rule property in reference attributes.
 
-Service Studio lets you visualize the relationships in your app data model in real-time using entity diagrams.
+ODC Studio lets you visualize the relationships in your app data model in real-time using entity diagrams.
 
 You can organize entities into folders. Although folders don't affect the app data model, it lets developers group entities by higher concepts.

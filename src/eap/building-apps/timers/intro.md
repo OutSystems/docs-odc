@@ -11,9 +11,9 @@ You can use **Timers** to execute asynchronous logic in your OutSystems applicat
 
 ## How Timers work 
 
-In Project Neo, OutSystems implements timers using the underlying container infrastructure and its job scheduler features (cron jobs).
+In OutSystems Developer Cloud (ODC), OutSystems implements timers using the underlying container infrastructure and its job scheduler features (cron jobs).
 
-When you first publish an application, Project Neo creates a background job and the associated container resources for each timer. Container resources store the state and configure the triggering of the background job. The container stores the:
+When you first publish an application, ODC creates a background job and the associated container resources for each timer. Container resources store the state and configure the triggering of the background job. The container stores the:
 
 * Timers schedule
 * Timer type (scheduled or on demand)
@@ -24,7 +24,7 @@ The Timer manager container service listens for the creation of the Timer resour
 
 The container infrastructure triggers the background jobs that have the schedule type of **scheduled**. The Timer manager service triggers jobs that have the schedule type of **on-demand**.
 
-From the Portal, using the **Wake** function, you can launch on-demand timers asynchronously. The **Wake** function creates an event that the Timer manager uses to start the Timer job.
+From ODC Portal, using the **Wake** function, you can launch on-demand timers asynchronously. The **Wake** function creates an event that the Timer manager uses to start the Timer job.
 
 ## Timers timeout
 

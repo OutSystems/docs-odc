@@ -1,45 +1,38 @@
 ---
-summary: Overview of the infrastructure architecture of Project Neo.
+summary: Overview of the infrastructure architecture of OutSystems Developer Cloud.
 tags: 
 locale: en-us
 guid: 9a0cb62a-f11b-4d1a-9e79-0ca7d398e57b
 app_type: mobile apps, reactive web apps
 ---
 
-# Cloud-native architecture of Project Neo
+# Cloud-native architecture of OutSystems Developer Cloud
 
-<div class="info" markdown="1">
+OutSystems Developer Cloud is cloud-native. This means that the infrastructure of both the development **Platform**, for building and deploying apps, and the independent **Runtime**, for hosting and running the deployed apps, live in the cloud.
 
-Project Neo documentation is under construction. It's frequently updated and expanded.
+## OutSystems Developer Cloud
 
-</div>
+In addition to access to **ODC Studio** and [**ODC Portal**](../differences-o11/intro.md#neo-portal), each OutSystems Developer Cloud customer has:
 
-Project Neo is cloud-native. This means that the infrastructure of both the development **Platform**, for building and deploying apps, and the independent **Runtime**, for hosting and running the deployed apps, live in the cloud.
-
-## OutSystems cloud platform
-
-In addition to access to **Service Studio**, each Project Neo customer has access to an **OutSystems cloud platform**. This consists of the following:
-
-* Access to the Project Neo Portal.
 * Access to multi-tenant development **Platform** services.
 * A standard Runtime setup of three stages: **Development**, **Test**, and **Production**.
 * A set of isolated, encrypted, and scalable databases and data stores for the Platform services data. Secret data such as API keys are stored in a secret manager.
 * An isolated, encrypted, and scalable relational database for each Runtime stage. 
 * A built-in **Identity Service** to keep [user identities secure](identity.md).
 
-The following diagram shows the high-level architecture of the OutSystems cloud platform.
+The following diagram shows the high-level architecture of the OutSystems Developer Cloud.
 
 ![Architecture of the OutSystems cloud platform](images/cloud-native-architecture-diag.png "Architecture of the OutSystems cloud platform")
 
- NATS, a secure messaging system, handles all internal requests between the Platform and Runtime stages. All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of Project Neo](networking.md) to learn more.
+ NATS, a secure messaging system, handles all internal requests between the Platform and Runtime stages. All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of OutSystems Developer Cloud](networking.md) to learn more.
 
 #### Platform { #platform }
 
-The development **Platform** comprises multiple services, each responsible for specific functions that facilitate the building and deployment of apps. All the Platform services benefit from a resilient microservices design with a REST API web service interface. Developers, DevOps engineers, and architects interact with these services using Service Studio and the Project Neo Portal. 
+The development **Platform** comprises multiple services, each responsible for specific functions that facilitate the building and deployment of apps. All the Platform services benefit from a resilient microservices design with a REST API web service interface. Developers, DevOps engineers, and architects interact with these services using ODC Studio and ODC Portal. 
 
 The Platform **Load Balancer** handles all requests to the services. 
 
-An example of a service is the Build Service. When developers click the 1-Click Publish button in Service Studio, the Build Service takes the OutSystems visual language model (OML project) and compiles it into a deployable app.
+An example of a service is the Build Service. When developers click the 1-Click Publish button in ODC Studio, the Build Service takes the OutSystems visual language model (OML project) and compiles it into a deployable app.
 
 All the Platform services are multi-tenant and benefit from automatic recovery and continuous upgrades.
 
@@ -49,7 +42,7 @@ The following diagram shows the high-level architecture of the development Platf
 
 #### Runtime { #runtime }
 
-In Project Neo, the **Runtime** is independent of the Platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed apps. The standard Runtime setup is a Development stage, a Test stage, and a Production stage. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
+In OutSystems Developer Cloud, the **Runtime** is independent of the Platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed apps. The standard Runtime setup is a Development stage, a Test stage, and a Production stage. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
 
 The Runtime **Load Balancer** handles all requests to the apps.
 
@@ -59,7 +52,7 @@ The following diagram shows the high-level Runtime architecture.
 
 ## Key technologies of the cloud-native infrastructure
 
-The following is an overview of the cloud technologies used by Project Neo.
+The following is an overview of the cloud technologies used by OutSystems Developer Cloud.
 
 ### Kubernetes
 
@@ -138,11 +131,11 @@ You can store secret data for your apps as secret settings in a secret manager.
 
 #### Platform to Runtime
 
-Build Service stores the app container image and passes the image to a Runtime stage for deployment. OutSystems follows the "Build once, deploy anywhere" **continuous delivery** principle, which makes Project Neo an efficient cloud product.
+Build Service stores the app container image and passes the image to a Runtime stage for deployment. OutSystems follows the "Build once, deploy anywhere" **continuous delivery** principle, which makes OutSystems Developer Cloud an efficient cloud product.
 
 ## Logging, monitoring, and analytics { #logging-monitoring-analytics }
 
-The auto-scale controller collects logs and metrics from each of the app containers running in each Runtime stage cluster. Developers and DevOps engineers can filter logs on the Project Neo Portal.
+The auto-scale controller collects logs and metrics from each of the app containers running in each Runtime stage cluster. Developers and DevOps engineers can filter logs on ODC Portal.
 
 Automatic monitoring by EKS replaces unhealthy app containers running in each Runtime stage cluster with a replica. An  app container is unhealthy if it's continuously unresponsive.
 

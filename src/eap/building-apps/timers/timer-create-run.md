@@ -1,5 +1,5 @@
 ---
-summary: You create Timers at design time and set the schedule from the Portal.
+summary: You create Timers at design time and set the schedule from ODC (OutSystems Developer Cloud) Portal.
 locale: en-us
 guid: 8468A775-BC5C-489C-8A44-D15F7C0B5BF1
 app_type:  web apps, mobile apps
@@ -7,9 +7,9 @@ app_type:  web apps, mobile apps
 
 # Create and run Timers
 
-A timer is a tool that lets you execute application logic periodically at a scheduled time. Using  Service Studio you can create timers and then using the Portal you can modify the timer schedule. You associate timers with apps.
+A timer is a tool that lets you execute application logic periodically at a scheduled time. Using  ODC (OutSystems Developer Cloud) Studio you can create timers and then using ODC Portal you can modify the timer schedule. You associate timers with apps.
 
-Follow the instructions below in Service Studio learn how to create **Timers** at design time.
+Follow the instructions below in ODC Studio learn how to create **Timers** at design time.
 
 For more information about how timers work, see  [Use Timers](intro.md).
 
@@ -32,7 +32,7 @@ You can set the schedule of a Timer in one of the following ways:
 
 * **Setting the **Schedule** for a property of the Timer at design time**: You can define a recurrent schedule, such as daily or weekly, or define the Timer to run each time the app is published, for example to execute configurations or to bootstrap data.
 
-* **Setting the Timer schedule at runtime in the Portal**: You might want to customize the Timer schedule when deploying an app to another stage. In this case, the effective Timer schedule is set in the Portal, which uses the default settings in every stage unless specifically modified. 
+* **Setting the Timer schedule at runtime in ODC Portal**: You might want to customize the Timer schedule when deploying an app to another stage. In this case, the effective Timer schedule is set in ODC Portal, which uses the default settings in every stage unless specifically modified. 
 
 * **Implement logic that changes the Timer schedule at runtime**: Assign the **Schedule** runtime property of the Timer with a specific schedule within your log.
 
@@ -43,7 +43,7 @@ When you define a schedule for your Timer, the Timer runs at the predefined time
 You can force a Timer to run without waiting for the scheduled time by:
 
 * Using the **Wake(TimerName)** built-in action
-* Running the Timer from the Portal
+* Running the Timer from ODC Portal
 
 Neither of these options changes the timer schedule, so the Timer continues to run normally. Also, since the same Timer doesn't run twice simultaneously, if you run a Timer that's already running, the second execution starts after the first one finishes.
 
@@ -67,11 +67,11 @@ To use the **Wake(TimerName) built-in action in your logic, do the following:
    
 1. Drag the **Wake(TimerName)** action and use it in your logic.
 
-### Run a Timer in the Portal
+### Run a Timer in the ODC Portal
 
-To force the execution of a Timer in the Portal, do the following:
+To force the execution of a Timer in the ODC Portal, do the following:
 
-1. From the Portal > **App** tab, select your **App**.
+1. From the ODC Portal > **App** tab, select your **App**.
 1. From the left Nav menu, click **Configurations** and open the **Timers** section. A list of timers displays.
 1. Click on the Timer you want to run. From the right side of your screen, the timer detail screen displays.
 1. From the Schedule section, select when you want the timer to run and click **Apply**. The timer runs when scheduled.  

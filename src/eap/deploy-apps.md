@@ -1,5 +1,5 @@
 ---
-summary: Deploy your apps to stages using the Portal. Analyze impact of deployment for other apps and consumers.
+summary: Deploy your apps to stages using the ODC (OutSystems Developer Cloud) Portal. Analyze impact of deployment for other apps and consumers.
 tags:
 locale: en-us
 guid: d0aa50bf-0378-4bb9-8c4f-71b37092dd8b
@@ -8,21 +8,15 @@ app_type: mobile apps, reactive web apps
 
 # Deploy your apps
 
-<div class="info" markdown="1">
+Use ODC Portal to deploy your apps. In OutSystems Developer Cloud (ODC), you deploy your apps to stages. A stage is a step within your delivery pipeline that includes runtime resources. ODC includes three stages by default: Development, Test, and Production.
 
-Project Neo documentation is under construction. It's frequently updated and expanded.
-
-</div>
-
-Use Portal to deploy your apps. In Project Neo, you deploy your apps to stages. A stage is a step within your delivery pipeline that includes runtime resources. Project Neo includes three stages by default: Development, Test, and Production.
-
-Project Neo has a single code repository. When you publish in Service Studio, your app is containerized, deployed to the Development stage, and a container image is available in a registry. When you're ready to promote your app to the next stage your app deploys without the need to recompile code.
+ODC has a single code repository. When you publish in ODC Studio, your app is containerized, deployed to the Development stage, and a container image is available in a registry. When you're ready to promote your app to the next stage your app deploys without the need to recompile code.
 
 Apps in each stage are isolated from each other. When you publish an app to the Development stage, there is no impact to the apps running in Test or Production. Similarly, promoting apps to Test or Production doesn’t affect apps in Development.
 
 ## Impact analysis
 
-Project Neo automatically runs an impact analysis when you deploy an app in Portal. The impact analysis checks for dependency issues that might cause runtime errors in your app or its consumers. By identifying issues that might negatively impact your apps or the consumers, you can deliver better-performing apps. The analysis provides information for blockers and warnings.
+ODC automatically runs an impact analysis when you deploy an app in ODC Portal. The impact analysis checks for dependency issues that might cause runtime errors in your app or its consumers. By identifying issues that might negatively impact your apps or the consumers, you can deliver better-performing apps. The analysis provides information for blockers and warnings.
 
 **Blockers** prevent you from deploying your app. For example, a blocker occurs when there is an app name collision. This indicates another app on the target stage has the same name as the app you are deploying.
 
@@ -35,7 +29,7 @@ To review the analysis, choose the app, then choose the revision, and click  **A
 
 Developers then review the impact analysis and make a deployment decision. If there are no blockers, the **Deploy Now** button becomes enabled. But, depending on the warnings, developers might not want to continue.
 
-For example, developers might see some unexpected warnings and decide to fix the issues in Service Studio before continuing with the deployment. Depending upon the warning, such as a missing app, developers might decide to deploy the missing app first. In this case, you can click the **Choose App** button to return to the **App** page and deploy the missing app. Then developers can deploy the original app.  
+For example, developers might see some unexpected warnings and decide to fix the issues in ODC Studio before continuing with the deployment. Depending upon the warning, such as a missing app, developers might decide to deploy the missing app first. In this case, you can click the **Choose App** button to return to the **App** page and deploy the missing app. Then developers can deploy the original app.  
 
 ## Deployment status
 

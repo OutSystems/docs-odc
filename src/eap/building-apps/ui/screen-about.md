@@ -8,12 +8,6 @@ app_type: mobile apps, reactive web apps
 
 # Screens
 
-<div class="info" markdown="1">
-
-Project Neo documentation is under construction. It's frequently updated and expanded.
-
-</div>
-
 A screen is a user interface (UI) element that contains other UI elements (such as fields or labels) that enable users to interact with your app. You can create an empty screen, or from a screen template for a specific use case.
 
 Screen templates come with UI patterns that solve common application use cases. Screen templates help accelerate development by providing common functionalities and consistent look and feel. Screen templates include UI elements, and some include sample data that you can replace. You can immediately publish screens created from a screen template enabling you to see how the screen looks or to use it to show a proof of concept.
@@ -22,13 +16,13 @@ Screen templates come with UI patterns that solve common application use cases. 
 
 When you create an empty screen, you start with a basic layout to which you add data and UI elements. If you want to create a screen with a specific layout, you might want to start with a screen based on a screen template.
 
-OutSystems provides many types of elements that you can add to your screens such as links, tables, and buttons. You can make changes to the UI and logic of the screen using pre-built UI patterns, such as Columns and Lists. UI patterns are available from the Service Studio and are organized by categories such as content and interaction. You can define screen-level attributes that are specific to a screen, for example, screen name, screen title, and user roles. Most of the UI patterns come from the standard OutSystems UI component.
+OutSystems provides many types of elements that you can add to your screens such as links, tables, and buttons. You can make changes to the UI and logic of the screen using pre-built UI patterns, such as Columns and Lists. UI patterns are available from the ODC (OutSystems Developer Cloud) Studio and are organized by categories such as content and interaction. You can define screen-level attributes that are specific to a screen, for example, screen name, screen title, and user roles. Most of the UI patterns come from the standard OutSystems UI component.
 
 Here is an example of the [Date Picker](https://outsystemsui.outsystems.com/OutsystemsUiWebsite/PatternDetail?PatternId=190) pattern:
 
 ![ui patterns](images/ui-patterns-ss.png)
 
-To access screen templates and the blank screen layout, go to Service Studio, select the **Interface tab** > **UI Flows** > then right-click **MainFlow** and click **Add Screen**.
+To access screen templates and the blank screen layout, go to ODC Studio, select the **Interface tab** > **UI Flows** > then right-click **MainFlow** and click **Add Screen**.
 
 For a **Screen Template**, choose a category (such as Dashboard) and a template (such as Transactions Dashboard) from which you want to start.
 For a blank screen with only a layout, select **Empty**.
@@ -43,7 +37,7 @@ You can replace sample data using one of the following methods:
 
 A screen shows to your users as a web page. This makes the screen self-contained and the top-level user interface (UI) element. You can organize parts of the UI in blocks. In the blocks, you can reserve space for content with placeholders and fill in those placeholders later with other elements.
 
-For example, a page can consist of the main content with text, menu, and footer. In Service Studio, the main content, menu, and footer are part of a common block. Inside of the main content there can be a placeholder for text.
+For example, a page can consist of the main content with text, menu, and footer. In ODC Studio, the main content, menu, and footer are part of a common block. Inside of the main content there can be a placeholder for text.
 
 Here is the overview of some UI elements.
 
@@ -73,9 +67,9 @@ Here are more details about placeholders.
 
 ### Built-in blocks and placeholders
 
-Project Neo comes with everything you need for developing UI. You can create new blocks and add placeholders while developing your app.
+ODC comes with everything you need for developing UI. You can create new blocks and add placeholders while developing your app.
 
-Service Studio groups the default layouts in the **Layouts** flow. A new empty screen uses the **LayoutTopMenu** block. The **LayoutTopMenu** block consists of the following placeholders:
+ODC Studio groups the default layouts in the **Layouts** flow. A new empty screen uses the **LayoutTopMenu** block. The **LayoutTopMenu** block consists of the following placeholders:
 
 * **Header**. Contains logic to sign in to the app 
 * **Breadcrumbs**. Reserves space for you to add cues about the location in the app
