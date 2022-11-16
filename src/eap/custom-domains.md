@@ -48,7 +48,7 @@ You must complete these steps within **72 hours** or the CNAME records expire an
 
 <div class="info" markdown="1">
 
-For each external identity provider in use by your apps, a new pair of redirect URLs is generated for this domain. You must add the new pair of redirect URLs to each active external provider to ensure end-users maintain the ability to authenticate. For information on how to do this, see the [external IdP documentation](./external-idps.md#apply-an-external-idp). If end-users lose their ability to authenticate, they get 401 errors when trying to access the apps. You can diagnose the problem by looking at the [logs](../eap/monitor-apps.md#logs).
+For each external identity provider in use by your apps, a new pair of redirect URLs is generated for this domain. You must add the new pair of redirect URLs to each active external provider to ensure end-users maintain the ability to authenticate. See the [external IdP documentation](external-idps/intro.md#apply-an-external-idp) for guidance on how to do this. If end-users lose their ability to authenticate, they get 401 errors when trying to access the apps. You can diagnose the problem by looking at the [logs](../eap/monitor-apps.md#logs).
 
 </div>
 

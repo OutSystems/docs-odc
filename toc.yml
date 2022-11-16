@@ -10,7 +10,10 @@
 - href: eap/monitor-apps.md
 - href: eap/custom-domains.md
 - href: eap/secure-gateway.md
-- href: eap/external-idps.md
+- href: eap/external-idps/intro.md
+- topics:
+  - href: eap/external-idps/azure-ad.md
+  - href: eap/external-idps/okta.md
 - href: eap/odc-support.md
 - href: eap/architecture/intro.md
 - topics:

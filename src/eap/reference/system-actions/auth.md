@@ -61,7 +61,7 @@ _Outputs_
 
 <div class="info" markdown="1">
 
-You can learn about how to use this action in your apps [here](../../external-idps.md#in-an-app).
+You can learn about how to use this action in your apps [here](../../external-idps/intro.md#use-external-idp-in-an-app--in-an-app).
 
 </div>
 
@@ -96,7 +96,7 @@ _Outputs_
 
 **ExternalLogoutURL**
 :   Type: Text.
-    Value of the URL where the user can log out of an external provider, if one is configured, or "" otherwise.Use a RedirectToURL node in your flow, after the action, to redirect the user to this URL.
+    Value of the URL where the user can log out of an external provider, if one is configured, or "" otherwise. Use a RedirectToURL node in your flow, after the action, to redirect the user to this URL.
 
 ## Structures
 
