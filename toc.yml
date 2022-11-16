@@ -18,6 +18,11 @@
 # Building apps
 - href: eap/building-apps/intro.md
 - topics:
+    # Architecture
+    - href: eap/building-apps/architecture/intro.md
+    - topics:
+      # Data modeling
+      - href: eap/building-apps/architecture/recommended-architecture.md
     # Data in OutSystems apps
     - href: eap/building-apps/data/intro.md
     - topics:
