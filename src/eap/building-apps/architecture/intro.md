@@ -20,7 +20,7 @@ Apps scale independently, which reduces the time and cost associated with scalin
 
 !["Different ways of building apps with ODC"](images/app-architecture-diag.png)
 
-# Apps in ODC
+## Apps in ODC
 
 In ODC you can only have weak dependencies between apps. You create weak dependencies in an app by:
 
