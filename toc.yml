@@ -48,6 +48,10 @@
       - href: eap/building-apps/ui/ui-interactions.md
       # Customize UI styles
       - href: eap/building-apps/ui/customize-ui-styles.md
+      # Theme
+      - href: eap/building-apps/ui/themes/intro.md
+      - topics:
+        - href: eap/building-apps/ui/themes/theme-library.md
       # Custom authentication flows
       - href: eap/building-apps/ui/custom-auth.md
     # Emails
