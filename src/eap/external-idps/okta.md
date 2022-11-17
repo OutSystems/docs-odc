@@ -8,13 +8,13 @@ app_type: mobile apps, reactive web apps
 
 # Add Okta for use as an external identity provider
 
-ODC admins can configure Azure AD as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab. 
+ODC admins can configure Okta as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab. 
 
 To launch the **New provider** configuration screen, click the **Add Provider** > **OpenID Connect** button. Now follow these steps:
 
 1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
 
-1. Login to the [**Okta Portal**](https://portal.azure.com/). Navigate to the **Applications > Applications** screen and click **Create App Integration** to create a new application.
+1. Login to the [**Okta Portal**](https://login.okta.com/). Navigate to the **Applications > Applications** screen and click **Create App Integration** to create a new application.
 
     ![Okta Portal](images/create-app-integration-ok.png)
 
