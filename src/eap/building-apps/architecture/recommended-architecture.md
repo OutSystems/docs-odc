@@ -174,4 +174,4 @@ The architecture is composed of three libraries:
 * **SAP connector** that's used as an integration wrapper to connect your customer's information from SAP and work as a bridge to your customer portal.
 * The **Guidewire connector**, that supports your billing system as an integration wrapper to process traditional and flat-rate agent commissions from a single interface.
 
-!["Home Insurance Portal final architecture."](images/final-architecture-diag.png)
+!["Home Insurance Portal final architecture."](images/the-final-architecture-diag.png)
