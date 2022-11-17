@@ -123,5 +123,4 @@ The following table summarizes terminology differences between OutSystems 11 and
 | environment | stage | In ODC, the infrastructure where you develop and run your apps is fundamentally different. However, these terms (environment and stage), both represent the place where you deploy your apps to Development, Test, and Production. See [Deploy apps](../deploy-apps.md) for more information about deploying apps in ODC. |
 | Reactive Web App | Web App | All Web Apps are reactive in ODC. Traditional Web Apps aren't supported. |
 | Module | N/A | Modules don't exist in ODC. |
-| Site Properties | Settings | Site Properties is Settings in ODC. |
 
