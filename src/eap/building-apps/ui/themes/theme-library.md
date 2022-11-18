@@ -75,7 +75,7 @@ By building a wrapper, every time a developer creates a page, this information i
 
 !["Create application layout wrappers"](images/application-layout-wrappers-odcs.png "Create application layout wrappers")
 
-To create a well configured wrapper, you need to add the same input parameters as the layout and set them inside the layout block. You also need to add the placeholders with the same names as in the layout from the theme.
+To create a well-configured wrapper, you need to add the same input parameters as the layout and set them inside the layout block. You also need to add the placeholders with the same names as in the layout from the theme.
 
 !["Applications layout placeholders structure with common blocks inside placeholders"](images/layout-placeholders-odcs.png "Applications layout placeholders structure with common blocks inside placeholders")
 

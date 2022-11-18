@@ -163,7 +163,7 @@ The goal is to ensure the right balance between cohesion and loose coupling. Thi
 
 The final architecture for this example is simple but powerful. It has only four apps:
 
-* The **Home Insurance** app that has a user interface containing screens, blocs, and a look and feel.
+* The **Home Insurance** app that has a user interface containing screens, blocks, and a look and feel.
 * The **Customer Portal** app that has aggregates and manages all the customer information and exposes that to the **Home Insurance** app.
 * The **Claims** app that contains the bounded context like risk processing policies and claims as services for the Home Insurance Portal.
 * The **Billing** app that contains the payments and bills to be processed. It can include services and a user interface where users can pay pending bills.
