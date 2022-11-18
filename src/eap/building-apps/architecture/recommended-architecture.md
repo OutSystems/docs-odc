@@ -104,21 +104,21 @@ Follow the approach of starting simple. If needed, begin to add complexity over 
  
 Having one sponsor and one business owner for the **Home Insurance** app is OK.
 
-!["Having one sponsor and one business owner for the Home Insurance app is OK."](images/one-sponsor-one-business-owner-home-insurance-diag.png)
+!["Having one sponsor and one business owner for the Home Insurance app is OK."](images/one-sponsor-one-business-owner-diag.png)
 
 In this scenario, it's also OK to have two sponsors and only one business owner since each sponsor matches an app (**Claims** and **Customer Portal**).
 
-!["Having two sponsors and only one business owner since each sponsor matches its app."](images/two-business-sponsors-one-business-owner-diag.png)
+!["Having two sponsors and only one business owner since each sponsor matches its app."](images/one-business-owner-two-business-sponsors-diag.png)
 
 In this scenario, if we had two sponsors for the **Claims & Billing** app, we could start having problems because if each sponsor's requests change simultaneously, this may cause conflicting priorities.
 
 So, as a best practice, avoid this scenario.
 
-!["Having two sponsors for the Claims & Billing app, we could start having problems"](images/two-business-sponsors-two-business-owners-diag.png)
+!["Having two sponsors for the Claims & Billing app, we could start having problems"](images/two-business-sponsors-and-owners-diag.png)
 
 To ensure business sponsors can request changes at different rates, create two apps: one for **Claims** and one for **Billing**.
 
-!["Split the Claims & Billing apps into two different ones."](images/create-two-apps-claims-billing-diag.png)
+!["Split the Claims & Billing apps into two different ones."](images/create-two-apps-diag.png)
 
 #### Team independence
 
