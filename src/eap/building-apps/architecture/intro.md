@@ -47,7 +47,7 @@ Apps can reference libraries, and libraries can also reference other libraries. 
 
 Libraries are packaged with apps when an app is published, and each app consumes library packages and a library version in its container.
 
-!["How apps work in ODC"](images/how-apps-works-diag.png)
+!["Libraries in ODC"](images/libraries-odc-diag.png)
 
 ### Using libraries
 
@@ -67,7 +67,7 @@ Apps can consume libraries through strong dependencies, which are packaged when 
 
 The packaged library is included in the generated container when you publish an app.
 
-!["Library is included in the generated container"](images/library-package-diag.png)
+!["Library is included in the generated container"](images/how-libraries-work-diag.png)
 
 The container image is reused as you advance an app's deployment from Development to QA or QA to Production. Each stage's configurations are applied to the deployment process.
 
