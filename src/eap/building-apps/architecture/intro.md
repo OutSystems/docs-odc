@@ -25,7 +25,7 @@ Apps scale independently, which reduces the time and cost associated with scalin
 In ODC you can only have weak dependencies between apps. You create weak dependencies in an app by:
 
 * Consuming service actions or entities from another app. For example, a service action from another app to read or write data in the database.
-* Consumuing data from another app using public aggregates.
+* Consuming  data from another app using public aggregates.
 
 When you publish an app, the runtime is packaged into a container.
 
