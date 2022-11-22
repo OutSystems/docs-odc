@@ -8,7 +8,7 @@ app_type: mobile apps, reactive web apps
 
 # Use public elements
 
-You can use public elements to extend the capabilities of your app. Public elements are elements [shared by members of your organization](../reuse-elements.md#public-elements) or packaged into libraries that come bundled with OutSystems Developer Cloud (ODC).
+You can use public elements to extend the capabilities of your app. Public elements are elements [shared by members of your organization](../architecture/reuse-elements.md#public-elements) or packaged into libraries that come bundled with OutSystems Developer Cloud (ODC).
 
 For example, you can use elements in the HTTP library to extend your app to handle HTTP requests and responses. The HTTP library comes bundled with ODC.
 

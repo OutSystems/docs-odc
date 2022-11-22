@@ -53,9 +53,9 @@ Note the following regarding reuse in ODC:
 * Relationships between entities in different apps work differently. In ODC
     * The delete rule is always set to **ignore**.
     * A database constraint isn't created in the database, as is done with OutSystems 11.
-* Apps (Web or Mobile) can have strong dependencies only to Libraries; See [Reuse elements across apps](../building-apps/reuse-elements.md) for more information.
+* Apps (Web or Mobile) can have strong dependencies only to Libraries; See [Reuse elements across apps](../building-apps/architecture/reuse-elements.md) for more information.
 * Apps (Web or Mobile) consume a specific Library revision. For example, app A can consume Library v1 and app B can consume Library v2.
-* Many elements that could be public in OutSystems 11 can't be public in ODC; See [Reuse elements across apps](../building-apps/reuse-elements.md) for more information.
+* Many elements that could be public in OutSystems 11 can't be public in ODC; See [Reuse elements across apps](../building-apps/architecture/reuse-elements.md) for more information.
 
 ## Debugging changes in ODC Studio
 
