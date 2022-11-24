@@ -88,7 +88,6 @@
   - href: eap/extensibility/plugins/intro.md
   - topics:
     - href: eap/extensibility/plugins/camera/intro.md
-    - href: eap/extensibility/plugins/barcode/intro.md
     - href: eap/extensibility/plugins/location/intro.md
 # Reference
 - href: eap/reference/intro.md
