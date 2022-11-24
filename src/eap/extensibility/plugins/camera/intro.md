@@ -138,7 +138,8 @@ Change the properties of the **TakePicture** action to adjust how the app handle
 | **SaveToPhotoAlbum**   | If **True**, the app saves the image to the device.                                                                     |
 | **CameraDirection**    | Select the front or back camera as the default when taking a new picture.                                               |
 | **AllowEdit**          | If **True**, an Edit step is added after the take or choose picture step.                                               |
-| **AllowMultiplePictures**          | PWA only. Enables taking multiple pictures. Add the **CameraPlugin** theme to your app, to ensure this feature works.      
+| **AllowMultiplePictures**   | PWA only. Enables taking multiple pictures. Add the **CameraPlugin** theme to your app, to ensure this feature works. |      
+
 
 
 ### MABS compatibility
