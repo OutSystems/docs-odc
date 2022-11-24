@@ -6,7 +6,7 @@ guid: f2b0feab-c558-4d7f-b507-4511ae094677
 app_type: mobile apps
 ---
 
-# Location plugin
+# Location Plugin
 
 Use the Location Plugin to enable an application to access the GPS capabilities of the user device, like latitude, longitude, and altitude. This plugin works with native mobile apps, progressive web apps (PWAs), and web apps.
 

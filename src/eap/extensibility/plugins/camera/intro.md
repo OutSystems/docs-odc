@@ -6,7 +6,7 @@ guid: 6df6f491-46e4-434f-924e-043929958fef
 app_type: mobile apps
 ---
 
-# Camera plugin
+# Camera Plugin
 
 Use the Camera Plugin to let users take pictures with their mobile device. This plugin works with, native mobile apps, progressive web apps (PWAs) and web apps. The plugin lets you select options like image quality, orientation, and the file format.
 

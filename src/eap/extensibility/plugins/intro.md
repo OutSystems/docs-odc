@@ -17,6 +17,7 @@ The table shows the OutSystems-supported mobile plugins that you can find in the
 
 | Plugin          | Description                                   | Supported in PWA |
 | --------------- | --------------------------------------------- | ---------------- |
+| Barcode Plugin  | Access the camera to scan barcodes            | Yes              |
 | Camera Plugin   | Access the camera capabilities of the device. | Yes              |
 | Location Plugin | Access the GPS capabilities the device.       | Yes              |
 
@@ -30,7 +31,7 @@ When working with the plugins:
 
 ## Installing a plugins and adding a public element to your app
 
-The plugins are available from the Forge repository. To use a plugin in your app, you need to install the plugin and add the plugin elements to your app.
+The plugins are available from the Forge repository. To use a plugin in your app, you first need to install the plugin to your organization and add the plugin elements to your app.
 
 To install a supported plugin from Forge:
 
