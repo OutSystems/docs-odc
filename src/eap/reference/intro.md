@@ -42,54 +42,17 @@ Provides actions to manipulate HTTP requests and responses.
 
 Action | Description | Available as function?
 ---|---|---
-[AddAttributeToHtmlTag](libraries/http.md#AddAttributeToHtmlTag) | Adds an attribute to the outermost HTML tag of the document (e.g. xmlns, manifest...).<br/>This method has no effect in Ajax Requests. | Yes
-[AddFaviconTag](libraries/http.md#AddFaviconTag) | Allows setting the favicon for the current page. You can use &quot;omlresources&quot; to add an icon file to your oml.<br/>This method has no effect in Ajax Requests. | Yes
-[AddHeader](libraries/http.md#AddHeader) | Adds a header to the current HTTP response.<br/>This method has no effect in Ajax Requests. | No
-[AddJavaScriptTag](libraries/http.md#AddJavaScriptTag) | Adds a &lt;script&gt; tag to the HTML of the current HTTP response.<br/>This method has no effect in Ajax Requests. | Yes
-[AddLinkTag](libraries/http.md#AddLinkTag) | Adds a &lt;link&gt; tag to the HTML of the current HTTP response.<br/>This method has no effect in Ajax Requests. | Yes
-[AddMetaHttpEquivTag](libraries/http.md#AddMetaHttpEquivTag) | Adds a &lt;meta&gt; tag with the http-equiv attribute to the HTML of the current HTTP response.<br/>This method has no effect in Ajax Requests. | Yes
-[AddMetaTag](libraries/http.md#AddMetaTag) | Adds a &lt;meta&gt; tag to the HTML of the current HTTP response.<br/>This method has no effect in Ajax Requests. | Yes
-[AddPostProcessingFilter](libraries/http.md#AddPostProcessingFilter) | This method has no effect in Ajax Requests.<br/>Not implemented in Java. | Yes
-[AddSessionToURL](libraries/http.md#AddSessionToURL) | Adds the current session identifier to a specified URL. | Yes
-[AddStyleSheetTag](libraries/http.md#AddStyleSheetTag) | Adds a &lt;link rel=&quot;stylesheet&quot;&gt; tag to the HTML of the current HTTP response.<br/>This method has no effect in Ajax Requests. | Yes
-[GetCookie](libraries/http.md#GetCookie) | Gets a cookie value. | Yes
-[GetEntryURL](libraries/http.md#GetEntryURL) | Returns the URL of an Entry. Includes the Personal Area and the session identifier if applicable. | Yes
-[GetFormValue](libraries/http.md#GetFormValue) | Gets the value of a form field of the current HTTP request.<br/>If the field does not exist in the request an empty String will be returned. The same applies when the field exists but has an empty string as a value. | Yes
-[GetIP](libraries/http.md#GetIP) | Gets the IP host address of the remote client (IP of the user machine performing the HTTP request). | Yes
-[GetPageExtension](libraries/http.md#GetPageExtension) | Returns the extension of the physical page that corresponds to the current screen, including the dot. Examples: &quot;.aspx&quot; or &quot;.jsf&quot;. | Yes
-[GetPageName](libraries/http.md#GetPageName) | Returns the name of the physical page that corresponds to the current screen. It is usually the same as the screen name, except when name clashes occur. | Yes
-[GetRawURL](libraries/http.md#GetRawURL) | Returns the current relative requested URL, without the http://[server] part and without the session identifier.<br/>If SEO rules are being applied, the URL displayed in the user's browser is returned, and not the final URL after the rule is applied. | Yes
-[GetReferrerURL](libraries/http.md#GetReferrerURL) |  | Yes
-[GetRequest_AddArgument](libraries/http.md#GetRequest_AddArgument) | Builds the arguments string for an HTTP request with method GET, adding a new parameter to the arguments string. | Yes
-[GetRequest_Submit](libraries/http.md#GetRequest_Submit) | Submit an HTTP GET request given the GET arguments and the URL. Returns the response content as a string and as binary data. | No
-[GetRequestContent](libraries/http.md#GetRequestContent) | Gets the content of the current HTTP request. | Yes
-[GetRequestDomain](libraries/http.md#GetRequestDomain) | Returns the host part of the current HTTP request as seen by the browser.<br/>Example: when the browser uses the address &quot;http://support.example.com/site/welcome.aspx?id=12345&quot;, GetRequestDomain() returns &quot;support.example.com&quot;. | Yes
-[GetRequestFiles](libraries/http.md#GetRequestFiles) | Returns the list of files submitted in the current HTTP request. | Yes
-[GetRequestHeader](libraries/http.md#GetRequestHeader) | Gets the value of a specific header in the current HTTP request. Returns an empty string if the header is not present or has no value. | Yes
-[GetRunningESpaceJQueryVersion](libraries/http.md#GetRunningESpaceJQueryVersion) | Returns the jQueryVersion of the Running ESpace | Yes
-[GetSessionId](libraries/http.md#GetSessionId) | Gets the session identifier of the current HTTP request. | Yes
-[GetURL](libraries/http.md#GetURL) | Returns the current absolute requested URL, without the session identifier.<br/>If SEO rules are being applied, the final URL after the rule is applied is returned, and not the URL displayed in the user's browser. | Yes
-[GetURLMethod](libraries/http.md#GetURLMethod) | Gets the request method (GET or POST) of the current requested URL. | Yes
-[GetURLWithSession](libraries/http.md#GetURLWithSession) | Gets the current requested URL (with the session identifier). | Yes
-[GetUserAgent](libraries/http.md#GetUserAgent) | Gets the user agent of the current HTTP request. | Yes
-[GetUserLanguages](libraries/http.md#GetUserLanguages) | Gets a sorted record list of client language preferences. | Yes
-[GetValueFromInputId](libraries/http.md#GetValueFromInputId) |  | Yes
-[GetValueFromInputIdDecoded](libraries/http.md#GetValueFromInputIdDecoded) |  | Yes
-[IsAjaxRequest](libraries/http.md#IsAjaxRequest) | Returns true if this is running in an AJAX request.<br/>Not Implemented in Java. | Yes
-[IsSecureConnection](libraries/http.md#IsSecureConnection) | Tells if the current request is being made via HTTPS. | Yes
-[MakeAbsoluteURL](libraries/http.md#MakeAbsoluteURL) | Makes an absolute URL based on the URL provided. | Yes
-[PostRequest_AddArgument](libraries/http.md#PostRequest_AddArgument) | Builds arguments list for a POST HTTP request, adding a new text parameter to the arguments list. If argument name is not supplied, the post will only submit the supplied value (this can be used for xml posts for example). | Yes
-[PostRequest_AddBinaryArgument](libraries/http.md#PostRequest_AddBinaryArgument) | Builds arguments list for an HTTP request, adding a new binary parameter to the arguments list. If argument name is not supplied, the post will only submit the supplied value (this can be used for xml posts for example). | Yes
-[PostRequest_Submit](libraries/http.md#PostRequest_Submit) | Submit an HTTP POST request given the POST arguments and the URL. Returns the response content as a string and as binary data. | No
-[ReplaceURLDomain](libraries/http.md#ReplaceURLDomain) | Replaces the domain in the URL by the new domain. This function doesn't accept JavaScript as an URL. If the new domain is not provided, the domain of the current request is used. | Yes
-[RunJavaScript](libraries/http.md#RunJavaScript) | Runs the provided JavaScript code in the browser. | Yes
-[SetBaseTag](libraries/http.md#SetBaseTag) | Sets the base tag of the HTML of the current HTTP response.<br/>This method has no effect in Ajax Requests. | Yes
-[SetCookie](libraries/http.md#SetCookie) | Sets a cookie. | No
-[SetLastModified](libraries/http.md#SetLastModified) | Sets the Last Modified Date HTTP header of the current response. | Yes
-[SetPageTitle](libraries/http.md#SetPageTitle) | Sets the page title of the HTML of the current HTTP response.<br/>This method has no effect in Ajax Requests. | Yes
-[SetRequestTimeout](libraries/http.md#SetRequestTimeout) | Sets the timeout of the current HTTP request. | No
-[SetStatusCode](libraries/http.md#SetStatusCode) | Sets the status code of the current HTTP response. | No
-[URLEncode](libraries/http.md#URLEncode) | Encodes a URL string for reliable HTTP transmission from the Web server to a client | Yes
+[Request_AbsoluteURL](libraries/http.md#Request_AbsoluteURL) | Generates an absolute URL based on the URL provided. | Yes
+[Request_GetCookie](libraries/http.md#Request_GetCookie) | Returns the value for the specified cookie from the current HTTP request. | Yes
+[Request_GetDomain](libraries/http.md#Request_GetDomain) | Returns the host part of the current HTTP request as seen by the browser. <br/> Examples: <br/> When the browser uses the address "http://support.domain.com/site/welcome.aspx?id=12345", Request_GetDomain() = "support.domain.com". | Yes
+[Request_GetFiles](libraries/http.md#Request_GetFiles) | Returns the list of files submitted in the current HTTP request. | Yes
+[Request_GetHeaders](<libraries/http.md#Request_GetHeaders>) | Returns the value of the specified header in the current HTTP request. | Yes
+[Request_GetURL](libraries/http.md#Request_GetURL) | Returns the absolute URL of the current request. If SEO rules are applied, returns the resulting URL and not the URL displayed in the user's browser. | Yes
+[Request_ReplaceDomain](libraries/http.md#Request_ReplaceDomain) | Replaces the domain in the URL with the given domain. This function doesn't accept JavaScript as a URL. | Yes
+[Request_SubmitGetRequest](libraries/http.md#Request_SubmitGetRequest) |Submits an HTTP GET request given the respective arguments and URL, and returns the request response content. | No
+[Response_AddHeader](libraries/http.md#Response_AddHeader) | Adds a header to the current HTTP response. | No
+[Response_SetCookie](libraries/http.md#Response_SetCookie) | Sets a cookie in the current HTTP response. | No
+[Response_SetStatusCode](libraries/http.md#Response_SetStatusCode) | Sets the status code of the current HTTP response. | No
 
 ### Math
 The OutSystems Math library provides actions to compute complex math functions, such as logarithmic expression or pseudorandom number generation.
@@ -186,9 +149,10 @@ The OutSystems URL library provides actions to manipulate URLs, such as decoding
 Action | Description | Available as function?
 ---|---|---
 [DecodeURL](libraries/url.md#DecodeURL) | Converts a string that has been encoded for transmission in a URL into a decoded text value. | Yes
+[EncodeURL](libraries/url.md#EncodeURL) | Encodes a URL string for reliable HTTP transmission from the Web server to a client.Converts a string for transmission in a URL into an encoded text value. | Yes
 [GetRelativeURL](libraries/url.md#GetRelativeURL) | Returns the relative URL from the base URL. | Yes
-[GetURLProtocol](libraries/url.md#GetURLProtocol) | Returns the protocol of the given URL. | Yes
 [GetURLHost](libraries/url.md#GetURLHost) | Returns the host of the given URL. | Yes
+[GetURLProtocol](libraries/url.md#GetURLProtocol) | Returns the protocol of the given URL. | Yes
 [IsURLRelative](libraries/url.md#IsURLRelative) | Returns true if the given URL is a relative URL. | Yes
 
 ### XML

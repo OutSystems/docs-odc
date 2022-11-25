@@ -8,546 +8,13 @@ app_type: mobile apps, reactive web apps
 
 # HTTPRequestHandler
 
-Provides actions to manipulate HTTP requests and responses.
+The OutSystems HTTP library provides actions to manipulate HTTP requests and responses.
 
 ## Actions
 
-### AddAttributeToHtmlTag 
+### Request_AbsoluteURL
 
-Adds an attribute to the outermost HTML tag of the document (e.g. xmlns, manifest...).  
-This method has no effect in Ajax Requests.
-
-*Inputs*
-
-Name
-:   Type: Text. Mandatory.  
-    
-
-Value
-:   Type: Text. Mandatory.  
-    
-
-### AddFaviconTag
-
-Allows setting the favicon for the current page. You can use &quot;omlresources&quot; to add an icon file to your oml.  
-This method has no effect in Ajax Requests.
-
-*Inputs*
-
-IconFilename
-:   Type: Text. Mandatory.  
-    The filename of the icon, e.g. &quot;outsystems.ico&quot;.
-
-MimeType
-:   Type: Text. Default: "image/x-icon".  
-    The mime type of the icon file. By default this is &quot;image/x-icon&quot;.
-
-### AddHeader
-
-Adds a header to the current HTTP response.  
-This method has no effect in Ajax Requests.
-
-*Inputs*
-
-Name
-:   Type: Text. Mandatory.  
-    Name of the header.
-
-Value
-:   Type: Text. Mandatory.  
-    Value of the header.
-
-### AddJavaScriptTag
-
-Adds a &lt;script&gt; tag to the HTML of the current HTTP response.  
-This method has no effect in Ajax Requests.
-
-*Inputs*
-
-JavaScriptURL
-:   Type: Text. Mandatory.  
-    The URL of the JavaScript file.
-
-Defer
-:   Type: Boolean. Default: False.  
-    Defines if the defer attribute is added to the &lt;script&gt; tag. Defaults to False.
-
-Charset
-:   Type: Text. Default: "UTF-8".  
-    The charset attribute of the &lt;script&gt; tag. Defaults to UTF-8.
-
-### AddLinkTag
-
-Adds a &lt;link&gt; tag to the HTML of the current HTTP response.  
-This method has no effect in Ajax Requests.
-
-*Inputs*
-
-Rel
-:   Type: Text. Mandatory.  
-    
-
-Href
-:   Type: Text. Mandatory.  
-    
-
-Type
-:   Type: Text.  
-    
-
-### AddMetaHttpEquivTag
-
-Adds a &lt;meta&gt; tag with the http-equiv attribute to the HTML of the current HTTP response.  
-This method has no effect in Ajax Requests.
-
-*Inputs*
-
-HttpEquiv
-:   Type: Text. Mandatory.  
-    
-
-Content
-:   Type: Text. Mandatory.  
-    
-### AddMetaTag
-
-Adds a &lt;meta&gt; tag to the HTML of the current HTTP response.  
-This method has no effect in Ajax Requests.
-
-*Inputs*
-
-Name
-:   Type: Text. Mandatory.  
-    
-
-Content
-:   Type: Text. Mandatory.  
-    
-
-### AddPostProcessingFilter
-
-This method has no effect in Ajax Requests.  
-Not implemented in Java.
-
-*Inputs*
-
-matchingRegexp
-:   Type: Text. Mandatory.  
-    
-
-replacement
-:   Type: Text. Mandatory.  
-    
-
-### AddSessionToURL
-
-Adds the current session identifier to a specified URL.
-
-*Inputs*
-
-URL
-:   Type: Text. Mandatory.  
-    URL without session id.
-
-*Outputs*
-
-URLWithSession
-:   Type: Text.  
-    URL with session id.
-
-### AddStyleSheetTag
-
-Adds a &lt;link rel=&quot;stylesheet&quot;&gt; tag to the HTML of the current HTTP response.  
-This method has no effect in Ajax Requests.
-
-*Inputs*
-
-StyleSheetURL
-:   Type: Text. Mandatory.  
-    The URL of the CSS file.
-
-Charset
-:   Type: Text. Default: "UTF-8".  
-    The charset attribute of the &lt;script&gt; tag. Defaults to UTF-8.
-
-### GetCookie
-
-Gets a cookie value.
-
-*Inputs*
-
-CookieName
-:   Type: Text. Mandatory.  
-    Cookie name.
-
-*Outputs*
-
-CookieValue
-:   Type: Text.  
-    Value for the specified cookie.
-
-### GetEntryURL
-
-Returns the URL of an Entry. Includes the Personal Area and the session identifier if applicable.
-
-*Inputs*
-
-EntryName
-:   Type: Text. Mandatory.  
-    Name of the Entry.
-
-eSpaceName
-:   Type: Text.  
-    Name of the eSpace. If not specified, assumes the current eSpace and gives a relative URL.
-
-FirstParameterName
-:   Type: Text.  
-    First parameter name.
-
-FirstParameterValue
-:   Type: Text.  
-    First parameter value.
-
-SecondParameterName
-:   Type: Text.  
-    Second parameter name.
-
-SecondParameterValue
-:   Type: Text.  
-    Second parameter value.
-
-ThirdParameterName
-:   Type: Text.  
-    Third parameter name.
-
-ThirdParameterValue
-:   Type: Text.  
-    Third parameter value.
-
-FourthParameterName
-:   Type: Text.  
-    Fourth parameter name.
-
-FourthParameterValue
-:   Type: Text.  
-    Fourth parameter value.
-
-FifthParameterName
-:   Type: Text.  
-    Fifth parameter name.
-
-FifthParameterValue
-:   Type: Text.  
-    Fifth parameter value.
-
-*Outputs*
-
-URL
-:   Type: Text.  
-    URL of the Entry.
-
-### GetFormValue
-
-Gets the value of a form field of the current HTTP request.  
-If the field does not exist in the request an empty String will be returned. The same applies when the field exists but has an empty string as a value.
-
-*Inputs*
-
-Name
-:   Type: Text. Mandatory.  
-    
-
-*Outputs*
-
-Value
-:   Type: Text.  
-    
-
-### GetIP
-
-Gets the IP host address of the remote client (IP of the user machine performing the HTTP request).
-
-*Outputs*
-
-UserIP
-:   Type: Text.  
-    IP of the user machine performing the HTTP request.
-
-### GetPageExtension
-
-Returns the extension of the physical page that corresponds to the current screen, including the dot. Examples: &quot;.aspx&quot; or &quot;.jsf&quot;.
-
-*Outputs*
-
-PageExtension
-:   Type: Text.  
-    Extension of the physical page that corresponds to the current screen.
-
-### GetPageName
-
-Returns the name of the physical page that corresponds to the current screen. It is usually the same as the screen name, except when name clashes occur.
-
-*Outputs*
-
-PageName
-:   Type: Text.  
-    Name of the physical page that corresponds to the current screen.
-
-### GetRawURL
-
-Returns the current relative requested URL, without the http://[server] part and without the session identifier.  
-If SEO rules are being applied, the URL displayed in the user's browser is returned, and not the final URL after the rule is applied.
-
-*Outputs*
-
-RawURL
-:   Type: Text.    
-
-### GetReferrerURL
-
-*Outputs*
-
-ReferrerURL
-:   Type: Text.  
-    
-### GetRequest_AddArgument
-
-Builds the arguments string for an HTTP request with method GET, adding a new parameter to the arguments string.
-
-*Inputs*
-
-ArgumentsIn
-:   Type: Text.  
-    Current arguments string.
-
-Name
-:   Type: Text. Mandatory.  
-    New argument name.
-
-Value
-:   Type: Text. Mandatory.  
-    New argument value.
-
-*Outputs*
-
-ArgumentsOut
-:   Type: Text.  
-    Inputed arguments string concatenated with the pair &lt;argument name&gt; = &lt;argument value&gt;.
-
-
-### GetRequest_Submit
-
-Submit an HTTP GET request given the GET arguments and the URL. Returns the response content as a string and as binary data.
-
-*Inputs*
-
-URL
-:   Type: Text. Mandatory.  
-    URL for which to create the GET HTTP request.  
-    Ex: &quot;http://example.com/hello/test.aspx&quot;
-
-Arguments
-:   Type: Text. Mandatory.  
-    GET arguments string.  
-    Ex: &quot;param1=valueOne&amp;param2=valueTwo&quot;
-
-Timeout
-:   Type: Integer.  
-    Number of milliseconds to wait before the request times out.
-
-KeepAlive
-:   Type: Boolean.  
-    Indicates whether to make a persistent connection (True) to the Internet resource or not (False).
-
-*Outputs*
-
-TextContent
-:   Type: Text.  
-    Response text content.
-
-BinaryContent
-:   Type: BinaryData.  
-    Response binary content.
-
-BinaryContentType
-:   Type: Text.  
-    Value of the Content-Type header returned with the response.
-
-### GetRequestContent
-
-Gets the content of the current HTTP request.
-
-*Inputs*
-
-IncludeHeaders
-:   Type: Boolean. Default: True.  
-    Defines if the headers are included. Defaults to True.
-
-*Outputs*
-
-RawContent
-:   Type: Text.  
-    The content of the current HTTP request.
-
-### GetRequestDomain
-
-Returns the host part of the current HTTP request as seen by the browser.  
-Example: when the browser uses the address &quot;http://support.example.com/site/welcome.aspx?id=12345&quot;, GetRequestDomain() returns &quot;support.example.com&quot;.
-
-*Outputs*
-
-Domain
-:   Type: Text.  
-    The domain of the current HTTP request.
-
-### GetRequestFiles
-
-Returns the list of files submitted in the current HTTP request.
-
-*Outputs*
-
-RequestFiles
-:   Type: RecordList of [RequestFile](<#Structure_RequestFile>).  
-    
-
-### GetRequestHeader
-
-Gets the value of a specific header in the current HTTP request. Returns an empty string if the header is not present or has no value.
-
-*Inputs*
-
-HeaderName
-:   Type: Text. Mandatory.  
-    The name of the header
-
-*Outputs*
-
-Value
-:   Type: Text.  
-    Returns an empty string if the header is not present or has no value.
-
-### GetRunningESpaceJQueryVersion
-
-Returns the jQueryVersion of the Running ESpace
-
-*Outputs*
-
-JQueryVersion
-:   Type: Text.  
-    
-
-### GetSessionId
-
-Gets the session identifier of the current HTTP request.
-
-*Outputs*
-
-SessionId
-:   Type: Text.  
-    Session identifier.
-
-### GetURL
-
-Returns the current absolute requested URL, without the session identifier.  
-If SEO rules are being applied, the final URL after the rule is applied is returned, and not the URL displayed in the user's browser.
-
-*Outputs*
-
-URL
-:   Type: Text.  
-    Current requested URL.
-
-### GetURLMethod
-
-Gets the request method (GET or POST) of the current requested URL.
-
-*Outputs*
-
-Method
-:   Type: Text.  
-    Current request method (GETor POST).
-
-### GetURLWithSession
-
-Gets the current requested URL (with the session identifier).
-
-*Outputs*
-
-URL
-:   Type: Text.  
-    Current requested URL with the session identifier.
-
-### GetUserAgent
-
-Gets the user agent of the current HTTP request.
-
-*Outputs*
-
-UserAgent
-:   Type: Text.  
-    
-
-### GetUserLanguages
-
-Gets a sorted record list of client language preferences.
-
-*Outputs*
-
-Languages
-:   Type: RecordList of [UserLanguage](<#Structure_UserLanguage>).  
-    Sorted record list of client language preferences.
-
-### GetValueFromInputId
-
-*Inputs*
-
-InputId
-:   Type: Text. Mandatory.  
-    
-
-*Outputs*
-
-Value
-:   Type: Text.  
-    
-
-### GetValueFromInputIdDecoded
-
-*Inputs*
-
-InputId
-:   Type: Text. Mandatory.  
-    
-
-*Outputs*
-
-Value
-:   Type: Text.  
-    
-### IsAjaxRequest
-
-Returns true if this is running in an AJAX request.  
-Not Implemented in Java.
-
-*Outputs*
-
-IsAjaxRequest
-:   Type: Boolean.  
-    Returns true if this is running in an AJAX request.
-
-### IsSecureConnection
-
-Tells if the current request is being made via HTTPS.
-
-*Outputs*
-
-IsSecureConnection
-:   Type: Boolean.  
-    
-
-### MakeAbsoluteURL
-
-Makes an absolute URL based on the URL provided.
+Generates an absolute URL based on the URL provided.
 
 *Inputs*
 
@@ -561,267 +28,197 @@ AbsoluteURL
 :   Type: Text.  
     Absolute URL.
 
-### PostRequest_AddArgument
 
-Builds arguments list for a POST HTTP request, adding a new text parameter to the arguments list. If argument name is not supplied, the post will only submit the supplied value (this can be used for xml posts for example).
+### Request_GetCookie
+
+Returns the value for the specified cookie from the current HTTP request.
 
 *Inputs*
 
-ArgumentsIn
-:   Type: BinaryData.  
-    Current arguments list in Binary format.
-
 Name
-:   Type: Text.  
-    New text argument name.
-
-Value
 :   Type: Text. Mandatory.  
-    New text argument value.
+    The name of the cookie to be retrieved.
 
 *Outputs*
 
-ArgumentsOut
-:   Type: BinaryData.  
-    Inputed arguments list concatenated with the pair &lt;argument name&gt; = &lt;argument value&gt; in binary format.
+Value
+:   Type: Text.  
+    The value for the specified cookie. If no cookie exists, returns empty.
 
-### PostRequest_AddBinaryArgument
 
-Builds arguments list for an HTTP request, adding a new binary parameter to the arguments list. If argument name is not supplied, the post will only submit the supplied value (this can be used for xml posts for example).
+### Request_GetDomain
+
+Returns the host part of the current HTTP request as seen by the browser.
+
+Examples:
+
+When the browser uses the address "http://support.domain.com/site/welcome.aspx?id=12345", Request_GetDomain() = "support.domain.com".
+
+*Outputs*
+
+Domain
+:   Type: Text.  
+    The domain of the current HTTP request.
+
+
+### Request_GetFiles 
+
+Returns the list of files submitted in the current HTTP request.
+
+*Outputs*
+
+RequestFiles
+:   Type: RecordList of [RequestFile](<#Structure_RequestFile>).  
+    Record list of files submitted in the current HTTP request.
+
+
+### Request_GetHeaders 
+
+Returns the value of the specified header in the current HTTP request.
 
 *Inputs*
 
-ArgumentsIn
-:   Type: BinaryData.  
-    Current arguments list in Binary format.
-
 Name
-:   Type: Text.  
-    New text argument name.
-
-Value
-:   Type: BinaryData. Mandatory.  
-    New binary argument value.
+:   Type: Text. Mandatory.  
+    The name of the header.
 
 *Outputs*
 
-ArgumentsOut
-:   Type: BinaryData.  
-    Inputed arguments list concatenated with the pair &lt;argument name&gt; = &lt;argument value&gt; in binary format.
+Value
+:   Type: Text.  
+    The value of the specified header. If the header is not present or has no value, returns empty.
 
-### PostRequest_Submit
 
-Submit an HTTP POST request given the POST arguments and the URL. Returns the response content as a string and as binary data.
+### Request_GetURL 
+
+Returns the absolute URL of the current request. If SEO rules are applied, returns the resulting URL and not the URL displayed in the user's browser.
+
+*Outputs*
+
+URL
+:   Type: Text.  
+    The URL of the current request.
+
+
+### Request_ReplaceDomain 
+
+Replaces the domain in the URL with the given domain. This function doesn't accept JavaScript as a URL.
 
 *Inputs*
 
 URL
 :   Type: Text. Mandatory.  
-    URL for which to create the GET HTTP  request.
+    The URL in which to replace the domain.
 
+Domain
+:   Type: Text.  
+    The new domain to put in the URL. If no value is given, the domain of the current request is used.
+
+*Outputs*
+
+NewURL
+:   Type: Text.  
+    The URL with the new domain.
+
+
+### Request_SubmitGetRequest 
+
+Submits an HTTP GET request given the respective arguments and URL, and returns the request response content
+
+*Inputs*
+
+URL
+:   Type: Text. Mandatory.  
+    The URL of the HTTP GET request.
+    
 Arguments
-:   Type: BinaryData.  
-    POST arguments.
+:   Type: Text. Mandatory.  
+    The arguments of the HTTP GET request.
 
 Timeout
 :   Type: Integer.  
-    Number of milliseconds to wait before the request times out.
+    The number of milliseconds before the request times out. If no value is given, no timeout is set.
 
 KeepAlive
 :   Type: Boolean.  
-    Indicates whether to make a persistent connection (True) to the Internet resource or not (False).
+    Indicates if the connection to the Internet resource is persistent. If no value is given, defaults to false.
 
 *Outputs*
 
 TextContent
 :   Type: Text.  
-    Response text content.
+    The response content, in text.
 
 BinaryContent
 :   Type: BinaryData.  
-    Response binary content.
+    The response content, in binary data.
 
 BinaryContentType
 :   Type: Text.  
-    Value of the Content-Type header returned with the response.
+   The value of the Content-Type header returned with the response.
 
-### ReplaceURLDomain
 
-Replaces the domain in the URL by the new domain. This function doesn't accept JavaScript as an URL. If the new domain is not provided, the domain of the current request is used.
+### Response_AddHeader 
 
-*Inputs*
-
-URL
-:   Type: Text. Mandatory.  
-    The URL to replace the domain
-
-Domain
-:   Type: Text.  
-    The new domain to put in the URL.
-
-*Outputs*
-
-SafeURL
-:   Type: Text.  
-    The URL with the new domain.
-
-### RunJavaScript
-
-Runs the provided JavaScript code in the browser.
-
-<div class="info" markdown="1">
-
-The RunJavaScript action sends the response to the browser. This means that you can't call other actions to manipulate the response after RunJavaScript, for example the SetCookie action.
-
-</div>
+Adds a header to the current HTTP response.
 
 *Inputs*
 
-Script
+Name
 :   Type: Text. Mandatory.  
-    JavaScript code to be sent to the browser.
+    The name of the header to be added.
 
-### SetBaseTag
-
-Sets the base tag of the HTML of the current HTTP response.  
-This method has no effect in Ajax Requests.
-
-*Inputs*
-
-HREF
+Value
 :   Type: Text. Mandatory.  
-    
+   The value of the header to be added.
 
-Target
-:   Type: Text. Default: "".  
-    
 
-### SetCookie
+### Response_SetCookie 
 
-Sets a cookie.
+Sets a cookie in the current HTTP response.
 
 *Inputs*
 
 CookieName
 :   Type: Text. Mandatory.  
-    Cookie name.
+    The name of the cookie to be set.
 
 CookieValue
 :   Type: Text.  
-    Cookie value.
+    The value of the cookie to be set. If no value is given, defaults to an empty string.
 
 CookieExpirationSpan
 :   Type: Integer.  
-    Cookie expiration span in minutes. If lower than or equal to zero the cookie will only be valid during current session.
+    The expiration span of the cookie, in minutes. If lower than or equal to zero, or if no value is given, the cookie will only be valid during the current session.
 
 CookiePath
 :   Type: Text.  
-    Cookie path. Defaults to path of the current eSpace, Tenant and Personal Area combination.
+    The path that must exist in the requested URL for the browser to send the Cookie header. If no value is given, defaults to the path of the current application.
 
 CookieDomain
 :   Type: Text.  
-    Cookie domain. Defaults to the current domain.
+    The host to which the cookie will be sent. If no value is given, defaults to the host of the current document URL, not including subdomains.
 
 CookieHttpOnly
 :   Type: Boolean.  
-    Cookie HttpOnly attribute. Defaults to False. When set to True, the cookie value is not available in JavaScript code. Normally used in security-sensitive cookies.
+    Indicates if the cookie is HttpOnly. If no value is given, defaults to false. If set to true the cookie value will not be available in JavaScript. This is normally used in security-sensitive cookies.
 
 CookieSecure
 :   Type: Boolean.  
-    Cookie Secure attribute. Defaults to what is defined in the security settings for the current environment.  
+    Indicates if the cookie is secure. If no value is given, defaults to what is defined in the security settings for the current environment.
     It's not possible to lower the security specified at the environment level.
 
 CookieSameSite
 :   Type: Text.  
-    Cookie SameSite attribute. Possible values: &quot;&quot;, &quot;None&quot;, &quot;Lax&quot;, and &quot;Strict&quot;. Defaults to what is defined in the security settings for the current environment.
+    The value of the Cookie SameSite attribute. Can be one of the following: "", "None", "Lax", and "Strict". If no value is given, defaults to what is defined in the security settings for the current environment.
 
-### SetLastModified
 
-Sets the Last Modified Date HTTP header of the current response.
+### Response_SetStatusCode 
 
-*Inputs*
-
-LastModifiedDate
-:   Type: DateTime. Mandatory.  
-    Last Modified Date.
-
-### SetPageTitle
-
-Sets the page title of the HTML of the current HTTP response.  
-This method has no effect in Ajax Requests.
-
-*Inputs*
-
-Title
-:   Type: Text. Mandatory.  
-    
-### SetRequestTimeout
-
-Sets the timeout of the current HTTP request.
-
-*Inputs*
-
-Timeout
-:   Type: Integer. Mandatory.  
-    Timeout in seconds, or -1 for an infinite timeout.
-
-### SetStatusCode
-
-Sets the status code of the current HTTP response.  
-Note: Setting custom HTTP status codes is an advanced extensibility scenario, so be sure to test if it works as intended in your specific infrastructure (for example, HTTP status code 204 is known to cause issues). Check the list of standard HTTP status codes used in OutSystems.
+Sets the status code of the current HTTP response.
 
 *Inputs*
 
 StatusCode
 :   Type: Integer. Mandatory.  
-    Status code of the response. Examples: 404, 403.
-
-### URLEncode
-
-Encodes a URL string for reliable HTTP transmission from the Web server to a client
-
-*Inputs*
-
-StrIn
-:   Type: Text. Mandatory.  
-    String URL
-
-Encoding
-:   Type: Text.  
-    Encoding type: ASCII, Unicode, UTF7 or UTF8
-
-*Outputs*
-
-StrOut
-:   Type: Text.  
-    Encoded string URL
-
-
-## Structures
-
-### RequestFile
-
-*Attributes*
-
-FileName
-:   Type: Text (50). Mandatory.  
-    
-
-FileType
-:   Type: Text (50). Mandatory.  
-    
-
-FileSize
-:   Type: Integer. Mandatory.  
-    
-
-BinaryContent
-:   Type: BinaryData. Mandatory.  
-    
-
-### UserLanguage
-
-*Attributes*
-
-Value
-:   Type: Text (50). Mandatory.
+    The status code of the response, such as 404, 403.
