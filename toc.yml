@@ -6,7 +6,7 @@
 - topics:
   - href: eap/configuration-management/set-as-secret.md
   - href: eap/configuration-management/configure-emails.md
-- href: eap/configuration-management/manage-users.md
+- href: eap/user-management/intro.md
 - href: eap/deploy-apps.md
 - href: eap/monitor-apps.md
 - href: eap/custom-domains.md

@@ -33,9 +33,7 @@ Create roles in ODC Studio, during design time. Go to the **Logic** tab > **Role
 
 ### Assign roles to users through ODC Portal
 
-To assign roles to users, from ODC Portal select **Users & Access** > **Users**. Search for a user and then from user properties, select **Manage permissions**. Then, set the permissions for the user for one or more **Apps** or **Stages**.
-
-You can also assign roles at the same time you invite new users to your organization.
+After you publish an app that has end-user roles, the end-user roles are available in ODC Portal. See [how to assign end-user roles in ODC Portal](../user-management/intro.md#end-user-roles).
 
 ### Manage roles in app runtime
 

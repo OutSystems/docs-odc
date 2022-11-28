@@ -22,7 +22,7 @@ Your organization's developers, DevOps engineers and architects are granted **or
 
 Users of your apps are given **app roles** to access secured screens, data and logic flows. Developers create app roles in ODC Studio and assign them to users in ODC Portal. 
 
-Go to [User management](../configuration-management/manage-users.md) for more information on user permissions and roles.
+Go to [User management](../user-management/intro.md) for more information on user permissions and roles.
 
 ## Secure endpoints
 
