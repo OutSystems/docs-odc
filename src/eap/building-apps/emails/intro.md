@@ -1,8 +1,8 @@
 ---
-summary: Learn more about email. 
+summary: Learn more about how you apps can send emails in OutSystems Developer Cloud (ODC).  
 tags:
 locale: en-us
-guid:  F826D84E-BF79-4287-9322-1E00E198A06E
+guid: F826D84E-BF79-4287-9322-1E00E198A06E
 app_type: mobile apps, reactive web apps
 ---
 
@@ -28,9 +28,4 @@ Developers can also use **widgets** (GUI elements to create and display the cont
 * Embed an image.
 * Show information in columns and rows.
 
-In ODC Portal, you define the configuration. When you click save, the configuration becomes available to ODC Studio to send the email. When the logic or timer triggers an email to be sent, ODC evaluates the logic, and the expressions then replaces any content and creates the final HTML.
-
-In ODC Portal, from the left navigation panel, administrators access **Email notifications** to set up the configuration. On the configuration form, you define the server, authentication, email information, and any test lists. A  test list is a list of email addresses that enable you to perform an end-to-end test and verify the emails are formatted correctly and are received.
-
-In the SMTP server field, enter the host name or IP address and the port number. If the port number is blank, by default OutSystems uses 25. You also set the user name and password. When no sender is specified in the configuration, OutSystems uses the default sender email.
-
+To configure ODC to send emails, see [Configure sending emails](../../configuration-management/configure-emails.md)

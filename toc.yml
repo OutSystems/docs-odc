@@ -68,6 +68,11 @@
       - href: eap/building-apps/ui/custom-auth.md
     # Emails
     - href: eap/building-apps/emails/intro.md
+    - topics:
+      - href: eap/building-apps/emails/working.md
+      - href: eap/building-apps/emails/sending.md
+      - href: eap/building-apps/emails/attachments.md
+      - href: eap/building-apps/emails/widgets.md
     # Secure your app by using roles
     - href: eap/building-apps/secure-app-with-roles.md
     # Logic 
