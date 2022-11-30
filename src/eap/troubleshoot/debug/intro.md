@@ -26,11 +26,7 @@ To debug your app, do the following in ODC Studio:
 
 1. Before debugging a **native mobile app**, choose a debugging target in the [Debugger tab](<debugger-ui-reference.md>): Android, iOS, or Google Chrome which emulates a device. The section [Mobile Debugging Scenarios](<#mobile-debugging-scenarios>) includes further details about the different targets. If you're debugging a **mobile app distributed as a PWA**, select **Emulate using Google Chrome** in **Debugger** > **Debug Setup**. 
 
-    ![The debugger tab in ODC Studio](<images/debugger-tab.png>)
-
 1. Start debugger by clicking the **Start Debugging** button in the [Debugger tab](<debugger-ui-reference.md>). When you're debugging mobile apps using the Google Chrome target, ODC Studio opens a dedicated Chrome browser instance for debugging only.
-
-    ![Debug Setup](<images/debug-setup-tab-web.png>)
 
 1. Do some tasks in the app, up to a point when the execution runs into a breakpoint and suspends.
 

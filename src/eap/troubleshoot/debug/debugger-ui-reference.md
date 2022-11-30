@@ -85,8 +85,6 @@ Debug Setup Tab
     Use the "Entry app:" combo box to select the entry point where the user interaction begins. This is useful when debugging producer apps.
     
     In **mobile apps** you must choose the target where you want to debug your app: emulate using Google Chrome browser on your PC or debug in an iOS/Android device connected to your PC. If you choose the Google Chrome browser target, ODC Studio will open a special Google Chrome instance where the user must perform user interactions with the app.
-
-    ![](<images/debug-setup-tab-mobile.png>)
     
 In Use Tab
 :   Lists all elements from the scope tree relevant for immediate examination regarding the app element currently being debugged.
