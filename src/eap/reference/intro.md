@@ -9,7 +9,7 @@ app_type: mobile apps, reactive web apps
 # Reference
 
 ## Libraries
-Libraries provided by OutSystems that you can use to extend the capabilities of your apps. To learn more about how to use these libraries see [here](../building-apps/logic/use-public-elements.md).
+Libraries provided by OutSystems that you can use to extend the capabilities of your apps. To learn more about how to use these libraries see [here](../building-apps/use-public-elements.md).
 
 ### Binary Data
 The OutSystems BinaryData library provides actions to manipulate binary data, such as retrieving the length or transforming binary content into Text or Base64.

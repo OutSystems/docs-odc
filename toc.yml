@@ -78,11 +78,8 @@
       - href: eap/building-apps/emails/widgets.md
     # Secure your app by using roles
     - href: eap/building-apps/secure-app-with-roles.md
-    # Logic 
-    - href: eap/building-apps/logic/intro.md
-    - topics:
-      # Use public elements
-      - href: eap/building-apps/logic/use-public-elements.md
+    # Use public elements
+    - href: eap/building-apps/use-public-elements.md
     # Timers
     - href: eap/building-apps/timers/intro.md
     - topics:
