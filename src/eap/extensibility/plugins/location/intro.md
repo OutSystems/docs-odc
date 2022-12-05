@@ -26,7 +26,7 @@ Otherwise, you can use the **GetLocation** action to get the device current loca
 
 Check if getting device location works by verifying the value of **GetLocation.Success** (3) is **True**. If yes, you can handle the device location data and apply any logic that you want. If **False**, you can show an **Error** to the user.
 
-![Getting device location](images/get-location-odcs.png)
+![Getting device location](images/logic-to-get-device-location-odcs.png)
 
 ## Check current device location in real time
 
@@ -42,7 +42,7 @@ To check the device location in real time and have a good user experience:
 
 To check if the device location changed, you can drag the **LocationTracker** block on your screen (4). This block handles the **OnPositionChanged** event to trigger another action in your app logic.
 
-![A block to track location](images/track-location-odcs.png)
+![A block to track location](images/add-location-tracker-ocds.png)
 
 ## Use the WatchPosition action to update location in real time
 
@@ -50,13 +50,13 @@ After adding the **LocationTracker** block in your app, you need to use the **Wa
 
 As an output, this **WatchPosition** action returns a **WatchId**, an identifier that you can use in the **ClearWatch** action to stop the process of actively updating the device position. 
 
-![A block to watch position](images/watch-position-odcs.png)
+![A block to watch position](images/watch-position-action-odcs.png)
 
 ## Create logic to handle the event of the position changing
 
 At last, you need to create a custom action and use it as the **Handler** of the **OnPositionChanged** event in the **LocationTracker** block (6). This event of the position changing returns the **Location** structure and the **WatchId**.
 
-![Event handler ](images/handle-event-odcs.png)
+![Event handler ](images/logic-handle-event-odcs.png)
 
 ## Handling errors
 
@@ -72,7 +72,7 @@ Here is the list of actions you can use to handle the errors. Use these actions 
 | Success     | WatchPosition       | True if there aren't errors while updating the position in real time.          |
 | Success     | ClearWatch          | True if there aren't errors while stopping updating the position in real time. |
 
-![Handling errors](images/handle-errors-odcs.png)
+![Handling errors](images/handling-errors-odcs.png)
 
 ## Actions
 
