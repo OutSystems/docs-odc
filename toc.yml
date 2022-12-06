@@ -1,10 +1,9 @@
 - href: eap/getting-started/intro.md
+- topics:
+  - href: eap/getting-started/types-of-apps.md
 - href: eap/differences-o11/intro.md
 - topics:
   - href: eap/differences-o11/differences-sql.md
-- href: eap/getting-started/intro.md
-- topics:
-  - href: eap/getting-started/types-of-apps.md
 - href: eap/configuration-management/configuration-management.md
 - topics:
   - href: eap/configuration-management/set-as-secret.md
