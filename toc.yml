@@ -139,7 +139,7 @@
 # Forge
 - href: eap/forge/intro.md
 - topics:
-  - href: eap/forge/submit.md
   - href: eap/forge/install.md
+  - href: eap/forge/submit.md
 # Known issues
 - href: eap/known-issues/intro.md
