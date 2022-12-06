@@ -143,8 +143,3 @@
   - href: eap/forge/install.md
 # Known issues
 - href: eap/known-issues/intro.md
-# Release notes (under testing) 
-#- href: release-notes/platform-services/intro.md
-#- topics:
-    #- href: release-notes/platform-services/ea-ring/platform-services-ea.md
-    #- href: release-notes/platform-services/ga-ring/platform-services-ga.md
