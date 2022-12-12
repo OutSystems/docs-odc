@@ -102,6 +102,7 @@
   - topics:
     - href: eap/extensibility/plugins/barcode/intro.md
     - href: eap/extensibility/plugins/camera/intro.md
+    - href: eap/extensibility/plugins/file-plugin/intro.md
     - href: eap/extensibility/plugins/file-transfer-plugin/intro.md
     - href: eap/extensibility/plugins/file-viewer/intro.md
     - href: eap/extensibility/plugins/location/intro.md
