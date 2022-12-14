@@ -25,7 +25,7 @@ This is an overview of how to use roles:
 2. In ODC Portal, assign end-user roles to users.
 3. In ODC Studio, use end-user roles to control access to the parts of the app. You can also grant and revoke a role to any user programmatically.
 
-![How you can use roles](images/how-to-use-roles-diag.png "How you can use roles")
+![How you can use roles](images/overview-how-to-use-roles-diag.png "How you can use roles")
 
 ### Create end-user roles
 
