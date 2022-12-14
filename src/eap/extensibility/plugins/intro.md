@@ -15,14 +15,15 @@ Plugins provide important functionalities to native mobile apps, letting you use
 The table shows the OutSystems-supported mobile plugins that you can find in the Forge repository. Some of them are already supported when distributing your app as a Progressive Web App (PWA).
 
 
-| Plugin               | Description                                      | Supported in PWA |
-| -------------------- | ------------------------------------------------ | ---------------- |
-| Barcode Plugin       | Access the camera to scan barcodes.              | Yes              |
-| Camera Plugin        | Access the camera capabilities of the device.    | Yes              |
-| File Plugin          | Manage files and folders within the app sandbox. | NA               |
-| File Transfer Plugin | Upload and download files in background.         | NA               |
-| File Viewer Plugin   | View remote or app resource files.               | NA               |
-| Location Plugin      | Access the GPS capabilities the device.          | Yes              |
+| Plugin                    | Description                                      | Supported in PWA |
+| ------------------------- | ------------------------------------------------ | ---------------- |
+| Barcode Plugin            | Access the camera to scan barcodes.              | Yes              |
+| Camera Plugin             | Access the camera capabilities of the device.    | Yes              |
+| Health and Fitness Plugin | Access data from Apple HealthKit and Google Fit. | NA               |
+| File Plugin               | Manage files and folders within the app sandbox. | NA               |
+| File Transfer Plugin      | Upload and download files in background.         | NA               |
+| File Viewer Plugin        | View remote or app resource files.               | NA               |
+| Location Plugin           | Access the GPS capabilities the device.          | Yes              |
 
 ### Notes
 
