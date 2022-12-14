@@ -102,13 +102,14 @@ The following table lists tasks in the ODC compared to OutSystems 11.
 
 | Task | In OutSystems 11 | In ODC |
 | ----------- | ----------- | ----------- |
-| Deploy an application to another stage.| LifeTime | **ODC Portal** > **Delivery** > **Deployments**.|
 | [Apps configuration management](./../configuration-management/configuration-management.md) | LifeTime | **ODC Portal** > **Apps** |
-| View apps and app details. Delete and deactivate apps | LifeTime | **ODC Portal** > **Apps** |
-| Manage IT users, roles, and permissions | LifeTime | **ODC Portal** > **Users & access** |
+| Create a mobile package | Service Studio, Service Center | **ODC Portal** > **(app details)** > **Mobile distribution** |
+| Deploy an app to a stage.| LifeTime | **ODC Portal** > **Delivery** > **Deployments**.|
+| Manage users, roles, and permissions | LifeTime | **ODC Portal** > **Users & access** |
 | Manage end users | Users console | **ODC Portal** > **Users & access** |
-| View logs and audit information | LifeTime | **ODC Portal** > **Monitoring** |
 | Set access to end-user with specific roles to a screen in ODC Studio | screen > **Roles** | screen > **Authorization** > **Accessible by** |
+| View apps and app details. Delete and deactivate apps | LifeTime | **ODC Portal** > **Apps** |
+| View logs and audit information | LifeTime | **ODC Portal** > **Monitoring** |
  
 ## Terminology mapping
  

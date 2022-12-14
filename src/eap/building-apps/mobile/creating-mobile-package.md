@@ -3,7 +3,7 @@ summary: How to create a mobile package for distribution in app stores.
 tags:
 locale: en-us
 guid: 4e816fa7-fffc-48c4-b205-13f7165d3775
-app_type: mobile apps, reactive web apps
+app_type: mobile apps
 ---
 
 # Create mobile app package
