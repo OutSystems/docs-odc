@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Text library provides functionality to manipulate texts as, for example: search and replace using a regular expression, split, join, or format DateTimes.
+summary: "OutSystems Text library provides functionality to manipulate texts as, for example: search and replace using a regular expression, split, join, or format DateTimes."
 tags: 
 locale: en-us
 guid: e6b6ad2d-c6c0-4a5e-8034-1b36411c04ef
