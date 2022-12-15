@@ -61,7 +61,7 @@ _Outputs_
 
 <div class="info" markdown="1">
 
-You can learn about how to use this action in your apps [here](../../external-idps/intro.md#use-external-idp-in-an-app--in-an-app).
+You can learn about how to use this action in your apps [here](../../external-idps/apps.md).
 
 </div>
 

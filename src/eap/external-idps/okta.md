@@ -64,4 +64,4 @@ To add permitted redirects for the Okta provider follow the steps below.
 
 1. Click **Save**.
 
-If you applied the newly added Okta provider for use in your apps, now follow the steps [here](intro.md#use-external-idp-in-an-app--in-an-app).
+If you applied the newly added Okta provider for use in your apps, now follow the steps [here](apps.md).
