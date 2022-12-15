@@ -79,7 +79,7 @@ To add the CNAME record to your domain registrar, complete the following steps. 
 
 ## Delete a custom domain
 
-To delete a custom domain, from the ODC Portal, navigate to **Configurations** > **Domains** and hen follow these steps.
+To delete a custom domain, from the ODC Portal, navigate to **Configurations** > **Domains** and then follow these steps.
 
 1. Click the dropdown menu and select the stage for which you want to add a domain. The list of domains displays showing the built-in domain and any custom domains already added to the selected stage.
 1. Click the card of the custom domain you want to delete. The **Set up your domain** screen displays and you see the status next to the domain name.
