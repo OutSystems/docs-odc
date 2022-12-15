@@ -16,4 +16,4 @@ jobs:
       with:
         repository: OutSystems/tk-translation-automation
         event: docs-next
-        github_pat: ${{ secrets.GIT_HUB_CLONE_TOKEN }}
+        github_pat: ${{ secrets.TOOLS_PAT }}
