@@ -16,7 +16,7 @@ You can easily add a [supported social provider](#supported-social-providers) to
 
 When you successfully configure and save an external IdP to ODC, it becomes an option for use as an active provider for your organization, your apps, or both. You can use multiple active providers for your organization and each stage your apps are deployed to. You must use the same provider(s) for all the apps deployed to a given stage. The following diagram shows an example setup.
 
-![External IdPs concept](images/external-idps-setup-example-diag.png "External IdPs concept")
+![External IdPs concept](images/external-idps-example-diag.png "External IdPs concept")
 
 ## Before you begin
 
