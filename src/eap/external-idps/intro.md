@@ -85,37 +85,32 @@ To assign an added external IdP, navigate to the **Identity providers** tab in O
 
     </div>
 
-1. Check the boxes where you want to assign the provider. For each app stage you assign, select **Add to the current list of providers** or **Replace all current providers**. If you replace all current providers, all end-users for all apps in each app stage(s) you assign can no longer authenticate with the currently assigned provider(s).
-
-1. Copy the pair(s) of **Redirect URLs** to the list of permitted redirects in the setup page of your external provider. You should copy the pair(s) for both the built-in domain and any active [custom domains](../custom-domains.md). If you're configuring [Okta](okta.md#setup-redirect-urls) you can follow the embedded link for specific guidance. Otherwise see your provider's support documentation for further guidance (for example, [Azure AD](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-redirect-uri)). Click **Next**.
+1. Check the boxes of where you want to assign the provider and then click **Next**.
 
     <div class="info" markdown="1">
 
-    When you switch the IdP for your organization or apps, all signed-in users get logged out when their current access token expires. They have to log back in using the newly assigned provider. Users may have to wait several minutes to log back in while new certificates are processed.
-
+    When you switch the IdP for your organization or apps, all signed-in users get logged out when their current access token expires. Users have to log back in using the newly assigned provider. Users may have to wait up to a minute to log back in while new certificates are processed. 
+    
     </div>
 
-1. Read the confirmation summary, then do one of the following:
-    * Click the **Apply changes** button to confirm. 
-    * Click the **Previous** to exit.
+1. Read the confirmation pop-up and then do one of the following:
+
+    * Click the **Confirm changes** button to proceed.
+    * Click the **Cancel** to exit.
 
     Once ODC applies the provider successfully, a notification displays.
 
-<div class="info" markdown="1"> 
-
-When a provider is assigned to your organization, new certificates are processed. This process may take several minutes. When it completes, you can log back into ODC Portal.
-
-</div>
+1. Copy the pair(s) of **Redirect URLs** to the list of permitted redirects in the setup page of your external provider. You should copy the pair(s) for both the built-in domain and any active [custom domains](../custom-domains.md). If you're configuring [Okta](okta.md#setup-redirect-urls) you can follow the embedded link for specific guidance. Otherwise see your provider's support documentation for further guidance (for example, [Azure AD](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-redirect-uri)). Click **Next**.
 
 When a provider is assigned for use by the apps, you need to create the logic in ODC Studio for each app you want to use it. Follow the guidance on how to do that [here](apps.md).
 
-## Edit the configuration or delete an external IdP
+## Edit the configuration of an external IdP
 
-You can only edit or delete a provider not in use. Navigate to the **Identity providers** tab in ODC Portal. Then:
+You can only edit a provider not in use. Navigate to the **Identity providers** tab in ODC Portal. Then:
 
-1. Click on the provider card you want to edit or delete.
+1. Click on the provider card you want to edit.
 
-1. Click the ellipsis button to the right of the **Assign** button. Then click the **Edit configuration** or **Delete provider** button to launch the edit page or launch the delete confirm pop-up.
+1. Click the ellipsis button to the right of the **Assign** button. Then click the **Edit configurations** button to launch the edit page.
 
 ## Supported social providers
 
@@ -123,5 +118,5 @@ ODC provides accelerators to add the following social providers easily.
 
 | Provider    |
 | ----------- |
-| Google      |
 | Facebook    |
+| Google      |  
