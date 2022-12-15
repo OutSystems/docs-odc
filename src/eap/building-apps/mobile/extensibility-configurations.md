@@ -57,14 +57,14 @@ Here are some of the use cases of the JSON and how you can change behavior of yo
 The value is hard-coded and lock the screen to portrait.
 
     {
-    "preferences": {
-        "global": [
-        {
-            "name": "orientation",
-            "value": "portrait",
-        }           
-        ]
-    }
+    (...)
+        "preferences": {
+            "global": [{
+                "name": "orientation",
+                "value": "portrait"
+            }]
+        }
+    (...)
     }
 
 ### Define a custom variable
@@ -72,12 +72,14 @@ The value is hard-coded and lock the screen to portrait.
 You can define a variable in  **Data** > **Settings** and the reference it.
 
     {
+    (...)
         "preferences": {
             "global": [{
                 "name": "MySampleSetting",
                 "value": $settings.MobileAppSetting1
             }]
         }
+    (...)
     }
 
 ### Define a private git repository for a custom mobile plugin
@@ -85,27 +87,28 @@ You can define a variable in  **Data** > **Settings** and the reference it.
 The API key is a secret setting, that you can reference in the JSON within the app, then change in the ODC Portal.
 
     {
-    "plugin": {
-        "variables":[
-        {
-            "name": "apiKey",
-            "value": $settings.ApiKey,
+    (...)
+        "plugin": {
+            "variables":[{
+                "name": "apiKey",
+                "value": $settings.ApiKey
+            }]          
         }
-        ]          
-    }
+    (...)
     }
 
 ### Reference an image
 
 You can also reference images in the JSON file.
 
+    
     {
     (...)
-
         "icons": {
             "android": [{
                 "resource": $images.Logo,
                 "density": "ldpi"
-            },
+            }]
+        }
     (...)
     }
