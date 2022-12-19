@@ -99,6 +99,10 @@
         - href: eap/building-apps/ui/interaction/display-data/fetch-data-nl.md
         # Sort results in aggregate
         - href: eap/building-apps/ui/interaction/display-data/sort-aggregate.md
+      # Reuse ui
+      - href: eap/building-apps/ui/reuse/intro.md
+      - topics:
+          - href: eap/building-apps/ui/reuse/block-create-reuse.md
       # Screen Templates
       - href: eap/building-apps/ui/screen-template/intro.md
       - topics: 
