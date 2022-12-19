@@ -40,8 +40,27 @@
       # Data modeling
       - href: eap/building-apps/data/modeling.md 
       - topics:
+       # Data entity
+        - href: eap/building-apps/data/modeling/entity.md
+        - topics:
+            # Create entity
+            - href: eap/building-apps/data/modeling/entity-create.md
+            # Calculated attribute 
+            - href: eap/building-apps/data/modeling/calculated-attribute-create.md
+            #  Excel Bootstrap
+            - href: eap/building-apps/data/modeling/excel-bootstrap.md
+        # Entity Static 
+        - href: eap/building-apps/data/modeling/entity-static.md
         # Entity relationships
         - href: eap/building-apps/data/relationships.md
+        # Relationships between entities
+        - topics:
+          # One to one
+          - href: eap/building-apps/data/modeling/relationship/relationship-one-to-one.md
+          # One to many
+          - href: eap/building-apps/data/modeling/relationship/relationship-one-to-many.md
+          # Many to many
+          - href: eap/building-apps/data/modeling/relationship/relationship-many-to-many.md
       # Sharing data
       - href: eap/building-apps/data/sharing.md
       # Data types
@@ -61,7 +80,40 @@
       # Screen
       - href: eap/building-apps/ui/screen-about.md
       # Creating screens
-      - href: eap/building-apps/ui/screen-creating.md
+      - href: eap/building-apps/ui/creating-screens/screen-creating.md
+      - topics:
+        #Creating screen scratch
+        - href: eap/building-apps/ui/creating-screens/create-screen-scratch.md 
+      # Interaction
+      - href: eap/building-apps/ui/interaction/fetch-display.md
+      - topics:
+        # Aggregate
+        - href: eap/building-apps/ui/interaction/display-data/aggregate.md
+        # Distinct values
+        - href: eap/building-apps/ui/interaction/display-data/distinct.md
+        # Filter results
+        - href: eap/building-apps/ui/interaction/display-data/filter-results.md
+        # Suppported join types
+        - href: eap/building-apps/ui/interaction/display-data/supported-join-types.md
+        # Fetch data using human language
+        - href: eap/building-apps/ui/interaction/display-data/fetch-data-nl.md
+        # Sort results in aggregate
+        - href: eap/building-apps/ui/interaction/display-data/sort-aggregate.md
+      # Screen Templates
+      - href: eap/building-apps/ui/screen-template/intro.md
+      - topics: 
+        # Replace data in screens
+        - href: eap/building-apps/ui/screen-template/replace-data.md 
+        # Template compatiblity
+        - href: eap/building-apps/ui/screen-template/template-compatibility.md
+      # Navigating between screens
+      - topics:
+        # UI Flows
+        - href : eap/building-apps/ui/navigation/ui-flow.md
+        # Navigating to a detail screen 
+        - href: eap/building-apps/ui/navigation/navigate-to-detail-screen.md 
+        # Pass data between screens with input parameters
+        - href: eap/building-apps/ui/navigation/pass-information-between-screens.md
       # UI interactions
       - href: eap/building-apps/ui/ui-interactions.md
       # Customize UI styles
@@ -72,6 +124,18 @@
         - href: eap/building-apps/ui/themes/theme-library.md
       # Custom authentication flows
       - href: eap/building-apps/ui/custom-auth.md
+      #  Block lifecycle events
+      - href: eap/building-apps/ui/screen-block-lifecycle-events.md
+    # Debugging apps
+    - topics:
+      # Breakpoints 
+      - href: eap/building-apps/debugging_apps/breakpoints.md
+      # Watches
+      - href: eap/building-apps/debugging_apps/watches.md
+      # Threads
+      - href: eap/building-apps/debugging_apps/threads.md
+      # Debugger tab reference
+      - href: eap/building-apps/debugging_apps/debugger-ui-reference.md
     # Emails
     - href: eap/building-apps/emails/intro.md
     - topics:
@@ -83,6 +147,69 @@
     - href: eap/building-apps/secure-app-with-roles.md
     # Use public elements
     - href: eap/building-apps/use-public-elements.md
+    # Exposing REST APIs
+    - href: eap/building-apps/exposing_rest/intro.md
+    - topics:
+      # Expose a rest api
+      - href: eap/building-apps/exposing_rest/expose-a-rest-api.md
+      # Customize rest urls
+      - href: eap/building-apps/exposing_rest/customize-rest-urls.md
+      # Document a rest api
+      - href: eap/building-apps/exposing_rest/document-an-exposed-rest-api.md
+      # Throw a custom error
+      - href: eap/building-apps/exposing_rest/throw-a-custom-error-in-an-exposed-rest-api.md
+      # Change the http status code
+      - href: eap/building-apps/exposing_rest/change-the-http-status-code-of-a-rest-api.md
+      # Built in HTTP status codes
+      - href: eap/building-apps/exposing_rest/built-in-http-status-codes.md
+    # Consume REST APIs
+    - href: eap/building-apps/consume_rest/intro.md
+    - topics:
+      # Consume a REST API
+      - href: eap/building-apps/consume_rest/consume-a-rest-api.md
+      # Refresh a REST web service
+      - href: eap/building-apps/consume_rest/refresh-rest-service.md
+      # Unsupported REST Enum use cases
+      - href: eap/building-apps/consume_rest/unsupported-use-cases.md
+      # REST API structures
+      - href: eap/building-apps/consume_rest/rest-api-structures.md
+      # Handling webservice errors 
+      - href: eap/building-apps/consume_rest/handling-rest-errors.md
+      # Simple customization
+      - href: eap/building-apps/consume_rest/simple-customizations.md
+
+    # Secure your app by using roles
+    - href: eap/building-apps/secure-app-with-roles.md
+    # Handling exceptions
+    - href: eap/building-apps/handle-exceptions.md
+    - topics:
+        # Handling mechanism
+        - href: eap/building-apps/handling_exceptions/handling-mechanism.md 
+    # Debugging applications
+    - href: eap/building-apps/debugging-applications.md
+    # Logic 
+    - href: eap/building-apps/logic/intro.md
+    - topics:
+      # Input parameters
+      - href: eap/building-apps/logic/input-parameter.md
+      # Local variables
+      - href: eap/building-apps/logic/local-variable.md
+      # Output parameters
+      - href: eap/building-apps/logic/output-parameter.md
+      # Application ready
+      - href: eap/building-apps/logic/application-ready.md
+      # Application resume
+      - href: eap/building-apps/logic/application-resume.md
+      # Expressions
+      - href: eap/building-apps/logic/expressions.md
+      # Expressions topic
+      - topics:
+        # Expression editor
+        - href: eap/building-apps/logic/expressions/expression-editor.md
+        # Operators
+        - href: eap/building-apps/logic/expressions/operators.md
+        # Operands
+        - href: eap/building-apps/logic/expressions/operands.md
     # Timers
     - href: eap/building-apps/timers/intro.md
     - topics:

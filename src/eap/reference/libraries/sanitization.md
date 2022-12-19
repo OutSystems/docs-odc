@@ -40,8 +40,6 @@ BuildSafe_InClauseIntegerList(ListA) = "2,7"
 BuildSafe_InClauseIntegerList(ListB) = "0"
 ```
 
-For more information, check [Building Dynamic SQL Statements the Right Way](https://success.outsystems.com/Documentation/Best_Practices/Development/Building_Dynamic_SQL_Statements_the_Right_Way).
-
 ### BuildSafe_InClauseTextList
 
 Returns a comma-delimited text value with the encoded version of all the text values provided as input. The returned value can be safely used in a SQL &quot;IN&quot; clause.
@@ -71,12 +69,9 @@ BuildSafe_InClauseTextList(ListA) = "'John Doe','Mary O''Hara'"
 BuildSafe_InClauseTextList(ListB) = "''"
 ```
 
-For more information, check [Building Dynamic SQL Statements the Right Way](https://success.outsystems.com/Documentation/Best_Practices/Development/Building_Dynamic_SQL_Statements_the_Right_Way).
-
 ### SanitizeHtml
 
 Sanitizes the provided HTML using the HtmlSanitizer NuGet package.  
-Note: The underlying library was recently changed from OWASP Java HTML Sanitizer Project. Check the [Release Notes](<https://success.outsystems.com/Support/Release_Notes/11/Platform_Server>) for a summary of what changed.
 
 *Inputs*
 

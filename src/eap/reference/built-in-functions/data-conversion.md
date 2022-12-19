@@ -521,9 +521,8 @@ The value to be converted
 Type: Integer  
 
 ### Examples
-
 ```
-IdentifierToInteger(GetUserId()) = 504 (the result may be different in your module)
+IdentifierToInteger(GetUserId()) = 504 (the result may be different in your app)
 ```
 
 ## IdentifierToLongInteger
@@ -547,9 +546,8 @@ The value to be converted
 Type: LongInteger  
 
 ### Examples
-
 ```
-IdentifierToLongInteger(GetUserId()) = 30 (the result may be different in your module)
+IdentifierToLongInteger(GetUserId()) = 30 (the result may be different in your app)
 ```
 
 ## IdentifierToText 
@@ -575,7 +573,7 @@ Type: Text
 ### Examples
 
 ```
-IdentifierToText(GetUserId()) = "30" (the result may be different in your module)
+IdentifierToText(GetUserId()) = "30" (the result may be different in your app)
 ```
 
 ## IntegerToBoolean

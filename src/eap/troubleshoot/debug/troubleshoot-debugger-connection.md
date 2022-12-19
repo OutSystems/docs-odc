@@ -138,7 +138,7 @@ Ensure that you only have one Android device connected to your PC.
 
 
 ## Issues While Connecting an iOS Device
-<!-- Ask romeo, about this links -->
+
 Check the following sections for more information on how to solve these issues:
 
 * [iTunes is not installed on your PC](<#itunes-is-not-installed-on-your-pc>)

@@ -46,7 +46,7 @@ There are different ways of debugging a mobile app that help you discover, under
 
 Emulate the mobile app using the Google Chrome browser in your PC
 :   Use the Chrome browser in your PC to debug your mobile app if you don't need to execute native plugins, as the native plugins can't run in PC. This option is convenient to test the logic of the app. However, to check the performance or experience of the mobile app, test your app on a real device.
-    Also consider this scenario if all the native plugins in the mobile app have action wrappers defined that return mock data when the plugin isn't available. For more information, check the Best Practices topic on [creating wrapper actions for native plugins](<https://success.outsystems.com/Documentation/Best_Practices/OutSystems_Mobile_Best_Practices#Define_Fallbacks_for_Your_Native_Plugins>).
+    Also consider this scenario if all the native plugins in the mobile app have action wrappers defined that return mock data when the plugin isn't available.
 
 Install the Mobile App on a Device
 :   Test the mobile app directly on a device as your users would run it. It's the best place to test the performance and experience of your app. You can do it in an iOS or Android device. Generate the native app package for your app in ODC Studio using the `Debug` (Android) or `Development` (iOS) build type, install it in the device, and follow the steps below according to your mobile device platform.
@@ -54,15 +54,15 @@ Install the Mobile App on a Device
     To test a mobile app on an iOS device:
     
     1. On your **PC**, install [iTunes](<https://www.apple.com/itunes/download/>).
-    1. In your **device**, turn the "Web Inspector" option **on**. For detailed instructions see [Troubleshoot Debugger Connection Issues](<troubleshoot-debugger-connection.md#web-inspector-is-not-enabled-on-your-device>).
-    1. Connect your mobile device to the PC through a USB cable.
-    1. In your **device**, allow the PC to debug on the device.
+    2. In your **device**, turn the "Web Inspector" option **on**. For detailed instructions see [Troubleshoot Debugger Connection Issues](<troubleshoot-debugger-connection.md#web-inspector-is-not-enabled-on-your-device>).
+    3. Connect your mobile device to the PC through a USB cable.
+    4. In your **device**, allow the PC to debug on the device.
     
     To test a mobile app on an Android device:
     
-    1. In your **device**, turn [USB debugging ON](<https://developer.android.com/studio/debug/dev-options.html#enable>).
-    1. Connect your mobile device to the PC through a USB cable.
-    1. In your **device**, allow the PC to debug on the device.
+    5. In your **device**, turn [USB debugging ON](<https://developer.android.com/studio/debug/dev-options.html#enable>).
+    6. Connect your mobile device to the PC through a USB cable.
+    7. In your **device**, allow the PC to debug on the device.
     
     For more help, check [Troubleshoot Debugger Connection Issues](<troubleshoot-debugger-connection.md>).
 

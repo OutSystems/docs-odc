@@ -333,7 +333,8 @@ When designing the business logic of your apps, you can use built-in functions. 
 | Name |  Description (abbreviated) |
 | --- | --- |
 | [GetBookmarkableURL](built-in-functions/url.md#GetBookmarkableURL) | Returns the URL of the screen that is currently being processed.|
-| [GetOwnerURLPath](built-in-functions/url.md#GetOwnerURLPath) | Returns the URL path of the module that owns the element that is being processed.|
+
+| [GetOwnerURLPath](built-in-functions/url.md#GetOwnerURLPath) | Returns the URL path of the app that owns the element that is being processed.|
 
 ## System actions
 When designing the business logic of your apps, you can use built-in system actions. They're available in:

@@ -43,7 +43,6 @@ The exception to this best practice is for an app that has a small data model. Y
 For a self-contained app, you can use the entities you create for read-only purposes directly. You can write code to read the data through a UI component on a screen or use an aggregate or SQL element to select data.
 
 To manipulate entity data, you create a server action. You can use a server action as an element in a client action that executes when user interacts with a UI widget. You can also call a server action using a timer, an OutSystems tool that runs logic periodically at a scheduled time.
-
 ## Sharing data between OutSystems apps
 
 You share an entity from your producer app by setting its public flag to **Yes**. You can then use entities for read-only purposes in consumer apps.

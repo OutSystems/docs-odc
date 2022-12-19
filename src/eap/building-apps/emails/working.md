@@ -83,12 +83,6 @@ To add an **Input** to your Email and display the value in the email body, follo
 
 When you open this email in the email client, the expression displays "Hello, John!" when the value of **Handle** is `"John"`.
 
-<div class="info" markdown="1">
-
-[Follow security best practices](https://success.outsystems.com/Documentation/Best_Practices/Security/Reactive_web_security_best_practices) when designing emails that have user inputs.
-
-</div>
-
 ## Clipped content warning { #clipped-content-warning }
 
 If the content of an email is too big, some email readers clip the content. For example, Gmail displays **[Message clipped] View entire message** for all emails larger than 102KB. This can happen if you're generating content in your emails with a Theme that has a lot of CSS not designed for emails.

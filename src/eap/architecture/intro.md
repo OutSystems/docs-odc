@@ -12,7 +12,7 @@ OutSystems Developer Cloud is cloud-native. This means that the infrastructure o
 
 ## OutSystems Developer Cloud
 
-In addition to access to **ODC Studio** and [**ODC Portal**](../differences-o11/intro.md#neo-portal), each OutSystems Developer Cloud customer has:
+In addition to access to **ODC Studio** and [**ODC Portal**](../differences-o11/intro.md#ODC-portal), each OutSystems Developer Cloud customer has:
 
 * Access to multi-tenant development **Platform** services.
 * A standard Runtime setup of three stages: **Development**, **Test**, and **Production**.
