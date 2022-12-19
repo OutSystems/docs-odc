@@ -11,6 +11,7 @@ app_type: mobile apps, reactive web apps
 OutSystems allows you to [expose methods using a REST API](<expose-a-rest-api.md>). These methods can be organized under multiple REST APIs.
 
 <div class="info" markdown="1">
+
 If you want to **consume** a REST API, check [Consume REST APIs](../consume_rest/intro.md).
 
 </div>
