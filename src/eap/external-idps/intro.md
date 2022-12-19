@@ -79,12 +79,6 @@ To assign an added external IdP, navigate to the **Identity providers** tab in O
 
 1. Check the summary in **Configuration details**. If you want to proceed, click the **Assign** button (when provider not assigned anywhere yet) or **Manage assignments** (when already assigned).
 
-    <div class="info" markdown="1">
-
-    You can assign a maximum of two identity providers to each app stage.
-
-    </div>
-
 1. Check the boxes of where you want to assign the provider and then click **Next**.
 
     <div class="info" markdown="1">
