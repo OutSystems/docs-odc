@@ -41,6 +41,14 @@ From the ODC Portal, when you click **Create app**, ODC automatically opens ODC 
 
 You create apps in the ODC Portal, and then you use ODC Studio to build out your app. In ODC you deploy to a **stage**. A stage (Development, QA, or Production) is a step within your continuous delivery pipeline.
 
+## Preview an app
+
+Preview your app from ODC Studio or ODC Portal. You can choose different previews, depending on the app type you are developing.
+
+In ODC Studio, every time you publish changes you can click the preview link in the **TrueChange** tab.
+
+In ODC Portal, go to the app details and click **View app**. Web apps run in the browser. OCD shows the preview of the mobile app in the browser as well, and lets you see how your app looks with a different screen size of orientation. To preview the mobile app on a device, to see how the app works natively on the hardware, [create a mobile package](../building-apps/mobile/creating-mobile-package.md) and install it on your device.
+
 ## Access ODC Studio
 
 Before you can use ODC Studio, download it from the ODC Portal. You can use the link on the top-right of the ODC Portal.
@@ -53,4 +61,4 @@ Within each type of app, there are pre-built screen templates you can use to spe
 
 To publish your app, click **1-Click publish**. By default your app publishes to the Development stage.
 
-To find out more about how to get ODC for your organization, click this link: https://www.outsystems.com/low-code-platform/developer-cloud/
+To find out more about how to get ODC for your organization, see [Develop applications that drive revenue, reduce costs, and control risk - at internet scale](https://www.outsystems.com/low-code-platform/developer-cloud/).
