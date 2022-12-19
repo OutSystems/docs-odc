@@ -126,16 +126,6 @@
       - href: eap/building-apps/ui/custom-auth.md
       #  Block lifecycle events
       - href: eap/building-apps/ui/screen-block-lifecycle-events.md
-    # Debugging apps
-    - topics:
-      # Breakpoints 
-      - href: eap/building-apps/debugging_apps/breakpoints.md
-      # Watches
-      - href: eap/building-apps/debugging_apps/watches.md
-      # Threads
-      - href: eap/building-apps/debugging_apps/threads.md
-      # Debugger tab reference
-      - href: eap/building-apps/debugging_apps/debugger-ui-reference.md
     # Emails
     - href: eap/building-apps/emails/intro.md
     - topics:
@@ -184,9 +174,7 @@
     - href: eap/building-apps/handle-exceptions.md
     - topics:
         # Handling mechanism
-        - href: eap/building-apps/handling_exceptions/handling-mechanism.md 
-    # Debugging applications
-    - href: eap/building-apps/debugging-applications.md
+        - href: eap/building-apps/handling_exceptions/handling-mechanism.md
     # Logic 
     - href: eap/building-apps/logic/intro.md
     - topics:
