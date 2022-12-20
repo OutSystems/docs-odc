@@ -6,7 +6,7 @@ guid: 2a8244b0-c439-4463-9e98-3c5f2e4d4aa6
 app_type: mobile apps, reactive web apps
 ---
 
-# Filter Query Results
+# Filter query results
 
 When designing queries, it's common to add conditions to filter results and get exactly what you want from the database. You can do this in OutSystems by adding Filters to Aggregates, as follows:
 

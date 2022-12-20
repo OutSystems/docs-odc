@@ -15,7 +15,7 @@ In Mobile and Web Apps, Aggregates can be client-side or server-side:
 * Client-side Aggregates run in the client logic. You can use them to get data for your widgets when a Screen or a Block loads.
 * Server-side Aggregates run in the server logic. You can use them in the logic flows.
 
-## How to create an Aggregate
+## How to create an aggregate
 
 You can create Aggregates in Screens, Blocks, or Action flows. 
 
@@ -59,7 +59,7 @@ To add more data sources to your Aggregate, follow these steps:
 
 1. Select the join type between your sources.  
 
-For more information, see [Supported Join Types](./supported-join-types.md).
+For more information, see [supported join types](supported-join-types.md).
 
     ![Select join type between sources.](images/select-join-ss.png)
 

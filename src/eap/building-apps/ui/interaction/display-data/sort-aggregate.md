@@ -6,7 +6,7 @@ guid: 4f62a181-c24b-49d7-8a88-95df2253dcf7
 app_type: mobile apps, reactive web apps
 ---
 
-# Sort Results in an Aggregate
+# Sort results in an aggregate
 
 Most times, records display on screens following an order that facilitates reading or finding information.
 

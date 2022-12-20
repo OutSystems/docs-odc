@@ -5,7 +5,7 @@ guid: edee2ac8-5d4c-4423-9e26-cce4b0f45f4c
 app_type: mobile apps, reactive web apps
 ---
 
-# Supported Join Types
+# Supported join types
 
 Usually your data is not stored in a single Entity. So, when performing queries on the data, you need to combine the records that is stored in multiple Entities. This is also known as joining records from multiple Entities.
 

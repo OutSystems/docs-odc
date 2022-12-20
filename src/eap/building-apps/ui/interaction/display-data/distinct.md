@@ -6,7 +6,7 @@ guid: b72114bf-98ec-4f22-89b6-e162569612a1
 app_type: mobile apps, reactive web apps
 ---
 
-# Get Distinct Values from the Database
+# Get distinct values from the database
 
 Database tables may have columns containing repeated values. There are situations when you only want to get the distinct values, instead of all the data including the repetitions. To obtain distinct values of entity attributes, you can use an aggregate with grouped columns.
 
