@@ -172,9 +172,6 @@
       - href: eap/building-apps/consume_rest/handling-rest-errors.md
       # Simple customization
       - href: eap/building-apps/consume_rest/simple-customizations.md
-
-    # Secure your app by using roles
-    - href: eap/building-apps/secure-app-with-roles.md
     # Handling exceptions
     - href: eap/building-apps/handle-exceptions.md
     - topics:
