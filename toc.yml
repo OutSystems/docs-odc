@@ -197,6 +197,15 @@
       - href: eap/building-apps/timers/timer-create-run.md
       # Monitor
       - href: eap/building-apps/timers/timer-monitor.md
+ 
+# Troubleshooting apps
+- href: eap/troubleshoot/debug/intro.md
+- topics:
+    - href: eap/troubleshoot/debug/breakpoints.md
+    - href: eap/troubleshoot/debug/watches.md
+    - href: eap/troubleshoot/debug/threads.md
+    - href: eap/troubleshoot/debug/debugger-ui-reference.md
+    - href: eap/troubleshoot/debug/troubleshoot-debugger-connection.md
 
 # Forge
 - href: eap/forge/intro.md
@@ -221,16 +230,6 @@
   - href: eap/external-idps/azure-ad.md
   - href: eap/external-idps/okta.md
 - href: eap/monitor-apps.md
-
- 
-# Troubleshooting apps
-- href: eap/troubleshoot/debug/intro.md
-- topics:
-    - href: eap/troubleshoot/debug/breakpoints.md
-    - href: eap/troubleshoot/debug/watches.md
-    - href: eap/troubleshoot/debug/threads.md
-    - href: eap/troubleshoot/debug/debugger-ui-reference.md
-    - href: eap/troubleshoot/debug/troubleshoot-debugger-connection.md
 
 # Extensibility
 - href: eap/extensibility/intro.md
