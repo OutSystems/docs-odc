@@ -1,12 +1,12 @@
 ---
-summary: Reference content.
+summary: Learn about OutSystems various elements and language.
 tags:
 locale: en-us
 guid: f9d530c1-f9fa-4b08-9e75-5dfb984402da
 app_type: mobile apps, reactive web apps
 ---
 
-# Reference
+# OutSystems language and elements
 
 ## Libraries
 Libraries provided by OutSystems that you can use to extend the capabilities of your apps. To learn more about how to use these libraries see [here](../building-apps/use-public-elements.md).
