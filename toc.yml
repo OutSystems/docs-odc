@@ -19,6 +19,7 @@
   - href: eap/external-idps/apps.md
   - href: eap/external-idps/azure-ad.md
   - href: eap/external-idps/okta.md
+- href: eap/odc-support.md
 - href: eap/architecture/intro.md
 - topics:
   - href: eap/architecture/networking.md
