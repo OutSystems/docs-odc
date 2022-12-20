@@ -1,30 +1,20 @@
+# Getting started with ODC
 - href: eap/getting-started/intro.md
 - topics:
   - href: eap/getting-started/types-of-apps.md
   - href: eap/getting-started/sample-app.md
+
+# Onboarding for OutSystems developers
 - href: eap/differences-o11/intro.md
 - topics:
   - href: eap/differences-o11/differences-sql.md
-- href: eap/configuration-management/configuration-management.md
-- topics:
-  - href: eap/configuration-management/set-as-secret.md
-  - href: eap/configuration-management/configure-emails.md
-- href: eap/user-management/intro.md
-- href: eap/deploy-apps.md
-- href: eap/monitor-apps.md
-- href: eap/custom-domains.md
-- href: eap/secure-gateway.md
-- href: eap/external-idps/intro.md
-- topics:
-  - href: eap/external-idps/apps.md
-  - href: eap/external-idps/azure-ad.md
-  - href: eap/external-idps/okta.md
-- href: eap/odc-support.md
+
+# Cloud-native architecture of OutSystems Developer Cloud
 - href: eap/architecture/intro.md
 - topics:
   - href: eap/architecture/networking.md
   - href: eap/architecture/identity.md
-  
+
 # Building apps
 - href: eap/building-apps/intro.md
 - topics:
@@ -208,6 +198,31 @@
       # Monitor
       - href: eap/building-apps/timers/timer-monitor.md
 
+# Forge
+- href: eap/forge/intro.md
+- topics:
+  - href: eap/forge/install.md
+  - href: eap/forge/submit.md
+
+# Deploy your apps
+- href: eap/deploy-apps.md
+
+# Configuration management
+- href: eap/configuration-management/configuration-management.md
+- topics:
+  - href: eap/configuration-management/set-as-secret.md
+  - href: eap/configuration-management/configure-emails.md
+- href: eap/user-management/intro.md
+- href: eap/custom-domains.md
+- href: eap/secure-gateway.md
+- href: eap/external-idps/intro.md
+- topics:
+  - href: eap/external-idps/apps.md
+  - href: eap/external-idps/azure-ad.md
+  - href: eap/external-idps/okta.md
+- href: eap/monitor-apps.md
+
+ 
 # Troubleshooting apps
 - href: eap/troubleshoot/debug/intro.md
 - topics:
@@ -229,6 +244,7 @@
     - href: eap/extensibility/plugins/file-viewer/intro.md
     - href: eap/extensibility/plugins/health-fitness/intro.md
     - href: eap/extensibility/plugins/location/intro.md
+
 # Reference
 - href: eap/reference/intro.md
 - topics:
@@ -263,10 +279,7 @@
     - href: eap/reference/built-in-functions/organization.md
     - href: eap/reference/built-in-functions/text.md
     - href: eap/reference/built-in-functions/url.md
-# Forge
-- href: eap/forge/intro.md
-- topics:
-  - href: eap/forge/install.md
-  - href: eap/forge/submit.md
+
 # Known issues
 - href: eap/known-issues/intro.md
+- href: eap/odc-support.md
