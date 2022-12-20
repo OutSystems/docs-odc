@@ -7,3 +7,5 @@ app_type: mobile apps, reactive web apps
 ---
 
 # Extensibility
+
+You can extend the capabilities of your apps beyond the capabilities of OutSystems Developer Cloud (ODC). Forge contains solutions for many use cases, as officially supported or community-contributed components.
