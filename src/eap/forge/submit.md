@@ -37,7 +37,7 @@ By default, the Asset name, the icon, and the short description are the ones def
 1. Log into ODC Portal and select **Forge**, from the left-side menu. A list of assets available to install on your organization displays.  
 1. On the top right, click the **Submit to Forge** button. A list of assets developed in your organization displays.
 1. From this list of assets, select the one you want to submit.
-1. Enter a detailed summary of your asset. Make sure it fully describes the asset's features and the problem(s) it solves.
+1. Enter a detailed description of your asset. Make sure it fully describes the asset's features and the problem(s) it solves.
 1. Add any limitations that might exist, such as images might not size correctly in some browsers.
 1. Add images that best illustrate the asset's features, main use cases, and behavior.
 1. Add the team contact.
@@ -56,7 +56,7 @@ Follow these steps to submit a new version of your asset:
 1. On the top right, click the **Submit to Forge** button. A list of assets developed in your organization displays.
 1. From this list, select the asset with the new version that you want to submit.
 1. Enter release notes that describe the changes you made to the asset.
-1. Enter the detailed description and any limitations, if needed.
+1.Review the detailed description and any limitations. If necessary, edit the information.
 1. Review the images that best illustrate the asset's features, main use cases, and behavior.
 1. Optionally, add or edit the team contact.
 1. Edit the documentation of the asset (if needed).
