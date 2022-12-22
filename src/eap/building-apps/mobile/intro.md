@@ -12,4 +12,7 @@ OutSystems Developer Cloud (ODC) lets you create mobile apps fast. A mobile appl
 
 * A mobile app: These are applications that users install on their phones, have access to the device sensors, can work offline, and have a UX designed for a native experience.
 
+* A progressive web app (PWA): These are applications that users can access from their mobile browsers without installation.
+
 * Mobile backend: Use OutSystems as the backend for your native mobile app, without using the traditional programming tools.
+
