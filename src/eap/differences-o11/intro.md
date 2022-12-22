@@ -113,6 +113,7 @@ The following table lists tasks in the ODC compared to OutSystems 11.
 ## Terminology mapping
  
 The following table summarizes terminology differences between OutSystems 11 and ODC.
+
 | OutSystems 11 name | ODC name | Notes |
 | ----------- | ----------- | ----------- |
 | environment | stage | In ODC, the infrastructure where you develop and run your apps is fundamentally different. However, these terms (environment and stage), both represent the place where you deploy your apps to Development, Test, and Production. See [Deploy apps](../deploy-apps.md) for more information about deploying apps in ODC. |
