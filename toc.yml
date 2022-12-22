@@ -119,6 +119,8 @@
         - href: eap/building-apps/ui/themes/theme-library.md
       # Custom authentication flows
       - href: eap/building-apps/ui/custom-auth.md
+      - topics:
+        - href: eap/building-apps/ui/self-registration.md
       #  Block lifecycle events
       - href: eap/building-apps/ui/screen-block-lifecycle-events.md
     # Emails
