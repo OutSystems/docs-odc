@@ -8,12 +8,6 @@ app_type: mobile apps, reactive web apps
 
 # Distribute as progressive web app
 
-<div class="info" markdown="1">
-
-Project Neo documentation is under construction. It's frequently updated and expanded.
-
-</div>
-
 A progressive web app (PWA) provides a native-like experience without having to distribute a native mobile app. PWA is an emerging technology that combines existing web technologies with modern browser features.
 
 The main benefits of PWAs:
@@ -29,16 +23,16 @@ PWA in OutSystems is a distribution mode for mobile apps. You can simultaneously
 
 ## PWA is active by default
 
-Select **Phone App** or **Tablet App** when you're creating a new app in Service Studio that you want to offer users as a PWA. By default, the progressive web app (PWA) distribution is always active.
+Select **Phone App** or **Tablet App** when you're creating a new app in ODC Studio that you want to offer users as a PWA. By default, the progressive web app (PWA) distribution is always active.
 
 ## Trying out the PWA
 
 To run the WPA, open your mobile device and scan the QR code in one of the following places:
   
-* In Portal, click the app icon to open the detail, then click **Preview app** and look for **As PWA**. 
-* In Service Studio, click the app from the main screen and look under **PWA**.
+* In ODC Portal, click the app icon to open the detail, then click **Preview app** and look for **As PWA**. 
+* In ODC Studio, click the app from the main screen and look under **PWA**.
 
-After you push your app to production, share the QR code from the production stage of Portal to your users.
+After you push your app to production, share the QR code from the production stage of ODC Portal to your users.
 
 ### PWA in Android
 
