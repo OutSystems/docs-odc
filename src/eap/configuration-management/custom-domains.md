@@ -6,7 +6,7 @@ guid: da18534d-84c8-4a52-bca8-85ebb3b1e082
 app_type: mobile apps, reactive web apps
 ---
 
-# Custom domains for apps
+# Configure custom domains for apps
 
 For each stage in which you deploy apps, OutSystems Developer Cloud (ODC) comes with a **built-in** OutSystems domain for end-user access.
 
@@ -17,7 +17,7 @@ For each stage in which you deploy apps, OutSystems Developer Cloud (ODC) comes 
 | Test        | `<customername>-test.outsystems.app` |
 | Production  | `<customername>.outsystems.app`      |
 
-Apps are always accessible to end-users through built-in domains. For example, an app named MyApp deployed to the Development stage is accessible at `<customername>-dev.outsystems.app/MyApp`. If you want to restrict access, you can use [end-user roles](building-apps/secure-app-with-roles.md).
+Apps are always accessible to end-users through built-in domains. For example, an app named MyApp deployed to the Development stage is accessible at `<customername>-dev.outsystems.app/MyApp`. If you want to restrict access, you can use [end-user roles](../building-apps/secure-app-with-roles.md).
 
 In addition, ODC lets you make your apps accessible to end-users through your organization's domain(s). In a given stage, your apps can be available through one or more custom domains that you add to that stage. Each custom domain must be unique to a customer and stage.
 
@@ -48,7 +48,7 @@ You must complete these steps within **72 hours** or the CNAME records expire an
 
 <div class="info" markdown="1">
 
-For each external identity provider in use by your apps, a new pair of redirect URLs is generated for this domain. You must add the new pair of redirect URLs to each active external provider to ensure end-users maintain the ability to authenticate. See the [external IdP documentation](external-idps/intro.md#apply-an-external-idp) for guidance on how to do this. If end-users lose their ability to authenticate, they get 401 errors when trying to access the apps. You can diagnose the problem by looking at the [logs](../eap/monitor-apps.md#logs).
+For each external identity provider in use by your apps, a new pair of redirect URLs is generated for this domain. You must add the new pair of redirect URLs to each active external provider to ensure end-users maintain the ability to authenticate. See the [external IdP documentation](../configuration-management/external-idps/intro.md#apply-an-external-idp) for guidance on how to do this. If end-users lose their ability to authenticate, they get 401 errors when trying to access the apps. You can diagnose the problem by looking at the [logs](../../eap/monitor-apps.md#logs).
 
 </div>
 

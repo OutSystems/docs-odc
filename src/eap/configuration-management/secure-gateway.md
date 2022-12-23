@@ -6,7 +6,7 @@ guid: 9a023d82-da5b-4164-8f3f-9d6c35444b50
 app_type: mobile apps, reactive web apps
 ---
 
-# Setting up a secure gateway to your private network
+# Configure a secure gateway to your private network
 
 Secure Gateways is a OutSystems Developer Cloud (ODC) feature that lets you connect your apps to private data and private services ("endpoints") that aren't accessible by the internet. These endpoints may be in an on-premise network, a private cloud, or a public cloud.
 

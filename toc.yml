@@ -201,6 +201,7 @@
       - href: eap/building-apps/timers/timer-create-run.md
       # Monitor
       - href: eap/building-apps/timers/timer-monitor.md
+    - href: eap/building-apps/set-as-secret.md
  
 # Troubleshooting apps
 - href: eap/troubleshoot/debug/intro.md
@@ -223,16 +224,16 @@
 # Configuration management
 - href: eap/configuration-management/configuration-management.md
 - topics:
-  - href: eap/configuration-management/set-as-secret.md
+  - href: eap/configuration-management/custom-domains.md
+  - href: eap/configuration-management/external-idps/intro.md
+  - topics:
+    - href: eap/configuration-management/external-idps/apps.md
+    - href: eap/configuration-management/external-idps/azure-ad.md
+    - href: eap/configuration-management/external-idps/okta.md
+  - href: eap/configuration-management/secure-gateway.md
   - href: eap/configuration-management/configure-emails.md
+
 - href: eap/user-management/intro.md
-- href: eap/custom-domains.md
-- href: eap/secure-gateway.md
-- href: eap/external-idps/intro.md
-- topics:
-  - href: eap/external-idps/apps.md
-  - href: eap/external-idps/azure-ad.md
-  - href: eap/external-idps/okta.md
 - href: eap/monitor-apps.md
 
 # Extensibility

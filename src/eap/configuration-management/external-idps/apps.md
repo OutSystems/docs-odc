@@ -16,7 +16,7 @@ There are two ways you can do this.
 
 2. [**Modify the built-in login screen to add button(s) for external provider login.**](#modify-the-built-in-login-screen-to-add-buttons-for-external-provider-login) The recommended solution if using multiple external providers or a single external provider and retain the option to login with the built-in provider.
 
-After you complete the steps for your selected solution, republish the app and [promote](../deploy-apps.md) the new revision to the stage(s) where the provider is active.
+After you complete the steps for your selected solution, republish the app and [promote](../../deploy-apps.md) the new revision to the stage(s) where the provider is active.
 
 ## Delete the built-in login screen and redirect to external provider
 
@@ -31,7 +31,7 @@ To load the login action onto the canvas, click the **Interface** tab, then expa
 
     ![Built-in provider flow](images/built-in-provider-flow-ss.png "Built-in provider flow")
 
-1. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the [**GetExternalLoginURL** action](../reference/system-actions/auth.md#getexternalloginurl), select it, and click **Add**.
+1. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the [**GetExternalLoginURL** action](../../reference/system-actions/auth.md#getexternalloginurl), select it, and click **Add**.
 
 1. Click the **Logic** tab. Expand the **Client Actions** > **(System)** folder. Drag the **GetExternalLoginURL** action in place after the **LastRequest** element and connect them.
 
@@ -69,7 +69,7 @@ Click the **Interface** tab, then expand the **UI Flows** > **Common** > **UserI
 
     ![ClientLogout](images/clientlogout-ss.png "ClientLogout")
 
-1. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the [**GetExternalLogoutURL** action](../reference/system-actions/auth.md#getexternallogouturl), select it, and click **Add**.
+1. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the [**GetExternalLogoutURL** action](../../reference/system-actions/auth.md#getexternallogouturl), select it, and click **Add**.
 
     ![ClientLogout Modified](images/clientlogout-mod-ss.png "ClientLogout Modified")
 
@@ -95,7 +95,7 @@ To login with an external provider to the built-in login screen, follow the step
 
 1. In the **On Click** setting select **New Client Action** from the dropdown. A new client action is created, set in the **On Click** setting and displayed on the canvas. Delete the **LoginForm.Valid?** element and associated logic.
 
-1. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the [**GetExternalLoginURL** action](../reference/system-actions/auth.md#getexternalloginurl), select it, and click **Add**.
+1. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the [**GetExternalLoginURL** action](../../reference/system-actions/auth.md#getexternalloginurl), select it, and click **Add**.
 
 1. Click the **Logic** tab. Expand the **Client Actions** > **(System)** folder. Drag the **GetExternalLoginURL** action in place after the **Start** element.
 

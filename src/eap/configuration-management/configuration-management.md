@@ -8,7 +8,9 @@ app_type: mobile apps, reactive web apps
 
 # Configuration management
 
-For DevOps activities, OutSystems Developer Cloud (ODC) Portal lets you adjust the configuration values in your app for each stage (such as development, test, and production). Changes to configuration values don't require you to deploy your app. This increases the speed in which changes to the app are available to customers and reduces the number of times a deployment is necessary.
+OutSystems Developer Cloud (ODC) Portal lets you adjust the configuration values for your apps. Changes to configuration values don't require you to redeploy your app. This increases the speed in which changes to the app are available to customers and reduces the number of times a deployment is necessary.
+
+You configure the supporting infrastructure for your apps at the stage level. Supporting infrastructure includes custom domains and external identity providers. Applying a configuration at the stage level applies to all the apps deployed to the stage.
 
 ## How configuration management works
 
