@@ -24,7 +24,7 @@ The ODC Portal is the central place to manage users, and you can:
 
 ## Permissions
 
-Permissions enable users to perform a task in the Portal, Service Studio, or an app.  Everything a user does in ODC is based on their role and the permissions given to that role. In ODC, only one user is created for each person. But, a single person can have different roles and types of access.
+Permissions enable users to perform a task in the ODC Portal, ODC Studio, or an app.  Everything a user does in ODC is based on their role and the permissions given to that role. In ODC, only one user is created for each person. But, a single person can have different roles and types of access.
 
  When you assign a role to a person, they're automatically granted the permissions selected for that role. You can associate permissions to one or more stages (Development, QA, or Production) and apps. This helps to limit, for example, what a user can do in production.
 
