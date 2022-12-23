@@ -19,7 +19,6 @@ Topic | OutSystems 11 example (SQL Server or Azure SQL Database) | ODC equivalen
 Comparison of Time data type | `[…] WHERE {UseCase_Time}.[Time] > '11:01:41'` | `[…] WHERE {UseCase_Time}.[Time]::time > '11:01:41'`
 Concatenate text string | `[…] WHERE {Org}.[Name] = 'First' + 'Last'` | `[…] WHERE {Org}.[Name] = 'First' \|\| 'Last'`
 INSERT | `INSERT INTO {Product} ({Product}.[Name])`<br/>`VALUES ('abc')` | `INSERT INTO {Product}([Name])`<br/>`VALUES ('abc')`
-ISNULL | `[…] WHERE`<br/>`ISNULL({Department}.[CompanyId])` | `WHERE {Department}.[CompanyId] IS NULL`
 LIKE (Case and accent insensitive) | `[…] WHERE {Org}.[Name] LIKE`<br/>`'%asd%'` | `[…] WHERE`<br/>`caseaccent_normalize({Org}.[Name] collate "default") LIKE caseaccent_normalize('%asd%')`<br/><br/>See [this section](#case-and-accent) for further examples.
 Limiting records | `SELECT {Organization}.* FROM {Organization} TOP 10` | `SELECT {Organization}.* FROM {Organization} LIMIT 10` 
 Random records | `SELECT TOP 1`<br/>`* FROM table`<br/>`ORDER BY NEWID()` | `SELECT * FROM table_name`<br/>`ORDER BY RANDOM()`<br/>`LIMIT 1;` 
