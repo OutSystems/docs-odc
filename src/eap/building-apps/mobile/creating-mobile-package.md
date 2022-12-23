@@ -13,7 +13,13 @@ After you can create a mobile app in ODC (OutSystems Developer Cloud) Studio, yo
 1. Develop your app. You can quickly preview your app in a browser as you develop. 
 1. Try your app on a mobile device by creating a debug package for installation.  
 1. Create your production mobile package.
-1. Distribute your app by submitting it as a package to an app store or sharing it internally for a direct download. 
+1. Distribute your app by submitting it as a package to an app store or sharing it internally for a direct download.
+
+<div class="warning" markdown="1">
+
+Avoid changing the app name, due to [a know issue in the product](../../known-issues/intro.md#changing-app-name).
+
+</div>
 
 ## Creating an iOS or Android Package
 
