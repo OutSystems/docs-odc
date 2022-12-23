@@ -201,8 +201,10 @@
       - href: eap/building-apps/timers/timer-create-run.md
       # Monitor
       - href: eap/building-apps/timers/timer-monitor.md
+    # Set as secret
     - href: eap/building-apps/set-as-secret.md
- 
+    # Deleting apps
+    - href: eap/building-apps/deleting-apps/intro.md
 # Troubleshooting apps
 - href: eap/troubleshoot/debug/intro.md
 - topics:
