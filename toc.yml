@@ -96,6 +96,56 @@
       - href: eap/building-apps/ui/reuse/intro.md
       - topics:
           - href: eap/building-apps/ui/reuse/block-create-reuse.md
+      # Patterns
+      - href: eap/building-apps/ui/patterns/intro.md
+        # Adaptive
+      - topics:
+        - href: eap/building-apps/ui/patterns/adaptive/intro.md
+        - topics:
+          # columns
+          - href: eap/building-apps/ui/patterns/adaptive/columns.md
+          # gallery
+          - href : eap/building-apps/ui/patterns/adaptive/gallery.md
+          # display on device
+          - href : eap/building-apps/ui/patterns/adaptive/displayondevice.md
+          # masterdetail
+          - href : eap/building-apps/ui/patterns/adaptive/masterdetail.md
+      - topics:
+        - href: eap/building-apps/ui/patterns/content/intro.md
+        # Content 
+        - topics:        
+          # accordion  
+          - href: eap/building-apps/ui/patterns/content/accordion.md
+          # alert
+          - href: eap/building-apps/ui/patterns/content/alert.md
+          # blankslate
+          - href: eap/building-apps/ui/patterns/content/blankslate.md
+          # card
+          - href: eap/building-apps/ui/patterns/content/card.md
+          # carditem
+          - href: eap/building-apps/ui/patterns/content/carditem.md
+          # cardsectioned
+          - href: eap/building-apps/ui/patterns/content/cardsectioned.md
+          # chatmessage
+          - href: eap/building-apps/ui/patterns/content/chatmessage.md
+          # flipcontent
+          - href: eap/building-apps/ui/patterns/content/flipcontent.md
+          # floatingcontent
+          - href: eap/building-apps/ui/patterns/content/floatingcontent.md
+          # listitemcontent
+          - href: eap/building-apps/ui/patterns/content/listitemcontent.md
+          # section
+          - href: eap/building-apps/ui/patterns/content/section.md
+          # cardbackground
+          - href: eap/building-apps/ui/patterns/content/cardbackground.md
+          # sectiongroup
+          - href: eap/building-apps/ui/patterns/content/sectiongroup.md 
+          # tag  
+          - href: eap/building-apps/ui/patterns/content/tag.md
+          # tooltip
+          - href: eap/building-apps/ui/patterns/content/tooltip.md
+          # useravatar
+          - href: eap/building-apps/ui/patterns/content/useravatar.md
       # Screen Templates
       - href: eap/building-apps/ui/screen-template/intro.md
       - topics: 
