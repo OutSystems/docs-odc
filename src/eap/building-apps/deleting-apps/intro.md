@@ -28,6 +28,15 @@ In addition, to having the correct permission, you can only **delete an app** if
 
 You can also **delete an app template** if it isn’t a system app template such as a web app template, a Phone app template, a Table app template, a Screen template for Mobile or Web apps.
 
+ <div class="info" markdown="1">
+
+Keep the following in mind when deleting a library:
+
+*  A library's code and configurations are bundled with the app's container image.  Deleting a library doesn't immediately affect the consumer apps that display in the list with warnings at runtime. 
+*  When you delete a library, its settings and configurations can't be changed.  
+*  From the ODC Portal, if you open the detail page of any of these consumer apps  and try to retrieve the apps configuration, an error code (OS-CFGM-40406) displays.
+
+</div>
 ## Impact analysis
 
 To help you determine if performing a delete causes any issues, ODC runs an impact analysis before the delete operation takes place. This analysis checks for any dependencies with apps that might be impacted by deleting an app or library.
