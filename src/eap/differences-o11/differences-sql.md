@@ -20,7 +20,7 @@ Comparison of Time data type | `[…] WHERE {UseCase_Time}.[Time] > '11:01:41'` 
 Concatenate text string | `[…] WHERE {Org}.[Name] = 'First' + 'Last'`| `[…] WHERE {Org}.[Name] = 'First'` \|\| `'Last'`
 INSERT | `INSERT INTO {Product} ({Product}.[Name])`<br/>`VALUES ('abc')` | `INSERT INTO {Product}([Name])`<br/>`VALUES ('abc')`
 LIKE (Case and accent insensitive) | `[…] WHERE {Org}.[Name] LIKE '%asd%'` | `[…] WHERE caseaccent_normalize({Org}.[Name] collate "default") LIKE caseaccent_normalize('%asd%')`<br/><br/>See [this section](#case-and-accent) for further examples.
-Limiting records | `SELECT {Organization}.*`<br/>`FROM {Organization} TOP 10` | `SELECT {Organization}.*`<br/>`FROM {Organization} LIMIT 10` 
+Limiting records | `SELECT TOP 10 *`<br/>`FROM {Organization}` | `SELECT {Organization}.*`<br/>`FROM {Organization} LIMIT 10` 
 Random records | `SELECT TOP 1 *`<br/>`FROM {Org} ORDER BY NEWID()` |  `SELECT {Org}.*`<br/>`FROM {Org} ORDER BY RANDOM()`<br/>`LIMIT 1;`
 Selecting attributes | `SELECT *`<br/>`FROM {Organization}` | `SELECT {Organization}.*`<br/>`FROM {Organization}`
 UPDATE | `UPDATE {Products}`<br/>`SET {Products}.[Name] = 'abc'`<br/>`WHERE {Products}.[Id]= 2` | `UPDATE {Products}`<br/>`SET [Name] = 'abc'`<br/>`WHERE {Products}.[Id] = 2`
