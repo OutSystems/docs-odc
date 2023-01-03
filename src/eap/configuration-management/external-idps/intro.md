@@ -12,7 +12,7 @@ OutSystems Developer Cloud (ODC) comes bundled with Identity Service, a built-in
 
 In addition, you can use an external, self-managed IdP as an authentication provider for your organization and your apps. You can use any IdP that follows the OpenID Connect (OIDC) standard. You can configure most commercial IdPs, such as AzureAD and Okta, to support this standard. ODC supports using **PKCE** (Proof Key for Code Exchange) with external IdPs for an additional layer of security.
 
-You can easily add a [supported social provider](#supported-social-providers) to use social authentication for your organization and your apps.
+You can use an accelerator to easily add [commonly used social providers](#social-accelerators) for use as social authentication for your organization and your apps.
 
 When you successfully configure and save an external IdP to ODC, it becomes an option for use as an active provider for your organization, your apps, or both. You can use multiple active providers for your organization and each stage your apps are deployed to. You must use the same provider(s) for all the apps deployed to a given stage. The following diagram shows an example setup.
 
@@ -37,7 +37,7 @@ If you want a user associated with an external provider to retain their profile 
 
 ODC admins can configure an external IdP by going to the ODC Portal and selecting the **Identity providers** tab. A list of built-in providers and any external IdPs already added displays.
 
-To launch the **New provider** configuration screen, click the **Add Provider** dropdown and select **OpenID Connect** or a supported social provider. Now follow these steps:
+To launch the **New provider** configuration screen, click the **Add Provider** dropdown and select **OpenID Connect** or a social provider. Now follow these steps:
 
 ### OpenID Connect
 
@@ -57,7 +57,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. Click **Save configuration**. ODC tests the configuration and, on success, adds the provider to the list of available providers. If the test fails, a notification with the error displays.
 
-### Supported social provider
+### Social provider with accelerator
 
 1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
 
@@ -98,15 +98,15 @@ To assign an added external IdP, navigate to the **Identity providers** tab in O
 
 When a provider is assigned for use by the apps, you need to create the logic in ODC Studio for each app you want to use it. Follow the guidance on how to do that [here](apps.md).
 
-## Edit the configuration of an external IdP
+## Edit the configuration or delete an external IdP
 
-You can only edit a provider not in use. Navigate to the **Identity providers** tab in ODC Portal. Then:
+You can only edit or delete a provider not in use. Navigate to the **Identity providers** tab in ODC Portal. Then:
 
-1. Click on the provider card you want to edit.
+1. Click on the provider card you want to edit or delete.
 
-1. Click the ellipsis button to the right of the **Assign** button. Then click the **Edit configurations** button to launch the edit page.
+1. Click the ellipsis button to the right of the **Assign** button. Then click the **Edit configuration** or **Delete provider** button to launch the edit page or launch the delete confirm pop-up.
 
-## Supported social providers
+## Social accelerators
 
 ODC provides accelerators to add the following social providers easily.
 
