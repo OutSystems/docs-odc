@@ -146,6 +146,68 @@
           - href: eap/building-apps/ui/patterns/content/tooltip.md
           # useravatar
           - href: eap/building-apps/ui/patterns/content/useravatar.md
+      # Interaction
+      - topics: 
+        - href: eap/building-apps/ui/patterns/interaction/intro.md
+        - topics:
+          - href: eap/building-apps/ui/patterns/interaction/actionsheet.md
+          - href: eap/building-apps/ui/patterns/interaction/animate.md
+          - href: eap/building-apps/ui/patterns/interaction/animatedlabel.md
+          - href: eap/building-apps/ui/patterns/interaction/bottomsheet.md
+          - href: eap/building-apps/ui/patterns/interaction/carousel.md
+          - href: eap/building-apps/ui/patterns/interaction/datepicker.md
+          - href: eap/building-apps/ui/patterns/interaction/datepickerrange.md
+          - href: eap/building-apps/ui/patterns/interaction/dropdownsearch.md
+          - href: eap/building-apps/ui/patterns/interaction/dropdowntags.md
+          - href: eap/building-apps/ui/patterns/interaction/floatingactions.md
+          - href: eap/building-apps/ui/patterns/interaction/inputwithicon.md
+          - href: eap/building-apps/ui/patterns/interaction/lightboximage.md
+          - href: eap/building-apps/ui/patterns/interaction/monthpicker.md
+          - href: eap/building-apps/ui/patterns/interaction/map/intro.md
+          - href: eap/building-apps/ui/patterns/interaction/notification.md
+          - href: eap/building-apps/ui/patterns/interaction/rangeslider.md
+          - href: eap/building-apps/ui/patterns/interaction/rangesliderinterval.md
+          - href: eap/building-apps/ui/patterns/interaction/scrollablearea.md
+          - href: eap/building-apps/ui/patterns/interaction/search.md
+          - href: eap/building-apps/ui/patterns/interaction/sidebar.md
+          - href: eap/building-apps/ui/patterns/interaction/stackedcards.md
+          - href: eap/building-apps/ui/patterns/interaction/timepicker.md
+          - href: eap/building-apps/ui/patterns/interaction/video.md
+      # Navigation
+      - topics:
+        - href: eap/building-apps/ui/patterns/navigation/intro.md
+        - topics:
+          - href: eap/building-apps/ui/patterns/navigation/bottombaritem.md
+          - href: eap/building-apps/ui/patterns/navigation/breadcrumbs.md
+          - href: eap/building-apps/ui/patterns/navigation/pagination.md
+          - href: eap/building-apps/ui/patterns/navigation/sectionindex.md
+          - href: eap/building-apps/ui/patterns/navigation/submenu.md
+          - href: eap/building-apps/ui/patterns/navigation/tabs.md
+          - href: eap/building-apps/ui/patterns/navigation/timelineitem.md
+          - href: eap/building-apps/ui/patterns/navigation/wizard.md
+      # Numbers
+      - topics:
+        - href: eap/building-apps/ui/patterns/numbers/intro.md
+        - topics:
+          - href: eap/building-apps/ui/patterns/numbers/badge.md
+          - href: eap/building-apps/ui/patterns/numbers/counter.md
+          - href: eap/building-apps/ui/patterns/numbers/iconbadge.md
+          - href: eap/building-apps/ui/patterns/numbers/progressbar.md
+          - href: eap/building-apps/ui/patterns/numbers/progresscircle.md
+          - href: eap/building-apps/ui/patterns/numbers/rating.md
+      # Utilities
+        - topics:
+          - href: eap/building-apps/ui/patterns/utilities/intro.md
+          - topics:
+            - href: eap/building-apps/ui/patterns/utilities/aligncenter.md
+            - href: eap/building-apps/ui/patterns/utilities/buttonloading.md
+            - href: eap/building-apps/ui/patterns/utilities/centercontent.md
+            - href: eap/building-apps/ui/patterns/utilities/inlinesvg.md
+            - href: eap/building-apps/ui/patterns/utilities/margincontainer.md
+            - href: eap/building-apps/ui/patterns/utilities/mouseevents.md
+            - href: eap/building-apps/ui/patterns/utilities/separator.md
+            - href: eap/building-apps/ui/patterns/utilities/swipeevents.md
+            - href: eap/building-apps/ui/patterns/utilities/touchevents.md
       # Screen Templates
       - href: eap/building-apps/ui/screen-template/intro.md
       - topics: 
