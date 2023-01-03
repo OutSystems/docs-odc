@@ -316,7 +316,7 @@
     # Set as secret
     - href: eap/building-apps/set-as-secret.md
     # Deleting apps
-    - href: eap/building-apps/deleting-apps.md
+    - href: eap/building-apps/deleting-apps/intro.md
 # Troubleshooting apps
 - href: eap/troubleshoot/debug/intro.md
 - topics:
