@@ -10,7 +10,7 @@ app_type: mobile apps, reactive web apps
 
 During the development process, you may create apps or libraries for testing. As time goes on, these apps or libraries may no longer be needed. OutSystems Developer Cloud (ODC) lets you safely delete apps, libraries, and with them data from the Development stage. Having a clean stage saves on resources and makes it faster to find the apps and libraries you need.
 
-To delete an app or library first go to the the ODC Portal and select the app or library you want to delete. In the details screen, click the three-dots button in the upper-right corner and select **Delete**. There are three likely outcomes:
+To delete an app or library first go to the ODC Portal and select the app or library you want to delete. In the details screen, click the three-dots button in the upper-right corner and select **Delete**. There are three likely outcomes:
 
 * You can delete your app or library if it contains no dependencies or consumers.
 * You can still delete your app or library in case of a warning. It raises errors in the dependent apps and libraries. 
@@ -32,11 +32,12 @@ You can also **delete an app template** if it isn’t a system app template such
 
 Keep the following in mind when deleting a library:
 
-*  A library's code and configurations are bundled with the app's container image.  Deleting a library doesn't immediately affect the consumer apps that display in the list with warnings at runtime. 
-*  When you delete a library, its settings and configurations can't be changed.  
-*  From the ODC Portal, if you open the detail page of any of these consumer apps  and try to retrieve the apps configuration, an error code (OS-CFGM-40406) displays.
+*  A library's code and configurations are bundled with the app's container image. Deleting a library doesn't immediately affect the consumer apps that display in the list with warnings at runtime. 
+*  When you delete a library, its settings and configurations can't be changed.
+*  From the ODC Portal, if you open the detail page of any of these consumer apps and try to retrieve the apps configuration, an error code (OS-CFGM-40406) displays.
 
 </div>
+
 ## Impact analysis
 
 To help you determine if performing a delete causes any issues, ODC runs an impact analysis before the delete operation takes place. This analysis checks for any dependencies with apps that might be impacted by deleting an app or library.
