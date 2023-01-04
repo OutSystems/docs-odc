@@ -49,8 +49,8 @@ In ODC, the way you reuse elements across apps differs from OutSystems 11. Apps 
 
 Note the following regarding reuse in ODC:
 
-* Dependencies between apps (Web Apps or Mobile Apps) are always weak, which means that entities shared between apps are always read-only; in ODC, to write to entities, you must create a service action.
-* Relationships between entities in different apps work differently. In ODC
+* Dependencies between apps (Web Apps or Mobile Apps) are always weak, which means that entities shared between apps are always read-only. To write to a shared entity from another app, you must create a service action.
+* Relationships between entities in different apps work differently.
     * The delete rule is always set to **ignore**.
     * A database constraint isn't created in the database, as is done with OutSystems 11.
 * Apps (Web or Mobile) can have strong dependencies only to Libraries; See [Reuse elements across apps](../building-apps/architecture/reuse-elements.md) for more information.
