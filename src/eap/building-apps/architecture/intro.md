@@ -41,7 +41,7 @@ Containerization makes your apps highly scalable. Apps scale requests and users 
 
 ## Libraries in ODC
 
-Libraries let you share code between apps. It's easy to create elements such as service actions or screens and use them in multiple apps. Libraries work similarly to packages such as NuGet in .NET or npm in JavaScript. Libraries keep the elements centralized, reducing maintenance cost and promoting ownership.
+Libraries let you share code between apps. Libraries work similarly to packages such as NuGet in .NET or npm in JavaScript. Libraries keep the elements centralized, reducing maintenance cost and promoting ownership.
 
 Apps can reference libraries, and libraries can also reference other libraries. This creates a strong dependency. This means that if something in a library changes and an app is consuming it can have an impact that leads to breaking changes.
 
