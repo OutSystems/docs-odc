@@ -48,7 +48,7 @@ When the Runtime Load Balancer receives a request, it routes it to the target en
 
 ## Request route
 
-Requests to both the Platform and Runtime first go through a WAF, which filters malicious requests. The firewall runs on a CDN, responsible for routing the request. In the case of a Platform request, the request gets routed to the target endpoint of the target multi-tenant Platform service. In the case of a Runtime request, the request gets routed to the target endpoint of the target app. The intermediaries between the CDN and the endpoint are the Identity Service, responsible for user identity authentication and authorization, and Load Balancer.
+Requests to both the Platform and Runtime first go through the CDN, responsible for routing the request. The WAF runs on the CDN and filters malicious requests. In the case of a Platform request, the request gets routed to the target endpoint of the target multi-tenant Platform service. In the case of a Runtime request, the request gets routed to the target endpoint of the target app. The intermediaries between the CDN and the endpoint are the Identity Service, responsible for user identity authentication and authorization, and Load Balancer.
 
 Each request is HTTPS so fully encrypted using Transport Layer Security (TLS).
 
