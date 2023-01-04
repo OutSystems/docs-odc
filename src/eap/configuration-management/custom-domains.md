@@ -38,7 +38,7 @@ To add a custom domain, from the ODC Portal, select **Configurations** > **Domai
 1. Click the dropdown menu and select the stage for which you want to add a domain.
 1. Click the **Add domain** button to display the **Add a domain** popup box.
 1. Enter the domain you want to add, then click **Add**. The **Set up your domain** screen displays with the **Pending validation** status next to the domain name.
-1. Now, you must **Validate ownership of the domain** and **Point the domain to your apps**. You do this by adding the two provided CNAME records, two name-value pairs, to the DNS records of your domain registrar. To add a **CNAME** record, follow the steps in the [box below](#add-CNAME-box).
+1. Now, you must **Validate ownership of the domain** and **Point the domain to your apps**. You do this by adding the two provided CNAME records, two name-value pairs, to the DNS records of your domain registrar (the company that manages the reservation of your domain name). To add a **CNAME** record, follow the steps in the [box below](#add-CNAME-box).
 
 <div class="warning" markdown="1">
 
