@@ -45,8 +45,8 @@ For each Secure Gateway, a list of connected endpoint(s) of the form `secure-gat
 
 You use these addresses as you would use a public internet address in app development in ODC Studio.
 
-For example, to add multiple REST API methods from a service hello at the address `secure-gateway:8081`, you would input the URL as `http://secure-gateway:8081/hello`:
+For example, to add multiple REST API methods from a service hello at the address `secure-gateway:8081`, you would input the URL as `https://secure-gateway:8081/hello`:
 
-![Consume REST API methods](images/consume-REST-API-methods-ss.png "Consume REST API methods")
+![Consume REST API methods](images/consume-REST-API-methods-odcs.png "Consume REST API methods")
 
 When you click **Add methods**, ODC retrieves the swagger specification from the connected endpoint.
