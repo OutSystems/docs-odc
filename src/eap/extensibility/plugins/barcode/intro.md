@@ -18,7 +18,7 @@ See [Adding plugins](../intro.md#adding-plugins) to learn how to install and ref
 
 ## Demo app
 
-OutSystems provides a demo app to help you learn how to use this plugin. Install the [Barcode Demo App](https://www.outsystems.com/forge/component-versions/1403) from Forge and then open the app in ODC Studio. The demo app contains logic for common use cases, that you can examine and create in your apps. For example, how to:
+OutSystems provides a demo app to help you learn how to use this plugin. Install the Barcode Sample App from Forge and then open the app in ODC Studio. The demo app contains logic for common use cases, that you can examine and create in your apps. For example, how to:
 
 * Scan a code
 * Use the a predefined UI block
