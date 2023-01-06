@@ -28,7 +28,7 @@ You can use the Lightbox Image UI Pattern to open smaller thumbnail images in fu
     
     ![](images/lightboxmob-image-3.png)
 
-    Note: In this example, the image property is set to **Local Image**. You can also choose  [External URL or Binary Data images]().
+    **Note:** In this example, the image property Type is set to **Local** image. You can also add External and Binary Data images.
 
 1. Repeat step 3 for each of the images.
 

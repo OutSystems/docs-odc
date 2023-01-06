@@ -40,7 +40,7 @@ The Carousel Pattern is based on the Splide.js library (v3). For more informatio
 
 1. Select the **Image** widget, and on the **Properties** tab, from the **Image** drop-down, select or import the image you want in the Carousel. 
 
-    **Note:** In this example, the image Type is set to Local image. You can also add [External and Binary Data images](). In this example, the image property Type is set to **Local** image. You can also add External and Binary Data images.   
+    **Note:** In this example, the image property Type is set to **Local** image. You can also add External and Binary Data images.
 
     ![Set image type](images/carousel-imagetype-ss.png)   
 
