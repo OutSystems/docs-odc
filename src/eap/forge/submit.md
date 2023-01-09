@@ -12,7 +12,7 @@ Forge is a repository of reusable software assets that help overcome technical c
 
 The following diagram shows the asset submission journey. The journey is slightly different for new assets and updates to existing assets. 
 
-![Submission process in Forge](images/submit-asset-forge-diag.png)
+![Submission process in Forge](images/submit-assets-forge-diag.png)
 
 When you submit a new asset, it gets reviewed by the OutSystems Forge team to make sure it meets the requirements. The asset is added to the Forge Repository, and from ODC Portal, you can see it in Forge and edit the information on the detail page. The asset is only visible to you (the owner) and not to users outside your organization. Once it is approved, all users outside your organization can access your asset. Users see an **Install** button on the asset. If it's a new version, users see an **Update** button, indicating that a new version of the asset is available to install.
 
