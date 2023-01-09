@@ -61,3 +61,4 @@ Follow these steps to submit a new version of your asset:
 1. Optionally, add or edit the team contact.
 1. Edit the documentation of the asset (if needed).
 1. Click **Submit** to finalize the process.
+
