@@ -108,12 +108,12 @@ New users must set up their own passwords. The password must be at least 12 char
 
 ### Manage user passwords
 
-Only users can manage their passwords. Users can update their passwords from the **ODC Portal** > **User dropdown** > **Update password**.
+Users can only manage their own password. Users can change their password using the **ODC Portal** > **User dropdown** > **Change password**.
 
-Users can also update a forgotten password  from the Login page, by clicking **Forgot password**.
+Users can also recover their forgotten password from the login page by clicking **Forgot password**.
 
 <div class="info" markdown="1">
 
-Admins don't have permission to change or reset a password.
+Admins don't have permission to change or reset other users' passwords.
 
 </div>
