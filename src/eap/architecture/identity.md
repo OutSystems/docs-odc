@@ -8,7 +8,7 @@ app_type: mobile apps, reactive web apps
 
 # Architecture of authentication and authorization mechanism
 
-This article provides an overview of architecture of the Identity Service of OutSystems Developer Cloud (ODC).
+This article provides an overview of the architecture of the Identity Service of OutSystems Developer Cloud (ODC).
 
 The Identity Service is the built-in identity provider (IdP) of the Platform and the Runtime. It verifies each HTTPS request comes from an authenticated and authorized user for the Platform services and your apps.
 
@@ -20,7 +20,7 @@ In addition, you can use an external, self-managed OpenID Connect (OIDC) IdP as 
 
 Your organization's developers, DevOps engineers and architects are granted **organization permissions** to use ODC Studio and ODC Portal to access the Platform services.
 
-Users of your apps are given **app roles** to access secured screens, data and logic flows. Developers create app roles in ODC Studio and assign them to users in ODC Portal. 
+Users of your apps are granted **app permissions** to access secured screens, data and logic flows. Developers create app roles in ODC Studio and assign them to users in ODC Portal. 
 
 Go to [User management](../user-management/intro.md) for more information on user permissions and roles.
 
@@ -35,7 +35,7 @@ Apps run in containers in the Runtime and expose secure REST API endpoints. For 
 The Identity Service is built on JSON Web Token (JWT) technology, an open standard the Identity Service uses to define identity information as a JSON object. The key benefits of this technology include: 
 
 * JWTs are cryptographically signed using a public/private key pair which safeguards them from being modified by an attacker and ensures their authenticity.
-* JWTs are self-contained, meaning they're quick to verify as they don't require a server database lookup. This means quick access to the Platform services and apps.
+* JWTs are self-contained, meaning they're quick to validate as they don't require a server database lookup. This means quick access to the Platform services and apps.
 
 The Identity Service follows the OIDC standard, an identity layer built on top of the OAuth 2 protocol.
 
@@ -45,7 +45,7 @@ The following diagram shows an example of a user authentication and authorizatio
 
 ![Identity flow](images/identity-flow-authorization-diag.png)
 
-The Identity Service or external IdP checks the following conditions to **verify access token**:
+The Identity Service or external IdP checks the following conditions to **validate access token**:
 
 1. User information is valid.
 1. Client information is valid.
@@ -53,10 +53,11 @@ The Identity Service or external IdP checks the following conditions to **verify
 1. Current time is after the token's valid from time.
 1. Issue time of the token is in the past.
 1. Cryptographic signature is valid.
-1. User has correct permission.
 
-If any of the conditions (1)-(6) fail, the Identity Service or external IdP **rejects the HTTPS request** and revokes the ID and access tokens. Users must authenticate again by logging in to the client. If condition (7) fails, the Identity Service **rejects the HTTPS request** and returns an authorization error.
+If any of the conditions (1)-(6) fail, the Identity Service or external IdP rejects the HTTPS request and revokes the ID and access tokens. Users must authenticate again by logging in to the client.
 
-The **ID** token contains information about the identity of the authenticated user, such as name and email. The **access** token contains information about the user's permissions. Transfer of JWTs between the client and Identity Service or external IdP is over the OAuth 2 protocol.
+If the token validation is successful, the edge of the service checks the user's permission. If the permission check fails, the service rejects the HTTPS request and returns an error to the client.
+
+The **ID** token contains information about the identity of the authenticated user, such as name and email. The **access** token contains information about the user's permissions. Transfer of JWTs between the client and service is over the OAuth 2 protocol.
 
 In the diagram, a user working in ODC Portal to access a REST API endpoint in a second Platform service is a valid example. Another valid example is a user working in a browser to access a REST API endpoint on a protected screen in an app.
