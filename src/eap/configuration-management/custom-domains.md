@@ -39,6 +39,7 @@ To add a custom domain, from the ODC Portal, select **Configurations** > **Domai
 1. Click the **Add domain** button to display the **Add a domain** popup box.
 1. Enter the domain you want to add, then click **Add**. The **Set up your domain** screen displays with the **Pending validation** status next to the domain name.
 1. Now, you must **Validate ownership of the domain** and **Point the domain to your apps**. You do this by adding the two provided CNAME records, two name-value pairs, to the DNS records of your domain registrar (the company that manages the reservation of your domain name). To add a **CNAME** record, follow the steps in the [box below](#add-CNAME-box).
+1. ODC uses AWS Certificate Manager (ACM) to issue certificates. If your domain has Certification Authority Authorization (CAA) enabled, you must add a DNS record to specify that ACM is allowed to issue a certificate for your domain. The process of adding a DNS record is detailed in the [ACM documentation](https://docs.aws.amazon.com/acm/latest/userguide/setup-caa.html).
 
 <div class="warning" markdown="1">
 
