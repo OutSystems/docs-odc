@@ -27,7 +27,7 @@ Select **Phone App** or **Tablet App** when you're creating a new app in ODC Stu
 
 ## Trying out the PWA
 
-To run the WPA, open your mobile device and scan the QR code in one of the following places:
+To run the PWA, open your mobile device and scan the QR code in one of the following places:
   
 * In ODC Portal, click the app icon to open the detail, then click **Preview app** and look for **As PWA**. 
 * In ODC Studio, click the app from the main screen and look under **PWA**.
