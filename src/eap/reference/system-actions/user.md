@@ -36,6 +36,31 @@ _Outputs_
 :   Type: [ChangePasswordResult](#changepasswordresult)
     Result of the password change action. Returns boolean values for the complexity policy failed if unsuccessful.
 
+### FinishResetPassword
+_Client action_
+
+Finalizes the reset password operation, using a verification code that can be received by email. Throws an exception if the built-in identity provider is disabled for the current app.
+
+_Inputs_
+
+**Email**
+:   Type: Email. Mandatory.
+    Email of the user.
+
+**VerificationCode**
+:   Type: Text. Mandatory.
+    Verification code for the password change operation.
+
+**NewPassword**
+:   Type: Text. Mandatory.
+    New password defined by the user.
+
+_Outputs_
+
+**FinishResetPasswordResult**
+:   Type: [FinishResetPasswordResult](#finishpasswordresetresult)
+    Result of the reset password action. Returns the failure reason if unsuccessful.
+
 ### FinishUserRegistration
 _Client action_
 
@@ -135,7 +160,24 @@ _Inputs_
 **Email**
 :   Type: Text. Mandatory.
     User email that will receive a recovery link. If no user with such email is found, no email will be sent.
+    
+### StartResetPassword
+_Server action_
 
+Triggers the reset password operation, returning a verification code that can be sent by email to the user. Use the FinishResetPassword action, which receives a verification code as an input, to complete the password reset operation. Throws an exception if the built-in identity provider is disabled for the current app.
+
+_Inputs_
+
+**Email**
+:   Type: Text. Mandatory.
+    Email of the user.
+
+_Outputs_
+
+**StartResetPasswordResult**
+:   Type: [StartResetPasswordResult](#startpasswordresetresult)
+    Result of the action. Returns the verification code if successful.
+    
 ### StartUserRegistration
 _Server action_
 
@@ -207,6 +249,16 @@ Success
 ChangePasswordFailureReason
 :   Type: ChangePasswordFailureReason
 
+### FinishPasswordResetResult
+
+*Attributes*
+
+Success
+:   Type: Boolean
+
+FinishResetPasswordFailureReason
+:   Type: FinishResetPasswordFailureReason
+
 ### FinishUserRegistrationResult
 
 *Attributes*
@@ -270,6 +322,16 @@ Success
 
 ResetPasswordFailureReason
 :   Type: ResetPasswordFailureReason
+
+### StartPasswordResetResult
+
+*Attributes*
+
+Success
+:   Type: Boolean
+
+VerificationCode
+:   Type: Text
 
 ### UserInfo
 
