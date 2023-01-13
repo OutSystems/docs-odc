@@ -105,11 +105,11 @@
           # columns
           - href: eap/building-apps/ui/patterns/adaptive/columns.md
           # gallery
-          - href : eap/building-apps/ui/patterns/adaptive/gallery.md
+          - href: eap/building-apps/ui/patterns/adaptive/gallery.md
           # display on device
-          - href : eap/building-apps/ui/patterns/adaptive/displayondevice.md
+          - href: eap/building-apps/ui/patterns/adaptive/displayondevice.md
           # masterdetail
-          - href : eap/building-apps/ui/patterns/adaptive/masterdetail.md
+          - href: eap/building-apps/ui/patterns/adaptive/masterdetail.md
       - topics:
         - href: eap/building-apps/ui/patterns/content/intro.md
         # Content 
@@ -218,7 +218,7 @@
       # Navigating between screens
       - topics:
         # UI Flows
-        - href : eap/building-apps/ui/navigation/ui-flow.md
+        - href: eap/building-apps/ui/navigation/ui-flow.md
         # Navigating to a detail screen 
         - href: eap/building-apps/ui/navigation/navigate-to-detail-screen.md 
         # Pass data between screens with input parameters
