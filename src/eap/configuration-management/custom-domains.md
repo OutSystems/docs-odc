@@ -91,6 +91,10 @@ To delete a custom domain, from the ODC Portal, navigate to **Configurations** >
 
 <div class="info" markdown="1">
 
-You can now delete the CNAME records you added for the domain from the DNS records of your domain registrar. See your domain registrar's support documentation for instructions on how to delete a record. Once you delete the records, the certificate ODC issued for the domain won't automatically renew and will expire.
+You can now delete the CNAME records you added for the domain from the DNS records of your domain registrar. To delete records, see your domain registrar's support documentation for instruction. The certificate ODC issued for the domain won't automatically renew and so will expire when you delete the records.
 
 </div>
+
+## Developing apps with custom domains
+
+When an app uses a background process to generate the URL of a screen, the built-in domain is used. You override the build-in domain by building an expression of the URL with the custom domain, for example in the case of a [link widget in an email](../building-apps/emails/widgets.md#widgets-available-in-emails). To help you build multiple expressions you can create an app setting, for example **App_Domain**, containing the domain.
