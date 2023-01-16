@@ -310,7 +310,7 @@
         - href: eap/building-apps/logic/expressions/operators.md
         # Operands
         - href: eap/building-apps/logic/expressions/operands.md
-        
+
     # Timers
     - href: eap/building-apps/timers/intro.md
     - topics:
@@ -322,6 +322,7 @@
     - href: eap/building-apps/set-as-secret.md
     # Deleting apps
     - href: eap/building-apps/deleting-apps/intro.md
+    
 # Troubleshooting apps
 - href: eap/troubleshoot/debug/intro.md
 - topics:
