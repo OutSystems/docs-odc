@@ -237,7 +237,7 @@
         - href: eap/building-apps/ui/self-registration.md
       #  Block lifecycle events
       - href: eap/building-apps/ui/screen-block-lifecycle-events.md
-      
+
     # Emails
     - href: eap/building-apps/emails/intro.md
     - topics:
@@ -310,6 +310,7 @@
         - href: eap/building-apps/logic/expressions/operators.md
         # Operands
         - href: eap/building-apps/logic/expressions/operands.md
+        
     # Timers
     - href: eap/building-apps/timers/intro.md
     - topics:
