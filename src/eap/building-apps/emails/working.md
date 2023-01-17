@@ -58,7 +58,7 @@ You can customize the content of your emails by adding information to the corres
 
 To add an **Input** to your Email and display the value in the email body, follow these steps:
 
-1. Add an Email to your app](#creating-a-new-email) and optionally add some text(#adding-content-to-email).
+1. Add an [Email to your app](#create-a-new-email) and optionally add [some text](#add-content-to-an-email).
 
 1. From the **Interface** tab, right-click the Email and from the menu, select **Add Input Parameter**. ODC Studio adds an Input Parameter.
 
