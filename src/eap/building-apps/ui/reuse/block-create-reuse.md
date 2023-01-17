@@ -16,7 +16,7 @@ Here are notes about reusing Block across **different apps**:
 
 ## Using Blocks
 
-1. In a UI Flow, add a Block (in Reactive Web and Mobile Apps) or a Web Block (in Traditional Web Apps). 
+1. In a UI Flow, add a Block.
 1. Implement the user interface and logic in the new Block.
 1. Set the Block as public if you want to reuse it across apps.
 1. Drag it the Block to the Screen where you want to use it. If you want to use the Block in another App, you first need to reference the Block.
