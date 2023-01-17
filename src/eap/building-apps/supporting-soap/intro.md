@@ -26,7 +26,7 @@ In your AWS account:
 
 In your ODC organization:
 
-* **AWS Signature** component from Forge (not supported)
+* **AWS Signature Version 4** component from Forge (not supported)
 
 ## Resources
 
