@@ -66,7 +66,16 @@
       # Extensibility Configurations
       - href: eap/building-apps/mobile/extensibility-configurations.md
       # Keeping apps up to date for your users 
-      - href: eap/building-apps/mobile/apps-up-to-date.md 
+      - href: eap/building-apps/mobile/apps-up-to-date.md
+      - href: eap/building-apps/mobile/plugins/intro.md
+      - topics:
+        - href: eap/building-apps/mobile/plugins/barcode/intro.md
+        - href: eap/building-apps/mobile/plugins/camera/intro.md
+        - href: eap/building-apps/mobile/plugins/file-plugin/intro.md
+        - href: eap/building-apps/mobile/plugins/file-transfer-plugin/intro.md
+        - href: eap/building-apps/mobile/plugins/file-viewer/intro.md
+        - href: eap/building-apps/mobile/plugins/health-fitness/intro.md
+        - href: eap/building-apps/mobile/plugins/location/intro.md 
     # UI
     - href: eap/building-apps/ui/intro.md
     - topics:
@@ -355,19 +364,6 @@
 
 - href: eap/user-management/intro.md
 - href: eap/monitor-apps.md
-
-# Extensibility
-- href: eap/extensibility/intro.md
-- topics:
-  - href: eap/extensibility/plugins/intro.md
-  - topics:
-    - href: eap/extensibility/plugins/barcode/intro.md
-    - href: eap/extensibility/plugins/camera/intro.md
-    - href: eap/extensibility/plugins/file-plugin/intro.md
-    - href: eap/extensibility/plugins/file-transfer-plugin/intro.md
-    - href: eap/extensibility/plugins/file-viewer/intro.md
-    - href: eap/extensibility/plugins/health-fitness/intro.md
-    - href: eap/extensibility/plugins/location/intro.md
 
 # Reference
 - href: eap/reference/intro.md
