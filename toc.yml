@@ -15,7 +15,7 @@
   - href: eap/architecture/networking.md
   - href: eap/architecture/identity.md
 
-# Building apps
+# Building apps in ODC
 - href: eap/building-apps/intro.md
 - topics:
     # Architecture
