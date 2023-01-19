@@ -39,14 +39,14 @@ If you deactivate a Secure Gateway, the tunnel(s) are deleted and your apps can'
 
 To refresh the token, click the Refresh icon. You must then stop each instance of the Cloud Connector and run with the new Token.
 
-## Consume endpoints in your apps
+## Use endpoints in your apps
 
-For each Secure Gateway, a list of connected endpoint(s) of the form `secure-gateway:<port>` is available from the member of your team responsible for running Cloud Connector.
+For each Secure Gateway, a list of connected endpoint(s) of the form `secure-gateway:<port>` and associated swagger specification file(s) is available from the member of your team responsible for running Cloud Connector.
 
-You use these addresses as you would use a public internet address in app development in ODC Studio.
+For each endpoint you want to use in your app, follow the procedure under [Consume several methods of a REST API](../building-apps/consume_rest/consume-a-rest-api.md#consume-several-methods-of-a-rest-api--all-methods) using the swagger specification file for the endpoint. After you complete the procedure, replace the first part of **Base URL** setting with `https://secure-gateway:<port>/`.
 
-For example, to add multiple REST API methods from a service hello at the address `secure-gateway:8081`, you would input the URL as `https://secure-gateway:8081/hello`:
+<div class="info" markdown="1">
 
-![Consume REST API methods](images/consume-REST-API-methods-odcs.png "Consume REST API methods")
+For security reasons, only the deployed app can access the `secure-gateway` domain in runtime, so you cannot test consuming the methods of the endpoint in ODC Studio.
 
-When you click **Add methods**, ODC retrieves the swagger specification from the connected endpoint.
+</div>
