@@ -50,7 +50,9 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 1. Enter the credentials for the provider in the **Client ID** and **Client secret (secret value)** fields. Then, select **PKCE** if your provider supports it.
 
     <div class="info" markdown="1">
+    
     ODC safely stores the configuration details in a secret manager.
+    
     </div>
 
 1. If your provider uses different attribute names, then in the **Claim Mapping** section overwrite the prefilled **Name** and **Email** fields. Otherwise, skip this step. For more guidance, see your provider's support documentation.
