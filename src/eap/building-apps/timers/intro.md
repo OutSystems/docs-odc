@@ -28,7 +28,7 @@ From ODC Portal, using the **Wake** function, you can launch on-demand timers as
 
 ## Timers timeout
 
-By default,the timeout of a Timer is set to 20 minutes. You can change the timeout setting in the **Timeout in Minutes** property of the Timer.
+By default, the timeout of a Timer is set to 20 minutes. You can change the timeout setting in the **Timeout in Minutes** property of the Timer.
 
 If the action associated with a Timer doesn't end within a predefined time, the action aborts and the Timer stops. This is an error. The timer tries to execute three more times. The number of retries isn't configurable.
 
