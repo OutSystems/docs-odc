@@ -25,7 +25,7 @@ Before you set up ODC Studio, make sure your computer meets the following requir
 
 ### Minimum recommended hardware requirements
 
-These are the recommended reqquirements, but keep in mind that many factors (such as workload) can affect performance. 
+These are the recommended requirements, but keep in mind that many factors (such as workload) can affect performance. 
 
 * 1.8 GHz dual-core processor or better
 * 2 GB of RAM (4 GB recommended)
