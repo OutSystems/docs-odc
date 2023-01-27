@@ -23,7 +23,9 @@ Use the most recent version of any of the following browsers:
 
 Before you set up ODC Studio, make sure your computer meets the following requirements.
 
-### Minimum hardware requirements
+### Minimum recommended hardware requirements
+
+These are the recommended reqquirements, but keep in mind that many factors (such as workload) can affect performance. 
 
 * 1.8 GHz dual-core processor or better
 * 2 GB of RAM (4 GB recommended)
@@ -63,7 +65,7 @@ The following sections specify the requirements that users of the apps developed
 
 ### Web apps
 
-All browsers must be the most current stable version.
+It is rcommended that you use the most current version. 
 
 * Edge
 * Firefox
