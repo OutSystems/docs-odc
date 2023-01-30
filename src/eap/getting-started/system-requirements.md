@@ -65,7 +65,7 @@ The following sections specify the requirements that users of the apps developed
 
 ### Web apps
 
-It is rcommended that you use the most current version. 
+It is recommended that you use the most current version. 
 
 * Edge
 * Firefox
