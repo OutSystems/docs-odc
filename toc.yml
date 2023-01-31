@@ -404,3 +404,52 @@
 
 # Known issues
 - href: eap/known-issues/intro.md
+# ODC support
+- href: eap/odc-support.md
+
+# Errors
+- href: error/intro.md
+- topics:
+  # Errors Package Manager Service 
+  - href: error/pkgs/intro.md
+  - topics:
+    - href: error/pkgs/PKGS-40003.md
+    - href: error/pkgs/PKGS-40004.md
+    - href: error/pkgs/PKGS-40005.md
+    - href: error/pkgs/PKGS-40007.md
+    - href: error/pkgs/PKGS-40008.md
+    - href: error/pkgs/PKGS-40010.md
+    - href: error/pkgs/PKGS-40011.md
+    - href: error/pkgs/PKGS-40012.md
+    - href: error/pkgs/PKGS-40014.md
+    - href: error/pkgs/PKGS-40015.md
+    - href: error/pkgs/PKGS-40016.md
+    - href: error/pkgs/PKGS-40017.md
+    - href: error/pkgs/PKGS-40101.md
+    - href: error/pkgs/PKGS-40102.md
+    - href: error/pkgs/PKGS-50002.md
+    - href: error/pkgs/PKGS-50003.md
+    - href: error/pkgs/PKGS-50004.md
+    - href: error/pkgs/PKGS-50005.md
+  # Errors Forge Service
+  - href: error/frge/intro.md
+  - topics:
+    - href: error/frge/os-frge-ast-40001.md
+    - href: error/frge/os-frge-ast-40002.md
+    - href: error/frge/os-frge-ast-40003.md
+    - href: error/frge/os-frge-ast-40004.md
+    - href: error/frge/os-frge-ast-40005.md
+    - href: error/frge/os-frge-ast-40006.md
+    - href: error/frge/os-frge-ast-40007.md
+    - href: error/frge/os-frge-ast-40008.md
+    - href: error/frge/os-frge-ast-40301.md
+    - href: error/frge/os-frge-ast-40302.md
+    - href: error/frge/os-frge-ast-40401.md
+    - href: error/frge/os-frge-ast-40402.md
+    - href: error/frge/os-frge-ast-40403.md
+    - href: error/frge/os-frge-ast-40902.md
+    - href: error/frge/os-frge-ast-40903.md
+    - href: error/frge/os-frge-ast-40904.md
+    - href: error/frge/os-frge-ast-50001.md
+    - href: error/frge/os-frge-ast-50002.md
+    
