@@ -37,7 +37,7 @@ For Apple devices using the Apple Silicon M1 processor, ODC Studio runs best und
 
 <div class="info" markdown="1">
 
-OutSystems only supports versions up to 6 months after the end of life defined by the manufacturer. Older versions still work, but OutSystems doesn't prioritize issues related to the older versions.
+OutSystems only supports versions up to 6 months after the end of life defined by the manufacturer. 
 
 </div>
 
