@@ -1,5 +1,5 @@
 ---
-summary: Create a form to validate the user's verification code and password.
+summary: "Create a form to validate the user's verification code and password."
 tags:
 locale: en-us
 guid: 64EC5395-D2E9-494A-A556-9547438D74B9

@@ -1,8 +1,8 @@
 ---
-summary: Create email for users to start self-registration.
+summary: "Create email for users to start self-registration."
 tags:
 locale: en-us
-guid: cd42bc12-6d0b-4da8-95f5-1e704fc0bfff
+guid: 8e30d486-dbf3-457c-87f8-4cd9e65b0156
 app_type: mobile apps, reactive web apps
 ---
 
