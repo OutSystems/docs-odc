@@ -1,5 +1,5 @@
 ---
-summary: "Create a form to validate the user's verification code and password."
+summary: Create a form to validate the user's verification code and password.
 tags:
 locale: en-us
 guid: 64EC5395-D2E9-494A-A556-9547438D74B9
@@ -15,14 +15,6 @@ Before you begin creating the validation form, create the email to send the veri
 </div>
 
 This article describes how to create a form to validate a user's verification code and password. The procedure is divided into the sections and should be completed in the following.
-
-- [Create a verification code and password verification form](#create-a-verification-code-and-password-verification-form)
-  - [Create a container](#create-a-container)
-  - [Insert the header on the form](#insert-the-header-on-the-form)
-  - [Add the verification code](#add-the-verification-code)
-  - [Validate the password](#validate-the-password)
-  - [Modify the verification form](#modify-the-verification-form)
-  - [Create the finishing logic](#create-the-finishing-logic)
 
 ## Create a container
 

@@ -1,5 +1,5 @@
 ---
-summary: "create self-registration flow."  
+summary: Create self-registration flow. 
 tags:
 locale: en-us
 guid: cb22b88a-f8ec-416c-8f77-8ac814d58bd7

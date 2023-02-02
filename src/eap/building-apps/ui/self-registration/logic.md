@@ -1,6 +1,6 @@
 ---
-summary: "Create logic in emails to validate users during elf-register.
-tags:"
+summary: Create logic in emails to validate users during self-register.
+tags:
 locale: en-us
 guid: bf31e755-d3d7-49b2-9591-fd0d197db633
 app_type: mobile apps, reactive web apps

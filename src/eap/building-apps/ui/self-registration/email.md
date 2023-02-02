@@ -1,5 +1,5 @@
 ---
-summary: "Create email for users to start self-registration."
+summary: Create email for users to start self-registration.
 tags:
 locale: en-us
 guid: 8e30d486-dbf3-457c-87f8-4cd9e65b0156
