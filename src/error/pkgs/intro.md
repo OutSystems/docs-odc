@@ -8,4 +8,4 @@ app_type: mobile apps, reactive web apps
 
 # Package Manager Service 
 
-Package Manager Service (PaMS) is a Phoenix service used by MarketPlace for installation of packages. The purpose of the service is to publish an OutSystems component version and any required dependencies on the runtime stamp.
+Errors related to the Package Manager Service.
