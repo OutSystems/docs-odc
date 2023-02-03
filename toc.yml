@@ -284,6 +284,12 @@
       - href: eap/building-apps/exposing_rest/change-the-http-status-code-of-a-rest-api.md
       # Built in HTTP status codes
       - href: eap/building-apps/exposing_rest/built-in-http-status-codes.md
+    # Multilingual
+    - href: eap/building-apps/ui/multilingual/intro.md
+    - topics:
+        - href: eap/building-apps/ui/multilingual/translate-your-app.md
+        - href: eap/building-apps/ui/multilingual/translation-editor.md
+        - href: eap/building-apps/ui/multilingual/translation-management.md
     # Consume REST APIs
     - href: eap/building-apps/consume_rest/intro.md
     - topics:
