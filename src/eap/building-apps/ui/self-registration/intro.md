@@ -17,7 +17,7 @@ The OutSystems Developer Cloud (ODC) Portal provides access to the Forge. In For
 
 </div>
 
-You can also use the [provided OML](./resources/SampleApp.oml). The OML is an example app with the self-registration flow implemented. You can follow the steps in the OML directly to copy elements. The example app is a template for self-registration flow.
+You can also use the [provided OML](resources/SampleApp.oml). The OML is an example app with the self-registration flow implemented. You can follow the steps in the OML directly to copy elements. The example app is a template for self-registration flow.
 
 Users then follow a self-registration process to gain access to the app. To personalize the your users experience, you create screens, logic, emails, and validations in ODC studio.
 
