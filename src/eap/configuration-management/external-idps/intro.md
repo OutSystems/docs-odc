@@ -57,13 +57,13 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. If your provider uses different attribute names, then in the **Claim Mapping** section overwrite the prefilled **Name** and **Email** fields. Otherwise, skip this step. For more guidance, see your provider's support documentation.
 
-1. Click **Save configuration**. ODC tests the configuration and, on success, adds the provider to the list of available providers. If the test fails, a notification with the error displays.
+1. Click **Save**. ODC adds the provider to the list of available providers. If this fails, a notification with the error displays.
 
 ### Social provider with accelerator
 
 1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
 
-1. Enter the credentials for the provider in the **Client ID** and **Client secret** fields.
+1. Fill in the configuration fields with the [information required from your provider](#social-accelerators).
 
     <div class="info" markdown="1">
 
@@ -71,7 +71,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     </div>
 
-1. Click **Save configuration**. ODC tests the configuration and, on success, adds the provider to the list of available providers. If the test fails, a notification with the error displays.
+1. Click **Save**. ODC adds the provider to the list of available providers. If this fails, a notification with the error displays.
 
 ## Assign an external IdP
 
@@ -110,9 +110,35 @@ You can only edit or delete a provider not in use. Navigate to the **Identity pr
 
 ## Social accelerators
 
-ODC provides accelerators to add the following social providers easily.
+ODC provides accelerators to add commonly used social providers easily.
 
-| Provider    |
-| ----------- |
-| Facebook    |
-| Google      |  
+To add a new social provider using an accelerator you need to get the following information from your provider:
+
+### Apple
+
+Accelerator field | Information required | Description
+---|---|---
+Client ID | Identifier | A public identifier your app on the provider side. It's a string type value available to any registered developer on Apple Developer. You can access the Identifier value on the Certificates, Identifiers, and Profiles pages of your app.
+Key ID | Key ID | Key ID corresponding to your Secret (`.p8`).
+Team ID | Team ID | Identifier of your team on Apple Developer.
+Client secret | Secret (`.p8`) | A confidential code known only to your app and the authorization server. It's a string type value type value available to any registered developer on Apple Developer. You can access the Secret value during the configuration creation on Apple Developer.
+
+For further guidance check [Configure app capabilities - About Sign in with Apple](https://developer.apple.com/help/account/configure-app-capabilities/about-sign-in-with-apple).
+
+### Google
+
+Accelerator field | Information required | Description
+---|---|---
+Client ID | Client ID | A public identifier your app on the provider side. It's a string type value available to any registered developer on the Google Cloud Platform. You can access the ClientID value on the OAuth Consent tab on your app's Credentials screen.
+Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string type value type value available to any registered developer on the Google Cloud Platform. You can access the ClientSecret value on the OAuth Consent tab on your app's Credentials screen.
+
+For further guidance check [Google Identity - Authentication](https://developers.google.com/identity/gsi/web/guides/overview).
+
+### Facebook
+
+Accelerator field | Information required | Description
+---|---|---
+Client ID | App ID | A public identifier your app on the provider side. It's a string type value available to any registered developer on Meta for Developers. You can access the AppID value in your app's settings.
+Client Secret | App Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on Meta for Developers. You can access the AppSecret value in your app's settings.
+
+For further guidance check [Facebook Login - Documentation - Facebook for Developers](https://developers.facebook.com/docs/facebook-login/).
