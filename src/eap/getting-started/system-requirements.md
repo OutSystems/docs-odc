@@ -1,5 +1,5 @@
 ---
-summary: Install OutSystems Developer Cloud (ODC) Studio on computers with hardware, operating system, and software versions that meet the requirements to develop apps with ODC.
+summary: This article explains the system requirements for OutSystems Developer Cloud (ODC) Portal, ODC Studio, and app users, as well as the request limits of ODC.
 tags:
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
@@ -65,7 +65,7 @@ The following sections specify the requirements that users of the apps developed
 
 ### Web apps
 
-It is recommended that you use the most current version. 
+It's recommended that you use the most current version. 
 
 * Edge
 * Firefox
@@ -80,3 +80,21 @@ It is recommended that you use the most current version.
 ### Native mobile apps
 
 See **Mobile Apps Build Service (MABS)** for the latest supported Android and iOS platform versions and the minimum requirements to generate your Mobile Apps.
+
+## Request limits
+
+There are several known request limits that you should keep in mind when building apps.
+
+### Upload request size
+
+The maximum size of an upload file request is 28.6 MB.
+
+### Server request timeout
+
+The maximum value of the **Server Request Timeout** property is 60 seconds for queries or actions initiated on the client side. The default value of the property is 10 seconds. You can change the default at the app level in the app settings. In ODC Studio, from the **Data** tab, click the top-level element (app name) and the property is listed in the top pane.
+
+For queries or actions inside timer logic, the maximum timeout value is 60 minutes.
+
+### Timers timeout
+
+The maximum value of the **Timeout in Minutes** property is 60 minutes.

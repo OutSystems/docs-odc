@@ -18,6 +18,8 @@ File Transfer Plugin lets you download and upload files in your mobile app. The 
 
 File Transfer Plugin also has a progress update for transfers that take longer, for example video, music, and large images.
 
+The plugin can currently handle files up to [maximum size](../../../../getting-started/system-requirements.md#upload-request-size). Larger files will be rejected with an error.
+
 <div class="info" markdown="1">
 
 See [Installing plugins](../intro.md) to learn how to install and reference a plugin in your OutSystems apps.
