@@ -166,6 +166,10 @@ Do the following:
 
     ![](<images/ios-web-inspector.png>)
 
+### Cookies can't be set during a debug session
+
+Server action cannot set cookies during a debug session. When configuring cookies in ODC Studio, ensure the debugger is turned off.
+
 ### PC is not trusted for debugging { #pc-is-not-trusted-for-debugging }
 
 The final step to setup your device to be ready for debugging is to trust the PC so it can communicate with the device. To do so, tap **Trust** when the following pop-up appears on your device:
