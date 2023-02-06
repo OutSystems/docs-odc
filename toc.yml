@@ -378,7 +378,7 @@
   - href: eap/configuration-management/secure-gateway.md
   - href: eap/configuration-management/configure-emails.md
   # External database
-  - href: eap/configuration-management/external-databases/intro.md
+  # - href: eap/configuration-management/external-databases/intro.md
 
 - href: eap/user-management/intro.md
 - href: eap/monitor-apps.md

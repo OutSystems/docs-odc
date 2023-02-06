@@ -1,5 +1,5 @@
 ---
-summary: Learn how to connect ODC to external databases.
+summary: Learn how to connect ODC to your external databases.
 tags:
 locale: en-us
 guid: 67608c14-0b83-4e69-bf46-ba023ed730f4
