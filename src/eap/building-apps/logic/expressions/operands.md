@@ -10,7 +10,7 @@ app_type: mobile apps, reactive web apps
 
 An operand tells the platform which data to use to manipulate an expression. For example, in the expression `MyValue + 1`, `MyValue` and `1` are the operands. 
 
-Use the [expression editor](./expression-editor.md) to see which operands are available in the current scope. The expression editor checks what variable, parameters, functions, and other values, you can use for an operation in, for example, a screen or an action.
+Use the [expression editor](expression-editor.md) to see which operands are available in the current scope. The expression editor checks what variable, parameters, functions, and other values, you can use for an operation in, for example, a screen or an action.
 
 All operands always have a [data type](../../data/data-types.md).
 

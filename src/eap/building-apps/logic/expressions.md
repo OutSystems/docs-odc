@@ -12,7 +12,7 @@ An expression consists of operands and operators, or just one operand. For examp
 
 Here is how you can edit expressions and show the expression values.
 
-* Use the [expression editor](./expressions/expression-editor.md) to **edit expressions**. The expression editor shows you available elements. It automatically completes the text and shows suggestions after you press **Ctrl+Space**.
+* Use the [expression editor](expressions/expression-editor.md) to **edit expressions**. The expression editor shows you available elements. It automatically completes the text and shows suggestions after you press **Ctrl+Space**.
 
     ![Expression editor](images/expression-editor-ss.png?width=600)
 

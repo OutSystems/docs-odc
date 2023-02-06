@@ -22,7 +22,7 @@ Here is how you can fetch data in your app by using an Aggregate. Aggregates are
 
 <div class="info" markdown="1">
 
-This is an example of getting data with an Aggregate to a Screen. Both Aggregate and Screen run in the **client**. For more information about creating Aggregates in the **server** logic, see [Server-side Aggregates](./display-data/aggregate.md).
+This is an example of getting data with an Aggregate to a Screen. Both Aggregate and Screen run in the **client**. For more information about creating Aggregates in the **server** logic, see [Server-side Aggregates](display-data/aggregate.md).
 
 </div>
 

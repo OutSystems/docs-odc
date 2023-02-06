@@ -16,7 +16,7 @@ Traces are also helpful for troubleshooting a performance issue with an app.
 
 ## Logs
 
-Apps have associated logs. Logs are either automatically generated (a log generated when a timer fails to execute, for example) or triggered by app logic built by a developer (an [exception](./building-apps/handle-exceptions.md#exception-logs--exception-logs) triggered by the failure of an end-user to provide a required input, for example). Developers can also use the LogMessage system action.
+Apps have associated logs. Logs are either automatically generated (a log generated when a timer fails to execute, for example) or triggered by app logic built by a developer (an [exception](building-apps/handle-exceptions.md#exception-logs--exception-logs) triggered by the failure of an end-user to provide a required input, for example). Developers can also use the LogMessage system action.
 
 Each log has a level of severity: **Error**, **Warning**, and **Information**.
 

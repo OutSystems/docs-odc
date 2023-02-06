@@ -16,7 +16,7 @@ ODC is a cloud-native, app development platform that provides a modular, scalabl
 
 ODC delivers a modern architecture based on best practices in cloud-native infrastructure, management, and operations. Benefits include:
 
-* Scalable and reliable apps, built and deployed in a [modern container infrastructure](./../architecture/intro.md).
+* Scalable and reliable apps, built and deployed in a [modern container infrastructure](../architecture/intro.md).
 * Built-in security with end-to-end encryption.
 * Disaster recovery, with app-level high availability configuration.  
 * The ability to take advantage of the latest ODC releases with pain-free upgrades.
@@ -101,7 +101,7 @@ The following table lists tasks in the ODC compared to OutSystems 11.
 
 | Task | In OutSystems 11 | In ODC |
 | ----------- | ----------- | ----------- |
-| [Apps configuration management](./../configuration-management/configuration-management.md) | LifeTime | **ODC Portal** > **Apps** |
+| [Apps configuration management](../configuration-management/configuration-management.md) | LifeTime | **ODC Portal** > **Apps** |
 | Create a mobile package | Service Studio, Service Center | **ODC Portal** > **(app details)** > **Mobile distribution** |
 | Deploy an app to a stage.| LifeTime | **ODC Portal** > **Delivery** > **Deployments**.|
 | Manage users, roles, and permissions | LifeTime | **ODC Portal** > **Users & access** |

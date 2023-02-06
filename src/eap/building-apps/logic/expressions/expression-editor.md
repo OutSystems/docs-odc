@@ -42,8 +42,8 @@ The following are notes about expression and the expression widget, and the conc
 An expression is what you edit in the expression editor. An expression consists of operands and operators. Check out the following topics for more information:
 
 * [Introduction to expressions](../expressions.md)
-* [Operands](./operands.md)
-* [Operators](./operators.md)
+* [Operands](operands.md)
+* [Operators](operators.md)
 
 ### Expression widget
 

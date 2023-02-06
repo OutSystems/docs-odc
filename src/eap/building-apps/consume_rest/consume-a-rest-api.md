@@ -47,7 +47,7 @@ When importing the REST API, ODC Studio does the following:
 * Creates REST API Methods with the corresponding input and output parameters
 * Creates the Structures to hold the corresponding input and output parameters under a new tree element with the REST API name
 
-* Maps the [REST Data Types into OutSystems Data Types](./intro.md#mapping-rest-data-types-to-outsystems-data-types)
+* Maps the [REST Data Types into OutSystems Data Types](intro.md#mapping-rest-data-types-to-outsystems-data-types)
 
 ![Created elements in ODC Studio after consuming a REST API](images/rest-consume-created-elements-odcs.png)
 
@@ -118,7 +118,7 @@ When importing the REST API method, ODC Studio does the following:
 * Creates a REST API Method with the corresponding input and output parameters
 * Creates the Structures to hold the corresponding input and output parameters under a new tree element with the REST API name
 
-* Maps the [REST Data Types into OutSystems Data Types](./intro.md#mapping-rest-data-types-to-outsystems-data-types)
+* Maps the [REST Data Types into OutSystems Data Types](intro.md#mapping-rest-data-types-to-outsystems-data-types)
 
 ![Created elements in ODC Studio after consuming a REST API](images/rest-consume-created-elements-odcs.png)
 

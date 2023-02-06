@@ -50,7 +50,7 @@ ODC automatically runs an impact analysis when you deploy an app in ODC Portal. 
 
 **Blockers** prevent you from deploying your app. For example, a blocker occurs when there is an app name collision. This indicates another app on the target stage has the same name as the app you are deploying.
 
-**Warnings** provide information but allow you to proceed. Warnings are mostly about [producers and consumers](./building-apps/data/sharing.md). For example, a warning can occur in any of the following situations:
+**Warnings** provide information but allow you to proceed. Warnings are mostly about [producers and consumers](building-apps/data/sharing.md). For example, a warning can occur in any of the following situations:
 
 * Your app references other apps (producers) with missing or incompatible.
 * Other apps (consumers) reference your app and have missing or incompatible elements.

@@ -8,7 +8,7 @@ app_type: mobile apps, reactive web apps
 
 # Translation management
 
-You can export translatable resources to files and send them to a professional translation service. Once you receive the translated files, import them into your app. You can also translate the resources yourself with the [translation editor](./translation-editor.md).
+You can export translatable resources to files and send them to a professional translation service. Once you receive the translated files, import them into your app. You can also translate the resources yourself with the [translation editor](translation-editor.md).
 
 <div class="info" markdown="1">
 
