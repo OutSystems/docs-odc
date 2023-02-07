@@ -27,11 +27,7 @@ To create a new Email, go to ODC Studio and follow these steps:
 
     </div>
 
-2. From the **New Email** window, select **Empty** and click **Create Email**.
-
-    ![Email templates in new email window](images/new-email-window-ss.png)
-
-3. Select the Email below  the UI Flow, and enter the following details:
+2. Select the Email below  the UI Flow, and enter the following details:
 
     * In the **Name** field, enter a name to identify this email.
     * In the **Subject** field, enter `"No subject"` as a temporary subject. 
@@ -62,7 +58,7 @@ To add an **Input** to your Email and display the value in the email body, follo
 
 1. From the **Interface** tab, right-click the Email and from the menu, select **Add Input Parameter**. ODC Studio adds an Input Parameter.
 
-    ![Input parameter for Email](images/adding-input-param-emai-ss.png)
+    ![Input parameter for Email](images/adding-input-param-email-odcs.png)
 
 1. Set the following Input Parameter properties:
 
@@ -71,7 +67,7 @@ To add an **Input** to your Email and display the value in the email body, follo
     * **Data Type** - select **Text**
     * **Is Mandatory** - Select **Yes** to make the **Handle** a required value in the Email
 
-    ![Input parameters for Email](images/inputs-for-emails-ss.png?width=350)
+    ![Input parameters for Email](images/inputs-for-emails-ss.png)
 
 1. From the **Interface** tab, double-click the Email to open it for editing.
 
@@ -79,7 +75,7 @@ To add an **Input** to your Email and display the value in the email body, follo
 
 1. Enter `"Hello, " + Handle + "!"` and click **Done**.
 
-    ![Email preview](images/expression-preview-ss.png?width=700)
+    ![Email preview](images/expression-preview-ss.png)
 
 When you open this email in the email client, the expression displays "Hello, John!" when the value of **Handle** is `"John"`.
 

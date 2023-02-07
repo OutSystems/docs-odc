@@ -10,7 +10,7 @@ app_type: traditional web apps, mobile apps, reactive web apps
 
 OutSystems designed widgets to help you create lightweight emails that most email readers can open. When you edit an email, ODC Studio shows the available widgets in the[available Email widgets](#widgets-available-in-emails) in the widgets tool bar.
 
-![widgets for emails](images/email-neo-widgets-ss.png?width=700)
+![widgets for emails](images/email-neo-widgets-ss.png)
 
 Use the Email widgets like you use the Screen widgets, with the following common differences designed to make the emails light and secure:
 

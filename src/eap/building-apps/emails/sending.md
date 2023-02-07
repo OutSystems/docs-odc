@@ -20,11 +20,11 @@ To create logic that sends an email, go to ODC Studio an follow these steps:
 1. To create a server action, go to the **Logic** tab and right-click **Server Actions** and from the menu, select  **Add Server Action**.  A new server action opens for editing. (The logic for sending emails runs on server.)
 1. To add  the **Send Email** to the flow, drag the **Send Email** action to the flow. ODC Studio adds **Send Email** to the flow and shows an error to let you know some parameters are missing.
 
-    ![Send Email in the logic flow](images/logic-send-email-tool-ss.png)
+    ![Send Email in the logic flow](images/logic-send-email-tool-odcs.png)
 
 1. To display  the list of input parameters required for your email, go to the **Send Email** properties action and select your Email in the **Email** list. The list of input parameters displays.
 
-    ![Send Email in the logic flow](images/logic-send-email-select-ss.png)
+    ![Send Email in the logic flow](images/logic-send-email-select-odcs.png)
 
 1. To complete the parameters in the server action to pass the values to the Email, right-click the **Server Action** and select **Add Input Parameter**. Repeat as needed to add the following:
 
@@ -33,7 +33,7 @@ To create logic that sends an email, go to ODC Studio an follow these steps:
 
 1. To set the **To** property and the required values for the selected Email go to the **Send Email** action properties in the flow.
 
-    ![Send Email with all parameters set](images/logic-send-email-ready-ss.png)
+    ![Send Email with all parameters set](images/logic-send-email-ready-odcs.png)
 
     <div class="info" markdown="1">
 
@@ -51,11 +51,11 @@ Depending on your use case, you might use different mechanisms to tell the ODC t
 
 You can manually trigger the sending of an email when you test the app or when you have use cases that requires it. For example, you might have a **Button** widget (1) that has  an **On Click** event to call a client action (2).
 
-![UI for triggering emails](images/trigger-email-manually-ui-ss.png)
+![UI for triggering emails](images/trigger-email-manually-ui-odcs.png)
 
 In the client action, you can call the server action that sends the email (3). For this to work, you must provide the input parameters required by the action. In the feedback message from the UI (4) you can notify users that the app called the logic to send the message.
 
-![Client action calls server action](images/trigger-email-manually-logic-ss.png)
+![Client action calls server action](images/trigger-email-manually-logic-odcs.png)
 
 ### Trigger emails automatically
 

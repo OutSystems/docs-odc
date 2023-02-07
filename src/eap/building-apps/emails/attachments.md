@@ -14,7 +14,7 @@ You can send email attachments by providing the list of files in the **Attachmen
 
 In the **Attachments** section of the **Send Email**, you can add:
 
-* One or more inline attachments. Do this to attach a static file that changes rarely, like a PDF embedded in the app resources. See: [Attaching a single file](#attaching-a-single-static-file).
+* One or more inline attachments. Do this to attach a static file that changes rarely, like a PDF embedded in the app resources. See: [Attaching a single file](#attaching-a-file).
 
 * A list of attachments. Do this when, for example, you want to send multiple files from a database, such as images from a product catalog. See: [Attaching multiple files](#attaching-multiple-files)
 
@@ -34,7 +34,7 @@ To attach a file to an email, complete the following steps in ODC Studio:
 
     ODC Studio shows a plus icon with the "add list item" tooltip.
 
-    ![Adding attachments in the Send Email action](images/email-attachment-inline-ss.png?width=495)
+    ![Adding attachments in the Send Email action](images/add-list-item-attachment.png)
 
 1. Click the plus icon next to the **Attachments** list to add a new item.
 
@@ -42,13 +42,13 @@ To attach a file to an email, complete the following steps in ODC Studio:
 
 1. Move your mouse over the item you added in the **Attachment** list and click the plus icon to expand.
 
-    ![Attachment properties](images/email-attachment-add-list-ss.png?width=315)
+    ![Attachment properties](images/email-attachment-add-list-odcs.png)
 
 1. Enter the information to define the file name, content, and media type of the email attachment.
 
     For more information about the Attachment properties, see [Attachment data structure](#attachment-data-structure).
     
-    ![Attachment properties](images/email-attachment-properties.png?width=320)
+    ![Attachment properties](images/email-attachment-properties-odcs.png)
 
     The following are example properties to attach a PDF file from the resources:
 
@@ -69,7 +69,7 @@ To attach several files to an email, create a List with the Attachment data stru
 
 <div class="info" markdown="1">
 
-The following example references the **Sample_ProductImage** Entity from **OutSystemsSampleDataDB**, a standard sample data app in the OutSystems cloud. The text attribute **FileName** is the file name of the image attachment. The binary attribute **FileContent** is the content of the image.   
+The following example references the **Sample_ProductImage** Entity from **OutSystemsSampleData**, a standard sample data app in the OutSystems cloud. The text attribute **FileName** is the file name of the image attachment. The binary attribute **FileContent** is the content of the image.   
 
 </div>
 
@@ -79,7 +79,7 @@ In the following example, ODC Studio fetches images from a database with an Aggr
 
     ODC Studio places an Aggregate in the logic flow.
 
-    ![Getting data from database](images/email-attachment-getting-from-database.png?width=500)
+    ![Getting data from database](images/email-attachment-getting-from-database-odcs.png)
 
     <div class="info" markdown="1">
 
@@ -91,13 +91,13 @@ In the following example, ODC Studio fetches images from a database with an Aggr
 
     The expression editor opens.
 
-    ![Getting data from database](images/email-attachments-list.png?width=315)
+    ![Getting data from database](images/email-attachments-list-odcs.png)
 
 1. In the expression editor, select the output List from your Aggregate, for example, `GetSampleProductImages.List`. ODC Studio shows an error with a message that you need to use the Attachment List data type. Click **Done** to close the editor and move on to the next step to map the values and resolve the error.
 
 1. In the Attachment section of Send Email, map the attributes so ODC Studio knows which values pass to the attachments. You must specify binary content and the file name. The MIME type is optional, but providing it lets more email clients handle the attachment.
 
-    ![Mapping the values to the attachment data structure](images/email-attachment-mapping.png?width=315)
+    ![Mapping the values to the attachment data structure](images/email-attachment-mapping-odcs.png)
 
 
 ## Reference
