@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: af4a6d9d-0af3-434b-b3b9-daf8d49ad6f7
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 # Authentication
 

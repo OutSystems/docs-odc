@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: fb6adbb0-7343-4858-8a87-e3f7d8693900
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Add Azure AD for use as external identity provider

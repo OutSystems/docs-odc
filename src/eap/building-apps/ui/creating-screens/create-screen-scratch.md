@@ -3,6 +3,7 @@ summary: Screen is a building block of an app. You can create empty Screens or w
 locale: en-us
 guid: 7c01a3db-3807-4e86-bbbb-e88ba5c28346
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Create screen from scratch

@@ -4,6 +4,7 @@ tags: support-application_development,
 locale: en-us
 guid: 895e64b5-eb2c-4b92-9673-8493aa306622
 app_type: Web apps, mobile apps
+platform-version: odc
 ---
 
 # Sending emails

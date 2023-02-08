@@ -4,6 +4,7 @@ summary: Tag styles small texts in a colored tag format.
 locale: en-us
 guid: b2b8939e-3fc0-418b-abfe-cc20d2971442
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Tag

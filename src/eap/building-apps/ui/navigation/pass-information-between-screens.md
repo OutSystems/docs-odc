@@ -4,6 +4,7 @@ tags: support-application_development; support-Mobile_Apps; support-webapps
 locale: en-us
 guid: f1443b9a-dbfa-440b-b618-69835bbcb361
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Pass Data Between Screens With Input Parameters

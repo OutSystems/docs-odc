@@ -4,6 +4,7 @@ tags: support-application_development; support-Database; support-webapps
 locale: en-us
 guid: 4e158cbd-cb4d-4152-81f2-dae5e703e5ec
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Create a Many-to-Many Relationship

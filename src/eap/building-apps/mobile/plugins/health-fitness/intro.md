@@ -5,6 +5,7 @@ tags: runtime-mobile;
 locale: en-us
 guid: e8f63b76-8a4c-4e3c-b2f6-5a519bd1f348
 app_type: mobile apps
+platform-version: odc
 ---
 
 # Health and Fitness Plugin

@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: bd056d16-4d8d-4b0b-ade7-9dc0ffc6f487
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # User interface

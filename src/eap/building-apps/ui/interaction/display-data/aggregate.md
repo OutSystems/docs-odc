@@ -4,6 +4,7 @@ helpids: 17203
 locale: en-us
 guid: 0d8335b7-df99-40f3-8a9d-df0e5bd5ca18
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Aggregate

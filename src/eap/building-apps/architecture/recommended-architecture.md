@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: d67d7939-a99f-4328-b490-d0310c35a424
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Building a well-architected app

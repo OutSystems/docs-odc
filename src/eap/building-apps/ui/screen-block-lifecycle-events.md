@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 91700588-62e6-4527-a323-426c81f47505
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Screen and block lifecycle events

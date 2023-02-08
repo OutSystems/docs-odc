@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 2c23e305-f3ca-46cc-a8c8-a29c409a9ccf
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Types of apps you can build

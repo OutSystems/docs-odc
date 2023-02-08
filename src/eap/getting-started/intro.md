@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 6B0090D9-8EE9-479F-9251-CCB490D2EBB6
 app_type: web apps, reactive mobile apps
+platform-version: odc
 ---
 
 # Getting started with ODC

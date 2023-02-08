@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: dc098281-2826-4f5c-91cb-da13827f4d8a
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 # Security
 

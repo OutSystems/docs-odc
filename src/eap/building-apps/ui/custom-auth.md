@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 49853077-9937-4865-8183-3f1f9ff224c2
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Custom authentication flows

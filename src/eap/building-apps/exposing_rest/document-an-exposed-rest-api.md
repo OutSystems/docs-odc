@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 08460e49-ec25-478c-abce-d4dc5d1abe2b
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Document an Exposed REST API

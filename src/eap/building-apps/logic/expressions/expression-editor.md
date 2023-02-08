@@ -4,6 +4,7 @@ tags: support-application_development
 locale: en-us
 guid: 1ad176b7-bb78-41f9-ae4a-69d3e0e06a13
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Edit expressions

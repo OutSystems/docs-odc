@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 941e56cf-aacf-43bf-9d1c-f131565036e6
 app_type: mobile apps
+platform-version: odc
 ---
 
 # Advanced configurations for mobile app

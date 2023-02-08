@@ -3,6 +3,7 @@ summary: UI reference for the Debugger Tab in ODC Studio.
 locale: en-us
 guid: 81645496-3038-4765-9092-e2ab5a7f413b
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Debugger reference

@@ -4,6 +4,7 @@ tags: support-application_development; support-Database; support-webapps
 locale: en-us
 guid: 8d55b7fe-ff2d-4a80-b306-e8d7820ea579
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Create a Calculated Attribute in an Aggregate

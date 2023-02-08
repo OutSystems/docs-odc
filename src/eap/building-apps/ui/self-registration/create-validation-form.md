@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 64EC5395-D2E9-494A-A556-9547438D74B9
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Create a verification code and password verification form

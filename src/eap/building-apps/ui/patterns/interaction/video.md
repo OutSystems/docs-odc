@@ -4,6 +4,7 @@ summary: Video allows you to embed a native video player.
 locale: en-us
 guid: c9dbb039-b648-4395-a19d-863c0fd4cfae
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Video

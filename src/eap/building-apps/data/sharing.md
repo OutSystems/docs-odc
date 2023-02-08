@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: dcc95e95-aa1d-4c97-a2fa-24a18fb753e2
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Sharing data defined in OutSystems

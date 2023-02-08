@@ -2,6 +2,7 @@
 locale: en-us
 guid: f8d8203c-888c-4073-8e85-454190db47f7
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 # Math
 

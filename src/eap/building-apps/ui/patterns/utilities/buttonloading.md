@@ -4,6 +4,7 @@ summary: Use the Button Loading pattern to call actions that don't run immediate
 locale: en-us
 guid: a3269377-0c0c-440f-b194-d7409db9f481
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Button Loading

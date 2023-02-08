@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 182ad24a-5cfb-4a67-a9b2-b5c8dc83ef4c
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Simple Customizations

@@ -4,6 +4,7 @@ summary: Counter shows the total number of occurrences of several values regardi
 locale: en-us
 guid: 7b33f1cb-f293-49c5-ad4a-8c781526acb7
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Counter

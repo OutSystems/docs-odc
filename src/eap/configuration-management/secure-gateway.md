@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 9a023d82-da5b-4164-8f3f-9d6c35444b50
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Configure a secure gateway to your private network

@@ -4,6 +4,7 @@ tags: runtime-mobile; support-application_development; support-Mobile_Apps;
 locale: en-us
 guid: a101532c-2d36-43f1-bb3e-6aeeb98fa395
 app_type: mobile apps
+platform-version: odc
 ---
 
 # Barcode Plugin

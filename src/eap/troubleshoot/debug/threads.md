@@ -3,6 +3,7 @@ summary: Learn more about threads in OutSystems.
 locale: en-us
 guid: ab6189d5-3803-4f78-92ff-4072e356fc29
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Threads

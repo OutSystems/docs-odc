@@ -5,6 +5,7 @@ summary: An Output Parameter allows you to return computed values from an action
 locale: en-us
 guid: a0388822-d4ea-4fbf-9bd2-d45b10183c0c
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Output Parameter

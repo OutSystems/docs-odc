@@ -4,6 +4,7 @@ tags: user-management; authentication; lifecycle-management; custom roles
 locale: en-us
 guid: 9e0fb9b7-d2b0-419f-a5d8-5b5ed730da5e
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # User management

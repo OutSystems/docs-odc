@@ -2,6 +2,7 @@
 locale: en-us
 guid: 53534fc8-41ba-4ee0-9be4-dff58493264c
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 # Numeric
 

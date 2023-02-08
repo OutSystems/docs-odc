@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: cb22b88a-f8ec-416c-8f77-8ac814d58bd7
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Self-registration flow

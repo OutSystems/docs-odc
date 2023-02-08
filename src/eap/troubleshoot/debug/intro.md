@@ -4,6 +4,7 @@ tags: support-application_development; support-Application_Troubleshooting; supp
 locale: en-us
 guid: bd64bfb4-afcf-4eb8-b87a-1923fd19524c
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Debugging apps

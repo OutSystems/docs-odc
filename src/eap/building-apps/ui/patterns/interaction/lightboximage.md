@@ -4,6 +4,7 @@ summary: Displays an image thumbnail that can be clicked to open a fullscreen im
 locale: en-us
 guid: 575c188f-fb02-4d70-8241-4b3e4518d66c
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Lightbox Image

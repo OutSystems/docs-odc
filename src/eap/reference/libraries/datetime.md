@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 9da728fe-ebdc-4114-af34-1ef4d2265e19
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # DateTime

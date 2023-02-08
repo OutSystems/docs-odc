@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 4afcc536-cf53-4130-9d7a-15887083d629
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Creating screens

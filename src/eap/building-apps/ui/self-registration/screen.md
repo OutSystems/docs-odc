@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: cd42bc12-6d0b-4da8-95f5-1e704fc0bfff
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Create a screen for users to self-register 

@@ -5,6 +5,7 @@ tags: runtime-mobile
 locale: en-us
 guid: 96c703ae-d97e-4ceb-b511-6524da0b7cf3
 app_type: mobile apps
+platform-version: odc
 ---
 
 # On Application Resume

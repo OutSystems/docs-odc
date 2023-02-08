@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 634139a1-76d1-44c8-a0bf-9c4ba0dc1b9d
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Open a support case

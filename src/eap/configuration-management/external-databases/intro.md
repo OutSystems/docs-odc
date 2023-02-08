@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 67608c14-0b83-4e69-bf46-ba023ed730f4
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Integrate with external databases 

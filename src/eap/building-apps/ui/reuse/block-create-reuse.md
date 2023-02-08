@@ -4,6 +4,7 @@ tags: support-application_development; support-Front_end_Development; support-Mo
 locale: en-us
 guid: a62501dc-9ec8-41f6-add8-50b3e3934b8b
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Create and Reuse Screen Blocks

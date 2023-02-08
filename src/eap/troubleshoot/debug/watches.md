@@ -3,6 +3,7 @@ summary: Use watches to examine app elements while debugging threads in your app
 locale: en-us
 guid: 43207953-41b5-4c62-887b-bb7a72a433ec
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Watches

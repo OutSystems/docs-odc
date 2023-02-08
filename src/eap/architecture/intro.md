@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 9a0cb62a-f11b-4d1a-9e79-0ca7d398e57b
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Cloud-native architecture of OutSystems Developer Cloud

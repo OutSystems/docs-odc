@@ -3,6 +3,7 @@ tags:
 locale: en-us
 guid: dcb96e66-c362-42fd-a2b2-42515c06c07b
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Built-in HTTP Status Codes

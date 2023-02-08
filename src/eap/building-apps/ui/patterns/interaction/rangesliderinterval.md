@@ -4,6 +4,7 @@ summary: the Range Slider Interval UI Pattern allows users select a single value
 locale: en-us
 guid: aa015998-a6e2-48bb-a0cc-2c53b4df2832
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Range Slider Interval

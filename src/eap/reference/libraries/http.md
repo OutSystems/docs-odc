@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 8ab99495-136e-4261-a791-bee1c58d4a79
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # HTTPRequestHandler

@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: e32e1f5f-83b6-4b00-a593-83ba5017fc16
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Configuration management

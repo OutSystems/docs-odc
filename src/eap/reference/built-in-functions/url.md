@@ -2,6 +2,7 @@
 locale: en-us
 guid: add42ac6-eb89-4448-8b6e-84ceb8a921df
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 # URL
 

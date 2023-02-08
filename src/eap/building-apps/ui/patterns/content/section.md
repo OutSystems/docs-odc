@@ -4,6 +4,7 @@ summary: Section separates content into groups, easing visual organization.
 locale: en-us
 guid: 938450a3-c869-4c7b-82f2-7599c196d482
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Section

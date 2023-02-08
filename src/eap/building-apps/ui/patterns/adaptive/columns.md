@@ -4,6 +4,7 @@ summary:  The Columns UI Pattern splits content into separate columns.
 locale: en-us
 guid: 2b4629ec-0dcd-4a8c-81a7-ade0ecf7ad9a
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Columns

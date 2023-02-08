@@ -4,6 +4,7 @@ summary: List Item Content is used to layout content such as icons, text, and ac
 locale: en-us
 guid: af82326a-de20-4931-af2a-dc6ca092a60d
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # List Item Content

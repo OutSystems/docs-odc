@@ -4,6 +4,7 @@ summary: Align Center places content horizontally or vertically within a contain
 locale: en-us
 guid: 0902827b-4339-4965-b8c3-94a2a7825594
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Align Center

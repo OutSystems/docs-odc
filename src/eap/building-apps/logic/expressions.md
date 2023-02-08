@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 1e04dcf4-f498-4359-b2ae-399e64abdd9e
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Expressions

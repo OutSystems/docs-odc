@@ -4,6 +4,7 @@ tags: user-management; authentication; lifecycle-management
 locale: en-us
 guid: BDA3A144-0EB0-4C04-953F-9DED85A477FE
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Secure your app with end-user roles

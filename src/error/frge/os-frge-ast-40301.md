@@ -4,6 +4,7 @@ tags:
 guid: 9e7e3490-43ae-49aa-bb9b-9a321f706ec1
 locale: en-us
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # OS-FRGE-AST-40301

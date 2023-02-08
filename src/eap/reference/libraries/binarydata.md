@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 2c98c66a-043a-44fd-a4b6-60c9d3969fbb
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # BinaryData

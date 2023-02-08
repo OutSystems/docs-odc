@@ -4,6 +4,7 @@ tags: runtime-mobile; support-application_development; support-Mobile_Apps;
 locale: en-us
 guid: f2b0feab-c558-4d7f-b507-4511ae094677
 app_type: mobile apps
+platform-version: odc
 ---
 
 # Location Plugin

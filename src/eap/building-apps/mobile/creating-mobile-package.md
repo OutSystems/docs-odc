@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 4e816fa7-fffc-48c4-b205-13f7165d3775
 app_type: mobile apps
+platform-version: odc
 ---
 
 # Create mobile app package

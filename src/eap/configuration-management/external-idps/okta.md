@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 0a284428-86c4-4b57-b912-b122674b69e4
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Add Okta for use as an external identity provider

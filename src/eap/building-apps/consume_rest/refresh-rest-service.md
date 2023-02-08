@@ -4,6 +4,7 @@ tags: support-Integrations_Extensions
 locale: en-us
 guid: 1ba6b838-04bc-4c08-813d-5a2901954f8c
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Refresh a REST web service

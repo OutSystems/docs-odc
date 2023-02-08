@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 09b3e01c-e0ee-4ead-be0e-3e30f2ca2262
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 # Sanitization
 

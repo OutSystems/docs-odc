@@ -4,6 +4,7 @@ summary: Badge display numerical information as notification.
 locale: en-us
 guid: d97db143-3239-44d4-bdf7-0c49483b6939
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Badge

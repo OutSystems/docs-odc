@@ -4,6 +4,7 @@ summary: The Dropdown Tags UI Pattern offers multiple choice options to the user
 locale: en-us
 guid: 91934a88-de31-437d-be9c-e2ca182835bb
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Dropdown Tags

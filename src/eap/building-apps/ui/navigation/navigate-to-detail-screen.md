@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 32d89cec-ecb5-4c30-9d43-548cc4077425
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Navigate to a Detail Screen

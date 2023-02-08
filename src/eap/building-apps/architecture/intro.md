@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 145cf74c-c7a2-432d-b0b3-110d551d0e36
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # App architecture

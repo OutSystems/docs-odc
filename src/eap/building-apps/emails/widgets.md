@@ -4,6 +4,7 @@ tags: support-application_development,
 locale: en-us
 guid: 665cc9c6-00e6-44f9-91ba-04f6de8fa936
 app_type: traditional web apps, mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Widgets in emails

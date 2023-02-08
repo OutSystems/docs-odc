@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
 app_type: web apps, reactive apps, mobile apps
+platform-version: odc
 ---
 
 # OutSystems system requirements for ODC

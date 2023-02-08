@@ -4,6 +4,7 @@ summary: Allows users to rate a particular item or service.
 locale: en-us
 guid: 31fc8803-e23e-4f60-8731-2fc03e5a51bf
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Rating

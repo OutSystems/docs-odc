@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 1093da45-38cc-47b6-aaa2-7123a1d2d964
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Static Entities

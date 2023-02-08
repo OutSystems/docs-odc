@@ -4,6 +4,7 @@ tags: article-page; support-Application_Troubleshooting; support-webapps
 locale: en-us
 guid: ec639f37-b5ee-4ca4-974d-9096596614ae
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Handling exceptions

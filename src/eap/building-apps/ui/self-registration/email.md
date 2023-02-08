@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 8e30d486-dbf3-457c-87f8-4cd9e65b0156
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Create email to send verification code

@@ -4,6 +4,7 @@ tags: support-application_development; support-Integrations_Extensions
 locale: en-us
 guid: 79ddbf86-371c-41cf-b9c9-45545b74957f
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Exposing REST APIs

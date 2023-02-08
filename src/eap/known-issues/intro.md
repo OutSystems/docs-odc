@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: ebae908a-42f3-475f-be53-28aef8454497
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Known issues

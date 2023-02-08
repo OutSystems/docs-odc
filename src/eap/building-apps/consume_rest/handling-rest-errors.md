@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 7cec44e7-afba-470f-ae17-1804d2b0ae4d
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Handling REST Errors

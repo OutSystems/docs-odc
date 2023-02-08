@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: b44dc63b-99f3-4cc4-9cf0-9e915eddd4fa
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Supporting SOAP in ODC

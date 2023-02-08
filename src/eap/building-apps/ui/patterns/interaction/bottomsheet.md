@@ -4,6 +4,7 @@ summary:
 locale: en-us
 guid: b45a2a54-8dbe-44f4-8a96-63e5e26d5ae0
 app_type: mobile apps
+platform-version: odc
 ---
 
 # Bottom Sheet

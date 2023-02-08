@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 5f50a67f-d8c9-444a-9615-090062255870
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Architecture of authentication and authorization mechanism

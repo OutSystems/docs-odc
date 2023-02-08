@@ -3,6 +3,7 @@ summary: Learn about Entities in OutSystems.
 locale: en-us
 guid: 7bf1d47d-7310-4ec8-a5db-a41b983bdb5b
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Entities

@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 0fc271c5-bb66-4ea9-a271-6905e3dfc160
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Distribute as progressive web app

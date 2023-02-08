@@ -4,6 +4,7 @@ summary: Animate adds default animations to emphasize elements as they appear on
 locale: en-us
 guid: bd23a378-5bd7-4fcb-8c53-5455b46be344
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Animate

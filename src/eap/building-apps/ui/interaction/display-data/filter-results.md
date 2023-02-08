@@ -4,6 +4,7 @@ tags: support-application_development; support-Database; support-webapps
 locale: en-us
 guid: 2a8244b0-c439-4463-9e98-3c5f2e4d4aa6
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Filter query results

@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: e1d028a0-d688-4cbb-93c1-caecb302ee9a
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Throw a Custom Error in an Exposed REST API

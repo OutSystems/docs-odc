@@ -3,6 +3,7 @@ summary: Fetch data in your apps using human language.
 locale: en-us
 guid: 0e8d2237-0ede-4be9-ac0d-3603a1ab8fae
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Fetch data using human language

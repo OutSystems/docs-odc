@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: abe6d7fc-04ae-45ed-8630-cf3e7e9b86ef
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Use public elements

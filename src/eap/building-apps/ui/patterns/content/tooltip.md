@@ -4,6 +4,7 @@ summary: Tooltip dynamically displays simple informative content on end user int
 locale: en-us
 guid: 33a42743-0e9c-44c6-b67d-363ec53dc01a
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Tooltip

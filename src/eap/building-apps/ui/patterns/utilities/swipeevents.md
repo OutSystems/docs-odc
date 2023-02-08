@@ -4,6 +4,7 @@ summary:  Swipe Events UI Pattern enables swiping on a specific widget.
 locale: en-us
 guid: b8415514-3f04-45f1-a26c-0ef4049b4487
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Swipe Events

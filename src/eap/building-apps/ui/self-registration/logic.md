@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: bf31e755-d3d7-49b2-9591-fd0d197db633
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Create logic to register a user

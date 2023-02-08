@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: e87fb27d-9186-436d-ac97-a2ea960c119d
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Network and security of OutSystems Developer Cloud

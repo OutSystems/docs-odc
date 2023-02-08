@@ -4,6 +4,7 @@ tags: support-application_development,
 locale: en-us
 guid: 4DB954E5-AD44-43A3-9FE0-1D29C5FBE109
 app_type: web apps, mobile apps, 
+platform-version: odc
 ---
 
 # Working with emails

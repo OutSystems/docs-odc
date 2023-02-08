@@ -4,6 +4,7 @@ summary: Breadcrumbs present the location of the user within the hierarchy of ap
 locale: en-us
 guid: 78642488-92c4-45ba-a5ff-65e0e79506a9
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Breadcrumbs

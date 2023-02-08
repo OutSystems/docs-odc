@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: e74f9938-8b24-441b-8512-b3ccfda522b4
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Data in OutSystems apps

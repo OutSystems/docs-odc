@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: f2d563a1-be66-42d3-b56f-ebfc33c32c9c
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # REST API Structures

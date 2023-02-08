@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 5aa8692d-68bf-41a1-89ec-5e8fc7069e29
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Configure authentication with external identity providers

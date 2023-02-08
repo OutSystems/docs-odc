@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 743F0F2C-6ADF-4A7A-899E-3802A1249925
 app_type: reactive web apps
+platform-version: odc
 ---
 
 # UI Interactions

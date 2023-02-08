@@ -4,6 +4,7 @@ tags: support-application_development; support-Database; support-webapps
 locale: en-us
 guid: d8cd27a9-fadb-404c-8998-648f3799934a
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Create an Entity to Persist Data

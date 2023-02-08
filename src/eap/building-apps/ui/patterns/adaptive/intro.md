@@ -4,6 +4,7 @@ summary:
 locale: en-us
 guid: 2c47448a-ec28-4a99-99bc-171fc05cd0e6
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Adaptive

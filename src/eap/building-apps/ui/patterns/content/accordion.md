@@ -4,6 +4,7 @@ summary: Accordion expands vertically-stacked content by clicking on the header.
 locale: en-us
 guid: 794b75df-0091-4e62-b1f8-22c56e7ebf90
 app_type: mobile apps, reactive web apps
+platform-version: odc
 ---
 
 # Accordion
