@@ -17,7 +17,7 @@ Edit expressions with the expression editor in ODC Studio. Launch the expression
 
 The following are the parts of the expression editor, with notes on how you can use them.
 
-![Expression editor UI reference](images/expression-editor-ss.png?width=700)
+![Expression editor UI reference](images/expression-editor-odcs.png)
 
 Expression field
 :    Edit your expressions in the expression field (1). Use **Ctrl+Space** to autocomplete a word or show a list of suggestions to use in the expression.
