@@ -34,17 +34,23 @@ To activate a Secure Gateway, navigate to the **Secure Gateways** tab in the ODC
 1. Click the Toggle icon to activate. It should only take a few seconds.
 1. The Secure Gateway generates a **Token** and **Address** and the pair displays on the screen. This is only done on the first activation and the pair remains unique to the organization and stage.
 
+<div class="info" markdown="1">
+
+Make sure to copy the Token and save it in a safe location. For security reasons, you won't be able to access it again after you close or refresh the page.
+
+</div>
+
 You or a member of your team can now use the Token and Address to run Cloud Connector on the system(s) in your private network(s). For guidance follow [this documentation](https://github.com/OutSystems/cloud-connector/).
 
 If you deactivate a Secure Gateway, the tunnel(s) are deleted and your apps can't access the connected endpoints. If you reactivate, the Token and Address remain the same. The Secure Gateway automatically reestablishes a tunnel with any Cloud Connector instances still running with that unique Token and Address.
 
-To refresh the token, click the Refresh icon. You must then stop each instance of the Cloud Connector and run with the new Token.
+To renew the Token, click the Renew icon. You must then stop each instance of the Cloud Connector and run with the new Token.
 
 ## Use endpoints in your apps
 
 For each Secure Gateway, a list of connected endpoint(s) of the form `secure-gateway:<port>` and associated swagger specification file(s) is available from the member of your team responsible for running Cloud Connector.
 
-For each endpoint you want to use in your app, follow the procedure under [Consume several methods of a REST API](../building-apps/consume_rest/consume-a-rest-api.md#consume-several-methods-of-a-rest-api--all-methods) using the swagger specification file for the endpoint. After you complete the procedure, replace the first part of **Base URL** setting with `https://secure-gateway:<port>/`.
+For each endpoint you want to use in your app, follow the procedure under [Consume several methods of a REST API](../building-apps/consume_rest/consume-a-rest-api.md#consume-several-methods-of-a-rest-api--all-methods) using the swagger specification file for the endpoint. After you complete the procedure, replace the first part of **Base URL** setting with `https://secure-gateway:<port>/` if the endpoint is connected to `cloud-connector` over TLS/SSL or `http://secure-gateway:<port>/` if it's not.
 
 <div class="info" markdown="1">
 
