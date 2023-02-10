@@ -195,7 +195,7 @@ When designing the business logic of your apps, you can use built-in functions. 
 |[DateTimeToDate](built-in-functions/data-conversion.md#DateTimeToDate)|Converts Date Time 'dt' to a Date value dropping the Time component.|
 |[DateTimeToText](built-in-functions/data-conversion.md#DateTimeToText)|Converts Date Time 'dt' to a Text value in the format specified in the environment configuration (by default, "yyyy-MM-dd HH:mm:ss").|
 |[DateTimeToTime](built-in-functions/data-conversion.md#DateTimeToTime)|Converts Date Time 'dt' to a Time value dropping the Date component.|
-|[DateToDateTime](built-in-functions/data-conversion.md#DateToDateTime)|Converts Date 'd' to a Date Time value, adding the Time component (built-in-functions/data-conversion.md#00:00:00#).|
+|[DateToDateTime](built-in-functions/data-conversion.md#DateToDateTime)|Converts Date 'd' to a Date Time value, adding the Time component (#00:00:00#).|
 |[DateToText](built-in-functions/data-conversion.md#DateToText)|Converts Date 'd' to a Text value in the format specified in the environment configuration (by default, "yyyy-MM-dd").|
 |[DecimalToBoolean](built-in-functions/data-conversion.md#DecimalToBoolean)|Converts Decimal 'd' to a Boolean value. Decimal value of 0.0 is False. Any other value is True.|
 |[DecimalToInteger](built-in-functions/data-conversion.md#DecimalToInteger)|Converts Decimal 'd' to an Integer value.|
