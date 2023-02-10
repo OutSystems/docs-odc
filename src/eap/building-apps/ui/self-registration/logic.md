@@ -39,15 +39,15 @@ To create logic to register users, follow these procedures. To make it easier, T
 
 ## Configuring the server action
 
-After setting up the DoSignup action, you need to configure the server action. In the server action, you define what you want to happen next.
+After setting up the DoSignup action, you need to configure the server action. In the server action, you define what you want to happen next.   
 
 1. From the **Logic** tab, select **Server action**, right-click, and select **Add Public element** to display a pop-up.
 
-    ![Add StartUserRegistration Public element](images/add-pulbic-element-odcs.png)
+    ![Add StartUserRegistration Public element](images/add-public-element-odcs.png)
 
     <div class="info" markdown="1">
 
-        You can search for the action by pressing **Ctrl+Q** to display a Search bar.
+    You can search for the action by pressing **Ctrl+Q** to display a Search bar.
 
     </div>
 

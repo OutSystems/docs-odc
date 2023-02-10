@@ -43,3 +43,10 @@ Once users enter a validation code, you must verify the code. You create a form 
 * Sets the verification code.
 * Verifies the password follows the password policy.
 * Defines which screen to display once the user logs in.
+
+Use the following links to learn how to:
+
+* [Create a Signup screen, so users can register to use your app.](./screen.md)
+* [Create logic to register a user.](./logic.md)
+* [Create an email to send the verification code.](./email.md)
+* [Create a form to validate the verification code.](./create-validation-form.md)

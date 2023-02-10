@@ -28,19 +28,35 @@ Follow these steps to create your own email.
 1. From **Emails**, click **UserRegistration**, then modify the **Subject** in properties, for example, `Welcome to Your Sample App `.
 1. On canvas, click on the text above the unique verification code. Then in properties, replace the text.
 
-    ```You're receiving this e-mail because you requested a password reset for your user account. To set a new password, use the button below or insert the following verification code in the reset password page.``` 
-    
-    New Message: 
+    <div class="info" markdown="1">
 
-    ```Thank you for joining us. We’re glad to have you on board. You're receiving this e-mail because you registered in our _Your Name_ Portal. You now have a verification code. ``` 
+    You're receiving this e-mail because you requested a password reset for your user account. To set a new password, use the button below or insert the following verification code in the reset password page.
+    
+    </div>
+
+    New note text:
+
+    <div class="info" markdown="1">
+
+    Thank you for joining us. We’re glad to have you on board. You're receiving this e-mail because you registered in our _Your Name_ Portal. You now have a verification code.
+    
+    </div>
 
 1. On canvas, click on the text below the unique verification code. Then in Properties, replace the text.
+    
+    <div class="info" markdown="1">
 
-    ```This verification code expires in 1 hour```
+    This verification code expires in 1 hour.
+
+    </div>
     
     New note text:
 
-    ``` This verification code expires in 15 minutes```
+    <div class="info" markdown="1">
+
+    This verification code expires in 15 minutes.
+
+    </div>
 
     ![The delete password container](images/delete-password-container.png)
 
