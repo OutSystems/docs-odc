@@ -10,7 +10,7 @@ platform-version: odc
 
 In OutSystems a **thread** may result from the following:
 
-* A server action requested to the Platform Server.
+* A server action.
 * A client action triggered by the user in a mobile app, or an event triggered in a mobile app (e.g. OnReady event of a screen).
 * An awakened Timer action.
 * An integration method (belonging to a REST service) exposed by an app. 

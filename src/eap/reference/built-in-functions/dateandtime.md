@@ -343,7 +343,7 @@ Returns the difference in days between 'dt1' and 'dt2'; i.e. how many days have 
   
 The Time component you provide in the parameters is ignored. The DiffDays function receives two Date Time parameters, and then replaces the Time component with 00:00:00. It calculates the elapsed time in milliseconds from the first date at 00:00:00 to the second date at 00:00:00, and then converts the difference in milliseconds into days.  
   
-Daylight Saving Time (DST) is ignored. The time zone considered for evaluating this function is always the time zone of the Platform Server, regardless of the regional settings of the end user.  
+Daylight Saving Time (DST) is ignored. The time zone considered for evaluating this function is always the UTC, regardless of the regional settings of the end-user.
   
 The maximum supported value is (2^31)-1 days. This corresponds to approximately 5879489.8 years. If DiffDays(dt1, dt2) is bigger than (2^31)-1, you will get an unexpected value.  
 
@@ -388,7 +388,7 @@ Returns the difference in hours between 'dt1' and 'dt2'; i.e. how many hours hav
 - Returns a negative number if 'dt1' is bigger than 'dt2'.  
 - Returns 0 if the two dates are equal.  
   
-Daylight Saving Time (DST) is ignored. The time zone considered for evaluating this function is always the time zone of the Platform Server, regardless of the regional settings of the end user.  
+Daylight Saving Time (DST) is ignored. The time zone considered for evaluating this function is always the UTC, regardless of the regional settings of the end-user.
   
 The maximum supported value is (2^31)-1 hours. This corresponds to approximately 244978.74 years. If DiffHours(dt1, dt2) is bigger than (2^31)-1, you will get an unexpected value.  
 
@@ -432,7 +432,7 @@ Returns the difference in minutes between 'dt1' and 'dt2'; i.e. how many minutes
 - Returns a negative number if 'dt1' is bigger than 'dt2'.  
 - Returns 0 if the two dates are equal.  
   
-Daylight Saving Time (DST) is ignored. The time zone considered for evaluating this function is always the time zone of the Platform Server, regardless of the regional settings of the end user.  
+Daylight Saving Time (DST) is ignored. The time zone considered for evaluating this function is always the UTC, regardless of the regional settings of the end-user.
   
 The maximum supported value is (2^31)-1 minutes. This corresponds to approximately 4085.78 years. If DiffMinutes(dt1, dt2) is bigger than (2^31)-1, you will get an unexpected value.  
 
@@ -477,7 +477,7 @@ Returns the difference in seconds between 'dt1' and 'dt2'; i.e. how many seconds
 - Returns a negative number if 'dt1' is bigger than 'dt2'.  
 - Returns 0 if the two dates are equal.  
   
-Daylight Saving Time (DST) is ignored. The time zone considered for evaluating this function is always the time zone of the Platform Server, regardless of the regional settings of the end user.  
+Daylight Saving Time (DST) is ignored. The time zone considered for evaluating this function is always the UTC, regardless of the regional settings of the end-user.
   
 The maximum supported value is (2^31)-1 seconds. This corresponds to approximately 68.10 years. If DiffSeconds(dt1, dt2) is bigger than (2^31)-1, you will get an unexpected value.  
 
