@@ -108,5 +108,4 @@ As a final validation, you can configure the flow to send an email to the user w
 
 2. In the True branch, from the Toolbox, drag a **Send Email** widget. In the properties pane, set Name as `UserRegistration` and To as `User.Email`. In the Email setting, select the **New Email** option from the dropdown.
 
-
- You can now create emails to send to your users.
+You can now [create an email to send the verification code.](email.md)

@@ -197,3 +197,5 @@ Now lets update the verification form to improve it.
     1. Set the **On Click** property as the **SignUp** screen and the text as `Sign up here!`.
 
     ![Login page overview](images/login-screen-odcs.png)
+
+You have successfully built a self-registration app and can now improve it.

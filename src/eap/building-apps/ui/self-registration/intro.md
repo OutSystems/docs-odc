@@ -8,7 +8,7 @@ platform-version: odc
 ---
 
 # Self-registration flow
-The self registration flow enables users to access your app without human intervention. To access your apps, users need  a way to log in. Depending upon the type of app you create, users may find your app from your  website through a Google search. If you have an app that requires users to register to log in, you may need to provide them with an email link to your app.
+The self registration flow enables users to access your app without human intervention. To access your apps, users need a way to log in. Depending upon the type of app you create, users may find your app from your website through a Google search. If you have an app that requires users to register to log in, you may need to provide them with an email link to your app.
 
 You might also want users to be validated as part of the sign-in process. Many apps use a verification process in which you provide users with a verification code. You can use verification codes to confirm the validity of the user using the email address.
 
@@ -24,9 +24,9 @@ Users then follow a self-registration process to gain access to the app. To pers
 
 You start by creating a **Signup** screen. A signup screen usually requires users to enter a username and an email address. Security of your app and systems is essential. If your company has security requirements for logging into an app, you can use ODC Studio to create logic to register a user. Writing business logic lets you define the actions. For example, using logic, you can:
 
-* Create actions that send emails.
-* Generate a verification code that gets included in the email to the user.
-* Verify the verification the user submits.
+* Create actions that send emails
+* Generate a verification code that gets included in the email to the user
+* Verify the verification the user submits
 
 Verification codes enable you to confirm that the person registering has access to that email. In ODC, you can **create an email to send the verification code**.
 
@@ -40,13 +40,13 @@ OutSystems provides a sample email that you can update, making the process easie
 
 Once users enter a validation code, you must verify the code. You create a form to validate the verification code. Using the Form widget, you create a form to capture the data. You can define the logic that:
 
-* Sets the verification code.
-* Verifies the password follows the password policy.
-* Defines which screen to display once the user logs in.
+* Sets the verification code
+* Verifies the password follows the password policy
+* Defines which screen to display once the user logs in
 
 Use the following links to learn how to:
 
-* [Create a Signup screen, so users can register to use your app.](screen.md)
-* [Create logic to register a user.](logic.md)
-* [Create an email to send the verification code.](email.md)
-* [Create a form to validate the verification code.](create-validation-form.md)
+* [Create a Signup screen, so users can register to use your app](screen.md)
+* [Create logic to register a user](logic.md)
+* [Create an email to send the verification code](email.md)
+* [Create a form to validate the verification code](create-validation-form.md)

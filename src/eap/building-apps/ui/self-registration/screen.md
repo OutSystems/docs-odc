@@ -15,7 +15,7 @@ To create a self-registration flow, open ODC studio and follow the steps below:
 
  1. Open ODC Studio.
 
-1. From the **Interface** tab, click UI Flows > Common folder then  copy and paste the Login screen into the same folder. This creates a copy of Login that is named Login2 in the Common folder.
+1. From the **Interface** tab, click UI Flows > Common folder then copy and paste the Login screen into the same folder. This creates a copy of Login that is named Login2 in the Common folder.
 
     ![Copy login screen](images/copy-login-screen-odcs.png)
 
@@ -42,3 +42,5 @@ To create a self-registration flow, open ODC studio and follow the steps below:
 1.  In the **Style classes** property, replace the class **btn btn-primary** with **btn margin-top-base** and change the value of **IsFormDefault** to **No**. Then, set the **Width property** to set **Fill** in under Styles > Layout.
 
     ![Sign-up delete useless code from Login screen.](images/delete-useless-code-odcs.png)
+
+You can now [create logic to register a user.](logic.md)

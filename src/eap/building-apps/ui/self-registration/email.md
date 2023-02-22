@@ -11,7 +11,7 @@ platform-version: odc
 
 <div class="info" markdown="1">
 
-Before you begin creating your email, make sure you  have an [email provider configured](../../../configuration-management/configure-emails.md).
+Before you begin creating your email, make sure you have an [email provider configured](../../../configuration-management/configure-emails.md).
 
 </div>
 
@@ -24,7 +24,7 @@ Follow these steps to create your own email.
 ![Base email screen](images/email-screen-odcs.png)
 
 1. From the **Elements** tab, copy and paste the **ResetPassword** email into the same folder. It creates a copy of the Reset password in the emails folder.
-1. In **Elements** tab, select  Emails, and rename the email **ResetPassword2** to `UserRegistration`.
+1. In **Elements** tab, select Emails, and rename the email **ResetPassword2** to `UserRegistration`.
 1. From **Emails**, click **UserRegistration**, then modify the **Subject** in properties, for example, `Welcome to Your Sample App `.
 1. On canvas, click on the text above the unique verification code. Then in properties, replace the text.
 
@@ -114,4 +114,4 @@ Before updating the actions, delete the input parameter **CustomerEmail** by exp
 
 1. From the **SignUp** page, go to **SignUpOnClick**, and in the **ApplicationName** open the dialog and type `GetAppName()`.
 
-You can now create a form to validate the verification code and password
+You can now [create a form to validate the verification code.](create-validation-form.md)
