@@ -1,5 +1,5 @@
 ---
-summary: Conceptual information on the architecture of the user authentication and authorization flow of the Identity Service of OutSystems Developer Cloud. 
+summary: This article discusses the architecture of OutSystems Developer Cloud's authentication and authorization mechanism, including the use of JSON Web Tokens for secure sessions and user flow validation. 
 tags: 
 locale: en-us
 guid: 5f50a67f-d8c9-444a-9615-090062255870
