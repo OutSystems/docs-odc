@@ -361,6 +361,7 @@
 - href: eap/forge/intro.md
 - topics:
   - href: eap/forge/install.md
+  - href: eap/forge/document.md
   - href: eap/forge/submit.md
 
 # Deploy your apps
