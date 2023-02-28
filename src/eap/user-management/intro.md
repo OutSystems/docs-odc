@@ -92,7 +92,7 @@ From the **ODC Portal**, select **Users & Access**> **Users**, and then click th
 
 <div class="info" markdown="1">
 
-When an end-user logs into an app for the first time, their user profile information is synchronized to the [User entity](../reference/system-actions/user.md#user-1) of that app.
+When a user logs into an app their user profile information is synchronized to the [User entity](../reference/system-actions/user.md#user-1) of that app.
 
 </div>
 
@@ -125,4 +125,4 @@ Admins don't have permission to change or recover other users' passwords.
 
 </div>
 
-Use pre-built user screens in your app to enable end-users to change and recover their password. See [Custom authentication flows](../building-apps/ui/custom-auth.md) for more information. If an end-user has an organization role, currently they must recover their password using the Portal.
+Use pre-built user screens in your app to enable end-users to change and recover their password. See [Custom authentication flows](../building-apps/ui/custom-auth.md) for more information. If the user of an app has an organization role, currently they must recover their password using the Portal.

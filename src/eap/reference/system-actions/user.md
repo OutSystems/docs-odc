@@ -67,7 +67,7 @@ _Client action_
 
 <div class="info" markdown="1">
 
-You must first add this action due to a temporary technical limitation. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
+Due to a temporary technical limitation, you must add this action from the public elements. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
 
 </div>
 
@@ -184,7 +184,7 @@ _Server action_
 
 <div class="info" markdown="1">
 
-You must first add this action due to a temporary technical limitation. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
+Due to a temporary technical limitation, you must add this action from the public elements. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
 
 </div>
 
