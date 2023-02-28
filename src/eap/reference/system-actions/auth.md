@@ -15,7 +15,7 @@ Authentication actions for built-in and/or external identity providers.
 ### Login
 _Client action_
 
-Performs a login in to the built-in identity provider using a username and password. If RememberDevice is true, keeps the user logged in for 2 weeks or until a Logout is performed. User profile information is synchronized to the User entity before this action is finished. Throws an exception if the built-in identity provider is disabled for the current app.
+Performs a login in to the built-in identity provider using a username and password. If RememberDevice is true, keeps the user logged in for 2 weeks or until a Logout is performed. User profile information is synchronized to the [User entity](user.md#user-1) before this action is finished. Throws an exception if the built-in identity provider is disabled for the current app.
 
 _Inputs_
 

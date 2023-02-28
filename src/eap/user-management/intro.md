@@ -90,6 +90,12 @@ From the **ODC Portal**, select **Users & Access**> **Users**, and then click th
 * If you choose **Organization** role, then you select a role. Note that the list of roles is the list of roles you create.
 * If you choose **End user**, you can assign roles related to a specific app or all apps, and all stages or a specific stage. You can choose more than one app at a time.
 
+<div class="info" markdown="1">
+
+When an end-user logs into an app for the first time, their user profile information is synchronized to the [User entity](../reference/system-actions/user.md#user-1) of that app.
+
+</div>
+
 ## Activate, deactivate, or delete users
 
 To **activate** a user, you must first invite the user. Once a user accepts the invitation, you see them as active in the list of users.

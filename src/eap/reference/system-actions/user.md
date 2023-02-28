@@ -107,7 +107,7 @@ _Outputs_
 ### GetUserProfile
 _Client action_
 
-Returns logged-in user's information from the identity provider and updates the user entity with that information.
+Returns logged-in user's information from the identity provider and updates the [User entity](#user-1) with that information.
 
 _Outputs_
 
@@ -188,7 +188,7 @@ You must first add this action due to a temporary technical limitation. Navigate
 
 </div>
 
-Registers the user in the built-in identity provider by creating the user as inactive and setting a temporary password. Synchronises the User entity with the identity provider.<br/>Call the action FinishUserRegistration to activate the user and change the password.<br/>It throws an exception if the built-in identity provider is disabled for the current app.
+Registers the user in the built-in identity provider by creating the user as inactive and setting a temporary password. Synchronises the [User entity](#user-1) with the identity provider.<br/>Call the action FinishUserRegistration to activate the user and change the password.<br/>It throws an exception if the built-in identity provider is disabled for the current app.
 
 _Inputs_
 
@@ -218,8 +218,6 @@ _Outputs_
 **UpdateUserResult**
 :   Type: [UpdateUserResult](#UpdateUserResult)  
     Result of the update user action. Returns the failure reason if unsuccessful.
-
-
 
 ### ValidatePasswordComplexity
 _Client action_
@@ -385,3 +383,23 @@ UserPhotoURL
 
 UpdateUserFailureReason
 :   Type: UpdateUserFailureReason
+
+## Entities
+
+### User
+
+The end user of the apps.
+
+*Attributes*
+
+Id
+:   Type: Text
+
+Name
+:   Type: Text
+
+Email
+:   Type: Email
+
+PhotoUrl
+:   Type: Text
