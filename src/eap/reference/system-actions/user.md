@@ -161,7 +161,7 @@ _Inputs_
 **Email**
 :   Type: Text. Mandatory.
     User email that will receive a recovery link. If no user with such email is found, no email will be sent.
-    
+
 ### StartResetPassword
 _Server action_
 
