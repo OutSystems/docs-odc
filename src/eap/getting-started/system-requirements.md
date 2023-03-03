@@ -80,7 +80,7 @@ It's recommended that you use the most current version.
 
 ### Native mobile apps
 
-See **Mobile Apps Build Service (MABS)** for the latest supported Android and iOS platform versions and the minimum requirements to generate your Mobile Apps.
+See [Mobile Apps Build Service (MABS)](https://success.outsystems.com/support/release_notes/mobile_apps_build_service_versions/) for the latest supported Android and iOS platform versions and the minimum requirements to generate your mobile apps.
 
 ## Request limits
 
