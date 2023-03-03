@@ -1,5 +1,5 @@
 ---
-summary: Monitor and troubleshoot apps by reviewing logs and traces
+summary: This article explains how to use Logs and Traces in OutSystems Developer Cloud to monitor and troubleshoot apps.
 tags: 
 locale: en-us
 guid: ca7cae65-c466-4d93-bab6-85ac740519c0

@@ -1,5 +1,5 @@
 ---
-summary: Learn how to connect ODC to external databases.
+summary: This article explains how to integrate external databases with OutSystems Developer Cloud and how to manage connections and select entities for use in apps.
 tags:
 locale: en-us
 guid: 67608c14-0b83-4e69-bf46-ba023ed730f4

@@ -1,5 +1,5 @@
 ---
-summary: Describes custom domains and how to add and delete them for your apps.
+summary: This article explains how to configure custom domains for apps in OutSystems Developer Cloud.
 tags: 
 locale: en-us
 guid: da18534d-84c8-4a52-bca8-85ebb3b1e082

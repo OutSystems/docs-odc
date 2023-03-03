@@ -1,5 +1,5 @@
 ---
-summary: Use external identity provider in an app
+summary: Modify the end-user login and logout flows for each app to use an external identity provider.
 tags: 
 locale: en-us
 guid: e2b2541f-80b6-49b7-8961-8b7ad2ad65f3

@@ -1,5 +1,5 @@
 ---
-summary: Add Okta for use as an external identity provider
+summary: This article explains how to configure Okta as an external identity provider in OutSystems Developer Cloud Portal.
 tags: 
 locale: en-us
 guid: 0a284428-86c4-4b57-b912-b122674b69e4

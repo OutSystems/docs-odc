@@ -1,5 +1,5 @@
 ---
-summary: Add Azure AD for use as an external identity provider
+summary: This article explains how to configure Azure AD as an external IdP in OutSystems Developer Cloud Portal.
 tags: 
 locale: en-us
 guid: fb6adbb0-7343-4858-8a87-e3f7d8693900
@@ -44,3 +44,4 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 ODC tests the configuration and on success adds Azure AD to the list of available providers. If the test fails, a notification with the error displays. 
 
 Now follow the steps [here](intro.md#apply-an-external-idp) to apply for the newly added Azure AD provider for use by your organization or apps.
+ 

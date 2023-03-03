@@ -1,6 +1,5 @@
 ---
-summary: Information about external IdPs and how to use them.
-tags: 
+summary: OutSystems Developer Cloud allows users to configure external identity providers for authentication, authorization, and user management.
 locale: en-us
 guid: 5aa8692d-68bf-41a1-89ec-5e8fc7069e29
 app_type: mobile apps, reactive web apps

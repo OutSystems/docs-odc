@@ -1,5 +1,5 @@
 ---
-summary: Overview of the infrastructure architecture of OutSystems Developer Cloud.
+summary: OutSystems Developer Cloud is a cloud-native platform with multi-tenant services, isolated databases, and auto-scaling clusters for both the Platform and Runtime stages.
 tags: 
 locale: en-us
 guid: 9a0cb62a-f11b-4d1a-9e79-0ca7d398e57b

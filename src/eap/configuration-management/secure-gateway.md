@@ -1,5 +1,5 @@
 ---
-summary: Information about secure gateways and how to create one to connect to your on-premise, private cloud, or public cloud resources.
+summary: This article explains how to configure a secure gateway to connect apps to private data and services.
 tags: 
 locale: en-us
 guid: 9a023d82-da5b-4164-8f3f-9d6c35444b50

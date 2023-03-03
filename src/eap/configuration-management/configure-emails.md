@@ -1,5 +1,5 @@
 ---
-summary: Learn more about how to configure emails. 
+summary: This article explains how to configure sending emails in OutSystems Developer Cloud.
 tags:
 locale: en-us
 guid: 48490651-74d0-459b-a0c4-4b40df93d56e

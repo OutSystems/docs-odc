@@ -1,5 +1,5 @@
 ---
-summary: Overview of the cloud-native network architecture and security of OutSystems Developer Cloud.
+summary: OutSystems Developer Cloud uses a secure cloud-native network with CDN, WAF, NATS, Identity Service, and Load Balancer to protect the Platform and Runtime from malicious accesses and attacks.
 tags: 
 locale: en-us
 guid: e87fb27d-9186-436d-ac97-a2ea960c119d
