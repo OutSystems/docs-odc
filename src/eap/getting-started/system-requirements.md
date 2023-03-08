@@ -36,23 +36,26 @@ For Apple devices using the Apple Silicon M1 processor, ODC Studio runs best und
 
 ### Operating systems
 
+These are the supported Operating Systems.
+
 <div class="info" markdown="1">
 
 OutSystems only supports versions up to 6 months after the end of life defined by the manufacturer. 
 
 </div>
 
-* macOS
-* Windows (64-bit)
+* macOS:
+    * macOS Big Sur
+    * macOS Monterrey
+
+* Windows:
+    * Windows 10 (64-bit)
 
 ### Requirements for client-side debugging
 
 To perform client-side debugging in ODC Studio using a desktop browser, use the most recent version of any of the following browsers:
 
-* Edge
-* Firefox
 * Google Chrome
-* Safari
 
 ## Software requirements for app users
 
