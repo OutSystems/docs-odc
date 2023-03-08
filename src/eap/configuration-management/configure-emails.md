@@ -42,8 +42,7 @@ Before apps can send emails, you must create the email in ODC Studio.
 
 Once you define an email configuration, you can apply it to your app. Select the same stage in which you created the configuration.
 
-1. Open ODC Portal, and from the left Nav menu, select **Apps**.
-1. Locate and open your app.
+1. Open ODC Portal. 
 1. From the **Configurations** tab, scroll down and click **Email** to open the section.
 1. Select the Configuration you want to apply to the emails.
 
