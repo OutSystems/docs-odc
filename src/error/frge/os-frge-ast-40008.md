@@ -1,5 +1,5 @@
 ---
-summary: The curation type is incorrect <curation>. Check the documentation for further guidance. If the problem persists, let us know.
+summary: The curation type is incorrect. Check the documentation for further guidance. If the problem persists, let us know.
 tags: 
 guid: 9270ae64-574a-4650-adba-1ef12c43b088
 locale: en-us
@@ -11,7 +11,7 @@ platform-version: odc
 
 ## Error message
 
-`The curation type is incorrect <curation>. Check the documentation for further guidance. If the problem persists, let us know.`
+`The curation type is incorrect. Check the documentation for further guidance. If the problem persists, let us know.`
 
 ## Cause
 
