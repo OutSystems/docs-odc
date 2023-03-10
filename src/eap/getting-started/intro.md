@@ -13,7 +13,11 @@ OutSystems Developer Cloud (ODC) is a cloud-native app development platform that
 
 ## Access the ODC Portal
 
-Your ODC journey begins when you receive an email invite to an organization.
+<div class="info" markdown="1">
+
+Currently, OutSystems offers only a paid version of ODC. Please contact the OutSystems field team if you're interested in a commercial trial.
+
+</div>
 
 Open the email and locate the link to the ODC Portal.
 
