@@ -2,6 +2,7 @@
 - href: eap/getting-started/intro.md
 - topics:
   - href: eap/getting-started/system-requirements.md
+  - href: eap/getting-started/overview-portal-studio.md
   - href: eap/getting-started/types-of-apps.md
   - href: eap/getting-started/sample-app.md
 
