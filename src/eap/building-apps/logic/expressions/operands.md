@@ -34,6 +34,7 @@ Variables are identifiers that point to values. Here are some examples.
 * In `isValid = False`, **isValid** is a variable.
 
 <div class="info" markdown="1">
+
 Use smart names to set the data type automatically. For example, if you create a value or parameter, and name it **PurchaseDate**, ODC Studio sets the data type to **Date**.
 
 </div>
