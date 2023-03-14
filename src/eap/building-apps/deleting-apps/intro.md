@@ -1,5 +1,5 @@
 ---
-summary: You can delete apps and libraries through ODC Portal. You need to have a delete permission and you can delete apps or libraries in the development stage only. 
+summary: You can delete apps and libraries through the ODC Portal, with the delete permission in the development or QA stages. 
 tags:
 locale: en-us
 guid: F5E3A7C3-EE70-42AC-A891-FFA5CC7AD64A
@@ -9,7 +9,7 @@ platform-version: odc
 
 # Deleting apps and libraries
 
-During the development process, you may create apps or libraries for testing. As time goes on, these apps or libraries may no longer be needed. OutSystems Developer Cloud (ODC) lets you safely delete apps, libraries, and with them data from the Development stage. Having a clean stage saves on resources and makes it faster to find the apps and libraries you need.
+During the development process, you may create apps or libraries for testing. As time goes on, these apps or libraries may no longer be needed. OutSystems Developer Cloud (ODC) lets you safely delete apps, libraries, and with them data from the Development and QA stages. Having a clean stage saves on resources and makes it faster to find the apps and libraries you need.
 
 To delete an app or library first go to the ODC Portal and select the app or library you want to delete. In the details screen, click the three-dots button in the upper-right corner and select **Delete**. There are three likely outcomes:
 
@@ -24,10 +24,10 @@ To ensure you don’t accidentally delete an app or library that might be in use
 In addition, to having the correct permission, you can only **delete an app** if:
 
 * It's not a system app, such as OutSystems Sample Data
-* It hasn’t been deployed beyond the Development stage
-* It has dependencies that haven't been deployed beyond Development stage
+* It hasn’t been deployed beyond the Development or QA stage
+* It has dependencies that haven't been deployed beyond the Development or QA stage
 
-You can also **delete an app template** if it isn’t a system app template such as a web app template, a Phone app template, a Table app template, a Screen template for Mobile or Web apps.
+You can also **delete an app template** if it isn’t a system app template such as a Web app template, a Phone app template, a Table app template, a Screen template for Mobile or Web apps.
 
  <div class="info" markdown="1">
 
