@@ -166,7 +166,7 @@ Now lets update the verification form to improve it.
  1. Navigate back to the **FinishUserRegistration** server action canvas.
  1. Drag an **If** widget and place it after the newly added aggregate widget and set the **Condition** as `GetUsersByEmail.List.Empty`.
  1. On the top toolbar, click the **Add public elements** icon or use the **Ctrl+Q** shortcut. Search for the **LogMessage** server action action, select it, and click **Add**.
- 1. On the canvas, in the True branch, add a **LogMessage** system action and set the **Message** to guide the user if there is a problem with the registration.
+ 1. On the canvas, in the True branch, add a LogMessage system action and set the Message to guide the user if there is a problem with the registration, such as "There were 0 entries in the data store."
  1. On the canvas, in the False branch, drag a **Run Server Action** widget, and search for Grant&lt;YOUR_ROLE_NAME&gt;Role. Set  the **UserId** as `GetUsersByEmail.List.Current.User.Id`.
 
     ![Drag a GrantRole server action and add the user id](images/grant-role-values-odcs.png)
