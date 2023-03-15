@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;
+tags: 
 summary: List Item Content is used to layout content such as icons, text, and actions inside a list in a readable way.
 locale: en-us
 guid: af82326a-de20-4931-af2a-dc6ca092a60d

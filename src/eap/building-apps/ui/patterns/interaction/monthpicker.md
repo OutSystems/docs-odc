@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Allow users to input a month of the year. 
 locale: en-us
 guid: 7302634b-c545-4b3a-98d4-f41d0a7545a2

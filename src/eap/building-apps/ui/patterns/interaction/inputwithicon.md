@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Input with Icon allows the end user to input data with the help of a hint.
 locale: en-us
 guid: 74216051-2083-436f-b118-102696b9c182

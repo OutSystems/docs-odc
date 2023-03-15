@@ -1,6 +1,6 @@
 ---
 summary: Learn how to create an input parameter to pass information to the destination screen.
-tags: support-application_development; support-Mobile_Apps; support-webapps
+tags: 
 locale: en-us
 guid: f1443b9a-dbfa-440b-b618-69835bbcb361
 app_type: mobile apps, reactive web apps

@@ -3,7 +3,7 @@ summary: Learn how to navigate ODC Portal and ODC Studio
 tags:
 locale: en-us
 guid: 6795fecc-61f8-4cae-93f9-098b1cfa092b
-app_type: web apps,  mobile apps
+app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
 

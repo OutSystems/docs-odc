@@ -3,7 +3,7 @@ summary: Learn best practices to document your shared forge asset.
 tags:
 locale: en-us
 guid: C5331351-418A-4B72-AB9E-0CBE317A97D9
-app_type:  
+app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
 

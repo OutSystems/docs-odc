@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;
+tags:
 summary: The Dropdown Search UI Pattern offers a choice of available options that the user can search.
 locale: en-us
 guid: 667dfcf6-b299-492b-8e93-655ad62ea91a

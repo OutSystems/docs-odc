@@ -1,7 +1,7 @@
 ---
 kinds: ServiceStudio.Model.SystemClientActions+OnApplicationResume+Kind
-helpids: 0
-tags: runtime-mobile
+helpids: 
+tags: 
 locale: en-us
 guid: 96c703ae-d97e-4ceb-b511-6524da0b7cf3
 app_type: mobile apps

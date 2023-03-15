@@ -1,6 +1,6 @@
 ---
 summary: Learn how to use the debug features provided by OutSystems to easily find and troubleshoot semantic errors in your apps.
-tags: support-application_development; support-Application_Troubleshooting; support-Application_Troubleshooting-featured
+tags: 
 locale: en-us
 guid: bd64bfb4-afcf-4eb8-b87a-1923fd19524c
 app_type: mobile apps, reactive web apps

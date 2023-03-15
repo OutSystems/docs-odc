@@ -1,8 +1,9 @@
 ---
 summary: Learn how to monitor Timers.
+tags:
 locale: en-us
 guid: 95C30236-ADCA-464E-AD86-A3437E9F3FEF
-app_type: web apps, mobile apps
+app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
 

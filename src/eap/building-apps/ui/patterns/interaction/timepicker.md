@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Allow users to input a time of day in either a 24-hour or AM/PM format. 
 locale: en-us
 guid: 510393e6-a590-4ceb-a143-eefdac104240

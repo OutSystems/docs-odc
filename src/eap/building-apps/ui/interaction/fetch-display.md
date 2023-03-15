@@ -1,6 +1,6 @@
 ---
 summary: Fetching data from the database using Aggregates.
-tags: support-application_development; support-Database;
+tags: 
 locale: en-us
 guid: 9072a3d9-8993-4b6a-98b7-2f623bcd78bc
 app_type: mobile apps, reactive web apps

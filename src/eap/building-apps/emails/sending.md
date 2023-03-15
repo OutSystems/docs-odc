@@ -1,9 +1,9 @@
 ---
 summary: Use Send Email action  to send emails. Trigger manual or automatic sending of emails.
-tags: support-application_development,
+tags: 
 locale: en-us
 guid: 895e64b5-eb2c-4b92-9673-8493aa306622
-app_type: Web apps, mobile apps
+app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
 

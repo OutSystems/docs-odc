@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags:
 summary: The Bottom Bar Item provides access to a bottom navigation drawer
 locale: en-us
 guid: a47f6440-0442-42ec-8674-e4cfb134957b

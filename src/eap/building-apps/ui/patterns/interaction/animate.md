@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Animate adds default animations to emphasize elements as they appear on the screen.
 locale: en-us
 guid: bd23a378-5bd7-4fcb-8c53-5455b46be344

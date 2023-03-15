@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: The Pagination UI Pattern helps users find a specific item on long listings.
 locale: en-us
 guid: d5aa86c4-874b-4d6d-91c6-c4a18c096f0a

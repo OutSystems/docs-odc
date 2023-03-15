@@ -1,6 +1,6 @@
 ---
 summary: Location Plugin to enables your apps to access the GPS capabilities of the device. 
-tags: runtime-mobile; support-application_development; support-Mobile_Apps;
+tags:
 locale: en-us
 guid: f2b0feab-c558-4d7f-b507-4511ae094677
 app_type: mobile apps

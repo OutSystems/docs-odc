@@ -1,6 +1,6 @@
 ---
 summary: Change the services consumed from a REST Web Service; get the latest changes or modify the list of consumed methods in ODC Studio.
-tags: support-Integrations_Extensions
+tags:
 locale: en-us
 guid: 1ba6b838-04bc-4c08-813d-5a2901954f8c
 app_type: mobile apps, reactive web apps

@@ -1,6 +1,6 @@
 ---
 summary: Create database tables by modeling Entities in OutSystems.
-tags: support-application_development; support-Database; support-webapps
+tags: 
 locale: en-us
 guid: d8cd27a9-fadb-404c-8998-648f3799934a
 app_type: mobile apps, reactive web apps

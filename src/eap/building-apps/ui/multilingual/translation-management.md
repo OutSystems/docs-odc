@@ -1,6 +1,6 @@
 ---
 summary: How to export text for translation and import back translated text.
-tags: support-application_development
+tags: 
 locale: en-us
 guid: 9eb50227-4f61-4cd7-809c-c290804c7e07
 app_type: mobile apps, reactive web apps

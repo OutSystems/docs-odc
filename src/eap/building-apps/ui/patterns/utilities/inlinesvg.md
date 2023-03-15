@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Inline SVG changes fill and stroke properties or animates the SVG paths.
 locale: en-us
 guid: 6db3a9a0-b82e-430c-b4b6-e5964bcd383f

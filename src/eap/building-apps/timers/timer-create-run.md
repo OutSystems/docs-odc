@@ -1,8 +1,9 @@
 ---
 summary: You create Timers at design time and set the schedule from ODC (OutSystems Developer Cloud) Portal.
+tags:
 locale: en-us
 guid: 8468A775-BC5C-489C-8A44-D15F7C0B5BF1
-app_type:  web apps, mobile apps
+app_type:  mobile apps, reactive web apps
 platform-version: odc
 ---
 

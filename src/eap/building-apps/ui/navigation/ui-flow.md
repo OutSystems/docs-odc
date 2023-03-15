@@ -1,5 +1,6 @@
 ---
 summary: UI Flow groups screens into logical units with common settings.
+tags:
 locale: en-us
 guid: f7e6d4a4-7d1e-4593-9975-b8e160df3780
 app_type: mobile apps, reactive web apps

@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Breadcrumbs present the location of the user within the hierarchy of applications.
 locale: en-us
 guid: 78642488-92c4-45ba-a5ff-65e0e79506a9

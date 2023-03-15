@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;
+tags: 
 summary: Search allows the user to find pieces of content without the use of navigation.
 locale: en-us
 guid: 1914dd20-040d-4a96-8293-e35756cb8e6a

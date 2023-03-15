@@ -1,6 +1,6 @@
 ---
 summary: Flip Content prioritizes information display, keeping the interface uncluttered.
-tags: runtime-mobileandreactiveweb;
+tags: 
 locale: en-us
 guid: d87a061c-83e2-4b7f-b820-4e7f70267a38
 app_type: mobile apps, reactive web apps

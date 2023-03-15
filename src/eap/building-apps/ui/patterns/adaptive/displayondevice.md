@@ -1,6 +1,6 @@
 ---
-tags: runtime-mobileandreactiveweb;  
 summary: Display on Device improves the way information is displayed on different devices.
+tags: 
 locale: en-us
 guid: 4dd69c5c-c0a3-4c26-a4f7-b4c86313495f
 app_type: mobile apps, reactive web apps

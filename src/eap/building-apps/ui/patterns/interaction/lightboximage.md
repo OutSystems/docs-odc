@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Displays an image thumbnail that can be clicked to open a fullscreen image.
 locale: en-us
 guid: 575c188f-fb02-4d70-8241-4b3e4518d66c

@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;   
+tags: 
 summary: Simple scrollable Block with a placeholder for content. Ideal to display multiple elements in a single, scrollable row or column.
 locale: en-us
 guid: 2cb523f7-81e5-4505-949b-801853c28f34

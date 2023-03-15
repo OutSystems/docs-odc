@@ -1,6 +1,6 @@
 ---
 summary: When designing queries, you can add conditions to filter sets of records returned by aggregates to choose the database content you want to display.
-tags: support-application_development; support-Database; support-webapps
+tags: 
 locale: en-us
 guid: 2a8244b0-c439-4463-9e98-3c5f2e4d4aa6
 app_type: mobile apps, reactive web apps

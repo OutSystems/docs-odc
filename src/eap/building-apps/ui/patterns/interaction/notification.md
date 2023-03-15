@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: The Notification UI Pattern is a contextual short message that provides important information to the user. 
 locale: en-us
 guid: b60bb989-895e-49a1-a261-76d9bb540425

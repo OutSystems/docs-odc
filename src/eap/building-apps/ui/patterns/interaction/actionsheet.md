@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags:  
 summary: Option menu, which slides from the bottom of the screen, triggered by a user action.
 locale: en-us
 guid: 7702c792-34d2-41e7-9bad-e9b88326a21e

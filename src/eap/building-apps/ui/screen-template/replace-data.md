@@ -1,5 +1,6 @@
 ---
 summary: Replace data in screens created from screen templates or accelerators with your data. 
+tags:
 locale: en-us
 guid: 6fccfc68-813b-45a4-a938-4f740a10176c
 app_type: mobile apps, reactive web apps

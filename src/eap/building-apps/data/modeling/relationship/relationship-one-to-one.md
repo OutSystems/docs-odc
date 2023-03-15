@@ -1,6 +1,6 @@
 ---
 summary: How to define a one-to-one relationship between data entities.
-tags: support-application_development; support-Database; support-webapps
+tags: 
 locale: en-us
 guid: d3ee8fb1-e6dd-4c20-9dec-af509afc4afe
 app_type: mobile apps, reactive web apps

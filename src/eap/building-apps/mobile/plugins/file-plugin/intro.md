@@ -1,6 +1,6 @@
 ---
 summary: Manage files and folders on a mobile device within the app sandbox.
-tags: runtime-mobile; support-application_development; support-Mobile_Apps;
+tags: 
 locale: en-us
 guid: c2174075-3813-431b-8254-637c6a5e7d69
 app_type: mobile apps

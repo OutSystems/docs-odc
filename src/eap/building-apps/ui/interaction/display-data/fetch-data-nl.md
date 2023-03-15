@@ -1,5 +1,6 @@
 ---
 summary: Fetch data in your apps using human language.
+tags:
 locale: en-us
 guid: 0e8d2237-0ede-4be9-ac0d-3603a1ab8fae
 app_type: mobile apps, reactive web apps

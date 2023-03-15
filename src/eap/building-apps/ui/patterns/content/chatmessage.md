@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;
+tags: 
 summary: Chat Message displays conversation posts in notifications or chat screens.
 locale: en-us
 guid: e2779043-5437-4ee5-aed8-03b1a2f1ff85

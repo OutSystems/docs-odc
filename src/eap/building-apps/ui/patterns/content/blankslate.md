@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Blank Slate informs end users when they start using the application, complete a task or when there is no data available for display.
 locale: en-us
 guid: 8f31ca3f-5223-4225-b292-304330d0e17e

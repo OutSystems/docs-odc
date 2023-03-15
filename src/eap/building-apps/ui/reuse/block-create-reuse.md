@@ -1,6 +1,6 @@
 ---
 summary: Display the same content on several screens by developing reusable Blocks.
-tags: support-application_development; support-Front_end_Development; support-Mobile_Apps; support-webapps
+tags: 
 locale: en-us
 guid: a62501dc-9ec8-41f6-add8-50b3e3934b8b
 app_type: mobile apps, reactive web apps

@@ -1,6 +1,6 @@
 ---
 summary: Learn how to add attachments to emails.
-tags: support-application_development
+tags: 
 locale: en-us
 guid: b03f90a8-d437-4f61-a08b-dda12e8ebbfe
 app_type: mobile apps, reactive web apps

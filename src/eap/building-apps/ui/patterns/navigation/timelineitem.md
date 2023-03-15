@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Timeline Item indicates related events in chronological order.
 locale: en-us
 guid: e420ff2a-afcd-4ca6-9d65-9e42ee8d5213

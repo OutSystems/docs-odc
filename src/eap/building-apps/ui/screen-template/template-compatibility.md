@@ -1,5 +1,6 @@
 ---
 summary: You need a Screen Template compatible with your Theme to display the final page properly.
+tags:
 locale: en-us
 guid: 9d153217-df3d-488c-ad5c-22cdc196942d
 app_type: mobile apps, reactive web apps

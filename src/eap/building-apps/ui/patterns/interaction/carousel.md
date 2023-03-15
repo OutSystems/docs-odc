@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Displays multiple items in a horizontal slide.
 locale: en-us
 guid: 84e84647-8129-4467-ade7-72b6102f9959

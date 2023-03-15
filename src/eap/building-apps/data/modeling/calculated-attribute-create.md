@@ -1,6 +1,6 @@
 ---
 summary: How to create a new attribute to a data query and base its value on the other record's attributes.
-tags: support-application_development; support-Database; support-webapps
+tags: 
 locale: en-us
 guid: 8d55b7fe-ff2d-4a80-b306-e8d7820ea579
 app_type: mobile apps, reactive web apps

@@ -1,6 +1,6 @@
 ---
 summary: How to implement a many-to-many relationship using a junction table in OutSystems.
-tags: support-application_development; support-Database; support-webapps
+tags:
 locale: en-us
 guid: 4e158cbd-cb4d-4152-81f2-dae5e703e5ec
 app_type: mobile apps, reactive web apps

@@ -1,6 +1,6 @@
 ---
 summary: Let your users take pictures in native mobile apps, PWAs, and web apps. Adjust the picture properties in the native mobile apps. Demo app available to see the plugin in action.
-tags: runtime-mobile; support-application_development; support-Mobile_Apps;
+tags: 
 locale: en-us
 guid: 6df6f491-46e4-434f-924e-043929958fef
 app_type: mobile apps

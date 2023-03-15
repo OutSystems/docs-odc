@@ -3,7 +3,7 @@ summary: This article explains the system requirements for OutSystems Developer 
 tags:
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
-app_type: web apps, reactive apps, mobile apps
+app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
 

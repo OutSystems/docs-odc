@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;
+tags: 
 summary: Submenu is used to create a menu contained within another menu.
 locale: en-us
 guid: 643d37e9-efa8-48a3-87ba-f409a1f04efa

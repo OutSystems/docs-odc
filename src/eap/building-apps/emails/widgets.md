@@ -1,9 +1,9 @@
 ---
 summary: Email widgets are lightweight and let you design emails that most emails readers can open. Container, Expressions, If, Image, Link, Table, Text.
-tags: support-application_development,
+tags: 
 locale: en-us
 guid: 665cc9c6-00e6-44f9-91ba-04f6de8fa936
-app_type: traditional web apps, mobile apps, reactive web apps
+app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
 

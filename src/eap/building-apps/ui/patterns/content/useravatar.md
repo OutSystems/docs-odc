@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;
+tags: 
 summary: User Avatar displays user information in a circular badge.
 locale: en-us
 guid: 6b1585c5-c59f-48a2-9bb4-452a9932bbc4

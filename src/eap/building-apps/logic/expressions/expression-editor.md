@@ -1,6 +1,6 @@
 ---
 summary: Use the expression editor to edit and validate expressions. The expressions editor shows the available elements, for example, variables and functions. It supports autocomplete and suggestions.
-tags: support-application_development
+tags: 
 locale: en-us
 guid: 1ad176b7-bb78-41f9-ae4a-69d3e0e06a13
 app_type: mobile apps, reactive web apps

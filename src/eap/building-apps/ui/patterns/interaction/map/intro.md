@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Use the Map pattern to add Google Maps to your app.
 locale: en-us
 guid: cdacfb9a-e989-424b-b3ed-5608dfa0d02c  

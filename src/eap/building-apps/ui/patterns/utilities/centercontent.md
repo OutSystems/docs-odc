@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags:
 summary: Use the Center Content pattern to align the content to the center of its container.
 locale: en-us
 guid: a4890513-8edb-4155-8075-a2e68740e6f0

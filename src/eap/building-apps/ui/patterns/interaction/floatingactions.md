@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags:   
 summary: Floating Actions displays an action that floats in the bottom right corner of the screen.
 locale: en-us
 guid: a246e3bb-4c75-4e3b-8a53-eb45a08996ae

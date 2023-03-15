@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Displays large sets of information, which can be split into different areas, while always remaining a click away. 
 locale: en-us
 guid: 01e14d73-1043-4401-a2d4-0903b3068a5b

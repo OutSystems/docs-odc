@@ -1,6 +1,6 @@
 ---
 summary: Troubleshoot issues that can arise while connecting your mobile device to your PC for debugging purposes.
-tags: runtime-mobile; support-application_development; support-Mobile_Apps
+tags: 
 locale: en-us
 guid: e482b9b0-c2f0-4636-8a9f-97aac1755ba6
 app_type: mobile apps

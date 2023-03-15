@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags:
 summary: Use the Button Loading pattern to call actions that don't run immediately.
 locale: en-us
 guid: a3269377-0c0c-440f-b194-d7409db9f481

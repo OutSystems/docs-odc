@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Adds swipeable cards that can be dragged in multiple directions triggering events, such as deny, approve, and archive.
 locale: en-us
 guid: 30866b44-9a14-45a8-bbbd-ee11cc898d5f

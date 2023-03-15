@@ -1,6 +1,6 @@
 ---
 summary: An overview of IT users and end-user roles in OutSystems Developer Cloud (ODC).  
-tags: user-management; authentication; lifecycle-management
+tags: 
 locale: en-us
 guid: BDA3A144-0EB0-4C04-953F-9DED85A477FE
 app_type: mobile apps, reactive web apps

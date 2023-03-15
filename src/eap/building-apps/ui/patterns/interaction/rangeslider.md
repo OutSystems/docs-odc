@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Allows the user select a single value between two range values.
 locale: en-us
 guid: 3004b9a7-ba25-42d8-8430-703d2be50470

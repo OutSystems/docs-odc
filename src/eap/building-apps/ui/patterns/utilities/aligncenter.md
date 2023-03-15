@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Align Center places content horizontally or vertically within a container.
 locale: en-us
 guid: 0902827b-4339-4965-b8c3-94a2a7825594

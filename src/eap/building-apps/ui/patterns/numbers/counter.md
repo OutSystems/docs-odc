@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;
+tags: 
 summary: Counter shows the total number of occurrences of several values regarding a single topic.
 locale: en-us
 guid: 7b33f1cb-f293-49c5-ad4a-8c781526acb7

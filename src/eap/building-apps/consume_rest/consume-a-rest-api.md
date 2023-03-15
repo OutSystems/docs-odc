@@ -1,6 +1,6 @@
 ---
 summary: How to consume a REST API or a single API method and use it in your OutSystems applications.
-tags: support-Integrations_Extensions-featured
+tags: 
 locale: en-us
 guid: 1901abf6-d016-4fc6-84df-c8ea2fe92003
 app_type: mobile apps, reactive web apps

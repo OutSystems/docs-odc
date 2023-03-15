@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;  
+tags: 
 summary: Card Background groups short pieces of information and highlights them on the screen while providing additional relevance by using a background image.
 locale: en-us
 guid: 8460d7b9-4aa2-410b-8869-635625d64a4f

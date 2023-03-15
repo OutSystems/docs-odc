@@ -1,5 +1,5 @@
 ---
-tags: runtime-mobileandreactiveweb;
+tags: 
 summary: Section Index organizes the content of a screen, enabling quick navigation within the page.
 locale: en-us
 guid: 117829a3-fdcf-4557-a4dd-99661992d73d

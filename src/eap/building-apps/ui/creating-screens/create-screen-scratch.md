@@ -1,6 +1,7 @@
 ---
 summary: Screen is a building block of an app. You can create empty Screens or with some predefined content.
 locale: en-us
+tags:
 guid: 7c01a3db-3807-4e86-bbbb-e88ba5c28346
 app_type: mobile apps, reactive web apps
 platform-version: odc

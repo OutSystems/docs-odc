@@ -3,7 +3,7 @@ summary: Learn more about submitting Forge asset to share it with other develope
 tags:
 locale: en-us
 guid: c611c0a7-9a50-4c1d-9e8c-d51b7a237c3e
-app_type:  
+app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
 

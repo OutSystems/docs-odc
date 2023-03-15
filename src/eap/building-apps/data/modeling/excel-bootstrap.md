@@ -1,6 +1,6 @@
 ---
 summary: Import data from Excel files to quickly have your data up and running in the application while developing it.
-tags: support-Database; support-database-featured
+tags: 
 locale: en-us
 guid: e2c6960b-b589-475a-b0e4-4792bba6a6be
 app_type: mobile apps, reactive web apps
