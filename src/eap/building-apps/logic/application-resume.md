@@ -1,6 +1,5 @@
 ---
 kinds: ServiceStudio.Model.SystemClientActions+OnApplicationResume+Kind
-helpids: 
 tags: 
 locale: en-us
 guid: 96c703ae-d97e-4ceb-b511-6524da0b7cf3
