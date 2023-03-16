@@ -1,6 +1,6 @@
 ---
 summary: Plugins for your mobile apps.
-tags: 
+tags:
 locale: en-us
 guid: 55ef1d73-dac8-48e6-8b15-dc6990779660
 app_type: mobile apps, reactive web apps
@@ -16,15 +16,16 @@ Plugins provide important functionalities to native mobile apps, letting you use
 The table shows the OutSystems-supported mobile plugins that you can find in the Forge repository. Some of them are already supported when distributing your app as a Progressive Web App (PWA).
 
 
-| Plugin                    | Description                                      | Supported in PWA |
-| ------------------------- | ------------------------------------------------ | ---------------- |
-| Barcode Plugin            | Access the camera to scan barcodes.              | Yes              |
-| Camera Plugin             | Access the camera capabilities of the device.    | Yes              |
-| Health and Fitness Plugin | Access data from Apple HealthKit and Google Fit. | NA               |
-| File Plugin               | Manage files and folders within the app sandbox. | NA               |
-| File Transfer Plugin      | Upload and download files in background.         | NA               |
-| File Viewer Plugin        | View remote or app resource files.               | NA               |
-| Location Plugin           | Access the GPS capabilities the device.          | Yes              |
+| Plugin                    | Description                                                  | Supported in PWA |
+| ------------------------- | ------------------------------------------------------------ | ---------------- |
+| Barcode Plugin            | Access the camera to scan barcodes.                          | Yes              |
+| Camera Plugin             | Access the camera capabilities of the device.                | Yes              |
+| Health and Fitness Plugin | Access data from Apple HealthKit and Google Fit.             | NA               |
+| File Plugin               | Manage files and folders within the app sandbox.             | NA               |
+| File Transfer Plugin      | Upload and download files in background.                     | NA               |
+| File Viewer Plugin        | View remote or app resource files.                           | NA               |
+| Key Store Plugin          | Store encrypted key-value pairs with optional authentication | NA               |
+| Location Plugin           | Access the GPS capabilities the device.                      | Yes              |
 
 ### Notes
 
@@ -42,7 +43,7 @@ To install a supported plugin from Forge:
 
 1. Find the plugin you want to use in the [list of supported mobile plugins](#the-list-of-supported-mobile-plugins).
 
-1. In **ODC Portal** > **Forge** find the plugin and open the details page. 
+1. In **ODC Portal** > **Forge** find the plugin and open the details page.
 
 1. Click **Install** and follow the instructions to install the plugin. Optionally, install the demo app that comes with the plugin.
 

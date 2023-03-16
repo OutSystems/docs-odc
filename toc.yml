@@ -31,18 +31,18 @@
     - href: eap/building-apps/data/intro.md
     - topics:
       # Data modeling
-      - href: eap/building-apps/data/modeling.md 
+      - href: eap/building-apps/data/modeling.md
       - topics:
        # Data entity
         - href: eap/building-apps/data/modeling/entity.md
         - topics:
             # Create entity
             - href: eap/building-apps/data/modeling/entity-create.md
-            # Calculated attribute 
+            # Calculated attribute
             - href: eap/building-apps/data/modeling/calculated-attribute-create.md
             #  Excel Bootstrap
             - href: eap/building-apps/data/modeling/excel-bootstrap.md
-        # Entity Static 
+        # Entity Static
         - href: eap/building-apps/data/modeling/entity-static.md
         # Entity relationships
         - href: eap/building-apps/data/relationships.md
@@ -63,11 +63,11 @@
     - topics:
       # Create a mobile package
       - href: eap/building-apps/mobile/creating-mobile-package.md
-      # Progressive web app 
+      # Progressive web app
       - href: eap/building-apps/mobile/pwa.md
       # Extensibility Configurations
       - href: eap/building-apps/mobile/extensibility-configurations.md
-      # Keeping apps up to date for your users 
+      # Keeping apps up to date for your users
       - href: eap/building-apps/mobile/apps-up-to-date.md
       - href: eap/building-apps/mobile/plugins/intro.md
       - topics:
@@ -77,7 +77,8 @@
         - href: eap/building-apps/mobile/plugins/file-transfer-plugin/intro.md
         - href: eap/building-apps/mobile/plugins/file-viewer/intro.md
         - href: eap/building-apps/mobile/plugins/health-fitness/intro.md
-        - href: eap/building-apps/mobile/plugins/location/intro.md 
+        - href: eap/building-apps/mobile/plugins/keystore-plugin/intro.md
+        - href: eap/building-apps/mobile/plugins/location/intro.md
     # UI
     - href: eap/building-apps/ui/intro.md
     - topics:
@@ -87,7 +88,7 @@
       - href: eap/building-apps/ui/creating-screens/screen-creating.md
       - topics:
         #Creating screen scratch
-        - href: eap/building-apps/ui/creating-screens/create-screen-scratch.md 
+        - href: eap/building-apps/ui/creating-screens/create-screen-scratch.md
       # Interaction
       - href: eap/building-apps/ui/interaction/fetch-display.md
       - topics:
@@ -123,9 +124,9 @@
           - href: eap/building-apps/ui/patterns/adaptive/masterdetail.md
       - topics:
         - href: eap/building-apps/ui/patterns/content/intro.md
-        # Content 
-        - topics:        
-          # accordion  
+        # Content
+        - topics:
+          # accordion
           - href: eap/building-apps/ui/patterns/content/accordion.md
           # alert
           - href: eap/building-apps/ui/patterns/content/alert.md
@@ -150,15 +151,15 @@
           # cardbackground
           - href: eap/building-apps/ui/patterns/content/cardbackground.md
           # sectiongroup
-          - href: eap/building-apps/ui/patterns/content/sectiongroup.md 
-          # tag  
+          - href: eap/building-apps/ui/patterns/content/sectiongroup.md
+          # tag
           - href: eap/building-apps/ui/patterns/content/tag.md
           # tooltip
           - href: eap/building-apps/ui/patterns/content/tooltip.md
           # useravatar
           - href: eap/building-apps/ui/patterns/content/useravatar.md
       # Interaction
-      - topics: 
+      - topics:
         - href: eap/building-apps/ui/patterns/interaction/intro.md
         - topics:
           - href: eap/building-apps/ui/patterns/interaction/actionsheet.md
@@ -221,17 +222,17 @@
             - href: eap/building-apps/ui/patterns/utilities/touchevents.md
       # Screen Templates
       - href: eap/building-apps/ui/screen-template/intro.md
-      - topics: 
+      - topics:
         # Replace data in screens
-        - href: eap/building-apps/ui/screen-template/replace-data.md 
+        - href: eap/building-apps/ui/screen-template/replace-data.md
         # Template compatiblity
         - href: eap/building-apps/ui/screen-template/template-compatibility.md
       # Navigating between screens
       - topics:
         # UI Flows
         - href: eap/building-apps/ui/navigation/ui-flow.md
-        # Navigating to a detail screen 
-        - href: eap/building-apps/ui/navigation/navigate-to-detail-screen.md 
+        # Navigating to a detail screen
+        - href: eap/building-apps/ui/navigation/navigate-to-detail-screen.md
         # Pass data between screens with input parameters
         - href: eap/building-apps/ui/navigation/pass-information-between-screens.md
       # UI interactions
@@ -302,7 +303,7 @@
       - href: eap/building-apps/consume_rest/unsupported-use-cases.md
       # REST API structures
       - href: eap/building-apps/consume_rest/rest-api-structures.md
-      # Handling webservice errors 
+      # Handling webservice errors
       - href: eap/building-apps/consume_rest/handling-rest-errors.md
       # Simple customization
       - href: eap/building-apps/consume_rest/simple-customizations.md
@@ -313,7 +314,7 @@
     - topics:
         # Handling mechanism
         - href: eap/building-apps/handling_exceptions/handling-mechanism.md
-    # Logic 
+    # Logic
     - href: eap/building-apps/logic/intro.md
     - topics:
       # Input parameters
@@ -348,7 +349,7 @@
     - href: eap/building-apps/set-as-secret.md
     # Deleting apps
     - href: eap/building-apps/deleting-apps/intro.md
-    
+
 # Troubleshooting apps
 - href: eap/troubleshoot/debug/intro.md
 - topics:
@@ -402,7 +403,7 @@
     - href: eap/reference/libraries/url.md
     - href: eap/reference/libraries/xml.md
     - href: eap/reference/libraries/zip.md
-  # System actions 
+  # System actions
   - href: eap/reference/system-actions/intro.md
   - topics:
     - href: eap/reference/system-actions/auth.md
@@ -426,7 +427,7 @@
 # Errors
 - href: error/intro.md
 - topics:
-  # Errors Package Manager Service 
+  # Errors Package Manager Service
   - href: error/pkgs/intro.md
   - topics:
     - href: error/pkgs/PKGS-40003.md
@@ -470,4 +471,4 @@
     - href: error/frge/os-frge-ast-50001.md
     - href: error/frge/os-frge-ast-50002.md
     - href: error/frge/os-frge-ast-50003.md
-    
+
