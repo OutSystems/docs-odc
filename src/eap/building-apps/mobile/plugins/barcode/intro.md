@@ -11,12 +11,6 @@ platform-version: odc
 
 Use the Barcode Plugin to let users of the app scan 1D and 2D barcodes. This plugin works with, native mobile apps, progressive web apps (PWAs) and web apps. Set the options in the plugin to customize the scanner, to add instructions, or change camera direction.
 
-<div class="warning" markdown="1">
-
-To use this Barcode Plugin in a PWA, add the theme **BarcodeScanner** as an element to your app. **Keep the BarcodeScanner theme as dependency** even when the IDE reports it as not used by the app.
-
-</div>
-
 <div class="info" markdown="1">
 
 See [Adding plugins](../intro.md#adding-plugins) to learn how to install and reference a plugin in your OutSystems apps, and how to install a demo app.

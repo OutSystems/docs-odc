@@ -7,7 +7,7 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
 
-# Key Store plugin
+# Key Store Plugin
 
 <div class="info" markdown="1">
 
