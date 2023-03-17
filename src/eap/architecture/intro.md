@@ -73,10 +73,7 @@ The following diagram shows how auto scaling works inside the Platform cluster.
 
 ![Autoscaling of the development Platform](images/architecture-platform-k8s-diag.png "Autoscaling of the development Platform") 
 
-The **auto scale controller** monitors the CPU and RAM usage of each running service. It continuously checks the usage against the cluster compute capacity allocated to each service. It can:
-
-* Horizontally scale - Replicates the running service to optimize the use of the allocated compute capacity.
-* Vertically scale - Allocates additional cluster compute capacity to the running service if the CPU and RAM usage for the service exceeds the defined threshold.
+The **auto scale controller** monitors the CPU and RAM usage of each running service. It continuously checks the usage against the cluster compute capacity allocated and allocates additional capacity if the CPU and RAM usage exceeds a defined threshold.
 
 The auto scale controller makes the adjustment in real time, with no user interaction required.
 
@@ -92,16 +89,13 @@ The auto scale controller replicates app containers running in each cluster of e
 
 ##### Auto scaling
 
-The compute capacity for each app container running in each Runtime stage is scalable. This lets each app scale independently.
+The compute capacity for each app container running in each non-Development Runtime stage is scalable. This lets each app scale independently.
 
 The following diagram illustrates how auto scaling works inside the Runtime cluster.
 
 ![Autoscaling of the runtime apps](images/architecture-runtime-scale-diag.png "Autoscaling of the runtime apps") 
 
-The **auto scale controller** monitors the CPU and RAM usage of each app container. It continuously checks the usage against the cluster compute capacity allocated to each app container. It can: 
-
-* Horizontally scale - Replicates the app container to optimize the use of the allocated compute capacity and distribution across availability zones.
-* Vertically scale - Allocates additional cluster compute capacity to the app container if the CPU and RAM usage for the app container exceeds a defined threshold.
+The **auto scale controller** monitors the CPU and RAM usage of each app container. It continuously checks the usage against the cluster compute capacity allocated and allocates additional capacity if the CPU and RAM usage exceeds a defined threshold.
 
 The auto scale controller makes the adjustment in real time, with no user interaction required.
 
