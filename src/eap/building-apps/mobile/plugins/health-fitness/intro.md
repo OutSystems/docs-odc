@@ -1,6 +1,5 @@
 ---
 summary: The Health and Fitness plugin lets you use data from Apple HealthKit and Google Fit and create customized solutions for your users.
-en_title: Health and Fitness Plugin 
 tags: 
 locale: en-us
 guid: e8f63b76-8a4c-4e3c-b2f6-5a519bd1f348
