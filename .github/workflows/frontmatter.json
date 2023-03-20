@@ -3,8 +3,8 @@
     "type": "object",
     "properties": {
       "helpids": {
-        "type": "integer",
-        "pattern": "^\\d+(,\\s*\\d+)*$"
+        "type": "string",
+        "pattern": "\\d+(,\\s*\\d+)*"
       },
       "kinds": {},
       "en_title": {},
