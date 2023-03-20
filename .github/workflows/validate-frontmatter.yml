@@ -1,0 +1,21 @@
+name: Validate Frontmatter
+
+on:
+  push:
+    branches:
+      - frontmatter-action
+  pull_request:
+    branches:
+      - frontmatter-action
+
+jobs:
+  frontmatter-json-schema-validator:
+    name: Frontmatter JSON Schema Validator
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Frontmatter JSON Schema Validator
+        uses: mheap/frontmatter-json-schema-action@main
+        with:
+          paths: "src/**/*.md"
+          schema_path:  ./.github/workflows/frontmatter.json

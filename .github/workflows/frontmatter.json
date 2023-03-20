@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "helpids": {
+        "type": "string",
+        "pattern": "^\\d+(,\\s*\\d+)*$"
+      },
+      "kinds": {},
+      "en_title": {},
+      "title": {},
+      "summary": {},
+      "runtime": {},
+      "installation": {},
+      "stack": {},
+      "tags": {},
+      "guid": {
+        "type": "string",
+        "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+      },
+      "version": {},
+      "locale": {
+        "type": "string",
+        "enum": ["en-us"]
+      },
+      "app_type": {
+        "type": "string",
+        "pattern": "^(traditional web apps|mobile apps|reactive web apps)(,\\s*(traditional web apps|mobile apps|reactive web apps))*$"
+      },
+      "isautopublish": {
+        "type": "string",
+        "enum": ["true", "false"]
+      },
+      "pageprivacy": {
+        "type": "string",
+        "enum": ["public", "semi-private", "private"]
+      },
+      "platform-version": {
+        "type": "string",
+        "enum": ["o11", "odc", "o11, odc"]
+      }
+    },
+    "required": ["summary", "locale", "app_type", "guid", "platform-version"],
+    "additionalProperties": false
+  }
