@@ -1,5 +1,6 @@
 ---
 kinds: ServiceStudio.Model.SystemClientActions+OnApplicationReady+Kind
+summary:
 tags: 
 locale: en-us
 guid: 393ee8f0-dede-42fe-b5fb-ecd4ed0ec534
