@@ -14,7 +14,7 @@ Secure Gateways is a OutSystems Developer Cloud (ODC) feature that lets you conn
 There are two components to the Secure Gateways feature.
 
 * The server component, **Secure Gateway**. There is one instance of Server Gateway for each stage in your organization. By default a Secure Gateway is inactive and you activate it in ODC Portal. 
-* The client component, **Cloud Connector**. You use the configuration generated on activating a Secure Gateway to run Cloud Connector on system(s) in your private network(s). Your apps connect to the endpoints through a secure tunnel established between the endpoints and a Secure Gateway.
+* The client component, **Cloud Connector**. You use the configuration generated on activating a Secure Gateway to run Cloud Connector on system(s) in your private network(s). Your apps connect to the endpoints through a secure tunnel established between the endpoints and a Secure Gateway. The Cloud Connector requires only outbound access to the internet in the private network(s) in which it's running.
 
 Common use cases include accessing data through a private REST API service and making requests to internal services (SMTP, SMB, NFS,..).
 

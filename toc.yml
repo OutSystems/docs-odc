@@ -17,6 +17,9 @@
   - href: eap/architecture/networking.md
   - href: eap/architecture/identity.md
 
+# Security of OutSystems Developer Cloud
+- href: eap/security.md
+
 # Building apps in ODC
 - href: eap/building-apps/intro.md
 - topics:
@@ -420,7 +423,6 @@
     - href: eap/reference/built-in-functions/organization.md
     - href: eap/reference/built-in-functions/text.md
     - href: eap/reference/built-in-functions/url.md
-
 # Known issues
 - href: eap/known-issues/intro.md
 

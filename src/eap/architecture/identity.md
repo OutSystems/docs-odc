@@ -11,9 +11,13 @@ platform-version: odc
 
 This article provides an overview of the architecture of the Identity Service of OutSystems Developer Cloud (ODC).
 
-The Identity Service is the built-in identity provider (IdP) of the Platform and the Runtime. It verifies each HTTPS request comes from an authenticated and authorized user for the Platform services and your apps.
+The Identity Service is the built-in identity provider (IdP) of the Platform and the Runtime. The IdP verifies that each HTTPS request comes from an authenticated and authorized user for the Platform services and your apps.
 
-In addition, you can use an external, self-managed OpenID Connect (OIDC) IdP as the authentication provider for the Platform services and your apps. 
+You can also use an external, self-managed OpenID Connect (OIDC) IdP as the authentication provider for the Platform services and your apps. There are several benefits of this approach. You can use a:
+
+* Centralized authentication method (ODC and non-ODC) across your organization.
+* Custom password policy for the Platform services and your apps that aligns with your organization's security policy.
+* Multi-factor authentication (MFA) process for the Platform services and your apps.
 
 ## Authentication and authorization
 
@@ -33,16 +37,22 @@ Apps run in containers in the Runtime and expose secure REST API endpoints. For 
 
 ## Token technology
 
-The Identity Service is built on JSON Web Token (JWT) technology, an open standard the Identity Service uses to define identity information as a JSON object. The key benefits of this technology include: 
+The Identity Service uses JSON Web Token (JWT) technology, an open standard the Identity Service uses to define identity information as a JSON object. The key benefits of this technology include: 
 
 * JWTs are cryptographically signed using a public/private key pair which safeguards them from being modified by an attacker and ensures their authenticity.
 * JWTs are self-contained, meaning they're quick to validate as they don't require a server database lookup. This means quick access to the Platform services and apps.
 
-The Identity Service follows the OIDC standard, an identity layer built on top of the OAuth 2 protocol.
+The Identity Service follows the OIDC standard: an identity layer on top of the OAuth 2 protocol.
+
+### Secure sessions
+
+ODC includes built-in protection against session fixation attacks, where an attacker tries to hijack a valid user session. ODC ensures that the session identifier is transparently changed on each login and validates this on every request, preventing session fixation attacks.
+
+ODC also serializes and deserializes session data using a built-in anti-tampering JSON deserialization mechanism. 
 
 ## User flow
 
-The following diagram shows an example of a user authentication and authorization flow. It shows a developer using **ODC Studio** (client) to access a REST API endpoint exposed by **Service 1** (a Platform service).
+The following diagram shows an example of a user authentication and authorization flow. It shows what happens when a developer using **ODC Studio** (client) accesses a REST API endpoint exposed by **Service 1** (a Platform service).
 
 ![Identity flow](images/identity-flow-authorization-diag.png)
 
