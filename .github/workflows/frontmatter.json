@@ -10,7 +10,6 @@
         "type": "string",
         "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
       },
-      "version": {},
       "locale": {
         "type": "string",
         "enum": ["en-us"]
@@ -18,14 +17,6 @@
       "app_type": {
         "type": "string",
         "pattern": "^(mobile apps|reactive web apps)(,\\s*(mobile apps|reactive web apps))*$"
-      },
-      "isautopublish": {
-        "type": "string",
-        "enum": ["true", "false"]
-      },
-      "pageprivacy": {
-        "type": "string",
-        "enum": ["public", "semi-private", "private"]
       },
       "platform-version": {
         "type": "string",
