@@ -2,17 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
-      "helpids": {
-        "type": "string",
-        "pattern": "\\d+(,\\s*\\d+)*"
-      },
+      "helpids": {},
       "kinds": {},
-      "en_title": {},
-      "title": {},
       "summary": {},
-      "runtime": {},
-      "installation": {},
-      "stack": {},
       "tags": {},
       "guid": {
         "type": "string",
@@ -25,7 +17,7 @@
       },
       "app_type": {
         "type": "string",
-        "pattern": "^(traditional web apps|mobile apps|reactive web apps)(,\\s*(traditional web apps|mobile apps|reactive web apps))*$"
+        "pattern": "^(mobile apps|reactive web apps)(,\\s*(mobile apps|reactive web apps))*$"
       },
       "isautopublish": {
         "type": "string",
@@ -37,7 +29,7 @@
       },
       "platform-version": {
         "type": "string",
-        "enum": ["o11", "odc", "o11, odc"]
+        "enum": ["odc"]
       }
     },
     "required": ["summary", "locale", "app_type", "guid", "platform-version"],
