@@ -3,10 +3,9 @@ name: Validate Frontmatter
 on:
   push:
     branches:
-      - frontmatter-action
+    - master
   pull_request:
-    branches:
-      - frontmatter-action
+    types: [opened, edited, synchronize, reopened]
 
 jobs:
   frontmatter-json-schema-validator:
