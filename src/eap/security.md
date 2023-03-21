@@ -20,7 +20,7 @@ The Open Web Application Security Project (OWASP) defines the principles underpi
 * **Separation of duties**: Successful task completion should require two or more conditions, preventing one person or process from completing it alone.
 * **Complete mediation**: Check for authorization upon every request for an object to prevent authority circumvention.
 
-### Secure code and processes
+## Secure code and processes
 
 OutSystems engineers plan and deploy the [infrastructure of the Platform and independent Runtime of ODC](architecture/intro.md) using Infrastructure-as-Code (IaC). This means the infrastructure can be automatically tested and versioned rather than relying on error-prone manual test processes. A policy enforcement tool ensures consistency and security by checking for:
 
