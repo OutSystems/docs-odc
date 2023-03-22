@@ -25,49 +25,21 @@ To debug your app, do the following in ODC Studio:
 
 1. Set one or more [breakpoints](<breakpoints.md>) in the app you're debugging.
 
-1. Before debugging a **native mobile app**, choose a debugging target in the [Debugger tab](<debugger-ui-reference.md>): Android, iOS, or Google Chrome which emulates a device. The section [Mobile Debugging Scenarios](<#mobile-debugging-scenarios>) includes further details about the different targets. If you're debugging a **mobile app distributed as a PWA**, select **Emulate using Google Chrome** in **Debugger** > **Debug Setup**. 
+2. Before debugging a **native mobile app**, choose a debugging target in the [Debugger tab](<debugger-ui-reference.md>): Android, iOS, or Google Chrome which emulates a device. If you're debugging a **mobile app distributed as a PWA**, select **Emulate using Google Chrome** in **Debugger** > **Debug Setup**. 
 
-1. Start debugger by clicking the **Start Debugging** button in the [Debugger tab](<debugger-ui-reference.md>). When you're debugging mobile apps using the Google Chrome target, ODC Studio opens a dedicated Chrome browser instance for debugging only.
+3. Start debugger by clicking the **Start Debugging** button in the [Debugger tab](<debugger-ui-reference.md>). When you're debugging mobile apps using the Google Chrome target, ODC Studio opens a dedicated Chrome browser instance for debugging only.
 
-1. Do some tasks in the app, up to a point when the execution runs into a breakpoint and suspends.
+4. Do some tasks in the app, up to a point when the execution runs into a breakpoint and suspends.
 
-1. When you switch to the ODC Studio window, the flow containing the element with the breakpoint shows on the canvas. ODC Studio selects the element with the breakpoint and marks is with the ![debug icon](images/overlay-active-request.png) debug icon.
+5. When you switch to the ODC Studio window, the flow containing the element with the breakpoint shows on the canvas. ODC Studio selects the element with the breakpoint and marks is with the ![debug icon](images/overlay-active-request.png) debug icon.
 
-1. The execution context shows in the **Threads** tab of the **Debugger** tab, marked with the ![current thread](images/overlay-active-request.png) current thread icon, showing the current execution stack of the app elements. The **Debugger** tab also shows additional information you can explore.
+6. The execution context shows in the **Threads** tab of the **Debugger** tab, marked with the ![current thread](images/overlay-active-request.png) current thread icon, showing the current execution stack of the app elements. The **Debugger** tab also shows additional information you can explore.
 
-1. After analyzing the runtime values at that execution point, you can continue running the app by:
+7. After analyzing the runtime values at that execution point, you can continue running the app by:
 
     * Selecting one of the commands available for advancing the execution of the application logic: ![continue icon](images/toolbar-button-continue.png) **Continue**, ![step over icon](images/toolbar-button-step-over.png) **Step Over**, ![step into button](images/toolbar-button-step-into.png) **Step Into** or ![step out button](images/toolbar-button-step-out.png) **Step Out**. The execution point advances according to the command you run.
 
     * Right-clicking an element on the canvas (or in the app tree) and selecting the **Continue To Here** option in the context menu. The execution continues until it reaches that element on the canvas.
-
-## Mobile debugging scenarios { #mobile-debugging-scenarios }
-
-There are different ways of debugging a mobile app that help you discover, understand, and fix issues. You can debug your mobile app in one of the following ways:
-
-Emulate the mobile app using the Google Chrome browser in your PC
-:   Use the Chrome browser in your PC to debug your mobile app if you don't need to execute native plugins, as the native plugins can't run in PC. This option is convenient to test the logic of the app. However, to check the performance or experience of the mobile app, test your app on a real device.
-    Also consider this scenario if all the native plugins in the mobile app have action wrappers defined that return mock data when the plugin isn't available.
-
-Install the Mobile App on a Device
-:   Test the mobile app directly on a device as your users would run it. It's the best place to test the performance and experience of your app. You can do it in an iOS or Android device. Generate the native app package for your app in ODC Studio using the `Debug` (Android) or `Development` (iOS) build type, install it in the device, and follow the steps below according to your mobile device platform.
-
-    To test a mobile app on an iOS device:
-    
-    1. On your **PC**, install [iTunes](<https://www.apple.com/itunes/download/>).
-    2. In your **device**, turn the "Web Inspector" option **on**. For detailed instructions see [Troubleshoot Debugger Connection Issues](<troubleshoot-debugger-connection.md#web-inspector-is-not-enabled-on-your-device>).
-    3. Connect your mobile device to the PC through a USB cable.
-    4. In your **device**, allow the PC to debug on the device.
-    
-    To test a mobile app on an Android device:
-    
-    5. In your **device**, turn [USB debugging ON](<https://developer.android.com/studio/debug/dev-options.html#enable>).
-    6. Connect your mobile device to the PC through a USB cable.
-    7. In your **device**, allow the PC to debug on the device.
-    
-    For more help, check [Troubleshoot Debugger Connection Issues](<troubleshoot-debugger-connection.md>).
-
-If you need to troubleshoot app crashes, a plugin or check the native code of apps, debug your apps with the mobile platform's native tools, such as Android Studio for Android and Xcode for iOS. Before debugging using the native tools, you must generate a mobile package with `Debug` (Android) or `Development` (iOS) build type.
 
 ## Working with dates and times
 

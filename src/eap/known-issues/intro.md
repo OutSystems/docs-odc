@@ -27,8 +27,12 @@ Depending on where you use LongIntegerToInteger and get an overflow, your logic 
 * On server and client side, LongIntegerToInteger on overflow returns 0.
 * On the database, LongIntegerToInteger on overflow throws an error.
 
-## Error previewing a mobile app in the Safari browser within the ODC Portal
+## You can's preview a mobile app in the Safari browser within the ODC Portal
 
-The preview of a mobile app in the Safari browser within the ODC Portal doesn't work. The app and the preview render within an iframe in different domains, and Safari cannot access the content due to security restrictions by Apple.
+The preview of a mobile app in the Safari browser within the ODC Portal doesn't work. The app and the preview render within an iframe in different domains, and Safari can't access the content due to security restrictions by Apple.
 
 OutSystems recommends Chrome browser for previewing the mobile app in the ODC Portal.
+
+## Debugging mobile app on a mobile device isn't available currently  
+
+Currently you can't debug you mobile app by install the mobile app on a device. You still can use the Chrome browser in your local machine to debug logic that doesn't require direct access to the hardware.
