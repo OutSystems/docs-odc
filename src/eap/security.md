@@ -31,7 +31,7 @@ The OutSystems Security Office routinely reviews policies to ensure they remain 
 
 Infrastructure-as-Code, like all ODC product code, follows the ODC Software Development Life Cycle (SDLC): guidelines that define the planning, creating, testing, and releasing of the product.
 
-OutSystems gives all its engineers training in cloud security and secure development. The specific guidelines OutSystems use are the [OWASP Developer Guide](https://success.outsystems.com/documentation/outsystems_developer_cloud/cloud_native_architecture_of_outsystems_developer_cloud/), [SANS CWE Top 25](https://www.sans.org/top25-software-errors/), and [CERT Secure Coding Standards](https://www.sans.org/top25-software-errors/). OutSystems also applies the [CIS benchmarks](https://www.cisecurity.org/cis-benchmarks) for all systems.
+OutSystems gives all its engineers training in cloud security and secure development. The specific guidelines OutSystems use are the [OWASP Developer Guide](https://owasp.org/www-project-developer-guide/), [SANS CWE Top 25](https://www.sans.org/top25-software-errors/), and [CERT Secure Coding Standards](https://wiki.sei.cmu.edu/confluence/display/seccode/SEI+CERT+Coding+Standards). OutSystems also applies the [CIS benchmarks](https://www.cisecurity.org/cis-benchmarks) for all systems.
 
 Specialist engineers from the Application Security Team routinely review architectural blueprints and undertake code inspections. Static code analysis tooling is also used to detect and resolve bugs and vulnerabilities.
 
