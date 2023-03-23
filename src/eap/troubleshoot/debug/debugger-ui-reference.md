@@ -9,7 +9,7 @@ platform-version: odc
 
 # Debugger reference
 
-The Debugger Tab is located in the lower pane of ODC Studio and allows you to track all threads being debugged and examine app elements and runtime values. This tab is automatically shown when the debugger is active and the execution flow hits a breakpoint.
+The Debugger Tab is in the lower pane of ODC Studio and allows you to track all threads being debugged and examine app elements and runtime values. This tab is automatically shown when the debugger is active and the execution flow hits a breakpoint.
 
 ![](images/debugger-ui-overview.png)
 
@@ -19,17 +19,16 @@ The Debugger Tab contains three main areas:
 * The [debugging context area](<#debugging-context-area>) **(2)**
 * The [scope tabs area](<#scope-tabs-area>) **(3)**
 
+
 ## Debugger Toolbar { #debugger-toolbar }
 
 It's located in the top right section of the Debugger Tab and provides you with a set of debugging commands to trace the execution of the thread being debugged. The toolbar buttons (except for the Break on All Exceptions button) are only available during a debug session.
 
-<div style="text-align: center" markdown="1">
+The available buttons in the toolbar are the following:
 
 ![](images/debugger-toolbar.png)
 
-</div>
-
-The available buttons in the toolbar are the following:
+The table shows more information about each command.
 
 Icon | Name | Shortcut | Description
 :---:|------|:--------:|------------
