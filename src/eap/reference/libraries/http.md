@@ -7,7 +7,7 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
 
-# HTTPRequestHandler
+# HTTP
 
 The OutSystems HTTP library provides actions to manipulate HTTP requests and responses.
 

@@ -15,8 +15,8 @@ However, there are situations where you might want to send a different HTTP Stat
 
 To set a different HTTP Status Code in the Response, do the following:
 
-1. Go to **Manage Dependencies...** and add the SetStatusCode action of the HTTPRequestHandler extension. 
-1. Use the SetStatusCode action in your REST API Method or callback flow right before the end node. 
+1. Go to **Manage Dependencies...** and add the [Response_SetStatusCode](../../reference/libraries/http.md#response_setstatuscode) action of the HTTP extension. 
+1. Use the [Response_SetStatusCode](../../reference/libraries/http.md#response_setstatuscode) action in your REST API Method or callback flow right before the end node. 
 1. Set its "StatusCode" property to the desired status code. 
 
 ![](images/ss-rest-change-http-code.png)

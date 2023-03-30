@@ -23,4 +23,4 @@ Status Code | Reason Phrase | Description
 415 | Unsupported Media Type | The method expects a different 'Content-Type' header value in the request.  
 500 | Internal Server Error | Any unhandled exception that appears in the application logic. See the response body for more information.  
 
-You can use the SetStatusCode action of the HTTPRequestHandler extension to set a custom status code. Please note that this is an advanced extensibility scenario, so be sure to test if it works as intended in your specific infrastructure.
+You can use the [Response_SetStatusCode](../../reference/libraries/http.md#response_setstatuscode) action of the HTTP library to set a custom status code. Please note that this is an advanced extensibility scenario, so be sure to test if it works as intended in your specific infrastructure.

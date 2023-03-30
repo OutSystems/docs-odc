@@ -12,14 +12,12 @@ platform-version: odc
 
 Action | Description
 ---|---
-Serialization_RecordListToXml | Serializes RecordList into XML data. Only records with single entities/structures are supported.
-Serialization_ObjectToXml | Serializes a Record or a RecordList into XML data. Only records with single entities/structures are supported.
-Serialization_RecordToXml | Serializes a Record into XML data. Only records with single entities/structures are supported.
-Serialization_XmlToRecordList | Deserializes a set of Entities definition from an XML data description.
 XmlAttribute_GetValue | Returns the value of a Xml Attribute. 
 XmlAttribute_SetValue | Sets the value of a Xml Attribute.
 XmlDocument_CreateRootElement | Creates a root Xml Element in a Xml Document.
 XmlDocument_GetRootElement | Returns the root element of a Xml Document.
+XMLDocument_Load | Loads a XML content into a DOM object.
+XMLDocument_LoadDTD | Loads the XML content into a DOM object with DTD validation.
 XmlDocument_New | Creates an empty Xml DOM.
 XmlDocument_Save | Saves the XML document to a string, using UTF-8 encoding.
 XmlDocument_SelectNodes | Returns a list of Xml Elements or Xml Attributes as described by the XPath string. 

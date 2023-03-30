@@ -1,5 +1,5 @@
 ---
-summary: Library that provides methods to help you avoid code injection in HTML, JavaScript, and SQL snippets that need to include untrusted content, for example, content gathered from end users.
+summary: The OutSystems Sanitization library provides actions to avoid code injection in HTML, JavaScript and SQL snippets that need to include untrusted content (i.e. content gathered from end users).
 tags: 
 locale: en-us
 guid: 09b3e01c-e0ee-4ead-be0e-3e30f2ca2262
@@ -8,7 +8,7 @@ platform-version: odc
 ---
 # Sanitization
 
-Library that provides methods to help you avoid code injection in HTML, JavaScript, and SQL snippets that need to include untrusted content, for example, content gathered from end users.
+The OutSystems Sanitization library provides actions to avoid code injection in HTML, JavaScript and SQL snippets that need to include untrusted content (i.e. content gathered from end users).
 
 ## Actions
 
@@ -20,7 +20,7 @@ Returns a comma-delimited text value containing all the integer values provided 
 
 ValueList
 :   Type: RecordList of [IntegerLiteral](<#Structure_IntegerLiteral>). Mandatory.  
-    List of integer values to include in the returned value.
+    The list of integer values to include.
 
 *Outputs*
 
@@ -49,7 +49,7 @@ Returns a comma-delimited text value with the encoded version of all the text va
 
 ValueList
 :   Type: RecordList of [TextLiteral](<#Structure_TextLiteral>). Mandatory.  
-    List of text values to include in the returned value.
+    The list of text values to include.
 
 *Outputs*
 
@@ -88,36 +88,19 @@ SanitizedHtml
 
 ### VerifyJavascriptLiteral
 
-Ensures the provided JavaScript only contains JavaScript/JSON literals such as string, array, or Object literals. If it contains anything else, an INVALID JAVASCRIPT LITERAL exception is thrown. Learn more about JavaScript literals in the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Literals).
+Verifies the provided JavaScript to ensure it only contains JavaScript/JSON literals such as string, array, or object literals. If it contains anything else, an INVALID JAVASCRIPT LITERAL exception is thrown. Learn more about JavaScript literals in the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Literals).
 
 *Inputs*
 
 JavascriptLiteral
 :   Type: Text. Mandatory.  
-    The JavaScript literal to sanitize.
+    The JavaScript literal to verify.
 
 *Outputs*
 
 SanitizedJavascriptLiteral
 :   Type: Text.  
-    The sanitized JavaScript literal.
-
-### VerifySqlLiteral
-
-**Deprecated**. Ensures the provided SQL only contains literals. If it contains anything else, an INVALID SQL LITERAL exception is thrown.
-
-*Inputs*
-
-SqlLiteral
-:   Type: Text. Mandatory.  
-    The SQL to sanitize.
-
-*Outputs*
-
-SanitizedSqlLiteral
-:   Type: Text.  
-    The sanitized SQL.
-
+    The verified JavaScript literal.
 
 ## Structures
 

@@ -141,14 +141,12 @@ Action | Description | Available as function?
 
 Action | Description | Available as function?
 ---|---|---
-Serialization_RecordListToXml | Serializes RecordList into XML data. Only records with single entities/structures are supported. | No
-Serialization_ObjectToXml | Serializes a Record or a RecordList into XML data. Only records with single entities/structures are supported. | No
-Serialization_RecordToXml | Serializes a Record into XML data. Only records with single entities/structures are supported. | No
-Serialization_XmlToRecordList | Deserializes a set of Entities definition from an XML data description. | No
 XmlAttribute_GetValue | Returns the value of a Xml Attribute.  | No
 XmlAttribute_SetValue | Sets the value of a Xml Attribute. | No
 XmlDocument_CreateRootElement | Creates a root Xml Element in a Xml Document. | No
 XmlDocument_GetRootElement | Returns the root element of a Xml Document. | No
+XMLDocument_Load | Loads a XML content into a DOM object. | No
+XMLDocument_LoadDTD | Loads the XML content into a DOM object with DTD validation. | No
 XmlDocument_New | Creates an empty Xml DOM. | No
 XmlDocument_Save | Saves the XML document to a string, using UTF-8 encoding. | No
 XmlDocument_SelectNodes | Returns a list of Xml Elements or Xml Attributes as described by the XPath string.  | No
