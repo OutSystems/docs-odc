@@ -1,5 +1,5 @@
 ---
-summary: This article explains how to integrate external databases with OutSystems Developer Cloud and how to manage connections and select entities for use in apps.
+summary: Learn about integrating external databases with OutSystems Developer Cloud, managing connections, and selecting entities to use in your apps.
 tags:
 locale: en-us
 guid: 67608c14-0b83-4e69-bf46-ba023ed730f4
@@ -17,6 +17,12 @@ Admins ensure the app and its connection information are in the same stage. Addi
 
 There is no limit to the number of entities you can add from the external database.
 
+<div class="info" markdown="1">
+
+ODC offers [secure gateways](../secure-gateway.md) to connect your apps to private data and services that aren't accessible by the internet. Since an external database is usually hosted in a private network, using a secure gateway ensures security.
+
+</div>
+
 ## Supported databases
 
 OutSystems supports the following versions of databases:
@@ -33,12 +39,12 @@ OutSystems supports the following versions of databases:
 
 ## Permissions requirements
 
-Before accessing data from an external database, ensure you have the correct access to the database and ODC. By default, only admins can manage connections and select entities. Managing connections requires the following permissions:
+Before accessing data from an external database, verify you have the correct access to the database and ODC. By default, only admins can manage connections and select entities. Managing connections requires the following permissions:
 
-* Edit connection entities
-* Manage connections
+* Configure Connections
+* Connection management
 
-External database permissions take priority over permissions in ODC. For example, a developer can only read data from an external database with read permission in an external database even though they have read-write permission in ODC. Contact the external database admin to gain access information to the external database.
+External database permissions take priority over permissions in ODC. For example, a developer with read permission in an external database, and read-write permission in ODC, only can read data in the external database. Contact the external database admin to gain access information to the external database.
 
 For more information about users, permissions, and custom roles, see [User management](../../user-management/intro.md).
 
@@ -66,9 +72,11 @@ After connecting to an external database, select the entity names and attributes
 Follow the steps below to select entities:
 
 1. Go to ODC Portal, select **Configurations** > **Connections** > then click **Select entities** to display the Add entities connection screen. The connection screen shows the entities available from a database.
-![External database entities and attributes](./images/external-db-entity.png)
+
+    ![External database entities and attributes](./images/external-db-entity.png)
+
 1. From the **Entity** name column, select the entities and attributes you want to use.
-1. Click **Save** to confirm. Developers can now use the selected entities and attributes as as [public elements](../../building-apps/use-public-elements.md).
+1. Click **Save** to confirm. Developers can now use the selected entities and attributes as [public elements](../../building-apps/use-public-elements.md).
 
 Developers can rename entities to describe them in ODC Studio better. For example, instead of using an entity name like "Product_id_version1," developers can rename it to "Product_id" to make it easier to handle.
 
@@ -91,7 +99,7 @@ Admins need to supply the following information to connect to the external datab
 | Description | Information about the database connection | No | Optional |
 | Username | Username to access the database | Yes |  |
 | Password | Password to access the database. | Yes |  |
-| Server for SQL server \ Host for Oracle server | Endpoint for your database connection | No |  |
+| Server for SQL server \ Host for Oracle server | Endpoint for your database connection | Yes |  |
 | Port | The port number to connect to the database | Yes | ODC has a default port number that an admin can change |
 | Database for SQL server \ Service name for Oracle server | Name of the database | Yes |  |
 | Additional parameters | Additional parameters for a database connection | Yes | Different databases may require different parameters |

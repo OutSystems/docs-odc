@@ -16,11 +16,11 @@ There are two components to the Secure Gateways feature.
 * The server component, **Secure Gateway**. There is one instance of Server Gateway for each stage in your organization. By default a Secure Gateway is inactive and you activate it in ODC Portal. 
 * The client component, **Cloud Connector**. You use the configuration generated on activating a Secure Gateway to run Cloud Connector on system(s) in your private network(s). Your apps connect to the endpoints through a secure tunnel established between the endpoints and a Secure Gateway. The Cloud Connector requires only outbound access to the internet in the private network(s) in which it's running.
 
-Common use cases include accessing data through a private REST API service and making requests to internal services (SMTP, SMB, NFS,..).
+Common use cases include accessing data through a private REST API service, requesting internal services (SMTP, SMB, NFS,..), and [connecting to external databases](./external-databases/intro.md) in private networks.
 
 A Secure Gateway supports multiple tunnels and uses a load balancer to handle requests. Each tunnel connection is secured via SSH using ECDSA with SHA256 keys. You can connect multiple endpoints to each Cloud Connector and multiple Cloud Connector to each Secure Gateway.
 
-The following diagram shows an example ODC customer setup for a Secure Gateway active on two stages.
+The following diagram shows a sample ODC customer setup for a Secure Gateway that is active on two stages.
 
 ![Secure gateways diagram](images/secure-gateways-diag.png "Secure gateways diagram")
 
