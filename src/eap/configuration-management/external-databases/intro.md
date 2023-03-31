@@ -73,7 +73,7 @@ Follow the steps below to select entities:
 
 1. Go to ODC Portal, select **Configurations** > **Connections** > then click **Select entities** to display the Add entities connection screen. The connection screen shows the entities available from a database.
 
-    ![External database entities and attributes](./images/external-db-entity.png)
+    ![External database entities and attributes](images/external-db-entity.png)
 
 1. From the **Entity** name column, select the entities and attributes you want to use.
 1. Click **Save** to confirm. Developers can now use the selected entities and attributes as [public elements](../../building-apps/use-public-elements.md).
