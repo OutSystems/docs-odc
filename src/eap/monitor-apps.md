@@ -1,6 +1,6 @@
 ---
 summary: This article explains how to use Logs and Traces in OutSystems Developer Cloud to monitor and troubleshoot apps.
-tags: 
+tags:
 locale: en-us
 guid: ca7cae65-c466-4d93-bab6-85ac740519c0
 app_type: mobile apps, reactive web apps
@@ -11,7 +11,7 @@ platform-version: odc
 
 OutSystems Developer Cloud (ODC) provides a unified experience for monitoring and troubleshooting your apps. The **Logs** and **Traces** screens are available in ODC Portal under the **Monitoring** section in the left nav menu.
 
-Logs and traces are complimentary for getting to the root cause of a problem with an app. While a log helps you identify the problem, the associated trace helps you locate the problem. You can then use this information to help resolve the problem. 
+Logs and traces are complimentary for getting to the root cause of a problem with an app. While a log helps you identify the problem, the associated trace helps you locate the problem. You can then use this information to help resolve the problem.
 
 Traces are also helpful for troubleshooting a performance issue with an app.
 
@@ -42,11 +42,11 @@ Traces take a few minutes to generate and display. It takes time for ODC to aggr
 
 By default, when you open the **Traces** screen you see traces from the development stage ordered by time in descending order. The stage filter of the Logs and Traces screens are synchronized. This means if you were viewing production logs in the Logs screen, you see production logs in the Traces screen.
 
-Use the filter inputs to filter traces by stage, app, element type, trace status, total duration, date/time and user. You can filter traces by date back up to four weeks in an interval of up to two weeks. 
+Use the filter inputs to filter traces by stage, app, element type, trace status, total duration, date/time and user. You can filter traces by date back up to four weeks in an interval of up to two weeks.
 
 When you click the embedded link of a trace's date/time, you open the detail page for that unique trace. On the left side of the screen you see each span of the trace in order of execution alongside its duration. A red bar next to a span indicates an error. If any span of a trace has an error then the status of the trace is **Error**. Else the trace status is **OK**.
 
-You use the **Show all** toggle to show ODC internal spans. This may provide additional context for your troubleshooting, but you can't action a problem with an ODC internal span. 
+You use the **Show all** toggle to show ODC internal spans. This may provide additional context for your troubleshooting, but you can't action a problem with an ODC internal span.
 
 When you click a span you see its attributes and any related logs on the right side of the screen.
 
@@ -56,4 +56,4 @@ Each log and each trace has a unique ID contained in the URL (`...?id=x...`). If
 
 ## Retention of logs and traces
 
-You can view logs and traces up to four weeks old within the Portal. For logs and traces between four and ten weeks old, you can retrieve by opening a support ticket. Logs and traces are deleted after ten weeks.
+You can view logs and traces up to four weeks old within the Portal. For logs and traces between four and seven weeks old, you can retrieve by opening a support ticket. Logs and traces are deleted after seven weeks.

@@ -9,7 +9,7 @@ platform-version: odc
 
 # Security of OutSystems Developer Cloud
 
-OutSystems Developer Cloud (ODC) is secure-by-design. 
+OutSystems Developer Cloud (ODC) is secure-by-design.
 
 Secure-by-design thinking covers the entire product: from the Software Development Life Cycle to encryption at-rest, and from identity management to network architecture.
 
@@ -69,7 +69,7 @@ OutSystems staff proactively monitor all systems and the appropriate teams follo
 
 The independence of the Platform and Runtime reduces the attack surface of the deployed apps as they're isolated from other ODC components.
 
-The Platform services can't connect directly to any deployed app or Runtime database. All communication (for example, to deploy an app or change a site property) is done through secure messaging using NATS (Neural Autonomic Transport System). 
+The Platform services can't connect directly to any deployed app or Runtime database. All communication (for example, to deploy an app or change a site property) is done through secure messaging using NATS (Neural Autonomic Transport System).
 
 <div class="info" markdown="1">
 
@@ -79,7 +79,7 @@ NATS is a highly reliable messaging system that's designed to deliver messages q
 
 Each customer's ODC organization has a standard Runtime setup of three isolated and independent stages: Development, Test, and Production.
 
-#### Isolation of stages 
+#### Isolation of stages
 
 Each stage within each organization's Runtime is isolated by network namespace. It follows that internal traffic within each stage is ring-fenced.
 
@@ -134,7 +134,7 @@ Scanning includes malware detection capabilities with policies managed by the Ou
 
 <div class="info" markdown="1">
 
-For information about each database and data store used in the Platform and Runtime, see [Cloud-native architecture of OutSystems Developer Cloud](architecture/intro.md#databases-and-data-stores). 
+For information about each database and data store used in the Platform and Runtime, see [Cloud-native architecture of OutSystems Developer Cloud](architecture/intro.md#databases-and-data-stores).
 
 </div>
 
@@ -142,7 +142,7 @@ All customer data:
 
 * Is encrypted at rest with a per-customer encryption key managed by OutSystems.
 
-* Resides in the region specified when the customer's ODC organization was created. 
+* Resides in the region specified when the customer's ODC organization was created.
 
 Each stage within each organization's Runtime is [isolated by network namespace](#isolation-of-stages).
 
@@ -182,9 +182,9 @@ OutSystems has formal policies and procedures to manage security incidents. This
 
 OutSystems proactively monitors ODC infrastructure, events, and availability 24 hours a day, seven days a week. Any unexpected alert, including privacy breaches, either automatically detected or resulting from a human log review, triggers a Security Incident Response.
 
-### Log Retention 
+### Log Retention
 
-You can view logs and traces up to four weeks old within ODC Portal. You can retrieve logs and traces between four and ten weeks old by opening a support ticket. Logs and traces are deleted after ten weeks.
+You can view logs and traces up to four weeks old within ODC Portal. You can retrieve logs and traces between four and seven weeks old by opening a support ticket. Logs and traces are deleted after seven weeks.
 
 For more information see [Monitor and troubleshoot apps](monitor-apps.md).
 
