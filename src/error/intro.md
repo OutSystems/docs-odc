@@ -9,9 +9,15 @@ platform-version: odc
 
 # Errors
 
-Errors are separated by category. Within each category, the errors are listed by error code.  Each error includes,the:
+Errors are organized by category. Within each category, errors are listed according to their error codes. Each error includes, the:
 
 * Error message
 * Cause of the error
 * Impact of the error
 * Recommended action to fix the error
+
+<div class="info" markdown="1">
+
+To find errors related to creating mobile packages, refer to the [Mobile Apps Build Service (MABS) errors](https://success.outsystems.com/support/errors/mabs_errors/).
+
+</div>
