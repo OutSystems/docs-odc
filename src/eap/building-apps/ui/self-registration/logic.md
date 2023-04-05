@@ -19,7 +19,7 @@ To create logic to register users, follow these procedures. To make it easier, T
 
 1. From the **Interface** tab, select the **Common** > **Signup**, and then on the canvas, click the **Signup** button to display the Properties and Styles panel.
 
-    !["Copy login screen"](images/signup-screen-odcs.png)
+    ![Copy login screen](images/signup-screen-odcs.png)
 
     <div class="info" markdown="1">
 
@@ -29,7 +29,7 @@ To create logic to register users, follow these procedures. To make it easier, T
 
 1. From the **Properties** panel, click the dropdown for the on-click event and select **New Client Action**. The **SignUpOnClick** action flow displays on the canvas.
 
-    !["Start changing the sign-up flow"](images/starting-signup-flow-odcs.png)
+    ![Start changing the sign-up flow](images/starting-signup-flow-odcs.png)
 
 1. From the Toolbox, drag the **Assign** widget onto the **True** branch and place it below the **Assign** element. The Assignments pane displays.
 1. In the **Assignments** pane, add the **IsExecuting** variable and set it to `True`.

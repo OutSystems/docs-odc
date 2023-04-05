@@ -22,7 +22,7 @@ Begin by asking some crucial questions. The answers become the rules you base de
 
 These questions and answers help you think about business concepts by grouping them into bounded contexts. You can then map the bounded contexts to the organization. This mapping helps you identify the business sponsors, owners, and teams working on those apps.
 
-!["Asking crucial questions that end up as rules to take a few decisions on building and designing a scalable architecture with ODC"](images/questions-about-business-concepts-diag.png)
+![Asking crucial questions that end up as rules to take a few decisions on building and designing a scalable architecture with ODC](images/questions-about-business-concepts-diag.png)
 
 The answers to the sequenced questions listed earlier become the steps to help you better design a ODC app architecture. Following is more detail about each step in the process.
 
@@ -34,7 +34,7 @@ It's essential to start gaining some business knowledge to ensure better design 
 
 Some concepts, like **Customers**, **Claims**, and **Quotes** are easy to identify. But also think about data and external systems with data that might support other concepts. Are there concepts that might require further detailing, like **First Notice of Loss (FNOL)**, **Know your Customer (KYC)**, or **Payments**?
 
-!["Start the interviews with business stakeholders and end-users to list all the business concepts"](images/business-concepts-diag.png)
+![Start the interviews with business stakeholders and end-users to list all the business concepts](images/business-concepts-diag.png)
 
 ## Step 2 - Identify bounded contexts by grouping the business concepts
 
@@ -60,7 +60,7 @@ In ODC you integrate with external systems by consuming REST API services.
 
 Finally, we have bounded contexts well identified. All these contexts can be iterated on if you identify more information.
 
-!["Identify the business contexts to organize and group the business concepts"](images/group-business-concepts-diag.png)
+![Identify the business contexts to organize and group the business concepts](images/group-business-concepts-diag.png)
 
 ## Step 3 - Define a clear ownership
 
@@ -76,24 +76,24 @@ It's important to start simple. When the business evolves, if necessary you iter
 
 **Ensure clear ownership by having only one business owner** for the **Home Insurance** app.
 
-!["Ensure clear ownership have only one business owner for the Home Insurance app."](images/one-business-owner-home-insurance-diag.png)
+![Ensure clear ownership have only one business owner for the Home Insurance app.](images/one-business-owner-home-insurance-diag.png)
 
 Have one business owner for the **Claims** and **Customer Portal** apps.
 
-!["Have one business owner for the Claims and Customer Portal apps."](images/one-business-owner-claims-customer-portal-diag.png)
+![Have one business owner for the Claims and Customer Portal apps.](images/one-business-owner-claims-customer-portal-diag.png)
 
 If, for example, you have two owners for the **Claims & Billing** app, it might generate ineffective execution due to the:
 
 * Unclear responsibility, unclear accountability
 * Risks, collisions, and conflicting priorities caused by concurrent work
 
-!["Two business owners for the same app would generate ineffective execution."](images/two-business-owners-claims-billing-diag.png)
+![Two business owners for the same app would generate ineffective execution.](images/two-business-owners-claims-billing-diag.png)
 
 So, as a best practice, avoid this scenario.
 
 **Avoid the downsides of having two owners simultaneously for one app.** If necessary, split **Claims & Billing** into two different apps.
 
-!["If necessary split Claims & Billing into two different apps"](images/split-claims-billing-into-two-different-apps-diag.png)
+![If necessary split Claims & Billing into two different apps](images/split-claims-billing-into-two-different-apps-diag.png)
 
 #### Independent release cycles
 
@@ -105,21 +105,21 @@ Follow the approach of starting simple. If needed, begin to add complexity over 
  
 Having one sponsor and one business owner for the **Home Insurance** app is OK.
 
-!["Having one sponsor and one business owner for the Home Insurance app is OK."](images/one-sponsor-one-business-owner-diag.png)
+![Having one sponsor and one business owner for the Home Insurance app is OK.](images/one-sponsor-one-business-owner-diag.png)
 
 In this scenario, it's also OK to have two sponsors and only one business owner since each sponsor matches an app (**Claims** and **Customer Portal**).
 
-!["Having two sponsors and only one business owner since each sponsor matches its app."](images/one-business-owner-two-business-sponsors-diag.png)
+![Having two sponsors and only one business owner since each sponsor matches its app.](images/one-business-owner-two-business-sponsors-diag.png)
 
 In this scenario, if we had two sponsors for the **Claims & Billing** app, we could start having problems because if each sponsor's requests change simultaneously, this may cause conflicting priorities.
 
 So, as a best practice, avoid this scenario.
 
-!["Having two sponsors for the Claims & Billing app, we could start having problems"](images/two-business-sponsors-and-owners-diag.png)
+![Having two sponsors for the Claims & Billing app, we could start having problems](images/two-business-sponsors-and-owners-diag.png)
 
 To ensure business sponsors can request changes at different rates, create two apps: one for **Claims** and one for **Billing**.
 
-!["Split the Claims & Billing apps into two different ones."](images/create-two-apps-diag.png)
+![Split the Claims & Billing apps into two different ones.](images/create-two-apps-diag.png)
 
 #### Team independence
 
@@ -134,21 +134,21 @@ The reason is that developers don't need to worry about exposing services from o
 
 There are only disadvantages if, for some reason, you have different teams that need to deliver features at varying rates in the same app, and it becomes hard to manage. However, to solve the problem, you can use feature toggling. Just remember that feature toggling requires additional development time.
 
-!["Start with simplified approach."](images/simplified-approach-diag.png)
+![Start with simplified approach.](images/simplified-approach-diag.png)
 
 In this scenario, one team can be the owner of several apps. Assuming the structure of the organization justifies it. Despite this, having a good balance between the amount of code owned and the cognitive load necessary to understand is essential. In this case, you can have independent deployments to serve different teams. If those apps don't connect, you achieve the same advantages mentioned in the first scenario.
 
 However, if either of those two apps expose or consume a service, it becomes more complex.
 
-!["In this case, we gain the ability to have independent deployments to serve different teams."](images/one-team-owns-several-apps-diag.png)
+![In this case, we gain the ability to have independent deployments to serve different teams.](images/one-team-owns-several-apps-diag.png)
 
 A situation where you have more than one team working on the same app can lead to a lack of independence and clear ownership. In this case, you should move to a more distributed approach to meet your business needs without blockers.
 
-!["In a situation where you have more than one team working on the same app, it can lead to a lack of independence and a lack of clear ownership."](images/more-teams-one-app-diag.png)
+![In a situation where you have more than one team working on the same app, it can lead to a lack of independence and a lack of clear ownership.](images/more-teams-one-app-diag.png)
 
 So as a solution for the last scenario, split your bounded contexts implementation into more apps, because more independent ownership and release cycles are a benefit. However, this more distributed approach can lead to a more complex architecture. Therefore, you must follow development best practices to avoid significant impacts on other apps that are served by the services each team provides.
 
-!["A more distributed approach can lead to a more independent ownership."](images/distributed-approach-diag.png)
+![A more distributed approach can lead to a more independent ownership.](images/distributed-approach-diag.png)
 
 ## Step 4 - Assemble the architecture
 
@@ -158,7 +158,7 @@ Start by mapping your business owners and sponsors to your bounded contexts base
 
 The goal is to ensure the right balance between cohesion and loose coupling. This helps developers to reduce development effort and architecture complexity while maintaining development lifecycle independence between apps and teams.
 
-!["The architecture for the Home Insurance Portal."](images/assemble-architecture-diag.png)
+![The architecture for the Home Insurance Portal.](images/assemble-architecture-diag.png)
 
 ## The final architecture
 
@@ -175,4 +175,4 @@ The architecture is composed of three libraries:
 * **SAP connector** that's used as an integration wrapper to connect your customer's information from SAP and work as a bridge to your customer portal.
 * The **Guidewire connector**, that supports your billing system as an integration wrapper to process traditional and flat-rate agent commissions from a single interface.
 
-!["Home Insurance Portal final architecture."](images/the-final-architecture-diag.png)
+![Home Insurance Portal final architecture.](images/the-final-architecture-diag.png)
