@@ -19,6 +19,8 @@
 
 # Security of OutSystems Developer Cloud
 - href: eap/security.md
+- topics:
+  - href: eap/cookies.md
 
 # Building apps in ODC
 - href: eap/building-apps/intro.md
