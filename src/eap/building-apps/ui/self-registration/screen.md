@@ -7,13 +7,13 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
 
-# Create a screen for users to self-register 
+# Create a screen for users to self-register
 
-To enable users to self-register to access your app, you can provide end users with a screen. At the very least, end users must provide their name and email address.
+To enable users to self-register to access your app, you can provide end-users with a login screen requiring them to enter their name and email address.
   
 To create a self-registration flow, open ODC studio and follow the steps below:
 
-1. From the **Interface** tab, click **UI Flows** > Common folder then copy and paste the Login screen into the same folder. This creates a copy of Login screen named Login2.
+1. From the **Interface** tab, click **UI Flows**. Then from the Common folder copy and paste the Login screen into the same folder. This creates a copy of Login screen named Login2.
 
     ![Copy login screen](images/copy-login-screen-odcs.png)
 
@@ -21,13 +21,14 @@ To create a self-registration flow, open ODC studio and follow the steps below:
 
 1. On the form, change the name and title field to `Signup`, and for the description enter `screen where users sign up`.
 
-1. From the **Interface** tab, click the **Widget Tree** > **Content** > **Container**, then rename LoginForm to `SignUpForm`.
-
     ![Sign-up screen structure](images/page-structure-odcs.png)
+
+1. From the **Interface** tab, click the **Widget Tree** > **Content** > **Container**, then rename LoginForm to `SignUpForm`.
 
 1. From the canvas, click the email label and input the fields container on the screen, then do the following:
     1. Copy and paste the specified container into the same folder.
     1. Set the Style Classes property of the new container to `margin-bottom-base`.
+    1. Rename the text in the old email label as Name.
 
     ![Sign-up screen rename local variables](images/rename-local-variable-odcs.png)
 
@@ -35,15 +36,15 @@ To create a self-registration flow, open ODC studio and follow the steps below:
 
 1. From the **Widget Tree**, delete the container with the label password and input field in the Widget tree for the Signup screen.  
 
-1. From the **Elements** tab, delete the client actions OnTogglePasswordVisibility and LoginOnClick, and the local variables IsPasswordVisible and Password.
+1. From the Elements tab, delete these actions; TogglePasswordVisibility and loginOnClick. Then delete these local variables; IsPasswordVisible and Password.
 
-1. In the **Signup** canvas, click **Login** button and change the text from Log in to `Sign-up` .
+1. In the **Signup** canvas, click the **Login** button and change the text from Log in to `Sign up` .
 
-1. From the Toolbox, drag a button onto the canvas and place it after the Sign-up button and then name the button `Cancel`.
+1. From the Toolbox, drag a button onto the canvas and place it after the **Sign-up** button and then name the button `Cancel`.
 
-1. In the Properties panel for the cancel button, select `Common\\Login` from the dropdown for the On Click event.
+1. In the Properties panel for the cancel button, select `Common\Login` from the dropdown for the On Click event.
 
-1. In the Properties panel for the cancel button under the **Style classes** property, replace the class btn btn-primary with `btn margin-top-base` and change the value for IsFormDefault to No. Then, set the Width property to set Fill in under Styles > Layout.
+1. In the Properties panel for the cancel button under the **Style classes** property set the value for **Is Form Default** to No. Replace the class btn btn-primary with `btn margin-top-base` and set the Width property to set Fill.
 
     ![Sign-up delete useless code from Login screen.](images/delete-useless-code-odcs.png)
 

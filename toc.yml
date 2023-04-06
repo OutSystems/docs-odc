@@ -253,10 +253,10 @@
       - topics:
         # Screen
         - href: eap/building-apps/ui/self-registration/screen.md
-        # Emails
-        - href: eap/building-apps/ui/self-registration/email.md
         # Logic
         - href: eap/building-apps/ui/self-registration/logic.md
+        # Emails
+        - href: eap/building-apps/ui/self-registration/email.md
         # Validation
         - href: eap/building-apps/ui/self-registration/create-validation-form.md
       #  Block lifecycle events

@@ -15,9 +15,9 @@ If this is the first time you are creating the logic for self-registration, then
   
 To create logic to register users, follow these procedures. To make it easier, The procedure is divided into sections.
 
-## Setting up the server action
+## Setting up the Server action
 
-1. From the **Interface** tab, select the **Common** > **Signup**, and then on the canvas, click the **Signup** button to display the Properties and Styles panel.
+1. From the **Interface** tab, select the **Common** > **Signup**, and then on the canvas, click the **Signup** button to display the Properties panel.
 
     ![Copy login screen](images/signup-screen-odcs.png)
 
@@ -31,15 +31,17 @@ To create logic to register users, follow these procedures. To make it easier, T
 
     ![Start changing the sign-up flow](images/starting-signup-flow-odcs.png)
 
-1. From the Toolbox, drag the **Assign** widget onto the **True** branch and place it below the **Assign** element. The Assignments pane displays.
-1. In the **Assignments** pane, add the **IsExecuting** variable and set it to `True`.
+1. From the Toolbox, drag the **Assign** widget onto the **True** branch and place it below the **Assign** element. The Assignments panel displays.
+1. In the **Assignments** panel, add the **IsExecuting** variable and set it to `True`.
 1. From the Toolbox drag a **Run Server Action** widget to the canvas and place it below the **IsExecuting** assign element to display a select action pop-up.
 1. From the **Select Action** pop-up, click the **New Server Action** button to display the canvas and the Properties panel.
 1. In the **Server Action** Properties panel, in the name field enter `DoSignup`. The DoSignup function handles the user registration and validation inside the SignUpOnClick function.
 
-## Configuring the server action
+## Configuring the Server action
 
-After setting up the DoSignup action, you need to configure the server action. In the server action, you define what you want to happen next.   
+After setting up the DoSignup action, you need to configure the Server action. In the Server action, you define what you want to happen next.
+
+1. From the **Logic** tab, select **Server action**, and rename **Action1** to **DoSignup**.
 
 1. From the **Logic** tab, select **Server action**, right-click, and select **Add Public element** to display a pop-up.
 
@@ -52,24 +54,32 @@ After setting up the DoSignup action, you need to configure the server action. I
     </div>
 
 1. In the search bar pop-up, search for **StartUserRegistration**, then select it from the dropdown and click **Add**. ODC displays the **StartUserRegistration** action below system actions in the Logic tab.
-1. From the Toolbox, drag the **Run Server Action** widget to the canvas and place it between the Start and End elements to display a pop-up. In the search pop up, enter **StartUserRegistration** server action and then click **Select.**
+1. From the Toolbox, drag the **Run Server Action** widget to the canvas and place it between the Start and End elements to display a pop-up. In the search pop up, enter **StartUserRegistration** Server action and then click **Select.**
   
     ![Expand user and add variables](images/expand-user-input-paramenter-odcs.png)
 
-1. From the **Logic** tab, right-click the **DoSignup** server action and select add input parameter. Set the Name to `User` and the data type to `User`. In the **DoSignup** canvas, click **StartUserRegistration** action to display properties. Click  **+** to expand the user input and enter `User` as the name and `email` as User.Email.
+1. From the **Logic** tab, right-click the **DoSignup** Server action and select **add input parameter**. Set the Name to `User` and the data type to `User`. In the **DoSignup** canvas, click **StartUserRegistration** action to display properties. Click  **+** to expand the user input and enter `name` as User.Name and `email` as User.Email.
 
     ![Add three output parameters](images/output-paraments-signup-odcs.png)
 
-1. From the **Server Action**, right-click the **DoSignup** server action and select **Add Output** parameter. Enter the following output parameters:
-    1. IsSuccess with data type `Boolean`.
-    2. ErrorMessage with data type `Text`.
-    3. VerificationCode with data type `Text`.
+1. From the **Server Action**, right-click the **DoSignup** Server action and select **Add Output** parameter. Enter the following output parameters:
+    * IsSuccess with data type `Boolean`.
+    * ErrorMessage with data type `Text`.
+    * VerificationCode with data type `Text`.
 
     ![Start User Registration setting output variables](images/star-user-registration-variables-output-odcs.png)
 
-1.  On the **DoSignup** canvas, drag an **Assign** element and place it after the **StartUserRegistration** action. Under the Assignments pane, assign, set the following:
-    1.  IsSuccess as `StartUserRegistration.UserRegistrationResult.Success`.
-    1.  VerificationCode as `StartUserRegistration.UserRegistrationResult.VerificationCode`.
+1. On the **DoSignup** canvas, drag an **Assign** widget and place it after the **StartUserRegistration** action. Under the Assignments panel, assign, set the following:
+    * IsSuccess as `StartUserRegistration.UserRegistrationResult.Success`.
+    * VerificationCode as `StartUserRegistration.UserRegistrationResult.VerificationCode`.
+
+    ![SignUpOnClick client action go to DoSignUp and set the input parameters](images/signup-dosignup-input-parameters-odcs.png)
+
+1. From the canvas, click the **DoSignup** action to display the Properties panel, and set the following properties:
+
+    * **Id** as `NullIdentifier()`
+    * **Name** as `Name`
+    * **Email** as `UserEmail`
 
 ## Validate the input
 
@@ -80,22 +90,22 @@ You can check that the data entry fields only allow user data that complies with
 ### Checking for invalid emails
 
 1. From the Toolbox, drag an **If** widget after the IsSuccess assign element.
-1. In the Properties pane, set the Label as IsInvalidEmail? and the Condition as StartUserRegistration.UserRegistrationResult.StartUserRegistrationFailureReason.InvalidEmail
-1. From the Toolbox, drag an **Assign** element to the True branch.
+1. In the Properties panel of the widget, set the Label as IsInvalidEmail? and the Condition as StartUserRegistration.UserRegistrationResult.StartUserRegistrationFailureReason.InvalidEmail
+1. From the Toolbox, drag an **Assign** widget into the True branch.
 1. Under the **Assignments** tab, assign a variable ErrorMessage as `Invalid Email`.
 
 ### Checking for invalid names
 
-1. In the False branch, from the Toolbox, drag another **If** element.
-1. In the Properties panel, set the Label as IsInvalidName? and the Condition as StartUserRegistration.UserRegistrationResult.StartUserRegistrationFailureReason.InvalidName
-1. From the Toolbox, drag an **Assign** element to the True branch.
+1. From the Toolbox, drag an **If** widget into the False branch.
+1. In the Properties panel of the widget, set the Label as IsInvalidName? and the Condition as StartUserRegistration.UserRegistrationResult.StartUserRegistrationFailureReason.InvalidName
+1. From the Toolbox, drag an **Assign** widget into the True branch.
 1. Under the **Assignments** tab, assign a variable ErrorMessage as `Invalid Name`.
 
 ### Checking for a unique username
 
-1. In the False branch, from the Toolbox, drag another **If** element.
-1. In the Properties panel, set the Label as UsernameAlreadyExists? And the Condition as StartUserRegistration.UserRegistrationResult.StartUserRegistrationFailureReason.UserAlreadyRegistered
-1. From the Toolbox, drag an **Assign** element to the True branch.
+1. From the Toolbox, drag an **If** widget into the False branch.
+1. In the Properties panel of the widget, set the Label as UsernameAlreadyExists? And the Condition as StartUserRegistration.UserRegistrationResult.StartUserRegistrationFailureReason.UserAlreadyRegistered
+1. From the Toolbox, drag an **Assign** widget into the True branch.
 1. Under the **Assignments** tab, assign a variable ErrorMessage as `User already exists. Try to recover your password`.
 
 Verify the validation logic of the DoSignup action looks like the following screen shot.
@@ -104,8 +114,8 @@ Verify the validation logic of the DoSignup action looks like the following scre
 
 As a final validation, you can configure the flow to send an email to the user with the users name. Follow the steps below:
 
-1. In the False branch, from the Toolbox, drag another **If** element. In the Properties panel, set the Label as `IsUserRegistered?` and the Condition as `StartUserRegistration.UserRegistrationResult.Success`.
+1. From the Toolbox, drag an **If** widget into the False branch. In the properties panel of the widget, set the Label as `IsUserRegistered?` and the Condition as `StartUserRegistration.UserRegistrationResult.Success`.
 
-2. In the True branch, from the Toolbox, drag a **Send Email** widget. In the properties pane, set Name as `UserRegistration` and To as `User.Email`. In the Email setting, select the **New Email** option from the dropdown.
+1. In the True branch, from the Toolbox, drag a **Send Email** widget. In the properties panel of the widget, set Name to `UserRegistration` and To as `User.Email`. In the Email setting, select the **New Email** option from the dropdown.
 
 You can now [create an email to send the verification code.](email.md)

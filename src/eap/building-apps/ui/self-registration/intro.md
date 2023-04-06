@@ -8,6 +8,7 @@ platform-version: odc
 ---
 
 # Self-registration flow
+
 The self registration flow enables users to access your app without human intervention. To access your apps, users need a way to log in. Depending upon the type of app you create, users may find your app from your website through a Google search. If you have an app that requires users to register to log in, you may need to provide them with an email link to your app.
 
 You might also want users to be validated as part of the sign-in process. Many apps use a verification process in which you provide users with a verification code. You can use verification codes to confirm the validity of the user using the email address.
@@ -18,15 +19,15 @@ The OutSystems Developer Cloud (ODC) Portal provides access to the Forge. In For
 
 </div>
 
-You can also use the [provided OML](resources/SampleApp.oml). The OML is an example app with the self-registration flow implemented. You can follow the steps in the OML directly to copy elements. The example app is a template for self-registration flow.
+You can also use the [provided OML](resources/SelfRegistrationSample.oml). The OML is an example app with the self-registration flow implemented. You can follow the steps in the OML directly to copy elements. The example app is a template for the self-registration flow.
 
-Users then follow a self-registration process to gain access to the app. To personalize the your users experience, you create screens, logic, emails, and validations in ODC studio.
+Users then follow a self-registration process to gain access to the app. To personalize your users experience, you create screens, logic, emails, and validations in ODC studio.
 
 You start by creating a **Signup** screen. A signup screen usually requires users to enter a username and an email address. Security of your app and systems is essential. If your company has security requirements for logging into an app, you can use ODC Studio to create logic to register a user. Writing business logic lets you define the actions. For example, using logic, you can:
 
 * Create actions that send emails
 * Generate a verification code that gets included in the email to the user
-* Verify the verification the user submits
+* Verify the verification code the user submits
 
 Verification codes enable you to confirm that the person registering has access to that email. In ODC, you can **create an email to send the verification code**.
 
