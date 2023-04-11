@@ -69,7 +69,7 @@ OutSystems staff proactively monitor all systems and the appropriate teams follo
 
 The independence of the Platform and Runtime reduces the attack surface of the deployed apps as they're isolated from other ODC components.
 
-The Platform services can't connect directly to any deployed app or Runtime database. All communication (for example, to deploy an app or change a site property) is done through secure messaging using NATS (Neural Autonomic Transport System).
+The Platform services can't connect directly to any deployed app or Runtime database. All communication (for example, to deploy an app or change an app setting) is done through secure messaging using NATS (Neural Autonomic Transport System).
 
 <div class="info" markdown="1">
 
