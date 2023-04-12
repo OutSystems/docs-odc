@@ -23,8 +23,8 @@ When setting up roles for end-users, consider the following:
 This is an overview of how to use roles:
 
 1. In ODC Studio, create end-user roles.
-2. In ODC Portal, assign end-user roles to users.
-3. In ODC Studio, use end-user roles to control access to the parts of the app. You can also grant and revoke a role to any user programmatically.
+1. In ODC Portal, assign end-user roles to users.
+1. In ODC Studio, use end-user roles to control access to the parts of the app. You can also grant and revoke a role to any user programmatically.
 
 ![How you can use roles](images/overview-how-to-use-roles-diag.png "How you can use roles")
 
@@ -72,7 +72,7 @@ To allow only users with a certain role to access a screen, you need to [create 
 
 1. Select the screen for which you want to edit the access.
 1. From the screen properties, select **Authorization** > **Accessible by** and from the list select **Authenticated users**. The list of roles now shows in the **Authorization** section.
-1. Select the roles users need to have to access the screen.
+1. Select at least one user role from the list to give access to the screen.
 
 ### Restrict logic flows
 
