@@ -56,4 +56,4 @@ Each log and each trace has a unique ID contained in the URL (`...?id=x...`). If
 
 ## Retention of logs and traces
 
-You can view logs and traces up to four weeks old within the Portal. For logs and traces between four and seven weeks old, you can retrieve by opening a support ticket. Logs and traces are deleted after seven weeks.
+Developers can view logs and traces up to four weeks old within ODC Portal. They can retrieve logs and traces between four and seven weeks old by opening a support ticket. The system deletes logs and traces after seven weeks.

@@ -17,7 +17,7 @@ The Open Web Application Security Project (OWASP) defines the principles underpi
 
 * **Defense in depth**: Use multiple layers of security safeguards to prevent a full breach.
 * **Least privilege**: Only grant the minimum access rights necessary to complete an operation for the shortest possible time.
-* **Separation of duties**: Successful task completion should require two or more conditions, preventing one person or process from completing it alone.
+* **Separation of duties**: Completion of a task should require two or more conditions, preventing one person or process from completing it alone.
 * **Complete mediation**: Check for authorization upon every request for an object to prevent authority circumvention.
 
 ## Secure code and processes
@@ -29,9 +29,9 @@ OutSystems engineers plan and deploy the [infrastructure of the Platform and ind
 
 The OutSystems Security Office routinely reviews policies to ensure they remain in-line with security industry best-practice.
 
-Infrastructure-as-Code, like all ODC product code, follows the ODC Software Development Life Cycle (SDLC): guidelines that define the planning, creating, testing, and releasing of the product.
+Infrastructure-as-Code, as all ODC product code, follows the ODC Software Development Life Cycle (SDLC): guidelines that define the planning, creating, testing, and releasing of the product.
 
-OutSystems gives all its engineers training in cloud security and secure development. The specific guidelines OutSystems use are the [OWASP Developer Guide](https://owasp.org/www-project-developer-guide/), [SANS CWE Top 25](https://www.sans.org/top25-software-errors/), and [CERT Secure Coding Standards](https://wiki.sei.cmu.edu/confluence/display/seccode/SEI+CERT+Coding+Standards). OutSystems also applies the [CIS benchmarks](https://www.cisecurity.org/cis-benchmarks) for all systems.
+OutSystems provides all its engineers training in cloud security and secure development. The specific guidelines OutSystems use are the [OWASP Developer Guide](https://owasp.org/www-project-developer-guide/), [SANS CWE Top 25](https://www.sans.org/top25-software-errors/), and [CERT Secure Coding Standards](https://wiki.sei.cmu.edu/confluence/display/seccode/SEI+CERT+Coding+Standards). Additionally, OutSystems applies the [CIS benchmarks](https://www.cisecurity.org/cis-benchmarks) for all systems.
 
 Specialist engineers from the Application Security Team routinely review architectural blueprints and undertake code inspections. Static code analysis tooling is also used to detect and resolve bugs and vulnerabilities.
 
@@ -41,39 +41,46 @@ The network layer of ODC uses encryption, a WAF (Web Application Firewall), intr
 
 ### Encryption in transit
 
-All incoming requests to the Platform services and Runtime terminate at an HTTPS endpoint and are end-to-end encrypted. ODC enforces only TLS 1.3.
+All incoming requests to the Platform services and Runtime terminate at an HTTPS endpoint and are end-to-end encrypted. ODC supports TLS 1.3.
 
 ### Web Application Firewall
 
-The Web Application Firewall (WAF) runs on the Content Delivery Network (CDN) and protects the Platform and the Runtime against common web exploits and bots. It has policies in place to protect against, for example:
+A Web Application Firewall (WAF) runs on the Content Delivery Network (CDN), protecting the Platform and the Runtime against common web exploits and bots. It has policies in place to protect against, for example:
 
 * Denial-of-Service (DoS) and Distributed-Denial-of-Service (DDoS) attacks.
 * Brute-force attacks.
 * SQL injection attacks.
 * Known malicious accesses or patterns.
-* Port scanning.
 
-The OutSystems Security Office periodically reviews the WAF rules. They're enforced automatically, and any unauthorized manipulation is treated as a potential security incident.
+The OutSystems Security Office periodically reviews the WAF rules. The firewall automatically enforces them, and the system treats any unauthorized manipulation as a potential security incident.
 
 ### Event-based architecture
 
-ODC uses an event-driven architecture, enabling real-time event processing and separation of duties.
+The ODC Platform uses an event-driven architecture, enabling real-time event processing and clear service responsibilities.
 
-#### Intrusion detection and prevention
+There are several benefits, including:
 
-ODC has advanced intrusion prevention, safeguarding your apps and data against known, unknown, and undisclosed threats.
+* **Loose coupling**: The Platform services aren't directly dependent on each other, reducing complexity and making them easier to maintain and update.
+* **Real-time processing**: Near-instantaneous processing of events as they occur, allowing for faster response time of the Platform services.
+* **Resilience**: Asynchronous event processing helps to ensure that the Platform remains functional even if some services fail or become unresponsive.
 
-OutSystems staff proactively monitor all systems and the appropriate teams follow up alerts. See [Monitoring and support](#monitoring-and-support) for more detail.
+#### Intrusion detection
+
+The event-driven architecture facilitates the detection of anomalous patterns and activities that might indicate potential security threats. As events are processed and analyzed, the system can identify deviations from normal behavior and trigger alerts for further investigation.
+
+ODC has advanced intrusion detection, safeguarding your apps and data against known, unknown, and undisclosed threats.
+
+OutSystems staff actively monitor all systems and the appropriate teams follow up alerts. See [Monitoring and support](#monitoring-and-support) for more detail.
 
 ### Runtime independence
 
 The independence of the Platform and Runtime reduces the attack surface of the deployed apps as they're isolated from other ODC components.
 
-The Platform services can't connect directly to any deployed app or Runtime database. All communication (for example, to deploy an app or change an app setting) is done through secure messaging using NATS (Neural Autonomic Transport System).
+The Platform services can't connect directly to any deployed app or Runtime database. They conduct all communication (for example, to deploy an app or change an app setting) through secure messaging using NATS (Neural Autonomic Transport System).
 
 <div class="info" markdown="1">
 
-NATS is a highly reliable messaging system that's designed to deliver messages quickly and efficiently, even when there are network disruptions or failures. This ensures that internal requests between the Platform and Runtime stages are handled reliably, minimizing downtime and system disruptions.
+NATS is a highly reliable messaging system that's designed to deliver messages quickly and efficiently, even when there are network disruptions or failures. This design ensures reliable handling of internal requests between the Platform and Runtime stages, minimizing downtime and potential system disruptions.
 
 </div>
 
@@ -81,7 +88,7 @@ Each customer's ODC organization has a standard Runtime setup of three isolated 
 
 #### Isolation of stages
 
-Each stage within each organization's Runtime is isolated by network namespace. It follows that internal traffic within each stage is ring-fenced.
+A network namespace isolates each stage within each organization's Runtime. It follows that internal traffic within each stage is ring-fenced.
 
 Each stage has its own relational database, and network policy defines the connection between the namespace and the database.
 
@@ -91,7 +98,11 @@ This means no app or user from one organization can connect to the database of a
 
 ### Identity for authentication and authorization
 
-You can use an external, self-managed OpenID Connect (OIDC) IdP as the authentication provider for the Platform services and your apps.
+You can use an external, self-managed OpenID Connect (OIDC) IdP as the authentication provider for the Platform services and your apps. There are several benefits of this approach. You can use a:
+
+* Centralized authentication method (ODC and non-ODC) across your organization.
+* Custom password policy for the Platform services and your apps that aligns with your organization's security policy.
+* Multi-factor authentication (MFA) process for the Platform services and your apps.
 
 For more information see [Architecture of authentication and authorization mechanism](architecture/identity.md).
 
@@ -105,30 +116,32 @@ For more information see [Configure a secure gateway to your private network](co
 
 Each Platform service is built as a .NET core, Linux-based container image. All the functionality a service provides is available as a microservice through an API, and each API is versioned to allow for seamless evergreen upgrades. When a developer publishes an app, it's built using the latest version of each Platform service, each of which incorporates the latest security updates.
 
-Each app is also built as a .NET Core, Linux-based container image. The container's base image is continuously hardened to minimize the attack surface.
+Each app is also built as a .NET Core, Linux-based container image. OutSystems security engineers work to continuously harden the container's base image to minimize the attack surface.
 
-When a developer publishes an app, the container image is stored in a container registry. The container image can then be reused when deployed from Development to the other stages. This reduces deployment time and eliminates any doubt that there are subtle differences in deployments between stages.
+When a developer publishes an app, ODC stores the image in a container registry. The container image is then reused when deployed from Development to the other stages. This reduces deployment time and eliminates any doubt that there are subtle differences in deployments between stages.
 
 ### Software supply chain integrity
 
-The secure supply chain defines the steps a change to the code of a Platform service must follow before being deployed to production. The process ensures quality, security, and auditability in the product.
+The secure supply chain outlines the steps a code change in a Platform service must follow before deployment to production. This process ensures quality, security, and auditability in the product.
 
-At each stage of the deployment pipeline the system verifies that:
+At each stage of the deployment pipeline admission control verifies:
 
-* The steps defined for the previous stage have been completed successfully.
-* The container image to be admitted to the new stage is the same unmodified image that entered the deployment pipeline.
+* Successful completion of the steps defined for the previous stage.
+* The container image admitted to the new stage remains unmodified from when it first entered the deployment pipeline.
 
 The process ensures the container image released to production is identical to the one built. This helps minimize the risk of errors or security vulnerabilities.
 
 #### Vulnerability patching
 
-Platform service code is scanned for vulnerabilities and weak security practices as part of the secure supply chain. Scanning is done using static code analysis tooling before code is built as a container image and covers both first and third-party code. A key acceptance criterion for production code is the elimination of all critical, high, and medium vulnerabilities. When a fix isn't immediately available, either an alternative solution must be found (high, critical) or code is secured using best practice (medium).
+A static code analysis tool scans Platform service code for vulnerabilities and weak security practices. The tool does this before the system builds the code as a container image and covers both first and third-party code.
 
-Daily vulnerability scanning of the container registry covers the current version of the Platform service container images and all the deployed apps across all customer Runtime stages.
+A key acceptance criterion for production code is the elimination of all critical, high, and medium vulnerabilities. When a fix isn't immediately available, developers must find an alternative solution (high, critical) or secure code using best practice (medium).
+
+Daily vulnerability scanning of the container registry covers the current version of the Platform service container images and all the deployed apps across all customer Runtime stages. When a vulnerability is detected, OutSystems security engineers fix it and release a new version of the affected Platform service(s) or app base container.
 
 ##### Malware scanning
 
-Scanning includes malware detection capabilities with policies managed by the OutSystems Security Office.
+Scanning also includes malware detection capabilities with policies managed by the OutSystems Security Office.
 
 ## Data
 
@@ -141,14 +154,11 @@ For information about each database and data store used in the Platform and Runt
 All customer data:
 
 * Is encrypted at rest with a per-customer encryption key managed by OutSystems.
+* Resides in the region specified during the creation of the customer's ODC organization.
 
-* Resides in the region specified when the customer's ODC organization was created.
+A network namespace isolates each stage [within each organization's Runtime.](#isolation-of-stages).
 
-Each stage within each organization's Runtime is [isolated by network namespace](#isolation-of-stages).
-
-### Data Loss Prevention
-
-ODC uses an automated mechanism to protect data when it's stored, transmitted, and processed. This mechanism applies to all data across all databases and data stores, making ODC high data durability by default.
+### File Integrity Monitoring
 
 File Integrity Monitoring performs automated scans and alerts the [Computer Security Incident Response Team](#computer-security-incident-response-team-csirt) to unauthorized activity or file changes.
 
@@ -176,15 +186,17 @@ For more information see [User management](user-management/intro.md).
 
 ## Monitoring and support
 
-OutSystems has formal policies and procedures to manage security incidents. This ensures any incident is handled correctly and promptly. The Security Incident Management Procedures define the response to vulnerabilities in ODC infrastructure, security breaches, and incidents. The procedure describes how incidents are identified, reported, and acted on.
+OutSystems maintains formal policies and procedures for managing security incidents. This ensures appropriate and prompt handling of any incident. The Security Incident Management Procedures outline the response to vulnerabilities in ODC infrastructure, security breaches, and incidents. The procedure explains the identification, reporting, and action taken for incidents.
 
 ### Computer Security Incident Response Team
 
-OutSystems proactively monitors ODC infrastructure, events, and availability 24 hours a day, seven days a week. Any unexpected alert, including privacy breaches, either automatically detected or resulting from a human log review, triggers a Security Incident Response.
+OutSystems proactively monitors ODC infrastructure, events, and availability 24 hours a day, seven days a week. Any unexpected alert, including privacy breaches, either automatically detected or resulting from a human log review, triggers a Security Incident Response. 
+
+Customers can report suspected privacy or security incidents through the Support Portal at `https://<customername>.outsystems.dev/support/`.
 
 ### Log Retention
 
-You can view logs and traces up to four weeks old within ODC Portal. You can retrieve logs and traces between four and seven weeks old by opening a support ticket. Logs and traces are deleted after seven weeks.
+Developers can view logs and traces up to four weeks old within ODC Portal. They can retrieve logs and traces between four and seven weeks old by opening a support ticket. The system deletes logs and traces after seven weeks.
 
 For more information see [Monitor and troubleshoot apps](monitor-apps.md).
 
@@ -192,6 +204,6 @@ For more information see [Monitor and troubleshoot apps](monitor-apps.md).
 
 ### Vulnerability policy
 
-OutSystems public vulnerability policy was created to provide our customers guidance and information in the event of a vulnerability reported in an OutSystems product.
+OutSystems created a public vulnerability policy to provide customers with guidance and information in the event of a vulnerability reported in an OutSystems product.
 
 For more information see [OutSystems public vulnerability policy](https://success.outsystems.com/support/security/vulnerabilities/).
