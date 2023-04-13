@@ -71,4 +71,6 @@ If the token validation is successful, the edge of the service checks the user's
 
 The **ID** token contains information about the identity of the authenticated user, such as name and email. The **access** token contains information about the user's permissions. Transfer of JWTs between the client and service is over the OAuth 2 protocol.
 
+When a user logs out, the tokens are invalidated. The tokens have a maximum lifespan of 12 hours. When the tokens expire, the user has to re-authenticate.
+
 In the diagram, a user working in ODC Portal to access a REST API endpoint in a second Platform service is a valid example. Another valid example is a user working in a browser to access a REST API endpoint on a protected screen in an app.
