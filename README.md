@@ -1,6 +1,6 @@
 # Documentation
 
-This repository holds the source files of the [OutSystems product documentation](https://success.outsystems.com/Documentation). 
+This repository holds the source files of the [OutSystems Developer Cloud documentation](https://success.outsystems.com/documentation/outsystems_developer_cloud/). 
 
 Check [how you can contribute](CONTRIBUTING.md).
 
