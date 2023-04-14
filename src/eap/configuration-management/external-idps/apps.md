@@ -11,11 +11,11 @@ platform-version: odc
 
 After assigning an external IdP to stage(s) (Development, QA, Production) in ODC Portal, you must modify the end-user login and logout flows for each app you want to use it.
 
-There are two ways you can do this. 
+You can do one of the following:
+   
+* [**Delete the built-in login screen and redirect to an external provider.**](#delete-the-built-in-login-screen-and-redirect-to-external-provider) The recommended solution if you want to use a single external provider for your app, without the option of built-in provider.
 
-1. [**Delete the built-in login screen and redirect to an external provider.**](#delete-the-built-in-login-screen-and-redirect-to-external-provider) The recommended solution if you want to use a single external provider for your app, without the option of built-in provider.
-
-2. [**Modify the built-in login screen to add button(s) for external provider login.**](#modify-the-built-in-login-screen-to-add-buttons-for-external-provider-login) The recommended solution if using multiple external providers or a single external provider and retain the option to login with the built-in provider.
+* [**Modify the built-in login screen to add button(s) for external provider login.**](#modify-the-built-in-login-screen-to-add-buttons-for-external-provider-login) The recommended solution if using multiple external providers or a single external provider and retain the option to login with the built-in provider.
 
 After you complete the steps for your selected solution, republish the app and [promote](../../deploy-apps.md) the new revision to the stage(s) where the provider is active.
 
@@ -24,7 +24,6 @@ After you complete the steps for your selected solution, republish the app and [
 For each app you want to modify, open it in ODC Studio and follow the steps in the **Modify main user login flow**, **Modify user info bar login flow** and **Modify user info bar logout flow** sections below.
 
 ### Modify main user login flow
-
 
 To load the login action onto the canvas, click the **Interface** tab, then expand the **UI Flows** > **Common** folder and double-click **OnException**. You see the end-user login flow for the built-in provider on the left. Now follow these steps.
 
