@@ -119,14 +119,3 @@ Date |  | Date |
 Datetime<br/>DateTime2<br/>Smalldatetime | Date<br/>Timestamp | DateTime |
 Image<br/>Binary<br/>Varbinary | Blob<br/>Raw<br/>Long Raw | Binary Data |
 Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp<br/>Datetimeoffset | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType | Not supported, these attributes will not appear in ODC Portal. |
-
-## Known issues
-
-OutSystems will address the following limitations during the technical preview.
-
-* CreateOrUpdateSome (Bulk Inserts/Updates) entity action is not supported.
-* DiffMinutes and DiffSeconds built-in functions for Oracle have a limitation regarding the date interval. The allowed max intervals between dates are:
-    * Seconds: 31 years, 9 months, 9 days, 1 hour, 46 minutes, and 39 seconds
-    * Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds
-* Data Preview and runtime queries with Unicode characters are not supported.
-* Advanced SQL Nodes do not support external entities.
