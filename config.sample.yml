@@ -5,9 +5,9 @@ build:
     related-title: See Also   
 publish:
     url: https://success.outsystems.com/
-    root_path: Documentation/outsystems-developer-cloud
+    root_path: documentation/outsystems-developer-cloud
     toc_url: https://success.outsystems.com/
-    toc_root_path: Documentation/outsystems-developer-cloud
+    toc_root_path: documentation/outsystems-developer-cloud
     skip_toc_publish: False
     skip_edit_links: True
 reference:
@@ -17,5 +17,5 @@ reference:
 checktoc:
     url: https://success.outsystems.com/
     root_path: ""
-    mindtouch-toc-path: Documentation/outsystems-developer-cloud
-    auto-toc-path: Documentation/outsystems-developer-cloud
+    mindtouch-toc-path: documentation/outsystems-developer-cloud
+    auto-toc-path: documentation/outsystems-developer-cloud
