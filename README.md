@@ -6,7 +6,7 @@ Check [how you can contribute](CONTRIBUTING.md).
 
 ## Writing
 
-All documentation present in this repository should be written in Markdown (check [here](https://daringfireball.net/projects/markdown/syntax) for the basic syntax).
+All documentation in this repository should be written in Markdown (check [here](https://daringfireball.net/projects/markdown/syntax) for the basic syntax).
 
 The Markdown-to-HTML conversion process is done through the Python Markdown package. The following Markdown extensions are currently being used in the conversion step:
 
