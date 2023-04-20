@@ -109,7 +109,7 @@ On some devices with a low-resolution front camera, the app doesn't scan barcode
 
 ### Poor scanning results when using PWA
 
-Scanning barcodes in PWA can be faulty in poor conditions, for example, when there's insufficient lighting, or when the user is pointing the camera with a slight angle.
+Scanning barcodes in PWA can be faulty in poor conditions. For example, when there's insufficient lighting, or when the user is pointing the camera with a slight angle.
 
 ______________________________________________________________
 _QR CODE is a registered trademark of Denso Wave Incorporated._
