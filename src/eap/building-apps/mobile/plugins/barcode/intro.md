@@ -107,9 +107,9 @@ Reading a PDF147 barcode can crash an iOS app. OutSystems is working on a potent
 
 On some devices with a low-resolution front camera, the app doesn't scan barcodes well. For best results use the back camera. The back camera has higher resolution and can focus better on a barcode.
 
-### Poor Scanning results when using PWA
+### Poor scanning results when using PWA
 
-Scanning barcodes while on PWA Applications are faulty when not in perfect conditions, e.g., insufficient lighting and/or pointing the camera with a slight angle.
+Scanning barcodes in PWA can be faulty in poor conditions, for example, when there's insufficient lighting, or when the user is pointing the camera with a slight angle.
 
 ______________________________________________________________
 _QR CODE is a registered trademark of Denso Wave Incorporated._
