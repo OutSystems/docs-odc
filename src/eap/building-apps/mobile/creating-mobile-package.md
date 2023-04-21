@@ -18,7 +18,7 @@ After you can create a mobile app in ODC (OutSystems Developer Cloud) Studio, yo
 
 <div class="warning" markdown="1">
 
-Avoid changing the app name, due to [a know issue in the product](../../known-issues/intro.md#changing-app-name).
+Avoid changing the app name, due to [a known issue in the product](../../known-issues/intro.md#changing-app-name).
 
 </div>
 
