@@ -32,7 +32,7 @@ Before apps can send emails, you must create the email in ODC Studio.
 1. Complete the following fields. Required fields display with an asterisk.
    
       * **Stage** - from the drop down select one or more stages.
-      * **Server** - enter the IP address, the port number. The SMTP port number defaults to 587, but you can change it. Note that the port 25 is not supported.
+      * **Server** - enter the IP address, the port number. The SMTP port number defaults to 25. 
       * **Requires Authentication** - Check to require authentication and then enter the user name and password to authenticate.
       * **Recipients** -  the email address and name of the people receiving this email. Select **Set in app** to use the email addresses from ODC Studio or select **Test List** to display fields to enter email test recipients.
 
