@@ -362,6 +362,7 @@
     - href: eap/troubleshoot/debug/watches.md
     - href: eap/troubleshoot/debug/threads.md
     - href: eap/troubleshoot/debug/debugger-ui-reference.md
+    - href: eap/troubleshoot/debug/troubleshoot-debugger-connection.md
 
 # Forge
 - href: eap/forge/intro.md
