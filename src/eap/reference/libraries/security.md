@@ -185,7 +185,7 @@ The data to hash.
 
 Algorithm: optional ; data type Text 
 
-The algorithm to use. Default algorithm is SHA512. Check .NET's HashAlgorithm.Create documentation for a full list of available algorithms.
+The algorithm to use. Default algorithm is SHA512. Check .NET's "HashAlgorithm.Create" documentation for a full list of available algorithms.
 
 _Outputs_
 
@@ -208,7 +208,7 @@ The binary key
 
 Algorithm: optional ; data type Text 
 
-The algorithm to use. Default algorithm is HMACSHA512. Check .NET's HMAC.Create documentation for a full list of available algorithms.
+The algorithm to use. Default algorithm is HMACSHA512. Check .NET's "HMAC.Create" documentation for a full list of available algorithms.
 
 _Outputs_
 
@@ -322,7 +322,7 @@ The key to sign the data with (this should be the XML representation of the RSA 
 
 Algorithm: optional ; data type Text 
 
-The hash algorithm to sign with. Default algorithm is SHA512. Check .NET's  HashAlgorithm.Create documentation for a full list of available algorithms.
+The hash algorithm to sign with. Default algorithm is SHA512. Check .NET's "HashAlgorithm.Create" documentation for a full list of available algorithms.
 
 Padding: optional ; data type Text
 
@@ -353,7 +353,7 @@ The public key to verify the signature against (this should be the XML represent
 
 Algorithm: optional ; data type Text 
 
-The hash algorithm used to sign. Default algorithm is SHA512. Check .NET's  HashAlgorithm.Create documentation for a full list of available algorithms.
+The hash algorithm used to sign. Default algorithm is SHA512. Check .NET's "HashAlgorithm.Create" documentation for a full list of available algorithms.
 
 Padding: optional; data type Text 
 
