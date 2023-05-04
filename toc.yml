@@ -33,6 +33,7 @@
         - href: eap/building-apps/architecture/recommended-architecture.md
         # Reuse elements across apps
         - href: eap/building-apps/architecture/reuse-elements.md
+        - href: eap/building-apps/architecture/service-actions.md
     # Data in OutSystems apps
     - href: eap/building-apps/data/intro.md
     - topics:
