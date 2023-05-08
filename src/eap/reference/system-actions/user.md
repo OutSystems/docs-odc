@@ -198,8 +198,8 @@ _Inputs_
 
 _Outputs_
 
-**UserRegistrationResult**
-:   Type: [UserRegistrationResult](#userregistrationresult)  
+**StartUserRegistrationResult**
+:   Type: [StartUserRegistrationResult](#startuserregistrationresult)  
     Result of the user registration action. 
 
 ### UpdateUserProfile
@@ -345,7 +345,7 @@ Email
 PhotoURL
 :   Type: Text
 
-### UserRegistrationResult
+### StartUserRegistrationResult
 
 *Attributes*
 
@@ -355,8 +355,8 @@ Success
 StartUserRegistrationFailureReason
 :   Type: StartUserRegistrationFailureReason
 
-Success
-:   Type: Boolean
+VerificationCode
+:   Type: Text
 
 UserId
 :   Type: User Identifier
