@@ -10,4 +10,3 @@ platform-version: odc
 # Forge errors
 
 These errors are related to the OutSystems Developer Cloud (ODC) Forge. Use the error code to locate the error message. Then use the information provided to understand the cause and impact. To resolve the error, follow the recommended action.
-

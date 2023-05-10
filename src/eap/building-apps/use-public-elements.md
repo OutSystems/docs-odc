@@ -19,12 +19,14 @@ To use public elements, you must first add them to your app. Navigate to the **A
 
 ### Libraries
 
-ODC elevates libraries to a top-level concept. Libraries exist at the same level as apps, and they have their own lifecycle.
+ODC elevates libraries to a top-level concept. Libraries exist at the same level as apps and have their own lifecycle.
 
-You can build you own libraries, but there are many provided by OutSystems available out of the box. You can find a list of currently available libraries in the [reference documentation](../reference/intro.md#libraries).
+You can build you own libraries, but there are many provided by OutSystems available out-of-the-box. See the [OutSystems language and elements documentation](../reference/intro.md#libraries) for a list of currently available libraries.
+
+You can build your own libraries in the OutSystem visual language or [using external logic](../building-apps/external-logic/intro.md).
 
 When you add a public element from a provided library, it becomes available to use as an action in the **Server Actions** folder of the **Logic** tab. You can use an action in the logic flow of any server action or service action.
 
-The public element may also be available as function in the **User Functions** folder of the expression editor. You can use a function in the logic flow any expression of any server action or service action. You can check if an action is available as a function in the [reference documentation](../reference/intro.md#libraries).
+The public element may also be available as function in the **User Functions** folder of the expression editor. You can use a function in the logic flow in any expression of any server action or service action. You can check if an action is available as a function in the [reference documentation](../reference/intro.md#libraries). Public elements consumed from external logic are never available as functions.
 
-The functions available in provided libraries complement the built-in functions available in the **Built-in Functions** folder of the expression editor.
+The functions available in the provided libraries complement the built-in functions found in the **Built-in Functions** folder of the expression editor.

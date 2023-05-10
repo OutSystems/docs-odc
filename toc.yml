@@ -276,6 +276,11 @@
 
     # Secure your app by using roles
     - href: eap/building-apps/secure-app-with-roles.md
+    # Extend your apps with external logic
+    - href: eap/building-apps/external-logic/intro.md
+    - topics:
+      - href: eap/building-apps/external-logic/README.md
+      - href: eap/building-apps/external-logic/REFERENCE.md
     # Use public elements
     - href: eap/building-apps/use-public-elements.md
     # Exposing REST APIs
@@ -457,6 +462,30 @@
     - href: error/frge/os-frge-ast-50001.md
     - href: error/frge/os-frge-ast-50002.md
     - href: error/frge/os-frge-ast-50003.md
+  # Errors External Libraries SDK
+  - href: error/elg/intro.md
+  - topics:
+    - href: error/elg/OS-ELG-MODL-05001.md
+    - href: error/elg/OS-ELG-MODL-05002.md
+    - href: error/elg/OS-ELG-MODL-05003.md
+    - href: error/elg/OS-ELG-MODL-05004.md
+    - href: error/elg/OS-ELG-MODL-05005.md
+    - href: error/elg/OS-ELG-MODL-05006.md
+    - href: error/elg/OS-ELG-MODL-05007.md
+    - href: error/elg/OS-ELG-MODL-05008.md
+    - href: error/elg/OS-ELG-MODL-05009.md
+    - href: error/elg/OS-ELG-MODL-05010.md
+    - href: error/elg/OS-ELG-MODL-05011.md
+    - href: error/elg/OS-ELG-MODL-05012.md
+    - href: error/elg/OS-ELG-MODL-05013.md
+    - href: error/elg/OS-ELG-MODL-05014.md
+    - href: error/elg/OS-ELG-MODL-05015.md
+    - href: error/elg/OS-ELG-MODL-05016.md
+    - href: error/elg/OS-ELG-MODL-05017.md
+    - href: error/elg/OS-ELG-MODL-05018.md
+    - href: error/elg/OS-ELG-MODL-05019.md
+    - href: error/elg/OS-ELG-MODL-05020.md
+    - href: error/elg/OS-ELG-MODL-05021.md
   # Errors INTC
   - href: error/intc/intro.md
   - topics:
@@ -486,4 +515,3 @@
     - href: error/pkgs/PKGS-50003.md
     - href: error/pkgs/PKGS-50004.md
     - href: error/pkgs/PKGS-50005.md
-  
