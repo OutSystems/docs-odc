@@ -1,8 +1,8 @@
 ---
-summary: 
+summary: External Libraries SDK README
 tags:
 locale: en-us
-guid: 37f6d7d2-565c-4535-b386-5cfe094ececf
+guid: 955feaca-cda0-492f-9b84-d5c89281692e
 app_type: mobile apps, reactive web apps
 platform-version: odc
 ---

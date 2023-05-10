@@ -278,7 +278,7 @@
     - href: eap/building-apps/secure-app-with-roles.md
     # Extend your apps with external logic
     - href: eap/building-apps/external-logic/intro.md
-    - topics:
+    - topics: 
       - href: eap/building-apps/external-logic/README.md
       - href: eap/building-apps/external-logic/REFERENCE.md
     # Use public elements
