@@ -23,7 +23,7 @@ When you want to create new external logic or update existing external logic, fo
 
 ## Build the external logic
 
-The OutSystems External Libraries SDK is an open-source, stand-alone kit for building logic in C# that you can expose to ODC apps.
+The OutSystems External Libraries SDK is a stand-alone kit for building logic in C# that you can expose to ODC apps.
 
 Because it's a stand-alone kit, the C# developer doesn't need an ODC organization account to use it.
 
@@ -48,7 +48,7 @@ To do this, select **External Logic** from the left nav menu in the ODC Portal t
 
     In both cases the **Upload file** screen displays.
 
-1. Click the **Upload file** button to browse for the ZIP file or drag and drop it to the labeled area. The ZIP file must be less than 40MB. Then click **Continue**.
+1. Click the **Upload file** button to browse for the ZIP file or drag and drop it to the labeled area. The ZIP file must be less than 90MB. Then click **Continue**.
 
     A spinning wheel shows the status of the file upload and inspection process. You can continue working on other tasks in the ODC Portal during the process.
 
