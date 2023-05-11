@@ -25,7 +25,11 @@ If end-users don't accept cookies from the ODC apps, the users can still access 
 
 ODC generates necessary cookies, such as osvisitor. If the app uses extra cookies from third-party solutions, developers should inform the end-users about their purpose. The following table describes the cookies created by the apps in ODC.
 
-| Cookie name | Description | Approx size (Bytes) | Expiration | HTTP only | Secure | Stores personal data |
-|--|--|--|--|--|--|--|
-| osvisit `<AppKey>` | When a user visits a web page for the first time, a osvist cookie is created with a unique value to indicate that the user accessed the site. If the user returns after the expiration of the cookie, the app creates a new cookie. The osvisit cookie stores values for each app separately. The format is `osvisit<AppKey without hyphens>`, for example osvisitfdb5808b381e41a894a9e8717b2d31de. | 40 | 30 mins | Yes | No | No |
-| osvisitor | A unique value is stored in a cookie when a user accesses a web page from a server for the first time. | 45 | never | Yes | No | No |
+| Cookie name | osvisit `<AppKey>`  | osvisitor   |
+|--| -- | -- |
+| Description | When a user visits a web page for the first time, a osvist cookie is created with a unique value to indicate that the user accessed the site. If the user returns after the expiration of the cookie, the app creates a new cookie. The osvisit cookie stores values for each app separately. The format is `osvisit<AppKey without hyphens>`, for example osvisitfdb5808b381e41a894a9e8717b2d31de. |  A unique value is stored in a cookie when a user accesses a web page from a server for the first time. |
+| Approx size (Bytes)  | 40  | 45 |
+| Expiration           | 30 mins  | never |
+| HTTP only            | Yes   | Yes  |
+| Secure               | No    | No   |
+| Stores personal data | No  | No  |
