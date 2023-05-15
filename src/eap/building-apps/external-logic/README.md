@@ -75,7 +75,7 @@ Using Microsoft Visual Studio, for example:
 
     <div class="info" markdown="1">
 
-    The maximum supported size of the ZIP file in 90MB.
+    The maximum supported size of the ZIP file in 40MB.
     
     </div>
 
