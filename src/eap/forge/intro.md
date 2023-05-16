@@ -33,3 +33,12 @@ Before sharing your project, remember that Forge is the place for the community.
 OutSystems removes or rejects test applications or code shared with a specific small group of people. The Forge is for sharing with the all members of the community.
 
 </div>
+
+## Asset availability
+
+To ensure assets work as provided, OutSystems ensures that:
+
+* Documentation is available, that it explains how  to use the asset, and the benefits the asset provides.
+* Forge standards are followed
+
+Once the asset is in Forge, it's available for all users.

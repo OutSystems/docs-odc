@@ -9,11 +9,11 @@ platform-version: odc
 
 # Document your Forge asset
 
-Before sharing a new Forge asset, OutSystems recommends that you provide documentation. Use this document to help you determine what to include, such as what your asset does,how to install and set up the asset. 
+Before sharing a new Forge asset, OutSystems recommends that you provide documentation. Use this document to help you determine what to include, such as what your asset does,how to install and set up the asset.
 
-## Best practices 
+## Best practices
 
-Keep the following in mind as you crate your documentation. 
+Keep the following in mind as you crate your documentation.
 
  * Write to the level the majority of your audience understands, don't use slang, jargon, or terms they may not understand.
 * Use the active voice to create less wordy sentences.
@@ -25,15 +25,15 @@ Keep the following in mind as you crate your documentation.
 
 An introduction helps the reader to understand how they might use this asset. Include the following: 
 
-*  What it is and why you would use this asset, focusing on its benefits.
-* How to use this asset focusing on the options available. 
+* What it is and why you would use this asset, focusing on its benefits.
+* How to use this asset focusing on the options available.
 * A good description of all functionality that the asset provides.
 * A good description of how you can access the functionality from either ODC Portal or ODC Studio.
 * An example that illustrates the functionality, following an end-to-end use case.
 * Visual aids to add context when describing functionality or use cases. (This could be something like a flow diagram.)
 * Links to additional content with important information that may lead to even more insightful information.
 
-## Write the Forge asset installation and setup information 
+## Write the Forge asset installation and setup information
 
 Use the following guidelines when writing procedures for installing and setting up your asset.
 
