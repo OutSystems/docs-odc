@@ -63,7 +63,7 @@ When the **Wake(TimerName)** action executes, the **NextRun** property of that T
 
 The **Wake(TimerName)** action doesn't receive any input parameters and doesn't return any output parameters.
 
-To use the **Wake(TimerName) built-in action in your logic, do the following:
+To use the **Wake(TimerName)** built-in action in your logic, do the following:
 
 1. From  the **Process** tab, expand the Timer element.
    
