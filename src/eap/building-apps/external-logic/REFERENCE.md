@@ -9,50 +9,6 @@ platform-version: odc
 
 # External Libraries SDK REFERENCE
 
-## Contents
-
-- [OSActionAttribute](#T-OutSystems-ExternalLibraries-SDK-OSActionAttribute 'OutSystems.ExternalLibraries.SDK.OSActionAttribute')
-  - [Description](#P-OutSystems-ExternalLibraries-SDK-OSActionAttribute-Description 'OutSystems.ExternalLibraries.SDK.OSActionAttribute.Description')
-  - [IconResourceName](#P-OutSystems-ExternalLibraries-SDK-OSActionAttribute-IconResourceName 'OutSystems.ExternalLibraries.SDK.OSActionAttribute.IconResourceName')
-  - [OriginalName](#P-OutSystems-ExternalLibraries-SDK-OSActionAttribute-OriginalName 'OutSystems.ExternalLibraries.SDK.OSActionAttribute.OriginalName')
-  - [ReturnName](#P-OutSystems-ExternalLibraries-SDK-OSActionAttribute-ReturnName 'OutSystems.ExternalLibraries.SDK.OSActionAttribute.ReturnName')
-  - [ReturnType](#P-OutSystems-ExternalLibraries-SDK-OSActionAttribute-ReturnType 'OutSystems.ExternalLibraries.SDK.OSActionAttribute.ReturnType')
-- [OSDataType](#T-OutSystems-ExternalLibraries-SDK-OSDataType 'OutSystems.ExternalLibraries.SDK.OSDataType')
-  - [BinaryData](#F-OutSystems-ExternalLibraries-SDK-OSDataType-BinaryData 'OutSystems.ExternalLibraries.SDK.OSDataType.BinaryData')
-  - [Boolean](#F-OutSystems-ExternalLibraries-SDK-OSDataType-Boolean 'OutSystems.ExternalLibraries.SDK.OSDataType.Boolean')
-  - [Currency](#F-OutSystems-ExternalLibraries-SDK-OSDataType-Currency 'OutSystems.ExternalLibraries.SDK.OSDataType.Currency')
-  - [Date](#F-OutSystems-ExternalLibraries-SDK-OSDataType-Date 'OutSystems.ExternalLibraries.SDK.OSDataType.Date')
-  - [DateTime](#F-OutSystems-ExternalLibraries-SDK-OSDataType-DateTime 'OutSystems.ExternalLibraries.SDK.OSDataType.DateTime')
-  - [Decimal](#F-OutSystems-ExternalLibraries-SDK-OSDataType-Decimal 'OutSystems.ExternalLibraries.SDK.OSDataType.Decimal')
-  - [Email](#F-OutSystems-ExternalLibraries-SDK-OSDataType-Email 'OutSystems.ExternalLibraries.SDK.OSDataType.Email')
-  - [InferredFromDotNetType](#F-OutSystems-ExternalLibraries-SDK-OSDataType-InferredFromDotNetType 'OutSystems.ExternalLibraries.SDK.OSDataType.InferredFromDotNetType')
-  - [Integer](#F-OutSystems-ExternalLibraries-SDK-OSDataType-Integer 'OutSystems.ExternalLibraries.SDK.OSDataType.Integer')
-  - [LongInteger](#F-OutSystems-ExternalLibraries-SDK-OSDataType-LongInteger 'OutSystems.ExternalLibraries.SDK.OSDataType.LongInteger')
-  - [PhoneNumber](#F-OutSystems-ExternalLibraries-SDK-OSDataType-PhoneNumber 'OutSystems.ExternalLibraries.SDK.OSDataType.PhoneNumber')
-  - [Text](#F-OutSystems-ExternalLibraries-SDK-OSDataType-Text 'OutSystems.ExternalLibraries.SDK.OSDataType.Text')
-  - [Time](#F-OutSystems-ExternalLibraries-SDK-OSDataType-Time 'OutSystems.ExternalLibraries.SDK.OSDataType.Time')
-- [OSIgnore](#T-OutSystems-ExternalLibraries-SDK-OSIgnore 'OutSystems.ExternalLibraries.SDK.OSIgnore')
-- [OSInterfaceAttribute](#T-OutSystems-ExternalLibraries-SDK-OSInterfaceAttribute 'OutSystems.ExternalLibraries.SDK.OSInterfaceAttribute')
-  - [Description](#P-OutSystems-ExternalLibraries-SDK-OSInterfaceAttribute-Description 'OutSystems.ExternalLibraries.SDK.OSInterfaceAttribute.Description')
-  - [IconResourceName](#P-OutSystems-ExternalLibraries-SDK-OSInterfaceAttribute-IconResourceName 'OutSystems.ExternalLibraries.SDK.OSInterfaceAttribute.IconResourceName')
-  - [Name](#P-OutSystems-ExternalLibraries-SDK-OSInterfaceAttribute-Name 'OutSystems.ExternalLibraries.SDK.OSInterfaceAttribute.Name')
-  - [OriginalName](#P-OutSystems-ExternalLibraries-SDK-OSInterfaceAttribute-OriginalName 'OutSystems.ExternalLibraries.SDK.OSInterfaceAttribute.OriginalName')
-- [OSParameterAttribute](#T-OutSystems-ExternalLibraries-SDK-OSParameterAttribute 'OutSystems.ExternalLibraries.SDK.OSParameterAttribute')
-  - [DataType](#P-OutSystems-ExternalLibraries-SDK-OSParameterAttribute-DataType 'OutSystems.ExternalLibraries.SDK.OSParameterAttribute.DataType')
-  - [Description](#P-OutSystems-ExternalLibraries-SDK-OSParameterAttribute-Description 'OutSystems.ExternalLibraries.SDK.OSParameterAttribute.Description')
-  - [OriginalName](#P-OutSystems-ExternalLibraries-SDK-OSParameterAttribute-OriginalName 'OutSystems.ExternalLibraries.SDK.OSParameterAttribute.OriginalName')
-- [OSStructureAttribute](#T-OutSystems-ExternalLibraries-SDK-OSStructureAttribute 'OutSystems.ExternalLibraries.SDK.OSStructureAttribute')
-  - [Description](#P-OutSystems-ExternalLibraries-SDK-OSStructureAttribute-Description 'OutSystems.ExternalLibraries.SDK.OSStructureAttribute.Description')
-  - [OriginalName](#P-OutSystems-ExternalLibraries-SDK-OSStructureAttribute-OriginalName 'OutSystems.ExternalLibraries.SDK.OSStructureAttribute.OriginalName')
-- [OSStructureFieldAttribute](#T-OutSystems-ExternalLibraries-SDK-OSStructureFieldAttribute 'OutSystems.ExternalLibraries.SDK.OSStructureFieldAttribute')
-  - [DataType](#P-OutSystems-ExternalLibraries-SDK-OSStructureFieldAttribute-DataType 'OutSystems.ExternalLibraries.SDK.OSStructureFieldAttribute.DataType')
-  - [Decimals](#P-OutSystems-ExternalLibraries-SDK-OSStructureFieldAttribute-Decimals 'OutSystems.ExternalLibraries.SDK.OSStructureFieldAttribute.Decimals')
-  - [DefaultValue](#P-OutSystems-ExternalLibraries-SDK-OSStructureFieldAttribute-DefaultValue 'OutSystems.ExternalLibraries.SDK.OSStructureFieldAttribute.DefaultValue')
-  - [Description](#P-OutSystems-ExternalLibraries-SDK-OSStructureFieldAttribute-Description 'OutSystems.ExternalLibraries.SDK.OSStructureFieldAttribute.Description')
-  - [IsMandatory](#P-OutSystems-ExternalLibraries-SDK-OSStructureFieldAttribute-IsMandatory 'OutSystems.ExternalLibraries.SDK.OSStructureFieldAttribute.IsMandatory')
-  - [Length](#P-OutSystems-ExternalLibraries-SDK-OSStructureFieldAttribute-Length 'OutSystems.ExternalLibraries.SDK.OSStructureFieldAttribute.Length')
-  - [OriginalName](#P-OutSystems-ExternalLibraries-SDK-OSStructureFieldAttribute-OriginalName 'OutSystems.ExternalLibraries.SDK.OSStructureFieldAttribute.OriginalName')
-
 <a name='T-OutSystems-ExternalLibraries-SDK-OSActionAttribute'></a>
 ## OSActionAttribute `type`
 
