@@ -129,6 +129,10 @@ At each stage of the deployment pipeline admission control verifies:
 * Successful completion of the steps defined for the previous stage.
 * The container image admitted to the new stage remains unmodified from when it first entered the deployment pipeline.
 
+The below diagram illustrates this.
+
+![Software supply chain integrity](images/security-supply-chain-diag.png)
+
 The process ensures the container image released to production is identical to the one built. This helps minimize the risk of errors or security vulnerabilities.
 
 #### Vulnerability patching
