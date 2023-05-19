@@ -1,5 +1,5 @@
 ---
-summary: An overview of organization users and end-user roles in OutSystems Developer Cloud (ODC).
+summary: Learn about organization users and end-user roles in OutSystems Developer Cloud (ODC).
 tags: 
 locale: en-us
 guid: 9e0fb9b7-d2b0-419f-a5d8-5b5ed730da5e
@@ -55,9 +55,9 @@ An organization role groups a set of permissions that you can assign to users in
 
 To see the organization roles:
 
-1. From  **ODC Portal** select **Users & access** > **Organization roles**. 
-2. Select a role to see the table of permissions. 
-3. Hover the mouse pointer over the permission in the table to display more information.
+1. From  **ODC Portal** select **Users & access** > **Organization roles**.
+1. Select a role to see the table of permissions.
+1. Hover the mouse pointer over the permission in the table to display more information.
 
 An organization role groups permissions in the following sections:
 
@@ -68,19 +68,6 @@ An organization role groups permissions in the following sections:
 * Monitoring
 * Stage
 * User management
-
-### Organization and app roles
-
-In ODC, you can  limit a user's access to an app with app scope. You can assign a role to a user for a specific app or library. For example, if you invite a user to only one app, then that user only has access to that one app.
-
-When assigning roles for app access, keep the following in mind:
-
-* Users get permissions inherited by the app
-* If a permission isn't inherited by the app, users don’t have that permission.
-* You can revoke organization roles from users for a specific app.
-* You can assign up to 15 app roles per user.
-* When you delete an app, the app scope is removed, and users can no longer access that app. Users also lose access to the ODC platform because they don't have permission to do anything.
-* If a user has app scope for more than one app, they continue to have access to ODC and the remaining apps. Permissions for the remaining apps remain unchanged.
 
 ### Built-in organization roles
 
@@ -100,33 +87,6 @@ End-user roles are specific to apps. You create end-user roles in ODC Studio whi
 
 For more information about app dev development and end-user roles, see: [Secure your app with end-user roles](../building-apps/secure-app-with-roles.md).
 
-## Give or revoke a user role
-
-You can assign or revoke a user's role. This applies to  individual roles and group roles.  
-
-From the **ODC Portal**, select **Users & access**> **Users**. A table displays all existing users. You can:
-
-* Sort the list by users, status, and last login date
-* Manage the user's role by selecting the user
-* Add a new user by clicking **Invite user**
-
-When you assign or revoke a role to an authenticated user, it can take up to a minute for the change to become active.
-
-## Add new users to your organization
-
-You can add new users to your organization and apps through the ODC Portal.
-
-From the **ODC Portal**, select **Users & access**> **Users**, and then click the **Invite user** button on the top right. A form displays to enter the user's email and select their access. Then based on your choices, different options become available.
-
-* If you choose **Member access**, then you can select an organization or no organization role.
-* If you choose **End user access**, you can assign roles related to a specific app or all apps, and all stages or a specific stage. You can choose more than one app at a time. A group can only have roles from the same stage. For example, if your group is in the Development stage you can't add roles from the Production stage.
-
-<div class="info" markdown="1">
-
-When a user signs into an app, their user profile information is synchronized to the [User entity](../reference/system-actions/user.md#user-1) of that app.
-
-</div>
-
 ## End-user groups
 
 To accelerate the onboarding of users, ODC enables you to create groups of users. Using groups enables you to grant users roles in bulk. Before you can add users to groups, users must be part of your ODC organization.
@@ -139,6 +99,25 @@ You must select a stage to which the group belongs. Once you select a stage for 
 
 A person with **Manage end-user groups** permission can add users to a group, select users from a list of existing users and add them to the group. Once you save the group, it's available immediately. Adding or removing roles also takes effect immediately.
 
+## Add new users or end-user groups to your organization
+
+You can add new users to your organization and apps through the ODC Portal.
+
+From the **ODC Portal**, select **Users & access** and then select either **Users** or **End-user groups**.
+
+Clicking  **Users**, displays a screen that shows a list of users. To invite a new user, from the top right,click the **Invite user** button. A form displays to enter the user's email and select their access. Based on your choices, different options become available.
+
+* If you choose **Member access**, you can select an organization and an app.
+* If you choose **End user access**, you can add the user to a group, assign roles related to a specific app or all apps, and a specific stage or all stages. You can choose more than one app at a time. A group can only have roles from the same stage. For example, if your group is in the Development stage you can't add roles from the Production stage.
+
+<div class="info" markdown="1">
+
+When a user signs into an app, their user profile information is synchronized to the [User entity](../reference/system-actions/user.md#user-1) of that app.
+
+</div>
+
+ Clicking  **End-user groups**, displays a screen that shows the groups available. To create a new group, from the top right, click the **Create group** button. A dropdown arrow lets you choose the stage in which you want to create the group. Then enter a group name and a description. At the same time you can select one or more apps.
+
 ## Activate, deactivate, or delete users
 
 Manage the users in the **ODC Portal** > **Users**.
@@ -147,7 +126,19 @@ To **activate** a user, you must first invite the user. Once a user accepts the 
 
 To **deactivate** a user, from the actions menu, select **Deactivate**. A confirmation message displays, click **Yes, deactivate user.** The user now displays as deactivated.
 
-To **delete** a user, from the actions menu, select **Delete user**. A confirmation message displays, click **Yes, delete user.** The user is deleted and their name is removed from the list of users.
+To **delete** a user, from the actions menu, select **Delete user**. A confirmation message displays, click **Yes, delete user.** The user is deleted and their name is deleted from the list of users.
+
+## Give or revoke a user role
+
+You can assign or revoke a user's role. This applies to  individual roles and group roles.  
+
+From the **ODC Portal**, select **Users & access**> **Users**. A table displays all existing users. You can:
+
+* Sort the list by users, status, and last login date
+* Manage the user's role by selecting the user
+* Add a new user by clicking **Invite user**
+
+When you assign or revoke a role to an authenticated user, it can take up to a minute for the change to become active.
 
 ## Passwords for users
 
@@ -155,7 +146,7 @@ New users must set up their own passwords. The password must be at least 12 char
 
 * One lowercase letter
 * One numeric digit
-* One special character from this set: `!`, `\`, `#`, `$`, `%`, `&`, `'`, `(`, `)`, `*`, `+`, `,`, `-`, `.`, `/`, `:`, `;`, `<`, `=`, `>`, `?`, `@`, `[`
+* One character from this set: `!`, `\`, `#`, `$`, `%`, `&`, `'`, `(`, `)`, `*`, `+`, `,`, `-`, `.`, `/`, `:`, `;`, `<`, `=`, `>`, `?`, `@`, `[`
 * One upper-case letter
 
 ### Manage user passwords
