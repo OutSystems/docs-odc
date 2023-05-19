@@ -87,7 +87,7 @@ To login with an external provider to the built-in login screen, follow the step
 
 1. To load the login screen onto the canvas, click the **Interface** tab, then expand the **UI Flows** > **Common** folder and double-click **Login**. The built-in login screen displays.
 
-1. Drag a **Button** element from the toolbox onto the screen. Place it alongside or below the existing **Log in** button (button for the built-in provider).
+1. Drag a **Button** element from the toolbox onto the screen. Place it alongside or below the existing **Log in** button (button for the built-in provider). You can also use a [social login button](../sso.md#add-the-social-login-button-to-the-login-screen) here.
 
 1. In the Properties pane for the new button change the **Text** setting of the button to meet your requirement, for example `Log in with providerA`. You may also want to modify the **Text** setting of pre-existing **Log in** button.
 

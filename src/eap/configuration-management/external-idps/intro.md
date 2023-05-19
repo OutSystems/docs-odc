@@ -55,7 +55,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     
     </div>
 
-1. If your provider uses different attribute names, then in the **Claim Mapping** section overwrite the prefilled **Name** and **Email** fields. Otherwise, skip this step. For more guidance, see your provider's support documentation.
+1. If your provider uses different attribute names, then in the **Claim Mapping** section overwrite the prefilled **Name**, **Email** and **Photo URL** fields. Otherwise, skip this step. For more guidance, see your provider's support documentation.
 
 1. Click **Save**. ODC adds the provider to the list of available providers. If this fails, a notification with the error displays.
 
@@ -79,7 +79,7 @@ To assign an added external IdP, navigate to the **Identity providers** tab in O
 
 1. Click on the provider card you want to assign as a provider for your organization, your apps, or both.
 
-1. Check the summary in **Configuration details**. If you want to proceed, click the **Assign** button (when provider not assigned anywhere yet) or **Manage assignments** (when already assigned).
+1. Check the summary in the **Configurations** tab. If you want to proceed, click the **Assign** button (when provider not assigned anywhere yet) or **Manage assignments** (when already assigned).
 
 1. Check the boxes of where you want to assign the provider and then click **Next**.
 
@@ -98,7 +98,9 @@ To assign an added external IdP, navigate to the **Identity providers** tab in O
 
 1. Copy the pair(s) of **Redirect URLs** to the list of permitted redirects in the setup page of your external provider. You should copy the pair(s) for both the built-in domain and any active [custom domains](../custom-domains.md). If you're configuring [Okta](okta.md#setup-redirect-urls) you can follow the embedded link for specific guidance. Otherwise see your provider's support documentation for further guidance (for example, [Azure AD](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-redirect-uri)). Click **Next**.
 
-When a provider is assigned for use by the apps, you need to create the logic in ODC Studio for each app you want to use it. Follow the guidance on how to do that [here](apps.md).
+When you assign a provider for use by the apps, you need to create the logic in ODC Studio for each app you want to use it. For guidance on how to create the logic, see [Use external identity providers in an app](apps.md).
+
+You don't need to do anything else when you assign a provider for use by the organization. The option to log in with the provider becomes immediately available for users on the ODC Portal and ODC Studio login screens.
 
 ## Edit the configuration or delete an external IdP
 
