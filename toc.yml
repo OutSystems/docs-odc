@@ -281,6 +281,7 @@
     - topics: 
       - href: eap/building-apps/external-logic/README.md
       - href: eap/building-apps/external-logic/REFERENCE.md
+      - href: eap/building-apps/external-logic/soap.md
     # Use public elements
     - href: eap/building-apps/use-public-elements.md
     # Exposing REST APIs
@@ -319,8 +320,6 @@
       - href: eap/building-apps/consume_rest/handling-rest-errors.md
       # Simple customization
       - href: eap/building-apps/consume_rest/simple-customizations.md
-    # Supporting SOAP
-    - href: eap/building-apps/supporting-soap/intro.md
     # Handling exceptions
     - href: eap/building-apps/handle-exceptions.md
     - topics:
