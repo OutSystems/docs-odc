@@ -15,7 +15,7 @@ Use of this SDK is the first step in extending an ODC app. You use it to decorat
 
 ## Prerequisites
 
-* .NET 6.0 SDK installed.
+* [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) installed.
 * An IDE that supports building .NET 6 projects. For example, Visual Studio, Visual Studio Code, and Jet Brains Rider.
 * Basic knowledge of C# programming concepts.
 
@@ -25,7 +25,7 @@ You can start developing external logic for an ODC app from scratch or using one
 
 ### From scratch
 
-Using Microsoft Visual Studio, for example:
+Using Microsoft Visual Studio 2022, for example:
 
 1. From the **Create a new project** window select the **Class Library** template.
 
