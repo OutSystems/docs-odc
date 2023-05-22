@@ -65,6 +65,12 @@ Use advanced parameters to add additional parameters for a database connection. 
 * For the SQL server to select the desired schema on the database, enter `currentSchema = <schema-name>`
 * For Oracle to select the desired schema on the database, enter `current_schema = <schema-name>`
 
+<div class="info" markdown="1">
+
+To establish a connection with the SQL server and allow the client to bypass certificate validation, add the `trustServerCertificate=true` parameter to the additional parameters.
+
+</div>  
+
 ## Select entities for use in an app
 
 After connecting to an external database, select the entity names and attributes available in ODC Studio and the apps.
@@ -110,7 +116,7 @@ When connecting to external databases, OutSystems maps the external database dat
 
 | SQL Server | Oracle Data Type | OutSystems Data Type |
 |--|--|--|
-Char<br/>Varchar<br/>Text<br/>Nchar<br/>Nvarchar<br/>Ntext<br/>Xml<br/>Decimal(Any,> 8)<br/>Numeric(Any,> 8)<br/>Real<br/>Float<br/>UniqueIdentifier<br/>Time | Char<br/>Varchar<br/>Varchar2<br/>Clob<br/>Long<br/>Nchar<br/>NVarchar2<br/>Nclob<br/>Number(Any,> 8)<br/>Float<br/>RowId<br/>URowId | Text |
+Char<br/>Varchar<br/>Text<br/>Nchar<br/>Nvarchar<br/>Ntext<br/>Xml<br/>Decimal(Any,> 8)<br/>Numeric(Any,> 8)<br/>Real<br/>Float<br/>UniqueIdentifier<br/>Time<br/>Datetimeoffset | Char<br/>Varchar<br/>Varchar2<br/>Clob<br/>Long<br/>Nchar<br/>NVarchar2<br/>Nclob<br/>Number(Any,> 8)<br/>Float<br/>RowId<br/>URowId | Text |
 Tinyint<br/>Smallint<br/>Int<br/>Decimal(1-9,0)<br/>Numeric(1-9,0) | Number(2-9,0) | Integer |
 Bigint<br/>Decimal(10-18,0)<br/>Numeric(10-18,0) | Number(10-18,0) | Long Integer |
 Decimal(19-28,0-8)<br/>Decimal(1-18,>1-8)<br/>Numeric(19-28,0-8)<br/>Numeric(1-18,>1-8)<br/>Money<br/>Smallmoney | Number(19-28,0-8)<br/>Number(1-18,1-8) | Decimal |
@@ -118,4 +124,10 @@ Bit | Number(1,0) | Boolean |
 Date |  | Date |
 Datetime<br/>DateTime2<br/>Smalldatetime | Date<br/>Timestamp | DateTime |
 Image<br/>Binary<br/>Varbinary | Blob<br/>Raw<br/>Long Raw | Binary Data |
-Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp<br/>Datetimeoffset | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType | Not supported, these attributes will not appear in ODC Portal. |
+Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType | Not supported, these attributes will not appear in ODC Portal. |
+
+<div class="info" markdown="1">
+
+ODC currently doesn't support some [features and built-in functions](../../known-issues/intro.md#features-currently-not-supported-during-external-database-integration). 
+
+</div>  

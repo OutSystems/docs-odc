@@ -32,3 +32,12 @@ Depending on where you use LongIntegerToInteger and get an overflow, your logic 
 The preview of a mobile app in the Safari browser within the ODC Portal doesn't work. The app and the preview render within an iframe in different domains, and Safari can't access the content due to security restrictions by Apple.
 
 OutSystems recommends Chrome browser for previewing the mobile app in the ODC Portal.
+
+## Features currently not supported during external database integration
+
+* CreateOrUpdateSome (Bulk Inserts/Updates) entity action is not supported.
+* DiffMinutes and DiffSeconds built-in functions for Oracle have a limitation regarding the date interval. The allowed max intervals between dates are:
+    * Seconds: 31 years, 9 months, 9 days, 1 hour, 46 minutes, and 39 seconds
+    * Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds
+* Data Preview and runtime queries with Unicode characters are not supported.
+* Advanced SQL Nodes do not support external entities.
