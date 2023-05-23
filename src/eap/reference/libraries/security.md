@@ -174,14 +174,33 @@ Password; data type Text
 
 The randomly generated password.
 
-### ComputeHash
-Computes the hash of the given data (this data will be UTF-8 encoded prior to hashing).
+### ComputeTextHash
+Computes the hash of the given data, in this (this text will be UTF-8 encoded prior to hashing).
 
 _Inputs_
 
 Data: mandatory ; data type Text 
 
-The data to hash. 
+The text to hash. 
+
+Algorithm: optional ; data type Text 
+
+The algorithm to use. Default algorithm is SHA512. Check .NET's "HashAlgorithm.Create" documentation for a full list of available algorithms.
+
+_Outputs_
+
+Hash; data type Binary Data 
+
+The hash computed from the given data.
+
+### ComputeBinaryHash
+Computes the hash of the given binary data.
+
+_Inputs_
+
+Data: mandatory ; data type Binary Data 
+
+The binary data to hash. 
 
 Algorithm: optional ; data type Text 
 
