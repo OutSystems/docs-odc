@@ -151,7 +151,7 @@ The table below maps the .NET attributes exposed by the SDK to the corresponding
 | [`[OSParameter]`](REFERENCE.md#osparameterattribute-type) | Input/output parameter | DataType _(DataType)_<br></br>Description _(Description)_<br></br>OriginalName _(Source name used for key calculation)_ |
 | [`[OSStructure]`](REFERENCE.md#osstructureattribute-type) | Structure | Description _(Description)_<br></br>OriginalName _([Source Name used for the key calculation])_ |
 | [`[OSStructureField]`](REFERENCE.md#osstructurefieldattribute-type) | Structure attribute | DataType _(DataType)_<br></br>Description _(Description)_<br></br>Length (Length)<br></br>Decimals _(Decimals)_<br></br>IsMandatory _(IsMandatory)_<br></br>OriginalName _(Source name used for key calculation)_ |
-| [`[OSIgnore]`](REFERENCE.md#osignore-type)  |   | Use to decorate a public property/field within a .NET struct decorated with to specify that _it shouldn't be exposed as an OutSystems Structure Attribute._   |     |
+| [`[OSIgnore]`](REFERENCE.md#osignore-type)  |   | Use to decorate a public property/field within a .NET struct decorated with to specify that _it shouldn't be exposed as an OutSystems Structure Attribute._   |
 
 ## Best Practices
 
