@@ -52,7 +52,7 @@ Preview your app from ODC Studio or ODC Portal. You can choose different preview
 
 In ODC Studio, every time you publish changes you can click the preview link in the **TrueChange** tab.
 
-In ODC Portal, go to the app details and click **View app**. Web apps run in the browser. OCD shows the preview of the mobile app in the browser as well, and lets you see how your app looks with a different screen size of orientation. To preview the mobile app on a device, to see how the app works natively on the hardware, [create a mobile package](../building-apps/mobile/creating-mobile-package.md) and install it on your device.
+In ODC Portal, go to the app details and click **View app**. Web apps run in the browser. ODC shows the preview of the mobile app in the browser as well, and lets you see how your app looks with a different screen size of orientation. To preview the mobile app on a device, to see how the app works natively on the hardware, [create a mobile package](../building-apps/mobile/creating-mobile-package.md) and install it on your device.
 
 ## Access ODC Studio
 
