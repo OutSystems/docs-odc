@@ -485,6 +485,12 @@
     - href: error/elg/OS-ELG-MODL-05019.md
     - href: error/elg/OS-ELG-MODL-05020.md
     - href: error/elg/OS-ELG-MODL-05021.md
+    - href: error/elg/OS-ELG-MODL-05022.md
+    - href: error/elg/OS-ELG-MODL-05023.md
+    - href: error/elg/OS-ELG-MODL-05024.md
+    - href: error/elg/OS-ELG-MODL-05025.md
+    - href: error/elg/OS-ELG-MODL-05026.md
+    - href: error/elg/OS-ELG-MODL-05027.md
   # Errors INTC
   - href: error/intc/intro.md
   - topics:
