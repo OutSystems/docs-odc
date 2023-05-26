@@ -96,6 +96,14 @@ The following list provides additional guidance:
 * SQL query calls return the current date and time in UTC.
 * Daylight Savings Time (DST) is ignored and the time zone for evaluating a function is UTC.
 
+## Previewing data in Entities
+
+When you preview data of an Entity, the value of the Date Time is in UTC.
+
+## Inserting date and time with SQL queries
+
+When inserting date and time with a SQL query, ODC iterprets the value as UTC.
+
 ## ODC differences by task
 
 The following table lists tasks in the ODC compared to OutSystems 11.
