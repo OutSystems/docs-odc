@@ -138,7 +138,11 @@ From the **ODC Portal**, select **Users & access**> **Users**. A table displays 
 * Manage the user's role by selecting the user
 * Add a new user by clicking **Invite user**
 
-When you assign or revoke a role to an authenticated user, it can take up to a minute for the change to become active.
+<div class="info" markdown="1">
+
+Logged-in users needs to log out and log back in for changes in their assigned roles or role permissions to become effective.
+
+</div>
 
 ## Passwords for users
 

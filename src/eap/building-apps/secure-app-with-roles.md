@@ -60,9 +60,9 @@ After you assign roles to your end-users, you can:
 
 ![Control access in your app](images/control-access-in-your-app-end-user-roles-diag.png "Control access in your app")
 
-<div class="warning" markdown="1">
+<div class="info" markdown="1">
 
-Currently, users need to sign out and sign back in for the changes in role permission to become effective.
+Logged-in users needs to log out and log back in for changes in their assigned roles or role permissions to become effective.
 
 </div>
 
