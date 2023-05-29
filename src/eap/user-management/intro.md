@@ -155,7 +155,7 @@ New users must set up their own passwords. The password must be at least 12 char
 
 ### Manage user passwords
 
-Only users can manage their password. Users can change their password using the **ODC Portal** > **User dropdown** > **Change password**. After five failed password change attempts, ODC temporarily locks a user out. To reset the lockout, users must refrain from signing in for 15 minutes.
+Only users can manage their password. Users can change their password using the **ODC Portal** > **User dropdown** > **Change password**. After five failed sign in or password change attempts, ODC temporarily locks a user out. To reset the lockout, a user must refrain from signing in or changing the password for 15 minutes.
 
 Users with an organization role can also recover their forgotten password from the Portal login page by clicking **Forgot password**.
 
