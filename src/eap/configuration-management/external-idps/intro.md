@@ -108,7 +108,7 @@ You can only edit or delete a provider not in use. Navigate to the **Identity pr
 
 1. Click on the provider card you want to edit or delete.
 
-1. Click the ellipsis button to the right of the **Assign** button. Then click the **Edit configuration** or **Delete provider** button to launch the edit page or launch the delete confirm pop-up.
+1. Click the **ellipsis** (3-dots) to the right of the **Assign** button. Then click the **Edit configuration** or **Delete provider** button to launch the edit page or launch the delete confirm pop-up.
 
 ## Social accelerators
 

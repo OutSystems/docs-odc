@@ -85,7 +85,7 @@ To delete a custom domain, from the ODC Portal, navigate to **Configurations** >
 
 1. Click the dropdown menu and select the stage for which you want to add a domain. The list of domains displays showing the built-in domain and any custom domains already added to the selected stage.
 1. Click the card of the custom domain you want to delete. The **Set up your domain** screen displays and you see the status next to the domain name.
-1. Click the **ellipsis** to the right of the domain status and select **Delete domain**.
+1. Click the **ellipsis** (3-dots) to the right of the domain status and select **Delete domain**.
 1. Before confirming the deletion of the domain, review the information in the popup box. Then do one of the following:
      * To confirm, click the **Delete domain** button.
      * To cancel, click **Cancel** and exit.

@@ -89,6 +89,6 @@ Users outside your organization follow the same process to [install](../../forge
 Before an external library is published, it should be deleted using the **External Logic** screen:
 
 1. Access the detail page of the library by clicking its name in the list of published libraries.
-1. Click the ellipsis icon to the right of the library name, then click the **Delete library** button.
+1. Click the **ellipsis** (3-dots) to the right of the library name, then click the **Delete library** button.
 
 Once published, you must delete an external library like an app or library developed in OutSystems. See [Deleting apps and libraries](../../building-apps/deleting-apps/intro.md) for guidance.
