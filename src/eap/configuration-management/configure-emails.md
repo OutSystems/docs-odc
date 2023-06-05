@@ -48,7 +48,7 @@ Before apps can send emails, you must create the email in ODC Studio.
       * **Server** - enter the IP address of the SMTP server and the port number. The SMTP port number defaults to 587, but you can change it. Note that port 25 isn't supported.
       * **Requires Authentication** - Check to require authentication and then enter the user name and password to authenticate.
 
-1. Click **Save** to save your configuration. The change applies to all apps automtically.
+1. Click **Save** to save your configuration. The change applies to all apps automatically.
 
 ## Modify an email configuration
 
@@ -57,4 +57,4 @@ You can make changes to an email configuration on a stage.
 1. To change an email configuration, go to ODC Portal and select **Configurations** > **Email**.
 1. Locate the configuration you want to change and click **Edit**.  
 1. Select or verify the stage.
-1. Make the change, and click **Save**. The change applies to all apps automtically.
+1. Make the change, and click **Save**. The change applies to all apps automatically.
