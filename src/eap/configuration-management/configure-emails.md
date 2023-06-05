@@ -1,5 +1,5 @@
 ---
-summary: This article explains how to configure sending emails in OutSystems Developer Cloud.
+summary: Learn how to configure emails in OutSystems Developer Cloud.
 tags:
 locale: en-us
 guid: 48490651-74d0-459b-a0c4-4b40df93d56e
@@ -7,44 +7,57 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
 
-# Configure sending emails
+# Configure emails
 
-Emails are an integral part of any app you develop because you can send app users such things as invitations or notifications. An OutSystems app sends emails using SMTP (Simple Mail Transference Protocol). In OutSystems Developer Cloud (ODC), you configure emails in ODC Portal.
-
-Emails include a feature that lets you test emails before sending them. This helps eliminate errors by giving you the chance to review the text and format.
+Emails are an integral part of any app you develop because you can send app users such things as invitations or notifications. An OutSystems app sends emails using SMTP (Simple Mail Transference Protocol). In OutSystems Developer Cloud (ODC), you configure emails in the ODC Portal.
 
 You create an email configuration for a stage. You can have different configurations for each stage, but you can only have one configuration per stage.
 
-Admins with access to the Configurations  can create an email configuration
-
+Admins with access to the Configurations can create  or update an email configuration.
 This document describes how to:
 
-* Set up email for first the first time.
-* Apply the email configuration.
-* Change the email configuration at the stage level.
+* Create a test list.
+* Set up email for the first time.
+* Apply an email configuration.
+* Modify an email configuration.
+
+## Create a test list
+
+ODC enables you to create email test lists, which are very useful for testing. For each app that uses the email feature, you can create an email test list. This list of email addresses gets used whenever your app sends an email. For example, if you have an app in development, and want to test a feature you can send an email to your test list team. You configure your app in the ODC Portal using the App configurations screen. To use the test list you must set the toggle to **active**.
+
+<div class="info" markdown="1">
+
+If your email test list is inactive, the email configuration uses the email list in ODC Studio. to test the email.
+
+</div>
+
+To create a test list:
+
+1. From the ODC Portal, select your App.
+1. On the Configuration page, open the email section.
+1. Click on the Test list and then click **Edit**. The test list opens.
+1. From the list you can add or remove users and then use the toggle to activate the list.  
+1. Click **Save**. Remember the test list must be set to **Active** to use it.
 
 ## Set up email for the first time
 
 Before apps can send emails, you must create the email in ODC Studio.
 
-1. To begin, open ODC Portal, and from the navigation menu, select **Configurations** > **Emails**. The **Email configurations** page opens.
-   
+1. To begin, open the ODC Portal, and from the Navigation menu, select **Configurations** > **Emails**. The **Email configurations** page opens.  
 1. Complete the following fields. Required fields display with an asterisk.
-   
       * **Stage** - from the drop down select one or more stages.
-      * **Server** - enter the IP address, the port number. The SMTP port number defaults to 587, but you can change it. Note that the port 25 is not supported.
+      * **Server** - enter the IP address of the SMTP server and the port number. The SMTP port number defaults to 587, but you can change it. Note that port 25 isn't supported.
       * **Requires Authentication** - Check to require authentication and then enter the user name and password to authenticate.
-      * **Recipients** -  the email address and name of the people receiving this email. Select **Set in app** to use the email addresses from ODC Studio or select **Test List** to display fields to enter email test recipients.
 
-2. Click **Save** to save your configuration. You can now apply the configuration to your app.
+1. Click **Save** to save your configuration. You can now apply the configuration to your app.
 
 ## Apply an email configuration
 
 Once you define an email configuration, you can apply it to your app. Select the same stage in which you created the configuration.
 
-1. Open ODC Portal. 
+1. Open ODC Portal.
 1. From the **Configurations** tab, scroll down and click **Email** to open the section.
-1. Select the Configuration you want to apply to the emails.
+1. Select the Configuration you want to apply to the emails for all apps in the stage.
 
 ## Modify an email configuration
 
@@ -52,6 +65,5 @@ You can make changes to an email configuration on a stage.
 
 1. To change an email configuration, go to ODC Portal and select **Configurations** > **Email**.
 1. Locate the configuration you want to change and click **Edit**.  
-1. Make the change, and click **Save**.
-1. Verify your change.
-1. Open the App, go to the Configurations page, scroll down to the Email section, and apply the new configuration to your app.  
+1. Select or verify the stage.
+1. Make the change, and click **Save**.The change applies to all apps in the selected stage.
