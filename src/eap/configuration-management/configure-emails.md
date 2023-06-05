@@ -18,7 +18,6 @@ This document describes how to:
 
 * Create a test list.
 * Set up email for the first time.
-* Apply an email configuration.
 * Modify an email configuration.
 
 ## Create a test list
@@ -50,14 +49,6 @@ Before apps can send emails, you must create the email in ODC Studio.
       * **Requires Authentication** - Check to require authentication and then enter the user name and password to authenticate.
 
 1. Click **Save** to save your configuration. You can now apply the configuration to your app.
-
-## Apply an email configuration
-
-Once you define an email configuration, you can apply it to your app. Select the same stage in which you created the configuration.
-
-1. Open ODC Portal.
-1. From the **Configurations** tab, scroll down and click **Email** to open the section.
-1. Select the Configuration you want to apply to the emails for all apps in the stage.
 
 ## Modify an email configuration
 
