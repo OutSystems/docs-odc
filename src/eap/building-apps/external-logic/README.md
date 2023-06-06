@@ -75,7 +75,7 @@ Using Microsoft Visual Studio 2022, for example:
 
     <div class="info" markdown="1">
 
-    The maximum supported size of the ZIP file in 40MB.
+    The maximum supported size of the ZIP file in 90MB.
     
     </div>
 
