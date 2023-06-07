@@ -80,3 +80,4 @@ Google Gmail clips messages if the HTML code is larger than 102 KB. OutSystems r
 ### SMTP server configurations
 
 To send emails from your app you need to configure your SMTP server on the ODC Portal. The SMTP policy of your server might limit sending of the emails that can cause errors. For example, you might have a maximum number of addresses in To / From, or policy may limit the port number, body message size, or prevent concurrent emails.
+
