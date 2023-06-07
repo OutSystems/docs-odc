@@ -7,7 +7,7 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
 
-# Extend your apps with external logic
+# Extend your apps with external logic using custom code
 
 You can use External Logic when you need to extend OutSystems Developer Cloud (ODC) apps with custom code (C#). This lets you extend apps to cover use cases that can't be fully covered using the built-in functions and out-of-the-box libraries bundled with ODC. Along with writing your own C# code in IDEs such as Visual Studio or Jet Brains Rider, you can use open-source .NET libraries.
 

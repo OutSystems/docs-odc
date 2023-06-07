@@ -11,7 +11,7 @@ platform-version: odc
 
 The SDK is part of the OutSystems Developer Cloud (ODC) External Logic feature that you use to extend your apps built in the OutSystems visual language with custom code.
 
-Use of this SDK is the first step in extending an ODC app. You use it to decorate the code of a C# .NET 6 project with SDK attributes that map to OutSystems visual language elements.
+Use of this SDK is the first step in extending an ODC app with custom code. You use it to decorate the code of a C# .NET 6 project with SDK attributes that map to OutSystems visual language elements.
 
 ## Prerequisites
 
