@@ -114,9 +114,9 @@ For more information see [Configure a secure gateway to your private network](co
 
 ## Containers
 
-Each Platform service is built as a .NET core, Linux-based container image. All the functionality a service provides is available as a microservice through an API, and each API is versioned to allow for seamless evergreen upgrades. When a developer publishes an app, it's built using the latest version of each Platform service, each of which incorporates the latest security updates.
+Each Platform service is built as a .NET, Linux-based container image. All the functionality a service provides is available as a microservice through an API, and each API is versioned to allow for seamless evergreen upgrades. When a developer publishes an app, it's built using the latest version of each Platform service, each of which incorporates the latest security updates.
 
-Each app is also built as a .NET Core, Linux-based container image. OutSystems security engineers work to continuously harden the container's base image to minimize the attack surface.
+Each app is also built as a .NET, Linux-based container image. OutSystems security engineers work to continuously harden the container's base image to minimize the attack surface.
 
 When a developer publishes an app, ODC stores the image in a container registry. The container image is then reused when deployed from Development to the other stages. This reduces deployment time and eliminates any doubt that there are subtle differences in deployments between stages.
 
