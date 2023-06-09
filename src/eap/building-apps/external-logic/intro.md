@@ -86,9 +86,23 @@ Users outside your organization follow the same process to [install](../../forge
 
 ## Delete external logic
 
-Before an external library is published, it should be deleted using the **External Logic** screen:
+To delete an external library before has been published, follow these steps:
 
+1. Go to the ODC Portal, and from the Navigation menu, select **External Logic**  to display the list of pending uploads and published external libraries. 
+1. In the pending uploads list, click **X** next to the external library you want to delete to display a confirmation popup.
+1. Click **Cancel creation** to display the updated list.
+
+If you want to delete an external library after its published, follow the steps:
+
+1. Go to the ODC Portal, and from the Navigation menu, select **External Logic**  to display the list of pending uploads and published external libraries. 
 1. Access the detail page of the library by clicking its name in the list of published libraries.
-1. Click the **ellipsis** (3-dots) to the right of the library name, then click the **Delete library** button.
+1. Click the ellipsis (3-dots) to the right of the library name, then click the **Delete library** button to display a confirmation popup.
+1. Enter the library name and click **Delete library** to display the updated list.
+
+<div class="info" markdown="1">
+
+Deleting an external library impacts consumers relying on it.
+
+</div>
 
 Once published, you must delete an external library like an app or library developed in OutSystems. See [Deleting apps and libraries](../../building-apps/deleting-apps/intro.md) for guidance.
