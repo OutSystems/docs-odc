@@ -1,5 +1,5 @@
 ---
-summary: Learn how to start developing OutSystems Developer Cloud
+summary: Learn how to start developing in OutSystems Developer Cloud
 tags:
 locale: en-us
 guid: 6B0090D9-8EE9-479F-9251-CCB490D2EBB6
@@ -44,7 +44,7 @@ From the ODC Portal, when you click **Create app**, ODC automatically opens ODC 
 * **Library** to create a new library from scratch
 * **Template** to create an App or Library based on a template
 
-You create apps in the ODC Portal, and then you use ODC Studio to build out your app. In ODC you deploy to a **stage**. A stage (Development, QA, or Production) is a step within your continuous delivery pipeline.
+You create apps in the ODC Portal, and then you use ODC Studio to build out your app. In ODC you deploy to a **stage**. A stage, such as Development, is a step within your continuous delivery pipeline.
 
 ## Preview an app
 
@@ -52,7 +52,7 @@ Preview your app from ODC Studio or ODC Portal. You can choose different preview
 
 In ODC Studio, every time you publish changes you can click the preview link in the **TrueChange** tab.
 
-In ODC Portal, go to the app details and click **View app**. Web apps run in the browser. ODC shows the preview of the mobile app in the browser as well, and lets you see how your app looks with a different screen size of orientation. To preview the mobile app on a device, to see how the app works natively on the hardware, [create a mobile package](../building-apps/mobile/creating-mobile-package.md) and install it on your device.
+In ODC Portal, go to the app details and click **View app**. Web apps run in the browser. ODC shows the preview of the mobile app in the browser as well, and lets you see how your app looks with a different screen size or orientation. To preview the mobile app on a device, to see how the app works natively on the hardware, [create a mobile package](../building-apps/mobile/creating-mobile-package.md) and install it on your device.
 
 ## Access ODC Studio
 

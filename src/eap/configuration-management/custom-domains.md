@@ -9,7 +9,7 @@ platform-version: odc
 
 # Configure custom domains for apps
 
-For each stage in which you deploy apps, OutSystems Developer Cloud (ODC) comes with a **built-in** OutSystems domain for end-user access.
+For each stage in which you deploy apps, OutSystems Developer Cloud (ODC) comes with a **built-in** OutSystems domain for end-user access. The table below shows built-in domains if you have three stages.
 
 
 | Stage       | Built-in domain                      |
@@ -24,7 +24,7 @@ In addition, ODC lets you make your apps accessible to end-users through your or
 
 You can add top-level domains (such as `example.com`), subdomains (such as `dev.example.com`), and multi-level subdomains (such as `odc.dev.example.com`). When you add a custom domain to a stage, all apps deployed to that stage are accessible through the domain.
 
-The following table shows a possible setup for a customer who wants one custom subdomain for each stage:
+The following table shows a possible setup for a customer who has three stages and wants one custom subdomain for each stage:
 
 | Stage       | Custom domain    |
 | ----------- | ---------------- |
@@ -36,8 +36,8 @@ The following table shows a possible setup for a customer who wants one custom s
 
 To add a custom domain, from the ODC Portal, select **Configurations** > **Domains** and then follow these steps.
 
-1. Click the dropdown menu and select the stage for which you want to add a domain.
-1. Click the **Add domain** button to display the **Add a domain** popup box.
+1. From the Stage dropdown menu, select the stage for which you want to add a domain.
+1. From the top-right, click the **Add domain** button to display the **Add a domain** popup box.
 1. Enter the domain you want to add, then click **Add**. The **Set up your domain** screen displays with the **Pending validation** status next to the domain name.
 1. Now, you must **Validate ownership of the domain** and **Point the domain to your apps**. You do this by adding the two provided CNAME records, two name-value pairs, to the DNS records of your domain registrar (the company that manages the reservation of your domain name). To add a **CNAME** record, follow the steps in the [box below](#add-CNAME-box).
 1. ODC uses AWS Certificate Manager (ACM) to issue certificates. If your domain has Certification Authority Authorization (CAA) enabled, you must add a DNS record to specify that ACM is allowed to issue a certificate for your domain. The process of adding a DNS record is detailed in the [ACM documentation](https://docs.aws.amazon.com/acm/latest/userguide/setup-caa.html).

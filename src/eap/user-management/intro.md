@@ -79,7 +79,7 @@ You can view these roles and assign them to users, but you can't **delete or mod
 
 A custom organization role is any role that you create. You can create a new role, or you can duplicate an existing role and then make changes. At a minimum, you must give the role a new name and at least one permission. As soon as you add a role name and one permission, the **Create** button is available.
 
-From the **Create role** screen, within each section, such as **Deployment Management** > **Deploy apps** select the stage (Development, QA, or Production) for which you want to enable the permission. You can always come back to this screen to adjust the permissions.
+From the **Create role** screen, within each section, such as **Deployment Management** > **Deploy apps** select the stage such as Development or QA for which you want to enable the permission. You can always come back to this screen to adjust the permissions.
 
 ## End-user roles
 

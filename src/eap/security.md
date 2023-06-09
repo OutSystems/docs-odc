@@ -84,7 +84,7 @@ NATS is a highly reliable messaging system that's designed to deliver messages q
 
 </div>
 
-Each customer's ODC organization has a standard Runtime setup of three isolated and independent stages: Development, Test, and Production.
+Each customer's ODC organization has a standard Runtime setup of isolated and independent stages such as Development and Production.
 
 #### Isolation of stages
 
@@ -194,7 +194,7 @@ OutSystems maintains formal policies and procedures for managing security incide
 
 ### Computer Security Incident Response Team
 
-OutSystems proactively monitors ODC infrastructure, events, and availability 24 hours a day, seven days a week. Any unexpected alert, including privacy breaches, either automatically detected or resulting from a human log review, triggers a Security Incident Response. 
+OutSystems proactively monitors ODC infrastructure, events, and availability 24 hours a day, seven days a week. Any unexpected alert, including privacy breaches, either automatically detected or resulting from a human log review, triggers a Security Incident Response.
 
 Customers can report suspected privacy or security incidents through the Support Portal at `https://<customername>.outsystems.dev/support/`.
 

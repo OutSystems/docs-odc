@@ -13,13 +13,13 @@ OutSystems Developer Cloud (ODC) enables developers to integrate external data i
 
 Admins must set up configuration for each stage such as development, QA, and production, to connect an app to an external database.
 
-Admins ensure the app and its connection information are in the same stage. Additionally, the database model must be the same in all the stages
+Admins ensure the app and its connection information are in the same stage. Additionally, the database model must be the same in all the stages.
 
 There is no limit to the number of entities you can add from the external database.
 
 <div class="info" markdown="1">
 
-ODC offers [secure gateways](../secure-gateway.md) to connect your apps to private data and services that aren't accessible by the internet. Since an external database is usually hosted in a private network, using a secure gateway ensures security.
+ODC offers [secure gateways](../secure-gateway.md) to connect your apps to private data and services that aren't accessible through the internet. Since an external database is usually hosted in a private network, using a secure gateway ensures security.
 
 </div>
 
@@ -55,15 +55,15 @@ To create a new database connection, follow these steps:
 1. Go to ODC Portal, select **Configurations** > **Connections** > then click the **Create connection** button.
 1. From the popup, select a Database provider, then click **Confirm** to display the new connection form.
 1. In the connection form, enter the required database connection information, including Connection name, Description, Username, Password, Server, Port (which can be customized), Database, and Additional parameters (if applicable). Refer to the [connection parameters](#connection-parameters) to know more.
-1. After entering the information, click **Test connection** button at the bottom of the form. Developer must test the connection, and it must pass to continue. If the test fails, an error message displays. Make the necessary changes and test again. When the test passes, the Apply to all stages button becomes activated.
+1. After entering the information, click **Test connection** button at the bottom of the form. Developer must test the connection, and it must pass to continue. If the test fails, an error message displays. Make the necessary changes and test again. When the test passes, the **Apply to all stages** button becomes activated.
 1. An admin can apply to a stage by choosing one of the following.
     * Click Apply to all stages to use the same connection information in all stages.
     * Select the stage name to use connection information for a single stage.
 
-Use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, separate them with ‘; ’. Different databases may require different parameters, for example.
+Use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, separate them with  a semi-colon (;). Different databases may require different parameters, for example:
 
-* For the SQL server to select the desired schema on the database, enter `currentSchema = <schema-name>`
-* For Oracle to select the desired schema on the database, enter `current_schema = <schema-name>`
+* For the **SQL** server to select the desired schema on the database, enter `currentSchema = <schema-name>`
+* For **Oracle** to select the desired schema on the database, enter `current_schema = <schema-name>`
 
 <div class="info" markdown="1">
 
@@ -77,14 +77,14 @@ After connecting to an external database, select the entity names and attributes
 
 Follow the steps below to select entities:
 
-1. Go to ODC Portal, select **Configurations** > **Connections** > then click **Select entities** to display the Add entities connection screen. The connection screen shows the entities available from a database.
+1. Go to ODC Portal, select **Configurations** > **Connections** > then click **Select entities** to display the **Add entities** connection screen. The connection screen shows the entities available from a database.
 
     ![External database entities and attributes](images/external-db-entity.png)
 
 1. From the **Entity** name column, select the entities and attributes you want to use.
 1. Click **Save** to confirm. Developers can now use the selected entities and attributes as [public elements](../../building-apps/use-public-elements.md).
 
-Developers can rename entities to describe them in ODC Studio better. For example, instead of using an entity name like "Product_id_version1," developers can rename it to "Product_id" to make it easier to handle.
+Developers can rename entities to better describe them in ODC Studio. For example, instead of using an entity name like "Product_id_version1", developers can rename it to "Product_id" to make it easier to handle.
 
 ## Edit an existing connection
 
@@ -110,7 +110,7 @@ Admins need to supply the following information to connect to the external datab
 | Database for SQL server \ Service name for Oracle server | Name of the database | Yes |  |
 | Additional parameters | Additional parameters for a database connection | Yes | Different databases may require different parameters |
 
-## ODC Data Types Mapping
+## ODC Data types mapping
 
 When connecting to external databases, OutSystems maps the external database data types to OutSystems data types as follows:
 
@@ -124,10 +124,10 @@ Bit | Number(1,0) | Boolean |
 Date |  | Date |
 Datetime<br/>DateTime2<br/>Smalldatetime | Date<br/>Timestamp | DateTime |
 Image<br/>Binary<br/>Varbinary | Blob<br/>Raw<br/>Long Raw | Binary Data |
-Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType | Not supported, these attributes will not appear in ODC Portal. |
+Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType | Not supported, these attributes won't appear in ODC Portal. |
 
 <div class="info" markdown="1">
 
 ODC currently doesn't support some [features and built-in functions](../../known-issues/intro.md#features-currently-not-supported-during-external-database-integration). 
 
-</div>  
+</div>

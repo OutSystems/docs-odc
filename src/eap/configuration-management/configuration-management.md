@@ -1,5 +1,5 @@
 ---
-summary: ODC Portal lets you configure app and infrastructure settings, timers and REST integrations without redeployment, to quickly deploy changes to customers.
+summary: Use OutSystems Developer Cloud to configure app and infrastructure settings, timers and REST integrations without redeployment.
 tags:
 locale: en-us
 guid: e32e1f5f-83b6-4b00-a593-83ba5017fc16
@@ -11,11 +11,11 @@ platform-version: odc
 
 OutSystems Developer Cloud (ODC) Portal lets you adjust the configuration values for your apps. Changes to configuration values don't require you to redeploy your app. This increases the speed in which changes to the app are available to customers and reduces the number of times a deployment is necessary.
 
-You configure the supporting infrastructure for your apps at the stage level. Supporting infrastructure includes custom domains and external identity providers. Applying a configuration at the stage level applies to all the apps deployed to the stage.
+You configure the supporting infrastructure for your apps at the stage level. Supporting infrastructure includes custom domains and external identity providers. Applying a configuration to a stage applies to all the apps deployed to that stage.
 
 ## How configuration management works
 
-For app configurations, developers create settings with default values in  ODC  Studio. From the ODC Portal, you select the stage on which you want to work. Then you can view and modify some configuration and settings values for apps deployed on that stage.
+For app configurations, developers create settings with default values in ODC  Studio. From the ODC Portal, you select the stage on which you want to work. Then you can view and modify some configuration and settings values for apps deployed on that stage.
 
 You can override the configuration values from ODC Studio in non-development stages. When you deploy your app to Test, you can change the configuration values to mirror production values for testing and troubleshooting. Then when you move this configuration to Production you can change your values using real data. The changes you make are specific to a stage. This process occurs without needing to publish your app again.
 
@@ -23,7 +23,7 @@ You can override the configuration values from ODC Studio in non-development sta
 
 App configurations can use one of the following values:
 
-* **Default**. The value set in ODC Studio for the configuration. You can use this value in the Development, Test, or Production stages.
+* **Default**. The value set in ODC Studio for the configuration. You can use this value in any of your stages, such as Development, Test, or Production.
 
 * **Current**. The value currently in use, if defined, otherwise the default value is the current value in use.
 
@@ -33,7 +33,7 @@ The values you change take effect when the asynchronous apply process completes.
 
 ## Managing settings
 
-Settings are custom public values that change the behavior of the app or library in a stage. Once you create the setting values in ODC Studio and publish the app, you can override the default values in the ODC Portal without the need to republish or redeploy the app.
+Settings are custom public values that change the behavior of the app or library in a stage. Once you create the setting values in ODC Studio and publish the app, you can override the default values in the ODC Portal without having to republish or redeploy the app.
 
 In ODC Studio, for new or published apps in the **development stage only** you can:
 
@@ -43,20 +43,17 @@ In ODC Studio, for new or published apps in the **development stage only** you c
 
 Open your app in ODC Studio and go to **Data** > **Settings** to add or edit settings. You need to publish your app after any changes you make.
 
-In the ODC Portal, for all apps **of a given stage only** you can:
-
-* View or override the default values of the settings for the stage
+In the ODC Portal, for all apps **of a given stage only** you can view or override the default values of the settings for the stage.
 
 From the ODC Portal menu, click **Configuration**. An accordion format displays a list of configurations by type such as settings and timers.
 
 ![Configuration management screen](images/configuration-management-pl.png "Configuration management screen")
 
-To see the list of settings, click the down arrow and open the accordion. A list of settings displays. To change values, click a setting. When you click on the setting, a sidebar opens and displays the current values.
+To see the list of settings, click the down arrow and open the accordion. A list of settings displays. To change values, click a setting. The sidebar opens and displays the current values.
 
 After you make the changes, apply the settings to make the new values available.
 
-Remember 
-settings are stage-specific.
+Remember, settings are stage-specific.
 
 ## Managing timers
 
