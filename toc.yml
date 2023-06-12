@@ -438,85 +438,85 @@
 # Errors
 - href: error/intro.md
 - topics:
-  # Errors Forge Service
-  - href: error/frge/intro.md
-  - topics:
-    - href: error/frge/os-frge-ast-40001.md
-    - href: error/frge/os-frge-ast-40002.md
-    - href: error/frge/os-frge-ast-40003.md
-    - href: error/frge/os-frge-ast-40004.md
-    - href: error/frge/os-frge-ast-40005.md
-    - href: error/frge/os-frge-ast-40006.md
-    - href: error/frge/os-frge-ast-40007.md
-    - href: error/frge/os-frge-ast-40008.md
-    - href: error/frge/os-frge-ast-40009.md
-    - href: error/frge/os-frge-ast-40301.md
-    - href: error/frge/os-frge-ast-40302.md
-    - href: error/frge/os-frge-ast-40401.md
-    - href: error/frge/os-frge-ast-40402.md
-    - href: error/frge/os-frge-ast-40403.md
-    - href: error/frge/os-frge-ast-40902.md
-    - href: error/frge/os-frge-ast-40903.md
-    - href: error/frge/os-frge-ast-40904.md
-    - href: error/frge/os-frge-ast-50001.md
-    - href: error/frge/os-frge-ast-50002.md
-    - href: error/frge/os-frge-ast-50003.md
-  # Errors External Libraries SDK
-  - href: error/elg/intro.md
-  - topics:
-    - href: error/elg/OS-ELG-MODL-05001.md
-    - href: error/elg/OS-ELG-MODL-05002.md
-    - href: error/elg/OS-ELG-MODL-05003.md
-    - href: error/elg/OS-ELG-MODL-05004.md
-    - href: error/elg/OS-ELG-MODL-05005.md
-    - href: error/elg/OS-ELG-MODL-05006.md
-    - href: error/elg/OS-ELG-MODL-05007.md
-    - href: error/elg/OS-ELG-MODL-05008.md
-    - href: error/elg/OS-ELG-MODL-05009.md
-    - href: error/elg/OS-ELG-MODL-05010.md
-    - href: error/elg/OS-ELG-MODL-05011.md
-    - href: error/elg/OS-ELG-MODL-05012.md
-    - href: error/elg/OS-ELG-MODL-05013.md
-    - href: error/elg/OS-ELG-MODL-05014.md
-    - href: error/elg/OS-ELG-MODL-05015.md
-    - href: error/elg/OS-ELG-MODL-05016.md
-    - href: error/elg/OS-ELG-MODL-05017.md
-    - href: error/elg/OS-ELG-MODL-05018.md
-    - href: error/elg/OS-ELG-MODL-05019.md
-    - href: error/elg/OS-ELG-MODL-05020.md
-    - href: error/elg/OS-ELG-MODL-05021.md
-    - href: error/elg/OS-ELG-MODL-05022.md
-    - href: error/elg/OS-ELG-MODL-05023.md
-    - href: error/elg/OS-ELG-MODL-05024.md
-    - href: error/elg/OS-ELG-MODL-05025.md
-    - href: error/elg/OS-ELG-MODL-05026.md
-    - href: error/elg/OS-ELG-MODL-05027.md
-  # Errors INTC
-  - href: error/intc/intro.md
-  - topics:
-    - href: error/intc/os-intc-60003.md
-    - href: error/intc/os-intc-60004.md
-    - href: error/intc/os-intc-60005.md
-    - href: error/intc/os-intc-60006.md
-    - href: error/intc/os-intc-60007.md    
-  # Errors Package Manager Service
-  - href: error/pkgs/intro.md
-  - topics:
-    - href: error/pkgs/PKGS-40003.md
-    - href: error/pkgs/PKGS-40004.md
-    - href: error/pkgs/PKGS-40005.md
-    - href: error/pkgs/PKGS-40007.md
-    - href: error/pkgs/PKGS-40008.md
-    - href: error/pkgs/PKGS-40010.md
-    - href: error/pkgs/PKGS-40011.md
-    - href: error/pkgs/PKGS-40012.md
-    - href: error/pkgs/PKGS-40014.md
-    - href: error/pkgs/PKGS-40015.md
-    - href: error/pkgs/PKGS-40016.md
-    - href: error/pkgs/PKGS-40017.md
-    - href: error/pkgs/PKGS-40101.md
-    - href: error/pkgs/PKGS-40102.md
-    - href: error/pkgs/PKGS-50002.md
-    - href: error/pkgs/PKGS-50003.md
-    - href: error/pkgs/PKGS-50004.md
-    - href: error/pkgs/PKGS-50005.md
+    # Errors Forge Service
+    - href: error/frge/intro.md
+    - topics:
+        - href: error/frge/os-frge-ast-40001.md
+        - href: error/frge/os-frge-ast-40002.md
+        - href: error/frge/os-frge-ast-40003.md
+        - href: error/frge/os-frge-ast-40004.md
+        - href: error/frge/os-frge-ast-40005.md
+        - href: error/frge/os-frge-ast-40006.md
+        - href: error/frge/os-frge-ast-40007.md
+        - href: error/frge/os-frge-ast-40008.md
+        - href: error/frge/os-frge-ast-40009.md
+        - href: error/frge/os-frge-ast-40301.md
+        - href: error/frge/os-frge-ast-40302.md
+        - href: error/frge/os-frge-ast-40401.md
+        - href: error/frge/os-frge-ast-40402.md
+        - href: error/frge/os-frge-ast-40403.md
+        - href: error/frge/os-frge-ast-40902.md
+        - href: error/frge/os-frge-ast-40903.md
+        - href: error/frge/os-frge-ast-40904.md
+        - href: error/frge/os-frge-ast-50001.md
+        - href: error/frge/os-frge-ast-50002.md
+        - href: error/frge/os-frge-ast-50003.md
+    # Errors External Libraries SDK
+    - href: error/elg/intro.md
+    - topics:
+        - href: error/elg/OS-ELG-MODL-05001.md
+        - href: error/elg/OS-ELG-MODL-05002.md
+        - href: error/elg/OS-ELG-MODL-05003.md
+        - href: error/elg/OS-ELG-MODL-05004.md
+        - href: error/elg/OS-ELG-MODL-05005.md
+        - href: error/elg/OS-ELG-MODL-05006.md
+        - href: error/elg/OS-ELG-MODL-05007.md
+        - href: error/elg/OS-ELG-MODL-05008.md
+        - href: error/elg/OS-ELG-MODL-05009.md
+        - href: error/elg/OS-ELG-MODL-05010.md
+        - href: error/elg/OS-ELG-MODL-05011.md
+        - href: error/elg/OS-ELG-MODL-05012.md
+        - href: error/elg/OS-ELG-MODL-05013.md
+        - href: error/elg/OS-ELG-MODL-05014.md
+        - href: error/elg/OS-ELG-MODL-05015.md
+        - href: error/elg/OS-ELG-MODL-05016.md
+        - href: error/elg/OS-ELG-MODL-05017.md
+        - href: error/elg/OS-ELG-MODL-05018.md
+        - href: error/elg/OS-ELG-MODL-05019.md
+        - href: error/elg/OS-ELG-MODL-05020.md
+        - href: error/elg/OS-ELG-MODL-05021.md
+        - href: error/elg/OS-ELG-MODL-05022.md
+        - href: error/elg/OS-ELG-MODL-05023.md
+        - href: error/elg/OS-ELG-MODL-05024.md
+        - href: error/elg/OS-ELG-MODL-05025.md
+        - href: error/elg/OS-ELG-MODL-05026.md
+        - href: error/elg/OS-ELG-MODL-05027.md 
+    # Errors Package Manager Service
+    - href: error/pkgs/intro.md
+    - topics:
+        - href: error/pkgs/PKGS-40003.md
+        - href: error/pkgs/PKGS-40004.md
+        - href: error/pkgs/PKGS-40005.md
+        - href: error/pkgs/PKGS-40007.md
+        - href: error/pkgs/PKGS-40008.md
+        - href: error/pkgs/PKGS-40010.md
+        - href: error/pkgs/PKGS-40011.md
+        - href: error/pkgs/PKGS-40012.md
+        - href: error/pkgs/PKGS-40014.md
+        - href: error/pkgs/PKGS-40015.md
+        - href: error/pkgs/PKGS-40016.md
+        - href: error/pkgs/PKGS-40017.md
+        - href: error/pkgs/PKGS-40101.md
+        - href: error/pkgs/PKGS-40102.md
+        - href: error/pkgs/PKGS-50002.md
+        - href: error/pkgs/PKGS-50003.md
+        - href: error/pkgs/PKGS-50004.md
+        - href: error/pkgs/PKGS-50005.md
+    # Errors INTC
+    - href: error/intc/intro.md
+    - topics:
+        - href: error/intc/os-intc-60003.md
+        - href: error/intc/os-intc-60004.md
+        - href: error/intc/os-intc-60005.md
+        - href: error/intc/os-intc-60006.md
+        - href: error/intc/os-intc-60007.md   

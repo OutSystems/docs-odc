@@ -106,3 +106,4 @@ Deleting an external library impacts consumers relying on it.
 </div>
 
 Once published, you must delete an external library like an app or library developed in OutSystems. See [Deleting apps and libraries](../../building-apps/deleting-apps/intro.md) for guidance.
+

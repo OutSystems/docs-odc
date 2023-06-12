@@ -163,8 +163,6 @@ Server actions your apps consume through external logic are slightly different i
 
 ## Troubleshooting
 
-### Upload errors
-
 All validation of your external logic is done when [uploading the ZIP file to the Portal](intro.md#upload-and-publish-the-external-logic).
 
 Use the [error page documentation](../../../error/elg/intro.md) for guidance. 
