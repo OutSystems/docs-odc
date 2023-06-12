@@ -88,7 +88,7 @@ Users outside your organization follow the same process to [install](../../forge
 
 To delete an external library before has been published, follow these steps:
 
-1. Go to the ODC Portal, and from the Navigation menu, select **External Logic**  to display the list of pending uploads and published external libraries. 
+1. Go to the ODC Portal, and from the Navigation menu, select **External Logic** to display the list of pending uploads and published external libraries. 
 1. In the pending uploads list, click **X** next to the external library you want to delete to display a confirmation popup.
 1. Click **Cancel creation** to display the updated list.
 
