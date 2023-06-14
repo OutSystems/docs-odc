@@ -22,7 +22,7 @@ To add a Static Entity to your app, do the following in ODC Studio:
 
 1. Navigate to the **Data** tab, right-click on the **Entities** folder, and select **Add Static Entity to Database**.
 
-    ![Help menu with Entity commands](images/add-static-entity-ss.png?width=550)
+    ![Help menu with Entity commands](images/add-static-entity-odcs.png)
 
     Start typing to enter the name. Press **Enter** to confirm.
 
@@ -64,11 +64,11 @@ Use Static Entities when you need a predefined, or constant, set of values. For 
 
 Your Static Entity Status may look like this:
 
-![Static entity example](images/static-entity-example.png?width=300)
+![Static entity example](images/static-entity-example-odcs.png)
 
 The Records folder of your Static Entity contains all statuses you have created. If you select "CheckedOut", the Properties Editor shows the following details:
 
-![Static entity - a Record example](images/static-entity-record-example.png?width=300)
+![Static entity - a Record example](images/static-entity-record-example-odcs.png)
 
 The Identifier for the checked out status is `CheckedOut` and the Label is `"Checked-Out"`. The field TextDescription is the custom field and has the string value `"The guests have just left."`.
 
