@@ -62,7 +62,7 @@ To add more data sources to your Aggregate, follow these steps:
 
 1. Select the join type between your sources.  
 
-For more information, see [supported join types](supported-join-types.md).
+    For more information, see [supported join types](supported-join-types.md).
 
     ![Select join type between sources.](images/select-join-ss.png)
 
