@@ -45,5 +45,6 @@ runs:
       --empty-export-folder \
       --svg-visual-check-only \
       --parse-html \
-      --report "${{ inputs.report-file }}"
+      --report "${{ inputs.report-file }}" \
+      --no-delete
     shell: bash
