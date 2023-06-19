@@ -62,7 +62,7 @@ jobs:
       run: |
         body=$(cat report.md)
         delimiter="$(openssl rand -hex 8)"
-        echo "body<<$delimiter" >> $GITHUB_OUTPUT
+        echo "report<<$delimiter" >> $GITHUB_OUTPUT
         echo "Validate each of the visual assets in this Pull Request." >> $GITHUB_OUTPUT
         echo "If **ALL** changed files are valid, approve and **merge** the pull request, then delete the branch." >> $GITHUB_OUTPUT
         echo "A new execution of the workflow will be executed afterwards." >> $GITHUB_OUTPUT
