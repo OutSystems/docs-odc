@@ -48,7 +48,7 @@ jobs:
       with:
         max-updates: ${{ vars.FIGMA_EXPORT_FILES_LIMIT }}
         figma-token: ${{ secrets.FIGMA_API_TOKEN }}
-        input-path: online-training/
+        input-path: src/
         similarity: ${{ vars.FIGMA_SIMILARITY_THRESHOLD }}
         report-file: report.md
 
