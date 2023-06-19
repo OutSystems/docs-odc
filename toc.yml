@@ -432,6 +432,21 @@
     - href: eap/reference/built-in-functions/organization.md
     - href: eap/reference/built-in-functions/text.md
     - href: eap/reference/built-in-functions/url.md
+  # APIs
+  - href: eap/reference/apis/api-intro.md
+  - topics:
+      - href: eap/reference/apis/chart-intro.md
+      - topics:
+          - href: eap/reference/apis/data.md
+          - href: eap/reference/apis/landingpage-chart.md 
+          - topics:
+              - href: eap/reference/apis/area.md
+              - href: eap/reference/apis/bar.md
+              - href: eap/reference/apis/column.md
+              - href: eap/reference/apis/donut.md
+              - href: eap/reference/apis/line.md
+              - href: eap/reference/apis/pie.md
+              - href: eap/reference/apis/radar.md
 # Known issues
 - href: eap/known-issues/intro.md
 
