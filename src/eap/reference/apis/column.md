@@ -2,7 +2,7 @@
 summary: Learn how you can create a simple Column Chart with data labels.
 tags: 
 locale: en-us
-guid: 46d79903-1594-4207-9b7b-46a9d3d9b347
+guid: 8651448f-4ebe-47c6-8d2e-676f33a830b0
 app_type: mobile apps, reactive web apps
 platform-version: odc
 ---

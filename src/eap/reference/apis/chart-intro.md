@@ -2,7 +2,7 @@
 summary: The Charts API v2 allows you to create, populate, and customize charts.
 tags: 
 locale: en-us
-guid: 7badf99e-72d6-4551-80bd-de2fa6238fad
+guid: b5070497-8f92-4f84-ad4e-4465de6dde0e
 app_type: mobile apps, reactive web apps
 platform-version: odc
 ---

@@ -2,7 +2,7 @@
 summary: Learn how you can create a simple Donut Chart.
 tags: 
 locale: en-us
-guid: 18b47e8e-8355-49e2-852d-b7ae8580460e
+guid: 7dd162ba-bb5a-4c61-902d-d8738c122a54
 app_type: mobile apps, reactive web apps
 platform-version: odc
 ---

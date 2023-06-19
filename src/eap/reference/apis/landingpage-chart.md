@@ -2,7 +2,7 @@
 summary: Available Chart API V2
 tags: 
 locale: en-us
-guid: 278366d1-63a9-49c6-b784-f66c5bdc5e87
+guid: 6a45a792-3bf8-40db-bc04-83773a97de31
 app_type: mobile apps, reactive web apps
 platform-version: odc
 ---

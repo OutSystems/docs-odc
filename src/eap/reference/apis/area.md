@@ -2,7 +2,7 @@
 summary: Learn how you can create a simple Area Chart with a Stacked Series.
 tags: 
 locale: en-us
-guid: 90b5dbf9-245b-4b85-bb82-ec18e90c97e9
+guid: 181b8675-7323-4afd-bab7-b315c237d709
 app_type: mobile apps, reactive web apps
 platform-version: odc
 ---

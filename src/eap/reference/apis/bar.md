@@ -2,7 +2,7 @@
 summary: Learn how you can create a simple Bar Chart with a customized legend.
 tags: 
 locale: en-us
-guid: dccd9d00-8991-4b83-bdac-a0bd6411578c
+guid: ee86596b-1473-4fe8-8da5-1e65352a0997
 app_type: mobile apps, reactive web apps
 platform-version: odc
 ---

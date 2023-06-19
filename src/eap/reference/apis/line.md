@@ -2,7 +2,7 @@
 summary: Learn how you can create a simple Line Chart with a Spline line and custom markers.
 tags: 
 locale: en-us
-guid: 7badf99e-72d6-4551-80bd-de2fa6238fad
+guid: 7d5b86f8-dcc0-4ea7-a5f8-3f6d1e2c56c5
 app_type: mobile apps, reactive web apps
 platform-version: odc
 ---

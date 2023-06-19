@@ -2,7 +2,7 @@
 summary: Learn how you can create a simple Pie Chart showing the labels of the data points instead of the legend.
 tags: 
 locale: en-us
-guid: d7305663-0258-43c2-a810-dcd5c37bb7f6
+guid: fda78656-7247-472a-8d79-c79accc91556
 app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
