@@ -12,7 +12,7 @@ inputs:
   input-path:
     description: 'Input Path'
     required: true
-    default: 'online-training/'
+    default: 'src/'
   file-pattern:
     description: 'File Pattern'
     required: true
