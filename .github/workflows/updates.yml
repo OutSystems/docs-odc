@@ -1,0 +1,104 @@
+name: Comment on PR for specific types of updates to articles
+
+# Trigger the action when a pull request is made that modifies markdown files in the "src" folder.
+on:
+  pull_request:
+    paths:
+      - 'src/**/*.md'
+
+jobs:
+  check-title:
+    runs-on: ubuntu-latest
+
+    steps:
+    # ---- SETUP STEPS ----
+    # Check out the base branch.
+    - name: Checkout base branch
+      uses: actions/checkout@v3.5.2
+      with:
+        ref: ${{ github.base_ref }}
+        path: base
+
+    # Check out the PR branch.
+    - name: Checkout PR branch
+      uses: actions/checkout@v3.5.2
+      with:
+        ref: ${{ github.head_ref }}
+        path: pr
+
+    # Get the list of files that have been changed in the PR.
+    - name: Get list of changed files
+      id: files
+      uses: actions/github-script@v6.4.1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const files = await github.rest.pulls.listFiles({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: context.issue.number
+          });
+          return JSON.stringify(files.data.filter((file) => file.status !== 'removed').map((file) => file.filename));
+
+    # ---- CHANGE DETECTION STEPS ----
+    # Compare the titles of the changed files in the base branch and PR branch.
+    - name: Compare titles
+      run: |
+        changed_titles=""
+        for file in $(echo "${{ steps.files.outputs.result }}" | jq -r '.[]'); do
+          if [[ "$file" == *.md ]]; then
+            base_exists=$(test -f base/$file && echo "yes" || echo "no")
+            # If the file doesn't exist in the base branch, move to the next file.
+            if [[ "$base_exists" == "no" ]]; then
+              continue
+            fi
+            # Extract the H1 title from the article in the base branch.
+            base_title=$(git -C base show HEAD:"$file" | awk 'BEGIN {RS="---"} NR>2 {print $0}' | awk -F '#' '/^# / {print $2; exit}')
+            # Extract the H1 title from the article in the PR branch.
+            pr_title=$(git -C pr show HEAD:"$file" | awk 'BEGIN {RS="---"} NR>2 {print $0}' | awk -F '#' '/^# / {print $2; exit}')
+            # If the titles don't match, add file to list of changed titles.
+            if [[ "$base_title" != "$pr_title" ]]; then
+              changed_titles="$changed_titles, $file"
+            fi
+          fi
+        done
+
+        # Write list of changed titles and advise to comment file.
+        if [[ ! -z "$changed_titles" ]]; then
+          echo "I've detected the title has changed in the following article(s): ${changed_titles:2}." > comment.txt
+          echo "⚠️ If you haven't updated the toc.yml in this branch, be sure to do a ghost commit. Then when you publish, validate the CMS created a redirect URL for each article ⚠️" >> comment.txt
+          echo "See [this Slack thread](https://outsystems.slack.com/archives/C01DGSZ4Y9F/p1686613979251969?thread_ts=1686151875.482399&cid=C01DGSZ4Y9F) for context." >> comment.txt
+          echo "changed_titles=true" >> $GITHUB_ENV
+        else
+          echo "changed_titles=false" >> $GITHUB_ENV
+        fi
+
+    # --- PATTERN TO EXTEND: ADDITIONAL CHANGE DETECTION STEPS ---
+    # - name: Compare X
+    #   id: compare_X
+    #   run: |
+    #     changed_X=""
+    #     (Add the comparison logic for X here.)
+    #     if [[ ! -z "$changed_X" ]]; then
+    #       (Add the reporting logic for X here.) >> comment.txt
+    #     fi
+    #   ...
+
+    # Post comment.txt as comment on the PR.
+    - name: Comment on PR
+      if: steps.files.outputs.result != '' && env.changed_titles
+      uses: actions/github-script@v6.4.1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const issue_number = context.issue.number;
+          const fs = require('fs');
+          const comment = fs.readFileSync('comment.txt', 'utf8');
+          if (comment.trim() !== "") {
+            github.rest.issues.createComment({
+              issue_number: issue_number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+          }
