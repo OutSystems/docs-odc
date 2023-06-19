@@ -112,7 +112,7 @@ jobs:
         delete-branch: false
         title: Update visual assets
         reviewers: ${{ github.actor	}}
-        body: ${{ steps.validate.outputs.report }}
+        body: ${{ steps.get-pr-body.outputs.report }}
         draft: true
         labels: figma
         add-paths: |
