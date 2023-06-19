@@ -435,10 +435,9 @@
   # APIs
   - href: eap/reference/apis/api-intro.md
   - topics:
-    - href: eap/reference/apis/chart-intro.md
     - href: eap/reference/apis/data.md
+    - href: eap/reference/apis/chart-intro.md
     - topics:
-        - href: eap/reference/apis/landingpage-chart.md 
         - href: eap/reference/apis/area.md
         - href: eap/reference/apis/bar.md
         - href: eap/reference/apis/column.md
