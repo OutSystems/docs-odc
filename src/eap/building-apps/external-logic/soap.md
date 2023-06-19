@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: b44dc63b-99f3-4cc4-9cf0-9e915eddd4fa
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3606%3A22166&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
@@ -278,7 +279,7 @@ After uploading the SOAP web service to ODC, create an application called `SOAP 
     1. Drag the **Add action** to the flow and rename it `SumFunction`.
     2. In the Properties for the Add action, click **(+)** sign to expand numbers, and inside add your local variables, the `NumberA` and `NumberB` attributes.
     
-    ![Client-action](images/Client-action-odcs.png)
+    ![Client-action](images/client-action-odcs.png)
 
 6. Drag an assign and set the local variable **Sum** with the output of the **SumFunction** to get the sum of both numbers and present it to the screen.
 7. Publish the app and see the result in the browser.

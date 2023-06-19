@@ -21,6 +21,10 @@
       "platform-version": {
         "type": "string",
         "enum": ["odc"]
+      },
+      "figma": {
+        "type": "string",
+        "pattern": "^https://www\\.figma\\.com/"
       }
     },
     "required": ["summary", "locale", "app_type", "guid", "platform-version"],

@@ -4,6 +4,7 @@ summary: Section Index organizes the content of a screen, enabling quick navigat
 locale: en-us
 guid: 117829a3-fdcf-4557-a4dd-99661992d73d
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A17605&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

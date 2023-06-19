@@ -4,6 +4,7 @@ summary: Allow users to input a time of day in either a 24-hour or AM/PM format.
 locale: en-us
 guid: 510393e6-a590-4ceb-a143-eefdac104240
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A17949&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

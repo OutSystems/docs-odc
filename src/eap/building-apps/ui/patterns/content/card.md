@@ -4,6 +4,7 @@ summary: Card groups small pieces of information and highlights them on the scre
 locale: en-us
 guid: 594f6cef-f632-40c4-9ffc-2204252e6dd2
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A10485&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

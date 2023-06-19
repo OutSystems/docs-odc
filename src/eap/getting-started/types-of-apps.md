@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 2c23e305-f3ca-46cc-a8c8-a29c409a9ccf
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?type=design&node-id=2449%3A32710&t=CxwRhrJUzQXvCd96-1
 platform-version: odc
 ---
 

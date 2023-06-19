@@ -4,6 +4,7 @@ summary: Blank Slate informs end users when they start using the application, co
 locale: en-us
 guid: 8f31ca3f-5223-4225-b292-304330d0e17e
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A10392&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

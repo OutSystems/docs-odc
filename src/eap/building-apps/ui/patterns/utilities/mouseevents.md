@@ -4,6 +4,7 @@ summary: The Mouse Events UI Pattern enables click events on a specific widget o
 locale: en-us
 guid: c9b283f3-79d1-4ac0-93a4-1f1a7a2c50e7
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A21331&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

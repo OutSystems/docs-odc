@@ -5,6 +5,7 @@ summary: A Local Variable exists only in the scope of its parent element.
 locale: en-us
 guid: 2e1a1542-5dc1-4269-987b-f2665ce37f07
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21499&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 81645496-3038-4765-9092-e2ab5a7f413b
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/8RLmb1pp1PYm5xqtrnq5O8/Debugging-apps?type=design&node-id=2901%3A73&t=sdGPdlxTkpCARchu-1
 platform-version: odc
 ---
 

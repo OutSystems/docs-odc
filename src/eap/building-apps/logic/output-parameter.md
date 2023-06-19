@@ -5,6 +5,7 @@ summary: An Output Parameter allows you to return computed values from an action
 locale: en-us
 guid: a0388822-d4ea-4fbf-9bd2-d45b10183c0c
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21660&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

@@ -4,6 +4,7 @@ summary: Use the Margin Container and easily add symmetrical padding around a co
 locale: en-us
 guid: 7e38da14-e0fb-42d7-b677-5b18818c788f
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A21157&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

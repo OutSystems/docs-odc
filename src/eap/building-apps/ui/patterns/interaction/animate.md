@@ -4,6 +4,7 @@ summary: Animate adds default animations to emphasize elements as they appear on
 locale: en-us
 guid: bd23a378-5bd7-4fcb-8c53-5455b46be344
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A12821&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

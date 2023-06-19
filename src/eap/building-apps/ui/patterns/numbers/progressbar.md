@@ -4,6 +4,7 @@ summary: Progress Bar displays the progress of a task by incrementing values in 
 locale: en-us
 guid: 9365cf5d-fdea-45fa-9e39-19089259a83b
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A19941&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

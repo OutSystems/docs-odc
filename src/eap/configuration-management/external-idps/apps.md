@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: e2b2541f-80b6-49b7-8961-8b7ad2ad65f3
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=3001%3A378&t=hXGTDybYCg38Lul5-1
 platform-version: odc
 ---
 

@@ -4,6 +4,7 @@ summary: Displays the current progress of a task using circular or semi-circular
 locale: en-us
 guid: 58229e1f-1b30-4d29-8c94-d709d5428012
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A19985&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

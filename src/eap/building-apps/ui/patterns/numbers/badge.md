@@ -4,6 +4,7 @@ summary: Badge display numerical information as notification.
 locale: en-us
 guid: d97db143-3239-44d4-bdf7-0c49483b6939
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A19032&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
