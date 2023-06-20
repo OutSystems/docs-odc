@@ -62,7 +62,7 @@ An example of an HTTPS request is when a developer clicks the 1-Click Publish bu
 
 The platform is available at `<customername>.outsystems.dev`.
 
-![Platform network architecture](images/network-platform-diag.png "Platform network architecture")
+![Platform network architecture](images/architecture-network-platform-diag.png "Platform network architecture")
 
 ### Runtime
 
