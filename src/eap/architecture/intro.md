@@ -140,4 +140,3 @@ Logs and metrics are collected from each of the app containers running in each R
 Automatic monitoring by EKS replaces unhealthy app containers running in each Runtime stage cluster with a healthy replica. An app container is unhealthy if it's continuously unresponsive.
 
 See [Security in OutSystems Developer Cloud](../security.md#monitoring-and-support) for more information about monitoring and support in ODC.
-

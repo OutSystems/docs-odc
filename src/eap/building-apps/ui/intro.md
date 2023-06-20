@@ -71,3 +71,5 @@ UI patterns are available in many different categories such as content, navigati
 You can find many patterns in the toolbox of ODC Studio. Open a screen for editing and drag a pattern from the toolbox: 
   
 ![Adding UI patterns to the screen](images/ui-patterns-screen-ss.png)
+
+

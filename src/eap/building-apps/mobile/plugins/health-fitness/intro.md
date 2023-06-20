@@ -158,3 +158,5 @@ Following is a list of actions you can use to make sure there are no errors:
 | **Success**     | SetBackgroundJob         | True if there aren't errors while creating a background job.   |
 
 (*) There are several actions in the Health & Fitness plugin that begin with **Get** and have a **Success** variable.
+
+

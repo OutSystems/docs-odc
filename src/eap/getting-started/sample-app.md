@@ -89,3 +89,4 @@ There are [free online courses](https://www.outsystems.com/training/courses/206/
 ### Community
 
 The OutSystems community welcomes all. Join the community in the Forum, to share tips about working with OutSystems, get fresh ideas for your projects, or [talk about ODC with other developers](https://www.outsystems.com/forums/tag/6904/odc).
+

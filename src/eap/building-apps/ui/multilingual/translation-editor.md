@@ -61,3 +61,4 @@ ODC Studio automatically sets as translatable the following text:
 * Text in the screens
 
 </div>
+

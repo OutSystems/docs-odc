@@ -105,3 +105,4 @@ Settings
 
 Watches Tab
 :   Lists all variables explicitly marked as watched.
+

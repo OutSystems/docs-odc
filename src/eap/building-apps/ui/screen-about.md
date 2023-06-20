@@ -81,3 +81,4 @@ ODC Studio groups the default layouts in the **Layouts** flow. A new empty scree
 * **Footer**. Reserves space for content that's usually at the bottom of a page, like copyright or an about link 
 
 Screens you create from screen templates can have different layout blocks than what you see in an empty screen.
+
