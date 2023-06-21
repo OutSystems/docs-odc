@@ -98,4 +98,4 @@ You can now delete the CNAME records you added for the domain from the DNS recor
 
 ## Developing apps with custom domains
 
-When an app uses a background process to generate the URL of a screen, the built-in domain is used. You override the build-in domain by building an expression of the URL with the custom domain, for example in the case of a [link widget in an email](../building-apps/emails/widgets.md#widgets-available-in-emails). To help you build multiple expressions you can create an app setting, for example **App_Domain**, containing the domain.
+When an app uses a background process to generate the URL of a screen, the built-in domain is used. You override the built-in domain by building an expression of the URL with the custom domain, for example in the case of a [link widget in an email](../building-apps/emails/widgets.md#widgets-available-in-emails). To help you build multiple expressions you can create an app setting, for example **App_Domain**, containing the domain.
