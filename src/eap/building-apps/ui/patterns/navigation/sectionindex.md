@@ -52,7 +52,7 @@ You can use the Section Index UI Pattern to organize the content of a screen, en
 
 1. To link the Section with the Section Index Item, select the Section Index Item, and on the **Properties** tab, set the **ScrollToWidgetId** property as the Section Id. In this example,  **AmosTesen.Id**.
 
-    ![Set the Section Id](<images/sectionindex-id-ss.png>)
+    ![Set the Section Id](<images/sectionindex-properties-id-ss.png>)
 
 1. Repeat steps 5,6 and 7 to add content and link your sections to the remaining Section Index Items.
 

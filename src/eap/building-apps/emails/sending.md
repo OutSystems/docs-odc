@@ -26,7 +26,7 @@ To create logic that sends an email, go to ODC Studio an follow these steps:
 
 1. To display  the list of input parameters required for your email, go to the **Send Email** properties action and select your Email in the **Email** list. The list of input parameters displays.
 
-    ![Send Email in the logic flow](images/logic-send-email-select-odcs.png)
+    ![Send Email in the logic flow](images/select-email-list-odcs.png)
 
 1. To complete the parameters in the server action to pass the values to the Email, right-click the **Server Action** and select **Add Input Parameter**. Repeat as needed to add the following:
 

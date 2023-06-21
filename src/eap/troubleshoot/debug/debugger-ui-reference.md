@@ -35,7 +35,7 @@ Icon | Name | Shortcut | Description
 :---:|------|:--------:|------------
 ![](images/toolbar-button-stop.png)     | Stop Debugging | | Stops the debugger and resumes the execution of all of the suspended threads.
 ![](images/toolbar-button-suspend.png)  | Suspend Running Server Threads | | Suspends the execution of all current server threads in OutSystems Developer Cloud (ODC).
-![](images/toolbar-button-abort.png)    | Abort Running Server Threads | | Aborts the execution of the current server threads in ODC.
+![](images/toolbar-abort-button.png)    | Abort Running Server Threads | | Aborts the execution of the current server threads in ODC.
 ![](images/toolbar-button-continue.png) | Continue | `F9` | Resumes the execution.
 ![](images/toolbar-button-step-over.png)| Step Over | `F10` | Steps the execution trace to the next element in the same flow or, when in a web application, screen "level".
 ![](images/toolbar-button-step-into.png)| Step Into | `F11` | Steps the execution trace to the first element "inside" elements like: <br/> &#8212; Execute Client Action (or Execute Server Action) elements which execute user-defined actions of the same app<br/> &#8212; User functions of the same app<br/> &#8212; Assignments of Assign elements<br/> Trying to step into any other element is the same as doing a ![](images/toolbar-button-step-over.png) Step Over operation.
