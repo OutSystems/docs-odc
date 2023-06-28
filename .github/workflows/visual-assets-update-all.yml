@@ -12,7 +12,7 @@ on:
     types: [created]
 
 concurrency:
-  group: visual-assets-${{ github.ref }}
+  group: visual-assets-all-${{ github.ref }}
   cancel-in-progress: true
 
 run-name: "Update ALL visual assets in ${{ github.ref_name }}"

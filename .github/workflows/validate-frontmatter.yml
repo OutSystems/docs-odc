@@ -1,16 +1,12 @@
 name: Validate Frontmatter
 
 on:
-  push:
-    branches:
-    - master
-    - main
-  pull_request:
-    types: [opened, edited, synchronize, reopened]
+  workflow_dispatch:
+  workflow_call:
 
 jobs:
   frontmatter-json-schema-validator:
-    name: Validate Frontmatter
+    name: Validate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
