@@ -505,6 +505,8 @@
         - href: error/elg/OS-ELG-MODL-05025.md
         - href: error/elg/OS-ELG-MODL-05026.md
         - href: error/elg/OS-ELG-MODL-05027.md 
+        - href: error/elg/OS-ELG-MODL-05028.md
+        - href: error/elg/OS-ELG-MODL-05029.md
     # Errors Package Manager Service
     - href: error/pkgs/intro.md
     - topics:

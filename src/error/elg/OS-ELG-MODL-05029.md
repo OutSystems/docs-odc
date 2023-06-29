@@ -1,7 +1,7 @@
 ---
 summary: "The assembly <AssemblyName>, which contains the interface decorated with the OSInterface attribute, is not located in the root directory of the zip file."
 tags:
-guid: 2aebb901-40e1-4c06-9fe9-2e004b1f0f56
+guid: a00f3190-e435-48cf-87c2-757c4036e693
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
