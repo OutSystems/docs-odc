@@ -20,18 +20,18 @@ The table shows the OutSystems-supported mobile plugins that you can find in the
 | ------------------------- | ------------------------------------------------------------ | ---------------- |
 | Barcode Plugin            | Access the camera to scan barcodes.                          | Yes              |
 | Camera Plugin             | Access the camera capabilities of the device.                | Yes              |
-| Health and Fitness Plugin | Access data from Apple HealthKit and Google Fit.             | NA               |
-| File Plugin               | Manage files and folders within the app sandbox.             | NA               |
-| File Transfer Plugin      | Upload and download files in background.                     | NA               |
-| File Viewer Plugin        | View remote or app resource files.                           | NA               |
-| Key Store Plugin          | Store encrypted key-value pairs with optional authentication | NA               |
+| Health and Fitness Plugin | Access data from Apple HealthKit and Google Fit.             | No               |
+| File Plugin               | Manage files and folders within the app sandbox.             | No               |
+| File Transfer Plugin      | Upload and download files in background.                     | Yes              |
+| File Viewer Plugin        | View remote or app resource files.                           | Yes              |
+| Key Store Plugin          | Store encrypted key-value pairs with optional authentication | No               |
 | Location Plugin           | Access the GPS capabilities the device.                      | Yes              |
 
 ### Notes
 
 When working with the plugins:
 
-* Use the plugin that supports iOS or Android, depending on your target platform. The app generation fails if you use a plugin that isn't supported on the target platform.
+* Use the plugin that supports iOS or Android, depending on your target platform. The app creation fails if you use a plugin that isn't supported on the target platform. For more information on app generation errors check the [list of MABS errors](<https://success.outsystems.com/support/errors/mabs_errors/>).
 * Each time you add, remove, or modify the plugin in an app, OutSystems creates a mobile package which you then have to distribute to the users for installation.
 * Include the plugin license in your app to respect the license agreements of that plugin. These license agreements are usually placed in the About page of the app that uses them.
 
