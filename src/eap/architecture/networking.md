@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: e87fb27d-9186-436d-ac97-a2ea960c119d
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/wMgr3GDiuAdkPics5gzXx9/Cloud-native-architecture-of-OutSystems-Developer-Cloud?type=design&node-id=3001%3A1808&t=wS2nDUn4cr9EORu8-1
 platform-version: odc
 ---
 
@@ -61,7 +62,7 @@ An example of an HTTPS request is when a developer clicks the 1-Click Publish bu
 
 The platform is available at `<customername>.outsystems.dev`.
 
-![Platform network architecture](images/network-platform-diag.png "Platform network architecture")
+![Platform network architecture](images/architecture-network-platform-diag.png "Platform network architecture")
 
 ### Runtime
 
@@ -72,3 +73,4 @@ An example of an HTTPS request is when a user submits a form in an app. The requ
 The apps are available at `<customername>.outsystems.app/appname` and on all the active custom domains (such as `apps.example.com/appname`).
 
 ![Runtime network architecture](images/network-runtime-diag.png "Runtime network architecture") 
+

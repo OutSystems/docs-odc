@@ -4,6 +4,7 @@ summary: Adds swipeable cards that can be dragged in multiple directions trigger
 locale: en-us
 guid: 30866b44-9a14-45a8-bbbd-ee11cc898d5f
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A17757&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
@@ -76,3 +77,4 @@ After following these steps and publishing the app, you can test the pattern in 
 ## Compatibility with other patterns
 
 Avoid using the Stacked Cards Pattern inside patterns with swipe events / touch events, like [Tabs](<../navigation/tabs.md>) or [Carousel](<carousel.md>).
+

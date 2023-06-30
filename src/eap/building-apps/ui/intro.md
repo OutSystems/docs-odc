@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: bd056d16-4d8d-4b0b-ade7-9dc0ffc6f487
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2642&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
@@ -70,3 +71,5 @@ UI patterns are available in many different categories such as content, navigati
 You can find many patterns in the toolbox of ODC Studio. Open a screen for editing and drag a pattern from the toolbox: 
   
 ![Adding UI patterns to the screen](images/ui-patterns-screen-ss.png)
+
+

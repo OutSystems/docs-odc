@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 6df6f491-46e4-434f-924e-043929958fef
 app_type: mobile apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7545&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

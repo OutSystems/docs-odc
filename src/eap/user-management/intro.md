@@ -1,15 +1,17 @@
 ---
-summary: Learn about organization users and end-user roles in OutSystems Developer Cloud (ODC).
-tags: 
+
+summary: Learn about managing and inviting users to your organization in OutSystems Developer Cloud (ODC).
+tags: user-management; authentication; lifecycle-management; custom roles
 locale: en-us
 guid: 9e0fb9b7-d2b0-419f-a5d8-5b5ed730da5e
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=design&node-id=2449%3A32709&t=qXDLlqyCzAMXQgr0-1
 platform-version: odc
 ---
 
 # User management
 
-User management in OutSystems Developer Cloud (ODC) is about setting up and providing access to a person who uses ODC. People are assigned **roles** such as administrator, developer, architect, or end-user (also known as an app user). A key part of user management is ensuring that users have the correct access to organization resources and apps in accordance with your access rules.
+User management in OutSystems Developer Cloud (ODC) is about setting up and providing access to a person who uses ODC. You assign **roles** to people, such as administrator, developer, architect, or end-user (also known as an app user). A key part of user management is ensuring that users have the correct access to organization resources and apps in accordance with your access rules.
 
 In this document, the term organization refers to the ODC account your company manages. All users are part of an organization. To use ODC, all users are assigned roles with different permissions.
 
@@ -17,11 +19,11 @@ Users with organization roles can access the ODC Portal and use ODC Studio to bu
 
 You can create groups of end-users. All end-users in the group have access to the same roles and apps. For example, you might create a group of end-users from the marketing team who need different access than a group of end-users from the finance team.
 
-ODC enables you to use groups to accelerate giving users roles and access to apps. You can only add end-users to groups. Your ODC admin creates the group and adds end-users to the group. You associate groups and apps to roles.
+ODC enables you to use groups to accelerate giving users roles and access to apps. You can only add end-users to groups. Your ODC admin creates the group and adds end-users to the group. You associate groups and apps to roles. You can also invite users to a group which gives them access to all apps associated with the group.
 
-The ODC Portal is the  place to manage users, and you can:
+The ODC Portal is the place to manage users, and you can:
 
-* Invite a new user
+* Invite a new user and also invite the user to a group
 * Assign, revoke, or changes roles for all users
 * View and manage all users that have organization and end-user roles
 * Create a group
@@ -91,7 +93,7 @@ For more information about app dev development and end-user roles, see: [Secure 
 
 To accelerate the onboarding of users, ODC enables you to create groups of users. Using groups enables you to grant users roles in bulk. Before you can add users to groups, users must be part of your ODC organization.
 
-Manage the groups from the ODC **Portal** > **Users & access** > **End-user groups**. When adding a  new group, enter a group name. You need to enter a group name. All other fields are optional.
+Manage the groups from the ODC **Portal** > **Users & access** > **End-user groups**. When adding a  new group, enter a group name. The group name is required, all other fields are optional.
 
 You can add roles to a group before or after you add users to a group. Users in the group get all end-user roles associated with that group. Users can belong to multiple groups. You can create a new group in a different stage, with the same name or a different name, and use the same or similar roles.
 
@@ -105,10 +107,10 @@ You can add new users to your organization and apps through the ODC Portal.
 
 From the **ODC Portal**, select **Users & access** and then select either **Users** or **End-user groups**.
 
-Clicking  **Users**, displays a screen that shows a list of users. To invite a new user, from the top right,click the **Invite user** button. A form displays to enter the user's email and select their access. Based on your choices, different options become available.
+Clicking  **Users**, displays a screen that shows a list of users. To invite a new user, from the top right,click the **Invite user** button. A form displays to enter the user's email address and to select their access. Based on your choices, different options are  available.
 
-* If you choose **Member access**, you can select an organization and an app.
-* If you choose **End user access**, you can add the user to a group, assign roles related to a specific app or all apps, and a specific stage or all stages. You can choose more than one app at a time. A group can only have roles from the same stage. For example, if your group is in the Development stage you can't add roles from the Production stage.
+* If you choose **Member access**, you can select an organization and an app. If you select an organization, then you can choose a specific role or no role. When you search for or select a group, you can also choose a stage.
+* If you choose **End-user access** you also have access to add **End-user groups**. You can add the user to a group, assign roles related to a specific app or all apps, and a specific stage or all stages. You can choose more than one app at a time. A group can only have roles from the same stage. For example, if your group is in the Development stage you can't add roles from the Production stage.
 
 <div class="info" markdown="1">
 
@@ -124,9 +126,9 @@ Manage the users in the **ODC Portal** > **Users**.
 
 To **activate** a user, you must first invite the user. Once a user accepts the invitation, you see them as active in the list of users.
 
-To **deactivate** a user, from the actions menu, select **Deactivate**. A confirmation message displays, click **Yes, deactivate user.** The user now displays as deactivated.
+To **deactivate** a user, from the Actions menu, select **Deactivate**. A confirmation message displays, click **Yes, deactivate user.** The user now displays as deactivated.
 
-To **delete** a user, from the actions menu, select **Delete user**. A confirmation message displays, click **Yes, delete user.** The user is deleted and their name is deleted from the list of users.
+To **delete** a user, from the Actions menu, select **Delete user**. A confirmation message displays, click **Yes, delete user.** The user is deleted and their name is removed from the list of users.
 
 ## Give or revoke a user role
 

@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: c344796f-8d4a-4e49-9c8c-094222cd1f5d
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?type=design&node-id=2467%3A32718&t=O0Q2LHKWp3UPsYth-1 
 platform-version: odc
 ---
 
@@ -88,3 +89,4 @@ There are [free online courses](https://www.outsystems.com/training/courses/206/
 ### Community
 
 The OutSystems community welcomes all. Join the community in the Forum, to share tips about working with OutSystems, get fresh ideas for your projects, or [talk about ODC with other developers](https://www.outsystems.com/forums/tag/6904/odc).
+

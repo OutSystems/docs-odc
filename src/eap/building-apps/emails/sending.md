@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 895e64b5-eb2c-4b92-9673-8493aa306622
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A11324&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
@@ -25,7 +26,7 @@ To create logic that sends an email, go to ODC Studio an follow these steps:
 
 1. To display  the list of input parameters required for your email, go to the **Send Email** properties action and select your Email in the **Email** list. The list of input parameters displays.
 
-    ![Send Email in the logic flow](images/logic-send-email-select-odcs.png)
+    ![Send Email in the logic flow](images/select-email-list-odcs.png)
 
 1. To complete the parameters in the server action to pass the values to the Email, right-click the **Server Action** and select **Add Input Parameter**. Repeat as needed to add the following:
 

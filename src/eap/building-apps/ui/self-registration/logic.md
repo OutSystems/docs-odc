@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: bf31e755-d3d7-49b2-9591-fd0d197db633
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22075&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
@@ -56,7 +57,7 @@ After setting up the DoSignup action, you need to configure the Server action. I
 1. In the search bar pop-up, search for **StartUserRegistration**, then select it from the dropdown and click **Add**. ODC displays the **StartUserRegistration** action below system actions in the Logic tab.
 1. From the Toolbox, drag the **Run Server Action** widget to the canvas and place it between the Start and End elements to display a pop-up. In the search pop up, enter **StartUserRegistration** Server action and then click **Select.**
   
-    ![Expand user and add variables](images/expand-user-input-paramenter-odcs.png)
+    ![Expand user and add variables](images/expand-user-input-parameter-odcs.png)
 
 1. From the **Logic** tab, right-click the **DoSignup** Server action and select **add input parameter**. Set the Name to `User` and the data type to `User`. In the **DoSignup** canvas, click **StartUserRegistration** action to display properties. Click  **+** to expand the user input and enter `name` as User.Name and `email` as User.Email.
 
@@ -119,3 +120,4 @@ As a final validation, you can configure the flow to send an email to the user w
 1. In the True branch, from the Toolbox, drag a **Send Email** widget. In the properties panel of the widget, set Name to `UserRegistration` and To as `User.Email`. In the Email setting, select the **New Email** option from the dropdown.
 
 You can now [create an email to send the verification code.](email.md)
+

@@ -4,6 +4,7 @@ summary: Allows the user select a single value between two range values.
 locale: en-us
 guid: 3004b9a7-ba25-42d8-8430-703d2be50470
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A16464&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

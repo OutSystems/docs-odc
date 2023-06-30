@@ -4,6 +4,7 @@ summary:  Swipe Events UI Pattern enables swiping on a specific widget.
 locale: en-us
 guid: b8415514-3f04-45f1-a26c-0ef4049b4487
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A21622&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

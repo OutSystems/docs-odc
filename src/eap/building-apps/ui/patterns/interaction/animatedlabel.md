@@ -4,6 +4,7 @@ summary: The Animated Label animates a label when there is user input.
 locale: en-us
 guid: 996f45dd-32e8-4480-aa55-a0e81d07d7e6
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A12991&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

@@ -4,6 +4,7 @@ summary: The Bottom Bar Item provides access to a bottom navigation drawer
 locale: en-us
 guid: a47f6440-0442-42ec-8674-e4cfb134957b
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A17038&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

@@ -4,6 +4,7 @@ summary: Section Index organizes the content of a screen, enabling quick navigat
 locale: en-us
 guid: 117829a3-fdcf-4557-a4dd-99661992d73d
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A17605&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
@@ -51,7 +52,7 @@ You can use the Section Index UI Pattern to organize the content of a screen, en
 
 1. To link the Section with the Section Index Item, select the Section Index Item, and on the **Properties** tab, set the **ScrollToWidgetId** property as the Section Id. In this example,  **AmosTesen.Id**.
 
-    ![Set the Section Id](<images/sectionindex-id-ss.png>)
+    ![Set the Section Id](<images/sectionindex-properties-id-ss.png>)
 
 1. Repeat steps 5,6 and 7 to add content and link your sections to the remaining Section Index Items.
 
@@ -78,3 +79,4 @@ After following these steps and publishing the app, you can test the pattern in 
 |---|---|
 |ScrollToWidgetId (Text): Mandatory | Element to where the page navigates.|
 |ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1" "myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
+

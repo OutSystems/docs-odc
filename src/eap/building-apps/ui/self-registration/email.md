@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 8e30d486-dbf3-457c-87f8-4cd9e65b0156
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22069&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
@@ -113,3 +114,4 @@ Before updating the actions, delete the input parameter **CustomerEmail** by exp
 1. From the **Message** widget, go to the Properties panel, and set the **ApplicationName** as `GetAppName()`.
 
 You can now [create a form to validate the verification code.](create-validation-form.md)
+

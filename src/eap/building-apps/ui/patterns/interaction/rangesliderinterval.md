@@ -4,6 +4,7 @@ summary: the Range Slider Interval UI Pattern allows users select a single value
 locale: en-us
 guid: aa015998-a6e2-48bb-a0cc-2c53b4df2832
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A16886&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
@@ -83,4 +84,5 @@ After following these steps and publishing the app, you can test the pattern in 
 | OptionalConfigs.ShowTickMarks (Boolean): Optional     | Set to True to display tick marks below the slider. Default value is False. To generate the tick marks, you must set the TickMarksInterval to True.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | OptionalConfigs.TickMarksInterval (Integer): Optional | Range interval after which a tick mark is displayed (when ShowTickMarks is set to True). For example, if TickMarksInterval = 5, a tick mark is shown for each 5 steps. The value can not be less than 0 (library restraint).                                                                                                                                                                                                                                                                                                                                                                                                                |
 | OptionalConfigs.IsDisabled (Boolean): Optional        | Set as True to disable the Range Slider Interval. Default value is True.build                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+
 

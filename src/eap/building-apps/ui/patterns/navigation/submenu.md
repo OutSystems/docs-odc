@@ -4,6 +4,7 @@ summary: Submenu is used to create a menu contained within another menu.
 locale: en-us
 guid: 643d37e9-efa8-48a3-87ba-f409a1f04efa
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A18027&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

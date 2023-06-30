@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 955feaca-cda0-492f-9b84-d5c89281692e
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3606%3A22095&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
@@ -163,8 +164,6 @@ Server actions your apps consume through external logic are slightly different i
 
 ## Troubleshooting
 
-### Upload errors
-
 All validation of your external logic is done when [uploading the ZIP file to the Portal](intro.md#upload-and-publish-the-external-logic).
 
-Use the [error page documentation](../../../error/elg/intro.md) for guidance.
+Use the [error page documentation](../../../error/elg/intro.md) for guidance. 

@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 9a0cb62a-f11b-4d1a-9e79-0ca7d398e57b
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/wMgr3GDiuAdkPics5gzXx9/Cloud-native-architecture-of-OutSystems-Developer-Cloud?type=design&node-id=3001%3A25&t=wS2nDUn4cr9EORu8-1
 platform-version: odc
 ---
 
@@ -23,7 +24,7 @@ In addition to access to **ODC Studio** and [**ODC Portal**](../differences-o11/
 
 The following diagram shows the high-level architecture of the OutSystems Developer Cloud.
 
-![Architecture of the OutSystems cloud platform](images/architecture-diag.png "Architecture of the OutSystems cloud platform")
+![Architecture of the OutSystems cloud platform](images/high-level-architecture-diag.png "Architecture of the OutSystems cloud platform")
 
  NATS (Neural Autonomic Transport System), a secure messaging system, handles all internal requests between the Platform and Runtime stages. All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of OutSystems Developer Cloud](networking.md) to learn more.
 
@@ -39,7 +40,7 @@ All the Platform services are multi-tenant and benefit from automatic recovery a
 
 The following diagram shows the high-level architecture of the development Platform.
 
-![Architecture of the development Platform](images/architecture-platform-diag.png "Architecture of the development Platform") 
+![Architecture of the development Platform](images/high-level-architecture-platform-diag.png "Architecture of the development Platform") 
 
 #### Runtime { #runtime }
 

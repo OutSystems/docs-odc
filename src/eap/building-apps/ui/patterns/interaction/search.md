@@ -4,6 +4,7 @@ summary: Search allows the user to find pieces of content without the use of nav
 locale: en-us
 guid: 1914dd20-040d-4a96-8293-e35756cb8e6a
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A17253&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

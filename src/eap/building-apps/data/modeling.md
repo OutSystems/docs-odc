@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 5b4d315b-86c8-4c5d-964b-56b758aeee49
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2207&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

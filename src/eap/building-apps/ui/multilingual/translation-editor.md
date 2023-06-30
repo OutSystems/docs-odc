@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: af4a2233-5b33-4b4e-bf4c-e24216bcbb07
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3606%3A22179&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
@@ -60,3 +61,4 @@ ODC Studio automatically sets as translatable the following text:
 * Text in the screens
 
 </div>
+

@@ -39,7 +39,7 @@ In this case, the Threads Tab inside the [Debugger Tab](<debugger-ui-reference.m
 
 While debugging a server thread (corresponding to an action being performed in the server) you may abort its execution, terminating it.
 
-Use the ![](images/toolbar-button-abort.png) Abort Running Server Threads button available on the Debugger Toolbar or in the Debugger Menu.
+Use the ![](images/toolbar-abort-button.png) Abort Running Server Threads button available on the Debugger Toolbar or in the Debugger Menu.
 
 
 ## Suspend All Executing Server Threads

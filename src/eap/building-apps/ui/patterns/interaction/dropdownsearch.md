@@ -4,6 +4,7 @@ summary: The Dropdown Search UI Pattern offers a choice of available options tha
 locale: en-us
 guid: 667dfcf6-b299-492b-8e93-655ad62ea91a
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A14668&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

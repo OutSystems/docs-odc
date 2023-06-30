@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: 5f50a67f-d8c9-444a-9615-090062255870
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/wMgr3GDiuAdkPics5gzXx9/Cloud-native-architecture-of-OutSystems-Developer-Cloud?type=design&node-id=3001%3A1809&t=wS2nDUn4cr9EORu8-1
 platform-version: odc
 ---
 

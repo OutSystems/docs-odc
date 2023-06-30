@@ -4,6 +4,7 @@ summary: Input with Icon allows the end user to input data with the help of a hi
 locale: en-us
 guid: 74216051-2083-436f-b118-102696b9c182
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A15522&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

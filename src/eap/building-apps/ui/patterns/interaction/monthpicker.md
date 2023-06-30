@@ -4,6 +4,7 @@ summary: Allow users to input a month of the year.
 locale: en-us
 guid: 7302634b-c545-4b3a-98d4-f41d0a7545a2
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A15863&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
@@ -70,6 +71,7 @@ After following these steps and publishing the app, you can test the pattern in 
 | MinMonth (MonthYear): Optional  |  Set the minimum month that can be selected. Any month before this is disabled and cannot be selected. | 
 | MaxMonth (MonthYear): Optional  | Set the maximum month that can be selected. Any month after this is disabled and cannot be selected.  | 
 | ExtendedClass (Text): Optional  | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
+
 
 
 

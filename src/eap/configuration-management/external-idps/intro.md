@@ -3,6 +3,7 @@ summary: OutSystems Developer Cloud allows users to configure external identity 
 locale: en-us
 guid: 5aa8692d-68bf-41a1-89ec-5e8fc7069e29
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=3001%3A265&t=hXGTDybYCg38Lul5-1
 platform-version: odc
 ---
 

@@ -5,6 +5,7 @@ summary: An Input Parameter allows you to provide data to an element for further
 locale: en-us
 guid: 4007d09b-8038-4fc4-ad49-8093c6a97650
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21492&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

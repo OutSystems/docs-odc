@@ -4,6 +4,7 @@ tags:
 locale: en-us
 guid: b03f90a8-d437-4f61-a08b-dda12e8ebbfe
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A11325&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
@@ -114,3 +115,4 @@ Use the Attachment data structure to pass information about files between the lo
 | FileContent | Binary Data | Content that the platform embeds as the attachment.                                                      |
 | FileName    | Text        | The file name of the attachment to show in the email. For example, `"image.png"`.                        |
 | MimeType    | Text        | Media type identifier. For example, `"image/png"`. Enter to tell the email readers how to handle the content, as this can help prevent errors in some clients. Leave empty to let the email clients handle the detection. |
+

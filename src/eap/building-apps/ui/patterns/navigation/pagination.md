@@ -4,6 +4,7 @@ summary: The Pagination UI Pattern helps users find a specific item on long list
 locale: en-us
 guid: d5aa86c4-874b-4d6d-91c6-c4a18c096f0a
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A17402&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 

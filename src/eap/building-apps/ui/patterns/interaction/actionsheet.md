@@ -4,6 +4,7 @@ summary: Option menu, which slides from the bottom of the screen, triggered by a
 locale: en-us
 guid: 7702c792-34d2-41e7-9bad-e9b88326a21e
 app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A12251&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
 
