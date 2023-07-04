@@ -5,6 +5,7 @@ locale: en-us
 guid: ca7cae65-c466-4d93-bab6-85ac740519c0
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Monitor and troubleshoot apps

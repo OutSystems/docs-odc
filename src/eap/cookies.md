@@ -5,6 +5,7 @@ locale: en-us
 guid: 8683a640-36ce-43e0-8e9d-7c47705ed89f
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Cookies in ODC

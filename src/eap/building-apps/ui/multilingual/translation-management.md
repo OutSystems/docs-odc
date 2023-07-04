@@ -5,6 +5,7 @@ locale: en-us
 guid: 9eb50227-4f61-4cd7-809c-c290804c7e07
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Translation management

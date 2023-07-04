@@ -5,6 +5,7 @@ locale: en-us
 guid: 57491626-e643-4023-9af2-9e25bfee3e4c
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Integrations console errors

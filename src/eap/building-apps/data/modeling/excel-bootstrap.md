@@ -5,6 +5,7 @@ locale: en-us
 guid: e2c6960b-b589-475a-b0e4-4792bba6a6be
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Bootstrap an Entity Using an Excel File

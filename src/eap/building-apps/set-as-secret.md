@@ -4,6 +4,7 @@ locale: en-us
 guid: 3a5f56e7-2515-4e97-914e-b8a503f82c7f
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Set as secret

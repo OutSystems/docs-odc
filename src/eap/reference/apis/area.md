@@ -5,6 +5,7 @@ locale: en-us
 guid: 181b8675-7323-4afd-bab7-b315c237d709
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Area Chart

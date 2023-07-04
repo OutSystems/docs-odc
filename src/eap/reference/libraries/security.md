@@ -5,7 +5,9 @@ locale: en-us
 guid: dc098281-2826-4f5c-91cb-da13827f4d8a
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
+
 # Security
 
 The OutSystems Security library provides actions to perform several security related operations, such as encrypting and decrypting content or using JSON Web Tokens.
@@ -13,6 +15,7 @@ The OutSystems Security library provides actions to perform several security rel
 ## Actions
 
 ### JWT_SetShowPII
+
 Defines whether the personally identifiable information ('PII') is shown on exceptions raised when working with tokens.
 
 _Inputs_
@@ -28,6 +31,7 @@ PreviousShowPIIValue; data type Boolean
 The previously defined value. Useful to restore previous state.
 
 ### JWT_CreateToken
+
 Creates and signs a JWT token.
 
 _Inputs_
@@ -47,6 +51,7 @@ EncodedToken; data type Text
 The encoded and signed JWT token.
 
 ### JWT_ReadToken
+
 Extracts claims as well as validates a JWT token.
 
 _Inputs_
@@ -70,6 +75,7 @@ TokenPayload; data type TokenPayload Record
 The payload of the token, including the custom claims.
 
 ### AES_NewKey
+
 Generates a new random AES Key.
 
 _Inputs_
@@ -85,6 +91,7 @@ Key; data type Binary Data
  A newly generated cryptographically secure random key.
 
 ### AES_Encrypt
+
 Provides authenticated encryption of the text using the provided key (this text will be UTF-8 encoded prior to encryption). Encrypts using AES in Cipher-Block Chaining mode with random initialization vector (IV) and PKCS7 padding. Authenticates by Encrypt-then-MAC with HMAC using the same key, performed over both IV and encrypted message. IV is prepended to the encrypted message.
 
 _Inputs_
@@ -104,6 +111,7 @@ Ciphertext; data type Binary Data
 The plaintext encrypted with the provided key.
 
 ### AES_Decrypt
+
 Decrypts the text using the provided key. Decrypts using AES in Cipher-Block Chaining mode with initialization vector extracted for the start of the ciphertext and PKCS7 padding. Validates the authenticity of the encryption with HMAC using the same key.
 
 _Inputs_
@@ -123,7 +131,8 @@ Plaintext; data type Text
 The decrypted ciphertext. This is UTF-8 decoded after decryption.
 
 ### CryptoRandomInt
-Generates a random number using a cryptographic random number generator, within a range defined by a minimum value (‘MinVal') and maximum value ('MaxVal').
+
+Generates a random number using a cryptographic random number generator, within a range defined by a minimum value ('MinVal') and maximum value ('MaxVal').
 
 _Inputs_
 
@@ -142,6 +151,7 @@ RandomNumber; data type Integer
 The randomly generated number from the specified range.
 
 ### GenerateSecurePassword
+
 Generates a secure password using a cryptographic random number generator. 
 
 _Inputs_
@@ -175,6 +185,7 @@ Password; data type Text
 The randomly generated password.
 
 ### ComputeTextHash
+
 Computes the hash of the given data, in this (this text will be UTF-8 encoded prior to hashing).
 
 _Inputs_
@@ -194,6 +205,7 @@ Hash; data type Binary Data
 The hash computed from the given data.
 
 ### ComputeBinaryHash
+
 Computes the hash of the given binary data.
 
 _Inputs_
@@ -213,6 +225,7 @@ Hash; data type Binary Data
 The hash computed from the given data.
 
 ### ComputeMAC
+
 Computes the MAC of the given data (this data will be UTF-8 encoded prior).
 
 _Inputs_
@@ -236,6 +249,7 @@ Mac ; data type Binary Data
 The MAC computed from the given data.
 
 ### RSA_NewKey
+
 Generates a new RSA key.
 
 _Inputs_
@@ -251,6 +265,7 @@ Key; data type Text
 A newly generated RSA key represented in XML, containing both the public and the private elements of the key.
 
 ### RSA_GetPublicKey
+
 Extracts the public key from an RSA key represented in XML.
 
 _Inputs_
@@ -266,6 +281,7 @@ PublicKey; data type Text
 The XML representation of the RSA key only containing the public elements.
 
 ### RSA_KeyFromPEM
+
 Reads an RSA key from a PEM file.
 
 _Inputs_
@@ -281,6 +297,7 @@ Key; data type Text
 The XML representation of the RSA key read from the PEM file, containing both the public and the private elements of the key.
 
 ### RSA_Decrypt
+
 Decrypts a ciphertext encrypted with RSA.
 
 _Inputs_
@@ -304,6 +321,7 @@ Plaintext; data type Text
 The decrypted cyphertext. This is UTF-8 decoded after decryption.
 
 ### RSA_Encrypt
+
 Encrypts a text with RSA (this text will be UTF-8 encoded prior to encryption).
 
 _Inputs_
@@ -327,6 +345,7 @@ Ciphertext; data type Binary Data
 The encrypted plaintext.
 
 ### RSA_Sign
+
 Signs textual data with an RSA key to provide guarantees the text was produced by the owner of that key (this text will be UTF-8 encoded prior to encryption).
 
 _Inputs_
@@ -354,6 +373,7 @@ Signature; data type Binary Data
 The resulting signature.
 
 ### RSA_VerifySignature
+
 Verifies the signature of a piece of data against the corresponding RSA public key.
 
 _Inputs_
@@ -387,6 +407,7 @@ True if the signature is verified by the given key.
 ## Structures
 
 ### CustomClaim
+
 Represents the name/value pair of a custom claim.
 
 _Attributes_
@@ -400,6 +421,7 @@ Value: mandatory ; data type Text Length: 500000
 Value of the claim.
 
 ### TokenPayload
+
 Represents a JSON Web Token (JWT) payload.
 
 _Attributes_
@@ -437,6 +459,7 @@ CustomClaims: mandatory ; data type CustomClaim Record List
 The remaining claims present in the token.
 
 ### ValidationParameters
+
 Configuration parameters to be used when validating a JSON Web Token (JWT).
 
 _Attributes_

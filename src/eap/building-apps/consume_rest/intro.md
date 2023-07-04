@@ -5,6 +5,7 @@ locale: en-us
 guid: b7e2daa5-b34c-4907-885b-56574bf14295
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Consume REST APIs

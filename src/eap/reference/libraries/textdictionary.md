@@ -5,7 +5,9 @@ locale: en-us
 guid: 7623020f-4c3f-4b6e-ad44-257d4b13fc1b
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
+
 # TextDictionary
 
 ## Actions

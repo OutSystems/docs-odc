@@ -5,7 +5,9 @@ locale: en-us
 guid: 7afd2224-135c-4325-af02-20ee06290373
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
+
 # Text
 
 ## Chr

@@ -1,5 +1,4 @@
 ---
-
 summary: Learn about managing and inviting users to your organization in OutSystems Developer Cloud (ODC).
 tags: user-management; authentication; lifecycle-management; custom roles
 locale: en-us

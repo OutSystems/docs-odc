@@ -5,6 +5,7 @@ locale: en-us
 guid: ab45e99f-581c-4e59-a13b-0a23931a7e85
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Operators

@@ -5,6 +5,7 @@ locale: en-us
 guid: 7d5b86f8-dcc0-4ea7-a5f8-3f6d1e2c56c5
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Line Chart

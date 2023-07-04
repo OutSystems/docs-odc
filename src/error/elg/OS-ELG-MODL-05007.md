@@ -5,6 +5,7 @@ guid: 8ef3fd68-a777-4e16-94c4-025446c7d4e1
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # OS-ELG-MODL-05007

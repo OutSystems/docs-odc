@@ -5,6 +5,7 @@ locale: en-us
 guid: 0b784bc9-f546-41e5-9c30-832253c5bc6e
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Radar Chart

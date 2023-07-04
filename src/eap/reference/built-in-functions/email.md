@@ -5,7 +5,9 @@ locale: en-us
 guid: 159cfa54-f51b-43cf-ae8b-e736e4a9f2e2
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
+
 # Email
 
 ## EmailAddressCreate

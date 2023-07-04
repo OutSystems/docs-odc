@@ -5,6 +5,7 @@ locale: en-us
 guid: f540d163-f3b7-41c7-a898-b9f07d3f3b89
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Service actions

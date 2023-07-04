@@ -5,6 +5,7 @@ locale: en-us
 guid: cb10aa0f-4e5b-4a29-92ce-03fbc813bc14
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Onboarding for OutSystems developers

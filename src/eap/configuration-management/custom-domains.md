@@ -5,6 +5,7 @@ locale: en-us
 guid: da18534d-84c8-4a52-bca8-85ebb3b1e082
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Configure custom domains for apps

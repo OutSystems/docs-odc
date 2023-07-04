@@ -5,6 +5,7 @@ locale: en-us
 guid: 7e20ed99-3098-4d7c-b7fd-1a5794f8377d
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Reuse elements across apps

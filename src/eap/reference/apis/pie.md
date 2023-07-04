@@ -5,6 +5,7 @@ locale: en-us
 guid: fda78656-7247-472a-8d79-c79accc91556
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Pie Chart

@@ -5,6 +5,7 @@ locale: en-us
 guid: 651e9382-9db0-4150-ad11-c160aa9c9835
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Data types and conversions

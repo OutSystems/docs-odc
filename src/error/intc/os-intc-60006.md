@@ -5,6 +5,7 @@ guid: 7385df39-67fc-4e4c-9eb7-ad671c4afade
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # OS-INTC-60006

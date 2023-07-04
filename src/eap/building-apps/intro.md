@@ -5,6 +5,7 @@ locale: en-us
 guid: 8ed3a740-284e-4650-9502-29f3a53bfd29
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Building apps

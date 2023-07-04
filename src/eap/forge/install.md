@@ -5,6 +5,7 @@ locale: en-us
 guid: 515576a8-5acd-449b-af7c-d2c0670056dd
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Install or update a Forge asset

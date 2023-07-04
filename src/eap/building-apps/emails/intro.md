@@ -5,6 +5,7 @@ locale: en-us
 guid: F826D84E-BF79-4287-9322-1E00E198A06E
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Emails

@@ -5,7 +5,9 @@ locale: en-us
 guid: f28abaec-a3f6-406b-9282-94f30588a1cd
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
+
 # Organization
 
 ## GetCurrentLocale

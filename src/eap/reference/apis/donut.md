@@ -5,6 +5,7 @@ locale: en-us
 guid: 7dd162ba-bb5a-4c61-902d-d8738c122a54
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Donut Chart

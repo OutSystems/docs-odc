@@ -5,6 +5,7 @@ locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # OutSystems system requirements for ODC

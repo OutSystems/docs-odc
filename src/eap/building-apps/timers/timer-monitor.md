@@ -5,6 +5,7 @@ locale: en-us
 guid: 95C30236-ADCA-464E-AD86-A3437E9F3FEF
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Monitor Timers

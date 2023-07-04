@@ -5,6 +5,7 @@ locale: en-us
 guid: 8651448f-4ebe-47c6-8d2e-676f33a830b0
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Column Chart

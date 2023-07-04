@@ -5,6 +5,7 @@ locale: en-us
 guid: 55ef1d73-dac8-48e6-8b15-dc6990779660
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Mobile plugins

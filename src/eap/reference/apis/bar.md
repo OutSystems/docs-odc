@@ -5,6 +5,7 @@ locale: en-us
 guid: ee86596b-1473-4fe8-8da5-1e65352a0997
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Bar Chart

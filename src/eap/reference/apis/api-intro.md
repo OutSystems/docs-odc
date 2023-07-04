@@ -4,6 +4,7 @@ locale: en-us
 guid: be9a0924-348b-45f2-bc74-96c816765431
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # OutSystems APIs

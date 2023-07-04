@@ -5,7 +5,9 @@ locale: en-us
 guid: e6b6ad2d-c6c0-4a5e-8034-1b36411c04ef
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
+
 # Text
 
 OutSystems Text library provides functionality to manipulate texts as, for example: search and replace using a regular expression, split, join, or format DateTimes.

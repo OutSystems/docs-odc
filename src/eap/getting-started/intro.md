@@ -5,6 +5,7 @@ locale: en-us
 guid: 6B0090D9-8EE9-479F-9251-CCB490D2EBB6
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Getting started with ODC

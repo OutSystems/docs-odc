@@ -5,6 +5,7 @@ locale: en-us
 guid: b5070497-8f92-4f84-ad4e-4465de6dde0e
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Charts API v2

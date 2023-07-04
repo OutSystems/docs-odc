@@ -5,6 +5,7 @@ guid: 4f7706c9-3888-4590-b06b-d5824cfc6c83
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # OS-FRGE-AST-50001

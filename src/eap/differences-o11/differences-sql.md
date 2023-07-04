@@ -5,6 +5,7 @@ locale: en-us
 guid: db4685f5-477f-436a-b4cc-92af8e347c02
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # SQL queries compared to OutSystems 11

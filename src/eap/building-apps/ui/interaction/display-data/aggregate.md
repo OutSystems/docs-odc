@@ -1,7 +1,6 @@
 ---
 summary: 
 tags:
-kinds: ServiceStudio.Model.Nodes+DataSet+Kind, ServiceStudio.Model.NRNodes+WebScreenDataSet+Kind
 helpids: 17203
 locale: en-us
 guid: 0d8335b7-df99-40f3-8a9d-df0e5bd5ca18

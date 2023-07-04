@@ -5,6 +5,7 @@ locale: en-us
 guid: 2235df75-4c8d-4f96-bfd0-199ce78b96f9
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # External Libraries SDK errors

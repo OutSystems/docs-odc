@@ -5,6 +5,7 @@ locale: en-us
 guid: A15EFAFE-CE22-4974-B90E-CB0E18D263B1
 app_type: mobile apps, reactive web apps
 platform-version: odc
+figma:
 ---
 
 # Customize UI styles
