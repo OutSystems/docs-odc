@@ -12,7 +12,7 @@ platform-version: odc
 
 The Camera plugin allows users to take pictures and capture videos with their mobile devices. This plugin works with both native mobile apps and progressive web apps (PWAs).
 
-For more information about how to install and reference a plugin in your app, see [Adding plugins](../intro.md#adding-plugins).
+For more information about how to install and reference a plugin in your app, see [Mobile plugins](../intro.md).
 
 ## Demo app
 
@@ -36,27 +36,27 @@ To allow users take a picture:
 
 ### Creating a user interface
 
-1. Create a variable of **Binary Data** data type.
+1. Create a variable with the data type **MediaResult**. 
     This variables holds the image data.
 1. Use a Button or another widget to run the action that takes the picture.
-1. Use an **Image** widget to show the image after using the camera, by setting **Type** to **Binary Data** and **Image Content** to the variable you created.
+1. Use an **Image** widget to show the image thumbnail after using the camera, by setting Type to Binary Data and Image Content to the content of **MediaResult.Thumbnail**.
 
-    ![UI setup for taking pictures](images/camera-ui-setup-ss.png)
+    ![UI setup for taking pictures](images/camera-interface-setup-ss.png)
 
 ### Creating logic to take a picture
 
 <div class="info" markdown="1">
 
-You can find all of the available actions for the Camera plugin by navigating to the **Logic** tab of ODC Studio, and going to **Client Action**s > **CameraPlugin**.
+You can find all of the available actions for the Camera plugin by navigating to the **Logic** tab of ODC Studio, and going to **Client Actions** > **CameraPlugin**.
 
 </div>
 
 1. To prevent errors, it's best practice to first check if the plugin is available with the action **CheckCameraPlugin**. If the plugin isn't available to the app, display an error to the user. 
-1. Otherwise, allow users take a picture by opening the camera with the **TakePicture**. In the **TakePicture** action, you can set the parameters for quality, width, back of front camera, and more.
+1. Otherwise, allow users take a picture by opening the camera with the **TakePicture** action. In the **TakePicture** action, you can set the parameters for quality, width, back of front camera, and more.
 1. Check if taking pictures on the device works by verifying that he value of **TakePicture.Success** is **True**. 
 1. If yes, handle the picture data in **TakePicture.ImageCaptured** by assigning it to a variable of the **Binary Data** data type.
 
-    ![Take picture logic flow](images/camera-flow-take-picture-ss.png)
+    ![Take picture logic flow](images/camera-flow-take-pic-ss.png)
 
 ## Recording a video 
 
@@ -87,7 +87,7 @@ Video files stored in the cache are deleted when the app closes. When setting th
 ### Creating logic to record a video
 
 1. To prevent errors, it's best practice to  check if the **CheckCameraPlugin** action is available for the plugin. If the plugin isn't available for the app, display an error to the user.
-1. Otherwise, allow users to capture a video by opening the camera with **RecordVideo**. In the **RecordVideo** action, you can set the parameters for saving the recorded media to the device’s gallery.
+1. Otherwise, allow users to capture a video by opening the camera with **RecordVideo** action. In the **RecordVideo** action, you can set the parameters for saving the recorded media to the device’s gallery.
 1. Check if recording videos on the device works by verifying that the value of **RecordVideo.Success** is **True**.
 1. If yes, handle the picture data in **RecordVideo.MediaResult** by assigning it to a variable of the **MediaResult** data type.
 
@@ -164,20 +164,17 @@ The following is a reference list of actions you can use for the Camera plugin. 
 
 |Action|Description|Available in PWA|
 |-|-|-|
-|**CheckCameraPlugin**|Checks if the plugin is available in the app.|Yes*|
-|**TakePicture**|Opens the camera on the user's device.|Yes*|
-|**RecordVideo*****|Opens the camera on the user's device.|No|
-|**ChooseFromGallery**|Opens the gallery on the user's device.|No**|
+|**CheckCameraPlugin**|Checks if the plugin is available in the app.|Yes|
+|**TakePicture**|Opens the camera on the user's device.|Yes|
+|**RecordVideo**|Opens the camera on the user's device.|No**|
+|**ChooseFromGallery**|Opens the gallery on the user's device.|No*|
 |**EditPicture**|Opens an edit interface to edit the picture.|Yes|
 |**PlayVideo**|Opens a native video player to play local files.|No|
 |**ChooseGalleryPicture**|Opens the gallery on the user's device.|Yes|
 
-(*) Camera plugin works in progressive web apps (PWAs) from version 6.0.0 and later, in **mobile devices only**.
-For more information about the supported devices and browser versions, see [OutSystems system requirements](https://success.outsystems.com/Documentation/11/Setting_Up_OutSystems/OutSystems_system_requirements).
+(*) Under development.
 
-(**) Under development.
-
-(***) When **SaveToGallery** is set to True, the value of the returned URI points to the gallery file on Android. On iOS, it points to a temporary file, stored in the cache.
+(**) When **SaveToGallery** is set to True, the value of the returned URI points to the gallery file on Android. On iOS, it points to a temporary file, stored in the cache.
 
 ## Picture options
 
