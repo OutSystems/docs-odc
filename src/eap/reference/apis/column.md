@@ -42,4 +42,4 @@ This example shows how to create a simple Column Chart with data labels.
 
 After following these steps, you can publish your module:
 
-![Example Area Chart](images/chartcolumn-result.png)
+![Example Column Chart](images/chartcolumn-result.png)

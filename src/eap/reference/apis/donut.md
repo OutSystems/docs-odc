@@ -14,7 +14,7 @@ This example shows how you can create a simple Donut Chart.
 
 1. From the Toolbox, drag the **Donut Chart** widget to the Screen.
 
-    ![Drag the Line Chart widget to the screen](images/chartdonut-drag-ss.png)
+    ![Drag the Donut Chart widget to the screen](images/chartdonut-drag-ss.png)
 
 1. On the **Properties** tab, click **[+]** to expand the **DataPointList** property.
 
