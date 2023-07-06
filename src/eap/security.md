@@ -212,3 +212,10 @@ For more information see [Monitor and troubleshoot apps](monitor-apps.md).
 OutSystems created a public vulnerability policy to provide customers with guidance and information in the event of a vulnerability reported in an OutSystems product.
 
 For more information see [OutSystems public vulnerability policy](https://success.outsystems.com/support/security/vulnerabilities/).
+
+---
+<div class="info" markdown="1">
+
+Some features mentioned in this article may require add-ons to the ODC Platform edition. Please contact the OutSystems field team for more information.
+
+</div>

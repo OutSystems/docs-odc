@@ -17,7 +17,7 @@ OutSystems Developer Cloud (ODC) is cloud-native. This means that the infrastruc
 In addition to access to **ODC Studio** and [**ODC Portal**](../differences-o11/intro.md#ODC-portal), each OutSystems Developer Cloud customer has:
 
 * Access to multi-tenant development **Platform** services.
-* A standard Runtime setup of three isolated and independent stages: **Development**, **Test**, and **Production**.
+* A Runtime setup of isolated and independent stages, for example: **Development**, **Test**, and **Production**.
 * A set of isolated, encrypted, and scalable databases and data stores for the Platform services data. Secret data such as API keys are stored in a secret manager.
 * An isolated, encrypted, and scalable relational database for each Runtime stage. 
 * A built-in **Identity Service** to keep [user identities secure](identity.md).
@@ -110,16 +110,16 @@ Each Platform service makes calls to the databases and data stores.
 
 The following table describes the Platform databases and data stores.
 
-| Data Stored | Service Used | Service Description | Availability |
-| - | - | - | - |
-| App revisions and dependency information. | Amazon Aurora | A PostgreSQL-compatible relational database built for the cloud. | High availability (HA) by default (Aurora Serverless). |
-| Current and historic app revisions, in the form of OML projects, stored as blob data. | S3 | An object storage service offering industry-leading scalability, data availability, security, and performance. | HA by default. |
-| Configuration and metadata from the Platform Build Service. | DynamoDB | A fully managed, serverless, key-value NoSQL database designed to run high-performance apps at any scale. | HA by default. |
-| Current and historic app container images. | Elastic Container Registry (ECR) | A fully-managed Docker container registry that makes it easy to store, share, and deploy container images. | HA by default. |
+| Data Stored | Service Used | Service Description |
+| - | - | - |
+| App revisions and dependency information. | Amazon Aurora | A PostgreSQL-compatible relational database built for the cloud. |
+| Current and historic app revisions, in the form of OML projects, stored as blob data. | S3 | An object storage service offering industry-leading scalability, data availability, security, and performance. |
+| Configuration and metadata from the Platform Build Service. | DynamoDB | A fully managed, serverless, key-value NoSQL database designed to run high-performance apps at any scale. |
+| Current and historic app container images. | Elastic Container Registry (ECR) | A fully-managed Docker container registry that makes it easy to store, share, and deploy container images. |
 
 #### Runtime data
 
-Each Runtime stage has an isolated Amazon Aurora Serverless database. The database for the Production stage is high-availability by default. The following diagram shows this.
+Each Runtime stage has an isolated Amazon Aurora Serverless database. The following diagram shows this.
 
 ![Runtime Production stage database](images/architecture-runtime-data-diag.png "Runtime Production stage database") 
 
@@ -140,3 +140,10 @@ Logs and metrics are collected from each of the app containers running in each R
 Automatic monitoring by EKS replaces unhealthy app containers running in each Runtime stage cluster with a healthy replica. An app container is unhealthy if it's continuously unresponsive.
 
 See [Security in OutSystems Developer Cloud](../security.md#monitoring-and-support) for more information about monitoring and support in ODC.
+
+---
+<div class="info" markdown="1">
+
+Some features mentioned in this article may require add-ons to the ODC Platform edition. Please contact the OutSystems field team for more information.
+
+</div>
