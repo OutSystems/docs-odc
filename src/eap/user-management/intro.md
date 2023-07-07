@@ -156,7 +156,7 @@ New users must set up their own passwords. The password must be at least 12 char
 
 ### Manage user passwords
 
-Only users can manage their password. Users can change their password using the **ODC Portal** > **User dropdown** > **Change password**. After five failed sign in or password change attempts, ODC temporarily locks a user out. To reset the lockout, a user must refrain from signing in or changing the password for 15 minutes.
+Only users can manage their passwords. Users can change their password using the **ODC Portal** > **User dropdown** > **Change password**. 
 
 Users with an organization role can also recover their forgotten password from the Portal login page by clicking **Forgot password**.
 
@@ -167,3 +167,5 @@ Admins don't have permission to change or recover other users' passwords.
 </div>
 
 Use pre-built user screens in your app to enable end-users to change and recover their password. See [Custom authentication flows](../building-apps/ui/custom-auth.md) for more information. If the user of an app has an organization role, currently they must recover their password using the Portal.
+
+ODC temporarily locks out a user after five consecutive failed sign-in or password change attempts. The lockout duration increases with each additional failed attempt, reaching a maximum of approximately 15 minutes. To reset the lockout and return to the initial state, the user must avoid any sign-in attempts for a 15-minute following the lockout.
