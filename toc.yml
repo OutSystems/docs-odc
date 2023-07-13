@@ -2,10 +2,13 @@
 - href: eap/getting-started/intro.md
 - topics:
   - href: eap/getting-started/system-requirements.md
+  - topics:
+    - href: eap/getting-started/configure-http-proxy.md
   - href: eap/getting-started/overview-portal-studio.md
   - href: eap/getting-started/types-of-apps.md
   - href: eap/getting-started/hello-world.md
   - href: eap/getting-started/sample-app.md
+
 
 # Onboarding for OutSystems developers
 - href: eap/differences-o11/intro.md
