@@ -15,7 +15,7 @@ Extension | Description
 [markdown.extensions.extra](https://python-markdown.github.io/extensions/extra/) | Meta-extension adding support to a series of smaller extensions (check documentation). Currently supports the definition lists syntax.
 [markdown.extensions.meta](https://python-markdown.github.io/extensions/meta_data/) | Read metadata from each Markdown front-matter section (discarded in HTML output). Can be used for specifying custom page titles, for example (not used by the default template).
 [markdown.extensions.toc](https://python-markdown.github.io/extensions/toc/) | Only used to get automatic bookmarks in headings.
-[markdown.blankline](https://github.com/ribalba/markdown.blankline) | Adds Markdown syntax so it's possible to add a blank line (by writing `%%`). Currently used inside table cells.
+[markdown.blankline](https://github.com/ribalba/markdown.blankline) | Adds Markdown syntax so it is possible to add a blank line (by writing `%%`). Currently used inside table cells.
 [markdown-include](https://github.com/cmacmackin/markdown-include) | Include other Markdown files in a given file. [Currently not used]
 
 ## Editor settings
@@ -80,7 +80,7 @@ Visual Studio 2017 supports EditorConfig out of the box.
 
 Check the [markdown_npp](https://github.com/Edditoria/markdown_npp) language definition. There's no preview available.
 
-*Note:* it has a few syntax highlighting limitations when compared with more powerful implementations.
+*Note:* it has a few syntax highlighting limitations, when compared with more powerful implementations.
 
 #### Settings
 
@@ -92,31 +92,4 @@ If you use Vim, install the [vim-markdown](https://github.com/plasticboy/vim-mar
 
 *Note:* Mentioning Vim here just for completeness. :)
 
-## Template to create a new document
 
-When you create a new document in Visual Studio code, the front matter (located at the top of the document) must be complete. The fields you enter provide information used during the publishing process.
-
-Copy the information including the dashes and all content between the dashes. Then paste it into the top of a blank document.
-
-    ----
-
-    summary:  [enter information about document]
-    tags: [area of the product to which this content belongs]
-    locale: en-us
-    guid: [enter a new guid, press CTRL+Shift+P and press enter]
-    app_type: [enter app type such as Mobile]
-    figma:[enter Figma links]
-    platform-version: [enter either the platform such as ODC]
-    ---
-
-The following sample shows the front matter with completed fields.
-
-    ----
-    summary: Learn about managing and inviting users to your organization in OutSystems Developer Cloud (ODC).
-    tags: user-management; authentication; lifecycle-management; custom roles
-    locale: en-us
-    guid: 9e0fb9b7-d2b0-419f-a5d8-5b5ed730da5e
-    app_type: mobile apps, reactive web apps
-    figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=design&node-id=2449%3A32709&t=qXDLlqyCzAMXQgr0-1
-    platform-version: odc
-    ---
