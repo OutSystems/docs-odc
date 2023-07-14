@@ -14,7 +14,7 @@ This article explains how to configure a HTTP proxy server on your local compute
 
 To configure a HTTP proxy server:
 1. [Configure the proxy server in the operating system](#configure-the-proxy-server-in-the-operating-system)
-1. [Configure the proxy authentication in Service Studio](#how-to-configure-a-http-proxy-server-in-service-studio)
+1. [Configure the proxy authentication in Service Studio](#configure-the-proxy-authentication-in-service-studio)
 
 ## Configure the proxy server in the operating system
 
