@@ -25,6 +25,12 @@ Use the most recent version of any of the following browsers:
 
 Before you set up ODC Studio, make sure your computer meets the following requirements.
 
+<div class="info" markdown="1">
+
+Check [here](configure-http-proxy.md) the necessary configurations if you're working on a network where communications to the Internet need to go through an HTTP proxy.
+
+</div>
+
 ### Minimum recommended hardware requirements
 
 These are the recommended requirements, but keep in mind that many factors (such as workload) can affect performance. 

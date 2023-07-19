@@ -1,5 +1,5 @@
 ---
-summary: How to configure a HTTP proxy server on your local computer so you can deploy your Service Studio apps in an OutSystems environment.
+summary: Learn how to configure an HTTP proxy server on your local computer to be used by ODC Studio.
 tags: 
 locale: en-us
 guid: 00ad2577-20fe-41d3-8d0f-c6626c50b587
@@ -8,17 +8,17 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 ---
 
-# How to configure a HTTP proxy server in Service Studio
+# How to configure a HTTP proxy server in ODC Studio
 
-This article explains how to configure a HTTP proxy server on your local computer so you can deploy your Service Studio apps in an OutSystems environment.
+This article explains how to configure a HTTP proxy server on your local computer to be used by ODC Studio. This applies when developers are working on a network where communications to the Internet need to go through an HTTP proxy.
 
 To configure a HTTP proxy server:
-1. [Configure the proxy server in the operating system](#configure-the-proxy-server-in-the-operating-system)
-1. [Configure the proxy authentication in Service Studio](#configure-the-proxy-authentication-in-service-studio)
+1. [Configure the proxy server in the operating system](#configure-proxy-OS)
+1. [Configure the proxy authentication in ODC Studio](#configure-proxy-odc-studio)
 
-## Configure the proxy server in the operating system
+## Configure the proxy server in the operating system {#configure-proxy-OS}
 
-Service Studio relies on the proxy servers (HTTP and HTTPS) that are defined in the operating system (Windows or MacOS) when connecting to an OutSystems environment. This means the configuration steps depend on the operating system.
+ODC Studio relies on the proxy servers (HTTP and HTTPS) that are defined in the operating system (Windows or MacOS) when connecting to an OutSystems Developer Cloud. This means the configuration steps depend on the operating system.
 
 ### Windows setup
 
@@ -64,13 +64,13 @@ Service Studio relies on the proxy servers (HTTP and HTTPS) that are defined in 
 
 1. Click **Ok**.
 
-## Configure the proxy authentication in Service Studio
+## Configure the proxy authentication in ODC Studio {#configure-proxy-odc-studio}
 
-Some proxy servers require user authentication. In this case, you must provide the proxy credentials in the Service Studio Preferences dialog.
+Some proxy servers require user authentication. In this case, you must provide the proxy credentials in the ODC Studio Preferences dialog.
 
-1. Open Service Studio.
+1. Open ODC Studio.
 
-1. Open the **Preferences** dialog.
+1. In the hamburger menu, open **Edit** > **Preferences...**.
 
 1. Enable the **Use proxy authentication** option.
 
