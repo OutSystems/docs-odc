@@ -10,7 +10,7 @@ figma:
 
 # OutSystems system requirements for ODC
 
-The following provides guidance as to the versions of tools and software that OutSystems recommends when using OutSystems Developer Cloud (ODC) Portal and ODC Studio.
+This article provides guidance to the versions of tools and software that OutSystems recommends when using OutSystems Developer Cloud (ODC) Portal and ODC Studio.
 
 ## ODC Portal
 
@@ -33,7 +33,7 @@ Check [here](configure-http-proxy.md) the necessary configurations if you're wor
 
 ### Minimum recommended hardware requirements
 
-These are the recommended requirements, but keep in mind that many factors (such as workload) can affect performance. 
+These are the recommended requirements, but keep in mind that many factors (such as workload) can affect performance.
 
 * 1.8 GHz dual-core processor or better
 * 2 GB of RAM (4 GB recommended)
@@ -43,13 +43,7 @@ For Apple devices using the Apple Silicon M1 processor, ODC Studio runs best und
 
 ### Operating systems
 
-These are the supported Operating Systems.
-
-<div class="info" markdown="1">
-
-OutSystems only supports versions up to 6 months after the end of life defined by the manufacturer. 
-
-</div>
+OutSystems supports the following Operating Systems. This list is subject to change. OutSystems supports Operating Systems for six months after the manufacturer determines an end-of-life date. For example, if your Operating System reaches its end-of-life on May 1, then OutSystems supports your operating system until November 1.
 
 * macOS:
     * macOS Big Sur
@@ -66,17 +60,17 @@ To perform client-side debugging in ODC Studio using a desktop browser, use the 
 
 ## Software requirements for app users
 
-The following sections specify the requirements that users of the apps developed with ODC need to meet.
+The following sections specify the requirements that users of the apps developed with ODC must meet.
 
 <div class="info" markdown="1">
 
-**End User Requirements**:  OutSystems browser support continues for six months after the OutSystems announces a date on which support ends. This support is for all end users running OutSystems on that particular browser.
+**End User Requirements**:  OutSystems browser support continues for 6 months after OutSystems announces a date on which support ends. This support is for all end-users running OutSystems on that particular browser.
 
 </div>
 
 ### Web apps
 
-It's recommended that you use the most current version. 
+It's recommended that you use the most current version.
 
 * Edge
 * Firefox
@@ -85,8 +79,8 @@ It's recommended that you use the most current version.
 
 ### Progressive Web Apps
 
-* The default browser for the most current stable version of Android 
-* The default browser for the most current stable version of iOS 
+* The default browser for the most current stable version of Android.
+* The default browser for the most current stable version of iOS.
 
 ### Native mobile apps
 
@@ -102,7 +96,7 @@ The maximum size of an upload file request is 28.6 MB.
 
 ### Server request timeout
 
-The maximum value of the **Server Request Timeout** property is 60 seconds for queries or actions initiated on the client side. The default value of the property is 10 seconds. You can change the default at the app level in the app settings. In ODC Studio, from the **Data** tab, click the top-level element (app name) and the property is listed in the top pane.
+The maximum value of the **Server Request Timeout** property is 60 seconds for queries or actions initiated on the client side. The default value of the property is 10 seconds. You can change the default at the app level in the app settings. In ODC Studio, from the **Data** tab, click the top-level element (app name) and the property shown in the top pane.
 
 For queries or actions inside timer logic, the maximum timeout value is 60 minutes.
 
