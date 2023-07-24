@@ -86,7 +86,7 @@ In the example of the Build Service in the [previous section](#platform), the co
 
 The Build Service packages each container image into a separate container, making the infrastructure resilient to individual resource-intensive app(s) that degrade the performance of other apps.
 
-The auto scale controller replicates app containers running in each cluster of each of the Runtime stages across multiple availability zones to ensure **high availability (HA)**. An availability zone is a distinct location in the cloud that's engineered to be isolated from failure.
+The auto scale controller replicates app containers running in each Runtime (Production) cluster across multiple availability zones to ensure **high availability (HA)**. An availability zone is a distinct location in the cloud that's engineered to be isolated from failure.
 
 ##### Auto scaling
 
