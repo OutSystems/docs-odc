@@ -8,7 +8,7 @@ figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-managemen
 platform-version: odc
 ---
 
-# Configure IP filter 
+# Configure IP filters 
 
 By default, all apps are publicly available. IP Filters allow you to create rules to restrict the traffic coming into your apps at the network level based on the IP address of the request. For example, you can restrict access to apps in development so that only your developers can access them.
 
