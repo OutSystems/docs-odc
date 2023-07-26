@@ -398,6 +398,7 @@
   # External database
   - href: eap/configuration-management/external-databases/intro.md
   - href: eap/configuration-management/sso.md
+  - href: eap/configuration-management/filter-ip.md
 
 - href: eap/user-management/intro.md
 - href: eap/user-management/roles.md
