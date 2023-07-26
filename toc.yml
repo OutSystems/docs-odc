@@ -400,6 +400,8 @@
   - href: eap/configuration-management/sso.md
 
 - href: eap/user-management/intro.md
+- href: eap/user-management/roles.md
+- href: eap/user-management/passwords.md
 - href: eap/monitor-apps.md
 - topics:
     - href: eap/app-health.md
