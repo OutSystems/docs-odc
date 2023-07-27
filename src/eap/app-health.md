@@ -37,6 +37,7 @@ You can drill further down into an element and view the historical trends of the
 
 To help you understand how your apps are performing, the App health dashboard summarizes the following metrics.
 
+
 ### Health score {#health-score}
 
 An app's health score is expressed as a numerical score from 1 to 100 and is based on the app's response time and errors during the selected period of time (maximum 30 days, minimum 5 minutes). There are 3 health score categories:
