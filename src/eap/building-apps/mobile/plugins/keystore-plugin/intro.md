@@ -67,7 +67,7 @@ Check if removing a key works by verifying the value of **RemoveKey.Success** (8
 
 ### Choose authentication to access your secrets
 
-You can optically set additional authentication to access your key-value pairs by setting the value for **KeyAuthentication** in the **SetValue** client action.
+You can optionally set additional authentication to access your key-value pairs by setting the value for **KeyAuthentication** in the **SetValue** client action.
 
 By default, you don't need authentication to access the pair (**False**). If **True**, access to the pair requires an additional user authentication method. This authentication method depends on the user's device lock screen settings.
 
