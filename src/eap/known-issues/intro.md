@@ -36,7 +36,6 @@ OutSystems recommends Chrome browser for previewing the mobile app in the ODC Po
 
 ## Features currently not supported during external database integration
 
-* The `CreateOrUpdateSome` (Bulk Inserts/Updates) entity action isn't supported.
 * The `DiffMinutes`` and `DiffSeconds`` built-in functions for Oracle have a limitation regarding the date interval. The allowed max intervals between dates are:
     * Seconds: 31 years, 9 months, 9 days, 1 hour, 46 minutes, and 39 seconds
     * Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds
