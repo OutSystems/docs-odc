@@ -363,6 +363,10 @@
     - href: eap/building-apps/set-as-secret.md
     # Deleting apps
     - href: eap/building-apps/deleting-apps/intro.md
+    # Strong and weak dependencies
+    - href: eap/building-apps/reuse/intro.md
+    - topics:
+      - href: eap/building-apps/reuse/handle-changes.md
 
 # Troubleshooting apps
 - href: eap/troubleshoot/debug/intro.md
