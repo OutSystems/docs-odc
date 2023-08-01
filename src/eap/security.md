@@ -169,7 +169,7 @@ File Integrity Monitoring performs automated scans and alerts the [Computer Secu
 
 ### High-availability in-region
 
-Each Runtime stage has an isolated Amazon Aurora Serverless database. The database for the Production stage is high-availability by default.
+Each Runtime stage has an isolated Amazon Aurora Serverless database. The database for the Production stage is high-availability.
 
 For more information see [Cloud-native architecture of OutSystems Developer Cloud](architecture/intro.md#runtime-data).
 

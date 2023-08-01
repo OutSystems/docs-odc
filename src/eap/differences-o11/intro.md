@@ -20,7 +20,7 @@ ODC delivers a modern architecture based on best practices in cloud-native infra
 
 * Scalable and reliable apps, built and deployed in a [modern container infrastructure](../architecture/intro.md).
 * Built-in security with end-to-end encryption.
-* Disaster recovery, with app-level high availability configuration.  
+* Disaster recovery.  
 * The ability to take advantage of the latest ODC releases with pain-free upgrades.
 
 ## Unified experience  { #ODC-portal }
