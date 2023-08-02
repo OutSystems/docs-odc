@@ -12,7 +12,7 @@ figma:
 
 During the development process, you may create apps or libraries for testing. As time goes on, you may no longer need these apps or libraries. OutSystems Developer Cloud (ODC) lets you safely delete apps, and libraries from stages such as  Development. You can't delete apps and libraries from your Production stage. Having a clean stage makes it faster to find the apps and libraries you need.
 
-To delete an app or library, go to the ODC Portal and select the app or library you want to delete. From the details screen, click the three-dots in the upper-right corner and select **Delete**.
+To delete an app or library, open ODC Portal and select **Apps** from the left nav menu. Click on the app or library you want to delete. In the details screen that opens click the three-dots in the upper-right corner and select **Delete app** or **Delete library**.
 
 ## What you can delete
 
