@@ -29,3 +29,17 @@ You need the following before you can map an IdP end-user group to an ODC end-us
 Most users can configure a group in ODC. But only users, with the appropriate permission can map end-user groups with IdPs. Typically, Admins have the permission to map IdPs.
 
 Before mapping users from your IdP, create a group in ODC. To create a group, from the **ODC Portal Navigation** menu, select **End-user groups.** Then from the End-user groups summary page, click **Create group**, enter a Group name, and click **Save**. You now have a new group. No other information is required to create a group.
+
+To connect a provider to an end-user group, from the **ODC Portal**, select **Identity providers**. From the Identify provider summary page, click on the provider you want to map to an End-user group. If you have the correct permissions, a **Group mappings** tab displays.
+
+The Group mappings summary page, shows the current mappings for this Provider. The display shows the Provider group(s) and end-user groups that are mapped and the current status. To add a new mapping, click **Add mapping**. You must enter a **Claim name**, which should be **groups**. This is a common name from Identify Providers. The **Claim value** is the group claim (identifier) from your Identify Provider. In the End-user group section, click on the group(s) you want to map, and then select a stage and click **Save**. When the mapping completes, end-users can log into ODC and access the apps assigned to the group.
+
+<div class="info" markdown="1">
+
+The saved configuration defines the landing page users see after logging into your App. The configuration assigns the provider that authenticates the organization and app users. This determines which redirect URLs you must add to the identity provider.
+
+</div>
+
+You can also delete an end-user group. When you delete a group, all end-user linking and mapping entries are deleted. Any access to apps from this group is no longer available.
+
+You can also delete an IdP mapping. In this case, all App Group claims are also removed. The associated end-user group links are also removed. This means if this was the only mapping for a particular end-user, then that user no longer has access to ODC.
