@@ -53,7 +53,7 @@ You can find all of the available actions for the Camera plugin by navigating to
 
 1. To prevent errors, it's best practice to first check if the plugin is available with the action **CheckCameraPlugin**. If the plugin isn't available to the app, display an error to the user. 
 1. Otherwise, allow users take a picture by opening the camera with the **TakePicture** action. In the **TakePicture** action, you can set the parameters for quality, width, back of front camera, and more.
-1. Check if taking pictures on the device works by verifying that he value of **TakePicture.Success** is **True**. 
+1. Check if taking pictures on the device works by verifying that the value of **TakePicture.Success** is **True**. 
 1. If yes, handle the picture data in **TakePicture.ImageCaptured** by assigning it to a variable of the **Binary Data** data type.
 
     ![Take picture logic flow](images/camera-flow-take-pic-ss.png)
