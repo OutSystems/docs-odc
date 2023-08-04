@@ -23,8 +23,6 @@ If you're using Google Sheets, download your document as an .xlsx file (File > D
 
 1. Close the Excel file. The bootstrap can't read the Excel file if it's open.
 
-<br/>
-
 <div class="info" markdown="1">
     
 If you have blank cells in your spreadsheet and are getting import errors because it cannot interpret blank cells as numeric, either integer or decimal. You have two choices:
