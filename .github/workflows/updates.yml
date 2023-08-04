@@ -89,16 +89,19 @@ jobs:
       if: steps.files.outputs.result != '' && env.changed_titles
       uses: actions/github-script@v6.4.1
       with:
-        github-token: ${{ secrets.TOOLS_PAT }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
           const issue_number = context.issue.number;
           const fs = require('fs');
-          const comment = fs.readFileSync('comment.txt', 'utf8');
-          if (comment.trim() !== "") {
-            github.rest.issues.createComment({
-              issue_number: issue_number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: comment
-            });
+          const commentFile = 'comment.txt';
+          if (fs.existsSync(commentFile)) {
+            const comment = fs.readFileSync(commentFile, 'utf8');
+            if (comment.trim() !== "") {
+              github.rest.issues.createComment({
+                issue_number: issue_number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: comment
+              });
+            }
           }
