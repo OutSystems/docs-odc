@@ -15,7 +15,6 @@ By default, all apps are publicly available. IP Filters allow you to create rule
 Implementing IP filtering enhances security and reduces the risk of unauthorized access by adding a layer of protection on top of application permissions and governance. To know how ODC is secure by design, see [Security of OutSystems Developer Cloud.](../security.md)
 
 Only users with **Manage IP Restrictions** permissions can create, edit, and delete IP filter rules.
-Create an IP filter
 
 ## Create an IP filter
 
