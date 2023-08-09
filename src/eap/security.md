@@ -107,11 +107,11 @@ You can use an external, self-managed OpenID Connect (OIDC) IdP as the authentic
 
 For more information see [Architecture of authentication and authorization mechanism](architecture/identity.md).
 
-### Secure gateways
+### Private gateways
 
-Secure Gateways is an ODC feature that lets you connect your apps to private data and private services ("endpoints") that aren't accessible by the internet.
+Private Gateways is an ODC feature that lets you connect your apps to private data and private services ("endpoints") that aren't accessible by the internet.
 
-For more information see [Configure a secure gateway to your private network](configuration-management/secure-gateway.md).
+For more information see [Configure a private gateway to your network](configuration-management/private-gateway.md).
 
 ## Containers
 

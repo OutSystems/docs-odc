@@ -20,7 +20,7 @@ There is no limit to the number of entities you can add from the external databa
 
 <div class="info" markdown="1">
 
-ODC offers [secure gateways](../secure-gateway.md) to connect your apps to private data and services that aren't accessible through the internet. Since an external database is usually hosted in a private network, using a secure gateway ensures security.
+ODC offers [private gateways](../private-gateway.md) to connect your apps to private data and services that aren't accessible through the internet. Since an external database is usually hosted in a private network, using a private gateway ensures security.
 
 </div>
 

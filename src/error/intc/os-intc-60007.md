@@ -49,7 +49,7 @@ Enter the database name on the server. Make sure it's accessible to the user wit
 #### Recommended action
 
 1. Verify the server address and port number are correct.
-1. Verify the status of the server with your IT department. If the server is online, you may need to configure a secure gateway to allow connections from ODC to your server. For more information, see [secure gateways](https://success.outsystems.com/documentation/outsystems_developer_cloud/configuration_management/configure_a_secure_gateway_to_your_private_network/).
+1. Verify the status of the server with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/configuration-management/private-gateway.md).
 
 ### No permissions
 
@@ -66,7 +66,7 @@ Ask a Server admin to give you access to the database.
 #### Recommended action
 
 1. Verify the server address and port number are correct.
-1. If the address and port number are correct, an as a quick temporary fix, add `trustServerCertificate=true` to the **Additional parameters** input. It's important to contact your IT IT department to fix the server’s certificate.
+1. If the address and port number are correct, an as a quick temporary fix, add `trustServerCertificate=true` to the **Additional parameters** input. It's important to contact your IT department to fix the server's certificate.
 
 ### Invalid connection string syntax
 
@@ -133,7 +133,7 @@ Enter the database name on the server that's accessible to the user with the spe
 #### Recommended action
 
 1. Verify the server address and port number are correct.
-1. Verify the status of the server with your IT department. If the server is online, you may need to configure a secure gateway to allow connections from ODC to your server. For more information, see [secure gateways](https://success.outsystems.com/documentation/outsystems_developer_cloud/configuration_management/configure_a_secure_gateway_to_your_private_network/).
+1. Verify the status of the server with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/configuration-management/private-gateway.md).
 
 ### Invalid connection string syntax
 
