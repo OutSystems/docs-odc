@@ -89,6 +89,13 @@
         - href: eap/building-apps/mobile/plugins/health-fitness/intro.md
         - href: eap/building-apps/mobile/plugins/keystore-plugin/intro.md
         - href: eap/building-apps/mobile/plugins/location/intro.md
+      - href: eap/building-apps/mobile/app-shield/intro.md
+      - topics: 
+        - href: eap/building-apps/mobile/app-shield/protection-features-description.md
+        - href: eap/building-apps/mobile/app-shield/obfuscate-custom-rules.md
+        - href: eap/building-apps/mobile/app-shield/ExitOnUrl.md
+        - href: eap/building-apps/mobile/app-shield/query-all-packages.md
+
     # UI
     - href: eap/building-apps/ui/intro.md
     - topics:

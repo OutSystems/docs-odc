@@ -5,7 +5,8 @@ locale: en-us
 guid: 4e816fa7-fffc-48c4-b205-13f7165d3775
 app_type: mobile apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2598&mode=design&t=TyGh9pLEHaqLAxxu-1
+
 ---
 
 # Create mobile app package
@@ -68,3 +69,14 @@ There might be times when you need to change the default mobile app version numb
 
 ______________________________________________________________
 _QR CODE is a registered trademark of Denso Wave Incorporated._
+
+## Download mobile app build logs { #download-mobile-app-build-logs }
+
+You can obtain the build logs of your mobile apps in ODC Portal. Build logs are available for both successful and unsuccessful builds, and each platform (Android and iOS) has its own build log.
+
+To obtain a mobile app build log:
+
+1. In the ODC Portal, go to **Apps** and click your mobile app name to navigate to the mobile app detail page.
+1. In the **Mobile distribution** tab, click the log icon for the desired platform to download the build log.
+
+![Download logs for mobile packages](<images/Logs-mobile-odcs.png>)
