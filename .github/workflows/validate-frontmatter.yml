@@ -8,10 +8,189 @@ jobs:
   frontmatter-json-schema-validator:
     name: Validate
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.5.2
       - name: Validate Frontmatter
         uses: mheap/frontmatter-json-schema-action@main
         with:
           paths: "src/**/*.md"
           schema_path:  ./.github/workflows/frontmatter.json
+          
+  guid-dupe-check:
+    name: GUID dupe check
+    needs: frontmatter-json-schema-validator
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout base branch
+      uses: actions/checkout@v3.5.2
+      with:
+        ref: ${{ github.base_ref }}
+        path: base
+
+    - name: Checkout PR branch
+      uses: actions/checkout@v3.5.2
+      with:
+        ref: ${{ github.head_ref }}
+        path: pr
+
+    - name: Get JSON of files changed in PR
+      id: files
+      uses: actions/github-script@v6.4.1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const files = await github.rest.pulls.listFiles({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: context.issue.number
+          });
+          return JSON.stringify(files.data.filter((file) => file.status !== 'removed').map((file) => file.filename));
+
+    - name: Compare GUIDs of changed files in base branch and PR branch
+      id: extract_guid
+      run: |
+        declare -a changed_guids_array
+        declare -a pr_branch_duplications_array
+        
+        changed_files_json="${{ steps.files.outputs.result }}"
+        for file in $(echo "$changed_files_json" | jq -r '.[]'); do
+          if [[ "$file" == *.md ]]; then
+            pr_branch_file_path="pr/$file"
+            base_branch_file_path="base/$file"
+            
+            echo "Checking file: $pr_branch_file_path against $base_branch_file_path"
+
+            # Extract the GUIDs from the file in the pr branch and base branch
+            pr_guid=$(sed -n '/^---$/,/^---$/p' "$pr_branch_file_path" | grep -oP 'guid: \K.*')
+            
+            # Check if the extracted GUID is already in the changed_guids_array
+            if [[ " ${changed_guids_array[@]} " =~ " ${pr_guid} " ]]; then
+                pr_branch_duplications_array+=("$pr_guid")
+            fi
+
+            # Check if the file exists in the base branch
+            if [[ ! -f "$base_branch_file_path" ]]; then
+              echo "New File: $file, GUID: $pr_guid"
+              changed_guids_array+=("$pr_guid")
+              continue
+            fi
+            
+            base_guid=$(sed -n '/^---$/,/^---$/p' "$base_branch_file_path" | grep -oP 'guid: \K.*')
+
+            # Compare the GUIDs
+            if [[ "$pr_guid" != "$base_guid" ]]; then
+              echo "Changed GUID in file: $file, new GUID: $pr_guid, old GUID: $base_guid"
+              changed_guids_array+=("$pr_guid")
+            fi
+          fi
+        done
+
+        echo "Chaged GUIDs array: ${changed_guids_array[@]}"
+
+        if [ ${#changed_guids_array[@]} -eq 0 ]; then
+          echo "HAS_CHANGED_GUIDS=false" >> $GITHUB_ENV
+        else
+          changed_guids_json=$(printf '\\\"%s\\\",' "${changed_guids_array[@]}" | sed 's/,$//')
+          changed_guids_json='['$changed_guids_json']'
+          echo "changed_guids_array=$changed_guids_json" >> $GITHUB_ENV
+          echo "HAS_CHANGED_GUIDS=true" >> $GITHUB_ENV
+        fi
+        
+        if [ ${#pr_branch_duplications_array[@]} -ne 0 ]; then
+          pr_branch_duplications_json=$(printf '\\\"%s\\\",' "${pr_branch_duplications_array[@]}" | sed 's/,$//')
+          pr_branch_duplications_json='['$pr_branch_duplications_json']'
+          echo "pr_branch_duplications_array=$pr_branch_duplications_json" >> $GITHUB_ENV
+          echo "HAS_PR_BRANCH_DUPLICATIONS=true" >> $GITHUB_ENV
+        else
+          echo "HAS_PR_BRANCH_DUPLICATIONS=false" >> $GITHUB_ENV
+        fi
+        
+    - name: Check extracted GUIDs for dupes in repos
+      if: env.HAS_CHANGED_GUIDS == 'true'
+      id: check_guid
+      run: |
+        changed_guids_json="${{ env.changed_guids_array }}"
+        echo "Sending JSON: $changed_guids_json"
+
+        # Call external API
+        RESPONSE=$(curl -s -X POST 'https://federated.outsystems.net/TKGUIDValidator_API/rest/ValidateGUID/ValidateGUIDList' \
+            -H 'Content-Type: application/json' \
+            -u 'TK_GUID_API_user:${{ secrets.TK_GUID_API }}' \
+            --max-time 10 \
+            -d "$changed_guids_json" -w "\n%{http_code}")
+
+        # Extract HTTP status code and JSON response
+        HTTP_STATUS=$(echo "$RESPONSE" | tail -n 1)
+        JSON_RESPONSE=$(echo "$RESPONSE" | head -n -1)
+
+        echo "HTTP_STATUS=$HTTP_STATUS"
+        echo "JSON_RESPONSE=$JSON_RESPONSE"
+
+        if [[ "$HTTP_STATUS" -ne 200 ]]; then
+            echo "API_ERROR=true" >> $GITHUB_ENV
+            exit 0
+        else
+            repo_duplications_json=$(echo "$JSON_RESPONSE" | jq -c 'join(",")')
+            echo "repo_duplications_array=$repo_duplications_json" >> $GITHUB_ENV
+        fi
+        
+        # Check if the JSON_RESPONSE contains elements
+        if [[ "$JSON_RESPONSE" != "[]" ]]; then
+            echo "HAS_REPO_DUPLICATIONS=true" >> $GITHUB_ENV
+        else
+            echo "HAS_REPO_DUPLICATIONS=false" >> $GITHUB_ENV
+        fi
+
+    - name: Comment on API failure
+      if: env.API_ERROR == 'true'
+      uses: actions/github-script@v6.4.1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          let message = "API server for checking duplicate GUIDs is down. Pay special attention for duplicate GUIDs as there is no check!";
+
+          let result = await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: message.trim()
+          });
+          console.log("Comment creation result:", JSON.stringify(result, null, 2));
+
+          core.info("Exiting workflow due to API failure.");
+          process.exit(0);
+    
+    - name: Comment on PR if duplicate GUIDs are found
+      if: env.HAS_PR_BRANCH_DUPLICATIONS == 'true' || env.HAS_REPO_DUPLICATIONS == 'true'
+      run: |
+        IFS=',' read -ra repo_duplications_array <<< "$(echo "${{ env.repo_duplications_array }}" | tr -d '["]')"
+        IFS=',' read -ra pr_branch_duplications_array <<< "$(echo "${{ env.pr_branch_duplications_array }}" | tr -d '["]')"
+      
+        message="⚠️ Duplicate GUIDs:\\n\\n"
+      
+        if [[ ${#repo_duplications_array[@]} -ne 0 ]]; then
+          for guid in "${repo_duplications_array[@]}"; do
+            message+="* $guid (duplicated in a published article)\\n"
+          done
+        fi
+      
+        if [[ ${#pr_branch_duplications_array[@]} -ne 0 ]]; then
+          for guid in "${pr_branch_duplications_array[@]}"; do
+            message+="* $guid (duplicated in article(s) in this pull request)\\n"
+          done
+        fi
+    
+        message+="\\nEvery article must have a [**unique** GUID in the frontmater](https://outsystemsrd.atlassian.net/wiki/spaces/TK/pages/3527606647/Pre-publish+checklist). You must fix this before merging the content."
+    
+        # Construct the JSON payload
+        comment_payload="{\"body\": \"$message\"}"
+        curl \
+          -X POST \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          -d "$comment_payload" \
+          "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments"
+      
+        echo "Duplicate GUIDs found!"
+        exit 1
