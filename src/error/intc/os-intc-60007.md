@@ -12,15 +12,15 @@ figma:
 
 ## SQL Server connection  
 
-Testing a SQL Server connection can return these errors.
+Testing a SQL server connection can return these errors.
 
-### Wrong Username or password
+### Wrong username or password
 
 `"errorMessage": "Connection to 'jdbc:sqlserver://{hostname:port};databaseName={DatabaseName};password={******};user={username}' failed, details: Login failed for user '{username}'. ClientConnectionId:{id}"`
 
 #### Recommended action
 
-Enter the correct username and pasword.
+Enter the correct username and password.
 
 ### Wrong server/hostname
 
@@ -40,7 +40,7 @@ Input the correct environment server/hostname without a protocol or path. Use th
 
 #### Recommended action
 
-Enter the database name on the server. Make sure it's accessible to the user with the username.
+Enter the database name on the server accessible to the user with the specified username.
 
 ### Unable to establish a connection to the server
 
@@ -66,7 +66,7 @@ Ask a Server admin to give you access to the database.
 #### Recommended action
 
 1. Verify the server address and port number are correct.
-1. If the address and port number are correct, an as a quick temporary fix, add `trustServerCertificate=true` to the **Additional parameters** input. It's important to contact your IT department to fix the server's certificate.
+1. If the address and port number are correct, as a quick temporary fix, add `trustServerCertificate=true` to the **Additional parameters** input. It's important to contact your IT department to fix the server's certificate.
 
 ### Invalid connection string syntax
 
@@ -98,7 +98,7 @@ Assign valid values to the parameters entered on the **Additional parameters** i
 
 Testing an Oracle Server connection can return these errors.
 
-### Wrong Username or password
+### Wrong username or password
 
 `"errorMessage": "Connection to 'jdbc:oracle:thin:{username}/"******"@{hostname:port}/{ServiceName}?Pooling=false' failed, details: ORA-01017: invalid username/password; logon denied"`
 
@@ -124,7 +124,7 @@ Enter the correct environment server/hostname without a protocol or path. Use th
 
 #### Recommended action
 
-Enter the database name on the server that's accessible to the user with the specified username.
+Enter the database name on the server accessible to the user with the specified username.
 
 ### Unable to establish a connection to the server
 
@@ -142,3 +142,60 @@ Enter the database name on the server that's accessible to the user with the spe
 #### Recommended action
 
 To verify the syntax is correct, refer to [Oracle connection strings](https://www.connectionstrings.com/oracle/).
+
+## SAP OData connection
+
+Testing an SAP OData connection can return these errors.
+
+### Wrong username or password
+
+`"errorMessage": "Connection to 'jdbc:cdata:sapgateway:InitiateOAuth=GETANDREFRESH;ConnectOnOpen=true;DataFormat=JSON;URL={ServiceURL};User={username};Password=******;Pagesize=1000;' failed, details: HTTP protocol error. 401 Unauthorized."`
+
+#### Recommended action
+
+Enter the correct username and password.
+
+### Wrong API key
+
+`"errorMessage": "Connection to 'jdbc:cdata:sapgateway:InitiateOAuth=GETANDREFRESH;ConnectOnOpen=true;DataFormat=JSON;URL={ServiceURL};APIKey=******;Pagesize=1000;' failed, details: HTTP protocol error. 401 Unauthorized."`
+
+#### Recommended action
+
+Enter the correct API key.
+
+### Wrong SAP server domain
+
+`"errorMessage": "Connection to 'jdbc:cdata:sapgateway:InitiateOAuth=GETANDREFRESH;ConnectOnOpen=true;DataFormat=JSON;URL={ServiceURL};User={username};Password=******;Pagesize=1000;' failed, details: Invalid HTTP response! System error: UnknownHostException - {SAPServerDomain}: Name or service not known."`
+
+#### Recommended action
+
+Enter the SAP server domain without a protocol or path. Use the following examples as guidance.
+
+* Correct: mydevenv.outsystems.com
+* Incorrect: https://mydevenv.outsystems.com
+* Incorrect: mydevenv.outsystems.com/XE
+
+### Wrong service URL
+
+`errorMessage: "Connection to 'jdbc:cdata:sapgateway:InitiateOAuth=GETANDREFRESH;ConnectOnOpen=true;DataFormat=JSON;URL={ServiceURL};User={username};Password=******;Pagesize=1000;' failed, details: [/IWFND/MED/170] "en". No service found for namespace '', name '{Service}', version '{Version}'."`
+
+#### Recommended action
+
+Enter the correct Service URL. Make sure it's accessible to the server domain.
+
+### Unable to find the service
+
+`"errorMessage": "Connection to 'jdbc:cdata:sapgateway:InitiateOAuth=GETANDREFRESH;ConnectOnOpen=true;DataFormat=JSON;URL={ServiceURL};User={username};Password=******;Pagesize=1000;' failed, details: [/IWCOR/CX_OD_NOT_FOUND/005****************80FE] The server has not found any resource matching the Data Services Request URI."`
+
+#### Recommended action
+
+1. Verify the service URL address and port number are correct.
+1. Verify the status of the SAP server domain with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/configuration-management/private-gateway.md).
+
+### Unable to retrieve data from the service
+
+`"errorMessage": "Connection to 'jdbc:cdata:sapgateway:InitiateOAuth=GETANDREFRESH;ConnectOnOpen=true;DataFormat=JSON;URL={ServiceURL};User={username};Password=******;Pagesize=1000;' failed, details: [SY/530] "en". No data retrieved from {Service} for entity {EntityName}."`
+
+#### Recommended action
+
+Make sure it's accessible to the server domain.
