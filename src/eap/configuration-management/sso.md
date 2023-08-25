@@ -10,9 +10,18 @@ platform-version: odc
 
 # Single sign-on
 
-Single sign-on (SSO) is an authentication method that simplifies the login process for users that accept cookies. After users authenticate in one app, they can access all other apps in the same stage without having to sign in again. ODC shares the authentication information between the apps that have the same identity provider, using the OpenID Connect (OIDC) protocol. The provider can be the built-in identity provider or a supported external provider.
+Single sign-on (SSO) is an authentication method that lets you give your users access to multiple applications or services with a single set of login credentials. Developers use the OutSystems Developer Cloud (ODC) Portal to connect to an Identify Provider (IdP) and use ODC Studio to set their apps up for SSO.
 
-With the OutSystems UI component you can choose to have one or many providers available in your app.
+SSO simplifies the login process for your users and provides a seamless experience because your users don't have to remember multiple login credentials. When using SSO, users must accept cookies during the login process.
+
+In an SSO system, users authenticate once, then they can access every application that uses the same identity provider. ODC shares the authentication information between apps when the apps use the same provider. In ODC, you can have one or more identity providers available in your apps. You can use the ODC built-in identity provider or a supported external provider.
+
+Implementing SSO provides you with the following benefits:
+
+* **Increased Security** because you reduce the number of passwords users need, making it easier to enforce security policies across all applications.
+* **Improved User Experience** because users can access multiple applications with a single set of credentials.
+* **Reduced Administrative Overhead** because Admins no longer need to manage multiple sets of login credentials for each application.
+* **Simplified Compliance** by providing a centralized view of user access and authentication across multiple applications; organizations can ensure they meet regulatory requirements and industry standards.
 
 ## Add the social login button to the login screen
 
@@ -20,15 +29,14 @@ ODC provides a login flow with the app template. Part of that flow is the screen
 
 <div class="info" markdown="1">
 
-You need to [configure an external identity provider](./external-idps/intro.md) before adding the social login button.
+Before adding the social login button you must [configure an external identity provider](external-idps/intro.md).
 
 </div>
 
 To add the social login button in the app, do the following in ODC Studio:
 
 1. From the **Interface** tab, go to **UI Flows** > **Common** and double-click **Login**. The login screen opens for editing.
-2. From the **Interface** tab, go to > **OutSystems UI** > **Utilities**, and drag **ProviderLoginButton** to the login screen.
-3. From the properties of **ProviderLoginButton**, select the provider from the **IdentityProvider** list.
+1. On the **Interface** tab, go to **OutSystems UI** > **Utilities**, and drag **ProviderLoginButton** to the login screen.
+1. On the properties for the **ProviderLoginButton**, select the provider from the **IdentityProvider** list.
 
 ![Single sign-on](images/sso-button-odcs.png)
-
