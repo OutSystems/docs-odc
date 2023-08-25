@@ -147,6 +147,14 @@ To verify the syntax is correct, refer to [Oracle connection strings](https://ww
 
 Testing an SAP OData connection can return these errors.
 
+### Unable to establish a connection to the server
+
+`"errorMessage": "Connection to 'jdbc:cdata:sapgateway:InitiateOAuth=GETANDREFRESH;ConnectOnOpen=true;DataFormat=JSON;URL={serviceUrl};User={username};Password=******;' failed, details: Cannot conclude ssl handshake. Cause: Connection reset."`
+
+#### Recommended action
+
+Verify the status of the SAP server domain with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/configuration-management/private-gateway.md).
+
 ### Wrong username or password
 
 `"errorMessage": "Connection to 'jdbc:cdata:sapgateway:InitiateOAuth=GETANDREFRESH;ConnectOnOpen=true;DataFormat=JSON;URL={ServiceURL};User={username};Password=******;Pagesize=1000;' failed, details: HTTP protocol error. 401 Unauthorized."`
@@ -169,11 +177,13 @@ Enter the correct API key.
 
 #### Recommended action
 
-Enter the SAP server domain without a protocol or path. Use the following examples as guidance.
+1. Enter the SAP server domain without a protocol or path. Use the following examples as guidance.
 
 * Correct: mydevenv.outsystems.com
 * Incorrect: https://mydevenv.outsystems.com
 * Incorrect: mydevenv.outsystems.com/XE
+
+1. Verify the status of the SAP server domain with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/configuration-management/private-gateway.md).
 
 ### Wrong service URL
 
@@ -189,8 +199,7 @@ Enter the correct Service URL. Make sure it's accessible to the server domain.
 
 #### Recommended action
 
-1. Verify the service URL address and port number are correct.
-1. Verify the status of the SAP server domain with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/configuration-management/private-gateway.md).
+Verify the service URL address and port number are correct.
 
 ### Unable to retrieve data from the service
 
@@ -198,4 +207,4 @@ Enter the correct Service URL. Make sure it's accessible to the server domain.
 
 #### Recommended action
 
-Make sure it's accessible to the server domain.
+Validate the Service configurations in SAP. Make sure it's available to respond to the request.
