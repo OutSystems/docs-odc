@@ -72,11 +72,39 @@ _QR CODE is a registered trademark of Denso Wave Incorporated._
 
 ## Download mobile app build logs { #download-mobile-app-build-logs }
 
-You can obtain the build logs of your mobile apps in ODC Portal. Build logs are available for both successful and unsuccessful builds, and each platform (Android and iOS) has its own build log.
+You can obtain the build logs of your mobile apps in ODC Portal. Build logs are available for both successful and failed builds, and each platform (Android and iOS) has its own build log.
 
 To obtain a mobile app build log:
 
 1. In the ODC Portal, go to **Apps** and click your mobile app name to navigate to the mobile app detail page.
 1. In the **Mobile distribution** tab, click the log icon for the desired platform to download the build log.
+    ![Download logs for mobile packages](<images/Logs-mobile-odcs.png>)
 
-![Download logs for mobile packages](<images/Logs-mobile-odcs.png>)
+## View package history
+
+You can view the package history of your mobile app in the ODC Portal. The package history allows you to monitor the following:
+
+* Successful and failed mobile package creation requests
+* Mobile app version
+* Mobile app version code
+* Mobile app revision
+* Timestamp of when the mobile package creation process started
+* Person who triggered the mobile package creation process
+
+You can also download package files, log files, and source code files. 
+
+Monitoring your package history and having access to package resources facilitates troubleshooting. The package history allows you to identify if an issue is one that already occurs on previous versions or if it’s a new issue created from recent changes to the package.
+
+To view the package history of your mobile app:
+
+1. In the ODC Portal, click the relevant mobile app. 
+
+1. Select the **Mobile distribution** tab and click **View history**.
+
+    ![Go to the mobile distribution tab and click view history](images/viewhistory-mobdistribution-odcs.png)
+
+    The package history is displayed. 
+
+    ![Package history](images/viewhistory-packagehistory-odcs.png)
+
+For  more information about troubleshooting your apps, see [Monitor and troubleshoot apps](../../monitor-apps.md).
