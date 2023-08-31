@@ -62,6 +62,12 @@ After following these steps and publishing the app, you can test the pattern in 
 
 ![Result](images/monthpicker-result.png)
 
+<div class="info" markdown="1">
+
+You can use the [FormatDateTime](../../../../reference/built-in-functions/format.md#formatdatetime) function to specify a format for the date and time. 
+
+</div>  
+
 ## Properties
 
 | Property  | Description  | 
