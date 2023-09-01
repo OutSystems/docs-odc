@@ -39,5 +39,7 @@ OutSystems recommends Chrome browser for previewing the mobile app in the ODC Po
 * The `DiffMinutes`` and `DiffSeconds`` built-in functions for Oracle have a limitation regarding the date interval. The allowed max intervals between dates are:
     * Seconds: 31 years, 9 months, 9 days, 1 hour, 46 minutes, and 39 seconds
     * Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds
+* .NET does not support the Julian calendar for Oracle, and the minimum supported timestamp value is -62135596800000. 
+    * To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
 * Data Preview and runtime queries with Unicode characters aren't supported.
 * Advanced SQL Nodes don't support external entities.
