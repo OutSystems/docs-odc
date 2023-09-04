@@ -68,6 +68,8 @@
       - href: eap/building-apps/data/sharing.md
       # Data types
       - href: eap/building-apps/data/data-types.md
+      # Edit data
+      - href: eap/building-apps/data/edit-data.md
     # Mobile apps
     - href: eap/building-apps/mobile/intro.md
     - topics:
