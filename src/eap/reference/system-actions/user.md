@@ -85,7 +85,7 @@ _Inputs_
 :   Type: Text. Mandatory.
     Password defined by the user registering.           
 
-**TemporaryPassword**
+**VerificationCode**
 :   Type: Text. Mandatory.
     Temporary password defined by the identity provider.     
 
