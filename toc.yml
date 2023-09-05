@@ -394,9 +394,9 @@
   - href: eap/forge/submit.md
 
 # Deploy your apps
-- href: eap/deploy-apps.md
+- href: eap/deploy/deploy-apps.md
 - topics:
-  - href: error/Guidance-for-deployment-inconsistencies.md
+    - href: eap/deploy/deployment-inconsistencies.md
 
 # Configuration management
 - href: eap/configuration-management/configuration-management.md
