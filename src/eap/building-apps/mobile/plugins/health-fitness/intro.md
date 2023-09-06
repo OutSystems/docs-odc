@@ -127,7 +127,7 @@ For the Workout Type and Variable map structure, the plugin already provides the
 * If there's no list or the list is empty, the plugin considers all workout types available and applies two variables to each: **Heart Rate** and **Active Energy Burned**.
 * If the list contains an item that has a workout type set but has no variable list associated (or an empty one) with it, the plugin considers two variables: **Heart Rate** and **Active Energy Burned**.
 
-![Getting data in GetWorkoutsData from Apple's HealthKit](images/get-workouts-data-ss.png)
+![Getting data in GetWorkoutsData from Apple's HealthKit](images/get-workouts-ss.png)
 
 <div class="info" markdown="1">
 
