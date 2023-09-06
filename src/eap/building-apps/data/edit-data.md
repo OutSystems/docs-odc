@@ -18,7 +18,11 @@ In ODC Studio, you can edit entity data. The [entities](../data/modeling/entity.
 
 * Entities must have an identifier attribute.
 
-* Entities must be from the server side only. This does not include static or local entities.
+* Entities must be from the server side only. This does not include static, local or external entities.
+
+    * Static entities are entities that have hard coded values and don’t change dynamically as server entities.
+    * Local entities are local storage entities available in mobile apps only.
+    * External entities can be added through a connection from an external database, for example, Salesforce, SAP, and SQL Server. These entities are read-only. 
 
 Adding, removing, and changing entity records during app development, allows you to:
 
