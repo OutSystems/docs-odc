@@ -16,7 +16,7 @@ Users must have permission to access the End-user group mapping option. With per
 
 <div class="info" markdown="1">
 
-This ODC feature only works if your IdP supports groups. Check with your IdP to verify the support groups. Additionally, if your IdP does support groups, you might have to do some configurations on the IdP. You can only map end-users. You can’t map members with organization roles, such as Admin or Developer.
+This ODC feature only works if your IdP supports groups. Check with your IdP to verify the support groups. Additionally, if your IdP does support groups, you might have to do some configurations on the IdP to send the group information during authentication. You can only map end-users. You can’t map members with organization roles, such as Admin or Developer.
 
 </div>
 
