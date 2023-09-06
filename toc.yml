@@ -414,15 +414,15 @@
   
 - href: eap/user-management/intro.md 
 - topics:
-  - href: eap/configuration-management/external-idps/intro.md
-  - topics:
-    - href: eap/configuration-management/external-idps/apps.md
-    - href: eap/configuration-management/external-idps/azure-ad.md
-    - href: eap/configuration-management/external-idps/okta.md
+    - href: eap/configuration-management/external-idps/intro.md
+    - topics:
+        - href: eap/configuration-management/external-idps/apps.md
+        - href: eap/configuration-management/external-idps/azure-ad.md
+        - href: eap/configuration-management/external-idps/okta.md
+        - href: eap/configuration-management/external-idps/end-user-group-mapping.md
 
-  - href: eap/user-management/roles.md
-  - href: eap/user-management/passwords.md
-  - href: eap/configuration-management/external-idps/end-user-group-mapping.md
+    - href: eap/user-management/roles.md
+    - href: eap/user-management/passwords.md
 - href: eap/monitor-apps.md
 - topics:
     - href: eap/app-health.md
