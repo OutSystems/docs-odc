@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v4
       - name: Validate Frontmatter
         uses: mheap/frontmatter-json-schema-action@main
         with:
@@ -23,13 +23,13 @@ jobs:
   #   runs-on: ubuntu-latest
   #   steps:
   #   - name: Checkout base branch
-  #     uses: actions/checkout@v3.5.2
+  #     uses: actions/checkout@v4
   #     with:
   #       ref: ${{ github.base_ref }}
   #       path: base
 
   #   - name: Checkout PR branch
-  #     uses: actions/checkout@v3.5.2
+  #     uses: actions/checkout@v4
   #     with:
   #       ref: ${{ github.head_ref }}
   #       path: pr
