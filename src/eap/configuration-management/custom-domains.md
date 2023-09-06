@@ -23,9 +23,7 @@ Apps are always accessible to end-users through built-in domains. For example, a
 
 In addition, ODC lets you make your apps accessible to end-users through your organization's domain(s). In a given stage, your apps can be available through one or more custom domains that you add to that stage. Each custom domain must be unique to a customer and stage.
 
-You can add top-level domains (such as `example.com`), subdomains (such as `dev.example.com`), and multi-level subdomains (such as `odc.dev.example.com`). When you add a custom domain to a stage, all apps deployed to that stage are accessible through the domain.
-
-The following table shows a possible setup for a customer who has three stages and wants one custom subdomain for each stage:
+When you add a custom domain to a stage, all apps deployed to that stage are accessible through the domain. The following table shows a possible setup for a customer who has three stages and wants one custom subdomain for each stage:
 
 | Stage       | Custom domain    |
 | ----------- | ---------------- |
@@ -34,6 +32,10 @@ The following table shows a possible setup for a customer who has three stages a
 | Production  | www.example.com  |
 
 ## Add a custom domain
+
+Some domain registrars may not allow creating CNAME records when existing DNS records exist for the same name. This typically applies to root domains (such as `example.com`) and subdomains(such as `dev.example.com`) that already have other records. 
+
+You need to use a custom domain without linked DNS records if your domain registrar has restricted CNAME creation.
 
 To add a custom domain, from the ODC Portal, select **Configurations** > **Domains** and then follow these steps.
 
