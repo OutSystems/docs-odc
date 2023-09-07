@@ -14,7 +14,7 @@ After you create [entities to persist data](../data/modeling/entity-create.md), 
 
 ![Edit data in Service Studio](images/edit-data-odcs.png)
 
-In ODC Studio, you can edit entity data. The [entities](../data/modeling/entity.md) must meet the following criteria:
+In ODC Studio, you can edit entity data in the development stage. The [entities](../data/modeling/entity.md) must meet the following criteria:
 
 * Entities must have an identifier attribute.
 
