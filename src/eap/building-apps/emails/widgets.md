@@ -10,7 +10,7 @@ platform-version: odc
 
 # Widgets in emails
 
-OutSystems designed widgets to help you create lightweight emails that most email readers can open. When you edit an email, ODC Studio shows the available widgets in the[available Email widgets](#widgets-available-in-emails) in the widgets tool bar.
+OutSystems designed widgets to help you create lightweight emails that most email readers can open. When you edit an email, ODC Studio shows the available widgets in the [available Email widgets](#widgets-available-in-emails) in the widgets tool bar.
 
 ![widgets for emails](images/email-neo-widgets-ss.png)
 
@@ -28,13 +28,13 @@ You can use the following widgets in Emails.
 | Container   | Lets you arrange other widgets.                     |                                                                |
 | Expressions | Evaluates expressions and displays variable values. |                                                                |
 | If          | Shows content based on a condition.                 |                                                                |
-| Images      | Embeds an image.                                    | Using binary content from a data base |
+| Images      | Embeds an image.                                    | Using binary content from a database |
 | Link(*)        | Adds a navigational element.                        |                                                                |
 | List        | Shows records as items in a list.                   | To quickly create a list in a Mobile App, drag an Entity to Email.                                                                |
 | Table       | Shows records in columns and rows.                  | To quickly create a table in a Web App, drag an Entity to Email.                                                              |
 
 <div class="info" markdown="1"> 
 
-(*) If your app is using a [custom domain](../../configuration-management/custom-domains.md) and you want to link to a screen in your app, you must link to the URL of the screen. For example, to link to screen `Screen1` in app `App1` using custom domain `example.com`, you set the **OnClick** property to **RedirectToURL** with expression `"https://example.com/App1/Screen1"`. You can find guidance on how to build an expression [here](../../building-apps/logic/expressions.md).
+(*) If your app is using a [custom domain](../../configuration-management/custom-domains.md) and you want to link to a screen in your app, you must link to the URL of the screen. For example, to link to screen `Screen1` in `App1` using custom domain `example.com`, you set the **OnClick** property to **RedirectToURL** with the expression `"https://example.com/App1/Screen1"`. You can find guidance on how to build an expression [here](../../building-apps/logic/expressions.md).
 
 </div>
