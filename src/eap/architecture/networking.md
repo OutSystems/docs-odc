@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud uses a secure cloud-native network with CDN, WAF, NATS, Identity Service, and Load Balancer to protect the Platform and Runtime from malicious accesses and attacks.
+summary: OutSystems Developer Cloud (ODC) uses a secure cloud-native network with CDN, WAF, NATS, Identity Service, and Load Balancer to protect the Platform and Runtime from malicious accesses and attacks.
 tags: 
 locale: en-us
 guid: e87fb27d-9186-436d-ac97-a2ea960c119d
@@ -10,19 +10,21 @@ platform-version: odc
 
 # Network architecture of OutSystems Developer Cloud
 
-This article provides an overview of OutSystems Developer Cloud cloud-native network architecture and security.
+This article provides an overview of OutSystems Developer Cloud (ODC) cloud-native network architecture and security.
 
-OutSystems Developer Cloud is cloud-native. This means that the infrastructure of both the development Platform, for building and deploying apps, and the independent Runtime, for hosting and running the deployed apps, live in the cloud. See [Cloud-native architecture of OutSystems Developer Cloud](intro.md) to learn more.
+ODC is cloud-native. This means that the infrastructure of both the development Platform, for building and deploying apps, and the independent Runtime, for hosting and running the deployed apps, live in the cloud. See [Cloud-native architecture of OutSystems Developer Cloud](intro.md) to learn more.
 
 A secure cloud-native network connects the cloud-native architecture. The network architecture of the Development, Test and Production stages of the Runtime is identical.
 
 ## Key technologies
 
-The following is an overview of the cloud technologies that OutSystems Developer Cloud uses for networking and network security.
+The following is an overview of the cloud technologies that OutSystems Developer Cloud (ODC) uses for networking and network security.
 
 ### Content Delivery Network
 
-A CDN (Content Delivery Network) is a globally distributed set of servers that ensures a low network latency for routing requests. The CDN verifies the public key certificate attached to the request, `outsystems.dev` for the Platform and `outsystems.app` or the [custom domain](../configuration-management/custom-domains.md) being used for the Runtime.
+The ODC CDN (Content Delivery Network) is a globally distributed set of servers that ensures a low network latency for routing requests. The CDN caches your apps' static files, reducing end-user load times. Files can be static or dynamic. Static files (such as images or JavaScript) don't change often. Dynamic files can change with each user interaction.
+
+The CDN verifies the public key certificate attached to the request: `outsystems.dev` for the Platform and `outsystems.app` or the [custom domain](../configuration-management/custom-domains.md) used for the Runtime.
 
 #### Web Application Firewall
 
