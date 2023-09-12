@@ -123,7 +123,7 @@ Each Runtime stage has an isolated Amazon Aurora Serverless database. The follow
 
 ![Runtime Production stage database](images/architecture-runtime-data-diag.png "Runtime Production stage database") 
 
-Data is automatically written to three availability zones simultaneously.
+Data is automatically written to two availability zones simultaneously.
 
 The Amazon Aurora database architecture model decouples compute and storage. Storage volume automatically scales as the amount of data stored increases.
 
