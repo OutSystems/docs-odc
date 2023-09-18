@@ -10,7 +10,7 @@ figma:
 
 # Deploy your apps
 
-Use ODC Portal to deploy your apps. In OutSystems Developer Cloud (ODC), you deploy your apps to stages. A stage is a step within your delivery pipeline that includes runtime resources. ODC includes two stages by default, but you can create as many stages as you want. For example, you might create three stages and name them Development, QA, and Production.
+Use ODC Portal to deploy your apps. In OutSystems Developer Cloud (ODC), you deploy your apps to stages. A stage is a step within your delivery pipeline that includes runtime resources. ODC includes two stages by default.
 
 ODC has a single code repository. When you deploy in ODC Studio, your app is containerized, deployed to the Development stage, and a container image is available. When you're ready to deploy your app to the next stage your app deploys without the need to recompile code again. Libraries are also packaged in the same container as an app.
 
