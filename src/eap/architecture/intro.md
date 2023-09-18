@@ -144,6 +144,6 @@ See [Security in OutSystems Developer Cloud](../security.md#monitoring-and-suppo
 ---
 <div class="info" markdown="1">
 
-Some features mentioned in this article may require add-ons to the ODC Platform edition. Please contact the OutSystems field team for more information.
+Some features mentioned in this article may require add-ons to the ODC Platform edition. Please contact your OutSystems account team for more information.
 
 </div>
