@@ -5,7 +5,7 @@ locale: en-us
 guid: d0aa50bf-0378-4bb9-8c4f-71b37092dd8b
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/file/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?type=design&node-id=3404%3A22&mode=design&t=Y5uHYwUWDFTKusfq-1
 ---
 
 # Deploy your apps
@@ -18,7 +18,9 @@ Apps in each stage are isolated from each other. When you publish an app to the 
 
 Libraries contain functionality that's business agnostic and which you can use in multiple apps. Libraries don't hold data, and can't use entities. You can define themes, UI patterns, and blocks in libraries.
 
-To help you understand what's deployed in each stage, ODC provides an overview page. To access the overview page, got to ODC Portal > select **Delivery** > **Overview**. A list of apps displays and shows the name of the app, the stage in which it's deployed, the number of deployments, and the date of the last deployment. Hovering over a date, displays a pop up that shows the name of the person who deployed the app and the date and time on which it was deployed. Libraries are bundled with apps, so you won't see information about the libraries.
+To help you understand what's deployed in each stage, ODC provides an overview page. To access the overview page, go to the ODC Portal > select **Delivery** > **Overview**. A list of apps displays and shows the name of the app, the stage in which it's deployed, the number of deployments, and the date of the last deployment. The list also shows apps that still need to be deployed. Hovering over a date displays a pop up that shows the name of the person who deployed the app and the date and time on which it was deployed. Libraries are bundled with apps, so you won't see information about the libraries. You can use the sort and filter options to narrow your search.```
+
+![Deploy app overview](images/deploy-overview-pl.png)
 
 ## Deploy to stages
 
