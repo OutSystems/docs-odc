@@ -14,7 +14,9 @@ Entities are elements that allow you to persist information in the database and 
 
 An Entity is defined through Entity Attributes that store the information related to it. Examples of entity attributes are: Name, Address, Zip Code, City and so on.
 
-## Primary Key
+You can convert an existing entity to a static entity right-click the entity and select **Convert to Static Entity** from the **Advanced** menu.
+
+## Primary key
 
 In OutSystems, a primary key is called Entity Identifier.
 
@@ -26,7 +28,7 @@ To set another attribute as Entity Identifier simply go to that attribute, right
 
 In OutSystems, it is not possible to have composite keys because only one attribute can be the Entity Identifier. But you can use indexes to create alternate keys (see more below about indexes).
 
-## Sequential Attributes
+## Sequential attributes
 
 Sequential attributes are useful for Entity Identifier attributes. It is an easy way to ensure that each record has a unique primary key. 
 
@@ -42,7 +44,7 @@ Indexes can also be used to create alternate and composite keys.
 
 When creating an index there is always a relevant trade-off between fetching and inserting data as it may bring some overhead to the latter.
 
-## Impacts when Changing Entities
+## Impacts when changing entities
 
 When you create a new entity attribute, the platform automatically manages the update of all records stored in the database for you. The new attribute is added to the records and set with the default value for its data type.
 
@@ -50,15 +52,5 @@ When you set an entity attribute as mandatory it is automatically validated on t
 
 When you delete an entity or an entity attribute, the platform is permissive and lets you do it whether it is being used or not, but you must fix the elements where it is being used. In the database, the entity or entity attribute is not deleted by the platform.
 
-## Convert an entity to a static entity
 
-To convert an existing entity to a static entity right-click the entity and select **Convert to Static Entity** from the **Advanced** menu.
-
-After converting an entity to a static entity the records from the database can be imported as static records. To import the database records, right-click the static entity, select **Edit Entity**, and then click the **Import from Database** button.
-
-<div class="info" markdown="1">
-
-To convert an existing static entity to an entity right-click the static entity and select **Convert to Entity** from the **Advanced** menu.
-
-</div>
 
