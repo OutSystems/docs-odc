@@ -69,6 +69,12 @@ To do this, select **External Logic** from the left nav menu in the ODC Portal t
 
 The external library is initially deployed to the Development stage. When an app or library that consumes the external library is deployed to another stage, the external library is automatically deployed to that stage as well.
 
+<div class="info" markdown="1">
+
+If you get a **payload too large** message in the app, you should modify your library action to receive a URL to download the binary. If your action generates a binary too large to return as an output, you need to receive a URL as an input to upload the binary.
+
+</div>
+
 ## Consume the external logic
 
 Once successfully published, the external logic becomes available in a library to consume across your ODC organization's apps and existing libraries. To learn how to consume the exposed server actions in your apps and libraries using ODC Studio, see [Use public elements](../use-public-elements.md#libraries).
