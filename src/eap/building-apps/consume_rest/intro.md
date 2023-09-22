@@ -1,5 +1,6 @@
 ---
 summary: Consume REST APIs in your OutSystems applications.
+helpids: 30484
 tags: 
 locale: en-us
 guid: b7e2daa5-b34c-4907-885b-56574bf14295

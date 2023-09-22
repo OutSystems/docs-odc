@@ -1,5 +1,6 @@
 ---
 summary: The article describes how to use the External Logic feature in OutSystems Developer Cloud (ODC) to extend apps with custom code, specifically C#.
+helpids: 30485
 tags:
 locale: en-us
 guid: 656e14cb-27b2-433f-835b-2535636e053b
