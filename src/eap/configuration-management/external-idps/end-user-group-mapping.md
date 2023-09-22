@@ -16,7 +16,7 @@ Users must have permission to access the End-user group mapping option. With per
 
 <div class="info" markdown="1">
 
-This ODC feature only works if your IdP supports groups. Check with your IdP to verify the support groups. Additionally, if your IdP does support groups, you might have to do some configurations on the IdP to send the group information during authentication. You can only map end-users. You can’t map members with organization roles, such as Admin or Developer.
+This ODC feature only works if your IdP supports groups. Check with your IdP to verify they support groups. Additionally, if your IdP does support groups, you might have to do some configuration work on the IdP to send the group information during authentication. You can only map end-users. You can’t map members with organization roles, such as Admin or Developer.
 
 </div>
 
@@ -35,7 +35,7 @@ You need the following before you can map groups:
 
 Most users can configure a group in ODC. But only users, with the appropriate permission, can map end-user groups with IdPs. Typically, Admins have the permission to map IdPs.
 
-To create a group, from the ODC Portal Navigation menu, select **End-user groups**. Then, from the End-user groups summary page, click **Create group**, enter a Group name, and click Save. You now have a new group. No other information is required to create a group.
+To create a group, from the ODC Portal Navigation menu, select **End-user groups**. Then, from the End-user groups summary page, click **Create group**, enter a Group name, and click **Save**. You now have a new group. No other information is required to create a group.
 
 You can access group mapping from the ODC portal by selecting **End-user groups** or **Identity providers**. Choose the option that works best for you. From the End-user group mapping, you can add several mappings to a group. From the Identity provider, you can add several mappings to a provider.
 
@@ -54,6 +54,10 @@ To connect a provider to an end-user group, from the ODC Portal, select **Identi
 The Group mappings summary page shows the current mappings for this Provider. The display shows the Provider group(s) and end-user groups that are mapped and the current status. An **Inactive** status indicates that the IdP and end-user group aren't in the same stage. Hover over the Inactive status to learn what you need to fix to make the mapping active.
 
 To add a new mapping, click **Add mapping**. You must enter a **Claim name** and a **Group name**. Your IdP provides the claim value, the group claim (identifier), and the group name. In the End-user group section, click on the group(s) you want to map, select a stage, and then click **Save**. When the mapping completes, end-users can log into ODC and access the apps assigned to the group.
+
+For more information about setting up the claim in Azure, [click here](https://learn.microsoft.com/en-us/azure/active-directory/hybrid/connect/how-to-connect-fed-group-claims).
+
+For more information about setting up the claim in OKTA, [click here](https://help.okta.com/asa/en-us/content/topics/adv_server_access/docs/group-management.htm).
 
 ## After mapping IdPs and end-user groups
 
