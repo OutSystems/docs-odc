@@ -1,5 +1,4 @@
 ---
-kinds: ServiceStudio.Model.SystemClientActions+OnApplicationReady+Kind
 summary:
 tags: 
 locale: en-us

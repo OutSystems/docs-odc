@@ -1,5 +1,4 @@
 ---
-kinds: ServiceStudio.Model.SystemClientActions+OnApplicationResume+Kind
 summary:
 tags: 
 locale: en-us
