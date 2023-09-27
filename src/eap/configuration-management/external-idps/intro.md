@@ -13,6 +13,18 @@ OutSystems Developer Cloud (ODC) comes bundled with Identity Service, a built-in
 
 In addition, you can use an external, self-managed IdP as an authentication provider for your organization and your apps. You can use any IdP that follows the OpenID Connect (OIDC) standard. You can configure most commercial IdPs, such as AzureAD and Okta, to support this standard. ODC supports using **PKCE** (Proof Key for Code Exchange) with external IdPs for an additional layer of security.
 
+**Note:** ODC supports all IdPs that follow the OIDC standard. The following IdPs have been successfully tested to integrate with ODC apps:
+
+* Linkedin
+* Google
+* Ping Federation Identity
+* Facebook
+* Apple
+* Azure AD
+* Okta
+* Amazon Cognito
+* Keycloak
+
 You can use an accelerator to add [commonly used social providers](#social-accelerators) for use as social authentication for your organization and your apps.
 
 When you successfully configure and save an external IdP to ODC, it becomes an option for use as an active provider for your organization, your apps, or both. You can use multiple active providers for your organization and each stage your apps are deployed to. You must use the same provider(s) for all the apps deployed to a given stage. The following diagram shows an example setup.
