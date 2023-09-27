@@ -21,6 +21,12 @@ Common use cases include accessing data through a private REST API service, requ
 
 A Private Gateway supports multiple tunnels and uses a load balancer to handle requests. Each tunnel connection is secured via SSH using ECDSA with SHA256 keys. You can connect multiple endpoints to each Cloud Connector and multiple Cloud Connector to each Private Gateway.
 
+<div class="info" markdown="1">
+
+Private Gateway requires the subscription of an add-on to the ODC Platform edition. Please contact your OutSystems account team for more information.
+
+</div>
+
 The following diagram shows a sample ODC customer setup for a Private Gateway that is active on two stages.
 
 ![Private gateways diagram](images/private-gateways-diag.png "Private gateways diagram")
