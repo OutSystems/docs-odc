@@ -10,7 +10,7 @@ platform-version: odc
 
 # OutSystems system requirements for ODC
 
-This article provides guidance to the versions of tools and software that OutSystems recommends when using OutSystems Developer Cloud (ODC) Portal and ODC Studio.
+This article provides recommendations for compatible tools and software versions that you can use with OutSystems Developer Cloud (ODC) Portal and ODC Studio.
 
 To access ODC portal and connect to ODC Studio, ensure your local network allows access to `*.outsystems.dev` domains. For end users to access ODC apps, their network must allow access to the `*.outsystems.app` domain or the [custom domain](../configuration-management/custom-domains.md) defined for each stage.
 
@@ -29,23 +29,21 @@ Before you set up ODC Studio, make sure your computer meets the following requir
 
 <div class="info" markdown="1">
 
-Check [here](configure-http-proxy.md) the necessary configurations if you're working on a network where communications to the Internet need to go through an HTTP proxy.
+If you are working on a network where communications to the Internet are routed via an HTTP proxy, then refer to [How to configure HTTP proxy in ODC studio](configure-http-proxy.md) for configuration instructions.
 
 </div>
 
 ### Minimum recommended hardware requirements
 
-These are the recommended requirements, but keep in mind that many factors (such as workload) can affect performance.
+The following are the minimum recommended hardware requirements,however, keep in mind that many factors such as workload can affect performance.
 
 * 1.8 GHz dual-core processor or better
 * 2 GB of RAM (4 GB recommended)
 * 1 GB of free disk space
 
-For Apple devices using the Apple Silicon M1 processor, ODC Studio runs best under the Rosetta 2 emulation.
-
 ### Operating systems
 
-OutSystems supports the following Operating Systems. This list is subject to change. OutSystems supports Operating Systems for six months after the manufacturer determines an end-of-life date. For example, if your Operating System reaches its end-of-life on May 1, then OutSystems supports your operating system until November 1.
+OutSystems supports the following Operating Systems. This list is subject to change. OutSystems supports Operating Systems for six months after the manufacturer's end-of-life date. For example, if your Operating System reaches its end-of-life on May 1, then OutSystems supports your operating system until November 1.
 
 * macOS:
     * macOS Big Sur
@@ -62,35 +60,35 @@ To perform client-side debugging in ODC Studio using a desktop browser, use the 
 
 ## Software requirements for app users
 
-The following sections specify the requirements that users of the apps developed with ODC must meet.
+The following sections specify the software requirements for Apps developed in ODC. 
 
 <div class="info" markdown="1">
 
-**End User Requirements**:  OutSystems browser support continues for 6 months after OutSystems announces a date on which support ends. This support is for all end-users running OutSystems on that particular browser.
+**End User Requirements**:  Support for OutSystems browser continues for 6 months after end of support date announcement. This support applies to all end-users running OutSystems on that particular browser.
 
 </div>
 
 ### Web apps
 
-It's recommended that you use the most current version.
+Use the most current version of the following browsers:
 
 * Edge
 * Firefox
 * Google Chrome
 * Safari
 
-### Progressive Web Apps
+### Progressive web apps
 
 * The default browser for the most current stable version of Android.
 * The default browser for the most current stable version of iOS.
 
 ### Native mobile apps
 
-See [Mobile Apps Build Service (MABS)](https://success.outsystems.com/support/release_notes/mobile_apps_build_service_versions/) for the latest supported Android and iOS platform versions and the minimum requirements to generate your mobile apps.
+For more information about the latest supported Android and iOS platform versions and the minimum requirements to generate mobile apps, refer to [Mobile Apps Build Service (MABS)](https://success.outsystems.com/support/release_notes/mobile_apps_build_service_versions/)
 
 ## Request limits
 
-There are several known request limits that you should keep in mind when building apps.
+The following are the request limits to keep in mind when you are building apps.
 
 ### Upload request size
 
