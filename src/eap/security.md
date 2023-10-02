@@ -42,7 +42,7 @@ The network layer of ODC uses encryption, a WAF (Web Application Firewall), intr
 
 ### Encryption in transit
 
-All incoming requests to the Platform services and Runtime terminate at an HTTPS endpoint and are end-to-end encrypted. ODC supports TLS 1.3.
+All incoming requests to the [Platform services and Runtime](architecture/intro.md#Platform) terminate at an HTTPS endpoint and are end-to-end encrypted. ODC supports TLS 1.3.
 
 ### Web Application Firewall
 
@@ -117,9 +117,9 @@ For more information see [Configure a private gateway to your network](configura
 
 Each Platform service is built as a .NET, Linux-based container image. All the functionality a service provides is available as a microservice through an API, and each API is versioned to allow for seamless evergreen upgrades. When a developer publishes an app, it's built using the latest version of each Platform service, each of which incorporates the latest security updates.
 
-Each app is also built as a .NET, Linux-based container image. OutSystems security engineers work to continuously harden the container's base image to minimize the attack surface.
+Each app is also built as a .NET, Linux-based container image. OutSystems security engineers work to continuously harden the container's base image to minimize the attack surface. The base container image contains the necessary frameworks, libraries, and dependencies required to run ODC apps.
 
-When a developer publishes an app, ODC stores the image in a container registry. The container image is then reused when deployed from Development to the other stages. This reduces deployment time and eliminates any doubt that there are subtle differences in deployments between stages.
+When a developer publishes an app, ODC stores the image in the container registry, a centralized repository for storing container images. The container image is then reused when deployed from Development to the other stages. This reduces deployment time and eliminates any doubt that there are subtle differences in deployments between stages.
 
 ### Software supply chain integrity
 
@@ -138,11 +138,26 @@ The process ensures the container image released to production is identical to t
 
 #### Vulnerability patching
 
-A static code analysis tool scans Platform service code for vulnerabilities and weak security practices. The tool does this before the system builds the code as a container image and covers both first and third-party code.
+A static code analysis tool scans [Platform service](architecture/intro.md#platform--platform) code for vulnerabilities and weak security practices. The tool does this before the system builds the code as a container image and covers both first and third-party code.
 
-A key acceptance criterion for production code is the elimination of all critical, high, and medium vulnerabilities. When a fix isn't immediately available, developers must find an alternative solution (high, critical) or secure code using best practice (medium).
+Daily vulnerability scanning of the container registry covers the current version of the Platform service container images and all the deployed app images across all customer Runtime stages. When a vulnerability is detected, OutSystems security engineers fix it and release a new version of the affected Platform service(s) or app base container image. Your apps are upgraded by an automatic patching process.
 
-Daily vulnerability scanning of the container registry covers the current version of the Platform service container images and all the deployed apps across all customer Runtime stages. When a vulnerability is detected, OutSystems security engineers fix it and release a new version of the affected Platform service(s) or app base container.
+##### Automatic patching
+
+When a fix for a critical vulnerability is available, it triggers an automatic upgrade process for the affected apps in each stage of your ODC organization.
+
+A critical vulnerability is one with a **Common Vulnerability Scoring System** (CVSS) score of between 9.0 and 10.0. The CVSS is an open industry standard for assessing the severity of vulnerabilities. You can read more information about CVSS on [the Forum of Incident Response and Security Teams website](https://www.first.org/cvss/).
+
+###### Schedule for app upgrades
+
+All the users with the Admin role in your ODC organization receive updates about the automatic patching process from the following four emails.
+
+![Schedule for app upgrades](images/app-upgrades-schedule-diag.png)
+
+1. **Schedule email:** Provides details about the affected stages, the upgrade schedule, and links to more information about each vulnerability.
+1. **48-hour reminder email:** Reminder of the upcoming scheduled upgrade for the given stage.
+1. **Upgrade started email:** Marks the commencement of the automatic upgrade process for the given stage. It may take up to four hours. During the automatic upgrade process no downtime of your apps is expected. Apps in your non-development stages are recompiled and reployed. Apps in your development stages are republished.
+1. **Upgrade completed email:** Confirms the successful completion of the automatic upgrade process for the given stage. A report detailing which apps were upgraded is attached to this email.
 
 ##### Malware scanning
 
@@ -161,7 +176,7 @@ All customer data:
 * Is encrypted at rest with a per-customer encryption key managed by OutSystems.
 * Resides in the region specified during the creation of the customer's ODC organization.
 
-A network namespace isolates each stage [within each organization's Runtime.](#isolation-of-stages).
+A network namespace isolates each stage [within each organization's Runtime](#isolation-of-stages).
 
 ### File Integrity Monitoring
 
