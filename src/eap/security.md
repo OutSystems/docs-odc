@@ -148,8 +148,6 @@ When a fix for a critical vulnerability is available, it triggers an automatic u
 
 A critical vulnerability is one with a **Common Vulnerability Scoring System** (CVSS) score of between 9.0 and 10.0. The CVSS is an open industry standard for assessing the severity of vulnerabilities. You can read more information about CVSS on [the Forum of Incident Response and Security Teams website](https://www.first.org/cvss/).
 
-###### Schedule for app upgrades
-
 All the users with the Admin role in your ODC organization receive updates about the automatic patching process from the following four emails.
 
 ![Schedule for app upgrades](images/app-upgrades-schedule-diag.png)
