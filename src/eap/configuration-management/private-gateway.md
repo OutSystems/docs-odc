@@ -27,7 +27,7 @@ Private Gateway requires the subscription of an add-on to the ODC Platform editi
 
 </div>
 
-The following diagram shows a sample ODC customer setup for a Private Gateway that is active on two stages.
+The following diagram shows a sample ODC customer setup for a Private Gateway that's active on two stages.
 
 ![Private gateways diagram](images/private-gateways-diag.png "Private gateways diagram")
 
@@ -51,7 +51,15 @@ You or a member of your team can now use the Token and Address to run Cloud Conn
 
 If you deactivate a Private Gateway, the tunnel(s) are deleted and your apps can't access the connected endpoints. If you reactivate, the Token and Address remain the same. The Private Gateway automatically reestablishes a tunnel with any Cloud Connector instances still running with that unique Token and Address.
 
-To renew the Token, click the Renew icon. You must then stop each instance of the Cloud Connector and run with the new Token.
+To renew the Token, click the Renew icon. 
+
+Instances of Cloud Connector running with the old Token will continue to work until the connection fails or it's restarted. If you restart the instance, ensure you use the new Token.
+
+<div class="info" markdown="1">
+
+The Cloud Connector has a built-in connection retry mechanism. After you renew the Token, any subsequent retry attempt will fail, as it uses the old Token. To minimize disruption, carefully plan the timing for renewing your Token and restarting any affected Cloud Connector instances.
+
+</div>
 
 ## Use endpoints in your apps
 
