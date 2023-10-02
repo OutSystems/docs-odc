@@ -63,7 +63,7 @@ To install your web service and create the structures to be used by the interfac
 
     <div class="info" markdown="1">
 
-    You can use a free [SOAP WSDL](https://ecs.syr.edu/faculty/fawcett/Handouts/cse775/code/calcWebService/Calc.asmx) available for testing.
+    You can use a free [SOAP WSDL](https://ecs.syr.edu/faculty/fawcett/Handouts/cse775/code/calcWebService/Calc.asmx) available for testing. If the SOAP service you want to use is on a private network you can use the [Private Gateway feature](../../configuration-management/private-gateway.md) to connect to it, see the [SDK README](README.md#use-with-the-private-gateway-feature) for guidance.
 
     </div>
 
@@ -180,7 +180,7 @@ To call the SOAP web service, follow these steps:
         private static readonly int TIMEOUT = 1000;
         private readonly BasicHttpBinding _binding;
         private readonly EndpointAddress_address;
-    
+
 2. To create the request and add the properties for the BasicHttpBinding.
 
     * Define properties for the BasicHttpBinding.

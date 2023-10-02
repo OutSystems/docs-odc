@@ -156,7 +156,17 @@ The table below maps the .NET attributes exposed by the SDK to the corresponding
 
 ## Best Practices
 
-### App architecture using external logic
+### Use with the Private Gateway feature
+
+You can connect your external library to private data and private services ("endpoints") that aren't accessible by the internet by using the [Private Gateway feature](../../configuration-management/private-gateway.md).
+
+Once you've configured a private gateway to your network, you can use the connected endpoint(s) in your custom code using the hostname defined by the environment variable `SECURE_GATEWAY`. You use that hostname in conjunction with the configured ports.
+
+For example, if you want to connect to a REST API endpoint on port 8080 you could use a string to define the Base URL as `$"https://{Environment.GetEnvironmentVariable("SECURE_GATEWAY")}:8080/"` if the endpoint is connected to cloud-connector over TLS/SSL or `http` if it's not.
+
+Ensure that your code file includes the `using System;` directive at the top to have access to the `System` namespace, which is necessary for utilizing the `Environment.GetEnvironmentVariable` method.
+
+### App architecture
 
 The server actions you build in the OutSystems visual language execute directly in the [ODC Runtime](../../architecture/intro.md/#runtime), the same infrastructure as the app.
 
