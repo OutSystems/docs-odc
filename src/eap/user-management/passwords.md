@@ -21,7 +21,9 @@ Only users can manage their passwords. Users can change their password using the
 Members with an organization role such as Developer or Admin, can also recover their forgotten password from the Portal login page by clicking **Forgot password**.
 
 <div class="info" markdown="1">
+    
 Admins don't have permission to change or recover other users' passwords.
+
 </div>
 
 You can use pre-built user screens in your app to enable end-users to change and recover their password. For more information, see [Custom authentication flows](../building-apps/ui/custom-auth.md). If organization users (Members) working in an app need to recover their password, they must use the ODC Portal.
