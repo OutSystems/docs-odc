@@ -154,7 +154,7 @@ All the users with the Admin role in your ODC organization receive updates about
 
 1. **Schedule email:** Provides details about the affected stages, the upgrade schedule, and links to more information about each vulnerability.
 1. **48-hour reminder email:** Reminder of the upcoming scheduled upgrade for the given stage.
-1. **Upgrade started email:** Marks the commencement of the automatic upgrade process for the given stage. It may take up to four hours. During the automatic upgrade process no downtime of your apps is expected. Apps in your non-development stages are recompiled and reployed. Apps in your development stages are republished.
+1. **Upgrade started email:** Marks the commencement of the automatic upgrade process for the given stage. It may take up to four hours. During the automatic upgrade process no downtime of your apps is expected. Apps in your non-development stages are recompiled and redeployed. Apps in your development stages are republished.
 1. **Upgrade completed email:** Confirms the successful completion of the automatic upgrade process for the given stage. A report detailing which apps were upgraded is attached to this email.
 
 ##### Malware scanning
