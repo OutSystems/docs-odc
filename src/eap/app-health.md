@@ -48,6 +48,10 @@ An app's health score is expressed as a numerical score from 1 to 100 and is bas
 
 * **Good** (85-100)
 
+An app's health score calculation follows the Application Performance Index (Apdex) industry standard.
+
+The score is calculated by taking the number of successful requests to the app's elements and dividing by the total number of requests over the selected period. A request is said to be successful if it is completed without errors and the response time is less than a defined threshold.
+
 ### Requests {#requests}
 
 Requests are the number of application interactions done using screens, APIs, or timers. There are 2 request metrics:
