@@ -20,7 +20,7 @@ After you can create a mobile app in ODC (OutSystems Developer Cloud) Studio, yo
 
 <div class="warning" markdown="1">
 
-Avoid changing the app name, due to [a known issue in the product](../../known-issues/intro.md#changing-app-name).
+Avoid changing the app name. If you change the app name, ODC changes the URL, which is the app's identifier. To learn more, refer [considerations when building mobile apps.](#considerations-when-building-mobile-apps).
 
 </div>
 
@@ -107,4 +107,24 @@ To view the package history of your mobile app:
 
     ![Package history](images/viewhistory-packagehistory-odcs.png)
 
-For  more information about troubleshooting your apps, see [Monitor and troubleshoot apps](../../monitor-apps.md).
+For more information about troubleshooting your apps, see [Monitor and troubleshoot apps](../../monitor-apps.md).
+
+## Considerations when building mobile apps
+
+Consider the following when creating mobile apps.
+
+### Change app name breaks experience in mobile apps { #changing-app-name } 
+
+Avoid changing the app name. If you change the app's name, ODC changes the URL, which is the app's identifier. This adversely impacts the mobile apps already running on devices or in distribution because:
+
+* Updates over the air aren't delivered.
+* All data and server actions fail.
+* Application logs (native and runtime) are no longer available since logs are stored locally on the device, associated with the application URL. This also occurs after updating the native package to the new version pointing to the new URL.
+* Outdated app version can still be opened and run. Depending on the logic flow (use of server actions, for example), the app may have limited usability. Sometimes its not obvious to users that a problem exists or that the app isn't functioning correctly.
+
+### You can't preview a mobile app in the Safari browser within the ODC Portal
+
+Using the Safari browser to preview a mobile app within the ODC Portal doesn't work. The app and the preview render within an iFrame in different domains, and due to security restrictions from Apple, Safari can't access the content.
+
+OutSystems recommends Chrome browser for previewing the mobile app in the ODC Portal.
+

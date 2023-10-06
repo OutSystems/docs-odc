@@ -399,7 +399,12 @@ DecimalToText(200) = "200"
 
 ## LongIntegerToInteger
 
-Converts Long Integer 'l' to an Integer value. If 'l' is outside the boundaries of the Integer values, the function will return the Integer default value. To check if the conversion is possible you can use the LongIntegerToIntegerValidate function.  
+Converts Long Integer 'l' to an Integer value. If 'l' is outside the boundaries of the Integer values, the function will return the Integer default value. To check if the conversion is possible, you can use the LongIntegerToIntegerValidate function.  
+
+There is a limitation: depending on where you use `LongIntegerToInteger` and get an overflow, your logic returns the following:
+
+* On server and client side, `LongIntegerToInteger` on overflow returns `0``.
+* On the database, `LongIntegerToInteger` on overflow throws an error.
 
 Available in:  
 

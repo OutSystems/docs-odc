@@ -475,9 +475,6 @@
         - href: eap/reference/apis/pie.md
         - href: eap/reference/apis/radar.md       
    
-# Known issues
-- href: eap/known-issues/intro.md
-
 # Errors
 - href: error/intro.md
 - topics:
