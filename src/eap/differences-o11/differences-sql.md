@@ -38,6 +38,8 @@ The non-deterministic collation in ODC is, by default, defined at the singular l
 * The SQL database operators (=, <>, >, >=, <, <=) are CIAI and the default comparison in ODC.
 * The pattern matching operators of LIKE, SIMILAR, and REGEX aren't supported through non-deterministic collations.
 
+### Pattern matching operators
+
 The **pattern matching operators aren't supported and result in runtime errors**. For example, you get an error like "DataBaseException Error in advanced query SQL1 (...) with nondeterministic collations, in which these operators are not supported."
 
 **For pattern matching operators use the function caseaccent_normalize** directly in the SQL Node (AdvancedQuery), in each pattern matching operator.
