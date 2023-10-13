@@ -94,6 +94,7 @@
         - href: eap/building-apps/mobile/plugins/health-fitness/intro.md
         - href: eap/building-apps/mobile/plugins/keystore-plugin/intro.md
         - href: eap/building-apps/mobile/plugins/location/intro.md
+        - href: eap/building-apps/mobile/plugins/payments-plugin/intro.md
       - href: eap/building-apps/mobile/app-shield/intro.md
       - topics: 
         - href: eap/building-apps/mobile/app-shield/protection-features-description.md
