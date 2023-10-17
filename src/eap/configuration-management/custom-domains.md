@@ -8,11 +8,13 @@ platform-version: odc
 figma:
 ---
 
-<div class="info" markdown="1">
-With ODC, customers do not need to purchase their own SSL certificates for use with Custom Domains. Instead, ODC will automatically issue X.509 certificates once the ownership of a domain has been verified.
-</div>
-
 # Configure custom domains for apps
+
+<div class="info" markdown="1">
+    
+With ODC, customers don't need to purchase their own SSL certificates for use with Custom Domains. Instead, ODC will automatically issue X.509 certificates once the ownership of a domain has been verified.
+
+</div>
 
 For each stage in which you deploy apps, OutSystems Developer Cloud (ODC) comes with a **built-in** OutSystems domain for end-user access. The table below shows built-in domains if you have three stages.
 
