@@ -10,6 +10,12 @@ figma:
 
 # Configure custom domains for apps
 
+<div class="info" markdown="1">
+    
+With ODC, customers don't need to purchase their own SSL certificates for use with Custom Domains. Instead, ODC will automatically issue X.509 certificates once the ownership of a domain has been verified.
+
+</div>
+
 For each stage in which you deploy apps, OutSystems Developer Cloud (ODC) comes with a **built-in** OutSystems domain for end-user access. The table below shows built-in domains if you have three stages.
 
 
@@ -95,7 +101,7 @@ To delete a custom domain, from the ODC Portal, navigate to **Configurations** >
 
 <div class="info" markdown="1">
 
-You can now delete the CNAME records you added for the domain from the DNS records of your domain registrar. To delete records, see your domain registrar's support documentation for instruction. The certificate ODC issued for the domain won't automatically renew and so will expire when you delete the records.
+The certificate ODC issued for the domain will automatically renew if the CNAME Record that was added remains in the DNS records for your domain registrar. You can remove the DNS entry if you do not want the certificate to auto-renew. To delete records, see your domain registrar's support documentation for instructions.
 
 </div>
 
