@@ -16,20 +16,32 @@ Implementing IP filtering enhances security and reduces the risk of unauthorized
 
 Only users with **Manage IP Restrictions** permissions can create, edit, and delete IP filter rules.
 
+<div class="info" markdown="1">
+
+IP filters require the subscription of an add-on. Please contact your OutSystems account team for more information.
+
+</div>
+
 ## Create an IP filter
 
 By creating an IP Filter, ODC will block all traffic except traffic that originates from the IP Addresses defined in the IP Filter. To create an IP filter, follow these steps:
 
 1. Go to the ODC Portal and select **Configurations** > **IP filters** from the Navigation menu.<br/> The IP filter screen is displayed.
-1. Select the stage such as Developement or Production.
+   
+1. Select the stage such as Development or Production.
+   
 1. Click **Create IP filter** to display the form.
+   
     ![IP filters](images/ip-filter-odcs.png)
+   
 1. In the IP filter form, enter the required information in the **Name**, **Description**, and **IP address/range**.<br/> ODC validates:
     * The uniqueness of each filter name.
     * The correct IP address/range format, such as IPv4 and IPv6.
-1. Click **+** to add the IP address or range of IP addresses, and then click **Save**
+      
+1. Click **+** to add the IP address or range of IP addresses, and then click **Save**.
     * A confirmation popup is displayed.
-1. Click **Create** 
+      
+1. Click **Create**. 
     * The updated list of IP filters is displayed.
 
 You can define up to 20 IP addresses/ranges per rule.
@@ -39,11 +51,15 @@ You can define up to 20 IP addresses/ranges per rule.
 You can edit the **Name**, **Description**, and **IP address/range** of an IP filter. To edit an existing IP filter, follow these steps:
 
 1. Go to the ODC Portal and select **Configurations** > **IP filters** from the Navigation menu.<br/> The IP filter screen is displayed.
+   
 1. In the list, select the IP filter you want to edit.
+   
 1. Click **Edit** to change the values in the form. <br/> ODC validates:
     * The uniqueness of each filter name.
     * The correct IP address/range format, such as IPv4 and IPv6.
+      
 1. Click **Save**.
+   
 1. Click **Save** again.
     * The updated list of IP filters is displayed.
 
@@ -52,12 +68,10 @@ You can edit the **Name**, **Description**, and **IP address/range** of an IP fi
 To delete an existing IP filter, follow these steps:
 
 1. Go to the ODC Portal and select **Configurations** > **IP filters** from the Navigation menu.<br/> The IP filter screen is displayed.
+   
 1. Find the IP filter you want to edit, and select it from the list of filters.
+   
 1. Click the ellipsis (3-dots) to the right of the IP filter name, then click the **Delete** button to display a confirmation popup.
+   
 1. Click **Delete** again to display the list of IP filters without the deleted filter.
 
-<div class="info" markdown="1">
-
-The feature mentioned in this article requires the subscription of an add-on to the ODC Platform edition. Please contact your OutSystems account team for more information.
-
-</div>
