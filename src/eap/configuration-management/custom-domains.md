@@ -95,7 +95,7 @@ To delete a custom domain, from the ODC Portal, navigate to **Configurations** >
 
 <div class="info" markdown="1">
 
-You can now delete the CNAME records you added for the domain from the DNS records of your domain registrar. To delete records, see your domain registrar's support documentation for instruction. The certificate ODC issued for the domain won't automatically renew and so will expire when you delete the records.
+The certificate ODC issued for the domain will automatically renew if the CNAME Record that was added remains in the DNS records for your domain registrar. You can remove the DNS entry if you do not want the certificate to auto-renew. To delete records, see your domain registrar's support documentation for instructions.
 
 </div>
 
