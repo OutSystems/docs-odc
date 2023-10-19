@@ -25,7 +25,7 @@ In addition, ODC lets you make your apps accessible to end-users through your or
 
 <div class="info" markdown="1">
     
-With ODC, customers don't need to purchase their own SSL certificates for use with Custom Domains. Instead, ODC will automatically issue X.509 certificates once the ownership of a domain has been verified.
+With ODC, customers don't need to purchase their own SSL certificates for use with Custom Domains. Instead, ODC will automatically issue `X.509` certificates once the ownership of a domain has been verified.
 
 </div>
 
@@ -92,7 +92,7 @@ To add the CNAME record to your domain registrar, complete the following steps. 
 
 To delete a custom domain, from the ODC Portal, navigate to **Configurations** > **Domains** and then follow these steps.
 
-1. Click the dropdown menu and select the stage for which you want to add a domain. The list of domains displays showing the built-in domain and any custom domains already added to the selected stage.
+1. Click the dropdown menu and select the stage for which you want to add a domain. The list of domains displays the built-in domain and any custom domains already added to the selected stage.
 1. Click the card of the custom domain you want to delete. The **Set up your domain** screen displays and you see the status next to the domain name.
 1. Click the **ellipsis** (3-dots) to the right of the domain status and select **Delete domain**.
 1. Before confirming the deletion of the domain, review the information in the popup box. Then do one of the following:
