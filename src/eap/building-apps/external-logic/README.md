@@ -166,11 +166,21 @@ For example, if you want to connect to a REST API endpoint on port 8080 you coul
 
 Ensure that your code file includes the `using System;` directive at the top to have access to the `System` namespace, which is necessary for utilizing the `Environment.GetEnvironmentVariable` method.
 
-### App architecture
+### Architecture
 
-The server actions you build in the OutSystems visual language execute directly in the [ODC Runtime](../../architecture/intro.md/#runtime), the same infrastructure as the app.
+Server actions built in the OutSystems visual language execute directly in the [ODC Runtime](../../architecture/intro.md/#runtime), sharing the same execution context as the app. This means that any state or context established during the execution of these server actions is maintained within the scope of the app's lifecycle.
 
-Server actions your apps consume through external logic are slightly different in that they execute outside of this Runtime infrastructure. Each time your app calls a server action exposed by an external library, it makes an HTTPS call to an external service. This adds a small latency to the execution time of the server action. You should consider this when building an ODC app that uses external logic: is there any way to minimize the number of calls to the server action(s)?
+On the other hand, server actions exposed through external libraries execute differently. Each time your app calls a server action from an external library, it makes an HTTPS call to an external service that hosts and runs the custom code. As a result, the execution context of these server actions is separate from the app.
+
+This architecture has several important implications:
+
+* **Statelessness:** The external libraries you build should be designed to be stateless. This means they shouldn't maintain any state information between calls. Any state or context needed to execute the external library should be passed explicitly as an input parameter. For example, storing state as fields in the library's class isn't supported.
+
+* **Latency:** Since an HTTPS call is made each time a server action in an external library is called, a small amount of latency is introduced in the execution time. Minimizing the number of calls to external libraries and batching operations where possible can help mitigate the impact of this latency.
+
+* **Independence:** External libraries run independently of the ODC app. This means they don't have direct access to the app's resources, context, or state, other than what you explicitly provide as an input parameter.
+
+By designing your external libraries with these considerations in mind, you can ensure that they function correctly and efficiently within the broader architecture of your ODC apps.
 
 ## Troubleshooting
 
