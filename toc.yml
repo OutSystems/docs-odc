@@ -70,13 +70,13 @@
       - href: eap/building-apps/data/data-types.md
       # Edit data
       - href: eap/building-apps/data/edit-data.md
-
-    #Merge
+    # Libraries
+    - href: eap/building-apps/libraries.md
+    # Merge
     - href: eap/building-apps/merge/intro.md
     - topics:
       - href: eap/building-apps/merge/concepts.md
       - href: eap/building-apps/merge/merge-example.md
-    
     # Mobile apps
     - href: eap/building-apps/mobile/intro.md
     - topics:

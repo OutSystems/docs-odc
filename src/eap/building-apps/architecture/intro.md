@@ -51,17 +51,11 @@ Libraries are packaged with apps when an app is published, and each app consumes
 
 ![Libraries in ODC](images/libraries-odc-diag.png)
 
-### Using libraries
+Versioning of libraries enables systematic updates and integration of your library's elements into apps and other libraries within your organization. 
 
-Use libraries when your use case requires fast code execution, such as encryption utilities or XML parsing.
+Learn more about the fundamentals of libraries and how versioning works in the [Libraries](../libraries.md#libraries-versioning) article.
 
-Libraries are good for sharing reusable UI components such as in OutSystems UI, OutSystems Charts, or OutSystems Maps. In these examples, apps can use libraries' layouts, themes, patterns, and UI logic.
-
-Libraries can also be used as integration wrappers or connectors to external systems. Using wrappers or connectors lets you better manage changes by abstracting and centralizing the layer to be consumed by different apps.
-
-![When to use libraries in ODC](images/libraries-diag.png)
-
-## How apps and libraries work
+## How apps work with libraries
 
 Apps can consume libraries through strong dependencies, which are packaged when published.
 

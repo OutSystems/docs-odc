@@ -24,7 +24,7 @@ ODC elevates libraries to a top-level concept. Libraries exist at the same level
 
 You can build you own libraries, but there are many provided by OutSystems available out-of-the-box. See the [OutSystems language and elements documentation](../reference/intro.md#libraries) for a list of currently available libraries.
 
-You can build your own libraries in the OutSystem visual language or [using external logic](../building-apps/external-logic/intro.md).
+You can build your own libraries in the OutSystem visual language or [using external logic](../building-apps/external-logic/intro.md). To learn more about how libraries and their versioning works see the [Libraries](libraries.md#libraries-versioning) article.
 
 When you add a public element from a provided library, it becomes available to use as an action in the **Server Actions** folder of the **Logic** tab. You can use an action in the logic flow of any server action or service action.
 

@@ -18,15 +18,13 @@ The following diagram shows the asset submission journey. The journey is slightl
 
 When you submit a new asset, it gets reviewed by the OutSystems Forge team to make sure it meets the requirements. The asset is added to the Forge Repository, and from ODC Portal, you can see it in Forge and edit the information on the detail page. The asset is only visible to you (the owner) and not to users outside your organization. Once it is approved, all users outside your organization can access your asset. Users see an **Install** button on the asset. If it's a new version, users see an **Update** button, indicating that a new version of the asset is available to install.
 
-When you submit a library, it doesn't have to be in the Production environment. Libraries in Forge are automatically versioned. When a new version is submitted, the increase is on the patch.
-
 ## Prerequisites
 
 To submit an asset, your asset must meet the following prerequisites:
 
 * Asset names must be unique. The name can't be the same as a name used for a previously submitted Forge asset.
 * Submit any dependencies first because you can’t proceed with submission if you’re missing a dependency.
-* Apps must be versioned.
+* Assets must be versioned.
 * Assets must have a short description that you can edit in ODC Studio.
 * The asset name of this version must be the same as its previous version.
 
@@ -48,10 +46,7 @@ By default, the Asset name, the icon, and the short description are the ones def
 
 ## Submit a new asset version to Forge
 
-When an asset gets updated, resubmit it to Forge to share the changes. Keep the following in mind:
-
-* The updated asset must have the same name as the original asset.
-* For libraries, the version number automatically increases on the patch.
+When an asset gets updated, resubmit it to Forge to share the changes. The updated asset must have the same name as the original asset.
 
 Follow these steps to submit a new version of your asset:
 
