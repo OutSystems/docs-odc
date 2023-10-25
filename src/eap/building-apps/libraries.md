@@ -116,3 +116,11 @@ This notification mechanism requires ODC Studio version 1.3.0 or higher.
 Review the updated libraries and check for breaking changes impacting your app or library using the new library version. For example, If your app relies on a Server Action no longer supported in the new specified library version, you need to update the dependency on the Server action. 
 
 You can either accept or dismiss these library updates, giving you the flexibility to control the version of the library in your app or library.
+
+If you accept these updates, but later decide you want to roll them back, you can:
+
+* Publish the previous revision of the consumer app or
+
+* Merge the current version with the previous version of the app. This option only reverts the library update if you select the older version of the library.
+
+The updates are rolled back, the library is untouched, and other consumer apps are agnostic to the changes.
