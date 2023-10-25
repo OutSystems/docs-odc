@@ -24,7 +24,7 @@ Apps are always accessible to end-users through built-in domains. For example, a
 In addition, ODC lets you make your apps accessible to end-users through your organization's domain(s). In a given stage, your apps can be available through one or more custom domains that you add to that stage. Each custom domain must be unique to a customer and stage.
 
 <div class="info" markdown="1">
-    
+
 With ODC, customers don't need to purchase their own SSL certificates for use with Custom Domains. Instead, ODC will automatically issue `X.509` certificates once the ownership of a domain has been verified.
 
 </div>
