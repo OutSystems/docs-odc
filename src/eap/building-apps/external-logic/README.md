@@ -182,6 +182,13 @@ This architecture has several important implications:
 
 By designing your external libraries with these considerations in mind, you can ensure that they function correctly and efficiently within the broader architecture of your ODC apps.
 
+### Use with large binary files
+
+Server actions exposed by external libraries don't support input larger than 5.5MB. If a large binary file is passed as input to a server action during an app's runtime, the end-user gets an error "Input payload is too large". To make use of a large binary file in custom code you can:
+
+1. Expose the binary file in a [REST API endpoint](../exposing_rest/intro.md) from your app and then implement logic in your custom code to consume the file from the endpoint.
+1. Host the binary file on a file-sharing service and implement logic in your custom code to download the file from the URL.
+
 ## Troubleshooting
 
 All validation of your external logic is done when [uploading the ZIP file to the Portal](intro.md#upload-and-publish-the-external-logic).
