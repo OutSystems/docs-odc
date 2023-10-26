@@ -159,7 +159,7 @@ class SummaryHandler:
         
         payload = {"text": text}
         try:
-            async with session.post(summarize_endpoint, json=payload, timeout=30) as response:
+            async with session.post(summarize_endpoint, json=payload, timeout=60) as response:
                 response.raise_for_status()  # This will raise an exception for HTTP errors
                 summary_data = await response.json()
 
