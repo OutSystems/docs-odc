@@ -96,7 +96,7 @@ To set up a back-end notification service, do the following:
 
     <div class="info" markdown='1'>
 
-    OutSystems offers two REST API versions based on the features you want to use. See the reference page to learn more about the versions.
+    OutSystems offers two REST API versions based on the features you want to use. See the [reference page](../firebase-plugin/firebase-cm-plugin-api-v1-v2.md) to learn more about the versions.
 
     </div>
 
@@ -110,7 +110,7 @@ To set up a back-end notification service, do the following:
 
 <div class="info" markdown='1'>
 
-To learn more about the v1 and v2 endpoints of OutSystems REST API, see the reference page.
+To learn more about the v1 and v2 endpoints of OutSystems REST API, see the [reference page](../firebase-plugin/firebase-cm-plugin-api-v1-v2.md).
 
 </div>
 
@@ -179,7 +179,7 @@ To enhance your notification with custom actions you must use the **v2 REST API*
 
 <div class="info" markdown='1'>
 
-To learn more about the v2 endpoint of OutSystems REST API, see the reference page.
+To learn more about the v2 endpoint of OutSystems REST API, see the [reference page](../firebase-plugin/firebase-cm-plugin-api-v1-v2.md).
 
 </div>
 
@@ -223,7 +223,7 @@ To enhance your notification with custom sounds you must upload the .wav file yo
 
 * Even though this setting is optional, you must add a file to it. This requirement is temporary.
 
-* To learn more about the v2 endpoint of OutSystems REST API, see the reference page.
+* To learn more about the v2 endpoint of OutSystems REST API, see the [reference page](../firebase-plugin/firebase-cm-plugin-api-v1-v2.md).
 
 </div>
 

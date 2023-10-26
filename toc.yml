@@ -98,6 +98,7 @@
         - href: eap/building-apps/mobile/plugins/firebase-plugin/intro.md
         - topics:
           - href: eap/building-apps/mobile/plugins/firebase-plugin/firebase-cloud-messaging-plugin.md
+          - href: eap/building-apps/mobile/plugins/firebase-plugin/firebase-cm-plugin-api-v1-v2.md
         - href: eap/building-apps/mobile/plugins/health-fitness/intro.md
         - href: eap/building-apps/mobile/plugins/keystore-plugin/intro.md
         - href: eap/building-apps/mobile/plugins/location/intro.md
