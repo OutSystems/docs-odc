@@ -47,6 +47,12 @@ Click the **Group mappings** tab to display all group mapping for this group. In
 
 To add a new mapping, click **Add mapping**. All fields are required. From the Provider drop-down, select a provider. Enter a **claim name** and a **group name**. Your IdP provides the claim value, which is the group claim (identifier) and the group name.
 
+<div class="info" markdown="1">
+    
+For Azure AD (or Microsoft Entra) the claim value should be the Object Id of the group.
+
+</div>
+
 ## Mapping from the Identity providers option
 
 To connect a provider to an end-user group, from the ODC Portal, select **Identity providers**. From the Identity provider summary page, click on the provider you want to map to an end-user group. If you have the correct permissions, a Group mappings tab displays.
