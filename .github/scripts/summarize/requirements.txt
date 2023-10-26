@@ -1,0 +1,4 @@
+aiohttp==3.8.6
+asyncio==3.4.3
+PyGithub==2.1.1
+ruamel.yaml==0.18.2

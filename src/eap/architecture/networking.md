@@ -75,4 +75,3 @@ An example of an HTTPS request is when a user submits a form in an app. The requ
 The apps are available at `<customername>.outsystems.app/appname` and on all the active custom domains (such as `apps.example.com/appname`).
 
 ![Runtime network architecture](images/network-runtime-diag.png "Runtime network architecture") 
-

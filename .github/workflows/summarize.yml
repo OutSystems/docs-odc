@@ -1,0 +1,68 @@
+name: TK AI Tools
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    paths:
+      - '**.md'
+  issue_comment:
+    types:
+      - created
+
+jobs:
+  summarize:
+    runs-on: tk-llm-dev
+    steps:
+      - name: Set up ref for checkout
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            echo "REF=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
+          elif [ "${{ github.event_name }}" == "issue_comment" ]; then
+            PR_API_URL="${{ github.event.issue.pull_request.url }}"
+            REF=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" $PR_API_URL | jq -r .head.ref)
+            echo "REF=$REF" >> $GITHUB_ENV
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout docs
+        uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: 1
+          ref: ${{ env.REF }}
+          persist-credentials: true
+
+      - name: Cache virtual environment
+        uses: actions/cache@v3.3.2
+        with:
+          path: ~/.venv_summarize
+          key: ${{ runner.os }}-venv-${{ hashFiles('.github/scripts/summarize/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-venv-
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          if [ ! -d "$HOME/.venv_summarize" ]; then
+            python -m venv ~/.venv_summarize
+            source ~/.venv_summarize/bin/activate
+            pip install --upgrade pip
+            pip install --no-cache-dir -r .github/scripts/summarize/requirements.txt
+          else
+            echo "Dependencies are already installed."
+          fi
+
+      - name: Run script
+        if: (github.event_name == 'pull_request') || (contains(github.event.comment.body, '/summarize'))
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          COMMENT_ID: ${{ github.event.comment.id }}
+          SUMMARIZE_ENDPOINT: ${{ secrets.SUMMARIZE_ENDPOINT }}
+        run: |
+          source ~/.venv_summarize/bin/activate
+          python .github/scripts/summarize/summarize.py
