@@ -16,7 +16,7 @@ figma:
 
 ## Cause
 
-The file contained in the compressed high code package cannot be uncompressed.
+The file contained in the compressed high code package can't be uncompressed.
 
 ## Impact
 

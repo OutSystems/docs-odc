@@ -28,13 +28,13 @@ To solve this issue, you should ensure that each structure with the `OSStructure
 
 **Before**
 
-    [OSStructure("MyStructure")]
+    [OSStructure(Name = "MyStructure")]
     public struct MyStructure1
     {
         public int Value;
     }
 
-    [OSStructure("MyStructure")]
+    [OSStructure(Name ="MyStructure")]
     public struct MyStructure2
     {
         public float Value;
@@ -42,13 +42,13 @@ To solve this issue, you should ensure that each structure with the `OSStructure
 
 **After**
 
-    [OSStructure("MyStructure1")]
+    [OSStructure(Name = "MyStructure1")]
     public struct MyStructure1
     {
         public int Value;
     }
 
-    [OSStructure("MyStructure2")]
+    [OSStructure(Name = "MyStructure2")]
     public struct MyStructure2
     {
         public float Value;

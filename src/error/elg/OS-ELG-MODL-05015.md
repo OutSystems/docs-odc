@@ -32,7 +32,7 @@ Replace the unsupported type with one from the list of supported types:
 
 For example:
 
-    [OSStructure("MyStructure")]
+    [OSStructure(Name = "MyStructure")]
     public struct MyStructure
     {
         public int Value;
@@ -41,7 +41,7 @@ For example:
 
 To fix the issue, change the `UnsupportedType` field to a supported type:
 
-    [OSStructure("MyStructure")]
+    [OSStructure(Name = "MyStructure")]
     public struct MyStructure
     {
         public int Value;
