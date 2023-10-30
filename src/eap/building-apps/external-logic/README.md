@@ -70,15 +70,11 @@ Using Microsoft Visual Studio 2022, for example:
     * Structs decorated with the `OSStructure` attribute.
     * Lists (any type inheriting from [IEnumerable](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=net-6.0)) of any of the previous two types.
 
-1. Once you are finished with the code, save the project and publish it. For example, right-click **Solution ClassLibrary1** and click **Open in Terminal**. Run command `dotnet publish -c Release -r linux-x64 --self-contained false`.
-    
-    <div class="info" markdown="1">
+1. Once you're finished with the code, save the project and publish it. For example, right-click **Solution ClassLibrary1** and click **Open in Terminal**. Run command `dotnet publish -c Release -r linux-x64 --no-self-contained`.
 
-    The published code runs in a Linux container.
-    
-    </div>
+    The published code runs in a Linux container. If your library doesn't have any runtime-specific dependencies, and to simplify the process, you can publish it without specifying the runtime: `dotnet publish -c Release --no-self-contained`.
 
-1. Zip the contents of publish output folder (normally this is, for example, `./ClassLibrary1/bin/Release/net6.0/publish/*`) to the root folder of a ZIP file called, for example, `ExternalLibrary.zip`, the name of your external library.
+1. Zip the contents of the publish output folder to the root of a ZIP file. Be careful to select the correct publish folder. For a `linux-x64` runtime-specific publish, the folder path is usually `./ClassLibrary1/bin/Release/net6.0/linux-x64/publish/*`. For a cross-platform publish, the folder path is usually `./ClassLibrary1/bin/Release/net6.0/publish/*`. Name the ZIP file according to your external library, for example, ExternalLibrary.zip.
 
 1. Upload the ZIP file to the ODC Portal. See the [External Logic feature documentation](intro.md) for guidance on how to do this.
 
