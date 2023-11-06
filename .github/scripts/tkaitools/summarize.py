@@ -1,132 +1,12 @@
-import aiohttp
 import asyncio
-import os
-from github import Github
-from ruamel.yaml import YAML
-import re
-from io import StringIO
+import aiohttp
 import logging
-import subprocess
+import os
+import re
 import time
-
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-class RateLimiter:
-    """
-    A simple rate limiter to control the rate of API calls.
-    
-    Attributes:
-        rate (int): The number of tokens allowed per time period.
-        per (float): The time period for rate limiting in seconds.
-        allowance (float): The current number of available tokens.
-        last_check (float): The time of the last rate limit check.
-    """
-    def __init__(self, rate, per):
-        """
-        Initializes the RateLimiter with a specified rate and time period.
-        
-        Args:
-            rate (int): The number of tokens allowed per time period.
-            per (float): The time period for rate limiting in seconds.
-        """
-        self.rate = rate
-        self.per = per
-        self.allowance = rate
-        self.last_check = time.monotonic()
-
-    async def wait_for_token(self):
-        while self.allowance < 1:
-            await asyncio.sleep(1)
-            current_time = time.monotonic()
-            time_passed = current_time - self.last_check
-            self.last_check = current_time
-            self.allowance += time_passed * (self.rate / self.per)
-            self.allowance = min(self.allowance, self.rate)
-        self.allowance -= 1
-
-class GitHubHandler:
-    """
-    Handles interactions with GitHub, specifically for pull request operations.
-    
-    This class provides methods to post comments to a pull request, and to post review comments on specific lines of files within a pull request. It initializes with the GitHub token, repository name, and pull request number to set up the necessary GitHub API objects.
-    
-    Attributes:
-        github_obj (Github): The PyGithub main class instance, initialized with the provided GitHub token.
-        repo (Repository): The repository object, retrieved using the repository name.
-        pr (PullRequest): The pull request object, retrieved using the pull request number.
-    """
-    def __init__(self, github_token, repo_name, pr_number):
-        """
-        Initializes the GitHubHandler with the necessary GitHub API objects.
-        
-        Args:
-            github_token (str): The GitHub token for authentication.
-            repo_name (str): The name of the repository containing the pull request.
-            pr_number (int): The number of the pull request.
-        """
-        self.github_obj = Github(github_token)
-        self.repo = self.github_obj.get_repo(repo_name)
-        self.pr = self.repo.get_pull(pr_number)
-
-    def post_comment(self, message):
-        """
-        Posts a comment to the pull request.
-        
-        Args:
-            message (str): The message to post as a comment.
-        """
-        self.pr.create_issue_comment(message)
-
-    def post_review_comment(self, file_path, review_message):
-        """
-        Posts a review comment to a specific file in the pull request.
-        
-        Args:
-            file_path (str): The path of the file to comment on.
-            review_message (str): The review comment message.
-        """
-        pr = self.repo.get_pull(self.pr.number) # Refetch pull request data
-        commit_obj = self.repo.get_commit(pr.head.sha)
-
-        files = self.pr.get_files()
-        for file in files:
-            if file.filename == file_path:
-                file_diff = file.patch
-                break
-        else:
-            logging.warning(f"File not found in pull request: {file_path}")
-            return
-
-        diff_lines = file_diff.split('\n')
-        position = next(
-            (
-                i
-                for i, line in enumerate(diff_lines)
-                if line.startswith('+summary:')
-            ),
-            None,
-        )
-        if position is None:
-            message = f"Summary line not found in the file diff for `{file_path}`. If the summary is unchanged, no update is necessary."
-            logging.warning(message)
-            self.post_comment(message)
-            return
-
-        self.pr.create_review_comment(review_message, commit_obj, file_path, position)
-
-    def add_reaction_to_comment(self, comment_id, reaction_type):
-        """
-        Adds a reaction to a pull request comment.
-        
-        Args:
-            comment_id (int): The ID of the comment.
-            reaction_type (str): The type of reaction to add.
-        """
-        try:
-            comment = self.github_obj.get_repo(self.repo.full_name).get_issue(self.pr.number).get_comment(comment_id)
-            comment.create_reaction(reaction_type)
-        except Exception as e:
-            logging.error(f'Failed to add reaction to comment {comment_id}: {str(e)}')
+from io import StringIO
+from ruamel.yaml import YAML
+from tkaiutils import GitHubHandler, RateLimiter, commit_and_push
 
 class SummaryHandler:
     """
@@ -163,17 +43,18 @@ class SummaryHandler:
                 response.raise_for_status()  # This will raise an exception for HTTP errors
                 summary_data = await response.json()
 
-                # Check if the expected keys are present in the JSON response
-                if "summary" in summary_data and f"Summary{summary_number}" in summary_data["summary"]:
-                    summary_key = f"Summary{summary_number}"
-                    summary = summary_data["summary"][summary_key].get("summary")
+                # Validate the 'summary' key in the response
+                summary_key = f"Summary{summary_number}"
+                if summary_key in summary_data:
+                    summary = summary_data[summary_key].get("summary")
                     if summary is not None:
                         logging.info('Received summary: %s', summary)
                         return summary
                     else:
                         logging.error('Summary key found but summary text is missing')
                 else:
-                    logging.error('Expected keys are missing in the JSON response')
+                    logging.error(f'Expected key {summary_key} is missing in the JSON response')
+                    
         except asyncio.TimeoutError:
             logging.error('Request to /summarize endpoint timed out')
         except aiohttp.ClientResponseError as e:
@@ -181,7 +62,7 @@ class SummaryHandler:
         except Exception as e:
             logging.error(f'An unexpected error occurred: {e}')
 
-    def update_file_summary(self, file, summary, overwrite=False):
+    def update_summary(self, file, summary, overwrite=False):
         """
         Updates the summary field in a markdown file.
         
@@ -213,48 +94,16 @@ class SummaryHandler:
             logging.error('Failed to match frontmatter and markdown body for file: %s', file.filename)
         return False
 
-    def commit_and_review(self, updated_files, github_handler):
-        """
-        Commits changes to the repository and posts review comments.
-        
-        Args:
-            updated_files (list of str): A list of file paths that were updated.
-            github_handler (GitHubHandler): The GitHubHandler instance for interacting with GitHub.
-        """
-        logging.info('Committing changes and posting review comments.')
-
-        subprocess.run(['git', 'config', 'user.name', 'GitHub Action'], check=True)
-        subprocess.run(['git', 'config', 'user.email', 'action@github.com'], check=True)
-
-        result = subprocess.run(['git', 'status', '--porcelain'], text=True, capture_output=True)
-        if result.stdout:
-            subprocess.run(['git', 'add'] + updated_files, check=True)
-        else:
-            logging.info('No changes to add')
-            return
-
-        commit_result = subprocess.run(['git', 'commit', '-m', 'Update summary fields'])
-        if commit_result.returncode != 0:
-            logging.error('Failed to commit changes')
-            return 
-
-        subprocess.run(['git', 'push'], check=True)
-
-        time.sleep(5)
-        review_message = "Please check this AI-generated summary. To regenerate, use the `/summarize` command."
-        for file_path in updated_files:
-            github_handler.post_review_comment(file_path, review_message)
-
 async def main():
     """
     The main asynchronous function to run the script. Handles initialization, processing, and cleanup.
     """
-    github_token = os.environ['GITHUB_TOKEN']
-    repo_name = os.environ['GITHUB_REPOSITORY']
-    pr_number = int(os.environ['PR_NUMBER'])
-    comment_id = os.environ['COMMENT_ID']
-    comment_body = os.environ.get('COMMENT_BODY', '')
-    summarize_endpoint = os.environ['SUMMARIZE_ENDPOINT']
+    github_token = os.getenv('GITHUB_TOKEN')
+    repo_name = os.getenv('GITHUB_REPOSITORY')
+    pr_number = int(os.getenv('PR_NUMBER'))
+    comment_id = os.getenv('COMMENT_ID')
+    comment_body = os.getenv('COMMENT_BODY', '')
+    summarize_endpoint = os.getenv('SUMMARIZE_ENDPOINT')
 
     github_handler = GitHubHandler(github_token, repo_name, pr_number)
     summary_handler = SummaryHandler()
@@ -293,7 +142,6 @@ async def main():
         summary_number = 1
 
     updated_files = []
-    error_occurred = False
 
     async with aiohttp.ClientSession() as session:
         tasks = []
@@ -309,13 +157,13 @@ async def main():
                     metadata = summary_handler.yaml.load(frontmatter)
 
                     if len(markdown_body) < 500:
-                        message = f"Skipping summarization of file `{file.filename}` as the content is less than 500 characters."
+                        message = f"Skipping summarization of file `{file.filename}` as content is less than 500 characters."
                         logging.info(message)
                         github_handler.post_comment(message)
                         continue
 
                     if 'summary' not in metadata:
-                        message = f"Skipping summarization of file `{file.filename}` as it doesn't have a summary field in the frontmatter."
+                        message = f"Skipping summarization of file `{file.filename}` as it does not have a summary field in the frontmatter."
                         github_handler.post_comment(message)
                         logging.warning(message)
                         continue
@@ -343,20 +191,28 @@ async def main():
                 existing_summary = (metadata.get('summary') or '').strip()
                 generated_summary = summary.strip()
 
-                if existing_summary == generated_summary:
+                if 'summary' not in metadata:
+                    message = f"`{file.filename}` does not have a summary field in the frontmatter, skipping summary generation."
+                    github_handler.post_comment(message)
+                    logging.warning(message)
+                elif existing_summary == generated_summary:
                     message = f"The generated summary for `{file.filename}` is the same as the existing one. No update is necessary."
                     github_handler.post_comment(message)
                     logging.info(message)
                 else:
-                    summary_handler.update_file_summary(file, summary, overwrite=overwrite_summaries)
+                    summary_handler.update_summary(file, summary, overwrite=overwrite_summaries)
                     updated_files.append(file.filename)
         else:
-            error_occurred = True
             logging.error(f'Summary not found or HTTP error for file: {file.filename}')
             github_handler.post_comment(f"Failed to generate a summary for file: `{file.filename}`. Please try again later.")
 
     if updated_files:
-        summary_handler.commit_and_review(updated_files, github_handler)
+        commit_message = 'Update summary fields'
+        if commit_and_push(updated_files, commit_message):
+            review_message = "Please check this AI-generated summary. To regenerate, use the `/summarize` command."
+            time.sleep(5) # Wait for the commit to be processed by GitHub
+            for file_path in updated_files:
+                github_handler.post_review_comment(file_path, review_message)
 
 if __name__ == "__main__":
     asyncio.run(main())
