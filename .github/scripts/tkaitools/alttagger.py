@@ -147,22 +147,24 @@ async def main():
             github_handler.post_comment(f"Failed to update image metadata for file: `{file.filename}`. Please try again later.")
 
         if updated_files:
-            commit_message = "Update image metadata"
-            if commit_and_push(updated_files, commit_message):
+            commit_message = "Update image metadata in " + file.filename
+            commit_and_push(updated_files, commit_message)
 
-                pr = github_handler.repo.get_pull(github_handler.pr.number)
-                commit_obj = github_handler.repo.get_commit(pr.head.sha)
-                
-                for file_path in updated_files:
-                    review_message = "Please check the AI-generated alt-tag(s) in this file."
-                    github_handler.pr.create_review_comment(
-                        body=review_message,
-                        commit=commit_obj,
-                        path=file_path,
-                        subject_type='file'
-                    )
+
         else:
             logging.info("No updated files to commit.")
+
+    pr = github_handler.repo.get_pull(github_handler.pr.number)
+    commit_obj = github_handler.repo.get_commit(pr.head.sha)
+
+    for file_path in updated_files:
+        review_message = "Please check the AI-generated alt-tag(s) in this file."
+        github_handler.pr.create_review_comment(
+            body=review_message,
+            commit=commit_obj,
+            path=file_path,
+            subject_type='file'
+        )               
 
 if __name__ == "__main__":
     asyncio.run(main())
