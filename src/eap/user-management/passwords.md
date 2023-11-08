@@ -21,7 +21,7 @@ Only users can manage their passwords. Users can change their password using the
 Organization members with an organization role such as Developer or Admin can also recover their forgotten password from the Portal login page by clicking **Forgot password**.
 
 <div class="info" markdown="1">
-    
+
 Admins don't have permission to change or recover other users' passwords.
 
 </div>
