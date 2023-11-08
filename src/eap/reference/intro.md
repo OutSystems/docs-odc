@@ -69,7 +69,7 @@ Action | Description | Available as function?
 [Random](libraries/math.md#Random) | Generates a random number using a pseudorandom number generator, within a range defined by a minimum value (‘MinVal') and maximum value ('MaxVal'). | Yes
 
 ### Sanitization
-Library that provides methods to help you avoid code injection in HTML, JavaScript, and SQL snippets that need to include untrusted content, for example, content gathered from end users.
+Library that provides methods to help you avoid code injection in HTML, JavaScript, and SQL snippets that need to include untrusted content, for example, content gathered from end-users.
 
 Action | Description | Available as function?
 ---|---|---

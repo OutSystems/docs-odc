@@ -10,7 +10,7 @@ figma:
 
 # Emails
 
-In OutSystems Developer Cloud (ODC), email is a way to get information from your apps and send it to users. For example, you can send alerts to administrators or send a copy of a form to an end user for submission. Before you can create emails and set up logic in your apps to send the emails, make sure you have the configuration for the SMTP server. 
+In OutSystems Developer Cloud (ODC), email is a way to get information from your apps and send it to users. For example, you can send alerts to administrators or send a copy of a form to an end-user for submission. Before you can create emails and set up logic in your apps to send the emails, make sure you have the configuration for the SMTP server. 
 
 In OutSystems, email is a UI element that lets you design and manage the content of email messages. To create, send, and configure emails, you use both ODC Studio and ODC Portal. Emails are sent using SMTP. In ODC Portal, you can define the configuration and can create different configurations for each stage. At the app level you can change the test email addresses. 
 

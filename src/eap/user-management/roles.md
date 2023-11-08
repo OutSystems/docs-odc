@@ -11,7 +11,7 @@ platform-version: odc
 
 # Roles
 
-ODC has organization roles and end-user roles which you can use to limit access. Organization roles are for members who perform work as developers or admins.
+ODC has organization roles and end-user roles which you can use to limit access. Organization roles are for Organization members who perform work as developers or admins.
 
 * Organization roles are for users that need access to both the ODC Portal and ODC Studio. You can assign built-in or custom roles at the organization or app levels.
 * End-user roles are for those users that access apps you create in ODC.
@@ -48,11 +48,11 @@ A custom organization role is any role that you create. You can create a new rol
 
 From the **Create role** screen, within each section, such as **Deployment Management** > **Deploy apps** select the stage such as Development or QA for which you want to enable the permission. You can always come back to this screen to adjust the permissions.
 
-## Member access with app scope
+## Organization access with app scope
 
-Members are users who have Organization roles. Members have access to the ODC Portal and to the ODC Studio to build apps.
+Organization access is required for users to access the ODC Portal and to the ODC Studio to build apps.
 
-To define what users are able to do, ODC uses Organization scope and App scope. Organization scope provides broad access, while App scope pertains to a particular app. As users begin working you might want to limit their access and then provide them with more access as needed. For example, for the Organization scope you might give a member the Developer role or a custom role that you defined. Then if the Developer needs access to an app, they request additional access for a specific app.
+To define what users are able to do, ODC uses Organization scope and App scope. Organization scope provides broad access, while App scope pertains to a particular app. As users begin working you might want to limit their access and then provide them with more access as needed. For example, for the Organization scope you might give an Organization member the Developer role or a custom role that you defined. Then if the Developer needs access to an app, they request additional access for a specific app.
 
 Using Apps scope you can give developers Admin access to the specific App so they can complete their work.
 
@@ -60,7 +60,7 @@ Using different roles with different permissions and different access enables yo
 
 You can change the Organization scope role, using the scope dropdown. The default roles for the Organization scope is No role, Administrator, or Developer. You can also create custom roles for your Organization scope.
 
-In the App scope section, you can Manage roles. You can add or delete App scope roles. This enables you to select the app and the role you want to give to a member.
+In the App scope section, you can Manage roles. You can add or delete App scope roles. This enables you to select the app and the role you want to give to an Organization member.
 
 ## End-user roles
 
@@ -76,7 +76,7 @@ Manage the groups from the ODC **Portal** > **Users & access** > **End-user grou
 
 You can add roles to a group before or after you add users to a group. Users in the group get all end-user roles associated with that group. Users can belong to multiple groups. You can create a new group in a different stage, with the same name or a different name, and use the same or similar roles.
 
-You must select a stage to which the group belongs. Once you select a stage for the group and save it, you can't change the stage. The group members can only access the end-user roles and apps in the selected stage.
+You must select a stage to which the group belongs. Once you select a stage for the group and save it, you can't change the stage. The organization group members can only access the end-user roles and apps in the selected stage.
 
 A person with **Manage end-user groups** permission can add users to a group, select users from a list of existing users and add them to the group. Once you save the group, it's available immediately. Adding or removing roles also takes effect immediately.
 
@@ -88,7 +88,7 @@ From the **ODC Portal**, select **Users & access** and then select either **User
 
 Clicking **Users**, displays a screen that shows a list of users. To invite a new user, from the top right click the **Invite user** button. A form displays to enter the user's email address and to select their access. Based on your choices, different options are available.
 
-* If you choose **Member access**, you can select an organization and an app. If you select an organization, then you can choose a specific role or no role. When you search for or select a group, you can also choose a stage.
+* If you choose **Organization access**, you can select an organization and an app. If you select an organization, then you can choose a specific role or no role. When you search for or select a group, you can also choose a stage.
 * If you choose **End-user access** you also have access to add **End-user groups**. You can add the user to a group, assign roles related to a specific app or all apps, and a specific stage or all stages. You can choose more than one app at a time. A group can only have roles from the same stage. For example, if your group is in the Development stage you can't add roles from the Production stage.
 
 <div class="info" markdown="1">

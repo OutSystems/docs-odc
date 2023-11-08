@@ -1,6 +1,6 @@
 ---
 tags: 
-summary: Alert gets the end user's attention and highlights important information, errors or warnings on the screen.
+summary: Alert gets the end-user's attention and highlights important information, errors or warnings on the screen.
 locale: en-us
 guid: 1492d677-e96e-48f2-89af-1e0157058f58
 app_type: mobile apps, reactive web apps

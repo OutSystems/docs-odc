@@ -20,7 +20,7 @@ There are situations when the data fetched from the database isn't enough and yo
 
 StoreApp, a Web App to check the products in a store, has a screen to list products.
 
-In this screen, you want to address the following requirement: the end user can filter the listed products by category, by selecting an available category from a Dropdown. In each entry of the Dropdown, the app displays the number of products that have that specific category along with the category name.
+In this screen, you want to address the following requirement: the end-user can filter the listed products by category, by selecting an available category from a Dropdown. In each entry of the Dropdown, the app displays the number of products that have that specific category along with the category name.
 
 ![Create a Calculated Attribute in an Aggregate](images/listed-products-by-category-odcs.png)
 

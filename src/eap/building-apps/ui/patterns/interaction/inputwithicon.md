@@ -1,6 +1,6 @@
 ---
 tags: 
-summary: Input with Icon allows the end user to input data with the help of a hint.
+summary: Input with Icon allows the end-user to input data with the help of a hint.
 locale: en-us
 guid: 74216051-2083-436f-b118-102696b9c182
 app_type: mobile apps, reactive web apps
@@ -10,7 +10,7 @@ platform-version: odc
 
 # Input with Icon
 
-You can use the Input with Icon UI Pattern to allow the end user input data with the help of a hint in the form of an icon.
+You can use the Input with Icon UI Pattern to allow the end-user input data with the help of a hint in the form of an icon.
 
 The Input with Icon UI Pattern includes an icon and placeholder text that supports the user when entering data. Is assists the user's comprehension by providing an example of the type of input required.  
 

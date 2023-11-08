@@ -26,7 +26,7 @@ As an example, consider an Action B raising a User Exception named MyUserExcepti
 
 ![Workflow used by the platform to determine the exception handling flow to execute](images/handling-mechanism.png)
 
-You should have, at least, one Exception Handler in your application flow to inform and allow the end user to continue to navigate.
+You should have, at least, one Exception Handler in your application flow to inform and allow the end-user to continue to navigate.
 
 <div class="info" markdown="1">
 

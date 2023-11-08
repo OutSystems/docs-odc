@@ -42,7 +42,7 @@ ODC Studio creates the following Attributes automatically:
 :   Holds a value to display in an application.
 
 **Order**
-:   Defines the order for displaying the records to the end user.
+:   Defines the order for displaying the records to the end-user.
 
 **Is_Active**
 :   Defines whether a record is available during runtime. For example, the records with **Is_Active** set to false aren't used when scaffolding uses the Static Entity.

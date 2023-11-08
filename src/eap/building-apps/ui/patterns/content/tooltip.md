@@ -1,6 +1,6 @@
 ---
 tags: 
-summary: Tooltip dynamically displays simple informative content on end user interaction.
+summary: Tooltip dynamically displays simple informative content on end-user interaction.
 locale: en-us
 guid: 33a42743-0e9c-44c6-b67d-363ec53dc01a
 app_type: mobile apps, reactive web apps

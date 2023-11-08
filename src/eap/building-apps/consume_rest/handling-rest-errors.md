@@ -18,7 +18,7 @@ To handle a REST API error, do the following:
 
     ![Exception Handler flow for handling all exceptions](images/ss-flow-allexceptions.png)
 
-1. Implement the logic in the exception handler flow to handle the error, like displaying a message to the end user.
+1. Implement the logic in the exception handler flow to handle the error, like displaying a message to the end-user.
 
 ## Manipulating received error responses
 

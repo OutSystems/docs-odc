@@ -1,5 +1,5 @@
 ---
-summary: An overview of IT users and end-user roles in OutSystems Developer Cloud (ODC).  
+summary: An overview of Organization members and end-user roles in OutSystems Developer Cloud (ODC).  
 tags: 
 locale: en-us
 guid: BDA3A144-0EB0-4C04-953F-9DED85A477FE
@@ -17,7 +17,7 @@ When setting up roles for end-users, consider the following:
 * What do the end-users need to accomplish?
 * What screens do they need to be able to access?
 * What tasks do you want them to be able to do?
-* What information can end users see and what needs to remain inaccessible?
+* What information can end-users see and what needs to remain inaccessible?
  
 ## How to use roles
 

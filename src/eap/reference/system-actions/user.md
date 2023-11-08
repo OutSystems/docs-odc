@@ -390,7 +390,7 @@ UpdateUserFailureReason
 
 ### User
 
-The end user of the apps.
+The end-user of the apps.
 
 *Attributes*
 

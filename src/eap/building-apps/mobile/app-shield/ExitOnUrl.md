@@ -87,7 +87,7 @@ There are, however, several ways that the attacker can prevent this page from op
 So you can't assume that such hacking attempts are reported and seen on the server.
 
 The **Exit URL** event doesn't provide precise metrics of security issue events, since a single user can trigger multiple **Exit URL** events.
-This feature is primarily designed to provide useful feedback to the end user about why the application stopped working, rather than a reliable reporting mechanism for the app owner.
+This feature is primarily designed to provide useful feedback to the end-user about why the application stopped working, rather than a reliable reporting mechanism for the app owner.
 
 The app loads **Exit URL** in the default browser and may remain in an open tab or window until the user closes it. This may cause a number of effects, including the following:
 

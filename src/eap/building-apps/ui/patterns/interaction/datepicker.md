@@ -1,6 +1,6 @@
 ---
 tags:  
-summary: Date Picker allows the end user to select a single or a range of dates using a calendar.
+summary: Date Picker allows the end-user to select a single or a range of dates using a calendar.
 locale: en-us
 guid: 87d21dac-8006-44b5-8e43-919e93a4e462
 app_type: mobile apps, reactive web apps
