@@ -50,7 +50,7 @@ This sample app shows you how to complete the following procedures:
 
 * To trigger the payment flow, add the logic to a button.
 
-![Screenshot of headphones](images/product-details-headphones-b.png)
+![Screenshot showing the product details of headphones in the Payments sample app](images/product-details-headphones-b.png "Product Details - Headphones")
 
 ## Enable a frictionless payment experience in your app
 
@@ -122,7 +122,7 @@ To process payments with Stripe using an OutSystems implementation, complete the
 
 1. In the Basic authentication section, select **Custom** and in the **Username** field enter the **secret key** from your provider [Configure your account in the provider's dashboard](intro.md#configure-your-account-in-the-providers-dashboard).
 
-   ![Screenshot of authentication logic for the Payments REST API](images/authentication-logic-for-payments-restapi-pl.png)
+   ![Screenshot of the authentication logic configuration for the Payments REST API in ODC Studio](images/authentication-logic-for-payments-restapi-pl.png "Authentication Logic for Payments REST API")
 
 1. Go back to the **Payments Configurator**.
 
@@ -130,13 +130,13 @@ To process payments with Stripe using an OutSystems implementation, complete the
 
    Google Pay and Apple Pay configurations for your app are complete.
 
-   ![Screenshot of adding Stripe secret key for payment](images/add-stripe-secret-key-for-payment.png)
+   ![Screenshot of the process to add a Stripe secret key for payment configuration in the Payments Plugin Configurator app](images/add-stripe-secret-key-for-payment.png "Adding Stripe Secret Key for Payment")
 
 1. Navigate to **Apps** > **Payments Configurator** and edit the Payments app details such as Google Pay and Apple Pay.
 
 1. Select **Download configurations** to download the JSON configuration file **PaymentsPluginConfiguration.json**.
 
-   ![Screenshot of editing app details and downloading configuration](images/edit-app-details-and-download-configuration.png)
+   ![Screenshot of editing app details and downloading the Payments Plugin configuration as a JSON file](images/edit-app-details-and-download-configuration.png "Editing App Details and Downloading Configuration")
 
 1. In the ODC portal, in your Payments app, add the **PaymentsPluginConfiguration.json** file as a Resource of your app.
 
@@ -146,7 +146,7 @@ To process payments with Stripe using an OutSystems implementation, complete the
 
    </div>
 
-   ![Screenshot of adding Payments related JSON file](images/add-payments-json-file-pl.png)
+   ![Screenshot showing the addition of the PaymentsPluginConfiguration.json file to the Payments app in ODC Studio](images/add-payments-json-file-pl.png "Adding Payments Related JSON File")
 
    <div class="info" markdown="1">
 
@@ -158,11 +158,11 @@ To process payments with Stripe using an OutSystems implementation, complete the
 
    1. In your Payments app, create two secret settings PaymentsId and PaymentsSecret.
 
-      ![Screenshot of creating PaymentsId and PaymentsSecret in the settings](images/create-payments-id-and-payments-secret-odcs.png)   
+      ![Screenshot of creating PaymentsId and PaymentsSecret in the app settings within ODC Studio](images/create-payments-id-and-payments-secret-odcs.png "Creating PaymentsId and PaymentsSecret in Settings")   
 
    1. Navigate to **Apps** > **Payments Configurator** and select **Application Secrets**. Your app’s Application ID and Application Secret details display. Make a note of these values and add in your app settings by navigating to  **ODC Portal** > **Settings**.
 
-      ![Screenshot of adding the app secret details](images/find-and-add-app-secret-details-pl.png)
+      ![Screenshot showing the process of finding and adding the app's Application ID and Secret details in ODC Studio](images/find-and-add-app-secret-details-pl.png "Adding the App Secret Details")
 
 
 ### Create logic to set up the plugin
@@ -179,7 +179,7 @@ Follow these steps, to verify the plugin’s availability, trigger the payment b
 
       In the OnReady screen, add the provider button to trigger the payment.
 
-      ![Screenshot of creating logic to verify the plugin availability](images/create-logic-to-verify-payments-plugin-odcs.png)
+      ![Screenshot illustrating the creation of logic to verify the Payments Plugin availability in ODC Studio](images/create-logic-to-verify-payments-plugin-odcs.png "Creating Logic to Verify Payments Plugin")
 
    1. To check if the Payments Plugin works correctly during the runtime, add the **CheckPaymentsPlugin** action after the Start node.
 
@@ -195,7 +195,7 @@ Follow these steps, to verify the plugin’s availability, trigger the payment b
 
    1. In the **OnReady** action, below the flow that you already defined, after checking the plugin's availability, add the **SetupPaymentsPlugin** action.
 
-     ![Screenshot of creating logic to trigger payment action](images/create-logic-to-trigger-payment-action-odcs.png)
+     ![Screenshot showing the setup of the Payments Plugin and logic to trigger the payment action in ODC Studio](images/create-logic-to-trigger-payment-action-odcs.png "Creating Logic to Trigger Payment Action")
 
    1. For testing configuration, use a test stage for payments.
       
@@ -219,7 +219,7 @@ Follow these steps, to verify the plugin’s availability, trigger the payment b
       
       * If there’s any valid card added by the user on the device to make the payment.
       
-    ![Screenshot of creating logic to verify pay wallets](images/create-logic-to-verify-pay-wallets-odcs.png)
+    ![Screenshot of the logic to verify if Apple Pay or Google Pay is ready for payments in ODC Studio](images/create-logic-to-verify-pay-wallets-odcs.png "Creating Logic to Verify Pay Wallets")
 
     <div class="info" markdown="1">
 
@@ -239,13 +239,13 @@ To trigger the payment on your app's screen, complete the following steps:
 
 1. For each button you add, enter an action to handle the **OnClick** event. In the properties of the **Payment** button, open the **Events** > **OnClick** dropdown and select the **New Client Action**.**OnClick** event.
 
-   ![Screenshot](images/create-buttons-to-trigger-payment-odcs.png)
+   ![Screenshot showing the creation of buttons to trigger payments for Apple Pay and Google Pay in ODC Studio](images/create-buttons-to-trigger-payment-odcs.png "Creating Buttons to Trigger Payment")
 
 1. For each action flow you create, verify the plugin is working properly during the runtime. After verifying the plugin’s availability, create a new server action **GetClientSecrets** to fetch the settings you configured in the ODC Portal.
 
 1. After fetching the settings, add the **TriggerPayment** action.
 
-   ![Screenshot](images/create-payment-trigger-logic-odcs.png)
+   ![Screenshot of the logic flow to trigger a payment using the Payments Plugin in ODC Studio](images/create-payment-trigger-logic-odcs.png "Creating Payment Trigger Logic")
 
 1. To handle the response from TriggerPayment, after **TriggerPayment**, add an **If** node.
 

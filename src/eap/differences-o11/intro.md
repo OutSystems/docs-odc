@@ -27,7 +27,7 @@ ODC delivers a modern architecture based on best practices in cloud-native infra
 
 The ODC Portal consolidates your app and user management experience in one place. It consolidates functionality that previously existed across LifeTime, Service Center, and the Users application.
 
-![Deploy apps](images/portal-deployments-pl.png "Deploy apps")
+![Screenshot of the ODC Portal showing the deployment of applications](images/portal-deployments-pl.png "Deploy apps")
 
 ## Build once, deploy many times
 
@@ -73,7 +73,7 @@ Currently you can set timers in ODC Studio. The format of timers in ODC differs 
 
 The following screen shows an example of setting a timer in ODC Studio to run four times daily.
 
-![Set a timer](images/timers-ss.png "Set a timer")
+![ODC Studio interface for setting a timer to run four times daily](images/timers-ss.png "Set a timer")
 
 Note the following related to timers in ODC:
 
@@ -84,11 +84,11 @@ Note the following related to timers in ODC:
 
 In ODC, date and time data is stored in UTC. The date and time a user sees in their app is determined by the device's time zone. When a user opens an app on their computer in Boston, MA, it shows the time as 5:00 am (UTC-4). When a user opens the same app on their computer in Lisbon, Portugal, they see the time as 10:00 am (UTC+1).
 
-![Saving time in UTC in ODC](images/utc-save-to-server-diag.png)
+![Diagram illustrating saving time in UTC format to the server in ODC](images/utc-save-to-server-diag.png "Saving time in UTC in ODC")
 
 When users call built-in functions, the server returns the data to the devices. The time displays on both devices in the local time.
 
-![Getting tie in UTC in ODC](images/utc-get-from-server-diag.png)
+![Diagram showing the retrieval of time in UTC format from the server in ODC](images/utc-get-from-server-diag.png "Getting time in UTC in ODC")
 
 The following list provides additional guidance:
 

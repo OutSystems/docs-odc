@@ -22,7 +22,7 @@ StoreApp, a Web App to check the products in a store, has a screen to list produ
 
 In this screen, you want to address the following requirement: the end-user can filter the listed products by category, by selecting an available category from a Dropdown. In each entry of the Dropdown, the app displays the number of products that have that specific category along with the category name.
 
-![Create a Calculated Attribute in an Aggregate](images/listed-products-by-category-odcs.png)
+![Screenshot of the process to create a calculated attribute in an Aggregate for listing products by category in OutSystems](images/listed-products-by-category-odcs.png "Creating a Calculated Attribute in an Aggregate")
 
 To calculate this data and add it to each entry of the Dropdown, do the following:
 
@@ -48,6 +48,6 @@ To calculate this data and add it to each entry of the Dropdown, do the followin
 
         `Label` and `Count` variables are two of the previously grouped columns.
 
-    ![Create a Calculated Attribute in an Aggregate](images/calculate-data-odcs.png)
+    ![Step-by-step instructions on assigning an expression to a new calculated attribute in an OutSystems Aggregate](images/calculate-data-odcs.png "Assigning Expression to Calculated Attribute")
 
 1. Go to the screen and add a Dropdown. Set the Dropdown values to be the returning list of the Aggregate using the `DropdownLabel` attribute as the options text.

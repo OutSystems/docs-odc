@@ -23,7 +23,7 @@ class ImageMetadataUpdater:
         """
         payload = {"text": markdown_content}
         try:
-            async with session.post(alttag_endpoint, json=payload, timeout=60) as response:
+            async with session.post(alttag_endpoint, json=payload, timeout=120) as response:
                 response.raise_for_status()
                 try:
                     image_metadata_response = await response.json()
@@ -70,7 +70,7 @@ class ImageMetadataUpdater:
             image_path = match.group(2)
             image_name = os.path.basename(image_path)
             metadata = next((img for img in image_metadata if img['name'] == image_name), None)
-            if metadata and metadata.get('confidence_score', 0) >= 0.7:
+            if metadata:
                 new_alt_text = metadata.get('alt-tag', '')
                 new_title_text = metadata.get('title', '')
                 # Ensure the title is included even if it wasn't present before
@@ -94,7 +94,7 @@ async def main():
 
     github_handler = GitHubHandler(github_token, repo_name, pr_number)
     metadata_updater = ImageMetadataUpdater()
-    rate_limiter = RateLimiter(20, 60)
+    rate_limiter = RateLimiter(5, 60)
 
     updated_files = []
 
@@ -140,8 +140,9 @@ async def main():
                 updated_files.append(file.filename)
             for image_name in images_not_updated:
                 github_handler.post_comment(
-                    f"Image `{image_name}` in file `{file.filename}` was not updated due to a low confidence score."
+                    f"Image `{image_name}` in file `{file.filename}` was not updated."
                 )
+                continue
         else:
             logging.error(f'Failed to fetch image metadata for {file.filename}')
             github_handler.post_comment(f"Failed to update image metadata for file: `{file.filename}`. Please try again later.")

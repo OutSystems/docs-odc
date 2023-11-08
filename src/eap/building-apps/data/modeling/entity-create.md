@@ -42,7 +42,7 @@ We have an application called Go Out, that allows you to read and write reviews 
 
 1. With the entity selected, add the other attributes by clicking with the right-button in "Add Entity Attribute" to create the attributes:
 
-    ![Add entity attribute](images/entity-editor-odcs.png)
+    ![Screenshot of OutSystems Entity Editor with the 'Add Entity Attribute' option highlighted](images/entity-editor-odcs.png "Adding Entity Attributes in OutSystems")
 
     1. Create the `Name` attribute. By default the data type is set to `Text` and the length is `50`, change it to `100`;
     1. Make the attribute mandatory by setting the Is Mandatory property to `Yes`.

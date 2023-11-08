@@ -39,7 +39,7 @@ class SummaryHandler:
         
         payload = {"text": text}
         try:
-            async with session.post(summarize_endpoint, json=payload, timeout=60) as response:
+            async with session.post(summarize_endpoint, json=payload, timeout=120) as response:
                 response.raise_for_status()  # This will raise an exception for HTTP errors
                 summary_data = await response.json()
 
@@ -107,7 +107,7 @@ async def main():
 
     github_handler = GitHubHandler(github_token, repo_name, pr_number)
     summary_handler = SummaryHandler()
-    rate_limiter = RateLimiter(20, 60)
+    rate_limiter = RateLimiter(5, 60)
 
     if '/summarize info' in comment_body:
         help_message = (

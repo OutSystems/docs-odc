@@ -52,7 +52,7 @@ To enable the `ExitOnURL` feature, first copy the JSON code snippet below and co
 
 1. From **ODC Studio**, go to the **Interface** tab, select the app name, and click **…** on the right side of the **Extensibility Configuration** field to open the **Extensibility Configuration** window. Then paste the JSON code snippet in the window to define the `ExitOnURL` property as a new global preference.
 
-    ![Define Exit URL](images/extensibility-configuration-appshield-odcs.png)
+    ![Screenshot showing where to paste the ExitOnURL JSON code snippet in the ODC Studio Extensibility Configuration window](images/extensibility-configuration-appshield-odcs.png "Extensibility Configuration in ODC Studio")
 
 1. In the `ExitOnURL` value string, replace `example.com` with the correct domain name and `landing-page` with the path and name that suits your needs. A typical **Exit URL** may be `https://example.com/errors/protectionblocker/why-cant-i-use-my-app`. Then click **Close**.
 

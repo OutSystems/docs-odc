@@ -134,15 +134,24 @@ def commit_and_push(updated_files, commit_message):
     Returns:
         bool: True if changes were committed and pushed, False otherwise.
     """
-    subprocess.run(['git', 'config', 'user.name', 'GitHub Action'], check=True)
-    subprocess.run(['git', 'config', 'user.email', 'action@github.com'], check=True)
-    
-    status_result = subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True)
-    if status_result.stdout:
-        subprocess.run(['git', 'add'] + updated_files, check=True)
-        subprocess.run(['git', 'commit', '-m', commit_message], check=True)
-        subprocess.run(['git', 'push'], check=True)
-        return True
-    else:
-        logging.info('No changes detected, skipping commit.')
+    try:
+        subprocess.run(['git', 'config', 'user.name', 'GitHub Action'], check=True)
+        subprocess.run(['git', 'config', 'user.email', 'action@github.com'], check=True)
+        
+        status_result = subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True)
+        if status_result.stdout:
+            subprocess.run(['git', 'add'] + updated_files, check=True)
+            
+            commit_result = subprocess.run(['git', 'commit', '-m', commit_message], capture_output=True, text=True)
+            if commit_result.returncode != 0:
+                logging.error(f'Git commit failed: {commit_result.stderr}')
+                return False
+            
+            subprocess.run(['git', 'push'], check=True)
+            return True
+        else:
+            logging.info('No changes detected, skipping commit.')
+            return False
+    except subprocess.CalledProcessError as e:
+        logging.error(f'An error occurred while processing git commands: {e}')
         return False
