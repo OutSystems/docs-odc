@@ -19,14 +19,21 @@ The table shows the OutSystems-supported mobile plugins that you can find in the
 
 | Plugin                    | Description                                                  | Supported in PWA |
 | ------------------------- | ------------------------------------------------------------ | ---------------- |
+| Analytics | Firebase-based plugin that lets you gather information about app use. | No |
 | Barcode Plugin            | Access the camera to scan barcodes.                          | Yes              |
 | Camera Plugin             | Access the camera capabilities of the device.                | Yes              |
+| Cloud Messaging Plugin (Firebase) | Give your app users a state-of-the-art notifications experience. | No |
+| Crash Reporting | Firebase-based plugin that provides realtime crash reporting to help you track, prioritize, and fix stability issues. | No |
+| Dynamic Links | Firebase-based plugin that lets you manage links outside of your app. | No |
 | Health and Fitness Plugin | Access data from Apple HealthKit and Google Fit.             | No               |
 | File Plugin               | Manage files and folders within the app sandbox.             | No               |
 | File Transfer Plugin      | Upload and download files in background.                     | Yes              |
 | File Viewer Plugin        | View remote or app resource files.                           | Yes              |
 | Key Store Plugin          | Store encrypted key-value pairs with optional authentication | No               |
 | Location Plugin           | Access the GPS capabilities the device.                      | Yes              |
+| Payments | Allows addition of payments experience using Apple Pay and Google Pay.	| No |
+| Performance Monitoring | Firebase-based plugin that lets you understand how you can improve the performance of your app. | No |
+| SSL Pinning | Provide an extra layer of security to HTTPS communications by adding a verification of the server certificate against hashes of public keys. | No |
 
 ### Notes
 
