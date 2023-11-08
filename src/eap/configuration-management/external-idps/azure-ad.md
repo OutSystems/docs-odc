@@ -20,24 +20,26 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. Open the app registration you created and click the **Endpoints** button. Copy the URL from the **OpenID Connect metadata document** field and paste it into the **Discovery endpoint** field in ODC Portal.
 
-    ![Azure Portal](images/open-endpoints-az.png)
+    ![Screenshot of Azure Portal showing the OpenID Connect metadata document URL](images/open-endpoints-az.png "Azure Portal OpenID Connect Endpoints")
 
 1. Click **Get details** in ODC Portal. This retrieves the JSON of the Azure AD OpenID configuration and shows a preview.
 
 1. Copy the value of the **Application (client) ID** field from the main screen of the app registration in Azure Portal and paste it into the **Client ID** field in ODC Portal.
 
-    ![Azure Portal](images/copy-application-cliend-id-az.png)
+    ![Screenshot of Azure Portal with the Application (client) ID field highlighted](images/copy-application-cliend-id-az.png "Copying Application Client ID in Azure Portal")
 
 1. Click the **Certificates & secrets** tab from the main screen of the app registration in **Azure Portal**. Click **New client secret** button. Enter a description for the new secret in the **Description** field and then click **Add** to generate the secret. 
 
-    ![Azure Portal](images/add-a-client-secret-az.png)
+    ![Screenshot of Azure Portal with the New client secret button highlighted](images/add-a-client-secret-az.png "Adding a Client Secret in Azure Portal")
 
 1. Copy the newly generated value from the **Value** field and paste it into the **Client secret (secret value)** field in ODC Portal. 
 
-    ![Azure Portal](images/paste-secret-value-az.png)
+    ![Screenshot of Azure Portal showing the newly generated client secret value](images/paste-secret-value-az.png "Pasting the Client Secret Value in ODC Portal")
 
     <div class="info" markdown="1">
+   
     ODC safely stores the configuration details in a secret manager.
+   
     </div>
 
 1. Complete the configuration in ODC Portal by leaving the **PKCE** as the default value (**SHA-256**) and fields in **Claim Mapping** section as default values (**name**, **email**) and clicking **Save**.
