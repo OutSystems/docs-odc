@@ -61,7 +61,7 @@ jobs:
         with:
           fetch-depth: 1
           ref: ${{ env.REF }}
-          persist-credentials: true
+          persist-credentials: false
 
       - name: ${{ matrix.script }}
         if: github.event_name == 'pull_request' || contains(github.event.comment.body, format('/{0}', matrix.script))

@@ -43,7 +43,7 @@ jobs:
         gh pr diff ${{ steps.PR.outputs.number }} --repo ${{ github.repository }} --name-only >> $GITHUB_OUTPUT
         echo "EOF" >> $GITHUB_OUTPUT
       env:
-        TOOLS_PAT: ${{ secrets.TOOLS_PAT }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     outputs:
       changed-files: ${{ steps.changed-files.outputs.files }}

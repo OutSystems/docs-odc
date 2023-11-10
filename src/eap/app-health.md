@@ -1,5 +1,5 @@
 ---
-summary: Learn how the App health dashboard in ODC Portal monitors application health, based on performance and errors.
+summary: Learn how the App health dashboard in ODC Portal monitors app health, based on performance and errors.
 tags:
 locale: en-us
 guid: e190d5fb-6b99-4d9b-a64f-a3b34be3588d
@@ -10,26 +10,26 @@ platform-version: odc
 
 # Monitor app health in ODC Portal
 
-OutSystems Developer Cloud (ODC) provides an **App health** dashboard that monitors application health, based on performance and errors.
+OutSystems Developer Cloud (ODC) provides an **App health** dashboard that monitors app health, based on performance and errors.
 
-The dashboard allows you to analyze key metrics, such as the [health score](#health-score), [requests](#requests),  [errors](#errors), and [response time](#response-time) of your apps and its elements over a period of time. The App health dashboard provides an overview of the application health of a selected stage, for up to 30 days.
+The dashboard allows you to analyze key metrics, such as the [health score](#health-score), [requests](#requests),  [errors](#errors), and [response time](#response-time) of your apps and its elements over a period of time. The App health dashboard provides an overview of the app health of a selected stage, for up to 30 days.
 
-![App health dashboard overview](images/apphealth-dashboard-overview-pl.png)
+![Screenshot of the App Health Dashboard overview in ODC Portal showing health categories and key metrics](images/apphealth-dashboard-overview-pl.png "App Health Dashboard Overview")
 
-Based on the health score, the dashboard organizes the apps into **Critical**, **Moderate**, and **Good** categories allowing you to focus on the apps that are performing poorly. The dashboard also shows the applications, categorized by requests, errors, and response time.
+Based on the health score, the dashboard organizes the apps into **Critical**, **Moderate**, and **Good** categories allowing you to focus on the apps that are performing poorly. The dashboard also shows the apps, categorized by requests, errors, and response time.
 
-![Top requests](images/apphealth-toprequests-pl.png)
-![Errors](images/apphealth-errors-pl.png)
+![Table displaying the top requests in the App Health Dashboard](images/apphealth-toprequests-pl.png "Top Requests")
+![Graph showing the error trends in the App Health Dashboard](images/apphealth-errors-pl.png "Errors")
 
 From the dashboard, you can identify and debug potential issues by drilling down into the app's historical trend of key metrics. 
 
-![Health score](images/apphealth-healthscore-pl.png)
-![Total errors](images/apphealth-totalerrors-pl.png)
+![Line graph depicting the health score trend of an app over time](images/apphealth-healthscore-pl.png "Health Score")
+![Chart illustrating the total number of errors in an app within the App Health Dashboard](images/apphealth-totalerrors-pl.png "Total Errors")
 
 Drilling down into an app also allows you to get an overview of the app’s elements based on the number of times they were invoked as part of the app requests, their 99th percentile duration, and the number of times they resulted in an error.
 
-![Element response time ](images/apphealth-element-response-pl.png)
-![Element errors](images/apphealth-element-errors-pl.png)
+![Panel detailing the response time of app elements in the App Health Dashboard](images/apphealth-element-response-pl.png "Element Response Time")
+![Panel showing the number of errors per app element in the App Health Dashboard](images/apphealth-element-errors-pl.png "Element Errors")
 
 You can drill further down into an element and view the historical trends of the metrics. Once you identify the elements  that are causing the app issues, the logs and traces for the period that the errors occurred can also help identify and locate the problem. For more information about logs and traces, refer to [Monitor and troubleshoot apps](monitor-apps.md) article.
 
@@ -50,19 +50,19 @@ An app's health score is expressed as a numerical score from 1 to 100 and is bas
 
 An app's health score calculation follows the Application Performance Index (Apdex) industry standard.
 
-The score is calculated by taking the number of successful requests to the app's elements and dividing by the total number of requests over the selected period. A request is said to be successful if it is completed without errors and the response time is less than a defined threshold.
+The score is calculated by taking the number of successful requests to the app's elements and dividing by the total number of requests over the selected period. A request is said to be successful if it's completed without errors and the response time is less than a defined threshold.
 
 ### Requests {#requests}
 
-Requests are the number of application interactions done using screens, APIs, or timers. There are 2 request metrics:
+Requests are the number of app interactions done using screens, APIs, or timers. There are 2 request metrics:
 
-* **Total requests** - The total number of requests made to an application. 
+* **Total requests** - The total number of requests made to an app. 
 
-* **Request rate** - The rate at which the requests are sent to an application.
+* **Request rate** - The rate at which the requests are sent to an app.
 
 ### Errors {#errors}
 
-Errors are the issues that occur when requests are made to an application, which causes it to malfunction or crash. There are 3 error metrics:
+Errors are the issues that occur when requests are made to an app, which causes it to malfunction or crash. There are 3 error metrics:
 
 * **Total errors** - The total number of errors occurred when requests are made to an app.
 

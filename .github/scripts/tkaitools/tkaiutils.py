@@ -3,6 +3,7 @@ import logging
 import subprocess
 import time
 from github import Github
+import os
 
 class GitHubHandler:
     """
@@ -135,8 +136,11 @@ def commit_and_push(updated_files, commit_message):
         bool: True if changes were committed and pushed, False otherwise.
     """
     try:
-        subprocess.run(['git', 'config', 'user.name', 'GitHub Action'], check=True)
-        subprocess.run(['git', 'config', 'user.email', 'action@github.com'], check=True)
+        subprocess.run(['git', 'config', 'user.name', 'KnowOps'], check=True)
+        subprocess.run(['git', 'config', 'user.email', 'knowledge@outsystems.com'], check=True)
+
+        repo_url = f"https://{os.getenv('TOOLS_PAT')}@github.com/{os.getenv('GITHUB_REPOSITORY')}.git"
+        subprocess.run(['git', 'remote', 'set-url', 'origin', repo_url], check=True)
         
         status_result = subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True)
         if status_result.stdout:
