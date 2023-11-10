@@ -87,7 +87,7 @@ async def main():
     """
     The main asynchronous function to run the script. Handles initialization, processing, and cleanup.
     """
-    github_token = os.getenv('GITHUB_TOKEN')
+    github_token = os.getenv('TOOLS_PAT')
     repo_name = os.getenv('GITHUB_REPOSITORY')
     pr_number = int(os.getenv('PR_NUMBER'))
     alttag_endpoint = os.getenv('ALTTAG_ENDPOINT')
