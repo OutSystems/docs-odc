@@ -33,7 +33,7 @@ To manage secrets and provide a good user experience:
 
 ### Creating logic to set, get and remove a secret
 
-The KeyStore Plugin actions are in the Logic tab of Service Studio, in **Client Actions > KeyStorePlugin**.
+The KeyStore Plugin actions are in the Logic tab of ODC Studio, in **Client Actions > KeyStorePlugin**.
 
 #### Check if the plugin is available in the app
 

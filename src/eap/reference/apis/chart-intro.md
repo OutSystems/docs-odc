@@ -20,7 +20,7 @@ The Charts API v2 allows you to create, populate, and customize charts. OutSyste
 
 ## Charts
 
-OutSystems provides a collection of charts that allow you to build your screens with a simple drag-and-drop from Service Studio’s toolbox.
+OutSystems provides a collection of charts that allow you to build your screens with a simple drag-and-drop from ODC Studio's toolbox.
 
 |Widget|Description |
 |---|---|

@@ -58,7 +58,7 @@ To add a Firebase plugin to your mobile app, complete the following steps:
 
 2. Navigate to **Logic** > **Client Actions**, then select your Firebase plugin and use the actions in your logic.
 
-    ![Screenshot of creating and using the firebase actions in the logic tab of ODC Studio](images/create-and-use-firebase-plugin-in-logic-tab-odcs.png)
+    ![Screenshot showing how to create and use a Firebase plugin in the logic tab of ODC Studio](images/create-and-use-firebase-plugin-in-logic-tab-odcs.png "Creating and Using Firebase Plugin in ODC Studio Logic Tab")
 
 <div class="info" markdown="1">
 
@@ -76,7 +76,7 @@ You must provide the plugin configuration file as settings in the ODC Portal for
 
     Complete the two Firebase settings **GoogleServicesAndroid** and **GoogleServicesIos**.
 
-    ![Screenshot of adding Google services configuration files in the Firebase settings](images/add-google-services-config-files-in-firebase-settings-pl.png)
+    ![Screenshot illustrating the addition of Google services configuration files in the Firebase settings panel](images/add-google-services-config-files-in-firebase-settings-pl.png "Adding Google Services Configuration Files in Firebase Settings")
 
 1. Select the context menu associated with the GoogleServicesAndroid setting, then select **Edit** and upload the **google-services.json** file.
 
@@ -116,7 +116,7 @@ Starting with iOS 14.5, apps on the App Store must request the user’s permissi
 To trigger the native AppTrackingTransparency framework, use the **RequestTrackingAuthorization** client action from the Firebase Analytics Plugin. Apple recommends triggering this prompt as soon as the app loads.
 If you want to present an alert before the iOS tracking permission dialog, enable the parameter **ShowInformation** on the action. To provide more context to app users in the dialog, set a **Title** and **Message**.
 
-![RequestTrackingAuthorization client action parameters on Service Studio](images/firebase-request-tracking-authorization-flow-odcs.png)
+![Screenshot of the RequestTrackingAuthorization client action parameters in ODC Studio](images/firebase-request-tracking-authorization-flow-odcs.png "Firebase Request Tracking Authorization Flow in ODC Studio")
 
 By default, the **NSUserTrackingUsageDescription** field is set to `AppName needs your attention.`. As explained by Apple [here](https://developer.apple.com/documentation/apptrackingtransparency), this property must contain "a message that informs the user why an app is requesting permission to use data for tracking the user or the device.". You can set your custom description by including an iOS-specific preference (`USER_TRACKING_DESCRIPTION_IOS`) in the Extensibility Configurations of the application, as follows:
 

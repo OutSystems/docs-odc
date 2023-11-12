@@ -36,7 +36,7 @@ At a high-level, you:
 
 1. Verify and encode the obfuscation rules to base64 using the OutSystems Obfuscation Helper. See: [Obfuscation Helper](#obfuscation-helper)
 
-1. Add new settings to your mobile app using the Extensibility Configuration field in Service Studio. See: [Add custom obfuscation rules to your app](#add-custom-obfuscation-rules-to-your-app)
+1. Add new settings to your mobile app using the Extensibility Configuration field in ODC Studio. See: [Add custom obfuscation rules to your app](#add-custom-obfuscation-rules-to-your-app)
 
 1. [Generate your app and try it out](#generate-your-app-and-try-it-out)
 
@@ -162,7 +162,7 @@ To enable custom code obfuscation, follow these steps to add a property to the E
 
 1. From ODC Studio, select **your app name**, go to the properties, and double-click **Extensibility Configuration**.
 
-    ![extend-configuration-field.png](images/extensibility-configurations-odcs.png)
+    ![Screenshot of the Extensibility Configuration field in ODC Studio for adding custom obfuscation rules](images/extensibility-configurations-odcs.png "Extensibility Configurations in ODC Studio")
 
 1. In the **Extensibility Configuration** field, enter the obfuscation property as a new global preference. Call the new property in the Extensibility Configuration JSON **AppShieldObfuscationRules**, and its value is a base64 encoding of your custom obfuscation rules. The following code snippet is an example of the JSON implementation.
 

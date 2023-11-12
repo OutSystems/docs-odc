@@ -12,7 +12,7 @@ platform-version: odc
 
 After you create [entities to persist data](../data/modeling/entity-create.md), you can edit your app's data without leaving ODC Studio.
 
-![Edit data in Service Studio](images/edit-data-odcs.png)
+![Screenshot of ODC Studio interface showing data editing features](images/edit-data-odcs.png "Editing Data in ODC Studio Interface")
 
 In ODC Studio, you can edit entity data in the development stage. The [entities](../data/modeling/entity.md) must meet the following criteria:
 
@@ -44,7 +44,7 @@ Additionally, foreign key cells for the User entity don't show values or suggest
 
 You must have the App management **Change** permission for the app
 
-![App management Change permission](images/edit-data-change-permission-odcs.png)
+![Image depicting the App management Change permission settings in ODC Studio](images/edit-data-change-permission-odcs.png "App Management Change Permission in ODC Studio")
 
 Learn how to [add a record or row](#add-a-record-or-row), [delete a record or row](#delete-a-record-or-row), and [modify a record's attribute](#modify-a-records-attribute) in ODC Studio.
 
@@ -54,19 +54,19 @@ To add a record or row, follow these steps:
 
 1. In the app where the entity exists, go to the **Data** tab, and right-click the entity to **View or Edit Data**.
 
-    ![View or edit data](images/edit-data-view-edit-odcs.png)
+    ![Screenshot showing the option to View or Edit Data for an entity in ODC Studio](images/edit-data-view-edit-odcs.png "View or Edit Data Option in ODC Studio")
 
     **Note**: Even though it seems like you're editing data in a spreadsheet, you're actually preparing changes to data in a relational database. Rows represent entity records, and cells represent attributes.
 
  1. Click **Add row**.
 
-    ![Mandatory fields](images/edit-data-mandatory-fields-odcs.png)
+    ![Image showing mandatory fields highlighted with red outlines in ODC Studio data editing](images/edit-data-mandatory-fields-odcs.png "Mandatory Fields Highlighted in ODC Studio")
 
     **Note:** If any cell has a red outline, it means that those fields are mandatory and you must fill them in. To understand each issue, hover over the highlighted cell. You can make more than one change to the entity at a time. Once you've finished your changes, click **Apply**.
 
 1. You can make more than one change to the entity at a time. Once you've finished your changes, click [Apply](#apply-changes).
 
-    ![Click apply](images/edit-data-add-row-odcs.png)
+    ![Screenshot illustrating the process of adding a new row to an entity in ODC Studio](images/edit-data-add-row-odcs.png "Adding a New Row in ODC Studio")
 
 ## Delete a record or row
 
@@ -74,15 +74,15 @@ To delete a record or row, follow these steps:
  
 1. In the app where the entity exists, go to the **Data** tab, and right-click the entity to **View or Edit Data**.
 
-    ![View or edit data](images/edit-data-view-edit-odcs.png)
+    ![Screenshot showing the option to View or Edit Data for an entity in ODC Studio](images/edit-data-view-edit-odcs.png "View or Edit Data Option in ODC Studio")
 
 1. Right-click the row you want to delete, and select **Delete row**.
 
-    ![Delete row](images/edit-data-delete-row-odcs.png)
+    ![Screenshot showing how to delete a row from an entity in ODC Studio](images/edit-data-delete-row-odcs.png "Deleting a Row in ODC Studio")
 
 1. You can delete more than one row at a time. Once you've  finished your changes, click **Apply**.
 
-    ![Delete row](images/edit-data-delete-row-apply-odcs.png)
+    ![Image displaying the Apply button to confirm row deletion in ODC Studio](images/edit-data-delete-row-apply-odcs.png "Applying Row Deletion in ODC Studio")
 
 ## Modify a record's attribute
 
@@ -90,7 +90,7 @@ To modify a record's attribute or cell, follow these steps:
 
 1. In the app where the entity exists, go to the **Data** tab, and double-click the entity to **View or Edit Data**.
 
-    ![View or edit data](images/edit-data-view-edit-odcs.png)
+    ![Screenshot showing the option to View or Edit Data for an entity in ODC Studio](images/edit-data-view-edit-odcs.png "View or Edit Data Option in ODC Studio")
 
 1. Double-click inside the cell you want to change.
 
@@ -120,11 +120,11 @@ After applying your changes to the database, one of the following messages is di
 
 * If all changes are successful, a success message displays.
 
-    ![Changes success message](images/edit-data-changes-success-odcs.png)
+    ![Success message displayed after applying data changes successfully in ODC Studio](images/edit-data-changes-success-odcs.png "Successful Data Changes in ODC Studio")
 
 * If some changes fail, an error message displays and the problem cells are highlighted. To understand the cause of the errors, hover over the cell. Additionally, you can generate a text file with all of the errors by clicking **view error report**.
 
-    ![Changes failed message](images/edit-data-changes-failed-odcs.png)
+    ![Error message displayed after failing to apply data changes in ODC Studio](images/edit-data-changes-failed-odcs.png "Failed Data Changes in ODC Studio")
 
 ## Discard changes
 
@@ -132,8 +132,8 @@ You can permanently discard changes in one of the following ways:
 
 * To discard changes to a specific row, right-click the row and select **Discard this change**.
 
-    ![Discard changes](images/edit-data-discard-odcs.png)
+    ![Option to discard specific changes in ODC Studio highlighted in the interface](images/edit-data-discard-odcs.png "Discarding Changes in ODC Studio")
 
 * To discard all of your changes, click **Discard** and then confirm that want to permanently discard your changes.
 
-    ![Discard all changes](images/edit-data-discard-all-changes-odcs.png)
+    ![Button to discard all changes in ODC Studio with a confirmation dialog](images/edit-data-discard-all-changes-odcs.png "Discarding All Changes in ODC Studio")
