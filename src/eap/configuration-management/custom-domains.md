@@ -10,7 +10,13 @@ figma:
 
 # Configure custom domains for apps
 
-For each stage in which you deploy apps, OutSystems Developer Cloud (ODC) comes with a **built-in** OutSystems domain for end-user access. The table below shows built-in domains if you have three stages.
+<div class="info" markdown="1">
+
+You don't need to purchase your own SSL certificates to use on OutSystems Developer Cloud (ODC). ODC doesn't accept customer certificates. Amazon Web Services (AWS) issues free certificates. To get an AWS certificate, follow the instructions in this article.
+
+</div>
+
+For each stage in which you deploy apps, ODC comes with a **built-in** OutSystems domain for end-user access. The table below shows built-in domains if you have three stages.
 
 
 | Stage       | Built-in domain                      |
