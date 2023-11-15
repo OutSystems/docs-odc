@@ -291,6 +291,14 @@
       #  Block lifecycle events
       - href: eap/building-apps/ui/screen-block-lifecycle-events.md
 
+      # Accessibility
+      - href: eap/building-apps/ui/accessibility/intro.md
+      - topics:
+          - href: eap/building-apps/ui/accessibility/testing-fixing-accessibility-issues.md
+          - href: eap/building-apps/ui/accessibility/aria-roles-and-attributes.md
+          - href: eap/building-apps/ui/accessibility/ui-patterns-accessibility-reference.md
+          - href: eap/building-apps/ui/accessibility/additional-accessibility-resources.md
+
     # Emails
     - href: eap/building-apps/emails/intro.md
     - topics:
