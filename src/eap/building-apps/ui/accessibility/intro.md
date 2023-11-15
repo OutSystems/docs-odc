@@ -41,7 +41,7 @@ To enable the built-in accessibility features in ODC Studio, do the following:
 1. Select the **EnableAccessibilityFeatures** input parameter.
 1. On the parameter properties, set the **Default Value** to **True**.
 
-![Screenshot of enabling accessibility features in OutSystems ODC Studio with EnableAccessibilityFeatures parameter set to True](images/enabling-accessibility-features-odcs.png "Enabling the built-in accessibility features in ODC Studio")
+    ![Screenshot of enabling accessibility features in OutSystems ODC Studio with EnableAccessibilityFeatures parameter set to True](images/enabling-accessibility-features-odcs.png "Enabling the built-in accessibility features in ODC Studio")
 
 By setting the **EnableAccessibilityFeatures** to true, you activate the following features for all screens using the layout:
 
@@ -62,9 +62,9 @@ Screen readers use page titles to inform users of the name of the page they're o
 1. On the **Properties**, enter the screen title (for example, "Main page") in the **Title** field.
 
 <div class="info" markdown="1">
- 
+
 The default page title of the log-in page is blank. Navigate to **UI Flows** > **Common** > **Login** and enter the title.
- 
+
 </div>
 
 ### Page language settings for screen readers
@@ -123,7 +123,7 @@ To increase the text spacing, do the following:
 
     ![Screenshot showing the setup of a text spacing client action in OutSystems ODC Studio](images/text-spacing-client-action-odcs.png "Setting the text spacing client action")
 
-   1. On the **Logic** tab, click on **OutSystemsUI**
+1. On the **Logic** tab, click on **OutSystemsUI**
 1. Click on the **Accessibility** Client Actions folder.
 1. Drag the **ToggleTextSpacing** action into the flow.
 
@@ -191,9 +191,9 @@ To change the default main container, do the following steps:
     ![Screenshot showing how to set the Skip To Content target ID in OutSystems ODC Studio](images/skip-to-content-target-id-odcs.png "Setting the Skip To Content target ID")
 
 <div class="info" markdown="1">
- 
+
 You must enter the name in the widget properties before you can use that widget in the **SkipToContent** action. For example, if you name your element **MainContent**, the identifier is **MainContent.Id**.
- 
+
 </div>
 
 The default content Container is the **MainContentWrapper**. To find it, go to **UI Flows** > **Layouts**, and click on the layout you use in your app.
