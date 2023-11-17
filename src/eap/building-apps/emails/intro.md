@@ -72,7 +72,7 @@ There are many email clients and there's no consistent support for CSS. OutSyste
 
 ### CSS from producers
 
-When your Email app (consumers) use CSS from other apps (producers), the emails show the latest styles that you published in the environment. When you publish the producer, continue using the consumer to get the latest styles from the producer. There's no need to republish the producer.
+When your Email app (consumers) use CSS from other apps (producers), the emails show the latest styles that you published in the environment. When you publish the producer, continue using the consumer to get the latest styles from the producer. There's no need to republish the consumer.
 
 ### Clipped content in Gmail
 
