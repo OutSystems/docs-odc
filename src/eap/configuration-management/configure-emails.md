@@ -27,7 +27,7 @@ ODC enables you to create email test lists, which are very useful for testing. F
 
 <div class="info" markdown="1">
 
-If your email test list is inactive, the email configuration uses the email list in ODC Studio. to test the email.
+If your email test list is inactive, the email configuration uses the email list in ODC Studio to test the email.
 
 </div>
 
