@@ -18,10 +18,11 @@ Your apps consume logic built in C# the same way they consume logic from librari
 When you want to create new external logic or update existing external logic, follow these steps:
 
 1. Build the logic in C# using the External Libraries Source Software Development Kit (SDK).
-2. Upload and publish the logic as an external library using the ODC Portal.
-3. Consume the logic in your apps and libraries built in OutSystems using ODC Studio.
+1. Upload and publish the logic as an external library using the ODC Portal.
+1. Release the library in ODC Portal.
+1. Consume the logic in your apps and libraries built in OutSystems using ODC Studio.
 
-![External Logic steps](images/extend-apps-with-external-logic-diag.png "External Logic steps")
+![External Logic steps](images/extend-your-apps-with-external-logic-diag.png "External Logic steps")
 
 ## Build the external logic
 
@@ -45,7 +46,7 @@ To do this, select **External Logic** from the left nav menu in the ODC Portal t
 
 1. Click the:
 
-    * **Create library** button to create a new external library. 
+    * **Create library** button to create a new external library.
     * **Upload new revision** button within the detail page of the external library to update an existing external library. You access the detail page by clicking the library name in the list of published external libraries.
 
     In both cases the **Upload file** screen displays.
@@ -70,9 +71,11 @@ To do this, select **External Logic** from the left nav menu in the ODC Portal t
 
 The external library is initially deployed to the Development stage (published). Once published, it's recommended you test the library in an app before releasing the first stable version. To do this, open the **Version history** tab on the detail page for the library, click the ellipsis next to the release date, and select **Try library in an app**. This launches a test session in ODC Studio, see [Test a revision of a library](../libraries.md/#test-a-revision-of-a-library) for best practices on what type of app to use.
 
+## Release the library
+
 You can then use the **Release library** button on the detail page in ODC Portal to release the first version. Follow the guidance under [Release a new version of a library](../libraries.md#release-a-new-version-of-a-library) for more details.
 
-When an app or library that consumes the external library is deployed to another stage, the external library is automatically deployed to that stage as well. 
+When an app or library that consumes the external library is deployed to another stage, the external library is automatically deployed to that stage as well.
 
 ## Consume the external logic
 
@@ -94,13 +97,13 @@ Users outside your organization follow the same process to [install](../../forge
 
 To delete an external library before has been published, follow these steps:
 
-1. Go to the ODC Portal, and from the Navigation menu, select **External Logic** to display the list of pending uploads and published external libraries. 
+1. Go to the ODC Portal, and from the Navigation menu, select **External Logic** to display the list of pending uploads and published external libraries.
 1. In the pending uploads list, click **X** next to the external library you want to delete to display a confirmation popup.
 1. Click **Cancel creation** to display the updated list.
 
 If you want to delete an external library after its published, follow the steps:
 
-1. Go to the ODC Portal, and from the Navigation menu, select **External Logic**  to display the list of pending uploads and published external libraries. 
+1. Go to the ODC Portal, and from the Navigation menu, select **External Logic**  to display the list of pending uploads and published external libraries.
 1. Access the detail page of the library by clicking its name in the list of published libraries.
 1. Click the ellipsis (3-dots) to the right of the library name, then click the **Delete library** button to display a confirmation popup.
 1. Enter the library name and click **Delete library** to display the updated list.
