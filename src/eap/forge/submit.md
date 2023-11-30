@@ -45,6 +45,12 @@ By default, the asset name, icon, and short description are defined during devel
 1. Add images that best illustrate the asset's features, main use cases, and behavior.
 1. Add any limitations that might exist, such as images not resizing correctly in some browsers.
 1. Optionally, edit the License.
+1. Add the team contact.
+1. Add clear and concise documentation to guide developers on how to install and configure the asset and general instructions on how to use it.
+1. In the last step, the wizard displays a preview of the assets detail page for you to review.
+1. Click **Submit** to finalize the process.
+
+## Submit a new asset to Forge
 
 When an asset gets updated, resubmit it to Forge to share the changes. The updated asset must have the same name as the original asset.
 
