@@ -24,7 +24,7 @@ To submit an asset, your asset must meet the following prerequisites:
 
 * Asset names must be unique. The name can't be the same as a name used for a previously submitted Forge asset.
 * Submit any dependencies first because you can’t proceed with submission if you’re missing a dependency.
-*Assets must have a short description and an icon that you can edit in the original asset.
+* Assets must have a short description and an icon that you can edit in the original asset.
 * Assets must be versioned except for App Templates that are versioned by Forge. Versioning assets is slightly different for apps and libraries.
     * To version libraries, release them in the Apps console.
     * To version apps, deploy them from the Deployment console to production.
@@ -62,7 +62,7 @@ Follow these steps to submit a new version of your asset:
    1. If all the dependencies are already in Forge, or the asset doesn't consume any, you can continue to the wizard.
 1. In the wizard, enter a detailed description of your asset. Your description should describe the asset's features and any problem(s) it solves. filters will use on the **All assets** page.
 1. Review the images that best illustrate the asset's features, main use cases, and behavior.
-1. Verify the release notes have information that describes the changes you made to the asset.
+1. Verify the release notes have information that describes the changes made to the asset.
 1. Review the License if changes were made.
 1. Optionally, add or edit the team contact.
 1. Verify the documentation of the asset and update it if necessary.
