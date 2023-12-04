@@ -60,7 +60,8 @@ Follow these steps to submit a new version of your asset:
 1. From this list of assets, select the asset with the new version that you want to submit.
    1. If the asset consumes dependencies that aren't yet submitted to Forge, a pop-up displays indicating the missing assets. For each dependency, Forge validates that the prerequisites are met so the asset can be submitted.
    1. If all the dependencies are already in Forge, or the asset doesn't consume any, you can continue to the wizard.
-1. In the wizard, enter a detailed description of your asset. Your description should describe the asset's features and any problem(s) it solves. filters will use on the **All assets** page.
+1. In the wizard, enter a detailed description of your asset. Your description should describe the asset's features and any problem(s) it solves.
+1. If the asset is a library, select the library type that the filters will use on the **All assets** page.
 1. Review the images that best illustrate the asset's features, main use cases, and behavior.
 1. Verify the release notes have information that describes the changes made to the asset.
 1. Review the License if changes were made.
