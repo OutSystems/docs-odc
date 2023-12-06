@@ -44,7 +44,7 @@ Additionally, foreign key cells for the User entity don't show values or suggest
 
 You must have the App management **Change** permission for the app
 
-![Image depicting the App management Change permission settings in ODC Studio](images/edit-data-change-permission-odcs.png "App Management Change Permission in ODC Studio")
+![Image displaying the change permission settings for app management in ODC Studio](images/edit-data-change-permission-odcs.png "App Management Change Permission in ODC Studio")
 
 Learn how to [add a record or row](#add-a-record-or-row), [delete a record or row](#delete-a-record-or-row), and [modify a record's attribute](#modify-a-records-attribute) in ODC Studio.
 
@@ -54,13 +54,13 @@ To add a record or row, follow these steps:
 
 1. In the app where the entity exists, go to the **Data** tab, and right-click the entity to **View or Edit Data**.
 
-    ![Screenshot showing the option to View or Edit Data for an entity in ODC Studio](images/edit-data-view-edit-odcs.png "View or Edit Data Option in ODC Studio")
+    ![Screenshot showing the option to view or edit data for an entity in ODC Studio](images/edit-data-view-edit-odcs.png "View or Edit Data Option in ODC Studio")
 
     **Note**: Even though it seems like you're editing data in a spreadsheet, you're actually preparing changes to data in a relational database. Rows represent entity records, and cells represent attributes.
 
  1. Click **Add row**.
 
-    ![Image showing mandatory fields highlighted with red outlines in ODC Studio data editing](images/edit-data-mandatory-fields-odcs.png "Mandatory Fields Highlighted in ODC Studio")
+    ![Image showing mandatory fields highlighted with red outlines in ODC Studio data editing interface](images/edit-data-mandatory-fields-odcs.png "Mandatory Fields Highlighted in ODC Studio")
 
     **Note:** If any cell has a red outline, it means that those fields are mandatory and you must fill them in. To understand each issue, hover over the highlighted cell. You can make more than one change to the entity at a time. Once you've finished your changes, click **Apply**.
 
@@ -74,7 +74,7 @@ To delete a record or row, follow these steps:
  
 1. In the app where the entity exists, go to the **Data** tab, and right-click the entity to **View or Edit Data**.
 
-    ![Screenshot showing the option to View or Edit Data for an entity in ODC Studio](images/edit-data-view-edit-odcs.png "View or Edit Data Option in ODC Studio")
+    ![Screenshot showing the option to view or edit data for an entity in ODC Studio](images/edit-data-view-edit-odcs.png "View or Edit Data Option in ODC Studio")
 
 1. Right-click the row you want to delete, and select **Delete row**.
 
@@ -90,7 +90,7 @@ To modify a record's attribute or cell, follow these steps:
 
 1. In the app where the entity exists, go to the **Data** tab, and double-click the entity to **View or Edit Data**.
 
-    ![Screenshot showing the option to View or Edit Data for an entity in ODC Studio](images/edit-data-view-edit-odcs.png "View or Edit Data Option in ODC Studio")
+    ![Screenshot showing the option to view or edit data for an entity in ODC Studio](images/edit-data-view-edit-odcs.png "View or Edit Data Option in ODC Studio")
 
 1. Double-click inside the cell you want to change.
 

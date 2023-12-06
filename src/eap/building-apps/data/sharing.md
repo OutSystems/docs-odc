@@ -34,7 +34,7 @@ ODC Studio lets you define the logic flow of a server action in a visual and int
 
 An architectural best practice is to define the [data model](modeling.md) (entities and their relationships) along with associated actions for your app in a dedicated app. This is the producer app. You then share the entities and actions with consumer apps. The following diagram shows the relationship.
 
-![Producer-consumer relationship](images/share-data-producer-consumer-diag.png)
+![Diagram illustrating the relationship between producer and consumer apps in sharing data within OutSystems](images/share-data-producer-consumer-diag.png "Producer and Consumer Apps Data Sharing Diagram")
 
 This best practice promotes code maintainability. If you want to update your app's logic model, you only have to do it once. This lets you avoid duplicating the changes across apps. For example, if you centralize audit logic in the producer app, after updating the logic all consumer apps receive the update.
 
@@ -51,7 +51,7 @@ You share an entity from your producer app by setting its public flag to **Yes**
 
 To manipulate entity data in a consumer app, you create a server action in the producer app. You then wrap the server action in a service action to share it. Developers can then use the service action in a client action or timer in a consumer app. The following diagram shows the action wrap hierarchy.
 
-![Action hierarchy](images/share-data-action-hierarchy-diag.png)
+![Diagram showing the hierarchy of actions for sharing data between OutSystems apps](images/share-data-action-hierarchy-diag.png "Action Wrap Hierarchy Diagram")
 
 ## Sharing data with external systems
 

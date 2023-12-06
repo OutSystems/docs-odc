@@ -27,7 +27,7 @@ This is an overview of how to use roles:
 1. In ODC Portal, assign end-user roles to users.
 1. In ODC Studio, use end-user roles to control access to the parts of the app. You can also grant and revoke a role to any user programmatically.
 
-![How you can use roles](images/overview-how-to-use-roles-diag.png "How you can use roles")
+![Diagram illustrating the process of using roles in OutSystems Developer Cloud](images/overview-how-to-use-roles-diag.png "How you can use roles")
 
 ### Create end-user roles
 
@@ -59,7 +59,7 @@ After you assign roles to your end-users, you can:
 * Restrict access to data
 * Restrict logic flows
 
-![Control access in your app](images/control-access-in-your-app-end-user-roles-diag.png "Control access in your app")
+![Diagram showing how to control access in your app with end-user roles](images/control-access-in-your-app-end-user-roles-diag.png "Control access in your app")
 
 <div class="info" markdown="1">
 

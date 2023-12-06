@@ -26,7 +26,7 @@ If ODC Studio detects changes and can not automatically merge and publish your a
 * Compare revisions
 :  Use to open the **Compare and Merge** window to preview the changes between versions. Then you can edit the local revision and publish it.
 
-![Modified revision popup](images/modified-version-detected-odcs.png)
+![Screenshot of the 'Conflicting revision detected' window in OutSystems Developer Cloud Studio](images/modified-version-detected-odcs.png "Conflicting Revision Detected in ODC Studio")
 
 ## Compare revisions window
 
@@ -70,13 +70,13 @@ Following are the color descriptions.
 
 | Color | Name | Meaning |
  --- | --- | --- |
-![](images/color-modifed-deleted.png) | Gray | Deleted line
-![](images/color-modifed-added.png) | Green| Inserted line
-![](images/color-modifed-light.png) | Light blue | The modified line with no changes and conflicts, no changes in this revision
-![](images/color-modifed-conflict.png) | Red | Modified in both versions with conflicts
+![Color reference indicating a gray highlight for a deleted line in the merge comparison](images/color-modifed-deleted.png "Color Reference for Deleted Line") | Gray | Deleted line
+![Color reference indicating a green highlight for an inserted line in the merge comparison](images/color-modifed-added.png "Color Reference for Inserted Line") | Green| Inserted line
+![Color reference indicating a light blue highlight for an unchanged line with no conflicts in the merge comparison](images/color-modifed-light.png "Color Reference for Unchanged Line") | Light blue | The modified line with no changes and conflicts, no changes in this revision
+![Color reference indicating a red highlight for a line modified in both versions with conflicts in the merge comparison](images/color-modifed-conflict.png "Color Reference for Conflicted Line") | Red | Modified in both versions with conflicts
 
 ## Recover previous merge
 
 ODC saves the merge changes and actions automatically. When the **Recover Previous Merge** window displays, click **Yes** to continue working on changes without losing the previous edits. Clicking **No** deletes the saved merge edits, and you must start the edits from scratch.
 
-![Recover from previous merge popup](images/recover-previous-merge-dialog-odcs.png)
+![Screenshot of the 'Recover Previous Merge' dialog in OutSystems Developer Cloud Studio](images/recover-previous-merge-dialog-odcs.png "Recover Previous Merge Dialog in ODC Studio")

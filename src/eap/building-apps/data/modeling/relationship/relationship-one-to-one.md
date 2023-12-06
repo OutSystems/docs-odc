@@ -45,7 +45,7 @@ Since we are using the `User` system entity to store the end-users it is not pos
     * `Facebook`, Text type
     * `Photo`, Binary Data type
 
-![Diagram illustrating how to create a one-to-one relationship between User and Profile entities in the GoOutWeb application](images/one-to-one-relationship-1.png "One-to-One Relationship Entity Diagram")
+![Entity diagram showing the one-to-one relationship between User and Profile entities with attributes Twitter, Facebook, and Photo](images/one-to-one-relationship-1.png "One-to-One Relationship Entity Diagram")
 
 As a result, you have the `Profile` entity extending the `User` entity. Every time a `Profile` record is created its identifier should have the value of the `User` record identifier it belongs to.
 

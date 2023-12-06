@@ -23,7 +23,7 @@ If you want to **consume** a REST API, check [Consume REST APIs](../consume_rest
 
 When a request to your REST API Method is received, OutSystems executes the following flow:
 
-![Rest Exposoe Method flow](images/rest-expose-method-flow-diag.png)
+![Diagram illustrating the execution flow of a REST API method in OutSystems, including OnRequest, OnAuthentication, Parameters Deserialization and Validation, Execute Method, Parameters Serialization, and OnResponse callbacks.](images/rest-expose-method-flow-diag.png "REST API Method Execution Flow Diagram")
 
 1. **OnRequest():** OnRequest callback allows you to run logic over the requests after receiving them. 
 1. **OnAuthentication():** OnAuthentication callback allows you to add basic authentication or custom authentication to requests. 

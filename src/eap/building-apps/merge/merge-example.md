@@ -13,7 +13,7 @@ In this example you are trying to publish an app, but a window **Modified revisi
 
 Due to conflicts, you can't automatically integrate your changes. ODC displays two options, **Overwrite with this revision** and **Compare revisions**. You click **Compare revisions** to compare your revision with the other revision. 
 
-![Conflicts detected](images/conflicts-detected-odcs.png)
+![Popup window showing 'Modified revision detected' indicating conflicts in the app](images/conflicts-detected-odcs.png "Conflicts Detected in ODC")
 
 After analyzing the **Compare and Merge** window, you find that:
 
@@ -25,25 +25,25 @@ Follow these steps to resolve the conflicts.
 
 1. Double-click the element **Style Sheet (pending text conflict)** in the **ClientList** screen. The **Compare and Merge - Style Sheet** opens. The number in the tab **Merged revision (1 conflict)** indicates the number of conflicts.
 
-    ![Conflicts in StyleSheet](images/conflicts-text-odcs.png)
+    ![Compare and Merge window highlighting conflicts in the Style Sheet of the 'ClientList' screen](images/conflicts-text-odcs.png "Conflicts in StyleSheet")
 
 1. Select the checkbox next to the text in **Merged revision** to add the CSS code of the revision. **Merged revision (1 conflict)** changes to  **Merged revision (0 conflicts)**. You can edit the code by typing in the **Merged revision** pane.
 
-    ![Edit the conflict revision](images/conflicts-text-orange-arrow-odcs.png)
+    ![Merged revision pane with an orange arrow pointing to the checkbox to resolve the CSS code conflict](images/conflicts-text-orange-arrow-odcs.png "Edit Conflict Revision")
 
 1. Click **Done and back** in the lower right corner of the screen to return to the **Compare and Merge** section.
 
-    ![Merge example](images/merge-example-compare-odcs.png)
+    ![Compare and Merge section with the 'Done and back' button in the lower right corner](images/merge-example-compare-odcs.png "Merge Example")
 
 1. Double-click **SaveOnClick** to open the **Compare and Merge - ButtonOnClick** window. You see that the `Section` assign element has conflicting values.
 
-    ![Visual element changes](images/visual-element-changes-odcs.png)
+    ![Compare and Merge - ButtonOnClick window showing conflicting 'Section' assign values](images/visual-element-changes-odcs.png "Visual Element Changes")
 
 1. Click on the value viewer labeled by the three dots (`...`) next to the **Assignments** value to open **Compare and Merge - Value** window.
 
 1. To select the value from your revision of the app, click the check box in the  **Merged revision (1 conflict)** pane. **Merged revision (1 conflict)** changes to **Merged revision (0 conflicts)**.
 
-    ![Resolved conflicts](images/text-changes-checkbox-odcs.png)
+    ![Checkbox selected in the Merged revision pane indicating a resolved conflict in the app](images/text-changes-checkbox-odcs.png "Resolved Conflicts")
 
 1. Click **Done and back** in the lower right corner to return to the **Compare and Merge - ButtonOnClick** section.
 
@@ -51,4 +51,4 @@ Follow these steps to resolve the conflicts.
 
 1. Click **Merge and Publish** to publish it. If you want to update the local app and publish later, click **Merge** at this step.
 
-    ![Merge complete](images/merge-complete-odcs.png)
+    ![Final screen showing the 'Merge and Publish' button indicating the merge process is complete](images/merge-complete-odcs.png "Merge Complete")

@@ -29,11 +29,11 @@ Do the following:
 
 1. Right-click on the **REST** element and select **Consume REST API...**
 
-    ![Context menu when right-clicking REST in ODC Studio](images/rest-consume-menu-odcs.png)
+    ![Context menu options for consuming REST API in ODC Studio](images/rest-consume-menu-odcs.png "Context Menu for REST in ODC Studio")
 
 1. In the displayed dialog, choose **Add Multiple Methods**.
 
-    ![Consume REST API dialog - add single or multiple methods](images/rest-consume-dialog-multiple-odcs.png)
+    ![Dialog window in ODC Studio to add multiple REST API methods](images/rest-consume-dialog-multiple-odcs.png "Consume REST API Dialog - Multiple Methods")
 
 1. If you're importing an OpenAPI 3.0 specification file and the specification includes more than one server endpoint, choose the desired endpoint and click **Next**.
 
@@ -41,7 +41,7 @@ Do the following:
 
 1. Choose the REST API methods you want to import (by default, all methods) and click **Finish**.
 
-    ![Dialog to choose the REST API methods to import](images/rest-consume-choose-methods-odcs.png)
+    ![Selection dialog for choosing REST API methods to import in ODC Studio](images/rest-consume-choose-methods-odcs.png "Select REST API Methods to Import")
 
 When importing the REST API, ODC Studio does the following:
 
@@ -51,9 +51,9 @@ When importing the REST API, ODC Studio does the following:
 
 * Maps the [REST Data Types into OutSystems Data Types](intro.md#mapping-rest-data-types-to-outsystems-data-types)
 
-![Created elements in ODC Studio after consuming a REST API](images/rest-consume-created-elements-odcs.png)
+![REST API elements and methods created and displayed in ODC Studio](images/rest-consume-created-elements-odcs.png "REST API Elements Created in ODC Studio")
 
-![Created structures in ODC Studio after consuming a REST API](images/rest-consume-created-structures-odcs.png)
+![Data structures created for REST API in ODC Studio](images/rest-consume-created-structures-odcs.png "REST API Structures Created in ODC Studio")
 
 ## Consume a single method of a REST API { #single-method }
 
@@ -65,11 +65,11 @@ Do the following:
 
 1. Right-click on the **REST** element and select **Consume REST API...**.
 
-    ![Context menu when right-clicking REST in ODC Studio](images/rest-consume-menu-odcs.png)
+    ![Context menu options for consuming REST API in ODC Studio](images/rest-consume-menu-odcs.png "Context Menu for REST in ODC Studio")
 
 1. In the displayed dialog, choose **Add Single Method**.
 
-    ![Consume REST API dialog - add single or multiple methods](images/rest-consume-dialog-single-odcs.png)
+    ![Dialog window in ODC Studio to add a single REST API method](images/rest-consume-dialog-single-odcs.png "Consume REST API Dialog - Single Method")
 
 1. Fill the information about the **Method URL**. You can include parameters between braces in the URL for the method's input parameters.
 
@@ -88,17 +88,17 @@ Do the following:
 
 1. If the REST API you are consuming requires specific headers or uses HTTP Basic Authentication, open the **Headers / Auth** tab and fill the necessary information.
 
-    ![Consume REST API Method - Headers/Auth tab](images/rest-consume-headers-auth-odcs.png)
+    ![Headers and authentication tab in REST API consumption dialog in ODC Studio](images/rest-consume-headers-auth-odcs.png "Consume REST API Method - Headers/Auth Tab")
 
 1. Fill the information about the Request and the Response. The easiest way to do this is to perform a test to the API and use the test result.
 
     Alternatively, you can add the JSON structure or plain text example directly in the **Request** and **Response** fields in the **Body** tab. Open the **Test** tab. If you have parameters in your **Method URL**, you need to insert the parameter values to execute the test:
 
-    ![Consume REST API Method - Test tab](images/rest-consume-test-odcs.png)
+    ![Test tab in REST API consumption dialog showing method URL and parameters in ODC Studio](images/rest-consume-test-odcs.png "Consume REST API Method - Test Tab")
 
     For manipulation methods, such as `POST` or `PUT`, fill the **Request** of the Body Content with the corresponding request structure:  
 
-    ![Consume REST API Method - Test tab with body filled in](images/rest-consume-test-request-odcs.png)
+    ![Test tab in REST API consumption dialog with request body content filled in ODC Studio](images/rest-consume-test-request-odcs.png "Consume REST API Method - Test Tab with Request Body")
 
 1. Click **Test**. If the test is successful, you see the method's response in the Response area of **Test** tab.
 
@@ -106,13 +106,13 @@ Do the following:
 
     For manipulation methods (such as `POST` or `PUT`), do the same for the Request, by pressing **Copy to Request body** in the Request area:
 
-    ![Consume REST API Method - Copy to request body link after using Test](images/rest-consume-test-request-copy-odcs.png)
+    ![Option to copy test request to request body in REST API consumption dialog in ODC Studio](images/rest-consume-test-request-copy-odcs.png "Consume REST API Method - Copy to Request Body")
 
     Usually, you obtain the most common fields this way. To know in full detail all the available fields, check the API documentation.
 
 1. Check if the **Request** and **Response** information is correct in the **Body** tab and click **OK**:
 
-    ![Consume REST API Method - Body tab](images/rest-consume-body-odcs.png)
+    ![Body tab in REST API consumption dialog showing request and response structure in ODC Studio](images/rest-consume-body-odcs.png "Consume REST API Method - Body Tab")
 
 When importing the REST API method, ODC Studio does the following:
 
@@ -122,9 +122,9 @@ When importing the REST API method, ODC Studio does the following:
 
 * Maps the [REST Data Types into OutSystems Data Types](intro.md#mapping-rest-data-types-to-outsystems-data-types)
 
-![Created elements in ODC Studio after consuming a REST API](images/rest-consume-created-elements-odcs.png)
+![REST API elements and methods created and displayed in ODC Studio](images/rest-consume-created-elements-odcs.png "REST API Elements Created in ODC Studio")
 
-![Created structures in ODC Studio after consuming a REST API](images/rest-consume-created-structures-odcs.png)
+![Data structures created for REST API in ODC Studio](images/rest-consume-created-structures-odcs.png "REST API Structures Created in ODC Studio")
 
 ## Use a REST API Method in your Application { #use }
 
@@ -134,17 +134,17 @@ You can now use the newly created methods in your application the same way you u
 
 1. Go to the action flow where you want to use the REST API Method.
   
-    ![Preparation flow where you want to use the imported REST API method](images/rest-consume-use-method-3-odcs.png)
+    ![Action flow in ODC Studio showing where to use the imported REST API method](images/rest-consume-use-method-3-odcs.png "Using the Imported REST API Method in Action Flow")
 
 1. In the **Logic** tab, open the **Integrations** folder and the **REST** element.
 
 1. Expand the REST API element and drag the REST API Method into your action flow.
   
-    ![Preparation flow with REST API method invocations](images/rest-consume-use-method-1-odcs.png)
+    ![Action flow in ODC Studio with REST API method invocations](images/rest-consume-use-method-1-odcs.png "Action Flow with REST API Method Invocations")
 
 1. Use the method's output parameters as you do for any other action.
   
-    ![Example of using the output of a REST API method as a Source Record List](images/rest-consume-use-method-2-odcs.png)
+    ![Example of using REST API method output as a source record list in ODC Studio](images/rest-consume-use-method-2-odcs.png "Using REST API Method Output as Source Record List")
 
 ## Using parameters in the URL query string { #using-params-query-string }
 

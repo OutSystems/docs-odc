@@ -24,7 +24,7 @@ You model data in ODC Studio by creating new entities and adding attributes. For
 
 The graphic below shows an example of the structure of an entity.
 
-![Entity structure](images/entity-structure-ss.png "Entity structure")
+![Screenshot showing an example of an entity structure in OutSystems Developer Cloud Studio](images/entity-structure-ss.png "Entity Structure in ODC Studio")
 
 Enumerations in OutSystems are static entities. A static entity stores a predefined list of values. An example of such data is a list of priorities with `Low`, `Medium`, and `High`.
 

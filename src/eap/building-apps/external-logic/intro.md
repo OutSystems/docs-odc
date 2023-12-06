@@ -22,7 +22,7 @@ When you want to create new external logic or update existing external logic, fo
 1. Release the library in ODC Portal.
 1. Consume the logic in your apps and libraries built in OutSystems using ODC Studio.
 
-![External Logic steps](images/extend-your-apps-with-external-logic-diag.png "External Logic steps")
+![Diagram illustrating the steps to implement External Logic in OutSystems Developer Cloud](images/extend-your-apps-with-external-logic-diag.png "External Logic Implementation Steps")
 
 ## Build the external logic
 
