@@ -19,3 +19,4 @@ jobs:
         PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
         COMMENT_BODY: ${{ github.event.comment.body }}
         COMMENT_ID: ${{ github.event.comment.id }}
+    secrets: inherit
