@@ -19,19 +19,19 @@ To refresh a REST API service:
 
 1. Under **REST**, right-click the REST API and select **Refresh REST API**. In this example, the name of the REST API is **Customers**.
 
-    ![Select REST API](images/rest-refresh-1-odcs.png)
+    ![Screenshot showing how to refresh a REST API named 'Customers' in ODC Studio](images/rest-refresh-1-odcs.png "Select REST API")
 
 1. In the Refresh REST API popup, click **Yes**. 
 
     When you click **Yes**, any changes made to the previous version are lost.  
 
-    ![Refresh REST API](images/rest-refresh-confirm-2-odcs.png)
+    ![Confirmation popup for refreshing a REST API in ODC Studio](images/rest-refresh-confirm-2-odcs.png "Refresh REST API")
 
 1. Enter the REST API URL or upload a new file, and click **Refresh Methods**. 
 
     In this example, the URL points to a JSON file that contains the complete list of REST methods.
 
-    ![Enter REST API URL](images/rest-refresh-URL-3-odcs.png)
+    ![Dialog box to enter REST API URL or upload a new file for refreshing methods in ODC Studio](images/rest-refresh-URL-3-odcs.png "Enter REST API URL")
 
 1. Select the methods you would like to consume. 
     
@@ -54,7 +54,7 @@ To refresh a REST API service:
 
     This example shows all available methods selected. **GetCustomersWithOrders** shows as **Deleted**, which means you can't select it.
 
-    ![Choose available methods](images/rest-refresh-methods-4-odcs.png)
+    ![List of available REST API methods with options to select for consumption in ODC Studio](images/rest-refresh-methods-4-odcs.png "Choose available methods")
 
 1. Click **Finish** to add the selected methods.
 Next, see [Adapt your application to the changes](#adapt-your-application-to-the-changes).
@@ -73,7 +73,7 @@ To manually update a REST method:
 
 1. Update the REST API Method information to reflect the change you want to execute, such as adding new parameters to the request structure:
 
-    ![Update the REST API method information](images/rest-change-1-odcs.png) 
+    ![Interface for updating REST API method information in ODC Studio](images/rest-change-1-odcs.png "Update the REST API method information") 
 
 1. Click **Finish**. 
 
@@ -81,6 +81,6 @@ To manually update a REST method:
 
 When you change the definition of the REST API method, OutSystems automatically updates the REST API Method and the associated structures according to your changes:
 
-![Adapt your application to the changes](images/rest-change-2-odcs.png)
+![ODC Studio screen showing the updated REST API method and associated structures](images/rest-change-2-odcs.png "Adapt your application to the changes")
 
 You can now adapt the action flows or screens of your application to reflect the updated functionality.

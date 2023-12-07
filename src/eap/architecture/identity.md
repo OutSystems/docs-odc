@@ -55,7 +55,7 @@ ODC also serializes and deserializes session data using a built-in anti-tamperin
 
 The following diagram shows an example of a user authentication and authorization flow. It shows what happens when a developer using **ODC Studio** (client) accesses a REST API endpoint exposed by **Service 1** (a Platform service).
 
-![Identity flow](images/identity-flow-authorization-diag.png)
+![Diagram illustrating the user authentication and authorization flow in OutSystems Developer Cloud, including token validation and permission checks.](images/identity-flow-authorization-diag.png "User Authentication and Authorization Flow Diagram")
 
 The Identity Service or external IdP checks the following conditions to **validate access token**:
 

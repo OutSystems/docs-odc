@@ -37,4 +37,4 @@ Let's create the `Review` entity:
     * `Comments`, Text type
     * `SubmittedOn`, Date type
 
-![Entity diagram illustrating a many-to-many relationship with Review and Place entities in OutSystems](images/many-to-many-relationship-1.png "Many-to-Many Relationship Entity Diagram")
+![Entity diagram showing the many-to-many relationship between User, Review, and Place entities in the GoOut application](images/many-to-many-relationship-1.png "Many-to-Many Relationship Entity Diagram")

@@ -24,7 +24,7 @@ When an exception is raised, the current execution flow is interrupted and the f
 
 As an example, consider an Action B raising a User Exception named MyUserException. Action B is invoked by Action A, which is a screen action. When MyUserException is raised in Action B, the exception handling mechanism works as follows:
 
-![Diagram illustrating the exception handling flow in OutSystems, showing how an exception in Action B is managed by Action A](images/handling-mechanism.png "Exception Handling Flow")
+![Flow diagram illustrating the exception handling mechanism in OutSystems, showing how an exception in Action B is handled by Action A.](images/handling-mechanism.png "Exception Handling Flow Diagram")
 
 You should have, at least, one Exception Handler in your application flow to inform and allow the end-user to continue to navigate.
 

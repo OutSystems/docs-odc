@@ -15,14 +15,14 @@ An Output Parameter allows you to return computed values from an action.
 
 In the following example, the `GetWeatherData` Client Action has two Input Parameters (`City` and `Country`) and one Output Parameter (`WeatherInfo`):
 
-![Example of Client Action with two Input Parameters and one Output Parameter](images/input-parameter-client-action-example-ss.png)
+![Screenshot of a Client Action with Input Parameters 'City' and 'Country' and an Output Parameter 'WeatherInfo'](images/input-parameter-client-action-example-ss.png "Client Action Input Parameters Example")
 
 ## How to use
 To return a value from inside an action flow, you can use an Assign element to set the Output Parameter to the value you wish to return.
 
 For example, consider the `GetWeatherData` Client Action presented previously. You can use an Assign to set the value of the `WeatherInfo` Output Parameter to the `Data` Output Parameter value returned by the `API_GetWeatherData` Server Action:
 
-![Example of setting and using an Output Parameter in ODC Studio](images/output-parameter-example-ss.png)
+![Screenshot showing how to assign a value to the 'WeatherInfo' Output Parameter in a Client Action](images/output-parameter-example-ss.png "Assigning Value to Output Parameter")
 
 You can access the value of an Output Parameter of an invoked action (in this case, the `API_GetWeatherData` Server Action) later in the flow using an expression with the following format:
 

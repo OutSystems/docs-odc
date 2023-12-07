@@ -33,7 +33,7 @@ To customize the request before it is sent:
 
 1. Set the **On Before Request** property of the REST API to `New OnBeforeRequest`.
   
-    ![Set the on before request property](images/rest-new-onbeforerequest-odcs.png)    
+    ![Screenshot showing how to set the On Before Request property in OutSystems](images/rest-new-onbeforerequest-odcs.png "Setting the On Before Request Property")    
 
     An "OnBeforeRequest" action is made available under the REST API.   
 
@@ -60,7 +60,7 @@ To build this example implementation we added the following steps in the callbac
 
 1. Set the "CustomizedRequest" output parameter to our changed "Request" using an Assign element.
 
-![Set the output parameter](images/rest-example-onbeforerequest-odcs.png)
+![Flow diagram of adding a header for token-based authentication in the OnBeforeRequest callback](images/rest-example-onbeforerequest-odcs.png "Example of Adding a Header for Token-Based Authentication")
 
 ## Customize the response
 
@@ -68,7 +68,7 @@ To customize the response after it has arrived:
 
 1. Set the **On After Response** property of the REST API to `New OnAfterResponse` action.
 
-    ![Set the on after response property](images/rest-new-onafterresponse-odcs.png)
+    ![Screenshot showing how to set the On After Response property in OutSystems](images/rest-new-onafterresponse-odcs.png "Setting the On After Response Property")
 
     An "OnAfterResponse" action is made available under the REST API.
 

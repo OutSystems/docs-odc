@@ -42,4 +42,4 @@ The ODC Portal is the place to manage users, and you can:
 * View all roles and apps associated with the group
 
 
-![User management](images/manage-users-in-portal-diag.png "User management")
+![Diagram illustrating the process of managing users in the OutSystems Developer Cloud Portal](images/manage-users-in-portal-diag.png "User Management in ODC Portal")

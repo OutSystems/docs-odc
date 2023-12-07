@@ -95,7 +95,7 @@ Each stage has its own relational database, and network policy defines the conne
 
 This means no app or user from one organization can connect to the database of another organization. The databases aren't directly exposed to the internet, reducing attack vectors. The below diagram illustrates this.
 
-![Namespace isolation](images/security-namespace-isolation-diag.png)
+![Diagram illustrating namespace isolation within an organization's Runtime in OutSystems Developer Cloud](images/security-namespace-isolation-diag.png "Namespace Isolation in ODC")
 
 ### Identity for authentication and authorization
 
@@ -132,7 +132,7 @@ At each stage of the deployment pipeline admission control verifies:
 
 The below diagram illustrates this.
 
-![Software supply chain integrity](images/security-supply-chain-diag.png)
+![Flowchart showing the secure supply chain process for code deployment in OutSystems Developer Cloud](images/security-supply-chain-diag.png "ODC Software Supply Chain Integrity")
 
 The process ensures the container image released to production is identical to the one built. This helps minimize the risk of errors or security vulnerabilities.
 
@@ -150,7 +150,7 @@ A critical vulnerability is one with a **Common Vulnerability Scoring System** (
 
 All the users with the Admin role in your ODC organization receive updates about the automatic patching process from the following four emails.
 
-![Schedule for app upgrades](images/app-upgrades-schedule-diag.png)
+![Timeline diagram of the automatic app upgrade notification process in OutSystems Developer Cloud](images/app-upgrades-schedule-diag.png "ODC App Upgrade Notification Process")
 
 1. **Schedule email:** Provides details about the affected stages, the upgrade schedule, and links to more information about each vulnerability.
 1. **48-hour reminder email:** Reminder of the upcoming scheduled upgrade for the given stage.

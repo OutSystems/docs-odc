@@ -19,8 +19,7 @@ Forge assets become available only after they go through a submission and approv
 | Installing     | The asset is installing                                                                   |
 | Installed      | The asset is installed and is ready to use                                                |
 | Update         | The asset has an update that hasn't yet been installed in your organization’s environment |
-| Updating       | The asset is updating                                                                     |
-| Up-to-date     | The asset is current, up-to-date, and ready to use                                        |
+| Updating       | The asset is updating                                                                      |
 
 Following are procedures to Install and Update a Forge asset.
 
@@ -36,7 +35,7 @@ Follow these steps to install an asset:
 
     <div class="info" markdown="1">
 
-    A progress spinner shows the installation status. When the installation successfully completes, an installed label displays on the card.
+    A progress spinner displays in the **Install** button. A panel also displays in the bottom-right corner of the screen and shows all the assets and direct dependencies being installed and the installation status of each. When the installation successfully completes, an **Installed** label displays on the card and in the panel. If an installation fails, the **Failed** label displays in the panel. For more information, you can click on the label to display the error.
 
     </div>
 
@@ -54,7 +53,7 @@ Occasionally, an asset owner makes updates to an asset that you already installe
 
     <div class="info" markdown="1">
 
-    A progress spinner shows the installation status. When the installation successfully completes, an installed label displays on the card.
+    A progress spinner displays in the **Update** button. A panel also displays in the bottom-right corner of the screen and shows all the assets and direct dependencies being installed and the installation status of each. When the installation successfully completes, an **nstalled** label displays on the card and in the panel. If an installation fails, the **Failed** label displays in the panel. For more information, you can click on the label to display the error.
 
     </div>
 
@@ -72,8 +71,8 @@ Remember, cloned assets aren't supported. You lose the benefit of being able to 
 
 </div>
 
-When you attempt to open a Forge asset in ODC Studio, a prompt displays asking if you want to create a clone. The clone is a duplicate of the original asset, but it’s no longer related to the original asset. OutSystems recommends using a naming convention that includes the word “clone” and a number such as clone_#_of_name_of _asset. You can publish cloned assets in your tenant. Once you publish your app, you can reference it as well.
+When you attempt to open a Forge asset in ODC Studio, a prompt displays asking if you want to create a clone. The clone is a duplicate of the original asset, but it’s no longer related to the original asset. OutSystems recommends using a naming convention that includes the word **clone** and a number such as **clone_#_of_name_of _asset**. You can publish cloned assets in your tenant. Once you publish your app, you can reference it as well.
 
-If a new version of the original asset becomes available and has functionality you want to use and modify, you must copy it to your clone. To identify the differences between clone_1 (your original clone) and the updated Forge asset, you can use OutSystems **Compare and merge with another version** function. To use this function, you must create a clone of the updated asset. Then you can compare clone_1 to clone_2. The result shows you where the differences exist. Then, you can make the changes to clone_1.
+If a new version of the original asset becomes available and has functionality you want to use and modify, you must copy it to your clone. To identify the differences between clone_1 (your original clone) and the updated Forge asset, you can use OutSystems **Compare and merge with another version** function. To use this function, you must create a clone of the updated asset. Then you can compare clone_1 to clone_2. The result shows where the differences exist. Then, you can make the changes to clone_1.
 
 Sometimes, documentation for a Forge asset includes the contact information for the owner. If the Forge asset owner is listed, you can contact them and discuss the updates you want to make.

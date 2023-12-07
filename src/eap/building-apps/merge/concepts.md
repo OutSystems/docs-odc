@@ -26,7 +26,7 @@ When no conflicts exist in visual elements (e.g., screens, widgets) and textual 
 1. You publish your changes, and ODC detects changes to be merged based on the revision from which both developers started developing (V4).
 1. ODC automatically merges the changes, and then you can publish the app.
 
-![Automatic merge app revisions](images/automatic-merge-app-versions-diag.png)
+![Flowchart illustrating the automatic merge process of app revisions in OutSystems Developer Cloud](images/automatic-merge-app-versions-diag.png "Automatic Merge of App Revisions Diagram")
 
 ## Resolve merge conflicts
 
@@ -42,7 +42,7 @@ When multiple developers modify the same app elements, OutSystems cannot automat
 1. Click **Compare revisions** to display a compare and merge screen between the published and your changes.
 1. Select the changes you want to keep and click **Merge and publish**.
 
-![Resolve merge conflicts](images/resolve-merge-conflicts-diag.png)
+![Diagram showing the steps to resolve merge conflicts in OutSystems Developer Cloud](images/resolve-merge-conflicts-diag.png "Resolve Merge Conflicts Diagram")
 
 ## Compare and merge revisions
 

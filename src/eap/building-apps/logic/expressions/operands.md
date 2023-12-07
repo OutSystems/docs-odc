@@ -57,4 +57,4 @@ The following is a screenshot showing an expression in the expression editor. Th
 * `MyInteger`: a local variable
 * `Sqrt()`: a built-in function
 
-![Operands in Expression Editor](images/operands-ss.png?width=650)
+![Screenshot showing an expression in the expression editor](images/operands-ss.png?width=650 "Expression Editor")

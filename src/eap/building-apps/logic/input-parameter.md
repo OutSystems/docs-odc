@@ -21,7 +21,7 @@ For example, if you add an Input Parameter to a Client Action you can:
 
 In the following example, the `GetWeatherData` Client Action has two Input Parameters (`City` and `Country`) and one Output Parameter (`WeatherInfo`):
 
-![Example of Client Action with two Input Parameters and one Output Parameter](images/input-parameter-client-action-example-ss.png)
+![Screenshot showing the GetWeatherData Client Action with City and Country Input Parameters and WeatherInfo Output Parameter](images/input-parameter-client-action-example-ss.png "Client Action Input Parameters Example")
 
 Input Parameters can be mandatory or optional, according to their **Is Mandatory** property.
 
@@ -33,7 +33,7 @@ When invoking an element with Input Parameters, like a Client Action, you must s
 
 For example, considering the same `GetWeatherData` Client Action presented before, you could invoke this Client Action setting the values for the `City` and `Country` Input Parameters in the following manner:
 
-![Setting Input Parameter values when calling a Client Action (example)](images/input-parameter-set-value-ss.png)
+![Screenshot demonstrating how to set values for City and Country Input Parameters in the Run Client Action element](images/input-parameter-set-value-ss.png "Setting Input Parameter Values")
 
 You define the Input Parameter values in the properties of the Run Client Action element. These arguments appear indented from the remaining properties.
 

@@ -12,68 +12,11 @@ on:
       - created
 
 jobs:
-  setup_venv:
-    if: ${{ github.actor != 'KnowOps' }}
-    runs-on: tk-llm-dev
-    steps:
-      - name: Load cached virtual environment
-        uses: actions/cache@v3.3.2
-        with:
-          path: ~/.venv_tkaitools
-          key: ${{ runner.os }}-venv-${{ hashFiles('.github/scripts/tkaitools/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-venv-
-
-      - name: Install dependencies if required
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          if [ ! -d "$HOME/.venv_tkaitools" ]; then
-            python -m venv ~/.venv_tkaitools
-            source ~/.venv_tkaitools/bin/activate
-            pip install --upgrade pip
-            pip install --no-cache-dir -r .github/scripts/tkaitools/requirements.txt
-          else
-            echo "Dependencies are already installed."
-          fi
-
-  run_scripts:
-    needs: setup_venv
-    runs-on: tk-llm-dev
-    strategy:
-      fail-fast: false
-      matrix:
-        script: [summarize, alttagger]
-    steps:
-      - name: Set ref for checkout
-        id: set_ref
-        run: |
-          if [ "${{ github.event_name }}" == "pull_request" ]; then
-            echo "REF=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
-          elif [ "${{ github.event_name }}" == "issue_comment" ]; then
-            PR_API_URL="${{ github.event.issue.pull_request.url }}"
-            REF=$(curl -s -H "Authorization: token ${{ secrets.TOOLS_PAT }}" $PR_API_URL | jq -r .head.ref)
-            echo "REF=$REF" >> $GITHUB_ENV
-          fi
-        env:
-          TOOLS_PAT: ${{ secrets.TOOLS_PAT }}
-
-      - name: Checkout
-        uses: actions/checkout@v4.1.1
-        with:
-          fetch-depth: 1
-          ref: ${{ env.REF }}
-          persist-credentials: false
-
-      - name: ${{ matrix.script }}
-        if: github.event_name == 'pull_request' || contains(github.event.comment.body, format('/{0}', matrix.script))
-        run: |
-          source ~/.venv_tkaitools/bin/activate
-          python .github/scripts/tkaitools/${{ matrix.script }}.py
-        env:
-          TOOLS_PAT: ${{ secrets.TOOLS_PAT }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-          PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
-          COMMENT_BODY: ${{ github.event.comment.body }}
-          COMMENT_ID: ${{ github.event.comment.id }}
-          SUMMARIZE_ENDPOINT: ${{ secrets.SUMMARIZE_ENDPOINT }}
-          ALTTAG_ENDPOINT: ${{ secrets.ALTTAG_ENDPOINT }}
+  call_shared_workflow:
+    uses: OutSystems/tk-cicd/.github/workflows/tkaitools.yml@main
+    with:
+        GITHUB_REPOSITORY: ${{ github.repository }}
+        PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
+        COMMENT_BODY: ${{ github.event.comment.body }}
+        COMMENT_ID: ${{ github.event.comment.id }}
+    secrets: inherit

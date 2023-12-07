@@ -23,7 +23,7 @@ Common use cases for libraries include:
 * As a wrapper around an external system. A library can act as middleware between your apps and an external system (a RESTful service, for example) by abstracting and centralizing the layer consumed by different apps.
 * As a repository of business style guides and themes. This enables the implementation of desired visuals for reuse across your organization's app portfolio.
 
-![When to use libraries in ODC](images/libraries-diag.png)
+![Diagram illustrating the concept of libraries in OutSystems Developer Cloud as repositories of reusable UI and logic elements.](images/libraries-diag.png "ODC Libraries Conceptual Diagram")
 
 OutSystems Developer Cloud (ODC) elevates the library to a **top-level concept**. Libraries exist at the same level as Web Apps and Mobile Apps and have an **independent lifecycle**. For more information on how to think about libraries in the context of your app's architecture, see [App Architecture](architecture/intro.md#how-apps-and-libraries-work).
 
@@ -33,7 +33,7 @@ Versioning enables systematic updates and integration of your library's elements
 
 The concept of **versioning is core to the development lifecycle of a library**, forming a cyclical process comprised of three main steps. First, the [revision of a library is iteratively developed and tested](#test-a-revision-of-a-library) to ensure its functionality and stability. Once tested successfully, a [new version of the library can be released](#release-a-new-version-of-a-library) for use. Lastly, developers [decide whether to use this new version](#decide-if-to-consume-a-new-version-of-a-library-in-your-app-or-library) in their apps or libraries.
 
-![Development lifecycle](images/development-lifecyle-library-diag.png)
+![Flowchart showing the development lifecycle of a library in ODC, including development, testing, and release stages.](images/development-lifecyle-library-diag.png "Library Development Lifecycle Diagram")
 
 After you've published and tested a library in ODC Studio, its revision number automatically increments by one, serving as a snapshot of the library's development at a particular point. The number is immutable and works the same way as the revision number of an app. At this point in the lifecycle, any published changes aren't available to other apps and libraries in your organization.
 
@@ -63,7 +63,7 @@ The Release library functionality is permission-based, which means you must have
 
 When you click **Release Library**  in ODC Studio, the release process continues in the ODC Portal.
 
-![release library](images/release-library-odcs.png)
+![Screenshot of the 'Release Library' function in OutSystems Developer Cloud Studio.](images/release-library-odcs.png "Release Library Process in ODC Studio")
 
 To locate your library, go to the ODC Portal and select **Apps** from the Navigation menu. This opens the App overview page, and then from the dropdown, you can select **Library** to display all published libraries. To start the release process click the **Library name** drop down and select **Release Library**.
 
@@ -81,11 +81,11 @@ To release the library, click the **Release library** button.
 
 Below the message, you can review the consumers and producers of the library and the version history. The version history shows the name of the person who released the version and the date it was released.
 
-![](images/release-library-message-pl.png)
+![Image showing a message prompt in ODC Portal about releasing a library to make its elements available to other apps.](images/release-library-message-pl.png "Library Release Message")
 
 To continue, from the **Release library** page, click Release library. Select the revision you want to release and click **Continue**. The **Define Release** notes page displays, and along the left side, your progress displays.
 
-![](images/release-library-pl.png)
+![Screenshot of the library release process in the ODC Portal, highlighting the selection of a revision to release.](images/release-library-pl.png "Library Release Process")
 
 In the **Define release notes** section, you can set the version number and enter Release notes. Both fields are required.
 
@@ -101,11 +101,11 @@ Review the release information and then click **Release library**. A green banne
 
 When you open your app or library in ODC Studio, ODC Studio automatically updates app dependencies. If there are library updates, ODC Studio displays a popup to either review or dismiss the updates. 
 
-![error while updating library](images/library-update-button-odcs.png)
+![Image of the library update notification button in OutSystems Developer Cloud Studio.](images/library-update-button-odcs.png "Library Update Notification in ODC Studio")
 
 You can dismiss the updates and review them later by clicking the **library updates available** button on the top toolbar.
 
-![error while updating library](images/error-update-library-odcs.png)
+![Screenshot showing an error notification for library updates in OutSystems Developer Cloud Studio.](images/error-update-library-odcs.png "Library Update Error Notification")
 
 <div class="info" markdown="1">
 

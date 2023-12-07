@@ -62,6 +62,12 @@ To create a new database connection, follow these steps:
     * Click Apply to all stages to use the same connection information in all stages.
     * Select the stage name to use connection information for a single stage.
 
+<div class="info" markdown="1">
+
+To use private gateways to connect to your external databases, enter `secure-gateway` in the Server/Host field and the secure gateway port value in the Port field.
+
+</div>
+
 Use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, separate them with  a semi-colon (;). Different databases may require different parameters, for example:
 
 * For the **SQL** server to select the desired schema on the database, enter `currentSchema = <schema-name>`
@@ -81,7 +87,7 @@ Follow the steps below to select entities:
 
 1. Go to ODC Portal, select **Configurations** > **Connections** > then click **Select entities** to display the **Add entities** connection screen. The connection screen shows the entities available from a database.
 
-    ![External database entities and attributes](images/external-db-entity.png)
+    ![Screenshot showing the process of selecting entities and attributes from an external database in OutSystems Developer Cloud Portal](images/external-db-entity.png "External Database Entities Selection")
 
 1. From the **Entity** name column, select the entities and attributes you want to use.
 1. Click **Save** to confirm. Developers can now use the selected entities and attributes as [public elements](../../building-apps/use-public-elements.md).
@@ -107,8 +113,8 @@ Admins need to supply the following information to connect to the external datab
 | Description | Information about the database connection | No | Optional |
 | Username | Username to access the database | Yes |  |
 | Password | Password to access the database. | Yes |  |
-| Server for SQL server \ Host for Oracle server | Endpoint for your database connection | Yes |  |
-| Port | The port number to connect to the database | Yes | ODC has a default port number that an admin can change |
+| Server for SQL server \ Host for Oracle server | Endpoint for your database connection | Yes | For Private Gateway, enter `secure-gateway` |
+| Port | The port number to connect to the database | Yes | ODC has a default port number that an admin can change. For a private gateway, enter the port configured in the connector. |
 | Database for SQL server \ Service name for Oracle server | Name of the database | Yes |  |
 | Additional parameters | Additional parameters for a database connection | Yes | Different databases may require different parameters |
 

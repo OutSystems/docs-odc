@@ -48,6 +48,6 @@ To calculate this data and add it to each entry of the Dropdown, do the followin
 
         `Label` and `Count` variables are two of the previously grouped columns.
 
-    ![Step-by-step instructions on assigning an expression to a new calculated attribute in an OutSystems Aggregate](images/calculate-data-odcs.png "Assigning Expression to Calculated Attribute")
+    ![Step-by-step visual guide on how to assign an expression to a new calculated attribute in an OutSystems Aggregate](images/calculate-data-odcs.png "Assigning Expression to Calculated Attribute")
 
 1. Go to the screen and add a Dropdown. Set the Dropdown values to be the returning list of the Aggregate using the `DropdownLabel` attribute as the options text.

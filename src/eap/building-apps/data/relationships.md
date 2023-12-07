@@ -38,7 +38,7 @@ For example, consider the relationship between `Order` and `OrderReceipt` entiti
 
 The following entity diagram shows a one-to-one relationship.
 
-![One-to-one relationship](images/entity-relationships-one-to-one-ss.png)
+![Diagram illustrating a one-to-one relationship between Order and OrderReceipt entities](images/entity-relationships-one-to-one-ss.png "One-to-One Entity Relationship Diagram")
 
 ## One-to-many relationships
 
@@ -51,7 +51,7 @@ For example, consider the relationship between `Customer` and `Order` entities:
 
 The following entity diagram shows a one-to-many relationship.
 
-![One-to-many relationship](images/entity-relationships-one-to-many-ss.png)
+![Diagram showing a one-to-many relationship between Customer and Order entities](images/entity-relationships-one-to-many-ss.png "One-to-Many Entity Relationship Diagram")
 
 ## Many-to-many relationships
 
@@ -64,7 +64,7 @@ For example, consider the relationship between `Order` and `Product` entities:
 
 The following entity diagram shows a many-to-many relationship.
 
-![One-to-many relationship](images/entity-relationships-many-to-many-ss.png)
+![Diagram depicting a many-to-many relationship between Order and Product entities through an associative entity](images/entity-relationships-many-to-many-ss.png "Many-to-Many Entity Relationship Diagram")
 
 ## Referential integrity
 

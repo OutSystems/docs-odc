@@ -26,7 +26,7 @@ Designing a good data model helps you build a high-quality app. Some main benefi
 
 The data model design process starts with a high level of abstraction and, with each step, becomes more specific. The process begins with a conceptual data model, progresses to a logical data model, and concludes with a physical data model. The following diagram shows that process.
 
-![Model design process](images/data-model-design-process-diag.png)
+![Diagram illustrating the data model design process from conceptual to logical to physical stages](images/data-model-design-process-diag.png "Data Model Design Process Diagram")
 
 ### Conceptual data model
 
@@ -34,7 +34,7 @@ The conceptual data model is the high-level view of the data in your app. You us
 
 You identify and isolate business concepts, or business entities, and map the relationships between them. For example, for a retail business, an order app may include the `Order`, `Order Receipt`, `Customer`, and `Product` entities. An example of a relationship at the conceptual level is that `Order` is related to `Order Receipt`.
 
-![Conceptual relationship](images/data-model-conceptual-relationship-diag.png)
+![Diagram showing relationships between business entities in a conceptual data model](images/data-model-conceptual-relationship-diag.png "Conceptual Data Model Relationships Diagram")
 
 You should isolate business concepts to the greatest extent possible so developers can build targeted queries against small data sets. For example, `Employee` can be seperated to two entities: `Employee` and `Employee Photo`. This isolation is particularly important when one of the entities contains binary data. The entities are connected by establishing a relationship in the data model.
 
@@ -44,7 +44,7 @@ The logical data model is less abstract than the conceptual data model. It provi
 
 Entities can be complex and require many attributes. You add attributes, map each attribute to a data type and define relationships between entities. For example, an `Order` entity that has `Description`, `DueDate`, `CreatedOn`, and `ShippedOn` attributes. The `Description` attribute is data type text. An example of an entity relationship at the logical level is: an `Order Receipt` always belongs to one `Order`, an `Order` can have only one associated `Order Receipt`.
 
-![Logical relationship](images/data-model-logical-relationship-diag.png)
+![Detailed diagram of a logical data model with entities, attributes, and relationships](images/data-model-logical-relationship-diag.png "Logical Data Model Relationships Diagram")
 
 A logical data model is independent of a specific database.
 
@@ -76,7 +76,7 @@ There are three steps to designing the data model for an app in ODC.
 
 The following diagram illustrates those steps.
 
-![Design steps](images/data-model-design-steps-diag.png)
+![Diagram outlining the three steps to design a data model in ODC Studio](images/data-model-design-steps-diag.png "Data Model Design Steps Diagram")
 
 When you change the data model in ODC Studio, changes in the database are only reflected when you publish or deploy your app to another stage.
 
@@ -84,7 +84,7 @@ When you change the data model in ODC Studio, changes in the database are only r
 
 Entities can contain multiple attributes of different basic data types. The following diagram shows the available basic data types.
 
-![Data types](images/data-model-data-types-diag.png)
+![Diagram displaying the available basic data types for entities in a data model](images/data-model-data-types-diag.png "Data Model Basic Data Types Diagram")
 
 You start to design your app data model by adding entities and attributes. ODC Studio provides a simple interface to add, modify, delete and rename entities and their attributes.
 

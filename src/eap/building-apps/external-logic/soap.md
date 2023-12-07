@@ -265,7 +265,7 @@ Once you have the SOAP zip file, [upload and publish the external logic](intro.m
 After uploading the SOAP web service to ODC, create an application called `SOAP Demo` in ODC Studio to test the web service.
 
 1. Click the **Logic tab**, right-click the top Server action, and select the option to **Add a public element**. Then inside **All sources**, search for a dependency called `SOAP` and select the **Add**, **Subtract** actions and the **Numbers** structure. 
-   ![add-public-elements](images/add-public-elements-odcs.png)
+   ![Screenshot showing the process of adding public elements in OutSystems Developer Cloud Studio](images/add-public-elements-odcs.png "Adding Public Elements in ODC Studio")
 
 2. Create a screen and name it `Calculator` with two inputs. Set both local variables as integers, name them `NumA` and `NumB`. Place a plus sign (+) between these two inputs and an equal sign (=) after the last input.
 
@@ -273,13 +273,13 @@ After uploading the SOAP web service to ODC, create an application called `SOAP 
 
 4. Drag a button below the expression and name it `Calculate`. In the **On Click** list, select **New Client Action** and name it `OnClick_Sum`. A screen opens for editing.
     
-    ![calculator-screen](images/calculator-screen-odcs.png)
+    ![User interface of the Calculator screen in OutSystems Developer Cloud Studio with input fields and calculate button](images/calculator-screen-odcs.png "Calculator Screen in ODC Studio")
 
 5. Inside the **OnClick_Sum** client action, go to the **Logic** tab > **Server actions** > **SOAP** 
     1. Drag the **Add action** to the flow and rename it `SumFunction`.
     2. In the Properties for the Add action, click **(+)** sign to expand numbers, and inside add your local variables, the `NumberA` and `NumberB` attributes.
     
-    ![Client-action](images/client-action-odcs.png)
+    ![Configuration of the OnClick_Sum client action in OutSystems Developer Cloud Studio](images/client-action-odcs.png "Client Action Configuration in ODC Studio")
 
 6. Drag an assign and set the local variable **Sum** with the output of the **SumFunction** to get the sum of both numbers and present it to the screen.
 7. Publish the app and see the result in the browser.
@@ -291,5 +291,5 @@ To test it faster, go to the **screen properties** > **Authorization** and set t
 
 </div>  
 
-![final-app](images/final-app-odcs.png)
+![Final appearance of the SOAP Demo application in OutSystems Developer Cloud Studio with input fields and results displayed](images/final-app-odcs.png "Final SOAP Demo App in ODC Studio")
 

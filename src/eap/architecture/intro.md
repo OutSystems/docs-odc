@@ -24,7 +24,7 @@ In addition to access to **ODC Studio** and [**ODC Portal**](../differences-o11/
 
 The following diagram shows the high-level architecture of the OutSystems Developer Cloud.
 
-![Architecture of the OutSystems cloud platform](images/high-level-architecture-diag.png "Architecture of the OutSystems cloud platform")
+![Diagram illustrating the high-level architecture of the OutSystems Developer Cloud with Platform and Runtime stages](images/high-level-architecture-diag.png "High-level Architecture of OutSystems Developer Cloud")
 
  NATS (Neural Autonomic Transport System), a secure messaging system, handles all internal requests between the Platform and Runtime stages. All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of OutSystems Developer Cloud](networking.md) to learn more.
 
@@ -40,7 +40,7 @@ All the Platform services are multi-tenant and benefit from automatic recovery a
 
 The following diagram shows the high-level architecture of the development Platform.
 
-![Architecture of the development Platform](images/high-level-architecture-platform-diag.png "Architecture of the development Platform") 
+![Diagram showing the high-level architecture of the development Platform in OutSystems Developer Cloud](images/high-level-architecture-platform-diag.png "Development Platform Architecture") 
 
 #### Runtime { #runtime }
 
@@ -50,7 +50,7 @@ The Runtime **Load Balancer** handles all requests to the apps.
 
 The following diagram shows the high-level Runtime architecture.
 
-![Runtime architecture](images/architecture-runtime-diag.png "Runtime architecture") 
+![Diagram depicting the high-level Runtime architecture within OutSystems Developer Cloud](images/architecture-runtime-diag.png "Runtime Architecture") 
 
 ## Key technologies of the cloud-native infrastructure
 
@@ -72,7 +72,7 @@ The compute capacity for each running Platform service is scalable. Many develop
 
 The following diagram shows how auto scaling works inside the Platform cluster.
 
-![Autoscaling of the development Platform](images/architecture-platform-k8s-diag.png "Autoscaling of the development Platform") 
+![Diagram explaining how auto scaling works inside the Platform cluster of OutSystems Developer Cloud](images/architecture-platform-k8s-diag.png "Platform Cluster Auto Scaling") 
 
 The **auto scale controller** monitors the CPU and RAM usage of each running service. It continuously checks the usage against the cluster compute capacity allocated and allocates additional capacity if the CPU and RAM usage exceeds a defined threshold.
 
@@ -94,7 +94,7 @@ The compute capacity for each app container running in each non-Development Runt
 
 The following diagram illustrates how auto scaling works inside the Runtime cluster.
 
-![Autoscaling of the runtime apps](images/architecture-runtime-scale-diag.png "Autoscaling of the runtime apps") 
+![Illustration of auto scaling mechanism inside the Runtime cluster for OutSystems Developer Cloud apps](images/architecture-runtime-scale-diag.png "Runtime Cluster Auto Scaling") 
 
 The **auto scale controller** monitors the CPU and RAM usage of each app container. It continuously checks the usage against the cluster compute capacity allocated and allocates additional capacity if the CPU and RAM usage exceeds a defined threshold.
 
@@ -121,7 +121,7 @@ The following table describes the Platform databases and data stores.
 
 Each Runtime stage has an isolated Amazon Aurora Serverless database. The following diagram shows this.
 
-![Runtime Production stage database](images/architecture-runtime-data-diag.png "Runtime Production stage database") 
+![Diagram showing the database architecture for the Runtime Production stage in OutSystems Developer Cloud](images/architecture-runtime-data-diag.png "Runtime Production Stage Database") 
 
 Data is automatically written to two availability zones simultaneously.
 
