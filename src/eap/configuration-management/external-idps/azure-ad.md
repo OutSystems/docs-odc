@@ -43,7 +43,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     </div>
 
 1. Complete the configuration in ODC Portal by leaving the **PKCE** as the default value (**SHA-256**) and fields in **Claim Mapping** section as default values (**name**, **email**) and clicking **Save**.
-1. If additional Claims needs to be enabled (for e.g. in JWT Tokens via Claims Mapping Policy) in Azure AD, the extra property needs to be added in the  app manifest configuration manually (on Azure AD side). Some information on these Additional claims can be found [here](https://blog.redbaronofazure.com/?p=7566).
+1. To enable additional Claims, such as JWT Tokens via Claims Mapping Policy in Azure AD, manually add the required property to the app manifest configuration on Azure AD. For more information, see [Adding user optional and mapped claims in the Azure AD authentication token.](https://devblogs.microsoft.com/premier-developer/adding-user-optional-and-mapped-claims-in-the-azure-ad-authentication-token/).
 
 ODC tests the configuration and on success adds Azure AD to the list of available providers. If the test fails, a notification with the error displays. 
 
