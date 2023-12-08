@@ -37,7 +37,7 @@ To ensure your app users have protection against the latest security vulnerabili
 
 ## Understanding the AppShield life cycle
 
-Before you install and use **AppShield**, it's important to understand the release cycle and how it improves security. For example, suppose you have a mobile banking application and your app data must always be secure, but your version of **AppShield** needs to be updated. OutSystems regularly updates **AppShield** and strongly recommends that you always install the latest version of **AppShield** in your environment. Then release a new build of your app to your users.
+Before you install and use **AppShield**, it's important to understand the release cycle and how it improves security. For example, suppose you have a mobile banking application and your app data must always be secure, but your version of **AppShield** needs to be updated. OutSystems regularly updates **AppShield** and strongly recommends always installing the latest version of **AppShield** in your environment. Then, release a new version of your app to your users.
 
 To identify the **AppShield** plugin releases, OutSystems uses the following tags:
 
@@ -83,7 +83,7 @@ To protect your mobile app using the AppShield plugin, follow these steps:
 
 1. **Add the dependencies for AppShield** plugin on each mobile app you want to protect.
 
-    ![Add dependencies](images/add-dependencies-odcs.png)
+    ![Screenshot showing the process of adding AppShield plugin dependencies in the OutSystems development environment.](images/add-dependencies-odcs.png "Adding AppShield Dependencies")
 
 1. **Generate and distribute a new mobile package** protected with AppShield.
 
@@ -135,7 +135,15 @@ Protections that are available for iOS builds.
 
 **AppShield** is on by default when you install the plugin. You can turn it off in one or more environments for testing purposes.
 
+### Settings
+
 * To turn off **AppShield** in one or more environments, edit the **DisableAppShielding** settings in **ODC Portal** for the environment. For example, turning off the plugin in the development environment lets you run the app in emulators or debug the app.
+
+If your application still specifies the configuration on its extensibility configuration and you're using a plugin version compatible with the settings, the application configuration will take precedence over the settings. OutSystems recommends that you revise this extensibility and consider removing it.
+
+Refer to the Configuration Reference section to know all available options.
+
+### Extensibility Configuration (Old method)
 
 Here is an example of the JSON for **Extensibility Configurations**. You can use different sections for iOS and Android.
 
@@ -188,6 +196,11 @@ Here is an example of the JSON for **Extensibility Configurations**. You can use
 }
 ```
 
+
+### AppShieldObfuscationRules
+
+Regardless of whether the AppShield version you're using has settings or not, if you need to configure your own obfuscation rules for Android, *you must use the `AppShieldObfuscationRules` as an extensibility configuration on your application*. 
+
 ### Configuration reference
 
 These are the values available in the **AppShield** configuration JSON.
@@ -202,9 +215,10 @@ These are the values available in the **AppShield** configuration JSON.
 | BlockUntrustedKeyboards         | boolean      | Android      | If set to true, detects and blocks untrusted keyboards.                                           |
 | BlockUntrustedScreenreaders     | boolean      | Android      | If set to true, detects and blocks untrusted screen readers.                                      |
 | DisableAppShielding             | boolean      | iOS, Android | Activates or deactivates App Shield.
- | ExitOnURL | URL value | iOS, Android|If an app feature is blocked due to a configured policy of the **AppShield** plugin, the default browser will open the URL which may explain the problem to the user. See ExitOnURL for additional information.                                                           |
+| ExitOnURL | URL value | iOS, Android| If an app feature is blocked due to a configured policy of the **AppShield** plugin, the default browser opens the URL where the problem may be explained. For more information, refer to ExitOnURL.                                                           |
 | GooglePlayAppSigningCertificate | Text(Base64) | Android | Google Play App Signing certificate.                                                              |
 | RemoveQueryAllPackagesPermission | boolean | Android | If set to true, it removes the app ability to check other installed applications. See more information [here](query-all-packages.md).                                                              |
+| BlockDeveloperMode | boolean | iOS, Android | If set to true, the application is blocked from running on iOS devices that have Developer Mode enabled and Android devices with Developer Options unlocked.   |
 | android                         | JSON value   | Android      | The key denoting values that apply to the Android devices.                                        |
 | global                          | JSON value   | iOS, Android | Settings in this section apply to both Android and iOS builds.                                    |
 | ios                             | JSON value   | iOS          | The key denoting values that apply to the iOS devices.                                            |
@@ -217,7 +231,7 @@ When you trigger a build with AppShield enabled and correctly configured, MABS i
 
 The shield phase occurs after the build phase, and a message at the end of the log file lets you know if the shield phase is successful.
 
-![Shield phase log](images/appshield-log.png)
+![Log file snippet indicating the successful completion of the AppShield shield phase during the app build process.](images/appshield-log.png "AppShield Shield Phase Log")
 
 ## Obfuscation
 

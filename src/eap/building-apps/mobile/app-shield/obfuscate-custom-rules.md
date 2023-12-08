@@ -40,6 +40,28 @@ At a high-level, you:
 
 1. [Generate your app and try it out](#generate-your-app-and-try-it-out)
 
+## Other plugin integrations
+
+If you are using a plugin that needs specific rules on distinct Shielded apps, you can create rules at application level or at plugin level. The following rules apply:
+1. Rules in the app extensibility configuration completely replace the default OutSystems rules
+1. Rules defined in the plugin/library extensibility configuration are appended
+1. Rules from the app (default or replaced) always come first in the final rules file
+
+If you want to configure specific rules for a custom plugin, you can also add the `AppShieldObfuscationRules` preference on your plugin, like so:
+```
+{
+    "plugin": <your plugin object>,
+    "preferences": {
+        "android": [
+            {
+                "name": "AppShieldObfuscationRules",
+                "value": [Rules in Base 64]
+            }
+        ]
+    }
+}
+```
+
 ## Create your own obfuscation rules
 
 To begin, use your favorite editor to create your rules. Or try our editor, which has a validation feature for custom obfuscation rules. For more information, see the [Obfuscation Helper](https://enmobile11.outsystemsenterprise.com/ObfuscationHelper/).
@@ -48,7 +70,7 @@ Be sure to include [OutSystems obfuscation base rules](resources/default-obfusca
 
 ### OutSystems syntax for custom obfuscation rules
 
-OutSystems syntax starts with a fully inclusive declaration meaning you are obfuscating everything. You can remove statements by excluding them and only obfuscating  specific parts of the app.
+OutSystems syntax starts with a fully inclusive declaration, meaning you are obfuscating everything. You can remove statements by excluding them and only obfuscating  specific parts of the app.
 
 Following is an example of how to obfuscate everything and then only keep some default exceptions. Remember, this means exceptions aren't  obfuscated.
 
@@ -81,7 +103,7 @@ preserve class com.outsystems.MyClass1 ;
 preserve class com.outsystems.MyClass2 ;
 ```
 
-Then you want to obfuscate a given class while preserving some of its members.
+Then, you want to obfuscate a given class while preserving some of its members.
 
 ```
 # Started by obfuscating all classes
@@ -99,7 +121,7 @@ obfuscate com.outsystems.MyClass3 {
 }
 ```
 
-Then you find you need more detail to preserve a specific element, such as the public methods of a given class. For that, you can use a **specifier**.
+Then, you find you need more detail to preserve a specific element, such as the public methods of a given class. For that, you can use a **specifier**.
 
 ```
 # preserve all the public methods of MyClass1
