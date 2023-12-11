@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Search UI Pattern to provide users with a search field. Use the Search UI Pattern to allow users find pieces of content by entering queries. Unlike navigation, knowledge of the content's location isn't required and searching is often the primary means of finding content.
 
-![](<images/search-5-ss.png>)
+![Overview of the Search UI Pattern in a mobile app interface](images/search-5-ss.png "Search UI Pattern Overview")
 
 **How to use the Search UI Pattern**
 
@@ -20,23 +20,23 @@ You can use the Search UI Pattern to provide users with a search field. Use the 
 
     The Search widget is displayed.
 
-    ![](<images/search-1-ss.png>)
+    ![Search widget found in the ODC Studio Toolbox ready to be dragged into the app](images/search-1-ss.png "Search Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Search widget into the Main Content area of your application's screen.
 
-    ![](<images/search-2-ss.png>)
+    ![Dragging the Search widget into the Main Content area of the application screen](images/search-2-ss.png "Placing Search Widget in Main Content Area")
 
     By default, the Search widget contains an Input placeholder and widget.
 
 1. Select the Input widget, and on the **Properties** tab, create a local variable by selecting the **Variable** dropdown and selecting **New Local Variable**.
 
-    ![](<images/search-3-ss.png>)
+    ![Creating a new local variable for the Search widget in the Properties tab](images/search-3-ss.png "Creating a Local Variable for Search")
 
 1. Enter a name for the variable.
 
     In this example, we enter `SearchText`.
 
-    ![](images/search-4-ss.png)
+    ![Entering a name for the local variable as 'SearchText' in the Search widget properties](images/search-4-ss.png "Naming the Search Text Variable")
 
     This variable holds the value entered by the user. This variable can be reused throughout your app.
 

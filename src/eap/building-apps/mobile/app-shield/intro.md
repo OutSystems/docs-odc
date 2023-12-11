@@ -55,7 +55,7 @@ The following list describes the tags:
 
 The following diagram shows how release versions work in **AppShield**.
 
-![AppShield release life cycle](images/appshield-lifecycle.png?width=800)
+![Diagram illustrating the life cycle of AppShield releases, including Stable, Current, Expiring, and Discontinued versions.](images/appshield-lifecycle.png "AppShield Release Life Cycle Diagram")
 
 <div class="warning" markdown="1">
 
@@ -83,7 +83,7 @@ To protect your mobile app using the AppShield plugin, follow these steps:
 
 1. **Add the dependencies for AppShield** plugin on each mobile app you want to protect.
 
-    ![Screenshot showing the process of adding AppShield plugin dependencies in the OutSystems development environment.](images/add-dependencies-odcs.png "Adding AppShield Dependencies")
+    ![Screenshot showing how to add AppShield plugin dependencies in a mobile app project.](images/add-dependencies-odcs.png "Adding AppShield Dependencies")
 
 1. **Generate and distribute a new mobile package** protected with AppShield.
 

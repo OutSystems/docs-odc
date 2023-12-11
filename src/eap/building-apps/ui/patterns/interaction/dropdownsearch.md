@@ -20,33 +20,33 @@ In this example, we create a dropdown search for a list of employees. When the u
 
     The Dropdown Search widget is displayed.
 
-    ![Dropdown Search widget](<images/dropdownsearch-widget-ss.png>)
+    ![Screenshot of the Dropdown Search widget in the ODC Studio Toolbox](images/dropdownsearch-widget-ss.png "Dropdown Search Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Dropdown Search widget into the Main Content area of your application's screen.
 
-    ![Drag the widget to the screen](<images/dropdownsearch-drag-ss.png>)
+    ![Screenshot showing how to drag the Dropdown Search widget into the Main Content area of an application screen](images/dropdownsearch-drag-ss.png "Dragging the Dropdown Search Widget to the Screen")
 
 1. Select and right-click your screen name, and select **Fetch Data from Database**.
 
-    ![Fetch data from database](<images/dropdownsearch-fetch-ss.png>)
+    ![Screenshot of the context menu option to fetch data from the database for the Dropdown Search UI Pattern](images/dropdownsearch-fetch-ss.png "Fetching Data from Database for Dropdown Search")
 
 1. To add a database entity, click the screen, and from the **Select Source** pop-up, select the relevant database entity and click **Select**.
 
     In this example, the **Sample_Employee** entity is selected. 
 
-    ![Select database entity](<images/dropdownsearch-source-ss.png>)
+    ![Screenshot of the Select Source pop-up for choosing a database entity for the Dropdown Search UI Pattern](images/dropdownsearch-source-ss.png "Selecting Database Entity for Dropdown Search")
 
     The **GetEmployees** aggregate is automatically created.
 
-    ![The GetEmployees aggregates is automatically created](<images/dropdownsearch-aggregate-ss.png>)
+    ![Screenshot showing the automatic creation of the GetEmployees aggregate after selecting a database entity](images/dropdownsearch-aggregate-ss.png "GetEmployees Aggregate Creation")
 
 1. Return to your screen by double-clicking the screen name. Select the Dropdown Search widget, and on the **Properties** tab, set the mandatory properties (**OptionsList**, **Value**, **Label**).
 
-    ![Set the mandatory properties](<images/dropdownsearch-logic-ss.png>)
+    ![Screenshot of the Properties tab where mandatory properties for the Dropdown Search widget are set](images/dropdownsearch-logic-ss.png "Setting Mandatory Properties for Dropdown Search Widget")
 
 1. Staying on the **Properties** tab, from the OnChanged event **Handler** dropdown, select **New Client Action**.
 
-    ![Create a new client action](<images/dropdownsearch-handler-ss.png>)
+    ![Screenshot of the Properties tab with the OnChanged event Handler dropdown to create a new client action for Dropdown Search](images/dropdownsearch-handler-ss.png "Creating a New Client Action for Dropdown Search")
 
 1. Add the relevant logic to the client action. 
 
@@ -60,15 +60,15 @@ In this example, we create a dropdown search for a list of employees. When the u
     
         This displays the selected employee's name and their ID.
 
-        ![Add message logic](<images/dropdownsearch-message-ss.png>)
+        ![Screenshot showing the addition of a message to the client action for displaying the selected employee's name and ID in Dropdown Search](images/dropdownsearch-message-ss.png "Adding Message Logic to Dropdown Search")
 
 1. You can configure the Dropdown Search by selecting the pattern, and on the **Properties** tab, set the relevant optional properties. For more configurations, expand the OptionalConfigs property.
 
-    ![Set optional properties](<images/dropdownsearch-properties-ss.png>)
+    ![Screenshot of the Properties tab for configuring optional properties of the Dropdown Search UI Pattern](images/dropdownsearch-properties-ss.png "Setting Optional Properties for Dropdown Search")
 
 After following these steps and publishing the app, you can test the pattern in your app. The results from this example should look something like the following:
 
-![Dropdown result](<images/dropdownsearch-result.png>)
+![Screenshot of the Dropdown Search UI Pattern in action displaying the result of a selected employee](images/dropdownsearch-result.png "Dropdown Search Pattern Result Display")
 
 ## Properties
 

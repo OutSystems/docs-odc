@@ -14,7 +14,7 @@ Groups information in a small block organized with different sections for title,
 
 Use the Card Sectioned pattern to group short pieces of information and highlight them on the screen.
 
-![](<images/cardsection-3.png>)
+![Overview of Card Sectioned pattern with different sections for title, image, and content.](images/cardsection-3.png "Card Sectioned Pattern Overview")
 
 **How to use the Card Sectioned UI Pattern**
 
@@ -22,11 +22,11 @@ Use the Card Sectioned pattern to group short pieces of information and highligh
 
     The Card Sectioned widget is displayed.
 
-    ![](<images/cardsection-1-ss.png>)
+    ![Screenshot showing the Card Sectioned widget in the ODC Studio Toolbox.](images/cardsection-1-ss.png "Card Sectioned Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Card Sectioned widget into the Main Content area of your application's screen.
 
-    ![](<images/cardsection-2-ss.png>)
+    ![Process of dragging the Card Sectioned widget into the main content area of an application screen.](images/cardsection-2-ss.png "Dragging Card Sectioned Widget into Main Content Area")
 
     By default, the Card Sectioned widget contains an Image, Title, Content, and Footer placeholder.
 
@@ -34,11 +34,11 @@ Use the Card Sectioned pattern to group short pieces of information and highligh
 
     In this example we add an image, a title, some text, and a link.
 
-    ![](<images/cardsection-4-ss.png>)
+    ![Example of adding an image, title, text, and link to the Card Sectioned widget placeholders.](images/cardsection-4-ss.png "Adding Content to Card Sectioned Widget")
 
 1. On the **Properties** tab, you can change the look and feel of the Card Sectioned widget, for example, the orientation, and padding properties.
 
-    ![](<images/cardsection-5-ss.png>)
+    ![The Properties tab of the Card Sectioned widget showing options to change orientation and padding.](images/cardsection-5-ss.png "Card Sectioned Widget Properties Tab")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

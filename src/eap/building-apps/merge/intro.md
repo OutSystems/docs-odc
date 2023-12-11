@@ -14,7 +14,7 @@ If ODC detects conflicting changes when you click 1-Click Publish, you must reso
 
 ODC Studio's merge capabilities are designed with OutSystems visual language, so that you can review changes for both visual and textual elements.
 
-To resolve conflicts, see [Compare and merge example](<merge-example.md>). The [merge feature and team collaboration](<concepts.md>) outlines the merge operations in OutSystems.
+To resolve conflicts, see [Compare and merge example](merge-example.md). The [merge feature and team collaboration](concepts.md) outlines the merge operations in OutSystems.
 
 ## Conflicting revision detected
 

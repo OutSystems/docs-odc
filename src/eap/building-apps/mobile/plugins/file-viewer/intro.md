@@ -29,7 +29,7 @@ File Viewer Plugin can open:
 * **File from the app resources**. The plugin can access the **resources** path to load the file that's part of the app static content. See [Working with app resources](#working-with-app-resources)
 * **Remote file**. The plugin downloads the file to the app sandbox and then opens the file.
 
-![File Viewer Plugin](images/file-viewer-preview.png)
+![Preview image of the File Viewer Plugin interface](images/file-viewer-preview.png "File Viewer Plugin Preview")
 
 
 ## Viewing files in Android and iOS
@@ -59,7 +59,7 @@ Here is how to add a file as a resource and open the file with the plugin.
     * Enter `resources` in the **Target Directory** property. Note that this value must be `resources` and you can't change it.
     * Select **Deploy to Target Directory** in the **Deploy Action** list.
 
-    ![Resources properties for File Viewer](images/resources-file-viewer-ss.png)
+    ![Screenshot showing the resources properties settings for the File Viewer Plugin in ODC Studio](images/resources-file-viewer-ss.png "Resources Properties for File Viewer")
 
 4. In the **OpenDocument** action enter `"resources\<file name>"` in the **FilePath** property. For example, if you add **sample.pdf** to **Resources**, the value of  **FilePath** is `"resources\sample.pdf"`.
 
@@ -74,7 +74,7 @@ The plugin can access only resources you deploy in the **resources** path. This 
 
 Here is an example of how to use File Viewer Plugin.
 
-![Open file logic](images/logic-file-viewer-ss.png)
+![Screenshot of the logic flow for using the File Viewer Plugin in a mobile app](images/logic-file-viewer-ss.png "Logic for File Viewer Plugin")
 
 A good practice is to check if the plugin is available to the app, and report an error if it's not. You can check the plugin availability by using the **CheckPlugin** action and checking the value of the **CheckPlugin.IsAvailable** boolean (1).
 

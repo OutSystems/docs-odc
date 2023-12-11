@@ -21,7 +21,7 @@ Returns a comma-delimited text value containing all the integer values provided 
 *Inputs*
 
 ValueList
-:   Type: RecordList of [IntegerLiteral](<#Structure_IntegerLiteral>). Mandatory.  
+:   Type: RecordList of [IntegerLiteral](#Structure_IntegerLiteral). Mandatory.  
     The list of integer values to include.
 
 *Outputs*
@@ -50,7 +50,7 @@ Returns a comma-delimited text value with the encoded version of all the text va
 *Inputs*
 
 ValueList
-:   Type: RecordList of [TextLiteral](<#Structure_TextLiteral>). Mandatory.  
+:   Type: RecordList of [TextLiteral](#Structure_TextLiteral). Mandatory.  
     The list of text values to include.
 
 *Outputs*

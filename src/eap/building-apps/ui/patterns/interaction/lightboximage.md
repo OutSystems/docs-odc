@@ -18,17 +18,17 @@ You can use the Lightbox Image UI Pattern to open smaller thumbnail images in fu
 
     The Lightbox Image widget is displayed.
 
-    ![](images/lightboxmob-image-1.png)
+    ![Screenshot of the Lightbox Image widget in the ODC Studio Toolbox](images/lightboxmob-image-1.png "Lightbox Image Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Lightbox Image widget into the Main Content area of your application's screen.
 
-      ![](images/lightboxmob-image-2.png)
+      ![Process of dragging the Lightbox Image widget into the application's main content area](images/lightboxmob-image-2.png "Dragging Lightbox Image Widget into Main Content Area")
 
       By default, the Lightbox Image widget contains an Image placeholder. You can add as many images as required by dragging the Image widget from the Toolbox into the Lightbox Image widget.
 
 1. Select the **Image** placeholder and on the **Properties** tab, from the **Image** drop-down, select or import the thumbnail image you want to display. In this example, we use the sample OutSystems UI Images.
     
-    ![](images/lightboxmob-image-3.png)
+    ![Image placeholder selection and properties adjustment in the Lightbox Image widget](images/lightboxmob-image-3.png "Selecting Image Placeholder Properties")
 
     **Note:** In this example, the image property Type is set to **Local** image. You can also add External and Binary Data images.
 
@@ -54,4 +54,4 @@ The Lightbox Image UI pattern can be used only with images.
 
 Watch how the [Product Overview sample](https://silkui.outsystems.com/Samples_Mobile.aspx#Mobile_Details-Samples_ProductOverview) uses the Lightbox Image UI Pattern:
 
-![](images/Sample_LightBoxImage.gif)
+![Animated GIF showing the Product Overview sample application using the Lightbox Image UI Pattern](images/Sample_LightBoxImage.gif "Product Overview Sample Using Lightbox Image UI Pattern")

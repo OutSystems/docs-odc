@@ -18,19 +18,19 @@ You can use the Tag UI Pattern to style small texts in a colored tag format. Use
   
     The Tag widget is displayed.
 
-    ![](<images/tag-1-ss.png>)
+    ![Screenshot of the Tag widget in the ODC Studio Toolbox](images/tag-1-ss.png "Tag Widget in ODC Studio Toolbox")
 
 1. To From the Toolbox, drag the Tag widget into the Main Content area of your application's screen.
 
-    ![](<images/tag-2-ss.png>)
+    ![Dragging the Tag widget into the main content area of the application screen](images/tag-2-ss.png "Dragging Tag Widget into Main Content Area")
 
 1. Add your content to the placeholders. In this example, we add some text.
 
-    ![](<images/tag-3-ss.png>)
+    ![Adding text to the placeholders in the Tag widget](images/tag-3-ss.png "Adding Text to Tag Widget")
 
 1. On the properties tab, you can change the Tag's look and feel by setting the (optional) properties, for example, size and color.
 
-    ![](<images/tag-4-ss.png>)
+    ![Properties tab for changing the look and feel of the Tag widget](images/tag-4-ss.png "Tag Widget Properties Tab")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

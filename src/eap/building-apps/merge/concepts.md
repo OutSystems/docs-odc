@@ -14,7 +14,7 @@ OutSystems Developer Cloud (ODC) uses a simple versioning system that assigns an
 
 Multiple developers can work on the same app simultaneously. When you publish changes, ODC automatically attempts to merge your code with changes made by other developers. If there are any conflicts, ODC studio displays **Conflicting revision found**.
 
-For more information about merge feature, see [Using the Compare and Merge window](<intro.md>).
+For more information about merge feature, see [Using the Compare and Merge window](intro.md).
 
 ## Automatic merge of app revisions
 

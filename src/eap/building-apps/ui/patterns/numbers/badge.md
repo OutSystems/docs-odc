@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Badge UI Pattern to display numerical information as a notification. For example, the Badge UI pattern is frequently used to notify users about the number of unread emails, unopened messages, or new tasks they may have.
 
-![](<images/badge-image-7.png>)
+![Example of Badge UI Pattern displaying numerical notification](images/badge-image-7.png "Badge UI Pattern Example")
 
 **How to use the Badge UI Pattern**
 
@@ -22,19 +22,19 @@ The following example demonstrates how you can display the number of registered 
 
     The Badge widget is displayed.
 
-    ![](<images/badge-10-ss.png>)
+    ![Screenshot of Badge widget in ODC Studio Toolbox](images/badge-10-ss.png "Badge Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Badge widget into the Main Content area of your application's screen.
 
-    ![](<images/badge-11-ss.png>)
+    ![Screenshot showing the process of dragging the Badge widget into the Main Content area in ODC Studio](images/badge-11-ss.png "Dragging Badge Widget into Main Content Area")
 
 1. To create an aggregate that retrieves all of the users on your platform, right-click your screen name and select **Fetch Data from Database**.
 
-    ![](<images/badge-1-ss.png>)
+    ![Screenshot of context menu highlighting the 'Fetch Data from Database' option in ODC Studio](images/badge-1-ss.png "Fetch Data from Database Option")
 
 1. Click the Aggregate screen, and from the **Select Source** popup, select the relevant database entity (in this example, **Users**), and click **Select**.
 
-    ![](<images/badge-2-ss.png>)
+    ![Screenshot of the 'Select Source' popup window for choosing a database entity in ODC Studio](images/badge-2-ss.png "Select Source Popup for Database Entity")
 
 1. To reopen your screen, double-click on your screen name.
 
@@ -46,13 +46,13 @@ The following example demonstrates how you can display the number of registered 
 
     Note: You can also add the expression by navigating through the Expression Editor's **Scope** tree and double-clicking on the **Count** output parameter.
 
-    ![](<images/badge-3-ss.png>)
+    ![Screenshot of the Expression Editor in ODC Studio with the expression '(GetUsers.Count)' entered](images/badge-3-ss.png "Expression Editor in ODC Studio")
 
     The **Number** property is now set to display the Count property of the aggregate you created, which retrieves the number of users on your platform and displays it in your Badge.
 
 1. On the **Properties** tab, you can also customize the Badge's look and feel by setting any of the optional properties, for example, the color, shape, and size. The following example displays a blue, medium-sized, soft-rounded badge.  
 
-    ![](<images/badge-4-ss.png>)
+    ![Screenshot showing customization options for the Badge's appearance including color, shape, and size in ODC Studio](images/badge-4-ss.png "Customizing Badge Appearance")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

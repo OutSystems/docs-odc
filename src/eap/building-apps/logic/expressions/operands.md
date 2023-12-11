@@ -47,7 +47,7 @@ You can use functions as operands. The following are some examples:
 * In `Sqrt(9) + 3`, **Sqrt()** is one of the built-in functions. 
 * In `MyFunction(1000) * 100`, **MyFunction()** is a user-defined function. 
 
-See [Built-in Functions](<../../../reference/built-in-functions/intro.md>) for more information.
+See [Built-in Functions](../../../reference/built-in-functions/intro.md) for more information.
 
 ## Example
 
@@ -57,4 +57,4 @@ The following is a screenshot showing an expression in the expression editor. Th
 * `MyInteger`: a local variable
 * `Sqrt()`: a built-in function
 
-![Screenshot showing an expression in the expression editor](images/operands-ss.png?width=650 "Expression Editor")
+![Screenshot showing an expression in the expression editor](images/operands-ss.png "Expression Editor")

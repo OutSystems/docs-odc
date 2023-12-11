@@ -18,37 +18,37 @@ The Notification UI Pattern is a contextual short message that provides importan
 
     The Notification widget is displayed.
 
-    ![Notification widget](<images/notification-widget-ss.png>)
+    ![Screenshot of the Notification widget in ODC Studio's Toolbox](images/notification-widget-ss.png "Notification Widget in ODC Studio")
 
 1. From the Toolbox, drag the Notification widget into the Main Content area of your application's screen and on the **Properties** tab, enter a **Name**.
 
-    ![Drag the Notification widget to the screen](<images/notification-dragwidget-ss.png>)
+    ![Dragging the Notification widget into the Main Content area of the application screen](images/notification-dragwidget-ss.png "Dragging Notification Widget to Screen")
 
  1. Add the relevant content to the Content placeholder. 
 
     In this example, an icon and some text are added. 
 
-    ![Add content to Content placeholder](<images/notification-content-ss.png>)
+    ![Example of adding an icon and text to the Notification widget's content placeholder](images/notification-content-ss.png "Notification Content Example")
 
 1. From the Toolbox, drag 2 **Button** widgets into the Main Content area of your application's screen to **Open** and **Close** the Notification. 
 
-    ![Add Open and Close buttons](<images/notification-buttons-ss.png>)
+    ![Two Button widgets added to the Main Content area for opening and closing the Notification](images/notification-buttons-ss.png "Notification Open and Close Buttons")
 
 1. Define the actions for the buttons and set the **WidgetId** to the Notification widget.
 
     In this example, for the **Open** button, the **On Click** event is set to a **New Client Action** that runs the **NotificationOpen** client action. For the **Close** button, the **On Click** event is set to a **New Client Action** that runs the **NotificationClose** client action.
 
-    ![Define action for Open button](<images/notification-open-ss.png>)
+    ![Setting the On Click event to a New Client Action for the Open button of the Notification](images/notification-open-ss.png "Defining Action for Open Button")
 
-    ![Define action for Close button](<images/notification-close-ss.png>)
+    ![Setting the On Click event to a New Client Action for the Close button of the Notification](images/notification-close-ss.png "Defining Action for Close Button")
 
 1. You can configure the Notification by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties. For more configurations, expand the **OptionalConfigs** property.
 
-    ![Define action for Close button](<images/notification-properties-ss.png>)
+    ![Configuring optional properties of the Notification pattern in the Properties tab](images/notification-properties-ss.png "Notification Properties Configuration")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 
-![Notification example](<images/notification-example.png>)
+![Example of a Notification UI Pattern as it appears in a published app](images/notification-example.png "Notification UI Pattern Example")
 
 ## Properties
 

@@ -34,7 +34,7 @@ Here is an example, with two sample apps, of how you can reuse a Block from Reac
 1. Set the **Public** property of Block to **Yes**.
 1. Add some content to the Block. In our example we dragged a Text Widget and entered sample text "Hello from My Reactive App!".
 
-    ![Source app with a public Block](<images/block-reuse-source-app.png?width=600>)
+    ![Screenshot of the source Reactive Web App with a public Block named MyBlock containing the text 'Hello from My Reactive App!'](images/block-reuse-source-app.png "Source App with Public Block")
 
 1. Publish the app.
 
@@ -45,12 +45,12 @@ Here is an example, with two sample apps, of how you can reuse a Block from Reac
 1. Open **Manage Dependencies** (CTRL+Q) and search producers for our app "MyReactiveApp". Select the app.
 1. In left pane navigate to **UI Flows** > **Main Flow** > select **MyBlock**. Click **Apply** to confirm and close.
 
-    ![The Block in Manage Dependencies dialog](<images/block-reuse-manage-dependencies.png?width=600>)
+    ![Dialog window showing the Manage Dependencies interface with MyBlock selected from the MyReactiveApp for reuse in a Mobile App](images/block-reuse-manage-dependencies.png "Block in Manage Dependencies Dialog")
 
 1. In the Mobile App, navigate to **Interface** > **MyReactiveApp** (name of our example app) > **MainFlow2** > **MyBlock**.
 1. Drag MyBlock to the Screen. You should see "Hello from My Reactive App!" in the preview.
 
-    ![The source Block in the preview](<images/block-reuse-target-app.png?width=600>)
+    ![Preview of the Mobile App interface showing the reused MyBlock with the text 'Hello from My Reactive App!' on the screen](images/block-reuse-target-app.png "Source Block in Target App Preview")
 
 1. Publish the app.
 

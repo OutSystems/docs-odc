@@ -16,7 +16,7 @@ By default, an app theme is available in every app, enabling you to customize th
 
 In **UI Flows**, you can select a specific theme, giving you a different look and feel.
 
-![Application theme](images/application-theme-ss.png "Application theme")
+![Screenshot showing an example of an application theme in a user interface design](images/application-theme-ss.png "Application Theme Screenshot")
 
 ## Theme properties
 
@@ -44,7 +44,7 @@ Theme properties enable you to define some components of your themes to ensure c
 
 The **Theme Editor** is an alternative option to custom CSS. Use the **Theme Editor** to change a few basic properties like primary color, secondary color, font, or font-size. The **Theme Editor** is an option that doesn't require knowledge of CSS. It's a straightforward wizard configuration that gets translated as an app theme. Behind the scenes, every change you make in the **Theme Editor** gets converted into a specific theme with custom CSS inside that you can't change directly.
 
-![Theme Editor](images/theme-editor-ss.png "Theme Editor")
+![Screenshot of the theme editor interface with options to customize primary color, secondary color, font, and font-size](images/theme-editor-ss.png "Theme Editor Screenshot")
 
 ## Theme libraries
 

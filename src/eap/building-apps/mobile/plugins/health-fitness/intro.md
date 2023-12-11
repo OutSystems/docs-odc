@@ -40,7 +40,7 @@ This sample app shows you how to do the following with the health and fitness da
 * Retrieve raw data related to workouts for a specific period (iOS only).
 * Use the data in user interface, such as cards, tables, and graphs
 
-![Sample app home screen](images/sample-app.png) 
+![Screenshot of the Health & Fitness sample app interface](images/sample-app.png "Health & Fitness Sample App") 
 
 ## Enabling your users to track their health and fitness data
 
@@ -81,7 +81,7 @@ The plugin has groups of default variables in **Data** > **Entities** > **Health
 * SummaryVariables
 * WorkoutVariables
 
-![Using permission variables to check for data availability](images/get-permissions-by-group-ss.png)
+![Screenshot showing how to request permissions by group in the Health & Fitness plugin](images/get-permissions-by-group-ss.png "Requesting Permissions by Group")
 
 <div class="info" markdown="1">
 
@@ -93,7 +93,7 @@ Refer to the sample app for more examples.
 
 Start, for example, by defining a variable that corresponds to the type of output you want to show. Create a variable that holds the data so that you can access, store, and display the number of steps taken in a day (1).
 
-![Sample interface to show steps](images/sample-interface-ss.png) 
+![Screenshot of a sample user interface displaying health data like daily step count](images/sample-interface-ss.png "Sample User Interface for Health Data") 
 
 To show the step count for the day, you can use an **Expression** and customize the look and feel of the parent widget (2).
 
@@ -107,7 +107,7 @@ The health or fitness query parameters might include:
 * time unit: second, minute, hour, day, week, month, year
 * operation type: sum, min, max, average 
   
-![Getting data in AdvancedQuery from Google Fit and Apple HealthKit](images/get-fitness-data-ss.png) 
+![Screenshot demonstrating how to access health and fitness data using the AdvancedQuery action](images/get-fitness-data-ss.png "Accessing Health and Fitness Data") 
 
 <div class="info" markdown="1">
 
@@ -127,7 +127,7 @@ For the Workout Type and Variable map structure, the plugin already provides the
 * If there's no list or the list is empty, the plugin considers all workout types available and applies two variables to each: **Heart Rate** and **Active Energy Burned**.
 * If the list contains an item that has a workout type set but has no variable list associated (or an empty one) with it, the plugin considers two variables: **Heart Rate** and **Active Energy Burned**.
 
-![Getting data in GetWorkoutsData from Apple's HealthKit](images/get-workouts-ss.png)
+![Screenshot showing the process of retrieving workout data with the GetWorkoutsData action](images/get-workouts-ss.png "Retrieving Workout Data")
 
 <div class="info" markdown="1">
 
@@ -151,7 +151,7 @@ Parametrization for two different use cases of a background job is shown below:
 
 In the case of a daily steps goal evaluator, you will probably want to issue a single notification per day if the daily steps goal is met. To achieve this you can use the following parametrization:
 
-![Setting up a daily steps goal](images/set-background-job-ss.png)
+![Screenshot illustrating the setup of a background job for monitoring daily steps goal](images/set-background-job-ss.png "Setting Up a Daily Steps Goal Background Job")
 
 #### Setting up a heart rate monitoring alarm
 
@@ -159,7 +159,7 @@ In the case of a heart rate monitoring alarm, try to strike a balance between jo
 
 Consider the following parametrization for a background job that will notify you if your heart rate is above 190 bpm, with a maximum notification frequency of one notification per minute:
 
-![Setting up a heart rate monitoring alarm](images/set-background-job2-ss.png)
+![Screenshot showing the parametrization for a heart rate monitoring background job](images/set-background-job2-ss.png "Setting Up a Heart Rate Monitoring Alarm")
 
 
 After you have created your background job you can update it or delete it using the **UpdateBackgroundJob** action or the **DeleteBackgroundJob** action, respectively.

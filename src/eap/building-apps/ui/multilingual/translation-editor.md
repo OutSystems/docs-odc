@@ -12,7 +12,7 @@ platform-version: odc
 
 The **translation editor** lets you translate text and manage your translation directly from ODC Studio. To open the editor go to the **Data** > right-click the **Multilingual Locales** folder > click **Edit Translations**.
 
-![Menu to open translation editor](images/opening-translation-editor-ss.png)
+![Screenshot showing how to open the translation editor in ODC Studio](images/opening-translation-editor-ss.png "Opening the Translation Editor")
 
 Translation editor also opens when you [add a new translation language](translate-your-app.md).
 
@@ -26,7 +26,7 @@ Once you open the translation editor, you can:
 * **Navigate to a text in the app** by double-clicking a **Text** field to see the text in context.
 * **See the translation progress**, as it shows in the **Statistics** section (5).
 
-![Translation editor overview](images/translation-editor-overview-ss.png)
+![Screenshot of the translation editor interface in ODC Studio with numbered annotations](images/translation-editor-overview-ss.png "Translation Editor Overview")
 
 <div class="info" markdown="1">
 

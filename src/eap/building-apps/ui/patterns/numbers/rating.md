@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Rating UI Pattern to allow users rate, for example, products and services.
 
-![Example of Rating pattern](<images/rating-example-ss.png>)
+![Screenshot showing an example of the Rating pattern in use](images/rating-example-ss.png "Rating Pattern Example")
 
 **How to use the Rating UI Pattern**
 
@@ -20,21 +20,21 @@ You can use the Rating UI Pattern to allow users rate, for example, products and
 
     The Rating widget is displayed.
 
-    ![Rating widget](<images/rating-widget-ss.png>)
+    ![Screenshot of the Rating widget in the ODC Studio Toolbox](images/rating-widget-ss.png "Rating Widget in Toolbox")
 
 1. From the Toolbox, drag the **Rating** widget into the Main Content area of your application's screen.
 
-    ![Drag widget onto the screen](<images/rating-dragwidget-ss.png>)
+    ![Screenshot illustrating how to drag the Rating widget onto the application screen](images/rating-dragwidget-ss.png "Dragging Rating Widget")
 
     By default, the pattern is already prepared to work as a 5-Star rating pattern. However, you can change the icons to hearts, smiles, thumbs, or any other content.
 
 1. On the **Properties** tab, from the **RatingValue** dropdown, enter the rating number you want displayed. In this example, we enter `3`.  
     
-    ![Set the Rating Value property](<images/rating-value-ss.png>)
+    ![Screenshot demonstrating setting the RatingValue property to 3](images/rating-value-ss.png "Setting Rating Value")
 
 1. You can customize the Rating's look and feel by setting any of the optional properties.
 
-    ![Set additional properties](<images/rating-properties-ss.png>)
+    ![Screenshot showing the customization options for the Rating's properties](images/rating-properties-ss.png "Rating Properties Customization")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

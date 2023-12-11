@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Progress Bar to display percentage values by incrementing values in a bar and to show the current progress of a task flow.
 
-![Example of Progress Bar Pattern](<images/progressbar-example-ss.png>)
+![Screenshot showing an example of a Progress Bar pattern in use](images/progressbar-example-ss.png "Progress Bar Example")
 
 **How to use the Progress Bar UI Pattern**
 
@@ -20,21 +20,21 @@ You can use the Progress Bar to display percentage values by incrementing values
 
     The Progress Bar widget is displayed.
 
-    ![Progress Bar widget](<images/progressbar-widget-ss.png>)
+    ![Screenshot of the Progress Bar widget in ODC Studio Toolbox](images/progressbar-widget-ss.png "Progress Bar Widget")
 
 1. From the Toolbox, drag the Progress Bar widget into the Main Content area of your application's screen.
 
-    ![Drag widget to screen](<images/progressbar-dragwidget-ss.png>)
+    ![Screenshot illustrating how to drag the Progress Bar widget into the Main Content area](images/progressbar-dragwidget-ss.png "Drag Progress Bar Widget")
 
 1. Add the text you want to appear as the Progress Bar title. 
 
     In this example, we add `Ongoing tasks`.
 
-    ![Add title to Progress Bar](<images/progressbar-text-ss.png>)
+    ![Screenshot showing where to add the title 'Ongoing tasks' to the Progress Bar](images/progressbar-text-ss.png "Add Title to Progress Bar")
 
 1. Right-click your screen name, select **Add Local Variable**, and enter a name. In this example, we enter `Count`.
 
-    ![Add local variable](<images/progressbar-var-ss.png>)
+    ![Screenshot demonstrating how to add a local variable named 'Count' to the screen](images/progressbar-var-ss.png "Add Local Variable")
 
 1. Select the Progress Bar widget, and on the **Properties** tab, in the Progress property, enter the relevant logic for the progress percentage.
 
@@ -44,13 +44,13 @@ You can use the Progress Bar to display percentage values by incrementing values
 
 1. From the Toolbox, drag the **Button** widget into the Main Content area of your application's screen. In this example, call the button **Increment** and set the **On Click** property to a **New Client Action** that assigns the **Count** variable to ``Count + 1``.
 
-    ![Add a button](<images/progressbar-button-ss.png>)
+    ![Screenshot showing the addition of an 'Increment' button to the application's screen](images/progressbar-button-ss.png "Add Increment Button")
 
-    ![Set the assign](<images/progressbar-assign-ss.png>)
+    ![Screenshot depicting the assignment of the 'Count' variable to 'Count + 1' on button click](images/progressbar-assign-ss.png "Set Assign Action")
 
 1. You can configure the Progress Bar by selecting the pattern, and on the **Properties** tab, set the relevant optional properties. For more configurations, expand the **OptionalConfigs** property.
 
-    ![Set optional properties](<images/progressbar-prop-ss.png>)
+    ![Screenshot showing how to set optional properties for the Progress Bar pattern](images/progressbar-prop-ss.png "Set Optional Properties for Progress Bar Pattern")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

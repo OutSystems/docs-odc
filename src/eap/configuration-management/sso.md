@@ -39,4 +39,4 @@ To add the social login button in the app, do the following in ODC Studio:
 1. On the **Interface** tab, go to **OutSystems UI** > **Utilities**, and drag **ProviderLoginButton** to the login screen.
 1. On the properties for the **ProviderLoginButton**, select the provider from the **IdentityProvider** list.
 
-![Single sign-on](images/sso-button-odcs.png)
+![Screenshot showing how to add a social login button to the login screen in ODC Studio](images/sso-button-odcs.png "SSO Button in ODC Studio")

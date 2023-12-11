@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Tabs UI Pattern to divide content into meaningful sections. This pattern is useful when you want the user to be able to switch between sections within the same context while not having to not to navigate to different areas.
 
-![Tabs example](images/tab-gif1.gif?width=600)
+![Animated example of the Tabs UI Pattern in action](images/tab-gif1.gif "Tabs UI Pattern Example")
 
 ## How to use the Tabs UI Pattern
 
@@ -20,11 +20,11 @@ You can use the Tabs UI Pattern to divide content into meaningful sections. This
 
     The Tabs widget is displayed.
 
-    ![Tabs widget](images/tab-widget-ss.png)
+    ![Screenshot of the Tabs widget in the ODC Studio Toolbox](images/tab-widget-ss.png "Tabs Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Tabs widget into the Main Content area of your application's screen.
 
-    ![Drag Tabs widget to the screen](images/tab-dragwidget-ss.png)
+    ![Process of dragging the Tabs widget into the Main Content area of an application screen](images/tab-dragwidget-ss.png "Dragging Tabs Widget to Screen")
 
     By default, the Tabs widget contains 3 Header Items (tab titles) and 3 Content Items (tab content). You can add or delete as many as required.
 
@@ -32,11 +32,11 @@ You can use the Tabs UI Pattern to divide content into meaningful sections. This
 
     In this example, text is added.
 
-    ![Add content to tabs](images/tab-content-ss.png)
+    ![Screenshot showing the addition of text content to the Header Item and Content Item placeholders in Tabs](images/tab-content-ss.png "Adding Content to Tabs Widget")
 
 1. On the **Properties** tab, you can customize the Tabs look and feel by setting any of the optional properties, for example, which tab is displayed as the active tab when the page is rendered and whether the tabs are displayed vertically or horizontally.  
 
-    ![Set properties](images/tab-properties-ss.png)
+    ![Screenshot of the Properties tab where customization options for the Tabs UI Pattern are set](images/tab-properties-ss.png "Tabs Properties Pattern Settings")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

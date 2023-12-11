@@ -10,7 +10,7 @@ platform-version: odc
 
 # Exposing REST APIs
 
-OutSystems allows you to [expose methods using a REST API](<expose-a-rest-api.md>). These methods can be organized under multiple REST APIs.
+OutSystems allows you to [expose methods using a REST API](expose-a-rest-api.md). These methods can be organized under multiple REST APIs.
 
 <div class="info" markdown="1">
 

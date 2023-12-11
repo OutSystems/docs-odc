@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Pagination UI pattern to help users find a specific item on long listings. This pattern is typically used on listings, such as e-commerce category pages, search engines, and article archives.
 
-![](<images/pagination-5-ss.png>)
+![Screenshot of Pagination UI pattern overview in a mobile app](images/pagination-5-ss.png "Pagination UI Overview")
 
 **How to use the Pagination UI Pattern**
 
@@ -20,43 +20,43 @@ You can use the Pagination UI pattern to help users find a specific item on long
   
     The Pagination widget is displayed.
 
-    ![](<images/pagination-1-ss.png>)
+    ![Screenshot showing the Pagination widget in the ODC Studio Toolbox](images/pagination-1-ss.png "Pagination Widget in Toolbox")
 
 1. From the Toolbox, drag the Pagination widget into the Main Content area of your application's screen.
 
     In this example, we drag the Pagination widget below a table of Application data.
 
-    ![](<images/pagination-3-ss.png>)
+    ![Screenshot of dragging the Pagination widget into the Main Content area in ODC Studio](images/pagination-3-ss.png "Dragging Pagination Widget")
 
     By default, the Pagination widget contains Previous and Next placeholders with icons.
 
 1. Add 2 local variables - one to store the starting index value and the other to store the maximum number of records per page. In this example, we add the **StartIndex**  and **MaxRecords** variables. Both are of type integer and we set the default value of the **MaxRecords** to 50. This means there are 50 records shown per page.
 
-    ![](<images/pagination-9-ss.png>)
+    ![Screenshot of adding StartIndex and MaxRecords local variables for Pagination](images/pagination-9-ss.png "Adding Local Variables for Pagination")
 
 1. Select the Pagination widget, and on the **Properties** tab, set the **StartIndex** and **MaxRecords** properties to the respective local variables we just created.
 
-    ![](<images/pagination-10-ss.png>)
+    ![Screenshot of setting StartIndex and MaxRecords properties in the Pagination widget](images/pagination-10-ss.png "Setting Pagination Widget Properties")
 
 1. Staying on the **Properties** tab, set the **TotalCount** to the number of records fetched in the aggregate that is the source of the table.  in this example, we set it to **GetApplications.Count**.
 
-    ![](<images/pagination-11-ss.png>)
+    ![Screenshot showing the TotalCount property configuration for Pagination](images/pagination-11-ss.png "Configuring TotalCount Property")
 
 1. To define what happens when the end-user changes from one page to another, from the **Handler** dropdown, select **New Client Action**. By default the **New Client Action** contains a **NewStartIndex** input.
 
 1. To set the start index of the pagination, drag the **StartIndex** onto the client action and set its value to **NewStartIndex**. When a user changes page, the start index will change accordingly.
 
-    ![](<images/pagination-12-ss.png>)
+    ![Screenshot of defining the client action for page change in Pagination](images/pagination-12-ss.png "Defining Page Change Handler")
 
 1. Refresh the data by re-executing the aggregate so the data for the new page appears in the table.
 
-    ![](<images/pagination-13-ss.png>)
+    ![Screenshot illustrating the refresh action when changing pages in Pagination](images/pagination-13-ss.png "Refreshing Data on Page Change")
 
     In this example, when the user changes page, and the refresh action runs, it will take into account the current **StartIndex** and the **MaxRecords** to determine the **NewStartIndex** (in this case 50 for the new page.)
 
 1. So that we only fetch the data we need for each page, select the aggregate and set the **Start Index** and **Max. Records** properties to the the variables we created earlier, **StartIndex** and **MaxRecords**.
 
-    ![](<images/pagination-14-ss.png>)
+    ![Screenshot of setting Start Index and Max. Records properties in the aggregate for Pagination](images/pagination-14-ss.png "Setting Aggregate Properties for Pagination Widget")
 
 
 

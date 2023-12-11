@@ -16,15 +16,15 @@ Here is how you can edit expressions and show the expression values.
 
 * Use the [expression editor](expressions/expression-editor.md) to **edit expressions**. The expression editor shows you available elements. It automatically completes the text and shows suggestions after you press **Ctrl+Space**.
 
-    ![Expression editor](images/expression-editor-ss.png?width=600)
+    ![Screenshot of the expression editor interface](images/expression-editor-ss.png "Expression Editor")
 
 * **Edit expressions** inline in the properties of elements.
 
-    ![Expression inline](images/expression-inline-ss.png?width=400)
+    ![Screenshot showing inline editing of an expression](images/expression-inline-ss.png "Inline Expression Editing")
 
 * To **show the result** of an expression, use the Expression widget. This is similar to the **print** command in other programming languages.
 
-    ![Expression widget](images/expression-widget-ss.png?width=400)
+    ![Screenshot of the expression widget displaying a result](images/expression-widget-ss.png "Expression Widget")
 
 
 ## Notes
@@ -35,12 +35,12 @@ Here are some tips for using expressions.
 
     Example: `"Hello, " + UserName`, where the value of **UserName** is **Billy**, returns `"Hello, Billy!"`. 
 
-* You can use the [built-in functions](<../../reference/built-in-functions/dateandtime.md>) or use the [libraries](<../../reference/libraries/datetime.md>) to perform various operations on the types **Date**, **Time**, and **DateTime**.
+* You can use the [built-in functions](../../reference/built-in-functions/dateandtime.md) or use the [libraries](../../reference/libraries/datetime.md) to perform various operations on the types **Date**, **Time**, and **DateTime**.
 
     Example: `AddDays(#2020-01-01 00:00:00#, 90)`. **AddDays** is a function that adds **n** days to a Date Time value. Date Time is here a literal `#2020-01-01 00:00:00#`. The expression returns `#2020-03-31 00:00:00#`.
 
 * You can only use the operators **=** and **&lt;&gt;** (equality operators) for the type `Record`.
 
-* For the type **Identifier**, use the [built-in functions](<../../reference/built-in-functions/data-conversion.md>). 
+* For the type **Identifier**, use the [built-in functions](../../reference/built-in-functions/data-conversion.md). 
 
 * The types **BinaryData** and **Record List** don't support calculations.

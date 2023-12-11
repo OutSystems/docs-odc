@@ -44,7 +44,7 @@ Default Endpoint | Description
 `DELETE https://<server>/PhoneAPI/rest/v1/DeleteContact` | Deletes a contact.
 `GET https://<server>/PhoneAPI/rest/v1/GetContactAddresses` | Gets all addresses of a contact.
   
-OutSystems defines the default endpoints based on the HTTP Method (`GET`, `POST`, `PUT`, `DELETE`) and on the name of the REST API Methods, but you can [customize the endpoints](<customize-rest-urls.md>) according to your needs.
+OutSystems defines the default endpoints based on the HTTP Method (`GET`, `POST`, `PUT`, `DELETE`) and on the name of the REST API Methods, but you can [customize the endpoints](customize-rest-urls.md) according to your needs.
 
 You can test your REST API Method using several available tools, such as [curl](https://curl.haxx.se/) or [Postman](https://www.postman.com), or building an OutSystems application for that effect.
 

@@ -19,19 +19,19 @@ In OutSystems a **thread** may result from the following:
 
 The execution of a thread follows its designed action flow, e.g. an action to be executed when a button is pressed or a Web Service method (Web Service method call).
 
-You can suspend thread execution in your app where you want to examine app elements and runtime values by using [breakpoints](<breakpoints.md>).
+You can suspend thread execution in your app where you want to examine app elements and runtime values by using [breakpoints](breakpoints.md).
 
 The debugger behaves differently when suspending the execution flow at breakpoints, depending on the kind of thread:
 
 * **Threads from client/server actions or mobile app events**: these threads are originated by some action taken by the user on a screen in a web or a mobile app, or from events triggered in a mobile app (e.g. OnReady, OnInitialize). These threads are isolated and suspended at the breakpoints you set; the same happens for all other users in their machines.
 
-* **Other types of threads**: threads like the ones executing Timer actions, or integration methods are suspended from execution whenever they run into a breakpoint of a debug session started in the Public Area, either yours or of any other user because they're not isolated. In this case, you might be debugging not only your threads, but also threads from other users and vice-versa. To overcome this situation, you should check in the Users Tab if there are other users debugging the app. If that is the case, each suspended thread should have its app elements and runtime values examined by you (in the [scope tabs](<debugger-ui-reference.md#scope-tabs-area>)) to check if the suspended thread is yours.
+* **Other types of threads**: threads like the ones executing Timer actions, or integration methods are suspended from execution whenever they run into a breakpoint of a debug session started in the Public Area, either yours or of any other user because they're not isolated. In this case, you might be debugging not only your threads, but also threads from other users and vice-versa. To overcome this situation, you should check in the Users Tab if there are other users debugging the app. If that is the case, each suspended thread should have its app elements and runtime values examined by you (in the [scope tabs](debugger-ui-reference.md#scope-tabs-area)) to check if the suspended thread is yours.
 
 <div class="info" markdown="1"> 
 
-In **mobile apps** there can only be one client-side thread being executed due to the [event loop](<https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop>) concurrency model of JavaScript. However, when the execution point is suspended in an action executed in the server (e.g. a server action or a data action), another client-side event might occur, e.g. an OnAfterFetch event of an aggregate. 
+In **mobile apps** there can only be one client-side thread being executed due to the [event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop) concurrency model of JavaScript. However, when the execution point is suspended in an action executed in the server (e.g. a server action or a data action), another client-side event might occur, e.g. an OnAfterFetch event of an aggregate. 
 
-In this case, the Threads Tab inside the [Debugger Tab](<debugger-ui-reference.md#debugging-context-area>) will display an additional thread. If a breakpoint is set in the event handler action and this breakpoint is hit, ODC Studio will display that action flow in the canvas.
+In this case, the Threads Tab inside the [Debugger Tab](debugger-ui-reference.md#debugging-context-area) will display an additional thread. If a breakpoint is set in the event handler action and this breakpoint is hit, ODC Studio will display that action flow in the canvas.
 
 </div>
 
@@ -40,14 +40,14 @@ In this case, the Threads Tab inside the [Debugger Tab](<debugger-ui-reference.m
 
 While debugging a server thread (corresponding to an action being performed in the server) you may abort its execution, terminating it.
 
-Use the ![](images/toolbar-abort-button.png) Abort Running Server Threads button available on the Debugger Toolbar or in the Debugger Menu.
+Use the ![Icon of the Abort Running Server Threads button in the debugger toolbar](images/toolbar-abort-button.png "Abort Running Server Threads Button") Abort Running Server Threads button available on the Debugger Toolbar or in the Debugger Menu.
 
 
 ## Suspend All Executing Server Threads
 
 If you feel that one or more server threads are taking longer than expected and something might be wrong, you can suspend their execution.
 
-Select the ![](images/toolbar-button-suspend.png) Suspend Running Server Threads option in the Debugger menu. An entry is created for each one of them in the Threads Tab. 
+Select the ![Icon of the Suspend Running Server Threads option in the debugger menu](images/toolbar-button-suspend.png "Suspend Running Server Threads Option") Suspend Running Server Threads option in the Debugger menu. An entry is created for each one of them in the Threads Tab. 
 
 When suspended, ODC Studio will focus the element that was being executed by the server thread when the thread was suspended.
 

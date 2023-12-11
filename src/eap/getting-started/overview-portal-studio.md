@@ -24,7 +24,7 @@ The ODC Portal is a unified console to manage, monitor, and deploy apps, and to 
 
 What displays depends on your role. The images for this document are taken by a person with a role that has full access. Your role may have less access to the tools and apps. The following image shows the home screen when you first sign in to the ODC Portal. 
 
-![ODC Portal Home Screen](images/portal-home-page-pl.png)
+![Screenshot of the ODC Portal home page showing the navigation menu and user options](images/portal-home-page-pl.png "ODC Portal Home Page")
 
 <div class="info" markdown="1">
 
@@ -51,13 +51,13 @@ To open an existing app or see the details, hover over the app to display the **
 
 To create a new app from the ODC Portal, select **Create app**, and then choose either an App, a Library, or a template. Templates help speed up your development process. If you select an app, you can then choose the type of app (web, tablet, or phone). 
 
-![ODC Studio Home Screen](images/app-library-template-odcs.png)
+![Options for creating an app, library, or template in the ODC Portal with types of apps to choose from](images/app-library-template-odcs.png "ODC Portal App Creation Options")
 
 ## The ODC Studio
 
 The ODC Studio is an Integrated Development Environment (IDE), and it’s where you build and debug your app using OutSystems visual programming language. After you select an app, ODC Studio opens and displays the ODC Studio canvas. In the canvas, you can design, publish, and debug your apps and libraries. 
 
-![ODC Studio Home Screen](images/studio-full-page-odcs.png)
+![Full view of the ODC Studio interface highlighting the development environment and app management features](images/studio-full-page-odcs.png "ODC Studio Home Screen")
 
 The **top row** identifies that you are in ODC Studio, the name of the tenant, and the name of your app. 
 
@@ -71,17 +71,17 @@ The **1-Click Publish** tab displays on the bottom of the screen display after y
 
 The **Toolbox** on the left provides shortcuts to common elements you need when creating your app. The elements in the toolbox change depending on your actions. For example, if you are creating a flow, ODC Studio displays the elements you can use in your logic flow. If you're editing UI, the toolbox shows the widgets. Presenting information to you at the point of need helps accelerate your development. You can drag an element from the toolbox to the workspace. The following screenshot shows how the User Interface (UI) changes, for example, when creating an app. 
 
-![ODC Studio Home Screen](images/studio-canvas-odcs.png)
+![ODC Studio canvas area displaying the user interface and development tabs for app creation](images/studio-canvas-odcs.png "ODC Studio Canvas")
 
 The **canvas** is in the middle. This is where you design and develop your apps logic and UI.
 
 The **Development** tabs (**Process**, **Interface**, **Logic**, and **Data**) display on the right side of the UI. Each tab shows elements and properties related to your selection. What you select also determines what options are available in the toolbox and in the canvas. This makes it easier for you to complete a task. 
 
-![ODC Studio tabs](images/interface-elements-tab-odcs.png)
+![Interface elements tab in ODC Studio showing available UI components and properties](images/interface-elements-tab-odcs.png "ODC Studio Interface Elements Tab")
 
 The section below the horizontal rule is the **Properties panel**.  The element you select, determines what properties display and are necessary for you to complete. 
 
-![ODC Studio tabs](images/properties-panel-odcs.png)
+![Properties panel in ODC Studio with options and settings for the selected app element](images/properties-panel-odcs.png "ODC Studio Properties Panel")
 
 At the bottom of your screen several tabs display providing additional information.
 

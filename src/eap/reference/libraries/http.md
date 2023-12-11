@@ -70,7 +70,7 @@ Returns the list of files submitted in the current HTTP request.
 *Outputs*
 
 RequestFiles
-:   Type: RecordList of [RequestFile](<#Structure_RequestFile>).  
+:   Type: RecordList of [RequestFile](#Structure_RequestFile).  
     Record list of files submitted in the current HTTP request.
 
 

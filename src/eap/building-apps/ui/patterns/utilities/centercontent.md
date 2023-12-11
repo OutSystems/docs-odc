@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Center Content UI Pattern to vertically align content to the center of its container.
 
-![](<images/centercontent-1.png>)
+![Illustration of the Center Content UI Pattern in use](images/centercontent-1.png "Center Content UI Pattern")
 
 **How to use the Center Content UI Pattern**
 
@@ -20,17 +20,17 @@ You can use the Center Content UI Pattern to vertically align content to the cen
 
     The Center Content widget is displayed.
 
-    ![](<images/centercontent-2-ss.png>)
+    ![Screenshot showing the Center Content widget in the ODC Studio Toolbox](images/centercontent-2-ss.png "Center Content Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Center Content widget into the Main Content area of your application's screen.
 
-    ![](<images/centercontent-3-ss.png>)
+    ![Screenshot of dragging the Center Content widget into the Main Content area](images/centercontent-3-ss.png "Dragging Center Content Widget")
 
     By default, the Center Content widget contains Top, Center, and Bottom placeholders.
 
 1. Add the relevant content to each of the placeholders. In this example we add some images and text.
 
-    ![](<images/centercontent-4-ss.png>)
+    ![Screenshot of the Center Content widget with Top, Center, and Bottom placeholders filled with content](images/centercontent-4-ss.png "Center Content Widget with Placeholders")
 
 After following these steps and publishing the module, you can test the pattern in your app.
 

@@ -28,7 +28,7 @@ Otherwise, you can use the **GetLocation** action to get the device current loca
 
 Check if getting device location works by verifying the value of **GetLocation.Success** (3) is **True**. If yes, you can handle the device location data and apply any logic that you want. If **False**, you can show an **Error** to the user.
 
-![Getting device location](images/logic-to-get-device-location-odcs.png)
+![Flowchart showing the logic to get device location using the Location Plugin in ODC Studio](images/logic-to-get-device-location-odcs.png "Logic to Get Device Location")
 
 ## Check current device location in real time
 
@@ -44,7 +44,7 @@ To check the device location in real time and have a good user experience:
 
 To check if the device location changed, you can drag the **LocationTracker** block on your screen (4). This block handles the **OnPositionChanged** event to trigger another action in your app logic.
 
-![A block to track location](images/add-location-tracker-ocds.png)
+![Screenshot of the process to add the LocationTracker block on a screen in ODC Studio](images/add-location-tracker-ocds.png "Add LocationTracker Block")
 
 ## Use the WatchPosition action to update location in real time
 
@@ -52,13 +52,13 @@ After adding the **LocationTracker** block in your app, you need to use the **Wa
 
 As an output, this **WatchPosition** action returns a **WatchId**, an identifier that you can use in the **ClearWatch** action to stop the process of actively updating the device position. 
 
-![A block to watch position](images/watch-position-action-odcs.png)
+![Illustration of using the WatchPosition action to update device location in real time in ODC Studio](images/watch-position-action-odcs.png "WatchPosition Action")
 
 ## Create logic to handle the event of the position changing
 
 At last, you need to create a custom action and use it as the **Handler** of the **OnPositionChanged** event in the **LocationTracker** block (6). This event of the position changing returns the **Location** structure and the **WatchId**.
 
-![Event handler ](images/logic-handle-event-odcs.png)
+![Diagram showing the logic to handle the event of the device's position changing in ODC Studio](images/logic-handle-event-odcs.png "Logic to Handle Event of Position Changing")
 
 ## Handling errors
 
@@ -74,7 +74,7 @@ Here is the list of actions you can use to handle the errors. Use these actions 
 | Success     | WatchPosition       | True if there aren't errors while updating the position in real time.          |
 | Success     | ClearWatch          | True if there aren't errors while stopping updating the position in real time. |
 
-![Handling errors](images/handling-errors-odcs.png)
+![Flowchart demonstrating how to handle errors when using the Location Plugin in ODC Studio](images/handling-errors-odcs.png "Handling Errors")
 
 ## Actions
 
