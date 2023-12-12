@@ -14,7 +14,7 @@ A screen is a user interface (UI) element that contains other UI elements (such 
 
 Screen templates come with UI patterns that solve common application use cases. Screen templates help accelerate development by providing common functionalities and consistent look and feel. Screen templates include UI elements, and some include sample data that you can replace. You can immediately publish screens created from a screen template enabling you to see how the screen looks or to use it to show a proof of concept.
 
-![ui screen template](images/ui-screen-template-ss.png)
+![Example of a user interface screen template in OutSystems Developer Cloud Studio](images/ui-screen-template-ss.png "Screen Template Example")
 
 When you create an empty screen, you start with a basic layout to which you add data and UI elements. If you want to create a screen with a specific layout, you might want to start with a screen based on a screen template.
 
@@ -22,7 +22,7 @@ OutSystems provides many types of elements that you can add to your screens such
 
 Here is an example of the [Date Picker](https://outsystemsui.outsystems.com/OutsystemsUiWebsite/PatternDetail?PatternId=190) pattern:
 
-![ui patterns](images/ui-patterns-ss.png)
+![Screenshot of the Date Picker UI pattern from OutSystems UI component](images/ui-patterns-ss.png "UI Patterns Example")
 
 To access screen templates and the blank screen layout, go to ODC Studio, select the **Interface tab** > **UI Flows** > then right-click **MainFlow** and click **Add Screen**.
 

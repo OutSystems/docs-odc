@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Alert UI Pattern to highlight and display important information, errors, or warnings.
 
-![](<images/alert-1.png>)
+![Example of an Alert UI Pattern in a mobile app interface](images/alert-1.png "Example of an Alert UI Pattern")
 
 **How to use the Alert UI Pattern**
 
@@ -20,19 +20,19 @@ You can use the Alert UI Pattern to highlight and display important information,
 
     The Alert widget is displayed.
 
-    ![](<images/alert-7-ss.png>)
+    ![Screenshot showing the Alert widget in the ODC Studio Toolbox](images/alert-7-ss.png "Alert Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Alert widget into the Main Content area of your application's screen.
 
-    ![](<images/alert-8-ss.png?width=800>)
+    ![Process of dragging the Alert widget into the main content area of an application screen](images/alert-8-ss.png "Dragging Alert Widget into Main Content Area")
 
 1. Select the MessageText placeholder, and enter the Alert message you want to display.
     
-    ![](<images/alert-11-ss.png>)
+    ![Selecting the MessageText placeholder to enter an Alert message](images/alert-11-ss.png "Setting Alert Message Text")
 
 1. On the **Property** tab, set the **AlertType** property. In this example, the alert type is set to error which changes the message to display in red. 
     
-    ![](<images/alert-9-ss.png>)
+    ![Setting the AlertType property to 'error' in the Property tab to display the message in red](images/alert-9-ss.png "Setting AlertType Property to Error")
 
 After following these steps and publishing the app, you can test the pattern in your app. 
 

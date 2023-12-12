@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Master Detail Pattern to display a master list of items and their related details, for example, a list of employees and their corresponding details.
 
-![Employee details](images/masterdetail-2.png)
+![Overview of the Master Detail Pattern showing a list of items and their details](images/masterdetail-2.png "Master Detail Pattern Overview")
 
 ## How to use the Master Detail UI Pattern
 
@@ -20,49 +20,49 @@ You can use the Master Detail Pattern to display a master list of items and thei
 
     The Master Detail widget is displayed.
 
-    ![Master Detail widget](images/masterdetail-5-ss.png)
+    ![Screenshot of the Master Detail widget in the ODC Studio Toolbox](images/masterdetail-5-ss.png "Master Detail Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Master Detail widget into the Main Content area of your application's screen.
 
-    ![Drag the Master Detail widget](images/masterdetail-1-ss.png)
+    ![Dragging the Master Detail widget into the Main Content area of an application screen](images/masterdetail-1-ss.png "Dragging Master Detail Widget")
 
     By default, the Master Detail widget contains a right placeholder and left placeholder which expects a list.
 
 1. To populate the list, create an aggregate, by right-clicking your screen name, and selecting **Fetch Data from Database**.
 
-    ![Create an aggregate](images/masterdetail-13-ss.png)
+    ![Creating an aggregate by fetching data from the database in ODC Studio](images/masterdetail-13-ss.png "Creating an Aggregate")
 
 1. To add a database entity, click on the screen, select the relevant entity, and click **OK**. In this example, we use the **User** entity.
 
-    ![Add database entity](images/masterdetail-3-ss.png)
+    ![Adding a User entity to the Master Detail Pattern in ODC Studio](images/masterdetail-3-ss.png "Adding a Database Entity")
 
     A name for the aggregate is added automatically. In this example the aggregate name is **GetUsers**.
 
 1. On the **Interface** tab, double-click your screen name, and in the LeftContent placeholder, select the List widget. On the **Properties** tab, from the **Source** drop-down, select the aggregate you just created. In this example, **GetUsers.List**.
 
-    ![Select the aggregate](images/masterdetail-4-ss.png)
+    ![Selecting the GetUsers aggregate from the Source drop-down in the Properties tab](images/masterdetail-4-ss.png "Selecting an Aggregate")
 
 1. On the **Interface** tab, navigate to the attribute you want to display on the left side of the screen, and drag it into the List. In this example, we use the **Name** attribute.
 
-    ![Drag aggregate into the List](images/masterdetail-14-ss.png)
+    ![Dragging the Name attribute into the List to display user names on the left side of the screen](images/masterdetail-14-ss.png "Dragging Attribute into List")
 
     This displays all of the users names on the left side of the screen.
 
 1. So that each of the items in the list can be selected by the user, create a user action by selecting and right-clicking the expression in the List, and selecting **Link to -> New Client Action**.  
 
-    ![Create a client action](images/masterdetail-6-ss.png)
+    ![Creating a new client action for item selection in the Master Detail Pattern](images/masterdetail-6-ss.png "Creating a Client Action")
 
 1. Double-click the new client action and enter a name. In this example, we call it **ClickSelectedUser**.
 
-    ![Enter a name for the client action](images/masterdetail-7-ss.png)
+    ![Entering a name for the new client action called ClickSelectedUser](images/masterdetail-7-ss.png "Naming the Client Action")
 
 1. From the Toolbox, add the **Assign** logic to the client action, and from the  **Value** drop-down, select the Expression Editor. Navigate to and double-click the current user Id and click **Close**.
 
-    ![Add the assign logic to the client action](images/masterdetail-8-ss.png)
+    ![Adding the Assign logic to the ClickSelectedUser client action in ODC Studio](images/masterdetail-8-ss.png "Adding Assign Logic to Client Action")
 
 1. To store this user Id, create a local variable by right-clicking on your screen name and selecting **Add Local Variable**. Enter a name for the variable. In this example, we call it **SelectedUserId**.
 
-    ![Create a local variable](images/masterdetail-9-ss.png)
+    ![Creating a local variable called SelectedUserId in ODC Studio](images/masterdetail-9-ss.png "Creating a Local Variable")
 
 1. Select the **Assign** logic, and from the **Variable** drop-down, select the local variable you created (in this example, **SelectedUserId**).
 
@@ -72,7 +72,7 @@ You can use the Master Detail Pattern to display a master list of items and thei
 
 1. Enter a name for the aggregate. In this example, we call it **GetUserDetails**.
 
-    ![Enter a name for the aggregate](images/masterdetail-11-ss.png)
+    ![Entering a name for the GetUserDetails aggregate to fetch user details from the database](images/masterdetail-11-ss.png "Naming the GetUserDetails Aggregate")
 
 1. To add a database entity, click on the screen, select the relevant entity, and click **Select**. In this example, we use the **User** entity.
 
@@ -86,11 +86,11 @@ You can use the Master Detail Pattern to display a master list of items and thei
 
 1. Double-click your client action name (in this example, **ClickSelectedUser**), and drag the GetUserDetails aggregate onto the client action. This executes the aggregate using the currently selected user.
 
-    ![Drag the GetUserDetails aggregate](images/masterdetail-10-ss.png)
+    ![Dragging the GetUserDetails aggregate onto the client action to execute it](images/masterdetail-10-ss.png "Dragging GetUserDetails Aggregate")
 
 1. Double-click your screen name, and from the **GetUserDetails** aggregate, drag the attributes you want to display into the RightContent placeholder. In this example, we use the Username and Email attributes.
 
-    ![Drag the attributes](images/masterdetail-12-ss.png)
+    ![Dragging Username and Email attributes into the RightContent placeholder to display user details](images/masterdetail-12-ss.png "Dragging Attributes for Display")
 
 After following these steps and publishing the app, you can test the pattern in your app. 
 

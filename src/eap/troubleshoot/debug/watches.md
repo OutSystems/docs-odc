@@ -9,7 +9,7 @@ figma:
 
 # Watches
 
-Watches allow you to examine app elements in ODC Studio while debugging your app. These elements are always displayed in the Watches Tab, regardless of being in or out of scope of the element being debugged. This behavior contrasts with the rest of the [scope tabs](<debugger-ui-reference.md#scope-tabs-area>), where the displayed content depends on the current scope.
+Watches allow you to examine app elements in ODC Studio while debugging your app. These elements are always displayed in the Watches Tab, regardless of being in or out of scope of the element being debugged. This behavior contrasts with the rest of the [scope tabs](debugger-ui-reference.md#scope-tabs-area), where the displayed content depends on the current scope.
 
 Using watches you can inspect:
 

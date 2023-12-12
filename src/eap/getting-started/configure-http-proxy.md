@@ -24,11 +24,11 @@ ODC Studio relies on the proxy servers (HTTP and HTTPS) that are defined in the 
 
 1. Click the **Start** icon and select **Settings**. 
 
-    ![Go to settings](images/windows-http-proxy-settings.png)
+    ![Opening Windows Settings for HTTP Proxy configuration](images/windows-http-proxy-settings.png "Windows HTTP Proxy Settings")
 
 1. Select **Network & Internet**.
 
-    ![Select network and internet](images/windows-http-proxy-network-internet.png)
+    ![Selecting Network & Internet in Windows Settings](images/windows-http-proxy-network-internet.png "Windows Network and Internet Selection")
 
 1. Select **Proxy**.
 
@@ -40,7 +40,7 @@ ODC Studio relies on the proxy servers (HTTP and HTTPS) that are defined in the 
 
     1. Leave the **Port** field empty.
 
-        ![Enter proxy configurations](images/windows-http-proxy-setup.png)
+        ![Entering proxy server details in Windows proxy configuration screen](images/windows-http-proxy-setup.png "Windows Proxy Configuration")
 
     1. Click **Save**.
 
@@ -50,17 +50,17 @@ ODC Studio relies on the proxy servers (HTTP and HTTPS) that are defined in the 
 
 1. Search for **Proxies**.
 
-    ![Enter proxy configurations](images/mac-http-proxy-search.png)
+    ![Searching for Proxies in MacOS System Preferences](images/mac-http-proxy-search.png "MacOS Proxy Search")
 
 1. In the **Select a protocol to configure** section, choose **Web Proxy (HTTP)**.
 
     1. In the **Web proxy server** field, enter the proxy server name or IP address and port. In the example below, the proxy server is ``example.net`` and the proxy port is ``9090``.
 
-        ![Enter proxy configurations](images/mac-http-proxy-web-settings.png)
+        ![Configuring Web Proxy (HTTP) settings in MacOS](images/mac-http-proxy-web-settings.png "MacOS Web Proxy Configuration")
 
 1. In the **Select a protocol to configure** section, select **Secure Web Proxy (HTTPS)** and enter the proxy server name or IP address and port.
 
-    ![Enter proxy configurations](images/mac-http-proxy-secure-settings.png)
+    ![Configuring Secure Web Proxy (HTTPS) settings in MacOS](images/mac-http-proxy-secure-settings.png "MacOS Secure Web Proxy Configuration")
 
 1. Click **Ok**.
 
@@ -76,6 +76,6 @@ Some proxy servers require user authentication. In this case, you must provide t
 
 1. Enter the **Proxy username** and **Proxy password**.
 
-    ![Enter proxy configurations](images/mac-http-proxy-authen.png)
+    ![Entering proxy authentication details in ODC Studio Preferences](images/mac-http-proxy-authen.png "ODC Studio Proxy Authentication")
 
 1. Click **Apply**.

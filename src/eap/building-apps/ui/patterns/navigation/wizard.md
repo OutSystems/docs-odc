@@ -13,7 +13,7 @@ platform-version: odc
 You can use the Wizard UI Pattern to split large complex tasks and processes into smaller manageable steps. A wizard presents a series of steps or conditions that the user needs to complete in order to accomplish a goal. Additionally, wizards usually include explicit button navigation to move a step forward or backward. Some wizard examples include software installation wizards and sign-up screens.
 
 
-![](<images/wizard-2-ss.png>)
+![Screenshot of a Wizard UI Pattern example with navigation buttons](images/wizard-2-ss.png "Wizard UI Pattern Example")
 
 **How to use the Wizard UI Pattern**
 
@@ -29,21 +29,21 @@ The following example demonstrates how you can create a four step Wizard with na
 
     The Wizard and Wizard Item widgets are displayed (both of which are required to use this pattern).
 
-    ![](<images/wizard-2-ss.png>)
+    ![Screenshot of a Wizard UI Pattern example with navigation buttons](images/wizard-2-ss.png "Wizard UI Pattern Example")
 
 1. From the Toolbox, drag the Wizard widget into the Main Content area of your application's screen.
 
-    ![](<images/wizard-3-ss.png>)
+    ![Screenshot showing the process of adding a Wizard widget to the main content area in ODC Studio](images/wizard-3-ss.png "Adding Wizard Widget to Main Content Area")
 
     By default, the Wizard widget contains three Wizard Item widgets. Each Wizard Item represents a step. You can add or delete Wizard Items as required.
 
 1. From the Toolbox, drag another Wizard Item into your Wizard Pattern. 
 
-    ![](images/wizard-4-ss.png)
+    ![Screenshot depicting the addition of a Wizard Item to an existing Wizard Pattern](images/wizard-4-ss.png "Adding Wizard Item to Wizard Pattern")
 
 1. Drag the Text widget into the Icon placeholders, and enter the numbers 1-4 consecutively.
 
-    ![](images/wizard-5-ss.png)
+    ![Screenshot illustrating the addition of a Text widget into the Icon placeholders of a Wizard Item](images/wizard-5-ss.png "Adding Text Widget to Wizard Item")
 
 1. Enter the following text to each of the Label placeholders:
 
@@ -52,13 +52,13 @@ The following example demonstrates how you can create a four step Wizard with na
     * Review Order
     * Confirm Order
 
-    ![](images/wizard-6-ss.png)
+    ![Screenshot showing the labeling of Wizard steps with Shopping Details, Payment Details, Review Order, and Confirm Order](images/wizard-6-ss.png "Labeling Wizard Steps")
 
 1. From the Element tree, create an Input Parameter by right-clicking on your screen, and from the drop-down, select **Add Input Parameter**.
 
     The input parameter controls which Wizard step is shown to the user.
 
-    ![](images/wizard-7-ss.png)
+    ![Screenshot of the process of creating an Input Parameter in the Element tree of ODC Studio](images/wizard-7-ss.png "Creating an Input Parameter in Element Tree")
 
 1. On the **Properties** tab, set the Input Parameter properties as follows:
 
@@ -67,19 +67,19 @@ The following example demonstrates how you can create a four step Wizard with na
     * Is Mandatory: No
     * Default Value: 1
 
-    ![](images/wizard-8-ss.png)
+    ![Screenshot displaying the setting of Input Parameter properties with name, data type, and default value](images/wizard-8-ss.png "Setting Input Parameter Properties")
 
     By setting the **Default Value** to 1, you ensure that the  Wizard always starts on step 1.
 
 1. To create the logic that defines the status of each Wizard Item (as an active step, a past step, or a next step), select the first Wizard Item (step 1), and on the **Properties** tab, from the **Status** drop-down, select **Expression Editor**.
 
-    ![](images/wizard-9-ss.png)
+    ![Screenshot showing the selection of a Wizard Item's status from the Properties tab in ODC Studio](images/wizard-9-ss.png "Selecting Wizard Item Status")
 
 1. In the expression editor, enter the following expression and click **DONE**:
 
     `If(CurrentStep = 1, Entities.Steps.Active,If(CurrentStep > 1, Entities.Steps.Past, Entities.Steps.Next))`
 
-    ![](images/wizard-10-ss.png)
+    ![Screenshot of the Expression Editor with logic defining the status of a Wizard Item as active, past, or next](images/wizard-10-ss.png "Defining Wizard Item Status Logic")
 
     This logic has the following meaning:
 
@@ -93,13 +93,13 @@ The following example demonstrates how you can create a four step Wizard with na
 
 1. From the Toolbox, drag the If widget onto the main content area of your application's screen, just below the Wizard Pattern.
 
-    ![](images/wizard-11-ss.png)
+    ![Screenshot showing the addition of an If widget to the main content area below the Wizard Pattern](images/wizard-11-ss.png "Adding If Widget to Main Content Area")
 
 1. On the **Properties** tab, from the **Condition** dropdown, select Expression Editor, enter the following logic and click **DONE**:
 
     `CurrentStep = 1`
 
-    ![](images/wizard-12-ss.png)
+    ![Screenshot of setting the condition logic for an If widget in the Properties tab](images/wizard-12-ss.png "Setting Condition Logic for If Widget")
 
     You have now created a condition that controls what's displayed on screen when the step is active.
 
@@ -109,7 +109,7 @@ The following example demonstrates how you can create a four step Wizard with na
 
     The following example shows a Shipping Details step that contains labels and input boxes.
 
-    ![](images/wizard-13-ss.png)
+    ![Screenshot of the Shipping Details step content with labels and input boxes in the Wizard Pattern](images/wizard-13-ss.png "Shipping Details Step Content")
 
 **Create the wizard navigation**
 
@@ -119,23 +119,23 @@ The following example demonstrates how you can create a four step Wizard with na
 
 1. To ensure that all of the information the user enters is passed from step to step, create a action by selecting the **Next** button, and on the **Properties** tab, from the **OnClick** drop-down, select **New Client Action**.
 
-    ![](images/wizard-14-ss.png)
+    ![Screenshot illustrating the creation of a new client action for the Next navigation button](images/wizard-14-ss.png "Creating Navigation Button Action")
 
 1. From the Toolbox, drag the Assign block onto your screen and set the **Variable** property to `CurrentStep` and the **Value** property to `CurrentStep + 1`. This ensures that user inputs are passed from step to step.
 
-    ![](images/wizard-15-ss.png)
+    ![Screenshot showing the Assign block setup for passing user input from step to step in the Wizard](images/wizard-15-ss.png "Setting Up Navigation Button Logic")
 
 1. Repeat steps 3 and 4 for the **Previous** button, setting the **Variable** property to `CurrentStep` and the **Value** property to `CurrentStep - 1`.
 
 1. To display the **Next** button when applicable, select the **Next** button, right-click, and select **Enclose in If**.
 
-    ![](images/wizard-16-ss.png)
+    ![Screenshot of the process of enclosing the Next button in an If widget to control its display](images/wizard-16-ss.png "Enclosing Next Button in If Widget")
 
 1. On the **Properties** tab, in the **Condition** property, enter the following:
 
     `CurrentStep < 4`
 
-    ![](images/wizard-17-ss.png)
+    ![Screenshot showing the condition logic entered for the Next button to ensure it is displayed appropriately](images/wizard-17-ss.png "Defining Display Condition for Next Button")
 
     You have now created a condition that ensures that the user can never go above the number of steps in the wizard.
 

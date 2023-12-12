@@ -29,7 +29,7 @@ You can see and define the event handlers in the Events section of the propertie
 
 ### On opening the app
 
-![](images/lifecycle-open-application.png)
+![Diagram showing the lifecycle stages when opening an application in OutSystems](images/lifecycle-open-application.png "Application Opening Lifecycle")
 
 Opening an application is one of the situations when a screen is loaded (the other situation is when navigating from another screen). In this case, the app displays the configured splash screen and then navigates to the default screen.
 
@@ -39,25 +39,25 @@ This article often mentions DOM, or Document Object Model. To learn more about D
 
 </div>
 
-While displaying the splash screen, the application checks the user role against the roles with permission to access the screen (defined in the screen properties). After this verification, the Initialize event happens and the respective event handler action, the [On Initialize](<#on-initialize>) is triggered. Since the DOM of the default screen isn't completely loaded when this event occurs, you can use this event handler to implement all the logic that doesn’t require the DOM, such as to initialize some default data.
+While displaying the splash screen, the application checks the user role against the roles with permission to access the screen (defined in the screen properties). After this verification, the Initialize event happens and the respective event handler action, the [On Initialize](#on-initialize) is triggered. Since the DOM of the default screen isn't completely loaded when this event occurs, you can use this event handler to implement all the logic that doesn’t require the DOM, such as to initialize some default data.
 
-When the On Initialize event handler ends, the aggregates and data actions of the default screen concurrently start to fetch data (exemplified by the GetContacts and GetProfileImages of the image above), the DOM of the screen loads and the [Ready](<#on-ready>) and [Render](<#on-render>) event handlers run. The difference between these two events is that the Ready event only happens when opening the screen while the Render event also happens every time the data of the screen (such as input parameters, variables, aggregates and data actions, or validation messages) is modified. You can use both event handlers to act on the loaded DOM. Avoid accessing the data of the screen since this data may not be fetched yet.
+When the On Initialize event handler ends, the aggregates and data actions of the default screen concurrently start to fetch data (exemplified by the GetContacts and GetProfileImages of the image above), the DOM of the screen loads and the [Ready](#on-ready) and [Render](#on-render) event handlers run. The difference between these two events is that the Ready event only happens when opening the screen while the Render event also happens every time the data of the screen (such as input parameters, variables, aggregates and data actions, or validation messages) is modified. You can use both event handlers to act on the loaded DOM. Avoid accessing the data of the screen since this data may not be fetched yet.
 
 Even before the data from the aggregates and the data actions is fetched, the screen appears to the user with the static resources. To prevent this situation, adopt an offline first implementation approach.
 
-When the aggregates and data actions of the screen finish fetching the data, the widgets bound to these data sources automatically update with the fetched data. The [After Fetch](<#on-after-fetch>) event handler of each aggregate and data action runs, followed by the Render event (since the data of the screen was modified). For each After Fetch event, the application executes a Render event.
+When the aggregates and data actions of the screen finish fetching the data, the widgets bound to these data sources automatically update with the fetched data. The [After Fetch](#on-after-fetch) event handler of each aggregate and data action runs, followed by the Render event (since the data of the screen was modified). For each After Fetch event, the application executes a Render event.
 
 ### On navigating between screens
 
-![](images/lifecycle-navigate-screens.png)
+![Flowchart illustrating the lifecycle stages when navigating between screens in OutSystems](images/lifecycle-navigate-screens.png "Screen Navigation Lifecycle")
 
 Navigating from a screen to another is a very common pattern of applications. This is usually triggered by a user interaction such as clicking a button or list item on the screen. Navigating between screens in OutSystems means that a new screen is loaded and then the previous screen is removed.
 
 When the navigation starts, the DOM of the target screen immediately starts to load. This means that the DOM of the screen to be removed and the target screen are present at the same time. The DOM of the old screen is removed only after the Render event of the target screen, ensuring a fast and smooth transition between the screens and avoiding displaying the loading stages of the target screen to the user.
 
-The first event handler to run is the [On Initialize](<#on-initialize>). The application continues to load the DOM of the target screen followed by its events, as documented in the section for when the application is opening. Since those events belong to the target screen, the active screen is the target screen and the `active-screen` class in the DOM is assigned to the elements of that screen.
+The first event handler to run is the [On Initialize](#on-initialize). The application continues to load the DOM of the target screen followed by its events, as documented in the section for when the application is opening. Since those events belong to the target screen, the active screen is the target screen and the `active-screen` class in the DOM is assigned to the elements of that screen.
 
-After the [Render](<#on-render>) event of the target screen, the transition between the screens happens and the older screen is finally removed from the DOM. This means that the DOM of both screens are available between the Render event of the target screen and the Destroy event of the old screen.
+After the [Render](#on-render) event of the target screen, the transition between the screens happens and the older screen is finally removed from the DOM. This means that the DOM of both screens are available between the Render event of the target screen and the Destroy event of the old screen.
 
 ### On changing the data of a screen or block
 
@@ -65,28 +65,28 @@ Every time you change the value of a data element of a Screen or Block, the appl
 
 For screen or block aggregates and data actions, their new values are automatically updated in the UI elements, but you need to rerun the query explicitly. This can be done using the Refresh Data flow element in the logic.
 
-After data is fetched, the [After Fetch](<#on-after-fetch>) event occurs and, since the data returned from the Aggregate or Data Action belongs to the screen or block data and has changed, the Render event also occurs.
+After data is fetched, the [After Fetch](#on-after-fetch) event occurs and, since the data returned from the Aggregate or Data Action belongs to the screen or block data and has changed, the Render event also occurs.
 
 As an example, imagine a screen showing the details of a contact along with the list of calls to that contact. To get the calls, you use an aggregate filtered by the value of the variable of the screen assigned with the current contact identifier. When the contact changes the screen will display the new contact details, so the screen variable is modified to contain the new contact identifier. To get the list of calls to this new contact, the Aggregate must run again. To do it, you only need to call the Refresh Data flow element in the logic and select the respective Aggregate or Data Action. When the query returns the new list of calls, the list in the screen is automatically updated.
 
 ### On changing the parameters of a block
 
-![](images/lifecycle-change-parameters.png)
+![Sequence diagram depicting the lifecycle events when changing the parameters of a block in OutSystems](images/lifecycle-change-parameters.png "Block Parameter Change Lifecycle")
 
-To allow the notification and update of a block when one of its input parameters change, the application runs the [Parameters Changed](<#on-parameters-changed>) event handler of the block. A common use case for this event handler is to rerun some Aggregate or Data Action that depends on the input parameter, as exemplified in the image above where after a change in the calendar date, the query is executed again to obtain new values for the chart.
+To allow the notification and update of a block when one of its input parameters change, the application runs the [Parameters Changed](#on-parameters-changed) event handler of the block. A common use case for this event handler is to rerun some Aggregate or Data Action that depends on the input parameter, as exemplified in the image above where after a change in the calendar date, the query is executed again to obtain new values for the chart.
 
-Since the input parameter is part of the data of the block, the [Render](<#on-render>) event is also triggered, but only after the **Parameters Changed** event.
+Since the input parameter is part of the data of the block, the [Render](#on-render) event is also triggered, but only after the **Parameters Changed** event.
 
 ## Lifecycle event handlers
 
 Event | Description
 ------|------------
-[On Initialize](<#on-initialize>) | Occurs after checking the permission of the user to access the Screen, but before navigating to the Screen and fetching data. In Blocks, it occurs after the navigation. You can use it to initialize the Screen or Block by setting its default data.
-[On Ready](<#on-ready>) | Occurs after the Screen or Block DOM is ready, before the transition starts.
-[On Render](<#on-render>) | Occurs right after the Screen or Block On Ready event handler and every time the data of a Screen or Block changes. You can use it to update some third-party component.
-[On After Fetch](<#on-after-fetch>) | Occurs after an Aggregate or Data Action has finished fetching data but before this data is rendered on the Screen or Block. You can use it to act upon the retrieved data.
-[On Parameters Changed](<#on-parameters-changed>) | Occurs in a Block anytime the parent Screen or Block changes one of its input parameters. Changes to the input value inside the block do not trigger this event handler. You can use it to react to changes in the Block parameters, such as to update variables.
-[On Destroy](<#on-destroy>) | Occurs before destroying a Screen or Block and removing it from the DOM. You can use it to implement logic when the component is disposed, such as to remove event listeners.
+[On Initialize](#on-initialize) | Occurs after checking the permission of the user to access the Screen, but before navigating to the Screen and fetching data. In Blocks, it occurs after the navigation. You can use it to initialize the Screen or Block by setting its default data.
+[On Ready](#on-ready) | Occurs after the Screen or Block DOM is ready, before the transition starts.
+[On Render](#on-render) | Occurs right after the Screen or Block On Ready event handler and every time the data of a Screen or Block changes. You can use it to update some third-party component.
+[On After Fetch](#on-after-fetch) | Occurs after an Aggregate or Data Action has finished fetching data but before this data is rendered on the Screen or Block. You can use it to act upon the retrieved data.
+[On Parameters Changed](#on-parameters-changed) | Occurs in a Block anytime the parent Screen or Block changes one of its input parameters. Changes to the input value inside the block do not trigger this event handler. You can use it to react to changes in the Block parameters, such as to update variables.
+[On Destroy](#on-destroy) | Occurs before destroying a Screen or Block and removing it from the DOM. You can use it to implement logic when the component is disposed, such as to remove event listeners.
 
 ### On Initialize
 

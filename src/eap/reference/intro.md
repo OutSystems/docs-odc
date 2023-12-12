@@ -48,7 +48,7 @@ Action | Description | Available as function?
 [Request_GetCookie](libraries/http.md#Request_GetCookie) | Returns the value for the specified cookie from the current HTTP request. | Yes
 [Request_GetDomain](libraries/http.md#Request_GetDomain) | Returns the host part of the current HTTP request as seen by the browser. <br/> Examples: <br/> When the browser uses the address "http://support.domain.com/site/welcome.aspx?id=12345", Request_GetDomain() = "support.domain.com". | Yes
 [Request_GetFiles](libraries/http.md#Request_GetFiles) | Returns the list of files submitted in the current HTTP request. | Yes
-[Request_GetHeaders](<libraries/http.md#Request_GetHeaders>) | Returns the value of the specified header in the current HTTP request. | Yes
+[Request_GetHeaders](libraries/http.md#Request_GetHeaders) | Returns the value of the specified header in the current HTTP request. | Yes
 [Request_GetURL](libraries/http.md#Request_GetURL) | Returns the absolute URL of the current request. If SEO rules are applied, returns the resulting URL and not the URL displayed in the user's browser. | Yes
 [Request_ReplaceDomain](libraries/http.md#Request_ReplaceDomain) | Replaces the domain in the URL with the given domain. This function doesn't accept JavaScript as a URL. | Yes
 [Request_SubmitGetRequest](libraries/http.md#Request_SubmitGetRequest) |Submits an HTTP GET request given the respective arguments and URL, and returns the request response content. | No

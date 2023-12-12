@@ -18,11 +18,11 @@ You can use the Section Group UI Pattern to keep the context of the header while
   
     The Section Group widget is displayed.
 
-    ![](<images/sectiongroup-1-ss.png>) 
+    ![Screenshot of the Section Group widget in the ODC Studio Toolbox](images/sectiongroup-1-ss.png "Section Group Widget in ODC Studio Toolbox") 
 
 1. To From the Toolbox, drag the **Section Group** widget into the **Main Content** area of your application's screen.
 
-    ![](<images/sectiongroup-2-ss.png>)
+    ![Dragging the Section Group widget into the Main Content area of an application screen](images/sectiongroup-2-ss.png "Dragging Section Group Widget into Main Content Area")
 
     By default, the Section Group widget contains 3 Section widgets which contain Title and Content placeholders.
 
@@ -30,19 +30,19 @@ You can use the Section Group UI Pattern to keep the context of the header while
 
     In this example, we add a title to the Title placeholder and some text to the Content placeholder. 
 
-    ![](<images/sectiongroup-3-ss.png?width=800>)
+    ![Example of adding a title and text to the Section Group placeholders](images/sectiongroup-3-ss.png "Adding Content to Section Group Widget Placeholders")
 
 1. On the **Properties** tab, you can customize the Section Group's look and feel by setting any of the (optional) properties.
 
-    ![](<images/sectiongroup-4-ss.png>)
+    ![Properties tab for customizing the Section Group Widget appearance](images/sectiongroup-4-ss.png "Section Group Properties Tab")
 
     **HasStickyTitles = False**
 
-    ![](<images/sectiongroup-5-ss.png>)
+    ![Section Group with HasStickyTitles property set to False](images/sectiongroup-5-ss.png "Section Group Widget with Non-Sticky Titles")
 
     **HasStickyTitles = True**
 
-    ![](<images/sectiongroup-6-ss.png>)
+    ![Section Group with HasStickyTitles property set to True, showing sticky titles](images/sectiongroup-6-ss.png "Section Group Widget with Sticky Titles")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use Align Center UI Pattern to center content horizontally or vertically on the screen.
 
-![](<images/aligncenter-1.png>)
+![Illustration of Align Center UI Pattern in use](images/aligncenter-1.png "Align Center UI Pattern")
 
 **How to use the Align Center UI Pattern**
 
@@ -22,39 +22,39 @@ This example shows you how to center align a user's name and initials.
 
     The Align Center widget is displayed.
 
-    ![](<images/aligncenter-2-ss.png>)
+    ![Screenshot showing the Align Center widget in the ODC Studio Toolbox](images/aligncenter-2-ss.png "Align Center Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Align Center widget into the Main Content area of your application's screen.
 
-    ![](<images/aligncenter-3-ss.png>)
+    ![Screenshot of dragging the Align Center widget into the Main Content area](images/aligncenter-3-ss.png "Dragging Align Center Widget")
 
     By default, the Align Center widget contains a Content placeholder.
 
 1. From the Toolbox, drag the User Avatar pattern into Content placeholder.
 
-    ![](<images/aligncenter-9-ss.png>)
+    ![Screenshot of User Avatar pattern being dragged into Align Center's Content placeholder](images/aligncenter-9-ss.png "User Avatar in Content Placeholder")
 
 1. On the **Properties** tab, in the **Name** property, enter a name. In this example, we enter `Scott Richie`.
 
-    ![](<images/aligncenter-4-ss.png>)
+    ![Screenshot of the Properties tab with the Name property set to 'Scott Richie'](images/aligncenter-4-ss.png "Setting Name Property")
 
 1. Add any other relevant content to the Content placeholder. In this example we add some text (Scott Richie) and an image.
 
-    ![](<images/aligncenter-5-ss.png>)
+    ![Screenshot showing additional content added to the Content placeholder](images/aligncenter-5-ss.png "Adding Content to Placeholder")
 
 1. On the Align Center **Properties** tab, you can set the content's orientation (either vertical or horizontal).
 
-    ![](<images/aligncenter-6-ss.png>)
+    ![Screenshot of the Align Center Properties tab with content orientation options](images/aligncenter-6-ss.png "Content Orientation Setting")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 
 **Without Align Center UI Pattern** 
 
-![](<images/aligncenter-7-ss.png>)
+![Screenshot showing the app interface without the Align Center UI Pattern](images/aligncenter-7-ss.png "Without Align Center UI Pattern")
 
 **With Align Center UI Pattern**
 
-![](<images/aligncenter-8-ss.png>)
+![Screenshot showing the app interface with the Align Center UI Pattern applied](images/aligncenter-8-ss.png "With Align Center UI Pattern")
 
 ## Properties
 

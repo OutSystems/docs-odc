@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Carousel UI Pattern to display multiple items in a horizontal slide.  The Carousel Pattern optimizes screen space by displaying only a few images from a larger collection which you can view using the navigation controls. 
 
-![Example Carousel](images/carousel-example.png)
+![Example of a Carousel UI Pattern with multiple items in a horizontal slide](images/carousel-example.png "Carousel Example")
 
 <div class="info" markdown="1">
 
@@ -26,11 +26,11 @@ The Carousel Pattern is based on the Splide.js library (v3). For more informatio
   
      The Carousel widget is displayed.
 
-    ![Carousel widget](images/carousel-widget-ss.png)
+    ![Screenshot of the Carousel widget in the ODC Studio Toolbox](images/carousel-widget-ss.png "Carousel Widget in Toolbox")
 
 1. From the Toolbox, drag the Carousel widget into the Main Content area of your application's screen. 
 
-    ![Drag widget to the screen](images/carousel-dragwidget-ss.png)
+    ![Dragging the Carousel widget into the Main Content area of an application screen](images/carousel-dragwidget-ss.png "Dragging Carousel Widget to Screen")
 
     By default, the Carousel pattern contains a **CarouselItems** placeholder with a **List** widget and **Image** widget. If you want a Carousel with static images, you can remove the **List** widget and add your images inside the **CarouselItems** placeholder.
 
@@ -38,19 +38,19 @@ The Carousel Pattern is based on the Splide.js library (v3). For more informatio
 
     In this example, the List is deleted and 3 Image widgets are added.  
 
-    ![Add image widgets](images/carousel-addimages-ss.png) 
+    ![Adding three Image widgets to the Carousel Items placeholder](images/carousel-addimages-ss.png "Adding Image Widgets to Carousel") 
 
 1. Select the **Image** widget, and on the **Properties** tab, from the **Image** drop-down, select or import the image you want in the Carousel. 
 
     **Note:** In this example, the image property Type is set to **Local** image. You can also add External and Binary Data images.
 
-    ![Set image type](images/carousel-imagetype-ss.png)   
+    ![Setting the image property type to Local in the Carousel Image widget](images/carousel-imagetype-ss.png "Setting Image Property Type  in Carousel")   
 
 1. Repeat step 4 for each of the images in the Carousel. 
 
 1. You can configure the Carousel by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties, for example, **Navigation** or **ItemsPerSlide**.For more configurations, expand the **OptionalConfigs** property.
 
-    ![Set properties](images/carousel-properties-ss.png)  
+    ![Configuring Carousel properties such as Navigation and ItemsPerSlide in the Properties tab](images/carousel-properties-ss.png "Carousel Widget Properties Configuration")  
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

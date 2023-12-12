@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Chat Message UI Pattern to display conversational posts in notifications or chat screens. It can be used to display content such as photos, text, images, delivery times, and statuses.
 
-![](<images/chatmessage-3.png>)
+![Illustration of the Chat Message UI Pattern in a conversation](images/chatmessage-3.png "Chat Message UI Pattern")
 
 **How to use the Chat Message UI Pattern**
 
@@ -20,11 +20,11 @@ You can use the Chat Message UI Pattern to display conversational posts in notif
   
     The Chat Message widget is displayed.
 
-    ![](<images/chatmessage-1-ss.png>)
+    ![Screenshot showing the Chat Message widget in the ODC Studio Toolbox](images/chatmessage-1-ss.png "Chat Message Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Chat Message widget into the Main Content area of your application's screen.
 
-    ![](<images/chatmessage-2-ss.png>)
+    ![Screenshot of dragging the Chat Message widget into the Main Content area](images/chatmessage-2-ss.png "Dragging Chat Message Widget")
 
     By default, the Chat Message widget contains Image and Content placeholders.
 
@@ -32,13 +32,13 @@ You can use the Chat Message UI Pattern to display conversational posts in notif
 
     In this example, we add the user avatar to the Image placeholder and text to the Content placeholder. 
 
-    ![](<images/chatmessage-4-ss.png>)
+    ![Screenshot of adding user avatar and text to the Chat Message placeholders](images/chatmessage-4-ss.png "Customizing Chat Message Content")
 
     Alternatively, you can use, for example, a List to display a Chat Message for each message record on an entity. You can also use a form to allow users enter their messages. By using the relevant expressions and logic, once the user sends their message, refresh the list of messages so it appears as a conversational post.
 
 1. You can customize the Chat Message's look and feel by setting the (optional) properties on the **Properties** tab.
 
-    ![](<images/chatmessage-5-ss.png>)
+    ![Screenshot of the Properties tab for customizing the Chat Message's appearance](images/chatmessage-5-ss.png "Chat Message Properties Tab")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

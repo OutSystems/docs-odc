@@ -179,7 +179,7 @@ Delimiters
 *Outputs*
 
 List
-:   Type: RecordList of [Text](<#Structure_Text>).  
+:   Type: RecordList of [Text](#Structure_Text).  
     List of strings that results from splitting the original Text.
 
 ### StringBuilder_Append

@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the List Item Content UI Pattern to quickly organize critical content in a readable way, helping the user understand the content. The List Item Content pattern is often used to organize content such as icons, text, and actions inside a list in a readable way.
 
-![](<images/listitemcontent-1-ss.png>)
+![Screenshot of a List Item Content example in a mobile app](images/listitemcontent-1-ss.png "List Item Content Example")
 
 **How to use the List Item Content UI Pattern**
 
@@ -20,17 +20,17 @@ You can use the List Item Content UI Pattern to quickly organize critical conten
 
     The List Item Content widget is displayed.
 
-    ![](<images/listitemcontent-2-ss.png>)
+    ![Screenshot showing the List Item Content widget in the ODC Studio Toolbox](images/listitemcontent-2-ss.png "List Item Content Widget in Toolbox")
 
 1. From the Toolbox, drag the List Item Content widget into the Main Content area of your application's screen.
 
-    ![](<images/listitemcontent-3-ss.png>)
+    ![Screenshot of dragging the List Item Content widget into the Main Content area](images/listitemcontent-3-ss.png "Dragging List Item Content Widget")
 
 1. Add the relevant content to the placeholders.
 
     In this example, we add some texts and icons. 
 
-    ![](<images/listitemcontent-4-ss.png>)
+    ![Screenshot showing the addition of texts and icons to the List Item Content placeholders](images/listitemcontent-4-ss.png "Adding Content to List Item Content Widget")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

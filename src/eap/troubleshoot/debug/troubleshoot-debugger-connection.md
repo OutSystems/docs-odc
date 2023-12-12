@@ -36,11 +36,11 @@ If there are no available ports because they're in use or they're blocked (for e
 
 Check the following sections for more information on how to solve these issues:
 
-* [USB/Android Debugging not enabled in device](<#usbandroid-debugging-not-enabled-in-device>)
-* [Device not recognized by Windows](<#device-not-recognized-by-windows>)
-* [Incompatible USB mode selected in device](<#incompatible-usb-mode-selected-in-device>)
-* [USB Debugging was not allowed in device](<#usb-debugging-was-not-allowed-in-device>)
-* [More than one Android device is connected to your PC](<#more-than-one-android-device-is-connected-to-your-pc>)
+* [USB/Android Debugging not enabled in device](#usbandroid-debugging-not-enabled-in-device)
+* [Device not recognized by Windows](#device-not-recognized-by-windows)
+* [Incompatible USB mode selected in device](#incompatible-usb-mode-selected-in-device)
+* [USB Debugging was not allowed in device](#usb-debugging-was-not-allowed-in-device)
+* [More than one Android device is connected to your PC](#more-than-one-android-device-is-connected-to-your-pc)
 
 ### USB/Android Debugging not enabled in device { #usbandroid-debugging-not-enabled-in-device }
 
@@ -48,9 +48,9 @@ For the device to be detected by ODC Studio, you should start by having the USB 
 
 1. Navigate to the **Developer options** section inside the **Settings** and enable the **USB debugging** option.
 
-    ![](<images/device-usb-debugging.png>)
+    ![Screenshot showing the USB Debugging option enabled in the Developer options section of an Android device settings](images/device-usb-debugging.png "USB Debugging Option")
 
-    *Note:* If you don't have the **Developer options** section in **Settings**, check how to [enable **Developer options**](<https://developer.android.com/studio/debug/dev-options.html#enable>) on your device.
+    *Note:* If you don't have the **Developer options** section in **Settings**, check how to [enable **Developer options**](https://developer.android.com/studio/debug/dev-options.html#enable) on your device.
 
 ### Device not recognized by Windows { #device-not-recognized-by-windows }
 
@@ -64,49 +64,49 @@ After ensuring that the USB debugging option is enabled, you should check if the
 
 1. If your device is listed under **Other devices**, you need to install the correct drivers before proceeding:
 
-    ![](<images/device-unrecognized.png>)
+    ![Device Manager window showing an Android device listed under Other devices indicating it is not recognized by Windows](images/device-unrecognized.png "Device Not Recognized by Windows")
 
-To help Windows correctly detect the device, follow [this guide](<https://developer.android.com/studio/run/oem-usb.html>) to install the drivers provided by the manufacturer.
+To help Windows correctly detect the device, follow [this guide](https://developer.android.com/studio/run/oem-usb.html) to install the drivers provided by the manufacturer.
 
 If after following the guide mentioned above Windows still fails to recognize the device properly, try using the drivers provided by Google by taking these steps:
 
-1. Download the [Google USB Driver ZIP file](<https://developer.android.com/studio/run/win-usb.html>) and extract it (to the Desktop, for example).
+1. Download the [Google USB Driver ZIP file](https://developer.android.com/studio/run/win-usb.html) and extract it (to the Desktop, for example).
 
 1. Right-click on your device and select **Update Driver Software...**.
 
-    ![](<images/device-update-driver.png>)
+    ![Context menu with the option to Update Driver Software for an unrecognized Android device](images/device-update-driver.png "Update Driver Software")
 
 1. Choose **Browse my computer for driver software**.
 
-    ![](<images/device-browse-for-driver.png>)
+    ![Driver Software update window with the option to Browse my computer for driver software selected](images/device-browse-for-driver.png "Browse Computer for Driver Software")
 
 1. Choose **Let me pick from a list of device drivers on my computer**.
 
-    ![](<images/device-pick-driver-from-list.png>)
+    ![Window prompting to choose a device driver from a list on the computer](images/device-pick-driver-from-list.png "Pick from List of Device Drivers")
 
 1. Select **Show All Devices** and click **Next**.
 
-    ![](<images/device-show-all-devices.png>)
+    ![Device Manager window with the Show All Devices option highlighted](images/device-show-all-devices.png "Show All Devices")
 
 1. Choose the option **Have Disk...**, browse to the `usb_driver` folder located on the extracted folder and click **OK**.
 
-    ![](<images/device-install-from-disk.png>)
+    ![Install From Disk dialog box for selecting the driver to be installed for the Android device](images/device-install-from-disk.png "Install from Disk Option")
 
 1. Select **Android ADB Interface** and click **Next**.
 
-    ![](<images/device-android-adb-interface.png>)
+    ![List of device drivers with Android ADB Interface selected for installation](images/device-android-adb-interface.png "Android ADB Interface Selection")
 
 1. Confirm the installation of the driver by pressing **Yes**.
 
-    ![](<images/device-driver-warning.png>)
+    ![Windows Security warning dialog box during the driver installation process](images/device-driver-warning.png "Windows Security Warning")
 
 1. Install the driver by choosing **Install**.
 
-    ![](<images/device-driver-install-prompt.png>)
+    ![Prompt window asking for confirmation to install the Android device driver](images/device-driver-install-prompt.png "Driver Installation Prompt")
 
 When the installation completes, press **Close** and check that the device appears in Device Manager:
 
-![](<images/device-install-success.png>)
+![Screenshot showing the Android device now recognized in Device Manager after successful driver installation](images/device-install-success.png "Successful Driver Installation")
 
 ### Incompatible USB mode selected in device { #incompatible-usb-mode-selected-in-device }
 
@@ -115,11 +115,11 @@ The USB mode which the device is configured to use when connecting to a PC can a
 Depending on the version of Android and the manufacturer of the device, this option can be in different places.
 First of all, check if you have any notification referring to the USB mode, like the ones below:
 
-![](<images/device-usb-mode-1.png>)
+![Notification on an Android device indicating the current USB mode](images/device-usb-mode-1.png "USB Mode Notification")
 
-![](<images/device-usb-mode-2.png>)
+![Selection menu for USB mode on an Android device with options such as MTP, PTP, and Camera](images/device-usb-mode-2.png "USB Mode Selection")
 
-![](<images/device-usb-mode-3.png>)
+![USB configuration options on an Android device with different connection modes](images/device-usb-mode-3.png "USB Configuration Options")
 
 If you find these options, try to switch between them (`MTP`, `PTP` and `Camera` modes), disconnecting and reconnecting the device to the PC, and retrying the device discovery in ODC Studio.
 
@@ -130,7 +130,7 @@ Whenever an Android device is connected to a PC, a request to allow USB Debuggin
 
 If you get a pop-up on your device like the one below, just tap **OK** and try again on ODC Studio to detect the device:
 
-![](<images/device-allow-usb-debugging.png>)
+![Pop-up on an Android device asking to allow USB Debugging with an OK button](images/device-allow-usb-debugging.png "Allow USB Debugging")
 
 ### More than one Android device is connected to your PC { #more-than-one-android-device-is-connected-to-your-pc }
 
@@ -143,16 +143,16 @@ Ensure that you only have one Android device connected to your PC.
 
 Check the following sections for more information on how to solve these issues:
 
-* [iTunes is not installed on your PC](<#itunes-is-not-installed-on-your-pc>)
-* [Web Inspector is not enabled on your device](<#web-inspector-is-not-enabled-on-your-device>)
-* [PC is not trusted for debugging](<#pc-is-not-trusted-for-debugging>)
-* [More than one iOS device is connected to your PC](<#more-than-one-ios-device-is-connected-to-your-pc>)
+* [iTunes is not installed on your PC](#itunes-is-not-installed-on-your-pc)
+* [Web Inspector is not enabled on your device](#web-inspector-is-not-enabled-on-your-device)
+* [PC is not trusted for debugging](#pc-is-not-trusted-for-debugging)
+* [More than one iOS device is connected to your PC](#more-than-one-ios-device-is-connected-to-your-pc)
 
 ### iTunes is not installed on your PC { #itunes-is-not-installed-on-your-pc }
 
 One of the requirements for the debugger to work with iOS devices is the iTunes installation on the machine where ODC Studio is executing. Please make sure that you have it installed on your machine before trying to perform any debug session with an iOS device.
 
-[Download the latest version](<https://www.apple.com/itunes/download/>) from Apple's website.
+[Download the latest version](https://www.apple.com/itunes/download/) from Apple's website.
 
 _Note:_ If you installed iTunes from the Microsoft Store you must have iTunes running to be able to debug OutSystems mobile apps in iOS devices.
 
@@ -166,7 +166,7 @@ Do the following:
 
 1. Make sure that the "Web Inspector" option is turned **on**.
 
-    ![](<images/ios-web-inspector.png>)
+    ![iOS settings showing the Web Inspector toggle turned on under Safari > Advanced](images/ios-web-inspector.png "Web Inspector Toggle")
 
 ### Cookies can't be set during a debug session
 
@@ -176,9 +176,9 @@ Server action cannot set cookies during a debug session. When configuring cookie
 
 The final step to setup your device to be ready for debugging is to trust the PC so it can communicate with the device. To do so, tap **Trust** when the following pop-up appears on your device:
 
-![](<images/device-trust-computer.png>)
+![Pop-up on an iOS device asking to trust the computer with a Trust button](images/device-trust-computer.png "Trust This Computer")
 
-Check [Apple Support](<https://support.apple.com/en-us/HT202778>) for more information on trusted computers.
+Check [Apple Support](https://support.apple.com/en-us/HT202778) for more information on trusted computers.
 
 ### More than one iOS device is connected to your PC { #more-than-one-ios-device-is-connected-to-your-pc }
 

@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Separator UI Pattern to separate content clearly and ease visual organization.
 
-  ![Separator widget example](<images/separator-example.png>)
+  ![Example of a Separator widget used in a mobile app interface](images/separator-example.png "Separator Widget Example")
 
 **How to use the Separator UI Pattern**
 
@@ -20,17 +20,17 @@ You can use the Separator UI Pattern to separate content clearly and ease visual
 
     The Separator widget is displayed.
 
-    ![Separator](<images/separator-widget-ss.png>)
+    ![Screenshot showing the Separator widget in the ODC Studio Toolbox](images/separator-widget-ss.png "Separator Widget in Toolbox")
 
 1. From the Toolbox, drag the Separator widget into the Main Content area of your application's screen, where you want to separate content. In this example, we drag the widget in between 2 images.
 
-    ![Drag widget to screen](<images/separator-drag-ss.png>)
+    ![Process of dragging the Separator widget into the Main Content area of an application screen](images/separator-drag-ss.png "Dragging Separator Widget to Screen")
 
     By default, the pattern displays a horizontal line with the application’s primary color. 
 
 1. On the **Properties** tab, you can customize the Separator's look and feel by setting any of the optional properties, for example, the color and the amount of space separating the content.
 
-    ![](<images/separator-prop-ss.png>)
+    ![Screenshot of the Properties tab for customizing the Separator widget's appearance](images/separator-prop-ss.png "Separator Pattern Properties")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

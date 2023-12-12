@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Margin Container UI Pattern to add symmetrical padding around a container.
 
-![](<images/margincontainer-1-ss.png>)
+![Screenshot of the Margin Container UI Pattern in ODC Studio](images/margincontainer-1-ss.png "Margin Container UI Pattern")
 
 **How to use the Margin Container UI Pattern**
 
@@ -20,11 +20,11 @@ You can use the Margin Container UI Pattern to add symmetrical padding around a 
 
     The Margin Container widget is displayed.
 
-    ![](<images/margincontainer-2-ss.png>)
+    ![Display of the Margin Container widget in the ODC Studio Toolbox](images/margincontainer-2-ss.png "Margin Container Widget in Toolbox")
 
 1. From the Toolbox, drag the Margin Container widget into the Main Content area of your application's screen.
 
-    ![](<images/margincontainer-3-ss.png>)
+    ![Dragging the Margin Container widget into the Main Content area in ODC Studio](images/margincontainer-3-ss.png "Dragging Margin Container Widget")
 
     You can add as many Margin Container widgets as you want. In this example, we add 2.
 
@@ -32,7 +32,7 @@ You can use the Margin Container UI Pattern to add symmetrical padding around a 
 
     In this example we add an image widget to each of the placeholders and on the **Properties** tab, import an image using the **Image** dropdown.
 
-    ![](<images/margincontainer-4-ss.png>)
+    ![Adding an image widget to the Margin Container placeholders in ODC Studio](images/margincontainer-4-ss.png "Adding Content to Margin Container")
 
 After following these steps and publishing the module, you can test the pattern in your app.
 

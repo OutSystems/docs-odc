@@ -16,7 +16,7 @@ Resolve this kind of relationships by adding a third entity, called **junction e
 
 To create a many-to-many relationship, follow these steps:
     
-1. [Create a relationship entity](<../entity-create.md>).
+1. [Create a relationship entity](../entity-create.md).
 1. Add an attribute and set the data type to the identifier of the first entity.
 1. Add another attribute and set the data type to the identifier of the second entity.
 

@@ -18,43 +18,43 @@ You can use the Video UI pattern to embed a native video player into your applic
 
     The Video widget is displayed.
 
-    ![](<images/video-2-ss.png>)
+    ![Screenshot of the Video widget in the ODC Studio Toolbox](images/video-2-ss.png "Video Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Video widget into the Main Content area of your application's screen.
 
-    ![](<images/video-3-ss.png>)
+    ![Screenshot showing the Video widget being dragged into the Main Content area of an application screen](images/video-3-ss.png "Dragging Video Widget into Main Content Area")
  
 1. On the **Properties** tab, set the **VideoURL** property to the source video file you want to embed in your app. 
 
     * If using an external source file, insert the file URL.
 
-        ![](<images/video-4-ss.png>)
+        ![Screenshot of the Properties tab with the VideoURL property set to an external video file URL](images/video-4-ss.png "Setting VideoURL Property for External Source")
 
     * If using a local file, include the video in a app as a resource and use the runtime path as follows:
 
         1. On the **Data** tab, right-click the **Resources** folder and select **Import Resource**.
 
-            ![](<images/video-5-ss.png>)
+            ![Screenshot of the Data tab with the option to Import Resource into the Resources folder](images/video-5-ss.png "Importing Video Resource")
         
         1. Browse and select the video file you want to add and click **Open**.
 
         1. On the **Resource** properties tab, from the **Deploy Action** drop-down, select **Deploy to Target Directory**.
 
-            ![](<images/video-6-ss.png>)
+            ![Screenshot of the Resource properties tab with Deploy Action set to Deploy to Target Directory](images/video-6-ss.png "Setting Deploy Action for Video Resource")
 
         1. On the **Interface** tab, from the **Widget Tree**, select the Video pattern.
        
         1. In the **VideoURL** property, enter the runtime path of the video file.
 
-            ![](<images/video-7-ss.png>)
+            ![Screenshot showing the VideoURL property being set with the runtime path of the video file](images/video-7-ss.png "Entering Runtime Path in VideoURL Property")
     
             **Tip**: You can copy the runtime path from the Resource Runtime Path property tab.
 
-            ![](<images/video-8-ss.png>)
+            ![Screenshot of the Resource Runtime Path property tab with the runtime path available for copying](images/video-8-ss.png "Copying Runtime Path from Resource Properties")
 
 1. On the Video **Properties** tab, you can also define (optional) properties, such as the height and width of the video and the audio settings.
 
-    ![](<images/video-9-ss.png>)
+    ![Screenshot of the Video Properties tab with optional properties like height, width, and audio settings](images/video-9-ss.png "Defining Optional Video Properties")
 
 After following these steps and publishing the app, you can test the pattern in your app. 
        

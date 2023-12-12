@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Timeline Item UI Pattern to show related events in a chronological order, such as a user's upcoming, current, and past activities.
 
-![](<images/timelineitem-1-ss.png>)
+![Screenshot of the initial state of Timeline Item UI Pattern in ODC Studio](images/timelineitem-1-ss.png "Initial Timeline Item UI Pattern")
 
 **How to use the Timeline Item UI Pattern**
 
@@ -20,11 +20,11 @@ You can use the Timeline Item UI Pattern to show related events in a chronologic
 
     The Timeline Item widget is displayed.
 
-    ![](<images/timelineitem-2-ss.png>)
+    ![Display of the Timeline Item widget within the ODC Studio Toolbox](images/timelineitem-2-ss.png "Timeline Item Widget in Toolbox")
 
 1. From the Toolbox, drag the Timeline widget onto your application's screen.
 
-    ![](<images/timelineitem-3-ss.png?width=800>)
+    ![Process of dragging the Timeline widget onto the application screen in ODC Studio](images/timelineitem-3-ss.png "Dragging Timeline Widget to Screen")
 
     By default, the Timeline Item widget contains Left, Icon, Title, Content, and Right placeholders. You can add as many Timeline Item widgets as required.
 
@@ -34,7 +34,7 @@ You can use the Timeline Item UI Pattern to show related events in a chronologic
 
     In this example we add some icons and text.
 
-    ![](<images/timelineitem-4-ss.png>)
+    ![Example of adding icons and text to Timeline Item placeholders in ODC Studio](images/timelineitem-4-ss.png "Configuring Timeline Item Placeholders")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

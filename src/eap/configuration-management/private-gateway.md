@@ -40,7 +40,7 @@ Private Gateway requires the subscription of an add-on to the ODC Platform editi
 
 The following diagram shows a sample ODC customer setup for a Private Gateway that's active on two stages.
 
-![Private gateways diagram](images/private-gateways-diag.png "Private gateways diagram")
+![Diagram illustrating a sample OutSystems Developer Cloud customer setup for an active Private Gateway on two stages](images/private-gateways-diag.png "Sample ODC Customer Setup for a Private Gateway")
 
 Like the apps running in a stage, each Private Gateway benefits from automatic failover.
 

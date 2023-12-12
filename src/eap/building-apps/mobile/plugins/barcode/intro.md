@@ -26,11 +26,11 @@ OutSystems provides a demo app to help you learn how to use this plugin. Install
 * Use the a predefined UI block
 * Create a settings page
 
-![demo app main screen](images/sample-app-main.png?width=400)
+![Main screen of the Barcode Sample App demonstrating the user interface for scanning codes](images/sample-app-main.png "Demo App Main Screen")
 
 Here is the settings screen:
 
-![demo app settings screen](images/sample-app-settings.png?width=400)
+![Settings screen of the Barcode Sample App showing customizable options for scanning](images/sample-app-settings.png "Demo App Settings Screen")
 
 ## Creating a user interface
 
@@ -44,7 +44,7 @@ To create the logic to scan for barcodes, follow these steps in ODC Studio:
 
 2. To open the camera in your app for scanning, drag the **ScanBarcode** action to the flow.
 
-    ![Client action to scan a barcode](images/client-action-odcs.png)
+    ![ODC Studio flow showing the ScanBarcode client action for implementing barcode scanning logic](images/client-action-odcs.png "Client Action to Scan a Barcode")
 
     In the **ScanBarcode** action you can set scan instructions, back or front camera, or UI orientation, and enable the scan button. For more information about the **ScanBarcode** action, see [Scanning options](#scanning-options).
 

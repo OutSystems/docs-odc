@@ -10,7 +10,7 @@ figma:
 
 # Breakpoints
 
-A **breakpoint** in ODC Studio marks an element where the execution of a [thread](<threads.md>) is going to be suspended for debugging. 
+A **breakpoint** in ODC Studio marks an element where the execution of a [thread](threads.md) is going to be suspended for debugging. 
 
 Breakpoints can be added to all of the following elements (except for Comment elements):
 

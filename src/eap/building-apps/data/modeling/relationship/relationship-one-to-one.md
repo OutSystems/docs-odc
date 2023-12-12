@@ -16,7 +16,7 @@ A common scenario is when you want to extend an entity with more attributes and 
 
 To create a one-to-one relationship to an existing entity:
 
-1. [Create an Entity](<../entity-create.md>).
+1. [Create an Entity](../entity-create.md).
 1. Change the `Id` attribute to be the identifier of the entity you want to extend.
 1. Add the attributes.
 

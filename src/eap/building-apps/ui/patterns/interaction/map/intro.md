@@ -15,4 +15,4 @@ The OutSystems **Map** component allows you to add maps to your applications wit
 ## Static maps 
 Static maps are images that allow you to show simple maps. This type of map can be used in contexts where it is not possible to use a dynamic map, such as emails. Given its nature, it is not possible to interact with a static map or add elements, such as markers in runtime.
 
-![Map pattern in the preview screen](<images/map-overview.png>)
+![Preview screen showing the Map pattern in a static map context](images/map-overview.png "Map Pattern Preview")
