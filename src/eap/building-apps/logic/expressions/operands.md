@@ -1,13 +1,12 @@
 ---
-summary: Operands, in an expression, tell the platform which data to use. Read more about literals, variables, and functions.
-tags: 
+summary: An operand tells the platform which data to use to manipulate an expression.
+tags:
 locale: en-us
 guid: 6c363890-b0af-4d1c-92ae-1cb346aa6f7d
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3214%3A21846&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Operands
 
 An operand tells the platform which data to use to manipulate an expression. For example, in the expression `MyValue + 1`, `MyValue` and `1` are the operands. 

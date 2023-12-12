@@ -1,5 +1,5 @@
 ---
-summary: Use File Viewer Plugin to let users of your mobile app to view remote or app resource files.
+summary: File Viewer Plugin allows users to open remote or app resource files in mobile apps.
 tags:
 locale: en-us
 guid: 0e246269-47c6-47c6-ba92-308f35edcd40
@@ -7,7 +7,6 @@ app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7639&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # File Viewer Plugin
 
 <div class="info" markdown="1">

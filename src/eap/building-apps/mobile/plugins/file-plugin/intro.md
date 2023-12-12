@@ -1,13 +1,12 @@
 ---
-summary: Manage files and folders on a mobile device within the app sandbox.
-tags: 
+summary: File Plugin allows you to manage files and folders on a mobile device within the app sandbox.
+tags:
 locale: en-us
 guid: c2174075-3813-431b-8254-637c6a5e7d69
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7614&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # File Plugin
 
 <div class="info" markdown="1">

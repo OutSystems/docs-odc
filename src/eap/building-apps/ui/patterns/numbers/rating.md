@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Allows users to rate a particular item or service.
+tags:
+summary: The Rating UI Pattern allows users to rate products and services.
 locale: en-us
 guid: 31fc8803-e23e-4f60-8731-2fc03e5a51bf
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A20522&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Rating
 
 You can use the Rating UI Pattern to allow users rate, for example, products and services.

@@ -1,13 +1,12 @@
 ---
-summary: Display the same content on several screens by developing reusable Blocks.
-tags: 
+summary: Create and Reuse Screen Blocks to easily reuse parts of UI across apps.
+tags:
 locale: en-us
 guid: a62501dc-9ec8-41f6-add8-50b3e3934b8b
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A8810&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Create and Reuse Screen Blocks
 
 Use Blocks to reuse parts of UI across your apps. With Blocks you can have part of the UI in one place, so changes to the Blocks are automatically visible in all Screens that use it.

@@ -1,13 +1,12 @@
 ---
-summary: How to export text for translation and import back translated text.
-tags: 
+summary: You can export translatable resources to files and send them to a professional translation service.
+tags:
 locale: en-us
 guid: 9eb50227-4f61-4cd7-809c-c290804c7e07
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Translation management
 
 You can export translatable resources to files and send them to a professional translation service. Once you receive the translated files, import them into your app. You can also translate the resources yourself with the [translation editor](translation-editor.md).

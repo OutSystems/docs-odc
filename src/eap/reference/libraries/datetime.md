@@ -1,13 +1,12 @@
 ---
-summary: The OutSystems DateTime library provides actions to access and manipulate DateTime objects, such as retrieving the quarter of a specific date or determining if a date is set on a leap year.
-tags: 
+summary: The OutSystems DateTime library provides actions to access and manipulate DateTime objects.
+tags:
 locale: en-us
 guid: 9da728fe-ebdc-4114-af34-1ef4d2265e19
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # DateTime
 
 The OutSystems DateTime library provides actions to access and manipulate DateTime objects, such as retrieving the quarter of a specific date or determining if a date is set on a leap year.

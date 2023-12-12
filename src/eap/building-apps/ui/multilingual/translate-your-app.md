@@ -1,5 +1,5 @@
 ---
-summary: Translate your app directly from ODC Studio by translating the app text and then creating a language switcher.
+summary: Translate the interface of your app to other languages to let more users use your app.
 tags:
 locale: en-us
 guid: 93f5315e-72fa-45f2-97ad-9e676da413a3
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Translate your app
 
 Translate the interface of your app to other languages to let more users use your app.

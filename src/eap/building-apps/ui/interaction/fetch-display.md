@@ -1,13 +1,12 @@
 ---
-summary: Fetching data from the database using Aggregates.
-tags: 
+summary: Fetch and display data from the database in OutSystems
+tags:
 locale: en-us
 guid: 9072a3d9-8993-4b6a-98b7-2f623bcd78bc
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7751&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Fetch and display data from the database in OutSystems
 
 You often need to fetch data from a database to, for example, show it on the screen. An efficient way to fetch data from databases in OutSystems is to use an Aggregate.
@@ -30,11 +29,11 @@ This is an example of getting data with an Aggregate to a Screen. Both Aggregate
 
 1. Add a Screen to your app. Go to **Interface** > **UI Flows**, right-click **MainFlow** and select **Add Screen**. In the **New Screen** window select **Empty** (1), enter **Home** as the Screen name (2), then click **CREATE SCREEN** (3). ODC Studio adds an empty Screen to your app.
 
-    ![New screen window](images/new-screen-ss.png)
+    ![Screenshot of the New Screen window in ODC Studio with steps to create an empty screen named Home](images/new-screen-ss.png "Creating a New Screen in ODC Studio")
 
 1. Add data sources to your app by referencing some Entities in the **Public Elements** window (**Ctrl+Q**). Once you reference Entities, they're available in ODC Studio under **Data** > **Entities** > **Database**.
 
-    ![Database Entities in ODC Studio](images/database-entities-ss.png)
+    ![Screenshot showing how to reference Entities in ODC Studio under the Data section](images/database-entities-ss.png "Database Entities in ODC Studio")
 
     <div class="info" markdown="1">
 
@@ -46,11 +45,11 @@ This is an example of getting data with an Aggregate to a Screen. Both Aggregate
 
 1. It's time to load some data to the Screen. Go to **Interface** > **UI Flows** > **Main Flow**, and then right-click your **Home** Screen. Select **Fetch Data from Database**. A new Aggregate edit screen opens, and there's a notice that you need some data.
 
-    ![An empty Aggregate](images/fetch-data-aggregate-open-ss.png)
+    ![Screenshot of an empty Aggregate edit screen in ODC Studio indicating the need to add data](images/fetch-data-aggregate-open-ss.png "Starting an Aggregate in ODC Studio")
 
 1. With the Aggregate still open, navigate to **Data** > **Entities** > **Database** > **OutSystemsSampleDataDB**. Drag the **Sample_Employee** Entity to the Aggregate window. If you're using your data instead of OutSystems sample data, then drag some other Entity. ODC Studio shows the data preview in columns, and uses the Entity name to name the Aggregate.
    
-    ![Aggregate shows data preview](images/fetch-data-aggregate-with-entity-ss.png)
+    ![Screenshot of an Aggregate in ODC Studio showing a data preview with the Sample_Employee Entity](images/fetch-data-aggregate-with-entity-ss.png "Aggregate with Sample Employee Entity")
 
     <div class="info" markdown="1">
 
@@ -60,7 +59,7 @@ This is an example of getting data with an Aggregate to a Screen. Both Aggregate
 
 1. Go back to **Interface** > **UI Flows** > **Main Flow** > **Home** and notice the **GetEmployees** Aggregate in the Screen. Expand the Aggregate to see the Entities, and then expand the Entities to list the Attributes. There's also a warning that you're not using the data anywhere. Follow the instructions on [how to show the data in an app](#showing-data) to prevent the warning. 
 
-    ![Aggregate in the Screen](images/fetch-data-aggregate-in-screen-ss.png)
+    ![Screenshot of the Home Screen in ODC Studio displaying the GetEmployees Aggregate with Entity Attributes](images/fetch-data-aggregate-in-screen-ss.png "Aggregate Displayed in Home Screen")
 
 
 ## Show data in a widget
@@ -71,11 +70,11 @@ Once you fetch data from the database, use one of many OutSystems widgets to sho
 
 1. In the search bar, search for the **List** widget and drag the widget to the Screen. ODC Studio now shows an empty List widget.
 
-    ![A widget and screen](images/fetch-data-new-widget-ss.png)
+    ![Screenshot showing an empty List widget added to the Home Screen in ODC Studio](images/fetch-data-new-widget-ss.png "Adding a List Widget to the Screen")
 
 1. Click the List widget to select it, and go to the properties. In the **Source** field select **GetEmployees.List**. With this you're telling the app which data source to use with this widget.
 
-    ![Widget and the SOurce property](images/fetch-data-widget-with-data-source-ss.png)
+    ![Screenshot of a List widget's properties with the Source field set to GetEmployees.List in ODC Studio](images/fetch-data-widget-with-data-source-ss.png "Configuring the Source Property of a Widget")
 
     <div class="info" markdown="1">
 
@@ -85,8 +84,8 @@ Once you fetch data from the database, use one of many OutSystems widgets to sho
 
 1. With your List widget connected to a data source, add some Attributes to show data in the List. Expand the Entity to see the Attributes, under **Interface** > **UI Flows** > **Main Flow** > **Home** > **GetEmployees** > **Sample_Employee**. Drag an Attribute, for example, **LastName** to the List widget. This tells the widget to list all last names that are in the database.
 
-    ![Drag an Entity Attribute to the widget](images/fetch-data-drag-attribute-ss.png)
+    ![Screenshot illustrating the process of dragging the LastName Attribute from the Sample_Employee Entity to the List widget](images/fetch-data-drag-attribute-ss.png "Dragging an Entity Attribute to a List Widget")
 
 1. Publish your app and load it in the browser. There's a list widget listing the last names of the employees.
 
-    ![App running in the browser](images/fetch-data-browser.png)
+    ![Browser view of the app running with a list widget listing employee last names](images/fetch-data-browser.png "App Displaying Employee Last Names")

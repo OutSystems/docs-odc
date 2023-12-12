@@ -1,5 +1,5 @@
 ---
-summary: Delete apps and libraries through the ODC Portal, with the delete permission.
+summary: You can delete apps and libraries in OutSystems Developer Cloud (ODC) to keep your stage clean and find the ones you need faster.
 tags:
 locale: en-us
 guid: F5E3A7C3-EE70-42AC-A891-FFA5CC7AD64A
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Deleting apps and libraries
 
 During the development process, you may create apps or libraries for testing. As time goes on, you may no longer need these apps or libraries. OutSystems Developer Cloud (ODC) lets you safely delete apps, and libraries from stages such as  Development. You can't delete apps and libraries from your Production stage. Having a clean stage makes it faster to find the apps and libraries you need.

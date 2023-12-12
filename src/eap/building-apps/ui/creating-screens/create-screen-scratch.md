@@ -1,5 +1,5 @@
 ---
-summary: Screen is a building block of an app. You can create empty Screens or with some predefined content.
+summary: A Screen is a user interface (UI) element that contains other UI elements for users to interact.
 locale: en-us
 tags:
 guid: 7c01a3db-3807-4e86-bbbb-e88ba5c28346
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10561&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Create screen from scratch
 
 A Screen is a user interface (UI) element that contains other UI elements for users to interact. An empty Screen contains a basic layout for you to add widgets. A Screen based on a Screen Template has predefined content that works as a demo.
@@ -23,18 +22,18 @@ To create a Screen, follow these steps in ODC Studio:
 
 1. Go to the **Interface** tab, and then expand the **UI Flows** folder.
 
-    ![Interface tab UI Flows](images/interface-tab-ui-flows-odcs.png)
+    ![Screenshot of the Interface tab with UI Flows expanded in ODC Studio](images/interface-tab-ui-flows-odcs.png "Interface Tab and UI Flows in ODC Studio")
 
 1. From the **UI Flows**, right-click **MainFlow** and in the menu select **Add Screen**.
 
-    ![Add a Screen](images/add-screen-odcs.png)
+    ![Context menu in ODC Studio showing the option to Add Screen](images/add-screen-odcs.png "Adding a New Screen")
 
 1. Select one of the following:
     
     * **Empty**, to create an empty Screen
     * A Screen Template, to create a Screen based on a template
 
-    ![create Blank Screen](images/create-blank-screen-odcs.png)
+    ![Dialog in ODC Studio to create a new Screen with options for Empty or Template](images/create-blank-screen-odcs.png "Create Blank Screen Option")
 
 1. Optionally, enter a name in the **Screen name** field.
 

@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Animate adds default animations to emphasize elements as they appear on the screen.
+tags:
+summary: Use the Animate UI Pattern to create animations within your app.
 locale: en-us
 guid: bd23a378-5bd7-4fcb-8c53-5455b46be344
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A12821&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Animate
 
 You can use the Animate UI Pattern to create animations within your app. This UI pattern allows you to emphasize elements as they appear on screen which enhances the overall usability of the app.

@@ -1,13 +1,12 @@
 ---
-summary: Customize the URL of your exposed REST API methods according to your needs.
-tags: 
+summary: OutSystems allows you to customize the URL of your REST API methods according to your needs.
+tags:
 locale: en-us
 guid: 745374fa-efb6-4f96-a488-10a1830f519c
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Customize REST URLs
 
 

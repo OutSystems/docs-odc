@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Allows the user select a single value between two range values.
+tags:
+summary: The Range Slider UI Pattern allows users to select a value within a range.
 locale: en-us
 guid: 3004b9a7-ba25-42d8-8430-703d2be50470
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A16464&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Range Slider
 
 You can use the Range Slider UI Pattern to allow users select a single value between two range values. This pattern enables the adjustment of content within a predetermined range. Moving the slider along the track increases or decreases the value.  

@@ -1,13 +1,12 @@
 ---
 summary: Troubleshoot issues that can arise while connecting your mobile device to your PC for debugging purposes.
-tags: 
+tags:
 locale: en-us
 guid: e482b9b0-c2f0-4636-8a9f-97aac1755ba6
 app_type: mobile apps
 figma: https://www.figma.com/file/8RLmb1pp1PYm5xqtrnq5O8/Debugging-apps?type=design&node-id=2901%3A74&t=sdGPdlxTkpCARchu-1
 platform-version: odc
 ---
-
 # Troubleshoot debugger connection
 
 <div class="info" markdown="1">

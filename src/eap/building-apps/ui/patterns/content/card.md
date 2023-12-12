@@ -1,13 +1,12 @@
 ---
-tags:   
-summary: Card groups small pieces of information and highlights them on the screen.
+tags:
+summary: The Card UI Pattern is used to group small pieces of information and highlight them on the screen.
 locale: en-us
 guid: 594f6cef-f632-40c4-9ffc-2204252e6dd2
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A10485&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Card
 
 You can use the Cards UI Pattern to group small pieces of information and highlight them on the screen. The information is grouped into a small block that is easily noticeable on-screen.

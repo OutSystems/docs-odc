@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Section separates content into groups, easing visual organization.
+tags:
+summary: The Section UI Pattern is used to organize on-screen content into different sections.
 locale: en-us
 guid: 938450a3-c869-4c7b-82f2-7599c196d482
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A11352&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Section
 
 You can use the Section UI Pattern to organize on-screen content into different sections. This pattern can also be used with the Section Index UI Pattern to create anchors for each section.

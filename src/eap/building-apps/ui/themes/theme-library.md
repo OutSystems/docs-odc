@@ -1,5 +1,5 @@
 ---
-summary: How to share the same look and feel between apps
+summary: Use Theme Library for app branding
 tags:
 locale: en-us
 guid: ca470c96-62e3-4b1b-9279-af09006e8042
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10812&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Use Theme Library for app branding
 
 When you share a theme you increase consistency among your organization's apps. Using the same theme helps to increase brand awareness. This article provides guidance on how to create a theme library.

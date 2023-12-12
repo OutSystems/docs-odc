@@ -1,13 +1,12 @@
 ---
-summary: Use the expression editor to edit and validate expressions. The expressions editor shows the available elements, for example, variables and functions. It supports autocomplete and suggestions.
-tags: 
+summary: Edit expressions with the expression editor in ODC Studio
+tags:
 locale: en-us
 guid: 1ad176b7-bb78-41f9-ae4a-69d3e0e06a13
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3214%3A21844&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Edit expressions
 
 Edit expressions with the expression editor in ODC Studio. Launch the expression editor by double-clicking one of the following:  

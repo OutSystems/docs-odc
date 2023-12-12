@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22069&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Create email to send verification code
 
 <div class="info" markdown="1">
@@ -22,7 +21,7 @@ This article describes creating an email to send to the person registering to us
 
 Follow these steps to create your own email.
 
-![Base email screen](images/email-screen-odcs.png)
+![Screenshot of the base email template in OutSystems](images/email-screen-odcs.png "Base Email Screen")
 
 1. From the **Interface** tab, click **UI Flows**. Then from the Emails copy and paste the **ResetPassword** email into the same folder. This creates a copy of the Reset password in the emails folder named ResetPassword2.
 1. In the **Elements** tab, select Emails, and rename the email **ResetPassword2** to `UserRegistration`.
@@ -59,13 +58,13 @@ Follow these steps to create your own email.
 
     </div>
 
-    ![The delete password container](images/delete-password-container.png)
+    ![Image showing the container to be deleted in the email template](images/delete-password-container.png "Delete Password Container")
 
 1. Click on the **Widget** tree, and remove the following containers:
    1. Click on the **ResetPassword** parent container, to select and delete the container shown in the previous image.
    1. Click on the **Instruction** container, to select and delete the container.
 
-    ![The email final result](images/final_result-odcs.png)
+    ![Screenshot of the final email template after modifications](images/final_result-odcs.png "Email Final Result")
 
 ## Updating the actions
 
@@ -73,7 +72,7 @@ Before updating the actions, delete the input parameter **CustomerEmail** by exp
 
 1. From the **Logic** tab, click **server actions** > **DoSignup** action to display logic on canvas.
 
-    ![Go to DoSignup server action an set the UserRegistration email properties](images/user-registration-variables-odcs.png)
+    ![Diagram showing how to set user registration email properties in OutSystems](images/user-registration-variables-odcs.png "User Registration Variables")
 
 1. From the canvas, click **UserRegistration** element to display Properties panel. Set the following properties:
 
@@ -83,7 +82,7 @@ Before updating the actions, delete the input parameter **CustomerEmail** by exp
 
 1. From the **Interface tab**, click  the **SignUp screen** > **SignUpOnClick** action to display **SignUpOnClick** on the canvas.
  
-    ![SignUpOnClick client action go to DoSignUp an set the input parameters](images/signup-dosignup-input-parameters-odcs.png)
+    ![Flowchart detailing the SignUpOnClick client action input parameters in OutSystems](images/signup-dosignup-input-parameters-odcs.png "SignUp OnClick Client Action")
 
 1. From the canvas, click the **DoSignup** action to display the Properties panel, and confirm the following properties:
 

@@ -1,14 +1,12 @@
 ---
-summary: How to create a mobile package for distribution in app stores.
+summary: Create a mobile app package in ODC Portal to make your app available for users.
 tags:
 locale: en-us
 guid: 4e816fa7-fffc-48c4-b205-13f7165d3775
 app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2598&mode=design&t=TyGh9pLEHaqLAxxu-1
-
 ---
-
 # Create mobile app package
 
 After you can create a mobile app in ODC (OutSystems Developer Cloud) Studio, you can create a mobile app package in ODC Portal. The following list describes the overall process of making your app available for users: 

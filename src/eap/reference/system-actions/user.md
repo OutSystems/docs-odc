@@ -1,13 +1,12 @@
 ---
-summary: User actions for built-in and/or external identity providers.
-tags: 
+summary: User actions for built-in and/or external identity providers
+tags:
 locale: en-us
 guid: 0889c9fd-98dc-489d-a8ed-bea68946f0ac
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # User
 
 User actions for built-in and/or external identity providers.

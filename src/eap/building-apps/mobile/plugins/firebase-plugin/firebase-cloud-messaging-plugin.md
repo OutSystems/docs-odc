@@ -1,5 +1,5 @@
 ---
-summary: Use the Firebase Cloud Messaging plugin to set how notifications are sent, normal or silent, to your mobile app end-users.
+summary: The Firebase Cloud Messaging plugin allows you to send normal and silent notifications to your mobile app users.
 tags: article-page; runtime-mobile; support-application_development; support-Mobile_Apps; support-Mobile_Apps-featured
 locale: en-us
 guid: 22d6edad-3a83-44f8-abbf-81e0b2d02041
@@ -7,7 +7,6 @@ app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4352%3A160&mode=design&t=OmSDtxS14Ggp4J6f-1
 platform-version: odc
 ---
-
 # Firebase Cloud Messaging Plugin
 
 The Firebase Cloud Messaging plugin lets you set a notification experience that starts the Firebase cross-platform messaging solution. This plugin lets you send normal and silent notifications to your mobile app users. Normal notifications can include customizable actions and sounds.

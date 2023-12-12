@@ -1,13 +1,12 @@
 ---
 tags:
-summary: The Bottom Bar Item provides access to a bottom navigation drawer
+summary: The Bottom Bar Item UI Pattern provides access to a bottom navigation drawer and up to four actions.
 locale: en-us
 guid: a47f6440-0442-42ec-8674-e4cfb134957b
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A17038&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Bottom Bar Item
 
 You can use the Bottom Bar Item UI Pattern to provide access to a bottom navigation drawer and up to four actions, including the floating action button. Main pieces of core functionality are made available with one tap while allowing rapid switching between features.

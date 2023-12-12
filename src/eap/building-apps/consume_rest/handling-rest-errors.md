@@ -1,13 +1,12 @@
 ---
-summary: How to handle error responses returned by consumed REST APIs.
-tags: 
+summary: OutSystems allows you to handle REST API error responses by implementing your own logic
+tags:
 locale: en-us
 guid: 7cec44e7-afba-470f-ae17-1804d2b0ae4d
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21333&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Handling REST Errors
 
 When consuming a REST API method, if the service returns an HTTP error status code (400 and above), OutSystems throws an exception. This allows you to handle the REST API error response by implementing your own logic.

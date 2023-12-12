@@ -1,5 +1,5 @@
 ---
-summary: Plugins for your mobile apps.
+summary: Mobile plugins provide important functionalities to native mobile apps, such as notifications, camera access, and QR code scanning.
 tags:
 locale: en-us
 guid: 55ef1d73-dac8-48e6-8b15-dc6990779660
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Mobile plugins
 
 Plugins provide important functionalities to native mobile apps, letting you use many of the hardware capabilities of mobile devices. You can add notifications, use camera or global positioning services, read QR codes, and more.

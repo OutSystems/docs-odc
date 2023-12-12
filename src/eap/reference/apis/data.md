@@ -1,13 +1,12 @@
 ---
-summary: Learn how to populate your charts with fixed and variable data.
-tags: 
+summary: To add data to your chart, you can use fixed data or variable data.
+tags:
 locale: en-us
 guid: 773767d0-b1c3-4f06-a98c-b18205802786
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Data
 
 To add data to your chart you must input **DataPoint** labels and values for the **DataPointList** property.

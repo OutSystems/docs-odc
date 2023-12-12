@@ -1,5 +1,5 @@
 ---
-summary: Learn how to create multilingual Reactive Web and Mobile App with OutSystems.
+summary: Multilingual apps allow you to translate an app to other languages.
 tags:
 locale: en-us
 guid: ab798636-66c7-4ca9-88df-313bfa5cf8ef
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Multilingual apps
 
 With Multilingual web and mobile apps you can translate an app to other languages. Once the translations are available in the app, you can switch the language automatically or let users do it.

@@ -1,13 +1,12 @@
 ---
-summary: An expression is composed of operands and operators. Edit the expression in the expression editor or inline. Show the value of the expression in the expression widget. 
-tags: 
+summary: An expression consists of operands and operators, or just one operand.
+tags:
 locale: en-us
 guid: 1e04dcf4-f498-4359-b2ae-399e64abdd9e
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3214%3A21830&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Expressions
 
 An expression consists of operands and operators, or just one operand. For example, **n + 1** is an expression with two operands, **n** and **1**, joined by the addition operator +. 

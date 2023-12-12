@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Use the Map pattern to add Google Maps to your app.
+tags:
+summary: The OutSystems Map component allows you to add maps to your applications with single or multiple locations.
 locale: en-us
-guid: cdacfb9a-e989-424b-b3ed-5608dfa0d02c  
+guid: cdacfb9a-e989-424b-b3ed-5608dfa0d02c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A16272&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Map
 
 The OutSystems **Map** component allows you to add maps to your applications with single or multiple locations. The Map component is fully customizable, allowing you to, for example, change map behaviors, search for locations, and plan your route.

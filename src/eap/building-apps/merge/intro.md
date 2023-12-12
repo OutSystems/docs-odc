@@ -1,12 +1,11 @@
 ---
-summary:  Use the merge feature to integrate other developer's changes (visual and textual) into your app.
+summary: ODC Studio automatically merges differences if no conflicts exist.
 locale: en-us
 guid: ac454655-5a7f-47fb-8797-584d44f89894
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4002%3A173&mode=design&t=upO9mxr7in19rYkC-1
 ---
-
 # Merge the Work
 
 In an environment where many developers work on the same app, you often need to incorporate other people's changes. OutSystems Developer Cloud (ODC) Studio automatically merges differences if no conflicts exist. 

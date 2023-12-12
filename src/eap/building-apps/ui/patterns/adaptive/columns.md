@@ -1,13 +1,12 @@
 ---
-summary:  The Columns UI Pattern splits content into separate columns.
-tags: 
+summary: You can use the Columns UI Pattern to split content into separate columns.
+tags:
 locale: en-us
 guid: 2b4629ec-0dcd-4a8c-81a7-ade0ecf7ad9a
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A8947&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Columns
 
 You can use the Columns UI Pattern to split content into separate columns, improving the way information is displayed on-screen.

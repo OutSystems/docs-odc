@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Blank Slate informs end-users when they start using the application, complete a task or when there is no data available for display.
+tags:
+summary: The Blank Slate UI Pattern is used to inform end-users and display no data available.
 locale: en-us
 guid: 8f31ca3f-5223-4225-b292-304330d0e17e
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A10392&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Blank Slate
 
 You can use the Blank State UI Pattern to inform end-users, for example, to complete a task or when there is no data available for display etc.

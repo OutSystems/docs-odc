@@ -1,5 +1,5 @@
 ---
-summary: Learn more about editing data in ODC Studio
+summary: Edit data in ODC Studio allows you to modify entity records during app development.
 tags:
 locale: en-us
 guid: 7d4d3bb7-5419-482d-8feb-747de019a7a0
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4035%3A137&mode=design&t=3vXcogcuIh9sw9aQ-1
 platform-version: odc
 ---
-
 # Edit data in ODC Studio 
 
 After you create [entities to persist data](../data/modeling/entity-create.md), you can edit your app's data without leaving ODC Studio.

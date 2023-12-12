@@ -1,5 +1,5 @@
 ---
-summary: Learn how to use the SSL Pinning Plugin to provide an extra layer of security to HTTPS communications.
+summary: SSL Pinning Plugin provides extra security to HTTPS communications in mobile apps
 tags: runtime-mobile; support-application_development; support-Mobile_Apps;
 locale: en-us
 guid: 607a5bdb-b74e-4d53-88f6-a6ac8389873e
@@ -7,7 +7,6 @@ app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4307-248&mode=design&t=LCxHTNNeg6HjzPVf-0
 platform-version: odc
 ---
-
 # SSL Pinning Plugin
 
 <div class="info" markdown="1">
@@ -176,7 +175,7 @@ Go to the ODC Portal to complete the following steps in your mobile app.
 
 To add the SSL Pinning verification, ensure you have installed the SSL Pinning Plugin from [Forge](https://www.outsystems.com/forge/) in your stage. 
 
-  ![Adding SSL verification](images/add-ssl-pinning-verification-odcs.png)
+  ![Screenshot showing the process of adding SSL Pinning verification to a mobile app in ODC Studio](images/add-ssl-pinning-verification-odcs.png "Adding SSL Pinning Verification in ODC Studio")
 
 In ODC Studio, complete the following steps in your mobile app:
 

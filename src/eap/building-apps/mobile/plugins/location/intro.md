@@ -1,5 +1,5 @@
 ---
-summary: Location Plugin to enables your apps to access the GPS capabilities of the device. 
+summary: Use the Location Plugin to access GPS capabilities of user devices
 tags:
 locale: en-us
 guid: f2b0feab-c558-4d7f-b507-4511ae094677
@@ -7,7 +7,6 @@ app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7693&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Location Plugin
 
 Use the Location Plugin to enable an application to access the GPS capabilities of the user device, like latitude, longitude, and altitude. This plugin works with native mobile apps, progressive web apps (PWAs), and web apps.

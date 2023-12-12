@@ -1,5 +1,5 @@
 ---
-summary: Know when the app can update automatically, and when you need a new package for your users.
+summary: The article explains how to keep mobile apps up to date for users.
 tags:
 locale: en-us
 guid: 1ca55d98-3586-4c1f-843d-227b1c858502
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Keeping apps up to date for your users
 
 <div class="info" markdown="1">

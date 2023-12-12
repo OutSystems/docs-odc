@@ -1,6 +1,6 @@
 ---
-summary: Protect your mobile apps against tampering. OutSystems AppShield hardens the native mobile build, enabling the app to detect attempts of modification and misuse. Check out notes about Google Play app signing
-tags: 
+summary: AppShield is a licensed plugin that hardens the protection of native Android and iOS apps
+tags:
 locale: en-us
 guid: 5b3d48c3-ddcb-461c-a05d-414fceeb1eb4
 app_type: mobile apps
@@ -8,7 +8,6 @@ platform-version: odc
 helpids: 30472
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3963%3A21612&mode=design&t=TyGh9pLEHaqLAxxu-1
 ---
-
 # Harden the protection of mobile apps with AppShield
 
 <div class="info" markdown="1">

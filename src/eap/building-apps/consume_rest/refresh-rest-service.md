@@ -1,5 +1,5 @@
 ---
-summary: Change the services consumed from a REST Web Service; get the latest changes or modify the list of consumed methods in ODC Studio.
+summary: To refresh a REST API service in ODC Studio, expand the Integrations folder, right-click the REST API, and select Refresh REST API.
 tags:
 locale: en-us
 guid: 1ba6b838-04bc-4c08-813d-5a2901954f8c
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A12107&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Refresh a REST web service
 
 To change the services consumed from a REST API or to modify the list of consumed REST API methods, you can refresh the service in ODC Studio.

@@ -1,13 +1,12 @@
 ---
-summary: Learn how to use the debug features provided by OutSystems to easily find and troubleshoot semantic errors in your apps.
-tags: 
+summary: Debugging apps in ODC Studio allows you to pause execution at breakpoints and find issues in your logic design.
+tags:
 locale: en-us
 guid: bd64bfb4-afcf-4eb8-b87a-1923fd19524c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/8RLmb1pp1PYm5xqtrnq5O8/Debugging-apps?type=design&node-id=2901%3A72&t=sdGPdlxTkpCARchu-1
 platform-version: odc
 ---
-
 # Debugging apps
 
 Debug your app in ODC Studio by pausing the execution at [breakpoints](breakpoints.md), specific points in an app, and then running the logic step-by-step. This lets you find any issues in your logic design.

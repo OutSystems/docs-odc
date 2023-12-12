@@ -1,13 +1,12 @@
 ---
-summary: The OutSystems Sanitization library provides actions to avoid code injection in HTML, JavaScript and SQL snippets that need to include untrusted content (i.e. content gathered from end-users).
-tags: 
+summary: The OutSystems Sanitization library provides actions to avoid code injection in HTML, JavaScript, and SQL snippets.
+tags:
 locale: en-us
 guid: 09b3e01c-e0ee-4ead-be0e-3e30f2ca2262
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Sanitization
 
 The OutSystems Sanitization library provides actions to avoid code injection in HTML, JavaScript and SQL snippets that need to include untrusted content (i.e. content gathered from end-users).

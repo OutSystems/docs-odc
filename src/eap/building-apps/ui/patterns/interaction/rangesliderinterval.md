@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: the Range Slider Interval UI Pattern allows users select a single value between two range values.
+tags:
+summary: The Range Slider Interval Pattern allows users to select a single value between two range values.
 locale: en-us
 guid: aa015998-a6e2-48bb-a0cc-2c53b4df2832
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A16886&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Range Slider Interval
 
 You can use the Range Slider Interval Pattern to allow users select a single value between two range values. This pattern enables the adjustment of content by predetermined intervals and within a chosen range. Moving the slider along the track increases or decreases the value.
@@ -26,45 +25,45 @@ In this example, we create a Range Slider Interval that allows the user to selec
 
     The Range Slider Interval widget is displayed.
 
-    ![Range SLider Interval widget](images/rangesliderinterval-widget-ss.png)
+    ![Screenshot of the Range Slider Interval widget in ODC Studio](images/rangesliderinterval-widget-ss.png "Range Slider Interval Widget")
 
 1. From the Toolbox, drag the **Range Slider Interval** widget into the Main Content area of your application's screen, and on the **Properties** tab, enter the **MinValue**, **MaxValue**, **StartingValueFrom**, and **StartingValueTo** values. 
 
     In this example, we add static values.
 
-    ![Add mandatory values on the Properties tab](images/rangesliderinterval-dragwidget-ss.png)
+    ![Screenshot showing how to add mandatory values on the Properties tab for the Range Slider Interval](images/rangesliderinterval-dragwidget-ss.png "Adding Mandatory Values")
 
 1. To create a new client action, from the **OnValueChange** drop-down, select **New Client Action**.
 
-    ![Create a new client action](images/rangesliderinterval-clientaction-ss.png)
+    ![Screenshot illustrating the creation of a new client action for the Range Slider Interval](images/rangesliderinterval-clientaction-ss.png "Creating a New Client Action")
 
     By default, the **IntervalStart** and **IntervalEnd** input parameters are created.
 
-    ![Default input parameters created](images/rangesliderinterval-inputparameters-ss.png)
+    ![Screenshot of the default input parameters created for the Range Slider Interval client action](images/rangesliderinterval-inputparameters-ss.png "Default Input Parameters")
 
 1. From the Toolbox, drag the **Container** widget into the Main Content area of your application's screen, and add your content to the Container placeholder. 
 
     In this example, we add some text and an expression for each of the input parameters.
 
-    ![Add container with text and expressions](images/rangesliderinterval-container-ss.png)
+    ![Screenshot showing a container with text and expressions added to the Main Content area for the Range Slider Interval](images/rangesliderinterval-container-ss.png "Adding Container with Text and Expressions")
 
 1. To create a variable for each of the expressions, right-click your screen name, select **Add Local Variable**, and on the **Properties** tab, enter a name and data type. In this example we create the **LowerPrice** and **HighestPrice** variables with the **Currency** data type.
 
-    ![Create local variables](images/rangesliderinterval-locvar-ss.png)
+    ![Screenshot demonstrating how to create local variables for the Range Slider Interval](images/rangesliderinterval-locvar-ss.png "Creating Local Variables")
 
 1. To bind the **IntervalStart** variable to the expression, double-click the expression widget, and in the **Expression Value** editor, select the variable you just have created, and click **Close**.
 
-    ![Bind local variables](images/rangesliderinterval-bindvar-ss.png)
+    ![Screenshot showing the process of binding local variables to expressions in the Range Slider Interval](images/rangesliderinterval-bindvar-ss.png "Binding Local Variables")
 
 1. Repeat step 6 for the **IntervalEnd** input parameter.
 
 1. So that the parameters read the range slider selections, double-click your client action, and from the Toolbox, add the **Assign** action to the client action and set the variable and value assignments.
 
-    ![Add an assign to the client action](images/rangesliderinterval-assign-ss.png)
+    ![Screenshot of adding an assign action to the client action for the Range Slider Interval](images/rangesliderinterval-assign-ss.png "Adding an Assign to the Client Action")
 
 1. You can configure the  Range Slider Interval by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties, for example, the orientation. For more configurations, expand the **OptionalConfigs** property.   
 
-    ![Set optional properties](images/rangesliderinterval-properties-ss.png)
+    ![Screenshot showing how to set optional properties for the Range Slider Interval on the Properties tab](images/rangesliderinterval-properties-ss.png "Setting Optional Properties")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

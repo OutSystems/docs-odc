@@ -1,13 +1,12 @@
 ---
-summary: Displays a master list and the details for the currently selected item.
-tags: 
+summary: The Master Detail Pattern is used to display a master list of items and their related details.
+tags:
 locale: en-us
 guid: 2839f103-9cc0-4712-b9df-d3cd6cc805e9
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A9323&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Master Detail
 
 You can use the Master Detail Pattern to display a master list of items and their related details, for example, a list of employees and their corresponding details.

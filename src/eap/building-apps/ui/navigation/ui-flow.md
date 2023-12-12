@@ -1,5 +1,5 @@
 ---
-summary: UI Flow groups screens into logical units with common settings.
+summary: UI Flows is an element that groups Screens and Blocks in an app.
 tags:
 locale: en-us
 guid: f7e6d4a4-7d1e-4593-9975-b8e160df3780
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10564&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # UI Flows
 
 **UI Flow** is an element that groups Screens and Blocks. All instances of UI Flow in an app are under the **UI Flows** in the **Interface** tab.

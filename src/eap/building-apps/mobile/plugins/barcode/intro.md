@@ -1,13 +1,12 @@
 ---
-summary: Learn how to use the Barcode Plugin to scan barcodes and QR codes.
-tags: 
+summary: Use the Barcode Plugin to let users scan 1D and 2D barcodes in native mobile apps, PWAs, and web apps.
+tags:
 locale: en-us
 guid: a101532c-2d36-43f1-bb3e-6aeeb98fa395
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3202%3A7458&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Barcode Plugin
 
 Use the Barcode Plugin to let users of the app scan 1D and 2D barcodes. This plugin works with, native mobile apps, progressive web apps (PWAs) and web apps. Set the options in the plugin to customize the scanner, to add instructions, or change camera direction.

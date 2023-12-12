@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Alert gets the end-user's attention and highlights important information, errors or warnings on the screen.
+tags:
+summary: The Alert UI Pattern is used to highlight and display important information, errors, or warnings.
 locale: en-us
 guid: 1492d677-e96e-48f2-89af-1e0157058f58
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A10303&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Alert
 
 You can use the Alert UI Pattern to highlight and display important information, errors, or warnings.

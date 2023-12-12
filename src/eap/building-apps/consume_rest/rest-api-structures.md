@@ -1,13 +1,12 @@
 ---
-summary: Check how OutSystems creates and reuses Structures for consumed REST APIs.
-tags: 
+summary: OutSystems automatically creates Structures to define the input and output parameters of consumed REST API methods.
+tags:
 locale: en-us
 guid: f2d563a1-be66-42d3-b56f-ebfc33c32c9c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21329&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # REST API Structures
 
 When you consume REST API methods in your app, OutSystems automatically creates the Structures that define the information held by the input and output parameters. The name of each Structure is generated from:

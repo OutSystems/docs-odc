@@ -1,5 +1,5 @@
 ---
-summary: Learn more about threads in OutSystems.
+summary: Threads in OutSystems can be originated from server actions, client actions, awakened Timer actions, or integration methods.
 tags:
 locale: en-us
 guid: ab6189d5-3803-4f78-92ff-4072e356fc29
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Threads
 
 In OutSystems a **thread** may result from the following:

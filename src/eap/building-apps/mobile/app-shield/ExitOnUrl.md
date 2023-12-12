@@ -1,13 +1,12 @@
 ---
-summary: Inform app users of the reason why AppShield blocked an app. Define a URL that the app opens once the AppShield closes the app it suspects is modified or tampered with.
-tags: 
+summary: Configuring an exit URL for a blocked app allows you to inform users of the reason for app shutdown
+tags:
 locale: en-us
 guid: 4afd7e48-139b-4672-a1f9-ec8a1aadac75
 app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4725%3A140&mode=design&t=olEoleG2T5cjfzpt-1
 ---
-
 # Configuring an exit URL for a blocked app
 
 <div class="info" markdown="1">

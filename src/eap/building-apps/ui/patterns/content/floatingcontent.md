@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Floating Content displays a panel that floats over content (like a map or an image), docked to a screen corner or direction.
+tags:
+summary: Floating Content is a UI pattern that allows you to display content on top of other screen elements.
 locale: en-us
 guid: 12a78364-ee4e-4528-a0f7-239c9b0e31f9
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A11019&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Floating Content
 
 You can use the Floating Content UI Pattern to display content on top of other screen elements, such as a map with navigation instructions.

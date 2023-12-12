@@ -1,5 +1,5 @@
 ---
-summary: Replace data in screens created from screen templates or accelerators with your data. 
+summary: You can replace data in screens manually or automatically.
 tags:
 locale: en-us
 guid: 6fccfc68-813b-45a4-a938-4f740a10176c
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Replace data in screens
 
 Once you’ve built an app that contains screen templates or accelerators, you may want to replace the data in your screens with your own data. Data can be replaced [manually](#replace-data-manually) or [automatically](#replace-data-automatically). 

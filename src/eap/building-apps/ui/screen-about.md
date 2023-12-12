@@ -1,13 +1,12 @@
 ---
-summary: Learn how you can use screens to accelerate app development.
-tags: 
+summary: A screen is a user interface element that allows users to interact with an app.
+tags:
 locale: en-us
 guid: 573b9486-bcb4-4888-9be6-d3e8e96b6dc8
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2643&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Screens
 
 A screen is a user interface (UI) element that contains other UI elements (such as fields or labels) that enable users to interact with your app. You can create an empty screen, or from a screen template for a specific use case.

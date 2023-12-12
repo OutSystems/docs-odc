@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Displays an image thumbnail that can be clicked to open a fullscreen image.
+tags:
+summary: The Lightbox Image UI Pattern allows you to open thumbnail images in full screen mode.
 locale: en-us
 guid: 575c188f-fb02-4d70-8241-4b3e4518d66c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A15772&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Lightbox Image
 
 You can use the Lightbox Image UI Pattern to open smaller thumbnail images in full screen mode. This UI pattern is often used when creating an image gallery, allowing you to navigate through each of the images and view them in more detail.

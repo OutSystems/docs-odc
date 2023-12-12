@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Badge display numerical information as notification.
+tags:
+summary: The Badge UI Pattern is used to display numerical information as a notification.
 locale: en-us
 guid: d97db143-3239-44d4-bdf7-0c49483b6939
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A19032&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Badge
 
 You can use the Badge UI Pattern to display numerical information as a notification. For example, the Badge UI pattern is frequently used to notify users about the number of unread emails, unopened messages, or new tasks they may have.

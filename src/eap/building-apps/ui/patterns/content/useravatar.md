@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: User Avatar displays user information in a circular badge.
+tags:
+summary: The User Avatar UI Pattern allows displaying a user's initials or image in a circular badge.
 locale: en-us
 guid: 6b1585c5-c59f-48a2-9bb4-452a9932bbc4
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A11997&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # User Avatar
 
 You can use the User Avatar UI Pattern to display a user's initials or their image in a circular badge.

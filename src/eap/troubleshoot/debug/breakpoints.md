@@ -1,5 +1,5 @@
 ---
-summary: Breakpoints are used to suspend the execution of your application while troubleshooting and debugging issues.
+summary: Breakpoints in ODC Studio allow for suspending execution of threads for debugging.
 tags:
 locale: en-us
 guid: 2f4fd5a1-65ad-48ef-83b6-69bbfa851f53
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Breakpoints
 
 A **breakpoint** in ODC Studio marks an element where the execution of a [thread](threads.md) is going to be suspended for debugging. 

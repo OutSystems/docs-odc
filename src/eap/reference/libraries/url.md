@@ -1,13 +1,12 @@
 ---
-summary: The URL library provides actions to manipulate URLs, such as decoding them to text format or retrieving the URL host.
-tags: 
+summary: The OutSystems URL library provides actions to manipulate URLs.
+tags:
 locale: en-us
 guid: 0e709970-e4e6-4adb-9fa1-1b00fc851368
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # URL
 
 The OutSystems URL library provides actions to manipulate URLs, such as decoding them to text format or retrieving the URL host.

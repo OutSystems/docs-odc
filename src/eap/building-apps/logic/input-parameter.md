@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21492&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Input Parameter
 
 

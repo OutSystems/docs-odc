@@ -1,5 +1,5 @@
 ---
-summary: Create a form to validate the user's verification code and password.
+summary: This article describes how to create a form to validate a user's verification code and password.
 tags:
 locale: en-us
 guid: 64EC5395-D2E9-494A-A556-9547438D74B9
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22083&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Create a verification code and password verification form
 
 <div class="info" markdown="1">
@@ -30,12 +29,12 @@ This article describes how to create a form to validate a user's verification co
 1. On the Canvas, load the **SignUp** screen, then click the **Widget Tree** tab >  right-click the **SignupForm**, and select **Enclose in If**.
 1. In the Properties panel, set the **Condition** property as `IsVerificationCodeVisible`. Then right-click the **If** element and select **Swap Content**.
 
-    ![Swap content of the widget form](images/swap-if-content-odcs.png)
+    ![Screenshot showing how to swap content of the widget form in ODC Studio](images/swap-if-content-odcs.png "Swap Content of the Widget Form")
 
 1. From the **Interface** tab, load **SignUpOnClick** onto the canvas.
 1. From the Toolbox, drag an **Assign**  and place it in the True branch. In the **Assignment** Properties pane, in the variable field, enter  `IsVerificationCodeVisible` and set the value to  `True`.
 
-    ![Add assign to show verification code form](images/add-visible-activation-code-form-odcs.png)
+    ![Screenshot illustrating the addition of an assign action to display the verification code form in ODC Studio](images/add-visible-activation-code-form-odcs.png "Add Assign to Show Verification Code Form")
 
 ## Insert the header on the form
 
@@ -48,7 +47,7 @@ This article describes how to create a form to validate a user's verification co
    1. Replace the `span` tag with `h3`.
    1. Click the `h3` tag in the **SignUp** screen canvas and add the text `Welcome!`.
 
-    ![Add new header to the verification code form](images/add-new-form-header-odcs.png)
+    ![Screenshot depicting the process of adding a new header to the verification code form in ODC Studio](images/add-new-form-header-odcs.png "Add New Header to the Verification Code Form")
 
 1. From the canvas, right-click the **VerificationCodeForm** form and click **Insert** > **Container**.
 1. Set the **Name** as `Content` and  **Style Classes** as `"login-inputs margin-top-m"`. Then right-click the **Content** container and do the following:
@@ -65,7 +64,7 @@ This article describes how to create a form to validate a user's verification co
 1. From the **Interface** tab, right-click the **Content** container and click **Insert** > **Block**.
 1. In the **Source Block Window** that displays search for "AnimatedLabel", highlight the result and click **Select**.
 
-    ![Add Animation label component](images/add-new-block-animation-label-odcs.png)
+    ![Screenshot showing the addition of an Animated Label component to the form in ODC Studio](images/add-new-block-animation-label-odcs.png "Add Animated Label Component")
 
 ## Add the verification code
 
@@ -77,7 +76,7 @@ This article describes how to create a form to validate a user's verification co
     1. In the **Variable** property, from the dropdown, select **New Local Variable**.
     1. Name the new local variable `VerificationCode` and the data type as `Text`.
 
-    ![Add verification code](images/add-verification-code-odcs.png)
+    ![Screenshot demonstrating how to add a verification code input field in ODC Studio](images/add-verification-code-odcs.png "Add Verification Code")
 
 1. From the **Interface** tab, right-click the **Content** container and click **Insert** > **Block**. In the **Source Block Window** that displays search for "AnimatedLabel",and do the following:
     1. Highlight the result and click **Select**.
@@ -102,7 +101,7 @@ To ensure users follow the password policy you need to validate the password.
 1. From the Toolbox, drag an **Assign** widget to the canvas of the new client action.
 1. Under the **Assignments** pane, assign a variable `Input_Password.valid` as `IsValid`.
 
-    ![Validate password](images/select-input-password-valid-odcs.png)
+    ![Screenshot showing the validation of the password input field in ODC Studio](images/select-input-password-valid-odcs.png "Validate Password")
 
 1. Navigate to the **SignUp** form **Widget tree** and do the following:
     1. Copy the **Interaction\AnimatedLabel** block that contains the **Set password** label text and paste it to the **Content** container.
@@ -113,14 +112,14 @@ To ensure users follow the password policy you need to validate the password.
     3. In the **Variable** property, from the dropdown, select **New Local Variable**
     4. Name the new local variable `ConfirmPassword` with data type `Text`.
 
-    ![Add animation label for confirm password input field](images/confirm-password-overview-odcs.png)
+    ![Screenshot showing the addition of an animated label for the confirm password input field in ODC Studio](images/confirm-password-overview-odcs.png "Add Animation Label for Confirm Password Input Field")
 
 1. From the dropdown in the **Events** > **OnChange** property, select **New Client Action** and do the following:
     1. From the Toolbox, drag an **Assign** widget to the canvas of the new action.
     2. Change the **Name** property to `ValidatePassword`.
     3. Under the **Assignments** pane, assign a variable `Input_ConfirmPassword.Valid`. as `Password = ConfirmPassword` and a variable `Input_ConfirmPassword.ValidationMessage` as `If(Password = ConfirmPassword, "", "Passwords don't match")`.
 
-    ![Create the logic to validate confirm password](images/input-confirm-pass-validations-odcs.png)
+    ![Screenshot illustrating the creation of logic to validate the confirm password field in ODC Studio](images/input-confirm-pass-validations-odcs.png "Create the Logic to Validate Confirm Password")
 
 ## Modify the verification form
 
@@ -146,7 +145,7 @@ Now lets update the verification form to improve it.
     1. Search for FinishUserRegistration, select it, and then click **Select**.
     1. Set the **Email** `UserEmail`, **Password** as `Password`, and  **VerificationCode** as `VerificationCode`.
 
-    ![Create the logic to finish the registration flow](images/finish-registration-odcs.png)
+    ![Screenshot depicting the logic creation for finishing the registration flow in ODC Studio](images/finish-registration-odcs.png "Create the Logic to Finish the Registration Flow")
 
 ## Create the finishing logic
 
@@ -162,7 +161,7 @@ Now lets update the verification form to improve it.
     1. Click the **No Filters** tab and then click the **Add Filter** button.
     1. Inside the **Filter Condition** window, set `User.Email = Email`.
 
-    ![Verify if the email already exist or map with an user](images/grant-role-verify-email-odcs.png)
+    ![Screenshot showing the verification process to check if an email already exists or is mapped to a user in ODC Studio](images/grant-role-verify-email-odcs.png "Verify if the Email Already Exists or Map with a User")
 
  1. Navigate back to the **FinishUserRegistration** server action canvas.
  1. Drag an **If** widget and place it after the newly added aggregate widget and set the **Condition** as `GetUsersByEmail.List.Empty`.
@@ -170,7 +169,7 @@ Now lets update the verification form to improve it.
  1. On the canvas, in the True branch, add a LogMessage system action and set the Message to guide the user if there is a problem with the registration, such as "There were 0 entries in the data store."
  1. On the canvas, in the False branch, drag a **Run Server Action** widget, and search for Grant&lt;YOUR_ROLE_NAME&gt;Role. Set  the **UserId** as `GetUsersByEmail.List.Current.User.Id`.
 
-    ![Drag a GrantRole server action and add the user id](images/grant-role-values-odcs.png)
+    ![Screenshot illustrating how to drag a GrantRole server action and add the user ID in ODC Studio](images/grant-role-values-odcs.png "Drag a GrantRole Server Action and Add the User ID")
 
  1. From the Toolbox bar, drag a **Destination** element to the True branch. A **Select Destination** popup screen displays. Expand the **UI Flows** > **Common** folder and select **Login**.
  1. From the Toolbox, drag a **Message** widget to the False branch. Set **Type** as `Error` and in the **Message** paste the following text:
@@ -181,7 +180,7 @@ Now lets update the verification form to improve it.
             "Password not complex enough", "Something went wrong"))
     ```
 
-    ![Finish user registration with validations](images/finish-registration-message-odcs.png)
+    ![Screenshot showing the final user registration process with validations in ODC Studio](images/finish-registration-message-odcs.png "Finish User Registration with Validations")
 
  1. Load the **Signup** screen onto the canvas and do the following:
     1. Drag a new **Button** widget and place it below  the **Set Password** button.
@@ -189,7 +188,7 @@ Now lets update the verification form to improve it.
     1. Set **Style Classes** as `"btn margin-top-base"` and **Is Form Default** as **No**.
     1. Under **Styles** > **Layout**, set the **Width** property to `fill`.
 
-    ![Verification Code form overview](images/verification-code-overivew-odcs.png)
+    ![Screenshot providing an overview of the verification code form in ODC Studio](images/verification-code-overivew-odcs.png "Verification Code Form Overview")
 
  1. Open the widget tree for the **Login** screen. and do the following:
     1. Right-click the **LoginForm** and click **Insert** > **Container**.
@@ -197,6 +196,6 @@ Now lets update the verification form to improve it.
     1. From the Toolbox, drag a **Link** widget, and place it after the text.
     1. Set the **On Click** property as the **SignUp** screen and the text as `Sign up here!`.
 
-    ![Login page overview](images/login-screen-odcs.png)
+    ![Screenshot providing an overview of the login page in ODC Studio](images/login-screen-odcs.png "Login Page Overview")
 
 You have successfully built a self-registration app and can now improve it.

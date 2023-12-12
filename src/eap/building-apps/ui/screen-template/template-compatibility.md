@@ -1,5 +1,5 @@
 ---
-summary: You need a Screen Template compatible with your Theme to display the final page properly.
+summary: The article discusses theme compatibility in Screen Templates.
 tags:
 locale: en-us
 guid: 9d153217-df3d-488c-ad5c-22cdc196942d
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10563&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Theme compatibility in Screen Templates
 
 <a id="helpid-30171"></a>

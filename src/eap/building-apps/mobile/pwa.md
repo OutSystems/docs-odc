@@ -1,5 +1,5 @@
 ---
-summary: About progressive wep apps.
+summary: A progressive web app (PWA) provides a native-like experience without having to distribute a native mobile app.
 tags:
 locale: en-us
 guid: 0fc271c5-bb66-4ea9-a271-6905e3dfc160
@@ -7,7 +7,6 @@ app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2599&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Distribute as progressive web app
 
 A progressive web app (PWA) provides a native-like experience without having to distribute a native mobile app. PWA is an emerging technology that combines existing web technologies with modern browser features.
@@ -54,7 +53,7 @@ Follow these steps to install and run your PWA on an iOS device.
 
 1. Tap the Share button. The share menu opens.
    
-    ![Share button in Safari iOS](images/pwa-share-button-ios.png)
+    ![Screenshot showing the Share button in Safari on an iOS device for adding a PWA to the home screen](images/pwa-share-button-ios.png "Share Button in Safari on iOS")
 
 1. Tap **Add to home screen**. The confirmation screen opens.
 

@@ -1,5 +1,5 @@
 ---
-summary: Libraries provided by OutSystems that you can use to extend the capabilities of your apps.
+summary:
 tags:
 locale: en-us
 guid: ddb5aa99-a1cb-4c42-9836-fb1f483fc470

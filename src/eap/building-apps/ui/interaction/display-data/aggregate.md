@@ -1,5 +1,5 @@
 ---
-summary: 
+summary: Aggregates allow you to fetch data using an optimized query, tailored to your usage.
 tags:
 helpids: 17203
 locale: en-us
@@ -8,7 +8,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7877&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Aggregate
 
 Aggregates allow you to fetch data using an optimized query, tailored to your usage. Aggregates automatically absorb changes in the data model and can load the local database's data from the server. They support combining several entities and advanced filtering, and bring only the attributes that are used on the screen or action. Attributes also abstract the underlying model for the developer, allowing attribute renaming and changes to the data type.  
@@ -27,7 +26,7 @@ You can create Aggregates in Screens, Blocks, or Action flows.
 To load data on a Screen or Block, right-click the Screen or Block and select **Fetch data from Database**.  
 An empty Aggregate opens and ODC Studio displays a message on the empty Aggregate that you need to add an Entity.
 
-![Create new Aggregate](images/aggregate-create-ss.png)
+![Screenshot of ODC Studio with an option to create a new Aggregate by right-clicking a Screen or Block](images/aggregate-create-ss.png "Create new Aggregate")
 
 There are cases when you always need to fetch all records from the database, for example, to populate drop-down box lists. If you fetch all records using a Screen Aggregate, set the **Max. Records** higher than the maximum number of records you expect to fetch. Keep in mind that large amounts of data may slow down the user interface and degrade the responsiveness of the app.
 
@@ -35,7 +34,7 @@ There are cases when you always need to fetch all records from the database, for
 
 To add an Aggregate to an Action, drag an **Aggregate** from the toolbox to the flow. 
 
-![Add Aggregate to an Action](images/aggregate-server-side-ss.png)
+![Screenshot showing how to add an Aggregate to an Action by dragging it from the toolbox to the flow in ODC Studio](images/aggregate-server-side-ss.png "Add Aggregate to an Action")
 
 There are cases when you always need to fetch all records from the database, for example, to populate drop-down box lists. If you fetch all records using a Data Action, leave the **Max. Records** field empty. In Data Actions, the **Max. Records** value is optional. If you don't provide a value, the Data Action fetches all records from the database. 
 
@@ -46,7 +45,7 @@ There are cases when you always need to fetch all records from the database, for
 1. Drag one of the Entities to the Aggregate window.  
 ODC Studio populates the Aggregate with columns that correspond to the attributes of the Entity. Note that, for example, if your Entity is called **MyEntity**, the Aggregate is automatically called **GetMyEntity**.
 
-    ![Columns from database in Aggregate](images/database-columns-aggregate-ss.png)
+    ![Screenshot of ODC Studio displaying columns from a database entity added to an Aggregate](images/database-columns-aggregate-ss.png "Columns from database in Aggregate")
 
 ## How to add more data sources to an Aggregate
 
@@ -54,17 +53,17 @@ To add more data sources to your Aggregate, follow these steps:
 
 1. With the Aggregate open, in the **Sources** tab, click **Add source**.
 
-    ![Add a source to an Aggregate.](images/add-source-ss.png)
+    ![Screenshot illustrating the process of adding a new data source to an Aggregate in ODC Studio](images/add-source-ss.png "Add a source to an Aggregate")
 
 1. Click the source you want to add and then click **Select**.
 
-    ![Select source to add to the Aggregate.](images/select-source-ss.png)
+    ![Screenshot of the source selection interface in ODC Studio for adding to an Aggregate](images/select-source-ss.png "Select source to add to the Aggregate")
 
 1. Select the join type between your sources.  
 
     For more information, see [supported join types](supported-join-types.md).
 
-    ![Select join type between sources.](images/select-join-ss.png)
+    ![Screenshot showing the interface for selecting the join type between multiple sources in an Aggregate in ODC Studio](images/select-join-ss.png "Select join type between sources")
 
 ## Properties
 

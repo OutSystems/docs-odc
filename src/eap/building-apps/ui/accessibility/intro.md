@@ -1,13 +1,12 @@
 ---
-summary: Learn how to make your OutSystems Web applications accessible to everyone.
-tags: 
+summary: OutSystems provides built-in accessibility features for creating accessible apps
+tags:
 locale: en-us
 guid: 62770c36-d307-4a3a-ba01-acf10299454a
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4574%3A135&mode=design&t=Jvfv9vJci8R8xd4n-1
 platform-version: odc
 ---
-
 # Accessibility
 
 <div class="info" markdown="1">

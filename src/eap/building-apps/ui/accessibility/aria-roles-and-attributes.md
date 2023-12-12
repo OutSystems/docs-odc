@@ -1,5 +1,5 @@
 ---
-summary: Learn about Accessible Rich Internet Applications (ARIA) roles and attributes and how to add these in your applications.
+summary: Accessible Rich Internet Applications (ARIA) is a set of accessibility standards that provides additional information to assistive technology tools.
 tags:
 locale: en-us
 guid: 2dd1e5f8-9198-4f04-bc61-6a62073113e5
@@ -7,7 +7,6 @@ app_type: reactive web apps, mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=4582%3A521
 platform-version: odc
 ---
-
 # Accessible Rich Internet Applications roles and attributes
 
 Accessible Rich Internet Applications (ARIA) is a set of accessibility standards that defines elements to use on top of HTML and OutSystems UI to provide additional information to assistive technology tools. ARIA is a valuable tool for addressing accessibility challenges that go beyond what native HTML handles. There are ARIA roles, states, and properties. ARIA roles define the type of element and its purpose, states indicate the current condition or status of an element, and properties provide additional information about an element. ARIA states and properties are also known as ARIA attributes.

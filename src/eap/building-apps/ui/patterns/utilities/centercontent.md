@@ -1,13 +1,12 @@
 ---
 tags:
-summary: Use the Center Content pattern to align the content to the center of its container.
+summary: The Center Content UI Pattern is used to vertically align content to the center of its container.
 locale: en-us
 guid: a4890513-8edb-4155-8075-a2e68740e6f0
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A21058&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Center Content
 
 You can use the Center Content UI Pattern to vertically align content to the center of its container.

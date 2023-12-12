@@ -1,5 +1,5 @@
 ---
-summary: How to use the translation editor to translate your app in ODC Studio.
+summary: The translation editor in ODC Studio allows you to translate text and manage translations.
 tags:
 locale: en-us
 guid: af4a2233-5b33-4b4e-bf4c-e24216bcbb07
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3606%3A22179&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Translating with the translation editor
 
 The **translation editor** lets you translate text and manage your translation directly from ODC Studio. To open the editor go to the **Data** > right-click the **Multilingual Locales** folder > click **Edit Translations**.

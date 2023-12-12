@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Search allows the user to find pieces of content without the use of navigation.
+tags:
+summary: The Search UI Pattern allows users to find content by entering queries.
 locale: en-us
 guid: 1914dd20-040d-4a96-8293-e35756cb8e6a
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A17253&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Search
 
 You can use the Search UI Pattern to provide users with a search field. Use the Search UI Pattern to allow users find pieces of content by entering queries. Unlike navigation, knowledge of the content's location isn't required and searching is often the primary means of finding content.

@@ -1,5 +1,5 @@
 ---
-summary: Use the Payments plugin to let mobile app users access payments using Apple Pay or Google Pay.
+summary: Use the Payments Plugin to enable users to complete payments using Apple Pay or Google Pay.
 tags: runtime-mobile; support-application_development; support-Mobile_Apps;
 locale: en-us
 guid: e3086e25-ffd3-4660-8162-ee45350e0f3f
@@ -7,7 +7,6 @@ app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4313%3A327&mode=design&t=OmSDtxS14Ggp4J6f-1
 platform-version: odc
 ---
-
 # Payments plugin
 
 <div class="info" markdown="1">

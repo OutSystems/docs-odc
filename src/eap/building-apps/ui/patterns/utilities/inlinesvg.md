@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Inline SVG changes fill and stroke properties or animates the SVG paths.
+tags:
+summary: You can use the Inline SVG UI Pattern to change fill and stroke properties or animate the SVG paths.
 locale: en-us
 guid: 6db3a9a0-b82e-430c-b4b6-e5964bcd383f
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A21151&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Inline SVG
 
 You can use the Inline SVG UI Pattern to change fill and stroke properties or animate the SVG paths.

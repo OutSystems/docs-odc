@@ -1,12 +1,11 @@
 ---
-summary: Steps to merge differences into your module when there are conflicts.
+summary: Resolve conflicts when merging app revisions
 locale: en-us
 guid: 04cfd0b0-ab60-454e-a770-6a8d19f9974f
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4002%3A633&mode=design&t=lSXYmGomrMjw4KTt-1
 ---
-
 # Compare and merge example with conflicts
 
 In this example you are trying to publish an app, but a window **Modified revision detected** pops up. It seems that you and your fellow developer edited the app simultaneously. You select **Compare revisions** > **Merge and publish**, but there are conflicting changes between the local and the published versions of the app. 

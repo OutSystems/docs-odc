@@ -1,13 +1,12 @@
 ---
 tags:
-summary: Use the Button Loading pattern to call actions that don't run immediately.
+summary: Button Loading is a UI pattern that provides a visual hint and disables the button until it becomes available again.
 locale: en-us
 guid: a3269377-0c0c-440f-b194-d7409db9f481
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A20800&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Button Loading
 
 You can use the Button Loading UI Pattern to call actions that don't run immediately, provide a visual hint, and disable the button from being clicked until it becomes available again.

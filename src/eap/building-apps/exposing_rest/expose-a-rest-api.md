@@ -1,13 +1,12 @@
 ---
-summary: Expose a REST API to allow other systems to retrieve or manipulate information.
-tags: 
+summary: You can expose a REST API to allow other systems to retrieve or manipulate information.
+tags:
 locale: en-us
 guid: 22e6fa5b-6ad0-43bd-b530-dbb948e4c073
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Expose a REST API
 
 If you want to expose methods to allow other systems to retrieve or manipulate information, you can do it using a REST API.

@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Video allows you to embed a native video player.
+tags:
+summary: You can use the Video UI pattern to embed a native video player into your application.
 locale: en-us
 guid: c9dbb039-b648-4395-a19d-863c0fd4cfae
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A18358&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Video
 
 You can use the Video UI pattern to embed a native video player into your application.

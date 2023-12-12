@@ -1,13 +1,12 @@
 ---
-summary: Import data from Excel files to quickly have your data up and running in the application while developing it.
-tags: 
+summary: You can import data from an Excel file to load data to an entity.
+tags:
 locale: en-us
 guid: e2c6960b-b589-475a-b0e4-4792bba6a6be
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Bootstrap an Entity Using an Excel File
 
 You can import data from an Excel file to load data to an entity. This is useful when you are developing and testing your application. This way, you can quickly have your data up and running in the application while developing it.

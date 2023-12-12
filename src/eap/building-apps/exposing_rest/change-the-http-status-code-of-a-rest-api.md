@@ -1,13 +1,12 @@
 ---
 summary: How to send a specific HTTP Status Code in the response of an exposed REST API method.
-tags: 
+tags:
 locale: en-us
 guid: 3f3321ed-c2ce-4b0f-8e5a-c6920de4c41a
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21322&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Change the HTTP Status Code of a REST API
 
 OutSystems uses [a set of built-in HTTP Status Codes](./built-in-http-status-codes.md) in the Responses of your exposed REST API Methods.

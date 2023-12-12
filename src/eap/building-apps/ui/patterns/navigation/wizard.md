@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Wizard splits complex tasks and process into steps.
+tags:
+summary: The Wizard UI Pattern is used to split large complex tasks into smaller manageable steps.
 locale: en-us
 guid: 54acaa7b-794d-44d4-9b70-5cc2b4810ccc
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A18307&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Wizard
 
 You can use the Wizard UI Pattern to split large complex tasks and processes into smaller manageable steps. A wizard presents a series of steps or conditions that the user needs to complete in order to accomplish a goal. Additionally, wizards usually include explicit button navigation to move a step forward or backward. Some wizard examples include software installation wizards and sign-up screens.

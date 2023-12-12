@@ -1,5 +1,5 @@
 ---
-summary: UI reference for the Debugger Tab in ODC Studio.
+summary: The Debugger Tab in ODC Studio allows you to track threads being debugged and examine app elements and runtime values.
 tags:
 locale: en-us
 guid: 81645496-3038-4765-9092-e2ab5a7f413b
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/8RLmb1pp1PYm5xqtrnq5O8/Debugging-apps?type=design&node-id=2901%3A73&t=sdGPdlxTkpCARchu-1
 platform-version: odc
 ---
-
 # Debugger reference
 
 The Debugger Tab is in the lower pane of ODC Studio and allows you to track all threads being debugged and examine app elements and runtime values. This tab is automatically shown when the debugger is active and the execution flow hits a breakpoint.

@@ -1,5 +1,5 @@
 ---
-summary: How to change the look and feel of an app using themes
+summary: A theme allows you to style different parts of your app based on the context.
 tags:
 locale: en-us
 guid: d284fd25-cb3c-4b8f-a7b6-e44b9dff9a20
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10811&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Themes
 
 A theme gives you the ability to style various parts of your app differently depending on the context. Themes can be simple such as one that uses different colors and backgrounds or font sizes and icons. Using CSS, you can achieve the same results as a theme by piecing together various CSS variables in a context (such as black and white) to enable a better presentation of an app.

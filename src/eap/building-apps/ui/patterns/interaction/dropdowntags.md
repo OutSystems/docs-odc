@@ -1,5 +1,5 @@
 ---
-tags: 
+tags:
 summary: The Dropdown Tags UI Pattern offers multiple choice options to the user when using a dropdown search.
 locale: en-us
 guid: 91934a88-de31-437d-be9c-e2ca182835bb
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A15084&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Dropdown Tags
 
 The Dropdown Tags UI Pattern offers multiple choice options to the user when when using a dropdown search.

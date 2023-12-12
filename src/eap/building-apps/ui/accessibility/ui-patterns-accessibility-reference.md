@@ -7,7 +7,6 @@ app_type: reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4583-544&mode=design&t=iVonMVebdcf91Gwq-0
 platform-version: odc
 ---
-
 # UI Patterns accessibility reference
 
 The OutSystems UI is in accordance with the WCAG 2.1. However, the UI patterns can introduce complex UI interactions in the app. These interactions may not be intuitive to the users of assistive technologies.

@@ -1,13 +1,12 @@
 ---
-summary: Upload and download files in background.
-tags: 
+summary: File Transfer Plugin allows downloading and uploading files in mobile apps.
+tags:
 locale: en-us
 guid: d64fd114-f737-4eb1-b5b1-f334420dfce3
 app_type: mobile apps
 platform-version: odc
 figma:
 ---
-
 # File Transfer Plugin
 
 <div class="info" markdown="1">

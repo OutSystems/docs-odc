@@ -1,13 +1,12 @@
 ---
-summary: Links to additional accessibility resources (evaluation tools, screen readers, color and contrast checkers, practices)
+summary: Links to additional accessibility resources
 tags:
 locale: en-us
 guid: f456b33d-6e53-41ea-9b46-ccda0937aeb4
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
 ---
-
 # Links to additional accessibility resources
 
 A section with links to additional information.

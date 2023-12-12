@@ -1,13 +1,12 @@
 ---
-summary: Protect your mobile apps against tampering. OutSystems let's you create custom obfuscation rules to protect your apps against modification and misuse
-tags: 
+summary: Learn how to create custom obfuscation rules to secure your mobile apps from tampering.
+tags:
 locale: en-us
 guid: e0c476d7-f1ae-405e-8b3b-1c0c43cd38f3
 app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4743%3A132&mode=design&t=olEoleG2T5cjfzpt-1
 ---
-
 # Creating custom obfuscation rules
 
 <div class="info" markdown="1">

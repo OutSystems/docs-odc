@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: Timeline Item indicates related events in chronological order.
+tags:
+summary: The Timeline Item UI Pattern is used to display related events in chronological order.
 locale: en-us
 guid: e420ff2a-afcd-4ca6-9d65-9e42ee8d5213
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A18218&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Timeline Item
 
 You can use the Timeline Item UI Pattern to show related events in a chronological order, such as a user's upcoming, current, and past activities.

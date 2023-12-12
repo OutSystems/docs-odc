@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22064&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Create a screen for users to self-register
 
 To enable users to self-register to access your app, you can provide end-users with a login screen requiring them to enter their name and email address.
@@ -16,13 +15,13 @@ To create a self-registration flow, open ODC studio and follow the steps below:
 
 1. From the **Interface** tab, click **UI Flows**. Then from the Common folder copy and paste the Login screen into the same folder. This creates a copy of Login screen named Login2.
 
-    ![Copy login screen](images/copy-login-screen-odcs.png)
+    ![Screenshot showing how to copy the login screen in ODC studio](images/copy-login-screen-odcs.png "Copy Login Screen")
 
 1. From the Common folder, click the **Login2** screen to display the form settings
 
 1. On the form, change the name and title field to `Signup`, and for the description enter `screen where users sign up`.
 
-    ![Sign-up screen structure](images/page-structure-odcs.png)
+    ![Image illustrating the structure of the sign-up screen with fields renamed to 'Signup'](images/page-structure-odcs.png "Sign-up Screen Structure")
 
 1. From the **Interface** tab, click the **Widget Tree** > **Content** > **Container**, then rename LoginForm to `SignUpForm`.
 
@@ -31,7 +30,7 @@ To create a self-registration flow, open ODC studio and follow the steps below:
     1. Set the Style Classes property of the new container to `margin-bottom-base`.
     1. Rename the text in the old email label as Name.
 
-    ![Sign-up screen rename local variables](images/rename-local-variable-odcs.png)
+    ![Step-by-step process of renaming local variables on the sign-up screen in ODC studio](images/rename-local-variable-odcs.png "Rename Local Variables")
 
 1. From the **Elements** tab, click the **Sign-up screen** > **Under Variable** > **Add Local Variable** and name the new variable as `Name`, and the Data Type as `Text`.
 
@@ -47,6 +46,6 @@ To create a self-registration flow, open ODC studio and follow the steps below:
 
 1. In the Properties panel for the cancel button under the **Style classes** property set the value for **Is Form Default** to No. Replace the class btn btn-primary with `btn margin-top-base` and set the Width property to set Fill.
 
-    ![Sign-up delete useless code from Login screen.](images/delete-useless-code-odcs.png)
+    ![Example of deleting unnecessary code from the login screen to create a sign-up screen](images/delete-useless-code-odcs.png "Delete Useless Code")
 
 You can now [create logic to register a user.](logic.md)
