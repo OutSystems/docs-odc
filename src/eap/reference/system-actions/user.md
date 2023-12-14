@@ -355,6 +355,20 @@ Success
 
 StartUserRegistrationFailureReason
 :   Type: StartUserRegistrationFailureReason
+InvalidEmail:
+Data type: Boolean
+True if the email doesn't meet the internet message format standards.
+Is Mandatory :  No
+
+InvalidName
+Data type: Boolean
+True if the name doesn't meet one or more requirements: is unique, contains only letters, numbers, and spaces, has no special characters, and has between 1 and 50 characters.
+Is Mandatory :  No
+
+UserAlreadyRegistered
+Data type: Boolean
+True if the username/email already exists in the identity provider.
+Is Mandatory :  No
 
 VerificationCode
 :   Type: Text
