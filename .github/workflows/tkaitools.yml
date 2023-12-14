@@ -20,4 +20,5 @@ jobs:
         COMMENT_BODY: ${{ github.event.comment.body }}
         COMMENT_ID: ${{ github.event.comment.id }}
         TK_CICD_BRANCH: 'main'
+
     secrets: inherit
