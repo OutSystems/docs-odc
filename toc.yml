@@ -29,6 +29,8 @@
 # Building apps in ODC
 - href: eap/building-apps/intro.md
 - topics:
+    # Edit app and lib properties
+    - href: eap/building-apps/app-lib-properties-edit.md
     # Architecture
     - href: eap/building-apps/architecture/intro.md
     - topics:
