@@ -10,12 +10,6 @@ figma:
 
 # Configure custom domains for apps
 
-<div class="info" markdown="1">
-
-You don't need to purchase your own SSL certificates to use on OutSystems Developer Cloud (ODC). ODC doesn't accept customer certificates. Amazon Web Services (AWS) issues free certificates. To get an AWS certificate, follow the instructions in this article.
-
-</div>
-
 For each stage in which you deploy apps, ODC comes with a **built-in** OutSystems domain for end-user access. The table below shows built-in domains if you have three stages.
 
 
@@ -29,12 +23,6 @@ Apps are always accessible to end-users through built-in domains. For example, a
 
 In addition, ODC lets you make your apps accessible to end-users through your organization's domain(s). In a given stage, your apps can be available through one or more custom domains that you add to that stage. Each custom domain must be unique to a customer and stage.
 
-<div class="info" markdown="1">
-
-With ODC, customers don't need to purchase their own SSL certificates for use with Custom Domains. Instead, ODC will automatically issue `X.509` certificates once the ownership of a domain has been verified.
-
-</div>
-
 When you add a custom domain to a stage, all apps deployed to that stage are accessible through the domain. The following table shows a possible setup for a customer who has three stages and wants one custom subdomain for each stage:
 
 | Stage       | Custom domain    |
@@ -42,6 +30,12 @@ When you add a custom domain to a stage, all apps deployed to that stage are acc
 | Development | dev.example.com  |
 | Test        | test.example.com |
 | Production  | www.example.com  |
+
+<div class="info" markdown="1">
+
+ODC automatically issues X.509 certificates after verifying the domain ownership. You don't need to purchase SSL certificates for Custom Domains in ODC.
+
+</div>
 
 ## Add a custom domain
 
