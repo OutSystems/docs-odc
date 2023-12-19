@@ -40,7 +40,7 @@ The runtime of each app is loosely coupled. Consuming services from other apps i
 
 Containerization makes your apps highly scalable. Apps scale requests and users in an automated and transparent way. The app's database is also highly scalable. To learn more [click here](../../architecture/intro.md#auto-scaling-1).
 
-## Libraries in ODC
+## Libraries in ODC { #libraries}
 
 Libraries let you share code between apps. Libraries work similarly to packages such as NuGet in .NET or npm in JavaScript. Libraries keep the elements centralized, reducing maintenance cost and promoting ownership.
 
