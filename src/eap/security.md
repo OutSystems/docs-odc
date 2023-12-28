@@ -170,7 +170,7 @@ All the users with the Admin role in your ODC organization receive updates about
 
 ##### Manual patching
 
-Republish the app to trigger an upgrade process for an affected app manually. Open the app in ODC Studio and press the 1-Click Publish button.
+Republish the app to trigger an upgrade process for an affected app manually. Open the app in ODC Studio and press the 1-Click Publish button. This patches the app in the development stage. Promote the app to all other stages to ensure that the most secure version of the app is running in all stages. 
 
 ##### Malware scanning
 
