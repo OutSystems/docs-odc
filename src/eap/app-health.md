@@ -14,7 +14,7 @@ OutSystems Developer Cloud (ODC) provides an **App health** dashboard that monit
 
 The dashboard allows you to analyze key metrics, such as the [health score](#health-score), [requests](#requests),  [errors](#errors), and [response time](#response-time) of your apps and its elements over a period of time. The App health dashboard provides an overview of the app health of a selected stage, for up to 30 days.
 
-![Screenshot of the App Health Dashboard overview in ODC Portal showing health categories and key metrics](images/apphealth-dashboard-overview-pl.png "App Health Dashboard Overview")
+![](images/apphealth-dashboard-overview-pl.png "App Health Dashboard Overview")
 
 Based on the health score, the dashboard organizes the apps into **Critical**, **Moderate**, and **Good** categories allowing you to focus on the apps that are performing poorly. The dashboard also shows the apps, categorized by requests, errors, and response time.
 
