@@ -585,3 +585,7 @@
         - href: error/intc/os-intc-60005.md
         - href: error/intc/os-intc-60006.md
         - href: error/intc/os-dfqe-40004.md  
+    # Errors App and Library dependency errors
+    - href: error/aldi/intro.md
+    - topics:
+        - href: error/aldi/app_lib_depend_issues.md
