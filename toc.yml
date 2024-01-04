@@ -484,6 +484,8 @@
     - href: eap/reference/built-in-functions/organization.md
     - href: eap/reference/built-in-functions/text.md
     - href: eap/reference/built-in-functions/url.md
+  # Shortcuts
+  - href: eap/reference/shortcutkeys.md
   # APIs
   - href: eap/reference/apis/api-intro.md
   - topics:
@@ -570,7 +572,7 @@
         - href: error/pkgs/PKGS-40014.md
         - href: error/pkgs/PKGS-40015.md
         - href: error/pkgs/PKGS-40016.md
-        - href: error/pkgs/PKGS-40017.md
+        - href: error/pkgs/PKGS-40017.md    
         - href: error/pkgs/PKGS-40101.md
         - href: error/pkgs/PKGS-40102.md
         - href: error/pkgs/PKGS-50002.md
