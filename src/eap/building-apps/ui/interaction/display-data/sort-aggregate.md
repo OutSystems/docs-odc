@@ -23,6 +23,12 @@ To sort results in an aggregate with **dynamic sorting**, follow these steps:
 1. In the aggregate,from the Sorting panel,  click **Add Dynamic Sort**. The expected input is an expression of type Text. This value can be the result of a condition or other logic implemented in the expression itself.
 1. To refer to columns, select a **variable of type Text** previously defined from the Scope tree.
 
+<div class="info" markdown="1">
+
+For dynamic sorting, you must use the name of the group by or calculated attribute.
+
+</div>
+
 While defining expressions as values for your variable, you can specify:
 
 * **Calculated or grouped attributes**, using the pattern `AttributeName` for ascending order or `AttributeName DESC` for descending order.
