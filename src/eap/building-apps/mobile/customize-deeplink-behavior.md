@@ -1,0 +1,44 @@
+---
+summary: This article provides detailed information about customizing the behaviour of deeplink.
+tags:
+locale: en-us
+guid: 7ead36ce-4ee4-48e7-b8f8-3575d373f17b
+app_type: mobile apps
+platform-version: odc
+figma: 
+---
+
+# Customize Deeplink Behavior
+
+Prior to MABS 9, all deeplinks handled by a mobile app caused a reload of the page. In MABS 9 this behavior was changed, and deeplinks triggered a screen navigation.
+
+## Customizing the behavior
+
+You can customize the deeplink behavior using the `DeepLinksHandlerType` preference in the [extensibility configurations](extensibility-configurations-json-schema.md). The preference can have 4 different values:
+* `default`: performs a screen navigation to the URL *(the default behavior)*
+* `event`: fires an event to the `OSDeepLinksHandlerChannel` *(does not navigate)*
+* `function`: calls the `handleOpenURL` function *(does not navigate)*
+* `legacy`: loads the URL in the webview directly, which performs a page reload *(the behavior from MABS 8 and earlier)*
+
+In order to use the `event` and `function` options, the specific handler must be defined in a script loaded by the app module.
+
+Example for `event`:
+```
+var channel = cordova.require("cordova/channel");
+if (channel) {
+    channel.OSDeepLinksHandlerChannel.subscribe(function (url) {
+        ...
+    });
+}
+```
+
+Example for `function`:
+```
+window.handleOpenURL = function (url) {
+    ...
+}
+```
+
+## Distribution
+
+To make this change available for the users, [publish and generate a new mobile application](<./creating-mobile-package.md>) and distribute it.
