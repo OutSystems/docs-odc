@@ -78,6 +78,8 @@ For each Private Gateway, a list of connected endpoint(s) of the form `secure-ga
 
 For each endpoint you want to use in your app, follow the procedure under [Consume several methods of a REST API](../building-apps/consume_rest/consume-a-rest-api.md#consume-several-methods-of-a-rest-api--all-methods) using the swagger specification file for the endpoint. After you complete the procedure, replace the first part of **Base URL** setting with `https://secure-gateway:<port>/` if the endpoint is connected to `cloud-connector` over TLS/SSL or `http://secure-gateway:<port>/` if it's not.
 
+When connecting to endpoints over TLS/SSL, particularly when they're behind an API gateway, you may need to adjust the host header (`Host`) of the REST consume. This is because the app connects to `secure-gateway` and doesn't know the destination hostname of the endpoint directly. If the endpoint, like an AWS API Gateway, validates the `Host` header against its hostname, it may reject reqests due to the mismatch. To resolve, add an `OnBeforeRequest` callback in the REST consume. In the callback, explicitly set the host header to the value expected by the API Gateway, for example, `api.example.com`. This adjustment ensures that requests are correctly recognized by the API Gateway. For guidance on implementing a `OnforeRequest` callback see [Simple Customizations](../building-apps/consume_rest/simple-customizations.md).
+
 <div class="info" markdown="1">
 
 For security reasons, only the deployed app can access the `secure-gateway` domain in runtime, so you cannot test consuming the methods of the endpoint in ODC Studio.
