@@ -49,7 +49,7 @@ For the device to be detected by ODC Studio, you should start by having the USB 
 
     ![Screenshot showing the USB Debugging option enabled in the Developer options section of an Android device settings](images/device-usb-debugging.png "USB Debugging Option")
 
-    *Note:* If you don't have the **Developer options** section in **Settings**, check how to [enable **Developer options**](https://developer.android.com/studio/debug/dev-options.html#enable) on your device.
+    **Note:** If you don't have the **Developer options** section in **Settings**, check how to [enable **Developer options**](https://developer.android.com/studio/debug/dev-options.html#enable) on your device.
 
 ### Device not recognized by Windows { #device-not-recognized-by-windows }
 
@@ -137,23 +137,22 @@ Only one device from each platform (Android/iOS) can be connected to the PC for 
 
 Ensure that you only have one Android device connected to your PC.
 
-
 ## Issues While Connecting an iOS Device
 
 Check the following sections for more information on how to solve these issues:
 
-* [iTunes is not installed on your PC](#itunes-is-not-installed-on-your-pc)
+* [Missing programs and/or libraries](#missing-programs-andor-libraries--missing-programs-andor-libraries)
 * [Web Inspector is not enabled on your device](#web-inspector-is-not-enabled-on-your-device)
 * [PC is not trusted for debugging](#pc-is-not-trusted-for-debugging)
 * [More than one iOS device is connected to your PC](#more-than-one-ios-device-is-connected-to-your-pc)
 
-### iTunes is not installed on your PC { #itunes-is-not-installed-on-your-pc }
+### Missing programs and/or libraries { #missing-programs-and/or-libraries }
 
-One of the requirements for the debugger to work with iOS devices is the iTunes installation on the machine where ODC Studio is executing. Please make sure that you have it installed on your machine before trying to perform any debug session with an iOS device.
+If you are running ODC Studio on Windows, one of the requirements for the debugger to work with iOS devices is to have iTunes installed.
 
 [Download the latest version](https://www.apple.com/itunes/download/) from Apple's website.
 
-_Note:_ If you installed iTunes from the Microsoft Store you must have iTunes running to be able to debug OutSystems mobile apps in iOS devices.
+**Note**: If you installed iTunes from the Microsoft Store, you must have iTunes running to be able to debug OutSystems mobile apps on iOS devices.
 
 ### Web Inspector is not enabled on your device { #web-inspector-is-not-enabled-on-your-device }
 
