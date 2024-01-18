@@ -29,7 +29,7 @@ UPDATE | `UPDATE {Products}`<br/>`SET {Products}.[Name] = 'abc'`<br/>`WHERE {Pro
 
  You can read more information on PostgreSQL syntax in the [official documentation](https://www.postgresql.org/docs/).
 
-## Case and accent insensitive queries
+## Case and accent insensitive queries { #case-and-accent }
 
 You need to pay attention to how you write case and accent insensitive SQL queries. Aurora PostgreSQL is a case and accent sensitive database. To allow case and accent insensitive text operations (CIAI), PostgreSQL introduces the concept of [non-deterministic collations](https://www.postgresql.org/docs/12/collation.html).
 
