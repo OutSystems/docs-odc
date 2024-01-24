@@ -10,7 +10,7 @@ figma:
 
 # Errors
 
-Errors are organized by category. Within each category, errors are listed according to their error codes. Each error includes, the:
+Errors are organized by category. Within each category, errors are listed according to their error code, or by message. Each error includes, the:
 
 * Error message
 * Cause of the error
