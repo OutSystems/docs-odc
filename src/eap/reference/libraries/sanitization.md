@@ -1,13 +1,12 @@
 ---
-summary: The OutSystems Sanitization library provides actions to avoid code injection in HTML, JavaScript and SQL snippets that need to include untrusted content (i.e. content gathered from end-users).
-tags: 
+summary: The OutSystems Sanitization library provides actions to avoid code injection in HTML, JavaScript, and SQL snippets.
+tags:
 locale: en-us
 guid: 09b3e01c-e0ee-4ead-be0e-3e30f2ca2262
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Sanitization
 
 The OutSystems Sanitization library provides actions to avoid code injection in HTML, JavaScript and SQL snippets that need to include untrusted content (i.e. content gathered from end-users).
@@ -21,7 +20,7 @@ Returns a comma-delimited text value containing all the integer values provided 
 *Inputs*
 
 ValueList
-:   Type: RecordList of [IntegerLiteral](<#Structure_IntegerLiteral>). Mandatory.  
+:   Type: RecordList of [IntegerLiteral](#Structure_IntegerLiteral). Mandatory.  
     The list of integer values to include.
 
 *Outputs*
@@ -50,7 +49,7 @@ Returns a comma-delimited text value with the encoded version of all the text va
 *Inputs*
 
 ValueList
-:   Type: RecordList of [TextLiteral](<#Structure_TextLiteral>). Mandatory.  
+:   Type: RecordList of [TextLiteral](#Structure_TextLiteral). Mandatory.  
     The list of text values to include.
 
 *Outputs*

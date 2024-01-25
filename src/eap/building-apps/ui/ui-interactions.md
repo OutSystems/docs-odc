@@ -1,5 +1,5 @@
 ---
-summary: Introduction to user interface (UI) interactions and getting data to show in you app.
+summary: A user interface (UI) is where a user interacts and communicates with a device.
 tags:
 locale: en-us
 guid: 743F0F2C-6ADF-4A7A-899E-3802A1249925
@@ -7,7 +7,6 @@ app_type: reactive web apps
 platform-version: odc
 figma:
 ---
-
 # UI Interactions
 
 A user interface (UI) is where a user interacts and communicates with a device. Devices can include display screens, keyboards, and a mouse. It's also the way users interact with an app.

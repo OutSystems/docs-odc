@@ -1,5 +1,5 @@
 ---
-summary: Learn about integrating external databases with OutSystems Developer Cloud, managing connections, and selecting entities to use in your apps.~
+summary: Learn about integrating external databases with OutSystems Developer Cloud, managing connections, and selecting entities to use in your apps.
 helpids: 30483
 tags:
 locale: en-us

@@ -1,13 +1,12 @@
 ---
-summary: Operands, in an expression, tell the platform which data to use. Read more about literals, variables, and functions.
-tags: 
+summary: An operand tells the platform which data to use to manipulate an expression.
+tags:
 locale: en-us
 guid: 6c363890-b0af-4d1c-92ae-1cb346aa6f7d
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3214%3A21846&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Operands
 
 An operand tells the platform which data to use to manipulate an expression. For example, in the expression `MyValue + 1`, `MyValue` and `1` are the operands. 
@@ -47,7 +46,7 @@ You can use functions as operands. The following are some examples:
 * In `Sqrt(9) + 3`, **Sqrt()** is one of the built-in functions. 
 * In `MyFunction(1000) * 100`, **MyFunction()** is a user-defined function. 
 
-See [Built-in Functions](<../../../reference/built-in-functions/intro.md>) for more information.
+See [Built-in Functions](../../../reference/built-in-functions/intro.md) for more information.
 
 ## Example
 
@@ -57,4 +56,4 @@ The following is a screenshot showing an expression in the expression editor. Th
 * `MyInteger`: a local variable
 * `Sqrt()`: a built-in function
 
-![Screenshot showing an expression in the expression editor](images/operands-ss.png?width=650 "Expression Editor")
+![Screenshot showing an expression in the expression editor](images/operands-ss.png "Expression Editor")

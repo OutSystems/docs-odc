@@ -1,5 +1,5 @@
 ---
-summary: Learn what elements can be shared across app types to achieve a solid app architecture. 
+summary: You can share public elements across apps to accelerate development and enable consistency.
 tags:
 locale: en-us
 guid: 7e20ed99-3098-4d7c-b7fd-1a5794f8377d
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Reuse elements across apps
 
 You can share public elements across your apps to accelerate development and enable consistency. Sharing elements creates dependencies between producer and consumer apps.

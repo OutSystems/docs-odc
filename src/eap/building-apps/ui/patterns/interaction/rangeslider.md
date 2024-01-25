@@ -1,18 +1,17 @@
 ---
-tags: 
-summary: Allows the user select a single value between two range values.
+tags:
+summary: The Range Slider UI Pattern allows users to select a value within a range.
 locale: en-us
 guid: 3004b9a7-ba25-42d8-8430-703d2be50470
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A16464&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Range Slider
 
 You can use the Range Slider UI Pattern to allow users select a single value between two range values. This pattern enables the adjustment of content within a predetermined range. Moving the slider along the track increases or decreases the value.  
 
-![Example of a Range Slider](images/rangeslider-overview.png)
+![Overview of the Range Slider UI Pattern in a mobile app interface](images/rangeslider-overview.png "Range Slider Overview")
 
 <div class="info" markdown="1">
 
@@ -28,47 +27,47 @@ In this example, we create a Range Slider that allows the user select the number
 
     The Range Slider widget is displayed.
 
-    ![Range Slider widget](images/rangeslider-widget-ss.png)
+    ![Screenshot of the Range Slider widget in the ODC Studio Toolbox](images/rangeslider-widget-ss.png "Range Slider Widget in Toolbox")
 
 1. From the Toolbox, drag the Range Slider widget into the Main Content area of your application's screen.
 
-    ![Drag the widget to the application screen](images/rangeslider-dragwidget-ss.png)
+    ![Dragging the Range Slider widget into the Main Content area of an application screen](images/rangeslider-dragwidget-ss.png "Dragging Range Slider Widget")
 
 1. On the **Properties** tab, enter the mandatory minimum, maximum, and starting values. 
     
     In this example, we add static values.
 
-    ![Add mandatory values](images/rangeslider-prop-vals-ss.png)
+    ![Entering mandatory minimum, maximum, and starting values for the Range Slider in the Properties tab](images/rangeslider-prop-vals-ss.png "Adding Mandatory Values to Range Slider")
 
 1. To create an OnChange event, on the **Properties** tab, from the **Handler** drop-down, select **New Client Action**.
 
-    ![Create client action](images/rangeslider-clientaction-ss.png)
+    ![Creating an OnChange client action for the Range Slider in the Properties tab](images/rangeslider-clientaction-ss.png "Creating Client Action for Range Slider")
 
     By default, the **Value** input parameter is created.  
 
-    ![Value input parameter is created automatically](images/rangeslider-value-input-ss.png)
+    ![Automatically created Value input parameter for the Range Slider client action](images/rangeslider-value-input-ss.png "Value Input Parameter Creation")
 
 1. From the Toolbox, drag the **Container** widget into the Main Content area of your application's screen, and add your content to the Container placeholder.
 
     In this example we add some text and an expression.
 
-    ![Add a container with content to the screen](images/rangeslider-container-ss.png)
+    ![Adding text and an expression to a Container widget on the application screen](images/rangeslider-container-ss.png "Adding Content to Container")
 
 1. To create a variable for the expression, right-click your screen name, select **Add Local Variable**, and on the **Properties** tab, enter a name and data type (in this example, we use **Decimal**).
 
-    ![Create a local variable of type decimal](images/rangeslider-locvar-ss.png)
+    ![Creating a local variable of type Decimal for the Range Slider expression](images/rangeslider-locvar-ss.png "Creating a Local Variable")
 
 1. To bind the new variable to the expression, double-click the expression widget, and in the **Expression Value** editor, select the variable you just have created, and click **Done**.
 
-    ![Bind the variable to the expression](images/rangeslider-expression-ss.png)
+    ![Binding a local variable to the expression widget for the Range Slider](images/rangeslider-expression-ss.png "Binding Variable to Expression")
 
 1. So that the **Value** parameter reads the range slider selection, double-click your client action, and from the Toolbox, add the **Assign** action to the client action. Set the Assign **Variable** to the local variable you created, and the Assign **Value** to the automatically generated input parameter (Value).
 
-    ![Set the assign variables and values](images/rangeslider-assign-ss.png)
+    ![Setting the Assign action variables and values in the client action for the Range Slider](images/rangeslider-assign-ss.png "Setting Assign Variables and Values")
 
 1.  You can configure the Range Slider by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties, for example, the size. For more configurations, expand the **OptionalConfigs** property.
 
-    ![Set the optional properties](images/rangeslider-properties-ss.png)
+    ![Configuring optional properties of the Range Slider on the Properties tab](images/rangeslider-properties-ss.png "Configuring Range Slider Properties")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

@@ -54,7 +54,7 @@ Screen templates are available for all applications. The following is a list of 
 * **Lists** include templates for example to create a four-column gallery or a list with a chart
 * **Onboarding** includes templates for example to create screens for first time users with or without animation
 
-![screen templates](images/screen-templates-diag.png)
+![Diagram illustrating various screen templates available in OutSystems UI, including dashboards, details, forms, galleries, lists, and onboarding templates.](images/screen-templates-diag.png "Screen Templates Diagram")
 
 ## UI patterns
 
@@ -66,10 +66,10 @@ Additionally, you can change the structure to display something else or remove u
 
 UI patterns are available in many different categories such as content, navigation, and interaction. Following is a sample of some UI Patterns:
 
-![ui patterns](images/ui-patterns-sample-diag.png)
+![Sample diagram showcasing different UI patterns available in OutSystems UI, such as alert, wizard and, range slider.](images/ui-patterns-sample-diag.png "UI Patterns Sample Diagram")
 
 You can find many patterns in the toolbox of ODC Studio. Open a screen for editing and drag a pattern from the toolbox: 
   
-![Adding UI patterns to the screen](images/ui-patterns-screen-ss.png)
+![Screenshot of OutSystems Developer Cloud Studio interface displaying the UI patterns toolbox with various patterns ready to be dragged onto a screen.](images/ui-patterns-screen-ss.png "UI Patterns in ODC Studio")
 
 

@@ -1,5 +1,5 @@
 ---
-summary: Use Extensibility Configurations in the mobile app properties to edit a JSON and access more settings than available in the IDE.
+summary: Extensibility Configurations in OutSystems Developer Cloud (ODC) allows you to customize advanced settings for your mobile app.
 tags:
 locale: en-us
 guid: 941e56cf-aacf-43bf-9d1c-f131565036e6
@@ -7,7 +7,6 @@ app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2600&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Advanced configurations for mobile app
 
 Use Extensibility Configurations in the app properties to create a JSON with advanced configurations. Mobile Apps Build Service (MABS) in OutSystems Developer Cloud (ODC) uses the JSON as additional settings when creating your mobile package for iOS or Android. Extensibility Configurations lets you access options like defining a portrait or landscape orientation, splash screen, or a minimum mobile platform version.
@@ -27,7 +26,7 @@ Here are some functionalities you can change with Extensibility Configurations:
 
 In ODC Studio, open your mobile app, and under app properties go to **Advanced** > **Extensibility Configurations**. Double-click the field to open the editor.
 
-![Extensibility Configurations user interface](images/extensibility-configurations-editor-odcs.png)
+![Screenshot of the Extensibility Configurations editor in OutSystems Developer Cloud Studio with areas A, B, and C highlighted](images/extensibility-configurations-editor-odcs.png "Extensibility Configurations Editor in ODC Studio")
 
 The editor consists of the following:
 

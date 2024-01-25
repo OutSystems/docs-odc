@@ -1,5 +1,5 @@
 ---
-summary: How to change the look and feel of an app using themes
+summary: A theme allows you to style different parts of your app based on the context.
 tags:
 locale: en-us
 guid: d284fd25-cb3c-4b8f-a7b6-e44b9dff9a20
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10811&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Themes
 
 A theme gives you the ability to style various parts of your app differently depending on the context. Themes can be simple such as one that uses different colors and backgrounds or font sizes and icons. Using CSS, you can achieve the same results as a theme by piecing together various CSS variables in a context (such as black and white) to enable a better presentation of an app.
@@ -16,7 +15,7 @@ By default, an app theme is available in every app, enabling you to customize th
 
 In **UI Flows**, you can select a specific theme, giving you a different look and feel.
 
-![Application theme](images/application-theme-ss.png "Application theme")
+![Screenshot showing an example of an application theme in a user interface design](images/application-theme-ss.png "Application Theme Screenshot")
 
 ## Theme properties
 
@@ -44,7 +43,7 @@ Theme properties enable you to define some components of your themes to ensure c
 
 The **Theme Editor** is an alternative option to custom CSS. Use the **Theme Editor** to change a few basic properties like primary color, secondary color, font, or font-size. The **Theme Editor** is an option that doesn't require knowledge of CSS. It's a straightforward wizard configuration that gets translated as an app theme. Behind the scenes, every change you make in the **Theme Editor** gets converted into a specific theme with custom CSS inside that you can't change directly.
 
-![Theme Editor](images/theme-editor-ss.png "Theme Editor")
+![Screenshot of the theme editor interface with options to customize primary color, secondary color, font, and font-size](images/theme-editor-ss.png "Theme Editor Screenshot")
 
 ## Theme libraries
 

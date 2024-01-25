@@ -1,5 +1,5 @@
 ---
-summary: Learn about Entities in OutSystems.
+summary: Entities in OutSystems are elements that allow you to persist information in the database and implement your database model.
 tags:
 locale: en-us
 guid: 7bf1d47d-7310-4ec8-a5db-a41b983bdb5b
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Entities
 
 Entities are elements that allow you to persist information in the database and to implement your database model. You can think of them as database tables or views. 

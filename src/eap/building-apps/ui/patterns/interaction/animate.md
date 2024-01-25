@@ -1,18 +1,17 @@
 ---
-tags: 
-summary: Animate adds default animations to emphasize elements as they appear on the screen.
+tags:
+summary: Use the Animate UI Pattern to create animations within your app.
 locale: en-us
 guid: bd23a378-5bd7-4fcb-8c53-5455b46be344
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A12821&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Animate
 
 You can use the Animate UI Pattern to create animations within your app. This UI pattern allows you to emphasize elements as they appear on screen which enhances the overall usability of the app.
 
-![](images/animation.gif)
+![Animated GIF showing the default animation effect in an app](images/animation.gif "Default Animation Example")
 
 **How to use the Animate UI Pattern**
 
@@ -20,11 +19,11 @@ You can use the Animate UI Pattern to create animations within your app. This UI
 
     The Animate widget is displayed.
 
-    ![](<images/animate-3-ss.png>)
+    ![Screenshot of the Animate widget in the ODC Studio Toolbox](images/animate-3-ss.png "Animate Widget in Toolbox")
 
 1. From the Toolbox, drag the Animate widget into the Main Content area of your application's screen.
 
-    ![](<images/animate-1-ss.png>)
+    ![Dragging the Animate widget into the Main Content area of an application screen](images/animate-1-ss.png "Dragging Animate Widget")
 
     By default, the Animate widget contains a Content placeholder.
 
@@ -32,11 +31,11 @@ You can use the Animate UI Pattern to create animations within your app. This UI
 
     In this example, we add an image by dragging the Image widget into the Content placeholder, and on the **Properties** tab, from the **Image** dropdown, selecting image from the sample OutSystems UI images.
 
-    ![](<images/animate-4-ss.png?width=800>)
+    ![Adding an image to the Content placeholder of the Animate widget](images/animate-4-ss.png "Adding Content to Animate Widget")
 
 1. Select the Animate widget, and on the **Properties** tab, set the relevant properties, for example, where you want the animation to enter the screen and at what speed.
 
-    ![](<images/animate-5-ss.png>)
+    ![Setting properties of the Animate widget in the Properties tab](images/animate-5-ss.png "Setting Animate Widget Properties")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

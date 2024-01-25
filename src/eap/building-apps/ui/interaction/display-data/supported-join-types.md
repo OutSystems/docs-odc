@@ -1,13 +1,12 @@
 ---
-summary:
-tags: 
+summary: Different join types in data querying.
+tags:
 locale: en-us
 guid: edee2ac8-5d4c-4423-9e26-cce4b0f45f4c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A8518&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Supported join types
 
 Usually your data is not stored in a single Entity. So, when performing queries on the data, you need to combine the records that is stored in multiple Entities. This is also known as joining records from multiple Entities.
@@ -21,13 +20,13 @@ To do this, just drag the entities into your aggregate. They are automatically j
 
 In the examples below we will combine the following two entities:
 
-![](images/originaltables.png)
+![Screenshot of two original database tables before joining](images/originaltables.png "Original Tables")
 
 ## Only fetch records with a match
 
 To only retrieve Issues that have an Engineer assigned, use **Only With**.
 
-![](images/onlywith-example.png)
+![Example of 'Only With' join showing matched records between Issues and Engineers](images/onlywith-example.png "Only With Join Example")
 
 Notice how Issues that have no Engineer assigned yet are not returned.
 
@@ -37,7 +36,7 @@ To retrieve all Issues regardless of whether they have an Engineer assigned to t
 
 In this join type the order of the Entities in the join condition makes a difference in the returned rows. The idea is to retrieve all records from the first entity, and combine the rows of the second entity to them. So if you swap the order of the Entities, you will get a different result.
 
-![](images/withorwithout-difference.png)
+![Illustration of 'With or Without' join difference with order of entities affecting the result](images/withorwithout-difference.png "With or Without Join Difference")
 
 Notice that for the Issues that have no Engineer assigned, the columns with the Engineer information contain the default values.
 
@@ -45,7 +44,7 @@ Notice that for the Issues that have no Engineer assigned, the columns with the 
 
 To fetch all Issues and all Engineers, even if there is no match between them, use **With**.
 
-![](images/with-example.png)
+![Example of 'With' join fetching all records from Issues and Engineers regardless of matches](images/with-example.png "With Join Example")
 
 Notice that for Issues without an engineer assigned, the columns with the engineer information contain the default values.
 
@@ -59,6 +58,6 @@ To combine each record from an entity with all records of a second entity (for e
 
 To pair each team with their adversaries, add the Team entity twice to your aggregate.
 
-![](images/crossjoin-example.png)
+![Example of a cross join pairing each team with every adversary team](images/crossjoin-example.png "Cross Join Example")
 
 Then filter the aggregate to ensure that a team is not paired up with itself.

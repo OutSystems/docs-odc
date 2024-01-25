@@ -1,5 +1,5 @@
 ---
-summary: Learn how to customize UI styles to create a unique look and feel to your apps.   
+summary: Customize UI styles to create visually appealing and user-friendly apps.
 tags:
 locale: en-us
 guid: A15EFAFE-CE22-4974-B90E-CB0E18D263B1
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Customize UI styles
 
 Users interact with your apps through the user interface (UI). As a developer, your goal is to follow UI standards defined by your organization but also to create an app that looks good and is easy to use.

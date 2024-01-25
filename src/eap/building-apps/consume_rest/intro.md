@@ -1,14 +1,13 @@
 ---
-summary: Consume REST APIs in your OutSystems applications.
+summary: Consume REST APIs in your application by understanding the API documentation and gathering necessary information.
 helpids: 30484
-tags: 
+tags:
 locale: en-us
 guid: b7e2daa5-b34c-4907-885b-56574bf14295
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Consume REST APIs
 
 When you need to retrieve or manipulate information from another system, and that system provides REST APIs for that effect, you can consume a REST API in your application.  
@@ -36,7 +35,7 @@ REST APIs using **Basic Authentication** are supported out of the box in the "Co
 
 ## Mapping REST data types to OutSystems data types
 
-When [consuming REST API Methods](<./consume-a-rest-api.md>) in your app, OutSystems automatically generates the Structures for the Request and Response from the example you provide for them and maps the attributes into OutSystems Data Types as follows:
+When [consuming REST API Methods](./consume-a-rest-api.md) in your app, OutSystems automatically generates the Structures for the Request and Response from the example you provide for them and maps the attributes into OutSystems Data Types as follows:
 
 | JSON example | OutSystems Data Type | Comments |
 | ---| ---| ---- |

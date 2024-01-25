@@ -1,5 +1,5 @@
 ---
-summary: Allow end-users to check the details of a record by navigating to another screen.
+summary: Allow end-users to check the details of a record by navigating to a different screen
 tags:
 locale: en-us
 guid: 32d89cec-ecb5-4c30-9d43-548cc4077425
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10809&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Navigate to a Detail Screen
 
 You can allow end-users to check the details of a given record by navigating to a different screen while providing the item identifier as an input parameter.

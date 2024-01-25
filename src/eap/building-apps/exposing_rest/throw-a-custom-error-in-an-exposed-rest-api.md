@@ -1,13 +1,12 @@
 ---
-summary: Check how you can send meaningful errors when a REST API method runs into an error.
-tags: 
+summary: Throwing a custom error in an exposed REST API allows for meaningful error messages to be sent to the client.
+tags:
 locale: en-us
 guid: e1d028a0-d688-4cbb-93c1-caecb302ee9a
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21311&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Throw a Custom Error in an Exposed REST API
 
 When a REST API method runs into an error, it's useful to send a meaningful error message to the client about what happened. Some problems are automatically handled by OutSystems, but you have the possibility to add custom error handling to your logic.
@@ -16,7 +15,7 @@ When a REST API method runs into an error, it's useful to send a meaningful erro
 
 When OutSystems receives a REST API request, it checks if the request is valid. If the **request isn't valid**, OutSystems performs the following:
 
-1. Sets the [HTTP status code of the response](<./built-in-http-status-codes.md>) according to the type of the issue.
+1. Sets the [HTTP status code of the response](./built-in-http-status-codes.md) according to the type of the issue.
 1. Adds an error message to the response body for each issue detected in the validation step.
 1. Adds the HTTP status code to the response body.
 1. Sends the response immediately to the caller, without processing the action flow defined for that request.
@@ -43,13 +42,13 @@ If the REST API request is valid, OutSystems starts executing the action flow of
 
 ## Throw a custom error
 
-When developing your exposed REST API you may need to throw your own custom errors, different from the [built-in errors](<./built-in-http-status-codes.md>).
+When developing your exposed REST API you may need to throw your own custom errors, different from the [built-in errors](./built-in-http-status-codes.md).
 
 To throw a custom error in your REST API, do the following:
 
 1. Create a User Exception for the custom error you want to throw.  
 
-    ![](images/ss-rest-add-custom-error-1.png)
+    ![Screenshot of the process to add a custom error by creating a User Exception in OutSystems](images/ss-rest-add-custom-error-1.png "Creating a User Exception for Custom Error")
 
 1. Go to the flow of the REST API method or the callback (such as OnAuthentication or OnRequest) where you want to throw the error and add a Raise Error element.
 
@@ -57,6 +56,6 @@ To throw a custom error in your REST API, do the following:
 
 1. Set the Exception Message property to your custom error message.
 
-1. If you want to send a custom error code, [set the HTTP Status Code of the response](<change-the-http-status-code-of-a-rest-api.md>) with your custom value. Otherwise, OutSystems returns an HTTP 500 status code.
+1. If you want to send a custom error code, [set the HTTP Status Code of the response](change-the-http-status-code-of-a-rest-api.md) with your custom value. Otherwise, OutSystems returns an HTTP 500 status code.
 
-    ![](images/ss-rest-add-custom-error-2.png)
+    ![Screenshot showing how to set the Exception properties and HTTP Status Code for a custom error in OutSystems](images/ss-rest-add-custom-error-2.png "Setting the Exception Properties")

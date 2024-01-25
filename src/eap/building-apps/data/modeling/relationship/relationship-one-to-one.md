@@ -1,13 +1,12 @@
 ---
-summary: How to define a one-to-one relationship between data entities.
-tags: 
+summary: One-to-one relationships allow you to extend an existing entity with additional information.
+tags:
 locale: en-us
 guid: d3ee8fb1-e6dd-4c20-9dec-af509afc4afe
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3202%3A7445&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Create a One-to-One Relationship
 
 One-to-one relationships allow you to extend an existing entity with additional information that is not yet in the database model.
@@ -16,7 +15,7 @@ A common scenario is when you want to extend an entity with more attributes and 
 
 To create a one-to-one relationship to an existing entity:
 
-1. [Create an Entity](<../entity-create.md>).
+1. [Create an Entity](../entity-create.md).
 1. Change the `Id` attribute to be the identifier of the entity you want to extend.
 1. Add the attributes.
 

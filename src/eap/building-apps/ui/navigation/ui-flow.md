@@ -1,5 +1,5 @@
 ---
-summary: UI Flow groups screens into logical units with common settings.
+summary: UI Flows is an element that groups Screens and Blocks in an app.
 tags:
 locale: en-us
 guid: f7e6d4a4-7d1e-4593-9975-b8e160df3780
@@ -7,12 +7,11 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10564&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # UI Flows
 
 **UI Flow** is an element that groups Screens and Blocks. All instances of UI Flow in an app are under the **UI Flows** in the **Interface** tab.
 
-![UI Flows in ODC Studio](images/ui-flows-odcs.png)
+![Screenshot of default UI Flows in ODC Studio Interface tab](images/ui-flows-odcs.png "UI Flows in ODC Studio")
 
 When you create a new app, the app already has some default UI Flows in **Interface** > **UI Flows**:
 
@@ -34,7 +33,7 @@ To add a new UI Flow, do the following in ODC Studio:
    
 1. From the help menu, select **Add new UI Flow**.
     
-    ![Help menu with Add new UI Flow option](images/ui-flow-add-new-odcs.png)
+    ![Help menu in ODC Studio showing the option to Add new UI Flow](images/ui-flow-add-new-odcs.png "Adding a New UI Flow")
 
 ## Creating UI Flow without styles
 
@@ -48,7 +47,7 @@ Follow these steps in ODC Studio to create a UI Flow without CSS styles:
 
 4. Optionally, add a Screen under the UI Flow and verify if has no styles.
 
-    ![Screen with a blank Theme](images/screen-blank-theme-odcs.png)
+    ![Example of a Screen with a blank Theme in ODC Studio](images/screen-blank-theme-odcs.png "UI Flow with Blank Theme")
 
 ## Setting the Theme of UI Flow
 
@@ -66,7 +65,7 @@ All elements you add to a UI Flow use the default Theme of the app. You can chan
 
 3. In the UI Flow properties, select a Theme from the **Theme** list.
 
-    ![Theme property of a UI Flow](images/ui-flow-default-theme-odcs.png) 
+    ![UI Flow properties in ODC Studio with Theme list expanded](images/ui-flow-default-theme-odcs.png "Setting the Theme of a UI Flow") 
 
 4. Optionally, create a Screen under the UI Flow to verify the Screen uses the UI Flow's Theme. 
 
@@ -74,7 +73,7 @@ All elements you add to a UI Flow use the default Theme of the app. You can chan
 
 **Default Screen** is the index page in Web Apps, or the home screen in Mobile Apps. There can be only one Default Screen in the app, and it's marked with the house icon.
 
-![Index page / home screen in UI Flow](images/ui-flows-home-screen-odcs.png)
+![UI Flows in ODC Studio highlighting the Default Screen with a house icon](images/ui-flows-home-screen-odcs.png "Default Screen in UI Flows")
 
 To set a Screen as default, do the following in ODC Studio: 
 
@@ -94,10 +93,10 @@ Even though you can draw connectors in **UI Flow**, these connections are only v
 
 To create a Screen or Block, drag the element from the toolbox to the UI Flow editor. The available elements on the toolbox depend on the type of app you're creating.
 
-![UI Flow toolbox with elements](images/ui-flow-toolbox-odcs.png)
+![Toolbox in UI Flow editor of ODC Studio with various elements to drag into the UI Flow](images/ui-flow-toolbox-odcs.png "UI Flow Toolbox")
 
 ### Scaffolding Screens
 
 Drag **Entities** to the UI Flow editor to start the accelerators (scaffolding). For example, if you drag an Entity to a UI Flow editor, you automatically scaffold two Screens with working logic, one for listing the items, one for editing them.
 
-![Automatically created Screens](images/scaffolding-screens-odcs.png)
+![UI Flow editor in ODC Studio showing the process of scaffolding Screens by dragging Entities](images/scaffolding-screens-odcs.png "Scaffolding Screens")

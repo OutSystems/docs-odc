@@ -1,13 +1,12 @@
 ---
-summary: The OutSystems Security library provides actions to perform several security related operations, such as encrypting and decrypting content or using JSON Web Tokens.
-tags: 
+summary: The OutSystems Security library provides actions for encrypting and decrypting content and using JSON Web Tokens.
+tags:
 locale: en-us
 guid: dc098281-2826-4f5c-91cb-da13827f4d8a
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Security
 
 The OutSystems Security library provides actions to perform several security related operations, such as encrypting and decrypting content or using JSON Web Tokens.

@@ -1,13 +1,12 @@
 ---
-tags:   
-summary: Floating Actions displays an action that floats in the bottom right corner of the screen.
+tags:
+summary: Floating Actions is a UI pattern that displays an action that floats in the bottom right corner of the screen.
 locale: en-us
 guid: a246e3bb-4c75-4e3b-8a53-eb45a08996ae
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A15421&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Floating Actions
 
 You can use the Floating Actions UI Pattern to display an action that floats in the bottom right corner of the screen, providing access to a set of additional actions.
@@ -20,11 +19,11 @@ Use the Floating Action UI Pattern to show the primary action on a screen. You c
 
     The Floating Actions widget is displayed.
 
-    ![](<images/floatingactions-1-ss.png>)
+    ![Screenshot of the Floating Actions widget in the ODC Studio Toolbox](images/floatingactions-1-ss.png "Floating Actions Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Floating Actions widget into the Main Content area of your application's screen.
 
-    ![](<images/floatingactions-2-ss.png>)
+    ![Dragging the Floating Actions widget into the main content area of an application screen](images/floatingactions-2-ss.png "Dragging Floating Actions Widget into Main Content Area")
 
     By default, the Floating Actions widget contains a Button placeholder (with an icon) and an Items placeholder with 3 Floating Actions Item widgets (each containing a Label and Item placeholder). You can add or delete the Floating Actions Item widgets as required.
 
@@ -32,11 +31,11 @@ Use the Floating Action UI Pattern to show the primary action on a screen. You c
 
     In this example, we add text to the Label placeholders and linked icons to the Item placeholders.  
 
-    ![](<images/floatingactions-3-ss.png>)
+    ![Adding text and icons to the placeholders in the Floating Actions widget](images/floatingactions-3-ss.png "Adding Content to Floating Actions Placeholders")
 
 1. Select the Floating Actions widget, and on the **Properties** tab, set the relevant properties, for example, whether the actions are expanded and visible when the page loads.
 
-    ![](<images/floatingactions-4-ss.png>)
+    ![Setting properties of the Floating Actions widget in the Properties tab](images/floatingactions-4-ss.png "Setting Properties of Floating Actions Widget")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

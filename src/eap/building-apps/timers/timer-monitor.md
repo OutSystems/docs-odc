@@ -1,5 +1,5 @@
 ---
-summary: Learn how to monitor Timers.
+summary: OutSystems logs enable you to display information for a stage, an app, or all apps.
 tags:
 locale: en-us
 guid: 95C30236-ADCA-464E-AD86-A3437E9F3FEF
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Monitor Timers
 
 OutSystems logs enable you to display information for a stage, an app, or all apps.

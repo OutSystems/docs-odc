@@ -140,7 +140,18 @@ The process ensures the container image released to production is identical to t
 
 A static code analysis tool scans [Platform service](architecture/intro.md#platform--platform) code for vulnerabilities and weak security practices. The tool does this before the system builds the code as a container image and covers both first and third-party code.
 
-Daily vulnerability scanning of the container registry covers the current version of the Platform service container images and all the deployed app images across all customer Runtime stages. When a vulnerability is detected, OutSystems security engineers fix it and release a new version of the affected Platform service(s) or app base container image. Your apps are upgraded by an automatic patching process.
+Daily vulnerability scanning of the container registry covers the current version of the Platform service container images and all the deployed app images across all customer Runtime stages. When a vulnerability is detected, OutSystems security engineers fix it and release a new version of the affected Platform service(s) or app base container image.
+
+For the list of patches for known vulnerabilities, see **Portal** > **App security**. The app security screen shows the following:
+
+* The list of apps with known vulnerabilities
+* Classification of the vulnerabilities
+* Scheduled fixing of the critical vulnerabilities
+
+The patching process upgrades your apps, and the process is:
+
+* Automatic. OutSystems patches the critical vulnerabilities automatically.
+* Manual. Developers can patch non-critical vulnerabilities manually during the regular SDLC process.
 
 ##### Automatic patching
 
@@ -156,6 +167,10 @@ All the users with the Admin role in your ODC organization receive updates about
 1. **48-hour reminder email:** Reminder of the upcoming scheduled upgrade for the given stage.
 1. **Upgrade started email:** Marks the commencement of the automatic upgrade process for the given stage. It may take up to four hours. During the automatic upgrade process no downtime of your apps is expected. Apps in your non-development stages are recompiled and redeployed. Apps in your development stages are republished.
 1. **Upgrade completed email:** Confirms the successful completion of the automatic upgrade process for the given stage. A report detailing which apps were upgraded is attached to this email.
+
+##### Manual patching
+
+Republish the app to trigger an upgrade process for an affected app manually. Open the app in ODC Studio and press the 1-Click Publish button. This patches the app in the development stage. Promote the app to all other stages to ensure that the most secure version of the app is running in all stages. 
 
 ##### Malware scanning
 

@@ -32,7 +32,7 @@ By creating an IP Filter, ODC will block all traffic except traffic that origina
    
 1. Click **Create IP filter** to display the form.
    
-    ![IP filters](images/ip-filter-odcs.png)
+    ![Screenshot of the ODC IP Filter creation form with fields for Name, Description, and IP address/range](images/ip-filter-odcs.png "ODC IP Filter Creation Form")
    
 1. In the IP filter form, enter the required information in the **Name**, **Description**, and **IP address/range**.<br/> ODC validates:
     * The uniqueness of each filter name.

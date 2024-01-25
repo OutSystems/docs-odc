@@ -1,20 +1,19 @@
 ---
-summary: Learn how you can use screens to accelerate app development.
-tags: 
+summary: A screen is a user interface element that allows users to interact with an app.
+tags:
 locale: en-us
 guid: 573b9486-bcb4-4888-9be6-d3e8e96b6dc8
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2643&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Screens
 
 A screen is a user interface (UI) element that contains other UI elements (such as fields or labels) that enable users to interact with your app. You can create an empty screen, or from a screen template for a specific use case.
 
 Screen templates come with UI patterns that solve common application use cases. Screen templates help accelerate development by providing common functionalities and consistent look and feel. Screen templates include UI elements, and some include sample data that you can replace. You can immediately publish screens created from a screen template enabling you to see how the screen looks or to use it to show a proof of concept.
 
-![ui screen template](images/ui-screen-template-ss.png)
+![Example of a user interface screen template in OutSystems Developer Cloud Studio](images/ui-screen-template-ss.png "Screen Template Example")
 
 When you create an empty screen, you start with a basic layout to which you add data and UI elements. If you want to create a screen with a specific layout, you might want to start with a screen based on a screen template.
 
@@ -22,7 +21,7 @@ OutSystems provides many types of elements that you can add to your screens such
 
 Here is an example of the [Date Picker](https://outsystemsui.outsystems.com/OutsystemsUiWebsite/PatternDetail?PatternId=190) pattern:
 
-![ui patterns](images/ui-patterns-ss.png)
+![Screenshot of the Date Picker UI pattern from OutSystems UI component](images/ui-patterns-ss.png "UI Patterns Example")
 
 To access screen templates and the blank screen layout, go to ODC Studio, select the **Interface tab** > **UI Flows** > then right-click **MainFlow** and click **Add Screen**.
 

@@ -1,13 +1,12 @@
 ---
-summary: Blocks are interface parts that can be reused in screens and other blocks.
-tags: 
+summary: Using blocks in OutSystems improves reusability and maintainability of applications.
+tags:
 locale: en-us
 guid: b5909d7e-3f2e-4c0c-bf25-a312d12be834
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A8754&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Reuse UI
 
 When designing interfaces it's frequent to have parts that are common to some of those interfaces. In OutSystems, it is possible to refactor and implement those common parts using widgets like **Blocks** (in Web and Mobile apps) and then reuse them on screens and other blocks.
@@ -27,7 +26,7 @@ Usage
 
 When something happens in a block it is possible to communicate that event to the parent screen or block so that it executes an action. In the same way, parent screens or blocks can also communicate with child blocks so that they execute an action. Using these two mechanisms together it is possible for a block to communicate with a sibling block.
 
-![Communicate between Blocks](images/block-communicate-diag.png)
+![Diagram illustrating communication between blocks, parent screens, and child blocks in OutSystems](images/block-communicate-diag.png "Communication between Blocks Diagram")
 
 ### (A) Communication between a Block and the Parent Screen or Block
 

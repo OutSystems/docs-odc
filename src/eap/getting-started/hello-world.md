@@ -30,7 +30,7 @@ Open ODC Studio and follow these steps to create your "Hello, world" app:
 4. Enter the name of your app and click **Create app**.
 5. From the toolbox, drag a Screen to the screen.
 
-     ![Dragging a screen to canvas](images/hello-world-drag-screen-odcs.png)
+     ![Screenshot showing the process of dragging a screen component onto the canvas in ODC Studio](images/hello-world-drag-screen-odcs.png "Dragging a Screen to the Canvas in ODC Studio")
 
      <div class="info" markdown="1">
 
@@ -46,7 +46,7 @@ Open ODC Studio and follow these steps to create your "Hello, world" app:
 8. Go to the **Interface** tab, double-click **MainFlow**, and select Screen1. 
 9. Set the **Accessible by** screen property to **Everyone**.
 
-    ![Screen properties and the authentication settings](images/hello-world-authorization-everyone-odcs.png)
+    ![Image depicting the process of setting the screen property 'Accessible by' to 'Everyone' in ODC Studio](images/hello-world-authorization-everyone-odcs.png "Setting Screen Authorization to Everyone in ODC Studio")
 
 10. Click the **1-Click Publish** button.
     

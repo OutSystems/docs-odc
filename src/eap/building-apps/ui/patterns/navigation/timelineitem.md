@@ -1,18 +1,17 @@
 ---
-tags: 
-summary: Timeline Item indicates related events in chronological order.
+tags:
+summary: The Timeline Item UI Pattern is used to display related events in chronological order.
 locale: en-us
 guid: e420ff2a-afcd-4ca6-9d65-9e42ee8d5213
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A18218&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Timeline Item
 
 You can use the Timeline Item UI Pattern to show related events in a chronological order, such as a user's upcoming, current, and past activities.
 
-![](<images/timelineitem-1-ss.png>)
+![Screenshot of the initial state of Timeline Item UI Pattern in ODC Studio](images/timelineitem-1-ss.png "Initial Timeline Item UI Pattern")
 
 **How to use the Timeline Item UI Pattern**
 
@@ -20,11 +19,11 @@ You can use the Timeline Item UI Pattern to show related events in a chronologic
 
     The Timeline Item widget is displayed.
 
-    ![](<images/timelineitem-2-ss.png>)
+    ![Display of the Timeline Item widget within the ODC Studio Toolbox](images/timelineitem-2-ss.png "Timeline Item Widget in Toolbox")
 
 1. From the Toolbox, drag the Timeline widget onto your application's screen.
 
-    ![](<images/timelineitem-3-ss.png?width=800>)
+    ![Process of dragging the Timeline widget onto the application screen in ODC Studio](images/timelineitem-3-ss.png "Dragging Timeline Widget to Screen")
 
     By default, the Timeline Item widget contains Left, Icon, Title, Content, and Right placeholders. You can add as many Timeline Item widgets as required.
 
@@ -34,7 +33,7 @@ You can use the Timeline Item UI Pattern to show related events in a chronologic
 
     In this example we add some icons and text.
 
-    ![](<images/timelineitem-4-ss.png>)
+    ![Example of adding icons and text to Timeline Item placeholders in ODC Studio](images/timelineitem-4-ss.png "Configuring Timeline Item Placeholders")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

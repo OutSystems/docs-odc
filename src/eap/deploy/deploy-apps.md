@@ -20,7 +20,7 @@ Libraries contain functionality that's business agnostic and which you can use i
 
 To help you understand what's deployed in each stage, ODC provides an overview page. To access the overview page, go to the ODC Portal > select **Delivery** > **Overview**. A list of apps displays and shows the name of the app, the stage in which it's deployed, the number of deployments, and the date of the last deployment. The list also shows apps that still need to be deployed. Hovering over a date displays a pop up that shows the name of the person who deployed the app and the date and time on which it was deployed. Libraries are bundled with apps, so you won't see information about the libraries. You can use the sort and filter options to narrow your search.```
 
-![Deploy app overview](images/deploy-overview-pl.png)
+![Screenshot of the ODC Portal showing the deployment overview page with a list of apps, their deployment stages, number of deployments, and last deployment dates.](images/deploy-overview-pl.png "ODC Portal Deployment Overview")
 
 ## Deploy to stages
 

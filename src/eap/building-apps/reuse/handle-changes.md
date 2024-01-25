@@ -4,9 +4,8 @@ locale: en-us
 guid: 80bb4604-c06b-48c7-8e8b-382416c95368
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
 ---
-
 # Handle changes in exposed functionality
 
 A key benefit of centralizing and reusing elements is the ability to change their implementation and signature in a single place and share those changes with the consumers without duplicating efforts.

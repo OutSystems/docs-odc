@@ -1,20 +1,19 @@
 ---
-summary: Use the Firebase Cloud Messaging plugin to set how notifications are sent, normal or silent, to your mobile app end-users.
-tags: article-page; runtime-mobile; support-application_development; support-Mobile_Apps; support-Mobile_Apps-featured
+summary: The Firebase Cloud Messaging plugin allows you to send normal and silent notifications to your mobile app users.
+tags: 
 locale: en-us
 guid: 22d6edad-3a83-44f8-abbf-81e0b2d02041
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4352%3A160&mode=design&t=OmSDtxS14Ggp4J6f-1
 platform-version: odc
 ---
-
-# Firebase Cloud Messaging Plugin
+# Firebase Cloud Messaging plugin
 
 The Firebase Cloud Messaging plugin lets you set a notification experience that starts the Firebase cross-platform messaging solution. This plugin lets you send normal and silent notifications to your mobile app users. Normal notifications can include customizable actions and sounds.
 
 <div class="info" markdown="1">
 
-You can download the Firebase Cloud Messaging Plugin from [Forge](https://www.outsystems.com/forge/).
+You can install the Firebase Cloud Messaging Plugin from the Forge in ODC Portal.
 
 </div>
 
@@ -44,7 +43,7 @@ To learn how to install and reference a plugin in your OutSystems apps, and how 
 
 ## Sample app
 
-OutSystems provides a sample app that contains logic for common use cases. Install the Firebase sample app from [Forge](https://www.outsystems.com/forge/) and then open it in ODC Studio.
+OutSystems provides a sample app that contains logic for common use cases. Install the Firebase sample app from Forge and then open it in ODC Studio.
 
 This sample app shows you how to do the following:
 
@@ -60,7 +59,7 @@ This sample app shows you how to do the following:
 
 * Trigger a notification with a custom sound.
 
-## Compose and Manage push notifications
+## Compose and manage push notifications
 
 The following steps describe how to create a back-end notification service and how to prepare a mobile app to respond with push notifications:
 
@@ -86,7 +85,7 @@ To set up a back-end notification service, do the following:
 
 1. In the **APIKey** entity, set **AppId** and **Key** using encrypted values. These values are used to authenticate your REST API, so make sure you keep the encrypted values secure.
 
-   ![Screenshot of using the encrypted App ID and Key](images/firebase-messaging-api-key-odcs.png)
+   ![Screenshot showing where to input encrypted App ID and Key in the Cloud Messaging Configurator app](images/firebase-messaging-api-key-odcs.png "Encrypted App ID and Key in Cloud Messaging Configurator")
 
 1. Create a new app to serve as your back-end notification. This app can be a Reactive Web or Mobile.
 
@@ -100,7 +99,7 @@ To set up a back-end notification service, do the following:
 
     </div>
 
-    ![Screenshot of setting the Base URL in REST API](images/set-base-url-in-rest-api-odcs.png)
+    ![Screenshot illustrating how to set the Base URL in the REST API properties for Cloud Messaging Configurator](images/set-base-url-in-rest-api-odcs.png "Setting the Base URL in REST API Properties")
 
 1. Then use the AppId and Key you defined in step 3 to authenticate your REST calls. In the consumed REST API properties, add the following **HTTP headers**:
 
@@ -117,11 +116,11 @@ To learn more about the v1 and v2 endpoints of OutSystems REST API, see the [ref
 
 Now you can start to create the UI for your back-end notification service. For example, to send a notification to all users on the associated Firebase project (using an app with the Cloud Messaging plugin), associate a **SendNotifcationToUsers** method to a button.
 
-![Screenshot of the logical flow for sending notifications to all users](images/firebase-messaging-send-offer-notification-logic-odcs.png)
+![Diagram depicting the logic to send a notification to all users in the associated Firebase project](images/firebase-messaging-send-offer-notification-logic-odcs.png "Send Notification Logic in OutSystems")
 
 To access values for the parameters **FCMServerKey** and **SenderID**, in the ODC Studio, navigate to **Project Settings** > **Cloud Messaging** > Firebase Console.
 
-![Screenshot of accessing the FCM Server Key and Sender ID](images/firebase-messaging-get-fcm-server-key-and-sender-id.png)
+![Screenshot showing the navigation path to retrieve FCM Server Key and Sender ID in ODC Studio](images/firebase-messaging-get-fcm-server-key-and-sender-id.png "Retrieving FCM Server Key and Sender ID")
 
 Other available methods include **SendNotificationToTopics**, **SendSilentNotificationToUsers**, and **SendSilentNotificationToTopics**.
 
@@ -129,17 +128,17 @@ Other available methods include **SendNotificationToTopics**, **SendSilentNotifi
 
 This section describes some of the actions that you can use to leverage notification functions on your mobile app.
 
-On first use you might want to send to receive notifications to your app user. For that you can use the **RegisterDevice** action on initialization of your app. On first use, this action displays a native request permission dialog and upon user acceptance, the device is registered on the Firebase Cloud Messaging service and is ready to receive notifications. On future verifications you can always use the **CheckPermission** action to verify if the app has permission to receive notifications.
+On first use, you might want to request your app user permissions to receive notifications. For that, you can use the **RegisterDevice** action on initialization of your app. On first use, this action displays a native request permission dialog and upon user acceptance, the device is registered on the Firebase Cloud Messaging service and is ready to receive notifications. On future verifications, you can always use the **CheckPermission** action to verify if the app has permission to receive notifications.
 
-Alternatively you can provide an explicit way to register and unregister the device from the Firebase cloud Messaging service using the **RegisterDevice** / **UnregisterDevice** actions. Then associate the actions to a UI element such as a toggle.
+Alternatively, you can provide an explicit way to register and unregister the device from the Firebase cloud Messaging service using the **RegisterDevice** / **UnregisterDevice** actions. Then associate the actions to a UI element such as a toggle.
 
 This is the ManageNotifications view.
 
-![Screenshot of registering the device to enable and disable your app notifications](images/firebase-messaging-register-device-odcs.png)
+![User interface view for registering a device with Firebase Cloud Messaging service](images/firebase-messaging-register-device-odcs.png "Register Device View in Firebase Messaging")
 
 This is the logical flow view.
 
-![Screenshot of the logic flow for allowing device to enable and disable your app notifications](images/firebase-messaging-with-register-device-logic-odcs.png)
+![Flowchart showing the logic for registering a device with Firebase Cloud Messaging service](images/firebase-messaging-with-register-device-logic-odcs.png "Register Device Logic Flow")
 
 After registering the device on the Firebase Cloud Messaging service, the active device's token becomes available and can be retrieved using the action **GetToken**.
 
@@ -147,17 +146,17 @@ To manage topic subscriptions you can use the **SubscribeTopic / UnsubscribeTopi
 
 This is the ManageNotifications view.
 
-![Screenshot of adding topic in Firebase Messaging plugin](images/firebase-messaging-with-add-topic-odcs.png)
+![User interface view for adding a topic in Firebase Cloud Messaging service](images/firebase-messaging-with-add-topic-odcs.png "Add Topic to Firebase Messaging")
 
 This is the logical flow view.
 
-![Screenshot of the logic flow for adding topic in Firebase Messaging plugin](images/firebase-messaging-with-logic-of-add-topic-odcs.png)
+![Flowchart showing the logic for adding a topic in Firebase Cloud Messaging service](images/firebase-messaging-with-logic-of-add-topic-odcs.png "Logic of Adding Topic in Firebase Messaging")
 
 To retrieve all pending silent notifications you can use the **GetPendingNotifications** action. This action outputs a silent notifications list with Timestamp, MessageID, TimeToLive, and an ExtraData list of key-value pairs. So, app users don't see any visual or sound cues.
 
 <div class="info" markdown="1">
 
-When receiving a silent notification without extra data, and your app is on the background, the notification is not saved in the database. For example, the notification won’t be returned in the **GetPendingNotifications** action.
+When receiving a silent notification without extra data, and your app is in the background, the notification is not saved in the database. For example, the notification won’t be returned in the **GetPendingNotifications** action.
 
 </div>
 
@@ -167,11 +166,11 @@ As a part of the notification experience, the developers can control the badge n
 
 * For Android you can only specify a given badge number after receiving a notification. Thus, you can use the **SendLocalNotification** action and set the badge number through the action parameter *BadgeNumber*.
 
-    ![Screenshot of the logic flow for setting the badge numbers](images/firebase-messaging-with-setting-badge-logic-odcs.png)
+    ![Screenshot of the logic flow for setting badge numbers on app icons for notifications](images/firebase-messaging-with-setting-badge-logic-odcs.png "Setting Badge Numbers Logic Flow")
 
-Finally, you can give users the ability to clear all app's notifications remaining in the notification center. For this you can associate the **ClearNotifications** action to a piece of UI such as a button.
+Finally, you can give users the ability to clear all app's notifications remaining in the notification center. For this, you can associate the **ClearNotifications** action to a piece of UI such as a button.
 
-![Screenshot of the logic flow for clearing notifications logic](images/firebase-messaging-with-clear-notifications-logic-odcs.png)
+![Diagram showing the logic to clear all notifications from the notification center in Firebase Messaging](images/firebase-messaging-with-clear-notifications-logic-odcs.png "Clear Notifications Logic Flow")
 
 ### Enable notifications with custom actions { #enable-custom-actions }
 
@@ -217,7 +216,7 @@ To use custom sounds on your mobile app, complete the following steps:
 
 </div>
 
-To enhance your notification with custom sounds you must upload the .wav file you want to use as the notification sound to the app’s Resources folder. Additionaly, you must use the **v2 REST API**, using the *Sound* parameter inside the *Notification* parameter on the **SendNotificationToTopics** or **SendNotificationToUsers** methods.
+To enhance your notification with custom sounds you must upload the .wav file you want to use as the notification sound to the app’s Resources folder. Additionally, you must use the **v2 REST API**, using the *Sound* parameter inside the *Notification* parameter on the **SendNotificationToTopics** or **SendNotificationToUsers** methods.
 
 <div class="info" markdown='1'>
 
@@ -229,7 +228,7 @@ To enhance your notification with custom sounds you must upload the .wav file yo
 
 ### Manage the experience of in-app notifications { #manage-notification-ux }
 
-By default, a cloud messaging notification displays in the notification center. However, you can also display the notification in-app when the app is on foreground. To enable this notification, you can use the **NotificationsHandler** block. This block triggers events that pass the parameters of both notifications and silent notifications to the context of the app.
+By default, a cloud messaging notification displays in the notification center. However, you can also display the notification in-app when the app is on the foreground. To enable this notification, you can use the **NotificationsHandler** block. This block triggers events that pass the parameters of both notifications and silent notifications to the context of the app.
 
 You need to add this block to each screen that might handle the notification content.
 
@@ -241,7 +240,7 @@ Add this block to each screen that might handle the notification content.
 
 ### Optional setup for notification Channel Name and Description - Android only
 
-By default the Cloud Messaging plugin defines values for the notification channel name and description on local notifications. But in some instances, you might want to define a different default value by adding the following name and value properties on the extensibility configurations of your app:
+By default, the Cloud Messaging plugin defines values for the notification channel name and description on local notifications. But in some instances, you might want to define a different default value by adding the following name and value properties on the extensibility configurations of your app:
 
 ```JSON
 {
@@ -262,7 +261,7 @@ By default the Cloud Messaging plugin defines values for the notification channe
 
 ## Limitations
 
-### On Silent Notifications
+### On silent notifications
 
 For iOS.
 
@@ -270,13 +269,13 @@ When a device has a low battery, apps don't process silent notifications.
 
 For more information, see [Apple documentation](https://developer.apple.com/documentation/).
 
-### On Subscribe to Topic
+### On subscribe to topic
 
 For both iOS and Android.
 
 Firebase SDKs for Android and iOS don't support subscribing to topics if the name contains spaces, like `TV Shows`.
 
-## On Compatibility with Firebase Performance
+## On compatibility with Firebase Performance
 
 For both iOS and Android.
 

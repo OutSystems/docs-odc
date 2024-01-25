@@ -1,13 +1,12 @@
 ---
-tags: 
-summary: 
+tags:
+summary: The Bottom Sheet Pattern is used to display additional information at the bottom of the screen in mobile apps.
 locale: en-us
 guid: b45a2a54-8dbe-44f4-8a96-63e5e26d5ae0
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A13167&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Bottom Sheet
 
 <div class="info" markdown="1">
@@ -26,53 +25,53 @@ In this example, we create a button that opens and closes the Bottom Sheet widge
 
     The Bottom Sheet widget is displayed.
 
-    ![Search for the Bottom Sheet widget](<images/bottomsheet-widget-ss.png>)
+    ![Screenshot showing the search for the Bottom Sheet widget in ODC Studio Toolbox](images/bottomsheet-widget-ss.png "Bottom Sheet Widget Search")
 
 1. From the Toolbox, drag the Bottom Sheet widget into the Main Content area of your application's screen and on the **Properties** tab, in the **Name** field, enter a name for the Bottom Sheet widget.
 
-    ![Search for the Bottom Sheet widget](<images/bottomsheet-dragwidget-ss.png>)
+    ![Screenshot of dragging the Bottom Sheet widget into the Main Content area in ODC Studio](images/bottomsheet-dragwidget-ss.png "Dragging Bottom Sheet Widget")
 
     By default, the Bottom Sheet widget contains a **TopBar** and a **Content** placeholder.
 
-    ![The Bottom Sheet widget placeholder](<images/bottomsheet-placeholder-ss.png>)
+    ![Screenshot of the Bottom Sheet widget with TopBar and Content placeholders in ODC Studio](images/bottomsheet-placeholder-ss.png "Bottom Sheet Widget Placeholder")
 
 1. Add the relevant content to the TopBar and Content placeholders. 
 
-    ![Add content to Bottom Sheet placeholders](<images/bottomsheet-content-ss.png>)
+    ![Screenshot showing the addition of text, icon, and a close button to the Bottom Sheet widget placeholders](images/bottomsheet-content-ss.png "Adding Content to Bottom Sheet widget")
 
     In this example, we add text, an icon, and a button to close the widget.
 
 1. To close the bottom sheet, select the **Close** button, and on the **Properties** tab, from the **On Click** dropdown, select **New Client Action**.  
 
-    ![New client action for close button](<images/bottomsheet-onclick-ss.png>)
+    ![Screenshot of the Properties tab showing the selection of a New Client Action for the Close button](images/bottomsheet-onclick-ss.png "Bottom Sheet Close Button Action")
 
 1. Drag a **Run Client Action** to the client action, add from the **Select Action** popup, navigate to the **BottomSheetClose** action and click **Select**.
 
-    ![Add BottomSheetClose action](<images/bottomsheet-close-ss.png>)
+    ![Screenshot depicting the process of adding a BottomSheetClose action in ODC Studio](images/bottomsheet-close-ss.png "Bottom Sheet Close Action")
 
 1. On the **Properties** tab, set the **WidgetId** to **BottomSheet.Id**.
 
-    ![Set the widgetId](<images/bottomsheet-id-ss.png>)
+    ![Screenshot of the Properties tab with the WidgetId field set to BottomSheet.Id](images/bottomsheet-id-ss.png "Setting WidgetId for Bottom Sheet widget")
 
 1. In this example we create a button to open the Bottom sheet by dragging the **Button** widget just below the **Bottom Sheet** widget and on the **Properties** tab, in the **Text** field, enter the text you want to appear on the button.
 
-    ![Add an Open button](<images/bottomsheet-openbutton-ss.png>)
+    ![Screenshot showing a new button added below the Bottom Sheet widget to open it](images/bottomsheet-openbutton-ss.png "Adding Open Button for Bottom Sheet widget")
 
 1. Select the button, and on the **Properties** tab, from the **On Click** dropdown, select **New Client Action**.
 
 1. Drag a **Run Client Action** to the client action, add from the **Select Action** popup, navigate to the **BottomSheetOpen** action and click **Select**.
 
-    ![Add BottomSheetOpen action](<images/bottomsheet-openaction-ss.png>)
+    ![Screenshot illustrating the addition of a BottomSheetOpen action in ODC Studio](images/bottomsheet-openaction-ss.png "Bottom Sheet widget Open Action")
 
 1. On the **Properties** tab, set the **WidgetId** to **BottomSheet.Id**.
 
 1. You can customize the Bottom Sheet by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties.
 
-    ![Set relevant properties](<images/bottomsheet-properties-ss.png>)
+    ![Screenshot of the Properties tab showing the customization options for the Bottom Sheet pattern](images/bottomsheet-properties-ss.png "Customizing Bottom Sheet widget Properties")
 
 After following these steps and publishing the app, you can test the pattern in your app. 
 
-![Set relevant properties](<images/bottomsheet-resultapp.png>)
+![Image of the Bottom Sheet pattern as it appears in the published mobile app](images/bottomsheet-resultapp.png "Bottom Sheet in Published App")
 
 ## Properties
 

@@ -1,5 +1,5 @@
 ---
-summary: Plugins for your mobile apps.
+summary: Mobile plugins provide important functionalities to native mobile apps, such as notifications, camera access, and QR code scanning.
 tags:
 locale: en-us
 guid: 55ef1d73-dac8-48e6-8b15-dc6990779660
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Mobile plugins
 
 Plugins provide important functionalities to native mobile apps, letting you use many of the hardware capabilities of mobile devices. You can add notifications, use camera or global positioning services, read QR codes, and more.
@@ -39,7 +38,7 @@ The table shows the OutSystems-supported mobile plugins that you can find in the
 
 When working with the plugins:
 
-* Use the plugin that supports iOS or Android, depending on your target platform. The app creation fails if you use a plugin that isn't supported on the target platform. For more information on app generation errors check the [list of MABS errors](<https://success.outsystems.com/support/errors/mabs_errors/>).
+* Use the plugin that supports iOS or Android, depending on your target platform. The app creation fails if you use a plugin that isn't supported on the target platform. For more information on app generation errors check the [list of MABS errors](https://success.outsystems.com/support/errors/mabs_errors/).
 * Each time you add, remove, or modify the plugin in an app, OutSystems creates a mobile package which you then have to distribute to the users for installation.
 * Include the plugin license in your app to respect the license agreements of that plugin. These license agreements are usually placed in the About page of the app that uses them.
 

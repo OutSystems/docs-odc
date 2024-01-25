@@ -1,5 +1,5 @@
 ---
-summary: Accordion expands vertically-stacked content by clicking on the header.
+summary: The Accordion UI Pattern allows users to expand and hide content when clicked.
 tags:
 locale: en-us
 guid: 794b75df-0091-4e62-b1f8-22c56e7ebf90
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A10201&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Accordion
 
 You can use the Accordion UI Pattern to allow users expand and hide content when clicked.
@@ -18,23 +17,23 @@ You can use the Accordion UI Pattern to allow users expand and hide content when
 
     The Accordion widget is displayed.
 
-    ![Accordion widget](<images/accordion-widget-ss.png>)
+    ![Screenshot of the Accordion widget in the ODC Studio Toolbox](images/accordion-widget-ss.png "Accordion Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Accordion widget into the Main Content area of your application's screen.
 
-    ![Drag widget to screen](<images/accordion-dragwidget-ss.png>)
+    ![Dragging the Accordion widget into the Main Content area of an application screen](images/accordion-dragwidget-ss.png "Dragging Accordion Widget to Screen")
 
     **Note:** By default, the Accordion widget contains 3 **AccordionItem** widgets. You can add or delete Accordion Items as required.
 
 1. Add the relevant content to the **AccordionItem** placeholders. In this example, some FAQs are added.
   
-    ![Add content to placeholders](<images/accordion-addcontent-ss.png>)
+    ![Adding FAQ content to AccordionItem placeholders in the Accordion widget](images/accordion-addcontent-ss.png "Adding Content to AccordionItem Placeholders")
 
 1. On the **Properties** tab, you can customize the Accordion's look and feel by setting any of the (optional) properties.
 
-    ![Set relevant Accordion properties](<images/accordion-properties-ss.png>)
+    ![Customizing the Accordion's appearance through the Properties tab in ODC Studio](images/accordion-properties-ss.png "Accordion Properties Tab")
 
-    ![Set relevant Accordion Item properties](<images/accordion-properties-item-ss.png>)
+    ![Setting properties for individual Accordion Items in ODC Studio](images/accordion-properties-item-ss.png "Accordion Item Properties")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

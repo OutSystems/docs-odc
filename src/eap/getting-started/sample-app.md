@@ -27,7 +27,7 @@ From ODC Portal, navigate to the **Apps** screen and click **Create app**. ODC S
 
 Name your app and add a description. Optionally define the color scheme and add a custom icon. Click the **Create app** button to continue. You can always fine-tune these details later on.
 
-![](images/enter-app-details-ss.png)
+![Screenshot of entering app details in OutSystems Developer Cloud](images/enter-app-details-ss.png "Enter App Details")
 
 ### Step 2 - Bootstrap data 
 
@@ -39,7 +39,7 @@ Click the **Data** tab on the right pane of ODC Studio. Right-click the Database
 
 </div>
 
-![](images/import-from-excel-ss.png)
+![Screenshot of importing data from Excel into OutSystems Developer Cloud](images/import-from-excel-ss.png "Import Data from Excel")
 
 An entity is an element that allows you to persist and access information needed in your app. You now have an entity in your app called **Task**.
 
@@ -53,7 +53,7 @@ ODC automatically generates the UI of your app based on the data model.
 
 </div>
 
-![](images/generate-ui-ss.png)
+![Screenshot of generating user interface in OutSystems Developer Cloud](images/generate-ui-ss.png "Generate User Interface")
 
 A screen is a UI element that contains other UI elements that enable users to interact with your app. You now have two screens in your app: **Tasks** and **TaskDetail**.
 
@@ -61,13 +61,13 @@ A screen is a UI element that contains other UI elements that enable users to in
 
 Click the **Tasks** screen on the **MainFlow** canvas. In the properties pane that displays, change the **Accessible by** setting to **Everyone**. Repeat this for the **TaskDetail** screen. This means anyone can access your app without the need to authenticate.
 
-![](images/change-authorization-ss.png)
+![Screenshot of setting screen permissions in OutSystems Developer Cloud](images/change-authorization-ss.png "Set Screen Permissions")
 
 ### Step 5 - Publish and view in browser
 
 Click the green **1-Click-Publish** button in the top center of the workspace. Then click **Open in browser** to see the app in action. The app is running in the Development stage.
 
-![](images/tasks-list-app-in-browser.png)
+![Screenshot of the tasks list app running in a web browser](images/tasks-list-app-in-browser.png "View App in Browser")
 
 
 ### Next steps.. 

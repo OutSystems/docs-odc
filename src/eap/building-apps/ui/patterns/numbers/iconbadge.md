@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Icon Badge UI Pattern to display numerical information as a notification. For example, the Icon Badge UI pattern is frequently used to notify users about the number of unread emails, unopened messages, or new tasks they may have.
 
-![](<images/iconbadge-1-ss.png>)
+![Screenshot of the Icon Badge UI Pattern used to display notifications](images/iconbadge-1-ss.png "Icon Badge UI Pattern Example")
 
 **How to use the Icon Badge UI Pattern**
 
@@ -22,25 +22,25 @@ The following example demonstrates how you can display the number of registered 
 
     The Icon Badge widget is displayed.
 
-    ![](<images/iconbadge-2-ss.png>)
+    ![Screenshot showing the Icon Badge widget in the ODC Studio Toolbox](images/iconbadge-2-ss.png "Icon Badge Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Icon Badge widget into the Main Content area of your application's screen.
 
-    ![](<images/iconbadge-3-ss.png>)
+    ![Screenshot of dragging the Icon Badge widget into the application's main content area](images/iconbadge-3-ss.png "Dragging Icon Badge Widget into Main Content Area")
 
     By default, the Icon Badge contains an Icon placeholder with a pre-existing icon.
 
 1. To create an aggregate (in this example to retrieve all the users on the platform), right-click the screen name and select **Fetch Data from Database**.
 
-    ![](<images/iconbadge-4-ss.png>)
+    ![Screenshot illustrating how to create an aggregate to fetch user data from the database](images/iconbadge-4-ss.png "Creating an Aggregate for User Data")
 
 1. To add a database entity, click the screen, and from the **Select Source** pop-up, select the relevant entity and click **OK**. In this example, we select the **User** entity.
 
-    ![](<images/iconbadge-5-ss.png>)
+    ![Screenshot showing the process of adding a User entity to the screen](images/iconbadge-5-ss.png "Adding a Database Entity to the Screen")
 
     The aggregate **GetUsers** is created.
 
-    ![](<images/iconbadge-6-ss.png>)
+    ![Screenshot of the newly created GetUsers aggregate in the application](images/iconbadge-6-ss.png "Aggregate GetUsers Created")
 
 1. To reopen your screen, select the **Interface** tab, and double-click on your screen name.
 
@@ -48,13 +48,13 @@ The following example demonstrates how you can display the number of registered 
 
     `GetUsers.Count`
 
-    ![](<images/iconbadge-7-ss.png>)
+    ![Screenshot of setting the Number property in the Icon Badge widget to display user count](images/iconbadge-7-ss.png "Setting the Number Property in Icon Badge Widget")
 
     The **Number** property is now set to display the Count property of the Aggregate you created earlier, which gets and displays the number of users on your platform.
 
 1. On the **Properties** tab, you can customize the Icon Badge's look and feel by setting any of the optional properties, for example, the color.
 
-    ![](<images/iconbadge-8-ss.png>)
+    ![Screenshot of the Properties tab where the Icon Badge's appearance is customized](images/iconbadge-8-ss.png "Customizing Icon Badge Pattern Appearance")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

@@ -1,5 +1,5 @@
 ---
-summary: Learn more about the concepts of creating relationships between entities when designing a data model.
+summary: This article introduces the concepts of relationships between entities.
 tags:
 locale: en-us
 guid: 34840e6f-13be-4db8-ae48-dd118a9fe303
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2483&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Relationships between entities
 
 This article introduces the concepts of relationships between entities.

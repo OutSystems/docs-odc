@@ -1,13 +1,12 @@
 ---
-summary: "OutSystems Text library provides functionality to manipulate texts as, for example: search and replace using a regular expression, split, join, or format DateTimes."
-tags: 
+summary: OutSystems Text library provides functionality to manipulate texts such as search and replace using regular expressions, split, join, and format DateTimes.
+tags:
 locale: en-us
 guid: e6b6ad2d-c6c0-4a5e-8034-1b36411c04ef
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Text
 
 OutSystems Text library provides functionality to manipulate texts as, for example: search and replace using a regular expression, split, join, or format DateTimes.
@@ -179,7 +178,7 @@ Delimiters
 *Outputs*
 
 List
-:   Type: RecordList of [Text](<#Structure_Text>).  
+:   Type: RecordList of [Text](#Structure_Text).  
     List of strings that results from splitting the original Text.
 
 ### StringBuilder_Append

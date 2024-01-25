@@ -1,13 +1,12 @@
 ---
-summary: Provide additional detail to AppShield users on each of the AppShield's protection features
-tags: 
+summary: The AppShield plugin provides protection features for mobile apps, including root/jailbreak detection, repackaging detection, code injection protection, and debugger protection.
+tags:
 locale: en-us
 guid: 09e87858-f0f8-48c8-bbc1-2d2dcb4a0980
 app_type: mobile apps
 platform-version: odc
-figma: 
+figma:
 ---
-
 # AppShield protection features
 
 <div class="info" markdown="1">

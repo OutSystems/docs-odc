@@ -1,5 +1,5 @@
 ---
-summary: UI reference for the Debugger Tab in ODC Studio.
+summary: The Debugger Tab in ODC Studio allows you to track threads being debugged and examine app elements and runtime values.
 tags:
 locale: en-us
 guid: 81645496-3038-4765-9092-e2ab5a7f413b
@@ -7,18 +7,17 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/8RLmb1pp1PYm5xqtrnq5O8/Debugging-apps?type=design&node-id=2901%3A73&t=sdGPdlxTkpCARchu-1
 platform-version: odc
 ---
-
 # Debugger reference
 
 The Debugger Tab is in the lower pane of ODC Studio and allows you to track all threads being debugged and examine app elements and runtime values. This tab is automatically shown when the debugger is active and the execution flow hits a breakpoint.
 
-![](images/debugger-ui-overview.png)
+![Overview of the Debugger User Interface in ODC Studio](images/debugger-ui-overview.png "Debugger UI Overview")
 
 The Debugger Tab contains three main areas:
 
-* The [Debugger Toolbar](<#debugger-toolbar>) **(1)**
-* The [debugging context area](<#debugging-context-area>) **(2)**
-* The [scope tabs area](<#scope-tabs-area>) **(3)**
+* The [Debugger Toolbar](#debugger-toolbar) **(1)**
+* The [debugging context area](#debugging-context-area) **(2)**
+* The [scope tabs area](#scope-tabs-area) **(3)**
 
 
 ## Debugger Toolbar { #debugger-toolbar }
@@ -27,20 +26,20 @@ It's located in the top right section of the Debugger Tab and provides you with 
 
 The available buttons in the toolbar are the following:
 
-![](images/debugger-toolbar.png)
+![Image of the Debugger Toolbar with various debugging commands in ODC Studio](images/debugger-toolbar.png "Debugger Toolbar")
 
 The table shows more information about each command.
 
 Icon | Name | Shortcut | Description
 :---:|------|:--------:|------------
-![](images/toolbar-button-stop.png)     | Stop Debugging | | Stops the debugger and resumes the execution of all of the suspended threads.
-![](images/toolbar-button-suspend.png)  | Suspend Running Server Threads | | Suspends the execution of all current server threads in OutSystems Developer Cloud (ODC).
-![](images/toolbar-abort-button.png)    | Abort Running Server Threads | | Aborts the execution of the current server threads in ODC.
-![](images/toolbar-button-continue.png) | Continue | `F9` | Resumes the execution.
-![](images/toolbar-button-step-over.png)| Step Over | `F10` | Steps the execution trace to the next element in the same flow or, when in a web application, screen "level".
-![](images/toolbar-button-step-into.png)| Step Into | `F11` | Steps the execution trace to the first element "inside" elements like: <br/> &#8212; Execute Client Action (or Execute Server Action) elements which execute user-defined actions of the same app<br/> &#8212; User functions of the same app<br/> &#8212; Assignments of Assign elements<br/> Trying to step into any other element is the same as doing a ![](images/toolbar-button-step-over.png) Step Over operation.
-![](images/toolbar-button-step-out.png) | Step Out | `Shift+F11` | Continues the execution trace to the next element in the outer "level" of the flow or screen, i.e. it "gets out" of the current flow or screen.
-![](images/toolbar-button-break-on-all-exceptions.png) | Break On All Exceptions | | When active, this toggle button forces the debugger to suspend the execution of threads whenever handled or unhandled exceptions occur.
+![Icon of the Stop Debugging button in the Debugger Toolbar](images/toolbar-button-stop.png "Stop Debugging Button")     | Stop Debugging | | Stops the debugger and resumes the execution of all of the suspended threads.
+![Icon of the Suspend Running Server Threads button in the Debugger Toolbar](images/toolbar-button-suspend.png "Suspend Running Server Threads Button")  | Suspend Running Server Threads | | Suspends the execution of all current server threads in OutSystems Developer Cloud (ODC).
+![Icon of the Abort Running Server Threads button in the Debugger Toolbar](images/toolbar-abort-button.png "Abort Running Server Threads Button")    | Abort Running Server Threads | | Aborts the execution of the current server threads in ODC.
+![Icon of the Continue button with the F9 shortcut in the Debugger Toolbar](images/toolbar-button-continue.png "Continue Button") | Continue | `F9` | Resumes the execution.
+![Icon of the Step Over button with the F10 shortcut in the Debugger Toolbar](images/toolbar-button-step-over.png "Step Over Button")| Step Over | `F10` | Steps the execution trace to the next element in the same flow or, when in a web application, screen "level".
+![Icon of the Step Into button with the F11 shortcut in the Debugger Toolbar](images/toolbar-button-step-into.png "Step Into Button")| Step Into | `F11` | Steps the execution trace to the first element "inside" elements like: <br/> &#8212; Execute Client Action (or Execute Server Action) elements which execute user-defined actions of the same app<br/> &#8212; User functions of the same app<br/> &#8212; Assignments of Assign elements<br/> Trying to step into any other element is the same as doing a ![Icon of the Step Over button with the F10 shortcut in the Debugger Toolbar](images/toolbar-button-step-over.png "Step Over Button") Step Over operation.
+![Icon of the Step Out button with the Shift+F11 shortcut in the Debugger Toolbar](images/toolbar-button-step-out.png "Step Out Button") | Step Out | `Shift+F11` | Continues the execution trace to the next element in the outer "level" of the flow or screen, i.e. it "gets out" of the current flow or screen.
+![Toggle icon of the Break On All Exceptions button in the Debugger Toolbar](images/toolbar-button-break-on-all-exceptions.png "Break On All Exceptions Button") | Break On All Exceptions | | When active, this toggle button forces the debugger to suspend the execution of threads whenever handled or unhandled exceptions occur.
 
 ## Debugging Context Area { #debugging-context-area }
 
@@ -61,17 +60,17 @@ Users Tab
 
 If there are any unpublished changes to the app you're currently debugging, the modified app elements will have the following visual cues in the Threads Tab:
 
-* ![](images/overlay-missing-element.png) **Missing element**: the element is no longer present in the app but it still exists in the published version of the app. The missing element will still be debugged, but it will not have visual feedback on the canvas.
+* ![Overlay icon indicating a missing element in the Threads Tab during debugging](images/overlay-missing-element.png "Missing Element Overlay") **Missing element**: the element is no longer present in the app but it still exists in the published version of the app. The missing element will still be debugged, but it will not have visual feedback on the canvas.
 
-* ![](images/overlay-modified-element.png) **Modified element**: the element is different from the one that was published. The element that is going to be debugged is the published one, not the modified one.
+* ![Overlay icon indicating a modified element in the Threads Tab during debugging](images/overlay-modified-element.png "Modified Element Overlay") **Modified element**: the element is different from the one that was published. The element that is going to be debugged is the published one, not the modified one.
 
 ### Switching to Another Thread
 
-The thread being debugged, i.e. the active thread, is identified by a ![](images/overlay-active-request.png) blue arrow in this tab, as well as the app element being debugged on canvas. Every other thread that may also be suspended (but inactive, as they're not being debugged) is marked with a ![](images/overlay-inactive-request.png) grey arrow, as well as their app element on the canvas (if visible).  
+The thread being debugged, i.e. the active thread, is identified by a ![Blue arrow icon indicating the active thread in the Threads Tab during debugging](images/overlay-active-request.png "Active Thread Indicator") blue arrow in this tab, as well as the app element being debugged on canvas. Every other thread that may also be suspended (but inactive, as they're not being debugged) is marked with a ![Grey arrow icon indicating an inactive thread in the Threads Tab during debugging](images/overlay-inactive-request.png "Inactive Thread Indicator") grey arrow, as well as their app element on the canvas (if visible).  
 
 To switch to another thread, double-click on the thread you want to debug in the Threads Tab; ODC Studio updates the contents of the Debugger Tab with the debug information for that thread.
 
-Learn more about threads in the [Threads](<threads.md>) topic.
+Learn more about threads in the [Threads](threads.md) topic.
 
 ## Scope Tabs Area { #scope-tabs-area }
 

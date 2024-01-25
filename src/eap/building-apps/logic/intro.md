@@ -1,5 +1,5 @@
 ---
-summary: Learn more about visual tools for building logic.
+summary:
 tags:
 locale: en-us
 guid: 4968c372-2dc8-4131-8f37-7951fec8f431

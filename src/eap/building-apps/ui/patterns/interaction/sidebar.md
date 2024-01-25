@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Sidebar UI Pattern to display additional information in the margin of the main content. The additional information supports the user's understanding of the main content.
 
-![](<images/sidebar-example.png>)
+![Example of a sidebar UI pattern in a mobile app](images/sidebar-example.png "Sidebar Example")
 
 <div class="info" markdown="1">
 
@@ -28,11 +28,11 @@ In this example, we create a button that opens and closes the Sidebar widget.
 
     The Sidebar widget is displayed.
 
-    ![Search for the Sidebar widget](<images/sidebar-widget-ss.png>)
+    ![Screenshot showing how to search for the Sidebar widget in ODC Studio](images/sidebar-widget-ss.png "Sidebar Widget Search")
 
 1. From the Toolbox, drag the Sidebar widget into the Main Content area of your application's screen.
 
-    ![Search for the Sidebar widget](<images/sidebar-drag-ss.png>)
+    ![Dragging the Sidebar widget into the main content area in ODC Studio](images/sidebar-drag-ss.png "Dragging Sidebar Widget")
 
     By default, the Sidebar widget contains Header and Content placeholders.
 
@@ -40,33 +40,33 @@ In this example, we create a button that opens and closes the Sidebar widget.
 
     In this example, we enter it `MySidebar`.
 
-    ![Enter a name for the Sidebar](<images/sidebar-name-ss.png>)
+    ![Entering a name for the Sidebar widget in the Properties tab](images/sidebar-name-ss.png "Naming the Sidebar Widget")
 
 1. Select and right-click your screen name, and select **Add Local Variable**.
 
-    ![Add a local variable](<images/sidebar-add-var-ss.png>)
+    ![Adding a local variable to the screen in ODC Studio](images/sidebar-add-var-ss.png "Adding a Local Variable")
 
 1. Enter a name for the variable.
 
     In this example, name the variable ``IsSidebarOpen``, set the **Data Type** as Boolean, and the **Default Value** to **False**.
 
-    ![Enter a name for the Sidebar](<images/sidebar-var-name-ss.png>)
+    ![Entering a name for the Sidebar local variable with Boolean data type](images/sidebar-var-name-ss.png "Naming the Sidebar Variable")
 
 1. Select the Sidebar widget, and on the **Properties** tab, from the **StartsOpen** dropdown, select the newly created variable.
 
-    ![Set the StartsOpen property](<images/sidebar-isopen-ss.png>)
+    ![Setting the StartsOpen property of the Sidebar widget to a local variable](images/sidebar-isopen-ss.png "Setting StartsOpen Property")
 
 1. Add your content to the **Header** and **Content** placeholders, for example, forms, images and text. 
     
     In this example we add some text.
    
-    ![Enter a name for the Sidebar](<images/sidebar-content-ss.png>)
+    ![Adding text content to the Header and Content placeholders of the Sidebar widget](images/sidebar-content-ss.png "Adding Content to Sidebar")
 
 1. From the Toolbox, drag the **Button** widget just below the **Sidebar** widget and on the **Properties** tab, in the **Text** field, enter the text you want to appear on the button.
 
     In this example, we enter `Open Sidebar`.
 
-    ![Add a button](<images/sidebar-button-ss.png>)
+    ![Adding a button below the Sidebar widget to open the Sidebar](images/sidebar-button-ss.png "Adding a Button to Open Sidebar")
 
 1. To create a screen action to toggle the Sidebar:
 
@@ -74,21 +74,21 @@ In this example, we create a button that opens and closes the Sidebar widget.
 
     b. Drag an **If** statement to the screen action, and on the **Properties** tab, set the **Condition** to the **IsSidebarOpen** variable.
 
-    ![Add If statement](<images/sidebar-if-ss.png>)
+    ![Adding an If statement to the screen action for toggling the Sidebar](images/sidebar-if-ss.png "Adding If Statement")
 
     c. On the **True** branch, add the **SidebarClose** client action and set the **WidgetId** parameter to the Sidebar Id.
 
-    ![Add SidebarClose client action](<images/sidebar-close-ss.png>)
+    ![Adding the SidebarClose client action to the True branch of the If statement](images/sidebar-close-ss.png "Adding SidebarClose Client Action")
 
     d. On the **False** branch, add the **SidebarOpen** client action and set the **WidgetId** parameter to the Sidebar Id.
 
     e. Drag an **Assign** to the screen action and set **IsSidebarOpen** variable to ``not IsSidebarOpen``.
     
-    ![Add an Assign](<images/sidebar-assign-ss.png>)
+    ![Adding an Assign action to toggle the IsSidebarOpen variable](images/sidebar-assign-ss.png "Adding an Assign Action")
 
 1. You can customize the Sidebar by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties.
 
-    ![Set relevant properties](<images/sidebar-properties-ss.png>)
+    ![Setting optional properties of the Sidebar pattern in the Properties tab](images/sidebar-properties-ss.png "Setting Sidebar Pattern Properties")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

@@ -1,13 +1,12 @@
 ---
-summary: Let your users take pictures in native mobile apps, PWAs, and web apps. Adjust the picture properties in the native mobile apps. Demo app available to see the plugin in action.
-tags: 
+summary: The Camera plugin allows users to take pictures and capture videos with their mobile devices.
+tags:
 locale: en-us
 guid: 6df6f491-46e4-434f-924e-043929958fef
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7545&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Camera plugin
 
 The Camera plugin allows users to take pictures and capture videos with their mobile devices. This plugin works with both native mobile apps and progressive web apps (PWAs).
@@ -24,7 +23,7 @@ Install the **Camera Sample App** from Forge and open the app in ODC (OutSystems
 * Edit a picture taken with the camera or a picture selected from the gallery
 * Edit the picture displayed in the app
 
-    ![Camera plugin demo app](images/camera-sample-app.png)
+    ![Screenshot of the Camera Sample App interface in ODC Studio](images/camera-sample-app.png "Camera Sample App")
 
 ## Taking a picture 
 
@@ -41,7 +40,7 @@ To allow users take a picture:
 1. Use a Button or another widget to run the action that takes the picture.
 1. Use an **Image** widget to show the image thumbnail after using the camera, by setting Type to Binary Data and Image Content to the content of **MediaResult.Thumbnail**.
 
-    ![UI setup for taking pictures](images/camera-interface-setup-ss.png)
+    ![User interface setup for taking pictures with the Camera plugin](images/camera-interface-setup-ss.png "UI Setup for Taking Pictures")
 
 ### Creating logic to take a picture
 
@@ -56,7 +55,7 @@ You can find all of the available actions for the Camera plugin by navigating to
 1. Check if taking pictures on the device works by verifying that the value of **TakePicture.Success** is **True**. 
 1. If yes, handle the picture data in **TakePicture.ImageCaptured** by assigning it to a variable of the **Binary Data** data type.
 
-    ![Take picture logic flow](images/camera-flow-take-pic-ss.png)
+    ![Flowchart demonstrating the logic for taking a picture with the Camera plugin](images/camera-flow-take-pic-ss.png "Take Picture Logic Flow")
 
 ## Recording a video 
 
@@ -82,7 +81,7 @@ Video files stored in the cache are deleted when the app closes. When setting th
 
 </div>
 
-![Capture video logic flow 1](images/capture-video-logic-1-ss.png)
+![Flowchart showing the initial steps in the logic for capturing a video](images/capture-video-logic-1-ss.png "Capture Video Logic Flow 1")
 
 ### Creating logic to record a video
 
@@ -91,7 +90,7 @@ Video files stored in the cache are deleted when the app closes. When setting th
 1. Check if recording videos on the device works by verifying that the value of **RecordVideo.Success** is **True**.
 1. If yes, handle the picture data in **RecordVideo.MediaResult** by assigning it to a variable of the **MediaResult** data type.
 
-    ![Capture video logic flow 2](images/capture-video-logic-2-ss.png)
+    ![Flowchart showing the subsequent steps in the logic for capturing a video](images/capture-video-logic-2-ss.png "Capture Video Logic Flow 2")
 
 ## Selecting media from the gallery 
 
@@ -101,19 +100,19 @@ You can allow users to choose a media file from the device gallery, either a pic
 1. [Check for errors](#handling-errors) by verifying that **ChooseFromGallery.Success** is **True**.
 1. After users select the image, the binary data of the image is in the variable **ChooseFromGallery.MediaResult.**.
 
-    ![Open from gallery](images/camera-flow-choose-from-gallery-ss.png)
+    ![Flowchart illustrating the process of selecting media from the gallery](images/camera-flow-choose-from-gallery-ss.png "Open from Gallery")
 
 ## Uploading media assets from URIs
 
 In conjunction with the **FileTransfer** plugin, you can use video and picture URIs returned in the **MediaResult** to upload these media files to a server and further use their hosted URLs to view them in your app.
 For example, below we use the **FileTransfer** plugin **UploadFileWithHeaders** client action to upload a video file to the app’s rest endpoint **rest/tickets/video**.
 
-![Upload with headers](images/upload-with-headers-ss.png)
+![Screenshot of the FileTransfer plugin's UploadFileWithHeaders client action](images/upload-with-headers-ss.png "Upload with Headers")
 
 Inside the rest endpoint, you can then upload the video file to an S3 bucket. Afterwards, you can get the video's presigned URL and use it with the **Video** widget to play the uploaded video
 
-![S3 Object Put](images/object-put-ss.png)
-![S3 Object Get PreSignedUrl](images/get-url-ss.png)
+![Diagram showing the process of uploading a video file to an S3 bucket](images/object-put-ss.png "S3 Object Put")
+![Diagram illustrating how to retrieve a presigned URL for a video stored in S3](images/get-url-ss.png "S3 Object Get PreSignedUrl")
 
 ## Image quality and app responsiveness
 
@@ -152,7 +151,7 @@ The following is the list of actions you can use to handle the errors.
 
 You can use these actions with the **If** nodes to check for errors and control how the app works.
 
-![Handling errors in the camera plugin](images/camera-handling-errors-ss.png)
+![Flowchart for handling errors within the Camera plugin](images/camera-handling-errors-ss.png "Handling Errors in the Camera Plugin")
 
 ## Reference
 

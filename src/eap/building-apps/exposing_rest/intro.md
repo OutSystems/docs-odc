@@ -1,16 +1,15 @@
 ---
-summary: Exposing REST APIs in your OutSystems applications.
-tags: 
+summary: OutSystems allows you to expose methods using a REST API.
+tags:
 locale: en-us
 guid: 79ddbf86-371c-41cf-b9c9-45545b74957f
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22105&t=enlFI20VRi6L4Uys-1
 platform-version: odc
 ---
-
 # Exposing REST APIs
 
-OutSystems allows you to [expose methods using a REST API](<expose-a-rest-api.md>). These methods can be organized under multiple REST APIs.
+OutSystems allows you to [expose methods using a REST API](expose-a-rest-api.md). These methods can be organized under multiple REST APIs.
 
 <div class="info" markdown="1">
 

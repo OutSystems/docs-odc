@@ -1,13 +1,12 @@
 ---
-summary: How to create one-to-many relationships between entities in OutSystems.
-tags: 
+summary: Creating a one-to-many relationship between entities
+tags:
 locale: en-us
 guid: 6bde9ed9-7127-4f01-96ee-3add9ecda974
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3202%3A7447&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Create a One-to-Many Relationship
 
 When modeling data, it is sometimes necessary to create one-to-many relationships between entities. For instance, a `Place` (parent entity) can have many `Reviews` (child entity). This is typically implemented with a foreign key - the identifier of the parent record - in the child records.

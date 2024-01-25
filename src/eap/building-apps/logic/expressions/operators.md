@@ -1,13 +1,12 @@
 ---
-summary: OutSystems operators reference.
-tags: 
+summary: This article provides a reference for the operators used in OutSystems expressions.
+tags:
 locale: en-us
 guid: ab45e99f-581c-4e59-a13b-0a23931a7e85
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Operators
 
 This is the reference document for the operators you can use in an OutSystems [expression](../expressions.md).
@@ -24,7 +23,7 @@ The following are the data types allowed for the unary minus (\-) operator:
 
 \- (Unary minus) | Text | Long Integer | Integer | Decimal | Boolean | Date Time | Date | Time  
 ---|---|---|---|---|---|---|---|---  
- | No | Yes | Yes | Yes | No | No | No | No  
+| | No | Yes | Yes | Yes | No | No | No | No |
   
 ### Arithmetic operators /, \-, \*
 

@@ -24,7 +24,7 @@ Open the email and locate the link to the ODC Portal.
 
 Click the link to go to the login page.
 
-![ODC Portal](images/vacation-app-pl.png)
+![Screenshot of the OutSystems Developer Cloud Portal interface showing various management options such as Apps, Delivery, Monitoring, Users & Access, Configurations, and Forge](images/vacation-app-pl.png "ODC Portal Interface")
 
 The **ODC Portal** provides a unified experience that consolidates your app and user management experience in one place. The ODC Portal and ODC Studio work together, making it quick to get the tools you need to develop and deploy your apps.
 

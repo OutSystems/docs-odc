@@ -1,5 +1,5 @@
 ---
-summary: Summary of custom authentication flows.  
+summary: ODC provides pre-built screens and blocks for common authentication functionalities.
 tags:
 locale: en-us
 guid: 49853077-9937-4865-8183-3f1f9ff224c2
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Custom authentication flows
 
 Most apps share certain common authentication functionalities that let end-users login, change password, recover password, or edit profile information. In OutSystems Developer Cloud (ODC), these functionalities come in pre-built screens that you can use and edit. These are available in the **UI Flows** > **Common** folder in the **Interface** tab in ODC Studio.

@@ -1,13 +1,12 @@
 ---
-summary: Add documentation to your REST API to help developers to integrate their applications with your system.
-tags: 
+summary: OutSystems facilitates documenting your REST API by automatically generating the documentation when you publish the app.
+tags:
 locale: en-us
 guid: 08460e49-ec25-478c-abce-d4dc5d1abe2b
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21228&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Document an Exposed REST API
 
 Adding documentation to your REST API is essential as it helps developers to integrate their applications with your system.
@@ -26,4 +25,4 @@ OutSystems publishes the documentation under the base URL of the REST API. To op
 
 1. Choose **Open Documentation**.
 
-    ![](images/ss-rest-open-documentation.png)
+    ![Screenshot showing how to open REST API documentation in ODC Studio](images/ss-rest-open-documentation.png "Open REST API Documentation")

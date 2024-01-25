@@ -1,18 +1,17 @@
 ---
-tags: 
-summary: Blank Slate informs end-users when they start using the application, complete a task or when there is no data available for display.
+tags:
+summary: The Blank Slate UI Pattern is used to inform end-users and display no data available.
 locale: en-us
 guid: 8f31ca3f-5223-4225-b292-304330d0e17e
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A10392&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Blank Slate
 
 You can use the Blank State UI Pattern to inform end-users, for example, to complete a task or when there is no data available for display etc.
 
-![](<images/blankslate-5-ss.png>)
+![Example of a Blank Slate UI Pattern in a mobile app interface](images/blankslate-5-ss.png "Blank Slate UI Pattern Example")
 
 **How to use the Blank Slate UI Pattern**
 
@@ -20,11 +19,11 @@ You can use the Blank State UI Pattern to inform end-users, for example, to comp
 
     The Blank Slate widget is displayed.
 
-    ![](<images/blankslate-2-ss.png>)
+    ![Blank Slate widget displayed in the ODC Studio Toolbox](images/blankslate-2-ss.png "Blank Slate Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Blank Slate widget into the Main Content area of your application's screen.
 
-    ![](<images/blankslate-3-ss.png?width=800>)
+    ![Dragging the Blank Slate widget into the main content area of an application screen](images/blankslate-3-ss.png "Dragging Blank Slate Widget into Main Content Area")
 
     By default, the Blank Slate widget contains icon, content, and action placeholders.
 
@@ -32,7 +31,7 @@ You can use the Blank State UI Pattern to inform end-users, for example, to comp
 
     In this example, we change the icon to a calendar icon, enter some text in the Content placeholder, and add a button to the Actions placeholder. This button, when clicked, redirects the user to another page.
 
-    ![](<images/blankslate-4-ss.png?width=800>)
+    ![Customized Blank Slate widget with a calendar icon, text content, and an action button](images/blankslate-4-ss.png "Customizing Blank Slate Widget with Content")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22075&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Create logic to register a user
 
 Once you create a screen for users to sign in, you can add logic to your screen. Logic enables you to validate your user's input and set up actions if the information is true or false.
@@ -20,7 +19,7 @@ To create logic to register users, follow these procedures. To make it easier, T
 
 1. From the **Interface** tab, select the **Common** > **Signup**, and then on the canvas, click the **Signup** button to display the Properties panel.
 
-    ![Copy login screen](images/signup-screen-odcs.png)
+    ![Interface of the Signup screen in OutSystems showing the Toolbox, canvas, and logic areas](images/signup-screen-odcs.png "Signup Screen Interface")
 
     <div class="info" markdown="1">
 
@@ -30,7 +29,7 @@ To create logic to register users, follow these procedures. To make it easier, T
 
 1. From the **Properties** panel, click the dropdown for the on-click event and select **New Client Action**. The **SignUpOnClick** action flow displays on the canvas.
 
-    ![Start changing the sign-up flow](images/starting-signup-flow-odcs.png)
+    ![OutSystems canvas displaying the initial setup of the SignUpOnClick action flow](images/starting-signup-flow-odcs.png "Initializing Signup Flow")
 
 1. From the Toolbox, drag the **Assign** widget onto the **True** branch and place it below the **Assign** element. The Assignments panel displays.
 1. In the **Assignments** panel, add the **IsExecuting** variable and set it to `True`.
@@ -46,7 +45,7 @@ After setting up the DoSignup action, you need to configure the Server action. I
 
 1. From the **Logic** tab, select **Server action**, right-click, and select **Add Public element** to display a pop-up.
 
-    ![Add StartUserRegistration Public element](images/add-public-element-odcs.png)
+    ![OutSystems Logic tab with the Add Public Element pop-up searching for StartUserRegistration](images/add-public-element-odcs.png "Adding a Public Element")
 
     <div class="info" markdown="1">
 
@@ -57,24 +56,24 @@ After setting up the DoSignup action, you need to configure the Server action. I
 1. In the search bar pop-up, search for **StartUserRegistration**, then select it from the dropdown and click **Add**. ODC displays the **StartUserRegistration** action below system actions in the Logic tab.
 1. From the Toolbox, drag the **Run Server Action** widget to the canvas and place it between the Start and End elements to display a pop-up. In the search pop up, enter **StartUserRegistration** Server action and then click **Select.**
   
-    ![Expand user and add variables](images/expand-user-input-parameter-odcs.png)
+    ![OutSystems interface showing the expansion of user input parameters for the StartUserRegistration action](images/expand-user-input-parameter-odcs.png "Expanding User Input Parameters")
 
 1. From the **Logic** tab, right-click the **DoSignup** Server action and select **add input parameter**. Set the Name to `User` and the data type to `User`. In the **DoSignup** canvas, click **StartUserRegistration** action to display properties. Click  **+** to expand the user input and enter `name` as User.Name and `email` as User.Email.
 
-    ![Add three output parameters](images/output-paraments-signup-odcs.png)
+    ![OutSystems DoSignup Server action interface with three output parameters added](images/output-paraments-signup-odcs.png "Output Parameters Configuration")
 
 1. From the **Server Action**, right-click the **DoSignup** Server action and select **Add Output** parameter. Enter the following output parameters:
     * IsSuccess with data type `Boolean`.
     * ErrorMessage with data type `Text`.
     * VerificationCode with data type `Text`.
 
-    ![Start User Registration setting output variables](images/star-user-registration-variables-output-odcs.png)
+    ![OutSystems canvas with Assign widget setting output variables for StartUserRegistration](images/star-user-registration-variables-output-odcs.png "Setting Output Variables for User Registration")
 
 1. On the **DoSignup** canvas, drag an **Assign** widget and place it after the **StartUserRegistration** action. Under the Assignments panel, assign, set the following:
     * IsSuccess as `StartUserRegistration.UserRegistrationResult.Success`.
     * VerificationCode as `StartUserRegistration.UserRegistrationResult.VerificationCode`.
 
-    ![SignUpOnClick client action go to DoSignUp and set the input parameters](images/signup-dosignup-input-parameters-odcs.png)
+    ![OutSystems SignUpOnClick client action properties panel showing the configuration of DoSignup input parameters](images/signup-dosignup-input-parameters-odcs.png "Configuring DoSignup Input Parameters")
 
 1. From the canvas, click the **DoSignup** action to display the Properties panel, and set the following properties:
 
@@ -111,7 +110,7 @@ You can check that the data entry fields only allow user data that complies with
 
 Verify the validation logic of the DoSignup action looks like the following screen shot.
 
-![Start User Registration add validations](images/start-user-registration-validations-odcs.png)
+![OutSystems DoSignup action flow depicting the validation logic for user registration](images/start-user-registration-validations-odcs.png "User Registration Validation Logic")
 
 As a final validation, you can configure the flow to send an email to the user with the users name. Follow the steps below:
 

@@ -1,12 +1,11 @@
 ---
-summary: Understand what are strong dependencies and weak dependencies in ODC.
+summary: Strong and weak dependencies in OutSystems determine the relationship between producers and consumers.
 locale: en-us
 guid: 908a38d8-c72c-47c4-81e1-63bccbaa4d1d
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
 ---
-
 # Understand strong and weak dependencies
 
 Strong and weak dependencies are related to how information is exposed and used in OutSystems by producers and consumers. Producers typically expose functionality for consumers to use. For example, a Producer might be a Library that implements and exposes functionality, and the consumer is an app using the exposed functionality.

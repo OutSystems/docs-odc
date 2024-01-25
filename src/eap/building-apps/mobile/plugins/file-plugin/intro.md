@@ -1,13 +1,12 @@
 ---
-summary: Manage files and folders on a mobile device within the app sandbox.
-tags: 
+summary: File Plugin allows you to manage files and folders on a mobile device within the app sandbox.
+tags:
 locale: en-us
 guid: c2174075-3813-431b-8254-637c6a5e7d69
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7614&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # File Plugin
 
 <div class="info" markdown="1">
@@ -33,7 +32,7 @@ Install **File Demo App** from Forge and open the app in ODC Studio. The demo ap
 * List folders
 * Save text in temporary file
 
-![Demo app](images/sample-app.png)
+![Screenshot of the File Demo App interface showing file management features](images/sample-app.png "File Demo App Interface")
 
 ## Working with binary content
 
@@ -49,7 +48,7 @@ Here are some examples of how to use File Plugin.
 
 The **SaveFile** requires a binary input, so you need to convert the text to binary first. Use the **TextToBinaryData** (1) action from the **BinaryData** extension (you need to reference the **BinaryData** extension first). You can then use the **SaveFile** action from **Logic** > **Client Actions** > **FilePlugin** to create a file and save text (2). Set the file name and the path in the properties (3).
 
-![Flow to save text in file on mobile device](images/save-text-in-file-mobile-ss.png)
+![Example of saving text in a file using the SaveFile action in a mobile app](images/save-text-in-file-mobile-ss.png "Save Text in File Example")
 
 <div class="info" markdown="1">
 
@@ -61,7 +60,7 @@ Refer to [Working with binary content](#working-with-binary-content) for more in
 
 Use the **ListDirectory** action from **Logic** > **Client Actions** > **ListDirectory** to get the list of the files (1). The file names are in the list **ListDirectory.FileList** (2).
 
-![Flow to list the files on a mobile device](images/list-files-mobile-ss.png)
+![Example of listing files in a directory using the ListDirectory action in a mobile app](images/list-files-mobile-ss.png "List Files Example")
 
 ## Reference
 

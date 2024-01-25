@@ -1,13 +1,12 @@
 ---
-summary: You create Timers at design time and set the schedule from ODC (OutSystems Developer Cloud) Portal.
+summary: Create and run Timers in ODC Studio and ODC Portal
 tags:
 locale: en-us
 guid: 8468A775-BC5C-489C-8A44-D15F7C0B5BF1
-app_type:  mobile apps, reactive web apps
+app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Create and run Timers
 
 A timer is a tool that lets you execute application logic periodically at a scheduled time. Using  ODC (OutSystems Developer Cloud) Studio you can create timers and then using ODC Portal you can modify the timer schedule. You associate timers with apps.

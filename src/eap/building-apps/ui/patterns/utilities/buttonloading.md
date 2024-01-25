@@ -1,13 +1,12 @@
 ---
 tags:
-summary: Use the Button Loading pattern to call actions that don't run immediately.
+summary: Button Loading is a UI pattern that provides a visual hint and disables the button until it becomes available again.
 locale: en-us
 guid: a3269377-0c0c-440f-b194-d7409db9f481
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A20800&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Button Loading
 
 You can use the Button Loading UI Pattern to call actions that don't run immediately, provide a visual hint, and disable the button from being clicked until it becomes available again.
@@ -18,7 +17,7 @@ You can use the Button Loading UI Pattern to call actions that don't run immedia
 
     The Button Loading widget is displayed.
 
-    ![Button Loading widget](<images/buttonloading-widget-ss.png>)
+    ![Screenshot of the Button Loading widget in the ODC Studio Toolbox](images/buttonloading-widget-ss.png "Button Loading Widget in ODC Studio Toolbox")
     
 1. From the Toolbox, drag the Button Loading widget into the Main Content area of your application's screen.
 
@@ -26,29 +25,29 @@ You can use the Button Loading UI Pattern to call actions that don't run immedia
 
     By default the **Button Loading** widget contains a **Button** widget. We change the text of the button to **Create New User**.
 
-    ![Drag widget to existing form in the app](<images/buttonloading-drag-ss.png>)
+    ![Dragging the Button Loading widget onto a form in the Main Content area of an application](images/buttonloading-drag-ss.png "Dragging Button Loading Widget to Form")
 
 1. Create a new local variable (of Boolean type) to control the state of the **Button Loading** widget. In this example, we call it **CreatingNewUser** and set the default value to **False**.
 
-    ![Create a new local variable](<images/buttonloading-variable-ss.png>)
+    ![Creating a new local Boolean variable named CreatingNewUser with a default value of False](images/buttonloading-variable-ss.png "Creating a New Local Variable")
 
 1. In this example, we also set the **ShowLabelOnLoading** property to **False**. 
 
     This displays the loading spinner only (not the Button label) while the button logic is being executed.
 
-    ![Set the ShowLabelOnLoading property](<images/buttonloading-setprop-ss.png>)
+    ![Setting the ShowLabelOnLoading property of the Button Loading widget to False](images/buttonloading-setprop-ss.png "Setting ShowLabelOnLoading Property")
 
 1. Double-click the **Button** widget and add the necessary logic. 
 
     In this example, the **ButtonOnClick** action creates a new user. We also add **Assign** logic for the **Button Loading** widget. The first Assign has the **CreatingNewUser** set to **True**. (This is so the spinner shows the loading state.) The second Assign has the **CreatingNewUser** set to **False**. (The logic is added between the two Assigns.)
 
-    ![Add the relevant logic](<images/buttonloading-logic-ss.png>)
+    ![Adding ButtonOnClick action logic to create a new user and Assign logic to control the Button Loading widget](images/buttonloading-logic-ss.png "Adding Logic to Button Widget")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 
 ### Result
 
-![](<images/buttonloading-result-ss.png>)
+![Final result showing the Button Loading pattern in action within an application](images/buttonloading-result-ss.png "Button Loading Pattern Result")
 
 ## Properties
 

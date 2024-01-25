@@ -1,5 +1,5 @@
 ---
-summary: An overview of data types you can use in your apps.
+summary: This article provides an overview of data types in OutSystems and their default values and constraints.
 tags:
 locale: en-us
 guid: 651e9382-9db0-4150-ad11-c160aa9c9835
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Data types and conversions
 
 This page describes the data types available in OutSystems, their default values and constraints, and the built-in functions to convert them into another data type.

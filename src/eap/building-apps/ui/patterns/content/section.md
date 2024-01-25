@@ -1,18 +1,17 @@
 ---
-tags: 
-summary: Section separates content into groups, easing visual organization.
+tags:
+summary: The Section UI Pattern is used to organize on-screen content into different sections.
 locale: en-us
 guid: 938450a3-c869-4c7b-82f2-7599c196d482
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A11352&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Section
 
 You can use the Section UI Pattern to organize on-screen content into different sections. This pattern can also be used with the Section Index UI Pattern to create anchors for each section.
 
-![](<images/section-5-ss.png>)
+![Screenshot showing an overview of the Section UI Pattern in a mobile app interface](images/section-5-ss.png "Section UI Pattern Overview")
 
 **How to use the Section UI Pattern**
 
@@ -20,11 +19,11 @@ You can use the Section UI Pattern to organize on-screen content into different 
   
     The Section widget is displayed.
 
-    ![](<images/section-1-ss.png>) 
+    ![Screenshot of the Section widget found in the ODC Studio Toolbox](images/section-1-ss.png "Section Widget in ODC Studio Toolbox") 
 
 1. To From the Toolbox, drag the Section widget into the Main Content area of your application's screen.
 
-    ![](<images/section-2-ss.png?width=800>)
+    ![Screenshot depicting the process of dragging the Section widget into the main content area of an application screen](images/section-2-ss.png "Dragging Section Widget into Main Content Area")
 
     By default, the Section widget contains Title and Content placeholders.
 
@@ -32,7 +31,7 @@ You can use the Section UI Pattern to organize on-screen content into different 
 
     In this example, we add a title to the Title placeholder as well as  text and a button to the Content placeholder. We also set the button to redirect the user to a new page when clicked.
 
-    ![](<images/section-3-ss.png?width=800>)
+    ![Screenshot showing the addition of a title, text, and a button to the Section widget placeholders](images/section-3-ss.png "Adding Content to Section Widget Placeholders")
 
 1. On the **Properties** tab, you can customize the Section's look and feel by setting any of the (optional) properties.
 

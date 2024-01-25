@@ -7,14 +7,13 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4002%3A219&mode=design&t=upO9mxr7in19rYkC-1
 ---
-
 # The merge feature and team collaboration
 
 OutSystems Developer Cloud (ODC) uses a simple versioning system that assigns an incremental revision number to each published app. ODC allows you to restore or compare an app to any previous revision stored on the server.
 
 Multiple developers can work on the same app simultaneously. When you publish changes, ODC automatically attempts to merge your code with changes made by other developers. If there are any conflicts, ODC studio displays **Conflicting revision found**.
 
-For more information about merge feature, see [Using the Compare and Merge window](<intro.md>).
+For more information about merge feature, see [Using the Compare and Merge window](intro.md).
 
 ## Automatic merge of app revisions
 

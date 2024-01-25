@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Submenu UI Pattern to create a menu that is contained within another menu.
 
-![Example submenu](<images/submenu-example-ss.png>)
+![Screenshot of an example submenu pattern in a mobile app interface](images/submenu-example-ss.png "Example Submenu Pattern")
 
 **How to use the Submenu UI Pattern**
 
@@ -20,11 +20,11 @@ You can use the Submenu UI Pattern to create a menu that is contained within ano
 
     The Submenu widget is displayed.
 
-    ![Submenu widget](<images/submenu-widget-ss.png>)
+    ![Screenshot showing the Submenu widget in the ODC Studio Toolbox](images/submenu-widget-ss.png "Submenu Widget in Toolbox")
 
 1. From the Toolbox, drag the Submenu widget into the Main Content area of your application's screen.
 
-    ![Drag widget to screen](<images/submenu-dragwidget-ss.png>)
+    ![Screenshot illustrating the process of dragging the Submenu widget into the Main Content area of an application screen](images/submenu-dragwidget-ss.png "Dragging Submenu Widget to Screen")
 
     By default, the Submenu widget contains a Menu placeholder and an Items placeholder that contains a link. You can add as many Items placeholders as required. In this example we add 3 more.
 
@@ -32,7 +32,7 @@ You can use the Submenu UI Pattern to create a menu that is contained within ano
 
     In this example, we add text to the Menu placeholder, and set the links in the Items placeholders to navigate to different pages in the app.
 
-    ![Add content](<images/submenu-additems-ss.png>)
+    ![Screenshot demonstrating how to add text and links to the Menu and Items placeholders in the Submenu widget](images/submenu-additems-ss.png "Adding Content to Submenu Widget")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 

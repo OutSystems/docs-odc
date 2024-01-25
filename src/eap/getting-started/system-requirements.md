@@ -4,7 +4,7 @@ tags:
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
 app_type: mobile apps, reactive web apps
-figma:
+figma: https://www.figma.com/file/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?type=design&node-id=3406%3A233&mode=design&t=J1Fg2OFRP0LzS3gX-1
 platform-version: odc
 ---
 
@@ -97,7 +97,9 @@ The maximum size of an upload file request is 28.6 MB.
 
 ### Server request timeout
 
-The maximum value of the **Server Request Timeout** property is 60 seconds for queries or actions initiated on the client side. The default value of the property is 10 seconds. You can change the default at the app level in the app settings. In ODC Studio, from the **Data** tab, click the top-level element (app name) and the property shown in the top pane.
+The maximum value of the **Server Request Timeout** property is 60 seconds for queries or actions initiated on the client side. The default value of the property is 10 seconds. You can change the default value in the app's property editor.
+
+![Screenshot of app's property editor](images/edit-app-properties-odcs.png "Edit App Properties")
 
 For queries or actions inside timer logic, the maximum timeout value is 60 minutes.
 

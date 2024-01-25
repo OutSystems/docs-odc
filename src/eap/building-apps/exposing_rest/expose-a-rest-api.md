@@ -1,13 +1,12 @@
 ---
-summary: Expose a REST API to allow other systems to retrieve or manipulate information.
-tags: 
+summary: You can expose a REST API to allow other systems to retrieve or manipulate information.
+tags:
 locale: en-us
 guid: 22e6fa5b-6ad0-43bd-b530-dbb948e4c073
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Expose a REST API
 
 If you want to expose methods to allow other systems to retrieve or manipulate information, you can do it using a REST API.
@@ -44,7 +43,7 @@ Default Endpoint | Description
 `DELETE https://<server>/PhoneAPI/rest/v1/DeleteContact` | Deletes a contact.
 `GET https://<server>/PhoneAPI/rest/v1/GetContactAddresses` | Gets all addresses of a contact.
   
-OutSystems defines the default endpoints based on the HTTP Method (`GET`, `POST`, `PUT`, `DELETE`) and on the name of the REST API Methods, but you can [customize the endpoints](<customize-rest-urls.md>) according to your needs.
+OutSystems defines the default endpoints based on the HTTP Method (`GET`, `POST`, `PUT`, `DELETE`) and on the name of the REST API Methods, but you can [customize the endpoints](customize-rest-urls.md) according to your needs.
 
 You can test your REST API Method using several available tools, such as [curl](https://curl.haxx.se/) or [Postman](https://www.postman.com), or building an OutSystems application for that effect.
 

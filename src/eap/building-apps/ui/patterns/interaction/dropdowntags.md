@@ -1,5 +1,5 @@
 ---
-tags: 
+tags:
 summary: The Dropdown Tags UI Pattern offers multiple choice options to the user when using a dropdown search.
 locale: en-us
 guid: 91934a88-de31-437d-be9c-e2ca182835bb
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A15084&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Dropdown Tags
 
 The Dropdown Tags UI Pattern offers multiple choice options to the user when when using a dropdown search.
@@ -20,11 +19,11 @@ In this example, we create a dropdown tags search for a list of employees and a 
 
     The Dropdown Tags widget is displayed.
 
-    ![Dropdown Tag widget](<images/dropdowntags-widget-ss.png>)
+    ![Screenshot of the Dropdown Tags widget in ODC Studio toolbox](images/dropdowntags-widget-ss.png "Dropdown Tags Widget in ODC Studio")
 
 1. From the Toolbox, drag the Dropdown Search widget into the Main Content area of your application's screen.
 
-    ![Drag widget to screen](<images/dropdowntags-drag-ss.png>)
+    ![Dragging the Dropdown Search widget into the Main Content area of an application screen](images/dropdowntags-drag-ss.png "Dragging Widget to Screen")
 
 1. Select and right-click your screen name, and select **Fetch Data from Database**.
 
@@ -32,19 +31,19 @@ In this example, we create a dropdown tags search for a list of employees and a 
 
     In this example, the **Sample_Employee** entity is selected. 
 
-    ![Select database entity](<images/dropdowntags-source-ss.png>)
+    ![Select Source pop-up with Sample_Employee entity selected for Dropdown Tags data source](images/dropdowntags-source-ss.png "Selecting Database Entity")
 
     The **GetEmployees** aggregate is automatically created.
 
-    ![Aggregate automatically created](<images/dropdowntags-aggregate-ss.png>)
+    ![GetEmployees aggregate automatically created after selecting database entity for Dropdown Tags](images/dropdowntags-aggregate-ss.png "Aggregate Automatically Created")
 
 1. Return to your screen by double-clicking the screen name, select the **Dropdown Tags** widget, and on the **Properties** tab, set the mandatory properties (**ItemList**, **Value**, **Text**).
 
-    ![Set mandatory properties](<images/dropdowntags-mandprops-ss.png>)
+    ![Properties tab showing mandatory properties set for the Dropdown Tags widget](images/dropdowntags-mandprops-ss.png "Setting Mandatory Properties")
 
 1. Staying on the **Properties** tab, from the **Handler** dropdown, select **New Client Action**.
 
-    ![Create new client action](<images/dropdowntags-handler-ss.png>)
+    ![Dropdown Tags Properties tab with Handler dropdown showing New Client Action selection](images/dropdowntags-handler-ss.png "Creating New Client Action")
 
 1. Add the relevant logic to the client action. 
 
@@ -59,15 +58,15 @@ In this example, we create a dropdown tags search for a list of employees and a 
     
         This displays the number of selected items selected.
 
-        ![Add logic](<images/dropdowntags-message-ss.png>)
+        ![Adding a message and logic to the client action in Dropdown Tags configuration](images/dropdowntags-message-ss.png "Adding Logic to Client Action")
 
 1. You can configure the Dropdown Tags by selecting the pattern, and on the **Properties** tab, set the relevant optional properties. For more configurations, expand the **OptionalConfigs** property.
 
-    ![Set properties](<images/dropdowntags-properties-ss.png>)
+    ![Dropdown Tags Properties tab with OptionalConfigs property expanded for additional configurations](images/dropdowntags-properties-ss.png "Setting Optional Properties")
 
 After following these steps and publishing the app, you can test the pattern in your app. The result of this example should look something like the following:
 
-![Dropdown Tag result](<images/dropdowntags-result.png>)
+![Final result of the Dropdown Tags UI Pattern in a published app](images/dropdowntags-result.png "Dropdown Tags Result")
 
 ## Properties
 

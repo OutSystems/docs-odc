@@ -1,13 +1,12 @@
 ---
-summary: User actions for built-in and/or external identity providers.
-tags: 
+summary: User actions for built-in and/or external identity providers
+tags:
 locale: en-us
 guid: 0889c9fd-98dc-489d-a8ed-bea68946f0ac
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # User
 
 User actions for built-in and/or external identity providers.
@@ -15,23 +14,24 @@ User actions for built-in and/or external identity providers.
 ## Actions
 
 ### ChangePassword
+
 _Client action_
 
-Allows a logged-in user to change their password. Throws an exception if the built-in identity provider is disabled for the current app.
+Allows a logged-in user to change their password and, from the Portal, requires the current password to reset it. When disabled from the current app, it throws an exception by the built-in identity provider. For more information about passwords,  check [Passwords](https://success.outsystems.com/documentation/outsystems_developer_cloud/user_management/passwords/).
 
 _Inputs_
 
 **Username**
 :   Type: Text. Mandatory.
-    Identification of the user changing the password.          
+    Identification of the user changing the password.
 
 **NewPassword**
 :   Type: Text. Mandatory.
-    Identification of the user changing the password.           
+    Identification of the user changing the password.
 
 **OldPassword**
 :   Type: Text. Mandatory.
-    Old user password.      
+    Old user password.
 
 _Outputs_
 
@@ -40,9 +40,10 @@ _Outputs_
     Result of the password change action. Returns boolean values for the complexity policy failed if unsuccessful.
 
 ### FinishResetPassword
+
 _Client action_
 
-Finalizes the reset password operation, using a verification code that can be received by email. Throws an exception if the built-in identity provider is disabled for the current app.
+Finalizes the reset password operation, using a verification code received by email. When disabled from the current app, it throws an exception by the built-in identity provider.
 
 _Inputs_
 
@@ -65,11 +66,12 @@ _Outputs_
     Result of the reset password action. Returns the failure reason if unsuccessful.
 
 ### FinishUserRegistration
+
 _Client action_
 
 <div class="info" markdown="1">
 
-Due to a temporary technical limitation, you must add this action from the public elements. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
+Due to a temporary technical limitation, add this action from the public elements. Navigate to the **Add public elements** icon on the toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
 
 </div>
 
@@ -79,15 +81,15 @@ _Inputs_
 
 **Email**
 :   Type: Text. Mandatory.
-    Identification of the user completing the registration.           
+    Identification of the user completing the registration.
 
 **Password**
 :   Type: Text. Mandatory.
-    Password defined by the user registering.           
+    Password defined by the user registering.
 
 **VerificationCode**
 :   Type: Text. Mandatory.
-    Temporary password defined by the identity provider.     
+    Temporary password defined by the identity provider.
 
 _Outputs_
 
@@ -96,9 +98,10 @@ _Outputs_
     Result of the user registration action. Returns a user identifier if the user was successfully registered. Returns a failure reason if unsuccessful.
 
 ### GetPasswordComplexityPolicy
+
 _Client action_
 
-Gets the configured password policy for the built-in identity provider. Used to enable client-side validation in a user registration flow. Throws an exception if the built-in identity provider is disabled for the current app.
+Gets the configured password policy for the built-in identity provider. Used to enable client-side validation in a user registration flow. When disabled from the current app, it throws an exception by the built-in identity provider.
 
 _Outputs_
 
@@ -118,6 +121,7 @@ _Outputs_
     User information.
 
 ### IsExternalUser
+
 _Client action_
 
 Function that validates if the logged-in user is from an external identity provider. Intended for use cases where we need to filter operations only available for users from the built-in identity provider.
@@ -154,20 +158,22 @@ _Outputs_
     Result of the reset password action. Returns the failure reason if unsuccessful.
 
 ### SendResetPasswordEmail
+
 _Client action_
 
-Triggers the reset password flow, which sends an email to the user with a verification code used to reset the password. Throws an exception if the built-in identity provider is disabled for the current app.
+Triggers the reset password flow, which sends an email to the user with a verification code used to reset the password.  When disabled from the current app, it throws an exception by the built-in identity provider.
 
 _Inputs_
 
 **Email**
 :   Type: Text. Mandatory.
-    User email that will receive a recovery link. If no user with such email is found, no email will be sent.
+    User email receives a recovery link. If no user with such email is found, no email sends.
 
 ### StartResetPassword
+
 _Server action_
 
-Triggers the reset password operation, returning a verification code that can be sent by email to the user. Use the FinishResetPassword action, which receives a verification code as an input, to complete the password reset operation. Throws an exception if the built-in identity provider is disabled for the current app.
+Triggers the reset password operation, returning a verification code that sends by email to the user. Use the FinishResetPassword action, which receives a verification code as an input, to complete the password reset operation. When disabled from the current app, it throws an exception by the built-in identity provider.
 
 _Inputs_
 
@@ -182,32 +188,34 @@ _Outputs_
     Result of the action. Returns the verification code if successful.
     
 ### StartUserRegistration
+
 _Server action_
 
 <div class="info" markdown="1">
 
-Due to a temporary technical limitation, you must add this action from the public elements. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
+Due to a temporary technical limitation, you must add this action from the public elements. Navigate to the **Add public elements** icon on the toolbar of ODC Studio or use the **Ctrl+Q** shortcut. Search for the action, select it, and click **Add**.
 
 </div>
 
-Registers the user in the built-in identity provider by creating the user as inactive and setting a temporary password. Synchronises the [User entity](#user-1) with the identity provider.<br/>Call the action FinishUserRegistration to activate the user and change the password.<br/>It throws an exception if the built-in identity provider is disabled for the current app.
+Registers the user in the built-in identity provider by creating the user as inactive and setting a temporary password. Synchronizes the [User entity](#user-1) with the identity provider. Call the action FinishUserRegistration to activate the user and change the password. When disabled from the current app, it throws an exception by the built-in identity provider.
 
 _Inputs_
 
 **User**
 :   Type: [UserInfo](#userinfo). Mandatory.
-    User information that will be used to create a new user. 
+    User information used to create a new user.
 
 _Outputs_
 
 **StartUserRegistrationResult**
 :   Type: [StartUserRegistrationResult](#startuserregistrationresult)  
-    Result of the user registration action. 
+    Result of the user registration action.
 
 ### UpdateUserProfile
+
 _Server action_
 
-Allows a logged-in user to edit profile information. The user email can't be changed using this action. Throws an exception if the built-in identity provider is disabled for the current app.
+Allows a logged-in user to edit profile information. User can't change user email using this action. When disabled from the current app, it throws an exception by the built-in identity provider.
 
 _Inputs_
 
@@ -222,9 +230,10 @@ _Outputs_
     Result of the update user action. Returns the failure reason if unsuccessful.
 
 ### ValidatePasswordComplexity
+
 _Client action_
 
-Validates a user's password against the password complexity policy. Throws an exception if the built-in identity provider is disabled for the current app.
+Validates a user's password with the password complexity policy. When disabled from the current app, it throws an exception by the built-in identity provider.
 
 _Inputs_
 

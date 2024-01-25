@@ -1,18 +1,17 @@
 ---
 tags:
-summary: Use the Center Content pattern to align the content to the center of its container.
+summary: The Center Content UI Pattern is used to vertically align content to the center of its container.
 locale: en-us
 guid: a4890513-8edb-4155-8075-a2e68740e6f0
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A21058&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Center Content
 
 You can use the Center Content UI Pattern to vertically align content to the center of its container.
 
-![](<images/centercontent-1.png>)
+![Illustration of the Center Content UI Pattern in use](images/centercontent-1.png "Center Content UI Pattern")
 
 **How to use the Center Content UI Pattern**
 
@@ -20,17 +19,17 @@ You can use the Center Content UI Pattern to vertically align content to the cen
 
     The Center Content widget is displayed.
 
-    ![](<images/centercontent-2-ss.png>)
+    ![Screenshot showing the Center Content widget in the ODC Studio Toolbox](images/centercontent-2-ss.png "Center Content Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Center Content widget into the Main Content area of your application's screen.
 
-    ![](<images/centercontent-3-ss.png>)
+    ![Screenshot of dragging the Center Content widget into the Main Content area](images/centercontent-3-ss.png "Dragging Center Content Widget")
 
     By default, the Center Content widget contains Top, Center, and Bottom placeholders.
 
 1. Add the relevant content to each of the placeholders. In this example we add some images and text.
 
-    ![](<images/centercontent-4-ss.png>)
+    ![Screenshot of the Center Content widget with Top, Center, and Bottom placeholders filled with content](images/centercontent-4-ss.png "Center Content Widget with Placeholders")
 
 After following these steps and publishing the module, you can test the pattern in your app.
 

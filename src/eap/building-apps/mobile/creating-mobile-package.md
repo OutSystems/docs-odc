@@ -1,14 +1,12 @@
 ---
-summary: How to create a mobile package for distribution in app stores.
+summary: Create a mobile app package in ODC Portal to make your app available for users.
 tags:
 locale: en-us
 guid: 4e816fa7-fffc-48c4-b205-13f7165d3775
 app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2598&mode=design&t=TyGh9pLEHaqLAxxu-1
-
 ---
-
 # Create mobile app package
 
 After you can create a mobile app in ODC (OutSystems Developer Cloud) Studio, you can create a mobile app package in ODC Portal. The following list describes the overall process of making your app available for users: 
@@ -78,7 +76,7 @@ To obtain a mobile app build log:
 
 1. In the ODC Portal, go to **Apps** and click your mobile app name to navigate to the mobile app detail page.
 1. In the **Mobile distribution** tab, click the log icon for the desired platform to download the build log.
-    ![Download logs for mobile packages](<images/Logs-mobile-odcs.png>)
+    ![Screenshot showing how to download logs for mobile packages in ODC Portal](images/Logs-mobile-odcs.png "Download Logs for Mobile Packages")
 
 ## View package history
 
@@ -101,11 +99,11 @@ To view the package history of your mobile app:
 
 1. Select the **Mobile distribution** tab and click **View history**.
 
-    ![Go to the mobile distribution tab and click view history](images/viewhistory-mobdistribution-odcs.png)
+    ![Screenshot of the mobile distribution tab highlighting the 'View history' button in ODC Portal](images/viewhistory-mobdistribution-odcs.png "Mobile Distribution Tab - View History")
 
     The package history is displayed. 
 
-    ![Package history](images/viewhistory-packagehistory-odcs.png)
+    ![Screenshot displaying the package history of a mobile app in ODC Portal](images/viewhistory-packagehistory-odcs.png "Package History Overview")
 
 For more information about troubleshooting your apps, see [Monitor and troubleshoot apps](../../monitor-apps.md).
 

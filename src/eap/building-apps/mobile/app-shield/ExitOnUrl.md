@@ -1,13 +1,12 @@
 ---
-summary: Inform app users of the reason why AppShield blocked an app. Define a URL that the app opens once the AppShield closes the app it suspects is modified or tampered with.
-tags: 
+summary: Configuring an exit URL for a blocked app allows you to inform users of the reason for app shutdown
+tags:
 locale: en-us
 guid: 4afd7e48-139b-4672-a1f9-ec8a1aadac75
 app_type: mobile apps
 platform-version: odc
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3965%3A21773&mode=design&t=TyGh9pLEHaqLAxxu-1
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4725%3A140&mode=design&t=olEoleG2T5cjfzpt-1
 ---
-
 # Configuring an exit URL for a blocked app
 
 <div class="info" markdown="1">
@@ -116,13 +115,15 @@ A list of reasons for app shutdown in iOS devices.
 
 | Decimal | Explanation                                       |
 | ------- | ------------------------------------------------- |
-| 0       | Device is jailbroken/rooted                       |
-| 1       | Application is being debugged                     |
-| 2       | Application is modified or repackaged             |
-| 3       | A screenshot of the application was taken         |
-| 4       | An injected library was found in the process      |
-| 5       | A hooking framework was found in the process      |
-| 6       | A screen recording of the application was started |
+| 00      | Device is jailbroken/rooted                       |
+| 01      | Application is being debugged                     |
+| 02      | Application is modified or repackaged             |
+| 03      | A screenshot of the application was taken         |
+| 04      | An injected library was found in the process      |
+| 05      | A hooking framework was found in the process      |
+| 06      | A screen recording of the application was started |
+| 08      | Running on emulator                               |
+| 09      | Running with Developer Mode enabled               |
 
 ### Shutdown reasons for Android
 
@@ -130,16 +131,18 @@ A list of reasons for app shutdown in Android devices.
 
 | Decimal | Explanation                                                               |
 | ------- | ------------------------------------------------------------------------- |
-| 0       | Device is rooted                                                          |
-| 1       | Application is modified or repackaged                                     |
-| 2       | Application is being run in an emulator                                   |
-| 3       | Java debugger attached to app                                             |
-| 4       | Untrusted keyboard detected                                                  |
-| 5       | Untrusted screen reader detected                                             |
-| 6       | Native code hooks, possibly inserted by malicious app                     |
-| 8       | Shield could not read configuration file                                    |
-| 9       | Problem with Native Debugger Protection                                   |
+| 00      | Device is rooted                                                          |
+| 01      | Application is modified or repackaged<br />**Note**: Removed from AppShield version 1.4.0 because it was not guaranteed to be triggered.                                                                            |
+| 02      | Application is being run in an emulator<br />**Note**: Removed from AppShield version 1.4.0 because it was not guaranteed to be triggered.                                                                            |
+| 03      | Java debugger attached to app                                             |
+| 04      | Untrusted keyboard detected                                               |
+| 05      | Untrusted screen reader detected                                          |
+| 06      | Native code hooks, possibly inserted by malicious app                     |
+| 08      | Shield could not read configuration file                                  |
+| 09      | Problem with Native Debugger Protection                                   |
 | 19      | Problem initializing Shield                                               |
+| 1a      | Developer options enabled on device                                       |
+| 1b      | Untrusted installer found on device                                       |
 | 20      | App received termination signal                                           |
 | 21      | Application crashed outside of Java-code, either native library or Shield |
 | 22      | Hooking frameworks detected                                               |

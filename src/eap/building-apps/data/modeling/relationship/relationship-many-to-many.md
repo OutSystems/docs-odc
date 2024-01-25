@@ -1,5 +1,5 @@
 ---
-summary: How to implement a many-to-many relationship using a junction table in OutSystems.
+summary: A many-to-many relationship occurs when one entity has a one-to-many relationship with another entity, and vice-versa.
 tags:
 locale: en-us
 guid: 4e158cbd-cb4d-4152-81f2-dae5e703e5ec
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3202%3A7449&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Create a Many-to-Many Relationship
 
 A many-to-many relationship happens when one entity has a one-to-many relationship with another entity, and vice-versa. For example, an `Author` can write several `Books`, and a `Book` can be written by several` Authors`. This kind of relationship is also known as **N to M** relationship.
@@ -16,7 +15,7 @@ Resolve this kind of relationships by adding a third entity, called **junction e
 
 To create a many-to-many relationship, follow these steps:
     
-1. [Create a relationship entity](<../entity-create.md>).
+1. [Create a relationship entity](../entity-create.md).
 1. Add an attribute and set the data type to the identifier of the first entity.
 1. Add another attribute and set the data type to the identifier of the second entity.
 

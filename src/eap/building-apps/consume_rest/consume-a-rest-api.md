@@ -1,13 +1,12 @@
 ---
-summary: How to consume a REST API or a single API method and use it in your OutSystems applications.
-tags: 
+summary: You can consume one or more REST API methods in ODC Studio by importing Swagger specifications. 
+tags:
 locale: en-us
 guid: 1901abf6-d016-4fc6-84df-c8ea2fe92003
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A12106&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Consume one or more REST API methods
 Make sure you gather all the information you need from the REST API documentation before starting. You can also take a quick video tour about [Consuming a REST API in 10 minutes with OutSystems](https://youtu.be/gNyWIeJYfG0).
 

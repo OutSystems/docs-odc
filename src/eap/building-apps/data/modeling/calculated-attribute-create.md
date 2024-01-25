@@ -1,13 +1,12 @@
 ---
-summary: How to create a new attribute to a data query and base its value on the other record's attributes.
-tags: 
+summary: Create a calculated attribute in an Aggregate to add more information to each record based on the values returned
+tags:
 locale: en-us
 guid: 8d55b7fe-ff2d-4a80-b306-e8d7820ea579
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2486&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Create a Calculated Attribute in an Aggregate
 
 There are situations when the data fetched from the database isn't enough and you need to add more information to each record, namely based on the values returned. OutSystems allows you to do it. You can add new attributes to the records returned by the Aggregate based on the value of the other attributes:

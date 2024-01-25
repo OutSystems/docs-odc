@@ -1,13 +1,12 @@
 ---
-summary: How to build a well-architected app
-tags: 
+summary: Building a well-architected app involves understanding the business problem and asking crucial questions to guide the design and development process.
+tags:
 locale: en-us
 guid: d67d7939-a99f-4328-b490-d0310c35a424
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A516&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Building a well-architected app
 
 Before building apps in OutSystems Developer Cloud (ODC), understand the business problem you want to solve. To help you in that journey, look at an example of a home insurance portal.

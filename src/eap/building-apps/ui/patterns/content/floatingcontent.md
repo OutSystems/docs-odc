@@ -1,18 +1,17 @@
 ---
-tags: 
-summary: Floating Content displays a panel that floats over content (like a map or an image), docked to a screen corner or direction.
+tags:
+summary: Floating Content is a UI pattern that allows you to display content on top of other screen elements.
 locale: en-us
 guid: 12a78364-ee4e-4528-a0f7-239c9b0e31f9
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A11019&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Floating Content
 
 You can use the Floating Content UI Pattern to display content on top of other screen elements, such as a map with navigation instructions.
 
-![](<images/floatingcontent-1-ss.png>)
+![Screenshot of Floating Content UI Pattern overlaying a map](images/floatingcontent-1-ss.png "Floating Content UI Pattern on a Map")
 
 **How to use the Floating Content UI Pattern**
 
@@ -20,13 +19,13 @@ You can use the Floating Content UI Pattern to display content on top of other s
 
     The Floating Content widget is displayed.
 
-    ![](<images/floatingcontent-2-ss.png>)
+    ![Screenshot showing the Floating Content widget in the ODC Studio Toolbox](images/floatingcontent-2-ss.png "Floating Content Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Floating Content widget into the Main Content area of your application's screen.
 
     In this example, the Main Content area of already contains an image of a map. 
 
-    ![](<images/floatingcontent-3-ss.png?width=800>)
+    ![Screenshot of dragging the Floating Content widget into the Main Content area with a map background](images/floatingcontent-3-ss.png "Dragging Floating Content Widget into Main Content Area")
 
     By default, the Floating Content widget contains a Content placeholder.
 
@@ -34,11 +33,11 @@ You can use the Floating Content UI Pattern to display content on top of other s
 
     In this example, we add a Search widget. 
 
-    ![](<images/floatingcontent-4-ss.png?width=800>)
+    ![Screenshot showing the addition of a Search widget to the Floating Content placeholder](images/floatingcontent-4-ss.png "Adding Content to Floating Content Widget")
 
 1. Select the Floating Content widget, and on the **Properties** tab, set the mandatory **Position** property. This defines where the widget is displayed. You can customize the Section's look and feel by setting any of the (optional) properties.
 
-    ![](<images/floatingcontent-5-ss.png?width=800>)
+    ![Screenshot of the Properties tab for the Floating Content widget with Position property highlighted](images/floatingcontent-5-ss.png "Setting Properties of Floating Content Widget")
 
 After following these steps and publishing the app, you can test the pattern in your app. 
 

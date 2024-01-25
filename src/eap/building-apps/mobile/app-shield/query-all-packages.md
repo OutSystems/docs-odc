@@ -1,11 +1,11 @@
 ---
-summary: Learn why apps that use AppShield on Android request the QUERY_ALL_PACKAGES permission, its effects and how to handle the permission in your app
-tags: 
+summary: Android 11 introduces the QUERY_ALL_PACKAGES permission for security checks in AppShield.
+tags:
 locale: en-us
 guid: c8e9533c-1f33-407f-b3f6-523ac67ad126
 app_type: mobile apps
 platform-version: odc
-figma: 
+figma:
 ---
 # Query All Packages permission in Android apps using AppShield
 

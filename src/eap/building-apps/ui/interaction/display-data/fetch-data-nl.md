@@ -15,7 +15,7 @@ Ask for data in similar way that you would ask another person, and ODC Studio cr
 
 Fetching data using human language includes the following steps:
 
-![Main steps of fetching data using human language](images/nl-process-diag.png)
+![Diagram illustrating the process of fetching data using human language in ODC Studio](images/nl-process-diag.png "Human Language Process Diagram")
 
 1. In an aggregate, you ask for data using human language.
 
@@ -33,13 +33,13 @@ To use this capability ensure the following:
 
 In an aggregate, add your data request in the text input, and click **Get Data**.
 
-![Ask for data using human language](images/nl-get-data-ss.png)
+![Screenshot of the 'Get Data' interface in ODC Studio with text input for human language queries](images/nl-get-data-ss.png "Get Data Interface Screenshot")
 
 While you write your request, ODC Studio provides suggestions based on context for the name of entities, attributes, and variables.
 
 Use these suggestions to become more productive and to ensure you get the most reliable results. For example, if you have multiple attributes with the same name, use the right sugestion to quickly and accurately define the correct attribute.
 
-![Dropdown with suggestions for entity name](images/nl-suggestion-ss.png)
+![Screenshot showing the suggestion feature in ODC Studio while typing a human language data request](images/nl-suggestion-ss.png "Suggestion Feature Screenshot")
 
 ### Examples
 

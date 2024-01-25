@@ -1,18 +1,17 @@
 ---
-tags:   
-summary: Card groups small pieces of information and highlights them on the screen.
+tags:
+summary: The Card UI Pattern is used to group small pieces of information and highlight them on the screen.
 locale: en-us
 guid: 594f6cef-f632-40c4-9ffc-2204252e6dd2
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A10485&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # Card
 
 You can use the Cards UI Pattern to group small pieces of information and highlight them on the screen. The information is grouped into a small block that is easily noticeable on-screen.
 
-![](<images/card-1.png>)
+![Example of a Card UI Pattern in use](images/card-1.png "Card UI Pattern Example")
 
 **How to use the Card UI Pattern**
 
@@ -20,15 +19,15 @@ You can use the Cards UI Pattern to group small pieces of information and highli
 
     The Card widget is displayed.
 
-    ![](<images/card-2-ss.png>)
+    ![Screenshot showing the Card widget in the ODC Studio Toolbox](images/card-2-ss.png "Card Widget in ODC Studio Toolbox")
 
 1. From the Toolbox, drag the Card widget into the Main Content area of your application's screen.
 
-    ![](<images/card-3-ss.png>)
+    ![Screenshot of dragging the Card widget into the Main Content area in ODC Studio](images/card-3-ss.png "Dragging Card Widget into Main Content Area")
 
 1. Add your content to the placeholder. In this example we add some text.
 
-    ![](<images/card-4-ss.png>)
+    ![Screenshot showing text being added to the Card widget placeholder in ODC Studio](images/card-4-ss.png "Adding Content to Card Placeholder")
 
 1. On the **Properties** tab, you can customize the Card's look and feel by setting any of the (optional) properties.
 

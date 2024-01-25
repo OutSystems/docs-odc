@@ -1,18 +1,17 @@
 ---
-tags: 
-summary: User Avatar displays user information in a circular badge.
+tags:
+summary: The User Avatar UI Pattern allows displaying a user's initials or image in a circular badge.
 locale: en-us
 guid: 6b1585c5-c59f-48a2-9bb4-452a9932bbc4
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A11997&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-
 # User Avatar
 
 You can use the User Avatar UI Pattern to display a user's initials or their image in a circular badge.
 
-![](<images/useravatar-4-ss.png>)
+![Screenshot of the User Avatar UI Pattern in a mobile app interface](images/useravatar-4-ss.png "User Avatar UI Pattern")
 
 **How to use the User Avatar UI Pattern**
 
@@ -23,23 +22,23 @@ The following example demonstrates how you can display the initials of the regis
 
     The User Avatar widget is displayed.
 
-    ![](<images/useravatar-1-ss.png>)
+    ![Screenshot showing the User Avatar widget in the ODC Studio Toolbox](images/useravatar-1-ss.png "User Avatar Widget in Toolbox")
 
 1. From the Toolbox, drag the User Avatar widget into the Main Content area of your application's screen.
 
-    ![](<images/useravatar-2-ss.png>)
+    ![Screenshot of dragging the User Avatar widget into the Main Content area](images/useravatar-2-ss.png "Dragging User Avatar Widget")
 
 1. To create an aggregate (in this example to retrieve all the users on the platform), right-click the screen name and select **Fetch Data from Database**.
 
-    ![](<images/useravatar-3-ss.png>)
+    ![Screenshot highlighting the option to fetch data from the database in ODC Studio](images/useravatar-3-ss.png "Fetch Data from Database Option")
 
 1. To add a database entity, click the screen, and from the **Select Source** pop-up, select the relevant entity and click **OK**. In this example, we select the **User** entity.
 
-    ![](<images/useravatar-5-ss.png>)
+    ![Screenshot of the Select Source pop-up with the User entity selected](images/useravatar-5-ss.png "Selecting User Entity")
 
     The aggregate **GetUsers** is created.
 
-    ![](<images/useravatar-6-ss.png>)
+    ![Screenshot showing the GetUsers aggregate created in ODC Studio](images/useravatar-6-ss.png "GetUsers Aggregate Created")
 
 1. To reopen your screen, select the **Interface** tab, and double-click on your screen name.
 
@@ -51,13 +50,13 @@ The following example demonstrates how you can display the initials of the regis
 
     Note: You can also add the expression by navigating through the Expression Editor's **Scope** tree and double-clicking on the **Name** output parameter.
 
-    ![](<images/useravatar-7-ss.png>)
+    ![Screenshot of the Expression Editor with the expression to display user names](images/useravatar-7-ss.png "Setting Name Property in User Avatar")
 
     The **Name** property is now set to display the Name property of the aggregate you created earlier, which gets and displays the names of the registered users on your platform.
 
 1. On the **Properties** tab, you can also customize User Avatar's look and feel by setting any of the optional properties, for example, the color, shape, and size. The following example displays a blue, medium-sized, circle badge.  
 
-    ![](<images/useravatar-8-ss.png>)
+    ![Screenshot showing the customization options for the User Avatar's appearance](images/useravatar-8-ss.png "Customizing User Avatar Appearance")
 
 After following these steps and publishing the app, you can test the pattern in your app.
 
