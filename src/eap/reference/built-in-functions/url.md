@@ -11,7 +11,7 @@ figma:
 
 ## GetDefaultDomain
 
-Returns the domain set as default in the stage where this app is running.. If no custom domains are set as default, only the built-in domain is returned.  
+Returns the domain set as default in the stage where this app is running. If no custom domains are set as default, only the built-in domain is returned.  
 
 ### Output
 
