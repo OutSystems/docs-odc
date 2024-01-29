@@ -208,7 +208,7 @@ To use custom sounds on your mobile app, complete the following steps:
 
 <div class="info" markdown="1">
 
-* To learn more about how to use resources, see the [documentation](https://success.outsystems.com/documentation/11/developing_an_application/use_data/use_resources/).
+* To learn more about how to use settings, see the [documentation](https://success.outsystems.com/documentation/outsystems_developer_cloud/configuration_management/).
 
 * Only .wav files are supported.
 
