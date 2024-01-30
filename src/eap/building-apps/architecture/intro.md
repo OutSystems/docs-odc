@@ -32,7 +32,7 @@ When you publish an app, the runtime is packaged into a container.
 
 ### Containers
 
-A container packages the code and all an app's dependencies so you can quickly and reliably deploy it.
+A container packages an app's code and its dependencies, allowing for quick and reliable deployment.
 
 The runtime of each app is loosely coupled. Consuming services from other apps increases the app's life-cycle independence.
 
