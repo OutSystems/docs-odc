@@ -61,8 +61,8 @@ To add a record or row, follow these steps:
 
     ![Image showing mandatory fields highlighted with red outlines in ODC Studio data editing interface](images/edit-data-mandatory-fields-odcs.png "Mandatory Fields Highlighted in ODC Studio")
 
-    **Note:** If any cell has a red outline, it means that those fields are mandatory and you must fill them in. To understand each issue, hover over the highlighted cell. You can make more than one change to the entity at a time. Once you've finished your changes, click **Apply**.
-
+    **Note:** If any cell has a red outline, it means that those fields are mandatory and you must fill them in. To understand each issue, hover over the highlighted cell.
+    
 1. You can make more than one change to the entity at a time. Once you've finished your changes, click [Apply](#apply-changes).
 
     ![Screenshot illustrating the process of adding a new row to an entity in ODC Studio](images/edit-data-add-row-odcs.png "Adding a New Row in ODC Studio")
