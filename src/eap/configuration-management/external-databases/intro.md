@@ -132,7 +132,7 @@ Bit | Number(1,0) | Boolean |
 Date |  | Date |
 Datetime<br/>DateTime2<br/>Smalldatetime | Date<br/>Timestamp | DateTime |
 Image<br/>Binary<br/>Varbinary | Blob<br/>Raw<br/>Long Raw | Binary Data |
-Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType | Not supported, these attributes won't appear in ODC Portal. |
+Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType<br/>VARRAY<br/>OBJECT(structured)| Not supported, these attributes won't appear in ODC Portal. |
 
 ## Considerations when integrating external database
 
