@@ -1,5 +1,5 @@
 ---
-summary:
+summary: The article details various date and time manipulation functions, including adding time units, building date/time values, and calculating differences.
 tags:
 locale: en-us
 guid: 9f92e1f1-c921-4a83-b689-e0e554244c15
@@ -7,7 +7,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-
 # Date and Time
 
 ## AddDays
@@ -251,7 +250,7 @@ Type: Date
 
 ## CurrDateTime
 
-* Client-side calls return the device date and time.
+* Client-side calls return the device date and time. It also returns milliseconds.
 * Server-side calls return the current date in UTC.
 * SQL query calls return the current date and time in UTC.
 
