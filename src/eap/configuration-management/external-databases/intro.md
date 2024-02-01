@@ -107,7 +107,7 @@ You can only change the name and description without testing your connection aga
 
 Admins need to supply the following information to connect to the external database.
 
-| Parameter | Description | Needs testing conection when edited | Notes |
+| Parameter | Description | Needs testing connection when edited | Notes |
 |--|--|--|--|
 | Connection name | The name of the connection | No |  |
 | Description | Information about the database connection | No | Optional |
