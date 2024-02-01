@@ -76,9 +76,11 @@ Click the **Interface** tab, then expand the **UI Flows** > **Common** > **UserI
 
 1. Click the **Logic** tab. Expand the **Client Actions** > **(System)** folder. Drag the **GetExternalLogoutURL** action in place after the **Start** element.
 
+1. In the Properties pane for the **RedirectToURL** action, set the **URL** setting to `GetExternalLogoutURL.ExternalLogoutURL`. This is where the user is redirected for the logout.
+
 <div class="info" markdown="1">
 
-If you revert the provider for stage(s) back to the built-in provider, you must change the login flow for the apps back to that shown in Step 1.
+If you revert the provider for stage(s) back to the built-in provider, you must change the login flow for the apps back to that shown in Step 1, in which the **RedirectToURL** action has the **URL** input set to `GetOwnerURLPath()`.
 
 </div>
 
