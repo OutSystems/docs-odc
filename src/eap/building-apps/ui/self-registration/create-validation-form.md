@@ -80,7 +80,7 @@ This article describes how to create a form to validate a user's verification co
 
 1. From the **Interface** tab, right-click the **Content** container and click **Insert** > **Block**. In the **Source Block Window** that displays search for "AnimatedLabel",and do the following:
     1. Highlight the result and click **Select**.
-    1. Set the **ExtendedClass** property as `margin -top-base password-input"`.
+    1. Set the **ExtendedClass** property as `margin-top-base password-input"`.
     1. In the **Label** widget, set the **Input Widget** property as `Input1`.
     1. Replace the label text with `Set password`.
 
@@ -141,7 +141,7 @@ Now lets update the verification form to improve it.
 1. From the top toolbar, click the **Add public elements** icon  or use the **Ctrl+Q** shortcut.
 1. Search for the [**FinishUserRegistration** client action](../../../reference/system-actions/user.md#FinishUserRegistration), select it, and click **Add**.
 
-1. From the Toolbox, drag a **Run Client Action** widget nd place it after the **Assign** widget, then do the following:
+1. From the Toolbox, drag a **Run Client Action** widget and place it after the **Assign** widget, then do the following:
     1. Search for FinishUserRegistration, select it, and then click **Select**.
     1. Set the **Email** `UserEmail`, **Password** as `Password`, and  **VerificationCode** as `VerificationCode`.
 
@@ -190,7 +190,7 @@ Now lets update the verification form to improve it.
 
     ![Screenshot providing an overview of the verification code form in ODC Studio](images/verification-code-overivew-odcs.png "Verification Code Form Overview")
 
- 1. Open the widget tree for the **Login** screen. and do the following:
+ 1. Open the widget tree for the **Login** screen and do the following:
     1. Right-click the **LoginForm** and click **Insert** > **Container**.
     1. Click the container in the **Login** screen and add the text `New Account?`.
     1. From the Toolbox, drag a **Link** widget, and place it after the text.
