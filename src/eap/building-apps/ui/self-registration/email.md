@@ -110,7 +110,5 @@ Before updating the actions, delete the input parameter **CustomerEmail** by exp
 
     `DoSignup.ErrorMessage`
 
-1. From the **Message** widget, go to the Properties panel, and set the **ApplicationName** as `GetAppName()`.
-
 You can now [create a form to validate the verification code.](create-validation-form.md)
 
