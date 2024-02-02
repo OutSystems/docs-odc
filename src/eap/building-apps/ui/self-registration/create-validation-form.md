@@ -141,7 +141,7 @@ Now lets update the verification form to improve it.
 1. From the top toolbar, click the **Add public elements** icon  or use the **Ctrl+Q** shortcut.
 1. Search for the [**FinishUserRegistration** client action](../../../reference/system-actions/user.md#FinishUserRegistration), select it, and click **Add**.
 
-1. From the Toolbox, drag a **Run Client Action** widget nd place it after the **Assign** widget, then do the following:
+1. From the Toolbox, drag a **Run Client Action** widget and place it after the **Assign** widget, then do the following:
     1. Search for FinishUserRegistration, select it, and then click **Select**.
     1. Set the **Email** `UserEmail`, **Password** as `Password`, and  **VerificationCode** as `VerificationCode`.
 
