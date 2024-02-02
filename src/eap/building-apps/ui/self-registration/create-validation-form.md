@@ -159,10 +159,7 @@ Now lets update the verification form to improve it.
  1. On the new **FinishUserRegistration** server action canvas, use the AI assistant to select the option **Get Data**, then do the following:
     1. Input the `User` entity and click the **Get Data** button.
     1. Click the **No Filters** tab and then click the **Add Filter** button.
-    1. Inside the **Filter Condition** window, set `User.Email = Email`.
-
-    ![Screenshot showing the verification process to check if an email already exists or is mapped to a user in ODC Studio](images/grant-role-verify-email-odcs.png "Verify if the Email Already Exists or Map with a User")
-
+    1. Inside the **Filter Condition** window, set `User.Id`= UserId.
  1. Navigate back to the **FinishUserRegistration** server action canvas.
  1. Drag an **If** widget and place it after the newly added aggregate widget and set the **Condition** as `GetUsersByEmail.List.Empty`.
  1. On the top toolbar, click the **Add public elements** icon or use the **Ctrl+Q** shortcut. Search for the **LogMessage** server action action, select it, and click **Add**.
