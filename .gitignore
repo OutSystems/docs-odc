@@ -6,3 +6,4 @@ rules/
 config.yml
 .vscode/settings.json
 .DS_Store
+.aider*
