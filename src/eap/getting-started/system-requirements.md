@@ -50,6 +50,7 @@ OutSystems supports the following Operating Systems. This list is subject to cha
     * macOS Monterrey
 
 * Windows:
+    * Windows 11 (64-bit) since ODC Studio 1.3.15
     * Windows 10 (64-bit)
 
 ### Requirements for client-side debugging
