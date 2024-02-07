@@ -501,9 +501,7 @@
         - href: eap/reference/apis/donut.md
         - href: eap/reference/apis/line.md
         - href: eap/reference/apis/pie.md
-        - href: eap/reference/apis/radar.md   
-- href: eap/reference/isolation.md
-
+        - href: eap/reference/apis/radar.md       
    
 # Errors
 - href: error/intro.md
