@@ -32,7 +32,7 @@ To create a self-registration flow, open ODC studio and follow the steps below:
 
     ![Step-by-step process of renaming local variables on the sign-up screen in ODC studio](images/rename-local-variable-odcs.png "Rename Local Variables")
 
-1. From the **Elements** tab, click the **Sign-up screen** > **Under Variable** > **Add Local Variable** and name the new variable as `Name`, and the Data Type as `Text`.
+1. From the **Elements** tab, click the **Sign-up screen** > **Under Variable** > **Add Local Variable** and name the new variable as `Name`, and the Data Type as `Text`. Assign the newly created local variable to the widget.
 
 1. From the **Widget Tree**, delete the container with the label password and input field in the Widget tree for the Signup screen.  
 

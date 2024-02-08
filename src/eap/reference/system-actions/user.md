@@ -365,6 +365,9 @@ Success
 
 StartUserRegistrationFailureReason
 :   Type: StartUserRegistrationFailureReason
+     * InvalidEmail
+     * InvalidName
+     * UserAlreadyRegistered
 
 VerificationCode
 :   Type: Text
