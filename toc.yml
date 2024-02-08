@@ -455,46 +455,46 @@
 
 # Reference
 - href: eap/reference/intro.md
-- href: eap/reference/isolation.md
 - topics:
+    - href: eap/reference/isolation.md
   # Libraries
-  - href: eap/reference/libraries/intro.md
-  - topics:
-    - href: eap/reference/libraries/binarydata.md
-    - href: eap/reference/libraries/datetime.md
-    - href: eap/reference/libraries/http.md
-    - href: eap/reference/libraries/math.md
-    - href: eap/reference/libraries/sanitization.md
-    - href: eap/reference/libraries/security.md
-    - href: eap/reference/libraries/text.md
-    - href: eap/reference/libraries/textdictionary.md
-    - href: eap/reference/libraries/url.md
-    - href: eap/reference/libraries/xml.md
-    - href: eap/reference/libraries/zip.md
+    - href: eap/reference/libraries/intro.md
+    - topics:
+        - href: eap/reference/libraries/binarydata.md
+        - href: eap/reference/libraries/datetime.md
+        - href: eap/reference/libraries/http.md
+        - href: eap/reference/libraries/math.md
+        - href: eap/reference/libraries/sanitization.md
+        - href: eap/reference/libraries/security.md
+        - href: eap/reference/libraries/text.md
+        - href: eap/reference/libraries/textdictionary.md
+        - href: eap/reference/libraries/url.md
+        - href: eap/reference/libraries/xml.md
+        - href: eap/reference/libraries/zip.md
   # System actions
-  - href: eap/reference/system-actions/intro.md
-  - topics:
-    - href: eap/reference/system-actions/auth.md
-    - href: eap/reference/system-actions/user.md
+    - href: eap/reference/system-actions/intro.md
+    - topics:
+        - href: eap/reference/system-actions/auth.md
+        - href: eap/reference/system-actions/user.md
   # Built-in functions
-  - href: eap/reference/built-in-functions/intro.md
-  - topics:
-    - href: eap/reference/built-in-functions/data-conversion.md
-    - href: eap/reference/built-in-functions/dateandtime.md
-    - href: eap/reference/built-in-functions/email.md
-    - href: eap/reference/built-in-functions/format.md
-    - href: eap/reference/built-in-functions/math.md
-    - href: eap/reference/built-in-functions/numeric.md
-    - href: eap/reference/built-in-functions/organization.md
-    - href: eap/reference/built-in-functions/text.md
-    - href: eap/reference/built-in-functions/url.md
+    - href: eap/reference/built-in-functions/intro.md
+    - topics:
+        - href: eap/reference/built-in-functions/data-conversion.md
+        - href: eap/reference/built-in-functions/dateandtime.md
+        - href: eap/reference/built-in-functions/email.md
+        - href: eap/reference/built-in-functions/format.md
+        - href: eap/reference/built-in-functions/math.md
+        - href: eap/reference/built-in-functions/numeric.md
+        - href: eap/reference/built-in-functions/organization.md
+        - href: eap/reference/built-in-functions/text.md
+        - href: eap/reference/built-in-functions/url.md
   # Shortcuts
-  - href: eap/reference/shortcutkeys.md
+    - href: eap/reference/shortcutkeys.md
   # APIs
-  - href: eap/reference/apis/api-intro.md
-  - topics:
-    - href: eap/reference/apis/data.md
-    - href: eap/reference/apis/chart-intro.md
+    - href: eap/reference/apis/api-intro.md
+    - topics:
+        - href: eap/reference/apis/data.md
+        - href: eap/reference/apis/chart-intro.md
     - topics:
         - href: eap/reference/apis/area.md
         - href: eap/reference/apis/bar.md
@@ -502,8 +502,7 @@
         - href: eap/reference/apis/donut.md
         - href: eap/reference/apis/line.md
         - href: eap/reference/apis/pie.md
-        - href: eap/reference/apis/radar.md   
-
+        - href: eap/reference/apis/radar.md    
 
    
 # Errors
@@ -597,3 +596,4 @@
     - href: error/aldi/intro.md
     - topics:
         - href: error/aldi/app_lib_depend_issues.md
+
