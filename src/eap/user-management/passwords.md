@@ -28,4 +28,4 @@ Admins don't have permission to change or recover other users' passwords.
 
 You can use pre-built user screens in your app to enable end-users to change and recover their password. For more information, see [Custom authentication flows](../building-apps/ui/custom-auth.md). If organization users (Organization members) working in an app need to recover their password, they must use the ODC Portal.
 
-ODC temporarily locks users out after five consecutive failed sign-in or password change attempts. The lockout duration increases with each additional failed attempt, reaching a maximum of approximately 15 minutes. After the lockout period passes, your user information returns to the initial state.
+ODC temporarily locks users out after five consecutive failed sign-in or password change attempts. The lockout duration increases with each additional failed attempt, starting at just a few seconds and reaching a maximum of approximately 15 minutes. After the lockout period passes, your user information returns to the initial state.
