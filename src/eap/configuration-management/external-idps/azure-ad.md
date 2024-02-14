@@ -10,7 +10,7 @@ platform-version: odc
 
 # Add Azure AD for use as external identity provider
 
-ODC admins can configure Azure AD as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab. 
+ODC admins can configure Azure AD as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab.
 
 To launch the **New provider** configuration screen, click the **Add Provider** > **OpenID Connect** button. Now follow these steps:
 
@@ -28,23 +28,24 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     ![Screenshot of Azure Portal with the Application (client) ID field highlighted](images/copy-application-cliend-id-az.png "Copying Application Client ID in Azure Portal")
 
-1. Click the **Certificates & secrets** tab from the main screen of the app registration in **Azure Portal**. Click **New client secret** button. Enter a description for the new secret in the **Description** field and then click **Add** to generate the secret. 
+1. Click the **Certificates & secrets** tab from the main screen of the app registration in **Azure Portal**. Click **New client secret** button. Enter a description for the new secret in the **Description** field and then click **Add** to generate the secret.
 
     ![Screenshot of Azure Portal with the New client secret button highlighted](images/add-a-client-secret-az.png "Adding a Client Secret in Azure Portal")
 
-1. Copy the newly generated value from the **Value** field and paste it into the **Client secret (secret value)** field in ODC Portal. 
+1. Copy the newly generated value from the **Value** field and paste it into the **Client secret (secret value)** field in ODC Portal.
 
     ![Screenshot of Azure Portal showing the newly generated client secret value](images/paste-secret-value-az.png "Pasting the Client Secret Value in ODC Portal")
 
     <div class="info" markdown="1">
-   
+
     ODC safely stores the configuration details in a secret manager.
-   
+
     </div>
+
+1. Copy the pair(s) of **Redirect URLs** to the list of permitted redirects in the setup part of your external provider. Copy the pair(s) for the built-in and active [custom domains](../custom-domains.md). If configuring [Okta](./okta.md), you can follow the embedded link for specific guidance. Otherwise, see your provider's support documentation for further guidance. For example, [Azure AD](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app#add-a-redirect-uri). Click **Next**.
 
 1. Complete the configuration in ODC Portal by leaving the **PKCE** as the default value (**SHA-256**) and fields in **Claim Mapping** section as default values (**name**, **email**) and clicking **Save**.
 
-ODC tests the configuration and on success adds Azure AD to the list of available providers. If the test fails, a notification with the error displays. 
+ODC tests the configuration and on success adds Azure AD to the list of available providers. If the test fails, a notification with the error displays.
 
 Now follow the steps [here](intro.md#apply-an-external-idp) to apply for the newly added Azure AD provider for use by your organization or apps.
- 
