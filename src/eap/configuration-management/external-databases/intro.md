@@ -186,5 +186,6 @@ Consider the following when integrating external database.
     * Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds
 * .NET does not support the Julian calendar for Oracle, and the minimum supported timestamp value is -62135596800000. 
     * To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
+* Oracle treats empty strings as NULL values. When inserting or updating a nullable text attribute with a value, Oracle stores NULL regardless of the Null Behavior configuration.
 * Data Preview and runtime queries with Unicode characters aren't supported.
 * Advanced SQL Nodes don't support external entities.
