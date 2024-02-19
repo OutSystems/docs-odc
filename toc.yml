@@ -1,84 +1,68 @@
 # Getting started with ODC
 - href: eap/getting-started/intro.md
 - topics:
-  - href: eap/getting-started/system-requirements.md
-  - topics:
-    - href: eap/getting-started/configure-http-proxy.md
-  - href: eap/getting-started/overview-portal-studio.md
-  - href: eap/getting-started/types-of-apps.md
-  - href: eap/getting-started/hello-world.md
-  - href: eap/getting-started/sample-app.md
+    - href: eap/getting-started/system-requirements.md
+    - topics:
+        - href: eap/getting-started/configure-http-proxy.md
+    - href: eap/getting-started/overview-portal-studio.md
+    - href: eap/getting-started/types-of-apps.md
+    - href: eap/getting-started/hello-world.md
+    - href: eap/getting-started/sample-app.md
 
 
 # Onboarding for OutSystems developers
 - href: eap/differences-o11/intro.md
 - topics:
-  - href: eap/differences-o11/differences-sql.md
+    - href: eap/differences-o11/differences-sql.md
 
 # Cloud-native architecture of OutSystems Developer Cloud
 - href: eap/architecture/intro.md
 - topics:
-  - href: eap/architecture/networking.md
-  - href: eap/architecture/identity.md
+    - href: eap/architecture/networking.md
+    - href: eap/architecture/identity.md
 
 # Security of OutSystems Developer Cloud
 - href: eap/security.md
 - topics:
-  - href: eap/cookies.md
+    - href: eap/cookies.md
 
 # Building apps in ODC
 - href: eap/building-apps/intro.md
 - topics:
-    # Edit app and lib properties
     - href: eap/building-apps/app-lib-properties-edit.md
     # Architecture
     - href: eap/building-apps/architecture/intro.md
     - topics:
-    # Recommended architecture
         - href: eap/building-apps/architecture/recommended-architecture.md
-        # Reuse elements across apps
         - href: eap/building-apps/architecture/reuse-elements.md
         - href: eap/building-apps/architecture/service-actions.md
     # Data in OutSystems apps
     - href: eap/building-apps/data/intro.md
     - topics:
-      # Data modeling
-      - href: eap/building-apps/data/modeling.md
-      - topics:
-       # Data entity
-        - href: eap/building-apps/data/modeling/entity.md
+        # Data modeling
+        - href: eap/building-apps/data/modeling.md
         - topics:
-            # Create entity
-            - href: eap/building-apps/data/modeling/entity-create.md
-            # Calculated attribute
-            - href: eap/building-apps/data/modeling/calculated-attribute-create.md
-            #  Excel Bootstrap
-            - href: eap/building-apps/data/modeling/excel-bootstrap.md
-        # Entity Static
+            - href: eap/building-apps/data/modeling/entity.md
+            - topics:
+                - href: eap/building-apps/data/modeling/entity-create.md
+                - href: eap/building-apps/data/modeling/calculated-attribute-create.md
+                - href: eap/building-apps/data/modeling/excel-bootstrap.md
         - href: eap/building-apps/data/modeling/entity-static.md
-        # Entity relationships
         - href: eap/building-apps/data/relationships.md
-        # Relationships between entities
         - topics:
-          # One to one
-          - href: eap/building-apps/data/modeling/relationship/relationship-one-to-one.md
-          # One to many
-          - href: eap/building-apps/data/modeling/relationship/relationship-one-to-many.md
-          # Many to many
-          - href: eap/building-apps/data/modeling/relationship/relationship-many-to-many.md
-      # Sharing data
-      - href: eap/building-apps/data/sharing.md
-      # Data types
-      - href: eap/building-apps/data/data-types.md
-      # Edit data
-      - href: eap/building-apps/data/edit-data.md
+            - href: eap/building-apps/data/modeling/relationship/relationship-one-to-one.md
+            - href: eap/building-apps/data/modeling/relationship/relationship-one-to-many.md
+            - href: eap/building-apps/data/modeling/relationship/relationship-many-to-many.md
+        - href: eap/building-apps/data/sharing.md
+        - href: eap/building-apps/data/data-types.md
+        - href: eap/building-apps/data/edit-data.md
     # Libraries
     - href: eap/building-apps/libraries.md
     # Merge
     - href: eap/building-apps/merge/intro.md
     - topics:
-      - href: eap/building-apps/merge/concepts.md
-      - href: eap/building-apps/merge/merge-example.md
+        - href: eap/building-apps/merge/concepts.md
+        - href: eap/building-apps/merge/merge-example.md
     # Mobile apps
     - href: eap/building-apps/mobile/intro.md
     - topics:
@@ -120,289 +104,201 @@
     # UI
     - href: eap/building-apps/ui/intro.md
     - topics:
-      # Screen
-      - href: eap/building-apps/ui/screen-about.md
-      # Creating screens
-      - href: eap/building-apps/ui/creating-screens/screen-creating.md
-      - topics:
-        #Creating screen scratch
-        - href: eap/building-apps/ui/creating-screens/create-screen-scratch.md
-      # Interaction
-      - href: eap/building-apps/ui/interaction/fetch-display.md
-      - topics:
-        # Aggregate
-        - href: eap/building-apps/ui/interaction/display-data/aggregate.md
-        # Distinct values
-        - href: eap/building-apps/ui/interaction/display-data/distinct.md
-        # Filter results
-        - href: eap/building-apps/ui/interaction/display-data/filter-results.md
-        # Suppported join types
-        - href: eap/building-apps/ui/interaction/display-data/supported-join-types.md
-        # Fetch data using human language
-        - href: eap/building-apps/ui/interaction/display-data/fetch-data-nl.md
-        # Sort results in aggregate
-        - href: eap/building-apps/ui/interaction/display-data/sort-aggregate.md
-      # Reuse ui
-      - href: eap/building-apps/ui/reuse/intro.md
-      - topics:
-          - href: eap/building-apps/ui/reuse/block-create-reuse.md
-      # Patterns
-      - href: eap/building-apps/ui/patterns/intro.md
-        # Adaptive
-      - topics:
-        - href: eap/building-apps/ui/patterns/adaptive/intro.md
-        - topics:
-          # columns
-          - href: eap/building-apps/ui/patterns/adaptive/columns.md
-          # gallery
-          - href: eap/building-apps/ui/patterns/adaptive/gallery.md
-          # display on device
-          - href: eap/building-apps/ui/patterns/adaptive/displayondevice.md
-          # masterdetail
-          - href: eap/building-apps/ui/patterns/adaptive/masterdetail.md
-      - topics:
-        - href: eap/building-apps/ui/patterns/content/intro.md
-        # Content
-        - topics:
-          # accordion
-          - href: eap/building-apps/ui/patterns/content/accordion.md
-          # alert
-          - href: eap/building-apps/ui/patterns/content/alert.md
-          # blankslate
-          - href: eap/building-apps/ui/patterns/content/blankslate.md
-          # card
-          - href: eap/building-apps/ui/patterns/content/card.md
-          # carditem
-          - href: eap/building-apps/ui/patterns/content/carditem.md
-          # cardsectioned
-          - href: eap/building-apps/ui/patterns/content/cardsectioned.md
-          # chatmessage
-          - href: eap/building-apps/ui/patterns/content/chatmessage.md
-          # flipcontent
-          - href: eap/building-apps/ui/patterns/content/flipcontent.md
-          # floatingcontent
-          - href: eap/building-apps/ui/patterns/content/floatingcontent.md
-          # listitemcontent
-          - href: eap/building-apps/ui/patterns/content/listitemcontent.md
-          # section
-          - href: eap/building-apps/ui/patterns/content/section.md
-          # cardbackground
-          - href: eap/building-apps/ui/patterns/content/cardbackground.md
-          # sectiongroup
-          - href: eap/building-apps/ui/patterns/content/sectiongroup.md
-          # tag
-          - href: eap/building-apps/ui/patterns/content/tag.md
-          # tooltip
-          - href: eap/building-apps/ui/patterns/content/tooltip.md
-          # useravatar
-          - href: eap/building-apps/ui/patterns/content/useravatar.md
-      # Interaction
-      - topics:
-        - href: eap/building-apps/ui/patterns/interaction/intro.md
-        - topics:
-          - href: eap/building-apps/ui/patterns/interaction/actionsheet.md
-          - href: eap/building-apps/ui/patterns/interaction/animate.md
-          - href: eap/building-apps/ui/patterns/interaction/animatedlabel.md
-          - href: eap/building-apps/ui/patterns/interaction/bottomsheet.md
-          - href: eap/building-apps/ui/patterns/interaction/carousel.md
-          - href: eap/building-apps/ui/patterns/interaction/datepicker.md
-          - href: eap/building-apps/ui/patterns/interaction/datepickerrange.md
-          - href: eap/building-apps/ui/patterns/interaction/dropdownsearch.md
-          - href: eap/building-apps/ui/patterns/interaction/dropdowntags.md
-          - href: eap/building-apps/ui/patterns/interaction/floatingactions.md
-          - href: eap/building-apps/ui/patterns/interaction/inputwithicon.md
-          - href: eap/building-apps/ui/patterns/interaction/lightboximage.md
-          - href: eap/building-apps/ui/patterns/interaction/monthpicker.md
-          - href: eap/building-apps/ui/patterns/interaction/map/intro.md
-          - href: eap/building-apps/ui/patterns/interaction/notification.md
-          - href: eap/building-apps/ui/patterns/interaction/rangeslider.md
-          - href: eap/building-apps/ui/patterns/interaction/rangesliderinterval.md
-          - href: eap/building-apps/ui/patterns/interaction/scrollablearea.md
-          - href: eap/building-apps/ui/patterns/interaction/search.md
-          - href: eap/building-apps/ui/patterns/interaction/sidebar.md
-          - href: eap/building-apps/ui/patterns/interaction/stackedcards.md
-          - href: eap/building-apps/ui/patterns/interaction/timepicker.md
-          - href: eap/building-apps/ui/patterns/interaction/video.md
-      # Navigation
-      - topics:
-        - href: eap/building-apps/ui/patterns/navigation/intro.md
-        - topics:
-          - href: eap/building-apps/ui/patterns/navigation/bottombaritem.md
-          - href: eap/building-apps/ui/patterns/navigation/breadcrumbs.md
-          - href: eap/building-apps/ui/patterns/navigation/pagination.md
-          - href: eap/building-apps/ui/patterns/navigation/sectionindex.md
-          - href: eap/building-apps/ui/patterns/navigation/submenu.md
-          - href: eap/building-apps/ui/patterns/navigation/tabs.md
-          - href: eap/building-apps/ui/patterns/navigation/timelineitem.md
-          - href: eap/building-apps/ui/patterns/navigation/wizard.md
-      # Numbers
-      - topics:
-        - href: eap/building-apps/ui/patterns/numbers/intro.md
-        - topics:
-          - href: eap/building-apps/ui/patterns/numbers/badge.md
-          - href: eap/building-apps/ui/patterns/numbers/counter.md
-          - href: eap/building-apps/ui/patterns/numbers/iconbadge.md
-          - href: eap/building-apps/ui/patterns/numbers/progressbar.md
-          - href: eap/building-apps/ui/patterns/numbers/progresscircle.md
-          - href: eap/building-apps/ui/patterns/numbers/rating.md
-      # Utilities
-        - topics:
-          - href: eap/building-apps/ui/patterns/utilities/intro.md
-          - topics:
-            - href: eap/building-apps/ui/patterns/utilities/aligncenter.md
-            - href: eap/building-apps/ui/patterns/utilities/buttonloading.md
-            - href: eap/building-apps/ui/patterns/utilities/centercontent.md
-            - href: eap/building-apps/ui/patterns/utilities/inlinesvg.md
-            - href: eap/building-apps/ui/patterns/utilities/margincontainer.md
-            - href: eap/building-apps/ui/patterns/utilities/mouseevents.md
-            - href: eap/building-apps/ui/patterns/utilities/separator.md
-            - href: eap/building-apps/ui/patterns/utilities/swipeevents.md
-            - href: eap/building-apps/ui/patterns/utilities/touchevents.md
-      # Screen Templates
-      - href: eap/building-apps/ui/screen-template/intro.md
-      - topics:
-        # Replace data in screens
-        - href: eap/building-apps/ui/screen-template/replace-data.md
-        # Template compatiblity
-        - href: eap/building-apps/ui/screen-template/template-compatibility.md
-      # Navigating between screens
-      - topics:
-        # UI Flows
-        - href: eap/building-apps/ui/navigation/ui-flow.md
-        # Navigating to a detail screen
-        - href: eap/building-apps/ui/navigation/navigate-to-detail-screen.md
-        # Pass data between screens with input parameters
-        - href: eap/building-apps/ui/navigation/pass-information-between-screens.md
-      # UI interactions
-      - href: eap/building-apps/ui/ui-interactions.md
-      # Customize UI styles
-      - href: eap/building-apps/ui/customize-ui-styles.md
-      # Theme
-      - href: eap/building-apps/ui/themes/intro.md
-      - topics:
-        - href: eap/building-apps/ui/themes/theme-library.md
-      # Custom authentication flows
-      - href: eap/building-apps/ui/custom-auth.md
-      # Self registration
-      - href: eap/building-apps/ui/self-registration/intro.md
-      - topics:
         # Screen
-        - href: eap/building-apps/ui/self-registration/screen.md
-        # Logic
-        - href: eap/building-apps/ui/self-registration/logic.md
-        # Emails
-        - href: eap/building-apps/ui/self-registration/email.md
-        # Validation
-        - href: eap/building-apps/ui/self-registration/create-validation-form.md
-      #  Block lifecycle events
-      - href: eap/building-apps/ui/screen-block-lifecycle-events.md
-
-      # Accessibility
-      - href: eap/building-apps/ui/accessibility/intro.md
-      - topics:
-          - href: eap/building-apps/ui/accessibility/testing-fixing-accessibility-issues.md
-          - href: eap/building-apps/ui/accessibility/aria-roles-and-attributes.md
-          - href: eap/building-apps/ui/accessibility/ui-patterns-accessibility-reference.md
-          - href: eap/building-apps/ui/accessibility/additional-accessibility-resources.md
-
+        - href: eap/building-apps/ui/screen-about.md
+        - topics:
+            - href: eap/building-apps/ui/creating-screens/screen-creating.md
+            - href: eap/building-apps/ui/creating-screens/create-screen-scratch.md
+        - href: eap/building-apps/ui/interaction/fetch-display.md
+        - topics:
+            - href: eap/building-apps/ui/interaction/display-data/aggregate.md
+            - href: eap/building-apps/ui/interaction/display-data/distinct.md
+            - href: eap/building-apps/ui/interaction/display-data/filter-results.md
+            - href: eap/building-apps/ui/interaction/display-data/supported-join-types.md
+            - href: eap/building-apps/ui/interaction/display-data/fetch-data-nl.md
+            - href: eap/building-apps/ui/interaction/display-data/sort-aggregate.md
+        # Reuse ui
+        - href: eap/building-apps/ui/reuse/intro.md
+        - topics:
+            - href: eap/building-apps/ui/reuse/block-create-reuse.md
+        # Patterns
+        - href: eap/building-apps/ui/patterns/intro.md
+        - topics:
+            - href: eap/building-apps/ui/patterns/adaptive/intro.md
+            - topics:
+                - href: eap/building-apps/ui/patterns/adaptive/columns.md
+                - href: eap/building-apps/ui/patterns/adaptive/gallery.md
+                - href: eap/building-apps/ui/patterns/adaptive/displayondevice.md
+                - href: eap/building-apps/ui/patterns/adaptive/masterdetail.md
+            - href: eap/building-apps/ui/patterns/content/intro.md
+            - topics:
+                - href: eap/building-apps/ui/patterns/content/accordion.md
+                - href: eap/building-apps/ui/patterns/content/alert.md
+                - href: eap/building-apps/ui/patterns/content/blankslate.md
+                - href: eap/building-apps/ui/patterns/content/card.md
+                - href: eap/building-apps/ui/patterns/content/carditem.md
+                - href: eap/building-apps/ui/patterns/content/cardsectioned.md
+                - href: eap/building-apps/ui/patterns/content/chatmessage.md
+                - href: eap/building-apps/ui/patterns/content/flipcontent.md
+                - href: eap/building-apps/ui/patterns/content/floatingcontent.md
+                - href: eap/building-apps/ui/patterns/content/listitemcontent.md
+                - href: eap/building-apps/ui/patterns/content/section.md
+                - href: eap/building-apps/ui/patterns/content/cardbackground.md
+                - href: eap/building-apps/ui/patterns/content/sectiongroup.md
+                - href: eap/building-apps/ui/patterns/content/tag.md
+                - href: eap/building-apps/ui/patterns/content/tooltip.md
+                - href: eap/building-apps/ui/patterns/content/useravatar.md
+            - href: eap/building-apps/ui/patterns/interaction/intro.md
+            - topics:
+                - href: eap/building-apps/ui/patterns/interaction/actionsheet.md
+                - href: eap/building-apps/ui/patterns/interaction/animate.md
+                - href: eap/building-apps/ui/patterns/interaction/animatedlabel.md
+                - href: eap/building-apps/ui/patterns/interaction/bottomsheet.md
+                - href: eap/building-apps/ui/patterns/interaction/carousel.md
+                - href: eap/building-apps/ui/patterns/interaction/datepicker.md
+                - href: eap/building-apps/ui/patterns/interaction/datepickerrange.md
+                - href: eap/building-apps/ui/patterns/interaction/dropdownsearch.md
+                - href: eap/building-apps/ui/patterns/interaction/dropdowntags.md
+                - href: eap/building-apps/ui/patterns/interaction/floatingactions.md
+                - href: eap/building-apps/ui/patterns/interaction/inputwithicon.md
+                - href: eap/building-apps/ui/patterns/interaction/lightboximage.md
+                - href: eap/building-apps/ui/patterns/interaction/monthpicker.md
+                - href: eap/building-apps/ui/patterns/interaction/map/intro.md
+                - href: eap/building-apps/ui/patterns/interaction/notification.md
+                - href: eap/building-apps/ui/patterns/interaction/rangeslider.md
+                - href: eap/building-apps/ui/patterns/interaction/rangesliderinterval.md
+                - href: eap/building-apps/ui/patterns/interaction/scrollablearea.md
+                - href: eap/building-apps/ui/patterns/interaction/search.md
+                - href: eap/building-apps/ui/patterns/interaction/sidebar.md
+                - href: eap/building-apps/ui/patterns/interaction/stackedcards.md
+                - href: eap/building-apps/ui/patterns/interaction/timepicker.md
+                - href: eap/building-apps/ui/patterns/interaction/video.md
+            - href: eap/building-apps/ui/patterns/navigation/intro.md
+            - topics:
+                - href: eap/building-apps/ui/patterns/navigation/bottombaritem.md
+                - href: eap/building-apps/ui/patterns/navigation/breadcrumbs.md
+                - href: eap/building-apps/ui/patterns/navigation/pagination.md
+                - href: eap/building-apps/ui/patterns/navigation/sectionindex.md
+                - href: eap/building-apps/ui/patterns/navigation/submenu.md
+                - href: eap/building-apps/ui/patterns/navigation/tabs.md
+                - href: eap/building-apps/ui/patterns/navigation/timelineitem.md
+                - href: eap/building-apps/ui/patterns/navigation/wizard.md
+            - href: eap/building-apps/ui/patterns/numbers/intro.md
+            - topics:
+                - href: eap/building-apps/ui/patterns/numbers/badge.md
+                - href: eap/building-apps/ui/patterns/numbers/counter.md
+                - href: eap/building-apps/ui/patterns/numbers/iconbadge.md
+                - href: eap/building-apps/ui/patterns/numbers/progressbar.md
+                - href: eap/building-apps/ui/patterns/numbers/progresscircle.md
+                - href: eap/building-apps/ui/patterns/numbers/rating.md
+            - href: eap/building-apps/ui/patterns/utilities/intro.md
+            - topics:
+                - href: eap/building-apps/ui/patterns/utilities/aligncenter.md
+                - href: eap/building-apps/ui/patterns/utilities/buttonloading.md
+                - href: eap/building-apps/ui/patterns/utilities/centercontent.md
+                - href: eap/building-apps/ui/patterns/utilities/inlinesvg.md
+                - href: eap/building-apps/ui/patterns/utilities/margincontainer.md
+                - href: eap/building-apps/ui/patterns/utilities/mouseevents.md
+                - href: eap/building-apps/ui/patterns/utilities/separator.md
+                - href: eap/building-apps/ui/patterns/utilities/swipeevents.md
+                - href: eap/building-apps/ui/patterns/utilities/touchevents.md
+      # Screen Templates
+        - href: eap/building-apps/ui/screen-template/intro.md
+        - topics:
+            - href: eap/building-apps/ui/screen-template/replace-data.md
+            - href: eap/building-apps/ui/screen-template/template-compatibility.md
+        - href: eap/building-apps/ui/navigation/ui-flow.md
+        - href: eap/building-apps/ui/navigation/navigate-to-detail-screen.md
+        - href: eap/building-apps/ui/navigation/pass-information-between-screens.md
+        - href: eap/building-apps/ui/ui-interactions.md
+        - href: eap/building-apps/ui/customize-ui-styles.md
+        # Theme
+        - href: eap/building-apps/ui/themes/intro.md
+        - topics:
+            - href: eap/building-apps/ui/themes/theme-library.md
+        # Custom authentication flows
+        - href: eap/building-apps/ui/custom-auth.md
+        # Self registration
+        - href: eap/building-apps/ui/self-registration/intro.md
+        - topics:
+            - href: eap/building-apps/ui/self-registration/screen.md
+            - href: eap/building-apps/ui/self-registration/logic.md
+            - href: eap/building-apps/ui/self-registration/email.md
+            - href: eap/building-apps/ui/self-registration/create-validation-form.md
+        - href: eap/building-apps/ui/screen-block-lifecycle-events.md
+        # Accessibility
+        - href: eap/building-apps/ui/accessibility/intro.md
+        - topics:
+            - href: eap/building-apps/ui/accessibility/testing-fixing-accessibility-issues.md
+            - href: eap/building-apps/ui/accessibility/aria-roles-and-attributes.md
+            - href: eap/building-apps/ui/accessibility/ui-patterns-accessibility-reference.md
+            - href: eap/building-apps/ui/accessibility/additional-accessibility-resources.md
     # Emails
     - href: eap/building-apps/emails/intro.md
     - topics:
-      - href: eap/building-apps/emails/working.md
-      - href: eap/building-apps/emails/sending.md
-      - href: eap/building-apps/emails/attachments.md
-      - href: eap/building-apps/emails/widgets.md
-
-    # Secure your app by using roles
+        - href: eap/building-apps/emails/working.md
+        - href: eap/building-apps/emails/sending.md
+        - href: eap/building-apps/emails/attachments.md
+        - href: eap/building-apps/emails/widgets.md
     - href: eap/building-apps/secure-app-with-roles.md
     # Extend your apps with external logic
     - href: eap/building-apps/external-logic/intro.md
     - topics: 
-      - href: eap/building-apps/external-logic/README.md
-      - href: eap/building-apps/external-logic/REFERENCE.md
-      - href: eap/building-apps/external-logic/soap.md
-    # Use public elements
+        - href: eap/building-apps/external-logic/README.md
+        - href: eap/building-apps/external-logic/REFERENCE.md
+        - href: eap/building-apps/external-logic/soap.md
     - href: eap/building-apps/use-public-elements.md
-    # Exposing REST APIs
-    - href: eap/building-apps/exposing_rest/intro.md
-    - topics:
-      # Expose a rest api
-      - href: eap/building-apps/exposing_rest/expose-a-rest-api.md
-      # Customize rest urls
-      - href: eap/building-apps/exposing_rest/customize-rest-urls.md
-      # Document a rest api
-      - href: eap/building-apps/exposing_rest/document-an-exposed-rest-api.md
-      # Throw a custom error
-      - href: eap/building-apps/exposing_rest/throw-a-custom-error-in-an-exposed-rest-api.md
-      # Change the http status code
-      - href: eap/building-apps/exposing_rest/change-the-http-status-code-of-a-rest-api.md
-      # Built in HTTP status codes
-      - href: eap/building-apps/exposing_rest/built-in-http-status-codes.md
     # Multilingual
     - href: eap/building-apps/ui/multilingual/intro.md
     - topics:
         - href: eap/building-apps/ui/multilingual/translate-your-app.md
         - href: eap/building-apps/ui/multilingual/translation-editor.md
         - href: eap/building-apps/ui/multilingual/translation-management.md
+    # Exposing REST APIs
+    - href: eap/building-apps/exposing_rest/intro.md
+    - topics:
+        - href: eap/building-apps/exposing_rest/expose-a-rest-api.md
+        - href: eap/building-apps/exposing_rest/customize-rest-urls.md
+        - href: eap/building-apps/exposing_rest/document-an-exposed-rest-api.md
+        - href: eap/building-apps/exposing_rest/throw-a-custom-error-in-an-exposed-rest-api.md
+        - href: eap/building-apps/exposing_rest/change-the-http-status-code-of-a-rest-api.md
+        - href: eap/building-apps/exposing_rest/built-in-http-status-codes.md
     # Consume REST APIs
     - href: eap/building-apps/consume_rest/intro.md
     - topics:
-      # Consume a REST API
-      - href: eap/building-apps/consume_rest/consume-a-rest-api.md
-      # Refresh a REST web service
-      - href: eap/building-apps/consume_rest/refresh-rest-service.md
-      # Unsupported REST Enum use cases
-      - href: eap/building-apps/consume_rest/unsupported-use-cases.md
-      # REST API structures
-      - href: eap/building-apps/consume_rest/rest-api-structures.md
-      # Handling webservice errors
-      - href: eap/building-apps/consume_rest/handling-rest-errors.md
-      # Simple customization
-      - href: eap/building-apps/consume_rest/simple-customizations.md
+        - href: eap/building-apps/consume_rest/consume-a-rest-api.md
+        - href: eap/building-apps/consume_rest/refresh-rest-service.md
+        - href: eap/building-apps/consume_rest/unsupported-use-cases.md
+        - href: eap/building-apps/consume_rest/rest-api-structures.md
+        - href: eap/building-apps/consume_rest/handling-rest-errors.md
+        - href: eap/building-apps/consume_rest/simple-customizations.md
     # Handling exceptions
     - href: eap/building-apps/handle-exceptions.md
     - topics:
-        # Handling mechanism
         - href: eap/building-apps/handling_exceptions/handling-mechanism.md
     # Logic
     - href: eap/building-apps/logic/intro.md
     - topics:
-      # Input parameters
-      - href: eap/building-apps/logic/input-parameter.md
-      # Local variables
-      - href: eap/building-apps/logic/local-variable.md
-      # Output parameters
-      - href: eap/building-apps/logic/output-parameter.md
-      # Application ready
-      - href: eap/building-apps/logic/application-ready.md
-      # Application resume
-      - href: eap/building-apps/logic/application-resume.md
-      # Expressions
-      - href: eap/building-apps/logic/expressions.md
-      # Expressions topic
-      - topics:
-        # Expression editor
-        - href: eap/building-apps/logic/expressions/expression-editor.md
-        # Operators
-        - href: eap/building-apps/logic/expressions/operators.md
-        # Operands
-        - href: eap/building-apps/logic/expressions/operands.md
-
+        - href: eap/building-apps/logic/input-parameter.md
+        - href: eap/building-apps/logic/local-variable.md
+        - href: eap/building-apps/logic/output-parameter.md
+        - href: eap/building-apps/logic/application-ready.md
+        - href: eap/building-apps/logic/application-resume.md
+        - href: eap/building-apps/logic/expressions.md
+        - topics:
+            - href: eap/building-apps/logic/expressions/expression-editor.md
+            - href: eap/building-apps/logic/expressions/operators.md
+            - href: eap/building-apps/logic/expressions/operands.md
     # Timers
     - href: eap/building-apps/timers/intro.md
     - topics:
-      # Run
-      - href: eap/building-apps/timers/timer-create-run.md
-      # Monitor
-      - href: eap/building-apps/timers/timer-monitor.md
-    # Set as secret
+        - href: eap/building-apps/timers/timer-create-run.md
+        - href: eap/building-apps/timers/timer-monitor.md
     - href: eap/building-apps/set-as-secret.md
-    # Deleting apps
     - href: eap/building-apps/deleting-apps/intro.md
-    # Strong and weak dependencies
     - href: eap/building-apps/reuse/intro.md
     - topics:
-      - href: eap/building-apps/reuse/handle-changes.md
+        - href: eap/building-apps/reuse/handle-changes.md
 
 # Troubleshooting apps
 - href: eap/troubleshoot/debug/intro.md
@@ -416,9 +312,9 @@
 # Forge
 - href: eap/forge/intro.md
 - topics:
-  - href: eap/forge/install.md
-  - href: eap/forge/document.md
-  - href: eap/forge/submit.md
+    - href: eap/forge/install.md
+    - href: eap/forge/document.md
+    - href: eap/forge/submit.md
 
 # Deploy your apps
 - href: eap/deploy/deploy-apps.md
@@ -428,17 +324,14 @@
 # Configuration management
 - href: eap/configuration-management/configuration-management.md
 - topics:
-  - href: eap/configuration-management/custom-domains.md
-  - href: eap/configuration-management/private-gateway.md
-  - href: eap/configuration-management/configure-emails.md
-  # External database
-  - href: eap/configuration-management/external-databases/intro.md
-  - href: eap/configuration-management/sso.md
-  - href: eap/configuration-management/filter-ip.md
+    - href: eap/configuration-management/custom-domains.md
+    - href: eap/configuration-management/private-gateway.md
+    - href: eap/configuration-management/configure-emails.md
+    - href: eap/configuration-management/external-databases/intro.md
+    - href: eap/configuration-management/sso.md
+    - href: eap/configuration-management/filter-ip.md
 
-
- 
-  
+# User management
 - href: eap/user-management/intro.md 
 - topics:
     - href: eap/configuration-management/external-idps/intro.md
@@ -447,9 +340,10 @@
         - href: eap/configuration-management/external-idps/azure-ad.md
         - href: eap/configuration-management/external-idps/okta.md
         - href: eap/configuration-management/external-idps/end-user-group-mapping.md
-
     - href: eap/user-management/roles.md
     - href: eap/user-management/passwords.md
+
+#Monitor and troubleshoot
 - href: eap/monitor-apps.md
 - topics:
     - href: eap/app-health.md
