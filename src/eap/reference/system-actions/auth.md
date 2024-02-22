@@ -47,7 +47,7 @@ Returns the URL to which the user should be redirected in order to login in an e
 
 _Inputs_
 
-**CallbackURL**
+**ReturnToURL**
 :   Type: Text.
     URL called after the authentication process. The provider will redirect users to this URL after a successful login.
 
