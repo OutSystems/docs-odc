@@ -20,7 +20,7 @@ A parameter in an action is passed by reference, which isn't supported by the Ex
 
 ## Impact
 
-You must fix this error before you can publish the external library. Once you've fixed it, you must create and upload a new ZIP file.
+You must fix this error in your C# project before you can publish the external library. Once you've fixed it, you must create and upload a new ZIP file.
 
 ## Recommended action
 

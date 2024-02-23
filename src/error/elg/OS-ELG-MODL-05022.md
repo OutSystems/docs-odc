@@ -20,7 +20,7 @@ The error occurs because an interface or method name in your project code starts
 
 ## Impact
 
-You must fix this error before you can publish the external library. Once you've fixed it, you must create and upload a new ZIP file.
+You must fix this error in your C# project before you can publish the external library. Once you've fixed it, you must create and upload a new ZIP file.
 
 ## Recommended action
 
