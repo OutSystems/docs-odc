@@ -13,9 +13,7 @@ figma:
 
 OutSystems Developer Cloud (ODC) enables developers to integrate external data into their apps. First, from ODC Portal, admins create connections to the supported databases and select the entities. Then, in ODC studio, developers use the data as entities in their apps.
 
-Admins must set up configuration for each stage such as development, QA, and production, to connect an app to an external database.
-
-Admins ensure the app and its connection information are in the same stage. Additionally, the database model must be the same in all the stages.
+Admins must set up configurations for each stage, such as development, QA, and production, to be able to connect an app to an external database. Admins must also ensure the app and its connection information are in the same stage. Additionally, the database model must be the same in all the stages.
 
 There is no limit to the number of entities you can add from the external database.
 
@@ -56,15 +54,16 @@ To create a new database connection, follow these steps:
 
 1. Go to ODC Portal, select **Configurations** > **Connections** > then click the **Create connection** button.
 1. From the popup, select a Database provider, then click **Confirm** to display the new connection form.
-1. In the connection form, enter the required database connection information, including Connection name, Description, Username, Password, Server, Port (which can be customized), Database, and Additional parameters (if applicable). Refer to the [connection parameters](#connection-parameters) to know more.
+1. In the connection form, enter the required database connection information, including Connection name, Description, Username, Password, Server, Port (which can be customized), Database, and Additional parameters (if applicable). For more information, refer [connection parameters](#connection-parameters).
 1. After entering the information, click **Test connection** button at the bottom of the form. Developer must test the connection, and it must pass to continue. If the test fails, an error message displays. Make the necessary changes and test again. When the test passes, the **Apply to all stages** button becomes activated.
 1. An admin can apply to a stage by choosing one of the following.
     * Click Apply to all stages to use the same connection information in all stages.
     * Select the stage name to use connection information for a single stage.
+1. An admin must select how to represent null values in external database. For more information, refer [Handle null values](#handle-null-values).
 
 <div class="info" markdown="1">
 
-To use private gateways to connect to your external databases, enter `secure-gateway` in the Server/Host field and the secure gateway port value in the Port field.
+To use private gateways to connect to your external databases, enter secure-gateway in the Server/Host field and the secure gateway port value in the Port field.
 
 </div>
 
@@ -89,10 +88,10 @@ Follow the steps below to select entities:
 
     ![Screenshot showing the process of selecting entities and attributes from an external database in OutSystems Developer Cloud Portal](images/external-db-entity.png "External Database Entities Selection")
 
-1. From the **Entity** name column, select the entities and attributes you want to use.
+1. From the Entity name column, select the entities and attributes you want to use.
 1. Click **Save** to confirm. Developers can now use the selected entities and attributes as [public elements](../../building-apps/use-public-elements.md).
 
-Developers can rename entities to better describe them in ODC Studio. For example, instead of using an entity name like "Product_id_version1", developers can rename it to "Product_id" to make it easier to handle.
+Developers can rename entities to better describe them in ODC Studio. For example, instead of using an entity name like "Product_id_version1", developers can rename it to "Product_id" to make it easier.
 
 ## Edit an existing connection
 
@@ -102,6 +101,50 @@ To edit an existing database connection, follow these steps:
 1. Find the connection you want to edit, and select it from the list of connections.
 
 You can only change the name and description without testing your connection again.
+
+## Handle null values
+
+Admins must assign new values to represent null values in external databases. You can use the following options to handle null values.
+
+* Overwrite database NULL values(default option):
+    * When writing data, ODC stores default values instead of null values in external databases.
+    * When reading data, ODC reads null values as default values.
+* Keep database NULL values:
+    * When writing data, ODC stores null values in external databases.
+    * When reading data, ODC reads null values as default values.
+
+Admins can define handling null values at either connection or entity level:
+
+* The connection level impacts all entities in the connection. 
+* The entity level impacts only the selected entity to define unique behavior for the selected entity.
+
+<div class="info" markdown="1">
+
+An entity level configuration takes priority over the connection level.
+
+</div>  
+
+Null behavior doesn't apply to Primary and Foreign Keys; they keep null values in the database.
+
+### Default value configuration
+
+Admins must set up a configuration for the default values. ODC suggests default values for every data type, which admins can change. This configuration is available at the connection and attribute levels.
+
+* The connection level applies to nullable attributes of all entities in the connection. 
+* The attribute level applies to the selected attribute to define unique behavior for the selected attribute.
+
+<div class="info" markdown="1">
+
+Attribute level configuration takes priority over the connection level.
+
+</div>  
+
+### Non-relational databases
+
+The Null Behavior configuration functions differently for non-relational databases.
+
+* For a Null behavior configuration, the available option is to keep the database null values, which developers can't modify.
+* For a Default values configuration, developers can select the default values.
 
 ## Connection parameters
 
@@ -143,5 +186,6 @@ Consider the following when integrating external database.
     * Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds
 * .NET does not support the Julian calendar for Oracle, and the minimum supported timestamp value is -62135596800000. 
     * To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
+* Oracle treats empty strings as NULL values. When inserting or updating a nullable text attribute with a value, Oracle stores NULL regardless of the Null Behavior configuration.
 * Data Preview and runtime queries with Unicode characters aren't supported.
 * Advanced SQL Nodes don't support external entities.

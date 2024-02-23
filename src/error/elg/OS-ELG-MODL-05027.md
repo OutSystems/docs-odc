@@ -22,7 +22,7 @@ The error is often caused by uploading a ZIP file containing the parent folder o
 
 ## Impact
 
-You must fix this error before you can publish the external library. Once you've fixed it, you must upload the new ZIP file.
+You must fix this error in your C# project before you can publish the external library. Once you've fixed it, you must upload the new ZIP file.
 
 ## Recommended action
 

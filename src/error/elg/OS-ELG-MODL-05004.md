@@ -20,7 +20,7 @@ The error occurs because the interface decorated with the `OSInterface` attribut
 
 ## Impact
 
-You must fix this error before you can publish the external library. Once you've fixed it, you must create and upload a new ZIP file.
+You must fix this error in your C# project before you can publish the external library. Once you've fixed it, you must create and upload a new ZIP file.
 
 ## Recommended action
 

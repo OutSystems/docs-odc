@@ -4,10 +4,20 @@ tags:
 locale: en-us
 guid: 22d6edad-3a83-44f8-abbf-81e0b2d02041
 app_type: mobile apps
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4352%3A160&mode=design&t=OmSDtxS14Ggp4J6f-1
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4352%3A160&mode=design&t=qrb6BRX1TGRFDKu7-1
 platform-version: odc
 ---
-# Firebase Cloud Messaging plugin
+# Firebase Cloud Messaging plugin using configurator APIs
+
+<div class="info" markdown="1">
+
+This article applies only to Firebase Cloud Message plugin version 0.1.2 and older. These old versions use Cloud Messaging Configurator REST APIs to manage the notifications. 
+
+The Cloud Messaging Configurator REST APIs, version 0.1.2 and older, are deprecated. This means that the **v2** and **v1** endpoints are no longer functional. For more information, see [Firebase Cloud Messaging HTTP protocol](https://firebase.google.com/docs/cloud-messaging/http-server-ref). 
+
+OutSystems recommends that you migrate to [Firebase Cloud Messaging plugin](./firebase-cloud-messaging-plugin-server-action.md) version 1.0.0  and newer by June 2024.  
+
+</div>
 
 The Firebase Cloud Messaging plugin lets you set a notification experience that starts the Firebase cross-platform messaging solution. This plugin lets you send normal and silent notifications to your mobile app users. Normal notifications can include customizable actions and sounds.
 
@@ -280,3 +290,4 @@ Firebase SDKs for Android and iOS don't support subscribing to topics if the nam
 For both iOS and Android.
 
 Using the Firebase Cloud Messaging in combination with Firebase Performance requires v1.0.4 (or higher) of the latter.
+
