@@ -21,6 +21,25 @@ This document describes how to:
 * Set up email for the first time.
 * Modify an email configuration.
 
+## Set up email for the first time
+
+Before apps can send emails, you must create the email in ODC Studio.
+
+1. To begin, open the ODC Portal, and from the Navigation menu, select **Configurations** > **Emails**. The **Email configurations** page opens.  
+1. Complete the following fields. Required fields display with an asterisk.
+      * **Stage** - from the drop down select one or more stages.
+      * **Server** - enter the IP address of the SMTP server and the port number. The SMTP port number defaults to 587, but you can change it. Note that port 25 isn't supported.
+
+        <div class="info" markdown="1">
+
+        SMTP port 25 isn't supported due to security and abuse concerns, which can impact the domain's reputation. Port 25 is often targeted for spam and unauthorized access, leading to restrictions by ISPs.
+
+        </div>
+        
+      * **Requires Authentication** - Check to require authentication and then enter the user name and password to authenticate.
+
+1. Click **Save** to save your configuration. The change applies to all apps automatically.
+
 ## Create a test list
 
 ODC enables you to create email test lists, which are very useful for testing. For each app that uses the email feature, you can create an email test list. This list of email addresses gets used whenever your app sends an email. For example, if you have an app in development, and want to test a feature you can send an email to your test list team. You configure your app in the ODC Portal using the App configurations screen. To use the test list you must set the toggle to **active**.
@@ -38,18 +57,6 @@ To create a test list:
 1. Click on the Test list and then click **Edit**. The test list opens.
 1. From the list you can add or remove users and then use the toggle to activate the list.  
 1. Click **Save**. Remember the test list must be set to **Active** to use it.
-
-## Set up email for the first time
-
-Before apps can send emails, you must create the email in ODC Studio.
-
-1. To begin, open the ODC Portal, and from the Navigation menu, select **Configurations** > **Emails**. The **Email configurations** page opens.  
-1. Complete the following fields. Required fields display with an asterisk.
-      * **Stage** - from the drop down select one or more stages.
-      * **Server** - enter the IP address of the SMTP server and the port number. The SMTP port number defaults to 587, but you can change it. Note that port 25 isn't supported.
-      * **Requires Authentication** - Check to require authentication and then enter the user name and password to authenticate.
-
-1. Click **Save** to save your configuration. The change applies to all apps automatically.
 
 ## Modify an email configuration
 
