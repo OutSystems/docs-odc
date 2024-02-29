@@ -22,7 +22,6 @@ In addition, you can use an external, self-managed IdP as an authentication prov
 * Apple
 * Azure AD
 * Okta
-* Amazon Cognito
 * Keycloak
 
 You can use an accelerator to add [commonly used social providers](#social-accelerators) for use as social authentication for your organization and your apps.
