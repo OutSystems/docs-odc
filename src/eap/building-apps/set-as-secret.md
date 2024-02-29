@@ -9,7 +9,7 @@ figma:
 
 # Set as secret
 
-A secret is a private piece of information that gives access to protected resources or sensitive information. In OutSystems Developer Cloud (ODC), you don't need special skills to protect sensitive settings. You configure an app setting during development as a secret. Once you set a setting as secret, the value is hidden and stored securely.
+A secret is a private piece of information that gives access to protected resources or sensitive information. In OutSystems Developer Cloud (ODC), you don't need special skills to protect sensitive settings. You configure an app setting during development as a secret. Once you set a setting as secret, the value is hidden and stored securely. You can't see the value of the secret. 
 
 As you develop apps, keep in mind that every application, script, automation tool, and other non-human identity relies on some form of a privileged credential. This credential gives access to other tools, applications, and data. These secrets can unlock protected resources or sensitive information in tools.
 
