@@ -17,6 +17,7 @@ Use of this SDK is the first step in extending an ODC app with custom code. You 
 ## Prerequisites
 
 * [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) installed.
+* [NuGet](https://www.nuget.org/downloads) package manager installed.
 * An IDE that supports building .NET 6 projects. For example, Visual Studio, Visual Studio Code, and Jet Brains Rider.
 * Basic knowledge of C# programming concepts.
 
