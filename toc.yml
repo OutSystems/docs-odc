@@ -320,6 +320,7 @@
 - href: eap/deploy/deploy-apps.md
 - topics:
     - href: eap/deploy/deployment-inconsistencies.md
+    - href: eap/deploy/one-cp.md
 
 # Configuration management
 - href: eap/configuration-management/configuration-management.md
