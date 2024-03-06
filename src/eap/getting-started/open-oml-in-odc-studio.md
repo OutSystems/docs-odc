@@ -29,4 +29,4 @@ Before starting, ensure you have ODC Studio connected to an ODC organization. Th
 
 1. Click the **1-Click Publish** button to publish the app for the first time.
 
-    ![Icon of the '1-Click Publish' button in ODC Studio.](../../shared/icons-service-studio/publish.png "1-Click Publish Button")
+    ![Icon of the '1-Click Publish' button in ODC Studio.](images/1-click-publish-odcs.png "1-Click Publish Button")
