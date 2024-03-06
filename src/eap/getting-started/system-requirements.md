@@ -104,6 +104,10 @@ The maximum value of the **Server Request Timeout** property is 60 seconds for q
 
 For queries or actions inside timer logic, the maximum timeout value is 60 minutes.
 
+#### Service action timeout
+
+The timeout value for a service action is 100 seconds. This can't be configured.
+
 ### Timers timeout
 
 The maximum value of the **Timeout in Minutes** property is 60 minutes.
