@@ -93,7 +93,7 @@ The Cloud Messaging Configurator's REST APIs have been replaced by server action
 
 To set up a back-end notification service, do the following:
 
-1. Install the **Cloud Messaging Configurator** app from [Forge] forge component in your environment. 
+1. Install the **Cloud Messaging Plugin** from [Forge] forge component in your environment. 
     This component includes four **Server Actions** that allow you to send notifications to a list of users or topics and one **Server Action** to generate an **Access Token**.
 
 1. Create a new app to serve as your backend notification service.

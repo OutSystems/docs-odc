@@ -91,9 +91,9 @@ To set up a back-end notification service, do the following:
 
 1. Install the **Cloud Messaging Configurator** app from [Forge](https://www.outsystems.com/forge/) to your environment. This component includes the REST API methods necessary to send notifications to a list of users or topics.
 
-1. Open **Cloud Messaging Configurator**.
+1. Open the **Cloud Messaging Configurator** Configurator page.
 
-1. In the **APIKey** entity, set **AppId** and **Key** using encrypted values. These values are used to authenticate your REST API, so make sure you keep the encrypted values secure.
+1. Within the **Settings** panel, set the **AppId** and **AppKey** properties using encrypted values. These values are used to authenticate your REST API, so make sure you keep the encrypted values secure.
 
    ![Screenshot showing where to input encrypted App ID and Key in the Cloud Messaging Configurator app](images/firebase-messaging-api-key-odcs.png "Encrypted App ID and Key in Cloud Messaging Configurator")
 
@@ -111,11 +111,11 @@ To set up a back-end notification service, do the following:
 
     ![Screenshot illustrating how to set the Base URL in the REST API properties for Cloud Messaging Configurator](images/set-base-url-in-rest-api-odcs.png "Setting the Base URL in REST API Properties")
 
-1. Then use the AppId and Key you defined in step 3 to authenticate your REST calls. In the consumed REST API properties, add the following **HTTP headers**:
+1. Then use the AppId and AppKey you defined in step 3 to authenticate your REST calls. In the consumed REST API properties, add the following **HTTP headers**:
 
     * `X-Send-AppId` = `<your-appid>`, replacing `<your-appid>` with the **AppId** defined in step 3.
 
-    * `X-Send-Key` = `<your-key>`,, replacing `<your-key>` with the **Key** defined in step 3.
+    * `X-Send-Key` = `<your-key>`,, replacing `<your-key>` with the **AppKey** defined in step 3.
 
 <div class="info" markdown='1'>
 
