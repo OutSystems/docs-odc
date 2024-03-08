@@ -80,7 +80,7 @@ You can set your custom domain as the default domain. This means that:
 * You can use the [GetDefaultDomain](../reference/built-in-functions/url.md) system action to build URLs within your apps, explicitly using the default domain
 * Emails that are sent from your OutSystems app that contain links to specific screens use the default domain instead of the built-in one
 
-To set a custom domain as the default domain, follow the [Add a custom domain](#add-a-custom-domain)steps. Once the domain is active, click the ellipsis menu, and select **Set as default**.
+To set a custom domain as the default domain, follow the [Add a custom domain](#add-a-custom-domain) steps. Once the domain is active, click the ellipsis menu, and select **Set as default**.
 
 ![Set domain as default](images/set-default-domain-odcs.png "Set domain as default")
 
