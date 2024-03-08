@@ -5,7 +5,7 @@ locale: en-us
 guid: da18534d-84c8-4a52-bca8-85ebb3b1e082
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=3675-159&mode=design&t=AnbYNrTe4tq1zOrw-0
 ---
 
 # Configure custom domains for apps
@@ -51,6 +51,8 @@ To add a custom domain, from the ODC Portal, select **Configurations** > **Domai
 1. Now, you must **Validate ownership of the domain** and **Point the domain to your apps**. You do this by adding the two provided CNAME records, two name-value pairs, to the DNS records of your domain registrar (the company that manages the reservation of your domain name). To add a **CNAME** record, follow the steps in the [box below](#add-CNAME-box).
 1. ODC uses AWS Certificate Manager (ACM) to issue certificates. If your domain has Certification Authority Authorization (CAA) enabled, you must add a DNS record to specify that ACM is allowed to issue a certificate for your domain. The process of adding a DNS record is detailed in the [ACM documentation](https://docs.aws.amazon.com/acm/latest/userguide/setup-caa.html).
 
+**Note**: To set a custom domain as the default domain, refer to [Default domain](#default-domain).
+
 <div class="warning" markdown="1">
 
 You must complete these steps within **72 hours** or the CNAME records expire and you must restart the process.
@@ -68,6 +70,28 @@ Once ODC detects the provided CNAME records in the domain's DNS records, ownersh
 ODC generates a public X.509 certificate to enable TLS communication over the domain. The generated certificate is valid for 395 days. If the provided CNAME records remain in the domain's DNS records, ODC automatically renews the certificate before expiry.
 
 ---
+
+## Default domain
+
+You can set your custom domain as the default domain. This means that:
+
+* Apps running on a stage are accessed from ODC Portal and ODC Studio using the default domain instead of the built-in one
+* Debugging in the development stage connects to the app using the default domain configured in development
+* You can use the [GetDefaultDomain](../reference/built-in-functions/url.md) system action to build URLs within your apps, explicitly using the default domain
+* Emails that are sent from your OutSystems app that contain links to specific screens use the default domain instead of the built-in one
+
+To set a custom domain as the default domain, follow the [Add a custom domain](#add-a-custom-domain)steps. Once the domain is active, click the ellipsis menu, and select **Set as default**.
+
+![Set domain as default](images/set-default-domain-odcs.png "Set domain as default")
+
+<div class="info" markdown="1">
+
+* When a tenant is first created, the **built-in domains are always set as default**.
+* You can set any domain as default only if it is **active**.
+* You can only set **one custom domain as the default** domain per stage.
+* You **cannot delete a default domain**. You'll must set another domain as default first before deleting the current one.
+
+</div>
 
 ### Add a CNAME record to your domain's DNS records  { #add-CNAME-box }
 
