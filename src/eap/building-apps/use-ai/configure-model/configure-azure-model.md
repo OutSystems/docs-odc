@@ -20,6 +20,7 @@ Once you have the registration keys and the endpoint, you can configure the Open
 Before you setup the Azure OpenAI Service, ensure that you have:
 
 * An active Azure account subscription. You can [sign up](https://azure.microsoft.com/en-us/free/) for an Azure account if you don’t already have one.
+
 * Access to the AI Agent Builder app.
 
 ## Configure and deploy Azure OpenAI service.
@@ -41,4 +42,5 @@ You can use the keys and the endpoint in the AI Agent Builder app to interact wi
 ## 	Next steps
 
 [Add Azure OpenAI model in AI Agent Builder app](./add-azure-model-to-aibuilder.md)
+
 [Create agent](../create-agent.md)

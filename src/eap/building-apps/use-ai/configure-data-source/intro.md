@@ -9,7 +9,7 @@ figma:
 ---
 # Configure your data sources
 
-You can configure and add external data sources, such as your internal knowledge base, and integrate it with [Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/) search service or [Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/what-is-kendra.html)search service. This allows you to leverage the RAG technique in AI models and build generative AI search experiences on top of your enterprise data source. Be sure to check the prerequisite sections for each search service. 
+You can configure and add external data sources, such as your internal knowledge base, and integrate it with [Azure OpenAI Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search) service or [Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/what-is-kendra.html) search service. This allows you to leverage the Retrieval Augmented Generation (RAG) technique in AI models and build generative AI search experiences on top of your enterprise data source. Be sure to check the prerequisite sections for each search service. 
 
 Here’s some best practices for preparing the content for use with the AI model:
 

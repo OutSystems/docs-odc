@@ -18,7 +18,9 @@ This article explains how to set up Amazon Kendra search service using Amazon S3
 Before setting up the Amazon Kendra with a data source, ensure you have:
 
 * An active AWS account subscription. If you don't already have one, you can [sign up](https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=header_signup&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email) for an AWS account 
+
 * An active user in the AWS account.
+
 * Necessary permissions to:
 
     * Create indexes in Amazon Kendra. For more information, refer to [IAM roles for indexes](https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-index)

@@ -15,7 +15,12 @@ This article explains the overall process of using the AI agent builder to build
 
 ## Prerequisites
 
-* Access to the ODC portal
+Before using the AI Agent Builder, ensure you have:
+
+* Access to the ODC portal with the relevant end-user role assigned.
+    * **AI AgentBuilder**: Has access to AI Agent Builder, can manage agents but not AI models or data sources.
+    * **Configurator**: Has full access to AI Agent Builder, can manage agents, AI models and data sources.
+
 * Access to the AI Agent Builder tool
 
 ## High-level process for using the AI Agent Builder

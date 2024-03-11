@@ -20,7 +20,9 @@ OutSystems only supports using **Anthropic** and **Claude** FMs with the AI Agen
 Before you set up Amazon Bedrock AI foundation models, ensure that you:
 
 * Have an active AWS account subscription. If you don’t already have one, you can [sign up](https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=header_signup&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email) for an AWS account.
+
 * Are an [IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html) and have [sufficient permissions](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html#model-access-permissions) to request access to the model through the console.
+
 * (Optional) Have the permissions to create users to use the Bedrock foundation models. If you do not have these permissions, you can request the AWS account administrator to create a user for you. 
 
 ## Set up model 

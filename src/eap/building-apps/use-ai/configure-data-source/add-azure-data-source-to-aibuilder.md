@@ -9,15 +9,17 @@ figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=desi
 ---
 # Add Azure AI Search data source to the AI Agent Builder app
 
-You can add an external data source to the AI Agent Builder app and use Azure AI search with Azure OpenAI language models. This allows you to create search solutions using your data to generate responses. This article explains how to add a data source for Azure AI Search. It is intended for administrators and DevOps engineers responsible for setting up the AI Agent Builder app.
+You can add an external data source to the AI Agent Builder app and use Azure AI Search with Azure OpenAI language models. This allows you to create search solutions using your data to generate responses. This article explains how to add a data source for Azure AI Search. It is intended for administrators and DevOps engineers responsible for setting up the AI Agent Builder app.
 
 ## Prerequisites
 
 Before you add Azure AI Search data source, ensure you:
-* [Configure Azure AI Search with blob storage in the Azure portal](./configure-azure-data-source.md).
-* Obtain the API key, endpoint URL, and index name.
-* Gain access to the AI Agent Builder app with the **Configurator** role assigned in the ODC portal.
 
+* [Configure Azure AI Search with blob storage in the Azure portal](./configure-azure-data-source.md).
+
+* Obtain the API key, endpoint URL, and index name.
+
+* Gain access to the AI Agent Builder app with the **Configurator** role assigned in the ODC portal.
 
 ## Add Azure AI Search data source
 
@@ -48,8 +50,6 @@ The **Add data source** page displays.
     * **API key** - API key for use on every API request.
 
     For more information about retrieving the URL and the API key, refer to [Copy a key and URL](https://learn.microsoft.com/en-us/azure/search/search-get-started-rest#copy-a-key-and-url).
-
-    
 
 1. Click **Test connection and save**.
 

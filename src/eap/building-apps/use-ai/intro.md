@@ -1,11 +1,11 @@
 ---
-summary: This article describes the AI Agent Builder, a tool for developing AI-powered agents for app integration.
+summary: Learn more about the AI Agent Builder, a tool for developing AI-powered agents for app integration.
 tags:
 locale: en-us
 guid: 03e2025e-bca6-46f7-af75-725e1d310127
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5094%3A336&mode=design&t=FeG7qG63nCPS3Mxp-1
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5075%3A162&mode=design&t=MiKttOR7tcyYhvWI-1
 ---
 # About AI Agent Builder
 
