@@ -5,7 +5,7 @@ locale: en-us
 guid: 03e2025e-bca6-46f7-af75-725e1d310127
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5075%3A162&mode=design&t=MiKttOR7tcyYhvWI-1
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5075%3A162&mode=design&t=L8AQ4Cz4ktXvgIdw-1
 ---
 # About AI Agent Builder
 

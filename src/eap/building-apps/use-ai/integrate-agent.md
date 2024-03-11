@@ -1,11 +1,11 @@
 ---
-summary: This article explains the process of adding an AI agent to an app via the CallAgent service action in OutSystems.
+summary: This article explains the process of adding an AI agent to an app via the CallAgent service action.
 tags:
 locale: en-us
 guid: 121c834e-88cc-4b0a-aa9d-4bb174daf881
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5094%3A336&mode=design&t=FeG7qG63nCPS3Mxp-1
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5094%3A329&mode=design&t=L8AQ4Cz4ktXvgIdw-1
 ---
 # Integrate agent into your app
 
@@ -48,4 +48,4 @@ The public elements page  displays.
 
 1. Go to **ODC Portal>Apps**, select the app you just built, and   then change the value of the AgentId setting (make sure you select the correct stage).
 
-![Dialog box for saving a new agent with fields for 'Name' and 'ID' in the AI Agent Builder app.](images/save-agent-id-ai.png "Save Agent ID in ODC portal")
+![Dialog box for saving a new agent with fields for 'Name' and 'ID' in the AI Agent Builder app.](images/add-agentid-app-settings-pl.png "Save Agent ID in ODC portal")

@@ -5,7 +5,7 @@ locale: en-us
 guid: 92480398-1f83-4f8a-9439-f1d8299ffbc6
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5082%3A362&mode=design&t=FeG7qG63nCPS3Mxp-1
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5079%3A350&mode=design&t=L8AQ4Cz4ktXvgIdw-1
 ---
 # Add Azure AI Search data source to the AI Agent Builder app
 
