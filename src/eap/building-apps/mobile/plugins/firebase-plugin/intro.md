@@ -61,9 +61,9 @@ To add a Firebase plugin to your mobile app, complete the following steps:
 
 <div class="info" markdown="1">
 
-To learn how to use the Firebase Cloud Messaging plugin using Clould Messaging Configurator REST APIs, refer to [Firebase Cloud Messaging Plugin](./firebase-cloud-messaging-plugin-configurator-api.md).
+To learn how to use the Firebase Cloud Messaging plugin using Clould Messaging Configurator REST APIs, refer to [Firebase Cloud Messaging Plugin](firebase-cloud-messaging-plugin-configurator-api.md).
 
-To learn how to use the Firebase Cloud Messaging plugin using server actions, refer to [Firebase Cloud Messaging Plugin](./firebase-cloud-messaging-plugin-server-action.md).
+To learn how to use the Firebase Cloud Messaging plugin using server actions, refer to [Firebase Cloud Messaging Plugin](firebase-cloud-messaging-plugin-server-action.md).
 
 </div>
 

@@ -35,7 +35,7 @@ REST APIs using **Basic Authentication** are supported out of the box in the "Co
 
 ## Mapping REST data types to OutSystems data types
 
-When [consuming REST API Methods](./consume-a-rest-api.md) in your app, OutSystems automatically generates the Structures for the Request and Response from the example you provide for them and maps the attributes into OutSystems Data Types as follows:
+When [consuming REST API Methods](consume-a-rest-api.md) in your app, OutSystems automatically generates the Structures for the Request and Response from the example you provide for them and maps the attributes into OutSystems Data Types as follows:
 
 | JSON example | OutSystems Data Type | Comments |
 | ---| ---| ---- |
