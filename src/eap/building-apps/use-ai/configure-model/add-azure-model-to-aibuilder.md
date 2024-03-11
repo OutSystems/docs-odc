@@ -37,7 +37,7 @@ The first time you log into the AI Agent Builder, it’s mandatory to add a mode
 1. Click **Configurations**. 
 A list of all your configured AI models and data sources display.
 
-![Screenshot of the AI Agent Builder app interface showing the 'Add AI model' button with Azure OpenAI selected.](images/add-model-amazon-ai.png "Add Azure OpenAI model")
+![Screenshot of the AI Agent Builder app interface showing the 'Add AI model' button with Azure OpenAI selected.](images/add-model-azure-ai.png "Add Azure OpenAI model")
 
 1. Click **Add AI model** and select **Azure Open AI**. 
 The Add AI model page displays.
