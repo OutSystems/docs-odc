@@ -55,7 +55,7 @@ For detailed information, refer to [Integrate the agent into your app](./integra
 
 ## Next steps
 
-[Configure AI model](./configure-model/intro.md)
-[Configure data source](./configure-data-source/intro.md)
-[Create an agent](./create-agent.md)
-[Integrate the agent into your app](./integrate-agent.md)
+* [Configure AI model](./configure-model/intro.md)
+* [Configure data source](./configure-data-source/intro.md)
+* [Create an agent](./create-agent.md)
+* [Integrate the agent into your app](./integrate-agent.md)
