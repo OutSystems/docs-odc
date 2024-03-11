@@ -30,6 +30,33 @@
 # Building apps in ODC
 - href: eap/building-apps/intro.md
 - topics:
+ # AI Agent Builder
+    - href: eap/building-apps/use-ai/intro.md
+    - topics:
+        - href: eap/building-apps/use-ai/overall-process.md
+    # Configure model
+        - href: eap/building-apps/use-ai/configure-model/intro.md
+        - topics:
+            - href: eap/building-apps/use-ai/configure-model/configure-azure-model.md
+            - href: eap/building-apps/use-ai/configure-model/add-azure-model-to-aibuilder.md
+            - href: eap/building-apps/use-ai/configure-model/configure-aws-model.md
+            - href: eap/building-apps/use-ai/configure-model/add-aws-model-to-aibuilder.md
+               
+    # Configure data source
+        - href: eap/building-apps/use-ai/configure-data-source/intro.md
+        - topics:
+            - href: eap/building-apps/use-ai/configure-data-source/configure-azure-data-source.md
+            - href: eap/building-apps/use-ai/configure-data-source/add-azure-data-source-to-aibuilder.md
+            - href: eap/building-apps/use-ai/configure-data-source/configure-aws-data-source.md
+            - href: eap/building-apps/use-ai/configure-data-source/add-aws-data-source-to-aibuilder.md
+            
+                
+    # Create agent
+        - href: eap/building-apps/use-ai/create-agent.md
+    # Integrate agent
+        - href: eap/building-apps/use-ai/integrate-agent.md
+        
+       
     - href: eap/building-apps/app-lib-properties-edit.md
     # Architecture
     - href: eap/building-apps/architecture/intro.md
