@@ -15,7 +15,7 @@ You can create an agent in the AI Agent Builder and use that agent in your app b
 
 Before you integrate the agent into your app, ensure you:
 
-* [Create an agent](./create-agent.md)
+* [Create an agent](create-agent.md)
 * Have access to the ODC portal.
 * Create a setting in the ODC portal to store the AgentID. This setting is already created for the OutSystems’ sample apps. For detailed information, refer to [Configuration management](https://success.outsystems.com/documentation/outsystems_developer_cloud/configuration_management/).
 

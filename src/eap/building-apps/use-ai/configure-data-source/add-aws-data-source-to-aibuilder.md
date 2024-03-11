@@ -15,7 +15,7 @@ You can add an external data source to the AI Agent Builder app and use the Amaz
 
 Before you add a data source for Amazon Kendra in the AI Agent Builder app, ensure you:
 
-* [Set up Amazon Kendra data source](./configure-aws-data-source.md).
+* [Set up Amazon Kendra data source](configure-aws-data-source.md).
 
 * Gain access to the AI Agent Builder app with the **Configurator** role assigned in the ODC portal. 
 

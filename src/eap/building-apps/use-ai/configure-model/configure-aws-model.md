@@ -55,7 +55,7 @@ The access key ID and secret key are then used in the AI Agent Builder app to ad
 
 ## Next steps
  
-* [Add Amazon Bedrock AI model in the AI Agent Builder app](./add-aws-model-to-aibuilder.md)
+* [Add Amazon Bedrock AI model in the AI Agent Builder app](add-aws-model-to-aibuilder.md)
 
 * [Create an agent](../create-agent.md)
 

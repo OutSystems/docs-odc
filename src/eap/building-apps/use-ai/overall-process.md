@@ -9,7 +9,7 @@ figma:
 ---
 # Using the AI Agent Builder 
 
-With AI Agent Builder, you can combine AI model, instructions, additional data sources to create agents for a specific use case. You can then integrate the agent into your existing app to build generative AI applications. You also have the option to choose from a variety of [sample apps](./intro.md#sample-apps) that closely matches your use case and download the OML. The OML file consists of entities, screens, call to an Agent, and an integration template for the external solutions in the app, such as Zendesk for Salesforce. 
+With AI Agent Builder, you can combine AI model, instructions, additional data sources to create agents for a specific use case. You can then integrate the agent into your existing app to build generative AI applications. You also have the option to choose from a variety of [sample apps](intro.md#sample-apps) that closely matches your use case and download the OML. The OML file consists of entities, screens, call to an Agent, and an integration template for the external solutions in the app, such as Zendesk for Salesforce. 
 
 This article explains the overall process of using the AI agent builder to build generative AI applications.
 
@@ -29,8 +29,8 @@ Before using the AI Agent Builder, ensure you have:
 
 1. Install the AI Agent Builder app from the Forge.
 2. Open the app from the ODC portal.
-3. [Configure and add the AI model](./configure-model/intro.md).
-4. (Optional) [Configure and add the data source](./configure-data-source/intro.md).
+3. [Configure and add the AI model](configure-model/intro.md).
+4. (Optional) [Configure and add the data source](configure-data-source/intro.md).
 
 ### Step 2a: Choose and customize sample apps
 
@@ -43,7 +43,7 @@ Before using the AI Agent Builder, ensure you have:
 
 ### Step 2b: Create your custom AI agent 
 
-1. [Create an agent](./create-agent.md) for your AI use case either from scratch or by using agent templates. Optionally, you can add a data source while creating the agent to improve the quality of generated responses.
+1. [Create an agent](create-agent.md) for your AI use case either from scratch or by using agent templates. Optionally, you can add a data source while creating the agent to improve the quality of generated responses.
 2. Test your agent in the playground and refine your instructions until the agent responds satisfactorily.
 3. Save the new agent and copy the Agent ID.
 
@@ -51,11 +51,11 @@ Before using the AI Agent Builder, ensure you have:
 
 ### Step 3: Integrate the agent into your app 
 
-For detailed information, refer to [Integrate the agent into your app](./integrate-agent.md).
+For detailed information, refer to [Integrate the agent into your app](integrate-agent.md).
 
 ## Next steps
 
-* [Configure AI model](./configure-model/intro.md)
-* [Configure data source](./configure-data-source/intro.md)
-* [Create an agent](./create-agent.md)
-* [Integrate the agent into your app](./integrate-agent.md)
+* [Configure AI model](configure-model/intro.md)
+* [Configure data source](configure-data-source/intro.md)
+* [Create an agent](create-agent.md)
+* [Integrate the agent into your app](integrate-agent.md)

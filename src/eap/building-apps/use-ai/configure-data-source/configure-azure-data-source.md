@@ -38,4 +38,4 @@ For more information about Azure BLOB storage, refer to [Introduction to Azure B
 
 ## Next steps
 
-[Add Azure AI search data source in the AI Agent Builder app](./add-azure-data-source-to-aibuilder.md)
+[Add Azure AI search data source in the AI Agent Builder app](add-azure-data-source-to-aibuilder.md)

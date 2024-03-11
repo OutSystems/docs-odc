@@ -22,7 +22,7 @@ Here’s some best practices for preparing the content for use with the AI model
 
 To add data sources and use them in the AI Agent Builder you must: 
 
-1. Configure and set up a search service service in [Azure](./configure-azure-data-source.md) or [AWS](./configure-aws-data-source.md), depending on the search service you choose.
+1. Configure and set up a search service service in [Azure](configure-azure-data-source.md) or [AWS](configure-aws-data-source.md), depending on the search service you choose.
 
 2. Get your index, endpoint access, and access keys for your model.
 
@@ -32,10 +32,10 @@ To add data sources and use them in the AI Agent Builder you must:
 
 ## Related links
 
-* [Configure Azure AI search with BLOB storage](./configure-azure-data-source.md)
+* [Configure Azure AI search with BLOB storage](configure-azure-data-source.md)
 
-* [Add Azure AI Search data source in the AI Agent Builder app](./add-azure-data-source-to-aibuilder.md)
+* [Add Azure AI Search data source in the AI Agent Builder app](add-azure-data-source-to-aibuilder.md)
 
-* [Set up Amazon Kendra with a data source](./configure-aws-data-source.md)
+* [Set up Amazon Kendra with a data source](configure-aws-data-source.md)
 
-* [Add the Amazon Kendra data source to the AI Agent Builder app](./add-aws-data-source-to-aibuilder.md)
+* [Add the Amazon Kendra data source to the AI Agent Builder app](add-aws-data-source-to-aibuilder.md)

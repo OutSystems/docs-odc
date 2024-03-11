@@ -15,7 +15,7 @@ You can add an external data source to the AI Agent Builder app and use Azure AI
 
 Before you add Azure AI Search data source, ensure you:
 
-* [Configure Azure AI Search with blob storage in the Azure portal](./configure-azure-data-source.md).
+* [Configure Azure AI Search with blob storage in the Azure portal](configure-azure-data-source.md).
 
 * Obtain the API key, endpoint URL, and index name.
 

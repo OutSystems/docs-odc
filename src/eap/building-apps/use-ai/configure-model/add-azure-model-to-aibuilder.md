@@ -15,7 +15,7 @@ You can add the Azure OpenAI model in your AI Agent Builder app to use OpenAI’
 
 Before you add an Azure OpenAI model to the AI Agent Builder app, ensure that you:
 
-* Configure and deploy [Azure OpenAI service](./configure-azure-model.md). 
+* Configure and deploy [Azure OpenAI service](configure-azure-model.md). 
 
 * Obtain the following from the Azure portal:
     * OpenAI registration keys.

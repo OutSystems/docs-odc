@@ -15,7 +15,7 @@ To use Amazon Bedrock AI models, you must add the Bedrock AI models to the AI Ag
 
 Before you add an Amazon Bedrock AI model in the AI Agent Builder app, ensure that you:
 
-* [Set up Amazon Bedrock foundation models](./configure-aws-model.md).
+* [Set up Amazon Bedrock foundation models](configure-aws-model.md).
 
 * Obtain the secret key and access key from the AWS console.
 

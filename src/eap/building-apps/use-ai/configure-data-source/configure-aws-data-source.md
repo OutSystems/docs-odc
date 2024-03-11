@@ -49,7 +49,7 @@ For more information, refer to [Amazon Kendra Identity-based policy examples](ht
 
 ## 	Next Steps
 
-* [Add Amazon Kendra data source AI Agent Builder app](./add-aws-data-source-to-aibuilder.md)
+* [Add Amazon Kendra data source AI Agent Builder app](add-aws-data-source-to-aibuilder.md)
 
 * [Create an agent](../create-agent.md)
 

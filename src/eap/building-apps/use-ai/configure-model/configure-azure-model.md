@@ -41,6 +41,6 @@ You can use the keys and the endpoint in the AI Agent Builder app to interact wi
 
 ## 	Next steps
 
-[Add Azure OpenAI model in AI Agent Builder app](./add-azure-model-to-aibuilder.md)
+[Add Azure OpenAI model in AI Agent Builder app](add-azure-model-to-aibuilder.md)
 
 [Create agent](../create-agent.md)

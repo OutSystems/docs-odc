@@ -18,7 +18,7 @@ The information in this section is intended for administrators and dev-ops engin
 
 To configure your AI models and use them in the AI Agent Builder you must: 
 
-1. Set up your AI service in [Azure](./configure-aws-model.md) or [AWS](./configure-aws-model.md), depending on the model you choose.
+1. Set up your AI service in [Azure](configure-aws-model.md) or [AWS](configure-aws-model.md), depending on the model you choose.
 
 1. Get your registration keys and endpoint access for your model from the console.
 
@@ -28,11 +28,11 @@ To configure your AI models and use them in the AI Agent Builder you must:
 
 ## Related links
 
-* [Set up Azure OpenAI Service](./configure-azure-model.md)
+* [Set up Azure OpenAI Service](configure-azure-model.md)
 
-* [Add Azure OpenAI model to AI Agent Builder app](./add-azure-model-to-aibuilder.md)
+* [Add Azure OpenAI model to AI Agent Builder app](add-azure-model-to-aibuilder.md)
 
-* [Set up Amazon Bedrock foundation AI models](./configure-aws-model.md)
+* [Set up Amazon Bedrock foundation AI models](configure-aws-model.md)
 
-* [Add Amazon Bedrock AI model in the AI Agent Builder app](./add-aws-model-to-aibuilder.md)
+* [Add Amazon Bedrock AI model in the AI Agent Builder app](add-aws-model-to-aibuilder.md)
 
