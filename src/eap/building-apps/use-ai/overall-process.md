@@ -13,8 +13,8 @@ With AI Agent Builder, you can combine AI model, instructions, additional data s
 
 You can assign the following two end user roles to manage the AI Agent Builder:
 
-**AIAgentBuilder**: Gives access to the AI Agent Builder and can create/manage agents but do not have permissions to create AI models and data sources.
-**Configurator**: Give full access to the AI Agent Builder and can create/manage agents, AI models and data sources.
+* **AIAgentBuilder**: Gives access to the AI Agent Builder and can create/manage agents but don't have permissions to create AI models and data sources.
+* **Configurator**: Gives full access to the AI Agent Builder and can create/manage agents, AI models, and data sources.
 
 This article explains the overall process of using the AI agent builder to build generative AI applications.
 
