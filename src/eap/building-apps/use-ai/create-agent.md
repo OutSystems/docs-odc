@@ -125,4 +125,4 @@ At any point, you can:
 
 ## Next steps
 
-[Integrate the agent into your app](https://docs.google.com/document/d/15fIAfFs7iTD-QhJoP7CuhT-tYlBSiK3vC_M7bJIiX_w/edit#heading=h.i4fvl2bqadx9)
+[Integrate the agent into your app](integrate-agent.md)
