@@ -5,7 +5,7 @@ locale: en-us
 guid: 121c834e-88cc-4b0a-aa9d-4bb174daf881
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5094%3A329&mode=design&t=L8AQ4Cz4ktXvgIdw-1
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5094%3A329&mode=design&t=V3p0stp4ijc9fWdg-1
 ---
 # Integrate agent into your app
 
