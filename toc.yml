@@ -87,6 +87,10 @@
         - href: eap/building-apps/data/structure-create-use.md
     # Libraries
     - href: eap/building-apps/libraries.md
+    # Events
+    - href: eap/building-apps/events/intro.md 
+    - topics:
+        - href: eap/building-apps/events/backend-events.md
     # Merge
     - href: eap/building-apps/merge/intro.md
     - topics:
