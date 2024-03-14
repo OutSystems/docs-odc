@@ -27,7 +27,7 @@ Event publishers are unburdened by subscribers, as these events represent a stat
 
 ![Diagram illustrating asynchronous communication between different applications](images/asyn-btw-apps.png "Asynchronous Communication Between Apps")
 
-You can add input parameters to a back-end event to pass additional information from the event publisher to subscribers(s). For example, a new account event in a finance app can have input parameters such as the user's address and phone number.
+You can add input parameters to a back-end event to pass additional information from the event publisher to subscribers(s).  For example, a new account event in a finance app can have input parameters such as the user's address and phone number.
 
 <div class="info" markdown="1">
 
@@ -51,6 +51,12 @@ To create an event, go to ODC Studio and follow these steps:
     </div>
 
 1. Right-click the newly created event, select **Add Input Parameter**, and enter the relevant information.
+
+<div class="info" markdown="1">
+
+Changing mandatory input parameters, such as adding or removing them, displays an error.
+
+</div>
 
 ## Publish an event
 
