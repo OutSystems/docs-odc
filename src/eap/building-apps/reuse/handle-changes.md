@@ -46,8 +46,7 @@ The following examples of changes immediately impact the consumers and eventuall
     
 |**Scenario**|**Elements**|**Notes**|
 |------------|------------|------------|
-|Add a mandatory input parameter<br/>Change the data type of an input parameter|Service Action, Screen|  Some data type changes might be compatible at runtime and not produce an immediate error. For example: changing from Integer to Long Integer or any simple type to Text. <br/>
-The consumer does not send the input parameter value; the default value is assumed, which may result in runtime errors. |
+|Add a mandatory input parameter<br/>Change the data type of an input parameter|Service Action, Screen|  Some data type changes might be compatible at runtime and not produce an immediate error. For example: changing from Integer to Long Integer or any simple type to Text. <br/> The consumer does not send the input parameter value; the default value is assumed, which may result in runtime errors. |
 |Delete an output parameter|Service Action| The producer does not send the output parameter value; the default value is assumed, which may result in runtime errors.|
 |Change the data type of an attribute<br/>Delete a used attribute|Entity (Database), Static Entity| Some data type changes might be compatible at runtime and not produce an immediate error. For example: changing from Integer to Long Integer or any simple type to Text. |
 |Delete a used record|Static Entity| |
