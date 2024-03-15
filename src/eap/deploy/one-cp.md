@@ -1,5 +1,5 @@
 ---
-summary: This article helps you understand app and library publishing workflow after one click publish in ODC 
+summary: This article helps you understand app and library publishing workflow after 1-Click Publish in ODC 
 tags:
 locale: en-us
 guid: 2c3f88e1-c53a-450d-9e36-ac83a7bf7a5d
@@ -10,14 +10,14 @@ figma: https://www.figma.com/file/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?type=d
 
 # App publishing workflow
 
-OutSystems Developer Cloud (ODC) automates app publishing with its 1-Click Publish button. When users click the 1-Click Publish button to publish an app in the Development stage, the button initiates the following steps:
+OutSystems Developer Cloud (ODC) automates app publishing with its 1-Click Publish button. When you click the 1-Click Publish button to publish an app in the Development stage, the button initiates the following steps:
 
 1. The ODC compiler compiles the app and generates HTML, CSS, JavaScript, and C# code while bundling the necessary libraries.
 1. The ODC compiler creates a container image containing the compiled code.
 1. The ODC Data tool generates database scripts to synchronize the app's data schema with the code's version, ensuring data consistency.
 1. The ODC Deployment tool deploys the container image in the Kubernetes cluster using app configurations set in the ODC Portal. Simultaneously, the ODC Data tool starts executing the database scripts.
 
-![Diagram illustrating the app publishing workflow after one click publish in ODC, showing steps from ODC Studio to Kubernetes deployment.](images/1-CP-ODC.png "App Publishing Workflow Diagram")
+![Diagram illustrating the app publishing workflow after 1-Click Publish in ODC, showing steps from ODC Studio to Kubernetes deployment.](images/1-CP-ODC.png "App Publishing Workflow Diagram")
 
 When you deploy your app from the Development stage to the QA stage, ODC follows these steps:
 
