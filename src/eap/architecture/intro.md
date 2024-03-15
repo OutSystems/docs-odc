@@ -30,7 +30,7 @@ The following diagram shows the high-level architecture of the OutSystems Develo
 
 #### Platform { #platform }
 
-The development **Platform** comprises multiple services, each responsible for specific functions that facilitate the building and deployment of apps. All the Platform services benefit from a resilient microservices design with a REST API web service interface. Developers, DevOps engineers, and architects interact with these services using ODC Studio and ODC Portal. 
+The development **Platform** comprises multiple services, each responsible for specific functions that facilitate the building and deployment of apps. All the Platform services benefit from a resilient microservices design with a REST API web service interface. Developers, DevOps engineers, and architects interact with these services using ODC Studio and ODC Portal.
 
 The Platform **Load Balancer** handles all requests to the services. 
 
@@ -94,7 +94,7 @@ The compute capacity for each app container running in each non-Development Runt
 
 The following diagram illustrates how auto scaling works inside the Runtime cluster.
 
-![Illustration of auto scaling mechanism inside the Runtime cluster for OutSystems Developer Cloud apps](images/architecture-runtime-scale-diag.png "Runtime Cluster Auto Scaling") 
+![Illustration of auto scaling mechanism inside the Runtime cluster for OutSystems Developer Cloud apps](images/architecture-runtime-scale-diag.png "Runtime Cluster Auto Scaling")
 
 The **auto scale controller** monitors the CPU and RAM usage of each app container. It continuously checks the usage against the cluster compute capacity allocated and allocates additional capacity if the CPU and RAM usage exceeds a defined threshold.
 

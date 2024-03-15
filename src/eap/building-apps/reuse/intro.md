@@ -10,7 +10,7 @@ figma:
 
 Strong and weak dependencies are related to how information is exposed and used in OutSystems by producers and consumers. Producers typically expose functionality for consumers to use. For example, a Producer might be a Library that implements and exposes functionality, and the consumer is an app using the exposed functionality.
 
-Depending on the type of element exposed by a producer, OutSystems generates a **strong** or a **weak** dependency between the producer and its consumers. 
+Depending on the type of element exposed by a producer, OutSystems generates a **strong** or a **weak** dependency between the producer and its consumers.
 
 ## Strong dependencies
 
@@ -18,7 +18,7 @@ A strong dependency means a **strong relationship** between the consumer and pro
 
 Dependencies between apps and libraries or between libraries are always strong dependencies. The producer's code is necessary for compiling the app. For example, you need the compiled code of a Server Action in a Library to call it from within the consumer app.
 
-In runtime, the consumer needs to know both the **signature** and the **implementation** of the element exposed by the producer to reuse it. For this reason, when the [producer changes the signature or the implementation](handle-changes.md#change-functionality-in-the-producer-module) of the exposed element, the consumer needs to refresh the dependency on the producer and to be republished to start using the latest producer version. 
+In runtime, the consumer needs to know both the **signature** and the **implementation** of the element exposed by the producer to reuse it. For this reason, when the [producer changes the signature or the implementation](handle-changes.md#change-functionality-in-the-producer-module) of the exposed element, the consumer needs to refresh the dependency on the producer and to be republished to start using the latest producer version.
 
 ## Weak dependencies
 

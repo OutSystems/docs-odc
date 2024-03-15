@@ -13,7 +13,7 @@ With OutSystems Developer Cloud (ODC), architects can design apps to solve busin
 
 In a cloud-native architecture, you can use a single app in ODC:
 
-* To solve a specific business need with a single web or mobile user interface. 
+* To solve a specific business need with a single web or mobile user interface.
 * As a microservice, exposing APIs that other apps or teams can use.
 * As a standalone component to asynchronously process data if you have a high-volume use case requiring autonomous scaling without impacting the business app.
 

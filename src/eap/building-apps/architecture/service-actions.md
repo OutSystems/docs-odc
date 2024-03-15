@@ -7,6 +7,7 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
+
 # Service actions
 
 Service actions are reusable code components that can be called from any app, providing an efficient way to perform specific tasks such as accessing data, sending emails, or making API calls. They promote code reuse, maintainability, and modularity in OutSystems Developer Cloud (ODC) by encapsulating complex logic or functionality. Service actions also enable integration with other apps or systems, improve performance by reducing data transfer, and can be secured using authentication and authorization mechanisms.

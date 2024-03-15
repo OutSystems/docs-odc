@@ -50,7 +50,7 @@ To avoid a lack of clear ownership and context segmentation, ensure you only hav
 
 Look at the bounded concepts identified in the home insurance portal example. The concepts grouped as business context are **Home Insurance**, **Risk Processing**, **Customer Relationship Management (CRM)**, **Claims**, **Billing**, and **Policy**.
 
-In two business contexts, we identified reusable components and integrations with external systems. In the **CRM** context, it's necessary for external integration with SAP. In the **Billing** context, there is a need to integrate with Guidewire, another external system. 
+In two business contexts, we identified reusable components and integrations with external systems. In the **CRM** context, it's necessary for external integration with SAP. In the **Billing** context, there is a need to integrate with Guidewire, another external system.
 
 <div class="info" markdown="1">
 
@@ -102,7 +102,7 @@ To ensure independent release cycles, business sponsors play a crucial role in t
 Business sponsors are usually accountable for the budget, so they have the power to prioritize the demand. Due to that, different sponsors might require different rates of change, so it's **essential to match your architecture to the organizational structure.** In that way, you can ensure independent release cycles.
 
 Follow the approach of starting simple. If needed, begin to add complexity over time.
- 
+
 Having one sponsor and one business owner for the **Home Insurance** app is OK.
 
 ![Diagram showing one sponsor and one business owner for the Home Insurance application](images/one-sponsor-one-business-owner-diag.png "One Sponsor and One Business Owner Diagram")
