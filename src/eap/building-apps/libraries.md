@@ -75,7 +75,7 @@ You must release the first version of a library for the library's elements to be
 
 To update or learn more about a library, locate a library and click the three dots on the top right. You can edit the library in ODC Studio or review the details for this library. When you select **View details**, a screen displays the revision number, the date the library was published, and by whom.
 
-If this library was never released, a message displays informing you the library was never released and that it’s available to release. Releasing a library makes its elements available to other apps and libraries in your organization. Apps and libraries that consume public elements from a given library are referred to as its consumers. New consumers have access to the elements in the library. Existing consumers can update to the new release and access new or changed elements. 
+If this library was never released, a message displays informing you the library was never released and that it’s available to release. Releasing a library makes its elements available to other apps and libraries in your organization. Apps and libraries that consume public elements from a given library are referred to as its consumers. New consumers have access to the elements in the library. Existing consumers can update to the new release and access new or changed elements.
 
 To release the library, click the **Release library** button.
 
@@ -99,7 +99,7 @@ Review the release information and then click **Release library**. A green banne
 
 ### Decide if to consume a new version of a library in your app or library
 
-When you open your app or library in ODC Studio, ODC Studio automatically updates app dependencies. If there are library updates, ODC Studio displays a popup to either review or dismiss the updates. 
+When you open your app or library in ODC Studio, ODC Studio automatically updates app dependencies. If there are library updates, ODC Studio displays a popup to either review or dismiss the updates.
 
 ![Image of the library update notification button in OutSystems Developer Cloud Studio.](images/library-update-button-odcs.png "Library Update Notification in ODC Studio")
 
@@ -113,7 +113,7 @@ This notification mechanism requires ODC Studio version 1.3.0 or higher.
 
 </div>
 
-Review the updated libraries and check for breaking changes impacting your app or library using the new library version. For example, If your app relies on a Server Action no longer supported in the new specified library version, you need to update the dependency on the Server action. 
+Review the updated libraries and check for breaking changes impacting your app or library using the new library version. For example, If your app relies on a Server Action no longer supported in the new specified library version, you need to update the dependency on the Server action.
 
 You can either accept or dismiss these library updates, giving you the flexibility to control the version of the library in your app or library.
 
