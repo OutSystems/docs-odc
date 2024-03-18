@@ -29,20 +29,35 @@ Before using the AI Agent Builder, ensure you have:
 
 ## High-level process for using the AI Agent Builder
 
-### Step 1: Install and configure AI Agent Builder app
+### Step 1: Install the AI Agent Builder app
 
-1. Install the AI Agent Builder app from the Forge.
+1. Log into the ODC portal.
 
-1. Verify that you have the **Configurator** role assigned to you. 
-1. Verify that you have the **Configurator** role assigned to you. 
+1. Install the AI Agent Builder app from the [Forge](../../forge/intro.md). For detailed information on installing a Forge asset, refer to [Install or update a Forge asset](../../forge/install.md).
 
-1. Open the app from the ODC portal.
+1. Verify that you have the **Configurator** end-user role assigned to you. For detailed information about how to assign end-use roles in ODC portal, refer to [end-user roles](../../../eap/user-management/roles.md#end-user-roles)
+
+1. Open the AI Agent Builder app.
+    
+    1. From the home page of the ODC portal, Click **Apps**. A list of all apps display.
+
+    1. Search for **AI Agent Builder**. 
+
+    1. Click **AI Agent Builder** app. The AI Agent Builder app details page display.
+
+    1. Click **View app**.
+
+Now you are inside the AI Agent Builder app.
+
+### Step 2: Configure the AI Agent Builder app
+
+1. Log into the AI Agent Builder app. 
 
 1. [Configure and add the AI model](configure-model/intro.md).
 
 1. (Optional) [Configure and add the data source](configure-data-source/intro.md).
 
-### Step 2a: Choose and customize sample apps
+### Step 3: Choose and customize sample apps
 
 1. Choose a sample app that closely matches your AI use case.
 
@@ -58,17 +73,15 @@ Before using the AI Agent Builder, ensure you have:
 
 (Or)
 
-### Step 2b: Create your custom AI agent 
+### Step 3b: Create your custom AI agent 
 
-1. Verify that you have the **AIAgentBuilder** permissions. The AIAgentBuilder role has full access to the AI Agent Builder and can create and manage agents but cannot add AI models, and data sources. 
-
-1. [Create an agent](create-agent.md) for your AI use case either from scratch or by using agent templates. Optionally, you can add a data source while creating the agent to improve the quality of generated responses.
+1. [Create an agent](create-agent.md) for your AI use case either from scratch or by using agent templates. Optionally, you can add a data source while creating the agent to improve the quality of the AI-generated response.
 
 1. Test your agent in the playground and refine your instructions until the agent responds satisfactorily.
 
 1. Save the new agent and copy the Agent ID.
 
-### Step 3: Integrate the agent into your app 
+### Step 4: Integrate the agent into your app 
 
 For detailed information, refer to [Integrate the agent into your app](integrate-agent.md).
 
