@@ -25,6 +25,12 @@ Back-end events are delivered precisely once to subscribers to prevent duplicate
 
 Event publishers are unburdened by subscribers, as these events represent a state change, allowing subscribers to listen and process events of interest independently. This decoupling of publishers and subscribers allows for flexibility and scalability in apps.
 
+<div class="info" markdown="1">
+
+ODC apps can handle a maximum of one hundred back-end events simultaneously per app. Additionally, back-end event supports payloads with sizes smaller than 10 KB.
+
+</div>
+
 ![Diagram illustrating asynchronous communication between different applications](images/asyn-btw-apps.png "Asynchronous Communication Between Apps")
 
 You can add input parameters to a back-end event to pass additional information from the event publisher to subscribers(s).  For example, a new account event in a finance app can have input parameters such as the user's address and phone number.
@@ -51,12 +57,6 @@ To create an event, go to ODC Studio and follow these steps:
     </div>
 
 1. Right-click the newly created event, select **Add Input Parameter**, and enter the relevant information.
-
-<div class="info" markdown="1">
-
-Changing mandatory input parameters, such as adding or removing them, displays an error.
-
-</div>
 
 ## Publish an event
 
