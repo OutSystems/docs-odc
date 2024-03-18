@@ -25,12 +25,12 @@ To integrate the agent into your app, follow these steps:
 
 1. Access the app that you want to integrate the agent into.
 
-1.  Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. 
+1. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut.
 The public elements page  displays.
 
 1. Search for **AI Agent Builder** and add the **CallAgent** service action.
 
-![Screenshot of the ODC Studio interface showing the 'Add public elements' dialog with 'CallAgent' service action selected.](images/call-agent-service-action-odcs.png "Add Call Agent service action")
+    ![Screenshot of the ODC Studio interface showing the 'Add public elements' dialog with 'CallAgent' service action selected.](images/call-agent-service-action-odcs.png "Add Call Agent service action")
 
 1. Configure the following information for the service action:
 
@@ -42,10 +42,10 @@ The public elements page  displays.
 
     The output response is stored in the **Response** output variable.
 
-![Screenshot of the ODC Studio interface detailing the 'CallAgent' service action parameters including 'AgentId' and 'ChatMessages'.](images/service-action-parameters-odcs.png "CallAgent service action parameters")
+    ![Screenshot of the ODC Studio interface detailing the 'CallAgent' service action parameters including 'AgentId' and 'ChatMessages'.](images/service-action-parameters-odcs.png "CallAgent service action parameters")
 
 1. Copy the Agent ID from the AI Agent Builder app.
 
 1. Go to **ODC Portal>Apps**, select the app you just built, and   then change the value of the AgentId setting (make sure you select the correct stage).
 
-![Dialog box for saving a new agent with fields for 'Name' and 'ID' in the AI Agent Builder app.](images/add-agentid-app-settings-pl.png "Save Agent ID in ODC portal")
+    ![Dialog box for saving a new agent with fields for 'Name' and 'ID' in the AI Agent Builder app.](images/add-agentid-app-settings-pl.png "Save Agent ID in ODC portal")

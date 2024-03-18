@@ -25,15 +25,15 @@ Before you add Azure AI Search data source, ensure you:
 
 To add Azure AI Search data source, follow these steps:
 
-1. Log into the AI Agent Builder app. 
+1. Log into the AI Agent Builder app.
 
-1. Click **Configurations**. 
+1. Click **Configurations**.
 A list of all the configured AI models and data sources is displayed.
 
-![Screenshot showing the 'Add data source' dropdown with Azure AI Search selected.](images/add-data-source-azure-ai.png "Adding Azure AI Search Data Source")
-
-3. Click **Add data source** and select **Azure AI Search**.
+1. Click **Add data source** and select **Azure AI Search**.
 The **Add data source** page displays.
+
+    ![Screenshot showing the 'Add data source' dropdown with Azure AI Search selected.](images/add-data-source-azure-ai.png "Adding Azure AI Search Data Source")
 
 1. Enter the following details:
 
@@ -44,7 +44,7 @@ The **Add data source** page displays.
     * **URL** - REST API endpoint retrieved from the Azure portal.
 
     * **Index name** - Name of the index created in the Azure portal.
-       
+
     * **API version** - (Read only) Identifies the Azure AI Search [Rest API](https://learn.microsoft.com/en-us/rest/api/searchservice/) version
 
     * **API key** - API key for use on every API request.
@@ -53,14 +53,14 @@ The **Add data source** page displays.
 
 1. Click **Test connection and save**.
 
-    Now, you can use the data source to create agents and improve the quality of responses by grounding the model on your data. 
+    Now, you can use the data source to create agents and improve the quality of responses by grounding the model on your data.
 
-   Once you've added the data source, you are redirected to the **Configurations** page. A confirmation message is displayed confirming that the data source has been added successfully. You can also view the newly added data source on the **Configurations** page. If adding the data source fails, an error message is displayed. 
+   Once you've added the data source, you are redirected to the **Configurations** page. A confirmation message is displayed confirming that the data source has been added successfully. You can also view the newly added data source on the **Configurations** page. If adding the data source fails, an error message is displayed.
 
     You can **edit** the fields of the data source and **delete** the data source from the AI Agent Builder app in case you no longer need the data source or have changed providers.
 
 ## Next steps
 
-[Create an agent](../create-agent.md) 
+[Create an agent](../create-agent.md)
 
-[Integrate the agent into your app](../integrate-agent.md) 
+[Integrate the agent into your app](../integrate-agent.md)

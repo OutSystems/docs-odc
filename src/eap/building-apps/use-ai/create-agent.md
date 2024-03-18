@@ -32,9 +32,9 @@ To create an AI agent from pre-built agent templates, follow these steps:
 
 1. Click **Try it**.
 
-![Screenshot of AI Agent Builder showing a list of agent templates including Customer Support, Sales Call Summarization, and MyGPT agent with 'Try it' buttons.](images/agent-template-list-ai.png "Agent Template Selection")
+    ![Screenshot of AI Agent Builder showing a list of agent templates including Customer Support, Sales Call Summarization, and MyGPT agent with 'Try it' buttons.](images/agent-template-list-ai.png "Agent Template Selection")
 
-4. (Optional) Customize the agent.
+1. (Optional) Customize the agent.
 
     a. Choose a new AI model, modify the instructions, or add a new data source
 
@@ -48,22 +48,19 @@ To create an AI agent from pre-built agent templates, follow these steps:
 
     b. Choose a data source from the drop-down.
 
-![Configuration panel for adding a data source to an AI agent with a toggle switch and a drop-down menu for selecting the data source.](images/config-data-source-ai.png "Data Source Configuration")
+    ![Configuration panel for adding a data source to an AI agent with a toggle switch and a drop-down menu for selecting the data source.](images/config-data-source-ai.png "Data Source Configuration")
 
-The **Number of results** displays the total number of documents or pages used from the data source to generate a response.
+    The **Number of results** displays the total number of documents or pages used from the data source to generate a response.
 
-6. To test your agent, enter sample queries in the playground.
-Modify your instructions based on the results until the AI generates the desired response.
+1. To test your agent, enter sample queries in the playground. Modify your instructions based on the results until the AI generates the desired response.
 
-![AI Agent Builder's testing playground where users can enter sample queries to test the AI agent's responses.](images/test-agent-playground-ai.png "Agent Testing Playground")
+    ![AI Agent Builder's testing playground where users can enter sample queries to test the AI agent's responses.](images/test-agent-playground-ai.png "Agent Testing Playground")
 
-7. Click **Save agent**.
-The Save new agent window pops up.
+1. Click **Save agent**. The Save new agent window pops up.
 
-![Dialog box for saving a new AI agent with fields for entering the agent's name and displaying the generated agent ID.](images/save-agent-id-ai.png "Save New Agent Dialog")
+1. Enter a name for the agent. The agent ID automatically populates.
 
-1. Enter a name for the agent. 
-The agent ID automatically populates.
+    ![Dialog box for saving a new AI agent with fields for entering the agent's name and displaying the generated agent ID.](images/save-agent-id-ai.png "Save New Agent Dialog")
 
 1. Click **Save**.
 
@@ -73,18 +70,18 @@ You can now use the agent ID to integrate the agent into your existing app.
 
 To create an AI agent from scratch, follow these steps:
 
-1. Log into the AI Agent Builder app. 
+1. Log into the AI Agent Builder app.
 The home page displays.
 
 1. From the homepage, click **Create agent**.
 
-![Button labeled 'Create agent' on the AI Agent Builder platform to start the process of creating a new agent from scratch.](images/create-agent-ai.png "Create New Agent Button")
+    ![Button labeled 'Create agent' on the AI Agent Builder platform to start the process of creating a new agent from scratch.](images/create-agent-ai.png "Create New Agent Button")
 
-The **New Agent** page displays
-
-![Interface for configuring a new AI agent with options to select an AI model, access advanced configurations, and input instructions.](images/config-new-agent-ai.png "New Agent Configuration Interface")
+    The **New Agent** page displays.
 
 1. Choose the **AI model** from the drop-down.
+
+    ![Interface for configuring a new AI agent with options to select an AI model, access advanced configurations, and input instructions.](images/config-new-agent-ai.png "New Agent Configuration Interface")
 
 1. (Optional) Click **Advanced configurations** to configure additional settings for the AI model. These settings vary depending on the AI model you choose. For more information, refer to the respective AI model provider documentation.
 
@@ -96,28 +93,26 @@ The **New Agent** page displays
 
     1. Choose a data source from the drop-down.
 
-The **Number of results** displays the total number of documents or pages used from the data source to generate a response.
+    The **Number of results** displays the total number of documents or pages used from the data source to generate a response.
 
-![Configuration panel for adding a data source to an AI agent with a toggle switch and a drop-down menu for selecting the data source.](images/config-data-source-ai.png "Data Source Configuration")
+    ![Configuration panel for adding a data source to an AI agent with a toggle switch and a drop-down menu for selecting the data source.](images/number-of-results-ai.png "Data Source Configuration")
 
-7. To test your agent, enter sample queries in the playground. 
-Modify your instructions based on the results until the AI generates a desired response.
+1. To test your agent, enter sample queries in the playground. Modify your instructions based on the results until the AI generates a desired response.
 
-1. Click **Save agent**. 
-The Save new agent window pops up.
+1. Click **Save agent**. The Save new agent window pops up.
 
-![Dialog box for saving a new AI agent with fields for entering the agent's name and displaying the generated agent ID.](images/save-agent-id-ai.png "Save New Agent Dialog")
+1. Enter a name for the agent. The agent ID automatically populates.
 
-1. Enter a name for the agent. 
-The agent ID automatically populates.
+    ![Dialog box for saving a new AI agent with fields for entering the agent's name and displaying the generated agent ID.](images/save-agent-id-ai.png "Save New Agent Dialog")
 
 1. Click **Save**.
 
 You can now use the agent ID to integrate the agent into your existing app.
-	
+
 Once the agent is successfully created, you can view the agent on the **My Agents** page.
 
 At any point, you can:
+
 * Search for an agent based on filters such as name, AI model, and data source.
 * Copy the agent ID to integrate the agent into the app.
 * Edit the agent's configurations. On editing the agent, the app integrated with the agent is automatically updated and the app's behavior is impacted.
