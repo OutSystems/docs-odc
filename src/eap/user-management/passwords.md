@@ -1,6 +1,5 @@
 ---
 summary: Learn about creating and managing passwords for users
-tags: user-management; passwords; changing passwords; locked passwords
 locale: en-us
 guid: 41b86768-295e-4aeb-98ed-9a0f6db4cfd2
 app_type: mobile apps, reactive web apps

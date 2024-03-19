@@ -1,6 +1,5 @@
 ---
 summary: OutSystems' Cloud Messaging Configurator REST APIs allow sending notifications to users or topics, with support for both normal and silent notifications across different API versions
-tags: article-page; runtime-mobile; support-application_development; support-Mobile_Apps; support-Mobile_Apps-featured
 locale: en-us
 guid: 2da53711-4885-4005-9224-d77d517efb50
 app_type: mobile apps

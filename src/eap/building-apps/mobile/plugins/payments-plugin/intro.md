@@ -1,6 +1,5 @@
 ---
 summary: Use the Payments Plugin to enable users to complete payments using Apple Pay or Google Pay.
-tags: runtime-mobile; support-application_development; support-Mobile_Apps;
 locale: en-us
 guid: e3086e25-ffd3-4660-8162-ee45350e0f3f
 app_type: mobile apps
