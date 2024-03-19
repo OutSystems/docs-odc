@@ -45,6 +45,15 @@ OutSystems supports the following versions of systems:
 
 * Salesforce
 
+* PostgreSQL Server
+    * PostgreSQL 12
+    * PostgreSQL 13
+    * PostgreSQL 14
+    * PostgreSQL 15
+    * PostgreSQL 16
+
+OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
+
 ## Permissions requirements
 
 Before accessing data from an external database, verify that you have the correct access to the database and ODC. By default, only admins can manage connections and select entities. Managing connections requires the following permissions:
@@ -53,6 +62,12 @@ Before accessing data from an external database, verify that you have the correc
 * Connection management
 
 External database permissions take priority over permissions in ODC. For example, a developer with read permission in an external database and read-write permission in ODC can only read data in the external database. Contact the external database admin to change your access to the external database..
+
+<div class="info" markdown="1">
+
+Read-only external entities won't have create, update, or delete entity actions in ODC Studio. An external entity is considered read-only when all selected attributes are not updatable and not insertable on the data source.
+
+</div>  
 
 For more information about users, permissions, and custom roles, see [User management](../../user-management/intro.md).
 
@@ -185,18 +200,18 @@ Admins must supply the following information to connect to the external connecto
 
 When connecting to external databases, OutSystems maps the external database data types to OutSystems data types as follows:
 
-| SQL Server | Oracle data type| SAP Server | Salesforce |OutSystems Data Type |
-|--|--|--|--|--|
-Char<br/>Varchar<br/>Text<br/>Nchar<br/>Nvarchar<br/>Ntext<br/>Xml<br/>Decimal(Any,> 8)<br/>Numeric(Any,>8) <br/>Real<br/>Float<br/>UniqueIdentifier<br/>Time<br/>Datetimeoffset | Char<br/>Varchar<br/>Varchar2<br/>Clob<br/>Long<br/>Nchar<br/>NVarchar2<br/>Nclob<br/>Number(Any,> 8)<br/>Float<br/>RowId<br/>URowId | Varchar<br/>UUID| UUID<br/>VARCHAR<br/>FLOAT<br/>Time |Text|
-Tinyint<br/>Smallint<br/>Int<br/>Decimal(1-9,0)<br/>Numeric(1-9,0) | Number(2-9,0) | Int | Int |Integer |
-Bigint<br/>Decimal(10-18,0)<br/>Numeric(10-18,0) | Number(10-18,0) | | | Long Integer |
-Decimal(19-28,0-8)<br/>Decimal(1-18,>1-8)<br/>Numeric(19-28,0-8)<br/>Numeric(1-18,>1-8)<br/>Money<br/>Smallmoney | Number(19-28,0-8)<br/>Number(1-18,1-8) | Decimal| Decimal | Decimal |
-Bit | Number(1,0) | Bit| Bit | Boolean |
-Date | | Date | Date | Date|
-Datetime<br/>DateTime2<br/>Smalldatetime | Date<br/>Timestamp | Time<br/>Timestamp  | DateTime | DateTime |
-Image<br/>Binary<br/>Varbinary | Blob<br/>Raw<br/>Long Raw | | | Binary Data |
-Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType<br/>VARRAY<br/>OBJECT (structured) | | |Currently not supported and won't appear in ODC Portal.|
-Other data types | Other data types | Other data types |Other data types |No official support; attributes may not appear in the ODC Portal or may exhibit unexpected behavior. |
+| SQL Server | Oracle data type| SAP Server | Salesforce | PostgreSQL |OutSystems Data Type |
+|--|--|--|--|--|--|
+Char<br/>Varchar<br/>Text<br/>Nchar<br/>Nvarchar<br/>Ntext<br/>Xml<br/>Decimal(Any,> 8)<br/>Numeric(Any,>8) <br/>Real<br/>Float<br/>UniqueIdentifier<br/>Time<br/>Datetimeoffset | Char<br/>Varchar<br/>Varchar2<br/>Clob<br/>Long<br/>Nchar<br/>NVarchar2<br/>Nclob<br/>Number(Any,> 8)<br/>Float<br/>RowId<br/>URowId | Varchar<br/>UUID| UUID<br/>VARCHAR<br/>FLOAT<br/>Time| Varchar<br/>NVarchar<br/>Text<br/>Varbit<br/>Character<br/>Char<br/>Bpchar<br/>Time<br/>Numeric(Any, >8)<br/>Numeric(>28, Any)<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)<br/>Float4<br/>Float8<br/>Float8_range<br/>Real<br/>Double precision<br/>XML<br/>JSON<br/>UUID<br/>Pg_lsn<br/>Enum |Text|
+Tinyint<br/>Smallint<br/>Int<br/>Decimal(1-9,0)<br/>Numeric(1-9,0) | Number(2-9,0) | Int | Int | Smallint<br/>Integer<br/>Int<br/>Int2<br/>Int4<br/>Numeric<br/>Numeric(1-9, 0)<br/>Decimal(1-9, 0)<br/>Smallserial<br/>Serial<br/>Serial4 |Integer |
+Bigint<br/>Decimal(10-18,0)<br/>Numeric(10-18,0) | Number(10-18,0) | | | Bigint<br/>Int8<br/>Bigserial<br/>Serial8<br/>Decimal(10-18, 0)<br/>Numeric(10-18, 0) |Long Integer |
+Decimal(19-28,0-8)<br/>Decimal(1-18,>1-8)<br/>Numeric(19-28,0-8)<br/>Numeric(1-18,>1-8)<br/>Money<br/>Smallmoney | Number(19-28,0-8)<br/>Number(1-18,1-8) | Decimal| Decimal | Numeric(1-28, 1-8)<br/>Decimal(1-28, 1-8)<br/>Numeric(19-28, 0)<br/>Decimal(19-28, 0)<br/>Money | Decimal |
+Bit | Number(1,0) | Bit| Bit | Bit<br/>Boolean<br/>Bool |Boolean |
+Date | | Date | Date | Date |Date|
+Datetime<br/>DateTime2<br/>Smalldatetime | Date<br/>Timestamp | Time<br/>Timestamp  | DateTime | Timestamp | DateTime |
+Image<br/>Binary<br/>Varbinary | Blob<br/>Raw<br/>Long Raw | | | Bytea |Binary Data |
+Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType<br/>VARRAY<br/>OBJECT (structured) | | | BIT VARYING<br/>BOX<br/>CIDR<br/>CIRCLE<br/>COMPOSITE (user defined types and other composite types)<br/>INET<br/>INTERVAL<br/>LINE<br/>LSEG<br/>MACADDR<br/>MACADDR8<br/>PATH<br/>POINT<br/>POLYGON<br/>TSQUERY<br/>TSVECTOR<br/>TXID_SNAPSHOT<br/>all of the ARRAY types | Currently not supported and won't appear in ODC Portal.|
+Other data types | Other data types | Other data types |Other data types | Other data types |No official support; attributes may not appear in the ODC Portal or may exhibit unexpected behavior. |
 
 ## Salesforce custom columns mapping
 
@@ -227,3 +242,19 @@ Consider the following when integrating an external database.
 * Salesforce doesn't support leading and trailing white spaces. 
     * Salesforce removes those white spaces. While inserting an empty string, Salesforce inserts NULL instead.
 * Salesforce is case-insensitive, and `ToUpper`/`ToLower` built-in functions don't have the expected behavior in aggregates.
+* For PostgreSQL connections, you may encounter issues in Text data type columns when inserting an empty value, and the connection is configured to overwrite null values with default values.OutSystems recommends you set a different default value to columns of these data types, such as for Time: 00:00:00 or for Float: 0. The following data types are impacted:
+    * Time
+    * Numeric (Any, >8)
+    * Numeric (>28, Any)
+    * Decimal (Any, >8)
+    * Decimal (>28, Any)
+    * Float4
+    * Float8
+    * Float8_range
+    * Real
+    * Double precision
+    * XML
+    * JSON
+    * UUID
+    * Pg_lsn
+    * Enum
