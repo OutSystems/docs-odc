@@ -81,19 +81,19 @@ To create a new database connection, go to the ODC Portal and follow these steps
     * If you select Salesforce, select **connect to** as **Production**, and **Authentication type** as **OAuth** authentication type, and click **Authenticate**.<br/> The Salesforce login page displays.
 1. In the connection form, enter the required database connection information. To learn more, refer to the [connection parameters](#connection-parameters).
 
-<div class="info" markdown="1">
+    <div class="info" markdown="1">
 
-To use private gateways to connect to your external databases, enter `secure-gateway` in the Server/Host field and the secure gateway port value in the Port field.
+    To use private gateways to connect to your external databases, enter `secure-gateway` in the Server/Host field and the secure gateway port value in the Port field.
 
-</div>
+    </div>
 
 1. After entering the information, click the **Test connection** button at the bottom of the form. 
 
-<div class="info" markdown="1">
+    <div class="info" markdown="1">
 
-If the test fails, a message displays. Make the necessary changes and test again. 
+    If the test fails, a message displays. Make the necessary changes and test again. 
 
-</div>
+    </div>
 
 1. To apply to a stage, an admin can choose one of the following.
     * Click Apply to all stages to use the same connection information in all stages.
