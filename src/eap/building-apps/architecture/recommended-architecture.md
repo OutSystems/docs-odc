@@ -169,10 +169,11 @@ The final architecture for this example is simple but powerful. It has only four
 * The **Claims** app that contains the bounded context like risk processing policies and claims as services for the Home Insurance Portal.
 * The **Billing** app that contains the payments and bills to be processed. It can include services and a user interface where users can pay pending bills.
 
-The architecture is composed of three libraries:
+The architecture is composed of two libraries:
 
 * **Lottie animations**, which is available in Forge and installed in your organization to enrich your end-user experience by adding some custom animations to the **Home Insurance** app.
-* **SAP connector** that's used as an integration wrapper to connect your customer's information from SAP and work as a bridge to your customer portal.
 * The **Guidewire connector**, that supports your billing system as an integration wrapper to process traditional and flat-rate agent commissions from a single interface.
+
+You can use [**SAP connector**](../../configuration-management/external-databases/intro.md) in ODC to connect your customer's information from SAP and work as a bridge to your customer portal.
 
 ![Diagram presenting the final architecture for a Home Insurance portal with apps and libraries](images/the-final-architecture-diag.png "The Final Architecture Diagram")
