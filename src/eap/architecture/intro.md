@@ -133,7 +133,7 @@ You can store secret data for your apps such as API keys as secret settings in a
 
 Build Service stores the app container image and passes the image to a Runtime stage for deployment. OutSystems follows the "Build once, deploy anywhere" **continuous delivery** principle, which makes OutSystems Developer Cloud an efficient cloud product.
 
-## Customer data handling in Data Fabric
+## Customer data handling in Data Fabric { #data-fabric }
 
 Many times your data is stored in an external location. Data Fabric helps you to access and integrate data into your apps.
 

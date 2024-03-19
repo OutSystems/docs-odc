@@ -23,6 +23,8 @@ There is no limit to the number of entities you can add from the external databa
 
 ODC offers [private gateways](../private-gateway.md) to connect your apps to private data and services that are inaccessible through the internet. Since an external database is usually hosted in a private network, using a private gateway ensures security.
 
+[Data Fabric processes all your external system data](../../architecture/intro.md#data-fabric) uniformly, with no persistent storage within Data Fabric or ODC architecture. 
+
 </div>
 
 ## Supported systems
