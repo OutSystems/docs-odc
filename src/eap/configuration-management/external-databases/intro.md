@@ -65,12 +65,6 @@ Before accessing data from an external database, verify that you have the correc
 
 External database permissions take priority over permissions in ODC. For example, a developer with read permission in an external database and read-write permission in ODC can only read data in the external database. Contact the external database admin to change your access to the external database..
 
-<div class="info" markdown="1">
-
-Read-only external entities won't have create, update, or delete entity actions in ODC Studio. An external entity is considered read-only when all selected attributes are not updatable and not insertable on the data source.
-
-</div>  
-
 For more information about users, permissions, and custom roles, see [User management](../../user-management/intro.md).
 
 ## Create a new connection
@@ -202,7 +196,7 @@ Admins must supply the following information to connect to the external connecto
 
 When connecting to external databases, OutSystems maps the external database data types to OutSystems data types as follows:
 
-| SQL Server | Oracle data type| SAP Server | Salesforce | PostgreSQL |OutSystems Data Type |
+| SQL Server | Oracle | SAP OData | Salesforce | PostgreSQL |OutSystems Data Type |
 |--|--|--|--|--|--|
 Char<br/>Varchar<br/>Text<br/>Nchar<br/>Nvarchar<br/>Ntext<br/>Xml<br/>Decimal(Any,> 8)<br/>Numeric(Any,>8) <br/>Real<br/>Float<br/>UniqueIdentifier<br/>Time<br/>Datetimeoffset | Char<br/>Varchar<br/>Varchar2<br/>Clob<br/>Long<br/>Nchar<br/>NVarchar2<br/>Nclob<br/>Number(Any,> 8)<br/>Float<br/>RowId<br/>URowId | Varchar<br/>UUID| UUID<br/>VARCHAR<br/>FLOAT<br/>Time| Varchar<br/>NVarchar<br/>Text<br/>Varbit<br/>Character<br/>Char<br/>Bpchar<br/>Time<br/>Numeric(Any, >8)<br/>Numeric(>28, Any)<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)<br/>Float4<br/>Float8<br/>Float8_range<br/>Real<br/>Double precision<br/>XML<br/>JSON<br/>UUID<br/>Pg_lsn<br/>Enum |Text|
 Tinyint<br/>Smallint<br/>Int<br/>Decimal(1-9,0)<br/>Numeric(1-9,0) | Number(2-9,0) | Int | Int | Smallint<br/>Integer<br/>Int<br/>Int2<br/>Int4<br/>Numeric<br/>Numeric(1-9, 0)<br/>Decimal(1-9, 0)<br/>Smallserial<br/>Serial<br/>Serial4 |Integer |
@@ -229,21 +223,56 @@ Date | Date |
 
 Consider the following when integrating an external database.
 
-* The `DiffMinutes` and `DiffSeconds` built-in functions for Oracle only allow max intervals between dates:
-    * Seconds: 31 years, 9 months, 9 days, 1 hour, 46 minutes, and 39 seconds
-    * Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds
-* .NET does not support the Julian calendar for Oracle and Salesforce, and the minimum supported timestamp value is -62135596800000. 
-    * To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
-* Oracle treats empty strings as NULL values. When inserting or updating a nullable text attribute with a value, Oracle stores NULL regardless of the Null Behavior configuration.
 * Data Preview and runtime queries with Unicode characters aren't supported.
 * Advanced SQL Nodes don't support external entities.
 * Build aggregator or mashup data from different sources(external and local) aren't supported.
-* SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.
+* .NET does not support the Julian calendar for Oracle and Salesforce, and the minimum supported timestamp value is -62135596800000. 
+    * To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
+
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+    Oracle
+    </div>
+    <div class="os-accordion__content">            
+
+* The `DiffMinutes` and `DiffSeconds` built-in functions for Oracle only allow max intervals between dates:
+    * Seconds: 31 years, 9 months, 9 days, 1 hour, 46 minutes, and 39 seconds
+    * Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds
+* Oracle treats empty strings as NULL values. When inserting or updating a nullable text attribute with a value, Oracle stores NULL regardless of the Null Behavior configuration
+    </div>
+</div>
+
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+    SAP OData
+    </div>
+    <div class="os-accordion__content">            
+
+*  SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.
+* SAP OData only supports read-only entity actions in ODC Studio.
+    </div>
+</div>
+
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+        Salesforce
+    </div>
+    <div class="os-accordion__content">            
+
 * Entities and attributes for Salesforce are displayed using their API names, such as CustomObject_c, instead of Field Labels or Field Names, such as CustomObject.
 * Custom attributes and their data types in Salesforce have different mapping than the built-in attributes. For more information, see [salesforce custom columns mapping.](#salesforce-custom-columns-mapping)
 * Salesforce doesn't support leading and trailing white spaces. 
     * Salesforce removes those white spaces. While inserting an empty string, Salesforce inserts NULL instead.
 * Salesforce is case-insensitive, and `ToUpper`/`ToLower` built-in functions don't have the expected behavior in aggregates.
+    </div>
+</div>
+
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+        PostgreSQL
+    </div>
+    <div class="os-accordion__content">            
+
 * For PostgreSQL connections, you may encounter issues in Text data type columns when inserting an empty value, and the connection is configured to overwrite null values with default values.OutSystems recommends you set a different default value to columns of these data types, such as for Time: 00:00:00 or for Float: 0. The following data types are impacted:
     * Time
     * Numeric (Any, >8)
@@ -260,3 +289,5 @@ Consider the following when integrating an external database.
     * UUID
     * Pg_lsn
     * Enum
+    </div>
+</div>
