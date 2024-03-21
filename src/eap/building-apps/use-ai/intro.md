@@ -90,3 +90,10 @@ You provision your own models and data sources. Information flows from the model
 By exposing agents in an ODC app with a REST API, you can consume AI agents from other technologies such as high code, low code, and OutSystems O11.
 
 ![Shows how users, apps, and agents interact with AI Agent builder).](images/ai-agent-builder-architecture-diag.png "AI Agent Builder architecture")
+
+## Next steps
+
+* [Using the AI Agent Builder](overall-process.md)
+
+* [Configure your AI model](configure-model/intro.md)
+
