@@ -53,7 +53,7 @@ You can test your library in only one test app at a time. You can first test the
 
 OutSystems recommends testing libraries in a test app rather than in apps for production to ensure only the developers testing the app are impacted by changes. Having a test app(s) for each library creates a consistent test set for regression testing to ensure changes in the library don't break existing functionality. Also, you can use test apps for manual testing or a test framework like Behavior Driven Development (BDD) to execute these tests.
 
-### Release a new version of a library
+### Release a new version of a library { #release-library }
 
 <div class="info" markdown="1">
 
