@@ -5,7 +5,7 @@ locale: en-us
 guid: 5bfd1452-1ff8-4180-a437-65603671437b
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4899%3A360&mode=design&t=mCB2zDPcFcH2IZGf-1
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5324%3A590&mode=design&t=2ZbamW0IMDYxtZbC-1
 ---
 # Events
 
@@ -16,14 +16,14 @@ Events facilitate process automation without impacting the user experience and e
 The Screens and Blocks follow a lifecycle composed of stages, allowing you to act upon those stages using event handler actions. These event handlers provide visibility into the lifecycle of screens and blocks, allowing you to implement logic when certain events occur.
 
 In ODC, events follow the publish/subscribe (pub/sub) paradigm, allowing asynchronous communication. This model simplifies the development of highly functional and architecturally complex apps within cloud-native architectures.
- 
+
 ## Event-driven architecture
 
 Event-driven architecture (EDA) promotes app independence, with each component having minimal dependencies. EDA enhances team autonomy by enabling the development of apps with loosely coupled dependencies. EDA follows a reactive programming model, where decoupled components offer a dynamic approach to event handling.
 
-![Diagram showing the flow of events from a producer app to a message broker and then to subscriber apps with event handlers.](images/Architecture-diagram-events.png "Event-Driven Architecture Diagram")
+![Diagram showing the flow of events from a producer app to a message broker and then to subscriber apps with event handlers.](images/events-architecture-diag.png "Event-Driven Architecture Diagram")
 
-Producer apps define events and triggers. When an event triggers, the producer publishes the event in the message broker. Subsequently, subscribers interested in specific events can subscribe to them through the message broker. 
+Producer apps define events and triggers. When an event triggers, the producer publishes the event in the message broker. Subsequently, subscribers interested in specific events can subscribe to them through the message broker.
 
 Subscribers define event handlers to react to events asynchronously through server actions. The subscriber app consumes an event sent by the producer app, creating a weak reference.
 
