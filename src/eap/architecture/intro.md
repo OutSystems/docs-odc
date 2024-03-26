@@ -164,8 +164,9 @@ Different types of data are stored distinctively in memory:
 In the ODC architecture, caches optimize performance by storing certain information. This principle extends to integration with external systems, caching the following types of information:
 
 * Metadata: This type of data is cached during connection creation or when refreshing metadata in the ODC Portal. The data is then stored in serverless, NoSQL databases.
+* Query statements that execute in runtime Apps are cached to maintain consistent execution plans in the underlying system to enhance performance.
+* Query results are cached in Kubernetes pod memory. This cache expiration is defined by developer at the aggregate level.
 
-* Queries: SQL queries that execute in runtime Apps are cached to maintain consistent execution plans in the underlying system to enhance performance. Only SQL statements, not query results, are stored in the cache.
 
 ### Connection secrets
 
