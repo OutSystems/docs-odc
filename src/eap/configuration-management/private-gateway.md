@@ -16,7 +16,7 @@ The complexity of a multitenant cloud-native platform means that ODC requires a 
 
 VPN limitations over a cloud-native infrastructure are overcome by Private Gateway. VPNs are often the main vector for data breaches often allowing unrestricted access to the company's network, are complex to configure and set up, and are rigid when it comes to failover.
 
-Private Gateways is a secure-by-design solution for the cloud-native, multi-tenant OutSystems Developer Cloud (ODC). Its standout benefits include:
+Private Gateway is a secure-by-design solution for the cloud-native, multi-tenant OutSystems Developer Cloud (ODC). Its standout benefits include:
 
 * Provides fine-tuned control over what data is accessible. You can control the ingress while not exposing any private endpoints.
 * Highly flexible and configurable. For example, supports connecting to your private endpoints hosted in multi-tenant, multi-zone, or multi-region environments.
@@ -25,8 +25,8 @@ Private Gateways is a secure-by-design solution for the cloud-native, multi-tena
 
 There are two components to the Private Gateways feature.
 
-* The server component, **Private Gateway**. There is one instance of Server Gateway for each stage in your organization. By default a Private Gateway is inactive and you activate it in ODC Portal. 
-* The client component, **Cloud Connector**. You use the configuration generated on activating a Private Gateway to run Cloud Connector on system(s) in your private network(s). Your apps connect to the endpoints through a secure tunnel established between the endpoints and a Private Gateway. The Cloud Connector requires only outbound access to the internet in the private network(s) in which it's running.
+* The server component, **Private Gateway** hosted and managed by OutSystems. There is one instance of Server Gateway for each stage in your organization. By default a Private Gateway is inactive and you activate it in ODC Portal. 
+* The client component, **Cloud Connector** installed and managed by you. You use the configuration generated on activating a Private Gateway to run Cloud Connector on system(s) in your private network(s). Your apps connect to the endpoints through a secure tunnel established between the endpoints and a Private Gateway. The Cloud Connector requires only outbound access to the internet in the private network(s) in which it's running.
 
 Common use cases include accessing data through a private REST API service, requesting internal services (SMTP, SMB, NFS,..), and [connecting to external databases](external-databases/intro.md) in private networks.
 
