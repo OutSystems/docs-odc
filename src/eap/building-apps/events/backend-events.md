@@ -25,23 +25,18 @@ Back-end events are delivered precisely once to subscribers to prevent duplicate
 
 Event publishers are unburdened by subscribers, as these events represent a state change, allowing subscribers to listen and process events of interest independently. This decoupling of publishers and subscribers allows for flexibility and scalability in apps.
 
-<div class="info" markdown="1">
-
-ODC apps can handle a maximum of one hundred back-end events simultaneously per app. Additionally, back-end event supports payloads with sizes smaller than 10 KB.
-
-</div>
-
 ![Diagram illustrating asynchronous communication between different applications](images/asyn-btw-apps-diag.png "Asynchronous Communication Between Apps")
 
 You can add input parameters to a back-end event to pass additional information from the event publisher to subscribers(s).  For example, a new account event in a finance app can have input parameters such as the user's address and phone number.
 
-<div class="info" markdown="1">
-
-Back-end events support basic input parameters like Text, Decimals, Date, Time, and Email, with a maximum of 2000 characters for Text parameters. However, complex data types such as records, binaries, or lists are not supported.
-
-</div>
-
 Back-end events are scoped to a specific stage. For example, a back-end event in an app within a development environment can only be handled by the same or another app within the same environment.
+
+Considerations while using back-end events: 
+
+* ODC stores a capacity of 10,000 back-end events. If the capacity exceeds, ODC raises an exception. You must capture the exception in an Exception Handler with the exception configured for All Exceptions.
+* ODC apps can simultaneously handle up to 100 back-end events per app container. ODC retires up to 10 times in case the delivery of a back-end event fails.
+* Back-end events support [basic input parameters](../data/data-types.md) except binary data, with a maximum of 2000 characters for Text parameters. 
+* Back-end support payloads with sizes smaller than 10 KB. If the size exceeds, you must refactor to reduce the payload.
 
 ## Create an event
 

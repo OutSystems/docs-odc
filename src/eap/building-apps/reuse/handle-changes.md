@@ -31,7 +31,7 @@ Any changes you perform on weak dependencies become immediately available to the
 
 |**Scenario**|**Elements**|
 |------------|------------|
-|Add an optional Input Parameter<br/>Change a mandatory Input Parameter to optional<br/>Delete an Input Parameter<br/>Reorder Input Parameters<br/>Add an Output Parameter<br/>Delete an unused Output Parameter|Service Action|
+|Add an optional Input Parameter<br/>Change a mandatory Input Parameter to optional<br/>Delete an Input Parameter<br/>Reorder Input Parameters<br/>Add an Output Parameter<br/>Delete an unused Output Parameter|Service Action, Event|
 |Change the content of a Screen|Screen|
 |Change a mandatory Attribute to optional<br/>Delete an unused Attribute<br/>Reorder Attributes|Entity (Database), Static Entity, Structure|
 |Add an optional Attribute (any data type)|Entity (Database), Static Entity|
@@ -46,8 +46,8 @@ The following examples of changes immediately impact the consumers and eventuall
     
 |**Scenario**|**Elements**|**Notes**|
 |------------|------------|------------|
-|Add a mandatory input parameter<br/>Change the data type of an input parameter|Service Action, Screen|  Some data type changes might be compatible at runtime and not produce an immediate error. For example: changing from Integer to Long Integer or any simple type to Text. <br/> The consumer does not send the input parameter value; the default value is assumed, which may result in runtime errors. |
-|Delete an output parameter|Service Action| The producer does not send the output parameter value; the default value is assumed, which may result in runtime errors.|
+|Add a mandatory input parameter<br/>Change the data type of an input parameter|Service Action, Screen, Event|  Some data type changes might be compatible at runtime and not produce an immediate error. For example: changing from Integer to Long Integer or any simple type to Text. <br/> The consumer does not send the input parameter value; the default value is assumed, which may result in runtime errors. |
+|Delete an output parameter|Service Action, Event| The producer does not send the output parameter value; the default value is assumed, which may result in runtime errors.|
 |Change the data type of an attribute<br/>Delete a used attribute|Entity (Database), Static Entity| Some data type changes might be compatible at runtime and not produce an immediate error. For example: changing from Integer to Long Integer or any simple type to Text. |
 |Delete a used record|Static Entity| |
 |Delete a used element|All [public elements](../architecture/reuse-elements.md#public-elements--public-elements-)| |
@@ -59,7 +59,7 @@ Any changes you perform on strong dependencies do not impact the consumers immed
 
 |**Scenario**|**Elements**|
 |------------|------------|
-|Add an optional input parameter<br/>Add an output paramter|Server Action, Client Action|
+|Add an optional input parameter<br/>Add an output paramter|Server Action, Client Action, Event|
 |Add an attribute|Static Entity, Structure|
 |Add a record|Static Entity|
 |Exposing new elements|Client Action, Server Action, Block, Image, Theme, Static Entity, Structure, Script|
@@ -68,7 +68,7 @@ Examples of changes that produce TrueChange errors:
 
 |**Scenario**|**Elements**|**Notes**|
 |------------|------------|------------|
-|Add a mandatory input parameter<br/>Delete a used output parameter|Server Action, Client Action| |
+|Add a mandatory input parameter<br/>Delete a used output parameter|Server Action, Client Action, Event| |
 |Delete a used record|Static Entity| |
 |Delete a used attribute<br/>Change data type of an attribute|Static Entity, Structure| Some data type changes might be compatible and produce a TrueChange warning instead of an error. For example: changing from Integer to Long Integer or any simple type to Text. |
-|Delete| Client Action, Server Action, Block, Image, Theme, Static Entity, Structure, Script| |
+|Delete| Client Action, Server Action, Block, Image, Theme, Static Entity, Structure, Script, Event| |
