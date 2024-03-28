@@ -26,8 +26,7 @@ To export the translatable text from your app follow these steps in ODC Studio:
 2. In the menu select one of the options to export in the format you want:
 
     * **To Excel**. Exports all translatable text to a single Excel file.
-    * **To .resX (.NET resource format)**. Exports all translatable text to the .resX files.
-
+    
 3. Select the export location and click **OK**.
 
 For more information about the translation files, see [Translation resource file formats](#translation-resource-file-formats).
@@ -49,8 +48,7 @@ To import the translation back to the app, follow these steps in ODC Studio:
     You can import files in one of the following formats:
 
     * **Excel file**. When you import an Excel file, you **update translations in all languages**.
-    * **.resX files.** After you import a .resX file for a language, you **update only the translations in the specific language in that file**.
-
+   
 ## Translation resource file formats
 
 What follows is more information about the file formats ODC Studio uses to export text for translation and import the translation.
@@ -65,15 +63,3 @@ All translatable text is in a single Excel that consists of these columns:
 * **( Locale(s) )**: columns for each language locale in your app. Enter the translated text here. If you want to keep using the original text, leave the translation text empty.
 
 The name of the Excel file is `<app name>` + `Language.xls`. For example, if your App name is **Recruitment** the file name is **RecruitmentLanguage.xls**.
-
-### .NET resource format
-
-All translatable text is in the .resX files, one file **for each language locale** in your app, plus an additional file for the default language. The content is in XML consisting of the **name:value** pairs:
-
-* **Name**: a unique identifier
-* **Value**: the field where you should replace existing text with the translation
-* **Comment**: The location of the translatable text in the app
-
-Some .NET Framework versions may have more attributes in the translatable resource files than those described here. The extra attributes have no effect on the app interface.
-    
-The name of the .resX files is in the following format: `<app name>` + `Language` + `.<Language locale>.resX'`. For example, if your app name is **Recruitment** with the locales being French (France) (fr-FR) and French (Canada) (fr-CA), then the three generated files are: **RecruitmentLanguage.fr-FR.resX**, **RecruitmentLanguage.fr-CA.resX**, and **RecruitmentLanguage.resX** for the default language.
