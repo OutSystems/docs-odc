@@ -30,7 +30,6 @@ You can translate the following elements of your app:
 * Screen titles
 * Text in buttons, links, and screens
 * Text literals in expressions
-* Instructions in human activities
 * Validation messages, widget confirmation messages, and empty state messages
 * Static entities. Check [Working with Static Entities](translate-your-app.md#working-with-static-entities) for important notes.
 
