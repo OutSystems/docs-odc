@@ -28,13 +28,25 @@ To configure Azure AI search service, follow these steps:
 1. [Create](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal) an Azure BLOB storage account. 
 For more information about Azure BLOB storage, refer to [Introduction to Azure Blob Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction#create-a-storage-account).
 
-4. [Configure](https://learn.microsoft.com/en-us/azure/search/search-howto-indexing-azure-blob-storage) an index that imports content from the Azure BLOB storage and makes it searchable in the Azure AI search. 
+1. Upload your files.
 
-5. Retrieve the Azure AI search [service keys and the endpoint](https://learn.microsoft.com/en-us/azure/search/search-get-started-rest#copy-a-key-and-url).
+1. From AI search service, add data source. 
 
-6. Copy the name of the index.
+1. Choose existing connections and select the storage account and the container created on step 3 and save.
 
-7. Use the service key, endpoint, and index name to add an Azure AI data source in the AI Agent Builder.
+1. From AI search service, import data and select the data source you just added.
+
+1. Follow the wizard. 
+
+    **Note**: Wait for few moments, and click the indexer to ensure that the run is finished with all the documents you added.
+
+1. Go to the index, and validate that the content field can be retrieved.
+
+1. Retrieve the Azure AI search [service keys and the endpoint](https://learn.microsoft.com/en-us/azure/search/search-get-started-rest#copy-a-key-and-url).
+
+1. Copy the name of the index.
+
+1. Use the service key, endpoint, and index name to add an Azure AI data source in the AI Agent Builder.
 
 ## Next steps
 
