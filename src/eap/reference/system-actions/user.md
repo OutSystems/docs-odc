@@ -175,6 +175,8 @@ _Server action_
 
 Triggers the reset password operation, returning a verification code that sends by email to the user. Use the FinishResetPassword action, which receives a verification code as an input, to complete the password reset operation. When disabled from the current app, it throws an exception by the built-in identity provider.
 
+Resetting passwords for members with access to ODC Portal isn't supported through this system action, even if the member also has application roles. If this action is called with a ODC Portal member e-mail no verification code is returned. Members must always reset their password using the **Forgot password?** link in ODC Portal.
+
 _Inputs_
 
 **Email**
