@@ -119,7 +119,7 @@ The following section provides more details on the `resources` top-level propert
 * For Android, the path is relative to `<project_root>/platforms/android`.
 * For iOS, the path is relative to `<project_root>/platforms/ios/<app_name>/Resources`
 
-As an example of the usage of this feature on an OutSystems-supported plugin, see the [Firebase supported plugins documentation](plugins/firebase-plugin/intro.md#adding-google-services-configuration-file).
+As an example of the usage of this feature on an OutSystems-supported plugin, see the [Firebase supported plugins documentation](../../integration-with-systems/mobile-plugins/firebase-plugin/intro.md#adding-google-services-configuration-file).
 
 ## Constraints
 

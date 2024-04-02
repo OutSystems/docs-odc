@@ -63,7 +63,7 @@ _Outputs_
 
 <div class="info" markdown="1">
 
-You can learn about how to use this action in your apps [here](../../configuration-management/external-idps/apps.md).
+You can learn about how to use this action in your apps [here](../../manage-platform-app-lifecycle/external-idps/apps.md).
 
 </div>
 

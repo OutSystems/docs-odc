@@ -155,7 +155,7 @@ The table below maps the .NET attributes exposed by the SDK to the corresponding
 
 ### Use with the Private Gateway feature
 
-You can connect your external library to private data and private services ("endpoints") that aren't accessible by the internet by using the [Private Gateway feature](../../configuration-management/private-gateway.md).
+You can connect your external library to private data and private services ("endpoints") that aren't accessible by the internet by using the [Private Gateway feature](../../manage-platform-app-lifecycle/private-gateway.md).
 
 Once you've configured a private gateway to your network, you can use the connected endpoint(s) in your custom code using the hostname defined by the environment variable `SECURE_GATEWAY`. You use that hostname in conjunction with the configured ports.
 
@@ -165,7 +165,7 @@ Ensure that your code file includes the `using System;` directive at the top to 
 
 ### Architecture
 
-Server actions built in the OutSystems visual language execute directly in the [ODC Runtime](../../architecture/intro.md/#runtime), sharing the same execution context as the app. This means that any state or context established during the execution of these server actions is maintained within the scope of the app's lifecycle.
+Server actions built in the OutSystems visual language execute directly in the [ODC Runtime](../../manage-platform-app-lifecycle/platform-architecture/intro.md#runtime), sharing the same execution context as the app. This means that any state or context established during the execution of these server actions is maintained within the scope of the app's lifecycle.
 
 On the other hand, server actions exposed through external libraries execute differently. Each time your app calls a server action from an external library, it makes an HTTPS call to an external service that hosts and runs the custom code. As a result, the execution context of these server actions is separate from the app.
 
@@ -183,7 +183,7 @@ By designing your external libraries with these considerations in mind, you can 
 
 Server actions exposed by external libraries don't support input larger than 5.5MB. If a large binary file is passed as input to a server action during an app's runtime, the end-user gets an error "Input payload is too large". To make use of a large binary file in custom code you can:
 
-1. Expose the binary file in a [REST API endpoint](../exposing_rest/intro.md) from your app and then implement logic in your custom code to consume the file from the endpoint.
+1. Expose the binary file in a [REST API endpoint](../../integration-with-systems/exposing_rest/intro.md) from your app and then implement logic in your custom code to consume the file from the endpoint.
 1. Host the binary file on a file-sharing service and implement logic in your custom code to download the file from the URL.
 
 ## Troubleshooting

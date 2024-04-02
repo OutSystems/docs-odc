@@ -71,7 +71,7 @@ To add more data sources to your Aggregate, follow these steps:
 |------|-------------|-----------|--------------|-------------|
 | Name | Identifies an element in the scope where it is defined, like a screen, action, or app. | Yes |   |   |
 | Description | Text that documents the element. |   |   | Useful for documentation purpose. The maximum size of this property is 2000 characters. |
-| Timeout ("Server Request Timeout" for Screen Aggregates) | Maximum time in seconds to wait for the Aggregate to return data before triggering a Communication Exception. Overrides the [default timeout defined at the app level](../../../../getting-started/system-requirements.html#server-request-timeout). |   |   | Property doesn't exist for client-side Aggregates. There is a [maximum value](../../../../getting-started/system-requirements.html#server-request-timeout). |
+| Timeout ("Server Request Timeout" for Screen Aggregates) | Maximum time in seconds to wait for the Aggregate to return data before triggering a Communication Exception. Overrides the [default timeout defined at the app level](../../../../getting-started/system-requirements.md#server-request-timeout). |   |   | Property doesn't exist for client-side Aggregates. There is a [maximum value](../../../../getting-started/system-requirements.md#server-request-timeout). |
 | Cache in Minutes | Maximum time content or results are stored in memory. When undefined, nothing is cached. |   |   | Property not available in client actions. |
 | Start Index | Index of the first List item to iterate. Can be an expression. |   |   | The expression used in this property (if present) is evaluated before the web screen preparation. |
 | Fetch |   | Yes | At start |   |

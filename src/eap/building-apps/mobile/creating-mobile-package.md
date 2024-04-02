@@ -105,7 +105,7 @@ To view the package history of your mobile app:
 
     ![Screenshot displaying the package history of a mobile app in ODC Portal](images/viewhistory-packagehistory-odcs.png "Package History Overview")
 
-For more information about troubleshooting your apps, see [Monitor and troubleshoot apps](../../monitor-apps.md).
+For more information about troubleshooting your apps, see [Monitor and troubleshoot apps](../../monitor-and-troubleshoot/monitor-apps.md).
 
 ## Considerations when building mobile apps
 

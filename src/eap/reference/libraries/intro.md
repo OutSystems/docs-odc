@@ -10,4 +10,4 @@ figma:
 
 # Libraries
 
-Libraries provided by OutSystems that you can use to extend the capabilities of your apps. To learn more about how to use these libraries see [here](../../building-apps/use-public-elements.md#libraries).
+Libraries provided by OutSystems that you can use to extend the capabilities of your apps. To learn more about how to use these libraries see [here](../../building-apps/libraries/use-public-elements.md#libraries).

@@ -50,8 +50,8 @@ The following examples of changes immediately impact the consumers and eventuall
 |Delete an output parameter|Service Action, Event| The producer does not send the output parameter value; the default value is assumed, which may result in runtime errors.|
 |Change the data type of an attribute<br/>Delete a used attribute|Entity (Database), Static Entity| Some data type changes might be compatible at runtime and not produce an immediate error. For example: changing from Integer to Long Integer or any simple type to Text. |
 |Delete a used record|Static Entity| |
-|Delete a used element|All [public elements](../architecture/reuse-elements.md#public-elements--public-elements-)| |
-|Rename|All [public elements](../architecture/reuse-elements.md#public-elements--public-elements-)| |
+|Delete a used element|All [public elements](../../app-architecture/reuse-elements.md#public-elements--public-elements-)| |
+|Rename|All [public elements](../../app-architecture/reuse-elements.md#public-elements--public-elements-)| |
 
 ### Non-immediate changes
 

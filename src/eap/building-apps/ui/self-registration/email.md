@@ -11,7 +11,7 @@ platform-version: odc
 
 <div class="info" markdown="1">
 
-Before you begin creating your email, make sure you have an [email provider configured](../../../configuration-management/configure-emails.md).
+Before you begin creating your email, make sure you have an [email provider configured](../../../manage-platform-app-lifecycle/configure-emails.md).
 
 </div>
 

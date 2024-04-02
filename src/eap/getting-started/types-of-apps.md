@@ -24,7 +24,7 @@ From ODC Portal, navigate to the **Apps** screen and click **Create app**. ODC S
 
 <div class="info" markdown="1">
 
-**Libraries** exist at the same level as apps and let you share code between apps. You can learn more about them in [App Architecture](../building-apps/architecture/intro.md#libraries-in-odc).
+**Libraries** exist at the same level as apps and let you share code between apps. You can learn more about them in [App Architecture](../app-architecture/intro.md#libraries-in-odc).
 
 </div>
 

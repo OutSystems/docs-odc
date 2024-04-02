@@ -69,17 +69,17 @@ To do this, select **External Logic** from the left nav menu in the ODC Portal t
     * **Finished with errors**: the deployment has finished, but it wasn't successful. Review the errors. Use the [error page documentation](../../../error/elg/intro.md) for guidance.
     * **Finished successfully**: the deployment finished successfully. The external library is available to consume in your apps and libraries built in OutSystems.
 
-The external library is initially deployed to the Development stage (published). Once published, it's recommended you test the library in an app before releasing the first stable version. To do this, open the **Version history** tab on the detail page for the library, click the ellipsis next to the release date, and select **Try library in an app**. This launches a test session in ODC Studio, see [Test a revision of a library](../libraries.md/#test-a-revision-of-a-library) for best practices on what type of app to use.
+The external library is initially deployed to the Development stage (published). Once published, it's recommended you test the library in an app before releasing the first stable version. To do this, open the **Version history** tab on the detail page for the library, click the ellipsis next to the release date, and select **Try library in an app**. This launches a test session in ODC Studio, see [Test a revision of a library](../libraries/libraries.md#test-a-revision-of-a-library) for best practices on what type of app to use.
 
 ## Release the library
 
-You can then use the **Release library** button on the detail page in ODC Portal to release the first version. Follow the guidance under [Release a new version of a library](../libraries.md#release-a-new-version-of-a-library) for more details.
+You can then use the **Release library** button on the detail page in ODC Portal to release the first version. Follow the guidance under [Release a new version of a library](../libraries/libraries.md#release-a-new-version-of-a-library) for more details.
 
 When an app or library that consumes the external library is deployed to another stage, the external library is automatically deployed to that stage as well.
 
 ## Consume the external logic
 
-Once successfully published and released, the external logic becomes available in a library to consume across your ODC organization's apps and existing libraries. To learn how to consume the exposed server actions in your apps and libraries using ODC Studio, see [Use public elements](../use-public-elements.md#libraries).
+Once successfully published and released, the external logic becomes available in a library to consume across your ODC organization's apps and existing libraries. To learn how to consume the exposed server actions in your apps and libraries using ODC Studio, see [Use public elements](../libraries/use-public-elements.md#libraries).
 
 <div class="info" markdown="1">
 
@@ -89,9 +89,9 @@ The server actions and structures exposed through external libraries are read-on
 
 ## Share the external logic
 
-You can share an external library outside your organization by submitting it to Forge. You follow the same process to [submit or update](../../forge/submit.md) an external library to Forge as for an asset developed in OutSystems.
+You can share an external library outside your organization by submitting it to Forge. You follow the same process to [submit or update](../forge/submit.md) an external library to Forge as for an asset developed in OutSystems.
 
-Users outside your organization follow the same process to [install](../../forge/install.md) an external library as for an asset developed in OutSystems. As with users in your organization, users who consume the external library from Forge can't edit the external logic in ODC Studio.
+Users outside your organization follow the same process to [install](../forge/install.md) an external library as for an asset developed in OutSystems. As with users in your organization, users who consume the external library from Forge can't edit the external logic in ODC Studio.
 
 ## Delete external logic
 
@@ -114,4 +114,4 @@ Deleting an external library impacts consumers relying on it.
 
 </div>
 
-Once published, you must delete an external library like an app or library developed in OutSystems. See [Deleting apps and libraries](../../building-apps/deleting-apps/intro.md) for guidance.
+Once published, you must delete an external library like an app or library developed in OutSystems. See [Deleting apps and libraries](../../deleting-apps/intro.md) for guidance.

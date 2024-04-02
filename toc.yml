@@ -2,35 +2,22 @@
 - href: eap/getting-started/intro.md
 - topics:
     - href: eap/getting-started/system-requirements.md
-    - topics:
-        - href: eap/getting-started/configure-http-proxy.md
+    - href: eap/getting-started/configure-http-proxy.md
     - href: eap/getting-started/overview-portal-studio.md
     - href: eap/getting-started/types-of-apps.md
     - href: eap/getting-started/hello-world.md
     - href: eap/getting-started/sample-app.md
     - href: eap/getting-started/open-oml-in-odc-studio.md
 
-
-# Onboarding for OutSystems developers
-- href: eap/differences-o11/intro.md
+# Onboarding for developers
+- href: eap/onboarding/intro.md
 - topics:
-    - href: eap/differences-o11/differences-sql.md
+    - href: eap/onboarding/differences-sql.md
 
-# Cloud-native architecture of OutSystems Developer Cloud
-- href: eap/architecture/intro.md
-- topics:
-    - href: eap/architecture/networking.md
-    - href: eap/architecture/identity.md
-
-# Security of OutSystems Developer Cloud
-- href: eap/security.md
-- topics:
-    - href: eap/cookies.md
-
-# Building apps in ODC
+# Building apps
 - href: eap/building-apps/intro.md
 - topics:
- # AI Agent Builder
+    # AI Agent Builder
     - href: eap/building-apps/use-ai/intro.md
     - topics:
         - href: eap/building-apps/use-ai/overall-process.md
@@ -55,28 +42,18 @@
         - href: eap/building-apps/use-ai/create-agent.md
     # Integrate agent
         - href: eap/building-apps/use-ai/integrate-agent.md
-        
-       
-    - href: eap/building-apps/app-lib-properties-edit.md
-    # Architecture
-    - href: eap/building-apps/architecture/intro.md
-    - topics:
-        - href: eap/building-apps/architecture/recommended-architecture.md
-        - href: eap/building-apps/architecture/reuse-elements.md
-        - href: eap/building-apps/architecture/service-actions.md
-    # Data in OutSystems apps
+    # Data
     - href: eap/building-apps/data/intro.md
     - topics:
         # Data modeling
         - href: eap/building-apps/data/modeling.md
         - topics:
             - href: eap/building-apps/data/modeling/entity.md
-            - topics:
-                - href: eap/building-apps/data/modeling/entity-create.md
-                - href: eap/building-apps/data/modeling/calculated-attribute-create.md
-                - href: eap/building-apps/data/modeling/excel-bootstrap.md
-        - href: eap/building-apps/data/modeling/entity-static.md
-        - href: eap/building-apps/data/relationships.md
+            - href: eap/building-apps/data/modeling/entity-create.md
+            - href: eap/building-apps/data/modeling/calculated-attribute-create.md
+            - href: eap/building-apps/data/modeling/excel-bootstrap.md
+            - href: eap/building-apps/data/modeling/entity-static.md
+        - href: eap/building-apps/data/modeling/relationship/relationships.md
         - topics:
             - href: eap/building-apps/data/modeling/relationship/relationship-one-to-one.md
             - href: eap/building-apps/data/modeling/relationship/relationship-one-to-many.md
@@ -84,56 +61,7 @@
         - href: eap/building-apps/data/sharing.md
         - href: eap/building-apps/data/data-types.md
         - href: eap/building-apps/data/edit-data.md
-        - href: eap/building-apps/data/structure-create-use.md
-    # Libraries
-    - href: eap/building-apps/libraries.md
-    # Events
-    - href: eap/building-apps/events/intro.md 
-    - topics:
-        - href: eap/building-apps/events/backend-events.md
-    # Merge
-    - href: eap/building-apps/merge/intro.md
-    - topics:
-        - href: eap/building-apps/merge/concepts.md
-        - href: eap/building-apps/merge/merge-example.md
-    # Mobile apps
-    - href: eap/building-apps/mobile/intro.md
-    - topics:
-      # Create a mobile package
-        - href: eap/building-apps/mobile/creating-mobile-package.md
-        # Progressive web app
-        - href: eap/building-apps/mobile/pwa.md
-        # Extensibility Configurations
-        - href: eap/building-apps/mobile/extensibility-configurations.md
-        - href: eap/building-apps/mobile/extensibility-configurations-json-schema.md
-        - href: eap/building-apps/mobile/customize-deeplink-behavior.md
-        # Keeping apps up to date for your users
-        - href: eap/building-apps/mobile/apps-up-to-date.md
-        - href: eap/building-apps/mobile/plugins/intro.md
-        - topics:
-            - href: eap/building-apps/mobile/plugins/barcode/intro.md
-            - href: eap/building-apps/mobile/plugins/camera/intro.md
-            - href: eap/building-apps/mobile/plugins/file-plugin/intro.md
-            - href: eap/building-apps/mobile/plugins/file-transfer-plugin/intro.md
-            - href: eap/building-apps/mobile/plugins/file-viewer/intro.md
-            - href: eap/building-apps/mobile/plugins/firebase-plugin/intro.md
-            - topics:
-                - href: eap/building-apps/mobile/plugins/firebase-plugin/firebase-cloud-messaging-plugin-server-action.md
-                - href: eap/building-apps/mobile/plugins/firebase-plugin/firebase-cloud-messaging-plugin-configurator-api.md
-                - href: eap/building-apps/mobile/plugins/firebase-plugin/firebase-cm-plugin-api-v1-v2.md
-            - href: eap/building-apps/mobile/plugins/health-fitness/intro.md
-            - href: eap/building-apps/mobile/plugins/keystore-plugin/intro.md
-            - href: eap/building-apps/mobile/plugins/location/intro.md
-            - href: eap/building-apps/mobile/plugins/payments-plugin/intro.md
-            - href: eap/building-apps/mobile/plugins/ssl-pinning/intro.md
-        - href: eap/building-apps/mobile/app-shield/intro.md
-        - topics: 
-            - href: eap/building-apps/mobile/app-shield/protection-features-description.md
-            - href: eap/building-apps/mobile/app-shield/obfuscate-custom-rules.md
-            - href: eap/building-apps/mobile/app-shield/ExitOnUrl.md
-            - href: eap/building-apps/mobile/app-shield/query-all-packages.md
-        - href: eap/building-apps/mobile/plugins/using-cordova-plugins.md
-            
+        - href: eap/building-apps/data/structure-create-use.md   
     # UI
     - href: eap/building-apps/ui/intro.md
     - topics:
@@ -152,8 +80,7 @@
             - href: eap/building-apps/ui/interaction/display-data/sort-aggregate.md
         # Reuse ui
         - href: eap/building-apps/ui/reuse/intro.md
-        - topics:
-            - href: eap/building-apps/ui/reuse/block-create-reuse.md
+        - href: eap/building-apps/ui/reuse/block-create-reuse.md
         # Patterns
         - href: eap/building-apps/ui/patterns/intro.md
         - topics:
@@ -235,7 +162,7 @@
                 - href: eap/building-apps/ui/patterns/utilities/separator.md
                 - href: eap/building-apps/ui/patterns/utilities/swipeevents.md
                 - href: eap/building-apps/ui/patterns/utilities/touchevents.md
-      # Screen Templates
+        # Screen Templates
         - href: eap/building-apps/ui/screen-template/intro.md
         - topics:
             - href: eap/building-apps/ui/screen-template/replace-data.md
@@ -247,8 +174,7 @@
         - href: eap/building-apps/ui/customize-ui-styles.md
         # Theme
         - href: eap/building-apps/ui/themes/intro.md
-        - topics:
-            - href: eap/building-apps/ui/themes/theme-library.md
+        - href: eap/building-apps/ui/themes/theme-library.md
         # Custom authentication flows
         - href: eap/building-apps/ui/custom-auth.md
         # Self registration
@@ -266,49 +192,6 @@
             - href: eap/building-apps/ui/accessibility/aria-roles-and-attributes.md
             - href: eap/building-apps/ui/accessibility/ui-patterns-accessibility-reference.md
             - href: eap/building-apps/ui/accessibility/additional-accessibility-resources.md
-    # Emails
-    - href: eap/building-apps/emails/intro.md
-    - topics:
-        - href: eap/building-apps/emails/working.md
-        - href: eap/building-apps/emails/sending.md
-        - href: eap/building-apps/emails/attachments.md
-        - href: eap/building-apps/emails/widgets.md
-    - href: eap/building-apps/secure-app-with-roles.md
-    # Extend your apps with external logic
-    - href: eap/building-apps/external-logic/intro.md
-    - topics: 
-        - href: eap/building-apps/external-logic/README.md
-        - href: eap/building-apps/external-logic/REFERENCE.md
-        - href: eap/building-apps/external-logic/soap.md
-    - href: eap/building-apps/use-public-elements.md
-    # Multilingual
-    - href: eap/building-apps/ui/multilingual/intro.md
-    - topics:
-        - href: eap/building-apps/ui/multilingual/translate-your-app.md
-        - href: eap/building-apps/ui/multilingual/translation-editor.md
-        - href: eap/building-apps/ui/multilingual/translation-management.md
-    # Exposing REST APIs
-    - href: eap/building-apps/exposing_rest/intro.md
-    - topics:
-        - href: eap/building-apps/exposing_rest/expose-a-rest-api.md
-        - href: eap/building-apps/exposing_rest/customize-rest-urls.md
-        - href: eap/building-apps/exposing_rest/document-an-exposed-rest-api.md
-        - href: eap/building-apps/exposing_rest/throw-a-custom-error-in-an-exposed-rest-api.md
-        - href: eap/building-apps/exposing_rest/change-the-http-status-code-of-a-rest-api.md
-        - href: eap/building-apps/exposing_rest/built-in-http-status-codes.md
-    # Consume REST APIs
-    - href: eap/building-apps/consume_rest/intro.md
-    - topics:
-        - href: eap/building-apps/consume_rest/consume-a-rest-api.md
-        - href: eap/building-apps/consume_rest/refresh-rest-service.md
-        - href: eap/building-apps/consume_rest/unsupported-use-cases.md
-        - href: eap/building-apps/consume_rest/rest-api-structures.md
-        - href: eap/building-apps/consume_rest/handling-rest-errors.md
-        - href: eap/building-apps/consume_rest/simple-customizations.md
-    # Handling exceptions
-    - href: eap/building-apps/handle-exceptions.md
-    - topics:
-        - href: eap/building-apps/handling_exceptions/handling-mechanism.md
     # Logic
     - href: eap/building-apps/logic/intro.md
     - topics:
@@ -322,66 +205,189 @@
             - href: eap/building-apps/logic/expressions/expression-editor.md
             - href: eap/building-apps/logic/expressions/operators.md
             - href: eap/building-apps/logic/expressions/operands.md
+    # Extend your apps with external logic
+    - href: eap/building-apps/external-logic/intro.md
+    - topics: 
+        - href: eap/building-apps/external-logic/README.md
+        - href: eap/building-apps/external-logic/REFERENCE.md
+        - href: eap/building-apps/external-logic/soap.md
+    # Forge
+    - href: eap/building-apps/forge/intro.md
+    - topics:
+        - href: eap/building-apps/forge/install.md
+        - href: eap/building-apps/forge/document.md
+        - href: eap/building-apps/forge/submit.md   
+    # Libraries
+    - href: eap/building-apps/libraries/libraries.md
+    - topics: 
+        - href: eap/building-apps/libraries/use-public-elements.md
+        - href: eap/building-apps/libraries/app-lib-properties-edit.md
+    # Events
+    - href: eap/building-apps/events/intro.md 
+    - href: eap/building-apps/events/backend-events.md
+    # Merge
+    - href: eap/building-apps/merge/intro.md
+    - topics:
+        - href: eap/building-apps/merge/concepts.md
+        - href: eap/building-apps/merge/merge-example.md
+    # Multilingual
+    - href: eap/building-apps/ui/multilingual/intro.md
+    - topics:
+        - href: eap/building-apps/ui/multilingual/translate-your-app.md
+        - href: eap/building-apps/ui/multilingual/translation-editor.md
+        - href: eap/building-apps/ui/multilingual/translation-management.md
+    
+    # Mobile apps
+    - href: eap/building-apps/mobile/intro.md
+    - topics:
+        # Create a mobile package
+        - href: eap/building-apps/mobile/creating-mobile-package.md
+        # Progressive web app
+        - href: eap/building-apps/mobile/pwa.md
+        # Extensibility Configurations
+        - href: eap/building-apps/mobile/extensibility-configurations.md
+        - href: eap/building-apps/mobile/extensibility-configurations-json-schema.md
+        - href: eap/building-apps/mobile/customize-deeplink-behavior.md
+        # Keeping apps up to date for your users
+        - href: eap/building-apps/mobile/apps-up-to-date.md
+    
+    # Emails
+    - href: eap/building-apps/sending-emails/intro.md
+    - topics:
+        - href: eap/building-apps/sending-emails/working.md
+        - href: eap/building-apps/sending-emails/sending.md
+        - href: eap/building-apps/sending-emails/attachments.md
+        - href: eap/building-apps/sending-emails/widgets.md
+
+    # Handling exceptions
+    - href: eap/building-apps/handling-exceptions/handle-exceptions.md
+    - href: eap/building-apps/handling-exceptions/handling-mechanism.md
+    
     # Timers
     - href: eap/building-apps/timers/intro.md
     - topics:
         - href: eap/building-apps/timers/timer-create-run.md
         - href: eap/building-apps/timers/timer-monitor.md
-    - href: eap/building-apps/set-as-secret.md
-    - href: eap/building-apps/deleting-apps/intro.md
+   
+    # Reuse
     - href: eap/building-apps/reuse/intro.md
+    - href: eap/building-apps/reuse/handle-changes.md
+
+# Debugging apps
+- href: eap/debugging-apps/intro.md
+- topics:
+    - href: eap/debugging-apps/breakpoints.md
+    - href: eap/debugging-apps/watches.md
+    - href: eap/debugging-apps/threads.md
+    - href: eap/debugging-apps/debugger-ui-reference.md
+    - href: eap/debugging-apps/troubleshoot-debugger-connection.md
+
+# Deploying apps
+- href: eap/deploying-apps/deploy-apps.md
+- topics:
+    - href: eap/deploying-apps/deployment-inconsistencies.md
+    - href: eap/deploying-apps/one-cp.md
+
+#Deleting apps
+- href: eap/deleting-apps/intro.md
+
+# Integration with external systems
+
+# Consume REST APIs
+- href: eap/integration-with-systems/intro.md
+- topics:
+    - href: eap/integration-with-systems/consume_rest/intro.md
     - topics:
-        - href: eap/building-apps/reuse/handle-changes.md
+        - href: eap/integration-with-systems/consume_rest/consume-a-rest-api.md
+        - href: eap/integration-with-systems/consume_rest/refresh-rest-service.md
+        - href: eap/integration-with-systems/consume_rest/unsupported-use-cases.md
+        - href: eap/integration-with-systems/consume_rest/rest-api-structures.md
+        - href: eap/integration-with-systems/consume_rest/handling-rest-errors.md
+        - href: eap/integration-with-systems/consume_rest/simple-customizations.md
+        
+    # Exposing REST APIs
+    - href: eap/integration-with-systems/exposing_rest/intro.md
+    - topics:
+        - href: eap/integration-with-systems/exposing_rest/expose-a-rest-api.md
+        - href: eap/integration-with-systems/exposing_rest/customize-rest-urls.md
+        - href: eap/integration-with-systems/exposing_rest/document-an-exposed-rest-api.md
+        - href: eap/integration-with-systems/exposing_rest/throw-a-custom-error-in-an-exposed-rest-api.md
+        - href: eap/integration-with-systems/exposing_rest/change-the-http-status-code-of-a-rest-api.md
+        - href: eap/integration-with-systems/exposing_rest/built-in-http-status-codes.md
+    #Mobile plug-ins
+    - href: eap/integration-with-systems/mobile-plugins/intro.md
+    - topics:
+        - href: eap/integration-with-systems/mobile-plugins/barcode/intro.md
+        - href: eap/integration-with-systems/mobile-plugins/camera/intro.md
+        - href: eap/integration-with-systems/mobile-plugins/file-plugin/intro.md
+        - href: eap/integration-with-systems/mobile-plugins/file-transfer-plugin/intro.md
+        - href: eap/integration-with-systems/mobile-plugins/file-viewer/intro.md
+        - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/intro.md
+        - topics:
+            - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/firebase-cloud-messaging-plugin-configurator-api.md
+            - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/firebase-cloud-messaging-plugin-server-action.md
+            - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/firebase-cm-plugin-api-v1-v2.md
+        - href: eap/integration-with-systems/mobile-plugins/health-fitness/intro.md
+        - href: eap/integration-with-systems/mobile-plugins/keystore-plugin/intro.md
+        - href: eap/integration-with-systems/mobile-plugins/location/intro.md
+        - href: eap/integration-with-systems/mobile-plugins/payments-plugin/intro.md
+        - href: eap/integration-with-systems/mobile-plugins/ssl-pinning/intro.md
+        - href: eap/integration-with-systems/mobile-plugins/using-cordova-plugins.md
 
-# Troubleshooting apps
-- href: eap/troubleshoot/debug/intro.md
+# Security
+- href: eap/security/security.md
 - topics:
-    - href: eap/troubleshoot/debug/breakpoints.md
-    - href: eap/troubleshoot/debug/watches.md
-    - href: eap/troubleshoot/debug/threads.md
-    - href: eap/troubleshoot/debug/debugger-ui-reference.md
-    - href: eap/troubleshoot/debug/troubleshoot-debugger-connection.md
+    - href: eap/security/cookies.md
+    - href: eap/security/set-as-secret.md
+    - href: eap/security/app-shield/intro.md
+    - topics: 
+        - href: eap/security/app-shield/protection-features-description.md
+        - href: eap/security/app-shield/obfuscate-custom-rules.md
+        - href: eap/security/app-shield/ExitOnUrl.md
+        - href: eap/security/app-shield/query-all-packages.md
 
-# Forge
-- href: eap/forge/intro.md
+# App Architecture
+- href: eap/app-architecture/intro.md
 - topics:
-    - href: eap/forge/install.md
-    - href: eap/forge/document.md
-    - href: eap/forge/submit.md
+    - href: eap/app-architecture/recommended-architecture.md
+    - href: eap/app-architecture/reuse-elements.md
+    - href: eap/app-architecture/service-actions.md
 
-# Deploy your apps
-- href: eap/deploy/deploy-apps.md
+# Manage platform and apps lifecycle
+- href: eap/manage-platform-app-lifecycle/intro.md
 - topics:
-    - href: eap/deploy/deployment-inconsistencies.md
-    - href: eap/deploy/one-cp.md
+    - href: eap/manage-platform-app-lifecycle/platform-architecture/intro.md
+    - topics:
+        - href: eap/manage-platform-app-lifecycle/platform-architecture/networking.md
+        - href: eap/manage-platform-app-lifecycle/platform-architecture/identity.md
+    - href: eap/manage-platform-app-lifecycle/configuration-management.md
+    - href: eap/manage-platform-app-lifecycle/custom-domains.md
+    - href: eap/manage-platform-app-lifecycle/private-gateway.md
+    - href: eap/manage-platform-app-lifecycle/configure-emails.md
+    # External database
+    - href: eap/manage-platform-app-lifecycle/external-databases/intro.md
+    - href: eap/manage-platform-app-lifecycle/sso.md
+    - href: eap/manage-platform-app-lifecycle/filter-ip.md
 
-# Configuration management
-- href: eap/configuration-management/configuration-management.md
-- topics:
-  - href: eap/configuration-management/custom-domains.md
-  - href: eap/configuration-management/private-gateway.md
-  - href: eap/configuration-management/configure-emails.md
-  # External database
-  - href: eap/configuration-management/external-databases/intro.md
-  - href: eap/configuration-management/sso.md
-  - href: eap/configuration-management/filter-ip.md
+
 
 # User management
 - href: eap/user-management/intro.md 
 - topics:
-    - href: eap/configuration-management/external-idps/intro.md
+    - href: eap/manage-platform-app-lifecycle/external-idps/intro.md
     - topics:
-        - href: eap/configuration-management/external-idps/apps.md
-        - href: eap/configuration-management/external-idps/azure-ad.md
-        - href: eap/configuration-management/external-idps/okta.md
-        - href: eap/configuration-management/external-idps/end-user-group-mapping.md
+        - href: eap/manage-platform-app-lifecycle/external-idps/apps.md 
+        - href: eap/manage-platform-app-lifecycle/external-idps/azure-ad.md
+        - href: eap/manage-platform-app-lifecycle/external-idps/okta.md
+        - href: eap/manage-platform-app-lifecycle/external-idps/end-user-group-mapping.md
     - href: eap/user-management/roles.md
+    - href: eap/user-management/secure-app-with-roles.md
     - href: eap/user-management/passwords.md
 
-#Monitor and troubleshoot
-- href: eap/monitor-apps.md
+#Monitoring and troubleshooting
+- href: eap/monitor-and-troubleshoot/monitor-apps.md
 - topics:
-    - href: eap/app-health.md
+    - href: eap/monitor-and-troubleshoot/app-health.md
 
 # Reference
 - href: eap/reference/intro.md
@@ -433,7 +439,6 @@
         - href: eap/reference/apis/line.md
         - href: eap/reference/apis/pie.md
         - href: eap/reference/apis/radar.md    
-
    
 # Errors
 - href: error/intro.md

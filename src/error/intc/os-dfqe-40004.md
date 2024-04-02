@@ -49,7 +49,7 @@ Enter the database name on the server accessible to the user with the specified 
 #### Recommended action
 
 1. Verify the server address and port number are correct.
-1. Verify the status of the server with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/configuration-management/private-gateway.md).
+1. Verify the status of the server with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/manage-platform-app-lifecycle/private-gateway.md).
 
 ### No permissions
 
@@ -133,7 +133,7 @@ Enter the database name on the server accessible to the user with the specified 
 #### Recommended action
 
 1. Verify the server address and port number are correct.
-1. Verify the status of the server with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/configuration-management/private-gateway.md).
+1. Verify the status of the server with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/manage-platform-app-lifecycle/private-gateway.md).
 
 ### Invalid connection string syntax
 
@@ -153,7 +153,7 @@ Testing an SAP OData connection can return these errors.
 
 #### Recommended action
 
-Verify the status of the SAP server domain with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/configuration-management/private-gateway.md).
+Verify the status of the SAP server domain with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/manage-platform-app-lifecycle/private-gateway.md).
 
 ### Wrong username or password
 
@@ -183,7 +183,7 @@ Enter the correct API key.
 * Incorrect: https://mydevenv.outsystems.com
 * Incorrect: mydevenv.outsystems.com/XE
 
-1. Verify the status of the SAP server domain with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/configuration-management/private-gateway.md).
+1. Verify the status of the SAP server domain with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/manage-platform-app-lifecycle/private-gateway.md).
 
 ### Wrong service URL
 

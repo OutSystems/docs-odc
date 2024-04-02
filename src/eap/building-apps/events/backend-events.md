@@ -64,7 +64,7 @@ To publish an event, you must define a trigger for an event. Go to ODC Studio an
 
 ![Screenshot of ODC Studio interface showing the process to trigger a backend event](images/trigger-backend-event-odcs.png "Publish a Backend Event")
 
-To make the event accessible in other apps, click 1-Click Publish to publish the event as a [public element](../use-public-elements.md). Once an event is published, multiple subscribers can handle it.
+To make the event accessible in other apps, click 1-Click Publish to publish the event as a [public element](../libraries/use-public-elements.md). Once an event is published, multiple subscribers can handle it.
 
 ## Subscribe to an event
 
@@ -87,8 +87,8 @@ You can subscribe to an event in the same producer or another app. To subscribe 
 
 ## Handling errors
 
-If a back-end event fails, it raises an exception, and you must handle it. For example, if back-end event handlers exceed the two-minute timeout, ODC raises an exception. Refer to [handling exceptions](../handling_exceptions/handling-mechanism.md) to learn more.
+If a back-end event fails, it raises an exception, and you must handle it. For example, if back-end event handlers exceed the two-minute timeout, ODC raises an exception. Refer to [handling exceptions](../handling-exceptions/handling-mechanism.md) to learn more.
 
 ODC automatically retries back-end events when an unhandled exception or timeout occurs in the event handler, preventing the loss of back-end events due to transient issues. ODC can attempt up to ten retries in case of a failed event.
 
-You can use traces for both producer and subscriber apps to troubleshoot back-end events. Refer to [traces](../../monitor-apps.md) to learn more.
+You can use traces for both producer and subscriber apps to troubleshoot back-end events. Refer to [traces](../../monitor-and-troubleshoot/monitor-apps.md) to learn more.

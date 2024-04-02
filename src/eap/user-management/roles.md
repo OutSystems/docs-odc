@@ -65,7 +65,7 @@ In the App scope section, you can Manage roles. You can add or delete App scope 
 
 End-user roles are specific to apps. You create end-user roles in ODC Studio while you develop an app. After you publish the app, you use the ODC Portal to assign the end-user role to users. Go to **Users & access** > **Users**. Search for the user, and in the user page below End-user roles, select **Manage roles**.
 
-For more information about app dev development and end-user roles, see: [Secure your app with end-user roles](../building-apps/secure-app-with-roles.md).
+For more information about app dev development and end-user roles, see: [Secure your app with end-user roles](secure-app-with-roles.md).
 
 ## End-user groups
 

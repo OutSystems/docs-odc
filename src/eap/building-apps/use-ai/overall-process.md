@@ -33,7 +33,7 @@ Before using the AI Agent Builder, ensure you have:
 
 1. Log into the ODC portal.
 
-1. Install the AI Agent Builder app from the [Forge](../../forge/intro.md). For detailed information on installing a Forge asset, refer to [Install or update a Forge asset](../../forge/install.md).
+1. Install the AI Agent Builder app from the [Forge](../forge/intro.md). For detailed information on installing a Forge asset, refer to [Install or update a Forge asset](../forge/install.md).
 
 1. Assign yourself the **Configurator** end-user role for the AI Agent Builder app. For detailed information about how to assign end-user roles in ODC portal, refer to [end-user roles](../../../eap/user-management/roles.md#end-user-roles)
 
