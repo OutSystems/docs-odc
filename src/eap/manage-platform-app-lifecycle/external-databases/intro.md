@@ -38,6 +38,9 @@ OutSystems supports the following versions of systems:
     * SQL Server 2019
     * SQL Server 2022
 
+* Azure SQL
+    * Azure SQL V12
+
 * Oracle server
     * Oracle 19c
 
@@ -182,9 +185,9 @@ Admins must supply the following information to connect to the external connecto
 | Description | Information about the database connection | No | Optional |
 | Username | Username to access the database | Yes |  |
 | Password | Password to access the database. | Yes |  |
-| Server for SQL server \ Host for Oracle server | Endpoint for your database connection | Yes | For Private Gateway, enter `secure-gateway` |
+| Server for SQL server and Azure SQL \ Host for Oracle server | Endpoint for your database connection | Yes | For Private Gateway, enter `secure-gateway` |
 | Port | The port number to connect to the database | Yes | ODC has a default port number that an admin can change. For a private gateway, enter the port configured in the connector. |
-| Database for SQL server \ Service name for Oracle server | Name of the database | Yes |  |
+| Database for SQL server and Azure SQL \ Service name for Oracle server | Name of the database | Yes |  |
 | Additional parameters | Additional parameters for a database connection | Yes | Different databases may require different parameters |
 | SAP Server domain | SAP server/host address| Yes |  |
 | SAP Client | If the SAP system has multiple clients, you must provide a client number. Leave the input blank if you connect to the default client | Yes | Optional |
@@ -196,7 +199,7 @@ Admins must supply the following information to connect to the external connecto
 
 When connecting to external databases, OutSystems maps the external database data types to OutSystems data types as follows:
 
-| SQL Server | Oracle | SAP OData | Salesforce | PostgreSQL |OutSystems Data Type |
+| SQL Server and Azure SQL | Oracle | SAP OData | Salesforce | PostgreSQL |OutSystems Data Type |
 |--|--|--|--|--|--|
 Char<br/>Varchar<br/>Text<br/>Nchar<br/>Nvarchar<br/>Ntext<br/>Xml<br/>Decimal(Any,> 8)<br/>Numeric(Any,>8) <br/>Real<br/>Float<br/>UniqueIdentifier<br/>Time<br/>Datetimeoffset | Char<br/>Varchar<br/>Varchar2<br/>Clob<br/>Long<br/>Nchar<br/>NVarchar2<br/>Nclob<br/>Number(Any,> 8)<br/>Float<br/>RowId<br/>URowId | Varchar<br/>UUID| UUID<br/>VARCHAR<br/>FLOAT<br/>Time| Varchar<br/>NVarchar<br/>Text<br/>Varbit<br/>Character<br/>Char<br/>Bpchar<br/>Time<br/>Numeric(Any, >8)<br/>Numeric(>28, Any)<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)<br/>Float4<br/>Float8<br/>Float8_range<br/>Real<br/>Double precision<br/>XML<br/>JSON<br/>UUID<br/>Pg_lsn<br/>Enum |Text|
 Tinyint<br/>Smallint<br/>Int<br/>Decimal(1-9,0)<br/>Numeric(1-9,0) | Number(2-9,0) | Int | Int | Smallint<br/>Integer<br/>Int<br/>Int2<br/>Int4<br/>Numeric<br/>Numeric(1-9, 0)<br/>Decimal(1-9, 0)<br/>Smallserial<br/>Serial<br/>Serial4 |Integer |
@@ -228,6 +231,8 @@ Consider the following when integrating an external database.
 * Build aggregator or mashup data from different sources(external and local) aren't supported.
 * .NET does not support the Julian calendar for Oracle and Salesforce, and the minimum supported timestamp value is -62135596800000. 
     * To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
+* Importing Views in ODC Studio only generates `Create<EntityName>` and `DeleteAll<EntityAction>` actions. Since Views don't have primary keys, ODC doesn't generate other entity actions. 
+    * Inserting a record in a View works only when the View comprises 1 table in the database. When View comprises more than 1 table, you may get an error.
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
@@ -250,6 +255,8 @@ Consider the following when integrating an external database.
 
 *  SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.
 * SAP OData only supports read-only entity actions in ODC Studio.
+* SAP throws a `RAISE_SHORTDUMP` exception when requesting the row count for some VIEWS on the first request.
+
     </div>
 </div>
 
