@@ -14,6 +14,6 @@ When designing the business logic of your apps, you can use built-in functions. 
 
 <div class="info" markdown="1">
 
-By default, Built-in Functions are designed to avoid raising exceptions when executed. If an issue occurs during the execution of a Built-in Function, the default value of the output data type will be returned, unless specified otherwise.
+Built-in Functions are designed to avoid raising exceptions when executed. If an issue occurs during the execution of a Built-in Function, OutSystems returns the default value of the output data type will, unless you specify otherwise.
 
 </div>
