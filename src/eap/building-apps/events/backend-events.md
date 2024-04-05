@@ -1,6 +1,6 @@
 ---
 summary: Back-end events enable asynchronous communication and automation in apps using a pub/sub model, with precise delivery and environment-specific scoping.
-tags:
+helpids: 30518
 locale: en-us
 guid: 54254c98-5a1e-42c3-a280-fa2aae5c5abe
 app_type: mobile apps, reactive web apps
