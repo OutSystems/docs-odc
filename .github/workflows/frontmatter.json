@@ -11,7 +11,9 @@
     },
     "locale": {
       "type": "string",
-      "enum": ["en-us"]
+      "enum": [
+        "en-us"
+      ]
     },
     "app_type": {
       "type": "string",
@@ -19,21 +21,33 @@
     },
     "platform-version": {
       "type": "string",
-      "enum": ["odc"]
+      "enum": [
+        "odc"
+      ]
     },
     "figma": {
       "oneOf": [
         {
           "type": "null"
         },
-        { 
-          "type": "string", "pattern": "^$" 
+        {
+          "type": "string",
+          "pattern": "^$"
         },
-        { 
-          "type": "string", "pattern": "^https://www\\.figma\\.com" }
+        {
+          "type": "string",
+          "pattern": "^https://www\\.figma\\.com"
+        }
       ]
     }
   },
-  "required": ["summary", "locale", "app_type", "guid", "platform-version", "figma"],
+  "required": [
+    "summary",
+    "locale",
+    "app_type",
+    "guid",
+    "platform-version",
+    "figma"
+  ],
   "additionalProperties": false
 }
