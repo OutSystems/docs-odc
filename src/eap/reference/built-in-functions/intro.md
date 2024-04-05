@@ -11,3 +11,9 @@ figma:
 # Built-in functions
 
 When designing the business logic of your apps, you can use built-in functions. They are available in the **Built-in Functions** folder of the expression editor.
+
+<div class="info" markdown="1">
+
+Built-in Functions are designed to avoid raising exceptions when executed. If an issue occurs during the execution of a Built-in Function, OutSystems returns the default value of the output data type will, unless you specify otherwise.
+
+</div>
