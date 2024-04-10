@@ -36,7 +36,7 @@ Here is an example, with two sample apps, of how you can reuse a Block from libr
 
     ![Screenshot of the source Web App with a public Block named MyBlock containing the text 'Hello from My Reactive App!'](images/block-reuse-source-app.png "Source App with Public Block")
 
-1. Publish the library.
+1. Publish and release the library.
 
 **Reuse the Block in MyPhoneApp:**
 
