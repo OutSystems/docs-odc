@@ -34,7 +34,7 @@ Back-end events are scoped to a specific stage. For example, a back-end event in
 Considerations while using back-end events: 
 
 * ODC stores a capacity of 10,000 back-end events. If the capacity exceeds, ODC raises an exception. You must capture the exception in an Exception Handler with the exception configured for All Exceptions.
-* ODC apps can simultaneously handle up to 100 back-end events per app container. ODC retires up to 10 times in case the delivery of a back-end event fails.
+* ODC apps can simultaneously handle up to 100 back-end events per app container. ODC retries up to 10 times in case the delivery of a back-end event fails.
 * Back-end events support [basic input parameters](../data/data-types.md) except binary data, with a maximum of 2000 characters for Text parameters. 
 * Back-end support payloads with sizes smaller than 10 KB. If the size exceeds, you must refactor to reduce the payload.
 
