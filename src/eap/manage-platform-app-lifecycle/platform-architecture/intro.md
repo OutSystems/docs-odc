@@ -44,7 +44,7 @@ The following diagram shows the high-level architecture of the development Platf
 
 #### Runtime { #runtime }
 
-In OutSystems Developer Cloud, the **Runtime** is independent of the Platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed apps. The standard Runtime setup is a Development stage, a Test stage, and a Production stage. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
+In OutSystems Developer Cloud, the **Runtime** is independent of the Platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed apps. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
 
 The Runtime **Load Balancer** handles all requests to the apps.
 
