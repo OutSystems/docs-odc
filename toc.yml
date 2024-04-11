@@ -328,6 +328,8 @@
             - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/firebase-cloud-messaging-plugin-server-action.md
             - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/firebase-cm-plugin-api-v1-v2.md
         - href: eap/integration-with-systems/mobile-plugins/health-fitness/intro.md
+        - topics: 
+            - href: eap/integration-with-systems/mobile-plugins/health-fitness/intro_v2.md
         - href: eap/integration-with-systems/mobile-plugins/keystore-plugin/intro.md
         - href: eap/integration-with-systems/mobile-plugins/location/intro.md
         - href: eap/integration-with-systems/mobile-plugins/payments-plugin/intro.md
