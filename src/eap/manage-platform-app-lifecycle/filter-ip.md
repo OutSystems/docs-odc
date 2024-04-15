@@ -42,7 +42,7 @@ By creating an IP Filter, ODC will block all traffic except traffic that origina
     * A confirmation popup is displayed.
       
 1. Click **Create**. 
-    * The updated list of IP filters is displayed.
+    * The updated list of IP filters is displayed. It may take some time for the changes to be effective for the apps.
 
 You can define up to 20 IP addresses/ranges per rule.
 
@@ -61,7 +61,7 @@ You can edit the **Name**, **Description**, and **IP address/range** of an IP fi
 1. Click **Save**.
    
 1. Click **Save** again.
-    * The updated list of IP filters is displayed.
+    * The updated list of IP filters is displayed. It may take some time for the changes to be effective for the apps.
 
 ## Delete an IP filter
 
@@ -73,5 +73,4 @@ To delete an existing IP filter, follow these steps:
    
 1. Click the ellipsis (3-dots) to the right of the IP filter name, then click the **Delete** button to display a confirmation popup.
    
-1. Click **Delete** again to display the list of IP filters without the deleted filter.
-
+1. Click **Delete** again to display the list of IP filters without the deleted filter. It may take some time for the changes to be effective for the apps.
