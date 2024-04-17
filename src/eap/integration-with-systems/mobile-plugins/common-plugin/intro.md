@@ -102,5 +102,3 @@ if(scope !== undefined) {
     scope.increaseCounter();
 }
 ```
-
-
