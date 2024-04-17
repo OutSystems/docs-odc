@@ -156,11 +156,21 @@ To set up a back-end notification service, do the following:
 
     Call the new server action GetAcessToken and store its return value. This token expires after one hour and, to avoid calling the action GetAccessToken unnecessarily, its value, along with its creation time, should be stored in a Database table. Before calling the server action, check if the token has expired and only then refresh its value.
 
-Now you can start to create the UI for your back-end notification service. For example, to send a notification to all users on the associated Firebase project (using an app with the Cloud Messaging plugin), associate the **SendNotificationToUsers** Server Action to a button and add logic to retrieve your Service Account file.
+Now you can start to create the UI for your back-end notification service. For example, to send a notification to a user on the associated Firebase project (using an app with the Cloud Messaging plugin), associate the **SendNotificationToUsers** Server Action to a button and add logic to retrieve your Service Account file. 
+
+If you want to send the notification to specific users, note that these are identified by their Firebase Token, that can be obtained with the **GetToken** client action. You can find this ID on the Firebase Project Settings under the Cloud Messaging tab. 
+
+To send a notification to all users, or to all Android or iOS users, you need to fill the **SenderID** structure attribute of the **SendRequest** parameter. You can find this ID on the Firebase Project Settings under the Cloud Messaging tab. 
+
+Moreover, to send a notification specifically to all Android or iOS users, you should set the **SendToPlatform** structure attribute to one of the values in the **Platform** static entity that the plugin provides.
 
 ![Image illustrating the configuration of Server Action call for Firebase Cloud Messaging](images/fcm-server-action-call.png "FCM Server Action Call Configuration")
 
 Other available methods include **SendNotificationToTopics**, **SendSilentNotificationToUsers**, and **SendSilentNotificationToTopics**.
+
+For silent notifications (**SendSilentNotificationToUsers** and **SendSilentNotificationToTopics**), the **TimeToLive** structure attribute sets the notifications' expiration time. More specifically, if the **TimeValue** for a specific **TimeUnit** is greater than 0, the message will persist in the local storage and be delivered at the first opportunity, until the expiration time has passed.
+
+For topic notifications (**SendNotificationToTopics**, **SendSilentNotificationToTopics**), set the topics for which a notification will be delivered to in the **SendToTopics** structure attribute.
 
 #### Sending notifications to a  100+ users list{ #send-notifications-limited-list }
 
@@ -184,13 +194,15 @@ To learn more about how to use Timers, see the [documentation](https://success.o
 
 This section describes some of the actions that you can use to leverage notification functions on your mobile app.
 
-On first use, you might want to send to receive notifications to your app user. For that, you can use the **RegisterDevice** action on the initialization of your app. On first use, this action displays a native request permission, dialog and upon user acceptance, the device is registered on the Firebase Cloud Messaging service and is ready to receive notifications. On future verifications, you can always use the **CheckPermission** action to verify if the app has permission to receive notifications.
+On first use, you might want to register your users to receive notifications. For that, you can use the **RegisterDevice** action when your app opens. For example, if the user isn’t already registered, you can call the **RegisterDevice** action on the **OnReady** event of the app’s home screen. On first use, this action displays a native permission request and, upon user acceptance, the device is registered on the Firebase Cloud Messaging service, ready to receive notifications.
 
 Alternatively, you can provide an explicit way to register and unregister the device from the Firebase cloud Messaging service using the **RegisterDevice** / **UnregisterDevice** actions. Then associate the actions to a UI element such as a toggle.
 
+To prevent errors, it's a good practice to first check if the plugin is available using the **CheckCloudMessagingPlugin** action.
+
 ![Screenshot showing the logic flow for registering a device with Firebase Messaging](images/firebase-messaging-register-device-odcs.png "Firebase Messaging Register Device Logic")
 
-After registering the device on the Firebase Cloud Messaging service, the active device's token becomes available and can be retrieved using the action **GetToken**.
+After registering the device on the Firebase Cloud Messaging service, the active device's token becomes available and can be retrieved using the action **GetToken**. For iOS devices, the Apple Push Notification service token can also be retrieved, using the **GetAPNsToken** action.
 
 To manage topic subscriptions, you can use the **Subscribe / Unsubscribe** actions. The user will need to set the topic name to which the app will subscribe (or unsubscribe). If the topic doesn't exist yet on the Firebase Cloud Messaging project, it creates a new one.
 
@@ -266,11 +278,19 @@ By default, a cloud messaging notification displays in the notification center. 
 
 You need to add this block to each screen that might handle the notification content.
 
+Optionally, you can use the **NotificationDialog** block, which provides a notification dialog UI inside the app.
+
 ### Manage the experience of custom actions using the Notifications block. { #manage-custom-actions-ux }
 
 By default, a cloud messaging notification displays in the notification center. However, you can also display the notification in-app when the app is in the foreground. To enable this you can use the **NotificationsHandler** block, using **InternalRouteActionClicked** for custom actions. This block triggers events that pass the parameters of both notifications and silent notifications to the context of the app.
 
 Add this block to each screen that might handle the notification content.
+
+## Manage the experience of notification clicks
+
+When the end-user clicks on a notification in the notification center, the app opens by default. If you want your app to handle the notification click, you can use the **NotificationsHandler** block and define a handler for the **NotificationClicked** event.
+
+If you want to navigate to a screen inside your app when the end-user clicks on a notification, you can use the **BuildInternalDeepLink** client action from the plugin. Our Sample App has this scenario implemented. If you want to do something else after the end-user clicks on a notification, simply implement your logic in the handler you create for the **NotificationClicked** event.
 
 ### Optional setup for notification Channel Name and Description - Android only
 
@@ -292,6 +312,10 @@ By default, the Cloud Messaging plugin defines values for the notification chann
     }
 }
 ```
+
+The following image illustrates how the notification channel's name and description will appear in the user device:
+
+![Screenshot of notification channel name and description](images/fcm-notification-channel.png "Notification Channel")
 
 ## Server actions reference
 
@@ -357,6 +381,12 @@ For more information, see [Apple documentation](https://developer.apple.com/docu
 For both iOS and Android.
 
 Firebase SDKs for Android and iOS don't support subscribing to topics if the name contains spaces, like `TV Shows`.
+
+### On Transitive Dependencies
+
+Starting on version 4.0.0 of the plugin, builds of your app can fail if:
+1. it contains a dependency to another app, mobile or web, that includes an asset from the Firebase Cloud Messaging plugin
+2. the app doesn't include the necessary configuration files for Firebase plugins (e.g. google-services.json).
 
 ## On compatibility with Firebase Performance
 
