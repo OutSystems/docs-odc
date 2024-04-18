@@ -128,7 +128,7 @@ Function that validates if the logged-in user is from an external identity provi
 
 _Outputs_
 
-**Email**
+**IsExternalUser**
 :   Type: Boolean.
     True if the logged user is an external user.
 
