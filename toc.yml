@@ -35,8 +35,7 @@
             - href: eap/building-apps/use-ai/configure-data-source/configure-azure-data-source.md
             - href: eap/building-apps/use-ai/configure-data-source/add-azure-data-source-to-aibuilder.md
             - href: eap/building-apps/use-ai/configure-data-source/configure-aws-data-source.md
-            - href: eap/building-apps/use-ai/configure-data-source/add-aws-data-source-to-aibuilder.md
-            
+            - href: eap/building-apps/use-ai/configure-data-source/add-aws-data-source-to-aibuilder.md        
                 
     # Create agent
         - href: eap/building-apps/use-ai/create-agent.md

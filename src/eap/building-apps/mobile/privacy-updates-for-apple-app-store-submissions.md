@@ -74,13 +74,13 @@ To create a binary setting in the browser:
 
 1. Name your file similar to "PrivacyInfoFile” and ensure the **Data Type** is set to `Binary Data` and **Publish**.
 
-    ![Screenshot showing how to add a Privacy Info File setting in ODC Studio with the Data Type set to Binary Data.](images/privacy-info-file-odcs.png "Adding a Privacy Info File in ODC Studio")
+    ![Screenshot showing how to add a Privacy Info File setting in ODC Studio with the Data Type set to Binary Data.](images/privacy-info-file-setting-odcs.png "Adding a Privacy Info File in ODC Studio")
 
 1. In the portal, navigate to **Apps,** and select your app.
 
 1. On the **"PrivacyInfoFile"** dropdown list, select **Edit**.
 
-    ![Screenshot of the ODC portal highlighting the PrivacyInfoFile setting with an Edit option.](images/browser-odcs.png "Editing Privacy Info File in ODC Portal")
+    ![Screenshot of the ODC portal highlighting the PrivacyInfoFile setting with an Edit option.](images/edit-privacy-setting-pl.png "Editing Privacy Info File in ODC Portal")
 
 1. Upload your PrivacyInfo.xcprivacy file and **Save**.
 
