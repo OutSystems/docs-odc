@@ -45,7 +45,7 @@ Type: Text
 ### Examples
 
 ```
-GetBookmarkableURL() = "http://myserverat.outsystemscloud.com/Customers/EditCustomer.aspx?CustomerId=1"
+GetBookmarkableURL() = "https://my-org.outsystems.app/Customers/EditCustomer?CustomerId=1"
 ```
 
 <div class="info" markdown="1">
