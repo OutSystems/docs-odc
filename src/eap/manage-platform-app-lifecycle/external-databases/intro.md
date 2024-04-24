@@ -100,7 +100,7 @@ To create a new database connection, go to the ODC Portal and follow these steps
 
 If you select SQL or Oracle server, you can use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, separate each parameter with a semi-colon (;). Different databases may require different parameters, for example:
 
-* For the **SQL** server to select the desired schema on the database, enter `currentSchema = <schema-name>`
+* For the **SQL Server** and **Azure SQL** to select the desired schema on the database, enter `currentSchema = <schema-name>`. For PostgreSQL, you can also use the `Schema` parameter.
 * For **Oracle** to select the desired schema on the database, enter `current_schema = <schema-name>`
 
 <div class="info" markdown="1">
@@ -194,6 +194,7 @@ Admins must supply the following information to connect to the external connecto
 | Manual entry | To manually enter the Service URL| Yes | If you select "Manual entry" for a private gateway, then the domain must be `secure-gateway:<port>/..`|
 | Basic authentication type | Basic is a simpler authentication method than OAuth | Yes | |
 | Sandbox connection | Sandbox enables a partial or full copy of production data to test the connector. | Yes | |
+| Schema | Optional schema name for PostgreSQL connections | Yes | If provided, it specifies the default schema to be used. |
 
 ## Data type mapping
 
