@@ -41,18 +41,34 @@ To set up the Amazon Bedrock foundation AI models, follow these steps:
 
 ### Step 2:  Create a user and assign access permissions for using the model
 
-1. [Create an IAM user ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)to use the Amazon Bedrock foundation models.
+1. [Create an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html) to use the Amazon Bedrock foundation models.
 
-<div class="info" markdown="1">
+    <div class="info" markdown="1">
 
-Once you've created a user, save the access key ID and the secret access key securely. The secret access key is available only at the time you create it. If you lose your secret access key, you must delete the access key and create a new user. However, you can retrieve the access key ID at any time. For more information, refer to the [Managing access key for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html). 
+    Once you've created a user, save the access key ID and the secret access key securely. The secret access key is available only at the time you create it. If you lose your secret access key, you must delete the access key and create a new user. However, you can retrieve the access key ID at any time. For more information, refer to the [Managing access key for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html). 
 
-</div>
+    </div>
 
-The access key ID and secret key are then used in the AI Agent Builder app to add the Amazon Bedrock AI model.
+    The access key ID and secret key are then used in the AI Agent Builder app to add the Amazon Bedrock AI model.
 
-2. Create and assign policies to the user to provide necessary permissions to use the Bedrock AI model. For more information, refer to [Identity-based policy examples for Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html).
+1. Create and assign policies to the user to provide necessary permissions to use the Bedrock AI model. At a minimum, the AI Agent Builder requires the following policy to work with Amazon Bedrock foundation models:
 
+    ```
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "VisualEditor0",
+                "Effect": "Allow",
+                "Action": "bedrock:InvokeModel",
+                "Resource": "arn:aws:bedrock:*::foundation-model/*"
+            }
+        ]
+    }
+    ```
+
+    Refer to [Identity-based policy examples for Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html) for more information on configuring policies.
+   
 ## Next steps
  
 * [Add Amazon Bedrock AI model in the AI Agent Builder app](add-aws-model-to-aibuilder.md)
