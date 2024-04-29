@@ -67,7 +67,7 @@ To set up the Amazon Bedrock foundation AI models, follow these steps:
     }
     ```
 
-    Refer to [Identity-based policy examples for Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html) for more information on configuring policies.
+    For more information on configuring policies, refer to [Identity-based policy examples for Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html).
    
 ## Next steps
  
