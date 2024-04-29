@@ -19,7 +19,7 @@ Back-end events allow the automation of repetitive tasks that involve high volum
 Back-end events follow a publisher/subscriber model (pub/sub).
 
 * Event publisher: Generates an event when a change occurs and publishes it to an event subscriber
-* Event subscriber: Subscribes to a specific event producer(s) to receive and react to the event
+* Event subscriber: Subscribes to a specific event publisher(s) to receive and react to the event
 
 Back-end events are delivered precisely once to subscribers to prevent duplicate events, although the order in which subscribers receive elements is not guaranteed.
 
@@ -68,7 +68,7 @@ To make the event accessible in other apps, click 1-Click Publish to publish the
 
 ## Subscribe to an event
 
-You can subscribe to an event in the same producer or another app. To subscribe to an event, go to ODC Studio and follow these steps:
+You can subscribe to an event in the same publisher or another app. To subscribe to an event, go to ODC Studio and follow these steps:
 
 1. On the **Processes** tab, right-click **Events**, and select **Add public element**. The public element popup displays.
 
@@ -91,4 +91,4 @@ If a back-end event fails, it raises an exception, and you must handle it. For e
 
 ODC automatically retries back-end events when an unhandled exception or timeout occurs in the event handler, preventing the loss of back-end events due to transient issues. ODC can attempt up to ten retries in case of a failed event.
 
-You can use traces for both producer and subscriber apps to troubleshoot back-end events. Refer to [traces](../../monitor-and-troubleshoot/monitor-apps.md) to learn more.
+You can use traces for both publisher and subscriber apps to troubleshoot back-end events. Refer to [traces](../../monitor-and-troubleshoot/monitor-apps.md) to learn more.

@@ -23,16 +23,16 @@ Event-driven architecture (EDA) promotes app independence, with each component h
 
 ![Diagram showing the flow of events from a producer app to a message broker and then to subscriber apps with event handlers.](images/events-architecture-diag.png "Event-Driven Architecture Diagram")
 
-Producer apps define events and triggers. When an event triggers, the producer publishes the event in the message broker. Subsequently, subscribers interested in specific events can subscribe to them through the message broker.
+Publisher apps define events and triggers. When an event triggers, the publisher publishes the event in the message broker. Subsequently, subscribers interested in specific events can subscribe to them through the message broker.
 
-Subscribers define event handlers to react to events asynchronously through server actions. The subscriber app consumes an event sent by the producer app, creating a weak reference.
+Subscribers define event handlers to react to events asynchronously through server actions. The subscriber app consumes an event sent by the publisher app, creating a weak reference.
 
-For example, in a finance app, you must generate a bank account number for each new account. In this example, creating a new account is an event trigger within the producer app. A new account triggers an event, and the producer publishes the event to a message broker. Subsequently, subscribers interested in specific events subscribe to them through the message broker. To respond to this event, subscribers use event handlers, such as generating a new bank account number.
+For example, in a finance app, you must generate a bank account number for each new account. In this example, creating a new account is an event trigger within the publisher app. A new account triggers an event, and the publisher publishes the event to a message broker. Subsequently, subscribers interested in specific events subscribe to them through the message broker. To respond to this event, subscribers use event handlers, such as generating a new bank account number.
 
 <div class="info" markdown="1">
 
-Producer app can also subscribe to events from other apps.
+Publisher app can also subscribe to events from other apps.
 
 </div>
 
-Events are triggered, and event handlers execute them asynchronously, enabling subscribers to receive and process events independently without waiting for the producer to finish processing them.
+Events are triggered, and event handlers execute them asynchronously, enabling subscribers to receive and process events independently without waiting for the publisher to finish processing them.
