@@ -12,17 +12,15 @@ figma:
 
 OutSystems Developer Cloud (ODC) is a cloud-native app development platform that provides a modular, scalable environment in which you develop and deploy your apps. With ODC you can build and deploy enterprise-grade, mission-critical apps in weeks. You can build web apps, web portals, mobile apps, and business workflows faster than with traditional development tools. You can then deploy your apps in a scalable, secure, and high-performance environment.
 
-## Access the ODC Portal
-
 <div class="info" markdown="1">
 
-Currently, OutSystems offers only a paid version of ODC. Please contact your OutSystems account team or [contact sales](https://www.outsystems.com/contact-sales/) if you're interested in a commercial trial.
+OutSystems offers only a paid version of ODC. To learn more about how to get ODC for your organization, refer to [Develop applications that drive revenue, reduce costs, and control risk - at internet scale](https://www.outsystems.com/low-code-platform/developer-cloud/) or contact your OutSystems account team or [sales](https://www.outsystems.com/contact-sales/) if you're interested in a commercial trial.
 
 </div>
 
-Open the email and locate the link to the ODC Portal.
+## Access the ODC Portal
 
-Click the link to go to the login page.
+Open the email and locate the link to the ODC Portal. Then click the link to go to the login page.
 
 ![Screenshot of the OutSystems Developer Cloud Portal interface showing various management options such as Apps, Delivery, Monitoring, Users & Access, Configurations, and Forge](images/vacation-app-pl.png "ODC Portal Interface")
 
@@ -67,4 +65,3 @@ Within each type of app, there are pre-built screen templates you can use to spe
 
 To publish your app, click **1-Click publish**. By default your app publishes to the Development stage.
 
-To find out more about how to get ODC for your organization, see [Develop applications that drive revenue, reduce costs, and control risk - at internet scale](https://www.outsystems.com/low-code-platform/developer-cloud/).
