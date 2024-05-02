@@ -21,7 +21,7 @@ A general recommendation is to start thinking about accessibility **early in the
 
 Here are some guidelines to consider for meeting your accessibility needs:
 
-1. Ensure that your app meets the basic accessibility requirements. For more information, refer to [Enabling the built-in accessibility features](https://success.outsystems.com/Documentation/11/Developing_an_Application/Design_UI/Accessibility#Enabling_the_built-in_accessibility_features).
+1. Ensure that your app meets the basic accessibility requirements. For more information, refer to [Enable the built-in accessibility features](#enable).
 
 2. Early in development, test your app against the accessibility success criteria for the level you are targeting and fix the issues. For more information, refer to [Testing and fixing accessibility issues](testing-fixing-accessibility-issues.md).
 
@@ -29,7 +29,7 @@ Here are some guidelines to consider for meeting your accessibility needs:
 
 4. See [UI Patterns accessibility reference](ui-patterns-accessibility-reference.md) for special notes about patterns you may be using on a page.
 
-## Enable the built-in accessibility features
+## Enable the built-in accessibility features { #enable }
 
 OutSystems has many built-in accessibility features, such as creating applications with the right contrast ratio, focus, and skip-to-content settings. To develop accessible apps, you must activate the accessibility feature in ODC Studio. Suppose your app uses complex interactions or design. In that case, you may need specific customization and development, covered in [ARIA roles and attributes](aria-roles-and-attributes.md) and [UI Patterns accessibility reference](ui-patterns-accessibility-reference.md).
 
