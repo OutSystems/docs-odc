@@ -9,7 +9,7 @@ platform-version: odc
 figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=3504%3A808&mode=design&t=0qX3292WcHKssBRO-1
 ---
 
-# Integrate with external databases
+# Integrate with external systems
 
 OutSystems Developer Cloud (ODC) enables developers to integrate external data into their apps. First, from the ODC Portal, admins create connections to the supported databases and select the entities. Then, in ODC studio, developers use the data as entities in their apps.
 
@@ -18,6 +18,8 @@ Admins must set up configurations for each stage, such as development, QA, and p
 Admins ensure the app and its connection information are in the same stage. Additionally, the database model must be the same in all the stages.
 
 There is no limit to the number of entities you can add from the external database.
+
+In ODC, you can now mash up data from different entities and distinct data sources in an aggregate. This allows you to join data from different sources to provide a unified view of all the data. ODC Studio pulls data from different sources and performs the operations in-memory to perform the data mash to provide the desired results. Refer to [aggregates](../../building-apps/ui/interaction/display-data/aggregate.md) to learn more.
 
 <div class="info" markdown="1">
 

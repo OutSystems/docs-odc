@@ -12,6 +12,13 @@ platform-version: odc
 
 Aggregates allow you to fetch data using an optimized query, tailored to your usage. Aggregates automatically absorb changes in the data model and can load the local database's data from the server. They support combining several entities and advanced filtering, and bring only the attributes that are used on the screen or action. Attributes also abstract the underlying model for the developer, allowing attribute renaming and changes to the data type.  
 
+In OutSystems Developer Cloud (ODC), you can now mash up data from different entities and distinct data sources in an aggregate. This allows you to join data from different sources to provide a unified view of all the data. ODC Studio pulls data from different sources and performs the operations in-memory to perform the data mash to provide the desired results. 
+
+Some benefits of data mashup are:
+* Simplified process: You can now directly drag and drop data from different sources rather than creating custom logic to combine different data. This helps you save time and effort. 
+* Improved Data Analysis: you can now leverage data from various databases to gain deeper insights and make better business decisions.
+* Increased Flexibility: you get greater flexibility in data analysis and reporting.
+
 In Mobile and Web Apps, Aggregates can be client-side or server-side:
 
 * Client-side Aggregates run in the client logic. You can use them to get data for your widgets when a Screen or a Block loads.
