@@ -5,7 +5,7 @@ locale: en-us
 guid: da18534d-84c8-4a52-bca8-85ebb3b1e082
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=3675-159&mode=design&t=AnbYNrTe4tq1zOrw-0
+figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=3675%3A159&mode=design&t=GIMRhVcd5jweHOdq-1
 ---
 
 # Configure custom domains for apps
@@ -19,7 +19,7 @@ For each stage in which you deploy apps, ODC comes with a **built-in** OutSystem
 | Test        | `<customername>-test.outsystems.app` |
 | Production  | `<customername>.outsystems.app`      |
 
-Apps are always accessible to end-users through built-in domains. For example, an app named MyApp deployed to the Development stage is accessible at `<customername>-dev.outsystems.app/MyApp`. If you want to restrict access, you can use [end-user roles](../user-management/secure-app-with-roles.md).
+It's not possible to change the built-in OutSystems domain that is defined when the ODC infrastructure is created. Apps are always accessible to end-users through built-in domains. For example, an app named MyApp deployed to the Development stage is accessible at `<customername>-dev.outsystems.app/MyApp`. If you want to restrict access, you can use [end-user roles](../user-management/secure-app-with-roles.md).
 
 In addition, ODC lets you make your apps accessible to end-users through your organization's domain(s). In a given stage, your apps can be available through one or more custom domains that you add to that stage. Each custom domain must be unique to a customer and stage.
 
