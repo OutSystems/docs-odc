@@ -31,10 +31,10 @@ To write better queries, you need to understand the following joins:
     * `ON a.id = b.id`
     * `ON a.id = b.id AND a.int = b.int`
 * A partial equi-join combines equi-join conditions with non-equi conditions using "AND", for example: 
-    * `ON a.id = b.id AND (a.int &gt; b.int OR a.int &gt; 1)`
+    * `ON a.id = b.id AND (a.int > b.int OR a.int > 1)`
 * A non-equi-join covers everything else, for example:
     * `ON a.id = b.id OR a.int = b.int`
-    * `ON a.int &gt; b.int`
+    * `ON a.int > b.int`
 
 ## Best practices
 
@@ -50,63 +50,36 @@ To write better queries, you need to understand the following joins:
 * Test query limits the number of records, reducing plan cost.
 * Entities in QA or Production environments may have more records than those in the Development environment.
 
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
-    Join conditions
-    </div>
-    <div class="os-accordion__content">            
+### Join conditions      
 
 * Use a full or partial equi-join condition, for example:
+
     * `ON a.id = b.id` - Recommended 
     * `ON a.id = b.id AND a.id2 = b.id2` - Recommended 
-    * `ON a.id = b.id AND a.date&lt;&gt;b.date` - Recommended 
+    * `ON a.id = b.id AND a.date <> b.date` - Recommended 
     * `ON a.id = b.id OR a.id2 = b.id2` - Not Recommended 
-    * `ON a.id &gt; b.id` - Not Recommended 
+    * `ON a.id > b.id` - Not Recommended 
 * Avoid nullable attributes in the join condition for SQL Server and SAP entities.
 * Do not write predicates with literals or dynamic parameters in the join condition; use a filter instead, for example:
     * `ON a.id = b.id AND a.id = 1` - Not Recommended 
     * `ON a.id = b.id WHERE a.id = 1` - Recommended 
 
-    </div>
-</div>
-
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
-    Filters
-    </div>
-    <div class="os-accordion__content">            
+### Filters
 
 * Using predicates combined with "AND" is the best way to minimize fetching of unnecessary data, for example: 
-    * `ON a.date = b.date WHERE a.date &lt; '1990-01-01' ` -  Not Recommended 
-    * `ON a.date = b.date WHERE a.date &lt; '1990-01-01' AND b.date &lt; '1990-01-01' ` - Recommended 
+    * `ON a.date = b.date WHERE a.date < '1990-01-01' ` -  Not Recommended 
+    * `ON a.date = b.date WHERE a.date < '1990-01-01' AND b.date < '1990-01-01' ` - Recommended 
 * Try to build complex filters using "AND" at the top level and keep filters for each entity in separate parts, for example: 
-    * `ON a.col = b.col WHERE (a.col = 3 AND a.int &lt; 3) OR (a.col = 3 AND b.int &gt; 1)` - Not Recommended 
-    * `ON a.col = b.col WHERE a.col = 3 AND b.col = 3 AND (a.int &lt; 3 OR b.int &gt; 1)` - Recommended 
+    * `ON a.col = b.col WHERE (a.col = 3 AND a.int < 3) OR (a.col = 3 AND b.int > 1)` - Not Recommended 
+    * `ON a.col = b.col WHERE a.col = 3 AND b.col = 3 AND (a.int < 3 OR b.int > 1)` - Recommended 
 
-    </div>
-</div>
-
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
-    Aggregate functions and grouping
-    </div>
-    <div class="os-accordion__content">            
-
+### Aggregate functions and grouping
+    
 * Prefer to use Only With Joins with aggregate functions and/or grouping since this can often allow the aggregate to be split and pushed down to the databases.
 
-    </div>
-</div>
-
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
-    Sorting
-    </div>
-    <div class="os-accordion__content">            
+### Sorting
 
 * Sorting can significantly affect performance. If you anticipate many records, performing any required sorting in your app rather than in the aggregate is advisable.
-
-    </div>
-</div>
 
 ## Supported use cases
 
@@ -129,9 +102,9 @@ When the best practices are followed:
 * Use a full or partial equi-join condition, for example:
     * `ON a.id = b.id` - Recommended 
     * `ON a.id = b.id AND a.id2 = b.id2` - Recommended 
-    * `ON a.id = b.id AND a.date&lt;&gt;b.date` - Recommended 
+    * `ON a.id = b.id AND a.date <> b.date` - Recommended 
     * `ON a.id = b.id OR a.id2 = b.id2` - Not Recommended 
-    * `ON a.id &gt; b.id` - Not Recommended 
+    * `ON a.id > b.id` - Not Recommended 
 * Avoid using string attributes when mashups with Salesforce / SAP.
 * Don't sort by any attributes. Do any required sorting in your application logic.
 
