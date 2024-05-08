@@ -1,5 +1,5 @@
 ---
-summary: This article explains the process of opening and publishing an .oml file in ODC Studio.
+summary: Explore how to open and publish .oml files in OutSystems Developer Cloud (ODC) using ODC Studio.
 tags:
 locale: en-us
 guid: 0cdbd545-592d-4778-b80a-2f01f9f93285

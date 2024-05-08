@@ -1,5 +1,5 @@
 ---
-summary: The Master Detail Pattern is used to display a master list of items and their related details.
+summary: OutSystems Developer Cloud (ODC) supports the Master Detail Pattern for displaying lists and their details in applications.
 tags:
 locale: en-us
 guid: 2839f103-9cc0-4712-b9df-d3cd6cc805e9

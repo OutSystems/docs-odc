@@ -1,5 +1,5 @@
 ---
-summary: The OutSystems BinaryData library provides actions to manipulate binary data.
+summary: Explore binary data manipulation features in OutSystems Developer Cloud (ODC) with actions like Base64ToBinary and BinaryDataToText.
 tags:
 locale: en-us
 guid: 2c98c66a-043a-44fd-a4b6-60c9d3969fbb

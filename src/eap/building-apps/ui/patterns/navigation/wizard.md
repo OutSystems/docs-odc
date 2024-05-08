@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Wizard UI Pattern is used to split large complex tasks into smaller manageable steps.
+summary: Learn how to create and manage a Wizard UI Pattern in OutSystems Developer Cloud (ODC) to streamline complex tasks into simpler steps.
 locale: en-us
 guid: 54acaa7b-794d-44d4-9b70-5cc2b4810ccc
 app_type: mobile apps, reactive web apps

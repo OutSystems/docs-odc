@@ -1,5 +1,5 @@
 ---
-summary: This article explains the process of creating screens in an app.
+summary: Learn how to create and manage app screens using various methods in OutSystems Developer Cloud (ODC), ensuring consistency and efficiency in design.
 tags:
 locale: en-us
 guid: 4afcc536-cf53-4130-9d7a-15887083d629

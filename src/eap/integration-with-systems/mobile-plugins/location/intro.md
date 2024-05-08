@@ -1,5 +1,5 @@
 ---
-summary: Use the Location Plugin to access GPS capabilities of user devices
+summary: Learn how to integrate GPS capabilities in your applications using the Location Plugin in OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: f2b0feab-c558-4d7f-b507-4511ae094677

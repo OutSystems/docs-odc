@@ -1,5 +1,5 @@
 ---
-summary: Adaptive patterns allow apps to be viewed in multiple layouts on various screen sizes.
+summary: Explore adaptive app development with OutSystems Developer Cloud (ODC) to ensure optimal display across various device sizes and resolutions.
 tags:
 locale: en-us
 guid: 2c47448a-ec28-4a99-99bc-171fc05cd0e6

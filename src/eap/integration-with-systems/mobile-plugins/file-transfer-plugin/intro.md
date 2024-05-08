@@ -1,5 +1,5 @@
 ---
-summary: File Transfer Plugin allows downloading and uploading files in mobile apps.
+summary: Explore advanced file transfer capabilities in mobile apps using the File Transfer Plugin on OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: d64fd114-f737-4eb1-b5b1-f334420dfce3

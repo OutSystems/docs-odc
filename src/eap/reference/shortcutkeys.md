@@ -1,5 +1,5 @@
 ---
-summary: The article provides a comprehensive list of keyboard shortcuts for ODC Studio on Windows and macOS
+summary: Explore keyboard shortcuts for OutSystems Developer Cloud (ODC) across Windows and macOS platforms, enhancing productivity in application development.
 tags:
 locale: en-us
 guid: f2cc2c52-ff68-4cfa-b4b9-a052d89051c4

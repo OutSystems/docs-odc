@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud allows users to configure external identity providers for authentication, authorization, and user management.
+summary: Learn how to configure external identity providers for authentication in OutSystems Developer Cloud (ODC), supporting OpenID Connect and social logins.
 locale: en-us
 guid: 5aa8692d-68bf-41a1-89ec-5e8fc7069e29
 app_type: mobile apps, reactive web apps

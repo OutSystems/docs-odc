@@ -1,6 +1,6 @@
 ---
 tags:
-summary: Floating Content is a UI pattern that allows you to display content on top of other screen elements.
+summary: OutSystems Developer Cloud (ODC) supports the Floating Content UI Pattern for overlaying content on screen elements.
 locale: en-us
 guid: 12a78364-ee4e-4528-a0f7-239c9b0e31f9
 app_type: mobile apps, reactive web apps

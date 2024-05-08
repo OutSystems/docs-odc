@@ -1,5 +1,5 @@
 ---
-summary: The Health and Fitness plugin lets you use data from Apple's HealthKit and Google's Health Connect to create customized solutions for your users.
+summary: Explore the integration of health and fitness data using HealthKit and Google Health Connect in mobile apps with OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: a0e9b45a-9726-4804-8019-7abe52b3b813

@@ -1,5 +1,5 @@
 ---
-summary: The Firebase Cloud Messaging plugin allows you to send normal and silent notifications to your mobile app users.
+summary: Learn how to implement and manage Firebase Cloud Messaging in OutSystems Developer Cloud (ODC) for enhanced mobile app notifications.
 tags: 
 locale: en-us
 guid: a8f7486e-a655-4da7-bed6-37d6867166b2

@@ -1,5 +1,5 @@
 ---
-summary: Extend OutSystems applications with third-party API, database integrations and plugins that unleash the mobile capabilities of devices or add your custom code.
+summary: Explore how OutSystems Developer Cloud (ODC) facilitates integration with external systems.
 tags: 
 locale: en-us
 guid: BC301FD5-5457-4C74-BCE8-0DB525F9503B

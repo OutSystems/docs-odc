@@ -1,6 +1,6 @@
 ---
 tags: 
-summary: Breadcrumbs present the location of the user within the hierarchy of applications.
+summary: Learn how to implement and customize the Breadcrumbs UI Pattern in OutSystems Developer Cloud (ODC) to enhance app navigation.
 locale: en-us
 guid: 78642488-92c4-45ba-a5ff-65e0e79506a9
 app_type: mobile apps, reactive web apps

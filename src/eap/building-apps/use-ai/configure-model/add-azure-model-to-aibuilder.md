@@ -1,5 +1,5 @@
 ---
-summary: This article explains the process of adding the Azure OpenAI model to the AI Agent Builder app for administrators and DevOps engineers
+summary: This article guides on integrating the Azure OpenAI model into the AI Agent Builder app within the OutSystems Developer Cloud (ODC) platform.
 tags:
 locale: en-us
 guid: db6b7e45-96d2-4f0b-9723-b5a59c57fe60

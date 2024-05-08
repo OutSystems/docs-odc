@@ -1,5 +1,5 @@
 ---
-summary: The article describes various text manipulation functions such as Chr, EncodeHtml, EncodeJavaScript, EncodeSql, EncodeUrl, Index, Length, NewLine, Replace, Substr, ToLower, ToUpper, Trim, TrimEnd, and TrimStart, detailing their usage, parameters, and examples
+summary: Explore various text manipulation functions in OutSystems Developer Cloud (ODC) for secure and efficient application development.
 tags:
 locale: en-us
 guid: 7afd2224-135c-4325-af02-20ee06290373

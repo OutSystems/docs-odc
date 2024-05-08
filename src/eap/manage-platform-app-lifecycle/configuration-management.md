@@ -1,5 +1,5 @@
 ---
-summary: Use OutSystems Developer Cloud to configure app and infrastructure settings, timers and REST integrations without redeployment.
+summary: OutSystems Developer Cloud (ODC) enables efficient app configuration management without the need for redeployment.
 tags:
 locale: en-us
 guid: e32e1f5f-83b6-4b00-a593-83ba5017fc16

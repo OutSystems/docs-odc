@@ -1,5 +1,5 @@
 ---
-summary: Troubleshoot issues that can arise while connecting your mobile device to your PC for debugging purposes.
+summary: Explore common issues and solutions for mobile app debugging with OutSystems Developer Cloud (ODC) in this technical guide.
 tags:
 locale: en-us
 guid: e482b9b0-c2f0-4636-8a9f-97aac1755ba6

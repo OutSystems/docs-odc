@@ -1,5 +1,5 @@
 ---
-summary: Use Send Email action  to send emails. Trigger manual or automatic sending of emails.
+summary: Explore how OutSystems Developer Cloud (ODC) facilitates email sending and triggering through its Studio interface.
 tags: 
 locale: en-us
 guid: 895e64b5-eb2c-4b92-9673-8493aa306622

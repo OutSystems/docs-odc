@@ -1,5 +1,5 @@
 ---
-summary: Throwing a custom error in an exposed REST API allows for meaningful error messages to be sent to the client.
+summary: Learn how to effectively throw custom errors in exposed REST APIs using OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: e1d028a0-d688-4cbb-93c1-caecb302ee9a

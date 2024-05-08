@@ -1,5 +1,5 @@
 ---
-summary: Threads in OutSystems can be originated from server actions, client actions, awakened Timer actions, or integration methods.
+summary: OutSystems Developer Cloud (ODC) supports thread management and debugging across various actions and events in web and mobile applications.
 tags:
 locale: en-us
 guid: ab6189d5-3803-4f78-92ff-4072e356fc29

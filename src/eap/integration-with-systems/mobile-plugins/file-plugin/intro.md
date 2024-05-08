@@ -1,5 +1,5 @@
 ---
-summary: File Plugin allows you to manage files and folders on a mobile device within the app sandbox.
+summary: Explore file management capabilities in mobile apps using the File Plugin on OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: c2174075-3813-431b-8254-637c6a5e7d69

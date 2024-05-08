@@ -1,5 +1,5 @@
 ---
-summary: 
+summary: Explore how OutSystems Developer Cloud (ODC) streamlines the management of OutSystems platforms and applications.
 tags: 
 locale: en-us
 guid: 3E329B4A-4D54-43C6-9371-A160C02DBDFA

@@ -1,5 +1,5 @@
 ---
-summary: Authentication actions for built-in and/or external identity providers
+summary: Explore authentication actions for built-in and external identity providers in OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: af4a6d9d-0af3-434b-b3b9-daf8d49ad6f7

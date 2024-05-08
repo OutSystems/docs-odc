@@ -1,5 +1,5 @@
 ---
-summary: ODC integrations console error messages and recommended actions
+summary: Explore common Integrations console errors in OutSystems Developer Cloud (ODC) and their solutions.
 tags: 
 locale: en-us
 guid: 57491626-e643-4023-9af2-9e25bfee3e4c

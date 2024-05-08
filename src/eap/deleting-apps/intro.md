@@ -1,5 +1,5 @@
 ---
-summary: You can delete apps and libraries in OutSystems Developer Cloud (ODC) to keep your stage clean and find the ones you need faster.
+summary: OutSystems Developer Cloud (ODC) enables safe deletion of apps and libraries from non-production stages, with built-in safety mechanisms and impact analysis.
 tags:
 locale: en-us
 guid: F5E3A7C3-EE70-42AC-A891-FFA5CC7AD64A

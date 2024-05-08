@@ -1,5 +1,5 @@
 ---
-summary: How to create a simple Bar Chart with a customized legend
+summary: Explore how to create and customize a Bar Chart using OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: ee86596b-1473-4fe8-8da5-1e65352a0997

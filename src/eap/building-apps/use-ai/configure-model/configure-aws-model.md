@@ -1,5 +1,5 @@
 ---
-summary: This article provides a detailed guide for setting up Amazon Bedrock foundation AI models, including necessary prerequisites and steps.
+summary: Explore how to integrate Amazon Bedrock foundation AI models with OutSystems Developer Cloud (ODC) for enhanced AI capabilities.
 tags:
 locale: en-us
 guid: 6550169c-eb62-46d3-9181-68a71bed10f9

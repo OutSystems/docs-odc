@@ -1,5 +1,5 @@
 ---
-summary: Learn how to create custom obfuscation rules to secure your mobile apps from tampering.
+summary: Explore how to create and implement custom obfuscation rules for non-OutSystems plugins in OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: e0c476d7-f1ae-405e-8b3b-1c0c43cd38f3

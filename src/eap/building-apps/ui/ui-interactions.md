@@ -1,5 +1,5 @@
 ---
-summary: A user interface (UI) is where a user interacts and communicates with a device.
+summary: Explore UI interactions and data management in OutSystems Developer Cloud (ODC) for seamless app development.
 tags:
 locale: en-us
 guid: 743F0F2C-6ADF-4A7A-899E-3802A1249925

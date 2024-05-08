@@ -1,5 +1,5 @@
 ---
-summary: A theme allows you to style different parts of your app based on the context.
+summary: Explore theme customization and management in OutSystems Developer Cloud (ODC) for app styling and consistency.
 tags:
 locale: en-us
 guid: d284fd25-cb3c-4b8f-a7b6-e44b9dff9a20

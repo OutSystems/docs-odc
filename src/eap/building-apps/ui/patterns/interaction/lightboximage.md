@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Lightbox Image UI Pattern allows you to open thumbnail images in full screen mode.
+summary: Explore the Lightbox Image UI Pattern in OutSystems Developer Cloud (ODC) for creating detailed image galleries in applications.
 locale: en-us
 guid: 575c188f-fb02-4d70-8241-4b3e4518d66c
 app_type: mobile apps, reactive web apps

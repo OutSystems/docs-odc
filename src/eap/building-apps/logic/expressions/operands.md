@@ -1,5 +1,5 @@
 ---
-summary: An operand tells the platform which data to use to manipulate an expression.
+summary: OutSystems Developer Cloud (ODC) provides a comprehensive guide on using operands, literals, variables, and functions in expressions.
 tags:
 locale: en-us
 guid: 6c363890-b0af-4d1c-92ae-1cb346aa6f7d

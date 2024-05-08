@@ -1,5 +1,5 @@
 ---
-summary: Learn how to configure an HTTP proxy server on your local computer to be used by ODC Studio.
+summary: This article provides a guide on configuring a HTTP proxy server in the operating system and ODC Studio for OutSystems Developer Cloud (ODC) connectivity.
 tags: 
 locale: en-us
 guid: 00ad2577-20fe-41d3-8d0f-c6626c50b587

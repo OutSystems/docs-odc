@@ -1,5 +1,5 @@
 ---
-summary: The article details various date and time manipulation functions, including adding time units, building date/time values, and calculating differences.
+summary: OutSystems Developer Cloud (ODC) supports a variety of date and time manipulation functions for both server-side and client-side logic.
 tags:
 locale: en-us
 guid: 9f92e1f1-c921-4a83-b689-e0e554244c15

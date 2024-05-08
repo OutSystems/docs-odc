@@ -1,5 +1,5 @@
 ---
-summary: Service actions are reusable code components that promote code reuse, maintainability, and modularity in OutSystems Developer Cloud (ODC). They enable integration with other apps or systems, improve performance, and can be secured using authentication and authorization mechanisms.
+summary: OutSystems Developer Cloud (ODC) enhances app development with reusable service actions that encapsulate complex logic for efficiency and maintainability.
 tags:
 locale: en-us
 guid: f540d163-f3b7-41c7-a898-b9f07d3f3b89

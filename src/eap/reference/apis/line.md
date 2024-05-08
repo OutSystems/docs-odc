@@ -1,5 +1,5 @@
 ---
-summary: Learn how you can create a simple Line Chart with a Spline line and custom markers.
+summary: OutSystems Developer Cloud (ODC) enables the creation of a Line Chart with a Spline line and custom markers.
 tags: 
 locale: en-us
 guid: 7d5b86f8-dcc0-4ea7-a5f8-3f6d1e2c56c5

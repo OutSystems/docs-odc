@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Chat Message UI Pattern is used to display conversational posts in notifications or chat screens.
+summary: Learn how to integrate and customize the Chat Message UI Pattern in OutSystems Developer Cloud (ODC) for enhanced chat functionalities.
 locale: en-us
 guid: e2779043-5437-4ee5-aed8-03b1a2f1ff85
 app_type: mobile apps, reactive web apps

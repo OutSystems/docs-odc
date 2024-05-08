@@ -1,5 +1,5 @@
 ---
-summary: Aggregates allow you to fetch data using an optimized query, tailored to your usage.
+summary: Learn to manage data with Aggregates in OutSystems Developer Cloud (ODC), supporting optimized client-side and server-side queries.
 tags:
 helpids: 17203
 locale: en-us

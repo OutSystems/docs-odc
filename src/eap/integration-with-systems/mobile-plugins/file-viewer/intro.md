@@ -1,5 +1,5 @@
 ---
-summary: File Viewer Plugin allows users to open remote or app resource files in mobile apps.
+summary: Learn how to use the File Viewer Plugin in OutSystems Developer Cloud (ODC) to open and manage files within mobile apps.
 tags:
 locale: en-us
 guid: 0e246269-47c6-47c6-ba92-308f35edcd40

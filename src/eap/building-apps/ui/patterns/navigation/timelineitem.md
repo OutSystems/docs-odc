@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Timeline Item UI Pattern is used to display related events in chronological order.
+summary: OutSystems Developer Cloud (ODC) features the Timeline Item UI Pattern for displaying events in chronological order.
 locale: en-us
 guid: e420ff2a-afcd-4ca6-9d65-9e42ee8d5213
 app_type: mobile apps, reactive web apps

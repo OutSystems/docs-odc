@@ -1,5 +1,5 @@
 ---
-summary: This article provides detailed information about customizing the behaviour of deeplink.
+summary: OutSystems Developer Cloud (ODC) allows customization of deeplink behavior in mobile apps using the `DeepLinksHandlerType` preference.
 tags:
 locale: en-us
 guid: 7ead36ce-4ee4-48e7-b8f8-3575d373f17b

@@ -1,5 +1,5 @@
 ---
-summary: Differences in using SQL compared to OutSystems 11.  
+summary: OutSystems Developer Cloud (ODC) supports advanced SQL queries with Aurora PostgreSQL, differing in syntax from OutSystems 11.
 tags:
 locale: en-us
 guid: db4685f5-477f-436a-b4cc-92af8e347c02

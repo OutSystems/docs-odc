@@ -1,5 +1,5 @@
 ---
-summary: A many-to-many relationship occurs when one entity has a one-to-many relationship with another entity, and vice-versa.
+summary: Learn to create a many-to-many relationship in OutSystems Developer Cloud (ODC) using a junction entity.
 tags:
 locale: en-us
 guid: 4e158cbd-cb4d-4152-81f2-dae5e703e5ec

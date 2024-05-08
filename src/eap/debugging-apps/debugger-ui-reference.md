@@ -1,5 +1,5 @@
 ---
-summary: The Debugger Tab in ODC Studio allows you to track threads being debugged and examine app elements and runtime values.
+summary: Explore the Debugger Tab in OutSystems Developer Cloud (ODC) to manage threads, examine app elements, and control runtime values during debugging sessions.
 tags:
 locale: en-us
 guid: 81645496-3038-4765-9092-e2ab5a7f413b

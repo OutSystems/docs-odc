@@ -1,5 +1,5 @@
 ---
-summary: Extensibility Configurations in OutSystems Developer Cloud (ODC) allows you to customize advanced settings for your mobile app.
+summary: Utilize Extensibility Configurations in OutSystems Developer Cloud (ODC) for advanced mobile app customization.
 tags:
 locale: en-us
 guid: 941e56cf-aacf-43bf-9d1c-f131565036e6

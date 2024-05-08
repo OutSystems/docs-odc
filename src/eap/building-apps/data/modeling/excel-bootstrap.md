@@ -1,5 +1,5 @@
 ---
-summary: You can import data from an Excel file to load data to an entity.
+summary: OutSystems Developer Cloud (ODC) enables data bootstrapping from Excel files into entities for efficient application development and testing.
 tags:
 locale: en-us
 guid: e2c6960b-b589-475a-b0e4-4792bba6a6be

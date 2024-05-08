@@ -1,5 +1,5 @@
 ---
-summary: Learn more about submitting Forge asset to share it with other developers. 
+summary: Learn how to submit and manage reusable software assets to Forge using OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: c611c0a7-9a50-4c1d-9e8c-d51b7a237c3e

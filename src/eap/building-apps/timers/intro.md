@@ -1,5 +1,5 @@
 ---
-summary: Timers in OutSystems allow you to execute asynchronous logic
+summary: OutSystems Developer Cloud (ODC) leverages container infrastructure to manage and execute timers for asynchronous tasks in applications.
 tags:
 locale: en-us
 guid: 94BE2885-0E48-4516-9CD1-6638F16E7F4E

@@ -1,5 +1,5 @@
 ---
-summary: Learn best practices to document your shared forge asset.
+summary: Explore best practices for documenting Forge assets in OutSystems Developer Cloud (ODC), including installation and setup guidelines.
 tags:
 locale: en-us
 guid: C5331351-418A-4B72-AB9E-0CBE317A97D9

@@ -1,5 +1,5 @@
 ---
-summary: Creating a one-to-many relationship between entities
+summary: OutSystems Developer Cloud (ODC) supports the creation of one-to-many relationships between entities using foreign keys.
 tags:
 locale: en-us
 guid: 6bde9ed9-7127-4f01-96ee-3add9ecda974

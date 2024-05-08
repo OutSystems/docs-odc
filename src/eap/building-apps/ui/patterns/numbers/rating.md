@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Rating UI Pattern allows users to rate products and services.
+summary: Explore how to implement and customize the Rating UI Pattern in OutSystems Developer Cloud (ODC) to enhance user interaction.
 locale: en-us
 guid: 31fc8803-e23e-4f60-8731-2fc03e5a51bf
 app_type: mobile apps, reactive web apps

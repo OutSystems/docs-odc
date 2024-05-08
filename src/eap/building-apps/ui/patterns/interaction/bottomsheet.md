@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Bottom Sheet Pattern is used to display additional information at the bottom of the screen in mobile apps.
+summary: OutSystems Developer Cloud (ODC) enables the use of the Bottom Sheet UI pattern in mobile apps.
 locale: en-us
 guid: b45a2a54-8dbe-44f4-8a96-63e5e26d5ae0
 app_type: mobile apps

@@ -1,5 +1,5 @@
 ---
-summary:
+summary: Learn about the EmailAddressCreate and EmailAddressValidate functions in OutSystems Developer Cloud (ODC), which handle email formatting and validation.
 tags:
 locale: en-us
 guid: 159cfa54-f51b-43cf-ae8b-e736e4a9f2e2

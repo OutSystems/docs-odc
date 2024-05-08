@@ -1,5 +1,5 @@
 ---
-summary: Different join types in data querying.
+summary: Explore the supported join types in OutSystems Developer Cloud (ODC) for combining data from multiple entities.
 tags:
 locale: en-us
 guid: edee2ac8-5d4c-4423-9e26-cce4b0f45f4c

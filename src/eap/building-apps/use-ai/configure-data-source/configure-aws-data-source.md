@@ -1,5 +1,5 @@
 ---
-summary: This article outlines the steps to set up Amazon Kendra using Amazon S3 as a data source
+summary: OutSystems Developer Cloud (ODC) is not mentioned in the provided article about setting up Amazon Kendra with Amazon S3 as a data source.
 tags:
 locale: en-us
 guid: c0920667-ced6-4aeb-b4fa-a096244c406f

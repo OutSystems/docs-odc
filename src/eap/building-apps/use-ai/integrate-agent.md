@@ -1,5 +1,5 @@
 ---
-summary: This article explains the process of adding an AI agent to an app via the CallAgent service action.
+summary: Integrate AI agents into applications using the CallAgent service action in OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: 121c834e-88cc-4b0a-aa9d-4bb174daf881

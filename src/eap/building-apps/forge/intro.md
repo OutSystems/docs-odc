@@ -1,5 +1,5 @@
 ---
-summary: Install, learn and use Forge, a repository of libraries, and apps to create and share your projects.
+summary: Explore and share reusable software assets on OutSystems Developer Cloud (ODC) through Forge, enhancing app development and technical solutions.
 tags:
 locale: en-us
 guid: 8a1edbeb-2a5c-48f6-a5c2-8b2b15a538bf

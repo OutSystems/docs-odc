@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Bottom Bar Item UI Pattern provides access to a bottom navigation drawer and up to four actions.
+summary: OutSystems Developer Cloud (ODC) features the Bottom Bar Item UI Pattern for easy navigation and feature access in applications.
 locale: en-us
 guid: a47f6440-0442-42ec-8674-e4cfb134957b
 app_type: mobile apps, reactive web apps

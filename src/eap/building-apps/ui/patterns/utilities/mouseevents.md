@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Mouse Events UI Pattern allows users to select elements on the interface with high precision.
+summary: Explore how to implement precise element selection using the Mouse Events UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: c9b283f3-79d1-4ac0-93a4-1f1a7a2c50e7
 app_type: mobile apps, reactive web apps

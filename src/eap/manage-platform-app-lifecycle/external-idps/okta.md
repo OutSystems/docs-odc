@@ -1,5 +1,5 @@
 ---
-summary: This article explains how to configure Okta as an external identity provider in OutSystems Developer Cloud Portal.
+summary: OutSystems Developer Cloud (ODC) allows admins to configure Okta as an external identity provider through its portal interface.
 tags: 
 locale: en-us
 guid: 0a284428-86c4-4b57-b912-b122674b69e4
@@ -18,27 +18,27 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. Login to the [**Okta Portal**](https://login.okta.com/). Navigate to the **Applications > Applications** screen and click **Create App Integration** to create a new application.
 
-    ![Okta Portal](images/create-app-integration-ok.png)
+    ![Okta dashboard highlighting the 'Create App Integration' button.](images/create-app-integration-ok.png "Okta Create App Integration")
 
 1. In the **Create a new app integration** wizard, select **OIDC - OpenID Connect** under Sign-in method and **Web Application** under **Application type**. Click **Next**.
 
-    ![Okta Portal](images/config-app-integration-ok.png)
+    ![Okta 'Create a new app integration' wizard with 'OIDC - OpenID Connect' and 'Web Application' selected.](images/config-app-integration-ok.png "Okta App Integration Configuration")
 
 1. Add a name for your application and select **Skip group assignment for now** in the assignments section. Click **Save**.
 
 1. Navigate to the **Security > API** screen and click **default** under the entry for the new application.
 
-    ![Okta Portal](images/security-api-ok.png)
+    ![Okta Security settings showing the API section with 'default' selected.](images/security-api-ok.png "Okta Security API")
 
 1. Copy the URL from the **Metadata URI** field and paste it into the **Discovery endpoint** field in ODC Portal.
 
-    ![Okta Portal](images/metadata-uri-ok.png)
+    ![Okta Authorization Server settings displaying the 'Metadata URI' field.](images/metadata-uri-ok.png "Okta Metadata URI")
 
 1. Click **Get details** in **ODC Portal**. This retrieves the JSON of the Okta OpenID configuration and shows a preview.
 
 1. Copy the value of the **Client ID** field from the main screen of the new application in Okta Portal and paste it into the **Client ID** field in ODC Portal. Repeat for the **Client Secret** field.
 
-    ![Okta Portal](images/add-client-id-secret-ok.png)
+    ![Okta application details showing the 'Client ID' and 'Client Secret' fields.](images/add-client-id-secret-ok.png "Okta Client ID and Secret")
 
     <div class="info" markdown="1">
     ODC safely stores the configuration details in a secret manager.
@@ -62,7 +62,7 @@ To add permitted redirects for the Okta provider follow the steps below.
 
 1. Now for the Platform and/or each app stage you applied the Okta provider, copy the **Logout** URL(s) and then paste them as individual URIs in the **Sign-out redirect URIs** section in Okta Portal. You should copy the URL(s) for both the built-in domain and any active [custom domains](../custom-domains.md).
 
-    ![Okta Portal](images/login-logout-uris-ok.png)
+    ![Okta application settings with fields for 'Sign-in redirect URIs' and 'Sign-out redirect URIs'.](images/login-logout-uris-ok.png "Okta Login and Logout URIs")
 
 1. Click **Save**.
 

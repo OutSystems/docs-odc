@@ -1,5 +1,5 @@
 ---
-summary: This article provides a step-by-step guide on adding Azure AI Search to the AI Agent Builder app
+summary: Explore how to integrate Azure AI Search as a data source in the AI Agent Builder app using OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: 92480398-1f83-4f8a-9439-f1d8299ffbc6

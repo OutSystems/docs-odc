@@ -1,5 +1,5 @@
 ---
-summary: This article introduces the concepts of relationships between entities.
+summary: OutSystems Developer Cloud (ODC) supports the management of one-to-one, one-to-many, and many-to-many entity relationships in data models.
 tags:
 locale: en-us
 guid: 34840e6f-13be-4db8-ae48-dd118a9fe303

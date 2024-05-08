@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Blank Slate UI Pattern is used to inform end-users and display no data available.
+summary: Explore how to implement the Blank Slate UI Pattern in OutSystems Developer Cloud (ODC) to enhance user interfaces when no data is available.
 locale: en-us
 guid: 8f31ca3f-5223-4225-b292-304330d0e17e
 app_type: mobile apps, reactive web apps

@@ -1,5 +1,5 @@
 ---
-summary: The article explains how to create and use structures and records in OutSystems to manage compound data types
+summary: Explore how to use structures and records for efficient data handling in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 0453b145-9d9c-4b7c-bf8f-f3a62af56a4f
 app_type: mobile apps, reactive web apps

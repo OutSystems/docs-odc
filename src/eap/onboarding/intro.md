@@ -1,5 +1,5 @@
 ---
-summary: Summary of OutSystems Developer Cloud (ODC) differences for OutSystems 11 developers.  
+summary: Explore the scalable, secure, and efficient app development features of OutSystems Developer Cloud (ODC), designed for rapid enterprise-grade deployments.
 tags:
 locale: en-us
 guid: cb10aa0f-4e5b-4a29-92ce-03fbc813bc14

@@ -1,5 +1,5 @@
 ---
-summary:
+summary: OutSystems Developer Cloud (ODC) enables the implementation of app logic through customizable actions.
 tags:
 locale: en-us
 guid: 4968c372-2dc8-4131-8f37-7951fec8f431

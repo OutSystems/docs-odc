@@ -1,5 +1,5 @@
 ---
-summary: Learn how to start developing in OutSystems Developer Cloud
+summary: Explore app development with OutSystems Developer Cloud (ODC), a scalable platform for building and deploying enterprise-grade applications.
 tags:
 locale: en-us
 guid: 6B0090D9-8EE9-479F-9251-CCB490D2EBB6

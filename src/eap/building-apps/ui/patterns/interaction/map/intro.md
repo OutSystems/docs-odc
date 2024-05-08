@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The OutSystems Map component allows you to add maps to your applications with single or multiple locations.
+summary: Utilize the OutSystems Developer Cloud (ODC) Map component for dynamic and static mapping in applications.
 locale: en-us
 guid: cdacfb9a-e989-424b-b3ed-5608dfa0d02c
 app_type: mobile apps, reactive web apps

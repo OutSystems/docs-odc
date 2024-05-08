@@ -1,5 +1,5 @@
 ---
-summary: Learn about managing and inviting users to your organization in OutSystems Developer Cloud (ODC).
+summary: OutSystems Developer Cloud (ODC) facilitates user management by assigning roles and permissions to control access to resources and apps.
 locale: en-us
 guid: 9e0fb9b7-d2b0-419f-a5d8-5b5ed730da5e
 app_type: mobile apps, reactive web apps

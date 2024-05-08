@@ -1,6 +1,6 @@
 ---
 tags:
-summary: You can use the Video UI pattern to embed a native video player into your application.
+summary: Explore how to embed a native video player in your application using the Video UI pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: c9dbb039-b648-4395-a19d-863c0fd4cfae
 app_type: mobile apps, reactive web apps

@@ -1,5 +1,5 @@
 ---
-summary: This article explains the process of creating and customizing AI agents using AI Agent Builder.
+summary: Explore how to create and customize AI agents using OutSystems Developer Cloud (ODC) and AI Agent Builder.
 tags:
 locale: en-us
 guid: 76197f5e-bca6-4603-8e93-45fa96ca76b2

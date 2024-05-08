@@ -1,5 +1,5 @@
 ---
-summary: The article discusses theme compatibility in Screen Templates.
+summary: Learn how to address theme compatibility issues in Screen Templates within OutSystems Developer Cloud (ODC) to ensure your app displays correctly.
 tags:
 locale: en-us
 guid: 9d153217-df3d-488c-ad5c-22cdc196942d

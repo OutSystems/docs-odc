@@ -1,5 +1,5 @@
 ---
-summary: Handle and raise exceptions in OutSystems applications.
+summary: Explore how to manage various types of exceptions including User, Database, and Security Exceptions in OutSystems Developer Cloud (ODC).
 tags: 
 locale: en-us
 guid: ec639f37-b5ee-4ca4-974d-9096596614ae

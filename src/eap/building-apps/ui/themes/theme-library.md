@@ -1,5 +1,5 @@
 ---
-summary: Use Theme Library for app branding
+summary: Learn how to create and utilize a theme library in OutSystems Developer Cloud (ODC) to enhance app branding and consistency.
 tags:
 locale: en-us
 guid: ca470c96-62e3-4b1b-9279-af09006e8042

@@ -1,5 +1,5 @@
 ---
-summary: Testing and fixing accessibility issues in ODC Studio using the WAVE accessibility evaluation tool.
+summary: OutSystems Developer Cloud (ODC) supports accessibility testing and fixing through tools like WAVE and Lighthouse, as demonstrated in ODC Studio.
 tags:
 locale: en-us
 guid: 04bcfcb9-e575-4b01-9b03-0e755ea54fdb

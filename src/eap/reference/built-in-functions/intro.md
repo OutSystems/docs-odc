@@ -1,5 +1,5 @@
 ---
-summary:
+summary: Explore built-in functions in OutSystems Developer Cloud (ODC) to enhance app logic with safe, exception-free operations.
 tags:
 locale: en-us
 guid: 2eda09fd-8f1d-4a0d-a724-0bdb5f35d398

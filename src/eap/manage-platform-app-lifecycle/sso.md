@@ -1,5 +1,5 @@
 ---
-summary: Learn more about Single sign-on in ODC. Add an SSO button for external providers.
+summary: Explore how OutSystems Developer Cloud (ODC) facilitates single sign-on (SSO) integration and enhances user authentication experiences.
 tags: 
 locale: en-us
 guid: fe13e0ec-b375-4b07-946e-4ee1850436a4

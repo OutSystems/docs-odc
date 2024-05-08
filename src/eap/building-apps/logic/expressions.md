@@ -1,5 +1,5 @@
 ---
-summary: An expression consists of operands and operators, or just one operand.
+summary: OutSystems Developer Cloud (ODC) provides tools for editing and displaying expressions in software development.
 tags:
 locale: en-us
 guid: 1e04dcf4-f498-4359-b2ae-399e64abdd9e

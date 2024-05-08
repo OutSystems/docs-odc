@@ -1,5 +1,5 @@
 ---
-summary: Learn how to create your "Hello, world!" app in ODC.
+summary: Learn how to create a "Hello, world!" app using OutSystems Developer Cloud (ODC) by following step-by-step instructions in ODC Studio.
 tags:
 locale: en-us
 guid: 96080429-23d5-45e0-b43b-c353192ed4bf

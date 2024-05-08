@@ -1,5 +1,5 @@
 ---
-summary: Edit expressions with the expression editor in ODC Studio
+summary: Edit expressions in OutSystems Developer Cloud (ODC) Studio using its comprehensive expression editor with autocomplete and documentation features.
 tags:
 locale: en-us
 guid: 1ad176b7-bb78-41f9-ae4a-69d3e0e06a13

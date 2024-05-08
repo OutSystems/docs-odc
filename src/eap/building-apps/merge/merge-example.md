@@ -1,5 +1,5 @@
 ---
-summary: Resolve conflicts when merging app revisions
+summary: Learn how to handle app publishing conflicts in OutSystems Developer Cloud (ODC) by comparing and merging revisions.
 locale: en-us
 guid: 04cfd0b0-ab60-454e-a770-6a8d19f9974f
 app_type: mobile apps, reactive web apps

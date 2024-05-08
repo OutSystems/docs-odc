@@ -1,5 +1,5 @@
 ---
-summary: The Gallery UI Pattern allows users to sequentially browse images.
+summary: Explore how to implement and customize the Gallery UI Pattern in OutSystems Developer Cloud (ODC) to display content effectively.
 tags:
 locale: en-us
 guid: 6ae27265-f93e-465d-ae49-d98f7dedb86c

@@ -1,5 +1,5 @@
 ---
-summary: OutSystems allows you to handle REST API error responses by implementing your own logic
+summary: Explore how to handle and manipulate REST API errors in OutSystems Developer Cloud (ODC) by using exception handlers and the OnAfterResponse callback.
 tags:
 locale: en-us
 guid: 7cec44e7-afba-470f-ae17-1804d2b0ae4d

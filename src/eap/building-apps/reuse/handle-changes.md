@@ -1,5 +1,5 @@
 ---
-summary: Handle the impact on modifications to elements that are being reused between apps and libraries.
+summary: Learn how to manage changes in exposed functionality and handle breaking changes effectively using OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 80bb4604-c06b-48c7-8e8b-382416c95368
 app_type: mobile apps, reactive web apps

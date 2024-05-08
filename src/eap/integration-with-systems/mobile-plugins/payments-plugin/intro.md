@@ -1,5 +1,5 @@
 ---
-summary: Use the Payments Plugin to enable users to complete payments using Apple Pay or Google Pay.
+summary: OutSystems Developer Cloud (ODC) integrates a Payments Plugin for mobile apps, enabling payment processing with Apple Pay and Google Pay.
 locale: en-us
 guid: e3086e25-ffd3-4660-8162-ee45350e0f3f
 app_type: mobile apps

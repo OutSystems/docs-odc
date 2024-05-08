@@ -1,5 +1,5 @@
 ---
-summary: Learn how the App health dashboard in ODC Portal monitors app health, based on performance and errors.
+summary: OutSystems Developer Cloud (ODC) features an App health dashboard for monitoring and analyzing app performance metrics.
 tags:
 locale: en-us
 guid: e190d5fb-6b99-4d9b-a64f-a3b34be3588d

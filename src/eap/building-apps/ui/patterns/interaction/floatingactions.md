@@ -1,6 +1,6 @@
 ---
 tags:
-summary: Floating Actions is a UI pattern that displays an action that floats in the bottom right corner of the screen.
+summary: Learn how to implement the Floating Actions UI Pattern in OutSystems Developer Cloud (ODC) to enhance user interface design.
 locale: en-us
 guid: a246e3bb-4c75-4e3b-8a53-eb45a08996ae
 app_type: mobile apps, reactive web apps

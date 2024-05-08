@@ -1,5 +1,5 @@
 ---
-summary: You can export translatable resources to files and send them to a professional translation service.
+summary: OutSystems Developer Cloud (ODC) supports translation management by allowing users to export and import translatable resources for apps.
 tags:
 locale: en-us
 guid: 9eb50227-4f61-4cd7-809c-c290804c7e07

@@ -1,5 +1,5 @@
 ---
-summary: Deploy apps to stages using the ODC (OutSystems Developer Cloud) Portal. Analyze impact of deployment to apps and consumers.
+summary: OutSystems Developer Cloud (ODC) facilitates app deployment across multiple stages with containerization and a unified code repository.
 tags:
 locale: en-us
 guid: d0aa50bf-0378-4bb9-8c4f-71b37092dd8b

@@ -1,5 +1,5 @@
 ---
-summary:
+summary: OutSystems Developer Cloud (ODC) offers libraries to enhance app capabilities, with guidance on usage available.
 tags:
 locale: en-us
 guid: ddb5aa99-a1cb-4c42-9836-fb1f483fc470

@@ -1,6 +1,6 @@
 ---
 tags:
-summary: Groups information in a small block organized with different sections for title, image, and content.
+summary: Learn to organize information using the Card Sectioned UI pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 7ac603a7-60c1-48cf-b47d-fed2ac2e544b
 app_type: mobile apps, reactive web apps

@@ -1,6 +1,6 @@
 ---
 helpids: 30493
-summary: Learn about creating and managing organization and end-user roles
+summary: OutSystems Developer Cloud (ODC) features organization and end-user roles to manage access and permissions within its development environment.
 locale: en-us
 guid: 766ab743-31f2-4f58-ad91-a4cd0db8ab93
 app_type: mobile apps, reactive web apps

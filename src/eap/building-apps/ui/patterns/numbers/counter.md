@@ -1,6 +1,6 @@
 ---
 tags: 
-summary: Counter shows the total number of occurrences of several values regarding a single topic.
+summary: Learn how to use the Counter UI Pattern in OutSystems Developer Cloud (ODC) to display numerical data effectively.
 locale: en-us
 guid: 7b33f1cb-f293-49c5-ad4a-8c781526acb7
 app_type: mobile apps, reactive web apps

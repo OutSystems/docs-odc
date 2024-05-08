@@ -1,6 +1,6 @@
 ---
 helpids: 30503
-summary: This article outlines steps to integrate Azure OpenAI and Amazon Bedrock AI models with the AI Agent Builder.
+summary: OutSystems Developer Cloud (ODC) integrates AI models from Azure OpenAI and Amazon Bedrock to enhance AI Agent Builder capabilities.
 tags:
 locale: en-us
 guid: 81dc39d3-cb37-4757-88fe-eec0fbfc80ea

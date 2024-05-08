@@ -1,5 +1,5 @@
 ---
-summary: The translation editor in ODC Studio allows you to translate text and manage translations.
+summary: Explore the translation editor in OutSystems Developer Cloud (ODC) for managing app translations directly within ODC Studio.
 tags:
 locale: en-us
 guid: af4a2233-5b33-4b4e-bf4c-e24216bcbb07

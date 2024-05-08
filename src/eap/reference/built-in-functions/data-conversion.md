@@ -1,5 +1,5 @@
 ---
-summary: The article details various data conversion functions for converting between types like Boolean, Integer, Text, DateTime, Decimal, and more, with examples and availability in server-side, client-side, and database contexts
+summary: OutSystems Developer Cloud (ODC) supports a variety of data conversion functions for server-side, client-side, and database logic.
 tags:
 locale: en-us
 guid: 09f6ea4e-ab86-4288-823d-aab5b88c808b

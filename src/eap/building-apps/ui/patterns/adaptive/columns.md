@@ -1,5 +1,5 @@
 ---
-summary: You can use the Columns UI Pattern to split content into separate columns.
+summary: OutSystems Developer Cloud (ODC) offers a Columns UI Pattern to enhance on-screen content organization by splitting it into separate columns.
 tags:
 locale: en-us
 guid: 2b4629ec-0dcd-4a8c-81a7-ade0ecf7ad9a

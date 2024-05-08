@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) allows architects to design apps using a cloud-native approach.
+summary: OutSystems Developer Cloud (ODC) supports cloud-native app architecture with scalable, loosely coupled components and strong library dependencies.
 tags:
 locale: en-us
 guid: 145cf74c-c7a2-432d-b0b3-110d551d0e36

@@ -1,5 +1,5 @@
 ---
-summary: You can consume one or more REST API methods in ODC Studio by importing Swagger specifications. 
+summary: OutSystems Developer Cloud (ODC) supports consuming single or multiple REST API methods with Swagger integration.
 tags:
 locale: en-us
 guid: 1901abf6-d016-4fc6-84df-c8ea2fe92003

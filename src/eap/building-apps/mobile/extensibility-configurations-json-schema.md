@@ -1,5 +1,5 @@
 ---
-summary: The article details the JSON schema for Extensibility Configurations in mobile apps, outlining how to specify plugins, preferences, icons, splash screens, and access settings
+summary: Learn how to customize mobile apps using the JSON schema for Extensibility Configurations in OutSystems Developer Cloud (ODC).
 tags: 
 locale: en-us
 guid: ecb98e61-f07f-4204-a899-9fd1d5460fbf

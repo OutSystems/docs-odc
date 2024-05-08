@@ -1,5 +1,5 @@
 ---
-summary: This article explains how to configure custom domains for apps in OutSystems Developer Cloud.
+summary: OutSystems Developer Cloud (ODC) supports custom domain configuration for app stages, with automatic SSL certificate issuance and domain validation.
 tags: 
 locale: en-us
 guid: da18534d-84c8-4a52-bca8-85ebb3b1e082

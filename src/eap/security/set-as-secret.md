@@ -1,5 +1,5 @@
 ---
-summary: Manage sensitive information by setting it as secret in ODC (OutSystems Developer Cloud) Studio. 
+summary: OutSystems Developer Cloud (ODC) enables secure and encrypted storage of sensitive app settings configured as secrets.
 locale: en-us
 guid: 3a5f56e7-2515-4e97-914e-b8a503f82c7f
 app_type: mobile apps, reactive web apps

@@ -1,5 +1,5 @@
 ---
-summary: Accessible Rich Internet Applications (ARIA) is a set of accessibility standards that provides additional information to assistive technology tools.
+summary: Explore how to enhance accessibility in web applications using ARIA roles and attributes within OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: 2dd1e5f8-9198-4f04-bc61-6a62073113e5

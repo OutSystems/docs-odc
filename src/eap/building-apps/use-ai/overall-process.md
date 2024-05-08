@@ -1,5 +1,5 @@
 ---
-summary: This article outlines the steps to build and integrate generative AI agents using AI Agent Builder
+summary: OutSystems Developer Cloud (ODC) facilitates the creation and integration of AI agents through its AI Agent Builder tool.
 tags:
 locale: en-us
 guid: 683e4fb2-5457-4952-8f98-0da719576379

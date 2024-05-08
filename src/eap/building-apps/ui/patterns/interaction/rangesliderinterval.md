@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Range Slider Interval Pattern allows users to select a single value between two range values.
+summary: Explore the Range Slider Interval Pattern in OutSystems Developer Cloud (ODC) for selecting values within a defined range using the noUiSlider library.
 locale: en-us
 guid: aa015998-a6e2-48bb-a0cc-2c53b4df2832
 app_type: mobile apps, reactive web apps

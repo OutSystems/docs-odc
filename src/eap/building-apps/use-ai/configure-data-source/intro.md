@@ -1,5 +1,5 @@
 ---
-summary: This article outlines steps to configure external data sources for use with Azure OpenAI and Amazon Kendra search services.
+summary: Learn how to configure and integrate external data sources with AI search services for use in OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: 425ba4ef-f4a7-42e1-9687-88a5e5021336

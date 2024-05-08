@@ -1,5 +1,5 @@
 ---
-summary: Learn how you can create a simple Pie Chart showing the labels of the data points instead of the legend.
+summary: Learn how to create and customize a Pie Chart with labeled data points using OutSystems Developer Cloud (ODC).
 tags: 
 locale: en-us
 guid: fda78656-7247-472a-8d79-c79accc91556

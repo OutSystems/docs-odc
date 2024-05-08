@@ -1,5 +1,5 @@
 ---
-summary: Create and Reuse Screen Blocks to easily reuse parts of UI across apps.
+summary: Learn to create and reuse UI blocks across apps with OutSystems Developer Cloud (ODC) for efficient development.
 tags:
 locale: en-us
 guid: a62501dc-9ec8-41f6-add8-50b3e3934b8b

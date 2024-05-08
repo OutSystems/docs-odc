@@ -1,5 +1,5 @@
 ---
-summary:
+summary: OutSystems Developer Cloud (ODC) provides multiple formatting functions for different data types, each with customizable parameters.
 tags:
 locale: en-us
 guid: 0fa49cf6-bb6f-47d2-8c29-1c326d380d63

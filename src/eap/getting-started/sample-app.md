@@ -1,5 +1,5 @@
 ---
-summary: Build a basic Web app in OutSystems Developer Cloud (ODC)
+summary: Discover how to build a basic To Do list web app using OutSystems Developer Cloud (ODC) in just five minutes.
 tags: 
 locale: en-us
 guid: c344796f-8d4a-4e49-9c8c-094222cd1f5d

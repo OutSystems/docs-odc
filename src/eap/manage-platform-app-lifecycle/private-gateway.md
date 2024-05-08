@@ -1,5 +1,5 @@
 ---
-summary: This article explains how to configure a private gateway to connect apps to private data and services.
+summary: OutSystems Developer Cloud (ODC) features Private Gateways, a secure solution for connecting apps to private network endpoints.
 tags: 
 locale: en-us
 guid: 9a023d82-da5b-4164-8f3f-9d6c35444b50

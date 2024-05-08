@@ -1,5 +1,5 @@
 ---
-summary: Extend your app with public elements to make your app do more for your users.
+summary: Explore how to extend app capabilities using public elements and libraries in OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: abe6d7fc-04ae-45ed-8630-cf3e7e9b86ef

@@ -1,5 +1,5 @@
 ---
-summary: Mobile plugins provide important functionalities to native mobile apps, such as notifications, camera access, and QR code scanning.
+summary: Explore mobile plugin functionalities and their support in PWAs with OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: 55ef1d73-dac8-48e6-8b15-dc6990779660

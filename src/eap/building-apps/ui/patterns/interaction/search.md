@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Search UI Pattern allows users to find content by entering queries.
+summary: OutSystems Developer Cloud (ODC) features a Search UI Pattern that enables users to find content within applications by entering queries.
 locale: en-us
 guid: 1914dd20-040d-4a96-8293-e35756cb8e6a
 app_type: mobile apps, reactive web apps

@@ -1,5 +1,5 @@
 ---
-summary: This article discusses the security of OutSystems Developer Cloud (ODC), including secure code and processes, network layer security, and container security.
+summary: OutSystems Developer Cloud (ODC) employs secure-by-design principles, featuring multi-layered security and compliance with industry standards.
 tags:
 locale: en-us
 guid: bffd8c9e-16b6-4458-a146-ddb6f8077e12

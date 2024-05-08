@@ -1,5 +1,5 @@
 ---
-summary: Learn what is the right app for your project. Know the difference between web and mobile apps in OutSystems Developer Cloud (ODC) and what to choose for your needs. 
+summary: Explore the diverse app development capabilities of OutSystems Developer Cloud (ODC), including web and mobile applications.
 tags: 
 locale: en-us
 guid: 2c23e305-f3ca-46cc-a8c8-a29c409a9ccf

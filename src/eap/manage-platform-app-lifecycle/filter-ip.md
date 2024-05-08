@@ -1,5 +1,5 @@
 ---
-summary: ODC Portal lets you filter incoming IP addresses.
+summary: Explore how OutSystems Developer Cloud (ODC) enhances app security through configurable IP filters to restrict access based on IP addresses.
 tags:
 locale: en-us
 guid: 269db566-d03b-49ae-84d8-c4aa181d8a88

@@ -1,5 +1,5 @@
 ---
-summary: The Flip Content UI Pattern allows you to display information that flips and shows different content when clicked.
+summary: OutSystems Developer Cloud (ODC) features the Flip Content UI Pattern for interactive content display in applications.
 tags:
 locale: en-us
 guid: d87a061c-83e2-4b7f-b820-4e7f70267a38

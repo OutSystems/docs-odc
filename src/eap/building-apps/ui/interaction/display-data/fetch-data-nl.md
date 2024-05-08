@@ -1,5 +1,5 @@
 ---
-summary: Fetch data in your apps using human language.
+summary: OutSystems Developer Cloud (ODC) enables fetching data using human language to create queries in ODC Studio, simplifying data interaction.
 tags:
 locale: en-us
 guid: 0e8d2237-0ede-4be9-ac0d-3603a1ab8fae

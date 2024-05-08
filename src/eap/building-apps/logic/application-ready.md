@@ -1,5 +1,5 @@
 ---
-summary:
+summary: Explore how the OutSystems Developer Cloud (ODC) utilizes the "On Application Ready" event to initialize apps and manage screen rendering.
 tags: 
 locale: en-us
 guid: 393ee8f0-dede-42fe-b5fb-ecd4ed0ec534

@@ -1,5 +1,5 @@
 ---
-summary: This article provides a reference for the operators used in OutSystems expressions.
+summary: OutSystems Developer Cloud (ODC) supports various operators for expressions, including arithmetic, logical, and comparison types.
 tags:
 locale: en-us
 guid: ab45e99f-581c-4e59-a13b-0a23931a7e85

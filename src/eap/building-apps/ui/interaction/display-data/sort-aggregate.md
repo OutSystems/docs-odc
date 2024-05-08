@@ -1,5 +1,5 @@
 ---
-summary: Aggregates in OutSystems allow for fixed or dynamic sorting of records.
+summary: Explore how to implement fixed and dynamic sorting in aggregates using OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: 4f62a181-c24b-49d7-8a88-95df2253dcf7

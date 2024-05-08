@@ -1,5 +1,5 @@
 ---
-summary: Learn more about building apps in OutSystems Developer Cloud (ODC).  
+summary: OutSystems Developer Cloud (ODC) streamlines app development with scalable cloud solutions and integrated development tools.
 tags:
 locale: en-us
 guid: 8ed3a740-284e-4650-9502-29f3a53bfd29

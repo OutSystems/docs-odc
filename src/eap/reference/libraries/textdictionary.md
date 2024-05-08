@@ -1,5 +1,5 @@
 ---
-summary:
+summary: OutSystems Developer Cloud (ODC) supports text dictionary management with key-based operations.
 tags:
 locale: en-us
 guid: 7623020f-4c3f-4b6e-ad44-257d4b13fc1b

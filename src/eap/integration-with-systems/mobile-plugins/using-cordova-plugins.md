@@ -1,5 +1,5 @@
 ---
-summary: To use Apache Cordova plugins in mobile apps wrap them into apps and reference using  the Extensibility Configuration JSON.
+summary: Learn how to wrap Apache Cordova plugins into apps for mobile development using OutSystems Developer Cloud (ODC).
 tags: 
 locale: en-us
 guid: 3891dc3c-5286-413f-9a23-1bee7f313e6e

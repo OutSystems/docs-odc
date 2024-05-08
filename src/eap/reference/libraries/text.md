@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Text library provides functionality to manipulate texts such as search and replace using regular expressions, split, join, and format DateTimes.
+summary: OutSystems Developer Cloud (ODC) provides advanced text manipulation and formatting tools.
 tags:
 locale: en-us
 guid: e6b6ad2d-c6c0-4a5e-8034-1b36411c04ef

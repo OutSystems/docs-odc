@@ -1,5 +1,5 @@
 ---
-summary: A progressive web app (PWA) provides a native-like experience without having to distribute a native mobile app.
+summary: OutSystems Developer Cloud (ODC) supports distributing mobile apps as progressive web apps (PWAs) for a native-like experience on multiple platforms.
 tags:
 locale: en-us
 guid: 0fc271c5-bb66-4ea9-a271-6905e3dfc160

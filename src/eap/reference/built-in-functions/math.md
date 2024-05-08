@@ -1,5 +1,5 @@
 ---
-summary:
+summary: OutSystems Developer Cloud (ODC) supports mathematical functions like Abs, Mod, Power, Round, Sqrt, and Trunc for both client-side and server-side logic.
 tags:
 locale: en-us
 guid: f8d8203c-888c-4073-8e85-454190db47f7

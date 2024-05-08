@@ -1,5 +1,5 @@
 ---
-summary: This article explains how to configure Azure AD as an external IdP in OutSystems Developer Cloud Portal.
+summary: Configure Azure AD as an external identity provider in OutSystems Developer Cloud (ODC) using the ODC Portal.
 tags: 
 locale: en-us
 guid: fb6adbb0-7343-4858-8a87-e3f7d8693900

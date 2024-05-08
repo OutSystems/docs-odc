@@ -1,6 +1,6 @@
 ---
 tags: 
-summary: Displays large sets of information, which can be split into different areas, while always remaining a click away. 
+summary: Learn how to implement and customize the Tabs UI Pattern in OutSystems Developer Cloud (ODC) to enhance application navigation and content organization.
 locale: en-us
 guid: 01e14d73-1043-4401-a2d4-0903b3068a5b
 app_type: mobile apps, reactive web apps

@@ -1,5 +1,5 @@
 ---
-summary: ODC provides pre-built screens and blocks for common authentication functionalities.
+summary: OutSystems Developer Cloud (ODC) offers editable pre-built screens and blocks for custom authentication flows.
 tags:
 locale: en-us
 guid: 49853077-9937-4865-8183-3f1f9ff224c2

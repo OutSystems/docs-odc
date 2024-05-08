@@ -1,5 +1,5 @@
 ---
-summary: Solving app or library dependency errors
+summary: Learn how to resolve app or library dependency errors in OutSystems Developer Cloud (ODC) when a dependency is removed from your organization.
 tags: 
 locale: en-us
 guid: d22bb162-d283-48f8-aa43-996f850220d5

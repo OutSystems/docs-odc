@@ -1,5 +1,5 @@
 ---
-summary: You can share public elements across apps to accelerate development and enable consistency.
+summary: OutSystems Developer Cloud (ODC) facilitates the sharing of reusable elements across applications, enhancing development efficiency and consistency.
 tags:
 locale: en-us
 guid: 7e20ed99-3098-4d7c-b7fd-1a5794f8377d

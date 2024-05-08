@@ -1,5 +1,5 @@
 ---
-summary: This article outlines the process for adding Amazon Bedrock AI models to the AI Agent Builder app, including prerequisites and step-by-step instructions.
+summary: Learn how to integrate Amazon Bedrock AI models into the AI Agent Builder app using OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: e871f14b-e322-4cfc-a1b8-bc361fba8dc5

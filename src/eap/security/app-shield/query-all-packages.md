@@ -1,5 +1,5 @@
 ---
-summary: Android 11 introduces the QUERY_ALL_PACKAGES permission for security checks in AppShield.
+summary: Manage QUERY_ALL_PACKAGES permission in Android apps using AppShield on OutSystems Developer Cloud (ODC) for Google Play compliance.
 tags:
 locale: en-us
 guid: c8e9533c-1f33-407f-b3f6-523ac67ad126

@@ -1,5 +1,5 @@
 ---
-summary: Learn how OutSystems UI speeds up the development of user interfaces and provides a solid user experience.  
+summary: OutSystems Developer Cloud (ODC) enhances UI development with built-in templates and customizable patterns, streamlining app design across devices.
 tags:
 locale: en-us
 guid: bd056d16-4d8d-4b0b-ade7-9dc0ffc6f487

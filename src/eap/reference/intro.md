@@ -1,5 +1,5 @@
 ---
-summary: The article provides an overview of OutSystems libraries and built-in functions for app development, including manipulation of binary data, date time, HTTP requests, math calculations, sanitization, security, text, and URLs
+summary: Explore the extensive libraries and built-in functions in OutSystems Developer Cloud (ODC) for advanced app development.
 tags:
 locale: en-us
 guid: f9d530c1-f9fa-4b08-9e75-5dfb984402da

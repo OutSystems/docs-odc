@@ -1,5 +1,5 @@
 ---
-summary: This article provides an overview of data types in OutSystems and their default values and constraints.
+summary: Explore data types, default values, constraints, and conversion functions in OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: 651e9382-9db0-4150-ad11-c160aa9c9835

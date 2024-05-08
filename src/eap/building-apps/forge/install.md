@@ -1,5 +1,5 @@
 ---
-summary: Learn more about installing or updating a Forge asset for use in ODC Studio. 
+summary: Explore how to install and update Forge assets in OutSystems Developer Cloud (ODC) for enhanced functionality.
 tags:
 helpids: 30477
 locale: en-us

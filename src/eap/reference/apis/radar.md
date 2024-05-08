@@ -1,5 +1,5 @@
 ---
-summary: How to create a Radar Chart with multiple series types
+summary: Learn how to create and customize a Radar Chart in OutSystems Developer Cloud (ODC) using multiple series types and data points.
 tags:
 locale: en-us
 guid: 0b784bc9-f546-41e5-9c30-832253c5bc6e

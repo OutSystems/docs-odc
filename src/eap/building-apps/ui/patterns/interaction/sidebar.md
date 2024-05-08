@@ -1,6 +1,6 @@
 ---
 tags: 
-summary: Sidebar shows additional content on the side of the screen.
+summary: OutSystems Developer Cloud (ODC) enhances app functionality with a Sidebar UI Pattern for displaying additional content.
 locale: en-us
 guid: 9bb5e9f0-3a33-4a07-951a-08fdb67267a1
 app_type: mobile apps, reactive web apps

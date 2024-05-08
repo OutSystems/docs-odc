@@ -1,5 +1,5 @@
 ---
-summary: Screens and blocks in OutSystems apps follow a lifecycle composed of stages
+summary: Explore lifecycle events and data handling in OutSystems Developer Cloud (ODC) for mobile and web app development.
 tags:
 locale: en-us
 guid: 91700588-62e6-4527-a323-426c81f47505

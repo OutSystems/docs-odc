@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Range Slider UI Pattern allows users to select a value within a range.
+summary: OutSystems Developer Cloud (ODC) supports the Range Slider UI Pattern, enabling users to select values within a defined range.
 locale: en-us
 guid: 3004b9a7-ba25-42d8-8430-703d2be50470
 app_type: mobile apps, reactive web apps

@@ -1,5 +1,5 @@
 ---
-summary: This article describes how to create a form to validate a user's verification code and password.
+summary: This article provides a detailed guide on creating a verification code and password verification form using OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: 64EC5395-D2E9-494A-A556-9547438D74B9

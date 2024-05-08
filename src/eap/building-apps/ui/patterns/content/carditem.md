@@ -1,6 +1,6 @@
 ---
 tags: 
-summary: The Card Item widget allows you to list items with multiple content types, such as an image or icon, a title and description, and an action to the right.
+summary: Learn how to implement the Card Item UI Pattern in OutSystems Developer Cloud (ODC) to enhance mobile app interfaces.
 locale: en-us
 guid: 0e53449a-f4be-400e-9736-d7d44cc30e7c
 app_type: mobile apps, reactive web apps

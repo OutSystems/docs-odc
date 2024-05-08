@@ -1,5 +1,5 @@
 ---
-summary: Learn about creating and managing passwords for users
+summary: Learn password management and recovery protocols for OutSystems Developer Cloud (ODC), including creation, changes, and lockout procedures.
 locale: en-us
 guid: 41b86768-295e-4aeb-98ed-9a0f6db4cfd2
 app_type: mobile apps, reactive web apps

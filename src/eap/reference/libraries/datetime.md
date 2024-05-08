@@ -1,5 +1,5 @@
 ---
-summary: The OutSystems DateTime library provides actions to access and manipulate DateTime objects.
+summary: Explore date and time manipulation features in OutSystems Developer Cloud (ODC) with the DateTime library's comprehensive actions.
 tags:
 locale: en-us
 guid: 9da728fe-ebdc-4114-af34-1ef4d2265e19

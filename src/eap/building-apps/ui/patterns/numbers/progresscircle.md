@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Progress Circle UI Pattern is used to show the current progress of an operation flow.
+summary: Explore how to implement and customize the Progress Circle UI Pattern in OutSystems Developer Cloud (ODC) to visually represent operation flow progress.
 locale: en-us
 guid: 58229e1f-1b30-4d29-8c94-d709d5428012
 app_type: mobile apps, reactive web apps

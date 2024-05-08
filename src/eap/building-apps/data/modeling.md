@@ -1,5 +1,5 @@
 ---
-summary: This article introduces the concepts of designing a data model.
+summary: OutSystems Developer Cloud (ODC) streamlines app development by auto-converting logical to physical data models in ODC Studio.
 tags:
 locale: en-us
 guid: 5b4d315b-86c8-4c5d-964b-56b758aeee49

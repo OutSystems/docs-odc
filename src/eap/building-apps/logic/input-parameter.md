@@ -1,6 +1,6 @@
 ---
 helpids: 7011, 30100
-summary: An Input Parameter allows you to provide data to an element for further use.
+summary: Explore using Input Parameters in OutSystems Developer Cloud (ODC) to pass data within elements like Client Actions.
 locale: en-us
 guid: 4007d09b-8038-4fc4-ad49-8093c6a97650
 app_type: mobile apps, reactive web apps

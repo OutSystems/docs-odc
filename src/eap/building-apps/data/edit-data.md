@@ -1,5 +1,5 @@
 ---
-summary: Edit data in ODC Studio allows you to modify entity records during app development.
+summary: OutSystems Developer Cloud (ODC) enables data editing directly within ODC Studio, facilitating real-time app testing and stakeholder demonstrations.
 tags:
 locale: en-us
 guid: 7d4d3bb7-5419-482d-8feb-747de019a7a0

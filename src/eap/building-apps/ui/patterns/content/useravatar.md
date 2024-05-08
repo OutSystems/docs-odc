@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The User Avatar UI Pattern allows displaying a user's initials or image in a circular badge.
+summary: Explore how to implement the User Avatar UI Pattern in OutSystems Developer Cloud (ODC) to display user initials or images.
 locale: en-us
 guid: 6b1585c5-c59f-48a2-9bb4-452a9932bbc4
 app_type: mobile apps, reactive web apps

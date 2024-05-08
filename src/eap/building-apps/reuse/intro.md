@@ -1,5 +1,5 @@
 ---
-summary: Strong and weak dependencies in OutSystems determine the relationship between producers and consumers.
+summary: OutSystems Developer Cloud (ODC) distinguishes between strong and weak dependencies based on how producers expose functionality to consumers.
 locale: en-us
 guid: 908a38d8-c72c-47c4-81e1-63bccbaa4d1d
 app_type: mobile apps, reactive web apps

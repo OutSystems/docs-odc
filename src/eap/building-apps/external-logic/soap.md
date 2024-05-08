@@ -1,5 +1,5 @@
 ---
-summary: The article describes how to consume SOAP in OutSystems Developer Cloud (ODC).
+summary: Learn how to extend your code using SOAP web services in OutSystems Developer Cloud (ODC) with a detailed guide on creating and consuming a SOAP library.
 tags:
 locale: en-us
 guid: b44dc63b-99f3-4cc4-9cf0-9e915eddd4fa

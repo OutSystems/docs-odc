@@ -1,5 +1,5 @@
 ---
-summary: How to send a specific HTTP Status Code in the response of an exposed REST API method.
+summary: Learn how to change the HTTP status code in a REST API using OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: 3f3321ed-c2ce-4b0f-8e5a-c6920de4c41a

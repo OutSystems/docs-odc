@@ -1,5 +1,5 @@
 ---
-summary: To add data to your chart, you can use fixed data or variable data.
+summary: Learn how to add fixed and variable data to charts using the OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: 773767d0-b1c3-4f06-a98c-b18205802786

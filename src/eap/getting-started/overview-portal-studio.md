@@ -1,5 +1,5 @@
 ---
-summary: Learn how to navigate ODC Portal and ODC Studio
+summary: Explore app management and creation with OutSystems Developer Cloud (ODC), featuring ODC Portal and ODC Studio.
 tags:
 locale: en-us
 guid: 6795fecc-61f8-4cae-93f9-098b1cfa092b

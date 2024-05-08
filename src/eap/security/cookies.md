@@ -1,5 +1,5 @@
 ---
-summary: Learn more about necessary cookies in the ODC apps.
+summary: OutSystems Developer Cloud (ODC) uses cookies to enhance user experience and gather metrics, complying with EU directive 2009/136/EC.
 tags:
 locale: en-us
 guid: 8683a640-36ce-43e0-8e9d-7c47705ed89f

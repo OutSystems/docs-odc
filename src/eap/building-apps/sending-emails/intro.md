@@ -1,5 +1,5 @@
 ---
-summary: Learn more about how you apps can send emails in OutSystems Developer Cloud (ODC).  
+summary: OutSystems Developer Cloud (ODC) enables email management and configuration through ODC Studio and ODC Portal using SMTP.
 tags:
 locale: en-us
 guid: F826D84E-BF79-4287-9322-1E00E198A06E

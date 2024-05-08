@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Center Content UI Pattern is used to vertically align content to the center of its container.
+summary: OutSystems Developer Cloud (ODC) features the Center Content UI Pattern for vertically aligning content within an application's container.
 locale: en-us
 guid: a4890513-8edb-4155-8075-a2e68740e6f0
 app_type: mobile apps, reactive web apps

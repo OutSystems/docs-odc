@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) enables fast creation of mobile apps.
+summary: OutSystems Developer Cloud (ODC) enables rapid development of mobile apps, including native apps, PWAs, and mobile backends.
 tags:
 locale: en-us
 guid: 8e81892f-5deb-4b08-b3d7-e12459619f76

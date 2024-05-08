@@ -1,5 +1,5 @@
 ---
-summary: Watches in ODC Studio allow you to examine app elements while debugging
+summary: Explore and manage app elements in OutSystems Developer Cloud (ODC) using the Watches feature for effective debugging.
 locale: en-us
 guid: 43207953-41b5-4c62-887b-bb7a72a433ec
 app_type: mobile apps, reactive web apps

@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Align Center UI Pattern can be used to center content horizontally or vertically on the screen.
+summary: Explore how to horizontally or vertically center content using the Align Center UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 0902827b-4339-4965-b8c3-94a2a7825594
 app_type: mobile apps, reactive web apps

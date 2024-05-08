@@ -1,5 +1,5 @@
 ---
-summary: Learn more about visual tools for modeling and retrieving data.
+summary: OutSystems Developer Cloud (ODC) streamlines data management with automated database operations and visual modeling tools for efficient app development.
 tags:
 locale: en-us
 guid: e74f9938-8b24-441b-8512-b3ccfda522b4

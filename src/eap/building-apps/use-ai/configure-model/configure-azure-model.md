@@ -1,5 +1,5 @@
 ---
-summary: This article explains the setup process for Azure OpenAI Service and its integration with AI Agent Builder.
+summary: OutSystems Developer Cloud (ODC) integrates with Azure OpenAI Service for enhanced AI capabilities.
 tags:
 locale: en-us
 guid: e577bb40-f2ee-468a-8ebe-ccad45fe2705

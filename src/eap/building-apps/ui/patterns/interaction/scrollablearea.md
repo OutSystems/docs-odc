@@ -1,6 +1,6 @@
 ---
 tags: 
-summary: Simple scrollable Block with a placeholder for content. Ideal to display multiple elements in a single, scrollable row or column.
+summary: OutSystems Developer Cloud (ODC) features a Scrollable Area Pattern for creating scrollable content blocks in applications.
 locale: en-us
 guid: 2cb523f7-81e5-4505-949b-801853c28f34
 app_type: mobile apps, reactive web apps

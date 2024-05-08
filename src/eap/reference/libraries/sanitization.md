@@ -1,5 +1,5 @@
 ---
-summary: The OutSystems Sanitization library provides actions to avoid code injection in HTML, JavaScript, and SQL snippets.
+summary: OutSystems Developer Cloud (ODC) includes a Sanitization library to prevent code injection in web applications.
 tags:
 locale: en-us
 guid: 09b3e01c-e0ee-4ead-be0e-3e30f2ca2262

@@ -1,5 +1,5 @@
 ---
-summary: Create logic in emails to validate users during self-register.
+summary: Learn how to set up user registration logic in OutSystems Developer Cloud (ODC) by configuring server actions and validating user inputs.
 tags:
 locale: en-us
 guid: bf31e755-d3d7-49b2-9591-fd0d197db633

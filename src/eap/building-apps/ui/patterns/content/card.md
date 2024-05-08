@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Card UI Pattern is used to group small pieces of information and highlight them on the screen.
+summary: Explore how to effectively utilize the Cards UI Pattern in OutSystems Developer Cloud (ODC) to organize and display information.
 locale: en-us
 guid: 594f6cef-f632-40c4-9ffc-2204252e6dd2
 app_type: mobile apps, reactive web apps

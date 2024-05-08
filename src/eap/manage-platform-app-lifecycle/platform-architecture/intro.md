@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud is a cloud-native platform with multi-tenant services, isolated databases, and auto-scaling clusters for both the Platform and Runtime stages.
+summary: OutSystems Developer Cloud (ODC) leverages a cloud-native architecture with scalable, isolated Kubernetes clusters for app development and deployment.
 tags: 
 locale: en-us
 guid: 9a0cb62a-f11b-4d1a-9e79-0ca7d398e57b

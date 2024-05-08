@@ -1,5 +1,5 @@
 ---
-summary: Multilingual apps allow you to translate an app to other languages.
+summary: Learn to build multilingual apps with language switching in OutSystems Developer Cloud (ODC), adhering to RFC 1766 standards.
 tags:
 locale: en-us
 guid: ab798636-66c7-4ca9-88df-313bfa5cf8ef

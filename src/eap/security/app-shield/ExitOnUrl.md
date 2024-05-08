@@ -1,5 +1,5 @@
 ---
-summary: Configuring an exit URL for a blocked app allows you to inform users of the reason for app shutdown
+summary: OutSystems Developer Cloud (ODC) supports configuring an "Exit URL" in mobile apps using AppShield for security-related shutdowns.
 tags:
 locale: en-us
 guid: 4afd7e48-139b-4672-a1f9-ec8a1aadac75

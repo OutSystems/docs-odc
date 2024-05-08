@@ -1,5 +1,5 @@
 ---
-summary: The OutSystems Math library provides actions for complex math functions.
+summary: Explore complex math functions with OutSystems Developer Cloud (ODC) Math library, including logarithms and pseudorandom number generation.
 tags:
 locale: en-us
 guid: 15770ae6-e5ec-4c50-8e90-84e9c6cdcec7

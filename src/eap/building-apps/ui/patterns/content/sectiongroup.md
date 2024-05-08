@@ -1,6 +1,6 @@
 ---
 tags: 
-summary: Use the Section Group UI Pattern to keep the context of the header while progressively viewing more content by scrolling.
+summary: Explore how to implement and customize the Section Group UI Pattern in OutSystems Developer Cloud (ODC) to enhance application interfaces.
 locale: en-us
 guid: d179ae56-26b5-48d4-b426-85f8c4ded74e
 app_type: mobile apps, reactive web apps

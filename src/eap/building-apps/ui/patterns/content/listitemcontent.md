@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The List Item Content UI Pattern is used to organize critical content in a readable way.
+summary: OutSystems Developer Cloud (ODC) features the List Item Content UI Pattern for organizing and displaying content efficiently in applications.
 locale: en-us
 guid: af82326a-de20-4931-af2a-dc6ca092a60d
 app_type: mobile apps, reactive web apps

@@ -1,5 +1,5 @@
 ---
-summary: Create a mobile app package in ODC Portal to make your app available for users.
+summary: OutSystems Developer Cloud (ODC) streamlines mobile app packaging and distribution for iOS and Android platforms.
 tags:
 locale: en-us
 guid: 4e816fa7-fffc-48c4-b205-13f7165d3775

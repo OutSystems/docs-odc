@@ -1,5 +1,5 @@
 ---
-summary: Learn about the importance of libraries in ODC and how libraries versioning gives independent development for producers and update control for consumers.
+summary: OutSystems Developer Cloud (ODC) offers libraries as repositories for reusable UI and logic elements, streamlining app development and maintenance.
 tags: 
 locale: en-us
 guid: 5102d9d1-9716-46aa-9ab7-3c9640a7f79c

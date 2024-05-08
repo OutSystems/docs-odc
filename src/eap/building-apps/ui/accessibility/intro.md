@@ -1,5 +1,5 @@
 ---
-summary: OutSystems provides built-in accessibility features for creating accessible apps
+summary: OutSystems Developer Cloud (ODC) offers built-in accessibility features to help developers create apps that comply with WCAG guidelines.
 tags:
 locale: en-us
 guid: 62770c36-d307-4a3a-ba01-acf10299454a

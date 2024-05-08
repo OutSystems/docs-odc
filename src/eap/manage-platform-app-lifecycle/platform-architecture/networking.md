@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) uses a secure cloud-native network with CDN, WAF, NATS, Identity Service, and Load Balancer to protect the Platform and Runtime from malicious accesses and attacks.
+summary: Explore the cloud-native network architecture and security features of OutSystems Developer Cloud (ODC) in this detailed overview.
 tags: 
 locale: en-us
 guid: e87fb27d-9186-436d-ac97-a2ea960c119d

@@ -1,5 +1,5 @@
 ---
-summary: OutSystems' Cloud Messaging Configurator REST APIs allow sending notifications to users or topics, with support for both normal and silent notifications across different API versions
+summary: Explore the OutSystems Developer Cloud (ODC) for managing and deploying cloud messaging configurator REST APIs for notifications.
 locale: en-us
 guid: 2da53711-4885-4005-9224-d77d517efb50
 app_type: mobile apps

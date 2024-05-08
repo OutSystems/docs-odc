@@ -1,5 +1,5 @@
 ---
-summary:
+summary: OutSystems Developer Cloud (ODC) utilizes specific HTTP status codes for REST API interactions, detailed in the provided list.
 tags: 
 locale: en-us
 guid: dcb96e66-c362-42fd-a2b2-42515c06c07b

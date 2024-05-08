@@ -1,5 +1,5 @@
 ---
-summary: OutSystems allows you to customize the URL of your REST API methods according to your needs.
+summary: Explore how to customize REST API URLs in OutSystems Developer Cloud (ODC) to enhance API endpoint structuring.
 tags:
 locale: en-us
 guid: 745374fa-efb6-4f96-a488-10a1830f519c

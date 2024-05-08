@@ -1,5 +1,5 @@
 ---
-summary: Use the Barcode Plugin to let users scan 1D and 2D barcodes in native mobile apps, PWAs, and web apps.
+summary: Learn to integrate and utilize the Barcode Plugin for scanning various barcode formats in native and web apps using OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: a101532c-2d36-43f1-bb3e-6aeeb98fa395

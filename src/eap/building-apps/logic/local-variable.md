@@ -1,6 +1,6 @@
 ---
 helpids: 1013
-summary: A Local Variable exists only in the scope of its parent element and can only be assigned and used locally inside that scope.
+summary: Explore managing Local Variables in OutSystems Developer Cloud (ODC) for data filtering.
 locale: en-us
 guid: 2e1a1542-5dc1-4269-987b-f2665ce37f07
 app_type: mobile apps, reactive web apps

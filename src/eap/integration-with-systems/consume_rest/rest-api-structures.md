@@ -1,5 +1,5 @@
 ---
-summary: OutSystems automatically creates Structures to define the input and output parameters of consumed REST API methods.
+summary: Explore how OutSystems Developer Cloud (ODC) automatically manages REST API Structures for efficient app development.
 tags:
 locale: en-us
 guid: f2d563a1-be66-42d3-b56f-ebfc33c32c9c

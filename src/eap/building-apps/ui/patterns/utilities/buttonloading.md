@@ -1,6 +1,6 @@
 ---
 tags:
-summary: Button Loading is a UI pattern that provides a visual hint and disables the button until it becomes available again.
+summary: Explore the Button Loading UI Pattern in OutSystems Developer Cloud (ODC) for enhanced user feedback.
 locale: en-us
 guid: a3269377-0c0c-440f-b194-d7409db9f481
 app_type: mobile apps, reactive web apps

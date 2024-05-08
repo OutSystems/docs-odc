@@ -1,5 +1,5 @@
 ---
-summary: ODC Studio events track app changes and trigger actions, supporting front-end user interactions and back-end process automation with a pub/sub model.
+summary: OutSystems Developer Cloud (ODC) leverages event-driven architecture for real-time data processing and app automation.
 tags:
 locale: en-us
 guid: 5bfd1452-1ff8-4180-a437-65603671437b

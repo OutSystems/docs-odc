@@ -1,5 +1,5 @@
 ---
-summary: You can replace data in screens manually or automatically.
+summary: OutSystems Developer Cloud (ODC) offers manual and automatic data replacement options for app screens, enhancing customization and functionality.
 tags:
 locale: en-us
 guid: 6fccfc68-813b-45a4-a938-4f740a10176c

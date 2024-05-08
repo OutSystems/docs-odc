@@ -1,5 +1,5 @@
 ---
-summary: This article explains how to use Logs and Traces in OutSystems Developer Cloud to monitor and troubleshoot apps.
+summary: OutSystems Developer Cloud (ODC) offers comprehensive tools for monitoring and troubleshooting applications through logs and traces within its portal.
 tags:
 locale: en-us
 guid: ca7cae65-c466-4d93-bab6-85ac740519c0

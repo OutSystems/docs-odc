@@ -1,5 +1,5 @@
 ---
-summary: OutSystems facilitates documenting your REST API by automatically generating the documentation when you publish the app.
+summary: OutSystems Developer Cloud (ODC) automatically generates REST API documentation from method properties and descriptions upon app publication.
 tags:
 locale: en-us
 guid: 08460e49-ec25-478c-abce-d4dc5d1abe2b

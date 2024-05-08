@@ -1,5 +1,5 @@
 ---
-summary: Links to additional accessibility resources
+summary: OutSystems Developer Cloud (ODC) offers resources for enhancing web accessibility, including evaluation tools and screen readers.
 tags:
 locale: en-us
 guid: f456b33d-6e53-41ea-9b46-ccda0937aeb4

@@ -1,5 +1,5 @@
 ---
-summary: Debugging apps in ODC Studio allows you to pause execution at breakpoints and find issues in your logic design.
+summary: Debug and troubleshoot apps in OutSystems Developer Cloud (ODC) using breakpoints, step-by-step execution, and runtime value inspection.
 tags:
 locale: en-us
 guid: bd64bfb4-afcf-4eb8-b87a-1923fd19524c

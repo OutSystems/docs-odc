@@ -1,6 +1,6 @@
 ---
 tags: 
-summary: Displays multiple items in a horizontal slide.
+summary: OutSystems Developer Cloud (ODC) offers a Carousel UI Pattern for displaying images horizontally, utilizing Splide.js library.
 locale: en-us
 guid: 84e84647-8129-4467-ade7-72b6102f9959
 app_type: mobile apps, reactive web apps

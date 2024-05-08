@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Badge UI Pattern is used to display numerical information as a notification.
+summary: Learn how to use the Badge UI Pattern in OutSystems Developer Cloud (ODC) to display numerical notifications such as unread messages or registered users.
 locale: en-us
 guid: d97db143-3239-44d4-bdf7-0c49483b6939
 app_type: mobile apps, reactive web apps

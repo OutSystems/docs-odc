@@ -1,5 +1,5 @@
 ---
-summary: Learn about integrating external databases with OutSystems Developer Cloud, managing connections, and selecting entities to use in your apps.
+summary: OutSystems Developer Cloud (ODC) supports seamless integration with external databases for enhanced app development.
 helpids: 30191, 30483, 30501, 30502
 tags:
 locale: en-us

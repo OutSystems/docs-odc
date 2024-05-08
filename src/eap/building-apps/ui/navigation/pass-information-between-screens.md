@@ -1,5 +1,5 @@
 ---
-summary: Screens require input information and can pass data between screens using input parameters.
+summary: Learn how to pass data between screens using Input Parameters in OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: f1443b9a-dbfa-440b-b618-69835bbcb361

@@ -1,5 +1,5 @@
 ---
-summary: Fetch and display data from the database in OutSystems
+summary: OutSystems Developer Cloud (ODC) simplifies data fetching and display from databases using Aggregates and widgets.
 tags:
 locale: en-us
 guid: 9072a3d9-8993-4b6a-98b7-2f623bcd78bc

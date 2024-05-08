@@ -1,5 +1,5 @@
 ---
-summary: The exception handling mechanism in OutSystems allows for handling exceptions raised in the app.
+summary: Explore exception handling in OutSystems Developer Cloud (ODC), covering UI flows, action flows, and integrations.
 tags:
 locale: en-us
 guid: 7f5c109f-a887-4f50-bd5d-ead38e50ff53

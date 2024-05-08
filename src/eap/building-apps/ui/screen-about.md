@@ -1,5 +1,5 @@
 ---
-summary: A screen is a user interface element that allows users to interact with an app.
+summary: OutSystems Developer Cloud (ODC) enhances app development with customizable screen templates and UI elements for efficient user interface creation.
 tags:
 locale: en-us
 guid: 573b9486-bcb4-4888-9be6-d3e8e96b6dc8

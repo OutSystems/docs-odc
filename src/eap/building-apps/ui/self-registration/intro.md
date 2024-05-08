@@ -1,5 +1,5 @@
 ---
-summary: The self-registration flow enables users to access your app without human intervention.
+summary: Learn to implement self-registration flows in apps using OutSystems Developer Cloud (ODC), featuring user verification and logic creation tools.
 tags:
 locale: en-us
 guid: cb22b88a-f8ec-416c-8f77-8ac814d58bd7

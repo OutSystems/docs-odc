@@ -1,5 +1,5 @@
 ---
-summary: Customize UI styles to create visually appealing and user-friendly apps.
+summary: OutSystems Developer Cloud (ODC) provides a comprehensive UI framework allowing developers to customize app styles in line with organizational standards.
 tags:
 locale: en-us
 guid: A15EFAFE-CE22-4974-B90E-CB0E18D263B1

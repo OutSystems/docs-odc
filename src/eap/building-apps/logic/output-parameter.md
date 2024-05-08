@@ -1,6 +1,6 @@
 ---
 helpids: 7012, 30101
-summary: An Output Parameter allows you to return computed values from an action.
+summary: Learn how to use Output Parameters in OutSystems Developer Cloud (ODC) to return computed values from actions, enhancing data handling and integration.
 locale: en-us
 guid: a0388822-d4ea-4fbf-9bd2-d45b10183c0c
 app_type: mobile apps, reactive web apps

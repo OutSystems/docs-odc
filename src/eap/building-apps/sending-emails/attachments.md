@@ -1,5 +1,5 @@
 ---
-summary: Learn how to add attachments to emails.
+summary: OutSystems Developer Cloud (ODC) enables users to attach files to emails by defining attachment properties in ODC Studio.
 tags: 
 locale: en-us
 guid: b03f90a8-d437-4f61-a08b-dda12e8ebbfe
@@ -36,7 +36,7 @@ To attach a file to an email, complete the following steps in ODC Studio:
 
     ODC Studio shows a plus icon with the "add list item" tooltip.
 
-    ![Adding attachments in the Send Email action](images/add-list-item-attachment.png)
+    ![Screenshot showing the 'Add list item' tooltip and plus icon in the Attachments section of the Send Email action in ODC Studio.](images/add-list-item-attachment.png "Adding Attachments in Send Email Action")
 
 1. Click the plus icon next to the **Attachments** list to add a new item.
 
@@ -44,13 +44,13 @@ To attach a file to an email, complete the following steps in ODC Studio:
 
 1. Move your mouse over the item you added in the **Attachment** list and click the plus icon to expand.
 
-    ![Attachment properties](images/email-attachment-add-list-odcs.png)
+    ![Image depicting the process of adding a new attachment item in ODC Studio, with the plus icon and item labeled as zero.](images/email-attachment-add-list-odcs.png "Attachment Properties Expansion")
 
 1. Enter the information to define the file name, content, and media type of the email attachment.
 
     For more information about the Attachment properties, see [Attachment data structure](#attachment-data-structure).
     
-    ![Attachment properties](images/email-attachment-properties-odcs.png)
+    ![Screenshot illustrating the input fields for FileName, FileContent, and MimeType in the email attachment properties within ODC Studio.](images/email-attachment-properties-odcs.png "Defining Email Attachment Properties")
 
     The following are example properties to attach a PDF file from the resources:
 
@@ -81,7 +81,7 @@ In the following example, ODC Studio fetches images from a database with an Aggr
 
     ODC Studio places an Aggregate in the logic flow.
 
-    ![Getting data from database](images/email-attachment-getting-from-database-odcs.png)
+    ![Image showing an Aggregate in ODC Studio used to fetch data from a database for email attachments, with a focus on the 'Max. Records' property.](images/email-attachment-getting-from-database-odcs.png "Fetching Data from Database for Email Attachments")
 
     <div class="info" markdown="1">
 
@@ -93,13 +93,13 @@ In the following example, ODC Studio fetches images from a database with an Aggr
 
     The expression editor opens.
 
-    ![Getting data from database](images/email-attachments-list-odcs.png)
+    ![Screenshot of the expression editor in ODC Studio for selecting the output list from an Aggregate to be used as email attachments.](images/email-attachments-list-odcs.png "Email Attachments List in ODC Studio")
 
 1. In the expression editor, select the output List from your Aggregate, for example, `GetSampleProductImages.List`. ODC Studio shows an error with a message that you need to use the Attachment List data type. Click **Done** to close the editor and move on to the next step to map the values and resolve the error.
 
 1. In the Attachment section of Send Email, map the attributes so ODC Studio knows which values pass to the attachments. You must specify binary content and the file name. The MIME type is optional, but providing it lets more email clients handle the attachment.
 
-    ![Mapping the values to the attachment data structure](images/email-attachment-mapping-odcs.png)
+    ![Image displaying the mapping of database attributes to the Attachment data structure in the Send Email action within ODC Studio.](images/email-attachment-mapping-odcs.png "Mapping Database Values to Email Attachment")
 
 
 ## Reference

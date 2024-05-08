@@ -1,5 +1,5 @@
 ---
-summary: To refresh a REST API service in ODC Studio, expand the Integrations folder, right-click the REST API, and select Refresh REST API.
+summary: Learn how to refresh REST web services in OutSystems Developer Cloud (ODC) to update consumed API methods efficiently.
 tags:
 locale: en-us
 guid: 1ba6b838-04bc-4c08-813d-5a2901954f8c

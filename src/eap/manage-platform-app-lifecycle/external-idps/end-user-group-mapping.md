@@ -1,6 +1,6 @@
 ---
 helpids: 30469
-summary: From OutSystems Developer Cloud  you can enable authenticated IdP end-users to access ODC.
+summary: OutSystems Developer Cloud (ODC) facilitates efficient onboarding by enabling group mapping from identity providers to automate role assignments.
 locale: en-us
 guid: 84c9098b-c486-483f-9836-70b8faee63fa
 app_type: mobile apps, reactive web apps

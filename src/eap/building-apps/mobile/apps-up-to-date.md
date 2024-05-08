@@ -1,5 +1,5 @@
 ---
-summary: The article explains how to keep mobile apps up to date for users.
+summary: OutSystems Developer Cloud (ODC) facilitates seamless mobile app updates with automatic version detection and resource caching.
 tags:
 locale: en-us
 guid: 1ca55d98-3586-4c1f-843d-227b1c858502

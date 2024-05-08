@@ -1,5 +1,5 @@
 ---
-summary: Entities in OutSystems are elements that allow you to persist information in the database and implement your database model.
+summary: OutSystems Developer Cloud (ODC) streamlines database modeling with entities, primary keys, and indexes for efficient data management.
 tags:
 locale: en-us
 guid: 7bf1d47d-7310-4ec8-a5db-a41b983bdb5b

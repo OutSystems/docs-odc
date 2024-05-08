@@ -1,5 +1,5 @@
 ---
-summary: An overview of Organization members and end-user roles in OutSystems Developer Cloud (ODC).  
+summary: Learn how to manage end-user roles in OutSystems Developer Cloud (ODC) to control access to app functionalities, screens, and data.
 tags: 
 locale: en-us
 guid: BDA3A144-0EB0-4C04-953F-9DED85A477FE

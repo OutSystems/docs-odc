@@ -1,5 +1,5 @@
 ---
-summary: Learn more about the AI Agent Builder, a tool for developing AI-powered agents for app integration.
+summary: Explore the AI Agent Builder in OutSystems Developer Cloud (ODC) to build generative AI applications efficiently.
 tags:
 locale: en-us
 guid: 03e2025e-bca6-46f7-af75-725e1d310127

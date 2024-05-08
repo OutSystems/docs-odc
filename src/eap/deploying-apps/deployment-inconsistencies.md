@@ -1,6 +1,6 @@
 ---
 helpids: 30474
-summary: This article helps you understand inconsistencies between versions found during deployment.
+summary: OutSystems Developer Cloud (ODC) ensures deployment consistency by analyzing and reporting potential inconsistencies during app deployment stages.
 tags:
 locale: en-us
 guid: c8999d32-bc1f-4bea-86bf-271b07035672

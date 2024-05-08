@@ -1,5 +1,5 @@
 ---
-summary: The document describes how to access and configure app and library properties in ODC Studio
+summary: Learn how to configure app and library components in OutSystems Developer Cloud (ODC) using the Edit properties dialog in ODC Studio.
 tags:
 locale: en-us
 guid: 5923266e-a350-4775-a6ea-8c6882b8755c

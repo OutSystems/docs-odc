@@ -1,5 +1,5 @@
 ---
-summary: This article explains the system requirements for OutSystems Developer Cloud (ODC) Portal, ODC Studio, and app users, as well as the request limits of ODC.
+summary: OutSystems Developer Cloud (ODC) system requirements guide for optimal use of ODC Portal and ODC Studio.
 tags:
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C

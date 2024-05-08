@@ -1,5 +1,5 @@
 ---
-summary: The OutSystems HTTP library provides actions to manipulate HTTP requests and responses.
+summary: OutSystems Developer Cloud (ODC) features an HTTP library with actions for managing HTTP requests and responses.
 tags:
 locale: en-us
 guid: 8ab99495-136e-4261-a791-bee1c58d4a79

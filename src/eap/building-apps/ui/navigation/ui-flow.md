@@ -1,5 +1,5 @@
 ---
-summary: UI Flows is an element that groups Screens and Blocks in an app.
+summary: OutSystems Developer Cloud (ODC) features UI Flows that organize Screens and Blocks within the Interface tab for app development.
 tags:
 locale: en-us
 guid: f7e6d4a4-7d1e-4593-9975-b8e160df3780

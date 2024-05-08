@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Section UI Pattern is used to organize on-screen content into different sections.
+summary: Learn how to organize on-screen content using the Section UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 938450a3-c869-4c7b-82f2-7599c196d482
 app_type: mobile apps, reactive web apps

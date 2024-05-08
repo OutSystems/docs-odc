@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Card Background UI Pattern is used to group small pieces of information and highlight them on the screen using a background image.
+summary: Learn to enhance app interfaces using the Card Background UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 8460d7b9-4aa2-410b-8869-635625d64a4f
 app_type: mobile apps, reactive web apps

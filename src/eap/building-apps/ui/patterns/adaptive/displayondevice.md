@@ -1,5 +1,5 @@
 ---
-summary: Use the Display on Device UI pattern to select what elements are displayed on different devices.
+summary: OutSystems Developer Cloud (ODC) supports the Display on Device UI pattern for device-specific content rendering.
 tags:
 locale: en-us
 guid: 4dd69c5c-c0a3-4c26-a4f7-b4c86313495f

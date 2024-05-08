@@ -1,5 +1,5 @@
 ---
-summary: The OutSystems URL library provides actions to manipulate URLs.
+summary: Explore URL manipulation features in OutSystems Developer Cloud (ODC), including decoding, encoding, and extracting URL components.
 tags:
 locale: en-us
 guid: 0e709970-e4e6-4adb-9fa1-1b00fc851368

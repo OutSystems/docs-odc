@@ -1,5 +1,5 @@
 ---
-summary: Static Entities are sets of named values stored in a global scope
+summary: Learn how to manage Static Entities in OutSystems Developer Cloud (ODC) for predefined data sets with global scope.
 tags:
 locale: en-us
 guid: 1093da45-38cc-47b6-aaa2-7123a1d2d964

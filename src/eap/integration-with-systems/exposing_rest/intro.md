@@ -1,5 +1,5 @@
 ---
-summary: OutSystems allows you to expose methods using a REST API.
+summary: OutSystems Developer Cloud (ODC) facilitates the exposure of methods through REST APIs with a defined execution flow.
 tags:
 locale: en-us
 guid: 79ddbf86-371c-41cf-b9c9-45545b74957f

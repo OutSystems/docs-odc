@@ -1,5 +1,5 @@
 ---
-summary: Modify the end-user login and logout flows for each app to use an external identity provider.
+summary: Learn how to integrate external identity providers into your applications using OutSystems Developer Cloud (ODC) by modifying login and logout flows.
 tags: 
 helpids: 30500
 locale: en-us

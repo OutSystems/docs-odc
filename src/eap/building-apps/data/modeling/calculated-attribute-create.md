@@ -1,5 +1,5 @@
 ---
-summary: Create a calculated attribute in an Aggregate to add more information to each record based on the values returned
+summary: Learn to create a calculated attribute in an aggregate in OutSystems Developer Cloud (ODC) for enhanced data handling.
 tags:
 locale: en-us
 guid: 8d55b7fe-ff2d-4a80-b306-e8d7820ea579

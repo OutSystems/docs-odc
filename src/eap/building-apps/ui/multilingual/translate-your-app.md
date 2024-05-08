@@ -1,5 +1,5 @@
 ---
-summary: Translate the interface of your app to other languages to let more users use your app.
+summary: OutSystems Developer Cloud (ODC) enables app interface translation and language switching capabilities for enhanced user accessibility.
 tags:
 locale: en-us
 guid: 93f5315e-72fa-45f2-97ad-9e676da413a3

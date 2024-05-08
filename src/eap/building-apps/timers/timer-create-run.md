@@ -1,5 +1,5 @@
 ---
-summary: Create and run Timers in ODC Studio and ODC Portal
+summary: Learn how to create and manage timers in OutSystems Developer Cloud (ODC) to execute application logic periodically.
 tags:
 locale: en-us
 guid: 8468A775-BC5C-489C-8A44-D15F7C0B5BF1

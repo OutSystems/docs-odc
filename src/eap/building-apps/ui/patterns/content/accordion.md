@@ -1,5 +1,5 @@
 ---
-summary: The Accordion UI Pattern allows users to expand and hide content when clicked.
+summary: Explore how to implement and customize the Accordion UI Pattern in OutSystems Developer Cloud (ODC) to enhance application interfaces.
 tags:
 locale: en-us
 guid: 794b75df-0091-4e62-b1f8-22c56e7ebf90

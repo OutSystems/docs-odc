@@ -1,5 +1,5 @@
 ---
-summary: User actions for built-in and/or external identity providers
+summary: OutSystems Developer Cloud (ODC) offers user management actions for identity providers, including password resets and user profile updates.
 tags:
 locale: en-us
 guid: 0889c9fd-98dc-489d-a8ed-bea68946f0ac

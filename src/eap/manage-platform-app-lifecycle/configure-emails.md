@@ -1,5 +1,5 @@
 ---
-summary: Learn how to configure emails in OutSystems Developer Cloud.
+summary: Learn to configure and manage SMTP email settings in OutSystems Developer Cloud (ODC) for app stages.
 tags:
 locale: en-us
 guid: 48490651-74d0-459b-a0c4-4b40df93d56e

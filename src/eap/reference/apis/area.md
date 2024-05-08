@@ -1,5 +1,5 @@
 ---
-summary: How to create a simple Area Chart with a Stacked Series
+summary: Learn how to create a stacked area chart using OutSystems Developer Cloud (ODC) with this step-by-step guide.
 tags:
 locale: en-us
 guid: 181b8675-7323-4afd-bab7-b315c237d709

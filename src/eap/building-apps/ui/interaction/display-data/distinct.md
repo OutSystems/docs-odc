@@ -1,5 +1,5 @@
 ---
-summary: Use an aggregate with grouped columns to get distinct values from a database
+summary: Learn how to retrieve distinct values from a database using OutSystems Developer Cloud (ODC) by grouping entity attributes in aggregates.
 tags:
 locale: en-us
 guid: b72114bf-98ec-4f22-89b6-e162569612a1

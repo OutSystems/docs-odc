@@ -1,5 +1,5 @@
 ---
-summary: Learn how you can create a simple Column Chart with data labels.
+summary: Learn how to create a Column Chart with data labels in OutSystems Developer Cloud (ODC) using the Column Chart widget and various properties.
 tags: 
 locale: en-us
 guid: 8651448f-4ebe-47c6-8d2e-676f33a830b0

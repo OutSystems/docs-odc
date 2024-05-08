@@ -1,6 +1,6 @@
 ---
 tags: 
-summary: Submenu is used to create a menu contained within another menu.
+summary: Learn how to implement a submenu within an application using the Submenu UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 643d37e9-efa8-48a3-87ba-f409a1f04efa
 app_type: mobile apps, reactive web apps

@@ -1,5 +1,5 @@
 ---
-summary: AppShield is a licensed plugin that hardens the protection of native Android and iOS apps
+summary: OutSystems Developer Cloud (ODC) enhances mobile app security through the licensed AppShield plugin, integrating with MABS for runtime protection.
 tags:
 locale: en-us
 guid: 5b3d48c3-ddcb-461c-a05d-414fceeb1eb4

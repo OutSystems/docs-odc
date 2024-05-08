@@ -1,5 +1,5 @@
 ---
-summary: ODC Studio supports importing enum elements from REST services as Static Entities.
+summary: Explore the limitations and workarounds for unsupported REST enum use cases in OutSystems Developer Cloud (ODC) as detailed in the technical documentation.
 tags:
 locale: en-us
 guid: 1f305f99-d43e-45e7-abc4-36f411f33745

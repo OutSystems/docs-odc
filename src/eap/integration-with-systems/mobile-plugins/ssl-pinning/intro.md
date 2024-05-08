@@ -1,5 +1,5 @@
 ---
-summary: SSL Pinning Plugin provides extra security to HTTPS communications in mobile apps
+summary: OutSystems Developer Cloud (ODC) uses SSL Pinning to secure mobile app communications by verifying server certificates.
 locale: en-us
 guid: 607a5bdb-b74e-4d53-88f6-a6ac8389873e
 app_type: mobile apps

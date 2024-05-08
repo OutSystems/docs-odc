@@ -1,5 +1,5 @@
 ---
-summary: The Camera plugin allows users to take pictures and capture videos with their mobile devices.
+summary: OutSystems Developer Cloud (ODC) supports the Camera plugin for capturing and editing media in mobile apps, as demonstrated in the Camera Sample App.
 tags:
 locale: en-us
 guid: 6df6f491-46e4-434f-924e-043929958fef

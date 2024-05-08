@@ -1,5 +1,5 @@
 ---
-summary: Use the Firebase-based plugins Analytics, Crashlytics, and Performance to implement common development patterns in your mobile apps.
+summary: Explore Firebase-based plugins for mobile app development on OutSystems Developer Cloud (ODC), including analytics, crash reporting, and more.
 locale: en-us
 guid: 050c7d77-0418-4f38-9bb8-7b0275931b80
 app_type: mobile apps

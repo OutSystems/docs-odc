@@ -1,6 +1,6 @@
 ---
 tags:  
-summary: Option menu, which slides from the bottom of the screen, triggered by a user action.
+summary: Learn how to implement and customize the Action Sheet UI Pattern in OutSystems Developer Cloud (ODC) to enhance mobile app interfaces.
 locale: en-us
 guid: 7702c792-34d2-41e7-9bad-e9b88326a21e
 app_type: mobile apps, reactive web apps

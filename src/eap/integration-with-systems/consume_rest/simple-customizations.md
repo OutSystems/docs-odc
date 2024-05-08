@@ -1,5 +1,5 @@
 ---
-summary: You can customize the information in REST API requests and responses using callbacks.
+summary: Explore how to customize REST API requests and responses using callbacks in OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: 182ad24a-5cfb-4a67-a9b2-b5c8dc83ef4c

@@ -1,5 +1,5 @@
 ---
-summary: In OutSystems, a database table is an Entity, and the table columns are Entity Attributes.
+summary: OutSystems Developer Cloud (ODC) facilitates the creation and management of database entities and attributes for data persistence.
 tags:
 locale: en-us
 guid: d8cd27a9-fadb-404c-8998-648f3799934a

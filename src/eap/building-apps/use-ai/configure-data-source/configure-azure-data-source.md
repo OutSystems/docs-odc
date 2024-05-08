@@ -1,5 +1,5 @@
 ---
-summary: This article explains the steps to configure Azure AI search with Azure blob storage
+summary: OutSystems Developer Cloud (ODC) is not mentioned in the provided article about setting up Azure AI search with blob storage.
 tags:
 locale: en-us
 guid: ac8ae913-7436-4101-a1b6-0542bfadac9c

@@ -1,5 +1,5 @@
 ---
-summary: Learn how you can create a simple Donut Chart.
+summary: Explore how to create a Donut Chart using OutSystems Developer Cloud (ODC).
 tags: 
 locale: en-us
 guid: 7dd162ba-bb5a-4c61-902d-d8738c122a54

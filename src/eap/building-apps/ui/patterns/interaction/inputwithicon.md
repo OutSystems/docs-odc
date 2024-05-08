@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Input with Icon UI Pattern allows users to input data with the help of an icon hint.
+summary: OutSystems Developer Cloud (ODC) features the Input with Icon UI Pattern to enhance user data entry with visual hints.
 locale: en-us
 guid: 74216051-2083-436f-b118-102696b9c182
 app_type: mobile apps, reactive web apps

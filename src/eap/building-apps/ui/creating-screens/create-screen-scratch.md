@@ -1,5 +1,5 @@
 ---
-summary: A Screen is a user interface (UI) element that contains other UI elements for users to interact.
+summary: Learn how to create and customize Screens in OutSystems Developer Cloud (ODC) for both web and mobile applications.
 locale: en-us
 tags:
 guid: 7c01a3db-3807-4e86-bbbb-e88ba5c28346

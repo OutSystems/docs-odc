@@ -1,6 +1,6 @@
 ---
 tags: 
-summary: Separator distributes content into clear groups and ease visual organization.
+summary: Learn how to visually organize content in your applications using the Separator UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 91b4bcb5-4ebd-4cf5-9dca-b64edaef2256
 app_type: mobile apps, reactive web apps

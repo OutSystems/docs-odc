@@ -1,5 +1,5 @@
 ---
-summary: The article describes three functions that return various URL components for an app, including the default domain, a bookmarkable URL, and the URL path of the app owner
+summary: Learn about URL management functions in OutSystems Developer Cloud (ODC), including domain and URL path handling.
 tags:
 locale: en-us
 guid: add42ac6-eb89-4448-8b6e-84ceb8a921df

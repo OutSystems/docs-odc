@@ -1,5 +1,5 @@
 ---
-summary: Use the Key Store Plugin to securely store, get, and remove secrets on iOS and Android devices.
+summary: OutSystems Developer Cloud (ODC) features a Key Store Plugin for secure storage and management of sensitive information in mobile apps.
 tags:
 locale: en-us
 guid: 22f4fa5c-b7e7-4fd6-a629-e1e33e738e1a

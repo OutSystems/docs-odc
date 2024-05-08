@@ -1,6 +1,6 @@
 ---
 tags:
-summary: You can use the Inline SVG UI Pattern to change fill and stroke properties or animate the SVG paths.
+summary: OutSystems Developer Cloud (ODC) supports the Inline SVG UI Pattern for customizing SVG properties and animations in applications.
 locale: en-us
 guid: 6db3a9a0-b82e-430c-b4b6-e5964bcd383f
 app_type: mobile apps, reactive web apps

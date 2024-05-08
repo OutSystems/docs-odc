@@ -1,5 +1,5 @@
 ---
-summary: This article helps you understand app and library publishing workflow after 1-Click Publish in ODC 
+summary: OutSystems Developer Cloud (ODC) simplifies app and library publishing with an automated 1-Click Publish feature.
 tags:
 locale: en-us
 guid: 2c3f88e1-c53a-450d-9e36-ac83a7bf7a5d

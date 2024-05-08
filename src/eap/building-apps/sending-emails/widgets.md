@@ -1,5 +1,5 @@
 ---
-summary: Email widgets are lightweight and let you design emails that most emails readers can open. Container, Expressions, If, Image, Link, Table, Text.
+summary: Explore email widget capabilities in OutSystems Developer Cloud (ODC) for creating lightweight, secure emails compatible with most readers.
 tags: 
 locale: en-us
 guid: 665cc9c6-00e6-44f9-91ba-04f6de8fa936

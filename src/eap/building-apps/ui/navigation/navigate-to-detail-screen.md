@@ -1,5 +1,5 @@
 ---
-summary: Allow end-users to check the details of a record by navigating to a different screen
+summary: OutSystems Developer Cloud (ODC) enables navigation to detail screens in web and mobile applications by configuring the List Item widget's On Click event.
 tags:
 locale: en-us
 guid: 32d89cec-ecb5-4c30-9d43-548cc4077425

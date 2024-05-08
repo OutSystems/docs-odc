@@ -1,5 +1,5 @@
 ---
-summary: Building a well-architected app involves understanding the business problem and asking crucial questions to guide the design and development process.
+summary: Explore scalable app design in OutSystems Developer Cloud (ODC) by aligning business problems with organizational structures.
 tags:
 locale: en-us
 guid: d67d7939-a99f-4328-b490-d0310c35a424

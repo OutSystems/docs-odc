@@ -1,6 +1,6 @@
 ---
 tags:
-summary: The Notification UI Pattern is a contextual short message that provides important information to the user.
+summary: Learn how to implement and configure the Notification UI Pattern in OutSystems Developer Cloud (ODC) to enhance user communication.
 locale: en-us
 guid: b60bb989-895e-49a1-a261-76d9bb540425
 app_type: mobile apps, reactive web apps
