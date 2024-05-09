@@ -80,7 +80,11 @@ Any value chosen for the KeyAuthentication variable doesn't affect the security 
 
 #### (Optional) Set the authentication dialog content (Android only)
 
-This applies to versions of the plugin above or equal to **1.1.0**.
+<div class="info" markdown="1">
+
+Applies to version 1.1.0 and higher.
+
+</div>
 
 You can set the content of the authentication dialog that appears to the end-user when accessing key-value pairs. More specifically, you can set values for the dialog's **title** and **subtitle**. For devices with an Android version below or equal to 10, you can also set the value for the **cancel button** (also known as **negative button**). 
 
@@ -115,7 +119,7 @@ To set the values for these fields, define the following Android preferences in 
         }
 ```
 
-Note that these prefrences are optional. If they're not set, then the values in the example above are used by default.
+**Note:** These preferences are optional. If they're not set, then the values in the example above are used by default.
 
 ## Handling errors
 
