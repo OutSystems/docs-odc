@@ -203,7 +203,7 @@ For more information see [Cloud-native architecture of OutSystems Developer Clou
 
 ### Backup policy
 
-Each database and data store used in the Platform and Runtime is continuously and incrementally backed up. This enables you to restore data at any point within a 30-day backup retention period.
+Each database and data store used in the Runtime is continuously and incrementally backed up. This enables you to restore data at any point within a 30-day backup retention period.
 
 ### Encryption at-rest
 
