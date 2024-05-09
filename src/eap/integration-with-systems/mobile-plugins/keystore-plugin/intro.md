@@ -78,6 +78,45 @@ Any value chosen for the KeyAuthentication variable doesn't affect the security 
 
 ![Setting the UseAuthentication parameter](images/use-authentication-ss.png "UseAuthentication is one of the parameters for the Key Store plugin actions")
 
+#### (Optional) Set the authentication dialog content (Android only)
+
+This applies to versions of the plugin above or equal to **1.1.0**.
+
+You can set the content of the authentication dialog that appears to the end-user when accessing key-value pairs. More specifically, you can set values for the dialog's **title** and **subtitle**. For devices with an Android version below or equal to 10, you can also set the value for the **cancel button** (also known as **negative button**). 
+
+<div class="info" markdown="1">
+
+For Android versions 10 or lower, these values only apply to biometric authentication (for example, fingerprint). These values also apply to Android version 11 and higher when using the standard authentication methods. 
+
+For Android versions 10 or lower, when using standard authentication methods (for example, PIN), the Android system uses predefined values.
+
+</div>
+
+To set the values for these fields, define the following Android preferences in your app's Extensibility Configurations:
+
+```json
+        {
+            "preferences": {
+                "android": [
+                    {
+                        "name": "AuthPromptTitle",
+                        "value": "Authentication required"
+                    },
+                    {
+                        "name": "AuthPromptSubtitle",
+                        "value": "Please authenticate to continue"
+                    },
+                    {
+                        "name": "AuthPromptCancelButton",
+                        "value": "Cancel"
+                    }
+                ]
+            }
+        }
+```
+
+Note that these prefrences are optional. If they're not set, then the values in the example above are used by default.
+
 ## Handling errors
 
 The app with the KeyStore Plugin can run on many Android or iOS devices, with different hardware and configurations. To provide a good user experience and prevent the app from crashing, handle errors within the app.
