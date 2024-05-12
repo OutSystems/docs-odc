@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) supports extending apps with custom C# code through external logic integration.
+summary: OutSystems Developer Cloud (ODC) supports extending apps with custom .NET code through external logic integration.
 helpids: 30485
 tags:
 locale: en-us
