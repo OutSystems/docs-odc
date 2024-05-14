@@ -137,7 +137,7 @@ You can only change the name and description without testing your connection aga
 
 Admins must assign new values to represent null values in external databases. You can use the following options to handle null values.
 
-* Overwrite database NULL values(default option):
+* Overwrite database NULL values (default option):
     * When writing data, ODC stores default values instead of null values in external databases.
     * When reading data, ODC reads null values as default values.
 * Keep database NULL values:
