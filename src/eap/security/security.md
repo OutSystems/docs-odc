@@ -215,7 +215,7 @@ ODC encrypts data at rest, including all backup instances, using the industry st
 
 ODC provides a permission model that enables you to create roles following the least privilege principle. You can assign roles to users according to their job functions.
 
-For more information see [User management](../user-management/intro.md).
+For more information, see the [User management article](../user-management/intro.md).
 
 ## Monitoring and support
 
