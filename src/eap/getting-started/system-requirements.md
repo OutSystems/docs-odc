@@ -4,7 +4,7 @@ tags:
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
 app_type: mobile apps, reactive web apps
-figma: https://www.figma.com/file/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?type=design&node-id=3406%3A233&mode=design&t=J1Fg2OFRP0LzS3gX-1
+figma: https://www.figma.com/design/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?node-id=3406%3A10&t=SDUOaeXeeu7S6LQG-1
 platform-version: odc
 ---
 
@@ -48,6 +48,8 @@ OutSystems supports the following Operating Systems. This list is subject to cha
 * macOS:
     * macOS Big Sur
     * macOS Monterrey
+    * macOS Ventura since ODC Studio 1.4.10
+    * macOS Sonoma since ODC Studio 1.4.10 
 
 * Windows:
     * Windows 11 (64-bit) since ODC Studio 1.3.15
