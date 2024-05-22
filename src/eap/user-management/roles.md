@@ -35,6 +35,12 @@ An organization role groups permissions in the following sections:
 * Stage
 * User management
 
+<div class="info" markdown="1">
+
+If you assign an organization role to a user who currently has only end-user role(s), the user will transition to the **Invited** status and receive an email to complete the organization onboarding. The user's end-user access is not impacted.
+
+</div>
+
 ### Built-in organization roles
 
 ODC comes with two built-in organization roles: **Administrators** and **Developers**. Both roles can invite new users, but Developers can only grant access to applications (end-user roles) and only for the Development stage.
