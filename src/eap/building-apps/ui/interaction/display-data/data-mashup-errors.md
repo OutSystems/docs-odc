@@ -54,7 +54,7 @@ Evaluate if the sort operation is required.
 
     * Reduce the number of records being fetched from the databases. Evaluate if all records are required, if not, add Where clauses or Join conditions to reduce the number of records. The sort will have to sort a reduced number of records so that the problem might be solved.
 
-    * Remove the Sort in the aggregate and sort the query results using OutSystems logic. Then, you can use the ListSort server action after the aggregate.
+    * Remove the sort in the aggregate and sort the query results using OutSystems logic. Then, you can use the **ListSort** server action after the aggregate.
 
     * Refer to [OutSystems documentation](queries.md) to learn how to write better mashup queries.
 
@@ -78,7 +78,7 @@ The query fails because both entities have more than one million records, which 
 
 * Reduce the number of records being fetched from at least one of the entities
 
-* Evaluate whether all records are required. If not, add Where clauses or Join conditions to reduce the number of records.
+* Evaluate whether all records are required. If not, add **Where** clauses or **Join** conditions to reduce the number of records.
 
 * Refer to [OutSystems documentation](queries.md) to learn how to write better mashup queries.
 

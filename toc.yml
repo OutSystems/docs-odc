@@ -72,13 +72,13 @@
         - href: eap/building-apps/ui/interaction/fetch-display.md
         - topics:
             - href: eap/building-apps/ui/interaction/display-data/aggregate.md
-            - href: eap/building-apps/ui/interaction/display-data/data-mashup-errors.md
             - href: eap/building-apps/ui/interaction/display-data/queries.md
             - href: eap/building-apps/ui/interaction/display-data/distinct.md
             - href: eap/building-apps/ui/interaction/display-data/filter-results.md
             - href: eap/building-apps/ui/interaction/display-data/supported-join-types.md
             - href: eap/building-apps/ui/interaction/display-data/fetch-data-nl.md
             - href: eap/building-apps/ui/interaction/display-data/sort-aggregate.md
+            - href: eap/building-apps/ui/interaction/display-data/data-mashup-errors.md
         # Reuse ui
         - href: eap/building-apps/ui/reuse/intro.md
         - href: eap/building-apps/ui/reuse/block-create-reuse.md
