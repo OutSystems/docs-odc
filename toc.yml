@@ -72,7 +72,6 @@
         - href: eap/building-apps/ui/interaction/fetch-display.md
         - topics:
             - href: eap/building-apps/ui/interaction/display-data/aggregate.md
-            - href: eap/building-apps/ui/interaction/display-data/transactions-data-mashup.md
             - href: eap/building-apps/ui/interaction/display-data/queries.md
             - href: eap/building-apps/ui/interaction/display-data/distinct.md
             - href: eap/building-apps/ui/interaction/display-data/filter-results.md
