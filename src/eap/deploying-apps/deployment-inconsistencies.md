@@ -62,7 +62,7 @@ The following are the types of inconsistencies you might encounter. Each message
 
 * **Description:** The consumer app uses a record from a static entity that doesn't exist in the producer app's definition.
   
-* ### Output parameter mismatch
+### Output parameter mismatch
 
 * **Description:** The consumer app has a service action that uses one or more output parameters of an element that doesn't exist in the producer App's definition.
 
@@ -76,7 +76,7 @@ The following are the types of inconsistencies you might encounter. Each message
 
 ### Screen name mismatch
 
-* **Description:** The name of a screen is different between the producer spp and the consumer app.
+* **Description:** The name of a screen is different between the producer app and the consumer app.
   
 ## Screen page name mismatch
 
