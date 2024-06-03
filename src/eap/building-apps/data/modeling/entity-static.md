@@ -15,6 +15,7 @@ The only action available for the Static Entities is the **Get&lt;StaticEntity&g
 
 When modeling your data, keep in mind that Static Entities can only contain foreign keys of other Static Entities. For more information check out [Entity Relationships](relationship/relationships.md).
 
+OutSystems recommends using [entities](entity.md) to store dynamically changing information. For example, in a finance app, the user's address could change.
 
 ## Create a Static Entity
 

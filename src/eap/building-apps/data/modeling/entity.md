@@ -15,6 +15,8 @@ An Entity is defined through Entity Attributes that store the information relate
 
 You can convert an existing entity to a static entity right-click the entity and select **Convert to Static Entity** from the **Advanced** menu.
 
+OutSystems recommends using [static entities](entity-static.md) for a constant set of values that do not change at runtime, such as enumerations. For example, in a finance app, the transaction type could be a deposit or withdrawal.
+
 ## Primary key
 
 In OutSystems, a primary key is called Entity Identifier.

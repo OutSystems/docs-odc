@@ -13,57 +13,94 @@ figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-managemen
 
 OutSystems Developer Cloud (ODC) enables developers to integrate external data into their apps. First, from the ODC Portal, admins create connections to the supported databases and select the entities. Then, in ODC studio, developers use the data as entities in their apps.
 
-Admins must set up configurations for each stage, such as development, QA, and production, to connect an app to an external database.
+Administrators must set up configurations for each stage, such as development, QA, and production, to connect an app to an external database.
 
-Admins ensure the app and its connection information are in the same stage. Additionally, the database model must be the same in all the stages.
+Administrators ensure the app and its connection information are in the same stage. Additionally, the database model must be the same in all the stages.
 
 There is no limit to the number of entities you can add from the external database.
 
-In ODC, you can now mash up data from different entities and distinct data sources in an aggregate. This allows you to join data from different sources to provide a unified view of all the data. ODC Studio pulls data from different sources and performs the operations in-memory to perform the data mash to provide the desired results. Refer to [aggregates](../../building-apps/ui/interaction/display-data/aggregate.md) to learn more.
+In ODC, you can now mash up data from different entities and distinct data sources in an aggregate. To learn more, refer to [data mashup](../../building-apps/data/fetch-data/data-mash.md).
 
 <div class="info" markdown="1">
 
-ODC offers [private gateways](../private-gateway.md) to connect your apps to private data and services that are inaccessible through the internet. Since an external database is usually hosted in a private network, using a private gateway ensures security.
-
-[Data Fabric processes all your external system data](../platform-architecture/intro.md#data-fabric) uniformly, with no persistent storage within Data Fabric or ODC architecture. 
+ODC offers [private gateways](../../manage-platform-app-lifecycle/private-gateway.md) to connect your apps to private data and services that are inaccessible through the internet. Since an external database is usually hosted in a private network, using a private gateway ensures security.
 
 </div>
+
+You can use [data fabric](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-fabric) to processes all your external system data uniformly, with no persistent storage within Data Fabric or ODC architecture.
 
 ## Supported systems
 
 OutSystems supports the following versions of systems:
 
-* Microsoft SQL server
-    * SQL Server 2014
-    * SQL Server 2016
-    * SQL Server 2017
-    * SQL Server 2019
-    * SQL Server 2022
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+    Microsoft SQL server
+    </div>
+    <div class="os-accordion__content">            
+    
+* SQL Server 2014
+* SQL Server 2016
+* SQL Server 2017
+* SQL Server 2019
+* SQL Server 2022
 
-* Azure SQL
-    * Azure SQL V12
+    </div>
+</div>
 
-* Oracle server
-    * Oracle 19c
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+    Azure SQL
+    </div>
+    <div class="os-accordion__content">            
 
-* SAP server
-    * SAP S4
-    * SAP HANA
+*  Azure SQL V12
+
+    </div>
+</div>
+
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+    Oracle server
+    </div>
+    <div class="os-accordion__content">            
+
+* Oracle 19c
+
+</div>
+
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+        PostgreSQL Server
+    </div>
+    <div class="os-accordion__content">            
+
+* PostgreSQL 12
+* PostgreSQL 13
+* PostgreSQL 14
+* PostgreSQL 15
+* PostgreSQL 16
+
+    </div>
+</div>
+
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+        Salesforce
+    </div>
+    <div class="os-accordion__content">            
 
 * Salesforce
 
-* PostgreSQL Server
-    * PostgreSQL 12
-    * PostgreSQL 13
-    * PostgreSQL 14
-    * PostgreSQL 15
-    * PostgreSQL 16
+    </div>
+</div>
+</div>
 
 OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
 
 ## Permissions requirements
 
-Before accessing data from an external database, verify that you have the correct access to the database and ODC. By default, only admins can manage connections and select entities. Managing connections requires the following permissions:
+Before accessing data from an external database, verify that you have the correct access to the database and ODC. By default, only administrators can manage connections and select entities. Managing connections requires the following permissions:
 
 * Configure Connections
 * Connection management
@@ -113,7 +150,7 @@ To establish a connection with the SQL server and allow the client to bypass cer
 
 ## Select entities for use in an app
 
-After connecting to an external database, select the entity names and attributes available in ODC Studio. To select entities, go to the ODC Portal and follow these steps:
+After connecting to an external database, select the entity names and attributes available in ODC Portal. To select entities, go to the ODC Portal and follow these steps:
 
 1. From the ODC Portal nav menu, select **Resource** > **Connections**, and click **Select entities** to display the **Add entities** connection screen. <br/>The connection screen displays the available entities retrieved from the database.
 
@@ -133,53 +170,9 @@ To edit an existing database connection, go to ODC Portal and follow these steps
 
 You can only change the name and description without testing your connection again.
 
-## Handle null values
-
-Admins must assign new values to represent null values in external databases. You can use the following options to handle null values.
-
-* Overwrite database NULL values (default option):
-    * When writing data, ODC stores default values instead of null values in external databases.
-    * When reading data, ODC reads null values as default values.
-* Keep database NULL values:
-    * When writing data, ODC stores null values in external databases.
-    * When reading data, ODC reads null values as default values.
-
-Admins can define handling null values at either connection or entity level:
-
-* The connection level impacts all entities in the connection. 
-* The entity level impacts only the selected entity to define unique behavior for the selected entity.
-
-<div class="info" markdown="1">
-
-An entity level configuration takes priority over the connection level.
-
-</div>  
-
-Null behavior doesn't apply to Primary and Foreign Keys; they keep null values in the database.
-
-### Default value configuration
-
-Admins must set up a configuration for the default values. ODC suggests default values for every data type, which admins can change. This configuration is available at the connection and attribute levels.
-
-* The connection level applies to nullable attributes of all entities in the connection. 
-* The attribute level applies to the selected attribute to define unique behavior for the selected attribute.
-
-<div class="info" markdown="1">
-
-Attribute level configuration takes priority over the connection level.
-
-</div>  
-
-### Non-relational databases
-
-The Null Behavior configuration functions differently for non-relational databases.
-
-* For a Null behavior configuration, the available option is to keep the database null values, which developers can't modify.
-* For a Default values configuration, developers can select the default values.
-
 ## Connection parameters
 
-Admins must supply the following information to connect to the external connector.
+Administrators  must supply the following information to connect to the external connector.
 
 | Parameter | Description | Needs testing connection when edited | Notes |
 |--|--|--|--|
@@ -200,7 +193,7 @@ Admins must supply the following information to connect to the external connecto
 
 ## Data type mapping
 
-When connecting to external databases, OutSystems maps the external database data types to OutSystems data types as follows:
+To handle null values while integrating with external systems. administrators must assign new values to represent null values in external databases. To learn more, refer to [handle null values](handle-null-values.md).
 
 | SQL Server and Azure SQL | Oracle | SAP OData | Salesforce | PostgreSQL |OutSystems Data Type |
 |--|--|--|--|--|--|

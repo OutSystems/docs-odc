@@ -1,5 +1,5 @@
 ---
-summary: Explore data types, default values, constraints, and conversion functions in OutSystems Developer Cloud (ODC).
+summary: Explore data types, default values, and constraints in OutSystems Developer Cloud (ODC).
 tags:
 locale: en-us
 guid: 651e9382-9db0-4150-ad11-c160aa9c9835
@@ -9,7 +9,15 @@ figma:
 ---
 # Data types and conversions
 
-This page describes the data types available in OutSystems, their default values and constraints, and the built-in functions to convert them into another data type.
+This page describes the data types available in OutSystems, their default values and constraints. 
+
+<div class="info" markdown="1">
+
+OutSystems does not use the concept of the NULL value, except for the Entity Identifier data type. Therefore, each data type has an associated default value that is assigned at creation.
+
+</div>
+
+You can convert data into another data type using built-in functions. To learn more, refer to [data type conversions](convert-data-types.md).
 
 ## Basic data types
 
@@ -36,56 +44,12 @@ Text | `""` (empty string) | `"Hello, world!"` |
 |`<Entity>` or `<Structure>`|When an Entity or Structure is created, a data type is also created with all the attributes of that Entity or Structure. For example, when the Customer entity is created, the Customer data type is created. To create a variable of this data type, simply set its **Data Type** property to `Customer`.<br/>To access an attribute of the variable, use the following syntax: `.`, for example `MyCustomerVar.Name`.|
 |Object|OutSystems supports the Object data type to allow to reuse your own .NET classes. The default value is NullObject().|
 |Record|A Record is a data type that's composed of a fixed number of attributes, each one with its own data type. Use a Record to define a compound data type that is used for a single variable. If you need to define more than one variable with the same compound data type, use a Structure instead. Some use cases for using the Record data type are:<br/>• You need to return the result of an Aggregate on a User Action. In this case, you can define the user action output parameter using the record data type.<br/>• You need a user action that returns compound information, but don't want to define a new Structure.|
+
+To learn more about compound data types, refer to [Use structures and records to create compound data types](structure-create-use.md).
   
 ## Collection data types
 
 |Type|Comments|
 |--- |--- |
 |List|A List is a sequence of elements of the same data type, either basic or compound. Elements can be inserted, fetched, and removed from a List.|
-  
-## Default and null values
 
-OutSystems does not use the concept of the NULL value, except for the Entity Identifier data type. Therefore, each data type has an associated default value that is assigned at creation.
-
-## Data type conversions
-
-OutSystems enables the conversion between different data types. This can be made implicitly, or explicitly by using data type conversion functions.
-
-### Implicit conversion
-
-OutSystems automatically converts values of the following types:
-
-Expected Type | Accepted Types | Obs.
----|---|---
-Boolean | - |
-Currency | Decimal, Integer, Boolean, Entity Identifier(Integer) |
-Date | Date Time |
-Date Time | Date, Text, Time |
-Integer | Decimal, Boolean, Currency, Entity Identifier(Integer) | When converting Decimal to Integer implicitly, the decimals are truncated.
-Long Integer | Long Integer, Integer, Decimal, Boolean, Currency, Entity Identifier(Integer), Entity Identifier(Long Integer) |
-Decimal | Integer, Boolean, Currency, Entity Identifier(Integer) |
-Entity Identifier | Entity Identifier |  A certain Entity Identifier can be converted into another Entity's Identifier, but a warning is displayed.
-Email | Text, Phone Number, Integer, Decimal, Boolean, Currency, Entity Identifier(Integer), Entity Identifier(Text), Date Time, Date, Time |
-Phone Number | Text, Email, Integer, Decimal, Boolean, Currency, Entity Identifier(Integer), Entity Identifier(Text), Date Time, Date, Time |
-Text | Integer, Decimal, Boolean, Currency, Phone Number, Email, Entity Identifier(Integer), Entity Identifier(Text) |
-
-### Explicit conversion functions
-
-To convert values from one data type to another use data type conversion functions.
-
-Here is a summary about the possible explicit conversions:
-
-From | To | Function
----|---|---
- Boolean | Integer<br/>Text | BooleanToInteger<br/>BooleanToText
-Date | Date Time<br/>Text | DateToDateTime<br/>DateToText
-Date Time | Date<br/>Text<br/>Time | DateTimeToDate<br/>DateTimeToText<br/>DateTimeToTime
-Integer | Boolean<br/>Decimal<br/>Text<br/>Integer Identifier | IntegerToBoolean<br/>IntegerToDecimal<br/>IntegerToText<br/>IntegerToIdentifier
-Long Integer | Long Integer Identifier<br/>Integer<br/>Text | LongIntegerToIdentifier<br/>LongIntegerToInteger<br/>LongIntegerToText
-Decimal | Boolean<br/>Integer<br/>Text | DecimalToBoolean<br/>DecimalToInteger<br/>DecimalToText
-Entity Identifier (Integer) | Integer | IdentifierToInteger
-Entity Identifier (Long Integer) |  Long Integer  | IdentifierToLongInteger
-Entity Identifier (Text) | Text | IdentifierToText
-Text | Date<br/>Date Time<br/>Decimal<br/>Integer<br/>Time<br/>Text Identifier | TextToDate<br/>TextToDateTime<br/>TextToDecimal<br/>TextToInteger<br/>TextToTime<br/>TextToIdentifier
-Time | Text | TimeToText
-Any data type | Object | ToObject

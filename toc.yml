@@ -49,9 +49,21 @@
         - topics:
             - href: eap/building-apps/data/modeling/entity.md
             - href: eap/building-apps/data/modeling/entity-create.md
-            - href: eap/building-apps/data/modeling/calculated-attribute-create.md
             - href: eap/building-apps/data/modeling/excel-bootstrap.md
             - href: eap/building-apps/data/modeling/entity-static.md
+        - href: eap/building-apps/data/fetch-data/intro.md
+        - topics: 
+            - href: eap/building-apps/data/fetch-data/aggregate.md
+            - href: eap/building-apps/data/fetch-data/calculated-attribute-create.md
+            - href: eap/building-apps/data/fetch-data/data-mash.md
+            - href: eap/building-apps/data/fetch-data/transactions-data-mashup.md
+            - href: eap/building-apps/data/fetch-data/data-mashup-errors.md
+            - href: eap/building-apps/data/fetch-data/queries.md
+            - href: eap/building-apps/data/fetch-data/distinct.md
+            - href: eap/building-apps/data/fetch-data/filter-results.md
+            - href: eap/building-apps/data/fetch-data/supported-join-types.md
+            - href: eap/building-apps/data/fetch-data/fetch-data-nl.md
+            - href: eap/building-apps/data/fetch-data/sort-aggregate.md
         - href: eap/building-apps/data/modeling/relationship/relationships.md
         - topics:
             - href: eap/building-apps/data/modeling/relationship/relationship-one-to-one.md
@@ -59,6 +71,7 @@
             - href: eap/building-apps/data/modeling/relationship/relationship-many-to-many.md
         - href: eap/building-apps/data/sharing.md
         - href: eap/building-apps/data/data-types.md
+        - href: eap/building-apps/data/convert-data-types.md
         - href: eap/building-apps/data/edit-data.md
         - href: eap/building-apps/data/structure-create-use.md   
     # UI
@@ -69,17 +82,7 @@
         - topics:
             - href: eap/building-apps/ui/creating-screens/screen-creating.md
             - href: eap/building-apps/ui/creating-screens/create-screen-scratch.md
-        - href: eap/building-apps/ui/interaction/fetch-display.md
-        - topics:
-            - href: eap/building-apps/ui/interaction/display-data/aggregate.md
-            - href: eap/building-apps/ui/interaction/display-data/queries.md
-            - href: eap/building-apps/ui/interaction/display-data/distinct.md
-            - href: eap/building-apps/ui/interaction/display-data/filter-results.md
-            - href: eap/building-apps/ui/interaction/display-data/supported-join-types.md
-            - href: eap/building-apps/ui/interaction/display-data/fetch-data-nl.md
-            - href: eap/building-apps/ui/interaction/display-data/sort-aggregate.md
-            - href: eap/building-apps/ui/interaction/display-data/transactions-data-mashup.md
-            - href: eap/building-apps/ui/interaction/display-data/data-mashup-errors.md
+            - href: eap/building-apps/ui/interaction/fetch-display.md
         # Reuse ui
         - href: eap/building-apps/ui/reuse/intro.md
         - href: eap/building-apps/ui/reuse/block-create-reuse.md
@@ -296,6 +299,10 @@
 
 # Integration with external systems
 
+- href: eap/integration-with-systems/external-databases/intro.md
+- topics: 
+    - href: eap/integration-with-systems/external-databases/handle-null-values.md
+
 # Consume REST APIs
 - href: eap/integration-with-systems/intro.md
 - topics:
@@ -370,8 +377,6 @@
     - href: eap/manage-platform-app-lifecycle/custom-domains.md
     - href: eap/manage-platform-app-lifecycle/private-gateway.md
     - href: eap/manage-platform-app-lifecycle/configure-emails.md
-    # External database
-    - href: eap/manage-platform-app-lifecycle/external-databases/intro.md
     - href: eap/manage-platform-app-lifecycle/sso.md
     - href: eap/manage-platform-app-lifecycle/filter-ip.md
 

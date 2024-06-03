@@ -19,11 +19,11 @@ This document guides you through two steps:
 
 ## Fetch data from a database
 
-Here is how you can fetch data in your app by using an Aggregate. Aggregates are a handy way to get data, and they don't require knowledge of databases. As this is a simple app, you can reference the data directly from the main app.
+Here is how you can fetch data in your app by using an aggregate. Aggregates are a handy way to get data, and they don't require knowledge of databases. As this is a simple app, you can reference the data directly from the main app.
 
 <div class="info" markdown="1">
 
-This is an example of getting data with an Aggregate to a Screen. Both Aggregate and Screen run in the **client**. For more information about creating Aggregates in the **server** logic, see [Server-side Aggregates](display-data/aggregate.md).
+This is an example of getting data with an aggregate to a screen. Both Aggregate and Screen run in the **client**. For more information about creating aggregates in the **server** logic, refer to [Server-side Aggregates](../../data/fetch-data/aggregate.md).
 
 </div>
 

@@ -174,6 +174,6 @@ The architecture is composed of two libraries:
 * **Lottie animations**, which is available in Forge and installed in your organization to enrich your end-user experience by adding some custom animations to the **Home Insurance** app.
 * The **Guidewire connector**, that supports your billing system as an integration wrapper to process traditional and flat-rate agent commissions from a single interface.
 
-You can use [**SAP connector**](../manage-platform-app-lifecycle/external-databases/intro.md) in ODC to connect your customer's information from SAP and work as a bridge to your customer portal.
+You can use [**SAP connector**](../integration-with-systems/external-databases/intro.md) in ODC to connect your customer's information from SAP and work as a bridge to your customer portal.
 
 ![Diagram presenting the final architecture for a Home Insurance portal with apps and libraries](images/the-final-architecture-diag.png "The Final Architecture Diagram")

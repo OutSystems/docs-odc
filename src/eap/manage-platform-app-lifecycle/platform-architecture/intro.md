@@ -139,7 +139,7 @@ Many times your data is stored in an external location. Data Fabric helps you to
 
 ### Data stored in external systems
 
-Customers use [Data Fabric connectors](../external-databases/intro.md) for integrations. Data Fabric processes all your external system data uniformly, with no persistent storage within Data Fabric or ODC architecture.
+Customers use [Data Fabric connectors](../../integration-with-systems/external-databases/intro.md) for integrations. Data Fabric processes all your external system data uniformly, with no persistent storage within Data Fabric or ODC architecture.
 
 Data Fabric Connectors retrieve essential metadata from external systems, making it crucial for developers to select integration tables, objects, and columns. The selected metadata is securely stored in serverless, NoSQL databases during the connection's lifetime in the ODC Portal.
 
