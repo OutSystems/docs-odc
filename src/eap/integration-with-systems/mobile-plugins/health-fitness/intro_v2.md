@@ -114,6 +114,10 @@ Verify that access and storage of health or fitness data on the device works. Ch
 
 </div>
 
+#### Notes about AdvancedQuery on iOS
+
+* When querying the **Sleep** variable, the results correspond to the "IN BED INTERVALS" that are registered in the Health app from the system. Using different time units or operations won't alter the results returned.
+
 ### Create logic to access and use workouts data (iOS only)
 
 To enrich the data obtained from the **AdvancedQuery**, you can retrieve data related to workouts using the **GetWorkoutsData** client action. To do this, set the values for the following input parameters:
