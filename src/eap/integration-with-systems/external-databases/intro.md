@@ -35,52 +35,53 @@ OutSystems supports the following versions of systems:
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
-    Microsoft SQL server
+        Microsoft SQL server
     </div>
-    <div class="os-accordion__content">            
-    
-* SQL Server 2014
-* SQL Server 2016
-* SQL Server 2017
-* SQL Server 2019
-* SQL Server 2022
-
-    </div>
-</div>
-
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
-    Azure SQL
-    </div>
-    <div class="os-accordion__content">            
-
-*  Azure SQL V12
-
+    <div class="os-accordion__content">
+        <ul>
+            <li>SQL Server 2014</li>
+            <li>SQL Server 2016</li>
+            <li>SQL Server 2017</li>
+            <li>SQL Server 2019</li>
+            <li>SQL Server 2022</li>
+        </ul>
     </div>
 </div>
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
-    Oracle server
+        Azure SQL
     </div>
-    <div class="os-accordion__content">            
+    <div class="os-accordion__content">
+        <ul>
+            <li>Azure SQL V12</li>
+        </ul>
+    </div>
+</div>
 
-* Oracle 19c
-
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+        Oracle server
+    </div>
+    <div class="os-accordion__content">
+        <ul>
+            <li>Oracle 19c</li>
+        </ul>
+    </div>
 </div>
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
         PostgreSQL Server
     </div>
-    <div class="os-accordion__content">            
-
-* PostgreSQL 12
-* PostgreSQL 13
-* PostgreSQL 14
-* PostgreSQL 15
-* PostgreSQL 16
-
+    <div class="os-accordion__content">
+        <ul>
+            <li>PostgreSQL 12</li>
+            <li>PostgreSQL 13</li>
+            <li>PostgreSQL 14</li>
+            <li>PostgreSQL 15</li>
+            <li>PostgreSQL 16</li>
+        </ul>
     </div>
 </div>
 
@@ -88,12 +89,11 @@ OutSystems supports the following versions of systems:
     <div class="os-accordion__title">
         Salesforce
     </div>
-    <div class="os-accordion__content">            
-
-* Salesforce
-
+    <div class="os-accordion__content">
+        <ul>
+            <li>Salesforce</li>
+        </ul>
     </div>
-</div>
 </div>
 
 OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
@@ -232,27 +232,30 @@ Consider the following when integrating an external database.
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
-    Oracle
+        Oracle
     </div>
-    <div class="os-accordion__content">            
-
-* The `DiffMinutes` and `DiffSeconds` built-in functions for Oracle only allow max intervals between dates:
-    * Seconds: 31 years, 9 months, 9 days, 1 hour, 46 minutes, and 39 seconds
-    * Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds
-* Oracle treats empty strings as NULL values. When inserting or updating a nullable text attribute with a value, Oracle stores NULL regardless of the Null Behavior configuration
+    <div class="os-accordion__content">
+        <ul>
+            <li>The `DiffMinutes` and `DiffSeconds` built-in functions for Oracle only allow max intervals between dates:</li>
+            <ul>
+                <li>Seconds: 31 years, 9 months, 9 days, 1 hour, 46 minutes, and 39 seconds</li>
+                <li>Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds</li>
+            </ul>
+            <li>Oracle treats empty strings as NULL values. When inserting or updating a nullable text attribute with a value, Oracle stores NULL regardless of the Null Behavior configuration</li>
+        </ul>
     </div>
 </div>
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
-    SAP OData
+        SAP OData
     </div>
-    <div class="os-accordion__content">            
-
-*  SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.
-* SAP OData only supports read-only entity actions in ODC Studio.
-* SAP throws a `RAISE_SHORTDUMP` exception when requesting the row count for some VIEWS on the first request.
-
+    <div class="os-accordion__content">
+        <ul>
+            <li>SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.</li>
+            <li>SAP OData only supports read-only entity actions in ODC Studio.</li>
+            <li>SAP throws a `RAISE_SHORTDUMP` exception when requesting the row count for some VIEWS on the first request.</li>
+        </ul>
     </div>
 </div>
 
@@ -260,13 +263,16 @@ Consider the following when integrating an external database.
     <div class="os-accordion__title">
         Salesforce
     </div>
-    <div class="os-accordion__content">            
-
-* Entities and attributes for Salesforce are displayed using their API names, such as CustomObject_c, instead of Field Labels or Field Names, such as CustomObject.
-* Custom attributes and their data types in Salesforce have different mapping than the built-in attributes. For more information, see [salesforce custom columns mapping.](#salesforce-custom-columns-mapping)
-* Salesforce doesn't support leading and trailing white spaces. 
-    * Salesforce removes those white spaces. While inserting an empty string, Salesforce inserts NULL instead.
-* Salesforce is case-insensitive, and `ToUpper`/`ToLower` built-in functions don't have the expected behavior in aggregates.
+    <div class="os-accordion__content">
+        <ul>
+            <li>Entities and attributes for Salesforce are displayed using their API names, such as CustomObject_c, instead of Field Labels or Field Names, such as CustomObject.</li>
+            <li>Custom attributes and their data types in Salesforce have different mapping than the built-in attributes. For more information, see [salesforce custom columns mapping.](#salesforce-custom-columns-mapping)</li>
+            <li>Salesforce doesn't support leading and trailing white spaces.</li>
+            <ul>
+                <li>Salesforce removes those white spaces. While inserting an empty string, Salesforce inserts NULL instead.</li>
+            </ul>
+            <li>Salesforce is case-insensitive, and `ToUpper`/`ToLower` built-in functions don't have the expected behavior in aggregates.</li>
+        </ul>
     </div>
 </div>
 
@@ -274,23 +280,26 @@ Consider the following when integrating an external database.
     <div class="os-accordion__title">
         PostgreSQL
     </div>
-    <div class="os-accordion__content">            
-
-* For PostgreSQL connections, you may encounter issues in Text data type columns when inserting an empty value, and the connection is configured to overwrite null values with default values.OutSystems recommends you set a different default value to columns of these data types, such as for Time: 00:00:00 or for Float: 0. The following data types are impacted:
-    * Time
-    * Numeric (Any, >8)
-    * Numeric (>28, Any)
-    * Decimal (Any, >8)
-    * Decimal (>28, Any)
-    * Float4
-    * Float8
-    * Float8_range
-    * Real
-    * Double precision
-    * XML
-    * JSON
-    * UUID
-    * Pg_lsn
-    * Enum
+    <div class="os-accordion__content">
+        <ul>
+            <li>For PostgreSQL connections, you may encounter issues in Text data type columns when inserting an empty value, and the connection is configured to overwrite null values with default values. OutSystems recommends you set a different default value to columns of these data types, such as for Time: 00:00:00 or for Float: 0. The following data types are impacted:</li>
+            <ul>
+                <li>Time</li>
+                <li>Numeric (Any, >8)</li>
+                <li>Numeric (>28, Any)</li>
+                <li>Decimal (Any, >8)</li>
+                <li>Decimal (>28, Any)</li>
+                <li>Float4</li>
+                <li>Float8</li>
+                <li>Float8_range</li>
+                <li>Real</li>
+                <li>Double precision</li>
+                <li>XML</li>
+                <li>JSON</li>
+                <li>UUID</li>
+                <li>Pg_lsn</li>
+                <li>Enum</li>
+            </ul>
+        </ul>
     </div>
 </div>
