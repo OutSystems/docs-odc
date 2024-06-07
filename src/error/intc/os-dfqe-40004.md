@@ -208,3 +208,15 @@ Verify the service URL address and port number are correct.
 #### Recommended action
 
 Validate the Service configurations in SAP. Make sure it's available to respond to the request.
+
+## Salesforce connection
+
+Testing a Salesforce connection can return these errors.
+
+### Wrong username, password, security token or user locked out
+
+`"errorMessage": "Connection to 'jdbc:cdata:salesforce:InitiateOAuth=REFRESH;OAuthSettingsLocation="memory://******";ConnectOnOpen=true;OEMKey=******;AuthScheme="basic";User="{username}";Password="******";SecurityToken="******";' failed, details: INVALID_LOGIN: Invalid username, password, security token; or user locked out."`
+
+#### Recommended action
+
+Enter the correct username, password and security token. Users can be locked out of their organization when they enter incorrect login credentials too many times. Unlock users to restore their access.
