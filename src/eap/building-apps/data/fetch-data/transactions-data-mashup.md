@@ -7,7 +7,7 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&
 platform-version: odc
 ---
 
-# Commit changes on the OutSystems database before running aggregates
+# Data mashup transactions
 
 When you insert a record into an internal entity and then combine an aggregate in the same flow with an external entity, the aggregate doesn't return the inserted record because mashup queries are executed in different transactions. This issue does not occur with queries using external connections to combine different data sources. External connections have auto-commit enabled. Transactions are not supported on integrations with external systems.
 

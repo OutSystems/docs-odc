@@ -298,14 +298,13 @@
 - href: eap/deleting-apps/intro.md
 
 # Integration with external systems
-
-- href: eap/integration-with-systems/external-databases/intro.md
-- topics: 
-    - href: eap/integration-with-systems/external-databases/handle-null-values.md
-
-# Consume REST APIs
 - href: eap/integration-with-systems/intro.md
 - topics:
+    # Integration with external databases
+    - href: eap/integration-with-systems/external-databases/intro.md
+    - topics: 
+        - href: eap/integration-with-systems/external-databases/handle-null-values.md
+    #Consume REST API 
     - href: eap/integration-with-systems/consume_rest/intro.md
     - topics:
         - href: eap/integration-with-systems/consume_rest/consume-a-rest-api.md
@@ -314,7 +313,6 @@
         - href: eap/integration-with-systems/consume_rest/rest-api-structures.md
         - href: eap/integration-with-systems/consume_rest/handling-rest-errors.md
         - href: eap/integration-with-systems/consume_rest/simple-customizations.md
-        
     # Exposing REST APIs
     - href: eap/integration-with-systems/exposing_rest/intro.md
     - topics:
@@ -324,6 +322,8 @@
         - href: eap/integration-with-systems/exposing_rest/throw-a-custom-error-in-an-exposed-rest-api.md
         - href: eap/integration-with-systems/exposing_rest/change-the-http-status-code-of-a-rest-api.md
         - href: eap/integration-with-systems/exposing_rest/built-in-http-status-codes.md
+    
+
     #Mobile plug-ins
     - href: eap/integration-with-systems/mobile-plugins/intro.md
     - topics:
