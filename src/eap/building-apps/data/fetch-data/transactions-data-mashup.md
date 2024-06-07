@@ -26,3 +26,4 @@ If you run a create or update action for an OutSystems entity within a Client Ac
 ![Screenshot of ODC Studio showing a client action where the aggregate is implemented at the screen level, not requiring a commit transaction.](images/data-mash-no-commit-odcs.png "Screenshot of ODC Studio without the need to commit transaction")
 
 To learn more about isolation in transactions, refer to [dirty transactions](../../../reference/isolation.md). 
+
