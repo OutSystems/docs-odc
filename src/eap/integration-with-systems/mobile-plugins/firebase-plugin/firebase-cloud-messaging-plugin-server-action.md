@@ -246,31 +246,21 @@ We offer the following types of custom actions:
 
 ### Enable notifications with custom sound { #enable-custom-sounds }
 
-To use custom sounds on your mobile app, complete the following steps:
+To enhance your notification with custom sounds,  follow these steps:
 
-1. Put your sound (.wav) files, which you want to use as notification sounds, into a zip file called **sounds.zip**.
+1. Put the .wav files you want to use as notification sounds into a .zip file called **sounds.zip**. 
 
-1. Go to the ODC portal.
+1. Upload the .zip file to the app’s Resources folder. 
 
-1. From the left Navigation menu, select **Apps** > select your app > your app details page > **Configuration**.
+1. Use the **Plugin's Server Actions**, using the **Sound** parameter inside the **Notification** parameter on the **SendNotificationToTopics** or **SendNotificationToUsers methods**.
 
-1. In the **Sound** setting, upload the **sounds.zip** file.
-
-    <div class="info" markdown='1'>
-
-    Even though this setting is optional, you must add a file to it. This requirement is temporary.
-
-    </div>
-
-Additionally, you must use the **Plugin's Server Actions**, using the **Sound** parameter inside the **Notification** parameter on the **SendNotificationToTopics** or **SendNotificationToUsers** methods.
-
-<div class="info" markdown="1">
+It is important to note the following requirements for custom sounds:
 
 * Only .wav files are supported.
 
 * The name of the zip sound file (.wav) can only contain lowercase letters, numbers, and underscores. If you add any other characters, the android build won't work.
 
-</div>
+* The sounds.zip file should be included with the “Deploy Action” set to “Deploy to Target Directory”.
 
 ### Manage the experience of in-app notifications { #manage-notification-ux }
 
