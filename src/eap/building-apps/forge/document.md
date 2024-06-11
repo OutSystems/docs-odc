@@ -14,7 +14,7 @@ Before sharing a new Forge asset, OutSystems recommends that you provide documen
 
 ## Best practices
 
-Keep the following in mind as you crate your documentation.
+Keep the following in mind as you create your documentation.
 
  * Write to the level the majority of your audience understands, don't use slang, jargon, or terms they may not understand.
 * Use the active voice to create less wordy sentences.
