@@ -114,7 +114,7 @@ The following table describes the Platform databases and data stores.
 | - | - | - |
 | App revisions and dependency information. | Amazon Aurora | A PostgreSQL-compatible relational database built for the cloud. |
 | Current and historic app revisions, in the form of OML projects, stored as blob data. | S3 | An object storage service offering industry-leading scalability, data availability, security, and performance. |
-| Configuration and metadata from the Platform Build Service. | DynamoDB | A fully managed, serverless, key-value NoSQL database designed to run high-performance apps at any scale. |
+| Configuration and metadata from the Platform Build Service. | DynamoDB | Configuration and metadata include settings, build parameters, and other service-specific information required for the operation of the Platform Build Service. A fully managed, serverless, key-value NoSQL database designed to run high-performance apps at any scale. |
 | Current and historic app container images. | Elastic Container Registry (ECR) | A fully-managed Docker container registry that makes it easy to store, share, and deploy container images. |
 
 #### Runtime data
