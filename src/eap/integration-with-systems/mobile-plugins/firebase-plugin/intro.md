@@ -84,6 +84,8 @@ You must provide the plugin configuration file as settings in the ODC Portal for
 
 <div class="info" markdown="1">
 
+* Binary Data Settings have a 5KB size limit of 5KB. If your Google Services configuration file exceeds this limit, consider creating a new Firebase Project or using one with fewer apps associated with it.
+
 * Add the Google services configuration files only for the first Firebase plugin in your app. The next Firebase plugin you add uses the same configuration files.
 
 * Even though these settings are optional and you may choose to generate a build for only one platform (Android or iOS), you must add both the Google services configuration files, one for each platform. This requirement is temporary.

@@ -8,7 +8,7 @@ platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5399%3A383&mode=design&t=SWFFXJVfxBN7UhUU-1 
 ---
 
-# Writing better queries in aggregates 
+# Writing better queries in data mashup 
 
 To better understand Joins in OutSystems, refer to the [Supported Join Types](supported-join-types.md) documentation. In OutSystems, joins are represented using the following terminology:
 
@@ -49,6 +49,9 @@ To write better queries, you need to understand the following joins:
 * Queries that work fine in ODC Studio data preview may fail in runtime due to exceeding the execution plan cost limit. This can happen because:
 * Test query limits the number of records, reducing plan cost.
 * Entities in QA or Production environments may have more records than those in the Development environment.
+* In mashup queries, use With or Without instead of Only With.
+* Use aggregate functions (e.g., avg, count, sum) carefully in queries that combine data from different sources or handle large volumes of data in respective entities.
+* In a With or Without join, apply aggregate functions (e.g., avg, count, sum) to the left entity.
 
 ### Join conditions      
 

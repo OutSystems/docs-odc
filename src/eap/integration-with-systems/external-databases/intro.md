@@ -9,7 +9,7 @@ platform-version: odc
 figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=3504%3A808&mode=design&t=0qX3292WcHKssBRO-1
 ---
 
-# Integrate with external systems
+# Integrate with external data sources
 
 OutSystems Developer Cloud (ODC) enables developers to integrate external data into their apps. First, from the ODC Portal, admins create connections to the supported databases and select the entities. Then, in ODC studio, developers use the data as entities in their apps.
 
@@ -139,8 +139,8 @@ To create a new database connection, go to the ODC Portal and follow these steps
 
 If you select SQL or Oracle server, you can use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, separate each parameter with a semi-colon (;). Different databases may require different parameters, for example:
 
-* For the **SQL Server** and **Azure SQL** to select the desired schema on the database, enter `currentSchema = <schema-name>`. For PostgreSQL, you can also use the `Schema` parameter.
-* For **Oracle** to select the desired schema on the database, enter `current_schema = <schema-name>`
+* For the **SQL Server** and **Azure SQL** to select the desired schema on the database, enter `currentSchema=<schema-name>`. For PostgreSQL, you can also use the `Schema` parameter.
+* For **Oracle** to select the desired schema on the database, enter `current_schema=<schema-name>`
 
 <div class="info" markdown="1">
 
@@ -193,7 +193,7 @@ Administrators  must supply the following information to connect to the external
 
 ## Data type mapping
 
-To handle null values while integrating with external systems. administrators must assign new values to represent null values in external databases. To learn more, refer to [handle null values](handle-null-values.md).
+To handle null values while integrating with external systems. Administrators must assign new values to represent null values in external databases. To learn more, refer to [handle null values](handle-null-values.md).
 
 | SQL Server and Azure SQL | Oracle | SAP OData | Salesforce | PostgreSQL |OutSystems Data Type |
 |--|--|--|--|--|--|
