@@ -45,9 +45,9 @@ By default, when you open the **Traces** screen you see traces from the developm
 
 Use the filter inputs to filter traces by stage, app, element type, trace status, total duration, date/time and user. You can filter traces by date back up to four weeks in an interval of up to two weeks.
 
-When you click the embedded link of a trace's date/time, you open the detail page for that unique trace. On the left side of the screen you see each span of the trace in order of execution alongside its duration. A red bar next to a span indicates an error. If any span of a trace has an error then the status of the trace is **Error**. Else the trace status is **OK**.
+When you click the embedded link of a trace's date/time, you open the detail page for that unique trace. On the left side of the screen you see each span of the trace in order of execution alongside its duration. A red circle with X next to a span indicates an error. If any span of a trace has an error then the status of the trace is **Error**. Else the trace status is **OK**.
 
-You use the **Show all** toggle to show ODC internal spans. This may provide additional context for your troubleshooting, but you can't action a problem with an ODC internal span.
+You use the **Show details** toggle to show ODC internal spans. This may provide additional context for your troubleshooting, but you can't action a problem with an ODC internal span.
 
 When you click a span you see its attributes and any related logs on the right side of the screen.
 
