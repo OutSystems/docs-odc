@@ -184,10 +184,15 @@ For information about each database and data store used in the Platform and Runt
 
 </div>
 
-All customer data:
+All customer production runtime application data:
 
 * Is encrypted at rest with a per-customer encryption key managed by OutSystems.
 * Resides in the region specified during the creation of the customer's ODC organization.
+* Is continuously and incrementally backed up for up to 30 days.
+* For Disaster Recovery purposes only, this backup can be used to restore production data and:
+    * Doesn't recover deleted apps or users,
+    * May cause timers to re-run depending on the logic referenced in the database,
+    * Doesn't reprocess events that have already been processed.
 
 A network namespace isolates each stage [within each organization's Runtime](#isolation-of-stages).
 
@@ -200,10 +205,6 @@ File Integrity Monitoring performs automated scans and alerts the [Computer Secu
 Each Runtime stage has an isolated Amazon Aurora Serverless database. The database for the Production stage is high-availability.
 
 For more information see [Cloud-native architecture of OutSystems Developer Cloud](../manage-platform-app-lifecycle/platform-architecture/identity.md#runtime-data).
-
-### Backup policy
-
-Each database and data store used in the Runtime is continuously and incrementally backed up. This enables you to restore data at any point within a 30-day backup retention period.
 
 ### Encryption at-rest
 
