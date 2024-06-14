@@ -190,9 +190,9 @@ All customer production runtime application data:
 * Resides in the region specified during the creation of the customer's ODC organization.
 * Is continuously and incrementally backed up for up to 30 days.
 * For Disaster Recovery purposes only, this backup can be used to restore production data and:
-    * Will not recover deleted apps or users,
-    * May cause timers to re-run,
-    * Will not reprocess events or workflows that have already been processed.
+    * Doesn't recover deleted apps or users,
+    * May cause timers to re-run depending on the logic referenced in the database,
+    * Doesn't reprocess events that have already been processed.
 
 A network namespace isolates each stage [within each organization's Runtime](#isolation-of-stages).
 
