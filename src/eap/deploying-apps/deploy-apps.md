@@ -5,7 +5,7 @@ locale: en-us
 guid: d0aa50bf-0378-4bb9-8c4f-71b37092dd8b
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/file/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?type=design&node-id=3404%3A22&mode=design&t=Y5uHYwUWDFTKusfq-1
+figma: https://www.figma.com/design/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?node-id=2901-72&t=huLfuwjwe8mJCQTh-1
 ---
 
 # Deploying apps
@@ -44,11 +44,13 @@ A deployment status displays. You can also click **View app** to see your deploy
 
 ## Versions and revisions
 
-Versions and revisions help you keep track of changes in your apps and libraries. You can only deploy App versions to Development. For other stages such as  QA and Productions, you choose a revision that you want to deploy from the list of available revisions.
+Versions and revisions help you track changes in your apps and libraries. You can publish your apps to Development, and every time you publish, the revision number increments by one. Revision numbers are whole numbers displayed below the app's name on the Deployments screen. 
 
-Version numbers are a 3-part number (2.1.1) that you can change to meet your needs. For example, suppose you create an app using a different product and the current version number is 3.1.1. Now you create the same app in ODC, and when you publish the app, ODC gives the app a version number starting with "1" such as 1.1.1. You can modify this number to a different sequence number such as 4.1.1 to prevent conflicts with your previously published app.
+Versions and revisions help you keep track of changes in your apps and libraries in different stages, such as:
 
-Revision numbers are whole numbers that display below the name of the app on the Deployments screen. Use this information to select the revision you want to deploy to the next stage.
+* Development: When you publish your app in the Development stage, ODC automatically creates a new revision and the revision number increments by one. 
+* QA: You can deploy any revision of your app from Development to QA. 
+* Production: After testing, when you deploy your app from QA to Production, ODC assigns a three-part semantic version number in the format major.minor.patch. ODC always suggests a version (the first suggestion is always 0.1.0). Depending on the changes you deploy to Production, you can change the version number (it must be equal to or higher than the previous version). 
 
 ## Impact analysis
 
