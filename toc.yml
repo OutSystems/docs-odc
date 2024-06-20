@@ -170,6 +170,7 @@
         # Screen Templates
         - href: eap/building-apps/ui/screen-template/intro.md
         - topics:
+            - href: eap/building-apps/ui/screen-template/sample-data.md
             - href: eap/building-apps/ui/screen-template/replace-data.md
             - href: eap/building-apps/ui/screen-template/template-compatibility.md
         - href: eap/building-apps/ui/navigation/ui-flow.md
