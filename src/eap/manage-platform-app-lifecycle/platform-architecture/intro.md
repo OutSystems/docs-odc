@@ -170,7 +170,9 @@ In the ODC architecture, caches optimize performance by storing certain informat
 
 ### Connection secrets
 
-When creating a connection, developers must supply external system details such as username, password, and host. ODC securely stores sensitive data like passwords by encrypting them as secrets in a cloud secret store. Passwords are never stored in clear text and OutSystems can't access them.
+When creating a connection, developers must supply external system details such as username, password, and host. ODC securely stores sensitive data like passwords by encrypting them as secrets in a cloud secret store. Passwords are never stored in clear text and secrets are not human-readable. Secrets are decrypted only when connecting to the external system by an automated process and without human intervention.
+
+When editing an existing connection, secrets are not fetched and decrypted from the cloud secret store. Instead, the developer will have to provide the details considered secrets one more time to save the connection.
 
 ### Data in transit
 
