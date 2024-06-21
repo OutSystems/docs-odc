@@ -69,6 +69,8 @@ There are several benefits, including:
 
 The event-driven architecture facilitates the detection of anomalous patterns and activities that might indicate potential security threats. As events are processed and analyzed, the system can identify deviations from normal behavior and trigger alerts for further investigation.
 
+For example, when you click 1CP, several services work behind the scenes to transform the app you're developing in the ODC Studio into a container deployed in Kubernetes. Many of these interactions between services use events. Decoupling services in this way improves resilience and helps locate potential security threats.
+
 ODC has advanced intrusion detection, safeguarding your apps and data against known, unknown, and undisclosed threats.
 
 OutSystems staff actively monitor all systems and the appropriate teams follow up alerts. See [Monitoring and support](#monitoring-and-support) for more detail.
@@ -165,7 +167,7 @@ All the users with the Administrator built-in role in your ODC organization rece
 
 1. **Schedule email:** Provides details about the affected stages, the upgrade schedule, and links to more information about each vulnerability.
 1. **48-hour reminder email:** Reminder of the upcoming scheduled upgrade for the given stage.
-1. **Upgrade started email:** Marks the commencement of the automatic upgrade process for the given stage. It may take up to four hours. During the automatic upgrade process no downtime of your apps is expected. Apps in your non-development stages are recompiled and redeployed. Apps in your development stages are republished.
+1. **Upgrade started email:** Marks the commencement of the automatic upgrade process for the given stage. It may take up to four hours. During the automatic upgrade process, no downtime for your apps is expected. Apps in your non-development stages are patched without creating new revisions. Apps in your development stages are patched by republishing with the same revision. [Libraries are packaged with apps](../app-architecture/intro.md#libraries) when an app is published, so their resulting code is patched as a part of the app, and no new revisions are created for libraries as a part of automatic patching.
 1. **Upgrade completed email:** Confirms the successful completion of the automatic upgrade process for the given stage. A report detailing which apps were upgraded is attached to this email.
 
 ##### Manual patching
