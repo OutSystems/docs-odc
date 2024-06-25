@@ -137,11 +137,6 @@ To create a new database connection, go to the ODC Portal and follow these steps
     * Click Apply to all stages to use the same connection information in all stages.
     * Select the stage name to use connection information for a single stage.
 
-If you select SQL or Oracle server, you can use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, separate each parameter with a semi-colon (;). Different databases may require different parameters, for example:
-
-* For the **SQL Server** and **Azure SQL** to select the desired schema on the database, enter `currentSchema=<schema-name>`. For PostgreSQL, you can also use the `Schema` parameter.
-* For **Oracle** to select the desired schema on the database, enter `current_schema=<schema-name>`
-
 <div class="info" markdown="1">
 
 To establish a connection with the SQL server and allow the client to bypass certificate validation, add the `trustServerCertificate=true` parameter to the additional parameters.
@@ -172,7 +167,7 @@ You can only change the name and description without testing your connection aga
 
 ## Connection parameters
 
-Administrators  must supply the following information to connect to the external connector.
+Administrators  must supply the following information to connect to the external connector. 
 
 | Parameter | Description | Needs testing connection when edited | Notes |
 |--|--|--|--|
@@ -183,13 +178,25 @@ Administrators  must supply the following information to connect to the external
 | Server for SQL server and Azure SQL \ Host for Oracle server | Endpoint for your database connection | Yes | For Private Gateway, enter `secure-gateway` |
 | Port | The port number to connect to the database | Yes | ODC has a default port number that an admin can change. For a private gateway, enter the port configured in the connector. |
 | Database for SQL server and Azure SQL \ Service name for Oracle server | Name of the database | Yes |  |
-| Additional parameters | Additional parameters for a database connection | Yes | Different databases may require different parameters |
+| Additional parameters | Additional parameters for a database connection | Yes | For more information, see [additional parameters](#additional-parameters) |
 | SAP Server domain | SAP server/host address| Yes |  |
 | SAP Client | If the SAP system has multiple clients, you must provide a client number. Leave the input blank if you connect to the default client | Yes | Optional |
 | Manual entry | To manually enter the Service URL| Yes | If you select "Manual entry" for a private gateway, then the domain must be `secure-gateway:<port>/..`|
 | Basic authentication type | Basic is a simpler authentication method than OAuth | Yes | |
 | Sandbox connection | Sandbox enables a partial or full copy of production data to test the connector. | Yes | |
 | Schema | Optional schema name for PostgreSQL connections | Yes | If provided, it specifies the default schema to be used. |
+
+### Additional parameters
+ 
+You can use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, separate each parameter with a semi-colon (;). Different databases may require different parameters, for example:
+
+* For the **SQL Server** and **Azure SQL** to select the desired schema on the database, enter `currentSchema=<schema-name>`. For PostgreSQL, you can also use the `Schema` parameter.
+* For **Oracle** to select the desired schema on the database, enter `current_schema=<schema-name>`
+* You can configure connection pool size for all available relational database connectors. Changing the connection pool size can significantly impact performance.
+    * minConnectionPoolSize: Default value of 0.
+    * maxConnectionPoolSize: Default value of 400, as it was the best performer in Outsystems performance tests.
+
+![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems.png "External Database additional parameters")
 
 ## Data type mapping
 
