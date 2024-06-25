@@ -137,11 +137,6 @@ To create a new database connection, go to the ODC Portal and follow these steps
     * Click Apply to all stages to use the same connection information in all stages.
     * Select the stage name to use connection information for a single stage.
 
-<div class="info" markdown="1">
-
-To establish a connection with the SQL server and allow the client to bypass certificate validation, add the `trustServerCertificate=true` parameter to the additional parameters.
-
-</div>  
 
 ## Select entities for use in an app
 
@@ -192,6 +187,7 @@ You can use advanced parameters to add additional parameters for a database conn
 
 * For the **SQL Server** and **Azure SQL** to select the desired schema on the database, enter `currentSchema=<schema-name>`. For PostgreSQL, you can also use the `Schema` parameter.
 * For **Oracle** to select the desired schema on the database, enter `current_schema=<schema-name>`
+* To establish a connection with the SQL Server and allow the client to bypass certificate validation, add the `trustServerCertificate=true` parameter to the additional parameters.
 * You can configure connection pool size for all available relational database connectors. Changing the connection pool size can significantly impact performance.
     * minConnectionPoolSize: Default value of 0.
     * maxConnectionPoolSize: Default value of 400, as it was the best performer in Outsystems performance tests.
