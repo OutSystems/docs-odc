@@ -157,7 +157,7 @@ The patching process upgrades your apps, and the process is:
 
 ##### Automatic patching
 
-To reinforce security and ensure that applications are free from vulnerabilities, runtime applications will be patched automatically for known vulnerabilities.  You can continue to choose to patch applications manually by performing a 1-click publish, which will automatically deploy the application using the latest patches. If can choose to instead allow the platform to do it automatically, without any downtime or disruption to running applications. Automatic patching will be scheduled based on severity. If an app is not manually patched (by performing a 1-click publish), ODC will ensure that all vulnerabilities are automatically patched. The timeframe varies according to the vulnerability's severity.
+To reinforce security and ensure that applications are free from vulnerabilities, runtime applications will be patched automatically for known vulnerabilities. You can choose to patch applications manually by performing a 1-click publish, which will automatically deploy the application using the latest patches. You can choose to instead allow the platform to do it automatically, without any downtime or disruption to running applications. Automatic patching will be scheduled based on severity. If an app is not manually patched (by performing a 1-click publish), ODC will ensure that all vulnerabilities are automatically patched. The timeframe varies according to the vulnerability's severity.
 
 To assess the severity of vulnerabilities, we use Common Vulnerability Scoring System (CVSS), an open industry standard. You can read more information about CVSS on the [Incident Response and Security Teams website](https://www.first.org/cvss/).
 
