@@ -22,6 +22,7 @@ Private Gateway is a secure-by-design solution for the cloud-native, multi-tenan
 * Highly flexible and configurable. For example, supports connecting to your private endpoints hosted in multi-tenant, multi-zone, or multi-region environments.
 * Strong scaling and failover capabilities.
 * Apps and their data remain isolated.
+* Traffic and requests are unidirectional (Only supports requests originating from ODC Apps)
 
 There are two components to the Private Gateways feature.
 
