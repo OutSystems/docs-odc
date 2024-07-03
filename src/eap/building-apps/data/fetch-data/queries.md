@@ -79,6 +79,7 @@ To write better queries, you need to understand the following joins:
 ### Aggregate functions and grouping
     
 * Prefer to use Only With Joins with aggregate functions and/or grouping since this can often allow the aggregate to be split and pushed down to the databases.
+* The `COUNT` function can be resource-intensive, depending on the number and volume of entities involved. The [Pagination UI](../../ui/patterns/navigation/pagination.md) pattern worsens this by executing an additional `COUNT` query to calculate and display the total number of records, which can cause performance issues. To mitigate these concerns, consider using other pagination patterns. [Forge](https://www.outsystems.com/forge/list?q=&t=&o=latest-submitted&tr=False&oss=False&c=%20&a=&v=odc&hd=False&tn=&scat=forge) offers more efficient alternatives.
 
 ### Sorting
 
