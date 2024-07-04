@@ -59,7 +59,7 @@ OutSystems supports the following Operating Systems. This list is subject to cha
 To perform client-side debugging in ODC Studio using a desktop browser, use the most recent version of any of the following browsers:
 
 * Google Chrome
-* Microsoft Edge
+* Microsoft Edge (only available for Windows)
 
 ## Software requirements for app users
 
