@@ -1,7 +1,7 @@
 ---
 summary: Error authenticating in Salesforce
 tags:
-guid: d07c9a63-8810-421c-b576-3f33d75ad59b
+guid: f65214b7-75f5-4bb3-996a-baaff894ef5f
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
