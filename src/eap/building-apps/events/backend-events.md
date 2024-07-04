@@ -42,7 +42,7 @@ Considerations while using back-end events:
 
 To create an event, go to ODC Studio and follow these steps:
 
-1. On the **Processes** tab, right-click **Events**, and select **Add Event**.
+1. On the **Events** tab, right-click **Events**, and select **Add Event**.
 1. Set the relevant properties for the new event in the properties panel.
 
     <div class="info" markdown="1">
@@ -70,7 +70,7 @@ To make the event accessible in other apps, click 1-Click Publish to publish the
 
 You can subscribe to an event in the same publisher or another app. To subscribe to an event, go to ODC Studio and follow these steps:
 
-1. On the **Processes** tab, right-click **Events**, and select **Add public element**. The public element popup displays.
+1. On the **Events** tab, right-click **Events**, and select **Add public element**. The public element popup displays.
 
     ![Screenshot of ODC Studio interface demonstrating how to subscribe to a backend event](images/public-event-odcs.png "Subscribe to a Backend Event")
 
