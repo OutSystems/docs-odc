@@ -11,7 +11,7 @@ figma:
 
 <div class="info" markdown="1">
 
-Available from OutSystems Charts v3.0.0. For more information on how to use the new version of Charts, see the [OutSystems Charts Sample](https://charts.outsystems.com/).
+Available from OutSystems Charts v3.0.0. For more information on how to use the new version of Charts, see the [OutSystems Charts Sample](https://charts.outsystems.com/). 
 
 </div>
 
