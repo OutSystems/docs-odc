@@ -444,14 +444,14 @@
     - topics:
         - href: eap/reference/apis/data.md
         - href: eap/reference/apis/chart-intro.md
-    - topics:
-        - href: eap/reference/apis/area.md
-        - href: eap/reference/apis/bar.md
-        - href: eap/reference/apis/column.md
-        - href: eap/reference/apis/donut.md
-        - href: eap/reference/apis/line.md
-        - href: eap/reference/apis/pie.md
-        - href: eap/reference/apis/radar.md    
+        - topics:
+            - href: eap/reference/apis/area.md
+            - href: eap/reference/apis/bar.md
+            - href: eap/reference/apis/column.md
+            - href: eap/reference/apis/donut.md
+            - href: eap/reference/apis/line.md
+            - href: eap/reference/apis/pie.md
+            - href: eap/reference/apis/radar.md    
    
 # Errors
 - href: error/intro.md
