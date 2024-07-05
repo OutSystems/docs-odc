@@ -11,7 +11,7 @@ figma:
 
 This example shows how you can create a simple Area Chart with a Stacked Series. 
 
-1. From the Toolbox, drag the **Area Chart** widget to the Screen.
+1. From the Toolbox, drag the **Area Chart** widget to the Screen. 
 
     ![Screenshot showing the Area Chart widget being dragged to the screen in the development environment](images/chartarea-drag-ss.png "Dragging the Area Chart Widget")
 
