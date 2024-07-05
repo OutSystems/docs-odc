@@ -10,7 +10,7 @@ figma:
 
 # Line Chart
 
-This example shows how you can create a simple Line Chart with a Spline line and custom markers.
+This example shows how you can create a simple Line Chart with a Spline line and custom markers. 
 
 1. From the Toolbox, drag the **Line Chart** widget to the Screen.
 
