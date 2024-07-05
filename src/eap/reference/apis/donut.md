@@ -12,7 +12,7 @@ figma:
 
 This example shows how you can create a simple Donut Chart.
 
-1. From the Toolbox, drag the **Donut Chart** widget to the Screen.
+1. From the Toolbox, drag the **Donut Chart** widget to the Screen. 
 
     ![Screenshot showing the Donut Chart widget being dragged to the screen in the design interface](images/chartdonut-drag-ss.png "Dragging Donut Chart Widget")
 
