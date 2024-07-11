@@ -105,9 +105,8 @@ Before accessing data from an external database, verify that you have the correc
 * Configure Connections
 * Connection management
 
-External database permissions take priority over permissions in ODC. For example, a developer with read permission in an external database and read-write permission in ODC can only read data in the external database. Contact the external database admin to change your access to the external database..
+External database connections can be created with read-only permissions or other permission restrictions. Entity CRUD actions (to create, update, or delete records) are always automatically created in ODC Studio regardless of the permissions of the database connection user. If you intend to use the full CRUD actions, ensure that the database users carries the proper permissions.
 
-For more information about users, permissions, and custom roles, see [User management](../../user-management/intro.md).
 
 ## Create a new connection
 
