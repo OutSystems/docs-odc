@@ -74,7 +74,7 @@ The following example demonstrates how you can create a four step Wizard with na
 
     ![Screenshot showing the selection of a Wizard Item's status from the Properties tab in ODC Studio](images/wizard-9-ss.png "Selecting Wizard Item Status")
 
-1. In the expression editor, enter the following expression and click **DONE**:
+1. In the expression editor, enter the following expression and click **Close**:
 
     `If(CurrentStep = 1, Entities.Steps.Active,If(CurrentStep > 1, Entities.Steps.Past, Entities.Steps.Next))`
 
@@ -94,7 +94,7 @@ The following example demonstrates how you can create a four step Wizard with na
 
     ![Screenshot showing the addition of an If widget to the main content area below the Wizard Pattern](images/wizard-11-ss.png "Adding If Widget to Main Content Area")
 
-1. On the **Properties** tab, from the **Condition** dropdown, select Expression Editor, enter the following logic and click **DONE**:
+1. On the **Properties** tab, from the **Condition** dropdown, select Expression Editor, enter the following logic and click **Close**:
 
     `CurrentStep = 1`
 

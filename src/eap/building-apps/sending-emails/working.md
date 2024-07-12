@@ -75,7 +75,7 @@ To add an **Input** to your Email and display the value in the email body, follo
 
 1. From the widget list, drag the **Expression** widget to the Email. The expression editor opens.
 
-1. Enter `"Hello, " + Handle + "!"` and click **Done**.
+1. Enter `"Hello, " + Handle + "!"` and click **Close**.
 
     ![Screenshot of an Email in ODC Studio displaying a personalized greeting using the 'Handle' expression.](images/expression-preview-ss.png "Email Expression Preview")
 
