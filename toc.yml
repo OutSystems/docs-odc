@@ -365,6 +365,7 @@
 - topics:
     - href: eap/app-architecture/recommended-architecture.md
     - href: eap/app-architecture/reuse-elements.md
+    - href: eap/app-architecture/reuse-templates.md
     - href: eap/app-architecture/service-actions.md
 
 # Manage platform and apps lifecycle
