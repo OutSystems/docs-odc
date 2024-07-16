@@ -44,17 +44,17 @@ In the following Sorting Example, an application displays a list of employees, w
 
 1. Create an empty screen and name it.
 
-1. Go to **Public Elements...** and search for the Sample_Employees entity of the **OutSystemsSampleDataDB** app.
+1. Go to **Public Elements...** and search for the Sample_Employee entity of the **OutSystems Sample Data** app.
 
 1. Fetch this entity to be used on the previous screen you created.
 
-1. Drag and drop a list widget into the screen and define Sample_Employees as the source list for it.
+1. Drag and drop a list widget into the screen and define Sample_Employee as the source list for it.
 
 1. Drag and drop the FirstName, LastName, and Email attributes into the list.
 
 1. Create a local variable and name it **SortAttribute**, then set the Data Type property to **text**.
 
-    ![Screenshot of a list widget on a screen in ODC Studio with Sample_Employees entity attributes](images/sort-aggregate-ex-ss.png "List Widget Configuration")
+    ![Screenshot of a list widget on a screen in ODC Studio with Sample_Employee entity attributes](images/sort-aggregate-ex-ss.png "List Widget Configuration")
 
 1. Double-click on the aggregate **GetEmployees**.
 
