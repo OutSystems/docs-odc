@@ -54,7 +54,8 @@ OutSystems supports the following versions of systems:
     </div>
     <div class="os-accordion__content">
         <ul>
-            <li>Azure SQL V12</li>
+            <li>Azure SQL Database</li>
+            <li>Azure SQL Managed Instance</li>
         </ul>
     </div>
 </div>
