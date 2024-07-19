@@ -225,7 +225,6 @@ Date | Date |
 
 Consider the following when integrating an external database.
 
-* Data Preview and runtime queries with Unicode characters aren't supported.
 * SQL elements don't support external entities.
 * .NET does not support the Julian calendar for Oracle and Salesforce, and the minimum supported timestamp value is -62135596800000. 
     * To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
