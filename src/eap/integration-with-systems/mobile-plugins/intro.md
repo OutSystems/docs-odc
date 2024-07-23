@@ -18,21 +18,29 @@ The table shows the OutSystems-supported mobile plugins that you can find in the
 
 | Plugin                    | Description                                                  | Supported in PWA |
 | ------------------------- | ------------------------------------------------------------ | ---------------- |
-| Analytics | Firebase-based plugin that lets you gather information about app use. | No |
-| Barcode Plugin            | Access the camera to scan barcodes.                          | Yes              |
-| Camera Plugin             | Access the camera capabilities of the device.                | Yes              |
-| Cloud Messaging Plugin (Firebase) | Give your app users a state-of-the-art notifications experience. | No |
+| Analytics | Firebase-based plugin that lets you gather information about app use.        | No               |
+| AppShield | Protect your mobile apps from tampering. OutSystems AppShield hardens the native mobile build, enabling the app to detect attempts of modification and misuse. | No |
+| Barcode            | Access the camera to scan barcodes and QR codes.                    | Yes              |
+| Calendar           | Access the calendar of your device.                                 | No               |
+| Camera             | Access the camera capabilities of the device.                       | Yes              |
+| Ciphered Local Storage  | Keep your mobile application's sensitive data safe using a ciphered local storage database.    | No               |
+| Cloud Messaging | Firebase-based plugin to give your app users a state-of-the-art notifications experience. | No |
+| Contacts  | Access the contacts of your device.    | No               |
 | Crash Reporting | Firebase-based plugin that provides realtime crash reporting to help you track, prioritize, and fix stability issues. | No |
 | Dynamic Links | Firebase-based plugin that lets you manage links outside of your app. | No |
-| Health and Fitness Plugin | Access data from Apple HealthKit and Google Fit.             | No               |
-| File Plugin               | Manage files and folders within the app sandbox.             | No               |
-| File Transfer Plugin      | Upload and download files in background.                     | Yes              |
-| File Viewer Plugin        | View remote or app resource files.                           | Yes              |
-| Key Store Plugin          | Store encrypted key-value pairs with optional authentication | No               |
-| Location Plugin           | Access the GPS capabilities the device.                      | Yes              |
-| Payments | Allows addition of payments experience using Apple Pay and Google Pay.	| No |
+| File               | Manage files and folders within the app sandbox.             | No               |
+| File Transfer      | Upload and download files in background.                     | Yes              |
+| File Viewer        | View remote or app resource files.                           | Yes              |
+| Health & Fitness   | Provides access to health and fitness data. Uses HealthKit API for iOS and Health Connect API for Android. | No          |
+| InAppBrowser   | Open external URLs directly in your application. | No          |
+| Key Store          | Store encrypted key-value pairs with optional authentication. | No               |
+| Local Notifications          | Send app notifications to the device when the application isn't running in the foreground. | No               |
+| Location           | Access the GPS capabilities the device.                      | Yes              |
+| OneSignal Notifications      | Push notifications using OneSignal, with deep-linking and actions. | No               |
+| Payments | Allows the addition of a payments experience using Apple Pay and Google Pay.	| No |
 | Performance Monitoring | Firebase-based plugin that lets you understand how you can improve the performance of your app. | No |
 | SSL Pinning | Provide an extra layer of security to HTTPS communications by adding a verification of the server certificate against hashes of public keys. | No |
+| Touch ID | Use authentication with biometrics in your application. | No |
 
 ### Notes
 
