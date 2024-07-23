@@ -76,8 +76,6 @@ Default Endpoint  |  URL Path  |  Customized Endpoint
 
 ## Important remarks
 
-* Due to a .NET limitation, the last part of the URL — the part after the last `/` (slash) character — can't contain a `.` (period) character, otherwise method calls won't work.
-
 * You can't use the reserved characters `;` (semicolon), `?` (question mark), and `=` (equal sign) in custom REST URLs of exposed REST API methods.  
     The `?` and `=` characters belong in the query string part of URLs (the part of the URL that starts with a `?` character), and the platform manages the query string part of URLs in exposed REST URL methods.
 
