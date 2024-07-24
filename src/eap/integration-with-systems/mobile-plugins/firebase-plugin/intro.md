@@ -154,17 +154,19 @@ If your app collects user data for advertising purposes, also known as Attributi
 
 </div>
 
-### Additional information for Firebase Analytics ecommerce events
+### Additional information for Firebase Analytics 
 
-Starting in version *0.2.0*, Firebase Analytics plugin users can log ecommerce events, which are specifically tailored to collect information about your user's shopping behavior.
+#### Ecommerce events
 
-It's important to note that Google's ecommerce API enforces a set of constraints for each event. For example, the API ensures you include an ```item_list_id``` parameter when logging a ```view_item_list``` event.
+Starting in version **0.2.0**, Firebase Analytics plugin users can log ecommerce events, which are specifically tailored to collect information about your user's shopping behavior.
 
-The Firebase Analytics plugin performs validations when the ```LogECommerceEvent``` is invoked. You can find the validate details by clicking Google's documentation link, for each event on the list below.
+It's important to note that Google's ecommerce API enforces a set of constraints for each event. For example, the API ensures you include an `item_list_id` parameter when logging a `view_item_list` event.
 
-To further illustrate this example, the following shows a typical usage of the ```LogECommerceEvent client action```:
+The Firebase Analytics plugin performs validations when the `LogECommerceEvent` is invoked. You can find the validate details by clicking Google's documentation link, for each event on the list below.
 
-![Shows the Firebase Analytics LogECommerceEvent client action for a ```view_item_list```](images/firebase-analytics-log-ecommerce-example-odcs.png "Firebase Analytics LogECommerceEvent client action example")
+To further illustrate this example, the following shows a typical usage of the `LogECommerceEvent client action`:
+
+![Shows the Firebase Analytics LogECommerceEvent client action for a `view_item_list`](images/firebase-analytics-log-ecommerce-example-odcs.png "Firebase Analytics LogECommerceEvent client action example")
 
 Currently, Firebase Analytics plugin supports the following events:
 
@@ -183,13 +185,42 @@ Currently, Firebase Analytics plugin supports the following events:
 * [view_item](https://developers.google.com/analytics/devguides/collection/ga4/reference/events#view_item)
 * [view_promotion](https://developers.google.com/analytics/devguides/collection/ga4/reference/events#view_promotion)
 
-from the provided entity, users can select the event type  ```ECommerceEvent```.
+from the provided entity, users can select the event type  `ECommerceEvent`.
 
-![Shows the ```ECommerceEvent``` entity](images/firebase-analytics-log-ecommerce-events-odcs.png "Firebase Analytics LogECommerceEvent entity")
+![Shows the `ECommerceEvent` entity](images/firebase-analytics-log-ecommerce-events-odcs.png "Firebase Analytics LogECommerceEvent entity")
 
-You can also select the key for each parameter you want included on the event logging from the  ```ECommerceEventParameterKey``` entity.
+You can also select the key for each parameter you want included on the event logging from the  `ECommerceEventParameterKey` entity.
 
-![Shows the ```ECommerceEvent``` parameters](images/firebase-analytics-log-ecommerce-parameters-odcs.png "Firebase Analytics LogECommerceEvent entity")
+![Shows the `ECommerceEvent` parameters](images/firebase-analytics-log-ecommerce-parameters-odcs.png "Firebase Analytics LogECommerceEvent entity")
 
 For more information on which event requires which parameters refer to [Google's documentation page regarding 'measure ecommerce'](https://developers.google.com/analytics/devguides/collection/ga4/ecommerce).
 
+#### Enable/disable data collection
+
+Starting in version **1.1.2**, the Firebase Analytics plugin can effectively enable and disable data collection. For the `SetEnabled` client action to properly work, the following needs to be added to your app's Extensibility Configurations:
+
+```JSON
+{
+    "preferences": {
+        ...
+        "global": [
+            ...,
+            {
+                "name": "ANALYTICS_COLLECTION_ENABLED",
+                "value": "false"
+            },
+            ...
+        ],
+        ...
+    }
+}
+```
+
+<div class="info" markdown="1">
+
+Keep in mind that:
+
+* For `SetEnabled` to have any effect on the data collection, the preference needs to be included.
+* The preference only needs to be added when you want to control the collection. If not provided or is used with another value (for example: `true`), the collection will be enabled and it won't be possible to change it.
+
+</div>
