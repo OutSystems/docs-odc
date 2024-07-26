@@ -47,8 +47,8 @@ To write better queries, you need to understand the following joins:
 * Ensure to index attributes used in filters and join conditions in the databases. 
 * Use similar data types for attributes used in the join condition. For example, when joining on string attributes, ensure the allowed length is the same in both databases.
 * Queries that work fine in ODC Studio data preview may fail in runtime due to exceeding the execution plan cost limit. This can happen because:
-* Test query limits the number of records, reducing plan cost.
-* Entities in QA or Production environments may have more records than those in the Development environment.
+    * Test query limits the number of records, reducing plan cost.
+    * Entities in QA or Production environments may have more records than those in the Development environment.
 * In mashup queries, use With or Without instead of Only With.
 * Use aggregate functions (e.g., avg, count, sum) carefully in queries that combine data from different sources or handle large volumes of data in respective entities.
 * In a With or Without join, apply aggregate functions (e.g., avg, count, sum) to the left entity.
