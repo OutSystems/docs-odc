@@ -36,11 +36,16 @@
             - href: eap/building-apps/use-ai/configure-data-source/add-azure-data-source-to-aibuilder.md
             - href: eap/building-apps/use-ai/configure-data-source/configure-aws-data-source.md
             - href: eap/building-apps/use-ai/configure-data-source/add-aws-data-source-to-aibuilder.md        
-                
+            - href: eap/building-apps/use-ai/configure-data-source/add-custom-data-source.md      
+    # Function calling
+        - href: eap/building-apps/use-ai/function-calling/overview.md
+        - topics:
+            - href: eap/building-apps/use-ai/function-calling/use-function-calling.md
     # Create agent
         - href: eap/building-apps/use-ai/create-agent.md
     # Integrate agent
         - href: eap/building-apps/use-ai/integrate-agent.md
+
     # Data
     - href: eap/building-apps/data/intro.md
     - topics:
@@ -420,7 +425,11 @@
         - href: eap/reference/libraries/textdictionary.md
         - href: eap/reference/libraries/url.md
         - href: eap/reference/libraries/xml.md
-        - href: eap/reference/libraries/zip.md
+        - href: eap/reference/libraries/zip.md 
+  # Service actions
+    - href: eap/reference/service-actions/intro.md
+    - topics:
+        - href: eap/reference/service-actions/call-agent-function-calling.md
   # System actions
     - href: eap/reference/system-actions/intro.md
     - topics:
@@ -453,7 +462,9 @@
             - href: eap/reference/apis/line.md
             - href: eap/reference/apis/pie.md
             - href: eap/reference/apis/radar.md    
-   
+  # AIAB 
+    - href: eap/reference/ai-agent-builder/aiab-api-contract.md
+       
 # Errors
 - href: error/intro.md
 - topics:

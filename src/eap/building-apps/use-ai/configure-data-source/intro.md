@@ -39,3 +39,5 @@ To add data sources and use them in the AI Agent Builder you must:
 * [Set up Amazon Kendra with a data source](configure-aws-data-source.md)
 
 * [Add the Amazon Kendra data source to the AI Agent Builder app](add-aws-data-source-to-aibuilder.md)
+
+* [Add a custom data source to the AI Agent Builder app](add-custom-data-source.md)
