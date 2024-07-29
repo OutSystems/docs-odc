@@ -1,5 +1,6 @@
 ---
-summary: 
+helpids: 30548
+summary: This article provides an overview to function calling.
 tags: 
 guid: 7039dfeb-303e-42e9-8ae2-cf0763f47678
 locale: en-us

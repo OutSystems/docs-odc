@@ -1,4 +1,5 @@
 ---
+helpids: 30547
 summary: In this article you will learn how to add custom data source to the AI Agent Builder app.
 tags: 
 guid: 58f21b67-9a0a-4636-8131-810ac77f6f8e
