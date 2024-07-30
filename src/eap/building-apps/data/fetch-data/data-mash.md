@@ -10,7 +10,7 @@ platform-version: odc
 
 # Combine data from different sources
 
-In OutSystems Developer Cloud (ODC), you can combine data from different entities and distinct data sources in an aggregate to provide a unified view. ODC Studio retrieves data from these sources and performs in-memory operations to achieve the desired results.
+In OutSystems Developer Cloud (ODC), you can combine data from different entities and distinct data sources in an aggregate to provide a unified view. ODC Data Fabric retrieves data from these sources and performs in-memory operations to achieve the desired results.
 
 Some benefits of data mashup are: 
 
