@@ -8,73 +8,137 @@ platform-version: odc
 figma: https://www.figma.com/design/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?node-id=2901-72&t=huLfuwjwe8mJCQTh-1
 ---
 
-# Deploying apps
+# Deploying assets
 
-Use ODC Portal to deploy your apps. In OutSystems Developer Cloud (ODC), you deploy your apps to stages. A stage is a step within your delivery pipeline that includes runtime resources. ODC includes two stages by default.
+Use OutSystems Developer Cloud (ODC) Portal to deploy your assets (apps and workflows). In ODC, you deploy your assets to stages. A stage is a step within your delivery pipeline that includes runtime resources. By default, ODC includes two stages: development and production 
 
-ODC has a single code repository. When you deploy in ODC Studio, your app is containerized, deployed to the Development stage, and a container image is available. When you're ready to deploy your app to the next stage your app deploys without the need to recompile code again. Libraries are also packaged in the same container as an app.
+ODC has a single code repository. When you deploy in ODC Studio, your asset is containerized, deployed to the development stage, and a container image is available. When you're ready to deploy your asset to the next stage your asset deploys without the need to recompile code again. 
 
-Apps in each stage are isolated from each other. When you publish an app to the Development stage, there is no impact to the apps running in other stages. Similarly, publishing apps to  Production, doesn’t affect apps in a previous stage, such as Development.
+Assets in each stage are isolated from each other. When you publish an asset to the development stage, it doesn't impact the assets running in other stages. Similarly, publishing assets to production doesn't affect assets in a previous stage, such as development.
 
-Libraries contain functionality that's business agnostic and which you can use in multiple apps. Libraries don't hold data, and can't use entities. You can define themes, UI patterns, and blocks in libraries.
+To help you understand what's deployed in each stage, in the ODC Portal, go to the **Overview** page. A list of assets is displayed with the following information:
 
-To help you understand what's deployed in each stage, ODC provides an overview page. To access the overview page, go to the ODC Portal > select **Delivery** > **Overview**. A list of apps displays and shows the name of the app, the stage in which it's deployed, the number of deployments, and the date of the last deployment. The list also shows apps that still need to be deployed. Hovering over a date displays a pop up that shows the name of the person who deployed the app and the date and time on which it was deployed. Libraries are bundled with apps, so you won't see information about the libraries. You can use the sort and filter options to narrow your search.```
+* Name of the asset
 
-![Screenshot of the ODC Portal showing the deployment overview page with a list of apps, their deployment stages, number of deployments, and last deployment dates.](images/deploy-overview-pl.png "ODC Portal Deployment Overview")
+* Stage in which the asset is deployed
+
+* Who performed the deployment
+
+* Revision number
+
+* Version number
+
+* Date of deployment
+
+**Note**: There is no information about libraries, as libraries are bundled with apps. In ODC, libraries are not deployed independently. Instead, when an app that incorporates a library is published, the library's package is included in the app's container. This means libraries are deployed as an integral part of the app, not separately. For more information about libraries, refer to [Libraries](../building-apps/libraries/libraries.md).
 
 ## Deploy to stages
 
-You use ODC Studio to create and publish your apps. Then you use the ODC Portal to deploy and move your apps to the different stages.
+Use ODC Studio to create and publish your apps. Use the ODC Portal to create and publish your workflows and deploy both apps and workflows to different stages. 
 
-In ODC Studio, when you build an app and then click **1 Click Publish**, your app becomes available in the Development stage. You can only publish to development and then deploy to other stages. Deploying to another stage only moves the app's runtime.
+When you build and publish an app or workflow, your asset becomes available in the development stage. You can only publish to development and then deploy to other stages. 
 
-To deploy your app to a stage, go to the ODC Portal and click **Deployments**. A list of apps displays showing their stage, status, when deployed, and who deployed it. From the top right, choose the stage to which you want to deploy your app. The next Deployment screen provides you with instructions to deploy your app to a stage.
+To deploy your asset to a stage:
 
-1. Click the app you want to deploy. A list of available revisions for your app displays.
+1. Go to the ODC Portal and click **Deployments**. 
 
-1. Click the revision of the app you want to deploy, and click **Continue**. The app with the revision you chose displays.  
+    A list of assets is displayed, with details about the stage, status, deployment start date, and who deployed the asset.
 
-1. When ready, click **Deploy Now**. Your app gets deployed to your selected stage. Optionally, if deploying to production you can change the version number before deploying. The [Impact analysis](#impact-analysis) runs when you click **Deploy Now**.
+1. From the **Deploy to** dropdown, select the stage to which you want to deploy your asset.
 
-<div class="info" markdown="1">
+1. Select the asset you want to deploy.
 
-A deployment status displays. You can also click **View app** to see your deployed app.
+1. Select the revision you want to deploy, and click **Continue**. 
 
-</div>  
+    An impact analysis runs in the background, and an impact analysis report with information about warnings and blockers is displayed. Review the impact analysis and make a deployment decision. You can fix the issues in ODC Studio and deploy the app, or you can deploy the app with warnings.
+
+1. (Optional) To fix the issues, go back to your asset and rectify the identified inconsistencies.
+
+1. (Optional) To deploy the asset to the next stage, click **Deploy Now**. 
+
+    **Note**: If you are deploying an app to production, you can change the version number before deploying.
+
+Your asset is deployed to your selected stage. 
+
+For more information about the impact analysis report, refer to [Understanding the impact analysis report](#understanding-the-impact-analysis-report).
 
 ## Versions and revisions
 
-Versions and revisions help you track changes in your apps and libraries. You can publish your apps to Development, and every time you publish, the revision number increments by one. Revision numbers are whole numbers displayed below the app's name on the Deployments screen. 
+Versions and revisions help you track changes in your assets. You can publish your apps and workflows to Development, and every time you publish, the revision number increments by one. Revision numbers are whole numbers displayed below the asset's name on the **Deployments** screen. 
 
-Versions and revisions help you keep track of changes in your apps and libraries in different stages, such as:
+Versions and revisions help you keep track of changes in your workflows in different stages, such as:
 
-* Development: When you publish your app in the Development stage, ODC automatically creates a new revision and the revision number increments by one. 
-* QA: You can deploy any revision of your app from Development to QA. 
-* Production: After testing, when you deploy your app from QA to Production, ODC assigns a three-part semantic version number in the format major.minor.patch. ODC always suggests a version (the first suggestion is always 0.1.0). Depending on the changes you deploy to Production, you can change the version number (it must be equal to or higher than the previous version). 
+* **Development**: When you publish your asset in the Development stage, ODC automatically creates a new revision and the revision number increments by one. 
 
-## Impact analysis
+    **Note**: You can not change the asset revision number.
 
-ODC automatically runs an impact analysis when you deploy an app in ODC Portal. The impact analysis checks for dependency issues that might cause runtime errors in your app or its consumers. By identifying issues that might negatively impact your apps or the consumers, you can deliver better-performing apps. The analysis provides information for blockers and warnings.
+* **QA**: You can deploy any revision of your asset from Development to QA. 
 
-**Blockers** prevent you from deploying your app. For example, a blocker occurs when there is an app name collision. The blocker indicates another app on the target stage has the same name as the app you are deploying.
+* **Production**: After testing, when you deploy your asset from QA  to Production, ODC assigns a three-part semantic version number in the format major.minor.patch. The system always suggests a version (the first suggestion is always 0.1.0). Depending on the changes you deploy to Production, you can change the version number (it must be equal to or higher than the previous version). 
+
+### Multiple revisions of a workflow
+
+You can have multiple revisions of a workflow in the same stage. A revision can have multiple instances. Once an instance starts execution in a revision, it completes its execution within that specific revision. Subsequent deployments of newer revisions or versions do not affect these running instances. Once all instances of a revision are completed or terminated, the revision is removed from the stage (unless it is the latest one deployed).  
+
+For example, consider a bank loan application workflow with three workflow revisions in production.
+
+**Scenario**
+
+Two users (user 1 and user 2)  (each user application = an instance) initiate the application process using  version 1.0.0 revision 2 of the workflow, typically taking a month or two to complete. During this time, a newer workflow version version 1.1.0 revision 3 with an additional step may be deployed. 
+
+Then, two new users (user 3 and user 4) initiate the application process using version 1.1.0 revision 3 of the workflow. During this time, the latest workflow version 1.2.0 revision 4 with more enhancements may be deployed.
+
+![Diagram of application workflow example](images/application-workflow-diag.png "Example application workflow")
+
+**Outcome**
+
+* Users 1 and 2 complete the application process on version 1.0.0 revision 2.
+
+* User 3 completes the application process on version 1.1.0 revision 3.
+
+* The user 4 application process has been terminated for external reasons.
+
+    All instances of version 1.0.0 revision 2 and version 1.1.0 revision 3 are either complete or terminated; hence, they are no longer available in production.
+
+* User 5 initiates the application process on the final deployed version 1.2.0 revision 4.
+
+### Multiple revisions of an app
+
+For ODC apps, you cannot have multiple revisions of an app in a stage. The deployed app revision overrides the previous revisions.
+
+## Understanding the impact analysis report
+
+When you deploy an asset in the ODC Portal, ODC automatically runs an impact analysis. The impact analysis checks for dependency issues that might cause runtime errors in your asset. By identifying and fixing issues that might negatively impact your assets, you can deliver better-performing apps. The analysis provides information for blockers and warnings.
+
+**Blockers** prevent you from deploying your app. A blocker occurs when there is an app name collision. The blocker indicates another app on the target stage has the same name as the app you are deploying.
 
 **Warnings** provide information but allow you to proceed. Warnings are mostly about [producers and consumers](../building-apps/data/sharing.md). For example, a warning can occur in any of the following situations:
 
-* Your app references other apps (producers) with missing or incompatible.
-* Other apps (consumers) reference your app and have missing or incompatible elements.
+* Your asset references other assets (producers) with missing or incompatible elements.
 
-To review the analysis, choose the app, then choose the revision, and click  **Analyze impact**. A list of blockers and warnings show in order of severity. First, you see the blockers and then the warnings, and in each section, you see producer issues followed by consumer issues.
+* Other assets (consumers) reference your asset and have missing or incompatible elements.
 
-Developers then review the impact analysis and make a deployment decision. If there are no blockers, the **Deploy Now** button becomes enabled. But, depending on the warnings, developers might not want to continue.
+When **deploying an app**, the impact analysis report displays:
 
-For example, developers might see some unexpected warnings and decide to fix the issues in ODC Studio before continuing with the deployment. Depending upon the warning, such as a missing app, developers might decide to deploy the missing app first. In this case, you can click the **Choose App** button to return to the **App** page and deploy the missing app. Then developers can deploy the original app.  
+* Potential impacts the app you are deploying could have on workflows and consumer apps 
+
+* Potential impacts producer apps could have on the app you are deploying
+
+When **deploying a workflow**, the analysis report displays:
+
+* Potential impacts producer apps could have on the workflow you are deploying
+
+For more information about the impact analysis inconsistencies, refer to [Guidance for deployment inconsistencies](../deploying-apps/deployment-inconsistencies.md)
 
 ## Deployment status
 
-An app's deployment status can be one of the following:
+An asset can have one of the following deployment statuses:
 
-* **Running:** the deployment is in progress; wait for it to finish.
-* **Finished with errors**: the deployment has finished, but it wasn't successful. Review the errors.
-* **Finished successfully**: the deployment finished successfully. The app is available in the deployed stage.
+* **Running:** The deployment is in progress. You must wait for it to finish.
 
-Log information is available for each deployment listed by clicking the row for which you want more information.
+* **Finished with errors**: The deployment finished, but it wasn't successful. Review the errors.
+
+* **Finished successfully**: The deployment finished successfully. The asset is available in the deployed stage.
+
+You can access the log information for each **asset deployment** by clicking the row for which you want more information.
+
