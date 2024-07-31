@@ -35,7 +35,7 @@ OutSystems supports the following versions of systems:
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
-        Microsoft SQL server
+        Microsoft SQL Server
     </div>
     <div class="os-accordion__content">
         <ul>
@@ -62,7 +62,7 @@ OutSystems supports the following versions of systems:
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
-        Oracle server
+        Oracle
     </div>
     <div class="os-accordion__content">
         <ul>
@@ -73,9 +73,10 @@ OutSystems supports the following versions of systems:
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
-        PostgreSQL Server
+        PostgreSQL
     </div>
     <div class="os-accordion__content">
+        OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
         <ul>
             <li>PostgreSQL 12</li>
             <li>PostgreSQL 13</li>
@@ -97,7 +98,6 @@ OutSystems supports the following versions of systems:
     </div>
 </div>
 
-OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
 
 ## Permissions requirements
 
@@ -113,7 +113,7 @@ External database connections can be created with read-only permissions or other
 
 To create a new database connection, go to the ODC Portal and follow these steps:
 
-1. From the ODC Portal nav menu, select **Resource** > **Connections**, and click the **Create connection** button. <br/> The **select a provider** popup displays.
+1. From the ODC Portal nav menu, select **Integrate** > **Connections**, and click the **Create connection** button. <br/> The **select a provider** popup displays.
 1. Select the required provider and click **Confirm**.
     * If you select SAP, then select the **SAP Service** as **SAP Service Catalog**, and click **Show available services**.<br/> All available services display.
     * If you select Salesforce, select **connect to** as **Production**, and **Authentication type** as **OAuth** authentication type, and click **Authenticate**.<br/> The Salesforce login page displays.
@@ -185,12 +185,11 @@ Administrators  must supply the following information to connect to the external
  
 You can use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, separate each parameter with a semi-colon (;). Different databases may require different parameters, for example:
 
-* For the **SQL Server** and **Azure SQL** to select the desired schema on the database, enter `currentSchema=<schema-name>`. For PostgreSQL, you can also use the `Schema` parameter.
-* For **Oracle** to select the desired schema on the database, enter `current_schema=<schema-name>`
-* To establish a connection with the SQL Server and allow the client to bypass certificate validation, add the `trustServerCertificate=true` parameter to the additional parameters.
+* For **SQL Server**, and **Azure SQL** to select the desired schema on the database, enter `currentSchema=<schema-name>`. For **Oracle** to select the desired schema on the database, enter `current_schema=<schema-name>`
+* To establish a connection with the **SQL Server** and allow the client to bypass certificate validation, add the `trustServerCertificate=true` parameter to the additional parameters.
 * You can configure connection pool size for all available relational database connectors. Changing the connection pool size can significantly impact performance.
-    * minConnectionPoolSize: Default value of 0.
-    * maxConnectionPoolSize: Default value of 400, as it was the best performer in Outsystems performance tests.
+    * `minConnectionPoolSize`: Default value of 0.
+    * `maxConnectionPoolSize`: Default value of 400, as it was the best performer in OutSystems performance tests.
 
 ![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems.png "External Database additional parameters")
 
@@ -198,7 +197,7 @@ You can use advanced parameters to add additional parameters for a database conn
 
 To handle null values while integrating with external systems. Administrators must assign new values to represent null values in external databases. To learn more, refer to [handle null values](handle-null-values.md).
 
-| SQL Server and Azure SQL | Oracle | SAP OData | Salesforce | PostgreSQL |OutSystems Data Type |
+| SQL Server and Azure SQL | Oracle | SAP OData | Salesforce | PostgreSQL |OutSystems data type |
 |--|--|--|--|--|--|
 Char<br/>Varchar<br/>Text<br/>Nchar<br/>Nvarchar<br/>Ntext<br/>Xml<br/>Decimal(Any,> 8)<br/>Numeric(Any,>8) <br/>Real<br/>Float<br/>UniqueIdentifier<br/>Time<br/>Datetimeoffset | Char<br/>Varchar<br/>Varchar2<br/>Clob<br/>Long<br/>Nchar<br/>NVarchar2<br/>Nclob<br/>Number(Any,> 8)<br/>Float<br/>RowId<br/>URowId | Varchar<br/>UUID| UUID<br/>VARCHAR<br/>FLOAT<br/>Time| Varchar<br/>NVarchar<br/>Text<br/>Varbit<br/>Character<br/>Char<br/>Bpchar<br/>Time<br/>Numeric(Any, >8)<br/>Numeric(>28, Any)<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)<br/>Float4<br/>Float8<br/>Float8_range<br/>Real<br/>Double precision<br/>XML<br/>JSON<br/>UUID<br/>Pg_lsn<br/>Enum |Text|
 Tinyint<br/>Smallint<br/>Int<br/>Decimal(1-9,0)<br/>Numeric(1-9,0) | Number(2-9,0) | Int | Int | Smallint<br/>Integer<br/>Int<br/>Int2<br/>Int4<br/>Numeric<br/>Numeric(1-9, 0)<br/>Decimal(1-9, 0)<br/>Smallserial<br/>Serial<br/>Serial4 |Integer |
@@ -215,7 +214,7 @@ Other data types | Other data types | Other data types |Other data types | Other
 
 Although Salesforce supports multiple data types in the built-in tables, the following mapping are for the custom columns:
 
-| Salesforce data type| OutSystems Data Type |
+| Salesforce data type| OutSystems data type |
 |--|--|
 TINYINT<br/>SMALLINT<br/>INT<br/>BIGINT<br/>FLOAT<br/>DECIMAL<br/>DOUBLE<br/>NUMERIC<br/>VARCHAR<br/>BIT<br/>BINARY<br/>UUID<br/>Time | Text |
 Boolean |Boolean |
