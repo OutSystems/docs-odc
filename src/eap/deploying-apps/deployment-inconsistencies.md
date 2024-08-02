@@ -27,13 +27,13 @@ The Impact Analysis report includes the following sections:
 
 * **Producer**: Inconsistencies related to other assets from which the asset you're deploying uses one or more public elements, such as a service action.
 
-* C**onsumer**: Inconsistencies related to other assets that depend on your deploying asset because they use one or more public elements, such as an entity.
+* **Consumer**: Inconsistencies related to other assets that depend on your deploying asset because they use one or more public elements, such as an entity.
 
 You can also see if the severity of the inconsistency is a blocker or a warning.
 
 * **Blockers** are inconsistencies that cause your app to break in runtime. Therefore, ODC prevents you from proceeding with the deployment.
 
-* **Warnings **are inconsistencies that may cause runtime errors in your apps. Therefore, ODC runtime errors might occur if those parts of your code get used. The deployment might be OK if, for example, you are using feature toggles to hide the code or if the code is a work in progress that you know isn't reachable from your apps. Therefore, ODC doesn't block you from proceeding with the deployment.
+* **Warnings** are inconsistencies that may cause runtime errors in your apps. Therefore, ODC runtime errors might occur if those parts of your code get used. The deployment might be OK if, for example, you are using feature toggles to hide the code or if the code is a work in progress that you know isn't reachable from your apps. Therefore, ODC doesn't block you from proceeding with the deployment.
 
 The following are the types of inconsistencies you might encounter. Each message includes a short description to provide you with guidance.
 
@@ -42,7 +42,7 @@ The following are the types of inconsistencies you might encounter. Each message
   
 ### Entity attribute mismatch
 
-* **Description:** Description: The consumer app uses one or more attributes of an entity or static entity that don't exist in the producer app's definition.
+* **Description:** The consumer app uses one or more attributes of an entity or static entity that don't exist in the producer app's definition.
 
 ### Entity attribute type mismatch
 
@@ -50,7 +50,7 @@ The following are the types of inconsistencies you might encounter. Each message
 
 ### Input parameter mismatch
 
-* **Description:** Description: The consumer asset uses one or more input parameters from an element that doesn't exist in the producer asset's definition. This can occur on screens and in service actions.
+* **Description:** The consumer asset uses one or more input parameters from an element that doesn't exist in the producer asset's definition. This can occur on screens and in service actions.
 
 ### Input parameter type mismatch
 
