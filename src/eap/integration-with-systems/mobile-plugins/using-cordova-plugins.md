@@ -35,7 +35,6 @@ Wrap a Cordova plugin using the **Extensibility Configuration** property. Specif
 
 * **Public repository URL:**  the value of the `url` key.
 * **Cordova identifier:** the value of the `identifier` key.
-* **ZIP file:** from **Resources** folder in the **Data** tab (the value of the `resource` key)
 
 Unless it's a [plugin supported by OutSystems](intro.md) and you're using a public repository to reference the plugin, consider forking the plugin repository or using a tagged version, such as `https://example.com/sampleplugin/sampleplugin.git#1.1.0`.
 
