@@ -97,8 +97,8 @@ To assign an added external IdP, navigate to the **Identity providers** tab in O
 
     <div class="info" markdown="1">
 
-    When you switch the IdP for your organization or apps, all signed-in users get logged out when their current access token expires. Users have to log back in using the newly assigned provider. Users may have to wait up to a minute to log back in while new certificates are processed. 
-    
+    When you switch the IdP for your organization or apps, all signed-in users are automatically logged out and logged in
+
     </div>
 
 1. Read the confirmation pop-up and then do one of the following:
