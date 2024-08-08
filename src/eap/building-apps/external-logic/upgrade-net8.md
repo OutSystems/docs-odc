@@ -9,7 +9,7 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5786-34&t=BrG4ZbInBSh6eY9A-0
 ---
 
-# Upgrading ODC custom code libraries from to .NET 8
+# Upgrading ODC custom code libraries from .NET 6 to .NET 8
 
 OutSystems Developer Cloud is transitioning from supporting .NET 6 to .NET 8 for custom code. This guide provides essential information to manage this migration effectively, ensuring minimal disruption and a smooth transition through the outlined phases.
 
