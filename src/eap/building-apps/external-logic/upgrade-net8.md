@@ -70,7 +70,6 @@ At phase 2, the support for .NET 6 is dropped and it will no longer be possible 
 * upload new custom code libraries built in .NET 6 or update existing Forge assets using .NET 6
 
 OutSystems no longer ensures the proper functioning, maintenance and security of custom code libraries that weren't upgraded.
-Forge assets that haven't been upgraded by their owners will be removed from Forge.
 
 **Recommended actions**
 
