@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) External Libraries SDK enables the extension of ODC apps with custom .NET 6 code.
+summary: OutSystems Developer Cloud (ODC) External Libraries SDK enables the extension of ODC apps with custom .NET code.
 tags:
 locale: en-us
 guid: 955feaca-cda0-492f-9b84-d5c89281692e
@@ -12,13 +12,13 @@ platform-version: odc
 
 The SDK is part of the OutSystems Developer Cloud (ODC) External Logic feature that you use to extend your apps built in the OutSystems visual language with custom code.
 
-Use of this SDK is the first step in extending an ODC app with custom code. You use it to decorate the code of a C# .NET 6 project with SDK attributes that map to OutSystems visual language elements.
+Use of this SDK is the first step in extending an ODC app with custom code. You use it to decorate the code of a C# .NET project with SDK attributes that map to OutSystems visual language elements.
 
 ## Prerequisites
 
-* [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) installed.
+* [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed - **preferred**. It's still possible to use [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) however, this option will be deprecated and you should plan to [upgrade the custom code to .NET 8.0](upgrade-net8.md).
 * [NuGet](https://www.nuget.org/downloads) package manager installed.
-* An IDE that supports building .NET 6 projects. For example, Visual Studio, Visual Studio Code, and Jet Brains Rider.
+* An IDE that supports building .NET projects. For example, Visual Studio, Visual Studio Code, and Jet Brains Rider.
 * Basic knowledge of C# programming concepts.
 
 ## Usage
@@ -27,11 +27,11 @@ You can start developing external logic for an ODC app from scratch or using one
 
 ### From scratch
 
-Using Microsoft Visual Studio 2022, for example:
+Using Microsoft Visual Studio 2022 with .NET 8.0, for example:
 
 1. From the **Create a new project** window select the **Class Library** template.
 
-1. Give the project a name, for example `ClassLibrary1`. You must select **.NET 6.0 (Long-term support)** as the framework. Click **Create**.
+1. Give the project a name, for example `ClassLibrary1`. You must select **.NET 8.0 (Long-term support)** as the framework. Click **Create**.
 
 1. From the **Solution Explorer** pane, right-click on the project name and click **Manage NuGet packages...** Search for `OutSystems.ExternalLibraries.SDK`, select the result and click **Install**.
 
@@ -69,13 +69,13 @@ Using Microsoft Visual Studio 2022, for example:
 
     * Basic .NET types: `string`, `int`, `long`, `bool`, `byte[]`, `decimal`, `float`, `double`, `DateTime`.
     * Structs decorated with the `OSStructure` attribute.
-    * Lists (any type inheriting from [IEnumerable](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=net-6.0)) of any of the previous two types.
+    * Lists (any type inheriting from [IEnumerable](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable)) of any of the previous two types.
 
 1. Once you're finished with the code, save the project and publish it. For example, right-click **Solution ClassLibrary1** and click **Open in Terminal**. Run command `dotnet publish -c Release -r linux-x64 --no-self-contained`.
 
     The published code runs in a Linux container. If your library doesn't have any runtime-specific dependencies, and to simplify the process, you can publish it without specifying the runtime: `dotnet publish -c Release --no-self-contained`.
 
-1. Zip the contents of the publish output folder to the root of a ZIP file. Be careful to select the correct publish folder. For a `linux-x64` runtime-specific publish, the folder path is usually `./ClassLibrary1/bin/Release/net6.0/linux-x64/publish/*`. For a cross-platform publish, the folder path is usually `./ClassLibrary1/bin/Release/net6.0/publish/*`. Name the ZIP file according to your external library, for example, ExternalLibrary.zip.
+1. Zip the contents of the publish output folder to the root of a ZIP file. Be careful to select the correct publish folder. For a `linux-x64` runtime-specific publish, the folder path is usually `./ClassLibrary1/bin/Release/net8.0/linux-x64/publish/*`. For a cross-platform publish, the folder path is usually `./ClassLibrary1/bin/Release/net8.0/publish/*`. Name the ZIP file according to your external library, for example, ExternalLibrary.zip.
 
 1. Upload the ZIP file to the ODC Portal. See the [External Logic feature documentation](intro.md) for guidance on how to do this.
 
