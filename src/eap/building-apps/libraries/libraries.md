@@ -97,7 +97,7 @@ It's important to add any information about the changes you made, such as any ne
 
 Review the release information and then click **Release library**. A green banner displays when your library is successfully released.
 
-### Decide if to consume a new version of a library in your app or library
+### Decide if to consume a new version of a library in your app or library { #update-consumers }
 
 When you open your app or library in ODC Studio, ODC Studio automatically updates app dependencies. If there are library updates, ODC Studio displays a popup to either review or dismiss the updates.
 

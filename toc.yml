@@ -221,6 +221,7 @@
     - topics: 
         - href: eap/building-apps/external-logic/README.md
         - href: eap/building-apps/external-logic/REFERENCE.md
+        - href: eap/building-apps/external-logic/upgrade-net8.md
         - href: eap/building-apps/external-logic/soap.md
     # Forge
     - href: eap/building-apps/forge/intro.md
