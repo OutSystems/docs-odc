@@ -47,7 +47,8 @@ Take the following steps into account when planning the upgrade:
 
 In this phase, support for .NET 8 is introduced. It’s strongly recommended to start planning migrating existing custom code.
 
-* Developers can start using .NET 8 for new custom code or updates on existing custom code. 
+* Developers can start using .NET 8 for new custom code or updates on existing custom code.
+* Forge allows for .NET 8 custom code libraries to be uploaded.
 * You can still upload and maintain .NET 6 custom code. It’s advised to take the opportunity to use .NET 8 for new custom code and updates on existing custom code.
 
 **Recommended actions**
@@ -63,7 +64,11 @@ In this phase, support for .NET 8 is introduced. It’s strongly recommended to 
 
 **December 20, 2024**
 
-At phase 2, the support for .NET 6 is dropped and it will no longer be possible to upload new custom code (or new versions) in .NET 6.
+At phase 2, the support for .NET 6 is dropped and it will no longer be possible to:
+
+* upload new custom code (or new versions) in .NET 6.
+* upload new custom code libraries built in .NET 6 or update existing Forge assets using .NET 6
+
 OutSystems no longer ensures the proper functioning, maintenance and security of custom code libraries that weren't upgraded.
 Forge assets that haven't been upgraded by their owners will be removed from Forge.
 
