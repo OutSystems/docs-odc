@@ -16,7 +16,7 @@ You can download the [SOAP template](https://github.com/OutSystems/OutSystems.Ex
 
 ## Prerequisites
 
-Make sure you have installed the necessary prerequisites to [extend your apps with external logic](README.md#Prerequisites). Next, launch an integrated development environment (IDE) that supports building .NET 6 projects, such as Visual Studio or Visual Studio Code. Open the extensions marketplace within the IDE and search for the following extensions. Install them once you find them:
+Make sure you have installed the necessary prerequisites to [extend your apps with external logic](README.md#Prerequisites). Next, launch an integrated development environment (IDE) that supports building .NET projects, such as Visual Studio or Visual Studio Code. Open the extensions marketplace within the IDE and search for the following extensions. Install them once you find them:
 
 * C# (extension id: ms-dotnettools.csharp)
 * NuGet Package Manager GUI (extension id: aliasadidev.nugetpackagemanagergui)
