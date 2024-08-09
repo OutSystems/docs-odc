@@ -62,6 +62,7 @@
             - href: eap/building-apps/data/fetch-data/calculated-attribute-create.md
             - href: eap/building-apps/data/fetch-data/data-mash.md
             - href: eap/building-apps/data/fetch-data/transactions-data-mashup.md
+            - href: eap/building-apps/data/fetch-data/transaction-external-entities.md
             - href: eap/building-apps/data/fetch-data/data-mashup-errors.md
             - href: eap/building-apps/data/fetch-data/queries.md
             - href: eap/building-apps/data/fetch-data/distinct.md
