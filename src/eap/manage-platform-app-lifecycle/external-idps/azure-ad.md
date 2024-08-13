@@ -24,7 +24,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
    <div class="info" markdown="1">
 
-    Some Azure AD configurations will issue custom signing keys for their tokens, thus requiring the use of an application-specific discovery endpoint, such as `https://login.microsoftonline.com/{tenant}/discovery/.well-known/openid-configuration?appid={appid}`  where `{appid}` corresponds to the **Application (client) ID** which you'll retrieve in the next steps. If you face errors while authenticating with Azure AD, this may be a potential solution. [Read more about this here](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens#validate-the-signature).
+    Some Azure AD configurations issue custom signing keys for their tokens, which requires using an app-specific discovery endpoint. An example of such an endpoint is `https://login.microsoftonline.com/{tenant}/discovery/.well-known/openid-configuration?appid={appid}`, where `{appid}` corresponds to the **Application (client) ID**. You can get **Application (client) ID** in the following steps. If you face errors while authenticating with Azure AD, using custom signing keys may be a solution. For more information, refer to [Validate the signature](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens#validate-the-signature) by Microsoft.
 
    </div>
 
