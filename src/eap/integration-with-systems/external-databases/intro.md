@@ -190,6 +190,7 @@ You can use advanced parameters to add additional parameters for a database conn
 * You can configure connection pool size for all available relational database connectors. Changing the connection pool size can significantly impact performance.
     * `minConnectionPoolSize`: Default value of 0.
     * `maxConnectionPoolSize`: Default value of 400, as it was the best performer in OutSystems performance tests.
+* The `statsRefreshFrequencyMinutes` parameter, available for all connectors, allows you to adjust how often statistics are refreshed. This adjustment helps Data Fabric connectors maintain optimal query performance. If your external system has a limited number of API requests, it's advisable to increase the refresh frequency. The default value for this parameter is 15 minutes, with a minimum allowable value of 5 minutes. An example of the use of this parameter is: `statsRefreshFrequencyMinutes=30`.
 
 ![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems.png "External Database additional parameters")
 
