@@ -246,31 +246,21 @@ We offer the following types of custom actions:
 
 ### Enable notifications with custom sound { #enable-custom-sounds }
 
-To use custom sounds on your mobile app, complete the following steps:
+To enhance your notification with custom sounds,  follow these steps:
 
-1. Put your sound (.wav) files, which you want to use as notification sounds, into a zip file called **sounds.zip**.
+1. Put the .wav files you want to use as notification sounds into a .zip file called **sounds.zip**. 
 
-1. Go to the ODC portal.
+1. Upload the .zip file to the app’s Resources folder. 
 
-1. From the left Navigation menu, select **Apps** > select your app > your app details page > **Configuration**.
+1. Use the **Plugin's Server Actions**, using the **Sound** parameter inside the **Notification** parameter on the **SendNotificationToTopics** or **SendNotificationToUsers methods**.
 
-1. In the **Sound** setting, upload the **sounds.zip** file.
-
-    <div class="info" markdown='1'>
-
-    Even though this setting is optional, you must add a file to it. This requirement is temporary.
-
-    </div>
-
-Additionally, you must use the **Plugin's Server Actions**, using the **Sound** parameter inside the **Notification** parameter on the **SendNotificationToTopics** or **SendNotificationToUsers** methods.
-
-<div class="info" markdown="1">
+It is important to note the following requirements for custom sounds:
 
 * Only .wav files are supported.
 
 * The name of the zip sound file (.wav) can only contain lowercase letters, numbers, and underscores. If you add any other characters, the android build won't work.
 
-</div>
+* The sounds.zip file should be included with the “Deploy Action” set to “Deploy to Target Directory”.
 
 ### Manage the experience of in-app notifications { #manage-notification-ux }
 
@@ -286,7 +276,7 @@ By default, a cloud messaging notification displays in the notification center. 
 
 Add this block to each screen that might handle the notification content.
 
-## Manage the experience of notification clicks
+### Manage the experience of notification clicks
 
 When the end-user clicks on a notification in the notification center, the app opens by default. If you want your app to handle the notification click, you can use the **NotificationsHandler** block and define a handler for the **NotificationClicked** event.
 
@@ -316,6 +306,26 @@ By default, the Cloud Messaging plugin defines values for the notification chann
 The following image illustrates how the notification channel's name and description will appear in the user device:
 
 ![Screenshot of notification channel name and description](images/fcm-notification-channel.png "Notification Channel")
+
+### Enable message delivery data export to BigQuery
+
+BigQuery allows to:
+
+* analyze the push notification data using BigQuery SQL
+*  export it to another cloud provider
+*  use the data for your custom ML models. 
+
+Starting on version 2.1.0, the plugin offers a way to enable an app's message delivery data export to BigQuery. This is available through two client actions:
+* `DeliveryMetricsExportToBigQueryEnabled`: Determines whether Firebase Cloud Messaging exports message delivery metrics to BigQuery.
+* `SetDeliveryMetricsExportToBigQuery`: Enables or disables Firebase Cloud Messaging message delivery metrics export to BigQuery.
+
+To have a better idea of what BigQuery is and how to enable it within the Firebase Console, please refer to the [official documentation](https://firebase.google.com/docs/cloud-messaging/understand-delivery?platform=ios#bigquery-data-export).
+
+The feature is disabled by default. To enable it, `SetDeliveryMetricsExportToBigQuery` needs to be called with its `Enable` input parameter set to `true`.
+
+#### Known limitations on iOS
+
+As explained in the following [page](https://firebase.google.com/docs/cloud-messaging/understand-delivery?platform=ios#enable-message-delivery-data-export), there are two ways to enable the data export on iOS, one for [alert](https://firebase.google.com/docs/cloud-messaging/understand-delivery?platform=ios#enable_delivery_data_export_for_alert_notifications) and another for [background notifications](https://firebase.google.com/docs/cloud-messaging/understand-delivery?platform=ios#enable_delivery_data_export_for_background_notifications). On OutSystems mobile apps, it is not possible to enable data export for alert notifications, so you won't be able to enable the feature for all notifications.
 
 ## Server actions reference
 

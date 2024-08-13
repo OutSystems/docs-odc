@@ -47,7 +47,7 @@ To bootstrap data from the first sheet of an Excel file to an existing entity, f
 
     * A resource with the Excel file in the Resources folder in the Data tab.
 
-    * A timer to execute the action at publish time named "Bootstrap&lt;entityname&gt;" in the Timers folder in the Processes tab.
+    * A timer to execute the action at publish time named "Bootstrap&lt;entityname&gt;" in the Timers folder in the Events tab.
 
 1. Publish to bootstrap the data.
 

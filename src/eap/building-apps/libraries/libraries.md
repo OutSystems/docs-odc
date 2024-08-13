@@ -25,7 +25,7 @@ Common use cases for libraries include:
 
 ![Diagram illustrating the concept of libraries in OutSystems Developer Cloud as repositories of reusable UI and logic elements.](images/libraries-diag.png "ODC Libraries Conceptual Diagram")
 
-OutSystems Developer Cloud (ODC) elevates the library to a **top-level concept**. Libraries exist at the same level as Web Apps and Mobile Apps and have an **independent lifecycle**. For more information on how to think about libraries in the context of your app's architecture, see [App Architecture](../../manage-platform-app-lifecycle/platform-architecture/intro.md#how-apps-and-libraries-work).
+OutSystems Developer Cloud (ODC) elevates the library to a **top-level concept**. Libraries exist at the same level as Web Apps and Mobile Apps and have an **independent lifecycle**. For more information on how to think about libraries in the context of your app's architecture, see [App Architecture](../../app-architecture/intro.md#libraries-in-odc--libraries-).
 
 ## Libraries versioning
 
@@ -97,7 +97,7 @@ It's important to add any information about the changes you made, such as any ne
 
 Review the release information and then click **Release library**. A green banner displays when your library is successfully released.
 
-### Decide if to consume a new version of a library in your app or library
+### Decide if to consume a new version of a library in your app or library { #update-consumers }
 
 When you open your app or library in ODC Studio, ODC Studio automatically updates app dependencies. If there are library updates, ODC Studio displays a popup to either review or dismiss the updates.
 

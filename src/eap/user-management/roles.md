@@ -13,7 +13,15 @@ platform-version: odc
 ODC has organization roles and end-user roles which you can use to limit access. Organization roles are for Organization members who perform work as developers or admins.
 
 * Organization roles are for users that need access to both the ODC Portal and ODC Studio. You can assign built-in or custom roles at the organization or app levels.
+
 * End-user roles are for those users that access apps you create in ODC.
+
+<div class="info" markdown="1">
+
+It's currently only possible to assign a maximum of 10 app scope roles to each user.
+
+</div>
+
 
 ## Organization roles
 
@@ -34,6 +42,12 @@ An organization role groups permissions in the following sections:
 * Monitoring
 * Stage
 * User management
+
+<div class="info" markdown="1">
+
+If you assign an organization role to a user who currently has only end-user role(s), the user will transition to the **Invited** status and receive an email to complete the organization onboarding. The user's end-user access is not impacted.
+
+</div>
 
 ### Built-in organization roles
 

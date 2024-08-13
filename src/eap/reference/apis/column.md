@@ -10,7 +10,7 @@ figma:
 
 # Column Chart
 
-This example shows how to create a simple Column Chart with data labels.
+This example shows how to create a simple Column Chart with data labels. 
 
 1. From the Toolbox, drag the **Column Chart** widget to the Screen.
 

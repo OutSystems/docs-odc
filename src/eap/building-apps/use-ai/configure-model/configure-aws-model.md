@@ -13,7 +13,13 @@ With [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-
 
 It is intended for administrators and DevOps engineers with good working knowledge of setting up AI services in the AWS management console.
 
-OutSystems only supports using **Anthropic** and **Claude** FMs with the AI Agent Builder app. 
+OutSystems only supports using Anthropic's **Claude** FMs with the AI Agent Builder app.  Specifically, we support the following Claude FMs:
+
+* Claude Instant
+* Claude v2
+* Claude v2.1
+* Claude 3 Sonnet
+* Claude 3 Haiku
 
 ## Prerequisites
 

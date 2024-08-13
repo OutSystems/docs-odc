@@ -22,13 +22,14 @@ Private Gateway is a secure-by-design solution for the cloud-native, multi-tenan
 * Highly flexible and configurable. For example, supports connecting to your private endpoints hosted in multi-tenant, multi-zone, or multi-region environments.
 * Strong scaling and failover capabilities.
 * Apps and their data remain isolated.
+* Traffic and requests are unidirectional (only supports requests originating from ODC apps).
 
 There are two components to the Private Gateways feature.
 
 * The server component, **Private Gateway** hosted and managed by OutSystems. There is one instance of Server Gateway for each stage in your organization. By default a Private Gateway is inactive and you activate it in ODC Portal. 
 * The client component, **Cloud Connector** installed and managed by you. You use the configuration generated on activating a Private Gateway to run Cloud Connector on system(s) in your private network(s). Your apps connect to the endpoints through a secure tunnel established between the endpoints and a Private Gateway. The Cloud Connector requires only outbound access to the internet in the private network(s) in which it's running.
 
-Common use cases include accessing data through a private REST API service, requesting internal services (SMTP, SMB, NFS,..), and [connecting to external databases](external-databases/intro.md) in private networks.
+Common use cases include accessing data through a private REST API service, requesting internal services (SMTP, SMB, NFS,..), and [connecting to external databases](../integration-with-systems/external-databases/intro.md) in private networks.
 
 A Private Gateway supports multiple tunnels and uses a load balancer to handle requests. Each tunnel connection is secured via SSH using ECDSA with SHA256 keys. You can connect multiple endpoints to each Cloud Connector and multiple Cloud Connector to each Private Gateway.
 
@@ -58,7 +59,7 @@ Make sure to copy the Token and save it in a safe location. For security reasons
 
 </div>
 
-You or a member of your team can now use the Token and Address to run Cloud Connector on the system(s) in your private network(s). For guidance follow [this documentation](https://github.com/OutSystems/cloud-connector/).
+You or a member of your team can now use the Token and Address to run Cloud Connector on the system(s) in your private network(s). To learn more, see [cloud connector](https://github.com/OutSystems/cloud-connector/blob/main/README.md).
 
 If you deactivate a Private Gateway, the tunnel(s) are deleted and your apps can't access the connected endpoints. If you reactivate, the Token and Address remain the same. The Private Gateway automatically reestablishes a tunnel with any Cloud Connector instances still running with that unique Token and Address.
 
@@ -78,7 +79,7 @@ For each Private Gateway, a list of connected endpoint(s) of the form `secure-ga
 
 For each endpoint you want to use in your app, follow the procedure under [Consume several methods of a REST API](../integration-with-systems/consume_rest/consume-a-rest-api.md#consume-several-methods-of-a-rest-api--all-methods) using the swagger specification file for the endpoint. After you complete the procedure, replace the first part of **Base URL** setting with `https://secure-gateway:<port>/` if the endpoint is connected to `cloud-connector` over TLS/SSL or `http://secure-gateway:<port>/` if it's not.
 
-When connecting to endpoints over TLS/SSL, particularly when they're behind an API gateway, you may need to adjust the host header (`Host`) of the REST consume. This is because the app connects to `secure-gateway` and doesn't know the destination hostname of the endpoint directly. If the endpoint, like an AWS API Gateway, validates the `Host` header against its hostname, it may reject requests due to the mismatch. To resolve, add an `OnBeforeRequest` callback in the REST consume. In the callback, explicitly set the host header to the value expected by the API Gateway, for example, `api.example.com`. This adjustment ensures that requests are correctly recognized by the API Gateway. For guidance on implementing a `OnforeRequest` callback see [Simple Customizations](../integration-with-systems/consume_rest/simple-customizations.md).
+When connecting to endpoints over TLS/SSL, particularly when they're behind an API gateway, you may need to adjust the host header (`Host`) of the REST consume. This is because the app connects to `secure-gateway` and doesn't know the destination hostname of the endpoint directly. If the endpoint, like an AWS API Gateway, validates the `Host` header against its hostname, it may reject requests due to the mismatch. To resolve, add an `OnBeforeRequest` callback in the REST consume. In the callback, explicitly set the host header to the value expected by the API Gateway, for example, `api.example.com`. This adjustment ensures that requests are correctly recognized by the API Gateway. For guidance on implementing a `OnBeforeRequest` callback see [Simple Customizations](../integration-with-systems/consume_rest/simple-customizations.md).
 
 <div class="info" markdown="1">
 

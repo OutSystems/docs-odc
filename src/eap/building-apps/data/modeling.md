@@ -91,6 +91,8 @@ You can add static entities for entities with a predefined or constant set of va
 
 Another way to add entities and attributes is to import them from an Excel file using the **Import Entities from excel** developer accelerator in ODC Studio. In an Excel file, each tab is an entity and each column an attribute. If your data is available in an Excel file, this can speed up the data model design process.
 
+To learn more about entities, refer to [entities](./modeling/entity.md).
+
 ### Entity relationships
 
 Entities are often related. The relationships between entities are as important to your app data model as the entities themselves.
@@ -102,3 +104,5 @@ You can enforce the referential integrity of your app data model by setting the 
 ODC Studio lets you visualize the relationships in your app data model in real-time using entity diagrams.
 
 You can organize entities into folders. Although folders don't affect the app data model, it lets developers group entities by higher concepts.
+
+To learn more about relationships between entities, refer to [relationships between entities](./modeling/relationship/relationships.md).

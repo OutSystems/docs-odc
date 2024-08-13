@@ -8,16 +8,12 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7877&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
+
 # Aggregate
 
 Aggregates allow you to fetch data using an optimized query, tailored to your usage. Aggregates automatically absorb changes in the data model and can load the local database's data from the server. They support combining several entities and advanced filtering, and bring only the attributes that are used on the screen or action. Attributes also abstract the underlying model for the developer, allowing attribute renaming and changes to the data type.  
 
-In OutSystems Developer Cloud (ODC), you can now mash up data from different entities and distinct data sources in an aggregate. This allows you to join data from different sources to provide a unified view of all the data. ODC Studio pulls data from different sources and performs the operations in-memory to perform the data mash to provide the desired results. 
-
-Some benefits of data mashup are:
-* Simplified process: You can now directly drag and drop data from different sources rather than creating custom logic to combine different data. This helps you save time and effort. 
-* Improved Data Analysis: you can now leverage data from various databases to gain deeper insights and make better business decisions.
-* Increased Flexibility: you get greater flexibility in data analysis and reporting.
+In OutSystems Developer Cloud (ODC), you can mash up data from different entities and distinct data sources in an aggregate. To learn more about data mashup, refer to [data mashup](data-mash.md).
 
 In Mobile and Web Apps, Aggregates can be client-side or server-side:
 
@@ -44,6 +40,12 @@ To add an Aggregate to an Action, drag an **Aggregate** from the toolbox to the 
 ![Screenshot showing how to add an Aggregate to an Action by dragging it from the toolbox to the flow in ODC Studio](images/aggregate-server-side-ss.png "Add Aggregate to an Action")
 
 There are cases when you always need to fetch all records from the database, for example, to populate drop-down box lists. If you fetch all records using a Data Action, leave the **Max. Records** field empty. In Data Actions, the **Max. Records** value is optional. If you don't provide a value, the Data Action fetches all records from the database. 
+
+<div class="info" markdown="1">
+
+ Based on the value of the other attributes, you can add new attributes to the records returned by the aggregate. To learn more about calculated attributes, refer to [calculated aggregate](calculated-attribute-create.md).
+
+</div>
 
 ## How to add a data source to an Aggregate
 
@@ -72,13 +74,15 @@ To add more data sources to your Aggregate, follow these steps:
 
     ![Screenshot showing the interface for selecting the join type between multiple sources in an Aggregate in ODC Studio](images/select-join-ss.png "Select join type between sources")
 
+To learn more about writing better queries, refer to [writing better queries in aggregates](queries.md).
+
 ## Properties
 
 | Name | Description | Mandatory | Default value | Observations |
 |------|-------------|-----------|--------------|-------------|
 | Name | Identifies an element in the scope where it is defined, like a screen, action, or app. | Yes |   |   |
 | Description | Text that documents the element. |   |   | Useful for documentation purpose. The maximum size of this property is 2000 characters. |
-| Timeout ("Server Request Timeout" for Screen Aggregates) | Maximum time in seconds to wait for the Aggregate to return data before triggering a Communication Exception. Overrides the [default timeout defined at the app level](../../../../getting-started/system-requirements.md#server-request-timeout). |   |   | Property doesn't exist for client-side Aggregates. There is a [maximum value](../../../../getting-started/system-requirements.md#server-request-timeout). |
+| Timeout ("Server Request Timeout" for Screen Aggregates) | Maximum time in seconds to wait for the Aggregate to return data before triggering a Communication Exception. Overrides the [default timeout defined at the app level](../../../getting-started/system-requirements.md#server-request-timeout). |   |   | Property doesn't exist for client-side Aggregates. There is a [maximum value](../../../getting-started/system-requirements.md#server-request-timeout). |
 | Max. Records | Maximum number of records read from the database. |   |   |  |
 | Cache in Minutes | Maximum time content or results are stored in memory. When undefined, nothing is cached. |   |   | Property not available in client actions. |
 | Start Index | Index of the first List item to iterate. Can be an expression. |   |   | The expression used in this property (if present) is evaluated before the web screen preparation. |

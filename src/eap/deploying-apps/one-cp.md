@@ -8,7 +8,9 @@ platform-version: odc
 figma: https://www.figma.com/file/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?type=design&node-id=3436%3A10&mode=design&t=4YrXFNtkgIwzVp3T-1
 ---
 
-# App publishing workflow
+# Understanding 1-Click Publish
+
+## Publishing an app
 
 OutSystems Developer Cloud (ODC) automates app publishing with its 1-Click Publish button. When you click the 1-Click Publish button to publish an app in the Development stage, the button initiates the following steps:
 
@@ -25,7 +27,7 @@ When you deploy your app from the Development stage to the QA stage, ODC follows
 1. ODC updates app configurations for the QA stage as per your updates in the ODC Portal. 
 1. ODC retrieves the container image of the app version and integrates the updated configurations.
 
-## Library publishing workflow
+## Publishing a library
 
 When you click the 1-Click Publish button to publish a library, ODC initiates the following steps:
 

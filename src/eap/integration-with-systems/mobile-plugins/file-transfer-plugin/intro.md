@@ -27,11 +27,6 @@ See [Installing plugins](../intro.md) to learn how to install and reference a pl
 
 </div>
 
-
-## Demo app
-
-Install File Sample App from Forge and open the app in ODC Studio. The demo app contains logic for common use cases, which you can examine and recreate in your apps.
-
 ## Using the File Transfer Plugin
 
 To add the File Transfer Plugin to your app, complete the following steps:

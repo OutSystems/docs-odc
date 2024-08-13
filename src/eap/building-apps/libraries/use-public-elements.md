@@ -28,6 +28,6 @@ You can build your own libraries in the OutSystem visual language or [using exte
 
 When you add a public element from a provided library, it becomes available to use as an action in the **Server Actions** folder of the **Logic** tab. You can use an action in the logic flow of any server action or service action.
 
-The public element may also be available as function in the **User Functions** folder of the expression editor. You can use a function in the logic flow in any expression of any server action or service action. You can check if an action is available as a function in the [reference documentation](../../reference/intro.md#libraries). Public elements consumed from external logic are never available as functions.
+The public element may also be available as function in the **User Functions** folder of the expression editor. You can use a function in the logic flow in any expression of any server action or service action. You can check if an action is available as a function in the [reference documentation](../../reference/intro.md#libraries). Public elements consumed from external logic are never available as functions. To learn more about external logic, see [external logic](../external-logic/intro.md). 
 
 The functions available in the provided libraries complement the built-in functions found in the **Built-in Functions** folder of the expression editor.

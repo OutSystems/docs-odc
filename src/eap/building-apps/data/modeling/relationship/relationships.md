@@ -39,6 +39,8 @@ The following entity diagram shows a one-to-one relationship.
 
 ![Diagram illustrating a one-to-one relationship between Order and OrderReceipt entities](images/entity-relationships-one-to-one-ss.png "One-to-One Entity Relationship Diagram")
 
+To learn more about one-to-one relationships, refer to [one-to-one relationship](relationship-one-to-one.md).
+
 ## One-to-many relationships
 
 A **one-to-many** relationship between two entities indicates that one record in entity A corresponds to multiple records in entity B, but one record in entity B has only one associated record in entity A.
@@ -52,6 +54,8 @@ The following entity diagram shows a one-to-many relationship.
 
 ![Diagram showing a one-to-many relationship between Customer and Order entities](images/entity-relationships-one-to-many-ss.png "One-to-Many Entity Relationship Diagram")
 
+To learn more about one-to-many relationship, refer to [one-to-many relationship](relationship-one-to-many.md).
+
 ## Many-to-many relationships
 
 A **many-to-many** relationship between two entities indicates that one record in entity A corresponds to multiple records in entity B and a record in entity B can have more than one associated record in entity A. In this situation, you must create a third entity with one reference attribute for entity A and one reference attribute for entity B. A many-to-many relationship is, in fact, two one-to-many relationships with this third entity.
@@ -64,6 +68,8 @@ For example, consider the relationship between `Order` and `Product` entities:
 The following entity diagram shows a many-to-many relationship.
 
 ![Diagram depicting a many-to-many relationship between Order and Product entities through an associative entity](images/entity-relationships-many-to-many-ss.png "Many-to-Many Entity Relationship Diagram")
+
+To learn more about many-to-many relationships, refer to [many-to-many relationship](relationship-many-to-many.md).
 
 ## Referential integrity
 

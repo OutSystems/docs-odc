@@ -36,11 +36,16 @@
             - href: eap/building-apps/use-ai/configure-data-source/add-azure-data-source-to-aibuilder.md
             - href: eap/building-apps/use-ai/configure-data-source/configure-aws-data-source.md
             - href: eap/building-apps/use-ai/configure-data-source/add-aws-data-source-to-aibuilder.md        
-                
+            - href: eap/building-apps/use-ai/configure-data-source/add-custom-data-source.md      
+    # Function calling
+        - href: eap/building-apps/use-ai/function-calling/overview.md
+        - topics:
+            - href: eap/building-apps/use-ai/function-calling/use-function-calling.md
     # Create agent
         - href: eap/building-apps/use-ai/create-agent.md
     # Integrate agent
         - href: eap/building-apps/use-ai/integrate-agent.md
+
     # Data
     - href: eap/building-apps/data/intro.md
     - topics:
@@ -49,9 +54,22 @@
         - topics:
             - href: eap/building-apps/data/modeling/entity.md
             - href: eap/building-apps/data/modeling/entity-create.md
-            - href: eap/building-apps/data/modeling/calculated-attribute-create.md
             - href: eap/building-apps/data/modeling/excel-bootstrap.md
             - href: eap/building-apps/data/modeling/entity-static.md
+        - href: eap/building-apps/data/fetch-data/intro.md
+        - topics: 
+            - href: eap/building-apps/data/fetch-data/aggregate.md
+            - href: eap/building-apps/data/fetch-data/calculated-attribute-create.md
+            - href: eap/building-apps/data/fetch-data/data-mash.md
+            - href: eap/building-apps/data/fetch-data/transactions-data-mashup.md
+            - href: eap/building-apps/data/fetch-data/transaction-external-entities.md
+            - href: eap/building-apps/data/fetch-data/data-mashup-errors.md
+            - href: eap/building-apps/data/fetch-data/queries.md
+            - href: eap/building-apps/data/fetch-data/distinct.md
+            - href: eap/building-apps/data/fetch-data/filter-results.md
+            - href: eap/building-apps/data/fetch-data/supported-join-types.md
+            - href: eap/building-apps/data/fetch-data/fetch-data-nl.md
+            - href: eap/building-apps/data/fetch-data/sort-aggregate.md
         - href: eap/building-apps/data/modeling/relationship/relationships.md
         - topics:
             - href: eap/building-apps/data/modeling/relationship/relationship-one-to-one.md
@@ -59,6 +77,7 @@
             - href: eap/building-apps/data/modeling/relationship/relationship-many-to-many.md
         - href: eap/building-apps/data/sharing.md
         - href: eap/building-apps/data/data-types.md
+        - href: eap/building-apps/data/convert-data-types.md
         - href: eap/building-apps/data/edit-data.md
         - href: eap/building-apps/data/structure-create-use.md   
     # UI
@@ -69,15 +88,7 @@
         - topics:
             - href: eap/building-apps/ui/creating-screens/screen-creating.md
             - href: eap/building-apps/ui/creating-screens/create-screen-scratch.md
-        - href: eap/building-apps/ui/interaction/fetch-display.md
-        - topics:
-            - href: eap/building-apps/ui/interaction/display-data/aggregate.md
-            - href: eap/building-apps/ui/interaction/display-data/queries.md
-            - href: eap/building-apps/ui/interaction/display-data/distinct.md
-            - href: eap/building-apps/ui/interaction/display-data/filter-results.md
-            - href: eap/building-apps/ui/interaction/display-data/supported-join-types.md
-            - href: eap/building-apps/ui/interaction/display-data/fetch-data-nl.md
-            - href: eap/building-apps/ui/interaction/display-data/sort-aggregate.md
+            - href: eap/building-apps/ui/interaction/fetch-display.md
         # Reuse ui
         - href: eap/building-apps/ui/reuse/intro.md
         - href: eap/building-apps/ui/reuse/block-create-reuse.md
@@ -165,6 +176,7 @@
         # Screen Templates
         - href: eap/building-apps/ui/screen-template/intro.md
         - topics:
+            - href: eap/building-apps/ui/screen-template/sample-data.md
             - href: eap/building-apps/ui/screen-template/replace-data.md
             - href: eap/building-apps/ui/screen-template/template-compatibility.md
         - href: eap/building-apps/ui/navigation/ui-flow.md
@@ -210,6 +222,7 @@
     - topics: 
         - href: eap/building-apps/external-logic/README.md
         - href: eap/building-apps/external-logic/REFERENCE.md
+        - href: eap/building-apps/external-logic/upgrade-net8.md
         - href: eap/building-apps/external-logic/soap.md
     # Forge
     - href: eap/building-apps/forge/intro.md
@@ -269,6 +282,19 @@
     - topics:
         - href: eap/building-apps/timers/timer-create-run.md
         - href: eap/building-apps/timers/timer-monitor.md
+
+    # Workflows
+    - href: eap/building-apps/workflows/business-processes.md
+    - topics:
+        - href: eap/building-apps/workflows/workflows-in-odc.md
+        - href: eap/building-apps/workflows/using-workflows.md
+        - href: eap/building-apps/workflows/start-workflow.md
+        - href: eap/building-apps/workflows/end-workflow.md
+        - href: eap/building-apps/workflows/add-human-activity.md
+        - href: eap/building-apps/workflows/add-automatic-activity.md
+        - href: eap/building-apps/workflows/add-decisions.md
+        - href: eap/building-apps/workflows/go-to-previous-step.md
+        - href: eap/building-apps/workflows/system-entities.md
    
     # Reuse
     - href: eap/building-apps/reuse/intro.md
@@ -293,10 +319,13 @@
 - href: eap/deleting-apps/intro.md
 
 # Integration with external systems
-
-# Consume REST APIs
 - href: eap/integration-with-systems/intro.md
 - topics:
+    # Integration with external databases
+    - href: eap/integration-with-systems/external-databases/intro.md
+    - topics: 
+        - href: eap/integration-with-systems/external-databases/handle-null-values.md
+    #Consume REST API 
     - href: eap/integration-with-systems/consume_rest/intro.md
     - topics:
         - href: eap/integration-with-systems/consume_rest/consume-a-rest-api.md
@@ -305,7 +334,6 @@
         - href: eap/integration-with-systems/consume_rest/rest-api-structures.md
         - href: eap/integration-with-systems/consume_rest/handling-rest-errors.md
         - href: eap/integration-with-systems/consume_rest/simple-customizations.md
-        
     # Exposing REST APIs
     - href: eap/integration-with-systems/exposing_rest/intro.md
     - topics:
@@ -315,6 +343,8 @@
         - href: eap/integration-with-systems/exposing_rest/throw-a-custom-error-in-an-exposed-rest-api.md
         - href: eap/integration-with-systems/exposing_rest/change-the-http-status-code-of-a-rest-api.md
         - href: eap/integration-with-systems/exposing_rest/built-in-http-status-codes.md
+    
+
     #Mobile plug-ins
     - href: eap/integration-with-systems/mobile-plugins/intro.md
     - topics:
@@ -355,6 +385,7 @@
 - topics:
     - href: eap/app-architecture/recommended-architecture.md
     - href: eap/app-architecture/reuse-elements.md
+    - href: eap/app-architecture/reuse-templates.md
     - href: eap/app-architecture/service-actions.md
 
 # Manage platform and apps lifecycle
@@ -368,10 +399,9 @@
     - href: eap/manage-platform-app-lifecycle/custom-domains.md
     - href: eap/manage-platform-app-lifecycle/private-gateway.md
     - href: eap/manage-platform-app-lifecycle/configure-emails.md
-    # External database
-    - href: eap/manage-platform-app-lifecycle/external-databases/intro.md
     - href: eap/manage-platform-app-lifecycle/sso.md
     - href: eap/manage-platform-app-lifecycle/filter-ip.md
+    - href: eap/manage-platform-app-lifecycle/subscription-console.md
 
 
 
@@ -410,7 +440,11 @@
         - href: eap/reference/libraries/textdictionary.md
         - href: eap/reference/libraries/url.md
         - href: eap/reference/libraries/xml.md
-        - href: eap/reference/libraries/zip.md
+        - href: eap/reference/libraries/zip.md 
+  # Service actions
+    - href: eap/reference/service-actions/intro.md
+    - topics:
+        - href: eap/reference/service-actions/call-agent-function-calling.md
   # System actions
     - href: eap/reference/system-actions/intro.md
     - topics:
@@ -435,15 +469,17 @@
     - topics:
         - href: eap/reference/apis/data.md
         - href: eap/reference/apis/chart-intro.md
-    - topics:
-        - href: eap/reference/apis/area.md
-        - href: eap/reference/apis/bar.md
-        - href: eap/reference/apis/column.md
-        - href: eap/reference/apis/donut.md
-        - href: eap/reference/apis/line.md
-        - href: eap/reference/apis/pie.md
-        - href: eap/reference/apis/radar.md    
-   
+        - topics:
+            - href: eap/reference/apis/area.md
+            - href: eap/reference/apis/bar.md
+            - href: eap/reference/apis/column.md
+            - href: eap/reference/apis/donut.md
+            - href: eap/reference/apis/line.md
+            - href: eap/reference/apis/pie.md
+            - href: eap/reference/apis/radar.md    
+  # AIAB 
+    - href: eap/reference/ai-agent-builder/aiab-api-contract.md
+       
 # Errors
 - href: error/intro.md
 - topics:
@@ -470,6 +506,10 @@
         - href: error/frge/os-frge-ast-50001.md
         - href: error/frge/os-frge-ast-50002.md
         - href: error/frge/os-frge-ast-50003.md
+    # Build errors
+    - href: error/bld/intro.md
+    - topics:
+        - href: error/bld/OS-BLD-FE-400001.md
     # Errors External Libraries SDK
     - href: error/elg/intro.md
     - topics:
@@ -531,6 +571,7 @@
         - href: error/intc/os-intc-60005.md
         - href: error/intc/os-intc-60006.md
         - href: error/intc/os-dfqe-40004.md  
+        - href: error/intc/os-intc-api-50002.md
     # Errors App and Library dependency errors
     - href: error/aldi/intro.md
     - topics:

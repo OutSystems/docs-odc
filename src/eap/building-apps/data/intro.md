@@ -29,6 +29,8 @@ Enumerations in OutSystems are static entities. A static entity stores a predefi
 
 Entities can have different relationships between other entities and static entities, like one-to-one, one-to-many, or many-to-many. Business concepts in an app are usually in separate but connected entities. A common example is when apps have information about customers, orders, and vendors as separate entities. Those entities link to each other with the key attributes and entity relationships.
 
+To learn more about data modeling, refer to [data modeling](modeling.md).
+
 ## Retrieving data
 
 Aggregate is a recommended tool for getting data from the database to your app. Aggregates can contain one or more entities and provide filtering and sorting. ODC optimizes Aggregates for fast and efficient retrieval of data.
@@ -36,3 +38,5 @@ Aggregate is a recommended tool for getting data from the database to your app. 
 Another tool for data fetching is the SQL tool. SQL provides an interface for the Structured Query Language, an industry standard. SQL is useful when you need full control over the SQL queries. However, the efficiency of the SQL tool often depends on the SQL queries that you provide.
 
 The quickest way to get UI in the app is to add aggregates to screens. When fetching data from the server for more complex use cases, you can wrap one or more tools and CRUD actions in a server action.
+
+To learn more about retrieving data, refer to [aggregate](./fetch-data/aggregate.md).

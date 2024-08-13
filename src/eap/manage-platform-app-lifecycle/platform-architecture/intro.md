@@ -114,7 +114,7 @@ The following table describes the Platform databases and data stores.
 | - | - | - |
 | App revisions and dependency information. | Amazon Aurora | A PostgreSQL-compatible relational database built for the cloud. |
 | Current and historic app revisions, in the form of OML projects, stored as blob data. | S3 | An object storage service offering industry-leading scalability, data availability, security, and performance. |
-| Configuration and metadata from the Platform Build Service. | DynamoDB | A fully managed, serverless, key-value NoSQL database designed to run high-performance apps at any scale. |
+| Configuration and metadata from the Platform Build Service. | DynamoDB | Configuration and metadata include settings, build parameters, and other service-specific information required for the operation of the Platform Build Service. A fully managed, serverless, key-value NoSQL database designed to run high-performance apps at any scale. |
 | Current and historic app container images. | Elastic Container Registry (ECR) | A fully-managed Docker container registry that makes it easy to store, share, and deploy container images. |
 
 #### Runtime data
@@ -139,7 +139,7 @@ Many times your data is stored in an external location. Data Fabric helps you to
 
 ### Data stored in external systems
 
-Customers use [Data Fabric connectors](../external-databases/intro.md) for integrations. Data Fabric processes all your external system data uniformly, with no persistent storage within Data Fabric or ODC architecture.
+Customers use [Data Fabric connectors](../../integration-with-systems/external-databases/intro.md) for integrations. Data Fabric processes all your external system data uniformly, with no persistent storage within Data Fabric or ODC architecture.
 
 Data Fabric Connectors retrieve essential metadata from external systems, making it crucial for developers to select integration tables, objects, and columns. The selected metadata is securely stored in serverless, NoSQL databases during the connection's lifetime in the ODC Portal.
 
@@ -164,13 +164,15 @@ Different types of data are stored distinctively in memory:
 In the ODC architecture, caches optimize performance by storing certain information. This principle extends to integration with external systems, caching the following types of information:
 
 * Metadata: This type of data is cached during connection creation or when refreshing metadata in the ODC Portal. The data is then stored in serverless, NoSQL databases.
-* Query statements that execute in runtime Apps are cached to maintain consistent execution plans in the underlying system to enhance performance.
+* Query statements that execute in runtime Apps are cached to maintain consistent execution plans in the underlying system to enhance performance. Developers should follow security best practices and avoid sensitive data in query statements.
 * Query results are cached in Kubernetes pod memory. This cache expiration is defined by developer at the aggregate level.
 
 
 ### Connection secrets
 
-When creating a connection, developers must supply external system details such as username, password, and host. ODC securely stores sensitive data like passwords by encrypting them as secrets in a cloud secret store. Passwords are never stored in clear text and OutSystems can't access them.
+When creating a connection, developers must supply external system details such as username, password, and host. ODC securely stores sensitive data like passwords by encrypting them as secrets in a cloud secret store. Passwords are never stored in clear text and secrets are not human-readable. Secrets are decrypted only when connecting to the external system by an automated process and without human intervention.
+
+When editing an existing connection, secrets are not fetched and decrypted from the cloud secret store. Instead, the developer will have to provide the details considered secrets one more time to save the connection.
 
 ### Data in transit
 

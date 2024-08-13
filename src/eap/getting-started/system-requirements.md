@@ -4,7 +4,7 @@ tags:
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
 app_type: mobile apps, reactive web apps
-figma: https://www.figma.com/file/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?type=design&node-id=3406%3A233&mode=design&t=J1Fg2OFRP0LzS3gX-1
+figma: https://www.figma.com/design/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?node-id=3406%3A10&t=SDUOaeXeeu7S6LQG-1
 platform-version: odc
 ---
 
@@ -46,8 +46,9 @@ The following are the minimum recommended hardware requirements,however, keep in
 OutSystems supports the following Operating Systems. This list is subject to change. OutSystems supports Operating Systems for six months after the manufacturer's end-of-life date. For example, if your Operating System reaches its end-of-life on May 1, then OutSystems supports your operating system until November 1.
 
 * macOS:
-    * macOS Big Sur
     * macOS Monterrey
+    * macOS Ventura since ODC Studio 1.4.10
+    * macOS Sonoma since ODC Studio 1.4.10 
 
 * Windows:
     * Windows 11 (64-bit) since ODC Studio 1.3.15
@@ -58,7 +59,7 @@ OutSystems supports the following Operating Systems. This list is subject to cha
 To perform client-side debugging in ODC Studio using a desktop browser, use the most recent version of any of the following browsers:
 
 * Google Chrome
-* Microsoft Edge
+* Microsoft Edge (only available for Windows)
 
 ## Software requirements for app users
 

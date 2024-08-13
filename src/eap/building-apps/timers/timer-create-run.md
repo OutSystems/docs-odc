@@ -36,8 +36,6 @@ You can set the schedule of a Timer in one of the following ways:
 
 * **Setting the Timer schedule at runtime in ODC Portal**: You might want to customize the Timer schedule when deploying an app to another stage. In this case, the effective Timer schedule is set in ODC Portal, which uses the default settings in every stage unless specifically modified. 
 
-* **Implement logic that changes the Timer schedule at runtime**: Assign the **Schedule** runtime property of the Timer with a specific schedule within your log.
-
 When you define a schedule for your Timer, the Timer runs at the predefined time.
 
 ## Force the Timer to run

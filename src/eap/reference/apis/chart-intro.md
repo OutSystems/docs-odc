@@ -11,11 +11,11 @@ figma:
 
 <div class="info" markdown="1">
 
-Available from OutSystems Charts v3.0.0. For more information on how to use the new version of Charts, see the [OutSystems Charts Sample](https://charts.outsystems.com/).
+Available from OutSystems Charts v3.0.0. For more information on how to use the new version of Charts, see the [OutSystems Charts Sample](https://charts.outsystems.com/). 
 
 </div>
 
-The Charts API v2 allows you to create, populate, and customize charts. OutSystems uses Highcharts 11.0.0 to generate the charts. For more information about implementation and the API, see the [Highcharts documentation](https://api.highcharts.com/highcharts/).
+The Charts API v2 allows you to create, populate, and customize charts. OutSystems uses Highcharts 11.0.0 to generate the charts. For more information about implementation and the API, see the [Highcharts documentation](https://api.highcharts.com/highcharts/). 
 
 ## Charts
 
