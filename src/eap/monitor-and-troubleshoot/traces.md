@@ -54,7 +54,7 @@ ODC samples 2 percent of the total traces that do not meet any of the above crit
 * 3 have trace duration more tha 1 sec.
 * 10 have no errors & duration is 5 ms.
 
-ODC stores the 2 error traces and the 3 slow traces. ODC samples 2 of the 10 good traces with a duration of 5 ms for reporting.
+ODC stores the 2 error traces and the 3 slow traces. ODC samples 2 percent of the 10 good traces with a duration of 5 ms for reporting.
 
 <div class="info" markdown="1">
 
