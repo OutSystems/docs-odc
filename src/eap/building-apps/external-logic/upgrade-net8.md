@@ -1,15 +1,15 @@
 ---
 helpids: 30545
-summary: 
+summary: Plan the upgrade of OutSystems Developer Cloud (ODC) custom code libraries from .NET 6 to .NET 8. Understand the timelines and the level of support.
 tags: 
 guid: 02427545-b80a-4624-8de6-68e6e38efa6b
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5786-34&t=BrG4ZbInBSh6eY9A-0
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5785-31
 ---
 
-# Upgrading ODC custom code libraries from .NET 6 to .NET 8
+# Upgrading custom code libraries to .NET 8
 
 OutSystems Developer Cloud is transitioning from supporting .NET 6 to .NET 8 for custom code. This guide provides essential information to manage this migration effectively, ensuring minimal disruption and a smooth transition through the outlined phases.
 
