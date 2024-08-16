@@ -422,7 +422,9 @@
 - href: eap/monitor-and-troubleshoot/monitor-apps.md
 - topics:
     - href: eap/monitor-and-troubleshoot/app-health.md
-
+    - href: eap/monitor-and-troubleshoot/traces.md
+    - href: eap/monitor-and-troubleshoot/client-side-traces.md
+    
 # Reference
 - href: eap/reference/intro.md
 - topics:
