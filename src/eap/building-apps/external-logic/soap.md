@@ -16,7 +16,7 @@ You can download the [SOAP template](https://github.com/OutSystems/OutSystems.Ex
 
 ## Prerequisites
 
-Make sure you have installed the necessary prerequisites to [extend your apps with external logic](README.md#Prerequisites). Next, launch an integrated development environment (IDE) that supports building .NET 6 projects, such as Visual Studio or Visual Studio Code. Open the extensions marketplace within the IDE and search for the following extensions. Install them once you find them:
+Make sure you have installed the necessary prerequisites to [extend your apps with external logic](README.md#Prerequisites). Next, launch an integrated development environment (IDE) that supports building .NET projects, such as Visual Studio or Visual Studio Code. Open the extensions marketplace within the IDE and search for the following extensions. Install them once you find them:
 
 * C# (extension id: ms-dotnettools.csharp)
 * NuGet Package Manager GUI (extension id: aliasadidev.nugetpackagemanagergui)
@@ -67,9 +67,9 @@ To install your web service and create the structures to be used by the interfac
 
     </div>
 
-2. To create your library using the class library template, run the following code. Give the project a name, such as `ConsumeSOAPExample`, and select **.NET 6.0 (Long-term support)** as the framework.
+2. To create your library using the class library template, run the following code. Give the project a name, such as `ConsumeSOAPExample`, and select **.NET 8.0 (Long-term support)** as the framework.
 
-    `dotnet new classlib --language "C#" --framework "net6.0" -o ConsumeSOAPExample`
+    `dotnet new classlib --language "C#" --framework "net8.0" -o ConsumeSOAPExample`
 
 3. Create a new folder named `Structures` inside the ConsumeSoapExample folder. Create a new file called `Numbers.cs` within the Structures folder. Then copy and paste the following code to create and map the structures as OutSystems structures.
     
@@ -254,7 +254,7 @@ To call the SOAP web service, follow these steps:
 
 1. Once you finish the code, save the project and publish it. For example, right-click **ConsumeSOAPExample** and select **Open in Terminal**. Run the command, 
     ` dotnet publish -c Release `
-2. Zip the published output folder (for example, ConsumeSOAPExample > bin > Release > net6.0 > publish) to the root folder of a ZIP file. For example, `ExternalLibrary.zip` is the name of your external library.
+2. Zip the published output folder (for example, ConsumeSOAPExample > bin > Release > net8.0 > publish) to the root folder of a ZIP file. For example, `ExternalLibrary.zip` is the name of your external library.
 
 ## Upload the library to ODC Portal
 

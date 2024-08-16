@@ -22,6 +22,7 @@ Private Gateway is a secure-by-design solution for the cloud-native, multi-tenan
 * Highly flexible and configurable. For example, supports connecting to your private endpoints hosted in multi-tenant, multi-zone, or multi-region environments.
 * Strong scaling and failover capabilities.
 * Apps and their data remain isolated.
+* Traffic and requests are unidirectional (only supports requests originating from ODC apps).
 
 There are two components to the Private Gateways feature.
 
@@ -78,7 +79,7 @@ For each Private Gateway, a list of connected endpoint(s) of the form `secure-ga
 
 For each endpoint you want to use in your app, follow the procedure under [Consume several methods of a REST API](../integration-with-systems/consume_rest/consume-a-rest-api.md#consume-several-methods-of-a-rest-api--all-methods) using the swagger specification file for the endpoint. After you complete the procedure, replace the first part of **Base URL** setting with `https://secure-gateway:<port>/` if the endpoint is connected to `cloud-connector` over TLS/SSL or `http://secure-gateway:<port>/` if it's not.
 
-When connecting to endpoints over TLS/SSL, particularly when they're behind an API gateway, you may need to adjust the host header (`Host`) of the REST consume. This is because the app connects to `secure-gateway` and doesn't know the destination hostname of the endpoint directly. If the endpoint, like an AWS API Gateway, validates the `Host` header against its hostname, it may reject requests due to the mismatch. To resolve, add an `OnBeforeRequest` callback in the REST consume. In the callback, explicitly set the host header to the value expected by the API Gateway, for example, `api.example.com`. This adjustment ensures that requests are correctly recognized by the API Gateway. For guidance on implementing a `OnforeRequest` callback see [Simple Customizations](../integration-with-systems/consume_rest/simple-customizations.md).
+When connecting to endpoints over TLS/SSL, particularly when they're behind an API gateway, you may need to adjust the host header (`Host`) of the REST consume. This is because the app connects to `secure-gateway` and doesn't know the destination hostname of the endpoint directly. If the endpoint, like an AWS API Gateway, validates the `Host` header against its hostname, it may reject requests due to the mismatch. To resolve, add an `OnBeforeRequest` callback in the REST consume. In the callback, explicitly set the host header to the value expected by the API Gateway, for example, `api.example.com`. This adjustment ensures that requests are correctly recognized by the API Gateway. For guidance on implementing a `OnBeforeRequest` callback see [Simple Customizations](../integration-with-systems/consume_rest/simple-customizations.md).
 
 <div class="info" markdown="1">
 

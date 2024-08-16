@@ -35,7 +35,7 @@ OutSystems supports the following versions of systems:
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
-        Microsoft SQL server
+        Microsoft SQL Server
     </div>
     <div class="os-accordion__content">
         <ul>
@@ -54,14 +54,15 @@ OutSystems supports the following versions of systems:
     </div>
     <div class="os-accordion__content">
         <ul>
-            <li>Azure SQL V12</li>
+            <li>Azure SQL Database</li>
+            <li>Azure SQL Managed Instance</li>
         </ul>
     </div>
 </div>
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
-        Oracle server
+        Oracle
     </div>
     <div class="os-accordion__content">
         <ul>
@@ -72,9 +73,10 @@ OutSystems supports the following versions of systems:
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
-        PostgreSQL Server
+        PostgreSQL
     </div>
     <div class="os-accordion__content">
+        OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
         <ul>
             <li>PostgreSQL 12</li>
             <li>PostgreSQL 13</li>
@@ -96,7 +98,6 @@ OutSystems supports the following versions of systems:
     </div>
 </div>
 
-OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
 
 ## Permissions requirements
 
@@ -105,15 +106,14 @@ Before accessing data from an external database, verify that you have the correc
 * Configure Connections
 * Connection management
 
-External database permissions take priority over permissions in ODC. For example, a developer with read permission in an external database and read-write permission in ODC can only read data in the external database. Contact the external database admin to change your access to the external database..
+External database connections can be created with read-only permissions or other permission restrictions. Entity CRUD actions (to create, update, or delete records) are always automatically created in ODC Studio regardless of the permissions of the database connection user. If you intend to use the full CRUD actions, ensure that the database users carries the proper permissions.
 
-For more information about users, permissions, and custom roles, see [User management](../../user-management/intro.md).
 
 ## Create a new connection
 
 To create a new database connection, go to the ODC Portal and follow these steps:
 
-1. From the ODC Portal nav menu, select **Resource** > **Connections**, and click the **Create connection** button. <br/> The **select a provider** popup displays.
+1. From the ODC Portal nav menu, select **Integrate** > **Connections**, and click the **Create connection** button. <br/> The **select a provider** popup displays.
 1. Select the required provider and click **Confirm**.
     * If you select SAP, then select the **SAP Service** as **SAP Service Catalog**, and click **Show available services**.<br/> All available services display.
     * If you select Salesforce, select **connect to** as **Production**, and **Authentication type** as **OAuth** authentication type, and click **Authenticate**.<br/> The Salesforce login page displays.
@@ -137,16 +137,6 @@ To create a new database connection, go to the ODC Portal and follow these steps
     * Click Apply to all stages to use the same connection information in all stages.
     * Select the stage name to use connection information for a single stage.
 
-If you select SQL or Oracle server, you can use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, separate each parameter with a semi-colon (;). Different databases may require different parameters, for example:
-
-* For the **SQL Server** and **Azure SQL** to select the desired schema on the database, enter `currentSchema=<schema-name>`. For PostgreSQL, you can also use the `Schema` parameter.
-* For **Oracle** to select the desired schema on the database, enter `current_schema=<schema-name>`
-
-<div class="info" markdown="1">
-
-To establish a connection with the SQL server and allow the client to bypass certificate validation, add the `trustServerCertificate=true` parameter to the additional parameters.
-
-</div>  
 
 ## Select entities for use in an app
 
@@ -172,7 +162,7 @@ You can only change the name and description without testing your connection aga
 
 ## Connection parameters
 
-Administrators  must supply the following information to connect to the external connector.
+Administrators  must supply the following information to connect to the external connector. 
 
 | Parameter | Description | Needs testing connection when edited | Notes |
 |--|--|--|--|
@@ -183,7 +173,7 @@ Administrators  must supply the following information to connect to the external
 | Server for SQL server and Azure SQL \ Host for Oracle server | Endpoint for your database connection | Yes | For Private Gateway, enter `secure-gateway` |
 | Port | The port number to connect to the database | Yes | ODC has a default port number that an admin can change. For a private gateway, enter the port configured in the connector. |
 | Database for SQL server and Azure SQL \ Service name for Oracle server | Name of the database | Yes |  |
-| Additional parameters | Additional parameters for a database connection | Yes | Different databases may require different parameters |
+| Additional parameters | Additional parameters for a database connection | Yes | For more information, see [additional parameters](#additional-parameters) |
 | SAP Server domain | SAP server/host address| Yes |  |
 | SAP Client | If the SAP system has multiple clients, you must provide a client number. Leave the input blank if you connect to the default client | Yes | Optional |
 | Manual entry | To manually enter the Service URL| Yes | If you select "Manual entry" for a private gateway, then the domain must be `secure-gateway:<port>/..`|
@@ -191,11 +181,24 @@ Administrators  must supply the following information to connect to the external
 | Sandbox connection | Sandbox enables a partial or full copy of production data to test the connector. | Yes | |
 | Schema | Optional schema name for PostgreSQL connections | Yes | If provided, it specifies the default schema to be used. |
 
+### Additional parameters
+ 
+You can use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, separate each parameter with a semi-colon (;). Different databases may require different parameters, for example:
+
+* For **SQL Server**, and **Azure SQL** to select the desired schema on the database, enter `currentSchema=<schema-name>`. For **Oracle** to select the desired schema on the database, enter `current_schema=<schema-name>`
+* To establish a connection with the **SQL Server** and allow the client to bypass certificate validation, add the `trustServerCertificate=true` parameter to the additional parameters.
+* You can configure connection pool size for all available relational database connectors. Changing the connection pool size can significantly impact performance.
+    * `minConnectionPoolSize`: Default value of 0.
+    * `maxConnectionPoolSize`: Default value of 400, as it was the best performer in OutSystems performance tests.
+* The `statsRefreshFrequencyMinutes` parameter, available for all connectors, allows you to adjust how often statistics are refreshed. This adjustment helps Data Fabric connectors maintain optimal query performance. If your external system has a limited number of API requests, it's advisable to increase the refresh frequency. The default value for this parameter is 15 minutes, with a minimum allowable value of 5 minutes. An example of the use of this parameter is: `statsRefreshFrequencyMinutes=30`.
+
+![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems.png "External Database additional parameters")
+
 ## Data type mapping
 
 To handle null values while integrating with external systems. Administrators must assign new values to represent null values in external databases. To learn more, refer to [handle null values](handle-null-values.md).
 
-| SQL Server and Azure SQL | Oracle | SAP OData | Salesforce | PostgreSQL |OutSystems Data Type |
+| SQL Server and Azure SQL | Oracle | SAP OData | Salesforce | PostgreSQL |OutSystems data type |
 |--|--|--|--|--|--|
 Char<br/>Varchar<br/>Text<br/>Nchar<br/>Nvarchar<br/>Ntext<br/>Xml<br/>Decimal(Any,> 8)<br/>Numeric(Any,>8) <br/>Real<br/>Float<br/>UniqueIdentifier<br/>Time<br/>Datetimeoffset | Char<br/>Varchar<br/>Varchar2<br/>Clob<br/>Long<br/>Nchar<br/>NVarchar2<br/>Nclob<br/>Number(Any,> 8)<br/>Float<br/>RowId<br/>URowId | Varchar<br/>UUID| UUID<br/>VARCHAR<br/>FLOAT<br/>Time| Varchar<br/>NVarchar<br/>Text<br/>Varbit<br/>Character<br/>Char<br/>Bpchar<br/>Time<br/>Numeric(Any, >8)<br/>Numeric(>28, Any)<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)<br/>Float4<br/>Float8<br/>Float8_range<br/>Real<br/>Double precision<br/>XML<br/>JSON<br/>UUID<br/>Pg_lsn<br/>Enum |Text|
 Tinyint<br/>Smallint<br/>Int<br/>Decimal(1-9,0)<br/>Numeric(1-9,0) | Number(2-9,0) | Int | Int | Smallint<br/>Integer<br/>Int<br/>Int2<br/>Int4<br/>Numeric<br/>Numeric(1-9, 0)<br/>Decimal(1-9, 0)<br/>Smallserial<br/>Serial<br/>Serial4 |Integer |
@@ -212,7 +215,7 @@ Other data types | Other data types | Other data types |Other data types | Other
 
 Although Salesforce supports multiple data types in the built-in tables, the following mapping are for the custom columns:
 
-| Salesforce data type| OutSystems Data Type |
+| Salesforce data type| OutSystems data type |
 |--|--|
 TINYINT<br/>SMALLINT<br/>INT<br/>BIGINT<br/>FLOAT<br/>DECIMAL<br/>DOUBLE<br/>NUMERIC<br/>VARCHAR<br/>BIT<br/>BINARY<br/>UUID<br/>Time | Text |
 Boolean |Boolean |
@@ -222,8 +225,7 @@ Date | Date |
 
 Consider the following when integrating an external database.
 
-* Data Preview and runtime queries with Unicode characters aren't supported.
-* Advanced SQL Nodes don't support external entities.
+* SQL elements don't support external entities.
 * .NET does not support the Julian calendar for Oracle and Salesforce, and the minimum supported timestamp value is -62135596800000. 
     * To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
 * Importing Views in ODC Studio only generates `Create<EntityName>` and `DeleteAll<EntityAction>` actions. Since Views don't have primary keys, ODC doesn't generate other entity actions. 

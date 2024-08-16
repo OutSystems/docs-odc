@@ -128,7 +128,7 @@ Protections that are available for iOS builds.
 * Code injection protection
 * Debugger protection
 * Screen mirroring detection
-* Screenshot protection ([see limitation](#general))
+* Screenshot protection ([see limitation](#limitations))
 
 ## Configuration
 
@@ -242,11 +242,9 @@ The limitations that are specific to the obfuscation.
 * Native iOS bitcode obfuscation isn't supported.
 * You need to contact Support to get the mapping files.
 
-## Limitations
+## Limitations { #limitations }
 
 **AppShield** has the following limitations.
-
-### General
 
 * The IOS plugin doesn't block user-initiated screenshots; it only notifies the app that a screenshot was taken. OutSystems currently doesn't support this event. However, **AppShield** blocks taking screenshots of the iOS App Switcher.
 

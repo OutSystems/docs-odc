@@ -15,7 +15,7 @@ You can share public elements across your apps to accelerate development and ena
 
 * Library (producer) and an app (consumer). The app can be a Web or Mobile App. You can share Client Actions and Server Actions in Libraries (producer), and use them in apps (consumer). Apps can't be a producer when sharing Client and Server Actions.
 
-* Two libraries. Libraries can be producers or consumers.
+* Between two libraries. Libraries can be producers or consumers.
 
 **Weak dependencies** (for example, reusing a static entity) can exist between the following app types:
 

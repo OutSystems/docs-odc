@@ -9,7 +9,7 @@ figma:
 ---
 # Radar Chart
 
-This example shows how you can create a simple Radar Chart with multiple series types.
+This example shows how you can create a simple Radar Chart with multiple series types. 
 
 1. From the Toolbox, drag the **Radar Chart** widget to the Screen.
 

@@ -63,7 +63,7 @@ figma:
 |Go forward|Alt+Right||
 |Move forward through window tabs|Ctrl+Tab|Ctrl+Right|
 |Move back through window tabs|Ctrl+Shift+Tab|Ctrl+Shift+Right|
-|Move to the Processes tab|Ctrl+1|Cmd+1|
+|Move to the Events tab|Ctrl+1|Cmd+1|
 |Move to the Interface tab|Ctrl+2|Cmd+2|
 |Move to the Logic tab|Ctrl+3|Cmd+3|
 |Move to the Data tab|Ctrl+4|Cmd+4|

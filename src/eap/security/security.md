@@ -69,6 +69,8 @@ There are several benefits, including:
 
 The event-driven architecture facilitates the detection of anomalous patterns and activities that might indicate potential security threats. As events are processed and analyzed, the system can identify deviations from normal behavior and trigger alerts for further investigation.
 
+For example, when you click 1CP, several services work behind the scenes to transform the app you're developing in the ODC Studio into a container deployed in Kubernetes. Many of these interactions between services use events. Decoupling services in this way improves resilience and helps locate potential security threats.
+
 ODC has advanced intrusion detection, safeguarding your apps and data against known, unknown, and undisclosed threats.
 
 OutSystems staff actively monitor all systems and the appropriate teams follow up alerts. See [Monitoring and support](#monitoring-and-support) for more detail.
@@ -155,18 +157,18 @@ The patching process upgrades your apps, and the process is:
 
 ##### Automatic patching
 
-When a fix for a critical vulnerability is available, it triggers an automatic upgrade process for the affected apps in each stage of your ODC organization.
+To reinforce security and ensure that applications are free from vulnerabilities, runtime applications will be patched automatically for known vulnerabilities. You can choose to patch applications manually by performing a 1-click publish, which will automatically deploy the application using the latest patches. You can choose to instead allow the platform to do it automatically, without any downtime or disruption to running applications. Automatic patching will be scheduled based on severity. If an app is not manually patched (by performing a 1-click publish), ODC will ensure that all vulnerabilities are automatically patched. The timeframe varies according to the vulnerability's severity.
 
-A critical vulnerability is one with a **Common Vulnerability Scoring System** (CVSS) score of between 9.0 and 10.0. The CVSS is an open industry standard for assessing the severity of vulnerabilities. You can read more information about CVSS on [the Forum of Incident Response and Security Teams website](https://www.first.org/cvss/).
-
-All the users with the Administrator built-in role in your ODC organization receive updates about the automatic patching process from the following four emails.
+To assess the severity of vulnerabilities, we use Common Vulnerability Scoring System (CVSS), an open industry standard. You can read more information about CVSS on the [Incident Response and Security Teams website](https://www.first.org/cvss/).
 
 ![Timeline diagram of the automatic app upgrade notification process in OutSystems Developer Cloud](images/app-upgrades-schedule-diag.png "ODC App Upgrade Notification Process")
 
-1. **Schedule email:** Provides details about the affected stages, the upgrade schedule, and links to more information about each vulnerability.
-1. **48-hour reminder email:** Reminder of the upcoming scheduled upgrade for the given stage.
-1. **Upgrade started email:** Marks the commencement of the automatic upgrade process for the given stage. It may take up to four hours. During the automatic upgrade process no downtime of your apps is expected. Apps in your non-development stages are recompiled and redeployed. Apps in your development stages are republished.
-1. **Upgrade completed email:** Confirms the successful completion of the automatic upgrade process for the given stage. A report detailing which apps were upgraded is attached to this email.
+All the users with the Administrator built-in role in your ODC organization receive updates about the automatic patching process from the following four emails:
+
+1. **Schedule email**: Provides details about the affected stages, the upgrade schedule, and links to more information about each vulnerability.
+1. **48-hour reminder email**: Reminder of the upcoming scheduled upgrade for the first stage to be patched
+1. **Upgrade started email:** Marks the commencement of the automatic upgrade process for the first stage to be patched. During the automatic upgrade process, no downtime for your apps is expected. Apps in your non-development stages are patched without creating new revisions. Apps in your development stages are patched by republishing with the same revision. [Libraries are packaged with apps](../app-architecture/intro.md#libraries) when an app is published, so their resulting code is patched as a part of the app, and no new revisions are created for libraries as a part of automatic patching.
+1. **Upgrade completed email**: Confirms the successful completion of the automatic upgrade process for the last stage to be patched. A report detailing which apps were upgraded for each stage is attached to this email.
 
 ##### Manual patching
 
@@ -184,10 +186,15 @@ For information about each database and data store used in the Platform and Runt
 
 </div>
 
-All customer data:
+All customer production runtime application data:
 
 * Is encrypted at rest with a per-customer encryption key managed by OutSystems.
 * Resides in the region specified during the creation of the customer's ODC organization.
+* Is continuously and incrementally backed up for up to 30 days.
+* For Disaster Recovery purposes only, this backup can be used to restore production data and:
+    * Doesn't recover deleted apps or users,
+    * May cause timers to re-run depending on the logic referenced in the database,
+    * Doesn't reprocess events that have already been processed.
 
 A network namespace isolates each stage [within each organization's Runtime](#isolation-of-stages).
 
@@ -200,10 +207,6 @@ File Integrity Monitoring performs automated scans and alerts the [Computer Secu
 Each Runtime stage has an isolated Amazon Aurora Serverless database. The database for the Production stage is high-availability.
 
 For more information see [Cloud-native architecture of OutSystems Developer Cloud](../manage-platform-app-lifecycle/platform-architecture/identity.md#runtime-data).
-
-### Backup policy
-
-Each database and data store used in the Runtime is continuously and incrementally backed up. This enables you to restore data at any point within a 30-day backup retention period.
 
 ### Encryption at-rest
 

@@ -56,7 +56,7 @@ Evaluate if the sort operation is required.
 
     * Remove the sort in the aggregate and sort the query results using OutSystems logic. Then, you can use the **ListSort** server action after the aggregate.
 
-    * Refer to [OutSystems documentation](queries.md) to learn how to write better mashup queries.
+    * To learn how to write better mashup queries, see [how to write better queries](queries.md).
 
 ### Example 2
 
@@ -80,7 +80,7 @@ The query fails because both entities have more than one million records, which 
 
 * Evaluate whether all records are required. If not, add **Where** clauses or **Join** conditions to reduce the number of records.
 
-* Refer to [OutSystems documentation](queries.md) to learn how to write better mashup queries.
+* To learn how to write better mashup queries, see [how to write better queries](queries.md).
 
 * If neither of the previous solutions solves the problem, you can mashup data using OutSystems logic that includes list manipulation for each cycle.
 

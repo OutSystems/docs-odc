@@ -190,7 +190,7 @@ Inside a Timer, you can iterate over your user list and send notifications to up
 To learn more about how to use Timers, see the [documentation](https://success.outsystems.com/documentation/outsystems_developer_cloud/building_apps/use_timers/).
 </div>
 
-### Enable basic notification functions in your app { #enable-notifications-plugins }
+## Enable basic notification functions in your app { #enable-notifications-plugins }
 
 This section describes some of the actions that you can use to leverage notification functions on your mobile app.
 
@@ -262,7 +262,7 @@ It is important to note the following requirements for custom sounds:
 
 * The sounds.zip file should be included with the “Deploy Action” set to “Deploy to Target Directory”.
 
-### Manage the experience of in-app notifications { #manage-notification-ux }
+## Manage the experience of in-app notifications { #manage-notification-ux }
 
 By default, a cloud messaging notification displays in the notification center. However, you can also display the notification in-app when the app is on the foreground. To enable this notification, you can use the **NotificationsHandler** block. This block triggers events that pass the parameters of both notifications and silent notifications to the context of the app.
 
@@ -270,7 +270,7 @@ You need to add this block to each screen that might handle the notification con
 
 Optionally, you can use the **NotificationDialog** block, which provides a notification dialog UI inside the app.
 
-### Manage the experience of custom actions using the Notifications block. { #manage-custom-actions-ux }
+## Manage the experience of custom actions using the Notifications block. { #manage-custom-actions-ux }
 
 By default, a cloud messaging notification displays in the notification center. However, you can also display the notification in-app when the app is in the foreground. To enable this you can use the **NotificationsHandler** block, using **InternalRouteActionClicked** for custom actions. This block triggers events that pass the parameters of both notifications and silent notifications to the context of the app.
 
@@ -280,9 +280,18 @@ Add this block to each screen that might handle the notification content.
 
 When the end-user clicks on a notification in the notification center, the app opens by default. If you want your app to handle the notification click, you can use the **NotificationsHandler** block and define a handler for the **NotificationClicked** event.
 
-If you want to navigate to a screen inside your app when the end-user clicks on a notification, you can use the **BuildInternalDeepLink** client action from the plugin. Our Sample App has this scenario implemented. If you want to do something else after the end-user clicks on a notification, simply implement your logic in the handler you create for the **NotificationClicked** event.
+If you want to navigate to a screen inside your app when the end-user clicks on a notification, you can use the **BuildInternalDeepLink** client action from the plugin. You should pass the name of the destination screen to the **Notification > DeepLink** attribute of the **SendRequest** parameter of the server action you called to deliver the notification (**SendNotificationToUsers** or **SendNotificationToTopics**). If you want the **BuildInternalDeepLink** action to build a deep link with query parameters, you should set the **key-value** pairs using the **ExtraDataList** attribute.
 
-### Optional setup for notification Channel Name and Description - Android only
+Our Sample App has this scenario implemented. If you want your app to do something else when the end-user clicks on a notification, simply implement your logic in the handler you create for the **NotificationClicked** event.
+
+
+<div class="warning" markdown="1">
+
+When sending a notification with a deep link, you should avoid using the following values for the **Key** attribute of **ExtraDataList**: from, notification, deepLink, showDialog, timeToLive, com.outsystems.fcm.notification, google.message_id, google.product_id, google.delivered_priority, google.original_priority, google.sent_time, google.ttl, gcm.n.analytics_data, collapse_key, FMOCA_TITLE, FMOCA_BODY, FMOCA_IMAGE, FMOCA_DATA.
+
+</div>
+
+## Optional setup for notification Channel Name and Description - Android only
 
 By default, the Cloud Messaging plugin defines values for the notification channel name and description on local notifications. But in some instances, you might want to define a different default value by adding the following name and value properties on the extensibility configurations of your app:
 
@@ -306,6 +315,26 @@ By default, the Cloud Messaging plugin defines values for the notification chann
 The following image illustrates how the notification channel's name and description will appear in the user device:
 
 ![Screenshot of notification channel name and description](images/fcm-notification-channel.png "Notification Channel")
+
+### Enable message delivery data export to BigQuery
+
+BigQuery allows to:
+
+* analyze the push notification data using BigQuery SQL
+*  export it to another cloud provider
+*  use the data for your custom ML models. 
+
+Starting on version 2.1.0, the plugin offers a way to enable an app's message delivery data export to BigQuery. This is available through two client actions:
+* `DeliveryMetricsExportToBigQueryEnabled`: Determines whether Firebase Cloud Messaging exports message delivery metrics to BigQuery.
+* `SetDeliveryMetricsExportToBigQuery`: Enables or disables Firebase Cloud Messaging message delivery metrics export to BigQuery.
+
+To have a better idea of what BigQuery is and how to enable it within the Firebase Console, please refer to the [official documentation](https://firebase.google.com/docs/cloud-messaging/understand-delivery?platform=ios#bigquery-data-export).
+
+The feature is disabled by default. To enable it, `SetDeliveryMetricsExportToBigQuery` needs to be called with its `Enable` input parameter set to `true`.
+
+#### Known limitations on iOS
+
+As explained in the following [page](https://firebase.google.com/docs/cloud-messaging/understand-delivery?platform=ios#enable-message-delivery-data-export), there are two ways to enable the data export on iOS, one for [alert](https://firebase.google.com/docs/cloud-messaging/understand-delivery?platform=ios#enable_delivery_data_export_for_alert_notifications) and another for [background notifications](https://firebase.google.com/docs/cloud-messaging/understand-delivery?platform=ios#enable_delivery_data_export_for_background_notifications). On OutSystems mobile apps, it is not possible to enable data export for alert notifications, so you won't be able to enable the feature for all notifications.
 
 ## Server actions reference
 

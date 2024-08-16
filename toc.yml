@@ -36,11 +36,16 @@
             - href: eap/building-apps/use-ai/configure-data-source/add-azure-data-source-to-aibuilder.md
             - href: eap/building-apps/use-ai/configure-data-source/configure-aws-data-source.md
             - href: eap/building-apps/use-ai/configure-data-source/add-aws-data-source-to-aibuilder.md        
-                
+            - href: eap/building-apps/use-ai/configure-data-source/add-custom-data-source.md      
+    # Function calling
+        - href: eap/building-apps/use-ai/function-calling/overview.md
+        - topics:
+            - href: eap/building-apps/use-ai/function-calling/use-function-calling.md
     # Create agent
         - href: eap/building-apps/use-ai/create-agent.md
     # Integrate agent
         - href: eap/building-apps/use-ai/integrate-agent.md
+
     # Data
     - href: eap/building-apps/data/intro.md
     - topics:
@@ -57,6 +62,7 @@
             - href: eap/building-apps/data/fetch-data/calculated-attribute-create.md
             - href: eap/building-apps/data/fetch-data/data-mash.md
             - href: eap/building-apps/data/fetch-data/transactions-data-mashup.md
+            - href: eap/building-apps/data/fetch-data/transaction-external-entities.md
             - href: eap/building-apps/data/fetch-data/data-mashup-errors.md
             - href: eap/building-apps/data/fetch-data/queries.md
             - href: eap/building-apps/data/fetch-data/distinct.md
@@ -170,6 +176,7 @@
         # Screen Templates
         - href: eap/building-apps/ui/screen-template/intro.md
         - topics:
+            - href: eap/building-apps/ui/screen-template/sample-data.md
             - href: eap/building-apps/ui/screen-template/replace-data.md
             - href: eap/building-apps/ui/screen-template/template-compatibility.md
         - href: eap/building-apps/ui/navigation/ui-flow.md
@@ -215,6 +222,7 @@
     - topics: 
         - href: eap/building-apps/external-logic/README.md
         - href: eap/building-apps/external-logic/REFERENCE.md
+        - href: eap/building-apps/external-logic/upgrade-net8.md
         - href: eap/building-apps/external-logic/soap.md
     # Forge
     - href: eap/building-apps/forge/intro.md
@@ -274,6 +282,19 @@
     - topics:
         - href: eap/building-apps/timers/timer-create-run.md
         - href: eap/building-apps/timers/timer-monitor.md
+
+    # Workflows
+    - href: eap/building-apps/workflows/business-processes.md
+    - topics:
+        - href: eap/building-apps/workflows/workflows-in-odc.md
+        - href: eap/building-apps/workflows/using-workflows.md
+        - href: eap/building-apps/workflows/start-workflow.md
+        - href: eap/building-apps/workflows/end-workflow.md
+        - href: eap/building-apps/workflows/add-human-activity.md
+        - href: eap/building-apps/workflows/add-automatic-activity.md
+        - href: eap/building-apps/workflows/add-decisions.md
+        - href: eap/building-apps/workflows/go-to-previous-step.md
+        - href: eap/building-apps/workflows/system-entities.md
    
     # Reuse
     - href: eap/building-apps/reuse/intro.md
@@ -364,6 +385,7 @@
 - topics:
     - href: eap/app-architecture/recommended-architecture.md
     - href: eap/app-architecture/reuse-elements.md
+    - href: eap/app-architecture/reuse-templates.md
     - href: eap/app-architecture/service-actions.md
 
 # Manage platform and apps lifecycle
@@ -400,7 +422,9 @@
 - href: eap/monitor-and-troubleshoot/monitor-apps.md
 - topics:
     - href: eap/monitor-and-troubleshoot/app-health.md
-
+    - href: eap/monitor-and-troubleshoot/traces.md
+    - href: eap/monitor-and-troubleshoot/client-side-traces.md
+    
 # Reference
 - href: eap/reference/intro.md
 - topics:
@@ -418,7 +442,11 @@
         - href: eap/reference/libraries/textdictionary.md
         - href: eap/reference/libraries/url.md
         - href: eap/reference/libraries/xml.md
-        - href: eap/reference/libraries/zip.md
+        - href: eap/reference/libraries/zip.md 
+  # Service actions
+    - href: eap/reference/service-actions/intro.md
+    - topics:
+        - href: eap/reference/service-actions/call-agent-function-calling.md
   # System actions
     - href: eap/reference/system-actions/intro.md
     - topics:
@@ -443,15 +471,17 @@
     - topics:
         - href: eap/reference/apis/data.md
         - href: eap/reference/apis/chart-intro.md
-    - topics:
-        - href: eap/reference/apis/area.md
-        - href: eap/reference/apis/bar.md
-        - href: eap/reference/apis/column.md
-        - href: eap/reference/apis/donut.md
-        - href: eap/reference/apis/line.md
-        - href: eap/reference/apis/pie.md
-        - href: eap/reference/apis/radar.md    
-   
+        - topics:
+            - href: eap/reference/apis/area.md
+            - href: eap/reference/apis/bar.md
+            - href: eap/reference/apis/column.md
+            - href: eap/reference/apis/donut.md
+            - href: eap/reference/apis/line.md
+            - href: eap/reference/apis/pie.md
+            - href: eap/reference/apis/radar.md    
+  # AIAB 
+    - href: eap/reference/ai-agent-builder/aiab-api-contract.md
+       
 # Errors
 - href: error/intro.md
 - topics:
@@ -478,6 +508,10 @@
         - href: error/frge/os-frge-ast-50001.md
         - href: error/frge/os-frge-ast-50002.md
         - href: error/frge/os-frge-ast-50003.md
+    # Build errors
+    - href: error/bld/intro.md
+    - topics:
+        - href: error/bld/OS-BLD-FE-400001.md
     # Errors External Libraries SDK
     - href: error/elg/intro.md
     - topics:

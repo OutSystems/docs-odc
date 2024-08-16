@@ -9,7 +9,7 @@ figma:
 ---
 # Bar Chart
 
-This example shows how you can create a simple Bar Chart with a customized legend.
+This example shows how you can create a simple Bar Chart with a customized legend. 
 
 1. From the Toolbox, drag the **Bar Chart** widget to the Screen.
 

@@ -164,13 +164,15 @@ Different types of data are stored distinctively in memory:
 In the ODC architecture, caches optimize performance by storing certain information. This principle extends to integration with external systems, caching the following types of information:
 
 * Metadata: This type of data is cached during connection creation or when refreshing metadata in the ODC Portal. The data is then stored in serverless, NoSQL databases.
-* Query statements that execute in runtime Apps are cached to maintain consistent execution plans in the underlying system to enhance performance.
+* Query statements that execute in runtime Apps are cached to maintain consistent execution plans in the underlying system to enhance performance. Developers should follow security best practices and avoid sensitive data in query statements.
 * Query results are cached in Kubernetes pod memory. This cache expiration is defined by developer at the aggregate level.
 
 
 ### Connection secrets
 
-When creating a connection, developers must supply external system details such as username, password, and host. ODC securely stores sensitive data like passwords by encrypting them as secrets in a cloud secret store. Passwords are never stored in clear text and OutSystems can't access them.
+When creating a connection, developers must supply external system details such as username, password, and host. ODC securely stores sensitive data like passwords by encrypting them as secrets in a cloud secret store. Passwords are never stored in clear text and secrets are not human-readable. Secrets are decrypted only when connecting to the external system by an automated process and without human intervention.
+
+When editing an existing connection, secrets are not fetched and decrypted from the cloud secret store. Instead, the developer will have to provide the details considered secrets one more time to save the connection.
 
 ### Data in transit
 

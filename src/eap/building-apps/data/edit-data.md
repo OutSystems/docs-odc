@@ -29,6 +29,8 @@ Adding, removing, and changing entity records during app development, allows you
 
 * Prepare your demos with valid data to show your stakeholders real use cases and enable them to give you meaningful feedback.
 
+In ODC, you can use sample data to create screen instances. To learn more about using sample data, see [sample data](../ui/screen-template/sample-data.md)
+
 ## How to edit an entity’s data in ODC Studio
 
 <div class="info" markdown="1">

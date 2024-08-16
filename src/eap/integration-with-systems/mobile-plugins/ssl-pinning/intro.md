@@ -31,7 +31,7 @@ To learn how to install and reference a plugin in your OutSystems mobile apps, a
 To keep your stages secure, OutSystems continuously updates server certificates for their domains. This is important especially if your stages use OutSystems default domains and certificates.
 
 <div class="info" markdown="1">
-    
+
 When certificates change, the stages using these certificates in their apps may stop working. To fix this problem, you must generate a new app and distribute the app. Due to any unforeseen circumstances, if OutSystems is unable to notify you every time there is a change or you miss a notification, everyone involved is at risk. 
 
 OutSystems no longer supports the native Mobile apps generation when using SSL Pinning to pin your apps to OutSystems managed certificates. This change affects all stages, production and non-production. If this change affects your stages, get new domains and certificates, and provide their details to OutSystems.

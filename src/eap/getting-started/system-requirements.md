@@ -59,7 +59,7 @@ OutSystems supports the following Operating Systems. This list is subject to cha
 To perform client-side debugging in ODC Studio using a desktop browser, use the most recent version of any of the following browsers:
 
 * Google Chrome
-* Microsoft Edge
+* Microsoft Edge (only available for Windows)
 
 ## Software requirements for app users
 
@@ -112,3 +112,11 @@ The timeout value for a service action is 100 seconds. This can't be configured.
 ### Timers timeout
 
 The maximum value of the **Timeout in Minutes** property is 60 minutes.
+
+### Traces
+
+As you work with traces, consider the following:
+
+* Traces exceeding the size of 15 MB are automatically dropped. 
+* ODC allows up to 50,000 spans per minute per stage for traces. 
+* ODC displays traces up to 5000 spans for a single trace.
