@@ -187,7 +187,13 @@ As a part of the notification experience, the developers can control the badge n
 
 * For Android you can only specify a given badge number after receiving a notification. Thus, you can use the **SendLocalNotification** action and set the badge number through the action parameter *BadgeNumber*.
 
-    ![Screenshot of the logic flow for setting badge numbers on app icons for notifications](images/firebase-messaging-with-setting-badge-logic-odcs.png "Setting Badge Numbers Logic Flow")
+<div class="info" markdown="1">
+
+Starting on Android 14, most devices do not show the badge number when long-pressing the app's icon.
+
+</div>
+
+![Screenshot of the logic flow for setting badge numbers on app icons for notifications](images/firebase-messaging-with-setting-badge-logic-odcs.png "Setting Badge Numbers Logic Flow")
 
 Finally, you can give users the ability to clear all app's notifications remaining in the notification center. For this, you can associate the **ClearNotifications** action to a piece of UI such as a button.
 
