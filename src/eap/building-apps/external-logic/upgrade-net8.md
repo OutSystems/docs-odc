@@ -18,7 +18,6 @@ OutSystems Developer Cloud is transitioning from supporting .NET 6 to .NET 8 for
 * Microsoft is discontinuing .NET 6 [Learn more](https://learn.microsoft.com/en-us/lifecycle/products/microsoft-net-and-net-core).
 * Ensuring the latest features, security updates, and support by adopting .NET 8.
 
-
 ## Plan for the upgrade phases { #plan }
 
 The discontinuation of .NET 6 will imply that, apart from building new custom code libraries in .NET 8, you’ll also need to plan to migrate your existing .NET 6 custom code to .NET 8.
@@ -27,7 +26,9 @@ ODC will support, for a period of time, both .NET versions to allow for time to 
 
 Take the following steps into account when planning the upgrade:
 
-1. Identify custom code libraries that are still using .NET 6. This can be done in Portal, at **External Logic**. The **Running version** on the list shows the .NET version along with a warning for the ones still in .NET 6. 
+![Diagram showing the six steps to upgrade custom code libraries from .NET 6 to .NET 8: Identify .NET 6, Upgrade to .NET 8, Upload new version, Release new library version, Update consumers, and Deploy consumers.](images/upgrade-phases-diag.png "Upgrade Phases Diagram")
+
+1. Identify custom code libraries that are still using .NET 6. This can be done in Portal, at **External Logic**. The **Running version** on the list shows the .NET version along with a warning for the ones still in .NET 6.
 
     ![Screenshot of the External Logic section showing a list of libraries with their latest version, release date, released by, and running version. One library is running .NET 8 and another is running .NET 6 with a warning icon.](images/external-logic-running-version-pl.png "External Logic Running Version List")
 
@@ -68,7 +69,7 @@ At phase 2, the support for .NET 6 is dropped and it will no longer be possible 
 
 * upload new custom code (or new versions) in .NET 6.
 * upload new custom code libraries built in .NET 6 or update existing Forge assets using .NET 6
-* install the custom code Forge libraries that haven't been upgraded to .NET 6 
+* install the custom code Forge libraries that haven't been upgraded to .NET 6
 
 OutSystems no longer ensures the proper functioning, maintenance and security of custom code libraries that weren't upgraded.
 
