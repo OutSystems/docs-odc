@@ -50,7 +50,7 @@ When working with the plugins:
 * Each time you add, remove, or modify the plugin in an app, OutSystems creates a mobile package which you then have to distribute to the users for installation.
 * Include the plugin license in your app to respect the license agreements of that plugin. These license agreements are usually placed in the About page of the app that uses them.
 
-## Installing a plugin and adding a public element to your app
+## Installing a plugin and adding a public element to your app { #adding-plugins }
 
 The plugins are available from the Forge repository. To use a plugin in your app, you first need to install the plugin to your organization and add the plugin elements to your app.
 
