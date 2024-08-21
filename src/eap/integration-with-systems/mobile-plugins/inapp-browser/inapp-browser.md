@@ -67,7 +67,6 @@ Here's the result of opening a URL in the system browser, on iOS:
 
 ![Screenshot of a URL opened in a system browser on an iOS device](images/system-browser-ios.png "System Browser on iOS")
 
-
 ## Open a URL in an external browser outside the app
 
 To create the logic to open a URL in an external browser, outside the your app, follow these steps in ODC Studio:
