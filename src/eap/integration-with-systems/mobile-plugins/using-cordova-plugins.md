@@ -7,7 +7,7 @@ app_type: mobile apps
 platform-version: odc
 figma: 
 ---
-# Using Cordova plugins
+# Using Cordova Plugins
 
 <div class="info" markdown="1">
 

@@ -7,7 +7,7 @@ app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7665&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 ---
-# Health and Fitness Plugin using HealthKit and Google Health Connect
+# Health and Fitness Plugin using HealthKit and Health Connect
 
 <div class="info" markdown="1">
 

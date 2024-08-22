@@ -6,7 +6,7 @@ app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4313%3A327&mode=design&t=OmSDtxS14Ggp4J6f-1
 platform-version: odc
 ---
-# Payments plugin
+# Payments Plugin
 
 <div class="info" markdown="1">
 
