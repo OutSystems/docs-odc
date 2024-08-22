@@ -22,6 +22,12 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     ![Screenshot of Azure Portal showing the OpenID Connect metadata document URL](images/open-endpoints-az.png "Azure Portal OpenID Connect Endpoints")
 
+   <div class="info" markdown="1">
+
+    Some Azure AD configurations issue custom signing keys for their tokens, which requires using an app-specific discovery endpoint. An example of such an endpoint is `https://login.microsoftonline.com/{tenant}/discovery/.well-known/openid-configuration?appid={appid}`, where `{appid}` corresponds to the **Application (client) ID**. You can get **Application (client) ID** in the following steps. If you face errors while authenticating with Azure AD, using custom signing keys may be a solution. For more information, refer to [Validate the signature](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens#validate-the-signature) by Microsoft.
+
+   </div>
+
 1. Click **Get details** in ODC Portal. This retrieves the JSON of the Azure AD OpenID configuration and shows a preview.
 
 1. Copy the value of the **Application (client) ID** field from the main screen of the app registration in Azure Portal and paste it into the **Client ID** field in ODC Portal.
