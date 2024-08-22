@@ -28,8 +28,8 @@
             - href: eap/building-apps/use-ai/configure-model/add-azure-model-to-aibuilder.md
             - href: eap/building-apps/use-ai/configure-model/configure-aws-model.md
             - href: eap/building-apps/use-ai/configure-model/add-aws-model-to-aibuilder.md
-   #Custom AI model
-        - href: eap/building-apps/use-ai/custom-ai-model.md                  
+            - href: eap/building-apps/use-ai/configure-model/add-custom-ai-model.md
+            - href: eap/building-apps/use-ai/configure-model/aiab-custom-model-api-contract.md        
     # Configure data source
         - href: eap/building-apps/use-ai/configure-data-source/intro.md
         - topics:
