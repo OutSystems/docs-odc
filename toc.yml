@@ -28,7 +28,8 @@
             - href: eap/building-apps/use-ai/configure-model/add-azure-model-to-aibuilder.md
             - href: eap/building-apps/use-ai/configure-model/configure-aws-model.md
             - href: eap/building-apps/use-ai/configure-model/add-aws-model-to-aibuilder.md
-               
+   #Custom AI model
+        - href: eap/building-apps/use-ai/custom-ai-model.md                  
     # Configure data source
         - href: eap/building-apps/use-ai/configure-data-source/intro.md
         - topics:
@@ -36,7 +37,8 @@
             - href: eap/building-apps/use-ai/configure-data-source/add-azure-data-source-to-aibuilder.md
             - href: eap/building-apps/use-ai/configure-data-source/configure-aws-data-source.md
             - href: eap/building-apps/use-ai/configure-data-source/add-aws-data-source-to-aibuilder.md        
-            - href: eap/building-apps/use-ai/configure-data-source/add-custom-data-source.md      
+            - href: eap/building-apps/use-ai/configure-data-source/add-custom-data-source.md    
+            - href: eap/building-apps/use-ai/configure-data-source/aiab-api-contract.md
     # Function calling
         - href: eap/building-apps/use-ai/function-calling/overview.md
         - topics:
@@ -480,8 +482,6 @@
             - href: eap/reference/apis/line.md
             - href: eap/reference/apis/pie.md
             - href: eap/reference/apis/radar.md    
-  # AIAB 
-    - href: eap/reference/ai-agent-builder/aiab-api-contract.md
        
 # Errors
 - href: error/intro.md

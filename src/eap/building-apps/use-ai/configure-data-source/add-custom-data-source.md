@@ -19,8 +19,7 @@ This article explains how to add a custom data source. It is intended for admini
 
 Before you add a custom data source in the AI Agent Builder app, ensure you:
 
-* [Build a data connector](#build-a-data-connector) in compliance with the [API contract](../../../reference/ai-agent-builder/aiab-api-contract.md) established by OutSystems.
-
+* [Build a data connector](#build-a-data-connector) in compliance with the [API Contract](aiab-api-contract.md) established by OutSystems.
 * Gain access to the AI Agent Builder app with the Configurator role assigned in the ODC portal.
 
 ## Add a custom data source
@@ -65,7 +64,7 @@ The custom data source is added to your configurations.
 
 1. Authenticate and use your data connector in the AI Agent Builder.
 
-For more information about the OutSystems API contract, see [OutSystems API Contract](../../../reference/ai-agent-builder/aiab-api-contract.md).
+For more information about the OutSystems API contract, refer to [OutSystems API Contract](aiab-api-contract.md).
 
 ## Next steps
 
