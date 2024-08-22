@@ -352,6 +352,7 @@
     - topics:
         - href: eap/integration-with-systems/mobile-plugins/barcode/intro.md
         - href: eap/integration-with-systems/mobile-plugins/camera/intro.md
+        - href: eap/integration-with-systems/mobile-plugins/camera/camera-ref.md
         - href: eap/integration-with-systems/mobile-plugins/inapp-browser/inapp-browser.md
         - href: eap/integration-with-systems/mobile-plugins/common-plugin/intro.md
         - href: eap/integration-with-systems/mobile-plugins/file-plugin/intro.md

@@ -8,7 +8,7 @@ platform-version: odc
 figma:
 ---
 
-# Camera Plugin - Reference Page
+# Camera Plugin Reference 
 
 ## Plugin Elements
 
