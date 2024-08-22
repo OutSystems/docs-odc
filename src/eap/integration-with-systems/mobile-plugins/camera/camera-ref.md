@@ -255,4 +255,3 @@ OS-PLUG-CAMR-0027 (NEW)|Android|URI parameter cannot be empty.
 OS-PLUG-CAMR-0028 (NEW)|iOS|Couldn’t get video from the gallery.
 OS-PLUG-CAMR-0029 (NEW)|iOS|There's an issue with the plugin.
 OS-PLUG-CAMR-0030 (NEW)|Android|The selected file doesn't exist.
-
