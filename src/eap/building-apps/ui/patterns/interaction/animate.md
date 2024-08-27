@@ -11,7 +11,7 @@ platform-version: odc
 
 You can use the Animate UI Pattern to create animations within your app. This UI pattern allows you to emphasize elements as they appear on screen which enhances the overall usability of the app.
 
-![Animated GIF showing the default animation effect in an app](images/animation.gif "Default Animation Example")
+<iframe src="https://player.vimeo.com/video/973090176" width="454" height="492" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Video demonstrating Animate UI pattern effect in an app.</iframe>
 
 **How to use the Animate UI Pattern**
 
