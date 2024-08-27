@@ -61,9 +61,40 @@ The Group mappings summary page shows the current mappings for this Provider. Th
 
 To add a new mapping, click **Add mapping**. You must enter a **Claim name** and a **Group name**. Your IdP provides the claim value, the group claim (identifier), and the group name. In the End-user group section, click on the group(s) you want to map, select a stage, and then click **Save**. When the mapping completes, end-users can log into ODC and access the apps assigned to the group.
 
+When an admin removes a user from an Okta group through the Okta dashboard, the user can no longer log in to the app. However, the user still appears as mapped in the ODC Portal.
+
+If a user is added to Okta, it won't appear in the ODC Portal immediately. User is required to log in to the app for the first time for their mapping to appear in the ODC Portal. The admin must refresh the page in order to see the user added in the list.
+
 For more information about setting up the claim in Azure, [click here](https://learn.microsoft.com/en-us/azure/active-directory/hybrid/connect/how-to-connect-fed-group-claims).
 
 For more information about setting up the claim in OKTA, [click here](https://help.okta.com/asa/en-us/content/topics/adv_server_access/docs/group-management.htm).
+
+## Managing users in end-user groups
+
+When viewing the users linked to the end-user group, you can link the users in the following ways:
+
+* Mapped users are automatically assigned to the end-user group when they log in using the Identity Provider. These assignments are not managed on the ODC Portal and are done during login. 
+* Assigned users are explicitly assigned to the end-user group on the ODC Portal. 
+* Assigned & mapped users are both assigned and mapped to the end-user group. 
+
+Assigned users can be unassigned anytime from the ODC Portal. However, mapped users can't be unmapped from the ODC Portal and remain mapped to the end-user group even if they get unassigned from the external provider group.
+ 
+<div class="info" markdown="1">
+
+Mapped users who haven't logged in using the Identity Provider are not displayed in the end-user group. 
+
+</div>
+
+You can manually add assigned users in the ODC Portal, follow these steps to add assigned users:
+
+1. Go to the ODC Portal, and from the Navigation menu, select **End-user groups** to display the list of groups.
+1. Select the group you want to add users to.
+1. Click **Users** to display the list of users. 
+1. Click **Assign users** to display a popup where you can assign or unassign users from the group.
+
+If the user mapping is from an external IDP, access gets revoked after removing the mapping from the IDP. However, if you assign the users in the ODC portal, they retain access after the removal of mapping from the IDP.
+
+To remove a user from a group, access the identity provider managing the user account and remove the user from the mapped provider group. However, the user still appears mapped in the ODC Portal. Although the user can't log in, the mapping remains visible until the next login attempt.
 
 ## After mapping IdPs and end-user groups
 
