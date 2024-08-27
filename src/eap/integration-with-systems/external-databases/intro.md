@@ -108,7 +108,6 @@ Before accessing data from an external database, verify that you have the correc
 
 External database connections can be created with read-only permissions or other permission restrictions. Entity CRUD actions (to create, update, or delete records) are always automatically created in ODC Studio regardless of the permissions of the database connection user. If you intend to use the full CRUD actions, ensure that the database users carries the proper permissions.
 
-
 ## Create a new connection
 
 To create a new database connection, go to the ODC Portal and follow these steps:
@@ -221,9 +220,9 @@ TINYINT<br/>SMALLINT<br/>INT<br/>BIGINT<br/>FLOAT<br/>DECIMAL<br/>DOUBLE<br/>NUM
 Boolean |Boolean |
 Date | Date |
 
-## Considerations when integrating external database
+## Considerations when integrating external systems
 
-Consider the following when integrating an external database.
+Consider the following when integrating an external systems.
 
 * SQL elements don't support external entities.
 * .NET does not support the Julian calendar for Oracle and Salesforce, and the minimum supported timestamp value is -62135596800000. 
@@ -256,6 +255,7 @@ Consider the following when integrating an external database.
             <li>SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.</li>
             <li>SAP OData only supports read-only entity actions in ODC Studio.</li>
             <li>SAP throws a `RAISE_SHORTDUMP` exception when requesting the row count for some VIEWS on the first request.</li>
+            <li>Regarding SAP OData queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.</li>
         </ul>
     </div>
 </div>
@@ -273,6 +273,7 @@ Consider the following when integrating an external database.
                 <li>Salesforce removes those white spaces. While inserting an empty string, Salesforce inserts NULL instead.</li>
             </ul>
             <li>Salesforce is case-insensitive, and `ToUpper`/`ToLower` built-in functions don't have the expected behavior in aggregates.</li>
+            <li>Regarding Salesforce queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.</li>
         </ul>
     </div>
 </div>
