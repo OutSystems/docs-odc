@@ -78,9 +78,15 @@ To configure your payment account in the Stripe dashboard, create a [Stripe](htt
 
 Before triggering a payment in an app, you need to configure a mobile payment method service (such as [Apple Pay](https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest) and [Google Pay](https://developers.google.com/pay/api/android/reference/request-objects)’s base information) in the app using the Payments Plugin Configurator, a Reactive Web app.
 
+<div class="info" markdown="1">
+
+Note that, to be able to access the Payments Configurator app, you should configure end-user access to it. See the "End-user roles" and "End-user groups" sections in [User Management > Roles](https://success.outsystems.com/documentation/outsystems_developer_cloud/user_management/roles/) to learn how to configure end-user access to your apps in the ODC Portal.
+
+</div>
+
 You need the following information:
 
-* Access to the Payments Configurator at `https://<your-environment>/PaymentsConfigurator/`, where replace `<your-environment>` with your development environment address.
+* Access to the Payments Configurator at `https://<your-environment>/PaymentsConfigurator/`, where you should replace `<your-environment>` with your development environment address.
 
 * Access to a mobile PSP by either configuring a new mobile payment service or editing an existing one. To configure PSP details, add the following information (depending on the PSP):
 

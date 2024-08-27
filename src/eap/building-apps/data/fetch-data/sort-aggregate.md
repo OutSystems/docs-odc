@@ -84,4 +84,4 @@ In the following Sorting Example, an application displays a list of employees, w
 
 1. Publish and test. Verify the list sorting changes after clicking the **Sort ASC** or **Sort DESC** buttons.  
 
-    ![Animated GIF demonstrating the testing of list sorting functionality in a web app.](images/sort-aggregate-ex5-ss.gif "Testing App Sorting Functionality")
+    <iframe src="https://player.vimeo.com/video/973090257" width="750" height="454" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Video demonstrating the sorting functionality.</iframe>
