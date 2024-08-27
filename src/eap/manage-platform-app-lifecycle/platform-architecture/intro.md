@@ -125,7 +125,7 @@ Each Runtime stage has an isolated Amazon Aurora Serverless database. The follow
 
 Data is automatically written to two availability zones simultaneously.
 
-The Amazon Aurora database architecture model decouples compute and storage. Storage volume automatically scales as the amount of data stored increases.
+The Amazon Aurora database architecture model decouples compute and storage, and both automatically scale independently. The Database CPU and Memory automatically scale as the amount of load increases, and the database storage volume automatically scales as the amount of data stored increases.
 
 You can store secret data for your apps such as API keys as secret settings in a secret manager.
 
