@@ -19,9 +19,11 @@ When debugging an action in your library, ensure that the app is using the most 
 
 ## How to debug your app
 
+**Note**: Debugging your app is only possible in the Development stage.
+
 To debug your app, do the following in ODC Studio:
 
-1. Click the 1-Click Publish button to save the latest changes in the app before debugging. 
+1. Click the **1-Click Publish** button to save the latest changes in the app before debugging. 
 
 1. Set one or more [breakpoints](breakpoints.md) in the app you're debugging.
 
