@@ -237,14 +237,16 @@ Consider the following when integrating an external system.
     </div>
     <div class="os-accordion__content">
         <ul>
-            <li>For Azure SQL Managed Instances</li>
-            <ul>
-                <li>As a prerequisite, you might need to create a user database following this format: `username@instance-name`. The username can be any value of your choosing. The `instance-name` can be found in your Microsoft Azure SQL environment. The `host` property contains the `instance-name`.</li>
-                <ul>
-                    <li>As an example, if your `host` is `example12345.exampledns.database.windows.net`, the `instance-name` is `example12345`.</li>
-                </ul>
-                <li>When creating the Azure SQL connection in ODC Portal, insert the same username format (`username@instance-name`) on the username input </li>
-            </ul>
+            <li>For Azure SQL Managed Instances
+				<ul>
+					<li>As a prerequisite, you might need to create a user database following this format: `username@instance-name`. The username can be any value of your choosing. The `instance-name` can be found in your Microsoft Azure SQL environment. The `host` property contains the `instance-name`.
+						<ul>
+							<li>As an example, if your `host` is `example12345.exampledns.database.windows.net`, the `instance-name` is `example12345`.</li>
+						</ul>
+					</li>
+					<li>When creating the Azure SQL connection in ODC Portal, insert the same username format (`username@instance-name`) on the username input </li>
+				</ul>
+			</li>
         </ul>
     </div>
 </div>
