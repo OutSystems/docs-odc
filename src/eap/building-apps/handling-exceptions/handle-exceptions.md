@@ -24,7 +24,7 @@ There are several types of exceptions, which differ in the way they are raised a
 
 ![Diagram showing the hierarchy of exception types in OutSystems, including All Exceptions, User Exception, Database Exception, and Security Exception](images/exception-types.png "Exception Types Hierarchy in OutSystems")
 
-In this hierarchy, a "parent node" exception can handle any "children node" exception type. For example, a Security Exception Handler handles an Invalid Login exception if it appears in the flow before an Invalid Login Exception Handler.
+In this hierarchy, a "parent node" exception can handle any "children node" exception type. However, if both a child and parent node are available, the exception handler selects the child node because it is more specific to the error. For example, if there is no Invalid Login Exception handler but a Security Exception handler exists, the Security Exception handler handles the login error. However, if both are present, the InvalidLoginException handler handles the login error.
 
 In OutSystems you have the following types of exceptions:
 
