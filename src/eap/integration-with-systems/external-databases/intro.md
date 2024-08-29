@@ -141,7 +141,7 @@ To create a new database connection, go to the ODC Portal and follow these steps
 
 After connecting to an external database, select the entity names and attributes available in ODC Portal. To select entities, go to the ODC Portal and follow these steps:
 
-1. From the ODC Portal nav menu, select **Resource** > **Connections**, and click **Select entities** to display the **Add entities** connection screen. <br/>The connection screen displays the available entities retrieved from the database.
+1. From the ODC Portal nav menu, select **Integrate** > **Connections**, and click **Select entities** to display the **Add entities** connection screen. <br/>The connection screen displays the available entities retrieved from the database.
 
     ![Screenshot showing the process of selecting entities and attributes from an external database in OutSystems Developer Cloud Portal](images/external-db-entity.png "External Database Entities Selection")
 
@@ -154,7 +154,7 @@ Selected entities and attributes are now available as [public elements](../../bu
 
 To edit an existing database connection, go to ODC Portal and follow these steps:
 
-1. From the ODC Portal nav menu, select **Resource** > **Connections** to display the list of connections.
+1. From the ODC Portal nav menu, select **Integrate** > **Connections** to display the list of connections.
 1. From the list of connections, select the one to edit.
 
 You can only change the name and description without testing your connection again.
@@ -222,13 +222,32 @@ Date | Date |
 
 ## Considerations when integrating external systems
 
-Consider the following when integrating an external systems.
+Consider the following when integrating an external system.
 
 * SQL elements don't support external entities.
 * .NET does not support the Julian calendar for Oracle and Salesforce, and the minimum supported timestamp value is -62135596800000. 
     * To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
 * Importing Views in ODC Studio only generates `Create<EntityName>` and `DeleteAll<EntityAction>` actions. Since Views don't have primary keys, ODC doesn't generate other entity actions. 
     * Inserting a record in a View works only when the View comprises 1 table in the database. When View comprises more than 1 table, you may get an error.
+* When a database user lacks the necessary permissions to access the table that a Foreign Key (FK) points to, the Foreign Key is treated as a regular column. This can result in errors during the insertion or updating of records. To prevent such issues, it is advisable to ensure that the user can access all the tables required by the application.
+
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+        Azure SQL
+    </div>
+    <div class="os-accordion__content">
+        <ul>
+            <li>For Azure SQL Managed Instances</li>
+            <ul>
+                <li>As a prerequisite, you might need to create a user database following this format: `username@instance-name`. The username can be any value of your choosing. The `instance-name` can be found in your Microsoft Azure SQL environment. The `host` property contains the `instance-name`.</li>
+                <ul>
+                    <li>As an example, if your `host` is `example12345.exampledns.database.windows.net`, the `instance-name` is `example12345`.</li>
+                </ul>
+                <li>When creating the Azure SQL connection in ODC Portal, insert the same username format (`username@instance-name`) on the username input </li>
+            </ul>
+        </ul>
+    </div>
+</div>
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
