@@ -245,6 +245,7 @@ Consider the following when integrating an external system.
 						</ul>
 					</li>
 					<li>When creating the Azure SQL connection in ODC Portal, insert the same username format (`username@instance-name`) on the username input </li>
+                    <li>When creating the Azure SQL connection in ODC Portal, in Additional Parameters input you might need to add `encrypt=true;trustServerCertificate=true;`</li>
 				</ul>
 			</li>
         </ul>
