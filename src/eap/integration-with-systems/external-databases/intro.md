@@ -136,6 +136,7 @@ To create a new database connection, go to the ODC Portal and follow these steps
     * Click Apply to all stages to use the same connection information in all stages.
     * Select the stage name to use connection information for a single stage.
 
+You can use stored procedures as custom code (C#) to integrate complex database operations directly into your apps. For more information, refer to [Supporting stored procedure in ODC](../../building-apps/external-logic/stored-procedure.md).
 
 ## Select entities for use in an app
 
