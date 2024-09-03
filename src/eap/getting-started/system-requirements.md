@@ -120,3 +120,9 @@ As you work with traces, consider the following:
 * Traces exceeding the size of 15 MB are automatically dropped. 
 * ODC allows up to 50,000 spans per minute per stage for traces. 
 * ODC displays traces up to 5000 spans for a single trace.
+
+### Client-side traces
+
+ODC supports the following client-side trace request limits: 
+
+* Up to 400 trace requests every minute and 3500 requests daily per stage.
