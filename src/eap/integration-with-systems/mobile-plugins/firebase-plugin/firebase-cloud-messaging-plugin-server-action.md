@@ -11,9 +11,9 @@ platform-version: odc
 
 <div class="info" markdown="1">
 
-This article applies only to Firebase Cloud Message plugin version 1.0.0 and newer. The newer versions use [server actions](#server-actions-reference) to manage the notifications.
+This article applies only to Firebase Cloud Messaging plugin version 1.0.0 and newer. The newer versions use [server actions](#server-actions-reference) to manage the notifications.
 
-If you are still using Firebase Cloud Message plugin version 0.1.2 and older, OutSystems recommends that you migrate to version 1.0.0 and newer by June 2024.
+If you are still using Firebase Cloud Messaging plugin version 0.1.2 and older, OutSystems recommends that you migrate to version 1.0.0 and newer by June 2024.
  
 </div>
 

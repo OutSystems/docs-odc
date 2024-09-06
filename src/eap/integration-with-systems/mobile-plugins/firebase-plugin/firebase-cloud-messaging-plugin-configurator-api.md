@@ -11,11 +11,11 @@ platform-version: odc
 
 <div class="info" markdown="1">
 
-This article applies only to Firebase Cloud Message plugin version 0.1.2 and older. These old versions use Cloud Messaging Configurator REST APIs to manage the notifications. 
+This article applies only to Firebase Cloud Messaging plugin version 0.1.2 and older. These old versions use Cloud Messaging Configurator REST APIs to manage the notifications. 
 
 The Cloud Messaging Configurator REST APIs, version 0.1.2 and older, are deprecated. This means that the **v2** and **v1** endpoints are no longer functional. For more information, see [Firebase Cloud Messaging HTTP protocol](https://firebase.google.com/docs/cloud-messaging/http-server-ref). 
 
-OutSystems recommends that you migrate to [Firebase Cloud Messaging plugin](firebase-cloud-messaging-plugin-server-action.md) version 1.0.0  and newer by June 2024.  
+OutSystems recommends that you migrate to [Firebase Cloud Messaging plugin](firebase-cloud-messaging-plugin-server-action.md) version 1.0.0 and newer by June 2024.  
 
 </div>
 
