@@ -300,6 +300,7 @@
         - href: eap/building-apps/workflows/go-to-previous-step.md
         - href: eap/building-apps/workflows/system-entities.md
         - href: eap/building-apps/workflows/built-in-functions.md
+        - href: eap/building-apps/workflows/troubleshooting-workflows.md
    
     # Reuse
     - href: eap/building-apps/reuse/intro.md
