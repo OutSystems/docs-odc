@@ -59,7 +59,7 @@ You only have control over the internal OutSystems database. You can’t roll ba
 
 ### Error in last ExternalWrite
 
-The first ExternalWrite and second LocalWrite are successful, but the last node fails. The local write is rolled back, but the external one is not. You can use an Exception Handler to catch the exception and explicitly roll back the LocalWrite.
+The first ExternalWrite and second LocalWrite are successful, but the last node fails. The local write is rolled back, but the external one is not. You can use an Exception Handler to catch the exception and explicitly roll back the LocalWrite. Regarding the ExternalWriteWithError, you can implement the desired logic in an error scenario on the Exception Handler, like log the error, revert the successful ExternalWrite, etc.
 
 If you don't use an Exception Handler, LocalWrite is rolled back automatically.
 
