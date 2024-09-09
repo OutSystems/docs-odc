@@ -295,6 +295,7 @@ Consider the following when integrating an external system.
                 <li>Salesforce removes those white spaces. While inserting an empty string, Salesforce inserts NULL instead.</li>
             </ul>
             <li>Salesforce is case-insensitive, and `ToUpper`/`ToLower` built-in functions don't have the expected behavior in aggregates.</li>
+            <li>When sorting queries by ID, the Salesforce API orders the Id attribute in a case-sensitive manner, which differs from the expected case-insensitive sorting of other attributes. While regular attributes are sorted in the standard order (A, a, B, b, C, c), the Id attribute is sorted with uppercase letters first, followed by lowercase letters (A, B, C, a, b, c).</li>
             <li>Regarding Salesforce queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.</li>
         </ul>
     </div>
