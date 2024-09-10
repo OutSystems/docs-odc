@@ -89,39 +89,15 @@ Use the most current version of the following browsers:
 
 For more information about the latest supported Android and iOS platform versions and the minimum requirements to generate mobile apps, refer to [Mobile Apps Build Service (MABS)](https://success.outsystems.com/support/release_notes/mobile_apps_build_service_versions/)
 
-## Request limits
-
-The following are the request limits to keep in mind when you are building apps.
-
 ### Client-side traces
 
 ODC supports the following client-side trace request limits: 
 
 * Up to 400 trace requests every minute and 3500 requests daily per stage.
 
-### Upload request size
-
-The maximum size of an upload file request is 28.6 MB.
-
-### Server request timeout
-
-The maximum value of the **Server Request Timeout** property is 60 seconds for queries or actions initiated on the client side. The default value of the property is 10 seconds. You can change the default value in the app's property editor.
-
-![Screenshot of app's property editor](images/edit-app-properties-odcs.png "Edit App Properties")
-
-For queries or actions inside timer logic, the maximum timeout value is 60 minutes.
-
-#### Service action timeout
-
-The timeout value for a service action is 100 seconds. This can't be configured.
-
-### Timers timeout
-
-The maximum value of the **Timeout in Minutes** property is 60 minutes.
-
 ## Platform limits
 
-The following table shows the limits of the ODC. Unless otherwise noted, each limit is stage-specific. These limits cannot be exceeded and may cause errors or a drop in performance if reached.
+The following table shows the limits of the ODC to keep in mind when you are building apps. Unless otherwise noted, each limit is stage-specific. These limits cannot be exceeded and may cause errors or a drop in performance if reached.
 
 | **Name**                                 | **Limit** |                                                                                                          **Description** |
 | ---------------------------------------- | --------: | -----------------------------------------------------------------------------------------------------------------------: |
@@ -140,7 +116,15 @@ The following table shows the limits of the ODC. Unless otherwise noted, each li
 | Concurrent Events                        |       100 |                                                                   The maximum amount of events that can run concurrently. |
 | Events Per Queue                         |    10,000 |                        The maximum amount of events that can be queued. Upon reaching the limit, an exception is thrown. |
 | Event Duration (Minutes)                 |         2 |                                                                 The maximum duration of a handler of an event in minutes. |
-| Upload Request Size (MB)                 |        28 |                                                                             The maximum file size allowed when uploading. |
+| Upload Request Size (MB)                 |      28.6 |                                                                             The maximum file size allowed when uploading. |
 | Service Action Timeout (Seconds)         |       100 |                                      The amount of time that a service action will wait for a response before timing out. |
 | Timer Execution Timeout (Minutes)        |        60 |                                                                      The maximum amount of time that a timer can execute. |
 | Expose REST API Method Timeout (Seconds) |        60 |                                     The maximum amount of time an Expose REST API Method will execute before timing out. |
+
+### Server request timeout
+
+The maximum value of the **Server Request Timeout** property is 60 seconds for queries or actions initiated on the client side. The default value of the property is 10 seconds. You can change the default value in the app's property editor.
+
+![Screenshot of app's property editor](images/edit-app-properties-odcs.png "Edit App Properties")
+
+For queries or actions inside timer logic, the maximum timeout value is 60 minutes.
