@@ -11,7 +11,7 @@ platform-version: odc
 
 OutSystems Developer Cloud (ODC) comes bundled with Identity Service, a built-in Identity Provider (IdP). It provides authentication, authorization, and user management for your [organization](../platform-architecture/intro.md#platform) and apps. You access your organization services through ODC Portal and ODC Studio. As the default IdP, Identity Service is always available.
 
-In addition, you can use an external, self-managed IdP as an authentication provider for your organization and your apps. You can use any IdP that follows the OpenID Connect (OIDC) standard. You can configure most commercial IdPs, such as AzureAD and Okta, to support this standard. ODC supports using **PKCE** (Proof Key for Code Exchange) with external IdPs for an additional layer of security.
+In addition, you can use an external, self-managed IdP as an authentication provider for your organization and your apps. You can use any IdP that follows the OpenID Connect (OIDC) standard and uses the `client_secret_post` authentication method. You can configure most commercial IdPs, such as AzureAD and Okta, to support this standard. ODC supports using **PKCE** (Proof Key for Code Exchange) with external IdPs for an additional layer of security.
 
 **Note:** ODC supports all IdPs that follow the OIDC standard. The following IdPs have been successfully tested to integrate with ODC apps:
 
