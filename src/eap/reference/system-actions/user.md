@@ -374,6 +374,12 @@ StartUserRegistrationFailureReason
 VerificationCode
 :   Type: Text
 
+    <div class="info" markdown="1">
+
+    The Verification Code is valid for 15 minutes. This is a fixed value.
+
+    </div>
+
 UserId
 :   Type: User Identifier
 
