@@ -43,11 +43,11 @@ To map a provider to an End-user group, from the portal, select **End-user group
 
 Click the **Group mappings** tab to display all group mapping for this group. In the Group mappings section, you can view all mappings, active mappings, or inactive mappings. An **Inactive** status indicates that the IdP and group aren't in the same stage. Hover over the Inactive status to learn what you need to fix to make the mapping active.
 
-To add a new mapping, click **Add mapping**. All fields are required. From the Provider drop-down, select a provider. Enter a **claim name** and a **group name**. Your IdP provides the claim value, which is the group claim (identifier) and the group name.
+To add a new mapping, click **Add mapping**. All fields are required. From the Provider drop-down, select a provider. Enter a **claim name** and a **Claim value (provider group)**. Your IdP provides the claim value, which is the group claim (identifier) and the Claim Name.
 
 <div class="info" markdown="1">
 
-For Azure AD (or Microsoft Entra) the claim value should be the Object Id of the group.
+For Azure AD (or Microsoft Entra) the claim value should be the Object Id of the group and the claim name should simply be "groups".
 
 </div>
 
@@ -57,7 +57,7 @@ To connect a provider to an end-user group, from the ODC Portal, select **Identi
 
 The Group mappings summary page shows the current mappings for this Provider. The display shows the Provider group(s) and end-user groups that are mapped and the current status. An **Inactive** status indicates that the IdP and end-user group aren't in the same stage. Hover over the Inactive status to learn what you need to fix to make the mapping active.
 
-To add a new mapping, click **Add mapping**. You must enter a **Claim name** and a **Group name**. Your IdP provides the claim value, the group claim (identifier), and the group name. In the End-user group section, click on the group(s) you want to map, select a stage, and then click **Save**. When the mapping completes, end-users can log into ODC and access the apps assigned to the group.
+To add a new mapping, click **Add mapping**. You must enter a **Claim name** and a **Claim value (provider group)**. Your IdP provides the claim value (identifier) and the group claim. In the End-user group section, click on the group(s) you want to map, select a stage, and then click **Save**. When the mapping completes, end-users can log into ODC and access the apps assigned to the group.
 
 When an admin removes a user from an Okta group through the Okta dashboard, the user can no longer log in to the app. However, the user still appears as mapped in the ODC Portal.
 
