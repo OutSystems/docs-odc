@@ -10,7 +10,7 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&
 
 # Transactions in external entities
 
-OutSystems Developer Cloud (ODC) creates separate connections and transactions for each external system. You control transactions for the OutSystems database but not for external systems. Each external entity request is either committed or rolled back.
+OutSystems Developer Cloud (ODC) creates separate connections and transactions for each external system. You control transactions for the OutSystems database but not for external systems. Each external entity request is either committed or rolled back. Each request, whether a read or write operation to an external entity, is executed within its own dedicated transaction.
 
 You can use the Exception Handler to
 
@@ -53,7 +53,7 @@ If you don't use an Exception Handler, LocalWrite is rolled back automatically.
 
 The first ExternalWrite is successful, but the second ExternalWrite fails. 
 
-You only have control over the internal OutSystems database. You can’t roll back the ExternalWrite, as it was already committed. You can use an Exception Handler to catch the database exception.
+You only have control over the internal OutSystems database. You can’t roll back the ExternalWrite, as it was already committed. You can use an Exception Handler to catch the database exception. Regarding the ExternalWriteWithError, you can implement the desired logic in an error scenario on the Exception Handler, like log the error, revert the successful ExternalWrite, etc.
 
 ![Diagram showing an error during the second ExternalWrite in OutSystems Developer Cloud Studio.](images/SecondExternalWrite-odcs.png "Screenshot of Error During Second ExternalWrite in ODC Studio")
 
@@ -80,3 +80,7 @@ The first LocalWrite and second ExternalWrite are successful, but the last node 
 If you don't use an Exception Handler, LocalWrite is rolled back automatically.
 
 ![Diagram showing an error in the last LocalWrite in OutSystems Developer Cloud Studio.](images/LastLocalWriterError-odcs.png "Screenshot of Error in Last LocalWrite in ODC Studio")
+
+## Isolation level
+
+The isolation level of an external database is determined by its own configuration, and ODC does not alter it. This setting cannot be modified by the developer at the connection or query level.
