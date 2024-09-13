@@ -10,6 +10,12 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 
 # Troubleshooting workflows
 
+<div class="info" markdown="1">
+
+Workflows are automatically retried up to 10 times if an execution of a service action or the delivery of a back-end event fails. The following backoff policy applies to the automatic retries: 5s, 10s, 20s, 30s, 1m, 2m, 4m, 8m, 16m, 32m.
+
+</div>
+
 After you deploy a workflow in a specific environment, an instance of that  workflow can end up with an **Active with errors** status for one of the following reasons:
 
 * **App-side error**
