@@ -101,10 +101,6 @@ Here are some points to consider as you implement workflows in ODC:
 
     **Note**: In the development stage, you can have instances running only in the last five revisions. For example, if there are five revisions (revisions 1 to 5) in the development stage with active instances running in each one, once revision 6 is created, all active instances running in revision 1 are terminated immediately. There is no limit to the number of revision instances for the QA and production stages. 
 
-* **Workflows are automatically retried up to 10 times** if an execution of a service action or the delivery of a back-end event fails. The following backoff policy applies to the automatic retries: 5s, 10s, 20s, 30s, 1m, 2m, 4m, 8m, 16m, 32m.
-
-* **Workflows support [basic input parameters](../data/data-types.md)** except binary data type. Parameters with the text data type support a maximum of 2000 characters.
-
 ## Known constraints
 
 * Workflows **do not support real-time collaboration**, meaning multiple users cannot edit a workflow simultaneously. However, basic conflict detection is supported. If a new version of a workflow exists in dev, you are notified when you open it or try to publish your changes.
