@@ -21,13 +21,13 @@ In ODC apps and libraries have a limit of 100 MB.
 
 ## Impact
 
-You can't publish apps or libraries that have more than 100MB. 
+You can't publish apps or libraries that have more than 100 MB. 
 
 ## Recommended action
 
 Please consider removing any unused resources, e.g. this may include Excel files you have used in the past to bootstrap some data into the application.
 Consider moving static resources to a library and take advantage of library versioning, this is a typical pattern when you have Libraries that act as mobile plugins, connectors to other systems, or UI widgets that use external JavaScript libraries. It can be used in situations where reusability is not the primary driver, but instead to allow for a better separation of concerns and management of static resources.
-Once the usage of resources are optimized consider reviewing your App architecture, following the best practices to isolate business agnostic code elements into libraries (reusable UI blocks, themes, integration wrappers, logic utilities, etc), revisit the business concepts and respective bounded contexts contained in your app to identify candidates to be splitted into new app.
+Once the usage of resources are optimized consider reviewing your App architecture, following the best practices to isolate business agnostic code elements into libraries (reusable UI blocks, themes, integration wrappers, logic utilities, etc), revisiting the business concepts and respective bounded contexts contained in your app to identify candidates to be split into new apps.
 
 ## More info
 
