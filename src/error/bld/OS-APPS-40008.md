@@ -13,7 +13,7 @@ figma:
 
 ## Error message
 
-`Application file size too big. Uploaded application file size must be under 100 MB.`
+`Application file size is too big. Uploaded application file size must be under 100 MB.`
 
 ## Cause
 
@@ -25,4 +25,10 @@ You can't publish apps or libraries that have more than 100MB.
 
 ## Recommended action
 
-Please check if the resources you have imported into your app or library (e.g: Excel, PDFs, Images, etc), and remove any unnecessary ones. If this does not apply, we recommend that you refactor your app into smaller parts and take advantage of using libraries.
+Please consider removing any unused resources, e.g. this may include Excel files you have used in the past to bootstrap some data into the application.
+Consider moving static resources to a library and take advantage of library versioning, this is a typical pattern when you have Libraries that act as mobile plugins, connectors to other systems, or UI widgets that use external JavaScript libraries. It can be used in situations where reusability is not the primary driver, but instead to allow for a better separation of concerns and management of static resources.
+Once the usage of resources are optimized consider reviewing your App architecture, following the best practices to isolate business agnostic code elements into libraries (reusable UI blocks, themes, integration wrappers, logic utilities, etc), revisit the business concepts and respective bounded contexts contained in your app to identify candidates to be splitted into new app.
+
+## More info
+
+Please check the [Building a well-architected app](https://success.outsystems.com/documentation/outsystems_developer_cloud/app_architecture/building_a_well_architected_app/) for more details on building lean apps.
