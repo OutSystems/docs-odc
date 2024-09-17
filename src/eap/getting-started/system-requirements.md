@@ -99,27 +99,29 @@ ODC supports the following client-side trace request limits:
 
 The following table shows the limits of the ODC to keep in mind when you are building apps. Unless otherwise noted, each limit is stage-specific. These limits cannot be exceeded and may cause errors or a drop in performance if reached.
 
-| **Name**                                 | **Limit** |                                                                                                          **Description** |
-| ---------------------------------------- | --------: | -----------------------------------------------------------------------------------------------------------------------: |
-| App Log Retention (Days)                 |        28 |   The maximum amount of days that logs will be retained (plus 21 days of additional backup retrieved via support ticket). |
-| Trace Retention (Days)                   |        28 | The maximum amount of days that traces will be retained (plus 21 days of additional backup retrieved via support ticket). |
-| DB Backup Retention (Days)               |        30 |                                                        The maximum amount of days that database backups will be retained. |
-| Log Rate/minute (Thousands)              |         2 |                                                              The maximum rate at which logs can be captured in thousands. |
-| Trace Spans Rate/minute (Thousands)      |        50 |                                                       The maximum rate at which Trace spans can be captured in thousands. |
-| Trace Size (MB)                          |        15 |                                                        The maximum size of traces. Traces exceeding this will be dropped. |
-| Max Requests (Per IP)                    |     5,000 |  The maximum amount of HTTP requests that can be made from a given IP address within a 5-minute window across all stages. |
-| Custom Code Storage (MB)                 |       512 |                The maximum amount of ephemeral storage that can be used for custom code functions to use while executing. |
-| Custom Code Memory (MB)                  |     1,024 |                                  The maximum amount of memory available for custom code functions to use while executing. |
-| Custom Code Execution Duration (Seconds) |        90 |                                                The maximum amount of time that a single custom code function can execute. |
-| Concurrent Timers                        |         6 |                                                                   The maximum amount of timers that can run concurrently. |
-| Workflow Concurrent Versions             |         5 |                                                        The maximum number of workflow versions that can run concurrently. |
-| Concurrent Events                        |       100 |                                                                   The maximum amount of events that can run concurrently. |
-| Events Per Queue                         |    10,000 |                        The maximum amount of events that can be queued. Upon reaching the limit, an exception is thrown. |
-| Event Duration (Minutes)                 |         2 |                                                                 The maximum duration of a handler of an event in minutes. |
-| Upload Request Size (MB)                 |      28.6 |                                                                             The maximum file size allowed when uploading. |
-| Service Action Timeout (Seconds)         |       100 |                                      The amount of time that a service action will wait for a response before timing out. |
-| Timer Execution Timeout (Minutes)        |        60 |                                                                      The maximum amount of time that a timer can execute. |
-| Expose REST API Method Timeout (Seconds) |        60 |                                     The maximum amount of time an Expose REST API Method will execute before timing out. |
+| **Name**                                 | **Limit** | **Description** |
+| ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
+| App log retention (days)                 |        28 | The maximum number of days that logs are retained (plus 21 days of additional backup retrievable via support ticket). |
+| Concurrent events                        |       100 | The maximum number of events that can run concurrently. |
+| Concurrent timers                        |         6 | The maximum number of timers that can run concurrently. |
+| Custom code execution duration (seconds) |        90 | The maximum time a single custom code function can execute. |
+| Custom code memory (MB)                  |     1,024 | The maximum memory available for custom code functions while executing. |
+| Custom code storage (MB)                 |       512 | The maximum amount of ephemeral storage available for custom code functions while executing. |
+| DB backup retention (days)               |        30 | The maximum number of days database backups are retained. |
+| Event duration (minutes)                 |         2 | The maximum duration of a handler of an event in minutes. |
+| Events per queue                         |    10,000 | The maximum number of events that can be queued. Upon reaching the limit, an exception is thrown. |
+| Expose REST API method timeout (seconds) |        60 | The maximum amount of time an Expose REST API method executes before timing out. |
+| Log rate/minute (thousands)              |         2 | The maximum rate at which logs can be captured, in thousands per minute. |
+| Max requests (per IP)                    |     5,000 | The maximum number of HTTP requests that can be made from a given IP address within a 5-minute window across all stages. |
+| Service action timeout (seconds)         |       100 | The time a service action waits for a response before timing out. |
+| Timer execution timeout (minutes)        |        60 | The maximum time a timer can execute. |
+| Trace retention (days)                   |        28 | The maximum number of days that traces are retained (plus 21 days of additional backup retrievable via support ticket). |
+| Trace size (MB)                          |        15 | The maximum size of traces. Traces exceeding this are dropped. |
+| Trace spans rate/minute (thousands)      |        50 | The maximum rate at which trace spans can be captured, in thousands per minute. |
+| Upload request size (MB)                 |      28.6 | The maximum file size allowed when uploading. |
+| Workflow activity max duration (seconds) |       120 | The maximum duration of a workflow activity. |
+| Workflow concurrent versions             |         5 | The maximum number of workflow versions that can run concurrently. |
+
 
 ### Server request timeout
 
