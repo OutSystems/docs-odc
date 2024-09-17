@@ -13,7 +13,7 @@ figma:
 
 ## Error message
 
-Application file size too big. Uploaded application file size must be under 100 MB.
+`Application file size too big. Uploaded application file size must be under 100 MB.`
 
 ## Cause
 
