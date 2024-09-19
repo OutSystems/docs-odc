@@ -11,7 +11,13 @@ platform-version: odc
 
 OutSystems Developer Cloud (ODC) comes bundled with Identity Service, a built-in Identity Provider (IdP). It provides authentication, authorization, and user management for your [organization](../platform-architecture/intro.md#platform) and apps. You access your organization services through ODC Portal and ODC Studio. As the default IdP, Identity Service is always available.
 
-In addition, you can use an external, self-managed IdP as an authentication provider for your organization and your apps. You can use any IdP that follows the OpenID Connect (OIDC) standard and uses the `client_secret_post` authentication method. You can configure most commercial IdPs, such as AzureAD and Okta, to support this standard. ODC supports using **PKCE** (Proof Key for Code Exchange) with external IdPs for an additional layer of security.
+In addition, you can use an external, self-managed IdP as an authentication provider for your organization and your apps. You can use any IdP that follows the OpenID Connect (OIDC) standard and uses the `client_secret_post` authentication method. You can configure most commercial IdPs, such as Microsoft Entra ID and Okta, to support this standard. ODC supports using **PKCE** (Proof Key for Code Exchange) with external IdPs for an additional layer of security.
+
+ODC doesn't support dynamic issuer URIs, usually found in multi-tenant configurations of IdP apps. The Discovery endpoint needs to return static URIs. If you use dynamic URIs, the authentication process throws an error similiar to:
+
+    Wrong issuer from token.
+    Got: https://login.microsoftonline.com/<customer-tenant-id>/v2.0
+    Expected: https://login.microsoftonline.com/{tenantid}/v2.0
 
 **Note:** ODC supports all IdPs that follow the OIDC standard. The following IdPs have been successfully tested to integrate with ODC apps:
 
@@ -20,7 +26,7 @@ In addition, you can use an external, self-managed IdP as an authentication prov
 * Ping Federation Identity
 * Facebook
 * Apple
-* Azure AD
+* Microsoft Entra ID (formerly known as Azure AD)
 * Okta
 * Keycloak
 
@@ -34,7 +40,7 @@ When you successfully configure and save an external IdP to ODC, it becomes an o
 
 <div class="info" markdown="1">
 
-If you're configuring [Azure AD](azure-ad.md) or [Okta](okta.md) you can skip this section and follow the specific guidance by following one of the embedded links.
+If you're configuring [Microsoft Entra ID](azure-ad.md) or [Okta](okta.md) you can skip this section and follow the specific guidance by following one of the embedded links.
 
 </div>
 
@@ -108,7 +114,7 @@ To assign an added external IdP, navigate to the **Identity providers** tab in O
 
     Once ODC applies the provider successfully, a notification displays.
 
-1. Copy the pair(s) of **Redirect URLs** to the list of permitted redirects in the setup page of your external provider. You should copy the pair(s) for both the built-in domain and any active [custom domains](../custom-domains.md). If you're configuring [Okta](okta.md#setup-redirect-urls) you can follow the embedded link for specific guidance. Otherwise see your provider's support documentation for further guidance (for example, [Azure AD](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-redirect-uri)). Click **Next**.
+1. Copy the pair(s) of **Redirect URLs** to the list of permitted redirects in the setup page of your external provider. You should copy the pair(s) for both the built-in domain and any active [custom domains](../custom-domains.md). If you're configuring [Okta](okta.md#setup-redirect-urls) you can follow the embedded link for specific guidance. Otherwise see your provider's support documentation for further guidance (for example, [Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-redirect-uri)). Click **Next**.
 
 When you assign a provider for use by the apps, you need to create the logic in ODC Studio for each app you want to use it. For guidance on how to create the logic, see [Use external identity providers in an app](apps.md).
 
