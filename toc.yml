@@ -297,7 +297,6 @@
         - href: eap/building-apps/workflows/add-human-activity.md
         - href: eap/building-apps/workflows/add-automatic-activity.md
         - href: eap/building-apps/workflows/add-decisions.md
-        - href: eap/building-apps/workflows/add-wait.md
         - href: eap/building-apps/workflows/go-to-previous-step.md
         - href: eap/building-apps/workflows/system-entities.md
         - href: eap/building-apps/workflows/built-in-functions.md
