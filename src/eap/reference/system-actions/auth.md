@@ -92,7 +92,7 @@ _Inputs_
 
 **CallbackURL**
 :   Type: Text.
-    URL called after the logout process. The provider will redirect users to this URL after a successful login.
+    URL called after the logout process. The provider will redirect users to this URL after a successful logout.
 
 _Outputs_
 
