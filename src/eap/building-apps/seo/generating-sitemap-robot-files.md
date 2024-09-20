@@ -14,7 +14,7 @@ The `sitemap.xml` and `robots.txt` files let you control website crawlers and in
 
 This diagram explains the connection between crawlers, sitemaps, and robots:
 
-![Diagram showing the interaction between an SEO crawler, robots.txt file, and sitemap.xml. The crawler becomes aware of a site, lands in the robots.txt file, notices the sitemap reference, consumes the sitemap content, visits all sitemap endpoints, and parses sitemap URLs for indexing.](./images/seo-crawler-diag.png "Diagram of SEO Crawler Interaction with Sitemap and Robots.txt")
+![Diagram showing the interaction between an SEO crawler, robots.txt file, and sitemap.xml. The crawler becomes aware of a site, lands in the robots.txt file, notices the sitemap reference, consumes the sitemap content, visits all sitemap endpoints, and parses sitemap URLs for indexing.](images/seo-crawler-diag.png "Diagram of SEO Crawler Interaction with Sitemap and Robots.txt")
 
 ## Sitemap.xml
 
