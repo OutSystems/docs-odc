@@ -118,10 +118,11 @@ The following table shows the limits of the ODC to keep in mind when you are bui
 | Trace retention (days)                   |        28 | The maximum number of days that traces are retained (plus 21 days of additional backup retrievable via support ticket). |
 | Trace size (MB)                          |        15 | The maximum size of traces. Traces exceeding this are dropped. |
 | Trace spans rate/minute (thousands)      |        50 | The maximum rate at which trace spans can be captured, in thousands per minute. |
+| Client side trace requests every minute per stage  |        400 | The maxnimum number of client-side traces requests every minute. |
+| Client side trace requests daily per stage  |           3500 | The maxnimum number of client-side traces requests daily. |
 | Upload request size (MB)                 |      28.6 | The maximum file size allowed when uploading. |
 | Workflow activity max duration (seconds) |       120 | The maximum duration of a workflow activity. |
 | Workflow concurrent versions             |         5 | The maximum number of workflow versions that can run concurrently. |
-
 
 ### Server request timeout
 
