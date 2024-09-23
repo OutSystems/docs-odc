@@ -18,7 +18,7 @@ The default authorization for screens is accessible only by authenticated users.
 
 The screen authorization is accessible to **Everyone**. 
 
-![Screen authorization settings showing the option to set accessibility to Everyone or Authenticated Users.](./images/odcs-accessible-everyone.png "Screen Authorization Settings")
+![Screen authorization settings showing the option to set accessibility to Everyone or Authenticated Users.](images/odcs-accessible-everyone.png "Screen Authorization Settings")
 
 ## How to fix
 

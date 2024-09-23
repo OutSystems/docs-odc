@@ -20,7 +20,7 @@ If anyone can access the screen, any end user, including users who aren't logged
 
 The configuration allows the screen to be accessible by **Everyone**.
 
-![Screenshot of the UsersInfo screen settings showing the 'Accessible by' option set to 'Everyone'.](./images/odcs-screen-accessible-everyone.png "Screen Authorization Settings")
+![Screenshot of the UsersInfo screen settings showing the 'Accessible by' option set to 'Everyone'.](images/odcs-screen-accessible-everyone.png "Screen Authorization Settings")
 
 ## How to fix
 

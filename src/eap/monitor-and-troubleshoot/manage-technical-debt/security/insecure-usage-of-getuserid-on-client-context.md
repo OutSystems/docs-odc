@@ -20,9 +20,9 @@ Passing identity information as a server action parameter is extremely insecure.
 
 This issue occurs because identity information is retrieved on the client side and sent to the server as a parameter, making it vulnerable to tampering.
 
-![Diagram illustrating the insecure flow of identity information from the client to the server.](./images/odcs-identity-info-sever.png "Diagram showing insecure identity information flow")
+![Diagram illustrating the insecure flow of identity information from the client to the server.](images/odcs-identity-info-sever.png "Diagram showing insecure identity information flow")
 
-![Screenshot showing the usage of the GetUserId function in a server action.](./images/odcs-getuserid.png "GetUserId function usage example")
+![Screenshot showing the usage of the GetUserId function in a server action.](images/odcs-getuserid.png "GetUserId function usage example")
 
 
 ## How to fix

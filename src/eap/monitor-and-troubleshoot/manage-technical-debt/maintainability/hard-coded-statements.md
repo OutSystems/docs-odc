@@ -18,7 +18,7 @@ Some parts of your logic never run due to hard-coded True/False conditions. This
 
 The code uses hard-coded True/False conditions, causing certain branches of the logic to be permanently bypassed and never executed
 
-![Flowchart showing a condition that is always true, causing the false branch to never execute.](./images/odcs-unreachable-logic.png "Flowchart with Unreachable Logic")
+![Flowchart showing a condition that is always true, causing the false branch to never execute.](images/odcs-unreachable-logic.png "Flowchart with Unreachable Logic")
 
 In this example, the flow has a condition that's always **True**. The **False** branch never executes because the condition doesn't allow it to be reached.
 

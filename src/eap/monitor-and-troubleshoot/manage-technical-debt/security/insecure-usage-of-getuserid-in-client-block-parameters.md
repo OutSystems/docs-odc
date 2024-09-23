@@ -22,7 +22,7 @@ Since the execution of GetUserId on reactive client components depends on client
 
 Passing `GetUserId` as a Block widget parameter exposes your application to security risks. This allows users to manipulate identity information on the client side, potentially leading to impersonation and unauthorized data access.
 
-![Screenshot of a Block widget parameter configuration showing GetUserId() as the value for the UserId parameter.](./images/odcs-block-widget-param.png "Block Widget Parameter with GetUserId")
+![Screenshot of a Block widget parameter configuration showing GetUserId() as the value for the UserId parameter.](images/odcs-block-widget-param.png "Block Widget Parameter with GetUserId")
 
 ## How to fix
 

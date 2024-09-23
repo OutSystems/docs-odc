@@ -20,13 +20,13 @@ A client action with more than 20 nodes or an action with more than 40 nodes is 
 
 A client action within a flow contains more than 20 nodes or any action that surpasses 40 nodes. This high node count makes the flow difficult to understand and maintain, especially in the absence of comments that explain the underlying logic.
 
-![A complex flow diagram with multiple nodes and no comments.](./images/odcs-undocumented-flow.png "Undocumented Flow")
+![A complex flow diagram with multiple nodes and no comments.](images/odcs-undocumented-flow.png "Undocumented Flow")
 
 ## How to fix
 
 Break flow logic into smaller and potentially reusable actions and/or place comments to explain portions of your flow.
 
-![A flow diagram with multiple nodes and a comment added to explain part of the logic.](./images/odcs-comment-flow.png "Flow with Comments")
+![A flow diagram with multiple nodes and a comment added to explain part of the logic.](images/odcs-comment-flow.png "Flow with Comments")
 
 **Note**: Explore the **Extract to Action** feature.
 
@@ -36,5 +36,5 @@ To select the **Extract to Action** feature:
 
 1. Select **Extract to Action**.
 
-![Context menu showing the 'Extract to Action' option highlighted in a flow diagram.](./images/odcs-extract-to-action.png "Extract to Action Feature")
+![Context menu showing the 'Extract to Action' option highlighted in a flow diagram.](images/odcs-extract-to-action.png "Extract to Action Feature")
 

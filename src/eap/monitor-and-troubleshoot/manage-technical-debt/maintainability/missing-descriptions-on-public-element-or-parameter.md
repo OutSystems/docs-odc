@@ -20,7 +20,7 @@ Meaningful descriptions in modules, public elements, entities, and input/output 
 
 The element or parameter is **Public**, but the **Description** input field is empty.
 
-![Screenshot showing a public element with an empty description field in a module.](./images/odcs-public-description.png "Empty Description Field in Public Element")
+![Screenshot showing a public element with an empty description field in a module.](images/odcs-public-description.png "Empty Description Field in Public Element")
 
 ## How to fix
 

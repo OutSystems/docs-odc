@@ -20,7 +20,7 @@ CSS and HTML should be kept separate. Inline styles are inefficient, harder to m
 
 Inline CSS occurs when styles are directly applied to screen or web block elements through extended properties.
 
-![Screenshot of the extended properties panel showing inline CSS styles applied to a screen element.](./images/odcs-extended-properties.png "Extended Properties Panel")
+![Screenshot of the extended properties panel showing inline CSS styles applied to a screen element.](images/odcs-extended-properties.png "Extended Properties Panel")
 
 ## How to fix
 

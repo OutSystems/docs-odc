@@ -20,8 +20,9 @@ A disabled button doesn't prevent an experienced person from re-enabling the but
 
 A disabled button remains visible when the **Enabled** property is set to False, and the **Visible** property is set to True. 
 
-![Button properties configuration showing Enabled set to False and Visible set to True.](./images/odcs-enable-visible.png "Button Properties Configuration")
+![Button properties configuration showing Enabled set to False and Visible set to True.](images/odcs-enable-visible.png "Button Properties Configuration")
 
 ## How to fix
 
 Instead of setting the **Enable** property to False, consider setting the **Visible** property instead, or use both properties together. This prevents the button from rendering completely on the client browser and prevents an experienced user from hacking the button and enabling the functionality.
+

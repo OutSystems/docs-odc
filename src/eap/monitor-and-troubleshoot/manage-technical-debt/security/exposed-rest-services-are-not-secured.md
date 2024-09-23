@@ -20,7 +20,7 @@ Without authentication, REST endpoints are vulnerable to unauthorized access, da
 
 The exposed REST API isn't protected. The authentication is set to **None**.
 
- ![Screenshot showing the authentication setting set to None in the REST service security options.](./images/odcs-authentication-none.png "Authentication Setting in REST Service")
+ ![Screenshot showing the authentication setting set to None in the REST service security options.](images/odcs-authentication-none.png "Authentication Setting in REST Service")
 
 
 ## How to fix

@@ -24,7 +24,7 @@ Using expanded inline parameters that change too often also increases your techn
 
 Enabling the Expand Inline property allows SQL fragments to be directly inserted into queries.
 
-![Screenshot of the OutSystems platform showing a Query Parameter named SearchFilter with the Expand Inline property set to Yes.](./images/odcs-expand-inline.png "Expand Inline Property in Query Parameter")
+![Screenshot of the OutSystems platform showing a Query Parameter named SearchFilter with the Expand Inline property set to Yes.](images/odcs-expand-inline.png "Expand Inline Property in Query Parameter")
 
 ## How to fix
 
