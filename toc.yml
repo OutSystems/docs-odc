@@ -306,6 +306,13 @@
     - href: eap/building-apps/reuse/intro.md
     - href: eap/building-apps/reuse/handle-changes.md
 
+     # SEO
+    - href: eap/building-apps/seo/seo-best-practices.md
+    - topics: 
+        - href: eap/building-apps/seo/improve-seo-prerendering.md
+        - href: eap/building-apps/seo/prerender-usage-config.md
+        - href: eap/building-apps/seo/generating-sitemap-robot-files.md
+
 # Debugging apps
 - href: eap/debugging-apps/intro.md
 - topics:
