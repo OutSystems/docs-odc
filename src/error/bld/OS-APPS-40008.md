@@ -33,4 +33,4 @@ After optimizing resource usage, review your app’s architecture. Follow best p
 
 ## More info
 
-Please check the [Building a well-architected app](https://success.outsystems.com/documentation/outsystems_developer_cloud/app_architecture/building_a_well_architected_app/) for more details on building lean apps.
+Please check the [Building a well-architected app](../../eap/app-architecture/recommended-architecture.md) for more details on building lean apps.

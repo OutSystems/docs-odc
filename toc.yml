@@ -579,6 +579,7 @@
     - href: error/bld/intro.md
     - topics:
         - href: error/bld/OS-BLD-FE-40001.md
+        - href: error/bld/OS-APPS-40008.md
     # Errors External Libraries SDK
     - href: error/elg/intro.md
     - topics:
