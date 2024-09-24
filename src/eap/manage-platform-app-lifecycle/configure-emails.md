@@ -14,7 +14,7 @@ Emails are an integral part of any app you develop because you can send app user
 
 You create an email configuration for a stage. You can have different configurations for each stage, but you can only have one configuration per stage.
 
-Admins with access to the Configurations can create  or update an email configuration.
+To create and manage an email configuration, you need to have an organization role that includes the **Manage Email Configurations** permission.
 This document describes how to:
 
 * Create a test list.
