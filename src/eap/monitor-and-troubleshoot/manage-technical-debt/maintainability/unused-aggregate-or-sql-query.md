@@ -8,7 +8,7 @@ platform-version: odc
 figma: 
 ---
 
-# Unused aggregate or SQL Query
+# Unused Aggregate or SQL Query
 
 An Aggregate or SQL query isn't used.
 
