@@ -8,7 +8,7 @@ platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3526-397&node-type=CANVAS&t=fro20soaPpjjIXwf-0
 ---
 
-# Screen aggregates exposing system entities accessible by anyone
+# Screen Aggregates exposing system entities accessible by anyone
 
 A Screen Aggregate exposes System Entity data on a screen accessible by anyone. 
 
