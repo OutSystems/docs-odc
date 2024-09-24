@@ -18,7 +18,7 @@ These findings are grouped by:
 * Code pattern having issues
 * Number of occurrences.
 
-From there you can see each one of the findings individually, you can see a **`How to resolve`** guidance, and you can access directly to them on ODC Studio, so that you can learn more about them or address them.
+From there you can see each one of the findings individually, you can see a **How to resolve** guidance, and you can access directly to them on ODC Studio, so that you can learn more about them or address them.
 
 To have access to these capabilities, you first need to activate AIMS on your Organization ODC Portal.
 
@@ -84,7 +84,7 @@ The **Impact** explains the possible negative impacts of the pattern, and helps 
 
 ## Known limitations
 
-* **Application analysis frequency.** Application analysis runs every 12 hours. After performing a 1CP (One Click Publish), you must wait until the next scheduled analysis to view the updated findings in the AIMS Code Quality Console.
+* **Application analysis frequency.** Application analysis runs every 12 hours. After performing a 1CP (1-Click Publish), you must wait until the next scheduled analysis to view the updated findings in the AIMS Code Quality Console.
 * **Availability of resolved findings.** Resolved findings are retained in the Code Quality Console for up to 90 days. After this period, they are no longer be available.
 * **Detection of new code patterns**. Newly introduced code patterns aren't detected retroactively for existing applications. To detect these patterns, do a 1-Click Publish on the respective app.
 
