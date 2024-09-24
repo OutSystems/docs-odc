@@ -8,7 +8,7 @@ platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3525-387&node-type=CANVAS&t=fro20soaPpjjIXwf-0
 ---
 
-# Insecure Usage of GetUserId in client Block parameters
+# Insecure usage of GetUserId in client Block parameters
 
 Avoid passing identity information in a Block widget parameter.
 
