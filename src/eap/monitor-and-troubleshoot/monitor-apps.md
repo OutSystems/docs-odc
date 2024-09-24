@@ -12,7 +12,7 @@ figma:
 
 OutSystems Developer Cloud (ODC) provides a unified experience for monitoring and troubleshooting your apps. The **Logs** and **Traces** screens are available in ODC Portal under the **Monitoring** section in the left nav menu.
 
-Logs and traces are complimentary for getting to the root cause of a problem with an app. While a log helps you identify the problem, the associated trace helps you locate the problem. You can then use this information to help resolve the problem.
+Logs and traces are complementary for getting to the root cause of a problem with an app. While a log helps you identify the problem, the associated trace helps you locate the problem. You can then use this information to help resolve the problem.
 
 Traces are also helpful for troubleshooting a performance issue with an app.
 

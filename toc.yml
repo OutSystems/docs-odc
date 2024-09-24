@@ -21,7 +21,7 @@
     - href: eap/building-apps/use-ai/intro.md
     - topics:
         - href: eap/building-apps/use-ai/overall-process.md
-    # Configure model
+        # Configure model
         - href: eap/building-apps/use-ai/configure-model/intro.md
         - topics:
             - href: eap/building-apps/use-ai/configure-model/configure-azure-model.md
@@ -30,7 +30,7 @@
             - href: eap/building-apps/use-ai/configure-model/add-aws-model-to-aibuilder.md
             - href: eap/building-apps/use-ai/configure-model/add-custom-ai-model.md
             - href: eap/building-apps/use-ai/configure-model/aiab-custom-model-api-contract.md        
-    # Configure data source
+        # Configure data source
         - href: eap/building-apps/use-ai/configure-data-source/intro.md
         - topics:
             - href: eap/building-apps/use-ai/configure-data-source/configure-azure-data-source.md
@@ -39,13 +39,13 @@
             - href: eap/building-apps/use-ai/configure-data-source/add-aws-data-source-to-aibuilder.md        
             - href: eap/building-apps/use-ai/configure-data-source/add-custom-data-source.md    
             - href: eap/building-apps/use-ai/configure-data-source/aiab-api-contract.md
-    # Function calling
+        # Function calling
         - href: eap/building-apps/use-ai/function-calling/overview.md
         - topics:
             - href: eap/building-apps/use-ai/function-calling/use-function-calling.md
-    # Create agent
+        # Create agent
         - href: eap/building-apps/use-ai/create-agent.md
-    # Integrate agent
+        # Integrate agent
         - href: eap/building-apps/use-ai/integrate-agent.md
 
     # Data
@@ -226,6 +226,7 @@
         - href: eap/building-apps/external-logic/REFERENCE.md
         - href: eap/building-apps/external-logic/upgrade-net8.md
         - href: eap/building-apps/external-logic/soap.md
+        - href: eap/building-apps/external-logic/stored-procedure.md
     # Forge
     - href: eap/building-apps/forge/intro.md
     - topics:
@@ -277,7 +278,8 @@
 
     # Handling exceptions
     - href: eap/building-apps/handling-exceptions/handle-exceptions.md
-    - href: eap/building-apps/handling-exceptions/handling-mechanism.md
+    - topics:
+        - href: eap/building-apps/handling-exceptions/handling-mechanism.md
     
     # Timers
     - href: eap/building-apps/timers/intro.md
@@ -297,10 +299,19 @@
         - href: eap/building-apps/workflows/add-decisions.md
         - href: eap/building-apps/workflows/go-to-previous-step.md
         - href: eap/building-apps/workflows/system-entities.md
+        - href: eap/building-apps/workflows/built-in-functions.md
+        - href: eap/building-apps/workflows/troubleshooting-workflows.md
    
     # Reuse
     - href: eap/building-apps/reuse/intro.md
     - href: eap/building-apps/reuse/handle-changes.md
+
+     # SEO
+    - href: eap/building-apps/seo/seo-best-practices.md
+    - topics: 
+        - href: eap/building-apps/seo/improve-seo-prerendering.md
+        - href: eap/building-apps/seo/prerender-usage-config.md
+        - href: eap/building-apps/seo/generating-sitemap-robot-files.md
 
 # Debugging apps
 - href: eap/debugging-apps/intro.md
@@ -368,6 +379,8 @@
         - topics: 
             - href: eap/integration-with-systems/mobile-plugins/health-fitness/intro_v2.md
         - href: eap/integration-with-systems/mobile-plugins/keystore-plugin/intro.md
+        - topics:
+            - href: eap/integration-with-systems/mobile-plugins/keystore-plugin/keystore-ref.md
         - href: eap/integration-with-systems/mobile-plugins/location/intro.md
         - href: eap/integration-with-systems/mobile-plugins/payments-plugin/intro.md
         - href: eap/integration-with-systems/mobile-plugins/ssl-pinning/intro.md
@@ -427,6 +440,57 @@
 - href: eap/monitor-and-troubleshoot/monitor-apps.md
 - topics:
     - href: eap/monitor-and-troubleshoot/app-health.md
+
+    #Manage technical debt
+    - href: eap/monitor-and-troubleshoot/manage-technical-debt/managing-tech-debt.md
+    - topics:
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/how-does-aims-works.md
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/getting-started-aims-tl.md
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/getting-started-aims-dev.md                        
+        #Maintainability
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/maintainability/maintainability.md
+        - topics:
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/maintainability/long-undocumented-flow.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/maintainability/missing-descriptions-on-public-element-or-parameter.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/maintainability/hard-coded-statements.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/maintainability/unused-action-in-app-or-library.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/maintainability/unused-aggregate-or-sql-query.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/maintainability/reminder-comments.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/maintainability/too-much-disabled-code.md
+        #Performance
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/performance.md
+        - topics: 
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/aggregate-or-sql-query-inside-a-cycle.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/inefficient-query-count.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/inline-css-style.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/long-server-requests-timeout.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/multiple-server-requests-inside-client-actions.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/sequence-of-connected-aggregates.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/unlimited-records-in-aggregate.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/unlimited-records-in-sql-query.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/inefficient-empty-list-test.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/avoid-long-running-timers.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/css-in-the-screen-style-sheet.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/large-resource.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/large-image.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/non-optimized-local-fetch.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/non-optimized-local-storage.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/not-taking-advantage-of-local-storage.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/incorrect-offline-sync-method.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/no-asynchronous-offline-sync.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/complex-splash-screen.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/performance/server-requests-in-client-events.md
+        #Security
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/security.md
+        - topics:
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/avoid-setting-screens-accessible-everyone.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/exposed-rest-services-are-not-secured.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/insecure-usage-of-getuserid-in-client-block-parameters.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/insecure-usage-of-getuserid-on-client-context.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/screen-aggregates-exposing-system-entities-on-anonymous-screens.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/sql-injection.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/visible-disabled-button.md
+
     - href: eap/monitor-and-troubleshoot/traces.md
     - href: eap/monitor-and-troubleshoot/client-side-traces.md
     
@@ -514,7 +578,7 @@
     # Build errors
     - href: error/bld/intro.md
     - topics:
-        - href: error/bld/OS-BLD-FE-400001.md
+        - href: error/bld/OS-BLD-FE-40001.md
     # Errors External Libraries SDK
     - href: error/elg/intro.md
     - topics:

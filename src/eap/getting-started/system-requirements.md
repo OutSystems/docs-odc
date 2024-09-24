@@ -89,13 +89,40 @@ Use the most current version of the following browsers:
 
 For more information about the latest supported Android and iOS platform versions and the minimum requirements to generate mobile apps, refer to [Mobile Apps Build Service (MABS)](https://success.outsystems.com/support/release_notes/mobile_apps_build_service_versions/)
 
-## Request limits
+### Client-side traces
 
-The following are the request limits to keep in mind when you are building apps.
+ODC supports the following client-side trace request limits: 
 
-### Upload request size
+* Up to 400 trace requests every minute and 3500 requests daily per stage.
 
-The maximum size of an upload file request is 28.6 MB.
+## Platform limits
+
+The following table shows the limits of the ODC to keep in mind when you are building apps. Unless otherwise noted, each limit is stage-specific. These limits cannot be exceeded and may cause errors or a drop in performance if reached.
+
+| **Name**                                 | **Limit** | **Description** |
+| ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
+| App log retention (days)                 |        28 | The maximum number of days that logs are retained (plus 21 days of additional backup retrievable via support ticket). |
+| Concurrent events                        |       100 | The maximum number of events that can run concurrently. |
+| Concurrent timers                        |         6 | The maximum number of timers that can run concurrently. |
+| Custom code execution duration (seconds) |        90 | The maximum time a single custom code function can execute. |
+| Custom code memory (MB)                  |     1,024 | The maximum memory available for custom code functions while executing. |
+| Custom code storage (MB)                 |       512 | The maximum amount of ephemeral storage available for custom code functions while executing. |
+| DB backup retention (days)               |        30 | The maximum number of days database backups are retained. |
+| Event duration (minutes)                 |         2 | The maximum duration of a handler of an event in minutes. |
+| Events per queue                         |    10,000 | The maximum number of events that can be queued. Upon reaching the limit, an exception is thrown. |
+| Expose REST API method timeout (seconds) |        60 | The maximum amount of time an Expose REST API method executes before timing out. |
+| Log rate/minute (thousands)              |         2 | The maximum rate at which logs can be captured, in thousands per minute. |
+| Max requests (per IP)                    |     5,000 | The maximum number of HTTP requests that can be made from a given IP address within a 5-minute window across all stages. |
+| Service action timeout (seconds)         |       100 | The time a service action waits for a response before timing out. |
+| Timer execution timeout (minutes)        |        60 | The maximum time a timer can execute. |
+| Trace retention (days)                   |        28 | The maximum number of days that traces are retained (plus 21 days of additional backup retrievable via support ticket). |
+| Trace size (MB)                          |        15 | The maximum size of traces. Traces exceeding this are dropped. |
+| Trace spans rate/minute (thousands)      |        50 | The maximum rate at which trace spans can be captured, in thousands per minute. |
+| Client side trace requests every minute per stage  |        400 | The maximum number of client-side trace requests every minute. |
+| Client side trace requests daily per stage  |           3500 | The maximum number of client-side trace requests daily. |
+| Upload request size (MB)                 |      28.6 | The maximum file size allowed when uploading. |
+| Workflow activity max duration (seconds) |       120 | The maximum duration of a workflow activity. |
+| Workflow concurrent versions             |         5 | The maximum number of workflow versions that can run concurrently. |
 
 ### Server request timeout
 
@@ -104,19 +131,3 @@ The maximum value of the **Server Request Timeout** property is 60 seconds for q
 ![Screenshot of app's property editor](images/edit-app-properties-odcs.png "Edit App Properties")
 
 For queries or actions inside timer logic, the maximum timeout value is 60 minutes.
-
-#### Service action timeout
-
-The timeout value for a service action is 100 seconds. This can't be configured.
-
-### Timers timeout
-
-The maximum value of the **Timeout in Minutes** property is 60 minutes.
-
-### Traces
-
-As you work with traces, consider the following:
-
-* Traces exceeding the size of 15 MB are automatically dropped. 
-* ODC allows up to 50,000 spans per minute per stage for traces. 
-* ODC displays traces up to 5000 spans for a single trace.

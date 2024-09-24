@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) introduces Charts API v2, enabling advanced chart creation and customization using Highcharts 11.0.0.
+summary: OutSystems Developer Cloud (ODC) introduces Charts API v2, enabling advanced chart creation and customization using Highcharts 11.4.6.
 tags:
 locale: en-us
 guid: b5070497-8f92-4f84-ad4e-4465de6dde0e
@@ -15,7 +15,7 @@ Available from OutSystems Charts v3.0.0. For more information on how to use the 
 
 </div>
 
-The Charts API v2 allows you to create, populate, and customize charts. OutSystems uses Highcharts 11.0.0 to generate the charts. For more information about implementation and the API, see the [Highcharts documentation](https://api.highcharts.com/highcharts/). 
+The Charts API v2 allows you to create, populate, and customize charts. OutSystems uses Highcharts 11.4.6 to generate the charts. For more information about implementation and the API, see the [Highcharts documentation](https://api.highcharts.com/highcharts/). 
 
 ## Charts
 

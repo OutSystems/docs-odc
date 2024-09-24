@@ -66,7 +66,6 @@ For example, in a finance app, you need to store user details. Since this data c
 
 To convert an existing entity to a static entity right-click the entity and select **Convert to Static Entity** from the **Advanced** menu.
 
-After converting an entity to a static entity the records from the database can be imported as static records. To import the database records, right-click the static entity, select **Edit Entity**, and then click the **Import from Database** button.
 
 <div class="info" markdown="1">
 

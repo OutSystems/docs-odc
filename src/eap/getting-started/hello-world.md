@@ -28,7 +28,7 @@ Open ODC Studio and follow these steps to create your "Hello, world" app:
 2. Select **App** and click **Continue**.
 3. Select **Web app** and click **Continue**.
 4. Enter the name of your app and click **Create app**.
-5. From the toolbox, drag a Screen to the screen.
+5. From the toolbox, drag a Screen to the canvas.
 
      ![Screenshot showing the process of dragging a screen component onto the canvas in ODC Studio](images/hello-world-drag-screen-odcs.png "Dragging a Screen to the Canvas in ODC Studio")
 

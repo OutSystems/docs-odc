@@ -12,7 +12,7 @@ platform-version: odc
 
 You can use the Tabs UI Pattern to divide content into meaningful sections. This pattern is useful when you want the user to be able to switch between sections within the same context while not having to not to navigate to different areas.
 
-![Animated example of the Tabs UI Pattern in action](images/tab-gif1.gif "Tabs UI Pattern Example")
+<iframe src="https://player.vimeo.com/video/977630907" width="750" height="300" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Switching between different tabs in the Tabs UI Pattern.</iframe>
 
 ## How to use the Tabs UI Pattern
 
@@ -28,7 +28,7 @@ You can use the Tabs UI Pattern to divide content into meaningful sections. This
 
     By default, the Tabs widget contains 3 Header Items (tab titles) and 3 Content Items (tab content). You can add or delete as many as required.
 
-1. Add the relevant content to the Header Item and Content Item placeholders, for example, forms, images, link, and text. 
+1. Add the relevant content to the Header Item and Content Item placeholders, for example, forms, images, link, and text.
 
     In this example, text is added.
 

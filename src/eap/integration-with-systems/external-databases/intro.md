@@ -108,7 +108,6 @@ Before accessing data from an external database, verify that you have the correc
 
 External database connections can be created with read-only permissions or other permission restrictions. Entity CRUD actions (to create, update, or delete records) are always automatically created in ODC Studio regardless of the permissions of the database connection user. If you intend to use the full CRUD actions, ensure that the database users carries the proper permissions.
 
-
 ## Create a new connection
 
 To create a new database connection, go to the ODC Portal and follow these steps:
@@ -137,12 +136,13 @@ To create a new database connection, go to the ODC Portal and follow these steps
     * Click Apply to all stages to use the same connection information in all stages.
     * Select the stage name to use connection information for a single stage.
 
+You can use stored procedures as custom code (C#) to integrate complex database operations directly into your apps. For more information, refer to [Supporting stored procedure in ODC](../../building-apps/external-logic/stored-procedure.md).
 
 ## Select entities for use in an app
 
 After connecting to an external database, select the entity names and attributes available in ODC Portal. To select entities, go to the ODC Portal and follow these steps:
 
-1. From the ODC Portal nav menu, select **Resource** > **Connections**, and click **Select entities** to display the **Add entities** connection screen. <br/>The connection screen displays the available entities retrieved from the database.
+1. From the ODC Portal nav menu, select **Integrate** > **Connections**, and click **Select entities** to display the **Add entities** connection screen. <br/>The connection screen displays the available entities retrieved from the database.
 
     ![Screenshot showing the process of selecting entities and attributes from an external database in OutSystems Developer Cloud Portal](images/external-db-entity.png "External Database Entities Selection")
 
@@ -155,7 +155,7 @@ Selected entities and attributes are now available as [public elements](../../bu
 
 To edit an existing database connection, go to ODC Portal and follow these steps:
 
-1. From the ODC Portal nav menu, select **Resource** > **Connections** to display the list of connections.
+1. From the ODC Portal nav menu, select **Integrate** > **Connections** to display the list of connections.
 1. From the list of connections, select the one to edit.
 
 You can only change the name and description without testing your connection again.
@@ -200,13 +200,13 @@ To handle null values while integrating with external systems. Administrators mu
 
 | SQL Server and Azure SQL | Oracle | SAP OData | Salesforce | PostgreSQL |OutSystems data type |
 |--|--|--|--|--|--|
-Char<br/>Varchar<br/>Text<br/>Nchar<br/>Nvarchar<br/>Ntext<br/>Xml<br/>Decimal(Any,> 8)<br/>Numeric(Any,>8) <br/>Real<br/>Float<br/>UniqueIdentifier<br/>Time<br/>Datetimeoffset | Char<br/>Varchar<br/>Varchar2<br/>Clob<br/>Long<br/>Nchar<br/>NVarchar2<br/>Nclob<br/>Number(Any,> 8)<br/>Float<br/>RowId<br/>URowId | Varchar<br/>UUID| UUID<br/>VARCHAR<br/>FLOAT<br/>Time| Varchar<br/>NVarchar<br/>Text<br/>Varbit<br/>Character<br/>Char<br/>Bpchar<br/>Time<br/>Numeric(Any, >8)<br/>Numeric(>28, Any)<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)<br/>Float4<br/>Float8<br/>Float8_range<br/>Real<br/>Double precision<br/>XML<br/>JSON<br/>UUID<br/>Pg_lsn<br/>Enum |Text|
-Tinyint<br/>Smallint<br/>Int<br/>Decimal(1-9,0)<br/>Numeric(1-9,0) | Number(2-9,0) | Int | Int | Smallint<br/>Integer<br/>Int<br/>Int2<br/>Int4<br/>Numeric<br/>Numeric(1-9, 0)<br/>Decimal(1-9, 0)<br/>Smallserial<br/>Serial<br/>Serial4 |Integer |
-Bigint<br/>Decimal(10-18,0)<br/>Numeric(10-18,0) | Number(10-18,0) | | | Bigint<br/>Int8<br/>Bigserial<br/>Serial8<br/>Decimal(10-18, 0)<br/>Numeric(10-18, 0) |Long Integer |
-Decimal(19-28,0-8)<br/>Decimal(1-18,>1-8)<br/>Numeric(19-28,0-8)<br/>Numeric(1-18,>1-8)<br/>Money<br/>Smallmoney | Number(19-28,0-8)<br/>Number(1-18,1-8) | Decimal| Decimal | Numeric(1-28, 1-8)<br/>Decimal(1-28, 1-8)<br/>Numeric(19-28, 0)<br/>Decimal(19-28, 0)<br/>Money | Decimal |
-Bit | Number(1,0) | Bit| Bit | Bit<br/>Boolean<br/>Bool |Boolean |
+Char<br/>Varchar<br/>Text<br/>Nchar<br/>Nvarchar<br/>Ntext<br/>Xml<br/>Numeric(Any, >8)<br/>Decimal(Any, >8)<br/>Real<br/>Float<br/>UniqueIdentifier<br/>Time<br/>Datetimeoffset | Char<br/>Varchar<br/>Varchar2<br/>Clob<br/>Long<br/>Nchar<br/>NVarchar2<br/>Nclob<br/>Number(Any, >8)<br/>Float<br/>RowId<br/>URowId | Varchar<br/>UUID<br/>Time<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)| UUID<br/>VARCHAR<br/>FLOAT<br/>Time| Varchar<br/>NVarchar<br/>Text<br/>Varbit<br/>Character<br/>Char<br/>Bpchar<br/>Time<br/>Numeric(Any, >8)<br/>Numeric(>28, Any)<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)<br/>Float4<br/>Float8<br/>Float8_range<br/>Real<br/>Double precision<br/>XML<br/>JSON<br/>UUID<br/>Pg_lsn<br/>Enum |Text|
+Tinyint<br/>Smallint<br/>Int<br/>Numeric(2-9, 0)<br/>Decimal(2-9, 0) | Number(2-9, 0) | Int<br/>Decimal(2-9, 0) | Int | Smallint<br/>Integer<br/>Int<br/>Int2<br/>Int4<br/>Numeric<br/>Numeric(2-9, 0)<br/>Decimal(2-9, 0)<br/>Smallserial<br/>Serial<br/>Serial4 |Integer |
+Bigint<br/>Numeric(10-18, 0)<br/>Decimal(10-18, 0) | Number(10-18, 0) | Decimal(10-18, 0) | | Bigint<br/>Int8<br/>Bigserial<br/>Serial8<br/>Numeric(10-18, 0)<br/>Decimal(10-18, 0) |Long Integer |
+Numeric(19-28, 0-8)<br/>Numeric(1-18, >1-8)<br/>Decimal(19-28, 0-8)<br/>Decimal(1-18, >1-8)<br/>Money<br/>Smallmoney | Number(19-28, 0-8)<br/>Number(1-18, 1-8) | Decimal(1-28, 1-8)<br/>Decimal(19-28, 0)| Decimal | Numeric(1-28, 1-8)<br/>Numeric(19-28, 0)<br/>Decimal(1-28, 1-8)<br/>Decimal(19-28, 0)<br/>Money | Decimal |
+Bit<br/>Numeric(1, 0)<br/>Decimal(1, 0) | Number(1, 0) | Bit<br/>Decimal(1, 0)| Bit | Bit<br/>Boolean<br/>Bool<br/>Numeric(1, 0)<br/>Decimal(1, 0) |Boolean |
 Date | | Date | Date | Date |Date|
-Datetime<br/>DateTime2<br/>Smalldatetime | Date<br/>Timestamp | Time<br/>Timestamp  | DateTime | Timestamp | DateTime |
+Datetime<br/>DateTime2<br/>Smalldatetime | Date<br/>Timestamp | Timestamp  | DateTime | Timestamp | DateTime |
 Image<br/>Binary<br/>Varbinary | Blob<br/>Raw<br/>Long Raw | | | Bytea |Binary Data |
 Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType<br/>VARRAY<br/>OBJECT (structured) | | | BIT VARYING<br/>BOX<br/>CIDR<br/>CIRCLE<br/>COMPOSITE (user defined types and other composite types)<br/>INET<br/>INTERVAL<br/>LINE<br/>LSEG<br/>MACADDR<br/>MACADDR8<br/>PATH<br/>POINT<br/>POLYGON<br/>TSQUERY<br/>TSVECTOR<br/>TXID_SNAPSHOT<br/>all of the ARRAY types | Currently not supported and won't appear in ODC Portal.|
 Other data types | Other data types | Other data types |Other data types | Other data types |No official support; attributes may not appear in the ODC Portal or may exhibit unexpected behavior. |
@@ -221,16 +221,37 @@ TINYINT<br/>SMALLINT<br/>INT<br/>BIGINT<br/>FLOAT<br/>DECIMAL<br/>DOUBLE<br/>NUM
 Boolean |Boolean |
 Date | Date |
 
-## Considerations when integrating external database
+## Considerations when integrating external systems
 
-Consider the following when integrating an external database.
+Consider the following when integrating an external system.
 
 * SQL elements don't support external entities.
 * .NET does not support the Julian calendar for Oracle and Salesforce, and the minimum supported timestamp value is -62135596800000. 
     * To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
 * Importing Views in ODC Studio only generates `Create<EntityName>` and `DeleteAll<EntityAction>` actions. Since Views don't have primary keys, ODC doesn't generate other entity actions. 
     * Inserting a record in a View works only when the View comprises 1 table in the database. When View comprises more than 1 table, you may get an error.
+* When a database user lacks the necessary permissions to access the table that a Foreign Key (FK) points to, the Foreign Key is treated as a regular column. This can result in errors during the insertion or updating of records. To prevent such issues, it is advisable to ensure that the user can access all the tables required by the application.
 
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+        Azure SQL
+    </div>
+    <div class="os-accordion__content">
+        <ul>
+            <li>For Azure SQL Managed Instances
+				<ul>
+					<li>As a prerequisite, you might need to create a user database following this format: `username@instance-name`. The username can be any value of your choosing. The `instance-name` can be found in your Microsoft Azure SQL environment. The `host` property contains the `instance-name`.
+						<ul>
+							<li>As an example, if your `host` is `example12345.exampledns.database.windows.net`, the `instance-name` is `example12345`.</li>
+						</ul>
+					</li>
+					<li>When creating the Azure SQL connection in ODC Portal, insert the same username format (`username@instance-name`) on the username input </li>
+                    <li>When creating the Azure SQL connection in ODC Portal, in Additional Parameters input you might need to add `encrypt=true;trustServerCertificate=true;`</li>
+				</ul>
+			</li>
+        </ul>
+    </div>
+</div>
 <div class="os-accordion__item">
     <div class="os-accordion__title">
         Oracle
@@ -256,6 +277,7 @@ Consider the following when integrating an external database.
             <li>SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.</li>
             <li>SAP OData only supports read-only entity actions in ODC Studio.</li>
             <li>SAP throws a `RAISE_SHORTDUMP` exception when requesting the row count for some VIEWS on the first request.</li>
+            <li>Regarding SAP OData queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.</li>
         </ul>
     </div>
 </div>
@@ -273,6 +295,8 @@ Consider the following when integrating an external database.
                 <li>Salesforce removes those white spaces. While inserting an empty string, Salesforce inserts NULL instead.</li>
             </ul>
             <li>Salesforce is case-insensitive, and `ToUpper`/`ToLower` built-in functions don't have the expected behavior in aggregates.</li>
+            <li>When sorting queries by ID, the Salesforce API orders the Id attribute in a case-sensitive manner, which differs from the expected case-insensitive sorting of other attributes. While regular attributes are sorted in the standard order (A, a, B, b, C, c), the Id attribute is sorted with uppercase letters first, followed by lowercase letters (A, B, C, a, b, c).</li>
+            <li>Regarding Salesforce queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.</li>
         </ul>
     </div>
 </div>

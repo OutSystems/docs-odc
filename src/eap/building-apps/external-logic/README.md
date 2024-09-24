@@ -181,7 +181,15 @@ By designing your external libraries with these considerations in mind, you can 
 
 ### Use with large binary files
 
-Server actions exposed by external libraries don't support input larger than 5.5MB. If a large binary file is passed as input to a server action during an app's runtime, the end-user gets an error "Input payload is too large". To make use of a large binary file in custom code you can:
+Server actions from external libraries don't support input sizes larger than 5.5MB. This limit includes all input parameter values, their names, and possible overhead, such as binary data.
+
+<div class="warning" markdown="1">
+
+If you pass a large binary file or string as an input to a server action during runtime, the **Input payload is too large** error is thrown and is logged as a runtime error in the app's logs.
+
+</div>
+
+To use a large binary file in custom code you can:
 
 1. Expose the binary file in a [REST API endpoint](../../integration-with-systems/exposing_rest/intro.md) from your app and then implement logic in your custom code to consume the file from the endpoint.
 1. Host the binary file on a file-sharing service and implement logic in your custom code to download the file from the URL.
