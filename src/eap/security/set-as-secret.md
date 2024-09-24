@@ -35,6 +35,7 @@ Following is an overview of the process for setting a secret:
 1. In ODC Studio, under **Data** > **Settings**, set the property **Is Secret** to **Yes**. ODC Studio hides the value. Also, there is no default value for the field set as secret.
 1. Publish the app to make the field available for editing in the ODC Portal.
 1. In the ODC Portal, from the app details page in a stage, look for the settings section and insert the value for the field.
+   * If you are setting a secret property in a library, you can set its value in the settings of the application consuming it. If multiple applications are consuming a single secret property, each application can have its own value for it.
 
 ## Reverting from secret to non-secret
 

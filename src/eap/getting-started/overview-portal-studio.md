@@ -14,7 +14,7 @@ OutSystems Developer Cloud (ODC) is a cloud-native, low-code development platfor
 
 <div class="info" markdown="1">
 
-You can set the ODC Portal and ODC Studio to Dark or Light themes. The images in this document were taken with a light theme for clarity.
+You can switch between Dark and Light themes in the ODC Portal and ODC Studio. 
 
 </div>
 

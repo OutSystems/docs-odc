@@ -12,6 +12,8 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 
 To implement your workflow, use the workflow editor, a web-based editor accessible from the ODC Portal, where you have access to a set of low-code nodes that will help you implement the workflow. You can integrate your workflows into your apps through events or service actions. Events start the workflow execution. Workflows can consume business logic from events or service actions to gather information for decision-making activities in the workflow.
 
+**Note**: Workflows support [basic input parameters](../data/data-types.md) except binary data type. Parameters with the text data type support a maximum of 2000 characters. For more information about built-in functions available for Workflows, refer to, [Built-in functions for workflows](built-in-functions.md).
+
 Workflows are always triggered by events. To start a workflow, you must always associate an event from the ODC app. For example, if you are implementing a loan approval workflow, you can trigger the workflow when you receive a new loan request by choosing the **NewLoanapplication** event from the ODC app for the **Start** node.
 
 ## High-level process for using workflows in your app

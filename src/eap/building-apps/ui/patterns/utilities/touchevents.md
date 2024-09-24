@@ -42,19 +42,19 @@ You can use the Touch Events UI pattern to hide a header during a scroll action.
 After following these steps and publishing the module, you can test the pattern in your app.
 
 | Element | Code |
-|---|---| 
+|---|---|
 |![JavaScript code snippet for hiding a header on scroll](images/JS_hide.png "JavaScript Code to Hide Header") |  var header = document.querySelector(".header");<br/>header.classList.add("hide");<br/>header.classList.add("header-on-scroll"); |
-|![JavaScript code snippet for showing a header on scroll](images/JS_show.png "JavaScript Code to Show Header") |  var header = document.querySelector(".header");<br/>header.classList.remove("hide");<br/>header.classList.remove("header-on-scroll"); | 
+|![JavaScript code snippet for showing a header on scroll](images/JS_show.png "JavaScript Code to Show Header") |  var header = document.querySelector(".header");<br/>header.classList.remove("hide");<br/>header.classList.remove("header-on-scroll"); |
   
 **Result**
 
-![Animated GIF showing the end result of implementing Touch Events](images/TouchEvents_EndResult.gif "Touch Events End Result")
+<iframe src="https://player.vimeo.com/video/991471309" width="492" height="750" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Video demonstrating the end result of using Touch Events to hide a header during scroll.</iframe>
 
 ## Properties
 
 |**Property** |  **Description** |
-|---|---| 
-| WidgetId  |  This is the element that responds to the touch you configure.| 
+|---|---|
+| WidgetId  |  This is the element that responds to the touch you configure.|
 
 ## Compatibility with other patterns
 

@@ -66,13 +66,13 @@ Powered by AWS Elastic Kubernetes Service (EKS), the Platform and each of the Ru
 
 To run on a Kubernetes cluster, each Platform service is packaged into a **container**. A container is a lightweight, standalone, executable software package. It includes everything the app needs to run: code, runtime, system tools, system libraries, and settings. See [Security in OutSystems Developer Cloud](../../security/security.md#containers) for more information about container security.
 
-##### Auto scaling
+##### Auto-scaling
 
 The compute capacity for each running Platform service is scalable. Many developers can use the Build Service or any other service concurrently without any performance degradation of the Platform. This lets multiple teams rapidly scale the development process independently of the deployed apps.
 
-The following diagram shows how auto scaling works inside the Platform cluster.
+The following diagram shows how auto-scaling works inside the Platform cluster.
 
-![Diagram explaining how auto scaling works inside the Platform cluster of OutSystems Developer Cloud.](images/architecture-platform-k8s-diag.png "Platform Cluster Auto Scaling") 
+![Diagram explaining how auto-scaling works inside the Platform cluster of OutSystems Developer Cloud.](images/architecture-platform-k8s-diag.png "Platform Cluster Auto-Scaling") 
 
 The **auto scale controller** monitors the CPU and RAM usage of each running service. It continuously checks the usage against the cluster compute capacity allocated and allocates additional capacity if the CPU and RAM usage exceeds a defined threshold.
 
@@ -88,13 +88,13 @@ The Build Service packages each container image into a separate container, makin
 
 The auto scale controller replicates app containers running in each Runtime (Production) cluster across multiple availability zones to ensure **high availability (HA)**. An availability zone is a distinct location in the cloud that's engineered to be isolated from failure.
 
-##### Auto scaling
+##### Auto-scaling
 
 The compute capacity for each app container running in each non-Development Runtime stage is scalable. This lets each app scale independently.
 
-The following diagram illustrates how auto scaling works inside the Runtime cluster.
+The following diagram illustrates how auto-scaling works inside the Runtime cluster.
 
-![Illustration of auto scaling mechanism inside the Runtime cluster for OutSystems Developer Cloud apps](images/architecture-runtime-scale-diag.png "Runtime Cluster Auto Scaling")
+![Illustration of auto-scaling mechanism inside the Runtime cluster for OutSystems Developer Cloud apps](images/architecture-runtime-scale-diag.png "Runtime Cluster Auto-Scaling")
 
 The **auto scale controller** monitors the CPU and RAM usage of each app container. It continuously checks the usage against the cluster compute capacity allocated and allocates additional capacity if the CPU and RAM usage exceeds a defined threshold.
 
@@ -125,7 +125,7 @@ Each Runtime stage has an isolated Amazon Aurora Serverless database. The follow
 
 Data is automatically written to two availability zones simultaneously.
 
-The Amazon Aurora database architecture model decouples compute and storage. Storage volume automatically scales as the amount of data stored increases.
+The Amazon Aurora database architecture model decouples compute and storage, and both automatically scale independently. The Database CPU and Memory automatically scale as the amount of load increases, and the database storage volume automatically scales as the amount of data stored increases.
 
 You can store secret data for your apps such as API keys as secret settings in a secret manager.
 

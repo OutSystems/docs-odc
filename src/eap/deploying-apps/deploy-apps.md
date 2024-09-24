@@ -58,7 +58,7 @@ To deploy your asset to a stage:
 
     **Note**: If you are deploying an app to production, you can change the version number before deploying.
 
-Your asset is deployed to your selected stage. 
+Your asset is deployed to your selected stage. To roll back an update from a stage, you must deploy an older version in ODC Portal. 
 
 For more information about the impact analysis report, refer to [Understanding the impact analysis report](#understanding-the-impact-analysis-report).
 

@@ -19,6 +19,8 @@ Only users can manage their passwords. Users can change their password using the
 
 Organization members with an organization role such as Developer or Admin can also recover their forgotten password from the Portal login page by clicking **Forgot password**.
 
+If you're not receiving the password reset email, please check your spam folder and any filters. The emails are sent from `noreply@outsystems.dev`.
+
 <div class="info" markdown="1">
 
 Admins don't have permission to change or recover other users' passwords.

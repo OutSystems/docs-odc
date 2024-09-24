@@ -20,9 +20,7 @@ This ODC feature only works if your IdP supports groups. Check with your IdP to 
 
 </div>
 
-According to the roles on the IdP, each end-user that exists in the IdP can log in to ODC with the appropriate roles. When the mapping completes, end-users are automatically granted roles and access to apps for the ODC group. If an end-user already exists in ODC, their permissions synchronize according to the existing group mapping if applicable. This happens every time an end-user logs into ODC.
-
-Before you can map an IdP end-user group to an ODC end-user group, You need the following:
+According to the roles on the IdP, each end-user that exists in the IdP can log in to ODC with the appropriate roles. When the mapping completes, end-users are automatically granted roles and access to apps for the ODC group. If an end-user already exists in ODC, their permissions synchronize according to the existing group mapping if applicable. This happens every time an end-user logs into ODC. For more informaiont about Roles, refer to [Roles](../../user-management/roles.md)
 
 You need the following before you can map groups:
 
@@ -45,11 +43,11 @@ To map a provider to an End-user group, from the portal, select **End-user group
 
 Click the **Group mappings** tab to display all group mapping for this group. In the Group mappings section, you can view all mappings, active mappings, or inactive mappings. An **Inactive** status indicates that the IdP and group aren't in the same stage. Hover over the Inactive status to learn what you need to fix to make the mapping active.
 
-To add a new mapping, click **Add mapping**. All fields are required. From the Provider drop-down, select a provider. Enter a **claim name** and a **group name**. Your IdP provides the claim value, which is the group claim (identifier) and the group name.
+To add a new mapping, click **Add mapping**. All fields are required. From the Provider drop-down, select a provider. Enter a **claim name** and a **Claim value (provider group)**. Your IdP provides the claim value, which is the group claim (identifier) and the Claim Name.
 
 <div class="info" markdown="1">
 
-For Azure AD (or Microsoft Entra) the claim value should be the Object Id of the group.
+For Azure AD (or Microsoft Entra) the claim value should be the Object Id of the group and the claim name should simply be "groups".
 
 </div>
 
@@ -59,11 +57,42 @@ To connect a provider to an end-user group, from the ODC Portal, select **Identi
 
 The Group mappings summary page shows the current mappings for this Provider. The display shows the Provider group(s) and end-user groups that are mapped and the current status. An **Inactive** status indicates that the IdP and end-user group aren't in the same stage. Hover over the Inactive status to learn what you need to fix to make the mapping active.
 
-To add a new mapping, click **Add mapping**. You must enter a **Claim name** and a **Group name**. Your IdP provides the claim value, the group claim (identifier), and the group name. In the End-user group section, click on the group(s) you want to map, select a stage, and then click **Save**. When the mapping completes, end-users can log into ODC and access the apps assigned to the group.
+To add a new mapping, click **Add mapping**. You must enter a **Claim name** and a **Claim value (provider group)**. Your IdP provides the claim value (identifier) and the group claim. In the End-user group section, click on the group(s) you want to map, select a stage, and then click **Save**. When the mapping completes, end-users can log into ODC and access the apps assigned to the group.
+
+When an admin removes a user from an Okta group through the Okta dashboard, the user can no longer log in to the app. However, the user still appears as mapped in the ODC Portal.
+
+If a user is added to Okta, it won't appear in the ODC Portal immediately. User is required to log in to the app for the first time for their mapping to appear in the ODC Portal. The admin must refresh the page in order to see the user added in the list.
 
 For more information about setting up the claim in Azure, [click here](https://learn.microsoft.com/en-us/azure/active-directory/hybrid/connect/how-to-connect-fed-group-claims).
 
 For more information about setting up the claim in OKTA, [click here](https://help.okta.com/asa/en-us/content/topics/adv_server_access/docs/group-management.htm).
+
+## Managing users in end-user groups
+
+When viewing the users linked to the end-user group, you can link the users in the following ways:
+
+* Mapped users are automatically assigned to the end-user group when they log in using the Identity Provider. These assignments are not managed on the ODC Portal and are done during login. 
+* Assigned users are explicitly assigned to the end-user group on the ODC Portal. 
+* Assigned & mapped users are both assigned and mapped to the end-user group. 
+
+Assigned users can be unassigned anytime from the ODC Portal. However, mapped users can't be unmapped from the ODC Portal and remain mapped to the end-user group even if they get unassigned from the external provider group.
+ 
+<div class="info" markdown="1">
+
+Mapped users who haven't logged in using the Identity Provider are not displayed in the end-user group. 
+
+</div>
+
+You can manually add assigned users in the ODC Portal, follow these steps to add assigned users:
+
+1. Go to the ODC Portal, and from the Navigation menu, select **End-user groups** to display the list of groups.
+1. Select the group you want to add users to.
+1. Click **Users** to display the list of users. 
+1. Click **Assign users** to display a popup where you can assign or unassign users from the group.
+
+If the user mapping is from an external IDP, access gets revoked after removing the mapping from the IDP. However, if you assign the users in the ODC portal, they retain access after the removal of mapping from the IDP.
+
+To remove a user from a group, access the identity provider managing the user account and remove the user from the mapped provider group. However, the user still appears mapped in the ODC Portal. Although the user can't log in, the mapping remains visible until the next login attempt.
 
 ## After mapping IdPs and end-user groups
 
