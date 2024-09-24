@@ -10,7 +10,7 @@ platform-version: odc
 
 # Configure IP filters 
 
-By default, all apps are publicly available. IP Filters allow you to create rules to restrict the traffic coming into your apps at the network level based on the IP address of the request. For example, you can restrict access to apps in development so that only your developers can access them. IP Filters don't restrict or limit access to the ODC Portal.
+By default, all apps are publicly available. IP Filters allow you to create rules to restrict the traffic coming into your apps based on the IP address of the request. For example, you can restrict access to apps in development so that only your developers can access them. IP Filters don't restrict or limit access to the ODC Portal.
 
 Implementing IP filtering enhances security and reduces the risk of unauthorized access by adding a layer of protection on top of application permissions and governance. To know how ODC is secure by design, see [Security of OutSystems Developer Cloud.](../security/security.md)
 
