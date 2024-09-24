@@ -40,8 +40,12 @@ To investigate the error further, follow these steps:
 
 1. Select the erroneous workflow activity to display the error details. 
 
-    ![Screenshot of error details for the erroneous workflow activity](images/error-detail-pl.png "error details for the erroneous workflow activity")
+    ![Screenshot of error details for the erroneous workflow activity](images/error-detail-pl.png "Error details for the erroneous workflow activity")
 
-1. Fix the error.   
+1. After fixing the error, you can **Retry** the service action execution within the activity. 
+
+   **Note**: You can only retry the execution of service actions used in automatic activities, human activities, and decisions.
+
+    ![Screenshot of error details with Retry button](images/error-retry-pl.png "Error details with Retry button")
 
 Additionally, for more information about the error, you can navigate to the related Trace, when available. 

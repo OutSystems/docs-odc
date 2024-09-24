@@ -96,10 +96,6 @@ Client-side spans are collected and stored on the client side and sent to the OD
 
 ## Limits and Known Limitations
 
-ODC supports the following trace request limits:
-
-- Up to 400 trace requests every minute and 3500 requests daily per stage.
-
 Consider the following limitations when working with client-side traces:
 
 - You can activate client-side traces only for apps published on or after August 8, 2024. You must publish or deploy the app to view traces.
