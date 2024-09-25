@@ -5,7 +5,7 @@ locale: en-us
 guid: 55439e03-d90e-46f7-aac5-1cc0d1c42c90
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5857-60
+figma: 
 ---
 
 # Add wait 
@@ -25,11 +25,12 @@ To include wait in a workflow, follow these steps:
     b. **Close on**: (Mandatory) Select the event and define the conditions required to end the wait. You can specify one or more conditions for each event. 
     
     * The left side of each condition is always one of the event's input parameters.
-    * On the right side, you can select either a literal value or a value from a drop-down list.
-    * The condition is considered true when the left side equals the right side.
 
-    ![Workflow editor sidebar showing the configuration of conditions for the Close on event.](images/close-on-event-conditions-pl.png "Close On Event Conditions")
+    * On the right side, you can select either a literal value or a value from a drop-down list.
+
+    * The condition is considered true when the left side equals the right side.
 	
     If multiple conditions are defined, they are combined using the AND operator and evaluated together as True or False.
 
 Once the event occurs and the conditions are met, the wait ends, and the workflow moves on to the next step.  
+
