@@ -20,6 +20,10 @@ With the workflow editor, you can:
 
 * Establish a connection between the workflow and the app by selecting events, service actions, and screens for specific nodes in the workflow.
 
+* Import and export workflows to share within your organization and with external partners.
+
+Consider this example of approving a bank transaction:
+
 1. The workflow starts when a customer submits a loan application to the bank
 
 2. A customer relationship manager manually validates the customer's background information.
