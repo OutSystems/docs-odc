@@ -31,4 +31,3 @@ Please check the [Strict mode documentation by MDN](https://developer.mozilla.or
 ## More info
 
 On apps where Strict Mode violations have multiple occurrences, OutSystems shows only the list the first six findings.
-
