@@ -16,7 +16,7 @@ Achieve this by using a reverse proxy or CDN.
 
 Refer to [Improve SEO with prerendering](improve-seo-prerendering.md#domain) which outlines how to configure the reverse proxy Nginx in front of ODC.
 
-Using a reverse proxy or CDN, you can redirect a root domain or other subdomain, e.g., example.com to a default ODC app located at `www.example.com/appx/home` ({domain}/{app}/{screen}).
+Using a reverse proxy or CDN, you can redirect a root domain or other subdomain, e.g., example.com to a default ODC app located at `www.example.com/appx/home` (`{domain}/{app}/{screen}`).
 
 The following snippet is an example of how to achieve this using Nginx reverse proxy: 
 
