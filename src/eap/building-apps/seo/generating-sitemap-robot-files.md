@@ -65,9 +65,11 @@ The REST method’s output is an XML formatted list that includes all URL endpoi
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
      <url>
         <loc>https://example.com/Home</loc>
+        <lastmod>2024-09-01T18:00:15+00:00</lastmod>
      </url>
      <url>
         <loc>https://example.com/Login</loc>
+        <lastmod>2024-09-01T18:00:15+00:00</lastmod>
      </url>
 </urlset>
 ```
@@ -78,7 +80,7 @@ To generate and validate a sitemap that includes both static and dynamic screens
 
 1. Add URLs for screens without input parameters (static screens).
 
-1. Compute and add URLs based on aggregate results for all screens that require input parameters (dynamic screens).
+1. Compute and add URLs based on Aggregate results for all Screens that require Input Parameters (dynamic screens).
 
 1. To validate the sitemap output, go to the method URL, right-click the **REST API** and select **Open documentation**. Then click **GET**, copy the Request URL and paste it in a new browser tab.
 
@@ -86,7 +88,7 @@ A list of URLs for your app’s screens are displayed. Validate if new URLs appe
 
 ### Add sitemap.xml to the root directory of a domain
 
-ODC doesn't support the functionality to set an app at the root directory of a domain. Refer to [Sitemap.xml](./improve-seo-prerendering.md#sitemapxml) for how the sitemap is configured with the help of a Reverse Proxy or CDN.
+ODC doesn't support the functionality to set an app at the root directory of a domain. Refer to [Sitemap.xml](improve-seo-prerendering.md#sitemapxml) for how the sitemap is configured with the help of a Reverse Proxy or CDN.
 
 ## Robots.txt
 
@@ -94,7 +96,7 @@ The `robots.txt` is a text file with instructions for search engine crawlers. It
 
 A `robots.txt` file consists of one or more rules. Each rule blocks or allows a crawler to access a specified file path on the domain or subdomain that hosts the `robots.txt` file. Using this text file, you can exclude domains, directories, subdirectories, or individual files from search engine crawling. The `robots.txt` file can also integrate a link to your sitemap, which gives search engine crawlers an overview of all URLs of your domain.
 
-The `robots.txt` is stored in the root directory of a domain. Thus it is the first document that crawlers open when visiting your website.
+The `robots.txt` is stored in the root directory of a domain. Thus, it's the first document that crawlers open when visiting your website.
 `Robots.txt` files follow the Robots Exclusion Protocol and this is an example of what they look like:
 
 ```
@@ -119,4 +121,4 @@ To create a static `robots.txt` file, follow these steps:
 
 ### Add robots.txt to the root directory of a domain
 
-ODC doesn’t support the functionality to set an app at the root directory of a domain. Refer to [Sitemap.xml](./improve-seo-prerendering.md#sitemapxml)for how the robots file can be configured with the help of a Reverse Proxy or CDN.
+ODC doesn’t support the functionality to set an app at the root directory of a domain. Refer to [Robots.txt](improve-seo-prerendering.md#robotstxt) for how the robots file can be configured with the help of a Reverse Proxy or CDN.

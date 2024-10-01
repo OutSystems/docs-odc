@@ -10,7 +10,7 @@ figma:
 
 # Improve SEO with prerendering
 
-OutSystems reactive applications are Single Page Applications (SPAs). These are web apps that load a single page and update content dynamically. They offer benefits like dynamic content, smooth navigation, improved performance, offline capabilities, and development simplicity.
+OutSystems Reactive apps are Single Page Applications (SPAs). These are web apps that load a single page and update content dynamically. They offer benefits like dynamic content, smooth navigation, improved performance, offline capabilities, and development simplicity.
 
 When a user accesses the app, the server returns a bare HTML file and some JavaScript that executes on the client side to render the UI. This also allows fetching data asynchronously in parallel with page rendering.
 
@@ -18,11 +18,11 @@ However, when you have very complex logic, or you retrieve a large amount of dat
 
 In these situations, you benefit from using the pre-render technology. Although this improves your app's Core Web Vitals, it doesn't affect the end-user experience.
 
-This article explains how to integrate the OutSystems platform with a third-party pre-rendering solution called [prerender.io](http://prerender.io).
+This article explains how to integrate the OutSystems platform with a third-party pre-rendering solution called [Prerender](http://prerender.io).
 
 <div class="info" markdown="1"> 
 
-There are other pre-render solutions on the market. OutSystems recommends [prerender.io](http://prerender.io) as one of your pre-rendering options due to its significant SEO improvements. OutSystems isn't affiliated with or sponsored by Prerender.io, and doesn’t receive any economic or financial benefit from customers subscribing to their services.
+There are other pre-render solutions on the market. OutSystems recommends [Prerender](http://prerender.io) as one of your pre-rendering options due to its significant SEO improvements. OutSystems isn't affiliated with or sponsored by Prerender, and doesn’t receive any economic or financial benefit from customers subscribing to their services.
 
 </div>
 
@@ -30,25 +30,25 @@ There are other pre-render solutions on the market. OutSystems recommends [prere
 
 ### Custom domain
 
-To integrate an external prerender solution, you need a custom domain. For more information, refer to [Configure custom domains for apps](../../manage-platform-app-lifecycle/custom-domains.md),
+To integrate an external prerender solution, you need a custom domain. For more information, refer to [Configure custom domains for apps](../../manage-platform-app-lifecycle/custom-domains.md).
 
-### Prerender.io account
+### Prerender account
 
-To configure your pre-render solution, you need an account with Prerender.io. Select a [plan](https://prerender.io/pricing/) that meets your budget and requirements.
+To configure your pre-render solution, you need an account with Prerender. Select a [plan](https://prerender.io/pricing/) that meets your budget and requirements.
 
-For more information on the criteria to consider when selecting a plan, refer to [Prerender.io usage and configuration](prerender-usage-config.md) 
+For more information on the criteria to consider when selecting a plan, refer to [Prerender usage and configuration](prerender-usage-config.md).
 
 ### Reverse Proxy/CDN
 
-Prerender.io offers several options to integrate with your application. Integrating with ODC can be achieved using a Reverse Proxy or CDN. 
+Prerender offers several options to integrate with your application. Integrating with ODC can be achieved using a [Reverse Proxy or CDN](https://docs.prerender.io/docs/integrations-1).
 
-## Integrating prerender.io with Nginx Reverse Proxy
+## Integrating Prerender with Nginx Reverse Proxy
 
-When a search engine or a social media bot requests a page, Prerender.io provides the response. If the requested page is already cached, a cached version is served. If not, Prerender.io fetches the page from your OutSystems app, renders its JavaScript, and serves the fully rendered page to the bot.
+When a search engine or a social media bot requests a page, Prerender provides the response. If the requested page is already cached, a cached version is served. If not, Prerender fetches the page from your OutSystems app, renders its JavaScript, and serves the fully rendered page to the bot.
 
 <div class="info" markdown="1">
 
-This process is subject to change. For any updates and additional information, refer to [Prerender.io knowledge base](https://docs.prerender.io/docs/nginx-1).
+This process is subject to change. For any updates and additional information, refer to [Prerender knowledge base](https://docs.prerender.io/docs/nginx-1).
 
 </div>
 
@@ -62,9 +62,9 @@ Acquire an SSL certificate for a custom domain to use with the Proxy/CDN. If usi
 
 The following is an example of configuring Nginx to support an SSL certificate:
 
-Modify `nginx/sites-available`
+Modify the file `nginx/sites-available/default` and add the following inside the `server` section: 
 
-Add the following inside the `server` section: 
+Note: Replace `example.com` with your domain.
 
 ```
 # Standard configuration
@@ -79,15 +79,15 @@ client_max_body_size = 28M;
 
 # Custom domain
 # use customer domain here
-server_name yourserver.com;
+server_name example.com;
 
 # To fix authentication issues
 proxy_busy_buffers_size   512k;
 proxy_buffers   4 512k;
 proxy_buffer_size   256k;
 # Certificate configuration - use the paths returned by Let's Encypt / certbot as an example
-ssl_certificate /etc/letsencrypt/live/yourserver.com/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/yourserver.com/privkey.pem; 
+ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem; 
 ```
 
 Add the following inside the `location /` section:
@@ -120,7 +120,7 @@ gzip_types text/plain text/css application/json application/javascript text/xml 
 
 ### Prerender Nginx integration
 
-[Prerender.io provides instructions](https://docs.prerender.io/v1/docs/nginx-1#reverse-proxy) on configuring their product with the Nginx web server acting as a reverse proxy. The solution involves modifying the Nginx config files.
+[Prerender provides instructions](https://docs.prerender.io/v1/docs/nginx-1#reverse-proxy) on configuring their product with the Nginx web server acting as a reverse proxy. The solution involves modifying the Nginx config files.
 
 You can configure which bots are sent to the prerendered version of your pages. To select the bots, modify the `map{...}` section in the `nginx.conf` file. Look for the following lines of code:
 
@@ -138,21 +138,21 @@ Adjust the list to keep only the bots you need with a value of 1. For more detai
 
 To effectively use prerender technology, provide crawlers with a complete website structure through a `sitemap.xml` file.
 
-Ensure the file is available at the domain's root level. For instance, if the domain is yourserver.com, the sitemap is yourserver.com/sitemap.xml. To achieve this result, configure a working route using an ODC app and a reverse proxy or CDN.
+Ensure the file is available at the domain's root level. For instance, if the domain is example.com, the sitemap is example.com/sitemap.xml. To achieve this result, configure a working route using an ODC app and a reverse proxy or CDN.
 
-Refer to [Generating sitemap and robots files](./generating-sitemap-robot-files.md) on creating a sitemap file within an ODC app.
+Refer to [Generating sitemap and robots files](generating-sitemap-robot-files.md) on creating a sitemap file within an ODC app.
 
-To create and publish a new app to use to host the sitemap.xml file, do the following: 
+To create and publish a new app to use to host the `sitemap.xml` file, do the following: 
 
 1. In ODC Studio, right-click **Resources** within **Data** tab and select **Import Resource**.
 
-1. Select the newly created `sitemap.xml` file.
+2. Select the newly created `sitemap.xml` file.
 
-1. Select the `sitemap.xml` file and set the **Deploy Action** field to **Deploy to Target Directory**.
+3. Select the `sitemap.xml` file and set the **Deploy Action** field to **Deploy to Target Directory**.
 
 As a result, the file is available under MyApp/sitemap.xml. You can publish your app.
 
-1. Configure Reverse Proxy or CDN to serve sitemap to the root directory of the domain. 
+4. Configure Reverse Proxy or CDN to serve sitemap to the root directory of the domain. 
 
 Example configuration in an Nginx reverse proxy `sites-available/default` file within the `server{}` section.
 
@@ -170,13 +170,13 @@ location = /sitemap.xml {
 }
 ```
 
-1. Test by going to yourserver.com/sitemap.xml.
+5. Test by going to example.com/sitemap.xml.
 
 ### Robots.txt
 
 To effectively use prerender technology, provide crawlers with access to a `robots.txt` file. 
 
-Ensure the file is available at the domain's root level. For instance if the domain is youserver.com, the robots file should be at yoursever.com/robots.txt. To achieve this result, configure a working route using an ODC app and a reverse proxy or CDN.
+Ensure the file is available at the domain's root level. For instance if the domain is example.com, the robots file should be at example.com/robots.txt. To achieve this result, configure a working route using an ODC app and a reverse proxy or CDN.
 
 Refer to [Generating sitemap and robot files](./generating-sitemap-robot-files.md#robotstxt) on creating a robots file within an ODC app. 
 
@@ -184,13 +184,13 @@ To create and publish a new app to use to host the `robots.txt` file, do the fol
 
 1. In ODC Studio, right-click **Resources** within **Data** tab and select **Import Resource**.
 
-1. Select the newly created `robots.txt` file.
+2. Select the newly created `robots.txt` file.
 
-1. Select the `robots.txt` file, set the **Deploy Action** field to **Deploy to Target Directory**.
+3. Select the `robots.txt` file, set the **Deploy Action** field to **Deploy to Target Directory**.
 
 As a result, the file is available under MyApp/robots.txt. You can publish your app.
 
-1.  Configure Reverse Proxy or CDN to serve sitemap to root directory of domain.
+4.  Configure Reverse Proxy or CDN to serve sitemap to root directory of domain.
 
 Example configuration in an Nginx reverse proxy `sites-available/default` file within the `server{}` section.
 
@@ -208,36 +208,42 @@ location = /robots.txt {
 }
 ```
 
-1. Test by going to yourserver.com/robots.txt.
+5. Test by going to example.com/robots.txt.
+
+<div class="info" markdown="1">
+
+If making use of `robots.txt` and `sitemap.xml`, both can be hosted in the same ODC app.
+
+</div>
 
 ## Test your implementation
 
-Test your implementation by using the Prerender.io dashboard and by using a curl command.
+Test your implementation by using the Prerender dashboard and by using a curl command.
 
 ### Prerender dashboard
 
-Logging in to the prerender.io dashboard for the first time shows a modal window that allows you to test your integration. Follow these steps:
+Logging in to the Prerender dashboard for the first time shows a modal window that allows you to test your integration. Follow these steps:
 
 1. Select other integrations.
 
-1. Paste the url of your application (it has to be exposed to the world).
+1. Paste the URL of your app (it has to be exposed to the world).
 
 1. Click **Test**.
 
 1. Select the **Recent Crawler Visits** section. 
 
-All websites redirected to the prerendered version of your application are visible
+All websites redirected to the prerendered version of your app are visible
 
 ### Using Curl command
 
-You can mimic a request from a bot by using the curl command and compare it with a user request. Ensure that you target your Reverse Proxy or CDN URL and not the actual site directly, in case they’re not the same.
+You can mimic a request from a bot by using the curl command and compare it with a user request. Ensure that you target your Reverse Proxy or CDN URL and not the actual site directly. 
 
 #### Prerendered version
 
-Open cmd and type the following. Make sure you replace {yourserver.com} with your real server name and {YourReactiveApp} with the real name of your application:
+Open cmd and type the following. Make sure you replace {example.com} with your real server name and {YourReactiveApp} with the real name of your app:
 
 ```
-curl -A "googlebot" https://{yourserver.com}/{YourReactiveApp}/
+curl -A "googlebot" https://{example.com}/{YourReactiveApp}/
 ```
 
 With this command, you mimic Google’s crawler call to your website. If it works, you should see the full HTML for your rendered page, including all its content.
@@ -246,6 +252,8 @@ With this command, you mimic Google’s crawler call to your website. If it work
 
 Run a similar command to the one you executed before, also replacing the placeholders with the same values.
 
-    curl https://{yourserver.com}/{YourReactiveApp}/
+    curl https://{example.com}/{YourReactiveApp}/
 
-Note that instead of showing the full HTML for your rendered page, you call different JavaScript files. These are the files that render the content of your application to the final users when they open it.
+Note that instead of showing the full HTML for your rendered page, you call different JavaScript files. These are the files that render the content of your app to the final users when they open it.
+
+It's advisable to manually test an app without authentication and to test file upload functionality if used to ensure that the reverse proxy/CDN is configured correctly.
