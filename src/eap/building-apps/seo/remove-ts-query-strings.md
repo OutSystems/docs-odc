@@ -20,7 +20,7 @@ To minimize the effect this behavior has on SEO performance, a Reverse Proxy or 
 
 Refer to this example of achieving this using the Nginx reverse proxy. Refer to [Improve SEO with prerendering](improve-seo-prerendering.md#domain) for information on configuring a reverse proxy with custom domains on ODC.
 
-<nginx_installation_directory>/nginx.conf
+nginx_installation_directory/nginx.conf
 
 ```
 http {
@@ -36,7 +36,7 @@ http {
 }
 ```
 
-<nginx_installation_directory>/sites-available/default
+nginx_installation_directory/sites-available/default
 
 ```
 server {
