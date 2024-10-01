@@ -45,5 +45,3 @@ location = / {
 Add this configuration to the `nginx/sites-available/default` file by editing the `location = / {...}` section.
 
 This method is useful when you need to redirect from the root of a domain to a specific route on the same domain, such as the path to a default ODC app.
-
-
