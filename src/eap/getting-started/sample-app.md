@@ -84,7 +84,7 @@ ODC documentation is here to help you build, publish, maintain, and troubleshoot
 
 ### Training
 
-There are [free online courses](https://www.outsystems.com/training/courses/206/from-o11-to-outsystems-developer-cloud/) that teach how to use ODC.
+There are [free online courses](https://learn.outsystems.com/training/journeys/web-developer-662/getting-started-with-odc/odc/523) that teach how to use ODC.
 
 ### Community
 
