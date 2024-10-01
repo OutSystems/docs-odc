@@ -1,7 +1,7 @@
 ---
 summary: How to publish apps that exceed the 100 MB limit.
 tags:
-guid: dbeab3f4-4b7e-472d-be22-7650d42b0258
+guid: e773a151-1a3f-4472-b718-9a6587a02eec
 locale: en-us
 platform-version: odc
 app_type: mobile apps, reactive web apps
