@@ -16,7 +16,7 @@ This diagram explains the connection between crawlers, sitemaps, and robots:
 
 ![Diagram showing the interaction between an SEO crawler, robots.txt file, and sitemap.xml. The crawler becomes aware of a site, lands in the robots.txt file, notices the sitemap reference, consumes the sitemap content, visits all sitemap endpoints, and parses sitemap URLs for indexing.](images/seo-crawler-diag.png "Diagram of SEO Crawler Interaction with Sitemap and Robots.txt")
 
-## Sitemap.xml
+## Sitemap.xml { #sitemap }
 
 A sitemap is a file where you provide information about the pages, videos, and other files on your site, and the relationships between them. Having a sitemap speeds up content discovery by enabling search engines to identify your website structure and crawl your site more efficiently. A sitemap informs the search engines about what pages and files you think are important on your site, and also provides valuable information about them. For example, the sitemap provides information like the timepoint when the page was last updated and any alternate language versions of the page.
 
@@ -88,9 +88,10 @@ A list of URLs for your app’s screens are displayed. Validate if new URLs appe
 
 ### Add sitemap.xml to the root directory of a domain
 
-ODC doesn't support the functionality to set an app at the root directory of a domain. Refer to [Sitemap.xml](improve-seo-prerendering.md#sitemap-xml) for how the sitemap is configured with the help of a Reverse Proxy or CDN.
 
-## Robots.txt
+ODC doesn't support the functionality to set an app at the root directory of a domain. Refer to [Sitemap.xml](improve-seo-prerendering.md#sitemapxml-sitemap) for how the sitemap is configured with the help of a Reverse Proxy or CDN.
+
+## Robots.txt { #robot }
 
 The `robots.txt` is a text file with instructions for search engine crawlers. It defines which areas of a website the crawlers are allowed to search.
 
@@ -121,4 +122,5 @@ To create a static `robots.txt` file, follow these steps:
 
 ### Add robots.txt to the root directory of a domain
 
-ODC doesn’t support the functionality to set an app at the root directory of a domain. Refer to [Robots.txt](improve-seo-prerendering.md#robots-txt) for how the robots file can be configured with the help of a Reverse Proxy or CDN.
+ODC doesn’t support the functionality to set an app at the root directory of a domain. Refer to [Robots.txt](improve-seo-prerendering.md#robotstxt--robots) for how the robots file can be configured with the help of a Reverse Proxy or CDN.
+

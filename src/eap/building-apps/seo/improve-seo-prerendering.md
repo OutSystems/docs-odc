@@ -134,7 +134,7 @@ map $http_user_agent $prerender_ua {
 
 Adjust the list to keep only the bots you need with a value of 1. For more details on why this is important, refer to [Optimize the number of user agents](./prerender-usage-config.md#optimize-the-number-of-user-agents).
 
-### Sitemap.xml
+### Sitemap.xml { #sitemap } 
 
 To effectively use prerender technology, provide crawlers with a complete website structure through a `sitemap.xml` file.
 
@@ -172,7 +172,7 @@ location = /sitemap.xml {
 
 5. Test by going to example.com/sitemap.xml.
 
-### Robots.txt
+### Robots.txt  { #robots }
 
 To effectively use prerender technology, provide crawlers with access to a `robots.txt` file. 
 
