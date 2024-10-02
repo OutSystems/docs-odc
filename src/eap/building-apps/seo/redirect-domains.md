@@ -8,7 +8,7 @@ platform-version: odc
 figma: 
 ---
 
-# Redirect Domains
+# Redirect domains
 
 For SEO purposes and end-user friendliness, allow an end-user to navigate to a root domain and access a default ODC app.
 

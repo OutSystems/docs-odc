@@ -66,5 +66,5 @@ server {
             # ... other location / configurations ...
         }
     }
-    ```
+```
   

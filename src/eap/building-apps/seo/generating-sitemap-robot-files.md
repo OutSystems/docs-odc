@@ -88,7 +88,7 @@ A list of URLs for your app’s screens are displayed. Validate if new URLs appe
 
 ### Add sitemap.xml to the root directory of a domain
 
-ODC doesn't support the functionality to set an app at the root directory of a domain. Refer to [Sitemap.xml](improve-seo-prerendering.md#sitemapxml) for how the sitemap is configured with the help of a Reverse Proxy or CDN.
+ODC doesn't support the functionality to set an app at the root directory of a domain. Refer to [Sitemap.xml](improve-seo-prerendering.md#sitemap-xml) for how the sitemap is configured with the help of a Reverse Proxy or CDN.
 
 ## Robots.txt
 
@@ -121,4 +121,4 @@ To create a static `robots.txt` file, follow these steps:
 
 ### Add robots.txt to the root directory of a domain
 
-ODC doesn’t support the functionality to set an app at the root directory of a domain. Refer to [Robots.txt](improve-seo-prerendering.md#robotstxt) for how the robots file can be configured with the help of a Reverse Proxy or CDN.
+ODC doesn’t support the functionality to set an app at the root directory of a domain. Refer to [Robots.txt](improve-seo-prerendering.md#robots-txt) for how the robots file can be configured with the help of a Reverse Proxy or CDN.

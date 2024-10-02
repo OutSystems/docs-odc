@@ -48,11 +48,11 @@ To help achieve this URL standardization, create app and screen names in lowerca
 
 ### Robots.txt file
 
-A robots file needs to be accessible at the root level of a domain. ODC doesn't support this functionality. Using a reverse proxy or CDN supports this use case. For more information, refer to [robots.txt](generating-sitemap-robot-files.md#robotstxt).
+A robots file needs to be accessible at the root level of a domain. ODC doesn't support this functionality. Using a reverse proxy or CDN supports this use case. For more information, refer to [robots.txt](generating-sitemap-robot-files.md#robots-txt).
 
 ### Sitemap.xml file
 
-A sitemap file is accessible at the root level of a domain. ODC doesn’t support this functionality. However, using a reverse proxy or CDN supports this use case. For more information, refer to [sitemap.xml](generating-sitemap-robot-files.md#sitemapxml). 
+A sitemap file is accessible at the root level of a domain. ODC doesn’t support this functionality. However, using a reverse proxy or CDN supports this use case. For more information, refer to [sitemap.xml](generating-sitemap-robot-files.md#sitemap-xml). 
 
 ### Rel="canonical"
 
