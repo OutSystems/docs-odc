@@ -315,7 +315,6 @@
         - href: eap/building-apps/seo/generating-sitemap-robot-files.md
         - href: eap/building-apps/seo/redirect-domains.md
         - href: eap/building-apps/seo/custom-404.md
-        - href: eap/building-apps/seo/remove-ts-query-strings.md
 
 # Debugging apps
 - href: eap/debugging-apps/intro.md
