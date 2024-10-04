@@ -14,7 +14,7 @@ Display a custom 404 error page for SEO purposes and end-user friendliness when 
 
 Achieve this by using a reverse proxy or CDN.
 
-Refer to [Improve SEO with prerendering](./improve-seo-prerendering.md#domain) which outlines how to configure the reverse proxy Nginx in front of ODC.
+Refer to [Improve SEO with prerendering](improve-seo-prerendering.md#domain) which outlines how to configure the reverse proxy Nginx in front of ODC.
 
 The following steps enable custom 404 pages to be served:
 
