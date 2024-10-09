@@ -8,6 +8,8 @@ platform-version: odc
 figma:
 ---
 
+# Convert data types
+
 OutSystems enables the conversion between different data types. This can be made implicitly, or explicitly by using data type conversion functions.
 
 ### Implicit conversion functions
