@@ -52,3 +52,4 @@ Time | Text | TimeToText
 Any data type | Object | ToObject
 
 To learn more about how to convert values from one data type to another, refer to [aggregate](./fetch-data/aggregate.md).
+ 
