@@ -19,7 +19,7 @@ Administrators ensure the app and its connection information are in the same sta
 
 There is no limit to the number of entities you can add from the external database.
 
-In ODC, you can now mash up data from different entities and distinct data sources in an aggregate. To learn more, refer to [data mashup](../../building-apps/data/fetch-data/data-mash.md).
+In ODC, you can combine data from different entities and distinct data sources into an aggregate.[Data Fabric](../../building-apps/data/fetch-data/data-mash.md) processes all external system data uniformly without storing any data persistently within Data Fabric or the ODC architecture. For more information, refer to [data handling in Data Fabric](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-fabric).
 
 <div class="info" markdown="1">
 
@@ -27,7 +27,6 @@ ODC offers [private gateways](../../manage-platform-app-lifecycle/private-gatewa
 
 </div>
 
-You can use [data fabric](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-fabric) to processes all your external system data uniformly, with no persistent storage within Data Fabric or ODC architecture.
 
 ## Supported systems
 
@@ -38,7 +37,7 @@ OutSystems supports the following versions of systems:
         Microsoft SQL Server
     </div>
     <div class="os-accordion__content">
-        <ul>
+        <ul>dat
             <li>SQL Server 2014</li>
             <li>SQL Server 2016</li>
             <li>SQL Server 2017</li>
@@ -94,6 +93,18 @@ OutSystems supports the following versions of systems:
     <div class="os-accordion__content">
         <ul>
             <li>Salesforce</li>
+        </ul>
+    </div>
+</div>
+
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+        SAP
+    </div>
+    <div class="os-accordion__content">
+        <ul>
+            <li>SAP ECC 5.0 or higher</li>
+            <li>SAP S/4HANA</li>
         </ul>
     </div>
 </div>
@@ -198,18 +209,19 @@ You can use advanced parameters to add additional parameters for a database conn
 
 To handle null values while integrating with external systems. Administrators must assign new values to represent null values in external databases. To learn more, refer to [handle null values](handle-null-values.md).
 
-| SQL Server and Azure SQL | Oracle | SAP OData | Salesforce | PostgreSQL |OutSystems data type |
-|--|--|--|--|--|--|
-Char<br/>Varchar<br/>Text<br/>Nchar<br/>Nvarchar<br/>Ntext<br/>Xml<br/>Numeric(Any, >8)<br/>Decimal(Any, >8)<br/>Real<br/>Float<br/>UniqueIdentifier<br/>Time<br/>Datetimeoffset | Char<br/>Varchar<br/>Varchar2<br/>Clob<br/>Long<br/>Nchar<br/>NVarchar2<br/>Nclob<br/>Number(Any, >8)<br/>Float<br/>RowId<br/>URowId | Varchar<br/>UUID<br/>Time<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)| UUID<br/>VARCHAR<br/>FLOAT<br/>Time| Varchar<br/>NVarchar<br/>Text<br/>Varbit<br/>Character<br/>Char<br/>Bpchar<br/>Time<br/>Numeric(Any, >8)<br/>Numeric(>28, Any)<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)<br/>Float4<br/>Float8<br/>Float8_range<br/>Real<br/>Double precision<br/>XML<br/>JSON<br/>UUID<br/>Pg_lsn<br/>Enum |Text|
-Tinyint<br/>Smallint<br/>Int<br/>Numeric(2-9, 0)<br/>Decimal(2-9, 0) | Number(2-9, 0) | Int<br/>Decimal(2-9, 0) | Int | Smallint<br/>Integer<br/>Int<br/>Int2<br/>Int4<br/>Numeric<br/>Numeric(2-9, 0)<br/>Decimal(2-9, 0)<br/>Smallserial<br/>Serial<br/>Serial4 |Integer |
-Bigint<br/>Numeric(10-18, 0)<br/>Decimal(10-18, 0) | Number(10-18, 0) | Decimal(10-18, 0) | | Bigint<br/>Int8<br/>Bigserial<br/>Serial8<br/>Numeric(10-18, 0)<br/>Decimal(10-18, 0) |Long Integer |
-Numeric(19-28, 0-8)<br/>Numeric(1-18, >1-8)<br/>Decimal(19-28, 0-8)<br/>Decimal(1-18, >1-8)<br/>Money<br/>Smallmoney | Number(19-28, 0-8)<br/>Number(1-18, 1-8) | Decimal(1-28, 1-8)<br/>Decimal(19-28, 0)| Decimal | Numeric(1-28, 1-8)<br/>Numeric(19-28, 0)<br/>Decimal(1-28, 1-8)<br/>Decimal(19-28, 0)<br/>Money | Decimal |
-Bit<br/>Numeric(1, 0)<br/>Decimal(1, 0) | Number(1, 0) | Bit<br/>Decimal(1, 0)| Bit | Bit<br/>Boolean<br/>Bool<br/>Numeric(1, 0)<br/>Decimal(1, 0) |Boolean |
-Date | | Date | Date | Date |Date|
-Datetime<br/>DateTime2<br/>Smalldatetime | Date<br/>Timestamp | Timestamp  | DateTime | Timestamp | DateTime |
-Image<br/>Binary<br/>Varbinary | Blob<br/>Raw<br/>Long Raw | | | Bytea |Binary Data |
-Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType<br/>VARRAY<br/>OBJECT (structured) | | | BIT VARYING<br/>BOX<br/>CIDR<br/>CIRCLE<br/>COMPOSITE (user defined types and other composite types)<br/>INET<br/>INTERVAL<br/>LINE<br/>LSEG<br/>MACADDR<br/>MACADDR8<br/>PATH<br/>POINT<br/>POLYGON<br/>TSQUERY<br/>TSVECTOR<br/>TXID_SNAPSHOT<br/>all of the ARRAY types | Currently not supported and won't appear in ODC Portal.|
-Other data types | Other data types | Other data types |Other data types | Other data types |No official support; attributes may not appear in the ODC Portal or may exhibit unexpected behavior. |
+| SQL Server and Azure SQL | Oracle | SAP OData | SAP BAPI | Salesforce | PostgreSQL |OutSystems data type |
+|--|--|--|--|--|--|--|
+Char<br/>Varchar<br/>Text<br/>Nchar<br/>Nvarchar<br/>Ntext<br/>Xml<br/>Numeric(Any, >8)<br/>Decimal(Any, >8)<br/>Real<br/>Float<br/>UniqueIdentifier<br/>Time<br/>Datetimeoffset | Char<br/>Varchar<br/>Varchar2<br/>Clob<br/>Long<br/>Nchar<br/>NVarchar2<br/>Nclob<br/>Number(Any, >8)<br/>Float<br/>RowId<br/>URowId | Varchar<br/>UUID<br/>Time<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)|SSTRING<br/>STRING<br/>CHAR<br/>LANG<br/>UNIT<br/>NUMC<br/>DEC (Any, >8)<br/>DEC (>28, Any)<br/>CURR (Any, >8)<br/>CURR (>28, Any)<br/>QUAN (Any, >8)<br/>QUAN (>28, Any)<br/>CLNT<br/>CUKY <br/>LCHR<br/>LRAW<br/>FLTP<br/>RAW<br/>RAWSTRING<br/>GEOM_EWKB| UUID<br/>VARCHAR<br/>FLOAT<br/>Time| Varchar<br/>NVarchar<br/>Text<br/>Varbit<br/>Character<br/>Char<br/>Bpchar<br/>Time<br/>Numeric(Any, >8)<br/>Numeric(>28, Any)<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)<br/>Float4<br/>Float8<br/>Float8_range<br/>Real<br/>Double precision<br/>XML<br/>JSON<br/>UUID<br/>Pg_lsn<br/>Enum |Text|
+Tinyint<br/>Smallint<br/>Int<br/>Numeric(2-9, 0)<br/>Decimal(2-9, 0) | Number(2-9, 0) | Int<br/>Decimal(2-9, 0) | INT1<br/>INT2<br/>INT4<br/>ACCP<br/>PREC<br/>DEC (1-9, 0)<br/>CURR (1-9, 0)<br/>QUAN (1-9, 0)<br/>NUMC | Int | Smallint<br/>Integer<br/>Int<br/>Int2<br/>Int4<br/>Numeric<br/>Numeric(2-9, 0)<br/>Decimal(2-9, 0)<br/>Smallserial<br/>Serial<br/>Serial4 |Integer |
+Bigint<br/>Numeric(10-18, 0)<br/>Decimal(10-18, 0) | Number(10-18, 0) | Decimal(10-18, 0) | DEC (10-18, 0)<br/>CURR (10-18, 0)<br/>QUAN (10-18, 0)<br/>NUMC | | Bigint<br/>Int8<br/>Bigserial<br/>Serial8<br/>Numeric(10-18, 0)<br/>Decimal(10-18, 0) |Long Integer |
+Numeric(19-28, 0-8)<br/>Numeric(1-18, >1-8)<br/>Decimal(19-28, 0-8)<br/>Decimal(1-18, >1-8)<br/>Money<br/>Smallmoney | Number(19-28, 0-8)<br/>Number(1-18, 1-8) | Decimal(1-28, 1-8)<br/>Decimal(19-28, 0) | DEC (19-28, 0-8)<br/>DEC (1-18, 1-8)<br/>CURR (19-28, 0-8)<br/>CURR (1-18, 1-8)<br/>QUAN (19-28, 0-8)<br/>QUAN (1-18, 1-8) | Decimal | Numeric(1-28, 1-8)<br/>Numeric(19-28, 0)<br/>Decimal(1-28, 1-8)<br/>Decimal(19-28, 0)<br/>Money | Decimal |
+Bit<br/>Numeric(1, 0)<br/>Decimal(1, 0) | Number(1, 0) | Bit<br/>Decimal(1, 0) | | Bit | Bit<br/>Boolean<br/>Bool<br/>Numeric(1, 0)<br/>Decimal(1, 0) |Boolean |
+Date | | Date | DATN<br/>DATS | Date | Date |Date|
+Datetime<br/>DateTime2<br/>Smalldatetime | Date<br/>Timestamp | Timestamp |  | DateTime | Timestamp | DateTime |
+| | | | TIMN<br/>TIMS | | | Time |
+Image<br/>Binary<br/>Varbinary | Blob<br/>Raw<br/>Long Raw | | | | Bytea |Binary Data |
+Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType<br/>VARRAY<br/>OBJECT (structured) | | INT8<br/>DECFLOAT16<br/>DECFLOAT3<br/>UTCLONG | | BIT VARYING<br/>BOX<br/>CIDR<br/>CIRCLE<br/>COMPOSITE (user defined types and other composite types)<br/>INET<br/>INTERVAL<br/>LINE<br/>LSEG<br/>MACADDR<br/>MACADDR8<br/>PATH<br/>POINT<br/>POLYGON<br/>TSQUERY<br/>TSVECTOR<br/>TXID_SNAPSHOT<br/>all of the ARRAY types | Currently not supported and won't appear in ODC Portal.|
+Other data types | Other data types | Other data types | Other data types |Other data types | Other data types |No official support; attributes may not appear in the ODC Portal or may exhibit unexpected behavior. |
 
 ## Salesforce custom columns mapping
 
@@ -270,14 +282,28 @@ Consider the following when integrating an external system.
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
-        SAP OData
+        PostgreSQL
     </div>
     <div class="os-accordion__content">
         <ul>
-            <li>SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.</li>
-            <li>SAP OData only supports read-only entity actions in ODC Studio.</li>
-            <li>SAP throws a `RAISE_SHORTDUMP` exception when requesting the row count for some VIEWS on the first request.</li>
-            <li>Regarding SAP OData queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.</li>
+            <li>For PostgreSQL connections, you may encounter issues in Text data type columns when inserting an empty value, and the connection is configured to overwrite null values with default values. OutSystems recommends you set a different default value to columns of these data types, such as for Time: 00:00:00 or for Float: 0. The following data types are impacted:</li>
+            <ul>
+                <li>Time</li>
+                <li>Numeric (Any, >8)</li>
+                <li>Numeric (>28, Any)</li>
+                <li>Decimal (Any, >8)</li>
+                <li>Decimal (>28, Any)</li>
+                <li>Float4</li>
+                <li>Float8</li>
+                <li>Float8_range</li>
+                <li>Real</li>
+                <li>Double precision</li>
+                <li>XML</li>
+                <li>JSON</li>
+                <li>UUID</li>
+                <li>Pg_lsn</li>
+                <li>Enum</li>
+            </ul>
         </ul>
     </div>
 </div>
@@ -303,28 +329,25 @@ Consider the following when integrating an external system.
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
-        PostgreSQL
+        SAP BAPI
     </div>
     <div class="os-accordion__content">
         <ul>
-            <li>For PostgreSQL connections, you may encounter issues in Text data type columns when inserting an empty value, and the connection is configured to overwrite null values with default values. OutSystems recommends you set a different default value to columns of these data types, such as for Time: 00:00:00 or for Float: 0. The following data types are impacted:</li>
-            <ul>
-                <li>Time</li>
-                <li>Numeric (Any, >8)</li>
-                <li>Numeric (>28, Any)</li>
-                <li>Decimal (Any, >8)</li>
-                <li>Decimal (>28, Any)</li>
-                <li>Float4</li>
-                <li>Float8</li>
-                <li>Float8_range</li>
-                <li>Real</li>
-                <li>Double precision</li>
-                <li>XML</li>
-                <li>JSON</li>
-                <li>UUID</li>
-                <li>Pg_lsn</li>
-                <li>Enum</li>
-            </ul>
+            <li>For SAP BAPI integrations, SAP RFCs with mandatory changing parameters are not functioning as expected because these parameters are not being imported into the metadata. We recognize this as a temporary limitation and are actively working on a solution to address it</li>
+        </ul>
+    </div>
+</div>
+
+<div class="os-accordion__item">
+    <div class="os-accordion__title">
+        SAP OData
+    </div>
+    <div class="os-accordion__content">
+        <ul>
+            <li>SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.</li>
+            <li>SAP OData only supports read-only entity actions in ODC Studio.</li>
+            <li>SAP throws a `RAISE_SHORTDUMP` exception when requesting the row count for some VIEWS on the first request.</li>
+            <li>Regarding SAP OData queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.</li>
         </ul>
     </div>
 </div>
