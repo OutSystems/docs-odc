@@ -191,6 +191,8 @@ Administrators  must supply the following information to connect to the external
 | Basic authentication type | Basic is a simpler authentication method than OAuth | Yes | |
 | Sandbox connection | Sandbox enables a partial or full copy of production data to test the connector. | Yes | |
 | Schema | Optional schema name for PostgreSQL connections | Yes | If provided, it specifies the default schema to be used. |
+| SAP route string | A route string describes the connection path between ODC and SAP BAPI | Yes | Enter `/H/secure-gateway/S/<port>/H` in the SAP route string to connect to SAP BAPI through the secure gateway. |
+
 
 ### Additional parameters
  
