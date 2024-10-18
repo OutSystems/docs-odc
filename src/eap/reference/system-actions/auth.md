@@ -7,7 +7,7 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 ---
-# Authentication
+# Authentication system actions
 
 Authentication actions for built-in and/or external identity providers.
 
