@@ -14,7 +14,7 @@ Avoid server calls in client events.
 
 ## Impact
 
-Screen and block lifecycle events (on initialize, ready, render, and after fetch) are serialized in the request, and server calls can take time to get the response, which impacts the screen render time.
+Screen and block lifecycle events (On Initialize, Ready, Render, and After Fetch) are serialized in the request, and server calls can take time to get the response, which impacts the screen render time.
 
 ## Why is this happening?
 

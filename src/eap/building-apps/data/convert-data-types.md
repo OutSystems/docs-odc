@@ -8,6 +8,8 @@ platform-version: odc
 figma:
 ---
 
+# Convert data types
+
 OutSystems enables the conversion between different data types. This can be made implicitly, or explicitly by using data type conversion functions.
 
 ### Implicit conversion functions
@@ -50,3 +52,4 @@ Time | Text | TimeToText
 Any data type | Object | ToObject
 
 To learn more about how to convert values from one data type to another, refer to [aggregate](./fetch-data/aggregate.md).
+ 

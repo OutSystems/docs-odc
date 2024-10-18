@@ -5,7 +5,7 @@ locale: en-us
 guid: da18534d-84c8-4a52-bca8-85ebb3b1e082
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=3675%3A159&mode=design&t=GIMRhVcd5jweHOdq-1
+figma: https://www.figma.com/design/AOyPMm22N6JFaAYeejDoge/Configuration-management?node-id=3674-148
 ---
 
 # Configure custom domains for apps
@@ -27,9 +27,9 @@ When you add a custom domain to a stage, all apps deployed to that stage are acc
 
 | Stage       | Custom domain    |
 | ----------- | ---------------- |
-| Development | dev.example.com  |
-| Test        | test.example.com |
-| Production  | www.example.com  |
+| Development | `dev.example.com`|
+| Test        | `test.example.com`|
+| Production  | `www.example.com`|
 
 <div class="info" markdown="1">
 

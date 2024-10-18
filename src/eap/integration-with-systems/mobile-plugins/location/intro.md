@@ -92,4 +92,5 @@ The table shows the compatibility of the Location Plugin with the Mobile Apps Bu
 
 | Plugin version  | Compatible with MABS version | Notes |
 | --------------- | ---------------------------- | ----- |
-| 1.0.0 and later | MABS 9.0 and later.          |       |
+| 1.0.1 and later | MABS 10.0 and later.         |       |
+| 0.1.0 and later | MABS 9.0 and later.          |       |

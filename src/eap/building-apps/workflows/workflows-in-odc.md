@@ -20,19 +20,23 @@ With the workflow editor, you can:
 
 * Establish a connection between the workflow and the app by selecting events, service actions, and screens for specific nodes in the workflow.
 
+* Import and export workflows to share within your organization and with external partners.
+
 Consider this example of approving a bank transaction:
 
-1. The workflow starts when the user applies to the bank.
+1. The workflow starts when a customer submits a loan application to the bank
 
-1. A bank employee validates the user's documents(Human activity).
+2. A customer relationship manager manually validates the customer's background information.
 
-1. If the documents are validated, then a bank employee validates the finances.
+   1. If the customer's background details are invalid, a rejection email is sent to the customer, and the workflow ends.
 
-1. If the finances are validated, the user receives an approval email.
+   2. If the user’s background details are valid, the loan application moves to the finance department, where an employee validates the customer's credit history and financial health.
 
-1. If the transaction is not approved, the user receives a rejection email.
+      1. If the customer's financial documents are valid, then the customer receives a loan approval letter, and the workflow ends.
 
-1. If the bank employee finds invalid user documents, then the bank employee sends the documents back for validation.
+      2. If the customer's financial documents are invalid, then the customer receives a loan rejection letter, and the workflow ends.
+
+      3. If the documents are insufficient, the finance department routes the application to the customer relationship manager to restart the document verification process.
 
     ![Example workflow of approving a bank transaction](images/example-workflow-pl.png "Example workflow of approving a bank transaction")
 

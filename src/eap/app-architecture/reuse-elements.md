@@ -19,7 +19,7 @@ You can share public elements across your apps to accelerate development and ena
 
 **Weak dependencies** (for example, reusing a static entity) can exist between the following app types:
 
-* Web apps or Mobile apps. Web and Mobile apps can share Service Actions, Entities, Static Entities, and Screens.
+* Web apps or Mobile apps. Web and Mobile apps can share Service Actions, Entities, and Static Entities. Web apps can share Screens with other Web apps.
 
 ## Libraries
 

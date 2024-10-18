@@ -8,7 +8,7 @@ platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3525-387&node-type=CANVAS&t=fro20soaPpjjIXwf-0
 ---
 
-# Insecure Usage of GetUserId in client Block parameters
+# Insecure usage of GetUserId in client Block parameters
 
 Avoid passing identity information in a Block widget parameter.
 
@@ -18,7 +18,7 @@ Passing identity information through a Block widget parameter allows manipulatin
 
 Since the execution of GetUserId on reactive client components depends on client cookies, any user can easily change parameters by manipulating server calls or changing client session ID identifiers. Malicious users can exploit the ability to change identity-related parameters and impersonate other users and access sensitive data. Users can also bypass role checks, which, even though done on the server, become vulnerable due to insecure parameters received from the client.
 
-##Why is this happening?
+## Why is this happening?
 
 Passing `GetUserId` as a Block widget parameter exposes your application to security risks. This allows users to manipulate identity information on the client side, potentially leading to impersonation and unauthorized data access.
 

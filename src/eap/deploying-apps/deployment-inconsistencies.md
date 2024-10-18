@@ -31,132 +31,233 @@ The Impact Analysis report includes the following sections:
 
 You can also see if the severity of the inconsistency is a blocker or a warning.
 
-* **Blockers** are inconsistencies that cause your app to break in runtime. Therefore, ODC prevents you from proceeding with the deployment.
+* **Blockers** are inconsistencies that cause your asset to break in runtime. Therefore, ODC prevents you from proceeding with the deployment.
 
-* **Warnings** are inconsistencies that may cause runtime errors in your apps. Therefore, ODC runtime errors might occur if those parts of your code get used. The deployment might be OK if, for example, you are using feature toggles to hide the code or if the code is a work in progress that you know isn't reachable from your apps. Therefore, ODC doesn't block you from proceeding with the deployment.
+* **Warnings** are inconsistencies that may cause runtime errors in your assets. Therefore, ODC runtime errors might occur if those parts of your code get used. The deployment might be OK if, for example, you are using feature toggles to hide the code or if the code is a work in progress that you know isn't reachable from your assets. Therefore, ODC doesn't block you from proceeding with the deployment.
 
-The following are the types of inconsistencies you might encounter. Each message includes a short description to provide you with guidance.
+To learn more about reusing public elements across your assets, refer to [Reuse elements](../app-architecture/reuse-elements.md)
 
+The following are the types of inconsistencies you might encounter. Each message includes a short description and instructions for fixing the inconsistency.
 
 ## Incompatible element
   
 ### Entity attribute mismatch
 
-* **Description:** The consumer app uses one or more attributes of an entity or static entity that don't exist in the producer app's definition.
+The consumer asset uses one or more attributes of an entity or static entity that doesn't exist in the producer asset. To fix this, you can either:
+
+* Remove the missing attributes in the consumer asset.
+* Add the missing attributes in the producer asset.
 
 ### Entity attribute type mismatch
 
-* **Description:** The consumer app expects an attribute from the producer's entity or static entity. The consumer's data type differs from the element's definition in the producer app. ODC is unable to implicitly convert it at runtime.
+The consumer asset expects an attribute with a different data type in the producer asset. To fix this, you can either:
+
+* Change the attribute's data type in the consumer asset.
+* Change the attribute's data type in the producer asset.
 
 ### Input parameter mismatch
 
-* **Description:** The consumer asset uses one or more input parameters from an element that doesn't exist in the producer asset's definition. This can occur on screens and in service actions.
+The consumer asset uses one or more input parameters from an element that doesn't exist in the producer asset's definition. To fix this, you can either:
+
+* Remove the missing input parameters in the service actions, screens, and events of the consumer asset.
+* Add the missing input parameters in the service actions, screens, and events of the producer asset.
 
 ### Input parameter type mismatch
 
-* **Description:** The consumer asset expects an input parameter from an element, but the data type in the producer asset has a different definition. ODC can't implicitly convert it at runtime. This can occur in screens and in service actions.
+The consumer asset expects an input parameter with a different data type in the producer asset, and ODC cannot implicitly convert it at runtime. To fix this, you can either:
+
+* Change the input parameter's data type in the consumer asset and review related service actions, screens, and events.
+* Change the input parameter's data type in the producer asset and review related service actions, screens, and events.
 
 ### Missing mandatory input parameter
 
-* **Description**: The producer asset defines an element that has a mandatory input parameter, but that parameter doesn't exist in the consumer asset. This can occur in screens and in service actions.
-  
+The producer asset defines an element with a mandatory input parameter that doesn't exist in the consumer asset. To fix this, you can either:
+
+* Add the missing mandatory input parameter in the consumer asset.
+* Make the input parameter optional.
+* Remove the mandatory input parameter from the producer asset.
+
 ### Missing mandatory structure attribute
 
-* **Description:** The producer app defines a structure with a mandatory attribute, but that attribute doesn't exist in the consumer app.
+The producer asset defines a structure with a mandatory attribute that doesn't exist in the consumer asset. To fix this, you can either:
+
+* Add the missing mandatory structure in the consumer asset.
+* Make the structure attribute optional.
+* Remove the mandatory structure from the producer asset.
 
 ### Missing record
 
-* **Description:** The consumer app uses a record from a static entity that doesn't exist in the producer app's definition.
+The consumer asset uses a record from a static entity that doesn't exist in the producer asset's definition. To fix this, you can either:
+
+* Remove the missing records to the static entities in the consumer asset.
+* Add the missing records from the static entities in the producer asset.
   
 ### Output parameter mismatch
 
-* **Description:** The consumer asset has a service action that uses one or more output parameters of an element that doesn't exist in the producer asset's definition.
+The consumer asset has a service action that uses one or more output parameters from an element that doesn't exist in the producer asset's definition. To fix this, you can either:
+
+* Remove the missing output parameters in the service actions of the consumer asset.
+* Add the missing output parameters in the service actions of the producer asset.
 
 ### Output parameter type mismatch
 
-* **Description** The consumer asset expects an output parameter from an element whose data type is different from the element's definition in the producer asset, and ODC isn't able to implicitly convert it at runtime. This can occur in service actions.
+The consumer asset expects an output parameter with a different data type in the producer asset, and ODC cannot implicitly convert it at runtime. To fix this, you can either:
+
+* Change the output parameter's data type in the consumer asset's service actions.
+* Change the output parameter's data type in the producer asset's service actions.
 
 ### Record identifier mismatch
 
-* **Description:** The consumer app expects the identifier attribute from the static entity to be different from the producer app's definition.
+The consumer asset expects the identifier attribute of a static entity to be different from the one in the producer asset. To fix this, you can either:
 
+* Add the identifier attribute of the static entity in the consumer asset's static entities.
+* Remove the identifier attribute of the static entity from the producer asset's static entities
 
 ### Screen name mismatch
 
-* **Description:** The name of a screen is different between the producer asset and the consumer asset.
+The name of a screen is different between the producer asset and the consumer asset. To fix this, you can either:
+
+* Add the missing screen in the consumer asset.
+* Add the missing screen in the producer asset.
 
 ### Screen URL discrepancy
 
-* **Description**: The screen URL is different between the producer asset and the consumer asset.
+The screen URL is different between the producer asset and the consumer asset. To fix this, you can either:
+
+* Update the URL in the consumer asset to match the producer asset.
+* Update the URL in the producer asset to match the consumer asset.
   
 ## Screen page name mismatch
 
-* **Description:** When using customer URLs, the screen name is different between the producer asset and the consumer asset.
+When using custom URLs, the screen name is different between the producer asset and the consumer asset. To fix this, you can either:
 
+* Add the missing screen in the consumer asset's screen page names.
+* Add the missing screen in the producer asset's screen page names.
 
 ### Screen URL structure mismatch
 
-* **Description:** When using Custom URLs, the URL structure type of a screen is different between the producer asset and the consumer asset.
+When using custom URLs, the URL structure type of a screen is different between the producer asset and the consumer asset. To fix this, you can either:
+
+* Add the missing screens in the consumer asset's screen URL structures.
+* Add the missing screens in the producer asset's screen URL structures.
 
 ### Server entity name mismatch
 
-* **Description:** The name of a static entity is different between the producer app and the consumer app.
+The name of an entity is different between the producer asset and the consumer asset. To fix this, you can either:
+
+* Add the missing entity in the consumer asset to match the producer asset.
+* Add the missing entity in the producer asset to match the consumer asset.
+
+### Static entity name mismatch
+
+The name of a static entity differs between the producer and consumer assets. To fix this, you can either:
+
+* Add the missing static entity in the consumer asset to match the producer asset.
+* Add the missing static entity in the producer asset to match the consumer asset.
 
 ### Structure attribute mismatch
 
-* **Description:** The consumer app uses one or more attributes of a structure that doesn't exist in the producer app's definition.
+The consumer asset uses one or more attributes of a structure that do not exist in the producer asset. To fix this, you can either:
+
+* Add the missing attributes in the consumer asset's structures.
+* Add the missing attributes in the producer asset's structures.
 
 ### Structure attribute type mismatch
 
-* **Description:** The consumer app expects an attribute of a structure data type. But, the data type is different from the element's definition in the producer app. ODC isn't able to implicitly convert it at runtime.
+The consumer asset expects a structure attribute with a different data type in the producer asset, and ODC cannot implicitly convert it at runtime. To fix this, you can either:
+
+* Change the structure attribute's data type in the consumer asset.
+* Change the structure attribute's data type in the producer asset.
 
 ### Structure name mismatch
 
-* **Description:** The name of a structure is different between the producer app and the consumer app.
+The structure's name differs between the producer asset and the consumer asset. To fix this, you can either:
+
+* Add the missing structure in the consumer asset to match the producer asset.
+* Add the missing structure in the producer asset to match the consumer asset.
 
 ## Missing element
 
 ### Missing event
 
-* **Description:** The consumer asset uses an event that doesn't exist in the producer asset.
+The consumer asset uses an event that doesn't exist in the producer asset. To fix this, you can either:
 
-    **Note**: Workflows only use events, screens, service actions, and roles from apps. Apps use events, screens, service actions, roles, entities, and structures.
+* Remove the event in the consumer asset to match the producer asset.
+* Add the event in the producer asset to match the consumer asset.
 
+<div class="info" markdown="1">
+
+Workflows only use events, screens, service actions, and roles from apps. Apps use events, screens, service actions, roles, entities, and structures.
+
+</div>
 
 ### Missing role
 
-* **Description:** The consumer asset uses a role that doesn't exist in the producer asset.
+The consumer asset uses a role that doesn't exist in the producer asset. To fix this, you can either:
+
+* Remove in the consumer asset to match the producer asset.
+* Add in the producer asset to match the consumer asset.
 
 ### Missing screen
 
-* **Description:** The consumer asset uses a screen that doesn't exist in the producer asset.
+The consumer asset uses a screen that doesn't exist in the producer asset. To fix this, you can either:
+
+* Remove the missing screen in the consumer asset to match the producer asset.
+* Add the missing screen in the producer asset to match the consumer asset.
 
 ### Missing server entity
 
-* **Description:** The consumer app uses an entity that doesn't exist in the producer app.
+The consumer asset uses an entity that does not exist in the producer asset. To fix this, you can either:
+
+* Remove the missing server entity in the consumer asset to match the producer asset.
+* Add the missing server entity in the producer asset to match the consumer asset.
 
 ### Missing service action
 
-* **Description:** The consumer asset uses a service action that doesn't exist in the producer asset.
- 
+The consumer asset uses a service action that doesn't exist in the producer asset. To fix this, you can either:
+
+* Remove the service action in the consumer asset to match the producer asset.
+* Add the service action in the producer asset to match the consumer asset.
+
 ### Missing static entity
 
-* **Description:** The consumer app uses a static entity that doesn't exist in the producer app.
+The consumer asset uses a static entity that does not exist in the producer asset. To fix this, you can either:
 
-### Missing Structure
+* Remove the static entity in the consumer asset to match the producer asset.
+* Add the static entity in the producer asset to match the consumer asset.
 
-* **Description:** The consumer app uses a structure that doesn't exist in the producer app.
+### Missing structure
+
+The consumer asset uses a structure that does not exist in the producer asset. To fix this, you can either:
+
+* Remove the structure in the consumer asset to match the producer asset.
+* Add the structure in the producer asset to match the consumer asset.
 
 ## General inconsistencies
 
 ### Name collision
 
-* **Description:** An app already deployed in the target stage has the same name as the app being deployed. This is causing a name collision with the derived app URL.
+There is another asset deployed in the target stage with the same name as the one being deployed. To fix this, you can either:
+
+* Change the new asset's name.
+* Change the existing asset's name.
+
+<div class="warning" markdown="1">
+
+This is a blocker for deploying your asset. To learn more about blockers, refer to [Impact analysis](deploy-apps.md#impact-analysis).
+
+</div>
 
 ### URL discrepancy
 
-* **Description:** Another app already deployed in the target stage has the same URL as the App being deployed.
+The currently deployed version of the asset uses the same URL as another asset. To fix this, you can either:
+
+* Change the new asset's URL.
+* Change the existing asset's URL.
 
 ### Missing app
 
-* **Description:** The consumer app uses public elements from the producer app, but the producer app is either not deployed in the target stage or was deleted from the organization.
+The consumer asset uses public elements from the producer asset, but the producer asset is either not deployed in the target stage or was deleted from the stage. To fix this, you can either:
+
+* Remove the public elements from the consumer asset that are dependent on the missing app or library.
+* Add the missing public elements to the producer asset and publish the updates.

@@ -104,7 +104,7 @@ The following table shows the limits of the ODC to keep in mind when you are bui
 | App log retention (days)                 |        28 | The maximum number of days that logs are retained (plus 21 days of additional backup retrievable via support ticket). |
 | Concurrent events                        |       100 | The maximum number of events that can run concurrently. |
 | Concurrent timers                        |         6 | The maximum number of timers that can run concurrently. |
-| Custom code execution duration (seconds) |        90 | The maximum time a single custom code function can execute. |
+| Custom code execution duration (seconds) |        95 | The maximum time a single custom code function can execute. |
 | Custom code memory (MB)                  |     1,024 | The maximum memory available for custom code functions while executing. |
 | Custom code storage (MB)                 |       512 | The maximum amount of ephemeral storage available for custom code functions while executing. |
 | DB backup retention (days)               |        30 | The maximum number of days database backups are retained. |
