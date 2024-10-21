@@ -13,7 +13,7 @@ A secret is a private piece of information that gives access to protected resour
 
 As you develop apps, keep in mind that every application, script, automation tool, and other non-human identity relies on some form of a privileged credential. This credential gives access to other tools, applications, and data. These secrets can unlock protected resources or sensitive information in tools.
 
-Sensitive information such as tokens and passwords are usually saved in a secret storage solution. A secret storage solution is an identity-based encryption management system. You use a secret storage solution to secure, store, and tightly control access to passwords, certificates, API keys, and other items you want to control.
+Sensitive information such as tokens and passwords are usually saved in a secret storage solution. A secret storage solution is an identity-based encryption management system. You use a secret storage solution to secure, store, and tightly control access to passwords, API keys, and other items you want to control.
 
 Depending upon the app you build you can have several fields that should be set as secret. When you set a field value as a secret, the actual value is masked with asterisks (*****). The values are custom and you can define them for each stage.
 
