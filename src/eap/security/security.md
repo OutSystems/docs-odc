@@ -198,10 +198,6 @@ All customer production runtime application data:
 
 A network namespace isolates each stage [within each organization's Runtime](#isolation-of-stages).
 
-### File Integrity Monitoring
-
-File Integrity Monitoring performs automated scans and alerts the [Computer Security Incident Response Team](#computer-security-incident-response-team-csirt) to unauthorized activity or file changes.
-
 ### High-availability in-region
 
 Each Runtime stage has an isolated Amazon Aurora Serverless database. The database for the Production stage is designed to support high availability, with the ability to add a read replica in a different Availability Zone (AZ) to ensure immediate failover in the event of an AZ outage or failure.
@@ -214,6 +210,16 @@ OutSystems uses a Key Management Service (KMS) to store and manage the keys used
 
 ODC encrypts data at rest, including all backup instances, using the industry standard AES-256 algorithm.
 
+## Log security and retention
+
+ODC ensures the privacy and availability of your application logs and traces. 
+
+Application logs and traces are encrypted in transit and at rest using the industry-standard AES-256 algorithm. ODC utilizes strict permissions to ensure external users, including the OutSystems Support team and other ODC users, cannot access your data without documented permission. 
+
+Developers can view logs and traces up to four weeks old within ODC Portal. They can retrieve logs and traces between four and seven weeks old by opening a support ticket. The system deletes logs and traces after seven weeks.
+
+For more information on logs and traces, see [Monitor and troubleshoot apps](../monitor-and-troubleshoot/monitor-apps.md).
+
 ## User management
 
 ODC provides a permission model that enables you to create roles following the least privilege principle. You can assign roles to users according to their job functions.
@@ -224,7 +230,7 @@ For more information, see the [User management article](../user-management/intro
 
 OutSystems maintains formal policies and procedures for managing security incidents. This ensures appropriate and prompt handling of any incident. The Security Incident Management Procedures outline the response to vulnerabilities in ODC infrastructure, security breaches, and incidents. The procedure explains the identification, reporting, and action taken for incidents.
 
-### Computer Security Incident Response Team
+### OutSystems Security Operations Center
 
 OutSystems proactively monitors ODC infrastructure, events, and availability 24 hours a day, seven days a week. Any unexpected alert, including privacy breaches, either automatically detected or resulting from a human log review, triggers a Security Incident Response.
 
