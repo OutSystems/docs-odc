@@ -214,7 +214,7 @@ ODC encrypts data at rest, including all backup instances, using the industry st
 
 ODC ensures the privacy and availability of your application logs and traces. 
 
-Application logs and traces are encrypted in transit and at rest using the industry-standard AES-256 algorithm. ODC utilizes strict permissions to ensure external users, including the OutSystems Support team and other ODC users, cannot access your data without documented permission. 
+Application logs and traces are encrypted in transit with TLS, and at rest using the industry-standard AES-256 algorithm. ODC utilizes role-based permissions to ensure external users cannot access your data. Only you hold permission to view your data, while other ODC users, for example, OutSystems Support and other ODC tenants can`t access your logs without your documented permission. 
 
 Developers can view logs and traces up to four weeks old within ODC Portal. They can retrieve logs and traces between four and seven weeks old by opening a support ticket. The system deletes logs and traces after seven weeks.
 
@@ -235,12 +235,6 @@ OutSystems maintains formal policies and procedures for managing security incide
 OutSystems proactively monitors ODC infrastructure, events, and availability 24 hours a day, seven days a week. Any unexpected alert, including privacy breaches, either automatically detected or resulting from a human log review, triggers a Security Incident Response.
 
 Customers can report suspected privacy or security incidents through the Support Portal at `https://<customername>.outsystems.dev/support/`.
-
-### Log Retention
-
-Developers can view logs and traces up to four weeks old within ODC Portal. They can retrieve logs and traces between four and seven weeks old by opening a support ticket. The system deletes logs and traces after seven weeks.
-
-For more information see [Monitor and troubleshoot apps](../monitor-and-troubleshoot/monitor-apps.md).
 
 ## Additional links
 
