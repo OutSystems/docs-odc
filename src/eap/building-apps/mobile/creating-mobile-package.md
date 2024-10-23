@@ -126,3 +126,9 @@ Using the Safari browser to preview a mobile app within the ODC Portal doesn't w
 
 OutSystems recommends Chrome browser for previewing the mobile app in the ODC Portal.
 
+### App login doesn't work in the preview if you're using Safari or any other browser configured to block third-party cookies
+
+More and more browsers are blocking third-party cookies by default. Using the Safari browser or any other browser configured to block third-party cookies to preview a mobile app within the ODC Portal prevents the login screen in your application from working. The app and the preview render within an iFrame in different domains and due to the configuration to block third-party cookies, the login doesn't work.
+
+OutSystems recommends Chrome browser for previewing the mobile app in the ODC Portal. If the browser is blocking third-party cookies you can disable that feature in the browser security settings.
+
