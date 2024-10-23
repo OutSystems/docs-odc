@@ -14,7 +14,7 @@ When implementing your workflow, you can include tasks to be carried out by the 
 
 In the workflow editor for **HumanActivityNode**:
 
-* Specify a task and assign it to an end-user of your ODC app. You can manually change the user ID at runtime in ODC Studio using the [HumanActivityAssign](#manually-assign-or-re-assign-human-activity-to-a-different-user) API to assign a task to a different end-user. 
+* Specify a task and assign it to an end-user of your ODC app. You can change the user ID programmatically in ODC Studio using the [HumanActivityAssign](#programmatic-assign) API to assign a task to a different end-user. 
 
     **Note**: You must develop your own custom notifications using the **HumanActivityInstance** entity to remind users of pending tasks.
 
@@ -46,7 +46,7 @@ To include human activity in a workflow, follow these steps:
 
     f. **Close on**: (Mandatory) Select the event and define the conditions within the human activity.  Once the event occurs and the conditions are met, **HumanActivityStatus** changes from Waiting or Running to Completed, and the workflow moves on to the next step. For example, in a human document review scenario, only when the event **LoanReview** occurs, and both conditions (DocsVerified=OK AND NumberDocsReviewed=NumberDocsSubmitted) are simultaneously true, will the human activity be closed, and the workflow moves on to the next step.
 
-## Manually assign or re-assign human activity to a different user
+## Manually assign or re-assign human activity to a different user { #programmatic-assign }
 
 You can modify the UserId to whom the human activity is assigned at runtime using low-code API implemented as a server action. This enables you to change the workflow from the ODC app at runtime. This server action can be accessed in the ODC Studio under the Logic > System > Server actions. 
 
