@@ -37,7 +37,7 @@ OutSystems supports the following versions of systems:
         Microsoft SQL Server
     </div>
     <div class="os-accordion__content">
-        <ul>dat
+        <ul>
             <li>SQL Server 2014</li>
             <li>SQL Server 2016</li>
             <li>SQL Server 2017</li>
