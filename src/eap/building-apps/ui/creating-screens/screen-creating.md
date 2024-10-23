@@ -17,6 +17,8 @@ You can create a screen using any of the following methods:
 * From an empty screen template that comes with a basic layout
 * Using scaffolding (accelerators) to add an entity to a screen
 
+<iframe src="https://player.vimeo.com/video/1022161042" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Demo demonstrating how to create a screen.</iframe>
+
 When a screen is open in the main window (menu block), you can:
 
 * Modify the elements by adding new elements or removing some elements
