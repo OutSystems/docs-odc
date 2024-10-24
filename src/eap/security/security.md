@@ -214,7 +214,7 @@ ODC encrypts data at rest, including all backup instances, using the industry st
 
 ODC ensures the privacy and availability of your application logs and traces. 
 
-Application logs and traces are encrypted in transit with TLS, and at rest using the industry-standard AES-256 algorithm. ODC utilizes role-based permissions to ensure external users cannot access your data. Only you hold permission to view your data, while other ODC users, for example, OutSystems Support and other ODC tenants can`t access your logs without your documented permission. 
+Application logs and traces are encrypted in transit with TLS, and at rest using the industry-standard AES-256 algorithm. ODC utilizes role-based permissions to ensure that only you can view your data. Other ODC tenants can't access your logs or traces. OutSystems Support requires documented permission before accessing your data. 
 
 Developers can view logs and traces up to four weeks old within ODC Portal. They can retrieve logs and traces between four and seven weeks old by opening a support ticket. The system deletes logs and traces after seven weeks.
 
