@@ -10,7 +10,7 @@ figma:
 
 # Service actions
 
-Service actions are reusable code components that can be called from any app, providing an efficient way to perform specific tasks such as accessing data, sending emails, or making API calls. They promote code reuse, maintainability, and modularity in OutSystems Developer Cloud (ODC) by encapsulating complex logic or functionality. Service actions also enable integration with other apps or systems, improve performance by reducing data transfer, and can be secured using authentication and authorization mechanisms.
+Service actions are reusable code components that can be called from any app, providing an efficient way to perform specific tasks such as accessing data, sending emails, or making API calls. They promote code reuse, maintainability, and modularity in OutSystems Developer Cloud (ODC) by encapsulating complex logic or functionality. Service actions also enable integration with other apps.
 
 For example, you can use a service action to integrate with a third-party API to fetch weather data. You can create a service action to handle the API call, process the received data, and return a formatted weather report. You can then reuse the service action across multiple parts of an app. This ensures efficient development and easy maintenance in the event of changes to the API.
 
