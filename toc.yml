@@ -91,6 +91,7 @@
             - href: eap/building-apps/ui/creating-screens/screen-creating.md
             - href: eap/building-apps/ui/creating-screens/create-screen-scratch.md
             - href: eap/building-apps/ui/interaction/fetch-display.md
+            - href: eap/building-apps/ui/creating-screens/best-practices-screens/best-practices-screens.md
         # Reuse ui
         - href: eap/building-apps/ui/reuse/intro.md
         - href: eap/building-apps/ui/reuse/block-create-reuse.md
