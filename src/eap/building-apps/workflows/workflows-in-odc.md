@@ -14,6 +14,12 @@ In OutSystems Developer Cloud (ODC), you can implement a [business process](busi
 
 You can implement workflows as a new type of asset similar to ODC apps and libraries with an independent lifecycle. ODC provides a **workflow editor**, a visual web-based tool for implementing workflows. You can access the workflow editor from the ODC Portal.  
 
+<div class="info" markdown="1">
+
+To use workflows you need the requisite *Asset Management* permission(s). To get the necessary permission(s), speak to an administrator from your ODC organization.
+
+</div>
+
 With the workflow editor, you can:
 
 * Implement your workflow using a set of nodes such as **Start**, **End**, **HumanActivity**, **AutomaticActivity, Go to a previous step,** and **Decision.**
