@@ -72,6 +72,7 @@
             - href: eap/building-apps/data/fetch-data/supported-join-types.md
             - href: eap/building-apps/data/fetch-data/fetch-data-nl.md
             - href: eap/building-apps/data/fetch-data/sort-aggregate.md
+            - href: eap/building-apps/data/fetch-data/dynamic-sort.md
         - href: eap/building-apps/data/modeling/relationship/relationships.md
         - topics:
             - href: eap/building-apps/data/modeling/relationship/relationship-one-to-one.md
