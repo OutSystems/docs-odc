@@ -131,7 +131,10 @@ To create a new database connection, go to the ODC Portal and follow these steps
 
     <div class="info" markdown="1">
 
-    To use private gateways to connect to your external databases, enter `secure-gateway` in the Server/Host field and the secure gateway port value in the Port field.
+    To use private gateways to connect to your external databases, enter `secure-gateway` in the Server/Host field and the secure gateway port value in the Port field. To connect to SAP BAPI through secure-gateway, and considering the following SAP route string `/H/<IP>/S/<port>`, follow these steps:
+    
+    1. Run the Cloud Connector with the following command: `./outsystemscc --header "token: <token>" <tenant> R:8081:<IP>` . This directed traffic from secure-gateway:8081 to `<IP>:<port>`.
+    1. Enter `/H/secure-gateway/S/<port>/H` in the SAP route string to connect to SAP BAPI through the secure gateway.
 
     </div>
 
@@ -160,7 +163,7 @@ After connecting to an external database, select the entity names and attributes
 1. From the **Entity** name column, select the entities and attributes you want to use.
 1. Click **Save** to confirm. 
 
-Selected entities and attributes are now available as [public elements](../../building-apps/libraries/use-public-elements.md). In ODC Studio, developers have the flexibility to rename entities, allowing for clearer descriptions. For example, an entity initially named 'Product_id_version1' can be renamed to 'Product_id'.
+Selected entities and attributes are now available as [public elements](../../building-apps/libraries/use-public-elements.md). In ODC Studio, developers have the flexibility to rename entities, allowing for clearer descriptions. For example, an entity initially named Product_id_version1 can be renamed to Product_id.
 
 ## Edit an existing connection
 
@@ -191,8 +194,10 @@ Administrators  must supply the following information to connect to the external
 | Basic authentication type | Basic is a simpler authentication method than OAuth | Yes | |
 | Sandbox connection | Sandbox enables a partial or full copy of production data to test the connector. | Yes | |
 | Schema | Optional schema name for PostgreSQL connections | Yes | If provided, it specifies the default schema to be used. |
-| SAP route string | A route string describes the connection path between ODC and SAP BAPI | Yes | Enter `/H/secure-gateway/S/<port>/H` in the SAP route string to connect to SAP BAPI through the secure gateway. |
-
+| Application Server | Hostname of the SAP application server where the remote function calls are executed. | Yes |  |
+| System ID | Three-letter identifier of the SAP installation to which to connect. | Yes | |
+| Instance Number | Two-digit identifier of the SAP instance to which to connect. | Yes | |
+| SAP route string | A route string describes the connection path between ODC and SAP BAPI | Yes | |
 
 ### Additional parameters
  
