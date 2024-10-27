@@ -114,7 +114,7 @@ The following section provides more details about the options you can use in the
 The following section provides more details on the `resources` top-level property. The feature translates into the `resource-file` feature on [Cordova](https://cordova.apache.org/docs/en/12.x/config_ref/#resource-file). These resources are included in the folder `www`, available for use within the project compilation. Use **OutSystems Resources** with **Deploy Action** set to **Deploy to Target Directory** in the application project.  
 
 * The `src` property of a resource is relative to the location of `config.xml` (project root). Since the resources become available in the `www` folder, the value should start with it.
-* If you add the resource `my-resource.ext` in Service Studio, the value should be `www/my-resource.ext`.
+* If you add the resource `my-resource.ext` in ODC Studio, the value should be `www/my-resource.ext`.
 * The `target` property of a resource is relative to the Android/iOS project. If a resource with the same name already exists in the specified `target`, it is overridden.
 * For Android, the path is relative to `<project_root>/platforms/android`.
 * For iOS, the path is relative to `<project_root>/platforms/ios/<app_name>/Resources`
