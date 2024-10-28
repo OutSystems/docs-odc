@@ -12,9 +12,9 @@ platform-version: odc
 You can use the Range Slider Interval Pattern to allow users select a single value between two range values. This pattern enables the adjustment of content by predetermined intervals and within a chosen range. Moving the slider along the track increases or decreases the value.
 
 <div class="info" markdown="1">
- 
-The Range Slider Interval Pattern is based on the [noUiSlider library](https://refreshless.com/nouislider/) (v15.5.1). For more information about the Range Slider Interval’s behaviors and extensibility methods, see the provider’s documentation.  
- 
+
+The Range Slider Interval Pattern is based on the [noUiSlider library](https://refreshless.com/nouislider/) (v15.5.1). For more information about the Range Slider Interval's behaviors and extensibility methods, see the provider’s documentation.
+
 </div>
 
 ## How to use the Range Slider Interval UI Pattern
