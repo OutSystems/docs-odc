@@ -20,7 +20,7 @@ From ODC Portal, navigate to the **Apps** screen and click **Create app**. ODC S
     * Create an app that users run mainly in a desktop browser, .
 * Select **Phone app** or **Tablet app** if you want to: 
     * Create a mobile app to submit to Apple App Store or Google Play. You can also distribute a mobile app as a downloadable package to a group of users.
-    * Create a lightweight app and share it as a Progressive Web App (PWA)(*) from your website. Users can put the app icon on their mobile home screen.
+    * Create a lightweight app and share it as a Progressive Web App (PWA) from your website. Users can put the app icon on their mobile home screen.
 
 <div class="info" markdown="1">
 
@@ -50,7 +50,7 @@ There are two ways you can distribute a Mobile app:
 
 * **Native app package** - A dedicated OutSystems cloud service generates native mobile builds for you, to distribute your app in the app stores or internally to a group of users.
 
-* **Progressive Web App (PWA)**(*) - PWAs are lightweight apps that have the look and feel of native mobile apps. They're quick to distribute and install directly from your website, as they don't depend on the app stores. 
+* **Progressive Web App (PWA)** - PWAs are lightweight apps that have the look and feel of native mobile apps. They're quick to distribute and install directly from your website, as they don't depend on the app stores. 
 
 ## Comparison between Web apps and Mobile apps
 
