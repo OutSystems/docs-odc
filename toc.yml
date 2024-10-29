@@ -333,6 +333,7 @@
 - topics:
     - href: eap/deploying-apps/deployment-inconsistencies.md
     - href: eap/deploying-apps/one-cp.md
+    - href: eap/deploying-apps/rollback.md
 
 #Deleting apps
 - href: eap/deleting-apps/intro.md
