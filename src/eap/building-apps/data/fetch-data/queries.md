@@ -87,19 +87,6 @@ To write better queries, you need to understand the following joins:
 
 ## Supported use cases
 
-### Joining a small entity to a large entity across two systems
-
-* Limit the amount of data fetched using Max Records property.
-* Use a With or Without Join, and have the entity with fewer records on the outer side of the join.
-    * Only use an Only with Join when you expect to have unmatched records and don't want them in the result. Only With Join does not allow the Max Records to be pushed down to the database. So, more data than required may be loaded when the query is executed.
-* Sort only by attributes from the outer side of the join, or sort the result using your application logic.
-
-When the best practices are followed:
-
-* An initial query is executed on the smaller entity to fetch the required records.
-* A second query is executed on the larger entity and includes a filter only to fetch matching records.
-* A nested loop join algorithm joins the records in Data Fabric.
-
 ### Joining a large entity to a large entity across two systems
 
 * Limit the amount of data fetched using Max Records.
