@@ -334,16 +334,6 @@ Consider the following when integrating an external system.
     </div>
 </div>
 
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
-        SAP BAPI
-    </div>
-    <div class="os-accordion__content">
-        <ul>
-            <li>For SAP BAPI integrations, SAP RFCs with mandatory changing parameters are not functioning as expected because these parameters are not being imported into the metadata. We recognize this as a temporary limitation and are actively working on a solution to address it</li>
-        </ul>
-    </div>
-</div>
 
 <div class="os-accordion__item">
     <div class="os-accordion__title">
