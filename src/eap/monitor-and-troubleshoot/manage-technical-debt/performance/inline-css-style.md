@@ -10,7 +10,7 @@ figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troublesh
 
 # Inline CSS style
 
-CSS style is defined as an extended property of a screen element.
+CSS style is defined as an attribute in the properties of a screen element.
 
 ## Impact
 
@@ -18,10 +18,10 @@ CSS and HTML should be kept separate. Inline styles are inefficient, harder to m
 
 ## Why is this happening?
 
-Inline CSS occurs when styles are directly applied to screen or web block elements through extended properties.
+Inline CSS occurs when styles are directly applied to screen or web block elements via the attributes section of an element's properties.
 
-![Screenshot of the extended properties panel showing inline CSS styles applied to a screen element.](images/odcs-extended-properties.png "Extended Properties Panel")
+![Screenshot of the Attributes showing inline CSS styles applied to a screen element.](images/attributes-inline-style-odcs.png "Attributes section of an element's Properties")
 
 ## How to fix
 
-CSS should be centrally managed in the application style guide to avoid loading a large number of CSS files. If the CSS is specific to one screen or web block, define your CSS at the screen/web block level instead of in extended properties.
+CSS should be centrally managed in the application style guide to avoid loading a large number of CSS files. If the CSS is specific to one screen or web block, define your CSS at the screen/web block level instead of in an element's properties.
