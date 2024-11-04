@@ -10,6 +10,14 @@ figma:
 
 # Improve SEO with prerendering
 
+<div class="warning" markdown="1"> 
+
+This page provides a suggestion on how to achieve improved SEO performance with ODC Applications using third party tools as a workaround and is not an officially supported product offering.
+
+Please be aware of existing [Platform Limits](/documentation/outsystems_developer_cloud/getting_started/outsystems_system_requirements_for_odc/#:~:text=Max%20requests%20(per%20IP)) and that Platform changes can subject unsupported workarounds to breaking changes without warning.
+
+</div>
+
 OutSystems Reactive apps are Single Page Applications (SPAs). These are web apps that load a single page and update content dynamically. They offer benefits like dynamic content, smooth navigation, improved performance, offline capabilities, and development simplicity.
 
 When a user accesses the app, the server returns a bare HTML file and some JavaScript that executes on the client side to render the UI. This also allows fetching data asynchronously in parallel with page rendering.
