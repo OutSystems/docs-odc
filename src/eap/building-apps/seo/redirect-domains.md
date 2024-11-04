@@ -10,6 +10,14 @@ figma:
 
 # Redirect domains
 
+<div class="warning" markdown="1"> 
+
+This page provides a suggestion on how to achieve improved SEO performance with ODC Applications using third party tools as a workaround and is not an officially supported product offering.
+
+Please be aware of existing [Platform Limits](/documentation/outsystems_developer_cloud/getting_started/outsystems_system_requirements_for_odc/#:~:text=Max%20requests%20(per%20IP)) and that Platform changes can subject unsupported workarounds to breaking changes without warning.
+
+</div>
+
 For SEO purposes and end-user friendliness, allow an end-user to navigate to a root domain and access a default ODC app.
 
 Achieve this by using a reverse proxy or CDN.
