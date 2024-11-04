@@ -107,6 +107,7 @@ The following table shows the limits of the ODC to keep in mind when you are bui
 | Custom code execution duration (seconds) |        95 | The maximum time a single custom code function can execute. |
 | Custom code memory (MB)                  |     1,024 | The maximum memory available for custom code functions while executing. |
 | Custom code storage (MB)                 |       512 | The maximum amount of ephemeral storage available for custom code functions while executing. |
+| Custom code payload size (MB)            |       5.5 | The maximum payload for inputs and outputs of a custom code action. |
 | DB backup retention (days)               |        30 | The maximum number of days database backups are retained. |
 | Event duration (minutes)                 |         2 | The maximum duration of a handler of an event in minutes. |
 | Events per queue                         |    10,000 | The maximum number of events that can be queued. Upon reaching the limit, an exception is thrown. |
