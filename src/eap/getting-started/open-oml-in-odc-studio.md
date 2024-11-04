@@ -12,6 +12,8 @@ platform-version: odc
 
 An .oml file contains the code of an app or library. You can publish an .oml file to an ODC organization.
 
+<iframe src="https://player.vimeo.com/video/1026075106" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Opening an .oml file.</iframe>
+
 Before starting, ensure you have ODC Studio connected to an ODC organization.
 To open an oml file in ODC Studio, follow these steps:
 
