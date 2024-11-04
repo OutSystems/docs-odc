@@ -10,6 +10,14 @@ figma:
 
 # Custom 404 pages
 
+<div class="warning" markdown="1"> 
+
+This page provides a suggestion on how to achieve improved SEO performance with ODC Applications using third party tools as a workaround and is not an officially supported product offering.
+
+Please be aware of existing [Platform Limits](/documentation/outsystems_developer_cloud/getting_started/outsystems_system_requirements_for_odc/#:~:text=Max%20requests%20(per%20IP)) and that Platform changes can subject unsupported workarounds to breaking changes without warning.
+
+</div>
+
 Display a custom 404 error page for SEO purposes and end-user friendliness when a specific URL can't be found.
 
 Achieve this by using a reverse proxy or CDN.
