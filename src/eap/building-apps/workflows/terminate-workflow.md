@@ -18,6 +18,6 @@ When a **Terminate** node is reached in a workflow:
 
 1. Any ongoing automatic activities are executed. Once finished, their status changes to either **Completed** or **Error**.
 
-1. The workflow instance status changes to **Done**..
+1. The workflow instance status changes to **Done**.
 
 
