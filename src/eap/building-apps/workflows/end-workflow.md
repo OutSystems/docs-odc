@@ -11,3 +11,10 @@ figma:
 # End a workflow
 
 You can continue adding steps to your workflow until you reach the **End** node. Once the workflow reaches the End node, the workflow execution stops.
+
+If your workflow includes one or more [conditional start](add-conditional-start.md) flows, the workflow is completed when the **End** node is reached in both the main workflow and all conditional start flows. The workflow instance status then changes to **Done**. This means the main workflow will not finish until every conditional start flow has been completed.
+
+If your workflow has no conditional start flows, the workflow is completed when the **End** node is reached, at which point all activities are complete, and the workflow instance status changes to **Done.**
+
+
+
