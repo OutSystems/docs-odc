@@ -30,14 +30,8 @@
       "type": "string",
       "pattern": "^(mobile apps|reactive web apps)(,\\s*(mobile apps|reactive web apps))*$"
     },
-    "content_type": {
-      "type": "string",
-      "pattern": "^(conceptual|procedure|process|error or warning|troubleshooting|reference|tutorial|best practice|vulnerability|none|release notes)(,\\s*(conceptual|procedure|process|error or warning|troubleshooting|reference|tutorial|best practice|vulnerability|none|release notes))*$"
-    },
-	"audience": {
-      "type": "string",
-      "pattern": "^(mobile developers|frontend developers|back end developers|full stack developers|team lead|team manager|architect|platform administrators|technology leaders|infrastructure managers|ui designers|business analysts|data engineer|project manager|product owner)(,\\s*(mobile developers|frontend developers|back end developers|full stack developers|team lead|team manager|architect|platform administrators|technology leaders|infrastructure managers|ui designers|business analysts|data engineer|project manager|product owner))*$"
-    },
+    "content_type": {},
+	"audience": {},
     "platform-version": {
       "type": "string",
       "enum": [
