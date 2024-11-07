@@ -131,10 +131,10 @@ To create a new database connection, go to the ODC Portal and follow these steps
 
     <div class="info" markdown="1">
 
-    To use private gateways to connect to your external databases, enter `secure-gateway` in the Server/Host field and the secure gateway port value in the Port field. To connect to SAP BAPI through secure-gateway, and considering the following SAP route string `/H/<IP>/S/<port>`, follow these steps:
-    
-    1. Run the Cloud Connector with the following command: `./outsystemscc --header "token: <token>" <tenant> R:8081:<IP>` . This directed traffic from secure-gateway:8081 to `<IP>:<port>`.
-    1. Enter `/H/secure-gateway/S/<port>/H` in the SAP route string to connect to SAP BAPI through the secure gateway.
+    For relational databases, to connect to your external databases through a Private Gateway, enter `secure-gateway` in the `Server`/`Host` field and the secure gateway port in the `Port` field.
+    For SAP BAPI, to connect through a Private Gateway, follow these steps:
+    * Run the Cloud Connector with the following command: `./outsystemscc --header "token: <token>" <secure-gateway-address> R:<local-port>:<sap-ip-address>:<remote-port>` . This directs traffic from `secure-gateway:<local-port>` to `<sap-ip-address>:<remote-port>`.
+    * In ODC Portal and in your SAP BAPI connection, enter `/H/secure-gateway/S/<local-port>/H` in the `SAP route string` field.
 
     </div>
 
