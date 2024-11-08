@@ -28,7 +28,12 @@ With the workflow editor, you can:
 
 * Import and export workflows to share within your organization and with external partners.
 
-Consider this example of approving a bank transaction:
+Here's a video providing a concise overview of workflows.
+
+<iframe src="https://player.vimeo.com/video/1027587143" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">This video provides a concise overview of ODC workflows</iframe>
+
+
+Consider this example of approving a bank loan:
 
 1. The workflow starts when a customer submits a loan application to the bank
 
