@@ -40,5 +40,5 @@ The following diagram illustrates the relationship between the entities that are
 
 ## Related articles
 
-[Build UI components using workflow entities](filter-workflows.md)
+* [Build UI components using workflow entities](filter-workflows.md)
 
