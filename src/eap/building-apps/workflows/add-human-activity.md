@@ -40,8 +40,8 @@ To include human activity in a workflow, follow these steps:
 
     d. **Destination screen:** (Optional) Select the public screen of your app where the user must perform the human activity. If applicable, you can enter input parameters in this screen to pass context from the workflow to your app.
 
-    **Note:** The destination screen is stored as a relative URL in the URL attribute of the system entity **HumanActivityInstance**. After the workflow revision has been published, if the app name, screen name, or attributes of the destination screen are changed, the URL stored in the system entity becomes invalid. In such cases, you must create a new revision.
-
+    **Note:** The destination screen is stored as a relative URL in the URL attribute of the system entity **HumanActivityInstance**. After the workflow revision has been published, if the app name, screen name, or attributes of the destination screen are changed, the URL stored in the system entity becomes invalid. In such cases, you must create re-publish the workflow and create a new revision.
+    
     e. **Display message**: (Optional) Click the text area to open the Expression Editor and edit the condition on the editor. You can add more data so that more information is available for use within the scope of the Expression editor.
 
     f. **Close on**: (Mandatory) Select the event and define the conditions within the human activity.  Once the event occurs and the conditions are met, **HumanActivityStatus** changes from Waiting or Running to Completed, and the workflow moves on to the next step. For example, in a human document review scenario, only when the event **LoanReview** occurs, and both conditions (DocsVerified=OK AND NumberDocsReviewed=NumberDocsSubmitted) are simultaneously true, will the human activity be closed, and the workflow moves on to the next step.
@@ -56,4 +56,9 @@ The API uses the ActivityInstanceId to identify the workflow instance. This valu
 ---|---|---|---|---
  HumanActivityAssign| Assigns or re-assigns a human activity to a specific user of a particular workflow instance. |ActivityInstanceId - Identifier of the workflow instance. This value can be retrieved from the ActivityInstance entity. |EntityReference | Mandatory
  | | |UserId - Identifier of the user who the activity is to be assigned to. | |  Mandatory
+
+## Next step
+
+Create customized dashboards and screens where users can view and act on tasks assigned to them or their roles. For detailed information, refer to [Build UI components using workflow entities](filter-workflows.md)
+
 

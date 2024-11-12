@@ -305,6 +305,7 @@
         - href: eap/building-apps/workflows/end-workflow.md
         - href: eap/building-apps/workflows/terminate-workflow.md
         - href: eap/building-apps/workflows/system-entities.md
+        - href: eap/building-apps/workflows/filter-workflows.md
         - href: eap/building-apps/workflows/built-in-functions.md
         - href: eap/building-apps/workflows/troubleshooting-workflows.md
    
