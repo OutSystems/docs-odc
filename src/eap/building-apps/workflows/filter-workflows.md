@@ -11,7 +11,8 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6274-150
 ---
 
-## Build UI components using workflow entities
+
+# Build UI components using workflow entities
 
 By using aggregates to filter workflow activities, you can, for example, build responsive dashboards and tailored task boxes, which contribute to a more streamlined and productive app experience. For example, in a loan approval app, an aggregate could group all loan applications exceeding a certain amount, allowing a financial manager's dashboard to show only those that need their approval.
 
