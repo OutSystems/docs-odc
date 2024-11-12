@@ -34,8 +34,7 @@ To include human activity in a workflow, follow these steps:
 
     b. **Fetch more data**: (Optional) Select a service action from the ODC app. You can add multiple service actions from different apps. For example, you can select a service action, GetUserDocs, from the Loans app and a service action GetManagerName from the Directory app. If the service action has one or more input parameters, enter values for the mandatory input parameters to execute the service action. 
 
-    c.**Assign to**: (Optional) Identifies who the activity is assigned to. You can select a User ID to assign the activity.  
-
+    c. **Assign to**: (Optional) Identifies who the activity is assigned to. You can assign an activity to a user ID or a Public role. 
     **Note:** You can change the User ID at runtime in ODC Studio using the **HumanActivityAssign** server action under **System**.
 
     d. **Destination screen:** (Optional) Select the public screen of your app where the user must perform the human activity. If applicable, you can enter input parameters in this screen to pass context from the workflow to your app.

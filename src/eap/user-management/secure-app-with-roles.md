@@ -31,7 +31,15 @@ This is an overview of how to use roles:
 
 ### Create end-user roles
 
-Create roles in ODC Studio, during design time. Go to the **Logic** tab > **Roles** > right-click the **Roles** folder > select **Add Role**. When ODC Studio creates a role, it also creates a set of related actions you can use to manage roles during runtime.
+To create roles in ODC Studio during design, follow these steps: 
+
+1. Go to the **Logic** tab > **Roles** > right-click the **Roles** folder > select **Add Role**. 
+
+1. Enter **Name**, **Description**.
+
+1. Select **Yes** from **Public** drop-down to set the role as Public. The default value is No.
+
+When ODC Studio creates a role, it also creates a set of related actions you can use to [manage roles](#manage-roles-in-app-runtime) during runtime.
 
 ### Assign roles to users through ODC Portal
 
@@ -72,7 +80,9 @@ Logged-in users needs to log out and log back in for changes in their assigned r
 To allow only users with a certain role to access a screen, you need to [create some roles first](#create-end-user-roles). You can then allow only registered users to access screens in the app.
 
 1. Select the screen for which you want to edit the access.
-1. From the screen properties, select **Authorization** > **Accessible by** and from the list select **Authenticated users**. The list of roles now shows in the **Authorization** section.
+
+1. From the screen properties, select **Authorization** > **Accessible by** and from the list select **Authenticated users**. The list of roles from all apps under the Organization where the roles are set as public shows in the **Authorization** section.
+
 1. Select at least one user role from the list to give access to the screen.
 
 ### Restrict logic flows

@@ -77,9 +77,14 @@ In the App scope section, you can Manage roles. You can add or delete App scope 
 
 ## End-user roles
 
-End-user roles are specific to apps. You create end-user roles in ODC Studio while you develop an app. After you publish the app, you use the ODC Portal to assign the end-user role to users. Go to **Users & access** > **Users**. Search for the user, and in the user page below End-user roles, select **Manage roles**.
+You create end-user roles in ODC Studio while you develop an app. While creating an end-user role in ODC Studio, If you set the end-user role as **Public** then the role can be shared across apps and worflows. By default, the roles are not public. After you publish the app, 
+- You can use the public role in other ODC apps by [adding the role as public element](../building-apps/libraries/use-public-elements.md) in ODC Studio.
 
-For more information about app dev development and end-user roles, see: [Secure your app with end-user roles](secure-app-with-roles.md).
+- You can use the ODC Portal to assign the end-user role to users. Go to **Users & access** > **Users**. Search for the user, and in the user page below End-user roles, select **Manage roles**.
+
+- You can assign human activity to roles in a workflow.
+
+For more information about app dev development and end-user roles, see [Secure your app with end-user roles](secure-app-with-roles.md).
 
 ## End-user groups
 

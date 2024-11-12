@@ -21,6 +21,7 @@ When designing the business logic of your apps, you can use built-in functions. 
 * [Email](<email.md>)
 * [URL](<url.md>)
 * [Organization](<organization.md>)
+* [Roles](<roles.md>)
 
 <div class="info" markdown="1">
 

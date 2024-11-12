@@ -13,7 +13,7 @@ User management in OutSystems Developer Cloud (ODC) is about setting up and prov
 
 In this document, the term organization refers to the ODC account your company manages. All users are a part of an organization. To use ODC, all users have roles with different permissions.
 
-Users also known as Organization members have organization roles and can access the ODC Portal and use ODC Studio to build, manage, and deploy apps. Users with end-user roles only have access to your apps.
+Users also known as Organization members have organization roles and can access the ODC Portal and use ODC Studio to build, manage, and deploy apps. Users with end-user roles only have access to your apps. The end-user roles can be shared across apps and workflows.
 
 You can create groups of end-users. All end-users in the group have access to the same roles and apps. For example, you might create a group of end-users from the marketing team who need different access than a group of end-users from the finance team.
 

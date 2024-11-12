@@ -10,7 +10,7 @@ figma:
 
 # Add decisions 
 
-When implementing your workflow, use a Decision node to create multiple paths based on conditions. By default, the Decision node provides two outcomes. Define the condition for each outcome. The conditions are evaluated one at a time and can only follow through one outcome.
+When implementing your workflow, use a Decision node to create multiple paths based on conditions. By default, the Decision node provides two outcomes. Define the condition for each outcome. The conditions are evaluated one at a time and can only follow through on one outcome.
 
 You can select one or more service actions for your Decision node to fetch additional data for your conditions. For example, select the GetManagerUserID service action to get a user's manager information. Use this User ID in your conditions to check if the manager has approved the user's vacation.
 
