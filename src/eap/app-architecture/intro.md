@@ -38,7 +38,7 @@ The runtime of each app is loosely coupled. Consuming services from other apps i
 
 ![Diagram showing how apps are packaged into containers with loosely coupled runtimes and scalable databases in OutSystems Developer Cloud.](images/containers-diag.png "Containers Packages Diagram")
 
-Containerization makes your apps highly scalable. Apps scale requests and users in an automated and transparent way. The app's database is also highly scalable. To learn more [click here](../manage-platform-app-lifecycle/platform-architecture/intro.md#auto-scaling-1).
+Containerization makes your apps highly scalable. Apps scale requests and users in an automated and transparent way. The app's database is also highly scalable. For more information, refer to [Cloud-native architecture of OutSystems Developer Cloud](../manage-platform-app-lifecycle/platform-architecture/intro.md#auto-scaling-1).
 
 ## Libraries in ODC { #libraries }
 
