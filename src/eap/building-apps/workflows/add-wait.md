@@ -10,7 +10,7 @@ figma:
 
 # Add wait 
 
-When implementing your workflow, you can include a **Wait** node in your workflow that puts your workflow execution on hold until the** Close on** event occurs and certain configured conditions are met. 
+When implementing your workflow, you can include a **Wait** node in your workflow that puts your workflow execution on hold until the **Close on** event occurs and certain configured conditions are met. 
 
 When the **Close on** event occurs, and the configured conditions are met, the wait ends, and the workflow moves to the next step. For example, in a loan approval workflow, you can include a wait in a workflow until the credit score of a user is revised to a certain value and DocsVerified=OK. Once the credit score reaches a certain threshold and all documents are verified, the wait ends, and the workflow moves to the next step.
 
