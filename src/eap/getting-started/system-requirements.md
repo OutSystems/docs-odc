@@ -116,6 +116,7 @@ The following table shows the limits of the ODC to keep in mind when you are bui
 | Max requests (per IP)                    |     5,000 | The maximum number of HTTP requests that can be made from a given IP address within a 5-minute window across all stages. |
 | Service action timeout (seconds)         |       100 | The time a service action waits for a response before timing out. |
 | Timer execution timeout (minutes)        |        60 | The maximum time a timer can execute. |
+| Entity Action Execution duration (seconds) |        30 | The maximum execution duration of a single Entity Action in seconds. |
 | Trace retention (days)                   |        28 | The maximum number of days that traces are retained (plus 21 days of additional backup retrievable via support ticket). |
 | Trace size (MB)                          |        15 | The maximum size of traces. Traces exceeding this are dropped. |
 | Trace spans rate/minute (thousands)      |        50 | The maximum rate at which trace spans can be captured, in thousands per minute. |
