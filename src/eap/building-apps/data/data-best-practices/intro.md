@@ -18,7 +18,7 @@ When dealing with a large volume of application data, the high growth of data ma
 
 ### Recommendations
 
-If you expect your application to handle a large volume of data, consider the implementation of [data purging](./data-purging.md) and [data archiving](./data-archiving.md) mechanisms:
+If you expect your application to handle a large volume of data, consider the implementation of [data purging](data-purging.md) and [data archiving](data-archiving.md) mechanisms:
 
 * **Data purging:** Mechanism that permanently deletes inactive or obsolete records from the database. Consider it for entities with an evident high-growth rate, which can quickly achieve considerable volumes of data.
 

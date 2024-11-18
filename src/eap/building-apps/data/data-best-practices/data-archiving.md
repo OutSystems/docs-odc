@@ -12,7 +12,7 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 
 Data archiving is the process of identifying and moving data from the **primary storage** into an **archive storage**, for long term storage. Archived data consists of data that's no longer relevant for daily operations but that's still important to the organization and may be needed for future reference, or data that must be retained for regulatory compliance.
 
-Data archiving is an important [data management practice](./intro.md#data-purging-archiving) when dealing with a large volume of application data. Reducing the amount of active data allows the application to respond faster, helping to prevent performance issues.
+Data archiving is an important [data management practice](intro.md#data-purging-archiving) when dealing with a large volume of application data. Reducing the amount of active data allows the application to respond faster, helping to prevent performance issues.
 
 This article describes a best practice for implementing data archiving using OutSystems.
 
@@ -134,7 +134,7 @@ Delete the data that's already archived from the primary storage. Use an indepen
 
 ![Diagram illustrating the purging process where records with the IsArchived flag set to True are purged from the primary storage by the Archiving Engine.](images/data-archiving-purge-data-diag.png "Light Archiving Step 5: Purging Archived Data")
 
-For further information, see the [best practices for data purging](./data-purging.md).
+For further information, see the [best practices for data purging](data-purging.md).
 
 **Step 5. Create UI that enables end users to search and restore data**
 
@@ -189,7 +189,7 @@ Always keep the archive storage optimized to return information as fast as possi
 
 If you have no purging strategy on the archive storage the data will grow and the archive storage will become slower.
 
-When the archived data is no longer required, you should purge it. [See more details about data purging.](./data-purging.md)
+When the archived data is no longer required, you should purge it. [See more details about data purging.](data-purging.md)
 
 ### Incorrect archiving schedule
 

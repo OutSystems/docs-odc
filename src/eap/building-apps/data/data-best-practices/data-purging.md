@@ -12,7 +12,7 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 
 Data purging is a mechanism that permanently deletes inactive or obsolete records from the database. It should be considered for entities with an evident high-growth rate, which can quickly achieve considerable volumes of data.
 
-Data purging is an important [data management practice](./intro.md#data-purging-archiving) when dealing with a large volume of application data. Reducing the amount of active data allows the application to respond faster, helping to prevent performance issues.
+Data purging is an important [data management practice](intro.md#data-purging-archiving) when dealing with a large volume of application data. Reducing the amount of active data allows the application to respond faster, helping to prevent performance issues.
 
 This article describes a best practice for implementing data purging in your OutSystems apps. Make sure your purging strategies are aligned with existing business and legal requirements.
 
@@ -70,7 +70,7 @@ The whole system may require multiple Timers to purge data from different entiti
 
 ### No referential integrity strategy
 
-When implementing your data purging mechanism, you have to consider the [referential integrity (Delete Rule)](../modeling/relationship/relationships.md/#referential-integrity) defined for the relationships between the Entities in your model, as it directly impacts the sequence of your deletion flow.
+When implementing your data purging mechanism, you have to consider the [referential integrity (Delete Rule)](../modeling/relationship/relationships.md#referential-integrity) defined for the relationships between the Entities in your model, as it directly impacts the sequence of your deletion flow.
 
 During the design phase of your Entities model, make sure you correctly set the **Delete Rule** for the several relationships, as described below, taking the data purging requirement into consideration. Otherwise, you might end up with a complex and hard to maintain purging implementation.
 
