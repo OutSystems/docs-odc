@@ -10,6 +10,14 @@ figma:
 
 # Remove _ts from query strings
 
+<div class="warning" markdown="1">
+
+This page provides a suggestion on how to achieve improved SEO performance with ODC Applications using third party tools as a workaround and isn't an official supported product offering.
+
+Please be aware of existing [Platform Limits](../../getting-started/system-requirements.md#platform-limits) and that Platform changes can subject unsupported workarounds to breaking changes without warning.
+
+</div>
+
 OutSystems apps use caching to increase page performance and load times. To track whether a page requires an update after a new deployment, OutSystems reactive apps use a query string parameter called _ts. An OutSystems app can check the value of this parameter to calculate whether it needs to refresh assets.
 
 This parameter isn't mandatory for a page to load. e.g. if a customer accesses an OutSystems app at `https://example.com/exampleapp` the app renders the Home screen. However, when navigating between pages of an app, the URL navigated to may look like `https://example.com/exampleapp/home?_ts=3123123`.
