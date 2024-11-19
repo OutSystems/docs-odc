@@ -30,7 +30,7 @@ ODC offers [private gateways](../../manage-platform-app-lifecycle/private-gatewa
 
 ## Supported systems
 
-The following versions of systems are supported to integate with ODC:
+The following versions of systems are supported to integrate with ODC:
 
 
 * **Microsoft SQL Server**:
@@ -46,8 +46,6 @@ The following versions of systems are supported to integate with ODC:
     * Azure SQL Database
     * Azure SQL Managed Instance
 
-* **Oracle 19c**
-
 * **PostgreSQL**:
 
     OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
@@ -58,12 +56,14 @@ The following versions of systems are supported to integate with ODC:
     * PostgreSQL 15
     * PostgreSQL 16
 
-* **Salesforce**
-
 * **SAP**:
 
     * SAP ECC 5.0 or higher
     * SAP S/4HANA
+
+* **Salesforce**
+
+* **Oracle 19c**
 
 ## Permissions requirements
 
