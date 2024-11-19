@@ -202,7 +202,7 @@ Consider the following when integrating an external system.
 * In a composite key scenario in ODC Studio, entities have only one attribute marked as the Identifier, while the remaining primary keys are treated as regular attributes. As a result, it's crucial to handle entity actions such as Update or Delete with caution. An incorrect update or delete action could result in updating or deleting unintended records in external systems, as these actions rely solely on the single Identifier. For the SAP OData connector, the behavior differs: in a composite key scenario, ODC does not designate any attribute as the Identifier.
 
 <div class="os-accordion__item">
-    <div class="os-accordion__title" markdown="1">
+    <div class="os-accordion__title">
         Azure SQL
     </div>
     <div class="os-accordion__content" markdown="1">
@@ -222,7 +222,7 @@ Consider the following when integrating an external system.
     </div>
 </div>
 <div class="os-accordion__item">
-    <div class="os-accordion__title" markdown="1">
+    <div class="os-accordion__title">
         Oracle
     </div>
     <div class="os-accordion__content" markdown="1">
@@ -238,7 +238,7 @@ Consider the following when integrating an external system.
 </div>
 
 <div class="os-accordion__item">
-    <div class="os-accordion__title" markdown="1">
+    <div class="os-accordion__title">
         PostgreSQL
     </div>
     <div class="os-accordion__content" markdown="1">
@@ -266,10 +266,8 @@ Consider the following when integrating an external system.
 </div>
 
 <div class="os-accordion__item">
-<div class="os-accordion__title" markdown="1">
-
+<div class="os-accordion__title">
 Salesforce
-
 </div>
 <div class="os-accordion__content" markdown="1">
 
@@ -286,7 +284,7 @@ Salesforce
 
 
 <div class="os-accordion__item">
-    <div class="os-accordion__title" markdown="1">
+    <div class="os-accordion__title">
         SAP OData
     </div>
     <div class="os-accordion__content" markdown="1">
