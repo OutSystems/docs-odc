@@ -32,11 +32,11 @@ ODC offers [private gateways](../../manage-platform-app-lifecycle/private-gatewa
 
 OutSystems supports the following versions of systems:
 
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
+<div class="os-accordion__item" markdown="1">
+    <div class="os-accordion__title" markdown="1">
         Microsoft SQL Server
     </div>
-    <div class="os-accordion__content">
+    <div class="os-accordion__content" markdown="1">
         <ul>
             <li>SQL Server 2014</li>
             <li>SQL Server 2016</li>
@@ -47,11 +47,11 @@ OutSystems supports the following versions of systems:
     </div>
 </div>
 
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
+<div class="os-accordion__item" markdown="1">
+    <div class="os-accordion__title" markdown="1">
         Azure SQL
     </div>
-    <div class="os-accordion__content">
+    <div class="os-accordion__content" markdown="1">
         <ul>
             <li>Azure SQL Database</li>
             <li>Azure SQL Managed Instance</li>
@@ -59,22 +59,22 @@ OutSystems supports the following versions of systems:
     </div>
 </div>
 
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
+<div class="os-accordion__item" markdown="1">
+    <div class="os-accordion__title" markdown="1">
         Oracle
     </div>
-    <div class="os-accordion__content">
+    <div class="os-accordion__content" markdown="1">
         <ul>
             <li>Oracle 19c</li>
         </ul>
     </div>
 </div>
 
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
+<div class="os-accordion__item" markdown="1">
+    <div class="os-accordion__title" markdown="1">
         PostgreSQL
     </div>
-    <div class="os-accordion__content">
+    <div class="os-accordion__content" markdown="1">
         OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
         <ul>
             <li>PostgreSQL 12</li>
@@ -86,22 +86,22 @@ OutSystems supports the following versions of systems:
     </div>
 </div>
 
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
+<div class="os-accordion__item" markdown="1">
+    <div class="os-accordion__title" markdown="1">
         Salesforce
     </div>
-    <div class="os-accordion__content">
+    <div class="os-accordion__content" markdown="1">
         <ul>
             <li>Salesforce</li>
         </ul>
     </div>
 </div>
 
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
+<div class="os-accordion__item" markdown="1">
+    <div class="os-accordion__title" markdown="1">
         SAP
     </div>
-    <div class="os-accordion__content">
+    <div class="os-accordion__content" markdown="1">
         <ul>
             <li>SAP ECC 5.0 or higher</li>
             <li>SAP S/4HANA</li>
@@ -252,11 +252,11 @@ Consider the following when integrating an external system.
 * When a database user lacks the necessary permissions to access the table that a Foreign Key (FK) points to, the Foreign Key is treated as a regular column. This can result in errors during the insertion or updating of records. To prevent such issues, it is advisable to ensure that the user can access all the tables required by the application.
 * In a composite key scenario in ODC Studio, entities have only one attribute marked as the Identifier, while the remaining primary keys are treated as regular attributes. As a result, it's crucial to handle entity actions such as Update or Delete with caution. An incorrect update or delete action could result in updating or deleting unintended records in external systems, as these actions rely solely on the single Identifier. For the SAP OData connector, the behavior differs: in a composite key scenario, ODC does not designate any attribute as the Identifier.
 
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
+<div class="os-accordion__item" markdown="1">
+    <div class="os-accordion__title" markdown="1">
         Azure SQL
     </div>
-    <div class="os-accordion__content">
+    <div class="os-accordion__content" markdown="1">
         <ul>
             <li>For Azure SQL Managed Instances
 				<ul>
@@ -272,11 +272,11 @@ Consider the following when integrating an external system.
         </ul>
     </div>
 </div>
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
+<div class="os-accordion__item" markdown="1">
+    <div class="os-accordion__title" markdown="1">
         Oracle
     </div>
-    <div class="os-accordion__content">
+    <div class="os-accordion__content" markdown="1">
         <ul>
             <li>The `DiffMinutes` and `DiffSeconds` built-in functions for Oracle only allow max intervals between dates:</li>
             <ul>
@@ -288,11 +288,11 @@ Consider the following when integrating an external system.
     </div>
 </div>
 
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
+<div class="os-accordion__item" markdown="1">
+    <div class="os-accordion__title" markdown="1">
         PostgreSQL
     </div>
-    <div class="os-accordion__content">
+    <div class="os-accordion__content" markdown="1">
         <ul>
             <li>For PostgreSQL connections, you may encounter issues in Text data type columns when inserting an empty value, and the connection is configured to overwrite null values with default values. OutSystems recommends you set a different default value to columns of these data types, such as for Time: 00:00:00 or for Float: 0. The following data types are impacted:</li>
             <ul>
@@ -316,32 +316,31 @@ Consider the following when integrating an external system.
     </div>
 </div>
 
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
-        Salesforce
-    </div>
-    <div class="os-accordion__content">
-        <ul>
-            <li>Entities and attributes for Salesforce are displayed using their API names, such as CustomObject_c, instead of Field Labels or Field Names, such as CustomObject.</li>
-            <li>Custom attributes and their data types in Salesforce have different mapping than the built-in attributes. For more information, see [salesforce custom columns mapping.](#salesforce-custom-columns-mapping)</li>
-            <li>Salesforce doesn't support leading and trailing white spaces.</li>
-            <ul>
-                <li>Salesforce removes those white spaces. While inserting an empty string, Salesforce inserts NULL instead.</li>
-            </ul>
-            <li>Salesforce is case-insensitive, and `ToUpper`/`ToLower` built-in functions don't have the expected behavior in aggregates.</li>
-            <li>When sorting queries by ID, the Salesforce API orders the Id attribute in a case-sensitive manner, which differs from the expected case-insensitive sorting of other attributes. While regular attributes are sorted in the standard order (A, a, B, b, C, c), the Id attribute is sorted with uppercase letters first, followed by lowercase letters (A, B, C, a, b, c).</li>
-            <li>Regarding Salesforce queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.</li>
-            <li>When joining Salesforce entities, it's recommended to use parent-child relationships or primary key and foreign key attributes. Salesforce query language doesn't support relationship queries using other attributes. If this guideline is not followed, the join condition can't be pushed to Salesforce, potentially causing performance issues.</li>
-        </ul>
-    </div>
+<div class="os-accordion__item" markdown="1">
+<div class="os-accordion__title" markdown="1">
+
+Salesforce
+
+</div>
+<div class="os-accordion__content" markdown="1">
+
+* Entities and attributes for Salesforce are displayed using their API names, such as CustomObject_c, instead of Field Labels or Field Names, such as CustomObject.
+* Custom attributes and their data types in Salesforce have different mapping than the built-in attributes. For more information, see [salesforce custom columns mapping](#salesforce-custom-columns-mapping).
+* Salesforce doesn't support leading and trailing white spaces. Salesforce removes those white spaces. While inserting an empty string, Salesforce inserts NULL instead.
+* Salesforce is case-insensitive, and `ToUpper`/`ToLower` built-in functions don't have the expected behavior in aggregates.
+* When sorting queries by ID, the Salesforce API orders the Id attribute in a case-sensitive manner, which differs from the expected case-insensitive sorting of other attributes. While regular attributes are sorted in the standard order (A, a, B, b, C, c), the Id attribute is sorted with uppercase letters first, followed by lowercase letters (A, B, C, a, b, c).
+* Regarding Salesforce queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.
+* When joining Salesforce entities, it's recommended to use parent-child relationships or primary key and foreign key attributes. [Salesforce query language](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) doesn't support relationship queries using other attributes. If this guideline is not followed, the join condition can't be pushed to Salesforce, potentially causing performance issues.
+
+</div>
 </div>
 
 
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
+<div class="os-accordion__item" markdown="1">
+    <div class="os-accordion__title" markdown="1">
         SAP OData
     </div>
-    <div class="os-accordion__content">
+    <div class="os-accordion__content" markdown="1">
         <ul>
             <li>SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.</li>
             <li>SAP OData only supports read-only entity actions in ODC Studio.</li>
