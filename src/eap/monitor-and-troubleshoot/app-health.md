@@ -62,7 +62,7 @@ You can click the request with errors and the slowest request to display a trace
 
 <div class="warning" markdown="1">
 
-Apps published before November 11, 2024, might not send data metrics correctly to the analytics dashboard.
+Apps published before November 11, 2024, might not send data geography metrics correctly for some traces.
 
 </div>
 
