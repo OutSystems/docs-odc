@@ -30,85 +30,40 @@ ODC offers [private gateways](../../manage-platform-app-lifecycle/private-gatewa
 
 ## Supported systems
 
-OutSystems supports the following versions of systems:
+The following versions of systems are supported to integate with ODC:
 
-<div class="os-accordion__item" markdown="1">
-    <div class="os-accordion__title" markdown="1">
-        Microsoft SQL Server
-    </div>
-    <div class="os-accordion__content" markdown="1">
-        <ul>
-            <li>SQL Server 2014</li>
-            <li>SQL Server 2016</li>
-            <li>SQL Server 2017</li>
-            <li>SQL Server 2019</li>
-            <li>SQL Server 2022</li>
-        </ul>
-    </div>
-</div>
 
-<div class="os-accordion__item" markdown="1">
-    <div class="os-accordion__title" markdown="1">
-        Azure SQL
-    </div>
-    <div class="os-accordion__content" markdown="1">
-        <ul>
-            <li>Azure SQL Database</li>
-            <li>Azure SQL Managed Instance</li>
-        </ul>
-    </div>
-</div>
+* **Microsoft SQL Server**:
 
-<div class="os-accordion__item" markdown="1">
-    <div class="os-accordion__title" markdown="1">
-        Oracle
-    </div>
-    <div class="os-accordion__content" markdown="1">
-        <ul>
-            <li>Oracle 19c</li>
-        </ul>
-    </div>
-</div>
+    * SQL Server 2014
+    * SQL Server 2016
+    * SQL Server 2017
+    * SQL Server 2019
+    * SQL Server 2022
 
-<div class="os-accordion__item" markdown="1">
-    <div class="os-accordion__title" markdown="1">
-        PostgreSQL
-    </div>
-    <div class="os-accordion__content" markdown="1">
-        OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
-        <ul>
-            <li>PostgreSQL 12</li>
-            <li>PostgreSQL 13</li>
-            <li>PostgreSQL 14</li>
-            <li>PostgreSQL 15</li>
-            <li>PostgreSQL 16</li>
-        </ul>
-    </div>
-</div>
+* **Azure SQL**: 
 
-<div class="os-accordion__item" markdown="1">
-    <div class="os-accordion__title" markdown="1">
-        Salesforce
-    </div>
-    <div class="os-accordion__content" markdown="1">
-        <ul>
-            <li>Salesforce</li>
-        </ul>
-    </div>
-</div>
+    * Azure SQL Database
+    * Azure SQL Managed Instance
 
-<div class="os-accordion__item" markdown="1">
-    <div class="os-accordion__title" markdown="1">
-        SAP
-    </div>
-    <div class="os-accordion__content" markdown="1">
-        <ul>
-            <li>SAP ECC 5.0 or higher</li>
-            <li>SAP S/4HANA</li>
-        </ul>
-    </div>
-</div>
+* **Oracle 19c**
 
+* **PostgreSQL**:
+
+    OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
+
+    * PostgreSQL 12
+    * PostgreSQL 13
+    * PostgreSQL 14
+    * PostgreSQL 15
+    * PostgreSQL 16
+
+* **Salesforce**
+
+* **SAP**:
+
+    * SAP ECC 5.0 or higher
+    * SAP S/4HANA
 
 ## Permissions requirements
 
@@ -138,16 +93,10 @@ To create a new database connection, go to the ODC Portal and follow these steps
 
     </div>
 
-1. After entering the information, click the **Test connection** button at the bottom of the form. 
+1. After entering the information, click the **Test connection** button at the bottom of the form. If the test fails, a message displays. Make the necessary changes and test again. 
 
-    <div class="info" markdown="1">
-
-    If the test fails, a message displays. Make the necessary changes and test again. 
-
-    </div>
-
-1. To apply to a stage, an admin can choose one of the following.
-    * Click Apply to all stages to use the same connection information in all stages.
+1. To apply to stages, you can choose one of the following.
+    * Click **Apply to all stages** to use the same connection information in all stages.
     * Select the stage name to use connection information for a single stage.
 
 You can use stored procedures as custom code (C#) to integrate complex database operations directly into your apps. For more information, refer to [Supporting stored procedure in ODC](../../building-apps/external-logic/stored-procedure.md).
@@ -252,7 +201,7 @@ Consider the following when integrating an external system.
 * When a database user lacks the necessary permissions to access the table that a Foreign Key (FK) points to, the Foreign Key is treated as a regular column. This can result in errors during the insertion or updating of records. To prevent such issues, it is advisable to ensure that the user can access all the tables required by the application.
 * In a composite key scenario in ODC Studio, entities have only one attribute marked as the Identifier, while the remaining primary keys are treated as regular attributes. As a result, it's crucial to handle entity actions such as Update or Delete with caution. An incorrect update or delete action could result in updating or deleting unintended records in external systems, as these actions rely solely on the single Identifier. For the SAP OData connector, the behavior differs: in a composite key scenario, ODC does not designate any attribute as the Identifier.
 
-<div class="os-accordion__item" markdown="1">
+<div class="os-accordion__item">
     <div class="os-accordion__title" markdown="1">
         Azure SQL
     </div>
@@ -272,7 +221,7 @@ Consider the following when integrating an external system.
         </ul>
     </div>
 </div>
-<div class="os-accordion__item" markdown="1">
+<div class="os-accordion__item">
     <div class="os-accordion__title" markdown="1">
         Oracle
     </div>
@@ -288,7 +237,7 @@ Consider the following when integrating an external system.
     </div>
 </div>
 
-<div class="os-accordion__item" markdown="1">
+<div class="os-accordion__item">
     <div class="os-accordion__title" markdown="1">
         PostgreSQL
     </div>
@@ -316,7 +265,7 @@ Consider the following when integrating an external system.
     </div>
 </div>
 
-<div class="os-accordion__item" markdown="1">
+<div class="os-accordion__item">
 <div class="os-accordion__title" markdown="1">
 
 Salesforce
@@ -336,7 +285,7 @@ Salesforce
 </div>
 
 
-<div class="os-accordion__item" markdown="1">
+<div class="os-accordion__item">
     <div class="os-accordion__title" markdown="1">
         SAP OData
     </div>
