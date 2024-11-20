@@ -41,7 +41,7 @@ The following table lists elements and their possible Public property values.
 | Local storage Entities    | No                              | Not applicable                       |
 | Processes                 | No                              | Not applicable                       |
 | Resources                 | No                              | No                                   |
-| Roles                     | No                              | Not applicable                       |
+| Roles                     | Yes                             | Not applicable                       |
 | Screens in web apps       | Yes                             | Not Applicable                       |
 | Screens in mobile apps    | No                             | Not Applicable                       |
 | Scripts                   | No                              | No                                   |
