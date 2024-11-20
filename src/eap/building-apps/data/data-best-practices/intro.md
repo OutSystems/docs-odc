@@ -12,6 +12,30 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 
 The following are recommended best practices for handling and modeling data in OutSystems that help you design efficient and scalable apps.
 
+## Use settings to hold persistent app configurations { #settings }
+
+App [settings](../../../manage-platform-app-lifecycle/configuration-management.md#managing-settings) are public values that you can set in each deployment stage of your app or library.
+
+Settings are read-only at runtime. You can only update the value of a setting through the [ODC Portal](../../../getting-started/overview-portal-studio.md#odc-portal), which will then run an asynchronous process to update the runtime configuration of your app.
+
+### Recommendations
+
+Consider the following when evaluating the usage of a setting to hold specific data in your app:
+
+* Use settings to hold app configurations, such as an external party’s email address, feature toggle flags, and other application-wide values that don’t change frequently.
+
+* Don’t use settings to hold data that is frequently updated, as it’s inefficient. For managing frequently updated shared values, use an entity and back-office functionality.
+
+* Use settings to store sensitive app configurations. A setting can be [set as secret](../../../security/set-as-secret.md), providing a secure way to store sensitive information in encrypted vaults, such as passwords or authentication tokens.
+
+### Benefits
+
+Using settings to hold app configurations enables you to:
+
+* Have different behaviors for your app or library in each deployment stage, such as Development, QA, or Production.
+
+* Store sensitive app configuration using an out-of-the-box secure mechanism.
+
 ## Index your entities { #index-entities }
 
 When querying your entities is taking too long, creating entity [indexes](../modeling/entity.md#indexes) can significantly improve the overall query speed.
