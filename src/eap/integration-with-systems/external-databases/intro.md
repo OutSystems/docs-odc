@@ -19,7 +19,7 @@ Administrators ensure the app and its connection information are in the same sta
 
 There is no limit to the number of entities you can add from the external database.
 
-In ODC, you can combine data from different entities and distinct data sources into an aggregate.[Data Fabric](../../building-apps/data/fetch-data/data-mash.md) processes all external system data uniformly without storing any data persistently within Data Fabric or the ODC architecture. For more information, refer to [data handling in Data Fabric](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-fabric).
+In ODC, you can combine data from different entities and distinct data sources into an aggregate. [Data Fabric](../../building-apps/data/fetch-data/data-mash.md) processes all external system data uniformly without storing any data persistently within Data Fabric or the ODC architecture. For more information, refer to [data handling in Data Fabric](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-fabric).
 
 <div class="info" markdown="1">
 
@@ -179,7 +179,7 @@ Image<br/>Binary<br/>Varbinary | Blob<br/>Raw<br/>Long Raw | | | | Bytea |Binary
 Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType<br/>VARRAY<br/>OBJECT (structured) | | INT8<br/>DECFLOAT16<br/>DECFLOAT3<br/>UTCLONG | | BIT VARYING<br/>BOX<br/>CIDR<br/>CIRCLE<br/>COMPOSITE (user defined types and other composite types)<br/>INET<br/>INTERVAL<br/>LINE<br/>LSEG<br/>MACADDR<br/>MACADDR8<br/>PATH<br/>POINT<br/>POLYGON<br/>TSQUERY<br/>TSVECTOR<br/>TXID_SNAPSHOT<br/>all of the ARRAY types | Currently not supported and won't appear in ODC Portal.|
 Other data types | Other data types | Other data types | Other data types |Other data types | Other data types |No official support; attributes may not appear in the ODC Portal or may exhibit unexpected behavior. |
 
-## Salesforce custom columns mapping
+### Salesforce custom columns mapping
 
 Although Salesforce supports multiple data types in the built-in tables, the following mapping are for the custom columns:
 
@@ -194,75 +194,72 @@ Date | Date |
 Consider the following when integrating an external system.
 
 * SQL elements don't support external entities.
-* .NET does not support the Julian calendar for Oracle and Salesforce, and the minimum supported timestamp value is -62135596800000. 
-    * To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
-* Importing Views in ODC Studio only generates `Create<EntityName>` and `DeleteAll<EntityAction>` actions. Since Views don't have primary keys, ODC doesn't generate other entity actions. 
-    * Inserting a record in a View works only when the View comprises 1 table in the database. When View comprises more than 1 table, you may get an error.
+* .NET does not support the Julian calendar for Oracle and Salesforce, and the minimum supported timestamp value is -62135596800000. To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
+* Importing Views in ODC Studio only generates `Create<EntityName>` and `DeleteAll<EntityAction>` actions. Since Views don't have primary keys, ODC doesn't generate other entity actions. Inserting a record in a View works only when the View comprises 1 table in the database. When View comprises more than 1 table, you may get an error.
 * When a database user lacks the necessary permissions to access the table that a Foreign Key (FK) points to, the Foreign Key is treated as a regular column. This can result in errors during the insertion or updating of records. To prevent such issues, it is advisable to ensure that the user can access all the tables required by the application.
 * In a composite key scenario in ODC Studio, entities have only one attribute marked as the Identifier, while the remaining primary keys are treated as regular attributes. As a result, it's crucial to handle entity actions such as Update or Delete with caution. An incorrect update or delete action could result in updating or deleting unintended records in external systems, as these actions rely solely on the single Identifier. For the SAP OData connector, the behavior differs: in a composite key scenario, ODC does not designate any attribute as the Identifier.
 
 <div class="os-accordion__item">
-    <div class="os-accordion__title">
-        Azure SQL
-    </div>
-    <div class="os-accordion__content" markdown="1">
-        <ul>
-            <li>For Azure SQL Managed Instances
-				<ul>
-					<li>As a prerequisite, you might need to create a user database following this format: `username@instance-name`. The username can be any value of your choosing. The `instance-name` can be found in your Microsoft Azure SQL environment. The `host` property contains the `instance-name`.
-						<ul>
-							<li>As an example, if your `host` is `example12345.exampledns.database.windows.net`, the `instance-name` is `example12345`.</li>
-						</ul>
-					</li>
-					<li>When creating the Azure SQL connection in ODC Portal, insert the same username format (`username@instance-name`) on the username input </li>
-                    <li>When creating the Azure SQL connection in ODC Portal, in Additional Parameters input you might need to add `encrypt=true;trustServerCertificate=true;`</li>
-				</ul>
-			</li>
-        </ul>
-    </div>
+<div class="os-accordion__title">
+Azure SQL
 </div>
-<div class="os-accordion__item">
-    <div class="os-accordion__title">
-        Oracle
-    </div>
-    <div class="os-accordion__content" markdown="1">
-        <ul>
-            <li>The `DiffMinutes` and `DiffSeconds` built-in functions for Oracle only allow max intervals between dates:</li>
-            <ul>
-                <li>Seconds: 31 years, 9 months, 9 days, 1 hour, 46 minutes, and 39 seconds</li>
-                <li>Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds</li>
-            </ul>
-            <li>Oracle treats empty strings as NULL values. When inserting or updating a nullable text attribute with a value, Oracle stores NULL regardless of the Null Behavior configuration</li>
-        </ul>
-    </div>
+<div class="os-accordion__content" markdown="1">
+
+For Azure SQL Managed Instances:
+
+* As a prerequisite, you might need to create a user database following this format: `username@instance-name`. The username can be any value of your choosing. The `instance-name` can be found in your Microsoft Azure SQL environment. The `host` property contains the `instance-name`.
+
+    As an example, if your `host` is `example12345.exampledns.database.windows.net`, the `instance-name` is `example12345`.
+
+* When creating the Azure SQL connection in ODC Portal, insert the same username format (`username@instance-name`) on the username input.
+* When creating the Azure SQL connection in ODC Portal, in Additional Parameters input you might need to add `encrypt=true;trustServerCertificate=true;`.
+
+</div>
 </div>
 
+
 <div class="os-accordion__item">
-    <div class="os-accordion__title">
-        PostgreSQL
-    </div>
-    <div class="os-accordion__content" markdown="1">
-        <ul>
-            <li>For PostgreSQL connections, you may encounter issues in Text data type columns when inserting an empty value, and the connection is configured to overwrite null values with default values. OutSystems recommends you set a different default value to columns of these data types, such as for Time: 00:00:00 or for Float: 0. The following data types are impacted:</li>
-            <ul>
-                <li>Time</li>
-                <li>Numeric (Any, >8)</li>
-                <li>Numeric (>28, Any)</li>
-                <li>Decimal (Any, >8)</li>
-                <li>Decimal (>28, Any)</li>
-                <li>Float4</li>
-                <li>Float8</li>
-                <li>Float8_range</li>
-                <li>Real</li>
-                <li>Double precision</li>
-                <li>XML</li>
-                <li>JSON</li>
-                <li>UUID</li>
-                <li>Pg_lsn</li>
-                <li>Enum</li>
-            </ul>
-        </ul>
-    </div>
+<div class="os-accordion__title">
+Oracle
+</div>
+<div class="os-accordion__content" markdown="1">
+
+* The `DiffMinutes` and `DiffSeconds` built-in functions for Oracle only allow max intervals between dates:
+
+    * Seconds: 31 years, 9 months, 9 days, 1 hour, 46 minutes, and 39 seconds
+    * Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds
+            
+* Oracle treats empty strings as NULL values. When inserting or updating a nullable text attribute with a value, Oracle stores NULL regardless of the Null Behavior configuration.
+
+</div>
+</div>
+
+
+<div class="os-accordion__item">
+<div class="os-accordion__title">
+PostgreSQL
+</div>
+<div class="os-accordion__content" markdown="1">
+ 
+For PostgreSQL connections, you may encounter issues in Text data type columns when inserting an empty value, and the connection is configured to overwrite null values with default values. OutSystems recommends you set a different default value to columns of these data types, such as for Time: 00:00:00 or for Float: 0. The following data types are impacted:
+
+* Time
+* Numeric (Any, >8)
+* Numeric (>28, Any)
+* Decimal (Any, >8)
+* Decimal (>28, Any)
+* Float4
+* Float8
+* Float8_range
+* Real
+* Double precision
+* XML
+* JSON
+* UUID
+* Pg_lsn
+* Enum
+
+</div>
 </div>
 
 <div class="os-accordion__item">
@@ -284,15 +281,15 @@ Salesforce
 
 
 <div class="os-accordion__item">
-    <div class="os-accordion__title">
-        SAP OData
-    </div>
-    <div class="os-accordion__content" markdown="1">
-        <ul>
-            <li>SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.</li>
-            <li>SAP OData only supports read-only entity actions in ODC Studio.</li>
-            <li>SAP throws a `RAISE_SHORTDUMP` exception when requesting the row count for some VIEWS on the first request.</li>
-            <li>Regarding SAP OData queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.</li>
-        </ul>
-    </div>
+<div class="os-accordion__title">
+SAP OData
+</div>
+<div class="os-accordion__content" markdown="1">
+
+* SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.
+* SAP OData only supports read-only entity actions in ODC Studio.
+* SAP throws a `RAISE_SHORTDUMP` exception when requesting the row count for some VIEWS on the first request.
+* Regarding SAP OData queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.
+
+</div>
 </div>
