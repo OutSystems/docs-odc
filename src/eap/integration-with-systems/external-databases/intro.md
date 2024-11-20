@@ -240,7 +240,7 @@ Oracle
 PostgreSQL
 </div>
 <div class="os-accordion__content" markdown="1">
- 
+
 For PostgreSQL connections, you may encounter issues in Text data type columns when inserting an empty value, and the connection is configured to overwrite null values with default values. OutSystems recommends you set a different default value to columns of these data types, such as for Time: 00:00:00 or for Float: 0. The following data types are impacted:
 
 * Time
