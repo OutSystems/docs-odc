@@ -86,22 +86,6 @@ Here are some use cases where you can use workflow for automation:
 
 * Travel reimbursement
 
-## Workflow components
-
-You can implement a workflow in the workflow editor using the following process nodes:
-
-* [Start](start-workflow.md)
-
-* [Automatic activity](add-automatic-activity.md)
-
-* [Human activity](add-human-activity.md)
-
-* [Decision](add-decisions.md)
-
-* [Go to a previous step](go-to-previous-step.md)
-
-* [End](end-workflow.md)
-
 ## Key considerations for implementing workflows
 
 Here are some points to consider as you implement workflows in ODC:
@@ -121,3 +105,9 @@ Here are some points to consider as you implement workflows in ODC:
 * Workflows **do not support real-time collaboration**, meaning multiple users cannot edit a workflow simultaneously. However, basic conflict detection is supported. If a new version of a workflow exists in dev, you are notified when you open it or try to publish your changes.
 
 * There is **no debugger** for workflows. However, you can monitor the workflow's current state in the portal in near real-time.
+
+## Related resources
+
+* [Using workflows](using-workflows.md)
+* [Workflow nodes](workflow-components.md)
+* [Troubleshooting workflows](troubleshooting-workflows.md)

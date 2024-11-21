@@ -299,15 +299,17 @@
     - topics:
         - href: eap/building-apps/workflows/workflows-in-odc.md
         - href: eap/building-apps/workflows/using-workflows.md
-        - href: eap/building-apps/workflows/start-workflow.md
-        - href: eap/building-apps/workflows/add-conditional-start.md
-        - href: eap/building-apps/workflows/add-human-activity.md
-        - href: eap/building-apps/workflows/add-automatic-activity.md
-        - href: eap/building-apps/workflows/add-decisions.md
-        - href: eap/building-apps/workflows/add-wait.md
-        - href: eap/building-apps/workflows/go-to-previous-step.md
-        - href: eap/building-apps/workflows/end-workflow.md
-        - href: eap/building-apps/workflows/terminate-workflow.md
+        - href: eap/building-apps/workflows/workflow-components.md
+        - topics:
+            - href: eap/building-apps/workflows/start-workflow.md
+            - href: eap/building-apps/workflows/add-conditional-start.md
+            - href: eap/building-apps/workflows/add-human-activity.md
+            - href: eap/building-apps/workflows/add-automatic-activity.md
+            - href: eap/building-apps/workflows/add-decisions.md
+            - href: eap/building-apps/workflows/add-wait.md
+            - href: eap/building-apps/workflows/go-to-previous-step.md
+            - href: eap/building-apps/workflows/terminate-workflow.md
+            - href: eap/building-apps/workflows/end-workflow.md
         - href: eap/building-apps/workflows/system-entities.md
         - topics: 
             - href: eap/building-apps/workflows/filter-workflows.md
@@ -537,6 +539,7 @@
     - topics:
         - href: eap/reference/system-actions/auth.md
         - href: eap/reference/system-actions/user.md
+        - href: eap/reference/system-actions/workflows.md
   # Built-in functions
     - href: eap/reference/built-in-functions/intro.md
     - topics:

@@ -12,7 +12,8 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 
 The following **system entities** are available in ODC Studio for workflows:
 
-* **ActivityDefinition**: Stores the definition of each activity as specified in the workflow editor
+
+* **ActivityDefinition**: Stores the definition of each activity as specified in the workflow editor.
 
 * **ActivityInstance**: Stores a record for each activity that occurs while a process instance is active
 
@@ -41,4 +42,14 @@ The following diagram illustrates the relationship between the entities that are
 ## Related articles
 
 * [Build UI components using workflow entities](filter-workflows.md)
+
+ODC provides a set of system actions to modify workflows at runtime in ODC Studio. 
+
+* [HumanActivityAssign](../../reference/system-actions/workflows.md#humanactivityassign)
+
+* [HumanActivityOpen](../../reference/system-actions/workflows.md#humanactivityopen)
+
+* [HumanActivityRelease](../../reference/system-actions/workflows.md#humanactivityrelease)
+
+
 

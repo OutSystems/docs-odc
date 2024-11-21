@@ -82,3 +82,9 @@ To deploy your workflow and app, follow these steps:
 
 1. After acceptance testing, deploy the app and workflow to the Production stage.
 
+## Related resources
+
+* [Workflows in ODC](workflows-in-odc.md)
+* [Workflow nodes](workflow-components.md)
+* [Troubleshooting workflows](troubleshooting-workflows.md)
+

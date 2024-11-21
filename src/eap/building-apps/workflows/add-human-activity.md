@@ -5,7 +5,7 @@ locale: en-us
 guid: 9b6fcc2b-f38c-4225-b5a0-4989655f9545
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5911-44
 ---
 
 # Add human activity
@@ -43,18 +43,51 @@ To include human activity in a workflow, follow these steps:
     
     e. **Display message**: (Optional) Click the text area to open the Expression Editor and edit the condition on the editor. You can add more data so that more information is available for use within the scope of the Expression editor.
 
-    f. **Close on**: (Mandatory) Select the event and define the conditions within the human activity.  Once the event occurs and the conditions are met, **HumanActivityStatus** changes from Waiting or Running to Completed, and the workflow moves on to the next step. For example, in a human document review scenario, only when the event **LoanReview** occurs, and both conditions (DocsVerified=OK AND NumberDocsReviewed=NumberDocsSubmitted) are simultaneously true, will the human activity be closed, and the workflow moves on to the next step.
+    f. **Close on**: (Mandatory) Select the event and define the conditions within the human activity.  
+    
+    * The left side of each condition is always one of the event's input parameters.
+    * On the right side, you can select either a literal value or a value from a drop-down list.
+    * The condition is considered true when the left side equals the right side.
+	
+    If multiple conditions are defined, they are combined using the AND operator and evaluated together as True or False. For example, in a human document review scenario, only when the event **LoanReview** occurs, and both conditions (DocsVerified=OK AND NumberDocsReviewed=NumberDocsSubmitted) are simultaneously true, will the human activity be closed, and the workflow moves on to the next step.
 
-## Manually assign or re-assign human activity to a different user { #programmatic-assign }
+    Once the event occurs and the conditions are met, **HumanActivityStatus** changes from **Waiting** or ****Running** to **Completed**, and the workflow moves on to the next step. 
 
-You can modify the UserId to whom the human activity is assigned at runtime using low-code API implemented as a server action. This enables you to change the workflow from the ODC app at runtime. This server action can be accessed in the ODC Studio under the Logic > System > Server actions. 
+## Modify human activity at runtime
 
-The API uses the ActivityInstanceId to identify the workflow instance. This value is passed from the workflow editor in the ODC portal to Studio apps using service actions and screen input parameters.
+At runtime from the ODC Studio, you can use the low-code APIs to do the following:
+git 
+
+* [Manually assign or re-assign human activity to a different user](../../reference/system-actions/workflows.md#humanactivityassign)
+
+* [Open a human activity](../../reference/system-actions/workflows.md#humanactivityopen)
+
+* [Release a human activity from a user](../../reference/system-actions/workflows.md#humanactivityrelease)
+
+Here's the human activity status transition diagram that describes the status transitions of human activity node on execution of the low-code APIs.
+
+![Diagram showing the state transitions of human activity in a workflow, including states like Running, Waiting, Open, Completed, Terminated, and Error, with transitions triggered by events and actions.](images/activity-status-transition-diag.png "Human Activity State Transition Diagram")
+
+For detailed information about different statuses, refer to [Statuses of workflow nodes](workflow-components.md#statuses-of-workflow-nodes).
+
+## Human activity status definitions
  
-**Name** |  **Description** |  **Input Parameters**| **Type** | Mandatory/Optional
----|---|---|---|---
- HumanActivityAssign| Assigns or re-assigns a human activity to a specific user of a particular workflow instance. |ActivityInstanceId - Identifier of the workflow instance. This value can be retrieved from the ActivityInstance entity. |EntityReference | Mandatory
- | | |UserId - Identifier of the user who the activity is to be assigned to. | |  Mandatory
+At any given time, based on the progress of the human activity, the **HumanActivityNode** can be in one of the following statuses:
+
+- **Running** - The human activity is currently being executed, such as when a service action is retrieving data.
+
+- **Waiting** - The human activity is on hold, awaiting further action. For instance, it may be paused for manual intervention.
+
+- **Completed** -  The human activity has finished, allowing the workflow to proceed to the next step.
+
+- **Terminated** - The human activity and the entire workflow is terminated following the successful execution of the **ProcessTerminate** API.
+
+- **Error** - The human activity encounters an issue, which can happen due to:
+  * A failure in the service action it depends on.
+  * Reaching the maximum number of retries without successful execution.
+  * Temporary problems, such as a service being unavailable.
+
+- **Open** - The human activity has been opened by an end-user but has not yet proceeded to execution.
 
 ## Next step
 

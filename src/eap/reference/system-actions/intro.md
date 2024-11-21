@@ -14,3 +14,9 @@ When designing the business logic of your apps, you can use built-in system acti
 
 * **Client Actions** > **(System)** folder in the Logic tab in ODC Studio.
 * **Server Actions** > **(System)** folder in the Logic tab in ODC Studio.
+
+Here are the system actions available in ODC:
+
+* [Authentication system actions](auth.md)
+* [User system actions](user.md)
+* [Workflows system actions](workflows.md)
