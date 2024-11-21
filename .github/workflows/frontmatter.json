@@ -31,7 +31,7 @@
       "pattern": "^(mobile apps|reactive web apps)(,\\s*(mobile apps|reactive web apps))*$"
     },
     "content_type": {},
-	"audience": {},
+    "audience": {},
     "platform-version": {
       "type": "string",
       "enum": [
@@ -52,6 +52,9 @@
           "pattern": "^https://www\\.figma\\.com"
         }
       ]
+    },
+    "api-render": {
+      "type": "boolean"
     }
   },
   "required": [
