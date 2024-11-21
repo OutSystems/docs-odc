@@ -58,6 +58,4 @@ The API uses the ActivityInstanceId to identify the workflow instance. This valu
 
 ## Next step
 
-Create customized dashboards and screens where users can view and act on tasks assigned to them or their roles. For detailed information, refer to [Build UI components using workflow entities](filter-workflows.md)
-
-
+Create customized dashboards and screens where users can view and act on tasks assigned to them or their roles. For detailed information, refer to [Build UI components using workflow entities](filter-workflows.md).
