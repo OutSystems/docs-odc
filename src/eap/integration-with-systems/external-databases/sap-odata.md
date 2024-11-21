@@ -1,11 +1,11 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports writing data to SAP O Data connection.
 tags: 
-outsystems_tools: 
+outsystems-tools: 
 guid: 5f66d96c-a0ac-4b19-8211-a576a044468c
 locale: en-us
 app_type: mobile apps, reactive web apps
-content_type: 
+content-type: 
 audience: 
 platform-version: odc
 figma: https://www.figma.com/design/AOyPMm22N6JFaAYeejDoge/Configuration-management?node-id=3711-10&t=3EmFUNoGU0AIgLBT-1

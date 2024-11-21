@@ -1,11 +1,11 @@
 ---
 summary: Learn the best practices for creating your app's logic.
 tags: 
-outsystems_tools: 
+outsystems-tools: 
 guid: b3c30de3-477e-4f09-99d0-e4b2e711f917
 locale: en-us
 app_type: mobile apps, reactive web apps
-content_type: 
+content-type: 
 audience: 
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=6404-238&t=Rja8WKQPyVX2gJzO-1

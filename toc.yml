@@ -446,6 +446,7 @@
 # User management
 - href: eap/user-management/intro.md 
 - topics:
+    - href: eap/user-management/classify-users.md    
     - href: eap/manage-platform-app-lifecycle/external-idps/intro.md
     - topics:
         - href: eap/manage-platform-app-lifecycle/external-idps/apps.md 
@@ -454,7 +455,7 @@
         - href: eap/manage-platform-app-lifecycle/external-idps/end-user-group-mapping.md
     - href: eap/user-management/roles.md
     - href: eap/user-management/secure-app-with-roles.md
-    - href: eap/user-management/passwords.md
+    - href: eap/user-management/passwords.md    
 
 #Monitoring and troubleshooting
 - href: eap/monitor-and-troubleshoot/monitor-apps.md
