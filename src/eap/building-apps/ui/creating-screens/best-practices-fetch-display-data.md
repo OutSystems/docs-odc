@@ -88,3 +88,21 @@ To avoid showing a blank screen while data is being fetched:
 ### Benefits
 
 By following these recommendations, you avoid the perception of an unresponsive or broken app, improving user experience.
+
+## Avoid fetching a large number of records
+
+Displaying a large number of records all at once is slow and unnecessary, as the user may only need some records at a time. 
+
+### Recommendations
+
+When displaying a large number of records, follow these recommendations:
+
+* Fetch data only on demand by setting the **Fetch** property of your screen aggregates to ```Only on Demand```. For more information, refer to [Fetching Data On Demand](https://learn.outsystems.com/training/journeys/programming-model-645/fetching-data-on-demand/odc/487).
+
+* If you use the list widget, take a lazy loading approach by handling the **On Scroll Ending** event. This approach makes your app load data incrementally as users scroll. ​
+
+* If you use the table widget, use the [pagination](../patterns/navigation/pagination.md) UI pattern to load only a certain number of records each time instead of loading an entire table at once.
+
+### Benefits
+
+Implementing these best practices helps reducing initial load times and server strain, while ensuring a smooth user experience. You can efficiently handle large datasets without overwhelming the user interface.

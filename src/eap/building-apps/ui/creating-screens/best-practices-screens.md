@@ -63,3 +63,25 @@ Using CSS in a separate location instead of inline offers several long-term adva
 * **Maintainability:** When you need to change a style, you only need to do it in one place instead of going through every element where you defined that style inline. 
 
 * **Collaboration**: By keeping CSS separate, you improve collaboration with other developers or designers, who don’t need to be familiar with all the code to be able to edit styles.
+
+## Optimize image sizes
+
+Large images increase bandwidth usage and processing time, slowing screen rendering.
+
+### Recommendations
+
+When adding images to your screens:
+
+* Reduce the size of images to the minimum needed to be correctly displayed to the user (below 150KB for mobile apps, and 500KB for web apps). 
+
+* Reduce the images' resolution to a maximum of 1024px. Simply setting their width/height to lower values doesn't reduce the bandwidth needed to fetch the image from the server. 
+
+* Consider having big images as external resources, not contained inside the app.
+
+* Use different images for​ different screen sizes.
+
+* Use different images when displaying full-size images or thumbnails.
+
+### Benefits
+
+Optimizing image sizes makes your screens load faster by decreasing bandwidth usage and request processing time in the browser. On the development side, an app with smaller images results in smaller OML files, which take less time to save and publish.
