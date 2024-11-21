@@ -15,7 +15,7 @@
     },
     "summary": {},
     "tags": {},
-    "outsystems_tools": {},
+    "outsystems-tools": {},
     "guid": {
       "type": "string",
       "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
@@ -30,7 +30,7 @@
       "type": "string",
       "pattern": "^(mobile apps|reactive web apps)(,\\s*(mobile apps|reactive web apps))*$"
     },
-    "content_type": {},
+    "content-type": {},
     "audience": {},
     "platform-version": {
       "type": "string",
