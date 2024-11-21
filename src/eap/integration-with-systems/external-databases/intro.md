@@ -287,9 +287,26 @@ SAP OData
 <div class="os-accordion__content" markdown="1">
 
 * SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.
-* SAP OData only supports read-only entity actions in ODC Studio.
 * SAP throws a `RAISE_SHORTDUMP` exception when requesting the row count for some VIEWS on the first request.
 * Regarding SAP OData queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.
+* The CreateOrUpdate entity action is not available for any entity.
+* Deep updates and deletes are not available. However, you can use the Update and Delete entity actions to update or delete records individually, as long as those actions are available for the given entities.
+* Bulk insert/update entity action is unavailable for any entity due to SAP's lack of UPSERT support. 
+* Certain Delete entity actions may not show Delete entity actions in ODC Studio due to temporary limitations in the SAP driver. 
+* Some Update entity actions may fail if SAP requires the **If-Match** header. 
+    * For example, an error message `_The Data Service Request is required to be conditional. Try using the 'If-Match' header.`
+* Composite keys: SAP entities can have composite primary keys.
+    * Entities and entity actions: The entity won't have a primary key if there is a composite key. ODC won't mark any key as a primary key. Hence, you don't get the Update entity action. Also, the Create entity action has no output parameter ID.
+    * Deep insert server action: The server action provides an output parameter for each PK. The data types and the names of these parameters are based on the original input structure.
+* In SAP, computed attributes are categorized into the following types with distinct behaviors:
+    * Primitive Data Types: 
+        * Read/Write Operations: These attributes support both read and write operations.
+        * Potential Issues: Writing data to these attributes may cause runtime errors due to conflicts with SAP business rules.
+    * Complex Data Types:
+        * Read Operations: Reading data from complex attributes is not supported.
+        * Write Operations: Writing to complex attributes is allowed but may result in runtime errors caused by SAP business rules. For example, an error `\[/IWBEP/CM\_V4\_COS/028] Complex property \&lt;attribute_name&gt; is computed and not changeable`.
+* SAP v4 entities do not support NULL values. You can override the default value at the attribute level. Users must manually delete the default value during input in the app to prevent NULL values from being written to SAP.
+
 
 </div>
 </div>
