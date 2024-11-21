@@ -19,21 +19,21 @@ In OutSystems, you can fetch data to populate screens using aggregates or data a
 
 ### Recommendations
 
-Use aggregates to fetch data from database entities. Favor using aggregates over advanced queries.
+Use aggregates to fetch data from database entities. Favor using aggregates over SQL queries.
 
 ### Benefits
 
 When fetching data from database entities, aggregates offer the following advantages:
 
-* Aggregates are visually defined and scoped to the screen, making it easy to retrieve the data needed for display.
+* Aggregates are visually defined, making data retrieval more intuitive. They also allow you to preview their outputs in real time.
 
-* Aggregates automatically absorb changes in the data model and can load the local database's data from the server. 
+* Aggregates automatically absorb changes in the data model. 
 
 * Aggregates support combining several entities and advanced filtering.
 
 * Aggregates retrieve only the attributes that are used on the screen.
 
-* Aggregates run asynchronously. Asynchronous fetching allows users to interact with the app while data loads.
+* Aggregates run asynchronously, allowing users to interact with the app while data loads.
 
 For more information, refer to [Fetch and display data from the database in OutSystems](../interaction/fetch-display.md) and [Displaying Data on Screens](https://learn.outsystems.com/training/journeys/building-screens-with-data-637/displaying-data-on-screens/odc/109).
 
@@ -51,7 +51,7 @@ Use data actions when:
 
 ### Benefits
 
-Data actions can call external REST web services or execute advanced SQL queries, allowing you to retrieve complex data from the database, which you wouldn’t be able to do using aggregates.
+Data actions can call external REST APIs or execute advanced SQL queries, allowing you to retrieve complex data from the database, which you wouldn’t be able to do using aggregates.
 
 For more information, refer to [Displaying Data on Screens](https://learn.outsystems.com/training/journeys/building-screens-with-data-637/displaying-data-on-screens/odc/109).
 
