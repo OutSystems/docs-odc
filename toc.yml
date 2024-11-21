@@ -226,6 +226,7 @@
             - href: eap/building-apps/logic/expressions/expression-editor.md
             - href: eap/building-apps/logic/expressions/operators.md
             - href: eap/building-apps/logic/expressions/operands.md
+        - href: eap/building-apps/logic/best-practices-logic.md
     # Extend your apps with external logic
     - href: eap/building-apps/external-logic/intro.md
     - topics: 
