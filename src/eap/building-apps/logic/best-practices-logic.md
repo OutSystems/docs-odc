@@ -8,7 +8,7 @@ app_type: mobile apps, reactive web apps
 content_type: 
 audience: 
 platform-version: odc
-figma: 
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=6404-238&t=Rja8WKQPyVX2gJzO-1
 ---
 
 # Best practices for logic
