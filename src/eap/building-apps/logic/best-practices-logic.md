@@ -75,6 +75,24 @@ Avoid hard-coded values in your app's code. Depending on the use case, use one o
 
 Avoiding hard-coded values makes your code easier to understand and maintain.
 
+## Enable caching of server actions returning the same result 
+
+Server actions that calculate or fetch information multiple times with the same results consume unnecessary processing time and resources. If those actions are slow, they negatively impact the end-user experience.
+
+### Recommendations
+
+When implementing your server-side logic:
+
+* Enable caching of server actions that return the same information multiple times. Caching temporarily stores previously calculated or fetched data in memory. When the server action is run again for the same information, the stored data is returned, and the calculation or fetching is skipped.
+
+  ![Screenshot showing a Server Action with cache enabled](images/best-practices-logic-cache.png "Enable caching of a Server Action")
+
+* Don't enable caching of server actions that return information that changes frequently. This will often trigger cache invalidation mechanisms, and the information will take longer to be returned.
+
+### Benefits
+
+Enabling the cache of server actions that repeatedly return the same information improves your app's performance, as it avoids repeated calculation or data retrieval.
+
 ## Validate user permissions on server-side logic { #validate-permissions-server-side }
 
 Client-side logic is less secure than the server-side logic. Thus, you need more than [client-side validations](../ui/creating-screens/best-practices-screens.md#roles) to secure your app against malicious users trying to obtain or modify data they should not have access to.
