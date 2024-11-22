@@ -5,7 +5,7 @@ guid: 569562bc-96a5-4fe5-bce1-2b06832bd14e
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6410-593
 ---
 
 # Best practices for building screens
@@ -14,7 +14,7 @@ OutSystems enables you to build screens quickly and intuitively. By following so
 
 ## Use OutSystems widgets and UI patterns instead of high-code
 
-OutSystems offers a comprehensive set of widgets and UI patterns to build your app’s UI. 
+OutSystems offers a comprehensive set of widgets and UI patterns to build your app's UI. 
 
 ### Recommendations
 
@@ -62,7 +62,7 @@ Using CSS in a separate location instead of inline offers several long-term adva
 
 * **Maintainability:** When you need to change a style, you only need to do it in one place instead of going through every element where you defined that style inline. 
 
-* **Collaboration**: By keeping CSS separate, you improve collaboration with other developers or designers, who don’t need to be familiar with all the code to be able to edit styles.
+* **Collaboration**: By keeping CSS separate, you improve collaboration with other developers or designers, who don't need to be familiar with all the code to be able to edit styles.
 
 ## Optimize image sizes
 
@@ -85,3 +85,25 @@ When adding images to your screens:
 ### Benefits
 
 Optimizing image sizes makes your screens load faster by decreasing bandwidth usage and request processing time in the browser. On the development side, an app with smaller images results in smaller OML files, which take less time to save and publish.
+
+## Use roles to protect your screens { #roles }
+
+You can decide the behavior of your app's UI based on the user role using the **CheckROLENAMERole()** function on your screens. However, relying on UI for access control is not safe. Skilled users can overcome those limitations and access parts of the screen to which they are not authorized, such as disabled or invisible buttons.
+
+### Recommendations
+
+In addition to using roles to decide the UI behavior, the following best practices help you protect your screens from malicious users:
+
+* [Set your screens](../../../user-management/secure-app-with-roles.md#restrict-access-to-a-screen) to be **Accessible by** authenticated users of specific roles. If the screen gets too complex, consider splitting it into multiple screens with specific functionality for each role.
+
+  ![Screenshot showing a screen accessible only by specific roles](images/best-practices-screens-roles-odcs.png "Set screens to be accessible by specific roles")
+
+* Control the access to the screen's widgets, such as buttons or links, using the **Visible** and **Enabled** properties. Use the **CheckROLENAMERole()** function to validate access only to authorized roles.
+
+  ![Screenshot showing a button widget with role validation for Enabled and Visible properties](images/best-practices-screens-roles-widget-enabled-odcs.png "Control role access to screen widgets")
+
+For sensitive operations, such as database operations that can modify data, [validate user permissions also on the server-side logic](../../logic/best-practices-logic.md#validate-permissions-server-side).
+
+### Benefits
+
+Using roles to protect your screens adds a first layer of security to your app.

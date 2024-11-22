@@ -6,7 +6,7 @@ guid: 65834d5d-b36c-47b0-afc5-43ae35b5bd7d
 locale: en-us
 app_type: mobile apps, reactive web apps 
 platform-version: odc
-figma: 
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6412-1148 
 ---
 
 # Best practices for fetching and displaying data
@@ -51,7 +51,7 @@ Use data actions when:
 
 ### Benefits
 
-Data actions can call external REST APIs or execute advanced SQL queries, allowing you to retrieve complex data from the database, which you wouldn’t be able to do using aggregates.
+Data actions can call external REST APIs or execute advanced SQL queries, allowing you to retrieve complex data from the database, which you wouldn't be able to do using aggregates.
 
 For more information, refer to [Displaying Data on Screens](https://learn.outsystems.com/training/journeys/building-screens-with-data-637/displaying-data-on-screens/odc/109).
 
@@ -73,7 +73,7 @@ Setting the Max. Records property in SQL elements doesn't change its SQL stateme
 
 </div>
 
-## Don’t show a blank screen while data is being fetched
+## Don't show a blank screen while data is being fetched
 
 Plan what your app will display to the user while data is being fetched. 
 
@@ -106,3 +106,19 @@ When displaying a large number of records, follow these recommendations:
 ### Benefits
 
 Implementing these best practices helps reducing initial load times and server strain, while ensuring a smooth user experience. You can efficiently handle large datasets without overwhelming the user interface.
+
+## Restrict access to sensitive data { #restrict-access }
+
+When fetching sensitive data that depends on the user role or Id, it's not safe to rely on control information from client-side inputs, as it can be manipulated by malicious users.
+
+### Recommendations
+
+Filter your aggregates using the **CheckROLENAMERole()** function to [restrict access sensitive data](../../../user-management/secure-app-with-roles.md#restrict-access-to-data). You can also use the **GetUserId()** function for more restricted access.
+
+![Screenshot showing an aggregate filtered by user role](images/best-practices-fetch-data-restrict-access-odcs.png "Filter your aggregates by user role")
+
+You can reinforce this best practice by [validating user permissions also on the server-side logic](../../logic/best-practices-logic.md#validate-permissions-server-side).
+
+### Benefits
+
+Restricting access to your data brings an additional level of security to your app.

@@ -8,7 +8,7 @@ app_type: mobile apps, reactive web apps
 content-type: 
 audience: 
 platform-version: odc
-figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=6404-238&t=Rja8WKQPyVX2gJzO-1
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6404-238
 ---
 
 # Best practices for logic
@@ -74,3 +74,33 @@ Avoid hard-coded values in your app's code. Depending on the use case, use one o
 ### Benefits
 
 Avoiding hard-coded values makes your code easier to understand and maintain.
+
+## Validate user permissions on server-side logic { #validate-permissions-server-side }
+
+Client-side logic is less secure than the server-side logic. Thus, you need more than [client-side validations](../ui/creating-screens/best-practices-screens.md#roles) to secure your app against malicious users trying to obtain or modify data they should not have access to.
+
+### Recommendations
+
+For sensitive operations, such as database operations that can modify data, [verify the logged-in user permissions on the server-side logic](../../user-management/secure-app-with-roles.md#restrict-logic-flows) using the **CheckROLENAMERole()** function.
+
+![Screenshot showing a Client Action running a Server Action validating the user role](images/best-practices-logic-server-side-validation-odcs.png "Validating user role on server-side logic")
+
+You can reinforce this best practice by [restricting access to fetched data](../ui/creating-screens/best-practices-fetch-display-data.md#restrict-access).
+
+### Benefits
+
+Validating permissions on the server-side logic improves your app's security, as it guarantees the logged-in user has authorization to execute the operation. 
+
+## Avoid exposing server actions on public screens
+
+A screen that is accessible by everyone generates public endpoints that can be potentially accessed and manipulated by malicious users.
+
+![Screenshot showing a Screen available to everyone](images/best-practices-logic-exposing-screen-everyone-odcs.png "App screen available to everyone")
+
+### Recommendations
+
+With the exception of special use cases, such as authentication operations (for example, Login), don't expose Server Actions on screens that don't require authentication. A good approach is to [set the correct roles for each screen](../ui/creating-screens/best-practices-screens.md#roles).
+
+### Benefits
+
+Avoiding unnecessary exposure of Server Actions on public screens reduces the risk of exploitation by malicious users, improving your app's security.
