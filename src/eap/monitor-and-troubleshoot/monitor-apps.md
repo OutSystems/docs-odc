@@ -1,11 +1,19 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers comprehensive tools for monitoring and troubleshooting applications through logs and traces within its portal.
-tags:
+tags: monitoring, troubleshooting, log analysis, error handling, performance optimization
 locale: en-us
 guid: ca7cae65-c466-4d93-bab6-85ac740519c0
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc portal
+content-type:
+  - conceptual
 ---
 
 # Monitoring and troubleshooting apps

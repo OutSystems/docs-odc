@@ -5,6 +5,16 @@ guid: 41b86768-295e-4aeb-98ed-9a0f6db4cfd2
 app_type: mobile apps, reactive web apps
 figma:
 platform-version: odc
+tags: password management, security protocols, authentication, user management, account lockout
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - odc portal
+content-type:
+  - reference
 ---
 
 # Passwords

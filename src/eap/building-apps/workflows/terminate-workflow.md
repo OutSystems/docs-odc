@@ -6,6 +6,8 @@ guid: 79d2da47-7cb8-48eb-bc23-04f62fd67c86
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+content-type:
+  - conceptual
 ---
 
 # Terminate a workflow

@@ -1,11 +1,21 @@
 ---
 summary: OutSystems Developer Cloud(ODC) features traces to monitor requests and pinpoint issues
-tags: 
+tags: performance monitoring, debugging, distributed tracing, application logs, troubleshooting
 guid: c5a60355-80a4-439d-a811-703cf59a70cd
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3457-10&t=VbpYriya8ET1cuRr-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - conceptual
+  - procedure
+  - best practice
 ---
 
 # Traces

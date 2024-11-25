@@ -1,11 +1,13 @@
 ---
 summary: Learn more about how to troublehsoot errors in your workflows
-tags: 
+tags:
 guid: bf12c288-f7ad-4253-b6b7-bdf502c33e9b
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5860-10
+content-type:
+  - procedure
 ---
 
 # Troubleshooting workflows

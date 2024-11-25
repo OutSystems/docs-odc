@@ -1,11 +1,19 @@
 ---
 summary: The asset identifier is incorrect <identifier>. Check the documentation for further guidance. If the problem persists, let us know.
-tags:
+tags: error codes, guid, troubleshooting, support, asset management
 guid: 5d2b89da-d325-4358-954b-23328d4397ac
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-FRGE-AST-40005

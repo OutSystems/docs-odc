@@ -1,11 +1,14 @@
 ---
-summary: An app containing too much disabled code. 
-tags: 
+summary: An app containing too much disabled code.
+tags:
 guid: c166aa05-26ca-48da-b80a-91ea20294bbc
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Too much disabled code

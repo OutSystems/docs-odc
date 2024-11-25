@@ -1,11 +1,19 @@
 ---
 summary: Error fetching the selected entity list
-tags:
+tags: error handling, entity management, data fetching, user interface issues, support and troubleshooting
 guid: 7385df39-67fc-4e4c-9eb7-ad671c4afade
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-INTC-60006

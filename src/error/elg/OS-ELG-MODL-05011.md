@@ -1,11 +1,19 @@
 ---
-summary: "The property/field decorated by OSStructureField '<ParameterName/StructureFieldName>' in struct <StructureName> is not public."
-tags:
+summary: The property/field decorated by OSStructureField '<ParameterName/StructureFieldName>' in struct <StructureName> is not public.
+tags: error handling, access modifiers, c# programming, compilation errors, code examples
 guid: 719b1e88-d65f-4db4-9edb-6cd306902364
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-ELG-MODL-05011

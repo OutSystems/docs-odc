@@ -1,11 +1,13 @@
 ---
-summary: 
-tags: 
+summary:
+tags:
 guid: 710897dc-5c3f-46af-a2a2-24f0bf6adb8a
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3621-254
+content-type:
+  - conceptual
 ---
 
 # Getting started in Code quality as a tech lead

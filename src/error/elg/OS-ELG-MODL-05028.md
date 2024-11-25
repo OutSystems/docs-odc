@@ -1,11 +1,19 @@
 ---
-summary: "The assembly <AssemblyName>, which contains the interface decorated with the OSInterface attribute, is not located in the root directory of the zip file."
-tags:
+summary: The assembly <AssemblyName>, which contains the interface decorated with the OSInterface attribute, is not located in the root directory of the zip file.
+tags: error handling, c# development, zip file processing, outsystems deployment, outsystems support
 guid: b1599188-83e3-4a9c-91ec-383cdf7be74f
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-ELG-MODL-05028

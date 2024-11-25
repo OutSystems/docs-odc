@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables users to expose and manage REST APIs for system integration and data manipulation.
-tags:
+tags: rest api development, system integration, api versioning
 locale: en-us
 guid: 22e6fa5b-6ad0-43bd-b530-dbb948e4c073
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
 ---
+
 # Expose a REST API
 
 If you want to expose methods to allow other systems to retrieve or manipulate information, you can do it using a REST API.

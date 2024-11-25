@@ -1,11 +1,19 @@
 ---
 summary: Learn about the Max, Min, and Sign functions in OutSystems Developer Cloud (ODC), supporting both server-side and client-side logic.
-tags:
+tags: math functions, logic functions, server-side scripting, client-side scripting, data manipulation
 locale: en-us
 guid: 53534fc8-41ba-4ee0-9be4-dff58493264c
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
 ---
 
 # Numeric

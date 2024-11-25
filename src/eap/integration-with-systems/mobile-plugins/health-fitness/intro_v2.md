@@ -1,12 +1,25 @@
 ---
 summary: Explore the integration of health and fitness data using HealthKit and Google Fit APIs in mobile apps with OutSystems Developer Cloud (ODC).
-tags:
+tags: healthkit integration, google fit integration, mobile health data, plugin development, permissions handling
 locale: en-us
 guid: 131bec56-8c60-457c-a9ba-63801f2c54bc
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5364%3A193&mode=design&t=Xf7kazC2UjQKDaiy-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - forge
+  - odc studio
+content-type:
+  - conceptual
+  - process
+  - procedure
+  - reference
 ---
+
 # Health and Fitness Plugin using HealthKit and Google Fit 
 
 <div class="info" markdown="1">

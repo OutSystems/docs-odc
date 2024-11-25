@@ -1,11 +1,22 @@
 ---
 summary: Learn to configure and manage SMTP email settings in OutSystems Developer Cloud (ODC) for app stages.
-tags:
+tags: email configuration, smtp settings, security multi-stage configuration, cloud services
 locale: en-us
 guid: 48490651-74d0-459b-a0c4-4b40df93d56e
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - frontend developers
+  - full stack developers
+  - platform administrators
+  - team lead
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - procedure
+  - conceptual
 ---
 
 # Configure emails

@@ -1,11 +1,14 @@
 ---
 summary: Required descriptions of modules, modules' public elements, and their related input/output parameters.
-tags: 
+tags:
 guid: 1c910902-8db4-4b41-b00d-2bca550b7029
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3523-110&node-type=CANVAS&t=fro20soaPpjjIXwf-0
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Missing descriptions on public element or parameter

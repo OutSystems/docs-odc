@@ -1,11 +1,14 @@
 ---
 summary: An Aggregate or SQL query isn't used.
-tags: 
+tags:
 guid: f6b3dd0f-5a48-47a9-9e62-fb6b0dfc7c77
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Unused Aggregate or SQL Query

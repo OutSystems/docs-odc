@@ -5,6 +5,18 @@ guid: 3a5f56e7-2515-4e97-914e-b8a503f82c7f
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+tags: secret management, security, encryption, application configuration, sensitive data protection
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - conceptual
+  - procedure
 ---
 
 # Set as secret

@@ -1,11 +1,19 @@
 ---
 summary: Learn how to add an automatic activity to your workflow
-tags:
+tags: workflow automation, service actions, odc, workflow editor, automatic activities
 locale: en-us
 guid: 2ed780f3-ca62-411b-97d4-252a201c7d80
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
 ---
 
 # Add automatic activity 

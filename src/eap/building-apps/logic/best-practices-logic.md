@@ -5,7 +5,8 @@ outsystems-tools:
 guid: b3c30de3-477e-4f09-99d0-e4b2e711f917
 locale: en-us
 app_type: mobile apps, reactive web apps
-content-type: 
+content-type:
+    - best practice
 audience: 
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6404-238

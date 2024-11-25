@@ -5,7 +5,9 @@ guid: e773a151-1a3f-4472-b718-9a6587a02eec
 locale: en-us
 platform-version: odc
 app_type: mobile apps, reactive web apps
-figma: 
+figma:
+content-type:
+  - error or warning
 ---
 
 # OS-APPS-40008

@@ -1,12 +1,23 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports the Camera plugin for capturing and editing media in mobile apps, as demonstrated in the Camera Sample App.
-tags:
+tags: plugin implementation, media capture, user interface design, error handling, mobile app development
 locale: en-us
 guid: 6df6f491-46e4-434f-924e-043929958fef
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7545&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - forge
+content-type:
+  - procedure
+  - reference
 ---
+
 # Camera Plugin
 
 The Camera plugin allows users to take pictures and capture videos with their mobile devices. This plugin works with both native mobile apps and progressive web apps (PWAs).

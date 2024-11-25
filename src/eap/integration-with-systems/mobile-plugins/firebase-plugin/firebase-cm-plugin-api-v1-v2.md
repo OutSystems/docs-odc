@@ -5,7 +5,17 @@ guid: 2da53711-4885-4005-9224-d77d517efb50
 app_type: mobile apps
 figma:
 platform-version: odc
+tags: cloud messaging, api reference, notifications, deprecated features, firebase cloud messaging
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
 ---
+
 # Cloud Messaging Configurator APIs
 
 <div class="info" markdown="1">

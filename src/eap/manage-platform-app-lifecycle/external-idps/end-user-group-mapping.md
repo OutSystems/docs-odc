@@ -4,8 +4,19 @@ summary: OutSystems Developer Cloud (ODC) facilitates efficient onboarding by en
 locale: en-us
 guid: 84c9098b-c486-483f-9836-70b8faee63fa
 app_type: mobile apps, reactive web apps
-figma: 
+figma:
 platform-version: odc
+tags: identity and access management, user onboarding, role management, identity providers, group mapping
+audience:
+  - platform administrators
+  - full stack developers
+  - mobile developers
+  - frontend developers
+outsystems-tools:
+  - odc portal
+content-type:
+  - procedure
+  - conceptual
 ---
 
 # IdP and end-user group mapping

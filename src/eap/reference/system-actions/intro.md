@@ -1,11 +1,19 @@
 ---
 summary: OutSystems Developer Cloud (ODC) features built-in system actions accessible through the Logic tab for both client and server actions.
-tags:
+tags: system actions, logic tab navigation
 locale: en-us
 guid: aa9a8492-66f1-4051-bdb2-509283be09cf
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
 ---
 
 # System actions

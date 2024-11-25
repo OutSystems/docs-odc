@@ -3,8 +3,17 @@ summary: How to find and use the subscription console in ODC.
 locale: en-us
 guid: 504cdfa5-68d4-46ce-8363-e08aa05e4514
 app_type: mobile apps, reactive web apps
-figma: 
+figma:
 platform-version: odc
+tags: subscription management, application management, user management, permission control, licensing
+audience:
+  - platform administrators
+  - full stack developers
+  - team manager
+outsystems-tools:
+  - odc portal
+content-type:
+  - reference
 ---
 
 # Subscription console

@@ -1,11 +1,19 @@
 ---
 summary: The asset version identifier is incorrect <identifier>. Check the documentation for further guidance. If the problem persists, let us know.
-tags:
+tags: error handling, version control, asset management, technical support, documentation
 guid: 970e4c74-04b9-4b3d-9ebd-bb1da1d0636d
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-FRGE-AST-40006

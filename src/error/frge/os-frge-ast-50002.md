@@ -1,11 +1,20 @@
 ---
 summary: Some dependencies <dependencies> were not found on Forge. If the problem persists, let us know.
-tags: 
+tags: troubleshooting, error messages, dependency management, application deployment, outsystems forge
 guid: 005988af-5a6c-45fe-95d8-961e2d174cac
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - frontend developers
+  - full stack developers
+  - mobile developers
+outsystems-tools:
+  - forge
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-FRGE-AST-50002

@@ -1,13 +1,23 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enhances mobile app security through the licensed AppShield plugin, integrating with MABS for runtime protection.
-tags:
+tags: mobile app security, licensed plugins, build service integration, runtime protection, security hardening
 locale: en-us
 guid: 5b3d48c3-ddcb-461c-a05d-414fceeb1eb4
 app_type: mobile apps
 platform-version: odc
 helpids: 30472
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3963%3A21612&mode=design&t=TyGh9pLEHaqLAxxu-1
+audience:
+  - mobile developers
+outsystems-tools:
+  - forge
+  - odc studio
+content-type:
+  - conceptual
+  - procedure
+  - reference
 ---
+
 # Harden the protection of mobile apps with AppShield
 
 <div class="info" markdown="1">

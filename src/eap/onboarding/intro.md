@@ -1,11 +1,21 @@
 ---
 summary: Explore the scalable, secure, and efficient app development features of OutSystems Developer Cloud (ODC), designed for rapid enterprise-grade deployments.
-tags:
+tags: cloud-native development, enterprise-grade deployment, modern container infrastructure, continuous delivery pipeline
 locale: en-us
 guid: cb10aa0f-4e5b-4a29-92ce-03fbc813bc14
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - full stack developers
+  - team lead
+  - platform administrators
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - conceptual
 ---
 
 # Onboarding developers

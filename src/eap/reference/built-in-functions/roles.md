@@ -6,6 +6,8 @@ guid: 4facff20-972f-477b-8b61-d2b64539ea1c
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+content-type:
+  - reference
 ---
 
 # Roles

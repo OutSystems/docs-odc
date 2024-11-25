@@ -5,6 +5,8 @@ guid: 62c7a486-6e87-485c-92ef-e0a1dac971d4
 app_type: mobile apps
 platform-version: odc
 figma:
+content-type:
+  - reference
 ---
 
 # KeyStore Plugin reference

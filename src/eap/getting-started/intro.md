@@ -1,11 +1,20 @@
 ---
 summary: Explore app development with OutSystems Developer Cloud (ODC), a scalable platform for building and deploying enterprise-grade applications.
-tags:
+tags: cloud-native, enterprise applications, scalability, deployment, app management
 locale: en-us
 guid: 6B0090D9-8EE9-479F-9251-CCB490D2EBB6
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - odc portal
+content-type:
+  - tutorial
 ---
 
 # Getting started

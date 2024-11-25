@@ -1,12 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers user management actions for identity providers, including password resets and user profile updates.
-tags:
+tags: user management, password policy, account security, identity providers, authentication
 locale: en-us
 guid: 0889c9fd-98dc-489d-a8ed-bea68946f0ac
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - reference
 ---
+
 # User system actions
 
 User actions for built-in and/or external identity providers.

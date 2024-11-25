@@ -1,11 +1,19 @@
 ---
-summary: "The interface decorated with OSInterface '<InterfaceName>' is not public."
-tags:
+summary: The interface decorated with OSInterface '<InterfaceName>' is not public.
+tags: c# development, code modularity, library publishing, error handling, external libraries
 guid: b4205081-0901-4083-b578-0d589d1b1515
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-ELG-MODL-05004

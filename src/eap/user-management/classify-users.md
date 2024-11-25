@@ -6,6 +6,8 @@ locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3539-11&t=912lbOAOfAlrfQYm-1
+content-type:
+    - procedure
 ---
 
 # Classify users in ODC

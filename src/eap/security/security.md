@@ -1,11 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) employs secure-by-design principles, featuring multi-layered security and compliance with industry standards.
-tags:
+tags: secure by design, owasp, security engineering principles, infrastructure as code, policy enforcement
 locale: en-us
 guid: bffd8c9e-16b6-4458-a146-ddb6f8077e12
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/kw9RAhge7eEpiKLnvKnOek/Security-of-OutSystems-Developer-Cloud?type=design&node-id=3001%3A25&t=vm4lMbILR8ugorQK-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - platform administrators
+  - technology leaders
+outsystems-tools:
+  - none
+content-type:
+  - conceptual
 ---
 
 # Security of OutSystems Developer Cloud

@@ -1,11 +1,14 @@
 ---
 summary: Server data isn't being stored in the local database asynchronously.
-tags: 
+tags:
 guid: 48e2ddb8-31e5-4d4c-963e-00ad9aed2056
 locale: en-us
 app_type: mobile apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # No asynchronous Offline sync

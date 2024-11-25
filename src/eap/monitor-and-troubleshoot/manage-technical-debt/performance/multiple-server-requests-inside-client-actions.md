@@ -1,11 +1,14 @@
 ---
 summary: Multiple server Aggregates or multiple Server Action requests inside Client Actions.
-tags: 
+tags:
 guid: e23a842d-a31b-4cb8-850a-f6612d1f0c16
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3525-200&t=ZHJybqzEUX6B7aIU-1
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Multiple server requests (Aggregates or Actions) inside Client Actions

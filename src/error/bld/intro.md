@@ -1,11 +1,19 @@
 ---
 summary: Common errors when performing 1-Click Publish
-tags: 
+tags: build errors, 1-click publish, error handling, developer cloud, deployment issues
 locale: en-us
 guid: 12e59999-56de-4e59-aeb0-282f9d094604
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # Build Errors

@@ -1,11 +1,19 @@
 ---
 summary: OutSystems Developer Cloud (ODC) allows admins to configure Okta as an external identity provider through its portal interface.
-tags: 
+tags: identity and access management, okta integration, oidc, security configuration, api management
 locale: en-us
 guid: 0a284428-86c4-4b57-b912-b122674b69e4
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=design&node-id=3405%3A545&mode=design&t=Oyyu3fjPlmIYwh5h-1
 platform-version: odc
+audience:
+  - platform administrators
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc portal
+content-type:
+  - procedure
 ---
 
 # Add Okta for use as an external identity provider

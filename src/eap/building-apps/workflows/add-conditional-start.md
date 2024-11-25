@@ -6,6 +6,9 @@ guid: e1f87f6b-7684-4d69-b7f3-4e9bd0688be3
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5952-14
+content-type:
+  - conceptual
+  - procedure
 ---
 
 # Conditional start

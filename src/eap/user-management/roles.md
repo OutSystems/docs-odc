@@ -6,6 +6,17 @@ guid: 766ab743-31f2-4f58-ad91-a4cd0db8ab93
 app_type: mobile apps, reactive web apps
 figma:
 platform-version: odc
+tags: access management, permissions, user onboarding, user roles, organization management
+audience:
+  - full stack developers
+  - platform administrators
+  - team lead
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - conceptual
+  - procedure
 ---
 
 # Roles

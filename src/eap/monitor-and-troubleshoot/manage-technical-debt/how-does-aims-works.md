@@ -1,11 +1,13 @@
 ---
-summary: 
-tags: 
+summary:
+tags:
 guid: CA38C82A-E390-425B-B588-D6BD3F692928
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3621-877
+content-type:
+  - conceptual
 ---
 
 # How ODC Code quality works

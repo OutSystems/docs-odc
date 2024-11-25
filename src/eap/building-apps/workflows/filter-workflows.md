@@ -1,12 +1,13 @@
 ---
 summary: Filtering workflow activities to build interactive UI components
-tags: 
-outsystems-tools: 
+tags:
+outsystems-tools:
 guid: b7af3484-4044-4e5c-a1f7-680c5a8edce5
 locale: en-us
 app_type: mobile apps, reactive web apps
-content-type: 
-audience: 
+content-type:
+  - procedure
+audience:
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6274-150
 ---

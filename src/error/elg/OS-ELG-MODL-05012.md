@@ -1,11 +1,19 @@
 ---
-summary: "The property/field decorated by OSIgnore '<ParameterName/StructureFieldName>' in struct '<StructureName>' is not public."
-tags:
+summary: The property/field decorated by OSIgnore '<ParameterName/StructureFieldName>' in struct '<StructureName>' is not public.
+tags: error handling, c# programming, .net framework, public access modifier, api documentation
 guid: 634c055e-4230-4fad-a61a-28e05bbdc3e0
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - full stack developers
+  - backend developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-ELG-MODL-05012

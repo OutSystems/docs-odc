@@ -1,11 +1,14 @@
 ---
-summary: Use the Count property of an Aggregate for SQL query to check if results were returned. 
-tags: 
+summary: Use the Count property of an Aggregate for SQL query to check if results were returned.
+tags:
 guid: 468193f3-a09a-4dfb-acc8-f14947476d95
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Inefficient empty list test

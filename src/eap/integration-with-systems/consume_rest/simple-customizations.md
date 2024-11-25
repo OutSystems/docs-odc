@@ -1,12 +1,22 @@
 ---
 summary: Explore how to customize REST API requests and responses using callbacks in OutSystems Developer Cloud (ODC).
-tags:
+tags: rest api, api customization, callbacks, http headers, outsystems forge
 locale: en-us
 guid: 182ad24a-5cfb-4a67-a9b2-b5c8dc83ef4c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A12108&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - forge
+content-type:
+  - procedure
 ---
+
 # Simple Customizations
 
 When consuming a REST API, you can add logic to customize the information that is sent in the requests or received in the responses. Use the following callbacks for this purpose:

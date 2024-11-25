@@ -1,11 +1,13 @@
 ---
-summary: 
-tags: 
+summary:
+tags:
 guid: 6be15662-74c5-4c35-9a7d-16a28816614c
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3522-10
+content-type:
+  - conceptual
 ---
 
 # Manage technical debt in ODC

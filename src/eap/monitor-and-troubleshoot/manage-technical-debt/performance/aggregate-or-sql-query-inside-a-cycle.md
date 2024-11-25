@@ -1,11 +1,14 @@
 ---
 summary: The system executes an Aggregate or SQL query inside a For Each cycle.
-tags: 
+tags:
 guid: bed2ebdb-1930-48fb-9c3c-fb5da8d5deec
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3525-176&t=ZHJybqzEUX6B7aIU-1
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Aggregate or SQL query inside a cycle

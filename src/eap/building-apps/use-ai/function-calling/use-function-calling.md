@@ -1,11 +1,21 @@
 ---
-summary: 
-tags: 
+summary:
+tags: azure openai integration, function calling, ai agent configuration, natural language processing, odc studio
 guid: b4168514-211d-48f0-87c6-9754da53a124
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5686-506
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - ai agent builder
+content-type:
+  - conceptual
+  - procedure
 ---
 
 #  Use function calling in AI Agent Builder

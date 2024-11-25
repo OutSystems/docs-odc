@@ -1,11 +1,20 @@
 ---
 summary: We are having problems connecting to Forge Core. If the problem persists, let us know.
-tags: 
+tags: connectivity issues, troubleshooting, error messages, support, outsystems troubleshooting
 guid: ec516987-6251-4882-936c-b050c5567a1c
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - forge
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-FRGE-AST-50003

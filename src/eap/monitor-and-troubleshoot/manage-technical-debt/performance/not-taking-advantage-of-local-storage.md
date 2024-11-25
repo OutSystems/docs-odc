@@ -1,11 +1,14 @@
 ---
 summary: Using too many server requests instead of Local Storage
-tags: 
+tags:
 guid: 3d6eebdf-a7d5-43fc-b885-468832a87141
 locale: en-us
 app_type: mobile apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Not taking advantage of Local Storage

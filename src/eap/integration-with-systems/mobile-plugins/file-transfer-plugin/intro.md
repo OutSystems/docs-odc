@@ -1,12 +1,22 @@
 ---
 summary: Explore advanced file transfer capabilities in mobile apps using the File Transfer Plugin on OutSystems Developer Cloud (ODC).
-tags:
+tags: file management, plugin integration, background processing, error handling, mobile app development
 locale: en-us
 guid: d64fd114-f737-4eb1-b5b1-f334420dfce3
 app_type: mobile apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # File Transfer Plugin
 
 <div class="info" markdown="1">

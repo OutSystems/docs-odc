@@ -1,11 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) allows you to rollback apps in ODC Portal.
-tags: 
+tags:
 guid: 340707ce-9540-4d8e-a025-aba9119da926
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?node-id=3496-71&t=XDhAhNM4YGofhRUm-1
+content-type:
+  - conceptual
 ---
 
 # Rollback apps

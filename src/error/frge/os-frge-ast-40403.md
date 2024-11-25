@@ -1,11 +1,20 @@
 ---
 summary: The requested organization doesn’t exist <orgId>. Check the documentation for further guidance. If the problem persists, let us know.
-tags: 
+tags: error handling, database troubleshooting, technical support, software development, outsystems platform
 guid: b8a9a02e-30e3-44e7-9dfc-1f1080832334
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - forge
+content-type:
+  - error or warning
 ---
 
 # OS-FRGE-AST-40403

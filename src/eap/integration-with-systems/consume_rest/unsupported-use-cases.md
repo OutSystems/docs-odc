@@ -1,12 +1,21 @@
 ---
 summary: Explore the limitations and workarounds for unsupported REST enum use cases in OutSystems Developer Cloud (ODC) as detailed in the technical documentation.
-tags:
+tags: rest api integration, static entities, swagger specification, enum handling, api development
 locale: en-us
 guid: 1f305f99-d43e-45e7-abc4-36f411f33745
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - troubleshooting
 ---
+
 # Unsupported REST Enum Use Cases
 
 ODC Studio can import "enum" (enumerate) elements when consuming REST services. ODC Studio represents these elements as Static Entities and each value of the "enum" corresponds to a Static Entity Record.

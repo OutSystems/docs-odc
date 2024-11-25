@@ -1,11 +1,14 @@
 ---
 summary: An action that isn't used in an app or library and is also not exposed to other apps or libraries (non-public action).
-tags: 
+tags:
 guid: 395ec5da-9a47-4849-9a22-cbaffa541e8e
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Unused action in app or library

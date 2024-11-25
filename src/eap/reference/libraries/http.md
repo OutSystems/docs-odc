@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) features an HTTP library with actions for managing HTTP requests and responses.
-tags:
+tags: http requests, http responses, api development, web services, server communication
 locale: en-us
 guid: 8ab99495-136e-4261-a791-bee1c58d4a79
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
 ---
+
 # HTTP
 
 The OutSystems HTTP library provides actions to manipulate HTTP requests and responses.

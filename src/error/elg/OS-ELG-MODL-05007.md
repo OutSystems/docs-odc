@@ -1,11 +1,21 @@
 ---
-summary: "No methods found in the interface decorated with OSInterface '<InterfaceName>'."
-tags:
+summary: No methods found in the interface decorated with OSInterface '<InterfaceName>'.
+tags: external libraries, c# integration, error resolution, outsystems interfaces, outsystems platform
 guid: 8ef3fd68-a777-4e16-94c4-025446c7d4e1
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - backend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-ELG-MODL-05007

@@ -6,6 +6,8 @@ guid: 013451b7-0d79-423f-9f0b-745024729929
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+content-type:
+  - reference
 ---
 
 # Device

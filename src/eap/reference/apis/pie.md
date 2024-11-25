@@ -1,11 +1,19 @@
 ---
 summary: Learn how to create and customize a Pie Chart with labeled data points using OutSystems Developer Cloud (ODC).
-tags: 
+tags: pie charts, data visualization, tutorials for beginners
 locale: en-us
 guid: fda78656-7247-472a-8d79-c79accc91556
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
 ---
 
 # Pie Chart

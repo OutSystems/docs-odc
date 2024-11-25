@@ -1,12 +1,21 @@
 ---
 summary: Manage QUERY_ALL_PACKAGES permission in Android apps using AppShield on OutSystems Developer Cloud (ODC) for Google Play compliance.
-tags:
+tags: android development, google play compliance, app security, mobile app security
 locale: en-us
 guid: c8e9533c-1f33-407f-b3f6-523ac67ad126
 app_type: mobile apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+outsystems-tools:
+  - appshield
+  - odc studio
+content-type:
+  - procedure
+  - conceptual
 ---
+
 # Query All Packages permission in Android apps using AppShield
 
 <div class="info" markdown="1">

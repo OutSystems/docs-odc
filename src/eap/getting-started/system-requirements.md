@@ -1,11 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) system requirements guide for optimal use of ODC Portal and ODC Studio.
-tags:
+tags: system requirements, network configuration, browser compatibility, hardware requirements, operating system compatibility
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/design/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?node-id=3406%3A10&t=SDUOaeXeeu7S6LQG-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - reference
 ---
 
 # OutSystems system requirements for ODC

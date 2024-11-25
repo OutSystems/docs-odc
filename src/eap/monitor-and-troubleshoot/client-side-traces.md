@@ -1,11 +1,21 @@
 ---
 summary: OutSystems Developer Cloud(ODC) features client-side traces to monitor client-side elements
-tags: 
+tags: client-side performance, error handling, javascript troubleshooting, client-side monitoring, debugging techniques
 guid: 4beb4058-b31d-435f-8bb4-dfb47032877a
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3457-55&t=VbpYriya8ET1cuRr-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - conceptual
+  - process
 ---
 
 # Client-side traces 

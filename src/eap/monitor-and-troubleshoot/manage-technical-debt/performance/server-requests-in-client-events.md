@@ -1,11 +1,14 @@
 ---
 summary: Server actions being called in client events.
-tags: 
+tags:
 guid: e23f04cc-761b-4d4c-8ef3-b639f4a80c83
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3627-10&t=GQOBWGLkIWVooPGi-1
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Server requests in client events

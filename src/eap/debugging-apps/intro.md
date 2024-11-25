@@ -1,12 +1,22 @@
 ---
 summary: Debug and troubleshoot apps in OutSystems Developer Cloud (ODC) using breakpoints, step-by-step execution, and runtime value inspection.
-tags:
+tags: debugging techniques, application lifecycle management, cloud environments, software development, ide usage
 locale: en-us
 guid: bd64bfb4-afcf-4eb8-b87a-1923fd19524c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/8RLmb1pp1PYm5xqtrnq5O8/Debugging-apps?type=design&node-id=2901%3A72&t=sdGPdlxTkpCARchu-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - conceptual
+  - procedure
 ---
+
 # Debugging apps
 
 Debug your app in ODC Studio by pausing the execution at [breakpoints](breakpoints.md), specific points in an app, and then running the logic step-by-step. This lets you find any issues in your logic design.

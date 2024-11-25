@@ -1,11 +1,14 @@
 ---
-summary: CSS and HTML should be kept separate. 
-tags: 
+summary: CSS and HTML should be kept separate.
+tags:
 guid: 76e4d096-b330-4c9e-b94d-a23d18a9bf8d
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3608-10&node-type=CANVAS&t=fthXEWMKgTfJEg1k-0
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Inline CSS style

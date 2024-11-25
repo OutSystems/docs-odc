@@ -1,12 +1,23 @@
 ---
 summary: Explore mobile plugin functionalities and their support in PWAs with OutSystems Developer Cloud (ODC).
-tags:
+tags: mobile plugins, progressive web apps, native mobile features, security, firebase
 locale: en-us
 guid: 55ef1d73-dac8-48e6-8b15-dc6990779660
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - forge
+  - mobile plugins
+content-type:
+  - conceptual
+  - procedure
 ---
+
 # Mobile plugins
 
 Plugins provide important functionalities to native mobile apps, letting you use many of the hardware capabilities of mobile devices. You can add notifications, use camera or global positioning services, read QR codes, and more.

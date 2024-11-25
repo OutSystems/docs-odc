@@ -1,12 +1,21 @@
 ---
 summary: Explore the extensive libraries and built-in functions in OutSystems Developer Cloud (ODC) for advanced app development.
-tags:
+tags: libraries, binary data, data transformation, encoding, date time functions
 locale: en-us
 guid: f9d530c1-f9fa-4b08-9e75-5dfb984402da
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
 ---
+
 # OutSystems language and elements
 
 ## Libraries

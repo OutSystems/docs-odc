@@ -1,11 +1,21 @@
 ---
-summary: "<ParameterName/StructureFieldName> has an incompatible DataType assigned and cannot be converted."
-tags:
+summary: <ParameterName/StructureFieldName> has an incompatible DataType assigned and cannot be converted.
+tags: error handling, datatype conversion, .net integration, external libraries, data mapping
 guid: c8d919be-c4be-4edf-a55f-fbd333ce5115
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - backend developers
+  - team lead
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-ELG-MODL-05017

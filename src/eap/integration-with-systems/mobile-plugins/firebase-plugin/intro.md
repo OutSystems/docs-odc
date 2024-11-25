@@ -5,7 +5,17 @@ guid: 050c7d77-0418-4f38-9bb8-7b0275931b80
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4345%3A125&mode=design&t=OmSDtxS14Ggp4J6f-1
 platform-version: odc
+tags: mobile app development, firebase integration, plugin management, cloud services, cross-platform development
+audience:
+  - mobile developers
+outsystems-tools:
+  - forge
+  - odc studio
+content-type:
+  - conceptual
+  - procedure
 ---
+
 # Firebase Plugins
 
 <div class="info" markdown="1">

@@ -1,12 +1,23 @@
 ---
 summary: Learn how to use the File Viewer Plugin in OutSystems Developer Cloud (ODC) to open and manage files within mobile apps.
-tags:
+tags: file management, plugins, cross-platform development, user interface, app development
 locale: en-us
 guid: 0e246269-47c6-47c6-ba92-308f35edcd40
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7639&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - mobile plugins
+content-type:
+  - reference
+  - procedure
 ---
+
 # File Viewer Plugin
 
 <div class="info" markdown="1">

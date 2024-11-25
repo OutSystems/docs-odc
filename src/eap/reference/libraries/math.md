@@ -1,12 +1,21 @@
 ---
 summary: Explore complex math functions with OutSystems Developer Cloud (ODC) Math library, including logarithms and pseudorandom number generation.
-tags:
+tags: math functions, logarithmic functions, number generation, outsystems api, developer tools
 locale: en-us
 guid: 15770ae6-e5ec-4c50-8e90-84e9c6cdcec7
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
 ---
+
 # Math
 
 The OutSystems Math library provides actions to compute complex math functions, such as logarithmic expression or pseudorandom number generation.

@@ -1,11 +1,20 @@
 ---
 summary: Explore the diverse app development capabilities of OutSystems Developer Cloud (ODC), including web and mobile applications.
-tags: 
+tags: pwa (progressive web apps), app development, mobile app distribution, responsive design
 locale: en-us
 guid: 2c23e305-f3ca-46cc-a8c8-a29c409a9ccf
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?type=design&node-id=2449%3A32710&t=CxwRhrJUzQXvCd96-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - conceptual
 ---
 
 # Types of apps you can build

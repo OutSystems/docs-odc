@@ -1,11 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) features an App health dashboard for monitoring and analyzing app performance metrics.
-tags:
+tags: performance monitoring, app health analysis, dashboard usage, error debugging, app performance metrics
 locale: en-us
 guid: e190d5fb-6b99-4d9b-a64f-a3b34be3588d
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/IStE4rx9SlrBLEK5OXk4nm/Monitor-apps?type=design&node-id=3202%3A36&mode=design&t=tBANF8iUm5epKReC-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc portal
+content-type:
+  - conceptual
+  - reference
 ---
 
 # Monitor app analytics in ODC Portal

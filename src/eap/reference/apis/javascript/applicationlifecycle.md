@@ -6,6 +6,8 @@ guid: adf14b4f-4bef-4989-8ffe-9661392a4e54
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+content-type:
+  - reference
 ---
 
 # ApplicationLifecycle

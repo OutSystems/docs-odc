@@ -1,11 +1,20 @@
 ---
 summary: Explore app management and creation with OutSystems Developer Cloud (ODC), featuring ODC Portal and ODC Studio.
-tags:
+tags: app management, cloud-native development, user interface customization, user access management, app deployment
 locale: en-us
 guid: 6795fecc-61f8-4cae-93f9-098b1cfa092b
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?type=design&node-id=3201%3A148&t=CxwRhrJUzQXvCd96-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - reference
 ---
 
 # UI overview of ODC Portal and ODC Studio

@@ -1,11 +1,19 @@
 ---
 summary: This section provides guidance on how to fix ODC errors.
-tags:
+tags: error handling, debugging, error codes, error resolution, error analysis
 locale: en-us
 guid: 52c2606c-3891-4057-acfa-962d709c3442
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - none
+content-type:
+  - error or warning
 ---
 
 # Errors

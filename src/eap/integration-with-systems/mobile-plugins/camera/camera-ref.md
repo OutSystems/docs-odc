@@ -1,11 +1,20 @@
 ---
 summary: Explore the Camera Plugin functionalities in OutSystems Developer Cloud (ODC), including client actions, web blocks, and error handling.
-tags: runtime-mobile
+tags: plugin development, mobile camera integration, error handling, mobile application development, outsystems api
 locale: en-us
 guid: ae8ad875-72ce-41d6-9cc0-70131df2782d
 app_type: mobile apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - mobile plugins
+content-type:
+  - reference
 ---
 
 # Camera Plugin Reference 

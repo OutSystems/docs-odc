@@ -1,11 +1,20 @@
 ---
 summary: Learn how to imlement a workflow in ODC Portal
-tags:
+tags: workflow implementation, event-driven architecture, low-code development, workflow automation, odc platform
 locale: en-us
 guid: bf3e06e7-81ec-4d0c-bc77-00bb33dbe9ed
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5631-781
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc portal
+  - workflow builder
+content-type:
+  - procedure
 ---
 
 # Using workflows

@@ -1,11 +1,19 @@
 ---
 summary: How to publish apps that use JavaScript Nodes and violate Strict Mode.
-tags:
+tags: javascript, strict mode, error handling, mobile app development, web development
 guid: dbeab3f4-4b7e-472d-be22-7650d42b0258
 locale: en-us
 platform-version: odc
 app_type: mobile apps, reactive web apps
-figma: 
+figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-BLD-FE-40001

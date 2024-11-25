@@ -6,6 +6,15 @@ locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+tags: error handling, dependency management, application development, version control, troubleshooting
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # Solving app or library dependency errors

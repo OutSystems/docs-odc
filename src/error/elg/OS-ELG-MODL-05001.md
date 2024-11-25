@@ -1,11 +1,19 @@
 ---
-summary: "No valid .NET 6 assembly found in your file."
-tags:
+summary: No valid .NET 6 assembly found in your file.
+tags: .net 6, assembly validation, mobile app development, application publishing, troubleshooting
 guid: 007f935e-fade-46ab-8058-61d57f294bc1
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-ELG-MODL-05001

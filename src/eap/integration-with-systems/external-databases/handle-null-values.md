@@ -1,12 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports seamless integration with external databases for enhanced app development.
 helpids: 30191, 30483, 30501, 30502
-tags:
+tags: database integration, null value handling, configuration management, data types, external database connectivity
 locale: en-us
 guid: b29382ab-f4d3-479c-be4b-22a8319e612c
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+audience:
+  - platform administrators
+  - full stack developers
+  - backend developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
 ---
 
 # Handle null values

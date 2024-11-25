@@ -1,11 +1,14 @@
 ---
 summary: OutSystems Developer Cloud (ODC) code analysis patterns for security issues.
-tags: 
+tags:
 locale: en-us
 guid: 6C067ED8-961F-4301-922B-9F1330F2147A
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Security findings

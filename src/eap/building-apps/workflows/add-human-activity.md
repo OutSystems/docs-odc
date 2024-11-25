@@ -1,11 +1,20 @@
 ---
 summary: Learn how to add a human activity to your workflow
-tags:
+tags: workflow management, user task assignment, application development, event handling, odc
 locale: en-us
 guid: 9b6fcc2b-f38c-4225-b5a0-4989655f9545
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5911-44
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
 
 # Add human activity

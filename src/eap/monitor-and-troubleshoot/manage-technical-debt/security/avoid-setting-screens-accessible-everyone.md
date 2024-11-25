@@ -1,11 +1,14 @@
 ---
-summary: Avoid setting screens as accesible by everyone. 
-tags: 
+summary: Avoid setting screens as accesible by everyone.
+tags:
 guid: a79460d2-73d4-4db2-9a28-bb32219c3d72
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Avoid setting screens as accessible by everyone

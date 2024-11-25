@@ -1,11 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables efficient app configuration management without the need for redeployment.
-tags:
+tags: configuration management, deployment, infrastructure management, app settings, stage-specific configuration
 locale: en-us
 guid: e32e1f5f-83b6-4b00-a593-83ba5017fc16
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=2449%3A32709&t=hXGTDybYCg38Lul5-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - conceptual
 ---
 
 # Configuration management

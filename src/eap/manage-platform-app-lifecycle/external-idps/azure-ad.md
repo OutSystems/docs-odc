@@ -1,11 +1,20 @@
 ---
 summary: Configure Microsoft Entra ID (formerly Azure AD) as an external identity provider in OutSystems Developer Cloud (ODC) using the ODC Portal.
-tags: 
+tags: azure ad, identity management, openid connect, single sign-on, app registration
 locale: en-us
 guid: fb6adbb0-7343-4858-8a87-e3f7d8693900
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=design&node-id=3405%3A152&mode=design&t=Oyyu3fjPlmIYwh5h-1
 platform-version: odc
+audience:
+  - platform administrators
+  - full stack developers
+  - mobile developers
+  - frontend developers
+outsystems-tools:
+  - odc portal
+content-type:
+  - procedure
 ---
 
 # Add Microsoft Entra ID for use as external identity provider

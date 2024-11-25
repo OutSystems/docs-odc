@@ -1,13 +1,23 @@
 ---
 summary: Learn how to consume REST APIs using OutSystems Developer Cloud (ODC) by understanding API documentation, security requirements, and data type mappings.
 helpids: 30484
-tags:
+tags: rest apis, api authentication, data type mapping, api security, api documentation
 locale: en-us
 guid: b7e2daa5-b34c-4907-885b-56574bf14295
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - conceptual
+  - reference
 ---
+
 # Consume REST APIs
 
 When you need to retrieve or manipulate information from another system, and that system provides REST APIs for that effect, you can consume a REST API in your application.  

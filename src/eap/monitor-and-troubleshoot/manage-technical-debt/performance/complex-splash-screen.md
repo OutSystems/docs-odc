@@ -1,11 +1,14 @@
 ---
 summary: Keep the splash screen simple and fast by minimizing the number of requests to the server and avoiding complex UI logic.
-tags: 
+tags:
 guid: ee32b593-673e-4edc-a344-e2487d6285dc
 locale: en-us
 app_type: mobile apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Complex splash screen

@@ -1,11 +1,19 @@
 ---
 summary: The version you're trying to submit already exists. Check the documentation for further guidance.
-tags: 
+tags: version control, error handling, deployment, application lifecycle management, support
 guid: f43da329-4d7d-4a8d-9977-a8f418988c6d
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - forge
+content-type:
+  - error or warning
 ---
 
 # OS-FRGE-AST-40903

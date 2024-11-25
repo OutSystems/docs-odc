@@ -5,6 +5,19 @@ guid: 5aa8692d-68bf-41a1-89ec-5e8fc7069e29
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=design&node-id=3405%3A24&mode=design&t=Oyyu3fjPlmIYwh5h-1
 platform-version: odc
+tags: authentication, identity provider, openid connect, security, social login
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - conceptual
+  - procedure
+  - reference
 ---
 
 # Configure authentication with external identity providers

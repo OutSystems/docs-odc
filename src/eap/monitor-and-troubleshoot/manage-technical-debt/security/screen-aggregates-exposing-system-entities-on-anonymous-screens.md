@@ -1,11 +1,14 @@
 ---
-summary: A Screen Aggregate exposes System Entity data on a screen accessible by anyone. 
-tags: 
+summary: A Screen Aggregate exposes System Entity data on a screen accessible by anyone.
+tags:
 guid: 54d94ffd-dca4-41fb-8196-1071af65c1e4
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3526-397&node-type=CANVAS&t=fro20soaPpjjIXwf-0
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Screen Aggregates exposing system entities accessible by anyone

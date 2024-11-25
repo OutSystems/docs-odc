@@ -1,11 +1,19 @@
 ---
 summary: The offset value for the paged request is incorrect. Check the documentation for further guidance. If the problem persists, let us know.
-tags:
+tags: error handling, pagination, api requests, data fetching, technical support
 guid: bc8c7fd8-8cf1-11ed-a1eb-0242ac120002
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - none
+content-type:
+  - error or warning
 ---
 
 # OS-FRGE-AST-40004

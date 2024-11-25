@@ -1,11 +1,21 @@
 ---
 summary: Learn about the benefits of incorporating business processes into your organization
-tags:
+tags: business process management, workflow automation, process optimization, standardized procedures, change management
 locale: en-us
 guid: bdc0cd98-9506-41da-8bee-21e97eb144b3
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5631-492
+audience:
+  - business analysts
+  - team lead
+  - team manager
+  - project managers
+  - product owners
+outsystems-tools:
+  - none
+content-type:
+  - conceptual
 ---
 
 # About business processes

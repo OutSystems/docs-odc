@@ -1,11 +1,13 @@
 ---
-tags: 
+tags:
 summary: Explore functions for managing view components and states in OutSystems Developer Cloud (ODC) for mobile and reactive web apps.
 locale: en-us
 guid: 361b4c9a-3c90-4776-a311-2004d1e08660
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+content-type:
+  - reference
 ---
 
 # View

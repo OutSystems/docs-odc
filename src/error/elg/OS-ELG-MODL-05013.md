@@ -1,11 +1,19 @@
 ---
-summary: "No public properties/fields found in the struct decorated with OSStructure '<StructureName>'."
-tags:
+summary: No public properties/fields found in the struct decorated with OSStructure '<StructureName>'.
+tags: error handling, struct declaration, c# programming, code examples, outsystems error codes
 guid: 68de8b43-f63f-4791-909b-ca1a8869824f
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
 
 # OS-ELG-MODL-05013

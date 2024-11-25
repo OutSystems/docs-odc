@@ -1,12 +1,21 @@
 ---
 summary: Learn how to change the HTTP status code in a REST API using OutSystems Developer Cloud (ODC).
-tags:
+tags: rest api, http status code, api development, service logic, http extension
 locale: en-us
 guid: 3f3321ed-c2ce-4b0f-8e5a-c6920de4c41a
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21322&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
 ---
+
 # Change the HTTP Status Code of a REST API
 
 OutSystems uses [a set of built-in HTTP Status Codes](built-in-http-status-codes.md) in the Responses of your exposed REST API Methods.

@@ -5,6 +5,8 @@ locale: en-us
 guid: dc9f69f7-605a-4865-96dd-c70140f80a89
 app_type: mobile apps, reactive web apps
 platform-version: odc
+content-type:
+    - reference
 figma:
 ---
 # Workflows

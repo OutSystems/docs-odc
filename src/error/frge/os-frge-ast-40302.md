@@ -1,11 +1,19 @@
 ---
 summary: The operation you are trying to perform requires ForgeAdmin permissions. Check the documentation for further guidance.
-tags: 
+tags: error handling, permissions issues, user account management, outsystems support, security
 guid: 86e944ab-403b-4573-9502-bb6d9cf61eb0
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - platform administrators
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - forge
+content-type:
+  - error or warning
 ---
 
 # OS-FRGE-AST-40302

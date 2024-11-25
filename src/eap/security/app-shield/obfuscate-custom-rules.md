@@ -1,12 +1,22 @@
 ---
 summary: Explore how to create and implement custom obfuscation rules for non-OutSystems plugins in OutSystems Developer Cloud (ODC).
-tags:
+tags: code obfuscation, app security, mobile app development, plugin management, secure coding practices
 locale: en-us
 guid: e0c476d7-f1ae-405e-8b3b-1c0c43cd38f3
 app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4743%3A132&mode=design&t=olEoleG2T5cjfzpt-1
+audience:
+  - mobile developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - process
+  - conceptual
+  - reference
 ---
+
 # Creating custom obfuscation rules
 
 <div class="info" markdown="1">

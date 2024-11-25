@@ -1,11 +1,14 @@
 ---
 summary: Large images included in the app.
-tags: 
+tags:
 guid: 81471bb9-b81b-4f7e-90de-0b2d47e54074
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Large image

@@ -1,11 +1,13 @@
 ---
-tags: 
+tags:
 summary: OutSystems Developer Cloud (ODC) provides logging capabilities for Mobile and Reactive Web Apps, enabling both console and server-side logging in ODC Portal.
 locale: en-us
 guid: bdfd5092-a26c-4029-b211-276cefce2ae0
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+content-type:
+  - reference
 ---
 
 # Logger

@@ -1,12 +1,21 @@
 ---
 summary: Explore file management capabilities in mobile apps using the File Plugin on OutSystems Developer Cloud (ODC).
-tags:
+tags: file management, plugin integration, mobile app development, binary data handling, offline support
 locale: en-us
 guid: c2174075-3813-431b-8254-637c6a5e7d69
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7614&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+outsystems-tools:
+  - odc studio
+  - forge
+content-type:
+  - procedure
+  - reference
 ---
+
 # File Plugin
 
 <div class="info" markdown="1">

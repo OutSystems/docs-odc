@@ -1,11 +1,14 @@
 ---
-summary: 
-tags: 
+summary:
+tags:
 guid: 2a625247-1f84-4147-99ee-05ed4aa4658b
 locale: en-us
 app_type: mobile apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Non-optimized local data fetch

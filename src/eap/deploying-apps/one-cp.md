@@ -1,11 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) simplifies app and library publishing with an automated 1-Click Publish feature.
-tags:
+tags: application deployment, cloud infrastructure
 locale: en-us
 guid: 2c3f88e1-c53a-450d-9e36-ac83a7bf7a5d
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/file/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?type=design&node-id=3436%3A10&mode=design&t=4YrXFNtkgIwzVp3T-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - conceptual
 ---
 
 # Understanding 1-Click Publish

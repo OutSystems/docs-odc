@@ -1,11 +1,24 @@
 ---
 summary: Learn all about workflows in ODC
-tags:
+tags: workflows, business process automation, workflow editor, process automation, outsystems developer cloud
 locale: en-us
 guid: 70b986e2-cd07-48a6-92c0-e57751112bb7
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5633-900
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - team lead
+  - ui designers
+  - business analysts
+outsystems-tools:
+  - odc portal
+  - workflow builder
+content-type:
+  - conceptual
+  - best practice
 ---
 
 # Workflows in ODC

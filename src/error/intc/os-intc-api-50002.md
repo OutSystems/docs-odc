@@ -1,11 +1,19 @@
 ---
 summary: Error authenticating in Salesforce
-tags:
+tags: salesforce integration, api troubleshooting, mobile app development, error handling, support case management
 guid: f65214b7-75f5-4bb3-996a-baaff894ef5f
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - none
+content-type:
+  - error or warning
 ---
 
 # OS-INTC-API-50002

@@ -1,11 +1,14 @@
 ---
 summary: Counting query results using an inefficient query.
-tags: 
+tags:
 guid: 0b899e99-db9d-4840-85ae-691656b8f0d8
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3525-185&t=ZHJybqzEUX6B7aIU-1
+content-type:
+  - troubleshooting
+  - reference
 ---
 
 # Inefficient query count
