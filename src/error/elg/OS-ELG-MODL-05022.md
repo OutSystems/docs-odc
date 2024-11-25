@@ -1,5 +1,5 @@
 ---
-summary: "The following name: <InterfaceName/MethodName> begins with underscores"
+summary: "The following name <InterfaceName/MethodName> begins with underscores"
 tags:
 guid: cac9056a-b742-4962-a111-f86abf6269d2
 locale: en-us

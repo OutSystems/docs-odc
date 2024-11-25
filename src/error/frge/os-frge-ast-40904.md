@@ -1,5 +1,5 @@
 ---
-summary: "The version you're trying to approve has inactive and/or not approved dependencies: <dependencies>."
+summary: "The version you're trying to approve has inactive and/or not approved dependencies <dependencies>."
 tags: 
 guid: 92bc2094-5a72-4b13-ba00-3a3b7184b8db
 locale: en-us

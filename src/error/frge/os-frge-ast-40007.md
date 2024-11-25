@@ -1,5 +1,5 @@
 ---
-summary: "The input data is incorrect. We have found the following error(s): <errors>"
+summary: "The input data is incorrect. We have found the following error(s) <errors>"
 tags: 
 guid: 1407cb00-c075-4092-b832-6ce935706fbe
 locale: en-us

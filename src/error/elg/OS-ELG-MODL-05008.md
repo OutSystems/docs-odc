@@ -1,5 +1,5 @@
 ---
-summary: "The interface decorated with OSInterface '<InterfaceName>' is implemented by multiple classes: <ClassNames>."
+summary: "The interface decorated with OSInterface '<InterfaceName>' is implemented by multiple classes <ClassNames>."
 tags:
 guid: e876d995-612b-4997-9e59-fe8d51826032
 locale: en-us

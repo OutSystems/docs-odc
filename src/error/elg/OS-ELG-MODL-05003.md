@@ -1,5 +1,5 @@
 ---
-summary: "More than one OSInterface attribute found in your file: '<InterfaceNames>'. Make sure only one interface decorated with OSInterface is defined."
+summary: "More than one OSInterface attribute found in your file '<InterfaceNames>'. Make sure only one interface decorated with OSInterface is defined."
 tags:
 guid: 6cf42628-a470-4c43-9624-3d003cc8435d
 locale: en-us

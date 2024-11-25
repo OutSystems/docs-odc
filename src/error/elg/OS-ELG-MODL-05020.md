@@ -1,5 +1,5 @@
 ---
-summary: "The name: '<Name>' is not supported as it begins with a number."
+summary: "The name '<Name>' is not supported as it begins with a number."
 tags:
 guid: 00b8ed9f-4e4f-4e3f-a0d5-c830bcedf4d1
 locale: en-us
