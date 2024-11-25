@@ -28,7 +28,7 @@ Only users with **Manage IP Restrictions** permissions can create, edit, and del
 
 <div class="info" markdown="1">
 
-IP filters require the [subscription](./subscription-console.md) of an add-on. Please contact your OutSystems account team for more information.
+IP filters require the [subscription](subscription-console.md) of an add-on. Please contact your OutSystems account team for more information.
 
 </div>
 

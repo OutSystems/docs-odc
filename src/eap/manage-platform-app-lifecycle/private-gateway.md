@@ -46,7 +46,7 @@ A Private Gateway supports multiple tunnels and uses a load balancer to handle r
 
 <div class="info" markdown="1">
 
-Private Gateway requires the [subscription](./subscription-console.md) of an add-on to the ODC Platform edition. Please contact your OutSystems account team for more information.
+Private Gateway requires the [subscription](subscription-console.md) of an add-on to the ODC Platform edition. Please contact your OutSystems account team for more information.
 
 </div>
 
