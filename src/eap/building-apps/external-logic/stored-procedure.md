@@ -1,11 +1,19 @@
 ---
 summary: Learn how to extend your code using stored procedures in OutSystems Developer Cloud (ODC).
-tags: 
+tags: stored procedures, sql database, custom code, database operations, c# integration
 guid: b6caded7-82fc-4ce9-a8a2-6bd771c9e33b
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=5851-7&t=SKufX46qUUZNk3AR-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - conceptual
 ---
 
 # Supporting stored procedure in ODC

@@ -1,12 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports translation management by allowing users to export and import translatable resources for apps.
-tags:
+tags: localization, translation editor, app development, multilingual support, globalization
 locale: en-us
 guid: 9eb50227-4f61-4cd7-809c-c290804c7e07
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # Translation management
 
 You can export translatable resources to files and send them to a professional translation service. Once you receive the translated files, import them into your app. You can also translate the resources yourself with the [translation editor](translation-editor.md).

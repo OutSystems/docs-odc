@@ -1,11 +1,13 @@
 ---
-summary: Improve SEO with prerendering. 
-tags: 
+summary: Improve SEO with prerendering.
+tags:
 guid: 3f649fec-07c4-4a49-843f-a61c22dbf3e5
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - procedure
 ---
 
 # Improve SEO with prerendering

@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers manual and automatic data replacement options for app screens, enhancing customization and functionality.
-tags:
+tags: data management, screen templating
 locale: en-us
 guid: 6fccfc68-813b-45a4-a938-4f740a10176c
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
 ---
+
 # Replace data in screens
 
 Once you’ve built an app that contains screen templates or accelerators, you may want to replace the data in your screens with your own data. Data can be replaced [manually](#replace-data-manually) or [automatically](#replace-data-automatically). 

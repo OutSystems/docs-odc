@@ -1,12 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) facilitates seamless mobile app updates with automatic version detection and resource caching.
-tags:
+tags: mobile app deployment, app version management, resource caching
 locale: en-us
 guid: 1ca55d98-3586-4c1f-843d-227b1c858502
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
+  - conceptual
 ---
+
 # Keeping apps up to date for your users
 
 <div class="info" markdown="1">

@@ -1,12 +1,23 @@
 ---
-tags:
+tags: ui design patterns, mobile apps development, section ui pattern
 summary: Learn how to organize on-screen content using the Section UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 938450a3-c869-4c7b-82f2-7599c196d482
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A11352&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # Section
 
 You can use the Section UI Pattern to organize on-screen content into different sections. This pattern can also be used with the Section Index UI Pattern to create anchors for each section.

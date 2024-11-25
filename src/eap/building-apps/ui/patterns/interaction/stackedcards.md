@@ -1,11 +1,20 @@
 ---
-tags: 
+tags: mobile apps, user interface components, outsystems patterns
 summary: Explore the Stacked Cards UI Pattern in OutSystems Developer Cloud (ODC) for creating swipeable, multi-directional event-triggering cards.
 locale: en-us
 guid: 30866b44-9a14-45a8-bbbd-ee11cc898d5f
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A17757&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
+  - procedure
 ---
 
 # Stacked Cards

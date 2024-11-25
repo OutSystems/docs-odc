@@ -1,12 +1,24 @@
 ---
 summary: OutSystems Developer Cloud (ODC) facilitates the sharing of reusable elements across applications, enhancing development efficiency and consistency.
-tags:
+tags: outsystems libraries, code reusability, app lifecycle management
 locale: en-us
 guid: 7e20ed99-3098-4d7c-b7fd-1a5794f8377d
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc
+content-type:
+  - conceptual
+  - procedure
+  - reference
 ---
+
 # Reuse elements across apps
 
 You can share public elements across your apps to accelerate development and enable consistency. Sharing elements creates dependencies between producer and consumer apps.

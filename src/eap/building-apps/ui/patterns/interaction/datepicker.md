@@ -1,11 +1,20 @@
 ---
-tags:  
+tags: widget implementation, ui design, date handling, form inputs, flatpickr library
 summary: Explore the Date Picker UI Pattern in OutSystems Developer Cloud (ODC) for selecting dates using a calendar interface.
 locale: en-us
 guid: 87d21dac-8006-44b5-8e43-919e93a4e462
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A13767&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
 
 # Date Picker

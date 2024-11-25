@@ -1,11 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers libraries as repositories for reusable UI and logic elements, streamlining app development and maintenance.
-tags: 
+tags: code reusability, ui component library, design consistency, middleware integration, business theming
 locale: en-us
 guid: 5102d9d1-9716-46aa-9ab7-3c9640a7f79c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4368-642
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - none
+content-type:
+  - conceptual
+  - procedure
 ---
 
 # Libraries

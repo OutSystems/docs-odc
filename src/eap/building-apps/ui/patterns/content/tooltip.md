@@ -1,11 +1,20 @@
 ---
-tags: 
+tags: ui design, user experience
 summary: Explore how to dynamically display tooltips in your applications using OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 33a42743-0e9c-44c6-b67d-363ec53dc01a
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A11799&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
+  - procedure
 ---
 
 # Tooltip

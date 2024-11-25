@@ -1,12 +1,19 @@
 ---
 summary: OutSystems Developer Cloud (ODC) is not mentioned in the provided article about setting up Azure AI search with blob storage.
-tags:
+tags: azure, azure ai search, azure blob storage, search services, ai integration
 locale: en-us
 guid: ac8ae913-7436-4101-a1b6-0542bfadac9c
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - platform administrators
+outsystems-tools:
+  - none
+content-type:
+  - procedure
 ---
+
 # Set up Azure AI search with blob storage
 
 [Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search), an AI-powered information retrieval platform, helps you to build search experiences and generative AI apps that combine large language models with enterprise data. With Azure AI search, you can integrate an external data source, such as your internal knowledge base, to supplement the AI model's internal representation of information and improve the quality of the AI-generated response. This article explains how to configure Azure AI search with [Azure blob storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction#create-a-storage-account). It is intended for administrators and DevOps engineers with a good working knowledge of configuring search services using Azure OpenAI.

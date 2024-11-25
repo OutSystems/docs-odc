@@ -1,12 +1,23 @@
 ---
-tags:
+tags: ui design, user experience
 summary: Explore how to horizontally or vertically center content using the Align Center UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 0902827b-4339-4965-b8c3-94a2a7825594
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A20614&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
+  - procedure
 ---
+
 # Align Center
 
 You can use Align Center UI Pattern to center content horizontally or vertically on the screen.

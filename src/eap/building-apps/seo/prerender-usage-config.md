@@ -1,11 +1,13 @@
 ---
-summary: Prerender usage and configuration best practices. 
-tags: 
+summary: Prerender usage and configuration best practices.
+tags:
 guid: 99def5e6-f2d0-41cb-821a-20116a620182
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - reference
 ---
 
 # Prerender usage and configuration

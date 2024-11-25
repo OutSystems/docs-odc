@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports the Display on Device UI pattern for device-specific content rendering.
-tags:
+tags: ui patterns, cross-platform development
 locale: en-us
 guid: 4dd69c5c-c0a3-4c26-a4f7-b4c86313495f
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A9149&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
 ---
+
 # Display on Device
 
 You can use the Display on Device UI pattern to select what elements are displayed on which device types. With this pattern you can improve the way information is displayed on different devices - computers, tablets, and phones - by specifically specifying which elements display on each of them.

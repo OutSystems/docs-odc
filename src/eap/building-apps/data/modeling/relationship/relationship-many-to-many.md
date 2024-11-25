@@ -1,12 +1,22 @@
 ---
 summary: Learn to create a many-to-many relationship in OutSystems Developer Cloud (ODC) using a junction entity.
-tags:
+tags: database modeling, entity relationship
 locale: en-us
 guid: 4e158cbd-cb4d-4152-81f2-dae5e703e5ec
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3202%3A7449&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - conceptual
 ---
+
 # Create a Many-to-Many Relationship
 
 A many-to-many relationship happens when one entity has a one-to-many relationship with another entity, and vice-versa. For example, an `Author` can write several `Books`, and a `Book` can be written by several` Authors`. This kind of relationship is also known as **N to M** relationship.

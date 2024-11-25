@@ -1,12 +1,23 @@
 ---
-tags:
+tags: ui design, user interface patterns, mobile app development, outsystems widgets, progress tracking
 summary: Explore how to implement and customize the Progress Circle UI Pattern in OutSystems Developer Cloud (ODC) to visually represent operation flow progress.
 locale: en-us
 guid: 58229e1f-1b30-4d29-8c94-d709d5428012
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A19985&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # Progress Circle
 
 You can use the Progress Circle UI Pattern to show the current progress of an operation flow. The progress is incremented in fractions of the circular badge.

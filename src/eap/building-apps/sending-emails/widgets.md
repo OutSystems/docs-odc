@@ -1,11 +1,19 @@
 ---
 summary: Explore email widget capabilities in OutSystems Developer Cloud (ODC) for creating lightweight, secure emails compatible with most readers.
-tags: 
+tags: email design, widget implementation, ui components, email security, email compatibility
 locale: en-us
 guid: 665cc9c6-00e6-44f9-91ba-04f6de8fa936
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A11326&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
 ---
 
 # Widgets in emails

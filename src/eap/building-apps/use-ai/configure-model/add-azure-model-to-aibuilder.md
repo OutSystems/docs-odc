@@ -1,12 +1,20 @@
 ---
 summary: This article guides on integrating the Azure OpenAI model into the AI Agent Builder app within the OutSystems Developer Cloud (ODC) platform.
-tags:
+tags: azure openai, cloud services, high-availability, devops, ai model management
 locale: en-us
 guid: db6b7e45-96d2-4f0b-9723-b5a59c57fe60
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+audience:
+  - platform administrators
+outsystems-tools:
+  - ai agent builder
+  - odc portal
+content-type:
+  - procedure
 ---
+
 # Add Azure OpenAI model to AI Agent Builder app
 
 To use Azure OpenAI models for your agent, you must add the Azure OpenAI models to the AI Agent Builder. To ensure high-availability of your agent and distribute the load, you can add one or more deployments of the same model as endpoints and prioritize them.

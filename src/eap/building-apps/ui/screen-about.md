@@ -1,12 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enhances app development with customizable screen templates and UI elements for efficient user interface creation.
-tags:
+tags: user interface design, screen templates, ui patterns, component library, proof of concept
 locale: en-us
 guid: 573b9486-bcb4-4888-9be6-d3e8e96b6dc8
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2643&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+content-type:
+  - conceptual
 ---
+
 # Screens
 
 A screen is a user interface (UI) element that contains other UI elements (such as fields or labels) that enable users to interact with your app. You can create an empty screen, or from a screen template for a specific use case.

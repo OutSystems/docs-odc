@@ -1,11 +1,13 @@
 ---
 summary: SEO best practices.
-tags: 
+tags:
 guid: e4937d41-b341-4d6b-bd84-7b7958672549
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - best practice
 ---
 
 # SEO best practices

@@ -1,12 +1,22 @@
 ---
 summary: Learn to implement self-registration flows in apps using OutSystems Developer Cloud (ODC), featuring user verification and logic creation tools.
-tags:
+tags: user registration, email verification, security, user experience, sms integration
 locale: en-us
 guid: cb22b88a-f8ec-416c-8f77-8ac814d58bd7
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - forge
+content-type:
+  - conceptual
 ---
+
 # Self-registration flow
 
 The self registration flow enables users to access your app without human intervention. To access your apps, users need a way to log in. Depending upon the type of app you create, users may find your app from your website through a Google search. If you have an app that requires users to register to log in, you may need to provide them with an email link to your app.

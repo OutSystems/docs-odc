@@ -1,12 +1,22 @@
 ---
-tags:
+tags: user notifications, ui design
 summary: Learn how to implement and configure the Notification UI Pattern in OutSystems Developer Cloud (ODC) to enhance user communication.
 locale: en-us
 guid: b60bb989-895e-49a1-a261-76d9bb540425
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A16275&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # Notification
 
 The Notification UI Pattern is a contextual short message that provides important information to the user, such as app crashes, new updates, task reminders, and new messages.

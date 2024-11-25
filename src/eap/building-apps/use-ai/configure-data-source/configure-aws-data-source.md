@@ -1,12 +1,19 @@
 ---
 summary: OutSystems Developer Cloud (ODC) is not mentioned in the provided article about setting up Amazon Kendra with Amazon S3 as a data source.
-tags:
+tags: cloud services, aws, amazon s3, search services, amazon kendra
 locale: en-us
 guid: c0920667-ced6-4aeb-b4fa-a096244c406f
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - platform administrators
+outsystems-tools:
+  - none
+content-type:
+  - procedure
 ---
+
 # Set up Amazon Kendra with a data source
 
 [Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/what-is-kendra.html) is an intelligent search service that uses natural language processing and advanced machine learning algorithms to return specific answers to search questions from your data. With Amazon Kendra, you can connect to various data sources such as file systems, websites, Box, DropBox, Salesforce, SharePoint, relational databases, and Amazon S3. 

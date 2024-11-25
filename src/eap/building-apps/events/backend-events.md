@@ -6,6 +6,16 @@ guid: 54254c98-5a1e-42c3-a280-fa2aae5c5abe
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4703-118&mode=design&t=oH4GYDMLoIxKmaoI-0
+tags: asynchronous communication, event handling, pub/sub model, task automation, data orchestration
+audience:
+  - backend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - conceptual
+  - procedure
 ---
 
 # Back-end events

@@ -1,12 +1,21 @@
 ---
 summary: Learn to build multilingual apps with language switching in OutSystems Developer Cloud (ODC), adhering to RFC 1766 standards.
-tags:
+tags: internationalization, localization, user experience, language support, rfc standards
 locale: en-us
 guid: ab798636-66c7-4ca9-88df-313bfa5cf8ef
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - conceptual
 ---
+
 # Multilingual apps
 
 With Multilingual web and mobile apps you can translate an app to other languages. Once the translations are available in the app, you can switch the language automatically or let users do it.

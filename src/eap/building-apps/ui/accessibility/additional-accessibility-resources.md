@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers resources for enhancing web accessibility, including evaluation tools and screen readers.
-tags:
+tags: web accessibility, evaluation tools, screen readers, color contrast, wcag guidelines
 locale: en-us
 guid: f456b33d-6e53-41ea-9b46-ccda0937aeb4
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - frontend developers
+  - ui designers
+  - full stack developers
+outsystems-tools:
+  - none
+content-type:
+  - reference
 ---
+
 # Links to additional accessibility resources
 
 A section with links to additional information.

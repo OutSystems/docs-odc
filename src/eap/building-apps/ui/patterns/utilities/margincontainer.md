@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui design, ui patterns, app development tutorials for beginners
 summary: Learn how to add symmetrical padding in your applications using the Margin Container UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 7e38da14-e0fb-42d7-b677-5b18818c788f
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A21157&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # Margin Container
 
 You can use the Margin Container UI Pattern to add symmetrical padding around a container.

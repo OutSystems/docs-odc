@@ -1,11 +1,13 @@
 ---
 summary: Explore data archiving strategies and best practices for efficient long-term data storage and performance optimization using OutSystems Developer Cloud (ODC).
-tags: 
+tags:
 guid: 3c7e1c42-073c-4da7-bc65-163bb894caaa
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5969-644
+content-type:
+  - best practice
 ---
 
 # Data archiving best practice

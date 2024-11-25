@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui design patterns, user experience design
 summary: Explore how to implement the Blank Slate UI Pattern in OutSystems Developer Cloud (ODC) to enhance user interfaces when no data is available.
 locale: en-us
 guid: 8f31ca3f-5223-4225-b292-304330d0e17e
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A10392&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # Blank Slate
 
 You can use the Blank State UI Pattern to inform end-users, for example, to complete a task or when there is no data available for display etc.

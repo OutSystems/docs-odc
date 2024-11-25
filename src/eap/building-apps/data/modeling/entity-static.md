@@ -1,12 +1,22 @@
 ---
 summary: Learn how to manage Static Entities in OutSystems Developer Cloud (ODC) for predefined data sets with global scope.
-tags:
+tags: data modeling, database design
 locale: en-us
 guid: 1093da45-38cc-47b6-aaa2-7123a1d2d964
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3202%3A7357&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
+  - procedure
 ---
+
 # Static Entities
 
 A **Static Entity** consists of a set of named values. Think of Static Entities as literal values stored in a database whose scope is always global. The **Records** folder of the Static Entity holds the data, and the Attributes define the structure of the data.

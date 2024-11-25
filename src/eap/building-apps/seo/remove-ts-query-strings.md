@@ -1,11 +1,13 @@
 ---
-summary: Removing _ts from query strings. 
-tags: 
+summary: Removing _ts from query strings.
+tags:
 guid: 70399158-64c3-4630-91ee-46c3bb17ead7
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - reference
 ---
 
 # Remove _ts from query strings

@@ -1,11 +1,19 @@
 ---
 summary: Explore how to extend app capabilities using public elements and libraries in OutSystems Developer Cloud (ODC).
-tags:
+tags: application development, library management, http communication, modular architecture
 locale: en-us
 guid: abe6d7fc-04ae-45ed-8630-cf3e7e9b86ef
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - conceptual
 ---
 
 # Use public elements

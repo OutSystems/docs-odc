@@ -1,12 +1,19 @@
 ---
 summary: OutSystems Developer Cloud (ODC) integrates with Azure OpenAI Service for enhanced AI capabilities.
-tags:
+tags: azure, ai integration, openai service, api configuration, deployment
 locale: en-us
 guid: e577bb40-f2ee-468a-8ebe-ccad45fe2705
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - platform administrators
+outsystems-tools:
+  - ai agent builder
+content-type:
+  - procedure
 ---
+
 # Set up Azure OpenAI Service
 
 The [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/) provides access to OpenAI’s models, such as GPT-4, GPT-4 Turbo with vision, and GPT-3.5 Turbo, which you can customize to your specific needs for a variety of use cases. 

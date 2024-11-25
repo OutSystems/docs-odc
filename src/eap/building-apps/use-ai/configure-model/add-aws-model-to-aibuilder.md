@@ -1,12 +1,20 @@
 ---
 summary: This article guides on integrating Amazon Bedrock AI models into the AI Agent Builder app using OutSystems Developer Cloud (ODC).
-tags:
+tags: cloud integration, ai model deployment, aws services, high availability, devops
 locale: en-us
 guid: e871f14b-e322-4cfc-a1b8-bc361fba8dc5
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - platform administrators
+outsystems-tools:
+  - odc portal
+  - ai mentor studio
+content-type:
+  - procedure
 ---
+
 # Add Amazon Bedrock AI model to the AI Agent Builder
 
 To use Amazon Bedrock AI models, you must add the Bedrock AI models to the AI Agent Builder. To ensure high availability of the agent and distribute the load, you can add one or more Bedrock resources of the same model as endpoints and prioritize them for use.

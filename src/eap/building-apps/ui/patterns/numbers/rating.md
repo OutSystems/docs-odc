@@ -1,12 +1,23 @@
 ---
-tags:
+tags: ui components, user experience
 summary: Explore how to implement and customize the Rating UI Pattern in OutSystems Developer Cloud (ODC) to enhance user interaction.
 locale: en-us
 guid: 31fc8803-e23e-4f60-8731-2fc03e5a51bf
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A20522&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
+  - procedure
 ---
+
 # Rating
 
 You can use the Rating UI Pattern to allow users rate, for example, products and services.

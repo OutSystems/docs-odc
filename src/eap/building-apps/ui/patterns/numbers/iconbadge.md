@@ -1,11 +1,20 @@
 ---
-tags:
+tags: user interface design, widget usage, data retrieval, notifications system, database manipulation
 summary: OutSystems Developer Cloud (ODC) features the Icon Badge UI Pattern for displaying notifications such as unread messages or user counts.
 locale: en-us
 guid: 2d9289d9-8fce-4e29-bb0d-fb4d7b8dcdd9
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A19685&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
+  - procedure
 ---
 
 # Icon Badge

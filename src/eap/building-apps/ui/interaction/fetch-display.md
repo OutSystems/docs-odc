@@ -1,12 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) simplifies data fetching and display from databases using Aggregates and widgets.
-tags:
+tags: data integration, entity management, client-side logic
 locale: en-us
 guid: 9072a3d9-8993-4b6a-98b7-2f623bcd78bc
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7751&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - process
 ---
+
 # Fetch and display data from the database in OutSystems
 
 You often need to fetch data from a database to, for example, show it on the screen. An efficient way to fetch data from databases in OutSystems is to use an Aggregate.

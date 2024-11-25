@@ -1,11 +1,19 @@
 ---
 summary: Learn to write efficient queries in ODC using best practices for joins, filters, aggregates, and sorting.
-tags: 
+tags: database joins, query optimization, data retrieval, sql, relational databases
 guid: eb941889-6a5e-4e81-a570-80321841e5c1
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5399%3A383&mode=design&t=SWFFXJVfxBN7UhUU-1 
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5399%3A383&mode=design&t=SWFFXJVfxBN7UhUU-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - best practice
 ---
 
 # Writing better queries in data mashup 

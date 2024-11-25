@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui design patterns, user experience
 summary: OutSystems Developer Cloud (ODC) features the List Item Content UI Pattern for organizing and displaying content efficiently in applications.
 locale: en-us
 guid: af82326a-de20-4931-af2a-dc6ca092a60d
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A11189&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # List Item Content
 
 You can use the List Item Content UI Pattern to quickly organize critical content in a readable way, helping the user understand the content. The List Item Content pattern is often used to organize content such as icons, text, and actions inside a list in a readable way.

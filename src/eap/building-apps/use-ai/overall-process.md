@@ -1,12 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) facilitates the creation and integration of AI agents through its AI Agent Builder tool.
-tags:
+tags: ai integration, ai model management, authentication, forge applications, user permissions
 locale: en-us
 guid: 683e4fb2-5457-4952-8f98-0da719576379
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc portal
+  - forge
+content-type:
+  - process
 ---
+
 # Using the AI Agent Builder 
 
 With AI Agent Builder, you can combine AI model, instructions, additional data sources to create agents for a specific use case. You can then integrate the agent into your existing app to build generative AI applications. You also have the option to choose from a variety of [sample apps](intro.md#sample-apps) that closely matches your use case and download the OML. The OML file consists of entities, screens, call to an Agent, and an integration template for the external solutions in the app, such as Zendesk for Salesforce.

@@ -1,12 +1,14 @@
 ---
 summary: Learn the best practices for fetching and displaying data in OutSystems.
-tags: 
-outsystems-tools: 
+tags:
+outsystems-tools:
 guid: 65834d5d-b36c-47b0-afc5-43ae35b5bd7d
 locale: en-us
-app_type: mobile apps, reactive web apps 
+app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6412-1148 
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6412-1148
+content-type:
+  - best practice
 ---
 
 # Best practices for fetching and displaying data

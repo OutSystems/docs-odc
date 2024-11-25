@@ -1,12 +1,23 @@
 ---
-tags:
+tags: ui patterns, timeline implementation
 summary: OutSystems Developer Cloud (ODC) features the Timeline Item UI Pattern for displaying events in chronological order.
 locale: en-us
 guid: e420ff2a-afcd-4ca6-9d65-9e42ee8d5213
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A18218&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # Timeline Item
 
 You can use the Timeline Item UI Pattern to show related events in a chronological order, such as a user's upcoming, current, and past activities.

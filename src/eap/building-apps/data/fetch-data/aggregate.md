@@ -1,12 +1,21 @@
 ---
 summary: Learn to manage data with Aggregates in OutSystems Developer Cloud (ODC), supporting optimized client-side and server-side queries.
-tags:
+tags: client-side aggregates, server-side aggregates, data management
 helpids: 17203
 locale: en-us
 guid: 0d8335b7-df99-40f3-8a9d-df0e5bd5ca18
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7877&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
+  - procedure
 ---
 
 # Aggregate

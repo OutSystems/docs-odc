@@ -1,11 +1,22 @@
 ---
 summary: Learn to manage data with Aggregates in OutSystems Developer Cloud (ODC), supporting optimized client-side and server-side queries.
-tags:
+tags: data management, data aggregation, data analysis, data integration, data fabric
 locale: en-us
 guid: 49e82c30-f818-4e76-9961-1ccae5852e4e
 app_type: mobile apps, reactive web apps
-figma: 
+figma:
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - data fabric
+  - data fabric connectors
+content-type:
+  - conceptual
+  - process
 ---
 
 # Combine data from different sources

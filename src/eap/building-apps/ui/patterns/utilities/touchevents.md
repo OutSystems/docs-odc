@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui patterns, customization, mobile development, event handling, frontend development
 summary: Explore touch event customization in mobile apps using OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: ab744c4d-12f5-4b92-aa63-0e2a91d693f0
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22041&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # Touch Events
 
 You can use the Touch Events UI Pattern to enable touch events on a specific widget.

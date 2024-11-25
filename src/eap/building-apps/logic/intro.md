@@ -1,11 +1,19 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables the implementation of app logic through customizable actions.
-tags:
+tags: custom actions, application development, low-code platforms, app logic, outsystems platform
 locale: en-us
 guid: 4968c372-2dc8-4131-8f37-7951fec8f431
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - none
 ---
 
 # Application logic

@@ -1,11 +1,13 @@
 ---
-summary: How to navigate to a root domain and access a default ODC app. 
-tags: 
+summary: How to navigate to a root domain and access a default ODC app.
+tags:
 guid: b622d85c-f6f8-4833-984e-6f825c68754b
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - procedure
 ---
 
 # Redirect domains

@@ -1,12 +1,21 @@
 ---
 summary: Learn how to address theme compatibility issues in Screen Templates within OutSystems Developer Cloud (ODC) to ensure your app displays correctly.
-tags:
+tags: theme customization, ui design, outsystems developer cloud, screen templates, compatibility issues
 locale: en-us
 guid: 9d153217-df3d-488c-ad5c-22cdc196942d
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10563&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - error or warning
 ---
+
 # Theme compatibility in Screen Templates
 
 <a id="helpid-30171"></a>

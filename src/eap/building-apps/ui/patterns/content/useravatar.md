@@ -1,12 +1,22 @@
 ---
-tags:
+tags: user interface components, user experience design, mobile app design
 summary: Explore how to implement the User Avatar UI Pattern in OutSystems Developer Cloud (ODC) to display user initials or images.
 locale: en-us
 guid: 6b1585c5-c59f-48a2-9bb4-452a9932bbc4
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A11997&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # User Avatar
 
 You can use the User Avatar UI Pattern to display a user's initials or their image in a circular badge.

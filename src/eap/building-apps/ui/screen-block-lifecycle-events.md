@@ -1,12 +1,22 @@
 ---
 summary: Explore lifecycle events and data handling in OutSystems Developer Cloud (ODC) for mobile and web app development.
-tags:
+tags: application lifecycle management, event handling in applications
 locale: en-us
 guid: 91700588-62e6-4527-a323-426c81f47505
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22098&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - conceptual
+  - reference
 ---
+
 # Screen and block lifecycle events
 
 

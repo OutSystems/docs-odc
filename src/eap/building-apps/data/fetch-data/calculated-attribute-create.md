@@ -1,11 +1,19 @@
 ---
 summary: Learn to create a calculated attribute in an aggregate in OutSystems Developer Cloud (ODC) for enhanced data handling.
-tags:
+tags: data management, ui components, data binding, database operations
 locale: en-us
 guid: 8d55b7fe-ff2d-4a80-b306-e8d7820ea579
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2486&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
 ---
 
 # Create a Calculated Attribute in an Aggregate

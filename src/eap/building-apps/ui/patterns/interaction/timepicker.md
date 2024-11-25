@@ -1,11 +1,20 @@
 ---
-tags: 
+tags: ui pattern implementation, time picker configuration
 summary: Explore how to implement and configure the Time Picker UI Pattern in OutSystems Developer Cloud (ODC) for user time input.
 locale: en-us
 guid: 510393e6-a590-4ceb-a143-eefdac104240
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A17949&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
+  - procedure
 ---
 
 # Time Picker

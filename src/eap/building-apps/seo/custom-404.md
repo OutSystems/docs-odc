@@ -1,11 +1,13 @@
 ---
-summary: Display a custom 404 error page when a specific URL can't be found. 
-tags: 
+summary: Display a custom 404 error page when a specific URL can't be found.
+tags:
 guid: 0b037701-1e07-4ace-983f-6a20d500aa1f
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+content-type:
+  - best practice
 ---
 
 # Custom 404 pages

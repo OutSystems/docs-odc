@@ -1,11 +1,13 @@
 ---
 summary: Learn about implementing data purging using OutSystems Developer Cloud (ODC) to enhance database performance.
-tags: 
+tags:
 guid: 4bf14efa-d0be-4ff9-a8f5-0bc76c012905
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5969-643
+content-type:
+  - best practice
 ---
 
 # Data purging best practice

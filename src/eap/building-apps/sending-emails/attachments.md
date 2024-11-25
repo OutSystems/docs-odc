@@ -1,11 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables users to attach files to emails by defining attachment properties in ODC Studio.
-tags: 
+tags: email integration, file handling, pdf attachments, application logic, user guides
 locale: en-us
 guid: b03f90a8-d437-4f61-a08b-dda12e8ebbfe
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A11325&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
 
 # Adding email attachments

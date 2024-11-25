@@ -1,12 +1,23 @@
 ---
-tags:
+tags: ui design patterns, mobile app development
 summary: Learn to organize information using the Card Sectioned UI pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 7ac603a7-60c1-48cf-b47d-fed2ac2e544b
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A10663&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # Card Sectioned
 
 Groups information in a small block organized with different sections for title, image and content that can be easily noticeable in the screen.

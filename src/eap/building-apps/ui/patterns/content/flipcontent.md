@@ -1,12 +1,23 @@
 ---
 summary: OutSystems Developer Cloud (ODC) features the Flip Content UI Pattern for interactive content display in applications.
-tags:
+tags: ui design, user experience, custom widgets, application development, interactive content
 locale: en-us
 guid: d87a061c-83e2-4b7f-b820-4e7f70267a38
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A10847&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # Flip Content
 
 You can use the Flip Content UI Pattern to display information that when, for example, is clicked, flips and displays different information.

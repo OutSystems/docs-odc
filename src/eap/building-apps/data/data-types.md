@@ -1,12 +1,21 @@
 ---
 summary: Explore data types, default values, and constraints in OutSystems Developer Cloud (ODC).
-tags:
+tags: data modeling, data types, data conversions, entity modeling, data management
 locale: en-us
 guid: 651e9382-9db0-4150-ad11-c160aa9c9835
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
 ---
+
 # Data types and conversions
 
 This page describes the data types available in OutSystems, their default values and constraints. 

@@ -1,12 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports collaborative app development with features for automatic and manual merging of revisions.
-tags:
+tags: version control, collaboration
 locale: en-us
 guid: c9965707-75fb-442f-ad27-6fbe322fcf08
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4002%3A219&mode=design&t=upO9mxr7in19rYkC-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - process
+  - conceptual
 ---
+
 # The merge feature and team collaboration
 
 OutSystems Developer Cloud (ODC) uses a simple versioning system that assigns an incremental revision number to each published app. ODC allows you to restore or compare an app to any previous revision stored on the server.

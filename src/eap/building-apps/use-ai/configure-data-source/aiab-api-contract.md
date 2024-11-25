@@ -1,11 +1,20 @@
 ---
 summary: Use the custom data source API contract to implement your retrieval logic and integrate it with AI Agent Builder.
-tags:
+tags: api integration, restful services, search queries, pagination, data retrieval
 locale: en-us
 guid: 2930096d-810e-49ab-8656-c9ec424f5828
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5716-14
+audience:
+  - mobile developers
+  - frontend developers
+  - backend developers
+  - full stack developers
+outsystems-tools:
+  - ai agent builder
+content-type:
+  - reference
 ---
 
 # Custom data source API contract

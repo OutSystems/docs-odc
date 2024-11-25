@@ -1,12 +1,23 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers built-in accessibility features to help developers create apps that comply with WCAG guidelines.
-tags:
+tags: accessibility, wcag, aria, ui design, ethical design
 locale: en-us
 guid: 62770c36-d307-4a3a-ba01-acf10299454a
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4574%3A135&mode=design&t=Jvfv9vJci8R8xd4n-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - none
+content-type:
+  - process
+  - procedure
 ---
+
 # Accessibility
 
 <div class="info" markdown="1">

@@ -1,12 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports the creation of one-to-many relationships between entities using foreign keys.
-tags:
+tags: database modeling, entity relationships, data management, referential integrity, data modeling
 locale: en-us
 guid: 6bde9ed9-7127-4f01-96ee-3add9ecda974
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3202%3A7447&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - conceptual
 ---
+
 # Create a One-to-Many Relationship
 
 When modeling data, it is sometimes necessary to create one-to-many relationships between entities. For instance, a `Place` (parent entity) can have many `Reviews` (child entity). This is typically implemented with a foreign key - the identifier of the parent record - in the child records.

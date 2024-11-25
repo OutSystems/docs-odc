@@ -1,11 +1,13 @@
 ---
-summary: How to generate and sitemap and robot file. 
-tags: 
+summary: How to generate and sitemap and robot file.
+tags:
 guid: 7e883e55-675d-4cb8-a0b5-805d2eaf60dd
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5895-800&node-type=canvas&t=zTqDJ1OjTTDkeMmV-0
+content-type:
+  - procedure
 ---
 
 # Generating sitemap and robots files

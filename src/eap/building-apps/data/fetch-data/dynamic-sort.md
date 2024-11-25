@@ -6,6 +6,8 @@ guid: a5adf585-f77b-4f1f-bc14-5673ca767fbc
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6084-6
 platform-version: odc
+content-type:
+  - conceptual
 ---
 
 # Dynamic sort with external entities

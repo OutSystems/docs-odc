@@ -1,11 +1,19 @@
 ---
 summary: Troubleshooting aggregates that use multiple sources of data
-tags:
+tags: data management, performance optimization, query optimization, error handling, database operations
 locale: en-us
 guid: d2a3bea8-77c9-46b1-9602-423267953830
 app_type: mobile apps, reactive web apps
-figma: 
+figma:
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - troubleshooting
 ---
 
 # Troubleshooting aggregates that use multiple sources of data

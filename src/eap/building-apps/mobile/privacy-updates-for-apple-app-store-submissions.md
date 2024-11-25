@@ -1,11 +1,18 @@
 ---
-summary: 
-tags: 
+summary:
+tags: apple app store, privacy policy, app submission, api usage, sdk integration
 guid: 61a1d08c-3607-4d70-8dcd-5b2e1f7da8a7
 locale: en-us
 app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/file/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?type=design&node-id=3440%3A34&mode=design&t=sLtP6F4ZsrU6wCQB-1
+audience:
+  - mobile developers
+outsystems-tools:
+  - none
+content-type:
+  - procedure
+  - conceptual
 ---
 
 # Privacy updates for Apple App Store submissions

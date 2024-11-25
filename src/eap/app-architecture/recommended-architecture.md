@@ -1,12 +1,25 @@
 ---
 summary: Explore scalable app design in OutSystems Developer Cloud (ODC) by aligning business problems with organizational structures.
-tags:
+tags: scalable architecture, app design, business problem analysis, bounded contexts, organizational structure
 locale: en-us
 guid: d67d7939-a99f-4328-b490-d0310c35a424
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A516&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - architects
+  - business analysts
+outsystems-tools:
+  - none
+content-type:
+  - process
+  - best practice
+  - conceptual
 ---
+
 # Building a well-architected app
 
 Before building apps in OutSystems Developer Cloud (ODC), understand the business problem you want to solve. To help you in that journey, look at an example of a home insurance portal.

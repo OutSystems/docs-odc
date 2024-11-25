@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui patterns, search functionality, user experience, local variables, widgets
 summary: OutSystems Developer Cloud (ODC) features a Search UI Pattern that enables users to find content within applications by entering queries.
 locale: en-us
 guid: 1914dd20-040d-4a96-8293-e35756cb8e6a
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A17253&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
+  - procedure
 ---
+
 # Search
 
 You can use the Search UI Pattern to provide users with a search field. Use the Search UI Pattern to allow users find pieces of content by entering queries. Unlike navigation, knowledge of the content's location isn't required and searching is often the primary means of finding content.

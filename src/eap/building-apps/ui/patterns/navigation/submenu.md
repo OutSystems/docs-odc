@@ -1,11 +1,21 @@
 ---
-tags: 
+tags: ui design, design systems, user experience, application development, outsystems
 summary: Learn how to implement a submenu within an application using the Submenu UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 643d37e9-efa8-48a3-87ba-f409a1f04efa
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A18027&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
 
 # Submenu

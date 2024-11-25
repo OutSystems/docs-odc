@@ -1,12 +1,21 @@
 ---
 summary: Learn how to create a self-registration screen in OutSystems Developer Cloud (ODC) by modifying a login screen to allow user sign-ups.
-tags:
+tags: user interface design, user registration
 locale: en-us
 guid: cd42bc12-6d0b-4da8-95f5-1e704fc0bfff
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22064&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
 ---
+
 # Create a screen for users to self-register
 
 To enable users to self-register to access your app, you can provide end-users with a login screen requiring them to enter their name and email address.

@@ -1,11 +1,20 @@
 ---
-tags: 
+tags: ui patterns, widget configuration
 summary: OutSystems Developer Cloud (ODC) features a Progress Bar UI pattern for visually tracking task completion percentages.
 locale: en-us
 guid: 9365cf5d-fdea-45fa-9e39-19089259a83b
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A19941&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
 
 # Progress Bar

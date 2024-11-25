@@ -1,11 +1,17 @@
 ---
 summary: OutSystems Developer Cloud (ODC) allows customization of deeplink behavior in mobile apps using the `DeepLinksHandlerType` preference.
-tags:
+tags: mobile app development, cordova plugins, deep linking, extensibility configurations, application distribution
 locale: en-us
 guid: 7ead36ce-4ee4-48e7-b8f8-3575d373f17b
 app_type: mobile apps
 platform-version: odc
-figma: 
+figma:
+audience:
+  - mobile developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
 ---
 
 # Customize Deeplink Behavior

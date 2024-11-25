@@ -1,12 +1,23 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports extending apps with custom .NET code through external logic integration.
 helpids: 30485
-tags:
+tags: external libraries, .net integration, custom code, c# development, sdk
 locale: en-us
 guid: 656e14cb-27b2-433f-835b-2535636e053b
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3325-22015&t=cNJuaJIMze8z5Tsy-0
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+content-type:
+  - process
+  - procedure
+  - conceptual
 ---
 
 # Extend your apps with external logic using custom code

@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports the management of one-to-one, one-to-many, and many-to-many entity relationships in data models.
-tags:
+tags: data modeling, entity relationships, database design, primary key, foreign key
 locale: en-us
 guid: 34840e6f-13be-4db8-ae48-dd118a9fe303
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2483&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - conceptual
 ---
+
 # Relationships between entities
 
 This article introduces the concepts of relationships between entities.

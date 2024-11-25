@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui patterns, alert implementation
 summary: Explore how to implement and customize the Alert UI Pattern in OutSystems Developer Cloud (ODC) to display important messages in applications.
 locale: en-us
 guid: 1492d677-e96e-48f2-89af-1e0157058f58
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A10303&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - reference
+  - procedure
 ---
+
 # Alert
 
 You can use the Alert UI Pattern to highlight and display important information, errors, or warnings.

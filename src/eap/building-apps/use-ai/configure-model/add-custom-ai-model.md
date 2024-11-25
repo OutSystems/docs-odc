@@ -1,12 +1,22 @@
 ---
 helpids: 30553
-summary:  In this article you will learn how to add custom AI model to the AI Agent Builder app.
-tags: 
+summary: In this article you will learn how to add custom AI model to the AI Agent Builder app.
+tags: ai integration, custom ai model, configuration, authentication, api
 guid: 2fdeaba8-6979-4a03-aa9c-50422431e38a
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=5302-572&t=fjpPZauR2aOAen2p-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - ai agent builder
+  - odc portal
+content-type:
+  - procedure
+  - reference
 ---
 
 # Add a custom AI model 

@@ -1,12 +1,22 @@
 ---
 summary: Learn how to create and manage app screens using various methods in OutSystems Developer Cloud (ODC), ensuring consistency and efficiency in design.
-tags:
+tags: ui design, screen templates, scaffolding, ui flows
 locale: en-us
 guid: 4afcc536-cf53-4130-9d7a-15887083d629
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+content-type:
+  - conceptual
 ---
+
 # Creating screens
 
 This article describes the process you follow to create a screen. When you build an app, you want all your screens to have the same look and feel. When users are familiar with the screen design, they work more efficiently.

@@ -1,12 +1,19 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables rapid development of mobile apps, including native apps, PWAs, and mobile backends.
-tags:
+tags: mobile app development, native apps, progressive web apps, mobile backend
 locale: en-us
 guid: 8e81892f-5deb-4b08-b3d7-e12459619f76
 app_type: mobile apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+outsystems-tools:
+  - none
+content-type:
+  - none
 ---
+
 # Mobile apps
 
 OutSystems Developer Cloud (ODC) lets you create mobile apps fast. A mobile application is a software application developed specifically for use with a mobile device such as a smartphone or tablet. With OutSystems for mobile, you can build:

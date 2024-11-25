@@ -1,11 +1,19 @@
 ---
 summary: OutSystems Developer Cloud(ODC) enables the creation of custom app templates to streamline app development with predefined functionalities and aesthetics.
-tags: 
+tags: app development branding guidelines integration
 guid: d02b8b25-ab59-493c-a950-837d5dee56db
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
 ---
 
 # Create a custom app template

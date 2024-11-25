@@ -1,12 +1,22 @@
 ---
-tags:
+tags: mapping, static maps, dynamic maps, location services, ui components
 summary: Utilize the OutSystems Developer Cloud (ODC) Map component for dynamic and static mapping in applications.
 locale: en-us
 guid: cdacfb9a-e989-424b-b3ed-5608dfa0d02c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A16272&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
+
 # Map
 
 The OutSystems **Map** component allows you to add maps to your applications with single or multiple locations. The Map component is fully customizable, allowing you to, for example, change map behaviors, search for locations, and plan your route.

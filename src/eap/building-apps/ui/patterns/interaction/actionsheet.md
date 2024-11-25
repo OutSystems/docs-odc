@@ -1,11 +1,20 @@
 ---
-tags:  
+tags: ui design, ui patterns, mobile app development, outsystems developer cloud
 summary: Learn how to implement and customize the Action Sheet UI Pattern in OutSystems Developer Cloud (ODC) to enhance mobile app interfaces.
 locale: en-us
 guid: 7702c792-34d2-41e7-9bad-e9b88326a21e
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A12251&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - procedure
+  - reference
 ---
 
 # Action Sheet

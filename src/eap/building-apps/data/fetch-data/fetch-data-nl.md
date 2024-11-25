@@ -1,11 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables fetching data using human language to create queries in ODC Studio, simplifying data interaction.
-tags:
+tags: mobile apps, data fetching, natural language processing, tutorials for beginners
 locale: en-us
 guid: 0e8d2237-0ede-4be9-ac0d-3603a1ab8fae
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A8546&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+content-type:
+  - process
+  - procedure
 ---
 
 # Fetch data using human language
