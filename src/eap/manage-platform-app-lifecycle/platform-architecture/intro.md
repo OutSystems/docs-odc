@@ -216,6 +216,6 @@ See [Security in OutSystems Developer Cloud](../../security/security.md#monitori
 ---
 <div class="info" markdown="1">
 
-Some features mentioned in this article may require add-ons to the ODC Platform edition. Please contact your OutSystems account team for more information.
+Some features mentioned in this article may require [add-ons](../subscription-console.md) to the ODC Platform edition. Please contact your OutSystems account team for more information.
 
 </div>

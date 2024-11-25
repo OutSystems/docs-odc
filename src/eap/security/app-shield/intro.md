@@ -30,7 +30,7 @@ Applies only to Mobile Apps.
 
 <div class="info" markdown="1">
 
-To use **OutSystems AppShield**, you must have a license. If you still need to get a license, contact the sales team.
+To use **OutSystems AppShield**, you must have a [license](../../manage-platform-app-lifecycle/subscription-console.md). If you still need to get a license, contact the sales team.
 
 </div>
 
