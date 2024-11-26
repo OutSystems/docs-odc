@@ -18,7 +18,7 @@ In OutSystems, your apps' logic is implemented through actions. Follow these rec
 
 ## Avoid multiple server calls in a client action flow { #multiple-server-calls }
 
-Multiple server aggregates or server action requests inside client actions can lead to performance issues. Each call results in a separate server request, leading to numerous round trips between the client and server, which can increase latency. 
+Multiple server calls inside client actions can lead to performance issues. Each call results in a separate server request, leading to numerous round trips between the client and server, which can increase latency. 
 
 The following is an example of a client action flow with several sequenced server calls, which is not a good practice:
 
@@ -51,6 +51,22 @@ When adding aggregates or SQL queries to an action flow, consider the following:
 ### Benefits
 
 Keeping database calls outside the cycle prevents you from executing the same call repeatedly, thus improving performance.
+
+## Avoid isolating a single aggregate in an action { #isolated-aggregates }
+
+Aggregates are optimized to fetch only the attributes used in the action. When you isolate an aggregate in an action and the action returns an entire record or list of records, the platform can't optimize the number of fields to retrieve and fetches all their information from the database. This causes unnecessary database overload and memory usage.
+
+### Recommendations
+
+When calling aggregates in your logic flows, follow these recommendations:
+
+* Avoid creating an action exclusively to execute an aggregate. Instead, call the aggregate directly in your logic flow.
+
+* If you need to isolate an aggregate in an action for code reusability purposes, make sure to define the output parameters according to the attributes needed from the aggregate. 
+
+### Benefits
+
+Calling an aggregate directly instead of wrapping it in an action allows the platform to automatically detect the necessary fields to fetch, thus improving your app's performance. 
 
 ## Avoid hard-coded values { #hard-coded-values }
 
