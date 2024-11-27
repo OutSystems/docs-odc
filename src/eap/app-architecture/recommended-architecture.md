@@ -67,7 +67,10 @@ In two business contexts, we identified reusable components and integrations wit
 
 <div class="info" markdown="1">
 
-In ODC you integrate with external systems by consuming REST API services.
+C:\git\docs-next\src\eap\integration-with-systems\consume_rest\intro.md
+
+
+In ODC you integrate with external systems by consuming REST API services.For more information, refer to [Consume REST APIs](../integration-with-systems/consume_rest/intro.md)
 
 </div>
 
