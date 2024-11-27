@@ -28,4 +28,3 @@ The app has CSS specific to one screen instead of having it centralized in the a
 ## How to fix
 
 Centralize CSS in the app's Theme to reduce maintenance costs. If you're only making a small change, define a specific class for it in the app’s Theme (that can then be reused) rather than adding it to a particular page and copying the same class repeatedly.
-

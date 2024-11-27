@@ -92,7 +92,7 @@ Avoid hard-coded values in your app's code. Depending on the use case, use one o
 
 Avoiding hard-coded values makes your code easier to understand and maintain.
 
-## Enable caching of server actions returning the same result 
+## Enable caching of server actions returning the same result { #caching }
 
 Server actions that calculate or fetch information multiple times with the same results consume unnecessary processing time and resources. If those actions are slow, they negatively impact the end-user experience.
 
@@ -116,7 +116,7 @@ Client-side logic is less secure than the server-side logic. Thus, you need more
 
 ### Recommendations
 
-For sensitive operations, such as database operations that can modify data, [verify the logged-in user permissions on the server-side logic](../../user-management/secure-app-with-roles.md#restrict-logic-flows) using the **CheckROLENAMERole()** function.
+For sensitive operations, such as database operations that can modify data, [verify the logged-in user permissions on the server-side logic](../../user-management/secure-app-with-roles.md#restrict-logic-flows) using the **CheckROLENAMERole()** and **GetUserId()** functions.
 
 ![Screenshot showing a Client Action running a Server Action validating the user role](images/best-practices-logic-server-side-validation-odcs.png "Validating user role on server-side logic")
 

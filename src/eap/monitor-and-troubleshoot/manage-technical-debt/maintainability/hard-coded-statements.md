@@ -28,3 +28,4 @@ In this example, the flow has a condition that's always **True**. The **False** 
 
 Revise the affected True/False conditions and consider removing/changing the unreachable logic.
 
+For more information, refer to the [logic best practice for avoiding hard-coded values](../../../building-apps/logic/best-practices-logic.md#hard-coded-values).

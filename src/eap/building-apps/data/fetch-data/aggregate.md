@@ -58,6 +58,11 @@ There are cases when you always need to fetch all records from the database, for
 
 </div>
 
+See also the best practices for using aggregates in your logic:
+
+ * [Don't add aggregates inside a cycle](../../logic/best-practices-logic.md#aggregates-inside-cycle)
+ * [Avoid isolating a single aggregate in an action](../../logic/best-practices-logic.md#isolated-aggregates)
+
 ## How to add a data source to an Aggregate
 
 1. With the Aggregate open, navigate to **Data** > **Entities** > **Database**.

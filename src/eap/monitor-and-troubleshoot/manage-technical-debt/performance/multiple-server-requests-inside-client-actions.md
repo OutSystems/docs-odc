@@ -30,3 +30,5 @@ Server-side logic breaks down into multiple separate Aggregates or Server Action
 Instead of sequencing a set of server requests or server Aggregates on your client-side code, compose all required server logic in a single Server Action. This reduces the number of server requests. 
 
 ![A Client Action flow with a single Run Server Action node.](images/odcs-single-server-action.png "Single Server request inside a Client Action")
+
+For more information, refer to the [logic best practice for avoiding multiple server calls in a client action flow](../../../building-apps/logic/best-practices-logic.md#multiple-server-calls).

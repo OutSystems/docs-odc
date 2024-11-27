@@ -33,4 +33,4 @@ Get identity information only on server calls, using functions like GetUserId, e
 
 Remove any usages of GetUserId in Block widget parameters, and replace them with the same function on the server side. In this way, you avoid passing identity information from the client side to the server side as a Block parameter.
 
-For more information, refer to [Reactive web security best practices: Securing server calls](https://success.outsystems.com/documentation/best_practices/security/reactive_web_security_best_practices/).
+For more information, refer to the [best practice for validating user permissions on server-side logic](../../../building-apps/logic/best-practices-logic.md#validate-permissions-server-side).
