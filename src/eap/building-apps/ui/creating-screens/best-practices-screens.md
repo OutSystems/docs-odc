@@ -12,7 +12,7 @@ content-type:
 
 # Best practices for building screens
 
-OutSystems enables you to build screens quickly and intuitively. By following some recommendations, you can ensure that your screens are fast, user-friendly, and work well on different devices.
+OutSystems enables you to build [screens](../screen-about.md) quickly and intuitively. By following some recommendations, you can ensure that your screens are fast, user-friendly, and work well on different devices.
 
 ## Use OutSystems widgets and UI patterns instead of high-code
 
@@ -40,7 +40,7 @@ OutSystems widgets and UI patterns adhere to recommended platform best practices
 
 * **Maintainability:** Using OutSystems' pre-built components makes your codebase easier to maintain and update, as these components are well-documented and supported.
 
-## Keep CSS styles on separate files
+## Keep CSS styles on separate files { #css }
 
 During development cycles, developers frequently resort to inline styles (for example, to quickly adjust the padding of an element), overriding styles defined on the Theme or screen's Style Sheet. In ODC Studio, you can define inline CSS styles via the Attributes section of an element's Properties.
 
@@ -66,7 +66,7 @@ Using CSS in a separate location instead of inline offers several long-term adva
 
 * **Collaboration**: By keeping CSS separate, you improve collaboration with other developers or designers, who don't need to be familiar with all the code to be able to edit styles.
 
-## Optimize image sizes
+## Optimize image sizes { #image-size }
 
 Large images increase bandwidth usage and processing time, slowing screen rendering.
 

@@ -28,3 +28,5 @@ Inline CSS occurs when styles are directly applied to screen or web block elemen
 ## How to fix
 
 CSS should be centrally managed in the application style guide to avoid loading a large number of CSS files. If the CSS is specific to one screen or web block, define your CSS at the screen/web block level instead of in an element's properties.
+
+For more information, refer to the [CSS styles best practice](../../../building-apps/ui/creating-screens/best-practices-screens.md#css).

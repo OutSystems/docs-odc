@@ -27,4 +27,6 @@ The configuration allows the screen to be accessible by **Everyone**.
 
 ## How to fix
 
-Remove the exposed information or set the authorization to **Authenticated users**. .
+Remove the exposed information or set the authorization to **Authenticated users**.
+
+For more information, refer to the [best practice to protect your screens using roles](../../../building-apps/ui/creating-screens/best-practices-screens.md#roles).

@@ -55,3 +55,5 @@ If you don't see **MainFlow**, a different flow may be the default.
 </div>
 
 Periodically during development, it's important to save your work. When you click 1-Click Publish, OutSystems saves and builds your app in the development stage. You can access your app from a web browser by clicking the screen and selecting **Open in Browser**. You can continue making changes in ODC Studio, publish your app, and then refresh the page to see your updates.
+
+For more information, refer to the [best practices for building screens](best-practices-screens.md).

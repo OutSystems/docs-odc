@@ -13,7 +13,7 @@ content-type:
 
 # Best practices for fetching and displaying data
 
-In OutSystems, you can fetch data to populate screens using aggregates or data actions. Follow these best practices to manage and display data from different sources efficiently.
+In OutSystems, you can [fetch data to populate screens](../interaction/fetch-display.md) using aggregates or data actions. Follow these best practices to manage and display data from different sources efficiently.
 
 ## Use aggregates to fetch data from database entities
 
@@ -57,7 +57,7 @@ Data actions can call external REST APIs or execute advanced SQL queries, allowi
 
 For more information, refer to [Displaying Data on Screens](https://learn.outsystems.com/training/journeys/building-screens-with-data-637/displaying-data-on-screens/odc/109).
 
-## Keep Max. Records consistent with your needs
+## Keep Max. Records consistent with your needs { #max-records }
 
 The Max. Records property of an aggregate defines the maximum number of records read from the database. If the Max. Records property is not set, all the records that match the criteria will be retrieved, increasing database load and response time.
 

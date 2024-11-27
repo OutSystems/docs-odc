@@ -70,6 +70,7 @@ This is an example of getting data with an aggregate to a screen. Both Aggregate
 
     ![Screenshot of the Home Screen in ODC Studio displaying the GetEmployees Aggregate with Entity Attributes](images/fetch-data-aggregate-in-screen-ss.png "Aggregate Displayed in Home Screen")
 
+For more information, refer to the [best practices for fetching and displaying data](../../ui/creating-screens/best-practices-fetch-display-data.md).
 
 ## Show data in a widget
 

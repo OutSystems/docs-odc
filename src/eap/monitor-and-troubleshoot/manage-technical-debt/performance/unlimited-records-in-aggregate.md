@@ -28,3 +28,5 @@ The issue occurs because Aggregates fetch all records by default, leading to unn
 ## How to fix
 
 Set the **Max. Records** parameter of the Aggregate to the required amount of records.
+
+For more information, refer to [best practices for fetching and displaying data](../../../building-apps/ui/creating-screens/best-practices-fetch-display-data.md#max-records).

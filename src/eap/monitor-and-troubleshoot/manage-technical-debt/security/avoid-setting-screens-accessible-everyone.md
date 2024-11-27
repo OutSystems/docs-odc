@@ -25,5 +25,6 @@ The screen authorization is accessible to **Everyone**. 
 
 ## How to fix
 
-Set screens to be accessible by **Authenticated Users** unless you prefer to make them public to everyone. In that case, set them to **Everyone**. 
+Set screens to be accessible by **Authenticated Users** unless you prefer to make them public to everyone. In that case, set them to **Everyone**.
 
+For more information, refer to the [best practice to protect your screens using roles](../../../building-apps/ui/creating-screens/best-practices-screens.md#roles).

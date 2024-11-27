@@ -42,6 +42,8 @@ An empty Aggregate opens and ODC Studio displays a message on the empty Aggregat
 
 There are cases when you always need to fetch all records from the database, for example, to populate drop-down box lists. If you fetch all records using a Screen Aggregate, set the **Max. Records** higher than the maximum number of records you expect to fetch. Keep in mind that large amounts of data may slow down the user interface and degrade the responsiveness of the app.
 
+For more information, refer to the [best practices for fetching and displaying data](../../ui/creating-screens/best-practices-fetch-display-data.md).
+
 ### Create an Aggregate in an Action
 
 To add an Aggregate to an Action, drag an **Aggregate** from the toolbox to the flow. 

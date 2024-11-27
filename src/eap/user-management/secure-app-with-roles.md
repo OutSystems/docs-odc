@@ -88,7 +88,7 @@ Logged-in users needs to log out and log back in for changes in their assigned r
 
 ### Restrict access to a screen
 
-To allow only users with a certain role to access a screen, you need to [create some roles first](#create-end-user-roles). You can then allow only registered users to access screens in the app.
+To allow only users with a certain role to access a screen, you need to [create some roles first](#create-end-user-roles). You can then allow only registered users to access screens in the app, which is a [best practice to protect your screens](../building-apps/ui/creating-screens/best-practices-screens.md#roles).
 
 1. Select the screen for which you want to edit the access.
 
@@ -106,4 +106,4 @@ For example, if you enter `CheckManagerRole()` in the **Condition** field of the
 
 Use **CheckROLENAMERole()** function in expressions to verify that the user of the app has a role.
 
-For example, you can create a filter in an aggregate with the expression `CheckAdminsRole() = True`. This aggregate now returns data only if the signed-in user has an Admin role.
+For example, you can create a filter in an aggregate with the expression `CheckAdminsRole() = True`. This aggregate now returns data only if the signed-in user has the Admin role, which is a [best practice to protect sensitive data](../building-apps/ui/creating-screens/best-practices-fetch-display-data.md#restrict-access).

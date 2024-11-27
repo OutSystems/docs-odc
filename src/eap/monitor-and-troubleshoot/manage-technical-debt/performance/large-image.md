@@ -26,3 +26,5 @@ There are large images contained in the app, increasing bandwidth usage and proc
 ## How to fix
 
 Reduce the size of images to the minimum needed to be correctly displayed to the user (below 150KB for mobile apps, and 500KB for web apps). Reduce the image's resolution to a maximum of 1024px. Simply setting their width/height to lower values will not reduce the bandwidth fetch of the image from the server. Consider having big images as external resources not contained inside the app itself.
+
+For more information, refer to the [best practice for optimizing image sizes](../../../building-apps/ui/creating-screens/best-practices-screens.md#image-size).
