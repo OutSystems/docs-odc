@@ -47,12 +47,12 @@ To write better queries, you need to understand the following joins:
 ## Best practices
 
 * Only select attributes you intend to use for mashup.
-* Avoid binary data and large text (over 10 000 characters) attributes due to their impact on performance.
+* [Avoid binary data and large text (over 10 000 characters) attributes](../data-best-practices/intro.md#isolate-binary-data) due to their impact on performance.
 * Avoid full outer and cross joins.
 * When using entities from the same database, join them first before joining entities from other databases, for example: 
     * `db1.a With or Without db2.c With or Without db1.b` - Not Recommended 
     * `db1.a With or Without db1.b With or Without db2.c` - Recommended 
-* Ensure to index attributes used in filters and join conditions in the databases. 
+* Ensure to [index attributes](../data-best-practices/intro.md#index-entities) used in filters and join conditions in the databases. 
 * Use similar data types for attributes used in the join condition. For example, when joining on string attributes, ensure the allowed length is the same in both databases.
 * Queries that work fine in ODC Studio data preview may fail in runtime due to exceeding the execution plan cost limit. This can happen because:
     * Test query limits the number of records, reducing plan cost.

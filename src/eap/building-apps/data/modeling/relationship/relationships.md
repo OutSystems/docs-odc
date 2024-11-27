@@ -100,7 +100,7 @@ For example, when you set the delete rule of the reference attribute to protect 
 
 When you set the delete rule of the reference attribute to delete it guarantees that when a record of entity A is deleted, all the associated records in entity B are also deleted. This mechanism is commonly known as cascade delete.
 
-You can use the **Delete** value when you implement a data purging mechanism, where you need to automatically cascade a delete across the whole data model.
+You can use the **Delete** value when you implement a [data purging](../../data-best-practices/data-purging.md) mechanism, where you need to automatically cascade a delete across the whole data model.
 
 For example, when you set the delete rule of the reference attribute to delete between `Order` and `OrderItems` entities, when an order is deleted, all related order items are automatically deleted.
 
@@ -108,6 +108,6 @@ For example, when you set the delete rule of the reference attribute to delete b
 
 When you set the delete rule of the reference attribute to ignore it enables you to delete records in entity A but keep the associated records in entity B.
 
-You can use the **Ignore** value when implementing a historical data archiving mechanism.
+You can use the **Ignore** value when implementing a historical [data archiving](../../data-best-practices/data-archiving.md) mechanism.
 
 For example, suppose every operation performed on `Order` is audited to `OrderHistory`. Setting the the delete rule of the reference attribute to ignore between `Order` and `OrderHistory` entities allows you to delete an order and retain the associated audit record.

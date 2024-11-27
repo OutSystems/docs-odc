@@ -65,6 +65,8 @@ After you make the changes, apply the settings to make the new values available.
 
 Remember, settings are stage-specific.
 
+For more information, refer to the [settings' best practices](../building-apps/data/data-best-practices/intro.md#settings).
+
 ## Managing timers
 
 Timers execute logic in apps. In ODC Studio, your developers set the default values for the timers. For example, you can use timers to:

@@ -54,6 +54,8 @@ Indexes can also be used to create alternate and composite keys.
 
 When creating an index there is always a relevant trade-off between fetching and inserting data as it may bring some overhead to the latter.
 
+For more information, refer to the [best practices for indexing entities](../data-best-practices/intro.md#index-entities)
+
 ## Impacts when changing entities
 
 When you create a new entity attribute, the platform automatically manages the update of all records stored in the database for you. The new attribute is added to the records and set with the default value for its data type.

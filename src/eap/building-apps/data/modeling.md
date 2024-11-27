@@ -30,6 +30,8 @@ Designing a good data model helps you build a high-quality app. Some main benefi
 * **Lightweight apps** - good isolation of business concepts means developers can build targeted queries against smaller data sets. 
 * **Data integrity** - creating data relationships instead of duplicating attributes ensures consistent data and simpler application logic.
 
+For more information, refer to [best practices for data management](../data/data-best-practices/intro.md).
+
 ## Data models
 
 The data model design process starts with a high level of abstraction and, with each step, becomes more specific. The process begins with a conceptual data model, progresses to a logical data model, and concludes with a physical data model. The following diagram shows that process.
@@ -100,7 +102,7 @@ You can add static entities for entities with a predefined or constant set of va
 
 Another way to add entities and attributes is to import them from an Excel file using the **Import Entities from excel** developer accelerator in ODC Studio. In an Excel file, each tab is an entity and each column an attribute. If your data is available in an Excel file, this can speed up the data model design process.
 
-To learn more about entities, refer to [entities](./modeling/entity.md).
+To learn more about entities, refer to [entities](modeling/entity.md).
 
 ### Entity relationships
 
@@ -114,4 +116,4 @@ ODC Studio lets you visualize the relationships in your app data model in real-t
 
 You can organize entities into folders. Although folders don't affect the app data model, it lets developers group entities by higher concepts.
 
-To learn more about relationships between entities, refer to [relationships between entities](./modeling/relationship/relationships.md).
+To learn more about relationships between entities, refer to [relationships between entities](modeling/relationship/relationships.md).
