@@ -45,4 +45,4 @@ Publisher app can also subscribe to events from other apps.
 
 </div>
 
-Events are triggered, and event handlers execute them asynchronously, enabling subscribers to receive and process events independently without waiting for the publisher to finish processing them.
+Events are triggered, and event handlers execute them asynchronously, enabling subscribers to receive and process events independently without waiting for the publisher to finish processing them. 
