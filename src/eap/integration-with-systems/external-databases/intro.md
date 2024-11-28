@@ -228,7 +228,6 @@ For Azure SQL Managed Instances:
 </div>
 </div>
 
-
 <div class="os-accordion__item">
 <div class="os-accordion__title">
 Oracle
