@@ -19,8 +19,6 @@ content-type:
 
 # Configure your AI models
 
-## Overview
-
 The AI Agent Builder uses AI models from [Azure OpenAI](https://azure.microsoft.com/en-in/products/ai-services/openai-service) and [Amazon Bedrock](https://aws.amazon.com/bedrock/). You can also integrate any Large-Language-Model (LLM) model of your preference to create agents and build generative AI applications. However, you must build a custom integration for the LLM you want to use.
 
 This section contains information intended for administrators and dev-ops engineers with a good working knowledge of configuring AI services.
@@ -48,3 +46,5 @@ High availability for an AI agent involves designing and implementing measures t
 * [Set up Amazon Bedrock foundation AI models](configure-aws-model.md)
 
 * [Add Amazon Bedrock AI model in the AI Agent Builder app](add-aws-model-to-aibuilder.md)
+
+* [Configure AI model API contract](aiab-custom-model-api-contract.md)
