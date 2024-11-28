@@ -118,7 +118,7 @@ To delete an external library before has been published, follow these steps:
 1. In the pending uploads list, click **X** next to the external library you want to delete to display a confirmation popup.
 1. Click **Cancel creation** to display the updated list.
 
-If you want to delete an external library after its published, follow the steps:
+If you want to delete an external library after its published, the process is similar to deleting an app or library developed in OutSystems. Follow these steps:
 
 1. Go to the ODC Portal, and from the Navigation menu, select **External Logic**  to display the list of pending uploads and published external libraries.
 1. Access the detail page of the library by clicking its name in the list of published libraries.
@@ -131,4 +131,4 @@ Deleting an external library impacts consumers relying on it.
 
 </div>
 
-Once published, you must delete an external library like an app or library developed in OutSystems. See [Deleting apps and libraries](../../deleting-apps/intro.md) for guidance.
+For more information about deleting published assets, refer to [Deleting apps and libraries](../../deleting-apps/intro.md) for guidance.
