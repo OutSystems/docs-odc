@@ -101,6 +101,5 @@ Consider the following limitations when working with client-side traces:
 
 * You can activate client-side traces only for apps published on or after August 8, 2024. You must publish or deploy the app to view traces.
 * End users might experience performance degradation when navigating between different pages provided by different apps.
-* End users might be unable to log in to an application using a custom domain.
 
 If your end users experience performance issues or are unable to log in to an app. OutSystems recommends not turning on client-side traces.
