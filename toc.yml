@@ -317,6 +317,7 @@
             - href: eap/building-apps/workflows/filter-workflows.md
         - href: eap/building-apps/workflows/built-in-functions.md
         - href: eap/building-apps/workflows/troubleshooting-workflows.md
+        - href: eap/building-apps/workflows/logs.md
    
     # Reuse
     - href: eap/building-apps/reuse/intro.md
