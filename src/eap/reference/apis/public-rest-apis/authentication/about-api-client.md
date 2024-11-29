@@ -39,7 +39,7 @@ The API client account transitions through the following different statuses depe
 
 **Needs attention:** The client account enters this status when any client secret is about to expire or when one has already expired. It can also occur if the API client has not yet been assigned any permissions.  
 
-**Expired:** The client account enters this status when its secrets have expired. However, the access tokens associated with the client credentials will remain valid for up to 72 hours from the time the token was generated regardless of the secret's expiration. After this period, for continued API access:
+**Expired:** The client account enters this status when its secrets have expired. However, the access tokens associated with the client credentials will remain valid for up to 12 hours from the time the token was generated regardless of the secret's expiration. After this period, for continued API access:
 
 1. You must generate a new client secret for the API client. The client ID remains unchanged.
 

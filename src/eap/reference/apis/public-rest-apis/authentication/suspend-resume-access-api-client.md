@@ -52,7 +52,7 @@ When you resume access to the suspended API client:
 
 * If the secret has not expired, the secret and access token become valid, and you can use the same token to access the APIs. The status of the API client changes to **Available**.
 
-* If the secret has expired, the access token remains valid up to 72 hrs from the time it was generated regardless of the secret's expiration, and the status of the API client changes to **Expired**. For continued API access, you must now [generate a new client secret](generate-new-secret.md) and use the new credentials to generate an access token.
+* If the secret has expired, the access token remains valid up to 12 hrs from the time it was generated regardless of the secret's expiration, and the status of the API client changes to **Expired**. For continued API access, you must now [generate a new client secret](generate-new-secret.md) and use the new credentials to generate an access token.
 
 <div class="info" markdown="1">
 

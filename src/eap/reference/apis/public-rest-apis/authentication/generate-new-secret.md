@@ -28,7 +28,7 @@ Once a new client secret is generated:
 
 1. Use the new credentials to generate a fresh access token.
 
-The old access token remains valid for only up to 72 hrs after it was issued, regardless of the client secret’s expiration date.
+The old access token remains valid for only up to 12 hrs after it was issued, regardless of the client secret’s expiration date.
 
 Each API client can have only one client secret at a time.
 

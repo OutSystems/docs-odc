@@ -52,7 +52,7 @@ A list of API Clients is displayed.
 
 1. Select an **Expiration date** for the API client secret. The default value is 90 days from the current date, and the maximum duration you can set for the expiration is 24 months.
 
-    **Note:** The client secret becomes invalid after expiration at 11: 59 PM UTC. However, access tokens stay valid for up to 72 hrs from when the access token was issued, regardless of the client secret’s expiration.
+    **Note:** The client secret becomes invalid after expiration at 11: 59 PM UTC. However, access tokens stay valid for up to 12 hrs from when the access token was issued, regardless of the client secret’s expiration.
 
 1. To receive a reminder email about generating a new client secret 14 days before the expiration date, select **Send a reminder email 14 days before expiration to anyone with Manage API client permission.**
 

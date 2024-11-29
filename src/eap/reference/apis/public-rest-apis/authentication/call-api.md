@@ -14,7 +14,7 @@ figma:
 
 # Call API using the access token
 
-Once the authorization server validates the credentials and generates an access token, you can call the APIs using the access token. The access token is valid only for 72 hours from the time it was generated. Use the access token within the validity period of 72 hrs to access the APIs
+Once the authorization server validates the credentials and generates an access token, you can call the APIs using the access token. The access token is valid only for 12 hours from the time it was generated. Use the access token within the validity period of to access the APIs.
 
 Once the token expires, you must generate a new access token to call the API. This article explains how to call an API using the access token. It is intended for developers who want to access the ODC REST APIs from their app.
 

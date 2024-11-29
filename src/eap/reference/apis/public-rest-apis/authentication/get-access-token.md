@@ -79,7 +79,7 @@ If the validation is successful, the authorization server returns an access toke
 
 <div class="info" markdown="1">
 
-The validity of the access token is 72 hours, irrespective of the expiration date of the client credentials. You can use the access token to access the APIs only until the end of the expiry of the access token. You must ensure that you request a new token before or after the previous token's expiration, as needed.
+The validity of the access token is 12 hours, irrespective of the expiration date of the client credentials. You can use the access token to access the APIs only until the end of the expiry of the access token. You must ensure that you request a new token before or after the previous token's expiration, as needed.
 
 You are responsible for the keeping the access token safe while it is still valid.
 

@@ -26,7 +26,7 @@ The rate limit for the [Bulk create](../identity-v1.md#post-/identity/v1/users/b
 
 ## Exceeding the rate limit
 
-If you exceed the rate limit, you will receive an output `429 Too Many Requests response` along with a `x-envoy-ratelimited: true response header`. 
+If you exceed the rate limit, you will receive an output `429 Too Many Requests` response.
 
 
 
