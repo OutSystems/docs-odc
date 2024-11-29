@@ -63,3 +63,4 @@ Open ODC Studio and follow these steps to create your "Hello, world" app:
 
 11. Click **Open in browser** to view your app.
 
+<iframe src="https://player.https://vimeo.com/1034568771" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Demo showing how to create a Hello world app in ODC Studio.</iframe>
