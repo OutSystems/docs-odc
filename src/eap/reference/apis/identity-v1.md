@@ -12,7 +12,7 @@ api-render: true
 ---
 <style>
 #b3-b4-b1-InjectHTMLWrapper {height: auto!important}
-.image-zoom div div{height: auto!important}}
+.image-zoom div div{height: auto!important}
 </style>
 <div class="hidden"><h1>User and Access Management API</h1></div>
 
