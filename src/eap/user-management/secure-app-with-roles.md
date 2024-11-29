@@ -40,6 +40,8 @@ This is an overview of how to use roles:
 
 ![Diagram illustrating the process of using roles in OutSystems Developer Cloud](images/overview-how-to-use-roles-diag.png "How you can use roles")
 
+You can also use the ODC [User management REST APIs](../reference/apis/identity-v1.md) for programmatically managing the user and access related operations. For detailed information about how to use these APIs, refer to [Getting started](../reference/apis/public-rest-apis/getting-started.md).
+
 ### Create end-user roles
 
 To create roles in ODC Studio during design, follow these steps: 

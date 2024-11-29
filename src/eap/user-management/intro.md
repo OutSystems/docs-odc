@@ -53,3 +53,5 @@ The ODC Portal is the place to manage users, and you can:
 
 
 ![Diagram illustrating the process of managing users in the OutSystems Developer Cloud Portal](images/manage-users-in-portal-diag.png "User Management in ODC Portal")
+
+You can also use the ODC [User management REST APIs](../reference/apis/identity-v1.md) for programmatically managing the user and access related operations. For detailed information about how to use these APIs, refer to [Getting started](../reference/apis/public-rest-apis/getting-started.md).

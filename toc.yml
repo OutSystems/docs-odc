@@ -9,7 +9,7 @@
     - href: eap/getting-started/sample-app.md
     - href: eap/getting-started/open-oml-in-odc-studio.md
 
-# Onboarding for developers
+# Onboarding for developers 
 - href: eap/onboarding/intro.md
 - topics:
     - href: eap/onboarding/differences-sql.md
@@ -562,6 +562,23 @@
   # APIs
     - href: eap/reference/apis/api-intro.md
     - topics:
+        - href: eap/reference/apis/public-rest-apis/overview.md
+        - topics:
+            - href: eap/reference/apis/public-rest-apis/getting-started.md
+            - href: eap/reference/apis/public-rest-apis/authentication/oauth-concept.md
+            - topics:
+                - href: eap/reference/apis/public-rest-apis/authentication/about-api-client.md
+                - href: eap/reference/apis/public-rest-apis/authentication/using-oauth-access-api.md
+                - href: eap/reference/apis/public-rest-apis/authentication/create-api-client.md
+                - href: eap/reference/apis/public-rest-apis/authentication/generate-new-secret.md
+                - href: eap/reference/apis/public-rest-apis/authentication/get-access-token.md
+                - href: eap/reference/apis/public-rest-apis/authentication/about-oidc-discovery-document.md
+                - href: eap/reference/apis/public-rest-apis/authentication/call-api.md
+                - href: eap/reference/apis/public-rest-apis/authentication/suspend-resume-access-api-client.md
+                - href: eap/reference/apis/public-rest-apis/authentication/best-practices-for-api-credentials.md
+            - href: eap/reference/apis/public-rest-apis/rate-limiting.md
+            - href: eap/reference/apis/identity-v1.md
+            - href: eap/reference/apis/portfolio-v1.md           
         - href: eap/reference/apis/data.md
         - href: eap/reference/apis/chart-intro.md
         - topics:

@@ -252,7 +252,7 @@ Customers can report suspected privacy or security incidents through the Support
 
 OutSystems created a public vulnerability policy to provide customers with guidance and information in the event of a vulnerability reported in an OutSystems product.
 
-For more information see [OutSystems public vulnerability policy](https://success.outsystems.com/support/security/vulnerabilities/).
+For more information see [ODC vulnerability policy](https://success.outsystems.com/support/security/vulnerabilities/).
 
 ---
 <div class="info" markdown="1">

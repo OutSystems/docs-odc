@@ -1,0 +1,2872 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "User and Access Management API",
+    "description": "User and Access Management API.",
+    "version": "v1"
+  },
+  "paths": {
+    "/identity/v1/application-roles": {
+      "get": {
+        "tags": [
+          "application-roles"
+        ],
+        "summary": "Returns a list of application roles.",
+        "description": "Returns a list of application roles that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > View end users** permission.",
+        "operationId": "ApplicationRole_QueryApplicationRoles",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "description": "The application role key.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "assetKey",
+            "in": "query",
+            "description": "The asset key that the application role belongs to.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Filters application roles by environment key (stage).",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "nameContains",
+            "in": "query",
+            "description": "Filters application roles by name.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Used for sorting the list. Ascending by default. Prepend a hyphen, \"-\", to get a descending sort, for example \"-name\". Default: name. Allowed: name, environmentKey or assetKey.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the first result returned. Default value: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationRoleResponsePaginatedResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > View end users** permission."
+      }
+    },
+    "/identity/v1/application-roles/{key}/users": {
+      "get": {
+        "tags": [
+          "application-roles"
+        ],
+        "summary": "Returns the list of users for the specific application role.",
+        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > View end users** permission.",
+        "operationId": "ApplicationRole_QueryUsersByApplicationRole",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Application role key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the first result returned. Default value: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationRoleUserResponsePaginatedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > View end users** permission."
+      }
+    },
+    "/identity/v1/users/bulk": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Bulk create users in the user profile database and also optionally in the built-in identity provider.",
+        "description": "Returns an operations status object with an operation key that can be used later to get the status of the bulk create.\nAPI Client needs the **User management > Manage users** permission.",
+        "operationId": "BulkUserProfile_CreateBulkUserProfilesOperation",
+        "requestBody": {
+          "description": "Bulk Create User Request.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BulkUserProfileCreateRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BulkUserProfileCreateRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage users** permission."
+      }
+    },
+    "/identity/v1/users/bulk/{key}": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Get the bulk user operation status.",
+        "description": "Returns an operations status object that contains the overall status of the bulk operation. \r\nIf the bulk operation has a status of 'Finished' or 'FinishedWithErrors', \r\nthe result of each and every item in the list is returned as well. \r\nIf the bulk operation is 'Pending' or 'Processing', only the overall status is returned.\nAPI Client needs the **User management > Manage users** permission.",
+        "operationId": "BulkUserProfile_GetBulkUserProfileOperationStatus",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Key of the operation that was obtained during submitting bulk operation.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkApiResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage users** permission."
+      }
+    },
+    "/identity/v1/groups/{key}/users": {
+      "patch": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Allow to add or remove users from a group.",
+        "description": "Allows adding or removing users from a specified group. Manage group membership by specifying the group key and providing lists of user keys to be added or removed.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "Group_AddOrRemoveUsersFromGroup",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The group key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The request object.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchUsersByGroupRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchUsersByGroupRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      },
+      "get": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Returns a list of users associated with a group.",
+        "description": "Returns a list of users associated with a group that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "Group_QueryUsersFromGroup",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The group's key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "userKey",
+            "in": "query",
+            "description": "The user's key.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "nameOrEmailContains",
+            "in": "query",
+            "description": "Filters users by name or email address.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "membershipType",
+            "in": "query",
+            "description": "Filters users by membership type that can be `Assigned` or `Mapped`.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/MembershipType"
+                }
+              ]
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the first result returned. Default value: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupUserPaginatedResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      }
+    },
+    "/identity/v1/groups": {
+      "post": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Creates a new group.",
+        "description": "Creates a new group by specifying a name and environment (stage). Optionally, you can include a list of users and application roles to assign to the group during creation.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "Group_CreateGroup",
+        "requestBody": {
+          "description": "Group object with the necessary information.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreationGroupRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreationGroupRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreationGroupResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      },
+      "get": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Returns the list of groups based on specified conditions.",
+        "description": "Returns a list of groups that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "Group_QueryGroups",
+        "parameters": [
+          {
+            "name": "nameContains",
+            "in": "query",
+            "description": "Filters users by name.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Only returns groups associated to the specified environment (stage).",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the first result returned. Default value: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupResponsePaginatedResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      }
+    },
+    "/identity/v1/groups/{key}": {
+      "delete": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Deletes a group.",
+        "description": "Deletes a specified group using the group's key.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "Group_DeleteGroup",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The key of the group to be deleted.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      },
+      "get": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Returns information for a group.",
+        "description": "Retrieves detailed information about a group, including its name, description, and environment.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "Group_ReadGroup",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Group key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      },
+      "patch": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Updates a group.",
+        "description": "Updates the details of a group using the group's key. Allows modification of the group's name or description.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "Group_UpdateGroup",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The key of the group to be updated.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The request object with the new values.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchGroupRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchGroupRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      }
+    },
+    "/identity/v1/groups/{key}/application-roles": {
+      "patch": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Allow to add or remove application roles from a group.",
+        "description": "Allows adding or removing application roles from a specified group. Manage roles by specifying the group key and providing lists of application role keys to be added or removed.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "Group_ModifyGroupApplicationRoles",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The group key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request object with the application role keys to add or remove.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchGroupApplicationRolesRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchGroupApplicationRolesRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      },
+      "get": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Returns a list of application roles associated with a group.",
+        "description": "Returns a list of application roles that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "Group_QueryApplicationRolesGroups",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The group key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "assetKey",
+            "in": "query",
+            "description": "The asset key.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the first result returned. Default value: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationRoleResponsePaginatedResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      }
+    },
+    "/identity/v1/users/{key}/application-roles/{roleKey}": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Grants an application role to a user.",
+        "description": "Assigns an application role to a user by providing the application role key and the user key.\nAPI Client needs the **User management > Manage end-user access** permission.",
+        "operationId": "UserApplicationRoles_GrantApplicationRoleToUser",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "User key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "roleKey",
+            "in": "path",
+            "description": "Application role creation request.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user access** permission."
+      },
+      "delete": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Revokes an application role to a user.",
+        "description": "Revokes an application role from a user by providing the user key and application role key.\nAPI Client needs the **User management > Manage end-user access** permission.",
+        "operationId": "UserApplicationRoles_RevokeApplicationRoleForUser",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "User key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "roleKey",
+            "in": "path",
+            "description": "Role key for the application.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user access** permission."
+      }
+    },
+    "/identity/v1/users/{key}/application-roles": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Returns the list of application roles associated with a user.",
+        "description": "Returns a list of application roles associated with a user that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > View end users** permission.",
+        "operationId": "UserApplicationRoles_QueryUserApplicationRoles",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "User key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "nameContains",
+            "in": "query",
+            "description": "Filters application roles by name.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assetKey",
+            "in": "query",
+            "description": "Only returns application roles for the specified asset.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Only returns application roles in the specified environment (stage).",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Used for sorting the list. Ascending by default. Prepend a hyphen, \"-\", to get a descending sort, for example \"-name\". Default: name. Allowed: name, environmentKey or assetKey.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the first result returned. Default value: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationRoleResponsePaginatedResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > View end users** permission."
+      }
+    },
+    "/identity/v1/users": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Creates a new user.",
+        "description": "Creates a new user by specifying the user information. You can provide the user's name, photo URL, and active status. Additionally, the AddToBuiltInIdentityProvider can be used to add the user to the built-in provider.\nAPI Client needs the **User management > Manage users** permission.",
+        "operationId": "UserProfile_CreateUser",
+        "requestBody": {
+          "description": "The user object with the necessary information.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UserProfileCreateRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UserProfileCreateRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NewUserProfileResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage users** permission."
+      },
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Returns the list of users based on specified conditions.",
+        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\nIf API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission.",
+        "operationId": "UserProfile_QueryUsers",
+        "parameters": [
+          {
+            "name": "nameOrEmailContains",
+            "in": "query",
+            "description": "Filters users by name or email address.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userKeys",
+            "in": "query",
+            "description": "Only returns users that match the specified keys. For more than one key, separates the keys with a comma. Allows up to 20 user keys.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assetKey",
+            "in": "query",
+            "description": "Only returns users that have roles for the specified Asset.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Only returns users with the specified status.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/UserProfileStatus"
+                }
+              ]
+            }
+          },
+          {
+            "name": "lastLoginAtSince",
+            "in": "query",
+            "description": "Only returns users whose last login occurred on or after the specified date and time.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "lastLoginAtTo",
+            "in": "query",
+            "description": "Only returns users whose last login occurred before or on the specified date and time.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "hasOrganizationRoles",
+            "in": "query",
+            "description": "When set to true, only returns users that have at least one organization role. Default is false.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasApplicationRoles",
+            "in": "query",
+            "description": "When set to true, only returns users that have at least one application role. Default is false.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Used for sorting the list. Ascending by default. Prepend a hyphen, \"-\", to get a descending sort, for example \"-name\". Default: name. Allowed: key, name, email, status, lastLoginAt.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Only returns users that have roles in the specified environment (stage).",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "embed",
+            "in": "query",
+            "description": "List of fields to embed in the response.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UserProfileEmbed"
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the first result returned. Default value: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfilePaginatedResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission."
+      }
+    },
+    "/identity/v1/users/{key}": {
+      "delete": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Deletes a user.",
+        "description": "Deletes a specified users using the user's key.\nAPI Client needs the **User management > Manage users** permission.",
+        "operationId": "UserProfile_DeleteUser",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "User key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage users** permission."
+      },
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Retrieves an user.",
+        "description": "Retrieves detailed information about a user using the user's key.\nYou need the **User management > View organization members** or **User management > View end users** permissions.",
+        "operationId": "UserProfile_GetUser",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "User key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfile"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "You need the **User management > View organization members** or **User management > View end users** permissions."
+      },
+      "patch": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Updates the user.",
+        "description": "Updates the details of a user using the user's key. Allows modification of the user's name, photo URL, and active status.\nAPI Client needs the **User management > Manage users** permission.",
+        "operationId": "UserProfile_PatchUser",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "User key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "User object with the information to be updated.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UserProfilePatchRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UserProfilePatchRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage users** permission."
+      }
+    },
+    "/identity/v1/users/{key}/groups": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Returns a list of groups associated with a user.",
+        "description": "Returns a list of groups associated with a user that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "UserProfile_QueryGroupsByUser",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The user's key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "nameContains",
+            "in": "query",
+            "description": "Filters groups by name.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assetKey",
+            "in": "query",
+            "description": "Filters groups by asset key.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Filters groups by environment key. (stage)",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "membershipType",
+            "in": "query",
+            "description": "Filters groups by user's membership type that can be `Assigned` or `Mapped`.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/MembershipType"
+                }
+              ]
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the first result returned. Default value: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserGroupResponsePaginatedResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApplicationRoleResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The application role key.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the role.",
+            "nullable": true
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "The environment key.",
+            "format": "uuid"
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "The asset key.",
+            "format": "uuid"
+          },
+          "externalKey": {
+            "type": "string",
+            "description": "The external key.",
+            "format": "uuid"
+          },
+          "claim": {
+            "type": "string",
+            "description": "The claim",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApplicationRoleResponsePaginatedResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationRoleResponse"
+            },
+            "description": "The list of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "The page information.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApplicationRoleUserResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key assigned by the service when the user is created.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "The user's full name.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "The user's email address.",
+            "nullable": true
+          },
+          "status": {
+            "enum": [
+              "Active",
+              "Invited",
+              "Inactive",
+              "PendingRegistration"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UserProfileStatus"
+              }
+            ],
+            "description": "The user's Profile Status."
+          },
+          "photoUrl": {
+            "type": "string",
+            "description": "The user's photo URL.",
+            "nullable": true
+          },
+          "lastLoginAt": {
+            "type": "string",
+            "description": "The timestamp of the last login (or token refresh) for this user in UTC.",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApplicationRoleUserResponsePaginatedResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationRoleUserResponse"
+            },
+            "description": "The List of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "The page information.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BulkApiResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The ID of the bulk operation record",
+            "format": "uuid"
+          },
+          "status": {
+            "enum": [
+              "Pending",
+              "Processing",
+              "Finished",
+              "FinishedWithErrors"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BulkApiStatus"
+              }
+            ],
+            "description": "Bullk API statuses Pending, Processing, Finished and FinishedWithErrors"
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "Self Service error code for the overall bulk API operation.\r\nFor example, when the operation times out.",
+            "nullable": true
+          },
+          "errorMessage": {
+            "type": "string",
+            "description": "Self Service error message for the overall bulk API operation.\r\nFor example, when the operation times out.",
+            "nullable": true
+          },
+          "operations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BulkOperation"
+            },
+            "description": "Details of each operation performed in the bulk request.\r\nAvailable when the bulk operation has Finished or FinishedWithErrors.\r\nThis will be an empty list when the bulk operation is Pending or Progressing.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BulkApiStatus": {
+        "enum": [
+          "Pending",
+          "Processing",
+          "Finished",
+          "FinishedWithErrors"
+        ],
+        "type": "string"
+      },
+      "BulkOperation": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "Inserted",
+              "Updated",
+              "Deleted",
+              "Error"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BulkOperationStatus"
+              }
+            ],
+            "description": "Status of the individual operation in the list of bulk operations.\r\nFor example: Inserted, Updated, Errored"
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "Self-support error code for the one operation if any error occured.",
+            "nullable": true
+          },
+          "errorMessage": {
+            "type": "string",
+            "description": "Self-support error message for the one operation if any error occured.",
+            "nullable": true
+          },
+          "record": {
+            "type": "object",
+            "description": "A JSON object containing some extra info about the record in this operation.\r\nThis could contain some pieces of request info as well as additional info from the operation output.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BulkOperationStatus": {
+        "enum": [
+          "Inserted",
+          "Updated",
+          "Deleted",
+          "Error"
+        ],
+        "type": "string"
+      },
+      "BulkUserProfileCreateRequest": {
+        "required": [
+          "records"
+        ],
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserProfileCreateRequest"
+            },
+            "description": "The list of user profile create requests",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreationGroupRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the group.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the group.",
+            "nullable": true
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "The environment key to associate with the group.",
+            "format": "uuid"
+          },
+          "applicationRoleKeys": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The application role keys to associate with the group.",
+            "nullable": true
+          },
+          "userKeys": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The user keys to associate with the group.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreationGroupResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The group key.",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key of the group.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the group.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the group.",
+            "nullable": true
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "The environment key.",
+            "format": "uuid"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "The last updated date and time for the Group.",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupResponsePaginatedResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GroupResponse"
+            },
+            "description": "The list of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "The page information.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupUser": {
+        "type": "object",
+        "properties": {
+          "membershipTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MembershipType"
+            },
+            "description": "The list of membership types of this user in this group. Allowed values are 'Assigned' (if directly added to the group) or 'Mapped' (if added via group mappings).",
+            "nullable": true
+          },
+          "user": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GroupUserProfile"
+              }
+            ],
+            "description": "The user details.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a user in a group."
+      },
+      "GroupUserPaginatedResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GroupUser"
+            },
+            "description": "The list of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "The page information.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupUserProfile": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The user's key.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "The user's name.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "The user's email.",
+            "nullable": true
+          },
+          "status": {
+            "enum": [
+              "Active",
+              "Invited",
+              "Inactive",
+              "PendingRegistration"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UserProfileStatus"
+              }
+            ],
+            "description": "The user's status. Allowed values are 'Active', 'Inactive', 'PendingRegistration' and 'Invited'."
+          },
+          "photoUrl": {
+            "type": "string",
+            "description": "A URL pointing to the user's photo.",
+            "nullable": true
+          },
+          "lastLoginAt": {
+            "type": "string",
+            "description": "The date of the last time the user logged in.",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The profile of a group member."
+      },
+      "MembershipType": {
+        "enum": [
+          "Assigned",
+          "Mapped"
+        ],
+        "type": "string"
+      },
+      "PageInfoWithTotals": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "The number of results in the current page.",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "The limit of results per page.",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "The offset of the current page of results.",
+            "format": "int32"
+          },
+          "nextPageOffset": {
+            "type": "integer",
+            "description": "The offset of the next page of results.",
+            "format": "int32"
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "The total number of results.",
+            "format": "int32",
+            "nullable": true
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": "The total number of pages with result.",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatchGroupApplicationRolesRequest": {
+        "type": "object",
+        "properties": {
+          "applicationRoleKeysToAdd": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The list of application role keys to add to the group.",
+            "nullable": true
+          },
+          "applicationRoleKeysToRemove": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The list of application role keys to remove from the group.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatchGroupRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the group.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the group.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatchUsersByGroupRequest": {
+        "type": "object",
+        "properties": {
+          "userKeysToAdd": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The list of user keys to add to the group.",
+            "nullable": true
+          },
+          "userKeysToRemove": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The list of user keys to remove from the group.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "UserGroupResponse": {
+        "required": [
+          "group",
+          "membershipTypes"
+        ],
+        "type": "object",
+        "properties": {
+          "membershipTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MembershipType"
+            },
+            "description": "The list of membership types of the user in this group. Allowed values are 'Assigned' (if directly added to the group) or 'Mapped' (if added via group mappings).",
+            "nullable": true
+          },
+          "group": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GroupResponse"
+              }
+            ],
+            "description": "A group that a user is part of.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a group that a user is part of."
+      },
+	  "NewUserProfileResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Record id generated by IBB.",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserGroupResponsePaginatedResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserGroupResponse"
+            },
+            "description": "The list of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "The page information.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserProfile": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The user key (format: guid).",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "The user's full name.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "The user's email address.",
+            "nullable": true
+          },
+          "status": {
+            "enum": [
+              "Active",
+              "Invited",
+              "Inactive",
+              "PendingRegistration"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UserProfileStatus"
+              }
+            ],
+            "description": "The user's Profile Status."
+          },
+          "access": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UserProfileAccess"
+              }
+            ],
+            "description": "The user's profile access.",
+            "nullable": true
+          },
+          "lastLoginAt": {
+            "type": "string",
+            "description": "The timestamp of the last login (or token refresh) for this user in UTC.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean",
+            "description": "The value indicating whether user profile is active or not."
+          },
+          "photoUrl": {
+            "type": "string",
+            "description": "The user's photo URL.",
+            "nullable": true
+          },
+          "isEmailVerified": {
+            "type": "boolean",
+            "description": "The value indicating whether or not the user's email is verified.",
+            "nullable": true
+          },
+          "isTermsAndConditionsAccepted": {
+            "type": "boolean",
+            "description": "The value indicating whether or not the userhas accepted the terms and conditions."
+          },
+          "_embedded": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UserProfileEmbedded"
+              }
+            ],
+            "description": "The embedded information to provide. (optional)\r\nOnly available when the request includes the query parameter `embed=`,\r\ne.g. `embed=applicationRoles`",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserProfileAccess": {
+        "type": "object",
+        "properties": {
+          "hasOrganizationRoles": {
+            "type": "boolean",
+            "description": "User has organization-level roles"
+          },
+          "hasApplicationRoles": {
+            "type": "boolean",
+            "description": "User has application roles"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserProfileCreateRequest": {
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The user’s name.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "The user’s email address.",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean",
+            "description": "Sets the user as active. Default is true (active)."
+          },
+          "photoUrl": {
+            "type": "string",
+            "description": "The user’s photo url.",
+            "nullable": true
+          },
+          "addToBuiltInIdentityProvider": {
+            "type": "boolean",
+            "description": "Creates the user in the built-in identity provider. Default is false (not created in the built-in identity provider)."
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserProfileEmbed": {
+        "enum": [
+          "applicationRoles"
+        ],
+        "type": "string"
+      },
+      "UserProfileEmbedded": {
+        "type": "object",
+        "properties": {
+          "applicationRoles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationRoleResponse"
+            },
+            "description": "List of application roles.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserProfilePaginatedResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserProfile"
+            },
+            "description": "The list of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "The page information.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserProfilePatchRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The user's name.",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean",
+            "description": "The user as active or inactive.",
+            "nullable": true
+          },
+          "photoUrl": {
+            "type": "string",
+            "description": "The user's photo url.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserProfileStatus": {
+        "enum": [
+          "Active",
+          "Invited",
+          "Inactive",
+          "PendingRegistration"
+        ],
+        "type": "string"
+      }
+    }
+  }
+}
