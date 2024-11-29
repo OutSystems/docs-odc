@@ -93,6 +93,13 @@ For each endpoint you want to use in your app, follow the procedure under [Consu
 When connecting to endpoints over TLS/SSL, particularly when they're behind an API gateway, you may need to adjust the host header (`Host`) of the REST consume. This is because the app connects to `secure-gateway` and doesn't know the destination hostname of the endpoint directly. If the endpoint, like an AWS API Gateway, validates the `Host` header against its hostname, it may reject requests due to the mismatch. To resolve, add an `OnBeforeRequest` callback in the REST consume. In the callback, explicitly set the host header to the value expected by the API Gateway, for example, `api.example.com`. This adjustment ensures that requests are correctly recognized by the API Gateway. For guidance on implementing a `OnBeforeRequest` callback see [Simple Customizations](../integration-with-systems/consume_rest/simple-customizations.md).
 
 <div class="info" markdown="1">
+ODC only supports connections that have Valid SSL Certificates, valid certificates are:
+
+1. Not Expired.
+1. Signed by a trusted Certificate Authority (CA).
+</div>
+
+<div class="info" markdown="1">
 
 For security reasons, only the deployed app can access the `secure-gateway` domain in runtime, so you cannot test consuming the methods of the endpoint in ODC Studio.
 
