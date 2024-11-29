@@ -301,8 +301,7 @@ SAP OData
 * Regarding SAP OData queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.
 * The CreateOrUpdate entity action is not available for any entity.
 * Deep updates and deletes are not available. However, you can use the Update and Delete entity actions to update or delete records individually, as long as those actions are available for the given entities.
-* Bulk insert/update entity action is unavailable for any entity due to SAP's lack of UPSERT support. 
-* Certain Delete entity actions may not show Delete entity actions in ODC Studio due to temporary limitations in the SAP driver. 
+* Bulk insert/update entity action is unavailable for any entity due to SAP's lack of UPSERT support.  
 * Some Update entity actions may fail if SAP requires the **If-Match** header. 
     * For example, an error message `_The Data Service Request is required to be conditional. Try using the 'If-Match' header.`
 * Composite keys: SAP entities can have composite primary keys.
