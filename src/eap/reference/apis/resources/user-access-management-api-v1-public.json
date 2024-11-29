@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "User and Access Management API",
-    "description": "User and Access Management API.",
+    "description": "REST endpoints for retrieving and managing user and access in your organization.",
     "version": "v1"
   },
   "paths": {
