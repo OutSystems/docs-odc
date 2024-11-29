@@ -15,8 +15,6 @@ audience:
 
 # Rate limits for the APIs
 
-Rate limiting is a mechanism used to control the number of API requests a user, application, or IP address can make within a defined period. This helps prevent system overload, ensures fair resource distribution, and safeguards against malicious activities like denial-of-service (DoS) attacks.
-
 The global rate limit per organization per domain is as follows:
 
 |API domain|Rate limit|
