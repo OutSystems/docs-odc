@@ -49,8 +49,8 @@ While calling the API from the ODC app, you must manually encode the client secr
 
 curl -ssl -X POST
 TOKEN_ENDPOINT \
--H 'Content-Type: application/x-www-form-urlencoded' \
--d 'grant_type=client_credentials&client_id=CLIENT_ID&client_secret=CLIENT_SECRET' 
+-H "Content-Type: application/x-www-form-urlencoded" \
+-d "grant_type=client_credentials&client_id=CLIENT_ID&client_secret=CLIENT_SECRET" 
 
 ```
 Where
