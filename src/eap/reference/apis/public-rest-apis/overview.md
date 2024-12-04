@@ -16,7 +16,19 @@ figma:
 
 The OutSystems Developer Cloud (ODC) REST APIs allow you to create scripts, automation, and applications that leverage the resources of your ODC tenant, such as Users, Groups, App Roles, etc. You can use these APIs to automate and extend the built-in functionality provided with ODC.
 
-The ODC REST APIs uses the [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) protocol for authorization and authentication, which is based on the [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) framework. For detailed information about the authentication process, refer to[Using OAuth 2.0 to access public REST APIs](authentication/using-oauth-access-api.md).
+The ODC REST APIs uses the [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) protocol for authorization and authentication, which is based on the [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) framework. For detailed information about the authentication process, refer to [Using OAuth 2.0 to access public REST APIs](authentication/using-oauth-access-api.md).
+
+## Usage
+
+The ODC API is a RESTful interface with predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
+
+All API endpoints are relative to the following base URL.
+
+`https://ODC_PORTAL_DOMAIN/api`
+
+Where 
+
+`ODC_PORTAL_DOMAIN` is the domain of your Organization
 
 ## Usage
 
@@ -61,6 +73,8 @@ An **end-user role** is a set of permissions assigned to users who interact with
 * [Using OAuth 2.0 to access public REST APIs](authentication/using-oauth-access-api.md)
 
 * [User management API reference](../identity-v1.md)
+
+* [Portfolio management API reference](../portfolio-v1.md)
 
 
 
