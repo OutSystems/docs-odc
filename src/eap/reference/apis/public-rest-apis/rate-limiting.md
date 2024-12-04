@@ -22,7 +22,7 @@ The global rate limit per organization per domain is as follows:
 |User and access management|100 requests per minute|
 |Portfolio management|100 requests per minute|
 
-The rate limit for the [Bulk create](../identity-v1.md#post-/identity/v1/users/bulk) API is **5 requests per minute**. 
+The rate limit for the [Bulk user create](../identity-v1.md#post-/identity/v1/users/bulk) API is **5 requests per minute**. 
 
 ## Exceeding the rate limit
 

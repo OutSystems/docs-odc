@@ -27,8 +27,7 @@ To get an access token, follow these steps,
 
 ```curl
 
-curl -X GET "https://ODC_PORTAL_DOMAIN/identity/.well-known/openid-configuration" \
--H "accept: application/json"
+curl -X GET "https://ODC_PORTAL_DOMAIN/identity/.well-known/openid-configuration" -H "accept: application/json"
 
 ```
 Where
@@ -48,9 +47,7 @@ While calling the API from the ODC app, you must manually encode the client secr
 ```curl
 
 curl -ssl -X POST
-TOKEN_ENDPOINT \
--H "Content-Type: application/x-www-form-urlencoded" \
--d "grant_type=client_credentials&client_id=CLIENT_ID&client_secret=CLIENT_SECRET" 
+TOKEN_ENDPOINT -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=client_credentials&client_id=CLIENT_ID&client_secret=CLIENT_SECRET" 
 
 ```
 Where
@@ -67,7 +64,7 @@ Where
 
 {
   "access_token": "ACCESS_TOKEN",
-  "expires_in": 259200,
+  "expires_in": 43200,
   "token_type": "Bearer"
 }
 

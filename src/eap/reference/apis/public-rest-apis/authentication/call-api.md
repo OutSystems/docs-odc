@@ -34,8 +34,7 @@ Here’s an example of the List users API, which retrieves a list of users who h
 
 ```curl
 
-curl -X GET "https://ODC_PORTAL_DOMAIN/api/identity/v1/users?hasApplicationRoles=true&limit=10&offset=0" \
--H "Authorization: Bearer ACCESS_TOKEN"
+curl -X GET "https://ODC_PORTAL_DOMAIN/api/identity/v1/users?hasApplicationRoles=true&limit=10&offset=0" -H "Authorization: Bearer ACCESS_TOKEN"
 
 ```
 

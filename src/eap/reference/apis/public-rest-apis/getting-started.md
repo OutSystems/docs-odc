@@ -55,7 +55,7 @@ ACCESS\_TOKEN is the access token retrieved using the client credentials
 
 - Refer [User management API reference](../identity-v1.md)
 
-## Additional resources
+## Related resources
 
 * [Create API client](authentication/create-api-client.md)
 

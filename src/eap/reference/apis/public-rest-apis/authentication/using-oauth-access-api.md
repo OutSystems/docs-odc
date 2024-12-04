@@ -25,8 +25,7 @@ Once the authorization server generates the access token, you can call the API b
 
 ```curl
 
-curl -X GET "https://ODC_PORTAL_DOMAIN/api/identity/v1/users?hasApplicationRoles=true&limit=10&offset=0" \
--H "Authorization: Bearer ACCESS_TOKEN"
+curl -X GET "https://ODC_PORTAL_DOMAIN/api/identity/v1/users?hasApplicationRoles=true&limit=10&offset=0" -H "Authorization: Bearer ACCESS_TOKEN"
 
 ```
 
