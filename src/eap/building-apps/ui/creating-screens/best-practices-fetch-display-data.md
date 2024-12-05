@@ -15,7 +15,7 @@ content-type:
 
 In OutSystems, you can [fetch data to populate screens](../interaction/fetch-display.md) using aggregates or data actions. Follow these best practices to manage and display data from different sources efficiently.
 
-## Use aggregates to fetch data from database entities
+## Use aggregates to fetch data from database entities { #aggregates }
 
 [Aggregates](../../data/fetch-data/aggregate.md) allow you to fetch data using an optimized query tailored to your needs. 
 
@@ -39,7 +39,7 @@ When fetching data from database entities, aggregates offer the following advant
 
 For more information, refer to [Fetch and display data from the database in OutSystems](../interaction/fetch-display.md) and [Displaying Data on Screens](https://learn.outsystems.com/training/journeys/building-screens-with-data-637/displaying-data-on-screens/odc/109).
 
-## Use data actions to fetch complex data from the database or to fetch external data
+## Use data actions to fetch complex data from the database or to fetch external data { #data-actions }
 
 Data actions allow you to define custom server-side logic. The outputs of a data action can be used in screen widgets.
 
@@ -56,6 +56,24 @@ Use data actions when:
 Data actions can call external REST APIs or execute advanced SQL queries, allowing you to retrieve complex data from the database, which you wouldn't be able to do using aggregates.
 
 For more information, refer to [Displaying Data on Screens](https://learn.outsystems.com/training/journeys/building-screens-with-data-637/displaying-data-on-screens/odc/109).
+
+## Avoid fetching a large number of records { #large-nr-records }
+
+Displaying a large number of records all at once is slow and unnecessary, as the user may only need some records at a time. 
+
+### Recommendations
+
+When displaying a large number of records, follow these recommendations:
+
+* Fetch data only on demand by setting the **Fetch** property of your screen aggregates to ```Only on Demand```. For more information, refer to [Fetching Data On Demand](https://learn.outsystems.com/training/journeys/programming-model-645/fetching-data-on-demand/odc/487).
+
+* If you use the list widget, take a lazy loading approach by handling the **On Scroll Ending** event. This approach enables your app to load data incrementally as users scroll. ​
+
+* If you use the table widget, use the [pagination](../patterns/navigation/pagination.md) UI pattern to load only a certain number of records each time instead of loading an entire table at once.
+
+### Benefits
+
+Implementing these best practices helps reduce initial load times and server strain, while ensuring a smooth user experience. You can efficiently handle large datasets without overwhelming the user interface.
 
 ## Keep the number of fetched records consistent with your needs { #max-records }
 
@@ -75,15 +93,15 @@ Keep the number of records fetched by your aggregates and SQL queries consistent
 
     </div>
 
-    By limiting the results returned by the query, you no longer rely on the SQL query **.Count** property to get the correct count of records complying with the original query conditions and joins. If you need the total number of records, you must make a separate query to do that count.
+    By limiting the results returned by the query, you no longer rely on the **&lt;SQL query&gt;.Count** property to get the correct count of records complying with the original query conditions and joins. If you need the total number of records, you must make a separate query to do that count.
 
 ### Benefits
 
 Keeping the number of records fetched from the database consistent with your needs optimizes aggregates and SQL queries execution time and improves screen loading. This is especially useful when fetching table records or when an aggregate is used to fetch a single record.
 
-## Don't show a blank screen while data is being fetched
+## Don't show a blank screen while data is being fetched { #blank-screen }
 
-Plan what your app will display to the user while data is being fetched. 
+Plan what your app displays to the user while data is being fetched. 
 
 ### Recommendations
 
@@ -97,23 +115,29 @@ To avoid showing a blank screen while data is being fetched:
 
 By following these recommendations, you avoid the perception of an unresponsive or broken app, improving user experience.
 
-## Avoid fetching a large number of records
+## Optimize data fetching { #optimize-fetching }
 
-Displaying a large number of records all at once is slow and unnecessary, as the user may only need some records at a time. 
+Fetching data for display on a screen using complex calculations or logic increases the time users must wait for the data to load. 
 
 ### Recommendations
 
-When displaying a large number of records, follow these recommendations:
+Follow these recommendations to optimize the fetching of data to display on your screens:
 
-* Fetch data only on demand by setting the **Fetch** property of your screen aggregates to ```Only on Demand```. For more information, refer to [Fetching Data On Demand](https://learn.outsystems.com/training/journeys/programming-model-645/fetching-data-on-demand/odc/487).
+* Know your data requirements and [design a data model](../../data/modeling.md) that supports the use case of the screen, instead of calculating the information when fetching the data or on the expressions of the screen widgets. For example, having to group a large volume of data by complex criteria to get averages or counts.
 
-* If you use the list widget, take a lazy loading approach by handling the **On Scroll Ending** event. This approach makes your app load data incrementally as users scroll. ​
+* Perform all the calculations in advance using one of the following options:
 
-* If you use the table widget, use the [pagination](../patterns/navigation/pagination.md) UI pattern to load only a certain number of records each time instead of loading an entire table at once.
+    * When data is generated. For example, every time you add a vacation period, immediately update the remaining available days in the employee detail instead of calculating it when you want to list the available vacation days per employee.
+
+    * Using [a Timer](../../../manage-platform-app-lifecycle/configuration-management.md#managing-timers) to prepare data upfront. For example, prepare agglomeration entities to support dashboards.
+
+* If you need to [fetch complex data using data actions](#data-actions), use proper joins and SQL functions to gather all required data in a single SQL query [executed outside a cycle](../../logic/best-practices-logic.md#aggregates-inside-cycle). Make sure you [create entity indexes](../../data/data-best-practices/intro.md#index-entities) for the attributes used in `JOIN` and `WHERE` clauses.
+
+* Create different specialized screens, instead of a power screen with inefficient data preparation that needs to cope with all situations.
 
 ### Benefits
 
-Implementing these best practices helps reducing initial load times and server strain, while ensuring a smooth user experience. You can efficiently handle large datasets without overwhelming the user interface.
+Optimizing the fetch of data to display on a screen reduces the time users must wait for the data to load, improving the screen's performance and the end user experience.
 
 ## Restrict access to sensitive data { #restrict-access }
 
