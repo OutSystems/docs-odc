@@ -57,23 +57,29 @@ Data actions can call external REST APIs or execute advanced SQL queries, allowi
 
 For more information, refer to [Displaying Data on Screens](https://learn.outsystems.com/training/journeys/building-screens-with-data-637/displaying-data-on-screens/odc/109).
 
-## Keep Max. Records consistent with your needs { #max-records }
+## Keep the number of fetched records consistent with your needs { #max-records }
 
-The Max. Records property of an aggregate defines the maximum number of records read from the database. If the Max. Records property is not set, all the records that match the criteria will be retrieved, increasing database load and response time.
+Usually, there's no need to display thousands of records on a single screen. For example, a list usually displays only a fixed set of records, then additional records are fetched with the use of pagination or infinite scroll mechanism. If you don't limit the maximum number of records read from the database, all the records that match the criteria will be unnecessarily fetched, increasing database load and response time.
 
 ### Recommendation
 
-Set the aggregate's Max. Records property to match the amount of data you want to display.
+Keep the number of records fetched by your aggregates and SQL queries consistent with your needs:
+
+* For aggregates, set the **Max. Records** property to match the amount of data you want to display. If you need the total count of records, use the **&lt;Aggregate&gt;.Count**, as it's not limited by the **Max. Records** value.
+
+* For SQL queries, add an SQL clause to the SQL element statement to filter the results at the database level. For example, `SELECT <column_names> FROM <table_joins> LIMIT 10`.
+
+    <div class="info" markdown="1">
+
+    Setting the **Max. Records** property in SQL queries doesn't change its SQL statement. This limit is only applied at the app level to the results returned by the database. 
+
+    </div>
+
+    By limiting the results returned by the query, you no longer rely on the SQL query **.Count** property to get the correct count of records complying with the original query conditions and joins. If you need the total number of records, you must make a separate query to do that count.
 
 ### Benefits
 
-Usually, there's no need to display thousands of records on a single screen, so retrieving them all from the database is unnecessary. Setting the Max. Records according to your needs optimizes the aggregate execution time and improves screen loading. This is especially useful in table records or when an aggregate is used to fetch a single record.
-
-<div class="info" markdown="1">
-
-Setting the Max. Records property in SQL elements doesn't change its SQL statement. This limit is only applied at the app level to the results returned by the database. Unlike aggregates, to filter the results at the database level, you must add an SQL clause to the SQL element statement (for example, TOP). 
-
-</div>
+Keeping the number of records fetched from the database consistent with your needs optimizes aggregates and SQL queries execution time and improves screen loading. This is especially useful when fetching table records or when an aggregate is used to fetch a single record.
 
 ## Don't show a blank screen while data is being fetched
 
