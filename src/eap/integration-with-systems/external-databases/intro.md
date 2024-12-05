@@ -24,57 +24,15 @@ content-type:
 
 OutSystems Developer Cloud (ODC) enables developers to integrate external data into their apps. First, from the ODC Portal, admins create connections to the supported databases and select the entities. Then, in ODC studio, developers use the data as entities in their apps.
 
-Administrators must set up configurations for each stage, such as development, QA, and production, to connect an app to an external database.
+Administrators must:
 
-Administrators ensure the app and its connection information are in the same stage. Additionally, the database model must be the same in all the stages.
+* Set up configurations for each stage, such as development, QA, and production, to connect an app to an external database.
+* Ensure the app and its connection information are in the same stage. Additionally, the database model must be the same in all the stages.
 
-There is no limit to the number of entities you can add from the external database.
-
-In ODC, you can combine data from different entities and distinct data sources into an aggregate. [Data Fabric](../../building-apps/data/fetch-data/data-mash.md) processes all external system data uniformly without storing any data persistently within Data Fabric or the ODC architecture. For more information, refer to [data handling in Data Fabric](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-fabric).
-
-<div class="info" markdown="1">
-
-ODC offers [private gateways](../../manage-platform-app-lifecycle/private-gateway.md) to connect your apps to private data and services that are inaccessible through the internet. Since an external database is usually hosted in a private network, using a private gateway ensures security.
-
-</div>
+You can use stored procedures as custom code (C#) to integrate complex database operations directly into your apps. For more information, refer to [Supporting stored procedure in ODC](../../building-apps/external-logic/stored-procedure.md).
 
 
-## Supported systems
-
-The following versions of systems are supported to integrate with ODC:
-
-
-* **Microsoft SQL Server**:
-
-    * SQL Server 2014
-    * SQL Server 2016
-    * SQL Server 2017
-    * SQL Server 2019
-    * SQL Server 2022
-
-* **Azure SQL**: 
-
-    * Azure SQL Database
-    * Azure SQL Managed Instance
-
-* **PostgreSQL**:
-
-    OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
-
-    * PostgreSQL 12
-    * PostgreSQL 13
-    * PostgreSQL 14
-    * PostgreSQL 15
-    * PostgreSQL 16
-
-* **SAP**:
-
-    * SAP ECC 5.0 or higher
-    * SAP S/4HANA
-
-* **Salesforce**
-
-* **Oracle 19c**
+For supported external data sources in ODC, refer to [Supported external data sources.](../../getting-started/system-requirements.md#supported-external-data-sources)
 
 ## Permissions requirements
 
@@ -83,7 +41,26 @@ Before accessing data from an external database, verify that you have the correc
 * Configure Connections
 * Connection management
 
-External database connections can be created with read-only permissions or other permission restrictions. Entity CRUD actions (to create, update, or delete records) are always automatically created in ODC Studio regardless of the permissions of the database connection user. If you intend to use the full CRUD actions, ensure that the database users carries the proper permissions.
+External data connections can be created with read-only permissions or other permission restrictions. Entity CRUD actions (to create, update, or delete records) are always automatically created in ODC Studio regardless of the permissions of the database connection user. If you intend to use the full CRUD actions, ensure the database users carry the proper permissions.
+
+## Data fabric
+
+Data Fabric enables seamless access to and integration of external data into your apps without storing customer data persistently within its architecture. Use Data Fabric connectors to retrieve metadata, such as tables, objects, and columns from external systems. ODC Portal stores this metadata during the connection's lifetime. Queries run directly on external systems during runtime or when you preview data in ODC Studio.
+
+ODC encrypts sensitive information, such as passwords, as secrets in a cloud secret store. These secrets are decrypted automatically only when connecting to the external system, with no human intervention. If you edit an existing connection, ODC doesn't fetch or decrypt the stored secrets. Instead, you must re-enter the secret details to save the connection. 
+
+For more information, refer to [Data stored in external systems](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-stored-in-external-systems).
+
+
+## Private gateway
+
+To access private data that is not available over the internet, connect to your external data source through a [private gateway](../../manage-platform-app-lifecycle/private-gateway.md). The connection process varies depending on the type of data source:
+
+* For Relational database:
+    1. In ODC Portal, open the connection configuration screen. Enter `secure-gateway` in the `Server`/`Host` field, and the secure gateway port in the `Port` field.
+* For SAP BAPI database:
+    1. Run the Cloud Connector with the following command: `./outsystemscc --header "token: <token>" <secure-gateway-address> R:<local-port>:<sap-ip-address>:<remote-port>` . This directs traffic from `secure-gateway:<local-port>` to `<sap-ip-address>:<remote-port>`.
+    1.  In ODC Portal, open the SAP BAPI connection screen. Enter `/H/secure-gateway/S/<local-port>/H` in the `SAP route string` field.
 
 ## Create a new connection
 
@@ -91,26 +68,13 @@ To create a new database connection, go to the ODC Portal and follow these steps
 
 1. From the ODC Portal nav menu, select **Integrate** > **Connections**, and click the **Create connection** button. <br/> The **select a provider** popup displays.
 1. Select the required provider and click **Confirm**.
-    * If you select SAP, then select the **SAP Service** as **SAP Service Catalog**, and click **Show available services**.<br/> All available services display.
-    * If you select Salesforce, select **connect to** as **Production**, and **Authentication type** as **OAuth** authentication type, and click **Authenticate**.<br/> The Salesforce login page displays.
 1. In the connection form, enter the required database connection information. To learn more, refer to the [connection parameters](#connection-parameters).
-
-    <div class="info" markdown="1">
-
-    For relational databases, to connect to your external databases through a Private Gateway, enter `secure-gateway` in the `Server`/`Host` field and the secure gateway port in the `Port` field.
-    For SAP BAPI, to connect through a Private Gateway, follow these steps:
-    * Run the Cloud Connector with the following command: `./outsystemscc --header "token: <token>" <secure-gateway-address> R:<local-port>:<sap-ip-address>:<remote-port>` . This directs traffic from `secure-gateway:<local-port>` to `<sap-ip-address>:<remote-port>`.
-    * In ODC Portal and in your SAP BAPI connection, enter `/H/secure-gateway/S/<local-port>/H` in the `SAP route string` field.
-
-    </div>
-
 1. After entering the information, click the **Test connection** button at the bottom of the form. If the test fails, a message displays. Make the necessary changes and test again. 
-
 1. To apply to stages, you can choose one of the following.
     * Click **Apply to all stages** to use the same connection information in all stages.
     * Select the stage name to use connection information for a single stage.
 
-You can use stored procedures as custom code (C#) to integrate complex database operations directly into your apps. For more information, refer to [Supporting stored procedure in ODC](../../building-apps/external-logic/stored-procedure.md).
+To handle null values while integrating with external systems. Administrators must assign new values to represent null values in external databases. To learn more, refer to [handle null values](handle-null-values.md).
 
 ## Select entities for use in an app
 
@@ -118,12 +82,22 @@ After connecting to an external database, select the entity names and attributes
 
 1. From the ODC Portal nav menu, select **Integrate** > **Connections**, and click **Select entities** to display the **Add entities** connection screen. <br/>The connection screen displays the available entities retrieved from the database.
 
-    ![Screenshot showing the process of selecting entities and attributes from an external database in OutSystems Developer Cloud Portal](images/external-db-entity.png "External Database Entities Selection")
+    ![Screenshot showing the process of selecting entities and attributes from an external database in OutSystems Developer Cloud Portal](images/external-db-entity-pp.png "External Database Entities Selection")
 
 1. From the **Entity** name column, select the entities and attributes you want to use.
 1. Click **Save** to confirm. 
 
-Selected entities and attributes are now available as [public elements](../../building-apps/libraries/use-public-elements.md). In ODC Studio, developers have the flexibility to rename entities, allowing for clearer descriptions. For example, an entity initially named Product_id_version1 can be renamed to Product_id.
+Selected entities and attributes are now available as [public elements](../../building-apps/libraries/use-public-elements.md). In ODC Studio, developers can rename entities, allowing for clearer descriptions. For example, an entity initially named Product_id_version1 can be renamed to Product_id.
+
+<div class="info" markdown="1">
+
+There is no limit to the number of entities you can add from the external database.
+
+</div>
+
+### Data mash with internal entity
+
+When you insert a record into an internal entity and then use an aggregate in the same flow with an external entity, the aggregate doesn't return the inserted record. This occurs because mashup queries run in separate transactions. This issue doesn't happen when external connections combine data from different sources. External connections automatically commit changes since they don't support transactions. For more information, refer to [Data mash transactions.](../../building-apps/data/fetch-data/transactions-data-mashup.md)
 
 ## Edit an existing connection
 
@@ -132,7 +106,7 @@ To edit an existing database connection, go to ODC Portal and follow these steps
 1. From the ODC Portal nav menu, select **Integrate** > **Connections** to display the list of connections.
 1. From the list of connections, select the one to edit.
 
-You can only change the name and description without testing your connection again.
+You can only change the name and description without testing your connection again. For more information about external data type mapping to OutSystems data type, refer to [External data type mapping.](external-data-type.md)
 
 ## Connection parameters
 
@@ -170,35 +144,7 @@ You can use advanced parameters to add additional parameters for a database conn
     * `maxConnectionPoolSize`: Default value of 400, as it was the best performer in OutSystems performance tests.
 * The `statsRefreshFrequencyMinutes` parameter, available for all connectors, allows you to adjust how often statistics are refreshed. This adjustment helps Data Fabric connectors maintain optimal query performance. If your external system has a limited number of API requests, it's advisable to increase the refresh frequency. The default value for this parameter is 15 minutes, with a minimum allowable value of 5 minutes. An example of the use of this parameter is: `statsRefreshFrequencyMinutes=30`.
 
-![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems.png "External Database additional parameters")
-
-## Data type mapping
-
-To handle null values while integrating with external systems. Administrators must assign new values to represent null values in external databases. To learn more, refer to [handle null values](handle-null-values.md).
-
-| SQL Server and Azure SQL | Oracle | SAP OData | SAP BAPI | Salesforce | PostgreSQL |OutSystems data type |
-|--|--|--|--|--|--|--|
-Char<br/>Varchar<br/>Text<br/>Nchar<br/>Nvarchar<br/>Ntext<br/>Xml<br/>Numeric(Any, >8)<br/>Decimal(Any, >8)<br/>Real<br/>Float<br/>UniqueIdentifier<br/>Time<br/>Datetimeoffset | Char<br/>Varchar<br/>Varchar2<br/>Clob<br/>Long<br/>Nchar<br/>NVarchar2<br/>Nclob<br/>Number(Any, >8)<br/>Float<br/>RowId<br/>URowId | Varchar<br/>UUID<br/>Time<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)|SSTRING<br/>STRING<br/>CHAR<br/>LANG<br/>UNIT<br/>NUMC<br/>DEC (Any, >8)<br/>DEC (>28, Any)<br/>CURR (Any, >8)<br/>CURR (>28, Any)<br/>QUAN (Any, >8)<br/>QUAN (>28, Any)<br/>CLNT<br/>CUKY <br/>LCHR<br/>LRAW<br/>FLTP<br/>RAW<br/>RAWSTRING<br/>GEOM_EWKB| UUID<br/>VARCHAR<br/>FLOAT<br/>Time| Varchar<br/>NVarchar<br/>Text<br/>Varbit<br/>Character<br/>Char<br/>Bpchar<br/>Time<br/>Numeric(Any, >8)<br/>Numeric(>28, Any)<br/>Decimal(Any, >8)<br/>Decimal(>28, Any)<br/>Float4<br/>Float8<br/>Float8_range<br/>Real<br/>Double precision<br/>XML<br/>JSON<br/>UUID<br/>Pg_lsn<br/>Enum |Text|
-Tinyint<br/>Smallint<br/>Int<br/>Numeric(2-9, 0)<br/>Decimal(2-9, 0) | Number(2-9, 0) | Int<br/>Decimal(2-9, 0) | INT1<br/>INT2<br/>INT4<br/>ACCP<br/>PREC<br/>DEC (1-9, 0)<br/>CURR (1-9, 0)<br/>QUAN (1-9, 0)<br/>NUMC | Int | Smallint<br/>Integer<br/>Int<br/>Int2<br/>Int4<br/>Numeric<br/>Numeric(2-9, 0)<br/>Decimal(2-9, 0)<br/>Smallserial<br/>Serial<br/>Serial4 |Integer |
-Bigint<br/>Numeric(10-18, 0)<br/>Decimal(10-18, 0) | Number(10-18, 0) | Decimal(10-18, 0) | DEC (10-18, 0)<br/>CURR (10-18, 0)<br/>QUAN (10-18, 0)<br/>NUMC | | Bigint<br/>Int8<br/>Bigserial<br/>Serial8<br/>Numeric(10-18, 0)<br/>Decimal(10-18, 0) |Long Integer |
-Numeric(19-28, 0-8)<br/>Numeric(1-18, >1-8)<br/>Decimal(19-28, 0-8)<br/>Decimal(1-18, >1-8)<br/>Money<br/>Smallmoney | Number(19-28, 0-8)<br/>Number(1-18, 1-8) | Decimal(1-28, 1-8)<br/>Decimal(19-28, 0) | DEC (19-28, 0-8)<br/>DEC (1-18, 1-8)<br/>CURR (19-28, 0-8)<br/>CURR (1-18, 1-8)<br/>QUAN (19-28, 0-8)<br/>QUAN (1-18, 1-8) | Decimal | Numeric(1-28, 1-8)<br/>Numeric(19-28, 0)<br/>Decimal(1-28, 1-8)<br/>Decimal(19-28, 0)<br/>Money | Decimal |
-Bit<br/>Numeric(1, 0)<br/>Decimal(1, 0) | Number(1, 0) | Bit<br/>Decimal(1, 0) | | Bit | Bit<br/>Boolean<br/>Bool<br/>Numeric(1, 0)<br/>Decimal(1, 0) |Boolean |
-Date | | Date | DATN<br/>DATS | Date | Date |Date|
-Datetime<br/>DateTime2<br/>Smalldatetime | Date<br/>Timestamp | Timestamp |  | DateTime | Timestamp | DateTime |
-| | | | TIMN<br/>TIMS | | | Time |
-Image<br/>Binary<br/>Varbinary | Blob<br/>Raw<br/>Long Raw | | | | Bytea |Binary Data |
-Sql_variant<br/>Geometry<br/>HierarchyId<br/>Geography<br/>Rowversion<br/>Timestamp | Interval day to second<br/>Interval year to month<br/>Bfile<br/>Binary_float<br/>Binary_double<br/>XmlType<br/>VARRAY<br/>OBJECT (structured) | | INT8<br/>DECFLOAT16<br/>DECFLOAT3<br/>UTCLONG | | BIT VARYING<br/>BOX<br/>CIDR<br/>CIRCLE<br/>COMPOSITE (user defined types and other composite types)<br/>INET<br/>INTERVAL<br/>LINE<br/>LSEG<br/>MACADDR<br/>MACADDR8<br/>PATH<br/>POINT<br/>POLYGON<br/>TSQUERY<br/>TSVECTOR<br/>TXID_SNAPSHOT<br/>all of the ARRAY types | Currently not supported and won't appear in ODC Portal.|
-Other data types | Other data types | Other data types | Other data types |Other data types | Other data types |No official support; attributes may not appear in the ODC Portal or may exhibit unexpected behavior. |
-
-### Salesforce custom columns mapping
-
-Although Salesforce supports multiple data types in the built-in tables, the following mapping are for the custom columns:
-
-| Salesforce data type| OutSystems data type |
-|--|--|
-TINYINT<br/>SMALLINT<br/>INT<br/>BIGINT<br/>FLOAT<br/>DECIMAL<br/>DOUBLE<br/>NUMERIC<br/>VARCHAR<br/>BIT<br/>BINARY<br/>UUID<br/>Time | Text |
-Boolean |Boolean |
-Date | Date |
+![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems-pp.png "External Database additional parameters")
 
 ## Considerations when integrating external systems
 

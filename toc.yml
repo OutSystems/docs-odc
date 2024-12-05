@@ -360,6 +360,7 @@
     - topics: 
         - href: eap/integration-with-systems/external-databases/handle-null-values.md
         - href: eap/integration-with-systems/external-databases/sap-odata.md
+        - href: eap/integration-with-systems/external-databases/external-data-type.md
     #Consume REST API 
     - href: eap/integration-with-systems/consume_rest/intro.md
     - topics:

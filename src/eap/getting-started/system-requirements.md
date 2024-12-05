@@ -104,6 +104,42 @@ ODC supports the following client-side trace request limits:
 
 * Up to 400 trace requests every minute and 3500 requests daily per stage.
 
+### Supported external data sources
+
+The following versions of systems are supported to integrate with ODC:
+
+* **Microsoft SQL Server**:
+
+    * SQL Server 2014
+    * SQL Server 2016
+    * SQL Server 2017
+    * SQL Server 2019
+    * SQL Server 2022
+
+* **Azure SQL**: 
+
+    * Azure SQL Database
+    * Azure SQL Managed Instance
+
+* **PostgreSQL**:
+
+    OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
+
+    * PostgreSQL 12
+    * PostgreSQL 13
+    * PostgreSQL 14
+    * PostgreSQL 15
+    * PostgreSQL 16
+
+* **SAP**:
+
+    * SAP ECC 5.0 or higher
+    * SAP S/4HANA
+
+* **Salesforce**
+
+* **Oracle 19c**
+
 ## Platform limits
 
 The following table shows the limits of the ODC to keep in mind when you are building apps. Unless otherwise noted, each limit is stage-specific. These limits cannot be exceeded and may cause errors or a drop in performance if reached.
