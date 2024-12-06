@@ -1,6 +1,6 @@
 ---
 summary: Counting query results using an inefficient query.
-tags:
+tags: sql query optimization, performance improvement, data retrieval, database efficiency, troubleshooting
 guid: 0b899e99-db9d-4840-85ae-691656b8f0d8
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -9,8 +9,14 @@ figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troublesh
 content-type:
   - troubleshooting
   - reference
+audience:
+  - backend developers
+  - full stack developers
+  - data engineers
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # Inefficient query count
 
 Counting query results using an inefficient query.
@@ -28,4 +34,6 @@ The query retrieves and processes additional data beyond what is needed for the 
 ## How to fix
 
 Use a simplified SQL query to efficiently count the results, removing unneeded extra data and joins.
+
+For more information, refer to the [best practice for optimizing record counting](../../../building-apps/ui/creating-screens/best-practices-fetch-display-data.md#record-counting).
 

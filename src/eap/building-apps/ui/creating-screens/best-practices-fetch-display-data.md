@@ -102,6 +102,30 @@ Keep the number of records fetched by your aggregates and SQL queries consistent
 
 Keeping the number of records fetched from the database consistent with your needs optimizes aggregates and SQL queries execution time and improves screen loading. This is especially useful when fetching table records or when an aggregate is used to fetch a single record.
 
+## Optimize record counting { #record-counting }
+
+When you use **&lt;Aggregate&gt;.Count** or **&lt;SQL query&gt;.Count** to get the total count of records returned by a query, OutSystems generates a second query to perform the counting, ignoring the **Max. Records** value.
+
+For aggregates, OutSystems generates an optimized query for counting records. However, that's not the case for SQL queries. 
+
+The SQL element enables you to write complex SQL queries, which can be too complex for counting records. Consider you have a query that fetches a lot of fields, performs several joins, and eventually, sorts the results. By using **&lt;SQL query&gt;.Count** to count the records returned by that query, OutSystems re-runs the same complex query again.
+
+### Recommendations
+
+When counting the number of records returned by aggregates or SQL queries, follow these recommendations:
+
+* With aggregates, use **&lt;Aggregate&gt;.Count**. The platform runs the same query in an optimized way to count the records.
+
+* With SQL queries, run a modified version of the original query, with the only purpose of counting the number of records:
+
+![A way to simplify a query to count records.](images/sql-query-count.png "A query simplified to count records")
+
+* Don't use **&lt;Aggregate&gt;.Count** or **&lt;SQL query&gt;.Count** to check if the query result is empty or not, as this will run an extra query unnecessarily. To check if the result is empty, use **&lt;Aggregate&gt;.List.Empty** or **&lt;SQL query&gt;.List.Empty** instead.
+
+### Benefits
+
+By following these recommendations, you avoid running complex queries repeatedly, improving the app's performance.
+
 ## Don't show a blank screen while data is being fetched { #blank-screen }
 
 Plan what your app displays to the user while data is being fetched. 
