@@ -1,7 +1,8 @@
 ---
 summary: Learn the best practices for fetching and displaying data in OutSystems.
-tags:
+tags: data fetching, aggregates, sql queries, data actions, asynchronous operations
 outsystems-tools:
+  - service studio
 guid: 65834d5d-b36c-47b0-afc5-43ae35b5bd7d
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -9,8 +10,10 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6412-1148
 content-type:
   - best practice
+audience:
+  - mobile developers
+  - frontend developers
 ---
-
 # Best practices for fetching and displaying data
 
 In OutSystems, you can [fetch data to populate screens](../interaction/fetch-display.md) using aggregates or data actions. Follow these best practices to manage and display data from different sources efficiently.
