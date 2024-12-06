@@ -1,17 +1,19 @@
 ---
 summary: This article provides an overview of the OutSystems Developer Cloud (ODC) REST APIs.
-tags: 
-outsystems-tools: 
+tags: rest apis, authentication, user management, automation, oauth 2.0
+outsystems-tools:
+  - odc portal
 guid: be12dc22-fd28-4edb-af36-1edda72bddc3
 locale: en-us
 app_type: reactive web apps, mobile apps
-content-type: 
-    - conceptual
-audience: 
+content-type:
+  - conceptual
+audience:
+  - backend developers
+  - full stack developers
 platform-version: odc
-figma: 
+figma:
 ---
-
 # ODC REST APIs
 
 The OutSystems Developer Cloud (ODC) REST APIs allow you to create scripts, automation, and applications that leverage the resources of your ODC tenant, such as Users, Groups, App Roles, etc. You can use these APIs to automate and extend the built-in functionality provided with ODC.
@@ -22,29 +24,9 @@ The ODC REST APIs uses the [OpenID Connect (OIDC)](https://openid.net/developers
 
 The ODC API is a RESTful interface with predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
 
-All API endpoints are relative to the following base URL.
-
-`https://ODC_PORTAL_DOMAIN/api`
-
-Where 
-
-`ODC_PORTAL_DOMAIN` is the domain of your Organization
-
-## Usage
-
-The ODC API is a RESTful interface with predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
-
-All API endpoints are relative to the following base URL.
-
-`https://ODC_PORTAL_DOMAIN/api`
-
-Where 
-
-`ODC_PORTAL_DOMAIN` is the domain of your Organization
-
 ## API domains
 
-### User and access management 
+### User and access management
 
 The user and access management REST APIs, enable you to programmatically manage user-related operations such as:
 
