@@ -29,7 +29,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves a list of deployed assets.",
-        "description": "Retrieves a list of deployed assets containing updated deployment status per environment (stage).\nThe result only shows assets for which the API Client has **Asset management > Open** permission, and only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission.",
+        "description": "Retrieves a list of deployed assets containing updated deployment status per environment (stage).\n\nThe result only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission.",
         "operationId": "DeployedAssets_ListAssets",
         "parameters": [
           {
