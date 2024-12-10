@@ -178,7 +178,7 @@ Some event limits are:
 
 | **Name**                                 | **Limit** | **Description** |
 | ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
-| Concurrent events                        |       100 | The maximum number of events that can run concurrently. |
+| Concurrent events                        |       100 | The maximum number of events that can run concurrently per app. |
 | Event duration (minutes)                 |         2 | The maximum duration of a handler of an event in minutes. |
 | Events per queue                         |    10,000 | The maximum number of events that can be queued. Upon reaching the limit, an exception is thrown. |
 
