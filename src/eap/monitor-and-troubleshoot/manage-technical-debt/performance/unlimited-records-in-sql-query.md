@@ -1,6 +1,6 @@
 ---
 summary: The number of records fetched from the database is not set in the SQL query.
-tags:
+tags: sql query optimization, database performance, memory consumption, data retrieval, aurora postgresql
 guid: d6d8dc05-4263-4561-923c-31e9598f20fc
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -9,8 +9,12 @@ figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troublesh
 content-type:
   - troubleshooting
   - reference
+audience:
+  - backend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
 ---
-
 # Unlimited records in SQL query
 
 The number of records fetched from the database isn't set in the SQL query.
@@ -27,4 +31,4 @@ The issue occurs because the SQL queries fetch all records by default, leading t
 
 ## How to fix
 
-Use `ROWNUM` (for Oracle) or `TOP` (for MS SQL Server) in the SQL query to limit the number of records to the required amount. Note that in SQL queries, the Max. Records parameter only limits the number of records displayed and not the number of records fetched.
+To limit the number of records in a SQL query using Aurora PostgreSQL, you should use the `LIMIT` clause. Note that in SQL queries, the Max. Records parameter only limits the number of records displayed and not the number of records fetched.
