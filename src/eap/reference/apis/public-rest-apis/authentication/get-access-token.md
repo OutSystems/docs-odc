@@ -1,15 +1,18 @@
 ---
 summary: In this article, you will learn how to get an access token using the client credentials.
-tags: 
-outsystems-tools: 
+tags: access token, authentication, client credentials, rest api, outsystems
+outsystems-tools:
+  - odc portal
 guid: dae4f96f-cc24-45ef-bec7-26d483c779d2
 locale: en-us
 app_type: reactive web apps, mobile apps
-content-type: 
-    - procedure
-audience: 
+content-type:
+  - procedure
+audience:
+  - backend developers
+  - full stack developers
 platform-version: odc
-figma: 
+figma:
 ---
 # Get access token 
 

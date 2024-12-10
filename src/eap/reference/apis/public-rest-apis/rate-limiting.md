@@ -1,18 +1,20 @@
 ---
-summary: This article describes the rate limiting information for ODC REST APIs. 
-tags: 
+summary: This article describes the rate limiting information for ODC REST APIs.
+tags: rate limiting, apis, rest api, best practices, outsystems
 guid: 00b00239-a7db-4759-be9c-47c3d59255fb
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
-outsystems-tools: 
-content-type: 
-    - best practice
-    - conceptual
-audience: 
+figma:
+outsystems-tools:
+  - none
+content-type:
+  - best practice
+  - conceptual
+audience:
+  - backend developers
+  - platform administrators
 ---
-
 # Rate limits for the APIs
 
 The global rate limit per organization per domain is as follows:
