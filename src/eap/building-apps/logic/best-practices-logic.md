@@ -18,7 +18,8 @@ In OutSystems, your apps' logic is implemented through actions. Follow these rec
 
 ## Avoid multiple server calls in a client action flow { #multiple-server-calls }
 
-Multiple server calls inside client actions can lead to performance issues. Each call results in a separate server request, leading to numerous round trips between the client and server, which can increase latency. 
+Multiple server calls inside client actions can lead to performance issues.
+Each call results in a separate server request, leading to numerous round trips between the client and server, which can increase latency. 
 
 The following is an example of a client action flow with several sequenced server calls, which is not a good practice:
 
