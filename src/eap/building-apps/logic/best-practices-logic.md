@@ -36,7 +36,8 @@ Having all required server logic in a single server action reduces the number of
 
 ## Don't add aggregates or SQL queries inside a cycle { #aggregates-inside-cycle }
 
-Aggregates or SQL queries inside a For Each cycle mean repeated database calls for each iteration. This results in significant performance degradation, particularly with large datasets or nested loops.
+Aggregates or SQL queries inside a For Each cycle mean repeated database calls for each iteration.
+This results in significant performance degradation, particularly with large datasets or nested loops.
 
 ### Recommendations
 
