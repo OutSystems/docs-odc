@@ -1,6 +1,6 @@
 ---
 summary: Learn the best practices for creating your app's logic.
-tags: best practices, app logic, server calls, performance optimization, outsystems
+tags: best practices, app logic, performance optimization, mobile apps, reactive web apps
 outsystems-tools:
   - odc studio
 guid: b3c30de3-477e-4f09-99d0-e4b2e711f917
@@ -10,6 +10,7 @@ content-type:
   - best practice
 audience:
   - mobile developers
+  - frontend developers
   - full stack developers
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6404-238
