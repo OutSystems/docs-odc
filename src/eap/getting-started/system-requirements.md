@@ -148,7 +148,6 @@ Some general platform limits are:
 
 | **Name**                                 | **Limit** | **Description** |
 | ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
-| Concurrent timers                        |         6 | The maximum number of timers that can run concurrently. |
 | DB backup retention (days)               |        30 | The maximum number of days database backups are retained. |
 | Expose REST API method timeout (seconds) |        60 | The maximum amount of time an Expose REST API method executes before timing out. |
 | Max requests (per IP)                    |     5,000 | The maximum number of HTTP requests that can be made from a given IP address within a 5-minute window across all stages. |
