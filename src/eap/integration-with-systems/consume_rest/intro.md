@@ -41,6 +41,8 @@ Each consumed REST API will have their own model of security and authentication 
 
 REST APIs using **Basic Authentication** are supported out of the box in the "Consume REST API Method" dialog box described below. You can use the REST customization capabilities to add support for other authentication methods:
 
+> **Warning:** OutSystems does not support self-signed certificates. The REST API must have a valid public certificate with a public certificate authority to ensure the request is accepted, either at the client or server side.
+
 * For token-based authentication, use the **OnBeforeRequest** callback to add the required HTTP authorization header to the outgoing requests. 
 
 ## Mapping REST data types to OutSystems data types
