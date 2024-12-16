@@ -94,6 +94,15 @@ When connecting to endpoints over TLS/SSL, particularly when they're behind an A
 
 <div class="info" markdown="1">
 
+ODC only supports connections that have Valid SSL Certificates, valid certificates are:
+
+1. Not Expired.
+1. Signed by a trusted Certificate Authority (CA).
+
+</div>
+
+<div class="info" markdown="1">
+
 For security reasons, only the deployed app can access the `secure-gateway` domain in runtime, so you cannot test consuming the methods of the endpoint in ODC Studio.
 
 </div>
