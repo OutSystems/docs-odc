@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - process
+coverage-type:
+  - apply
 ---
 
 # Supporting SOAP in ODC

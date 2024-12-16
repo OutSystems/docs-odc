@@ -9,11 +9,10 @@ tags: subscription management, application management, user management, permissi
 audience:
   - platform administrators
   - full stack developers
-  - team manager
 outsystems-tools:
   - odc portal
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # Subscription console

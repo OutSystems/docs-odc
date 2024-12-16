@@ -10,13 +10,12 @@ tags: access management, permissions, user onboarding, user roles, organization 
 audience:
   - full stack developers
   - platform administrators
-  - team lead
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - conceptual
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Roles

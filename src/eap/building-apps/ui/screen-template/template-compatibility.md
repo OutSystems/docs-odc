@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
 ---
 
 # Theme compatibility in Screen Templates

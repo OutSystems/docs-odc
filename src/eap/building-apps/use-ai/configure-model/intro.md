@@ -12,9 +12,9 @@ audience:
   - full stack developers
 outsystems-tools:
   - ai agent builder
-content-type:
-  - procedure
-  - conceptual
+coverage-type:
+  - apply
+  - understand
 ---
 
 # Configure your AI models

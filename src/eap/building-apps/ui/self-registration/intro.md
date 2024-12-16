@@ -13,8 +13,8 @@ audience:
 outsystems-tools:
   - odc studio
   - forge
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Self-registration flow

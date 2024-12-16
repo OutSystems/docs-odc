@@ -1,15 +1,20 @@
 ---
 summary: Learn the best practices for managing data in OutSystems.
-tags:
+tags: data management, best practices, settings, app configurations, security
 guid: 858e8c87-2c13-4803-b279-008726bb77ea
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5969-642
-content-type:
-  - best practice
+coverage-type:
+  - evaluate
+audience:
+  - full stack developers
+  - platform administrators
+  - architects
+outsystems-tools:
+  - odc portal
 ---
-
 # Best practices for data management
 
 The following are recommended best practices for handling and modeling data in OutSystems that help you design efficient and scalable apps.

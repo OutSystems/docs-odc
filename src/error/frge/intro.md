@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - forge
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
 ---
 
 # Forge errors

@@ -11,9 +11,9 @@ audience:
   - frontend developers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
-  - reference
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Tag

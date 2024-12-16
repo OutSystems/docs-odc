@@ -12,7 +12,7 @@ audience:
   - platform administrators
 outsystems-tools:
   - none
-content-type:
+coverage-type:
   - none
 ---
 

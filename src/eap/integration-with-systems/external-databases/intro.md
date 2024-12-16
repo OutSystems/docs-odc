@@ -15,9 +15,9 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - procedure
-  - reference
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Integrate with external data sources using Data Fabric

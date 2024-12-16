@@ -9,13 +9,12 @@ figma:
 audience:
   - mobile developers
   - full stack developers
-  - team lead
   - platform administrators
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Onboarding developers

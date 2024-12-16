@@ -12,11 +12,9 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-  - data fabric
-  - data fabric connectors
-content-type:
-  - conceptual
-  - process
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Combine data from different sources using data mashup

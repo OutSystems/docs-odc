@@ -10,11 +10,9 @@ audience:
   - mobile developers
 outsystems-tools:
   - odc studio
-  - mobile plugins
-content-type:
-  - conceptual
-  - procedure
-  - process
+coverage-type:
+  - understand
+  - apply
 ---
 
 # SSL Pinning Plugin

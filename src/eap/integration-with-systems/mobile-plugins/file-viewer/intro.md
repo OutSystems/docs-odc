@@ -12,10 +12,9 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-  - mobile plugins
-content-type:
-  - reference
-  - procedure
+coverage-type:
+  - remember
+  - apply
 ---
 
 # File Viewer Plugin

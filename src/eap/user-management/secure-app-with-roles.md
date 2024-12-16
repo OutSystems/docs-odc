@@ -13,10 +13,9 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - procedure
-  - process
-  - reference
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Secure your app with end-user roles

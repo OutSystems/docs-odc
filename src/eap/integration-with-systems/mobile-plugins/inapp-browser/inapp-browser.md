@@ -11,11 +11,9 @@ audience:
   - frontend developers
 outsystems-tools:
   - odc studio
-  - mobile plugins
-content-type:
-  - conceptual
-  - process
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
 
 # InApp Browser Plugin

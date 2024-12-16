@@ -12,10 +12,10 @@ audience:
 outsystems-tools:
   - forge
   - odc studio
-content-type:
-  - conceptual
-  - procedure
-  - reference
+coverage-type:
+  - understand
+  - apply
+  - remember
 ---
 
 # Harden the protection of mobile apps with AppShield

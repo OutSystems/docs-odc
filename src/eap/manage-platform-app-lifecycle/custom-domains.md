@@ -13,9 +13,9 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - procedure
-  - conceptual
+coverage-type:
+  - apply
+  - understand
 ---
 
 # Configure custom domains for apps

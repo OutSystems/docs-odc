@@ -14,9 +14,9 @@ audience:
   - frontend developers
 outsystems-tools:
   - odc portal
-content-type:
-  - procedure
-  - conceptual
+coverage-type:
+  - apply
+  - understand
 ---
 
 # IdP and end-user group mapping

@@ -13,8 +13,8 @@ audience:
 outsystems-tools:
   - odc portal
   - forge
-content-type:
-  - process
+coverage-type:
+  - apply
 ---
 
 # Using the AI Agent Builder 

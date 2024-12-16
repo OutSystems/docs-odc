@@ -13,8 +13,8 @@ audience:
   - platform administrators
 outsystems-tools:
   - odc studio
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
 ---
 
 # OS-INTC-60004

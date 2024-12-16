@@ -10,7 +10,7 @@ audience:
   - mobile developers
 outsystems-tools:
   - none
-content-type:
+coverage-type:
   - none
 ---
 

@@ -13,9 +13,9 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - conceptual
-  - process
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Emails

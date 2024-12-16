@@ -14,8 +14,8 @@ audience:
   - platform administrators
 outsystems-tools:
   - odc studio
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
 ---
 
 # OS-ELG-MODL-05007

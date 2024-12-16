@@ -9,10 +9,9 @@ figma:
 audience:
   - platform administrators
 outsystems-tools:
-  - ai agent builder
   - odc portal
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Add Azure OpenAI model to AI Agent Builder app

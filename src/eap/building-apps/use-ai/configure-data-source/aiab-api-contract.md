@@ -13,8 +13,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - ai agent builder
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # Custom data source API contract

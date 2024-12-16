@@ -11,9 +11,9 @@ audience:
 outsystems-tools:
   - forge
   - odc studio
-content-type:
-  - conceptual
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Firebase Plugins

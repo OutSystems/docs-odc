@@ -14,10 +14,9 @@ audience:
 outsystems-tools:
   - forge
   - odc portal
-content-type:
-  - conceptual
-  - procedure
-  - process
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Firebase Cloud Messaging plugin using configurator APIs

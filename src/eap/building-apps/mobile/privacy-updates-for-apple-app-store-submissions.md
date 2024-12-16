@@ -1,5 +1,5 @@
 ---
-summary:
+summary: Submit apps with a privacy manifest to Apple App Store with approved API justifications, ensuring compliance using OutSystems Data Cloud (ODC).
 tags: apple app store, privacy policy, app submission, api usage, sdk integration
 guid: 61a1d08c-3607-4d70-8dcd-5b2e1f7da8a7
 locale: en-us
@@ -10,11 +10,10 @@ audience:
   - mobile developers
 outsystems-tools:
   - none
-content-type:
-  - procedure
-  - conceptual
+coverage-type:
+  - apply
+  - understand
 ---
-
 # Privacy updates for Apple App Store submissions
 
 Apps submitted to the Apple App Store must include a privacy manifest file outlining the APIs employed and their purposes. When uploading a new or updated app to App Store Connect, include approved justifications for the APIs used in your code. Furthermore, when integrating a new third-party SDK, follow the API, privacy manifest, and signature requirements specific to that SDK. You must verify that the version employed includes its privacy manifest and note that signatures are compulsory when incorporating it as a binary dependency.

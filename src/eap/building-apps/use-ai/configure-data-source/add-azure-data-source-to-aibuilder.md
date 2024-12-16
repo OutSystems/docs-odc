@@ -12,10 +12,9 @@ audience:
   - full stack developers
   - platform administrators
 outsystems-tools:
-  - ai agent builder
   - odc portal
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Add Azure AI Search data source to the AI Agent Builder app

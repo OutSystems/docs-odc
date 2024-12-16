@@ -1,16 +1,21 @@
 ---
 summary: Large images included in the app.
-tags:
+tags: image optimization, bandwidth management, app performance, mobile apps, web apps
 guid: 81471bb9-b81b-4f7e-90de-0b2d47e54074
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - troubleshooting
-  - reference
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - none
 ---
-
 # Large image
 
 Large images are included in the app.

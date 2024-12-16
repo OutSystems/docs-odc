@@ -13,8 +13,8 @@ audience:
   - architects
 outsystems-tools:
   - odc studio
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # App architecture

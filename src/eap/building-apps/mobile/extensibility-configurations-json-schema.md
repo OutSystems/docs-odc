@@ -10,9 +10,9 @@ audience:
   - mobile developers
 outsystems-tools:
   - odc studio
-content-type:
-  - conceptual
-  - reference
+coverage-type:
+  - understand
+  - remember
 ---
 
 # Extensibility configurations JSON schema

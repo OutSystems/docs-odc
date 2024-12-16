@@ -1,15 +1,20 @@
 ---
 summary: Removing _ts from query strings.
-tags:
+tags: seo, query string, caching, reverse proxy, cdn
 guid: 70399158-64c3-4630-91ee-46c3bb17ead7
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - reference
+coverage-type:
+  - remember
+audience:
+  - frontend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - none
 ---
-
 # Remove _ts from query strings
 
 <div class="warning" markdown="1">

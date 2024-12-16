@@ -12,9 +12,9 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - conceptual
-  - reference
+coverage-type:
+  - understand
+  - remember
 ---
 
 # Screen and block lifecycle events

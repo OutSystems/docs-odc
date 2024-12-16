@@ -1,15 +1,20 @@
 ---
 summary: An action with a high node count is hard to maintain, especially if it has no comments to explain the logic.
-tags:
+tags: maintenance, flow logic, comments, troubleshooting, node count
 guid: 34e826d1-c93f-488e-8e42-524502cc0617
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3522-58&t=fro20soaPpjjIXwf-1
-content-type:
-  - best practice
+coverage-type:
+  - evaluate
+audience:
+  - mobile developers
+  - frontend developers
+  - tech leads
+outsystems-tools:
+  - none
 ---
-
 # Long undocumented flow
 
 Action with a long and undocumented flow.

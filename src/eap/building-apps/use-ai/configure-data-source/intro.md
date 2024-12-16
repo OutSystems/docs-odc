@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - ai agent builder
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Configure your data sources
