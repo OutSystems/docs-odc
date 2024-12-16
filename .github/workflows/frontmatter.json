@@ -63,6 +63,21 @@
       },
       "uniqueItems": true
     },
+    "coverage-type": {
+      "type": ["array"],
+      "items": {
+        "type": "string",
+        "enum": [
+          "remember",
+          "understand",
+          "apply",
+          "evaluate",
+          "unblock",
+          "none"
+        ]
+      },
+      "uniqueItems": true
+    },
     "content-type": {
       "type": [
         "array"
