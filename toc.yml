@@ -58,6 +58,7 @@
             - href: eap/building-apps/data/modeling/entity-create.md
             - href: eap/building-apps/data/modeling/excel-bootstrap.md
             - href: eap/building-apps/data/modeling/entity-static.md
+        - href: eap/building-apps/data/crud-wrappers.md
         # Fetch data from the database
         - href: eap/building-apps/data/fetch-data/intro.md
         - topics: 

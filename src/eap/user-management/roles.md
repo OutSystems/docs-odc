@@ -115,7 +115,7 @@ You can add new users to your organization and apps through the ODC Portal.
 
 From the **ODC Portal**, select **Users & access** and then select either **Users** or **End-user groups**.
 
-Clicking **Users**, displays a screen that shows a list of users. To invite a new user, from the top right click the **Invite user** button. A form displays to enter the user's email address and to select their access. Based on your choices, different options are available.
+Clicking **Users**, displays a screen that shows a list of users. To invite a new user, from the top right click the **Invite user** button. A form displays to enter the user's email address and to select their access. Based on your choices, different options are available. The invitation token expires in approximately 7 days.
 
 * If you choose **Organization access**, you can select an organization and an app. If you select an organization, then you can choose a specific role or no role. When you search for or select a group, you can also choose a stage.
 * If you choose **End-user access** you also have access to add **End-user groups**. You can add the user to a group, assign roles related to a specific app or all apps, and a specific stage or all stages. You can choose more than one app at a time. A group can only have roles from the same stage. For example, if your group is in the Development stage you can't add roles from the Production stage.
