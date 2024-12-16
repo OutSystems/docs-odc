@@ -12,9 +12,9 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - process
-  - conceptual
+coverage-type:
+  - apply
+  - understand
 ---
 
 # The merge feature and team collaboration

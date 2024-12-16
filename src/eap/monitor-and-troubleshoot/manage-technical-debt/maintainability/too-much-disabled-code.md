@@ -1,16 +1,23 @@
 ---
 summary: An app containing too much disabled code.
-tags:
+tags: disabled code, code maintenance, app performance, code readability, production code
 guid: c166aa05-26ca-48da-b80a-91ea20294bbc
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - troubleshooting
-  - reference
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - tech leads
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # Too much disabled code
 
 An app containing too much disabled code.

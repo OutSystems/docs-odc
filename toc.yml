@@ -58,15 +58,19 @@
             - href: eap/building-apps/data/modeling/entity-create.md
             - href: eap/building-apps/data/modeling/excel-bootstrap.md
             - href: eap/building-apps/data/modeling/entity-static.md
+        - href: eap/building-apps/data/crud-wrappers.md
+        # Fetch data from the database
         - href: eap/building-apps/data/fetch-data/intro.md
         - topics: 
             - href: eap/building-apps/data/fetch-data/aggregate.md
             - href: eap/building-apps/data/fetch-data/calculated-attribute-create.md
+            # Combine data from different sources
             - href: eap/building-apps/data/fetch-data/data-mash.md
-            - href: eap/building-apps/data/fetch-data/transactions-data-mashup.md
+            - topics:
+                - href: eap/building-apps/data/fetch-data/queries.md
+                - href: eap/building-apps/data/fetch-data/transactions-data-mashup.md
+                - href: eap/building-apps/data/fetch-data/data-mashup-errors.md
             - href: eap/building-apps/data/fetch-data/transaction-external-entities.md
-            - href: eap/building-apps/data/fetch-data/data-mashup-errors.md
-            - href: eap/building-apps/data/fetch-data/queries.md
             - href: eap/building-apps/data/fetch-data/distinct.md
             - href: eap/building-apps/data/fetch-data/filter-results.md
             - href: eap/building-apps/data/fetch-data/supported-join-types.md
@@ -317,6 +321,7 @@
             - href: eap/building-apps/workflows/filter-workflows.md
         - href: eap/building-apps/workflows/built-in-functions.md
         - href: eap/building-apps/workflows/troubleshooting-workflows.md
+        - href: eap/building-apps/workflows/logs.md
    
     # Reuse
     - href: eap/building-apps/reuse/intro.md
@@ -354,11 +359,13 @@
 # Integration with external systems
 - href: eap/integration-with-systems/intro.md
 - topics:
-    # Integration with external databases
+    # Integrate with external data sources using Data Fabric
     - href: eap/integration-with-systems/external-databases/intro.md
     - topics: 
+        - href: eap/integration-with-systems/external-databases/create-connection-external-data.md
         - href: eap/integration-with-systems/external-databases/handle-null-values.md
         - href: eap/integration-with-systems/external-databases/sap-odata.md
+        - href: eap/integration-with-systems/external-databases/external-data-type.md
     #Consume REST API 
     - href: eap/integration-with-systems/consume_rest/intro.md
     - topics:
@@ -697,3 +704,4 @@
     - href: error/aldi/intro.md
     - topics:
         - href: error/aldi/app_lib_depend_issues.md
+

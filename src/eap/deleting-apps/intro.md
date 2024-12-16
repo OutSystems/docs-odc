@@ -11,11 +11,10 @@ audience:
   - frontend developers
   - full stack developers
   - platform administrators
-  - team lead
 outsystems-tools:
   - odc portal
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Deleting apps and libraries

@@ -10,9 +10,9 @@ audience:
   - mobile developers
 outsystems-tools:
   - odc studio
-content-type:
-  - reference
-  - conceptual
+coverage-type:
+  - remember
+  - understand
 ---
 
 # Keeping apps up to date for your users

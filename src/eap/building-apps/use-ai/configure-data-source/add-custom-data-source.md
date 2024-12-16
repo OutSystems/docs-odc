@@ -10,10 +10,9 @@ figma:
 audience:
   - platform administrators
 outsystems-tools:
-  - ai agent builder
   - odc portal
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Add a custom data source to the AI Agent Builder app

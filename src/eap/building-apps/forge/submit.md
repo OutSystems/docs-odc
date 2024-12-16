@@ -13,9 +13,8 @@ audience:
 outsystems-tools:
   - forge
   - odc portal
-content-type:
-  - process
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Submit assets to Forge

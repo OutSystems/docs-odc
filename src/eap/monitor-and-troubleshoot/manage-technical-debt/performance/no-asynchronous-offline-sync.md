@@ -1,16 +1,19 @@
 ---
 summary: Server data isn't being stored in the local database asynchronously.
-tags:
+tags: asynchronous data storage, offline sync, mobile data synchronization, ui blocking issues, mobile app development
 guid: 48e2ddb8-31e5-4d4c-963e-00ad9aed2056
 locale: en-us
 app_type: mobile apps
 platform-version: odc
 figma:
-content-type:
-  - troubleshooting
-  - reference
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - mobile developers
+outsystems-tools:
+  - none
 ---
-
 # No asynchronous Offline sync
 
 <div class="info" markdown="1">

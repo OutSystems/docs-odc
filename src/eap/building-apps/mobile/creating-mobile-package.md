@@ -11,9 +11,9 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - process
-  - reference
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Create mobile app package

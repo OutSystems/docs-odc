@@ -1,15 +1,19 @@
 ---
-summary: "The interface decorated with OSInterface '<InterfaceName>' is implemented by multiple classes <ClassNames>."
-tags:
+summary: The interface decorated with OSInterface '<InterfaceName>' is implemented by multiple classes <ClassNames>.
+tags: c# error, interface implementation, outsystems, debugging, mobile development
 guid: e876d995-612b-4997-9e59-fe8d51826032
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
+audience:
+  - mobile developers
+  - backend developers
+outsystems-tools:
+  - odc studio
 ---
-
 # OS-ELG-MODL-05008
 
 ## Error message

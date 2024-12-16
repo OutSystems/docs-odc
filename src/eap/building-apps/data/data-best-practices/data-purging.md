@@ -1,15 +1,21 @@
 ---
 summary: Learn about implementing data purging using OutSystems Developer Cloud (ODC) to enhance database performance.
-tags:
+tags: data purging, database performance, outsystems, reactive web apps, best practices
 guid: 4bf14efa-d0be-4ff9-a8f5-0bc76c012905
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5969-643
-content-type:
-  - best practice
+coverage-type:
+  - evaluate
+audience:
+  - full stack developers
+  - backend developers
+  - platform administrators
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # Data purging best practice
 
 Data purging is a mechanism that permanently deletes inactive or obsolete records from the database. It should be considered for entities with an evident high-growth rate, which can quickly achieve considerable volumes of data.

@@ -1,15 +1,21 @@
 ---
 summary: Explore data archiving strategies and best practices for efficient long-term data storage and performance optimization using OutSystems Developer Cloud (ODC).
-tags:
+tags: data archiving, outsystems, best practices, performance optimization, long-term data storage
 guid: 3c7e1c42-073c-4da7-bc65-163bb894caaa
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5969-644
-content-type:
-  - best practice
+coverage-type:
+  - evaluate
+audience:
+  - platform administrators
+  - tech leads
+  - architects
+  - data engineers
+outsystems-tools:
+  - odc studio
 ---
-
 # Data archiving best practice
 
 Data archiving is the process of identifying and moving data from the **primary storage** into an **archive storage**, for long term storage. Archived data consists of data that's no longer relevant for daily operations but that's still important to the organization and may be needed for future reference, or data that must be retained for regulatory compliance.

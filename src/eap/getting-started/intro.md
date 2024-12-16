@@ -13,8 +13,9 @@ audience:
   - platform administrators
 outsystems-tools:
   - odc portal
-content-type:
-  - tutorial
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Getting started

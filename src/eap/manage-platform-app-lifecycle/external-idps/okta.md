@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc portal
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Add Okta for use as an external identity provider

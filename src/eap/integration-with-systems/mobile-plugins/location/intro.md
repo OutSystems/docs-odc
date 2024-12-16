@@ -12,10 +12,9 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-  - location plugin
-content-type:
-  - procedure
-  - reference
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Location Plugin

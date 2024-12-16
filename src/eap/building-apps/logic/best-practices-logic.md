@@ -1,24 +1,28 @@
 ---
 summary: Learn the best practices for creating your app's logic.
-tags: 
-outsystems-tools: 
+tags: best practices, app logic, performance optimization, mobile apps, reactive web apps
+outsystems-tools:
+  - odc studio
 guid: b3c30de3-477e-4f09-99d0-e4b2e711f917
 locale: en-us
 app_type: mobile apps, reactive web apps
 content-type:
-    - best practice
-audience: 
+  - best practice
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6404-238
 ---
-
 # Best practices for logic
 
 In OutSystems, your apps' logic is implemented through actions. Follow these recommendations to ensure efficiency and good performance.
 
 ## Avoid multiple server calls in a client action flow { #multiple-server-calls }
 
-Multiple server calls inside client actions can lead to performance issues. Each call results in a separate server request, leading to numerous round trips between the client and server, which can increase latency. 
+Multiple server calls inside client actions can lead to performance issues.
+Each call results in a separate server request, leading to numerous round trips between the client and server, which can increase latency. 
 
 The following is an example of a client action flow with several sequenced server calls, which is not a good practice:
 
@@ -36,7 +40,8 @@ Having all required server logic in a single server action reduces the number of
 
 ## Don't add aggregates or SQL queries inside a cycle { #aggregates-inside-cycle }
 
-Aggregates or SQL queries inside a For Each cycle mean repeated database calls for each iteration. This results in significant performance degradation, particularly with large datasets or nested loops.
+Aggregates or SQL queries inside a For Each cycle mean repeated database calls for each iteration.
+This results in significant performance degradation, particularly with large datasets or nested loops.
 
 ### Recommendations
 

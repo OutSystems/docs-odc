@@ -12,7 +12,7 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
+coverage-type:
   - none
 ---
 

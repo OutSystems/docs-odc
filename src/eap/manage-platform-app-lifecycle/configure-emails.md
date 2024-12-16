@@ -10,13 +10,12 @@ audience:
   - frontend developers
   - full stack developers
   - platform administrators
-  - team lead
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - procedure
-  - conceptual
+coverage-type:
+  - apply
+  - understand
 ---
 
 # Configure emails

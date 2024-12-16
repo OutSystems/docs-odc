@@ -13,8 +13,8 @@ audience:
 outsystems-tools:
   - odc portal
   - workflow builder
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Using workflows

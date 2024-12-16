@@ -1,5 +1,5 @@
 ---
-summary:
+summary: Manage AI agents with Azure OpenAI in OutSystems Data Cloud (ODC) and leverage natural language processing using ODC Studio for mobile and reactive web apps.
 tags: azure openai integration, function calling, ai agent configuration, natural language processing, odc studio
 guid: b4168514-211d-48f0-87c6-9754da53a124
 locale: en-us
@@ -12,12 +12,10 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-  - ai agent builder
-content-type:
-  - conceptual
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
-
 #  Use function calling in AI Agent Builder
 
 Function calling support in AI Agent Builder allows you to create AI agents that can understand user's prompts in natural language, look up the necessary information from your application data or external data sources, and generate responses in natural language. 

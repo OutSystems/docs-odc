@@ -1,16 +1,21 @@
 ---
 summary: Disabled button that is still visible.
-tags:
+tags: button visibility, button enable property, security, ui best practices, frontend development
 guid: 80a844f0-57f8-43eb-af04-5e727cd3bb38
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3616-10&node-type=CANVAS&t=E0BY5XjNnogt1jmq-0
-content-type:
-  - troubleshooting
-  - reference
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - none
 ---
-
 # Visible disabled Button
 
 Disabled button that's still visible.

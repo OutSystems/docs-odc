@@ -14,8 +14,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Use external identity providers in an app

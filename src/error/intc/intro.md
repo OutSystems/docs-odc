@@ -12,9 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-  - integration builder
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
 ---
 
 # Integrations console errors

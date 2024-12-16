@@ -1,15 +1,20 @@
 ---
-tags:
+tags: applicationcontext, screen context, odc, reactive web apps, mobile apps
 summary: OutSystems Developer Cloud (ODC) features ApplicationContext for contextual details on the current screen, and application.
 locale: en-us
 guid: d55f5702-dea5-4bc3-bf39-de884d07bffd
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - reference
+coverage-type:
+  - remember
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - none
 ---
-
 # ApplicationContext
 
 Provides contextual information based on the screen that is being presented. Used to identify the screen and application that is currently running.

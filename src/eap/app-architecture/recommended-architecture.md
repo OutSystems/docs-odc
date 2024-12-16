@@ -14,10 +14,10 @@ audience:
   - business analysts
 outsystems-tools:
   - none
-content-type:
-  - process
-  - best practice
-  - conceptual
+coverage-type:
+  - apply
+  - evaluate
+  - understand
 ---
 
 # Building a well-architected app

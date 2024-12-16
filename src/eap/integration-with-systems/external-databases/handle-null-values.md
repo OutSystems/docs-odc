@@ -13,8 +13,8 @@ audience:
   - backend developers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Handle null values

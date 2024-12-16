@@ -13,9 +13,9 @@ audience:
   - ui designers
 outsystems-tools:
   - odc studio
-content-type:
-  - reference
-  - conceptual
+coverage-type:
+  - remember
+  - understand
 ---
 
 # Themes

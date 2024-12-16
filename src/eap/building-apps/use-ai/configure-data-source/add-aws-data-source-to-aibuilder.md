@@ -13,8 +13,8 @@ audience:
   - platform administrators
 outsystems-tools:
   - odc portal
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Add the Amazon Kendra data source to the AI Agent Builder app

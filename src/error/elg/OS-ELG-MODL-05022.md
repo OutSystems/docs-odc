@@ -1,15 +1,19 @@
 ---
-summary: "The following name <InterfaceName/MethodName> begins with underscores"
-tags:
+summary: The following name <InterfaceName/MethodName> begins with underscores
+tags: error message, naming conventions, c# development, outsystems support, method names
 guid: cac9056a-b742-4962-a111-f86abf6269d2
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
+audience:
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # OS-ELG-MODL-05022
 
 ## Error message

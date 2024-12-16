@@ -1,15 +1,18 @@
 ---
 summary: Explore how to implement a dymanic sort with external entities in aggregates using OutSystems Developer Cloud (ODC).
-tags:
+tags: external entities, dynamic sort, calculated attributes, queries, aggregates
 locale: en-us
 guid: a5adf585-f77b-4f1f-bc14-5673ca767fbc
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6084-6
 platform-version: odc
-content-type:
-  - conceptual
+coverage-type:
+- understand
+audience:
+  - full stack developers
+outsystems-tools:
+  - none
 ---
-
 # Dynamic sort with external entities
 
 When working with [external entities](../../../integration-with-systems/external-databases/intro.md) in an aggregate, the process of generating queries is slightly different from when using internal data only. To access this external data, specialized queries are generated to retrieve and manipulate the data before the results are incorporated back into your app. This ensures that external data can be processed alongside your internal data.

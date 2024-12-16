@@ -15,9 +15,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - procedure
-  - process
+coverage-type:
+  - apply
 ---
 
 # Upgrading custom code libraries to .NET 8

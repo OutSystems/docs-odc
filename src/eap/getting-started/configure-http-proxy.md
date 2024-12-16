@@ -13,8 +13,8 @@ audience:
   - platform administrators
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # How to configure a HTTP proxy server in ODC Studio

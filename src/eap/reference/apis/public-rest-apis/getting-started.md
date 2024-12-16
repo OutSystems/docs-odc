@@ -1,17 +1,19 @@
 ---
 summary: In this article you will learn how to make your first API call.
-tags: 
-outsystems-tools: 
+tags: api, authentication, rest api, oauth 2.0, user management
+outsystems-tools:
+  - odc portal
 guid: 316cc17e-0e09-482e-87b1-e9e6d4f483ce
 locale: en-us
 app_type: reactive web apps, mobile apps
-content-type: 
-    - process
-audience: 
+content-type:
+  - process
+audience:
+  - backend developers
+  - full stack developers
 platform-version: odc
-figma: 
+figma:
 ---
-
 # Getting started
 
 This article describes how to get started with the ODC REST APIs, including how to authenticate and make secure calls to these APIs.
@@ -55,7 +57,7 @@ ACCESS\_TOKEN is the access token retrieved using the client credentials
 
 - Refer [User management API reference](../identity-v1.md)
 
-## Additional resources
+## Related resources
 
 * [Create API client](authentication/create-api-client.md)
 

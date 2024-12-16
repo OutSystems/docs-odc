@@ -12,11 +12,10 @@ audience:
   - frontend developers
   - full stack developers
 outsystems-tools:
-  - ai agent builder
   - odc portal
-content-type:
-  - procedure
-  - reference
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Add a custom AI model 

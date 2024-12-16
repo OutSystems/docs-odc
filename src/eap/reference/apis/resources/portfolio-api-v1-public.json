@@ -5,12 +5,31 @@
     "description": "REST endpoints for retrieving information about assets and environments in your organization.",
     "version": "v1"
   },
+  "servers": [
+    {
+    "url": "https://ODC_PORTAL_DOMAIN/api/portfolios/v1",
+    "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/identity/v1",
+      "description": "User and Access Management API.",
+      "variables": {
+        "odc-portal-domain": {
+          "default": "ODC_PORTAL_DOMAIN",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "security": [{
+    "bearerAuth": []
+  }],
   "paths": {
-    "/portfolios/v1/deployed-assets": {
+    "/deployed-assets": {
       "get": {
         "tags": [],
         "summary": "Retrieves a list of deployed assets.",
-        "description": "Retrieves a list of deployed assets containing updated deployment status per environment (stage).\nThe result only shows assets for which the API Client has **Asset management > Open** permission, and only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission.",
+        "description": "Retrieves a list of deployed assets containing updated deployment status per environment (stage).\n\nThe result only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission.",
         "operationId": "DeployedAssets_ListAssets",
         "parameters": [
           {
@@ -107,7 +126,7 @@
         "x-os-permissions": "The result only shows assets for which the API Client has **Asset management > Open** permission, and only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission."
       }
     },
-    "/portfolios/v1/environments": {
+    "/environments": {
       "get": {
         "tags": [],
         "summary": "Retrieves the list of environments (stages).",
@@ -409,12 +428,13 @@
           }
         }
       }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
     }
-  },
-  "tags": [
-    {
-      "name": "public",
-      "description": ""
-    }
-  ]
+  }
 }

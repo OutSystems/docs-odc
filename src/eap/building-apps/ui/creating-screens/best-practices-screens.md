@@ -1,15 +1,20 @@
 ---
 summary: Learn the best practices for building screens in OutSystems.
-tags:
+tags: best practices, ui patterns, widgets, responsive design, accessibility
 guid: 569562bc-96a5-4fe5-bce1-2b06832bd14e
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6410-593
-content-type:
-  - best practice
+coverage-type:
+  - evaluate
+audience:
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
 ---
-
 # Best practices for building screens
 
 OutSystems enables you to build [screens](../screen-about.md) quickly and intuitively. By following some recommendations, you can ensure that your screens are fast, user-friendly, and work well on different devices.

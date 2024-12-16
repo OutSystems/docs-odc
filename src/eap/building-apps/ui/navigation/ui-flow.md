@@ -13,9 +13,9 @@ audience:
   - ui designers
 outsystems-tools:
   - odc studio
-content-type:
-  - conceptual
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
 
 # UI Flows

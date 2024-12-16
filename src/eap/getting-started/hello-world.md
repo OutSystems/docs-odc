@@ -13,17 +13,22 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - tutorial
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Create your hello world app
 
 This article demonstrates how you can create a "Hello, world!" app in ODC.
 
-**Prerequisites**
+<iframe src="https://player.vimeo.com/video/1034568771" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Demo showing how to create a Hello world app in ODC Studio.</iframe>
 
-* You have installed the ODC Studio
+## Prerequisites
+
+To create your app, make sure you meet the following prerequisites:
+
+* You have installed ODC Studio
 * You are part of an organization
 * You have the development permissions
 
@@ -62,5 +67,3 @@ Open ODC Studio and follow these steps to create your "Hello, world" app:
     ODC is now compiling, optimizing, and publishing your app in the development stage.
 
 11. Click **Open in browser** to view your app.
-
-<iframe src="https://player.https://vimeo.com/1034568771" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Demo showing how to create a Hello world app in ODC Studio.</iframe>

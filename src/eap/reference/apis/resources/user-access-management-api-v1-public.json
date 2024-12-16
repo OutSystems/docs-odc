@@ -5,14 +5,33 @@
     "description": "REST endpoints for retrieving and managing user and access in your organization.",
     "version": "v1"
   },
+  "servers": [
+    {
+      "url": "https://ODC_PORTAL_DOMAIN/api/identity/v1",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/identity/v1",
+      "description": "User and Access Management API.",
+      "variables": {
+        "odc-portal-domain": {
+          "default": "ODC_PORTAL_DOMAIN",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "security": [{
+    "bearerAuth": []
+  }],
   "paths": {
-    "/identity/v1/application-roles": {
+    "/application-roles": {
       "get": {
         "tags": [
           "application-roles"
         ],
         "summary": "Returns a list of application roles.",
-        "description": "Returns a list of application roles that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > View end users** permission.",
+        "description": "Returns a list of application roles that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** permission.",
         "operationId": "ApplicationRole_QueryApplicationRoles",
         "parameters": [
           {
@@ -122,13 +141,13 @@
         "x-os-permissions": "API Client needs the **User management > View end users** permission."
       }
     },
-    "/identity/v1/application-roles/{key}/users": {
+    "/application-roles/{key}/users": {
       "get": {
         "tags": [
           "application-roles"
         ],
         "summary": "Returns the list of users for the specific application role.",
-        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > View end users** permission.",
+        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** permission.",
         "operationId": "ApplicationRole_QueryUsersByApplicationRole",
         "parameters": [
           {
@@ -205,13 +224,13 @@
         "x-os-permissions": "API Client needs the **User management > View end users** permission."
       }
     },
-    "/identity/v1/users/bulk": {
+    "/users/bulk": {
       "post": {
         "tags": [
           "users"
         ],
         "summary": "Bulk create users in the user profile database and also optionally in the built-in identity provider.",
-        "description": "Returns an operations status object with an operation key that can be used later to get the status of the bulk create.\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "Returns an operations status object with an operation key that can be used later to get the status of the bulk create.\n\nAPI Client needs the **User management > Manage users** permission.",
         "operationId": "BulkUserProfile_CreateBulkUserProfilesOperation",
         "requestBody": {
           "description": "Bulk Create User Request.",
@@ -274,13 +293,13 @@
         "x-os-permissions": "API Client needs the **User management > Manage users** permission."
       }
     },
-    "/identity/v1/users/bulk/{key}": {
+    "/users/bulk/{key}": {
       "get": {
         "tags": [
           "users"
         ],
         "summary": "Get the bulk user operation status.",
-        "description": "Returns an operations status object that contains the overall status of the bulk operation. \r\nIf the bulk operation has a status of 'Finished' or 'FinishedWithErrors', \r\nthe result of each and every item in the list is returned as well. \r\nIf the bulk operation is 'Pending' or 'Processing', only the overall status is returned.\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "Returns an operations status object that contains the overall status of the bulk operation. \r\n\nIf the bulk operation has a status of 'Finished' or 'FinishedWithErrors', \r\n\nthe result of each and every item in the list is returned as well. \r\n\nIf the bulk operation is 'Pending' or 'Processing', only the overall status is returned.\n\nAPI Client needs the **User management > Manage users** permission.",
         "operationId": "BulkUserProfile_GetBulkUserProfileOperationStatus",
         "parameters": [
           {
@@ -348,13 +367,13 @@
         "x-os-permissions": "API Client needs the **User management > Manage users** permission."
       }
     },
-    "/identity/v1/groups/{key}/users": {
+    "/groups/{key}/users": {
       "patch": {
         "tags": [
           "groups"
         ],
         "summary": "Allow to add or remove users from a group.",
-        "description": "Allows adding or removing users from a specified group. Manage group membership by specifying the group key and providing lists of user keys to be added or removed.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Allows adding or removing users from a specified group. Manage group membership by specifying the group key and providing lists of user keys to be added or removed.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
         "operationId": "Group_AddOrRemoveUsersFromGroup",
         "parameters": [
           {
@@ -443,7 +462,7 @@
           "groups"
         ],
         "summary": "Returns a list of users associated with a group.",
-        "description": "Returns a list of users associated with a group that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Returns a list of users associated with a group that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
         "operationId": "Group_QueryUsersFromGroup",
         "parameters": [
           {
@@ -559,13 +578,13 @@
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
       }
     },
-    "/identity/v1/groups": {
+    "/groups": {
       "post": {
         "tags": [
           "groups"
         ],
         "summary": "Creates a new group.",
-        "description": "Creates a new group by specifying a name and environment (stage). Optionally, you can include a list of users and application roles to assign to the group during creation.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Creates a new group by specifying a name and environment (stage). Optionally, you can include a list of users and application roles to assign to the group during creation.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
         "operationId": "Group_CreateGroup",
         "requestBody": {
           "description": "Group object with the necessary information.",
@@ -639,7 +658,7 @@
           "groups"
         ],
         "summary": "Returns the list of groups based on specified conditions.",
-        "description": "Returns a list of groups that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Returns a list of groups that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
         "operationId": "Group_QueryGroups",
         "parameters": [
           {
@@ -733,13 +752,13 @@
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
       }
     },
-    "/identity/v1/groups/{key}": {
+    "/groups/{key}": {
       "delete": {
         "tags": [
           "groups"
         ],
         "summary": "Deletes a group.",
-        "description": "Deletes a specified group using the group's key.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Deletes a specified group using the group's key.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
         "operationId": "Group_DeleteGroup",
         "parameters": [
           {
@@ -815,7 +834,7 @@
           "groups"
         ],
         "summary": "Returns information for a group.",
-        "description": "Retrieves detailed information about a group, including its name, description, and environment.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Retrieves detailed information about a group, including its name, description, and environment.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
         "operationId": "Group_ReadGroup",
         "parameters": [
           {
@@ -888,7 +907,7 @@
           "groups"
         ],
         "summary": "Updates a group.",
-        "description": "Updates the details of a group using the group's key. Allows modification of the group's name or description.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Updates the details of a group using the group's key. Allows modification of the group's name or description.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
         "operationId": "Group_UpdateGroup",
         "parameters": [
           {
@@ -983,13 +1002,13 @@
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
       }
     },
-    "/identity/v1/groups/{key}/application-roles": {
+    "/groups/{key}/application-roles": {
       "patch": {
         "tags": [
           "groups"
         ],
         "summary": "Allow to add or remove application roles from a group.",
-        "description": "Allows adding or removing application roles from a specified group. Manage roles by specifying the group key and providing lists of application role keys to be added or removed.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Allows adding or removing application roles from a specified group. Manage roles by specifying the group key and providing lists of application role keys to be added or removed.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
         "operationId": "Group_ModifyGroupApplicationRoles",
         "parameters": [
           {
@@ -1078,7 +1097,7 @@
           "groups"
         ],
         "summary": "Returns a list of application roles associated with a group.",
-        "description": "Returns a list of application roles that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Returns a list of application roles that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
         "operationId": "Group_QueryApplicationRolesGroups",
         "parameters": [
           {
@@ -1174,13 +1193,13 @@
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
       }
     },
-    "/identity/v1/users/{key}/application-roles/{roleKey}": {
+    "/users/{key}/application-roles/{roleKey}": {
       "post": {
         "tags": [
           "users"
         ],
         "summary": "Grants an application role to a user.",
-        "description": "Assigns an application role to a user by providing the application role key and the user key.\nAPI Client needs the **User management > Manage end-user access** permission.",
+        "description": "Assigns an application role to a user by providing the application role key and the user key.\n\nAPI Client needs the **User management > Manage end-user access** permission.",
         "operationId": "UserApplicationRoles_GrantApplicationRoleToUser",
         "parameters": [
           {
@@ -1256,7 +1275,7 @@
           "users"
         ],
         "summary": "Revokes an application role to a user.",
-        "description": "Revokes an application role from a user by providing the user key and application role key.\nAPI Client needs the **User management > Manage end-user access** permission.",
+        "description": "Revokes an application role from a user by providing the user key and application role key.\n\nAPI Client needs the **User management > Manage end-user access** permission.",
         "operationId": "UserApplicationRoles_RevokeApplicationRoleForUser",
         "parameters": [
           {
@@ -1328,13 +1347,13 @@
         "x-os-permissions": "API Client needs the **User management > Manage end-user access** permission."
       }
     },
-    "/identity/v1/users/{key}/application-roles": {
+    "/users/{key}/application-roles": {
       "get": {
         "tags": [
           "users"
         ],
         "summary": "Returns the list of application roles associated with a user.",
-        "description": "Returns a list of application roles associated with a user that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > View end users** permission.",
+        "description": "Returns a list of application roles associated with a user that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** permission.",
         "operationId": "UserApplicationRoles_QueryUserApplicationRoles",
         "parameters": [
           {
@@ -1455,13 +1474,13 @@
         "x-os-permissions": "API Client needs the **User management > View end users** permission."
       }
     },
-    "/identity/v1/users": {
+    "/users": {
       "post": {
         "tags": [
           "users"
         ],
         "summary": "Creates a new user.",
-        "description": "Creates a new user by specifying the user information. You can provide the user's name, photo URL, and active status. Additionally, the AddToBuiltInIdentityProvider can be used to add the user to the built-in provider.\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "Creates a new user by specifying the user information. You can provide the user's name, photo URL, and active status. Additionally, the AddToBuiltInIdentityProvider can be used to add the user to the built-in provider.\n\nAPI Client needs the **User management > Manage users** permission.",
         "operationId": "UserProfile_CreateUser",
         "requestBody": {
           "description": "The user object with the necessary information.",
@@ -1525,7 +1544,7 @@
           "users"
         ],
         "summary": "Returns the list of users based on specified conditions.",
-        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\nIf API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission.",
+        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\n\nIf API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission.",
         "operationId": "UserProfile_QueryUsers",
         "parameters": [
           {
@@ -1691,13 +1710,13 @@
         "x-os-permissions": "If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission."
       }
     },
-    "/identity/v1/users/{key}": {
+    "/users/{key}": {
       "delete": {
         "tags": [
           "users"
         ],
         "summary": "Deletes a user.",
-        "description": "Deletes a specified users using the user's key.\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "Deletes a specified users using the user's key.\n\nAPI Client needs the **User management > Manage users** permission.",
         "operationId": "UserProfile_DeleteUser",
         "parameters": [
           {
@@ -1763,7 +1782,7 @@
           "users"
         ],
         "summary": "Retrieves an user.",
-        "description": "Retrieves detailed information about a user using the user's key.\nYou need the **User management > View organization members** or **User management > View end users** permissions.",
+        "description": "Retrieves detailed information about a user using the user's key.\n\nYou need the **User management > View organization members** or **User management > View end users** permissions.",
         "operationId": "UserProfile_GetUser",
         "parameters": [
           {
@@ -1826,7 +1845,7 @@
           "users"
         ],
         "summary": "Updates the user.",
-        "description": "Updates the details of a user using the user's key. Allows modification of the user's name, photo URL, and active status.\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "Updates the details of a user using the user's key. Allows modification of the user's name, photo URL, and active status.\n\nAPI Client needs the **User management > Manage users** permission.",
         "operationId": "UserProfile_PatchUser",
         "parameters": [
           {
@@ -1901,13 +1920,13 @@
         "x-os-permissions": "API Client needs the **User management > Manage users** permission."
       }
     },
-    "/identity/v1/users/{key}/groups": {
+    "/users/{key}/groups": {
       "get": {
         "tags": [
           "users"
         ],
         "summary": "Returns a list of groups associated with a user.",
-        "description": "Returns a list of groups associated with a user that match the specified filters. Use query parameters to refine the search.\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "description": "Returns a list of groups associated with a user that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
         "operationId": "UserProfile_QueryGroupsByUser",
         "parameters": [
           {
@@ -2187,12 +2206,12 @@
           },
           "errorCode": {
             "type": "string",
-            "description": "Self Service error code for the overall bulk API operation.\r\nFor example, when the operation times out.",
+            "description": "Self Service error code for the overall bulk API operation.\r\n\nFor example, when the operation times out.",
             "nullable": true
           },
           "errorMessage": {
             "type": "string",
-            "description": "Self Service error message for the overall bulk API operation.\r\nFor example, when the operation times out.",
+            "description": "Self Service error message for the overall bulk API operation.\r\n\nFor example, when the operation times out.",
             "nullable": true
           },
           "operations": {
@@ -2200,7 +2219,7 @@
             "items": {
               "$ref": "#/components/schemas/BulkOperation"
             },
-            "description": "Details of each operation performed in the bulk request.\r\nAvailable when the bulk operation has Finished or FinishedWithErrors.\r\nThis will be an empty list when the bulk operation is Pending or Progressing.",
+            "description": "Details of each operation performed in the bulk request.\r\n\nAvailable when the bulk operation has Finished or FinishedWithErrors.\r\n\nThis will be an empty list when the bulk operation is Pending or Progressing.",
             "nullable": true
           }
         },
@@ -2230,7 +2249,7 @@
                 "$ref": "#/components/schemas/BulkOperationStatus"
               }
             ],
-            "description": "Status of the individual operation in the list of bulk operations.\r\nFor example: Inserted, Updated, Errored"
+            "description": "Status of the individual operation in the list of bulk operations.\r\n\nFor example: Inserted, Updated, Errored"
           },
           "errorCode": {
             "type": "string",
@@ -2244,7 +2263,7 @@
           },
           "record": {
             "type": "object",
-            "description": "A JSON object containing some extra info about the record in this operation.\r\nThis could contain some pieces of request info as well as additional info from the operation output.",
+            "description": "A JSON object containing some extra info about the record in this operation.\r\n\nThis could contain some pieces of request info as well as additional info from the operation output.",
             "nullable": true
           }
         },
@@ -2742,7 +2761,7 @@
                 "$ref": "#/components/schemas/UserProfileEmbedded"
               }
             ],
-            "description": "The embedded information to provide. (optional)\r\nOnly available when the request includes the query parameter `embed=`,\r\ne.g. `embed=applicationRoles`",
+            "description": "The embedded information to provide. (optional)\r\n\nOnly available when the request includes the query parameter `embed=`,\r\n\ne.g. `embed=applicationRoles`",
             "nullable": true
           }
         },
@@ -2866,6 +2885,13 @@
           "PendingRegistration"
         ],
         "type": "string"
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
       }
     }
   }

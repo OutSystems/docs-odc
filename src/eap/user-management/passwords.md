@@ -13,8 +13,8 @@ audience:
   - platform administrators
 outsystems-tools:
   - odc portal
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # Passwords

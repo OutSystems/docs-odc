@@ -1,16 +1,23 @@
 ---
 summary: Avoid ebabling Expand Inline property of SQL Query Parameter.
-tags:
+tags: sql injection, security, query parameters, performance, technical debt
 guid: de111634-1c2f-4d83-b60b-1b8ede727ce4
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3526-402&node-type=CANVAS&t=gKHyUAkhk05SIbF8-0
-content-type:
-  - troubleshooting
-  - reference
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - backend developers
+  - platform administrators
+  - tech leads
+  - data engineers
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # SQL injection
 
 Avoid enabling the Expand Inline property of a SQL Query Parameter since it could make your application vulnerable to SQL injection.

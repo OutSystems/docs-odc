@@ -10,8 +10,8 @@ audience:
   - platform administrators
 outsystems-tools:
   - none
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Set up Azure AI search with blob storage

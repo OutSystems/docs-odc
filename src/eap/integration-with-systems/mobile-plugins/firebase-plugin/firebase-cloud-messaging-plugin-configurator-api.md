@@ -14,10 +14,9 @@ audience:
 outsystems-tools:
   - forge
   - odc portal
-content-type:
-  - conceptual
-  - procedure
-  - process
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Firebase Cloud Messaging plugin using configurator APIs
@@ -313,6 +312,15 @@ For more information, see [Apple documentation](https://developer.apple.com/docu
 For both iOS and Android.
 
 Firebase SDKs for Android and iOS don't support subscribing to topics if the name contains spaces, like `TV Shows`.
+
+### On Changes in Android 15
+
+From Android 15 onwards, users can install an app in the [Private space](https://developer.android.com/about/versions/15/features#private-space). Users can lock their private space at any time, which means that push notifications are not shown until the user unlocks it.
+
+It is not possible to detect if an app is installed in the private space. Therefore, if your app shows any critical notifications, inform your users to avoid installing the app in the private space.
+
+For more information about the behavior changes of your app related to the private space, refer to [Android documentation](https://developer.android.com/about/versions/15/behavior-changes-all#private-space-changes).
+
 
 ## On compatibility with Firebase Performance
 

@@ -13,8 +13,8 @@ audience:
 outsystems-tools:
   - odc portal
   - odc studio
-content-type:
-  - best practice
+coverage-type:
+  - evaluate
 ---
 
 # Document your Forge asset

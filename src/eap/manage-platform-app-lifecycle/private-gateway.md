@@ -14,9 +14,9 @@ audience:
   - infrastructure managers
 outsystems-tools:
   - none
-content-type:
-  - conceptual
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Configure a private gateway to your network

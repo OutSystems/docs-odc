@@ -14,8 +14,8 @@ audience:
 outsystems-tools:
   - forge
   - odc studio
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # About AI Agent Builder

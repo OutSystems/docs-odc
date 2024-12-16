@@ -10,9 +10,8 @@ audience:
   - mobile developers
 outsystems-tools:
   - forge
-content-type:
-  - procedure
-  - process
+coverage-type:
+  - apply
 ---
 
 # Using Cordova Plugins

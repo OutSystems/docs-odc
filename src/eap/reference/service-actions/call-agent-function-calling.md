@@ -12,9 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-  - ai agent builder
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # CallAgent V2 service action

@@ -8,14 +8,10 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5631-492
 audience:
   - business analysts
-  - team lead
-  - team manager
-  - project managers
-  - product owners
 outsystems-tools:
   - none
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # About business processes

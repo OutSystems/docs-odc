@@ -10,11 +10,10 @@ audience:
   - mobile developers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
-  - process
-  - conceptual
-  - reference
+coverage-type:
+  - apply
+  - understand
+  - remember
 ---
 
 # Creating custom obfuscation rules

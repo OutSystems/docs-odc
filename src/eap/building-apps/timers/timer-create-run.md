@@ -13,8 +13,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Create and run Timers

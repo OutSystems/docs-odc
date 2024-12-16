@@ -1,17 +1,19 @@
 ---
 summary: Discover how to call APIs in OutSystems Developer Cloud (ODC) using an access token, with step-by-step guidance for developers.
-tags: 
-outsystems-tools: 
+tags: api access token, rest api, odc, token validation, api call example
+outsystems-tools:
+  - odc portal
 guid: 850e2e06-cdab-4e45-9ea6-2964c1a3a5ce
 locale: en-us
 app_type: reactive web apps, mobile apps
-content-type: 
-    - procedure
-audience: 
+content-type:
+  - procedure
+audience:
+  - full stack developers
+  - backend developers
 platform-version: odc
-figma: 
+figma:
 ---
-
 # Call API using the access token
 
 Once the authorization server validates the credentials and generates an access token, you can call the APIs using the access token. The access token is valid only for 12 hours from the time it was generated. Use the access token within the validity period of to access the APIs.
@@ -34,8 +36,7 @@ Here’s an example of the List users API, which retrieves a list of users who h
 
 ```curl
 
-curl -X GET "https://ODC_PORTAL_DOMAIN/api/identity/v1/users?hasApplicationRoles=true&limit=10&offset=0" \
--H "Authorization: Bearer ACCESS_TOKEN"
+curl -X GET "https://ODC_PORTAL_DOMAIN/api/identity/v1/users?hasApplicationRoles=true&limit=10&offset=0" -H "Authorization: Bearer ACCESS_TOKEN"
 
 ```
 

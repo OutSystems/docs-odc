@@ -13,8 +13,8 @@ audience:
   - frontend developers
 outsystems-tools:
   - odc portal
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Add Microsoft Entra ID for use as external identity provider

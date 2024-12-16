@@ -1,15 +1,21 @@
 ---
 summary: How to navigate to a root domain and access a default ODC app.
-tags:
+tags: seo, redirection, reverse proxy, nginx configuration, cdn
 guid: b622d85c-f6f8-4833-984e-6f825c68754b
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - procedure
+coverage-type:
+  - apply
+audience:
+  - backend developers
+  - full stack developers
+  - infrastructure managers
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # Redirect domains
 
 <div class="warning" markdown="1">
