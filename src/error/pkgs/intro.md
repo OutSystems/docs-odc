@@ -10,10 +10,9 @@ audience:
   - platform administrators
   - full stack developers
 outsystems-tools:
-  - forge
   - odc portal
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
 ---
 
 # Package Manager Service

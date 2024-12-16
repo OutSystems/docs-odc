@@ -12,9 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
-  - process
+coverage-type:
+  - apply
 ---
 
 # Fetch and display data from the database in OutSystems

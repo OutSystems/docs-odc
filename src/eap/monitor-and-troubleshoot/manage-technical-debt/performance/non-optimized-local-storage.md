@@ -1,16 +1,20 @@
 ---
 summary: The Local Storage model is not optimized.
-tags:
+tags: local storage optimization, mobile performance, client aggregates, data modeling, app performance improvement
 guid: 3d1e42c4-4ce3-4d68-876b-7f64a4c85d7e
 locale: en-us
 app_type: mobile apps
 platform-version: odc
 figma:
-content-type:
-  - troubleshooting
-  - reference
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - mobile developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
 ---
-
 # Non-optimized Local Storage
 
 <div class="info" markdown="1">

@@ -10,15 +10,14 @@ audience:
   - mobile developers
   - frontend developers
   - full stack developers
-  - team lead
   - ui designers
   - business analysts
 outsystems-tools:
   - odc portal
   - workflow builder
-content-type:
-  - conceptual
-  - best practice
+coverage-type:
+  - understand
+  - evaluate
 ---
 
 # Workflows in ODC

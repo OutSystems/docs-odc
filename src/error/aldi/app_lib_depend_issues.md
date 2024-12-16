@@ -13,8 +13,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
 ---
 
 # Solving app or library dependency errors

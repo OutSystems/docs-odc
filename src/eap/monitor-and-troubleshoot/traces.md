@@ -12,10 +12,10 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - conceptual
-  - procedure
-  - best practice
+coverage-type:
+  - understand
+  - apply
+  - evaluate
 ---
 
 # Traces

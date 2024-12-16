@@ -11,10 +11,9 @@ audience:
   - frontend developers
   - full stack developers
 outsystems-tools:
-  - ai agent builder
   - odc portal
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Create an agent

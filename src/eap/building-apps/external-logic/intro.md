@@ -14,10 +14,9 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - process
-  - procedure
-  - conceptual
+coverage-type:
+  - apply
+  - understand
 ---
 
 # Extend your apps with external logic using custom code

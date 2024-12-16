@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # Service actions

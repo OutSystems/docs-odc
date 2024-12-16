@@ -12,10 +12,9 @@ outsystems-tools:
   - forge
   - odc studio
   - odc portal
-content-type:
-  - process
-  - procedure
-  - reference
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Firebase Cloud Messaging plugin using server actions

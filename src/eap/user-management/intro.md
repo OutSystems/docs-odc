@@ -8,14 +8,13 @@ platform-version: odc
 tags: user management, access control, role-based access control, group management, permissions
 audience:
   - platform administrators
-  - team lead
   - full stack developers
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - conceptual
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
 
 # User management

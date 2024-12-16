@@ -12,9 +12,9 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - reference
-  - conceptual
+coverage-type:
+  - remember
+  - understand
 ---
 
 # Edit expressions

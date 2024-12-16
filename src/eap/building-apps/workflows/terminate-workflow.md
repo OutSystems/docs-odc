@@ -1,15 +1,19 @@
 ---
 summary: Learn how to terminate a workflow
-tags:
+tags: workflow termination, mobile apps, reactive web apps, workflow management, automatic activities
 locale: en-us
 guid: 79d2da47-7cb8-48eb-bc23-04f62fd67c86
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - conceptual
+coverage-type:
+  - understand
+audience:
+  - full stack developers
+  - mobile developers
+outsystems-tools:
+  - none
 ---
-
 # Terminate a workflow
 
 When implementing your workflow, you can use a **Terminate** node to stop the workflow execution. 

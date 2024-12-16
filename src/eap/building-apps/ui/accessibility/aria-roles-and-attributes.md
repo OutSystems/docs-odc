@@ -12,10 +12,9 @@ audience:
   - ui designers
 outsystems-tools:
   - odc studio
-  - outsystems ui
-content-type:
-  - conceptual
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Accessible Rich Internet Applications roles and attributes

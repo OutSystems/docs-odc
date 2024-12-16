@@ -10,8 +10,8 @@ audience:
   - platform administrators
 outsystems-tools:
   - ai agent builder
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Set up Amazon Bedrock foundation AI models

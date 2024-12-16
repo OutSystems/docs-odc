@@ -63,6 +63,21 @@
       },
       "uniqueItems": true
     },
+    "coverage-type": {
+      "type": ["array"],
+      "items": {
+        "type": "string",
+        "enum": [
+          "remember",
+          "understand",
+          "apply",
+          "evaluate",
+          "unblock",
+          "none"
+        ]
+      },
+      "uniqueItems": true
+    },
     "content-type": {
       "type": [
         "array"
@@ -102,7 +117,7 @@
           "test engineers",
           "architects",
           "platform administrators",
-          "technology leaders",
+          "tech leads",
           "infrastructure managers",
           "ui designers",
           "business analysts",

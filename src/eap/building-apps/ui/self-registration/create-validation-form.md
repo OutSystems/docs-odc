@@ -13,8 +13,8 @@ audience:
   - ui designers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Create a verification code and password verification form

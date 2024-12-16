@@ -1,16 +1,20 @@
 ---
 summary: Use the Count property of an Aggregate for SQL query to check if results were returned.
-tags:
+tags: count property, aggregate, sql query, performance, outsystems
 guid: 468193f3-a09a-4dfb-acc8-f14947476d95
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - troubleshooting
-  - reference
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - mobile developers
+  - full stack developers
+outsystems-tools:
+  - none
 ---
-
 # Inefficient empty list test
 
 Using the Count property of an Aggregate or SQL query to check if results were returned.

@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc portal
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Monitoring and troubleshooting apps

@@ -13,9 +13,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-  - ai mentor studio
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Introduction to function calling

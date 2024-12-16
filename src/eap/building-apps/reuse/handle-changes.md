@@ -12,9 +12,9 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - reference
-  - best practice
+coverage-type:
+  - remember
+  - evaluate
 ---
 
 # Handle changes in exposed functionality

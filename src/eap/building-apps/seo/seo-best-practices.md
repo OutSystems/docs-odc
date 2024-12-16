@@ -1,15 +1,20 @@
 ---
 summary: SEO best practices.
-tags:
+tags: seo best practices, crawlability, url standardization, http status codes, outsystems reactive apps
 guid: e4937d41-b341-4d6b-bd84-7b7958672549
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - best practice
+coverage-type:
+  - evaluate
+audience:
+  - frontend developers
+  - full stack developers
+  - mobile developers
+outsystems-tools:
+  - none
 ---
-
 # SEO best practices
 
 This article outlines key technical considerations that, if not implemented, may impose SEO limitations when ranking a public app (website).

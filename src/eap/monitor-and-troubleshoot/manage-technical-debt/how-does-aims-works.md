@@ -1,15 +1,21 @@
 ---
-summary:
-tags:
+summary: Analyze code quality using AI Mentor System in OutSystems Data Cloud (ODC) for performance, architecture, maintenance, and security insights.
+tags: code quality, ai mentor system, code analysis, odc, performance
 guid: CA38C82A-E390-425B-B588-D6BD3F692928
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3621-877
-content-type:
-  - conceptual
+coverage-type:
+  - understand
+audience:
+  - full stack developers
+  - platform administrators
+  - tech leads
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # How ODC Code quality works
 
 Code quality, powered by AI Mentor System (AIMS) works by analyzing your applications code against a set of best practices and code patterns and it provides you a detailed report of your applications code quality findings.

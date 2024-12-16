@@ -10,8 +10,8 @@ audience:
   - mobile developers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Customize Deeplink Behavior

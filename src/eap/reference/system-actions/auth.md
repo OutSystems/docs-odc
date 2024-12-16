@@ -13,8 +13,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # Authentication system actions

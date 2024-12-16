@@ -13,8 +13,8 @@ audience:
   - platform administrators
 outsystems-tools:
   - forge
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
 ---
 
 # OS-FRGE-AST-40403

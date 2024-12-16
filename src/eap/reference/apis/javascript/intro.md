@@ -1,15 +1,21 @@
 ---
 summary: Explore how OutSystems Developer Cloud (ODC) enhances mobile and reactive web apps through its comprehensive JavaScript API for custom user experiences.
-tags:
+tags: javascript api, mobile app development, reactive web apps, outsystems developer cloud, feedback handling
 guid: f58513d5-9cae-419d-b7a7-81dca37bdd61
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - reference
+coverage-type:
+  - remember
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # JavaScript API
 
 The OutSystems JavaScript API allows you to call OutSystems specific actions and act upon mobile app events in your JavaScript code. For example, to show and hide feedback messages in JavaScript, or handle application upgrade/load events in a specific way.

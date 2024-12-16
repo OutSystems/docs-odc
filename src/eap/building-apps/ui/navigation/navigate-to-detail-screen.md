@@ -11,8 +11,8 @@ audience:
   - frontend developers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Navigate to a Detail Screen

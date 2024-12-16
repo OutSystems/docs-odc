@@ -9,11 +9,10 @@ figma:
 audience:
   - mobile developers
 outsystems-tools:
-  - appshield
   - odc studio
-content-type:
-  - procedure
-  - conceptual
+coverage-type:
+  - apply
+  - understand
 ---
 
 # Query All Packages permission in Android apps using AppShield

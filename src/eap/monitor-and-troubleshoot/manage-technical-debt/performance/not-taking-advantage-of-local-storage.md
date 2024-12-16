@@ -1,16 +1,19 @@
 ---
 summary: Using too many server requests instead of Local Storage
-tags:
+tags: local storage, server requests, data synchronization, offline performance, mobile app optimization
 guid: 3d6eebdf-a7d5-43fc-b885-468832a87141
 locale: en-us
 app_type: mobile apps
 platform-version: odc
 figma:
-content-type:
-  - troubleshooting
-  - reference
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - mobile developers
+outsystems-tools:
+  - odc studio
 ---
-
 # Not taking advantage of Local Storage
 
 <div class="info" markdown="1">

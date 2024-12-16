@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - none
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
 ---
 
 # OS-FRGE-AST-40004

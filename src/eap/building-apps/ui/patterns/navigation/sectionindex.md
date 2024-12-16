@@ -11,9 +11,9 @@ audience:
   - frontend developers
 outsystems-tools:
   - odc studio
-content-type:
-  - reference
-  - procedure
+coverage-type:
+  - remember
+  - apply
 ---
 
 # Section Index

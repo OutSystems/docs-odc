@@ -12,11 +12,11 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - troubleshooting
+coverage-type:
+  - unblock
 ---
 
-# Troubleshooting aggregates that use multiple sources of data
+# Troubleshooting aggregates that use data mashup
 
 Errors may occur when executing aggregates with multiple sources and if the execution plan consumes too much memory. Queries that use data from different sources may require a large amount of memory and CPU to process the required data, depending on the query complexity, logic, and data volume. 
 

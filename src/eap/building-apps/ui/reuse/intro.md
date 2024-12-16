@@ -13,8 +13,8 @@ audience:
   - ui designers
 outsystems-tools:
   - odc studio
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Reuse UI

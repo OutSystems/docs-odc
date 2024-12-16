@@ -12,8 +12,8 @@ audience:
   - ui designers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Testing and fixing accessibility issues

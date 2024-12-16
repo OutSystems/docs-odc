@@ -11,12 +11,12 @@ audience:
   - platform administrators
   - infrastructure managers
   - ui designers
-  - technology leaders
+  - tech leads
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Cloud-native architecture of OutSystems Developer Cloud
