@@ -61,3 +61,7 @@ When [consuming REST API Methods](consume-a-rest-api.md) in your app, OutSystems
 | `{"name": "Christine Sharp"}`| Text | |
 
 Data that can't be converted to one of the above data types is converted to Text.
+
+## Related resources
+
+* [Consuming REST APIs](https://learn.outsystems.com/training/journeys/consuming-rest-api-207) online course

@@ -117,3 +117,9 @@ ODC Studio lets you visualize the relationships in your app data model in real-t
 You can organize entities into folders. Although folders don't affect the app data model, it lets developers group entities by higher concepts.
 
 To learn more about relationships between entities, refer to [relationships between entities](modeling/relationship/relationships.md).
+
+## Related resources
+
+* [Modeling Data](https://learn.outsystems.com/training/journeys/modeling-data-643) online course
+
+* [Modeling Data Relationships](https://learn.outsystems.com/training/journeys/modeling-data-relationships-642) online course

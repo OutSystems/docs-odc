@@ -152,3 +152,6 @@ An asset can have one of the following deployment statuses:
 
 You can access the log information for each **asset deployment** by clicking the row for which you want more information.
 
+## Related resources
+
+* [Continuous Delivery in ODC](https://learn.outsystems.com/training/journeys/continuous-delivery-2396) online course

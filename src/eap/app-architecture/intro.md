@@ -81,3 +81,7 @@ Apps hold all the configuration values, even those implemented at the consumed l
 ![Diagram showing the deployment process of an app from Development to QA and Production with container image reuse and configuration applications in OutSystems Developer Cloud.](images/deployment-process-diag.png "App Deployment Process Diagram")
 
 Are you planning to build your first app? See recommendations for [building a well-architected app](recommended-architecture.md).
+
+## Related resources
+
+* [Architecture Fundamentals in ODC](https://learn.outsystems.com/training/journeys/architecture-fundamentals-559) online course

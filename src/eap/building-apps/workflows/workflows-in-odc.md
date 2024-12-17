@@ -123,3 +123,4 @@ Here are some points to consider as you implement workflows in ODC:
 * [Using workflows](using-workflows.md)
 * [Workflow nodes](workflow-components.md)
 * [Troubleshooting workflows](troubleshooting-workflows.md)
+* [Building Workflows in ODC](https://learn.outsystems.com/training/journeys/building-workflows-in-odc-2690) online course

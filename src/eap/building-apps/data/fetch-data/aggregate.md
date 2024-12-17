@@ -118,3 +118,9 @@ To learn more about writing better queries, refer to [writing better queries in 
 | Count | Number of records returned by the Count query. |  | Long Integer |  |
 | IsDataFetched | True when data has been fetched from the database and is ready to be used. | Yes | Boolean |  |
 | HasFetchError | True when there is an error during data fetch due to a server error or communication timeout. | Yes | Boolean |  |
+
+## Related resources
+
+* [Aggregates 101](https://learn.outsystems.com/training/journeys/aggregates-101-634) online course
+
+* [Advanced Aggregates](https://learn.outsystems.com/training/journeys/advanced-aggregates-633) online course

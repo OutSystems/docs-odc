@@ -38,3 +38,5 @@ To better understand queries in data mashup, refer to [Writing better queries in
 * [Data mashup transactions](transactions-data-mashup.md)
 
 * [Troubleshooting aggregates that use data mashup](data-mashup-errors.md)
+
+* [Integrate with External Databases (ODC)](https://learn.outsystems.com/training/journeys/integrate-external-databases-odc-2644) online course

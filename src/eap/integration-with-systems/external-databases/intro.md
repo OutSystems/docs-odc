@@ -31,4 +31,8 @@ How it works:
 1. First, from the ODC Portal, admins [create connections](create-connection-external-data.md) to the external data source and select the entities. For the supported external data sources, refer to the [OutSystems system requirements for ODC](../../getting-started/system-requirements.md#supported-external-data-sources).
 1. Then, in ODC studio, developers use Aggregates to fetch the data in their apps, having the option to [combine data from different data sources](../../building-apps/data/fetch-data/data-mash.md).
 
-See how OutSystems [handles your external data in Data Fabric](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-fabric).
+## Related resources
+
+* See how OutSystems [handles your external data in Data Fabric](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-fabric).
+
+* [Integrate with External Databases (ODC)](https://learn.outsystems.com/training/journeys/integrate-external-databases-odc-2644) online course
