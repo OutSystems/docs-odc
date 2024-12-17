@@ -47,7 +47,7 @@ The following diagram illustrates the relationship between the entities that are
                                                                        
 ![Diagram illustrating the relationships between workflow entities](images/workflow-entities-odcs.png "Workflow entity relationships")
 
-## Related articles
+## Related resources
 
 * [Build UI components using workflow entities](filter-workflows.md)
 

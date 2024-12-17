@@ -46,7 +46,7 @@ Once the deployment is complete, you can retrieve the two OpenAI registration ke
 
 You can use the keys and the endpoint in the AI Agent Builder app to interact with the OpenAI model.
 
-## 	Next steps
+## Next steps
 
 [Add Azure OpenAI model in AI Agent Builder app](add-azure-model-to-aibuilder.md)
 

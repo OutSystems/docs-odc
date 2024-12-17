@@ -54,7 +54,7 @@ Here are some use cases where you can implement business processes:
 
 * **Loan approval**: A loan approval business process identifies the tasks involved from the time a customer raises a loan request until the disbursement of the loan amount or rejection of the loan request.
 
-## Related articles 
+## Related resources
 
 [Workflows in ODC](workflows-in-odc.md)
 

@@ -88,7 +88,7 @@ To set up the Amazon Bedrock foundation AI models, follow these steps:
 
 * [Create an agent](../create-agent.md)
 
-## Additional resources
+## Related resources
 
 **Amazon Bedrock**
 

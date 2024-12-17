@@ -50,7 +50,7 @@ To use function calling support in AI Agent Builder, follow these steps in ODC S
 
 ![Flowchart illustrating the process of using function calling in AI Agent Builder, starting from checking if an AI agent is configured to generating an answer.](images/using-function-calling-odcs.png "Using function calling")
 
-## Additional resources
+## Related resources
 
 * [Function calling overview](overview.md)
 
