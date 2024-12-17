@@ -1,4 +1,5 @@
 ---
+helpids: 30501, 30502
 summary: Learn how to create connections to external data sources in the ODC Portal.
 tags: database integration, data security, data fabric, private gateways, configuration management
 guid: 32004a44-1a95-46b2-abcb-88ad76f51961
