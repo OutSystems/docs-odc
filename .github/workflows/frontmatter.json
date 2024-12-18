@@ -64,7 +64,10 @@
       "uniqueItems": true
     },
     "coverage-type": {
-      "type": ["array"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "type": "string",
         "enum": [
@@ -80,7 +83,8 @@
     },
     "content-type": {
       "type": [
-        "array"
+        "array",
+        "null"
       ],
       "items": {
         "type": "string",
