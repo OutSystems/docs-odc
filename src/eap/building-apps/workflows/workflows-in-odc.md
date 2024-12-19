@@ -40,6 +40,8 @@ With the workflow editor, you can:
 
 * Import and export workflows to share within your organization and with external partners.
 
+* Switch between the default summary view for comprehensive understanding of workflows and the iconified view for a high-level structure. In the summary view, for each node in the workflow you are provided detailed information such as events triggered, conditions configured and service actions invoked. The iconified view displays only the icon of each node.
+
 Here's a video providing a concise overview of workflows.
 
 <iframe src="https://player.vimeo.com/video/1027587143" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">This video provides a concise overview of ODC workflows</iframe>
