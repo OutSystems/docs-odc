@@ -74,8 +74,6 @@ Sampling occurs at the trace level rather than the span level. This helps preven
 
 To access the latest traces, click the **Refresh** button on the **Traces** screen, as some traces may be in a processing state. ODC displays traces from the development stage, ordered by time in descending order. You can filter the options to narrow traces by parent span or date. You can view traces from the previous 30 days to the current date in 14-day intervals.
 
-![Screenshot displaying a specific span in the ODC Portal with details such as start time, app, element, status, duration, and related logs.](images/specific-span-pl.png "Specific Span in ODC Portal")
-
 ODC calculates the total duration of a trace from the start time of the first span to the end time of the last span. This represents the overall time taken to execute all spans within the trace. However, there are situations where total duration differs, such as:
 
 * Keep-alive elements such as carousels.
@@ -89,7 +87,7 @@ The following steps describe how to use traces to debug your apps.
 
 1. To display the ODC internal spans for additional context and troubleshooting, click **Show details**(Eye).
   
-    ![Screenshot showing a list of all spans in the ODC Portal, including details like start time, app, element, status, duration, and related logs.](images/all-spans-pl.png "List of All Spans in ODC Portal")
+    ![Screenshot showing a list of all spans in the ODC Portal, including details like start time, app, element, status, duration, and related logs.](images/eye-all-spans-pl.png "List of All Spans in ODC Portal")
 
 1. To display related logs, click the document icon next to the error.
 

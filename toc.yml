@@ -522,8 +522,10 @@
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/sql-injection.md
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/visible-disabled-button.md
 
-    - href: eap/monitor-and-troubleshoot/traces.md
-    - href: eap/monitor-and-troubleshoot/client-side-traces.md
+    - href: eap/monitor-and-troubleshoot/traces/intro.md
+    - topics: 
+        - href: eap/monitor-and-troubleshoot/traces/server-side-traces.md
+        - href: eap/monitor-and-troubleshoot/traces/client-side-traces.md
     
 # Reference
 - href: eap/reference/intro.md

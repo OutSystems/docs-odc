@@ -18,7 +18,7 @@ coverage-type:
   - apply
 ---
 
-# Client-side traces 
+# Client-side traces
 
 Client-side traces allow you to analyze client-side execution. This provides insights into elements such as Blocks or Client actions. With client-side traces, you can:
 
@@ -26,7 +26,7 @@ Client-side traces allow you to analyze client-side execution. This provides ins
 * Monitor requests to get detailed information about user interactions.
 * Understand the performance of each span in the app and its dependencies. Modify the elements associated with slower spans to improve the app's performance.
 
-For more information about backend traces, refer to [Traces](traces.md).
+For more information about backend traces, refer to [Traces](intro.md).
 
 The following are different types of client-side traces:
 
@@ -52,10 +52,9 @@ All apps have their client-side traces off by default. The following steps descr
 
 1. Select the app for which you want to enable client-side traces.
 
-    ![Screenshot of activating client-side traces in ODC Portal.](images/activate-client-side-traces-pl.png "Activating Client-Side Traces in ODC Portal")
+1. Go to **Monitoring & Troubleshooting** under the **Configuration** tab, then click **Capture client-side traces and metrics** to enable client-side traces.
 
-1. Go to **Monitoring & Troubleshooting** under the **Configuration** tab, then click **Activate client-side tracing** to enable client-side traces.
-
+    ![Screenshot of activating client-side traces in ODC Portal.](images/enable-client-side-traces-pl.png "Activating Client-Side Traces in ODC Portal")
 
 ## Working with client-side traces
 
