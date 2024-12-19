@@ -16,7 +16,7 @@ audience:
   - backend developers
 ---
 
-# Convert Excel to Record List
+# Excel to Record List
 
 The **Excel to Record List** action converts an Excel object to a Record List. This article explains how you can use the **Excel to Record List** action to load data from an Excel file and save it in your app at runtime.
 

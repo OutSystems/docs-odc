@@ -225,10 +225,9 @@
         - href: eap/building-apps/logic/output-parameter.md
         - href: eap/building-apps/logic/application-ready.md
         - href: eap/building-apps/logic/application-resume.md
-        - href: eap/building-apps/logic/expressions.md
         - href: eap/building-apps/logic/excel-record-list.md
         - href: eap/building-apps/logic/record-list-excel.md
-
+        - href: eap/building-apps/logic/expressions.md
         - topics:
             - href: eap/building-apps/logic/expressions/expression-editor.md
             - href: eap/building-apps/logic/expressions/operators.md

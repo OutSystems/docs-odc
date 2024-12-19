@@ -16,11 +16,11 @@ audience:
   - full stack developers
 ---
 
-# Convert Record List to Excel
+# Record List to Excel
 
 The **Record List to Excel** action converts a Record list to an Excel file. This article explains how you can use the Record List action to convert your data into an Excel file.
 
-## **Convert a Record List to Excel**
+## Convert a Record List to Excel
 
 The following example shows a scenario in which you export a list of employees from an Entity called **Employee** into an Excel spreadsheet.
 
