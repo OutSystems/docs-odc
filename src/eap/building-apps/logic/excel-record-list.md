@@ -58,8 +58,8 @@ The following example shows a scenario in which you want to add or update the na
 |File Content| Holds the Excel file.| Yes | The expected data type is Binary Data.|
 |Sheet Name| Name of the Excel sheet to import. By default, the first sheet is imported unless a sheet named 'Sheet1' exists in the file. |  |The expected data type is Text.                            |
 
-## Related articles
+## Related resources
 
-* [Record List to Excel in ODC](record-list-excel.md)
+* [Record List to Excel](record-list-excel.md)
 
 * [Bootstrap an Entity Using an Excel File](../data/modeling/excel-bootstrap.md)

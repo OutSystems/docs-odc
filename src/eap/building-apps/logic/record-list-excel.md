@@ -46,6 +46,6 @@ The following example shows a scenario in which you export a list of employees f
 |Description| Text that documents the element.  | No | | Useful for documentation purposes. The maximum size of this property is 2000 characters. |
 |Record List| Holds the list of records to be exported to an Excel file |Yes | | The required type for this property is **Record List**.  |
 
-## Related articles
+## Related resources
 
 * [Excel to Record List](excel-record-list.md)
