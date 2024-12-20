@@ -37,7 +37,7 @@ The following are different types of server-side traces:
 * System Event: Monitor system events such as ApplicationReady and ApplicationResume.
 * Timer: Track scheduled tasks, including execution duration and errors, to ensure timers run as expected.
 
-For more information about backend traces, refer to [Traces](intro.md).
+For more information, refer to [Traces](intro.md).
 
 ## Turn server-side traces on or off
 

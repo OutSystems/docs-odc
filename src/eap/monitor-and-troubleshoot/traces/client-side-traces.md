@@ -26,8 +26,6 @@ Client-side traces allow you to analyze client-side execution. This provides ins
 * Monitor requests to get detailed information about user interactions.
 * Understand the performance of each span in the app and its dependencies. Modify the elements associated with slower spans to improve the app's performance.
 
-For more information about backend traces, refer to [Traces](intro.md).
-
 The following are different types of client-side traces:
 
 * Block - Linked to the Block language element covering the screen's load period and containing event actions. It also includes the block's disposal period and the OnDestroy event action of the block.
@@ -37,6 +35,8 @@ The following are different types of client-side traces:
 * Required Scripts - Linked to the RequiredScripts language element.
 * Screen - Linked to the render (either initial render or a re-render) of a screen or part of it. Screen traces contain the screen's disposal period and the OnDestroy event action of the screen.
 * System Event - Linked the ApplicationReady and ApplicationResume system events.
+
+For more information, refer to [Traces](intro.md).
 
 ## Enable client-side traces
 
