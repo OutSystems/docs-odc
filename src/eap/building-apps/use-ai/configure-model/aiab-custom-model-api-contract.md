@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - ai mentor studio
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # Custom AI model API contract

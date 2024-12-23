@@ -11,13 +11,12 @@ audience:
   - frontend developers
   - full stack developers
 outsystems-tools:
-  - outsystems developer cloud
   - odc studio
-content-type:
-  - procedure
-  - best practice
-  - reference
-  - troubleshooting
+coverage-type:
+  - apply
+  - evaluate
+  - remember
+  - unblock
 ---
 
 # External Libraries SDK README

@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Relationships between entities
@@ -111,3 +111,9 @@ When you set the delete rule of the reference attribute to ignore it enables you
 You can use the **Ignore** value when implementing a historical [data archiving](../../data-best-practices/data-archiving.md) mechanism.
 
 For example, suppose every operation performed on `Order` is audited to `OrderHistory`. Setting the the delete rule of the reference attribute to ignore between `Order` and `OrderHistory` entities allows you to delete an order and retain the associated audit record.
+
+## Related resources
+
+* [Modeling Data Relationships](https://learn.outsystems.com/training/journeys/modeling-data-relationships-642) online course
+
+* [Data Model Integrity](https://learn.outsystems.com/training/journeys/data-model-integrity-638) online course

@@ -1,17 +1,21 @@
 ---
 summary: This article provides conceptual information about ODC REST API authentication and authorization.
-tags: 
-outsystems-tools: 
+tags: api, authentication, authorization, oauth 2.0, openid connect
+outsystems-tools:
+  - odc studio
+  - odc portal
 guid: 3a2b2308-eb3f-42f5-ac92-ab287e3e6af4
 locale: en-us
 app_type: reactive web apps, mobile apps
-content-type: 
-    - conceptual
-audience: 
+content-type:
+  - conceptual
+audience:
+  - backend developers
+  - full stack developers
+  - platform administrators
 platform-version: odc
-figma: 
+figma:
 ---
-
 # API authentication and authorization
 
 Authentication ensures the identity of the user or system accessing the API. 
@@ -52,7 +56,7 @@ To access the OutSystems APIs and data, you must use the **Client Credentials Gr
 
 You can  then use the client credentials to generate an access token which you can use to access the public APIs.
 
-## Further reading
+## Related resources
 
 - [Using OAuth 2.0 to access APIs](using-oauth-access-api.md)
 

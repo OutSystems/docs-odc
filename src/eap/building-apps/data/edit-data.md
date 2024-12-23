@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Edit data in ODC Studio 

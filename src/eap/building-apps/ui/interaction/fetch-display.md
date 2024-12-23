@@ -12,9 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
-  - process
+coverage-type:
+  - apply
 ---
 
 # Fetch and display data from the database in OutSystems
@@ -99,3 +98,7 @@ Once you fetch data from the database, use one of many OutSystems widgets to sho
 1. Publish your app and load it in the browser. There's a list widget listing the last names of the employees.
 
     ![Browser view of the app running with a list widget listing employee last names](images/fetch-data-browser.png "App Displaying Employee Last Names")
+
+## Related resources
+
+* [Building Screens with Data](https://learn.outsystems.com/training/journeys/building-screens-with-data-637) online course

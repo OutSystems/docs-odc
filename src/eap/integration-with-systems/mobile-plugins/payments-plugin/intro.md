@@ -11,10 +11,9 @@ audience:
 outsystems-tools:
   - forge
   - odc studio
-content-type:
-  - conceptual
-  - process
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Payments Plugin

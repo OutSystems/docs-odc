@@ -13,9 +13,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-  - ai mentor studio
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Introduction to function calling
@@ -59,7 +58,7 @@ Here’s an overview of how function calling works in AI Agent Builder.
 
 1.  The AI model generates an answer in natural language and forwards it to the ODC app.
 
-## Further reading
+## Related resources
 
 [Using function calling in AI Agent Builder](use-function-calling.md)
 

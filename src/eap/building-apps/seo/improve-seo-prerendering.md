@@ -1,15 +1,18 @@
 ---
 summary: Improve SEO with prerendering.
-tags:
+tags: seo, prerendering, outsystems, spa, core web vitals
 guid: 3f649fec-07c4-4a49-843f-a61c22dbf3e5
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - procedure
+coverage-type:
+  - apply
+audience:
+  - frontend developers
+outsystems-tools:
+  - none
 ---
-
 # Improve SEO with prerendering
 
 <div class="warning" markdown="1">

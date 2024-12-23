@@ -12,9 +12,9 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - conceptual
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Debugging apps
@@ -100,3 +100,7 @@ When debugging an app and checking the values of the Date Time data type, keep i
 * During debugging, ODC Studio shows UTC date and time in the debugger.
 * In the client UI, the date and time are in the timezone of the client.
 * On the server, the date and time are in the timezone of the server.
+
+## Related resources
+
+* [Debugging in OutSystems](https://learn.outsystems.com/training/journeys/debugging-639) online course

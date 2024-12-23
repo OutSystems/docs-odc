@@ -15,8 +15,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Architecture of authentication and authorization mechanism

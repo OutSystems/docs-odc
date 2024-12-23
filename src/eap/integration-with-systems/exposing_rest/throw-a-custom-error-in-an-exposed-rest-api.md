@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Throw a Custom Error in an Exposed REST API

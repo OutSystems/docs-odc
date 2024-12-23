@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
 ---
 
 # OS-FRGE-AST-40006

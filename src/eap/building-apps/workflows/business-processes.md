@@ -8,14 +8,10 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5631-492
 audience:
   - business analysts
-  - team lead
-  - team manager
-  - project managers
-  - product owners
 outsystems-tools:
   - none
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # About business processes
@@ -58,7 +54,7 @@ Here are some use cases where you can implement business processes:
 
 * **Loan approval**: A loan approval business process identifies the tasks involved from the time a customer raises a loan request until the disbursement of the loan amount or rejection of the loan request.
 
-## Related articles 
+## Related resources
 
 [Workflows in ODC](workflows-in-odc.md)
 

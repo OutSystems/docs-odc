@@ -11,11 +11,11 @@ audience:
   - frontend developers
   - full stack developers
   - platform administrators
-  - technology leaders
+  - tech leads
 outsystems-tools:
   - none
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Security of OutSystems Developer Cloud

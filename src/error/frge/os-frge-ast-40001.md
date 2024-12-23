@@ -1,15 +1,19 @@
 ---
-summary: "Request input has the following issue <message>."
-tags:
+summary: Request input has the following issue <message>.
+tags: error handling, mobile apps, reactive web apps, outsystems support
 guid: 50b20808-88ab-42cd-94a1-f3fbae79280c
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
+audience:
+  - mobile developers
+  - frontend developers
+outsystems-tools:
+  - odc portal
 ---
-
 # OS-FRGE-AST-40001
 
 ## Error message

@@ -12,9 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
-  - process
+coverage-type:
+  - apply
 ---
 
 # Pass Data Between Screens With Input Parameters

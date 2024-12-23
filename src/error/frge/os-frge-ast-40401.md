@@ -13,8 +13,8 @@ audience:
 outsystems-tools:
   - forge
   - odc studio
-content-type:
-  - error or warning
+coverage-type:
+  - unblock
 ---
 
 # OS-FRGE-AST-40401

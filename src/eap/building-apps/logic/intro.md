@@ -12,10 +12,14 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
+coverage-type:
   - none
 ---
 
 # Application logic
 
 In OutSystems, the logic of your apps is implemented through **Actions**. While developing your apps, you can create your own custom actions and use the actions OutSystems provides you.
+
+## Related resources
+
+* [Logic](https://learn.outsystems.com/training/journeys/logic-641) online course

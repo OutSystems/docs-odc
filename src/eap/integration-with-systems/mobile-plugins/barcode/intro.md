@@ -13,9 +13,9 @@ audience:
 outsystems-tools:
   - odc studio
   - forge
-content-type:
-  - procedure
-  - reference
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Barcode Plugin

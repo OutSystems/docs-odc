@@ -10,8 +10,8 @@ audience:
   - mobile developers
 outsystems-tools:
   - odc studio
-content-type:
-  - troubleshooting
+coverage-type:
+  - unblock
 ---
 
 # Troubleshoot debugger connection

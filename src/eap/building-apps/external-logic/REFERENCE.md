@@ -12,9 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-  - external libraries sdk
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # External Libraries SDK REFERENCE

@@ -13,8 +13,8 @@ audience:
   - ui designers
 outsystems-tools:
   - odc studio
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # User interface
@@ -81,4 +81,6 @@ You can find many patterns in the toolbox of ODC Studio. Open a screen for editi
   
 ![Screenshot of OutSystems Developer Cloud Studio interface displaying the UI patterns toolbox with various patterns ready to be dragged onto a screen.](images/ui-patterns-screen-ss.png "UI Patterns in ODC Studio")
 
+## Related resources
 
+* [UI Development 101](https://learn.outsystems.com/training/journeys/ui-development-647) online course

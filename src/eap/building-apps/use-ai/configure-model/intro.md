@@ -12,9 +12,9 @@ audience:
   - full stack developers
 outsystems-tools:
   - ai agent builder
-content-type:
-  - procedure
-  - conceptual
+coverage-type:
+  - apply
+  - understand
 ---
 
 # Configure your AI models
@@ -37,7 +37,7 @@ To configure your AI models and use them in the AI Agent Builder you must:
 
 High availability for an AI agent involves designing and implementing measures to ensure that the AI system remains operational despite any outages. OutSystems supports high availability for its AI agents by allowing you to configure multiple deployments or resources for an AI model and distribute the load between them. This approach ensures that the  system is accessible with minimal downtime, preventing failures due to outages at the upstream provider (AWS or Azure) or exceeding the tokens-per-minute (TPM)  limits.
 
-## Related links
+## Related resources
 
 * [Set up Azure OpenAI Service](configure-azure-model.md)
 

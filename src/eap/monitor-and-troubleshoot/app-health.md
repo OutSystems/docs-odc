@@ -12,9 +12,9 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc portal
-content-type:
-  - conceptual
-  - reference
+coverage-type:
+  - understand
+  - remember
 ---
 
 # Monitor app analytics in ODC Portal

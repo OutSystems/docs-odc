@@ -13,9 +13,8 @@ audience:
   - ui designers
 outsystems-tools:
   - none
-content-type:
-  - process
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Accessibility

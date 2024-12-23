@@ -10,7 +10,7 @@ audience:
   - mobile developers
 outsystems-tools:
   - none
-content-type:
+coverage-type:
   - none
 ---
 
@@ -24,3 +24,6 @@ OutSystems Developer Cloud (ODC) lets you create mobile apps fast. A mobile appl
 
 * Mobile backend: Use OutSystems as the backend for your native mobile app, without using the traditional programming tools.
 
+## Related resources
+
+* [Mobile Design Considerations](https://learn.outsystems.com/training/journeys/mobile-design-considerations-463) online course

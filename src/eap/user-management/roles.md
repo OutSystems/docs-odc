@@ -10,13 +10,12 @@ tags: access management, permissions, user onboarding, user roles, organization 
 audience:
   - full stack developers
   - platform administrators
-  - team lead
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - conceptual
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Roles
@@ -153,3 +152,7 @@ From the **ODC Portal**, select **Users & access**> **Users**. A table displays 
 Logged-in users needs to log out and log back in for changes in their assigned roles or role permissions to become effective.
 
 </div>
+
+## Related resources
+
+* [Role-based Security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course

@@ -13,9 +13,9 @@ audience:
   - frontend developers
 outsystems-tools:
   - odc portal
-content-type:
-  - conceptual
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Configure IP filters 

@@ -13,8 +13,8 @@ audience:
 outsystems-tools:
   - odc studio
   - forge
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Simple Customizations

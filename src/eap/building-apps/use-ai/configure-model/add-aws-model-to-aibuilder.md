@@ -10,9 +10,8 @@ audience:
   - platform administrators
 outsystems-tools:
   - odc portal
-  - ai mentor studio
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Add Amazon Bedrock AI model to the AI Agent Builder

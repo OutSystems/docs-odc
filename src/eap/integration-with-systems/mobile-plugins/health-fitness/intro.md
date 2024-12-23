@@ -12,11 +12,10 @@ audience:
 outsystems-tools:
   - odc studio
   - forge
-content-type:
-  - conceptual
-  - process
-  - procedure
-  - reference
+coverage-type:
+  - understand
+  - apply
+  - remember
 ---
 
 # Health and Fitness Plugin using HealthKit and Health Connect

@@ -11,9 +11,9 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - process
-  - reference
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Create mobile app package
@@ -141,3 +141,6 @@ More and more browsers are blocking third-party cookies by default. Using the Sa
 
 OutSystems recommends Chrome browser for previewing the mobile app in the ODC Portal. If the browser is blocking third-party cookies you can disable that feature in the browser security settings.
 
+## Related resources
+
+* [Native App Generation](https://learn.outsystems.com/training/journeys/native-app-generation-677) online course

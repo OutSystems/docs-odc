@@ -8,12 +8,13 @@ locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6412-1148
-content-type:
-  - best practice
 audience:
   - mobile developers
   - frontend developers
+coverage-type:
+  - evaluate
 ---
+
 # Best practices for fetching and displaying data
 
 In OutSystems, you can [fetch data to populate screens](../interaction/fetch-display.md) using aggregates or data actions. Follow these best practices to manage and display data from different sources efficiently.

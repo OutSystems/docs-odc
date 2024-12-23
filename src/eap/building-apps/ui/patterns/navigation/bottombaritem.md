@@ -12,9 +12,9 @@ audience:
   - ui designers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
-  - reference
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Bottom Bar Item

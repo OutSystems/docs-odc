@@ -6,9 +6,6 @@ locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3525-185&t=ZHJybqzEUX6B7aIU-1
-content-type:
-  - troubleshooting
-  - reference
 audience:
   - backend developers
   - full stack developers
@@ -16,7 +13,11 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+coverage-type:
+  - unblock
+  - remember
 ---
+
 # Inefficient query count
 
 Counting query results using an inefficient query.

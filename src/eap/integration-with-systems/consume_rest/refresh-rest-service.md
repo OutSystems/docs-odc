@@ -13,8 +13,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Refresh a REST web service

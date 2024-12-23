@@ -13,8 +13,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Configuration management
@@ -65,7 +65,11 @@ After you make the changes, apply the settings to make the new values available.
 
 Remember, settings are stage-specific.
 
-For more information, refer to the [settings' best practices](../building-apps/data/data-best-practices/intro.md#settings).
+For more information, refer to:
+
+* [Settings' best practices](../building-apps/data/data-best-practices/intro.md#settings)
+
+* [Settings](https://learn.outsystems.com/training/journeys/settings-370) online course
 
 ## Managing timers
 

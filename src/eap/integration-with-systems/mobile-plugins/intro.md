@@ -12,10 +12,9 @@ audience:
   - full stack developers
 outsystems-tools:
   - forge
-  - mobile plugins
-content-type:
-  - conceptual
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Mobile plugins

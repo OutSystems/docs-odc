@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - troubleshooting
+coverage-type:
+  - unblock
 ---
 
 # Troubleshooting aggregates that use data mashup

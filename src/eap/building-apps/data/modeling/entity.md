@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Entities
@@ -84,3 +84,8 @@ To convert an existing static entity to an entity right-click the static entity 
 
 </div>
 
+## Related resources
+
+* [Modeling Data](https://learn.outsystems.com/training/journeys/modeling-data-643) online course
+
+* [Data Model Integrity](https://learn.outsystems.com/training/journeys/data-model-integrity-638) online course

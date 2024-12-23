@@ -10,8 +10,8 @@ audience:
   - platform administrators
 outsystems-tools:
   - none
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Set up Amazon Kendra with a data source
@@ -20,7 +20,7 @@ content-type:
 
 This article explains how to set up Amazon Kendra search service using Amazon S3 as a data source. It is intended for administrators and DevOps engineers with good working knowledge of configuring search services using Amazon Kendra.
 
-## 	Prerequisites
+## Prerequisites
 
 Before setting up the Amazon Kendra with a data source, ensure you have:
 
@@ -54,12 +54,12 @@ For more information, refer to [Amazon Kendra Identity-based policy examples](ht
     
 **Note:** You can either create a policy to provide full access to Amazon Kendra resources or create a policy with minimum required access to Kendra.
 
-## 	Next Steps
+## Next Steps
 
 * [Add Amazon Kendra data source AI Agent Builder app](add-aws-data-source-to-aibuilder.md)
 
 * [Create an agent](../create-agent.md)
 
-## 	Additional resources
+## Related resources
 
 [Getting started with the Amazon Kendra console](https://docs.aws.amazon.com/kendra/latest/dg/gs-console.html)

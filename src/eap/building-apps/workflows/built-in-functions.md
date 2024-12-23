@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # Using built-in functions in workflows

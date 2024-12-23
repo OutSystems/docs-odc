@@ -13,11 +13,10 @@ audience:
 outsystems-tools:
   - forge
   - odc studio
-content-type:
-  - conceptual
-  - process
-  - procedure
-  - reference
+coverage-type:
+  - understand
+  - apply
+  - remember
 ---
 
 # Health and Fitness Plugin using HealthKit and Google Fit 

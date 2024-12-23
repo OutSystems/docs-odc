@@ -13,10 +13,9 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-  - mobile apps build service (mabs)
-content-type:
-  - procedure
-  - reference
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Advanced configurations for mobile app

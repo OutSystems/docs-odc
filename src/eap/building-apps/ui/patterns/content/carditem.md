@@ -12,9 +12,9 @@ audience:
   - ui designers
 outsystems-tools:
   - odc studio
-content-type:
-  - reference
-  - procedure
+coverage-type:
+  - remember
+  - apply
 ---
 
 # Card Item

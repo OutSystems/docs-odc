@@ -13,8 +13,9 @@ audience:
   - platform administrators
 outsystems-tools:
   - odc portal
-content-type:
-  - tutorial
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Getting started
@@ -75,3 +76,8 @@ Within each type of app, there are pre-built screen templates you can use to spe
 
 To publish your app, click **1-Click publish**. By default your app publishes to the Development stage.
 
+## Related resources
+
+* [ODC Overview](https://learn.outsystems.com/training/journeys/odc-overview-576) online course
+
+* [ODC Studio Overview](https://learn.outsystems.com/training/journeys/odc-studio-overview-577) online course

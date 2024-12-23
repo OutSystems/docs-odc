@@ -13,8 +13,9 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - tutorial
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Create your hello world app

@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - ai agent builder
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Configure your data sources
@@ -39,7 +39,7 @@ To add data sources and use them in the AI Agent Builder you must:
 
 4. Create your agents and use the data source in the AI Agent Builder.
 
-## Related links
+## Related resources
 
 * [Configure Azure AI search with BLOB storage](configure-azure-data-source.md)
 

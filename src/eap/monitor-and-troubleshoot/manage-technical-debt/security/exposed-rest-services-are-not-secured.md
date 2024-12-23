@@ -1,16 +1,20 @@
 ---
 summary: Exposed REST services should enforce SSL/TLS, and authetication.
-tags:
+tags: ssl/tls, authentication, rest services, security, vulnerability
 guid: d669fc5b-08da-4bff-954f-cc007ade6174
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - troubleshooting
-  - reference
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - backend developers
+  - full stack developers
+outsystems-tools:
+  - none
 ---
-
 # Exposed REST services without authentication
 
 Exposed REST services should enforce SSL/TLS, and authentication.

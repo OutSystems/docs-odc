@@ -12,9 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-  - mobile plugins
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # Camera Plugin Reference 

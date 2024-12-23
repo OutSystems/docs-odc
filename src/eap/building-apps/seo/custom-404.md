@@ -1,15 +1,19 @@
 ---
 summary: Display a custom 404 error page when a specific URL can't be found.
-tags:
+tags: custom 404 page, seo, reverse proxy, cdn, nginx
 guid: 0b037701-1e07-4ace-983f-6a20d500aa1f
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-content-type:
-  - best practice
+coverage-type:
+  - evaluate
+audience:
+  - platform administrators
+  - frontend developers
+outsystems-tools:
+  - odc studio
 ---
-
 # Custom 404 pages
 
 <div class="warning" markdown="1">

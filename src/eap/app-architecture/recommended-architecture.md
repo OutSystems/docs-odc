@@ -14,10 +14,10 @@ audience:
   - business analysts
 outsystems-tools:
   - none
-content-type:
-  - process
-  - best practice
-  - conceptual
+coverage-type:
+  - apply
+  - evaluate
+  - understand
 ---
 
 # Building a well-architected app
@@ -190,3 +190,7 @@ The architecture is composed of two libraries:
 You can use [**SAP connector**](../integration-with-systems/external-databases/intro.md) in ODC to connect your customer's information from SAP and work as a bridge to your customer portal.
 
 ![Diagram presenting the final architecture for a Home Insurance portal with apps and libraries](images/the-final-architecture-diag.png "The Final Architecture Diagram")
+
+## Related resources
+
+* [Architecture Fundamentals in ODC](https://learn.outsystems.com/training/journeys/architecture-fundamentals-559) online course

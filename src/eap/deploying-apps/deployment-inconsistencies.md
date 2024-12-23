@@ -14,8 +14,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # Guidance for deployment inconsistencies

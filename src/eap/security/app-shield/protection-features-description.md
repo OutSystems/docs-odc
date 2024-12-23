@@ -10,8 +10,8 @@ audience:
   - mobile developers
 outsystems-tools:
   - mobile plugins
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # AppShield protection features

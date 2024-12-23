@@ -12,11 +12,10 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-  - odc
-content-type:
-  - conceptual
-  - procedure
-  - reference
+coverage-type:
+  - understand
+  - apply
+  - remember
 ---
 
 # Reuse elements across apps

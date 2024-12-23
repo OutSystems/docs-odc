@@ -10,8 +10,8 @@ audience:
   - platform administrators
 outsystems-tools:
   - ai agent builder
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Set up Amazon Bedrock foundation AI models
@@ -88,7 +88,7 @@ To set up the Amazon Bedrock foundation AI models, follow these steps:
 
 * [Create an agent](../create-agent.md)
 
-## Additional resources
+## Related resources
 
 **Amazon Bedrock**
 

@@ -12,8 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - best practice
+coverage-type:
+  - evaluate
 ---
 
 # Writing better queries in data mashup 

@@ -14,10 +14,10 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - conceptual
-  - procedure
-  - reference
+coverage-type:
+  - understand
+  - apply
+  - remember
 ---
 
 # Configure authentication with external identity providers

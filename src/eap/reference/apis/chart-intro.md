@@ -12,8 +12,8 @@ audience:
   - ui designers
 outsystems-tools:
   - odc studio
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # Charts API v2

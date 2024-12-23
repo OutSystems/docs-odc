@@ -9,13 +9,12 @@ figma:
 audience:
   - mobile developers
   - full stack developers
-  - team lead
   - platform administrators
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Onboarding developers
@@ -140,3 +139,7 @@ The following table summarizes terminology differences between OutSystems 11 and
 | Reactive Web App | Web App | All Web Apps are reactive in ODC. Traditional Web Apps aren't supported. |
 | Module | N/A | Modules don't exist in ODC. |
 | Site Properties | Settings | Site Properties is Settings in ODC. |
+
+## Related resources
+
+* [From O11 to OutSystems Developer Cloud](https://learn.outsystems.com/training/journeys/from-o11-to-odc-569) online course

@@ -13,8 +13,8 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # OutSystems system requirements for ODC
@@ -22,7 +22,7 @@ content-type:
 This article provides recommendations for compatible tools and software versions that you can use with OutSystems Developer Cloud (ODC) Portal and ODC Studio.
 
 To access ODC portal and connect to ODC Studio, ensure your local network allows access to `*.outsystems.dev` domains. For end-users to access ODC apps, their network must allow access to the `*.outsystems.app` domain or the [custom domain](../manage-platform-app-lifecycle/custom-domains.md) defined for each stage.
-
+ 
 ## ODC Portal
 
 Use the most recent version of any of the following browsers:
@@ -148,7 +148,6 @@ Some general platform limits are:
 
 | **Name**                                 | **Limit** | **Description** |
 | ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
-| Concurrent timers                        |         6 | The maximum number of timers that can run concurrently. |
 | DB backup retention (days)               |        30 | The maximum number of days database backups are retained. |
 | Expose REST API method timeout (seconds) |        60 | The maximum amount of time an Expose REST API method executes before timing out. |
 | Max requests (per IP)                    |     5,000 | The maximum number of HTTP requests that can be made from a given IP address within a 5-minute window across all stages. |

@@ -12,9 +12,9 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - conceptual
-  - procedure
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Create a One-to-One Relationship

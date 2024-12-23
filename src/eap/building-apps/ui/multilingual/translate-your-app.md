@@ -12,9 +12,8 @@ audience:
   - full stack developers
 outsystems-tools:
   - odc studio
-content-type:
-  - process
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Translate your app

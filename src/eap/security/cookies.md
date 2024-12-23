@@ -13,8 +13,8 @@ audience:
   - business analysts
 outsystems-tools:
   - none
-content-type:
-  - reference
+coverage-type:
+  - remember
 ---
 
 # Cookies in ODC

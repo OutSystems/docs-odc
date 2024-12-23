@@ -10,9 +10,8 @@ audience:
   - mobile developers
 outsystems-tools:
   - odc studio
-  - mobile plugins
-content-type:
-  - procedure
+coverage-type:
+  - apply
 ---
 
 # Common Plugin

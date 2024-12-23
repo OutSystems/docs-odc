@@ -14,9 +14,9 @@ audience:
 outsystems-tools:
   - forge
   - odc studio
-content-type:
-  - reference
-  - procedure
+coverage-type:
+  - remember
+  - apply
 ---
 
 # Install or update a Forge asset

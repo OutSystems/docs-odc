@@ -14,8 +14,8 @@ audience:
   - architects
 outsystems-tools:
   - none
-content-type:
-  - conceptual
+coverage-type:
+  - understand
 ---
 
 # Network architecture of OutSystems Developer Cloud

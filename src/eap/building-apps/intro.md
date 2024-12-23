@@ -13,7 +13,7 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
-content-type:
+coverage-type:
   - none
 ---
 

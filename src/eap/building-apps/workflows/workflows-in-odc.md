@@ -10,15 +10,14 @@ audience:
   - mobile developers
   - frontend developers
   - full stack developers
-  - team lead
   - ui designers
   - business analysts
 outsystems-tools:
   - odc portal
   - workflow builder
-content-type:
-  - conceptual
-  - best practice
+coverage-type:
+  - understand
+  - evaluate
 ---
 
 # Workflows in ODC
@@ -40,6 +39,8 @@ With the workflow editor, you can:
 * Establish a connection between the workflow and the app by selecting events, service actions, and screens for specific nodes in the workflow.
 
 * Import and export workflows to share within your organization and with external partners.
+
+* Switch between the default summary view for comprehensive understanding of workflows and the iconified view for a high-level structure. In the summary view, for each node in the workflow you are provided detailed information such as events triggered, conditions configured and service actions invoked. The iconified view displays only the icon of each node.
 
 Here's a video providing a concise overview of workflows.
 
@@ -124,3 +125,4 @@ Here are some points to consider as you implement workflows in ODC:
 * [Using workflows](using-workflows.md)
 * [Workflow nodes](workflow-components.md)
 * [Troubleshooting workflows](troubleshooting-workflows.md)
+* [Building Workflows in ODC](https://learn.outsystems.com/training/journeys/building-workflows-in-odc-2690) online course
