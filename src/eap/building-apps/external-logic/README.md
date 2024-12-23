@@ -27,7 +27,7 @@ Use of this SDK is the first step in extending an ODC app with custom code. You 
 
 ## Prerequisites
 
-* [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed - **preferred**. It's still possible to use [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) however, this option will be deprecated and you should plan to [upgrade the custom code to .NET 8.0](upgrade-net8.md).
+* [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed.
 * [NuGet](https://www.nuget.org/downloads) package manager installed.
 * An IDE that supports building .NET projects. For example, Visual Studio, Visual Studio Code, and Jet Brains Rider.
 * Basic knowledge of C# programming concepts.

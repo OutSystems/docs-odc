@@ -25,11 +25,6 @@ You can use External Logic when you need to extend OutSystems Developer Cloud (O
 
 Your apps consume logic built in C# the same way they consume logic from libraries built in the OutSystems visual language or [out-of-the-box libraries](../../reference/libraries/intro.md). This means OutSystems developers consuming those libraries don't need to understand the underlying C# code to use external logic in their apps. The C# code becomes available in libraries as server actions and structures.
 
-<div class="info" markdown="1">
-
-Custom code recently added support for .NET 8.0. [Read more about transitioning from NET. 6.0](upgrade-net8.md).
-
-</div>
 
 When you want to create new external logic or update existing external logic, follow these steps:
 

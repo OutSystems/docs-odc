@@ -73,7 +73,7 @@ In this phase, support for .NET 8 is introduced. It’s strongly recommended to 
 
 ### Phase 2: deprecation of .NET 6 { #phase-2}
 
-**December 20, 2024**
+**December 23, 2024**
 
 At phase 2, the support for .NET 6 is dropped and it will no longer be possible to:
 
