@@ -5,7 +5,7 @@ locale: en-us
 guid: dad534b3-39c0-4907-a743-5509d867e111
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6233-7
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6675-2
 audience:
   - mobile developers
   - frontend developers
@@ -19,7 +19,6 @@ coverage-type:
 # Workflow entities
 
 The following **system entities** are available in ODC Studio for workflows:
-
 
 * **ActivityDefinition**: Stores the definition of each activity as specified in the workflow editor.
 
@@ -43,9 +42,9 @@ The following **static entities** are available in ODC Studio for workflows:
 
 ## Workflow entity relationships 
 
-The following diagram illustrates the relationship between the entities that are available for workflows. 
-                                                                       
-![Diagram illustrating the relationships between workflow entities](images/workflow-entities-odcs.png "Workflow entity relationships")
+The following diagram illustrates the relationship between the entities that are available for workflows.
+
+![Diagram illustrating the relationships between workflow entities](images/workflow-entities-relationship-odcs.png "Workflow entity relationships")
 
 ## Related resources
 
