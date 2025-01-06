@@ -55,7 +55,7 @@ Using Microsoft Visual Studio 2022 with .NET 8.0, for example:
             [OSInterface]
             public interface IMyLibrary
             {
-                public string SayHello(string name);
+                public string SayHello(string name, string title);
                 public string SayGoodbye(string name);
             }
         }
@@ -66,7 +66,8 @@ Using Microsoft Visual Studio 2022 with .NET 8.0, for example:
         {
             public class MyLibrary : IMyLibrary
             {
-                public string SayHello(string name) {
+                public string SayHello(string name, string title) {
+                    string title = "Mr./Ms.";
                     return $"Hello, {name}";
                 }
 
@@ -76,11 +77,18 @@ Using Microsoft Visual Studio 2022 with .NET 8.0, for example:
             }
         }
  
+
     The exposed methods can only have:
 
     * Basic .NET types: `string`, `int`, `long`, `bool`, `byte[]`, `decimal`, `float`, `double`, `DateTime`.
     * Structs decorated with the `OSStructure` attribute.
     * Lists (any type inheriting from [IEnumerable](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable)) of any of the previous two types.
+
+<div class="info" markdown="1">
+
+You can expose a server action using external code with optional parameters by adding a default value to the parameter in the action definition. In the above example, the `title` parameter is optional and has a default value "Mr./Ms.".
+
+</div>
 
 1. Once you're finished with the code, save the project and publish it. For example, right-click **Solution ClassLibrary1** and click **Open in Terminal**. Run command `dotnet publish -c Release -r linux-x64 --no-self-contained`.
 
