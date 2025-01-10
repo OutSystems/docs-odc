@@ -22,7 +22,7 @@ This is the reference document for the operators you can use in an OutSystems [e
 
 ## Numeric
 
-The numeric operators are **\+**, **-**, *****, and **/**.
+The numeric operators are **\+**, **-**, **\***, and **/**.
 
 ### Unary minus
 
