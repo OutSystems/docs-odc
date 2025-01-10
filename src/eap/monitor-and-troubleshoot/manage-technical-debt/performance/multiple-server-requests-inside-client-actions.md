@@ -1,13 +1,22 @@
 ---
 summary: Multiple server Aggregates or multiple Server Action requests inside Client Actions.
-tags: 
+tags: server requests, aggregates, client actions, latency reduction, best practices
 guid: e23a842d-a31b-4cb8-850a-f6612d1f0c16
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3525-200&t=ZHJybqzEUX6B7aIU-1
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - frontend developers
+  - full stack developers
+  - backend developers
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # Multiple server requests (Aggregates or Actions) inside Client Actions
 
 Multiple server Aggregates or multiple Server Action requests inside Client Actions.
@@ -27,3 +36,5 @@ Server-side logic breaks down into multiple separate Aggregates or Server Action
 Instead of sequencing a set of server requests or server Aggregates on your client-side code, compose all required server logic in a single Server Action. This reduces the number of server requests. 
 
 ![A Client Action flow with a single Run Server Action node.](images/odcs-single-server-action.png "Single Server request inside a Client Action")
+
+For more information, refer to the [logic best practice for avoiding multiple server calls in a client action flow](../../../building-apps/logic/best-practices-logic.md#multiple-server-calls).

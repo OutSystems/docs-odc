@@ -1,13 +1,20 @@
 ---
 summary: The default timeout for server action requests is more than 10 seconds, or an explicit timeout in a server call is more than 10 seconds.
-tags: 
+tags: server requests, timeout settings, user experience, data processing, connectivity issues
 guid: d6a6ff38-316b-476d-a579-c9ac92b0079f
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3525-192&t=ZHJybqzEUX6B7aIU-1
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - full stack developers
+  - backend developers
+outsystems-tools:
+  - none
 ---
-
 # Long server requests timeout
 
 The default timeout for server action requests is more than 10 seconds, or an explicit timeout in a server call is more than 10 seconds.

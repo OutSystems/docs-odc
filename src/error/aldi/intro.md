@@ -1,11 +1,19 @@
 ---
 summary: Learn how to resolve app or library dependency errors in OutSystems Developer Cloud (ODC) when a dependency is removed from your organization.
-tags: 
+tags: dependency management, error resolution, cloud development, outsystems, application lifecycle management
 locale: en-us
 guid: d22bb162-d283-48f8-aa43-996f850220d5
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - unblock
 ---
 
 # App or library dependency errors

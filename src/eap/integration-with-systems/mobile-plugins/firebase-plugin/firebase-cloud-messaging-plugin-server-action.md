@@ -1,12 +1,22 @@
 ---
 summary: Learn how to implement and manage Firebase Cloud Messaging in OutSystems Developer Cloud (ODC) for enhanced mobile app notifications.
-tags: 
+tags: firebase, notifications, mobile app development, push notifications, plugin integration
 locale: en-us
 guid: a8f7486e-a655-4da7-bed6-37d6867166b2
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5002%3A165&mode=design&t=qrb6BRX1TGRFDKu7-1
 platform-version: odc
+audience:
+  - mobile developers
+outsystems-tools:
+  - forge
+  - odc studio
+  - odc portal
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Firebase Cloud Messaging plugin using server actions
 
 <div class="info" markdown="1">

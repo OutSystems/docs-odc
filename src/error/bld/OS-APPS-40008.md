@@ -1,13 +1,21 @@
 ---
 summary: How to publish apps that exceed the 100 MB limit.
-tags:
+tags: application file size limit, publishing apps, odc app optimization, best practices, static resources management
 guid: e773a151-1a3f-4472-b718-9a6587a02eec
 locale: en-us
 platform-version: odc
 app_type: mobile apps, reactive web apps
-figma: 
+figma:
+coverage-type:
+  - unblock
+audience:
+  - mobile developers
+  - full stack developers
+  - architects
+  - tech leads
+outsystems-tools:
+  - none
 ---
-
 # OS-APPS-40008
 
 

@@ -1,14 +1,28 @@
 ---
-summary: Display a custom 404 error page when a specific URL can't be found. 
-tags: 
+summary: Display a custom 404 error page when a specific URL can't be found.
+tags: custom 404 page, seo, reverse proxy, cdn, nginx
 guid: 0b037701-1e07-4ace-983f-6a20d500aa1f
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+coverage-type:
+  - evaluate
+audience:
+  - platform administrators
+  - frontend developers
+outsystems-tools:
+  - odc studio
 ---
-
 # Custom 404 pages
+
+<div class="warning" markdown="1">
+
+This page provides a suggestion on how to achieve improved SEO performance with ODC Applications using third party tools as a workaround and isn't an official supported product offering.
+
+Please be aware of existing [Platform Limits](../../getting-started/system-requirements.md#platform-limits) and that Platform changes can subject unsupported workarounds to breaking changes without warning.
+
+</div>
 
 Display a custom 404 error page for SEO purposes and end-user friendliness when a specific URL can't be found.
 

@@ -1,12 +1,23 @@
 ---
-tags:
+tags: ui patterns, outsystems development, application design, user experience, step-by-step guide
 summary: Learn how to create and manage a Wizard UI Pattern in OutSystems Developer Cloud (ODC) to streamline complex tasks into simpler steps.
 locale: en-us
 guid: 54acaa7b-794d-44d4-9b70-5cc2b4810ccc
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A18307&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
+  - apply
 ---
+
 # Wizard
 
 You can use the Wizard UI Pattern to split large complex tasks and processes into smaller manageable steps. A wizard presents a series of steps or conditions that the user needs to complete in order to accomplish a goal. Additionally, wizards usually include explicit button navigation to move a step forward or backward. Some wizard examples include software installation wizards and sign-up screens.

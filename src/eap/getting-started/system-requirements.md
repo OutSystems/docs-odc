@@ -1,11 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) system requirements guide for optimal use of ODC Portal and ODC Studio.
-tags:
+tags: system requirements, network configuration, browser compatibility, hardware requirements, operating system compatibility
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/design/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?node-id=3406%3A10&t=SDUOaeXeeu7S6LQG-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - remember
 ---
 
 # OutSystems system requirements for ODC
@@ -13,7 +22,7 @@ platform-version: odc
 This article provides recommendations for compatible tools and software versions that you can use with OutSystems Developer Cloud (ODC) Portal and ODC Studio.
 
 To access ODC portal and connect to ODC Studio, ensure your local network allows access to `*.outsystems.dev` domains. For end-users to access ODC apps, their network must allow access to the `*.outsystems.app` domain or the [custom domain](../manage-platform-app-lifecycle/custom-domains.md) defined for each stage.
-
+ 
 ## ODC Portal
 
 Use the most recent version of any of the following browsers:
@@ -95,34 +104,101 @@ ODC supports the following client-side trace request limits:
 
 * Up to 400 trace requests every minute and 3500 requests daily per stage.
 
+### Supported external data sources
+
+The following versions of systems are supported to integrate with ODC:
+
+* **Microsoft SQL Server**:
+
+    * SQL Server 2014
+    * SQL Server 2016
+    * SQL Server 2017
+    * SQL Server 2019
+    * SQL Server 2022
+
+* **Azure SQL**: 
+
+    * Azure SQL Database
+    * Azure SQL Managed Instance
+
+* **PostgreSQL**:
+
+    OutSystems supports self-managed, Aurora, and Azure provisions for PostgreSQL.
+
+    * PostgreSQL 12
+    * PostgreSQL 13
+    * PostgreSQL 14
+    * PostgreSQL 15
+    * PostgreSQL 16
+
+* **SAP**:
+
+    * SAP ECC 5.0 or higher
+    * SAP S/4HANA
+
+* **Salesforce**
+
+* **Oracle 19c**
+
 ## Platform limits
 
 The following table shows the limits of the ODC to keep in mind when you are building apps. Unless otherwise noted, each limit is stage-specific. These limits cannot be exceeded and may cause errors or a drop in performance if reached.
 
+Some general platform limits are:
+
 | **Name**                                 | **Limit** | **Description** |
 | ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
-| App log retention (days)                 |        28 | The maximum number of days that logs are retained (plus 21 days of additional backup retrievable via support ticket). |
-| Concurrent events                        |       100 | The maximum number of events that can run concurrently. |
-| Concurrent timers                        |         6 | The maximum number of timers that can run concurrently. |
-| Custom code execution duration (seconds) |        95 | The maximum time a single custom code function can execute. |
-| Custom code memory (MB)                  |     1,024 | The maximum memory available for custom code functions while executing. |
-| Custom code storage (MB)                 |       512 | The maximum amount of ephemeral storage available for custom code functions while executing. |
-| Custom code payload size (MB)            |       5.5 | The maximum payload for inputs and outputs of a custom code action. |
 | DB backup retention (days)               |        30 | The maximum number of days database backups are retained. |
-| Event duration (minutes)                 |         2 | The maximum duration of a handler of an event in minutes. |
-| Events per queue                         |    10,000 | The maximum number of events that can be queued. Upon reaching the limit, an exception is thrown. |
 | Expose REST API method timeout (seconds) |        60 | The maximum amount of time an Expose REST API method executes before timing out. |
-| Log rate/minute (thousands)              |         2 | The maximum rate at which logs can be captured, in thousands per minute. |
 | Max requests (per IP)                    |     5,000 | The maximum number of HTTP requests that can be made from a given IP address within a 5-minute window across all stages. |
 | Service action timeout (seconds)         |       100 | The time a service action waits for a response before timing out. |
 | Timer execution timeout (minutes)        |        60 | The maximum time a timer can execute. |
 | Entity Action Execution duration (seconds) |        30 | The maximum execution duration of a single Entity Action in seconds. |
+| Upload request size (MB)                 |      28.6 | The maximum file size allowed when uploading. |
+
+### Logs and traces
+
+Some logs and traces limits are:
+
+| **Name**                                 | **Limit** | **Description** |
+| ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
+| App log retention (days)                 |        28 | The maximum number of days that logs are retained (plus 21 days of additional backup retrievable via support ticket). |
+| Log rate/minute (thousands)              |         2 | The maximum rate at which logs can be captured, in thousands per minute. |
 | Trace retention (days)                   |        28 | The maximum number of days that traces are retained (plus 21 days of additional backup retrievable via support ticket). |
 | Trace size (MB)                          |        15 | The maximum size of traces. Traces exceeding this are dropped. |
 | Trace spans rate/minute (thousands)      |        50 | The maximum rate at which trace spans can be captured, in thousands per minute. |
 | Client side trace requests every minute per stage  |        400 | The maximum number of client-side trace requests every minute. |
 | Client side trace requests daily per stage  |           3500 | The maximum number of client-side trace requests daily. |
-| Upload request size (MB)                 |      28.6 | The maximum file size allowed when uploading. |
+
+
+### Events
+
+Some event limits are:
+
+| **Name**                                 | **Limit** | **Description** |
+| ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
+| Concurrent events                        |       100 | The maximum number of events that can run concurrently per app. |
+| Event duration (minutes)                 |         2 | The maximum duration of a handler of an event in minutes. |
+| Events per queue                         |    10,000 | The maximum number of events that can be queued. Upon reaching the limit, an exception is thrown. |
+
+
+### Custom code
+
+Some custom code limits are:
+
+| **Name**                                 | **Limit** | **Description** |
+| ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
+| Custom code execution duration (seconds) |        95 | The maximum time a single custom code function can execute. |
+| Custom code memory (MB)                  |     1,024 | The maximum memory available for custom code functions while executing. |
+| Custom code storage (MB)                 |       512 | The maximum amount of ephemeral storage available for custom code functions while executing. |
+| Custom code payload size (MB)            |       5.5 | The maximum payload for inputs and outputs of a custom code action. |
+
+### Workflows
+
+Some workflow limits are:
+
+| **Name**                                 | **Limit** | **Description** |
+| ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
 | Workflow activity max duration (seconds) |       120 | The maximum duration of a workflow activity. |
 | Workflow concurrent versions             |         5 | The maximum number of workflow versions that can run concurrently. |
 

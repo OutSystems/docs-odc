@@ -9,7 +9,7 @@
     - href: eap/getting-started/sample-app.md
     - href: eap/getting-started/open-oml-in-odc-studio.md
 
-# Onboarding for developers
+# Onboarding for developers 
 - href: eap/onboarding/intro.md
 - topics:
     - href: eap/onboarding/differences-sql.md
@@ -48,7 +48,7 @@
         # Integrate agent
         - href: eap/building-apps/use-ai/integrate-agent.md
 
-    # Data
+    # Data management
     - href: eap/building-apps/data/intro.md
     - topics:
         # Data modeling
@@ -58,15 +58,19 @@
             - href: eap/building-apps/data/modeling/entity-create.md
             - href: eap/building-apps/data/modeling/excel-bootstrap.md
             - href: eap/building-apps/data/modeling/entity-static.md
+        - href: eap/building-apps/data/crud-wrappers.md
+        # Fetch data from the database
         - href: eap/building-apps/data/fetch-data/intro.md
         - topics: 
             - href: eap/building-apps/data/fetch-data/aggregate.md
             - href: eap/building-apps/data/fetch-data/calculated-attribute-create.md
+            # Combine data from different sources
             - href: eap/building-apps/data/fetch-data/data-mash.md
-            - href: eap/building-apps/data/fetch-data/transactions-data-mashup.md
+            - topics:
+                - href: eap/building-apps/data/fetch-data/queries.md
+                - href: eap/building-apps/data/fetch-data/transactions-data-mashup.md
+                - href: eap/building-apps/data/fetch-data/data-mashup-errors.md
             - href: eap/building-apps/data/fetch-data/transaction-external-entities.md
-            - href: eap/building-apps/data/fetch-data/data-mashup-errors.md
-            - href: eap/building-apps/data/fetch-data/queries.md
             - href: eap/building-apps/data/fetch-data/distinct.md
             - href: eap/building-apps/data/fetch-data/filter-results.md
             - href: eap/building-apps/data/fetch-data/supported-join-types.md
@@ -83,6 +87,10 @@
         - href: eap/building-apps/data/convert-data-types.md 
         - href: eap/building-apps/data/edit-data.md
         - href: eap/building-apps/data/structure-create-use.md   
+        - href: eap/building-apps/data/data-best-practices/intro.md
+        - topics:
+            - href: eap/building-apps/data/data-best-practices/data-purging.md
+            - href: eap/building-apps/data/data-best-practices/data-archiving.md
     # UI
     - href: eap/building-apps/ui/intro.md
     - topics:
@@ -217,11 +225,14 @@
         - href: eap/building-apps/logic/output-parameter.md
         - href: eap/building-apps/logic/application-ready.md
         - href: eap/building-apps/logic/application-resume.md
+        - href: eap/building-apps/logic/excel-record-list.md
+        - href: eap/building-apps/logic/record-list-excel.md
         - href: eap/building-apps/logic/expressions.md
         - topics:
             - href: eap/building-apps/logic/expressions/expression-editor.md
             - href: eap/building-apps/logic/expressions/operators.md
             - href: eap/building-apps/logic/expressions/operands.md
+        - href: eap/building-apps/logic/best-practices-logic.md
     # Extend your apps with external logic
     - href: eap/building-apps/external-logic/intro.md
     - topics: 
@@ -243,7 +254,8 @@
         - href: eap/building-apps/libraries/app-lib-properties-edit.md
     # Events
     - href: eap/building-apps/events/intro.md 
-    - href: eap/building-apps/events/backend-events.md
+    - topics: 
+        - href: eap/building-apps/events/backend-events.md
     # Merge
     - href: eap/building-apps/merge/intro.md
     - topics:
@@ -295,20 +307,23 @@
     - topics:
         - href: eap/building-apps/workflows/workflows-in-odc.md
         - href: eap/building-apps/workflows/using-workflows.md
-        - href: eap/building-apps/workflows/start-workflow.md
-        - href: eap/building-apps/workflows/add-conditional-start.md
-        - href: eap/building-apps/workflows/add-human-activity.md
-        - href: eap/building-apps/workflows/add-automatic-activity.md
-        - href: eap/building-apps/workflows/add-decisions.md
-        - href: eap/building-apps/workflows/add-wait.md
-        - href: eap/building-apps/workflows/go-to-previous-step.md
-        - href: eap/building-apps/workflows/end-workflow.md
-        - href: eap/building-apps/workflows/terminate-workflow.md
+        - href: eap/building-apps/workflows/workflow-components.md
+        - topics:
+            - href: eap/building-apps/workflows/start-workflow.md
+            - href: eap/building-apps/workflows/add-conditional-start.md
+            - href: eap/building-apps/workflows/add-human-activity.md
+            - href: eap/building-apps/workflows/add-automatic-activity.md
+            - href: eap/building-apps/workflows/add-decisions.md
+            - href: eap/building-apps/workflows/add-wait.md
+            - href: eap/building-apps/workflows/go-to-previous-step.md
+            - href: eap/building-apps/workflows/terminate-workflow.md
+            - href: eap/building-apps/workflows/end-workflow.md
         - href: eap/building-apps/workflows/system-entities.md
         - topics: 
             - href: eap/building-apps/workflows/filter-workflows.md
         - href: eap/building-apps/workflows/built-in-functions.md
         - href: eap/building-apps/workflows/troubleshooting-workflows.md
+        - href: eap/building-apps/workflows/logs.md
    
     # Reuse
     - href: eap/building-apps/reuse/intro.md
@@ -346,10 +361,13 @@
 # Integration with external systems
 - href: eap/integration-with-systems/intro.md
 - topics:
-    # Integration with external databases
+    # Integrate with external data sources using Data Fabric
     - href: eap/integration-with-systems/external-databases/intro.md
     - topics: 
+        - href: eap/integration-with-systems/external-databases/create-connection-external-data.md
         - href: eap/integration-with-systems/external-databases/handle-null-values.md
+        - href: eap/integration-with-systems/external-databases/sap-odata.md
+        - href: eap/integration-with-systems/external-databases/external-data-type.md
     #Consume REST API 
     - href: eap/integration-with-systems/consume_rest/intro.md
     - topics:
@@ -409,7 +427,8 @@
         - href: eap/security/app-shield/obfuscate-custom-rules.md
         - href: eap/security/app-shield/ExitOnUrl.md
         - href: eap/security/app-shield/query-all-packages.md
-
+        - href: eap/security/app-shield/troubleshooting.md
+        
 # App Architecture
 - href: eap/app-architecture/intro.md
 - topics:
@@ -438,6 +457,7 @@
 # User management
 - href: eap/user-management/intro.md 
 - topics:
+    - href: eap/user-management/classify-users.md    
     - href: eap/manage-platform-app-lifecycle/external-idps/intro.md
     - topics:
         - href: eap/manage-platform-app-lifecycle/external-idps/apps.md 
@@ -446,7 +466,7 @@
         - href: eap/manage-platform-app-lifecycle/external-idps/end-user-group-mapping.md
     - href: eap/user-management/roles.md
     - href: eap/user-management/secure-app-with-roles.md
-    - href: eap/user-management/passwords.md
+    - href: eap/user-management/passwords.md    
 
 #Monitoring and troubleshooting
 - href: eap/monitor-and-troubleshoot/monitor-apps.md
@@ -503,8 +523,10 @@
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/sql-injection.md
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/visible-disabled-button.md
 
-    - href: eap/monitor-and-troubleshoot/traces.md
-    - href: eap/monitor-and-troubleshoot/client-side-traces.md
+    - href: eap/monitor-and-troubleshoot/traces/intro.md
+    - topics: 
+        - href: eap/monitor-and-troubleshoot/traces/server-side-traces.md
+        - href: eap/monitor-and-troubleshoot/traces/client-side-traces.md
     
 # Reference
 - href: eap/reference/intro.md
@@ -533,6 +555,7 @@
     - topics:
         - href: eap/reference/system-actions/auth.md
         - href: eap/reference/system-actions/user.md
+        - href: eap/reference/system-actions/workflows.md
   # Built-in functions
     - href: eap/reference/built-in-functions/intro.md
     - topics:
@@ -551,6 +574,23 @@
   # APIs
     - href: eap/reference/apis/api-intro.md
     - topics:
+        - href: eap/reference/apis/public-rest-apis/overview.md
+        - topics:
+            - href: eap/reference/apis/public-rest-apis/getting-started.md
+            - href: eap/reference/apis/public-rest-apis/authentication/oauth-concept.md
+            - topics:
+                - href: eap/reference/apis/public-rest-apis/authentication/about-api-client.md
+                - href: eap/reference/apis/public-rest-apis/authentication/using-oauth-access-api.md
+                - href: eap/reference/apis/public-rest-apis/authentication/create-api-client.md
+                - href: eap/reference/apis/public-rest-apis/authentication/generate-new-secret.md
+                - href: eap/reference/apis/public-rest-apis/authentication/get-access-token.md
+                - href: eap/reference/apis/public-rest-apis/authentication/about-oidc-discovery-document.md
+                - href: eap/reference/apis/public-rest-apis/authentication/call-api.md
+                - href: eap/reference/apis/public-rest-apis/authentication/suspend-resume-access-api-client.md
+                - href: eap/reference/apis/public-rest-apis/authentication/best-practices-for-api-credentials.md
+            - href: eap/reference/apis/public-rest-apis/rate-limiting.md
+            - href: eap/reference/apis/identity-v1.md
+            - href: eap/reference/apis/portfolio-v1.md           
         - href: eap/reference/apis/data.md
         - href: eap/reference/apis/chart-intro.md
         - topics:
@@ -669,3 +709,4 @@
     - href: error/aldi/intro.md
     - topics:
         - href: error/aldi/app_lib_depend_issues.md
+

@@ -1,11 +1,20 @@
 ---
 summary: Learn how to submit and manage reusable software assets to Forge using OutSystems Developer Cloud (ODC).
-tags:
+tags: asset management, software repositories, asset submission, forge platform, outsystems best practices
 locale: en-us
 guid: c611c0a7-9a50-4c1d-9e8c-d51b7a237c3e
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/njWXlTZbh2jXc522APrwUf/Forge?type=design&node-id=2902%3A10&t=7VtW3Ksp7qzfotTh-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - forge
+  - odc portal
+coverage-type:
+  - apply
 ---
 
 # Submit assets to Forge

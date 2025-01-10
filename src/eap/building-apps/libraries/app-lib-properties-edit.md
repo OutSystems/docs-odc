@@ -1,12 +1,21 @@
 ---
 summary: Learn how to configure app and library components in OutSystems Developer Cloud (ODC) using the Edit properties dialog in ODC Studio.
-tags:
+tags: ui configuration, cloud development
 locale: en-us
 guid: 5923266e-a350-4775-a6ea-8c6882b8755c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4751%3A743&mode=design&t=lk9vABF8xFbGr0cY-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
+
 # Edit app and library properties
 
 The **Edit app properties** and **Edit library properties** dialog lets you configure your app and library components in ODC Studio. Using different tabs, you can edit **Details**, **Properties**, **Messages** and, **Extensibility** properties.

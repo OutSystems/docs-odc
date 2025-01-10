@@ -1,12 +1,21 @@
 ---
 summary: Learn how to create and customize Screens in OutSystems Developer Cloud (ODC) for both web and mobile applications.
 locale: en-us
-tags:
+tags: ui development, app design
 guid: 7c01a3db-3807-4e86-bbbb-e88ba5c28346
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10561&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Create screen from scratch
 
 A Screen is a user interface (UI) element that contains other UI elements for users to interact. An empty Screen contains a basic layout for you to add widgets. A Screen based on a Screen Template has predefined content that works as a demo.

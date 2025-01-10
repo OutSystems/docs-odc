@@ -1,12 +1,22 @@
 ---
 summary: Explore authentication actions for built-in and external identity providers in OutSystems Developer Cloud (ODC).
-tags:
+tags: authentication, identity providers, user management, security, login
 locale: en-us
 guid: af4a6d9d-0af3-434b-b3b9-daf8d49ad6f7
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - remember
 ---
+
 # Authentication system actions
 
 Authentication actions for built-in and/or external identity providers.

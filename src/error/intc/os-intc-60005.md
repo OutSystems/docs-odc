@@ -1,11 +1,19 @@
 ---
 summary: Error fetching the entity list
-tags:
+tags: error handling, integration, system administration, troubleshooting, support procedures
 guid: 3b1172f2-e949-4099-8c8d-f2f67127c0f5
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - unblock
 ---
 
 # OS-INTC-60005

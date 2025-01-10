@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers a comprehensive security library with features for encryption, decryption, JWT handling, and more.
-tags:
+tags: security, encryption, jwt, json web tokens, aes key generation
 locale: en-us
 guid: dc098281-2826-4f5c-91cb-da13827f4d8a
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
+
 # Security
 
 The OutSystems Security library provides actions to perform several security related operations, such as encrypting and decrypting content or using JSON Web Tokens.

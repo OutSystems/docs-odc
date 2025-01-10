@@ -1,12 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables navigation to detail screens in web and mobile applications by configuring the List Item widget's On Click event.
-tags:
+tags: ui navigation, screen design
 locale: en-us
 guid: 32d89cec-ecb5-4c30-9d43-548cc4077425
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10809&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Navigate to a Detail Screen
 
 You can allow end-users to check the details of a given record by navigating to a different screen while providing the item identifier as an input parameter.

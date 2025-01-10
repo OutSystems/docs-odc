@@ -1,11 +1,19 @@
 ---
-summary: "The default value specified for <ParameterName> is unsupported."
-tags:
+summary: The default value specified for <ParameterName> is unsupported.
+tags: error handling, c# programming, library publishing, parameters configuration, external libraries
 guid: 2cc2a5df-6b8e-45aa-9c4b-82ad0719d153
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - unblock
 ---
 
 # OS-ELG-MODL-05026

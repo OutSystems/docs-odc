@@ -1,11 +1,19 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers libraries to enhance app capabilities, with guidance on usage available.
-tags:
+tags: libraries, app development, outsystems platform, enhancing app functionality, component usage
 locale: en-us
 guid: ddb5aa99-a1cb-4c42-9836-fb1f483fc470
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - none
+coverage-type:
+  - none
 ---
 
 # Libraries

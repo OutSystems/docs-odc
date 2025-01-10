@@ -1,11 +1,23 @@
 ---
 summary: Learn all about workflows in ODC
-tags:
+tags: workflows, business process automation, workflow editor, process automation, outsystems developer cloud
 locale: en-us
 guid: 70b986e2-cd07-48a6-92c0-e57751112bb7
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5633-900
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+  - business analysts
+outsystems-tools:
+  - odc portal
+  - workflow builder
+coverage-type:
+  - understand
+  - evaluate
 ---
 
 # Workflows in ODC
@@ -27,6 +39,8 @@ With the workflow editor, you can:
 * Establish a connection between the workflow and the app by selecting events, service actions, and screens for specific nodes in the workflow.
 
 * Import and export workflows to share within your organization and with external partners.
+
+* Switch between the default summary view for comprehensive understanding of workflows and the iconified view for a high-level structure. In the summary view, for each node in the workflow you are provided detailed information such as events triggered, conditions configured and service actions invoked. The iconified view displays only the icon of each node.
 
 Here's a video providing a concise overview of workflows.
 
@@ -86,22 +100,6 @@ Here are some use cases where you can use workflow for automation:
 
 * Travel reimbursement
 
-## Workflow components
-
-You can implement a workflow in the workflow editor using the following process nodes:
-
-* [Start](start-workflow.md)
-
-* [Automatic activity](add-automatic-activity.md)
-
-* [Human activity](add-human-activity.md)
-
-* [Decision](add-decisions.md)
-
-* [Go to a previous step](go-to-previous-step.md)
-
-* [End](end-workflow.md)
-
 ## Key considerations for implementing workflows
 
 Here are some points to consider as you implement workflows in ODC:
@@ -121,3 +119,10 @@ Here are some points to consider as you implement workflows in ODC:
 * Workflows **do not support real-time collaboration**, meaning multiple users cannot edit a workflow simultaneously. However, basic conflict detection is supported. If a new version of a workflow exists in dev, you are notified when you open it or try to publish your changes.
 
 * There is **no debugger** for workflows. However, you can monitor the workflow's current state in the portal in near real-time.
+
+## Related resources
+
+* [Using workflows](using-workflows.md)
+* [Workflow nodes](workflow-components.md)
+* [Troubleshooting workflows](troubleshooting-workflows.md)
+* [Building Workflows in ODC](https://learn.outsystems.com/training/journeys/building-workflows-in-odc-2690) online course

@@ -1,12 +1,23 @@
 ---
-tags:
+tags: ui patterns, image gallery, ux design, how-to, widgets
 summary: Explore the Lightbox Image UI Pattern in OutSystems Developer Cloud (ODC) for creating detailed image galleries in applications.
 locale: en-us
 guid: 575c188f-fb02-4d70-8241-4b3e4518d66c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A15772&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Lightbox Image
 
 You can use the Lightbox Image UI Pattern to open smaller thumbnail images in full screen mode. This UI pattern is often used when creating an image gallery, allowing you to navigate through each of the images and view them in more detail.

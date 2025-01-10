@@ -1,11 +1,20 @@
 ---
-tags: 
+tags: ui design, pagination implementation, user experience, data management, list management
 summary: Learn how to implement and configure the Pagination UI pattern in OutSystems Developer Cloud (ODC) to manage long listings efficiently.
 locale: en-us
 guid: d5aa86c4-874b-4d6d-91c6-c4a18c096f0a
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A17402&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Pagination

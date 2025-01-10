@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) provides a comprehensive UI framework allowing developers to customize app styles in line with organizational standards.
-tags:
+tags: ui customization, style guide, widgets, css, design consistency
 locale: en-us
 guid: A15EFAFE-CE22-4974-B90E-CB0E18D263B1
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
+
 # Customize UI styles
 
 Users interact with your apps through the user interface (UI). As a developer, your goal is to follow UI standards defined by your organization but also to create an app that looks good and is easy to use.

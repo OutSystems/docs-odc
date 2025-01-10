@@ -1,11 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables email management and configuration through ODC Studio and ODC Portal using SMTP.
-tags:
+tags: email configuration, smtp integration
 locale: en-us
 guid: F826D84E-BF79-4287-9322-1E00E198A06E
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Emails

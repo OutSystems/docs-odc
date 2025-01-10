@@ -1,13 +1,21 @@
 ---
 summary: Learn how to add wait nodes to your workflow.
-tags:
+tags: workflow, wait node, workflow implementation, event conditions, mobile apps
 locale: en-us
 guid: 55439e03-d90e-46f7-aac5-1cc0d1c42c90
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+coverage-type:
+  - apply
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # Add wait 
 
 When implementing your workflow, you can include a **Wait** node in your workflow that puts your workflow execution on hold until the **Close on** event occurs and certain configured conditions are met. 

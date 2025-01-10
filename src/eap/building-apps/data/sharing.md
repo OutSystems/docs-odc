@@ -1,12 +1,21 @@
 ---
 summary: Explore data sharing techniques in OutSystems Developer Cloud (ODC) for app integration and external system connectivity.
-tags:
+tags: data sharing, app integration, server actions, producer and consumer apps
 locale: en-us
 guid: dcc95e95-aa1d-4c97-a2fa-24a18fb753e2
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2502&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
+
 # Sharing data defined in OutSystems
 
 This article introduces the concepts of sharing data defined in OutSystems.

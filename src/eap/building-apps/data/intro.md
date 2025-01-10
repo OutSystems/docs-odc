@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) streamlines data management with automated database operations and visual modeling tools for efficient app development.
-tags:
+tags: data management, visual modeling, database operations, entities and relationships
 locale: en-us
 guid: e74f9938-8b24-441b-8512-b3ccfda522b4
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A517&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
+
 # Data management
 
 This article introduces the concepts of entities and optimized tools for retrieving data.

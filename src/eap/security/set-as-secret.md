@@ -5,6 +5,18 @@ guid: 3a5f56e7-2515-4e97-914e-b8a503f82c7f
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+tags: secret management, security, encryption, application configuration, sensitive data protection
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Set as secret
@@ -40,3 +52,7 @@ Following is an overview of the process for setting a secret:
 ## Reverting from secret to non-secret
 
 To change a setting from non-secret to secret, follow the same process you used when you initially set the secret in ODC Studio. Note that changing a secret to a non-secret deletes the value of the setting once you publish the app.
+
+## Related resources
+
+* [Settings](https://learn.outsystems.com/training/journeys/settings-370) online course

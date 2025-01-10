@@ -5,6 +5,16 @@ guid: 9e0fb9b7-d2b0-419f-a5d8-5b5ed730da5e
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=design&node-id=2449%3A32709&t=qXDLlqyCzAMXQgr0-1
 platform-version: odc
+tags: user management, access control, role-based access control, group management, permissions
+audience:
+  - platform administrators
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - understand
+  - apply
 ---
 
 # User management
@@ -42,3 +52,13 @@ The ODC Portal is the place to manage users, and you can:
 
 
 ![Diagram illustrating the process of managing users in the OutSystems Developer Cloud Portal](images/manage-users-in-portal-diag.png "User Management in ODC Portal")
+
+You can also use the ODC [User management REST APIs](../reference/apis/identity-v1.md) for programmatically managing the user and access related operations. For detailed information about how to use these APIs, refer to [Getting started](../reference/apis/public-rest-apis/getting-started.md).
+
+## Related resources
+
+* [Basic User Management in ODC](https://learn.outsystems.com/training/journeys/user-management-odc-881) online course
+
+* [Basic Governance for End-Users](https://learn.outsystems.com/training/journeys/basic-governance-for-end-users-2693) online course
+
+* [Role-based Security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course

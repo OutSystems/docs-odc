@@ -1,12 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports configuring an "Exit URL" in mobile apps using AppShield for security-related shutdowns.
-tags:
+tags: mobile app security, appshield, security configuration, extensibility configurations, json configuration
 locale: en-us
 guid: 4afd7e48-139b-4672-a1f9-ec8a1aadac75
 app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4725%3A140&mode=design&t=olEoleG2T5cjfzpt-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Configuring an exit URL for a blocked app
 
 <div class="info" markdown="1">

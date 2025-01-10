@@ -1,11 +1,20 @@
 ---
 summary: Explore and share reusable software assets on OutSystems Developer Cloud (ODC) through Forge, enhancing app development and technical solutions.
-tags:
+tags: software asset management, component sharing, app customization, integration, ui design
 locale: en-us
 guid: 8a1edbeb-2a5c-48f6-a5c2-8b2b15a538bf
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - forge
+  - odc studio
+coverage-type:
+  - understand
 ---
 
 # Forge

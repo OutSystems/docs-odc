@@ -1,11 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables efficient app configuration management without the need for redeployment.
-tags:
+tags: configuration management, deployment, infrastructure management, app settings, stage-specific configuration
 locale: en-us
 guid: e32e1f5f-83b6-4b00-a593-83ba5017fc16
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=2449%3A32709&t=hXGTDybYCg38Lul5-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - understand
 ---
 
 # Configuration management
@@ -55,6 +64,12 @@ To see the list of settings, click the down arrow and open the accordion. A list
 After you make the changes, apply the settings to make the new values available.
 
 Remember, settings are stage-specific.
+
+For more information, refer to:
+
+* [Settings' best practices](../building-apps/data/data-best-practices/intro.md#settings)
+
+* [Settings](https://learn.outsystems.com/training/journeys/settings-370) online course
 
 ## Managing timers
 

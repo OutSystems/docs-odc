@@ -1,11 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables email design and management through its ODC Studio interface.
-tags:
+tags: email design, ui development
 locale: en-us
 guid: 4DB954E5-AD44-43A3-9FE0-1D29C5FBE109
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A11323&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
 
 # Working with emails

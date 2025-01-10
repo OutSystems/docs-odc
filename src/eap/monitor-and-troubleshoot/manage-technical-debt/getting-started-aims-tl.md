@@ -1,13 +1,18 @@
 ---
-summary: 
-tags: 
+summary: Manage code quality and technical debt using OutSystems Data Cloud (ODC) with AI Mentor System, prioritizing improvements and helping team development.
+tags: code quality, technical debt, best practices, security risks, ai mentor system
 guid: 710897dc-5c3f-46af-a2a2-24f0bf6adb8a
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3621-254
+coverage-type:
+  - understand
+audience:
+  - tech leads
+outsystems-tools:
+  - none
 ---
-
 # Getting started in Code quality as a tech lead
 
 As a technical lead or team lead, with the AI Mentor System (AIMS) you can quickly get an overview of the code quality of your team's apps. This helps you manage technical debt, understand if your team's code is following best practices, and identify possible security risks.

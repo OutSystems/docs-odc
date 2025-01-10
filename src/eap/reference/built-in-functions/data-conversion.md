@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports a variety of data conversion functions for server-side, client-side, and database logic.
-tags:
+tags: data conversion, server-side logic, client-side logic, data types, data formatting
 locale: en-us
 guid: 09f6ea4e-ab86-4288-823d-aab5b88c808b
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
+
 # Data Conversion
 
 ## BooleanToInteger

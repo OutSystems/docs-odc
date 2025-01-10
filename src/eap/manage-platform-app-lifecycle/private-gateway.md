@@ -1,11 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) features Private Gateways, a secure solution for connecting apps to private network endpoints.
-tags: 
+tags: cloud infrastructure, security, connectivity, cloud-native solutions, multitenant architecture
 locale: en-us
 guid: 9a023d82-da5b-4164-8f3f-9d6c35444b50
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=3001%3A1059&t=hXGTDybYCg38Lul5-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - platform administrators
+  - infrastructure managers
+outsystems-tools:
+  - none
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Configure a private gateway to your network
@@ -35,7 +46,7 @@ A Private Gateway supports multiple tunnels and uses a load balancer to handle r
 
 <div class="info" markdown="1">
 
-Private Gateway requires the subscription of an add-on to the ODC Platform edition. Please contact your OutSystems account team for more information.
+Private Gateway requires the [subscription](subscription-console.md) of an add-on to the ODC Platform edition. Please contact your OutSystems account team for more information.
 
 </div>
 
@@ -80,6 +91,15 @@ For each Private Gateway, a list of connected endpoint(s) of the form `secure-ga
 For each endpoint you want to use in your app, follow the procedure under [Consume several methods of a REST API](../integration-with-systems/consume_rest/consume-a-rest-api.md#consume-several-methods-of-a-rest-api--all-methods) using the swagger specification file for the endpoint. After you complete the procedure, replace the first part of **Base URL** setting with `https://secure-gateway:<port>/` if the endpoint is connected to `cloud-connector` over TLS/SSL or `http://secure-gateway:<port>/` if it's not.
 
 When connecting to endpoints over TLS/SSL, particularly when they're behind an API gateway, you may need to adjust the host header (`Host`) of the REST consume. This is because the app connects to `secure-gateway` and doesn't know the destination hostname of the endpoint directly. If the endpoint, like an AWS API Gateway, validates the `Host` header against its hostname, it may reject requests due to the mismatch. To resolve, add an `OnBeforeRequest` callback in the REST consume. In the callback, explicitly set the host header to the value expected by the API Gateway, for example, `api.example.com`. This adjustment ensures that requests are correctly recognized by the API Gateway. For guidance on implementing a `OnBeforeRequest` callback see [Simple Customizations](../integration-with-systems/consume_rest/simple-customizations.md).
+
+<div class="info" markdown="1">
+
+ODC only supports connections that have Valid SSL Certificates, valid certificates are:
+
+1. Not Expired.
+1. Signed by a trusted Certificate Authority (CA).
+
+</div>
 
 <div class="info" markdown="1">
 

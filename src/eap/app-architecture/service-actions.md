@@ -1,11 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enhances app development with reusable service actions that encapsulate complex logic for efficiency and maintainability.
-tags:
+tags: api integration, code reuse, development service action usage, performance optimization
 locale: en-us
 guid: f540d163-f3b7-41c7-a898-b9f07d3f3b89
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
+  - evaluate
 ---
 
 # Service actions

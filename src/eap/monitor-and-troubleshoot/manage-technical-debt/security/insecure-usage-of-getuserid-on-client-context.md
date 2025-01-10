@@ -1,13 +1,21 @@
 ---
-summary: Avoid passing identity information from the client side to the server side as an action parameter. 
-tags: 
+summary: Avoid passing identity information from the client side to the server side as an action parameter.
+tags: identity security, rest api, authorization, client-side vulnerabilities, secure coding
 guid: 3d263380-1767-4bdc-a8be-00d7d4d0e8da
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3525-376&node-type=CANVAS&t=fro20soaPpjjIXwf-0
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - full stack developers
+  - backend developers
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # Insecure usage of GetUserId function on client context
 
 Avoid passing identity information from the client side to the server side as an action parameter.
@@ -31,5 +39,4 @@ Identity information should be obtained on server calls using functions like `Ge
 
 Remove any usages of `GetUserId` on the client side and replace them with the same function on the server side. This way, you avoid passing identity information from the client side to the server side as an action parameter.
 
-For more information, refer to [Reactive web security best practices: Securing server calls](https://success.outsystems.com/documentation/best_practices/security/reactive_web_security_best_practices/).
-
+For more information, refer to the [best practice for validating user permissions on server-side logic](../../../building-apps/logic/best-practices-logic.md#validate-permissions-server-side).

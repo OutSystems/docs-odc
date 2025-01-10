@@ -1,0 +1,440 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Portfolio API",
+    "description": "REST endpoints for retrieving information about assets and environments in your organization.",
+    "version": "v1"
+  },
+  "servers": [
+    {
+    "url": "https://ODC_PORTAL_DOMAIN/api/portfolios/v1",
+    "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/identity/v1",
+      "description": "User and Access Management API.",
+      "variables": {
+        "odc-portal-domain": {
+          "default": "ODC_PORTAL_DOMAIN",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "security": [{
+    "bearerAuth": []
+  }],
+  "paths": {
+    "/deployed-assets": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves a list of deployed assets.",
+        "description": "Retrieves a list of deployed assets containing updated deployment status per environment (stage).\n\nThe result only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission.",
+        "operationId": "DeployedAssets_ListAssets",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Environment key on which to filter, comma separated.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "Asset keys on which to filter, comma separated.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Filter the asset type. Available values: WebApplication, MobileApplication, Workflow.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nameContains",
+            "in": "query",
+            "description": "Filter by matching on the name, case-insensitive.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Max number of elements that should be returned in a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the last page, to get the following page with the same filters applied.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort order of the elements.\r\n-element1 for descending, element2 for ascending.\r\nFor nested sorting, the format is element1[key].element2 .\r\nMultiple orders joined by comma.\r\nExample -element1,element2 to sort by element1 descending then by element2 ascending.\r\nSupported values for first order sorting: Type, Deployments(nested) .\r\nFor nested sorting: Name, DeploymentDateTime.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeployedAssetPagedListResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "The result only shows assets for which the API Client has **Asset management > Open** permission, and only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission."
+      }
+    },
+    "/environments": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves the list of environments (stages).",
+        "operationId": "Environments_ListEnvironments",
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentListResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "The result only shows environments (stages) for which the API Client has **Stage > View stage** permission.",
+        "description": "\nThe result only shows environments (stages) for which the API Client has **Stage > View stage** permission."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DeployedAsset": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of asset (WebApplication, MobileApplication, Workflow).",
+            "nullable": true
+          },
+          "key": {
+            "type": "string",
+            "description": "The asset key.",
+            "format": "uuid"
+          },
+          "deployments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Deployment"
+            },
+            "description": "Where the asset is deployed and its details.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Deployed asset"
+      },
+      "DeployedAssetPagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeployedAsset"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "Deployment": {
+        "required": [
+          "buildKey",
+          "deploymentDateTime",
+          "deploymentKey",
+          "deploymentUserId",
+          "description",
+          "environmentKey",
+          "iconUrl",
+          "name",
+          "revision"
+        ],
+        "type": "object",
+        "properties": {
+          "environmentKey": {
+            "type": "string",
+            "description": "The environment key in which the asset is deployed.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "The asset name.",
+            "nullable": true
+          },
+          "revision": {
+            "type": "integer",
+            "description": "The asset revision.",
+            "format": "int32"
+          },
+          "buildKey": {
+            "type": "string",
+            "description": "The asset build key.",
+            "format": "uuid"
+          },
+          "deploymentKey": {
+            "type": "string",
+            "description": "The deployment key.",
+            "format": "uuid"
+          },
+          "deploymentDateTime": {
+            "type": "string",
+            "description": "The date at which the deployment occurred.",
+            "format": "date-time"
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the asset.",
+            "nullable": true
+          },
+          "iconUrl": {
+            "type": "string",
+            "description": "The icon of the asset.",
+            "nullable": true
+          },
+          "deploymentUserId": {
+            "type": "string",
+            "description": "The id of the user that did the deployment.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Deployment instance"
+      },
+      "Environment": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The environment key.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The environment name.",
+            "nullable": true
+          },
+          "hostname": {
+            "type": "string",
+            "description": "The environment hostname.",
+            "nullable": true
+          },
+          "purpose": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EnvironmentPurpose"
+              }
+            ],
+            "description": "The environment purpose."
+          },
+          "order": {
+            "type": "integer",
+            "description": "The environment order.",
+            "format": "int32"
+          },
+          "region": {
+            "type": "string",
+            "description": "The environment region.",
+            "nullable": true
+          },
+          "hosting": {
+            "type": "string",
+            "description": "The hosting type (oscloud, selfhosted).",
+            "nullable": true
+          },
+          "isConfigured": {
+            "type": "boolean",
+            "description": "If is selfhosted and configured."
+          },
+          "isDeployedToCluster": {
+            "type": "boolean",
+            "description": "If is deployed on the cluster."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Environment"
+      },
+      "EnvironmentListResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Environment"
+            },
+            "description": "List of results.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a list of results."
+      },
+      "EnvironmentPurpose": {
+        "enum": [
+          "Development",
+          "NonProduction",
+          "Production",
+          "Unknown"
+        ],
+        "type": "string"
+      },
+      "PageInfoWithTotals": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of results in the current page.",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limit of results per page.",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset of the current page of results.",
+            "format": "int32"
+          },
+          "nextPageOffset": {
+            "type": "integer",
+            "description": "Offset of the next page of results.",
+            "format": "int32"
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total of results.",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": "Total of result pages.",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains response page information including totals."
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

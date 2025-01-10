@@ -1,12 +1,21 @@
 ---
 summary: Manage transactions in OutSystems Developer Cloud (ODC) by controlling OutSystems and External requests.
-tags: 
+tags: external system integration, error handling, database operations, transaction management, service actions
 guid: 05934d09-1852-40c7-8b4f-cafd0f93f2a3
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=5793-56&t=8QR9a9sOWlPpPeDd-1
---- 
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
+  - apply
+---
 
 # Transactions in external entities
 

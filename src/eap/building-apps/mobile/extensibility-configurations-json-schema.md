@@ -1,12 +1,20 @@
 ---
 summary: Learn how to customize mobile apps using the JSON schema for Extensibility Configurations in OutSystems Developer Cloud (ODC).
-tags: 
+tags: json configuration, plugin management, app customization, mobile development, configuration schema
 locale: en-us
 guid: ecb98e61-f07f-4204-a899-9fd1d5460fbf
 app_type: mobile apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
+  - remember
 ---
+
 # Extensibility configurations JSON schema
 
 <div class="info" markdown="1">

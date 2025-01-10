@@ -1,12 +1,21 @@
 ---
 summary: Explore how OutSystems Developer Cloud (ODC) utilizes Screen Templates to accelerate app development by providing predefined layouts and sample data.
-tags:
+tags: screen design, outsystems ui framework
 locale: en-us
 guid: 3136da1f-dec0-4a0b-9403-59278cb8b247
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10562&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
+
 # Screen Templates
 
 Screen Templates enable you to create [Screens](../screen-about.md) with predefined layouts, widgets, components, styles, and logic. The Screens you create from the built-in Screen Templates have sample data. Having sample data in the Screen is a good way to see how the Screen is designed and to get inspired for developing your app.

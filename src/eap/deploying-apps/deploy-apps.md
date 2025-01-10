@@ -1,11 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) facilitates app deployment across multiple stages with containerization and a unified code repository.
-tags:
+tags: continuous deployment, containerization, deployment stages, code repository, deployment isolation
 locale: en-us
 guid: d0aa50bf-0378-4bb9-8c4f-71b37092dd8b
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?node-id=2901-72&t=huLfuwjwe8mJCQTh-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Deploying assets
@@ -142,3 +152,6 @@ An asset can have one of the following deployment statuses:
 
 You can access the log information for each **asset deployment** by clicking the row for which you want more information.
 
+## Related resources
+
+* [Continuous Delivery in ODC](https://learn.outsystems.com/training/journeys/continuous-delivery-2396) online course

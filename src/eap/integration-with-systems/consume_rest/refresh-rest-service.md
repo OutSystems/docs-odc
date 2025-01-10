@@ -1,12 +1,22 @@
 ---
 summary: Learn how to refresh REST web services in OutSystems Developer Cloud (ODC) to update consumed API methods efficiently.
-tags:
+tags: api integration, rest api, json, version control, service refresh
 locale: en-us
 guid: 1ba6b838-04bc-4c08-813d-5a2901954f8c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A12107&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - backend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Refresh a REST web service
 
 To change the services consumed from a REST API or to modify the list of consumed REST API methods, you can refresh the service in ODC Studio.

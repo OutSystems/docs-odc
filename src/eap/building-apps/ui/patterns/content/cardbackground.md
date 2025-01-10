@@ -1,12 +1,23 @@
 ---
-tags:
+tags: ui design patterns, mobile app development
 summary: Learn to enhance app interfaces using the Card Background UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 8460d7b9-4aa2-410b-8869-635625d64a4f
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A11449&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Card Background
 
 You can use the Card Background UI Pattern to group small pieces of information and highlight them on the screen using a background image. The information is grouped into a small block that is easily noticeable on-screen. 

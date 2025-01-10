@@ -1,11 +1,19 @@
 ---
 summary: OutSystems Developer Cloud (ODC) utilizes specific HTTP status codes for REST API interactions, detailed in the provided list.
-tags: 
+tags: rest api, http status codes, api development, error handling, server response
 locale: en-us
 guid: dcb96e66-c362-42fd-a2b2-42515c06c07b
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
 
 # Built-in HTTP Status Codes

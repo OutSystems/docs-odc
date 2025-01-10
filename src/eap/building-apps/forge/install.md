@@ -1,12 +1,22 @@
 ---
 summary: Explore how to install and update Forge assets in OutSystems Developer Cloud (ODC) for enhanced functionality.
-tags:
+tags: forge asset management, asset installation, asset updates, outsystems developer cloud, odc studio
 helpids: 30477
 locale: en-us
 guid: 515576a8-5acd-449b-af7c-d2c0670056dd
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - forge
+  - odc studio
+coverage-type:
+  - remember
+  - apply
 ---
 
 # Install or update a Forge asset

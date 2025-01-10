@@ -1,12 +1,22 @@
 ---
 summary: Explore how to implement and customize the Gallery UI Pattern in OutSystems Developer Cloud (ODC) to display content effectively.
-tags:
+tags: ui patterns, content display
 locale: en-us
 guid: 6ae27265-f93e-465d-ae49-d98f7dedb86c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A9040&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Gallery
 
 You can use the Gallery UI Pattern to display groups of content. This UI pattern allows users to sequentially browse images, with the notion of a beginning and an end.

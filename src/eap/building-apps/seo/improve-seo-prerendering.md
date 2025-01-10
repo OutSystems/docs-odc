@@ -1,14 +1,27 @@
 ---
-summary: Improve SEO with prerendering. 
-tags: 
+summary: Improve SEO with prerendering.
+tags: seo, prerendering, outsystems, spa, core web vitals
 guid: 3f649fec-07c4-4a49-843f-a61c22dbf3e5
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+coverage-type:
+  - apply
+audience:
+  - frontend developers
+outsystems-tools:
+  - none
 ---
-
 # Improve SEO with prerendering
+
+<div class="warning" markdown="1">
+
+This page provides a suggestion on how to achieve improved SEO performance with ODC Applications using third party tools as a workaround and isn't an official supported product offering.
+
+Please be aware of existing [Platform Limits](../../getting-started/system-requirements.md#platform-limits) and that Platform changes can subject unsupported workarounds to breaking changes without warning.
+
+</div>
 
 OutSystems Reactive apps are Single Page Applications (SPAs). These are web apps that load a single page and update content dynamically. They offer benefits like dynamic content, smooth navigation, improved performance, offline capabilities, and development simplicity.
 

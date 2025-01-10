@@ -1,11 +1,19 @@
 ---
 summary: Explore how the OutSystems Developer Cloud (ODC) utilizes the "On Application Ready" event to initialize apps and manage screen rendering.
-tags: 
+tags: application initialization, screen rendering, system events, block rendering, url navigation
 locale: en-us
 guid: 393ee8f0-dede-42fe-b5fb-ecd4ed0ec534
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21674&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
 
 # On Application Ready

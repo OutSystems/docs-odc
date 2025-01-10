@@ -1,11 +1,17 @@
 ---
 summary: Explore how to manage mobile app state with OutSystems Developer Cloud (ODC) by adding the On Application Resume action for network checks and more.
-tags: 
+tags: mobile app development, state management, mobile app lifecycle, system events, networking
 locale: en-us
 guid: 96c703ae-d97e-4ceb-b511-6524da0b7cf3
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3214%3A21752&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
 
 # On Application Resume

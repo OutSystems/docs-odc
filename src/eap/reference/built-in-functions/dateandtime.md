@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports a variety of date and time manipulation functions for both server-side and client-side logic.
-tags:
+tags: date manipulation, time functions, server-side logic, client-side logic, database aggregates
 locale: en-us
 guid: 9f92e1f1-c921-4a83-b689-e0e554244c15
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
+
 # Date and Time
 
 ## AddDays

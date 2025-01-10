@@ -1,12 +1,21 @@
 ---
 summary: Learn how to effectively throw custom errors in exposed REST APIs using OutSystems Developer Cloud (ODC).
-tags:
+tags: error handling, rest api, http status codes, exception management, database transactions
 locale: en-us
 guid: e1d028a0-d688-4cbb-93c1-caecb302ee9a
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21311&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Throw a Custom Error in an Exposed REST API
 
 When a REST API method runs into an error, it's useful to send a meaningful error message to the client about what happened. Some problems are automatically handled by OutSystems, but you have the possibility to add custom error handling to your logic.

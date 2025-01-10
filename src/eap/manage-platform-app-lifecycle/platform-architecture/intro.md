@@ -1,11 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) leverages a cloud-native architecture with scalable, isolated Kubernetes clusters for app development and deployment.
-tags: 
+tags: cloud-native architecture, kubernetes clusters, cloud infrastructure, data security, identity service
 locale: en-us
 guid: 9a0cb62a-f11b-4d1a-9e79-0ca7d398e57b
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/wMgr3GDiuAdkPics5gzXx9/Cloud-native-architecture-of-OutSystems-Developer-Cloud?type=design&node-id=3001%3A25&t=wS2nDUn4cr9EORu8-1
 platform-version: odc
+audience:
+  - full stack developers
+  - platform administrators
+  - infrastructure managers
+  - ui designers
+  - tech leads
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - understand
 ---
 
 # Cloud-native architecture of OutSystems Developer Cloud
@@ -123,8 +134,6 @@ Each Runtime stage has an isolated Amazon Aurora Serverless database. The follow
 
 ![Diagram showing the database architecture for the Runtime Production stage in OutSystems Developer Cloud.](images/architecture-runtime-data-diag.png "Runtime Production Stage Database")
 
-Data is automatically written to two availability zones simultaneously.
-
 The Amazon Aurora database architecture model decouples compute and storage, and both automatically scale independently. The Database CPU and Memory automatically scale as the amount of load increases, and the database storage volume automatically scales as the amount of data stored increases.
 
 You can store secret data for your apps such as API keys as secret settings in a secret manager.
@@ -205,6 +214,6 @@ See [Security in OutSystems Developer Cloud](../../security/security.md#monitori
 ---
 <div class="info" markdown="1">
 
-Some features mentioned in this article may require add-ons to the ODC Platform edition. Please contact your OutSystems account team for more information.
+Some features mentioned in this article may require [add-ons](../subscription-console.md) to the ODC Platform edition. Please contact your OutSystems account team for more information.
 
 </div>

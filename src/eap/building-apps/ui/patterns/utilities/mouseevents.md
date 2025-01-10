@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui development, interface design
 summary: Explore how to implement precise element selection using the Mouse Events UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: c9b283f3-79d1-4ac0-93a4-1f1a7a2c50e7
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A21331&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Mouse Events
 
 You can use the Mouse Events UI Pattern when the user needs to select elements on the interface with high precision.

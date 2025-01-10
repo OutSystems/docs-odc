@@ -1,13 +1,18 @@
 ---
-summary: 
-tags: 
+summary: Enhance code quality in OutSystems Data Cloud (ODC) applications using AI Mentor System for automated review, performance improvements, and security mitigation.
+tags: code quality, ai mentor system, outsystems applications, odc studio, performance optimization
 guid: 5106A167-C080-4F57-96A3-75BFB73A33FB
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3522-11
+coverage-type:
+  - understand
+audience:
+  - full stack developers
+outsystems-tools:
+  - odc studio
 ---
-
 # Getting started in Code Quality as a developer
 
 As a developer, Code Quality, powered by AI Mentor System (AIMS), automates your code reviews. Code Quality identifies specific parts of the code that may need changes to improve performance, reduce technical debt, and mitigate security issues.

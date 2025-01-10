@@ -1,12 +1,21 @@
 ---
 summary: Learn how to create and customize a Radar Chart in OutSystems Developer Cloud (ODC) using multiple series types and data points.
-tags:
+tags: data visualization, ui design
 locale: en-us
 guid: 0b784bc9-f546-41e5-9c30-832253c5bc6e
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Radar Chart
 
 This example shows how you can create a simple Radar Chart with multiple series types. 

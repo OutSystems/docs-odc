@@ -1,12 +1,22 @@
 ---
 summary: Learn how to create and utilize a theme library in OutSystems Developer Cloud (ODC) to enhance app branding and consistency.
-tags:
+tags: ui design, branding
 locale: en-us
 guid: ca470c96-62e3-4b1b-9279-af09006e8042
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10812&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Use Theme Library for app branding
 
 When you share a theme you increase consistency among your organization's apps. Using the same theme helps to increase brand awareness. This article provides guidance on how to create a theme library.

@@ -5,7 +5,18 @@ guid: 43207953-41b5-4c62-887b-bb7a72a433ec
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+tags: debugging, watches, odc studio
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
+  - apply
 ---
+
 # Watches
 
 Watches allow you to examine app elements in ODC Studio while debugging your app. These elements are always displayed in the Watches Tab, regardless of being in or out of scope of the element being debugged. This behavior contrasts with the rest of the [scope tabs](debugger-ui-reference.md#scope-tabs-area), where the displayed content depends on the current scope.

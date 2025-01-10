@@ -1,12 +1,21 @@
 ---
 summary: Explore the supported join types in OutSystems Developer Cloud (ODC) for combining data from multiple entities.
-tags:
+tags: database operations, entity relationships, data aggregation, query optimization, data modeling
 locale: en-us
 guid: edee2ac8-5d4c-4423-9e26-cce4b0f45f4c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A8518&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
+
 # Supported join types
 
 Usually your data is not stored in a single Entity. So, when performing queries on the data, you need to combine the records that is stored in multiple Entities. This is also known as joining records from multiple Entities.

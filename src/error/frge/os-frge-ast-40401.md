@@ -1,11 +1,20 @@
 ---
 summary: The requested asset doesn’t exist <assetKey>. Check the documentation for further guidance. If the problem persists, let us know.
-tags: 
+tags: error handling, troubleshooting issues, asset management, forge platform, support and guidance
 guid: d9aa7178-706a-47fd-8c5d-e33954d81db7
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - forge
+  - odc studio
+coverage-type:
+  - unblock
 ---
 
 # OS-FRGE-AST-40401

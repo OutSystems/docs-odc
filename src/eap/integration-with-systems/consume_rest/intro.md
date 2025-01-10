@@ -1,13 +1,23 @@
 ---
 summary: Learn how to consume REST APIs using OutSystems Developer Cloud (ODC) by understanding API documentation, security requirements, and data type mappings.
 helpids: 30484
-tags:
+tags: rest apis, api authentication, data type mapping, api security, api documentation
 locale: en-us
 guid: b7e2daa5-b34c-4907-885b-56574bf14295
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
+  - remember
 ---
+
 # Consume REST APIs
 
 When you need to retrieve or manipulate information from another system, and that system provides REST APIs for that effect, you can consume a REST API in your application.  
@@ -31,6 +41,8 @@ Each consumed REST API will have their own model of security and authentication 
 
 REST APIs using **Basic Authentication** are supported out of the box in the "Consume REST API Method" dialog box described below. You can use the REST customization capabilities to add support for other authentication methods:
 
+> **Warning:** OutSystems does not support self-signed certificates. The REST API must have a valid public certificate with a public certificate authority to ensure the request is accepted, either at the client or server side.
+
 * For token-based authentication, use the **OnBeforeRequest** callback to add the required HTTP authorization header to the outgoing requests. 
 
 ## Mapping REST data types to OutSystems data types
@@ -49,3 +61,7 @@ When [consuming REST API Methods](consume-a-rest-api.md) in your app, OutSystems
 | `{"name": "Christine Sharp"}`| Text | |
 
 Data that can't be converted to one of the above data types is converted to Text.
+
+## Related resources
+
+* [Consuming REST APIs](https://learn.outsystems.com/training/journeys/consuming-rest-api-207) online course

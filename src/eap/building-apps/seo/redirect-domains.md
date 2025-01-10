@@ -1,14 +1,30 @@
 ---
-summary: How to navigate to a root domain and access a default ODC app. 
-tags: 
+summary: How to navigate to a root domain and access a default ODC app.
+tags: seo, redirection, reverse proxy, nginx configuration, cdn
 guid: b622d85c-f6f8-4833-984e-6f825c68754b
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+coverage-type:
+  - apply
+audience:
+  - backend developers
+  - full stack developers
+  - infrastructure managers
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # Redirect domains
+
+<div class="warning" markdown="1">
+
+This page provides a suggestion on how to achieve improved SEO performance with ODC Applications using third party tools as a workaround and isn't an official supported product offering.
+
+Please be aware of existing [Platform Limits](../../getting-started/system-requirements.md#platform-limits) and that Platform changes can subject unsupported workarounds to breaking changes without warning.
+
+</div>
 
 For SEO purposes and end-user friendliness, allow an end-user to navigate to a root domain and access a default ODC app.
 

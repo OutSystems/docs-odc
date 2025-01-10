@@ -5,7 +5,16 @@ guid: 607a5bdb-b74e-4d53-88f6-a6ac8389873e
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4307-248&mode=design&t=LCxHTNNeg6HjzPVf-0
 platform-version: odc
+tags: ssl pinning, mobile app security, certificate validity, https communications, plugin installation
+audience:
+  - mobile developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
+  - apply
 ---
+
 # SSL Pinning Plugin
 
 <div class="info" markdown="1">

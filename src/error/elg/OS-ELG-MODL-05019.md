@@ -1,11 +1,19 @@
 ---
-summary: "The name '<Name>' is not supported as it has more than 50 characters."
-tags:
+summary: The name '<Name>' is not supported as it has more than 50 characters.
+tags: error handling, troubleshooting, application deployment, name validation, external libraries
 guid: 8bce811a-085b-445d-bcbe-7a591e22fd0b
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - unblock
 ---
 
 # OS-ELG-MODL-05019

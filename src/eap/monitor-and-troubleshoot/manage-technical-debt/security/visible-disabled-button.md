@@ -1,13 +1,21 @@
 ---
-summary: Disabled button that is still visible. 
-tags: 
+summary: Disabled button that is still visible.
+tags: button visibility, button enable property, security, ui best practices, frontend development
 guid: 80a844f0-57f8-43eb-af04-5e727cd3bb38
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3616-10&node-type=CANVAS&t=E0BY5XjNnogt1jmq-0
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - none
 ---
-
 # Visible disabled Button
 
 Disabled button that's still visible.
@@ -26,3 +34,4 @@ A disabled button remains visible when the **Enabled** property is set to False,
 
 Instead of setting the **Enable** property to False, consider setting the **Visible** property instead, or use both properties together. This prevents the button from rendering completely on the client browser and prevents an experienced user from hacking the button and enabling the functionality.
 
+For more information, refer to the [best practice to protect your screens using roles](../../../building-apps/ui/creating-screens/best-practices-screens.md#roles).

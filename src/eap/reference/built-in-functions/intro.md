@@ -1,11 +1,19 @@
 ---
 summary: Explore built-in functions in OutSystems Developer Cloud (ODC) to enhance app logic with safe, exception-free operations.
-tags:
+tags: built-in functions, exception handling, data types, function usage, default values
 locale: en-us
 guid: 2eda09fd-8f1d-4a0d-a724-0bdb5f35d398
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
 
 # Built-in functions

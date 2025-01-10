@@ -1,11 +1,20 @@
 ---
 summary: Discover how to build a basic To Do list web app using OutSystems Developer Cloud (ODC) in just five minutes.
-tags: 
+tags: web development, data import
 locale: en-us
 guid: c344796f-8d4a-4e49-9c8c-094222cd1f5d
 app_type: mobile apps, reactive web apps
-figma: https://www.figma.com/file/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?type=design&node-id=2467%3A32718&t=O0Q2LHKWp3UPsYth-1 
+figma: https://www.figma.com/file/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?type=design&node-id=2467%3A32718&t=O0Q2LHKWp3UPsYth-1
 platform-version: odc
+audience:
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Build a basic Web app

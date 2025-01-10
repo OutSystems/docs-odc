@@ -1,12 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports cloud-native app architecture with scalable, loosely coupled components and strong library dependencies.
-tags:
+tags: cloud-native architecture, app scaling, microservices, api consumption, cloud containers
 locale: en-us
 guid: 145cf74c-c7a2-432d-b0b3-110d551d0e36
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A515&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - architects
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
+
 # App architecture
 
 With OutSystems Developer Cloud (ODC), architects can design apps to solve business problems and automate business processes using a **cloud-native** approach to the architecture. In a cloud-native architecture, an app is decomposed into loosely coupled and independently deployable components or services.
@@ -71,3 +81,7 @@ Apps hold all the configuration values, even those implemented at the consumed l
 ![Diagram showing the deployment process of an app from Development to QA and Production with container image reuse and configuration applications in OutSystems Developer Cloud.](images/deployment-process-diag.png "App Deployment Process Diagram")
 
 Are you planning to build your first app? See recommendations for [building a well-architected app](recommended-architecture.md).
+
+## Related resources
+
+* [Architecture Fundamentals in ODC](https://learn.outsystems.com/training/journeys/architecture-fundamentals-559) online course

@@ -1,12 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) leverages event-driven architecture for real-time data processing and app automation.
-tags:
+tags: event-driven architecture, real-time data processing, app automation
 locale: en-us
 guid: 5bfd1452-1ff8-4180-a437-65603671437b
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5324%3A590&mode=design&t=2ZbamW0IMDYxtZbC-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - architects
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
+
 # Events
 
 In ODC Studio, an event represents a change within an app. Events help track app changes and trigger specific actions in response to these changes. For example, creating a new account(event) triggers generating a bank account number(response) in a finance app.
@@ -35,4 +45,4 @@ Publisher app can also subscribe to events from other apps.
 
 </div>
 
-Events are triggered, and event handlers execute them asynchronously, enabling subscribers to receive and process events independently without waiting for the publisher to finish processing them.
+Events are triggered, and event handlers execute them asynchronously, enabling subscribers to receive and process events independently without waiting for the publisher to finish processing them. 

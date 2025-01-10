@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) automatically generates REST API documentation from method properties and descriptions upon app publication.
-tags:
+tags: api documentation, swagger, rest api, automatic documentation, integration
 locale: en-us
 guid: 08460e49-ec25-478c-abce-d4dc5d1abe2b
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21228&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Document an Exposed REST API
 
 Adding documentation to your REST API is essential as it helps developers to integrate their applications with your system.

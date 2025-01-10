@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) streamlines database modeling with entities, primary keys, and indexes for efficient data management.
-tags:
+tags: database modeling, entity management, data management, primary keys, indexes
 locale: en-us
 guid: 7bf1d47d-7310-4ec8-a5db-a41b983bdb5b
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
+
 # Entities
 
 Entities are elements that allow you to persist information in the database and to implement your database model. You can think of them as database tables or views. 
@@ -45,6 +54,8 @@ Indexes can also be used to create alternate and composite keys.
 
 When creating an index there is always a relevant trade-off between fetching and inserting data as it may bring some overhead to the latter.
 
+For more information, refer to the [best practices for indexing entities](../data-best-practices/intro.md#index-entities)
+
 ## Impacts when changing entities
 
 When you create a new entity attribute, the platform automatically manages the update of all records stored in the database for you. The new attribute is added to the records and set with the default value for its data type.
@@ -73,3 +84,8 @@ To convert an existing static entity to an entity right-click the static entity 
 
 </div>
 
+## Related resources
+
+* [Modeling Data](https://learn.outsystems.com/training/journeys/modeling-data-643) online course
+
+* [Data Model Integrity](https://learn.outsystems.com/training/journeys/data-model-integrity-638) online course

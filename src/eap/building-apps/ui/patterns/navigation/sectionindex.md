@@ -1,11 +1,19 @@
 ---
-tags: 
+tags: ui pattern, navigation, content organization, screen design, user interface
 summary: OutSystems Developer Cloud (ODC) features a Section Index UI Pattern for efficient content organization and navigation within app screens.
 locale: en-us
 guid: 117829a3-fdcf-4557-a4dd-99661992d73d
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A17605&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
+  - apply
 ---
 
 # Section Index

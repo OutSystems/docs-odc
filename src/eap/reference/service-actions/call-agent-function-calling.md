@@ -1,11 +1,19 @@
 ---
 summary: Explore authentication actions for built-in and external identity providers in OutSystems Developer Cloud (ODC).
-tags:
+tags: ai integration, service actions, error handling, ai model integration, chatbot functionality
 locale: en-us
 guid: ba01fdf7-e6d1-42eb-b21a-e9a0f25ef405
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
 
 # CallAgent V2 service action

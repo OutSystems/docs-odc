@@ -1,11 +1,20 @@
 ---
-tags: 
+tags: ui components, data visualization
 summary: Learn how to use the Counter UI Pattern in OutSystems Developer Cloud (ODC) to display numerical data effectively.
 locale: en-us
 guid: 7b33f1cb-f293-49c5-ad4a-8c781526acb7
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A19354&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Counter

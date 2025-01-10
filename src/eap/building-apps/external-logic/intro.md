@@ -1,25 +1,30 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports extending apps with custom .NET code through external logic integration.
 helpids: 30485
-tags:
+tags: external libraries, .net integration, custom code, c# development, sdk
 locale: en-us
 guid: 656e14cb-27b2-433f-835b-2535636e053b
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3325-22015&t=cNJuaJIMze8z5Tsy-0
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - apply
+  - understand
 ---
 
-# Extend your apps with external logic using custom code
+# Extend your apps with custom code
 
 You can use External Logic when you need to extend OutSystems Developer Cloud (ODC) apps with custom code (C#). This lets you extend apps to cover use cases that can't be fully covered using the built-in functions and out-of-the-box libraries bundled with ODC. Along with writing your own C# code in IDEs such as Visual Studio or Jet Brains Rider, you can use open-source .NET libraries.
 
 Your apps consume logic built in C# the same way they consume logic from libraries built in the OutSystems visual language or [out-of-the-box libraries](../../reference/libraries/intro.md). This means OutSystems developers consuming those libraries don't need to understand the underlying C# code to use external logic in their apps. The C# code becomes available in libraries as server actions and structures.
 
-<div class="info" markdown="1">
-
-Custom code recently added support for .NET 8.0. [Read more about transitioning from NET. 6.0](upgrade-net8.md).
-
-</div>
 
 When you want to create new external logic or update existing external logic, follow these steps:
 
@@ -107,7 +112,7 @@ To delete an external library before has been published, follow these steps:
 1. In the pending uploads list, click **X** next to the external library you want to delete to display a confirmation popup.
 1. Click **Cancel creation** to display the updated list.
 
-If you want to delete an external library after its published, follow the steps:
+If you want to delete an external library after its published, the process is similar to deleting an app or library developed in OutSystems. Follow these steps:
 
 1. Go to the ODC Portal, and from the Navigation menu, select **External Logic**  to display the list of pending uploads and published external libraries.
 1. Access the detail page of the library by clicking its name in the list of published libraries.
@@ -120,4 +125,4 @@ Deleting an external library impacts consumers relying on it.
 
 </div>
 
-Once published, you must delete an external library like an app or library developed in OutSystems. See [Deleting apps and libraries](../../deleting-apps/intro.md) for guidance.
+For more information about deleting published assets, refer to [Deleting apps and libraries](../../deleting-apps/intro.md) for guidance.

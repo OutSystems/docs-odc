@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui patterns, data binding, user interaction
 summary: OutSystems Developer Cloud (ODC) features the Dropdown Tags UI Pattern, enabling users to select multiple options from a dropdown list.
 locale: en-us
 guid: 91934a88-de31-437d-be9c-e2ca182835bb
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A15084&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Dropdown Tags
 
 The Dropdown Tags UI Pattern offers multiple choice options to the user when when using a dropdown search.

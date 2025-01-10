@@ -1,12 +1,21 @@
 ---
 summary: Explore UI interactions and data management in OutSystems Developer Cloud (ODC) for seamless app development.
-tags:
+tags: ui design, data management, screen navigation, user experience, aggregates
 locale: en-us
 guid: 743F0F2C-6ADF-4A7A-899E-3802A1249925
 app_type: reactive web apps
 platform-version: odc
 figma:
+audience:
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
+  - apply
 ---
+
 # UI Interactions
 
 A user interface (UI) is where a user interacts and communicates with a device. Devices can include display screens, keyboards, and a mouse. It's also the way users interact with an app.

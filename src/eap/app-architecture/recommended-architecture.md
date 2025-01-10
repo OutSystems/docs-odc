@@ -1,12 +1,25 @@
 ---
 summary: Explore scalable app design in OutSystems Developer Cloud (ODC) by aligning business problems with organizational structures.
-tags:
+tags: scalable architecture, app design, business problem analysis, bounded contexts, organizational structure
 locale: en-us
 guid: d67d7939-a99f-4328-b490-d0310c35a424
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A516&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - architects
+  - business analysts
+outsystems-tools:
+  - none
+coverage-type:
+  - apply
+  - evaluate
+  - understand
 ---
+
 # Building a well-architected app
 
 Before building apps in OutSystems Developer Cloud (ODC), understand the business problem you want to solve. To help you in that journey, look at an example of a home insurance portal.
@@ -54,7 +67,7 @@ In two business contexts, we identified reusable components and integrations wit
 
 <div class="info" markdown="1">
 
-In ODC you integrate with external systems by consuming REST API services.
+In ODC you integrate with external systems by consuming REST API services.For more information, refer to [Consume REST APIs](../integration-with-systems/consume_rest/intro.md)
 
 </div>
 
@@ -177,3 +190,7 @@ The architecture is composed of two libraries:
 You can use [**SAP connector**](../integration-with-systems/external-databases/intro.md) in ODC to connect your customer's information from SAP and work as a bridge to your customer portal.
 
 ![Diagram presenting the final architecture for a Home Insurance portal with apps and libraries](images/the-final-architecture-diag.png "The Final Architecture Diagram")
+
+## Related resources
+
+* [Architecture Fundamentals in ODC](https://learn.outsystems.com/training/journeys/architecture-fundamentals-559) online course

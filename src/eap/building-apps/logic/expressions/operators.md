@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports various operators for expressions, including arithmetic, logical, and comparison types.
-tags:
+tags: expression operators, data types, arithmetic operations, operator overloading, type conversion
 locale: en-us
 guid: ab45e99f-581c-4e59-a13b-0a23931a7e85
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
+
 # Operators
 
 This is the reference document for the operators you can use in an OutSystems [expression](../expressions.md).

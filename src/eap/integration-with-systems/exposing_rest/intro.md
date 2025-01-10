@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) facilitates the exposure of methods through REST APIs with a defined execution flow.
-tags:
+tags: rest apis, api development, authentication, api security, data serialization
 locale: en-us
 guid: 79ddbf86-371c-41cf-b9c9-45545b74957f
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22105&t=enlFI20VRi6L4Uys-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
+
 # Exposing REST APIs
 
 OutSystems allows you to [expose methods using a REST API](expose-a-rest-api.md). These methods can be organized under multiple REST APIs.

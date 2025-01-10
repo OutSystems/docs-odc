@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui building, mobile app development, video integration, responsive design, user interface patterns
 summary: Explore how to embed a native video player in your application using the Video UI pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: c9dbb039-b648-4395-a19d-863c0fd4cfae
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A18358&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Video
 
 You can use the Video UI pattern to embed a native video player into your application.

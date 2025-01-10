@@ -1,11 +1,19 @@
 ---
 summary: OutSystems Developer Cloud (ODC) integrates .NET methods and structures using the External Libraries SDK.
-tags:
+tags: .net integration, sdk reference, server actions, api development, application integration
 locale: en-us
 guid: d0d3ddbd-f243-4273-a2a6-78df0e3ae5ab
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
 
 # External Libraries SDK REFERENCE

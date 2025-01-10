@@ -1,11 +1,19 @@
 ---
-summary: "The interface decorated with OSInterface is implemented by class '<ClassName>' which doesn't have a public parameterless constructor."
-tags:
+summary: The interface decorated with OSInterface is implemented by class '<ClassName>' which doesn't have a public parameterless constructor.
+tags: error handling, c# programming, interface implementation, constructor definition, library publishing
 guid: ead000a1-6236-4351-9060-0c981c834d47
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - unblock
 ---
 
 # OS-ELG-MODL-05005

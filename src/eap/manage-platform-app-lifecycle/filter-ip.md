@@ -1,11 +1,21 @@
 ---
 summary: Explore how OutSystems Developer Cloud (ODC) enhances app security through configurable IP filters to restrict access based on IP addresses.
-tags:
+tags: application security, network security, access control, configuration management, cloud platforms
 locale: en-us
 guid: 269db566-d03b-49ae-84d8-c4aa181d8a88
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=3438%3A734&mode=design&t=DiHUqvfiUZQzsSzD-1
 platform-version: odc
+audience:
+  - platform administrators
+  - full stack developers
+  - mobile developers
+  - frontend developers
+outsystems-tools:
+  - odc portal
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Configure IP filters 
@@ -18,7 +28,7 @@ Only users with **Manage IP Restrictions** permissions can create, edit, and del
 
 <div class="info" markdown="1">
 
-IP filters require the subscription of an add-on. Please contact your OutSystems account team for more information.
+IP filters require the [subscription](subscription-console.md) of an add-on. Please contact your OutSystems account team for more information.
 
 </div>
 

@@ -1,12 +1,19 @@
 ---
 summary: Use the Common Plugin to access a set of common actions between all mobile apps.
-tags:
+tags: plugin development, cordova integration, mobile app development, outsystems mobile, javascript modules
 locale: en-us
 guid: d5aea2d2-678e-4823-a1f2-26e1022244c3
 app_type: mobile apps
-figma: 
+figma:
 platform-version: odc
+audience:
+  - mobile developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Common Plugin
 
 <div class="info" markdown="1">

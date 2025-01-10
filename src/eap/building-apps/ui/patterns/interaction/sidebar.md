@@ -1,11 +1,20 @@
 ---
-tags: 
+tags: user interface patterns, native apps, ui design, mobile app development, outsystems
 summary: OutSystems Developer Cloud (ODC) enhances app functionality with a Sidebar UI Pattern for displaying additional content.
 locale: en-us
 guid: 9bb5e9f0-3a33-4a07-951a-08fdb67267a1
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A17424&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Sidebar

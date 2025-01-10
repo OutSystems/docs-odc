@@ -1,12 +1,20 @@
 ---
 helpids: 30548
 summary: This article provides an overview to function calling.
-tags: 
+tags: function calling, ai integration, api interaction, data retrieval, natural language processing
 guid: 7039dfeb-303e-42e9-8ae2-cf0763f47678
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5584-178
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
 
 # Introduction to function calling
@@ -50,7 +58,7 @@ Here’s an overview of how function calling works in AI Agent Builder.
 
 1.  The AI model generates an answer in natural language and forwards it to the ODC app.
 
-## Further reading
+## Related resources
 
 [Using function calling in AI Agent Builder](use-function-calling.md)
 

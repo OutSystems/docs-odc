@@ -1,12 +1,21 @@
 ---
 helpids: 30474
 summary: OutSystems Developer Cloud (ODC) ensures deployment consistency by analyzing and reporting potential inconsistencies during app deployment stages.
-tags:
+tags: deployment, impact analysis, consistency checking, deployment blockers, deployment warnings
 locale: en-us
 guid: c8999d32-bc1f-4bea-86bf-271b07035672
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - remember
 ---
 
 # Guidance for deployment inconsistencies

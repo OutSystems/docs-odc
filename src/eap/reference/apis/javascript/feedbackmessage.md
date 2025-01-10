@@ -1,13 +1,19 @@
 ---
-tags: 
+tags: feedback management, mobile apps, reactive web apps, outsystems, user notifications
 summary: OutSystems Developer Cloud (ODC) provides functions to display and manage feedback messages in Mobile and Reactive Web Apps.
 locale: en-us
 guid: b4ff7637-2425-4f5a-9d27-6c2517ad6072
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+coverage-type:
+  - remember
+audience:
+  - mobile developers
+  - frontend developers
+outsystems-tools:
+  - odc studio
 ---
-
 # FeedbackMessage
 
 Displays a customized feedback message on the current screen.

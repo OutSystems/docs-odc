@@ -1,13 +1,20 @@
 ---
 summary: Offline sync patterns are not implemented correctly.
-tags: 
+tags: offline sync, data synchronization, mobile apps, sync performance, troubleshooting
 guid: 41123945-5631-4f69-8c49-49e0dc4df83b
 locale: en-us
 app_type: mobile apps
 platform-version: odc
-figma: 
+figma:
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - mobile developers
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # Incorrect offline sync method
 
 <div class="info" markdown="1">

@@ -1,11 +1,20 @@
 ---
-tags: 
+tags: ui patterns, navigation, user experience, web blocks, widgets
 summary: Learn how to implement and customize the Breadcrumbs UI Pattern in OutSystems Developer Cloud (ODC) to enhance app navigation.
 locale: en-us
 guid: 78642488-92c4-45ba-a5ff-65e0e79506a9
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A17141&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Breadcrumbs

@@ -1,11 +1,21 @@
 ---
 summary: Learn how to manage end-user roles in OutSystems Developer Cloud (ODC) to control access to app functionalities, screens, and data.
-tags: 
+tags: user role management, access control, security, outsystems developer cloud, user permissions
 locale: en-us
 guid: BDA3A144-0EB0-4C04-953F-9DED85A477FE
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A11327&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Secure your app with end-user roles
@@ -28,6 +38,8 @@ This is an overview of how to use roles:
 1. In ODC Studio, use end-user roles to control access to the parts of the app. You can also grant and revoke a role to any user programmatically.
 
 ![Diagram illustrating the process of using roles in OutSystems Developer Cloud](images/overview-how-to-use-roles-diag.png "How you can use roles")
+
+You can also use the ODC [User management REST APIs](../reference/apis/identity-v1.md) for programmatically managing the user and access related operations. For detailed information about how to use these APIs, refer to [Getting started](../reference/apis/public-rest-apis/getting-started.md).
 
 ### Create end-user roles
 
@@ -77,7 +89,7 @@ Logged-in users needs to log out and log back in for changes in their assigned r
 
 ### Restrict access to a screen
 
-To allow only users with a certain role to access a screen, you need to [create some roles first](#create-end-user-roles). You can then allow only registered users to access screens in the app.
+To allow only users with a certain role to access a screen, you need to [create some roles first](#create-end-user-roles). You can then allow only registered users to access screens in the app, which is a [best practice to protect your screens](../building-apps/ui/creating-screens/best-practices-screens.md#roles).
 
 1. Select the screen for which you want to edit the access.
 
@@ -95,4 +107,8 @@ For example, if you enter `CheckManagerRole()` in the **Condition** field of the
 
 Use **CheckROLENAMERole()** function in expressions to verify that the user of the app has a role.
 
-For example, you can create a filter in an aggregate with the expression `CheckAdminsRole() = True`. This aggregate now returns data only if the signed-in user has an Admin role.
+For example, you can create a filter in an aggregate with the expression `CheckAdminsRole() = True`. This aggregate now returns data only if the signed-in user has the Admin role, which is a [best practice to protect sensitive data](../building-apps/ui/creating-screens/best-practices-fetch-display-data.md#restrict-access).
+
+## Related resources
+
+* [Role-based Security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course

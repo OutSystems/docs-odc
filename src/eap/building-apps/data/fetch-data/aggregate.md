@@ -1,12 +1,21 @@
 ---
 summary: Learn to manage data with Aggregates in OutSystems Developer Cloud (ODC), supporting optimized client-side and server-side queries.
-tags:
+tags: client-side aggregates, server-side aggregates, data management
 helpids: 17203
 locale: en-us
 guid: 0d8335b7-df99-40f3-8a9d-df0e5bd5ca18
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7877&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
+  - apply
 ---
 
 # Aggregate
@@ -33,6 +42,8 @@ An empty Aggregate opens and ODC Studio displays a message on the empty Aggregat
 
 There are cases when you always need to fetch all records from the database, for example, to populate drop-down box lists. If you fetch all records using a Screen Aggregate, set the **Max. Records** higher than the maximum number of records you expect to fetch. Keep in mind that large amounts of data may slow down the user interface and degrade the responsiveness of the app.
 
+For more information, refer to the [best practices for fetching and displaying data](../../ui/creating-screens/best-practices-fetch-display-data.md).
+
 ### Create an Aggregate in an Action
 
 To add an Aggregate to an Action, drag an **Aggregate** from the toolbox to the flow. 
@@ -46,6 +57,11 @@ There are cases when you always need to fetch all records from the database, for
  Based on the value of the other attributes, you can add new attributes to the records returned by the aggregate. To learn more about calculated attributes, refer to [calculated aggregate](calculated-attribute-create.md).
 
 </div>
+
+See also the best practices for using aggregates in your logic:
+
+ * [Don't add aggregates inside a cycle](../../logic/best-practices-logic.md#aggregates-inside-cycle)
+ * [Avoid isolating a single aggregate in an action](../../logic/best-practices-logic.md#isolated-aggregates)
 
 ## How to add a data source to an Aggregate
 
@@ -102,3 +118,9 @@ To learn more about writing better queries, refer to [writing better queries in 
 | Count | Number of records returned by the Count query. |  | Long Integer |  |
 | IsDataFetched | True when data has been fetched from the database and is ready to be used. | Yes | Boolean |  |
 | HasFetchError | True when there is an error during data fetch due to a server error or communication timeout. | Yes | Boolean |  |
+
+## Related resources
+
+* [Aggregates 101](https://learn.outsystems.com/training/journeys/aggregates-101-634) online course
+
+* [Advanced Aggregates](https://learn.outsystems.com/training/journeys/advanced-aggregates-633) online course

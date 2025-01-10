@@ -1,18 +1,23 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports advanced SQL queries with Aurora PostgreSQL, differing in syntax from OutSystems 11.
-tags:
+tags: database integration, sql, postgresql, data types, syntax differences
 locale: en-us
 guid: db4685f5-477f-436a-b4cc-92af8e347c02
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - backend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
 
 # SQL queries compared to OutSystems 11
 
 In OutSystems 11, you can choose to use SQL Server, Azure SQL Database or Oracle as the database for your apps. In OutSystems Developer Cloud (ODC), your apps use Aurora PostgreSQL.
-
-Where SQL Server, Azure SQL Database and Oracle are relational database systems, Aurora PostgreSQL is an object-relational database. This means in ODC you can build SQL queries with complex data types and object inheritance.
 
 In ODC you build SQL queries for your apps using the SQL logic element as in OutSystems 11. But because of the different underlying database technology when you build SQL queries there are some important syntax differences. The following table shows the main ones.
 
