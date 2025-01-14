@@ -1,16 +1,22 @@
 ---
-summary: Introduction to ODC workflow logs. 
-tags: 
-outsystems-tools: 
+summary: Introduction to ODC workflow logs.
+tags: workflow logs, business process management, troubleshooting, process analysis, workflow monitoring
+outsystems-tools:
+  - odc portal
 guid: 3c5d3179-bef9-43ca-9636-90c4d40aa61f
 locale: en-us
 app_type: mobile apps, reactive web apps
-content-type: 
+content-type:
   - conceptual
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=6372-10&t=QL4wNRboofdp7zdI-1
+audience:
+  - business analysts
+  - team lead
+  - team manager
+  - project managers
+  - product owners
 ---
-
 # Workflow logs
 
 The ODC portal provides a centralized, detailed view of all activities within a workflow. Workflow logs allow business process owners (BPOs) and developers to analyze and troubleshoot workflows.
@@ -61,11 +67,11 @@ Note: To track the complaint, you must have the workflow instance number.
 
     ![Dropdown menu in ODC Portal showing various workflow options with 'Loan Approval' selected.](images/select-workflow-pl.png "Workflow Selection Dropdown")
 
-1. In the **Instance ID** field, enter the instance ID.
+1. In the **Instance** field, enter the instance ID.
 
     ![Input field in ODC Portal for entering the Instance ID with an example ID entered.](images/instance-id-pl.png "Instance ID Input Field")
 
-    Note: Enter the IDs of the workflows you want to analyze. To identify patterns across specific workflow instances, provide multiple IDs. For example, this can help determine if an instance is part of a recurring pattern rather than an isolated case.
+    **Note**: Enter the IDs of the workflows you want to analyze. To identify patterns across specific workflow instances, provide multiple IDs. For example, this can help determine if an instance is part of a recurring pattern rather than an isolated case.
 
     <div class="info" markdown="1">
 

@@ -55,7 +55,7 @@ Using Microsoft Visual Studio 2022 with .NET 8.0, for example:
             [OSInterface]
             public interface IMyLibrary
             {
-                public string SayHello(string name);
+                public string SayHello(string name, string title);
                 public string SayGoodbye(string name);
             }
         }
@@ -66,7 +66,8 @@ Using Microsoft Visual Studio 2022 with .NET 8.0, for example:
         {
             public class MyLibrary : IMyLibrary
             {
-                public string SayHello(string name) {
+                public string SayHello(string name, string title) {
+                    string title = "Mr./Ms.";
                     return $"Hello, {name}";
                 }
 
@@ -76,11 +77,18 @@ Using Microsoft Visual Studio 2022 with .NET 8.0, for example:
             }
         }
  
+
     The exposed methods can only have:
 
     * Basic .NET types: `string`, `int`, `long`, `bool`, `byte[]`, `decimal`, `float`, `double`, `DateTime`.
     * Structs decorated with the `OSStructure` attribute.
     * Lists (any type inheriting from [IEnumerable](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable)) of any of the previous two types.
+
+<div class="info" markdown="1">
+
+You can expose a server action using external code with optional parameters by adding a default value to the parameter in the action definition. In the above example, the `title` parameter is optional and has a default value "Mr./Ms.".
+
+</div>
 
 1. Once you're finished with the code, save the project and publish it. For example, right-click **Solution ClassLibrary1** and click **Open in Terminal**. Run command `dotnet publish -c Release -r linux-x64 --no-self-contained`.
 
@@ -192,11 +200,11 @@ By designing your external libraries with these considerations in mind, you can 
 
 ### Use with large binary files
 
-Server actions from external libraries don't support input sizes larger than 5.5MB. This limit includes all input parameter values, their names, and possible overhead, such as binary data.
+Server actions from external libraries have a total input size limit of 5.5MB. This includes all input parameters (in particular binary data), parameter names, and serialization overhead.
 
 <div class="warning" markdown="1">
 
-If you pass a large binary file or string as an input to a server action during runtime, the **Input payload is too large** error is thrown and is logged as a runtime error in the app's logs.
+If you try to pass inputs that exceed this limit (for example, a large binary file) to a server action during runtime, an **Input payload is too large** error will be thrown and logged as a runtime error in the app's logs.
 
 </div>
 

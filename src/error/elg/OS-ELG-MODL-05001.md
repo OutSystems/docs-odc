@@ -1,6 +1,6 @@
 ---
-summary: No valid .NET 6 assembly found in your file.
-tags: .net 6, assembly validation, mobile app development, application publishing, troubleshooting
+summary: No valid .NET 8 assembly found in your file.
+tags: .net 8, assembly validation, mobile app development, application publishing, troubleshooting
 guid: 007f935e-fade-46ab-8058-61d57f294bc1
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -20,11 +20,11 @@ coverage-type:
 
 ## Error message
 
-`No valid .NET 6 assembly found in your file.`
+`No valid .NET 8 assembly found in your file.`
 
 ## Cause
 
-No valid .NET 6 assembly found in your file.
+No valid .NET 8 assembly found in your file.
 
 ## Impact
 
@@ -32,6 +32,6 @@ You must fix this error in your C# project before you can publish the external l
 
 ## Recommended action
 
-Check that your project uses the .NET 6.0 framework and you [packaged the published project into a ZIP correctly](../../eap/building-apps/external-logic/README.md).
+Check that your project uses the .NET 8.0 framework and you [packaged the published project into a ZIP correctly](../../eap/building-apps/external-logic/README.md).
 
 If the problem persists, create a case with [OutSystems Support](https://www.outsystems.com/support/portal/open-support-case?ErrorCode=OS-ELG-MODL-05001).

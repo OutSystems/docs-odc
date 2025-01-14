@@ -134,8 +134,6 @@ Each Runtime stage has an isolated Amazon Aurora Serverless database. The follow
 
 ![Diagram showing the database architecture for the Runtime Production stage in OutSystems Developer Cloud.](images/architecture-runtime-data-diag.png "Runtime Production Stage Database")
 
-Data is automatically written to two availability zones simultaneously.
-
 The Amazon Aurora database architecture model decouples compute and storage, and both automatically scale independently. The Database CPU and Memory automatically scale as the amount of load increases, and the database storage volume automatically scales as the amount of data stored increases.
 
 You can store secret data for your apps such as API keys as secret settings in a secret manager.

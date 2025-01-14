@@ -21,7 +21,7 @@ coverage-type:
 
 # Single sign-on
 
-Single sign-on (SSO) is an authentication method that lets you give your users access to multiple applications or services with a single set of login credentials. Developers use the OutSystems Developer Cloud (ODC) Portal to connect to an Identify Provider (IdP) and use ODC Studio to set their apps up for SSO.
+Single sign-on (SSO) is an authentication method that lets you give your users access to multiple applications or services with a single set of login credentials. Developers use the OutSystems Developer Cloud (ODC) Portal to connect to an Identity Provider (IdP) and use ODC Studio to set their apps up for SSO.
 
 SSO simplifies the login process for your users and provides a seamless experience because your users don't have to remember multiple login credentials. When using SSO, users must accept cookies during the login process.
 
