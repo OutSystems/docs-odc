@@ -1,11 +1,20 @@
 ---
-tags:  
+tags: date handling, ui components
 summary: Learn how to implement a Date Picker Range in OutSystems Developer Cloud (ODC) using the flatpickr library for selecting date ranges.
 locale: en-us
 guid: 940d5a36-2677-40c7-a073-974104ff7704
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A14106&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Date Picker Range

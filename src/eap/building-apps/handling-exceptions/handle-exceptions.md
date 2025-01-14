@@ -1,11 +1,19 @@
 ---
 summary: Explore how to manage various types of exceptions including User, Database, and Security Exceptions in OutSystems Developer Cloud (ODC).
-tags: 
+tags: exception handling, error management, application flow control, software robustness, debugging
 locale: en-us
 guid: ec639f37-b5ee-4ca4-974d-9096596614ae
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21345&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
 
 # Handling exceptions

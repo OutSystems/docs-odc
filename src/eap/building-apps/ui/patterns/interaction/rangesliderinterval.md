@@ -1,20 +1,30 @@
 ---
-tags:
+tags: ui design, nouislider library
 summary: Explore the Range Slider Interval Pattern in OutSystems Developer Cloud (ODC) for selecting values within a defined range using the noUiSlider library.
 locale: en-us
 guid: aa015998-a6e2-48bb-a0cc-2c53b4df2832
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A16886&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Range Slider Interval
 
 You can use the Range Slider Interval Pattern to allow users select a single value between two range values. This pattern enables the adjustment of content by predetermined intervals and within a chosen range. Moving the slider along the track increases or decreases the value.
 
 <div class="info" markdown="1">
- 
-The Range Slider Interval Pattern is based on the [noUiSlider library](https://refreshless.com/nouislider/) (v15.5.1). For more information about the Range Slider Interval’s behaviors and extensibility methods, see the provider’s documentation.  
- 
+
+The Range Slider Interval Pattern is based on the [noUiSlider library](https://refreshless.com/nouislider/) (v15.5.1). For more information about the Range Slider Interval's behaviors and extensibility methods, see the provider’s documentation.
+
 </div>
 
 ## How to use the Range Slider Interval UI Pattern

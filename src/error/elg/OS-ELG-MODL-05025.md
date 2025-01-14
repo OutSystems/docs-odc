@@ -1,11 +1,19 @@
 ---
-summary: "More than one object with name <ObjectName> was found."
-tags:
+summary: More than one object with name <ObjectName> was found.
+tags: error handling, .net integration, c# development, external libraries, code structuring
 guid: cbbd399f-76f8-489d-a4ad-8e06dc61c3a3
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - unblock
 ---
 
 # OS-ELG-MODL-05025

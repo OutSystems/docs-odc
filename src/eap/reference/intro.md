@@ -1,12 +1,21 @@
 ---
 summary: Explore the extensive libraries and built-in functions in OutSystems Developer Cloud (ODC) for advanced app development.
-tags:
+tags: libraries, binary data, data transformation, encoding, date time functions
 locale: en-us
 guid: f9d530c1-f9fa-4b08-9e75-5dfb984402da
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
+
 # OutSystems language and elements
 
 ## Libraries
@@ -346,7 +355,7 @@ Authentication actions for built-in and/or external identity providers.
 
 Action | Description | Client or Server? | Available as function?
 ---|---|---|---
-[Login](system-actions/auth.md#login) | Performs a login in to the built-in identity provider using a username and password. If RememberDevice is true, keeps the user logged in for 2 weeks or until a Logout is performed. User profile information is synchronized to the [User entity](system-actions/user.md#user-1) before this action is finished. Throws an exception if the built-in identity provider is disabled for the current app. | Client | No
+[Login](system-actions/auth.md#login) | Performs a login in to the built-in identity provider using a username and password. By default, a user is logged in for 12 hours until a logout is performed. This default cannot be changed. User profile information is synchronized to the [User entity](system-actions/user.md#user-1) before this action is finished. Throws an exception if the built-in identity provider is disabled for the current app. | Client | No
 [GetExternalLoginURL](system-actions/auth.md#getexternalloginurl)(*) | Returns the URL to which the user should be redirected in order to login in an external provider. | Client | No
 [Logout](system-actions/auth.md#logout) | Logs out the user from the built-in identity provider. | Client | No
 [GetExternalLogoutURL](system-actions/auth.md#getexternallogouturl)(*) | Returns the URL where the user can log out of an external identity provider, if one is configured, or "" otherwise. | Client | No

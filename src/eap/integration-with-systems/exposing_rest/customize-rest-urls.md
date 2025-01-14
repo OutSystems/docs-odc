@@ -1,12 +1,22 @@
 ---
 summary: Explore how to customize REST API URLs in OutSystems Developer Cloud (ODC) to enhance API endpoint structuring.
-tags:
+tags: rest apis, url customization, api development, endpoint configuration, restful services
 locale: en-us
 guid: 745374fa-efb6-4f96-a488-10a1830f519c
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Customize REST URLs
 
 

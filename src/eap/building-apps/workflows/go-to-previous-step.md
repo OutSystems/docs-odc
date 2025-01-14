@@ -1,11 +1,19 @@
 ---
 summary: Learn how to  go to a previous step in your workflow
-tags:
+tags: workflow design, user experience, process optimization, application development, workflow logic
 locale: en-us
 guid: 0f6e0ee0-427a-4ed6-b1f9-506cf094363c
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
 
 # Go to a previous step

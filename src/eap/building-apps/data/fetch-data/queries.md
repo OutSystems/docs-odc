@@ -1,11 +1,19 @@
 ---
 summary: Learn to write efficient queries in ODC using best practices for joins, filters, aggregates, and sorting.
-tags: 
+tags: database joins, query optimization, data retrieval, sql, relational databases
 guid: eb941889-6a5e-4e81-a570-80321841e5c1
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5399%3A383&mode=design&t=SWFFXJVfxBN7UhUU-1 
+figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5399%3A383&mode=design&t=SWFFXJVfxBN7UhUU-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - evaluate
 ---
 
 # Writing better queries in data mashup 
@@ -39,12 +47,12 @@ To write better queries, you need to understand the following joins:
 ## Best practices
 
 * Only select attributes you intend to use for mashup.
-* Avoid binary data attributes due to their impact on performance.
+* [Avoid binary data and large text (over 10 000 characters) attributes](../data-best-practices/intro.md#isolate-binary-data) due to their impact on performance.
 * Avoid full outer and cross joins.
 * When using entities from the same database, join them first before joining entities from other databases, for example: 
-    * `db1.a With or Without db1.b With or Without db2.c` - Not Recommended 
-    * `(db1.a With or Without db1.b) With or Without db2.c` - Recommended 
-* Ensure to index attributes used in filters and join conditions in the databases. 
+    * `db1.a With or Without db2.c With or Without db1.b` - Not Recommended 
+    * `db1.a With or Without db1.b With or Without db2.c` - Recommended 
+* Ensure to [index attributes](../data-best-practices/intro.md#index-entities) used in filters and join conditions in the databases. 
 * Use similar data types for attributes used in the join condition. For example, when joining on string attributes, ensure the allowed length is the same in both databases.
 * Queries that work fine in ODC Studio data preview may fail in runtime due to exceeding the execution plan cost limit. This can happen because:
     * Test query limits the number of records, reducing plan cost.
@@ -86,19 +94,6 @@ To write better queries, you need to understand the following joins:
 * Sorting can significantly affect performance. If you anticipate many records, performing any required sorting in your app rather than in the aggregate is advisable.
 
 ## Supported use cases
-
-### Joining a small entity to a large entity across two systems
-
-* Limit the amount of data fetched using Max Records property.
-* Use a With or Without Join, and have the entity with fewer records on the outer side of the join.
-    * Only use an Only with Join when you expect to have unmatched records and don't want them in the result. Only With Join does not allow the Max Records to be pushed down to the database. So, more data than required may be loaded when the query is executed.
-* Sort only by attributes from the outer side of the join, or sort the result using your application logic.
-
-When the best practices are followed:
-
-* An initial query is executed on the smaller entity to fetch the required records.
-* A second query is executed on the larger entity and includes a filter only to fetch matching records.
-* A nested loop join algorithm joins the records in Data Fabric.
 
 ### Joining a large entity to a large entity across two systems
 

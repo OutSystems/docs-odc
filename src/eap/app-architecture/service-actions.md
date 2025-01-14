@@ -1,16 +1,25 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enhances app development with reusable service actions that encapsulate complex logic for efficiency and maintainability.
-tags:
+tags: api integration, code reuse, development service action usage, performance optimization
 locale: en-us
 guid: f540d163-f3b7-41c7-a898-b9f07d3f3b89
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
+  - evaluate
 ---
 
 # Service actions
 
-Service actions are reusable code components that can be called from any app, providing an efficient way to perform specific tasks such as accessing data, sending emails, or making API calls. They promote code reuse, maintainability, and modularity in OutSystems Developer Cloud (ODC) by encapsulating complex logic or functionality. Service actions also enable integration with other apps or systems, improve performance by reducing data transfer, and can be secured using authentication and authorization mechanisms.
+Service actions are reusable code components that can be called from any app, providing an efficient way to perform specific tasks such as accessing data, sending emails, or making API calls. They promote code reuse, maintainability, and modularity in OutSystems Developer Cloud (ODC) by encapsulating complex logic or functionality. Service actions also enable integration with other apps.
 
 For example, you can use a service action to integrate with a third-party API to fetch weather data. You can create a service action to handle the API call, process the received data, and return a formatted weather report. You can then reuse the service action across multiple parts of an app. This ensures efficient development and easy maintenance in the event of changes to the API.
 

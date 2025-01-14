@@ -1,12 +1,22 @@
 ---
 summary: Edit expressions in OutSystems Developer Cloud (ODC) Studio using its comprehensive expression editor with autocomplete and documentation features.
-tags:
+tags: expression editing, user interface design, autocomplete features
 locale: en-us
 guid: 1ad176b7-bb78-41f9-ae4a-69d3e0e06a13
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3214%3A21844&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
+  - understand
 ---
+
 # Edit expressions
 
 Edit expressions with the expression editor in ODC Studio. Launch the expression editor by double-clicking one of the following:  

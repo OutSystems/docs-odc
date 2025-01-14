@@ -1,11 +1,19 @@
 ---
 summary: OutSystems Developer Cloud (ODC) uses the Read Committed isolation level to prevent dirty reads in database transactions.
-tags:
+tags: database transactions, isolation levels, data consistency, concurrent transactions, transaction management
 locale: en-us
 guid: c20caef0-12af-4ebc-8d89-5bea8c5c0810
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
 
 # Database transaction isolation level

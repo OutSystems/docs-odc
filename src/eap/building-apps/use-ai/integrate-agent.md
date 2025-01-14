@@ -1,12 +1,22 @@
 ---
 summary: Integrate AI agents into applications using the CallAgent service action in OutSystems Developer Cloud (ODC).
-tags:
+tags: ai integration, configuration management, odc studio, service actions, ai agent builder
 locale: en-us
 guid: 121c834e-88cc-4b0a-aa9d-4bb174daf881
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5094%3A329&mode=design&t=V3p0stp4ijc9fWdg-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - apply
 ---
+
 # Integrate agent into your app
 
 You can create an agent in the AI Agent Builder and use that agent in your app by invoking the **CallAgent** [service action ](https://success.outsystems.com/documentation/11/developing_an_application/reuse_and_refactor/use_services_to_expose_functionality/)and configuring the agent ID. This article explains how to integrate the agent into your app.

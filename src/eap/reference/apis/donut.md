@@ -1,11 +1,19 @@
 ---
 summary: Explore how to create a Donut Chart using OutSystems Developer Cloud (ODC).
-tags: 
+tags: mobile apps, data visualization, chart configuration
 locale: en-us
 guid: 7dd162ba-bb5a-4c61-902d-d8738c122a54
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
 
 # Donut Chart

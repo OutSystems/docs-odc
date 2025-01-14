@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui components, date selection, user interface patterns
 summary: OutSystems Developer Cloud (ODC) features a Month Picker UI Pattern that leverages the flatpickr library for user-friendly month selection in applications.
 locale: en-us
 guid: 7302634b-c545-4b3a-98d4-f41d0a7545a2
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A15863&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Month Picker
 
 You can use the Month Picker UI Pattern to allow users input a month of the year. The Month Picker Pattern is based on the [flatpickr library](https://flatpickr.js.org/) For more advanced options, you can refer to this library.

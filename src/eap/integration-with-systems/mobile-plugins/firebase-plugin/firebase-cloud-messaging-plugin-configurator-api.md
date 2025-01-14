@@ -1,12 +1,24 @@
 ---
 summary: Explore the integration and management of notifications in OutSystems Developer Cloud (ODC) using the Firebase Cloud Messaging plugin.
-tags: 
+tags: firebase, notifications, plugin integration, deprecation, migration
 locale: en-us
 guid: 22d6edad-3a83-44f8-abbf-81e0b2d02041
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4352%3A160&mode=design&t=qrb6BRX1TGRFDKu7-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - forge
+  - odc portal
+coverage-type:
+  - understand
+  - apply
 ---
+
 # Firebase Cloud Messaging plugin using configurator APIs
 
 <div class="info" markdown="1">
@@ -300,6 +312,15 @@ For more information, see [Apple documentation](https://developer.apple.com/docu
 For both iOS and Android.
 
 Firebase SDKs for Android and iOS don't support subscribing to topics if the name contains spaces, like `TV Shows`.
+
+### On Changes in Android 15
+
+From Android 15 onwards, users can install an app in the [Private space](https://developer.android.com/about/versions/15/features#private-space). Users can lock their private space at any time, which means that push notifications are not shown until the user unlocks it.
+
+It is not possible to detect if an app is installed in the private space. Therefore, if your app shows any critical notifications, inform your users to avoid installing the app in the private space.
+
+For more information about the behavior changes of your app related to the private space, refer to [Android documentation](https://developer.android.com/about/versions/15/behavior-changes-all#private-space-changes).
+
 
 ## On compatibility with Firebase Performance
 

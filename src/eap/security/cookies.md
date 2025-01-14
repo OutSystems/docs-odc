@@ -1,11 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) uses cookies to enhance user experience and gather metrics, complying with EU directive 2009/136/EC.
-tags:
+tags: eu data compliance, cookie policy, user experience enhancement, website analytics, privacy regulations
 locale: en-us
 guid: 8683a640-36ce-43e0-8e9d-7c47705ed89f
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - frontend developers
+  - full stack developers
+  - platform administrators
+  - business analysts
+outsystems-tools:
+  - none
+coverage-type:
+  - remember
 ---
 
 # Cookies in ODC

@@ -1,12 +1,22 @@
 ---
 summary: Explore lifecycle events and data handling in OutSystems Developer Cloud (ODC) for mobile and web app development.
-tags:
+tags: application lifecycle management, event handling in applications
 locale: en-us
 guid: 91700588-62e6-4527-a323-426c81f47505
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22098&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
+  - remember
 ---
+
 # Screen and block lifecycle events
 
 
@@ -60,7 +70,7 @@ After the [Render](#on-render) event of the target screen, the transition betwee
 
 ### On changing the data of a screen or block
 
-Every time you change the value of a data element of a Screen or Block, the application automatically reacts to it. Thus, the Render event is triggered and the UI elements that depend on the data automatically update. You don’t have to explicitly refresh the UI elements as you need to do for web apps.
+Every time you change the value of a data element of a Screen or Block, the application automatically reacts to it. Thus, the Render event is triggered and the UI elements that depend on the data automatically update. You don’t have to explicitly refresh the UI elements.
 
 For screen or block aggregates and data actions, their new values are automatically updated in the UI elements, but you need to rerun the query explicitly. This can be done using the Refresh Data flow element in the logic.
 

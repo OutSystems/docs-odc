@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui design, user interaction
 summary: Learn how to implement the Floating Actions UI Pattern in OutSystems Developer Cloud (ODC) to enhance user interface design.
 locale: en-us
 guid: a246e3bb-4c75-4e3b-8a53-eb45a08996ae
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A15421&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Floating Actions
 
 You can use the Floating Actions UI Pattern to display an action that floats in the bottom right corner of the screen, providing access to a set of additional actions.

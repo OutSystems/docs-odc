@@ -1,12 +1,19 @@
 ---
 summary: Explore how to integrate Amazon Bedrock foundation AI models with OutSystems Developer Cloud (ODC) for enhanced AI capabilities.
-tags:
+tags: aws, artificial intelligence, amazon bedrock, foundation models, ai model customization
 locale: en-us
 guid: 6550169c-eb62-46d3-9181-68a71bed10f9
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - platform administrators
+outsystems-tools:
+  - ai agent builder
+coverage-type:
+  - apply
 ---
+
 # Set up Amazon Bedrock foundation AI models
 
 With [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html), you can use foundation models (FMs) to build AI agents for your use case. You can also add your data source and customize the models using techniques such as Retrieval Augmented Generation (RAG). This article explains how to set up Amazon Bedrock FMs. 
@@ -81,7 +88,7 @@ To set up the Amazon Bedrock foundation AI models, follow these steps:
 
 * [Create an agent](../create-agent.md)
 
-## Additional resources
+## Related resources
 
 **Amazon Bedrock**
 

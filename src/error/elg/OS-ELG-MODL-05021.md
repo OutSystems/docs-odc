@@ -1,13 +1,21 @@
 ---
-summary: "The name: '<Name>' is not supported as it has the following invalid characters '<InvalidCharacters>'."
-tags:
+summary: The name '<Name>' is not supported as it has the following invalid characters '<InvalidCharacters>'.
+tags: error resolution, invalid characters, naming convention, c# project, outsystems support
 guid: 6befc8c5-56bf-4171-8df8-b49296bd2028
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+coverage-type:
+  - unblock
+audience:
+  - mobile developers
+  - backend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # OS-ELG-MODL-05021
 
 ## Error message

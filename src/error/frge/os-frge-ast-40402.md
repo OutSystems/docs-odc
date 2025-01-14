@@ -1,11 +1,20 @@
 ---
 summary: The requested asset with key <assetKey> and version <assetVersion> doesn't exist. Check the documentation for further guidance. If the problem persists, let us know.
-tags: 
+tags: error handling, asset management, outsystems forge, technical support, troubleshooting
 guid: 6226cf6a-666e-4b10-a6f2-95f345ed3137
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - forge
+  - odc studio
+coverage-type:
+  - unblock
 ---
 
 # OS-FRGE-AST-40402

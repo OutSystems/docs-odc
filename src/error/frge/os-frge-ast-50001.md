@@ -1,11 +1,19 @@
 ---
 summary: An error occurred on our side, and we’re not sure why. If the problem persists, let us know.
-tags: 
+tags: error handling, support, internal errors, debugging, mobile development
 guid: 4f7706c9-3888-4590-b06b-d5824cfc6c83
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - unblock
 ---
 
 # OS-FRGE-AST-50001

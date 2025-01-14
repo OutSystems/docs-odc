@@ -1,16 +1,24 @@
 ---
 summary: Learn how to add decisions to your workflow in OutSystems Developer Cloud (ODC).
-tags:
+tags: workflow design, conditional logic, process automation, user task management, service actions
 locale: en-us
 guid: c5d2a739-ccde-4f66-b9f9-9b8b7a3e46f7
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
 
 # Add decisions 
 
-When implementing your workflow, use a Decision node to create multiple paths based on conditions. By default, the Decision node provides two outcomes. Define the condition for each outcome. The conditions are evaluated one at a time and can only follow through one outcome.
+When implementing your workflow, use a Decision node to create multiple paths based on conditions. By default, the Decision node provides two outcomes. Define the condition for each outcome. The conditions are evaluated one at a time and can only follow through on one outcome.
 
 You can select one or more service actions for your Decision node to fetch additional data for your conditions. For example, select the GetManagerUserID service action to get a user's manager information. Use this User ID in your conditions to check if the manager has approved the user's vacation.
 

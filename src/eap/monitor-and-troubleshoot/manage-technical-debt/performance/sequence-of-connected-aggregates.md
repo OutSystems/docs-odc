@@ -1,13 +1,22 @@
 ---
 summary: Sequence of Aggregates that reference one another.
-tags: 
+tags: aggregates, database optimization, performance, data fetching, latency
 guid: 8fa32beb-6cca-412c-a16d-5a33c658c6f9
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3525-213&t=ZHJybqzEUX6B7aIU-1
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - backend developers
+  - full stack developers
+  - tech leads
+  - architects
+outsystems-tools:
+  - none
 ---
-
 # Sequence of connected Aggregates
 
 Sequence of Aggregates that reference one another.

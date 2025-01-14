@@ -1,13 +1,20 @@
 ---
-summary: "More than one OSInterface attribute found in your file: '<InterfaceNames>'. Make sure only one interface decorated with OSInterface is defined."
-tags:
+summary: More than one OSInterface attribute found in your file '<InterfaceNames>'. Make sure only one interface decorated with OSInterface is defined.
+tags: c# error resolution, osinterface attribute, external library publishing, code fixes, outsystems support
 guid: 6cf42628-a470-4c43-9624-3d003cc8435d
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+coverage-type:
+  - unblock
+audience:
+  - backend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - none
 ---
-
 # OS-ELG-MODL-05003
 
 ## Error message

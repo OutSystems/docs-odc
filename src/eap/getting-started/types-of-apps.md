@@ -1,11 +1,20 @@
 ---
 summary: Explore the diverse app development capabilities of OutSystems Developer Cloud (ODC), including web and mobile applications.
-tags: 
+tags: pwa (progressive web apps), app development, mobile app distribution, responsive design
 locale: en-us
 guid: 2c23e305-f3ca-46cc-a8c8-a29c409a9ccf
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?type=design&node-id=2449%3A32710&t=CxwRhrJUzQXvCd96-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - understand
 ---
 
 # Types of apps you can build
@@ -20,7 +29,7 @@ From ODC Portal, navigate to the **Apps** screen and click **Create app**. ODC S
     * Create an app that users run mainly in a desktop browser, .
 * Select **Phone app** or **Tablet app** if you want to: 
     * Create a mobile app to submit to Apple App Store or Google Play. You can also distribute a mobile app as a downloadable package to a group of users.
-    * Create a lightweight app and share it as a Progressive Web App (PWA)(*) from your website. Users can put the app icon on their mobile home screen.
+    * Create a lightweight app and share it as a Progressive Web App (PWA) from your website. Users can put the app icon on their mobile home screen.
 
 <div class="info" markdown="1">
 
@@ -50,7 +59,7 @@ There are two ways you can distribute a Mobile app:
 
 * **Native app package** - A dedicated OutSystems cloud service generates native mobile builds for you, to distribute your app in the app stores or internally to a group of users.
 
-* **Progressive Web App (PWA)**(*) - PWAs are lightweight apps that have the look and feel of native mobile apps. They're quick to distribute and install directly from your website, as they don't depend on the app stores. 
+* **Progressive Web App (PWA)** - PWAs are lightweight apps that have the look and feel of native mobile apps. They're quick to distribute and install directly from your website, as they don't depend on the app stores. 
 
 ## Comparison between Web apps and Mobile apps
 
@@ -65,3 +74,7 @@ Here is a table comparing the features of Web apps and Mobile apps.
 |**Offline capabilities**|![Diagram indicating no offline capabilities for Web apps](images/mobile-vs-web-offline-web-diag.png "Web App Offline Capabilities")<br/>No offline capabilities.|![Diagram showing offline data storage options for native mobile apps and PWAs](images/mobile-vs-web-offline-mobile-diag.png "Mobile App Offline Capabilities")<br/>For storing offline data, native mobile apps use local storage and PWAs use browser storage.|
 |**Deployment and updates**|![Diagram explaining automatic updates for Web apps upon browser page refresh](images/mobile-vs-web-deployments-web-diag.png "Web App Deployment and Updates")<br/>Updates are automatic when users refresh the browser page.|![Diagram explaining update mechanisms for native mobile apps and automatic updates for PWAs](images/mobile-vs-web-deployments-mobile-diag.png "Mobile App Deployment and Updates")<br/>Native mobile apps can update automatically, and users need to install a new version only when you change the native shell. PWAs update automatically when the app detects a new version.|
 |**Distribution**|![Diagram showing the distribution of Web apps through sharing the app link](images/mobile-vs-web-distribution-web-diag.png "Web App Distribution")<br/>Share the app link with users.|![Diagram showing distribution options for native mobile apps and direct running of PWAs from a website](images/mobile-vs-web-distribution-mobile-diag.png "Mobile App Distribution") ![Diagram showing the distribution of Web apps through sharing the app link](images/mobile-vs-web-distribution-web-diag.png "Web App Distribution")<br/>You can distribute native mobile apps in-house or through the app stores. Users can run a PWA directly from your website, and add the app icon to the device home screen.|
+
+## Related resources
+
+* [Intro to OutSystems Development (ODC)](https://learn.outsystems.com/training/journeys/intro-to-outsystems-development-570) online course

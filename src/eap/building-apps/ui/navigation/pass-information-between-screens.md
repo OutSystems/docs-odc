@@ -1,12 +1,21 @@
 ---
 summary: Learn how to pass data between screens using Input Parameters in OutSystems Developer Cloud (ODC).
-tags:
+tags: navigation, user interface, data transfer, app development, screen design
 locale: en-us
 guid: f1443b9a-dbfa-440b-b618-69835bbcb361
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101-10808&t=jVWF79X470YE6UeE-0
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Pass Data Between Screens With Input Parameters
 
 Screens sometimes require input information. This is common in navigation, when users click on a link wanting to see more about an item. The destination Screen receives the information about the item, for example an identifier of a product. You pass information between screens with Input Parameters.

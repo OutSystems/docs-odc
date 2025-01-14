@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui design patterns, mobile app development, ui components, outsystems ui, user experience
 summary: OutSystems Developer Cloud (ODC) enables the use of the Bottom Sheet UI pattern in mobile apps.
 locale: en-us
 guid: b45a2a54-8dbe-44f4-8a96-63e5e26d5ae0
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A13167&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Bottom Sheet
 
 <div class="info" markdown="1">

@@ -1,11 +1,19 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports functions like GetCurrentLocale and GetUserAgent for app customization and session management.
-tags:
+tags: localization, session management, http headers, language support, user experience customization
 locale: en-us
 guid: f28abaec-a3f6-406b-9282-94f30588a1cd
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
 
 # Organization

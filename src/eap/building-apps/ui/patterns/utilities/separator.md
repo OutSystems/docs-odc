@@ -1,11 +1,21 @@
 ---
-tags: 
+tags: ui design, user experience, application development, visual organization, separation patterns
 summary: Learn how to visually organize content in your applications using the Separator UI Pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 91b4bcb5-4ebd-4cf5-9dca-b64edaef2256
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A21611&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
 
 # Separator

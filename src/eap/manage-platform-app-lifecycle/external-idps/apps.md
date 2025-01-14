@@ -1,12 +1,21 @@
 ---
 summary: Learn how to integrate external identity providers into your applications using OutSystems Developer Cloud (ODC) by modifying login and logout flows.
-tags: 
+tags: authentication, identity provider integration, user management, single sign-on
 helpids: 30500
 locale: en-us
 guid: e2b2541f-80b6-49b7-8961-8b7ad2ad65f3
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=design&node-id=3405%3A139&mode=design&t=Oyyu3fjPlmIYwh5h-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - apply
 ---
 
 # Use external identity providers in an app

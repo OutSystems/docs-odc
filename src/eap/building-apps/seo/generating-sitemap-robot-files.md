@@ -1,13 +1,19 @@
 ---
-summary: How to generate and sitemap and robot file. 
-tags: 
+summary: How to generate and sitemap and robot file.
+tags: sitemap.xml, robots.txt, website crawlers, seo, indexing
 guid: 7e883e55-675d-4cb8-a0b5-805d2eaf60dd
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5895-800&node-type=canvas&t=zTqDJ1OjTTDkeMmV-0
+coverage-type:
+  - apply
+audience:
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - none
 ---
-
 # Generating sitemap and robots files
 
 The `sitemap.xml` and `robots.txt` files let you control website crawlers and index the public pages in your apps. Use `robots.txt` rules to prevent crawling, and `sitemap.xml` to encourage crawling.

@@ -1,11 +1,23 @@
 ---
 summary: Learn all about workflows in ODC
-tags:
+tags: workflows, business process automation, workflow editor, process automation, outsystems developer cloud
 locale: en-us
 guid: 70b986e2-cd07-48a6-92c0-e57751112bb7
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5633-900
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+  - business analysts
+outsystems-tools:
+  - odc portal
+  - workflow builder
+coverage-type:
+  - understand
+  - evaluate
 ---
 
 # Workflows in ODC
@@ -13,6 +25,12 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 In OutSystems Developer Cloud (ODC), you can implement a [business process](business-processes.md) as a workflow. A workflow is a repeatable process consisting of tasks to be completed in a specific sequence. With workflows, you can implement business processes such as vacation approval and loan approval processes and integrate them into your apps. Workflows are created to introduce automation in your apps, encompassing the development and implementation of business processes. A workflow is designed as a flow of activities to be carried out, such as a task for the end-user to execute in your app or a task that executes without end-user intervention. 
 
 You can implement workflows as a new type of asset similar to ODC apps and libraries with an independent lifecycle. ODC provides a **workflow editor**, a visual web-based tool for implementing workflows. You can access the workflow editor from the ODC Portal.  
+
+<div class="info" markdown="1">
+
+To use workflows you need the requisite *Asset Management* permission(s). To get the necessary permission(s), speak to an administrator from your ODC organization.
+
+</div>
 
 With the workflow editor, you can:
 
@@ -22,7 +40,14 @@ With the workflow editor, you can:
 
 * Import and export workflows to share within your organization and with external partners.
 
-Consider this example of approving a bank transaction:
+* Switch between the default summary view for comprehensive understanding of workflows and the iconified view for a high-level structure. In the summary view, for each node in the workflow you are provided detailed information such as events triggered, conditions configured and service actions invoked. The iconified view displays only the icon of each node.
+
+Here's a video providing a concise overview of workflows.
+
+<iframe src="https://player.vimeo.com/video/1027587143" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">This video provides a concise overview of ODC workflows</iframe>
+
+
+Consider this example of approving a bank loan:
 
 1. The workflow starts when a customer submits a loan application to the bank
 
@@ -75,22 +100,6 @@ Here are some use cases where you can use workflow for automation:
 
 * Travel reimbursement
 
-## Workflow components
-
-You can implement a workflow in the workflow editor using the following process nodes:
-
-* [Start](start-workflow.md)
-
-* [Automatic activity](add-automatic-activity.md)
-
-* [Human activity](add-human-activity.md)
-
-* [Decision](add-decisions.md)
-
-* [Go to a previous step](go-to-previous-step.md)
-
-* [End](end-workflow.md)
-
 ## Key considerations for implementing workflows
 
 Here are some points to consider as you implement workflows in ODC:
@@ -110,3 +119,10 @@ Here are some points to consider as you implement workflows in ODC:
 * Workflows **do not support real-time collaboration**, meaning multiple users cannot edit a workflow simultaneously. However, basic conflict detection is supported. If a new version of a workflow exists in dev, you are notified when you open it or try to publish your changes.
 
 * There is **no debugger** for workflows. However, you can monitor the workflow's current state in the portal in near real-time.
+
+## Related resources
+
+* [Using workflows](using-workflows.md)
+* [Workflow nodes](workflow-components.md)
+* [Troubleshooting workflows](troubleshooting-workflows.md)
+* [Building Workflows in ODC](https://learn.outsystems.com/training/journeys/building-workflows-in-odc-2690) online course

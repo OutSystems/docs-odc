@@ -1,13 +1,21 @@
 ---
-summary: "The version you're trying to approve has inactive and/or not approved dependencies: <dependencies>."
-tags: 
+summary: The version you're trying to approve has inactive and/or not approved dependencies <dependencies>.
+tags: error message, dependencies, approval process, mobile apps, reactive web apps
 guid: 92bc2094-5a72-4b13-ba00-3a3b7184b8db
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+coverage-type:
+  - unblock
+audience:
+  - mobile developers
+  - frontend developers
+  - platform administrators
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # OS-FRGE-AST-40904
 
 ## Error message

@@ -1,11 +1,19 @@
 ---
 summary: Explore conversion functions in OutSystems Developer Cloud (ODC).
-tags:
+tags: data type conversion, explicit conversion functions, implicit conversion functions
 locale: en-us
 guid: 62dd6548-d073-4ccb-90c1-8f4bfa4a0bfd
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
 
 # Convert data types

@@ -1,12 +1,21 @@
 ---
 summary: Learn how to configure and integrate external data sources with AI search services for use in OutSystems Developer Cloud (ODC).
-tags:
+tags: data integration, cloud services, ai search services, search service configuration
 locale: en-us
 guid: 425ba4ef-f4a7-42e1-9687-88a5e5021336
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - ai agent builder
+coverage-type:
+  - apply
 ---
+
 # Configure your data sources
 
 You can configure and add external data sources, such as your internal knowledge base, and integrate it with [Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search) service or [Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/what-is-kendra.html) search service. This allows you to leverage the Retrieval Augmented Generation (RAG) technique in AI models and build generative AI search experiences on top of your enterprise data source. Be sure to check the prerequisite sections for each search service. 
@@ -30,7 +39,7 @@ To add data sources and use them in the AI Agent Builder you must:
 
 4. Create your agents and use the data source in the AI Agent Builder.
 
-## Related links
+## Related resources
 
 * [Configure Azure AI search with BLOB storage](configure-azure-data-source.md)
 

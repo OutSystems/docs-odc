@@ -1,12 +1,21 @@
 ---
 summary: Learn about URL management functions in OutSystems Developer Cloud (ODC), including domain and URL path handling.
-tags:
+tags: url handling, domain management, web development, app configuration, outsystems development
 locale: en-us
 guid: add42ac6-eb89-4448-8b6e-84ceb8a921df
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
+
 # URL
 
 ## GetDefaultDomain

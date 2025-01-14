@@ -1,13 +1,21 @@
 ---
 summary: A comment is set as a reminder. Reminder comments may indicate important technical debt or unresolved issues.
-tags: 
+tags: technical debt, reminder comments, task management, comment properties, issue tracking
 guid: 24d9c5d6-b735-4e64-b47f-ada091e94f1f
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3611-10&t=stw8ZZ271Tgj8Y4g-1
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
 ---
-
 # Reminder comments
 
 A comment is set as a reminder. 

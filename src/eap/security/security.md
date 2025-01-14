@@ -1,11 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) employs secure-by-design principles, featuring multi-layered security and compliance with industry standards.
-tags:
+tags: secure by design, owasp, security engineering principles, infrastructure as code, policy enforcement
 locale: en-us
 guid: bffd8c9e-16b6-4458-a146-ddb6f8077e12
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/kw9RAhge7eEpiKLnvKnOek/Security-of-OutSystems-Developer-Cloud?type=design&node-id=3001%3A25&t=vm4lMbILR8ugorQK-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - platform administrators
+  - tech leads
+outsystems-tools:
+  - none
+coverage-type:
+  - understand
 ---
 
 # Security of OutSystems Developer Cloud
@@ -198,10 +208,6 @@ All customer production runtime application data:
 
 A network namespace isolates each stage [within each organization's Runtime](#isolation-of-stages).
 
-### File Integrity Monitoring
-
-File Integrity Monitoring performs automated scans and alerts the [Computer Security Incident Response Team](#computer-security-incident-response-team-csirt) to unauthorized activity or file changes.
-
 ### High-availability in-region
 
 Each Runtime stage has an isolated Amazon Aurora Serverless database. The database for the Production stage is designed to support high availability, with the ability to add a read replica in a different Availability Zone (AZ) to ensure immediate failover in the event of an AZ outage or failure.
@@ -214,6 +220,16 @@ OutSystems uses a Key Management Service (KMS) to store and manage the keys used
 
 ODC encrypts data at rest, including all backup instances, using the industry standard AES-256 algorithm.
 
+## Log security and retention
+
+ODC ensures the privacy and availability of your application logs and traces. 
+
+Application logs and traces are encrypted in transit with TLS, and at rest using the industry-standard AES-256 algorithm. ODC utilizes role-based permissions to ensure that only you can view your data. Other ODC tenants can't access your logs or traces. OutSystems Support requires documented permission before accessing your data. 
+
+Developers can view logs and traces up to four weeks old within ODC Portal. They can retrieve logs and traces between four and seven weeks old by opening a support ticket. The system deletes logs and traces after seven weeks.
+
+For more information on logs and traces, see [Monitor and troubleshoot apps](../monitor-and-troubleshoot/monitor-apps.md).
+
 ## User management
 
 ODC provides a permission model that enables you to create roles following the least privilege principle. You can assign roles to users according to their job functions.
@@ -224,17 +240,11 @@ For more information, see the [User management article](../user-management/intro
 
 OutSystems maintains formal policies and procedures for managing security incidents. This ensures appropriate and prompt handling of any incident. The Security Incident Management Procedures outline the response to vulnerabilities in ODC infrastructure, security breaches, and incidents. The procedure explains the identification, reporting, and action taken for incidents.
 
-### Computer Security Incident Response Team
+### OutSystems Security Operations Center
 
 OutSystems proactively monitors ODC infrastructure, events, and availability 24 hours a day, seven days a week. Any unexpected alert, including privacy breaches, either automatically detected or resulting from a human log review, triggers a Security Incident Response.
 
 Customers can report suspected privacy or security incidents through the Support Portal at `https://<customername>.outsystems.dev/support/`.
-
-### Log Retention
-
-Developers can view logs and traces up to four weeks old within ODC Portal. They can retrieve logs and traces between four and seven weeks old by opening a support ticket. The system deletes logs and traces after seven weeks.
-
-For more information see [Monitor and troubleshoot apps](../monitor-and-troubleshoot/monitor-apps.md).
 
 ## Additional links
 
@@ -242,7 +252,7 @@ For more information see [Monitor and troubleshoot apps](../monitor-and-troubles
 
 OutSystems created a public vulnerability policy to provide customers with guidance and information in the event of a vulnerability reported in an OutSystems product.
 
-For more information see [OutSystems public vulnerability policy](https://success.outsystems.com/support/security/vulnerabilities/).
+For more information see [ODC vulnerability policy](https://success.outsystems.com/support/security/vulnerabilities/).
 
 ---
 <div class="info" markdown="1">

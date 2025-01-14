@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui patterns, overlay ui components
 summary: OutSystems Developer Cloud (ODC) supports the Floating Content UI Pattern for overlaying content on screen elements.
 locale: en-us
 guid: 12a78364-ee4e-4528-a0f7-239c9b0e31f9
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A11019&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
+  - apply
 ---
+
 # Floating Content
 
 You can use the Floating Content UI Pattern to display content on top of other screen elements, such as a map with navigation instructions.

@@ -1,12 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports thread management and debugging across various actions and events in web and mobile applications.
-tags:
+tags: thread management, debugging techniques, application performance, software development breakpoints
 locale: en-us
 guid: ab6189d5-3803-4f78-92ff-4072e356fc29
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
+  - apply
 ---
+
 # Threads
 
 In OutSystems a **thread** may result from the following:

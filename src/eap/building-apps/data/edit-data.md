@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables data editing directly within ODC Studio, facilitating real-time app testing and stakeholder demonstrations.
-tags:
+tags: data management, entity management, app testing, stakeholder engagement, sample data
 locale: en-us
 guid: 7d4d3bb7-5419-482d-8feb-747de019a7a0
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4035%3A137&mode=design&t=3vXcogcuIh9sw9aQ-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Edit data in ODC Studio 
 
 After you create [entities to persist data](../data/modeling/entity-create.md), you can edit your app's data without leaving ODC Studio.

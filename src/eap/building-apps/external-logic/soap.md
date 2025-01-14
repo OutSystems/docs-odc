@@ -1,11 +1,19 @@
 ---
 summary: Learn how to extend your code using SOAP web services in OutSystems Developer Cloud (ODC) with a detailed guide on creating and consuming a SOAP library.
-tags:
+tags: soap web services, .net development, c# programming, software development kits (sdks)
 locale: en-us
 guid: b44dc63b-99f3-4cc4-9cf0-9e915eddd4fa
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3606%3A22166&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
 
 # Supporting SOAP in ODC

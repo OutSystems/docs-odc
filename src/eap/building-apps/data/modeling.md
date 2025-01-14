@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) streamlines app development by auto-converting logical to physical data models in ODC Studio.
-tags:
+tags: data modeling, data integrity, application development, business requirements, data relationships
 locale: en-us
 guid: 5b4d315b-86c8-4c5d-964b-56b758aeee49
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2207&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
+
 # Data modeling
 
 This article introduces the concepts of designing a data model.
@@ -20,6 +29,8 @@ Designing a good data model helps you build a high-quality app. Some main benefi
 * **Accelerate development** - a clear relationship with business concepts makes it easier to build screens and use UI patterns that carry the relevant data to the business.
 * **Lightweight apps** - good isolation of business concepts means developers can build targeted queries against smaller data sets. 
 * **Data integrity** - creating data relationships instead of duplicating attributes ensures consistent data and simpler application logic.
+
+For more information, refer to [best practices for data management](../data/data-best-practices/intro.md).
 
 ## Data models
 
@@ -91,7 +102,7 @@ You can add static entities for entities with a predefined or constant set of va
 
 Another way to add entities and attributes is to import them from an Excel file using the **Import Entities from excel** developer accelerator in ODC Studio. In an Excel file, each tab is an entity and each column an attribute. If your data is available in an Excel file, this can speed up the data model design process.
 
-To learn more about entities, refer to [entities](./modeling/entity.md).
+To learn more about entities, refer to [entities](modeling/entity.md).
 
 ### Entity relationships
 
@@ -105,4 +116,10 @@ ODC Studio lets you visualize the relationships in your app data model in real-t
 
 You can organize entities into folders. Although folders don't affect the app data model, it lets developers group entities by higher concepts.
 
-To learn more about relationships between entities, refer to [relationships between entities](./modeling/relationship/relationships.md).
+To learn more about relationships between entities, refer to [relationships between entities](modeling/relationship/relationships.md).
+
+## Related resources
+
+* [Modeling Data](https://learn.outsystems.com/training/journeys/modeling-data-643) online course
+
+* [Modeling Data Relationships](https://learn.outsystems.com/training/journeys/modeling-data-relationships-642) online course

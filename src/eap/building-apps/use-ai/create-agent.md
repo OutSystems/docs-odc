@@ -1,12 +1,21 @@
 ---
 summary: Explore how to create and customize AI agents using OutSystems Developer Cloud (ODC) and AI Agent Builder.
-tags:
+tags: ai, ai agent builder, artificial intelligence, integration, data source configuration
 locale: en-us
 guid: 76197f5e-bca6-4603-8e93-45fa96ca76b2
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5075%3A166&mode=design&t=FeG7qG63nCPS3Mxp-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc portal
+coverage-type:
+  - apply
 ---
+
 # Create an agent
 
 With AI Agent Builder, you can create an agent from scratch or use the pre-built agent template with predefined instructions. This article explains how to create and customize an AI agent for your use case. It is intended for developers who want to create AI agents and integrate them into their existing apps.

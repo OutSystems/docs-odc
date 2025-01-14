@@ -1,11 +1,20 @@
 ---
 summary: Explore how OutSystems Developer Cloud (ODC) facilitates email sending and triggering through its Studio interface.
-tags: 
+tags: email integration, automation, server actions, user notification, email templates
 locale: en-us
 guid: 895e64b5-eb2c-4b92-9673-8493aa306622
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A11324&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - apply
 ---
 
 # Sending emails

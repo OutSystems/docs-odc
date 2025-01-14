@@ -1,12 +1,22 @@
 ---
 summary: Explore how OutSystems Developer Cloud (ODC) enhances UI reusability and maintainability through the use of blocks for common interface elements.
-tags:
+tags: ui components, event handling
 locale: en-us
 guid: b5909d7e-3f2e-4c0c-bf25-a312d12be834
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A8754&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
+
 # Reuse UI
 
 When designing interfaces it's frequent to have parts that are common to some of those interfaces. In OutSystems, it is possible to refactor and implement those common parts using widgets like **Blocks** (in Web and Mobile apps) and then reuse them on screens and other blocks.

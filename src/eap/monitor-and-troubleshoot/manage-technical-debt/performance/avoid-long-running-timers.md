@@ -1,13 +1,21 @@
 ---
 summary: Avoid running Timers for longer than 30 minutes.
-tags: 
+tags: timers, timeout, error handling, scheduler, rescheduling
 guid: 5a76f1b1-3582-46f9-9ad6-ef15bacd55a4
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3614-3&t=158LpU4GKyqaavnd-1
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - backend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - self hosted console
 ---
-
 # Avoid long-running Timers
 
 Avoid running Timers for longer than 30 minutes.

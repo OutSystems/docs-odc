@@ -1,12 +1,22 @@
 ---
 summary: Learn how to implement and manage Firebase Cloud Messaging in OutSystems Developer Cloud (ODC) for enhanced mobile app notifications.
-tags: 
+tags: firebase, notifications, mobile app development, push notifications, plugin integration
 locale: en-us
 guid: a8f7486e-a655-4da7-bed6-37d6867166b2
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5002%3A165&mode=design&t=qrb6BRX1TGRFDKu7-1
 platform-version: odc
+audience:
+  - mobile developers
+outsystems-tools:
+  - forge
+  - odc studio
+  - odc portal
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Firebase Cloud Messaging plugin using server actions
 
 <div class="info" markdown="1">
@@ -77,9 +87,13 @@ The following steps describe how to create a back-end notification service and h
 
 1. [Enable notifications with custom sounds](#enable-custom-sounds).
 
+1. [Enable notifications with a custom icon and icon color for Android devices](#custom-android-notification).
+
 1. [Manage the experience of in-app notifications using the Notifications block](#manage-notification-ux).
 
 1. [Manage the experience of custom actions using the Notifications block](#manage-custom-actions-ux).
+
+1. [Extend to your use case: authenticate your notification requests to FCM HTTP v1 REST API](#custom-notification-requests).
 
 ### Set up a back-end notification service { #setup-back-end }
 
@@ -268,6 +282,60 @@ It is important to note the following requirements for custom sounds:
 
 * The sounds.zip file should be included with the “Deploy Action” set to “Deploy to Target Directory”.
 
+## Enable notifications with a custom icon and icon color - Android only {#custom-android-notification}
+
+By default, a Cloud Messaging notification will use the app's launcher icon as the notification icon. However, for **Android** notifications, you can also define a custom icon and a custom icon color. 
+To setup a custom icon and custom icon color for Android notifications, follow these steps:
+
+1. Upload your custom icon (and it's various resolutions) to the resources of your application
+
+    ![Screenshot showing the different custom icon resolutions in application's Resources](images/firebase-messaging-custom-icon-resources-odcs.png "Custom Android Icon Resources")
+
+1. Update the Application's Extensibility Configuration JSON so that the different icon resolutions are added to their correct paths
+
+```JSON
+ "resources": {
+        "android": {
+            "AndroidResource": {
+                "src": "www/google-services.json",
+                "target": "app/google-services.json"
+            },
+            "NotificationIcon24": {
+                "src": "www/icon/notification_icon_24.png",
+                "target": "app/src/main/res/drawable-mdpi/notification_icon.png"
+            },
+            "NotificationIcon36": {
+                "src": "www/icon/notification_icon_36.png",
+                "target": "app/src/main/res/drawable-hdpi/notification_icon.png"
+            },
+            "NotificationIcon48": {
+                "src": "www/icon/notification_icon_48.png",
+                "target": "app/src/main/res/drawable-xhdpi/notification_icon.png"
+            },
+            "NotificationIcon72": {
+                "src": "www/icon/notification_icon_72.png",
+                "target": "app/src/main/res/drawable-xxhdpi/notification_icon.png"
+            },
+            "NotificationIcon96": {
+                "src": "www/icon/notification_icon_96.png",
+                "target": "app/src/main/res/drawable-xxxhdpi/notification_icon.png"
+            }
+            
+        }
+    }
+```
+
+1. In your push notification request, either via the plugin's `SendNotificationToUsers` or `SendNotificationToTopic` Server Actions, specify the custom icon and color
+
+    ![Screenshot showing Android notification configuration](images/fcm-custom-android-notification-odcs.png "Custom Android Icon and Color Configuration")
+
+<div class="info" markdown="1">
+
+* If no value for the custom **Icon** is passed, the app's launcher icon will be used, and the **Color** won't be applied.
+* The value passed to **Color** must be a RGB HEX code (`#rrggbb`).
+
+</div>
+
 ## Manage the experience of in-app notifications { #manage-notification-ux }
 
 By default, a cloud messaging notification displays in the notification center. However, you can also display the notification in-app when the app is on the foreground. To enable this notification, you can use the **NotificationsHandler** block. This block triggers events that pass the parameters of both notifications and silent notifications to the context of the app.
@@ -337,6 +405,19 @@ Starting on version 2.1.0, the plugin offers a way to enable an app's message de
 To have a better idea of what BigQuery is and how to enable it within the Firebase Console, please refer to the [official documentation](https://firebase.google.com/docs/cloud-messaging/understand-delivery?platform=ios#bigquery-data-export).
 
 The feature is disabled by default. To enable it, `SetDeliveryMetricsExportToBigQuery` needs to be called with its `Enable` input parameter set to `true`.
+
+## Authenticate push notification requests to FCM HTTP v1 API {#custom-notification-requests}
+
+Firebase Cloud Messaging offers a variety of uses cases with their HTTP v1 API which aren't covered by the Cloud Messaging Plugin's Server Actions, and as they can be very use-case specific, these Server Actions won't ever fully cover 100% of the HTTP v1 API. 
+
+Nevertheless, starting from version `2.2.0` of the plugin, it's possible to use the token generated with the `GetAccessToken` Server Action to authenticate requests for Firebase's HTTP v1 API.
+
+<div class="info" markdown="1">
+
+* The generated access token expires after 1 hour.
+* Refer to [Consume Rest APIs](https://success.outsystems.com/documentation/11/integration_with_external_systems/rest/consume_rest_apis/) to learn more about how to consume Firebase's HTTP v1 REST API in an OutSystems App. 
+
+</div>
 
 #### Known limitations on iOS
 

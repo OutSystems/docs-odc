@@ -1,12 +1,22 @@
 ---
 summary: This article provides a detailed guide on creating a verification code and password verification form using OutSystems Developer Cloud (ODC).
-tags:
+tags: user interface design, form validation, boolean logic, conditional rendering, email verification
 locale: en-us
 guid: 64EC5395-D2E9-494A-A556-9547438D74B9
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22083&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Create a verification code and password verification form
 
 <div class="info" markdown="1">

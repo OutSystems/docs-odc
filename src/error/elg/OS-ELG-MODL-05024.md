@@ -1,11 +1,19 @@
 ---
-summary: "The struct <StructName> used as <UsageName> is missing OSStructure decoration."
-tags:
+summary: The struct <StructName> used as <UsageName> is missing OSStructure decoration.
+tags: error resolution, c# development, code decoration, struct usage, outsystems development
 guid: faf619e7-0281-4f21-9038-bf9ae4e8e1e4
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - unblock
 ---
 
 # OS-ELG-MODL-05024

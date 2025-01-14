@@ -1,12 +1,21 @@
 ---
 summary: This article provides a guide on creating an email to send a verification code using OutSystems Developer Cloud (ODC).
-tags:
+tags: email templates, user authentication, configuration, user experience, application development
 locale: en-us
 guid: 8e30d486-dbf3-457c-87f8-4cd9e65b0156
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22069&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Create email to send verification code
 
 <div class="info" markdown="1">

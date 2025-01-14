@@ -1,11 +1,21 @@
 ---
-tags: 
+tags: ui patterns, ux design
 summary: OutSystems Developer Cloud (ODC) features a Scrollable Area Pattern for creating scrollable content blocks in applications.
 locale: en-us
 guid: 2cb523f7-81e5-4505-949b-801853c28f34
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A17230&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
+  - apply
 ---
 
 # Scrollable Area

@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) simplifies data fetching and display from databases using Aggregates and widgets.
-tags:
+tags: data integration, entity management, client-side logic
 locale: en-us
 guid: 9072a3d9-8993-4b6a-98b7-2f623bcd78bc
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7751&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Fetch and display data from the database in OutSystems
 
 You often need to fetch data from a database to, for example, show it on the screen. An efficient way to fetch data from databases in OutSystems is to use an Aggregate.
@@ -15,7 +24,6 @@ This document guides you through two steps:
 
 1. Getting data. You first need to load some data from your database. The example uses Entities from OutSystems sample data, but you can use your Entities as well. 
 1. Showing data. Once your app has data, you can show all records or just some. The example uses the List widget, but you can add a Table or some other widget.
-
 
 ## Fetch data from a database
 
@@ -61,6 +69,7 @@ This is an example of getting data with an aggregate to a screen. Both Aggregate
 
     ![Screenshot of the Home Screen in ODC Studio displaying the GetEmployees Aggregate with Entity Attributes](images/fetch-data-aggregate-in-screen-ss.png "Aggregate Displayed in Home Screen")
 
+For more information, refer to the [best practices for fetching and displaying data](../../ui/creating-screens/best-practices-fetch-display-data.md).
 
 ## Show data in a widget
 
@@ -89,3 +98,7 @@ Once you fetch data from the database, use one of many OutSystems widgets to sho
 1. Publish your app and load it in the browser. There's a list widget listing the last names of the employees.
 
     ![Browser view of the app running with a list widget listing employee last names](images/fetch-data-browser.png "App Displaying Employee Last Names")
+
+## Related resources
+
+* [Building Screens with Data](https://learn.outsystems.com/training/journeys/building-screens-with-data-637) online course

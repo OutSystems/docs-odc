@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui design, ui patterns
 summary: OutSystems Developer Cloud (ODC) features the Center Content UI Pattern for vertically aligning content within an application's container.
 locale: en-us
 guid: a4890513-8edb-4155-8075-a2e68740e6f0
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A21058&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Center Content
 
 You can use the Center Content UI Pattern to vertically align content to the center of its container.

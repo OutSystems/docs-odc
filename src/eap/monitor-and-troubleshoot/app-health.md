@@ -1,81 +1,161 @@
 ---
 summary: OutSystems Developer Cloud (ODC) features an App health dashboard for monitoring and analyzing app performance metrics.
-tags:
+tags: performance monitoring, app health analysis, dashboard usage, error debugging, app performance metrics
 locale: en-us
 guid: e190d5fb-6b99-4d9b-a64f-a3b34be3588d
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/IStE4rx9SlrBLEK5OXk4nm/Monitor-apps?type=design&node-id=3202%3A36&mode=design&t=tBANF8iUm5epKReC-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc portal
+coverage-type:
+  - understand
+  - remember
 ---
 
-# Monitor app health in ODC Portal
+# Monitor app analytics in ODC Portal
 
-OutSystems Developer Cloud (ODC) provides an **App health** dashboard that monitors app health, based on performance and errors.
+OutSystems Developer Cloud (ODC) provides an app analytics dashboard that monitors apps based on performance, usage, and errors.
 
-The dashboard allows you to analyze key metrics, such as the [health score](#health-score), [requests](#requests),  [errors](#errors), and [response time](#response-time) of your apps and its elements over a period of time. The App health dashboard provides an overview of the app health of a selected stage, for up to 30 days.
+The dashboard shows the following key metrics:
 
-![Screenshot of the App Health Dashboard overview in ODC Portal showing health categories and key metrics](images/apphealth-dashboard-overview-pl.png "App Health Dashboard Overview")
+- Health score: How your apps perform, considering response times, successful requests, errors, and etc.
+- Top apps by usage: A list of apps with the most users and requests per day.
+- Requests: The total usage of your apps in the number of requests and their rates.
+- Errors: The amount of errors and the error rate for all requests.
+- Response time: The time the server takes to handle a request. 
 
-Based on the health score, the dashboard organizes the apps into **Critical**, **Moderate**, and **Good** categories allowing you to focus on the apps that are performing poorly. The dashboard also shows the apps, categorized by requests, errors, and response time.
+Based on the health score, the dashboard organizes the apps into **Critical**, **Moderate**, and **Good** categories, allowing you to focus on the poorly performing apps. You can identify and debug potential issues from the dashboard by drilling down into the app's historical trend of key metrics.
 
-![Table displaying the top requests in the App Health Dashboard](images/apphealth-toprequests-pl.png "Top Requests")
-![Graph showing the error trends in the App Health Dashboard](images/apphealth-errors-pl.png "Errors")
+The analytics dashboard provides an overview of the apps of a selected stage for up to 30 days. You can click the graphs for metrics such as errors, response time, and requests to view detailed information.
 
-From the dashboard, you can identify and debug potential issues by drilling down into the app's historical trend of key metrics. 
+![Screenshot of selecting a specific metric in ODC App analytics.](images/specific-metirc-pl.png "Selecting a Specific Metric in ODC App Analytics")    
 
-![Line graph depicting the health score trend of an app over time](images/apphealth-healthscore-pl.png "Health Score")
-![Chart illustrating the total number of errors in an app within the App Health Dashboard](images/apphealth-totalerrors-pl.png "Total Errors")
+## App analytics
 
-Drilling down into an app also allows you to get an overview of the app’s elements based on the number of times they were invoked as part of the app requests, their 99th percentile duration, and the number of times they resulted in an error.
+You can drill down into specific apps to get more information about how the app behaves.
 
-![Panel detailing the response time of app elements in the App Health Dashboard](images/apphealth-element-response-pl.png "Element Response Time")
-![Panel showing the number of errors per app element in the App Health Dashboard](images/apphealth-element-errors-pl.png "Element Errors")
+![Screenshot of selecting a specific app in ODC App analytics.](images/select-app-pl.png "Selecting a Specific App in ODC App Analytics")
 
-You can drill further down into an element and view the historical trends of the metrics. Once you identify the elements  that are causing the app issues, the logs and traces for the period that the errors occurred can also help identify and locate the problem. For more information about logs and traces, refer to [Monitor and troubleshoot apps](monitor-apps.md) article.
+For each app, the analytics dashboard provides insights such as:
+
+- Health score
+- Active users
+- User geolocation with performance and error data by region
+- Browser information
+- Error and response time
+- Element requests, response time, errors
+- Request, request with errors, and slowest requests
+
+<div class="info" markdown="1">
+
+Geolocation information can take up to 20 minutes to synchronize with active user data.
+
+</div>
+
+Some of the benefits of these analytics dashboard insights are:
+
+- Identify how many users experience issues and analyze their locations and browsers.
+- Monitor app usage and assess performance trends across regions.
+- Compare metrics to evaluate app performance in different locations.
+
+You can drill further down into an element and view the historical trends of the metrics. After identifying the elements causing issues in the app, reviewing the logs and traces from the error period can further help pinpoint the problem. The trace details include browser and user location.
+
+![Screenshot of selecting a specific trace from an app in ODC App analytics.](images/specific-trace-pl.png "Selecting a Specific Trace from an App in ODC App Analytics")
+
+You can click the request with errors and the slowest request to display a trace of that element to debug it. For more information about logs and traces, refer to[ Monitor and troubleshoot apps](monitor-apps.md)
+
+<div class="warning" markdown="1">
+
+Apps published before November 11, 2024, might not send data geography metrics correctly for some traces.
+
+</div>
 
 ## Metrics
 
-To help you understand how your apps are performing, the App health dashboard summarizes the following metrics.
+App analytics helps you understand how your apps are performing. It summarizes the following metrics.
 
+### Health score
 
-### Health score {#health-score}
+An app's health score is expressed as a numerical score from 1 to 100 and is based on the app's response time and errors during the selected period of time (minimum 5 minutes, maximum 30 days). There are three health score categories:
 
-An app's health score is expressed as a numerical score from 1 to 100 and is based on the app's response time and errors during the selected period of time (maximum 30 days, minimum 5 minutes). There are 3 health score categories:
-
-* **Critical** (0-70) 
-
-* **Moderate** (70-85)
-
-* **Good** (85-100)
+- Critical (0-70)
+- Moderate (70-85)
+- Good (85-100)
 
 An app's health score calculation follows the Application Performance Index (Apdex) industry standard.
 
-The score is calculated by taking the number of successful requests to the app's elements and dividing by the total number of requests over the selected period. A request is said to be successful if it's completed without errors and the response time is less than a defined threshold.
+The score is calculated by taking the number of successful requests to the app's elements and dividing it by the total number of requests over the selected period. A request is successful if it's completed without errors and the response time is less than a defined threshold.
 
-### Requests {#requests}
+### Active users 
 
-Requests are the number of app interactions done using screens, APIs, or timers. There are 2 request metrics:
+The number of unique users visiting the app helps you understand its usage over time.
 
-* **Total requests** - The total number of requests made to an app. 
+### Geography
 
-* **Request rate** - The rate at which the requests are sent to an app.
+Geographical distribution of users, errors, and overall end-user response time for this app. You can sort the data by unique users, errors, and user response time. There are three categories:
 
-### Errors {#errors}
+- Countries with users
+- Countries with errors
+- Response time by country
 
-Errors are the issues that occur when requests are made to an app, which causes it to malfunction or crash. There are 3 error metrics:
+### Browser
 
-* **Total errors** - The total number of errors occurred when requests are made to an app.
+Distribution of browser usage among end-users accessing this app. It categorizes browsers into Chrome, Safari, Edge, Firefox, and Opera. Any other browsers are grouped under **Other** in the data.
 
-* **Error rate** - The rate at which errors occur when requests are made to an app.
+### Errors 
 
-* **Error percentage** - The percentage of requests that resulted in errors
+Errors are the issues that occur when requests are made to an app, which causes it to malfunction or crash. There are three error metrics:
 
-### Response time {#response-time}
+- Total errors: The total number of errors that occur when requests are made to an app.
+- Error rate: The rate at which errors occur when requests are made to an app.
+- Error percentage: The percentage of requests that resulted in errors.
 
-Response time is the amount of time taken to complete a request. The nth percentile response time is the time duration, under which n% of requests are completed. There are 3 response time metrics:
+### Response time 
 
-* **P90** - 90th percentile response time
+Response time is the amount of time taken to complete a request. The nth percentile response time is the duration under which n% of requests are completed. There are three response time metrics:
 
-* **P95** - 95th percentile response time
+- P90:  90th percentile response time
+- P95: 95th percentile response time
+- P99: 99th percentile response time
 
-* **P99** - 99th percentile response time
+### Requests 
+
+Requests are the number of app interactions done using screens, APIs, or timers. There are two request metrics:
+
+- Total requests: The total number of requests made to an app.
+- Request rate: The rate at which the requests are sent to an app.
+
+## Element metrics
+
+![Screenshot displaying various app metrics in ODC App analytics.](images/Analytics-elements-dashboard-pl.png "Various App Metrics in ODC App Analytics")
+
+### Element requests
+
+A list of elements by type and their daily amount of requests. There are two element metrics:
+
+- Elements
+- Elements types
+
+### Element response time
+
+A list of elements with the highest response times. There are two element metrics:
+
+- Others
+- Timers
+
+### Element errors
+
+A list of elements with the highest error percent.
+
+### Request with errors
+
+A list of requests from elements in this app that failed.
+
+### Slowest errors
+
+A list of requests from elements in this app that took 2 seconds or longer to execute.

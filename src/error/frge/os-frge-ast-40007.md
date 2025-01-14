@@ -1,13 +1,18 @@
 ---
-summary: "The input data is incorrect. We have found the following error(s): <errors>"
-tags: 
+summary: The input data is incorrect. We have found the following error(s) <errors>
+tags: error handling, input validation, url format, troubleshooting, outsystems support
 guid: 1407cb00-c075-4092-b832-6ce935706fbe
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+coverage-type:
+  - unblock
+audience:
+  - none
+outsystems-tools:
+  - none
 ---
-
 # OS-FRGE-AST-40007
 
 ## Error message

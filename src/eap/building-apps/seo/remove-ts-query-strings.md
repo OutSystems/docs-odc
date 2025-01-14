@@ -1,14 +1,29 @@
 ---
-summary: Removing _ts from query strings. 
-tags: 
+summary: Removing _ts from query strings.
+tags: seo, query string, caching, reverse proxy, cdn
 guid: 70399158-64c3-4630-91ee-46c3bb17ead7
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+coverage-type:
+  - remember
+audience:
+  - frontend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - none
 ---
-
 # Remove _ts from query strings
+
+<div class="warning" markdown="1">
+
+This page provides a suggestion on how to achieve improved SEO performance with ODC Applications using third party tools as a workaround and isn't an official supported product offering.
+
+Please be aware of existing [Platform Limits](../../getting-started/system-requirements.md#platform-limits) and that Platform changes can subject unsupported workarounds to breaking changes without warning.
+
+</div>
 
 OutSystems apps use caching to increase page performance and load times. To track whether a page requires an update after a new deployment, OutSystems reactive apps use a query string parameter called _ts. An OutSystems app can check the value of this parameter to calculate whether it needs to refresh assets.
 

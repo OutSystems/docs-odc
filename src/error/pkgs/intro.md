@@ -1,11 +1,18 @@
 ---
-summary:  List of error messages for ODC Package Manager Service with recommended actions
-tags: 
+summary: List of error messages for ODC Package Manager Service with recommended actions
+tags: error handling, outsystems developer cloud, package installation, troubleshooting, developer tools
 guid: 2d844fa0-2d5a-4ff5-a9ba-cd718084181a
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - platform administrators
+  - full stack developers
+outsystems-tools:
+  - odc portal
+coverage-type:
+  - unblock
 ---
 
 # Package Manager Service

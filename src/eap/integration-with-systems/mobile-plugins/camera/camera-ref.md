@@ -1,11 +1,19 @@
 ---
 summary: Explore the Camera Plugin functionalities in OutSystems Developer Cloud (ODC), including client actions, web blocks, and error handling.
-tags: runtime-mobile
+tags: plugin development, mobile camera integration, error handling, mobile application development, outsystems api
 locale: en-us
 guid: ae8ad875-72ce-41d6-9cc0-70131df2782d
 app_type: mobile apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
 
 # Camera Plugin Reference 
@@ -255,3 +263,6 @@ OS-PLUG-CAMR-0027 (NEW)|Android|URI parameter cannot be empty.
 OS-PLUG-CAMR-0028 (NEW)|iOS|Couldn’t get video from the gallery.
 OS-PLUG-CAMR-0029 (NEW)|iOS|There's an issue with the plugin.
 OS-PLUG-CAMR-0030 (NEW)|Android|The selected file doesn't exist.
+OS-PLUG-CAMR-0031 (NEW)|iOS|Couldn't retrieve image from the URI.
+OS-PLUG-CAMR-0032 (NEW)|PWA|EditURIPicture is only available for Android and iOS.
+OS-PLUG-CAMR-0033 (NEW)|iOS, Android, PWA|Height and width values need to be greater than zero.

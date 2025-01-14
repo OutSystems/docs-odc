@@ -1,12 +1,23 @@
 ---
 summary: Explore the integration of health and fitness data using HealthKit and Google Health Connect in mobile apps with OutSystems Developer Cloud (ODC).
-tags:
+tags: healthkit integration, health connect integration, mobile health data, plugin development, user permissions
 locale: en-us
 guid: a0e9b45a-9726-4804-8019-7abe52b3b813
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7665&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+outsystems-tools:
+  - odc studio
+  - forge
+coverage-type:
+  - understand
+  - apply
+  - remember
 ---
+
 # Health and Fitness Plugin using HealthKit and Health Connect
 
 <div class="info" markdown="1">
@@ -271,6 +282,16 @@ To verify that the background job was successfully created, check if the value o
 #### Setting a background job in Android
 
 Starting in Android 15, when setting a background job for the first time, the Health Connect permission to read data in the background will be requested.
+
+<div class="info" markdown="1">
+
+From Android 15 onwards, users can install an app in the [Private space](https://developer.android.com/about/versions/15/features#private-space). Users can lock their private space at any time. Once locked, all background jobs of the app inside the private space are stopped, and notifications are not shown until the user unlocks the private space.
+
+It is not possible to detect if an app is installed in the private space. Therefore, if your app shows any critical notifications, inform your users to avoid installing the app in the private space.
+
+For more information about the behavior changes of your app related to the private space, refer to [Android documentation](https://developer.android.com/about/versions/15/behavior-changes-all#private-space-changes).
+
+</div>
 
 Starting in Android 14, when setting a background job for the first time, for some variables, the permission to schedule exact alarms will be requested. More specifically, this permission will be requested when setting the first background job if the variable is one of the following: weight, height, sleep, blood glucose, or body fat percentage.
 

@@ -1,11 +1,19 @@
 ---
 summary: Use the custom ai modelAPI contract to integrate it with AI Agent Builder.
-tags: 
+tags: ai integration, api usage, rest apis, ai builder, api authentication
 guid: 6b5e78e7-8672-491d-88c6-641e67098096
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - ai mentor studio
+coverage-type:
+  - remember
 ---
 
 # Custom AI model API contract

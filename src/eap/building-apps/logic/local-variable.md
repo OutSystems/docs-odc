@@ -6,7 +6,18 @@ guid: 2e1a1542-5dc1-4269-987b-f2665ce37f07
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21499&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+tags: data filtering, local variable management, data binding, aggregate filtering, widget properties
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
+  - apply
 ---
+
 # Local Variable
 
 A Local Variable exists only in the scope of its parent element, for example, a Screen or an Action. A Local Variable can only be assigned and used locally inside that scope. Local variables are destroyed when execution leaves the scope of the parent element. The image below shows how to add a Local Variable inside a Screen.  

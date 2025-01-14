@@ -1,13 +1,21 @@
 ---
-summary: Avoid passing identity information ina Block widget parameter. 
-tags: 
+summary: Avoid passing identity information ina Block widget parameter.
+tags: identity management, security, block widget parameters, reactive web apps, client-side manipulation
 guid: 6459d2b6-9050-4c7e-ba16-4a24dec7394a
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3525-387&node-type=CANVAS&t=fro20soaPpjjIXwf-0
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - frontend developers
+  - full stack developers
+  - tech leads
+outsystems-tools:
+  - none
 ---
-
 # Insecure usage of GetUserId in client Block parameters
 
 Avoid passing identity information in a Block widget parameter.
@@ -30,4 +38,4 @@ Get identity information only on server calls, using functions like GetUserId, e
 
 Remove any usages of GetUserId in Block widget parameters, and replace them with the same function on the server side. In this way, you avoid passing identity information from the client side to the server side as a Block parameter.
 
-For more information, refer to [Reactive web security best practices: Securing server calls](https://success.outsystems.com/documentation/best_practices/security/reactive_web_security_best_practices/).
+For more information, refer to the [best practice for validating user permissions on server-side logic](../../../building-apps/logic/best-practices-logic.md#validate-permissions-server-side).

@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) provides a comprehensive guide on using operands, literals, variables, and functions in expressions.
-tags:
+tags: expression editor, data types, coding practices, best practices
 locale: en-us
 guid: 6c363890-b0af-4d1c-92ae-1cb346aa6f7d
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3214%3A21846&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
+
 # Operands
 
 An operand tells the platform which data to use to manipulate an expression. For example, in the expression `MyValue + 1`, `MyValue` and `1` are the operands. 

@@ -5,6 +5,18 @@ guid: 3a5f56e7-2515-4e97-914e-b8a503f82c7f
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+tags: secret management, security, encryption, application configuration, sensitive data protection
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Set as secret
@@ -13,7 +25,7 @@ A secret is a private piece of information that gives access to protected resour
 
 As you develop apps, keep in mind that every application, script, automation tool, and other non-human identity relies on some form of a privileged credential. This credential gives access to other tools, applications, and data. These secrets can unlock protected resources or sensitive information in tools.
 
-Sensitive information such as tokens and passwords are usually saved in a secret storage solution. A secret storage solution is an identity-based encryption management system. You use a secret storage solution to secure, store, and tightly control access to passwords, certificates, API keys, and other items you want to control.
+Sensitive information such as tokens and passwords are usually saved in a secret storage solution. A secret storage solution is an identity-based encryption management system. You use a secret storage solution to secure, store, and tightly control access to passwords, API keys, and other items you want to control.
 
 Depending upon the app you build you can have several fields that should be set as secret. When you set a field value as a secret, the actual value is masked with asterisks (*****). The values are custom and you can define them for each stage.
 
@@ -40,3 +52,7 @@ Following is an overview of the process for setting a secret:
 ## Reverting from secret to non-secret
 
 To change a setting from non-secret to secret, follow the same process you used when you initially set the secret in ODC Studio. Note that changing a secret to a non-secret deletes the value of the setting once you publish the app.
+
+## Related resources
+
+* [Settings](https://learn.outsystems.com/training/journeys/settings-370) online course

@@ -1,12 +1,24 @@
 ---
 summary: Explore the integration of health and fitness data using HealthKit and Google Fit APIs in mobile apps with OutSystems Developer Cloud (ODC).
-tags:
+tags: healthkit integration, google fit integration, mobile health data, plugin development, permissions handling
 locale: en-us
 guid: 131bec56-8c60-457c-a9ba-63801f2c54bc
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5364%3A193&mode=design&t=Xf7kazC2UjQKDaiy-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - forge
+  - odc studio
+coverage-type:
+  - understand
+  - apply
+  - remember
 ---
+
 # Health and Fitness Plugin using HealthKit and Google Fit 
 
 <div class="info" markdown="1">
@@ -147,6 +159,16 @@ To check that writing the health or fitness data on the device is working, verif
 ### Create logic to define a background job
 
 To define a background job you can use the **SetBackgroundJob** action. Set the parameters for the type of health or fitness variable you want to keep evaluating, define the notification trigger condition and its frequency, and define the notification content. 
+
+<div class="info" markdown="1">
+
+From Android 15 onwards, users can install an app in the [Private space](https://developer.android.com/about/versions/15/features#private-space). Users can lock their private space at any time. Once locked, all background jobs of the app inside the private space are stopped, and notifications are not shown until the user unlocks the private space.
+
+It is not possible to detect if an app is installed in the private space. Therefore, if your app shows any critical notifications, inform your users to avoid installing the app in the private space.
+
+For more information about the behavior changes of your app related to the private space, refer to [Android documentation](https://developer.android.com/about/versions/15/behavior-changes-all#private-space-changes).
+
+</div>
 
 Parametrization for two different use cases of a background job is shown below:
 

@@ -1,12 +1,22 @@
 ---
 summary: Explore how to integrate Azure AI Search as a data source in the AI Agent Builder app using OutSystems Developer Cloud (ODC).
-tags:
+tags: azure ai, azure cognitive services, data integration, search solutions, ai-powered search
 locale: en-us
 guid: 92480398-1f83-4f8a-9439-f1d8299ffbc6
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5079%3A350&mode=design&t=L8AQ4Cz4ktXvgIdw-1
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - odc portal
+coverage-type:
+  - apply
 ---
+
 # Add Azure AI Search data source to the AI Agent Builder app
 
 You can add an external data source to the AI Agent Builder app and use Azure AI Search with Azure OpenAI language models. This allows you to create search solutions using your data to generate responses. This article explains how to add a data source for Azure AI Search. It is intended for administrators and DevOps engineers responsible for setting up the AI Agent Builder app.

@@ -1,13 +1,20 @@
 ---
-summary: Prerender usage and configuration best practices. 
-tags: 
+summary: Prerender usage and configuration best practices.
+tags: prerender, caching, seo, reverse proxy, mobile apps
 guid: 99def5e6-f2d0-41cb-821a-20116a620182
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
+coverage-type:
+  - remember
+audience:
+  - frontend developers
+  - platform administrators
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # Prerender usage and configuration
 
 Prerender serves a cached page in response to the user agent's request. Prerender acts like a browser, that is, it opens the page, waits for the JavaScript to load, and then adds the page to the cache. The system counts each of these occurrences as a render. A re-cache (manual or automatic) replaces the previous content but the system considers it a new cache and charges for it. To keep the cost to a minimum, limit your caches. You can adopt the following best practices to keep your prerender costs down. OutSystems recommends periodically monitoring your cache consumption using SEO tools, dashboards and Prerender to make suitable configuration adjustments.

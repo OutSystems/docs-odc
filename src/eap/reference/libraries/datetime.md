@@ -1,12 +1,21 @@
 ---
 summary: Explore date and time manipulation features in OutSystems Developer Cloud (ODC) with the DateTime library's comprehensive actions.
-tags:
+tags: date and time manipulation, datetime functions, mobile app development, outsystems programming, technical reference
 locale: en-us
 guid: 9da728fe-ebdc-4114-af34-1ef4d2265e19
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - none
+coverage-type:
+  - remember
 ---
+
 # DateTime
 
 The OutSystems DateTime library provides actions to access and manipulate DateTime objects, such as retrieving the quarter of a specific date or determining if a date is set on a leap year.

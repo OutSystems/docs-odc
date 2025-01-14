@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) facilitates the creation and management of database entities and attributes for data persistence.
-tags:
+tags: data modeling, local storage
 locale: en-us
 guid: d8cd27a9-fadb-404c-8998-648f3799934a
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2485&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Create an Entity to Persist Data
   
 In OutSystems, a database table is an Entity, and the table columns are Entity Attributes.

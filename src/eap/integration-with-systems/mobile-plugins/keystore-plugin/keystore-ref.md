@@ -5,8 +5,15 @@ guid: 62c7a486-6e87-485c-92ef-e0a1dac971d4
 app_type: mobile apps
 platform-version: odc
 figma:
+coverage-type:
+  - remember
+tags: keystore plugin, client actions, error handling, mobile apps, outsystems
+audience:
+  - mobile developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
 ---
-
 # KeyStore Plugin reference
 
 ## Client Actions

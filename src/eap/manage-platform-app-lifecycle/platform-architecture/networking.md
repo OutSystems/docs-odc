@@ -1,11 +1,21 @@
 ---
 summary: Explore the cloud-native network architecture and security features of OutSystems Developer Cloud (ODC) in this detailed overview.
-tags: 
+tags: cloud-native architecture, network security, content delivery network, web application firewall, custom domains
 locale: en-us
 guid: e87fb27d-9186-436d-ac97-a2ea960c119d
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/wMgr3GDiuAdkPics5gzXx9/Cloud-native-architecture-of-OutSystems-Developer-Cloud?type=design&node-id=3001%3A1808&t=wS2nDUn4cr9EORu8-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - platform administrators
+  - architects
+outsystems-tools:
+  - none
+coverage-type:
+  - understand
 ---
 
 # Network architecture of OutSystems Developer Cloud

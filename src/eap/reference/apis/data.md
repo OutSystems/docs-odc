@@ -1,12 +1,21 @@
 ---
 summary: Learn how to add fixed and variable data to charts using the OutSystems Developer Cloud (ODC).
-tags:
+tags: chart implementation, data visualization, user interface components, data binding, application development
 locale: en-us
 guid: 773767d0-b1c3-4f06-a98c-b18205802786
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Data
 
 To add data to your chart you must input **DataPoint** labels and values for the **DataPointList** property.

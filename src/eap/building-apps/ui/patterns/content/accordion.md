@@ -1,12 +1,23 @@
 ---
 summary: Explore how to implement and customize the Accordion UI Pattern in OutSystems Developer Cloud (ODC) to enhance application interfaces.
-tags:
+tags: ui components, accordion pattern, user interface design
 locale: en-us
 guid: 794b75df-0091-4e62-b1f8-22c56e7ebf90
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A10201&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Accordion
 
 You can use the Accordion UI Pattern to allow users expand and hide content when clicked.

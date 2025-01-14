@@ -1,11 +1,19 @@
 ---
 summary: An asset can only be updated by its owners.
-tags: 
+tags: permissions, asset management, error handling, user authorization, support procedures
 guid: 9e7e3490-43ae-49aa-bb9b-9a321f706ec1
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - none
+coverage-type:
+  - unblock
 ---
 
 # OS-FRGE-AST-40301

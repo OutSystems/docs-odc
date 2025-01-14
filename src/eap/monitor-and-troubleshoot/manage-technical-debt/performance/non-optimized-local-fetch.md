@@ -1,13 +1,20 @@
 ---
-summary: 
-tags: 
+summary: Optimize mobile app performance on OutSystems Data Cloud (ODC) by avoiding local data fetch in client events and utilize parallel data fetching.
+tags: local data fetch, parallel data fetching, performance optimization, client events, mobile apps development
 guid: 2a625247-1f84-4147-99ee-05ed4aa4658b
 locale: en-us
 app_type: mobile apps
 platform-version: odc
-figma: 
+figma:
+coverage-type:
+  - unblock
+  - remember
+audience:
+  - mobile developers
+outsystems-tools:
+  - odc studio
+  - odc portal
 ---
-
 # Non-optimized local data fetch
 
 <div class="info" markdown="1">

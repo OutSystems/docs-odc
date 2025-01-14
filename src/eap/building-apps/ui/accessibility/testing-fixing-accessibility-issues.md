@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports accessibility testing and fixing through tools like WAVE and Lighthouse, as demonstrated in ODC Studio.
-tags:
+tags: accessibility, web development, ui/ux design, low-code development, performance auditing
 locale: en-us
 guid: 04bcfcb9-e575-4b01-9b03-0e755ea54fdb
 app_type: reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4574-177&mode=design&t=mgggrWLg7VuE5pai-0
 platform-version: odc
+audience:
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
 ---
+
 # Testing and fixing accessibility issues
 
 While developing accessible apps, OutSystems recommends you test for accessibility issues and fix them early. This section shows a quick example of using the [WAVE accessibility evaluation tool](https://wave.webaim.org/) to identify and address issues in ODC Studio. WAVE shows issues as visual markers on the page, which lets you focus on the low-code approach of the app development. You can also audit your apps with Lighthouse, integrated with the Chrome DevTools.

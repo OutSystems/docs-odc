@@ -6,6 +6,16 @@ guid: 766ab743-31f2-4f58-ad91-a4cd0db8ab93
 app_type: mobile apps, reactive web apps
 figma:
 platform-version: odc
+tags: access management, permissions, user onboarding, user roles, organization management
+audience:
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - understand
+  - apply
 ---
 
 # Roles
@@ -77,9 +87,14 @@ In the App scope section, you can Manage roles. You can add or delete App scope 
 
 ## End-user roles
 
-End-user roles are specific to apps. You create end-user roles in ODC Studio while you develop an app. After you publish the app, you use the ODC Portal to assign the end-user role to users. Go to **Users & access** > **Users**. Search for the user, and in the user page below End-user roles, select **Manage roles**.
+You create end-user roles in ODC Studio while you develop an app. While creating an end-user role in ODC Studio, If you set the end-user role as **Public** then the role can be shared across apps and worflows. By default, the roles are not public. After you publish the app, 
+- You can use the public role in other ODC apps by [adding the role as public element](../building-apps/libraries/use-public-elements.md) in ODC Studio.
 
-For more information about app dev development and end-user roles, see: [Secure your app with end-user roles](secure-app-with-roles.md).
+- You can use the ODC Portal to assign the end-user role to users. Go to **Users & access** > **Users**. Search for the user, and in the user page below End-user roles, select **Manage roles**.
+
+- You can assign human activity to roles in a workflow.
+
+For more information about app dev development and end-user roles, see [Secure your app with end-user roles](secure-app-with-roles.md).
 
 ## End-user groups
 
@@ -99,7 +114,7 @@ You can add new users to your organization and apps through the ODC Portal.
 
 From the **ODC Portal**, select **Users & access** and then select either **Users** or **End-user groups**.
 
-Clicking **Users**, displays a screen that shows a list of users. To invite a new user, from the top right click the **Invite user** button. A form displays to enter the user's email address and to select their access. Based on your choices, different options are available.
+Clicking **Users**, displays a screen that shows a list of users. To invite a new user, from the top right click the **Invite user** button. A form displays to enter the user's email address and to select their access. Based on your choices, different options are available. The invitation token expires in approximately 7 days.
 
 * If you choose **Organization access**, you can select an organization and an app. If you select an organization, then you can choose a specific role or no role. When you search for or select a group, you can also choose a stage.
 * If you choose **End-user access** you also have access to add **End-user groups**. You can add the user to a group, assign roles related to a specific app or all apps, and a specific stage or all stages. You can choose more than one app at a time. A group can only have roles from the same stage. For example, if your group is in the Development stage you can't add roles from the Production stage.
@@ -137,3 +152,7 @@ From the **ODC Portal**, select **Users & access**> **Users**. A table displays 
 Logged-in users needs to log out and log back in for changes in their assigned roles or role permissions to become effective.
 
 </div>
+
+## Related resources
+
+* [Role-based Security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course

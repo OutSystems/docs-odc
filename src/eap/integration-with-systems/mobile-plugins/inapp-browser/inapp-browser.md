@@ -5,6 +5,15 @@ locale: en-us
 app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5727-54&t=ADYZzdTUBOjTpi9r-0
+tags: plugin development, system integration, mobile app development, security version management
+audience:
+  - mobile developers
+  - frontend developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
+  - apply
 ---
 
 # InApp Browser Plugin

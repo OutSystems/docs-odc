@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) streamlines mobile app packaging and distribution for iOS and Android platforms.
-tags:
+tags: mobile app distribution, ios packaging, android packaging, app store submission, mobile app configuration
 locale: en-us
 guid: 4e816fa7-fffc-48c4-b205-13f7165d3775
 app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2598&mode=design&t=TyGh9pLEHaqLAxxu-1
+audience:
+  - mobile developers
+outsystems-tools:
+  - odc studio
+  - odc portal
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Create mobile app package
 
 After you can create a mobile app in ODC (OutSystems Developer Cloud) Studio, you can create a mobile app package in ODC Portal. The following list describes the overall process of making your app available for users: 
@@ -126,3 +135,12 @@ Using the Safari browser to preview a mobile app within the ODC Portal doesn't w
 
 OutSystems recommends Chrome browser for previewing the mobile app in the ODC Portal.
 
+### App login doesn't work in the preview if you're using Safari or any other browser configured to block third-party cookies
+
+More and more browsers are blocking third-party cookies by default. Using the Safari browser or any other browser configured to block third-party cookies to preview a mobile app within the ODC Portal prevents the login screen in your application from working. The app and the preview render within an iFrame in different domains and due to the configuration to block third-party cookies, the login doesn't work.
+
+OutSystems recommends Chrome browser for previewing the mobile app in the ODC Portal. If the browser is blocking third-party cookies you can disable that feature in the browser security settings.
+
+## Related resources
+
+* [Native App Generation](https://learn.outsystems.com/training/journeys/native-app-generation-677) online course

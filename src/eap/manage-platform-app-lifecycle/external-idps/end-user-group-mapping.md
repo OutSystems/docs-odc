@@ -4,8 +4,19 @@ summary: OutSystems Developer Cloud (ODC) facilitates efficient onboarding by en
 locale: en-us
 guid: 84c9098b-c486-483f-9836-70b8faee63fa
 app_type: mobile apps, reactive web apps
-figma: 
+figma:
 platform-version: odc
+tags: identity and access management, user onboarding, role management, identity providers, group mapping
+audience:
+  - platform administrators
+  - full stack developers
+  - mobile developers
+  - frontend developers
+outsystems-tools:
+  - odc portal
+coverage-type:
+  - apply
+  - understand
 ---
 
 # IdP and end-user group mapping
@@ -20,7 +31,7 @@ This ODC feature only works if your IdP supports groups. Check with your IdP to 
 
 </div>
 
-According to the roles on the IdP, each end-user that exists in the IdP can log in to ODC with the appropriate roles. When the mapping completes, end-users are automatically granted roles and access to apps for the ODC group. If an end-user already exists in ODC, their permissions synchronize according to the existing group mapping if applicable. This happens every time an end-user logs into ODC. For more informaiont about Roles, refer to [Roles](../../user-management/roles.md)
+According to the roles on the IdP, each end-user that exists in the IdP can log in to ODC with the appropriate roles. When the mapping completes, end-users are automatically granted roles and access to apps for the ODC group. If an end-user already exists in ODC, their permissions synchronize according to the existing group mapping if applicable. This happens every time an end-user logs into ODC. For more information about Roles, refer to [Roles](../../user-management/roles.md)
 
 You need the following before you can map groups:
 

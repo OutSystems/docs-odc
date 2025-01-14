@@ -1,12 +1,21 @@
 ---
 summary: OutSystems Developer Cloud (ODC) introduces Charts API v2, enabling advanced chart creation and customization using Highcharts 11.4.8.
-tags:
+tags: chart customization, highcharts integration, data visualization, component library, api documentation
 locale: en-us
 guid: b5070497-8f92-4f84-ad4e-4465de6dde0e
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - frontend developers
+  - full stack developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - remember
 ---
+
 # Charts API v2
 
 <div class="info" markdown="1">

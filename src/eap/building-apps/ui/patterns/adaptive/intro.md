@@ -1,12 +1,21 @@
 ---
 summary: Explore adaptive app development with OutSystems Developer Cloud (ODC) to ensure optimal display across various device sizes and resolutions.
-tags:
+tags: adaptive design, user experience, device compatibility, screen resolution, design patterns
 locale: en-us
 guid: 2c47448a-ec28-4a99-99bc-171fc05cd0e6
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A8833&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - ui designers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - understand
 ---
+
 # Adaptive
 
 Mobile devices include everything from smartwatches to tablets. These devices have different resolutions, pixel density and aspect ratio. When building apps, it’s important that the various devices and screen sizes are supported.

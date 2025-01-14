@@ -1,12 +1,22 @@
 ---
-tags:
+tags: ui design, user experience, animation in apps, ui patterns, outsystems ui
 summary: OutSystems Developer Cloud (ODC) features the Animate UI Pattern for enhancing app usability by animating elements on screen.
 locale: en-us
 guid: bd23a378-5bd7-4fcb-8c53-5455b46be344
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A12821&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
 ---
+
 # Animate
 
 You can use the Animate UI Pattern to create animations within your app. This UI pattern allows you to emphasize elements as they appear on screen which enhances the overall usability of the app.
