@@ -98,8 +98,8 @@ The producer asset defines a structure with a mandatory attribute that doesn't e
 
 The consumer asset uses a record from a static entity that doesn't exist in the producer asset's definition. To fix this, you can either:
 
-* Remove the missing records to the static entities in the consumer asset.
-* Add the missing records from the static entities in the producer asset.
+* Remove the missing records from the static entities in the consumer asset.
+* Add the missing records to the static entities in the producer asset.
   
 ### Output parameter mismatch
 
