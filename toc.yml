@@ -47,6 +47,8 @@
         - href: eap/building-apps/use-ai/create-agent.md
         # Integrate agent
         - href: eap/building-apps/use-ai/integrate-agent.md
+        # Analyse agent
+        - href: eap/building-apps/use-ai/analyse-agent.md
 
     # Data management
     - href: eap/building-apps/data/intro.md
