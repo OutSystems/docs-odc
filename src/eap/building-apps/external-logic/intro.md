@@ -66,9 +66,12 @@ To do this, select **External Logic** from the left nav menu in the ODC Portal t
 
     A spinning wheel shows the status of the file upload and inspection process. You can continue working on other tasks in the ODC Portal during the process.
 
+
+1. If there are errors in the code, the **View errors** button displays. Click the button to see the full list of errors. You must fix the errors in the C# code before you can proceed. Use the [error page documentation](../../../error/elg/intro.md) for guidance. Once you've fixed all the errors, click **Upload other file** button to upload the revised ZIP file.
+
     <div class="info" markdown="1">
 
-    If there are errors in the code, the **View errors** button displays. Click the button to see the full list of errors. You must fix the errors in the C# code before you can proceed. Use the [error page documentation](../../../error/elg/intro.md) for guidance. Once you've fixed all the errors, click **Upload other file** button to upload the revised ZIP file.
+    You can get a real-time list of errors while working on your C# code by using the **ODC Custom Code Analyzer**, a community asset (unofficial and unsupported by OutSystems). Check out the [CustomCode-Analyzer readme](https://github.com/jonathanalgar/CustomCode-Analyzer?tab=readme-ov-file#how-to-us) to learn how to use the extension. You can get help or share your feedback in the [Community Forum post](https://www.outsystems.com/forums/discussion/100963/odc-external-libraries-custom-code-analyzer/).
 
     </div>
 
