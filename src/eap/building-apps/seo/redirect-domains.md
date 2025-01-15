@@ -32,7 +32,7 @@ Achieve this by using a reverse proxy or CDN.
 
 <div class="warning" markdown="1">
 
-Due to technical limitations **Amazon CloudFront** can't be used.
+Due to technical limitations you can't use **Amazon CloudFront** for this workaround. 
 
 </div>
 
