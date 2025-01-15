@@ -5,7 +5,7 @@ locale: en-us
 guid: 93f5315e-72fa-45f2-97ad-9e676da413a3
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=6819-99&t=hqg7IdsJr0sprSMl-1
 audience:
   - mobile developers
   - frontend developers
@@ -80,19 +80,19 @@ A language switcher lets your users change the language of the app. To create a 
 
     <div class="info" markdown="1">
 
-    If you can't find the **SetCurrentLocale Client Action**, you need to reference it first. Press **Ctrl+Q** to open the **Manage Dependencies** window and select **(System)**. In the right pane under **Client Actions**, select **SetCurrentLocale** and click **Apply** to confirm. You can now use **SetCurrentLocale Client Action** in your app logic.
+    If you can't find the **SetCurrentLocale** client action, you need to reference it first. Press **Ctrl+Q** to open the **Add public elements** window and search `SetCurrentLocale`. Select the **SetCurrentLocale** client action and click **Add**. You can now use the **SetCurrentLocale** client action in your app logic.
 
-    ![Screenshot of the SetCurrentLocale client action being selected in the Manage Dependencies window of ODC Studio](images/set-current-locale-in-manage-dependencies.png "SetCurrentLocale in Manage Dependencies")
+    ![Screenshot of the SetCurrentLocale client action being selected in the Add public elements window of ODC Studio](images/set-current-locale-add-public-elements-odcs.png "SetCurrentLocale in Add public elements")
 
     </div>
 
     <div class="warning" markdown="1">
 
-    Keep in mind that SetCurrentLocale **Server** Action doesn't work offline. Use **SetCurrentLocale Client Action** whenever possible.
+    Keep in mind that the **SetCurrentLocale** server action doesn't work offline. Use the **SetCurrentLocale** client action whenever possible.
 
     </div>
 
-4. In the **SetCurrentLocale Client Action**, enter the code of the language (for example, `"pt-BR"`) in the **Locale** property.
+4. In the **SetCurrentLocale** client action, enter the code of the language (for example, `"pt-BR"`) in the **Locale** property.
 
     ![Screenshot showing the Locale property being set in the SetCurrentLocale client action in ODC Studio](images/locale-in-client-action.png "Locale Property in SetCurrentLocale Client Action")
 
