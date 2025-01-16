@@ -55,9 +55,9 @@ The following are the minimum recommended hardware requirements,however, keep in
 OutSystems supports the following Operating Systems. This list is subject to change. OutSystems supports Operating Systems for six months after the manufacturer's end-of-life date. For example, if your Operating System reaches its end-of-life on May 1, then OutSystems supports your operating system until November 1.
 
 * macOS:
-    * macOS Monterrey
     * macOS Ventura since ODC Studio 1.4.10
-    * macOS Sonoma since ODC Studio 1.4.10 
+    * macOS Sonoma since ODC Studio 1.4.10
+    * macOS Sequoia since ODC Studio 1.5.0
 
 * Windows:
     * Windows 11 (64-bit) since ODC Studio 1.3.15
