@@ -55,10 +55,13 @@ The ODC Portal is the place to manage users, and you can:
 
 You can also use the ODC [User management REST APIs](../reference/apis/identity-v1.md) for programmatically managing the user and access related operations. For detailed information about how to use these APIs, refer to [Getting started](../reference/apis/public-rest-apis/getting-started.md).
 
-## Related resources
+## User management video tutorials
+
+Here are the following videos that can help you get started with ODC user management:
 
 * [Basic User Management in ODC](https://learn.outsystems.com/training/journeys/user-management-odc-881) online course
 
 * [Basic Governance for End-Users](https://learn.outsystems.com/training/journeys/basic-governance-for-end-users-2693) online course
 
 * [Role-based Security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course
+

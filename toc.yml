@@ -590,6 +590,7 @@
                 - href: eap/reference/apis/public-rest-apis/authentication/call-api.md
                 - href: eap/reference/apis/public-rest-apis/authentication/suspend-resume-access-api-client.md
                 - href: eap/reference/apis/public-rest-apis/authentication/best-practices-for-api-credentials.md
+            - href: eap/reference/apis/public-rest-apis/pagination-rest-apis.md
             - href: eap/reference/apis/public-rest-apis/rate-limiting.md
             - href: eap/reference/apis/identity-v1.md
             - href: eap/reference/apis/portfolio-v1.md           
