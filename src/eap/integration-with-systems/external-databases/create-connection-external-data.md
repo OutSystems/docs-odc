@@ -125,6 +125,7 @@ You can use advanced parameters to add additional parameters for a database conn
     * `minConnectionPoolSize`: Default value of 0.
     * `maxConnectionPoolSize`: Default value of 400, as it was the best performer in OutSystems performance tests.
 * The `statsRefreshFrequencyMinutes` parameter, available for all connectors, allows you to adjust how often statistics are refreshed. This adjustment helps Data Fabric connectors maintain optimal query performance. If your external system has a limited number of API requests, it's advisable to increase the refresh frequency. The default value for this parameter is 15 minutes, with a minimum allowable value of 5 minutes. An example of the use of this parameter is: `statsRefreshFrequencyMinutes=30`.
+* For **Salesforce**, include `ArchiveMode=True` in the additional parameters to enable fetching deleted and archived records in queries. By default, the archive mode is disabled. Enabling this mode allows queries to retrieve more data, but handle it with caution, as it may impact performance.
 
 ![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems-pp.png "External Database additional parameters")
 
