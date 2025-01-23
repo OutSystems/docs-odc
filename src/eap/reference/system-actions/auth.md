@@ -26,7 +26,9 @@ Authentication actions for built-in and/or external identity providers.
 ### Login
 _Client action_
 
-Performs a login in to the built-in identity provider using a username and password. By default, a user is logged in for 12 hours until a logout is performed. This default cannot be changed. User profile information is synchronized to the [User entity](user.md#user-1) before this action is finished. Throws an exception if the built-in identity provider is disabled for the current app.
+Performs a login in to the built-in identity provider using a username and password. 
+After logging in, the user session remains active for 12 hours. Once this period ends, users must log in again. Note that the 12-hour session timeout can't be configured.
+User profile information is synchronized to the [User entity](user.md#user-1) before this action is finished. Throws an exception if the built-in identity provider is disabled for the current app.
 
 _Inputs_
 
