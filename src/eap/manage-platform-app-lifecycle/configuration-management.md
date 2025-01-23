@@ -45,31 +45,7 @@ The values you change take effect when the asynchronous apply process completes.
 
 Settings are custom public values that change the behavior of the app or library in a stage. Once you create the setting values in ODC Studio and publish the app, you can override the default values in the ODC Portal without having to republish or redeploy the app.
 
-In ODC Studio, for new or published apps in the **development stage only** you can:
-
-* Create or change settings
-* Arrange settings into folders
-* View and edit the default values of the runtime settings
-
-Open your app in ODC Studio and go to **Data** > **Settings** to add or edit settings. You need to publish your app after any changes you make.
-
-In the ODC Portal, for all apps **of a given stage only** you can view or override the default values of the settings for the stage.
-
-From the ODC Portal menu, click **Configuration**. An accordion format displays a list of configurations by type such as settings and timers.
-
-![Configuration management screen](images/configuration-management-pl.png "Configuration management screen")
-
-To see the list of settings, click the down arrow and open the accordion. A list of settings displays. To change values, click a setting. The sidebar opens and displays the current values.
-
-After you make the changes, apply the settings to make the new values available.
-
-Remember, settings are stage-specific.
-
-For more information, refer to:
-
-* [Settings' best practices](../building-apps/data/data-best-practices/intro.md#settings)
-
-* [Settings](https://learn.outsystems.com/training/journeys/settings-370) online course
+For more information about configuring app settings, refer to [Configure app settings](configure-app-settings.md).
 
 ## Managing timers
 

@@ -447,6 +447,7 @@
         - href: eap/manage-platform-app-lifecycle/platform-architecture/networking.md
         - href: eap/manage-platform-app-lifecycle/platform-architecture/identity.md
     - href: eap/manage-platform-app-lifecycle/configuration-management.md
+    - href: eap/manage-platform-app-lifecycle/configure-app-settings.md
     - href: eap/manage-platform-app-lifecycle/custom-domains.md
     - href: eap/manage-platform-app-lifecycle/private-gateway.md
     - href: eap/manage-platform-app-lifecycle/configure-emails.md
