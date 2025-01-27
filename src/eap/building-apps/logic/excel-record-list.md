@@ -26,7 +26,7 @@ The Excel To Record List is only available in Server Actions. In Reactive Web an
 
 ### Prerequisites
 
-To use **Excel To Record List** action, you need an entity or structure that matches the content of the Excel (.xlsx or .xlsb) file you want to import. OutSystems matches the attribute labels of the entity or structure specified in the Record Definition property with column headings in the Excel file. Entity attributes without a corresponding column in the Excel file get the default value of their data type (for example, "" for a Text attribute).
+To use **Excel To Record List** action, you need an entity or structure that matches the content of the Excel (.xls, .xlsx or .xlsb) file you want to import. OutSystems matches the attribute labels of the entity or structure specified in the Record Definition property with column headings in the Excel file. Entity attributes without a corresponding column in the Excel file get the default value of their data type (for example, "" for a Text attribute).
 
 The following example shows a scenario in which you want to add or update the names and addresses of your current employees in an entity called Employee.
 
