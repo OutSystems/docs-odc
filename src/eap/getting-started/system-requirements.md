@@ -155,6 +155,9 @@ Some general platform limits are:
 | Timer execution timeout (minutes)        |        60 | The maximum time a timer can execute. |
 | Entity Action Execution duration (seconds) |        30 | The maximum execution duration of a single Entity Action in seconds. |
 | Upload request size (MB)                 |      28.6 | The maximum file size allowed when uploading. |
+| Maximum user session (hours)             |        12 | The maximum session duration after which the user will be asked to authenticate again. This value can't be changed and the duration is not extended while user is authenticated. |
+| Invitation verification token (days)     |         7 | The maximum duration the verification token is valid for the user to complete their registration. |
+| Self-registration verification token (minutes) |      15 | The maximum duration within which the user can complete the self-registration process. |
 
 ### Logs and traces
 
