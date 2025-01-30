@@ -17,6 +17,8 @@
 # Building apps
 - href: eap/building-apps/intro.md
 - topics:
+    # AI Mentor
+    - href: eap/building-apps/ai-mentor/intro.md
     # AI Agent Builder
     - href: eap/building-apps/use-ai/intro.md
     - topics:

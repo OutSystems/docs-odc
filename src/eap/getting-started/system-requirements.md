@@ -205,6 +205,14 @@ Some workflow limits are:
 | Workflow activity max duration (seconds) |       120 | The maximum duration of a workflow activity. |
 | Workflow concurrent versions             |         5 | The maximum number of workflow versions that can run concurrently. |
 
+### AI Mentor
+
+| **Name**                                    | **Limit** | **Description** |
+| ------------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
+| App Generator max apps generated per day    |        20 | The maximum number of apps that can be generated in a day. |
+| App Generator max apps generated per minute |         2 | The maximum number of apps that can be generated in a minute. |
+| App Editor tab per user and app             |         1 | The maximum number of App Editor tabs that can be opened per user and app |
+
 ### Server request timeout
 
 The maximum value of the **Server Request Timeout** property is 60 seconds for queries or actions initiated on the client side. The default value of the property is 10 seconds. You can change the default value in the app's property editor.
