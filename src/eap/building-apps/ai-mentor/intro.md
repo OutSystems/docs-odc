@@ -81,7 +81,7 @@ When using natural language prompts, follow these best practices to maximize the
 
 * **Be clear and concise.** Include the app name, purpose, and main functionality in 1-2 sentences.
 
-    * Example: Create an Employee Onboarding ****app that tracks employee details, onboarding steps, and status updates. It should have a list and edit screens and roles for HR and Managers.
+    * Example: Create an Employee Onboarding app that tracks employee details, onboarding steps, and status updates. It should have a list and edit screens and roles for HR and Managers.
 
 * **Structure the data model.** Mention entities and attributes if you know them.
 
