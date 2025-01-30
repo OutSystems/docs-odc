@@ -19,7 +19,7 @@ audience:
 
 # About Mentor App Generator and Editor
 
-OutSystems Mentor App Generator and Editor are designed to help you create full-stack, scalable apps and evolve them using GenAI. Mentor App Generator transforms your ideas into an app in minutes using natural language prompts. Alternatively, upload a requirement document. Alternatively, upload a requirement document. AI extracts the entities, roles, attributes, and static records to generate an app
+OutSystems Mentor App Generator and Editor are designed to help you create full-stack, scalable apps and evolve them using GenAI. Mentor App Generator transforms your ideas into an app in minutes using natural language prompts. You can also upload a requirement document. AI extracts the entities, roles, attributes, and static records to generate an app.
 
 Mentor App Editor allows you to enhance your apps using short, focused keyword prompts to get AI-powered suggestions. When more granularity is required, you can refine and customize your apps further using ODC Studio.
 
