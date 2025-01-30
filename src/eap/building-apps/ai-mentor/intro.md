@@ -121,7 +121,7 @@ Requirement documents are ideal if you have an app with detailed specifications.
 
 * **Avoid using tables.** The text inside the tables is ignored.
 
-Refer to [Order Management System Requirements Document](resources/Order-Management-System-Requirements-Document.doc) for a sample requirement document.
+Refer to [Order Management System Requirements Document](resources/order-management-system-requirements.docx) for a sample requirement document.
 
 ## Mentor App Editor best practices
 
