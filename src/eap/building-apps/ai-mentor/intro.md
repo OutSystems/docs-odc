@@ -61,7 +61,7 @@ The following high-level changes suggested in the App Editor can impact several 
 
 * Adjust security by adding and deleting roles.
 
-**Note:** Consider current limitations. ****The suggestions only support **add** and **delete** operations. Operations such as **change** and **rename** aren't supported yet.
+**Note:** Consider current limitations. The suggestions only support **add** operations. Operations such as **change** and **rename** aren't supported yet.
 
 ## Mentor App Generator best practices
 
