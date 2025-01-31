@@ -37,6 +37,7 @@ To submit an asset, your asset must meet the following prerequisites:
 * Assets must be versioned except for App Templates that are versioned by Forge. Versioning assets is slightly different for apps and libraries.
     * To version libraries, [release them](../libraries/libraries.md#release-library).
     * To version apps, [deploy them](../../deploying-apps/deploy-apps.md) from the Deployment console to production.
+* If it is an external library, the minimum requirement is .NET 8. The same applies to apps with dependencies on external libraries.
 
 ## Submit an asset to Forge
 
