@@ -21,7 +21,7 @@ The subscription console is a centralized hub for viewing application objects (A
 
 <div class="info" markdown="1">
 
-The subscription console is only accessible to administrators or developers with permission.
+The subscription console is only accessible to users with the **View subscription** permission in ODC Portal.
 
 </div>
 
