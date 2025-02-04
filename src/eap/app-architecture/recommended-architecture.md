@@ -39,9 +39,9 @@ These questions and answers help you think about business concepts by grouping t
 
 The answers to the sequenced questions listed earlier become the steps to help you better design a ODC app architecture. Following is more detail about each step in the process.
 
-## Step 1 - Discover the app business concepts
+## Step 1 - Disclose the app business concepts
 
-After interviews with business stakeholders and end-users, list all the business concepts you identified to build a Home Insurance portal.
+After interviews with business stakeholders and end-users, disclose all the business concepts you identified to build a Home Insurance portal.
 
 It's essential to start gaining some business knowledge to ensure better design decisions based on the outcome of the workshops and interviews conducted before.
 
@@ -49,7 +49,7 @@ Some concepts, like **Customers**, **Claims**, and **Quotes** are easy to identi
 
 ![Diagram listing business concepts identified for a Home Insurance portal](images/business-concepts-diag.png "Business Concepts Diagram")
 
-## Step 2 - Identify bounded contexts by grouping the business concepts
+## Step 2 - Organize bounded contexts by grouping the business concepts
 
 Now identify the business contexts to organize and group the business concepts.
 
@@ -67,7 +67,7 @@ In two business contexts, we identified reusable components and integrations wit
 
 <div class="info" markdown="1">
 
-In ODC you integrate with external systems by consuming REST API services.For more information, refer to [Consume REST APIs](../integration-with-systems/consume_rest/intro.md)
+In ODC you integrate with external systems by consuming REST API services. For more information, refer to [Consume REST APIs](../integration-with-systems/consume_rest/intro.md)
 
 </div>
 
@@ -75,7 +75,7 @@ Finally, we have bounded contexts well identified. All these contexts can be ite
 
 ![Diagram showing the grouping of business concepts into bounded contexts](images/group-business-concepts-diag.png "Group Business Concepts Diagram")
 
-## Step 3 - Define a clear ownership
+## Step 3 - Assemble Your architecture with defined ownership
 
 Before assembling your final architecture design, understand how the organization's structure can impact your strategy. Following best practices to prevent mixing business owners and ensuring clear ownership is essential.
 
