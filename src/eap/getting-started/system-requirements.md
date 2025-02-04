@@ -144,7 +144,7 @@ The following versions of systems are supported to integrate with ODC:
 
 The following table shows the limits of the ODC to keep in mind when you are building apps. Unless otherwise noted, each limit is stage-specific. These limits cannot be exceeded and may cause errors or a drop in performance if reached.
 
-Some general platform limits are:
+The general platform limits are:
 
 | **Name**                                 | **Limit** | **Description** |
 | ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
@@ -161,7 +161,7 @@ Some general platform limits are:
 
 ### Logs and traces
 
-Some logs and traces limits are:
+The logs and traces limits are:
 
 | **Name**                                 | **Limit** | **Description** |
 | ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
@@ -176,7 +176,7 @@ Some logs and traces limits are:
 
 ### Events
 
-Some event limits are:
+The event limits are:
 
 | **Name**                                 | **Limit** | **Description** |
 | ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
@@ -187,7 +187,7 @@ Some event limits are:
 
 ### Custom code
 
-Some custom code limits are:
+The custom code limits are:
 
 | **Name**                                 | **Limit** | **Description** |
 | ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
@@ -198,12 +198,11 @@ Some custom code limits are:
 
 ### Workflows
 
-Some workflow limits are:
+The workflow limits are:
 
 | **Name**                                 | **Limit** | **Description** |
 | ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
 | Workflow activity max duration (seconds) |       120 | The maximum duration of a workflow activity. |
-| Workflow concurrent versions             |         5 | The maximum number of workflow versions that can run concurrently. |
 
 ### AI Mentor
 
