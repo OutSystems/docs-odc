@@ -75,7 +75,7 @@ Finally, we have bounded contexts well identified. All these contexts can be ite
 
 ![Diagram showing the grouping of business concepts into bounded contexts](images/group-business-concepts-diag.png "Group Business Concepts Diagram")
 
-## Step 3 - Assemble Your architecture with defined ownership
+## Step 3 - Define a clear ownership
 
 Before assembling your final architecture design, understand how the organization's structure can impact your strategy. Following best practices to prevent mixing business owners and ensuring clear ownership is essential.
 
