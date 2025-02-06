@@ -140,6 +140,23 @@ The following versions of systems are supported to integrate with ODC:
 
 * **Oracle 19c**
 
+For more information, refer to [Integrate with external data sources using Data Fabric](../integration-with-systems/external-databases/intro.md). 
+
+### Supported external identity providers
+
+ODC supports all IdPs that follow the OIDC standard. The following IdPs have been successfully tested to integrate with ODC apps:
+
+* Linkedin
+* Google
+* Ping Federation Identity
+* Facebook
+* Apple
+* Microsoft Entra ID (formerly known as Azure AD)
+* Okta
+* Keycloak
+
+For more information, refer to [Configure authentication with external identity providers](../manage-platform-app-lifecycle/external-idps/intro.md). 
+
 ## Platform limits
 
 The following table shows the limits of the ODC to keep in mind when you are building apps. Unless otherwise noted, each limit is stage-specific. These limits cannot be exceeded and may cause errors or a drop in performance if reached.

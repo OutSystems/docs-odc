@@ -32,16 +32,11 @@ ODC doesn't support dynamic issuer URIs, usually found in multi-tenant configura
     Got: https://login.microsoftonline.com/<customer-tenant-id>/v2.0
     Expected: https://login.microsoftonline.com/{tenantid}/v2.0
 
-**Note:** ODC supports all IdPs that follow the OIDC standard. The following IdPs have been successfully tested to integrate with ODC apps:
+<div class="info" markdown="1">
 
-* Linkedin
-* Google
-* Ping Federation Identity
-* Facebook
-* Apple
-* Microsoft Entra ID (formerly known as Azure AD)
-* Okta
-* Keycloak
+For the supported external identity providers, refer to the [OutSystems system requirements for ODC](../../getting-started/system-requirements.md#supported-external-identity-providers).
+
+</div>
 
 You can use an accelerator to add [commonly used social providers](#social-accelerators) for use as social authentication for your organization and your apps.
 
