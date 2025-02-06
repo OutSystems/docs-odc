@@ -91,7 +91,7 @@ The structure of a log includes:
 
 * **Instance**- The unique identifier that represents a specific execution of the workflow process.
 
-* **Activity**- The context level where the operation occurred.
+* **Context**- The context level where the operation occurred.
 
 * **Message**- Provides a more granular look into the operation performed.
 
