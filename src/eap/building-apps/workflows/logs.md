@@ -79,7 +79,7 @@ Note: To track the complaint, you must have the workflow instance number.
 
     </div>
 
-1. In the **Activity** dropdown, filter by the type of activity you want to investigate.
+1. In the **Context** dropdown, filter by the context level, such as the instance level or the type of activity you want to investigate.
 
 Applying these optional filters tailors the logs to better match your search.
 
@@ -89,15 +89,15 @@ The structure of a log includes:
 
 * **Workflow**- The workflow in which the activity is performed.
 
-* **Instance ID**- The unique identifier that represents a specific execution of the workflow process.
+* **Instance**- The unique identifier that represents a specific execution of the workflow process.
 
-* **Activity**- The operation performed.
+* **Activity**- The context level where the operation occurred.
 
 * **Message**- Provides a more granular look into the operation performed.
 
 * **User**- The person who performs the operation.
 
-![Log entries in ODC Portal showing details such as time, workflow, instance ID, activity, message, and user.](images/log-pl.png "Workflow Logs")
+![Log entries in ODC Portal showing details such as time, workflow, instance ID, activity, message, and user.](images/logs-pl.png "Workflow Logs")
 
 ## Troubleshooting instances
 
