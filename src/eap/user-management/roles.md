@@ -26,11 +26,6 @@ ODC has organization roles and end-user roles which you can use to limit access.
 
 * End-user roles are for those users that access apps you create in ODC.
 
-<div class="info" markdown="1">
-
-It's currently only possible to assign a maximum of 10 app scope roles to each user.
-
-</div>
 
 
 ## Organization roles
