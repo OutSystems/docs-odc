@@ -21,4 +21,4 @@ coverage-type:
 
 OutSystems Developer Cloud (ODC) redefines the developer experience by enabling organizations to build cloud applications that scale. OutSystems combines state-of-the-art, cloud-native architecture and modern CI/CD practices.
 
-As a developer, you have tools for different stages of app development. Most of the app budding happens in ODC Studio, the OutSystems IDE. You can deploy and manage apps from the ODC Portal.
+As a developer, you have tools for different stages of app development. Most of the app building happens in ODC Studio, the OutSystems IDE. You can deploy and manage apps from the ODC Portal.
