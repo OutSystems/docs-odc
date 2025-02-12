@@ -35,7 +35,7 @@ Here are some functionalities you can change with Extensibility Configurations:
 
 ## Extensibility Configurations editor
 
-In ODC Studio, open your mobile app, and under app properties go to **Advanced** > **Extensibility Configurations**. Double-click the field to open the editor.
+In ODC Studio, open your mobile app, and under **Edit app properties...** go to **Extensibility**. Double-click the field to open the editor.
 
 ![Screenshot of the Extensibility Configurations editor in OutSystems Developer Cloud Studio with areas A, B, and C highlighted](images/extensibility-configurations-editor-odcs.png "Extensibility Configurations Editor in ODC Studio")
 
