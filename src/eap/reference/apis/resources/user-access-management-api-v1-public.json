@@ -136,6 +136,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > View end users** permission."
@@ -219,6 +229,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > View end users** permission."
@@ -288,6 +308,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage users** permission."
@@ -299,7 +329,7 @@
           "users"
         ],
         "summary": "Get the bulk user operation status.",
-        "description": "Returns an operations status object that contains the overall status of the bulk operation. \r\n\nIf the bulk operation has a status of 'Finished' or 'FinishedWithErrors', \r\n\nthe result of each and every item in the list is returned as well. \r\n\nIf the bulk operation is 'Pending' or 'Processing', only the overall status is returned.\n\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "Returns an operations status object that contains the overall status of the bulk operation. \n\n\nIf the bulk operation has a status of 'Finished' or 'FinishedWithErrors', \n\n\nthe result of each and every item in the list is returned as well. \n\n\nIf the bulk operation is 'Pending' or 'Processing', only the overall status is returned.\n\nAPI Client needs the **User management > Manage users** permission.",
         "operationId": "BulkUserProfile_GetBulkUserProfileOperationStatus",
         "parameters": [
           {
@@ -362,6 +392,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage users** permission."
@@ -453,6 +493,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
@@ -573,6 +623,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
@@ -649,6 +709,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
@@ -747,6 +817,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
@@ -825,6 +905,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
@@ -898,6 +988,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
@@ -997,6 +1097,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
@@ -1088,6 +1198,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
@@ -1188,6 +1308,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
@@ -1266,6 +1396,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage end-user access** permission."
@@ -1342,6 +1482,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage end-user access** permission."
@@ -1469,6 +1619,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > View end users** permission."
@@ -1535,6 +1695,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage users** permission."
@@ -1705,6 +1875,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission."
@@ -1773,6 +1953,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage users** permission."
@@ -1836,6 +2026,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "You need the **User management > View organization members** or **User management > View end users** permissions."
@@ -1915,6 +2115,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage users** permission."
@@ -2046,6 +2256,16 @@
                 }
               }
             }
+          },
+          "429": {
+              "description": "Too Many Requests",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ProblemDetails"
+                      }
+                  }
+              }
           }
         },
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
@@ -2206,12 +2426,12 @@
           },
           "errorCode": {
             "type": "string",
-            "description": "Self Service error code for the overall bulk API operation.\r\n\nFor example, when the operation times out.",
+            "description": "Self Service error code for the overall bulk API operation.\n\n\nFor example, when the operation times out.",
             "nullable": true
           },
           "errorMessage": {
             "type": "string",
-            "description": "Self Service error message for the overall bulk API operation.\r\n\nFor example, when the operation times out.",
+            "description": "Self Service error message for the overall bulk API operation.\n\n\nFor example, when the operation times out.",
             "nullable": true
           },
           "operations": {
@@ -2219,7 +2439,7 @@
             "items": {
               "$ref": "#/components/schemas/BulkOperation"
             },
-            "description": "Details of each operation performed in the bulk request.\r\n\nAvailable when the bulk operation has Finished or FinishedWithErrors.\r\n\nThis will be an empty list when the bulk operation is Pending or Progressing.",
+            "description": "Details of each operation performed in the bulk request.\n\n\nAvailable when the bulk operation has Finished or FinishedWithErrors.\n\n\nThis will be an empty list when the bulk operation is Pending or Progressing.",
             "nullable": true
           }
         },
@@ -2249,7 +2469,7 @@
                 "$ref": "#/components/schemas/BulkOperationStatus"
               }
             ],
-            "description": "Status of the individual operation in the list of bulk operations.\r\n\nFor example: Inserted, Updated, Errored"
+            "description": "Status of the individual operation in the list of bulk operations.\n\n\nFor example: Inserted, Updated, Errored"
           },
           "errorCode": {
             "type": "string",
@@ -2263,7 +2483,7 @@
           },
           "record": {
             "type": "object",
-            "description": "A JSON object containing some extra info about the record in this operation.\r\n\nThis could contain some pieces of request info as well as additional info from the operation output.",
+            "description": "A JSON object containing some extra info about the record in this operation.\n\n\nThis could contain some pieces of request info as well as additional info from the operation output.",
             "nullable": true
           }
         },
@@ -2602,32 +2822,48 @@
         },
         "additionalProperties": false
       },
-      "ProblemDetails": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "detail": {
-            "type": "string",
-            "nullable": true
-          },
-          "instance": {
-            "type": "string",
-            "nullable": true
-          }
-        }
-      },
+			"ProblemDetails": {
+				"type": "object",
+				"description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs).",
+				"properties": {
+					"type": {
+						"type": "string",
+						"description": "A URI reference that identifies the problem type.",
+						"nullable": true
+					},
+					"title": {
+						"type": "string",
+						"description": "A short, human-readable summary of the problem.",
+						"nullable": true
+					},
+					"status": {
+						"type": "integer",
+						"description": "The HTTP status code applicable to the problem.",
+						"format": "int32",
+						"nullable": true
+					},
+					"detail": {
+						"type": "string",
+						"description": "A human-readable explanation of the error.",
+						"nullable": true
+					},
+					"instance": {
+						"type": "string",
+						"description": "A URI that identifies the specific occurrence of the problem.",
+						"nullable": true
+					},
+					"traceID": {
+						"type": "string",
+						"description": "This field helps OutSystems support to track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster  troubleshooting.",
+						"nullable": true
+					},
+					"errorCode": {
+						"type": "string",
+						"description": "This error code serves the purpose to communicate with OutSystems Support and help diagonose errors.",
+						"nullable": true
+					}
+				}
+			},
       "UserGroupResponse": {
         "required": [
           "group",
@@ -2761,7 +2997,7 @@
                 "$ref": "#/components/schemas/UserProfileEmbedded"
               }
             ],
-            "description": "The embedded information to provide. (optional)\r\n\nOnly available when the request includes the query parameter `embed=`,\r\n\ne.g. `embed=applicationRoles`",
+            "description": "The embedded information to provide. (optional)\n\n\nOnly available when the request includes the query parameter `embed=`,\n\n\ne.g. `embed=applicationRoles`",
             "nullable": true
           }
         },
