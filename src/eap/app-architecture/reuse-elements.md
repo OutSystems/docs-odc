@@ -59,7 +59,7 @@ The following table lists elements and their possible Public property values.
 | Server Actions            | No                              | Yes                                  |
 | Service Actions           | Yes                             | Not applicable                       |
 | Static Entities           | Yes                             | Yes                                  |
-| Structures                | No. However, structures become public if you use them in Service Actions as parameters. | No. However, structures become public if you use them in Server Actions as parameters. |
+| Structures                | Yes, only if you use them as parameters in Service Actions. | Yes, only if you use them as parameters in public actions or public blocks. |
 | Themes                    | No                              | Yes                                  |
 
 ## Expose a Server Action in an app
