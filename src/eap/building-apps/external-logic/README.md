@@ -66,9 +66,8 @@ Using Microsoft Visual Studio 2022 with .NET 8.0, for example:
         {
             public class MyLibrary : IMyLibrary
             {
-                public string SayHello(string name, string title) {
-                    string title = "Mr./Ms.";
-                    return $"Hello, {name}";
+                public string SayHello(string name, string title = "Mr./Ms.") {
+                    return $"Hello, {title} {name}";
                 }
 
                 public string SayGoodbye(string name) {
