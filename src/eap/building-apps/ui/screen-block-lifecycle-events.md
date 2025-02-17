@@ -164,7 +164,7 @@ Use cases you can implement with this event handler:
 
 Use cases you shouldn't implement with this event handler:
 
-* Don't use the GetUserId() function at this moment to know the user that is currently authenticated. The parallel execution of Data Actions and client-side Agreggates in a Screen overrides the session authentication cookie. Therefore, using the GetUserId() function in the On After Fetch event might return an empty value.
+* Don't use the GetUserId() function at this moment to know the user that is currently authenticated. The parallel execution of Data Actions and client-side Aggregates in a Screen overrides the session authentication cookie. Therefore, using the GetUserId() function in the On After Fetch event might return an empty value.
 
 ### On Parameters Changed
 
