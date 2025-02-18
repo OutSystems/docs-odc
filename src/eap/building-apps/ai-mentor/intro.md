@@ -71,7 +71,7 @@ To generate an app in the Mentor App Generator, you can use the following:
 
 * Requirement documents
 
-<div class="warning" markdown="1">
+<div class="info" markdown="1">
 
 AI Mentor is designed to support the English language. You can input prompts and requirements documents in other languages, but for the most accurate results, English is recommended.
 
