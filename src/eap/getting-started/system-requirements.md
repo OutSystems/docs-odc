@@ -106,7 +106,7 @@ ODC supports the following client-side trace request limits:
 
 ### Supported external data sources
 
-The following versions of systems are supported to integrate with ODC:
+The following versions of systems are supported to integrate with ODC using [Data Fabric](../integration-with-systems/external-databases/intro.md):
 
 * **Microsoft SQL Server**:
 
@@ -132,6 +132,8 @@ The following versions of systems are supported to integrate with ODC:
     * PostgreSQL 16
 
 * **SAP**:
+
+    OutSystems supports integration with SAP using OData and BAPI.
 
     * SAP ECC 5.0 or higher
     * SAP S/4HANA

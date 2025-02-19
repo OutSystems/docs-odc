@@ -22,7 +22,9 @@ audience:
 
 # Create connections to external data sources
 
-To integrate with external data sources using [Data Fabric](intro.md), Administrators need to create the connections to the external data sources in the ODC Portal. Then, in ODC studio, developers use the data as entities in their apps.
+To integrate with external data sources using [Data Fabric](intro.md), Administrators need to create the connections to the external data sources in the ODC Portal. Then, in ODC studio, developers use the data as entities in their apps. 
+
+The supported data sources are listed at [ODC system requirements](../../getting-started/system-requirements.md#supported-external-data-sources).
 
 Administrators must:
 
