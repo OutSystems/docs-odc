@@ -175,6 +175,7 @@ The general platform limits are:
 | Maximum user session (hours)             |        12 | The maximum session duration after which the user will be asked to authenticate again. This value can't be changed and the duration is not extended while user is authenticated. |
 | Invitation verification token (days)     |         7 | The maximum duration the verification token is valid for the user to complete their registration. |
 | Self-registration verification token (minutes) |      15 | The maximum duration within which the user can complete the self-registration process. |
+| Max Compute Instances (per app)          |        16 | The maximum number of compute instances that can be consumed when scaling apps horizontally. |
 
 ### Logs and traces
 
