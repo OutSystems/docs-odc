@@ -31,7 +31,9 @@ When you first publish an application, ODC creates a background job and the asso
 * Startup date
 * Status of other control properties
 
-The Timer manager container service listens for the creation of the Timer resources which specifies the Timer's type and its schedule (either on-demand or scheduled). The Timer manager also starts the job container that remotely calls the Application business logic specified in the OutSystems Timer. The Timer manager also updates the status and control properties of the Timer resources along its lifecycle.
+The timer manager container service listens for the creation of the Timer resources which specifies the Timer's type and its schedule (either on-demand or scheduled). The timer manager also starts the job container that remotely calls the app business logic specified in the Timer. The timer manager also updates the status and control properties of the Timer resources along its lifecycle.
+
+While distinct timers can run concurrently, the timer manager service ensures that only one instance of each timer runs at a time, preventing concurrency issues such as deadlocks.
 
 The container infrastructure triggers the background jobs that have the schedule type of **scheduled**. The Timer manager service triggers jobs that have the schedule type of **on-demand**.
 
