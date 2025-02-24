@@ -33,6 +33,22 @@ Benefits of using service actions include:
 * Improve performance with reduced data transfer and processing
 * Operate in a loosely coupled way, without impacting the caller app's performance
 
+## Exposing Service Actions
+
+In ODC, a **Service Action** is a REST based remote call to another process, but its usage is very similar to public Server Actions. 
+
+Exposing a Service Action generates a [weak dependency](../building-apps/reuse/intro.md#weak-dependencies) from the consumer to the producer app, in a **loosely-coupled** way.
+
+Each time the implementation of an exposed Service Action changes, that change **takes immediate** effect in the consumer apps.
+
+Service Actions mix the advantages of loosely-coupled REST API methods with the Rapid Application Delivery (RAD) capabilities of tightly-coupled Server Actions:
+
+* Findability: When publishing an app with a Service Action, the Service Action becomes immediately available to consumers in the internal catalog of reusable elements accessible through the **Add public elements** window.
+* Impact analysis: OutSystems calculates the impact of changing the signature of a Service Action and shows it in the **Add public elements** window. This helps you to decide whether you need to create a new version of your service or if the changes in your service have no impact on consumers.
+* Strong typing: Just like Server Actions, Service Actions are strongly typed logic elements. You can use entities and structures in Service Action signatures.
+* Security: Service Actions are only accessible from the same environment. OutSystems passes the authentication context from the client session when making the call to a Service Action (UserId and TenantId).
+* Exception handling: User Exceptions and Communication Exceptions thrown by a Service Action can be caught in the consumer apps.
+
 ## Best practices for using service actions
 
 Follow these best practices to create efficient, maintainable, and reusable service actions in your ODC apps.
