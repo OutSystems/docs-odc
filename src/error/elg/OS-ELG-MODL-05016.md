@@ -24,7 +24,9 @@ coverage-type:
 
 ## Cause
 
-A parameter in an action is passed by reference, which isn't supported by the External Libraries SDK.
+A parameter in an action is passed by reference, which isn't supported by the External Libraries SDK. In this context, "passed by reference" means any parameter declared using the `ref` or `in` keywords.
+
+Parameters declared with the `out` keyword - used solely to return values - are permitted.
 
 ## Impact
 
@@ -32,7 +34,7 @@ You must fix this error in your C# project before you can publish the external l
 
 ## Recommended action
 
-Instead of using a reference parameter, pass the parameter by value and return the modified value if necessary.
+Instead of using a reference parameter (using `ref` or `in`), pass the parameter by value and return the modified value if necessary.
 
 For example, if you have the following code:
 
