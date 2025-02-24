@@ -189,13 +189,37 @@ On the other hand, server actions exposed through external libraries execute dif
 
 This architecture has several important implications:
 
-* **Statelessness:** The external libraries you build should be designed to be stateless. This means they shouldn't maintain any state information between calls. Any state or context needed to execute the external library should be passed explicitly as an input parameter. For example, storing state as fields in the library's class isn't supported.
+* **Statelessness:** The external libraries you build should be designed to be stateless. This means they shouldn't maintain any state information between calls. Any state or context needed to execute the external library should be passed explicitly as an input parameter. For example, storing state as fields in the library's class isn't supported. However, be aware that successive calls may reuse the execution context, so it's important to ensure the [release of memory resources](#memory-usage) to avoid memory leaks.
 
 * **Latency:** Since an HTTPS call is made each time a server action in an external library is called, a small amount of latency is introduced in the execution time. Minimizing the number of calls to external libraries and batching operations where possible can help mitigate the impact of this latency.
 
 * **Independence:** External libraries run independently of the ODC app. This means they don't have direct access to the app's resources, context, or state, other than what you explicitly provide as an input parameter.
 
 By designing your external libraries with these considerations in mind, you can ensure that they function correctly and efficiently within the broader architecture of your ODC apps.
+
+### Memory usage
+
+To prevent memory leaks it's important to properly dispose of objects that manage system resources. In .NET, classes that implement the `IDisposable` interface require explicit cleanup. You can use [`using` statements](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/using) to ensure these objects are properly disposed when they go out of scope.
+
+To check if an object needs disposal, look for the `IDisposable` interface in the class documentation or use your IDE's IntelliSense. Common disposable objects include Stream classes (FileStream, MemoryStream, NetworkStream), database connections, file handles, graphics resources, and network connections.
+
+For example:
+
+```
+// Wrong: Resources are not disposed when method returns
+var stream = new MemoryStream();  // MemoryStream implements IDisposable
+var data = new byte[1024];        // byte[] does not implement IDisposable
+
+// Correct: Only wrap disposable objects in using statements
+using var stream = new MemoryStream();  // Will be disposed automatically
+var data = new byte[1024];              // No using needed
+```
+
+To catch disposal issues early, enable the CA2000 code analysis rule in your project by adding this to your `.editorconfig` file:
+
+```
+dotnet_diagnostic.CA2000.severity = warning
+```
 
 ### Use with large binary files
 
