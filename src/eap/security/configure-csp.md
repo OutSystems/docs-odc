@@ -128,7 +128,7 @@ The table below describes the list of default directives for OutSystem's content
 
 ## Default values {#default-values}
 
-OutSystems recommends default values to ensure the platform works as expected. If these values are removed, OutSystems recommends you test your apps to ensure hey work as expected.
+OutSystems recommends default values to ensure the platform works as expected. If these values are removed, OutSystems recommends you test your apps to ensure they work as expected.
 
 * ``'self'``: Allows content to be loaded only from the same origin as the app. This helps prevent unauthorized content from being loaded.
 
