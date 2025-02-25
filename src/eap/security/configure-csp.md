@@ -88,7 +88,7 @@ To configure the CSP, follow these steps:
 
 1. From the ODC Portal, navigate to **Configure** > **Content security policy**
 
-1. click **Edit**.
+1. Click **Edit**.
 
     ![Screenshot showing the option to edit CSP settings.](images/csp-edit-ptl.png "Edit CSP settings")
 
@@ -138,7 +138,7 @@ OutSystems recommends default values to ensure the platform works as expected. I
 
 * ``*.amazonaws.com``: Allows access to AWS-hosted services, including the managed identity service necessary for authentication.
 
-* ``<yourBuiltInDomain-stage>.outsystems.app/identity`: Ensures compatibility with the built-in identity service when using a custom domain. Only the built-in domain is preconfigured and does not require additional setup. All other domains, including custom domains or the built-in domain, must be explicitly configured.
+* ``<yourBuiltInDomain-stage>.outsystems.app/identity``: Ensures compatibility with the built-in identity service when using a custom domain. Only the built-in domain is preconfigured and does not require additional setup. All other domains, including custom domains or the built-in domain, must be explicitly configured.
 
 ## Required values {#required-values}
 
