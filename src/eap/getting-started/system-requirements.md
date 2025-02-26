@@ -133,7 +133,7 @@ The following versions of systems are supported to integrate with ODC using [Dat
 
 * **SAP**:
 
-    OutSystems supports integration with SAP using OData and BAPI.
+  OutSystems supports SAP OData and SAP BAPI for the following integrations:
 
     * SAP ECC 5.0 or higher
     * SAP S/4HANA
