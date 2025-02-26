@@ -109,7 +109,7 @@ Requirement documents are ideal if you have an app with detailed specifications.
 
 ![Icons illustrating best practices for requirement documents: use supported formats, organize requirements logically, avoid excessive details, ensure relevant content, avoid media usage.](images/requirement-best-practices-ams.png "Best Practices for Requirement Documents")
 
-* **Use supported formats**. Supported formats include .txt, .docx, and .pdf. Ensure the file size is under 5MB.
+* **Use supported formats**. Supported formats include .txt, .docx, and .pdf. Ensure the file size is under 4MB.
 
 * **Organize requirements logically.** Include separate sections for:
 
