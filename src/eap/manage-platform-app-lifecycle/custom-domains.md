@@ -49,7 +49,7 @@ ODC automatically issues X.509 certificates after verifying the domain ownership
 
 ## Add a custom domain
 
-A *root domain* is the main part of a website’s address. It is the *highest level of your website’s identity* on the internet, and all subdomains are based on it.
+A **root domain** is the main part of a website’s address. It is the **highest level of your website’s identity** on the internet, and all subdomains are based on it.
 
 Some domain registrars may not allow creating CNAME records when existing DNS records exist for the same name. This typically applies to root domains (such as `example.com`) and subdomains(such as `dev.example.com`) that already have other records. 
 
