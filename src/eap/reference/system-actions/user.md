@@ -142,43 +142,6 @@ _Outputs_
 :   Type: Boolean.
     True if the logged user is an external user.
 
-### ResetPassword
-_Client action_
-
-Allows a user to reset their password using a verification code received via email. Throws an exception if the built-in identity provider is disabled for the current app.
-
-_Inputs_
-
-**Email**
-:   Type: Text. Mandatory.
-    Email of the user.
-
-**ResetToken**
-:   Type: Text. Mandatory.
-    Verification code for the password change operation.
-
-**NewPassword**
-:   Type: Text. Mandatory.
-    New password defined by the user.
-
-_Outputs_
-
-**ResetPasswordResult**
-:   Type: [ResetPasswordResult](#resetpasswordresult)  
-    Result of the reset password action. Returns the failure reason if unsuccessful.
-
-### SendResetPasswordEmail
-
-_Client action_
-
-Triggers the reset password flow, which sends an email to the user with a verification code used to reset the password.  When disabled from the current app, it throws an exception by the built-in identity provider.
-
-_Inputs_
-
-**Email**
-:   Type: Text. Mandatory.
-    User email receives a recovery link. If no user with such email is found, no email sends.
-
 ### StartResetPassword
 
 _Server action_
@@ -335,17 +298,7 @@ MissingNumber
 MissingSpecialCharacter
 :   Type: Boolean
 
-### ResetPasswordResult
-
-*Attributes*
-
-Success
-:   Type: Boolean
-
-ResetPasswordFailureReason
-:   Type: ResetPasswordFailureReason
-
-### StartPasswordResetResult
+### StartResetPasswordResult
 
 *Attributes*
 
@@ -354,6 +307,19 @@ Success
 
 VerificationCode
 :   Type: Text
+
+### FinishResetPasswordFailureReason
+
+*Attributes*
+
+PasswordComplexityPolicyFailed
+:   Type: Boolean
+
+InvalidVerificationCode
+:   Type: Boolean
+
+InvalidEmail
+:   Type: Boolean
 
 ### UserInfo
 
@@ -393,7 +359,7 @@ VerificationCode
 UserId
 :   Type: User Identifier
 
-### UpdateUserInfo
+### UserUpdateInfo
 
 *Attributes*
 
