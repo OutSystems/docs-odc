@@ -56,7 +56,7 @@ To activate a CSP for a stage, follow these steps:
 
 1. Select the stage you want to apply the CSP to.
 
-    ![Screenshot showing the selected stage to activate the CSP.](images/csp-stage-ptl.png "Selected stage to activate the CSP")
+    ![Screenshot showing the selected stage to activate the CSP.](images/csp-stage-pl.png "Selected stage to activate the CSP")
 
 1. Click **Edit**.
 
@@ -64,7 +64,7 @@ To activate a CSP for a stage, follow these steps:
 
     The default directives are applied to all apps in the selected stage.
 
-    ![Screenshot showing the CSP default values set to active.](images/csp-defaults-ptl.png "CSP default values set to active")
+    ![Screenshot showing the CSP default values set to active.](images/csp-defaults-pl.png "CSP default values set to active")
 
     <div class="info" markdown="1">
 
@@ -90,11 +90,11 @@ To configure the CSP, follow these steps:
 
 1. Click **Edit**.
 
-    ![Screenshot showing the option to edit CSP settings.](images/csp-edit-ptl.png "Edit CSP settings")
+    ![Screenshot showing the option to edit CSP settings.](images/csp-edit-pl.png "Edit CSP settings")
 
 1. Edit the directive values.
 
-    ![Screenshot showing the configuration of CSP directive values.](images/csp-configure-ptl.png "Configure CSP directive values")
+    ![Screenshot showing the configuration of CSP directive values.](images/csp-configure-pl.png "Configure CSP directive values")
 
 1. Click **Save**.
 
