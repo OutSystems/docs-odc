@@ -26,6 +26,20 @@ You can customize the deeplink behavior using the `DeepLinksHandlerType` prefere
 * `function`: calls the `handleOpenURL` function *(does not navigate)*
 * `legacy`: loads the URL in the webview directly, which performs a page reload *(the behavior from MABS 8 and earlier)*
 
+Example using `function`:
+```
+{
+    "preferences": {
+        "global": [
+            {
+                "name": "DeepLinksHandlerType",
+                "value": "function"
+            }
+        ]
+    }
+}
+```
+
 In order to use the `event` and `function` options, the specific handler must be defined in a script loaded by the app module.
 
 Example for `event`:
