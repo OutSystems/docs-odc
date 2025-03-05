@@ -62,7 +62,7 @@ You can find all of the available actions for the Camera plugin by navigating to
 </div>
 
 1. To prevent errors, it's best practice to first check if the plugin is available with the action **CheckCameraPlugin**. If the plugin isn't available to the app, display an error to the user. 
-1. Otherwise, allow users take a picture by opening the camera with the **TakePicture** action. In the **TakePicture** action, you can set the parameters for quality, width, back of front camera, and more.
+1. Otherwise, allow users take a picture by opening the camera with the **TakePicture** action. In the **TakePicture** action, you can set the parameters for quality, width, back or front camera, and more.
 1. Check if taking pictures on the device works by verifying that the value of **TakePicture.Success** is **True**. 
 1. If it does, handle the picture data in **TakePicture.MediaResult.Thumbnail** by assigning it to a variable of the **Binary Data** data type.
 
@@ -83,8 +83,7 @@ To allow users record a video:
 1. Use a Button or another widget to run the action that captures a video. 
 1. Use the **PlayVideo** widget to play the video after using the camera by setting it to the variable you created.
 
-The **PlayVideo** widgt is a widget used to play videos on a device. The video can either have just been recorded or locally stored in the device's gallery. If you want to display videos from other sources you must use the Video widget.
-[**Video**](https://success.outsystems.com/documentation/outsystems_developer_cloud/building_apps/user_interface/patterns/interaction/video/) widget.
+The **PlayVideo** widget is used to play videos on a device. The video can either have just been recorded or locally stored in the device's gallery. If you want to display videos from other sources you must use the [**Video**](../../../building-apps/ui/patterns/interaction/video.md) widget.
 
 <div class="info" markdown="1">
 
