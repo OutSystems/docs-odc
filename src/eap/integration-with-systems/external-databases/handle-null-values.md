@@ -19,7 +19,7 @@ coverage-type:
 
 # Handle null values
 
-To handle null values while integrating with external systems. Administrators must assign new values to represent null values in external databases. You can use the following options to handle null values.
+To handle null values while integrating with external systems, administrators must assign new values to represent null values in external databases. You can use the following options to handle null values.
 
 * Overwrite database NULL values(default option):
     * When writing data, ODC stores default values instead of null values in external databases.
