@@ -46,7 +46,7 @@ To add a Static Entity to your app, do the following in ODC Studio:
 ODC Studio creates the following Attributes automatically:
 
 **Id**
-:   Identifies a record and is always unique. Using auto-number is not recommended, as it might generate issues in complex scenarios.
+:   Identifies a record and is always unique.
 
 **Label**
 :   Holds a value to display in an application.
