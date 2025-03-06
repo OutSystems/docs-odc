@@ -12,6 +12,8 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=6372-10&t=QL4wNRboofdp7zdI-1
 audience:
   - business analysts
+  - platform administrators
+  - full stack developers
   - team lead
   - team manager
   - project managers

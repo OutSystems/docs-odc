@@ -143,6 +143,11 @@
                 - href: eap/building-apps/ui/patterns/interaction/animatedlabel.md
                 - href: eap/building-apps/ui/patterns/interaction/bottomsheet.md
                 - href: eap/building-apps/ui/patterns/interaction/carousel.md
+                - href: eap/building-apps/ui/patterns/interaction/data-grid/data-grid-overview.md
+                - topics:
+                    - href: eap/building-apps/ui/patterns/interaction/data-grid/data-grid-fetch-data.md
+                    - href: eap/building-apps/ui/patterns/interaction/data-grid/data-grid-edit.md
+                    - href: eap/building-apps/ui/patterns/interaction/data-grid/data-grid-save.md
                 - href: eap/building-apps/ui/patterns/interaction/datepicker.md
                 - href: eap/building-apps/ui/patterns/interaction/datepickerrange.md
                 - href: eap/building-apps/ui/patterns/interaction/dropdownsearch.md
@@ -576,8 +581,8 @@
         - href: eap/reference/built-in-functions/roles.md
         - href: eap/reference/built-in-functions/text.md
         - href: eap/reference/built-in-functions/url.md
-  # Shortcuts
     - href: eap/reference/shortcutkeys.md
+    - href: eap/reference/data-grid-ref.md
   # APIs
     - href: eap/reference/apis/api-intro.md
     - topics:
