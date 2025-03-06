@@ -1,18 +1,19 @@
 ---
 helpids: 30566
 summary: Manage API access in OutSystems Developer Cloud (ODC) with the API client, enabling client account creation and role assignments.
-tags: 
-outsystems-tools: 
+tags: api client management, access control, role assignment, odc rest apis, client credentials
+outsystems-tools:
+  - odc portal
 guid: e693044a-aa9f-47c3-a7a4-9332c4f6fcc0
 locale: en-us
 app_type: reactive web apps, mobile apps
-content-type: 
-    - conceptual
-audience: 
+content-type:
+  - conceptual
+audience:
+  - platform administrators
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=3495-24&t=Ee0vNUQza7lfj7Sy-1
 ---
-
 # About the API client
 
 As an administrator, you can use the API client in the ODC portal to govern and manage who can access the ODC REST APIs. The API client allows you to create an API client account and generate client credentials that you can use in exchange for the access token.
@@ -35,7 +36,7 @@ With API client, you can:
 
 The API client account transitions through the following different statuses depending on the status of the client credentials.
 
-**Available:**  The API client account enters this status once the client account is successfully created. **** The client credentials can now be used to request an access token.
+**Available:**  The API client account enters this status once the client account is successfully created. The client credentials can now be used to request an access token.
 
 **Needs attention:** The client account enters this status when any client secret is about to expire or when one has already expired. It can also occur if the API client has not yet been assigned any permissions.  
 
