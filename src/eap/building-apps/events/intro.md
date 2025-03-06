@@ -19,7 +19,7 @@ coverage-type:
 
 # Events
 
-In ODC Studio, an event represents a change within an app. Events help track app changes and trigger specific actions in response to these changes. For example, creating a new account(event) triggers generating a bank account number(response) in a finance app.
+In ODC Studio, an event represents a change within an app. Events help track app changes and trigger specific actions in response to these changes. For example, creating a new account (event) triggers generating a bank account number (response) in a finance app.
 
 Events facilitate process automation without impacting the user experience and enable real-time data processing. For example, you can use back-end events to automate monthly billing for subscribers in a streaming app.
 
