@@ -14,7 +14,7 @@ audience:
 outsystems-tools:
   - odc studio
 ---
-# How to save changes using OutSystems Data Grid in ODC
+# Save changes in OutSystems Data Grid
 
 This example shows how to edit the Grid data and save those changes to the database.
 

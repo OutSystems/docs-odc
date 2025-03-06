@@ -72,3 +72,7 @@ After following these steps and publishing the module, you can test the componen
 When you edit a cell, that cell and the corresponding line are marked with a black triangle to indicate a change in data. 
 
 </div> 
+
+## Next steps
+
+* [Save changes in OutSystems Data Grid](data-grid-save.md)
