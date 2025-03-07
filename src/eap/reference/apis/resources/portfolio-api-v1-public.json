@@ -85,7 +85,7 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "Sort order of the elements.\n\n-element1 for descending, element2 for ascending.\n\nFor nested sorting, the format is element1[key].element2 .\n\nMultiple orders joined by comma.\n\nExample: -element1,element2 to sort by element1 descending then by element2 ascending.Supported values for first order sorting: deployments (nested).For nested sorting: deploymentDateTime.Example: deployments[environmentkey].deploymentDatetime .",
+            "description": "Sort order of the elements.\n\n-element1 for descending, element2 for ascending.\n\nFor nested sorting, the format is element1[key].element2 .\n\nMultiple orders joined by comma.\n\nExample: -element1,element2 to sort by element1 descending then by element2 ascending.\n\nSupported values for first order sorting: deployments (nested).\n\nFor nested sorting: deploymentDateTime.\n\nExample: deployments[environmentkey].deploymentDatetime .",
             "schema": {
               "type": "string"
             }
