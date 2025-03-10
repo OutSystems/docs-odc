@@ -40,3 +40,5 @@ The **End-users** tab has a form for maintaining internal end-user domains and p
 ## Add-ons tab
 
 The **Add-ons** tab provides visibility of the add-ons to which the organization is subscribed and add-ons that are available for subscription.
+
+Your organization has allocated resource limits for runtime resources. These capacities, defined by your subscription, determine the maximum usage limits for each resource. For more information, refer to [Monitor ODC resource capacity](..//getting-started/capacity-limits.md).
