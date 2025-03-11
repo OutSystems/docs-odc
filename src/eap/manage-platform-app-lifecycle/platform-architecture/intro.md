@@ -97,7 +97,9 @@ In the example of the Build Service in the [previous section](#platform), the co
 
 The Build Service packages each container image into a separate container, making the infrastructure resilient to individual resource-intensive app(s) that degrade the performance of other apps.
 
-The auto scale controller replicates app containers running in each Runtime (Production) cluster across multiple availability zones to ensure **high availability (HA)**. An availability zone is a distinct location in the cloud that's engineered to be isolated from failure.
+##### High Availability - Apps (HA)
+
+When enabled, ODC replicates app containers running in each Runtime (Production) cluster across multiple availability zones to ensure high availability. An availability zone is a distinct location in the cloud that's engineered to be isolated from failure.  Whenever a failure occurs in an availability zone, or an application container becomes unavailable, traffic is automatically routed to the healthy app container ensuring no disruption.  Without HA, failover is not immediate and may take a few minutes to recover as additional application containers are launched into different availability zones.
 
 ##### Auto-scaling
 
@@ -136,7 +138,9 @@ Each Runtime stage has an isolated Amazon Aurora Serverless database. The follow
 
 The Amazon Aurora database architecture model decouples compute and storage, and both automatically scale independently. The Database CPU and Memory automatically scale as the amount of load increases, and the database storage volume automatically scales as the amount of data stored increases.
 
-You can store secret data for your apps such as API keys as secret settings in a secret manager.
+#### High Availability - Data (HA)
+When enabled, a second (standby) database is deployed in a separate availability zone.  Whenever an availability zone fails or the primary database becomes unavailable, the standby database is automatically promoted to the primary, and traffic is automatically routed to the new primary database, ensuring minimal disruption.  Without HA, failover is not immediate and the primary database can take a few minutes to recover in a secondary availability zone.  As the data is automatically written to multiple AZ's, there is no loss of data in the event of a failure.
+
 
 #### Platform to Runtime
 
