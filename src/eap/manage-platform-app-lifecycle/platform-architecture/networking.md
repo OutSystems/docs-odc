@@ -42,9 +42,6 @@ The Web Application Firewall (WAF) runs on the CDN and protects the Platform and
 
 For more information see [Security in OutSystems Developer Cloud](../../security/security.md#web-application-firewall).
 
-### NATS
-
-All internal requests between the Platform and Runtime stages get made through NATS (Neural Autonomic Transport System), a secure messaging system. This protects private endpoints from external access.
 
 ### Identity Service
 
