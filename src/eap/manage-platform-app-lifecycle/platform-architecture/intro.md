@@ -37,7 +37,7 @@ The following diagram shows the high-level architecture of the OutSystems Develo
 
 ![Diagram illustrating the high-level architecture of the OutSystems Developer Cloud with Platform and Runtime stages.](images/high-level-architecture-diag.png "High-level Architecture of OutSystems Developer Cloud")
 
- NATS (Neural Autonomic Transport System), a secure messaging system, handles all internal requests between the Platform and Runtime stages. All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of OutSystems Developer Cloud](networking.md) to learn more.
+ All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of OutSystems Developer Cloud](networking.md) to learn more.
 
 #### Platform { #platform }
 
