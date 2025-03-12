@@ -1,26 +1,27 @@
 ---
 summary: This article provides a guide on mointoring ODC resources and capacity for OutSystems Developer Cloud (ODC).
-tags: 
+tags: odc resource monitoring, capacity management, outsystems, resource optimization, cloud resource allocation
 guid: 25a0f102-51ac-4d76-8376-72b14f0f6218
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?node-id=3518-60&t=TBoOpDVweGRN6kRD-1
-outsystems-tools: 
-coverage-type: 
-content-type: 
-audience: 
+outsystems-tools:
+  - odc portal
+coverage-type:
+content-type:
+audience:
+  - platform administrators
+  - infrastructure managers
 ---
-
 # Monitor ODC resource capacity
 
 ODC allocates resource limits based on your subscription. These capacities define the maximum usage for each resource. 
 
-Each stage in ODC can have a [specific capacity size](https://www.outsystems.com/es-es/evaluation-guide/scalability/architecture/#capacity-sizes). For example, the Production stage can consume more resources than the Development stage to ensure consistent performance during higher workloads.
+Each stage in ODC can have a [specific capacity size](https://www.outsystems.com/evaluation-guide/scalability/architecture/#capacity-fair-use-limits). For example, the Production stage can consume more resources than the Development stage to ensure consistent performance during higher workloads.
 
 You can use the ODC Portal to track resource consumption, understand current usage, and identify available capacity. Based on this data, you can:
-
-* Optimize consumption: Apply best practices to ensure your apps use only the resources they need, optimizing runtime efficiency.
+* [Optimize consumption](#optimize): Apply best practices to ensure your apps use only the resources they need, optimizing runtime efficiency.
 * Increase capacity: Contact your account team to request additional capacity.
 
 OutSystems recommends actively [monitoring](#monitor-consumption) and [optimizing your resource usage](#optimize-consumption) to ensure consistent app performance and a seamless user experience. Use the ODC Portal to track resource consumption, understand current usage, and identify available capacity. Based on this data, you can:
@@ -29,19 +30,17 @@ OutSystems recommends actively [monitoring](#monitor-consumption) and [optimizin
 
 Each resource in ODC is subject to specific capacity limits that govern its usage within a stage. The available resources and their respective limits include:
 
-* Compute instances: The total number of [container instances](../app-architecture/intro.md#containers) available for all apps, workflows, and timers within a stage. They define the pool size of containers that running apps can allocate or release as needed. Each app, workflow, or timer consumes at least one container when running. In subscriptions with high availability, apps consume at least two containers. Remember that multiple instances of the same workflow revision share the same resources, but different revisions may consume different resources. As demand increases, additional containers are added dynamically. When demand decreases, ODC scales down the containers accordingly. To learn more, refer to[ auto-scaling in cloud-native architecture](../manage-platform-app-lifecycle/platform-architecture/intro.md#runtime-cluster).
+* **Compute instances**: The total number of [container instances](../app-architecture/intro.md#containers) available for all apps, workflows, and timers within a stage. They define the pool size of containers that running apps can allocate or release as needed. Each app, workflow, or timer consumes at least one container when running. In subscriptions with high availability, apps consume at least two containers. Remember that multiple instances of the same workflow revision share the same resources, but different revisions may consume different resources. As demand increases, additional containers are added dynamically. When demand decreases, ODC scales down the containers accordingly. To learn more, refer to[ auto-scaling in cloud-native architecture](../manage-platform-app-lifecycle/platform-architecture/intro.md#runtime-cluster).
 
-**Note:** 
+    <div class="info" markdown="1">
+    
+    In the development stage, ODC scales back apps to optimize resources and keep capacity sizes low. This helps maintain a cost-effective development environment.
+    
+    </div>
 
-<div class="info" markdown="1">
-
-In the development stage, ODC scales back apps to optimize resources and keep capacity sizes low. This helps maintain a cost-effective development environment.
-
-</div>
-
-* Custom code execution duration: Custom code execution duration is the time taken to run [custom code](../building-apps/external-logic/intro.md) from start to completion. The daily custom code execution duration is the total execution time of all custom code runs in a day. 
-* Database compute: The amount of compute resources (memory/CPU) allocated to the database that is shared across all apps in a given stage.
-* Database storage: The storage capacity allocated to the database, shared across all apps in a stage.
+* **Custom code execution duration**: Custom code execution duration is the time taken to run [custom code](../building-apps/external-logic/intro.md) from start to completion. The daily custom code execution duration is the total execution time of all custom code runs in a day. 
+* **Database compute**: The amount of compute resources (memory and CPU) allocated to the database that's shared across all apps in a given stage.
+* **Database storage**: The storage capacity allocated to the database, shared across all apps in a stage.
 
 <div class="info" markdown="1">
 
@@ -53,8 +52,8 @@ When approaching or surpassing capacity limits, the following issues may occur:
 
 * Compute instances: If you reach the container limit, you cannot 
   * Publish new apps
-  * Update existing ones with new revisions, 
-  * Run workflows and timers. 
+  * Update existing ones with new revisions
+  * Run workflows and timers
 * Custom code execution duration: Calls to custom code libraries can cause errors and fail until the next day. This can lead to runtime errors in consumer apps.
 * Database compute and database storage: Apps can experience performance issues, such as slower response times or timeout errors when accessing the database if there is insufficient capacity to accommodate all of the requests.
 
@@ -104,7 +103,7 @@ You can analyze **database compute** and **storage** using the usage graph. Howe
 
 ### Managing resource consumption
 
-ODC records resource usage over a seven day rolling period and uses P95 (95th percentile) to determine typical resource consumption. For example, if your database compute limit is 16 containers and the P95 usage remains at 14 or higher containers, you may need to scale up your resources to prevent performance issues during peak loads. 
+ODC records resource usage over a seven day rolling period and uses P95 (95th percentile) to determine typical resource consumption. For example, if the compute instances limit is 16 containers and the P95 usage remains at 14 or higher containers, you may need to scale up your resources to prevent performance issues during peak loads. 
 
 If your usage consistently exceeds the limit over this period, ODC provides notifications in Portal to help you manage usage effectively.
 
@@ -125,7 +124,7 @@ ODC alerts you when resource consumption approaches or exceeds limits:
 
 For example, if you have reached the limit for the number of containers, ODC displays an error notification and logs details about assets deployment failure.
 
-## Optimize consumption
+## Optimize consumption { #optimize }
 
 To ensure your apps don’t consume more resources than necessary, it’s important to take the most out of the subscribed resources. Make sure to:
 
