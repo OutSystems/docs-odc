@@ -16,6 +16,9 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - outsystems-overview
+  - download-and-set-up
 ---
 
 # Getting started

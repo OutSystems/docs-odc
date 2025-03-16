@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - customize-app-styles
 ---
 
 # Customize UI styles

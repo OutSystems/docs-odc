@@ -15,6 +15,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - process-data-timers
 ---
 
 # Create and run Timers

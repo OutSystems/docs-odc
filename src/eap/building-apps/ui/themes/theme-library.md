@@ -15,6 +15,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - reuse-ui
+  - layouts
 ---
 
 # Use Theme Library for app branding

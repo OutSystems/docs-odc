@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - screen-template
 ---
 
 # Theme compatibility in Screen Templates

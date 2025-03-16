@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - add-widget-ui-pattern
 ---
 
 # Pie Chart

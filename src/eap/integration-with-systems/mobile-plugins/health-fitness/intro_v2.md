@@ -17,6 +17,8 @@ coverage-type:
   - understand
   - apply
   - remember
+topic:
+  - using-cordova-plugins
 ---
 
 # Health and Fitness Plugin using HealthKit and Google Fit 

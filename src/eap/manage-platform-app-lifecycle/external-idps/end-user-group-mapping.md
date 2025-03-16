@@ -17,6 +17,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - understand
+topic:
+  - external-auth-mechanisms
 ---
 
 # IdP and end-user group mapping

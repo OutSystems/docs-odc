@@ -15,6 +15,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - external-auth-mechanisms
 ---
 
 # Add Microsoft Entra ID for use as external identity provider

@@ -14,6 +14,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - allow-apps-read-data
+  - allow-apps-edit-data
 ---
 
 # Sharing data defined in OutSystems

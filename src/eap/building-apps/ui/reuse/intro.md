@@ -15,6 +15,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - reuse-ui
+  - adding-a-block
 ---
 
 # Reuse UI

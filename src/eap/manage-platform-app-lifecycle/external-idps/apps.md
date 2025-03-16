@@ -16,6 +16,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - external-auth-mechanisms
 ---
 
 # Use external identity providers in an app

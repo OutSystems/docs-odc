@@ -16,6 +16,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - understand
+topic:
+  - app-settings
 ---
 
 # Configure custom domains for apps

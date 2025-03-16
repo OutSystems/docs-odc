@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - install-forge-component
 ---
 
 # OS-FRGE-AST-50002

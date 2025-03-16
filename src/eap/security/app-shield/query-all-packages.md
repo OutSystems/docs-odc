@@ -13,6 +13,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - understand
+topic:
+  - customize-mobile-apps
 ---
 
 # Query All Packages permission in Android apps using AppShield

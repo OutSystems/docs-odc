@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - ui-elements-screen-blocks
 ---
 
 # User interface

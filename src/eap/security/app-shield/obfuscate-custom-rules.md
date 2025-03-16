@@ -14,6 +14,8 @@ coverage-type:
   - apply
   - understand
   - remember
+topic:
+  - customize-mobile-apps
 ---
 
 # Creating custom obfuscation rules

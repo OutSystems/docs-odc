@@ -15,6 +15,8 @@ outsystems-tools:
   - none
 coverage-type:
   - apply
+topic:
+  - design-for-accessibility
 ---
 
 # Accessibility

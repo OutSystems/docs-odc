@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - how-to-use-events
 ---
 
 # Events

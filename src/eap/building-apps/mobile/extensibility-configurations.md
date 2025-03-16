@@ -16,6 +16,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - customize-mobile-apps
 ---
 
 # Advanced configurations for mobile app

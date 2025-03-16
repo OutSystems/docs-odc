@@ -15,6 +15,10 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - how-roles-work
+  - manage-users
+  - assign-roles
 ---
 
 # User management

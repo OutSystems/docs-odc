@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - using-cordova-plugins
 ---
 
 # File Viewer Plugin

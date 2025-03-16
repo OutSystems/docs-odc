@@ -15,6 +15,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - remember
+topic:
+  - download-and-set-up
 ---
 
 # OutSystems system requirements for ODC

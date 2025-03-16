@@ -12,6 +12,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - system-events
 ---
 
 # On Application Resume

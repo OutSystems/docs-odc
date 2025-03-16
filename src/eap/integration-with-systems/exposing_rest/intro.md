@@ -14,6 +14,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - rest-webservice-data
+  - define-methods
 ---
 
 # Exposing REST APIs

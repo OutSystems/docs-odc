@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - handle-webservice-errors
 ---
 
 # Handling REST Errors

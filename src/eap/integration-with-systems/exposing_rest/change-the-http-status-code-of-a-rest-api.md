@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - error-codes
 ---
 
 # Change the HTTP Status Code of a REST API

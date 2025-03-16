@@ -17,6 +17,8 @@ coverage-type:
   - evaluate
   - remember
   - unblock
+topic:
+  - legacy-systems-integration
 ---
 
 # External Libraries SDK README

@@ -16,6 +16,11 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - secure-screen
+  - how-roles-work
+  - manage-roles
+  - assign-roles
 ---
 
 # Secure your app with end-user roles

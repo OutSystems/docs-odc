@@ -16,6 +16,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - creating-app-from-scratch
 ---
 
 # Create your hello world app

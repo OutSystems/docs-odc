@@ -18,6 +18,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - get-data-from-external-db
 ---
 
 # Integrate with external data sources using Data Fabric

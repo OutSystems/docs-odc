@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - using-cordova-plugins
 ---
 
 # Mobile plugins

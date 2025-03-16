@@ -18,6 +18,9 @@ coverage-type:
   - apply
   - evaluate
   - understand
+topic:
+  - application-composition
+  - map-os-to-global-concepts
 ---
 
 # Building a well-architected app

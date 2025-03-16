@@ -17,6 +17,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - custom-code-integration
 ---
 
 # Upgrading custom code libraries to .NET 8

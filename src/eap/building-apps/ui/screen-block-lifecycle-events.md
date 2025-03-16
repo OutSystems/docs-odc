@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - remember
+topic:
+  - screen-events
 ---
 
 # Screen and block lifecycle events

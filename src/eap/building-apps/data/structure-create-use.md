@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - compound-data
 ---
 
 # Use structures and records to create compound data types

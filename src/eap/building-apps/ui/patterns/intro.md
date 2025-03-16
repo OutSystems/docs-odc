@@ -14,6 +14,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - none
+topic:
+  - add-widget-ui-pattern
 ---
+
 # Patterns
 

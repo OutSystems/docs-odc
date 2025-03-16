@@ -17,6 +17,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+topic:
+  - built-in-mechanisms
 ---
 
 # Architecture of authentication and authorization mechanism

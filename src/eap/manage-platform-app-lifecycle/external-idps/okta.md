@@ -14,6 +14,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - external-auth-mechanisms
 ---
 
 # Add Okta for use as an external identity provider

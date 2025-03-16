@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - add-widget-ui-pattern
 ---
 
 # Stacked Cards

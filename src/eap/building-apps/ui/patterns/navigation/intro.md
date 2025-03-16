@@ -13,6 +13,9 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - add-widget-ui-pattern
 ---
+
 # Navigation
 

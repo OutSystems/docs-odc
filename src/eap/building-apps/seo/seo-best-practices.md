@@ -14,7 +14,10 @@ audience:
   - mobile developers
 outsystems-tools:
   - none
+topic:
+  - app-settings
 ---
+
 # SEO best practices
 
 This article outlines key technical considerations that, if not implemented, may impose SEO limitations when ranking a public app (website).
