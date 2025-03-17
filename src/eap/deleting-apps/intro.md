@@ -15,6 +15,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+topic:
+  - delete-apps-libraries
 ---
 
 # Deleting apps and libraries

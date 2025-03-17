@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - create-edit-entities
 ---
 
 # Create an Entity to Persist Data

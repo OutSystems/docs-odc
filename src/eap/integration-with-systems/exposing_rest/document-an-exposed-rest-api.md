@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - document-apis
 ---
 
 # Document an Exposed REST API

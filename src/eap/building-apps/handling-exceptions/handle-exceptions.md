@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - how-to-handle-exceptions
 ---
 
 # Handling exceptions

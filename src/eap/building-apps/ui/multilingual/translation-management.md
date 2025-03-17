@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - translating-apps
 ---
 
 # Translation management

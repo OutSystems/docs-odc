@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - evaluate
+topic:
+  - service-actions-when-use
 ---
 
 # Service actions

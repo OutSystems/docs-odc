@@ -17,6 +17,8 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - install-forge-component
 ---
 
 # Install or update a Forge asset

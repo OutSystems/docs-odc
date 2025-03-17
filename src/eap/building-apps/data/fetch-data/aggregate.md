@@ -16,6 +16,9 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - aggregates
+  - joins
 ---
 
 # Aggregate

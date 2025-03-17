@@ -17,6 +17,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - understand
+topic:
+  - legacy-systems-integration
 ---
 
 # Extend your apps with custom code

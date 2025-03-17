@@ -132,6 +132,16 @@
         ]
       },
       "uniqueItems": true
+    },
+    "topic": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
     }
   },
   "required": [

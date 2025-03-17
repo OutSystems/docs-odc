@@ -15,6 +15,9 @@ outsystems-tools:
   - forge
 coverage-type:
   - apply
+topic:
+  - webservice-authentication
+  - customize-headers
 ---
 
 # Simple Customizations

@@ -13,6 +13,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - use-sql
 ---
 
 # SQL queries compared to OutSystems 11

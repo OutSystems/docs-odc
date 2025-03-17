@@ -14,6 +14,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - accessibility-screen-reader
 ---
 
 # UI Patterns accessibility reference

@@ -17,6 +17,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - understand
+topic:
+  - external-auth-mechanisms
 ---
 
 # IdP and end-user group mapping
@@ -54,7 +56,7 @@ To map a provider to an End-user group, from the portal, select **End-user group
 
 Click the **Group mappings** tab to display all group mapping for this group. In the Group mappings section, you can view all mappings, active mappings, or inactive mappings. An **Inactive** status indicates that the IdP and group aren't in the same stage. Hover over the Inactive status to learn what you need to fix to make the mapping active.
 
-To add a new mapping, click **Add mapping**. All fields are required. From the Provider drop-down, select a provider. Enter a **claim name** and a **Claim value (provider group)**. Your IdP provides the claim value, which is the group claim (identifier) and the Claim Name.
+To add a new mapping, click **Add mapping**. All fields are required. From the Provider drop-down, select a provider. Enter a **claim name** with max length of 50 characters, a **claim value (provider group)** with max length of 256 characters and the **claim value delimiter** with max length of 3 characters. Your IdP provides the claim value, which is the group claim (identifier) and the claim Name. For more information about possible validation errors, refer to [OS-ID-BIZ-40001](https://success.outsystems.com/support/troubleshooting/incident_models/incident_models_outsystems_developer_cloud/os_id_biz_40001/).
 
 <div class="info" markdown="1">
 

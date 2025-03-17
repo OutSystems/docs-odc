@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - legacy-systems-integration
 ---
 
 # Supporting SOAP in ODC

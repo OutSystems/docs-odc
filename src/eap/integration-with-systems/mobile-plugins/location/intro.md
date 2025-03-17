@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - using-cordova-plugins
 ---
 
 # Location Plugin

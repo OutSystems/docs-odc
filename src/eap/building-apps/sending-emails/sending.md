@@ -15,6 +15,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+topic:
+  - how-to-send-emails
 ---
 
 # Sending emails

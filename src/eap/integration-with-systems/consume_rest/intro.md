@@ -16,6 +16,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - remember
+topic:
+  - consume-refresh-methods
 ---
 
 # Consume REST APIs

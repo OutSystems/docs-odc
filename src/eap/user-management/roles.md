@@ -16,6 +16,9 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - role-assignment
+  - create-a-team
 ---
 
 # Roles

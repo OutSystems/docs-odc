@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - get-data-from-external-db
 ---
 
 # Transactions in external entities

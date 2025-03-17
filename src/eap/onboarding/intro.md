@@ -15,6 +15,8 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+topic:
+  - outsystems-overview
 ---
 
 # Onboarding developers

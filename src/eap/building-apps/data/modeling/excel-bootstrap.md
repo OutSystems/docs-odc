@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - bootstrap-test-data-excel
 ---
 
 # Bootstrap an Entity Using an Excel File

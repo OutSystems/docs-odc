@@ -15,6 +15,9 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+topic:
+  - changing-endpoints
+  - app-settings
 ---
 
 # Configuration management

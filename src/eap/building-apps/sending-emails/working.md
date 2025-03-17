@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - how-to-create-emails
 ---
 
 # Working with emails

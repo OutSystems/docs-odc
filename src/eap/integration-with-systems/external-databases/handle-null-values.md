@@ -15,6 +15,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - get-data-from-external-db
 ---
 
 # Handle null values

@@ -14,6 +14,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - compound-data
+  - create-edit-entities
 ---
 
 # Create a Calculated Attribute in an Aggregate

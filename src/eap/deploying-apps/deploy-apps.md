@@ -16,6 +16,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - deploy-apps-in-lt-portal
 ---
 
 # Deploying assets

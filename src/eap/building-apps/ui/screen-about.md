@@ -15,6 +15,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - ui-elements-screen-blocks
+  - ui-elements-accelerators
 ---
 
 # Screens

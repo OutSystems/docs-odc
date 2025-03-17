@@ -15,6 +15,9 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+topic:
+  - choose-app-type
+  - basic-architecture
 ---
 
 # Types of apps you can build

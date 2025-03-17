@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - create-screen-scratch
 ---
 
 # Create screen from scratch

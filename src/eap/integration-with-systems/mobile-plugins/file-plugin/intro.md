@@ -14,6 +14,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - using-cordova-plugins
 ---
 
 # File Plugin

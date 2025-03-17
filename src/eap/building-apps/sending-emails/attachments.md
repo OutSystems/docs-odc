@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - how-to-create-emails
 ---
 
 # Adding email attachments

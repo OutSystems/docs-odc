@@ -18,6 +18,8 @@ coverage-type:
   - understand
   - apply
   - remember
+topic:
+  - external-auth-mechanisms
 ---
 
 # Configure authentication with external identity providers

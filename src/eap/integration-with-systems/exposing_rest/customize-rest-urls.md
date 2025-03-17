@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - define-methods
 ---
 
 # Customize REST URLs

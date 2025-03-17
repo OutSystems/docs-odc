@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - service-studio-overview
 ---
 
 # ODC Studio Shortcuts

@@ -14,6 +14,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - add-widget-ui-pattern
 ---
 
 # Tag

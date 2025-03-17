@@ -16,6 +16,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - ui-elements-screen-blocks
 ---
 
 # UI Flows

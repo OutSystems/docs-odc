@@ -12,6 +12,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - debug-troubleshoot-app-logic
 ---
 
 # Troubleshoot debugger connection

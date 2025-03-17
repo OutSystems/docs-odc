@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - user-self-registration
 ---
 
 # Create logic to register a user

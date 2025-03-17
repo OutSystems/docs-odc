@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - replace-ui-sample-data
 ---
 
 # Replace data in screens

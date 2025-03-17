@@ -15,6 +15,8 @@ outsystems-tools:
   - forge
 coverage-type:
   - understand
+topic:
+  - user-self-registration
 ---
 
 # Self-registration flow

@@ -16,6 +16,8 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - input-parameters
 ---
 
 # Input Parameter

@@ -14,6 +14,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - navigate-screens
+  - input-parameters
 ---
 
 # Pass Data Between Screens With Input Parameters

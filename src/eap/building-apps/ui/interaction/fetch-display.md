@@ -14,6 +14,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - aggregates
+  - bind-data-to-a-ui-element
 ---
 
 # Fetch and display data from the database in OutSystems

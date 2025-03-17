@@ -15,6 +15,11 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - creating-app-from-scratch
+  - publish-an-app
+  - test-share-app-users
+  - screen-scaffolding
 ---
 
 # Build a basic Web app

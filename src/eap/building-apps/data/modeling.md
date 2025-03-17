@@ -14,6 +14,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - create-edit-entities
+  - data-relationships
 ---
 
 # Data modeling

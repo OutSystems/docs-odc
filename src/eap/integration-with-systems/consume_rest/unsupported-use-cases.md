@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
+topic:
+  - consume-refresh-methods
 ---
 
 # Unsupported REST Enum Use Cases
