@@ -24,10 +24,10 @@ topic:
 
 When consuming a REST API, you can add logic to customize the information sent in requests or received in responses. Use the following callbacks for this purpose:
 
-OnBeforeRequest
+**OnBeforeRequest**
 :   Use to modify the information of the original request, such as the URL, the request text or the headers. 
 
-OnAfterResponse
+**OnAfterResponse**
 :   Use to modify the information of the original response, such as the status code or the response text. 
 
 In these callbacks you can access the information from the original request or response, manipulate it and assign a modified value to the customized request or response.
@@ -90,19 +90,19 @@ To customize the response after it has arrived:
 
     ![Screenshot showing the attributes available after clicking the customized response Assign](images/rest-new-onafterresponse-attributes-odcs.png "Customized Response Attributes")
 
-    StatusCode
+    **StatusCode**
     :   The status code received from the API. The data type is `integer`.
 
-    StatusLine
+    **StatusLine**
     :   The name of the status code received from the API. The data type is `Text`.
 
-    Headers
+    **Headers**
     :   List of headers received from the API. The data type is  `HTTPHeader List`.
 
-    ResponseText
+    **ResponseText**
     :   The response body in plain text format received from the API, such as JSON or XML. The data type is `Text`. For example, user details, such as name and email.
   
-    ResponseBinary
+    **ResponseBinary**
     :   The response body in binary format received from the API, such as an image or a file. The data type is `Binary Data`. For example, the user's profile picture.
 
     <div class="info" markdown="1">
