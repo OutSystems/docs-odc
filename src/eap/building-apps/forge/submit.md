@@ -62,6 +62,12 @@ By default, the asset name, icon, and short description are defined during devel
 1. In the last step, the wizard displays a preview of the assets detail page for you to review.
 1. Click **Submit** to finalize the process.
 
+    <div class="info" markdown="1">
+
+    To check your submitted assets, go to **My assets** > **Submitted to Forge**.
+
+    </div>
+
 ## Submit a new version to Forge
 
 When an asset gets updated, resubmit it to Forge to share the changes. The updated asset must have the same name as the original asset.
