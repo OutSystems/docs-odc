@@ -43,19 +43,9 @@ In this example, the user selects a date from the calendar, the date is saved in
 
     ![Creating a new variable for the Input widget in the Properties tab](images/datepicker-var-ss.png "Creating a New Variable")
 
-1. Enter a name for the variable (in this example **DateTimeVar**) and select **Date Time** as the **Data Type**.
+1. Enter a name for the variable (in this example **DateTimeVar**) and select **Date Time** as the **Data Type**. This variable is used to store the date that you selected.
 
     ![Entering a name for the new variable and selecting Date Time as the data type](images/datepicker-varname-ss.png "Naming the Variable")
-
-1. Right-click your main screen and add another local variable.
-
-    This variable stores the date selected by the user.
-
-    ![Adding another local variable to store the date selected by the user](images/datepicker-localvar-ss.png "Adding Another Local Variable")
-
-1. Enter a name for the variable (in this example **DatePicked**) and select **Date Time** as the **Data Type**.
-
-    ![Entering a name for the local variable and selecting Date Time as the data type](images/datepicker-locvarname-ss.png "Naming the Local Variable")
 
 1. To create an **OnSelect** event for the Date Picker, on the **Properties** tab, from the **Handler** dropdown, select New **Client Action**.
 
@@ -65,7 +55,6 @@ In this example, the user selects a date from the calendar, the date is saved in
 
     ![Adding an assign to set the DatePicked variable to the SelectedDateTime](images/datepicker-assign-ss.png "Assigning Variable Value")
     
-
 1. You can configure the Datepicker by selecting the pattern, and on the **Properties** tab, set the relevant optional properties. For more configurations, expand the **OptionalConfigs** property.
 
     ![Configuring the Date Picker properties in the Properties tab](images/datepicker-properties-ss.png "Setting Date Picker Widget Properties")
