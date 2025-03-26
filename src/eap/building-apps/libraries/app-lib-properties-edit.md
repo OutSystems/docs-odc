@@ -20,6 +20,7 @@ coverage-type:
 
 This article demonstrates how you can edit the app and library properties (i.e. the  metadata) in ODC.
 <iframe src="https://player.vimeo.com/video/1069574566" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">How to edit the app and library properties - Metadata</iframe>
+
 The **Edit app properties** and **Edit library properties** dialog lets you configure your app and library components in ODC Studio. Using different tabs, you can edit **Details**, **Properties**, **Messages** and, **Extensibility** properties.
 
 <div class="info" markdown="1">
