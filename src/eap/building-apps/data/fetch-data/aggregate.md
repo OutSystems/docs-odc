@@ -21,7 +21,7 @@ topic:
   - joins
 ---
 
-# Aggregate
+# Query data using aggregates
 
 Aggregates allow you to fetch data using an optimized query, tailored to your usage. Aggregates automatically absorb changes in the data model and can load the local database's data from the server. They support combining several entities and advanced filtering, and bring only the attributes that are used on the screen or action. Attributes also abstract the underlying model for the developer, allowing attribute renaming and changes to the data type.  
 
