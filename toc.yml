@@ -82,6 +82,7 @@
                 - href: eap/building-apps/data/fetch-data/fetch-data-nl.md
                 - href: eap/building-apps/data/fetch-data/transaction-external-entities.md
                 - href: eap/building-apps/data/fetch-data/dynamic-sort.md
+                - href: eap/building-apps/data/edit-data.md
                 # Combine data from different sources
                 - href: eap/building-apps/data/fetch-data/data-mash.md
                 - topics:
@@ -89,14 +90,14 @@
                     - href: eap/building-apps/data/fetch-data/transactions-data-mashup.md
                     - href: eap/building-apps/data/fetch-data/data-mashup-errors.md
                 #Best practices Data
-                - href: eap/building-apps/data/data-best-practices/intro.md
-                - topics:
-                    - href: eap/building-apps/data/data-best-practices/data-purging.md
-                    - href: eap/building-apps/data/data-best-practices/data-archiving.md
+            - href: eap/building-apps/data/data-best-practices/intro.md
+            - topics:
+                - href: eap/building-apps/data/data-best-practices/data-purging.md
+                - href: eap/building-apps/data/data-best-practices/data-archiving.md
         - href: eap/building-apps/data/sharing.md
         - href: eap/building-apps/data/data-types.md
         - href: eap/building-apps/data/convert-data-types.md 
-        - href: eap/building-apps/data/edit-data.md
+    
         - href: eap/building-apps/data/structure-create-use.md   
   
     # UI
