@@ -89,11 +89,11 @@
                     - href: eap/building-apps/data/fetch-data/queries.md
                     - href: eap/building-apps/data/fetch-data/transactions-data-mashup.md
                     - href: eap/building-apps/data/fetch-data/data-mashup-errors.md
-            # Best practices Data
-            - href: eap/building-apps/data/data-best-practices/intro.md
-            - topics:
-                - href: eap/building-apps/data/data-best-practices/data-purging.md
-                - href: eap/building-apps/data/data-best-practices/data-archiving.md
+        # Best practices Data
+        - href: eap/building-apps/data/data-best-practices/intro.md
+        - topics:
+            - href: eap/building-apps/data/data-best-practices/data-purging.md
+            - href: eap/building-apps/data/data-best-practices/data-archiving.md
         - href: eap/building-apps/data/sharing.md
         - href: eap/building-apps/data/data-types.md
         - href: eap/building-apps/data/convert-data-types.md 
