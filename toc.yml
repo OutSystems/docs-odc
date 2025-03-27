@@ -371,9 +371,6 @@
     - href: eap/deploying-apps/one-cp.md
     - href: eap/deploying-apps/rollback.md
 
-# Deleting apps
-- href: eap/deleting-apps/intro.md
-
 # Integration with external systems
 - href: eap/integration-with-systems/intro.md
 - topics:
@@ -469,6 +466,7 @@
     - href: eap/manage-platform-app-lifecycle/sso.md
     - href: eap/manage-platform-app-lifecycle/filter-ip.md
     - href: eap/manage-platform-app-lifecycle/subscription-console.md
+    - href: eap/deleting-apps/intro.md
 
 
 
