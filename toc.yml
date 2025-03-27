@@ -63,39 +63,42 @@
             - href: eap/building-apps/data/modeling/entity-create.md
             - href: eap/building-apps/data/modeling/excel-bootstrap.md
             - href: eap/building-apps/data/modeling/entity-static.md
+            - href: eap/building-apps/data/modeling/relationship/relationships.md
+            - topics:
+                - href: eap/building-apps/data/modeling/relationship/relationship-one-to-one.md
+                - href: eap/building-apps/data/modeling/relationship/relationship-one-to-many.md
+                - href: eap/building-apps/data/modeling/relationship/relationship-many-to-many.md
         - href: eap/building-apps/data/crud-wrappers.md
         # Fetch data from the database
         - href: eap/building-apps/data/fetch-data/intro.md
         - topics: 
             - href: eap/building-apps/data/fetch-data/aggregate.md
-            - href: eap/building-apps/data/fetch-data/calculated-attribute-create.md
-            # Combine data from different sources
-            - href: eap/building-apps/data/fetch-data/data-mash.md
-            - topics:
-                - href: eap/building-apps/data/fetch-data/queries.md
-                - href: eap/building-apps/data/fetch-data/transactions-data-mashup.md
-                - href: eap/building-apps/data/fetch-data/data-mashup-errors.md
-            - href: eap/building-apps/data/fetch-data/transaction-external-entities.md
-            - href: eap/building-apps/data/fetch-data/distinct.md
-            - href: eap/building-apps/data/fetch-data/filter-results.md
-            - href: eap/building-apps/data/fetch-data/supported-join-types.md
-            - href: eap/building-apps/data/fetch-data/fetch-data-nl.md
-            - href: eap/building-apps/data/fetch-data/sort-aggregate.md
-            - href: eap/building-apps/data/fetch-data/dynamic-sort.md
-        - href: eap/building-apps/data/modeling/relationship/relationships.md
-        - topics:
-            - href: eap/building-apps/data/modeling/relationship/relationship-one-to-one.md
-            - href: eap/building-apps/data/modeling/relationship/relationship-one-to-many.md
-            - href: eap/building-apps/data/modeling/relationship/relationship-many-to-many.md
+            - topics: 
+                - href: eap/building-apps/data/fetch-data/supported-join-types.md
+                - href: eap/building-apps/data/fetch-data/calculated-attribute-create.md
+                - href: eap/building-apps/data/fetch-data/sort-aggregate.md
+                - href: eap/building-apps/data/fetch-data/distinct.md
+                - href: eap/building-apps/data/fetch-data/filter-results.md
+                - href: eap/building-apps/data/fetch-data/fetch-data-nl.md
+                - href: eap/building-apps/data/fetch-data/transaction-external-entities.md
+                - href: eap/building-apps/data/fetch-data/dynamic-sort.md
+                # Combine data from different sources
+                - href: eap/building-apps/data/fetch-data/data-mash.md
+                - topics:
+                    - href: eap/building-apps/data/fetch-data/queries.md
+                    - href: eap/building-apps/data/fetch-data/transactions-data-mashup.md
+                    - href: eap/building-apps/data/fetch-data/data-mashup-errors.md
+                #Best practices Data
+                - href: eap/building-apps/data/data-best-practices/intro.md
+                - topics:
+                    - href: eap/building-apps/data/data-best-practices/data-purging.md
+                    - href: eap/building-apps/data/data-best-practices/data-archiving.md
         - href: eap/building-apps/data/sharing.md
         - href: eap/building-apps/data/data-types.md
         - href: eap/building-apps/data/convert-data-types.md 
         - href: eap/building-apps/data/edit-data.md
         - href: eap/building-apps/data/structure-create-use.md   
-        - href: eap/building-apps/data/data-best-practices/intro.md
-        - topics:
-            - href: eap/building-apps/data/data-best-practices/data-purging.md
-            - href: eap/building-apps/data/data-best-practices/data-archiving.md
+  
     # UI
     - href: eap/building-apps/ui/intro.md
     - topics:
