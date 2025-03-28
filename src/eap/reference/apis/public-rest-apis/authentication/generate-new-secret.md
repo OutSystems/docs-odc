@@ -1,17 +1,19 @@
 ---
 summary: In this article, you will learn about generating new secret for an API client.
-tags: 
-outsystems-tools: 
+tags: api client, client secret, generate secret, access token, api credentials
+outsystems-tools:
+  - odc portal
 guid: cb9abd38-9a1e-4524-a7ec-c154eb710d83
 locale: en-us
 app_type: reactive web apps, mobile apps
-content-type: 
-    - procedure
-audience:  
+content-type:
+  - procedure
+audience:
+  - platform administrators
+  - backend developers
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=3504-23&t=Ee0vNUQza7lfj7Sy-1
 ---
-
 # Generate client secret
 
 You can generate a new client secret for an API client if:
@@ -53,3 +55,4 @@ Now, [copy the client secret](./create-api-client.md#copy-client-credentials) im
 ## Next step
 
 [Get access token using client credentials flow](get-access-token.md)
+

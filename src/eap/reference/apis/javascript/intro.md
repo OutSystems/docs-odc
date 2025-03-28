@@ -16,6 +16,7 @@ outsystems-tools:
   - odc studio
   - odc portal
 ---
+
 # JavaScript extensibility
 
 The OutSystems JavaScript extensibility allows you to call OutSystems specific actions and act upon mobile app events in your JavaScript code. For example, to show and hide feedback messages in JavaScript, or handle application upgrade/load events in a specific way.

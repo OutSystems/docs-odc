@@ -93,3 +93,4 @@ The type specified when creating the feedback message affects if it will automat
 |  1   |    Success    |       Yes        |
 |  2   |    Warning    |        No        |
 |  3   |     Error     |        No        |
+

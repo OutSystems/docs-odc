@@ -67,4 +67,3 @@ Parameters:
 * **widgetId**: string<br/> The ID of the widget to mark as valid. Widget ID identifies the widget instance at runtime and corresponds to the widget's ID Runtime Property.
 
 Returns: void
-

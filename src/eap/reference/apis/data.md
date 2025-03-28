@@ -80,3 +80,4 @@ To create a Chart with multiple series, follow one of the previous procedures an
 After following these steps, you can publish your module. 
 
 ![Final view of a chart with multiple series displayed on the screen after configuration](images/chart-example-multiple-series.png "Example of a Chart with Multiple Series")
+

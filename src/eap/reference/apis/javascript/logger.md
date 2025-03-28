@@ -78,4 +78,3 @@ Parameters:
 * **message**: string<br/>The message to be logged.
 
 Returns: void
-

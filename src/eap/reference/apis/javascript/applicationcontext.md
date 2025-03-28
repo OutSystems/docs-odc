@@ -56,3 +56,4 @@ Returns an object with the following attributes:
 - `screenKey`: string<br/>A UUID that uniquely identifies the screen that was visible when `getCurrentContext` was called. 
 - `screenName`: string<br/>The name of the screen that was visible when `getCurrentContext` was called.
 - `isReady`: boolean<br/>`true` if the application is ready, `false` otherwise
+

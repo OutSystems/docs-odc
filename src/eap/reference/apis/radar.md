@@ -53,3 +53,4 @@ This example shows how you can create a simple Radar Chart with multiple series 
 After following these steps, you can publish your module:
 
 ![Image displaying the final result of the Radar Chart pattern after customization and configuration](images/chartradar-result.png "Final Radar Chart Pattern Result")
+

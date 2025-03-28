@@ -57,3 +57,4 @@ This example shows how you can create a simple Line Chart with a Spline line and
 After following these steps, you can publish your module:
 
 ![Image of the final result showing a completed Line Chart pattern with a Spline line and custom markers](images/chartline-result.png "Final Line Chart Pattern Result")
+

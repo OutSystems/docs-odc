@@ -53,3 +53,4 @@ This example shows how to create a simple Column Chart with data labels.
 After following these steps, you can publish your module:
 
 ![Image of the final result displaying a Column Chart with data labels after following the tutorial steps](images/chartcolumn-result.png "Final Column Chart Pattern Result")
+

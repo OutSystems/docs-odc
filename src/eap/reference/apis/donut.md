@@ -47,3 +47,4 @@ This example shows how you can create a simple Donut Chart.
 After following these steps, you can publish your module:
 
 ![Image of the final Donut Chart pattern as it appears after publishing the module](images/chartdonut-result.png "Final Donut Chart Pattern Result")
+

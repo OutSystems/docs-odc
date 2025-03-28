@@ -62,4 +62,3 @@ if (cordova) {
 ```
 
 Returns: Promise&lt;void&gt;<br/>A `Promise` object that is fulfilled when the deviceready event is caught.
-

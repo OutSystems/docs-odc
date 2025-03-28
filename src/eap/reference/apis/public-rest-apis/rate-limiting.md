@@ -15,6 +15,7 @@ audience:
   - backend developers
   - platform administrators
 ---
+
 # Rate limits for the APIs
 
 The global rate limit per organization per domain is as follows:

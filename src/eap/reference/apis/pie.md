@@ -53,3 +53,4 @@ This example shows how you can create a simple Pie Chart showing the labels of t
 After following these steps, you can publish your module:
 
 ![Image of the final Pie Chart pattern with labels on data points and without a legend](images/chartpie-result.png "Final Pie Chart Pattern Result")
+

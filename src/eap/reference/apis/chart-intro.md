@@ -61,3 +61,4 @@ Collection of all client actions that trigger the API methods to customize and e
 |SetHighchartsXAxisConfigs|Extend the x-axis properties with additional Highcharts configurations. You can find all Highcharts chart properties [here](https://api.highcharts.com/highcharts/xAxis).|
 |SetHighchartsYAxisConfigs|Extend the y-axis properties with additional Highcharts configurations. You can find all Highcharts chart properties [here](https://api.highcharts.com/highcharts/yAxis).|
 |SetHighchartsSeriesConfigs|Extend the series properties with additional Highcharts configurations. You can find all Highcharts chart properties [here](https://api.highcharts.com/highcharts/series).|
+

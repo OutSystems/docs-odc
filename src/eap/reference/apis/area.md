@@ -49,3 +49,4 @@ This example shows how you can create a simple Area Chart with a Stacked Series.
 After following these steps, you can publish your module:
 
 ![Image of the final result showing a completed Area Chart with a Stacked Series](images/chartarea-result.png "Final Area Chart Result")
+

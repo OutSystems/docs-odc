@@ -14,6 +14,7 @@ audience:
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=3492-39
 ---
+
 # Using OAuth 2.0 to access the APIs
 
 The ODC REST APIs use the [OAuth 2.0 framework](https://datatracker.ietf.org/doc/html/rfc6749) for authorization.

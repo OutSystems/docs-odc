@@ -14,6 +14,7 @@ audience:
 platform-version: odc
 figma:
 ---
+
 # Getting started
 
 This article describes how to get started with the ODC REST APIs, including how to authenticate and make secure calls to these APIs.

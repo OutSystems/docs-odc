@@ -14,6 +14,7 @@ audience:
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=3495-24&t=Ee0vNUQza7lfj7Sy-1
 ---
+
 # About the API client
 
 As an administrator, you can use the API client in the ODC portal to govern and manage who can access the ODC REST APIs. The API client allows you to create an API client account and generate client credentials that you can use in exchange for the access token.

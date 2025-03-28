@@ -16,6 +16,7 @@ audience:
 platform-version: odc
 figma:
 ---
+
 # API authentication and authorization
 
 Authentication ensures the identity of the user or system accessing the API. 

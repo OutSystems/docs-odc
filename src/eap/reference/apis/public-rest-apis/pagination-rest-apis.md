@@ -14,6 +14,7 @@ content-type:
 audience:
   - full stack developers
 ---
+
 # Page through lists of resources
 
 When a response from the REST API, such as `GET /users` includes many results, the results are paginated, and each page provides a subset of the total results.

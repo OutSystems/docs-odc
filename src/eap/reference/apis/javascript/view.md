@@ -86,3 +86,4 @@ Returns: boolean
 
 Returns `true` when the current view state was restored from cache, or `false` otherwise.
 
+

@@ -1,18 +1,19 @@
 ---
 helpids: 30566
 summary: Learn how to configure API access for OutSystems Developer Cloud (ODC) using an API client, including creating clients, managing credentials, and setting permissions.
-tags: 
-outsystems-tools: 
+tags: api configuration, oauth 2.0, client credentials, rest apis, api security
+outsystems-tools:
+  - odc portal
 guid: 9698d698-520b-4362-858c-034f0d76ccbd
 locale: en-us
 app_type: reactive web apps, mobile apps
 content-type:
-    - procedure
+  - procedure
 audience:
+  - platform administrators
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=3497-27&t=Ee0vNUQza7lfj7Sy-1
 ---
-
 # Configure API access using an API client
 
 Using the ODC portal, you can create a new [API client](about-api-client.md) to access the REST APIs. When a new API client is created with the necessary permissions, OAuth 2.0 client credentials comprising the client ID and client secret are generated. These credentials can then be configured in the ODC app to request an access token from the authorization server, enabling secure access to the API.
@@ -99,3 +100,4 @@ Any changes to the permissions of an API client affects access to APIs.
 ## Next step
 
 [Get access token using client credentials flow](get-access-token.md)
+

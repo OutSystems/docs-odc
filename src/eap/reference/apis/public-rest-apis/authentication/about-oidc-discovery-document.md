@@ -1,17 +1,19 @@
 ---
 summary: Understand how to access and utilize the OpenID Connect Discovery document in OutSystems Developer Cloud (ODC) for streamlined user authentication.
-tags: 
-outsystems-tools: 
+tags: openid connect, oidc discovery document, user authentication, json configuration, endpoint configuration
+outsystems-tools:
+  - odc portal
 guid: 5a77f214-dc04-4629-ac04-cd51a89e5843
 locale: en-us
 app_type: reactive web apps, mobile apps
-content-type: 
-    - conceptual
-audience: 
+content-type:
+  - conceptual
+audience:
+  - full stack developers
+  - backend developers
 platform-version: odc
-figma: 
+figma:
 ---
-
 # About OIDC Discovery document
 
 The OpenID Connect protocol requires the use of multiple endpoints to authenticate users and request resources such as tokens, user information, and public keys.
@@ -63,3 +65,4 @@ The response returned will look similar to the following example:
   ],
 }
 ```
+
