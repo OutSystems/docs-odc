@@ -16,7 +16,7 @@ coverage-type:
   - apply
 ---
 
-# Data
+# Dynamic charts using fixed and variable data
 
 To add data to your chart you must input **DataPoint** labels and values for the **DataPointList** property.
 

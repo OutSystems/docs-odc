@@ -16,9 +16,9 @@ outsystems-tools:
   - odc studio
   - odc portal
 ---
-# JavaScript API
+# JavaScript extensibility
 
-The OutSystems JavaScript API allows you to call OutSystems specific actions and act upon mobile app events in your JavaScript code. For example, to show and hide feedback messages in JavaScript, or handle application upgrade/load events in a specific way.
+The OutSystems JavaScript extensibility allows you to call OutSystems specific actions and act upon mobile app events in your JavaScript code. For example, to show and hide feedback messages in JavaScript, or handle application upgrade/load events in a specific way.
 
 The available API modules can be accessed through the predefined object, `$public`. This object contains references to each supported JavaScript API.
 

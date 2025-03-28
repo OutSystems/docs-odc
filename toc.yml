@@ -200,6 +200,16 @@
                 - href: eap/building-apps/ui/patterns/utilities/separator.md
                 - href: eap/building-apps/ui/patterns/utilities/swipeevents.md
                 - href: eap/building-apps/ui/patterns/utilities/touchevents.md
+        - href: eap/reference/apis/chart-intro.md
+        - topics:
+            - href: eap/reference/apis/area.md
+            - href: eap/reference/apis/bar.md
+            - href: eap/reference/apis/column.md
+            - href: eap/reference/apis/donut.md
+            - href: eap/reference/apis/line.md
+            - href: eap/reference/apis/pie.md
+            - href: eap/reference/apis/radar.md
+            - href: eap/reference/apis/data.md
         # Screen Templates
         - href: eap/building-apps/ui/screen-template/intro.md
         - topics:
@@ -469,7 +479,6 @@
     - href: eap/deleting-apps/intro.md
 
 
-
 # User management
 - href: eap/user-management/intro.md 
 - topics:
@@ -544,6 +553,26 @@
         - href: eap/monitor-and-troubleshoot/traces/server-side-traces.md
         - href: eap/monitor-and-troubleshoot/traces/client-side-traces.md
     
+# REST APIs
+- href: eap/reference/apis/public-rest-apis/overview.md
+- topics:
+    - href: eap/reference/apis/public-rest-apis/getting-started.md
+    - href: eap/reference/apis/public-rest-apis/authentication/oauth-concept.md
+    - topics:
+        - href: eap/reference/apis/public-rest-apis/authentication/about-api-client.md
+        - href: eap/reference/apis/public-rest-apis/authentication/using-oauth-access-api.md
+        - href: eap/reference/apis/public-rest-apis/authentication/create-api-client.md
+        - href: eap/reference/apis/public-rest-apis/authentication/generate-new-secret.md
+        - href: eap/reference/apis/public-rest-apis/authentication/get-access-token.md
+        - href: eap/reference/apis/public-rest-apis/authentication/about-oidc-discovery-document.md
+        - href: eap/reference/apis/public-rest-apis/authentication/call-api.md
+        - href: eap/reference/apis/public-rest-apis/authentication/suspend-resume-access-api-client.md
+        - href: eap/reference/apis/public-rest-apis/authentication/best-practices-for-api-credentials.md
+    - href: eap/reference/apis/public-rest-apis/pagination-rest-apis.md
+    - href: eap/reference/apis/public-rest-apis/rate-limiting.md
+    - href: eap/reference/apis/identity-v1.md
+    - href: eap/reference/apis/portfolio-v1.md     
+
 # Reference
 - href: eap/reference/intro.md
 - topics:
@@ -585,49 +614,19 @@
         - href: eap/reference/built-in-functions/roles.md
         - href: eap/reference/built-in-functions/text.md
         - href: eap/reference/built-in-functions/url.md
+    - href: eap/reference/apis/javascript/intro.md
+    - topics:
+        - href: eap/reference/apis/javascript/applicationcontext.md
+        - href: eap/reference/apis/javascript/applicationlifecycle.md
+        - href: eap/reference/apis/javascript/device.md
+        - href: eap/reference/apis/javascript/feedbackmessage.md
+        - href: eap/reference/apis/javascript/logger.md
+        - href: eap/reference/apis/javascript/navigation.md
+        - href: eap/reference/apis/javascript/validation.md
+        - href: eap/reference/apis/javascript/view.md
     - href: eap/reference/shortcutkeys.md
     - href: eap/reference/data-grid-ref.md
-  # APIs
-    - href: eap/reference/apis/api-intro.md
-    - topics:
-        - href: eap/reference/apis/public-rest-apis/overview.md
-        - topics:
-            - href: eap/reference/apis/public-rest-apis/getting-started.md
-            - href: eap/reference/apis/public-rest-apis/authentication/oauth-concept.md
-            - topics:
-                - href: eap/reference/apis/public-rest-apis/authentication/about-api-client.md
-                - href: eap/reference/apis/public-rest-apis/authentication/using-oauth-access-api.md
-                - href: eap/reference/apis/public-rest-apis/authentication/create-api-client.md
-                - href: eap/reference/apis/public-rest-apis/authentication/generate-new-secret.md
-                - href: eap/reference/apis/public-rest-apis/authentication/get-access-token.md
-                - href: eap/reference/apis/public-rest-apis/authentication/about-oidc-discovery-document.md
-                - href: eap/reference/apis/public-rest-apis/authentication/call-api.md
-                - href: eap/reference/apis/public-rest-apis/authentication/suspend-resume-access-api-client.md
-                - href: eap/reference/apis/public-rest-apis/authentication/best-practices-for-api-credentials.md
-            - href: eap/reference/apis/public-rest-apis/pagination-rest-apis.md
-            - href: eap/reference/apis/public-rest-apis/rate-limiting.md
-            - href: eap/reference/apis/identity-v1.md
-            - href: eap/reference/apis/portfolio-v1.md           
-        - href: eap/reference/apis/data.md
-        - href: eap/reference/apis/chart-intro.md
-        - topics:
-            - href: eap/reference/apis/area.md
-            - href: eap/reference/apis/bar.md
-            - href: eap/reference/apis/column.md
-            - href: eap/reference/apis/donut.md
-            - href: eap/reference/apis/line.md
-            - href: eap/reference/apis/pie.md
-            - href: eap/reference/apis/radar.md
-        - href: eap/reference/apis/javascript/intro.md
-        - topics:
-            - href: eap/reference/apis/javascript/applicationcontext.md
-            - href: eap/reference/apis/javascript/applicationlifecycle.md
-            - href: eap/reference/apis/javascript/device.md
-            - href: eap/reference/apis/javascript/feedbackmessage.md
-            - href: eap/reference/apis/javascript/logger.md
-            - href: eap/reference/apis/javascript/navigation.md
-            - href: eap/reference/apis/javascript/validation.md
-            - href: eap/reference/apis/javascript/view.md
+      
 
 # Errors
 - href: error/intro.md
