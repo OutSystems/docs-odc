@@ -135,7 +135,6 @@ You can use advanced parameters to add additional parameters for a database conn
 
 Consider the following when integrating an external system.
 
-* SQL elements don't support external entities.
 * .NET does not support the Julian calendar for Oracle and Salesforce, and the minimum supported timestamp value is -62135596800000. To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
 * Importing Views in ODC Studio only generates `Create<EntityName>` and `DeleteAll<EntityAction>` actions. Since Views don't have primary keys, ODC doesn't generate other entity actions. Inserting a record in a View works only when the View comprises 1 table in the database. When View comprises more than 1 table, you may get an error.
 * When a database user lacks the necessary permissions to access the table that a Foreign Key (FK) points to, the Foreign Key is treated as a regular column. This can result in errors during the insertion or updating of records. To prevent such issues, it is advisable to ensure that the user can access all the tables required by the application.

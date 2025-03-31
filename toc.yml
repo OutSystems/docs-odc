@@ -89,6 +89,18 @@
                     - href: eap/building-apps/data/fetch-data/queries.md
                     - href: eap/building-apps/data/fetch-data/transactions-data-mashup.md
                     - href: eap/building-apps/data/fetch-data/data-mashup-errors.md
+            - href: eap/building-apps/data/fetch-data/sql/use-sql.md
+            - topics:
+                - href: eap/building-apps/data/fetch-data/sql/ansi-92-syntax.md
+                - topics:
+                    - href: eap/building-apps/data/fetch-data/sql/ansi-92-select.md
+                    - href: eap/building-apps/data/fetch-data/sql/ansi-92-insert.md
+                    - href: eap/building-apps/data/fetch-data/sql/ansi-92-update.md
+                    - href: eap/building-apps/data/fetch-data/sql/ansi-92-delete.md
+                    - href: eap/building-apps/data/fetch-data/sql/call.md
+                    - href: eap/building-apps/data/fetch-data/sql/stored-procedure.md
+                    - href: eap/building-apps/data/fetch-data/sql/ansi-92-operators.md
+                    - href: eap/building-apps/data/fetch-data/sql/ansi-92-data-types.md
         # Best practices Data
         - href: eap/building-apps/data/data-best-practices/intro.md
         - topics:
@@ -265,7 +277,6 @@
         - href: eap/building-apps/external-logic/upgrade-net8.md
         - href: eap/building-apps/external-logic/mtls.md
         - href: eap/building-apps/external-logic/soap.md
-        - href: eap/building-apps/external-logic/stored-procedure.md
     # Forge
     - href: eap/building-apps/forge/intro.md
     - topics:
