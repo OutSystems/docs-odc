@@ -17,7 +17,7 @@ outsystems-tools:
   - odc studio
   - odc portal
 ---
-# title
+# SELECT statement in ANSI-92 queries
 
 ```sql
 [ WITH withItem [ , withItem ]* ]
