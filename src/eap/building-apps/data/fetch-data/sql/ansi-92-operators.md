@@ -89,7 +89,7 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 
 | Operator syntax                                                     | Description                                                                                                      | NULL Behaviour              |
 |---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------|
-| `string |\| string`                                       | Concatenates two character strings                                                                               | NULL if any operand is NULL |
+| `string || string`                                       | Concatenates two character strings                                                                               | NULL if any operand is NULL |
 | `CHAR_LENGTH(string)`                                                | Returns the number of characters in a character string                                                           | NULL if *string* is NULL    |
 | `CHAR_INDEX(string, string [\,integer])`                               | Same as `POSITION`                                                                                              | NULL if any operand is NULL |
 | `CHARACTER_LENGTH(string)`                                            | Same as `CHAR_LENGTH`                                                                                            | NULL if *string* is NULL    |
@@ -97,7 +97,7 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 | `LOWER(string)`                                                      | Returns a character string converted to lower case                                                               | NULL if *string* is NULL    |
 | `POSITION(string1 IN string2)`                                      | Returns the position (1 - N) of the first occurrence of *string1* in *string2*                                   | NULL if any operand is NULL |
 | `POSITION(string1 IN string2 FROM integer)`                          | Returns the position (1 - N) of the first occurrence of *string1* in *string2* starting at a given point         | NULL if any operand is NULL |
-| `TRIM( { BOTH \| LEADING \| TRAILING } string1 FROM string2)` | Removes the longest string containing only the characters in *string1* from the start/end/both ends of *string1* | NULL if any operand is NULL |
+| `TRIM( { BOTH | LEADING | TRAILING } string1 FROM string2)` | Removes the longest string containing only the characters in *string1* from the start/end/both ends of *string1* | NULL if any operand is NULL |
 | `SUBSTRING(string FROM integer)`                                      | Returns a substring of a character string starting at a given point                                              | NULL if any operand is NULL |
 | `SUBSTRING(string FROM integer FOR integer)`                          | Returns a substring of a character string starting at a given point with a given length                          | NULL if any operand is NULL |
 
@@ -192,14 +192,14 @@ If `DISTINCT` is present, duplicate argument values are eliminated before being 
 
 | Operator syntax                                   | Description                                                                    | NULL Behaviour                      |
 |---------------------------------------------------|--------------------------------------------------------------------------------|-------------------------------------|
-| `ANY_VALUE( [ ALL \| DISTINCT ] attribute)`     | Returns one of the values of *attribute* from a set of records                 | NULL if the set of records is empty |
-| `AVG( [ ALL \| DISTINCT ] numeric)`             | Returns the average (arithmetic mean) of *numeric* for a set of records        | NULL if the set of records is empty |
+| `ANY_VALUE( [ ALL | DISTINCT ] attribute)`     | Returns one of the values of *attribute* from a set of records                 | NULL if the set of records is empty |
+| `AVG( [ ALL | DISTINCT ] numeric)`             | Returns the average (arithmetic mean) of *numeric* for a set of records        | NULL if the set of records is empty |
 | `COUNT(*)`                                         | Returns the count for a set of records                                         | Never NULL                          |
-| `COUNT( [ ALL \| DISTINCT ] value [, value ]*)` | Returns the count for a set of records where the specified values are not null | Never NULL                          |
-| `MAX( [ ALL \| DISTINCT ] value)`               | Returns the maximum of *value* for a set of records                            | NULL if the set of records is empty |
-| `MIN( [ ALL \| DISTINCT ] value)`               | Returns the minimum of *value* for a set of records                            | NULL if the set of records is empty |
+| `COUNT( [ ALL | DISTINCT ] value [, value ]*)` | Returns the count for a set of records where the specified values are not null | Never NULL                          |
+| `MAX( [ ALL | DISTINCT ] value)`               | Returns the maximum of *value* for a set of records                            | NULL if the set of records is empty |
+| `MIN( [ ALL | DISTINCT ] value)`               | Returns the minimum of *value* for a set of records                            | NULL if the set of records is empty |
 | `MODE(value)`                                       | Returns the most frequent *value* for a set of records                         | NULL if the set of records is empty |
-| `SUM( [ ALL \| DISTINCT ] numeric)`             | Returns the sum of *numeric* for a set of records                              | NULL if the set of records is empty |
+| `SUM( [ ALL | DISTINCT ] numeric)`             | Returns the sum of *numeric* for a set of records                              | NULL if the set of records is empty |
 
 ## Type conversion { #type-conversion }
 
