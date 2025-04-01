@@ -1,7 +1,7 @@
 ---
 guid: 22b6fa5c-e6d7-49db-a2bc-861465aa1419
 locale: en-us
-summary: Execute complex data operations using SQL queries within OutSystems Data Cloud (ODC), including support for PostgreSQL and ANSI-92 syntax in ODC Studio.
+summary: Execute complex data operations using SQL queries within OutSystems Developer Cloud (ODC), including support for PostgreSQL and ANSI-92 syntax in ODC Studio.
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7298-10
 coverage-type:
   - understand

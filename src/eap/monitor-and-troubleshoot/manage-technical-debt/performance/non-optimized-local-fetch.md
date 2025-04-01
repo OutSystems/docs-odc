@@ -1,5 +1,5 @@
 ---
-summary: Optimize mobile app performance on OutSystems Data Cloud (ODC) by avoiding local data fetch in client events and utilize parallel data fetching.
+summary: Optimize mobile app performance on OutSystems Developer Cloud (ODC) by avoiding local data fetch in client events and utilize parallel data fetching.
 tags: local data fetch, parallel data fetching, performance optimization, client events, mobile apps development
 guid: 2a625247-1f84-4147-99ee-05ed4aa4658b
 locale: en-us

@@ -1,5 +1,5 @@
 ---
-summary: Enhance code quality in OutSystems Data Cloud (ODC) applications using AI Mentor System for automated review, performance improvements, and security mitigation.
+summary: Enhance code quality in OutSystems Developer Cloud (ODC) applications using AI Mentor System for automated review, performance improvements, and security mitigation.
 tags: code quality, ai mentor system, outsystems applications, odc studio, performance optimization
 guid: 5106A167-C080-4F57-96A3-75BFB73A33FB
 locale: en-us

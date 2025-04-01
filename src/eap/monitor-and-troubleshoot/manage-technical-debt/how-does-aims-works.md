@@ -1,5 +1,5 @@
 ---
-summary: Analyze code quality using AI Mentor System in OutSystems Data Cloud (ODC) for performance, architecture, maintenance, and security insights.
+summary: Analyze code quality using AI Mentor System in OutSystems Developer Cloud (ODC) for performance, architecture, maintenance, and security insights.
 tags: code quality, ai mentor system, code analysis, odc, performance
 guid: CA38C82A-E390-425B-B588-D6BD3F692928
 locale: en-us

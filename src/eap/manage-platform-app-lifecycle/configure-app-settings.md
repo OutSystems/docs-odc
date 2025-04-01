@@ -1,5 +1,5 @@
 ---
-summary: Easily configure app settings in development with OutSystems Data Cloud (ODC), including creating settings, organizing folders, and editing runtime values.
+summary: Easily configure app settings in development with OutSystems Developer Cloud (ODC), including creating settings, organizing folders, and editing runtime values.
 tags: app configuration, odc studio, runtime settings, development, data management
 guid: 0624bc73-64c2-45bb-a740-c4cef83989fc
 locale: en-us

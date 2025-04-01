@@ -1,5 +1,5 @@
 ---
-summary: Submit apps with a privacy manifest to Apple App Store with approved API justifications, ensuring compliance using OutSystems Data Cloud (ODC).
+summary: Submit apps with a privacy manifest to Apple App Store with approved API justifications, ensuring compliance using OutSystems Developer Cloud (ODC).
 tags: apple app store, privacy policy, app submission, api usage, sdk integration
 guid: 61a1d08c-3607-4d70-8dcd-5b2e1f7da8a7
 locale: en-us

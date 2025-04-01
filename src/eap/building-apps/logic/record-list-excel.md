@@ -1,5 +1,5 @@
 ---
-summary: Convert record lists to Excel files using OutSystems Data Cloud (ODC) by defining the necessary server actions, parameters, and entities for efficient data export.
+summary: Convert record lists to Excel files using OutSystems Developer Cloud (ODC) by defining the necessary server actions, parameters, and entities for efficient data export.
 tags: record list, excel export, data conversion, mobile apps, reactive web apps
 guid: 5f26092b-0d42-4e47-8203-1d25e5d775c7
 locale: en-us

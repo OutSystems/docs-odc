@@ -1,4 +1,23 @@
-# SELECT statement in ANSI-92 queries
+---
+guid: 33a2f97a-130e-4311-913a-e7f797df9b12
+locale: en-us
+summary: Understand SQL SELECT statement and WITH clause in OutSystems Developer Cloud (ODC) for executing mashup queries involving internal and external entities.
+figma:
+coverage-type:
+  - apply
+  - understand
+topic:
+app_type: mobile apps,reactive web apps
+platform-version: odc
+audience:
+  - backend developers
+  - data engineers
+tags: sql, mashup queries, select statement, with clause, database queries
+outsystems-tools:
+  - odc studio
+  - odc portal
+---
+# title
 
 ```sql
 [ WITH withItem [ , withItem ]* ]

@@ -1,5 +1,5 @@
 ---
-summary: Manage AI agents with Azure OpenAI in OutSystems Data Cloud (ODC) and leverage natural language processing using ODC Studio for mobile and reactive web apps.
+summary: Manage AI agents with Azure OpenAI in OutSystems Developer Cloud (ODC) and leverage natural language processing using ODC Studio for mobile and reactive web apps.
 tags: azure openai integration, function calling, ai agent configuration, natural language processing, odc studio
 guid: b4168514-211d-48f0-87c6-9754da53a124
 locale: en-us
