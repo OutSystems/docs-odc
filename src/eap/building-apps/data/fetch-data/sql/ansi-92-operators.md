@@ -89,7 +89,7 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 
 | Operator syntax                                                     | Description                                                                                                      | NULL Behaviour              |
 |---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------|
-| `string \|\| string`                                       | Concatenates two character strings                                                                               | NULL if any operand is NULL |
+| `string |\| string`                                       | Concatenates two character strings                                                                               | NULL if any operand is NULL |
 | `CHAR_LENGTH(string)`                                                | Returns the number of characters in a character string                                                           | NULL if *string* is NULL    |
 | `CHAR_INDEX(string, string [\,integer])`                               | Same as `POSITION`                                                                                              | NULL if any operand is NULL |
 | `CHARACTER_LENGTH(string)`                                            | Same as `CHAR_LENGTH`                                                                                            | NULL if *string* is NULL    |
