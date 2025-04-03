@@ -48,3 +48,11 @@ The following is an example of how you can create an aggregate that filters a sp
     This returns all human activities with that key in that specific workflow. 
      
     ![Screenshot showing the GetHumanActivityInstances aggregate in ODC Studio](images/workflows-agg-filter-odcs.png "GetHumanActivityInstances aggregate in ODC Studio")
+
+## Related resources
+
+* [Workflow entities](system-entities.md)
+
+* [Troubleshooting workflows](troubleshooting-workflows.md)
+
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)

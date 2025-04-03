@@ -17,7 +17,7 @@ coverage-type:
   - apply
 ---
 
-# Using workflows
+# Getting started
 
 To implement your workflow, use the workflow editor, a web-based editor accessible from the ODC Portal, where you have access to a set of low-code nodes that will help you implement the workflow. You can integrate your workflows into your apps through events or service actions. Events start the workflow execution. Workflows can consume business logic from events or service actions to gather information for decision-making activities in the workflow.
 
@@ -91,9 +91,19 @@ To deploy your workflow and app, follow these steps:
 
 1. After acceptance testing, deploy the app and workflow to the Production stage.
 
+## Next steps
+
+* [Start a workflow](start-workflow.md)
+
+* [Start a workflow based on specific conditions](add-conditional-start.md)
+
 ## Related resources
 
 * [Workflows in ODC](workflows-in-odc.md)
+
 * [Workflow nodes](workflow-components.md)
+
 * [Troubleshooting workflows](troubleshooting-workflows.md)
+
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)
 

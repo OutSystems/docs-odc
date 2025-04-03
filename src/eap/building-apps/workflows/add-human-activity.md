@@ -107,6 +107,23 @@ At any given time, based on the progress of the human activity, the **HumanActiv
 
 * **Open** - The human activity has been opened by an end-user but has not yet proceeded to execution.
 
-## Next step
+## Next steps
 
-Create customized dashboards and screens where users can view and act on tasks assigned to them or their roles. For detailed information, refer to [Build UI components using workflow entities](filter-workflows.md).
+* [Add automatic activity](add-automatic-activity.md)
+
+* [Add decisions](add-decisions.md)
+
+* [Add wait](add-wait.md)
+
+* Create customized dashboards and screens where users can view and act on tasks assigned to them or their roles. For detailed information, refer to [Build UI components using workflow entities](filter-workflows.md).
+
+## Related resources
+
+* [How to add human activity to a workflow](https://learn.outsystems.com/training/journeys/building-workflows-in-odc-2690/how-to-add-human-activities-to-a-workflow/odc/7998)
+
+* [Implement SLAs in a workflow](sla-workflow.md)
+
+* [Troubleshooting workflows](troubleshooting-workflows.md)
+
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)
+

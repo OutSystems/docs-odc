@@ -351,17 +351,15 @@
             - href: eap/building-apps/workflows/add-automatic-activity.md
             - href: eap/building-apps/workflows/add-decisions.md
             - href: eap/building-apps/workflows/add-wait.md
+            - href: eap/building-apps/workflows/sla-workflow.md
             - href: eap/building-apps/workflows/go-to-previous-step.md
             - href: eap/building-apps/workflows/terminate-workflow.md
             - href: eap/building-apps/workflows/end-workflow.md
-        - href: eap/building-apps/workflows/system-entities.md
-        - topics: 
-            - href: eap/building-apps/workflows/filter-workflows.md
-        - href: eap/building-apps/workflows/sla-workflow.md
-        - href: eap/building-apps/workflows/built-in-functions.md
-        - href: eap/building-apps/workflows/troubleshooting-workflows.md
         - href: eap/building-apps/workflows/logs.md
-   
+        - href: eap/building-apps/workflows/troubleshooting-workflows.md
+        - href: eap/building-apps/workflows/filter-workflows.md
+        - href: eap/building-apps/workflows/system-entities.md
+        - href: eap/building-apps/workflows/built-in-functions.md
     # Reuse
     - href: eap/building-apps/reuse/intro.md
     - href: eap/building-apps/reuse/handle-changes.md

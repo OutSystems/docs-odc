@@ -53,3 +53,21 @@ If your workflow involves multiple conditional paths, you can add more than two 
 * Queries Invoked in the **Decision** node
 
 * Built-in functions
+
+## Next steps
+
+* [Add human activity](add-human-activity.md)
+
+* [Add automatic activity](add-automatic-activity.md)
+
+* [Add wait](add-wait.md)
+
+* [Go to a previous step](go-to-previous-step.md)
+
+## Related resources
+
+* [How to make decisions in a workflow](https://learn.outsystems.com/training/journeys/building-workflows-in-odc-2690/how-to-make-decisions-in-a-workflow/odc/9492)
+
+* [Troubleshooting workflows](troubleshooting-workflows.md)
+
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)

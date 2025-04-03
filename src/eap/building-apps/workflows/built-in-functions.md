@@ -37,3 +37,9 @@ The following table details the built-in functions available in ODC Studio for w
 | Miscellaneous | Yes|
 | Roles | Yes|
 | Security| No |        
+
+## Related resources
+
+* [Implement workflows](using-workflows.md)
+
+* [Troubleshooting workflows](troubleshooting-workflows.md)

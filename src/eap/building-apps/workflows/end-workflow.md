@@ -24,5 +24,10 @@ If your workflow includes one or more [conditional start](add-conditional-start.
 
 If your workflow has no conditional start flows, the workflow is completed when the **End** node is reached, at which point all activities are complete, and the workflow instance status changes to **Done.**
 
+## Related resources
 
+* [Troubleshooting workflows](troubleshooting-workflows.md)
 
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)
+
+* [Terminate a workflow](terminate-workflow.md)

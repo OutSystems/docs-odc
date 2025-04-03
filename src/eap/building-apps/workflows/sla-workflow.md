@@ -49,3 +49,13 @@ When a human activity or wait activity in a workflow times out, it indicates tha
 To mitigate this and to enable referencing the **Close on** event's input parameters of the human activity (or wait activity), OutSystems recommends designing SLA workflows to include a decision node that evaluates whether the activity was closed due to a time out or a close on event. You can evaluate this using the human (or wait) activity's **HasExpired** runtime property. Based on the decision results, you can model your workflow accordingly, for example, if the human activity ends due to a time out, you can add a **Go to** step.
 
 ![Screenshot of a workflow that implements an SLA use case that includes a decision node in the portal.](images/sla-decision-we.png "Implementation of a workflow with an SLA use case that includes a decision node")
+
+## Related resources
+
+* [Add human activity](add-human-activity.md)
+
+* [Add wait](add-wait.md)
+
+* [Troubleshooting workflows](troubleshooting-workflows.md)
+
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)

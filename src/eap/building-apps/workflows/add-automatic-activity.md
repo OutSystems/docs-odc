@@ -27,3 +27,19 @@ To include automatic activity in a workflow, follow these steps:
 1. Select the service action to execute when the flow reaches the AutomaticActivity node. For example, in a loan approval workflow, you can include an AutomaticActivity node to request documents from the customer when receiving a new loan application. You can implement Request Docs as a service action in the ODC Loan app and invoke it in the AutomaticActivity node.
 
     **Note:** If the service action has one or more input parameters, enter values for the mandatory input parameters to execute the service action. Only input parameters with default data types can be used. The Binary data type is excluded.
+
+## Next steps
+
+* [Add human activity](add-human-activity.md)
+
+* [Add decisions](add-decisions.md)
+
+* [Add wait](add-wait.md)
+
+## Related resources
+
+* [How to add automatic activity to workflow](https://learn.outsystems.com/training/journeys/building-workflows-in-odc-2690/how-to-add-automatic-activity-to-workflow/odc/9491)
+
+* [Troubleshooting workflows](troubleshooting-workflows.md)
+
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)

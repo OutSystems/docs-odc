@@ -50,3 +50,19 @@ To include wait in a workflow, follow these steps:
     c. **Close after timeout**: (Optional) Set the timeout duration. You can choose from predefined time units (days, hours, minutes, and seconds), or you can define your own custom timeout expression.
 
 Once the event occurs and the conditions are met or the **Close after timeout** is reached,, the wait ends, and the workflow moves on to the next step.
+
+## Next steps
+
+* [Add human activity](add-human-activity.md)
+
+* [Add automatic activity](add-automatic-activity.md)
+
+* [Add decisions](add-decisions.md)
+
+## Related resources
+
+* [Implement SLAs in a workflow](sla-workflow.md)
+
+* [Troubleshooting workflows](troubleshooting-workflows.md)
+
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)

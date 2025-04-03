@@ -65,3 +65,7 @@ Additionally, for more information about the error, you can navigate to the rela
 Workflows are automatically retried up to 10 times if an execution of a service action or the delivery of a back-end event fails. The following backoff policy applies to the automatic retries: 5s, 10s, 20s, 30s, 1m, 2m, 4m, 8m, 16m, 32m.
 
 </div>
+
+## Related resources
+
+* [Workflow logs](logs.md)

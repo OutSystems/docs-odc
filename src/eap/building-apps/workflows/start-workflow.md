@@ -39,3 +39,21 @@ Instance labels make it easier to track and manage individual workflow execution
 Instance labels can help you filter your workflow instances and identify them in log reports. Additionally, if an error occurs in a workflow, the instance label helps pinpoint which specific workflow instance needs attention. For example, in a loan request approval, you might want a custom label that describes the instance ID and the ID of the loan that triggered that workflow. This way, when troubleshooting multiple instances, you can easily identify which instance corresponds to a certain loan request. In that case, you define the instance label as ``"Process with Id" + ProcessInstanceId + "started by a new loan with ID" + Start.NewLoan.LoanId.`` **Note**: The **Instance label** has a maximum length of 100 characters. If your expression is longer than the maximum, it will be truncated at runtime.
 
 ![Screenshot of instance label expression](images/instance-label-output-we.png "Instance label")
+
+## Next steps
+
+* [Add human activity](add-human-activity.md)
+
+* [Add automatic activity](add-automatic-activity.md)
+
+* [Add decisions](add-decisions.md)
+
+* [Add wait](add-wait.md)
+
+## Related resources
+
+* [Start a workflow based on specific conditions](add-conditional-start.md)
+
+* [Troubleshooting workflows](troubleshooting-workflows.md)
+
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)
