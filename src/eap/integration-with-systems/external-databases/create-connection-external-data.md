@@ -44,11 +44,13 @@ External data connections can be created with read-only permissions or other per
 
 To access private data that is not available over the internet, connect to your external data source through a [private gateway](../../manage-platform-app-lifecycle/private-gateway.md). The connection process varies depending on the type of data source:
 
-* For Relational database:
-    1. In ODC Portal, open the connection configuration screen. Enter `secure-gateway` in the `Server`/`Host` field, and the secure gateway port in the `Port` field.
-* For SAP BAPI database:
+* Relational database:
+    1. In the ODC Portal, open the connection configuration screen. Enter `secure-gateway` in the `Server`/`Host` field, and the secure gateway port in the `Port` field.
+* SAP BAPI database:
     1. Run the Cloud Connector with the following command: `./outsystemscc --header "token: <token>" <secure-gateway-address> R:<local-port>:<sap-ip-address>:<remote-port>` . This directs traffic from `secure-gateway:<local-port>` to `<sap-ip-address>:<remote-port>`. 
-    1. In ODC Portal, open the SAP BAPI connection screen. Enter `/H/secure-gateway/S/<local-port>/H` in the `SAP route string` field. SAP validates the value of the Application Server field by comparing it to its known hostnames. To route requests through the Cloud Connector and still use a valid Application Server value, a [SAP Router](https://support.sap.com/en/tools/connectivity-tools/saprouter.html) is needed.
+    1. In the ODC Portal, open the SAP BAPI connection screen. Enter `/H/secure-gateway/S/<local-port>/H` in the `SAP route string` field. SAP validates the value of the Application Server field by comparing it to its known hostnames. To route requests through the Cloud Connector and still use a valid Application Server value, a [SAP Router](https://support.sap.com/en/tools/connectivity-tools/saprouter.html) is needed.
+* Azure SQL Server Managed Instance:
+    1. Proxy mode is required in this case, as it ensures a stable connection by routing all traffic through the Azure SQL Gateway.
 
 ## Create a new connection
 
