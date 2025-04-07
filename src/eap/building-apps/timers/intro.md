@@ -43,8 +43,10 @@ From ODC Portal, using the **Wake** function, you can launch on-demand timers as
 
 ## Timers timeout
 
-By default, the timeout of a Timer is set to 20 minutes. You can change the timeout using the **Timeout in Minutes** property of the Timer. There is a [maximum value](../../getting-started/system-requirements.md#timers-timeout).
+By default, a Timer has a timeout of 20 minutes, which you can change using its **Timeout in Minutes** property. The [maximum value](../../getting-started/system-requirements.md#platform-limits) that you can set for timer execution timeout is defined by the ODC platform limits.
 
-If the action associated with a Timer doesn't end within a predefined time, the action aborts and the Timer stops. This is an error. The timer tries to execute three more times. The number of retries isn't configurable.
+If the Timer’s action doesn’t complete within the specified timeout, the action aborts, timer stops, and an error is logged. The timer then automatically retries up to three times. This timer retry count cannot be changed.
 
-For queries inside timer logic, the **Server Request Timeout** property has a [maximum value](../../getting-started/system-requirements.md#timers-timeout).
+Each timer retry resets the timeout period, so the total timer execution time can exceed the original timeout. In the worst case, the timer could run up to four times the defined timeout  which includes the initial attempt and 3 retries.
+
+For queries inside timer logic, the **Server Request Timeout** property has a [maximum value](../../getting-started/system-requirements.md#platform-limits).
