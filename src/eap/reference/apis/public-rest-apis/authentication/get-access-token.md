@@ -37,7 +37,7 @@ To get an access token, follow these steps,
 
 1. Retrieve the `token_endpoint` metadata value from the Discovery document. 
 
-1. Send a POST request to the `token_endpoint` retrieved from teh previous step.
+1. Send a POST request to the `token_endpoint` retrieved from the previous step.
 
     <div class="info" markdown="1">
 
