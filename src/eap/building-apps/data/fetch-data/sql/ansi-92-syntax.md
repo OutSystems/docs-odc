@@ -55,7 +55,7 @@ When executing multiple statements in an SQL Node, the result will be that of th
 
 <div class="info" markdown="1">
 
-SQL queries using multiple statements must use entities and actions from the same external system.
+SQL queries using multiple statements must use entities and actions from the same [connection](../../../../integration-with-systems/external-databases/create-connection-external-data.md).
 
 </div>
 
