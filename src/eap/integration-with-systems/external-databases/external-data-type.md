@@ -40,6 +40,12 @@ For more on converting values, see:
 * [Type conversion (SQL)](../../building-apps/data/fetch-data/sql/ansi-92-operators.md#type-conversion)
 * [Convert data types (expressions)](../../building-apps/data/convert-data-types.md)
 
+<div class="info" markdown="1">
+
+Only the data types that have a mapping are supported. Data types not present in the following tables aren't yet supported.
+
+</div>
+
 
 | Type in SQL queries | OutSystems Data Type               | Microsoft SQL Server                                                       | Oracle                                                                | PostgreSQL               | Salesforce       | SAP OData        |
 |---------------------|------------------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------|--------------------------|------------------|------------------|
