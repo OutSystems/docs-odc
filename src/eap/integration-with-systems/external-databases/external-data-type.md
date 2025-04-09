@@ -59,6 +59,7 @@ For more on converting values, see:
 | DATE                | Date                               | DATE                                                                       | DATE                                                                  | DATE                     | DATE             | DATE             |
 | TIME                | Text                               | TIME                                                                       |                                                                       | TIME                     | TIME             | TIME             |
 | TIMESTAMP           | Timestamp                          | DATETIME<br/>DATETIME2<br/>SMALLDATETIME                                   | TIMESTAMP                                                             | TIMESTAMP                | TIMESTAMP        |                  |
+| No official support. Attributes may not appear or may exhibit unexpected behavior. | No official support. Attributes may not appear in the ODC Portal or may exhibit unexpected behavior. | Other data types  | Other data types | Other data types | Other data types | Other data types |
 
 ## SAP BAPI mapping
 
