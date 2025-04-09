@@ -27,6 +27,12 @@ ANSI-92 is a syntax that helps you write portable, consistent SQL designed to wo
 
 Use this article as a starting point to learn how ANSI-92 queries work in ODC.
 
+<div class="warning" markdown="1">
+
+Support for querying data using SQL with Salesforce and SAP systems is still experimental.
+
+</div>
+
 ## Statements { #statements }
 
 SQL statements define the actions your query performs. Each statement type serves a specific purpose, such as retrieving or modifying data.
