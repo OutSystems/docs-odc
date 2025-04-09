@@ -27,7 +27,7 @@ ODC will automatically map value and attribute types as outlined in [External da
 
 Null value handling can be configured in ODC Portal as explained [here](../../../../integration-with-systems/external-databases/handle-null-values.md).
 
-## SQL Types
+## SQL types { #sql-types }
 
 | Type in SQL queries | Description                      | Range                                            | Example Literals                | Example Cast                             |
 |---------------------|----------------------------------|--------------------------------------------------|---------------------------------|------------------------------------------|
