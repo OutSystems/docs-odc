@@ -55,7 +55,7 @@ When executing multiple statements in an SQL Node, the result will be that of th
 
 <div class="info" markdown="1">
 
-Using entities and actions from more than one external system is currently not supported when using multiple statements.
+SQL queries using multiple statements must use entities and actions from the same external system.
 
 </div>
 
