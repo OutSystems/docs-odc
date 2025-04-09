@@ -112,8 +112,15 @@ For examples and usage guidance, see the article on [ANSI-92 operators and funct
 ## Data types { #data-types }
 
 SQL data types define the kind of data you can store and work with in your queries. ANSI-92 uses common types that are supported by most systems.
-ODC has an internal SQL type system with mappings to/from attribute data types in external systems.
-ODC will automatically map value and attribute types as outlined in [External data type mapping](../../../../integration-with-systems/external-databases/external-data-type.md) however. it's also possible to `CAST`expressions and attributes to convert them to a different type, refer to [Type conversion](ansi-92-operators.md#type-conversion) for more information.
+ODC has an internal SQL type system with mappings to/from attribute data types in external systems. 
+ODC will automatically map value and attribute types as outlined in [External data type mapping](../../../../integration-with-systems/external-databases/external-data-type.md) however. it's also possible to `CAST`expressions and attributes to convert them to a different type, refer to [Type conversion](ansi-92-operators.md#type-conversion) for more information. 
+
+<div class="info" markdown="1">
+
+Only the data types that have a mapping at [External data type mapping](../../../../integration-with-systems/external-databases/external-data-type.md) are supported. 
+
+</div>
+
 
 Null value handling can be configured in ODC Portal as explained [here](../../../../integration-with-systems/external-databases/handle-null-values.md).
 
