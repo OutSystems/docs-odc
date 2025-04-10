@@ -6,7 +6,7 @@ locale: en-us
 guid: b7e2daa5-b34c-4907-885b-56574bf14295
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=3101-11328
 audience:
   - mobile developers
   - frontend developers
@@ -20,16 +20,32 @@ topic:
   - consume-refresh-methods
 ---
 
-# Consume REST APIs
+# Use REST APIs in your app
 
-When you need to retrieve or manipulate information from another system, and that system provides REST APIs for that effect, you can consume a REST API in your application.  
-Start by looking into the documentation of the REST API you want to use and understand how it works. You'll need to gather the following information:
+You can use REST APIs in your app to retrieve or update data from an external systems or leverage the resources of your ODC tenant, such as users, groups, app roles. For detailed information about using resources of your ODC tenant at runtime, refer to [ODC REST APIs](../../reference/apis/public-rest-apis/overview.md). 
+
+To use the REST APIs in your app, you must consume the APIs in ODC Studio. 
+
+Before you consume the API, ensure that you have the following details from the API reference documentation.
 
 * Base URL
 * Security and authentication requirements
 * Methods definition (HTTP Method, URL Path, response format)
 
-Check how you can [Consume one or more REST API Methods](consume-a-rest-api.md) in ODC Studio.
+For authenticating the APIs, you must follow the authentication requirements of the external API.
+The external API can support any one of the following authentication methods:
+
+* **Basic authentication** - Configure the authentication credentials such as username and password while consuming the APIs. For detailed information, refer to [Configure basic authentication](#configure-basic-authentication).
+* **Token-based authentication** - For token-based authentication such as OAuth 2.0, you must implement logic to generate the access token and include the token in the header. ODC REST APIs follows OAuth 2.0 for authentication. 
+* **API Keys or other methods** – For any other authentication methods, get the keys and implement logic for configuring the neceessary headers.
+
+Here's the high-level process for consuming REST APIs in ODC Studio:
+
+* [Add a single API method](consume-a-rest-api.md#add-a-single-rest-api-method--single-method-) or [Add multiple API methods](consume-a-rest-api.md#add-several-methods-of-a-rest-api--all-methods-) by importing the OpenAPI specification file.
+* [Configure the API authentication](#configure-the-api-authentication) details for the REST API. For configuring basic authentication, refer to [Configure basic authentication](#configure-basic-authentication). For configuring token-based authentication, refer to [Configure token-based authentication](#configure-token-based-authentication).
+* (Optional) [Customize](simple-customizations.md) the request and response headers using specific callbacks.
+* If you want to configure base URL or basic authentication credentials for every stage then from ODC portal, [Configure](consume-a-rest-api.md#configure-api-endpoints-and-basic-authentication) the base URL and basic authentication credentials such as username and password.
+* [Use the API](consume-a-rest-api.md#use-a-rest-api-method-in-your-app--use-) in your app.
 
 <div class="info" markdown="1">
 
@@ -37,33 +53,37 @@ If you want to **expose** an OutSystems REST API, check [Expose REST APIs](../ex
 
 </div>
 
-## REST API authentication
+## Configure API authentication
 
-Each consumed REST API will have their own model of security and authentication process, which may imply the creation of an account, the registration for an API key or the usage of tokens. To consume a REST API in OutSystems you must understand and follow the provider's security model.
+Each REST API you consume has its own security and authentication requirements. This means you may need to create an account, obtain an API key, or use access tokens. To successfully consume a REST API in OutSystems, you must understand and comply with the security model defined by the API provider.
 
-REST APIs using **Basic Authentication** are supported out of the box in the "Consume REST API Method" dialog box described below. You can use the REST customization capabilities to add support for other authentication methods:
+ODC has built-in support for REST APIs that support **basic authentication**. For detailed information, refer to [Configure basic authentication](#configure-basic-authentication). 
 
-> **Warning:** OutSystems does not support self-signed certificates. The REST API must have a valid public certificate with a public certificate authority to ensure the request is accepted, either at the client or server side.
+To use other token-based authentication methods, refer to [Configure token-based authentication](#configure-token-based-authentication).
 
-* For token-based authentication, use the **OnBeforeRequest** callback to add the required HTTP authorization header to the outgoing requests. 
+<div class="warning" markdown=1>
 
-## Mapping REST data types to OutSystems data types
+OutSystems does not support self-signed certificates. The REST API must have a valid public certificate with a public certificate authority to ensure the request is accepted, either at the client or server side.
 
-When [consuming REST API Methods](consume-a-rest-api.md) in your app, OutSystems automatically generates the Structures for the Request and Response from the example you provide for them and maps the attributes into OutSystems Data Types as follows:
+</div>
 
-| JSON example | OutSystems Data Type | Comments |
-| ---| ---| ---- |
-| `{"quantity": 123456789}`| Long Integer | Highest value: 2^63-1 |
-| `{"totalprice": 12345678901, "amount": -3935.120}`| Decimal | If the value is an integer, but greater than or equal to 2^63, a decimal parameter is created. |
-| `{"createdon": "2014-12-31T23:59:59+01:00", "shippedon": "2015-01-01T19:00:00.256"}` | Date Time | If the ISO date contains information about the time zone, it's automatically converted to the local time of the server, with daylight savings applied. |
-| `{"scheduledstart": "/Date(1388534400000)/"}`| Date Time | WCF format |
-| `{"createdon": "2014-12-24"}`| Date | Format: YYYY-MM-DD |
-| `{"canupdate": true}`| Boolean |  |
-| `{"image-png": "data:image/png;base64,sample-base64-data"}`| Binary | The platform sends binary data as base64, and converts received base64 to binary when the attribute is set to binary. |
-| `{"name": "Christine Sharp"}`| Text | |
+### Configure basic authentication
 
-Data that can't be converted to one of the above data types is converted to Text.
+To configure basic authentication for the REST API, follow these steps:
+
+1. Once you have added the API in ODC Studio, from the properties of the API, choose the **Authentication Type** as **Basic authentication**.
+1. Go to **ODC portal** and from the app configuration, set the credentials (username and password) for basic authentication. The basic authentication credentials can be configured for every stage. For detailed information on configuration, refer to [Configuration base URL and authentication credentials](./consume-a-rest-api.md#configure-api-endpoints-and-basic-authentication).
+
+For detailed information, refer to [Consuming a REST API ODC training](https://learn.outsystems.com/training/journeys/consuming-rest-api-207/consuming-a-rest-api/odc/7996).
+
+### Configure token-based authentication
+
+ODC does not provide built-in support for token-based authentication such as OAuth 2.0 authorization. In such cases to authenticate the API call, you must must include the token in the request header.You can use the [**OnBeforeRequest**](simple-customizations.md) callback to dynamically add or update the token to the HTTP request header before sending the request. For detailed information, refer to [Example use case: Adding a header for token-based authentication](./simple-customizations.md#example-use-case-adding-a-header-for-token-based-authentication).
 
 ## Related resources
 
-* [Consuming REST APIs](https://learn.outsystems.com/training/journeys/consuming-rest-api-207) online course
+* [Consuming REST APIs ODC Online training](https://learn.outsystems.com/training/journeys/consuming-rest-api-207) online course
+* [Consume one or more REST API methods](consume-a-rest-api.md)
+* [Customize API request and response headers](simple-customizations.md)
+* [Configure base URL and basic authentication credentials](consume-a-rest-api.md#configure-api-base-url-and-basic-authentication)
+* [Use API in your app](consume-a-rest-api.md#use-a-rest-api-method-in-your-app--use-)
