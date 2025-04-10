@@ -30,21 +30,21 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 
 ## Comparison operators
 
-| Operator syntax                  | Description                                                                                                                                        | NULL Behaviour                                              |
-|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|
+| Operator syntax                    | Description                                                                                                                                        | NULL Behaviour                                              |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
 | `value1 = value2`                  | Whether *value1* is equal to *value2*                                                                                                              | NULL if any operand is NULL                                 |
 | `value1 <> value2`                 | Whether *value1* is not equal to *value2*                                                                                                          | NULL if any operand is NULL                                 |
-| `value1 > value2`                 | Whether *value1* is greater than *value2*                                                                                                          | NULL if any operand is NULL                                 |
+| `value1 > value2`                  | Whether *value1* is greater than *value2*                                                                                                          | NULL if any operand is NULL                                 |
 | `value1 >= value2`                 | Whether *value1* is greater than or equal to *value2*                                                                                              | NULL if any operand is NULL                                 |
-| `value1 < value2`                 | Whether *value1* is less than *value2*                                                                                                             | NULL if any operand is NULL                                 |
+| `value1 < value2`                  | Whether *value1* is less than *value2*                                                                                                             | NULL if any operand is NULL                                 |
 | `value1 <= value2`                 | Whether *value1* is less than or equal to *value2*                                                                                                 | NULL if any operand is NULL                                 |
-| `value IS NULL`                   | Whether *value* is null                                                                                                                            | TRUE if *value* is NULL                                     |
+| `value IS NULL`                    | Whether *value* is null                                                                                                                            | TRUE if *value* is NULL                                     |
 | `value IS NOT NULL`                | Whether *value* is not null                                                                                                                        | FALSE if *value* is NULL                                    |
 | `string1 LIKE string2`             | Whether *string1* matches pattern *string2*<br/>The pattern may contain the `%` (zero or more characters) and `_` (one character) wildcards        | NULL if any operand is NULL                                 |
 | `string1 NOT LIKE string2`         | Whether *string1* does not match pattern *string2*<br/>The pattern may contain the `%` (zero or more characters) and `_` (one character) wildcards | NULL if any operand is NULL                                 |
-| `value1 IN (value [, value]*)`    | Whether *value* is equal to a value in a list                                                                                                      | NULL if *value1* is NULL or if the list only contains NULLs |
+| `value1 IN (value [, value]*)`     | Whether *value* is equal to a value in a list                                                                                                      | NULL if *value1* is NULL or if the list only contains NULLs |
 | `value1 NOT IN (value [, value]*)` | Whether *value* is not equal to every value in a list                                                                                              | NULL if *value1* is NULL or if the list only contains NULLs |
-| `value IN (sub-query)`            | Whether *value* is equal to a row returned by *sub-query*                                                                                          | NULL if *value* is NULL                                     |
+| `value IN (sub-query)`             | Whether *value* is equal to a row returned by *sub-query*                                                                                          | NULL if *value* is NULL                                     |
 | `value NOT IN (sub-query)`         | Whether *value* is not equal to every row returned by *sub-query*                                                                                  | NULL if *value* is NULL                                     |
 | `EXISTS (sub-query)`               | Whether *sub-query* returns at least one row                                                                                                       | Never NULL                                                  |
 | `UNIQUE (sub-query)`               | Whether the rows returned by *sub-query* are unique (ignoring null values)                                                                         | Never NULL                                                  |
@@ -55,20 +55,20 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 
 ## Logical operators
 
-| Operator syntax       | Description                                      | Null Behaviour              |
-|:----------------------|:-------------------------------------------------|-----------------------------|
+| Operator syntax         | Description                                      | Null Behaviour              |
+| :---------------------- | :----------------------------------------------- | --------------------------- |
 | `boolean1 OR boolean2`  | Whether *boolean1* is TRUE or *boolean2* is TRUE | NULL if any operand is NULL |
 | `boolean1 AND boolean2` | Whether *boolean1* and *boolean2* are both TRUE  | NULL if any operand is NULL |
 | `NOT boolean`           | Whether *boolean* is not TRUE                    | NULL if *boolean* is NULL   |
 | `boolean IS FALSE`      | Whether *boolean* is FALSE                       | FALSE if *boolean* is NULL  |
 | `boolean IS NOT FALSE`  | Whether *boolean* is not FALSE                   | TRUE if *boolean* is NULL   |
-| `boolean IS TRUE`      | Whether *boolean* is TRUE                        | FALSE if *boolean* is NULL  |
-| `boolean IS NOT TRUE`  | Whether *boolean* is not TRUE                    | TRUE if *boolean* is NULL   |
+| `boolean IS TRUE`       | Whether *boolean* is TRUE                        | FALSE if *boolean* is NULL  |
+| `boolean IS NOT TRUE`   | Whether *boolean* is not TRUE                    | TRUE if *boolean* is NULL   |
 
 ## Arithmetic operators and functions { #arithmetic-operators-and-functions }
 
-| Operator syntax                 | Description                                                                                          | NULL Behaviour              |
-|---------------------------------|------------------------------------------------------------------------------------------------------|-----------------------------|
+| Operator syntax                   | Description                                                                                          | NULL Behaviour              |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------- |
 | `+ numeric `                      | Returns *numeric*                                                                                    | NULL if *numeric* is NULL   |
 | `- numeric`                       | Returns negative *numeric*                                                                           | NULL if *numeric* is NULL   |
 | `numeric1 + numeric2 `            | Returns *numeric1* plus *numeric2*                                                                   | NULL if any operand is NULL |
@@ -235,7 +235,7 @@ Refer to [Data types in SQL with external entities](ansi-92-data-types.md) for m
 | Value Type                                  | Target Type                                                  | Notes                                                                                                                                        | Examples                                                                             |
 |--------------------------------------------|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
 | BOOLEAN                                     | CHAR<br/>VARCHAR                                             |                                                                                                                                              | TRUE -> 'TRUE'<br/>FALSE -> 'FALSE'                                                  |
-| TINYINT<br/>SMALLINT<br/>INTEGER<br/>BIGINT | BOOLEAN                                                      | Returns `FALSE` if the value is `0`, otherwise returns `TRUE`                                                                                | 1 -> TRUE<br/>0 -> FALSE<br/>-1 -> TRUE                                              |
+| TINYINT<br/>SMALLINT<br/>INTEGER<br/>BIGINT | BOOLEAN                                                      | Returns FALSE if the value is 0, otherwise returns TRUE                                                                                      | 1 -> TRUE<br/>0 -> FALSE<br/>-1 -> TRUE                                              |
 | TINYINT<br/>SMALLINT<br/>INTEGER<br/>BIGINT | CHAR<br/>VARCHAR                                             |                                                                                                                                              | 123 -> '123'<br/>-123 -> '-123'                                                      |
 | TINYINT<br/>SMALLINT<br/>INTEGER<br/>BIGINT | NUMERIC<br/>DECIMAL<br/>FLOAT<br/>REAL<br/>DOUBLE            |                                                                                                                                              | 123 -> 1.23E2                                                                        |
 | TINYINT<br/>SMALLINT<br/>INTEGER<br/>BIGINT | TIMESTAMP                                                    | Milliseconds since 1970-01-01 00:00:00                                                                                                       | 123 -> 1970-01-01 00:00:00.123                                                       |

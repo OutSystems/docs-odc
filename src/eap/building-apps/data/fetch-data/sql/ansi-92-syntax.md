@@ -43,7 +43,9 @@ The user assigned to the [connection](../../../../integration-with-systems/exter
 
 </div>
 
-Entity names must be enclosed in `{ }` and attributes must be enclosed in `[ ]`. For example, entity `{Customers}` and attribute `[Id]`.
+Entity names must be enclosed in `{ }` and attributes must be enclosed in `[ ]`. For example, entity `{Customers}` and attribute `[Id]`. Attributes should always be qualified using the `{Customers}.[Id]` syntax to ensure that attributes which are renamed in ODC Portal have the correct name in the query to the external system.
+
+An important difference to note in ANSI-92 SQL compared to some commonly used database systems is that unquoted identifiers are automatically uppercased. For example, `subquery.id` is converted to `SUBQUERY.ID`. To preserve the original letter casing of identifiers, they must be enclosed in `[ ]` or `" "`. Identifiers are case-sensitive and so care must be taken when working with a combination of quoted and unquoted identifiers. For example, `subquery.[id]` isn't a valid reference to `subquery.id` because `id` isn't considered to be the same as `ID`.
 
 ### Multiple statements { #multiple-statements }
 
@@ -55,25 +57,25 @@ When executing multiple statements in an SQL Node, the result will be that of th
 
 <div class="info" markdown="1">
 
-SQL queries using multiple statements must use entities and actions from the same [connection](../../../../integration-with-systems/external-databases/create-connection-external-data.md).
+All statements in a multiple statement SQL Node must use entities and actions from the same [connection](../../../../integration-with-systems/external-databases/create-connection-external-data.md).
 
 </div>
 
-The following table lists the compatibility of the use of multiple statements with each data source as well the transaction support.
+The following table lists the compatibility of multiple statements with each data source as well as whether or not the statements will be executed in a transaction.
 
-| Data source | Multiple statements | Transaction support |
-| ----- | ----- | ----- |
-| Microsoft SQL Server | Yes | Yes |
-| Oracle | Yes | Yes |
-| PostgreSQL | Yes | Yes |
-| Salesforce | Yes | No |
-| SAP OData | Yes | No |
+| Data source          | Multiple statements | Executed in transaction |
+| -------------------- | ------------------- | ----------------------- |
+| Microsoft SQL Server | Yes                 | Yes                     |
+| Oracle               | Yes                 | Yes                     |
+| PostgreSQL           | Yes                 | Yes                     |
+| Salesforce           | Yes                 | No                      |
+| SAP OData            | Yes                 | No                      |
 
 #### Syntax for multiple statements { #syntax-multiple-statements }
 
 `statement ; statement;`
 
-The following is an example of a multiple statement:
+The following is an example of using multiple statements:
 
 ```sql
 \-- comments can be included like this
@@ -82,7 +84,7 @@ CALL "connectionId"."actionName" ("param1" = 'test', "param2" = @dynamic1);
 
 DELETE FROM {entity1};
 
-INSERT INTO {entity2} ([attribute1], [attribute2]) VALUES ('abc', @dynamic2);
+INSERT INTO {entity2} ({entity2}.[attribute1], {entity2}.[attribute2]) VALUES ('abc', @dynamic2);
 
 SELECT {entity2}.* FROM {entity2};
 

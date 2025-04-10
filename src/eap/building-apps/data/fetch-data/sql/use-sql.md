@@ -51,7 +51,8 @@ You can also test SQL queries directly in ODC Studio. This helps you validate th
 
 <div class="warning" markdown="1">
 
-When querying external entities, avoid using Test Query in ODC Studio for SQL nodes that contain ```INSERT``` , ```UPDATE``` , ```DELETE```, or ```CALL``` statements. These operations will be committed immediately—even if you don’t include an explicit ```COMMIT``` statement. This can lead to unintended changes in the external database.
+When querying external entities, be careful when using Test Query in ODC Studio for SQL nodes that contain ```INSERT``` , ```UPDATE``` , ```DELETE```, or ```CALL``` statements.
+These statements will be committed immediately and this can lead to unintended changes in the external database.
 This doesn't apply to internal entities. OutSystems protects internal data during test queries, and the use of ```COMMIT``` isn't allowed.
 
 </div>
