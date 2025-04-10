@@ -78,7 +78,7 @@ The following table lists the compatibility of multiple statements with each dat
 The following is an example of using multiple statements:
 
 ```sql
-\-- comments can be included like this
+-- comments can be included like this
 
 CALL "connectionId"."actionName" ("param1" = 'test', "param2" = @dynamic1);
 
