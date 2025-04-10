@@ -30,7 +30,7 @@ Null value handling can be configured in ODC Portal as explained [here](../../..
 ## SQL types { #sql-types }
 
 | Type in SQL queries | Description                      | Range                                            | Example Literals                | Example Cast                             |
-| ------------------- | -------------------------------- | ------------------------------------------------ | ------------------------------- | ---------------------------------------- |
+|---------------------|----------------------------------|--------------------------------------------------|---------------------------------|------------------------------------------|
 | BOOLEAN             | Logical values                   |                                                  | TRUE, FALSE                     | CAST(1 AS BOOLEAN)                       |
 | TINYINT             | 1 byte signed integer            | [-128, 127]                                      |                                 | CAST(100 AS TINYINT)                     |
 | SMALLINT            | 2 byte signed integer            | [-32768, 32767]                                  |                                 | CAST(1234 AS SMALLINT)                   |

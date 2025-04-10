@@ -64,7 +64,7 @@ All statements in a multiple statement SQL Node must use entities and actions fr
 The following table lists the compatibility of multiple statements with each data source as well as whether or not the statements will be executed in a transaction.
 
 | Data source          | Multiple statements | Executed in transaction |
-| -------------------- | ------------------- | ----------------------- |
+|----------------------|---------------------|-------------------------|
 | Microsoft SQL Server | Yes                 | Yes                     |
 | Oracle               | Yes                 | Yes                     |
 | PostgreSQL           | Yes                 | Yes                     |

@@ -85,7 +85,7 @@ CALL "connectionId"."actionName" ('test', 123, "param" = @dynamic);
 ## Compatibility { #compatibility }
 
 | Data source          | Supported actions | Positional parameters | Named parameters |
-| -------------------- | ----------------- | --------------------- | ---------------- |
+|----------------------|-------------------|-----------------------|------------------|
 | Microsoft SQL Server | Stored procedures | Yes                   | No               |
 | Oracle               | Stored procedures | Yes                   | Yes              |
 | PostgreSQL           | Stored procedures | Yes                   | Yes              |

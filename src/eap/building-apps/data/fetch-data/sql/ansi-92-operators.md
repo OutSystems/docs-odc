@@ -31,7 +31,7 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 ## Comparison operators
 
 | Operator syntax                    | Description                                                                                                                                        | NULL Behaviour                                              |
-| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|
 | `value1 = value2`                  | Whether *value1* is equal to *value2*                                                                                                              | NULL if any operand is NULL                                 |
 | `value1 <> value2`                 | Whether *value1* is not equal to *value2*                                                                                                          | NULL if any operand is NULL                                 |
 | `value1 > value2`                  | Whether *value1* is greater than *value2*                                                                                                          | NULL if any operand is NULL                                 |
@@ -56,7 +56,7 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 ## Logical operators
 
 | Operator syntax         | Description                                      | Null Behaviour              |
-| :---------------------- | :----------------------------------------------- | --------------------------- |
+|:------------------------|:-------------------------------------------------|-----------------------------|
 | `boolean1 OR boolean2`  | Whether *boolean1* is TRUE or *boolean2* is TRUE | NULL if any operand is NULL |
 | `boolean1 AND boolean2` | Whether *boolean1* and *boolean2* are both TRUE  | NULL if any operand is NULL |
 | `NOT boolean`           | Whether *boolean* is not TRUE                    | NULL if *boolean* is NULL   |
@@ -68,7 +68,7 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 ## Arithmetic operators and functions { #arithmetic-operators-and-functions }
 
 | Operator syntax                   | Description                                                                                          | NULL Behaviour              |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------- |
+|-----------------------------------|------------------------------------------------------------------------------------------------------|-----------------------------|
 | `+ numeric `                      | Returns *numeric*                                                                                    | NULL if *numeric* is NULL   |
 | `- numeric`                       | Returns negative *numeric*                                                                           | NULL if *numeric* is NULL   |
 | `numeric1 + numeric2 `            | Returns *numeric1* plus *numeric2*                                                                   | NULL if any operand is NULL |
