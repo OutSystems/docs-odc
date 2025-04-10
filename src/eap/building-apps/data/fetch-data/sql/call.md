@@ -60,7 +60,7 @@ For all other actions, `CALL` will return a single record containing a value of 
 ## Known issues
 
 * `CALL` can only be used in a multi statement context with at least one other statement that uses an entity from the same connection.
-* Named assignments can't be used with Microsoft SQL Server
+* Named assignments can't be used with Microsoft SQL Server. This means that all optional parameters must be passed in the call.
 
 ## Examples
 
