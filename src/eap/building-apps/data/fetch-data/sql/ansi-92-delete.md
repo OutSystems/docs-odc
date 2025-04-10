@@ -56,5 +56,3 @@ DELETE FROM {entity} WHERE {entity}.[id] = 1 OR {entity}.[id] = @dynamic;
 | PostgreSQL           | Yes       |    
 | Salesforce           | Yes       |     
 | SAP OData            | Yes. The entity must have a `DELETE` API. |     
-
-

@@ -86,8 +86,11 @@ Only the data types that have a mapping are supported. Data types not present in
 
 Although Salesforce supports multiple data types in the built-in tables, the following mapping are for the custom columns:
 
-| Salesforce data type                                                                                                                 | OutSystems data type |
-|--------------------------------------------------------------------------------------------------------------------------------------|----------------------|
-|TINYINT<br/>SMALLINT<br/>INT<br/>BIGINT<br/>FLOAT<br/>DECIMAL<br/>DOUBLE<br/>NUMERIC<br/>VARCHAR<br/>BIT<br/>BINARY<br/>UUID<br/>Time | Text                 |
-|Boolean                                                                                                                               |Boolean               |
-|Date                                                                                                                                  | Date                 |
+| Type in SQL queries | OutSystems data type | Salesforce data type                                                                 |
+|---------------------|----------------------|--------------------------------------------------------------------------------------|
+| BOOLEAN             | Boolean              | BOOLEAN (must have a default value)                                                  |
+| FLOAT<br/>REAL      | Text                 | TINYINT<br/>SMALLINT<br/>INT<br/>BIGINT<br/>FLOAT<br/>DECIMAL<br/>DOUBLE<br/>NUMERIC |
+| VARCHAR             | Text                 | BINARY<br/>BIT<br/>UUID<br/>VARCHAR                                                  |
+| DATE                | Date                 | DATE                                                                                 |
+| TIME                | Text                 | TIME                                                                                 |
+| TIMESTAMP           | Timestamp            | TIMESTAMP                                                                            |
