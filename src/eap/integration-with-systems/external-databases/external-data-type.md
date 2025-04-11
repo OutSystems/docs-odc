@@ -49,7 +49,7 @@ Only the data types that have a mapping are supported. Data types not present in
 
 | Type in SQL queries | OutSystems Data Type               | Microsoft SQL Server                                                       | Oracle                                                                | PostgreSQL               | Salesforce       | SAP OData        |
 |---------------------|------------------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------|--------------------------|------------------|------------------|
-| BOOLEAN             | Boolean                            | BIT<br/>DECIMAL(1,0)<br/>NUMERIC(1,0)                                      | NUMBER(1, 0)                                                          | BIT<br/>BOOL             | BIT              |                  |
+| BOOLEAN             | Boolean                            | BIT<br/>DECIMAL(1,0)<br/>NUMERIC(1,0)                                      | NUMBER(1, 0)                                                          | BIT(1)<br/>BOOL          | BIT              |                  |
 | TINYINT             | Integer                            | TINYINT                                                                    |                                                                       |                          |                  |                  |
 | SMALLINT            | Integer                            | SMALLINT                                                                   |                                                                       | INT2<br/>SMALLSERIAL     |                  |                  |
 | INTEGER             | Integer                            | INT                                                                        |                                                                       | INT4<br/>SERIAL          |                  | INT              |
@@ -86,8 +86,11 @@ Only the data types that have a mapping are supported. Data types not present in
 
 Although Salesforce supports multiple data types in the built-in tables, the following mapping are for the custom columns:
 
-| Salesforce data type                                                                                                                 | OutSystems data type |
-|--------------------------------------------------------------------------------------------------------------------------------------|----------------------|
-|TINYINT<br/>SMALLINT<br/>INT<br/>BIGINT<br/>FLOAT<br/>DECIMAL<br/>DOUBLE<br/>NUMERIC<br/>VARCHAR<br/>BIT<br/>BINARY<br/>UUID<br/>Time | Text                 |
-|Boolean                                                                                                                               |Boolean               |
-|Date                                                                                                                                  | Date                 |
+| Type in SQL queries | OutSystems data type | Salesforce data type                                                                 |
+|---------------------|----------------------|--------------------------------------------------------------------------------------|
+| BOOLEAN             | Boolean              | BOOLEAN (must have a default value)                                                  |
+| FLOAT<br/>REAL      | Text                 | TINYINT<br/>SMALLINT<br/>INT<br/>BIGINT<br/>FLOAT<br/>DECIMAL<br/>DOUBLE<br/>NUMERIC |
+| VARCHAR             | Text                 | BINARY<br/>BIT<br/>UUID<br/>VARCHAR                                                  |
+| DATE                | Date                 | DATE                                                                                 |
+| TIME                | Text                 | TIME                                                                                 |
+| TIMESTAMP           | Timestamp            | TIMESTAMP                                                                            |
