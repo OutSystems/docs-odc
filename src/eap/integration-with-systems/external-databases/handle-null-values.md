@@ -44,7 +44,7 @@ An entity level configuration takes priority over the connection level.
 Null behavior doesn't apply to primary and foreign keys. They keep null values in the database.
 
 Null behavior applies to SQL Nodes with external entities when using [SELECT](../../building-apps/data/fetch-data/sql/ansi-92-select.md) but only if the external entity is set as the output type.
-When using a structure as the output type, null values will be converted to the default values configured on the structure attributes. If no default value is configured, then the default value for the OutSystems [data type](../../building-apps/data/data-types.md) applies.
+When using a structure as the output type, null values will be converted to the default values configured on the structure attributes. If no default value is configured for a given structure attribute, then the default value for the OutSystems [data type](../../building-apps/data/data-types.md) applies.
 
 Data manipulation statements such as [INSERT/UPSERT](../../building-apps/data/fetch-data/sql/ansi-92-insert.md), [UPDATE](../../building-apps/data/fetch-data/sql/ansi-92-update.md), and [CALL](../../building-apps/data/fetch-data/sql/call.md) will not convert default values to null values, they will be passed without modification to the external system. However, it is possible to implement this conversion using the `NULLIF` function or `CASE` operator, for more information please see [Conditional functions and operators](../../building-apps/data/fetch-data/sql/ansi-92-operators.md#conditional-functions-and-operators).
 
