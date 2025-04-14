@@ -27,7 +27,7 @@ OutSystems provides various ways to configure your mobile app, including low-cod
 
 ## Mobile tab settings for quick setting
 
-To access the dialog, click the app name and then select the **Mobile** tab. The mobile properties connect to extensibility configuration, so once you configure a property in the mobile tab, this same property changes in the extensibility configuration script. The same applies in the opposite way. If you change the script, the change also takes place in the mobile tab properties.
+To access the dialog, click the app name and then select the **Mobile** tab. The mobile properties connect to extensibility configuration, so once you configure a property in the **Mobile** tab, this same property changes in the extensibility configuration script. The same applies in the opposite way. If you change the script, the change also takes place in the **Mobile** tab properties.
 
 Since these properties connect to extensibility configuration, they function correctly only if your extensibility scripts are error-free. ODC Studio shows the warning message in case of errors.
 

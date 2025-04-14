@@ -22,7 +22,7 @@ topic:
 
 # Advanced configurations for mobile app
 
-ODC provides ways to configure your mobile app's native shell. Most preferences can be configured using the extensibility, which receives [the configuration JSON](extensibility-configurations-json-schema.md). Some of these preferences you can found in the **Mobile** to change the most used preferences in the UI.
+ODC provides ways to configure your mobile app's native shell. Most preferences can be configured using the extensibility, which receives [the configuration JSON](extensibility-configurations-json-schema.md). Some of these preferences you can found in the **Mobile** tab to change the most used preferences in the UI.
 
 For control and configuring options not exposed in the **Mobile** tab, you can edit the Extensibility Configurations. This page details how to modify the JSON structure to achieve these customizations.
 
@@ -63,7 +63,7 @@ Once you publish your app, go to **ODC Portal** > **(your app)** > **Configurati
 
 <div class="info" markdown="1">
 
-Changing the values of Setting in ODC Portal does not trigger automatic generation of a new mobile package. See [Create mobile app package](creating-mobile-package.md) for more information on how to create a package for iOS or Android. 
+Changing the values of Setting in ODC Portal doesn't trigger automatic generation of a new mobile package. See [Create mobile app package](creating-mobile-package.md) for more information on how to create a package for iOS or Android. 
 
 </div>
 
@@ -124,7 +124,6 @@ You could also use a secret to use an API key on a preference on a plugin, for e
 ### Reference an image
 
 You can also reference images in the JSON file.
-
     
     {
     (...)

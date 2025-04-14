@@ -17,7 +17,7 @@ coverage-type:
 
 # Extensibility configurations JSON schema
 
-The **Extensibility Configurations** field provides additional settings as a JSON string. You can change a number of settings in the user interface of the IDE, such as the name of the app. Some advanced settings are available in the **Extensibility Configurations** only (for example, adding custom mobile plugins). You can edit **Extensibility Configurations** in the properties of your home module.
+The **Extensibility Configurations** field provides additional settings as a JSON string. You can change a number of settings in ODC Studio, such as the name of the app. Some advanced settings are available in the **Extensibility Configurations** only (for example, adding custom mobile plugins). You can edit **Extensibility Configurations** in the properties of your home module.
 
 <div class="info" markdown="1">
 
