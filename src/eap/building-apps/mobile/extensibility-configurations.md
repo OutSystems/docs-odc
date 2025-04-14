@@ -22,22 +22,28 @@ topic:
 
 # Advanced configurations for mobile app
 
-Use Extensibility Configurations in the app properties to create a JSON with advanced configurations. Mobile Apps Build Service (MABS) in OutSystems Developer Cloud (ODC) uses the JSON as additional settings when creating your mobile package for iOS or Android. Extensibility Configurations lets you access options like defining a portrait or landscape orientation, splash screen, or a minimum mobile platform version.
+ODC provides ways to configure your mobile app's native shell. Most preferences can be configured using the extensibility, which receives [the configuration JSON](extensibility-configurations-json-schema.md). Some of these preferences you can found in the **Mobile** tab to change the most used preferences in the UI.
 
-You set the default values of Extensibility Configurations for Mobile Apps and Libraries in the ODC Studio. You can then change the values in the ODC Portal.
+For control and configuring options not exposed in the **Mobile** tab, you can edit the Extensibility Configurations. This page details how to modify the JSON structure to achieve these customizations.
 
-Here are some functionalities you can change with Extensibility Configurations:
+Some of the functionalities you can change with Extensibility Configurations include:
 
-* Add custom mobile plugins
-* Change deep link behavior
-* Configure the domains
-* Customize the status bar 
-* Modify the app icon
-* Set up a splash screen
+* Defining portrait or landscape orientation
+* Setting up a splash screen
+* Defining a minimum mobile platform version
+* Adding mobile plugins
+* Changing deep link behavior
+* Configuring domains
+* Customizing the status bar
+* Modifying the app icon
+
+## Managing configurations across stages
+
+Define default Extensibility Configurations in ODC Studio. You can then override these defaults in the ODC Portal for deployment stages (for example, development or production) to apply environment settings. Portal configurations take precedence over Studio defaults during deployment to that stage.
 
 ## Extensibility Configurations editor
 
-In ODC Studio, open your mobile app, and under **Edit app properties...** go to **Extensibility**. Double-click the field to open the editor.
+In ODC Studio, open your mobile app, and under **Edit app properties** go to **Extensibility**. Double-click the field to open the editor.
 
 ![Screenshot of the Extensibility Configurations editor in OutSystems Developer Cloud Studio with areas A, B, and C highlighted](images/extensibility-configurations-editor-odcs.png "Extensibility Configurations Editor in ODC Studio")
 
@@ -67,7 +73,7 @@ Here are some use cases of the JSON and how you can change behavior of your mobi
 
 ###  Lock the screen orientation
 
-The value is hard-coded and lock the screen to portrait.
+The value is hard-coded and locks the screen to portrait.
 
     {
     (...)
@@ -111,14 +117,13 @@ For example, you may need to point to a private git repository accessed by a tok
         (...)
         }
 
-1. Mark it as a secert and set its value with your secret, for example `"https://[TOKEN]@github.com/OutSystems/cordova-plugin-camera.git#v1"`
+1. Mark it as a secret and set its value with your secret, for example `"https://[TOKEN]@github.com/OutSystems/cordova-plugin-camera.git#v1"`
 
 You could also use a secret to use an API key on a preference on a plugin, for example.
 
 ### Reference an image
 
 You can also reference images in the JSON file.
-
     
     {
     (...)

@@ -5,7 +5,7 @@ locale: en-us
 guid: 6B0090D9-8EE9-479F-9251-CCB490D2EBB6
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?node-id=3570-10
 audience:
   - mobile developers
   - frontend developers
@@ -33,27 +33,32 @@ OutSystems offers only a paid version of ODC. To learn more about how to get ODC
 
 ## Access the ODC Portal
 
-Open the email and locate the link to the ODC Portal. Then click the link to go to the login page.
+When your company acquires ODC you'll be registered as user, this will generate an email, from which you can start using ODC. To do it, open the email and locate the link to the ODC Portal. Then click the link to go to the login page.
 
-![Screenshot of the OutSystems Developer Cloud Portal interface showing various management options such as Apps, Delivery, Monitoring, Users & Access, Configurations, and Forge](images/vacation-app-pl.png "ODC Portal Interface")
+**ODC Portal** provides a unified experience that consolidates all your SDLC experience in one place. The ODC Portal and ODC Studio work together, making it quick to get the tools you need to develop and deploy your apps.
 
-The **ODC Portal** provides a unified experience that consolidates your app and user management experience in one place. The ODC Portal and ODC Studio work together, making it quick to get the tools you need to develop and deploy your apps.
+![Screenshot of the OutSystems Developer Cloud Portal interface showing various management options such as Apps, Delivery, Monitoring, Users & Access, Configurations, and Forge](images/apps-pl.png "ODC Portal Interface")
 
 From the ODC Portal, you have access to:
 
-* **Apps** - use to access all your apps and libraries
-* **Delivery** - use to deploy apps, view apps deployed to a specific stage, and their delivery status
-* **Monitoring** - use to view all logs and activities
-* **Users & access** - use to invite users, view a list of user, or delete, and deactivate users
-* **Configurations** - use to configure emails and domains for each stage
+* **Create** - use to access all your apps and libraries and workflows
+* **Deliver** - use to deploy apps, view apps deployed to a specific stage, and their delivery status
+* **Monitor** - use to view all logs, traces and analytics
+* **Analyze** - use to check and ensure code quality and app security
+* **Integrate** - use to integrate your apps with other systems
+* **Manage** - use to do all your user management and API permissions management
+* **Configure** - use to make all your relevant configurations
 * **Forge** - use to access a repository of apps and components developed by a community of ODC developers to create your own apps.
 
 ## Create an app
 
-From the ODC Portal, when you click **Create app**, ODC automatically opens ODC Studio and displays some choices. You can select:
+From the ODC Portal, when you click **Create**, ODC gives you the option to create an app:
 
-* **Apps** to create a new Web, Tablet, or Phone app from scratch
-* **Library** to create a new library from scratch
+* With Mentor, OutSystems AI App generator, where from a prompt you can use AI to generate your app.
+* Using ODC Studio, which if select, automatically opens ODC Studio and displays some choices. From it, you can select:
+
+  * **App** to create a new Web, Tablet, or Phone app from scratch
+  * **Library** to create a new library from scratch
 
 You create apps in the ODC Portal, and then you use ODC Studio to build out your app. In ODC you deploy to a **stage**. A stage, such as Development, is a step within your continuous delivery pipeline.
 

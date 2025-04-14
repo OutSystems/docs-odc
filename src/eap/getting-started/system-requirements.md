@@ -171,7 +171,6 @@ The general platform limits are:
 | ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
 | DB backup retention (days)               |        30 | The maximum number of days database backups are retained. |
 | Expose REST API method timeout (seconds) |        60 | The maximum amount of time an Expose REST API method executes before timing out. |
-| Max requests (per IP)                    |     5,000 | The maximum number of HTTP requests that can be made from a given IP address within a 5-minute window across all stages. |
 | Service action timeout (seconds)         |       100 | The time a service action waits for a response before timing out. |
 | Timer execution timeout (minutes)        |        60 | The maximum time a timer can execute. |
 | Entity Action Execution duration (seconds) |        30 | The maximum execution duration of a single Entity Action in seconds. |

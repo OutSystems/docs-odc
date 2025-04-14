@@ -1972,7 +1972,7 @@
           "users"
         ],
         "summary": "Retrieves an user.",
-        "description": "Retrieves detailed information about a user using the user's key.\n\nYou need the **User management > View organization members** or **User management > View end users** permissions.",
+        "description": "Retrieves detailed information about a user using the user's key.\n\nTo get the details of a user that has end-user roles, the API Client needs the **User management > View end users** permission. \n\n To get the details of a user that has organization roles, the API Client needs the **User management > View organization members** permission. \n\n To get the details of a user without roles the API client needs the **User management > Manage users permission**.",
         "operationId": "UserProfile_GetUser",
         "parameters": [
           {

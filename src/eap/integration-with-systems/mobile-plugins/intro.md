@@ -42,7 +42,7 @@ The table shows the OutSystems-supported mobile plugins that you can find in the
 | Dynamic Links | Firebase-based plugin that lets you manage links outside of your app. | No |
 | File               | Manage files and folders within the app sandbox.             | No               |
 | File Transfer      | Upload and download files in background.                     | Yes              |
-| File Viewer        | View remote or app resource files.                           | Yes              |
+| File Viewer        | View remote or app resource files.                           | No               |
 | Health & Fitness   | Provides access to health and fitness data. Uses HealthKit API for iOS and Health Connect API for Android. | No          |
 | InAppBrowser   | Open external URLs directly in your application. | No          |
 | Key Store          | Store encrypted key-value pairs with optional authentication. | No               |
