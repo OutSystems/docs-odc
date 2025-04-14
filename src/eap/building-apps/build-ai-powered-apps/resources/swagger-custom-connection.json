@@ -1,0 +1,153 @@
+{
+    "swagger":"2.0",
+    "info":{
+        "title":"ProxyServiceCustomAI",
+        "description":"Proxy Service for Custom AI Search",
+        "version":"1"
+    },
+    "basePath":"/AISearchSystemsProxyService/rest/ProxyServiceCustomAI",
+    "schemes":["https"],
+    "paths":{
+        "/CustomAISearch":{
+            "post":{
+                "description":"",
+                "operationId":"CustomAISearch",
+                "consumes":["application/json"],
+                "produces":["application/json"],
+                "parameters":[{
+                    "name":"Request",
+                    "in":"body",
+                    "description":"",
+                    "required":true,
+                    "schema":{
+                        "$ref":"#/definitions/RequestStructure_Ask"
+                    }
+                }],
+                "responses":{
+                    "200":{
+                        "description":"Success response",
+                        "schema":{
+                            "$ref":"#/definitions/ResponseStructure_Ask"
+                        }
+                    },
+                    "default": {
+                      "description": "Error response",
+                      "schema": {
+                        "$ref": "#/definitions/ErrorResponse"
+                      }
+                    }
+                }
+            }
+        }
+    },
+    "definitions":{
+        "DocumentItem":{
+            "description":"",
+            "type":"object",
+            "properties":{
+                "id":{
+                    "type":"string",
+                    "default":""
+                },
+                "title":{
+                    "type":"string",
+                    "default":""
+                },
+                "content":{
+                    "type":"string",
+                    "default":""
+                },
+                "url":{
+                    "type":"string",
+                    "default":""
+                },
+                "attributes":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/FilterItem"
+                    }
+                },
+                "score":{
+                    "type":"number",
+                    "example":0.1
+                },
+                "extendedProperties":{
+                    "type":"string",
+                    "default":""
+                }
+            }
+        },
+        "RequestStructure_Ask":{
+            "description":"",
+            "type":"object",
+            "properties":{
+                "fullTextSearch":{
+                    "type":"string",
+                    "default":""
+                },
+                "filters":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/FilterItem"
+                    }
+                },
+                "pageSize":{
+                    "type":"integer",
+                    "example":10,
+                    "format":"int32"
+                },
+                "pageNumber":{
+                    "type":"integer",
+                    "example":1,
+                    "format":"int32"
+                },"minimumScore":{
+                    "type":"number",
+                    "example":0.1
+                },
+                "extendedProperties":{
+                    "type":"string",
+                    "default":""
+                }
+            }
+        },
+        "ResponseStructure_Ask":{
+            "description":"",
+            "type":"object",
+            "properties":{
+                "documents":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/DocumentItem"
+                    }
+                }
+            }
+        },
+        "FilterItem":{
+            "description":"",
+            "type":"object",
+            "properties":{
+                "name":{
+                    "type":"string",
+                    "default":""
+                },
+                "value":{
+                    "type":"string",
+                    "default":""
+                }
+            }
+        },
+        "ErrorResponse": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "object",
+                    "properties": {
+                        "message": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

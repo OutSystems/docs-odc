@@ -20,38 +20,46 @@
 - topics:
     # AI Mentor
     - href: eap/building-apps/ai-mentor/intro.md
-    # AI Agent Builder
-    - href: eap/building-apps/use-ai/intro.md
+    # Build AI-powered apps
+    - href: eap/building-apps/build-ai-powered-apps/intro.md
     - topics:
-        - href: eap/building-apps/use-ai/overall-process.md
-        # Configure model
-        - href: eap/building-apps/use-ai/configure-model/intro.md
+        - href: eap/building-apps/build-ai-powered-apps/ai-models.md
         - topics:
-            - href: eap/building-apps/use-ai/configure-model/configure-azure-model.md
-            - href: eap/building-apps/use-ai/configure-model/add-azure-model-to-aibuilder.md
-            - href: eap/building-apps/use-ai/configure-model/configure-aws-model.md
-            - href: eap/building-apps/use-ai/configure-model/add-aws-model-to-aibuilder.md
-            - href: eap/building-apps/use-ai/configure-model/add-custom-ai-model.md
-            - href: eap/building-apps/use-ai/configure-model/aiab-custom-model-api-contract.md        
-        # Configure data source
-        - href: eap/building-apps/use-ai/configure-data-source/intro.md
+            - href: eap/building-apps/build-ai-powered-apps/add-ai-models.md
+            - href: eap/building-apps/build-ai-powered-apps/add-ai-search-services.md
+            - href: eap/building-apps/build-ai-powered-apps/integrate-ai-models-logic-rag.md
+        # AI Agent Builder
+        - href: eap/building-apps/use-ai/intro.md
         - topics:
-            - href: eap/building-apps/use-ai/configure-data-source/configure-azure-data-source.md
-            - href: eap/building-apps/use-ai/configure-data-source/add-azure-data-source-to-aibuilder.md
-            - href: eap/building-apps/use-ai/configure-data-source/configure-aws-data-source.md
-            - href: eap/building-apps/use-ai/configure-data-source/add-aws-data-source-to-aibuilder.md        
-            - href: eap/building-apps/use-ai/configure-data-source/add-custom-data-source.md    
-            - href: eap/building-apps/use-ai/configure-data-source/aiab-api-contract.md
-        # Function calling
-        - href: eap/building-apps/use-ai/function-calling/overview.md
-        - topics:
-            - href: eap/building-apps/use-ai/function-calling/use-function-calling.md
-        # Create agent
-        - href: eap/building-apps/use-ai/create-agent.md
-        # Integrate agent
-        - href: eap/building-apps/use-ai/integrate-agent.md
-        # Analyse agent
-        - href: eap/building-apps/use-ai/analyse-agent.md
+            - href: eap/building-apps/use-ai/overall-process.md
+            # Configure model
+            - href: eap/building-apps/use-ai/configure-model/intro.md
+            - topics:
+                - href: eap/building-apps/use-ai/configure-model/configure-azure-model.md
+                - href: eap/building-apps/use-ai/configure-model/add-azure-model-to-aibuilder.md
+                - href: eap/building-apps/use-ai/configure-model/configure-aws-model.md
+                - href: eap/building-apps/use-ai/configure-model/add-aws-model-to-aibuilder.md
+                - href: eap/building-apps/use-ai/configure-model/add-custom-ai-model.md
+                - href: eap/building-apps/use-ai/configure-model/aiab-custom-model-api-contract.md        
+            # Configure data source
+            - href: eap/building-apps/use-ai/configure-data-source/intro.md
+            - topics:
+                - href: eap/building-apps/use-ai/configure-data-source/configure-azure-data-source.md
+                - href: eap/building-apps/use-ai/configure-data-source/add-azure-data-source-to-aibuilder.md
+                - href: eap/building-apps/use-ai/configure-data-source/configure-aws-data-source.md
+                - href: eap/building-apps/use-ai/configure-data-source/add-aws-data-source-to-aibuilder.md        
+                - href: eap/building-apps/use-ai/configure-data-source/add-custom-data-source.md    
+                - href: eap/building-apps/use-ai/configure-data-source/aiab-api-contract.md
+            # Function calling
+            - href: eap/building-apps/use-ai/function-calling/overview.md
+            - topics:
+                - href: eap/building-apps/use-ai/function-calling/use-function-calling.md
+            # Create agent
+            - href: eap/building-apps/use-ai/create-agent.md
+            # Integrate agent
+            - href: eap/building-apps/use-ai/integrate-agent.md
+            # Analyse agent
+            - href: eap/building-apps/use-ai/analyse-agent.md
 
     # Data management
     - href: eap/building-apps/data/intro.md

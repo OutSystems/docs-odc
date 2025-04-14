@@ -22,7 +22,7 @@ audience:
 
 # Create connections to external data sources
 
-To integrate with external data sources using [Data Fabric](intro.md), Administrators need to create the connections to the external data sources in the ODC Portal. Then, in ODC studio, developers use the data as entities in their apps. 
+To integrate with external data sources using [Data Fabric](intro.md), Administrators need to create the connections to the external data sources and AI search services in the ODC Portal. Then, in ODC studio, developers use the data through entities or server actions in their apps. 
 
 The supported data sources are listed at [ODC system requirements](../../getting-started/system-requirements.md#supported-external-data-sources).
 
@@ -58,7 +58,9 @@ To create a new database connection, go to the ODC Portal and follow these steps
 
 1. From the ODC Portal nav menu, select **Integrate** > **Connections**, and click the **Create connection** button. <br/> The **select a provider** popup displays.
 1. Select the required provider and click **Confirm**.
-1. In the connection form, enter the required database connection information. To learn more, refer to the [connection parameters](#connection-parameters).
+1. In the connection form, enter the required connection information.
+    * If you're adding a database connection, refer to the [database connection parameters](#connection-parameters).
+    * If you're adding an AI search service, refer to the AI [AI search service connnection parameters](#ai-search-service-connection-parameters).
 1. After entering the information, click the **Test connection** button at the bottom of the form. If the test fails, a message displays. Make the necessary changes and test again. 
 1. To apply to stages, you can choose one of the following.
     * Click **Apply to all stages** to use the same connection information in all stages.
@@ -132,6 +134,45 @@ You can use advanced parameters to add additional parameters for a database conn
 * For **Salesforce**, include `ArchiveMode=True` in the additional parameters to enable fetching deleted and archived records in queries. By default, the archive mode is disabled. Enabling this mode allows queries to retrieve more data, but handle it with caution, as it may impact performance.
 
 ![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems-pp.png "External Database additional parameters")
+
+## AI search service connection parameters
+
+The following parameters are required when configuring connections for different external search services in the ODC Portal.
+
+### Azure AI search parameters
+
+The table outlines the parameters necessary to configure an Azure AI Search connection.
+
+|                |                                                                   |
+| -------------- | ----------------------------------------------------------------- |
+| **Parameter**  | **Description**                                                   |
+| **URL**        | The REST API endpoint of your Azure AI Search service.            |
+| **Index name** | The name of the index you have created in Azure AI Search.        |
+| **API key**    | The API key for authenticating with your Azure AI Search service. |
+| **Query type** | The syntax used for querying your Azure AI Search index.          |
+
+### Amazon Kendra parameters
+
+The table outlines the parameters necessary to configure an Amazon Kendra connection.
+
+|                |                                                                    |
+| -------------- | ------------------------------------------------------------------ |
+| **Parameter**  | **Description**                                                    |
+| **URL**        | The REST API endpoint for your Amazon Kendra service.              |
+| **Index ID**   | The ID of the Kendra index you want to connect to.                 |
+| **Access key** | The AWS access key ID for an IAM user with Kendra permissions.     |
+| **Secret key** | The AWS secret access key associated with the provided access key. |
+
+### Custom search service parameters
+
+The table outlines the parameters necessary to configure a connection to a custom search service.
+
+|                   |                                                                    |
+| ----------------- | ------------------------------------------------------------------ |
+| **Parameter**     | **Description**                                                    |
+| **Endpoint**      | The URL of your custom-built search service API endpoint.          |
+| **Headers Name**  | The name of the authentication header required by your custom API. |
+| **Headers Value** | The value of the authentication header for your custom API.        |
 
 ## Considerations when integrating external systems
 
