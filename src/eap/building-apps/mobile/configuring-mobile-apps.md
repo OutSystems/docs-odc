@@ -35,4 +35,4 @@ The extensibility script can have errors in specific properties. In this case, t
 
 ## Extensibility configurations for advances settings
 
-While the **Mobile tab** syncs with the underlying configuration files, advanced use cases may require editing these files directly for more complex requirements. [Extensibility configurations](extensibility-configurations-json-schema.md) offer granular control over your mobile app's build process, enabling custom adjustments.
+While the **Mobile** tab syncs with the underlying configuration files, advanced use cases may require editing these files directly for more complex requirements. [Extensibility configurations](extensibility-configurations-json-schema.md) offer granular control over your mobile app's build process, enabling custom adjustments.
