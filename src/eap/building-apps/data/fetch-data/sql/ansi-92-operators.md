@@ -106,6 +106,8 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 
 ### Known issues
 
+* Some character string operators / functions will return an error when the attribute collation is not compatible with the database default collation.
+* When using the `CHAR_INDEX`, `LIKE`, and `POSITION` operators with PostgreSQL, the operands will be collated to the database default collation. This may lead to unexpected results when working with attributes which have a non-default collation.
 * Mashup queries may return an error when either UPPER or LOWER encounter a NULL value.
 
 ## Date/time functions { #datetime-functions }
