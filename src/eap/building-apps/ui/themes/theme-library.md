@@ -112,7 +112,7 @@ After setting the layouts, you must set the **App_LayoutTopMenu** in the app the
 Since you're adding extra placeholders, the default `ph` class to remove `divs` without content won’t work if the placeholder is empty. To make sure you can use the same behavior in the **OnReady** layout event, add the following script:
 
 ```
-var emptyPh = document.querySelectorAll("ph:empty"); 
+var emptyPh = document.querySelectorAll(".ph:empty"); 
 emptyPh.forEach(function (a) {
     a.parentNode.remove();
 })
