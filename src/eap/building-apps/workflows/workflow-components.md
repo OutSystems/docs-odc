@@ -20,6 +20,8 @@ You can implement a workflow in the workflow editor using the following nodes:
 
 * [Start](start-workflow.md)
 
+* [Conditional start](add-conditional-start.md)
+
 * [Automatic activity](add-automatic-activity.md)
 
 * [Human activity](add-human-activity.md)
@@ -27,6 +29,10 @@ You can implement a workflow in the workflow editor using the following nodes:
 * [Decision](add-decisions.md)
 
 * [Go to a previous step](go-to-previous-step.md)
+
+* [Parallel](parallel-workflow.md)
+
+* [Terminate](terminate-workflow.md)
 
 * [End](end-workflow.md)
 

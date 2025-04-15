@@ -15,6 +15,7 @@ audience:
 outsystems-tools:
   - odc studio
 ---
+
 # Start a workflow based on specific conditions
 
 When implementing your workflow, you can use a **Conditional Start** node to trigger a flow that only executes when certain events are triggered and defined conditions are met after the main workflow has started. For example, in a loan approval workflow, you can use a conditional start to trigger a flow for loan cancellation. You can add as many conditional start flows as you need to your workflow.
