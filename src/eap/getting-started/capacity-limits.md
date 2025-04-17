@@ -24,7 +24,7 @@ You can use the ODC Portal to track resource consumption, understand current usa
 * [Optimize consumption](#optimize): Apply best practices to ensure your apps use only the resources they need, optimizing runtime efficiency.
 * Increase capacity: Contact your account team to request additional capacity.
 
-OutSystems recommends actively [monitoring](#monitor-consumption) and [optimizing your resource usage](#optimize-consumption) to ensure consistent app performance and a seamless user experience. Use the ODC Portal to track resource consumption, understand current usage, and identify available capacity.
+OutSystems recommends actively [monitoring](#monitor) and [optimizing your resource usage](#optimize) to ensure consistent app performance and a seamless user experience. Use the ODC Portal to track resource consumption, understand current usage, and identify available capacity.
 
 ## Resource limits
 
@@ -61,7 +61,7 @@ When resource consumption is at its limit and actions that consume further resou
 
 ![A screenshot displaying logs when execeeding compute instances](images/logs-exceeding-compute-pl.png "Compute Instance Metric Log")
 
-## Monitoring resource consumption
+## Monitoring resource consumption { #monitor }
 
 ODC Portal helps you track resource usage trends to help you ensure that your apps maintain high performance and responsiveness during traffic spikes. 
 
