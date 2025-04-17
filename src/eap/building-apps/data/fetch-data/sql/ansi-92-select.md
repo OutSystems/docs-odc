@@ -39,11 +39,11 @@ selectItem:
 
 entityExpression:
         entity [ [ AS ] entityAlias [ ( attributeAlias [ , attributeAlias ]* ) ] ]
+    |   ( select ) [ [ AS ] entityAlias [ ( attributeAlias [ , attributeAlias ]* ) ] ]
     |   entityExpression [, entityExpression ]*
     |   entityExpression [ CROSS ] JOIN entityExpression
     |   entityExpression [ INNER ] JOIN  entityExpression ON condition
     |   entityExpression { LEFT | RIGHT | FULL } [ OUTER ] JOIN entityExpression ON condition
-    |   ( select )
 
 orderItem:
         expression [ ASC | DESC ] [ NULLS FIRST | NULLS LAST ]
@@ -94,7 +94,7 @@ selectItem:
 
 The `SELECT` list (between `SELECT` and `FROM`) specifies expressions that will be mapped to attributes in the returned records. The expressions may use [Operators](ansi-92-operators.md), [Literals](ansi-92-data-types.md#sql-types), dynamic parameters, and/or any attributes from entities or subqueries in the `FROM` clause.
 
-An important difference to note in ANSI SQL-92 compared to some database systems is that unquoted identifiers are automatically uppercased. For example, `SELECT sub.abc` is converted to `SELECT SUB.ABC`. Identifiers may be quoted using either square brackets or double quotes, for example `SELECT "sub".[abc]`. The letter casing of quoted identifiers is preserved. Identifiers are case-sensitive, so care must be taken when using a combination of quoted and unquoted identifiers.
+There are important differences in how identifiers work in ANSI-92 syntax compared to commonly used database systems, for more information please refer to [this article](ansi-92-syntax.md#statements--statements-).
 
 ```sql
 -- Not valid, the outer SELECT expects abc but the inner SELECT returns ABC
@@ -106,8 +106,6 @@ SELECT sub.[abc] FROM ( SELECT 1 as [abc] ) as sub
 SELECT sub.[abc] FROM ( SELECT 1 as "abc" ) as sub
 SELECT sub."abc" FROM ( SELECT 1 as "abc" ) as sub
 ```
-
-For attributes which originate from an entity, always use the `{entity}.[attribute]` syntax. Note that attributes which are renamed in ODC Portal are specified this way using the new name and not the original name. ODC will automatically convert the reference to the original name before the query is forwarded to the external system.
 
 Expressions in a `SELECT` list without an explicit alias will be given a name automatically depending on the type of expression. If the expression is a simple reference to an attribute from the `FROM` clause then the name of the attribute will be used as the alias. No guarantees are made about the names used for other types of expression, they may not always be the same. When an attribute is renamed in ODC Portal and not aliased in a query, the generated alias will be the original attribute name and not the new name provided in ODC Portal.
 
@@ -144,13 +142,14 @@ It's recommended to use quoted and qualified names throughout the query to avoid
     SELECT {this}.[name] AS thisname, {other}.[name] AS othername FROM {this}, {other}
     ```
 
-- The error message returned when an alias is not in scope is sometimes incorrect.
+- The error message returned when an alias is not in scope is incorrect.
     ```sql
-    -- Query is incorrect because the FROM clause contains an explicit alias
+    -- Query is invalid because the FROM clause contains an explicit alias
     -- Returns error: 'entity' not found in any connection
     SELECT {entity}.[attribute] FROM {entity} AS renamed
 
-    -- Correct and will work as expected
+    -- All of these are valid
+    SELECT {entity}.[attribute] FROM {entity}
     SELECT renamed.[attribute] FROM {entity} AS renamed
     ```
 
@@ -190,7 +189,7 @@ The `FROM` clause may also source records from one or more subqueries, commonly 
 
 Entities and subqueries used in a `FROM` clause may optionally be given an alias. Subqueries without an alias will be given a name automatically however that name is not guaranteed to always be the same. For this reason, it is recommended to always specify an alias for subqueries.
 
-#### Known issues with FROM clause
+#### Known issues with FROM
 
 * Joining more than one subquery without a `FROM` clause to an entity is not supported, for example:
 
@@ -338,6 +337,13 @@ The `start` may be specified using a literal of any numeric type or with a dynam
 
 The `OFFSET` clause is permitted in subqueries but this is only supported with PostgreSQL (when used with `LIMIT`) and will not work with other external systems.
 
+<div class="info" markdown="1">
+
+* The user configured on the connection must have permission to read from the entity in the external system
+* If the entity has attributes of an unsupported data type then those attributes will not appear in the result and cannot be referenced in the query. SELECT * and SELECT {entity}.* will still work in this case but will not reference the unsupported attributes.
+* Subqueries cannot be used in expressions unless using an [Operator](#ansi-92-operators.md) which accepts a subquery like `EXISTS`.
+
+</div>
 
 ## Examples
 
@@ -376,7 +382,7 @@ FROM {entity1}
 WHERE EXISTS (
   SELECT *
   FROM {entity2}
-  WHERE [id] = {entity1}.[id]
+  WHERE {entity2}.[id] = {entity1}.[id]
 )
 
 -- Derived tables
