@@ -85,6 +85,21 @@ The following CSS code is an example of how to change the style of selected item
 | OptionalConfigs.JustifyHeaders (Boolean): Optional    | If True, the Tabs are evenly distributed in the space available.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | ExtendedClass (Text): Optional                        | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <br/>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1" "myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
 
+<div class="info" markdown="1">
+
+To ensure predictable behavior and avoid runtime issues, the Tabs component is designed to include at least one TabsHeaderItem and one TabsContentItem.
+
+</div>
+
+## Events
+
+### Tabs
+
+|Event| Description  | 
+|---|---|
+|OnTabChange: Optional| Event triggered when switching Tabs. | 
+
 ## Device and pattern compatibility
 
 Avoid using the Tabs Pattern inside patterns with swipe events, such as the Stacked Cards or Carousel Patterns.
+
