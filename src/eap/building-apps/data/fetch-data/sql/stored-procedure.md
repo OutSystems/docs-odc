@@ -1,7 +1,7 @@
 ---
 summary: Execute stored procedures from external entities using SQL nodes in OutSystems Developer Cloud (ODC) by obtaining a connectionId from Portal and using the CALL statement.
 tags: stored procedures, external entities, sql nodes, odc, database integration
-guid: d125e70b-1ef0-4f4e-a7df-070a396ddfad
+guid: b6caded7-82fc-4ce9-a8a2-6bd771c9e33b
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
