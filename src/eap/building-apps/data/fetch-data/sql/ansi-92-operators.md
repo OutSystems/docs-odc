@@ -216,6 +216,16 @@ Syntax:
 
 ```sql
 windowFunction OVER { windowName | ( windowDefinition ) }
+
+windowDefinition:
+        [ existingWindowName ]
+        [ PARTITION BY expression [, expression ]* ]
+        [ ORDER BY orderItem [, orderItem ]* ]
+        [ { RANGE | ROWS } BETWEEN windowBound AND windowBound ]
+
+windowBound:
+        CURRENT ROW
+    |   { UNBOUNDED | value } { PRECEDING | FOLLOWING }
 ```
 
 | Operator syntax                       | Description                                                                                                                                                          | Requires ORDER BY |
