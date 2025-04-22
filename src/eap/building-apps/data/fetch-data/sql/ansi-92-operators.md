@@ -210,6 +210,39 @@ If `DISTINCT` is present, duplicate argument values are eliminated before being 
 
 * `COUNT DISTINCT` isn't supported with attributes of type `BOOLEAN` for Salesforce.
 
+## Window functions { #window-functions }
+
+Syntax:
+
+```sql
+windowFunction OVER { windowName | ( windowDefinition ) }
+```
+
+| Operator syntax                      | Description                                                                                                                                                          | Requires ORDER BY |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| `COUNT(attribute [, attribute]*)`    | Returns number of records in window for which the attributes are not null                                                                                            | No                |
+| `COUNT(*)`                           | Returns number of records in window                                                                                                                                  | No                |
+| `AVG(numeric)`                       | Returns arithmetic mean of numeric for the records in window                                                                                                         | No                |
+| `SUM(numeric)`                       | Returns sum of numeric for the records in window                                                                                                                     | No                |
+| `MAX(attribute)`                     | Returns maximum value of attribute for the records in window                                                                                                         | No                |
+| `MIN(attribute)`                     | Returns minimum value of attribute for the records in window                                                                                                         | No                |
+| `RANK()`                             | Returns rank of the current record based on ORDER BY attribute with gaps                                                                                             | Yes               |
+| `DENSE_RANK()`                       | Returns rank of the current record based on ORDER BY attribute without gaps                                                                                          | Yes               |
+| `ROW_NUMBER()`                       | Returns position of the current record within it's partition counting from 1                                                                                         | No                |
+| `FIRST_VALUE(attribute)`             | Returns attribute from the first record in the window frame                                                                                                          | No                |
+| `LAST_VALUE(attribute)`              | Returns attribute from the last record in the window frame                                                                                                           | No                |
+| `LEAD(attribute, [offset, default])` | Returns attribute from offset records after the current record, or default if there is no such record. When not specified, offset defaults to 1 and default is NULL  | Yes               |
+| `LAG(attribute, [offset, default])`  | Returns attribute from offset records before the current record, or default if there is no such record. When not specified, offset defaults to 1 and default is NULL | Yes               |
+| `NTH_VALUE(attribute, n)`            | Returns attribute at the nth record of the window frame                                                                                                              | No                |
+| `NTILE(value)`                       | Returns an integer ranging from 1 to value, dividing the partition as equally as possible                                                                            | Yes               |
+
+### Known issues
+
+* `ROW_NUMBER` requires `ORDER BY` when used with Microsoft SQL Server or Oracle
+* `NTH_VALUE` isn't supported with Microsoft SQL Server
+* `NTILE` cannot be used with a window which has a `RANGE` or `ROWS` clause with Microsoft SQL Server
+* Window functions are not supported with Salesforce and SAP OData
+
 ## Type conversion functions { #type-conversion }
 
 It's recommended to specify explicit conversions rather than rely on implicit or automatic conversions.
