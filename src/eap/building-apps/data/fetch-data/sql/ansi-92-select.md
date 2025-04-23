@@ -122,22 +122,22 @@ SELECT sub."abc" FROM ( SELECT 1 as "abc" ) as sub
 Expressions in a `SELECT` list without an explicit alias will be given a name automatically depending on the type of expression. If the expression is a simple reference to an attribute from the [FROM clause](#from-clause) then the name of the attribute will be used as the alias. No guarantees are made about the names used for other types of expression, they may not always be the same. When an attribute is renamed in ODC Portal and not aliased in a query, the generated alias will be the original attribute name and not the new name provided in ODC Portal.
 
 ```sql
--- The implicit alias will be the original name of the attribute on the entity
-SELECT {entity}.[abc] FROM {entity}
+-- In this example, entity has one attribute called 'abc' in the external system which has been renamed to 'Abc' in ODC Portal
 
--- The implicit alias in the subquery will be the original name of the attribute on the entity.
--- The outer query is only valid if the original name of the attribute is exactly 'abc'
-SELECT [abc] FROM ( SELECT {entity}.[abc] FROM {entity} ) sub
+-- The implicit alias will be 'abc' and not `Abc`
+SELECT {entity}.[Abc] FROM {entity}
 
--- A safer way to write the query above is to use an explicit alias
+-- Neither of these are valid because the implicit alias in the subquery is 'abc' and not 'Abc'
+SELECT [Abc] FROM ( SELECT {entity}.[Abc] FROM {entity} ) sub
+SELECT sub.[Abc] FROM ( SELECT {entity}.[Abc] FROM {entity} ) sub
+
+-- The recommended way to write the query above is to use an explicit alias
 -- This query is always valid even if the attribute is renamed on the entity
-SELECT [abc] FROM ( SELECT {entity}.[abc] AS [abc] FROM {entity} ) sub
-
--- Qualified identifiers may also be used to avoid ambiguity
-SELECT sub.[abc] FROM ( SELECT {entity}.[abc] AS [abc] FROM {entity} ) sub
+SELECT [Abc] FROM ( SELECT {entity}.[Abc] AS [Abc] FROM {entity} ) sub
 
 -- No guarantees are made about the implicit alias for other expressions
-SELECT {entity}.[abc] + 3 FROM {entity}
+-- They should be aliased if they need to be referenced by another part of the query
+SELECT sub.[result] FROM (SELECT {entity}.[abc] + 3 AS [result] FROM {entity}) sub
 ```
 
 It's recommended to use quoted and qualified names throughout the query to avoid unexpected issues and because it makes the query easier to understand.
