@@ -88,9 +88,9 @@ For example, if you are using 12 out of 20 containers, the tabular view breaks d
 
 * Order status app consumes 6 containers. 
   * Daily refresh and Reset sample data timers consume 2 containers each.
-  * Order status screen consumes 2 containers.
+  * Order status app consumes 2 containers.
 * Sample ordering app consumes 2 containers
-* Order status monitoring consumes 2 containers
+* Order status monitoring app consumes 2 containers
 * Order workflow consumes 2 containers.
 
 ![A screenshot displaying various apps consuming compute instances in Subscription Portal](images/detail-compute-instance-table-pl.png "Compute Instances Consumption by Apps")
