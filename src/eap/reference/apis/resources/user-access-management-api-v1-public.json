@@ -156,7 +156,7 @@
         "tags": [
           "application-roles"
         ],      
-        "summary": "Returns users directly assigned the end-user role, excluding those who inherited it via groups.",
+        "summary": "Returns users granted the end-user role, excluding those who inherited it via groups.",
         "description": "Returns a list of users directly assigned the specified end-user role, excluding those who inherited it via groups. Use query parameters to refine the search. \n\nAPI Client needs the **User management > View end users** permission.",
         "operationId": "ApplicationRole_QueryUsersByApplicationRole",
         "parameters": [
@@ -1502,7 +1502,7 @@
         "tags": [
           "users"
         ],
-        "summary": "Returns end-user roles directly assigned to the user, excluding roles inherited via groups.",
+        "summary": "Returns end-user roles assigned to the user, excluding roles inherited via groups.",
         "description": "Returns end-user roles directly assigned to the specified user, excluding roles inherited via groups. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** permission.",
         "operationId": "UserApplicationRoles_QueryUserApplicationRoles",
         "parameters": [
