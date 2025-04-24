@@ -94,4 +94,4 @@ ODC facilitates the development and management of intelligent apps. This documen
 * [AI models and search services in ODC](ai-models.md)
 * [Adding AI models](add-ai-models.md)
 * [Adding search services](add-ai-search-services.md)
-* [Integrating AI models and search services in your app logic](integrate-ai-models-logic-rag.md)
+* [Integrating AI models and search services](integrate-ai-models-logic-rag.md)
