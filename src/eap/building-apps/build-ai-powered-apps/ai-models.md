@@ -54,4 +54,4 @@ To start adding AI features to your apps, continue with the following:
 
 * [Adding AI models](add-ai-models.md)
 * [Adding search services](add-ai-search-services.md)
-* [Integrating AI models and search services in your app logic](integrate-ai-models-logic-rag.md)
+* [Integrating AI models and search services](integrate-ai-models-logic-rag.md)
