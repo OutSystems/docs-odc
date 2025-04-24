@@ -24,7 +24,7 @@ The AI Agent Builder within ODC allows the development of AI-driven apps. It ena
 
 <div class="info" markdown="1">
 
-OutSystems recommends using Al models in Portal whenever they fit your use cases. This article guides you in evaluating your use cases to help you decide when to use Al models in Portal.
+OutSystems recommends using [Al models in Portal](../build-ai-powered-apps/intro.md) whenever they fit your use cases. This article guides you in evaluating your use cases to help you decide when to use Al models in Portal.
 
 </div>
 
