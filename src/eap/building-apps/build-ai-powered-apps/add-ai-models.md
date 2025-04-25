@@ -34,12 +34,12 @@ Alternatively, for quick testing and exploration in the development stage, ODC p
 Before adding a configured connection to your model provider, such as Azure OpenAI, Amazon Bedrock, or Custom:
 
 * Set up, deploy, and ensure the external AI service is accessible on the provider's platform, such as Azure or AWS. Note that an administrator or DevOps team typically performs this external setup, which is not covered here.
-* Obtain the necessary access credentials and details the specific provider requires, such as API keys, endpoint URLs, deployment names, model IDs, and access or secret keys. Refer to the [AI model parameters](#ai-model-parameters) section below for details.
+* Obtain the necessary access credentials and details the specific provider requires, such as API keys, endpoint URLs, deployment names, model IDs, and access or secret keys. Refer to the [AI model parameters](#add-ai-models) section below for details.
 * Ensure you have the required permissions within ODC to manage AI models. Note that managing AI models utilizes the same permissions as managing connections within the ODC Portal.
 
 These prerequisites don't apply when adding an ODC trial model.
 
-## Add AI models { #add ai models }
+## Add AI models { #add-ai-models }
 
 Follow these steps to add an AI model connection or an ODC trial model in the ODC Portal:
 
@@ -53,14 +53,14 @@ Follow these steps to add an AI model connection or an ODC trial model in the OD
     * **For the ODC trial model**, ODC adds the trial model directly to your list, completing the setup.
 1. On the model configuration page that appears, enter a unique **Name** and an optional **Description** for this AI model connection.
 1. In the **Endpoints** section, click **+ Add** to open the **Add endpoint** dialog.
-1. Enter the required endpoint details for the provider you selected. Set the **Priority** for this endpoint. For details about the fields, refer to the [AI model parameters](#ai-model-parameters) section. Click **Save**.
+1. Enter the required endpoint details for the provider you selected. Set the **Priority** for this endpoint. For details about the fields, refer to the [AI model parameters](#add-ai-models-add-ai-models-) section. Click **Save**.
 1. Optionally, add more endpoints if you have them available for different stages, such as development and production. More endpoints also enable load balancing. Ensure all endpoints under one connection use the same underlying AI model and version.
 1. If you added multiple endpoints, adjust their priority order on the main model configuration page using the edit icon next to each endpoint.
 1. Click **Save** to confirm.
 
 After you complete the steps, ODC redirects you to the main AI models page. You can now use the newly added model connection or ODC trial model within your apps in ODC Studio.
 
-## AI model parameters { #ai model parameters }
+## AI model parameters { #ai-model-parameters }
 
 Use the following parameters when configuring endpoints for Azure OpenAI, Amazon Bedrock models, and Custom AI models in the ODC Portal.
 
