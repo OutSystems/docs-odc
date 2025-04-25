@@ -32,7 +32,7 @@ In addition to directly interacting with AI models, ODC enables you to connect t
 
 To help you quickly experiment with AI features without immediately setting up your model connection, ODC offers pre-configured trial models (provided via Azure OpenAI and Amazon Bedrock). You can add these models directly within ODC and call them from your apps running in the Development stage. Note that each trial model is limited to 100 calls per ODC tenant and is intended for initial testing or proof-of-value exploration before configuring your persistent AI model connection.
 
-## Custom model connections { #Custom model connections}
+## Custom model connections { #custom model connections }
 
 Beyond native support for Azure OpenAI and Amazon Bedrock, ODC allows you to connect to other LLMs, such as those from different providers or your private models. This is achieved using the **Custom connection** option. To use this option, you must provide an intermediary web service called a connector that bridges ODC and your target LLM. This connector service must implement a specific API contract defined by OutSystems, which involves exposing a synchronous REST endpoint using the POST method for chat completions.
 

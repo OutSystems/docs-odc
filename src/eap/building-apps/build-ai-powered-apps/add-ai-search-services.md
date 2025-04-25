@@ -31,7 +31,7 @@ Before adding a configured connection to your search service provider:
 * Obtain the necessary access credentials and details required by the specific provider. 
 * Ensure you have the necessary permissions within the ODC Portal to create and manage connections. Note that managing AI models utilizes the same permissions as managing connections within the ODC Portal.
 
-## Add a search service { # Add a search service }
+## Add a search service { # add a search service }
 
 Refer to [Create connections to external data sources](../../integration-with-systems/external-databases/create-connection-external-data.md#create-a-new-connection) to add your search service in the ODC Portal.
 

@@ -28,7 +28,7 @@ This page focuses on that implementation step, detailing the procedures for call
 
 ## Implementing AI model calls
 
-First, identify the name you gave your [AI Model connection](add-ai-models.md#add-ai-models--add-ai-models-) in the **ODC Portal**. Navigate to **INTEGRATE** > **AI models**, select your model, and check the **Name** field in its **Details**. ODC uses this name, referred to here as **(model name)**, to expose an action named **Call(model name)**.
+First, identify the name you gave your [AI Model connection](add-ai-models.md#add-ai-models) in the **ODC Portal**. Navigate to **INTEGRATE** > **AI models**, select your model, and check the **Name** field in its **Details**. ODC uses this name, referred to here as **(model name)**, to expose an action named **Call(model name)**.
 
 This section explains how to call a configured AI model from your ODC app logic. This is how the interaction generally works when your ODC app logic communicates with an AI model using the provided structures:
 
@@ -51,7 +51,7 @@ This section explains how to call a configured AI model from your ODC app logic.
 
 This section explains how to call a configured AI Search connection from your ODC app logic, typically to retrieve context for RAG.
 
-**Prerequisite:** A [configured connection](add-ai-search-services.md#add-a-search-service---add-a-search-service-) to your AI Search service (like Azure AI Search, Amazon Kendra, or a custom provider) in the ODC Portal under **Connections**.
+**Prerequisite:** A [configured connection](add-ai-search-services.md#add-a-search-service) to your AI Search service (like Azure AI Search, Amazon Kendra, or a custom provider) in the ODC Portal under **Connections**.
 
 Follow these steps to implement the call in ODC Studio:
 
