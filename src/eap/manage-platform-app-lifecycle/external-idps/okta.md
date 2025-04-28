@@ -68,7 +68,7 @@ To add permitted redirects for the Okta provider follow the steps below.
 
 1. Select **General settings** and click **Edit**.
 
-1. From ODC Portal, for the Platform and/or each app stage you applied the Okta provider, copy the **Authentication** URL(s) and them as individual URIs in the **Sign-in redirect URIs** section in Okta Portal. You should copy the URL(s) for both the built-in domain and any active [custom domains](../custom-domains.md).
+1. From ODC Portal, for the Platform and/or each app stage you applied the Okta provider, copy the **Authentication** URL(s) and paste them as individual URIs in the **Sign-in redirect URIs** section in Okta Portal. You should copy the URL(s) for both the built-in domain and any active [custom domains](../custom-domains.md).
 
 1. Now for the Platform and/or each app stage you applied the Okta provider, copy the **Logout** URL(s) and then paste them as individual URIs in the **Sign-out redirect URIs** section in Okta Portal. You should copy the URL(s) for both the built-in domain and any active [custom domains](../custom-domains.md).
 

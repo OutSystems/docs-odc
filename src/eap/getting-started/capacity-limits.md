@@ -24,13 +24,13 @@ You can use the ODC Portal to track resource consumption, understand current usa
 * [Optimize consumption](#optimize): Apply best practices to ensure your apps use only the resources they need, optimizing runtime efficiency.
 * Increase capacity: Contact your account team to request additional capacity.
 
-OutSystems recommends actively [monitoring](#monitor-consumption) and [optimizing your resource usage](#optimize-consumption) to ensure consistent app performance and a seamless user experience. Use the ODC Portal to track resource consumption, understand current usage, and identify available capacity.
+OutSystems recommends actively [monitoring](#monitor) and [optimizing your resource usage](#optimize) to ensure consistent app performance and a seamless user experience. Use the ODC Portal to track resource consumption, understand current usage, and identify available capacity.
 
 ## Resource limits
 
 Each resource in ODC is subject to specific capacity limits that govern its usage within a stage. The available resources and their respective limits include:
 
-* **Compute instances**: The total number of [container instances](../app-architecture/intro.md#containers) available for all apps, workflows, and timers within a stage. They define the pool size of containers that running apps can allocate or release as needed. Each app, workflow, or timer consumes at least one container when running. In subscriptions with high availability, apps consume at least two containers. Remember that multiple instances of the same workflow revision share the same resources, but different revisions may consume different resources. As demand increases, additional containers are added dynamically. When demand decreases, ODC scales down the containers accordingly. To learn more, refer to[ auto-scaling in cloud-native architecture](../manage-platform-app-lifecycle/platform-architecture/intro.md#runtime-cluster).
+* **Compute instances**: The total number of [container instances](../app-architecture/intro.md#containers) available for all apps, workflows, and timers within a stage. They define the pool size of containers that running apps can allocate or release as needed. Each app, workflow, or timer consumes at least one container when running. In subscriptions with high availability, apps in production stages consume a minimum of two compute instances to increase availability. Remember that multiple instances of the same workflow revision share the same resources, but different revisions may consume different resources. As demand increases, additional containers are added dynamically. When demand decreases, ODC scales down the containers accordingly. To learn more, refer to[ auto-scaling in cloud-native architecture](../manage-platform-app-lifecycle/platform-architecture/intro.md#runtime-cluster).
 
     <div class="info" markdown="1">
     
@@ -61,7 +61,7 @@ When resource consumption is at its limit and actions that consume further resou
 
 ![A screenshot displaying logs when execeeding compute instances](images/logs-exceeding-compute-pl.png "Compute Instance Metric Log")
 
-## Monitoring resource consumption
+## Monitoring resource consumption { #monitor }
 
 ODC Portal helps you track resource usage trends to help you ensure that your apps maintain high performance and responsiveness during traffic spikes. 
 
@@ -88,9 +88,9 @@ For example, if you are using 12 out of 20 containers, the tabular view breaks d
 
 * Order status app consumes 6 containers. 
   * Daily refresh and Reset sample data timers consume 2 containers each.
-  * Order status screen consumes 2 containers.
+  * Order status app consumes 2 containers.
 * Sample ordering app consumes 2 containers
-* Order status monitoring consumes 2 containers
+* Order status monitoring app consumes 2 containers
 * Order workflow consumes 2 containers.
 
 ![A screenshot displaying various apps consuming compute instances in Subscription Portal](images/detail-compute-instance-table-pl.png "Compute Instances Consumption by Apps")

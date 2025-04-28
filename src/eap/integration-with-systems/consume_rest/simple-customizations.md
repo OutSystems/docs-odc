@@ -4,7 +4,7 @@ tags: rest api, api customization, callbacks, http headers, outsystems forge
 locale: en-us
 guid: 182ad24a-5cfb-4a67-a9b2-b5c8dc83ef4c
 app_type: mobile apps, reactive web apps
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A12108&t=ZwHw8hXeFhwYsO5V-1
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=3101-12108
 platform-version: odc
 audience:
   - mobile developers
@@ -20,7 +20,7 @@ topic:
   - customize-headers
 ---
 
-# Simple customizations
+# Customize API request and response headers
 
 When consuming a REST API, you can add logic to customize the information sent in requests or received in responses. Use the following callbacks for this purpose:
 
@@ -30,14 +30,15 @@ When consuming a REST API, you can add logic to customize the information sent i
 **OnAfterResponse**
 :   Use to modify the information of the original response, such as the status code or the response text. 
 
-In these callbacks you can access the information from the original request or response, manipulate it and assign a modified value to the customized request or response.
-
-In the [OutSystems Forge](https://www.outsystems.com/forge/) you can find several components providing an interface to third-party services using REST integration, such as the [Box Connector](https://www.outsystems.com/forge/component/586/box-connector/) or the [JIRA Connector](https://www.outsystems.com/forge/component/936/jira-connector/). These components provide information about how you can customize REST requests and responses.
+![Diagram showing the flow of OnBeforeRequest and OnAfterResponse callbacks in OutSystems Developer Cloud.](images/callbacks-diag.png "Callbacks Diagram")
 
 <div class="info" markdown="1">
 
-Using this simple customization method you can add HTTP headers and/or change their values, but you can't remove existing headers. 
+With these callbacks, you can only add HTTP headers or change their values but you can't remove the existing headers. 
+
 </div>
+
+In the [OutSystems Forge](https://www.outsystems.com/forge/) you can access [User Management Connector](https://www.outsystems.com/forge/component-overview/21015/user-management-connector-odc) to help you understand how you can customize the REST request using callbacks.
 
 ## Customize the request
 
@@ -45,7 +46,7 @@ To customize the request before it's sent, follow these steps:
 
 1. Set the **On Before Request** property of the REST API to `New OnBeforeRequest`.
   
-    ![Screenshot showing how to set the On Before Request property in OutSystems](images/rest-new-onbeforerequest-odcs.png "Setting the On Before Request Property")    
+    ![Screenshot showing how to set the On Before Request property in OutSystems.](images/rest-new-onbeforerequest-odcs.png "Setting the On Before Request Property")    
 
     The REST API now includes an **OnBeforeRequest** action.   
 
@@ -61,7 +62,7 @@ The following steps outline the callback logic flow for this example implementat
 
 1. Add a local variable with `HTTPHeader` data type to the **OnBeforeRequest** callback action.
 
-1. Define a new HTTP header (name and value) using the local variable you created in the previous step.
+1. Define a new HTTP header with name and value using the local variable you created in the previous step.
 
     Example:  
     Name = `"Authorization"`  
@@ -80,7 +81,7 @@ To customize the response after it has arrived:
 
 1. Set the **On After Response** property of the REST API to `New OnAfterResponse` action.
 
-    ![Screenshot showing how to set the On After Response property in OutSystems](images/rest-new-onafterresponse-odcs.png "Setting the On After Response Property")
+    ![Screenshot showing how to set the On After Response property in OutSystems.](images/rest-new-onafterresponse-odcs.png "Setting the On After Response Property")
 
     The REST API now includes an `OnAfterResponse` action.
 
@@ -110,5 +111,3 @@ To customize the response after it has arrived:
     Review the API documentation to understand the expected response formats before making the API call.
 
     </div>
-
-

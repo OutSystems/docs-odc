@@ -22,7 +22,7 @@ audience:
 
 # Create connections to external data sources
 
-To integrate with external data sources using [Data Fabric](intro.md), Administrators need to create the connections to the external data sources in the ODC Portal. Then, in ODC studio, developers use the data as entities in their apps. 
+To integrate with external data sources using [Data Fabric](intro.md), Administrators need to create the connections to the external data sources and AI search services in the ODC Portal. Then, in ODC studio, developers use the data through entities or server actions in their apps. 
 
 The supported data sources are listed at [ODC system requirements](../../getting-started/system-requirements.md#supported-external-data-sources).
 
@@ -36,7 +36,7 @@ Administrators must:
 Before accessing data from an external database, verify that you have the correct access to the database and ODC. By default, only administrators can manage connections and select entities. Managing connections requires the following permissions:
 
 * Configure Connections
-* Connection management
+* Connection Management
 
 External data connections can be created with read-only permissions or other permission restrictions. Entity CRUD actions (to create, update, or delete records) are always automatically created in ODC Studio regardless of the permissions of the database connection user. If you intend to use the full CRUD actions, ensure the database users carry the proper permissions.
 
@@ -44,11 +44,13 @@ External data connections can be created with read-only permissions or other per
 
 To access private data that is not available over the internet, connect to your external data source through a [private gateway](../../manage-platform-app-lifecycle/private-gateway.md). The connection process varies depending on the type of data source:
 
-* For Relational database:
-    1. In ODC Portal, open the connection configuration screen. Enter `secure-gateway` in the `Server`/`Host` field, and the secure gateway port in the `Port` field.
-* For SAP BAPI database:
+* Relational database:
+    1. In the ODC Portal, open the connection configuration screen. Enter `secure-gateway` in the `Server`/`Host` field, and the secure gateway port in the `Port` field.
+* SAP BAPI database:
     1. Run the Cloud Connector with the following command: `./outsystemscc --header "token: <token>" <secure-gateway-address> R:<local-port>:<sap-ip-address>:<remote-port>` . This directs traffic from `secure-gateway:<local-port>` to `<sap-ip-address>:<remote-port>`. 
-    1. In ODC Portal, open the SAP BAPI connection screen. Enter `/H/secure-gateway/S/<local-port>/H` in the `SAP route string` field. SAP validates the value of the Application Server field by comparing it to its known hostnames. To route requests through the Cloud Connector and still use a valid Application Server value, a [SAP Router](https://support.sap.com/en/tools/connectivity-tools/saprouter.html) is needed.
+    1. In the ODC Portal, open the SAP BAPI connection screen. Enter `/H/secure-gateway/S/<local-port>/H` in the `SAP route string` field. SAP validates the value of the Application Server field by comparing it to its known hostnames. To route requests through the Cloud Connector and still use a valid Application Server value, a [SAP Router](https://support.sap.com/en/tools/connectivity-tools/saprouter.html) is needed.
+* Azure SQL Server Managed Instance:
+    1. Proxy mode is required in this case, as it ensures a stable connection by routing all traffic through the Azure SQL Gateway.
 
 ## Create a new connection
 
@@ -56,7 +58,9 @@ To create a new database connection, go to the ODC Portal and follow these steps
 
 1. From the ODC Portal nav menu, select **Integrate** > **Connections**, and click the **Create connection** button. <br/> The **select a provider** popup displays.
 1. Select the required provider and click **Confirm**.
-1. In the connection form, enter the required database connection information. To learn more, refer to the [connection parameters](#connection-parameters).
+1. In the connection form, enter the required connection information.
+    * If you're adding a database connection, refer to the [database connection parameters](#connection-parameters).
+    * If you're adding an AI search service, refer to the AI [AI search service connnection parameters](#ai-search-service-connection-parameters).
 1. After entering the information, click the **Test connection** button at the bottom of the form. If the test fails, a message displays. Make the necessary changes and test again. 
 1. To apply to stages, you can choose one of the following.
     * Click **Apply to all stages** to use the same connection information in all stages.
@@ -130,6 +134,45 @@ You can use advanced parameters to add additional parameters for a database conn
 * For **Salesforce**, include `ArchiveMode=True` in the additional parameters to enable fetching deleted and archived records in queries. By default, the archive mode is disabled. Enabling this mode allows queries to retrieve more data, but handle it with caution, as it may impact performance.
 
 ![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems-pp.png "External Database additional parameters")
+
+## AI search service connection parameters
+
+The following parameters are required when configuring connections for different external search services in the ODC Portal.
+
+### Azure AI search parameters
+
+The table outlines the parameters necessary to configure an Azure AI Search connection.
+
+|                |                                                                   |
+| -------------- | ----------------------------------------------------------------- |
+| **Parameter**  | **Description**                                                   |
+| **URL**        | The REST API endpoint of your Azure AI Search service.            |
+| **Index name** | The name of the index you have created in Azure AI Search.        |
+| **API key**    | The API key for authenticating with your Azure AI Search service. |
+| **Query type** | The syntax used for querying your Azure AI Search index.          |
+
+### Amazon Kendra parameters
+
+The table outlines the parameters necessary to configure an Amazon Kendra connection.
+
+|                |                                                                    |
+| -------------- | ------------------------------------------------------------------ |
+| **Parameter**  | **Description**                                                    |
+| **URL**        | The REST API endpoint for your Amazon Kendra service.              |
+| **Index ID**   | The ID of the Kendra index you want to connect to.                 |
+| **Access key** | The AWS access key ID for an IAM user with Kendra permissions.     |
+| **Secret key** | The AWS secret access key associated with the provided access key. |
+
+### Custom search service parameters
+
+The table outlines the parameters necessary to configure a connection to a custom search service.
+
+|                   |                                                                    |
+| ----------------- | ------------------------------------------------------------------ |
+| **Parameter**     | **Description**                                                    |
+| **Endpoint**      | The URL of your custom-built search service API endpoint.          |
+| **Headers Name**  | The name of the authentication header required by your custom API. |
+| **Headers Value** | The value of the authentication header for your custom API.        |
 
 ## Considerations when integrating external systems
 
@@ -214,7 +257,7 @@ Salesforce
 * Salesforce is case-insensitive, and `ToUpper`/`ToLower` built-in functions don't have the expected behavior in aggregates.
 * When sorting queries by ID, the Salesforce API orders the Id attribute in a case-sensitive manner, which differs from the expected case-insensitive sorting of other attributes. While regular attributes are sorted in the standard order (A, a, B, b, C, c), the Id attribute is sorted with uppercase letters first, followed by lowercase letters (A, B, C, a, b, c).
 * Regarding Salesforce queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.
-* When joining Salesforce entities, it's recommended to use parent-child relationships or primary key and foreign key attributes. [Salesforce query language](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) doesn't support relationship queries using other attributes. If this guideline is not followed, the join condition can't be pushed to Salesforce, potentially causing performance issues.
+* When joining Salesforce entities, it's recommended to use parent-child relationships or primary key and foreign key attributes. [Salesforce query language](external-data-type.md#salesforce-custom-columns-mapping) doesn't support relationship queries using other attributes. If this guideline is not followed, the join condition can't be pushed to Salesforce, potentially causing performance issues.
 
 </div>
 </div>
@@ -226,6 +269,7 @@ SAP OData
 </div>
 <div class="os-accordion__content" markdown="1">
 
+* Always [enable server-side pagination in SAP](https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/server-side-pagination) to ensure integrations work correctly.
 * SAP OData APIs convert null values to empty strings when inserting or updating VARCHAR columns. To fetch null or empty strings, ODC recommends filtering VARCHAR columns using a condition like `Entity.TextAttribute = ' '` and do not rely on OutSystems null's built-in functions.
 * SAP throws a `RAISE_SHORTDUMP` exception when requesting the row count for some VIEWS on the first request.
 * Regarding SAP OData queries and performance, sorting can significantly affect performance. If you anticipate a lot of records, OutSystems recommends performing any required sorting in your app rather than in the aggregate.

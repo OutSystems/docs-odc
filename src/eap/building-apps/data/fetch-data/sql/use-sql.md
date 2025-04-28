@@ -29,7 +29,7 @@ OutSystems supports two SQL syntaxes within SQL nodes:
 
 * [PostgreSQL syntax](../../../../onboarding/differences-sql.md) is used when the query includes only internal entities (created in ODC Studio).
 
-* ANSI-92 syntax is used when the query includes external entities, or a mix of internal and external entities.
+* [ANSI-92](ansi-92-syntax.md) syntax is used when the query includes external entities, or a mix of internal and external entities.
 
 ![Screenshot of SQL node configuration in OutSystems Developer Cloud (ODC) Studio showing query parameters and output entities.](images/use-sql-odcs.png "SQL Node Configuration in ODC Studio")
 

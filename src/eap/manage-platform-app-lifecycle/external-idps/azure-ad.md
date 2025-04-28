@@ -4,7 +4,7 @@ tags: azure ad, identity management, openid connect, single sign-on, app registr
 locale: en-us
 guid: fb6adbb0-7343-4858-8a87-e3f7d8693900
 app_type: mobile apps, reactive web apps
-figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=design&node-id=3405%3A152&mode=design&t=Oyyu3fjPlmIYwh5h-1
+figma:
 platform-version: odc
 audience:
   - platform administrators
@@ -35,9 +35,13 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. Login to the [**Azure Portal**](https://portal.azure.com/) and create a new app registration in the Microsoft Entra ID screen. For guidance, see Microsoft documentation [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app).
 
-1. Open the app registration you created and click the **Endpoints** button. Copy the URL from the **OpenID Connect metadata document** field and paste it into the **Discovery endpoint** field in ODC Portal.
+    <div class="info" markdown="1">
 
-    ![Azure Portal showing the OpenID Connect metadata document URL under the Endpoints section.](images/open-endpoints-az.png "Screenshot of Azure Portal showing the OpenID Connect metadata document URL")
+    Don't add a redirect URI at this stage. You’ll need the Login and Logout URLs, which are generated only after you create the IdP in the ODC Portal (a step covered later in this page).
+
+    </div>
+
+1. Open the app registration you created and click **Endpoints**. Copy the URL from the **OpenID Connect metadata document** field and paste it into the **Discovery endpoint** field in ODC Portal.
 
    <div class="info" markdown="1">
 
@@ -49,15 +53,9 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. Copy the value of the **Application (client) ID** field from the main screen of the app registration in Azure Portal and paste it into the **Client ID** field in ODC Portal.
 
-    ![Azure Portal with the Application (client) ID field highlighted in the app registration main screen.](images/copy-application-cliend-id-az.png "Screenshot of Azure Portal with the Application (client) ID field highlighted")
-
 1. Click the **Certificates & secrets** tab from the main screen of the app registration in **Azure Portal**. Click **New client secret** button. Enter a description for the new secret in the **Description** field and then click **Add** to generate the secret.
 
-    ![Azure Portal showing the New client secret button highlighted in the Certificates & secrets tab.](images/add-a-client-secret-az.png "Screenshot of Azure Portal with the New client secret button highlighted")
-
 1. Copy the newly generated value from the **Value** field and paste it into the **Client secret (secret value)** field in ODC Portal.
-
-    ![Azure Portal showing the newly generated client secret value in the Certificates & secrets tab.](images/paste-secret-value-az.png "Screenshot of Azure Portal showing the newly generated client secret value")
 
     <div class="info" markdown="1">
 
@@ -65,12 +63,36 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     </div>
 
-1. Copy the pair(s) of **Redirect URLs** to the list of permitted redirects in the setup part of your external provider. Copy the pair(s) for the built-in and active [custom domains](../custom-domains.md). If configuring [Okta](okta.md), you can follow the embedded link for specific guidance. Otherwise, see your provider's support documentation for further guidance. For example, [Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app#add-a-redirect-uri). Click **Next**.
+1. Complete the configuration in ODC Portal by leaving the **PKCE** as the default value (**SHA-256**) and the fields in the **Claim Mapping** section as default values (**name**, **email**).
 
-1. Complete the configuration in ODC Portal by leaving the **PKCE** as the default value (**SHA-256**) and fields in **Claim Mapping** section as default values (**name**, **email**) and clicking **Save**.
+1. In the ODC Portal, click **Save**. The **Configuration** tab for the newly created IdP opens.
+
+1. Assign the newly created IdP either to your **Organization** or the app stage you want (**Apps in Development**, **Apps in QA**, or **Apps in Production**). Refer to [Assign an external IdP](intro.md#assign-an-external-idp).
+
+1. Go to the **Redirect URLs** tab, and copy the **Login URL** and **Logout URL** for the built-in domain.  
+
+   If you're using a [custom domain](../custom-domains.md), copy the corresponding **Login URL** and **Logout URL** as well.
+
+    <div class="info" markdown="1">
+
+    Copy the URLs for either your **Organization** or the app stage you want (**Apps in Development**, **Apps in QA**, or **Apps in Production**).
+
+    </div>
+
+1. In the Azure Portal, open your app registration and add the copied **Login** and **Logout** URLs to the list of **Redirect URIs**. For more information, see the [Microsoft Entra ID documentation](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app#add-a-redirect-uri). Click **Next**.
 
 1. To enable additional Claims, such as JWT Tokens via Claims Mapping Policy in Microsoft Entra ID, manually add the required property to the app manifest configuration on Microsoft Entra ID. For more information, see [Adding user optional and mapped claims in the Microsoft Entra ID authentication token](https://devblogs.microsoft.com/premier-developer/adding-user-optional-and-mapped-claims-in-the-azure-ad-authentication-token/).
 
-ODC tests the configuration and on success adds Microsoft Entra ID to the list of available providers. If the test fails, a notification with the error displays.
+   ODC tests the configuration and, on success, adds Microsoft Entra ID to the list of available providers. If the test fails, an error notification appears.
 
-Now follow the steps [here](intro.md#apply-an-external-idp) to apply for the newly added Microsoft Entra ID provider for use by your organization or apps.
+<div class="warning" markdown="1">
+
+If you want to use the created IdP in your app, make sure you modify the login and logout flows. Refer to [Use external identity providers in an app](apps.md).
+
+</div>
+
+## Related resources
+
+* [IdP and end-user group mapping](end-user-group-mapping.md).
+* [Add Okta for use as an external identity provider](okta.md).
+

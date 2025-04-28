@@ -155,9 +155,9 @@
       "get": {
         "tags": [
           "application-roles"
-        ],
-        "summary": "Returns the list of users for the specific application role.",
-        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** permission.",
+        ],      
+        "summary": "Returns users granted the end-user role, excluding those who inherited it via groups.",
+        "description": "Returns a list of users directly assigned the specified end-user role, excluding those who inherited it via groups. Use query parameters to refine the search. \n\nAPI Client needs the **User management > View end users** permission.",
         "operationId": "ApplicationRole_QueryUsersByApplicationRole",
         "parameters": [
           {
@@ -1502,8 +1502,8 @@
         "tags": [
           "users"
         ],
-        "summary": "Returns the list of application roles associated with a user.",
-        "description": "Returns a list of application roles associated with a user that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** permission.",
+        "summary": "Returns end-user roles assigned to the user, excluding roles inherited via groups.",
+        "description": "Returns end-user roles directly assigned to the specified user, excluding roles inherited via groups. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** permission.",
         "operationId": "UserApplicationRoles_QueryUserApplicationRoles",
         "parameters": [
           {
@@ -1972,7 +1972,7 @@
           "users"
         ],
         "summary": "Retrieves an user.",
-        "description": "Retrieves detailed information about a user using the user's key.\n\nYou need the **User management > View organization members** or **User management > View end users** permissions.",
+        "description": "Retrieves detailed information about a user using the user's key.\n\nTo get the details of a user that has end-user roles, the API Client needs the **User management > View end users** permission. \n\n To get the details of a user that has organization roles, the API Client needs the **User management > View organization members** permission. \n\n To get the details of a user without roles the API client needs the **User management > Manage users permission**.",
         "operationId": "UserProfile_GetUser",
         "parameters": [
           {

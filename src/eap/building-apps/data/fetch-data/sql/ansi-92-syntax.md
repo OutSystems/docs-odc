@@ -27,6 +27,12 @@ ANSI-92 is a syntax that helps you write portable, consistent SQL designed to wo
 
 Use this article as a starting point to learn how ANSI-92 queries work in ODC.
 
+<div class="warning" markdown="1">
+
+Support for querying data using SQL with Salesforce and SAP systems is still experimental.
+
+</div>
+
 ## Statements { #statements }
 
 SQL statements define the actions your query performs. Each statement type serves a specific purpose, such as retrieving or modifying data.
@@ -49,7 +55,7 @@ When executing multiple statements in an SQL Node, the result will be that of th
 
 <div class="info" markdown="1">
 
-Using entities and actions from more than one external system is currently not supported when using multiple statements.
+SQL queries using multiple statements must use entities and actions from the same [connection](../../../../integration-with-systems/external-databases/create-connection-external-data.md).
 
 </div>
 
@@ -112,8 +118,15 @@ For examples and usage guidance, see the article on [ANSI-92 operators and funct
 ## Data types { #data-types }
 
 SQL data types define the kind of data you can store and work with in your queries. ANSI-92 uses common types that are supported by most systems.
-ODC has an internal SQL type system with mappings to/from attribute data types in external systems.
-ODC will automatically map value and attribute types as outlined in [External data type mapping](../../../../integration-with-systems/external-databases/external-data-type.md) however. it's also possible to `CAST`expressions and attributes to convert them to a different type, refer to [Type conversion](ansi-92-operators.md#type-conversion) for more information.
+ODC has an internal SQL type system with mappings to/from attribute data types in external systems. 
+ODC will automatically map value and attribute types as outlined in [External data type mapping](../../../../integration-with-systems/external-databases/external-data-type.md) however. it's also possible to `CAST`expressions and attributes to convert them to a different type, refer to [Type conversion](ansi-92-operators.md#type-conversion) for more information. 
+
+<div class="info" markdown="1">
+
+Only the data types that have a mapping at [External data type mapping](../../../../integration-with-systems/external-databases/external-data-type.md) are supported. 
+
+</div>
+
 
 Null value handling can be configured in ODC Portal as explained [here](../../../../integration-with-systems/external-databases/handle-null-values.md).
 

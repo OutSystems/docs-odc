@@ -40,6 +40,12 @@ For more on converting values, see:
 * [Type conversion (SQL)](../../building-apps/data/fetch-data/sql/ansi-92-operators.md#type-conversion)
 * [Convert data types (expressions)](../../building-apps/data/convert-data-types.md)
 
+<div class="info" markdown="1">
+
+Only the data types that have a mapping are supported. Data types not present in the following tables aren't yet supported.
+
+</div>
+
 
 | Type in SQL queries | OutSystems Data Type               | Microsoft SQL Server                                                       | Oracle                                                                | PostgreSQL               | Salesforce       | SAP OData        |
 |---------------------|------------------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------|--------------------------|------------------|------------------|
@@ -59,6 +65,22 @@ For more on converting values, see:
 | DATE                | Date                               | DATE                                                                       | DATE                                                                  | DATE                     | DATE             | DATE             |
 | TIME                | Text                               | TIME                                                                       |                                                                       | TIME                     | TIME             | TIME             |
 | TIMESTAMP           | Timestamp                          | DATETIME<br/>DATETIME2<br/>SMALLDATETIME                                   | TIMESTAMP                                                             | TIMESTAMP                | TIMESTAMP        |                  |
+| No official support. Attributes may not appear or may exhibit unexpected behavior. | No official support. Attributes may not appear in the ODC Portal or may exhibit unexpected behavior. | Other data types  | Other data types | Other data types | Other data types | Other data types |
+
+## SAP BAPI mapping
+
+
+| SAP BAPI | OutSystems data type |
+|--|--|
+| SSTRING<br/>STRING<br/>CHAR<br/>LANG<br/>UNIT<br/>NUMC<br/>DEC (Any, >8)<br/>DEC (>28, Any)<br/>CURR (Any, >8)<br/>CURR (>28, Any)<br/>QUAN (Any, >8)<br/>QUAN (>28, Any)<br/>CLNT<br/>CUKY <br/>LCHR<br/>LRAW<br/>FLTP<br/>RAW<br/>RAWSTRING<br/>GEOM_EWKB | Text |
+| INT1<br/>INT2<br/>INT4<br/>ACCP<br/>PREC<br/>DEC (1-9, 0)<br/>CURR (1-9, 0)<br/>QUAN (1-9, 0)<br/>NUMC | Integer |
+| DEC (10-18, 0)<br/>CURR (10-18, 0)<br/>QUAN (10-18, 0)<br/>NUMC | Long Integer |
+| DEC (19-28, 0-8)<br/>DEC (1-18, 1-8)<br/>CURR (19-28, 0-8)<br/>CURR (1-18, 1-8)<br/>QUAN (19-28, 0-8)<br/>QUAN (1-18, 1-8) | Decimal |
+| DATN<br/>DATS | Date |
+| TIMN<br/>TIMS | Time |
+| INT8<br/>DECFLOAT16<br/>DECFLOAT3<br/>UTCLONG | Currently not supported and won't appear in ODC Portal. |
+| Other data types | No official support. Attributes may not appear in the ODC Portal or may exhibit unexpected behavior. |
+
 
 ## Salesforce custom columns mapping
 

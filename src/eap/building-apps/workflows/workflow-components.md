@@ -1,20 +1,26 @@
 ---
-summary: 
-tags: 
+summary: Implement and manage workflow nodes using OutSystems Developer Cloud (ODC). Learn about different node statuses including Running, Waiting, and Error.
+tags: workflow implementation, workflow editor, workflow nodes, workflow statuses, outsystems developer cloud
 guid: e9f56ae4-aea1-411e-8ddd-6391e0b51fcc
 locale: en-us
 app_type: reactive web apps
 platform-version: odc
 figma:
 content-type:
-    - reference
+  - reference
+audience:
+  - full stack developers
+  - platform administrators
+outsystems-tools:
+  - none
 ---
-
-# Workflow nodes
+# Implement workflow
 
 You can implement a workflow in the workflow editor using the following nodes:
 
 * [Start](start-workflow.md)
+
+* [Conditional start](add-conditional-start.md)
 
 * [Automatic activity](add-automatic-activity.md)
 
@@ -23,6 +29,10 @@ You can implement a workflow in the workflow editor using the following nodes:
 * [Decision](add-decisions.md)
 
 * [Go to a previous step](go-to-previous-step.md)
+
+* [Parallel](parallel-workflow.md)
+
+* [Terminate](terminate-workflow.md)
 
 * [End](end-workflow.md)
 
@@ -54,6 +64,9 @@ The **Open** status applies only to human activity node.
 ## Related resources
 
 * [Workflows in ODC](workflows-in-odc.md)
-* [Using workflows](using-workflows.md)
+
+* [Getting started](using-workflows.md)
+
 * [Troubleshooting workflows](troubleshooting-workflows.md)
 
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)

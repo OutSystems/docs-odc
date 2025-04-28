@@ -21,8 +21,8 @@ topic:
 
 # Refresh a REST web service
 
-To change the services consumed from a REST API or to modify the list of consumed REST API methods, you can refresh the service in ODC Studio.
-An earlier approach to updating a single method, described later in this article, is still valid. However, the refresh option is easier to use and the recommended approach.
+To modify the list of consumed REST API methods, you can refresh the REST service in ODC Studio.
+You can choose to [modify the API methods manually](#manually-update-a-single-rest-api-method) as well.
 
 To refresh a REST API service:
 

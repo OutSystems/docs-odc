@@ -23,3 +23,19 @@ When implementing your workflow, the **Go to a previous step** node allows you t
 For example, the workflows can return to a previous activity in a bank transaction. If the bank employee finds invalid user documents while approving the loan, they send them back for Document review validation.
 
 ![Screenshot of the ODC Portal with Go to previous step for banking example](images/go-to-previous-step-workflow-pl.png "ODC Portal Banking example")
+
+## Next steps
+
+* [Add human activity](add-human-activity.md)
+
+* [Add automatic activity](add-automatic-activity.md)
+
+* [Add decisions](add-decisions.md)
+
+* [Add wait](add-wait.md)
+
+## Related resources
+
+* [Troubleshooting workflows](troubleshooting-workflows.md)
+
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)

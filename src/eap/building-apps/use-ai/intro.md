@@ -20,19 +20,13 @@ coverage-type:
 
 # About AI Agent Builder
 
-The **AI Agent Builder** is a set of tools that you can use to build generative-AI applications in your app. You can create AI agents in the tool that leverages AI model and data sources along with the instructions you enter to deliver the desired response. 
+The AI Agent Builder within ODC allows the development of AI-driven apps. It enables the creation of AI agents using AI models, data sources, and user instructions to generate responses. Downloadable from the Forge, this component enhances the ODC AI capabilities, providing a platform for flexible AI implementations.
 
-You can access the AI Agent Builder as part of the OutSystems Developer Cloud (ODC) and download it from the Forge.  
+<div class="info" markdown="1">
 
-When you build your agents and share them with your development team, the team better understands your goals which helps reduce the time to get your app to market. The generative AI built into AI Agent Builder enables you to:
+OutSystems recommends using [Al models in Portal](../build-ai-powered-apps/intro.md) whenever they fit your use cases. This article guides you in evaluating your use cases to help you decide when to use Al models in Portal.
 
-* Integrate AI into your apps without a developer.
-* Reduce costs because you don't need to upskill people on how to use AI.
-* Contribute to the AI team by providing agents that solve your use cases.
-* Inspire your teams to innovate and increase the number of automations once the team can quickly see how to integrate AI agents into an app.
-* Control how your organization uses AI to ensure security.
-* Create one agent that you can then use for multiple use cases.
-* Create a UI using the logic from AI widgets.
+</div>
 
 ## Terminology
 

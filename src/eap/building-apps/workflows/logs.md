@@ -103,4 +103,10 @@ The structure of a log includes:
 
 ## Troubleshooting instances
 
-For more information about troubleshooting workflow instances, refer to [Troubleshooting workflows](./troubleshooting-workflows.md).
+For more information about troubleshooting workflow instances, refer to [Troubleshooting workflows](troubleshooting-workflows.md).
+
+## Related resources
+
+* [Troubleshooting workflows](troubleshooting-workflows.md)
+
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)

@@ -1,7 +1,7 @@
 ---
 summary: Execute stored procedures from external entities using SQL nodes in OutSystems Developer Cloud (ODC) by obtaining a connectionId from Portal and using the CALL statement.
 tags: stored procedures, external entities, sql nodes, odc, database integration
-guid: d125e70b-1ef0-4f4e-a7df-070a396ddfad
+guid: b6caded7-82fc-4ce9-a8a2-6bd771c9e33b
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
@@ -60,19 +60,13 @@ Follow these steps to retrieve  the connectionId from Portal:
   * All positional arguments must come before any named ones.  
   * Optional parameters can be skipped.
 
-## Limitations and unsupported features
-
-* **OUTPUT and INPUT\_OUTPUT parameters** are generally not supported if they require variable declarations (SQL Server and Oracle).  
-* **Unsupported parameter types** vary by database and will prevent the procedure from being recognized.  
-* **Unsupported types in result sets** will return as `NULL`.  
-* **Procedure overloading** (same name, different parameter lists) is not supported.
+* Only the data types that have a mapping at [External data type mapping](../../../../integration-with-systems/external-databases/external-data-type.md) are supported. 
 
 ## Microsoft SQL Server
 
-* Only **positional assignment** is supported. Named parameters are not allowed.  
-* OUTPUT and INPUT\_OUTPUT parameters are not supported.  
-* Unsupported input types: `GEOGRAPHY`, `GEOMETRY`, `HIERARCHYID`, `ROWVERSION`, `SQL_VARIANT`, `TIMESTAMP`
-* Procedures using `EXECUTE` do not return result sets.
+* Stored procedures which have `OUT`/`OUTPUT` parameters that must be set with a value, i.e used as both input and output, aren't supported.
+* Stored procedures that use `EXEC` or `EXECUTE` won't return a result.
+
 
 ```sql
 -- All positional parameters (correct)
@@ -87,10 +81,9 @@ CALL "connectionId"."df_test_procedure_all_argument_types"("@ColId" = 1, "@ColNa
 
 ## Oracle
 
-* Procedures must not contain OUTPUT or INPUT\_OUTPUT parameters.  
-* Named and positional parameter assignment is supported.  
-* Input parameters can be passed as `NULL`, even if they have no default value.  
-* Unsupported input types: `BFILE`, `BINARY_DOUBLE`, `BINARY_FLOAT`, `INTERVAL_DAY_TO_SECOND`, `INTERVAL_YEAR_TO_MONTH`, `OBJECT`, `VARRAY`, `XMLTYPE`
+* Stored procedures with either `OUT` or `IN OUT` parameters aren't supported.
+* If an `IN` parameter has a default value in Oracle and this is set to `NULL` in `CALL`, the default value in Oracle won't be used and the parameter will be set to `NULL` instead.
+* Retrieving the result of a stored procedure call isn't supported, a value of `-1` is always returned.
 
 ```sql
 -- Named parameters (sorted)
@@ -109,19 +102,8 @@ CALL "connectionId"."df_test_procedure_all_argument_types"(1, 'test', 0);
 
 ## PostgreSQL
 
-* INPUT\_OUTPUT parameters are supported only if passed as **literals**.  
-
-* OUTPUT parameters must be passed in the call.  
-
-* Procedure returns:  
-  * `-1` if no result set is returned  
-  * A result set if it has OUTPUT or INPUT\_OUTPUT parameters  
-
-* Procedures with unsupported input types or overloading are not recognized.  
-
-* Parameter names may be `$1`, `$2`, etc. when unnamed.  
-
-* Unsupported input types include:`BIT VARYING`, `BOX`, `CIDR`, `CIRCLE`, `COMPOSITE`, `INET`, `INTERVAL`, `LINE`, `LSEG`, `MACADDR`, `MACADDR8`, `PATH`, `POINT`, `POLYGON`, `TSQUERY`, `TSVECTOR`, `TXID_SNAPSHOT`, and all `ARRAY` types.
+* All required `OUTPUT` parameters must be specified in `CALL` with a value
+* Parameters defined without a name may be specified in `CALL` using the syntax `"$1" = value` where `$1` specifies the first parameter, `$2` the second, and so on.
 
 ```sql
 -- Named parameters (sorted)

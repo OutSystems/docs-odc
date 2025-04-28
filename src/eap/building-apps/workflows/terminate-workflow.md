@@ -26,4 +26,10 @@ When a **Terminate** node is reached in a workflow:
 
 1. The workflow instance status changes to **Done**.
 
+## Related resources
 
+* [Troubleshooting workflows](troubleshooting-workflows.md)
+
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)
+
+* [End a workflow](end-workflow.md)

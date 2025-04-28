@@ -22,7 +22,7 @@ outsystems-tools:
 
 ```sql
 DELETE FROM entity
-[ WHERE booleanExpression ]
+[ WHERE condition ]
 ```
 
 `DELETE` deletes records in an entity on an external system.
@@ -33,7 +33,6 @@ If the `WHERE` clause is specified, the operation will only delete records for w
 <div class="info" markdown="1">
 
 * The user configured on the connection must have permission to delete records in the entity on the external system.
-*  Qualified attribute names, for example, `{entity}.[attribute]` are currently not supported.
 
 </div>
 
@@ -41,16 +40,17 @@ If the `WHERE` clause is specified, the operation will only delete records for w
 
 ```sql
 -- Delete all records in an entity
-DELETE FROM { entity };
+DELETE FROM {entity};
 
 -- Delete only matching records in an entity
-DELETE FROM { entity } WHERE [id] = 1 OR [id] = @dynamic;
+DELETE FROM {entity} WHERE {entity}.[id] = 1 OR {entity}.[id] = @dynamic;
+```FROM { entity } WHERE [id] = 1 OR [id] = @dynamic;
 ```
 
 ## Compatibility
 
 | Data Source          | Delete    |
-|:---------------------|:----------|
+|----------------------|-----------|
 | Microsoft SQL Server | Yes       |    
 | Oracle               | Yes       |    
 | PostgreSQL           | Yes       |    

@@ -49,6 +49,10 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 | `EXISTS (sub-query)`               | Whether *sub-query* returns at least one row                                                                                                       | Never NULL                                                  |
 | `UNIQUE (sub-query)`               | Whether the rows returned by *sub-query* are unique (ignoring null values)                                                                         | Never NULL                                                  |
 
+### Known issues
+
+* Operators which accept subqueries (such as `EXISTS`) are currently not supported in mashup queries.
+
 ## Logical operators
 
 | Operator syntax       | Description                                      | Null Behaviour              |
@@ -61,7 +65,7 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 | `boolean IS TRUE`      | Whether *boolean* is TRUE                        | FALSE if *boolean* is NULL  |
 | `boolean IS NOT TRUE`  | Whether *boolean* is not TRUE                    | TRUE if *boolean* is NULL   |
 
-## Arithmetic operators and functions
+## Arithmetic operators and functions { #arithmetic-operators-and-functions }
 
 | Operator syntax                 | Description                                                                                          | NULL Behaviour              |
 |---------------------------------|------------------------------------------------------------------------------------------------------|-----------------------------|
@@ -81,11 +85,10 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 
 ### Known issues
 
-* MOD is not supported with Microsoft SQL Server.
 * Mashup queries may return an error when MOD encounters a NULL divisor.
 * Mashup queries may return an error when ABS, ROUND, or TRUNCATE encounter a NULL value.
 
-## Character string operators and functions
+## Character string operators and functions { #character-string-operators-and-functions }
 
 | Operator syntax                                                     | Description                                                                                                      | NULL Behaviour              |
 |---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------|
@@ -108,7 +111,7 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 ## Date/time functions { #datetime-functions }
 
 | Operator syntax                               | Description                                                                                                                                   | NULL Behaviour                             |
-|:----------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
+|-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
 | `CURRENT_TIME`                                | Returns the current time in the server time zone, in a value of datatype TIMESTAMP WITH TIME ZONE                                             | Never NULL                                 |
 | `CURRENT_DATE`                                | Returns the current date in the server time zone, in a value of datatype DATE                                                                 | Never NULL                                 |
 | `CURRENT_TIMESTAMP`                           | Returns the current date and time in the server time zone, in a value of datatype TIMESTAMP WITH TIME ZONE                                    | Never NULL                                 |
@@ -156,7 +159,7 @@ TO_TIMESTAMP('01/03/2020 2:30:45 pm', 'DD/MM/YYYY HH12:MI:SS AM')
 -- Result: 2020-03-01 14:30:45
 ```
 
-### Known Issues
+### Known issues
 
 * `TIMESTAMPADD` and `TIMESTAMPDIFF` will return an error if used with `CURRENT_DATE` or `CURRENT_TIMESTAMP`. The same issue also occurs with the `+ INTERVAL` and `datetime2 - datetime1`syntax.
 
@@ -174,7 +177,7 @@ TO_TIMESTAMP('01/03/2020 2:30:45 pm', 'DD/MM/YYYY HH12:MI:SS AM')
 
 * Mashup queries may return an error when using NULLIF, consider using `CASE value1 WHEN value2 THEN NULL ELSE value1` instead.
 
-## Aggregate functions
+## Aggregate functions { #aggregate-functions }
 
 Syntax:
 
@@ -190,21 +193,24 @@ If `FILTER` is present, the aggregate function only considers rows for which *co
 
 If `DISTINCT` is present, duplicate argument values are eliminated before being passed to the aggregate function.
 
-| Operator syntax                                   | Description                                                                    | NULL Behaviour                      |
-|---------------------------------------------------|--------------------------------------------------------------------------------|-------------------------------------|
+| Operator syntax                                | Description                                                                    | NULL Behaviour                      |
+|------------------------------------------------|--------------------------------------------------------------------------------|-------------------------------------|
 | `ANY_VALUE( [ ALL | DISTINCT ] attribute)`     | Returns one of the values of *attribute* from a set of records                 | NULL if the set of records is empty |
 | `AVG( [ ALL | DISTINCT ] numeric)`             | Returns the average (arithmetic mean) of *numeric* for a set of records        | NULL if the set of records is empty |
-| `COUNT(*)`                                         | Returns the count for a set of records                                         | Never NULL                          |
+| `COUNT(*)`                                     | Returns the count for a set of records                                         | Never NULL                          |
 | `COUNT( [ ALL | DISTINCT ] value [, value ]*)` | Returns the count for a set of records where the specified values are not null | Never NULL                          |
 | `MAX( [ ALL | DISTINCT ] value)`               | Returns the maximum of *value* for a set of records                            | NULL if the set of records is empty |
 | `MIN( [ ALL | DISTINCT ] value)`               | Returns the minimum of *value* for a set of records                            | NULL if the set of records is empty |
-| `MODE(value)`                                       | Returns the most frequent *value* for a set of records                         | NULL if the set of records is empty |
+| `MODE(value)`                                  | Returns the most frequent *value* for a set of records                         | NULL if the set of records is empty |
 | `SUM( [ ALL | DISTINCT ] numeric)`             | Returns the sum of *numeric* for a set of records                              | NULL if the set of records is empty |
 
-## Type conversion { #type-conversion }
+### Known issues
 
-It's recommended to specify explicit conversions rather than rely on implicit or automatic
-conversions.
+* `COUNT DISTINCT` isn't supported with attributes of type `BOOLEAN` for Salesforce.
+
+## Type conversion functions { #type-conversion }
+
+It's recommended to specify explicit conversions rather than rely on implicit or automatic conversions.
 
 * SQL statements are easier to understand when you use explicit datatype conversion functions.
 * Implicit conversion depends on the context in which it occurs and may not work the same way in every case. For example, implicit conversion from a datetime value to a VARCHAR value may return an unexpected format.
@@ -215,8 +221,8 @@ In particular, it's recommended to always `CAST` dynamic parameters. Queries usi
 
 Refer to [Data types in SQL with external entities](ansi-92-data-types.md) for more information about the available types and how they map to types in external systems.
 
-| Operator syntax                      | Description                                 | Accepted Types                    | NULL Behaviour                |
-|:-------------------------------------|:--------------------------------------------|-----------------------------------|-------------------------------|
+| Operator syntax                        | Description                                 | Accepted Types                    | NULL Behaviour                |
+|----------------------------------------|---------------------------------------------|-----------------------------------|-------------------------------|
 | `DECIMAL_TO_TEXT(numeric)`             | Converts a numeric argument to VARCHAR      | NUMERIC<br/>DECIMAL               | NULL if *numeric* is NULL     |
 | `INTEGER_TO_DECIMAL(integer)`          | Converts an integer argument to DECIMAL     | TINYINT<br/>SMALLINT<br/>INTEGER  | NULL if *integer* is NULL     |
 | `LONG_INTEGER_TO_DECIMAL(longInteger)` | Converts a long integer argument to DECIMAL | BIGINT                            | NULL if *longInteger* is NULL |
@@ -227,8 +233,9 @@ Refer to [Data types in SQL with external entities](ansi-92-data-types.md) for m
 ### CAST behaviour { ##cast-behaviour }
 
 | Value Type                                  | Target Type                                                  | Notes                                                                                                                                        | Examples                                                                             |
-|:--------------------------------------------|:-------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+|--------------------------------------------|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
 | BOOLEAN                                     | CHAR<br/>VARCHAR                                             |                                                                                                                                              | TRUE -> 'TRUE'<br/>FALSE -> 'FALSE'                                                  |
+| TINYINT<br/>SMALLINT<br/>INTEGER<br/>BIGINT | BOOLEAN                                                      | Returns `FALSE` if the value is `0`, otherwise returns `TRUE`                                                                                | 1 -> TRUE<br/>0 -> FALSE<br/>-1 -> TRUE                                              |
 | TINYINT<br/>SMALLINT<br/>INTEGER<br/>BIGINT | CHAR<br/>VARCHAR                                             |                                                                                                                                              | 123 -> '123'<br/>-123 -> '-123'                                                      |
 | TINYINT<br/>SMALLINT<br/>INTEGER<br/>BIGINT | NUMERIC<br/>DECIMAL<br/>FLOAT<br/>REAL<br/>DOUBLE            |                                                                                                                                              | 123 -> 1.23E2                                                                        |
 | TINYINT<br/>SMALLINT<br/>INTEGER<br/>BIGINT | TIMESTAMP                                                    | Milliseconds since 1970-01-01 00:00:00                                                                                                       | 123 -> 1970-01-01 00:00:00.123                                                       |
