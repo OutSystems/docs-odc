@@ -2,7 +2,7 @@
 guid: c7ec5c23-c83f-4bd7-ae95-c33d04f49a44
 locale: en-us
 summary: Configure mobile apps using OutSystems Developer Cloud (ODC) with low-code and advanced extensibility options, including syncing mobile tab settings and resolving script errors.
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=7401-11&t=2pZi2xy9GJPakYPF-1
 coverage-type:
   - evaluate
   - remember
@@ -28,6 +28,8 @@ OutSystems provides various ways to configure your mobile app, including low-cod
 ## Mobile tab settings for quick setting
 
 To access the dialog, click the app name and then select the **Mobile** tab. The mobile properties connect to extensibility configuration, so once you configure a property in the **Mobile** tab, this same property changes in the extensibility configuration script. The same applies in the opposite way. If you change the script, the change also takes place in the **Mobile** tab properties.
+
+![ODC Studio interface showing the mobile tab settings for screen orientation and target device.](images/mobile-app-configuration-odcs.png "Mobile App Configuration in ODC Studio")
 
 Since these properties connect to extensibility configuration, they function correctly only if your extensibility scripts are error-free. ODC Studio shows the warning message in case of errors.
 
