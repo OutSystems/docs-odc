@@ -23,7 +23,7 @@ outsystems-tools:
 ```sql
 UPDATE entity
 SET assignment [, assignment ]*
-[ WHERE booleanExpression ]
+[ WHERE condition ]
 
 assignment:
         attribute = expression

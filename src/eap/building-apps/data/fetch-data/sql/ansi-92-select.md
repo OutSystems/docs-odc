@@ -17,6 +17,7 @@ outsystems-tools:
   - odc studio
   - odc portal
 ---
+
 # SELECT statement in ANSI-92 queries
 
 ```sql
@@ -26,24 +27,33 @@ SELECT [ DISTINCT ] { * | selectItem [, selectItem ]* }
 [ WHERE condition ]
 [ GROUP BY { expression [, expression ]* } ]
 [ HAVING condition ]
+[ WINDOW windowName AS ( windowDefinition ) [, windowName as ( windowDefinition ) ]* ]
 [ UNION [ ALL | DISTINCT ] select ]
 [ ORDER BY orderItem [, orderItem ]* ]
 [ LIMIT count ]
-[ OFFSET start ]
-
-withItem:
-        entityAlias [ ( attributeAlias [, attributeAlias ]* ) ] AS ( select )
+	@@ -36,14 +37,25 @@ withItem:
 
 selectItem:
         expression [ [ AS ] attributeAlias ]
+    |   windowFunction OVER { windowName | ( windowDefinition ) } [ [ AS ] attributeAlias ]
 
 entityExpression:
         entity [ [ AS ] entityAlias [ ( attributeAlias [ , attributeAlias ]* ) ] ]
+    |   ( select ) [ [ AS ] entityAlias [ ( attributeAlias [ , attributeAlias ]* ) ] ]
     |   entityExpression [, entityExpression ]*
     |   entityExpression [ CROSS ] JOIN entityExpression
     |   entityExpression [ INNER ] JOIN  entityExpression ON condition
     |   entityExpression { LEFT | RIGHT | FULL } [ OUTER ] JOIN entityExpression ON condition
-    |   ( select )
+
+windowDefinition:
+        [ existingWindowName ]
+        [ PARTITION BY expression [, expression ]* ]
+        [ ORDER BY orderItem [, orderItem ]* ]
+        [ { RANGE | ROWS } BETWEEN windowBound AND windowBound ]
+
+windowBound:
+        CURRENT ROW
+    |   { UNBOUNDED | value } { PRECEDING | FOLLOWING }
 
 orderItem:
         expression [ ASC | DESC ] [ NULLS FIRST | NULLS LAST ]
@@ -54,6 +64,15 @@ orderItem:
 The statement must reference at least one external entity and may reference any number of internal entities.
 
 A `SELECT` statement that contains both internal and external entities or that uses external entities from more than one external system is called a "mashup" query. There are significant differences in how mashup queries are executed compared to regular queries, for more information please refer to [Query execution](ansi-92-syntax.md#query-execution).
+
+
+<div class="info" markdown="1">
+
+* The user configured on the connection must have permission to read from the entity in the external system
+* If the entity has attributes of an unsupported data type then those attributes will not appear in the result and can't be referenced in the query. `SELECT *` and `SELECT {entity}.*` will still work in this case but won't reference the unsupported attributes.
+* Subqueries can't be used in expressions unless using an [Operator](#ansi-92-operators.md) which accepts a subquery like `EXISTS`.
+
+</div>
 
 ## WITH clause
 
@@ -66,7 +85,7 @@ withItem:
 
 The `WITH` clause defines one or more named entity expressions based on other `SELECT` statements which can then be referenced as entities in the subsequent outer `SELECT` statement.
 
-The query for a given `withItem` must return records with the correct number of attributes to match the `attributeAlias` list. To reference the result of this query in the outer `SELECT` statement, the `entityAlias` may be used in any place where an `entity` can be used however the syntax is not the same. Entities are referenced using `{entity}` however a `withItem` must be referenced with the `"entityAlias"` syntax. Similarly, the attributes of a `withItem` are not referenced using the usual `{entity}.[attribute]` syntax, instead you should use `"entityAlias"."attributeAlias"`.
+The query for a given `withItem` must return records with the correct number of attributes to match the `attributeAlias` list. To reference the result of this query in the outer `SELECT` statement, the `entityAlias` may be used in any place where an `entity` can be used however the syntax is not the same. Entities are referenced using `{entity}` but a `withItem` must be referenced with the `"entityAlias"` syntax. Similarly, the attributes of a `withItem` are not referenced using the usual `{entity}.[attribute]` syntax, instead you should use `"entityAlias".[attributeAlias]` or `"entityAlias"."attributeAlias"`.
 
 ### SELECT DISTINCT
 
@@ -94,7 +113,7 @@ selectItem:
 
 The `SELECT` list (between `SELECT` and `FROM`) specifies expressions that will be mapped to attributes in the returned records. The expressions may use [Operators](ansi-92-operators.md), [Literals](ansi-92-data-types.md#sql-types), dynamic parameters, and/or any attributes from entities or subqueries in the `FROM` clause.
 
-An important difference to note in ANSI SQL-92 compared to some database systems is that unquoted identifiers are automatically uppercased. For example, `SELECT sub.abc` is converted to `SELECT SUB.ABC`. Identifiers may be quoted using either square brackets or double quotes, for example `SELECT "sub".[abc]`. The letter casing of quoted identifiers is preserved. Identifiers are case-sensitive, so care must be taken when using a combination of quoted and unquoted identifiers.
+There are important differences in how identifiers work in ANSI-92 syntax compared to commonly used database systems, for more information please refer to [Statements](ansi-92-syntax.md#statements).
 
 ```sql
 -- Not valid, the outer SELECT expects abc but the inner SELECT returns ABC
@@ -107,34 +126,34 @@ SELECT sub.[abc] FROM ( SELECT 1 as "abc" ) as sub
 SELECT sub."abc" FROM ( SELECT 1 as "abc" ) as sub
 ```
 
-For attributes which originate from an entity, always use the `{entity}.[attribute]` syntax. Note that attributes which are renamed in ODC Portal are specified this way using the new name and not the original name. ODC will automatically convert the reference to the original name before the query is forwarded to the external system.
-
 Expressions in a `SELECT` list without an explicit alias will be given a name automatically depending on the type of expression. If the expression is a simple reference to an attribute from the `FROM` clause then the name of the attribute will be used as the alias. No guarantees are made about the names used for other types of expression, they may not always be the same. When an attribute is renamed in ODC Portal and not aliased in a query, the generated alias will be the original attribute name and not the new name provided in ODC Portal.
 
 ```sql
--- The implicit alias will be the original name of the attribute on the entity
-SELECT {entity}.[abc] FROM {entity}
+-- In this example, entity has one attribute called 'abc' in the external system which has been renamed to 'Abc' in ODC Portal
 
--- The implicit alias in the subquery will be the original name of the attribute on the entity.
--- The outer query is only valid if the original name of the attribute is exactly 'abc'
-SELECT [abc] FROM ( SELECT {entity}.[abc] FROM {entity} ) sub
+-- The implicit alias will be 'abc' and not `Abc`
+SELECT {entity}.[Abc] FROM {entity}
 
--- A safer way to write the query above is to use an explicit alias
+-- Neither of these are valid because the implicit alias in the subquery is 'abc' and not 'Abc'
+SELECT [Abc] FROM ( SELECT {entity}.[Abc] FROM {entity} ) sub
+SELECT sub.[Abc] FROM ( SELECT {entity}.[Abc] FROM {entity} ) sub
+
+-- The recommended way to write the query above is to use an explicit alias
 -- This query is always valid even if the attribute is renamed on the entity
-SELECT [abc] FROM ( SELECT {entity}.[abc] AS [abc] FROM {entity} ) sub
-
--- Qualified identifiers may also be used to avoid ambiguity
-SELECT sub.[abc] FROM ( SELECT {entity}.[abc] AS [abc] FROM {entity} ) sub
+SELECT [Abc] FROM ( SELECT {entity}.[Abc] AS [Abc] FROM {entity} ) sub
 
 -- No guarantees are made about the implicit alias for other expressions
-SELECT {entity}.[abc] + 3 FROM {entity}
+-- They should be aliased if they need to be referenced by another part of the query
+SELECT sub.[result] FROM (SELECT {entity}.[abc] + 3 AS [result] FROM {entity}) sub
 ```
 
 It's recommended to use quoted and qualified names throughout the query to avoid unexpected issues and because it makes the query easier to understand.
 
+The `SELECT` list may also contain one or more [window functions](ansi-92-operators.md#window-functions) used together with an inline window definition or a named window defined in the [WINDOW clause](#window-clause).
+
 #### Known issues with SELECT list
 
-- Attributes with the same name but from different entities/subqueries in the same `SELECT` list
+* Attributes with the same name but from different entities/subqueries in the same `SELECT` list
   must be explicitly aliased.
     ```sql
     -- Returns error: Attribute 'name' is ambiguous
@@ -144,13 +163,14 @@ It's recommended to use quoted and qualified names throughout the query to avoid
     SELECT {this}.[name] AS thisname, {other}.[name] AS othername FROM {this}, {other}
     ```
 
-- The error message returned when an alias is not in scope is sometimes incorrect.
+* The error message returned when an alias is not in scope is incorrect.
+
     ```sql
-    -- Query is incorrect because the FROM clause contains an explicit alias
+    -- Query is invalid because the FROM clause contains an explicit alias
     -- Returns error: 'entity' not found in any connection
     SELECT {entity}.[attribute] FROM {entity} AS renamed
-
-    -- Correct and will work as expected
+    -- All of these are valid
+    SELECT {entity}.[attribute] FROM {entity}
     SELECT renamed.[attribute] FROM {entity} AS renamed
     ```
 
@@ -190,7 +210,7 @@ The `FROM` clause may also source records from one or more subqueries, commonly 
 
 Entities and subqueries used in a `FROM` clause may optionally be given an alias. Subqueries without an alias will be given a name automatically however that name is not guaranteed to always be the same. For this reason, it is recommended to always specify an alias for subqueries.
 
-#### Known issues with FROM clause
+#### Known issues with FROM
 
 * Joining more than one subquery without a `FROM` clause to an entity is not supported, for example:
 
@@ -245,10 +265,49 @@ For example, `SELECT "A" / 2 AS "key", MAX( "B" ) AS "value"` must have a `GROUP
 
 The `HAVING` clause is used to filter records after they have been grouped and may only be used when a [GROUP BY clause](#group-by) is specified.
 
-The condition may contain any of the supported [operators](ansi-92-operators.md) as well as any attributes from the [FROM Clause](#from-clause). Aliases from the [SELECT List](#select-list) cannot be used in
+The condition may contain any of the supported [operators](ansi-92-operators.md) as well as any attributes from the [FROM clause](#from-clause). Aliases from the [SELECT list](#select-list) cannot be used in
 the `HAVING` clause.
 
-### UNION clause
+### WINDOW clause
+
+```sql
+[ WINDOW windowName AS ( windowDefinition ) [, windowName as ( windowDefinition ) ]* ]
+windowDefinition:
+        [ existingWindowName ]
+        [ PARTITION BY expression [, expression ]* ]
+        [ ORDER BY orderItem [, orderItem ]* ]
+        [ { RANGE | ROWS } BETWEEN windowBound AND windowBound ]
+windowBound:
+        CURRENT ROW
+    |   { UNBOUNDED | value } { PRECEDING | FOLLOWING }
+```
+
+The `WINDOW` clause is used to create one or more named windows. The windowName may be referenced in an `OVER` clause in the [SELECT List](#select-list) or by a subsquent window definition with existingWindowName.
+
+The expressions in the `WINDOW` clause may contain [operators](ansi-92-operators.md) (excluding those which require subqueries) as well as any attributes from the [FROM clause](#from-clause). Aliases from the [SELECT list](#select-list) cannot be used in expressions in the `WINDOW` clause.
+
+The `PARTITION BY` clause groups the records of the window frame into one or more partitions, in this case the window function is applied to each partition separately. If a `PARTITION BY` clause is not specified, then all records of the window frame will be in a single partition. This clause is not allowed when defining a new window based on another window using existingWindowName.
+
+The `ORDER BY` clause defines the order of records in each partition of the window frame. This clause is mandatory for some [Window functions](ansi-92-operators.md#window-functions) because their result depends on the ordering of the records.
+
+The `RANGE` or `ROWS` clause specifies the lower and upper bounds of the window frame. This clause may only be used if there is an `ORDER BY` clause in the same window or in the referenced window (existingWindowName). A window without an `ORDER BY` clause will have bounds equivalent to `RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`. A window with an `ORDER BY` but no `RANGE` or `ROWS` clause will have bounds equivalent to `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`.
+
+When using `RANGE`, the `ORDER BY` must only sort on a single attribute and the bounds are specified in terms of that attribute. The values provided as bounds in this case must also match the data type of the sorted attribute. For example, `ORDER BY {entity}.[age] RANGE BETWEEN 1 PRECEDING and 2 FOLLOWING` will include records around the current record from `[age] - 1` to `[age] + 2`.
+
+The `ROWS` clause specifies the bounds in terms of the number of records. For example, `ORDER BY {entity}.[age] ROWS BETWEEN 1 PRECEDING AND 2 FOLLOWING` will include the previous record and up to two subsequent records.
+
+If an existingWindowName is specified, then it must refer to an earlier entry in the same `WINDOW` clause. There are some special rules that apply in this case:
+
+* The existing window must not have a `ROWS` or `RANGE` clause
+* The new window must not have a `PARTITION BY` clause
+* The new window may only have an `ORDER BY` clause if the existing window does not have one
+
+#### Known issues with WINDOW and OVER
+
+* Microsoft SQL Server only supports `RANGE` with bounds of `CURRENT ROW` and `UNBOUNDED`, values may not be used as bounds
+* Window functions are not supported with Salesforce and SAP OData
+
+### UNION clause { #union-clause }
 
 ```sql
 [ UNION [ ALL | DISTINCT ] select ]
@@ -346,7 +405,6 @@ The `OFFSET` clause is permitted in subqueries but this is only supported with P
 SELECT {entity}.*
 FROM {entity}
 WHERE {entity}.[id] = @dynamic
-
 -- Common table expressions
 WITH "temp1" ("id", "total") AS (
   SELECT
@@ -369,16 +427,14 @@ INNER JOIN "temp2"
 ON "temp1"."id" = "temp2"."id"
 ORDER BY "temp2"."name" ASC
 LIMIT 10
-
 -- Use a subquery with EXISTS in WHERE
 SELECT {entity1}.*
 FROM {entity1}
 WHERE EXISTS (
   SELECT *
   FROM {entity2}
-  WHERE [id] = {entity1}.[id]
+  WHERE {entity2}.[id] = {entity1}.[id]
 )
-
 -- Derived tables
 SELECT
   "a"."name" AS "name",
@@ -400,4 +456,14 @@ FROM (
 ON "a"."id" = "b"."id"
 ORDER BY "b"."average" DESC
 LIMIT 10
+-- Window functions
+SELECT
+    {entity}.[department],
+    AVG({entity}.[salary]) OVER "framed",
+    SUM({entity}.[salary]) OVER "by_department"
+FROM {entity}
+WINDOW
+    "by_department" AS (PARTITION BY {entity}.[department]),
+    "ordered" AS ("by_department" ORDER BY {entity}.[startDate]),
+    "framed" AS ("ordered" RANGE BETWEEN INTERVAL '1' YEAR PRECEDING AND INTERVAL '1' YEAR FOLLOWING)
 ```

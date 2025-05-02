@@ -163,7 +163,7 @@ TO_TIMESTAMP('01/03/2020 2:30:45 pm', 'DD/MM/YYYY HH12:MI:SS AM')
 
 * `TIMESTAMPADD` and `TIMESTAMPDIFF` will return an error if used with `CURRENT_DATE` or `CURRENT_TIMESTAMP`. The same issue also occurs with the `+ INTERVAL` and `datetime2 - datetime1`syntax.
 
-## Conditional functions and operators
+## Conditional functions and operators { #conditional-functions }
 
 | Operator syntax                                                                                                                     | Description                                                                                                                                                                                                                              | NULL Behaviour                                                                                                                    |
 |:------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
@@ -207,6 +207,50 @@ If `DISTINCT` is present, duplicate argument values are eliminated before being 
 ### Known issues
 
 * `COUNT DISTINCT` isn't supported with attributes of type `BOOLEAN` for Salesforce.
+
+
+## Window functions { #window-functions }
+
+Syntax:
+
+```sql
+windowFunction OVER { windowName | ( windowDefinition ) }
+
+windowDefinition:
+        [ existingWindowName ]
+        [ PARTITION BY expression [, expression ]* ]
+        [ ORDER BY orderItem [, orderItem ]* ]
+        [ { RANGE | ROWS } BETWEEN windowBound AND windowBound ]
+
+windowBound:
+        CURRENT ROW
+    |   { UNBOUNDED | value } { PRECEDING | FOLLOWING }
+```
+
+| Operator syntax                       | Description                                                                                                                                                          | Requires ORDER BY |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| `COUNT(attribute [, attribute]*)`     | Returns number of records in window for which the attributes are not null                                                                                            | No                |
+| `COUNT(*)`                            | Returns number of records in window                                                                                                                                  | No                |
+| `AVG(numeric)`                        | Returns arithmetic mean of numeric for the records in window                                                                                                         | No                |
+| `SUM(numeric)`                        | Returns sum of numeric for the records in window                                                                                                                     | No                |
+| `MAX(attribute)`                      | Returns maximum value of attribute for the records in window                                                                                                         | No                |
+| `MIN(attribute)`                      | Returns minimum value of attribute for the records in window                                                                                                         | No                |
+| `RANK()`                              | Returns rank of the current record based on ORDER BY attribute with gaps                                                                                             | Yes               |
+| `DENSE_RANK()`                        | Returns rank of the current record based on ORDER BY attribute without gaps                                                                                          | Yes               |
+| `ROW_NUMBER()`                        | Returns position of the current record within it's partition counting from 1                                                                                         | No                |
+| `FIRST_VALUE(attribute)`              | Returns attribute from the first record in the window frame                                                                                                          | No                |
+| `LAST_VALUE(attribute)`               | Returns attribute from the last record in the window frame                                                                                                           | No                |
+| `LEAD(attribute [, offset, default])` | Returns attribute from offset records after the current record, or default if there is no such record. When not specified, offset defaults to 1 and default is NULL  | Yes               |
+| `LAG(attribute [, offset, default])`  | Returns attribute from offset records before the current record, or default if there is no such record. When not specified, offset defaults to 1 and default is NULL | Yes               |
+| `NTH_VALUE(attribute, n)`             | Returns attribute at the nth record of the window frame                                                                                                              | No                |
+| `NTILE(value)`                        | Returns an integer ranging from 1 to value, dividing the partition as equally as possible                                                                            | Yes               |
+
+### Known issues
+
+* `ROW_NUMBER` requires `ORDER BY` when used with Microsoft SQL Server or Oracle.
+* `NTH_VALUE` isn't supported with Microsoft SQL Server.
+* `NTILE` can't be used with a window which has a `RANGE` or `ROWS` clause with Microsoft SQL Server.
+* Window functions aren't supported with Salesforce and SAP OData.
 
 ## Type conversion functions { #type-conversion }
 
@@ -261,4 +305,8 @@ Refer to [Data types in SQL with external entities](ansi-92-data-types.md) for m
 
 ### Known issues
 
-* CAST to TIMESTAMP is not supported for Oracle, however the [TO_TIMESTAMP](#datetime-functions) function can still be used.
+* Some character string operators / functions will return an error when the attribute collation is not compatible with the database default collation.
+
+* When using the `CHAR_INDEX`, `LIKE`, and `POSITION` operators with PostgreSQL, the operands will be collated to the database default collation. This may lead to unexpected results when working with attributes which have a non-default collation.
+
+* Mashup queries may return an error when either UPPER or LOWER encounter a NULL value.

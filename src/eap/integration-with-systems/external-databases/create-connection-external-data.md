@@ -96,6 +96,12 @@ To edit an existing database connection, go to ODC Portal and follow these steps
 
 You can only change the name and description without testing your connection again. For more information about external data type mapping to OutSystems data type, refer to [External data type mapping.](external-data-type.md)
 
+<div class="info" markdown="1">
+
+For existing connections, when objects are changed or new ones introduced, it's necessary to refresh the connection to fetch the new metadata. In the ODC Portal, click **Import** on the connection and then **Refresh list**.
+
+</div>
+
 ## Connection parameters
 
 Administrators  must supply the following information to connect to the external connector. 
