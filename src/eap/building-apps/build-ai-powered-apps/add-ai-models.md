@@ -21,8 +21,6 @@ topic:
 
 ODC lets you connect your OutSystems apps to external large language models, often called LLMs, from various providers or use pre-configured ODC trial models for experimentation. This enables you to integrate AI capabilities directly into your app.
 
-![Screenshot of the 'Add AI model' dialog in the ODC Portal showing options to select a provider or a trial model.](images/add-ai-model-pl.png "Add AI Model Dialog in ODC Portal")
-
 ## Supported providers and ODC trial models
 
 Using the [ODC API contract](ai-models.md#custom-model-connections), you can add connections to your provisioned models through **Custom connections**. This allows you to integrate with LLMs from various providers or your own private models that are not natively supported by ODC. For natively supported providers like Azure OpenAI and Amazon Bedrock, ODC offers specific integration methods that do not require implementing the generic ODC API contract. ODC currently supports Amazon Bedrock models that are compatible with the [Bedrock Converse API](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html).
@@ -44,18 +42,32 @@ These prerequisites don't apply when adding an ODC trial model.
 Follow these steps to add an AI model connection or an ODC trial model in the ODC Portal:
 
 1. Navigate to the **INTEGRATE** > **AI models** section.
+
 1. Click **Add AI model**. The **Add AI model** dialog opens.
+
 1. Choose the type of model you want to add:
     * **Own configured model**: Select the provider, such as Amazon Bedrock, Azure OpenAI, or a custom connection.
     * **ODC trial model**: Select the desired trial model, for example, GPT or Claude Sonnet.
+    
+      ![Screenshot of the 'Add AI model' dialog in the ODC Portal showing options to select a provider or a trial model.](images/add-ai-model-pl.png "Add AI Model Dialog in ODC Portal")
+
 1. Click **Confirm**.
     * **For your own configured model**, proceed to configure the connection details.
     * **For the ODC trial model**, ODC adds the trial model directly to your list, completing the setup.
-1. On the model configuration page that appears, enter a unique **Name** and an optional **Description** for this AI model connection.
+
+1. On the model configuration page that appears, enter a unique 
+**Name** and an optional **Description** for this AI model connection.
+
 1. In the **Endpoints** section, click **+ Add** to open the **Add endpoint** dialog.
+  ![Screenshot of the 'Add endpoint' button in the ODC Portal under the Configuration section.](images/add-endpoints-pl.png "Add Endpoint Button in ODC Portal")
+
 1. Enter the required endpoint details for the provider you selected. Set the **Priority** for this endpoint. For details about the fields, refer to the [AI model parameters](#add-ai-models-add-ai-models-) section. Click **Save**.
+  ![Screenshot of the 'Add endpoint' dialog in the ODC Portal showing fields for Access key, Secret key, and Priority.](images/set-priority-endpoint-configuration-pl.png "Set Priority in Endpoint Configuration")
+
 1. Optionally, add more endpoints if you have them available for different stages, such as development and production. More endpoints also enable load balancing. Ensure all endpoints under one connection use the same underlying AI model and version.
+
 1. If you added multiple endpoints, adjust their priority order on the main model configuration page using the edit icon next to each endpoint.
+
 1. Click **Save** to confirm.
 
 After you complete the steps, ODC redirects you to the main AI models page. You can now use the newly added model connection or ODC trial model within your apps in ODC Studio.
