@@ -38,6 +38,12 @@ You can use other data types as Entity Identifiers or switch off the AutoNumber 
 
 To set another attribute as Entity Identifier simply go to that attribute, right-click and set it as identifier.
 
+<div class="info" markdown="1">
+
+When designing the data model, choose the identifier attribute and its name carefully. After the first publish, you can’t change the identifier attribute or rename it.
+
+</div>
+
 In OutSystems, it is not possible to have composite keys because only one attribute can be the Entity Identifier. But you can use indexes to create alternate keys (see more below about indexes).
 
 ## Sequential attributes
