@@ -119,10 +119,6 @@
         - href: eap/building-apps/data/edit-data.md
         - href: eap/building-apps/data/structure-create-use.md  
         - href: eap/building-apps/data/client-variable.md  
-        - href: eap/building-apps/data/data-best-practices/intro.md
-        - topics:
-            - href: eap/building-apps/data/data-best-practices/data-purging.md
-            - href: eap/building-apps/data/data-best-practices/data-archiving.md
     # UI
     - href: eap/building-apps/ui/intro.md
     - topics:
