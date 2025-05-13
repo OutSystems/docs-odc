@@ -116,9 +116,13 @@
         - href: eap/building-apps/data/sharing.md
         - href: eap/building-apps/data/data-types.md
         - href: eap/building-apps/data/convert-data-types.md 
-    
-        - href: eap/building-apps/data/structure-create-use.md   
-  
+        - href: eap/building-apps/data/edit-data.md
+        - href: eap/building-apps/data/structure-create-use.md  
+        - href: eap/building-apps/data/client-variable.md  
+        - href: eap/building-apps/data/data-best-practices/intro.md
+        - topics:
+            - href: eap/building-apps/data/data-best-practices/data-purging.md
+            - href: eap/building-apps/data/data-best-practices/data-archiving.md
     # UI
     - href: eap/building-apps/ui/intro.md
     - topics:
@@ -609,6 +613,11 @@
         - href: eap/reference/libraries/url.md
         - href: eap/reference/libraries/xml.md
         - href: eap/reference/libraries/zip.md 
+  # Logic actions
+    - href: eap/reference/logic-actions/logic-actions.md
+    - topics:
+        - href: eap/reference/logic-actions/client-action.md
+        - href: eap/reference/logic-actions/server-action.md    
   # Service actions
     - href: eap/reference/service-actions/intro.md
     - topics:
