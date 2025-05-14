@@ -648,6 +648,7 @@
         - href: eap/reference/apis/javascript/validation.md
         - href: eap/reference/apis/javascript/view.md
     - href: eap/reference/shortcutkeys.md
+    - href: eap/reference/command-line/odc-command-line.md
     - href: eap/reference/data-grid-ref.md
       
 
