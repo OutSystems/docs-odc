@@ -18,7 +18,8 @@ coverage-type:
   - apply
   - understand
 topic:
-  - external-auth-mechanisms
+  - user-mapping
+  - assign-to-user-groups
 ---
 
 # IdP and end-user group mapping
