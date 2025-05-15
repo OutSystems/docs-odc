@@ -15,7 +15,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - user-self-registration
+  - self-registration
 ---
 
 # Create logic to register a user
