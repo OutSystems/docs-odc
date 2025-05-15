@@ -18,7 +18,7 @@ coverage-type:
   - understand
   - apply
 topic:
-  - external-auth-mechanisms
+  - external-idps
 ---
 
 # Single sign-on
