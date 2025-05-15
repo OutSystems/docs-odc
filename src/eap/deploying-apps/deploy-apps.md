@@ -1,23 +1,24 @@
 ---
 summary: OutSystems Developer Cloud (ODC) facilitates app deployment across multiple stages with containerization and a unified code repository.
-tags: continuous deployment, containerization, deployment stages, code repository, deployment isolation
+tags: continuous deployment,containerization,deployment stages,code repository,deployment isolation
 locale: en-us
 guid: d0aa50bf-0378-4bb9-8c4f-71b37092dd8b
-app_type: mobile apps, reactive web apps
+app_type: mobile apps,reactive web apps
 platform-version: odc
-figma: https://www.figma.com/design/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?node-id=2901-72&t=huLfuwjwe8mJCQTh-1
+figma: https://www.figma.com/design/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?node-id=2901-72
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - architects
+  - infrastructure managers
+  - platform administrators
+  - tech leads
 outsystems-tools:
-  - odc studio
   - odc portal
 coverage-type:
   - understand
   - apply
 topic:
   - deploy-apps-in-lt-portal
+helpids: 
 ---
 
 # Deploying assets
@@ -28,21 +29,32 @@ ODC has a single code repository. When you deploy in ODC Studio, your asset is c
 
 Assets in each stage are isolated from each other. When you publish an asset to the development stage, it doesn't impact the assets running in other stages. Similarly, publishing assets to production doesn't affect assets in a previous stage, such as development.
 
-To help you understand what's deployed in each stage, in the ODC Portal, go to the **Overview** page. A list of assets is displayed with the following information:
+## Track releases across stages
 
-* Name of the asset
+OutSystems Developer Cloud (ODC) helps you manage and track deployments across multiple stages in your delivery pipeline. Each time you publish an asset to Development, ODC creates a new revision. When deploying to QA or Production, you select a specific revision and, for Production, define a semantic version (for example, 1.2.0).
 
-* Stage in which the asset is deployed
+In the **Deployments** screen of the ODC Portal, you can view deployment history for each asset. The screen displays the asset name, deployment stage, revision or version, deployment date, and who performed the deployment.
 
-* Who performed the deployment
+Tracking releases helps you:
 
-* Revision number
+* Verify which revision or version is deployed in each stage.
+* Understand the deployment flow across stages.
+* Troubleshoot issues by identifying when and where a specific revision was deployed.
 
-* Version number
+Workflow assets support multiple revisions in the same stage. Each workflow instance runs on the revision it was created in, and completes execution independently of any newer deployments. This ensures that ongoing instances are not affected by later changes. [Learn more about workflow revisions](#workflow-revisions).
 
-* Date of deployment
+For apps, only one revision can be deployed per stage. A new deployment replaces the previous revision.
 
-**Note**: There is no information about libraries, as libraries are bundled with apps. In ODC, libraries are not deployed independently. Instead, when an app that incorporates a library is published, the library's package is included in the app's container. This means libraries are deployed as an integral part of the app, not separately. For more information about libraries, refer to [Libraries](../building-apps/libraries/libraries.md).
+To learn how to roll back to a previous version, refer to [Rollback apps](rollback.md).
+
+![ODC Portal overview page showing a list of assets with their deployment stages and details.](images/deploy-overview-pl.png "Deployment Overview Page")
+
+<div class="info" markdown="1">
+
+Libraries aren't represented in the deployment overview, as libraries are bundled with apps. In ODC, libraries are not deployed independently. Instead, when an app that incorporates a library is published, the library's package is included in the app's container. This means libraries are deployed as an integral part of the app, not separately. For more information about libraries, refer to [Libraries](../building-apps/libraries/libraries.md).
+
+</div>
+
 
 ## Deploy to stages
 
@@ -88,7 +100,7 @@ Versions and revisions help you keep track of changes in your workflows in diffe
 
 * **Production**: After testing, when you deploy your asset from QA  to Production, ODC assigns a three-part semantic version number in the format major.minor.patch. The system always suggests a version (the first suggestion is always 0.1.0). Depending on the changes you deploy to Production, you can change the version number (it must be equal to or higher than the previous version). 
 
-### Multiple revisions of a workflow
+### Multiple revisions of a workflow { #workflow-revisions }
 
 You can have multiple revisions of a workflow in the same stage. A revision can have multiple instances. Once an instance starts execution in a revision, it completes its execution within that specific revision. Subsequent deployments of newer revisions or versions do not affect these running instances. Once all instances of a revision are completed or terminated, the revision is removed from the stage (unless it is the latest one deployed).  
 
@@ -100,7 +112,7 @@ Two users (user 1 and user 2)  (each user application = an instance) initiate t
 
 Then, two new users (user 3 and user 4) initiate the application process using version 1.1.0 revision 3 of the workflow. During this time, the latest workflow version 1.2.0 revision 4 with more enhancements may be deployed.
 
-![Diagram of application workflow example](images/application-workflow-diag.png "Example application workflow")
+![Diagram showing multiple revisions of a bank loan application workflow with different users completing processes in various versions and revisions.](images/application-workflow-diag.png "Example Application Workflow")
 
 **Outcome**
 
