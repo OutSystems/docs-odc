@@ -22,39 +22,53 @@ topic:
 
 # Configure emails
 
-Emails are an integral part of any app you develop because you can send app users such things as invitations or notifications. An OutSystems app sends emails using SMTP (Simple Mail Transference Protocol). In OutSystems Developer Cloud (ODC), you configure emails in the ODC Portal.
+The ODC apps sends emails using SMTP (Simple Mail Transfer Protocol).To send emails, you must configure the SMTP settings for the emails in the ODC portal. These settings can be configured one for each stage and each stage can have different configuration.
 
-You create an email configuration for a stage. You can have different configurations for each stage, but you can only have one configuration per stage.
+To create and manage an email configuration, you must have organization role that includes the **Manage Email Configurations** permission.
 
-To create and manage an email configuration, you need to have an organization role that includes the **Manage Email Configurations** permission.
-This document describes how to:
+This article explains how to:
 
-* Create a test list.
-* Set up email for the first time.
-* Modify an email configuration.
+* [Set up email for the first time](#set-up-email-for-the-first-time)
+* [Create a test list](#create-a-test-list) 
 
 ## Set up email for the first time
 
-Before apps can send emails, you must create the email in ODC Studio.
+Before apps can send emails, you must create the email in ODC Studio. For detailed information, refer to [Emails](../building-apps/sending-emails/intro.md#getting-started).
 
-1. To begin, open the ODC Portal, and from the Navigation menu, select **Configurations** > **Emails**. The **Email configurations** page opens.  
-1. Complete the following fields. Required fields display with an asterisk.
-      * **Stage** - from the drop down select one or more stages.
-      * **Server** - enter the IP address of the SMTP server and the port number. The SMTP port number defaults to 587, but you can change it. Note that port 25 isn't supported.
+To configure the SMTP settings for the email, follow these steps:
 
-        <div class="info" markdown="1">
+1. Go to ODC Portal.
 
-        SMTP port 25 isn't supported due to security and abuse concerns, which can impact the domain's reputation. Port 25 is often targeted for spam and unauthorized access, leading to restrictions by ISPs.
+1. Select **Configurations** > **Emails**. 
+The **Email configurations** page is displayed  
 
-        </div>
-        
-      * **Requires Authentication** - Check to require authentication and then enter the user name and password to authenticate.
+1. Select the stage where you want to configure the email settings.
+
+1. (Mandatory) Enter the **SMTP server** IP address.
+
+1. Enter the **SMTP port**. The default SMTP port is 587.  
+
+    <div class="info" markdown="1">
+
+    SMTP port 25 isn't supported due to security risks which can impact the domain's reputation. Port 25 is often targeted for spam and unauthorized access, leading to restrictions by ISPs.
+
+    </div>
+
+1. Choose if you require authentication. If you require authentication, enter the **Username** and **Password** to authenticate.
+
+1. Enter the email address and name of the sender.
 
 1. Click **Save** to save your configuration. The change applies to all apps automatically.
 
+At any time you can modify these settings for that stage by clicking **Edit**.
+
 ## Create a test list
 
-ODC enables you to create email test lists, which are very useful for testing. For each app that uses the email feature, you can create an email test list. This list of email addresses gets used whenever your app sends an email. For example, if you have an app in development, and want to test a feature you can send an email to your test list team. You configure your app in the ODC Portal using the App configurations screen. To use the test list you must set the toggle to **active**.
+You can create email test lists, which are helpful for testing email functionality in your apps. For every app that uses email, you can set up a dedicated test list - a group of email addresses that receives all outgoing emails during testing.
+
+For example, if you're developing an app and want to test an email feature, the app sends messages to the addresses in the test list instead of real users.
+
+You can configure this in the ODC Portal under the app **Configurations** screen. To activate the test list for your app, turn on the Active toggle.
 
 <div class="info" markdown="1">
 
@@ -64,17 +78,17 @@ If your email test list is inactive, the email configuration uses the email list
 
 To create a test list:
 
-1. From the ODC Portal, select your App.
-1. On the Configuration page, open the email section.
+1. From the ODC Portal, select your app.
+
+1. On the **Configuration** page, open the email section.
+
 1. Click on the Test list and then click **Edit**. The test list opens.
+
 1. From the list you can add or remove users and then use the toggle to activate the list.  
+
 1. Click **Save**. Remember the test list must be set to **Active** to use it.
 
-## Modify an email configuration
+## Additional resources
 
-You can make changes to an email configuration on a stage.
+* [Emails](../building-apps/sending-emails/intro.md)
 
-1. To change an email configuration, go to ODC Portal and select **Configurations** > **Email**.
-1. Locate the configuration you want to change and click **Edit**.  
-1. Select or verify the stage.
-1. Make the change, and click **Save**. The change applies to all apps automatically.
