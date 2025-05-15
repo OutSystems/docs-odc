@@ -20,6 +20,11 @@ coverage-type:
   - remember
 topic:
   - external-idps
+  - idp-openidp
+  - idp-apple
+  - idp-facebook
+  - idp-google
+  - idp-linkedin
 ---
 
 # Configure authentication with external identity providers
