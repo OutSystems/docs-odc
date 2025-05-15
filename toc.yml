@@ -427,8 +427,6 @@
         - href: eap/integration-with-systems/exposing_rest/throw-a-custom-error-in-an-exposed-rest-api.md
         - href: eap/integration-with-systems/exposing_rest/change-the-http-status-code-of-a-rest-api.md
         - href: eap/integration-with-systems/exposing_rest/built-in-http-status-codes.md
-    
-
     #Mobile plug-ins
     - href: eap/integration-with-systems/mobile-plugins/intro.md
     - topics:
@@ -456,7 +454,11 @@
         - href: eap/integration-with-systems/mobile-plugins/payments-plugin/intro.md
         - href: eap/integration-with-systems/mobile-plugins/ssl-pinning/intro.md
         - href: eap/integration-with-systems/mobile-plugins/using-cordova-plugins.md
-
+    #Javascript    
+        - href: eap/integration-with-systems/javascript/javascript.md
+        - topics:
+            - href: eap/integration-with-systems/javascript/async.md
+            - href: eap/integration-with-systems/javascript/use-external-lib.md
 # Security
 - href: eap/security/security.md
 - topics:
