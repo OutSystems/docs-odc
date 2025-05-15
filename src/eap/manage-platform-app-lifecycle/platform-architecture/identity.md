@@ -18,7 +18,8 @@ outsystems-tools:
 coverage-type:
   - understand
 topic:
-  - built-in-mechanisms
+  - built-in-authentication
+  - authorization
 ---
 
 # Architecture of authentication and authorization mechanism
