@@ -18,8 +18,8 @@ coverage-type:
   - remember
 topic:
   - secure-screen
-  - how-roles-work
-  - manage-roles
+  - app-roles
+  - create-app-role
   - assign-roles
 ---
 
