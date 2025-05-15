@@ -16,7 +16,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - external-auth-mechanisms
+  - external-idps
 ---
 
 # Add Microsoft Entra ID for use as external identity provider
