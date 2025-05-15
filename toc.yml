@@ -392,6 +392,14 @@
     - href: eap/debugging-apps/debugger-ui-reference.md
     - href: eap/debugging-apps/troubleshoot-debugger-connection.md
 
+# Testing Apps
+- href: eap/testing-apps/testing-apps.md
+- topics:
+    - href: eap/testing-apps/test-automation-in-delivery-lifecycle.md
+    - href: eap/testing-apps/testing-bdd-framework.md
+    - href: eap/testing-apps/automated-testing/web-ui-testing.md
+    - href: eap/testing-apps/ui-testing-selenium/ui-testing-selenium.md
+
 # Deploying apps
 - href: eap/deploying-apps/deploy-apps.md
 - topics:
