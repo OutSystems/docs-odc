@@ -15,7 +15,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - external-auth-mechanisms
+  - external-idps
 ---
 
 # Add Okta for use as an external identity provider
