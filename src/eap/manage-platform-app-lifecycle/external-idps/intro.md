@@ -19,7 +19,7 @@ coverage-type:
   - apply
   - remember
 topic:
-  - external-auth-mechanisms
+  - external-idps
 ---
 
 # Configure authentication with external identity providers
