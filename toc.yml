@@ -455,10 +455,10 @@
         - href: eap/integration-with-systems/mobile-plugins/ssl-pinning/intro.md
         - href: eap/integration-with-systems/mobile-plugins/using-cordova-plugins.md
     #Javascript    
-        - href: eap/integration-with-systems/javascript/javascript.md
-        - topics:
-            - href: eap/integration-with-systems/javascript/async.md
-            - href: eap/integration-with-systems/javascript/use-external-lib.md
+    - href: eap/integration-with-systems/javascript/javascript.md
+    - topics:
+        - href: eap/integration-with-systems/javascript/async.md
+        - href: eap/integration-with-systems/javascript/use-external-lib.md
 # Security
 - href: eap/security/security.md
 - topics:
