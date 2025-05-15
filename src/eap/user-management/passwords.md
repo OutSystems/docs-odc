@@ -15,6 +15,9 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - remember
+  - apply
+topic:
+  - passwords
 ---
 
 # Passwords
