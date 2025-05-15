@@ -17,7 +17,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
-  - external-auth-mechanisms
+  - external-idps
 ---
 
 # Use external identity providers in an app
