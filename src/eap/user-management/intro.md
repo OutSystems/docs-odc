@@ -14,11 +14,13 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
-  - apply
 topic:
-  - how-roles-work
-  - manage-users
-  - assign-roles
+  - app-roles
+  - users-in-os
+  - user-types
+  - user-groups
+  - org-roles
+  - permissions
 ---
 
 # User management
