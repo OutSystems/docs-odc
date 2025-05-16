@@ -39,7 +39,7 @@ While distinct timers can run concurrently, the timer manager service ensures th
 
 The container infrastructure triggers the background jobs that have the schedule type of **scheduled**. The Timer manager service triggers jobs that have the schedule type of **on-demand**.
 
-From ODC Portal, using the **Wake** function, you can launch on-demand timers asynchronously. The **Wake** function creates an event that the Timer manager uses to start the Timer job.
+From ODC Portal, using **Run now**, you can launch on-demand timers asynchronously. This creates an event that the Timer manager uses to start the Timer job.
 
 ## Timers timeout
 
