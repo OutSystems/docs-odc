@@ -60,8 +60,8 @@ The following steps walk through creating a test.
 1. Create an application in ODC Studio.
 1. Add **BDD Framework** as a [public element](../building-apps/libraries/use-public-elements.md).
 1. Adding the **BDD Framework** as a public element adds BDDFramework capabilities to your app:
-  ![ODC Studio interface showing the addition of BDD Framework as a public element.](images/bdd-framework-1-odcs.png "Adding BDD Framework as a public element")
-  ![ODC Studio interface displaying BDD Framework capabilities added to the app.](images/bdd-framework-2-odcs.png "BDD Framework capabilities added")
+    ![ODC Studio interface showing the addition of BDD Framework as a public element.](images/bdd-framework-1-odcs.png "Adding BDD Framework as a public element")
+    ![ODC Studio interface displaying BDD Framework capabilities added to the app.](images/bdd-framework-2-odcs.png "BDD Framework capabilities added")
 
 ## Add a test
 
