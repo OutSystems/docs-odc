@@ -17,6 +17,7 @@ coverage-type:
 outsystems-tools:
   - bddframework
 ---
+
 # Testing apps
 
 As your applications grow in scale and complexity, validating them can take longer, especially if validation is manual. If not addressed, more time for testing can slow the pace of delivery. Automated testing is one way software teams can shorten delivery timelines and ensure application code works as designed.
