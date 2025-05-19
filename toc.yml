@@ -263,6 +263,7 @@
     # Logic
     - href: eap/building-apps/logic/intro.md
     - topics:
+        - href: eap/building-apps/logic/ai-assisted-dev.md    
         - href: eap/building-apps/logic/input-parameter.md
         - href: eap/building-apps/logic/local-variable.md
         - href: eap/building-apps/logic/output-parameter.md
