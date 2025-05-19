@@ -6,7 +6,6 @@ guid: e358240c-1045-477c-b9cd-a0c3d04c4233
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7466-10
-
 audience:
   - mobile developers
   - frontend developers
