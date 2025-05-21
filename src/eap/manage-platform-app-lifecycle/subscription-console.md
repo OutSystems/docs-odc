@@ -31,7 +31,7 @@ The subscription console has three main areas.
 * **Overview tab**. This gives you a birds-eye view of all relevant parameters of your subscription.
 * **Add-ons tab**. This gives you information on the available add-ons and if you have subscribed them or not.
 
-Your organization has allocated resource limits for runtime resources. These capacities, defined by your subscription, determine the maximum usage limits for each resource. For more information, refer to [Monitor ODC resource capacity](..//getting-started/capacity-limits.md).
+Your organization has allocated resource limits for runtime resources. These capacities, defined by your subscription, determine the maximum usage limits for each resource. For more information, refer to [Monitor ODC resource capacity](../getting-started/capacity-limits.md).
 
 ## Overview tab
 
