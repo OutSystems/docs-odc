@@ -31,7 +31,9 @@ SELECT [ DISTINCT ] { * | selectItem [, selectItem ]* }
 [ UNION [ ALL | DISTINCT ] select ]
 [ ORDER BY orderItem [, orderItem ]* ]
 [ LIMIT count ]
-	@@ -36,14 +37,25 @@ withItem:
+
+withItem:
+        entityAlias [ ( attributeAlias [, attributeAlias ]* ) ] AS ( select )
 
 selectItem:
         expression [ [ AS ] attributeAlias ]
