@@ -66,6 +66,8 @@ Follow these steps to add an AI model connection or an ODC trial model in the OD
 
 1. Optionally, add more endpoints if you have them available for different stages, such as development and production. More endpoints also enable load balancing. Ensure all endpoints under one connection use the same underlying AI model and version.
 
+1. Optionally, in the **Usage limit** section, set a daily token limit to control the model consumption.
+
 1. If you added multiple endpoints, adjust their priority order on the main model configuration page using the edit icon next to each endpoint.
 
 1. Click **Save** to confirm.

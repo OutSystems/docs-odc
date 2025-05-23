@@ -20,7 +20,7 @@ audience:
 
 OutSystems Developer Cloud (ODC) lets you connect your OutSystems apps to large language models (LLMs). This enables you to power up apps with AI capabilities using models from various providers. ODC provides native support for connections to Azure OpenAI and Amazon Bedrock, and also supports connecting to other providers or private models through a custom API contract. All connections utilize your API keys (BYOK) to interact with the model services.
 
-You manage your AI model connections within ODC. This includes adding new connections for supported providers or custom models. For each connection, you can configure multiple endpoints.
+You manage your AI model connections within ODC. This includes adding new connections for supported providers or custom models. For each connection, you can configure multiple endpoints. Set daily usage limits on AI model connections to manage token consumption.
 
 Once an AI model connection is configured, you can create logic in ODC Studio to call the model. These calls can range from text prompts to complex input parameter interactions. This includes using features like tools associated with the LLM or specific parameters defined in the contract for custom model connections.
 

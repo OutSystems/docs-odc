@@ -140,31 +140,33 @@ Requests are the number of app interactions done using screens, APIs, or timers.
 * Total requests: The total number of requests made to an app.
 * Request rate: The rate at which the requests are sent to an app.
 
-### AI Model Metrics
+## AI Model Metrics
 
-* Requests: The number of requests to the AI model and their error rates.
-* Request by consumer: The number of AI model requests from each consumer app.
-* Tokens: The number of tokens used. Tokens can represent words, characters, or subwords.
-* Tokens by consumer: The number of tokens used in input requests and output responses for each consuming app.
-* Response time: The time taken for the AI model to process a request across all consuming apps. Response time metrics include:
+OutSystems Developer Cloud (ODC) provides monitoring for your configured AI Model connections, offering insights into their usage, performance, and any operational errors. These metrics help you track consumption, identify potential bottlenecks, and understand how your models are used by different consumer apps.
+
+Visibility of detailed metric values, particularly those related to current consumption and specific error breakdowns, may depend on your ODC permissions for the relevant stage. You often require the **Access asset logs and traces** permission to access the full set of analytics data for AI Models.
+
+* **Requests:** The number of requests to the AI model and their error rates.
+* **Request by consumer:** The number of AI model requests from each consumer app.
+* **Tokens:** The number of tokens used. Tokens can represent words, characters, or subwords.
+* **Tokens by consumer:** The number of tokens used in input requests and output responses for each consuming app.
+* **Response time:** The time taken for the AI model to process a request across all consuming apps. Response time metrics include:
     * P90: 90th percentile response time
     * P95: 95th percentile response time
     * P99: 99th percentile response time
-* Response time by consumer: Each consuming app breaks down the time the AI model takes to process a request. Response time metrics include:
+* **Response time by consumer:** Each consuming app breaks down the time the AI model takes to process a request. Response time metrics include:
     * P90: 90th percentile response time
     * P95: 95th percentile response time
     * P99: 99th percentile response time
-* Errors: Insights into the errors encountered by the AI model
-    * Total errors: Displays the total number of errors that have occurred.
-    * Top error: Identifies the most frequent type of error encountered.
-
-The accompanying pie chart visually breaks down the distribution of different error types:
-
-* Token limit: Indicates errors arising from requests exceeding the allowed token limit. 
-* Rate limit: Shows errors due to exceeding the allowed request rate. 
-* Content policy: Represents errors related to violations of content policies. 
-* Timeout: Indicates errors caused by requests timing out.
-* Others: Encompasses all other less frequent error types.
+* **Errors:** Insights into the errors encountered by the AI model
+* **Total errors:** Displays the total number of errors that have occurred.
+* **Top error:** Identifies the most frequent type of error encountered.
+* **The accompanying pie chart visually breaks down the distribution of different error types:**
+    * Token limit: Indicates errors arising from requests exceeding the allowed token limit.
+    * Rate limit: Shows errors due to exceeding the allowed request rate.
+    * Content policy: Represents errors related to violations of content policies.
+    * Timeout: Indicates errors caused by requests timing out.
+    * Others: Encompasses all other less frequent error types.
 
 ## Element metrics
 
