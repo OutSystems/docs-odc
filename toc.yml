@@ -8,7 +8,6 @@
     - href: eap/getting-started/hello-world.md
     - href: eap/getting-started/sample-app.md
     - href: eap/getting-started/open-oml-in-odc-studio.md
-    - href: eap/getting-started/capacity-limits.md
 
 # Onboarding for developers 
 - href: eap/onboarding/intro.md
@@ -505,6 +504,7 @@
     - href: eap/manage-platform-app-lifecycle/sso.md
     - href: eap/manage-platform-app-lifecycle/filter-ip.md
     - href: eap/manage-platform-app-lifecycle/subscription-console.md
+    - href: eap/getting-started/capacity-limits.md
     - href: eap/deleting-apps/intro.md
 
 
