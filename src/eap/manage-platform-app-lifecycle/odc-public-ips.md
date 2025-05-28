@@ -22,9 +22,7 @@ coverage-type:
 Allowlisting is a security mechanism that restricts access to a network or system by only allowing specific IP addresses to connect. OutSystems Developer Cloud (ODC) applications often need to connect to external or internal systems, such as APIs or databases. The recommended approaches for securely connecting ODC to private systems are, in order of preference:
 
 1. Through the [ODC Private Gateway](private-gateway.md), which ensures tenant-specific isolation and tighter access control.
-1. Using hostname-based access control (if your infrastructure supports it). Hostname-based rules (using fully qualified domain names or FQDN, such as `tenantname.outsystems.app`) allow you to restrict access to just your own ODC tenant, ensuring that traffic is restricted to only your ODC applications.
 1. As a fallback option, using IP allowlisting.
-
 
 For IP allowlisting, ODC provides a list of public IP addresses that are used to initiate outbound traffic. These can be allowlisted in your firewalls or access policies.
 
