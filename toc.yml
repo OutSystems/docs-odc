@@ -504,6 +504,7 @@
     - href: eap/manage-platform-app-lifecycle/configure-app-settings.md
     - href: eap/manage-platform-app-lifecycle/custom-domains.md
     - href: eap/manage-platform-app-lifecycle/private-gateway.md
+    - href: eap/manage-platform-app-lifecycle/odc-public-ips.md
     - href: eap/manage-platform-app-lifecycle/configure-emails.md
     - href: eap/manage-platform-app-lifecycle/sso.md
     - href: eap/manage-platform-app-lifecycle/filter-ip.md
