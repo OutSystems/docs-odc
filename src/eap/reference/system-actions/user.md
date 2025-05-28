@@ -27,7 +27,7 @@ User actions for built-in and/or external identity providers.
 
 _Client action_
 
-Allows a logged-in user to change their password. Changing passwords for users with access to the ODC Portal is not supported through this system action, even if the user also has application roles. For more information about passwords, check [Passwords](https://success.outsystems.com/documentation/outsystems_developer_cloud/user_management/passwords/).
+Allows a logged-in user to change their password and, from the Portal, requires the current password to reset it. When disabled from the current app, it throws an exception by the built-in identity provider. For more information about passwords,  check [Passwords](https://success.outsystems.com/documentation/outsystems_developer_cloud/user_management/passwords/).
 
 _Inputs_
 
@@ -53,7 +53,7 @@ _Outputs_
 
 _Client action_
 
-Finalizes the reset password operation, using a verification code that can be received by email. Throws an exception if the built-in identity provider is disabled for the current app.
+Finalizes the reset password operation, using a verification code received by email. When disabled from the current app, it throws an exception by the built-in identity provider.
 
 _Inputs_
 
@@ -106,29 +106,6 @@ _Outputs_
 **RegistrationResult**
 :   Type: [FinishUserRegistrationResult](#finishuserregistrationresult)  
     Result of the user registration action. Returns a user identifier if the user was successfully registered. Returns a failure reason if unsuccessful.
-    
-### FinishUpdateEmail
-
-_Client action_
-
-Finalizes the update email operation, using a verification code.
-
-_Inputs_
-
-**VerificationCode**
-:   Type: Text. Mandatory.
-    Verification code for the email change operation.
-
-_Outputs_
-
-**FinishUpdateEmailResult**
-:   Type: [FinishUpdateEmailResult](#finishupdateemailresult)  
-    Result of the the action. If true, the action was successful.
-
-*FinishUpdateEmailFailureReason**
-:   Type: [FinishUpdateEmailFailureReason](#finishupdateemailfailurereason)  
-    Contains the reason for failure if the action is not successful.
-
 
 ### GetPasswordComplexityPolicy
 
@@ -184,28 +161,6 @@ _Outputs_
 **StartResetPasswordResult**
 :   Type: [StartResetPasswordResult](#startpasswordresetresult)
     Result of the action. Returns the verification code if successful.
-
-### StartUpdateEmail
-
-_Server action_
-
-Triggers the update email operation for users who don't have access to the ODC Portal, returning a verification code that can be sent by email to the user.
-
-_Inputs_
-
-**Email**
-:   Type: Text. Mandatory.
-    User's new email.
-
-_Outputs_
-
-**StartUpdateEmailResult**
-:   Type: [StartUpdateEmailResult](#startupdateemailresult)
-    Verification code created by the identity provider. **FinishUpdateEmail** is used to verify the email defined by the user.
-
-**StartUpdateEmailFailureReasom**
-:   Type: [StartUpdateEmailFailureReason](#startupdateemailfailurereason)
-    Contains the reason for failure if the action isn't successful.
     
 ### StartUserRegistration
 
@@ -352,37 +307,6 @@ Success
 
 VerificationCode
 :   Type: Text
-
-### StartUpdateEmailResult
-
-*Attributes*
-
-Success
-:   Type: Boolean
-
-VerificationCode
-:   Type: Text
-
-### StartUpdateEmailFailureReason
-
-*Attributes*
-
-InvalidEmail
-:   Type: Boolean
-
-### FinishUpdateEmailResult
-
-*Attributes*
-
-Success
-:   Type: Boolean
-
-### FinishUpdateEmailFailureReason
-
-*Attributes*
-
-InvalidVerificationCode
-:   Type: Boolean
 
 ### FinishResetPasswordFailureReason
 
