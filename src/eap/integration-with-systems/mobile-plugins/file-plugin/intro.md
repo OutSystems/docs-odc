@@ -18,7 +18,19 @@ topic:
   - using-cordova-plugins
 ---
 
-# File Plugin
+# File Plugin version 2
+
+<div class="info" markdown="1">
+
+If you are looking for information about version 1.x of the File Plugin, refer to the [Version 1 documentation](file-plugin-version-1.md).
+
+</div>
+
+<div class="info" markdown="1">
+
+The File Plugin version 2.0.0 is a major revamp of the Plugin, and includes many changes in the plugin's logic. If you are using an older version and are looking to update to 2.0.0, refer to [the migration guide](file-plugin-migration-guide.md) for more information.
+
+</div>
 
 <div class="info" markdown="1">
 
@@ -26,30 +38,20 @@ Applies only to Mobile Apps.
 
 </div>
 
-File Plugin lets you manage files and folders on a mobile device within the app sandbox.
-
 <div class="info" markdown="1">
 
 See [Installing plugins](../intro.md) to learn how to install a plugin in your OutSystems apps.
 
 </div>
 
-## Demo app
-
-Install **File Demo App** from Forge and open the app in ODC Studio. The demo app contains logic for common use cases, which you can examine and recreate in your apps. For example, the demo app shows how to:
-
-* Read a file
-* List files
-* List folders
-* Save text in temporary file
-
-![Screenshot of the File Demo App interface showing file management features](images/sample-app.png "File Demo App Interface")
+File Plugin lets you manage files and folders on a mobile device within the app sandbox.
 
 ## Working with binary content
 
-File Plugin in some actions requires parameters of the binary data type. To convert data to binary you can use:
+File Plugin in some actions requires parameters of the binary data type.To convert data to binary you can use:
 
-Note that **BinaryData Client Side** is a Forge plugin contributed by the OutSystems community and it's not officially supported. Actions in this plugin run in the client, and your app can **use them while offline**.
+* **BinaryData extension**, an official and supported extension. The BinaryData extension exposes server Actions and **requires a connection to the server** when it runs one of the actions from the BinaryData extension. This extension doesn't work offline.
+* **BinaryData Client Side**, a Forge plugin contributed by the OutSystems community and it's not officially supported. Actions in this plugin run in the client, and your app can **use them while offline**.
 
 ## Examples
 
@@ -57,53 +59,40 @@ Here are some examples of how to use File Plugin.
 
 ### Store some text in a file
 
-The **SaveFile** requires a binary input, so you need to convert the text to binary first. Use the **TextToBinaryData** (1) action from the **BinaryData** extension (you need to reference the **BinaryData** extension first). You can then use the **SaveFile** action from **Logic** > **Client Actions** > **FilePlugin** to create a file and save text (2). Set the file name and the path in the properties (3).
+The **WriteFile** requires a binary input, so you need to convert the text to binary first. Use the **TextToBinaryData** (1) action from the **BinaryData** extension (you need to reference the **BinaryData** extension first). 
 
-![Example of saving text in a file using the SaveFile action in a mobile app](images/save-text-in-file-mobile-ss.png "Save Text in File Example")
+You can then use the **WriteFile** action from **Logic** > **Client Actions** > **FilePlugin** to create a file and save text (2). Set the **PathDirectory** and relative path to the file, along with the **Binary Data** (3).
+
+Finally, check the result of **WriteFile**. If **Success** is true, it means the file was saved successfully. Otherwise, you can show the returned **Error** (4).
+
+![Step-by-step illustration of saving text in a file using the WriteFile action in OutSystems](images/save-text-in-file-mobile-v2-odc.png "Save Text in File Process")
 
 <div class="info" markdown="1">
 
-Refer to [Working with binary content](#working-with-binary-content) for more information.
+Refer to [Working with binary content](#working-with-binary-content) for more information on using **BinaryData**.
 
 </div>
 
+### Copy a file
+
+Imagine that you want to copy the file [you stored previously](#store-some-text-in-a-file) - You can use the **Copy** action from **Logic** > **Client Actions** > **FilePlugin** (1). Pass the relative path and **PathDirectory** of the file you want to copy in **FromPath** and **FromDirectory**, respectively (2). In this example, the copied file will be in the same **PathDirectory**, so only **ToPath** is specified. You can provide a different **ToDirectory** if you'd like to copy a file to an entirely different location.
+
+Finally, check the result of **Copy**. If Success is true, it means the file was copied successfully. Otherwise, you can show the returned Error (3).
+
+![Example of copying the previously saved file to another location using the Copy action in Outsystems](images/copy-file-mobile-odc.png "Copy File Process")
+
 ### Get the list of files
 
-Use the **ListDirectory** action from **Logic** > **Client Actions** > **ListDirectory** to get the list of the files (1). The file names are in the list **ListDirectory.FileList** (2).
+Use the **ListDirectory** action from **Logic** > **Client Actions** > **FilePlugin** to get the list of the files (1). In this example, we want to list all the contents of in the **TEMPORARY** directory - passing an empty path to indicate we want the contents at the root of the temporary directory (2).
 
-![Example of listing files in a directory using the ListDirectory action in a mobile app](images/list-files-mobile-ss.png "List Files Example")
+You can check if **ListDirectory** has **Success** equal to true. If so, proceed to the next step. Otherwise, you can show the returned Error (3).
 
-## Reference
+The **ListDirectory** returns both files and sub-directories inside that directory. To get only the files, we can use the **ListFilter** action on the **Result** from **ListDirectory** and filter for **Type = Entities.PathType.File** (4).
 
-More information about parts of the plugin.
+Then, assign the **FilteredList** to a variable to use in your UI (5).
 
-### Actions
+![Example of listing files in a directory using the ListDirectory action in OutSystems](images/list-files-mobile-v2-odc.png "List Files in Directory")
 
-Here is the reference of the actions you can use from the File Plugin. File Plugin uses a Cordova plugin, and for more information check [cordova-plugin-file](https://github.com/OutSystems/cordova-plugin-file).
+## References
 
-| Action                 | Description                                                       |
-| ---------------------- | ----------------------------------------------------------------- |
-| **CheckFilePlugin**    | Enables to check if the plugin was loaded.                        |
-| **CreateDirectory**    | Recursively creates a directory in the file system.               |
-| **DeleteDirectory**    | Deletes a directory and all its content in the file system.       |
-| **DeleteFile**         | Deletes a single file.                                            |
-| **DeleteFileFromUri**  | Deletes a single file from a URI address.                         |
-| **GetFileData**        | Returns the binary file encoded in Base64.                        |
-| **GetFileDataFromUri** | Returns the binary file encoded in Base64 from a file's URI path. |
-| **GetFileUri**         | Returns the file's URI path.                                      |
-| **GetFileUrl**         | Returns the file's blob URL path (blob://).                       |
-| **GetFileUrlFromUri**  | Returns the file's blob URL path from a file's URI path.          |
-| **ListDirectory**      | Lists the directory's content.                                    |
-| **SaveFile**           | Saves a file in a specific directory.                             |
-| **SaveTemporaryFile**  | Saves a file in a temporary directory.                            |
-
-## Storage type
-
-Information about the **StorageTypeId** property, which tells the app where to store the files. This property is available in some of the actions of the plugin. 
-
-| StorageTypeId                     | Description                                                                                                     |
-| --------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **Entities.StorageType.Internal** | Sandboxed app data in the internal memory. Corresponds to Cordova's **cordova.file.dataDirectory**.             |
-| **Entities.StorageType.External** | App data on an external storage. Corresponds to Cordova's **cordova.file.externalDataDirectory**. Android only. |
-
-For more information check out the document [Where to Store Files](https://github.com/OutSystems/cordova-plugin-file#where-to-store-files) from Cordova.
+For more information on the plugin elements, refer to the [File Plugin version 2 reference page](file-plugin-ref.md).

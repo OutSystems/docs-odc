@@ -445,6 +445,10 @@
         - href: eap/integration-with-systems/mobile-plugins/inapp-browser/inapp-browser.md
         - href: eap/integration-with-systems/mobile-plugins/common-plugin/intro.md
         - href: eap/integration-with-systems/mobile-plugins/file-plugin/intro.md
+        - topics:        
+            - href: eap/integration-with-systems/mobile-plugins/file-plugin/file-plugin-ref.md
+            - href: eap/integration-with-systems/mobile-plugins/file-plugin/file-plugin-migration-guide.md
+            - href: eap/integration-with-systems/mobile-plugins/file-plugin/file-plugin-version-1.md
         - href: eap/integration-with-systems/mobile-plugins/file-transfer-plugin/intro.md
         - href: eap/integration-with-systems/mobile-plugins/file-viewer/intro.md
         - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/intro.md
