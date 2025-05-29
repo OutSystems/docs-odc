@@ -23,7 +23,7 @@ When implementing your workflow, you can include tasks to be carried out by the 
 
 In the workflow editor for **HumanActivityNode**:
 
-* Specify a task and assign it to an end-user of your ODC app. You can change the user ID programmatically in ODC Studio using the [HumanActivityAssign](#programmatic-assign) API to assign a task to a different end-user.
+* Specify a task and assign it to an end-user of your ODC app. You can change the user ID programmatically in ODC Studio using the [HumanActivityAssign](../../reference/system-actions/workflows.md#humanactivityassign) API to assign a task to a different end-user.
 
     **Note**: You must develop your own custom notifications using the **HumanActivityInstance** entity to remind users of pending tasks.
 
@@ -74,7 +74,6 @@ To include human activity in a workflow, follow these steps:
 ## Modify human activity at runtime
 
 At runtime from the ODC Studio, you can use the low-code APIs to do the following:
-git
 
 * [Manually assign or re-assign human activity to a different user](../../reference/system-actions/workflows.md#humanactivityassign)
 
