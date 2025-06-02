@@ -20,7 +20,11 @@ coverage-type:
 
 # Manage IP filters
 
+<div class="info" markdown="1">
+    
 IP filters require an add-on subscription. Please contact your OutSystems account team for more information.
+
+</div>
 
 This article is intended for administrators who need to control network access to their apps in ODC. Administrators can enhance security by creating and managing IP filter groups and defining access rules for each stage to specify which IP addresses are allowed. For more information on ODC's built-in security, refer to [Security of OutSystems Developer Cloud.](../security/security.md)
 
