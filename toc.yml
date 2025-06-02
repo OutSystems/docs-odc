@@ -299,6 +299,8 @@
     - href: eap/building-apps/events/intro.md 
     - topics: 
         - href: eap/building-apps/events/backend-events.md
+        - href: eap/building-apps/events/implement-events.md
+        - href: eap/building-apps/events/events-properties.md
     # Merge
     - href: eap/building-apps/merge/intro.md
     - topics:

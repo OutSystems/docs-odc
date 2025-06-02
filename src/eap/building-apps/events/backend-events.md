@@ -5,7 +5,7 @@ locale: en-us
 guid: 54254c98-5a1e-42c3-a280-fa2aae5c5abe
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4703-118&mode=design&t=oH4GYDMLoIxKmaoI-0
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7453-435
 tags: asynchronous communication, event handling, pub/sub model, task automation, data orchestration
 audience:
   - backend developers
@@ -20,87 +20,80 @@ topic:
   - how-to-use-events
 ---
 
-# Back-end events
+# Event-driven architecture in ODC
 
-Back-end events act as internal triggers, defining conditions to execute a response to specific events. This promotes asynchronous communication between apps, where an event occurring in one app can trigger an event handler in another.
+In a cloud-native environment, apps are designed as a collection of loosely coupled, independently deployable components or services. To enable efficient communication between these components, event-driven architecture enables asynchronous messaging. This approach ensures that apps can react to changes in real-time without creating tight dependencies, improving scalability, resilience, and flexibility.
 
-Back-end events allow the automation of repetitive tasks that involve high volumes of data, such as orchestrating data between apps or initiating batch processing. For example, you can use them to automate monthly billing for subscribers in a streaming app.
+In ODC, apps are loosely coupled, and the dependencies between apps are always weak, following a [micro-services architecture pattern.](../../app-architecture/intro.md) To implement event-driven ODC apps, you can define events to trigger a sequence of actions or handle specific scenarios within an app.
 
-![Graphic showing various use cases for backend events in application automation](images/uses-back-end-diag.png "Use Cases for Backend Events")
+To build event-driven ODC apps, you can use the following low-code constructs in ODC Studio. 
 
-Back-end events follow a publisher/subscriber model (pub/sub).
+ ![Diagram showing the construct used to define events in ODC apps.](images/define-event-odcs.png "Defining Events in ODC")
 
-* Event publisher: Generates an event when a change occurs and publishes it to an event subscriber
-* Event subscriber: Subscribes to a specific event publisher(s) to receive and react to the event
+This construct is used to define events in your apps and specify any input parameters to be passed in an event. It’s also used to handle or process an event in the same app or a different app using an event handler.
 
-Back-end events are delivered precisely once to subscribers to prevent duplicate events, although the order in which subscribers receive elements is not guaranteed.
+![Diagram showing the construct used to trigger events in ODC apps.](images/trigger-event-odcs.png "Triggering Events in ODC") 
 
-Event publishers are unburdened by subscribers, as these events represent a state change, allowing subscribers to listen and process events of interest independently. This decoupling of publishers and subscribers allows for flexibility and scalability in apps.
+This construct triggers the event at any point of execution. It can be used in either the server action or the service action. 
 
-![Diagram illustrating asynchronous communication between different applications](images/asyn-btw-apps-diag.png "Asynchronous Communication Between Apps")
+Here's an example of a webstore app that demonstrates how different apps can trigger and consume events. 
 
-You can add input parameters to a back-end event to pass additional information from the event publisher to subscribers(s).  For example, a new account event in a finance app can have input parameters such as the user's address and phone number.
+When a customer adds a product to the cart and completes the purchase, the **Storefront** app triggers the **OnPurchaseStarted** event. The **Inventory** and **FraudDetection** apps then process this event asynchronously and in parallel. These apps trigger their own events, which other downstream apps handle. This event-driven process continues until the purchase is finalized and the customer receives an email notification.
 
-Back-end events are scoped to a specific stage. For example, a back-end event in an app within a development environment can only be handled by the same or another app within the same environment.
+![Flowchart of a webstore app demonstrating event-driven architecture in ODC.](images/eda-example-diag.png "Event-Driven Architecture Example")
 
-Considerations while using back-end events: 
+## Publisher/Subscriber model
 
-* ODC stores a capacity of 10,000 back-end events. If the capacity exceeds, ODC raises an exception. You must capture the exception in an Exception Handler with the exception configured for All Exceptions.
-* ODC apps can simultaneously handle up to 100 back-end events per app container. ODC retries up to 10 times in case the delivery of a back-end event fails.
-* Back-end events support [basic input parameters](../data/data-types.md) except binary data, with a maximum of 2000 characters for Text parameters. 
-* Back-end support payloads with sizes smaller than 10 KB. If the size exceeds, you must refactor to reduce the payload.
+In ODC, events follow the publisher/subscriber (pub/sub) model.
 
-## Create an event
+**Publisher app (Producer app):** When a change occurs, the publisher app defines and triggers the event.
 
-To create an event, go to ODC Studio and follow these steps:
+**Subscriber app (Consumer app):** The subscriber app subscribes to events generated by the publisher app and handles or processes the events using an event handler. 
 
-1. On the **Events** tab, right-click **Events**, and select **Add Event**.
-1. Set the relevant properties for the new event in the properties panel.
+Here are some key points regarding ODC events:
 
-    <div class="info" markdown="1">
+* Events are only available in apps and not in libraries.
 
-    To allow other apps to access the event, you must set the **Public** property to Yes.
+* An event can only be triggered by the app where it is defined.
 
-    </div>
+* The events are executed asynchronously in the background.
 
-1. Right-click the newly created event, select **Add Input Parameter**, and enter the relevant information.
+* An event can be triggered and consumed in the same app.
 
-## Publish an event
+* One app can subscribe to multiple events, and multiple apps can subscribe to one event.
 
-To publish an event, you must define a trigger for an event. Go to ODC Studio and follow these steps:
+Here’s an example of pub/sub model. In this diagram:
 
-1. On the  **Logic** tab, right-click **Server Actions**, and select **Add server action**.
-1. Drag the **Trigger Event** element to the server action flow. The Select Event popup displays.
-1. Select the event from the popup.
-1. Click the **Trigger Event** element, and enter the relevant input parameters in the element’s properties panel.
+* App1 creates and handles event A. The app acts as a publisher and a subscriber of the same event.
 
-![Screenshot of ODC Studio interface showing the process to trigger a backend event](images/trigger-backend-event-odcs.png "Publish a Backend Event")
+* App2 handles event A, produced by App 1, and handles event B, produced by App 4. The app subscribes to events A and B.
 
-To make the event accessible in other apps, click 1-Click Publish to publish the event as a [public element](../libraries/use-public-elements.md). Once an event is published, multiple subscribers can handle it.
+* App3  handles event A produced by App 1. The app subscribes to event A.
 
-## Subscribe to an event
+* App 4 creates event B and handles event A produced by App 1. The app acts as both a publisher and a subscriber.
 
-You can subscribe to an event in the same publisher or another app. To subscribe to an event, go to ODC Studio and follow these steps:
+![Diagram illustrating the publisher/subscriber model in ODC with multiple apps handling events.](images/pub-sub-diag.png "Publisher/Subscriber Model in ODC")
 
-1. On the **Events** tab, right-click **Events**, and select **Add public element**. The public element popup displays.
+For detailed information about the properties of events, refer to [Properties of ODC events](events-properties.md).
 
-    ![Screenshot of ODC Studio interface demonstrating how to subscribe to a backend event](images/public-event-odcs.png "Subscribe to a Backend Event")
+## Using ODC events for asynchronous parallel processing
 
-1. Select the public element(s) you want to add to your app and click **Add**.
+In asynchronous processing, tasks are executed concurrently as opposed to synchronous processing, where tasks are executed one after the other.
 
-    <div class="info" markdown="1">
+ODC events enable asynchronous processing in your app. When an event is triggered, it is handled independently as a separate task, either within the same app or a different one.
 
-    To subscribe to an event from the same app, right-click on the event you want to select.
+![Diagram showing asynchronous parallel processing of events in ODC apps.](images/parallel-processing-diag.png "Asynchronous Parallel Processing in ODC")
 
-    </div>
+If an app triggers multiple events of the same type, they can be handled asynchronously and in parallel by one or more apps, with each event running independently in the background. For example, in an eCommerce app, during a flash sale, when multiple users place orders simultaneously, the app triggers multiple events of type **OnPurchaseStarted**. The **Inventory app** and **Fraud Detection app** handle these events independently, processing them in parallel. This ensures that stock is updated and fraud checks are performed asynchronously, allowing the system to handle high traffic efficiently.
 
-1. Click **Handler** in the properties panel, and select **Select Handler**. The **Select handler** popup displays.
-1. Select a server action containing the event to subscribe to.
+<div class="info" markdown="1">
 
-## Handling errors
+Each app can handle a maximum of **100** events in parallel. For a specific event definition, if the producer app generates events faster than the consumer app can handle them then the events are queued up to a limit of **10000**. Once this queue is full, the producer app receives an error when attempting to generate further events. Events can also get queued if the consumer app is slow to handle them while the producer app continues to generate new ones or if the consumer app event handling times out after 2 minutes. These timed out events are retried according to the retry and backoff policy.
 
-If a back-end event fails, it raises an exception, and you must handle it. For example, if back-end event handlers exceed the two-minute timeout, ODC raises an exception. Refer to [handling exceptions](../handling-exceptions/handling-mechanism.md) to learn more.
+</div>
 
-ODC automatically retries back-end events when an unhandled exception or timeout occurs in the event handler, preventing the loss of back-end events due to transient issues. ODC can attempt up to ten retries in case of a failed event.
+## Additional resources
 
-You can use traces for both publisher and subscriber apps to troubleshoot back-end events. Refer to [traces](../../monitor-and-troubleshoot/monitor-apps.md) to learn more.
+* [One Conference presentation on event-driven architecture with ODC](https://www.youtube.com/watch?v=gLfUocukA4Q)
+
+* [Implements events in ODC](implement-events.md)
