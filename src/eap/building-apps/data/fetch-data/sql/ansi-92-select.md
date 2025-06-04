@@ -72,7 +72,7 @@ A `SELECT` statement that contains both internal and external entities or that u
 
 * The user configured on the connection must have permission to read from the entity in the external system
 * If the entity has attributes of an unsupported data type then those attributes will not appear in the result and can't be referenced in the query. `SELECT *` and `SELECT {entity}.*` will still work in this case but won't reference the unsupported attributes.
-* Subqueries can't be used in expressions unless using an [Operator](#ansi-92-operators.md) which accepts a subquery like `EXISTS`.
+* Subqueries can't be used in expressions unless using an [Operator](ansi-92-operators.md) which accepts a subquery like `EXISTS`.
 
 </div>
 
