@@ -1,11 +1,11 @@
 ---
 summary: OutSystems Developer Cloud (ODC) facilitates the sharing of reusable elements across applications, enhancing development efficiency and consistency.
-tags: outsystems libraries, code reusability, app lifecycle management
+tags: outsystems libraries,code reusability,app lifecycle management
 locale: en-us
 guid: 7e20ed99-3098-4d7c-b7fd-1a5794f8377d
-app_type: mobile apps, reactive web apps
+app_type: mobile apps,reactive web apps
 platform-version: odc
-figma:
+figma: 
 audience:
   - mobile developers
   - frontend developers
@@ -16,29 +16,36 @@ coverage-type:
   - understand
   - apply
   - remember
+topic:
+  - dependencies
+helpids: 30644
 ---
 
 # Reuse elements across apps
 
-You can share public elements across your apps to accelerate development and enable consistency. Sharing elements creates dependencies between producer and consumer apps.
+You can share public elements across your assets to accelerate development and enable consistency. When a public element is reused, it creates a **dependency** between the two assets involved: one as the **producer** and the other as the **consumer**.
 
-**Strong dependencies** (for example, those in which a consumer executes logic from a producer) can only exist between the following app types:
+Dependencies are categorized into two types: **strong** and **weak**, based on the nature of the assets involved.
 
-* Library (producer) and an app (consumer). The app can be a Web or Mobile App. You can share Client Actions and Server Actions in Libraries (producer), and use them in apps (consumer). Apps can't be a producer when sharing Client and Server Actions.
+* **Strong dependencies**: Strong dependencies are created when elements are shared between assets that are not deployed independently. These non-deployable assets include all types of libraries and connections. Examples of strong dependencies include:
 
-* Between two libraries. Libraries can be producers or consumers.
+    * Two libraries sharing elements
 
-**Weak dependencies** (for example, reusing a static entity) can exist between the following app types:
+    * A library sharing elements with an app
 
-* Web apps or Mobile apps. Web and Mobile apps can share Service Actions, Entities, and Static Entities. Web apps can share Screens with other Web apps.
+* **Weak dependencies:** Weak dependencies are created between assets that are deployed independently. For example, a weak dependency occurs when:
 
-## Libraries
+    * One app reuses an element from another app
 
-OutSystems Developer Cloud (ODC) elevates Libraries to a top-level concept. Libraries exist at the same level as apps (Web or Mobile), and they have their own lifecycle. For example, you can make a branding change by updating the style guide in a Library.
+    * A workflow reuses an element from an app
+
+    * An app reuses elements from a connection
+
+For more information about dependencies, refer to [Understand strong and weak dependencies.](../building-apps/reuse/intro.md)
 
 ## Public elements { #public-elements }
 
-To expose and share a public element for reuse, you set the element's **Public** property to **Yes**. Some elements can't be shared, and in such cases, the element's **Public** property is set to **No** and can't be changed.
+To expose and share a public element for reuse, you set its **Public** property to **Yes**. However, some elements can't be shared, and in such cases, the element's **Public** property is set to **No** and can't be changed.
 
 The following table lists elements and their possible Public property values.
 
@@ -62,18 +69,23 @@ The following table lists elements and their possible Public property values.
 | Structures                | Yes, only if you use them as parameters in Service Actions. | Yes, only if you use them as parameters in public actions or public blocks. |
 | Themes                    | No                              | Yes                                  |
 
-## Expose a Server Action in an app
+In addition to the element types detailed in the table, other components can also become public for reuse:
 
-You can't set a Server Action as **Public** from within an app. However, to achieve the same outcome:
+* **Data fabric connections**: When you define or select entities and actions within a data fabric connection, they automatically become public elements. This allows you to reuse them in other assets such as Web and Mobile apps.
 
-1. Right-click the Server Action.
-2. Select **Expose as Service Action**.
+* **AI models**: Actions exposed by AI models can also be consumed as public elements, enabling their integration into various apps.
 
-This creates a Service Action that invokes the Server Action and its properties.  
+While you can't directly make a Server Action public within an app, you can expose it for reuse by right-clicking it and selecting **Expose as Service Action**. This action creates a Service Action that invokes the original Server Action and inherits its properties, effectively making it public.
 
-## View app reuse in the ODC Portal
+## Validating consumers and producers in the ODC Portal 
 
-You can view a list of apps and the stage on which they're deployed in the ODC Portal. When you click an app, you see the following details:
+In the ODC Portal, the asset detail page lists producers and consumers. Understanding your asset's consumers is crucial for communicating changes, such as a bug fix in a Service Action, to the development team. Similarly, it's important to know the producers from which you reuse elements for your asset's functionality.
 
-* The stage on which the app is deployed
-* The app's consumers or producers
+The **Producers** tab displays the complete hierarchy of direct and indirect producers contributing to delivering your assets' functionality. When you select a producer,  the elements that the direct consumer of this producer is reusing are displayed. For each producer, the version (or revision) that is being used is also displayed.
+
+The platform determines the versions (or revisions) being used in an asset based on the type of dependency:
+
+* **For weak dependencies**: The revision used is the one currently deployed in the same stage where the consumer app is running.
+
+* **For strong dependencies**: The platform uses the revision that is directly referenced by the asset itself (direct dependencies). If not directly referenced, it uses the revision in use by the closest producer in the dependency tree.
+
