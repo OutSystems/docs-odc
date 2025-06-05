@@ -143,6 +143,12 @@ You can only edit or delete a provider not in use. Navigate to the **Identity pr
 
 1. Click the **ellipsis** (3-dots) to the right of the **Assign** button. Then click the **Edit configuration** or **Delete provider** button to launch the edit page or launch the delete confirm pop-up.
 
+    <div class="info" markdown="1">
+    
+    To edit an Identity Provider, you need to submit the correct Client Secret again.
+    
+    </div>
+
 ## Social accelerators
 
 ODC provides accelerators to add commonly used social providers easily.
