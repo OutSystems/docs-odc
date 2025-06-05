@@ -47,7 +47,9 @@ For more information about Azure BLOB storage, refer to [Introduction to Azure B
 
     **Note**: Wait for few moments, and click the indexer to ensure that the run is finished with all the documents you added.
 
-1. Go to the index, and validate that the content field can be retrieved.
+1. Go to the index, and validate that the content field can be retrieved. 
+
+    **Note**: The content index is mandatory. The content field must be of type string, and the field name must be in lowercase.
 
 1. Retrieve the Azure AI search [service keys and the endpoint](https://learn.microsoft.com/en-us/azure/search/search-get-started-rest#copy-a-key-and-url).
 
