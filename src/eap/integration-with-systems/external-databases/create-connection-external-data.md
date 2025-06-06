@@ -129,7 +129,7 @@ Administrators  must supply the following information to connect to the external
 
 ### Additional parameters
  
-You can use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, separate each parameter with a semi-colon (;). Different databases may require different parameters, for example:
+You can use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, you can use `;` semi-colon as a separator for SQL Server connections or the `&` character for other connections. Hover the info icon to confirm. Different databases may require different parameters, for example:
 
 * For **SQL Server**, and **Azure SQL** to select the desired schema on the database, enter `currentSchema=<schema-name>`. For **Oracle** to select the desired schema on the database, enter `current_schema=<schema-name>`
 * To establish a connection with the **SQL Server** and allow the client to bypass certificate validation, add the `trustServerCertificate=true` parameter to the additional parameters.
