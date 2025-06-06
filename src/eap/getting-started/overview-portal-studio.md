@@ -33,6 +33,12 @@ The ODC Portal is a unified console to manage, monitor, and deploy apps, and to 
 
 What displays depends on your role. The images for this document are taken by a person with a role that has full access. Your role may have less access to the tools and apps. The following image shows the home screen when you first sign in to the ODC Portal.
 
+<div class="info" markdown="1">
+
+You can access ODC Portal on both desktop and mobile. However, the experience isn't fully optimized for mobile use. For full functionality and the best usability, we recommend using a desktop or laptop.
+
+</div>
+
 ![Screenshot of the ODC Portal home page showing the navigation menu and user options](images/portal-home-page-pl.png "ODC Portal Home Page")
 
 <div class="info" markdown="1">
@@ -50,9 +56,9 @@ The **top bar** in the Portal enables you to:
 
 Above the Navigation menu, the name of the tenant you're accessing displays.
 
-Each menu item on the **Navigation menu** provides functionality related to its name. ODC uses an accordion to display more or less information. When the arrow to the right of the menu name points up, that accordion is open. For example, **Users & access** and **Configuration** are open and show more options. When the arrow points down, such as for **Monitoring**, additional options don’t display.
+Each menu item on the **Navigation menu** provides functionality related to its name. ODC uses an accordion to display more or less information. When the arrow to the right of the menu name points up, that accordion is open. 
 
-The **apps** you see when you first access the ODC Portal are only the apps to which you have access. When you select a menu option, the display in the middle changes. For example, if you select **Users & Access** > **Users**, then information related to users displays. In addition, the choices available at the top of the Portal canvas also change. All options that display relate to your choice from the Navigation menu.
+The **apps** you see when you first access the ODC Portal are only the apps to which you have access. When you select a menu option, the display in the middle changes. For example, if you select **Manage** > **Users**, then information related to users displays. In addition, the choices available at the top of the Portal canvas also change. All options that display relate to your choice from the Navigation menu.
 
 From the top right, you can select **Download ODC Studio** or **Create app**. When you click **Create app**, ODC Studio automatically opens.
 
