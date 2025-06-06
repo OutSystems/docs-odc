@@ -31,6 +31,11 @@ Administrators must:
 * Set up configurations for each stage, such as development, QA, and production, to connect an app to an external database.
 * Ensure the app and its connection information are in the same stage. Additionally, the database model must be the same in all the stages.
 
+Multiple connections:
+
+* It is possible to create multiple connections to the same database.
+*  It is possible to have multiple external connection per environment.
+
 ## Permission requirements
 
 Before accessing data from an external database, verify that you have the correct access to the database and ODC. By default, only administrators can manage connections and select entities. Managing connections requires the following permissions:
@@ -138,6 +143,7 @@ You can use advanced parameters to add additional parameters for a database conn
     * `maxConnectionPoolSize`: Default value of 400, as it was the best performer in OutSystems performance tests.
 * The `statsRefreshFrequencyMinutes` parameter, available for all connectors, allows you to adjust how often statistics are refreshed. This adjustment helps Data Fabric connectors maintain optimal query performance. If your external system has a limited number of API requests, it's advisable to increase the refresh frequency. The default value for this parameter is 15 minutes, with a minimum allowable value of 5 minutes. An example of the use of this parameter is: `statsRefreshFrequencyMinutes=30`.
 * For **Salesforce**, include `ArchiveMode=True` in the additional parameters to enable fetching deleted and archived records in queries. By default, the archive mode is disabled. Enabling this mode allows queries to retrieve more data, but handle it with caution, as it may impact performance.
+* For multiple schemas on the same database, an external database connection needs to be created for each schema. ODC will treat both schemas as different databases.
 
 ![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems-pp.png "External Database additional parameters")
 
