@@ -148,6 +148,27 @@ Here's a concrete example of a configuration that sets write access to the "Step
         }
 ```
 
+## (Optional) Disable access to older history data (Android only)
+
+By default, your app can only access data from Health Connect starting 30 days prior to the first permission granted by the user. As an example, if your user granted health permissions to the app in May 25th, the plugin can get Health data from 25th April and beyond.
+
+Since version 1.4.0 of the plugin, you can access data older than that. A new permission is requested in the **RequestPermission** client action.
+
+If you want to disable such access and permission request, set the`DisableReadHealthDataHistory` preference in the Extensibility Configurations to **true**, as follows:
+
+```json
+        {
+            "preferences": {
+                "android": [
+                    {
+                        "name": "DisableReadHealthDataHistory",
+                        "value": true
+                    }
+                ]
+            }
+        }
+````
+
 ## Enabling your users to track their health and fitness data
 
 The following steps show how to design a use case that includes health and fitness data.
