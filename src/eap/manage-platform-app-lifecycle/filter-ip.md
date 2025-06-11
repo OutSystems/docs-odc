@@ -59,7 +59,7 @@ To secure a Production app for specific partners, create a user-defined IP filte
 
 An example includes:
 
-* For the Production stage, an IP filter group uses an **AllowList**. Rules within it allow access from partner IPs: `203.0.113.0/24` (Partner A), `198.51.100.10` (Partner B), and `192.0.2.0/27` (Partner C). The system blocks all other IPs. The Development stage for the same app can have a different IP filter group and access control method, demonstrating the **stage-specific** nature of the configuration.
+* For the Production stage, an IP filter group uses an **AllowList**. Rules within it allow access from partner IPs: `203.0.113.0/24` (Partner A), `198.51.100.10` (Partner B), and `2001:DB8:0002::/48` (Partner C). The system blocks all other IPs. The Development stage for the same app can have a different IP filter group and access control method, demonstrating the **stage-specific** nature of the configuration.
 
 # Associate apps with IP filter groups before deployment
 
