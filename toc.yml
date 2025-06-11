@@ -476,9 +476,9 @@
 # Security
 - href: eap/security/security.md
 - topics:
-    - href: eap/security/cookies.md
+    - href: eap/security/hipaa.md
+    - href: eap/security/pci.md
     - href: eap/security/configure-csp.md   
-    - href: eap/security/set-as-secret.md
     - href: eap/security/app-shield/intro.md
     - topics: 
         - href: eap/security/app-shield/protection-features-description.md
@@ -486,6 +486,8 @@
         - href: eap/security/app-shield/ExitOnUrl.md
         - href: eap/security/app-shield/query-all-packages.md
         - href: eap/security/app-shield/troubleshooting.md
+        - href: eap/security/cookies.md
+        - href: eap/security/set-as-secret.md
         
 # App Architecture
 - href: eap/app-architecture/intro.md
