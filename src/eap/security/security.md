@@ -52,7 +52,7 @@ The network layer of ODC uses encryption, a WAF (Web Application Firewall), intr
 
 ### Encryption in transit
 
-All incoming requests to the [Platform services and Runtime](../manage-platform-app-lifecycle/platform-architecture/identity.md#Platform) terminate at an HTTPS endpoint and are end-to-end encrypted. ODC supports TLS 1.3.
+All incoming requests to the [Platform services and Runtime](../manage-platform-app-lifecycle/platform-architecture/identity.md#Platform) terminate at an HTTPS endpoint via [Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security) and are end-to-end encrypted. ODC supports TLS 1.3.
 
 ### Web Application Firewall
 
