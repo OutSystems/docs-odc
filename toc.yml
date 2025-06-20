@@ -371,6 +371,7 @@
         - href: eap/building-apps/workflows/filter-workflows.md
         - href: eap/building-apps/workflows/system-entities.md
         - href: eap/building-apps/workflows/built-in-functions.md
+        - href: eap/building-apps/workflows/bpmn-notation.md        
     # Reuse
     - href: eap/building-apps/reuse/intro.md
     - href: eap/building-apps/reuse/handle-changes.md
