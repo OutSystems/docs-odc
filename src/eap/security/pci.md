@@ -41,4 +41,4 @@ If you need more control over the payment process, you can use tokenization, whe
 
 You should always ensure that no payment card information is ever stored or processed in OutSystems applications. For more details on the supported integration options, refer to your PCI DSS-certified processor.
 
-[Sentry for ODC](https://www.outsystems.com/low-code-platform/security/sentry/) ensures your usage is PCI compliant. To confirm that you're using ODC Sentry, check your [Subscription console](../manage-platform-app-lifecycle/subscription-console.md). Contact your account manager for assistance.
+[Sentry for ODC](https://www.outsystems.com/low-code-platform/security/sentry/) ensures your ODC usage is PCI compliant. Apps should be designed to meet PCI guidance, and a third-party audit may be required to ensure apps are PCI compliant. To confirm that you're using ODC Sentry, check your [Subscription console](../manage-platform-app-lifecycle/subscription-console.md). Contact your account manager for assistance.
