@@ -25,11 +25,6 @@ topic:
 
 OutSystems Developer Cloud (ODC) is a cloud-native app development platform that provides a modular, scalable environment in which you develop and deploy your apps. With ODC you can build and deploy enterprise-grade, mission-critical apps in weeks. You can build web apps, web portals, mobile apps, and business workflows faster than with traditional development tools. You can then deploy your apps in a scalable, secure, and high-performance environment.
 
-<div class="info" markdown="1">
-
-OutSystems offers only a paid version of ODC. To learn more about how to get ODC for your organization, refer to [Develop applications that drive revenue, reduce costs, and control risk - at internet scale](https://www.outsystems.com/low-code-platform/developer-cloud/) or contact your OutSystems account team or [sales](https://www.outsystems.com/contact-sales/) if you're interested in a commercial trial.
-
-</div>
 
 ## Access the ODC Portal
 
