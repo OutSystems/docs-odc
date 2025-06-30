@@ -11,8 +11,8 @@
     "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
     },
     {
-      "url": "https://{odc-portal-domain}/api/identity/v1",
-      "description": "User and Access Management API.",
+      "url": "https://{odc-portal-domain}/api/portfolios/v1",
+      "description": "Portfolio API",
       "variables": {
         "odc-portal-domain": {
           "default": "ODC_PORTAL_DOMAIN",
