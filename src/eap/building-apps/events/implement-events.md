@@ -53,6 +53,14 @@ Once the event is created, you can trigger the event in the logic flow of your a
 
 After creating an event, you must trigger it within the same app to ensure that other consumer apps can handle it. You can trigger the event using either a server action or a service action. For example, in an eCommerce app, you can trigger the event **OnPurchaseStarted** within a server action that executes when a user clicks the **Purchase** button, allowing other apps, such as the Inventory app or Fraud Detection app, to handle the event asynchronously.
 
+<div class="info" markdown="1">
+
+ODC uses the read committed isolation level, meaning only committed data is visible. Therefore, if you trigger an event based on data created in the same transaction, you must commit that transaction before triggering the event. 
+
+Otherwise, the event handler won't be able to access the new data, as it's not yet committed and thus not visible.
+
+</div>
+
 This procedure assumes that you are triggering the event in the server action.
 
 To trigger an event in the producer app, follow these steps:
@@ -105,7 +113,7 @@ These exceptions must be handled in the producer app using the **All Exceptions*
 
 When you consume events, an exception is raised in the consumer app if the execution time of the event handler exceeds 2 mins. You must handle this exception in the consumer app using **All Exceptions**.
 
-## Additional resources
+## Related resources
 
 * [Event-driven architecture in ODC](backend-events.md)
 

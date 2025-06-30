@@ -87,7 +87,7 @@ Here are some scenarios where EDA can be used.
 
   * Running simulations on multiple data points simultaneously for faster research.
 
-## Additional resources
+## Related resources
 
 * [Event-driven architecture in ODC](backend-events.md)
 

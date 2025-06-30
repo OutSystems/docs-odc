@@ -92,7 +92,7 @@ Each app can handle a maximum of **100** events in parallel. For a specific even
 
 </div>
 
-## Additional resources
+## Related resources
 
 * [One Conference presentation on event-driven architecture with ODC](https://www.youtube.com/watch?v=gLfUocukA4Q)
 
