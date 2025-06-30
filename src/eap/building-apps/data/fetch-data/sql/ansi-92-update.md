@@ -2,7 +2,7 @@
 guid: 72cf6e91-01e0-483b-a3aa-1538eddea351
 locale: en-us
 summary: Learn how to use the ANSI-92 UPDATE statement to modify records in external entities from OutSystems Developer Cloud (ODC) apps.
-figma: 
+figma:
 coverage-type:
   - apply
   - remember
@@ -29,7 +29,6 @@ assignment:
         attribute = expression
 ```
 
-
 `UPDATE` updates records in an entity on an external system.
 
 One or more attributes must be assigned a new value in the `SET` clause. Attributes may be assigned in any order but a given attribute may only be assigned once. The attributes may be qualified (`{entity}.[attribute]`) and this is recommended to avoid potential issues when attributes are renamed in ODC Portal.
@@ -39,7 +38,6 @@ If the `WHERE` clause isn't specified, the operation will update all records in 
 If the `WHERE` clause is specified, the operation will only update records for which the `condition` evaluates to true.
 
 `UPDATE` never returns a result.
-
 
 <div class="info" markdown="1">
 
@@ -63,11 +61,12 @@ WHERE {entity}.[id] = 1 OR {entity}.[id] = @dynamic;
 ## Compatibility
 
 | Data Source          | Update          |
-|----------------------|-----------------|
-| Microsoft SQL Server | Yes             |    
-| Oracle               | Yes             |    
-| PostgreSQL           | Yes             |    
-| Salesforce           | Yes             |     
+| -------------------- | --------------- |
+| Microsoft SQL Server | Yes             |
+| MySQL                | Yes             |
+| Oracle               | Yes             |
+| PostgreSQL           | Yes             |
+| Salesforce           | Yes             |
 | SAP OData            | Yes<sup>1</sup> |
 
 <sup>1</sup>: The entity must have a `PATCH` or `PUT` API. `UPDATE` doesn't support writing to SAP OData Navigation Properties (`Record` attributes).

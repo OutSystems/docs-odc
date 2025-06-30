@@ -87,6 +87,7 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 
 * Mashup queries may return an error when MOD encounters a NULL divisor.
 * Mashup queries may return an error when ABS, ROUND, or TRUNCATE encounter a NULL value.
+* In MySQL, the `MOD` built-in function with 0 as the dividend returns NULL without an exception.
 
 ## Character string operators and functions { #character-string-operators-and-functions }
 
@@ -107,6 +108,8 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 ### Known issues
 
 * Mashup queries may return an error when either UPPER or LOWER encounter a NULL value.
+* In MySQL, the `SUBSTRING` built-in function with 0 as the starting position returns an empty string.
+* In MySQL, the `POSITION` built-in function with 0 or negative `FROM` returns 0.
 
 ## Date/time functions { #datetime-functions }
 
@@ -162,6 +165,8 @@ TO_TIMESTAMP('01/03/2020 2:30:45 pm', 'DD/MM/YYYY HH12:MI:SS AM')
 ### Known issues
 
 * `TIMESTAMPADD` and `TIMESTAMPDIFF` will return an error if used with `CURRENT_DATE` or `CURRENT_TIMESTAMP`. The same issue also occurs with the `+ INTERVAL` and `datetime2 - datetime1`syntax.
+* In MySQL, the `WEEK` built-in function returns the week number for a given date, a number from 0 to 53.
+* In MySQL, the `TO_TIMESTAMP` and `TO_TIMESTAMP` built-in functions can't convert strings that don't represent a valid date. They only accept valid date formats with year, month, and day.
 
 ## Conditional functions and operators { #conditional-functions }
 
@@ -251,6 +256,7 @@ windowBound:
 * `NTH_VALUE` isn't supported with Microsoft SQL Server.
 * `NTILE` can't be used with a window which has a `RANGE` or `ROWS` clause with Microsoft SQL Server.
 * Window functions aren't supported with Salesforce and SAP OData.
+* MySQL doesn't support `PARTITION BY <expression>` when `<expression>` is a constant.
 
 ## Type conversion functions { #type-conversion }
 
@@ -310,3 +316,10 @@ Refer to [Data types in SQL with external entities](ansi-92-data-types.md) for m
 * When using the `CHAR_INDEX`, `LIKE`, and `POSITION` operators with PostgreSQL, the operands will be collated to the database default collation. This may lead to unexpected results when working with attributes which have a non-default collation.
 
 * Mashup queries may return an error when either UPPER or LOWER encounter a NULL value.
+
+* When working with dynamic parameters in MySQL, use the `CAST` function to ensure the correct data type is applied. Without an explicit cast, dynamic parameters may fall back to the default type based on their value, potentially causing unexpected behavior. If `CAST` is not used, dynamic parameters are resolved to the following types:
+    * Boolean: Returned as BIGINT
+    * Integer: Returned as BIGINT
+    * Timestamp: Returned as VARCHAR
+    * Time: Returned as VARCHAR
+    * Date: Returned as VARCHAR

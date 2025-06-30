@@ -67,7 +67,6 @@ The statement must reference at least one external entity and may reference any 
 
 A `SELECT` statement that contains both internal and external entities or that uses external entities from more than one external system is called a "mashup" query. There are significant differences in how mashup queries are executed compared to regular queries, for more information please refer to [Query execution](ansi-92-syntax.md#query-execution).
 
-
 <div class="info" markdown="1">
 
 * The user configured on the connection must have permission to read from the entity in the external system
@@ -258,6 +257,7 @@ For example, `SELECT "A" / 2 AS "key", MAX( "B" ) AS "value"` must have a `GROUP
 #### Known issues with GROUP BY
 
 * Grouping by a boolean expression is not supported in Oracle and Microsoft SQL Server.
+* Grouping by column index is not supported in any external system.
 
 ### HAVING clause
 
@@ -353,8 +353,9 @@ The `NULLS FIRST` and `NULLS LAST` keywords may be used to control how `NULL` va
 When not specified, ODC will not override the `NULL` ordering of the external system.
 
 | External System      | Default NULL Ordering |
-|----------------------|-----------------------|
+| -------------------- | --------------------- |
 | Microsoft SQL Server | LOWEST VALUE          |
+| MySQL                | LOWEST VALUE          |
 | Oracle               | HIGHEST VALUE         |
 | PostgreSQL           | HIGHEST VALUE         |
 | Salesforce           | FIRST                 |
@@ -368,11 +369,9 @@ Note that `ORDER BY` is not supported in subqueries. A given `SELECT` statement 
 
 #### Known issues with ORDER BY
 
-- Ordering by a constant or dynamic parameter based expression in the [SELECT List](#select-list) is
-  not supported
+- Ordering by a constant or dynamic parameter based expression in the [SELECT List](#select-list) is not supported.
 - Ordering by character strings can be inconsistent depending on the collation of the attributes.
-- `NULLS FIRST` and `NULLS LAST` have no effect when the sorting is pushed down to Microsoft SQL
-  Server.
+- `NULLS FIRST` and `NULLS LAST` have no effect when the sorting is pushed down to Microsoft SQL Server and MySQL.
 
 ### LIMIT clause { #limit }
 
@@ -398,7 +397,6 @@ The `OFFSET` clause is used to skip a number of records returned by a query so t
 The `start` may be specified using a literal of any numeric type or with a dynamic parameter.
 
 The `OFFSET` clause is permitted in subqueries but this is only supported with PostgreSQL (when used with `LIMIT`) and will not work with other external systems.
-
 
 ## Examples
 

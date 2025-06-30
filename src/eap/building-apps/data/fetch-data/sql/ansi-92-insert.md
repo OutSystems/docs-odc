@@ -129,8 +129,9 @@ FROM {other};
 ## Supported operations { #supported-operations }
 
 | Data source          | Insert (single) | Insert (multiple) | Upsert (single) | Upsert (multiple) | Insert/Upsert Select |
-|----------------------|-----------------|-------------------|-----------------|-------------------|----------------------|
+| -------------------- | --------------- | ----------------- | --------------- | ----------------- | -------------------- |
 | Microsoft SQL Server | Yes             | Yes               | Yes             | Yes               | Yes                  |
+| MySQL                | Yes             | Yes               | Yes             | Yes               | Yes                  |
 | Oracle               | Yes             | Yes               | Yes             | Yes               | Yes                  |
 | PostgreSQL           | Yes             | Yes               | Yes             | Yes               | Yes                  |
 | Salesforce           | Yes             | Yes               | No              | No                | No                   |
@@ -141,8 +142,9 @@ FROM {other};
 ## Returned primary key attributes { ##returned-primary-key-attributes }
 
 | Data source          | Returned primary key attributes                                    |
-|:---------------------|--------------------------------------------------------------------|
+| :------------------- | ------------------------------------------------------------------ |
 | Microsoft SQL Server | `IDENTITY` or `AS ... PERSISTED`                                   |
+| MySQL                | `AUTO_INCREMENET`                                                  |
 | Oracle               | `GENERATED ALWAYS AS ...`                                          |
 | PostgreSQL           | `GENERATED ALWAYS AS IDENTITY` or `GENERATED ALWAYS AS ... STORED` |
 | Salesforce           | Salesforce Record ID (`Id`)                                        |

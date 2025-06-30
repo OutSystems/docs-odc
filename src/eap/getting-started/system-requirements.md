@@ -46,7 +46,7 @@ If you are working on a network where communications to the Internet are routed 
 
 ### Minimum recommended hardware requirements
 
-The following are the minimum recommended hardware requirements,however, keep in mind that many factors such as workload can affect performance.
+The following are the minimum recommended hardware requirements. However, keep in mind that many factors, such as workload, can affect performance.
 
 * 1.8 GHz dual-core processor or better
 * 2 GB of RAM (4 GB recommended)
@@ -78,7 +78,7 @@ The following sections specify the software requirements for Apps developed in O
 
 <div class="info" markdown="1">
 
-**End User Requirements**:  Support for OutSystems browser continues for 6 months after end of support date announcement. This support applies to all end-users running OutSystems on that particular browser.
+**End User Requirements**: Support for OutSystems browser continues for 6 months after the end of the support date announcement. This support applies to all end-users running OutSystems on that particular browser.
 
 </div>
 
@@ -132,6 +132,13 @@ The following versions of systems are supported to integrate with ODC using [Dat
     * PostgreSQL 14
     * PostgreSQL 15
     * PostgreSQL 16
+
+* **MySQL**
+
+  OutSystems supports self-managed, Aurora, and Azure provisions for MySQL.
+
+  * MySQL 8.0
+  * MySQL 8.4
 
 * **SAP**:
 

@@ -23,7 +23,7 @@ helpids: 30583
 
 [SQL nodes](use-sql.md) in OutSystems Developer Cloud (ODC) use a syntax based on ANSI-92 when working with external entities or when combining internal and external entities.
 
-ANSI-92 is a syntax that helps you write portable, consistent SQL designed to work with all the [external systems connected via Data Fabric](../../../../integration-with-systems/external-databases/intro.md). 
+ANSI-92 is a syntax that helps you write portable, consistent SQL designed to work with all the [external systems connected via Data Fabric](../../../../integration-with-systems/external-databases/intro.md).
 
 Use this article as a starting point to learn how ANSI-92 queries work in ODC.
 
@@ -63,13 +63,14 @@ All statements in a multiple statement SQL node must use entities and actions fr
 
 The following table lists the compatibility of multiple statements with each data source as well as whether or not the statements will be executed in a transaction.
 
-| Data source | Multiple statements | Executed in transaction |
-| ----- | ----- | ----- |
-| Microsoft SQL Server | Yes | Yes |
-| Oracle | Yes | Yes |
-| PostgreSQL | Yes | Yes |
-| Salesforce | Yes | No |
-| SAP OData | Yes | No |
+| Data source          | Multiple statements | Executed in transaction |
+| -------------------- | ------------------- | ----------------------- |
+| Microsoft SQL Server | Yes                 | Yes                     |
+| MySQL                | Yes                 | Yes                     |
+| Oracle               | Yes                 | Yes                     |
+| PostgreSQL           | Yes                 | Yes                     |
+| Salesforce           | Yes                 | No                      |
+| SAP OData            | Yes                 | No                      |
 
 #### Syntax for multiple statements { #syntax-multiple-statements }
 
@@ -111,7 +112,7 @@ ANSI-92 operations define what each SQL statement does. The following operations
 
 ## Operators { #operators }
 
-Operators let you compare values, filter results, and build logic into your SQL statements. 
+Operators let you compare values, filter results, and build logic into your SQL statements.
 
 ANSI-92 supports standard comparison, logical, and pattern-matching operators.
 
@@ -120,15 +121,14 @@ For examples and usage guidance, see the article on [ANSI-92 operators and funct
 ## Data types { #data-types }
 
 SQL data types define the kind of data you can store and work with in your queries. ANSI-92 uses common types that are supported by most systems.
-ODC has an internal SQL type system with mappings to/from attribute data types in external systems. 
-ODC will automatically map value and attribute types as outlined in [External data type mapping](../../../../integration-with-systems/external-databases/external-data-type.md) however. it's also possible to `CAST`expressions and attributes to convert them to a different type, refer to [Type conversion](ansi-92-operators.md#type-conversion) for more information. 
+ODC has an internal SQL type system with mappings to/from attribute data types in external systems.
+ODC will automatically map value and attribute types as outlined in [External data type mapping](../../../../integration-with-systems/external-databases/external-data-type.md) however. it's also possible to `CAST`expressions and attributes to convert them to a different type, refer to [Type conversion](ansi-92-operators.md#type-conversion) for more information.
 
 <div class="info" markdown="1">
 
-Only the data types that have a mapping at [External data type mapping](../../../../integration-with-systems/external-databases/external-data-type.md) are supported. 
+Only the data types that have a mapping at [External data type mapping](../../../../integration-with-systems/external-databases/external-data-type.md) are supported.
 
 </div>
-
 
 Null value handling can be configured in ODC Portal as explained [here](../../../../integration-with-systems/external-databases/handle-null-values.md).
 

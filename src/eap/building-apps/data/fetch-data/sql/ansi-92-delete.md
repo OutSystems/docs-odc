@@ -2,7 +2,7 @@
 guid: 08100981-f54c-4a3b-8e17-73cfe8a54d49
 locale: en-us
 summary: Learn how to use the DELETE statement in ANSI-92 queries to remove records from an external entity in OutSystems Developer Cloud (ODC).
-figma: 
+figma:
 coverage-type:
   - apply
   - remember
@@ -49,12 +49,11 @@ DELETE FROM {entity} WHERE {entity}.[id] = 1 OR {entity}.[id] = @dynamic;
 
 ## Compatibility
 
-| Data Source          | Delete    |
-|----------------------|-----------|
-| Microsoft SQL Server | Yes       |    
-| Oracle               | Yes       |    
-| PostgreSQL           | Yes       |    
-| Salesforce           | Yes       |     
-| SAP OData            | Yes. The entity must have a `DELETE` API. |     
-
-
+| Data Source          | Delete                                    |
+| -------------------- | ----------------------------------------- |
+| Microsoft SQL Server | Yes                                       |
+| MySQL                | Yes                                       |
+| Oracle               | Yes                                       |
+| PostgreSQL           | Yes                                       |
+| Salesforce           | Yes                                       |
+| SAP OData            | Yes. The entity must have a `DELETE` API. |

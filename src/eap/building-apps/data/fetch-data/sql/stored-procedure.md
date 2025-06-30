@@ -118,8 +118,9 @@ CALL "connectionId"."actionName" ('test', 123, "param" = @dynamic);
 ## Compatibility { #compatibility }
 
 | Data source          | Supported actions | Positional parameters | Named parameters |
-|----------------------|-------------------|-----------------------|------------------|
+| -------------------- | ----------------- | --------------------- | ---------------- |
 | Microsoft SQL Server | Stored procedures | Yes                   | No               |
+| MySQL                | Stored procedures | Yes                   | Yes              |
 | Oracle               | Stored procedures | Yes                   | Yes              |
 | PostgreSQL           | Stored procedures | Yes                   | Yes              |
 | Salesforce           | None              | No                    | No               |
@@ -135,9 +136,16 @@ SELECT 1 FROM {entity1} LIMIT 1;
 CALL "connectionId"."actionName" ('test', 123, @dynamic);
 ```
 
+## MySQL
+
+* `CALL` always returns a single record with a value of `-1`. It's not possible to receive results from a stored procedure.
+* All arguments must be passed in the same order as specified in the stored procedure definition.
+* Stored procedures with `INOUT` or `OUT` parameters are not supported.
+* Stored procedures with `IN` parameters of unsupported types are not supported.
+
 ## Oracle
 
-* `CALL` will always return a single record with a value of `-1`, it is not possible to receive results from a stored procedure.
+* `CALL` will always return a single record with a value of `-1`. It's not possible to receive results from a stored procedure.
 
 ## PostgreSQL
 

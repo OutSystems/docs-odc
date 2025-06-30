@@ -209,6 +209,17 @@ For Azure SQL Managed Instances:
 
 <div class="os-accordion__item">
 <div class="os-accordion__title">
+MySQL
+</div>
+<div class="os-accordion__content" markdown="1">
+
+* MySQL's Timestamp data type starts at `1970-01-01 00:00:01`. To prevent conflicts when converting MySQL's Timestamp attributes to DateTime in OutSystems, enable the **Overwrite database NULL values** option in the Null behavior configuration. This way, all OutSystems DateTime attributes default to the same minimum value of `1970-01-01 00:00:01`.
+
+</div>
+</div>
+
+<div class="os-accordion__item">
+<div class="os-accordion__title">
 Oracle
 </div>
 <div class="os-accordion__content" markdown="1">
@@ -222,7 +233,6 @@ Oracle
 
 </div>
 </div>
-
 
 <div class="os-accordion__item">
 <div class="os-accordion__title">
@@ -268,7 +278,6 @@ Salesforce
 </div>
 </div>
 
-
 <div class="os-accordion__item">
 <div class="os-accordion__title">
 SAP OData
@@ -295,7 +304,5 @@ SAP OData
         * Read Operations: Reading data from complex attributes is not supported.
         * Write Operations: Writing to complex attributes is allowed but may result in runtime errors caused by SAP business rules. For example, an error `\[/IWBEP/CM\_V4\_COS/028] Complex property \&lt;attribute_name&gt; is computed and not changeable`.
 * SAP v4 entities do not support NULL values. You can override the default value at the attribute level. Users must manually delete the default value during input in the app to prevent NULL values from being written to SAP.
-
-
 </div>
-</div>
+</div> 
