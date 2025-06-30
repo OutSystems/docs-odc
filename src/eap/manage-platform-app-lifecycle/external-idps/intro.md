@@ -29,7 +29,7 @@ topic:
 
 # Configure authentication with external identity providers
 
-OutSystems Developer Cloud (ODC) comes bundled with Identity Service, a built-in Identity Provider (IdP). It provides authentication, authorization, and user management for your [organization](../platform-architecture/intro.md#platform) and apps. You access your organization services through ODC Portal and ODC Studio. As the default IdP, Identity Service is always available.
+OutSystems Developer Cloud (ODC) comes bundled with Identity Service, a built-in Identity Provider (IdP). It provides authentication, authorization, and user management for your [organization](../platform-architecture/intro.md#platform) and apps. You access your organization's services through the ODC Portal and ODC Studio. As the default IdP, Identity Service is always available.
 
 In addition, you can use an external, self-managed IdP as an authentication provider for your organization and your apps. You can use any IdP that follows the OpenID Connect (OIDC) standard and uses the `client_secret_post` authentication method. You can configure most commercial IdPs, such as Microsoft Entra ID and Okta, to support this standard. ODC supports using **PKCE** (Proof Key for Code Exchange) with external IdPs for an additional layer of security.
 
@@ -88,7 +88,13 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     
     </div>
 
-1. If your provider uses different attribute names, then in the **Claim Mapping** section overwrite the prefilled **Name**, **Email** and **Photo URL** fields. Otherwise, skip this step. For more guidance, see your provider's support documentation.
+1. 1. If your provider uses different attribute names, you'll need to overwrite the prefilled **Username**, **Email,** **Name**, and **Photo URL** fields in the **Claim Mapping** section. Otherwise, you can skip this step. For more guidance, see your provider's support documentation.
+
+    <div class="info" markdown="1">
+    
+    You must map either the **Username** or **Email** field. Email mapping is mandatory if the IdP is or will be assigned to the Organization scope.
+    
+    </div>
 
 1. Click **Save**. ODC adds the provider to the list of available providers. If this fails, a notification with the error displays.
 
@@ -108,13 +114,13 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 ## Assign an external IdP
 
-To assign an added external IdP, navigate to the **Identity providers** tab in ODC Portal. Then follow these steps:
+To assign an added external IdP, navigate to the **Identity providers** tab in the ODC Portal. Then follow these steps:
 
 1. Click on the provider card you want to assign as a provider for your organization, your apps, or both.
 
-1. Check the summary in the **Configurations** tab. If you want to proceed, click the **Assign** button (when provider not assigned anywhere yet) or **Manage assignments** (when already assigned).
+1. Check the summary in the **Configurations** tab. If you want to proceed, click the **Assign** button (when the provider is not assigned anywhere yet) or **Manage assignments** (when the provider is already assigned).
 
-1. Check the boxes of where you want to assign the provider and then click **Next**.
+1. Check the boxes of where you want to assign the provider, and then click **Next**.
 
     <div class="info" markdown="1">
 
@@ -129,7 +135,9 @@ To assign an added external IdP, navigate to the **Identity providers** tab in O
 
     Once ODC applies the provider successfully, a notification displays.
 
-1. Copy the pair(s) of **Redirect URLs** to the list of permitted redirects in the setup page of your external provider. You should copy the pair(s) for both the built-in domain and any active [custom domains](../custom-domains.md). If you're configuring [Okta](okta.md#setup-redirect-urls) you can follow the embedded link for specific guidance. Otherwise see your provider's support documentation for further guidance (for example, [Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-redirect-uri)). Click **Next**.
+1. Copy the pair(s) of **Redirect URLs** to the list of permitted redirects in the setup page of your external provider. You should copy the pair(s) for both the built-in domain and any active [custom domains](../custom-domains.md). If you're configuring [Okta](okta.md#setup-redirect-urls), you can follow the embedded link for specific guidance. Otherwise, refer to your provider's support documentation for further guidance (for example, [Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-redirect-uri)). 
+
+1. Click **Next**.
 
 When you assign a provider for use by the apps, you need to create the logic in ODC Studio for each app you want to use it. For guidance on how to create the logic, see [Use external identity providers in an app](apps.md).
 
@@ -170,7 +178,7 @@ For further guidance, check [Configure app capabilities - About Sign in with App
 
 Accelerator field | Information required | Description
 ---|---|---
-Client ID | Client ID | A public identifier your app on the provider side. It's a string type value available to any registered developer on the Google Cloud Platform. You can access the ClientID value on the OAuth Consent tab on your app's Credentials screen.
+Client ID | Client ID | A public identifier for your app on the provider side. It's a string type value available to any registered developer on the Google Cloud Platform. You can access the ClientID value on the OAuth Consent tab on your app's Credentials screen.
 Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string type value type value available to any registered developer on the Google Cloud Platform. You can access the ClientSecret value on the OAuth Consent tab on your app's Credentials screen.
 
 For further guidance, check [Google Identity - Authentication](https://developers.google.com/identity/gsi/web/guides/overview).
@@ -179,7 +187,7 @@ For further guidance, check [Google Identity - Authentication](https://developer
 
 Accelerator field | Information required | Description
 ---|---|---
-Client ID | App ID | A public identifier your app on the provider side. It's a string type value available to any registered developer on Meta for Developers. You can access the AppID value in your app's settings.
+Client ID | App ID | A public identifier for your app on the provider side. It's a string type value available to any registered developer on Meta for Developers. You can access the AppID value in your app's settings.
 Client Secret | App Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on Meta for Developers. You can access the AppSecret value in your app's settings.
 
 For further guidance, check [Facebook Login - Documentation - Facebook for Developers](https://developers.facebook.com/docs/facebook-login/).
@@ -188,7 +196,7 @@ For further guidance, check [Facebook Login - Documentation - Facebook for Devel
 
 Accelerator field | Information required | Description
 ---|---|---
-Client ID | Client ID | A public identifier for your app on the provider side. It's a string-type value available to any registered developer on Linkedin. You can access the ClientID value on the Auth tab on your app's Credentials screen.
-Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string-type value type value available to any registered developer on Linkedin. You can access the ClientSecret value on the Auth tab on your app's Credentials screen.
+Client ID | Client ID | A public identifier for your app on the provider side. It's a string-type value available to any registered developer on LinkedIn. You can access the ClientID value on the Auth tab on your app's Credentials screen.
+Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string-type value type value available to any registered developer on LinkedIn. You can access the ClientSecret value on the Auth tab on your app's Credentials screen.
 
 For further guidance, check [Sign In with LinkedIn using OpenID Connect](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2).

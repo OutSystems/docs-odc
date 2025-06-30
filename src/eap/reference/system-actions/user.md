@@ -34,7 +34,7 @@ _Inputs_
 **Username**
 :   Type: Text. Mandatory.
     Identification of the user changing the password.
-
+    
 **NewPassword**
 :   Type: Text. Mandatory.
     Identification of the user changing the password.
@@ -129,7 +129,6 @@ _Outputs_
 :   Type: [FinishUpdateEmailFailureReason](#finishupdateemailfailurereason)  
     Contains the reason for failure if the action is not successful.
 
-
 ### GetPasswordComplexityPolicy
 
 _Client action_
@@ -196,6 +195,12 @@ _Inputs_
 **Email**
 :   Type: Text. Mandatory.
     User's new email.
+
+<div class="info" markdown="1">
+
+The user's email cannot be removed from their profile. 
+
+</div>
 
 _Outputs_
 

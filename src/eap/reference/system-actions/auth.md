@@ -33,7 +33,7 @@ User profile information is synchronized to the [User entity](user.md#user-1) be
 _Inputs_
 
 **Username**
-:   Type: Text. Mandatory
+:   Type: Text. Mandatory.
     Name of the user logging in.
 
 **Password**
