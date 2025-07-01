@@ -112,7 +112,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. Click **Save**. ODC adds the provider to the list of available providers. If this fails, a notification with the error displays.
 
-## Assign an external IdP
+## Assign an external IdP { #assign-an-external-idp }
 
 To assign an added external IdP, navigate to the **Identity providers** tab in the ODC Portal. Then follow these steps:
 

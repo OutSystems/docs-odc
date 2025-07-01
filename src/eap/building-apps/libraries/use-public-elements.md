@@ -26,7 +26,7 @@ For example, you can use elements in the HTTP library to extend your app to hand
 
 ## Add public elements
 
-To use public elements, you must first add them to your app. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut. In the selection window, you can filter by name, description, and type of element. Select the element or elements you want to add and click **Add**.
+To use public elements, you must first add them to your app. Navigate to the **Add public elements** icon on the top toolbar of ODC Studio or use the **Ctrl+Q** shortcut (**Cmd+D** on Mac). In the selection window, you can filter by name, description, and type of element. Select the element or elements you want to add and click **Add**.
 
 ### Libraries
 
