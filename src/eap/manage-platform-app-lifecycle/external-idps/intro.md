@@ -88,7 +88,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     
     </div>
 
-1. 1. If your provider uses different attribute names, you'll need to overwrite the prefilled **Username**, **Email,** **Name**, and **Photo URL** fields in the **Claim Mapping** section. Otherwise, you can skip this step. For more guidance, see your provider's support documentation.
+1. If your provider uses different attribute names, you'll need to overwrite the prefilled **Username**, **Email,** **Name**, and **Photo URL** fields in the **Claim Mapping** section. Otherwise, you can skip this step. For more guidance, see your provider's support documentation.
 
     <div class="info" markdown="1">
     
