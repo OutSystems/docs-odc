@@ -54,13 +54,13 @@ If you chose the delete the built-in login screen scenario, to modify the main u
 
 1. Create the [**GetMyProvider** server action to fetch a setting](#create-a-server-action-with-idp-name) with the IdP's name.
 
-    ![Flow diagram showing the new server action flow.](images/new-server-action-ss.png "New server action flow")
+    ![Flow diagram showing the new server action flow.](images/new-server-action-odcs.png "New server action flow")
 
 1. Go to the **Interface** > **Elements** tab, expand **UI Flows** > **Common**, and double-click **OnException**.
 
 1. To delete the built-in login screen, delete the **Common\Login** **Destination**  element from the logic flow.
 
-    ![Flow diagram showing the built-in provider login process.](images/built-in-provider-flow-ss.png "Built-in provider flow")
+    ![Flow diagram showing the built-in provider login process.](images/built-in-provider-flow-odcs.png "Built-in provider flow")
 
 1. Add the **GetMyProvider** server action you created after the **LastRequest** **Assign** element.
 
@@ -70,7 +70,7 @@ If you chose the delete the built-in login screen scenario, to modify the main u
 
 1. Add a **Destination** element to the end, and then select **RedirectToURL**.
 
-    ![Flow diagram showing the external provider login process.](images/external-provider-flow-ss.png "External provider flow")
+    ![Flow diagram showing the external provider login process.](images/external-provider-flow-odcs.png "External provider flow")
 
 1. In the **RedirectToURL** properties, set the **URL** to `GetExternalLoginURL.ExternalLoginURL`. The app redirects the user to this URL to perform the login.
 
@@ -80,7 +80,7 @@ If you chose the delete the built-in login screen scenario, to modify the user i
 
 1. Create the [**GetMyProvider** wrapper client action](#create-a-wrapper-client-action-with-idp-name) for the server action you created previously.
 
-    ![Flow diagram showing the new client action flow.](images/new-client-action-ss.png "New client action flow")
+    ![Flow diagram showing the new client action flow.](images/new-client-action-odcs.png "New client action flow")
 
 1. Go to the **Interface** tab, then expand **UI Flows** > **Common** and double-click **UserInfo**. Click the **Login** text, hover over the **Text** button, and then click the **Link** button.
 
@@ -94,7 +94,7 @@ If you chose the delete the built-in login screen scenario, to modify the user i
 
     The app redirects the user to this URL to perform the login.
 
-    ![Flow diagram showing the new UserInfo action for external login.](images/new-userinfo-action-ss.png "New UserInfo action")
+    ![Flow diagram showing the new UserInfo action for external login.](images/new-userinfo-action-odcs.png "New UserInfo action")
 
 ### Modify the user info bar logout flow { #modify-the-user-info-bar-logout-flow-idp-replaces-the-built-in-login }
 
@@ -104,7 +104,7 @@ If you chose the delete the built-in login screen scenario, to modify the user i
 
 1. To delete the built-in logout action, delete the **Logout** element from the logic flow.
 
-    ![Flow diagram showing the built-in provider logout process.](images/clientlogout-ss.png "ClientLogout")
+    ![Flow diagram showing the built-in provider logout process.](images/clientlogout-odcs.png "ClientLogout")
 
 1. Add the **GetExternalLogoutURL** [public element](../../building-apps/libraries/use-public-elements.md) after the **Start** element.
 
@@ -145,7 +145,7 @@ If you chose the modify the login screen scenario, to add a login button with an
 
    1. In the **Expression** properties, set the **Value** to `DataActionMyProvider.MyProvider`.
     
-       ![Modified login screen with buttons for built-in and external provider login.](images/login-screen-modified-ss.png "Login screen modified")
+       ![Modified login screen with buttons for built-in and external provider login.](images/login-screen-modified-odcs.png "Login screen modified")
    
    1. In the enclosing **Button** properties, Set the **On Click** property to **New Client Action**.
 
@@ -183,11 +183,11 @@ If you chose the modify the login screen scenario, to modify the user info bar l
 
 1. Create the [**GetMyProvider** server action to fetch a setting](#create-a-server-action-with-idp-name) with the IdP's name.
 
-    ![Flow diagram showing the new server action flow.](images/new-server-action-ss.png "New server action flow")
+    ![Flow diagram showing the new server action flow.](images/new-server-action-odcs.png "New server action flow")
 
 1. Create the [**GetMyProvider** wrapper client action](#create-a-wrapper-client-action-with-idp-name).
 
-    ![Flow diagram showing the new client action flow.](images/new-client-action-ss.png "New client action flow")
+    ![Flow diagram showing the new client action flow.](images/new-client-action-odcs.png "New client action flow")
 
 1. Open the `LogInWith_<ExternalIdP>` action you created when you [modified the login screen](#modify-the-login-screen-add-an-idp-button-alongside-the-built-in-login), and delete the **LoginForm.Valid?** element and associated logic.
 
@@ -201,7 +201,7 @@ If you chose the modify the login screen scenario, to modify the user info bar l
 
     The app redirects the user to this URL to perform the login.
 
-    ![Flow diagram showing the new UserInfo action for external login.](images/new-userinfo-action-ss.png "New UserInfo action")
+    ![Flow diagram showing the new UserInfo action for external login.](images/new-userinfo-action-odcs.png "New UserInfo action")
 
 ### Modify the user info bar logout flow { #modify-the-user-info-bar-logout-flow-idp-button-added-alongside-the-built-in-login }
 
@@ -219,7 +219,7 @@ If you chose the modify the login screen scenario, to modify the user info bar l
 
 1. Add a **Destination** to the right of the **Clear client variables Assign**, in the **True** branch. Select **RedirectToURL**, and in its properties, set the **URL** to `GetExternalLogoutURL.ExternalLogoutURL`.
     
-    ![Flow diagram showing the logout process with an added IdP button.](images/clientlogout-if-added-idp-ss.png "ClientLogout flow after modification")
+    ![Flow diagram showing the logout process with an added IdP button.](images/clientlogout-if-added-idp-odcs.png "ClientLogout flow after modification")
 
 1. To save, click **Publish**.
 
@@ -247,7 +247,7 @@ To create the server action that fetches the setting:
 
 1. In the **Assign** properties, select **MyProvider** from the dropdown, and set its value to `Settings.MyProvider`.
 
-    ![Flow diagram showing the new server action flow.](images/new-server-action-ss.png "New server action flow")
+    ![Flow diagram showing the new server action flow.](images/new-server-action-odcs.png "New server action flow")
 
 ## Create a wrapper client action { #create-a-wrapper-client-action-with-idp-name }
 
@@ -263,7 +263,7 @@ To be able to use the output parameter of the server action in the logic flow wh
 
 1. In the **Assign** properties, select **MyProvider** from the dropdown, and set its value to `GetMyProvider.MyProvider`.
 
-    ![Flow diagram showing the new client action flow.](images/new-client-action-ss.png "New client action flow")
+    ![Flow diagram showing the new client action flow.](images/new-client-action-odcs.png "New client action flow")
 
 ## Create a data action { #create-data-action }
 
@@ -279,7 +279,7 @@ To be able to use the setting with the IdP name in an **Expression** in the Logi
 
 1. In the **Assign** properties, select **MyProvider** from the dropdown, and set its value to `GetMyProvider()`.
 
-    ![Flow diagram showing the new data action flow.](images/new-data-action-ss.png "New data action flow")
+    ![Flow diagram showing the new data action flow.](images/new-data-action-odcs.png "New data action flow")
 
 ## Modify a setting in the ODC Portal { #modify-setting-odc-portal }
 
