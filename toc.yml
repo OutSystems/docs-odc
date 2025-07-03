@@ -487,8 +487,8 @@
         - href: eap/security/app-shield/ExitOnUrl.md
         - href: eap/security/app-shield/query-all-packages.md
         - href: eap/security/app-shield/troubleshooting.md
-        - href: eap/security/cookies.md
-        - href: eap/security/set-as-secret.md
+    - href: eap/security/cookies.md
+    - href: eap/security/set-as-secret.md
         
 # App Architecture
 - href: eap/app-architecture/intro.md
