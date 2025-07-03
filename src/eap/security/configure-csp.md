@@ -144,9 +144,9 @@ OutSystems recommends default values to ensure the platform works as expected. I
 
 The **Required values** column indicates the values that ODC automatically applies to the directive for the applications to work correctly. These values can't be removed.
 
-* ``unsafe-inline``: The unsafe-inline directive allows the use of inline resources such as inline ``<script> ``and ``<style>`` elements, ``javascript: URLs``, and inline event handlers. Therefore, any user can inject a script attribute into your website and perform the cross-site scripting (XSS) attack.
+* ``unsafe-inline``: The unsafe-inline directive allows the use of inline resources such as inline ``<script> ``and ``<style>`` elements, ``javascript: URLs``, and inline event handlers that are currently used by the platform.
 
-* ``unsafe-eval``: The unsafe-eval directive allows the web pages to evaluate strings as code. This directive consists of the eval function, the function constructor, and some usages of the setTimeout and setInterval functions. This directive leads to reduced protection against certain types of DOM-based XSS attacks.
+* ``unsafe-eval``: The unsafe-eval directive allows the web pages to evaluate strings as code. This directive consists of the eval function, the function constructor, and some usages of the setTimeout and setInterval functions that are currently used by the platform.
 
 ## Operational and security considerations
 
