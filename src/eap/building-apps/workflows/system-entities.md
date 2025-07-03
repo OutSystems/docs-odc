@@ -46,5 +46,8 @@ The following diagram illustrates the relationship between the entities that are
 ODC provides a set of system actions to modify workflows at runtime in ODC Studio. 
 
 * [HumanActivityAssign](../../reference/system-actions/workflows.md#humanactivityassign)
+  
 * [HumanActivityOpen](../../reference/system-actions/workflows.md#humanactivityopen)
+  
 * [HumanActivityRelease](../../reference/system-actions/workflows.md#humanactivityrelease)
+  
