@@ -123,11 +123,11 @@ For detailed information, refer to [Streamed trace data](stream-app-analytics-tr
 
 *  **Total requests**: The total number of requests made to any asset originating from elements such as screens, client actions, REST/service actions, timers, and global event handlers. 
 
-<div class="info" markdown="1">
+    <div class="info" markdown="1">
 
     One trace typically corresponds to one request. However, in some cases, for example, when a failed timer is retried multiple times, each retry is counted as a separate request, but all the retries are part of a single trace.
 
-</div>
+    </div>
 
 * **Request duration**: The distribution of request processing times, categorized into millisecond buckets.
 
