@@ -6,7 +6,7 @@ locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 outsystems-tools: 
-  - none
+  - odc portal
 coverage-type:
   - apply 
 figma: 
@@ -14,10 +14,9 @@ content-type:
   - procedure
 audience: 
   - platform administrators
-  - full stack developers
-  - backend developers
   - infrastructure managers
   - tech leads
+  - architects
 ---
 
 # Stream observability data to Amazon S3
@@ -63,3 +62,5 @@ Here are some additional helpful documents:
 * [Set up the OpenTelemetry Collector](stream-app-analytics-opentelemetry.md)
 
 * [Configure app analytics streams in Portal](stream-app-analytics-configure.md)
+
+

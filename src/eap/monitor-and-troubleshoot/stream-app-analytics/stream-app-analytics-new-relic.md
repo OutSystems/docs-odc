@@ -6,16 +6,16 @@ locale: en-us
 app_type: mobile apps,reactive web apps
 platform-version: odc
 figma: 
-api-render: false
 outsystems-tools:
   - odc portal
 coverage-type:
   - apply
 content-type: 
 audience:
-  - backend developers
   - platform administrators
+  - infrastructure managers
   - tech leads
+  - architects
 helpids: 
 ---
 
@@ -35,7 +35,7 @@ Once you have these values, go to the ODC Portal and [configure a stream](stream
 
 <div class="info" markdown="1">
 
-Large ``message`` and ``exception.stacktrace`` attribute values are truncated to 4,000 characters before streaming in order to follow New Relic's ingestion API limits. For more information, refer to New Relic's documentation on [Send custom events with our Event API](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/#limits).
+Large ``message`` and ``exception.stacktrace`` attribute values are truncated to 4,000 characters before streaming in order to follow New Relic's ingestion API limits. For more information, refer to New Relic's documentation on [Send custom events with New Relic Event API](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/#limits).
 
 </div>
 

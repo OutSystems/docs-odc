@@ -3,7 +3,7 @@ summary: Learn about the process for streaming observability data to different A
 tags: opentelemetry,observability,apm integration,monitoring,troubleshooting
 guid: d713c053-48b4-4a5e-bb7b-f35062668fff
 locale: en-us
-app_type: mobile apps,reactive web apps
+app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3795-56
 coverage-type:
@@ -12,10 +12,9 @@ content-type:
   - process
 audience:
   - platform administrators
-  - full stack developers
-  - backend developers
   - infrastructure managers
   - tech leads
+  - architects
 topic:
   - app-settings
   - app-configuration
@@ -25,6 +24,7 @@ helpids:
 outsystems-tools:
   - odc portal
 ---
+
 # Streaming observability data to APM tools
 
 With ODC's App Analytics Stream, you can stream your observability data in an OpenTelemetry Protocol (OTLP) format to different Application Performance Monitoring (APM) tools so that you can analyze, monitor, and proactively troubleshoot your system. You can easily integrate your app with any APM tool, as most monitoring tools support data ingestion in OpenTelemetry (OTel) format.

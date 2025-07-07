@@ -6,7 +6,6 @@ locale: en-us
 app_type: mobile apps,reactive web apps
 platform-version: odc
 figma:
-api-render: false
 outsystems-tools:
   - none
 coverage-type:
@@ -14,9 +13,10 @@ coverage-type:
   - remember
 content-type:
 audience:
-  - backend developers
   - platform administrators
+  - infrastructure managers
   - tech leads
+  - architects
 helpids:
 ---
 # Streamed trace data

@@ -15,7 +15,7 @@ audience:
   - backend developers
   - infrastructure managers
   - platform administrators
-helpids: "30636" 
+helpids: 30636
 ---
 
 # Configure app analytics streams in Portal

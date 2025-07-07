@@ -6,7 +6,6 @@ locale: en-us
 app_type: mobile apps,reactive web apps
 platform-version: odc
 figma: 
-api-render: false
 outsystems-tools:
   - odc portal
 coverage-type:
@@ -14,9 +13,10 @@ coverage-type:
   - understand
 content-type: 
 audience:
-  - backend developers
-  - data engineers
   - platform administrators
+  - infrastructure managers
+  - tech leads
+  - architects
 helpids: 
 ---
 

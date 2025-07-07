@@ -14,9 +14,10 @@ coverage-type:
   - understand
 content-type: 
 audience:
-  - backend developers
   - platform administrators
+  - infrastructure managers
   - tech leads
+  - architects
 helpids: 
 ---
 
