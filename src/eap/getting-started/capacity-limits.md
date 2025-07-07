@@ -41,6 +41,7 @@ Each resource in ODC is subject to specific capacity limits that govern its usag
 * **Custom code execution duration**: Custom code execution duration is the time taken to run [custom code](../building-apps/external-logic/intro.md) from start to completion. The daily custom code execution duration is the total execution time of all custom code runs in a day. 
 * **Database compute**: The amount of compute resources (memory and CPU) allocated to the database that's shared across all apps in a given stage.
 * **Database storage**: The storage capacity allocated to the database, shared across all apps in a stage.
+* **App analytics stream**: The combined volume of app logs, traces, and metrics that can be streamed per month across all stages. 
 
 <div class="info" markdown="1">
 
@@ -56,6 +57,7 @@ When approaching or surpassing capacity limits, the following issues may occur:
   * Run workflows and timers
 * Custom code execution duration: Calls to custom code libraries can cause errors and fail until the next day. This can lead to runtime errors in consumer apps.
 * Database compute and database storage: Apps can experience performance issues, such as slower response times or timeout errors when accessing the database if there is insufficient capacity to accommodate all of the requests.
+* App analytics stream: You are warned when your organization's volume of streamed data is approaching the capacity limit.
 
 When resource consumption is at its limit and actions that consume further resources are performed (like publishing a new app, for example), ODC displays an error. You may see these errors in ODC Studio when publishing, in ODC Portal when deploying to the next stage, or when manually running a timer. Other errors may also show at app runtime. These errors are also recorded in the [ODC logs](../monitor-and-troubleshoot/monitor-apps.md#logs).
 

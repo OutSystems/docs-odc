@@ -537,6 +537,23 @@
 - topics:
     - href: eap/monitor-and-troubleshoot/app-health.md
 
+# App analytics stream
+- href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md
+- topics:
+    - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-apm.md
+    - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-configure.md
+    - topics: 
+        - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-datadog.md 
+        - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-dynatrace.md 
+        - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-elastic.md                            
+        - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-new-relic.md
+        - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-splunk.md
+        - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-amazon-s3.md
+        - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-opentelemetry.md
+    - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-log-ref.md
+    - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-traces-ref.md
+    - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-metrics-ref.md
+
     #Manage technical debt
     - href: eap/monitor-and-troubleshoot/manage-technical-debt/managing-tech-debt.md
     - topics:
