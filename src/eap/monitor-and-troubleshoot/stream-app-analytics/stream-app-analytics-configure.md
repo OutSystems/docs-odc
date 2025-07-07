@@ -18,7 +18,7 @@ audience:
 helpids: "30636" 
 ---
 
-# Configure streams in the ODC Portal
+# Configure app analytics streams in Portal
 
 To stream observability data from your app to the corresponding APM tool, you must create a stream and configure the APM server details and authentication credentials. This article explains how to create streams in the ODC Portal for a specific APM tool.
 

@@ -58,5 +58,5 @@ Here are some additional helpful documentation, links, and articles:
 
 * [Set up the OpenTelemetry Collector](stream-app-analytics-opentelemetry.md)
 
-* [Configure streams in the ODC Portal](stream-app-analytics-configure.md)
+* [Configure app analytics streams in Portal](stream-app-analytics-configure.md)
 

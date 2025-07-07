@@ -94,7 +94,7 @@ Remember to edit the following:
 
 * [Streaming observability data](stream-app-analytics-overview.md)
 * [Streaming observability data to APM tools](stream-app-analytics-apm.md)  
-* [Configure streams in the ODC Portal](stream-app-analytics-configure.md)
+* [Configure app analytics streams in Portal](stream-app-analytics-configure.md)
 
 
   
