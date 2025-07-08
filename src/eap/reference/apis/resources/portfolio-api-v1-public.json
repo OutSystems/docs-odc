@@ -542,9 +542,6 @@
       }
     }
   },
-  "security": [
-    {}
-  ],
   "tags": [
     {
       "name": "public",
