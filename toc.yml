@@ -535,7 +535,8 @@
 # Monitoring and troubleshooting
 - href: eap/monitor-and-troubleshoot/monitor-apps.md
 - topics:
-    - href: eap/monitor-and-troubleshoot/app-health.md
+
+    - href: eap/monitor-and-troubleshoot/app-health.md 
 # App analytics stream
     - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md
     - topics:
@@ -552,7 +553,9 @@
         - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-log-ref.md
         - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-traces-ref.md
         - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-metrics-ref.md
+    - href: eap/monitor-and-troubleshoot/audit-trail.md
     # Manage technical debt
+
     - href: eap/monitor-and-troubleshoot/manage-technical-debt/managing-tech-debt.md
     - topics:
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/how-does-aims-works.md
