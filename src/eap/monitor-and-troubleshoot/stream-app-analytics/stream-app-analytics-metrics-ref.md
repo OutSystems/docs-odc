@@ -23,7 +23,7 @@ helpids:
 
 # Streamed metrics data
 
-OutSystems Developer Cloud (ODC) automatically streams performance metrics from your apps to Application Performance Monitoring (APM) tools, enabling real-time monitoring and analysis. These metrics provide visibility into request patterns, response times, and system invocations across your architecture. The streamed data includes both high-level counters and detailed timing distributions to help you identify performance bottlenecks and optimize your applications. All metrics are prefixed with "outsystems" to clearly distinguish them from other telemetry data in your APM environment.
+OutSystems Developer Cloud (ODC) automatically streams performance metrics from your apps to Application Performance Monitoring (APM) tools, enabling real-time monitoring and analysis. These metrics provide visibility into request patterns, response times, and system invocations across your architecture. The streamed data includes both high-level counters and detailed timing distributions to help you identify performance bottlenecks and optimize your applications. All metrics are prefixed with ``outsystems`` to clearly distinguish them from other telemetry data in your APM environment.
 
 The following metrics are streamed from your ODC app to APM tools:
 
@@ -34,7 +34,7 @@ The following metrics are streamed from your ODC app to APM tools:
 
 For more information about these metrics, refer to the [Streamed metrics table](#streamed-metrics).
 
-These metrics streamed from your ODC app to APM tools have metric-specific attributes. For more information about the `outsystems.total.requests` and `outsystems.request.duration.millis` specific attributes, refer to the [Request attributes table](#request-attributes). For more information about `outsystems.total.invocations` and `outsystems.invocation.duration.millis` specific attributes, refer to the [Invocation attributes table](#invocation-attributes).
+These metrics streamed from your ODC app to APM tools have metric-specific attributes. For more information about the `outsystems_total_requests` and `outsystems_request_duration_millis` specific attributes, refer to the [Request attributes table](#request-attributes). For more information about `outsystems_total_invocations` and `outsystems_invocation_duration_millis` specific attributes, refer to the [Invocation attributes table](#invocation-attributes).
 
 Additionally, all of these metrics share common resource attributes. Resource attributes are key-value pairs that describe the entity producing telemetry data (for example, a service, host, or container), providing essential context for filtering, grouping, and analyzing metrics, traces, and logs in APM tools. For more information about these common resource attributes, refer to the [Resource attributes table](#resource-attributes).
 

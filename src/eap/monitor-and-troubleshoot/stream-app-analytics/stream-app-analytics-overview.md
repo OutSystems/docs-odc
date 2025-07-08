@@ -29,7 +29,7 @@ App Analytics Stream may require an add-on to your current subscription.
 
 Streaming observability data is the process of continuously collecting and sending metric, log, and trace data to analysis and monitoring tools in near real-time. This gives you immediate insights into how your apps and systems are working. By streaming observability data in near real-time, you can proactively monitor, analyze, and respond to potential issues, ultimately enhancing app reliability and performance.
 
-With ODC's App Analytics Stream enabled, you can stream app logs from ODC apps to various third-party application performance monitoring (APM) tools, including Elastic Cloud, Datadog, Dynatrace, Splunk, New Relic, and Amazon S3. This real-time flow provides you with dynamic insights into app performance and behavior. 
+With ODC's App Analytics Stream enabled, you can stream obserevability data from ODC apps to various third-party application performance monitoring (APM) tools, including Elastic Cloud, Datadog, Dynatrace, Splunk, New Relic, and Amazon S3. This real-time flow provides you with dynamic insights into app performance and behavior. 
 
 ODC adopts the [OpenTelemetry](https://opentelemetry.io/) standard to stream observability data to various APM tools. OpenTelemetry is an [open-source](https://github.com/open-telemetry) observability framework comprising a collection of tools, APIs, and SDKs that you can use to instrument, generate, collect, and export observability data to help analyze your apps' performance and behavior. OpenTelemetry is tool-agnostic, meaning it can be used with various commercial and open-source APM tools without significant configuration changes.
 
