@@ -21,6 +21,9 @@
       }
     }
   ],
+  "security": [{
+    "bearerAuth": []
+  }],
   "paths": {
     "/deployed-assets": {
       "get": {
