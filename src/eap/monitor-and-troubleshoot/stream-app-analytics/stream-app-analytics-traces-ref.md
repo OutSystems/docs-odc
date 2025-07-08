@@ -46,7 +46,7 @@ The following table lists the trace span attributes that are streamed from your 
 | outsystems\_app\_version    | String        | Version of the app where the message is logged             |
 | outsystems\_app\_revision   | Int           | ID of the application revision where the message is logged |
 | outsystems\_service\_type   | String        | Type of service involved in the execution                  |
-| outsystems\_service\_name   | String        | Name of the service involved in the execution              |
+| outsystems\_service\_name   | String        | Name of the app where the message is logged              |
 
 ## Related resources
 

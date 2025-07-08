@@ -27,10 +27,10 @@ OutSystems Developer Cloud (ODC) automatically streams performance metrics from 
 
 The following metrics are streamed from your ODC app to APM tools:
 
-* `outsystems.total.requests`
-* `outsystems.request.duration.millis`
-* `outsystems.total.invocations`
-* `outsystems.invocation.duration.millis`
+* `outsystems_total_requests`
+* `outsystems_request_duration_millis`
+* `outsystems_total_invocations`
+* `outsystems_invocation_duration_millis`
 
 For more information about these metrics, refer to the [Streamed metrics table](#streamed-metrics).
 
@@ -46,20 +46,20 @@ The following table outlines the metrics streamed from your ODC app to APM tools
 |                             |           |                                        |
 | --------------------------- | --------- | -------------------------------------- |
 | **Metric name**             | **Type**  | **Description**                        |
-|  `outsystems.total.requests`  |  `Counter`   | Number of requests made to any asset, originating from elements, such as `SCREEN`, `REST_EXPOSE_ACTION`, `SERVICE_ACTION`, `TIMER`, `GLOBAL_EVENT_HANDLER` |
-|  `outsystems.request.duration.millis`    |  `Histogram` |  Number of requests made to any asset, originating from elements such as `SCREEN`, `REST_EXPOSE_ACTION`, `SERVICE_ACTION`, `TIMER`, `GLOBAL_EVENT_HANDLER` distributed into millisecond buckets. |
-|  `total.invocations`  |  `Counter`   |  Number of invocations of  elements such as `REST_CONSUME_ACTION, SERVICE_ACTION_CALL, SCREEN_SERVICE_AGGREGATE, SCREEN_SERVICE_DATA_ACTION, SERVER_QUERY_AGGREGATE, SERVER_QUERY_SQL, SERVER_ENTITY_ACTION, SERVER_QUERY_EXTERNAL_ACTION, EXTERNAL_LIBRARY_ACTION, SEND_EMAIL, GLOBAL_EVENT_TRIGGER`  |
-|  `outsystems.invocation.duration.millis` |  `Histogram` |  Number of invocations elements such as `REST_CONSUME_ACTION, SERVICE_ACTION_CALL, SCREEN_SERVICE_AGGREGATE, SCREEN_SERVICE_DATA_ACTION, SERVER_QUERY_AGGREGATE, SERVER_QUERY_SQL, SERVER_ENTITY_ACTION, SERVER_QUERY_EXTERNAL_ACTION, EXTERNAL_LIBRARY_ACTION, SEND_EMAIL, GLOBAL_EVENT_TRIGGER` distributed into millisecond buckets. |
+|  `outsystems_total_requests`  |  `Counter`   | Number of requests made to any asset, originating from elements, such as `SCREEN`, `REST_EXPOSE_ACTION`, `SERVICE_ACTION`, `TIMER`, `GLOBAL_EVENT_HANDLER` |
+|  `outsystems_request_duration_millis`    |  `Histogram` |  Number of requests made to any asset, originating from elements such as `SCREEN`, `REST_EXPOSE_ACTION`, `SERVICE_ACTION`, `TIMER`, `GLOBAL_EVENT_HANDLER` distributed into millisecond buckets. |
+|  `outsystems_total_invocations`  |  `Counter`   |  Number of invocations of  elements such as `REST_CONSUME_ACTION, SERVICE_ACTION_CALL, SCREEN_SERVICE_AGGREGATE, SCREEN_SERVICE_DATA_ACTION, SERVER_QUERY_AGGREGATE, SERVER_QUERY_SQL, SERVER_ENTITY_ACTION, SERVER_QUERY_EXTERNAL_ACTION, EXTERNAL_LIBRARY_ACTION, SEND_EMAIL, GLOBAL_EVENT_TRIGGER`  |
+|  `outsystems_invocation_duration_millis` |  `Histogram` |  Number of invocations elements such as `REST_CONSUME_ACTION, SERVICE_ACTION_CALL, SCREEN_SERVICE_AGGREGATE, SCREEN_SERVICE_DATA_ACTION, SERVER_QUERY_AGGREGATE, SERVER_QUERY_SQL, SERVER_ENTITY_ACTION, SERVER_QUERY_EXTERNAL_ACTION, EXTERNAL_LIBRARY_ACTION, SEND_EMAIL, GLOBAL_EVENT_TRIGGER` distributed into millisecond buckets. |
 
 # Request attributes
 
-The following table outlines the request attributes streamed from your ODC app to APM tools for the `outsystems.total.requests` and `outsystems.request.duration.millis` metrics.
+The following table outlines the request attributes streamed from your ODC app to APM tools for the `outsystems_total_requests` and `outsystems_request_duration_millis` metrics.
 
 |                                |                              | 
 | ------------------------------ | ---------------------------- |
 |  **Attribute name**            | **Possible values/Example**  |
 | `status`                       | <li>`success`</li> <li>`failure` </li>   | 
-| `outsystems.element.type`      | <li>`REST_EXPOSE_ACTION`(`Backend Runtime`)</li><li>`SERVICE_ACTION` (`Backend Runtime`)</li><li>`TIMER` (`Backend Runtime`)</li><li>`GLOBAL_EVENT_HANDLER` (`Backend Runtime`) </li>| 
+| `outsystems.element.type`      | <li>`REST_EXPOSE_ACTION` (`Backend Runtime`)</li><li>`SERVICE_ACTION` (`Backend Runtime`)</li><li>`TIMER` (`Backend Runtime`)</li><li>`GLOBAL_EVENT_HANDLER` (`Backend Runtime`) </li>| 
 |`outsystems.origin.element.name` |  `OnClickAction` | 
 | `outsystems.origin.element.key` |  `bc82cc28-6ad4-4cd2-ac6c-a584330d1291.ac82cc28-6ad4-4cd2-ac6c-a584330d1292` |
 | `outsystems.element.name`  |  `LandingScreen`      | 
@@ -69,7 +69,7 @@ The following table outlines the request attributes streamed from your ODC app t
 
 ### Invocation attributes
 
-The following table outlines the invocation attributes streamed from your ODC app to APM tools for the `outsystems.total.invocations` and `outsystems.invocation.duration.millis` metrics.
+The following table outlines the invocation attributes streamed from your ODC app to APM tools for the `outsystems_total_invocations` and `outsystems_invocation_duration_millis` metrics.
 
 |                                       |                                |                  
 | ------------------------------------- | ------------------------------ | 
@@ -86,7 +86,7 @@ The following table details the common resource attributes streamed from your OD
 |                             |           |                                        |
 | --------------------------- | --------- | -------------------------------------- |
 | **Name**                    | **Type**  | **Possible values/Example**            |
-| `service.name`              | `string`  | `ClientRuntime`, `BackendRuntime`      |
+| `service.name`              | `string`  | `App Name`                             |
 | `outsystems.tenant.key`     | `guid`    | `43814ec0-70cf-4460-ad02-077ef7a4cb3c` |
 | `outsystems.env.key`        | `guid`    | `ee835ae5-9100-4792-bb6f-cb1c0907ebc0` |
 | `outsystems.workload.type`  | `string`  | `app`, `agent`                         |
