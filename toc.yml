@@ -358,6 +358,8 @@
             - href: eap/building-apps/workflows/start-workflow.md
             - href: eap/building-apps/workflows/add-conditional-start.md
             - href: eap/building-apps/workflows/add-human-activity.md
+            - href: eap/building-apps/workflows/add-human-activity-procedure.md
+            - href: eap/building-apps/workflows/human-activity-states.md
             - href: eap/building-apps/workflows/add-automatic-activity.md
             - href: eap/building-apps/workflows/add-decisions.md
             - href: eap/building-apps/workflows/add-wait.md
