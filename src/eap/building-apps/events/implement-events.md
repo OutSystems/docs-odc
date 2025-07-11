@@ -19,7 +19,7 @@ helpids:
 ---
 # Implement events in ODC
 
-Events allow apps to communicate changes and updates asynchronously. You can create events in an app to notify other apps when specific actions occur. These events can then be triggered within the app's logic and handled either in the same app or in other apps that consume the event. This article explains the following:
+Events allow apps to communicate changes and updates asynchronously. You can create events in an app to notify other apps when specific actions occur. These events can then be triggered within the app's logic and handled either in the same app or in other apps that consume the event. 
 
 ## Create an event
 
