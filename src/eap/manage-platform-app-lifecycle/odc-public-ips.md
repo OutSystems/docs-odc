@@ -24,6 +24,13 @@ Allowlisting is a security mechanism that restricts access to a network or syste
 1. Through the [ODC Private Gateway](private-gateway.md), which ensures tenant-specific isolation and tighter access control.
 1. As a fallback option, using IP allowlisting.
 
+<div class="info" markdown="1">
+
+IP allowlisting can't be applied to [custom code](../building-apps/external-logic/intro.md) that make outbound calls to internal resources. In these scenarios, the outbound traffic doesn't originate from the shared ODC public IP addresses, and therefore can't be controlled using IP allowlisting. To securely connect custom code to internal systems, you must use the [ODC Private Gateway](private-gateway.md).
+
+</div>
+
+
 For IP allowlisting, ODC provides a list of public IP addresses that are used to initiate outbound traffic. These can be allowlisted in your firewalls or access policies.
 
 <div class="info" markdown="1">
@@ -33,6 +40,7 @@ This method uses shared IP addresses. All apps running on ODC, for all customers
 OutSystems tries to ensure that these IP addresses remain unchanged as much as possible, however, the list of public IPs may change over time due to infrastructure updates, though such changes are expected to be rare.
 
 </div>
+
 
 ## ODC public IP addresses
 

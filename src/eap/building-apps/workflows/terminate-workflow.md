@@ -26,6 +26,12 @@ When a **Terminate** node is reached in a workflow:
 
 1. The workflow instance status changes to **Done**.
 
+<div class="info" markdown="1">
+
+You can also terminate a workflow using [ProcessTerminate API](../../reference/system-actions/workflows.md#processterminate).
+
+</div>
+
 ## Related resources
 
 * [Troubleshooting workflows](troubleshooting-workflows.md)

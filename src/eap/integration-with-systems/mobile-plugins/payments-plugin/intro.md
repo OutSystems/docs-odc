@@ -102,7 +102,7 @@ You need the following information:
 
 * Access to a mobile PSP by either configuring a new mobile payment service or editing an existing one. To configure PSP details, add the following information (depending on the PSP):
 
-    * Merchant ID: The merchant id.
+    * Merchant ID: The merchant ID. **This field is only required for Apple Pay**. You can get this ID from Apple Developer, where you configured the Apple Pay Payment Processing capability for your app.
       
     * Name: The merchant name.
       
@@ -134,9 +134,9 @@ To process payments with Stripe using an OutSystems implementation, complete the
   
 1. Open the **Payments Plugin Configurator** app.
 
-1. Navigate to **Apps** > **Payments Configurator** > **Consumed REST APIs** to configure the authentication logic of the consumed REST API.
+1. Navigate to **Apps** > **Payments Configurator** > **Consumed REST APIs** > **Stripe** to configure the authentication logic of the consumed REST API.
 
-1. In the Basic authentication section, select **Custom** and in the **Username** field enter the **secret key** from your provider [Configure your account in the provider's dashboard](intro.md#configure-your-account-in-the-providers-dashboard).
+1. In the Basic authentication section, in the **Username** field, enter the **secret key** from your provider [Configure your account in the provider's dashboard](intro.md#configure-your-account-in-the-providers-dashboard). The **Password** field won't be used by Stripe, so if required, you can enter any value.
 
    ![Screenshot of the authentication logic configuration for the Payments REST API in ODC Studio](images/authentication-logic-for-payments-restapi-pl.png "Authentication Logic for Payments REST API")
 

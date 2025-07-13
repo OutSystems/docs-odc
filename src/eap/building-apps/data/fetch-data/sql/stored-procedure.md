@@ -39,7 +39,7 @@ Follow these steps to retrieve the connectionId from the ODC Portal:
 
     ![OutSystems Data Cloud interface showing the connection detail page for Northwind DB.](images/connection-id-pl.png "Connection Detail Page")
 
-1. Click **…** and **Copy connection ID**. The connectionId is now copied to your clipboard.
+1. Click **More actions** and **Copy connection ID**. The connectionId is now copied to your clipboard.
 
     ![OutSystems Data Cloud interface showing the option to copy the connection ID for Northwind DB.](images/copy-connection-id-pl.png "Copy Connection ID")
 

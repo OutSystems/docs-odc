@@ -81,15 +81,22 @@ Follow these steps to create your own email.
 
 Before updating the actions, delete the input parameter **CustomerEmail** by expanding the **UserRegistration** element in the **Elements** tab, then follow the steps below.
 
-1. From the **Logic** tab, click **server actions** > **DoSignup** action to display logic on canvas.
+1. From the **Logic** tab, click **Server actions** > **DoSignup** action to display logic on canvas.
 
-    ![Diagram showing how to set user registration email properties in OutSystems](images/user-registration-variables-odcs.png "User Registration Variables")
-
-1. From the canvas, click **UserRegistration** element to display Properties panel. Set the following properties:
+1. From the canvas, click the **UserRegistration** email element, and set the following properties:
 
     1. **CustomerName** to `user.Name`
     1. **VerificationCode** to `StartUserRegistration.UserRegistrationResult.VerificationCode`
     1. **ApplicationName** as `GetAppName()`
+    1. Leave the **From** property empty or add the email address configured in the ODC Portal.
+
+    ![Diagram showing how to set user registration email properties in OutSystems](images/user-registration-variables-odcs.png "User Registration Variables")
+    
+    <div class="info" markdown="1">
+
+    Be careful when editing the From property in the Send Email action. Most spam algorithms reject emails with a misconfigured from field.
+
+    </div>
 
 1. From the **Interface tab**, click  the **SignUp screen** > **SignUpOnClick** action to display **SignUpOnClick** on the canvas.
  

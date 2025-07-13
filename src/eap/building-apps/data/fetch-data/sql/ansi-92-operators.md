@@ -91,23 +91,25 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 
 ## Character string operators and functions { #character-string-operators-and-functions }
 
-| Operator syntax                                                     | Description                                                                                                      | NULL Behaviour              |
-|---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------|
-| `string || string`                                       | Concatenates two character strings                                                                               | NULL if any operand is NULL |
-| `CHAR_LENGTH(string)`                                                | Returns the number of characters in a character string                                                           | NULL if *string* is NULL    |
-| `CHAR_INDEX(string, string [\,integer])`                               | Same as `POSITION`                                                                                              | NULL if any operand is NULL |
-| `CHARACTER_LENGTH(string)`                                            | Same as `CHAR_LENGTH`                                                                                            | NULL if *string* is NULL    |
-| `UPPER(string)`                                                       | Returns a character string converted to upper case                                                               | NULL if *string* is NULL    |
-| `LOWER(string)`                                                      | Returns a character string converted to lower case                                                               | NULL if *string* is NULL    |
-| `POSITION(string1 IN string2)`                                      | Returns the position (1 - N) of the first occurrence of *string1* in *string2*                                   | NULL if any operand is NULL |
-| `POSITION(string1 IN string2 FROM integer)`                          | Returns the position (1 - N) of the first occurrence of *string1* in *string2* starting at a given point         | NULL if any operand is NULL |
-| `TRIM( { BOTH | LEADING | TRAILING } string1 FROM string2)` | Removes the longest string containing only the characters in *string1* from the start/end/both ends of *string1* | NULL if any operand is NULL |
-| `SUBSTRING(string FROM integer)`                                      | Returns a substring of a character string starting at a given point                                              | NULL if any operand is NULL |
-| `SUBSTRING(string FROM integer FOR integer)`                          | Returns a substring of a character string starting at a given point with a given length                          | NULL if any operand is NULL |
+| Operator syntax                                               | Description                                                                                                                                                                                                   | NULL Behaviour              |
+|---------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
+| ```string || string```                                        | Concatenates two character strings                                                                                                                                                                            | NULL if any operand is NULL |
+| `CHAR_LENGTH(string)`                                         | Returns the number of characters in a character string                                                                                                                                                        | NULL if *string* is NULL    |
+| `CHAR_INDEX(string, string [integer])`                        | Same as `POSITION`                                                                                                                                                                                            | NULL if any operand is NULL |
+| `CHARACTER_LENGTH(string)`                                    | Same as `CHAR_LENGTH`                                                                                                                                                                                         | NULL if *string* is NULL    |
+| `UPPER(string)`                                               | Returns a character string converted to upper case                                                                                                                                                            | NULL if *string* is NULL    |
+| `LOWER(string)`                                               | Returns a character string converted to lower case                                                                                                                                                            | NULL if *string* is NULL    |
+| `POSITION(string1 IN string2)`                                | Returns the position (1 - N) of the first occurrence of *string1* in *string2*                                                                                                                                | NULL if any operand is NULL |
+| `POSITION(string1 IN string2 FROM integer)`                   | Returns the position (1 - N) of the first occurrence of *string1* in *string2* starting at a given point                                                                                                      | NULL if any operand is NULL |
+| `TRIM( { BOTH | LEADING | TRAILING } string1 FROM string2)`   | Removes the longest string containing only the characters in *string1* from the start/end/both ends of *string1*                                                                                              | NULL if any operand is NULL |
+| `SUBSTRING(string FROM integer)`                              | Returns a substring of a character string starting at a given point                                                                                                                                           | NULL if any operand is NULL |
+| `SUBSTRING(string FROM integer FOR integer)`                  | Returns a substring of a character string starting at a given point with a given length                                                                                                                       | NULL if any operand is NULL |
+| `expression COLLATE collationId`                              | Overrides the default collation of the *expression* result with the specified *collationId*.<br/>*collationId* must be a valid reference to a collation in the database that produced the *expression* result | NULL if any operand is NULL |
 
 ### Known issues
 
 * Mashup queries may return an error when either UPPER or LOWER encounter a NULL value.
+* `COLLATE` is currently not supported in mashup queries.
 * In MySQL, the `SUBSTRING` built-in function with 0 as the starting position returns an empty string.
 * In MySQL, the `POSITION` built-in function with 0 or negative `FROM` returns 0.
 

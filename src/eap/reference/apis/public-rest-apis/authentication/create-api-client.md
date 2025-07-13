@@ -53,17 +53,25 @@ A list of API Clients is displayed.
 
 1. Select an **Expiration date** for the API client secret. The default value is 90 days from the current date, and the maximum duration you can set for the expiration is 24 months.
 
-    **Note:** The client secret becomes invalid after expiration at 11: 59 PM UTC. However, access tokens stay valid for up to 12 hrs from when the access token was issued, regardless of the client secret’s expiration.
+    <div class="info" markdown="1">
+
+    The client secret becomes invalid after expiration at 11: 59 PM UTC. However, access tokens stay valid for up to 12 hrs from when the access token was issued, regardless of the client secret’s expiration.
+
+    </div>
 
 1. To receive a reminder email about generating a new client secret 14 days before the expiration date, select **Send a reminder email 14 days before expiration to anyone with Manage API client permission.**
 
-    **Note**: The reminder emails are only sent for the most recently generated client secret and to all users with **Manage Client** permission.
+    <div class="info" markdown="1">
 
+    The reminder emails are only sent for the most recently generated client secret and to all users with **Manage Client** permission.
+
+    </div>
+  
 1. Configure permissions for the API client at each ODC stage. This allows you to use the client credentials to generate an access token with the necessary permissions to access ODC REST APIs and data.
 
     Select the corresponding permissions. For details about what permissions are needed for the API, refer to the [API reference](../../identity-v1.md) document.
 
-    ![Permissions configuration screen for API client in ODC portal, showing various stages and user management options.](images/assign-permissions-pl.png "Assign Permissions to API Client")
+    ![Permissions configuration screen for API client in ODC portal, showing various stages and user management options.](images/assign-user-mgmt-permissions-pl.png "Assign Permissions to API Client")
 
     If you do not configure permissions for the API client when created, its status will be set to **Needs attention**. You must [configure the necessary permissions](#edit-permissions-of-api-client) later.
 

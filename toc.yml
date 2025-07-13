@@ -358,6 +358,8 @@
             - href: eap/building-apps/workflows/start-workflow.md
             - href: eap/building-apps/workflows/add-conditional-start.md
             - href: eap/building-apps/workflows/add-human-activity.md
+            - href: eap/building-apps/workflows/add-human-activity-procedure.md
+            - href: eap/building-apps/workflows/human-activity-states.md
             - href: eap/building-apps/workflows/add-automatic-activity.md
             - href: eap/building-apps/workflows/add-decisions.md
             - href: eap/building-apps/workflows/add-wait.md
@@ -532,18 +534,36 @@
     - href: eap/user-management/secure-app-with-roles.md
     - href: eap/user-management/passwords.md    
 
-#Monitoring and troubleshooting
+# Monitoring and troubleshooting
 - href: eap/monitor-and-troubleshoot/monitor-apps.md
 - topics:
-    - href: eap/monitor-and-troubleshoot/app-health.md
 
-    #Manage technical debt
+    - href: eap/monitor-and-troubleshoot/app-health.md 
+# App analytics stream
+    - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md
+    - topics:
+        - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-apm.md
+        - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-configure.md
+        - topics: 
+            - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-datadog.md 
+            - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-dynatrace.md 
+            - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-elastic.md                            
+            - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-new-relic.md
+            - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-splunk.md
+            - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-amazon-s3.md
+            - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-opentelemetry.md
+        - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-log-ref.md
+        - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-traces-ref.md
+        - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-metrics-ref.md
+    - href: eap/monitor-and-troubleshoot/audit-trail.md
+    # Manage technical debt
+
     - href: eap/monitor-and-troubleshoot/manage-technical-debt/managing-tech-debt.md
     - topics:
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/how-does-aims-works.md
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/getting-started-aims-tl.md
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/getting-started-aims-dev.md                        
-        #Maintainability
+        # Maintainability
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/maintainability/maintainability.md
         - topics:
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/maintainability/long-undocumented-flow.md
