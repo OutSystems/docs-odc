@@ -2,17 +2,17 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Portfolio API",
-    "description": "REST endpoints for retrieving information about assets and environments in your organization.",
+    "description": "REST endpoints for retrieving information about assets and environments in your organization.\n",
     "version": "v1"
   },
   "servers": [
     {
-    "url": "https://ODC_PORTAL_DOMAIN/api/portfolios/v1",
-    "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+      "url": "https://ODC_PORTAL_DOMAIN/api/portfolios/v1",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
     },
     {
       "url": "https://{odc-portal-domain}/api/portfolios/v1",
-      "description": "Portfolio API",
+      "description": "Replace {odc-portal-domain} with the domain of your organization.",
       "variables": {
         "odc-portal-domain": {
           "default": "ODC_PORTAL_DOMAIN",
@@ -51,15 +51,26 @@
           {
             "name": "type",
             "in": "query",
-            "description": "Filter the asset type. Available values: WebApplication, MobileApplication, Workflow.",
+            "description": "Asset types on which to filter, comma separated. Available values: WebApplication, MobileApplication, Workflow, Agent.",
             "schema": {
-              "type": "string"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             }
           },
           {
             "name": "nameContains",
             "in": "query",
             "description": "Filter by matching on the name, case-insensitive.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "permissionFilter",
+            "in": "query",
+            "description": "Filter applications by permission type.",
             "schema": {
               "type": "string"
             }
@@ -85,65 +96,75 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "Sort order of the elements.\n\n-element1 for descending, element2 for ascending.\n\nFor nested sorting, the format is element1[key].element2.\n\nMultiple orders joined by comma.\n\nExample: -element1,element2 to sort by element1 descending then by element2 ascending.\n\nSupported values for first order sorting: deployments (nested).\n\nFor nested sorting: deploymentDateTime.\n\nExample: deployments[environmentkey].deploymentDatetime.",
+            "description": "Sort order of the elements.\n\n-element1 for descending, element2 for ascending.\n\nFor nested sorting, the format is element1[key].element2 .\n\nMultiple orders joined by comma.\n\nExample: -element1,element2 to sort by element1 descending then by element2 ascending.\n\nSupported values for first order sorting: deployments (nested).\n\nFor nested sorting: deploymentDateTime.\n\nExample: deployments[environmentkey].deploymentDatetime .",
             "schema": {
               "type": "string"
             }
           }
         ],
         "responses": {
-          "200": {
-              "description": "OK",
-              "content": {
-                  "application/json": {
-                      "schema": {
-                          "$ref": "#/components/schemas/DeployedAssetPagedListResponse"
-                      }
-                  }
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
               }
+            }
           },
           "400": {
-              "description": "Bad Request",
-              "content": {
-                  "application/json": {
-                      "schema": {
-                          "$ref": "#/components/schemas/ProblemDetails"
-                      }
-                  }
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
               }
-          },
-          "401": {
-              "description": "Unauthorized",
-              "content": {
-                  "application/json": {
-                      "schema": {
-                          "$ref": "#/components/schemas/ProblemDetails"
-                      }
-                  }
-              }
+            }
           },
           "403": {
-              "description": "Forbidden",
-              "content": {
-                  "application/json": {
-                      "schema": {
-                          "$ref": "#/components/schemas/ProblemDetails"
-                      }
-                  }
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
               }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
           },
           "429": {
-              "description": "Too Many Requests",
-              "content": {
-                  "application/json": {
-                      "schema": {
-                          "$ref": "#/components/schemas/ProblemDetails"
-                      }
-                  }
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
               }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeployedAssetPagedListResponse"
+                }
+              }
+            }
           }
-      },
-        "x-os-permissions": "The result only shows assets for which the API Client has **Asset management > Open** permission, and only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission."
+        },
+        "x-os-permissions": "The result only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission."
       }
     },
     "/environments": {
@@ -152,49 +173,59 @@
         "summary": "Retrieves the list of environments (stages).",
         "operationId": "Environments_ListEnvironments",
         "responses": {
-          "200": {
-              "description": "OK",
-              "content": {
-                  "application/json": {
-                      "schema": {
-                          "$ref": "#/components/schemas/EnvironmentListResponse"
-                      }
-                  }
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
               }
+            }
           },
           "400": {
-              "description": "Bad Request",
-              "content": {
-                  "application/json": {
-                      "schema": {
-                          "$ref": "#/components/schemas/ProblemDetails"
-                      }
-                  }
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
               }
+            }
           },
-          "401": {
-              "description": "Unauthorized",
-              "content": {
-                  "application/json": {
-                      "schema": {
-                          "$ref": "#/components/schemas/ProblemDetails"
-                      }
-                  }
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
               }
+            }
           },
           "429": {
-              "description": "Too Many Requests",
-              "content": {
-                  "application/json": {
-                      "schema": {
-                          "$ref": "#/components/schemas/ProblemDetails"
-                      }
-                  }
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
               }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentListResponse"
+                }
+              }
+            }
           }
-      },
+        },
         "x-os-permissions": "The result only shows environments (stages) for which the API Client has **Stage > View stage** permission.",
-        "description": "\nThe result only shows environments (stages) for which the API Client has **Stage > View stage** permission."
+        "description": "\n\nThe result only shows environments (stages) for which the API Client has **Stage > View stage** permission."
       }
     }
   },
@@ -215,6 +246,10 @@
             "type": "string",
             "description": "The asset key.",
             "format": "uuid"
+          },
+          "isBuiltIn": {
+            "type": "boolean",
+            "description": "Whether the asset is built-in."
           },
           "deployments": {
             "type": "array",
@@ -264,7 +299,11 @@
           "environmentKey",
           "iconUrl",
           "name",
-          "revision"
+          "revision",
+          "tag",
+          "taggingDateTime",
+          "taggingUserKey",
+          "url"
         ],
         "type": "object",
         "properties": {
@@ -312,6 +351,27 @@
             "type": "string",
             "description": "The id of the user that did the deployment.",
             "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "description": "The url for the deployment.",
+            "nullable": true
+          },
+          "tag": {
+            "type": "string",
+            "description": "The tag for this revision of the asset.",
+            "nullable": true
+          },
+          "taggingUserKey": {
+            "type": "string",
+            "description": "The id of the user that tagged the asset.",
+            "nullable": true
+          },
+          "taggingDateTime": {
+            "type": "string",
+            "description": "The date at which the asset was tagged.",
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -332,7 +392,7 @@
           },
           "hostname": {
             "type": "string",
-            "description": "The environment hostname.",
+            "description": "The built-in environment hostname.",
             "nullable": true
           },
           "purpose": {
@@ -432,55 +492,60 @@
         "additionalProperties": false,
         "description": "Contains response page information including totals."
       },
-			"ProblemDetails": {
-				"type": "object",
-				"description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs).",
-				"properties": {
-					"type": {
-						"type": "string",
-						"description": "A URI reference that identifies the problem type.",
-						"nullable": true
-					},
-					"title": {
-						"type": "string",
-						"description": "A short, human-readable summary of the problem.",
-						"nullable": true
-					},
-					"status": {
-						"type": "integer",
-						"description": "The HTTP status code applicable to the problem.",
-						"format": "int32",
-						"nullable": true
-					},
-					"detail": {
-						"type": "string",
-						"description": "A human-readable explanation of the error.",
-						"nullable": true
-					},
-					"instance": {
-						"type": "string",
-						"description": "A URI that identifies the specific occurrence of the problem.",
-						"nullable": true
-					},
-					"traceID": {
-						"type": "string",
-						"description": "This field helps OutSystems support to track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster  troubleshooting.",
-						"nullable": true
-					},
-					"errorCode": {
-						"type": "string",
-						"description": "This error code serves the purpose to communicate with OutSystems Support and help diagonose errors.",
-						"nullable": true
-					}
-				}
-			}
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code applicable to the problem.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation of the error.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem.",
+            "nullable": true
+          },
+          "traceId": {
+            "type": "string",
+            "description": "This field helps OutSystems support to track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster  troubleshooting."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagonose errors."
+          }
+        },
+        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+      }
     },
     "securitySchemes": {
       "bearerAuth": {
         "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
         "scheme": "bearer",
         "bearerFormat": "JWT"
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "public",
+      "description": ""
+    }
+  ]
 }
