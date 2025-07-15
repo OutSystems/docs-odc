@@ -77,6 +77,8 @@ You can export your logs to a CSV file. This gives you even more flexibility:
 
 To download your logs, click the **Export trail** button. This downloads a CSV file directly to your local machine.
 
+![Screenshot of the ODC Portal showing the Export trail screen](images/export-audit-trail-pl.png "Export trail")
+
 #### Export limitations
 
 Keep the following in mind when exporting:
