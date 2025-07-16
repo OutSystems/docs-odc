@@ -183,9 +183,9 @@ There are two types of log attributes: **Foundational** (visible in the ODC Port
 
 Foundational attributes help you understand key details about each action directly in the ODC Portal interface.
 
-|                    |                                                         |
-| ------------------ | --------------------------------------------------------|
+
 | **Attribute name** |              **Definition**                             |
+| ------------------ | --------------------------------------------------------|
 | **Date**  |The timestamp of when the audit event was recorded. |
 | **Operation** | The specific action you performed.  |
 | **Entity type**|The type of entity affected by the action. |
@@ -198,24 +198,14 @@ Foundational attributes help you understand key details about each action direct
 
 When you export your audit data to a CSV file, additional, more detailed attributes are provided.
 
-|                                 |                                               |                         |                         
-| ------------------------------- | --------------------------------------------- | ----------------------- |
 | **Attribute name**              |                 **Definition**                |     **Data type**       |
-| **CustomerVisible**| Indicates whether ODC customers can see the audit event. | Boolean (True or False)   |
-| **Metadata_Schema** | The schema version of the audit log entry.  | String  |
-| **Event_Category**| The category of the event classifies the type of action performed.| String (for example, `AuditLog`.)  |
+| ------------------------------- | --------------------------------------------- | ----------------------- |
 | **Event_EventId**| A unique identifier for the audit event. |  String (unique alphanumeric ID)  |
 | **Event_TenantId** | The unique identifier for your tenant (organization or customer account). | String (UUID) |
 | **Event_EnvironmentId**| The unique identifier of the development stage where the event took place. | String (UUID) |
 | **Event_EnvironmentName** |The human-readable name of the development stage (for example, `Production`, `Staging`, or `NonProduction1`). | String |
-| **Event_Ring** | The deployment ring where the action occurred. |String (for example, `ga`) |
 | **Event_DateTime**| The timestamp when the audit event was recorded. | ISO 8601 Date-Time String (for example, `2025-02-13T14:35:20Z`)  |
-| **Event_Source_ApplicationId**|The unique identifier of the application that triggered the event. |String (unique alphanumeric ID)  |
-| **Event_Source_Name** |The name of the ODC platform component that triggered the audit event (for example, `Admin Console` or `API Gateway`).|  String |
-| **Event_Source_Version** |The version of the ODC platform component that generated the event. |  String (for example,` 1.5.3`) |
-| **Event_Source_OsVersion** |The platform version of the device or system that initiated the event. | String (for example, `ODC`)  |
 | **Event_Request_SourceIp**|The IP address of the user or system that initiated the request. |String (IPv4 or IPv6 address)  |
-| **Event_Request_DestinationIp**|The IP address of the system that received the request. |String (IPv4 or IPv6 address)     |
 | **Event_Request_TraceId** | A unique identifier used to trace the request across distributed systems.  |  String (UUID)  |
 | **Event_Request_UserId** | The unique identifier of the user who performed the action. | String (UUID) |
 | **Event_Request_UserName**| The human-readable username of the user who performed the action (for example, `john.doe\@example.com`). | String|
