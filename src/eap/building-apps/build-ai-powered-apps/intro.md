@@ -72,7 +72,7 @@ Use cases suited for AI agents include:
 
 * Intelligent automation of customer service inquiries, autonomously accessing knowledge bases, processing information, and resolving issues.  
 * Dynamic inventory monitoring and automated low-stock alerts.  
-* Automated data aggregation and report generation from internal data sources**.**  
+* Automated data aggregation and report generation from internal data sources.
 * Automatic intake of supplier quotes by processing complex supplier quotes for clinical studies, extracting data, populating a budget workbook, comparing against rate sheets, and providing feedback/error reporting.  
 * Accelerate equity research report creation in the financial industry by collecting and ingesting data from various sources, reducing report writing time.
 
@@ -86,7 +86,7 @@ Use cases include:
 * Automating booking processes that require interaction with external [APIs](../../integration-with-systems/consume_rest/intro.md), like scheduling flights and hotel reservations.
 * Enabling chatbots to handle complete transactions, such as processing orders and managing refunds, involving multiple steps and [external system calls](../../integration-with-systems/intro.md).
 
-Both I models in the ODC Portal and the AI Agent Builder enable you to:
+Both AI models in the ODC Portal and the AI Agent Builder enable you to:
 
 * Make AI integration more accessible, allowing the developers to implement many common AI tasks independently.
 * Reduce costs associated with upskilling teams specifically for complex AI integrations.
