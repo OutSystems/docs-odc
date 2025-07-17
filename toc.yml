@@ -27,6 +27,11 @@
             - href: eap/building-apps/build-ai-powered-apps/add-ai-models.md
             - href: eap/building-apps/build-ai-powered-apps/add-ai-search-services.md
             - href: eap/building-apps/build-ai-powered-apps/integrate-ai-models-logic-rag.md
+    - topics:
+        - href: eap/building-apps/build-ai-powered-apps/agentic-apps.md
+        - topics:
+            - href: eap/building-apps/build-ai-powered-apps/create-agent.md
+            - href: eap/building-apps/build-ai-powered-apps/consumer-app.md
         # AI Agent Builder
         - href: eap/building-apps/use-ai/intro.md
         - topics:

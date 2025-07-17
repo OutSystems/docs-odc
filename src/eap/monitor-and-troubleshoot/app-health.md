@@ -29,6 +29,7 @@ The dashboard shows the following key metrics:
 * Errors: The amount of errors and the error rate for all requests.
 * Response time: The time the server takes to handle a request.
 * Top AI models by request: Detailed metrics for a selected AI model.
+* Top agents by request: Detailed metrics for a selected AI agent. 
 
 Based on the health score, the dashboard organizes the apps into **Critical**, **Moderate**, and **Good** categories, allowing you to focus on the poorly performing apps. You can identify and debug potential issues from the dashboard by drilling down into the app's historical trend of key metrics.
 
@@ -59,6 +60,16 @@ For each app, the analytics dashboard provides insights such as:
     * Response time
     * Response time by consumer
     * Errors
+* AI agent Requests  
+    * Request time  
+    * Requests  
+    * Errors  
+    * Element response time  
+    * Element requests  
+    * Element errors  
+    * Requests with errors  
+    * Slowest requests
+
 
 <div class="info" markdown="1">
 
@@ -140,7 +151,7 @@ Requests are the number of app interactions done using screens, APIs, or timers.
 * Total requests: The total number of requests made to an app.
 * Request rate: The rate at which the requests are sent to an app.
 
-## AI Model Metrics
+## AI model Metrics
 
 OutSystems Developer Cloud (ODC) provides monitoring for your configured AI Model connections, offering insights into their usage, performance, and any operational errors. These metrics help you track consumption, identify potential bottlenecks, and understand how your models are used by different consumer apps.
 
@@ -167,6 +178,39 @@ Visibility of detailed metric values, particularly those related to current cons
     * Content policy: Represents errors related to violations of content policies.
     * Timeout: Indicates errors caused by requests timing out.
     * Others: Encompasses all other less frequent error types.
+
+ ## AI Agent metrics
+ 
+ <div class="info" markdown="1">
+
+Native ODC agent apps are only available to Early Access Program (EAP) customers.
+
+</div>
+
+ODC monitors your configured Agents, offering insights into their usage, performance, and operational errors. These metrics help you track agent activity, identify bottlenecks, and understand how your agents are used by different consumer apps or elements.
+
+* **Requests**
+    * **Total requests:** The total number of requests made to the agent.  
+    * **Request rate:** The rate at which requests are sent to the agent per hour.  
+    * **Requests by source element:** The number of requests from each source element.
+
+* **Response time**
+    * The time taken for the agent to process a request across all consuming elements.  
+    * Response time metrics include:  
+        * **P90:** 90th percentile response time.  
+        * **P95:** 95th percentile response time.  
+        * **P99:** 99th percentile response time.  
+    * **Response time by source element:** A breakdown of the time the agent takes to process a request for each consuming element.
+
+* **Errors** This includes insights into the errors encountered by the agent.
+
+    * **Total errors:** Displays the total number of errors that have occurred.  
+    * **Error rate:** The rate at which errors occur when requests are made to an agent.  
+    * **Error percentage:** The percentage of requests that resulted in errors.  
+    * **Requests with errors:** Lists recent requests that encountered errors, including the timestamp, source element, and duration. 
+
+* **Slowest requests**
+    * **Slowest request:** This list includes the requests with the longest duration, including the timestamp, source element, and duration.
 
 ## Element metrics
 
