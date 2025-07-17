@@ -98,8 +98,6 @@ Other tools compatible with the OpenTelemetry protocol and OTLP-formatted data a
 
 The OpenTelemetry collector is an app that runs separately and must be launched/supported by customers. For more information, refer to [Set up an OpenTelemetry collector.](stream-app-analytics-opentelemetry.md)
 
-IP allowlisting is not supported as the OutSystems origin IPs might change.
-
 </div>
 
 ## Understanding your streamed data
