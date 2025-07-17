@@ -40,15 +40,15 @@ Follow these steps to create, configure, and integrate AI agents into your OutSy
 
 ![Diagram showing the high-level process for creating, configuring, and integrating AI agents in OutSystems Developer Cloud (ODC).](images/use-agents-diag.png "High-level process for using AI agents in ODC")
 
-1. Create an AI agent app
+### 1. Create an AI agent app
 
 You build your AI agent app in ODC Studio. To start your creation journey, you can either go directly to ODC Studio or begin from the ODC Portal. In the ODC Portal, click **Create** and select **Agent** to go to ODC Studio, where you can define and develop your agent's capabilities.
 
-1. Choose an AI model 
+### 2. Choose an AI model 
 
 Select the large language model (LLM) your agent uses for its core intelligence. Refer to [Adding AI Models](add-ai-models.md) for more information about connecting your OutSystems apps to LLMs.
 
-1. Build the AI agent's core functionality
+### 3. Build the AI agent's core functionality
 
 An `AgentTask` action encapsulates an AI agent's core functionality. This server action orchestrates the interaction with the AI model and handles data preparation and response processing. A typical `AgentTask` action wraps a sequence of server actions:
 
@@ -59,11 +59,11 @@ An `AgentTask` action encapsulates an AI agent's core functionality. This server
 
 The service action is what encapsulates the AI agent's core logic. Once published, your Service Action becomes available for other apps to reference and consume.
 
-1. Reference agent service action in the consumer app
+### 4. Reference agent service action in the consumer app
 
 After publishing your AI agent app, to use it in another app, you must establish a dependency on its service action. This makes the AI agent's capabilities available within your consumer app's logic. This service action appears as `Call<AgentName>`. 
 
-1. Add `Call<AgentName>` to logic
+### 5. Add `Call<AgentName>` to logic
 
 Integrate the AI agent's functionality into your consumer app. When calling the agent, ensure you pass parameters such as `SessionId`, to maintain conversational context, and `UserInput`, the user's query or instruction. 
 
