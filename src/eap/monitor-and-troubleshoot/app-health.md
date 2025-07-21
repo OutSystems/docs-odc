@@ -108,9 +108,13 @@ An app's health score is expressed as a numerical score from 1 to 100 and is bas
 * Moderate (70-85)
 * Good (85-100)
 
-An app's health score calculation follows the Application Performance Index (Apdex) industry standard.
+An app's health score calculation follows the Application Performance Index (APDEX) industry standard. The score is calculated by dividing the number of successful requests to the app's elements by the total number of requests over the selected period. A request is successful if it's completed without errors and the response time is less than a defined threshold.
 
-The score is calculated by taking the number of successful requests to the app's elements and dividing it by the total number of requests over the selected period. A request is successful if it's completed without errors and the response time is less than a defined threshold.
+The APDEX calculation used is **APDEX = (a + b) / c**. Here's a breakdown of the APDEX calculation. You can use this calculation as is or adapt it to suit your specific needs. 
+
+* **a** = Number of successful requests with latency **below 300ms**
+* **b** = (Number of successful requests **between 300ms and 1199ms**) / 2
+* **c** = Total number of requests
 
 ### Active users 
 
