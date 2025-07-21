@@ -1917,6 +1917,144 @@
         "x-os-permissions": "API Client needs the **User management > Manage organization roles** permission."
       }
     },
+    "/organization-roles/{key}/users": {
+      "get": {
+        "tags": [
+          "organization-roles"
+        ],
+        "summary": "List users with a specific organization role.",
+        "description": "Returns a list of users with a specific organization role, based on the organization role key.\n\nUse query parameters to filter the result based on different criteria.\n\nAPI client needs the **User management > View organization members** permission.",
+        "operationId": "OrganizationRole_QueryUsersByOrganizationRole",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Organization role key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "nameOrEmailContains",
+            "in": "query",
+            "description": "Filters list by name or email.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nameOrEmailOrUsernameContains",
+            "in": "query",
+            "description": "Filters list by name, email, or username.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results returned. The value must be within 1 - 100 (both inclusive). The default value is 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Starting point or position of the first result returned. The default value is 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Used for sorting the list. Ascending by default. Prepend a hyphen, \"-\", to get a descending sort, for example \"-name\". The default is name. Allowed: userKey, name, email, status, lastLoginAt.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "embed",
+            "in": "query",
+            "description": "List of fields to embed in the response.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UserProfileEmbed"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleUserResponsePaginatedResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client needs the **User management > View organization members** permission."
+      }
+    },
     "/permissions": {
       "get": {
         "tags": [
