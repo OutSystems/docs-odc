@@ -6,26 +6,23 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - apply
 topic:
-  - road-to-automation
-  - integration-patterns
-  - creating-apps
-app_type: mobile apps,reactive web apps
+app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - mobile developers
   - full stack developers
   - tech leads
+  - backend developers
 tags: consumer apps,ai agents,session management,user input,agent integration
 outsystems-tools:
   - odc studio
 helpids: 
 ---
 
-# Consumer apps for AI agents
+# Consuming AI agents in apps
 
 <div class="info" markdown="1">
 
-Native ODC agent apps are only available to Early Access Program (EAP) customers.
+Agentic app creation is available through the Early Access Program. If you don’t see this option, apply [here](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/).
 
 </div>
 

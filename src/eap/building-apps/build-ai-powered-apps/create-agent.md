@@ -6,25 +6,23 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&
 coverage-type:
   - apply
 topic:
-  - road-to-automation
-  - integration-patterns
-  - outsystems-overview
-  - creating-apps
-app_type: mobile apps,reactive web apps
+app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
   - full stack developers
+  - tech leads
+  - backend developers
 tags: ai agent development,odc studio,outsystems ai,large language models,mobile apps
 outsystems-tools:
   - odc studio
-helpids: 
+helpids: 30645, 30648
 ---
 
 # Creating an AI agent in ODC Studio
 
 <div class="info" markdown="1">
 
-Native ODC agent apps are only available to Early Access Program (EAP) customers.
+Agentic app creation is available through the Early Access Program. If you don’t see this option, apply [here](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/).
 
 </div>
 

@@ -5,29 +5,25 @@ summary: Integrate AI capabilities in your apps using AI models or agents in Out
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7782-132&p=f&t=KL8VHzLPQQ7E5ZHx-0
 coverage-type:
   - understand
-  - remember
+  - evaluate
 topic:
-  - road-to-automation
-  - integration-patterns
-  - outsystems-overview
-  - creating-apps
-app_type: mobile apps,reactive web apps
+app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - mobile developers
   - full stack developers
   - tech leads
+  - backend developers
 tags: ai models,ai agents,integration,automation,odc studio
 outsystems-tools:
   - odc studio
-helpids: 
+helpids: 30646, 30647, 30649, 30650
 ---
 
 # Agentic apps in ODC
 
 <div class="info" markdown="1">
 
-Native ODC agent apps are only available to Early Access Program (EAP) customers.
+Agentic app creation is available through the Early Access Program. If you don’t see this option, apply [here](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/).
 
 </div>
 
