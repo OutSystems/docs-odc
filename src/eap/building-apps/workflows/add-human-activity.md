@@ -67,11 +67,11 @@ You can implement service level agreements (SLAs) for a human activity. For exam
 
 ## Related resources
 
-**Human activity states**
+### Human activity states
 
 * [Human activity status definitions](human-activity-states.md)
 
-**Implement workflows**
+### Implement workflows
 
 * [Add human activity](add-human-activity-procedure.md)
   

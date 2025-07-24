@@ -73,7 +73,7 @@ To include human activity in a workflow, follow these steps:
 
 * [Build custom notifications](filter-workflows.md) 
 
-**Implement workflows**
+### Implement workflows
 
 * [Add automatic activity](add-automatic-activity.md)
 
@@ -85,10 +85,10 @@ To include human activity in a workflow, follow these steps:
 
 ## Related resources
 
-**Online training**
+### Online training
 
 * [How to add human activity to a workflow](https://learn.outsystems.com/training/journeys/building-workflows-in-odc-2690/how-to-add-human-activities-to-a-workflow/odc/7998)
 
-**Troubleshooting**
+### Troubleshooting
 
 * [Troubleshooting workflows](troubleshooting-workflows.md)
