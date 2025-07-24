@@ -21,7 +21,7 @@ coverage-type:
 # Manage IP filters
 
 <div class="info" markdown="1">
-    
+
 IP filters require an add-on subscription. Please contact your OutSystems account team for more information.
 
 </div>
