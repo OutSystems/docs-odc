@@ -86,8 +86,6 @@ To use workflows you need the requisite *Asset Management* permission(s). To get
 
 </div> 
 
-![Screenshot of the workflow editor interface in ODC, showing a workflow with nodes for start, human activity, decision, automatic activity, and end.](images/workflow-editor-pl.png "Workflow Editor Interface")
-
 With workflow editor, you can:
 
 * Implement your workflow using a set of nodes such as **Start**, **End**, **HumanActivity**, **AutomaticActivity**, **Go to a previous step**, and **Decision**. For detailed information, refer to [Implement workflows](workflow-components.md).
@@ -121,7 +119,7 @@ Here are some points to consider as you implement workflows in ODC:
 
 ## Related resources
 
-**Implement workflows**
+### Implement workflows
 
 * [Getting started](using-workflows.md)
 
@@ -131,6 +129,6 @@ Here are some points to consider as you implement workflows in ODC:
 
 * [Deploy workflows](../../deploying-apps/deploy-apps.md)
 
-**Online training**
+### Online training
 
 * [Building workflows in ODC](https://learn.outsystems.com/training/journeys/building-workflows-in-odc-2690) 

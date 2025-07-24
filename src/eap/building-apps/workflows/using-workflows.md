@@ -121,7 +121,7 @@ To deploy your workflow and app, follow these steps:
 
 * [Workflows in ODC](workflows-in-odc.md)
 
-* [Workflow nodes](workflow-components.md)
+* [IMplement workflows](workflow-components.md)
 
 * [Troubleshooting workflows](troubleshooting-workflows.md)
 
