@@ -28,7 +28,7 @@ Agentic app creation is available through the Early Access Program. If you don�
 
 Consumer apps are the user-facing applications that interact with AI agents to provide intelligent experiences to end users. These apps manage user sessions, process user input, and orchestrate communication with AI agents to deliver contextual, conversation-driven functionality.
 
-When building consumer apps that interact with AI agents, you must provide two essential parameters: `UserInput` and `SessionId`. The `UserInput` contains the user's message, query, or request that the agent processes. The `SessionId` [maintains conversation context across multiple interactions](agentic-apps.md#state-persistence), ensuring the agent can reference previous exchanges and provide contextually relevant responses. Generate a unique `SessionId` using the `GenerateGuid` server action in ODC Studio, though you can use any method that produces a unique identifier.
+ When making calls to the AI agent, the consumer app must pass the `UserInput` and `SessionId` parameters. The `UserInput` contains the user's message, query, or request that the agent processes. The `SessionId` [maintains conversation context across multiple interactions](agentic-apps.md#state-persistence), ensuring the agent app can reference previous exchanges and provide contextually relevant responses. Generate a unique `SessionId` using the `GenerateGuid` Server action in ODC Studio, though you can use any method that produces a unique identifier.
 
 ## High-level process overview
 
@@ -46,10 +46,12 @@ The following screenshot shows a consumer app's logic flow. The sample logic gen
 
 <div class="info" markdown="1">
 
-This example shows multiple server action calls from Client actions for demonstration purposes. In production apps, minimize Server action calls from Client actions by consolidating logic into fewer server-side operations to improve performance and user experience.
+This example shows multiple Server calls from Client actions for demonstration purposes. In production apps, [minimize Server action calls from Client actions](../logic/best-practices-logic.md#avoid-multiple-server-calls-in-a-client-action-flow) by consolidating logic into fewer server-side operations to improve performance and user experience.
 
 </div>
 
-On the agent app side, the Service action receives `UserInput` and `SessionId` as input parameters and processes the request. The agent uses the `SessionId` to retrieve conversation context and track interaction history, while the `UserInput` contains the specific message or query to process. The agent then orchestrates the necessary actions—such as retrieving grounding data, building messages for the AI model, and generating a contextually relevant response—before returning the result through the `Response` output parameter to the consumer app.
+### Agent app logic
+
+On the agent app side, the Service action receives `UserInput` and `SessionId` as input parameters and processes the request. The agent uses the `SessionId` to retrieve conversation context and track interaction history, while the `UserInput` contains the specific message or query to process. The agent then orchestrates the [necessary actions](create-agent.md)- such as retrieving grounding data, building messages for the AI model, and generating a contextually relevant response- before returning the result through the `Response` output parameter to the consumer app.
 
 ![Agent app workflow](images/agent-app-logic-odcs.png "Agent app sample logic")
