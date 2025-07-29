@@ -36,7 +36,7 @@ OutSystems recommends actively [monitoring](#monitor) and [optimizing your resou
 
 ODC enforces capacity limits per resource type. These limits apply at the stage level and define how much of each resource your subscription can use:
 
-* **Compute instances**: The total number of [container instances](../app-architecture/intro.md#containers) available for all apps, agents, workflows, and timers within a stage. They define the pool size of containers that running apps and agents can allocate or release as needed. 
+* **Compute instances (CI)**: The total number of [container instances](../app-architecture/intro.md#containers) available for all apps, agents, workflows, and timers within a stage. They define the pool size of containers that running apps and agents can allocate or release as needed. 
 * **Custom code execution duration**: Custom code execution duration is the time taken to run [custom code](../building-apps/external-logic/intro.md) from start to completion. The daily custom code execution duration is the total execution time of all custom code runs in a day. 
 * **Database compute**: The amount of compute resources (memory and CPU) allocated to the database that's shared across all assets in a given stage.
 * **Database storage**: The storage capacity allocated to the database, shared across all assets in a stage.
@@ -46,10 +46,10 @@ ODC enforces capacity limits per resource type. These limits apply at the stage 
 
 ODC optimizes resource usage with [automatic scaling](../manage-platform-app-lifecycle/platform-architecture/intro.md#runtime-cluster):
 
-* **Development stage apps and agents** allocate one container each and don't scale out. If idle, they automatically scale to zero, freeing compute capacity. When reactivated, they incur a cold start, causing slight latency on first access.
-* **Non-production stages apps and agents** automatically scale up by adding containers as demand increases, and scale down by removing containers as demand decreases. However, unlike in the development stage, they don't scale to zero—even when idle. At least 1 container remains allocated to ensure availability.
-* **Production stage apps and agents** share the scaling behavior of non-production stages, but in subscriptions with high availability consume a minimum of 2 compute instances to increase availability.
-* **Workflows and timers** on all stages consume containers only while executing. Once they're finished executing the logic, they scale to zero immediately and don't incur cold-start delays. Multiple active instances of the **same** workflow revision share a single container. However, if active instances belong to **different** revisions, each revision consumes a separate container.
+* **Development stage apps and agents** allocate one CI each and don't scale out. If idle, they automatically scale to zero, freeing compute capacity. When reactivated, they incur a cold start, causing slight latency on first access.
+* **Non-production stages apps and agents** automatically scale up by adding CIs as demand increases, and scale down by removing instances as demand decreases. However, unlike in the development stage, they don't scale to zero—even when idle. At least 1 CI remains allocated to ensure availability.
+* **Production stage apps and agents** share the scaling behavior of non-production stages, but in subscriptions with high availability consume a minimum of 2 CIs to increase availability.
+* **Workflows and timers** on all stages consume CIs only while executing. Once they're finished executing the logic, they scale to zero immediately and don't incur cold-start delays. Multiple active instances of the **same** workflow revision share a single CI. However, if active instances belong to **different** revisions, each revision consumes a separate CI.
 
 ## Monitoring resource consumption { #monitor }
 
@@ -74,14 +74,14 @@ P90 and P95 focus on sustained high usage levels while ignoring occasional spike
 * Graph Shows trends in resource usage over time up to the last month.
 * Table: Displays compute instance consumption by different assets up to the last month.
 
-For example, if you are using 12 out of 20 containers, the tabular view breaks down consumption by asset:
+For example, if you are using 12 out of 20 CIs, the tabular view breaks down consumption by asset:
 
-* Order status app consumes 6 containers. 
-  * Daily refresh and Reset sample data timers consume 2 containers each.
-  * Order status app consumes 2 containers.
-* Sample ordering app consumes 2 containers
-* Order status monitoring app consumes 2 containers
-* Order workflow consumes 2 containers.
+* Order status app consumes 6 CIs. 
+  * Daily refresh and Reset sample data timers consume 2 CIs each.
+  * Order status app consumes 2 CIs.
+* Sample ordering app consumes 2 CIs
+* Order status monitoring app consumes 2 CIs
+* Order workflow consumes 2 CIs.
 
 ![A screenshot displaying various apps consuming compute instances in Subscription Portal](images/detail-compute-instance-table-pl.png "Compute Instances Consumption by Apps")
 
@@ -93,7 +93,7 @@ You can analyze **database compute** and **storage** using the usage graph. Howe
 
 ### Resource consumption notifications
 
-ODC records resource usage over a seven day rolling period and uses P95 (95th percentile) to determine typical resource consumption. For example, if the compute instances limit is 16 containers and the P95 usage remains at 14 or higher containers, you may need to scale up your resources to prevent performance issues during peak loads. 
+ODC records resource usage over a seven day rolling period and uses P95 (95th percentile) to determine typical resource consumption. For example, if the compute instances limit is 16 CIs and the P95 usage remains at 14 or higher CIs, you may need to scale up your resources to prevent performance issues during peak loads. 
 
 If your usage consistently exceeds the limit over this period, ODC provides notifications in Portal to help you manage usage effectively.
 
@@ -112,7 +112,7 @@ ODC alerts you when resource consumption approaches or exceeds limits:
 * Warning: Displayed when you consistently use 80% or more of your resource capacity for a period of 7 days.
 * Error: Displayed when you reach 100% of your resource capacity for a period of 7 days, which may impact app performance and deployment.
 
-For example, if you have reached the limit for the number of containers, ODC displays an error notification and logs details about assets deployment failure.
+For example, if you have reached the limit for the number of CIs, ODC displays an error notification and logs details about assets deployment failure.
 
 ## Optimize consumption { #optimize }
 
@@ -127,7 +127,7 @@ To ensure your assets don’t consume more resources than necessary, it’s impo
 
 When approaching or surpassing capacity limits, the following issues may occur:
 
-* Compute instances: If you reach the container limit, you cannot 
+* Compute instances: If you reach the CIs limit, you cannot 
   * Publish new apps and agents
   * Update existing ones with new revisions
   * Run workflows and timers
