@@ -23,7 +23,7 @@ audience:
 
 <div class="info" markdown="1">
 
-App Analytics Stream may require an add-on to your current subscription.
+App Analytics Stream require an add-on [subscription](../../manage-platform-app-lifecycle/subscription-console.md). Please contact your OutSystems account team for more information.
 
 </div>
 

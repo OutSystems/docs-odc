@@ -251,6 +251,6 @@ For more information see [ODC vulnerability policy](https://success.outsystems.c
 ---
 <div class="info" markdown="1">
 
-Some features mentioned in this article may require add-ons to the ODC Platform edition. Please contact your OutSystems account team for more information.
+Some features mentioned in this article may require an add-on [subscription](../manage-platform-app-lifecycle/subscription-console.md). Please contact your OutSystems account team for more information.
 
 </div>
