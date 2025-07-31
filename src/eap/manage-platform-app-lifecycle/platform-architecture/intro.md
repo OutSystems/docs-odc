@@ -39,7 +39,7 @@ The following diagram shows the high-level architecture of the OutSystems Develo
 
  All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of OutSystems Developer Cloud](networking.md) to learn more.
 
-#### Platform { #platform }
+### Platform { #platform }
 
 The development **Platform** comprises multiple services, each responsible for specific functions that facilitate the building and deployment of apps. All the Platform services benefit from a resilient microservices design with a REST API web service interface. Developers, DevOps engineers, and architects interact with these services using ODC Studio and ODC Portal.
 
@@ -53,7 +53,37 @@ The following diagram shows the high-level architecture of the development Platf
 
 ![Diagram showing the high-level architecture of the development Platform in OutSystems Developer Cloud.](images/high-level-architecture-platform-diag.png "Development Platform Architecture") 
 
-#### Runtime { #runtime }
+#### Data platform 
+
+The **Data platform** collects, processes, and stores data from several sources. This information is then made available for analysis and visualization, allowing customers to monitor their apps’ performance and usage, and track platform operations. The Data platform is also responsible for processing Mentor App Generator’s data. 
+
+##### Features that send data to the Data platform
+
+The Data platform receives data from the following features:
+
+* [Monitor app analytics](https://www.outsystems.com/tk/redirect?g=e190d5fb-6b99-4d9b-a64f-a3b34be3588d): Receives and processes logs, traces, and metrics from all ODC assets.  
+* [App analytics stream](https://www.outsystems.com/tk/redirect?g=43e08fbf-f050-4946-aad2-289ab110be44): Provides the capability to stream logs, traces, and metrics in real-time to external analysis and monitoring tools.  
+* [Audit trail](https://www.outsystems.com/tk/redirect?g=3f3bc6b9-7335-4d8b-bb41-2eb396b86f3c): Receives chronological records of platform actions and configurations.   
+* [Code Quality](https://www.outsystems.com/tk/redirect?g=6be15662-74c5-4c35-9a7d-16a28816614c): Analyzes app code to provide insights into technical debt and identify areas for improvement.  
+* [Mentor App Generator](https://www.outsystems.com/tk/redirect?g=b17a8f2d-c767-49b4-9f50-381329442aba): Supports the Mentor App Generator by processing requirements documents, conversation history, and app metadata.  
+* [Monitor ODC resource capacity](https://www.outsystems.com/tk/redirect?g=25a0f102-51ac-4d76-8376-72b14f0f6218): Computes data related to resource consumption to help customers ensure optimal performance and capacity planning.
+
+<!---
+Missing diagram
+-->
+
+##### Data residency
+
+The Data platform runs in a designated region based on your ODC organization’s region. For example, if your ODC organization is located in the Asia Pacific (Mumbai) region, the Data platform features run in the Asia Pacific (Singapore) region.
+
+| Customer regions | Data platform region |
+| :--- | :--- |
+| US East (North Virginia), CA (Canada Central) | US East (North Virginia) |
+| South America (São Paulo) | South America (São Paulo) |
+| Europe (Frankfurt), Europe (London), Middle East (Tel Aviv), Middle East (UAE) | Europe (Frankfurt) |
+| Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta) | Asia Pacific (Singapore) |
+
+### Runtime { #runtime }
 
 In OutSystems Developer Cloud, the **Runtime** is independent of the Platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed apps. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
 

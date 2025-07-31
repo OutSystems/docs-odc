@@ -32,6 +32,12 @@ To have access to these capabilities, you first need to activate AIMS on your Or
 
 ## Activating AIMS on your Organization
 
+<div class="info" markdown="1">
+
+This functionality uses the Data platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data platform](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
+
+</div>
+
 To activate AIMS in your Portal, do the following:
 
 1. In the Portal, go to **Analyze** > **Code quality**.

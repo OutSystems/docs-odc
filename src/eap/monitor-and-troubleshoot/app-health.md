@@ -19,6 +19,12 @@ coverage-type:
 
 # Monitor app analytics in ODC Portal
 
+<div class="info" markdown="1">
+
+This functionality uses the Data platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data platform](../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
+
+</div>
+
 OutSystems Developer Cloud (ODC) provides an app analytics dashboard that monitors apps based on performance, usage, and errors.
 
 The dashboard shows the following key metrics:

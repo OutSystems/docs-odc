@@ -27,6 +27,12 @@ topic:
 ---
 # Audit trail
 
+<div class="info" markdown="1">
+
+This functionality uses the Data platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data platform](../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
+
+</div>
+
 Within the OutSystems ODC platform, an **audit trail** is a critical, chronological record of actions that have affected specific platform operations. This evidence is crucial for fulfilling compliance initiatives and organizational policies, as most forms of auditing are subject to industry standards such as HIPAA and SOX, or country-specific legal regulations.
 
 Essentially, an audit trail offers a simple yet highly effective way to track temporal information. Every significant action creates a record detailing what happened and when. For effective analysis, these records must be collected in a central place where they can be searched, correlated, and analyzed – for ODC, this central place is the **ODC portal** > **Manage** > **Audit trail**.

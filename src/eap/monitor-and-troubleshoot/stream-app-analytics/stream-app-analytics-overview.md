@@ -25,6 +25,8 @@ audience:
 
 App Analytics Stream require an add-on [subscription](../../manage-platform-app-lifecycle/subscription-console.md). Please contact your OutSystems account team for more information.
 
+This functionality uses the Data platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data platform](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
+
 </div>
 
 Streaming observability data is the process of continuously collecting and sending metric, log, and trace data to analysis and monitoring tools in near real-time. This gives you immediate insights into how your apps and systems are working. By streaming observability data in near real-time, you can proactively monitor, analyze, and respond to potential issues, ultimately enhancing app reliability and performance.

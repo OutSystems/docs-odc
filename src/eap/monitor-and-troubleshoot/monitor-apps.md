@@ -24,6 +24,12 @@ Logs and traces are complementary for getting to the root cause of a problem wit
 
 Complementing logs and traces, metrics provide a quantitative view of your app's performance and resource consumption over time. These aggregated data points allow you to identify trends, establish baselines, and proactively detect potential issues before they impact end-users. ODC automatically collects a range of metrics, offering insights into, for example, your app's health score, apps by usage, requests, and errors.
 
+<div class="info" markdown="1">
+
+This functionality uses the Data platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data platform](../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
+
+</div>
+
 ## Logs
 
 Apps have associated logs. Logs are either automatically generated (a log generated when a timer fails to execute, for example) or triggered by app logic built by a developer (an [exception](../building-apps/handling-exceptions/handle-exceptions.md#exception-logs) triggered by the failure of an end-user to provide a required input, for example). Developers can also use the LogMessage system action.

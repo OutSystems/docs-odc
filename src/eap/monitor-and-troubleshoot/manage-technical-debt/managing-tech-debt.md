@@ -16,6 +16,12 @@ outsystems-tools:
 ---
 # Manage technical debt in ODC
 
+<div class="info" markdown="1">
+
+This functionality uses the Data platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data platform](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
+
+</div>
+
 Code Quality, powered by AI Mentor System (AIMS) is OutSystems Development Cloud (ODC) solution to help you and your teams managing your technical debt.
 
 Managing your technical debt increases your team's agility and productivity while lowering the maintenance costs of the development of your apps.

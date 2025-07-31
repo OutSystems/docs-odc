@@ -37,6 +37,12 @@ OutSystems Mentor App Generator and App Editor build apps faster while maintaini
 
 OutSystems Mentor transforms app development by starting with your natural language description instead of blank screens and complex configurations. Mentor interprets your requirements and generates a complete app with data models, user interfaces, security roles, and business logic. After generation, you can refine your app through the visual App Editor or enhance it further in ODC Studio. This AI-driven approach helps you go from concept to working prototype while focusing on what your application should accomplish rather than technical complexities.
 
+<div class="info" markdown="1">
+
+This functionality uses the Data platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data platform](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
+
+</div>
+
 To create an app with AI Mentor:
 
 1. Go to **Portal** > **Apps** > **Create** > **Web app** > **Generate with Mentor**.

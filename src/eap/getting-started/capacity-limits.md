@@ -22,6 +22,12 @@ helpids: 30559,30560,30561,30562
 
 # Monitor ODC resource capacity
 
+<div class="info" markdown="1">
+
+This functionality uses the Data platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data platform](../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
+
+</div>
+
 ODC allocates resource limits based on your subscription. These capacities define the maximum usage for each resource. 
 
 Each stage in ODC can have a [specific capacity size](https://www.outsystems.com/evaluation-guide/scalability/architecture/#capacity-fair-use-limits). For example, the Production stage can consume more resources than the Test stage to ensure consistent performance during higher workloads.
