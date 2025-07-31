@@ -38,7 +38,13 @@ Retry 5: Occurs 32 minutes after Retry 4 (a total of 62 minutes from the initial
 
 Retries 6 through 10: Each subsequent retry (from Retry 6 up to Retry 10) will also occur 32 minutes after the previous retry. This indicates that the exponential increase in delay caps at 32 minutes. The delivery order of the events is not guaranteed.
 
-**Event execution**: Each app can concurrently handle a maximum of 100 events. The maximum duration of each event execution is 2 minutes.  
+**Event execution**: Each app replica (compute instance) can concurrently handle a maximum of 100 events. The maximum duration for each event execution is 2 minutes.
+
+For apps experiencing high demand, ODC automatically scales by launching additional app replicas to meet the workload. A new replica is spawned when the number of events in the queue for a particular event type exceeds 1000. This means:
+Up to 1000 events in the queue are processed by a single app replica.
+If the queue grows to 1001 events or more, a second replica will be launched.
+
+This scaling continues, with a new replica generally being added for every 1000 events in the queue, up to a maximum of 10 replicas corresponding to the queue limit of 10,000 events. 
 
 ## Related resources
 
