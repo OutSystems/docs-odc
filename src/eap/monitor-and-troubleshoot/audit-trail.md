@@ -104,7 +104,7 @@ Audit trail logs do not track actions made within your app's runtime.
 
 ### User Login
 
- Track detailed records of login attempts to your tenant to monitor and analyze access activity.
+ Track detailed records of successful logins in your tenant to monitor and analyze access activity.
 
 * User Login
 
