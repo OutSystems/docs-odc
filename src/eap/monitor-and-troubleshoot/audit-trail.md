@@ -231,8 +231,6 @@ When you export your audit data to a CSV file, additional, more detailed attribu
 
 * When you add or remove users from end user groups, the logs show the **difference** between the old value and the new value. All other logs show the old value and the new value. End user groups can contain thousands of user values. To ensure high performance, Audit trail prioritizes showing the smaller `diff` rather than the full list of end users. 
 
-* Audit trail data is stored in the geographical hub for your location, either US East (N. Virginia), South America (São Paulo), Europe (Frankfurt), or Asia Pacific (Singapore). This may include encrypted email addresses stored outside of your chosen app runtime region. Learn more about ODC's [encryption standards](../security/security.md).
-
 * If an OutSystems support agent needs to access your ODC tenant as part of a support ticket, audit trail logs the time of access. Access is automatically revoked when no longer needed, and always expires after a maximum of four hours.
 
 </div>
