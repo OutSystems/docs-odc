@@ -26,14 +26,15 @@ IP filters require an add-on [subscription](subscription-console.md). Please con
 
 </div>
 
-This article is intended for administrators who need to control network access to their apps in ODC. Administrators can enhance security by creating and managing IP filter groups and defining access rules for each stage to specify which IP addresses are allowed. For more information on ODC's built-in security, refer to [Security of OutSystems Developer Cloud.](../security/security.md)
+This article is intended for administrators who need to control network access to their apps in ODC. Administrators can enhance security by creating and managing IP filter groups and defining access rules for each stage to specify which IP addresses are allowed. IP filters in ODC don't restrict access to the ODC Portal itself. They only apply to deployed assets such as apps, agents, workflows, custom code executions, and REST API calls between apps.
+For more information on ODC's built-in security, refer to [Security of OutSystems Developer Cloud.](../security/security.md)
 
-# Prerequisites
+## Prerequisites
 
 * A subscription to the Sentry add-on. Contact your account manager for provisioning.  
 * **View configurations** and **Manage IP Restrictions** permissions. 	
 
-# Control access with IP filters
+## Control access with IP filters
 
 ODC provides a method to manage network access to your apps through IP filters, enhancing security. This system revolves around **IP filter groups**, logical containers for access policies. Within these groups, you define rules, specifying the IP addresses permitted or blocked from accessing your apps. Each rule can contain up to 20 IP address entries.
 
@@ -61,11 +62,11 @@ An example includes:
 
 * For the Production stage, an IP filter group uses an **AllowList**. Rules within it allow access from partner IPs: `203.0.113.0/24` (Partner A), `198.51.100.10` (Partner B), and `2001:DB8:0002::/48` (Partner C). The system blocks all other IPs. The Development stage for the same app can have a different IP filter group and access control method, demonstrating the **stage-specific** nature of the configuration.
 
-# Associate apps with IP filter groups before deployment
+### Associate apps with IP filter groups before deployment
 
 To ensure consistent security from deployment, associate an app with a specific IP filter group for a given stage, even if the app hasn't been deployed to that stage yet. This approach guarantees that the system applies the correct IP filter rules to the app immediately upon deployment. It prevents any brief periods where the app might be exposed to default or incorrect rules. 
 
-# Create an IP filter group
+## Create an IP filter group
 
 Follow these steps to create a new IP filter group:
 
@@ -82,7 +83,7 @@ Follow these steps to create a new IP filter group:
      
 ![ODC Portal interface for creating a new IP filter group with options for name, description, and access control method.](images/create-filter-group-pl.png "Create IP Filter Group")
 
-# Add rules to a group
+### Add rules to a group
 
 Follow these steps to add rules to a group: 
 
@@ -101,7 +102,7 @@ Follow these steps to add rules to a group:
 
 ![ODC Portal interface for adding an allow rule to an IP filter group, including fields for rule name and IP addresses.](images/add-rule-pl.png "Add Allow Rule")
 
-# Manage IP filter groups and rules
+## Manage IP filter groups and rules
 
 You can manage IP filter groups and the rules. For IP filter groups, you have the flexibility to:
 
