@@ -18,7 +18,7 @@ outsystems-tools:
   - odc portal
 ---
 
-## Configure social providers with accelerators
+# Configure social providers with accelerators
 
 ODC admins can configure social providers with accelerators by navigating to the **ODC Portal** > **Manage** > **Identity providers** tab.
 
@@ -38,11 +38,11 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 ODC adds the provider to the list of available providers.
 
-### Social provider requirements
+## Social provider requirements
 
 To add a new social provider using an accelerator, you need to get the following information from your provider:
 
-#### Apple
+### Apple
 
 Accelerator field | Information required | Description
 ---|---|---
@@ -53,7 +53,7 @@ Client secret | Private key (`.p8`) | The private key generated and downloaded f
 
 For further guidance, check [Configure app capabilities - About Sign in with Apple](https://developer.apple.com/help/account/configure-app-capabilities/about-sign-in-with-apple).
 
-#### Google
+### Google
 
 Accelerator field | Information required | Description
 ---|---|---
@@ -62,7 +62,7 @@ Client Secret | Client Secret | A confidential code known only to your app and t
 
 For further guidance, check [Google Identity - Authentication](https://developers.google.com/identity/gsi/web/guides/overview).
 
-#### Facebook
+### Facebook
 
 Accelerator field | Information required | Description
 ---|---|---
@@ -71,7 +71,7 @@ Client Secret | App Secret | A confidential code known only to your app and the 
 
 For further guidance, check [Facebook Login - Documentation - Facebook for Developers](https://developers.facebook.com/docs/facebook-login/).
 
-#### LinkedIn
+### LinkedIn
 
 Accelerator field | Information required | Description
 ---|---|---
