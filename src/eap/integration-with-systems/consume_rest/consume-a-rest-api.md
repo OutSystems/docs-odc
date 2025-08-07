@@ -22,6 +22,12 @@ topic:
 
 Consuming [ODC REST APIs](../../reference/apis/public-rest-apis/overview.md) in you app lets you integrate external data and functionality into your OutSystems Developer Cloud (ODC) apps. This allows your apps to interact with services provided by third-party platforms, internal microservices, or APIs exposed by other ODC libraries or apps. Before starting the consumption process in ODC Studio, ensure you have the details from the target API's documentation, including its base URL, required authentication methods, and the structure of relevant request and response parameters.
 
+<div class="info" markdown="1">
+
+OutSystems recommends that you use an ODC library to encapsulate the consumption of the API methods and expose them as separate server actions. This allows you to reuse the REST integration across multiple ODC apps and handle authentication, data mappings, and error processing only once.
+
+</div>
+
 In ODC Studio you can add several methods of a REST API or add only a single API method. For detailed information, refer to [Consuming REST APIs](https://learn.outsystems.com/training/journeys/consuming-rest-api-207/consuming-a-rest-api/odc/7996). For a quick guided video tour on using APIs, refer to [Consuming a REST API in 10 minutes with OutSystems](https://youtu.be/gNyWIeJYfG0).
 
 To modify the request and response of an API, refer to the [customization section](simple-customizations.md).
@@ -142,6 +148,7 @@ When importing the REST API, ODC Studio does the following:
 Once you have consumed the API in ODC Studio. You can modify the following details from the ODC Portal:
 
 * Base URL that you entered while consuming the API. Once the app is deployed to a different stage, the base URL can be be modified for that stage. For example,when you are building or testing your app in a dev environment, you must connect to a version of the REST API that is specifically designated for dev purposes, rather than the production version. Once the app is deployed to production you can modify the base URL and connect to production API.
+  
 * Basic authentication details such as **username** and **password**. The authentication credentials can also be configured for every stage.
 
 <div class="info" markdown="1">
@@ -154,9 +161,9 @@ To configure the base URL and basic authentication credentials, follow these ste
 
 1. Go to ODC Portal and select your app.
 
-1. Click **Configuration > Consumed REST APIs**.
+2. Click **Configuration > Consumed REST APIs**.
 
-1. Edit the details and click **Save**.
+3. Edit the details and click **Save**.
 
 The newly configured base URL and authentication details now applies to the API for that stege.
 
