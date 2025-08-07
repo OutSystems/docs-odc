@@ -19,6 +19,7 @@ coverage-type:
 topic:
   - external-idps
   - idp-saml
+helpids: 30672, 30673
 ---
 
 # Configure SAML 2.0 identity providers
