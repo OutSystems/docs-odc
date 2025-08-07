@@ -153,7 +153,7 @@ The following versions of systems are supported to integrate with ODC using [Dat
 
 For more information, refer to [Integrate with external data sources using Data Fabric](../integration-with-systems/external-databases/intro.md). 
 
-### Supported external identity providers
+### Supported external identity providers { #supported-external-identity-providers }
 
 ODC supports all IdPs that follow the OIDC standard. The following IdPs have been successfully tested to integrate with ODC apps:
 

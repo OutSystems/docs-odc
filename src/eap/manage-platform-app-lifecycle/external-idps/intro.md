@@ -155,17 +155,16 @@ To assign an added external IdP, navigate to the **ODC Portal** > **Manage** > *
 
 1. Click **Next**.
 
-<div class="info" markdown="1">
-
-**To unassign an external provider:**
-* **OpenID Connect providers**: Use the **Manage assignments** button to modify or remove assignments.
-* **SAML 2.0 providers**: Use the **Unassign** button to remove the provider assignment.
-
-</div>
-
 When you assign a provider for use by the apps, you need to create the logic in ODC Studio for each app you want to use it. For guidance on how to create the logic, refer to [Use external identity providers in an app](apps.md).
 
 When you assign a provider for the organization's use, you don't need to do anything else. The option to log in with the provider becomes immediately available for users on the ODC Portal and ODC Studio login screens.
+
+## Unassign an external identity provider {#unassign-external-idp}
+
+When you need to remove an existing external identity provider from your organization or apps, use the following options:
+
+* **OpenID Connect providers**: Use the **Manage assignments** button to modify or remove assignments.
+* **SAML 2.0 providers**: Use the **Unassign** button to remove the provider assignment.
 
 ## Edit the configuration or delete an external IdP
 
@@ -177,9 +176,13 @@ You can only edit or delete a provider that is not in use. To edit or delete an 
 
 <div class="info" markdown="1">
     
-* To edit an identity provider, you must submit the correct **client secret** again.
+To edit an identity provider, you must submit the correct **client secret** again.
+
+</div>
+
+<div class="info" markdown="1">
    
-* For SAML 2.0 providers, the **scope cannot be changed** after the provider is created. If you need to assign a different scope, add a new SAML identity provider and select the desired scope during setup.
+For SAML 2.0 providers, the **scope cannot be changed** after the provider is created. If you need to assign a different scope, add a new SAML identity provider and select the desired scope during setup.
 
 </div>
 
