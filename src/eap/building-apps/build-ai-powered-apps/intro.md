@@ -27,7 +27,7 @@ helpids:
 
 <div class="info" markdown="1">
 
-Native ODC agent apps are only available to Early Access Program (EAP) customers.
+Native ODC agent apps are only available to Early Access Program (EAP) customers. If you don’t see this option, apply [here](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/).
 
 </div>
 
