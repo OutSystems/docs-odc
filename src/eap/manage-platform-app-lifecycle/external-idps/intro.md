@@ -52,6 +52,7 @@ ODC has the following limitations for external identity providers:
     Got: https://login.microsoftonline.com/<customer-tenant-id>/v2.0
     Expected: https://login.microsoftonline.com/{tenantid}/v2.0
     ```
+
 * Only the `client_secret_post` authentication method is supported.
 
 **SAML 2.0**
@@ -59,7 +60,7 @@ ODC has the following limitations for external identity providers:
 * OutSystems recommends that SAML responses are signed.
 
 <div class="info" markdown="1">
-    
+
 For the supported external identity providers, refer to the [OutSystems system requirements for ODC](../../getting-started/system-requirements.md#supported-external-identity-providers).
 
 </div>
@@ -175,13 +176,13 @@ You can only edit or delete a provider that is not in use. To edit or delete an 
 1. Click the **ellipsis** (3-dots) to the right of the **Assign** button. Then click the **Edit configurations** or **Delete provider** button to launch the edit page or launch the delete confirm pop-up.
 
 <div class="info" markdown="1">
-    
+
 To edit an identity provider, you must submit the correct **client secret** again.
 
 </div>
 
 <div class="info" markdown="1">
-   
+
 For SAML 2.0 providers, the **scope cannot be changed** after the provider is created. If you need to assign a different scope, add a new SAML identity provider and select the desired scope during setup.
 
 </div>
