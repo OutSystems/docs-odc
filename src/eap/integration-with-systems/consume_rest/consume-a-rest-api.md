@@ -225,7 +225,23 @@ For example, you can't use any of the following URLs because they're not current
 
 ## Related resources
 
-* [Configure API authentication](intro.md#configure-api-authentication)
-* [REST API Structures](rest-api-structures.md)
+### Authentication and security
+
+* [Configure base URL and basic authentication credentials](consume-a-rest-api.md#configure-api-base-url-and-basic-authentication)
+  
+* [Generate OAuth access token](generate-reuse-oauth-token.md)
+  
+* [Customize API request and response headers](simple-customizations.md)
+
+### Use API
+
+* [Use API in your app](consume-a-rest-api.md#use-a-rest-api-method-in-your-app--use-)
+  
+### Handling errors
+
 * [Handling REST API errors](handling-rest-errors.md)
+
+### Online training
+
+* [Consuming REST APIs ODC Online training](https://learn.outsystems.com/training/journeys/consuming-rest-api-207) online course
 

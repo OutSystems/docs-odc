@@ -431,11 +431,13 @@
     - href: eap/integration-with-systems/consume_rest/intro.md
     - topics:
         - href: eap/integration-with-systems/consume_rest/consume-a-rest-api.md
+        - href: eap/integration-with-systems/consume_rest/generate-reuse-oauth-token.md
+        - href: eap/integration-with-systems/consume_rest/rest-api-structures.md
+        - href: eap/integration-with-systems/consume_rest/simple-customizations.md
         - href: eap/integration-with-systems/consume_rest/refresh-rest-service.md
         - href: eap/integration-with-systems/consume_rest/unsupported-use-cases.md
-        - href: eap/integration-with-systems/consume_rest/rest-api-structures.md
         - href: eap/integration-with-systems/consume_rest/handling-rest-errors.md
-        - href: eap/integration-with-systems/consume_rest/simple-customizations.md
+        
     # Exposing REST APIs
     - href: eap/integration-with-systems/exposing_rest/intro.md
     - topics:

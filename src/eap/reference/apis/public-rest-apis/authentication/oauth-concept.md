@@ -41,15 +41,15 @@ In OAuth 2.0, grants are the different ways a client (a system that requires acc
 
 OAuth 2.0 defines different grant types, which specify the steps the client needs to follow to receive an access token. The different grant types are:
 
-- Authorization Code Grant
+* Authorization Code Grant
 
-- Implicit Grant
+* Implicit Grant
 
-- Client Credentials Grant
+* Client Credentials Grant
 
-- Resource Owner Password Credentials (ROPC) Grant
+* Resource Owner Password Credentials (ROPC) Grant
 
-- Authorization Code with PKCE (Proof Key for Code Exchange)
+* Authorization Code with PKCE (Proof Key for Code Exchange)
 
 The [Client Credentials Grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4) is designed for server-to-server communication. It allows a client to directly authenticate with the authorization server to obtain an access token using the client credentials (client ID and secret). This grant type is ideal for API access from the backend systems.
 
