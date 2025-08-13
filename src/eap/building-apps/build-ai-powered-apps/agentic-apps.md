@@ -23,7 +23,7 @@ helpids: 30646, 30647, 30649, 30650
 
 <div class="info" markdown="1">
 
-Agentic app creation is available through the Early Access Program. If you don’t see this option, apply [here](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/).
+Agentic app creation is available through the Early Access Program. Click here to [apply for the Early Access Program](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/). 
 
 </div>
 

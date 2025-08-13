@@ -22,7 +22,7 @@ helpids: 30645, 30648
 
 <div class="info" markdown="1">
 
-Agentic app creation is available through the Early Access Program. If you don’t see this option, apply [here](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/).
+Agentic app creation is available through the Early Access Program. Click here to [apply for the Early Access Program](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/). 
 
 </div>
 
@@ -52,7 +52,7 @@ An `AgentTask` action encapsulates an AI agent's core functionality. This server
 
 * `GetGroundingData`: Retrieves any necessary contextual or [grounding data](agentic-apps.md#grounding) the AI model needs to provide a relevant and accurate response. Grounding data provides the AI with specific, up-to-date, or proprietary information beyond its general training. Through this action, you implement custom logic to gather and prepare the exact context the AI model requires. The action gets this context from the app's data sources, such as AI search service, REST API, aggregate, or static text, to enrich your agent's knowledge and context.  
 * `BuildMessages`: Constructs the prompt and conversation history (messages) that the AI model receives. It combines user input, historical conversation turns, and contextual or grounding data retrieved by the `GetGroundingData` action into a format the chosen AI model understands. An Assign node within this logic allows you to define the [system prompt](agentic-apps.md#system-prompts).  
-* `Call<AIModelName>`: Transmits the formatted messages to the selected AI model and receives its response.  
+* `Call Agent Core`: Facilitates communication with a selected AI model by sending formatted messages and receiving a response. The agent can include any number of actions that the model can invoke, provided they use simple data types.
 * `StoreMemory`: Saves the conversation or generated information for future reference. This maintains context and enables multi-turn conversations or personalized interactions. For more information about state persistence, refer to [Agentic apps in ODC](agentic-apps.md#state-persistence).
 
 The service action is what encapsulates the AI agent's core logic. Once published, your Service Action becomes available for other apps to reference and consume.
