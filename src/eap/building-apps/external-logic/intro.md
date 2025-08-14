@@ -23,95 +23,79 @@ topic:
 
 # Extend your apps with custom code
 
-You can extend your ODC apps with external logic using custom C# code. This is useful for building capabilities in your app where ODC's standard functions and libraries don't fully cover. You can write your C# code in IDEs such as Visual Studio or JetBrains Rider, and use libraries of your choice, whether open-source or private.
+You can use External Logic when you need to extend OutSystems Developer Cloud (ODC) apps with custom code (C#). This lets you extend apps to cover use cases that can't be fully covered using the built-in functions and out-of-the-box libraries bundled with ODC. Along with writing your own C# code in IDEs such as Visual Studio or Jet Brains Rider, you can use open-source .NET libraries.
 
-Once you build the custom code, ODC apps can consume this C# logic just like [libraries](../../building-apps/libraries/libraries.md) built using OutSystems visual language or [out-of-the-box libraries](../../reference/libraries/intro.md). This means developers using your C# libraries don't need to understand the underlying C# code to use the external logic in their apps. The C# code becomes available in libraries as server actions and structures.
+Your apps consume logic built in C# the same way they consume logic from libraries built in the OutSystems visual language or [out-of-the-box libraries](../../reference/libraries/intro.md). This means OutSystems developers consuming those libraries don't need to understand the underlying C# code to use external logic in their apps. The C# code becomes available in libraries as server actions and structures.
 
-To create new external logic or update existing external logic using C#, follow these steps:
 
-1. [Build the logic](#build-the-external-logic) in C# using the External Libraries Source Software Development Kit (SDK).
-1. [Upload and publish the logic](#upload-and-publish-the-external-logic) as an external library using the ODC Portal.
-1. [Release the library](#release-the-library) in ODC Portal.
-1. [Consume the logic](#consume-the-external-logic) in your apps and libraries using ODC Studio.
+When you want to create new external logic or update existing external logic, follow these steps:
 
-The following diagram illustrates the steps to implement external logic in ODC.
+1. Build the logic in C# using the External Libraries Source Software Development Kit (SDK).
+1. Upload and publish the logic as an external library using the ODC Portal.
+1. Release the library in ODC Portal.
+1. Consume the logic in your apps and libraries built in OutSystems using ODC Studio.
 
 ![Diagram illustrating the steps to implement External Logic in OutSystems Developer Cloud](images/extend-your-apps-with-external-logic-diag.png "External Logic Implementation Steps")
 
 ## Build the external logic
 
-To build the external logic using custom C# code, you must use the stand-alone tool kit [OutSystems External Libraries SDK](https://www.nuget.org/packages/OutSystems.ExternalLibraries.SDK). This external OutSystems SDK library allows you to decorate your C# code with SDK attributes that map to OutSystems' visual language elements. For detailed information, refer to the [SDK documentation](README.md). The SDK documentation provides instructions that guide you through every step, from project creation to packaging your built custom C# code into a ZIP file for upload to the ODC Portal.
+The OutSystems External Libraries SDK is a stand-alone kit for building logic in C# that you can expose to ODC apps.
 
-You don't need an  ODC organization account to use the SDK. 
+Because it's a stand-alone kit, the C# developer doesn't need an ODC organization account to use it.
 
-### Log your custom code
+The [documentation for the SDK](README.md) guides the C# developer through from creating the project to packaging the built logic into a ZIP file ready to upload to the ODC Portal. The C# developer can upload the ZIP file to the ODC Portal themselves (if they have an ODC organization account) or share it with a colleague.
 
-You can also add logging capabilities directly into your custom C# code. To log your custom code and generate detailed logs including informational messages and errors, you must use the [**Microsoft.Extensions.Logging**](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger?view=net-9.0-pp) ILogger interface in your C# code. Additionally, you can create custom spans/activities for distributed tracing to better monitor the performance and behavior of your external logic. For detailed information about how to log your custom code and create spans, refer to [External library SDK README](README.md#build-external-logic-using-sdk). 
-
-Once you build and publish the C# code as an ODC external library, the logs in your custom code can be accessed and viewed from the **ODC Portal** just like other [app logs](../../monitor-and-troubleshoot/monitor-apps.md). The logs help you monitor and troubleshoot your external logic effectively and ensure that your custom code behaves as expected.
-
-## Upload and publish the external logic
+## Upload and publish the external logic { #upload-external-logic }
 
 <div class="info" markdown="1">
 
-To upload and publish your custom code, you need permission to create and change libraries in the ODC Portal. Contact your ODC organization's administrator to obtain the necessary permissions.
+To complete this step you need permission to create and change libraries in the ODC Portal. To get the necessary permissions, speak to an administrator from your ODC organization.
 
 </div>
 
-Once you have the ZIP file of the logic created using the OutSystems External Libraries SDK, you must upload and publish it as an external library.
+Once you have the ZIP file of the logic created using the OutSystems External Libraries SDK, you need to upload and publish it as an external library.
 
-To upload and publish the custom code as an external library, follow these steps:
+To do this, select **External Logic** from the left nav menu in the ODC Portal to open the External Logic screen. You see a list of pending uploads and published external libraries. Now follow this procedure.
 
-1. Go to **ODC portal**.
+1. Click the:
 
-1. Click **Integrate > External Logic**.
-A list of pending uploads and published external libraries is displayed.
+    * **Create library** button to create a new external library.
+    * **Upload new revision** button within the detail page of the external library to update an existing external library. You access the detail page by clicking the library name in the list of published external libraries.
 
-1. Click **Create library** to create a new external library.
+    In both cases the **Upload file** screen displays.
 
-1. Upload the zip file and  click **Continue**.
+1. Click the **Upload file** button to browse for the ZIP file or drag and drop it to the labeled area. The ZIP file must be less than 90MB. Then click **Continue**.
 
-    If there are errors in the code, click **View errors** to see the full list of errors. You must fix the errors in the C# code before before proceeding. For detailed troubleshooting information, refer to [External Libraries SDK errors](../../../error/elg/intro.md). Once you've fixed all the errors, click **Upload other file** to upload the revised ZIP file.
+    A spinning wheel shows the status of the file upload and inspection process. You can continue working on other tasks in the ODC Portal during the process.
+
+
+1. If there are errors in the code, the **View errors** button displays. Click the button to see the full list of errors. You must fix the errors in the C# code before you can proceed. Use the [error page documentation](../../../error/elg/intro.md) for guidance. Once you've fixed all the errors, click **Upload other file** button to upload the revised ZIP file.
 
     <div class="info" markdown="1">
 
-    You can get a real-time list of errors while working on your C# code by using the **ODC Custom Code Analyzer**, a community asset (unofficial and unsupported by OutSystems). For detailed information about how to use the extension, refer to [CustomCode-Analyzer readme](https://github.com/jonathanalgar/CustomCode-Analyzer?tab=readme-ov-file#how-to-use). You can get help or share your feedback in the [Community Forum post](https://www.outsystems.com/forums/discussion/100963/odc-external-libraries-custom-code-analyzer/).
+    You can get a real-time list of errors while working on your C# code by using the **ODC Custom Code Analyzer**, a community asset (unofficial and unsupported by OutSystems). Check out the [CustomCode-Analyzer readme](https://github.com/jonathanalgar/CustomCode-Analyzer?tab=readme-ov-file#how-to-use) to learn how to use the extension. You can get help or share your feedback in the [Community Forum post](https://www.outsystems.com/forums/discussion/100963/odc-external-libraries-custom-code-analyzer/).
 
     </div>
 
-    When the C# code is error-free, click **Review file contents** to view a list of all  server actions and structures exposed by the external library. 
+1. When the C# code is error-free, the **Review file contents** button displays. Click the button to see a full list of all the server actions and structures exposed through the generated external library. When ready to start the publish process click the **Publish library** button (displays for new library) or **Publish revision** button (displays for updated library).
 
-1. Click **Publish library** to publish the library.
+1. The deployment status screen displays. The deployment status of the external library is one of the following:
 
-    The deployment status screen displays one of the following statuses for the external library:
+    * **Running**: the deployment is in progress; please wait for it to finish.
+    * **Finished with errors**: the deployment has finished, but it wasn't successful. Review the errors. Use the [error page documentation](../../../error/elg/intro.md) for guidance.
+    * **Finished successfully**: the deployment finished successfully. The external library is available to consume in your apps and libraries built in OutSystems.
 
-    * **Running**: The deployment is in progress; please wait for it to finish.
-
-    * **Finished with errors**: The deployment finished, but it wasn't successful. Review the errors. Use the [error page documentation](../../../error/elg/intro.md) for guidance.
-
-    * **Finished successfully**: The deployment finished successfully. Now you can consume the external library in your apps and libraries.
-
-    The external library is initially deployed and published to the Development stage. Once published, it's recommended you test the library in an app before releasing the first stable version. To do this, open the **Version history** tab on the detail page for the library, click the ellipsis next to the release date, and select **Try library in an app**. This launches a test session in ODC Studio, see [Test a revision of a library](../libraries/libraries.md#test-a-revision-of-a-library) for best practices on what type of app to use.
-
-<div class="info" markdown="1">
-
-You can follow the same steps to update and publish an existing external library.
-
-</div>
-
-Once the library is published you must release the library to be used in other ODC apps and libraries.
+The external library is initially deployed to the Development stage (published). Once published, it's recommended you test the library in an app before releasing the first stable version. To do this, open the **Version history** tab on the detail page for the library, click the ellipsis next to the release date, and select **Try library in an app**. This launches a test session in ODC Studio, see [Test a revision of a library](../libraries/libraries.md#test-a-revision-of-a-library) for best practices on what type of app to use.
 
 ## Release the library
 
-Release the first version of your library. For detailed information, refer to [Release a new version of a library](../libraries/libraries.md#release-a-new-version-of-a-library).
+You can then use the **Release library** button on the detail page in ODC Portal to release the first version. Follow the guidance under [Release a new version of a library](../libraries/libraries.md#release-a-new-version-of-a-library) for more details.
 
-When an app or library that consumes the external library deploys to another stage, the external library automatically deploys to that stage as well.
+When an app or library that consumes the external library is deployed to another stage, the external library is automatically deployed to that stage as well.
 
 ## Consume the external logic
 
-Once the library is successfully published and released, the custom C# code becomes available as a library to be consumed across your ODC organization's apps and existing libraries. For detailed information about how to consume the exposed server actions in your apps and libraries using ODC Studio, refer to [Use public elements](../libraries/use-public-elements.md#libraries).
-
-For detailed information about best practices for using the external libraries, refer to [Best practices for using external libraries](best-practices.md).
+Once successfully published and released, the external logic becomes available in a library to consume across your ODC organization's apps and existing libraries. To learn how to consume the exposed server actions in your apps and libraries using ODC Studio, see [Use public elements](../libraries/use-public-elements.md#libraries).
 
 <div class="info" markdown="1">
 
@@ -121,46 +105,29 @@ The server actions and structures exposed through external libraries are read-on
 
 ## Share the external logic
 
-To share an external library outside your organization, submit it to Forge. For detailed information, refer to [Submit assets to Forge](../forge/submit.md). The submission or update process is the same as for any asset developed in OutSystems.
+You can share an external library outside your organization by submitting it to Forge. You follow the same process to [submit or update](../forge/submit.md) an external library to Forge as for an asset developed in OutSystems.
 
-Users outside your organization can [install](../forge/install.md) an external library from Forge the same way they would install any asset developed in OutSystems. Users inside and outside of your organization can use the library from Forge in their apps but can’t edit its external logic in ODC Studio. 
+Users outside your organization follow the same process to [install](../forge/install.md) an external library as for an asset developed in OutSystems. As with users in your organization, users who consume the external library from Forge can't edit the external logic in ODC Studio.
 
 ## Delete external logic
 
-To delete an external library before it has been published, follow these steps:
+To delete an external library before has been published, follow these steps:
 
-1. Go to the ODC Portal.
-
-1. Select **External Logic** to display the list of pending uploads and published external libraries.
-
-1. In the pending uploads list, click **X** next to the external library you want to delete. A confirmation popup appears.
-
-1. Click **Cancel creation**. The list updates.
+1. Go to the ODC Portal, and from the Navigation menu, select **External Logic** to display the list of pending uploads and published external libraries.
+1. In the pending uploads list, click **X** next to the external library you want to delete to display a confirmation popup.
+1. Click **Cancel creation** to display the updated list.
 
 If you want to delete an external library after its published, the process is similar to deleting an app or library developed in OutSystems. Follow these steps:
 
-1. Go to the ODC Portal.
-   
-1. Select **External Logic**  to display the list of pending uploads and published external libraries.
-   
-1. To access the library's detail page, click its name in the list of published libraries.
-   
-1. Click the ellipsis (3-dots) to the right of the library name, then click the **Delete library**. A confirmation popup appears.
-   
-2. Enter the library name and click **Delete library**.
+1. Go to the ODC Portal, and from the Navigation menu, select **External Logic**  to display the list of pending uploads and published external libraries.
+1. Access the detail page of the library by clicking its name in the list of published libraries.
+1. Click the ellipsis (3-dots) to the right of the library name, then click the **Delete library** button to display a confirmation popup.
+1. Enter the library name and click **Delete library** to display the updated list.
 
 <div class="info" markdown="1">
 
-Deleting an external library impacts consumers that consume the library.
+Deleting an external library impacts consumers relying on it.
 
 </div>
 
 For more information about deleting published assets, refer to [Deleting apps and libraries](../../deleting-apps/intro.md) for guidance.
-
-## Related resources
-
-* [External libraries SDK README](README.md)
-
-* [External libraries SDK Reference](REFERENCE.md)
-
-* [External libraries SDK templates](https://github.com/OutSystems/OutSystems.ExternalLibraries.SDK-templates/tree/main/templates)

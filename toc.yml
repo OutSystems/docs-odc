@@ -286,7 +286,6 @@
     - href: eap/building-apps/external-logic/intro.md
     - topics: 
         - href: eap/building-apps/external-logic/README.md
-        - href: eap/building-apps/external-logic/best-practices.md
         - href: eap/building-apps/external-logic/REFERENCE.md
         - href: eap/building-apps/external-logic/upgrade-net8.md
         - href: eap/building-apps/external-logic/mtls.md
