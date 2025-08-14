@@ -21,34 +21,41 @@ topic:
   - legacy-systems-integration
 ---
 
-# External Libraries SDK README
+# External libraries SDK README
 
-The SDK is part of the OutSystems Developer Cloud (ODC) External Logic feature that you use to extend your apps built in the OutSystems visual language with custom code.
+The OutSystems External Libraries SDK allows you extend your ODC apps with custom C# code. The SDK supports modern .NET 8.0+ and integrates with your preferred IDE.
 
-Use of this SDK is the first step in extending an ODC app with custom code. You use it to decorate the code of a C# .NET project with SDK attributes that map to OutSystems visual language elements.
+You decorate your C# code with SDK attributes that map directly to OutSystems visual language elements. This means you can expose your custom C# code as an ODC external library with reusable server actions and structures and use it across any ODC app. For detailed information, refer to [Extend your apps with custom code](intro.md).
+
+For building your custom code, you can either start from [scratch](#build-external-logic-from-scratch) or accelerate development by using ready-made [templates](#build-external-logic-using-templates). 
+
+Once you build and package your external code, you can upload it to the ODC Portal and make it available as an external ODC library.
 
 ## Prerequisites
 
 * [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed.
+
 * [NuGet](https://www.nuget.org/downloads) package manager installed.
-* An IDE that supports building .NET projects. For example, Visual Studio, Visual Studio Code, and Jet Brains Rider.
+
+* An IDE that supports building .NET projects. For example, Visual Studio, Visual Studio Code, or Jet Brains Rider.
+
 * Basic knowledge of C# programming concepts.
 
-## Usage
+## Build external logic using SDK
 
 You can start developing external logic for an ODC app from scratch or using one of the provided templates.
 
-### From scratch
+### Build external logic from scratch
 
-Using Microsoft Visual Studio 2022 with .NET 8.0, for example:
+To build external logic with C# using Microsoft Visual Studio 2022 with .NET 8.0, follow these steps: 
 
 1. From the **Create a new project** window select the **Class Library** template.
 
 1. Give the project a name, for example `ClassLibrary1`. You must select **.NET 8.0 (Long-term support)** as the framework. Click **Create**.
 
-1. From the **Solution Explorer** pane, right-click on the project name and click **Manage NuGet packages...** Search for `OutSystems.ExternalLibraries.SDK`, select the result and click **Install**.
+1. From the **Solution Explorer** pane, right-click the project name and select **Manage NuGet packages...** Search for and install `OutSystems.ExternalLibraries.SDK`. If you want to enable logging in your C# code, install `Microsoft.Extensions.Logging` version 8.0.0. For tracing functionality, `System.Diagnostics` is part of the standard .NET library and is available by default.
 
-1. Create a public interface containing the methods you want to expose as server actions to your ODC apps and libraries. Then decorate it with the `OSInterface` attribute. For example,
+1. Create a public interface containing the methods you want to expose as server actions to your ODC apps and libraries. Then decorate it with the `OSInterface` attribute. 
 
         using OutSystems.ExternalLibraries.SDK;
 
@@ -57,33 +64,50 @@ Using Microsoft Visual Studio 2022 with .NET 8.0, for example:
             [OSInterface]
             public interface IMyLibrary
             {
-                public string SayHello(string name, string title);
-                public string SayGoodbye(string name);
+                string SayHello(string name, string title);
+                string SayGoodbye(string name);
             }
         }
 
-1. Create a public class implementing that interface. For example,
+1. Create a public class implementing that interface. Optionally for logging your code, use [Microsoft Extension ILogger Interface](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger?view=net-8.0-pp). These logs can then be accessed from the ODC portal. You can also create custom spans/activities for distributed tracing by using the current activity source to monitor the performance and behavior of your external logic.
+
+Here's an example of a class that uses Microsoft Extension ILogger Interface to log the code and creates custom spans for tracing. 
+
+        using Microsoft.Extensions.Logging;
+        using System.Diagnostics;
 
         namespace MyCompany
         {
             public class MyLibrary : IMyLibrary
             {
-                public string SayHello(string name, string title = "Mr./Ms.") {
+                private readonly ILogger _logger;
+
+                public MyLibrary(ILogger logger)
+                {
+                    _logger = logger;
+                }
+
+                public string SayHello(string name, string title = "Mr./Ms.")
+                {
+                    using var activity = Activity.Current?.Source.StartActivity("MyLibrary.SayHello");
+                    _logger.LogInformation($"Saying hello to {name} with title {title}");
                     return $"Hello, {title} {name}";
                 }
 
-                public string SayGoodbye(string name) {
+                public string SayGoodbye(string name)
+                {
+                    using var activity = Activity.Current?.Source.StartActivity("MyLibrary.SayGoodbye");
+                    _logger.LogInformation($"Saying goodbye to {name}");
                     return $"Goodbye, {name}";
                 }
             }
         }
  
+The exposed methods can only have:
 
-    The exposed methods can only have:
-
-    * Basic .NET types: `string`, `int`, `long`, `bool`, `byte[]`, `decimal`, `float`, `double`, `DateTime`.
-    * Structs decorated with the `OSStructure` attribute.
-    * Lists (any type inheriting from [IEnumerable](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable)) of any of the previous two types.
+* Basic .NET types: `string`, `int`, `long`, `bool`, `byte[]`, `decimal`, `float`, `double`, `DateTime`.
+* Structs decorated with the `OSStructure` attribute.
+* Lists (any type inheriting from [IEnumerable](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable)) of any of the previous two types.
 
 <div class="info" markdown="1">
 
@@ -91,23 +115,64 @@ You can expose a server action using external code with optional parameters by a
 
 </div>
 
-1. Once you're finished with the code, save the project and publish it. For example, right-click **Solution ClassLibrary1** and click **Open in Terminal**. Run command `dotnet publish -c Release -r linux-x64 --no-self-contained`.
+### Add tracing to your custom code
 
-    The published code runs in a Linux container. If your library doesn't have any runtime-specific dependencies, and to simplify the process, you can publish it without specifying the runtime: `dotnet publish -c Release --no-self-contained`.
+To create custom spans for distributed tracing in your external logic, use `Activity.Current?.Source.StartActivity()` to access the current activity source. This allows you to monitor the performance and behavior of your external logic operations within the ODC request trace.
 
-1. Zip the contents of the publish output folder to the root of a ZIP file. Be careful to select the correct publish folder. For a `linux-x64` runtime-specific publish, the folder path is usually `./ClassLibrary1/bin/Release/net8.0/linux-x64/publish/*`. For a cross-platform publish, the folder path is usually `./ClassLibrary1/bin/Release/net8.0/publish/*`. Name the ZIP file according to your external library, for example, ExternalLibrary.zip.
+When creating spans:
 
-1. Upload the ZIP file to the ODC Portal. See the [External Logic feature documentation](intro.md) for guidance on how to do this.
+* Use descriptive names that indicate the operation being performed (e.g., "Iban.Parse", "MyLibrary.SayHello")
+* Wrap the span creation in a `using` statement to ensure proper disposal
+* The span will automatically be included in the distributed trace when your external logic is called from ODC apps
 
-### From a template
+Here's an example based on the IBAN checker template:
 
-#### IBAN (International Bank Account Number) checker: Basic version
+        public Structures.Iban Parse(string value)
+        {
+            using var activity = Activity.Current?.Source.StartActivity("Iban.Parse");
+            _logger.LogInformation("Parsing IBAN: {IbanValue}", value);
+            return new Structures.Iban(_parser.Parse(value));
+        }
+
+This approach provides detailed tracing information that helps with monitoring and troubleshooting your external logic within the broader ODC application context.
+
+For detailed information about errors, refer to [External libraries SDK errors](../../../error/elg/intro.md).
+
+1. Once the code is successfully built, save the project and publish it. 
+
+    To publish the code follow these steps:
+
+    1. Right-click **{NAME_OF_SOLUTION}** and click **Open in Terminal**. 
+
+    2. Execute `dotnet publish -c Release -r --no-self-contained`
+
+        The published code runs in a Linux container. If your library has runtime-specific dependencies then you should publish it specifying the runtime: 
+        `dotnet publish -c Release linux-x64 --no-self-contained`
+
+1. Zip the contents of the publish output folder to the root of a ZIP file. 
+     * For a cross-platform publish, the folder path is `./{NAME_OF_SOLUTION}/bin/Release/net8.0/publish/*`. 
+     * For a `linux-x64` runtime-specific publish, the folder path is `./{NAME_OF_SOLUTION}/bin/Release/net8.0/linux-x64/publish/*`. 
+          
+1. Upload the ZIP file to the ODC Portal. For detailed information, refer to [Extend your apps with custom code](intro.md#upload-and-publish-the-external-logic).
+
+Once the external code is published and uploaded in ODC portal, you must
+create an external ODC library, publish, and release the library. For detailed information, refer to [Upload and publish the external logic](intro.md#upload-and-publish-the-external-logic). Once the external library is [released](intro.md#release-the-library), you can [consume the external logic](intro.md#consume-the-external-logic) across your ODC organization's apps and existing libraries.
+
+For detailed information about best practices, refer to [Best practices for using external libraries](best-practices.md).
+
+### Build external logic using templates
+
+You can also get started building external logic for your OutSystems apps by using ready-made [templates](https://github.com/OutSystems/OutSystems.ExternalLibraries.SDK-templates/tree/main/templates) that leverage the OutSystems External Libraries SDK. You can choose from a [basic](https://github.com/OutSystems/OutSystems.ExternalLibraries.SDK-templates/tree/main/templates/basic) or [advanced](https://github.com/OutSystems/OutSystems.ExternalLibraries.SDK-templates/tree/main/templates/advanced) template, both designed to help you implement custom C# code and expose it to your apps. 
+
+The basic template covers simple use case for checking the validity of your International Bank Account Number (IBAN), while the advanced template includes complex use cases for IBAN validation. You can download a template, open it in your IDE, and adapt the code to fit your requirements saving you time and effort as you extend your app’s capabilities.
+
+#### Using basic IBAN checker template 
 
 1. Download and unzip the [basic template file from the SDK GitHub repository](https://github.com/OutSystems/OutSystems.ExternalLibraries.SDK-templates/blob/main/basic_template.zip).
 
 1. Load the C# project file, `OutSystems.IbanChecker.csproj`, using a supported IDE.
 
-    Files in the project:
+    The following files are available in the project:
 
     * **IIbanChecker.cs**: Defines a public interface named `IIbanChecker`, decorated with the `OSInterface` attribute. The interface has a single method named `Parse`, which takes an IBAN string value as input and returns an `Iban` struct. `Parse` is exposed as a server action to your ODC apps and libraries.
 
@@ -123,9 +188,17 @@ You can expose a server action using external code with optional parameters by a
 
 1. Run the Powershell script `generate_upload_package.ps1` to generate `ExternalLibrary.zip`. Rename as required.
 
-1. Upload the generated ZIP file to the ODC Portal. See the [External Logic feature documentation](intro.md) for guidance on how to do this.
+For detailed information about errors, refer to [External libraries SDK errors](../../../error/elg/intro.md).
 
-#### IBAN (International Bank Account Number) checker: Advanced version
+2. Upload the generated ZIP file to the ODC Portal. For detailed information, refer to [Extend your apps with custom code](intro.md#upload-and-publish-the-external-logic).
+
+Once the external code is published and uploaded in ODC portal, you must
+create an external ODC library, publish, and release the library. For detailed information, refer to [Upload and publish the external logic](intro.md#upload-and-publish-the-external-logic). Once the external library is [released](intro.md#release-the-library), you can [consume the external logic](intro.md#consume-the-external-logic) across your ODC organization's apps and existing libraries.
+
+For detailed information about best practices, refer to [Best practices for using external libraries](best-practices.md).
+
+
+#### Using advanced IBAN checker template
 
 1. Download and unzip the [advanced template file from the GitHub repository](https://github.com/OutSystems/OutSystems.ExternalLibraries.SDK-templates/blob/main/advanced_template.zip).
 
@@ -156,7 +229,14 @@ You can expose a server action using external code with optional parameters by a
 
 1. Run the Powershell script `generate_upload_package.ps1` to generate `ExternalLibrary.zip`. Rename as required.
 
-1. Upload the generated ZIP file to the ODC Portal. See the [External Logic feature documentation](intro.md#upload-and-publish-the-external-logic) for guidance on how to do this.
+For detailed information about errors, refer to [External libraries SDK errors](../../../error/elg/intro.md).
+
+2. Upload the generated ZIP file to the ODC Portal. For detailed information, refer to [Extend your apps with custom code](intro.md#upload-and-publish-the-external-logic).
+
+Once the external code is published and uploaded in ODC portal, you must
+create an external ODC library, publish, and release the library. For detailed information, refer to [Upload and publish the external logic](intro.md#upload-and-publish-the-external-logic). Once the external library is [released](intro.md#release-the-library), you can [consume the external logic](intro.md#consume-the-external-logic) across your ODC organization's apps and existing libraries.
+
+For detailed information about best practices, refer to [Best practices for using external libraries](best-practices.md).
 
 ## Reference
 
@@ -171,75 +251,16 @@ The table below maps the .NET attributes exposed by the SDK to the corresponding
 | [`[OSStructureField]`](REFERENCE.md#osstructurefieldattribute-type) | Structure attribute | DataType _(DataType)_<br></br>Description _(Description)_<br></br>Length (Length)<br></br>Decimals _(Decimals)_<br></br>IsMandatory _(IsMandatory)_<br></br>OriginalName _(Source name used for key calculation)_ |
 | [`[OSIgnore]`](REFERENCE.md#osignore-type)  |   | Use to decorate a public property/field within a .NET struct decorated with to specify that _it shouldn't be exposed as an OutSystems Structure Attribute._   |
 
-## Best Practices
-
-### Use with the Private Gateway feature
-
-You can connect your external library to private data and private services ("endpoints") that aren't accessible by the internet by using the [Private Gateway feature](../../manage-platform-app-lifecycle/private-gateway.md).
-
-Once you've configured a private gateway to your network, you can use the connected endpoint(s) in your custom code using the hostname defined by the environment variable `SECURE_GATEWAY`. You use that hostname in conjunction with the configured ports.
-
-For example, if you want to connect to a REST API endpoint on port 8080 you could use a string to define the Base URL as `$"https://{Environment.GetEnvironmentVariable("SECURE_GATEWAY")}:8080/"` if the endpoint is connected to cloud-connector over TLS/SSL or `http` if it's not.
-
-Ensure that your code file includes the `using System;` directive at the top to have access to the `System` namespace, which is necessary for utilizing the `Environment.GetEnvironmentVariable` method.
-
-### Architecture
-
-Server actions built in the OutSystems visual language execute directly in the [ODC Runtime](../../manage-platform-app-lifecycle/platform-architecture/intro.md#runtime), sharing the same execution context as the app. This means that any state or context established during the execution of these server actions is maintained within the scope of the app's lifecycle.
-
-On the other hand, server actions exposed through external libraries execute differently. Each time your app calls a server action from an external library, it makes an HTTPS call to an external service that hosts and runs the custom code. As a result, the execution context of these server actions is separate from the app.
-
-This architecture has several important implications:
-
-* **Statelessness:** The external libraries you build should be designed to be stateless. This means they shouldn't maintain any state information between calls. Any state or context needed to execute the external library should be passed explicitly as an input parameter. For example, storing state as fields in the library's class isn't supported. However, be aware that successive calls may reuse the execution context, so it's important to ensure the [release of memory resources](#memory-usage) to avoid memory leaks.
-
-* **Latency:** Since an HTTPS call is made each time a server action in an external library is called, a small amount of latency is introduced in the execution time. Minimizing the number of calls to external libraries and batching operations where possible can help mitigate the impact of this latency.
-
-* **Independence:** External libraries run independently of the ODC app. This means they don't have direct access to the app's resources, context, or state, other than what you explicitly provide as an input parameter.
-
-By designing your external libraries with these considerations in mind, you can ensure that they function correctly and efficiently within the broader architecture of your ODC apps.
-
-### Memory usage
-
-To prevent memory leaks it's important to properly dispose of objects that manage system resources. In .NET, classes that implement the `IDisposable` interface require explicit cleanup. You can use [`using` statements](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/using) to ensure these objects are properly disposed when they go out of scope.
-
-To check if an object needs disposal, look for the `IDisposable` interface in the class documentation or use your IDE's IntelliSense. Common disposable objects include Stream classes (FileStream, MemoryStream, NetworkStream), database connections, file handles, graphics resources, and network connections.
-
-For example:
-
-```
-// Wrong: Resources are not disposed when method returns
-var stream = new MemoryStream();  // MemoryStream implements IDisposable
-var data = new byte[1024];        // byte[] does not implement IDisposable
-
-// Correct: Only wrap disposable objects in using statements
-using var stream = new MemoryStream();  // Will be disposed automatically
-var data = new byte[1024];              // No using needed
-```
-
-To catch disposal issues early, enable the CA2000 code analysis rule in your project by adding this to your `.editorconfig` file:
-
-```
-dotnet_diagnostic.CA2000.severity = warning
-```
-
-### Use with large binary files
-
-Server actions from external libraries have a total input size limit of 5.5MB. This includes all input parameters (in particular binary data), parameter names, and serialization overhead.
-
-<div class="warning" markdown="1">
-
-If you try to pass inputs that exceed this limit (for example, a large binary file) to a server action during runtime, an **Input payload is too large** error will be thrown and logged as a runtime error in the app's logs.
-
-</div>
-
-To use a large binary file in custom code you can:
-
-1. Expose the binary file in a [REST API endpoint](../../integration-with-systems/exposing_rest/intro.md) from your app and then implement logic in your custom code to consume the file from the endpoint.
-1. Host the binary file on a file-sharing service and implement logic in your custom code to download the file from the URL.
-
 ## Troubleshooting
 
 All validation of your external logic is done when [uploading the ZIP file to the Portal](intro.md#upload-and-publish-the-external-logic).
 
-Use the [error page documentation](../../../error/elg/intro.md) for guidance. 
+For detailed information about errors, refer to [External libraries SDK errors](../../../error/elg/intro.md).
+
+## Related resources
+
+* [Extend your apps with custom code](intro.md)
+
+* [External libraries SDK Reference](REFERENCE.md)
+
+* [Best practices for using external libraries](best-practices.md)
