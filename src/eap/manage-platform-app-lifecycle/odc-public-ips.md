@@ -59,6 +59,14 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 3.82.131.249, 44.205.125.101, 44.205.77.32 |
 | Production | 3.216.214.63, 44.199.4.230, 44.205.78.121 |
 
+### Canada (Central)
+
+| Stage type | IP addresses |
+| ----- | ----- |
+| Development | 52.60.230.211, 3.98.251.18, 15.157.12.129 |
+| Non-production | 15.222.221.81, 3.96.85.203, 52.60.209.55 |
+| Production | 52.60.54.75, 15.156.196.113, 16.52.19.80 |
+
 ### South America (São Paulo)
 
 | Stage | IP Addresses |
