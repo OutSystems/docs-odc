@@ -97,6 +97,18 @@ For example, while implementing a human activity in a workflow, you can select a
 
 * Switch between the default summary view for comprehensive understanding of workflows and the iconified view for a high-level structure. In the summary view, for each node in the workflow you are provided detailed information such as events triggered, conditions configured and service actions invoked. The iconified view displays only the icon of each node.
 
+### Search in workflow editor
+
+Workflow editor provides search capability which is a single point of entry for various commands and searches simplifying editing and navigation of complex workflows. You can open the search menu using the keyboard shortcut **Ctrl + K (or Cmd + K on a Mac**).
+
+With search, you can do the following:
+
+**Search and execute commands** -  In addition to in-built commands, you can also search for a specific flow step (activity) or properties within your workflow. 
+
+**Edit properties** - Edit a specific expression or an outcome in the corresponding panel or editor.
+
+**Add new flow-steps** - Select a flow-step and type add. A list of flow-steps to be added appears, allowing you to insert them into your workflow. 
+
 ## Key considerations for implementing workflows
 
 Here are some points to consider as you implement workflows in ODC:
