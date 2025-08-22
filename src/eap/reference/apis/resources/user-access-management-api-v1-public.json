@@ -3952,18 +3952,12 @@
             "nullable": true
           },
           "status": {
-            "enum": [
-              "Active",
-              "Invited",
-              "Inactive",
-              "PendingRegistration"
-            ],
             "allOf": [
               {
                 "$ref": "#/components/schemas/UserProfileStatus"
               }
             ],
-            "description": "The user's status. Allowed values are 'Active', 'Inactive', 'PendingRegistration' and 'Invited'."
+            "description": "The user's status."
           },
           "photoUrl": {
             "type": "string",
@@ -4498,12 +4492,6 @@
             "nullable": true
           },
           "status": {
-            "enum": [
-              "Active",
-              "Invited",
-              "Inactive",
-              "PendingRegistration"
-            ],
             "allOf": [
               {
                 "$ref": "#/components/schemas/UserProfileStatus"
@@ -4694,12 +4682,6 @@
             "nullable": true
           },
           "status": {
-            "enum": [
-              "Active",
-              "Invited",
-              "Inactive",
-              "PendingRegistration"
-            ],
             "allOf": [
               {
                 "$ref": "#/components/schemas/UserProfileStatus"
