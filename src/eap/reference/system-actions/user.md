@@ -53,7 +53,7 @@ _Outputs_
 
 _Client action_
 
-Finalizes the reset password operation, using a verification code that can be received by email. Throws an exception if the built-in identity provider is disabled for the current app.
+Finalizes the reset password operation, using a verification code that can be received by email. The client action throws an exception if the built-in identity provider is disabled for the current app.
 
 _Inputs_
 
@@ -85,7 +85,7 @@ Due to a temporary technical limitation, add this action from the public element
 
 </div>
 
-Sets the user as active and their password in the built-in identity provider and logs the user in.<br/>Call the action StartUserRegistration to register the user and obtain a temporary password.
+Activates the user’s password in the built-in identity provider and logs the user in.<br/>Call the action StartUserRegistration to register the user and obtain a temporary password.
 
 _Inputs_
 
@@ -133,7 +133,7 @@ _Outputs_
 
 _Client action_
 
-Gets the configured password policy for the built-in identity provider. Used to enable client-side validation in a user registration flow. When disabled from the current app, it throws an exception by the built-in identity provider.
+Gets the configured password policy for the built-in identity provider. Used to enable client-side validation in a user registration flow. The client action throws an exception if the built-in identity provider is disabled for the current app.
 
 _Outputs_
 
@@ -168,7 +168,7 @@ _Outputs_
 
 _Server action_
 
-Triggers the reset password operation, returning a verification code that sends by email to the user. Use the FinishResetPassword action, which receives a verification code as an input, to complete the password reset operation. When disabled from the current app, it throws an exception by the built-in identity provider.
+Triggers the reset password operation, returning a verification code that sends by email to the user. Use the FinishResetPassword action, which receives a verification code as an input, to complete the password reset operation. The server action throws an exception if the built-in identity provider is disabled for the current app.
 
 Resetting passwords for members with access to ODC Portal isn't supported through this system action, even if the member also has application roles. If this action is called with a ODC Portal member e-mail no verification code is returned. Members must always reset their password using the **Forgot password?** link in ODC Portal.
 
@@ -222,7 +222,7 @@ Due to a temporary technical limitation, you must add this action from the publi
 
 </div>
 
-Registers the user in the built-in identity provider by creating the user as inactive and setting a temporary password. Synchronizes the [User entity](#user-1) with the identity provider. Call the action FinishUserRegistration to activate the user and change the password. When disabled from the current app, it throws an exception by the built-in identity provider.
+Registers the user in the built-in identity provider by creating the user as active. Call the action **FinishUserRegistration** to change the user's temporary password. The server action throws an exception if the built-in identity provider is disabled for the current app.
 
 _Inputs_
 
@@ -240,7 +240,7 @@ _Outputs_
 
 _Server action_
 
-Allows a logged-in user to edit profile information. User can't change user email using this action. When disabled from the current app, it throws an exception by the built-in identity provider.
+Allows a logged-in user to edit profile information. User can't change user email using this action. The server action throws an exception if the built-in identity provider is disabled for the current app.
 
 _Inputs_
 
@@ -258,7 +258,7 @@ _Outputs_
 
 _Client action_
 
-Validates a user's password with the password complexity policy. When disabled from the current app, it throws an exception by the built-in identity provider.
+Validates a user's password with the password complexity policy. The client action throws an exception if the built-in identity provider is disabled for the current app.
 
 _Inputs_
 
