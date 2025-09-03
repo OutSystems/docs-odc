@@ -574,6 +574,10 @@
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/getting-started-aims-tl.md
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/getting-started-aims-dev.md
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/severity-classification-criteria.md
+        # Architecture
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/architecture/architecture.md
+        - topics: 
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/architecture/app-consuming-rest-directly.md                
         # Maintainability
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/maintainability/maintainability.md
         - topics:
