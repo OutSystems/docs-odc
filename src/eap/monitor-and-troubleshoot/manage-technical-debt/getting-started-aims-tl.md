@@ -13,44 +13,57 @@ audience:
 outsystems-tools:
   - none
 ---
-# Getting started in Code quality as a tech lead
+# Getting started with Code quality as a technical lead
 
-As a technical lead or team lead, with the AI Mentor System (AIMS) you can quickly get an overview of the code quality of your team's apps. This helps you manage technical debt, understand if your team's code is following best practices, and identify possible security risks.
+As a technical lead or team lead, **Code quality** provides you with an overview of the code quality of your team's apps. This helps you manage technical debt, understand if your team's code is following best practices, and identify possible security risks.
 
-To start using it, make sure you've checked [How ODC Code quality works](how-does-aims-works.md).
+## Prerequisites
 
-## What Code quality offers a tech lead
+Before you can start using **Code Quality**, ensure that:
 
-For you as tech lead of a team that's developing OutSystems applications, Code Quality, via AIMS, offers you three very important inputs:
+* You've activated **Code Quality** in your organization. For more information, refer to [Setting up Code quality](how-does-aims-works.md).
+* You have the relevant permissions:
+  * To edit a finding: **Edit/Change Code Quality findings**
+  * To view a finding: **View Code Quality findings**. You only have permissions to view findings for the apps you have permission to view.
 
-* A birdseye view of your team technical debt.
-* A way to prioritize your improvement.
-* A good way for you know how you can help your team grow.
+## What Code quality offers a technical lead
 
-## Checking your team technical debt
+As a technical lead of a team that's developing OutSystems apps, **Code quality** offers you three key capabilities:
 
-Whenever a code analysis run, you get an immediate view of your portfolio of applications technical debt. This includes:
+* A bird's-eye view of your team's technical debt.
+* A way to prioritize your improvements.
+* Insights into how you can help your team grow.
 
-* When is the next analysis.
-* When did the last analysis run, it's time stamp and how many new findings were detected.
-* Counters that display you a summary by area and total of the findings.
+## Checking your team's technical debt
 
-![Code quality dashboard showing next analysis time, last analysis summary, and total findings categorized by security, performance, maintainability, and architecture.](images/code-quality-overview.png "Code Quality Overview")
+Whenever a code analysis runs, you get an immediate view of your organization's technical debt. This includes:
 
-This by itself allows you to quickly understand if your team is introducing technical debt or actually reducing it. It also gives you a quick way to report up, if needed, the current state of affairs in your teams regarding technical debt.
+* When the next analysis will run
+* When the last analysis ran, its timestamp, and how many new findings were detected
+* An overview of the total quality score
 
-## Severity and frequency as prioritization factors
+![Code quality dashboard showing next analysis time, last analysis summary, an overview of the quality score.](images/code-quality-tl-pl.png "Code quality Overview")
 
-The Severity and occurrence area allows you to very quickly understand:
+This allows you to quickly understand whether your team is introducing technical debt or reducing it. It also gives you a quick way to report the current state of your team's technical debt, if needed.
 
-* Which are the most common and more severe issues on your apps
+The severity and occurrence information allow you to quickly understand:
+
+* What are the most common and severe issues in your apps
 * Which apps are most affected by technical debt
-* What are the areas of coding your team needs to improve more
+* What coding areas your team needs to improve most
 
-![Code quality dashboard highlighting critical, high, medium, and low severity issues, with details on exposed REST services without authentication.](images/severity-and-frequency.png "Severity and Frequency")
+![Code quality dashboard highlighting critical, high, medium, and low severity issues.](images/code-quality-tl-findings-pl.png "Code quality findings")
 
-With this information you can plan and prioritize your teams maintenance and improvement backlog and work to introduce code revision processes that prevent more findings.
+With this information, you can plan and prioritize your team's maintenance and improvement backlog and implement code review processes that prevent new findings.
 
 ## Going from reactive to proactive
 
-Code quality gives you an always up to date state of your teams and app portfolio technical debt, but it's also a powerful tool that enables you to understand which are the common code patterns that your team keep introducing, and through the [Performance findings](performance/performance.md), [Maintainability findings](maintainability/maintainability.md) and [Security findings](security/security.md) documentation you can promote best practices that instead of solving the more frequent issues, you can move to a stage where your team is able to prevent them.
+**Code quality** always gives you an up-to-date view of your team's and organization's technical debt, but it's also a powerful tool that helps you understand which common code patterns your team keeps introducing. By identifying these patterns, you can promote best practices that prevent frequent issues rather than just solving them after they occur, moving your team from reactive to proactive development.
+
+## Related resources
+
+For detailed information about specific code patterns and best practices, refer to:
+
+* [Performance findings](performance/performance.md)
+* [Maintainability findings](maintainability/maintainability.md)
+* [Security findings](security/security.md)

@@ -1,6 +1,6 @@
 ---
-summary: Manage technical debt and enhance code quality in OutSystems Developer Cloud (ODC) using AI-powered Code Quality and AI Mentor System for optimal performance, maintainability, and security.
-tags: code quality, technical debt, ai mentor system, code analysis, outsystems development cloud
+summary: Manage technical debt and enhance code quality in OutSystems Developer Cloud (ODC) using Code Quality powered by Mentor for optimal performance, maintainability, and security.
+tags: code quality, technical debt, mentor, code analysis, outsystems development cloud
 guid: 6be15662-74c5-4c35-9a7d-16a28816614c
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -16,65 +16,58 @@ outsystems-tools:
 ---
 # Manage technical debt in ODC
 
-<div class="info" markdown="1">
+**Code quality**, powered by Mentor, is an OutSystems Developer Cloud (ODC) solution to help improve your team's code quality and manage technical debt. Managing your technical debt increases your team's agility and productivity while lowering the maintenance costs of developing your apps.
 
-This functionality uses the Data platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data platform](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
+**Code quality** analyzes your code against established best practices and coding patterns. It scans your apps for potential issues in four key areas: security vulnerabilities, performance problems, maintainability concerns, and architecture patterns. When the analysis is complete, it provides a detailed report showing specific findings with guidance on how to fix them.
 
-</div>
+You can use **Code quality** to:
 
-Code Quality, powered by AI Mentor System (AIMS) is OutSystems Development Cloud (ODC) solution to help you and your teams managing your technical debt.
+* **Get strategic visibility** into code quality trends and technical debt distribution across your organization.
 
-Managing your technical debt increases your team's agility and productivity while lowering the maintenance costs of the development of your apps.
+* **Access detailed findings** with specific guidance and direct navigation to problem areas in ODC Studio.
 
-Code Quality supports you by checking your code and giving you recommendations about your apps architecture, maintainability, performance, and security.
+* **Proactively identify and prioritize** common issues across your organization's apps to prevent future occurrences and improve overall quality.
 
-This code check gives your Technical Leads an integrated, bird’s eye view, of your organization’s technical debt. By doing that, AIMS helps in identifying problem areas and prioritize the resolution of those issues.
-
-Also, it's a powerful tool to help your Tech Leads in identifying training needs for your teams. It also helps in fostering coding best practices that allow your teams to prevent future issues and create more performant, scalable, and secure apps.
-
-For developers, AI Mentor System provides an automated code review, providing guidance that helps developers jn delivering quality code that follows best practices and that mitigates security risks.
+* **Track progress** over time and measure the effectiveness of your improvement efforts.
 
 ## Code analysis
 
-The AI Mentor System automatically analyzes your code in the Development stage twice a day. The analysis checks the latest versions of apps that changed since the previous analysis.
+**Code quality** analyzes your apps and identifies potential issues that could impact your code quality. The analysis runs regularly and examines your code against established best practices in four key areas:
 
-During this analysis, AI Mentor Systems looks for code patterns in the following categories:
+* **Performance** - Issues that could slow down your apps or consume excessive resources
+* **Architecture** - Patterns that could affect code organization and maintainability  
+* **Maintainability** - Problems that make code harder to read, modify, or extend
+* **Security** - Vulnerabilities that could expose your apps to security risks
 
-* Performance
-* Architecture
-* Maintainability
-* Security
+When **Code quality** identifies issues, it creates findings - specific instances where your code deviates from recommended patterns. Each finding provides details about the problem and actionable guidance on how to fix it.
 
-After this analysis, you get a code quality report that shows you a list of findings. A finding is an instance of a code pattern present in your code.
+For more information about findings, refer to [Working with Code quality](working-with-code-quality.md#investigate-specific-findings).
 
-Findings include the following information:
+## Code quality in the software development lifecycle
 
-* The **code pattern** and **category** (security, performance, maintainability, and architecture) that maps to which the finding relates to.
+Both developers and technical leads use **Code quality** during the development phase. Developers fix technical debt before apps move to the testing phase. Technical leads identify improvement areas and common pitfalls, allowing them to grow their teams' proficiency.
 
-* The **code path** to the **source element** that has the problem. You also get a direct link which lets you open the element in ODC Studio.
+## For technical leads
 
-* **How long ago** the finding appeared and who was the **last developer to modify the source element**.
+As a technical lead, you can view code quality metrics across your team's apps. This shows you the current state of technical debt, which apps have the most issues, and what types of problems are most common.
 
-## Code Quality in the software development lifecycle
-
-Both Developers and Technical Leads use Code Quality during the development phase. Developers fix technical debt before apps move to the testing phase. Technical Leads identify improvement areas and common pitfalls, allowing them to grow their teams' proficiency.
-
-### For technical leads
-
-As a technical lead or team lead, you can quickly get an overview of the code quality of your team's apps. This helps you manage technical debt, understand if your team's code is following best practices, and identify possible security risks.
-
-Furthermore, the AI Mentor System can help you scale by providing, via Code Quality, your developers with an automated code review. This promotes autonomy for your developers, by helping them deliver better code before you do a formal code review. AIMS also provides relevant context on the coding issues, that helps them grow their OutSystems knowledge.
+Furthermore, **Code quality** helps you scale by providing your developers with an automated code review. This promotes autonomy for your developers, by helping them deliver better code before you do a formal code review. **Code quality** also provides relevant context on the coding issues, helping them grow their OutSystems knowledge.
 
 ![Dashboard showing code quality metrics for technical leads, including managing technical debt and mitigating security risks.](images/overview-tl.png "Overview for Technical Leads")
 
-If your organization already has access to AI Mentor System, follow the [Getting started in AIMS as a technical lead](getting-started-aims-tl.md) to get hands-on experience on how the tool works.
+For more information, refer to [Getting started with Code quality as a technical lead](getting-started-aims-tl.md).
 
-### For developers
+## For developers
 
-As a developer, you typically use the AI Mentor System for an automated code review. It identifies specific parts of your code that may need changes to reduce technical debt and mitigate security concerns. 
+As a developer, you typically use **Code quality** for automated code reviews. It identifies specific parts of your code that may need changes to reduce technical debt and mitigate security concerns.
 
-This review includes guidance and best practices for the issues it finds. It helps you grow your OutSystems knowledge as you deliver value to your organization.
+This review includes guidance and best practices for the issues it finds, helping you grow your OutSystems knowledge as you deliver value to your organization.
 
 ![Dashboard showing code quality metrics for developers, including automated code review and fostering developer growth.](images/overview-dev.png "Overview for Developers")
 
-If your organization already has access to AI Mentor System, follow the instructions on [Getting started as a developer](getting-started-aims-dev.md) to get hands-on experience on how the tool works.
+For more information, refer to [Getting started with Code quality as a developer](getting-started-aims-dev.md).
+
+## Related resources
+
+* [Working with Code quality](working-with-code-quality.md)
+* [Setting up Code quality](how-does-aims-works.md)

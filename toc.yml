@@ -567,12 +567,13 @@
         - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-metrics-ref.md
     - href: eap/monitor-and-troubleshoot/audit-trail.md
     # Manage technical debt
-
     - href: eap/monitor-and-troubleshoot/manage-technical-debt/managing-tech-debt.md
     - topics:
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/how-does-aims-works.md
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/working-with-code-quality.md
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/getting-started-aims-tl.md
-        - href: eap/monitor-and-troubleshoot/manage-technical-debt/getting-started-aims-dev.md                        
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/getting-started-aims-dev.md
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/severity-classification-criteria.md
         # Maintainability
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/maintainability/maintainability.md
         - topics:

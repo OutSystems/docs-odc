@@ -1,6 +1,6 @@
 ---
-summary: Enhance code quality in OutSystems Developer Cloud (ODC) applications using AI Mentor System for automated review, performance improvements, and security mitigation.
-tags: code quality, ai mentor system, outsystems applications, odc studio, performance optimization
+summary: Enhance code quality in OutSystems Developer Cloud (ODC) applications using Code Quality for automated review, performance improvements, and security mitigation.
+tags: code quality, mentor, outsystems applications, odc studio, performance optimization
 guid: 5106A167-C080-4F57-96A3-75BFB73A33FB
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -13,23 +13,30 @@ audience:
 outsystems-tools:
   - odc studio
 ---
-# Getting started in Code Quality as a developer
+# Getting started with Code quality as a developer
 
-As a developer, Code Quality, powered by AI Mentor System (AIMS), automates your code reviews. Code Quality identifies specific parts of the code that may need changes to improve performance, reduce technical debt, and mitigate security issues.
+As a developer, **Code quality** automates your code reviews. **Code quality** identifies specific parts of the code that may need changes to improve performance, reduce technical debt, and mitigate security issues.
 
-To start using it, make sure you've checked [How ODC Code quality works](how-does-aims-works.md).
+## Prerequisites
+
+Before you can start using **Code quality**, ensure that:
+
+* You've activated **Code quality** in your organization. For more information, refer to [Setting up Code quality](how-does-aims-works.md).
+* You have the relevant permissions:
+  * To edit a finding: **Edit/Change Code Quality findings** 
+  * To view a finding: **View Code Quality findings**. You only have permissions to view findings for the apps you have permission to view.
 
 ## What Code quality offers you as a developer
 
-For you that are a developer in a team that's developing OutSystems applications, Code Quality, via AIMS, offers you three very important inputs:
+As a developer working on OutSystems apps, **Code quality** provides you with three key capabilities:
 
-* A quick understanding of where do you need to make improvements and how many you have to address.
-* A way to track what you have addressed and what's still to address.
-* A good opportunity to learn about the findings and how to correct or prevent them.
+* A clear understanding of where you need to make improvements and how many issues you need to address.
+* A way to track what you have addressed and what's still pending.
+* Learning opportunities about findings and how to correct or prevent them.
 
-## Solve findings in your applications
+## Solve findings in your apps
 
-To solve a finding on your app, select the app, to expand the list of findings.
+To solve a finding in your app, select the app to expand the list of findings.
 
 ![Screenshot showing the selection of an app to expand the list of findings.](images/select-app-pl.png "Selecting an app to view findings")
 
@@ -39,7 +46,7 @@ The first app in the findings list is expanded by default.
 
 </div>
 
-To see where in the app the finding occurs, in the **Source element** column, hover the path icon.
+To see where in the app the finding occurs, in the **Source element** column, hover over the path icon.
 
 ![Screenshot showing the path icon in the Source element column to locate the finding in the app.](images/finding-location-app-pl.png "Finding location in the app")
 
@@ -47,39 +54,35 @@ To start fixing the finding, select **Open in ODC Studio**. This opens ODC Studi
 
 ![Screenshot showing the option to open ODC Studio to start fixing the finding.](images/open-studio-pl.png "Opening ODC Studio")
 
-Once you feel confident you solved the issue, publish your app.
-When a code analysis runs, it checks the latest version of apps that changed since the previous analysis.\
-Since the code analysis runs twice a day, you need to wait until the next analysis occurs to know if your finding got fixed. If you successfully fixed it, the finding won't appear in the next report.
+Once you've resolved the issue, publish your app. When a code analysis runs, it checks the latest version of apps that have changed since the previous analysis. Since the code analysis runs twice a day, you need to wait until the next analysis occurs to confirm if your finding was fixed. If you successfully resolved it, the finding won't appear in the next report.
 
-AIMS lets you know when the next code analysis occurs at the top of the screen.
+**Code quality** shows you when the next code analysis occurs at the top of the screen.
 
 ![Screenshot showing the next code analysis time at the top of the screen.](images/next-analysis-pl.png "Next code analysis time")
 
 ## Change the status of your findings
 
-Addressing your findings is the most important part of your role as a developer, but reporting on the findings status is also important, so that you, your colleagues and your tech lead, can have an always up to date view of the state of the Code Quality findings.
+Addressing your findings is the most important part of your role as a developer, but reporting on the findings status is also important. This ensures that you, your colleagues, and your technical lead have an up-to-date view of the **Code quality** findings status.
 
-You have four different possible status for your findings:
+You have the following possible statuses for your findings:
 
-* **Open**. The finding is still existing and wasn't solved so far.
-* **Resolved**. When you successfully closed the finding.
-* **Dismissed.** When you, or your tech lead, accepts that the finding will happen but no action will be taken to resolve it.
-* **Snoozed.** You acknowledge the finding but you aren't addressing it at the moment, so you snooze it.
+* **Open** - The finding still exists and hasn't been resolved.
+* **Resolved** - You successfully fixed the finding.
+* **Dismissed** - You or your technical lead accepts that the finding will remain but no action will be taken to resolve it.
+* **Snoozed** - You acknowledge the finding but aren't addressing it at the moment, so you snooze it.
 
-### Changing the status of your findings
-
-To change the status of a finding click on the status dropdown and select your desired status for the finding:
+To change the status of a finding, click on the status dropdown and select your desired status for the finding:
 
 ![Screenshot showing the status dropdown to change the status of a finding.](images/change-status-finding-pl.png "Changing the status of a finding")
 
-If you are selecting **Dismissed**, a dialog comes up for you to give a reason for the dismissal. Select your reason, optionally write a comment and commit it by clicking **Dismiss finding**:
+If you select **Dismissed**, a dialog appears for you to provide a reason for the dismissal. Select your reason and optionally write a comment. Click **Dismiss finding**.
 
-![Screenshot showing the dialog to dismiss a finding with a reason and optional comment.](images/dismiss-finiding-pl.png "Dismissing a finding")
+If you select **Snoozed**, a dialog also appears so you can select how long you want to snooze the finding. Select your desired time frame, optionally write a comment, and confirm by clicking **Snooze finding**.
 
-If you are selecting **Snoozed**, a dialog also pops-up so that you can select for how long you are snoozing the finding. Select your desired time frame from snooze, optionally write a comment, and commit by clicking **Snooze finding**:
+## Related resources
 
-![Screenshot showing the dialog to snooze a finding with a selected duration and optional comment.](images/snooze-finding-pl.png "Snoozing a finding")
+For detailed information about specific code patterns and best practices, refer to:
 
-## Learn about the findings and what most likely is causing it
-
-Whenever you are addressing a finding, besides the **How to resolve** feature in Code Quality, you should check the [Performance findings](performance/performance.md), [Maintainability findings](maintainability/maintainability.md) and [Security findings](security/security.md) documentation pages, as they give extended insight on impacts, reasons for the findings and ways to solve your findings.
+* [Performance findings](performance/performance.md)
+* [Maintainability findings](maintainability/maintainability.md)
+* [Security findings](security/security.md)
