@@ -30,7 +30,6 @@ Firebase is a Google mobile development platform that speeds up the mobile app c
 
 * Analytics Plugin (Firebase)
 * Crash Reporting Plugin (Firebase)
-* Dynamic Links Plugin (Deprecated) (Firebase)
 * Performance Monitoring Plugin (Firebase)
 * Cloud Messaging Plugin (Firebase)
 
@@ -103,33 +102,6 @@ You must provide the plugin configuration file as settings in the ODC Portal for
 * Even though these settings are optional and you may choose to generate a build for only one platform (Android or iOS), you must add both the Google services configuration files, one for each platform. This requirement is temporary.
 
 </div>
-
-### Additional setup for the Dynamic Links plugin (Deprecated)
-
-<div class="warning" markdown="1">
-
-Firebase announced the end of life for Firebase Dynamic Links on August 25, 2025 ([source](https://firebase.google.com/support/dynamic-links-faq#when_will_firebase_dynamic_links_stop_working)). This plugin should not be used for new projects, and we recommend moving off of it to a different service for application links.
-
-</div>
-
-The Firebase Dynamic Links Plugin requires the following additional setup steps to work correctly:
-
-* Include a global preference in the Extensibility Configurations of the application using the plugin. Ensure that the value for this preference matches the URL prefix you set in the Dynamic Links page in the Firebase console. For example:
-
-```JSON
-{
-     "preferences": {
-         "global": [
-            {
-                "name": "FIREBASE_DOMAIN_URL_PREFIX",
-                "value": "outsystemsfirebase.page.link"
-            },
-        ]
-    }
-}
-```
-
-* For iOS, use a provisioning profile from Apple that contains the Associated Domains capability. For more information, refer to [Configuring an Associated Domain](https://developer.apple.com/documentation/xcode/configuring-an-associated-domain) by Apple. Ensure that the app is compliant with Apple’s Data Use and Sharing guidelines.
 
 Starting with iOS 14.5, apps on the App Store must request the user’s permission to collect tracking data through the AppTrackingTransparency framework. For more information, see [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency).
 
