@@ -22,7 +22,11 @@ topic:
 
 # External data type mapping
 
-OutSystems Developer Cloud (ODC) uses an internal SQL type system to manage and map data types across different sources. This system ensures that data flows consistently between:
+When integrating external data sources, OutSystems Developer Cloud (ODC) automatically maps data types to ensure compatibility. This article provides the definitive reference tables showing how data types from SQL Server, Oracle, PostgreSQL, Salesforce, and SAP correspond to internal OutSystems types.
+
+## SQL data type mapping
+
+ODC uses an internal SQL type system to manage and map data types across different sources. This system ensures that data flows consistently between:
 
 * The **data types used in external systems** (e.g., SQL Server, Oracle, PostgreSQL, Salesforce, SAP OData)
 * The **types used in SQL nodes**, expressions, and aggregates
