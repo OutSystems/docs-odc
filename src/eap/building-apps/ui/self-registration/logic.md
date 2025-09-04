@@ -20,7 +20,7 @@ topic:
 
 # Create logic to register a user
 
-Once you create a screen for users to sign in, you can add logic to your screen. Logic enables you to validate your user's input and set up actions if the information is true or false.
+Once you [create a screen for users to sign in](screen.md), you can add logic to your screen. Logic enables you to validate your user's input and set up actions if the information is true or false.
 
 If this is the first time you are creating the logic for self-registration, then follow all the procedures. If you are making updates to your existing app, jump to the task you want to do.
   
