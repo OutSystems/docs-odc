@@ -34,7 +34,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     </div>
 
-1. Click **Save**. 
+1. Click **Save**.
 
 ODC adds the provider to the list of available providers.
 

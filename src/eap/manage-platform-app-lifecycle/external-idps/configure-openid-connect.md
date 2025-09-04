@@ -43,7 +43,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. Enter the URL of the OpenID configuration in the **Discovery endpoint** field.
 
-1. Click **Get details**. 
+1. Click **Get details**.
     
     ODC retrieves the JSON of the OpenID configuration and shows a preview.
 
@@ -65,13 +65,13 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     
     </div>
 
-1. Click **Save**. 
+1. Click **Save**.
     
 ODC adds the provider to the list of available providers.
 
 ## Next steps
 
-* [Assign the provider](intro.md#assign-an-external-idp) 
+* [Assign the provider](intro.md#assign-an-external-idp)
 * [Implement the authentication logic](apps.md)
 
 ## Related resources
@@ -80,4 +80,3 @@ ODC adds the provider to the list of available providers.
 * [Configure social providers with accelerators](configure-social-accelerators.md)
 * [Microsoft Entra ID configuration](azure-ad.md)
 * [Okta configuration](okta.md)
-
