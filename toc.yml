@@ -130,6 +130,7 @@
         - href: eap/building-apps/data/offline/sync-implement.md
         - href: eap/building-apps/data/offline/sync-reference.md
         - href: eap/building-apps/data/offline/sync-checklist.md             
+        - href: eap/building-apps/data/offline/mobile/complex-sync.md             
         - href: eap/building-apps/data/offline/patterns/intro.md
         - topics:
             - href: eap/building-apps/data/offline/patterns/read-only-data.md
