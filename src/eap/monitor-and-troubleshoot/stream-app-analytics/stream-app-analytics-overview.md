@@ -100,6 +100,8 @@ Other tools compatible with the OpenTelemetry protocol and OTLP-formatted data a
 
 The OpenTelemetry collector is an app that runs separately and must be launched/supported by customers. For more information, refer to [Set up an OpenTelemetry collector.](stream-app-analytics-opentelemetry.md)
 
+To ensure you can respond proactively to any issues, OutSystems advises you to set up monitoring for data ingestion within your APM tool.
+
 </div>
 
 ## Understanding your streamed data
