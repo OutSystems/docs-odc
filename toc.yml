@@ -124,6 +124,19 @@
         - href: eap/building-apps/data/edit-data.md
         - href: eap/building-apps/data/structure-create-use.md  
         - href: eap/building-apps/data/client-variable.md  
+    # Offline data synchronization
+    - href: eap/building-apps/data/offline/intro.md
+    - topics:
+        - href: eap/building-apps/data/offline/sync-implement.md
+        - href: eap/building-apps/data/offline/sync-reference.md
+        - href: eap/building-apps/data/offline/sync-checklist.md             
+        - href: eap/building-apps/data/offline/patterns/intro.md
+        - topics:
+            - href: eap/building-apps/data/offline/patterns/read-only-data.md
+            - href: eap/building-apps/data/offline/patterns/read-only-data-optimized.md
+            - href: eap/building-apps/data/offline/patterns/read-write-data-last-write-wins.md
+            - href: eap/building-apps/data/offline/patterns/read-write-data-with-conflict-detection.md
+            - href: eap/building-apps/data/offline/patterns/read-write-data-one-to-many.md
     # UI
     - href: eap/building-apps/ui/intro.md
     - topics:

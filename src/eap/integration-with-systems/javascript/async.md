@@ -11,7 +11,7 @@ audience:
   - frontend developers
   - full stack developers
 outsystems-tools:
-  - service studio
+  - odc studio
 coverage-type:
   - understand
   - apply
