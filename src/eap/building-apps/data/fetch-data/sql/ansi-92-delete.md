@@ -44,7 +44,6 @@ DELETE FROM {entity};
 
 -- Delete only matching records in an entity
 DELETE FROM {entity} WHERE {entity}.[id] = 1 OR {entity}.[id] = @dynamic;
-```FROM { entity } WHERE [id] = 1 OR [id] = @dynamic;
 ```
 
 ## Compatibility
