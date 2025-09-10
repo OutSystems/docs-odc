@@ -70,3 +70,7 @@ WHERE {entity}.[id] = 1 OR {entity}.[id] = @dynamic;
 | SAP OData            | Yes<sup>1</sup> |
 
 <sup>1</sup>: The entity must have a `PATCH` or `PUT` API. `UPDATE` doesn't support writing to SAP OData Navigation Properties (`Record` attributes).
+
+### Known issues
+
+* Subqueries aren't supported in the `WHERE` clause
