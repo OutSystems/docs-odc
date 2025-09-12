@@ -74,7 +74,7 @@ After you create a role, ODC Studio also creates the following actions to let yo
 
 **Notes**
 
-(*) Available for both client and server logic. The light icon denotes the client-side version.
+(*) Available for both client and server logic. The light icon denotes the client-side version. The action applies to the currently logged-in user if the UserId parameter is not specified.
 
 ## Control access in your app with end-user roles
 
