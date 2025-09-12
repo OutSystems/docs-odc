@@ -22,7 +22,7 @@ coverage-type:
 
 # Workflows in ODC
 
-With Workflows, you can design, implement, and automate [business processes](business-processes.md) such as vacation approval, loan approval, or order management and integrate them in your apps. A workflow is a repeatable process consisting of tasks to be completed in a specific sequence. Workflows introduces automation in your apps by allowing you to design and implement repeatable business processes, automating tasks and interactions that would otherwise require manual intervention. For detailed information about how to implement workflows in ODC, refer to [Implement workflows](workflow-components.md).
+With Workflows, you can design, implement, and automate [business processes](business-processes.md) such as vacation approval, loan approval, or order management and integrate them in your apps. A workflow is a repeatable process consisting of tasks to be completed in a specific sequence. Workflows introduce automation in your apps by allowing you to design and implement repeatable business processes, automating tasks and interactions that would otherwise require manual intervention. For detailed information about how to implement workflows in ODC, refer to [Implement workflows](workflow-components.md).
 
 Workflows are triggered by events in ODC apps. For detailed information about how to create, trigger, and handle events, refer to [Implement events](../../building-apps/events/implement-events.md). 
 
@@ -103,17 +103,27 @@ Workflow editor provides search capability which is a single point of entry for 
 
 With search, you can do the following:
 
-**Search and execute commands** -  In addition to in-built commands, you can also search for a specific flow step (activity) or properties within your workflow. 
+**Search and execute commands**: In addition to in-built commands, you can also search for a specific flow step (activity) or properties within your workflow.
 
-**Edit properties** - Edit a specific expression or an outcome in the corresponding panel or editor.
+**Edit properties**: Edit a specific expression or an outcome in the corresponding panel or editor.
 
-**Add new flow-steps** - Select a flow-step and type add. A list of flow-steps to be added appears, allowing you to insert them into your workflow. 
+**Add new flow-steps**: Select a flow-step and type add. A list of flow-steps to be added appears, allowing you to insert them into your workflow. 
+
+### Managing workflow revisions
+
+The workflow editor includes revisions history to help you track, manage, and restore previous versions of your workflows.
+
+With revisions history, you can:
+
+* **View past workflow revisions**: Access the full history of all published workflow revisions, including revision number, publication date, and publisher
+
+* **Discard or restore workflow changes**: Easily discard unpublished workflow changes or restore the workflow to any previous published revision
 
 ## Key considerations for implementing workflows
 
 Here are some points to consider as you implement workflows in ODC:
 
-* **Workflows are loosely coupled** to apps and can consume only the public elements from the app, such as events, service actions, and screens. To learn more about strong and weak dependencies, refer to [Understanding strong and weak dependencies](../reuse/intro.md). 
+* **Workflows are loosely coupled** to apps and can consume only the public elements from the app, such as events, service actions, and screens. To learn more about strong and weak dependencies, refer to [Understanding strong and weak dependencies](../reuse/intro.md).
 
 * **Workflows are always consumers** and not producers.
 
@@ -121,7 +131,11 @@ Here are some points to consider as you implement workflows in ODC:
 
 * **Workflows can have** [**multiple revisions**](../../deploying-apps/deploy-apps.md#multiple-revisions-of-a-workflow) **running simultaneously in the same stage**, and every revision can have one or more instances of the workflow in execution. An instance is a unit of execution of a workflow. Each instance can run up to 1,000 activities. 
 
-    **Note**: In the development stage, you can have instances running only in the last five revisions. For example, if there are five revisions (revisions 1 to 5) in the development stage with active instances running in each one, once revision 6 is created, all active instances running in revision 1 are terminated immediately. There is no limit to the number of revision instances for the QA and production stages. 
+    <div class="info" markdown="1">
+    
+    In the development stage, you can only have instances running in the last five revisions. For example, if there are five revisions (revisions 1 to 5) in the development stage with active instances running in each one, once revision six is created, all active instances running in revision one are terminated immediately. There is no limit to the number of revision instances for the QA and production stages. 
+
+    </div>
 
 ## Known constraints
 
