@@ -55,6 +55,14 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     
     </div>
 
+1. In the **Organization user email verification** section, choose one of the following options for handling email verification:
+
+    * **User verification**: Choose this option to always verify users' emails using ODC's email verification flow, even if they've already been verified by the identity provider.
+
+    * **Trust identity provider**: Choose this option if your identity provider includes an `email_verified` claim and you want to trust its value. If no valid ``email_verified`` claim is returned, users are considered to have an unverified email.
+
+    * **Trust all user emails as verified**: Choose this option to automatically trust all email addresses from a provider, regardless of whether they are verified or not.
+
 1. Configure claim mapping in the **Claim Mapping** section.
 
     If your provider uses different attribute names, overwrite the prefilled **Username**, **Email**, **Name**, and **Photo URL** values. For more guidance, refer to your provider's support documentation.

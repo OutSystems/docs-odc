@@ -38,7 +38,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 ### Step 1: Enter a provider name
 
-1. Enter a name for the new provider in the **Provider name** field. 
+1. Enter a name for the new provider in the **Provider name** field.
 
     This can be any name less than 255 characters and can't include special characters.
 
@@ -62,7 +62,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     
     </div>
 
-1.  Click **Next**.
+1. Click **Next**.
 
 ### Step 3: Retrieve SP metadata
 
@@ -98,6 +98,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     * Name/Given name
     * Surname
     * Photo URL
+    * Verified email
 
     <div class="info" markdown="1">
 
@@ -109,15 +110,15 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     **Signature key name**: Signed SAML documents sent using POST binding contain the identification of the signing key in the **KeyName** element. You can choose from the following:
     
-    * **Cert_Subject** - Uses the subject from the certificate corresponding to the scope key
-    * **Key_ID** - Uses the certificate Key ID
-    * **None** - Omits the key name hint from the SAML message
+    * **Cert_Subject**: Uses the subject from the certificate corresponding to the scope key
+    * **Key_ID**: Uses the certificate Key ID
+    * **None**: Omits the key name hint from the SAML message
     
-    **Additional options** 
+    **Additional options**
     
     <div class="info" markdown="1">
     
-    Changing any of these settings will modify the ``sp_metadata.xml`` file. 
+    Changing any of these settings will modify the ``sp_metadata.xml`` file.
     
     </div>
     
@@ -125,6 +126,14 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     * HTTP-POST binding for AuthnRequests
     * Want assertions signed
     * NameID policy format
+
+1. In the **Organization user email verification** section, choose one of the following options for handling email verification:
+
+    * **User verification**: Choose this option to always verify users' emails using ODC's email verification flow, even if they’ve already been verified by the identity provider.
+
+    * **Trust identity provider**: Choose this option if your identity provider includes email verification information in its attributes and you want to trust that verification status. If you choose this option, you must map the identity provider's email verification claim in the **Verified email** field. If no valid email verification claim is returned, users are considered to have an unverified email.
+
+    * **Trust all user emails as verified:** Choose this option to automatically trust all email addresses from a provider, regardless of whether they are verified or not.
 
 1. Click **Next**.
 
@@ -145,5 +154,3 @@ ODC adds the provider to the list of available providers.
 * [Configure social providers with accelerators](configure-social-accelerators.md)
 * [Microsoft Entra ID configuration](azure-ad.md)
 * [Okta configuration](okta.md)
-
-
