@@ -14,6 +14,8 @@ audience:
   - platform administrators
 outsystems-tools:
   - none
+topic:
+  - manage-tech-debt
 figma:
 ---
 

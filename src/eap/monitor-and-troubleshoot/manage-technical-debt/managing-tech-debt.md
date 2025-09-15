@@ -13,6 +13,8 @@ audience:
   - tech leads
 outsystems-tools:
   - none
+topic:
+  - manage-tech-debt
 ---
 # Manage technical debt in ODC
 

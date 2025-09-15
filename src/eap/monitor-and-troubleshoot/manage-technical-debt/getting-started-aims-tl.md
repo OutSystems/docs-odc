@@ -12,6 +12,8 @@ audience:
   - tech leads
 outsystems-tools:
   - none
+topic:
+  - manage-tech-debt
 ---
 # Getting started with Code quality as a technical lead
 

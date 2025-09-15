@@ -8,10 +8,13 @@ platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3522-11
 coverage-type:
   - understand
+  - apply
 audience:
   - full stack developers
 outsystems-tools:
   - odc studio
+topic:
+  - manage-tech-debt
 ---
 # Getting started with Code quality as a developer
 
