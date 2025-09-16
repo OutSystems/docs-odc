@@ -212,7 +212,7 @@ For more information see [Cloud-native architecture of OutSystems Developer Clou
 
 OutSystems uses a Key Management Service (KMS) to store and manage the keys used to secure customer data.
 
-ODC encrypts data at rest, including all backup instances, using the industry standard AES-256 algorithm.
+ODC encrypts data at rest, including all backup instances, using the industry standard AES-256-GCM algorithm.
 
 ## Log security and retention
 
