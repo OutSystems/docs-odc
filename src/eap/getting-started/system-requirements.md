@@ -132,6 +132,7 @@ The following versions of systems are supported to integrate with ODC using [Dat
     * PostgreSQL 14
     * PostgreSQL 15
     * PostgreSQL 16
+    * PostgreSQL 17
 
 * **MySQL**
 
