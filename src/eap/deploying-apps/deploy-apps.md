@@ -18,7 +18,7 @@ coverage-type:
   - apply
 topic:
   - deploy-apps-in-lt-portal
-helpids: 
+helpids: 30685
 ---
 
 # Deploying assets
