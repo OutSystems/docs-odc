@@ -61,7 +61,7 @@ To get an access token, follow these steps:
 
 OutSystems recommends implementing the logic for generating the access token using client credentials in a library to be reused across different apps.
 
-1. [onsume a single REST API](../../../../integration-with-systems/consume_rest/consume-a-rest-api.md#add-a-single-rest-api-method--single-method-) with the following details:
+1. [Consume a single REST API](../../../../integration-with-systems/consume_rest/consume-a-rest-api.md#add-a-single-rest-api-method--single-method-) with the following details:
 
     * **HTTP method**: POST
     * **URL**: `token_endpoint` retrieved from the previous step
