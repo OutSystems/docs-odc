@@ -563,7 +563,7 @@
 - topics:
 
     - href: eap/monitor-and-troubleshoot/app-health.md 
-# App analytics stream
+# Analytics stream
     - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md
     - topics:
         - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-apm.md

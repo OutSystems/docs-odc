@@ -27,7 +27,7 @@ This article explains how you can stream observability data from ODC apps to the
 
 ## Prerequisites
 
-Before streaming observability data to **Dynatrace**, ensure you have a subscription to the **App Analytics Stream**. Contact your account manager for provisioning.
+Before streaming observability data to **Dynatrace**, ensure you have a subscription to the **Analytics Stream**. Contact your account manager for provisioning.
 
 ## Set up streaming observability data to Dynatrace
 
@@ -57,4 +57,4 @@ Large 'content' and 'exception.stacktrace' attribute values are truncated to 4,0
 
 * [Set up the OpenTelemetry Collector](stream-app-analytics-opentelemetry.md)
 
-* [Configure app analytics streams in Portal](stream-app-analytics-configure.md)
+* [Configure analytics streams in the ODC Portal](stream-app-analytics-configure.md)

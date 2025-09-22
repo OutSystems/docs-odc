@@ -27,7 +27,7 @@ outsystems-tools:
 
 # Streaming observability data to APM tools
 
-With ODC's App Analytics Stream, you can stream your observability data in an OpenTelemetry Protocol (OTLP) format to different Application Performance Monitoring (APM) tools so that you can analyze, monitor, and proactively troubleshoot your system. You can easily integrate your app with any APM tool, as most monitoring tools support data ingestion in OpenTelemetry (OTel) format.
+With ODC's **Analytics Stream**, you can stream your observability data in an OpenTelemetry Protocol (OTLP) format to different Application Performance Monitoring (APM) tools so that you can analyze, monitor, and proactively troubleshoot your system. You can easily integrate your app with any APM tool, as most monitoring tools support data ingestion in OpenTelemetry (OTel) format.
 
 # Set up observability data streams
 
@@ -43,9 +43,9 @@ For information about the prerequisites for streaming observability data, refer 
 
 1. (Optional) [Set up OpenTelemetry collector](stream-app-analytics-opentelemetry.md). If your tool does not support native ingestion of OpenTelemetry data, you must install and deploy the OpenTelemetry collector.
 
-1. To enable streaming from an ODC app to the corresponding APM tool, you must configure the APM server URL or OpenTelemetry collector URL and authentication credentials. For more information, refer to [Configure app analytics streams in Portal](stream-app-analytics-configure.md).
+1. To enable streaming from an ODC app to the corresponding APM tool, you must configure the APM server URL or OpenTelemetry collector URL and authentication credentials. For more information, refer to [Configure analytics streams in the ODC Portal](stream-app-analytics-configure.md).
 
-1. Test and validate the connection. In the ODC Portal, test if your app has established a connection with the APM tool and if the test data is sent to the destination tool. For more information, refer to [Configure app analytics streams in Portal](stream-app-analytics-configure.md). If the connection fails, refer to the [troubleshooting guide](https://success.outsystems.com/support/errors/log_streaming_errors/) to understand why and how to resolve the errors and retest the connection.
+1. Test and validate the connection. In the ODC Portal, test if your app has established a connection with the APM tool and if the test data is sent to the destination tool. For more information, refer to [Configure analytics streams in the ODC Portal](stream-app-analytics-configure.md). If the connection fails, refer to the [troubleshooting guide](https://success.outsystems.com/support/errors/log_streaming_errors/) to understand why and how to resolve the errors and retest the connection.
 
 1. Add the stages you want to stream data from and save your stream.
 
@@ -71,4 +71,4 @@ For detailed information on streaming observability data to different APM tools,
 
 * [Set up the OpenTelemetry Collector](stream-app-analytics-opentelemetry.md)
 
-* [Configuring streams in the ODC Portal](stream-app-analytics-configure.md)
+* [Configure analytics streams in the ODC Portal](stream-app-analytics-configure.md)
