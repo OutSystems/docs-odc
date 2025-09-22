@@ -26,45 +26,48 @@ Agentic app creation is available through the Early Access Program. Click here t
 
 </div>
 
-Use ODC Studio to define your AI agent's purpose, structure its capabilities, and develop the underlying logic that powers its actions. After creating the agent, you can reference its functionality in the consumer app.
+Use ODC Studio to define your AI agent's purpose, structure its capabilities, and develop the logic that powers its actions. After you create the agent, reference its functionality in a consumer app.
 
 ## Prerequisites
 
-Before creating an AI agent in ODC, ensure you have configured and set up an [AI model in the ODC Portal](add-ai-models.md). 
+Before you create an AI agent, configure an [AI model in the ODC Portal](add-ai-models.md).
 
-## High-level process for using AI agents in ODC 
+## Use AI agents in ODC
 
-Follow these steps to create, configure, and integrate AI agents into your OutSystems apps, enhancing their intelligence and interactivity.
+Follow these steps to create, configure, and integrate AI agents into your OutSystems apps.
 
 ![Diagram showing the high-level process for creating, configuring, and integrating AI agents in OutSystems Developer Cloud (ODC).](images/use-agents-diag.png "High-level process for using AI agents in ODC")
 
 ### 1. Create an AI agent app
 
-You build your AI agent app in ODC Studio. To start your creation journey, you can either go directly to ODC Studio or begin from the ODC Portal. In the ODC Portal, click **Create** and select **Agent** to go to ODC Studio, where you can define and develop your agent's capabilities.
+Create the AI agent app in ODC Studio. Either open ODC Studio directly or start from the ODC Portal. In the ODC Portal, click **Create** and select **Agent**. ODC Studio opens so you can define and develop the agent capabilities.
 
 ### 2. Choose an AI model 
 
-Select the large language model (LLM) your agent uses for its core intelligence. Refer to [Adding AI Models](add-ai-models.md) for more information about connecting your OutSystems apps to LLMs.
+Select the large language model (LLM) the agent uses. See [Adding AI Models](add-ai-models.md) for details about connecting your apps to LLMs.
 
-### 3. Build the AI agent's core functionality
+### 3. Build the agent functionality
 
-An `AgentTask` action encapsulates an AI agent's core functionality. This server action orchestrates the interaction with the AI model and handles data preparation and response processing. A typical `AgentTask` action wraps a sequence of server actions:
+An `AgentTask` server action encapsulates the agent functionality. It orchestrates interaction with the AI model and handles data preparation and response processing. A typical `AgentTask` action calls these server actions:
 
-* `GetGroundingData`: Retrieves any necessary contextual or [grounding data](agentic-apps.md#grounding) the AI model needs to provide a relevant and accurate response. Grounding data provides the AI with specific, up-to-date, or proprietary information beyond its general training. Through this action, you implement custom logic to gather and prepare the exact context the AI model requires. The action gets this context from the app's data sources, such as AI search service, REST API, aggregate, or static text, to enrich your agent's knowledge and context.  
-* `BuildMessages`: Constructs the prompt and conversation history (messages) that the AI model receives. It combines user input, historical conversation turns, and contextual or grounding data retrieved by the `GetGroundingData` action into a format the chosen AI model understands. An Assign node within this logic allows you to define the [system prompt](agentic-apps.md#system-prompts).  
-* `Call Agent Core`: Facilitates communication with a selected AI model by sending formatted messages and receiving a response. The agent can include any number of actions that the model can invoke, provided they use simple data types.
-* `StoreMemory`: Saves the conversation or generated information for future reference. This maintains context and enables multi-turn conversations or personalized interactions. For more information about state persistence, refer to [Agentic apps in ODC](agentic-apps.md#state-persistence).
+* `GetGroundingData` – Retrieves contextual or [grounding data](agentic-apps.md#grounding) the model needs. Use custom logic to gather context from data sources such as an AI search service, REST API, aggregate, or static text.
+* `BuildMessages` – Builds the prompt and conversation history that the model receives. It combines user input, prior conversation turns, and grounding data. Use an Assign node to define the [system prompt](agentic-apps.md#system-prompts).
+* `Call Agent Core` – Sends the formatted messages to the selected AI model and receives a response. The agent can include actions the model can invoke, such as those from an [MCP server](tools/mcp-connectors.md), if they use simple data types.
+* `StoreMemory` – Saves the conversation or generated information for future reference. This maintains context and enables multi-turn or personalized interactions. For details about state persistence, see [Agentic apps in ODC](agentic-apps.md#state-persistence).
 
-The service action is what encapsulates the AI agent's core logic. Once published, your Service Action becomes available for other apps to reference and consume.
+The Service Action encapsulates the agent logic. After you publish, the Service Action becomes available for other apps to reference.
 
-### 4. Reference agent service action in the consumer app
+### 4. Reference the agent service action in the consumer app
 
-After publishing your AI agent app, to use it in another app, you must establish a dependency on its service action. This makes the AI agent's capabilities available within your consumer app's logic. This service action appears as `Call<AgentName>`. 
+After you publish the agent app, add a dependency on its Service Action in the consumer app. The action appears as `Call<AgentName>`.
 
-### 5. Add `Call<AgentName>` to logic
+### 5. Add `Call<AgentName>` to your app logic
 
-Integrate the AI agent's functionality into your consumer app. When calling the agent, ensure you pass parameters such as `SessionId`, to maintain conversational context, and `UserInput`, the user's query or instruction. 
+Integrate the agent functionality into your consumer app logic. Pass:
+
+* `SessionId` to maintain conversational context.
+* `UserInput` for the user's query or instruction.
 
 ## Next steps
 
-For more information about how to consume a `Call<AgentName>` Service Action in your consumer app, refer to [Consuming an agent in an app](consumer-app.md).
+To learn how to consume a `Call<AgentName>` Service Action in a consumer app, see [Consume an agent in an app](consumer-app.md).

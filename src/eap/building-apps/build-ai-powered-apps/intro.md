@@ -66,7 +66,7 @@ Use cases suited for this approach include:
 
 ### AI agents 
 
-AI agents handle more complex and autonomous tasks directly within your low-code environment. They can independently manage multi-step workflows, interact with various systems and data sources, and make decisions based on their defined objectives and the information they gather.
+AI agents handle more complex and autonomous tasks directly within your low-code environment. They can independently manage multi-step workflows, interact with various systems and data sources, and make decisions based on their defined objectives and the information they gather. You can extend their capabilities by connecting them to external tools (custom MCP servers or prebuilt connectors). See [External tools](tools/intro.md) for an overview and, if needed, the implementation details for [MCP servers](tools/mcp-connectors.md).
 
 Use cases suited for AI agents include:
 
@@ -75,6 +75,10 @@ Use cases suited for AI agents include:
 * Automated data aggregation and report generation from internal data sources.
 * Automatic intake of supplier quotes by processing complex supplier quotes for clinical studies, extracting data, populating a budget workbook, comparing against rate sheets, and providing feedback/error reporting.  
 * Accelerate equity research report creation in the financial industry by collecting and ingesting data from various sources, reducing report writing time.
+
+### External tools
+
+External tools let agents invoke functionality that lives outside your ODC apps—either through custom MCP servers you host or prebuilt connectors (such as SerpAPI). Start with the [External tools overview](tools/intro.md) to choose the right approach. For detailed MCP server setup, see [MCP servers](tools/mcp-connectors.md).
 
 ### AI Agent Builder
 
@@ -123,3 +127,4 @@ ODC facilitates the development and management of intelligent apps. This documen
 * [Adding search services](add-ai-search-services.md)
 * [Integrating AI models and search services](integrate-ai-models-logic-rag.md)
 * [Agentic apps in ODC](agentic-apps.md)
+* [External tools (MCP servers & prebuilt connectors)](tools/intro.md)
