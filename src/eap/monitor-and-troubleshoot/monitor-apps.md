@@ -90,7 +90,7 @@ You can access logs, traces, and metrics data up to four weeks old within the OD
 
 ## Related resources
 
-* [Streaming observability data](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md) 
-* [Monitor app analytics in ODC Portal](app-health.md)
+* [Streaming observability data](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md)
+* [Monitor assets with ODC Analytics](app-health.md)
 * [Manage technical debt in ODC](../monitor-and-troubleshoot/manage-technical-debt/managing-tech-debt.md)
 * [Traces](../monitor-and-troubleshoot/traces/intro.md)

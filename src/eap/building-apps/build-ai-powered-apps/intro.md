@@ -118,7 +118,7 @@ The following table compares which tool offers the specific AI needed for your u
 | Content generation from the provided context | Yes | Yes |
 | Classification/analysis of static datasets | Yes | Yes |
 
-ODC facilitates the development and management of intelligent apps. This document details AI integration features. ODC also provides a dedicated **app analytics dashboard** to monitor the performance, usage, and errors of your deployed apps. This dashboard offers key metrics such as **health score, top apps by usage, request volume and rate, error counts and rates, and response times**. It provides a comprehensive overview of app performance. For detailed insights into user engagement, feature utilization, and performance trends across different geographies and browsers, refer to the [Monitor app analytics in the ODC Portal](../../monitor-and-troubleshoot/app-health.md). It also provides specific element and AI model metrics.
+ODC facilitates the development and management of intelligent apps. This document details AI integration features. ODC also provides a dedicated **app analytics dashboard** to monitor the performance, usage, and errors of your deployed apps. This dashboard offers key metrics such as **health score, top apps by usage, request volume and rate, error counts and rates, and response times**. It provides a comprehensive overview of app performance. For detailed insights into user engagement, feature utilization, and performance trends across different geographies and browsers, refer to the [Monitor assets with ODC Analytics](../../monitor-and-troubleshoot/app-health.md). It also provides specific element and AI model metrics.
 
 ## Next steps
 
