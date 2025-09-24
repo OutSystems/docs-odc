@@ -17,7 +17,7 @@ coverage-type:
   - remember
 ---
 
-# Monitor analytics in the ODC Portal
+# Monitor assets in ODC
 
 <div class="info" markdown="1">
 
