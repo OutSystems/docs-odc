@@ -53,7 +53,7 @@ The following diagram shows the high-level architecture of the development Platf
 
 ![Diagram showing the high-level architecture of the development Platform in OutSystems Developer Cloud.](images/high-level-architecture-platform-diag.png "Development Platform Architecture")
 
-#### Data platform
+#### Data platform { #data-platform }
 
 The **Data platform** collects, processes, and stores data from several sources. This information is then made available for analysis and visualization, allowing customers to monitor their apps’ performance and usage, and track platform operations. The Data platform is also responsible for processing Mentor App Generator’s data. 
 
@@ -74,7 +74,9 @@ The following diagram shows how different ODC features interact through the Data
 
 ##### Data residency
 
-The Data platform runs in a designated region based on your ODC organization’s region. For example, if your ODC organization is located in the Asia Pacific (Mumbai) region, the Data platform features run in the Asia Pacific (Singapore) region.
+The Data platform runs in a designated region based on your ODC organization’s region. For example, if your ODC organization is located in the Asia Pacific (Mumbai) region, the Data platform is hosted in the Asia Pacific (Singapore) region.
+
+<!--Changes to this table must also be replicated at the src\eap\manage-platform-app-lifecycle\odc-public-ips.md file-->
 
 | Customer regions | Data platform region |
 | :--- | :--- |
