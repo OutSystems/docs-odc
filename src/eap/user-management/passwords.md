@@ -40,7 +40,7 @@ If you're not receiving the password reset email, please check your spam folder 
 
 To enable your apps' end users to change and recover their passwords, you must provide them with authentication functionalities. You can build these functionalities in your app using ODC pre-built user screens. For more information, see [Custom authentication flows](../building-apps/ui/custom-auth.md).
 
-ODC temporarily locks users out after five consecutive failed sign-in or password change attempts. The lockout duration increases with each additional failed attempt, starting at just a few seconds and reaching a maximum of approximately 15 minutes. After the lockout period passes, your user information returns to the initial state.
+ODC temporarily locks users out after five consecutive failed sign-in or password change attempts. The lockout duration increases with each additional failed attempt, starting at just a few seconds and reaching a maximum of approximately 5 minutes. After the lockout period passes, your user information returns to the initial state.
 
 ## Password reset { #reset }
 
