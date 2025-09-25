@@ -34,6 +34,7 @@
             - href: eap/building-apps/build-ai-powered-apps/consumer-app.md
             - href: eap/building-apps/build-ai-powered-apps/function-calling.md
             - href: eap/building-apps/build-ai-powered-apps/prompt-engineering.md            
+            - href: eap/building-apps/build-ai-powered-apps/agent-long-running.md
             # MCPs and other tools
             - href: eap/building-apps/build-ai-powered-apps/tools/intro.md
             - topics:
@@ -840,6 +841,3 @@
     - href: error/aldi/intro.md
     - topics:
         - href: error/aldi/app_lib_depend_issues.md
-
-    
-        
