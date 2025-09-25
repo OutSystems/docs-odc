@@ -2055,6 +2055,229 @@
         "x-os-permissions": "API client needs the **User management > View organization members** permission."
       }
     },
+    "/subjects": {
+      "get": {
+        "tags": [
+          "subjects"
+        ],
+        "summary": "Retrieves the information for users or API clients based on given keys.",
+        "description": "Retrieves the information for users or API clients based on given keys.",
+        "operationId": "Subjects_QuerySubjects",
+        "parameters": [
+          {
+            "name": "keys",
+            "in": "query",
+            "description": "Users or/and API clients keys.",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubjectQueryResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subjects/me": {
+      "get": {
+        "tags": [
+          "subjects"
+        ],
+        "summary": "Retrieves the information for an user or API client based on the user/client’s access token.",
+        "description": "Retrieves the information for an user or API client based on the user/client’s access token.",
+        "operationId": "Subjects_ReadSelf",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubjectResponseApiModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subjects/{key}": {
+      "get": {
+        "tags": [
+          "subjects"
+        ],
+        "summary": "Retrieves the information for an user or API client based on the specified key.",
+        "description": "Retrieves the information for an user or API client based on the specified key.",
+        "operationId": "Subjects_ReadSubject",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "User or API client key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubjectResponseApiModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/permissions": {
       "get": {
         "tags": [
@@ -3554,6 +3777,35 @@
   },
   "components": {
     "schemas": {
+      "ApiClientSubject": {
+        "required": [
+          "clientId"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Api Client key.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "Api Client name.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Api Client description.",
+            "nullable": true
+          },
+          "clientId": {
+            "type": "string",
+            "description": "Api Client client id.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "AssetContext": {
         "enum": [
           "Organization",
@@ -4554,6 +4806,59 @@
         ],
         "type": "string"
       },
+      "SubjectQueryResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubjectResponseApiModel"
+            },
+            "description": "Gets or sets the users or/and Api clients",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubjectResponseApiModel": {
+        "type": "object",
+        "properties": {
+          "subjectType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SubjectType"
+              }
+            ],
+            "description": "Type of the subject."
+          },
+          "user": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UserSubject"
+              }
+            ],
+            "description": "User response. Returned if the SubjectType is User.",
+            "nullable": true
+          },
+          "apiClient": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ApiClientSubject"
+              }
+            ],
+            "description": "Api client response. Returned if the SubjectType is ApiClient.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubjectType": {
+        "enum": [
+          "User",
+          "ApiClient"
+        ],
+        "type": "string"
+      },
       "UserGroupResponse": {
         "required": [
           "group",
@@ -4878,6 +5183,40 @@
           "PendingRegistration"
         ],
         "type": "string"
+      },
+      "UserSubject": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "User key.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "User name.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "User email.",
+            "nullable": true
+          },
+          "photoUrl": {
+            "type": "string",
+            "description": "User photo url.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
       }
     }
   }

@@ -672,7 +672,15 @@
     - topics:
         - href: eap/reference/apis/public-rest-apis/end-user-management-use-cases/create-user-assign-role.md 
     - href: eap/reference/apis/portfolio-v1.md
-   
+    - href: eap/reference/apis/build-v1.md
+    - href: eap/reference/apis/deployment-v1.md
+    - href: eap/reference/apis/dependency-v1.md
+    - href: eap/reference/apis/asset-v1.md
+    - href: eap/reference/apis/asset-config-v1.md
+    - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/intro.md
+    - topics:
+        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/select-revision-build.md 
+        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/deploy-asset.md    
 
 # Reference
 - href: eap/reference/intro.md
