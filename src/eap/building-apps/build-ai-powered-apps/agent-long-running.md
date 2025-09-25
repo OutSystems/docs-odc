@@ -73,6 +73,6 @@ On your Agent app side:
 
 <div class= "info" markdown="1">
 
-To see the details of this implementation, download the [Async Summarizer App sample](resources/Async%20Summarizer%20App.oml), and the [Async Summarizer Agent sample](resources/Async%20Summarizer%20Agent.oml), or look for the same apps on your tenant Forge.
+To see the details of this implementation, download the [Async Summarizer App sample](resources/AsyncSummarizerApp.oml), and the [Async Summarizer Agent sample](resources/AsyncSummarizerAgent.oml), or look for the same apps on your tenant Forge.
 
 </div>
