@@ -33,7 +33,7 @@ Agentic app creation is available through the Early Access Program. [Apply for t
 
 </div>
 
-Both paths produce server actions you can call in app logic or expose to agents (for example, in the `Call Agent Core` element). Choose a custom MCP server when you need open, portable definitions or plan to reuse across environments. Choose a prebuilt connector for faster setup and reduced protocol overhead.
+Both paths produce server actions you can call in app logic or expose to agents (for example, in the `Call Agent` element). Choose a custom MCP server when you need open, portable definitions or plan to reuse across environments. Choose a prebuilt connector for faster setup and reduced protocol overhead.
 
 Decision summary:
 

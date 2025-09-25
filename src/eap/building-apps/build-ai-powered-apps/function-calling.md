@@ -27,7 +27,7 @@ Function calling is the ability of an [AI model](ai-models.md) to go beyond gene
 
 ## Action calling 
 
-In ODC, the `AgentCore` element within an `AgentTask` flow orchestrates this process. When you trigger an agent, it dynamically decides the best course of action using an AI model's reasoning. This can involve calling a single Server Action, a sequence of different actions, or the same action multiple times.
+In ODC, the `Call Agent` element within an `Agent Flow` orchestrates this process. When you trigger an agent, it dynamically decides the best course of action using an AI model's reasoning. This can involve calling a single Server Action, a sequence of different actions, or the same action multiple times.
 
 The AI model decides based on the context you provide, which includes:
 
@@ -73,9 +73,9 @@ You define an expression that evaluates after each action call. If the expressio
 
 In Action calling, a **loop** is a single cycle where the AI model calls an action and then uses that action's output to reason about the next step. An agent can loop multiple times to gather enough information before generating a final answer.
 
-Your Call Condition expression can use any of the variables that are in scope when AgentCore runs. As in any Server Action, these are the variables set by actions earlier in the logic flow of AgentTask. Additionally, it can also use the following internal variables that track the agent’s progress in real-time:
+Your Call Condition expression can use any of the variables that are in scope when Call Agent runs. As in any Server Action, these are the variables set by actions earlier in the logic flow of AgentFlow. Additionally, it can also use the following internal variables that track the agent’s progress in real-time:
 
-* `TokenUsage`: Represents the total number of tokens the agent may consume in one execution of AgentCore. For example, the expression `TokenUsage = 8000` limits token use to a maximum of 8000 tokens.  
+* `TokenUsage`: Represents the total number of tokens the agent may consume in one execution of Call Agent. For example, the expression `TokenUsage = 8000` limits token use to a maximum of 8000 tokens.  
 * `LoopCount`: Represents the number of reasoning loops the agent has executed in the current task.  
 * `TotalCallsCount`: Represents the total number of individual actions the agent has called across all loops. For example, if the agent calls **action 1** ten times and **action 2** fifteen, the `TotalCallsCount` is 25.
 

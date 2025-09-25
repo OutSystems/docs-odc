@@ -28,7 +28,7 @@ Agentic app creation is available through the Early Access Program. Click here t
 
 Consumer apps are the user-facing applications that interact with AI agents to provide intelligent experiences to end users. These apps manage user sessions, process user input, and orchestrate communication with AI agents to deliver contextual, conversation-driven functionality.
 
- When making calls to the AI agent, the consumer app must pass the `UserInput` and `SessionId` parameters. The `UserInput` contains the user's message, query, or request that the agent processes. The `SessionId` [maintains conversation context across multiple interactions](agentic-apps.md#state-persistence), ensuring the agent app can reference previous exchanges and provide contextually relevant responses. Generate a unique `SessionId` using the `GenerateGuid` Server action in ODC Studio, though you can use any method that produces a unique identifier.
+ When making calls to the AI agent, the consumer app must pass the `UserInput` and `SessionId` parameters. The `UserInput` contains the user's message, query, or request that the agent processes. The `SessionId` [maintains conversation context across multiple interactions](agentic-apps.md#state-persistence), ensuring the agentic app can reference previous exchanges and provide contextually relevant responses. Generate a unique `SessionId` using the `GenerateGuid` Server action in ODC Studio, though you can use any method that produces a unique identifier.
 
 ## High-level process overview
 
@@ -50,8 +50,8 @@ This example shows multiple Server calls from Client actions for demonstration p
 
 </div>
 
-### Agent app logic
+### Agentic app logic
 
-On the agent app side, the Service action receives `UserInput` and `SessionId` as input parameters and processes the request. The agent uses the `SessionId` to retrieve conversation context and track interaction history, while the `UserInput` contains the specific message or query to process. The agent then orchestrates the [necessary actions](create-agent.md)- such as retrieving grounding data, building messages for the AI model, and generating a contextually relevant response- before returning the result through the `Response` output parameter to the consumer app.
+On the agentic app side, the Service action receives `UserInput` and `SessionId` as input parameters and processes the request. The agent uses the `SessionId` to retrieve conversation context and track interaction history, while the `UserInput` contains the specific message or query to process. The agent then orchestrates the [necessary actions](create-agent.md)- such as retrieving grounding data, building messages for the AI model, and generating a contextually relevant response- before returning the result through the `Response` output parameter to the consumer app.
 
-![Agent app workflow](images/agent-app-logic-odcs.png "Agent app sample logic")
+![Agent app workflow](images/agent-app-logic-odcs.png "Agentic app sample logic")

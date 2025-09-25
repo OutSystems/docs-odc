@@ -48,7 +48,7 @@ Select **Import** and choose only the tools (server actions) you need. Optionall
 
 ## Use tools in apps and agents
 
-Add the imported tools as dependencies in ODC Studio. Invoke them in server logic or in an agent’s **Call Agent Core** element. Map required inputs (such as query text) and implement error handling—for example, invalid or expired key, empty results, or rate limit exceeded.
+Add the imported tools as dependencies in ODC Studio. Invoke them in server logic or in an agent’s **Call Agent** element. Map required inputs (such as query text) and implement error handling—for example, invalid or expired key, empty results, or rate limit exceeded.
 
 ## Related topics
 

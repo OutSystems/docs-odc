@@ -23,10 +23,10 @@ Sometimes when you create an agent you can get a timeout as the AI Model takes a
 
 To overcome this in ODC Agents you can:
 
-1. raise the timeout limit of your agent apps or actions.
+1. raise the timeout limit of your agentic apps or actions.
 1. for more complex cases, create logic that manage the AI agent responses.
 
-## Raise the timeout limit of you Agent apps or actions
+## Raise the timeout limit of you Agentic apps or actions
 
 A first measure you can do to mitigate timeout issues is increase the timeout time of your app or of your agent calls.
 
@@ -52,7 +52,7 @@ On your app side:
 
 1. These two actions call two different server actions. One to call the agent asynchronously, the other one to check the agent answer status.
 
-On your Agent app side:
+On your Agentic app side:
 
 1. you need to create a service action that creates an entry on a Queue entity, an entry on a Request entity and triggers an event with the queue Id of your agent call.
 

@@ -38,9 +38,9 @@ Follow these steps to create, configure, and integrate AI agents into your OutSy
 
 ![Diagram showing the high-level process for creating, configuring, and integrating AI agents in OutSystems Developer Cloud (ODC).](images/use-agents-diag.png "High-level process for using AI agents in ODC")
 
-### 1. Create an AI agent app
+### 1. Create an AI agentic app
 
-Create the AI agent app in ODC Studio. Either open ODC Studio directly or start from the ODC Portal. In the ODC Portal, click **Create** and select **Agent**. ODC Studio opens so you can define and develop the agent capabilities.
+Create the AI agentic app in ODC Studio. Either open ODC Studio directly or start from the ODC Portal. In the ODC Portal, click **Create** and select **Agentic app**. ODC Studio opens so you can define and develop the agent capabilities.
 
 ### 2. Choose an AI model 
 
@@ -48,18 +48,18 @@ Select the large language model (LLM) the agent uses. See [Adding AI Models](add
 
 ### 3. Build the agent functionality
 
-An `AgentTask` server action encapsulates the agent functionality. It orchestrates interaction with the AI model and handles data preparation and response processing. A typical `AgentTask` action calls these server actions:
+An `AgentFlow` server action encapsulates the agent functionality. It orchestrates interaction with the AI model and handles data preparation and response processing. A typical `AgentFlow` action calls these server actions:
 
 * `GetGroundingData` – Retrieves contextual or [grounding data](agentic-apps.md#grounding) the model needs. Use custom logic to gather context from data sources such as an AI search service, REST API, aggregate, or static text.
 * `BuildMessages` – Builds the prompt and conversation history that the model receives. It combines user input, prior conversation turns, and grounding data. Use an Assign node to define the [system prompt](agentic-apps.md#system-prompts).
-* `Call Agent Core` – Sends the formatted messages to the selected AI model and receives a response. The agent can include actions the model can invoke, such as those from an [MCP server](tools/mcp-connectors.md), if they use simple data types.
+* `Call Agent` – Sends the formatted messages to the selected AI model and receives a response. The agent can include actions the model can invoke, such as those from an [MCP server](tools/mcp-connectors.md), if they use simple data types.
 * `StoreMemory` – Saves the conversation or generated information for future reference. This maintains context and enables multi-turn or personalized interactions. For details about state persistence, see [Agentic apps in ODC](agentic-apps.md#state-persistence).
 
 The Service Action encapsulates the agent logic. After you publish, the Service Action becomes available for other apps to reference.
 
 ### 4. Reference the agent service action in the consumer app
 
-After you publish the agent app, add a dependency on its Service Action in the consumer app. The action appears as `Call<AgentName>`.
+After you publish the agentic app, add a dependency on its Service Action in the consumer app. The action appears as `Call<AgentName>`.
 
 ### 5. Add `Call<AgentName>` to your app logic
 

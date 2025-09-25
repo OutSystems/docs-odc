@@ -22,7 +22,7 @@ outsystems-tools:
 
 # Unsupported MCP data structures
 
-Some actions from an external MCP server may be disabled in any ODC app, not just agent apps, because their underlying data structures are too complex for ODC to handle. This is a built-in safety feature to prevent errors. The fix requires simplifying the action's schema on the external MCP server itself.
+Some actions from an external MCP server may be disabled in any ODC app, not just agentic apps, because their underlying data structures are too complex for ODC to handle. This is a built-in safety feature to prevent errors. The fix requires simplifying the action's schema on the external MCP server itself.
 
 ## Why you can't import an action
 

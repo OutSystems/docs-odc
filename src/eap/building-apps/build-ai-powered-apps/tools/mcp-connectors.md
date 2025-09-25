@@ -75,13 +75,13 @@ Select **Import** in the connection list to bring tools (server actions) into OD
 
 ### Add dependencies
 
-In ODC Studio, open the agent app and add the MCP tools (server actions) as dependencies. They keep the names assigned during import.
+In ODC Studio, open the agentic app and add the MCP tools (server actions) as dependencies. They keep the names assigned during import.
 
 You can add MCP tools as dependencies in any ODC app.
 
 ### Use tools in an agent
 
-In the **Call Agent Core** element, add tools (server actions), configure parameters, map values, and handle errors.
+In the **Call Agent** element, add tools (server actions), configure parameters, map values, and handle errors.
 
 ## Sample use cases
 

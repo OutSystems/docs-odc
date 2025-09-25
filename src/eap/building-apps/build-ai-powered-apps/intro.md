@@ -80,45 +80,9 @@ Use cases suited for AI agents include:
 
 External tools let agents invoke functionality that lives outside your ODC apps—either through custom MCP servers you host or prebuilt connectors (such as SerpAPI). Start with the [External tools overview](tools/intro.md) to choose the right approach. For detailed MCP server setup, see [MCP servers](tools/mcp-connectors.md).
 
-### AI Agent Builder
+## Monitoring Agentic apps
 
-The AI Agent Builder, available to install via [Forge](https://www.outsystems.com/forge/list), offers extended capabilities, including real-time data access and agent-based automation for complex tasks.
-
-Use cases include:
-
-* Providing real-time updates, such as current weather forecasts or stock market trends, retrieved via [external calls](../../integration-with-systems/intro.md).  
-* Automating booking processes that require interaction with external [APIs](../../integration-with-systems/consume_rest/intro.md), like scheduling flights and hotel reservations.
-* Enabling chatbots to handle complete transactions, such as processing orders and managing refunds, involving multiple steps and [external system calls](../../integration-with-systems/intro.md).
-
-Both AI models in the ODC Portal and the AI Agent Builder enable you to:
-
-* Make AI integration more accessible, allowing the developers to implement many common AI tasks independently.
-* Reduce costs associated with upskilling teams specifically for complex AI integrations.
-* Control how your organization uses AI to help ensure security and compliance.
-
-AI Agent Builder additionally enables you to:
-
-* Demonstrate how quickly AI agents can be integrated to inspire teams to innovate and increase automation.
-* Create reusable agents that you can apply across multiple use cases.
-* Build user interfaces (Uls) that connect directly to AI-powered widgets and the logic within your app.
-
-## Capability comparison
-
-The following table compares which tool offers the specific AI needed for your use case.
-
-| Capability or Use Case | AI models in the ODC Portal | AI Agent Builder |
-| :---- | :---- | :---- |
-| AI-driven text generation | Yes | Yes |
-| Static data analysis | Yes | Yes |
-| Autonomous multi-system data fetching during execution | No | Yes |
-| Simple pre-defined workflows or tasks | Yes | Yes |
-| Multi-step complex/dynamic workflows (agent-driven) | Yes | Yes |
-| Transactional interactions | No | Yes |
-| Autonomous decision-making (external actions) | No | Yes |
-| Content generation from the provided context | Yes | Yes |
-| Classification/analysis of static datasets | Yes | Yes |
-
-ODC facilitates the development and management of intelligent apps. This document details AI integration features. ODC also provides a dedicated **app analytics dashboard** to monitor the performance, usage, and errors of your deployed apps. This dashboard offers key metrics such as **health score, top apps by usage, request volume and rate, error counts and rates, and response times**. It provides a comprehensive overview of app performance. For detailed insights into user engagement, feature utilization, and performance trends across different geographies and browsers, refer to the [Monitor assets with ODC Analytics](../../monitor-and-troubleshoot/app-health.md). It also provides specific element and AI model metrics.
+ODC facilitates the development and management of intelligent apps. ODC provides a dedicated **app analytics dashboard** to monitor the performance, usage, and errors of your deployed apps. This dashboard offers key metrics such as **health score, top apps by usage, request volume and rate, error counts and rates, and response times**. It provides a comprehensive overview of app performance. For detailed insights into user engagement, feature utilization, and performance trends across different geographies and browsers, refer to the [Monitor assets with ODC Analytics](../../monitor-and-troubleshoot/app-health.md). It also provides specific element and AI model metrics.
 
 ## Next steps
 
