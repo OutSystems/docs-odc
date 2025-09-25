@@ -21,13 +21,13 @@ topic:
 ---
 # Testing your messages
 
-System and user messages are an essential part of making your Agents response the best possible. For that not to be a time consuming process, ODC allows you to try your messages before you commit to them. This way when you publish your agent, it has the right set of messages for your use case.
+System and user messages are an essential part of making your Agents' response the best possible. To avoid a time-consuming process, ODC allows you to preview your messages before committing to them. This way, when you publish your agent, it has the right set of messages for your use case.
 
 ## How to test your messages on ODC Studio
 
-You can test System messages, User messages or both in the Test area. To test your messages on ODC Studio:
+You can test System messages, User messages, or both in the Test area. To test your messages on ODC Studio:
 
-1. Inside your Agent App, double-click on the Call Agent node, within the Agent Flow. This opens the Call agent window:
+1. Inside your Agentic App, double-click on the Call Agent node within the Agent Flow. This opens the Call agent window:
 
     ![Screenshot of the Call Agent window in ODC Studio showing the AI model selection.](images/ai-model-odcs.png "Call Agent Window in ODC Studio")
 
@@ -35,18 +35,18 @@ You can test System messages, User messages or both in the Test area. To test yo
 
     ![Screenshot of the Test tab in ODC Studio where users can enter system and user messages to test.](images/test-prompt-odcs.png "Test Tab in ODC Studio")
 
-1. In the Test you can:
+1. In the Test, you can:
 
-    1. Select from the AI model drop-down, the model you want to use in your testing.
+    1. Select from the AI model drop-down the model you want to use in your testing.
     1. Write the System Message you want to test.
     1. Write the User Message you want to test.
     1. Click Test to test your message(s).
 
-**Tip:** You can copy any of your messages or test result, by clicking on the copy icon right next to the messages or button in the answer. These are added to your clipboard.
+**Tip:** You can copy any of your messages or test results by clicking the copy icon located next to the message or button in the answer. These are added to your clipboard.
 
 ## Testing example
 
-In the following example you can see a test for both a System message and a User message:
+In the following example, you can see a test for both a System message and a User message:
 
 ![Screenshot of a testing example in ODC Studio showing system and user messages with the AI model response.](images/test-example-odcs.png "Testing Example in ODC Studio")
 
@@ -55,4 +55,4 @@ Whenever you test messages, you'll get:
 * The test response
 * The time stamp of your request
 * Information on the AI Model used on the test
-* The number of inputs and outputs used during the test
+* The number of input and output tokens used during the test
