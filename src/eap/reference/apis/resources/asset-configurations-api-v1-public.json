@@ -737,6 +737,7 @@
           "revisionBaseline": {
             "type": "integer",
             "description": "The asset's revision.",
+            "required": true,
             "format": "int32",
             "nullable": true
           },
@@ -852,6 +853,7 @@
           "revisionBaseline": {
             "type": "integer",
             "description": "The asset's revision.",
+            "required": true,
             "format": "int32",
             "nullable": true
           },
