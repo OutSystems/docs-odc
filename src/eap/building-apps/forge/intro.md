@@ -33,6 +33,7 @@ The following is a list of apps and libraries you can share in Forge:
     * **Development tools** - to support the app lifecycle management.
     * **Templates. demos, and samples** - to view examples that show how you might use specific capabilities.
     * **Mobile Plugins** - to extend your app, such as a camera plugin.
+* **Agent Apps**. AI Agent apps that enable to fulfill agentic use cases.
 
 ## Asset availability
 
