@@ -55,7 +55,7 @@ By default, the asset name, icon, and short description are defined during devel
    
    <div class="info" markdown="1" >
 
-   When you are submitting Agentic apps, be aware that you can only submit Agent apps that use Amazon Bedrock trial AI models. If you have a paid model, you need to adapt your app to use an Amazon Bedrock trial model before you submit to Forge.
+   When you are submitting Agentic apps, be aware that you can only submit Agent apps that use Amazon Bedrock trial AI models. If you have a paid model, you need to adapt your app to use an Amazon Nova Pro or Claude 3.7 Sonnet trial models before you submit to Forge.
 
    </div>
    
