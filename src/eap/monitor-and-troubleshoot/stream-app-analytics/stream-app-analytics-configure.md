@@ -88,6 +88,13 @@ A stream can have one of the following statuses:
 
 * **Inactive:**  When you manually deactivate a stream, it transitions to an inactive state, and no data is sent to the APM tool. You can reactivate an inactive stream. Once the stream is successfully reactivated, its status will change to **Active**.
 
+
+<div class="info" markdown="1">
+
+When sending logs from multiple environments to a same destination, create one connection while selecting multiple environments.
+
+</div>
+
 ## Next steps
 
 For detailed information on streaming observability data to different APM tools, refer to:
