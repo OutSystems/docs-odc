@@ -42,9 +42,15 @@ The core of this functionality lies in how you define actions for your agent.
 
 Providing actions is optional. If you don't provide any Server Actions, the agent relies exclusively on the AI model's internal knowledge to generate responses.
 
+<div class="info" markdown="1">
+
+Action calling and structured output can't be used on the same Agent call. If you want to use action calling and structure output, you must do action calling on an Agent call and then do the Structure output on another Agent call.
+
+</div>
+
 ### Implementation considerations
 
-To build reliable and effective agents, keep the following in mind. 
+To build reliable and effective agents, keep the following in mind.
 
 #### Indicate AI-generated content
 
