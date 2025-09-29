@@ -17,12 +17,6 @@ helpids:
 ---
 # AI agent actions
 
-<div class="info" markdown="1">
-
-Agentic app creation is available through the Early Access Program. Click here to [apply for the Early Access Program](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/). 
-
-</div>
-
 Function calling is the ability of an [AI model](ai-models.md) to go beyond generating text and intelligently use tools to perform actions or get data. With function calling, [you can build AI agents](create-agent.md)  that interact with your apps and data sources to fulfill complex user requests.
 
 ## Action calling 

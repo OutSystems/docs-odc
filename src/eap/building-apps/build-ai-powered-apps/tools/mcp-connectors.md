@@ -22,12 +22,6 @@ outsystems-tools:
 
 # Use MCP servers
 
-<div class="info" markdown="1">
-
-MCP server integration is available through the Early Access Program. [Apply for the Early Access Program](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/).
-
-</div>
-
 Use Model Context Protocol (MCP) servers to extend AI agents in OutSystems Developer Cloud (ODC) with external systems. Tools exposed by an MCP server become server actions that agents can call. ODC Portal accelerates setup by discovering connection details from the server URL.
 
 MCP standardizes how agents call external capabilities. LLMs can't reach real-time or protected enterprise data on their own; bespoke integrations create inconsistency and maintenance overhead. MCP defines a common contract (purpose, inputs, outputs) so an agent can call any compliant tool without custom glue.

@@ -20,12 +20,6 @@ helpids: 30645, 30648
 
 # Creating an AI agent in ODC Studio
 
-<div class="info" markdown="1">
-
-Agentic app creation is available through the Early Access Program. Click here to [apply for the Early Access Program](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/). 
-
-</div>
-
 Use ODC Studio to define your AI agent's purpose, structure its capabilities, and develop the logic that powers its actions. After you create the agent, reference its functionality in a consumer app.
 
 ## Prerequisites

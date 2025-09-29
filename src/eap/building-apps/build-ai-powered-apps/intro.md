@@ -25,12 +25,6 @@ helpids:
 
 # Build AI-powered apps
 
-<div class="info" markdown="1">
-
-Agentic app creation is available through the Early Access Program. Click here to [apply for the Early Access Program](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/). 
-
-</div>
-
 Automate business processes, enhance productivity, and enable new user experience patterns by integrating AI into your business using OutSystems Developer Cloud (ODC). ODC provides a platform that combines low-code development with AI integration features, simplifying the creation of AI-enhanced solutions. Incorporating AI into your ODC apps and workflows enables capabilities such as:
 
 * Respond dynamically to changing conditions in real time.  

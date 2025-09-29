@@ -27,12 +27,6 @@ External tools extend OutSystems Developer Cloud (ODC) apps and AI agents with r
 * **Custom MCP servers**: Open protocol endpoints. The platform can discover capabilities, prefill connection details, and let you import selected tools (server actions).
 * **Prebuilt connectors**: Curated integrations for popular APIs (for example, SerpAPI) with a guided flow (create connection, authenticate, import tools).
 
-<div class="info" markdown="1">
-
-Agentic app creation is available through the Early Access Program. [Apply for the Early Access Program](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/).
-
-</div>
-
 Both paths produce server actions you can call in app logic or expose to agents (for example, in the `Call Agent` element). Choose a custom MCP server when you need open, portable definitions or plan to reuse across environments. Choose a prebuilt connector for faster setup and reduced protocol overhead.
 
 Decision summary:

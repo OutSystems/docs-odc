@@ -24,12 +24,6 @@ outsystems-tools:
 
 Prebuilt connectors integrate external services without requiring you to host a custom MCP server. Each connector provides guided setup, authentication, and validation. After you create a connection and import selected tools (server actions), they are available in any app or agent.
 
-<div class="info" markdown="1">
-
-Agentic app creation is available through the Early Access Program. [Apply for the Early Access Program](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/).
-
-</div>
-
 ## Available connectors
 
 The list below shows currently supported prebuilt connectors. Additional connectors may be added.

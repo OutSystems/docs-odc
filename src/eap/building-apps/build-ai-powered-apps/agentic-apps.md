@@ -21,12 +21,6 @@ helpids: 30646, 30647, 30649, 30650
 
 # Agentic apps in ODC
 
-<div class="info" markdown="1">
-
-AI agent creation is available through the Early Access Program. Click here to [apply for the Early Access Program](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/).
-
-</div>
-
 In ODC Studio, you can integrate AI capabilities into your apps either by calling AI models directly or by orchestrating them through AI agents. Choose the approach that matches how dynamic and autonomous the required behavior must be.
 
 An **agentic app** uses one or more AI agents to perform tasks, automate workflows, or handle complex multi‑step interactions. Unlike traditional apps that rely on direct user input for each step, agentic apps can act autonomously or semi‑autonomously—making decisions, invoking external tools, and coordinating logic. These apps consume the capabilities exposed by AI agents.

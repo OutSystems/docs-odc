@@ -20,12 +20,6 @@ helpids:
 
 # Consuming AI agents in apps
 
-<div class="info" markdown="1">
-
-Agentic app creation is available through the Early Access Program. Click here to [apply for the Early Access Program](https://www.outsystems.com/low-code-platform/agentic-ai-workbench/eap-agent-workbench/). 
-
-</div>
-
 Consumer apps are the user-facing applications that interact with AI agents to provide intelligent experiences to end users. These apps manage user sessions, process user input, and orchestrate communication with AI agents to deliver contextual, conversation-driven functionality.
 
  When making calls to the AI agent, the consumer app must pass the `UserInput` and `SessionId` parameters. The `UserInput` contains the user's message, query, or request that the agent processes. The `SessionId` [maintains conversation context across multiple interactions](agentic-apps.md#state-persistence), ensuring the agentic app can reference previous exchanges and provide contextually relevant responses. Generate a unique `SessionId` using the `GenerateGuid` Server action in ODC Studio, though you can use any method that produces a unique identifier.
