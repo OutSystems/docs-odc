@@ -24,7 +24,7 @@ helpids:
 
 Integrating AI capabilities often involves connecting to AI models or specialized AI search services. Once you establish the connections in the ODC Portal, the next step is to incorporate calls to these services within your app logic in ODC Studio. Doing so lets you enhance user experiences or automate processes using AI directly.
 
-This article focuses on that implementation step, detailing the procedures for calling configured AI Models and AI Search services from ODC Studio, including common patterns like Retrieval-Augmented Generation (RAG).
+This article focuses on that implementation step, detailing the procedures for calling configured AI models and AI search services from ODC Studio, including common patterns like Retrieval-Augmented Generation (RAG).
 
 <div class="info" markdown="1">
 
