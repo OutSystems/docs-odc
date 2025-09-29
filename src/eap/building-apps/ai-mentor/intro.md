@@ -7,7 +7,7 @@ app_type: reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=6814-98&t=06ppRqezdRkEkuAh-1
 outsystems-tools:
-  - odc studio
+  - portal
 coverage-type:
   - understand 
 audience:
