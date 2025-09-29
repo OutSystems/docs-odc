@@ -22,11 +22,21 @@ helpids:
 
 # Integrating AI models and search services
 
-Integrating AI capabilities often involves connecting to AI Models or specialized AI Search services. Once you establish the connections in the ODC Portal, the next step is to incorporate calls to these services within your app logic in ODC Studio. Doing so lets you enhance user experiences or automate processes using AI directly.
+Integrating AI capabilities often involves connecting to AI models or specialized AI search services. Once you establish the connections in the ODC Portal, the next step is to incorporate calls to these services within your app logic in ODC Studio. Doing so lets you enhance user experiences or automate processes using AI directly.
 
-This page focuses on that implementation step, detailing the procedures for calling configured AI Models and AI Search services from ODC Studio, including common patterns like RAG.
+This article focuses on that implementation step, detailing the procedures for calling configured AI Models and AI Search services from ODC Studio, including common patterns like Retrieval-Augmented Generation (RAG).
+
+<div class="info" markdown="1">
+
+For more information on the models available in an ODC trial, refer to [AI models and search services in ODC](ai-models.md#trial).
+
+</div>
 
 ## Implementing AI model calls
+
+The following video walks you through adding and configuring AI models, using AI models and ODC Studio and enabling RAG through search services. 
+
+<iframe src="https://player.vimeo.com/video/1112003106" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Video on how to implement AI model calls in your app logic.</iframe>
 
 First, identify the name you gave your [AI model connection](add-ai-models.md#add-ai-models) in the **ODC Portal**. Navigate to **INTEGRATE** > **AI models**, select your model, and check the **Name** field in its **Details**. ODC uses this name, referred to here as **(model name)**, to expose an action named **Call(model name)**.
 
