@@ -23,7 +23,7 @@ helpids:
 ---
 # Configuring mobile apps
 
-You can configure your mobile app via the mobile app properties. For customizing and enhancing mobile app functionality beyond the default settings and for more granular control over mobile app's build process, you can directly edit the [extensibility configuration JSON files](extensibility-configurations.md).
+You can configure your mobile app via the mobile app properties. For customizing and enhancing mobile app functionality beyond the default settings and for more granular control over the mobile app's build process, you can directly edit the [extensibility configuration JSON files](extensibility-configurations.md). Additionally, the icon selected for the app is automatically used as the icon in the store unless a new one is set in the extensibility configurations. The icon selected in the creation step must be 1024x1024. If it isn't, it will be resized to fit this criterion, which may increase its size beyond the 512KB limit, making it invalid.
 
 ## Configure mobile properties
 
