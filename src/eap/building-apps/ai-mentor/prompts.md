@@ -40,7 +40,6 @@ Use this table to choose a UI pattern based on your dataset shape, visual emphas
 | Card list | Visual scanning of records with key attributes | Need wide column comparison | Add tags, actions on each card |
 | Card gallery | Image-centric content (products, media) | Text-heavy data | Add category filter, lazy load |
 | Master detail | Fast browse + inspect a record | Very small datasets | Add tabs, related lists |
-| Card list with detail (accordion) | Expand in-place without navigation | Detail is long or complex | Add collapsible sections |
 | Card list with detail (sidebar) | Keep list visible while editing | Screen space is limited | Add inline edit for key field |
 | Card list with map | Geo context alongside list | No location data | Add clustering, status tags |
 
