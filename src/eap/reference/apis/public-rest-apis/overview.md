@@ -35,7 +35,7 @@ The user and access management REST API enables you to programmatically manage u
 
 * Listing the current end-users of the apps to understand their status and modifying specific user information.
 
-* Managing user access to specific resources or functionalities within the app. It includes granting or revoking access permissions, managing user groups, and defining access policies. 
+* Managing user access to specific resources or functionalities within the app. It includes granting or revoking access permissions, managing user groups, and defining access policies.
 
 For detailed information about the endpoints, refer to [User management API reference](../identity-v1.md).
 
@@ -79,7 +79,7 @@ For detailed information about the endpoints, refer to [Dependency Management AP
 
 ### Asset Repository
 
-The Asset Repository REST API enables you to access information about your ODC assets and manage their revisions. 
+The Asset Repository REST API enables you to access information about your ODC assets and manage their revisions.
 
 For detailed information about the endpoints, refer to [Asset Repository API reference](../asset-v1.md).
 
@@ -93,11 +93,11 @@ The Asset Configurations REST API enables you to manage configuration settings f
 
 For detailed information about the endpoints, refer to [Asset Configurations API reference](../asset-config-v1.md).
 
-## Terminology mapping between ODC portal and ODC APIs
+## Terminology mapping between the ODC Portal and ODC APIs
 
 A **stage** in ODC refers to the place where you deploy your apps, such as the Development stage and the Production stage. In ODC REST APIs, the **ODC stage** is represented as an **environment** resource.
 
-An **end-user role** is a set of permissions assigned to users who interact with the ODC app. For detailed information about end-user roles, see [Secure your app with end-user roles](../../../user-management/secure-app-with-roles.md). In ODC REST APIs, an **end-user role** is represented as an **application role** resource. 
+An **end-user role** is a set of permissions assigned to users who interact with the ODC app. For detailed information about end-user roles, see [Secure your app with end-user roles](../../../user-management/secure-app-with-roles.md). In ODC REST APIs, an **end-user role** is represented as an **application role** resource.
 
 ## Related resources
 

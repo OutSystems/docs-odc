@@ -46,7 +46,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 ### Step 2: Select a scope
 
-1. Select the scope you want to assign the provider to. 
+1. Select the scope you want to assign the provider to.
 
     * **Organization**
 
@@ -57,9 +57,9 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
       When assigned to the apps in the stage, the provider can authenticate users in the selected stage.
 
     <div class="info" markdown="1">
-    
-    You cannot change the scope once the provider is configured. 
-    
+
+    You can't change the scope once the provider is configured.
+
     </div>
 
 1. Click **Next**.
@@ -70,11 +70,11 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     * Identifier
     * X509 certificates
-    * Redirect URLs 
+    * Redirect URLs
 
     You can retrieve this information using an XML file or manually.
 
-1. Enter this metadata in your identity provider's configuration page. 
+1. Enter this metadata in your identity provider's configuration page.
 
 1. Click **Next**.
 
@@ -103,25 +103,31 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     <div class="info" markdown="1">
 
     There is a 255-character limit for the claim mapping details.
-    
+
+    </div>
+
+    <div class="info" markdown="1">
+
+    For more details about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](intro.md#claim-mapping-logic).
+
     </div>
 
 1. (Optional) Click **Show advanced options** to configure additional SAML settings:
 
     **Signature key name**: Signed SAML documents sent using POST binding contain the identification of the signing key in the **KeyName** element. You can choose from the following:
-    
-    * **Cert_Subject**: Uses the subject from the certificate corresponding to the scope key
-    * **Key_ID**: Uses the certificate Key ID
-    * **None**: Omits the key name hint from the SAML message
-    
+
+    * **Cert_Subject**: Uses the subject from the certificate corresponding to the scope key.
+    * **Key_ID**: Uses the certificate Key ID.
+    * **None**: Omits the key name hint from the SAML message.  
+
     **Additional options**
-    
+
     <div class="info" markdown="1">
-    
+
     Changing any of these settings will modify the ``sp_metadata.xml`` file.
-    
+
     </div>
-    
+
     * HTTP-POST binding for Logout
     * HTTP-POST binding for AuthnRequests
     * Want assertions signed
@@ -145,7 +151,7 @@ ODC adds the provider to the list of available providers.
 
 ## Next steps
 
-* [Assign the provider](intro.md#assign-an-external-idp) 
+* [Assign the provider](intro.md#assign-an-external-idp)
 * [Implement the authentication logic](apps.md)
 
 ## Related resources

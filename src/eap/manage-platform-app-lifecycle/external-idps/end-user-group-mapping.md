@@ -34,11 +34,17 @@ This ODC feature only works if your IdP supports groups. Check with your IdP to 
 
 </div>
 
-According to the roles on the IdP, each end-user that exists in the IdP can log in to ODC with the appropriate roles. When the mapping completes, end-users are automatically granted roles and access to apps for the ODC group. If an end-user already exists in ODC, their permissions synchronize according to the existing group mapping if applicable. This happens every time an end-user logs into ODC. For more information about Roles, refer to [Roles](../../user-management/roles.md)
+According to the roles on the IdP, each end-user that exists in the IdP can log in to ODC with the appropriate roles. When the mapping completes, end-users are automatically granted roles and access to apps for the ODC group. If an end-user already exists in ODC, their permissions synchronize according to the existing group mapping if applicable. This happens every time an end-user logs into ODC. For more information about Roles, refer to [Roles](../../user-management/roles.md).
+
+<div class="info" markdown="1">
+
+Group mapping controls role assignment. User identification and automatic registration on first login still depend on the IdP claims you mapped to **email** and/or **username** when you [configured your IdP](intro.md). Map at least one. If the IdP is (or will be) assigned to the Organization scope, mapping the **email** claim is mandatory. ODC uses only mapped fields. If the IdP isn't assigned at the Organization scope and doesn't provide an **email**, ODC can still create and manage users using only a mapped **username**.
+
+</div>
 
 ## Prerequisites
 
-Before you can map groups, the following criteria must be met:
+Before you can map groups, you must meet the following criteria:
 
 * You must have the **Manage end-user groups** permission to access **End-user groups** > **Create group** option in ODC.
 * Groups must exist in the IdP.
@@ -51,18 +57,18 @@ Before you can map groups, the following criteria must be met:
 
 **SAML providers only:**  
 
-* You can only map an end-user group that is in the same scope as the one configured for the SAML provider.
+* You can only map an end-user group that's in the same scope as the one configured for the SAML provider.
 * Group mapping isn't available for SAML providers configured with the Organization scope.
 
 </div>
 
-Most users can configure a group in ODC. However, only users, with the appropriate permission, can map end-user groups with IdPs. Typically, Admins have the permission to map IdPs.
+Most users can configure a group in ODC. However, only users, with the appropriate permission, can map end-user groups with IdPs. Typically, admins have the permission to map IdPs.
 
 To create a group, from the ODC Portal Navigation menu, select **End-user groups**. Then, from the End-user groups summary page, click **Create group**, enter a Group name, and click **Save**. You now have a new group. No other information is required to create a group.
 
 You can access group mapping from the ODC portal by selecting **End-user groups** or **Identity providers**. Choose the option that works best for you. From the End-user group mapping, you can add several mappings to a group. From the Identity provider, you can add several mappings to a provider.
 
-## Mapping from the end-user groups option
+## Mapping from the end-user groups option { #mapping-end-user-groups-option }
 
 To map a provider to an End-user group, from the portal, select **End-user groups**. A summary page displays End-user groups. You can display groups for different stages. Click the **End-user group** you want to map to an IdP.
 
@@ -72,7 +78,7 @@ To add a new mapping, click **Add mapping**. All fields are required. From the P
 
 <div class="info" markdown="1">
 
-For Microsoft Entra ID, the claim value should be the Object Id of the group and the claim name should simply be "groups".
+For Microsoft Entra ID, the claim value should be the Object Id of the group and the claim name should be "groups".
 
 </div>
 
@@ -96,15 +102,15 @@ For more information about setting up the claim in OKTA, [click here](https://he
 
 When viewing the users linked to the end-user group, you can link the users in the following ways:
 
-* Mapped users are automatically assigned to the end-user group when they log in using the Identity Provider. These assignments are not managed on the ODC Portal and are done during login. 
-* Assigned users are explicitly assigned to the end-user group on the ODC Portal. 
-* Assigned & mapped users are both assigned and mapped to the end-user group. 
+* Mapped users are automatically assigned to the end-user group when they log in using the Identity Provider. These assignments aren't managed on the ODC Portal and are done during login.
+* Assigned users are explicitly assigned to the end-user group on the ODC Portal.
+* Assigned & mapped users are both assigned and mapped to the end-user group.
 
 Assigned users can be unassigned anytime from the ODC Portal. However, mapped users can't be unmapped from the ODC Portal and remain mapped to the end-user group even if they get unassigned from the external provider group.
- 
+
 <div class="info" markdown="1">
 
-Mapped users who haven't logged in using the Identity Provider are not displayed in the end-user group. 
+Mapped users who haven't logged in using the Identity Provider aren't displayed in the end-user group.
 
 </div>
 
@@ -112,8 +118,8 @@ You can manually add assigned users in the ODC Portal. Follow these steps to add
 
 1. Go to the ODC Portal, and from the Navigation menu, select **End-user groups** to display the list of groups.
 1. Select the group you want to add users to.
-1. Click **Users** to display the list of users. 
-1. Click **Assign users** to display a popup where you can assign or unassign users from the group.
+1. Click **Users** to display the list of users.
+1. Click **Assign users** to display a dialog where you can assign or unassign users from the group.
 
 If the user mapping is from an external IDP, access is revoked after removing the mapping from the IDP. However, if you assign the users in the ODC portal, they retain access after the removal of mapping from the IDP.
 

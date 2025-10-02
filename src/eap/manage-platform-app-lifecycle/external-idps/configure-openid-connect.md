@@ -44,15 +44,15 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 1. Enter the URL of the OpenID configuration in the **Discovery endpoint** field.
 
 1. Click **Get details**.
-    
+
     ODC retrieves the JSON of the OpenID configuration and shows a preview.
 
 1. Enter the credentials for the provider in the **Client ID** and **Client secret (secret value)** fields. Then select **PKCE** if your provider supports it.
 
     <div class="info" markdown="1">
-    
+
     ODC safely stores the configuration details in a secret manager.
-    
+
     </div>
 
 1. In the **Organization user email verification** section, choose one of the following options for handling email verification:
@@ -68,13 +68,13 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     If your provider uses different attribute names, overwrite the prefilled **Username**, **Email**, **Name**, and **Photo URL** values. For more guidance, refer to your provider's support documentation.
 
     <div class="info" markdown="1">
-    
-    You must map either the **Username** or **Email** field. Email mapping is mandatory if the IdP is or will be assigned to the Organization scope.
-    
+
+    For more details about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](intro.md#claim-mapping-logic).
+
     </div>
 
 1. Click **Save**.
-    
+
 ODC adds the provider to the list of available providers.
 
 ## Next steps

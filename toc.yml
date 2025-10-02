@@ -557,19 +557,27 @@
 # User management
 - href: eap/user-management/intro.md 
 - topics:
-    - href: eap/user-management/classify-users.md    
+    - href: eap/user-management/create-deactivate-and-delete-users.md
+    - href: eap/user-management/grant-and-revoke-user-roles.md
+    - href: eap/user-management/best-practices-user-management.md
+    - href: eap/user-management/it-users/intro.md
+    - topics:
+        - href: eap/user-management/roles.md
+    - href: eap/user-management/end-users/intro.md
+    - topics:
+        - href: eap/user-management/end-users/groups.md
+        - href: eap/user-management/secure-app-with-roles.md
+        - href: eap/user-management/classify-users.md
     - href: eap/manage-platform-app-lifecycle/external-idps/intro.md
     - topics:
+        - href: eap/manage-platform-app-lifecycle/external-idps/apps.md
         - href: eap/manage-platform-app-lifecycle/external-idps/configure-openid-connect.md
         - href: eap/manage-platform-app-lifecycle/external-idps/configure-saml2.md
         - href: eap/manage-platform-app-lifecycle/external-idps/configure-social-accelerators.md
-        - href: eap/manage-platform-app-lifecycle/external-idps/apps.md 
         - href: eap/manage-platform-app-lifecycle/external-idps/azure-ad.md
         - href: eap/manage-platform-app-lifecycle/external-idps/okta.md
         - href: eap/manage-platform-app-lifecycle/external-idps/end-user-group-mapping.md
-    - href: eap/user-management/roles.md
-    - href: eap/user-management/secure-app-with-roles.md
-    - href: eap/user-management/passwords.md    
+    - href: eap/user-management/passwords.md
 
 # Monitoring and troubleshooting
 - href: eap/monitor-and-troubleshoot/monitor-apps.md
