@@ -21,9 +21,9 @@ topic:
 ---
 # Testing your messages
 
-System and user messages are an essential part of making your Agents' response the best possible. To avoid a time-consuming process, ODC allows you to preview your messages before committing to them. This way, when you publish your agent, it has the right set of messages for your use case.
+System and user messages are an essential part of making your Agentic app's response the best possible. To avoid a time-consuming process, ODC allows you to preview your messages before committing to them. This way, when you publish your agent, it has the right set of messages for your use case.
 
-## How to test your messages on ODC Studio
+## How to test your messages in ODC Studio
 
 You can test System messages, User messages, or both in the Test area. To test your messages on ODC Studio:
 
@@ -37,12 +37,18 @@ You can test System messages, User messages, or both in the Test area. To test y
 
 1. In the Test, you can:
 
-    1. Select from the AI model drop-down the model you want to use in your testing.
+    1. Select from the AI model drop-down the model you want to use in your testing. 
     1. Write the System Message you want to test.
     1. Write the User Message you want to test.
     1. Click Test to test your message(s).
 
 **Tip:** You can copy any of your messages or test results by clicking the copy icon located next to the message or button in the answer. These are added to your clipboard.
+
+<div class="info" markdown="1">
+
+To [add a new AI model](add-ai-models.md), add it first in the ODC Portal. After, add it as a Public Element in your app. 
+
+</div>
 
 ## Testing example
 
