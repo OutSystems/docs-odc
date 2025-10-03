@@ -14,7 +14,6 @@ audience:
 platform-version: odc
 figma:
 ---
-
 # Call API using the access token
 
 Once the authorization server validates the credentials and generates an access token, you can call the APIs using the access token. The access token is valid only for 12 hours from the time it was generated. Use the access token within the validity period of to access the APIs.
@@ -33,20 +32,42 @@ Before calling the API using the access token, ensure you have:
 
 With the access token, you are ready to make your first API call.
 
-Here’s an example of the List users API, which retrieves a list of users who have been assigned an application role.
+  <div class="info" markdown="1">
 
-```curl
+  OutSystems recommends that you consume the API in a library so that the API endpoints can be used across different apps. To explore a sample library, refer to User Management Connector in [ODC User Management Forge](https://www.outsystems.com/forge/component-overview/21016/users-management-odc) component.  
 
-curl -X GET "https://ODC_PORTAL_DOMAIN/api/identity/v1/users?hasApplicationRoles=true&limit=10&offset=0" -H "Authorization: Bearer ACCESS_TOKEN"
+  </div>
 
-```
+To call an API using the access token, follow these steps:
 
-Where 
+1. [Consume the API](../../../../integration-with-systems/consume_rest/consume-a-rest-api.md) in ODC Studio. You can consume either one or multiple methods using the OpenAPI specification file.  
 
-`ODC_PORTAL_DOMAIN` is the domain of your Organization
+1. Set the **Base URL** for the API.
 
-`ACCESS_TOKEN` is the access token retrieved using the client credentials
+1. Add the access token in Authorization HTTP header as `Bearer {Access token value`. For detailed information, refer to [Adding a header for token-based authentication](../../../../integration-with-systems/consume_rest/simple-customizations.md#example-use-case-adding-a-header-for-token-based-authentication).
 
-## Next step
+    You can use [OnBeforeRequest](../../../../integration-with-systems/consume_rest/simple-customizations.md#customize-the-request) callback to customize the header information.
 
-[User management API reference](../../identity-v1.md)
+1. Drag and drop the consumed API method into your app's logic flow. Pass the required input parameters and handle the API response in your app's logic. For detailed information, refer to [Use the API](../../../../integration-with-systems/consume_rest/intro.md#use-rest-apis-in-your-app).
+
+## Related resources
+
+### Consume API
+
+* [Consume one or more REST API methods](../../../../integration-with-systems/consume_rest/consume-a-rest-api.md)
+  
+* [Customize API request and response headers](../../../../integration-with-systems/consume_rest/simple-customizations.md)
+
+### API authentication and access
+
+* [Configure API access using an API client](create-api-client.md)
+  
+* [Generate new client secret](generate-new-secret.md)
+  
+* [Get access token using client credentials flow](get-access-token.md)
+  
+### ODC REST API reference
+
+* [User management API reference](../../identity-v1.md)
+
+* [Portfolio API reference](../../portfolio-v1.md)

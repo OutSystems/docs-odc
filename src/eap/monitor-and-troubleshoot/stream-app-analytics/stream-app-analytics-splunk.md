@@ -26,19 +26,19 @@ This article explains how you can stream observability data from ODC apps to the
 
 ## Prerequisites
 
-Before streaming observability data to **Splunk**, ensure you have a subscription to the **App Analytics Stream**. Contact your account manager for provisioning.
+Before streaming observability data to **Splunk**, ensure you have a subscription to the **Analytics Stream**. Contact your account manager for provisioning.
 
 ## Set up streaming observability data to Splunk
 
 To configure streaming observability data, using **Splunk** as the destination tool, follow these steps:
 
-1. Set up the HTTP Event Collector on Splunk. 
+1. Set up the HTTP Event Collector on Splunk.
 
     Refer to the instructions [here](https://docs.splunk.com/Documentation/Splunk/9.2.1/Data/UsetheHTTPEventCollector).
 
 1. Set up the [OpenTelemetry Collector](stream-app-analytics-opentelemetry.md)
 
-1. Configure a receiver that accepts HTTP or gRPC connections (refer to [OTLP Receiver](https://github.com/open-telemetry/opentelemetry-collector/blob/main/receiver/otlpreceiver/README.md) for an example) and that uses the Splunk Exporter 
+1. Configure a receiver that accepts HTTP or gRPC connections (refer to [OTLP Receiver](https://github.com/open-telemetry/opentelemetry-collector/blob/main/receiver/otlpreceiver/README.md) for an example) and that uses the Splunk Exporter.
 
     Refer to [Splunk HEC Example](https://github.com/signalfx/splunk-otel-collector/tree/main/examples/otel-logs-splunk) for an example.
 
@@ -46,12 +46,11 @@ To configure streaming observability data, using **Splunk** as the destination t
 
 1. Get the OpenTelemetry Collector endpoint and authentication credentials.
 
-Once you've completed these steps, go to the ODC Portal and [configure a stream](stream-app-analytics-configure.md). 
+Once you've completed these steps, go to the ODC Portal and [configure a stream](stream-app-analytics-configure.md).
 
 ## Additional resources
 
 [Get started with the Splunk Distribution of the OpenTelemetry Collector](https://docs.splunk.com/observability/en/gdi/opentelemetry/opentelemetry.html)
-
 
 ## Related resources
 
@@ -61,4 +60,4 @@ Once you've completed these steps, go to the ODC Portal and [configure a stream]
 
 * [Set up the OpenTelemetry Collector](stream-app-analytics-opentelemetry.md)
 
-* [Configure app analytics streams in Portal](stream-app-analytics-configure.md)
+* [Configure analytics streams in the ODC Portal](stream-app-analytics-configure.md)

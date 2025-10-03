@@ -44,7 +44,9 @@ If the **OutSystems UI** theme is unavailable, add a public element. Search for 
 
 ## Create the theme structure
 
-You create the theme structure in ODC Studio. From the **Interface** tab, select **UI Flows**, and then create a new UI flow. From your existing app in the common flow, copy and paste the **Menu_Icon** and the **RedirectToURL** to the new flow in the library.
+Open the OutSystems app that you want to use as the foundation for your new theme library. The following steps will guide you through copying the necessary elements from this app to your new theme library
+
+You create the theme structure in ODC Studio. In your app, go to the **Interface** tab. Inside the **UI Flows** folder, you will find a common flow. Open the common flow to find and copy the **Menu_Icon** block and the **RedirectToURL** to the new flow in the library.
 
 ![Theme common components are available in Theme common flow](images/theme-common-flow-odcs.png "Theme common components are available in Theme common flow")
 

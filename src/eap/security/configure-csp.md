@@ -1,6 +1,6 @@
 ---
-summary: 
-tags: 
+summary: Enhance app security on OutSystems Developer Cloud (ODC) with Content Security Policy (CSP) to prevent XSS attacks and block unapproved resources.
+tags: web security, content security policy, csp, mobile apps, odc
 guid: fb46979d-73a3-43ad-9c85-a6b96381c2a6
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -17,7 +17,6 @@ coverage-type:
   - understand
   - apply
 ---
-
 # Content security policy
 
 <div class="info" markdown="1">
@@ -110,7 +109,7 @@ You can reset the CSP's directive values to their default values at any time by 
 
 ## Default directives
 
-The table below describes the list of default directives for OutSystem's content security policy. The [Default values](#default-values) column indicates the values that OutSystems automatically applies when you activate a content security policy. These defaults are set to be as restrictive as possible, maximizing security configuration while also enabling full app runtime functionality. You can customize these default values to suit your needs. For more details, refer to [Configure a CSP](#configuring-a-csp). The [Required values](#required-values) column indicates the values that ODC automatically applies to the directive for the apps to work correctly.
+The table below describes the list of default directives for OutSystem's content security policy. The [Default values](#default-values) column indicates the values that OutSystems automatically applies when you activate a content security policy. These defaults are set to be as restrictive as possible, maximizing security configuration while also enabling full app runtime functionality. You can customize these default values to suit your needs. For more details, refer to [Configure a CSP](#configuring-a-csp). Some default values cannot be removed; for more information, refer to the [required values](#required-values) section.
 
 |   Directive |              Description             | Default values |
 |-------------| ------------------------------------ | -------------- |
@@ -123,8 +122,8 @@ The table below describes the list of default directives for OutSystem's content
 |img-src|The domains from which apps are allowed to load images.|``'self'``<br/> ``data:`` <br/> ``blob:``|
 |media-src|The domains from which apps are allowed to load media files.|``'self'``|
 |object-src|The domains from which apps are allowed to load objects (for ``<object>``, ``<embed>`` and ``<applet>`` elements).|``'self'``|
-|script-src|The domains from which apps are allowed to load scripts.|``'self'``<br/> ``unsafe-inline ``<br/>``unsafe-eval``|
-|style-src|The domains from which apps are allowed to load styles.|``'self'``<br/> ``unsafe-inline``|
+|script-src|The domains from which apps are allowed to load scripts.|``'self'``<br/> ``'unsafe-inline' ``<br/>``'unsafe-eval'``|
+|style-src|The domains from which apps are allowed to load styles.|``'self'``<br/> ``'unsafe-inline'``|
 
 ## Default values {#default-values}
 
@@ -142,7 +141,7 @@ OutSystems recommends default values to ensure the platform works as expected. I
 
 ## Required values {#required-values}
 
-The **Required values** column indicates the values that ODC automatically applies to the directive for the applications to work correctly. These values can't be removed.
+The **Required values** are the values that ODC automatically applies to the directive for the applications to work correctly. These values can't be removed.
 
 * ``unsafe-inline``: The unsafe-inline directive allows the use of inline resources such as inline ``<script> ``and ``<style>`` elements, ``javascript: URLs``, and inline event handlers that are currently used by the platform.
 

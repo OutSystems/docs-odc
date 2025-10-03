@@ -12,7 +12,7 @@ audience:
   - backend developers
   - full stack developers
 outsystems-tools:
-  - service studio
+  - odc studio
   - forge
 coverage-type:
   - apply

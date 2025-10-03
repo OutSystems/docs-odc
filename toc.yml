@@ -19,6 +19,8 @@
 - topics:
     # AI Mentor
     - href: eap/building-apps/ai-mentor/intro.md
+    - topics:
+        - href: eap/building-apps/ai-mentor/prompts.md
     # Build AI-powered apps
     - href: eap/building-apps/build-ai-powered-apps/intro.md
     - topics:
@@ -27,7 +29,24 @@
             - href: eap/building-apps/build-ai-powered-apps/add-ai-models.md
             - href: eap/building-apps/build-ai-powered-apps/add-ai-search-services.md
             - href: eap/building-apps/build-ai-powered-apps/integrate-ai-models-logic-rag.md
-        # AI Agent Builder
+    - topics:
+        - href: eap/building-apps/build-ai-powered-apps/agentic-apps.md
+        - topics:
+            - href: eap/building-apps/build-ai-powered-apps/create-agent.md
+            - href: eap/building-apps/build-ai-powered-apps/consumer-app.md
+            - href: eap/building-apps/build-ai-powered-apps/function-calling.md
+            - href: eap/building-apps/build-ai-powered-apps/image-input.md
+            - href: eap/building-apps/build-ai-powered-apps/testing.md
+            - href: eap/building-apps/build-ai-powered-apps/structured-output.md            
+            - href: eap/building-apps/build-ai-powered-apps/prompt-engineering.md            
+            - href: eap/building-apps/build-ai-powered-apps/agent-long-running.md
+            # MCPs and other tools
+            - href: eap/building-apps/build-ai-powered-apps/tools/intro.md
+            - topics:
+                - href: eap/building-apps/build-ai-powered-apps/tools/mcp-connectors.md
+                - href: eap/building-apps/build-ai-powered-apps/tools/prebuilt-connectors.md
+                - href: eap/building-apps/build-ai-powered-apps/tools/unsupported-structures.md
+      # AI Agent Builder
         - href: eap/building-apps/use-ai/intro.md
         - topics:
             - href: eap/building-apps/use-ai/overall-process.md
@@ -118,6 +137,20 @@
         - href: eap/building-apps/data/edit-data.md
         - href: eap/building-apps/data/structure-create-use.md  
         - href: eap/building-apps/data/client-variable.md  
+    # Offline data synchronization
+    - href: eap/building-apps/data/offline/intro.md
+    - topics:
+        - href: eap/building-apps/data/offline/sync-implement.md
+        - href: eap/building-apps/data/offline/sync-reference.md
+        - href: eap/building-apps/data/offline/sync-checklist.md             
+        - href: eap/building-apps/data/offline/mobile/complex-sync.md             
+        - href: eap/building-apps/data/offline/patterns/intro.md
+        - topics:
+            - href: eap/building-apps/data/offline/patterns/read-only-data.md
+            - href: eap/building-apps/data/offline/patterns/read-only-data-optimized.md
+            - href: eap/building-apps/data/offline/patterns/read-write-data-last-write-wins.md
+            - href: eap/building-apps/data/offline/patterns/read-write-data-with-conflict-detection.md
+            - href: eap/building-apps/data/offline/patterns/read-write-data-one-to-many.md
     # UI
     - href: eap/building-apps/ui/intro.md
     - topics:
@@ -426,11 +459,13 @@
     - href: eap/integration-with-systems/consume_rest/intro.md
     - topics:
         - href: eap/integration-with-systems/consume_rest/consume-a-rest-api.md
+        - href: eap/integration-with-systems/consume_rest/generate-reuse-oauth-token.md
+        - href: eap/integration-with-systems/consume_rest/rest-api-structures.md
+        - href: eap/integration-with-systems/consume_rest/simple-customizations.md
         - href: eap/integration-with-systems/consume_rest/refresh-rest-service.md
         - href: eap/integration-with-systems/consume_rest/unsupported-use-cases.md
-        - href: eap/integration-with-systems/consume_rest/rest-api-structures.md
         - href: eap/integration-with-systems/consume_rest/handling-rest-errors.md
-        - href: eap/integration-with-systems/consume_rest/simple-customizations.md
+        
     # Exposing REST APIs
     - href: eap/integration-with-systems/exposing_rest/intro.md
     - topics:
@@ -519,27 +554,37 @@
     - href: eap/getting-started/capacity-limits.md
     - href: eap/deleting-apps/intro.md
 
-
 # User management
 - href: eap/user-management/intro.md 
 - topics:
-    - href: eap/user-management/classify-users.md    
+    - href: eap/user-management/create-deactivate-and-delete-users.md
+    - href: eap/user-management/grant-and-revoke-user-roles.md
+    - href: eap/user-management/best-practices-user-management.md
+    - href: eap/user-management/it-users/intro.md
+    - topics:
+        - href: eap/user-management/roles.md
+    - href: eap/user-management/end-users/intro.md
+    - topics:
+        - href: eap/user-management/end-users/groups.md
+        - href: eap/user-management/secure-app-with-roles.md
+        - href: eap/user-management/classify-users.md
     - href: eap/manage-platform-app-lifecycle/external-idps/intro.md
     - topics:
-        - href: eap/manage-platform-app-lifecycle/external-idps/apps.md 
+        - href: eap/manage-platform-app-lifecycle/external-idps/apps.md
+        - href: eap/manage-platform-app-lifecycle/external-idps/configure-openid-connect.md
+        - href: eap/manage-platform-app-lifecycle/external-idps/configure-saml2.md
+        - href: eap/manage-platform-app-lifecycle/external-idps/configure-social-accelerators.md
         - href: eap/manage-platform-app-lifecycle/external-idps/azure-ad.md
         - href: eap/manage-platform-app-lifecycle/external-idps/okta.md
         - href: eap/manage-platform-app-lifecycle/external-idps/end-user-group-mapping.md
-    - href: eap/user-management/roles.md
-    - href: eap/user-management/secure-app-with-roles.md
-    - href: eap/user-management/passwords.md    
+    - href: eap/user-management/passwords.md
 
 # Monitoring and troubleshooting
 - href: eap/monitor-and-troubleshoot/monitor-apps.md
 - topics:
 
     - href: eap/monitor-and-troubleshoot/app-health.md 
-# App analytics stream
+# Analytics stream
     - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md
     - topics:
         - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-apm.md
@@ -557,12 +602,17 @@
         - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-metrics-ref.md
     - href: eap/monitor-and-troubleshoot/audit-trail.md
     # Manage technical debt
-
     - href: eap/monitor-and-troubleshoot/manage-technical-debt/managing-tech-debt.md
     - topics:
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/how-does-aims-works.md
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/working-with-code-quality.md
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/getting-started-aims-tl.md
-        - href: eap/monitor-and-troubleshoot/manage-technical-debt/getting-started-aims-dev.md                        
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/getting-started-aims-dev.md
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/severity-classification-criteria.md
+        # Architecture
+        - href: eap/monitor-and-troubleshoot/manage-technical-debt/architecture/architecture.md
+        - topics: 
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/architecture/app-consuming-rest-directly.md                
         # Maintainability
         - href: eap/monitor-and-troubleshoot/manage-technical-debt/maintainability/maintainability.md
         - topics:
@@ -606,6 +656,7 @@
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/screen-aggregates-exposing-system-entities-on-anonymous-screens.md
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/sql-injection.md
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/visible-disabled-button.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/server-call-screen-accessible-everyone.md
 
     - href: eap/monitor-and-troubleshoot/traces/intro.md
     - topics: 
@@ -635,7 +686,15 @@
     - topics:
         - href: eap/reference/apis/public-rest-apis/end-user-management-use-cases/create-user-assign-role.md 
     - href: eap/reference/apis/portfolio-v1.md
-   
+    - href: eap/reference/apis/build-v1.md
+    - href: eap/reference/apis/deployment-v1.md
+    - href: eap/reference/apis/dependency-v1.md
+    - href: eap/reference/apis/asset-v1.md
+    - href: eap/reference/apis/asset-config-v1.md
+    - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/intro.md
+    - topics:
+        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/select-revision-build.md 
+        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/deploy-asset.md    
 
 # Reference
 - href: eap/reference/intro.md
@@ -795,4 +854,3 @@
     - href: error/aldi/intro.md
     - topics:
         - href: error/aldi/app_lib_depend_issues.md
-        

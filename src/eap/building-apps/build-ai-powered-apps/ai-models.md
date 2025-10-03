@@ -28,9 +28,9 @@ In addition to directly interacting with AI models, ODC enables you to connect t
 
 ![Diagram showing three steps: 1. Set up your AI Service (Cloud Provider), 2. Integrate AI models and search services (ODC Portal), 3. Add AI models and search services (ODC Studio).](images/steps-diag.png "Steps to Integrate AI Models and Search Services")
 
-## Use trial models
+## Use trial models { #trial }
 
-To help you quickly experiment with AI features without immediately setting up your model connection, ODC offers pre-configured trial models (provided via Azure OpenAI and Amazon Bedrock). You can add these models directly within ODC and call them from your apps running in the Development stage. Note that each trial model is limited to 100 calls per ODC tenant and is intended for initial testing or proof-of-value exploration before configuring your persistent AI model connection.
+To help you quickly experiment with AI features without immediately setting up your model connection, ODC offers pre-configured trial models (provided via Azure OpenAI and Amazon Bedrock). You can add these models directly within ODC and call them from your apps running in the Development stage. Note that trial models via Azure OpenAI are limited to 100 calls per ODC tenant and trial models via Amazon Bedrock allow up to 1000 and are intended for initial testing or proof-of-value exploration before configuring your persistent AI model connection.
 
 ## Custom model connections { #custom-model-connections }
 

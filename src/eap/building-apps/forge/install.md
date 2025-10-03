@@ -33,7 +33,17 @@ Forge assets become available only after they go through a submission and approv
 | Update         | The asset has an update that hasn't yet been installed in your organization’s environment |
 | Updating       | The asset is updating                                                                      |
 
-Following are procedures to Install and Update a Forge asset.
+Following the procedures to Install and Update a Forge asset.
+
+<div class="info" markdown="1">
+
+If you are installing an Agentic app, you must have the AI Trial Model used in the app added to your tenant. To do this:
+
+1. Go to AI Models on ODC Portal.
+1. Click on **Add AI Model**. 
+1. Add the available trial models on the Trial Models tab.
+
+</div>
 
 ## Install a Forge asset
 

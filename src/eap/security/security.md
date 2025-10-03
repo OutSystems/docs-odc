@@ -212,7 +212,7 @@ For more information see [Cloud-native architecture of OutSystems Developer Clou
 
 OutSystems uses a Key Management Service (KMS) to store and manage the keys used to secure customer data.
 
-ODC encrypts data at rest, including all backup instances, using the industry standard AES-256 algorithm.
+ODC encrypts data at rest, including all backup instances, using the industry standard AES-256-GCM algorithm.
 
 ## Log security and retention
 
@@ -220,7 +220,7 @@ ODC ensures the privacy and availability of your application logs and traces.
 
 Application logs and traces are encrypted in transit with TLS, and at rest using the industry-standard AES-256 algorithm. ODC utilizes role-based permissions to ensure that only you can view your data. Other ODC tenants can't access your logs or traces. OutSystems Support requires documented permission before accessing your data. 
 
-Developers can view logs and traces up to four weeks old within ODC Portal. They can retrieve logs and traces between four and seven weeks old by opening a support ticket. The system deletes logs and traces after seven weeks.
+Developers can view logs and traces up to four weeks old within ODC Portal. To retain logs and traces beyond the four-week period, learn more about exporting them using the [Analytics Stream](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md). The system deletes logs and traces after seven weeks.
 
 For more information on logs and traces, see [Monitor and troubleshoot apps](../monitor-and-troubleshoot/monitor-apps.md).
 
@@ -251,6 +251,6 @@ For more information see [ODC vulnerability policy](https://success.outsystems.c
 ---
 <div class="info" markdown="1">
 
-Some features mentioned in this article may require add-ons to the ODC Platform edition. Please contact your OutSystems account team for more information.
+Some features mentioned in this article may require an add-on [subscription](../manage-platform-app-lifecycle/subscription-console.md). Please contact your OutSystems account team for more information.
 
 </div>

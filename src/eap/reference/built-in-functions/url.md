@@ -57,12 +57,6 @@ Type: Text
 GetBookmarkableURL() = "https://my-org.outsystems.app/Customers/EditCustomer?CustomerId=1"
 ```
 
-<div class="info" markdown="1">
-
-The domain part of the URL is always the built-in domain.
-
-</div>
-
 ## GetOwnerURLPath
 
 Returns the URL path of the app that owns the element that is being processed. Note that this function does not return the complete URL but only the component containing the location of the resource within the domain and, if applicable, the personal area.  

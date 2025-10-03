@@ -4,7 +4,7 @@ summary: OutSystems Developer Cloud (ODC) features organization and end-user rol
 locale: en-us
 guid: 766ab743-31f2-4f58-ad91-a4cd0db8ab93
 app_type: mobile apps, reactive web apps
-figma:
+figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3717-132
 platform-version: odc
 tags: access management, permissions, user onboarding, user roles, organization management
 audience:
@@ -21,136 +21,179 @@ topic:
   - create-a-team
 ---
 
-# Roles
+# Roles and permissions for members (IT-users)
 
-ODC has organization roles and end-user roles which you can use to limit access. Organization roles are for Organization members who perform work as developers or admins.
+This article covers permissions for [members (IT-users)](intro.md#members-it-users) who build and manage apps in ODC. For information about end-user roles, refer to [Secure your app with end-user roles](secure-app-with-roles.md).
 
-* Organization roles are for users that need access to both the ODC Portal and ODC Studio. You can assign built-in or custom roles at the organization or app levels.
+In ODC, you control what your members (IT-users) can do by assigning them roles. A role is a set of permissions that you can grant at the **organization** and **asset** (**app**) [**scopes**](intro.md#organization-app-stage-and-app-scope).
 
-* End-user roles are for those users that access apps you create in ODC.
+ODC allows implementing user access control policies on the following domains:
 
-
-
-## Organization roles
-
-An organization role groups a set of permissions that you can assign to members in your organization. You can apply these permissions to a stage, but you don't need to apply all permissions to a stage.
-
-To see the organization roles:
-
-1. From **ODC Portal** select **Users & access** > **Organization roles**.
-1. Select a role to see the table of permissions.
-1. Hover the mouse pointer over the permission in the table to display more information.
-
-An organization role groups permissions in the following sections:
-
-* App management
-* Configurations
-* Deployment management
-* Forge
-* Monitoring
-* Stage
+* Asset (apps and libraries) management
+* Stage visibility
+* Release management
+* Application monitoring
+* AI Mentor System
+* Configuration and connection management
 * User management
+* Forge access
+* Support cases management
+* Subscription management
+
+## Effective permissions calculation
+
+Permissions are applied at the **organization** or **app stage** [scope](intro.md#organization-app-stage-and-app-scope). A user's total permissions are the sum of all roles assigned to them at both the **organization** and **asset** (**app**) [**scopes**](intro.md#organization-app-stage-and-app-scope). You can assign one role for the organization scope, and one role for each app.
+
+![Diagram illustrating scopes with roles and permissions](images/role-permission-diag.png "Scopes for roles and permissions")
+
+The fundamental rule is that permissions are cumulative. A role assigned at the app scope adds to the permissions granted at the organization scope.
 
 <div class="info" markdown="1">
 
-If you assign an organization role to a user who currently has only end-user role(s), the user will transition to the **Invited** status and receive an email to complete the organization onboarding. The user's end-user access is not impacted.
+An app-level role can grant additional permissions for that specific app, but it can never revoke permissions a user already has from an organization-level role.
 
 </div>
 
-### Built-in organization roles
+### Permission scenarios
 
-ODC comes with two built-in organization roles: **Administrators** and **Developers**. Both roles can invite new users, but Developers can only grant access to applications (end-user roles) and only for the Development stage.
+Here’s how this principle works in practice.
 
-You can view these roles and assign them to users, but you can't **delete or modify** them. You can **duplicate** these roles. When you duplicate a built-in role, you make a copy of that role. ODC adds the word **copy** to the end of the current name (Developer-copy). You can't use the same name as the existing built-in role. You should give your new role a descriptive name, such as **Developer-cloud**. Once you duplicate (copy) the role, you can make any modifications you want to the role.
+**Scenario 1: A more permissive role is assigned at the app level**
+:   A user has a general role for the organization but needs elevated permissions for one app:
 
-### Custom organization roles
+    * Organization Role: Developer.
+    * App Role: Administrator.
+    * Result: The user has Developer permissions across the organization. For the specific app where they are an Administrator, they gain the additional permissions of that role. For example, they can now manage that app's configurations in Production stage, a permission the Developer role doesn't have.
 
-A custom organization role is any role that you create. You can create a new role, or you can duplicate an existing role and then make changes. At a minimum, you must give the role a new name and at least one permission. As soon as you add a role name and one permission, the **Create** button is available.
+**Scenario 2: A less permissive role is assigned at the app level**
+:   A user has a high-level role for the organization, and a more restrictive role is assigned for one app:
 
-From the **Create role** screen, within each section, such as **Deployment Management** > **Deploy apps** select the stage such as Development or QA for which you want to enable the permission. You can always come back to this screen to adjust the permissions.
+    * Organization Role: **Administrator**.
+    * App Role: **Developer**.
+    * Result: The organization-level permissions prevail. Since app-level roles can't remove permissions, the user remains an Administrator for the entire organization, including the specific app. The Developer role at the app level has no effect.
 
-## Organization access with app scope
+## Types of roles for members (IT-users) { #types-of-roles }
 
-Organization access is required for users to access the ODC Portal and to the ODC Studio to build apps.
-
-To define what users are able to do, ODC uses Organization scope and App scope. Organization scope provides broad access, while App scope pertains to a particular app. As users begin working you might want to limit their access and then provide them with more access as needed. For example, for the Organization scope you might give an Organization member the Developer role or a custom role that you defined. Then if the Developer needs access to an app, they request additional access for a specific app.
-
-Using Apps scope you can give developers Admin access to the specific App so they can complete their work.
-
-Using different roles with different permissions and different access enables you to provide additional access to apps. Using App scope streamlines and enhances access while ensuring people have access to what they need and don’t have access to everything.
-
-You can change the Organization scope role, using the scope dropdown. The default roles for the Organization scope is No role, Administrator, or Developer. You can also create custom roles for your Organization scope.
-
-In the App scope section, you can Manage roles. You can add or delete App scope roles. This enables you to select the app and the role you want to give to an Organization member.
-
-## End-user roles
-
-You create end-user roles in ODC Studio while you develop an app. While creating an end-user role in ODC Studio, If you set the end-user role as **Public** then the role can be shared across apps and worflows. By default, the roles are not public. After you publish the app, 
-- You can use the public role in other ODC apps by [adding the role as public element](../building-apps/libraries/use-public-elements.md) in ODC Studio.
-
-- You can use the ODC Portal to assign the end-user role to users. Go to **Users & access** > **Users**. Search for the user, and in the user page below End-user roles, select **Manage roles**.
-
-- You can assign human activity to roles in a workflow.
-
-For more information about app dev development and end-user roles, see [Secure your app with end-user roles](secure-app-with-roles.md).
-
-## End-user groups
-
-To accelerate the onboarding of users, ODC enables you to create groups of users. Using groups enables you to grant users roles in bulk. Before you can add users to groups, users must be part of your ODC organization.
-
-Manage the groups from the ODC **Portal** > **Users & access** > **End-user groups**. When adding a new group, enter a group name. The group name is required, all other fields are optional.
-
-You can add roles to a group before or after you add users to a group. Users in the group get all end-user roles associated with that group. Users can belong to multiple groups. You can create a new group in a different stage, with the same name or a different name, and use the same or similar roles.
-
-You must select a stage to which the group belongs. Once you select a stage for the group and save it, you can't change the stage. The organization group members can only access the end-user roles and apps in the selected stage.
-
-A person with **Manage end-user groups** permission can add users to a group, select users from a list of existing users and add them to the group. Once you save the group, it's available immediately. Adding or removing roles also takes effect immediately.
-
-## Add new users or end-user groups to your organization
-
-You can add new users to your organization and apps through the ODC Portal.
-
-From the **ODC Portal**, select **Users & access** and then select either **Users** or **End-user groups**.
-
-Clicking **Users**, displays a screen that shows a list of users. To invite a new user, from the top right click the **Invite user** button. A form displays to enter the user's email address and to select their access. Based on your choices, different options are available. The invitation token expires in 7 days.
-
-* If you choose **Organization access**, you can select an organization and an app. If you select an organization, then you can choose a specific role or no role. When you search for or select a group, you can also choose a stage.
-* If you choose **End-user access** you also have access to add **End-user groups**. You can add the user to a group, assign roles related to a specific app or all apps, and a specific stage or all stages. You can choose more than one app at a time. A group can only have roles from the same stage. For example, if your group is in the Development stage you can't add roles from the Production stage.
+ODC provides two types of roles for members (IT-users), built-in roles, and custom roles.
 
 <div class="info" markdown="1">
 
-When a user signs into an app, their user profile information is synchronized to the [User entity](../reference/system-actions/user.md#user-1) of that app.
+For details on how to assign or remove roles for members, refer to [Grant and revoke user roles](grant-and-revoke-user-roles.md#grant-roles-to-members).
 
 </div>
 
- Clicking **End-user groups**, displays a screen that shows the groups available. To create a new group, from the top right, click the **Create group** button. A dropdown arrow lets you choose the stage in which you want to create the group. Then enter a group name and a description. At the same time you can select one or more apps.
+### Built-in roles
 
-## Activate, deactivate, or delete users
+ODC includes two built-in organization roles:
 
-Manage the users in the **ODC Portal** > **Users**.
+| Role           | Description                                                                                  |
+|----------------|---------------------------------------------------------------------------------------------|
+| Administrator  | Full access to all platform features, including user management, deployment, and configuration. |
+| Developer      | Access to build and manage apps. Can invite new users and grant end-user roles, but only for the **Development** stage.|
 
-To **activate** a user, you must first invite the user. Once a user accepts the invitation, you see them as active in the list of users.
+You can't delete or modify built-in roles, but you can duplicate them to create custom roles.
 
-To **deactivate** a user, from the Actions menu, select **Deactivate**. A confirmation message displays, click **Yes, deactivate user.** The user now displays as deactivated.
+To see the full list of permissions for the **Admin** or **Developer** role, in the ODC Portal, go to **Organization roles**, and then click **Admin** or **Developer**. Both roles are identified with the **Built-in role** label.
 
-To **delete** a user, from the Actions menu, select **Delete user**. A confirmation message displays, click **Yes, delete user.** The user is deleted and their name is removed from the list of users.
+### Custom roles { #custom-roles }
 
-## Give or revoke a user role
+You can create custom roles to tailor permissions to your organization's needs. Custom roles let you select specific [permissions](#permissions-registry) and apply them at **organization** or **app stage** [scope](intro.md#organization-app-stage-and-app-scope). After creating a custom role, you need to assign it to users either at **organization scope** or to specific **apps**. For more details on how to create custom roles and how to assign a role to a user, refer to [Create custom roles for members](#create-custom-roles-for-it-users) and [Grant or revoke roles to members](grant-and-revoke-user-roles.md#grant-roles-to-members).
 
-You can assign or revoke a user's role. This applies to individual roles and group roles.
+For more details about recommended custom roles, refer to [Recommended custom roles for members (IT-users)](#recommended-custom-roles).
 
-From the **ODC Portal**, select **Users & access**> **Users**. A table displays all existing users. You can:
+## Create custom roles for members (IT-users) { #create-custom-roles-for-it-users }
 
-* Sort the list by users, status, and last login date
-* Manage the user's role by selecting the user
-* Add a new user by clicking **Invite user**
+To create a custom role for members, follow these steps:
+
+1. In the ODC Portal, under **Manage**, go to **Organization roles**.
+1. Click **Create role**.
+1. Enter a name for the role.
+1. Select the permissions you want to assign. You may limit some [permissions](#permissions-registry) to specific stages if needed.  
+1. Click **Create** to save the role.
+
+## ODC permissions { #permissions-registry }
+
+The following table lists the permissions you can assign to custom roles. For more details on **organization** (global) and **asset** (**app**) scope, refer to [Organization, app stage, and app scope](intro.md#organization-app-stage-and-app-scope).
 
 <div class="info" markdown="1">
 
-Logged-in users needs to log out and log back in for changes in their assigned roles or role permissions to become effective.
+Some permissions are automatically inherited by others to ensure consistent behavior and prevent errors. When configuring custom roles in the ODC Portal, selecting a permission may automatically select additional related permissions due to these dependencies.
 
 </div>
+
+| Category                  | Permission Name                     | Purpose                                                                                                                                                                                                                           | Scope                           |
+|---------------------------|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
+| Asset management          | Open                               | Users can open assets.                                                                                                                                                                                        | Organization <br/> Asset           |
+| Asset management          | Create                             | Users can create new assets.                                                                                                                                                                                  | Organization                         |
+| Asset management          | Debug                              | Users can view, open and debug assets.                                                                                                                                                                       | Organization <br/> Asset           |
+| Asset management          | Change                             | Users can view, open, debug and publish assets.                                                                                                                                                             | Organization <br/> Asset           |
+| Asset management          | Delete                             | Users can delete assets.                                                                                                                                                                                    | Organization <br/> Asset           |
+| Stage                     | View stage                         | Users can view a given stage.                                                                                                                                                                               | Organization                         |
+| Release management        | Deploy apps                        | Users can initiate asset deployments to a specified stage and undeploy from the production stage.                                                                                                           | Organization <br/> Asset           |
+| Release management        | Release                            | Users can release an asset, assign a version number (1.0.0), and add release notes.                                                                                                                         | Organization <br/> Asset           |
+| Monitoring                | Access asset logs and traces       | Users can view asset logs and traces in a given stage.                                                                                                                                                      | Organization <br/> Asset           |
+| Monitoring                | Access user information            | Users can view user information connected to a given log or activity.                                                                                                                                       | Organization <br/> Asset           |
+| Monitoring                | App security                       | The user with this permission has access to the Vulnerability Overview report screen.                                                                                                                       | Organization <br/> Asset           |
+| Monitoring                | Audit Trail View                   | This permission enables users to view the audit logs.                                                                                                                                                       | Organization                         |
+| AI Mentor System          | Edit/Change Code Quality findings  | Provides access to a Code Quality Console and interactive capabilities, including the ability to modify the status of findings and manage comments. Additionally, if permissions are set at the organizational level, users will see which organizational users have introduced those findings, change status, and add comments. | Organization <br/> Asset                 |
+| AI Mentor System          | View Code Quality findings         | Provides users access to a Code Quality Console to monitor code standards and allow visibility of application findings for those with appropriate permissions. Additionally, If the permissions are set at the organizational level it will allow users to see which organizational users have introduced those findings.                                                                                                | Organization <br/> Asset                 |
+| Configuration management  | View configurations                | Users can view app or library configurations in a given stage.                                                                                                                                              | Organization <br/> Asset           |
+| Configuration management  | Edit configurations                | Users can change app or library configurations in a given stage.                                                                                                                                            | Organization <br/> Asset           |
+| Configuration management  | Configure connections              | Users can view and edit connection configurations in a given stage.                                                                                                                                         | Organization                         |
+| Configuration management  | Manage custom domains              | Users can view, create, edit, and delete custom domains for apps.                                                                                                                                           | Organization                         |
+| Configuration management  | Manage Email SMTP configuration    | Users can view, create, edit, and delete SMTP emails.                                                                                                                                                       | Organization                         |
+| Configuration management  | Manage API clients                 | Users can manage API Clients, create, suspend, delete, change permissions, and rotate secrets.                                                                                                                           | Organization                         |
+| Configuration management  | Manage CSP                         | The user can view, create, edit, and delete CSP (Content Security Policy) rules at each stage.                                                                                                              | Organization                         |
+| Configuration management  | Manage log streaming               | Users can view, create, edit, and delete streams.                                                                                                                                                           | Organization                         |
+| Connection management     | Create                             | Users can create connections.                                                                                                                                                                               | Organization                         |
+| Connection management     | Change                             | Users can view connections and edit entities, name, and description.                                                                                                                                        | Organization                         |
+| Connection management     | Delete                             | Users can delete connections.                                                                                                                                                                               | Organization                         |
+| User management           | View end users                     | Users can view users with end-user roles.                                                                                                                                                                   | Organization <br/> Asset           |
+| User management           | View organization members          | Users can view users with organization roles.                                                                                                                                                               | Organization                         |
+| User management           | Manage users                       | Users can view, activate, deactivate, and delete other organization members and end users.                                                                                                                  | Organization                         |
+| User management           | Manage end-user access             | Users can grant or revoke end-user roles.                                                                                                                                                                   | Organization <br/> Asset           |
+| User management           | Manage end-user groups             | Users can view, create, edit, and delete end-user groups.                                                                                                                                                   | Organization                         |
+| User management           | Manage organization access         | Users can view organization members and grant or revoke organization roles.                                                                                                                                 | Organization                         |
+| User management           | Manage organization roles          | Users can create, edit, and delete organization roles.                                                                                                                                                      | Organization                         |
+| User management           | Manage authentication              | The user with this permission can view and manage the authentication providers to access the organization and apps.                                                                                         | Organization                         |
+| Forge                     | Install/Update assets              | Users can install or update assets from Forge.                                                                                                                                                              | Organization                         |
+| Forge                     | Submit/Edit assets                 | Users can submit assets to Forge and edit them.                                                                                                                                                             | Organization                         |
+| Support                   | Open support cases                 | Users can open and view their support cases.                                                                                                                                                                | Organization                         |
+| Support                   | View all support cases             | Users can view all the organization's support cases.                                                                                                                                                        | Organization                         |
+| Subscriptions             | View subscription                  | Users can view the organization's subscription information.                                                                                                                                                 | Organization                         |
+
+## Recommended custom roles for members (IT-users) { #recommended-custom-roles }
+
+As a general guideline, you can create the following custom roles based on the scope to use when assigning roles to a member:
+
+* **App scope**: Basic Developer, Tech Lead.
+* **Organization scope**: Basic Member, Architect, Tenant Admin.
+
+In this reference model, the **Architect** role is responsible for the ownership and lifecycle of the asset portfolio, including creating, deleting, and installing assets from Forge, as well as managing releases. The **Tenant Admin** role focuses on global infrastructure configurations, not on asset or release management. If a user needs both sets of permissions, assign the built-in **Admin** role, which combines all capabilities.  
+
+This approach supports a DevOps-oriented model, where delivery teams (**Tech Lead** + **Developers**) have full ownership of their assigned assets (and only theirs).
+
+The following table outlines the permissions you can configure for each of these recommended custom roles:
+
+| Category                        | Basic Developer                                   | Tech Lead                                              | Basic                   | Architect                                         | Tenant Admin                                         |
+|----------------------------------------|---------------------------------------------------|--------------------------------------------------------|-------------------------|---------------------------------------------------|-----------------------------------------------------|
+| Asset management                       | Change assets                                     | Change assets                                          | Not allowed             | Create and delete assets                           | Not allowed                                           |
+| Stage visibility                       | View all stages                                   | View all stages                                        | View Development Stage   | View all stages                                    | View all stages                                       |
+| Release management                     | Release Assets<br/>Deploy to Development           | Release Assets<br/>Deploy to all stages                | Not allowed             | Release Assets<br/>Deploy to all stages            | Not allowed                                           |
+| Monitoring                 | Monitor all stages                                | Monitor all stages<br/>View security vulnerabilities   | Not allowed             | Monitor all stages<br/>View security vulnerabilities | Monitor all stages<br/>View security vulnerabilities  |
+| AI Mentor System                       | View <br/>Code Quality findings                   | Edit <br/>Code Quality finding                         | Not allowed             | Edit <br/>Code Quality finding                     | Edit <br/>Code Quality finding |
+| Configuration <br/>Connection management | Apply app configurations <br/>in Development      | Apply app configurations <br/>in all stages<br/>Configure external entities | Not allowed             | View app configurations <br/>in all stages<br/>Configure external entities | Apply infra configurations in all stages<br/>Create and delete connections <br/>Manage API Clients |
+| User management                        | View end-users                                    | Manage <br/>end-user access and groups                 | Not allowed             | View organization users                            | Manage users and organization roles<br/>Manage authentication providers |
+| Forge access                           | Not allowed                                       | Submit assets                                          | Not allowed             | Install and submit assets                          | Not allowed                                           |
+| Support                | Open support cases                                | Open support cases                                     | Not allowed             | Open and view <br/>all support cases               | Open and view <br/>all support cases                  |
+| Subscriptions                | Not allowed                                       | Not allowed                                            | Not allowed             | Not allowed                                        | Allowed                                               |
 
 ## Related resources
 
-* [Role-based Security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course
+* [Managing authorization and authentication for members (IT-users)](it-users/intro.md)
+* [Create, activate, deactivate, and delete users](create-deactivate-and-delete-users.md)
+* [Grant or revoke roles to members](grant-and-revoke-user-roles.md#grant-roles-to-members)
+* [Best practices for user governance](best-practices-user-management.md)
+* [Role-based security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course
+* [Managing authorization and authentication for end-users](end-users/intro.md)
+* [User management](intro.md)

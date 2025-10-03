@@ -23,23 +23,39 @@ audience:
 
 <div class="info" markdown="1">
 
-App Analytics Stream may require an add-on to your current subscription.
+**Analytics Stream** requires an add-on [subscription](../../manage-platform-app-lifecycle/subscription-console.md). Please contact your OutSystems account team for more information.
+
+This functionality uses the Data platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data platform](../../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
 
 </div>
 
 Streaming observability data is the process of continuously collecting and sending metric, log, and trace data to analysis and monitoring tools in near real-time. This gives you immediate insights into how your apps and systems are working. By streaming observability data in near real-time, you can proactively monitor, analyze, and respond to potential issues, ultimately enhancing app reliability and performance.
 
-With ODC's App Analytics Stream enabled, you can stream obserevability data from ODC apps to various third-party application performance monitoring (APM) tools, including Elastic Cloud, Datadog, Dynatrace, Splunk, New Relic, and Amazon S3. This real-time flow provides you with dynamic insights into app performance and behavior. 
+With ODC's **Analytics Stream** enabled, you can stream observability data from ODC apps to various third-party application performance monitoring (APM) tools, including Elastic Cloud, Datadog, Dynatrace, Splunk, New Relic, and Amazon S3. This real-time flow provides you with dynamic insights into app performance and behavior.
 
 ODC adopts the [OpenTelemetry](https://opentelemetry.io/) standard to stream observability data to various APM tools. OpenTelemetry is an [open-source](https://github.com/open-telemetry) observability framework comprising a collection of tools, APIs, and SDKs that you can use to instrument, generate, collect, and export observability data to help analyze your apps' performance and behavior. OpenTelemetry is tool-agnostic, meaning it can be used with various commercial and open-source APM tools without significant configuration changes.
 
-## Prerequisites
+## Prerequisites { #prerequisites }
 
 Before you start streaming observability data, ensure you have:
 
-* A subscription to App Analytics Stream. Contact your account manager for provisioning.
+* A subscription to **Analytics stream**. Contact your account manager for provisioning.
 
-* The Manage App Analytics Stream permission.
+* The Manage **Analytics stream** permission.
+
+* Connectivity requirements:
+
+    Streaming logs from ODC requires the APM tool to expose an ingestion endpoint that is reachable from the public internet. Private connectivity options like private gateway aren't possible. Security risks associated with publicly exposing an endpoint can be mitigated through the following measures:
+
+    * Encryption in transit: All log traffic is transmitted over HTTPS.
+
+    * Authentication: The endpoint should enforce authentication (for example, API keys or OAuth tokens) to prevent unauthorized use.
+
+    * Controlled exposure: When the APM tool is on-premises, the endpoint is accessible through a firewall, a reverse proxy, or both in the customer’s DMZ, ensuring that the internal APM system is never directly exposed.
+
+    * IP allowlisting: Firewall rules can restrict inbound traffic to the specific egress IP addresses of the OutSystems data platform, reducing exposure to the broader internet. The list of IP addresses can be found [here](../../manage-platform-app-lifecycle/odc-public-ips.md).
+
+    * Auditing and monitoring: All traffic passes through the firewall or proxy layer, which can log, monitor, and rate-limit requests.
 
 ## Benefits of streaming observability data
 
@@ -77,7 +93,7 @@ ODC uses the [OpenTelemetry Protocol (OTLP)](https://opentelemetry.io/docs/specs
 
 * For a scenario of temporary unavailability from the APM tool destination, failed batches are queued and retried for up to 48 hours in order to avoid data loss during this period. Such scenarios may delay the delivery of logs.
 * HTTP 500/gRPC Internal Error and HTTP 413 Payload Too Large responses from the APM tool ingestion will cause the current batch to be dropped.
-* APM tools may implement rules and limits to the ingestion, which are followed by App Analytics Stream when adherent to the OpenTelemetry protocol, but unexpected changes and other restrictive limits may impact the streaming service and prevent data from being ingested in the APM tool.
+* APM tools may implement rules and limits to the ingestion, which are followed by **Analytics Stream** when adherent to the OpenTelemetry protocol, but unexpected changes and other restrictive limits may impact the streaming service and prevent data from being ingested in the APM tool.
 
 </div>
 
@@ -94,11 +110,11 @@ ODC supports the following tools:
 
 <div class="info" markdown="1">
 
-Other tools compatible with the OpenTelemetry protocol and OTLP-formatted data are typically capable of interpreting ODC's observability data, but you need to evaluate them. Also, many APM tools are not native-compatible. For example, Splunk, Datadog, and Amazon S3 have implemented and distributed a public exporter library with the OpenTelemetry collector. 
+Other tools compatible with the OpenTelemetry protocol and OTLP-formatted data are typically capable of interpreting ODC's observability data, but you need to evaluate them. Also, many APM tools are not native-compatible. For example, Splunk, Datadog, and Amazon S3 have implemented and distributed a public exporter library with the OpenTelemetry collector.
 
 The OpenTelemetry collector is an app that runs separately and must be launched/supported by customers. For more information, refer to [Set up an OpenTelemetry collector.](stream-app-analytics-opentelemetry.md)
 
-IP allowlisting is not supported as the OutSystems origin IPs might change.
+To ensure you can respond proactively to any issues, OutSystems advises you to set up monitoring for data ingestion within your APM tool.
 
 </div>
 
@@ -121,7 +137,7 @@ For detailed information, refer to [Streamed trace data](stream-app-analytics-tr
 
 **Metrics data** presents numerical measurements of your app's performance and resource usage. Key metrics include:
 
-*  **Total requests**: The total number of requests made to any asset originating from elements such as screens, client actions, REST/service actions, timers, and global event handlers. 
+* **Total requests**: The total number of requests made to any asset originating from elements such as screens, client actions, REST/service actions, timers, and global event handlers.
 
     <div class="info" markdown="1">
 
@@ -143,6 +159,6 @@ For detailed information, refer to [Streamed metrics data](stream-app-analytics-
 
 * [Set up the OpenTelemetry collector](stream-app-analytics-opentelemetry.md)
 
-* [Configuring streams in the ODC Portal](stream-app-analytics-configure.md)
+* [Configure analytics streams in the ODC Portal](stream-app-analytics-configure.md)
 
 * [Monitoring and troubleshooting apps](../monitor-apps.md)

@@ -27,6 +27,12 @@ topic:
 ---
 # Audit trail
 
+<div class="info" markdown="1">
+
+This functionality uses the Data platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data platform](../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
+
+</div>
+
 Within the OutSystems ODC platform, an **audit trail** is a critical, chronological record of actions that have affected specific platform operations. This evidence is crucial for fulfilling compliance initiatives and organizational policies, as most forms of auditing are subject to industry standards such as HIPAA and SOX, or country-specific legal regulations.
 
 Essentially, an audit trail offers a simple yet highly effective way to track temporal information. Every significant action creates a record detailing what happened and when. For effective analysis, these records must be collected in a central place where they can be searched, correlated, and analyzed – for ODC, this central place is the **ODC portal** > **Manage** > **Audit trail**.
@@ -43,12 +49,11 @@ ODC's audit trail provides you with a comprehensive, immutable record of signifi
 
 Before you can view or export audit logs, you must have the **Audit Trail View** role.
 
-## View audit trail in the ODC portal
+## View audit trail in the ODC Portal
 
 From the **Audit trail** interface, you can: 
 
-* **View logs from the last 30 days**: You can access a rolling 30-day log history directly in the portal.
-
+* **View logs from the last 30 days**: You can access a rolling 30-day log history directly in the Portal. Audit logs up to 3 months old [can be exported to CSV](#export-csv).
 * **Search and filter log attributes**: Easily find what you're looking for by searching and filtering on core log attributes.
 
 The logs display the most important information about **platform operations**. You can understand:
@@ -65,17 +70,19 @@ The logs display the most important information about **platform operations**. Y
 
     ![Screenshot of the ODC Portal showing the Audit trail screen](images/audit-trail-pl.png "Audit trail")
 
-### Exporting logs to CSV
+### Exporting logs to CSV { #export-csv }
 
 You can export your logs to a CSV file. This gives you even more flexibility:
 
 * **Access three months of data**: When you export, you can retrieve logs up to 3 months old.
 
-* **Export advanced log attributes**: Get detailed information by exporting advanced log attributes that aren't visible in the portal.
+* **Export advanced log attributes**: Get detailed information by exporting advanced log attributes that aren't visible in the ODC Portal.
 
 * **Upload into your SIEM tool**: Upload your Audit Trail data to your Security Information and Event Management (SIEM) tool of choice for further analysis.
 
 To download your logs, click the **Export trail** button. This downloads a CSV file directly to your local machine.
+
+![Screenshot of the ODC Portal showing the Export trail screen](images/export-audit-trail-pl.png "Export trail")
 
 #### Export limitations
 
@@ -97,7 +104,7 @@ Audit trail logs do not track actions made within your app's runtime.
 
 ### User Login
 
- Track detailed records of login attempts to your tenant to monitor and analyze access activity.
+ Track detailed records of successful logins in your tenant to monitor and analyze access activity.
 
 * User Login
 
@@ -181,9 +188,9 @@ There are two types of log attributes: **Foundational** (visible in the ODC Port
 
 Foundational attributes help you understand key details about each action directly in the ODC Portal interface.
 
-|                    |                                                         |
-| ------------------ | --------------------------------------------------------|
+
 | **Attribute name** |              **Definition**                             |
+| ------------------ | --------------------------------------------------------|
 | **Date**  |The timestamp of when the audit event was recorded. |
 | **Operation** | The specific action you performed.  |
 | **Entity type**|The type of entity affected by the action. |
@@ -196,24 +203,14 @@ Foundational attributes help you understand key details about each action direct
 
 When you export your audit data to a CSV file, additional, more detailed attributes are provided.
 
-|                                 |                                               |                         |                         
-| ------------------------------- | --------------------------------------------- | ----------------------- |
 | **Attribute name**              |                 **Definition**                |     **Data type**       |
-| **CustomerVisible**| Indicates whether ODC customers can see the audit event. | Boolean (True or False)   |
-| **Metadata_Schema** | The schema version of the audit log entry.  | String  |
-| **Event_Category**| The category of the event classifies the type of action performed.| String (for example, `AuditLog`.)  |
+| ------------------------------- | --------------------------------------------- | ----------------------- |
 | **Event_EventId**| A unique identifier for the audit event. |  String (unique alphanumeric ID)  |
 | **Event_TenantId** | The unique identifier for your tenant (organization or customer account). | String (UUID) |
 | **Event_EnvironmentId**| The unique identifier of the development stage where the event took place. | String (UUID) |
 | **Event_EnvironmentName** |The human-readable name of the development stage (for example, `Production`, `Staging`, or `NonProduction1`). | String |
-| **Event_Ring** | The deployment ring where the action occurred. |String (for example, `ga`) |
 | **Event_DateTime**| The timestamp when the audit event was recorded. | ISO 8601 Date-Time String (for example, `2025-02-13T14:35:20Z`)  |
-| **Event_Source_ApplicationId**|The unique identifier of the application that triggered the event. |String (unique alphanumeric ID)  |
-| **Event_Source_Name** |The name of the ODC platform component that triggered the audit event (for example, `Admin Console` or `API Gateway`).|  String |
-| **Event_Source_Version** |The version of the ODC platform component that generated the event. |  String (for example,` 1.5.3`) |
-| **Event_Source_OsVersion** |The platform version of the device or system that initiated the event. | String (for example, `ODC`)  |
 | **Event_Request_SourceIp**|The IP address of the user or system that initiated the request. |String (IPv4 or IPv6 address)  |
-| **Event_Request_DestinationIp**|The IP address of the system that received the request. |String (IPv4 or IPv6 address)     |
 | **Event_Request_TraceId** | A unique identifier used to trace the request across distributed systems.  |  String (UUID)  |
 | **Event_Request_UserId** | The unique identifier of the user who performed the action. | String (UUID) |
 | **Event_Request_UserName**| The human-readable username of the user who performed the action (for example, `john.doe\@example.com`). | String|
@@ -234,6 +231,6 @@ When you export your audit data to a CSV file, additional, more detailed attribu
 
 * When you add or remove users from end user groups, the logs show the **difference** between the old value and the new value. All other logs show the old value and the new value. End user groups can contain thousands of user values. To ensure high performance, Audit trail prioritizes showing the smaller `diff` rather than the full list of end users. 
 
-* Audit trail data is stored in the geographical hub for your location, either US East (N. Virginia), South America (São Paulo), Europe (Frankfurt), or Asia Pacific (Singapore). This may include encrypted email addresses stored outside of your chosen app runtime region. Learn more about ODC's [encryption standards](../security/security.md).
+* If an OutSystems support agent needs to access your ODC tenant as part of a support ticket, audit trail logs the time of access. Access is automatically revoked when no longer needed, and always expires after a maximum of four hours.
 
 </div>

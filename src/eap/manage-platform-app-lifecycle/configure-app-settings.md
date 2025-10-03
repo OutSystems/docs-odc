@@ -92,7 +92,7 @@ The following table shows the available settings and their properties.
 | Description | Detailed description of the setting. Useful for documentation purposes. The maximum size of this property is 2000 characters. | No |
 | Data Type | The settings data type.|Yes|
 | Is secret | Encrypts and protects sensitive settings such as passwords and access tokens. A setting with the **Is secret** property enabled does not have a default value. |No|
-| Default Value | Initial value of this setting. If undefined, the default value of the data type is used. This does not apply to settings that have the **Is secret** property enabled.|No|
+| Default Value | Initial value of this setting. If undefined, the default value of the data type is used. This does not apply to settings that have the **Is secret** property enabled. The maximum size of this property is 2000 characters.|No|
 
 ## Related sources
 

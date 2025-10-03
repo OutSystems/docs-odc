@@ -25,7 +25,7 @@ This article explains how to set up the OpenTelemetry collector for application 
 
 ## Prerequisites
 
-Before setting up the OpenTelemetry collector, ensure you have a subscription to the **App Analytics Stream**. Contact your account manager for provisioning.
+Before setting up the OpenTelemetry collector, ensure you have a subscription to the **Analytics Stream**. Contact your account manager for provisioning.
 
 ## Set up the OpenTelemetry collector
 
@@ -90,11 +90,11 @@ Remember to edit the following:
        exporters: [datadog]
 
 ```
+
 # Related resources
 
 * [Streaming observability data](stream-app-analytics-overview.md)
+
 * [Streaming observability data to APM tools](stream-app-analytics-apm.md)  
-* [Configure app analytics streams in Portal](stream-app-analytics-configure.md)
 
-
-  
+* [Configure analytics streams in the ODC Portal](stream-app-analytics-configure.md)

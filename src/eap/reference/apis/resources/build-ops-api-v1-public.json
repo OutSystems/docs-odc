@@ -1,0 +1,667 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Build Operations API",
+    "description": "Provides APIs to start build operations and retrieve information about their status.\n",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://ODC_PORTAL_DOMAIN/api/builds/v1",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/builds/v1",
+      "description": "Replace {odc-portal-domain} with the domain of your organization.",
+      "variables": {
+        "odc-portal-domain": {
+          "default": "ODC_PORTAL_DOMAIN",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/build-operations/{operationKey}": {
+      "get": {
+        "tags": [
+          "Build"
+        ],
+        "summary": "Gets detailed information about a given build",
+        "description": "Example:\n\n    GET /builds/v1/build-operations/be77b25f-c738-462f-8f19-7114fc4f9923\n\nYou need the **Asset management > Open** permission.",
+        "operationId": "BuildV_GetBuild",
+        "parameters": [
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "The key of the build",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details about the build",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuildDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Couldn't find asset key or revision or build",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "You need the **Asset management > Open** permission."
+      }
+    },
+    "/build-operations/{operationKey}/log-messages": {
+      "get": {
+        "tags": [
+          "Build"
+        ],
+        "summary": "Gets messages logged by a given build",
+        "description": "Example:\n\n    GET /builds/v1/build-operations/be77b25f-c738-462f-8f19-7114fc4f9923/log-messages\n\nYou need the **Asset management > Open** permission.",
+        "operationId": "BuildV_GetBuildFeedback",
+        "parameters": [
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "The key of the build",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuildFeedbackDetailsResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "You need the **Asset management > Open** permission."
+      }
+    },
+    "/build-operations": {
+      "get": {
+        "tags": [
+          "Build"
+        ],
+        "summary": "List all builds created for a given revision of a given asset",
+        "description": "Example:\n\n    GET /builds/v1/build-operations?assetKey=68ef84e5-9265-47b8-8612-b073b70e3e3e&assetRevision=1\n\nYou need the **Asset management > Open** permission.",
+        "operationId": "BuildV_ListBuilds",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "query",
+            "description": "The key of the asset",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "assetRevision",
+            "in": "query",
+            "description": "The id of the revision of the asset",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "byBuildType",
+            "in": "query",
+            "description": "Filter by build type. Default: returns all",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/BuildType"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of all builds",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuildDetailsBuildListResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Couldn't find asset key or revision",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "You need the **Asset management > Open** permission."
+      },
+      "post": {
+        "tags": [
+          "Build"
+        ],
+        "summary": "Starts a job operation that will build a particular revision of a given asset",
+        "description": "Example:\n\n    POST /builds/v1/build-operations\n\n    {\n\n       \"buildType\": \"Release\",\n\n       \"assetKey\": \"68ef84e5-9265-47b8-8612-b073b70e3e3e\",\n\n       \"assetRevision\": 1\n\n    }\n\nYou need the **Asset management > Open** permission.",
+        "operationId": "BuildV_StartNewBuildJob",
+        "requestBody": {
+          "description": "The specification of the build to start, including asset key, asset revision, and build type.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuildOperationDetails"
+                  }
+                ],
+                "description": "The specification of a build request"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuildOperationDetails"
+                  }
+                ],
+                "description": "The specification of a build request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The Id of the build that was just started",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuildResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Couldn't find asset or revision",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BuildType is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "You need the **Asset management > Open** permission."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BuildDetails": {
+        "required": [
+          "assetKey",
+          "assetRevision",
+          "buildKey",
+          "buildType"
+        ],
+        "type": "object",
+        "properties": {
+          "buildKey": {
+            "type": "string",
+            "description": "The key of build",
+            "format": "uuid"
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "The particular asset being built",
+            "format": "uuid"
+          },
+          "assetRevision": {
+            "type": "integer",
+            "description": "The particular revision being built",
+            "format": "int32"
+          },
+          "buildType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BuildType"
+              }
+            ],
+            "description": "The type of build"
+          },
+          "startedDateTime": {
+            "type": "string",
+            "description": "The timestamp, in UTC, of when the built was started",
+            "format": "date-time",
+            "nullable": true
+          },
+          "finishedDateTime": {
+            "type": "string",
+            "description": "The timestamp, in UTC, of when the built was finished",
+            "format": "date-time",
+            "nullable": true
+          },
+          "builtBy": {
+            "type": "string",
+            "description": "The key of the subject (user, service account, etc.) which requested the build",
+            "nullable": true
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BuildStatus"
+              }
+            ],
+            "description": "The current status of the build"
+          },
+          "securityAudit": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecurityVulnerabilities"
+              }
+            ],
+            "description": "The Security audit with list of security vulnerabilities",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "The status of a particular build"
+      },
+      "BuildDetailsBuildListResponse": {
+        "type": "object",
+        "properties": {
+          "builds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuildDetails"
+            },
+            "description": "The list of builds",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "The list of builds that match provided criteria"
+      },
+      "BuildFeedbackDetails": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "description": "The timestamp representing the instant when the message was issued",
+            "format": "date-time"
+          },
+          "type": {
+            "type": "string",
+            "description": "An identifier for the message",
+            "nullable": true
+          },
+          "severity": {
+            "type": "string",
+            "description": "The severity of the message: Error, Info, Warning, etc.",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The content of the message",
+            "nullable": true
+          },
+          "stepId": {
+            "type": "string",
+            "description": "The identifier of the stage the message corresponds to",
+            "nullable": true
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "The key of the application being processed by the build",
+            "format": "uuid"
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "A unique identifier for the error message",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A message issued during the build process"
+      },
+      "BuildFeedbackDetailsResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuildFeedbackDetails"
+            },
+            "description": "The messages issued during a build",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "All messages issued during a build"
+      },
+      "BuildOperationDetails": {
+        "type": "object",
+        "properties": {
+          "assetKey": {
+            "type": "string",
+            "description": "Specifies the key of the asset to be built",
+            "format": "uuid"
+          },
+          "assetRevision": {
+            "type": "integer",
+            "description": "Specifies the revision of the asset to be built",
+            "format": "int32"
+          },
+          "buildType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BuildType"
+              }
+            ],
+            "description": "Specifies the type of build to be created. Accepts: 'Debug' or 'Release'",
+            "default": "Debug"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The specification of a build request"
+      },
+      "BuildResponse": {
+        "type": "object",
+        "properties": {
+          "buildKey": {
+            "type": "string",
+            "description": "A unique identifier generated for the Build. Can be used to retrieve or outputs the status of associated build.",
+            "format": "uuid"
+          },
+          "isSuccessful": {
+            "type": "boolean",
+            "description": "Signals whether the build start successfully"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The response of a build request"
+      },
+      "BuildStatus": {
+        "enum": [
+          "Pending",
+          "Finished",
+          "FinishedWithErrors",
+          "Running",
+          "Deleted",
+          "ToBeDeleted"
+        ],
+        "type": "string"
+      },
+      "BuildType": {
+        "enum": [
+          "Debug",
+          "Release"
+        ],
+        "type": "string",
+        "description": "The type of build"
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code applicable to the problem.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation of the error.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem.",
+            "nullable": true
+          },
+          "traceId": {
+            "type": "string",
+            "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
+          }
+        },
+        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+      },
+      "SecurityVulnerabilities": {
+        "type": "object",
+        "properties": {
+          "vulnerabilities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SecurityVulnerability"
+            },
+            "description": "A list of the security vulnerabilities",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Security Vulnerabilities"
+      },
+      "SecurityVulnerability": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The Id the vulnerability",
+            "nullable": true
+          },
+          "severity": {
+            "type": "string",
+            "description": "The Severity level of the vulnerability",
+            "nullable": true
+          },
+          "details": {
+            "type": "string",
+            "description": "The Link to the vulnerability description",
+            "nullable": true
+          },
+          "publishedDate": {
+            "type": "string",
+            "description": "The Published date of the vulnerability",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Security Vulnerability"
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [{
+    "bearerAuth": []
+  }]
+}

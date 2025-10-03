@@ -27,27 +27,77 @@ The ODC API is a RESTful interface with predictable resource-oriented URLs, acce
 
 ## API domains
 
+These are the OutSystems REST APIs that you can use to access and manage information related to your ODC assets.
+
 ### User and access management
 
-The user and access management REST APIs, enable you to programmatically manage user-related operations such as:
+The user and access management REST API enables you to programmatically manage user-related operations, such as:
 
 * Listing the current end-users of the apps to understand their status and modifying specific user information.
 
-* Managing user access to specific resources or functionalities within the app. It includes granting or revoking access permissions, managing user groups, and defining access policies. 
+* Managing user access to specific resources or functionalities within the app. It includes granting or revoking access permissions, managing user groups, and defining access policies.
 
 For detailed information about the endpoints, refer to [User management API reference](../identity-v1.md).
 
 ### Portfolio management
 
-The portfolio management REST APIs, enable you to view a list of deployed assets in each environment.
+The portfolio management REST API enables you to view a list of deployed assets in each environment.
 
-For detailed information about the different endpoints, refer to [Portfolio management API reference](../portfolio-v1.md).
+For detailed information about the endpoints, refer to [Portfolio management API reference](../portfolio-v1.md).
 
-## Terminology mapping between ODC portal and ODC APIs
+### Build Operations
+
+The Build Operations REST API enables you to programmatically manage build processes for your ODC assets. You can use this API to:
+
+* Start build operations for your assets.
+
+* Monitor the status and progress of ongoing builds.
+
+For detailed information about the endpoints, refer to [Build Operations API reference](../build-v1.md).
+
+### Deployments
+
+The Deployments REST API enables you to automate the deployment lifecycle of your assets across different environments. You can use this API to:
+
+* Deploy assets to specific environments (stages) in your organization.
+
+* Monitor deployment progress and retrieve deployment status information.
+
+For detailed information about the endpoints, refer to [Deployments API reference](../deployment-v1.md).
+
+### Dependency Management
+
+The Dependency Management REST API enables you to analyze and understand dependencies between assets before making changes. You can use this API to:
+
+* Launch impact analysis to identify dependencies before deploying or deleting assets.
+
+* Retrieve detailed dependency information to understand how changes affect other assets.
+
+* Make informed decisions about asset lifecycle management based on dependency analysis results.
+
+For detailed information about the endpoints, refer to [Dependency Management API reference](../dependency-v1.md).
+
+### Asset Repository
+
+The Asset Repository REST API enables you to access information about your ODC assets and manage their revisions.
+
+For detailed information about the endpoints, refer to [Asset Repository API reference](../asset-v1.md).
+
+### Asset Configurations
+
+The Asset Configurations REST API enables you to manage configuration settings for your ODC environments and assets. You can use this API to:
+
+* Retrieve and update global environment settings that affect all assets in an environment.
+
+* Manage configuration settings for individual assets.
+
+For detailed information about the endpoints, refer to [Asset Configurations API reference](../asset-config-v1.md).
+
+## Terminology mapping between the ODC Portal and ODC APIs
 
 A **stage** in ODC refers to the place where you deploy your apps, such as the Development stage and the Production stage. In ODC REST APIs, the **ODC stage** is represented as an **environment** resource.
 
-An **end-user role** is a set of permissions assigned to users who interact with the ODC app. For detailed information about end-user roles, see [Secure your app with end-user roles](../../../user-management/secure-app-with-roles.md). In ODC REST APIs, an **end-user role** is represented as an **application role** resource. 
+An **end-user role** is a set of permissions assigned to users who interact with the ODC app. For detailed information about end-user roles, see [Secure your app with end-user roles](../../../user-management/secure-app-with-roles.md). In ODC REST APIs, an **end-user role** is represented as an **application role** resource.
 
 ## Related resources
 

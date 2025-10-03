@@ -2,7 +2,7 @@
 summary: Learn the best practices for fetching and displaying data in OutSystems.
 tags: data fetching, aggregates, sql queries, data actions, asynchronous operations
 outsystems-tools:
-  - service studio
+  - odc studio
 guid: 65834d5d-b36c-47b0-afc5-43ae35b5bd7d
 locale: en-us
 app_type: mobile apps, reactive web apps

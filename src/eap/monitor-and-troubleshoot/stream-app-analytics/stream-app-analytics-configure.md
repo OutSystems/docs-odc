@@ -18,7 +18,7 @@ audience:
 helpids: 30636
 ---
 
-# Configure app analytics streams in Portal
+# Configure analytics streams in the ODC Portal
 
 To stream observability data from your app to the corresponding APM tool, you must create a stream and configure the APM server details and authentication credentials. This article explains how to create streams in the ODC Portal for a specific APM tool.
 
@@ -26,7 +26,7 @@ To stream observability data from your app to the corresponding APM tool, you mu
 
 Before creating a stream, refer to the [prerequisites for streaming observability data](stream-app-analytics-overview.md#prerequisites).
 
-## Create a stream 
+## Create a stream
 
 This example demonstrates the process of creating a stream using **New Relic** as the destination APM tool. The steps might vary slightly depending on the APM tool you select.
 
@@ -87,6 +87,13 @@ A stream can have one of the following statuses:
 * **Active with errors:** The stream is currently running and attempting to send data, but encountering some errors. You should investigate these errors to ensure all data is being delivered correctly. Check the stream details or logs for more information on the specific errors.  
 
 * **Inactive:**  When you manually deactivate a stream, it transitions to an inactive state, and no data is sent to the APM tool. You can reactivate an inactive stream. Once the stream is successfully reactivated, its status will change to **Active**.
+
+
+<div class="info" markdown="1">
+
+When sending logs from multiple environments to a same destination, create one connection while selecting multiple environments.
+
+</div>
 
 ## Next steps
 

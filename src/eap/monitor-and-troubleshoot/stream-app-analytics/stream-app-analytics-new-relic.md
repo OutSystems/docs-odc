@@ -1,5 +1,5 @@
 ---
-summary: Stream observability data from OutSystems Developer Cloud (ODC) apps to New Relic using the App Analytics Stream subscription.
+summary: Stream observability data from OutSystems Developer Cloud (ODC) apps to New Relic using the Analytics Stream subscription.
 tags: observability data,new relic,apm tool,opentelemetry,api keys
 guid: 0142e89a-6164-41b9-bf04-3e41868496b8
 locale: en-us
@@ -25,7 +25,7 @@ This article explains how you can stream observability data from ODC apps to the
 
 ## Prerequisites
 
-Before streaming observability data to **New Relic**, ensure you have a subscription to the **App Analytics Stream**. Contact your account manager for provisioning.
+Before streaming observability data to **New Relic**, ensure you have a subscription to the **Analytics Stream**. Contact your account manager for provisioning.
 
 ## Set up streaming observability data to New Relic
 
@@ -49,7 +49,6 @@ Here are some additional helpful documentation, links, and articles:
 
 * [OpenTelemetry Collector configuration](https://opentelemetry.io/docs/collector/configuration/)
 
-
 ## Related resources
 
 * [Streaming observability data](stream-app-analytics-overview.md)
@@ -58,5 +57,4 @@ Here are some additional helpful documentation, links, and articles:
 
 * [Set up the OpenTelemetry Collector](stream-app-analytics-opentelemetry.md)
 
-* [Configure app analytics streams in Portal](stream-app-analytics-configure.md)
-
+* [Configure analytics streams in the ODC Portal](stream-app-analytics-configure.md)

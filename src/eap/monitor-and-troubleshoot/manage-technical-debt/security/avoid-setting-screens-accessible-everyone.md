@@ -22,9 +22,23 @@ outsystems-tools:
 
 The default authorization for screens is accessible only by authenticated users. When you change it to be accessible by **Everyone**, any end-user can log in.
 
+<div class="info" markdown="1">
+
+This finding only applies to screens whose names don't contain any of the following words (case insensitive):
+
+* login
+* invalidpermissions
+* nopermission
+* internalerror
+* splash
+* recoverpasswordreset
+* recoverpasswordrequest
+
+</div>
+
 ## Why is this happening?
 
-The screen authorization is accessible to **Everyone**. 
+The screen authorization is accessible to **Everyone**.
 
 ![Screen authorization settings showing the option to set accessibility to Everyone or Authenticated Users.](images/odcs-accessible-everyone.png "Screen Authorization Settings")
 

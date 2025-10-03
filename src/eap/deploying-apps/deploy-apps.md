@@ -18,14 +18,14 @@ coverage-type:
   - apply
 topic:
   - deploy-apps-in-lt-portal
-helpids: 
+helpids: 30685
 ---
 
 # Deploying assets
 
-Use OutSystems Developer Cloud (ODC) Portal to deploy your assets (apps and workflows). In ODC, you deploy your assets to stages. A stage is a step within your delivery pipeline that includes runtime resources. By default, ODC includes two stages: development and production 
+Use OutSystems Developer Cloud (ODC) Portal to deploy your assets (apps and workflows). In ODC, you deploy your assets to stages. A stage is a step within your delivery pipeline that includes runtime resources. By default, ODC includes two stages: development and production.
 
-ODC has a single code repository. When you deploy in ODC Studio, your asset is containerized, deployed to the development stage, and a container image is available. When you're ready to deploy your asset to the next stage your asset deploys without the need to recompile code again. 
+ODC has a single code repository. When you deploy in ODC Studio, your asset is containerized, deployed to the development stage, and a container image is available. When you're ready to deploy your asset to the next stage your asset deploys without the need to recompile code again.
 
 Assets in each stage are isolated from each other. When you publish an asset to the development stage, it doesn't impact the assets running in other stages. Similarly, publishing assets to production doesn't affect assets in a previous stage, such as development.
 
@@ -51,20 +51,19 @@ To learn how to roll back to a previous version, refer to [Rollback apps](rollba
 
 <div class="info" markdown="1">
 
-Libraries aren't represented in the deployment overview, as libraries are bundled with apps. In ODC, libraries are not deployed independently. Instead, when an app that incorporates a library is published, the library's package is included in the app's container. This means libraries are deployed as an integral part of the app, not separately. For more information about libraries, refer to [Libraries](../building-apps/libraries/libraries.md).
+There is no information about libraries, as libraries are bundled with apps. In ODC, libraries are not deployed independently. Instead, when an app that incorporates a library is published, the library's package is included in the app's container. This means libraries are deployed as an integral part of the app, not separately. For more information about libraries, refer to [Libraries](../building-apps/libraries/libraries.md).
 
 </div>
-
 
 ## Deploy to stages
 
 Use ODC Studio to create and publish your apps. Use the ODC Portal to create and publish your workflows and deploy both apps and workflows to different stages. 
 
-When you build and publish an app or workflow, your asset becomes available in the development stage. You can only publish to development and then deploy to other stages. 
+When you build and publish an app or workflow, your asset becomes available in the development stage. You can only publish to development and then deploy to other stages.
 
 To deploy your asset to a stage:
 
-1. Go to the ODC Portal and click **Deployments**. 
+1. Go to the ODC Portal and click **Deployments**.
 
     A list of assets is displayed, with details about the stage, status, deployment start date, and who deployed the asset.
 
@@ -72,15 +71,19 @@ To deploy your asset to a stage:
 
 1. Select the asset you want to deploy.
 
-1. Select the revision you want to deploy, and click **Continue**. 
+1. Select the revision you want to deploy, and click **Continue**.
 
     An impact analysis runs in the background, and an impact analysis report with information about warnings and blockers is displayed. Review the impact analysis and make a deployment decision. You can fix the issues in ODC Studio and deploy the app, or you can deploy the app with warnings.
 
 1. (Optional) To fix the issues, go back to your asset and rectify the identified inconsistencies.
 
-1. (Optional) To deploy the asset to the next stage, click **Deploy Now**. 
+1. (Optional) To deploy the asset to the next stage, click **Deploy Now**.
 
-    **Note**: If you are deploying an app to production, you can change the version number before deploying.
+    <div class="info" markdown="1">
+    
+    If you are deploying an app to production, you can change the version number before deploying.
+
+    </div>
 
 Your asset is deployed to your selected stage. To roll back an update from a stage, you must deploy an older version in ODC Portal. For more information, refer to [Rollback asset](rollback.md)
 
@@ -92,11 +95,15 @@ Versions and revisions help you track changes in your assets. You can publish yo
 
 Versions and revisions help you keep track of changes in your workflows in different stages, such as:
 
-* **Development**: When you publish your asset in the Development stage, ODC automatically creates a new revision and the revision number increments by one. 
+* **Development**: When you publish your asset in the Development stage, ODC automatically creates a new revision and its number increments by one.
 
-    **Note**: You can not change the asset revision number.
+    <div class="info" markdown="1">
+    
+    You can not change the asset revision number.
 
-* **QA**: You can deploy any revision of your asset from Development to QA. 
+    </div>
+
+* **QA**: You can deploy any revision of your asset from Development to QA.
 
 * **Production**: After testing, when you deploy your asset from QA  to Production, ODC assigns a three-part semantic version number in the format major.minor.patch. The system always suggests a version (the first suggestion is always 0.1.0). Depending on the changes you deploy to Production, you can change the version number (it must be equal to or higher than the previous version). 
 
