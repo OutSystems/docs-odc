@@ -48,9 +48,11 @@ Once the app is published, you can define the extensibility settings in ODC Port
 To define the settings, follow these steps:
 
 1. Go to ODC Portal.
-1. Click the app and select **Mobile distribution** > **Extensibility settings**.
-1. Edit the setting.
 
-![ODC Portal interface showing the extensibility settings for mobile distribution packages.](images/extensibility-setting-pl.png "Extensibility Settings in ODC Portal")
+1. Click the app and select **Mobile distribution** > **Extensibility settings**.
+
+    ![ODC Portal interface showing the extensibility settings for mobile distribution packages.](images/extensibility-setting-pl.png "Extensibility Settings in ODC Portal")
+
+1. Edit the setting.
 
 You must regenerate the mobile package every time you change the value of the extensibility settings. For detailed information, refer to [Create mobile app package](creating-mobile-package.md).
