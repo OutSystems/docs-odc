@@ -38,7 +38,7 @@ To create a self-registration flow, open ODC studio and follow the steps below:
 
 1. From the canvas, click the email label and input the fields container on the screen, then do the following:
     1. Copy and paste the specified container into the same folder.
-    1. Set the Style Classes property of the new container to `margin-bottom-base`.
+    1. Set the Style Classes property of the new container to `margin-top-base`.
     1. Rename the text in the old email label as Name.
 
     ![Step-by-step process of renaming local variables on the sign-up screen in ODC studio](images/rename-local-variable-odcs.png "Rename Local Variables")

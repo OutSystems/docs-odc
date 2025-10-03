@@ -23,7 +23,7 @@ outsystems-tools:
 
 ODC has an internal SQL type system with mappings to/from attribute data types in external systems.
 
-ODC will automatically map value and attribute types as outlined in [External data type mapping](../../../../integration-with-systems/external-databases/external-data-type.md) however it is also possible to `CAST`expressions and attributes to convert them to a different type, refer to [Type conversion](ansi-92-operators.md#type-conversion) for more information.
+ODC will automatically map value and attribute types as outlined in [External data type mapping](../../../../integration-with-systems/external-databases/external-data-type.md) however it is also possible to `CAST` expressions and attributes to convert them to a different type, refer to [Type conversion](ansi-92-operators.md#type-conversion) for more information.
 
 Null value handling can be configured in ODC Portal as explained [here](../../../../integration-with-systems/external-databases/handle-null-values.md).
 

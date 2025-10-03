@@ -88,7 +88,11 @@ Referential integrity refers to the consistency of the relationships between ent
 
 When you create a relationship between entity A and entity B, you must specify the referential integrity that you want to apply in your data model. You define what must happen in entity B if the corresponding record in entity A is deleted. In ODC, this behavior is defined by the value of the **Delete Rule** property of the reference attribute. By default, the **Delete Rule** is set to **Protect** for entities in the same app but you can change it according to the desired behavior.
 
+<div class="info" markdown="1">
+
 Relationships between entities in different apps works differently. The **Delete rule** is always set to **Ignore**.
+
+</div>
 
 ### Protect  
 

@@ -11,7 +11,7 @@ audience:
   - full stack developers
   - architects
 outsystems-tools:
-  - service studio
+  - odc studio
 coverage-type:
   - remember
 ---

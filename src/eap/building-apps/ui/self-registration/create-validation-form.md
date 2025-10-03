@@ -153,7 +153,7 @@ Now lets update the verification form to improve it.
 
 1. From the Toolbox, drag a **Run Client Action** widget and place it after the **Assign** widget, then do the following:
     1. Search for FinishUserRegistration, select it, and then click **Select**.
-    1. Set the **Email** `UserEmail`, **Password** as `Password`, and  **VerificationCode** as `VerificationCode`.
+    1. Set the **Email** as `UserEmail`, **Password** as `Password`, and  **VerificationCode** as `VerificationCode`.
 
     ![Screenshot depicting the logic creation for finishing the registration flow in ODC Studio](images/finish-registration-odcs.png "Create the Logic to Finish the Registration Flow")
 
@@ -163,22 +163,18 @@ Now lets update the verification form to improve it.
  1. Drag an **If** widget to the canvas, to validate **FinishUserRegistration** runs without errors and then do the following:  
     1. Set the **Condition** as `FinishUserRegistration.RegistrationResult.Success`.
     1. Drag a **Run Server Action** widget to the True branch.
-    1. Select **New Server Action** and name it `FinishUserRegistration`.
-    1. Right-click the new **FinishUserRegistration** server action and select **Add Input Parameter**.
-    1. Set **Name** as `Email` and the **Data Type** as `Email`.
- 1. On the new **FinishUserRegistration** server action canvas, use the AI assistant to select the option **Get Data**, then do the following:
-    1. Input the `User` entity and click the **Get Data** button.
-    1. Click the **No Filters** tab and then click the **Add Filter** button.
-    1. Inside the **Filter Condition** window, set `User.Id`= UserId.
- 1. Navigate back to the **FinishUserRegistration** server action canvas.
- 1. Drag an **If** widget and place it after the newly added aggregate widget and set the **Condition** as `GetUsersByEmail.List.Empty`.
- 1. On the top toolbar, click the **Add public elements** icon or use the **Ctrl+Q** shortcut. Search for the **LogMessage** server action action, select it, and click **Add**.
- 1. On the canvas, in the True branch, add a LogMessage system action and set the Message.
- 1. On the canvas, in the False branch, drag a **Run Server Action** widget, and search for Grant&lt;YOUR_ROLE_NAME&gt;Role. Set  the **UserId** as `GetUsersByEmail.List.Current.User.Id`.
+    1. Select **New Server Action** and name it `FinishSignUp`.
+    1. Right-click the new **FinishSignUp** server action and select **Add Input Parameter**.
+    1. Set **Name** as `UserId` and the **Data Type** as `User Identifier`.
+1. In the new **FinishSignUp** server action:
+    1. After the **Start** node, drag a **Run Server Action** widget, search for **Grant&lt;YOUR_ROLE_NAME&gt;Role**, and set the **UserId** to `UserId`.
 
     ![Screenshot illustrating how to drag a GrantRole server action and add the user ID in ODC Studio](images/grant-role-values-odcs.png "Drag a GrantRole Server Action and Add the User ID")
 
- 1. From the Toolbox bar, drag a **Destination** element to the True branch. A **Select Destination** popup screen displays. Expand the **UI Flows** > **Common** folder and select **Login**.
+ 1. Navigate back to the **FinishUserRegistration** client action canvas.
+ 1. Select the **FinishSignUp** Run Server Action.
+    1. Set the **UserId** as `FinishUserRegistration.RegistrationResult.UserId`.
+ 1. From the Toolbox bar, drag a **Destination** element to the **True** branch, after the **FinishSignUp** action. A **Select Destination** popup screen displays. Expand the **UI Flows** > **Common** folder and select **Login**.
  1. From the Toolbox, drag a **Message** widget to the False branch. Set **Type** as `Error` and in the **Message** paste the following text:
 
     ```
@@ -186,12 +182,12 @@ Now lets update the verification form to improve it.
     If (FinishUserRegistration.RegistrationResult.FinishUserRegistrationFailureReason.PasswordComplexityPolicyFailed,
             "Password not complex enough", "Something went wrong"))
     ```
-
+    
     ![Screenshot showing the final user registration process with validations in ODC Studio](images/finish-registration-message-odcs.png "Finish User Registration with Validations")
 
  1. Load the **Signup** screen onto the canvas and do the following:
     1. Drag a new **Button** widget and place it below  the **Set Password** button.
-    1. Fon the button, set the **On Click** event as the **Common\Login** screen.
+    1. On the button, set the **On Click** event as the **Common\Login** screen and then replace the text inside the button to `Cancel`.
     1. Set **Style Classes** as `"btn margin-top-base"` and **Is Form Default** as **No**.
     1. Under **Styles** > **Layout**, set the **Width** property to `fill`.
 
@@ -199,6 +195,8 @@ Now lets update the verification form to improve it.
 
  1. Open the widget tree for the **Login** screen and do the following:
     1. Right-click the **LoginForm** and click **Insert** > **Container**.
+    1. Set **Style Classes** as `"margin-top-base"`.
+    1. Under **Styles** > **Layout**, set the **Align** property to center.
     1. Click the container in the **Login** screen and add the text `New Account?`.
     1. From the Toolbox, drag a **Link** widget, and place it after the text.
     1. Set the **On Click** property as the **SignUp** screen and the text as `Sign up here!`.

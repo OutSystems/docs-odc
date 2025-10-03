@@ -1,0 +1,2419 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Asset Repository API",
+    "description": "REST endpoints for retrieving information about assets revisions.\n",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://ODC_PORTAL_DOMAIN/api/asset-repository/v1",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/asset-repository/v1",
+      "description": "Replace {odc-portal-domain} with the domain of your organization.",
+      "variables": {
+        "odc-portal-domain": {
+          "default": "ODC_PORTAL_DOMAIN",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "security": [{
+    "bearerAuth": []
+  }],
+  "paths": {
+    "/assets": {
+      "post": {
+        "tags": [],
+        "summary": "Creates a new revision of an asset.",
+        "description": "Creates a new revision for an asset from a source code file (OML/XIF).\n\nIf the asset does not exist, it creates the asset and its first revision.\n\nYou can provide the source code as an application/octet-stream or as a multipart/form-data file.\n\nTo create an asset, API Client needs the **Asset management > Create** permission.\n\nTo create a new revision for an existing asset, API Client needs the **Asset management > Change** permission.",
+        "operationId": "AssetRepository_CreateAssetRevision",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetVersionCreationRequest"
+              }
+            },
+            "application/octet-stream": {
+              "schema": {
+                "format": "binary"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "creationRequest": {
+                    "$ref": "#/components/schemas/AssetVersionCreationRequest"
+                  },
+                  "assetFile": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "creationRequest": {
+                  "contentType": "application/json"
+                },
+                "assetFile": {
+                  "contentType": "application/octet-stream"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationVersion"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "To create an asset, API Client needs the **Asset management > Create** permission.\n\nTo create a new revision for an existing asset, API Client needs the **Asset management > Change** permission."
+      },
+      "get": {
+        "tags": [],
+        "summary": "Lists all assets.",
+        "description": "Returns a list of the latest revision for all assets that match the specified filters.\n\n",
+        "operationId": "AssetRepository_ListAssets",
+        "parameters": [
+          {
+            "name": "nameContains",
+            "in": "query",
+            "description": "Filters assets by name.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nameOrDescriptionContains",
+            "in": "query",
+            "description": "Filters assets by name or description.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assetTypes",
+            "in": "query",
+            "description": "Filter by one or more asset types, recognized values are [WebApplication, MobileApplication, LowCodeLibrary, ExtensionLibrary, ExternalConnection, ExternalLibrary, Workflow, WidgetLibrary, AIModelConnection, SearchServiceConnection, Agent, MCPConnection].",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "assetKeys",
+            "in": "query",
+            "description": "Filter by one or more asset keys.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "embed",
+            "in": "query",
+            "description": "Embedded resources to return with the Asset Revision.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "metadata.urlPathContains",
+            "in": "query",
+            "description": "Filters assets by url path.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "metadata.templateType",
+            "in": "query",
+            "description": "Filter assets that are templates of a specific template type.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/TemplateType"
+                }
+              ]
+            }
+          },
+          {
+            "name": "metadata.isDeployable",
+            "in": "query",
+            "description": "Filter assets that can be deployed to environments (e.g. exclude libraries and templates).",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "metadata.isBuiltInAsset",
+            "in": "query",
+            "description": "Filter asset based on if they are builtin type.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isExternal",
+            "in": "query",
+            "description": "Filter asset based on if it is external or not.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "permissionFilter",
+            "in": "query",
+            "description": "Filter by a specific permission type.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/PermissionType"
+                }
+              ]
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Used for sorting the list. Ascending by default. Prepend a hyphen, \"-\", to get a descending sort. Allowed: name, createdAt.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results returned.",
+            "schema": {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "default": 100
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the first result returned.",
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetRevisionV1PagedListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetKey}": {
+      "delete": {
+        "tags": [],
+        "summary": "Deletes an asset.",
+        "description": "Deletes an asset. You cannot delete built-in assets.\n\nAPI Client needs the **Asset management > Delete** permission.",
+        "operationId": "AssetRepository_DeleteAsset",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Asset management > Delete** permission."
+      },
+      "get": {
+        "tags": [],
+        "summary": "Gets the latest revision of a specific asset.",
+        "description": "Returns the latest revision of a specific asset.\n\n",
+        "operationId": "AssetRepository_GetAsset",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "embed",
+            "in": "query",
+            "description": "Embedded resources to return with the Asset Revision.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetRevisionV1"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetKey}/highest-tag-revision": {
+      "get": {
+        "tags": [],
+        "summary": "Gets the highest-tagged revision of an asset.",
+        "description": "Returns the highest-tagged revision of the requested asset.\n\n",
+        "operationId": "AssetRepository_GetApplicationHighestTagRevision",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "embed",
+            "in": "query",
+            "description": "Embedded resources to return with the Asset Revision",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetRevisionV1"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetKey}/latest-revision": {
+      "get": {
+        "tags": [],
+        "summary": "Gets the latest revision of an asset.",
+        "description": "Returns the latest revision of the requested asset.\n\n",
+        "operationId": "AssetRepository_GetAssetLatestRevision",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "embed",
+            "in": "query",
+            "description": "Embedded resources to return with the Asset Revision",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetRevisionV1"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetKey}/revisions/{revisionNumber}": {
+      "get": {
+        "tags": [],
+        "summary": "Gets a specific revision of an asset.",
+        "description": "Returns the requested asset revision.\n\n",
+        "operationId": "AssetRepository_GetAssetRevision",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionNumber",
+            "in": "path",
+            "description": "The revision number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "embed",
+            "in": "query",
+            "description": "Embedded resources to return with the Asset Revision",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetRevisionV1"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [],
+        "summary": "Sets the version tag and/or labels for an existing revision.",
+        "description": "Setting the tag to null clears the existing revision tag.\n\nAPI Client needs the **Asset management > Change** or **Release management > Release** permission.",
+        "operationId": "AssetRepository_PatchVersion",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionNumber",
+            "in": "path",
+            "description": "The revision number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The version tag and labels to apply to the revision.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AssetVersionPatchRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AssetVersionPatchRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Asset management > Change** or **Release management > Release** permission."
+      }
+    },
+    "/assets/{assetKey}/revisions/{revisionNumber}/icon": {
+      "get": {
+        "tags": [],
+        "summary": "Gets the icon for a specific asset revision.",
+        "description": "Returns the icon for the specific asset revision\n\n",
+        "operationId": "AssetRepository_GetAssetRevisionIcon",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionNumber",
+            "in": "path",
+            "description": "The revision number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetIcon"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetKey}/revisions/{revisionNumber}/metadata": {
+      "get": {
+        "tags": [],
+        "summary": "Gets the metadata for a specific asset revision.",
+        "description": "Returns the metadata for the specific asset revision\n\n",
+        "operationId": "AssetRepository_GetAssetRevisionMetadata",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionNumber",
+            "in": "path",
+            "description": "The revision number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetMetadata"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetKey}/revisions/{revisionNumber}/release-notes": {
+      "get": {
+        "tags": [],
+        "summary": "Gets the release notes for a specific asset revision.",
+        "description": "Returns the release notes for the specific asset revision\n\n",
+        "operationId": "AssetRepository_GetAssetRevisionReleaseNotes",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionNumber",
+            "in": "path",
+            "description": "The revision number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetReleaseNoteContent"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetKey}/revisions/{revisionNumber}/signature": {
+      "get": {
+        "tags": [],
+        "summary": "Gets the signature for a specific asset revision.",
+        "description": "Returns the signature for the specific asset revision\n\n",
+        "operationId": "AssetRepository_GetAssetRevisionSignature",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionNumber",
+            "in": "path",
+            "description": "The revision number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetSignature"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetKey}/revisions/{revisionNumber}/source-code": {
+      "get": {
+        "tags": [],
+        "summary": "Gets the source code for a specific asset revision.",
+        "description": "Returns the source code for a specific asset revision\n\nAPI Client needs the **Asset management > Open** permissions.",
+        "operationId": "AssetRepository_GetAssetRevisionSourceCode",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionNumber",
+            "in": "path",
+            "description": "The revision number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetSourceCode"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Asset management > Open** permissions."
+      }
+    },
+    "/assets/{assetKey}/revisions": {
+      "get": {
+        "tags": [],
+        "summary": "Lists all revisions of an asset.",
+        "description": "Returns a paginated list of all revisions for a specific asset.\n\n",
+        "operationId": "AssetRepository_ListAssetRevisions",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "modelDigest",
+            "in": "query",
+            "description": "Match revisions with a specific model digest",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionDateTimeSince",
+            "in": "query",
+            "description": "Match revisions created since a specific date",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "revisionDateTimeTo",
+            "in": "query",
+            "description": "Match revisions created until a specific date",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "isTagged",
+            "in": "query",
+            "description": "Filters revisions based on whether they have a tag.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "Matches revisions with the specific tag",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Used for sorting the list. Ascending by default. Prepend a hyphen, \"-\", to get a descending sort. Allowed: revision, tag.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "embed",
+            "in": "query",
+            "description": "Embedded resources to return with the Asset Revision",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results returned",
+            "schema": {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "default": 100
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the first result returned",
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetRevisionV1PagedListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/search": {
+      "post": {
+        "tags": [],
+        "summary": "Lists all assets versions according to the combined key/digest/revision filter.",
+        "description": "Returns a list of asset revisions that match the specified filters.\n\n",
+        "operationId": "AssetRepository_ListMultipleAssetRevisions",
+        "requestBody": {
+          "description": "A list of filters to apply to the search.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AssetListFilter"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AssetListFilter"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetRevisionV1ListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/uploads": {
+      "post": {
+        "tags": [],
+        "summary": "Creates a new upload operation for uploading files.",
+        "description": "Generates a pre-signed URL that you can use to upload a file.\n\nThis URL can then be used in other endpoints that require a file upload, such as creating a new asset revision.\n\n",
+        "operationId": "Uploads_CreateUpload",
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApplicationType": {
+        "enum": [
+          "WebApplication",
+          "MobileApplication",
+          "LowCodeLibrary",
+          "ExtensionLibrary",
+          "ExternalConnection",
+          "ExternalLibrary"
+        ],
+        "type": "string",
+        "description": "Enumeration of application types."
+      },
+      "ApplicationVersion": {
+        "required": [
+          "applicationKey",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "applicationKey": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Application key (format: guid)."
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Revision number.",
+            "format": "int32"
+          },
+          "revisionUserKey": {
+            "type": "string",
+            "description": "Key of the user that created the revision (format: guid).",
+            "nullable": true
+          },
+          "revisionUserName": {
+            "type": "string",
+            "description": "Name of the user that created the revision.",
+            "nullable": true,
+            "deprecated": true
+          },
+          "revisionUserEmail": {
+            "type": "string",
+            "description": "Email of the user that created the revision.",
+            "nullable": true
+          },
+          "revisionDateTime": {
+            "type": "string",
+            "description": "Timestamp when the revision was created.",
+            "format": "date-time"
+          },
+          "tag": {
+            "type": "string",
+            "description": "Version tag associated with this revision, in MAJOR.MINOR.PATCH format.",
+            "nullable": true
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Name of the application."
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the application.",
+            "nullable": true
+          },
+          "applicationType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ApplicationType"
+              }
+            ],
+            "description": "Type of the application.",
+            "nullable": true
+          },
+          "isExternal": {
+            "type": "boolean",
+            "description": "If an application is installed by an external system"
+          },
+          "isDeployable": {
+            "type": "boolean",
+            "description": "Indicates whether the application is of a deployable application type."
+          },
+          "isBuiltInApp": {
+            "type": "boolean",
+            "description": "Indicates whether the application is a built-in app."
+          },
+          "fromTemplateKey": {
+            "type": "string",
+            "description": "Key of the template used to generate the application (format: guid).",
+            "nullable": true
+          },
+          "iconUrl": {
+            "type": "string",
+            "description": "URL of the application icon.",
+            "format": "uri",
+            "nullable": true
+          },
+          "primaryColor": {
+            "type": "string",
+            "description": "Primary color of the application (format: hexadecimal RGB with leading #).",
+            "nullable": true
+          },
+          "urlPath": {
+            "type": "string",
+            "description": "URL base path where the application will be made available. Only available for deployable applications.",
+            "nullable": true
+          },
+          "templateType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TemplateType"
+              }
+            ],
+            "description": "Type of template when application is a template.",
+            "nullable": true
+          },
+          "toolVersion": {
+            "type": "string",
+            "description": "IDE version used to create the application revision.",
+            "nullable": true
+          },
+          "sourceCodeBinaryUrl": {
+            "type": "string",
+            "description": "URL to fetch the application source code.",
+            "format": "uri",
+            "nullable": true
+          },
+          "metamodelJsonUrl": {
+            "type": "string",
+            "description": "URL to fetch metamodel JSON, which contains meta-information about the application.",
+            "format": "uri",
+            "nullable": true
+          },
+          "signatureBinaryUrl": {
+            "type": "string",
+            "description": "URL to fetch the signature binary, to perform dependency analysis.",
+            "format": "uri",
+            "nullable": true
+          },
+          "releaseNotesUrl": {
+            "type": "string",
+            "description": "URL to fetch the release notes.",
+            "format": "uri",
+            "nullable": true
+          },
+          "signatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the the signature of any of the public elements of the application has changes. (format: guid)",
+            "nullable": true
+          },
+          "compatibilitySignatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the signature of any of the public elements of the application might have breaking changes. (format: guid)",
+            "nullable": true
+          },
+          "modelDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the application model has any changes. (format: guid)",
+            "nullable": true
+          },
+          "labels": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "description": "Dictionary of all the labels assigned to an application revision",
+            "nullable": true
+          },
+          "runtime": {
+            "type": "string",
+            "description": "If the application is of the 'External Library' type, this field will inform us in which runtime the high-code was written to run",
+            "nullable": true
+          },
+          "publishUserEmail": {
+            "type": "string",
+            "description": "Application Revision Last Publish User Email",
+            "nullable": true
+          },
+          "publishUserKey": {
+            "type": "string",
+            "description": "Application Revision Last Publish User Key",
+            "nullable": true
+          },
+          "publishDateTime": {
+            "type": "string",
+            "description": "Application Revision Last Publish Timestamp",
+            "format": "date-time",
+            "nullable": true
+          },
+          "releaseUserEmail": {
+            "type": "string",
+            "description": "Application Release User Email",
+            "nullable": true
+          },
+          "releaseUserKey": {
+            "type": "string",
+            "description": "Application Release User Key",
+            "nullable": true
+          },
+          "releaseDateTime": {
+            "type": "string",
+            "description": "Application Release Date Time",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a version of an application."
+      },
+      "AssetDependencyProducer": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Key (format: guid)."
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Revision number.",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the application.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the application.",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Descriptive value for the asset type.",
+            "nullable": true
+          },
+          "signatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the the signature of any of the public elements of the application has changes.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "compatibilitySignatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the signature of any of the public elements of the application might have breaking changes.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "modelDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the application model has any changes.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "producers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDependencyProducer"
+            },
+            "description": "All child producers this producer depends on.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetEmbeddingV1": {
+        "type": "object",
+        "properties": {
+          "releaseNote": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AssetReleaseNote"
+              }
+            ],
+            "description": "Embedded Release Note",
+            "nullable": true
+          },
+          "icon": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AssetIcon"
+              }
+            ],
+            "description": "Embedded Icon",
+            "nullable": true
+          },
+          "sourceCode": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AssetSourceCode"
+              }
+            ],
+            "description": "Embedded SourceCode",
+            "nullable": true
+          },
+          "signature": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AssetSignature"
+              }
+            ],
+            "description": "Embedded Signature",
+            "nullable": true
+          },
+          "metadata": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BaseAssetMetadata"
+              }
+            ],
+            "description": "Embedded Metadata",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetIcon": {
+        "type": "object",
+        "properties": {
+          "iconUrl": {
+            "type": "string",
+            "description": "URL to fetch the application icon, if one is defined",
+            "nullable": true
+          },
+          "iconDigest": {
+            "type": "string",
+            "description": "Digest of the icon binary",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetListFilter": {
+        "type": "object",
+        "properties": {
+          "assetVersionFilters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetVersionFilter"
+            },
+            "description": "Filters which asset versions to retrieve",
+            "nullable": true
+          },
+          "embeds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Extra embedded fields to include in the output",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetMetadata": {
+        "type": "object",
+        "properties": {
+          "templateType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TemplateType"
+              }
+            ],
+            "description": "Type of template when asset is a template.",
+            "nullable": true
+          },
+          "toolVersion": {
+            "type": "string",
+            "description": "IDE version used to create the asset revision.",
+            "nullable": true
+          },
+          "runtime": {
+            "type": "string",
+            "description": "If the asset is of the 'External Library' type, this field will inform us in which runtime the high-code was written to run",
+            "nullable": true
+          },
+          "assemblyVersion": {
+            "type": "string",
+            "description": "If the asset is of the 'Model Plugin' type, this field will inform us in which is the assembly version of the internal image",
+            "nullable": true
+          },
+          "assemblyName": {
+            "type": "string",
+            "description": "If the asset is of the 'Model Plugin' type, this field will inform us in which is the assembly name of the internal image",
+            "nullable": true
+          },
+          "urlPath": {
+            "type": "string",
+            "description": "URL base path where the asset will be made available. Only available for deployable asset.",
+            "nullable": true
+          },
+          "isDeployable": {
+            "type": "boolean",
+            "description": "Indicates whether the asset is of a deployable asset type."
+          },
+          "isBuiltInAsset": {
+            "type": "boolean",
+            "description": "Indicates whether the asset is a built-in app."
+          },
+          "commitMessage": {
+            "type": "string",
+            "description": "An optional commit message that can be populated by the user when creating or updating an asset version.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetReleaseNote": {
+        "type": "object",
+        "properties": {
+          "tag": {
+            "type": "string",
+            "description": "The version tag that is associated with the revision, using the semantic versioning format (MAJOR.MINOR.PATCH).",
+            "nullable": true
+          },
+          "releaseNoteUrl": {
+            "type": "string",
+            "description": "URL to fetch the asset release note",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetReleaseNoteContent": {
+        "type": "object",
+        "properties": {
+          "tag": {
+            "type": "string",
+            "description": "The version tag that is associated with the revision, using the semantic versioning format (MAJOR.MINOR.PATCH).",
+            "nullable": true
+          },
+          "content": {
+            "type": "string",
+            "description": "The release notes text content associated with the revision.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetRevisionV1": {
+        "required": [
+          "assetKey",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "assetKey": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Asset key (format: guid)."
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Revision number.",
+            "format": "int32"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Name of the asset."
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the asset.",
+            "nullable": true
+          },
+          "isExternal": {
+            "type": "boolean",
+            "description": "If an asset is installed by an external system"
+          },
+          "tag": {
+            "type": "string",
+            "description": "Version tag associated with this revision, in MAJOR.MINOR.PATCH format.",
+            "nullable": true
+          },
+          "modelDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the asset model has any changes. (format: guid)",
+            "nullable": true
+          },
+          "clonedFromTemplateKey": {
+            "type": "string",
+            "description": "Key of the template used to generate the asset (format: guid).",
+            "nullable": true
+          },
+          "assetType": {
+            "type": "string",
+            "description": "Type of the owner asset",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Identifier of whom or what tool created the revision",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Timestamp when the revision was created.",
+            "format": "date-time"
+          },
+          "commitMessage": {
+            "type": "string",
+            "description": "An optional commit message that can be populated by the user when creating or updating an asset version.",
+            "nullable": true
+          },
+          "taggedBy": {
+            "type": "string",
+            "description": "Identifier of whom or what tool tagged the revision",
+            "nullable": true
+          },
+          "taggedAt": {
+            "type": "string",
+            "description": "Asset Tagging Date Time",
+            "format": "date-time",
+            "nullable": true
+          },
+          "_embedded": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AssetEmbeddingV1"
+              }
+            ],
+            "description": "Embedded details for the asset",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetRevisionV1ListResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetRevisionV1"
+            },
+            "description": "List of results.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a list of results."
+      },
+      "AssetRevisionV1PagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetRevisionV1"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "AssetSignature": {
+        "type": "object",
+        "properties": {
+          "signatureBinaryUrl": {
+            "type": "string",
+            "description": "URL to fetch the signature binary, to perform dependency analysis",
+            "nullable": true
+          },
+          "signatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the the signature of any of the public elements of the application has changes.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "compatibilitySignatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the signature of any of the public elements of the application might have breaking changes.",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetSourceCode": {
+        "type": "object",
+        "properties": {
+          "sourceCodeBinaryUrl": {
+            "type": "string",
+            "description": "URL to fetch the application source code",
+            "nullable": true
+          },
+          "sourceCodeDigest": {
+            "type": "string",
+            "description": "Digest of the sourcecode binary",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetVersionCreationRequest": {
+        "type": "object",
+        "properties": {
+          "tag": {
+            "type": "string",
+            "description": "SemVer tag to associate with the revision to be created.\n\nMust not exist and be of the “Major#.Minor#.Patch#” format",
+            "nullable": true
+          },
+          "releaseNotes": {
+            "type": "string",
+            "description": "The release notes associated with the asset. Can’t be present if no tag is provided.",
+            "nullable": true
+          },
+          "skipSequentialVersionValidation": {
+            "type": "boolean",
+            "description": "If set to true, skips the sequential revision validation."
+          },
+          "commitMessage": {
+            "type": "string",
+            "description": "An optional commit message that can be populated when creating or updating an asset version.",
+            "nullable": true
+          },
+          "fileUri": {
+            "type": "string",
+            "description": "(Optional) Allows providing application source code for the new version (OML or XIF formats are supported). \n\nIf an OML or XIF is provided, its key is used to associate to the correct application - The application key must always match the OML/XIF key",
+            "format": "uri",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetVersionFilter": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Key of the application to filter by\n\nMandatory",
+            "nullable": true
+          },
+          "digest": {
+            "type": "string",
+            "description": "Digest of the application to filter by, if empty will be ignored\n\nEither digest, revision or IsHighestTag are mandatory",
+            "nullable": true
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Revision of the application to filter by, if null it will be ignored\n\nEither digest, revision or IsHighestTag are mandatory",
+            "format": "int32",
+            "nullable": true
+          },
+          "isHighestTag": {
+            "type": "boolean",
+            "description": "Flag to filter application for the highest tag, if false it will be ignored\n\nEither digest, revision or IsHighestTag are mandatory"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetVersionPatchRequest": {
+        "type": "object",
+        "properties": {
+          "tag": {
+            "type": "string",
+            "description": "SemVer tag to associate with the revision\n\nMust exist and be of the “Major#.Minor#.Patch#” format",
+            "nullable": true
+          },
+          "releaseNotes": {
+            "type": "string",
+            "description": "The release notes associated with the asset. Can’t be present if no tag is set or provided.",
+            "nullable": true
+          },
+          "commitMessage": {
+            "type": "string",
+            "description": "Commit message to associate with the revision, optional and can be null.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BaseAssetMetadata": {
+        "type": "object",
+        "properties": {
+          "templateType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TemplateType"
+              }
+            ],
+            "description": "Type of template when asset is a template.",
+            "nullable": true
+          },
+          "toolVersion": {
+            "type": "string",
+            "description": "IDE version used to create the asset revision.",
+            "nullable": true
+          },
+          "runtime": {
+            "type": "string",
+            "description": "If the asset is of the 'External Library' type, this field will inform us in which runtime the high-code was written to run",
+            "nullable": true
+          },
+          "assemblyVersion": {
+            "type": "string",
+            "description": "If the asset is of the 'Model Plugin' type, this field will inform us in which is the assembly version of the internal image",
+            "nullable": true
+          },
+          "assemblyName": {
+            "type": "string",
+            "description": "If the asset is of the 'Model Plugin' type, this field will inform us in which is the assembly name of the internal image",
+            "nullable": true
+          },
+          "urlPath": {
+            "type": "string",
+            "description": "URL base path where the asset will be made available. Only available for deployable asset.",
+            "nullable": true
+          },
+          "isDeployable": {
+            "type": "boolean",
+            "description": "Indicates whether the asset is of a deployable asset type."
+          },
+          "isBuiltInAsset": {
+            "type": "boolean",
+            "description": "Indicates whether the asset is a built-in app."
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageInfoWithTotals": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of results in the current page.",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limit of results per page.",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset of the current page of results.",
+            "format": "int32"
+          },
+          "nextPageOffset": {
+            "type": "integer",
+            "description": "Offset of the next page of results.",
+            "format": "int32"
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total of results.",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": "Total of result pages.",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains response page information including totals."
+      },
+      "PermissionType": {
+        "enum": [
+          "AppCreate",
+          "AppView",
+          "AppDebug",
+          "AppChange",
+          "AppDelete",
+          "AppUserView",
+          "OpenTicket",
+          "ViewAllTickets",
+          "ViewSubscriptions",
+          "AppDeploy",
+          "AppRelease",
+          "AppMonitor",
+          "AppMonitorUserInfo",
+          "UserManage",
+          "AppAccessManage",
+          "OrgAccessManage",
+          "OrgRolesManage",
+          "OrgUserView",
+          "CfgView",
+          "AppCfgChange",
+          "ConnUse",
+          "ConnChange",
+          "ConnConfig",
+          "DomainManage",
+          "EmailManage",
+          "NetworkManage",
+          "GatewayManage",
+          "OrgAuthManage",
+          "StageView",
+          "OrgView",
+          "ForgeInstall",
+          "ForgeShare",
+          "ForgeAdmin",
+          "SystemAssetInstall",
+          "ExternalAssetInstall",
+          "IdentitySupport",
+          "AppViewSourceCode",
+          "ConnCreate",
+          "ConnDelete",
+          "AppGroupManage",
+          "ConnManage",
+          "AppSecurityView",
+          "AppGroupView",
+          "ApiClientManage",
+          "CSPManage",
+          "CodeQualityView",
+          "CodeQualityManage",
+          "MigrationDataManage",
+          "MigrationCodeManage",
+          "MigrationConfigManage",
+          "SelfHostedManage",
+          "LogStreamingManage",
+          "AuditTrailView",
+          "AuditTrailStreamingConfiguration"
+        ],
+        "type": "string"
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code applicable to the problem.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation of the error.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem.",
+            "nullable": true
+          },
+          "traceId": {
+            "type": "string",
+            "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
+          }
+        },
+        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+      },
+      "TemplateType": {
+        "enum": [
+          "ApplicationTemplate",
+          "ScreenTemplateBundle"
+        ],
+        "type": "string",
+        "description": "Enumeration of application template types."
+      },
+      "UploadsResponse": {
+        "required": [
+          "uploadUrl"
+        ],
+        "type": "object",
+        "properties": {
+          "uploadUrl": {
+            "type": "string",
+            "description": "URL to where the file needs to be uploaded",
+            "format": "uri",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents an upload response"
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

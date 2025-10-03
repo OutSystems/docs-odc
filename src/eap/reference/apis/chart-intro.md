@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) introduces Charts extensibility, enabling advanced chart creation and customization using Highcharts 12.1.2.
+summary: OutSystems Developer Cloud (ODC) introduces Charts extensibility, enabling advanced chart creation and customization using Highcharts 12.3.0.
 tags: chart customization, highcharts integration, data visualization, component library, api documentation
 locale: en-us
 guid: b5070497-8f92-4f84-ad4e-4465de6dde0e
@@ -24,7 +24,7 @@ Available from OutSystems Charts v3.0.0. For more information on how to use the 
 
 </div>
 
-The Charts extensibility allows you to create, populate, and customize charts. OutSystems uses Highcharts 12.1.2 to generate the charts. For more information about implementation and the API, see the [Highcharts documentation](https://api.highcharts.com/highcharts/). 
+The Charts extensibility allows you to create, populate, and customize charts. OutSystems uses Highcharts 12.3.0 to generate the charts. For more information about implementation and the API, see the [Highcharts documentation](https://api.highcharts.com/highcharts/). 
 
 ## Charts
 

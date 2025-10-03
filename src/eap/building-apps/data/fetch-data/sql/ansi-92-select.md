@@ -31,6 +31,7 @@ SELECT [ DISTINCT ] { * | selectItem [, selectItem ]* }
 [ UNION [ ALL | DISTINCT ] select ]
 [ ORDER BY orderItem [, orderItem ]* ]
 [ LIMIT count ]
+[ OFFSET start ]
 
 withItem:
         entityAlias [ ( attributeAlias [, attributeAlias ]* ) ] AS ( select )
@@ -114,7 +115,7 @@ selectItem:
 
 The `SELECT` list (between `SELECT` and `FROM`) specifies expressions that will be mapped to attributes in the returned records. The expressions may use [Operators](ansi-92-operators.md), [Literals](ansi-92-data-types.md#sql-types), dynamic parameters, and/or any attributes from entities or subqueries in the `FROM` clause.
 
-There are important differences in how identifiers work in ANSI-92 syntax compared to commonly used database systems, for more information please refer to [Statements](ansi-92-syntax.md#statements).
+There are important differences in how identifiers work in ANSI-92 syntax compared to commonly used database systems. For more information, please refer to [Statements](ansi-92-syntax.md#statements).
 
 ```sql
 -- Not valid, the outer SELECT expects abc but the inner SELECT returns ABC
@@ -127,10 +128,10 @@ SELECT sub.[abc] FROM ( SELECT 1 as "abc" ) as sub
 SELECT sub."abc" FROM ( SELECT 1 as "abc" ) as sub
 ```
 
-Expressions in a `SELECT` list without an explicit alias will be given a name automatically depending on the type of expression. If the expression is a simple reference to an attribute from the `FROM` clause then the name of the attribute will be used as the alias. No guarantees are made about the names used for other types of expression, they may not always be the same. When an attribute is renamed in ODC Portal and not aliased in a query, the generated alias will be the original attribute name and not the new name provided in ODC Portal.
+Expressions in a `SELECT` list without an explicit alias will be given a name automatically depending on the type of expression. If the expression is a simple reference to an attribute from the `FROM` clause, then the name of the attribute will be used as the alias. No guarantees are made about the names used for other types of expressions - they may not always be the same. When an attribute is renamed in the ODC Portal and not aliased in a query, the generated alias will be the original attribute name and not the new name provided in the ODC Portal.
 
 ```sql
--- In this example, entity has one attribute called 'abc' in the external system which has been renamed to 'Abc' in ODC Portal
+-- In this example, the entity has one attribute called 'abc' in the external system, which has been renamed to 'Abc' in the ODC Portal
 
 -- The implicit alias will be 'abc' and not `Abc`
 SELECT {entity}.[Abc] FROM {entity}
@@ -189,13 +190,13 @@ entityExpression:
     |   ( subquery ) [ [ AS ] entityAlias [ ( attributeAlias [ , attributeAlias ]* ) ] ]
 ```
 
-The `FROM` clause specifies one or more entities for the `SELECT` to fetch records from. The query must have at least one `FROM` clause since it must reference at least one external entity, however this clause can be in a subquery and does not have to be in the outermost `SELECT`.
+The `FROM` clause specifies one or more entities for the `SELECT` to fetch records from. The query must have at least one `FROM` clause since it must reference at least one external entity. However, this clause can be in a subquery and does not have to be in the outermost `SELECT`.
 
 A `SELECT` without a `FROM` clause will return a single record with the values derived from the expressions in the [SELECT List](#select-list).
 
 The `FROM` clause supports a number of different join types.
 
-The `FROM {left}, {right}` syntax is equivalent to both a `CROSS JOIN` (cartesian product) and an `INNER JOIN` with an `ON TRUE` condition. The comma join syntax is only supported at the top level, for example `FROM ({left} CROSS JOIN {right}), {other}` is not valid. These joins will
+The `FROM {left}, {right}` syntax is equivalent to both a `CROSS JOIN` (cartesian product) and an `INNER JOIN` with an `ON TRUE` condition. The comma join syntax is only supported at the top level. For example, `FROM ({left} CROSS JOIN {right}), {other}` is not valid. These joins will
 produce a result where every record from the left entity is joined to every record in the right entity. If both entities had 5 records, the result would contain 25 records.
 
 An inner join such as `FROM {left} INNER JOIN {right} ON condition` will only return joined records for which the condition evaluates to `TRUE`.
@@ -369,7 +370,7 @@ Note that `ORDER BY` is not supported in subqueries. A given `SELECT` statement 
 
 #### Known issues with ORDER BY
 
-- Ordering by a constant or dynamic parameter based expression in the [SELECT List](#select-list) is not supported.
+- Ordering by a constant or dynamic parameter-based expression in the [SELECT List](#select-list) is not supported.
 - Ordering by character strings can be inconsistent depending on the collation of the attributes.
 - `NULLS FIRST` and `NULLS LAST` have no effect when the sorting is pushed down to Microsoft SQL Server and MySQL.
 
@@ -391,12 +392,11 @@ The `LIMIT` clause is permitted in subqueries but this is only supported with Po
 [ OFFSET start ]
 ```
 
-The `OFFSET` clause is used to skip a number of records returned by a query so that the result starts from the position specified. This is commonly used with `LIMIT` when implementing pagination.
-`OFFSET` should always be used with `ORDER BY` to ensure that the records are always sorted the same way.
+The `OFFSET` clause is used to skip a number of records returned by a query so that the result starts from the position specified. This is commonly used with `LIMIT` when implementing pagination. `OFFSET` should always be used with `ORDER BY` to ensure that the records are always sorted the same way.
 
-The `start` may be specified using a literal of any numeric type or with a dynamic parameter.
+The `start` may be specified using a literal of any numeric type or with a dynamic parameter. Expressions are not supported.
 
-The `OFFSET` clause is permitted in subqueries but this is only supported with PostgreSQL (when used with `LIMIT`) and will not work with other external systems.
+The `OFFSET` clause is permitted in subqueries, but this is only supported with PostgreSQL (when used with `LIMIT`) and will not work with other external systems.
 
 ## Examples
 

@@ -132,6 +132,7 @@ The following versions of systems are supported to integrate with ODC using [Dat
     * PostgreSQL 14
     * PostgreSQL 15
     * PostgreSQL 16
+    * PostgreSQL 17
 
 * **MySQL**
 
@@ -153,7 +154,7 @@ The following versions of systems are supported to integrate with ODC using [Dat
 
 For more information, refer to [Integrate with external data sources using Data Fabric](../integration-with-systems/external-databases/intro.md). 
 
-### Supported external identity providers
+### Supported external identity providers { #supported-external-identity-providers }
 
 ODC supports all IdPs that follow the OIDC standard. The following IdPs have been successfully tested to integrate with ODC apps:
 
@@ -182,10 +183,11 @@ The general platform limits are:
 | Timer execution timeout (minutes)        |        60 | The maximum time a timer can execute. |
 | Entity Action Execution duration (seconds) |        30 | The maximum execution duration of a single Entity Action in seconds. |
 | Upload request size (MB)                 |      28.6 | The maximum file size allowed when uploading. |
-| Maximum user session (hours)             |        12 | The maximum session duration after which the user will be asked to authenticate again. This value can't be changed and the duration is not extended while user is authenticated. |
+| User session (hours)                     |        12 | The maximum session duration after which the user will be asked to authenticate again. This value can't be changed and the duration is not extended while user is authenticated. |
 | Invitation verification token (days)     |         7 | The maximum duration the verification token is valid for the user to complete their registration. |
 | Self-registration verification token (minutes) |      15 | The maximum duration within which the user can complete the self-registration process. |
-| Max Compute Instances (per app)          |        16 | The maximum number of compute instances that can be consumed when scaling apps horizontally. |
+| Compute Instances (per app)              |        16 | The maximum number of compute instances that can be consumed when scaling apps horizontally. |
+| Analytics Stream connections             |         5 | The maximum number of Analytics Stream connections that can exist simultaneously. |
 
 ### Logs and traces
 
@@ -196,8 +198,10 @@ The logs and traces limits are:
 | App log retention (days)                 |        28 | The maximum number of days that logs are retained (plus 21 days of additional backup retrievable via support ticket). |
 | Log rate/minute (thousands)              |         2 | The maximum rate at which logs can be captured, in thousands per minute. |
 | Trace retention (days)                   |        28 | The maximum number of days that traces are retained (plus 21 days of additional backup retrievable via support ticket). |
-| Trace size (MB)                          |        15 | The maximum size of traces. Traces exceeding this are dropped. |
+| Trace size (number of spans)             |     10000 | The maximum number of spans per trace shown in the ODC Portal. |
 | Trace spans rate/minute (thousands)      |        50 | The maximum rate at which trace spans can be captured, in thousands per minute. |
+| Trace span size (KB)                     |         1 | The maximum size of a trace span, in KB, streamed with Analytics Stream. |
+| Log size (MB)                            |         1 | The maximum size of a log record, in MB, streamed with Analytics Stream. |
 | Client side trace requests every minute per stage  |        400 | The maximum number of client-side trace requests every minute. |
 | Client side trace requests daily per stage  |           3500 | The maximum number of client-side trace requests daily. |
 

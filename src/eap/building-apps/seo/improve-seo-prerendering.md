@@ -53,7 +53,7 @@ For more information on the criteria to consider when selecting a plan, refer to
 
 ### Reverse Proxy/CDN
 
-Prerender offers several options to integrate with your application. Integrating with ODC can be achieved using a [Reverse Proxy or CDN](https://docs.prerender.io/docs/integrations-1).
+Prerender offers several options to integrate with your application. Integrating with ODC can be achieved using a [Reverse Proxy or CDN](https://docs.prerender.io/docs/integrations#main-content).
 
 ## Integrating Prerender with Nginx Reverse Proxy
 

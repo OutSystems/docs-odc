@@ -30,7 +30,7 @@ In addition to access to **ODC Studio** and [**ODC Portal**](../../onboarding/in
 * Access to multi-tenant development **Platform** services.
 * A Runtime setup of isolated and independent stages, for example: **Development**, **Test**, and **Production**.
 * A set of isolated, encrypted, and scalable databases and data stores for the Platform services data. Secret data such as API keys are stored in a secret manager.
-* An isolated, encrypted, and scalable relational database for each Runtime stage. 
+* An isolated, encrypted, and scalable relational database for each Runtime stage.
 * A built-in **Identity Service** to keep [user identities secure](identity.md).
 
 The following diagram shows the high-level architecture of the OutSystems Developer Cloud.
@@ -39,11 +39,11 @@ The following diagram shows the high-level architecture of the OutSystems Develo
 
  All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of OutSystems Developer Cloud](networking.md) to learn more.
 
-#### Platform { #platform }
+### Platform { #platform }
 
 The development **Platform** comprises multiple services, each responsible for specific functions that facilitate the building and deployment of apps. All the Platform services benefit from a resilient microservices design with a REST API web service interface. Developers, DevOps engineers, and architects interact with these services using ODC Studio and ODC Portal.
 
-The Platform **Load Balancer** handles all requests to the services. 
+The Platform **Load Balancer** handles all requests to the services.
 
 An example of a service is the Build Service. When developers click the 1-Click Publish button in ODC Studio, the Build Service takes the OutSystems visual language model (OML project) and compiles it into a deployable app.
 
@@ -51,9 +51,41 @@ All the Platform services are multi-tenant and benefit from automatic recovery a
 
 The following diagram shows the high-level architecture of the development Platform.
 
-![Diagram showing the high-level architecture of the development Platform in OutSystems Developer Cloud.](images/high-level-architecture-platform-diag.png "Development Platform Architecture") 
+![Diagram showing the high-level architecture of the development Platform in OutSystems Developer Cloud.](images/high-level-architecture-platform-diag.png "Development Platform Architecture")
 
-#### Runtime { #runtime }
+#### Data platform { #data-platform }
+
+The **Data platform** collects, processes, and stores data from several sources. This information is then made available for analysis and visualization, allowing customers to monitor their apps’ performance and usage, and track platform operations. The Data platform is also responsible for processing Mentor App Generator’s data. 
+
+##### Features that send data to the Data platform
+
+The Data platform receives data from the following features:
+
+* [Monitor assets with ODC Analytics](https://www.outsystems.com/tk/redirect?g=e190d5fb-6b99-4d9b-a64f-a3b34be3588d): Receives and processes logs, traces, and metrics from all ODC assets.  
+* [Analytics stream](https://www.outsystems.com/tk/redirect?g=43e08fbf-f050-4946-aad2-289ab110be44): Provides the capability to stream logs, traces, and metrics in real-time to external analysis and monitoring tools.  
+* [Audit trail](https://www.outsystems.com/tk/redirect?g=3f3bc6b9-7335-4d8b-bb41-2eb396b86f3c): Receives chronological records of platform actions and configurations.
+* [Code Quality](https://www.outsystems.com/tk/redirect?g=6be15662-74c5-4c35-9a7d-16a28816614c): Analyzes app code to provide insights into technical debt and identify areas for improvement.  
+* [Mentor App Generator](https://www.outsystems.com/tk/redirect?g=b17a8f2d-c767-49b4-9f50-381329442aba): Supports the Mentor App Generator by processing requirements documents, conversation history, and app metadata.  
+* [Monitor ODC resource capacity](https://www.outsystems.com/tk/redirect?g=25a0f102-51ac-4d76-8376-72b14f0f6218): Computes data related to resource consumption to help customers ensure optimal performance and capacity planning.
+
+The following diagram shows how different ODC features interact through the Data platform to exchange and process information.
+
+![Diagram showing how different ODC features interact through the Data platform to exchange and process information.](images/data-platform-diag.png "Data Platform Interaction")
+
+##### Data residency
+
+The Data platform runs in a designated region based on your ODC organization’s region. For example, if your ODC organization is located in the Asia Pacific (Mumbai) region, the Data platform is hosted in the Asia Pacific (Singapore) region.
+
+<!--Changes to this table must also be replicated at the src\eap\manage-platform-app-lifecycle\odc-public-ips.md file-->
+
+| Customer regions | Data platform region |
+| :--- | :--- |
+| US East (North Virginia), CA (Canada Central) | US East (North Virginia) |
+| South America (São Paulo) | South America (São Paulo) |
+| Europe (Frankfurt), Europe (London), Middle East (Tel Aviv), Middle East (UAE) | Europe (Frankfurt) |
+| Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta) | Asia Pacific (Singapore) |
+
+### Runtime { #runtime }
 
 In OutSystems Developer Cloud, the **Runtime** is independent of the Platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed apps. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
 
@@ -83,7 +115,7 @@ The compute capacity for each running Platform service is scalable. Many develop
 
 The following diagram shows how auto-scaling works inside the Platform cluster.
 
-![Diagram explaining how auto-scaling works inside the Platform cluster of OutSystems Developer Cloud.](images/architecture-platform-k8s-diag.png "Platform Cluster Auto-Scaling") 
+![Diagram explaining how auto-scaling works inside the Platform cluster of OutSystems Developer Cloud.](images/architecture-platform-k8s-diag.png "Platform Cluster Auto-Scaling")
 
 The **auto scale controller** monitors the CPU and RAM usage of each running service. It continuously checks the usage against the cluster compute capacity allocated and allocates additional capacity if the CPU and RAM usage exceeds a defined threshold.
 
@@ -107,7 +139,7 @@ The compute capacity for each app container running in each non-Development Runt
 
 The following diagram illustrates how auto-scaling works inside the Runtime cluster.
 
-![Illustration of auto-scaling mechanism inside the Runtime cluster for OutSystems Developer Cloud apps](images/architecture-runtime-scale-diag.png "Runtime Cluster Auto-Scaling")
+![Illustration of auto-scaling mechanism inside the Runtime cluster for OutSystems Developer Cloud apps.](images/architecture-runtime-scale-diag.png "Runtime Cluster Auto-Scaling")
 
 The **auto scale controller** monitors the CPU and RAM usage of each app container. It continuously checks the usage against the cluster compute capacity allocated and allocates additional capacity if the CPU and RAM usage exceeds a defined threshold.
 
@@ -140,7 +172,6 @@ The Amazon Aurora database architecture model decouples compute and storage, and
 
 #### High Availability - Data (HA)
 When enabled, a second (standby) database is deployed in a separate availability zone.  Whenever an availability zone fails or the primary database becomes unavailable, the standby database is automatically promoted to the primary, and traffic is automatically routed to the new primary database, ensuring minimal disruption.  Without HA, failover is not immediate and the primary database can take a few minutes to recover in a secondary availability zone.  As the data is automatically written to multiple AZ's, there is no loss of data in the event of a failure.
-
 
 #### Platform to Runtime
 

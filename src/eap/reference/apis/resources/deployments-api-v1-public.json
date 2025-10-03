@@ -1,0 +1,1349 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Deployments API",
+    "description": "REST endpoints for publishing and deploying assets in environments (stages) in your organization.\n",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://ODC_PORTAL_DOMAIN/api/deployments/v1",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/deployments/v1",
+      "description": "Replace {odc-portal-domain} with the domain of your organization.",
+      "variables": {
+        "odc-portal-domain": {
+          "default": "ODC_PORTAL_DOMAIN",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/deployment-operations": {
+      "get": {
+        "tags": [
+          "deployment-operations"
+        ],
+        "summary": "Returns all deployments that match a given filter.",
+        "operationId": "DeploymentOperations_Filter",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Filter by environment key, if filled.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Filter by status of the deployment, if filled.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Status"
+                }
+              ]
+            }
+          },
+          {
+            "name": "assetKey",
+            "in": "query",
+            "description": "Filter deployments that contain given asset unique identifier, if filled.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "revision",
+            "in": "query",
+            "description": "Filter assets by revision number, if filled.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "operations",
+            "in": "query",
+            "description": "Filter deployments that contain a given operation, if filled.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/DeploymentOperationsType"
+              }
+            }
+          },
+          {
+            "name": "createdDateSince",
+            "in": "query",
+            "description": "Filter assets created from one point in time on, if filled.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "createdDateTo",
+            "in": "query",
+            "description": "Filter assets created up to one point in time, if filled.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "permissionFilter",
+            "in": "query",
+            "description": "Filter assets by permission type.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/PermissionFilter"
+                }
+              ]
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Max number of elements that should be returned in a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the last page, to get the following page with the same filters applied.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort order of the elements.\n\n-element1 for descending, element2 for ascending.\n\nMultiple orders joined by comma.\n\nExample -element1,element2 to sort by element1 descending then by element2 ascending\n\nCurrently supported sort values: CreatedAt, UpdatedAt, ApplicationKey, AssetKey, ApplicationName, AssetName, FinishedAt\n\nDefault sort: -CreatedAt",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32NullableDeploymentOperationResponsePagedListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation.",
+        "description": "\n\nAPI Client needs the **Stage > View stage** permission for the operation."
+      },
+      "post": {
+        "tags": [
+          "deployment-operations"
+        ],
+        "summary": "Requests the creation of a new deployment.",
+        "operationId": "DeploymentOperations_Post",
+        "requestBody": {
+          "description": "Deployment operation request data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DeploymentOperationRequest"
+                  }
+                ],
+                "description": "Deployment job request data"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DeploymentOperationRequest"
+                  }
+                ],
+                "description": "Deployment job request data"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeploymentOperationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Release management > Deploy apps** permission for the operation.",
+        "description": "\n\nAPI Client needs the **Release management > Deploy apps** permission for the operation."
+      }
+    },
+    "/deployment-operations/{operationKey}": {
+      "get": {
+        "tags": [
+          "deployment-operations"
+        ],
+        "summary": "Returns one deployment given the deployment operation key.",
+        "operationId": "DeploymentOperations_Get",
+        "parameters": [
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "Deployment unique identifier",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeploymentOperationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation.",
+        "description": "\n\nAPI Client needs the **Stage > View stage** permission for the operation."
+      }
+    },
+    "/deployment-operations/{operationKey}/messages": {
+      "get": {
+        "tags": [
+          "deployment-operations"
+        ],
+        "summary": "Returns deployment log messages for a given deployment operation key.",
+        "operationId": "DeploymentOperations_GetMessages",
+        "parameters": [
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "Deployment unique identifier",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit of elements in the page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset from previous page. Don't fill if first page.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringMessageDetailsV1TaskProgressMessagePagedListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation.",
+        "description": "\n\nAPI Client needs the **Stage > View stage** permission for the operation."
+      }
+    },
+    "/publish-operations": {
+      "get": {
+        "tags": [
+          "publish-operations"
+        ],
+        "summary": "Returns publications based on a given filter.",
+        "operationId": "PublishOperations_Filter",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Filter by environment key, if filled.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Filter by status, if filled.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Status"
+                }
+              ]
+            }
+          },
+          {
+            "name": "revision",
+            "in": "query",
+            "description": "Filter assets by revision number, if filled.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "assetKey",
+            "in": "query",
+            "description": "Filter by Asset key, if filled.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "createdDateSince",
+            "in": "query",
+            "description": "Filter assets created from one point in time on, if filled.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "createdDateTo",
+            "in": "query",
+            "description": "Filter assets created up to one point in time, if filled.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Max number of elements that should be returned in a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the last page, to get the following page with the same filters applied.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort order of the elements.\n\n-element1 for descending, element2 for ascending.\n\nMultiple orders joined by comma.\n\nExample -element1,element2 to sort by element1 descending then by element2 ascending\n\nCurrently supported sort values: CreatedAt, UpdatedAt, ApplicationKey, AssetKey, ApplicationName, AssetName, FinishedAt\n\nDefault sort: -CreatedAt",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32NullablePublishOperationResponsePagedListResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation.",
+        "description": "\n\nAPI Client needs the **Stage > View stage** permission for the operation."
+      },
+      "post": {
+        "tags": [
+          "publish-operations"
+        ],
+        "summary": "Requests the creation of a new publication.",
+        "operationId": "PublishOperations_Post",
+        "requestBody": {
+          "description": "Publish operation request data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PublishOperationRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PublishOperationRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublishOperationResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Asset management > Change** permission for the operation.",
+        "description": "\n\nAPI Client needs the **Asset management > Change** permission for the operation."
+      }
+    },
+    "/publish-operations/{operationKey}": {
+      "get": {
+        "tags": [
+          "publish-operations"
+        ],
+        "summary": "Return a publication by its operation key.",
+        "operationId": "PublishOperations_Get",
+        "parameters": [
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "Publication key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublishOperationResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation.",
+        "description": "\n\nAPI Client needs the **Stage > View stage** permission for the operation."
+      }
+    },
+    "/publish-operations/{operationKey}/messages": {
+      "get": {
+        "tags": [
+          "publish-operations"
+        ],
+        "summary": "Returns publication log messages for a given publication operation key.",
+        "operationId": "PublishOperations_GetMessages",
+        "parameters": [
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "Publication unique identifier",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit of elements in the page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset from previous page. Don't fill if first page.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringMessageDetailsV1TaskProgressMessagePagedListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation.",
+        "description": "\n\nAPI Client needs the **Stage > View stage** permission for the operation."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DeploymentOperationRequest": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DeploymentOperationsType"
+              }
+            ],
+            "description": "Operation to be executed.\n\nMandatory: Deploy, Undeploy, ApplyConfigs."
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "Asset unique identifier.\n\nMandatory for Apply Configurations and Promote.",
+            "format": "uuid"
+          },
+          "buildKey": {
+            "type": "string",
+            "description": "Build unique identifier.\n\nMandatory for Promote.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Revision identifier.\n\nMandatory for Apply Configurations and Promote.",
+            "format": "int32",
+            "nullable": true
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "Environment Identifier.\n\nMandatory.",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Deployment job request data"
+      },
+      "DeploymentOperationResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Unique identifier of the deployment.",
+            "format": "uuid"
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              }
+            ],
+            "description": "Deployment status."
+          },
+          "startedDateTime": {
+            "type": "string",
+            "description": "When the deployment started.",
+            "format": "date-time"
+          },
+          "finishedDateTime": {
+            "type": "string",
+            "description": "When the deployment finished.",
+            "format": "date-time"
+          },
+          "deployedBy": {
+            "type": "string",
+            "description": "Unique identifier of the requesting user.",
+            "nullable": true
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "Unique identifier of the asset.",
+            "format": "uuid"
+          },
+          "revisions": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "List of revisions that had the action performed.",
+            "nullable": true
+          },
+          "buildKey": {
+            "type": "string",
+            "description": "Unique identifier of the asset build.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "assetName": {
+            "type": "string",
+            "description": "Asset name.",
+            "nullable": true
+          },
+          "operation": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DeploymentOperationsType"
+              }
+            ],
+            "description": "Executed Operation."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Information about one deployment"
+      },
+      "DeploymentOperationsType": {
+        "enum": [
+          "Deploy",
+          "Undeploy",
+          "ApplyConfigs"
+        ],
+        "type": "string"
+      },
+      "Int32NullableDeploymentOperationResponsePagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Int32NullablePageInfo"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeploymentOperationResponse"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "Int32NullablePageInfo": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of results in the current page.",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limit of results per page.",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset of the current page of results.",
+            "format": "int32",
+            "nullable": true
+          },
+          "nextPageOffset": {
+            "type": "integer",
+            "description": "Offset of the next page of results.",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains response page information."
+      },
+      "Int32NullablePublishOperationResponsePagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Int32NullablePageInfo"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PublishOperationResponse"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "MessageDetailsV1": {
+        "type": "object",
+        "properties": {
+          "stepId": {
+            "type": "string",
+            "description": "Step unique identifier.",
+            "nullable": true
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "Asset unique identifier.",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Message detailed info."
+      },
+      "MessageDetailsV1TaskProgressMessage": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "description": "message timestamp",
+            "format": "date-time"
+          },
+          "type": {
+            "type": "string",
+            "description": "message type (e.g., error code)",
+            "nullable": true
+          },
+          "severity": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MessageSeverity"
+              }
+            ],
+            "description": "message severity (info, warning or error)"
+          },
+          "message": {
+            "type": "string",
+            "description": "message detail",
+            "nullable": true
+          },
+          "additionalInfo": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MessageDetailsV1"
+              }
+            ],
+            "description": "Message detailed info.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a user facing message about the progress of an operation, including additional details."
+      },
+      "MessageSeverity": {
+        "enum": [
+          "Info",
+          "Warning",
+          "Error"
+        ],
+        "type": "string"
+      },
+      "PermissionFilter": {
+        "type": "object",
+        "properties": {
+          "permissionType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PermissionType"
+              }
+            ],
+            "description": "PermissionType to Filter applications"
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "Environment key to join with permission Type and filter applications",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Filter Applications"
+      },
+      "PermissionType": {
+        "enum": [
+          "AppCreate",
+          "AppView",
+          "AppDebug",
+          "AppChange",
+          "AppDelete",
+          "AppUserView",
+          "OpenTicket",
+          "ViewAllTickets",
+          "ViewSubscriptions",
+          "AppDeploy",
+          "AppRelease",
+          "AppMonitor",
+          "AppMonitorUserInfo",
+          "UserManage",
+          "AppAccessManage",
+          "OrgAccessManage",
+          "OrgRolesManage",
+          "OrgUserView",
+          "CfgView",
+          "AppCfgChange",
+          "ConnUse",
+          "ConnChange",
+          "ConnConfig",
+          "DomainManage",
+          "EmailManage",
+          "NetworkManage",
+          "GatewayManage",
+          "OrgAuthManage",
+          "StageView",
+          "OrgView",
+          "ForgeInstall",
+          "ForgeShare",
+          "ForgeAdmin",
+          "SystemAssetInstall",
+          "ExternalAssetInstall",
+          "IdentitySupport",
+          "AppViewSourceCode",
+          "ConnCreate",
+          "ConnDelete",
+          "AppGroupManage",
+          "ConnManage",
+          "AppSecurityView",
+          "AppGroupView",
+          "ApiClientManage",
+          "CSPManage",
+          "CodeQualityView",
+          "CodeQualityManage",
+          "MigrationDataManage",
+          "MigrationCodeManage",
+          "MigrationConfigManage",
+          "SelfHostedManage",
+          "LogStreamingManage",
+          "AuditTrailView",
+          "AuditTrailStreamingConfiguration"
+        ],
+        "type": "string"
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code applicable to the problem.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation of the error.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem.",
+            "nullable": true
+          },
+          "traceId": {
+            "type": "string",
+            "description": "This field helps OutSystems support to track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
+          }
+        },
+        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+      },
+      "PublishOperationRequest": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PublishOperationsType"
+              }
+            ],
+            "description": "Operation to be executed.\n\nMandatory: Publish."
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "Unique asset identifier.",
+            "format": "uuid"
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Asset Revision.",
+            "format": "int32"
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "Unique environment identifier.\n\nOptional for the hotfix scenario.",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublishOperationResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Unique identifier of the deployment.",
+            "format": "uuid"
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              }
+            ],
+            "description": "Deployment status."
+          },
+          "startedDateTime": {
+            "type": "string",
+            "description": "When the deployment started.",
+            "format": "date-time"
+          },
+          "finishedDateTime": {
+            "type": "string",
+            "description": "When the deployment finished.",
+            "format": "date-time"
+          },
+          "deployedBy": {
+            "type": "string",
+            "description": "Unique identifier of the requesting user.",
+            "nullable": true
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "Unique identifier of the asset.",
+            "format": "uuid"
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Revision that had the action performed.",
+            "format": "int32"
+          },
+          "buildKey": {
+            "type": "string",
+            "description": "Unique identifier of the asset build.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "operation": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PublishOperationsType"
+              }
+            ],
+            "description": "Executed Operation."
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublishOperationsType": {
+        "enum": [
+          "Publish"
+        ],
+        "type": "string"
+      },
+      "Status": {
+        "enum": [
+          "Running",
+          "FinishedWithError",
+          "Finished"
+        ],
+        "type": "string"
+      },
+      "StringMessageDetailsV1TaskProgressMessagePagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPageInfo"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MessageDetailsV1TaskProgressMessage"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "StringPageInfo": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of results in the current page.",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limit of results per page.",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "string",
+            "description": "Offset of the current page of results.",
+            "nullable": true
+          },
+          "nextPageOffset": {
+            "type": "string",
+            "description": "Offset of the next page of results.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains response page information."
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [{
+    "bearerAuth": []
+  }],
+  "tags": [
+    {
+      "name": "public",
+      "description": ""
+    },
+    {
+      "name": "private",
+      "description": "Handles deployed applications"
+    }
+  ]
+}

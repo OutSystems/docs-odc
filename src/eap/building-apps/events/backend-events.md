@@ -28,11 +28,11 @@ In ODC, apps are loosely coupled, and the dependencies between apps are always w
 
 To build event-driven ODC apps, you can use the following low-code constructs in ODC Studio. 
 
- ![Diagram showing the construct used to define events in ODC apps.](images/define-event-odcs.png "Defining Events in ODC")
+ ![Diagram showing the construct used to define events in ODC apps.](images/define-event-icon-odcs.png "Defining Events in ODC")
 
 This construct is used to define events in your apps and specify any input parameters to be passed in an event. It’s also used to handle or process an event in the same app or a different app using an event handler.
 
-![Diagram showing the construct used to trigger events in ODC apps.](images/trigger-event-odcs.png "Triggering Events in ODC") 
+![Diagram showing the construct used to trigger events in ODC apps.](images/trigger-event-icon-odcs.png "Triggering Events in ODC") 
 
 This construct triggers the event at any point of execution. It can be used in either the server action or the service action. 
 
@@ -84,11 +84,13 @@ ODC events enable asynchronous processing in your app. When an event is triggere
 
 ![Diagram showing asynchronous parallel processing of events in ODC apps.](images/parallel-processing-diag.png "Asynchronous Parallel Processing in ODC")
 
-If an app triggers multiple events of the same type, they can be handled asynchronously and in parallel by one or more apps, with each event running independently in the background. For example, in an eCommerce app, during a flash sale, when multiple users place orders simultaneously, the app triggers multiple events of type **OnPurchaseStarted**. The **Inventory app** and **Fraud Detection app** handle these events independently, processing them in parallel. This ensures that stock is updated and fraud checks are performed asynchronously, allowing the system to handle high traffic efficiently.
+If an app triggers multiple events of the same type, they can be handled asynchronously and in parallel by one or more apps, with each event running independently in the background. For example, in an eCommerce app, during a flash sale, when multiple users place orders simultaneously, the app triggers multiple events of type **OnPurchaseStarted**. The **Inventory app** and **Fraud Detection app** handle these events independently, processing them in parallel. This ensures that stock is updated and fraud checks are performed asynchronously, allowing the system to handle high traffic efficiently.
+
+Each app replica (compute instance) can concurrently handle a maximum of **100** events. If the number of events in the queue for a particular event type exceeds **1000**, ODC automatically scales by launching additional app replicas to meet the workload. A new replica is spawned for every additional **1000** events in the queue, up to a maximum of **10 replicas**. This ensures that high-demand scenarios are handled efficiently.
 
 <div class="info" markdown="1">
 
-Each app can handle a maximum of **100** events in parallel. For a specific event definition, if the producer app generates events faster than the consumer app can handle them then the events are queued up to a limit of **10000**. Once this queue is full, the producer app receives an error when attempting to generate further events. Events can also get queued if the consumer app is slow to handle them while the producer app continues to generate new ones or if the consumer app event handling times out after 2 minutes. These timed out events are retried according to the retry and backoff policy.
+For a specific event definition, if the producer app generates events faster than the consumer app can handle them, the events are queued up to a limit of **10000**. Once this queue is full, the producer app receives an error when attempting to generate further events. Events can also get queued if the consumer app is slow to handle them while the producer app continues to generate new ones or if the consumer app event handling times out after 2 minutes. These timed-out events are retried according to the retry and backoff policy.
 
 </div>
 

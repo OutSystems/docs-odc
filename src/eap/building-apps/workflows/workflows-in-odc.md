@@ -22,51 +22,25 @@ coverage-type:
 
 # Workflows in ODC
 
-In OutSystems Developer Cloud (ODC), you can implement a [business process](business-processes.md) as a workflow. A workflow is a repeatable process consisting of tasks to be completed in a specific sequence. With workflows, you can implement business processes such as vacation approval and loan approval processes and integrate them into your apps. Workflows are created to introduce automation in your apps, encompassing the development and implementation of business processes. A workflow is designed as a flow of activities to be carried out, such as a task for the end-user to execute in your app or a task that executes without end-user intervention. 
+With Workflows, you can design, implement, and automate [business processes](business-processes.md) such as vacation approval, loan approval, or order management and integrate them in your apps. A workflow is a repeatable process consisting of tasks to be completed in a specific sequence. Workflows introduce automation in your apps by allowing you to design and implement repeatable business processes, automating tasks and interactions that would otherwise require manual intervention. For detailed information about how to implement workflows in ODC, refer to [Implement workflows](workflow-components.md).
 
-You can implement workflows as a new type of asset similar to ODC apps and libraries with an independent lifecycle. ODC provides a **workflow editor**, a visual web-based tool for implementing workflows. You can access the workflow editor from the ODC Portal.  
+Workflows are triggered by events in ODC apps. For detailed information about how to create, trigger, and handle events, refer to [Implement events](../../building-apps/events/implement-events.md). 
 
-<div class="info" markdown="1">
+Here are some examples of events that can trigger a workflow:
 
-To use workflows you need the requisite *Asset Management* permission(s). To get the necessary permission(s), speak to an administrator from your ODC organization.
+* Approval Request: An employee submits a time-off request, initiating a workflow for manager approval and updating their leave balance.
 
-</div>
+* Online Form Submission: A customer fills out a contact form on a website, triggering a workflow to  send an automated welcome email.
 
-With the workflow editor, you can:
+* Order placement: A customer places a new order in an e-commerce system, triggering a workflow for order fulfillment, inventory update, and shipping notification.
 
-* Implement your workflow using a set of nodes such as **Start**, **End**, **HumanActivity**, **AutomaticActivity, Go to a previous step,** and **Decision.**
+The diagram below illustrates how clicking the Submit button on a Loan Request screen in an ODC app triggers the LoanRequest event, initiating the loan approval workflow in the Workflow Editor.
 
-* Establish a connection between the workflow and the app by selecting events, service actions, and screens for specific nodes in the workflow.
-
-* Import and export workflows to share within your organization and with external partners.
-
-* Switch between the default summary view for comprehensive understanding of workflows and the iconified view for a high-level structure. In the summary view, for each node in the workflow you are provided detailed information such as events triggered, conditions configured and service actions invoked. The iconified view displays only the icon of each node.
+ ![Diagram showing the workflow process from an ODC app triggering a loan request event to the workflow editor processing the event through various nodes.](images/workflow-overview-diag.png "Workflow Overview Diagram")
 
 Here's a video providing a concise overview of workflows.
 
 <iframe src="https://player.vimeo.com/video/1027587143" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">This video provides a concise overview of ODC workflows</iframe>
-
-
-Consider this example of approving a bank loan:
-
-1. The workflow starts when a customer submits a loan application to the bank
-
-2. A customer relationship manager manually validates the customer's background information.
-
-   1. If the customer's background details are invalid, a rejection email is sent to the customer, and the workflow ends.
-
-   2. If the user’s background details are valid, the loan application moves to the finance department, where an employee validates the customer's credit history and financial health.
-
-      1. If the customer's financial documents are valid, then the customer receives a loan approval letter, and the workflow ends.
-
-      2. If the customer's financial documents are invalid, then the customer receives a loan rejection letter, and the workflow ends.
-
-      3. If the documents are insufficient, the finance department routes the application to the customer relationship manager to restart the document verification process.
-
-    ![Example workflow of approving a bank transaction](images/example-workflow-pl.png "Example workflow of approving a bank transaction")
-
-
-For detailed step-by-step information about using workflows, refer to [Using workflows](using-workflows.md). 
 
 ## Key features
 
@@ -74,13 +48,13 @@ Workflows enable you to integrate the business processes in your ODC apps.
 
 With workflows, you can:
 
-* Streamline tasks that require manual intervention. For example, you can create tasks such as approval of loan documents and assign them to be carried out by the app's end users. 
+* Reduce manual effort and errors by streamlining tasks that require human intervention, such as approvals or document reviews.
 
-* Automate repetitive tasks and notifications, leading to faster response times and better operational efficiency. For example, you can automate sending notifications once the loan documents have been approved.
+* Improve operational efficiency by automating repetitive tasks and notifications, ensuring faster response times and consistent execution.
 
-* Include multiple conditional paths that route your business process based on specific criteria. For example, you can route your loan application business process to separate paths based on whether the loan documents were approved or rejected.
+* Increase process flexibility by enabling multiple conditional paths, so you can easily adapt business processes based on specific criteria. For example, you can route your loan application business process to separate paths based on whether the loan documents were approved or rejected.
 
-* Directly interact with your apps using events and service actions. For example, you can select an event in your app that, when triggered, can close a human activity.
+* Scale business operations by supporting high volumes of workflow instances and automating complex, multi-step processes.
 
 ## Use cases
 
@@ -100,11 +74,56 @@ Here are some use cases where you can use workflow for automation:
 
 * Travel reimbursement
 
+## Using workflow editor
+
+ODC provides a **workflow editor**, a visual web-based tool for implementing workflows. You can access the workflow editor from the ODC Portal. You can implement workflows as a new type of asset similar to ODC apps and libraries with an independent lifecycle.
+
+![Screenshot of the workflow editor interface in ODC, showing a workflow with nodes for start, human activity, decision, automatic activity, and end.](images/workflow-editor-pl.png "Workflow Editor Interface")
+
+<div class="info" markdown="1">
+
+To use workflows you need the requisite *Asset Management* permission(s). To get the necessary permission(s), contact the administrator from your ODC organization.
+
+</div> 
+
+With workflow editor, you can:
+
+* Implement your workflow using a set of nodes such as **Start**, **End**, **HumanActivity**, **AutomaticActivity**, **Go to a previous step**, and **Decision**. For detailed information, refer to [Implement workflows](workflow-components.md).
+
+* Select service actions and events to exchange data between the app and the workflow.
+For example, while implementing a human activity in a workflow, you can select a service action from the app to retrieve the manager's user ID. You can then use that user ID to assign human activity to the manager within the workflow.
+
+* Import and export workflows to share within your organization and with external partners.
+
+* Switch between the default summary view for comprehensive understanding of workflows and the iconified view for a high-level structure. In the summary view, for each node in the workflow you are provided detailed information such as events triggered, conditions configured and service actions invoked. The iconified view displays only the icon of each node.
+
+### Search in workflow editor
+
+Workflow editor provides search capability which is a single point of entry for various commands and searches simplifying editing and navigation of complex workflows. You can open the search menu using the keyboard shortcut **Ctrl + K (or Cmd + K on a Mac**).
+
+With search, you can do the following:
+
+**Search and execute commands**: In addition to in-built commands, you can also search for a specific flow step (activity) or properties within your workflow.
+
+**Edit properties**: Edit a specific expression or an outcome in the corresponding panel or editor.
+
+**Add new flow-steps**: Select a flow-step and type add. A list of flow-steps to be added appears, allowing you to insert them into your workflow. 
+
+### Managing workflow revisions
+
+The workflow editor includes revisions history to help you track, manage, and restore previous versions of your workflows.
+
+With revisions history, you can:
+
+* **View past workflow revisions**: Access the full history of all published workflow revisions, including revision number, publication date, and publisher
+
+* **Discard or restore workflow changes**: Easily discard unpublished workflow changes or restore the workflow to any previous published revision
+
 ## Key considerations for implementing workflows
 
 Here are some points to consider as you implement workflows in ODC:
 
-* **Workflows are loosely coupled** to apps and can consume only the public elements from the app, such as events, service actions, and screens. To learn more about strong and weak dependencies, refer to [Understanding strong and weak dependencies](../reuse/intro.md). 
+* **Workflows are loosely coupled** to apps and can consume only the public elements from the app, such as events, service actions, and screens. To learn more about strong and weak dependencies, refer to [Understanding strong and weak dependencies](../reuse/intro.md).
 
 * **Workflows are always consumers** and not producers.
 
@@ -112,7 +131,11 @@ Here are some points to consider as you implement workflows in ODC:
 
 * **Workflows can have** [**multiple revisions**](../../deploying-apps/deploy-apps.md#multiple-revisions-of-a-workflow) **running simultaneously in the same stage**, and every revision can have one or more instances of the workflow in execution. An instance is a unit of execution of a workflow. Each instance can run up to 1,000 activities. 
 
-    **Note**: In the development stage, you can have instances running only in the last five revisions. For example, if there are five revisions (revisions 1 to 5) in the development stage with active instances running in each one, once revision 6 is created, all active instances running in revision 1 are terminated immediately. There is no limit to the number of revision instances for the QA and production stages. 
+    <div class="info" markdown="1">
+    
+    In the development stage, you can only have instances running in the last five revisions. For example, if there are five revisions (revisions 1 to 5) in the development stage with active instances running in each one, once revision six is created, all active instances running in revision one are terminated immediately. There is no limit to the number of revision instances for the QA and production stages. 
+
+    </div>
 
 ## Known constraints
 
@@ -122,7 +145,16 @@ Here are some points to consider as you implement workflows in ODC:
 
 ## Related resources
 
-* [Using workflows](using-workflows.md)
-* [Workflow nodes](workflow-components.md)
+### Implement workflows
+
+* [Getting started](using-workflows.md)
+
+* [Implement workflows](workflow-components.md)
+
 * [Troubleshooting workflows](troubleshooting-workflows.md)
-* [Building Workflows in ODC](https://learn.outsystems.com/training/journeys/building-workflows-in-odc-2690) online course
+
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)
+
+### Online training
+
+* [Building workflows in ODC](https://learn.outsystems.com/training/journeys/building-workflows-in-odc-2690) 

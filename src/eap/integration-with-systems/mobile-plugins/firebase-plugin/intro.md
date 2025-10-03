@@ -30,7 +30,6 @@ Firebase is a Google mobile development platform that speeds up the mobile app c
 
 * Analytics Plugin (Firebase)
 * Crash Reporting Plugin (Firebase)
-* Dynamic Links Plugin (Deprecated) (Firebase)
 * Performance Monitoring Plugin (Firebase)
 * Cloud Messaging Plugin (Firebase)
 
@@ -48,7 +47,7 @@ To use the Firebase plugins, you must complete the following prerequisites:
 
 ## Demo app
 
-Install the **Firebase Mobile Sample App** from [Forge](https://www.outsystems.com/forge/) portal. Then open the app in ODC Studio. The demo app contains logic for common use cases, which you can examine and recreate in your apps. If you want to build the app and run it, check the prerequisites on the Forge page.
+Install the Firebase Mobile Sample App from the [Forge](https://www.outsystems.com/forge/) portal. Then, open the app in ODC Studio. The demo app contains logic for common use cases, which you can examine and recreate in your apps. If you want to build the app and run it, check the prerequisites on the Forge page.
 
 ## Adding and using a Firebase plugin
 
@@ -72,7 +71,7 @@ To add a Firebase plugin to your mobile app, complete the following steps:
 
 <div class="info" markdown="1">
 
-To learn how to use the Firebase Cloud Messaging plugin using Clould Messaging Configurator REST APIs, refer to [Firebase Cloud Messaging Plugin](firebase-cloud-messaging-plugin-configurator-api.md).
+To learn how to use the Firebase Cloud Messaging plugin using Cloud Messaging Configurator REST APIs, refer to [Firebase Cloud Messaging Plugin](firebase-cloud-messaging-plugin-configurator-api.md).
 
 To learn how to use the Firebase Cloud Messaging plugin using server actions, refer to [Firebase Cloud Messaging Plugin](firebase-cloud-messaging-plugin-server-action.md).
 
@@ -84,7 +83,7 @@ You must provide the plugin configuration file as settings in the ODC Portal for
 
 1. Open the ODC Portal.
 
-1. From the left Navigation menu, select **Apps** and from the details page, select your app. Then select **Settings**.
+1. From the left Navigation menu, select **Apps**. From the details page, select your app. Then select **Settings**.
 
     Complete the two Firebase settings **GoogleServicesAndroid** and **GoogleServicesIos**.
 
@@ -104,36 +103,16 @@ You must provide the plugin configuration file as settings in the ODC Portal for
 
 </div>
 
-### Additional setup for the Dynamic Links plugin (Deprecated)
-
-<div class="warning" markdown="1">
-
-Firebase has announced the end of life for Firebase Dynamic Links, August 25, 2025 ([source](https://firebase.google.com/support/dynamic-links-faq#when_will_firebase_dynamic_links_stop_working)). This plugin should not be used for new projects and we recommend moving off of this plugin to a different service for application links.
-
-</div>
-
-The Firebase Dynamic Links Plugin requires the following additional setup steps to work correctly:
-
-* Include a global preference in the Extensibility Configurations of the application using the plugin. Ensure that the value for this preference matches the URL prefix you set in the Dynamic Links page in the Firebase console. For example:
-
-```JSON
-{
-     "preferences": {
-         "global": [
-            {
-                "name": "FIREBASE_DOMAIN_URL_PREFIX",
-                "value": "outsystemsfirebase.page.link"
-            },
-        ]
-    }
-}
-```
-
-* For iOS, use a provisioning profile from Apple that contains the Associated Domains capability. For more information, refer to [Configuring an Associated Domain](https://developer.apple.com/documentation/xcode/configuring-an-associated-domain) by Apple. Ensure that the app is compliant with Apple’s Data Use and Sharing guidelines.
-
 Starting with iOS 14.5, apps on the App Store must request the user’s permission to collect tracking data through the AppTrackingTransparency framework. For more information, see [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency).
 
 To trigger the native AppTrackingTransparency framework, use the **RequestTrackingAuthorization** client action from the Firebase Analytics Plugin. Apple recommends triggering this prompt as soon as the app loads.
+
+<div class="info" markdown="1">
+
+This Client action is only available on iOS, since the AppTrackingTransparency framework is an iOS-only feature. 
+
+</div> 
+
 If you want to present an alert before the iOS tracking permission dialog, enable the parameter **ShowInformation** on the action. To provide more context to app users in the dialog, set a **Title** and **Message**.
 
 ![Shows the RequestTrackingAuthorization client action parameters in ODC Studio](images/firebase-request-tracking-authorization-flow-odcs.png "Firebase Request Tracking Authorization Flow in ODC Studio")
@@ -168,25 +147,36 @@ By default, an app using the Firebase Analytics plugin is able to trigger the na
 
 <div class="info" markdown="1">
 
-If your app collects user data for advertising purposes, also known as Attribution, within Firebase Analytics context, it must prompt the AppTrackingTransparency framework.
+If your app collects user data for advertising purposes, also known as Attribution, within the Firebase Analytics context, it must prompt the AppTrackingTransparency framework.
 
 </div>
 
-### Additional information for Firebase Analytics 
+### Additional information for Firebase Analytics
+
+#### Custom events
+
+Starting in version **1.4.0**, a new client action named `LogEvent` is available and should be used instead of the deprecated `DEPRECATED_LogEvent`.
+This new version introduces support for passing event parameters as a list, providing better structure and flexibility when logging events.
+
+Each event must include an `EventName` and can optionally include a list of key–value pairs via the `EventParameters` input. A maximum of 25 parameters is allowed per event. If more than 25 parameters are provided, only 25 will be sent to Firebase Analytics and the rest will be discarded. Note that since parameter order is not guaranteed, any of the extra parameters may be ignored.
+
+To further illustrate this example, the following shows a typical usage of the `LogEvent` client action:
+
+![Shows the Firebase Analytics LogEvent client action for a custom event](images/firebase-analytics-log-event-example-odcs.png "Firebase Analytics LogEvent client action example")
 
 #### Ecommerce events
 
-Starting in version **0.2.0**, Firebase Analytics plugin users can log ecommerce events, which are specifically tailored to collect information about your user's shopping behavior.
+Starting with version **0.2.0**, Firebase Analytics plugin users can log ecommerce events, which are specifically tailored to collect information about your users' shopping behavior.
 
-It's important to note that Google's ecommerce API enforces a set of constraints for each event. For example, the API ensures you include an `item_list_id` parameter when logging a `view_item_list` event.
+It's important to note that Google's e-commerce API enforces a set of constraints for each event. For example, the API ensures you include an `item_list_id` parameter when logging a `view_item_list` event.
 
-The Firebase Analytics plugin performs validations when the `LogECommerceEvent` is invoked. You can find the validate details by clicking Google's documentation link, for each event on the list below.
+The Firebase Analytics plugin performs validations when the `LogECommerceEvent` is invoked. For each event on the list below, you can find the validation details by clicking Google's documentation link.
 
 To further illustrate this example, the following shows a typical usage of the `LogECommerceEvent client action`:
 
 ![Shows the Firebase Analytics LogECommerceEvent client action for a `view_item_list`](images/firebase-analytics-log-ecommerce-example-odcs.png "Firebase Analytics LogECommerceEvent client action example")
 
-Currently, Firebase Analytics plugin supports the following events:
+Currently, the Firebase Analytics plugin supports the following events:
 
 * [add_payment_info](https://developers.google.com/analytics/devguides/collection/ga4/reference/events#add_payment_info)
 * [add_shipping_info](https://developers.google.com/analytics/devguides/collection/ga4/reference/events#add_shipping_info)
@@ -203,15 +193,15 @@ Currently, Firebase Analytics plugin supports the following events:
 * [view_item](https://developers.google.com/analytics/devguides/collection/ga4/reference/events#view_item)
 * [view_promotion](https://developers.google.com/analytics/devguides/collection/ga4/reference/events#view_promotion)
 
-from the provided entity, users can select the event type  `ECommerceEvent`.
+From the provided entity, users can select the event type  `ECommerceEvent`.
 
 ![Shows the `ECommerceEvent` entity](images/firebase-analytics-log-ecommerce-events-odcs.png "Firebase Analytics LogECommerceEvent entity")
 
-You can also select the key for each parameter you want included on the event logging from the  `ECommerceEventParameterKey` entity.
+You can also select the key for each parameter you want included in the event logging from the  `ECommerceEventParameterKey` entity.
 
 ![Shows the `ECommerceEvent` parameters](images/firebase-analytics-log-ecommerce-parameters-odcs.png "Firebase Analytics LogECommerceEvent entity")
 
-For more information on which event requires which parameters refer to [Google's documentation page regarding 'measure ecommerce'](https://developers.google.com/analytics/devguides/collection/ga4/ecommerce).
+For more information on which event requires which parameters, refer to [Google's documentation page regarding 'measure ecommerce'](https://developers.google.com/analytics/devguides/collection/ga4/ecommerce).
 
 #### Enable/disable data collection
 
@@ -239,6 +229,6 @@ Starting in version **1.1.2**, the Firebase Analytics plugin can effectively ena
 Keep in mind that:
 
 * For `SetEnabled` to have any effect on the data collection, the preference needs to be included.
-* The preference only needs to be added when you want to control the collection. If not provided or is used with another value (for example: `true`), the collection will be enabled and it won't be possible to change it.
+* The preference only needs to be added when you want to control the collection. If not provided or is used with another value (for example: `true`), the collection will be enabled, and it won't be possible to change it.
 
 </div>

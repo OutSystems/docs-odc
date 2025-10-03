@@ -103,7 +103,8 @@ To set a custom domain as the default domain, follow the [Add a custom domain](#
 * When a tenant is first created, the **built-in domains are always set as default**.
 * You can set any domain as default only if it is **active**.
 * You can only set **one custom domain as the default** domain per stage.
-* You **cannot delete a default domain**. You'll must set another domain as default first before deleting the current one.
+* You **cannot delete a default domain**. You must set another domain as default first before deleting the current one.
+* The built-in domain cannot be deleted.
 
 </div>
 

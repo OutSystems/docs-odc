@@ -44,7 +44,6 @@ DELETE FROM {entity};
 
 -- Delete only matching records in an entity
 DELETE FROM {entity} WHERE {entity}.[id] = 1 OR {entity}.[id] = @dynamic;
-```FROM { entity } WHERE [id] = 1 OR [id] = @dynamic;
 ```
 
 ## Compatibility
@@ -57,3 +56,7 @@ DELETE FROM {entity} WHERE {entity}.[id] = 1 OR {entity}.[id] = @dynamic;
 | PostgreSQL           | Yes                                       |
 | Salesforce           | Yes                                       |
 | SAP OData            | Yes. The entity must have a `DELETE` API. |
+
+### Known issues
+
+* Subqueries aren't supported in the `WHERE` clause

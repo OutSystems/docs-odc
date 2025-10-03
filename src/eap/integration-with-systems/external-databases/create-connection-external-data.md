@@ -44,13 +44,13 @@ External data connections can be created with read-only permissions or other per
 
 To access private data that is not available over the internet, connect to your external data source through a [private gateway](../../manage-platform-app-lifecycle/private-gateway.md). The connection process varies depending on the type of data source:
 
-* Relational database:
-    1. In the ODC Portal, open the connection configuration screen. Enter `secure-gateway` in the `Server`/`Host` field, and the secure gateway port in the `Port` field.
+* All data sources:
+    1. In the ODC Portal, open the connection configuration screen. First, toggle on the `Private gateway` and then enter the port number in the `Private gateway port` field.
 * SAP BAPI database:
-    1. Run the Cloud Connector with the following command: `./outsystemscc --header "token: <token>" <secure-gateway-address> R:<local-port>:<sap-ip-address>:<remote-port>` . This directs traffic from `secure-gateway:<local-port>` to `<sap-ip-address>:<remote-port>`. 
+    1. Run the Cloud Connector with the following command: `./outsystemscc --header "token: <token>" <secure-gateway-address> R:<local-port>:<sap-ip-address>:<remote-port>`. This directs traffic from `secure-gateway:<local-port>` to `<sap-ip-address>:<remote-port>`. 
     1. To route requests through the Cloud Connector and still use a valid Application Server value, a [SAP Router](https://support.sap.com/en/tools/connectivity-tools/saprouter.html) is needed.
-* Azure SQL Server Managed Instance:
-    1. Proxy mode is required in this case, as it ensures a stable connection by routing all traffic through the Azure SQL Gateway.
+* Azure SQL Server (all instances):
+    1. Proxy mode is required, as it ensures a stable connection by routing all traffic through the Azure SQL Gateway.
 
 ## Create a new connection
 
@@ -112,8 +112,8 @@ Administrators  must supply the following information to connect to the external
 | Description | Information about the database connection | No | Optional |
 | Username | Username to access the database | Yes |  |
 | Password | Password to access the database | Yes |  |
-| Server for SQL server and Azure SQL \ Host for Oracle server | Endpoint for your database connection | Yes | For Private Gateway, enter `secure-gateway` |
-| Port | The port number to connect to the database | Yes | ODC has a default port number that an admin can change. For a private gateway, enter the port configured in the connector. |
+| Server for SQL server and Azure SQL \ Host for Oracle server | Endpoint for your database connection | Yes | For Private Gateway, enter `secure-gateway`. |
+| Port | The port number to connect to the database | Yes | A default port number is shown that can changed. IF you're using Private Gateway, enter the port configured in the Cloud Connector. |
 | Database for SQL server and Azure SQL \ Service name for Oracle server | Name of the database | Yes |  |
 | Additional parameters | Additional parameters for a database connection | Yes | For more information, see [additional parameters](#additional-parameters) |
 | SAP Server domain | SAP server/host address| Yes |  |

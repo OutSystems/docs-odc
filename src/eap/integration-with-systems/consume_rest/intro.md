@@ -42,9 +42,13 @@ The external API can support any one of the following authentication methods:
 Here's the high-level process for consuming REST APIs in ODC Studio:
 
 * [Add a single API method](consume-a-rest-api.md#add-a-single-rest-api-method--single-method-) or [Add multiple API methods](consume-a-rest-api.md#add-several-methods-of-a-rest-api--all-methods-) by importing the OpenAPI specification file.
+  
 * [Configure the API authentication](#configure-the-api-authentication) details for the REST API. For configuring basic authentication, refer to [Configure basic authentication](#configure-basic-authentication). For configuring token-based authentication, refer to [Configure token-based authentication](#configure-token-based-authentication).
+  
 * (Optional) [Customize](simple-customizations.md) the request and response headers using specific callbacks.
+  
 * If you want to configure base URL or basic authentication credentials for every stage then from ODC portal, [Configure](consume-a-rest-api.md#configure-api-endpoints-and-basic-authentication) the base URL and basic authentication credentials such as username and password.
+  
 * [Use the API](consume-a-rest-api.md#use-a-rest-api-method-in-your-app--use-) in your app.
 
 <div class="info" markdown="1">
@@ -78,12 +82,31 @@ For detailed information, refer to [Consuming a REST API ODC training](https://l
 
 ### Configure token-based authentication
 
-ODC does not provide built-in support for token-based authentication such as OAuth 2.0 authorization. In such cases to authenticate the API call, you must must include the token in the request header.You can use the [**OnBeforeRequest**](simple-customizations.md) callback to dynamically add or update the token to the HTTP request header before sending the request. For detailed information, refer to [Example use case: Adding a header for token-based authentication](./simple-customizations.md#example-use-case-adding-a-header-for-token-based-authentication).
+ODC does not provide built-in support for token-based authentication such as OAuth 2.0 authorization. In such cases to authenticate the API call you must:
+
+1. [Generate the access token.](generate-reuse-oauth-token.md) 
+   
+1. Include the [token in the request header](simple-customizations.md#example-use-case-adding-a-header-for-token-based-authentication) using the **OnBeforeRequest** callback. 
 
 ## Related resources
 
-* [Consuming REST APIs ODC Online training](https://learn.outsystems.com/training/journeys/consuming-rest-api-207) online course
+### Getting started
+
 * [Consume one or more REST API methods](consume-a-rest-api.md)
-* [Customize API request and response headers](simple-customizations.md)
+
+### Authentication and security
+
 * [Configure base URL and basic authentication credentials](consume-a-rest-api.md#configure-api-base-url-and-basic-authentication)
+  
+* [Generate OAuth access token](generate-reuse-oauth-token.md)
+  
+* [Customize API request and response headers](simple-customizations.md)
+
+### Use API
+
 * [Use API in your app](consume-a-rest-api.md#use-a-rest-api-method-in-your-app--use-)
+
+### Online training
+
+* [Consuming REST APIs ODC Online training](https://learn.outsystems.com/training/journeys/consuming-rest-api-207) online course
+  

@@ -58,6 +58,8 @@ Read more about HIPAA in the [Health Insurance Portability and Accountability Ac
 
 * A [Business Associate Agreement (BAA)](https://www.hhs.gov/hipaa/for-professionals/covered-entities/sample-business-associate-agreement-provisions/index.html) certifying that your OutSystems applications are compliant with HIPAA requirements. For assistance, contact your OutSystems account manager.
 
-* Attestation by an independent auditor that OutSystems technology, cloud hosting, policies and procedures ensure that PHI is handled correctly even in the unlikely event of a data breach. See additional details in the [OutSystems Trust Center](https://security.outsystems.com/).  
+* Attestation by an independent auditor that OutSystems technology, cloud hosting, policies and procedures ensure that PHI is handled correctly even in the unlikely event of a data breach. See additional details in the [OutSystems Trust Center](https://security.outsystems.com/).
+
+* [ODC audit trail](../monitor-and-troubleshoot/audit-trail.md), a feature that logs developer actions at ODC Portal.
 
 Contact your account manager to purchase ODC Sentry. To confirm that you're using ODC Sentry, check your [Subscription console](../manage-platform-app-lifecycle/subscription-console.md). If not, contact your account manager.  
