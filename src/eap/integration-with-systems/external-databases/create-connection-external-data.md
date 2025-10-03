@@ -60,7 +60,7 @@ To create a new database connection, go to the ODC Portal and follow these steps
 1. Select the required provider and click **Confirm**.
 1. In the connection form, enter the required connection information.
     * If you're adding a database connection, refer to the [database connection parameters](#connection-parameters).
-    * If you're adding an AI search service, refer to the AI [AI search service connnection parameters](#ai-search-service-connection-parameters).
+    * If you're adding an AI search service, refer to the [AI search service connnection parameters](#ai-search-service-connection-parameters).
 1. After entering the information, click the **Test connection** button at the bottom of the form. If the test fails, a message displays. Make the necessary changes and test again. 
 1. To apply to stages, you can choose one of the following.
     * Click **Apply to all stages** to use the same connection information in all stages.
@@ -111,9 +111,9 @@ Administrators  must supply the following information to connect to the external
 | Connection name | The name of the connection | No |  |
 | Description | Information about the database connection | No | Optional |
 | Username | Username to access the database | Yes |  |
-| Password | Password to access the database. | Yes |  |
-| Server for SQL server and Azure SQL \ Host for Oracle server | Endpoint for your database connection | Yes |  |
-| Port | The port number to connect to the database | Yes |  |
+| Password | Password to access the database | Yes |  |
+| Server for SQL server and Azure SQL \ Host for Oracle server | Endpoint for your database connection | Yes | For Private Gateway, enter `secure-gateway`. |
+| Port | The port number to connect to the database | Yes | A default port number is shown that can changed. IF you're using Private Gateway, enter the port configured in the Cloud Connector. |
 | Database for SQL server and Azure SQL \ Service name for Oracle server | Name of the database | Yes |  |
 | Additional parameters | Additional parameters for a database connection | Yes | For more information, see [additional parameters](#additional-parameters) |
 | SAP Server domain | SAP server/host address| Yes |  |
@@ -129,9 +129,9 @@ Administrators  must supply the following information to connect to the external
 
 ### Additional parameters
  
-You can use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, you can use `;` semi-colon as a separator for SQL Server connections or the `&` character for other connections. Hover the info icon to confirm. Different databases may require different parameters, for example:
+You can use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, you can use `;` semi-colon as a separator for SQL Server connections or the `&` character for other connections. Hover over the info icon to confirm. Different databases may require different parameters, for example:
 
-* For **SQL Server**, and **Azure SQL** to select the desired schema on the database, enter `currentSchema=<schema-name>`. For **Oracle** to select the desired schema on the database, enter `current_schema=<schema-name>`
+* For **SQL Server** and **Azure SQL**, to select the desired schema on the database, enter `currentSchema=<schema-name>`. For **Oracle** to select the desired schema on the database, enter `current_schema=<schema-name>`
 * To establish a connection with the **SQL Server** and allow the client to bypass certificate validation, add the `trustServerCertificate=true` parameter to the additional parameters.
 * You can configure connection pool size for all available relational database connectors. Changing the connection pool size can significantly impact performance.
     * `minConnectionPoolSize`: Default value of 0.
