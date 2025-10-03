@@ -4,7 +4,7 @@ summary: OutSystems Developer Cloud (ODC) facilitates efficient onboarding by en
 locale: en-us
 guid: 84c9098b-c486-483f-9836-70b8faee63fa
 app_type: mobile apps, reactive web apps
-figma:
+figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3765-89
 platform-version: odc
 tags: identity and access management, user onboarding, role management, identity providers, group mapping
 audience:
@@ -24,34 +24,43 @@ topic:
 
 # IdP and end-user group mapping
 
-OutSystems Developer Cloud (ODC) enables you to accelerate onboarding end-users from your identity provider (IdP). End-users must exist in your IdP, and it’s the IdP's responsibility to authenticate users.
+In ODC, you can accelerate end-user onboarding through your identity provider (IdP). End-users must exist in your IdP, and the IdP is responsible for authenticating them.
 
-Users must have permission to access the End-user group mapping option. With permission, you can map groups of end-users from your IdP to end-user groups in ODC. Once the group mapping is correctly configured, you don’t need to invite end-users individually. End-users are automatically granted the roles configured on the mapped end-user group when they log into your OutSystems, which speeds up the onboarding process.
-
-<div class="info" markdown="1">
-
-This ODC feature only works if your IdP supports groups. Check with your IdP to verify they support groups. Additionally, if your IdP does support groups, you might have to do some configuration work on the IdP to send the group information during authentication. You can only map end-users. You can’t map members with organization roles, such as Admin or Developer.
-
-</div>
-
-According to the roles on the IdP, each end-user that exists in the IdP can log in to ODC with the appropriate roles. When the mapping completes, end-users are automatically granted roles and access to apps for the ODC group. If an end-user already exists in ODC, their permissions synchronize according to the existing group mapping if applicable. This happens every time an end-user logs into ODC. For more information about Roles, refer to [Roles](../../user-management/roles.md).
+You can map identity claims (for example, **group**) from your IdP to [end-user groups](../../user-management/end-users/groups.md). While using groups is recommended and usually easiest, any claim present in the issued token and its value(s) can be used for mapping (for example, mapping an individual by the **subject**/**sub** claim). Once the mapping is correctly configured, you don’t need to invite end-users individually. When users log in via the IdP, they're automatically added to the mapped ODC end-user group and granted the app roles you added to the group. For more details on how to add roles to a group, refer to [Add roles to an end-user group](../../user-management/end-users/groups.md#add-or-revoke-end-user-roles-to-a-group).
 
 <div class="info" markdown="1">
 
-Group mapping controls role assignment. User identification and automatic registration on first login still depend on the IdP claims you mapped to **email** and/or **username** when you [configured your IdP](intro.md). Map at least one. If the IdP is (or will be) assigned to the Organization scope, mapping the **email** claim is mandatory. ODC uses only mapped fields. If the IdP isn't assigned at the Organization scope and doesn't provide an **email**, ODC can still create and manage users using only a mapped **username**.
+This feature requires your IdP to include the claims you choose to map on in the token it issues. If you map IdP groups, your IdP must support and emit group claims, and you may need to configure it to send them during authentication.
+
+You can only map [end-users](../../user-management/intro.md#end-users). You can't map [members (IT-users)](../../user-management/intro.md#members-it-users) with organization roles, such as Admin or Developer.
 
 </div>
+
+Mapping synchronizes end-user permissions on each login. ODC updates the roles of existing users based on current mappings. If a user no longer satisfies the mapping (for example, they're removed from the IdP group or the claim value changes), they lose access, though the mapping remains visible in ODC until the next login.
+
+<div class="info" markdown="1">
+
+Mapped end-users can't be unmapped directly from the ODC Portal. To unmap end-users, update the corresponding claim(s) in your IdP so the user no longer matches the mapping (for example, remove them from the group or change the claim value).
+
+</div>
+
+![Diagram illustrating End-user groups with IdP claim-based mapping](images/end-user-group-with-idp-mapping-diag.png "End-user groups with IdP mapping")
+
+For more information about the high-level steps you need to complete to manage end-users, refer to [Managing end-users with external Identity Provider (IdP) authentication](../../user-management/end-users/intro.md#managing-end-users-with-external-identity-provider-idp-authentication).
 
 ## Prerequisites
 
-Before you can map groups, you must meet the following criteria:
+Before mapping groups, ensure you have:
 
-* You must have the **Manage end-user groups** permission to access **End-user groups** > **Create group** option in ODC.
-* Groups must exist in the IdP.
-* You have the **Manage authentication** permissions to view, create, or delete the mapping in ODC.
-* IdPs must already be configured in ODC. To learn how to configure your IdP for OutSystems, see [Configure authentication with external identity providers](intro.md).
-* End-user group in ODC must exist. To learn how to set up a group in ODC, refer to [User-management](../../user-management/intro.md).
-* You must have the group claim name (identifier) and group claim value from your IdP. The claim enables ODC to access the end-user information from your IdP. Some IdPs send group identifiers, while others send group names. Before beginning, check it with your IdP.
+* To manage [**authentication**](../../user-management/intro.md#authentication) and **end-user groups**, you must have the appropriate permissions. For details, refer to [Roles and permissions for members (IT-Users)](../../user-management/roles.md).
+
+* Groups created in your IdP.
+
+* IdPs configured in ODC. Refer to [Configure authentication with external identity providers](intro.md).
+
+* An existing [end-user group](../../user-management/intro.md) in ODC set up in the same [stage](../../user-management/intro.md#organization-app-stage-and-app-scope) as the IdP.
+
+* The group [claim name and value](#group-claims) from your IdP.
 
 <div class="info" markdown="1">
 
@@ -62,75 +71,183 @@ Before you can map groups, you must meet the following criteria:
 
 </div>
 
-Most users can configure a group in ODC. However, only users, with the appropriate permission, can map end-user groups with IdPs. Typically, admins have the permission to map IdPs.
+## Group claims { #group-claims }
 
-To create a group, from the ODC Portal Navigation menu, select **End-user groups**. Then, from the End-user groups summary page, click **Create group**, enter a Group name, and click **Save**. You now have a new group. No other information is required to create a group.
+A claim is a statement that an entity makes about itself. An entity can be a user or an app.
 
-You can access group mapping from the ODC portal by selecting **End-user groups** or **Identity providers**. Choose the option that works best for you. From the End-user group mapping, you can add several mappings to a group. From the Identity provider, you can add several mappings to a provider.
+Your IdP provides the claim in two parts: a name and a value.
 
-## Mapping from the end-user groups option { #mapping-end-user-groups-option }
+The following is an example of a group claim:
 
-To map a provider to an End-user group, from the portal, select **End-user groups**. A summary page displays End-user groups. You can display groups for different stages. Click the **End-user group** you want to map to an IdP.
+* Claim name: `groups`
+* Claim value: `marketing`
 
-Click the **Group mappings** tab to display all group mappings for this group. In the **Group mappings** section, you can view all mappings, active mappings, or inactive mappings. An **Inactive** status indicates that the IdP and group aren't in the same stage. Hover over the **Inactive** status to learn what you need to fix to make the mapping active.
+In this example, the claim indicates that the user belongs to the `marketing` group. Some IdPs use group names as claim values, while others use unique group identifiers. Check it with your IdP.
 
-To add a new mapping, click **Add mapping**. All fields are required. From the Provider drop-down, select a provider. Enter a **claim name** with a maximum length of 50 characters, a **claim value (provider group)** with a maximum length of 256 characters and the **claim value delimiter** with a maximum length of 3 characters. Your IdP provides the claim value, which is the group claim (identifier) and the claim name. For more information about possible validation errors, please refer to [OS-ID-BIZ-40001](https://success.outsystems.com/support/troubleshooting/incident_models/incident_models_outsystems_developer_cloud/os_id_biz_40001/).
+If your IdP sends multiple group values in a single claim, it may use a delimiter to separate them (for example, a comma, semicolon, or pipe character). The **claim value delimiter** is the character or sequence of characters used to split the claim value into individual groups.
 
-<div class="info" markdown="1">
+The maximum claim length is as follows:
 
-For Microsoft Entra ID, the claim value should be the Object Id of the group and the claim name should be "groups".
-
-</div>
-
-## Mapping from the Identity providers option
-
-To connect a provider to an end-user group, navigate to the **ODC Portal** > **Manage** > **Identity providers**. From the Identity provider summary page, click on the provider you want to map to an end-user group. If you have the correct permissions, a **Group mappings** tab displays.
-
-The Group mappings summary page shows the current mappings for this Provider. The display shows the Provider group(s) and end-user groups that are mapped and the current status. An **Inactive** status indicates that the IdP and end-user group aren't in the same stage. Hover over the Inactive status to learn what you need to fix to make the mapping active.
-
-To add a new mapping, click **Add mapping**. You must enter a **Claim name** and a **Claim value (provider group)**. Your IdP provides the claim value (identifier) and the group claim. In the End-user group section, click on the group(s) you want to map, select a stage, and then click **Save**. When the mapping completes, end-users can log into ODC and access the apps assigned to the group.
-
-When an admin removes a user from an Okta group through the Okta dashboard, the user can no longer log in to the app. However, the user still appears as mapped in the ODC Portal.
-
-If a user is added to Okta, it won't appear in the ODC Portal immediately. For their mapping to appear in the ODC Portal, the user must log in to the app for the first time. The admin must refresh the page to see the user added in the list.
-
-For more information about setting up the claim in Azure, [click here](https://learn.microsoft.com/en-us/azure/active-directory/hybrid/connect/how-to-connect-fed-group-claims).
-
-For more information about setting up the claim in OKTA, [click here](https://help.okta.com/asa/en-us/content/topics/adv_server_access/docs/group-management.htm).
-
-## Managing users in end-user groups
-
-When viewing the users linked to the end-user group, you can link the users in the following ways:
-
-* Mapped users are automatically assigned to the end-user group when they log in using the Identity Provider. These assignments aren't managed on the ODC Portal and are done during login.
-* Assigned users are explicitly assigned to the end-user group on the ODC Portal.
-* Assigned & mapped users are both assigned and mapped to the end-user group.
-
-Assigned users can be unassigned anytime from the ODC Portal. However, mapped users can't be unmapped from the ODC Portal and remain mapped to the end-user group even if they get unassigned from the external provider group.
+* **Claim name**: 50 characters.
+* **Claim value (provider group)**: 256 characters.
+* **Claim value delimiter**: 3 characters.
 
 <div class="info" markdown="1">
 
-Mapped users who haven't logged in using the Identity Provider aren't displayed in the end-user group.
+For Microsoft Entra ID, enter `groups` as the claim name and the value corresponding to the **group Object ID** as the claim value.
 
 </div>
 
-You can manually add assigned users in the ODC Portal. Follow these steps to add assigned users:
+For more information about possible validation errors, refer to [OS-ID-BIZ-40001](https://success.outsystems.com/support/troubleshooting/incident_models/incident_models_outsystems_developer_cloud/os_id_biz_40001/).
 
-1. Go to the ODC Portal, and from the Navigation menu, select **End-user groups** to display the list of groups.
-1. Select the group you want to add users to.
-1. Click **Users** to display the list of users.
-1. Click **Assign users** to display a dialog where you can assign or unassign users from the group.
+For help setting up claims, refer to:
 
-If the user mapping is from an external IDP, access is revoked after removing the mapping from the IDP. However, if you assign the users in the ODC portal, they retain access after the removal of mapping from the IDP.
+* [Azure AD](https://learn.microsoft.com/en-us/azure/active-directory/hybrid/connect/how-to-connect-fed-group-claims)
+* [Okta](https://help.okta.com/asa/en-us/content/topics/adv_server_access/docs/group-management.htm)
 
-To remove a user from a group, access the identity provider managing the user account and remove the user from the mapped provider group. However, the user still appears mapped in the ODC Portal. Although the user can't log in, the mapping remains visible until the next login attempt.
+## Access group mappings
 
-## After mapping IdPs and end-user groups
+You can manage mappings in the ODC Portal from either:
 
-The saved configuration defines the landing page users see after logging into your App. The configuration assigns the provider that authenticates the organization and app users. This determines which redirect URLs you must add to the identity provider.
+* The [**End-user groups** page](#mapping-end-user-groups-option)
+* The [**Identity providers** page](#mapping-idp-option)
 
-## Deleting group mappings
+## Managing end-user group mapping from the end-user groups page { #mapping-end-user-groups-option }
 
-When you delete an IdP group mapping, all group claims are also removed. The associated end-user group links are also removed. This means if this was the only mapping for a particular end-user, then that user no longer has access to ODC.
+From the **End-user groups** page, you can:
 
-You can also delete an end-user group. When you delete a group, all end-user linking and mapping entries are deleted. Any access to apps from this group is no longer available.
+* [Create an end-user group mapping](#create-mapping-end-user-groups-option)
+* [Edit an end-user group mapping](#edit-mapping-end-user-groups-option)
+* [Delete an end-user group mapping](#delete-mapping-end-user-groups-option)
+
+### Create an end-user group mapping { #create-mapping-end-user-groups-option }
+
+To map an IdP group to an end-user group from the **End-user groups** page, follow these steps:
+
+1. In the ODC Portal, under **Manage**, go to **End-user groups**.
+1. Search for the group you want to map, and then click it.
+1. Go to the **Group mappings** tab.
+1. Click **Add group mapping**.
+1. Select a provider from the **Provider** dropdown list.
+1. Enter the **Claim name**, **Claim value (provider group)**, and optionally the **Delimiter**.  
+For more details about group claims and their maximum length values, refer to [Group claims](#group-claims).
+1. Click **Save**.
+
+The mapping is created.
+
+<div class="info" markdown="1">
+
+You can view mappings by status (**Active**/**Inactive**). An **Inactive** status indicates that the IdP and group are in different stages. If the mapping status is **Inactive**,  hover over it for instructions on how to fix it.
+
+</div>
+
+### Edit an end-user group mapping { #edit-mapping-end-user-groups-option }
+
+To edit an end-user group mapping from the **End-user groups** page, follow these steps:
+
+1. In the ODC Portal, under **Manage**, go to **End-user groups**.
+1. Search for the group you want to map, and then click it.
+1. Go to the **Group mappings** tab.
+1. For each group mapping you want to update, next to **Status**, click the ellipsis (...).
+1. Click **Edit mapping**.
+1. To change the IdP, select a provider from the **Provider** dropdown list.
+1. To change the claim details, enter the **Claim name**, **Claim value (provider group)**, or the **Delimiter**.  
+
+The mapping is updated.
+
+<div class="info" markdown="1">
+
+You can view mappings by status (**Active**/**Inactive**). An **Inactive** status indicates that the IdP and group are in different stages. If the mapping status is **Inactive**,  hover over it for instructions on how to fix it.
+
+</div>
+
+### Delete an end-user group mapping { #delete-mapping-end-user-groups-option }
+
+Deleting a mapping removes the group claim and breaks the link between the IdP and ODC group. End-users relying only on that mapping lose access.
+
+To delete an end-user group mapping from the **End-user groups** page, follow these steps:
+
+1. In the ODC Portal, under **Manage**, go to **End-user groups**.
+1. Search for the group you want to map, and then click it.
+1. Go to the **Group mappings** tab.
+1. For each group mapping you want to delete, next to **Status**, click the ellipsis (...).
+1. Click **Delete mapping**, and then confirm the deletion.
+
+The mapping is deleted. Deleting an end-user group also removes all mappings and revokes group-based access.
+
+## Managing end-user group mapping from the Identity providers page { #mapping-idp-option }
+
+From the **Identity providers** page, you can:
+
+* [Create an end-user group mapping](#create-mapping-idp-option)
+* [Edit an end-user group mapping](#edit-mapping-idp-option)
+* [Delete an end-user group mapping](#delete-mapping-idp-option)
+
+### Create an end-user group mapping { #create-mapping-idp-option }
+
+To map an IdP group to an end-user group from the **Identity providers** page, follow these steps:
+
+1. In the ODC Portal, under **Manage**, go to **Identity providers**.
+1. Search for the IdP you want to configure, and then click on it.
+1. Go to the **Group mappings** tab.
+1. Click **Add group mapping**.
+1. Enter the **Claim name**, **Claim value (provider group)**, and optionally the **Delimiter**.  
+For more details about group claims and their maximum length values, refer to [Group claims](#group-claims).
+1. Under **End-user groups**, search for a group, and then click it.  
+You can filter groups by stage.
+1. Click **Save**.
+
+The  mapping is created.
+
+<div class="info" markdown="1">
+
+You can view mappings by status (**Active**/**Inactive**). An **Inactive** status indicates that the IdP and group are in different stages. If the mapping status is **Inactive**,  hover over it for instructions on how to fix it.
+
+</div>
+
+### Edit an end-user group mapping { #edit-mapping-idp-option }
+
+To edit an end-user group mapping from the **Identity providers** page, follow these steps:
+
+1. In the ODC Portal, under **Manage**, go to **Identity providers**.
+1. Search for the IdP you want to configure, and then click on it.
+1. Go to the **Group mappings** tab.
+1. For each group mapping you want to update, next to **Status**, click the ellipsis (...).
+1. Click **Edit mapping**.
+1. To change the claim details, enter the **Claim name**, **Claim value (provider group)**, or the **Delimiter**.  
+For more details about group claims and their maximum length values, refer to [Group claims](#group-claims).
+1. To change the end-user group, under **End-user groups**, search for the new group, and then click it.  
+You can filter groups by stage.
+1. Click **Save**.
+
+The  mapping is updated.
+
+<div class="info" markdown="1">
+
+You can view mappings by status (**Active**/**Inactive**). An **Inactive** status indicates that the IdP and group are in different stages. If the mapping status is **Inactive**,  hover over it for instructions on how to fix it.
+
+</div>
+
+### Delete an end-user group mapping { #delete-mapping-idp-option }
+
+Deleting a mapping removes the group claim and breaks the link between the IdP and ODC group. End-users relying only on that mapping lose access.
+
+To delete an end-user group mapping from the **Identity providers** page, follow these steps:
+
+1. In the ODC Portal, under **Manage**, go to **Identity providers**.
+1. Search for the IdP you want to configure, and then click on it.
+1. Go to the **Group mappings** tab.
+1. For each group mapping you want to delete, next to **Status**, click the ellipsis (...).
+1. Click **Delete mapping**, and then confirm the deletion.
+
+The mapping is deleted. Deleting an end-user group also removes all mappings and revokes group-based access.
+
+## Next steps
+
+For more information about the high-level steps you must complete to manage end-users, refer to [Managing end-users with external Identity Provider (IdP) authentication](../../user-management/end-users/intro.md#managing-end-users-with-external-identity-provider-idp-authentication).
+
+## Related resources
+
+* [Best practices for user governance](../../user-management/best-practices-user-management.md)
+* [Managing authorization and authentication for end-users](../../user-management/end-users/intro.md)
+* [Managing authorization and authentication for members (IT-users)](../../user-management/it-users/intro.md)

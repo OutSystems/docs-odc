@@ -61,7 +61,7 @@ To grant or revoke a role for a member (IT-user):
     1. Change the role:
         * To grant a role, pick one option from the dropdown list.
         * To revoke a role, pick **No role** from the dropdown list.
-    
+
     <div class="info" markdown="1">
 
     You can't have more than one role for the organization scope. Consider to add a [custom role](roles.md#custom-roles) with the permissions you want instead.
