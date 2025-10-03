@@ -25,15 +25,15 @@ topic:
 
 # Secure your app with end-user roles
 
-When you create a role, and assign it to a user, you can control access to screens, data and functionalities of your app. You can manage user roles from ODC (OutSystems Developer Cloud) Studio and from ODC Portal. In ODC Studio, you design logic to control access. 
+When you create a role, and assign it to a user, you can control access to screens, data and functionalities of your app. You can manage user roles from ODC (OutSystems Developer Cloud) Studio and from ODC Portal. In ODC Studio, you design logic to control access.
 
-When setting up roles for end-users, consider the following: 
+When setting up roles for end-users, consider the following:
 
 * What do the end-users need to accomplish?
 * What screens do they need to be able to access?
 * What tasks do you want them to be able to do?
 * What information can end-users see and what needs to remain inaccessible?
- 
+
 ## How to use roles
 
 This is an overview of how to use roles:
@@ -46,11 +46,11 @@ This is an overview of how to use roles:
 
 You can also use the ODC [User management REST APIs](../reference/apis/identity-v1.md) for programmatically managing the user and access related operations. For detailed information about how to use these APIs, refer to [Getting started](../reference/apis/public-rest-apis/getting-started.md).
 
-### Create end-user roles
+### Create end-user roles { #create-end-user-roles }
 
-To create roles in ODC Studio during design, follow these steps: 
+To create roles in ODC Studio during design, follow these steps:
 
-1. Go to the **Logic** tab > **Roles** > right-click the **Roles** folder > select **Add Role**. 
+1. Go to the **Logic** tab > **Roles** > right-click the **Roles** folder > select **Add Role**.
 
 1. Enter **Name**, **Description**.
 
@@ -58,9 +58,9 @@ To create roles in ODC Studio during design, follow these steps:
 
 When ODC Studio creates a role, it also creates a set of related actions you can use to [manage roles](#manage-roles-in-app-runtime) during runtime.
 
-### Assign roles to users through ODC Portal
+### Assign roles to users in the ODC Portal
 
-After you publish an app that has end-user roles, the end-user roles are available in ODC Portal. See [how to assign end-user roles in ODC Portal](../user-management/intro.md#end-user-roles).
+After you publish an app that has end-user roles, the end-user roles are available in ODC Portal. For more details on how to assign end-user roles, refer to [Grant or revoke roles to end-users](grant-and-revoke-user-roles.md#grant-roles-to-end-users).
 
 ### Manage roles in app runtime
 
@@ -76,7 +76,7 @@ After you create a role, ODC Studio also creates the following actions to let yo
 
 (*) Available for both client and server logic. The light icon denotes the client-side version. The action applies to the currently logged-in user if the UserId parameter is not specified.
 
-## Control access in your app with end-user roles
+## Control access in your app with end-user roles { #control-access-in-your-app-with-end-user-roles }
 
 After you assign roles to your end-users, you can:
 
@@ -116,4 +116,6 @@ For example, you can create a filter in an aggregate with the expression `CheckA
 
 ## Related resources
 
+* [Best practices for user governance](best-practices-user-management.md)
+* [Create, activate, deactivate, and delete users](create-deactivate-and-delete-users.md)
 * [Role-based Security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course

@@ -49,8 +49,8 @@ To access private data that is not available over the internet, connect to your 
 * SAP BAPI database:
     1. Run the Cloud Connector with the following command: `./outsystemscc --header "token: <token>" <secure-gateway-address> R:<local-port>:<sap-ip-address>:<remote-port>`. This directs traffic from `secure-gateway:<local-port>` to `<sap-ip-address>:<remote-port>`. 
     1. To route requests through the Cloud Connector and still use a valid Application Server value, a [SAP Router](https://support.sap.com/en/tools/connectivity-tools/saprouter.html) is needed.
-* Azure SQL Server Managed Instance:
-    1. Proxy mode is required in this case, as it ensures a stable connection by routing all traffic through the Azure SQL Gateway.
+* Azure SQL Server (all instances):
+    1. Proxy mode is required, as it ensures a stable connection by routing all traffic through the Azure SQL Gateway.
 
 ## Create a new connection
 

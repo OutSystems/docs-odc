@@ -170,7 +170,7 @@ _Server action_
 
 Triggers the reset password operation, returning a verification code that sends by email to the user. Use the FinishResetPassword action, which receives a verification code as an input, to complete the password reset operation. The server action throws an exception if the built-in identity provider is disabled for the current app.
 
-Resetting passwords for members with access to ODC Portal isn't supported through this system action, even if the member also has application roles. If this action is called with a ODC Portal member e-mail no verification code is returned. Members must always reset their password using the **Forgot password?** link in ODC Portal.
+Resetting passwords for members with access to ODC Portal isn't supported through this system action, even if the member also has application roles. If this action is called with a ODC Portal member e-mail no verification code is returned. Members must always reset their password using the **Forgot password?** link in ODC Portal. ODC temporarily locks users out after repeated failed passsword reset attempts. The lockout duration increases with each additional failed attempt, starting at just a few seconds and reaching a maximum of approximately 5 minutes.
 
 _Inputs_
 
@@ -188,7 +188,7 @@ _Outputs_
 
 _Server action_
 
-Triggers the update email operation for users who don't have access to the ODC Portal, returning a verification code that can be sent by email to the user.
+Triggers the update email operation for users who don't have access to the ODC Portal, returning a verification code that can be sent by email to the user. ODC temporarily locks users out after repeated failed attempts to update their email. The lockout duration increases with each additional failed attempt, starting at just a few seconds and reaching a maximum of approximately 5 minutes.
 
 _Inputs_
 
@@ -222,8 +222,8 @@ Due to a temporary technical limitation, you must add this action from the publi
 
 </div>
 
-Registers the user in the built-in identity provider by creating the user as active. Call the action **FinishUserRegistration** to change the user's temporary password. The server action throws an exception if the built-in identity provider is disabled for the current app.
-
+Registers the user in the built-in identity provider by creating the user as active. Call the action **FinishUserRegistration** to change the user's temporary password. The server action throws an exception if the built-in identity provider is disabled for the current app. ODC temporarily locks users out after repeated failed attempts to complete their registration. The lockout duration increases with each additional failed attempt, starting at just a few seconds and reaching a maximum of approximately 5 minutes.
+ 
 _Inputs_
 
 **User**

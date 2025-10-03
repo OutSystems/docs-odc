@@ -55,7 +55,8 @@ ODC has the following limitations for external identity providers:
 
 * Only the `client_secret_post` authentication method is supported.
 
-**SAML 2.0**
+**SAML 2.0**  
+
 * Only SAML 2.0 SP-initiated flows are supported.
 * OutSystems recommends that SAML responses are signed.
 
@@ -113,7 +114,7 @@ The configuration process depends on the authentication protocol your identity p
 
 * **[Social provider with accelerator](configure-social-accelerators.md)**
 
-    Use this option to add social authentication providers such as Apple, Google, Facebook, or LinkedIn using ODC's built-in accelerators. 
+    Use this option to add social authentication providers such as Apple, Google, Facebook, or LinkedIn using ODC's built-in accelerators.
 
 For specific guidance on popular providers, refer to:
 
@@ -125,17 +126,17 @@ For specific guidance on popular providers, refer to:
 
 To assign an added external IdP, navigate to the **ODC Portal** > **Manage** > **Identity providers**. Then follow these steps:
 
-1. Click on the provider card you want to assign. 
-   
-   * For OIDC providers, you can assign the IdP to your organization, your apps, or both. 
+1. Click on the provider card you want to assign.
+
+   * For OIDC providers, you can assign the IdP to your organization, your apps, or both.
    * For SAML 2.0 providers, you can only assign the IdP to either the organization or apps in a specific stage.
 
 1. Check the summary in the **Configurations** tab. The available button depends on the provider type and current assignment status:
 
     * For SAML 2.0, click **Assign**.
-    
+
     * Otherwise, click **Manage assignments**.
-    
+
 1. Check the boxes where you want to assign the provider, and then click **Next**.
 
     <div class="info" markdown="1">
@@ -160,7 +161,7 @@ When you assign a provider for use by the apps, you need to create the logic in 
 
 When you assign a provider for the organization's use, you don't need to do anything else. The option to log in with the provider becomes immediately available for users on the ODC Portal and ODC Studio login screens.
 
-## Unassign an external identity provider {#unassign-external-idp}
+## Unassign an external identity provider { #unassign-external-idp }
 
 When you need to remove an existing external identity provider from your organization or apps, use the following options:
 
@@ -202,3 +203,75 @@ ODC handles user profile matching differently depending on how users are created
 Combining profiles for users who fail to match on login is not supported. This results in a second profile being created.
 
 </div>
+
+## Understand the user creation and claim mapping logic { #claim-mapping-logic }
+
+<div class="info" markdown="1">
+
+You must map either the **Username** or **Email** field. If the IdP is (or will be) assigned to the Organization scope, mapping the **email** claim is mandatory. If both the **Username** and **Email** fields are empty, a validation error displays.
+
+</div>
+
+The following flow details how ODC handles user login and profile matching when using an external IdP, based on IdP claims and ODC profile data.
+
+![External IdPs concept](images/profile-match-flowchart-diag.png "User creation and claim mapping flowchart")
+
+When users attempt to log in with an IdP, ODC first checks if they have an **existing IdP profile** (stores IdP **ID** and **subject**, plus the email verification state) associated with that specific IdP. An IdP profile is created for a user the first time they log in with that IdP or if it's created via an API. There are two options:
+
+**Option A: User has an existing IdP profile**  
+If a user has a previously created IdP profile, ODC attempts to find a matching ODC profile.
+
+* **If an ODC profile match is found:**
+    * **Is the user logging in to an app?** If yes, the user is logged in.
+    * **If the user is not logging in to an app:**
+        * **Is the IdP email verified?**
+            * **Yes:** The ODC profile's email is marked as verified, and the user is logged in.
+            * **No:** ODC checks how the ODC profile was matched.
+                * **Was the profile matched on email?**
+                    * **Yes:** The login attempt fails to prevent unauthorized access with an unverified email.
+                    * **No:** The user is logged in.
+
+* **If no ODC profile match is found:** A new ODC profile is created for the user.
+    * **Is the user logging in to an app?**
+        * **Yes:** A new ODC profile is created with an unverified email, and the user is logged in.
+        * **No:** ODC checks if the IdP email is verified.
+            * **Is the IdP email verified?**
+                * **Yes:** A new ODC profile is created, the email is marked as verified, and the user is logged in.
+                * **No:** A new ODC profile is created with an unverified email, and the user is logged in.
+
+**Option B: User doesn't have an IdP profile**  
+If this is the user's first time logging in with this IdP, ODC creates both a new IdP profile and a new ODC profile.
+
+* **Is the IdP email verified?**
+    * **Yes:** A new ODC profile is created, the email is marked as verified, and the user is logged in.
+    * **No:** A new ODC profile is created with an unverified email, and the user is logged in.
+
+### Email verification logic
+
+The "IdP email is verified" check depends on the **Trust all user emails as verified** configuration in the ODC Portal that you set when you create an IdP.
+
+* **If `Trust all user emails as verified` is set to `Yes`:** The IdP email is considered verified regardless of any claims from the IdP.
+* **If `Trust all user emails as verified` is set to `No`:** ODC relies on the `email_verified` claim provided by the IdP. If the claim is `true`, the email is verified; otherwise, it is not.
+
+## Avoid lockout scenarios { #lockout }
+
+A lockout occurs when all users lose access to the ODC Portal and ODC Studio, or any apps developed in ODC.
+
+This can happen if you remove the built-in IdP assignment on the **Identity Providers** page in the ODC Portal, either for the organization (for IT-users) or an app stage (for end-users), and your external IdP isn't working correctly.
+
+<div class="warning" markdown="1">
+
+If you plan to remove the built-in IdP assignment from the **Identity providers** page in the ODC Portal, make sure to fully test the external IdPs before you remove the built-in IdP assignment.
+
+</div>
+
+There are a few reasons why your external IdP might not be working correctly. It could be because you didn't set it up correctly or assign it to the appropriate stage. It could also be due to an issue on the provider's side.
+
+If you encounter a lockout scenario, open a support ticket. A support agent can sign in to the tenant and reactivate the built-in provider. This allows users to log in or reset passwords for accounts using the built-in provider.
+
+## Related resources
+
+* [Best practices for user management](../../user-management/best-practices-user-management.md).
+* [Managing authorization and authentication for end-users](../../user-management/end-users/intro.md).
+* [Managing authorization and authentication for members (IT-users)](../../user-management/it-users/intro.md).
+

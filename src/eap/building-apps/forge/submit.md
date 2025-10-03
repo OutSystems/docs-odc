@@ -19,7 +19,7 @@ coverage-type:
 
 # Submit assets to Forge
 
-Forge is a repository of reusable software assets that help overcome technical challenges and helps to solve business use cases. OutSystems enables you to easily and quickly learn how to build and share an asset in Forge nd scale the number of out-of-the-box solutions in the community. Users who build assets in their organization can submit them seamlessly while guided to follow the standards required by the Forge.
+Forge is a repository of reusable software assets that help overcome technical challenges and helps to solve business use cases. OutSystems enables you to easily and quickly learn how to build and share an asset in Forge nd scale the number of out-of-the-box solutions in the community. Users who build assets in their organization can submit them seamlessly while being guided to follow the standards required by the Forge.
 
 The following diagram shows the asset submission journey. The journey is slightly different for new assets and updates to existing assets.
 
@@ -41,17 +41,24 @@ To submit an asset, your asset must meet the following prerequisites:
 
 ## Submit an asset to Forge
 
-In ODC Portal, you can submit assets to Forge without needing to upload your assets. When you access Forge, in **All assets** you can see all the assets available to install. And at **My assets** the ones that are installed at your ODC organization, as well as the ones your organization submitted to Forge
+In ODC Portal, you can submit assets to Forge without needing to upload your assets. When you access Forge, in **All assets**, you can see all the assets available to install. And at **My assets**, the ones that are installed at your ODC organization, as well as the ones your organization submitted to Forge
 
 By default, the asset name, icon, and short description are defined during development. If you want to change them later, you can create a new version with the changes and submit it. The short description displays on the asset's card
 
-1. Log into ODC Portal and select **All assets**, from the navigation menu. A list of assets available to install on your organization displays.  
+1. Log into ODC Portal and select **All assets**, from the navigation menu. A list of assets available to install in your organization displays.  
 1. From the top right, click the **Submit to Forge** button. A list of assets developed in your organization displays. Assets that display as disabled don't meet the prerequisites. When you hover over an asset, a tooltip displays and provides guidance about how to enable the asset.
 1. From this list of assets, select the one you want to submit.
 1. Select the asset version. 
 1. Click **Continue**. The wizard proceeds to **Analyze requirements & dependencies**.
    1. If the asset consumes dependencies that aren't yet submitted to Forge, the wizard indicates the missing assets. For each dependency, Forge validates that the prerequisites are met so the asset can be submitted.
    1. If all the dependencies are already in Forge, or the asset doesn't consume any, you can continue.
+   
+   <div class="info" markdown="1" >
+
+   When you are submitting Agentic apps, be aware that you can only submit Agent apps that use trial AI models. If you have a paid model, you need to adapt your app to use an Amazon Nova Pro or Claude 3.7 Sonnet trial models before you submit to Forge.
+
+   </div>
+   
 1. In the wizard, enter a detailed description of your asset. Your description should describe the asset's features and any problem(s) it solves.
 1. If the asset is a library, select the library type that the filters will use on the **All assets** page.
 1. Add images that best illustrate the asset's features, main use cases, and behavior.

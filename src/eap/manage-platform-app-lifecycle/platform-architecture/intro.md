@@ -53,7 +53,7 @@ The following diagram shows the high-level architecture of the development Platf
 
 ![Diagram showing the high-level architecture of the development Platform in OutSystems Developer Cloud.](images/high-level-architecture-platform-diag.png "Development Platform Architecture")
 
-#### Data platform
+#### Data platform { #data-platform }
 
 The **Data platform** collects, processes, and stores data from several sources. This information is then made available for analysis and visualization, allowing customers to monitor their apps’ performance and usage, and track platform operations. The Data platform is also responsible for processing Mentor App Generator’s data. 
 
@@ -61,8 +61,8 @@ The **Data platform** collects, processes, and stores data from several sources.
 
 The Data platform receives data from the following features:
 
-* [Monitor app analytics](https://www.outsystems.com/tk/redirect?g=e190d5fb-6b99-4d9b-a64f-a3b34be3588d): Receives and processes logs, traces, and metrics from all ODC assets.  
-* [App analytics stream](https://www.outsystems.com/tk/redirect?g=43e08fbf-f050-4946-aad2-289ab110be44): Provides the capability to stream logs, traces, and metrics in real-time to external analysis and monitoring tools.  
+* [Monitor assets with ODC Analytics](https://www.outsystems.com/tk/redirect?g=e190d5fb-6b99-4d9b-a64f-a3b34be3588d): Receives and processes logs, traces, and metrics from all ODC assets.  
+* [Analytics stream](https://www.outsystems.com/tk/redirect?g=43e08fbf-f050-4946-aad2-289ab110be44): Provides the capability to stream logs, traces, and metrics in real-time to external analysis and monitoring tools.  
 * [Audit trail](https://www.outsystems.com/tk/redirect?g=3f3bc6b9-7335-4d8b-bb41-2eb396b86f3c): Receives chronological records of platform actions and configurations.
 * [Code Quality](https://www.outsystems.com/tk/redirect?g=6be15662-74c5-4c35-9a7d-16a28816614c): Analyzes app code to provide insights into technical debt and identify areas for improvement.  
 * [Mentor App Generator](https://www.outsystems.com/tk/redirect?g=b17a8f2d-c767-49b4-9f50-381329442aba): Supports the Mentor App Generator by processing requirements documents, conversation history, and app metadata.  
@@ -74,7 +74,9 @@ The following diagram shows how different ODC features interact through the Data
 
 ##### Data residency
 
-The Data platform runs in a designated region based on your ODC organization’s region. For example, if your ODC organization is located in the Asia Pacific (Mumbai) region, the Data platform features run in the Asia Pacific (Singapore) region.
+The Data platform runs in a designated region based on your ODC organization’s region. For example, if your ODC organization is located in the Asia Pacific (Mumbai) region, the Data platform is hosted in the Asia Pacific (Singapore) region.
+
+<!--Changes to this table must also be replicated at the src\eap\manage-platform-app-lifecycle\odc-public-ips.md file-->
 
 | Customer regions | Data platform region |
 | :--- | :--- |

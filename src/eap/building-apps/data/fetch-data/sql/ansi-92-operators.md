@@ -108,7 +108,6 @@ NULL behaviour can vary between external systems. For example, Oracle treats emp
 
 ### Known issues
 
-* Mashup queries may return an error when either UPPER or LOWER encounter a NULL value.
 * `COLLATE` is currently not supported in mashup queries.
 * In MySQL, the `SUBSTRING` built-in function with 0 as the starting position returns an empty string.
 * In MySQL, the `POSITION` built-in function with 0 or negative `FROM` returns 0.

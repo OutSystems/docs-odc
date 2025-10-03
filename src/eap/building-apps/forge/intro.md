@@ -28,17 +28,18 @@ The following is a list of apps and libraries you can share in Forge:
 * **Apps** are fully working apps for different use cases that you can customize.
 * **Libraries** enable you to extend the capabilities of your apps.
     * **Integrations and connectors** - to connect to external systems, other than OutSystems, to enable other functionality.
-    * **Capabilities** - such as plugins to extend your app such as a camera plugin for a mobile app.
-    * **UI Patterns and UI Themes** - to use patterns and widgets that can improve navigating your app.
+    * **Capabilities** - such as plugins to extend your app, such as a camera plugin for a mobile app.
+    * **UI Patterns and UI Themes** - to use patterns and widgets that can improve navigation in your app.
     * **Development tools** - to support the app lifecycle management.
     * **Templates. demos, and samples** - to view examples that show how you might use specific capabilities.
     * **Mobile Plugins** - to extend your app, such as a camera plugin.
+* **Agentic Apps**. Agentic apps that enable big agentic use cases where multiple agents are used.
 
 ## Asset availability
 
 To ensure assets work as provided, OutSystems ensures that:
 
-* Documentation is available, that it explains how  to use the asset, and the benefits the asset provides.
+* Documentation is available that explains how  to use the asset and the benefits the asset provides.
 * Forge standards are followed
 
 Once the asset is in Forge, it's available for all users.

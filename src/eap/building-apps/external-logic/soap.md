@@ -189,7 +189,7 @@ To call the SOAP web service, follow these steps:
         private static readonly string ENDPOINTADDRESS = "<https://ecs.syr.edu/faculty/fawcett/Handouts/cse775/code/calcWebService/Calc.asmx>";
         private static readonly int TIMEOUT = 1000;
         private readonly BasicHttpBinding _binding;
-        private readonly EndpointAddress_address;
+        private readonly EndpointAddress _address;
 
 2. To create the request and add the properties for the BasicHttpBinding.
 

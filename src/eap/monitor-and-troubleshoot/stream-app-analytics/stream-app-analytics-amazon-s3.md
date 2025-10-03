@@ -25,7 +25,7 @@ This article explains how you can stream observability data from ODC apps to **A
 
 ## Prerequisites
 
-Before streaming observability data to **Amazon S3**, ensure you have a subscription to the **App Analytics Stream**. Contact your account manager for provisioning.
+Before streaming observability data to **Amazon S3**, ensure you have a subscription to the **Analytics Stream**. Contact your account manager for provisioning.
 
 <div class="info" markdown="1">
 
@@ -43,7 +43,7 @@ To set up streaming observability data, using **Amazon S3** as the destination s
 
 1. Get the OpenTelemetry Collector endpoint and authentication credentials.
 
-Once you've completed these steps, go to the ODC Portal and [configure a stream](stream-app-analytics-configure.md). 
+Once you've completed these steps, go to the ODC Portal and [configure a stream](stream-app-analytics-configure.md).
 
 ## Additional resources
 
@@ -61,6 +61,4 @@ Here are some additional helpful documents:
 
 * [Set up the OpenTelemetry Collector](stream-app-analytics-opentelemetry.md)
 
-* [Configure app analytics streams in Portal](stream-app-analytics-configure.md)
-
-
+* [Configure analytics streams in the ODC Portal](stream-app-analytics-configure.md)
