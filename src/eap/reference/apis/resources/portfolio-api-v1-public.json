@@ -21,13 +21,12 @@
       }
     }
   ],
-  "security": [{
-    "bearerAuth": []
-  }],
   "paths": {
     "/deployed-assets": {
       "get": {
-        "tags": [],
+        "tags": [
+          "deployed-assets"
+        ],
         "summary": "Retrieves a list of deployed assets.",
         "description": "Retrieves a list of deployed assets containing updated deployment status per environment (stage).\n\nThe result only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission.",
         "operationId": "DeployedAssets_ListAssets",
@@ -169,7 +168,9 @@
     },
     "/environments": {
       "get": {
-        "tags": [],
+        "tags": [
+          "environments"
+        ],
         "summary": "Retrieves the list of environments (stages).",
         "operationId": "Environments_ListEnvironments",
         "responses": {
@@ -542,6 +543,11 @@
       }
     }
   },
+  "security": [
+    {
+      "bearerAuth": [ ]
+    }
+  ],
   "tags": [
     {
       "name": "public",
