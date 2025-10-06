@@ -27,7 +27,8 @@
         "tags": [
           "deployment-operations"
         ],
-        "summary": "Returns all deployments that match a given filter.",
+        "summary": "Returns a list of deployments.",
+        "description": "Returns a list of deployments that match a given filter. Use query parameters to refine the search.\n\nAPI Client needs the **Stage > View stage** permission for the operation.",
         "operationId": "DeploymentOperations_Filter",
         "parameters": [
           {
@@ -179,14 +180,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation.",
-        "description": "\n\nAPI Client needs the **Stage > View stage** permission for the operation."
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation."
       },
       "post": {
         "tags": [
           "deployment-operations"
         ],
-        "summary": "Requests the creation of a new deployment.",
+        "summary": "Requests the creation or deletion of a deployment.",
+        "description": "Requests the creation of a deployment-operation which can be a Deployment, Undeploy or ApplyConfigs. It returns the created deployment operation.\n\nAPI Client needs the **Release management > Deploy apps** permission for the operation.",
         "operationId": "DeploymentOperations_Post",
         "requestBody": {
           "description": "Deployment operation request data",
@@ -266,8 +267,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Release management > Deploy apps** permission for the operation.",
-        "description": "\n\nAPI Client needs the **Release management > Deploy apps** permission for the operation."
+        "x-os-permissions": "API Client needs the **Release management > Deploy apps** permission for the operation."
       }
     },
     "/deployment-operations/{operationKey}": {
@@ -276,6 +276,7 @@
           "deployment-operations"
         ],
         "summary": "Returns one deployment given the deployment operation key.",
+        "description": "Returns one deployment given the deployment operation key. If the deployment is not found, a 404 error is returned.\n\nAPI Client needs the **Stage > View stage** permission for the operation.",
         "operationId": "DeploymentOperations_Get",
         "parameters": [
           {
@@ -341,8 +342,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation.",
-        "description": "\n\nAPI Client needs the **Stage > View stage** permission for the operation."
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation."
       }
     },
     "/deployment-operations/{operationKey}/messages": {
@@ -351,6 +351,7 @@
           "deployment-operations"
         ],
         "summary": "Returns deployment log messages for a given deployment operation key.",
+        "description": "Returns deployment log messages for a given deployment operation key. If the deployment is not found, a 404 error is returned.\n\nAPI Client needs the **Stage > View stage** permission for the operation.",
         "operationId": "DeploymentOperations_GetMessages",
         "parameters": [
           {
@@ -433,8 +434,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation.",
-        "description": "\n\nAPI Client needs the **Stage > View stage** permission for the operation."
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation."
       }
     },
     "/publish-operations": {
@@ -442,7 +442,8 @@
         "tags": [
           "publish-operations"
         ],
-        "summary": "Returns publications based on a given filter.",
+        "summary": "Returns a list of publications that match a given filter.",
+        "description": "Returns a list of publications that match a given filter. Use query parameters to refine the search.\n\nAPI Client needs the **Stage > View stage** permission for the operation.",
         "operationId": "PublishOperations_Filter",
         "parameters": [
           {
@@ -561,14 +562,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation.",
-        "description": "\n\nAPI Client needs the **Stage > View stage** permission for the operation."
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation."
       },
       "post": {
         "tags": [
           "publish-operations"
         ],
         "summary": "Requests the creation of a new publication.",
+        "description": "Requests the creation of a publish-operation. It returns the created publication operation.\n\nAPI Client needs the **Asset management > Change** permission for the operation.",
         "operationId": "PublishOperations_Post",
         "requestBody": {
           "description": "Publish operation request data",
@@ -625,8 +626,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Asset management > Change** permission for the operation.",
-        "description": "\n\nAPI Client needs the **Asset management > Change** permission for the operation."
+        "x-os-permissions": "API Client needs the **Asset management > Change** permission for the operation."
       }
     },
     "/publish-operations/{operationKey}": {
@@ -635,6 +635,7 @@
           "publish-operations"
         ],
         "summary": "Return a publication by its operation key.",
+        "description": "Returns a publication by its operation key. If the publication is not found, a 404 error is returned.\n\nAPI Client needs the **Stage > View stage** permission for the operation.",
         "operationId": "PublishOperations_Get",
         "parameters": [
           {
@@ -690,8 +691,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation.",
-        "description": "\n\nAPI Client needs the **Stage > View stage** permission for the operation."
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation."
       }
     },
     "/publish-operations/{operationKey}/messages": {
@@ -700,6 +700,7 @@
           "publish-operations"
         ],
         "summary": "Returns publication log messages for a given publication operation key.",
+        "description": "Returns publication log messages for a given publication operation key. If the publication is not found, a 404 error is returned.\n\nAPI Client needs the **Stage > View stage** permission for the operation.",
         "operationId": "PublishOperations_GetMessages",
         "parameters": [
           {
@@ -782,8 +783,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation.",
-        "description": "\n\nAPI Client needs the **Stage > View stage** permission for the operation."
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the operation."
       }
     }
   },
@@ -802,18 +802,18 @@
           },
           "assetKey": {
             "type": "string",
-            "description": "Asset unique identifier.\n\nMandatory for Apply Configurations and Promote.",
+            "description": "Asset unique identifier.\n\nMandatory for Apply Configurations and Deployment.",
             "format": "uuid"
           },
           "buildKey": {
             "type": "string",
-            "description": "Build unique identifier.\n\nMandatory for Promote.",
+            "description": "Build unique identifier.\n\nMandatory for Deployment.",
             "format": "uuid",
             "nullable": true
           },
           "revision": {
             "type": "integer",
-            "description": "Revision identifier.\n\nMandatory for Apply Configurations and Promote.",
+            "description": "Revision identifier.\n\nMandatory for Apply Configurations and Deployment.",
             "format": "int32",
             "nullable": true
           },
@@ -831,7 +831,7 @@
         "properties": {
           "key": {
             "type": "string",
-            "description": "Unique identifier of the deployment.",
+            "description": "Unique identifier of the deployment-operation.",
             "format": "uuid"
           },
           "status": {
@@ -840,21 +840,21 @@
                 "$ref": "#/components/schemas/Status"
               }
             ],
-            "description": "Deployment status."
+            "description": "Deployment-operation status."
           },
           "startedDateTime": {
             "type": "string",
-            "description": "When the deployment started.",
+            "description": "When the deployment-operation started.",
             "format": "date-time"
           },
           "finishedDateTime": {
             "type": "string",
-            "description": "When the deployment finished.",
+            "description": "When the deployment-operation finished.",
             "format": "date-time"
           },
           "deployedBy": {
             "type": "string",
-            "description": "Unique identifier of the requesting user.",
+            "description": "Unique identifier of the requesting subject.",
             "nullable": true
           },
           "assetKey": {
@@ -1192,8 +1192,7 @@
           "environmentKey": {
             "type": "string",
             "description": "Unique environment identifier.\n\nOptional for the hotfix scenario.",
-            "format": "uuid",
-            "nullable": true
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -1203,7 +1202,7 @@
         "properties": {
           "key": {
             "type": "string",
-            "description": "Unique identifier of the deployment.",
+            "description": "Unique identifier of the publish-operation.",
             "format": "uuid"
           },
           "status": {
@@ -1212,16 +1211,16 @@
                 "$ref": "#/components/schemas/Status"
               }
             ],
-            "description": "Deployment status."
+            "description": "Publish-operation status."
           },
           "startedDateTime": {
             "type": "string",
-            "description": "When the deployment started.",
+            "description": "When the publish-operation started.",
             "format": "date-time"
           },
           "finishedDateTime": {
             "type": "string",
-            "description": "When the deployment finished.",
+            "description": "When the publish-operation finished.",
             "format": "date-time"
           },
           "deployedBy": {
