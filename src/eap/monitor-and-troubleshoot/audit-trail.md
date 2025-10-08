@@ -175,10 +175,14 @@ Get a detailed record of actions on your core app development resources, includi
 * CreateExternalConnection  
   
 * CreateSearchServiceConnection  
-  
+
+* CreateMCPConnection
+
 * DeleteExternalConnection
     
 * DeleteSearchServiceConnection
+
+* DeleteMCPConnection
 
 ## Understanding log attributes
 
