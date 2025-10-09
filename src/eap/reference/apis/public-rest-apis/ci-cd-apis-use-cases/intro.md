@@ -20,7 +20,7 @@ helpids:
 ---
 # Automating CI/CD pipelines with OutSystems APIs
 
-You can use OutSystems APIs to integrate with 3rd-party CI/CD tools like [Jenkins](https://www.jenkins.io/) or [Azure DevOps](https://azure.microsoft.com/en-us/products/devops). This allows you to automate your entire CI/CD pipeline and manage the process from code to production.
+You can use OutSystems APIs to integrate with 3rd-party CI/CD tools like [Jenkins](https://www.jenkins.io/) or [Azure DevOps](https://azure.microsoft.com/en-us/products/devops). This allows you to automate your entire CI/CD pipeline and manage the process from code to production, eliminating the need to manually perform all tasks in the ODC Portal.
 
 By integrating OutSystems APIs with the automation tools you already use, you can improve your processes, enforce quality gates, and deliver reliable apps to your users faster.
 

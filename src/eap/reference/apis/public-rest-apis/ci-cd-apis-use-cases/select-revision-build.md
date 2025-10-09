@@ -19,7 +19,7 @@ helpids:
 ---
 # Selecting the revision and build of your asset
 
-This page explains how to use OutSystems APIs to programmatically retrieve the correct revision and build of your asset and prepare it for deployment. This is useful for ensuring consistent, traceable builds across your delivery pipeline.
+This article explains how to use OutSystems APIs to programmatically retrieve the correct revision and build of your asset and prepare it for deployment. This is useful for ensuring consistent, traceable builds across your delivery pipeline.
 
 ## Prerequisites
 
@@ -57,3 +57,7 @@ To get the revision and build of the asset in your CI/CD pipeline, follow these 
     You can only deploy builds of type **Release**, so in this scenario, you filter the results to get only builds of that type. 
 
     The response contains the build key, which you can then use to [deploy the asset](deploy-asset.md). 
+
+## Next steps
+
+* [Deploying your asset to the target stage](deploy-asset.md)

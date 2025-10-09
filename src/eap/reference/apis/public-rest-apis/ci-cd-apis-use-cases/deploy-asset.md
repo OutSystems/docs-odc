@@ -19,7 +19,7 @@ helpids:
 ---
 # Deploying your asset to the target stage
 
-This page explains how to use OutSystems APIs to programmatically deploy an asset to a target stage and monitor the deployment status to confirm the process is complete. This is useful for automating deployments while reducing manual intervention.
+This article explains how to use OutSystems APIs to programmatically deploy an asset to a target stage and monitor the deployment status to confirm the process is complete. This is useful for automating deployments while reducing manual intervention.
 
 ## Prerequisites
 
