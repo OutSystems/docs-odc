@@ -93,6 +93,12 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. Enter the **claim mapping** details.
 
+    <div class="info" markdown="1">
+
+    Attribute names are case-sensitive. Ensure that the attribute names you enter match exactly as provided by the identity provider.
+
+    </div>
+
     * Username
     * Email
     * Name/Given name
