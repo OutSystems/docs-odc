@@ -86,11 +86,11 @@ ODC events enable asynchronous processing in your app. When an event is triggere
 
 If an app triggers multiple events of the same type, they can be handled asynchronously and in parallel by one or more apps, with each event running independently in the background. For example, in an eCommerce app, during a flash sale, when multiple users place orders simultaneously, the app triggers multiple events of type **OnPurchaseStarted**. The **Inventory app** and **Fraud Detection app** handle these events independently, processing them in parallel. This ensures that stock is updated and fraud checks are performed asynchronously, allowing the system to handle high traffic efficiently.
 
-Each app replica (compute instance) can concurrently handle a maximum of **100** events. If the number of events in the queue for a particular event type exceeds **1000**, ODC automatically scales by launching additional app replicas to meet the workload. A new replica is spawned for every additional **1000** events in the queue, up to a maximum of **10 replicas**. This ensures that high-demand scenarios are handled efficiently.
+For detailed information about properties of ODC events, refer to [Properties of ODC evenst](events-properties.md).
 
 <div class="info" markdown="1">
 
-For a specific event definition, if the producer app generates events faster than the consumer app can handle them, the events are queued up to a limit of **10000**. Once this queue is full, the producer app receives an error when attempting to generate further events. Events can also get queued if the consumer app is slow to handle them while the producer app continues to generate new ones or if the consumer app event handling times out after 2 minutes. These timed-out events are retried according to the retry and backoff policy.
+If the producer app generates events faster than the consumer app can handle them, the events are queued up to a limit of **10000**. Once this limit is reached, the producer app receives an error when attempting to generate further events. Events can also get queued if the consumer app is slow to handle them while the producer app continues to generate new ones or if the consumer app event handling times out after 2 minutes. These timed-out events are retried according to the retry and backoff policy.
 
 </div>
 
