@@ -2,7 +2,7 @@
 guid: 32f57458-d846-40e5-bef8-154c0bca4e41
 locale: en-us
 summary: Learn how to create, deactivate, and delete users in the system.
-figma: 
+figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3704-89&t=9snmrSiMZOFs7g77-1
 
 app_type: mobile apps, reactive web apps
 platform-version: odc
@@ -50,19 +50,25 @@ For more information about granting roles, refer to [Grant and revoke user roles
 
 </div>
 
-### Create new members (IT-users) { #create-new-members }
+### Create new members (IT-users) {#create-new-members}
 
 To manually register [members (IT-users)](intro.md#members-it-users), follow these steps:
 
 1. Go to the **ODC Portal**.
+
 1. Under **Manage**, go to **Users**.
+
 1. Click **Invite user**.
+
 1. Enter the user’s email address, and then expand **Organization access**.
+
 1. Assign roles to the user. Choose a [scope](intro.md#organization-app-stage-and-app-scope):
 
     * **Organization**: Choose a role for the tenant.
 
     * **Apps**: For each app, choose a role or leave it as **Unassigned** if you don't want to assign a role to the user for that app.
+
+      ![Screenshot of the Invite user screen in ODC Portal showing fields for email, organization access, and scope selection.](images/create-new-member-pl.png "Invite new member in ODC Portal")
 
 1. Click **Send invite**.
 
@@ -74,7 +80,7 @@ To manually register [members (IT-users)](intro.md#members-it-users), follow the
 
     </div>
 
-### Create new end-users { #create-new-end-users }
+### Create new end-users {#create-new-end-users}
 
 <div class="info" markdown="1">
 
@@ -114,7 +120,7 @@ To deactivate or activate a user, follow these steps:
 1. For each user you want to update, under **Actions**, click the three dots (**...**).
 1. Click **Deactivate user** or **Activate user** as appropriate, and then confirm the action.
 
-    ![Screenshot illustrating the deactivation of users in the ODC Portal](images/deactivate-pl.png "Deactivate users in the ODC Portal")
+    ![Screenshot illustrating the deactivation of users in the ODC Portal with the Deactivate user option highlighted.](images/deactivate-pl.png "Deactivate users in ODC Portal")
 
     The user's status updates to **Inactive** or **Active** based on your action.
 
@@ -127,7 +133,7 @@ Deleting a user permanently removes their access and all related data from the s
 1. For each user you want to delete, under **Actions**, click the three dots (**...**).
 1. Click **Delete**, and then confirm the action.
 
-    ![Screenshot illustrating the deletion of users in the ODC Portal](images/delete-pl.png "Delete users in the ODC Portal")
+    ![Screenshot illustrating the deletion of users in the ODC Portal with the Delete user option highlighted.](images/delete-pl.png "Delete users in ODC Portal")
 
 <div class="warning" markdown="1">
 
