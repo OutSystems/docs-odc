@@ -46,7 +46,7 @@ ODC temporarily locks users out after five consecutive failed sign-in or passwor
 
 ODC provides pre-built screens that allow end users to request a new password (RecoverPasswordRequest) and set a new password (RecoverPasswordReset) for their app. For detailed information, refer to [Custom authentication flows](../building-apps/ui/custom-auth.md).
 
-The password reset in ODC is authenticated via a verification code received in an email. 
+The password reset in ODC is authenticated via a verification code received in an email.
 
 Here’s the high-level overview of the password reset mechanism in ODC:
 
@@ -54,8 +54,8 @@ Here’s the high-level overview of the password reset mechanism in ODC:
 
 1. The **RecoverPasswordRequest** screen invokes the system server action **StartResetPassword,** which sends the verification code to the end user's email address.
 
-1. The user receives the verification code and a link to the **RecoverPasswordReset** page in the email. 
+1. The user receives the verification code and a link to the **RecoverPasswordReset** page in the email.
 
-1. The user opens the  **RecoverPasswordReset** page and enters the new secure password. 
+1. The user opens the  **RecoverPasswordReset** page and enters the new secure password.
 
-1. The **RecoverPasswordReset** page invokes the system client action **FinishResetPassword**, and sets the email, verification code, and new password for the end user in the Identity server. 
+1. The **RecoverPasswordReset** page invokes the system client action **FinishResetPassword**, and sets the email, verification code, and new password for the end user in the Identity server.

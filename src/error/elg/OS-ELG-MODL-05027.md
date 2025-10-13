@@ -45,4 +45,3 @@ If you have a .NET project with a structure like this:
 Select all files inside `MyExternalLibrary` and zip them instead of the `MyExternalLibrary` folder itself.
 
 If the problem persists, create a case with [OutSystems Support](https://www.outsystems.com/support/portal/open-support-case?ErrorCode=OS-ELG-MODL-05027).
- 

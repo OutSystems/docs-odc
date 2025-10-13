@@ -72,11 +72,10 @@ The following steps walk through creating a test.
     ![Menu in ODC Studio with an option to add a new BDD Element to an app.](images/bdd-framework-3-odcs.png "Adding a BDD Scenario to a Screen")
 
 1. This will create a new test scenario:
- 
+
     ![ODC Studio screen with BDD Framework scenario showing the test structure.](images/bdd-framework-4-odcs.png "New scenario added")
 
     The screen contains a test structure.
 
-1. Start implementing the code for your test. 
+1. Start implementing the code for your test.
   See [Your Complete Guide to BDD Testing in OutSystems](https://www.outsystems.com/blog/posts/bdd-testing/) for more information on creating specific tests.
- 

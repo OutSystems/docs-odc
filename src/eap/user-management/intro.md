@@ -142,4 +142,3 @@ These scopes define the level at which you can assign [roles](#authorization) an
 * [Role-Based Security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course
 * [Basic Governance for End-Users](https://learn.outsystems.com/training/journeys/basic-governance-for-end-users-2693) online course
 * [OWASP Web Security](https://learn.outsystems.com/training/journeys/introduction-to-web-security-3324) online course
-

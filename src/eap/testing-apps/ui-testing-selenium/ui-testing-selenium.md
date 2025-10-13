@@ -96,7 +96,7 @@ Whether you are using Selenium IDE or Web Driver, there are several locator stra
 
 Some are better than others when creating dynamic applications versus, for instance, static websites. You should make an effort to use selectors that make tests as future proof and low-maintenance as possible: this means avoiding those locators that are likely to change when you modify your screens.
 
-The platform generates HTML *id* attributes dynamically depending on the content that is determined to be sent to the client/browser on each request, based on your business rules or screen conditions. The **id** attributes are very prone to change: as you change your application, if you decide to refactor your UI (e.g. including it in a Block for re-usage in other screens), or as the platform changes its generated code (which can happen between new platform versions), so they're not a good fit for selenium test selectors.
+The platform generates HTML _id_ attributes dynamically depending on the content that is determined to be sent to the client/browser on each request, based on your business rules or screen conditions. The **id** attributes are very prone to change: as you change your application, if you decide to refactor your UI (e.g. including it in a Block for re-usage in other screens), or as the platform changes its generated code (which can happen between new platform versions), so they're not a good fit for selenium test selectors.
 
 When recording new test scripts, Selenium IDE’s defaults to the id selector. At this point, to increase tests' maintainability, you should **change the default locator** according to the following guidelines:
 
@@ -204,7 +204,7 @@ Sometimes we're running a script and wish that if one of the commands fail then 
 
 ### Using variables in your script (Selenium IDE)
 
-To save a value into a variable inside a selenium script, you should use the **store** command. 
+To save a value into a variable inside a selenium script, you should use the **store** command.
 
 Variables can then be retrieved using the form "${VariableName}" in normal command arguments, or using the object “storedVars[‘VariableName’]” in inline javascript arguments.
 

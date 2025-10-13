@@ -24,7 +24,7 @@ In **scripted testing**, software testers focus on designing and executing prepl
 
 In **exploratory testing**, rather than follow pre-written test scripts, testers rely on their knowledge and experience about the SUT, designing tests and immediately executing them. Exploratory tests are a very effective way of discovering lack of test coverage.
 
-This kind of testing should always be performed manually, though some exploratory tests will eventually be automated. As an example, if issues are found during exploratory testing, it's best practice to create automated tests that detect the issues found. Then after the issues found are solved, their validation will completed through automation, preventing the need for manual regressions. Using exploratory testing in combination with automation for the issues found can be a very effective technique to incrementally improve test automation coverage. 
+This kind of testing should always be performed manually, though some exploratory tests will eventually be automated. As an example, if issues are found during exploratory testing, it's best practice to create automated tests that detect the issues found. Then after the issues found are solved, their validation will completed through automation, preventing the need for manual regressions. Using exploratory testing in combination with automation for the issues found can be a very effective technique to incrementally improve test automation coverage.
 
 **User experience testing** is all about gathering information from actual end users, or a select group of end users. Subjects can include its ease of use, how it fits their needs, what they use the most, how visually appealing it is, and so on.
 
@@ -40,7 +40,7 @@ Some common pitfalls when building UI tests are:
 
 * **Poorly written locators can break UI testing** — Well-written CSS and XPath locators (or proper module element identification) are crucial for UI testing. Still, these alone aren't enough, since often the required elements lack an ID. It's always recommended that developers set proper IDs on all actionable elements.
 
-Because of the complexity and challenges of building UI tests, there are a number of test design patterns that aim to avoid common pitfalls. These can help build a scalable and maintainable UI test framework. 
+Because of the complexity and challenges of building UI tests, there are a number of test design patterns that aim to avoid common pitfalls. These can help build a scalable and maintainable UI test framework.
 
 ## Web UI testing design patterns
 
@@ -72,7 +72,7 @@ You can create page widgets composed by a mix of other page widgets. As an examp
 
 In this context, it might make sense to create another page widget to represent a generic search pattern that would be composed of the previous two-page widgets (input and search button). This way, whenever you wish to instantiate a specific search pattern to perform a search on a page, you just need to provide the IDs of the input and button for that page into this composed object. This will steer it to perform searches in that page.
 
-### Interactions 
+### Interactions
 
 Many tools already have multiple actions built in for simple page elements such as click, set text, and double click. Still, when you build your own complex page widgets, it might make sense to also build your custom interactions for those page widgets.
 
@@ -92,8 +92,8 @@ An example would be an E2E test where, depending on the profile of your user, so
 
 Then, you would set up data files with the possible user types. By applying the file to the template, you can instantiate each test case, i.e. for each user type based on one unique template.
 
-When it's possible to use templates, you can really improve your test framework maintainability because you can easily update your template with whatever changes are required and just re-instantiate your multiple test cases. All test scenarios are updated with the required changes. 
+When it's possible to use templates, you can really improve your test framework maintainability because you can easily update your template with whatever changes are required and just re-instantiate your multiple test cases. All test scenarios are updated with the required changes.
 
 ### Test Data Quality
 
-We include this topic because it is also an important subject regarding UI testing that shouldn't be underestimated. Always take into account the data quality for your tests. For instance, can tests be run with random seeded data? Or should they use data that is close to production for your integrity checks? 
+We include this topic because it is also an important subject regarding UI testing that shouldn't be underestimated. Always take into account the data quality for your tests. For instance, can tests be run with random seeded data? Or should they use data that is close to production for your integrity checks?

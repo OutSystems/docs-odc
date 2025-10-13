@@ -24,7 +24,7 @@ coverage-type:
 
 ## Cause
 
-The error occurs because the specified resource name for the element's icon doesn't exist in the project. The `IconResourceName` must be the name of an available embedded resource element in the project. 
+The error occurs because the specified resource name for the element's icon doesn't exist in the project. The `IconResourceName` must be the name of an available embedded resource element in the project.
 
 ## Impact
 
@@ -32,7 +32,7 @@ You must fix this error in your C# project before you can publish the external l
 
 ## Recommended action
 
-Make sure the icon file exists and the embedded resource name is correctly specified. 
+Make sure the icon file exists and the embedded resource name is correctly specified.
 
 For example, suppose you have the following code with an `OSInterface`-decorated interface (`IMyLibrary`), and the icon file name specified doesn't exist:
 

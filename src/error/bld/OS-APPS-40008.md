@@ -18,7 +18,6 @@ outsystems-tools:
 ---
 # OS-APPS-40008
 
-
 ## Error message
 
 `Application file size is too big. Uploaded application file size must be under 100 MB.`
@@ -29,7 +28,7 @@ In ODC apps and libraries have a limit of 100 MB.
 
 ## Impact
 
-You can't publish apps or libraries that have more than 100 MB. 
+You can't publish apps or libraries that have more than 100 MB.
 
 ## Recommended action
 

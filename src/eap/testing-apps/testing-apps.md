@@ -35,7 +35,7 @@ Component testing is the process of testing Actions and exposed Services that ma
 
 Considerations and best practices for [web UI testing](automated-testing/web-ui-testing.md) cover design patters and considerations for choosing a testing tool and designing tests.
 
-## More information and training 
+## More information and training
 
 The following resources provide general information about planning and executing tests with OutSystems.
 

@@ -97,15 +97,15 @@ To configure the CSP, follow these steps:
 
 1. Click **Save**.
 
-    The configured directive values are applied to all the apps in that stage. 
+    The configured directive values are applied to all the apps in that stage.
 
     <div class="info" markdown="1">
 
     Some image file content configurations may take up to 24 hours to be applied or removed.
 
     </div>
-    
-You can reset the CSP's directive values to their default values at any time by clicking **Reset to defaults** and then **Save**. 
+
+You can reset the CSP's directive values to their default values at any time by clicking **Reset to defaults** and then **Save**.
 
 ## Default directives
 
@@ -122,7 +122,7 @@ The table below describes the list of default directives for OutSystem's content
 |img-src|The domains from which apps are allowed to load images.|``'self'``<br/> ``data:`` <br/> ``blob:``|
 |media-src|The domains from which apps are allowed to load media files.|``'self'``|
 |object-src|The domains from which apps are allowed to load objects (for ``<object>``, ``<embed>`` and ``<applet>`` elements).|``'self'``|
-|script-src|The domains from which apps are allowed to load scripts.|``'self'``<br/> ``'unsafe-inline' ``<br/>``'unsafe-eval'``|
+|script-src|The domains from which apps are allowed to load scripts.|``'self'``<br/> ``'unsafe-inline'``<br/>``'unsafe-eval'``|
 |style-src|The domains from which apps are allowed to load styles.|``'self'``<br/> ``'unsafe-inline'``|
 
 ## Default values {#default-values}
@@ -143,7 +143,7 @@ OutSystems recommends default values to ensure the platform works as expected. I
 
 The **Required values** are the values that ODC automatically applies to the directive for the applications to work correctly. These values can't be removed.
 
-* ``unsafe-inline``: The unsafe-inline directive allows the use of inline resources such as inline ``<script> ``and ``<style>`` elements, ``javascript: URLs``, and inline event handlers that are currently used by the platform.
+* ``unsafe-inline``: The unsafe-inline directive allows the use of inline resources such as inline ``<script>``and ``<style>`` elements, ``javascript: URLs``, and inline event handlers that are currently used by the platform.
 
 * ``unsafe-eval``: The unsafe-eval directive allows the web pages to evaluate strings as code. This directive consists of the eval function, the function constructor, and some usages of the setTimeout and setInterval functions that are currently used by the platform.
 

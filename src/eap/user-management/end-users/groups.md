@@ -126,7 +126,7 @@ To delete an end-user group in ODC, follow these steps:
 1. In the **End-user groups** list, click the end-user group you want to edit.
 1. Remove all users from the end-user group.  
 
-    For more details, refer to [Add or remove users from a group ](#remove-users-group).
+    For more details, refer to [Add or remove users from a group](#remove-users-group).
 1. Next to **Edit group details**, click the **ellipsis** (3-dots), and then click **Delete group**.
 1. Confirm the deletion.
 

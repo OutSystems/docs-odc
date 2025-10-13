@@ -62,7 +62,6 @@ To solve this issue, you should ensure that each structure with the `OSStructure
         public float Value;
     }
 
-
 In the corrected example, the `OSStructure` attribute names are unique: `MyStructure1` and `MyStructure2`. This resolves the error.
 
 If the problem persists, create a case with [OutSystems Support](https://www.outsystems.com/support/portal/open-support-case?ErrorCode=OS-ELG-MODL-05014).

@@ -176,7 +176,7 @@ All the users with the Administrator built-in role in your ODC organization rece
 
 ##### Manual patching
 
-Republish the app to trigger an upgrade process for an affected app manually. Open the app in ODC Studio and press the 1-Click Publish button. This patches the app in the development stage. Promote the app to all other stages to ensure that the most secure version of the app is running in all stages. 
+Republish the app to trigger an upgrade process for an affected app manually. Open the app in ODC Studio and press the 1-Click Publish button. This patches the app in the development stage. Promote the app to all other stages to ensure that the most secure version of the app is running in all stages.
 
 ##### Malware scanning
 
@@ -216,9 +216,9 @@ ODC encrypts data at rest, including all backup instances, using the industry st
 
 ## Log security and retention
 
-ODC ensures the privacy and availability of your application logs and traces. 
+ODC ensures the privacy and availability of your application logs and traces.
 
-Application logs and traces are encrypted in transit with TLS, and at rest using the industry-standard AES-256 algorithm. ODC utilizes role-based permissions to ensure that only you can view your data. Other ODC tenants can't access your logs or traces. OutSystems Support requires documented permission before accessing your data. 
+Application logs and traces are encrypted in transit with TLS, and at rest using the industry-standard AES-256 algorithm. ODC utilizes role-based permissions to ensure that only you can view your data. Other ODC tenants can't access your logs or traces. OutSystems Support requires documented permission before accessing your data.
 
 Developers can view logs and traces up to four weeks old within ODC Portal. To retain logs and traces beyond the four-week period, learn more about exporting them using the [Analytics Stream](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md). The system deletes logs and traces after seven weeks.
 
