@@ -20,9 +20,9 @@ topic:
 
 # Create mobile app package
 
-After creating a mobile app in ODC (OutSystems Developer Cloud) Studio, you can create a mobile app package in ODC Portal. The following list describes the overall process of making your app available for users: 
+After creating a mobile app in ODC (OutSystems Developer Cloud) Studio, you can create a mobile app package in ODC Portal. The following list describes the overall process of making your app available for users:
 
-1. Develop your app. You can quickly preview your app in a browser as you develop. 
+1. Develop your app. You can quickly preview your app in a browser as you develop.
 1. Try your app on a mobile device by creating a debug package for installation.  
 1. Create your production mobile package.
 1. Distribute your app by submitting it as a package to an app store or sharing it internally for a direct download.
@@ -100,19 +100,19 @@ You can view the package history of your mobile app in the ODC Portal. The packa
 * Timestamp of when the mobile package creation process started
 * Person who triggered the mobile package creation process
 
-You can also download package, log, and source code files. 
+You can also download package, log, and source code files.
 
 Monitoring your package history and having access to package resources helps you troubleshoot. The package history allows you to identify whether an issue occurs on previous versions or is a new issue created by recent changes to the package.
 
 To view the package history of your mobile app:
 
-1. In the ODC Portal, click the relevant mobile app. 
+1. In the ODC Portal, click the relevant mobile app.
 
 1. Select the **Mobile distribution** tab and click **View history**.
 
     ![Screenshot of the mobile distribution tab highlighting the 'View history' button in ODC Portal](images/viewhistory-mobdistribution-odcs.png "Mobile Distribution Tab - View History")
 
-    The package history is displayed. 
+    The package history is displayed.
 
     ![Screenshot displaying the package history of a mobile app in ODC Portal](images/viewhistory-packagehistory-odcs.png "Package History Overview")
 
@@ -122,7 +122,7 @@ For more information about troubleshooting your apps, see [Monitor and troublesh
 
 Consider the following when creating mobile apps.
 
-### Change app name breaks experience in mobile apps { #changing-app-name } 
+### Change app name breaks experience in mobile apps { #changing-app-name }
 
 Avoid changing the app name. If you change the app's name, ODC changes the URL, which is the app's identifier. This adversely impacts the mobile apps already running on devices or in distribution because:
 

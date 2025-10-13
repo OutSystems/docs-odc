@@ -53,7 +53,7 @@ To create an app with AI Mentor:
 1. Edit the data model and roles if needed. Click **Generate** to create the app and open it in the App Editor.
 
     ![Screen to edit data model and roles before generating the app, showing Inventory Management app with data entities and roles.](images/ai-mentor-edit-data-roles-generate-pl.png "Edit Data and Roles")
-    
+
 1. Use the App Editor to fine-tune the app with prompts. When the app meets your needs, click **Publish**.
 
     ![App Editor interface displaying the app overview with user, product, and order lists and detail views, and roles for Admin and Manager.](images/ai-mentor-edit-app-interface-pl.png "App Editor Interface")
@@ -187,5 +187,3 @@ Mentor is designed with security and data handling policies to protect applicati
 * **Compliance**: The platform is SOC 2 compliant and adheres to GDPR standards
 
 For technical limitations, see [OutSystems system requirements for ODC](../../getting-started/system-requirements.md#ai-mentor).
-
-

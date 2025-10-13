@@ -34,7 +34,7 @@ For more information on the models available in an ODC trial, refer to [AI model
 
 ## Implementing AI model calls
 
-The following video walks you through adding and configuring AI models, using AI models and ODC Studio and enabling RAG through search services. 
+The following video walks you through adding and configuring AI models, using AI models and ODC Studio and enabling RAG through search services.
 
 <iframe src="https://player.vimeo.com/video/1112003106" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Video on how to implement AI model calls in your app logic.</iframe>
 
@@ -68,7 +68,7 @@ Follow these steps to implement the call in ODC Studio:
 Identify the name you gave your connection in the **ODC Portal**. Navigate to **INTEGRATE** > **CONNECTIONS**, select your connection, and check the **Name** field in its **Details**. ODC uses this name, referred to here as **(connection name)**, to expose an action named **Call(connection name)**.
 
 1. Locate the Server Action in the Logic tab: Find the **Search(connection name)** action, under the **Logic** tab > **Server Actions** > **(connection name)**.
-1. Implement the logic to prepare input: Prepare the input parameters required by the **Search(connection name)** action. Common inputs include text search and the number of results. Other parameters like filters might be available depending on the specific search service connection type. 
+1. Implement the logic to prepare input: Prepare the input parameters required by the **Search(connection name)** action. Common inputs include text search and the number of results. Other parameters like filters might be available depending on the specific search service connection type.
 1. Implement the call: Drag the **Search(connection name)** action onto your logic flow. Assign the prepared input variables to the corresponding input parameters of the action.  
 1. Implement logic to process the output: Process the response output parameter from the **Search(connection name)** action. This typically contains a list of results. Each result might include the retrieved text snippet, metadata, and relevance score. You can iterate through or select from this list to gather the context needed for RAG.
 

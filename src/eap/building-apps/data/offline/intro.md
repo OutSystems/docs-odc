@@ -103,4 +103,3 @@ Finally, check the items in the [Offline Sync Checklist](sync-checklist.md) to e
 * [Offline sync checklist](sync-checklist.md)
   
 * [Sync framework reference](sync-reference.md)
-

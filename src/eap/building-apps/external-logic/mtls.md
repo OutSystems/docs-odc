@@ -20,7 +20,7 @@ coverage-type:
 
 Mutual TLS (mTLS) is a way to authenticate the server and the client. It ensures that each side of the communication is what it claims to be verifying that both have the correct certificate information. mTLS is typically used in the zero-trust architecture (ZTA).
 
-You can use mTLS to authenticate your code in OutSystems Developer Cloud (ODC). This document provides an example of creating a library to consume a mTLS REST API in ODC. This article assumes you know C#, .NET, and REST APIs. 
+You can use mTLS to authenticate your code in OutSystems Developer Cloud (ODC). This document provides an example of creating a library to consume a mTLS REST API in ODC. This article assumes you know C#, .NET, and REST APIs.
 
 For an example of a C# project designed to consume a mTLS rest API, go to [mTLS Project](https://github.com/OutSystems/OutSystems.ExternalLibraries.SDK-templates/tree/main/templates/mtls)
 
@@ -89,10 +89,10 @@ To generate the client code using NSwag, follow these steps:
           /Input:<api swagger file location>.json 
           /Namespace:<client class namespace>
           /ClassName:<client class name> 
-	      /ClientBaseClass:<client base class name>
+          /ClientBaseClass:<client base class name>
           /Output:<client file output location>.cs
-		  /UseHttpClientCreationMethod:true
-		  /GenerateClientInterfaces:true
+          /UseHttpClientCreationMethod:true
+          /GenerateClientInterfaces:true
           /InjectHttpClient:false
           /DisposeHttpClient:true
           /ClientClassAccessModifier:internal
@@ -101,15 +101,17 @@ To generate the client code using NSwag, follow these steps:
           /TemplateDirectory:<template files location>
           /AdditionalNamespaceUsages:OutSystems.ExternalLibraries.SDK
     ```
+
     Example:
+
     ```
     nswag openapi2csclient 
           /Input:swagger.json 
           /Namespace:MtlsClient
           /ClassName:MtlsClientExample 
-		  /ClientBaseClass:MtlsHttpClientBase
+          /ClientBaseClass:MtlsHttpClientBase
           /Output:MtlsClientExample.cs
-		  /UseHttpClientCreationMethod:true
+          /UseHttpClientCreationMethod:true
           /GenerateClientInterfaces:true
           /InjectHttpClient:false
           /DisposeHttpClient:true  
@@ -203,8 +205,8 @@ To define the method interface, follow these steps:
     }
     ```
 
-1. Add the custom code attributes from the OutSystems External Libraries SDK before the interface. 
-   
+1. Add the custom code attributes from the OutSystems External Libraries SDK before the interface.
+
     ```
     namespace ConsumeMTLSExample 
     {
@@ -258,8 +260,8 @@ The interface includes icon resources located in the [resources folder of the pr
 1. After you download the icons into your project, create a new folder and name it `Resources`. Then upload the icons to the **Resource** folder.
 
 1. To add these resources to the project, open **ConsumeMTLSExample.csproj** and add the following code inside the ItemGroup tag:
-    
-      `  <EmbeddedResource Include="Resources\SOAP.jpg" /> `
+
+      ` <EmbeddedResource Include="Resources\SOAP.jpg" /> `
 
 ### Test the custom code
 
@@ -293,12 +295,12 @@ To test the custom code and create a C# test project, follow these steps:
             $"Weather Forecast return the forecast for {weatherForecast.Count} days, expecting 5.");
     }
     ```
-    
+
 ### Release the mTLS API
 
-1. Once you finish the code, save the project and publish it. For example, right-click **ConsumeMTLSExample** and select **Open in Terminal**. Run the command, 
+1. Once you finish the code, save the project and publish it. For example, right-click **ConsumeMTLSExample** and select **Open in Terminal**. Run the command,
     ` dotnet publish -c Release `
-    
+
 1. Zip the published output folder (for example, ConsumeMTLSExample > bin > Release > net8.0 > publish) to the root folder of a ZIP file. For example, `ExternalLibrary.zip` is the name of your external library.
 
 ## Upload the library to ODC Portal

@@ -25,7 +25,7 @@ You often need to fetch data from a database to, for example, show it on the scr
 
 This document guides you through two steps:
 
-1. Getting data. You first need to load some data from your database. The example uses Entities from OutSystems sample data, but you can use your Entities as well. 
+1. Getting data. You first need to load some data from your database. The example uses Entities from OutSystems sample data, but you can use your Entities as well.
 1. Showing data. Once your app has data, you can show all records or just some. The example uses the List widget, but you can add a Table or some other widget.
 
 ## Fetch data from a database
@@ -59,7 +59,7 @@ This is an example of getting data with an aggregate to a screen. Both Aggregate
     ![Screenshot of an empty Aggregate edit screen in ODC Studio indicating the need to add data](images/fetch-data-aggregate-open-ss.png "Starting an Aggregate in ODC Studio")
 
 1. With the Aggregate still open, navigate to **Data** > **Entities** > **Database** > **OutSystemsSampleDataDB**. Drag the **Sample_Employee** Entity to the Aggregate window. If you're using your data instead of OutSystems sample data, then drag some other Entity. ODC Studio shows the data preview in columns, and uses the Entity name to name the Aggregate.
-   
+
     ![Screenshot of an Aggregate in ODC Studio showing a data preview with the Sample_Employee Entity](images/fetch-data-aggregate-with-entity-ss.png "Aggregate with Sample Employee Entity")
 
     <div class="info" markdown="1">
@@ -68,7 +68,7 @@ This is an example of getting data with an aggregate to a screen. Both Aggregate
 
     </div>
 
-1. Go back to **Interface** > **UI Flows** > **Main Flow** > **Home** and notice the **GetEmployees** Aggregate in the Screen. Expand the Aggregate to see the Entities, and then expand the Entities to list the Attributes. There's also a warning that you're not using the data anywhere. Follow the instructions on [how to show the data in an app](#showing-data) to prevent the warning. 
+1. Go back to **Interface** > **UI Flows** > **Main Flow** > **Home** and notice the **GetEmployees** Aggregate in the Screen. Expand the Aggregate to see the Entities, and then expand the Entities to list the Attributes. There's also a warning that you're not using the data anywhere. Follow the instructions on [how to show the data in an app](#showing-data) to prevent the warning.
 
     ![Screenshot of the Home Screen in ODC Studio displaying the GetEmployees Aggregate with Entity Attributes](images/fetch-data-aggregate-in-screen-ss.png "Aggregate Displayed in Home Screen")
 

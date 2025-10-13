@@ -44,7 +44,7 @@ The following use case adds the Breadcrumbs UI Pattern to one screen. If you wan
 1. From the Toolbox, drag another Breadcrumbs Item into your Breadcrumbs Pattern.
 
     ![Screenshot showing the process of adding a new Breadcrumb Item widget to the Breadcrumbs Pattern](images/breadcrumbs-10-ss.png "Adding a New Breadcrumb Item widget")
-        
+
 1. In the Title placeholder, enter the breadcrumb title (in this example, **More Details**) and drag an Icon widget into the Icon placeholder.
 
     ![Screenshot of entering a title and adding an icon to a new Breadcrumb Item widget](images/breadcrumbs-11-ss.png "Entering Title and Adding Icon to Breadcrumb Item Widget")

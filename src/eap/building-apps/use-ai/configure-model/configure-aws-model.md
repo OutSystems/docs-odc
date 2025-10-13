@@ -16,7 +16,7 @@ coverage-type:
 
 # Set up Amazon Bedrock foundation AI models
 
-With [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html), you can use foundation models (FMs) to build AI agents for your use case. You can also add your data source and customize the models using techniques such as Retrieval Augmented Generation (RAG). This article explains how to set up Amazon Bedrock FMs. 
+With [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html), you can use foundation models (FMs) to build AI agents for your use case. You can also add your data source and customize the models using techniques such as Retrieval Augmented Generation (RAG). This article explains how to set up Amazon Bedrock FMs.
 
 It is intended for administrators and DevOps engineers with good working knowledge of setting up AI services in the AWS management console.
 
@@ -36,9 +36,9 @@ Before you set up Amazon Bedrock AI foundation models, ensure that you:
 
 * Are an [IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html) and have [sufficient permissions](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html#model-access-permissions) to request access to the model through the console.
 
-* (Optional) Have the permissions to create users to use the Bedrock foundation models. If you do not have these permissions, you can request the AWS account administrator to create a user for you. 
+* (Optional) Have the permissions to create users to use the Bedrock foundation models. If you do not have these permissions, you can request the AWS account administrator to create a user for you.
 
-## Set up model 
+## Set up model
 
 To set up the Amazon Bedrock foundation AI models, follow these steps:
 
@@ -58,7 +58,7 @@ To set up the Amazon Bedrock foundation AI models, follow these steps:
 
     <div class="info" markdown="1">
 
-    Once you've created a user, save the access key ID and the secret access key securely. The secret access key is available only at the time you create it. If you lose your secret access key, you must delete the access key and create a new user. However, you can retrieve the access key ID at any time. For more information, refer to the [Managing access key for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html). 
+    Once you've created a user, save the access key ID and the secret access key securely. The secret access key is available only at the time you create it. If you lose your secret access key, you must delete the access key and create a new user. However, you can retrieve the access key ID at any time. For more information, refer to the [Managing access key for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
     </div>
 
@@ -81,9 +81,9 @@ To set up the Amazon Bedrock foundation AI models, follow these steps:
     ```
 
     For more information on configuring policies, refer to [Identity-based policy examples for Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html).
-   
+
 ## Next steps
- 
+
 * [Add Amazon Bedrock AI model in the AI Agent Builder app](add-aws-model-to-aibuilder.md)
 
 * [Create an agent](../create-agent.md)

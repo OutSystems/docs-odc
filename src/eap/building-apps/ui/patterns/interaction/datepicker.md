@@ -54,7 +54,7 @@ In this example, the user selects a date from the calendar, the date is saved in
 1. To access the date selected by the user, create an **Assign** and set the **DatePicked** to **SelectedDateTime**.
 
     ![Adding an assign to set the DatePicked variable to the SelectedDateTime](images/datepicker-assign-ss.png "Assigning Variable Value")
-    
+
 1. You can configure the Datepicker by selecting the pattern, and on the **Properties** tab, set the relevant optional properties. For more configurations, expand the **OptionalConfigs** property.
 
     ![Configuring the Date Picker properties in the Properties tab](images/datepicker-properties-ss.png "Setting Date Picker Widget Properties")

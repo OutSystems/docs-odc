@@ -28,8 +28,8 @@ When working with Screen Templates you may see the following warning message: **
 * [Create your Screen Templates](../creating-screens/create-screen-scratch.md) and use your (custom) Theme as the base.
 
 If the Screen Template was compatible with your app, but now it's not:
- 
-* Revert the changes you did to the app Theme. 
+
+* Revert the changes you did to the app Theme.
 * Check if you set the correct Theme in the **Default Theme** property field of your app or UI Flow.
 
 ![Screenshot of a theme compatibility warning indicating that the themes are not compatible and the final screen may look different than the preview](images/template-layout-theme-mismatch-odcs.png "Theme Compatibility Warning")

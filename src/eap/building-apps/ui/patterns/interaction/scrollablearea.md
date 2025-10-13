@@ -30,19 +30,19 @@ The Scrollable Area Pattern is a simple scrollable block with a placeholder for 
 
     ![Screenshot of the Scrollable Area widget in ODC Studio's Toolbox](images/scrollwidget-ss.png "Scrollable Area Widget in ODC Studio")
 
-1. From the Toolbox, drag the Scrollable Area widget into the Main Content area of your application's screen, 
+1. From the Toolbox, drag the Scrollable Area widget into the Main Content area of your application's screen,
 
     ![Dragging the Scrollable Area widget into the Main Content area of an application screen](images/scrolldrag-ss.png "Dragging Scrollable Area Widget to Screen")
 
     By default, the Scrollable Area widget contains a Content placeholder.
-   
+
 1. Add the relevant content to the Content placeholder.
 
     In this example, we add some images by dragging the Image widget into the Content placeholder, and on the **Properties** tab, from the **Image** dropdown, select the relevant images.
 
     ![Adding images to the Content placeholder in the Scrollable Area widget](images/scrollimage-ss.png "Adding Images to Content Placeholder")
-    
-1. On the **Properties** tab, you can customize the Scrollable Area's look and feel by setting any of the optional properties, for example, the height and width of the scrollable area. 
+
+1. On the **Properties** tab, you can customize the Scrollable Area's look and feel by setting any of the optional properties, for example, the height and width of the scrollable area.
 
     ![Customizing the Scrollable Area's properties in the Properties tab](images/scrollprop-ss.png "Setting Optional Properties of Scrollable Area Widget")
 

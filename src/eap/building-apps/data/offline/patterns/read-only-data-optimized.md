@@ -62,10 +62,10 @@ Here’s how the `OnSync` client action works:
 ![Flowchart illustrating the logic of the OnSync client action in the Read-Only Data Optimized pattern](images/read-only-data-optimized-offlinedatasync-odcs.png "OnSync Logic Diagram")
 
 1. Retrieve the last synchronization timestamp.
-2. Call the `ServerDataSync` server action to get data from the database that changed since the last synchronization. The server returns a list of changed or added `Company` records, a list of deleted (inactive) `Company` records, and the synchronization timestamp.
-3. Update the `Company` records in the local storage using the list of changed or added records from the server.
-4. Iterate through the list of deleted (inactive) `Company` records from the server and delete the corresponding records in the local storage.
-5. Update the `SyncProperties.LastSync` attribute with the synchronization timestamp from the server.
+1. Call the `ServerDataSync` server action to get data from the database that changed since the last synchronization. The server returns a list of changed or added `Company` records, a list of deleted (inactive) `Company` records, and the synchronization timestamp.
+1. Update the `Company` records in the local storage using the list of changed or added records from the server.
+1. Iterate through the list of deleted (inactive) `Company` records from the server and delete the corresponding records in the local storage.
+1. Update the `SyncProperties.LastSync` attribute with the synchronization timestamp from the server.
 
 ## ServerDataSync Logic
 
@@ -74,21 +74,21 @@ Here’s how the `ServerDataSync` server action works:
 ![Flowchart illustrating the logic of the ServerDataSync server action in the Read-Only Data Optimized pattern](images/read-only-data-optimized-serverdatasync-odcs.png "ServerDataSync Logic Diagram")
 
 1. Assign the synchronization timestamp to an output parameter.
-2. Get the list of changed or added `Company` records since the last synchronization. Use this filter in the aggregate:
+1. Get the list of changed or added `Company` records since the last synchronization. Use this filter in the aggregate:
 
 ```javascript
 Company.IsActive = True and
 (Company.ModifiedOn = NullDate() or Company.ModifiedOn >= LastSync)
 ```
 
-3. Get the list of all deleted (inactive) `Company` records since the last synchronization. Use this filter in the aggregate:
+1. Get the list of all deleted (inactive) `Company` records since the last synchronization. Use this filter in the aggregate:
 
 ```javascript
 Company.IsActive = False and
 (Company.ModifiedOn = NullDate() or Company.ModifiedOn >= LastSync)
 ```
 
-4. Assign the timestamp and the two lists of `Company` records to the action’s output parameters.
+1. Assign the timestamp and the two lists of `Company` records to the action’s output parameters.
 
 ## Related resources
 
@@ -107,5 +107,4 @@ Company.IsActive = False and
 * [Read/Write data One-to-Many synchronization pattern](read-write-data-one-to-many.md)
   
 * [Read/Write data with conflict detection synchronization pattern](read-write-data-with-conflict-detection.md)
-  
   

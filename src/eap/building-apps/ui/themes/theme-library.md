@@ -32,7 +32,7 @@ From ODC Studio, click **Create** and select **Library**. Since this is a librar
 
 ![Specify Library Name, icon and description](images/library-details-odcs.png "Specify Library Name, icon and description")
 
-## Name the theme by following the recommended naming convention 
+## Name the theme by following the recommended naming convention
 
 To create a theme, go to ODC Studio and from the **Themes** folder, in the **Interface** tab, create a new theme. Name it with the prefix `Theme_` and then add the name you prefer. For the default base theme, select **OutSystems UI**.
 
@@ -68,7 +68,7 @@ If you decide to use a placeholder, from the  **Layout_Top_Menu**, select **Layo
 
 Select all images that are common between apps.
 
-1. Copy and paste to the **Images** folder inside your library. 
+1. Copy and paste to the **Images** folder inside your library.
 1. Add the prefix of your library before each image name to be more accessible, identifying which images are in your apps.
 
 ![Make theme images public to be used in other applications](images/select-all-images-odcs.png "Make theme images public to be used in other applications")
@@ -97,7 +97,7 @@ Depending upon your use case, you have two different options. Use the option mos
 
 ![Applications layout placeholders structure with common blocks inside placeholders](images/layout-placeholders-option1-odcs.png "Applications layout placeholders structure with common blocks inside placeholders")
 
-* **Option 2:** You don't need to add the placeholder and the **Menu** block directly. In this way, every time a developer creates a new screen, and the menu is already with the layout, developers can use the accelerator to drag a screen on top of the menu and automatically create the menu item. However, it's more maintainable and bulletproof because developers can change anything in the header. 
+* **Option 2:** You don't need to add the placeholder and the **Menu** block directly. In this way, every time a developer creates a new screen, and the menu is already with the layout, developers can use the accelerator to drag a screen on top of the menu and automatically create the menu item. However, it's more maintainable and bulletproof because developers can change anything in the header.
 
 ![Applications layout placeholders structure with common blocks inside placeholders](images/layout-placeholders-option2-odcs.png "Applications layout placeholders structure with common blocks inside placeholders")
 

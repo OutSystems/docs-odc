@@ -50,7 +50,7 @@ The first time you log into the AI Agent Builder, OutSystems recommends to add a
 
 </div>
 
-2. Go to the Configurations tab. A list of all configured AI models and data sources is displayed.
+1. Go to the Configurations tab. A list of all configured AI models and data sources is displayed.
 
 1. Click **Add AI model** and select **Amazon Bedrock**. The Add AI model page displays.
 
@@ -64,17 +64,17 @@ The first time you log into the AI Agent Builder, OutSystems recommends to add a
 
 1. Click **Add endpoint** to enter the model resource details.
 
-1. Enter the following details for the endpoint: 
+1. Enter the following details for the endpoint:
 
    * **Name**- An identifiable name for the AI model.
 
-   * **Endpoint URL**- Amazon Bedrock Service endpoint retrieved from the AWS console. 
+   * **Endpoint URL**- Amazon Bedrock Service endpoint retrieved from the AWS console.
 
    * **Access key**- The authentication key required to access the endpoint.
 
    * **Secret key**- The secret key of the authentication credential.
 
-   * **Status**- (Optional) The current state of the endpoint. 
+   * **Status**- (Optional) The current state of the endpoint.
 
    * **Priority**- The priority level of the endpoint determines the order in which the agent utilizes them. The priority 1 endpoint is used first. If it experiences an outage, the priority 2 endpoint takes over to prevent downtime. This process continues with priority 3, and so on, ensuring continuous operation
 
@@ -86,7 +86,7 @@ The first endpoint you add is always assigned the first priority.
 
 </div>
 
-7. Click **Add endpoint** to add the endpoint.
+1. Click **Add endpoint** to add the endpoint.
 
 1. (Optional) To add more endpoint, click **Add endpoint** in the Model details page and enter the details for the endpoint..
 
@@ -98,11 +98,11 @@ The first endpoint you add is always assigned the first priority.
 
 Once you have added all the endpoints, a list of all endpoints is displayed under **Model endpoints** in the Model details page. To adjust the priority level order, click the edit icon, navigate to the **Priority** dropdown, and choose the priority level.
 
-9. Click **Add AI model**.
+1. Click **Add AI model**.
 
 Once you've added the model, you are redirected to the **Configurations** page. A confirmation message confirms that the AI model has been added successfully. You can also view the newly added model on the **Configurations** page. If adding the model fails, an error message is displayed.
 
-You can **edit** the fields of the model and **delete** the model from the AI Agent Builder app if you no longer need the AI model or have changed providers. 
+You can **edit** the fields of the model and **delete** the model from the AI Agent Builder app if you no longer need the AI model or have changed providers.
 
 ## Next steps
 

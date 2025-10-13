@@ -25,7 +25,7 @@ You can allow end-users to check the details of a given record by navigating to 
 
 To navigate to a detail screen in Web and Mobile:
 
-1. On the screen that displays the list, select the List Item widget. 
-1. In the properties of the List Item widget, select the target detail screen as handler for the On Click event and define the identifier of the current list item as an input argument to the target screen. 
+1. On the screen that displays the list, select the List Item widget.
+1. In the properties of the List Item widget, select the target detail screen as handler for the On Click event and define the identifier of the current list item as an input argument to the target screen.
 
 ![Screenshot showing the properties of the List Item widget with the target detail screen selected as the handler for the On Click event](images/navigate-mobile-odcs.png "Properties of the List Item Widget")

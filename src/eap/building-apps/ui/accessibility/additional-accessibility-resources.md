@@ -25,14 +25,14 @@ A section with links to additional information.
 
 ## Introductory resources
 
-* [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) 
+* [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
 
 * [Easy Checks – A First Review of Web Accessibility](https://www.w3.org/WAI/test-evaluate/preliminary/)
 
 * [How to Meet WCAG (Quickref Reference)](https://www.w3.org/WAI/WCAG21/quickref/)
 
-* [Getting started with ARIA](https://a11yproject.com/posts/getting-started-aria/) 
- 
+* [Getting started with ARIA](https://a11yproject.com/posts/getting-started-aria/)
+
 ## Evaluation tools
 
 To evaluate the accessibility of your content, you can use the following tools:

@@ -77,7 +77,6 @@ Using Microsoft Visual Studio 2022 with .NET 8.0, for example:
                 }
             }
         }
- 
 
     The exposed methods can only have:
 
@@ -133,8 +132,8 @@ You can expose a server action using external code with optional parameters by a
 
     Files in the project:
 
-     * **IIbanChecker.cs**: Defines a public interface named `IIbanChecker` decorated with the `OSInterface` attribute. The interface has four methods:
-    
+    * **IIbanChecker.cs**: Defines a public interface named `IIbanChecker` decorated with the `OSInterface` attribute. The interface has four methods:
+
         * `Parse`: Takes an IBAN string as input and returns an `Iban` struct.
         * `TryParse`: Attempts to parse an IBAN string as input and returns a boolean success indicator along with the parsed `Iban` struct.
         * `Validate`: Takes an IBAN string as input as checks it against a specific rule and a list of rejected countries.
@@ -164,7 +163,7 @@ The table below maps the .NET attributes exposed by the SDK to the corresponding
 
 | .NET attribute | OutSystems element | .NET attribute property _(OutSystems element property)_ |
 | --- | --- | --- |
-| [`[OSInterface]`](REFERENCE.md#osinterfaceattribute-type) | External library | Name _(Name)_<br></br>Description _(Description)_<br></br>IconResourceName _(Icon)_<br></br>OriginalName _(Source name used for key calculation)_
+| [`[OSInterface]`](REFERENCE.md#osinterfaceattribute-type) | External library | Name _(Name)_<br></br>Description _(Description)_<br></br>IconResourceName _(Icon)_<br></br>OriginalName _(Source name used for key calculation)_ |
 | [`[OSAction]`](REFERENCE.md#osactionattribute-type) | Server action | Description _(Description)_ <br></br>IconResourceName _(Icon)_<br></br>ReturnType _(Output parameter type)_<br></br>ReturnName _(Output parameter name)_<br></br>OriginalName _(Source name used for key calculation)_ |
 | [`[OSParameter]`](REFERENCE.md#osparameterattribute-type) | Input/output parameter | DataType _(DataType)_<br></br>Description _(Description)_<br></br>OriginalName _(Source name used for key calculation)_ |
 | [`[OSStructure]`](REFERENCE.md#osstructureattribute-type) | Structure | Description _(Description)_<br></br>OriginalName _([Source Name used for the key calculation])_ |
@@ -242,4 +241,4 @@ To use a large binary file in custom code you can:
 
 All validation of your external logic is done when [uploading the ZIP file to the Portal](intro.md#upload-and-publish-the-external-logic).
 
-Use the [error page documentation](../../../error/elg/intro.md) for guidance. 
+Use the [error page documentation](../../../error/elg/intro.md) for guidance.

@@ -21,9 +21,9 @@ coverage-type:
 
 When you integrate your app with different external data sources using [OutSystems Data Fabric](../../../integration-with-systems/external-databases/intro.md), you can use **data mashup** in an [aggregate](aggregate.md) to fetch combined data from those sources.
 
-Some benefits of data mashup are: 
+Some benefits of data mashup are:
 
-* Simplified process: You can drag and drop data from different sources, creating custom logic to combine data. This helps you save time and effort. 
+* Simplified process: You can drag and drop data from different sources, creating custom logic to combine data. This helps you save time and effort.
 * Improved data analysis: You can leverage data from various databases to gain deeper insights and make better business decisions.
 * Increased flexibility: You get greater flexibility in data analysis and reporting.
 

@@ -37,12 +37,12 @@ You can use the Tooltip UI Pattern to dynamically display informative text when 
 
     By default, the Tooltip widget contains Content and Tooltip placeholders.
 
-1. Add your content to the placeholders. 
-    
+1. Add your content to the placeholders.
+
     In this example, we add a **Save** button to the Content placeholder and enter the tooltip text ``Save your details`` in the Tooltip placeholder.
 
     ![Adding a Save button to the Content placeholder and entering tooltip text](images/tooltip-content-ss.png "Adding Content to Tooltip Widget")
-    
+
 1. Select the **Save** button and add the relevant **On Click** event.
 
     ![Selecting the Save button to add an On Click event in the application](images/tooltip-onclick-ss.png "Adding OnClick Event to Save Button")

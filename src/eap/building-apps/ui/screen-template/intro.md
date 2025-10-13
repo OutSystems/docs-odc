@@ -24,6 +24,6 @@ Screen Templates enable you to create [Screens](../screen-about.md) with predefi
 
 Screen Templates help you develop faster. For example, create a work order template and make it onto a Screen that shows the statuses of your project tasks. You can change the Screens by [dropping](replace-data.md) an Entity over the widget. When the Entity changes, ODC Studio updates the user interface.
 
-ODC Studio comes with the default Screen Templates that are based on the OutSystems UI Framework. 
+ODC Studio comes with the default Screen Templates that are based on the OutSystems UI Framework.
 
 ![New Screen dialog box showing a selection of default Screen Templates in ODC Studio](images/new-screen-template-odcs.png "Default Screen Templates in New Screen Dialog")

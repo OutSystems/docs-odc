@@ -34,16 +34,16 @@ You can use the Inline SVG UI Pattern to change fill and stroke properties or an
     1. In the Toolbox, click **Search in other modules**.
 
     1. In **Search in other Modules**, remove any spaces between words in your search text.
-    
-    1. Select the widget you want to add from the **OutSystemsUI** module, and click **Add Dependency**. 
-    
+
+    1. Select the widget you want to add from the **OutSystemsUI** module, and click **Add Dependency**.
+
     1. In the Toolbox, search for the widget again.
 
 1. From the Toolbox, drag the Inline SVG widget into the Main Content area of your application's screen.
 
     ![Screenshot showing how to drag the Inline SVG widget into the main content area of an application screen](images/inlinesvg-3-ss.png "Dragging Inline SVG Widget into Main Content Area")
 
-1. On the **Properties** tab, in the **SVGCode** property, set your SVG code. 
+1. On the **Properties** tab, in the **SVGCode** property, set your SVG code.
 
     In this example, we enter the following:
 

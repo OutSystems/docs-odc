@@ -40,7 +40,7 @@ To create a Screen, follow these steps in ODC Studio:
     ![Context menu in ODC Studio showing the option to Add Screen](images/add-screen-odcs.png "Adding a New Screen")
 
 1. Select one of the following:
-    
+
     * **Empty**, to create an empty Screen
     * A Screen Template, to create a Screen based on a template
 

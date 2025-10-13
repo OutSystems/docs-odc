@@ -27,7 +27,6 @@ You can use External Logic when you need to extend OutSystems Developer Cloud (O
 
 Your apps consume logic built in C# the same way they consume logic from libraries built in the OutSystems visual language or [out-of-the-box libraries](../../reference/libraries/intro.md). This means OutSystems developers consuming those libraries don't need to understand the underlying C# code to use external logic in their apps. The C# code becomes available in libraries as server actions and structures.
 
-
 When you want to create new external logic or update existing external logic, follow these steps:
 
 1. Build the logic in C# using the External Libraries Source Software Development Kit (SDK).
@@ -67,7 +66,6 @@ To do this, select **External Logic** from the left nav menu in the ODC Portal t
 1. Click the **Upload file** button to browse for the ZIP file or drag and drop it to the labeled area. The ZIP file must be less than 90MB. Then click **Continue**.
 
     A spinning wheel shows the status of the file upload and inspection process. You can continue working on other tasks in the ODC Portal during the process.
-
 
 1. If there are errors in the code, the **View errors** button displays. Click the button to see the full list of errors. You must fix the errors in the C# code before you can proceed. Use the [error page documentation](../../../error/elg/intro.md) for guidance. Once you've fixed all the errors, click **Upload other file** button to upload the revised ZIP file.
 

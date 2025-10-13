@@ -109,7 +109,6 @@ ANSI-92 operations define what each SQL statement does. The following operations
 
 * [**CALL**](stored-procedure.md): Executes stored procedures or functions on the external system.
 
-
 ## Operators { #operators }
 
 Operators let you compare values, filter results, and build logic into your SQL statements.

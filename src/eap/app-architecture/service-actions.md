@@ -37,7 +37,7 @@ Benefits of using service actions include:
 
 ## Exposing Service Actions
 
-In ODC, a **Service Action** is a REST based remote call to another process, but its usage is very similar to public Server Actions. 
+In ODC, a **Service Action** is a REST based remote call to another process, but its usage is very similar to public Server Actions.
 
 Exposing a Service Action generates a [weak dependency](../building-apps/reuse/intro.md#weak-dependencies) from the consumer to the producer app, in a **loosely-coupled** way.
 

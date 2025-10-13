@@ -58,7 +58,7 @@ This example shows you how to center align a user's name and initials.
 
 After following these steps and publishing the app, you can test the pattern in your app.
 
-**Without Align Center UI Pattern** 
+**Without Align Center UI Pattern**
 
 ![Screenshot showing the app interface without the Align Center UI Pattern](images/aligncenter-7-ss.png "Without Align Center UI Pattern")
 

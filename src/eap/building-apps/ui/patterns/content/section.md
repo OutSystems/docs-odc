@@ -32,7 +32,7 @@ You can use the Section UI Pattern to organize on-screen content into different 
   
     The Section widget is displayed.
 
-    ![Screenshot of the Section widget found in the ODC Studio Toolbox](images/section-1-ss.png "Section Widget in ODC Studio Toolbox") 
+    ![Screenshot of the Section widget found in the ODC Studio Toolbox](images/section-1-ss.png "Section Widget in ODC Studio Toolbox")
 
 1. To From the Toolbox, drag the Section widget into the Main Content area of your application's screen.
 

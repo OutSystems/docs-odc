@@ -113,7 +113,6 @@ Prompt progression
 * Basic: Card list with detail in a sidebar for `Project` records.
 * Better: Card list (`Name`, `Owner`, `Status` tag). Selecting a card opens a sidebar with `Description` and `DueDate`.
 
-
 ## Spatial patterns
 
 ### Card list with map

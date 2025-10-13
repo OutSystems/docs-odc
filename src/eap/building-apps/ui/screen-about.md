@@ -85,12 +85,11 @@ ODC comes with everything you need for developing UI. You can create new blocks 
 
 ODC Studio groups the default layouts in the **Layouts** flow. A new empty screen uses the **LayoutTopMenu** block. The **LayoutTopMenu** block consists of the following placeholders:
 
-* **Header**. Contains logic to sign in to the app 
+* **Header**. Contains logic to sign in to the app
 * **Breadcrumbs**. Reserves space for you to add cues about the location in the app
 * **Title**. Reserves space for you to enter the title
 * **Actions**. Reserves space for a primary action, usually as a button or a link
 * **MainContent**. Reserves the largest portion of the screen for the main content
-* **Footer**. Reserves space for content that's usually at the bottom of a page, like copyright or an about link 
+* **Footer**. Reserves space for content that's usually at the bottom of a page, like copyright or an about link
 
 Screens you create from screen templates can have different layout blocks than what you see in an empty screen.
-

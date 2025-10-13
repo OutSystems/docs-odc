@@ -34,7 +34,6 @@ Creation
 Usage
 :   You instantiate the block on screens or other blocks of your application.
 
-
 ## Communication between Blocks
 
 When something happens in a block it is possible to communicate that event to the parent screen or block so that it executes an action. In the same way, parent screens or blocks can also communicate with child blocks so that they execute an action. Using these two mechanisms together it is possible for a block to communicate with a sibling block.
@@ -50,6 +49,7 @@ A block triggers an event that can be handled by its parent screen or block to e
 A parent screen or block updates the input parameters of a child block, which can trigger an action from the child block.
 
 ### (A + B) Communication between Blocks
+
 In this case, a parent screen or block contains two blocks and one of them needs to communicate with the other. This is done using the two previous techniques in sequence:
 
 1. A block communicates with the parent.

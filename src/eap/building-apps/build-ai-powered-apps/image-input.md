@@ -18,7 +18,7 @@ helpids:
 ---
 # Image input for AI models
 
-In OutSystems Developer Cloud (ODC), you can create multimodal prompts combining text and visual data using AI models  that support image inputs. When you build your agentic app, you must select a multi-modal AI models, as text-only models don’t support this functionality and return an error. For supported models, your agentic apps can process images to build advanced AI solutions. 
+In OutSystems Developer Cloud (ODC), you can create multimodal prompts combining text and visual data using AI models  that support image inputs. When you build your agentic app, you must select a multi-modal AI models, as text-only models don’t support this functionality and return an error. For supported models, your agentic apps can process images to build advanced AI solutions.
 
 ## Image requirements
 
@@ -51,7 +51,7 @@ This is a summary of common behaviors. For a complete list of features and requi
 
 | Model | Behavior|
 |---|---|
-| Claude 3 Sonnet | <ul><li> In addition to standard image formats, this model supports other file types, like PDF, as image inputs.</li><li>The `FileFormat` input is **required** when you pass an image URL.</li><li>The `FileFormat` input is **not required** when you pass a Base64-encoded image.</li></ul>
+| Claude 3 Sonnet | <ul><li> In addition to standard image formats, this model supports other file types, like PDF, as image inputs.</li><li>The `FileFormat` input is **required** when you pass an image URL.</li><li>The `FileFormat` input is **not required** when you pass a Base64-encoded image.</li></ul> |
 | OpenAI | <ul><li>Supports standard image formats.</li><li>The `FileFormat` input is ignored, even if specified.</li></ul>|
 
 ## Build prompts with images

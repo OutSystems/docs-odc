@@ -34,7 +34,7 @@ In Mobile and Web Apps, Aggregates can be client-side or server-side:
 
 ## How to create an aggregate
 
-You can create Aggregates in Screens, Blocks, or Action flows. 
+You can create Aggregates in Screens, Blocks, or Action flows.
 
 ### Create an Aggregate in a Screen or Block
 
@@ -49,11 +49,11 @@ For more information, refer to the [best practices for fetching and displaying d
 
 ### Create an Aggregate in an Action
 
-To add an Aggregate to an Action, drag an **Aggregate** from the toolbox to the flow. 
+To add an Aggregate to an Action, drag an **Aggregate** from the toolbox to the flow.
 
 ![Screenshot showing how to add an Aggregate to an Action by dragging it from the toolbox to the flow in ODC Studio](images/aggregate-server-side-ss.png "Add Aggregate to an Action")
 
-There are cases when you always need to fetch all records from the database, for example, to populate drop-down box lists. If you fetch all records using a Data Action, leave the **Max. Records** field empty. In Data Actions, the **Max. Records** value is optional. If you don't provide a value, the Data Action fetches all records from the database. 
+There are cases when you always need to fetch all records from the database, for example, to populate drop-down box lists. If you fetch all records using a Data Action, leave the **Max. Records** field empty. In Data Actions, the **Max. Records** value is optional. If you don't provide a value, the Data Action fetches all records from the database.
 
 <div class="info" markdown="1">
 
@@ -63,8 +63,8 @@ There are cases when you always need to fetch all records from the database, for
 
 See also the best practices for using aggregates in your logic:
 
- * [Don't add aggregates inside a cycle](../../logic/best-practices-logic.md#aggregates-inside-cycle)
- * [Avoid isolating a single aggregate in an action](../../logic/best-practices-logic.md#isolated-aggregates)
+* [Don't add aggregates inside a cycle](../../logic/best-practices-logic.md#aggregates-inside-cycle)
+* [Avoid isolating a single aggregate in an action](../../logic/best-practices-logic.md#isolated-aggregates)
 
 ## How to add a data source to an Aggregate
 

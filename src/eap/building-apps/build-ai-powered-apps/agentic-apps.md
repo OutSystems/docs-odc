@@ -66,10 +66,10 @@ State persistence is the ability of an AI agent to retain and recall information
 * **Why it matters for agents:** For an agent to perform complex, multi-step tasks or engage in extended interactions, it must remember what has occurred. Without memory, each interaction is isolated, leading to repetitive questions, incoherent responses, or an inability to complete processes that span multiple steps or sessions. Memory enables personalization, context retention, and learning over time.
 * **How it works in ODC agents:** In ODC, the `StoreMemory` action, a key part of the AgentTask logic, serves this purpose. This action lets developers explicitly save relevant data, such as previous user queries, AI model outputs, intermediate decisions, or system states, that the agent might need to recall in future interactions or steps. You can then retrieve and integrate this stored memory into subsequent prompts or decision-making. For more information, see [Creating an AI agent in ODC Studio](create-agent.md).
 * **Benefits:** Memory enhances the agent's intelligence and utility by enabling it to:
-  * Maintain conversational context across multiple turns.
-  * Learn from past interactions to improve future performance.
-  * Execute multi-stage workflows without losing track of progress.
-  * Provide personalized experiences based on historical data.
+    * Maintain conversational context across multiple turns.
+    * Learn from past interactions to improve future performance.
+    * Execute multi-stage workflows without losing track of progress.
+    * Provide personalized experiences based on historical data.
 
 By applying grounding, system prompts, and state persistence, you can use AI models within agents to create reliable and intelligent automation solutions.
 

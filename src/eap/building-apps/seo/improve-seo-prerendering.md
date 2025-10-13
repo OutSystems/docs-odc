@@ -27,13 +27,13 @@ OutSystems Reactive apps are Single Page Applications (SPAs). These are web apps
 
 When a user accesses the app, the server returns a bare HTML file and some JavaScript that executes on the client side to render the UI. This also allows fetching data asynchronously in parallel with page rendering.
 
-However, when you have very complex logic, or you retrieve a large amount of data, you might experience longer initial loading times due to reliance on client-side rendering (CSR). This can present SEO challenges as search engine bots render the page to index it. 
+However, when you have very complex logic, or you retrieve a large amount of data, you might experience longer initial loading times due to reliance on client-side rendering (CSR). This can present SEO challenges as search engine bots render the page to index it.
 
 In these situations, you benefit from using the pre-render technology. Although this improves your app's Core Web Vitals, it doesn't affect the end-user experience.
 
 This article explains how to integrate the OutSystems platform with a third-party pre-rendering solution called [Prerender](http://prerender.io).
 
-<div class="info" markdown="1"> 
+<div class="info" markdown="1">
 
 There are other pre-render solutions on the market. OutSystems recommends [Prerender](http://prerender.io) as one of your pre-rendering options due to its significant SEO improvements. OutSystems isn't affiliated with or sponsored by Prerender, and doesn’t receive any economic or financial benefit from customers subscribing to their services.
 
@@ -75,7 +75,7 @@ Acquire an SSL certificate for a custom domain to use with the Proxy/CDN. If usi
 
 The following is an example of configuring Nginx to support an SSL certificate:
 
-Modify the file `nginx/sites-available/default` and add the following inside the `server` section: 
+Modify the file `nginx/sites-available/default` and add the following inside the `server` section:
 
 Note: Replace `example.com` with your domain.
 
@@ -147,7 +147,7 @@ map $http_user_agent $prerender_ua {
 
 Adjust the list to keep only the bots you need with a value of 1. For more details on why this is important, refer to [Optimize the number of user agents](./prerender-usage-config.md#optimize-the-number-of-user-agents).
 
-### Sitemap.xml { #sitemap } 
+### Sitemap.xml { #sitemap }
 
 To effectively use prerender technology, provide crawlers with a complete website structure through a `sitemap.xml` file.
 
@@ -155,17 +155,17 @@ Ensure the file is available at the domain's root level. For instance, if the do
 
 Refer to [Generating sitemap and robots files](generating-sitemap-robot-files.md) on creating a sitemap file within an ODC app.
 
-To create and publish a new app to use to host the `sitemap.xml` file, do the following: 
+To create and publish a new app to use to host the `sitemap.xml` file, do the following:
 
 1. In ODC Studio, right-click **Resources** within **Data** tab and select **Import Resource**.
 
-2. Select the newly created `sitemap.xml` file.
+1. Select the newly created `sitemap.xml` file.
 
-3. Select the `sitemap.xml` file and set the **Deploy Action** field to **Deploy to Target Directory**.
+1. Select the `sitemap.xml` file and set the **Deploy Action** field to **Deploy to Target Directory**.
 
 As a result, the file is available under MyApp/sitemap.xml. You can publish your app.
 
-4. Configure Reverse Proxy or CDN to serve sitemap to the root directory of the domain. 
+1. Configure Reverse Proxy or CDN to serve sitemap to the root directory of the domain.
 
 Example configuration in an Nginx reverse proxy `sites-available/default` file within the `server{}` section.
 
@@ -183,27 +183,27 @@ location = /sitemap.xml {
 }
 ```
 
-5. Test by going to example.com/sitemap.xml.
+1. Test by going to example.com/sitemap.xml.
 
 ### Robots.txt  { #robots }
 
-To effectively use prerender technology, provide crawlers with access to a `robots.txt` file. 
+To effectively use prerender technology, provide crawlers with access to a `robots.txt` file.
 
 Ensure the file is available at the domain's root level. For instance if the domain is example.com, the robots file should be at example.com/robots.txt. To achieve this result, configure a working route using an ODC app and a reverse proxy or CDN.
 
-Refer to [Generating sitemap and robot files](./generating-sitemap-robot-files.md#robotstxt) on creating a robots file within an ODC app. 
+Refer to [Generating sitemap and robot files](./generating-sitemap-robot-files.md#robotstxt) on creating a robots file within an ODC app.
 
-To create and publish a new app to use to host the `robots.txt` file, do the following: 
+To create and publish a new app to use to host the `robots.txt` file, do the following:
 
 1. In ODC Studio, right-click **Resources** within **Data** tab and select **Import Resource**.
 
-2. Select the newly created `robots.txt` file.
+1. Select the newly created `robots.txt` file.
 
-3. Select the `robots.txt` file, set the **Deploy Action** field to **Deploy to Target Directory**.
+1. Select the `robots.txt` file, set the **Deploy Action** field to **Deploy to Target Directory**.
 
 As a result, the file is available under MyApp/robots.txt. You can publish your app.
 
-4.  Configure Reverse Proxy or CDN to serve sitemap to root directory of domain.
+1.  Configure Reverse Proxy or CDN to serve sitemap to root directory of domain.
 
 Example configuration in an Nginx reverse proxy `sites-available/default` file within the `server{}` section.
 
@@ -221,7 +221,7 @@ location = /robots.txt {
 }
 ```
 
-5. Test by going to example.com/robots.txt.
+1. Test by going to example.com/robots.txt.
 
 <div class="info" markdown="1">
 
@@ -243,13 +243,13 @@ Logging in to the Prerender dashboard for the first time shows a modal window th
 
 1. Click **Test**.
 
-1. Select the **Recent Crawler Visits** section. 
+1. Select the **Recent Crawler Visits** section.
 
 All websites redirected to the prerendered version of your app are visible
 
 ### Using Curl command
 
-You can mimic a request from a bot by using the curl command and compare it with a user request. Ensure that you target your Reverse Proxy or CDN URL and not the actual site directly. 
+You can mimic a request from a bot by using the curl command and compare it with a user request. Ensure that you target your Reverse Proxy or CDN URL and not the actual site directly.
 
 #### Prerendered version
 

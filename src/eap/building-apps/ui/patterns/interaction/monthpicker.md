@@ -24,7 +24,7 @@ You can use the Month Picker UI Pattern to allow users input a month of the year
 ## How to use the Month Picker UI Pattern
 
 1. In ODC Studio, in the Toolbox, search for `Month Picker`.
-    
+
     The Month Picker widget is displayed.
 
     ![Screenshot of the Month Picker widget in ODC Studio](images/monthpicker-widget-ss.png "Month Picker Widget")
@@ -73,20 +73,16 @@ After following these steps and publishing the app, you can test the pattern in 
 
 <div class="info" markdown="1">
 
-You can use the [FormatDateTime](../../../../reference/built-in-functions/format.md#formatdatetime) function to specify a format for the date and time. 
+You can use the [FormatDateTime](../../../../reference/built-in-functions/format.md#formatdatetime) function to specify a format for the date and time.
 
 </div>  
 
 ## Properties
 
-| Property  | Description  | 
+| Property  | Description  |
 |---|---|
-|  DateFormat (Text): Optional | Set the input date format. If empty, the date is the same as the server format. | 
-|  InitialMonth (MonthYear): Optional | The initial selected month and year for the Month Picker. If not set, no initial month is selected. | 
-| MinMonth (MonthYear): Optional  |  Set the minimum month that can be selected. Any month before this is disabled and cannot be selected. | 
-| MaxMonth (MonthYear): Optional  | Set the maximum month that can be selected. Any month after this is disabled and cannot be selected.  | 
+|  DateFormat (Text): Optional | Set the input date format. If empty, the date is the same as the server format. |
+|  InitialMonth (MonthYear): Optional | The initial selected month and year for the Month Picker. If not set, no initial month is selected. |
+| MinMonth (MonthYear): Optional  |  Set the minimum month that can be selected. Any month before this is disabled and cannot be selected. |
+| MaxMonth (MonthYear): Optional  | Set the maximum month that can be selected. Any month after this is disabled and cannot be selected.  |
 | ExtendedClass (Text): Optional  | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
-
-
-
-

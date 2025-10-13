@@ -56,7 +56,6 @@ In this example, the user selects a range of dates from the calendar. The dates 
 1. Enter a name for the variables (in this example **PickedStartDate** and **PickedEndDate**) and select **Date** as the **Data Type**.
 
     ![Entering names for the start and end date variables and setting Date as the Data Type](images/datepickerrange-pickedstart-pickedend-ss.png "Naming Start and End Date Variables")
-   
 
 1. To create an **OnSelect** event for the Date Picker Range, on the **Properties** tab, from the **Handler** dropdown, select New **Client Action**.
 

@@ -67,10 +67,10 @@ In this example, we create a button that opens and closes the Sidebar widget.
 
     ![Setting the StartsOpen property of the Sidebar widget to a local variable](images/sidebar-isopen-ss.png "Setting StartsOpen Property")
 
-1. Add your content to the **Header** and **Content** placeholders, for example, forms, images and text. 
-    
+1. Add your content to the **Header** and **Content** placeholders, for example, forms, images and text.
+
     In this example we add some text.
-   
+
     ![Adding text content to the Header and Content placeholders of the Sidebar widget](images/sidebar-content-ss.png "Adding Content to Sidebar")
 
 1. From the Toolbox, drag the **Button** widget just below the **Sidebar** widget and on the **Properties** tab, in the **Text** field, enter the text you want to appear on the button.
@@ -94,7 +94,7 @@ In this example, we create a button that opens and closes the Sidebar widget.
     d. On the **False** branch, add the **SidebarOpen** client action and set the **WidgetId** parameter to the Sidebar Id.
 
     e. Drag an **Assign** to the screen action and set **IsSidebarOpen** variable to ``not IsSidebarOpen``.
-    
+
     ![Adding an Assign action to toggle the IsSidebarOpen variable](images/sidebar-assign-ss.png "Adding an Assign Action")
 
 1. You can customize the Sidebar by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties.
@@ -112,4 +112,3 @@ After following these steps and publishing the app, you can test the pattern in 
 | HasOverlay (Boolean): Optional         | Set to True to display an overlay when the Sidebar is open. When you click on the overlay, the Sidebar is closed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | Width (String): Optional               | Sets the Sidebar width. All unit types accepted (px, %, vw).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | ExtendedClass (Text): Optional         | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>**Examples** <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied. </li><li>"myclass1" "myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
-

@@ -60,4 +60,4 @@ An expression is what you edit in the expression editor. An expression consists 
 
 ### Expression widget
 
-To quickly display the result of an expression, use the Expression widget. 
+To quickly display the result of an expression, use the Expression widget.

@@ -59,7 +59,6 @@ This doesn't apply to internal entities. OutSystems protects internal data durin
 
 ## When to use SQL
 
-
 While Aggregates are suitable for most data operations, SQL nodes are preferable in certain situations:
 
 * **Complex queries:** When operations require advanced SQL features like window functions, recursive common table expressions (CTEs), or complex subqueries that Aggregates cannot handle.
@@ -69,7 +68,6 @@ While Aggregates are suitable for most data operations, SQL nodes are preferable
 * **Dynamic IN filters:** When filtering data using dynamic lists, especially with large datasets, where constructing dynamic IN clauses is more straightforward with SQL nodes.
 
 * **Bulk operations:** When performing batch inserts, updates, or deletes that involve processing large volumes of data, which may be more efficiently handled through custom SQL commands.
-
 
 ## Best practices for using SQL
 

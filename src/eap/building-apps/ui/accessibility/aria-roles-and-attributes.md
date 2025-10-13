@@ -59,12 +59,12 @@ These are the built-in actions that support setting ARIA attributes. Use them to
 
 Use the **SetAriaHidden** action to hide an element and all content inside it from the assistive technology tools. It's equivalent to setting **aria-hidden="true"** explicitly for an element.
 
-To find the **SetAriaHidden** action, go to the **Logic** tab > **OutSystemsUI** > **Accessibility.** 
+To find the **SetAriaHidden** action, go to the **Logic** tab > **OutSystemsUI** > **Accessibility.**
 
 ### Change the role of the Alert pattern
 
-To change the ARIA role of the Alert pattern, use the **SetAccessibilityRole** action. 
-To find the **SetAccessibilityRole** action, go to the **Logic** tab > **OutSystemsUI** > **Accessibility** 
+To change the ARIA role of the Alert pattern, use the **SetAccessibilityRole** action.
+To find the **SetAccessibilityRole** action, go to the **Logic** tab > **OutSystemsUI** > **Accessibility**
 For more information, refer to [Alert pattern](https://success.outsystems.com/Documentation/11/Developing_an_Application/Design_UI/Accessibility#Alert_pattern).
 
 <div class="info" markdown="1">
@@ -85,11 +85,11 @@ To enable the status message, do the following:
 
 1. Select the UI Pattern.
 
-2. On the **Properties** tab, go to the **Attributes** section.
+1. On the **Properties** tab, go to the **Attributes** section.
 
-3. Create a **role** attribute.
+1. Create a **role** attribute.
 
-4. In the value field of the new **role** attribute, enter the status message.
+1. In the value field of the new **role** attribute, enter the status message.
 
 The following figure shows an example of a status message:
 
@@ -103,17 +103,17 @@ To create a label, do the following:
 
 1. Select the UI element on the screen.
 
-2. On the **Properties** tab, go to the **Attributes** section.
+1. On the **Properties** tab, go to the **Attributes** section.
 
-3. Create a new **aria-label** attribute.
+1. Create a new **aria-label** attribute.
 
-4. In the value field of the new **aria-label** attribute, enter the descriptive label.
+1. In the value field of the new **aria-label** attribute, enter the descriptive label.
 
-5. Select the button label text, for example, **Cancel**.
+1. Select the button label text, for example, **Cancel**.
 
-6. On the **Properties** tab, create a new **aria-label** attribute.
+1. On the **Properties** tab, create a new **aria-label** attribute.
 
-7. Provide the descriptive text you want screen readers to say.
+1. Provide the descriptive text you want screen readers to say.
 
 The following figure shows an example of a readable label on a **Delete** button. In this example, when the user selects this button, the screen reader says "Delete product".
 
@@ -127,9 +127,9 @@ To hide text in links, do the following:
 
 1. In your application screen, select the Link you want to edit.
 
-2. Select the portion of the link text you want to hide, for example, "product" in “View product in store”
+1. Select the portion of the link text you want to hide, for example, "product" in “View product in store”
 
-3. [Add a CSS class](https://success.outsystems.com/Documentation/11/Developing_an_Application/Design_UI/Look_and_Feel/Cascading_Style_Sheets_(CSS)) that makes that part of the link invisible.
+1. [Add a CSS class](https://success.outsystems.com/Documentation/11/Developing_an_Application/Design_UI/Look_and_Feel/Cascading_Style_Sheets_(CSS)) that makes that part of the link invisible.
 
     ![Image showing how to hide text in buttons or links](images/hide-text-odcs.png "Hiding text in buttons or links")
 
@@ -141,8 +141,8 @@ To add an **aria-label**, do the following:
 
 1. Select the button label text, for example, **Cancel**.
 
-2. On the **Properties** tab, create a new **aria-label** attribute.
+1. On the **Properties** tab, create a new **aria-label** attribute.
 
-3. Enter the descriptive text you want screen readers to say.
+1. Enter the descriptive text you want screen readers to say.
 
     ![Image showing how to add detailed descriptions to short labels](images/aria-labels-odcs.png "Adding detailed descriptions to short labels")

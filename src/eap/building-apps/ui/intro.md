@@ -36,7 +36,7 @@ The OutSystems UI framework integrates with ODC Studio. From ODC Studio, you can
 
 The OutSystems UI framework is the base of all user interfaces. The framework supports all apps. The UI framework is fully integrated, responsive by default, with many possibilities to extend screen templates and UI patterns.
 
-All framework elements follow a cohesive and defined set of rules, such as colors, headings, margins, and paddings, that comes from your CSS. The framework comes With dozens of responsive UI patterns that integrate with OutSystems, so that you can build the UI for your app using low code. 
+All framework elements follow a cohesive and defined set of rules, such as colors, headings, margins, and paddings, that comes from your CSS. The framework comes With dozens of responsive UI patterns that integrate with OutSystems, so that you can build the UI for your app using low code.
 
 Following is a list of key features of the UI Framework:
 
@@ -79,7 +79,7 @@ UI patterns are available in many different categories such as content, navigati
 
 ![Sample diagram showcasing different UI patterns available in OutSystems UI, such as alert, wizard and, range slider.](images/ui-patterns-sample-diag.png "UI Patterns Sample Diagram")
 
-You can find many patterns in the toolbox of ODC Studio. Open a screen for editing and drag a pattern from the toolbox: 
+You can find many patterns in the toolbox of ODC Studio. Open a screen for editing and drag a pattern from the toolbox:
   
 ![Screenshot of OutSystems Developer Cloud Studio interface displaying the UI patterns toolbox with various patterns ready to be dragged onto a screen.](images/ui-patterns-screen-ss.png "UI Patterns in ODC Studio")
 

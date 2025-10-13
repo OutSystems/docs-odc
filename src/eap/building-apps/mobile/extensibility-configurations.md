@@ -55,7 +55,7 @@ The editor consists of the following:
 
 ## Referencing the values in the ODC Studio
 
-In ODC Studio, go to **Data** > **Settings** and create the values you need in your app. Then, in the Extensibility Configurations editor, reference the value from the scope pane. You can also reference images you add to your app. 
+In ODC Studio, go to **Data** > **Settings** and create the values you need in your app. Then, in the Extensibility Configurations editor, reference the value from the scope pane. You can also reference images you add to your app.
 
 ## Changing the settings in the ODC Portal
 
@@ -63,7 +63,7 @@ Once you publish your app, go to **ODC Portal** > **(your app)** > **Configurati
 
 <div class="info" markdown="1">
 
-Changing the values of Setting in ODC Portal doesn't trigger automatic generation of a new mobile package. See [Create mobile app package](creating-mobile-package.md) for more information on how to create a package for iOS or Android. 
+Changing the values of Setting in ODC Portal doesn't trigger automatic generation of a new mobile package. See [Create mobile app package](creating-mobile-package.md) for more information on how to create a package for iOS or Android.
 
 </div>
 
@@ -71,7 +71,7 @@ Changing the values of Setting in ODC Portal doesn't trigger automatic generatio
 
 Here are some use cases of the JSON and how you can change behavior of your mobile app.
 
-###  Lock the screen orientation
+### Lock the screen orientation
 
 The value is hard-coded and locks the screen to portrait.
 
@@ -124,7 +124,7 @@ You could also use a secret to use an API key on a preference on a plugin, for e
 ### Reference an image
 
 You can also reference images in the JSON file.
-    
+
     {
     (...)
         "icons": {

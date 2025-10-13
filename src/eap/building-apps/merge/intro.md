@@ -19,7 +19,7 @@ coverage-type:
 
 # Merge the Work
 
-In an environment where many developers work on the same app, you often need to incorporate other people's changes. OutSystems Developer Cloud (ODC) Studio automatically merges differences if no conflicts exist. 
+In an environment where many developers work on the same app, you often need to incorporate other people's changes. OutSystems Developer Cloud (ODC) Studio automatically merges differences if no conflicts exist.
 If ODC detects conflicting changes when you click 1-Click Publish, you must resolve them before publishing the app.
 
 ODC Studio's merge capabilities are designed with OutSystems visual language, so that you can review changes for both visual and textual elements.
@@ -79,11 +79,11 @@ The highlights in different colors help identify the differences between the ver
 Following are the color descriptions.
 
 | Color | Name | Meaning |
- --- | --- | --- |
-![Color reference indicating a gray highlight for a deleted line in the merge comparison](images/color-modifed-deleted.png "Color Reference for Deleted Line") | Gray | Deleted line
-![Color reference indicating a green highlight for an inserted line in the merge comparison](images/color-modifed-added.png "Color Reference for Inserted Line") | Green| Inserted line
-![Color reference indicating a light blue highlight for an unchanged line with no conflicts in the merge comparison](images/color-modifed-light.png "Color Reference for Unchanged Line") | Light blue | The modified line with no changes and conflicts, no changes in this revision
-![Color reference indicating a red highlight for a line modified in both versions with conflicts in the merge comparison](images/color-modifed-conflict.png "Color Reference for Conflicted Line") | Red | Modified in both versions with conflicts
+| --- | --- | --- |
+| ![Color reference indicating a gray highlight for a deleted line in the merge comparison](images/color-modifed-deleted.png "Color Reference for Deleted Line") | Gray | Deleted line |
+| ![Color reference indicating a green highlight for an inserted line in the merge comparison](images/color-modifed-added.png "Color Reference for Inserted Line") | Green| Inserted line |
+| ![Color reference indicating a light blue highlight for an unchanged line with no conflicts in the merge comparison](images/color-modifed-light.png "Color Reference for Unchanged Line") | Light blue | The modified line with no changes and conflicts, no changes in this revision |
+| ![Color reference indicating a red highlight for a line modified in both versions with conflicts in the merge comparison](images/color-modifed-conflict.png "Color Reference for Conflicted Line") | Red | Modified in both versions with conflicts |
 
 ## Recover previous merge
 

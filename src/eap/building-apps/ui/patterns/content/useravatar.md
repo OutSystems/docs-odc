@@ -25,7 +25,6 @@ You can use the User Avatar UI Pattern to display a user's initials or their ima
 
 **How to use the User Avatar UI Pattern**
 
-
 The following example demonstrates how you can display the initials of the registered users on your platform.
 
 1. In ODC Studio, in the Toolbox, search for `User Avatar`.

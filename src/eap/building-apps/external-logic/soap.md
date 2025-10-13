@@ -20,7 +20,7 @@ topic:
 
 # Supporting SOAP in ODC
 
-You can use Simple Object Access Protocol (SOAP) web services to extend your code in OutSystems Developer Cloud (ODC). This document provides an example of creating a library to consume a SOAP web service in ODC. This article assumes you know C#, .NET and SOAP. 
+You can use Simple Object Access Protocol (SOAP) web services to extend your code in OutSystems Developer Cloud (ODC). This document provides an example of creating a library to consume a SOAP web service in ODC. This article assumes you know C#, .NET and SOAP.
 
 You can download the [SOAP template](https://github.com/OutSystems/OutSystems.ExternalLibraries.SDK-templates/blob/main/soap_template.zip), a C# project designed for calculating the sum and subtraction of two numbers using SOAP web services. You can also download the [provided SOAP demo OML](resources/SOAP-Demo.oml), an example OutSystems app with external logic implemented.
 
@@ -40,7 +40,7 @@ Select the folder in which you want to create your SOAP integration. Create a fo
 
     `dotnet tool install --global dotnet-svcutil`
 
-2. To add the dependencies, use either the terminal or NuGet Package Manager GUI. Then install the following dependency:
+1. To add the dependencies, use either the terminal or NuGet Package Manager GUI. Then install the following dependency:
 
     `dotnet add package OutSystems.ExternalLibraries.SDK`
 
@@ -49,19 +49,19 @@ Select the folder in which you want to create your SOAP integration. Create a fo
 To create a library that consumes a SOAP web service, follow this process:
 
 1. [Create OutSystems external library](#create-outsystems-external-library)
-2. [Upload the library to ODC Portal](#upload-the-library-to-odc-portal)
-3. [Use the actions from the library to consume the SOAP web service](#use-the-external-library-in-odc-studio)
+1. [Upload the library to ODC Portal](#upload-the-library-to-odc-portal)
+1. [Use the actions from the library to consume the SOAP web service](#use-the-external-library-in-odc-studio)
 
 ## Create OutSystems external library
 
 To create an OutSystems external library that consumes a SOAP web service in C#, follow this process:
 
 1. [Set up the project](#set-up-the-project)
-2. [Define the interface of the method](#define-the-interface-of-the-method)
-3. [Import the image resources](#import-the-image-resources)
-4. [Add the calculator SOAP web service](#add-the-calculator-soap-web-service)
-5. [Call the SOAP web service](#call-the-soap-web-service)
-6. [Release the SOAP web service](#release-the-soap-web-service)
+1. [Define the interface of the method](#define-the-interface-of-the-method)
+1. [Import the image resources](#import-the-image-resources)
+1. [Add the calculator SOAP web service](#add-the-calculator-soap-web-service)
+1. [Call the SOAP web service](#call-the-soap-web-service)
+1. [Release the SOAP web service](#release-the-soap-web-service)
 
 ### Set up the project
 
@@ -77,12 +77,12 @@ To install your web service and create the structures to be used by the interfac
 
     </div>
 
-2. To create your library using the class library template, run the following code. Give the project a name, such as `ConsumeSOAPExample`, and select **.NET 8.0 (Long-term support)** as the framework.
+1. To create your library using the class library template, run the following code. Give the project a name, such as `ConsumeSOAPExample`, and select **.NET 8.0 (Long-term support)** as the framework.
 
     `dotnet new classlib --language "C#" --framework "net8.0" -o ConsumeSOAPExample`
 
-3. Create a new folder named `Structures` inside the ConsumeSoapExample folder. Create a new file called `Numbers.cs` within the Structures folder. Then copy and paste the following code to create and map the structures as OutSystems structures.
-    
+1. Create a new folder named `Structures` inside the ConsumeSoapExample folder. Create a new file called `Numbers.cs` within the Structures folder. Then copy and paste the following code to create and map the structures as OutSystems structures.
+
         using OutSystems.ExternalLibraries.SDK;
     
         namespace ConsumeSOAPExample.Structures 
@@ -107,16 +107,16 @@ In the previous code, you defined a structure with two integer attributes (Numbe
 To define the method interface, follow these steps:
 
 1. Add the following dependencies:
-    
+
         using System.Xml;
         using System.ServiceModel;
         using ServiceReference;
         using OutSystems.ExternalLibraries.SDK;
         using ConsumeSOAPExample.Structures;
-    
-2. Rename the file from `Class1.cs` to `ConsumeSOAPExample.cs`.
 
-3. Add an interface named `ICalculator` before the class in the namespace.
+1. Rename the file from `Class1.cs` to `ConsumeSOAPExample.cs`.
+
+1. Add an interface named `ICalculator` before the class in the namespace.
 
         namespace ConsumeSOAPExample 
         {
@@ -130,8 +130,8 @@ To define the method interface, follow these steps:
             }
         }
 
-4. Add the custom code attributes from the OutSystems External Libraries SDK before the interface. 
-   
+1. Add the custom code attributes from the OutSystems External Libraries SDK before the interface.
+
         namespace ConsumeSOAPExample 
         {
             /* In this case, the OSInterface attribute provides information about the Calculator interface to the ODC,
@@ -142,7 +142,7 @@ To define the method interface, follow these steps:
             }
         }
 
-5. Inside the interface, add the two methods that represent the web service's methods.
+1. Inside the interface, add the two methods that represent the web service's methods.
 
         // This method is exposed as a server action to your ODC apps and libraries.
         [OSAction(Description = "The sum method takes two numbers as input parameters and returns their sum.", IconResourceName = "ConsumeSOAPExample.Resources.SOAP.jpg", ReturnName = "sum")]
@@ -155,17 +155,17 @@ To define the method interface, follow these steps:
             [OSParameter(Description = "Number A & B as an integer")] Structures.Numbers numbers
         );
 
-
 ### Import the image resources
 
 The interface includes icon resources located in the [resources folder of the provided project](https://github.com/OutSystems/OutSystems.ExternalLibraries.SDK-templates/tree/main/templates/soap/ConsumeSOAPExample/Resources). To import these resources, follow these steps:
 
 1. After you download the icons into your project, create a new folder and name it `Resources`. Then upload the icons to the Resource folder.
 
-2. To add these resources to the project, open **ConsumeSOAPExample.csproj** and add the following code inside the ItemGroup tag:
-    
+1. To add these resources to the project, open **ConsumeSOAPExample.csproj** and add the following code inside the ItemGroup tag:
+
         <EmbeddedResource Include="Resources\SOAP.jpg" /> 
         
+
 ### Add the calculator SOAP web service
 
 To add the calculator SOAP web service, name the class `Calculator` and the interface `ICalculator`.  
@@ -191,11 +191,11 @@ To call the SOAP web service, follow these steps:
         private readonly BasicHttpBinding _binding;
         private readonly EndpointAddress _address;
 
-2. To create the request and add the properties for the BasicHttpBinding.
+1. To create the request and add the properties for the BasicHttpBinding.
 
     * Define properties for the BasicHttpBinding.
     * Define the security mode and endpoint address by adding the following lines after the BasicHttpBinding object. Add the following code:
-    
+
             public class Calculator : ICalculator 
             {
                 public Calculator()
@@ -215,12 +215,12 @@ To call the SOAP web service, follow these steps:
                     _address = new EndpointAddress(ENDPOINTADDRESS);
                 }
             }
-    
-3. To use the add method to perform a sum, define a private asynchronous method called **AddAsync** that takes in a single parameter of type Numbers. 
+
+1. To use the add method to perform a sum, define a private asynchronous method called **AddAsync** that takes in a single parameter of type Numbers.
     * To simplify the method, you can use two input parameters. This template showcases the usage of structures.
-    * The first parameter is an object of type Numbers (defined in the OutSystems.SOAP.Structures namespace), and it contains two integers, `NumberA` and `NumberB`. 
+    * The first parameter is an object of type Numbers (defined in the OutSystems.SOAP.Structures namespace), and it contains two integers, `NumberA` and `NumberB`.
     * The second parameter is an output parameter of type int that contains the sum of NumberA and NumberB.
-    * The method returns a Task &#60;int&#62; object, a wrapper for the result of the asynchronous operation defined in the SOAP web service. Add the following code: 
+    * The method returns a Task &#60;int&#62; object, a wrapper for the result of the asynchronous operation defined in the SOAP web service. Add the following code:
 
             public int Sum(Numbers numbers)
             {
@@ -238,12 +238,12 @@ To call the SOAP web service, follow these steps:
                 }
             }
 
-4. 	To use the Subtract method to perform a subtraction, define a private asynchronous method called **SubAsync** that takes a single parameter of type Numbers.
+1. To use the Subtract method to perform a subtraction, define a private asynchronous method called **SubAsync** that takes a single parameter of type Numbers.
     * The input parameter is a structure that contains two numbers and returns the subtraction of those two numbers.
-    * The first parameter is an object of type Numbers (defined in the OutSystems.SOAP.Structures namespace) and contains two integers, `NumberA` and `NumberB`. 
-    * The second parameter is an output parameter of type int that contains the sub of NumberA and NumberB. 
-    * The method returns a Task &#60;int&#62; object, a wrapper for the result of the asynchronous operation defined in the SOAP web service. Add the following code: 
-            
+    * The first parameter is an object of type Numbers (defined in the OutSystems.SOAP.Structures namespace) and contains two integers, `NumberA` and `NumberB`.
+    * The second parameter is an output parameter of type int that contains the sub of NumberA and NumberB.
+    * The method returns a Task &#60;int&#62; object, a wrapper for the result of the asynchronous operation defined in the SOAP web service. Add the following code:
+
             public int Subtract(Numbers numbers)
             {
                 /* This line calls the AddAsync method (defined later in the code), which asynchronously calls a SOAP service to add NumberA and NumberB.Once the result is returned, it is stored in the sum variable. */
@@ -259,12 +259,12 @@ To call the SOAP web service, follow these steps:
                     return result;
                 }
             }
-    
+
 ### Release the SOAP web service
 
-1. Once you finish the code, save the project and publish it. For example, right-click **ConsumeSOAPExample** and select **Open in Terminal**. Run the command, 
+1. Once you finish the code, save the project and publish it. For example, right-click **ConsumeSOAPExample** and select **Open in Terminal**. Run the command,
     ` dotnet publish -c Release `
-2. Zip the published output folder (for example, ConsumeSOAPExample > bin > Release > net8.0 > publish) to the root folder of a ZIP file. For example, `ExternalLibrary.zip` is the name of your external library.
+1. Zip the published output folder (for example, ConsumeSOAPExample > bin > Release > net8.0 > publish) to the root folder of a ZIP file. For example, `ExternalLibrary.zip` is the name of your external library.
 
 ## Upload the library to ODC Portal
 
@@ -274,26 +274,25 @@ Once you have the SOAP zip file, [upload and publish the external logic](intro.m
 
 After uploading the SOAP web service to ODC, create an application called `SOAP Demo` in ODC Studio to test the web service.
 
-1. Click the **Logic tab**, right-click the top Server action, and select the option to **Add a public element**. Then inside **All sources**, search for a dependency called `SOAP` and select the **Add**, **Subtract** actions and the **Numbers** structure. 
+1. Click the **Logic tab**, right-click the top Server action, and select the option to **Add a public element**. Then inside **All sources**, search for a dependency called `SOAP` and select the **Add**, **Subtract** actions and the **Numbers** structure.
    ![Screenshot showing the process of adding public elements in OutSystems Developer Cloud Studio](images/add-public-elements-odcs.png "Adding Public Elements in ODC Studio")
 
-2. Create a screen and name it `Calculator` with two inputs. Set both local variables as integers, name them `NumA` and `NumB`. Place a plus sign (+) between these two inputs and an equal sign (=) after the last input.
+1. Create a screen and name it `Calculator` with two inputs. Set both local variables as integers, name them `NumA` and `NumB`. Place a plus sign (+) between these two inputs and an equal sign (=) after the last input.
 
-3. Create another local variable as an integer and name it `Sum`. Drag an expression in the canvas and add the **Sum** variable below the equal sign.
+1. Create another local variable as an integer and name it `Sum`. Drag an expression in the canvas and add the **Sum** variable below the equal sign.
 
-4. Drag a button below the expression and name it `Calculate`. In the **On Click** list, select **New Client Action** and name it `OnClick_Sum`. A screen opens for editing.
-    
+1. Drag a button below the expression and name it `Calculate`. In the **On Click** list, select **New Client Action** and name it `OnClick_Sum`. A screen opens for editing.
+
     ![User interface of the Calculator screen in OutSystems Developer Cloud Studio with input fields and calculate button](images/calculator-screen-odcs.png "Calculator Screen in ODC Studio")
 
-5. Inside the **OnClick_Sum** client action, go to the **Logic** tab > **Server actions** > **SOAP** 
-    1. Drag the **Add action** to the flow and rename it `SumFunction`.
-    2. In the Properties for the Add action, click **(+)** sign to expand numbers, and inside add your local variables, the `NumberA` and `NumberB` attributes.
-    
+1. Inside the **OnClick_Sum** client action, go to the **Logic** tab > **Server actions** > **SOAP**
+1. Drag the **Add action** to the flow and rename it `SumFunction`.
+1. In the Properties for the Add action, click **(+)** sign to expand numbers, and inside add your local variables, the `NumberA` and `NumberB` attributes.
+
     ![Configuration of the OnClick_Sum client action in OutSystems Developer Cloud Studio](images/client-action-odcs.png "Client Action Configuration in ODC Studio")
 
-6. Drag an assign and set the local variable **Sum** with the output of the **SumFunction** to get the sum of both numbers and present it to the screen.
-7. Publish the app and see the result in the browser.
-
+1. Drag an assign and set the local variable **Sum** with the output of the **SumFunction** to get the sum of both numbers and present it to the screen.
+1. Publish the app and see the result in the browser.
 
 <div class="info" markdown="1">
 
@@ -302,4 +301,3 @@ To test it faster, go to the **screen properties** > **Authorization** and set t
 </div>  
 
 ![Final appearance of the SOAP Demo application in OutSystems Developer Cloud Studio with input fields and results displayed](images/final-app-odcs.png "Final SOAP Demo App in ODC Studio")
-

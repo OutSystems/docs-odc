@@ -18,7 +18,7 @@ topic:
   - edit-data-service-studio
 ---
 
-# Edit data in ODC Studio 
+# Edit data in ODC Studio
 
 After you create [entities to persist data](../data/modeling/entity-create.md), you can edit your app's data without leaving ODC Studio.
 
@@ -32,7 +32,7 @@ In ODC Studio, you can edit entity data in the development stage. The [entities]
 
     * Static entities are entities that have hard coded values and don’t change dynamically as server entities.
     * Local entities are local storage entities available in mobile apps only.
-    * External entities can be added through a connection from an external database, for example, Salesforce, SAP, and SQL Server. These entities are read-only. 
+    * External entities can be added through a connection from an external database, for example, Salesforce, SAP, and SQL Server. These entities are read-only.
 
 Adding, removing, and changing entity records during app development, allows you to:
 
@@ -70,12 +70,12 @@ To add a record or row, follow these steps:
 
     **Note**: Even though it seems like you're editing data in a spreadsheet, you're actually preparing changes to data in a relational database. Rows represent entity records, and cells represent attributes.
 
- 1. Click **Add row**.
+1. Click **Add row**.
 
     ![Image showing mandatory fields highlighted with red outlines in ODC Studio data editing interface](images/edit-data-mandatory-fields-odcs.png "Mandatory Fields Highlighted in ODC Studio")
 
     **Note:** If any cell has a red outline, it means that those fields are mandatory and you must fill them in. To understand each issue, hover over the highlighted cell.
-    
+
 1. You can make more than one change to the entity at a time. Once you've finished your changes, click [Apply](#apply-changes).
 
     ![Screenshot illustrating the process of adding a new row to an entity in ODC Studio](images/edit-data-add-row-odcs.png "Adding a New Row in ODC Studio")
@@ -83,7 +83,7 @@ To add a record or row, follow these steps:
 ## Delete a record or row
 
 To delete a record or row, follow these steps:
- 
+
 1. In the app where the entity exists, go to the **Data** tab, and right-click the entity to **View or Edit Data**.
 
     ![Screenshot showing the option to view or edit data for an entity in ODC Studio](images/edit-data-view-edit-odcs.png "View or Edit Data Option in ODC Studio")
@@ -109,7 +109,7 @@ To modify a record's attribute or cell, follow these steps:
 1. Depending on the data type of the cell, set the data in one of the following ways:
 
     * For a **Text** or **Phone** cell, enter a text string, for example, text or +1 555 565 3730.
-    * For an **Email** cell, enter a text string with at least two characters separated by a @, for example, fran.wilson@example.com.
+    * For an **Email** cell, enter a text string with at least two characters separated by a @, for example, <fran.wilson@example.com>.
     * For an **Integer** or a **Long Integer** cell, enter an integer, for example, 10.
     * For a **Decimal** or a **Currency** cell, enter a decimal, for example, 10.8.
     * For a **Date** cell, enter a date using the YYYY-MM-DD format, for example, 1988-08-28.
@@ -124,7 +124,7 @@ To modify a record's attribute or cell, follow these steps:
 
 ## Apply changes
 
-Once you've finished your changes, confirm that you want to change the data by clicking **Apply**. 
+Once you've finished your changes, confirm that you want to change the data by clicking **Apply**.
 
 **Note**: You can’t apply your changes if a cell has errors.
 

@@ -43,4 +43,3 @@ You can translate the following elements of your app:
 * Text literals in expressions
 * Validation messages, widget confirmation messages, and empty state messages
 * Static entities. Check [Working with Static Entities](translate-your-app.md#working-with-static-entities) for important notes.
-

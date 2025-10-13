@@ -71,6 +71,6 @@ After following these steps and publishing the app, you can test the pattern in 
 
 ## Properties
 
-**Property** |  **Description** |
-|---|---| 
+| **Property** |  **Description** |
+|---|---|
 | WidgetId (Text): Mandatory |  Element that's swipeable.  |

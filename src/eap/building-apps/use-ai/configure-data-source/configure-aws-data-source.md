@@ -16,7 +16,7 @@ coverage-type:
 
 # Set up Amazon Kendra with a data source
 
-[Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/what-is-kendra.html) is an intelligent search service that uses natural language processing and advanced machine learning algorithms to return specific answers to search questions from your data. With Amazon Kendra, you can connect to various data sources such as file systems, websites, Box, DropBox, Salesforce, SharePoint, relational databases, and Amazon S3. 
+[Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/what-is-kendra.html) is an intelligent search service that uses natural language processing and advanced machine learning algorithms to return specific answers to search questions from your data. With Amazon Kendra, you can connect to various data sources such as file systems, websites, Box, DropBox, Salesforce, SharePoint, relational databases, and Amazon S3.
 
 This article explains how to set up Amazon Kendra search service using Amazon S3 as a data source. It is intended for administrators and DevOps engineers with good working knowledge of configuring search services using Amazon Kendra.
 
@@ -24,7 +24,7 @@ This article explains how to set up Amazon Kendra search service using Amazon S3
 
 Before setting up the Amazon Kendra with a data source, ensure you have:
 
-* An active AWS account subscription. If you don't already have one, you can [sign up](https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=header_signup&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email) for an AWS account 
+* An active AWS account subscription. If you don't already have one, you can [sign up](https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=header_signup&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email) for an AWS account
 
 * An active user in the AWS account.
 
@@ -45,13 +45,13 @@ To set up the Amazon Kendra with a data source, follow these steps:
 1. [Create](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html) an Amazon S3 bucket.
 
 1. [Upload](https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html) data to your bucket.
-4. Add the Amazon S3 data source to your index and sync the data. 
+1. Add the Amazon S3 data source to your index and sync the data.
 
     For more information, refer to [Amazon S3](https://docs.aws.amazon.com/kendra/latest/dg/data-source-s3.html).
 
-1. Create and assign a policy to the user to access Amazon Kendra. 
+1. Create and assign a policy to the user to access Amazon Kendra.
 For more information, refer to [Amazon Kendra Identity-based policy examples](https://docs.aws.amazon.com/kendra/latest/dg/security_iam_id-based-policy-examples.html).
-    
+
 **Note:** You can either create a policy to provide full access to Amazon Kendra resources or create a policy with minimum required access to Kendra.
 
 ## Next Steps

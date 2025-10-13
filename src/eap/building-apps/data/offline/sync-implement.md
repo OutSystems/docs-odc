@@ -100,4 +100,3 @@ Now that you know how to implement offline synchronization, check the [Offline s
 * [Offline data sync patterns](patterns/intro.md)
 
 * [Offline data synchronization mobile apps](intro.md)
-

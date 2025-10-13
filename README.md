@@ -1,6 +1,6 @@
 # Documentation
 
-This repository holds the source files of the [OutSystems Developer Cloud documentation](https://success.outsystems.com/documentation/outsystems_developer_cloud/). 
+This repository holds the source files of the [OutSystems Developer Cloud documentation](https://success.outsystems.com/documentation/outsystems_developer_cloud/).
 
 Check [how you can contribute](CONTRIBUTING.md).
 
@@ -49,7 +49,7 @@ In the same pane (**User Settings**), make sure the following settings are defin
         "editor.wordWrap": "bounded"
     }
 
-*Note:* For some reason, Markdown documents do not automatically assume these settings. You will have to define a `[markdown]` language definition section with the same settings:
+_Note:_ For some reason, Markdown documents do not automatically assume these settings. You will have to define a `[markdown]` language definition section with the same settings:
 
     {
         (These are the 2 settings described above. Mind the new trailing comma after "bounded"!)
@@ -64,7 +64,7 @@ In the same pane (**User Settings**), make sure the following settings are defin
 
 **Install a spell checker**
 
-1. Open *View > Extensions*.
+1. Open _View > Extensions_.
 2. Search and install the offline spell checker by Michael Vernier, called SpellChecker.
 3. Reload the window.
 
@@ -80,7 +80,7 @@ Visual Studio 2017 supports EditorConfig out of the box.
 
 Check the [markdown_npp](https://github.com/Edditoria/markdown_npp) language definition. There's no preview available.
 
-*Note:* it has a few syntax highlighting limitations, when compared with more powerful implementations.
+_Note:_ it has a few syntax highlighting limitations, when compared with more powerful implementations.
 
 #### Settings
 
@@ -90,6 +90,4 @@ Install the [EditorConfig Notepad++ plugin](https://github.com/editorconfig/edit
 
 If you use Vim, install the [vim-markdown](https://github.com/plasticboy/vim-markdown) plugin and get a load of new features related to Markdown editing.
 
-*Note:* Mentioning Vim here just for completeness. :)
-
-
+_Note:_ Mentioning Vim here just for completeness. :)

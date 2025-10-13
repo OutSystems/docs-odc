@@ -74,6 +74,7 @@ The following CSS code is an example of how to change the style of selected item
     font-stretch: condensed;
 }
 ```
+
 ## Properties
 
 | Property                                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -95,11 +96,10 @@ To ensure predictable behavior and avoid runtime issues, the Tabs component is d
 
 ### Tabs
 
-|Event| Description  | 
+|Event| Description  |
 |---|---|
-|OnTabChange: Optional| Event triggered when switching Tabs. | 
+|OnTabChange: Optional| Event triggered when switching Tabs. |
 
 ## Device and pattern compatibility
 
 Avoid using the Tabs Pattern inside patterns with swipe events, such as the Stacked Cards or Carousel Patterns.
-

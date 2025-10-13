@@ -38,7 +38,7 @@ You can use the Separator UI Pattern to separate content clearly and ease visual
 
     ![Process of dragging the Separator widget into the Main Content area of an application screen](images/separator-drag-ss.png "Dragging Separator Widget to Screen")
 
-    By default, the pattern displays a horizontal line with the application’s primary color. 
+    By default, the pattern displays a horizontal line with the application’s primary color.
 
 1. On the **Properties** tab, you can customize the Separator's look and feel by setting any of the optional properties, for example, the color and the amount of space separating the content.
 

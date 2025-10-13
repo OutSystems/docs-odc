@@ -28,7 +28,7 @@ This document explains adding search services like Azure AI Search, Amazon Kendr
 Before adding a configured connection to your search service provider:
 
 * Set up, deploy, and ensure the search service is accessible on its respective platform (Azure or AWS). Note that an administrator or DevOps team typically performs this external setup, which isn't covered here.
-* Obtain the necessary access credentials and details required by the specific provider. 
+* Obtain the necessary access credentials and details required by the specific provider.
 * Ensure you have the necessary permissions within the ODC Portal to create and manage connections. Note that managing AI models utilizes the same permissions as managing connections within the ODC Portal.
 
 ## Add a search service { #add-a-search-service }

@@ -50,8 +50,8 @@ Download the [sample module for the Read/Write Data Last Write Wins pattern](htt
 To automatically generate the logic needed to implement this pattern for an entity:
 
 1. In ODC Studio, open the **Data** tab.
-2. Under Local Storage, select the local entity you want to synchronize with the server.
-3. Right-click on the local entity and choose **Create Action to Sync Data (Read/Write)**.
+1. Under Local Storage, select the local entity you want to synchronize with the server.
+1. Right-click on the local entity and choose **Create Action to Sync Data (Read/Write)**.
 
     This option is only available if the local entity is linked to the database entity (with the ID as a foreign key to the database entity). This happens if you create local entities by right-clicking on **Local Storage** and choosing **Add Entity from Database...**
 
@@ -122,9 +122,9 @@ LocalCompany.IsActive = False and
 LocalCompany.IsFromServer = True
 ```
 
-4. Call the `ServerDataSync` server action with the lists of locally added, updated, and deleted `Company` records as inputs. The server updates the database and returns the list of updated `Company` records.
-5. Delete all `Company` records in the local storage.
-6. Recreate the `Company` records in the local storage using the list of records returned by the server.
+1. Call the `ServerDataSync` server action with the lists of locally added, updated, and deleted `Company` records as inputs. The server updates the database and returns the list of updated `Company` records.
+1. Delete all `Company` records in the local storage.
+1. Recreate the `Company` records in the local storage using the list of records returned by the server.
 
 ## ServerDataSync logic
 
@@ -133,10 +133,10 @@ Here’s how the `ServerDataSync` server action works:
 ![Flowchart illustrating the ServerDataSync logic for the Read/Write Data Last Write Wins pattern](images/read-write-data-last-write-wins-serverdatasync-odcs.png "ServerDataSync Logic Flow")
 
 1. Iterate through the list of locally added `Company` records and create new records in the database. To avoid collisions, set `Company.Id` to `NullIdentifier()` so that the records are created with new identifiers.
-2. Iterate through the list of locally modified `Company` records and update the records in the database.
-3. Iterate through the list of locally deleted (inactive) `Company` records and delete the records in the database.
-4. Retrieve all the `Company` records from the database.
-5. Assign the list of `Company` records to the action’s output parameter, while setting appropriate values for the synchronization metadata attributes:
+1. Iterate through the list of locally modified `Company` records and update the records in the database.
+1. Iterate through the list of locally deleted (inactive) `Company` records and delete the records in the database.
+1. Retrieve all the `Company` records from the database.
+1. Assign the list of `Company` records to the action’s output parameter, while setting appropriate values for the synchronization metadata attributes:
 
 ```javascript
 IsFromServer = True  

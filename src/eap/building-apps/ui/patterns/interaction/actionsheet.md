@@ -35,13 +35,13 @@ You can use the Action Sheet UI Patterns to add a menu that slides from the bott
 
     ![Screenshot of dragging the Action Sheet widget into the Main Content area](images/actionsheet-3-ss.png "Placing Action Sheet Widget")
 
-    By default, the Action Sheet widget contains 5 button placeholders. 
+    By default, the Action Sheet widget contains 5 button placeholders.
 
-1. Add the relevant content to the Button placeholders. In this example, we add buttons that navigate to other pages when clicked. 
+1. Add the relevant content to the Button placeholders. In this example, we add buttons that navigate to other pages when clicked.
 
     ![Screenshot showing the addition of button placeholders to the Action Sheet Widget](images/actionsheet-5-ss.png "Adding Buttons to Action Sheet Widget")
 
-1. Add a local variable. In this example, we call the variable **IsOpened**. 
+1. Add a local variable. In this example, we call the variable **IsOpened**.
 
 1. Select the Action Sheet pattern, and on the **Properties** tab, set the **IsOpen** property to the new local variable (in this example, **IsOpened**).
 
@@ -51,20 +51,20 @@ You can use the Action Sheet UI Patterns to add a menu that slides from the bott
 
     ![Screenshot of the Properties tab with the OnClick dropdown for creating a new client action](images/actionsheet-6-ss.png "Creating OnClick Event")
 
-1. Add an Assign to the client action and set the **IsOpened** local variable to **True**. 
+1. Add an Assign to the client action and set the **IsOpened** local variable to **True**.
 
     ![Screenshot of an Assign action setting the IsOpened local variable to True](images/actionsheet-7-ss.png "Assigning IsOpened to True")
 
 1. To close the Action Sheet menu, on the **Properties** tab, from the **Handler** dropdrown of the **OnClose** event, select **New Client Action**.
-    
+
     ![Screenshot of the Properties tab with the Handler dropdown for the OnClose event](images/actionsheet-8-ss.png "Setting OnClose Handler")
 
-1. Add an Assign to the client action and set the **IsOpened** local variable to **False**. 
+1. Add an Assign to the client action and set the **IsOpened** local variable to **False**.
 
     ![Screenshot of an Assign action setting the IsOpened local variable to False](images/actionsheet-9-ss.png "Assigning IsOpened to False")
 
-After following these steps and publishing the app, you can test the pattern in your app. 
-       
+After following these steps and publishing the app, you can test the pattern in your app.
+
 ## Properties
 
 | Property                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |

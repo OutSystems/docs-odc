@@ -24,7 +24,7 @@ This article introduces the concepts of relationships between entities.
 
 When you move your data model design from the conceptual phase to the logical phase, you must define the type of relationship that exists between the entities. Go to [Data modeling](../../modeling.md) for more information on the different phases of data model design.
 
-By default, OutSystems Developer Cloud (ODC) automatically creates an entity with the `Id` attribute. The `Id` attribute uniquely identifies each record in the entity. It's the primary key in the physical data model. 
+By default, OutSystems Developer Cloud (ODC) automatically creates an entity with the `Id` attribute. The `Id` attribute uniquely identifies each record in the entity. It's the primary key in the physical data model.
 
 Developers create an entity relationship between entity A and entity B by changing the **Data Type** of an attribute in entity B to `<entity A> Id`. In OutSystems this attribute in entity B is called the reference attribute. It's the foreign key in the physical data model. When a developer defines a reference attribute, OutSystems automatically creates:
 

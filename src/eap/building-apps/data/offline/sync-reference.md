@@ -83,4 +83,3 @@ ErrorMessage
 * [Offline sync checklist](sync-checklist.md)
   
 * [Offline data sync patterns](patterns/intro.md)
-

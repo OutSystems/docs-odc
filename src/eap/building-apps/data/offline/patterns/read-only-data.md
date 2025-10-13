@@ -54,8 +54,8 @@ Download the [sample module for the Read-Only Data pattern](http://www.outsystem
 To automatically generate the logic needed to implement this pattern for an entity:
 
 1. In ODC Studio, open the **Data** tab.
-2. Under Local Storage, select the local entity of the entity you want to synchronize in the database.
-3. Right-click on the local entity and choose **Create Action to Sync Data (Read-Only)**.
+1. Under Local Storage, select the local entity of the entity you want to synchronize in the database.
+1. Right-click on the local entity and choose **Create Action to Sync Data (Read-Only)**.
 
     This option is only available if the local entity is linked to the database entity (with the ID as a foreign key to the database entity). This happens if you create local entities by right-clicking on **Local Storage** and choosing **Add Entity from Database...**
 
@@ -84,8 +84,8 @@ Here’s how the `OnSync` client action works:
 ![Flowchart of the OnSync client action logic for Read-Only Data synchronization](images/read-only-data-offlinedatasync-odcs.png "OnSync Logic")
 
 1. Call the `ServerDataSync` server action to retrieve data from the database. The server returns a list of `Company` records.
-2. Delete all `Company` records in the local storage.
-3. Recreate the `Company` records in the local storage using the list of records returned by the server.
+1. Delete all `Company` records in the local storage.
+1. Recreate the `Company` records in the local storage using the list of records returned by the server.
 
 `DeleteAllLocalCompanies` and `CreateOrUpdateAllLocalCompanies` are entity actions created automatically for the `LocalCompany` local storage entity. This is a local storage feature to help you handle records.
 
@@ -96,7 +96,7 @@ Here’s how the `ServerDataSync` server action works:
 ![Flowchart of the ServerDataSync server action logic for Read-Only Data synchronization](images/read-only-data-serverdatasync-odcs.png "ServerDataSync Logic")
 
 1. The aggregate `GetCompanies` fetches all the `Company` records from the database.
-2. Assign the records returned by the aggregate to the action’s output parameter.
+1. Assign the records returned by the aggregate to the action’s output parameter.
 
 ## Related resources
 

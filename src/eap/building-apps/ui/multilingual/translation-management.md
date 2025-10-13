@@ -35,11 +35,11 @@ To export the translatable text from your app follow these steps in ODC Studio:
 
 1. Go to the **Data** tab, right-click **Multilingual Locales**, and then hover the move over **Export Language Resources** to show a new menu.
 
-2. In the menu select one of the options to export in the format you want:
+1. In the menu select one of the options to export in the format you want:
 
     * **To Excel**. Exports all translatable text to a single Excel file.
-    
-3. Select the export location and click **OK**.
+
+1. Select the export location and click **OK**.
 
 For more information about the translation files, see [Translation resource file formats](#translation-resource-file-formats).
 
@@ -51,7 +51,7 @@ To control which text ODC Studio exports, see more information about **translata
 
 ## Import the translation
 
-To import the translation back to the app, follow these steps in ODC Studio: 
+To import the translation back to the app, follow these steps in ODC Studio:
 
 1. Go to the **Data** tab and right-click **Multilingual Locales** and select **Import Language Resources**. A dialog opens.
 
@@ -60,7 +60,7 @@ To import the translation back to the app, follow these steps in ODC Studio:
     You can import files in one of the following formats:
 
     * **Excel file**. When you import an Excel file, you **update translations in all languages**.
-   
+
 ## Translation resource file formats
 
 What follows is more information about the file formats ODC Studio uses to export text for translation and import the translation.

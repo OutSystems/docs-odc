@@ -48,17 +48,17 @@ By default, the asset name, icon, and short description are defined during devel
 1. Log into ODC Portal and select **All assets**, from the navigation menu. A list of assets available to install in your organization displays.  
 1. From the top right, click the **Submit to Forge** button. A list of assets developed in your organization displays. Assets that display as disabled don't meet the prerequisites. When you hover over an asset, a tooltip displays and provides guidance about how to enable the asset.
 1. From this list of assets, select the one you want to submit.
-1. Select the asset version. 
+1. Select the asset version.
 1. Click **Continue**. The wizard proceeds to **Analyze requirements & dependencies**.
    1. If the asset consumes dependencies that aren't yet submitted to Forge, the wizard indicates the missing assets. For each dependency, Forge validates that the prerequisites are met so the asset can be submitted.
    1. If all the dependencies are already in Forge, or the asset doesn't consume any, you can continue.
-   
+
    <div class="info" markdown="1" >
 
    When you are submitting Agentic apps, be aware that you can only submit Agent apps that use trial AI models. If you have a paid model, you need to adapt your app to use an Amazon Nova Pro or Claude 3.7 Sonnet trial models before you submit to Forge.
 
    </div>
-   
+
 1. In the wizard, enter a detailed description of your asset. Your description should describe the asset's features and any problem(s) it solves.
 1. If the asset is a library, select the library type that the filters will use on the **All assets** page.
 1. Add images that best illustrate the asset's features, main use cases, and behavior.
@@ -83,7 +83,7 @@ Follow these steps to submit a new version of your asset:
 
 1. From the top right, click the **Submit to Forge** button. A list of assets developed in your organization displays.
 1. From this list of assets, select the asset with the new version that you want to submit.
-1. Select the asset version. 
+1. Select the asset version.
 1. Click **Continue**. The wizard proceeds to **Analyze requirements & dependencies**.
    1. If the asset consumes dependencies that aren't yet submitted to Forge, the wizard indicates the missing assets. For each dependency, Forge validates that the prerequisites are met so the asset can be submitted.
    1. If all the dependencies are already in Forge, or the asset doesn't consume any, you can continue.

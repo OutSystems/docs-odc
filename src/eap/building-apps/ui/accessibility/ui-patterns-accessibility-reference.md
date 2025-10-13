@@ -34,9 +34,9 @@ The Alert UI pattern lets you provide important information on the screen to get
 The Alert pattern further supports changing the ARIA role with the **SetAccessibilityRole** action. Here's an example of how to set the ARIA role "status".
 
 1. Select the Alert pattern, and on the **Properties** tab, in the **Name** field, enter **myAlert**. This is now the element identifier.
-2. Open the logic flow that's relevant to the Alert showing on the screen.
-3. Locate **Logic** > **OutSystemsUI** > **Accessibility** > **SetAccessibilityRole**. Drag the **SetAccessibilityRole** action to the flow.
-4. In the **SetAccessibilityRole** action properties set **WidgetId** to **myAlert.Id** and enter **"status"** in the **Role** field.
+1. Open the logic flow that's relevant to the Alert showing on the screen.
+1. Locate **Logic** > **OutSystemsUI** > **Accessibility** > **SetAccessibilityRole**. Drag the **SetAccessibilityRole** action to the flow.
+1. In the **SetAccessibilityRole** action properties set **WidgetId** to **myAlert.Id** and enter **"status"** in the **Role** field.
 
 While toggling the visibility of the Alert, you must update the **aria-hidden** attribute to guarantee the alert complies with the Accessibility guidelines. You can do this by using the **SetAriaHidden** client action.
 
@@ -75,7 +75,7 @@ To configure the Mater Detail pattern for accessibility, proceed with the follow
 1. On the **ListItemOnClick** action, add the **MasterDetailSetContentFocus** action. You need this for accessibility compliance, as it allows to change the focus between the detail and the next **listitem**, with parameters mapped from the **ListItemOnClick**:
 
     1. **ContentID** (text) - Id of the content to focus on.
-    2. **TriggerItem** (text) - Id of the clicked item.
+    1. **TriggerItem** (text) - Id of the clicked item.
 
     ![Illustration of how to set the MasterDetailSetContentFocus action for switching focus in the Master Detail UI pattern](images/master-detail-setcontentfocus-odcs.png "Setting the Master detail set content focus action")
 

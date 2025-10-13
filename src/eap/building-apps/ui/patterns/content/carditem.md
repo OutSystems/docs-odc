@@ -33,7 +33,7 @@ You can use the Card Item UI Pattern to list items with multiple content types, 
 
 1. From the Toolbox, drag the Card widget into the Main Content area of your application's screen.
 
-    In this example, we drag the widget into the Card widget that's already in the Main Content area of the screen. You can add as many Card Item widgets as required (we add 4). 
+    In this example, we drag the widget into the Card widget that's already in the Main Content area of the screen. You can add as many Card Item widgets as required (we add 4).
 
     ![Process of dragging the Card Item widget into the Main Content area of an application screen](images/carditem-3-ss.png "Dragging Card Item widget into Main Content Area")
 

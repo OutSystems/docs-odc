@@ -31,7 +31,7 @@ Stored procedures can’t be created or called for internal entities (the entiti
 
 ## Retrieve the connectionId { #retrieve-connectionid }
 
-The `CALL` statement requires a `connectionId` that identifies the [connection to the data source done in Portal](../../../../integration-with-systems/external-databases/create-connection-external-data.md). 
+The `CALL` statement requires a `connectionId` that identifies the [connection to the data source done in Portal](../../../../integration-with-systems/external-databases/create-connection-external-data.md).
 
 Follow these steps to retrieve the connectionId from the ODC Portal:
 

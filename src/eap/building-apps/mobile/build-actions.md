@@ -20,9 +20,9 @@ helpids:
 
 # Build Actions
 
-You use Build Actions to configure mobile apps beyond what's available in the low-code environment. Build Actions use  YAML-based configuration file and a set of predefined constructs to define and apply modifications to a mobile app during the build process. 
+You use Build Actions to configure mobile apps beyond what's available in the low-code environment. Build Actions use  YAML-based configuration file and a set of predefined constructs to define and apply modifications to a mobile app during the build process.
 
-Build Actions are integrated into the mobile app build process via **Advanced Extensibility**. The actions execute after the `cap sync` command during the build. 
+Build Actions are integrated into the mobile app build process via **Advanced Extensibility**. The actions execute after the `cap sync` command during the build.
 
 ## How build actions work
 
@@ -55,4 +55,3 @@ le: Checks if the left argument is less than or equal to the right (arguments mu
 gt: Checks if the left argument is greater than the right (arguments must be numeric).
 
 lt: Checks if the left argument is less than the right (arguments must be numeric).
- 

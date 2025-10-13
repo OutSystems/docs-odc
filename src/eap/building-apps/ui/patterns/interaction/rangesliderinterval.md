@@ -39,7 +39,7 @@ In this example, we create a Range Slider Interval that allows the user to selec
 
     ![Screenshot of the Range Slider Interval widget in ODC Studio](images/rangesliderinterval-widget-ss.png "Range Slider Interval Widget")
 
-1. From the Toolbox, drag the **Range Slider Interval** widget into the Main Content area of your application's screen, and on the **Properties** tab, enter the **MinValue**, **MaxValue**, **StartingValueFrom**, and **StartingValueTo** values. 
+1. From the Toolbox, drag the **Range Slider Interval** widget into the Main Content area of your application's screen, and on the **Properties** tab, enter the **MinValue**, **MaxValue**, **StartingValueFrom**, and **StartingValueTo** values.
 
     In this example, we add static values.
 
@@ -53,7 +53,7 @@ In this example, we create a Range Slider Interval that allows the user to selec
 
     ![Screenshot of the default input parameters created for the Range Slider Interval client action](images/rangesliderinterval-inputparameters-ss.png "Default Input Parameters")
 
-1. From the Toolbox, drag the **Container** widget into the Main Content area of your application's screen, and add your content to the Container placeholder. 
+1. From the Toolbox, drag the **Container** widget into the Main Content area of your application's screen, and add your content to the Container placeholder.
 
     In this example, we add some text and an expression for each of the input parameters.
 
@@ -73,7 +73,7 @@ In this example, we create a Range Slider Interval that allows the user to selec
 
     ![Screenshot of adding an assign action to the client action for the Range Slider Interval](images/rangesliderinterval-assign-ss.png "Adding an Assign to the Client Action")
 
-1. You can configure the  Range Slider Interval by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties, for example, the orientation. For more configurations, expand the **OptionalConfigs** property.   
+1. You can configure the  Range Slider Interval by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties, for example, the orientation. For more configurations, expand the **OptionalConfigs** property.
 
     ![Screenshot showing how to set optional properties for the Range Slider Interval on the Properties tab](images/rangesliderinterval-properties-ss.png "Setting Optional Properties")
 
@@ -95,5 +95,3 @@ After following these steps and publishing the app, you can test the pattern in 
 | OptionalConfigs.ShowTickMarks (Boolean): Optional     | Set to True to display tick marks below the slider. Default value is False. To generate the tick marks, you must set the TickMarksInterval to True.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | OptionalConfigs.TickMarksInterval (Integer): Optional | Range interval after which a tick mark is displayed (when ShowTickMarks is set to True). For example, if TickMarksInterval = 5, a tick mark is shown for each 5 steps. The value can not be less than 0 (library restraint).                                                                                                                                                                                                                                                                                                                                                                                                                |
 | OptionalConfigs.IsDisabled (Boolean): Optional        | Set as True to disable the Range Slider Interval. Default value is True.build                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-
-

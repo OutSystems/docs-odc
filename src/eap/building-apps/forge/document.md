@@ -25,7 +25,7 @@ Before sharing a new Forge asset, OutSystems recommends that you provide documen
 
 Keep the following in mind as you create your documentation.
 
- * Write to the level the majority of your audience understands, don't use slang, jargon, or terms they may not understand.
+* Write to the level the majority of your audience understands, don't use slang, jargon, or terms they may not understand.
 * Use the active voice to create less wordy sentences.
 * Be explicit, provide clarity and detail.
 * Repeat terms if they correspond to repeated actions.
@@ -33,7 +33,7 @@ Keep the following in mind as you create your documentation.
 
 ## Write the Introduction
 
-An introduction helps the reader to understand how they might use this asset. Include the following: 
+An introduction helps the reader to understand how they might use this asset. Include the following:
 
 * What it is and why you would use this asset, focusing on its benefits.
 * How to use this asset focusing on the options available.
@@ -53,7 +53,7 @@ Use the following guidelines when writing procedures for installing and setting 
     * Keep procedures to between 7 and 10 steps. If more than 10 steps then create another procedure.
 * If the installation requires interaction with more than one tool, create a procedure for each tool.
 * Separate setup procedures from the installation procedures.
- * Use Visual aids whenever the step isn't obvious.
+* Use Visual aids whenever the step isn't obvious.
     * If you are using images, and need to identify information, use arrows or other design elements.
     * Identify the exact location in the screen in which users need to interact.
   

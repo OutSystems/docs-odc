@@ -32,4 +32,4 @@ Having an identifier attribute pointing to another entity automatically creates 
 
 ![Diagram illustrating a one-to-many relationship between Place and Review entities with a foreign key](images/one-to-many-relationship-1.png "One-to-Many Relationship Diagram")
 
-When you create relationships between entities in your app, you must define the referential integrity you want to use when deleting records. 
+When you create relationships between entities in your app, you must define the referential integrity you want to use when deleting records.

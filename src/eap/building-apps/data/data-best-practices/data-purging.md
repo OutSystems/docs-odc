@@ -39,7 +39,7 @@ For example, a purge condition might specify purging records with update timesta
 Here are some examples of possible control columns. You can define any other that apply to your use case:
 
 * **LastUpdatedOn** (Date Time): Tracks the last time the record was updated. Used to purge records based on a timestamp (defined using a Setting, for example).
- 
+
 * **IsActive** (Boolean): Marks the record as active or inactive. Inactive records can be purged later on.
 
 * **IsDeleted** (Boolean): Marks the record for later deletion (soft-delete). The record can be effectively deleted (purged) or restored later.

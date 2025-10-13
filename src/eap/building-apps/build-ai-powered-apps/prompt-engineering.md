@@ -37,7 +37,7 @@ You can test System messages, User messages, or both in the Test area. To test y
 
 1. In the Test, you can:
 
-    1. Select from the AI model drop-down the model you want to use in your testing. 
+    1. Select from the AI model drop-down the model you want to use in your testing.
     1. Write the System Message you want to test.
     1. Write the User Message you want to test.
     1. Click Test to test your message(s).
@@ -46,7 +46,7 @@ You can test System messages, User messages, or both in the Test area. To test y
 
 <div class="info" markdown="1">
 
-To [add a new AI model](add-ai-models.md), add it first in the ODC Portal. After, add it as a Public Element in your app. 
+To [add a new AI model](add-ai-models.md), add it first in the ODC Portal. After, add it as a Public Element in your app.
 
 </div>
 

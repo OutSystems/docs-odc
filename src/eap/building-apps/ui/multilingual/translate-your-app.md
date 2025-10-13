@@ -40,7 +40,7 @@ To add a new language and translate your app, do the following in ODC Studio:
 
     ![Screenshot of the 'Add Locale' option in ODC Studio to add a new language for translation](images/add-new-language-translation-ss.png "Adding a New Language for Translation")
 
-2. Select a locale and then click **OK** to open the **translations editor**.
+1. Select a locale and then click **OK** to open the **translations editor**.
 
     ![Screenshot showing the selection of a new language in ODC Studio](images/select-new-language-ss.png "Selecting a New Language")
 
@@ -50,33 +50,33 @@ To add a new language and translate your app, do the following in ODC Studio:
 
     </div>
 
-3. In the translations editor, select the **Translate** option in the behavior list to see all text that needs translation.
+1. In the translations editor, select the **Translate** option in the behavior list to see all text that needs translation.
 
     ![Screenshot displaying text items that need translation in the ODC Studio translations editor](images/show-translatable-text-ss.png "Translatable Text in ODC Studio")
 
     See [Translating with the translation editor](translation-editor.md) for more information on how to use the editor.
 
-4. Translate the text in the **Translation in (language code)** column. Click **Done** when you are finished.
+1. Translate the text in the **Translation in (language code)** column. Click **Done** when you are finished.
 
     ![Screenshot of the translation process in the ODC Studio translations editor](images/enter-translation-ss.png "Entering Translations in ODC Studio")
-    
+
 After you finish translating the text in your app, you then need to create a language switcher to show the available translations.
 
 ## Creating a language switcher
 
 A language switcher lets your users change the language of the app. To create a language switcher, do the following:
 
-1. Drag a Link widget to a screen and enter the language name in the **Text** part of the **Link**. 
+1. Drag a Link widget to a screen and enter the language name in the **Text** part of the **Link**.
 
     ![Screenshot showing a Link widget configured with a language name for switching languages in an app](images/link-with-language-name-ss.png "Link Widget with Language Name")
 
     The example shows how to use the Link widget to change the app language. You can create the same action with other widgets, including Button and Dropdown.
 
-2. Select the Link widget to view its properties. In the **On Click** list, select **New Client Action**. New Client Action opens for editing.
+1. Select the Link widget to view its properties. In the **On Click** list, select **New Client Action**. New Client Action opens for editing.
 
     ![Screenshot of the process to create a new client action for a language switcher link in ODC Studio](images/new-client-action-for-link-ss.png "Creating a New Client Action for a Link")
 
-3. With the logic editor open, go to the **Logic** tab and expand the **(System)** section in **Client Actions**. Locate the **SetCurrentLocale** client action and drag it to the logic flow.
+1. With the logic editor open, go to the **Logic** tab and expand the **(System)** section in **Client Actions**. Locate the **SetCurrentLocale** client action and drag it to the logic flow.
 
     ![Screenshot of the SetCurrentLocale client action being added to the logic flow in ODC Studio](images/client-action-in-logic-tab.png "SetCurrentLocale Client Action in Logic Tab")
 
@@ -94,7 +94,7 @@ A language switcher lets your users change the language of the app. To create a 
 
     </div>
 
-4. In the **SetCurrentLocale** client action, enter the code of the language (for example, `"pt-BR"`) in the **Locale** property.
+1. In the **SetCurrentLocale** client action, enter the code of the language (for example, `"pt-BR"`) in the **Locale** property.
 
     ![Screenshot showing the Locale property being set in the SetCurrentLocale client action in ODC Studio](images/locale-in-client-action.png "Locale Property in SetCurrentLocale Client Action")
 
@@ -104,11 +104,11 @@ A language switcher lets your users change the language of the app. To create a 
 
     </div>
 
-5. Publish the app and select your link to change the language of the app.
+1. Publish the app and select your link to change the language of the app.
 
 ## Editing existing translations
 
-Use the [translation editor](translation-editor.md) to edit existing translations. You can also [export and import text for translation](translation-management.md). 
+Use the [translation editor](translation-editor.md) to edit existing translations. You can also [export and import text for translation](translation-management.md).
 
 ## Getting the identifier of the current language
 
@@ -118,16 +118,16 @@ You can get information about the current language with the [GetCurrentLocale bu
 
 ## Working with Static Entities
 
-Follow these steps to translate the text in Static Entities and show the translation in the app. 
+Follow these steps to translate the text in Static Entities and show the translation in the app.
 
 1. In the [translation editor](translation-editor.md), search for the text you want to translate and set **Behavior** to **Translate**.
 
     ![Screenshot of the translation editor with a search for text to translate in ODC Studio](images/static-entity-search-ss.png "Searching in Translation Editor")
 
-2. While still in the translation editor, enter the translation in the **Translation in (language code)** cell and click **Done**.
+1. While still in the translation editor, enter the translation in the **Translation in (language code)** cell and click **Done**.
 
     ![Screenshot of the translation editor where translations for static entities are entered in ODC Studio](images/static-entity-translate-ss.png "Translating Static Entities in ODC Studio")
-    
+
     <div class="info" markdown="1">
 
     Translations for static entity records are defined in the app or library that holds the static entity
@@ -135,7 +135,7 @@ Follow these steps to translate the text in Static Entities and show the transla
 
     </div>
 
-3. In the logic, to switch the locale, add **Refresh Data** just after the **SetCurrentLocale** action and select the Static Entity.
+1. In the logic, to switch the locale, add **Refresh Data** just after the **SetCurrentLocale** action and select the Static Entity.
 
     ![Screenshot showing the refresh of static entity data after changing the locale in ODC Studio](images/static-entity-refresh-ss.png "Refreshing Static Entity Data")
 

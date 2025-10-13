@@ -29,7 +29,7 @@ You can use the Section Group UI Pattern to keep the context of the header while
   
     The Section Group widget is displayed.
 
-    ![Screenshot of the Section Group widget in the ODC Studio Toolbox](images/sectiongroup-1-ss.png "Section Group Widget in ODC Studio Toolbox") 
+    ![Screenshot of the Section Group widget in the ODC Studio Toolbox](images/sectiongroup-1-ss.png "Section Group Widget in ODC Studio Toolbox")
 
 1. To From the Toolbox, drag the **Section Group** widget into the **Main Content** area of your application's screen.
 
@@ -39,7 +39,7 @@ You can use the Section Group UI Pattern to keep the context of the header while
 
 1. Add your content to the placeholders.
 
-    In this example, we add a title to the Title placeholder and some text to the Content placeholder. 
+    In this example, we add a title to the Title placeholder and some text to the Content placeholder.
 
     ![Example of adding a title and text to the Section Group placeholders](images/sectiongroup-3-ss.png "Adding Content to Section Group Widget Placeholders")
 

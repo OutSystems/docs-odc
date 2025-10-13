@@ -23,7 +23,7 @@ The AI Agent Builder uses AI models from [Azure OpenAI](https://azure.microsoft.
 
 This section contains information intended for administrators and dev-ops engineers with a good working knowledge of configuring AI services.
 
-To configure your AI models and use them in the AI Agent Builder you must: 
+To configure your AI models and use them in the AI Agent Builder you must:
 
 1. Set up your AI service in [Azure](configure-aws-model.md) or [AWS](configure-aws-model.md), depending on the model you choose.
 
@@ -31,7 +31,7 @@ To configure your AI models and use them in the AI Agent Builder you must:
 
 1. Add your access keys and end-point access information to the AI Agent Builder.
 
-1. [Create your agents](../create-agent.md) in the AI Agent Builder. 
+1. [Create your agents](../create-agent.md) in the AI Agent Builder.
 
 ## High availability of AI agents
 

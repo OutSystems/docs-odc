@@ -33,7 +33,7 @@ You can use the Floating Content UI Pattern to display content on top of other s
 
 1. From the Toolbox, drag the Floating Content widget into the Main Content area of your application's screen.
 
-    In this example, the Main Content area of already contains an image of a map. 
+    In this example, the Main Content area of already contains an image of a map.
 
     ![Screenshot of dragging the Floating Content widget into the Main Content area with a map background](images/floatingcontent-3-ss.png "Dragging Floating Content Widget into Main Content Area")
 
@@ -41,7 +41,7 @@ You can use the Floating Content UI Pattern to display content on top of other s
 
 1. Add the relevant content to the placeholder.
 
-    In this example, we add a Search widget. 
+    In this example, we add a Search widget.
 
     ![Screenshot showing the addition of a Search widget to the Floating Content placeholder](images/floatingcontent-4-ss.png "Adding Content to Floating Content Widget")
 
@@ -49,7 +49,7 @@ You can use the Floating Content UI Pattern to display content on top of other s
 
     ![Screenshot of the Properties tab for the Floating Content widget with Position property highlighted](images/floatingcontent-5-ss.png "Setting Properties of Floating Content Widget")
 
-After following these steps and publishing the app, you can test the pattern in your app. 
+After following these steps and publishing the app, you can test the pattern in your app.
 
 ## Properties
 

@@ -36,7 +36,7 @@ Follow these steps to create, configure, and integrate AI agents into your OutSy
 
 Create the AI agentic app in ODC Studio. Either open ODC Studio directly or start from the ODC Portal. In the ODC Portal, click **Create** and select **Agentic app**. ODC Studio opens so you can define and develop the agent capabilities.
 
-### 2. Choose an AI model 
+### 2. Choose an AI model
 
 Select the large language model (LLM) the agent uses. See [Adding AI Models](add-ai-models.md) for details about connecting your apps to LLMs.
 

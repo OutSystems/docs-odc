@@ -69,4 +69,4 @@ To do it:
 
 1. If you want to are storing the model answers in the Store memory you it's recommended that instead of using storing the structured output, you first serialize the structure output, and use the serialization as the item to store on the Store Memory node. This is also important if you want to use the responses on a workflow.
 
-1. If you use the serialization, you then need to deserialize into a structure on your consumer app. 
+1. If you use the serialization, you then need to deserialize into a structure on your consumer app.

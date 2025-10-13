@@ -26,7 +26,7 @@ You can reuse blocks within the same app or, if you want to reuse blocks across 
 Here are notes about reusing Block across **different apps**:
 
 * Blocks must be public.
-* You can reuse Blocks in Web Apps and Mobile Apps. 
+* You can reuse Blocks in Web Apps and Mobile Apps.
 
 ## Using Blocks
 
@@ -65,4 +65,3 @@ Here is an example, with two sample apps, of how you can reuse a Block from libr
     ![Preview of the Mobile App interface showing the reused MyBlock with the text 'Hello from My Reactive App!' on the screen](images/block-reuse-target-app.png "Source Block in Target App Preview")
 
 1. Publish the app.
-

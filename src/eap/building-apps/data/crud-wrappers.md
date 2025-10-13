@@ -19,7 +19,6 @@ CRUD operations—Create, Read, Update, and Delete—are basic actions that let 
 
 OutSystems provides tools that simplify CRUD operations, saving time while ensuring consistency and scalability. These tools allow developers to design systems that grow as needed and maintain high standards for functionality. A key feature of these tools is CRUD wrappers. CRUD wrappers let developers add rules, validations, and custom logic to CRUD actions to ensure the application behaves as expected. While manually creating CRUD wrappers can take time, OutSystems Studio’s accelerator feature lets developers create them faster and more easily.
 
-
 ## Core concepts of CRUD wrappers in OutSystems
 
 CRUD wrappers are actions that group together the default CRUD entity actions, such as creating or updating a record. They provide a way to add extra checks and rules to these actions, making development more efficient and promoting code reusability. With CRUD wrappers, developers can:
@@ -32,9 +31,9 @@ CRUD wrappers are actions that group together the default CRUD entity actions, s
 
 While CRUD wrappers are extremely useful, they can be tedious to create manually, especially in applications with many entities or complex requirements.
 
-### ODC Studio accelerator 
+### ODC Studio accelerator
 
-ODC Studio offers an accelerator feature designed to simplify CRUD wrapper creation for entities created in ODC Studio. The accelerator automates repetitive tasks like adding validations and parameters, streamlining the initial setup process. 
+ODC Studio offers an accelerator feature designed to simplify CRUD wrapper creation for entities created in ODC Studio. The accelerator automates repetitive tasks like adding validations and parameters, streamlining the initial setup process.
 
 The accelerator creates four server action wrappers, which are visible in the Logic tab under a folder with the same name as the entity:
 
@@ -46,7 +45,6 @@ The accelerator creates four server action wrappers, which are visible in the Lo
 ![Diagram showing the creation of CRUD wrappers for public and nonpublic entities in ODC Studio.](images/crud-wrappers-actions-diag.png "CRUD Wrappers Actions")
 
 These server actions encapsulate the entity actions and include validations to ensure mandatory attributes are filled in. The accelerator only supports entities created in ODC Studio and does not handle external entities. They also create the necessary input and output parameters. If the entity is public, additional service actions are created to encapsulate the server actions mentioned earlier. These service actions allow external access to the functionality. Conversely, if the entity is not public, only the server actions are created, and they remain internal to the application. However, it’s important to note that the accelerator simplifies the initial creation of CRUD wrappers but doesn’t automatically adjust to changes in the data model, like adding or removing attributes or modifying their properties.
-
 
 To use the accelerator, right-click an entity in ODC Studio and choose the option **Create Entity Action Wrappers**.
 
@@ -61,7 +59,6 @@ Basic audit attributes, even if they're mandatory, aren't validated in this node
 ### Handling identifiers that aren't AutoNumber
 
 OutSystems entities typically have an Id attribute as their primary key, configured as AutoNumber by default. This means the platform automatically generates a unique, sequential integer for each new record, simplifying data management.
-
 
 However, you may want to disable AutoNumber in scenarios where you need manual control over record IDs. This includes cases like integrating with external systems that rely on predefined IDs or implementing a custom ID generation strategy. If you choose to disable AutoNumber, your application must have a mechanism to generate and assign unique Ids to maintain data integrity.
 
@@ -108,4 +105,3 @@ Even with the accelerator, it's important to follow best practices to ensure rob
     * Add role validations.
     * Add logic to update related tables, for example, updating the stock when an order is fulfilled.
     * Write into auditing tables.
-

@@ -25,22 +25,21 @@ OutSystems Developer Cloud (ODC) creates separate connections and transactions f
 
 You can use the Exception Handler to
 
-- Catch all database errors using the Database Exception type.
+* Catch all database errors using the Database Exception type.
 
-- Rollback or commit transactions only to the OutSystems database.
+* Rollback or commit transactions only to the OutSystems database.
 
 If an exception is uncaught, ODC rolls back the main transaction. ODC creates a single transaction for the OutSystems database at the start of a request. This means:
 
-- Multiple server calls with read and write operations share the same transaction throughout the flow.
+* Multiple server calls with read and write operations share the same transaction throughout the flow.
 
-- If the last write operation fails, you can commit or roll back all preceding server actions written to the OutSystems database.
+* If the last write operation fails, you can commit or roll back all preceding server actions written to the OutSystems database.
 
 ![Diagram showing multiple transactions in OutSystems Developer Cloud Studio.](images/Multiple-transaction-intro-odcs.png "Screenshot of multiple transactions in ODC Studio")
 
 Service actions have their own transactions and behave similarly to external systems. Once a service action ends, its transaction is committed and cannot be rolled back.
 
-To learn more about transactions in data mashup, refer to [Data mashup transactions](transactions-data-mashup.md). 
-
+To learn more about transactions in data mashup, refer to [Data mashup transactions](transactions-data-mashup.md).
 
 ## Scenarios when working with transactions
 
@@ -62,7 +61,7 @@ If you don't use an Exception Handler, LocalWrite is rolled back automatically.
 
 ### Error during second ExternalWrite
 
-The first ExternalWrite is successful, but the second ExternalWrite fails. 
+The first ExternalWrite is successful, but the second ExternalWrite fails.
 
 You only have control over the internal OutSystems database. You can’t roll back the ExternalWrite, as it was already committed. You can use an Exception Handler to catch the database exception. Regarding the ExternalWriteWithError, you can implement the desired logic in an error scenario on the Exception Handler, like log the error, revert the successful ExternalWrite, etc.
 

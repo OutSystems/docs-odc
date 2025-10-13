@@ -35,7 +35,7 @@ In the **Attachments** section of the **Send Email**, you can add:
 
 To attach a file to an email, complete the following steps in ODC Studio:
 
-1. On the **Logic** tab, open the action that sends the email and select the **Send Email** node. 
+1. On the **Logic** tab, open the action that sends the email and select the **Send Email** node.
 
     <div class="info" markdown="1">
 
@@ -43,7 +43,7 @@ To attach a file to an email, complete the following steps in ODC Studio:
 
     </div>
 
-1. In the **Send Email** properties, locate the **Attachments** section and move your pointer over the **Attachments** list. 
+1. In the **Send Email** properties, locate the **Attachments** section and move your pointer over the **Attachments** list.
 
     ODC Studio shows a plus icon with the "add list item" tooltip.
 
@@ -60,7 +60,7 @@ To attach a file to an email, complete the following steps in ODC Studio:
 1. Enter the information to define the file name, content, and media type of the email attachment.
 
     For more information about the Attachment properties, see [Attachment data structure](#attachment-data-structure).
-    
+
     ![Screenshot illustrating the input fields for FileName, FileContent, and MimeType in the email attachment properties within ODC Studio.](images/email-attachment-properties-odcs.png "Defining Email Attachment Properties")
 
     The following are example properties to attach a PDF file from the resources:
@@ -71,10 +71,9 @@ To attach a file to an email, complete the following steps in ODC Studio:
 
     <div class="info" markdown="1">
 
-    To add a file to the app resources, go to the **Data** tab, right-click **Resources**, and select **Import Resources**. 
+    To add a file to the app resources, go to the **Data** tab, right-click **Resources**, and select **Import Resources**.
 
     </div>
-
 
 ## Attaching multiple files
 
@@ -82,7 +81,7 @@ To attach several files to an email, create a List with the Attachment data stru
 
 <div class="info" markdown="1">
 
-The following example references the **Sample_ProductImage** Entity from **OutSystemsSampleData**, a standard sample data app in the OutSystems cloud. The text attribute **FileName** is the file name of the image attachment. The binary attribute **FileContent** is the content of the image.   
+The following example references the **Sample_ProductImage** Entity from **OutSystemsSampleData**, a standard sample data app in the OutSystems cloud. The text attribute **FileName** is the file name of the image attachment. The binary attribute **FileContent** is the content of the image.
 
 </div>
 
@@ -112,7 +111,6 @@ In the following example, ODC Studio fetches images from a database with an Aggr
 
     ![Image displaying the mapping of database attributes to the Attachment data structure in the Send Email action within ODC Studio.](images/email-attachment-mapping-odcs.png "Mapping Database Values to Email Attachment")
 
-
 ## Reference
 
 More information related to attachments.
@@ -126,4 +124,3 @@ Use the Attachment data structure to pass information about files between the lo
 | FileContent | Binary Data | Content that the platform embeds as the attachment.                                                      |
 | FileName    | Text        | The file name of the attachment to show in the email. For example, `"image.png"`.                        |
 | MimeType    | Text        | Media type identifier. For example, `"image/png"`. Enter to tell the email readers how to handle the content, as this can help prevent errors in some clients. Leave empty to let the email clients handle the detection. |
-

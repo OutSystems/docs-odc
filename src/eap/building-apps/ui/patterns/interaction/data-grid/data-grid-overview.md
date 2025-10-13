@@ -21,12 +21,12 @@ The OutSystems Data Grid is a supported component available in Forge, that allow
 
 You can use the OutSystems Data Grid component to create enterprise-grade interfaces that are more suitable and time-effective than designing a custom solution every time you need to manipulate dense datasets.  
 
-The OutSystems Data Grid component has the following key features: 
+The OutSystems Data Grid component has the following key features:
 
-* Data selection and editing in a familiar interface 
-* Data sorting by parameter 
-* Data grouping 
-* Virtual scrolling 
+* Data selection and editing in a familiar interface
+* Data sorting by parameter
+* Data grouping
+* Virtual scrolling
 
 ![Animated demonstration of the OutSystems Data Grid component showcasing data sorting, grouping, and virtual scrolling features.](images/data-grid-demo.gif "OutSystems Data Grid Demonstration")
 

@@ -33,7 +33,6 @@ Automate business processes, enhance productivity, and enable new user experienc
 * Facilitate interactions through natural language.
 * Orchestrate complex tasks and workflows autonomously.
 
-
 ODC offers built-in tools to help you incorporate these AI functionalities. The platform enables you to use large language models (LLMs) through AI models and AI agents. You can connect these models with your organizational data through integrated search services, a process known as retrieval-augmented generation (RAG). You can also configure AI-driven behaviors and manage the overall process. This lets you add intelligence to your app logic and user interfaces.
 
 ## Choosing your AI tool
@@ -50,7 +49,7 @@ OutSystems recommends using native support for AI models and agents whenever the
 
 AI models are available in the ODC Portal. They are best suited for integrating AI capabilities into **pre-defined processes** or app logic. In this approach, your app orchestrates the steps, fetches any necessary data, which can be real-time data, and passes it as context to the model. The model then performs tasks like analysis or generation based on the provided context, supporting a relatively **limited or pre-defined set of requests**.
 
-Use cases suited for this approach include: 
+Use cases suited for this approach include:
 
 * Analyzing historical sales data or survey results **provided as context** to identify trends and insights.
 * Generating articles, brainstorming ideas, or creating marketing content based on **provided context**.  
@@ -58,7 +57,7 @@ Use cases suited for this approach include:
 * Summarizing key points from real-time meeting transcripts **provided by the app**.  
 * Answering user queries based on product documentation **and** current user status information **fetched by the app and passed as context**.
 
-### AI agents 
+### AI agents
 
 AI agents handle more complex and autonomous tasks directly within your low-code environment. They can independently manage multi-step workflows, interact with various systems and data sources, and make decisions based on their defined objectives and the information they gather. You can extend their capabilities by connecting them to external tools (custom MCP servers or prebuilt connectors). See [External tools](tools/intro.md) for an overview and, if needed, the implementation details for [MCP servers](tools/mcp-connectors.md).
 

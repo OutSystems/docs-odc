@@ -50,7 +50,7 @@ The following example shows a scenario in which you want to add or update the na
 
 ## Properties
 
-|Name|Description |Mandatory| Observations
+|Name|Description |Mandatory| Observations |
 |---|---|---|---|
 |Name|Identifies an element in the scope where it is defined, like a screen, action, or app/library.| Yes| |
 |Description| Text that documents the element.  |  | Useful for documentation purposes. The maximum size of this property is 2000 characters. |

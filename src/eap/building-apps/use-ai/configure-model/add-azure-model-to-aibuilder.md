@@ -35,7 +35,7 @@ Before you add an Azure OpenAI model to the AI Agent Builder app, ensure that yo
 * Configure and deploy [Azure OpenAI service](configure-azure-model.md).
 
 * Obtain the following from the Azure portal:
-    
+
     * OpenAI registration keys.
 
     * Endpoint URL
@@ -50,13 +50,13 @@ To add the Azure OpenAI model, follow these steps:
 
 1. Log into the AI Agent Builder app.
 
-<div class="info" markdown="1">
+    <div class="info" markdown="1">
 
-The first time you log into the AI Agent Builder, OutSystems recommends to add a model. You can follow the instructions provided in the pop-up message. To add additional models, follow these steps:
+    The first time you log into the AI Agent Builder, OutSystems recommends to add a model. You can follow the instructions provided in the pop-up message. To add additional models, follow these steps:
 
-</div>
+    </div>
 
-2. Go to the **Configurations** tab. A list of all your configured AI models and data sources display.
+1. Go to the **Configurations** tab. A list of all your configured AI models and data sources display.
 
 1. Click **Add AI model** and choose the provider **Azure Open AI**.
 
@@ -70,34 +70,34 @@ The first time you log into the AI Agent Builder, OutSystems recommends to add a
 
 1. Click **Add endpoint** The Add Endpoint pop-up page displays.
 
-1. Enter the following details for the endpoint you want to add. 
+1. Enter the following details for the endpoint you want to add.
 
-   * **Name**- An identifiable name for the AI model.
+    * **Name**- An identifiable name for the AI model.
 
-   * **Endpoint URL**- Azure OpenAI service endpoint URL retrieved from the Azure portal.
+    * **Endpoint URL**- Azure OpenAI service endpoint URL retrieved from the Azure portal.
 
-   * **Deployment name**-  Azure OpenAI service deployment name retrieved from the Azure portal.
+    * **Deployment name**-  Azure OpenAI service deployment name retrieved from the Azure portal.
 
     * **API key**-  Azure OpenAI API key retrieved from the Azure portal.
 
-   * **Status**- (Optional) The current state of the AI model. 
+    * **Status**- (Optional) The current state of the AI model.
 
-   * **Priority**- The priority level of the endpoint determines the order in which the agent utilizes them. A priority 1 endpoint is used first. If it experiences an outage, the priority 2 endpoint takes over to prevent downtime. This process continues with priority 3, and so on, ensuring continuous operation.
-    The first endpoint you add is always assigned the first **priority**.
+    * **Priority**- The priority level of the endpoint determines the order in which the agent utilizes them. A priority 1 endpoint is used first. If it experiences an outage, the priority 2 endpoint takes over to prevent downtime. This process continues with priority 3, and so on, ensuring continuous operation.
+        The first endpoint you add is always assigned the first **priority**.
 
 1. Click **Add endpoint** to add the endpoint.
 
 1. (Optional) To add more endpoint, click **Add endpoint** in the Model details page and enter the details for the endpoint..
 
-<div class="info" markdown="1">
+    <div class="info" markdown="1">
 
- Ensure that all endpoints you add belong to the same model and version.
+     Ensure that all endpoints you add belong to the same model and version.
 
- </div>
+     </div>
 
-Once you have added all the endpoints, a list of all endpoints is displayed under **Model endpoints** in the Model details page. To adjust the priority level order, click the edit icon, navigate to the **Priority** dropdown, and choose the priority level.
+    Once you have added all the endpoints, a list of all endpoints is displayed under **Model endpoints** in the Model details page. To adjust the priority level order, click the edit icon, navigate to the **Priority** dropdown, and choose the priority level.
 
-9. Click **Add AI model**.
+1. Click **Add AI model**.
 
 Once you've added the model, you are redirected to the **Configurations** page. A confirmation message is displayed confirming that the AI model has been added successfully. You can also view the newly added model on the **Configurations** page. If adding the model fails, an error message is displayed.
 

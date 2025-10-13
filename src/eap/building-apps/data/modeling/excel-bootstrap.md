@@ -24,7 +24,7 @@ You can import data from an Excel file to load data to an entity. This is useful
 
 <div class="info" markdown="1">
 
-If you're using Google Sheets, download your document as an .xlsx file (File > Download > Microsoft Excel), and then bootstrap the data. 
+If you're using Google Sheets, download your document as an .xlsx file (File > Download > Microsoft Excel), and then bootstrap the data.
 </div>
 
 ## Validate the Excel file
@@ -34,7 +34,7 @@ If you're using Google Sheets, download your document as an .xlsx file (File > D
 1. Close the Excel file. The bootstrap can't read the Excel file if it's open.
 
 <div class="info" markdown="1">
-    
+
 If you have blank cells in your spreadsheet and are getting import errors because it cannot interpret blank cells as numeric, either integer or decimal. You have two choices:
 
 * Change the spreadsheet. Change blank cells defined as numeric fields to 0.
@@ -47,7 +47,7 @@ If you have blank cells in your spreadsheet and are getting import errors becaus
 
 To bootstrap data from the first sheet of an Excel file to an existing entity, follow these steps:
 
-1. In ODC Studio, go to the Data tab, right-click on the entity and in the Advanced menu, choose 'Create Action to Bootstrap data from an Excel...'. 
+1. In ODC Studio, go to the Data tab, right-click on the entity and in the Advanced menu, choose 'Create Action to Bootstrap data from an Excel...'.
 
 1. Select the Excel file, check the mappings to see if they're correct and click on **Proceed**.
     ODC Studio creates:

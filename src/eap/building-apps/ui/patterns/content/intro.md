@@ -14,4 +14,3 @@ outsystems-tools:
   - none
 ---
 # Content
-

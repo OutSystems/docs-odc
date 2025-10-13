@@ -35,13 +35,13 @@ The Notification UI Pattern is a contextual short message that provides importan
 
     ![Dragging the Notification widget into the Main Content area of the application screen](images/notification-dragwidget-ss.png "Dragging Notification Widget to Screen")
 
- 1. Add the relevant content to the Content placeholder. 
+1. Add the relevant content to the Content placeholder.
 
-    In this example, an icon and some text are added. 
+    In this example, an icon and some text are added.
 
     ![Example of adding an icon and text to the Notification widget's content placeholder](images/notification-content-ss.png "Notification Content Example")
 
-1. From the Toolbox, drag 2 **Button** widgets into the Main Content area of your application's screen to **Open** and **Close** the Notification. 
+1. From the Toolbox, drag 2 **Button** widgets into the Main Content area of your application's screen to **Open** and **Close** the Notification.
 
     ![Two Button widgets added to the Main Content area for opening and closing the Notification](images/notification-buttons-ss.png "Notification Open and Close Buttons")
 

@@ -37,7 +37,7 @@ You can use the Progress Bar to display percentage values by incrementing values
 
     ![Screenshot illustrating how to drag the Progress Bar widget into the Main Content area](images/progressbar-dragwidget-ss.png "Drag Progress Bar Widget")
 
-1. Add the text you want to appear as the Progress Bar title. 
+1. Add the text you want to appear as the Progress Bar title.
 
     In this example, we add `Ongoing tasks`.
 

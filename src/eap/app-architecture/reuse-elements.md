@@ -77,7 +77,7 @@ In addition to the element types detailed in the table, other components can als
 
 While you can't directly make a Server Action public within an app, you can expose it for reuse by right-clicking it and selecting **Expose as Service Action**. This action creates a Service Action that invokes the original Server Action and inherits its properties, effectively making it public.
 
-## Validating consumers and producers in the ODC Portal 
+## Validating consumers and producers in the ODC Portal
 
 In the ODC Portal, the asset detail page lists producers and consumers. Understanding your asset's consumers is crucial for communicating changes, such as a bug fix in a Service Action, to the development team. Similarly, it's important to know the producers from which you reuse elements for your asset's functionality.
 
@@ -88,4 +88,3 @@ The platform determines the versions (or revisions) being used in an asset based
 * **For weak dependencies**: The revision used is the one currently deployed in the same stage where the consumer app is running.
 
 * **For strong dependencies**: The platform uses the revision that is directly referenced by the asset itself (direct dependencies). If not directly referenced, it uses the revision in use by the closest producer in the dependency tree.
-

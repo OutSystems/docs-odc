@@ -22,7 +22,6 @@ coverage-type:
 
 You can use the Wizard UI Pattern to split large complex tasks and processes into smaller manageable steps. A wizard presents a series of steps or conditions that the user needs to complete in order to accomplish a goal. Additionally, wizards usually include explicit button navigation to move a step forward or backward. Some wizard examples include software installation wizards and sign-up screens.
 
-
 ![Screenshot of a Wizard UI Pattern example with navigation buttons](images/wizard-2-ss.png "Wizard UI Pattern Example")
 
 **How to use the Wizard UI Pattern**
@@ -47,7 +46,7 @@ The following example demonstrates how you can create a four step Wizard with na
 
     By default, the Wizard widget contains three Wizard Item widgets. Each Wizard Item represents a step. You can add or delete Wizard Items as required.
 
-1. From the Toolbox, drag another Wizard Item into your Wizard Pattern. 
+1. From the Toolbox, drag another Wizard Item into your Wizard Pattern.
 
     ![Screenshot depicting the addition of a Wizard Item to an existing Wizard Pattern](images/wizard-4-ss.png "Adding Wizard Item to Wizard Pattern")
 

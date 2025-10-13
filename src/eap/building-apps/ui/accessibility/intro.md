@@ -35,11 +35,11 @@ Here are some guidelines to consider for meeting your accessibility needs:
 
 1. Ensure that your app meets the basic accessibility requirements. For more information, refer to [Enable the built-in accessibility features](#enable).
 
-2. Early in development, test your app against the accessibility success criteria for the level you are targeting and fix the issues. For more information, refer to [Testing and fixing accessibility issues](testing-fixing-accessibility-issues.md).
+1. Early in development, test your app against the accessibility success criteria for the level you are targeting and fix the issues. For more information, refer to [Testing and fixing accessibility issues](testing-fixing-accessibility-issues.md).
 
-3. Pay close attention to complex interactions and dynamic content. Fix the critical issues immediately. Use ARIA to  provide more information to the assistive technology tools and improve the structure of your pages. For more information, refer to [ARIA roles and attributes](aria-roles-and-attributes.md).
+1. Pay close attention to complex interactions and dynamic content. Fix the critical issues immediately. Use ARIA to  provide more information to the assistive technology tools and improve the structure of your pages. For more information, refer to [ARIA roles and attributes](aria-roles-and-attributes.md).
 
-4. See [UI Patterns accessibility reference](ui-patterns-accessibility-reference.md) for special notes about patterns you may be using on a page.
+1. See [UI Patterns accessibility reference](ui-patterns-accessibility-reference.md) for special notes about patterns you may be using on a page.
 
 ## Enable the built-in accessibility features { #enable }
 
@@ -127,7 +127,7 @@ To increase the text spacing, do the following:
 1. In your app screen, select the page element that triggers the increased text spacing. For example, a button.
 
 1. To create a new client action, in the **Events** section of the **Properties**, go to the **OnClick** event and select **(new client action)**.
-    
+
     ![Screenshot of creating a new client action for text spacing in OutSystems ODC Studio](images/new-client-action-odcs.png "Creating a new client action")
 
 1. Set the action name as **TextSpacing**, for example.
@@ -149,14 +149,14 @@ To bind labels with the forms fields, do the following steps:
 1. Select the **Label** widget in the preview (1)
 1. On the **Properties**, go to the **Input Widget** drop-down, and select the widget to associate the label (2).
 1. To see a demo of a form, create a screen based on a **Detail** Screen Template.
-    
+
     ![Screenshot of associating labels to form fields in OutSystems ODC Studio for better accessibility](images/form-labels-odcs.png "Associating labels to form fields")
 
  On binding labels with form fields, you can test reading the input field captions using a screen reader.
 
 <div class="info" markdown="1">
 
-Use the `aria-labelledby` attribute for more control when setting up relationships between objects and their text labels. For more information, refer to [Examples of ARIA](aria-roles-and-attributes.md#examples-of-aria). 
+Use the `aria-labelledby` attribute for more control when setting up relationships between objects and their text labels. For more information, refer to [Examples of ARIA](aria-roles-and-attributes.md#examples-of-aria).
 
 </div>
 
@@ -183,14 +183,14 @@ To explicitly select an element on a screen, do the following steps:
 1. On the **Logic** tab, click on **OutSystemsUI** and open the **Accessibility** Client Actions folder.
 1. Select the **SetFocus** action and drag it into the logic, as shown in the figure below.
 1. On the **Properties**, go to **WidgetId** and select the Id of the widget you want to highlight.
-    
+
     ![Screenshot of adding the SetFocus action into an OnReady action in OutSystems ODC Studio](images/element-in-focus-setfocus-odcs.png "Adding the setfocus action into an Onready action")
 
 After following these steps and publishing, you can test the highlighting of the element.
 
 ### Skip to specific content on a page
 
-By default, text readers skip repetitive elements, such as headers and menus, and jump to the main content of a page for reading it. You might want text readers to skip to a specific page section other than the main content. 
+By default, text readers skip repetitive elements, such as headers and menus, and jump to the main content of a page for reading it. You might want text readers to skip to a specific page section other than the main content.
 
 To change the default main container, do the following steps:
 
@@ -198,7 +198,7 @@ To change the default main container, do the following steps:
 1. Select and expand the layout you're using.
 1. Double-click the **SkipToContentOnClick** action.
 1. Select the **SkipToContent** node in the flow and edit the **TargetId** in the action properties.
-    
+
     ![Screenshot showing how to set the Skip To Content target ID in OutSystems ODC Studio](images/skip-to-content-target-id-odcs.png "Setting the Skip To Content target ID")
 
 <div class="info" markdown="1">

@@ -47,7 +47,7 @@ In this example, we create a button that opens and closes the Bottom Sheet widge
 
     ![Screenshot of the Bottom Sheet widget with TopBar and Content placeholders in ODC Studio](images/bottomsheet-placeholder-ss.png "Bottom Sheet Widget Placeholder")
 
-1. Add the relevant content to the TopBar and Content placeholders. 
+1. Add the relevant content to the TopBar and Content placeholders.
 
     ![Screenshot showing the addition of text, icon, and a close button to the Bottom Sheet widget placeholders](images/bottomsheet-content-ss.png "Adding Content to Bottom Sheet widget")
 
@@ -81,7 +81,7 @@ In this example, we create a button that opens and closes the Bottom Sheet widge
 
     ![Screenshot of the Properties tab showing the customization options for the Bottom Sheet pattern](images/bottomsheet-properties-ss.png "Customizing Bottom Sheet widget Properties")
 
-After following these steps and publishing the app, you can test the pattern in your app. 
+After following these steps and publishing the app, you can test the pattern in your app.
 
 ![Image of the Bottom Sheet pattern as it appears in the published mobile app](images/bottomsheet-resultapp.png "Bottom Sheet in Published App")
 

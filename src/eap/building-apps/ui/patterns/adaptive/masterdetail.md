@@ -101,7 +101,7 @@ You can use the Master Detail Pattern to display a master list of items and thei
 
     ![Dragging Username and Email attributes into the RightContent placeholder to display user details](images/masterdetail-12-ss.png "Dragging Attributes for Display")
 
-After following these steps and publishing the app, you can test the pattern in your app. 
+After following these steps and publishing the app, you can test the pattern in your app.
 
 ## Properties
 

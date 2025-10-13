@@ -19,7 +19,7 @@ coverage-type:
 
 # Dropdown Search
 
-The Dropdown Search UI Pattern offers a choice of available options that the user can search. 
+The Dropdown Search UI Pattern offers a choice of available options that the user can search.
 
 **How to use the Dropdown Search UI Pattern**
 
@@ -41,7 +41,7 @@ In this example, we create a dropdown search for a list of employees. When the u
 
 1. To add a database entity, click the screen, and from the **Select Source** pop-up, select the relevant database entity and click **Select**.
 
-    In this example, the **Sample_Employee** entity is selected. 
+    In this example, the **Sample_Employee** entity is selected.
 
     ![Screenshot of the Select Source pop-up for choosing a database entity for the Dropdown Search UI Pattern](images/dropdownsearch-source-ss.png "Selecting Database Entity for Dropdown Search")
 
@@ -57,7 +57,7 @@ In this example, we create a dropdown search for a list of employees. When the u
 
     ![Screenshot of the Properties tab with the OnChanged event Handler dropdown to create a new client action for Dropdown Search](images/dropdownsearch-handler-ss.png "Creating a New Client Action for Dropdown Search")
 
-1. Add the relevant logic to the client action. 
+1. Add the relevant logic to the client action.
 
     For this example:
     1. Add a **Message** to the client action.
@@ -65,8 +65,8 @@ In this example, we create a dropdown search for a list of employees. When the u
 
         `SelectedItem.Text + "(Employee ID: " + SelectedItem.Value + ")`
 
-    1. Click **Close**. 
-    
+    1. Click **Close**.
+
         This displays the selected employee's name and their ID.
 
         ![Screenshot showing the addition of a message to the client action for displaying the selected employee's name and ID in Dropdown Search](images/dropdownsearch-message-ss.png "Adding Message Logic to Dropdown Search")

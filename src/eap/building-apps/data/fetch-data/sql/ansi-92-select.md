@@ -157,6 +157,7 @@ The `SELECT` list may also contain one or more [window functions](ansi-92-operat
 
 * Attributes with the same name but from different entities/subqueries in the same `SELECT` list
   must be explicitly aliased.
+
     ```sql
     -- Returns error: Attribute 'name' is ambiguous
     SELECT {this}.[name], {other}.[name] FROM {this}, {other}
@@ -324,7 +325,7 @@ duplicates, use the `UNION ALL` syntax.
 
 #### Known issues with UNION
 
-- `UNION` is not supported in mashup queries.
+* `UNION` is not supported in mashup queries.
 
 ### ORDER BY clause
 
@@ -370,9 +371,9 @@ Note that `ORDER BY` is not supported in subqueries. A given `SELECT` statement 
 
 #### Known issues with ORDER BY
 
-- Ordering by a constant or dynamic parameter-based expression in the [SELECT List](#select-list) is not supported.
-- Ordering by character strings can be inconsistent depending on the collation of the attributes.
-- `NULLS FIRST` and `NULLS LAST` have no effect when the sorting is pushed down to Microsoft SQL Server and MySQL.
+* Ordering by a constant or dynamic parameter-based expression in the [SELECT List](#select-list) is not supported.
+* Ordering by character strings can be inconsistent depending on the collation of the attributes.
+* `NULLS FIRST` and `NULLS LAST` have no effect when the sorting is pushed down to Microsoft SQL Server and MySQL.
 
 ### LIMIT clause { #limit }
 

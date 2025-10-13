@@ -41,7 +41,7 @@ You can use the Chat Message UI Pattern to display conversational posts in notif
 
 1. Add the relevant content to the placeholders.
 
-    In this example, we add the user avatar to the Image placeholder and text to the Content placeholder. 
+    In this example, we add the user avatar to the Image placeholder and text to the Content placeholder.
 
     ![Screenshot of adding user avatar and text to the Chat Message placeholders](images/chatmessage-4-ss.png "Customizing Chat Message Content")
 

@@ -20,7 +20,7 @@ topic:
 
 # Expressions
 
-An expression consists of operands and operators, or just one operand. For example, **n + 1** is an expression with two operands, **n** and **1**, joined by the addition operator +. 
+An expression consists of operands and operators, or just one operand. For example, **n + 1** is an expression with two operands, **n** and **1**, joined by the addition operator +.
 
 Here is how you can edit expressions and show the expression values.
 
@@ -36,14 +36,13 @@ Here is how you can edit expressions and show the expression values.
 
     ![Screenshot of the expression widget displaying a result](images/expression-widget-ss.png "Expression Widget")
 
-
 ## Notes
 
 Here are some tips for using expressions.
 
-* You can use  many functions to manipulate the type Text, however, you can only use the  **+** (addition) operand with type Text. 
+* You can use  many functions to manipulate the type Text, however, you can only use the  **+** (addition) operand with type Text.
 
-    Example: `"Hello, " + UserName`, where the value of **UserName** is **Billy**, returns `"Hello, Billy!"`. 
+    Example: `"Hello, " + UserName`, where the value of **UserName** is **Billy**, returns `"Hello, Billy!"`.
 
 * You can use the [built-in functions](../../reference/built-in-functions/dateandtime.md) or use the [libraries](../../reference/libraries/datetime.md) to perform various operations on the types **Date**, **Time**, and **DateTime**.
 
@@ -51,6 +50,6 @@ Here are some tips for using expressions.
 
 * You can only use the operators **=** and **&lt;&gt;** (equality operators) for the type `Record`.
 
-* For the type **Identifier**, use the [built-in functions](../../reference/built-in-functions/data-conversion.md). 
+* For the type **Identifier**, use the [built-in functions](../../reference/built-in-functions/data-conversion.md).
 
 * The types **BinaryData** and **Record List** don't support calculations.

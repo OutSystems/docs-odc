@@ -41,7 +41,7 @@ In this example, we create a dropdown tags search for a list of employees and a 
 
 1. To add a database entity, click the screen, and from the **Select Source** pop-up, select the relevant database entity and click **Select**.
 
-    In this example, the **Sample_Employee** entity is selected. 
+    In this example, the **Sample_Employee** entity is selected.
 
     ![Select Source pop-up with Sample_Employee entity selected for Dropdown Tags data source](images/dropdowntags-source-ss.png "Selecting Database Entity")
 
@@ -57,17 +57,17 @@ In this example, we create a dropdown tags search for a list of employees and a 
 
     ![Dropdown Tags Properties tab with Handler dropdown showing New Client Action selection](images/dropdowntags-handler-ss.png "Creating New Client Action")
 
-1. Add the relevant logic to the client action. 
+1. Add the relevant logic to the client action.
 
     In this example:
-    
+
     1. Add a Message to the client action.
     1. Add the following logic to the expression editor:
 
         `CurrentList.Length`
 
-    1. Click **Close**. 
-    
+    1. Click **Close**.
+
         This displays the number of selected items selected.
 
         ![Adding a message and logic to the client action in Dropdown Tags configuration](images/dropdowntags-message-ss.png "Adding Logic to Client Action")

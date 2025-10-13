@@ -28,9 +28,9 @@ topic:
 
 When you create a new app, the app already has some default UI Flows in **Interface** > **UI Flows**:
 
-* **Common**. Contains UI and logic the app reuses in Screens and Blocks. For example, menus, info about the signed-in user, the sign in logic. 
+* **Common**. Contains UI and logic the app reuses in Screens and Blocks. For example, menus, info about the signed-in user, the sign in logic.
 * **Layouts**. Contains Blocks that define the layout of the Screens.
-* **MainFlow**. The default UI Flow where you can start adding Screens in your app. This UI Flow is empty in a new app. 
+* **MainFlow**. The default UI Flow where you can start adding Screens in your app. This UI Flow is empty in a new app.
 
 <div class="warning" markdown="1">
 
@@ -43,9 +43,9 @@ Be careful when editing the default content of **Common** and **Layouts** UI Flo
 To add a new UI Flow, do the following in ODC Studio:
 
 1. Go to the **Interface** tab and right-click on the **UI FLows** folder.
-   
+
 1. From the help menu, select **Add new UI Flow**.
-    
+
     ![Help menu in ODC Studio showing the option to Add new UI Flow](images/ui-flow-add-new-odcs.png "Adding a New UI Flow")
 
 ## Creating UI Flow without styles
@@ -54,11 +54,11 @@ Follow these steps in ODC Studio to create a UI Flow without CSS styles:
 
 1. Create your Theme without styles.
 
-2. [Add a new UI Flow](#adding-a-new-ui-flow) to your app.
+1. [Add a new UI Flow](#adding-a-new-ui-flow) to your app.
 
-3. Set the UI Flow to use your Theme without styles. See [Setting the Theme of UI Flow](#setting-the-theme-of-ui-flow) for instructions.
+1. Set the UI Flow to use your Theme without styles. See [Setting the Theme of UI Flow](#setting-the-theme-of-ui-flow) for instructions.
 
-4. Optionally, add a Screen under the UI Flow and verify if has no styles.
+1. Optionally, add a Screen under the UI Flow and verify if has no styles.
 
     ![Example of a Screen with a blank Theme in ODC Studio](images/screen-blank-theme-odcs.png "UI Flow with Blank Theme")
 
@@ -68,19 +68,19 @@ All elements you add to a UI Flow use the default Theme of the app. You can chan
 
 1. Go to the **Interface** tab.
 
-2. Select the UI Flow for which you want to change the Theme.
+1. Select the UI Flow for which you want to change the Theme.
 
     <div class="info" markdown="1">
 
-    All apps with UI from the default app templates use **MainFlow** as the default UI Flow for Screens. This is a convention more than a requirement. 
+    All apps with UI from the default app templates use **MainFlow** as the default UI Flow for Screens. This is a convention more than a requirement.
 
     </div>
 
-3. In the UI Flow properties, select a Theme from the **Theme** list.
+1. In the UI Flow properties, select a Theme from the **Theme** list.
 
-    ![UI Flow properties in ODC Studio with Theme list expanded](images/ui-flow-default-theme-odcs.png "Setting the Theme of a UI Flow") 
+    ![UI Flow properties in ODC Studio with Theme list expanded](images/ui-flow-default-theme-odcs.png "Setting the Theme of a UI Flow")
 
-4. Optionally, create a Screen under the UI Flow to verify the Screen uses the UI Flow's Theme. 
+1. Optionally, create a Screen under the UI Flow to verify the Screen uses the UI Flow's Theme.
 
 ## Setting the default Screen
 
@@ -88,10 +88,10 @@ All elements you add to a UI Flow use the default Theme of the app. You can chan
 
 ![UI Flows in ODC Studio highlighting the Default Screen with a house icon](images/ui-flows-home-screen-odcs.png "Default Screen in UI Flows")
 
-To set a Screen as default, do the following in ODC Studio: 
+To set a Screen as default, do the following in ODC Studio:
 
 1. Navigate to the Screen you want to set as default.
-2. Right-click on the Screen and in the help menu select **Mark as Default Screen**.
+1. Right-click on the Screen and in the help menu select **Mark as Default Screen**.
 
 ## UI Flow editor
 

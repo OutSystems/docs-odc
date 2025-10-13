@@ -73,10 +73,10 @@ Create a local entity to track the last synchronization moment per `Context`. Th
 
 * Define the sync moments of the application and use contexts. A context defines the type of data to synchronize; **it can be all, a single entity, or a set of entities**. Define a context as an instant or moment in the app.
 
-    1. **Context = "Splash"** — Get information to display on the homepage, not detailed.
-    2. **Context = "Login"** — Get detailed information related to the user or homepage items.
-    3. **Context = "SendAppointments"** — Send locally stored appointments to the server.
-    4. **Context = "Online"** — Trigger a complete sync for new and updated data.
+  1. **Context = "Splash"** — Get information to display on the homepage, not detailed.
+  1. **Context = "Login"** — Get detailed information related to the user or homepage items.
+  1. **Context = "SendAppointments"** — Send locally stored appointments to the server.
+  1. **Context = "Online"** — Trigger a complete sync for new and updated data.
 
 * Use the context parameter of the OnSync action — Manage different synchronization moments by passing the context as a parameter.
 * Static entity to create contexts — Create a static entity to define all contexts clearly and make them easier to maintain.

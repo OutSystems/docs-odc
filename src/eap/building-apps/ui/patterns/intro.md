@@ -19,4 +19,3 @@ topic:
 ---
 
 # Patterns
-

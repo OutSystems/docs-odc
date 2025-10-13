@@ -69,8 +69,6 @@ You can use the Pagination UI pattern to help users find a specific item on long
 
     ![Screenshot of setting Start Index and Max. Records properties in the aggregate for Pagination](images/pagination-14-ss.png "Setting Aggregate Properties for Pagination Widget")
 
-
-
 After following these steps and publishing the app, you can test the pattern in your app.
 
 ## Properties

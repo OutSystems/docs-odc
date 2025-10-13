@@ -40,7 +40,7 @@ Following the procedures to Install and Update a Forge asset.
 If you are installing an Agentic app, you must have the AI Trial Model used in the app added to your tenant. To do this:
 
 1. Go to AI Models on ODC Portal.
-1. Click on **Add AI Model**. 
+1. Click on **Add AI Model**.
 1. Add the available trial models on the Trial Models tab.
 
 </div>

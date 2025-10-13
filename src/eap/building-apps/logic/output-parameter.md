@@ -22,7 +22,6 @@ topic:
 
 # Output Parameter
 
-
 An Output Parameter allows you to return computed values from an action.
 
 In the following example, the `GetWeatherData` Client Action has two Input Parameters (`City` and `Country`) and one Output Parameter (`WeatherInfo`):
@@ -30,6 +29,7 @@ In the following example, the `GetWeatherData` Client Action has two Input Param
 ![Screenshot of a Client Action with Input Parameters 'City' and 'Country' and an Output Parameter 'WeatherInfo'](images/input-parameter-client-action-example-ss.png "Client Action Input Parameters Example")
 
 ## How to use
+
 To return a value from inside an action flow, you can use an Assign element to set the Output Parameter to the value you wish to return.
 
 For example, consider the `GetWeatherData` Client Action presented previously. You can use an Assign to set the value of the `WeatherInfo` Output Parameter to the `Data` Output Parameter value returned by the `API_GetWeatherData` Server Action:
@@ -47,6 +47,7 @@ In the example presented above, the expression becomes the following:
 ## Output Parameters availability
 
 The following elements displayed in the element tree can have Output Parameters:
+
 * Server Actions and Client Actions
 * Processes, Process Activities, and Wait elements
 * Exposed/Consumed REST Methods
@@ -54,4 +55,3 @@ The following elements displayed in the element tree can have Output Parameters:
 Additionally, JavaScript elements (available on Client Actions) also have Output Parameters.
 
 External integrations like consumed REST APIs have their logic defined in an external system. In this case, OutSystems fills the Output Parameter values from the values returned by the external system. You can then use the Output Parameter values in your business logic.
-

@@ -39,7 +39,7 @@ You can use the List Item Content UI Pattern to quickly organize critical conten
 
 1. Add the relevant content to the placeholders.
 
-    In this example, we add some texts and icons. 
+    In this example, we add some texts and icons.
 
     ![Screenshot showing the addition of texts and icons to the List Item Content placeholders](images/listitemcontent-4-ss.png "Adding Content to List Item Content Widget")
 

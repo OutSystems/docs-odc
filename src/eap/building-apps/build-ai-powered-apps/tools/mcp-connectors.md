@@ -42,7 +42,6 @@ In the MCP domain, a capability is a "tool". When you import an MCP tool through
 * MCP tool or tool: the capability exposed by the MCP server.
 * Server action: the OutSystems artifact created from an imported MCP tool.
 
-
 ## Use MCP capabilities
 
 Custom MCP servers let you connect to any system that supports the protocol. At a high level: create a connection in ODC Portal, import selected tools, then reference them in ODC Studio and agent configurations.

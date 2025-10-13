@@ -38,7 +38,7 @@ The following example shows how you can use the Mouse Events UI pattern to displ
     ![Dragging the Mouse Events widget into the Main Content area of an application screen](images/mouseevents-2-ss.png "Dragging Mouse Events Widget to Main Content Area")
 
 1. From the Toolbox, drag the Center Content widget into the Main Content area of your screen.
- 
+
     ![Dragging the Center Content widget into the Main Content area of an application screen](images/mouseevents-3-ss.png "Center Content Widget in Main Content Area")
 
 1. On the **Properties** tab, enter a name in the **Name** property. In this example, we enter `card`.
@@ -51,17 +51,17 @@ The following example shows how you can use the Mouse Events UI pattern to displ
 
     ![Adding local variables named Drag and Distance to the application screen](images/mouseevents-5-ss.png "Adding Local Variables")
 
-1. Add the relevant content to the Center Content widget placeholders. 
+1. Add the relevant content to the Center Content widget placeholders.
 
-   In this example, we add text and 2 expressions to the Center placeholder, and text to the Bottom placeholder. 
+   In this example, we add text and 2 expressions to the Center placeholder, and text to the Bottom placeholder.
 
    ![Adding text and expressions to the Center Content widget placeholders](images/mouseevents-6-ss.png "Content in Center Content Widget")
 
-   Each of the expressions are set to the local variables respectively (**Drag** and **Distance**). 
+   Each of the expressions are set to the local variables respectively (**Drag** and **Distance**).
 
    ![Setting expressions to local variables Drag and Distance in the Center Content widget](images/mouseevents-7-ss.png "Expressions Set to Local Variables")
 
-1. Add a client action by right-clicking your screen name and selecting **Add Client Action**. 
+1. Add a client action by right-clicking your screen name and selecting **Add Client Action**.
 
 1. Enter a name for the client action. In this example, we enter `MouseEventsMove`.
 
@@ -77,7 +77,7 @@ The following example shows how you can use the Mouse Events UI pattern to displ
 
     ![Adding logic to the MouseEventsMove client action](images/mouseevents-10-ss.png "Logic for MouseEventsMove Client Action")
 
-1. Select the Mouse Events widget and set the **WidgetId**, **PreventDefaults**, and the **Handler** properties. 
+1. Select the Mouse Events widget and set the **WidgetId**, **PreventDefaults**, and the **Handler** properties.
 
     In this example, the **WidgetId** is set to **card.Id**, the **PreventDefaults** to **False**, **OfFsetX** to **OffsetX**, and **OffsetY** to **OffsetY**.
 

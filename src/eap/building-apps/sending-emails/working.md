@@ -26,12 +26,12 @@ In ODC Studio, Email is a UI element that lets you design and manage the content
 ## Create a new Email
 
 To create a new Email, go to ODC Studio and follow these steps:
- 
+
 1. Go to **Interface** > **UI Flows** and do one of the following:
 
     * If this is the first email you're adding in an app, right-click any UI Flow and select **Add Email**.
     * If you already have an email in your app, right-click the **Emails** UI Flow and select **Add Email**.
-   
+
     ![Screenshot showing the UI Flow context menu with the 'Add Email' option highlighted.](images/add-email-ui-flow-ss.png "Adding a New Email in ODC Studio")
 
     <div class="info" markdown="1">
@@ -40,10 +40,10 @@ To create a new Email, go to ODC Studio and follow these steps:
 
     </div>
 
-2. Select the Email below  the UI Flow, and enter the following details:
+1. Select the Email below  the UI Flow, and enter the following details:
 
     * In the **Name** field, enter a name to identify this email.
-    * In the **Subject** field, enter `"No subject"` as a temporary subject. 
+    * In the **Subject** field, enter `"No subject"` as a temporary subject.
 
     ![Screenshot of the Email properties panel in ODC Studio with fields for Name, Description, and Subject.](images/email-properties.png "Email Properties Interface")
 
@@ -52,14 +52,14 @@ To create a new Email, go to ODC Studio and follow these steps:
 To add content to your email, follow these steps in ODC Studio:
 
 1. From  **Interface** select **UI Flows** > **your Emails UI Flow**  double-click the Email you want to edit. The Email opens for editing. The widget list on the left displays the available widgets that you can use in Emails.
-    
+
     ![Screenshot of an open Email in edit mode within ODC Studio, showing the widget list.](images/edit-email-open-ss.png "Email Editing Interface")
 
-2. From the widget display, drag the **Text** widget to the Email and enter some text.
+1. From the widget display, drag the **Text** widget to the Email and enter some text.
 
     ![Screenshot demonstrating the process of dragging a Text widget into an Email's content area in ODC Studio.](images/edit-email-add-text.png "Adding Text to an Email")
 
-3. Optionally, you can edit the **Text** widget properties from the **Styles** tab and,modify the text look and feel.
+1. Optionally, you can edit the **Text** widget properties from the **Styles** tab and,modify the text look and feel.
 
 ## Modify content in Emails
 
@@ -97,4 +97,3 @@ When you open this email in the email client, the expression displays "Hello, Jo
 If the content of an email is too big, some email readers clip the content. For example, Gmail displays **[Message clipped] View entire message** for all emails larger than 102KB. This can happen if you're generating content in your emails with a Theme that has a lot of CSS not designed for emails.
 
 To reduce the size of the email content, use a blank Theme or a dedicated email Theme. You can also create UI Flow without styles and then add your emails under this UI Flow.
-

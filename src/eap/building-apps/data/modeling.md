@@ -30,7 +30,7 @@ Designing a good data model helps you build a high-quality app. Some main benefi
 * **A common understanding** - good isolation of business concepts allows for a common understanding between business stakeholders and developers. This streamlines communication of requirements and provides for easy data discovery by the business, for example, to build dashboards and use data lakes.
 * **Enforcing business requirements** - important business requirements can be directly enforced in the data model. For example, there can only be one customer record for a given VAT number.
 * **Accelerate development** - a clear relationship with business concepts makes it easier to build screens and use UI patterns that carry the relevant data to the business.
-* **Lightweight apps** - good isolation of business concepts means developers can build targeted queries against smaller data sets. 
+* **Lightweight apps** - good isolation of business concepts means developers can build targeted queries against smaller data sets.
 * **Data integrity** - creating data relationships instead of duplicating attributes ensures consistent data and simpler application logic.
 
 For more information, refer to [best practices for data management](../data/data-best-practices/intro.md).
@@ -69,13 +69,13 @@ OutSystems can accelerate app development when you use some data types. An examp
 
 ### Physical data model
 
-The physical data model is a schema for how the app data is stored in the database. 
+The physical data model is a schema for how the app data is stored in the database.
 
 It provides a final design for implementation as a relational database. It includes associative tables illustrating the relationships between entities and the primary and foreign keys to maintain those relationships.
 
 OutSystems Developer Cloud (ODC) automatically converts the logical data model you design in ODC Studio to a physical data model for you. It makes this conversion based on data modeling design best practices.
 
-If you update the logical data model, it updates the physical data model. 
+If you update the logical data model, it updates the physical data model.
 
 ## Data modeling in ODC Studio
 
@@ -101,7 +101,7 @@ Entities can contain multiple attributes of different basic data types. The foll
 
 You start to design your app data model by adding entities and attributes. ODC Studio provides a simple interface to add, modify, delete and rename entities and their attributes.
 
-You can add static entities for entities with a predefined or constant set of values. For example, in an order app, you can create order priorities under a `Priorities` static entity: `Low`, `Medium`, and `High`. The app user can't modify data contained in static entities in the app. 
+You can add static entities for entities with a predefined or constant set of values. For example, in an order app, you can create order priorities under a `Priorities` static entity: `Low`, `Medium`, and `High`. The app user can't modify data contained in static entities in the app.
 
 Another way to add entities and attributes is to import them from an Excel file using the **Import Entities from excel** developer accelerator in ODC Studio. In an Excel file, each tab is an entity and each column an attribute. If your data is available in an Excel file, this can speed up the data model design process.
 

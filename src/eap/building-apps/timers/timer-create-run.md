@@ -49,7 +49,7 @@ You can set the schedule of a Timer in one of the following ways:
 
 * **Setting the Schedule for a property of the Timer at design time**: You can define a recurrent schedule, such as daily or weekly, or define the Timer to run each time the app is published, for example to execute configurations or to bootstrap data.
 
-* **Setting the Timer schedule at runtime in ODC Portal**: You might want to customize the Timer schedule when deploying an app to another stage. In this case, the effective Timer schedule is set in ODC Portal, which uses the default settings in every stage unless specifically modified. 
+* **Setting the Timer schedule at runtime in ODC Portal**: You might want to customize the Timer schedule when deploying an app to another stage. In this case, the effective Timer schedule is set in ODC Portal, which uses the default settings in every stage unless specifically modified.
 
 When you define a schedule for your Timer, the Timer runs at the predefined time.
 
@@ -79,7 +79,7 @@ The **Wake&lt;TimerName&gt;** action doesn't receive any input parameters and do
 To use the **Wake&lt;TimerName&gt;** built-in action in your logic:
 
 1. From  the **Events** tab, expand the Timer element.
-   
+
 1. Drag the **Wake&lt;TimerName&gt;** action and use it in your logic.
 
 ### Run a Timer in the ODC Portal
@@ -93,4 +93,3 @@ To force the execution of a Timer in the ODC Portal:
 1. Click on the Timer you want to run. From the right side of your screen, the timer detail screen displays.
 
 1. From the Schedule section, select when you want the timer to run and click **Apply**. The timer runs when scheduled.  
-

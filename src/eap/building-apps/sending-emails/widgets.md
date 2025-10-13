@@ -43,7 +43,7 @@ You can use the following widgets in Emails.
 | List        | Shows records as items in a list.                   | To quickly create a list in a Mobile App, drag an Entity to Email.                                                                |
 | Table       | Shows records in columns and rows.                  | To quickly create a table in a Web App, drag an Entity to Email.                                                              |
 
-<div class="info" markdown="1"> 
+<div class="info" markdown="1">
 
 (*) If your app is using a [custom domain](../../manage-platform-app-lifecycle/custom-domains.md) and you want to link to a screen in your app, you must link to the URL of the screen. For example, to link to screen `Screen1` in `App1` using custom domain `example.com`, you set the **OnClick** property to **RedirectToURL** with the expression `"https://example.com/App1/Screen1"`. You can find guidance on how to build an expression [here](../../building-apps/logic/expressions.md).
 

@@ -21,20 +21,19 @@ topic:
 
 # Create a Many-to-Many Relationship
 
-A many-to-many relationship happens when one entity has a one-to-many relationship with another entity, and vice-versa. For example, an `Author` can write several `Books`, and a `Book` can be written by several` Authors`. This kind of relationship is also known as **N to M** relationship.
+A many-to-many relationship happens when one entity has a one-to-many relationship with another entity, and vice-versa. For example, an `Author` can write several `Books`, and a `Book` can be written by several`Authors`. This kind of relationship is also known as **N to M** relationship.
 
 Resolve this kind of relationships by adding a third entity, called **junction entity**. It must have at least two foreign keys, one to each entity in the relationship. Other attributes can also be added if needed (see the example).
 
 To create a many-to-many relationship, follow these steps:
-    
+
 1. [Create a relationship entity](../entity-create.md).
 1. Add an attribute and set the data type to the identifier of the first entity.
 1. Add another attribute and set the data type to the identifier of the second entity.
 
-Check here our [online training videos ](https://learn.outsystems.com/training/journeys/modeling-data-relationships-642/many-to-many-relationship/odc/447) on this topic:
+Check here our [online training videos](https://learn.outsystems.com/training/journeys/modeling-data-relationships-642/many-to-many-relationship/odc/447) on this topic:
 
 <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/874762411?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Many-to-Many Relationship [en-US / 11]"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-
 
 ## Example
 

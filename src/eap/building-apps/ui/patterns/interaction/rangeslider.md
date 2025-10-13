@@ -45,8 +45,8 @@ In this example, we create a Range Slider that allows the user select the number
 
     ![Dragging the Range Slider widget into the Main Content area of an application screen](images/rangeslider-dragwidget-ss.png "Dragging Range Slider Widget")
 
-1. On the **Properties** tab, enter the mandatory minimum, maximum, and starting values. 
-    
+1. On the **Properties** tab, enter the mandatory minimum, maximum, and starting values.
+
     In this example, we add static values.
 
     ![Entering mandatory minimum, maximum, and starting values for the Range Slider in the Properties tab](images/rangeslider-prop-vals-ss.png "Adding Mandatory Values to Range Slider")
@@ -77,7 +77,7 @@ In this example, we create a Range Slider that allows the user select the number
 
     ![Setting the Assign action variables and values in the client action for the Range Slider](images/rangeslider-assign-ss.png "Setting Assign Variables and Values")
 
-1.  You can configure the Range Slider by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties, for example, the size. For more configurations, expand the **OptionalConfigs** property.
+1. You can configure the Range Slider by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties, for example, the size. For more configurations, expand the **OptionalConfigs** property.
 
     ![Configuring optional properties of the Range Slider on the Properties tab](images/rangeslider-properties-ss.png "Configuring Range Slider Properties")
 
@@ -98,4 +98,3 @@ After following these steps and publishing the app, you can test the pattern in 
 | OptionalConfigs.ShowTickMarks (Boolean): Optional     | Set to True to display tick marks below the slider. Default value is False. To generate the tick marks, you must set the TickMarksInterval to True.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | OptionalConfigs.TickMarksInterval (Integer): Optional | Range interval after which a tick mark is displayed (when ShowTickMarks is set to True). For example, if TickMarksInterval = 5, a tick mark is shown for each 5 steps. The value cannot be less than 0 (library restraint).                                                                                                                                                                                                                                                                                                                                                                                                             |
 | OptionalConfigs.IsDisabled (Boolean): Optional        | Set as True to disable the Range Slider. Default value is False.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-

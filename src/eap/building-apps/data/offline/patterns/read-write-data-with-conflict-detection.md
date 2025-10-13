@@ -37,21 +37,21 @@ Here’s an overview of the Read/Write Data with Conflict Detection pattern:
 
 1. ![Icon representing a client in the Read/Write Data with Conflict Detection pattern](images/icon-client.png "Client Icon") Checks if there are unsolved conflicts. If conflicts exist, the client aborts the synchronization and reports the conflicts pending resolution.
 
-2. ![Icon representing a client in the Read/Write Data with Conflict Detection pattern](images/icon-client.png "Client Icon") Sends local storage data modified by the app back to the server.
+1. ![Icon representing a client in the Read/Write Data with Conflict Detection pattern](images/icon-client.png "Client Icon") Sends local storage data modified by the app back to the server.
 
-3. ![Icon representing a server in the Read/Write Data with Conflict Detection pattern](images/icon-server.png "Server Icon") Checks for conflicting changes performed in the database.
+1. ![Icon representing a server in the Read/Write Data with Conflict Detection pattern](images/icon-server.png "Server Icon") Checks for conflicting changes performed in the database.
 
-4. ![Icon representing a server in the Read/Write Data with Conflict Detection pattern](images/icon-server.png "Server Icon") Adds the records to the list of conflicts if it conflicts with client data.
+1. ![Icon representing a server in the Read/Write Data with Conflict Detection pattern](images/icon-server.png "Server Icon") Adds the records to the list of conflicts if it conflicts with client data.
 
-5. ![Icon representing a server in the Read/Write Data with Conflict Detection pattern](images/icon-server.png "Server Icon") Updates database records in the absence of conflicts.
+1. ![Icon representing a server in the Read/Write Data with Conflict Detection pattern](images/icon-server.png "Server Icon") Updates database records in the absence of conflicts.
 
-6. ![Icon representing a server in the Read/Write Data with Conflict Detection pattern](images/icon-server.png "Server Icon") Sends updated database data and the list of conflicting changes.
+1. ![Icon representing a server in the Read/Write Data with Conflict Detection pattern](images/icon-server.png "Server Icon") Sends updated database data and the list of conflicting changes.
 
-7. ![Icon representing a client in the Read/Write Data with Conflict Detection pattern](images/icon-client.png "Client Icon") Checks for conflicts. If conflicts exist, registers conflicts and updates local storage with the non-conflicting records. If no conflicts exist, deletes and recreates data in the local storage with the data received from the server.
+1. ![Icon representing a client in the Read/Write Data with Conflict Detection pattern](images/icon-client.png "Client Icon") Checks for conflicts. If conflicts exist, registers conflicts and updates local storage with the non-conflicting records. If no conflicts exist, deletes and recreates data in the local storage with the data received from the server.
 
-8. ![Icon representing a client in the Read/Write Data with Conflict Detection pattern](images/icon-client.png "Client Icon") Updates last sync timestamp in local storage.
+1. ![Icon representing a client in the Read/Write Data with Conflict Detection pattern](images/icon-client.png "Client Icon") Updates last sync timestamp in local storage.
 
-9. ![Icon representing a client in the Read/Write Data with Conflict Detection pattern](images/icon-client.png "Client Icon") Reports pending conflicts to the end user if applicable.
+1. ![Icon representing a client in the Read/Write Data with Conflict Detection pattern](images/icon-client.png "Client Icon") Reports pending conflicts to the end user if applicable.
 
 You must implement a mechanism, either automatic or manual, to resolve detected conflicts. For example, you can present the client and server versions of the records side by side and allow the user to select which version to keep.
 
@@ -82,8 +82,8 @@ Here’s how the `OnSync` client action works:
 ![Flowchart detailing the OnSync logic for handling data synchronization and conflict detection](images/read-write-data-with-conflict-detection-offlinedatasync-odcs.png "OnSync Logic Flowchart")
 
 1. Obtain the number of `ConflictingCompany` records and trigger an exception if there are unresolved conflicts from a previous synchronization.
-2. Obtain the timestamp of the last synchronization.
-3. Obtain the lists of locally added, modified, and deleted `Company` records. Use these filters in the aggregates:
+1. Obtain the timestamp of the last synchronization.
+1. Obtain the lists of locally added, modified, and deleted `Company` records. Use these filters in the aggregates:
 
 1. Obtains the timestamp of the last synchronization.
 
@@ -110,11 +110,11 @@ LocalCompany.IsActive = False and
 LocalCompany.IsFromServer = True
 ```
 
-4. Call the `ServerDataSync` server action with the lists of locally added, updated, and deleted `Company` records as inputs. The server updates the database and returns the list of updated `Company` records, the list of `Company` records with conflicts, and the list of IDs of the `Company` records with conflicts.
-5. Obtain the list of original `Company` records corresponding to the `Company` records with conflicts returned by the server.
-6. Delete all `Company` records in the local storage.
-7. Recreate the `Company` records in the local storage and add the records with conflicts returned by the server to the `ConflictingCompany` entity.
-8. Update the `SyncProperties.LastSync` attribute with the synchronization timestamp returned by the server.
+1. Call the `ServerDataSync` server action with the lists of locally added, updated, and deleted `Company` records as inputs. The server updates the database and returns the list of updated `Company` records, the list of `Company` records with conflicts, and the list of IDs of the `Company` records with conflicts.
+1. Obtain the list of original `Company` records corresponding to the `Company` records with conflicts returned by the server.
+1. Delete all `Company` records in the local storage.
+1. Recreate the `Company` records in the local storage and add the records with conflicts returned by the server to the `ConflictingCompany` entity.
+1. Update the `SyncProperties.LastSync` attribute with the synchronization timestamp returned by the server.
 
 ## ServerDataSync logic
 
@@ -123,8 +123,8 @@ Here’s how the `ServerDataSync` server action works:
 ![Flowchart detailing the ServerDataSync logic for handling data synchronization and conflict resolution](images/read-write-data-with-conflict-detection-serverdatasync-odcs.png "ServerDataSync Logic Flowchart")
 
 1. Assign the synchronization timestamp to an output parameter.
-2. Iterate through the list of locally added `Company` records and create the records in the database with the `ModifiedOn` attribute set to the current timestamp.
-3. Iterate through the list of locally modified `Company` records. For each record, obtain the corresponding `Company` record in the database and check if it was modified since the last synchronization:
+1. Iterate through the list of locally added `Company` records and create the records in the database with the `ModifiedOn` attribute set to the current timestamp.
+1. Iterate through the list of locally modified `Company` records. For each record, obtain the corresponding `Company` record in the database and check if it was modified since the last synchronization:
 
    * If it was not changed, update the `Company` record in the database.
    * If it was changed, add the `Company` record to a list of conflicting companies.

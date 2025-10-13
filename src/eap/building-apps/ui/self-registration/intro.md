@@ -21,9 +21,9 @@ topic:
 
 # Self-registration flow
 
-The self-registration flow enables users to register and access your app without human intervention. This flow is specifically designed for cases where the *built-in identity provider* is used and is *not applicable for external identity providers* (e.g., Google, Facebook, or other third-party identity providers). Depending upon the type of app you create, users may find your app from your website through a Google search. If you have an app that requires users to register to log in, you may need to provide them with an email link to your app.
+The self-registration flow enables users to register and access your app without human intervention. This flow is specifically designed for cases where the _built-in identity provider_ is used and is _not applicable for external identity providers_ (e.g., Google, Facebook, or other third-party identity providers). Depending upon the type of app you create, users may find your app from your website through a Google search. If you have an app that requires users to register to log in, you may need to provide them with an email link to your app.
 
-You might also want users to be validated as part of the sign-in process. Many apps use a verification process in which you provide users with a verification code. You can use verification codes to confirm the validity of the user using the email address. 
+You might also want users to be validated as part of the sign-in process. Many apps use a verification process in which you provide users with a verification code. You can use verification codes to confirm the validity of the user using the email address.
 
 <div class="info" markdown="1">
 

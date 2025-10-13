@@ -68,6 +68,6 @@ Some changes require installation of an updated app package on the user device. 
 * Configurations for a mobile package.
 * Extensibility Configurations property.
 
-These changes may negatively affect the user experience in the outdated apps, but the issues are automatically fixed when the user upgrades to the latest app package. In the case of plugins, it's a good practice to include fallbacks in the apps to avoid crashing until the latest app version is on the device. 
+These changes may negatively affect the user experience in the outdated apps, but the issues are automatically fixed when the user upgrades to the latest app package. In the case of plugins, it's a good practice to include fallbacks in the apps to avoid crashing until the latest app version is on the device.
 
 When installing a new version of an Android app using the build type **Debug**, uninstall the previous version from the device before installing the new one. This guarantees the new features work correctly.

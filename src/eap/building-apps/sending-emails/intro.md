@@ -22,9 +22,9 @@ topic:
 
 # Emails
 
-In OutSystems Developer Cloud (ODC), email is a way to get information from your apps and send it to users. For example, you can send alerts to administrators or send a copy of a form to an end-user for submission. Before you can create emails and set up logic in your apps to send the emails, make sure you have the configuration for the SMTP server. 
+In OutSystems Developer Cloud (ODC), email is a way to get information from your apps and send it to users. For example, you can send alerts to administrators or send a copy of a form to an end-user for submission. Before you can create emails and set up logic in your apps to send the emails, make sure you have the configuration for the SMTP server.
 
-In OutSystems, email is a UI element that lets you design and manage the content of email messages. To create, send, and configure emails, you use both ODC Studio and ODC Portal. Emails are sent using SMTP. In ODC Portal, you can define the configuration and can create different configurations for each stage. At the app level you can change the test email addresses. 
+In OutSystems, email is a UI element that lets you design and manage the content of email messages. To create, send, and configure emails, you use both ODC Studio and ODC Portal. Emails are sent using SMTP. In ODC Portal, you can define the configuration and can create different configurations for each stage. At the app level you can change the test email addresses.
 
 In **ODC Studio** you define how you want to send emails. When working with the display of the content, you can use or define new templates. By default, ODC uses a light theme which is an industry standard and is automatically set for you.
 
@@ -33,7 +33,7 @@ When defining how to send the email, developers can:
 * Create server and service actions to send emails.
 * Create parameters in actions to pass information.
 * Define timers to send an email at a specific time.
-* Define manual triggers by creating a send email button or automate the sending of emails such as a confirmation of registration. 
+* Define manual triggers by creating a send email button or automate the sending of emails such as a confirmation of registration.
 
 Developers can also use **widgets** (GUI elements to create and display the content) in an email to:
 
@@ -53,16 +53,16 @@ The following are the steps to get you started with creating and sending emails:
 
 For more information about emails, see the following resources:
 
-If you want to... | Check out... |
+| If you want to... | Check out... |
 | - | - |
-| Create a new email | [Creating a new Email](working.md#create-a-new-email) | 
-| Add content for an email | [Adding content to Email](working.md#add-content-to-an-email)| 
-| Add content based on user inputs  | [Modify content in Emails](working.md#modify-content-in-emails)| 
-| Add attachment to emails  | [Adding email attachments](attachments.md)| 
-| Create logic to send emails | [Sending Emails](sending.md)| 
-| See what widgets you can use  | [Widgets available in Emails](widgets.md#widgets-available-in-emails)| 
-| See what data types you can use in inputs  | [Available data types](../data/data-types.md), in particular [compound data types](../data/data-types.md#compound-data-types)  | 
-| Validate or format email addresses | [Email built-in functions](../../reference/built-in-functions/email.md)  | 
+| Create a new email | [Creating a new Email](working.md#create-a-new-email) |
+| Add content for an email | [Adding content to Email](working.md#add-content-to-an-email)|
+| Add content based on user inputs  | [Modify content in Emails](working.md#modify-content-in-emails)|
+| Add attachment to emails  | [Adding email attachments](attachments.md)|
+| Create logic to send emails | [Sending Emails](sending.md)|
+| See what widgets you can use  | [Widgets available in Emails](widgets.md#widgets-available-in-emails)|
+| See what data types you can use in inputs  | [Available data types](../data/data-types.md), in particular [compound data types](../data/data-types.md#compound-data-types)  |
+| Validate or format email addresses | [Email built-in functions](../../reference/built-in-functions/email.md)  |
 
 ## More about emails in ODC
 
@@ -93,4 +93,3 @@ Google Gmail clips messages if the HTML code is larger than 102 KB. OutSystems r
 ### SMTP server configurations
 
 To send emails from your app you need to configure your SMTP server on the ODC Portal. The SMTP policy of your server might limit sending of the emails that can cause errors. For example, you might have a maximum number of addresses in To / From, or policy may limit the port number, body message size, or prevent concurrent emails.
-

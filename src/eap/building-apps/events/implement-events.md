@@ -19,7 +19,7 @@ helpids:
 ---
 # Implement events in ODC
 
-Events allow apps to communicate changes and updates asynchronously. You can create events in an app to notify other apps when specific actions occur. These events can then be triggered within the app's logic and handled either in the same app or in other apps that consume the event. 
+Events allow apps to communicate changes and updates asynchronously. You can create events in an app to notify other apps when specific actions occur. These events can then be triggered within the app's logic and handled either in the same app or in other apps that consume the event.
 
 ## Create an event
 
@@ -30,16 +30,16 @@ To create an event in an app, follow these steps:
 1. Go to **ODC Studio**.
 
 1. On the **Events** tab, right-click **Events**, and select **Add Event**.
-   
+
    ![ODC Studio interface showing how to add a new event.](images/create-event-odcs.png "Create Event in ODC Studio")
 
-2. Set the relevant properties for the new event:
+1. Set the relevant properties for the new event:
 
    1. If you want other apps to [handle or process](backend-events.md#publishersubscriber-model) the event, you must set the **Public** property to **Yes**.
 
-   2. If you want to handle the event in the same app, select the **Handler** for the event. The handler can either be a new server action or an existing server action. For detailed information about processing events in a different consumer app, refer to [Handle an event](#handle-an-event).
+   1. If you want to handle the event in the same app, select the **Handler** for the event. The handler can either be a new server action or an existing server action. For detailed information about processing events in a different consumer app, refer to [Handle an event](#handle-an-event).
 
-3. To pass information to the event using the event payload, right-click the newly created event and select **Add Input Parameter**. For detailed information about event payload, refer to [Properties of ODC events](events-properties.md).
+1. To pass information to the event using the event payload, right-click the newly created event and select **Add Input Parameter**. For detailed information about event payload, refer to [Properties of ODC events](events-properties.md).
 
 Once the event is created, you can trigger the event in the logic flow of your app.
 
@@ -49,7 +49,7 @@ After creating an event, you must trigger it within the same app to ensure that 
 
 <div class="info" markdown="1">
 
-ODC uses the read committed isolation level, meaning only committed data is visible. Therefore, if you trigger an event based on data created in the same transaction, you must commit that transaction before triggering the event. 
+ODC uses the read committed isolation level, meaning only committed data is visible. Therefore, if you trigger an event based on data created in the same transaction, you must commit that transaction before triggering the event.
 
 Otherwise, the event handler won't be able to access the new data, as it's not yet committed and thus not visible.
 
@@ -87,9 +87,9 @@ To handle an event in the consumer app, follow these steps.
 
 1. Select the producer app and choose the event you want to add.
 
-    The selected event and its input parameters are now added to the consumer app. 
+    The selected event and its input parameters are now added to the consumer app.
 
-2. From the event properties panel, click **Handler** and select the server action that handles the event. The sever action implements the logic to handle the event.
+1. From the event properties panel, click **Handler** and select the server action that handles the event. The sever action implements the logic to handle the event.
 
     ![ODC Studio interface showing how to select a handler for an event.](images/handle-event-odcs.png "Handle Event in ODC Studio")
 

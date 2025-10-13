@@ -21,7 +21,7 @@ In OutSystems, you can [fetch data to populate screens](../interaction/fetch-dis
 
 ## Use aggregates to fetch data from database entities { #aggregates }
 
-[Aggregates](../../data/fetch-data/aggregate.md) allow you to fetch data using an optimized query tailored to your needs. 
+[Aggregates](../../data/fetch-data/aggregate.md) allow you to fetch data using an optimized query tailored to your needs.
 
 ### Recommendations
 
@@ -33,7 +33,7 @@ When fetching data from database entities, aggregates offer the following advant
 
 * Aggregates are visually defined, making data retrieval more intuitive. They also allow you to preview their outputs in real time.
 
-* Aggregates automatically absorb changes in the data model. 
+* Aggregates automatically absorb changes in the data model.
 
 * Aggregates support combining several entities and advanced filtering.
 
@@ -51,7 +51,7 @@ Data actions allow you to define custom server-side logic. The outputs of a data
 
 Use data actions when:
 
-* Fetching complex data from the database, which you cannot achieve using a single aggregate. 
+* Fetching complex data from the database, which you cannot achieve using a single aggregate.
 
 * Fetching data from external sources (for example, REST APIs).
 
@@ -63,7 +63,7 @@ For more information, refer to [Displaying Data on Screens](https://learn.outsys
 
 ## Avoid fetching a large number of records { #large-nr-records }
 
-Displaying a large number of records all at once is slow and unnecessary, as the user may only need some records at a time. 
+Displaying a large number of records all at once is slow and unnecessary, as the user may only need some records at a time.
 
 ### Recommendations
 
@@ -93,7 +93,7 @@ Keep the number of records fetched by your aggregates and SQL queries consistent
 
     <div class="info" markdown="1">
 
-    Setting the **Max. Records** property in SQL queries doesn't change its SQL statement. This limit is only applied at the app level to the results returned by the database. 
+    Setting the **Max. Records** property in SQL queries doesn't change its SQL statement. This limit is only applied at the app level to the results returned by the database.
 
     </div>
 
@@ -107,7 +107,7 @@ Keeping the number of records fetched from the database consistent with your nee
 
 When you use **&lt;Aggregate&gt;.Count** or **&lt;SQL query&gt;.Count** to get the total count of records returned by a query, OutSystems generates a second query to perform the counting, ignoring the **Max. Records** value.
 
-For aggregates, OutSystems generates an optimized query for counting records. However, that's not the case for SQL queries. 
+For aggregates, OutSystems generates an optimized query for counting records. However, that's not the case for SQL queries.
 
 The SQL element enables you to write complex SQL queries, which can be too complex for counting records. Consider you have a query that fetches a lot of fields, performs several joins, and eventually, sorts the results. By using **&lt;SQL query&gt;.Count** to count the records returned by that query, OutSystems re-runs the same complex query again.
 
@@ -129,15 +129,15 @@ By following these recommendations, you avoid running complex queries repeatedly
 
 ## Don't show a blank screen while data is being fetched { #blank-screen }
 
-Plan what your app displays to the user while data is being fetched. 
+Plan what your app displays to the user while data is being fetched.
 
 ### Recommendations
 
 To avoid showing a blank screen while data is being fetched:
 
-* Fetch smaller data when initializing the app. This renders essential elements while larger data loads in the background. 
+* Fetch smaller data when initializing the app. This renders essential elements while larger data loads in the background.
 
-* Inform users that data is loading. For example, use loading spinners, progress bars, or skeleton screens. 
+* Inform users that data is loading. For example, use loading spinners, progress bars, or skeleton screens.
 
 ### Benefits
 
@@ -145,7 +145,7 @@ By following these recommendations, you avoid the perception of an unresponsive 
 
 ## Optimize data fetching { #optimize-fetching }
 
-Fetching data for display on a screen using complex calculations or logic increases the time users must wait for the data to load. 
+Fetching data for display on a screen using complex calculations or logic increases the time users must wait for the data to load.
 
 ### Recommendations
 

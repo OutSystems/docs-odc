@@ -22,7 +22,7 @@ topic:
 
 # Card Background
 
-You can use the Card Background UI Pattern to group small pieces of information and highlight them on the screen using a background image. The information is grouped into a small block that is easily noticeable on-screen. 
+You can use the Card Background UI Pattern to group small pieces of information and highlight them on the screen using a background image. The information is grouped into a small block that is easily noticeable on-screen.
 
 ![Screenshot showing an overview of the Card Background UI Pattern in a mobile app interface](images/cardbackground-1-ss.png "Card Background UI Pattern Overview")
 

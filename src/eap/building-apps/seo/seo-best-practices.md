@@ -26,7 +26,7 @@ These considerations are listed in order of priority. Skipping any of these step
 
 ## Crawlability requirements
 
-Refer to [Improve SEO with prerendering](improve-seo-prerendering.md) for a suggested method for enabling improved crawlability of OutSystems Reactive apps for SEO purposes. 
+Refer to [Improve SEO with prerendering](improve-seo-prerendering.md) for a suggested method for enabling improved crawlability of OutSystems Reactive apps for SEO purposes.
 
 ### HTTP Status
 
@@ -62,7 +62,7 @@ A robots file needs to be accessible at the root level of a domain. ODC doesn't 
 
 ### Sitemap.xml file
 
-A sitemap file is accessible at the root level of a domain. ODC doesn’t support this functionality. However, using a reverse proxy or CDN supports this use case. For more information, refer to [sitemap.xml](generating-sitemap-robot-files.md#sitemapxml-sitemap). 
+A sitemap file is accessible at the root level of a domain. ODC doesn’t support this functionality. However, using a reverse proxy or CDN supports this use case. For more information, refer to [sitemap.xml](generating-sitemap-robot-files.md#sitemapxml-sitemap).
 
 ### Rel="canonical"
 
@@ -116,7 +116,7 @@ In ODC, you can achieve this by using extended properties to insert the alt tags
 
 Google uses structured data on the web to understand page content and gather information about websites. This standardized format provides information about a page and classifies its content, enabling more engaging search results that encourage user interaction with a website.
 
-### Avoid interstitials 
+### Avoid interstitials
 
 Intrusive dialogs and interstitials make it hard for Google and other search engines to understand your content, which may lead to poor search performance.
 
