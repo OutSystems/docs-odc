@@ -40,7 +40,7 @@ Your app is calling REST API methods directly without a library encapsulation.
 
 Create an ODC library that implements the communication with the REST API:
 
-* Expose server actions that encapsulate the calls to the REST API methods. 
+* Expose server actions that encapsulate the calls to the REST API methods.
 
 * Create public structures to serve as parameters for these server actions instead of reusing the ones created by the Consume REST API references. This way, any internal changes to the REST API will not require changes in the consuming apps.
 

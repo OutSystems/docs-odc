@@ -28,11 +28,12 @@ This functionality uses the Data platform, which may process data outside your O
 
 </div>
 
-ODC allocates resource limits based on your subscription. These capacities define the maximum usage for each resource. 
+ODC allocates resource limits based on your subscription. These capacities define the maximum usage for each resource.
 
 Each stage in ODC can have a [specific capacity size](https://www.outsystems.com/evaluation-guide/scalability/architecture/#capacity-fair-use-limits). For example, the Production stage can consume more resources than the Test stage to ensure consistent performance during higher workloads.
 
 You can use the ODC Portal to track resource consumption, understand current usage, and identify available capacity. Based on this data, you can:
+
 * [Optimize consumption](#optimize): Apply best practices to ensure your assets use only the resources they need, optimizing runtime efficiency.
 * Increase capacity: Contact your account team to request additional capacity.
 
@@ -42,8 +43,8 @@ OutSystems recommends actively [monitoring](#monitor) and [optimizing your resou
 
 ODC enforces capacity limits per resource type. These limits apply at the stage level and define how much of each resource your subscription can use:
 
-* **Compute instances (CI)**: The total number of [container instances](../app-architecture/intro.md#containers) available for all apps, agents, workflows, and timers within a stage. They define the pool size of containers that running apps and agents can allocate or release as needed. 
-* **Custom code execution duration**: Custom code execution duration is the time taken to run [custom code](../building-apps/external-logic/intro.md) from start to completion. The daily custom code execution duration is the total execution time of all custom code runs in a day. 
+* **Compute instances (CI)**: The total number of [container instances](../app-architecture/intro.md#containers) available for all apps, agents, workflows, and timers within a stage. They define the pool size of containers that running apps and agents can allocate or release as needed.
+* **Custom code execution duration**: Custom code execution duration is the time taken to run [custom code](../building-apps/external-logic/intro.md) from start to completion. The daily custom code execution duration is the total execution time of all custom code runs in a day.
 * **Database compute**: The amount of compute resources (memory and CPU) allocated to the database that's shared across all assets in a given stage.
 * **Database storage**: The storage capacity allocated to the database, shared across all assets in a stage.
 * **[Analytics stream](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md)**: Monthly limit on logs, traces, and metrics streaming across all stages.
@@ -59,7 +60,7 @@ ODC optimizes resource usage with [automatic scaling](../manage-platform-app-lif
 
 ## Monitoring resource consumption { #monitor }
 
-ODC Portal helps you track resource usage trends to help you ensure that your apps maintain high performance and responsiveness during traffic spikes. 
+ODC Portal helps you track resource usage trends to help you ensure that your apps maintain high performance and responsiveness during traffic spikes.
 
 The [subscription dashboard](../manage-platform-app-lifecycle/subscription-console.md) provides an overview of the subscribed and consumed resource limits. Select a specific resource to view each stage's resource allocation and usage details. Each stage provides additional insights into resource usage over time with the following metrics:
 
@@ -82,9 +83,9 @@ P90 and P95 focus on sustained high usage levels while ignoring occasional spike
 
 For example, if you are using 12 out of 20 CIs, the tabular view breaks down consumption by asset:
 
-* Order status app consumes 6 CIs. 
-  * Daily refresh and Reset sample data timers consume 2 CIs each.
-  * Order status app consumes 2 CIs.
+* Order status app consumes 6 CIs.
+    * Daily refresh and Reset sample data timers consume 2 CIs each.
+    * Order status app consumes 2 CIs.
 * Sample ordering app consumes 2 CIs
 * Order status monitoring app consumes 2 CIs
 * Order workflow consumes 2 CIs.
@@ -99,7 +100,7 @@ You can analyze **database compute** and **storage** using the usage graph. Howe
 
 ### Resource consumption notifications
 
-ODC records resource usage over a seven day rolling period and uses P95 (95th percentile) to determine typical resource consumption. For example, if the compute instances limit is 16 CIs and the P95 usage remains at 14 or higher CIs, you may need to scale up your resources to prevent performance issues during peak loads. 
+ODC records resource usage over a seven day rolling period and uses P95 (95th percentile) to determine typical resource consumption. For example, if the compute instances limit is 16 CIs and the P95 usage remains at 14 or higher CIs, you may need to scale up your resources to prevent performance issues during peak loads.
 
 If your usage consistently exceeds the limit over this period, ODC provides notifications in Portal to help you manage usage effectively.
 
@@ -107,7 +108,7 @@ Updates to resource capacity status may take time to appear in the portal, as ca
 
 <div class="info" markdown="1">
 
-The dashboard prioritizes displaying stages with warnings or errors first rather than always showing the production stage. 
+The dashboard prioritizes displaying stages with warnings or errors first rather than always showing the production stage.
 
 </div>
 
@@ -133,10 +134,10 @@ To ensure your assets don’t consume more resources than necessary, it’s impo
 
 When approaching or surpassing capacity limits, the following issues may occur:
 
-* Compute instances: If you reach the CIs limit, you cannot 
-  * Publish new apps and agents
-  * Update existing ones with new revisions
-  * Run workflows and timers
+* Compute instances: If you reach the CIs limit, you cannot
+    * Publish new apps and agents
+    * Update existing ones with new revisions
+    * Run workflows and timers
 * Custom code execution duration: Calls to custom code libraries can cause errors and fail until the next day. This can lead to runtime errors in consumers.
 * Database compute and database storage: Apps and agents can experience performance issues, such as slower response times or timeout errors when accessing the database if there is insufficient capacity to accommodate all of the requests.
 * Analytics stream: You are warned when your organization's volume of streamed data is approaching the capacity limit.

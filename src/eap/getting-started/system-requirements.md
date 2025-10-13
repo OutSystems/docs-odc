@@ -24,7 +24,7 @@ topic:
 This article provides recommendations for compatible tools and software versions that you can use with OutSystems Developer Cloud (ODC) Portal and ODC Studio.
 
 To access ODC portal and connect to ODC Studio, ensure your local network allows access to `*.outsystems.dev` domains. For end-users to access ODC apps, their network must allow access to the `*.outsystems.app` domain or the [custom domain](../manage-platform-app-lifecycle/custom-domains.md) defined for each stage.
- 
+
 ## ODC Portal
 
 Use the most recent version of any of the following browsers:
@@ -74,7 +74,7 @@ To perform client-side debugging in ODC Studio using a desktop browser, use the 
 
 ## Software requirements for app users
 
-The following sections specify the software requirements for Apps developed in ODC. 
+The following sections specify the software requirements for Apps developed in ODC.
 
 <div class="info" markdown="1">
 
@@ -102,7 +102,7 @@ For more information about the latest supported Android and iOS platform version
 
 ### Client-side traces
 
-ODC supports the following client-side trace request limits: 
+ODC supports the following client-side trace request limits:
 
 * Up to 400 trace requests every minute and 3500 requests daily per stage.
 
@@ -118,7 +118,7 @@ The following versions of systems are supported to integrate with ODC using [Dat
     * SQL Server 2019
     * SQL Server 2022
 
-* **Azure SQL**: 
+* **Azure SQL**:
 
     * Azure SQL Database
     * Azure SQL Managed Instance
@@ -138,8 +138,8 @@ The following versions of systems are supported to integrate with ODC using [Dat
 
   OutSystems supports self-managed, Aurora, and Azure provisions for MySQL.
 
-  * MySQL 8.0
-  * MySQL 8.4
+    * MySQL 8.0
+    * MySQL 8.4
 
 * **SAP**:
 
@@ -152,7 +152,7 @@ The following versions of systems are supported to integrate with ODC using [Dat
 
 * **Oracle 19c**
 
-For more information, refer to [Integrate with external data sources using Data Fabric](../integration-with-systems/external-databases/intro.md). 
+For more information, refer to [Integrate with external data sources using Data Fabric](../integration-with-systems/external-databases/intro.md).
 
 ### Supported external identity providers { #supported-external-identity-providers }
 
@@ -167,7 +167,7 @@ ODC supports all IdPs that follow the OIDC standard. The following IdPs have bee
 * Okta
 * Keycloak
 
-For more information, refer to [Configure authentication with external identity providers](../manage-platform-app-lifecycle/external-idps/intro.md). 
+For more information, refer to [Configure authentication with external identity providers](../manage-platform-app-lifecycle/external-idps/intro.md).
 
 ## Platform limits
 
@@ -205,7 +205,6 @@ The logs and traces limits are:
 | Client side trace requests every minute per stage  |        400 | The maximum number of client-side trace requests every minute. |
 | Client side trace requests daily per stage  |           3500 | The maximum number of client-side trace requests daily. |
 
-
 ### Events
 
 The event limits are:
@@ -215,7 +214,6 @@ The event limits are:
 | Concurrent events                        |       100 | The maximum number of events that can run concurrently per app. |
 | Event duration (minutes)                 |         2 | The maximum duration of a handler of an event in minutes. |
 | Events per queue                         |    10,000 | The maximum number of events that can be queued. Upon reaching the limit, an exception is thrown. |
-
 
 ### Custom code
 

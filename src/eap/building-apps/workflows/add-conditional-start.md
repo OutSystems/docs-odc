@@ -54,11 +54,11 @@ To include a **Conditional Start** in your workflow, follow these steps:
 
 1. Add the necessary activities to your conditional start flow.
 
-    You can add all activity types inside a conditional start flow except other conditional starts. Go-to nodes can only be added after a decision node. 
+    You can add all activity types inside a conditional start flow except other conditional starts. Go-to nodes can only be added after a decision node.
 
     ![Screenshot of adding activities to the conditional start flow](images/conditional-start-activities-pl.png "Add activities to the conditional start flow")
 
-    The conditional flow ends with either an **End** or **Terminate** node. 
+    The conditional flow ends with either an **End** or **Terminate** node.
 
 ## Next steps
 

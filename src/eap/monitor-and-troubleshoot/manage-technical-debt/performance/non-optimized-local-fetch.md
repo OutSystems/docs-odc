@@ -27,9 +27,9 @@ Applies to **Mobile** apps only.
 
 Avoid local data fetch on client events (On Initialize, On Ready, On Render). These events are fully serialized, so they do not take advantage of the parallel fetch of data while the screen is already rendered.
 
-## Why is this happening? 
+## Why is this happening?
 
-This occurs when local data fetch is performed in client events. 
+This occurs when local data fetch is performed in client events.
 
 ## How to fix
 

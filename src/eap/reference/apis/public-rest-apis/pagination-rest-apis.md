@@ -39,15 +39,15 @@ For example, in the following request the API retrieves information about 10 use
 
 The API response consists of the requested resource items and the following pagination metadata for navigation:
 
-- count: The number of results on the current page.
+* count: The number of results on the current page.
 
-* limit: Maximum number of results returned for a request 
+* limit: Maximum number of results returned for a request
 
-- offset: The offset for the current page of results.
+* offset: The offset for the current page of results.
 
 * nextPageOffset: The offset for the next page of results. This is calculated as limit+offset. To move to the next page of results, this parameter is used as the offset for the next request.
 
-- totalResults: The total number of results for the request.
+* totalResults: The total number of results for the request.
 
 * totalPages: The total number of pages for the result. This is calculated as totalResults/limit.
 
@@ -62,7 +62,7 @@ This example shows how to make a request to the users resource, limiting the res
 
 ```
 
-Where 
+Where
 
 ODC\_PORTAL\_DOMAIN is the domain of your Organization
 
@@ -125,12 +125,11 @@ Here's the request to retrieve the next two users in the list.
 
 ```
 
-Where 
+Where
 
 ODC\_PORTAL\_DOMAIN is the domain of your Organization
 
 ACCESS\_TOKEN - Access token generated using the client credentials
-
 
 Here’s the second page displaying the next 2 users in the result.
 

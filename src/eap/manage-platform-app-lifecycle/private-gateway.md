@@ -37,7 +37,7 @@ Private Gateway is a secure-by-design solution for the cloud-native, multi-tenan
 
 There are two components to the Private Gateways feature.
 
-* The server component, **Private Gateway** hosted and managed by OutSystems. There is one instance of Server Gateway for each stage in your organization. By default a Private Gateway is inactive and you activate it in ODC Portal. 
+* The server component, **Private Gateway** hosted and managed by OutSystems. There is one instance of Server Gateway for each stage in your organization. By default a Private Gateway is inactive and you activate it in ODC Portal.
 * The client component, **Cloud Connector** installed and managed by you. You use the configuration generated on activating a Private Gateway to run Cloud Connector on system(s) in your private network(s). Your apps connect to the endpoints through a secure tunnel established between the endpoints and a Private Gateway. The Cloud Connector requires only outbound access to the internet in the private network(s) in which it's running. To learn more, refer to [OutSystems Cloud Connector.](https://github.com/OutSystems/cloud-connector)
 
 Common use cases include accessing data through a private REST API service, requesting internal services (SMTP, SMB, NFS,..), and [connecting to external databases](../integration-with-systems/external-databases/intro.md) in private networks.
@@ -70,11 +70,11 @@ Make sure to copy the Token and save it in a safe location. For security reasons
 
 </div>
 
-You or a member of your team can now use the Token and Address to run Cloud Connector on the system(s) in your private network(s). 
+You or a member of your team can now use the Token and Address to run Cloud Connector on the system(s) in your private network(s).
 
 If you deactivate a Private Gateway, the tunnel(s) are deleted and your apps can't access the connected endpoints. If you reactivate, the Token and Address remain the same. The Private Gateway automatically reestablishes a tunnel with any Cloud Connector instances still running with that unique Token and Address.
 
-To renew the Token, click the Renew icon. 
+To renew the Token, click the Renew icon.
 
 Instances of Cloud Connector running with the old Token will continue to work until the connection fails or it's restarted. If you restart the instance, ensure you use the new Token.
 

@@ -37,4 +37,3 @@ The query retrieves and processes additional data beyond what is needed for the 
 Use a simplified SQL query to efficiently count the results, removing unneeded extra data and joins.
 
 For more information, refer to the [best practice for optimizing record counting](../../../building-apps/ui/creating-screens/best-practices-fetch-display-data.md#record-counting).
-

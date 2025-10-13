@@ -26,7 +26,7 @@ An action that isn't used in an app or library and is also not exposed to other 
 
 Unused actions can enlarge your code, make maintenance difficult, and increase security risks.
 
-## Why is this happening? 
+## Why is this happening?
 
 The app or library does not utilize the defined action anywhere.
 

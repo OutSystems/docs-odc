@@ -23,7 +23,7 @@ OutSystems Developer Cloud (ODC) is a cloud-native, low-code development platfor
 
 <div class="info" markdown="1">
 
-You can switch between Dark and Light themes in the ODC Portal and ODC Studio. 
+You can switch between Dark and Light themes in the ODC Portal and ODC Studio.
 
 </div>
 
@@ -56,7 +56,7 @@ The **top bar** in the Portal enables you to:
 
 Above the Navigation menu, the name of the tenant you're accessing displays.
 
-Each menu item on the **Navigation menu** provides functionality related to its name. ODC uses an accordion to display more or less information. When the arrow to the right of the menu name points up, that accordion is open. 
+Each menu item on the **Navigation menu** provides functionality related to its name. ODC uses an accordion to display more or less information. When the arrow to the right of the menu name points up, that accordion is open.
 
 The **apps** you see when you first access the ODC Portal are only the apps to which you have access. When you select a menu option, the display in the middle changes. For example, if you select **Manage** > **Users**, then information related to users displays. In addition, the choices available at the top of the Portal canvas also change. All options that display relate to your choice from the Navigation menu.
 
@@ -76,7 +76,7 @@ The ODC Studio is an Integrated Development Environment (IDE), and it’s where 
 
 The **top row** identifies that you are in ODC Studio, the name of the tenant, and the name of your app.
 
-The **second** row shows the **hamburger** icon, the name of the app, and in the center, the **1-Click Publish** button. When you click the publish button, your app deploys, and the status displays in the **1-Click Publish** tab at the bottom of the screen. If an error exists, the **1-Click Publish** button becomes unavailable and displays with a red x. 
+The **second** row shows the **hamburger** icon, the name of the app, and in the center, the **1-Click Publish** button. When you click the publish button, your app deploys, and the status displays in the **1-Click Publish** tab at the bottom of the screen. If an error exists, the **1-Click Publish** button becomes unavailable and displays with a red x.
 
 <div class="info" markdown="1">
 
@@ -94,7 +94,7 @@ The **Development** tabs (**Process**, **Interface**, **Logic**, and **Data**) d
 
 ![Interface elements tab in ODC Studio showing available UI components and properties](images/interface-elements-tab-odcs.png "ODC Studio Interface Elements Tab")
 
-The section below the horizontal rule is the **Properties panel**.  The element you select, determines what properties display and are necessary for you to complete. 
+The section below the horizontal rule is the **Properties panel**.  The element you select, determines what properties display and are necessary for you to complete.
 
 ![Properties panel in ODC Studio with options and settings for the selected app element](images/properties-panel-odcs.png "ODC Studio Properties Panel")
 

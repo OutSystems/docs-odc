@@ -18,7 +18,7 @@ outsystems-tools:
 ---
 # Screen Aggregates exposing system entities accessible by anyone
 
-A Screen Aggregate exposes System Entity data on a screen accessible by anyone. 
+A Screen Aggregate exposes System Entity data on a screen accessible by anyone.
 
 ## Impact
 

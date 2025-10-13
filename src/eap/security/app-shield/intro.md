@@ -78,7 +78,7 @@ To ensure the integrity and protection of your apps with **AppShield**, you must
 
 * You have a license for **AppShield**.
 
-* You're using MABS 9.0 or later. 
+* You're using MABS 9.0 or later.
 
     For more information about the supported operating systems, see [MABS and mobile operating systems life cycles](https://success.outsystems.com/Support/Release_Notes/Mobile_Apps_Build_Service_Versions).
 
@@ -87,8 +87,8 @@ To ensure the integrity and protection of your apps with **AppShield**, you must
 To protect your mobile app using the AppShield plugin, follow these steps:
 
 1. **Install the AppShield** plugin in your environment.
-    
-    To download the plugin, go to [OutSystems AppShield](https://www.outsystems.com/forge/list?q=shield) in Forge, and click install.     
+
+    To download the plugin, go to [OutSystems AppShield](https://www.outsystems.com/forge/list?q=shield) in Forge, and click install.
 
 1. **Add the dependencies for AppShield** plugin on each mobile app you want to protect.
 
@@ -207,16 +207,15 @@ Here is an example of the JSON for **Extensibility Configurations**. You can use
 }
 ```
 
-
 ### AppShieldObfuscationRules
 
-Regardless of whether the AppShield version you're using has settings or not, if you need to configure your own obfuscation rules for Android, *you must use the `AppShieldObfuscationRules` as an extensibility configuration on your application*. 
+Regardless of whether the AppShield version you're using has settings or not, if you need to configure your own obfuscation rules for Android, _you must use the `AppShieldObfuscationRules` as an extensibility configuration on your application_.
 
 ### Configuration reference
 
 These are the values available in the **AppShield** configuration JSON.
 
-| Configuration                   | Type         | Default Value | OS           | Description                                                                                       | 
+| Configuration                   | Type         | Default Value | OS           | Description                                                                                       |
 | ------------------------------- | ------------ | ------------- | ------------ | ------------------------------------------------------------------------------------------------- |
 | AddTrustedKeyboardSigner        | Text         |               | Android      | If BlockUntrustedKeyboards is set to True, this option can whitelist a third-party keyboard. This option can be a string with a semicolon separated value for each keyboard that you want to add to the whitelist. |
 | AddTrustedScreenReaderSigner    | Text         |               | Android      | If BlockUntrustedScreenreaders is set to True, this option can whitelist a third-party screen reader. This option can be a string with a semicolon separated value for each screen reader software that you want to add to the whitelist. |
@@ -229,7 +228,7 @@ These are the values available in the **AppShield** configuration JSON.
 | BlockDeveloperMode              | Boolean      | false         | iOS, Android | If set to True, the application is blocked from running on iOS devices that have Developer Mode enabled and Android devices with Developer Options unlocked.                                           |
 | BlockUntrustedKeyboards         | Boolean      | false         | Android      | If set to True, untrusted keyboards are detected and blocked.                                           |
 | BlockUntrustedScreenreaders     | Boolean      | false         | Android      | If set to True, untrusted screen readers are detected and blocked.                                      |
-| DisableAppShielding             | Boolean      | false         | iOS, Android | Activates or deactivates App Shield.
+| DisableAppShielding             | Boolean      | false         | iOS, Android | Activates or deactivates App Shield. |
 | ExitOnURL                       | URL value    |               | iOS, Android| If an app feature is blocked due to a configured policy of the **AppShield** plugin, the default browser opens the URL where the problem may be explained. For more information, refer to ExitOnURL. |
 | RemoveQueryAllPackagesPermission | Boolean | true (false for versions below 1.5.1) | Android | If set to True, it removes the app's ability to check other installed applications. For more information, see [here](query-all-packages.md). |
 | android                         | JSON value   |               | Android      | The key denoting values that apply to Android devices. |
@@ -280,7 +279,6 @@ If you have the **Keystore file**, do the following:
 
 1. Open the **certificate.pem** file in a text editor and copy the content between **-BEGIN CERTIFICATE-** and **-END CERTIFICATE-**.
 
-
 If the signing certificate is the **App Signing Certificate** from the Google Play App Signing feature, do the following:
 
 1. From Google Play Console download the **App Signing Certificate** available in the **App Signing** fragment.
@@ -298,6 +296,7 @@ The `ApplicationSignerCertificate` preference can be specified multiple times. E
 With the `ApplicationSignerCertificate` feature, the certificate of the keystore provided to MABS is also whitelisted. This means that the app retrieved from MABS can be directly installed on any device (because the application will be signed with a trusted certificate).
 
 In the **Android and/or iOS section** of the [Extensibility Configurations JSON](../../building-apps/mobile/extensibility-configurations-json-schema.md), add the **name** with `ApplicationSignerCertificate` and the **value** with the public key. Here is an example:
+
 ```json
 {
     "preferences": {

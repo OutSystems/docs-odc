@@ -33,7 +33,6 @@ Firebase is a Google mobile development platform that speeds up the mobile app c
 * Performance Monitoring Plugin (Firebase)
 * Cloud Messaging Plugin (Firebase)
 
-
 ## Prerequisites
 
 To use the Firebase plugins, you must complete the following prerequisites:
@@ -109,9 +108,9 @@ To trigger the native AppTrackingTransparency framework, use the **RequestTracki
 
 <div class="info" markdown="1">
 
-This Client action is only available on iOS, since the AppTrackingTransparency framework is an iOS-only feature. 
+This Client action is only available on iOS, since the AppTrackingTransparency framework is an iOS-only feature.
 
-</div> 
+</div>
 
 If you want to present an alert before the iOS tracking permission dialog, enable the parameter **ShowInformation** on the action. To provide more context to app users in the dialog, set a **Title** and **Message**.
 

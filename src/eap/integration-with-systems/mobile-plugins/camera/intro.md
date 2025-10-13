@@ -38,7 +38,7 @@ Install the **Camera Sample App** from Forge and open the app in ODC (OutSystems
 
     ![Screenshot of the Camera Sample App interface in ODC Studio](images/camera-sample-app.png "Camera Sample App")
 
-## Taking a picture 
+## Taking a picture
 
 To allow users take a picture:
 
@@ -48,7 +48,7 @@ To allow users take a picture:
 
 ### Creating a user interface
 
-1. Create a variable with the data type **MediaResult**. 
+1. Create a variable with the data type **MediaResult**.
     This variables holds the image data.
 1. Use a Button or another widget to run the action that takes the picture.
 1. Use an **Image** widget to show the image thumbnail after using the camera, by setting Type to Binary Data and Image Content to the content of **MediaResult.Thumbnail**.
@@ -63,14 +63,14 @@ You can find all of the available actions for the Camera plugin by navigating to
 
 </div>
 
-1. To prevent errors, it's best practice to first check if the plugin is available with the action **CheckCameraPlugin**. If the plugin isn't available to the app, display an error to the user. 
+1. To prevent errors, it's best practice to first check if the plugin is available with the action **CheckCameraPlugin**. If the plugin isn't available to the app, display an error to the user.
 1. Otherwise, allow users take a picture by opening the camera with the **TakePicture** action. In the **TakePicture** action, you can set the parameters for quality, width, back or front camera, and more.
-1. Check if taking pictures on the device works by verifying that the value of **TakePicture.Success** is **True**. 
+1. Check if taking pictures on the device works by verifying that the value of **TakePicture.Success** is **True**.
 1. If it does, handle the picture data in **TakePicture.MediaResult.Thumbnail** by assigning it to a variable of the **Binary Data** data type.
 
     ![Flowchart demonstrating the logic for taking a picture with the Camera plugin](images/camera-flow-take-pic-ss.png "Take Picture Logic Flow")
 
-## Recording a video 
+## Recording a video
 
 To allow users record a video:
 
@@ -82,7 +82,7 @@ To allow users record a video:
 
 1. Create a variable with the data type **MediaResult**.
    This variable holds the video data.
-1. Use a Button or another widget to run the action that captures a video. 
+1. Use a Button or another widget to run the action that captures a video.
 1. Use the **PlayVideo** widget to play the video after using the camera by setting it to the variable you created.
 
 The **PlayVideo** widget is used to play videos on a device. The video can either have just been recorded or locally stored in the device's gallery. If you want to display videos from other sources you must use the [**Video**](../../../building-apps/ui/patterns/interaction/video.md) widget.
@@ -104,9 +104,9 @@ Video files stored in the cache are deleted when the app closes. When setting th
 
     ![Flowchart showing the subsequent steps in the logic for capturing a video](images/capture-video-logic-2-ss.png "Capture Video Logic Flow 2")
 
-## Selecting media from the gallery 
+## Selecting media from the gallery
 
-You can allow users to choose a media file from the device gallery, either a picture, a video, or both, using the **ChooseFromGallery** action. 
+You can allow users to choose a media file from the device gallery, either a picture, a video, or both, using the **ChooseFromGallery** action.
 
 1. The action **ChooseFromGallery** opens a media browser to let users select a media file.
 1. [Check for errors](#handling-errors) by verifying that **ChooseFromGallery.Success** is **True**.
@@ -132,7 +132,6 @@ When you set the image quality to 100% or use the PNG format, your app handles a
 
 When setting the image quality, consider the use case for your app. Refer to the following table for some example use cases.
 
-
 | Example use case | Image quality          | Notes                                                     |
 | ---------------- | ---------------------- | --------------------------------------------------------- |
 | Profile image    | JPEG 60% (default)     | Sufficient quality for a profile image.                   |
@@ -150,10 +149,9 @@ An app with the Camera plugin can run on many Android or iOS devices with differ
 
 The following is the list of actions you can use to handle the errors.
 
-
 |Variable|Action|Description|
 |-|-|-|
-|**IsAvailable** **CheckCameraPlugin**| True if the camera plugin is available in the app.|
+|**IsAvailable**|**CheckCameraPlugin**| True if the camera plugin is available in the app.|
 |**Success**|**TakePicture**|True if there aren't errors while taking a picture.|
 |**Success**|**ChooseGalleryPicture**|True if there aren't errors while opening a picture from the gallery.|
 |**Success**|**EditPicture**| True if there aren't errors while editing a picture.|
@@ -201,7 +199,7 @@ Change the properties of the **TakePicture** action to adjust how the app handle
 | **SaveToPhotoAlbum**   | If **True**, the app saves the image to the device.                                                                            |
 | **CameraDirection**    | Select the front or back camera as the default when taking a new picture.                                                      |
 | **AllowEdit**          | If **True**, an Edit step is added after the take or choose picture step.                                                      |
-| **AllowMultiplePictures**| PWA only. Enables taking multiple pictures. Add the **CameraPlugin** theme to your app to ensure this feature works.        |      
+| **AllowMultiplePictures**| PWA only. Enables taking multiple pictures. Add the **CameraPlugin** theme to your app to ensure this feature works.        |
 
 <div class="info" markdown="1">
 
@@ -225,7 +223,6 @@ The following table shows the compatibility of the Camera plugin with the Mobile
 | --------------- | ---------------------------- | ----- |
 | 1.0.0 and later | MABS 9.0 and later.          |       |
 
-
 ## Known issues and workarounds
 
 A list of known issues and possible workarounds.
@@ -238,7 +235,7 @@ In PWA, taking multiple pictures requires use of the browser stream capabilities
 
 In some devices, the workaround mentioned above shows a defective UI. Currently, there's no workaround for this issue.
 
-### Crashes on iOS 13.2 and 13.3 
+### Crashes on iOS 13.2 and 13.3
 
 **Applies to PWAs.**
 
@@ -250,7 +247,7 @@ In iOS 13.2 and 13.3, the camera may stop working because of the [WebKit 206219 
 
 In some Chrome versions, the picture displays rotated in the **Image** widget. Currently, there's no workaround for this issue.
 
-### CameraDirection setting has no effect 
+### CameraDirection setting has no effect
 
 **Applies to Android only.**
 

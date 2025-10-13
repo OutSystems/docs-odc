@@ -16,11 +16,11 @@ coverage-type:
 
 # About business processes
 
-A business process is a series of structured activities or tasks that individuals or departments perform to achieve a specific goal. These activities are typically designed to produce a desired outcome, whether delivering a product, providing a service, or completing a project. 
+A business process is a series of structured activities or tasks that individuals or departments perform to achieve a specific goal. These activities are typically designed to produce a desired outcome, whether delivering a product, providing a service, or completing a project.
 
 For example, consider applying for a passport as a business process within a government agency. Just as a passport app involves several steps and interactions with different departments and officials, a business process in an organization comprises a series of tasks and procedures to accomplish a specific objective.
 
-## Key benefits 
+## Key benefits
 
 Business processes provide a systematic approach to managing work, ensuring tasks are completed consistently. Business processes help organizations adapt to change by providing a framework for managing and improving operations over time.
 
@@ -28,7 +28,7 @@ Business processes provide a systematic approach to managing work, ensuring task
 
 Here are some advantages of using a business process:
 
-* Streamlines the workflow by defining clear steps and sequences for completing tasks, reducing redundancies, and eliminating bottlenecks. 
+* Streamlines the workflow by defining clear steps and sequences for completing tasks, reducing redundancies, and eliminating bottlenecks.
 
 * Establishes standardized procedures, ensuring consistency and quality in outputs.
 
@@ -57,5 +57,3 @@ Here are some use cases where you can implement business processes:
 ## Related resources
 
 [Workflows in ODC](workflows-in-odc.md)
-
-

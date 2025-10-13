@@ -108,4 +108,3 @@ Any changes to the permissions of an API client affects access to APIs.
 ## Next step
 
 [Get access token using client credentials flow](get-access-token.md)
-

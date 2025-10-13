@@ -23,9 +23,9 @@ coverage-type:
 
 <div class="info" markdown="1">
 
-This article applies only to Firebase Cloud Messaging plugin version 0.1.2 and older. These old versions use Cloud Messaging Configurator REST APIs to manage the notifications. 
+This article applies only to Firebase Cloud Messaging plugin version 0.1.2 and older. These old versions use Cloud Messaging Configurator REST APIs to manage the notifications.
 
-The Cloud Messaging Configurator REST APIs, version 0.1.2 and older, are deprecated. This means that the **v2** and **v1** endpoints are no longer functional. For more information, see [Firebase Cloud Messaging HTTP protocol](https://firebase.google.com/docs/cloud-messaging/http-server-ref). 
+The Cloud Messaging Configurator REST APIs, version 0.1.2 and older, are deprecated. This means that the **v2** and **v1** endpoints are no longer functional. For more information, see [Firebase Cloud Messaging HTTP protocol](https://firebase.google.com/docs/cloud-messaging/http-server-ref).
 
 OutSystems recommends that you migrate to [Firebase Cloud Messaging plugin](firebase-cloud-messaging-plugin-server-action.md) version 1.0.0 and newer by June 2024.  
 
@@ -135,11 +135,11 @@ To learn more about the v1 and v2 endpoints of OutSystems REST API, see the [ref
 
 </div>
 
-Now you can start to create the UI for your back-end notification service. For example, to send a notification to all users on the associated Firebase project (using an app with the Cloud Messaging plugin), associate a **SendNotifcationToUsers** method to a button. 
+Now you can start to create the UI for your back-end notification service. For example, to send a notification to all users on the associated Firebase project (using an app with the Cloud Messaging plugin), associate a **SendNotifcationToUsers** method to a button.
 
-If you want to send the notification to specific users, note that these are identified by their Firebase Token, that can be obtained with the **GetToken** client action. You can find this ID on the Firebase Project Settings under the Cloud Messaging tab. 
+If you want to send the notification to specific users, note that these are identified by their Firebase Token, that can be obtained with the **GetToken** client action. You can find this ID on the Firebase Project Settings under the Cloud Messaging tab.
 
-To send a notification to all users, or to all Android or iOS users, you need to fill the **SenderID** structure attribute of the **SendRequest** parameter. You can find this ID on the Firebase Project Settings under the Cloud Messaging tab. 
+To send a notification to all users, or to all Android or iOS users, you need to fill the **SenderID** structure attribute of the **SendRequest** parameter. You can find this ID on the Firebase Project Settings under the Cloud Messaging tab.
 
 Moreover, to send a notification specifically to all Android or iOS users, you should set the **SendToPlatform** structure attribute to one of the values in the **Platform** static entity that the plugin provides.
 
@@ -197,7 +197,7 @@ As a part of the notification experience, the developers can control the badge n
 
 * For iOS you can use the **GetBadgeNumber** action to retrieve the current badge number and the **SetBadgeNumber** to specify the number to display on the app icon.
 
-* For Android you can only specify a given badge number after receiving a notification. Thus, you can use the **SendLocalNotification** action and set the badge number through the action parameter *BadgeNumber*.
+* For Android you can only specify a given badge number after receiving a notification. Thus, you can use the **SendLocalNotification** action and set the badge number through the action parameter _BadgeNumber_.
 
 <div class="info" markdown="1">
 
@@ -225,7 +225,7 @@ OutSystems offers the following types of custom actions:
 
 * **Internal route** - Sends an event to be handled by the app, similar to a basic notification click.
 
-    * For this action, you must check the **Manage the experience of custom actions**. 
+    * For this action, you must check the **Manage the experience of custom actions**.
 
 * **Web route** - Opens a given URL in the device’s browser.
 
@@ -237,12 +237,11 @@ OutSystems offers the following types of custom actions:
 
 To enhance your notification with custom sounds, follow these steps:
 
-1. Put the .wav files you want to use as notification sounds into a .zip file called **sounds.zip**. 
+1. Put the .wav files you want to use as notification sounds into a .zip file called **sounds.zip**.
 
-1. Upload the .zip file to the app’s Resources folder. 
+1. Upload the .zip file to the app’s Resources folder.
 
-1. Use the **v2 REST API**, using the *Sound* parameter inside the *Notification* parameter on the **SendNotificationToTopics** or **SendNotificationToUsers** methods.
-
+1. Use the **v2 REST API**, using the _Sound_ parameter inside the _Notification_ parameter on the **SendNotificationToTopics** or **SendNotificationToUsers** methods.
 
 It is important to note the following requirements for custom sounds:
 
@@ -252,7 +251,7 @@ It is important to note the following requirements for custom sounds:
 
 * The sounds.zip file should be included with the “Deploy Action” set to “Deploy to Target Directory”.
 
- ### Manage the experience of in-app notifications { #manage-notification-ux }
+### Manage the experience of in-app notifications { #manage-notification-ux }
 
 By default, a cloud messaging notification displays in the notification center. However, you can also display the notification in-app when the app is on the foreground. To enable this notification, you can use the **NotificationsHandler** block. This block triggers events that pass the parameters of both notifications and silent notifications to the context of the app.
 
@@ -321,10 +320,8 @@ It is not possible to detect if an app is installed in the private space. Theref
 
 For more information about the behavior changes of your app related to the private space, refer to [Android documentation](https://developer.android.com/about/versions/15/behavior-changes-all#private-space-changes).
 
-
 ## On compatibility with Firebase Performance
 
 For both iOS and Android.
 
 Using the Firebase Cloud Messaging in combination with Firebase Performance requires v1.0.4 (or higher) of the latter.
-

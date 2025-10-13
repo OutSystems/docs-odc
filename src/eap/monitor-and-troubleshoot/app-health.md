@@ -76,7 +76,6 @@ For each app, the analytics dashboard provides insights such as:
     * Requests with errors  
     * Slowest requests
 
-
 <div class="info" markdown="1">
 
 Geolocation information can take up to 20 minutes to synchronize with active user data.
@@ -116,7 +115,7 @@ An app's health score is expressed as a numerical score from 1 to 100 and is bas
 
 An app's health score calculation follows the Application Performance Index (APDEX) industry standard. The score is calculated by dividing the number of successful requests to the app's elements by the total number of requests over the selected period. A request is successful if it's completed without errors and the response time is less than a defined threshold.
 
-The APDEX calculation used is **APDEX = (a + b) / c**. Here's a breakdown of the APDEX calculation. You can use this calculation as is or adapt it to suit your specific needs. 
+The APDEX calculation used is **APDEX = (a + b) / c**. Here's a breakdown of the APDEX calculation. You can use this calculation as is or adapt it to suit your specific needs.
 
 * **a** = Number of successful requests with latency **below 300ms**
 * **b** = (Number of successful requests **between 300ms and 1199ms**) / 2
@@ -190,7 +189,7 @@ Visibility of detailed metric values, particularly those related to current cons
     * Others: Encompasses all other less frequent error types.
 
 ## Agent metrics
- 
+
  <div class="info" markdown="1">
 
 Native ODC agent apps are only available to Early Access Program (EAP) customers.
@@ -219,7 +218,7 @@ ODC monitors your [agents](../building-apps/build-ai-powered-apps/intro.md), off
     * **Total errors:** Displays the total number of errors that have occurred.  
     * **Error rate:** The rate at which errors occur when requests are made to an agent.  
     * **Error percentage:** The percentage of requests that resulted in errors.  
-    * **Requests with errors:** Lists recent requests that encountered errors, including the timestamp, source element, and duration. 
+    * **Requests with errors:** Lists recent requests that encountered errors, including the timestamp, source element, and duration.
 
 * **Slowest requests**
     * **Slowest requests:** This list includes the requests with the longest duration, including the timestamp, source element, and duration.

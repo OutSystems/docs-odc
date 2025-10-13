@@ -17,7 +17,7 @@ outsystems-tools:
   - odc portal
 ---
 
-# Add wait 
+# Add wait
 
 When implementing your workflow, you can include a **Wait** node in your workflow that puts your workflow execution on hold until the **Close on** event occurs and certain configured conditions are met  or the **Close after timeout** is reached.
 

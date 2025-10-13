@@ -25,7 +25,7 @@ Here's the high-level process involved in completing a manual activity in a work
 
 1. The workflow reaches the human activity node in the workflow editor.
 
-1. A custom notification is triggered and the app notifies the user of the pending manual task. 
+1. A custom notification is triggered and the app notifies the user of the pending manual task.
 
 1. The user completes the manual task on the screen in the ODC app. Once the user completes the manual task, the close on event is triggered in the app.
 
@@ -35,7 +35,7 @@ Here's the high-level process involved in completing a manual activity in a work
 
 To integrate these manual tasks in your ODC workflow:
 
-* Add the **HumanActivity** node in the workflow editor to include a manual task in your workflow. 
+* Add the **HumanActivity** node in the workflow editor to include a manual task in your workflow.
 
 * Configure  the **HumanActivity** node and select service actions from your app that can provide more context to the user and pass data to the workflow. For detailed information about how to add and configure **HumanActivity** node, refer to [Add human activity](add-human-activity-procedure.md).
 

@@ -30,13 +30,13 @@ Before using the APIs to deploy your asset to a target stage, ensure that you ha
 * The environment key of the target stage
 
     <div class="info" markdown="1">
-    
+
     To get the environment key, go to **Portal** > **Apps**, and select an asset. Select the stage to which you want to deploy. In the URL, copy the environment (stage) key after “stageid=”, as shown in this example:
 
-    ![Screenshot of the ODC Portal showing how to retrieve the environment (stage) key from the asset URL](images/environment-key-pl.png "Get the environment key")    
+    ![Screenshot of the ODC Portal showing how to retrieve the environment (stage) key from the asset URL](images/environment-key-pl.png "Get the environment key")
 
     You can also retrieve the environment key programmatically, using `GET /api/portfolios/v1/environments`.
-    
+
     </div>
 
 ## Deploy your asset to the target stage
@@ -44,11 +44,11 @@ Before using the APIs to deploy your asset to a target stage, ensure that you ha
 To deploy your asset to a target stage in your CI/CD pipeline, follow these steps:
 
 1. To trigger the execution of the deployment, use:  
-     
-    `POST /api/deployments/v1/deployment-operations` 
-     
+
+    `POST /api/deployments/v1/deployment-operations`
+
     In the body, pass the operation you want to trigger. In this case, the operation is `Deploy`. Pass also the environment key, asset key, build key, and revision number. Example:  
-        
+
         {
         "operation": "Deploy",  
         "assetKey": "a111a111-1aa1-1aa1-111a-a1111a1a1a11",  
@@ -58,15 +58,15 @@ To deploy your asset to a target stage in your CI/CD pipeline, follow these step
         }
         
     If this API call is successful, the response should show the status as "Running". If this is not the case, check the [Deployments API reference](https://www.outsystems.com/tk/redirect?g=acf7cd06-3fe1-4bd3-85e8-06cd11aa0a7d) for more information on other statuses.
-     
+
     The response also contains the operation key, necessary for the next step.  
-     
+
 1. To get the list of deployment operations and check if your deployment finished successfully, use:  
-     
-    `GET /deployments/v1/deployment-operations/{operationKey}` 
-     
+
+    `GET /deployments/v1/deployment-operations/{operationKey}`
+
     A successful deployment shows the status as “Finished”. For more information on other statuses, refer to the [Deployments API reference](https://www.outsystems.com/tk/redirect?g=acf7cd06-3fe1-4bd3-85e8-06cd11aa0a7d).  
-     
+
     These are the recommended guidelines for monitoring the deployment status until it changes to "Finished" or "FinishedWithError":  
 
     * Poll the API to get the deployment status using a consistent wait time (for example, every 5 seconds).  

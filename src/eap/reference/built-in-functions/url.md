@@ -20,7 +20,7 @@ coverage-type:
 
 ## GetDefaultDomain
 
-Returns the domain set as default in the stage where this app is running. 
+Returns the domain set as default in the stage where this app is running.
 
 ### Output
 
@@ -43,9 +43,9 @@ Parameters and their values aren't included when parameters are optional and the
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Output
 
@@ -63,9 +63,9 @@ Returns the URL path of the app that owns the element that is being processed. N
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Output
 

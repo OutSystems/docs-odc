@@ -18,7 +18,7 @@ coverage-type:
 
 # Radar Chart
 
-This example shows how you can create a simple Radar Chart with multiple series types. 
+This example shows how you can create a simple Radar Chart with multiple series types.
 
 1. From the Toolbox, drag the **Radar Chart** widget to the Screen.
 
@@ -38,7 +38,7 @@ This example shows how you can create a simple Radar Chart with multiple series 
 
     ![Screenshot showing the Series Name property being set in the Radar Chart configuration](images/chartradar-seriesname-ss.png "Setting the Series Name")
 
-1. To add more data points, repeat steps 2 and 3. 
+1. To add more data points, repeat steps 2 and 3.
 
     ![Screenshot demonstrating how to add additional data points to the Radar Chart](images/chartradar-extra-datapoints-ss.png "Adding More Data Points")
 
@@ -53,4 +53,3 @@ This example shows how you can create a simple Radar Chart with multiple series 
 After following these steps, you can publish your module:
 
 ![Image displaying the final result of the Radar Chart pattern after customization and configuration](images/chartradar-result.png "Final Radar Chart Pattern Result")
-

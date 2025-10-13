@@ -16,7 +16,7 @@ coverage-type:
   - apply
 ---
 
-# Add automatic activity 
+# Add automatic activity
 
 When implementing your workflow, you can include tasks to be done automatically without needing human intervention. This is accomplished by including an AutomaticActivity node in your workflow.
 

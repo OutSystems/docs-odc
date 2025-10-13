@@ -26,7 +26,7 @@ In ODC Studio, for new or existing apps in the **development stage**, you can:
 
 * [View and edit the default values of app settings](#view-and-edit-default-values-of-the-app-settings)
 
-# Create or change settings {#create-or-change-settings}
+## Create or change settings {#create-or-change-settings}
 
 To create or change app settings, follow these steps:
 
@@ -44,7 +44,7 @@ You must publish your app after you make any changes.
 
 If you're storing sensitive information such as passwords or an access token in the setting, set the **Is secret** property to True. For more information about the **Is secret** property, refer to [Set as Secret](../security/set-as-secret.md). For more information about settings and their properties, refer to [Setting properties](#setting-properties).
 
-# Organize settings into folders { #organize-settings-into-folders}
+## Organize settings into folders { #organize-settings-into-folders}
 
 To organize your app settings into folders:
 
@@ -54,7 +54,7 @@ To organize your app settings into folders:
 
     ![Settings organized into folders in ODC Studio.](images/setting-folder-odcs.png "Organize Settings into Folders")
 
-# View and edit default values of the app settings {#view-and-edit-default-values-of-the-app-settings}
+## View and edit default values of the app settings {#view-and-edit-default-values-of-the-app-settings}
 
 In the ODC Portal, you can view and edit default settings for all apps on a specific stage. To do this:
 

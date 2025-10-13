@@ -18,7 +18,7 @@ outsystems-tools:
 ---
 # Large resource
 
-The app includes large resources. 
+The app includes large resources.
 
 ## Impact
 
@@ -26,7 +26,7 @@ When publishing to the environment, large resources in the app can slow down pub
 
 ## Why is this happening?
 
-Large resources increase the size of the app, slowing down publishing and downloading by requiring more time and bandwidth. 
+Large resources increase the size of the app, slowing down publishing and downloading by requiring more time and bandwidth.
 
 ## How to fix
 

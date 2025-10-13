@@ -23,7 +23,7 @@ The SSL Pinning Plugin applies applies only to Mobile Apps.
 
 </div>
 
-In native mobile apps, SSL Pinning or HTTP Public Key Pinning (HPKP) provides an extra layer of security to HTTPS communications to avoid, for example, man-in-the-middle attacks. SSL Pinning works on the client-side. SSL Pinning verifies the client-server certificate by comparing the hashes of the public keys of the pre-bundled mobile app. 
+In native mobile apps, SSL Pinning or HTTP Public Key Pinning (HPKP) provides an extra layer of security to HTTPS communications to avoid, for example, man-in-the-middle attacks. SSL Pinning works on the client-side. SSL Pinning verifies the client-server certificate by comparing the hashes of the public keys of the pre-bundled mobile app.
 
 By design, if there's a hash mismatch, calls to server actions stop working.  When there's a hash mismatch, you must add a new hash list in your app, build a new version of the app, and distribute it to your users. To prevent a hash mismatch, design the app to verify the certificate validity. To learn more about hash validity, see [Check the hash validity](#check-the-hash-validity) section.
 
@@ -41,7 +41,7 @@ To keep your stages secure, OutSystems continuously updates server certificates 
 
 <div class="info" markdown="1">
 
-When certificates change, the stages using these certificates in their apps may stop working. To fix this problem, you must generate a new app and distribute the app. Due to any unforeseen circumstances, if OutSystems is unable to notify you every time there is a change or you miss a notification, everyone involved is at risk. 
+When certificates change, the stages using these certificates in their apps may stop working. To fix this problem, you must generate a new app and distribute the app. Due to any unforeseen circumstances, if OutSystems is unable to notify you every time there is a change or you miss a notification, everyone involved is at risk.
 
 OutSystems no longer supports the native Mobile apps generation when using SSL Pinning to pin your apps to OutSystems managed certificates. This change affects all stages, production and non-production. If this change affects your stages, get new domains and certificates, and provide their details to OutSystems.
 
@@ -159,16 +159,15 @@ The following is a configuration example generated in real-time for an applicati
            
     }
 
-
 ### Install the SSL Plugin from Forge
 
-Install the SSL Pinning Plugin from [Forge](https://www.outsystems.com/forge/) in your stage. For the plugin installation instructions, see [Installing a plugin](../intro.md/#installing-a-plugin-and-adding-a-public-element-to-your-app). 
+Install the SSL Pinning Plugin from [Forge](https://www.outsystems.com/forge/) in your stage. For the plugin installation instructions, see [Installing a plugin](../intro.md/#installing-a-plugin-and-adding-a-public-element-to-your-app).
 
 ### Add the configuration file to the app
 
 Add the configuration file to the mobile app, so that the build service can bundle configuration in the native app build.
 
-Go to the ODC Portal to complete the following steps in your mobile app. 
+Go to the ODC Portal to complete the following steps in your mobile app.
 
 1. Open the ODC Portal or ODC Studio, and open your mobile app.
     * In the ODC Portal, navigate to the **Configuration tab**.
@@ -178,10 +177,10 @@ Go to the ODC Portal to complete the following steps in your mobile app.
     This setting automatically appears after you add a dependency to the SSL Pinning plugin in your mobile app.
 
 1. Select the context menu, select **Edit**, and upload your **pinning.json** file.
- 
+
 ### Implement additional verification of the server certificate
 
-To add the SSL Pinning verification, ensure you have installed the SSL Pinning Plugin from [Forge](https://www.outsystems.com/forge/) in your stage. 
+To add the SSL Pinning verification, ensure you have installed the SSL Pinning Plugin from [Forge](https://www.outsystems.com/forge/) in your stage.
 
   ![Screenshot showing the process of adding SSL Pinning verification to a mobile app in ODC Studio](images/add-ssl-pinning-verification-odcs.png "Adding SSL Pinning Verification in ODC Studio")
 
@@ -189,7 +188,7 @@ In ODC Studio, complete the following steps in your mobile app:
 
 1. Go to **Manage dependencies** (Ctrl+Q) and add the reference to SSLPinningPlugin.
 
-1. Drag the **RequireSSLPinning** block to one of your screens. SSL Pinning works for all HTTPS requests in the mobile app. 
+1. Drag the **RequireSSLPinning** block to one of your screens. SSL Pinning works for all HTTPS requests in the mobile app.
 
     You can add the block in the **Splash** screen.
 
@@ -197,7 +196,7 @@ In ODC Studio, complete the following steps in your mobile app:
 
 Calls to server actions stop working if there's a hash mismatch. It's a good practice to check for hash validity. If there's a mismatch, inform users that they must get the new version of the app. Use the client action **CheckCertificateForUrl** to check if a hash from the configuration list is valid or not. If the check doesn't pass, display a notification informing the users to install a new version of the app.
 
-By default, the **CheckCertificateForUrl** action evaluates the current stage URL. Optionally, you can enter a value for the URL parameter. 
+By default, the **CheckCertificateForUrl** action evaluates the current stage URL. Optionally, you can enter a value for the URL parameter.
 
 The action returns the following two values:
 
@@ -213,7 +212,7 @@ To test the mobile app with SSL Pinning, do the following:
 
 1. Publish and generate the new version of your Mobile app with SSL Pinning.
 
-1. Install and run the app on your smartphone. 
+1. Install and run the app on your smartphone.
 
 1. Verify that the app works (it has the right certificate and hash keys).
 
@@ -275,10 +274,8 @@ If you want your mobile app to perform the SSL Pinning validations when connecti
 
     }
 
-
 1. Bundle the configuration file and implement the verification in your mobile app (as explained for a single server).
 
 ## Plan for the certificate renewal
 
 If you're planning to update your certificate soon, release a new version of the app with the JSON configuration containing the hash values for both the current certificate and the new certificate. Do this before you update the certificate to give users enough time to update the app. This ensures that when you update the certificate, the app continues to work.
-

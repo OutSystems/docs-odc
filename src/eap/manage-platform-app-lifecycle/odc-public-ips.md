@@ -19,12 +19,12 @@ coverage-type:
 
 # Allowlisting ODC public IP addresses
 
-Allowlisting is a security mechanism that restricts access to a network or system by only allowing specific IP addresses to connect. 
+Allowlisting is a security mechanism that restricts access to a network or system by only allowing specific IP addresses to connect.
 
 In ODC, there are two main scenarios where you may need to configure allowlisting:
 
 * [Runtime applications accessing internal resources](#runtime-accessing-internal):
-    
+
     Your ODC apps may need to call internal APIs, databases, or other private services. In this case, the recommended approach is to use  [ODC Private Gateway](private-gateway.md). As a fallback option, you may also allowlist the ODC runtime egress IPs in your firewalls or access policies so that these outbound requests are accepted.
 
 * [Streaming app analytics](#streaming-app-analytics):
@@ -33,7 +33,7 @@ In ODC, there are two main scenarios where you may need to configure allowlistin
 
 <div class="info" markdown="1">
 
-OutSystems tries to ensure that these IP addresses remain unchanged as much as possible, however, the list of public IPs may change over time due to infrastructure updates, though such changes would be rare and unexpected. 
+OutSystems tries to ensure that these IP addresses remain unchanged as much as possible, however, the list of public IPs may change over time due to infrastructure updates, though such changes would be rare and unexpected.
 If you'd like to be informed of any IP address changes, please subscribe to updates to the [OutSystems status page](https://status.outsystems.com/).
 
 </div>
@@ -51,7 +51,6 @@ IP allowlisting can't be applied to [custom code](../building-apps/external-logi
 
 </div>
 
-
 For IP allowlisting, ODC provides a list of public IP addresses that are used to initiate outbound traffic. These can be allowlisted in your firewalls or access policies.
 
 <div class="info" markdown="1">
@@ -60,7 +59,6 @@ This method uses shared IP addresses. All apps running on ODC, for all customers
 
 </div>
 
-
 ### ODC public runtime IP addresses
 
 Use the following lists to configure inbound access from your ODC apps to your systems. Each set of IP addresses corresponds to a specific region and stage type (Development, Non-production, or Production). This allows you to tailor your firewall rules according to your security posture and deployment needs.
@@ -68,7 +66,6 @@ Use the following lists to configure inbound access from your ODC apps to your s
 For example, you may allowlist only the IPs for the Production stages in your ODC region to restrict access from lower-risk environments. Alternatively, if you want to enable access from all your ODC environments, you can allowlist all stage types for the region of your subscription.
 
 Each region is presented in its own section, review only the ones relevant to your deployment.
-
 
 #### US East (North Virginia)
 
@@ -148,7 +145,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | ----- | ----- |
 | Development | 15.164.44.104, 3.34.18.206, 43.202.177.166 |
 | Non-production | 13.125.137.180, 3.36.212.44, 52.78.196.0 |
-| Production | 13.209.126.179, 3.37.161.90, 54.180.22.49 | 
+| Production | 13.209.126.179, 3.37.161.90, 54.180.22.49 |
 
 #### Asia Pacific (Tokyo)
 
@@ -166,7 +163,6 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 3.105.151.251, 3.24.144.50, 52.64.230.111 |
 | Production | 13.237.131.221, 3.24.7.98, 3.24.78.93 |
 
-
 #### Asia Pacific (Jakarta)
 
 | Stage | IP Addresses |
@@ -179,7 +175,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 
 [Analytics stream](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md) uses the ODC Data platform to continuously stream app analytics to external Application Performance Monitoring (APM) tools.
 
-Before configuring IP allowlisting, review the [Analytics stream connectivity requirements](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md#prerequisites). 
+Before configuring IP allowlisting, review the [Analytics stream connectivity requirements](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md#prerequisites).
 
 When your APM tool is hosted in a private network, you must allow inbound access only from the ODC Data platform egress IP addresses. To do so, you need to know:
 
@@ -197,4 +193,3 @@ Use the following table to identify the Data platform region that serves your OD
 | South America (São Paulo) | South America (São Paulo) | 54.94.69.128, 18.229.244.40, 15.229.64.9 |
 | Europe (Frankfurt), Europe (London), Middle East (Tel Aviv), Middle East (UAE) | Europe (Frankfurt) | 3.73.166.181, 52.59.51.255, 18.194.166.197 |
 | Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta) | Asia Pacific (Singapore) | 52.76.74.134, 18.143.210.11, 52.74.33.192 |
-

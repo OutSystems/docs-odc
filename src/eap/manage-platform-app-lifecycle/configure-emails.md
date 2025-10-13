@@ -29,7 +29,7 @@ To create and manage an email configuration, you must have organization role tha
 This article explains how to:
 
 * [Set up email for the first time](#set-up-email-for-the-first-time)
-* [Create a test list](#create-a-test-list) 
+* [Create a test list](#create-a-test-list)
 
 ## Set up email for the first time
 
@@ -39,7 +39,7 @@ To configure the SMTP settings for the email, follow these steps:
 
 1. Go to ODC Portal.
 
-1. Select **Configurations** > **Emails**. 
+1. Select **Configurations** > **Emails**.
 The **Email configurations** page is displayed  
 
 1. Select the stage where you want to configure the email settings.
@@ -91,4 +91,3 @@ To create a test list:
 ## Additional resources
 
 * [Emails](../building-apps/sending-emails/intro.md)
-

@@ -39,14 +39,14 @@ The syntax is composed of a **command** and it’s **arguments**. The command de
 
 ## Summary of available commands
 
-Command| Description
----|--- 
-[-create](#create) | Opens the ODC Studio dialog to create a new application.
-[-diff](#diff) | Opens the [**Compare and Merge**](../../building-apps/merge/merge-example.md) window using the 2 apps passed as parameters.
-[-merge](#merge) | Attempts to merge two locally saved apps. The  [**Compare and Merge**](../../building-apps/merge/merge-example.md) window opens and the elements that can be merged will be selected.
-[-openModuleFromUrl](#open-module-from-url) | Opens an app stored in a remote location accessible via an url.
-[-refresh](#refresh) | Refreshes the references of a locally saved app against a given stage and generates a log file with any errors of the process.
-[-recover](#recover) | Recovers app meta-information from corrupted .oml files. 
+| Command| Description |
+| ---|--- |
+| [-create](#create) | Opens the ODC Studio dialog to create a new application. |
+| [-diff](#diff) | Opens the [**Compare and Merge**](../../building-apps/merge/merge-example.md) window using the 2 apps passed as parameters. |
+| [-merge](#merge) | Attempts to merge two locally saved apps. The  [**Compare and Merge**](../../building-apps/merge/merge-example.md) window opens and the elements that can be merged will be selected. |
+| [-openModuleFromUrl](#open-module-from-url) | Opens an app stored in a remote location accessible via an url. |
+| [-refresh](#refresh) | Refreshes the references of a locally saved app against a given stage and generates a log file with any errors of the process. |
+| [-recover](#recover) | Recovers app meta-information from corrupted .oml files. |
 
 ## Commands
 
@@ -62,11 +62,11 @@ Syntax
 : `-create NewApplication [-url <hostName>] [-userName <user>] [-password <password>]`
  Example: `odcstudio.exe -create NewApplication -url dev.example.com -userName DevDave --password mypassword`
 
-Argument | Type | Description | Example
----|---|---|---
-`-url <hostName>`| Optional | Address of the stage to create the app in. | dev.example.com
-`-userName <user>` | Optional | The username used to connect to ODC Studio | DevDave
-`-password <password>` | Optional | The password that corresponds to the provided username | mypassword
+| Argument | Type | Description | Example |
+| ---|---|---|--- |
+| `-url <hostName>`| Optional | Address of the stage to create the app in. | dev.example.com |
+| `-userName <user>` | Optional | The username used to connect to ODC Studio | DevDave |
+| `-password <password>` | Optional | The password that corresponds to the provided username | mypassword |
 
 ### -diff { #diff }
 
@@ -76,10 +76,10 @@ Syntax
 :   `-diff "<localApp.oml>" "<foreignApp.oml>"`
 :   Example: `odcstudio.exe -diff "C:\Program Files\OutSystems\ComponentsCore.oml" "C:\Program Files\OutSystems\ComponentsCore2.oml"`
 
-Argument | Type | Description | Example
----|---|---|---
-`localApp.oml` | Mandatory | Source app to use in the comparison. This is the app that appears on the left side of the **Compare and Merge** dialog, labeled as **Your version**. | C:\Program Files\OutSystems\ComponentsCore.oml
-`foreignApp.oml` | Mandatory | Target app to use in the comparison. This is the app that appears on the right side of the **Compare and Merge** dialog, labeled as **The other version**. | C:\Program Files\OutSystems\ComponentsCore2.oml
+| Argument | Type | Description | Example |
+| ---|---|---|--- |
+| `localApp.oml` | Mandatory | Source app to use in the comparison. This is the app that appears on the left side of the **Compare and Merge** dialog, labeled as **Your version**. | C:\Program Files\OutSystems\ComponentsCore.oml |
+| `foreignApp.oml` | Mandatory | Target app to use in the comparison. This is the app that appears on the right side of the **Compare and Merge** dialog, labeled as **The other version**. | C:\Program Files\OutSystems\ComponentsCore2.oml |
 
 ### -merge { #merge }
 
@@ -89,10 +89,10 @@ Syntax
 :   `-merge "<localApp.oml>" "<foreignApp.oml>"`
 :   Example: `odcstudio.exe -merge "C:\Program Files\OutSystems\ComponentsCore.oml" "C:\Program Files\OutSystems\ComponentsCore2.oml"`
 
-Argument | Type | Description | Example
----|---|---|---
-`localApp.oml` | Mandatory | Source app to use in the comparison. This is the app that appears on the left side of the **Compare and Merge** dialog, labeled as **Your version**. | C:\Program Files\OutSystems\ComponentsCore.oml
-`foreignApp.oml` | Mandatory | Target app to use in the comparison. This is the app that appears on the right side of the **Compare and Merge** dialog, labeled as **The other version**. | C:\Program Files\OutSystems\ComponentsCore2.oml 
+| Argument | Type | Description | Example |
+| ---|---|---|--- |
+| `localApp.oml` | Mandatory | Source app to use in the comparison. This is the app that appears on the left side of the **Compare and Merge** dialog, labeled as **Your version**. | C:\Program Files\OutSystems\ComponentsCore.oml |
+| `foreignApp.oml` | Mandatory | Target app to use in the comparison. This is the app that appears on the right side of the **Compare and Merge** dialog, labeled as **The other version**. | C:\Program Files\OutSystems\ComponentsCore2.oml |
 
 ### -openModuleFromUrl { #open-module-from-url }
 
@@ -102,9 +102,9 @@ Syntax
 :   `-openModuleFromUrl (<url.oml>)`
 :   Example: `odcstudio.exe -openModuleFromUrl (https://www.example.com/MyApp.oml)`
 
-Argument | Type | Description | Example
----|---|---|---
-`url.oml` | Mandatory | The path to the remote location of the app. | https://www.example.com/MyApp.oml
+| Argument | Type | Description | Example |
+| ---|---|---|--- |
+| `url.oml` | Mandatory | The path to the remote location of the app. | <https://www.example.com/MyApp.oml> |
 
 ### -refresh { #refresh }
 
@@ -114,19 +114,19 @@ Syntax
 :   `-refresh "<myApp.oml>" "<verify.xml>" <hostName> <userName> <password>`
 :   Example: `odcstudio.exe -refresh "C:\Program Files\MyApp.oml" "C:\Program Files\verify.xml" dev.example.com admin AdminPassword`
 
-Argument | Type | Description | Example
----|---|---|---
-`myApp.oml` | Mandatory | The path to a locally saved app. | C:\Program Files\MyApp.oml
-`verify.xml` | Mandatory | The path in which to save the log file "verify.xml". | C:\Program Files\verify.xml
-`hostName` | Mandatory | The hostname of the stage to compare the references of the local app. | dev.example.com
-`userName` | Mandatory | The username used to connect to the stage. | admin
-`password` | Mandatory | The password of the given userName. | AdminPassword
+| Argument | Type | Description | Example |
+| ---|---|---|--- |
+| `myApp.oml` | Mandatory | The path to a locally saved app. | C:\Program Files\MyApp.oml |
+| `verify.xml` | Mandatory | The path in which to save the log file "verify.xml". | C:\Program Files\verify.xml |
+| `hostName` | Mandatory | The hostname of the stage to compare the references of the local app. | dev.example.com |
+| `userName` | Mandatory | The username used to connect to the stage. | admin |
+| `password` | Mandatory | The password of the given userName. | AdminPassword |
 
 ### -recover { #recover }
 
 Recovers app meta-information from corrupted .oml files. This command can be used as a mitigation measure to address strange behaviors that are only occurring on specific apps, for example:
 
-* ODC Studio throws errors or crashes when performing operations such as refreshing references, opening a specific screen, or opening an action. 
+* ODC Studio throws errors or crashes when performing operations such as refreshing references, opening a specific screen, or opening an action.
 
 * Issues publishing a single app.
 
@@ -134,6 +134,6 @@ Syntax
 :   `odcstudio.exe -recover "<myApp.oml>"`
 :   Example: `odcstudio.exe -recover "C:\Program Files\OutSystems\ComponentsCore.oml"`
 
-Argument | Type | Description | Example
----|---|---|---
-`myApp.oml` | Mandatory | The path to a locally saved app. | "C:\Program Files\OutSystems\ComponentsCore.oml"
+| Argument | Type | Description | Example |
+| ---|---|---|--- |
+| `myApp.oml` | Mandatory | The path to a locally saved app. | "C:\Program Files\OutSystems\ComponentsCore.oml" |

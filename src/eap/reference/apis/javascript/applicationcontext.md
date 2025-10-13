@@ -23,7 +23,7 @@ Provides contextual information based on the screen that is being presented. Use
 
 |Functions|Description|
 |---|---|
-|[getCurrentContext](#getCurrentContext)|Gets the current context based on the screen being presented.|
+|[getCurrentContext](#getcurrentcontext)|Gets the current context based on the screen being presented.|
 
 ## Functions
 
@@ -50,10 +50,10 @@ var context = $public.ApplicationContext.getCurrentContext();
 
 Returns: object
 
-Returns an object with the following attributes: 
-- `applicationKey`: string<br/>A UUID that uniquely identifies your application. 
-- `applicationName`: string<br/>The name of your application.
-- `screenKey`: string<br/>A UUID that uniquely identifies the screen that was visible when `getCurrentContext` was called. 
-- `screenName`: string<br/>The name of the screen that was visible when `getCurrentContext` was called.
-- `isReady`: boolean<br/>`true` if the application is ready, `false` otherwise
+Returns an object with the following attributes:
 
+* `applicationKey`: string<br/>A UUID that uniquely identifies your application.
+* `applicationName`: string<br/>The name of your application.
+* `screenKey`: string<br/>A UUID that uniquely identifies the screen that was visible when `getCurrentContext` was called.
+* `screenName`: string<br/>The name of the screen that was visible when `getCurrentContext` was called.
+* `isReady`: boolean<br/>`true` if the application is ready, `false` otherwise

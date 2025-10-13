@@ -38,7 +38,7 @@ To configure streaming observability data, using **Datadog** as the destination 
 
 1. Get the OpenTelemetry Collector endpoint and authentication credentials.
 
-Once you've completed these steps, go to the ODC Portal and [configure a stream](stream-app-analytics-configure.md). 
+Once you've completed these steps, go to the ODC Portal and [configure a stream](stream-app-analytics-configure.md).
 
 ## Additional resources
 

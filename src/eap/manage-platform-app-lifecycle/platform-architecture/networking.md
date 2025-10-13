@@ -42,7 +42,6 @@ The Web Application Firewall (WAF) runs on the CDN and protects the Platform and
 
 For more information see [Security in OutSystems Developer Cloud](../../security/security.md#web-application-firewall).
 
-
 ### Identity Service
 
 The Identity Service verifies that each request comes from an [authenticated and authorized user](identity.md).
@@ -75,10 +74,10 @@ The platform is available at `<customername>.outsystems.dev`.
 
 ### Runtime
 
-Apps run as app containers in the Runtime with secure REST API endpoints. HTTPS secures the communication between the client and the browser. 
+Apps run as app containers in the Runtime with secure REST API endpoints. HTTPS secures the communication between the client and the browser.
 
 An example of an HTTPS request is when a user submits a form in an app. The request accesses a secure endpoint that the app container exposes.
 
 The apps are available at `<customername>.outsystems.app/appname` and on all the active custom domains (such as `apps.example.com/appname`).
 
-![Diagram showing the network architecture of the OutSystems Developer Cloud Runtime, detailing the flow of HTTPS requests through app containers and security endpoints.](images/network-runtime-diag.png "Runtime Network Architecture Diagram") 
+![Diagram showing the network architecture of the OutSystems Developer Cloud Runtime, detailing the flow of HTTPS requests through app containers and security endpoints.](images/network-runtime-diag.png "Runtime Network Architecture Diagram")

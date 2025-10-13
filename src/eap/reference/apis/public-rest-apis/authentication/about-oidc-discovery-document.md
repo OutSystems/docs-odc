@@ -17,7 +17,7 @@ figma:
 # About OIDC Discovery document
 
 The OpenID Connect protocol requires the use of multiple endpoints to authenticate users and request resources such as tokens, user information, and public keys.
-OpenID Connect allows the use of a Discovery document, a JSON document found at a well-known location containing key-value pairs that provide details about the OpenID Connect provider's configuration, including the URIs of the authorization, token, revocation, userinfo, and public-keys endpoints. 
+OpenID Connect allows the use of a Discovery document, a JSON document found at a well-known location containing key-value pairs that provide details about the OpenID Connect provider's configuration, including the URIs of the authorization, token, revocation, userinfo, and public-keys endpoints.
 
 The Discovery document for OutSystems’ OpenID Connect service may be retrieved from:
 
@@ -65,4 +65,3 @@ The response returned will look similar to the following example:
   ],
 }
 ```
-

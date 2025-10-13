@@ -51,7 +51,7 @@ Here's the human activity status transition diagram that depicts the state trans
 
 ![Diagram showing the state transitions of human activity in a workflow, including states like Running, Waiting, Open, Completed, Terminated, and Error, with transitions triggered by events and actions.](images/activity-status-transition-diag.png "Human Activity State Transition Diagram")
 
-This diagram indicates the following: 
+This diagram indicates the following:
 
 * You can execute **HumanActivityOpen** API when the human activity node is in either **Running** or **Waiting** state. On execution of the API, the status of human activity node changes to **Open**.
 

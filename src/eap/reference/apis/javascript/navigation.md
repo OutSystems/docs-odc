@@ -31,7 +31,7 @@ The functions below related with BackHandlers ([registerBackNavigationHandler](#
 |[navigateTo](#navigateto)|Performs a navigation to a provided URL using an optional transition animation.|
 |[navigatedFromHistory](#navigatedfromhistory)|Checks if the current screen was loaded from the browser's history.|
 |[registerBackNavigationHandler](#registerbacknavigationhandler)|Registers a callback function in a queue to be called when navigating back.|
-|[registerNavigationHandler](#registerNavigationHandler)| Overrides the navigation handler with a provided callback.|
+|[registerNavigationHandler](#registernavigationhandler)| Overrides the navigation handler with a provided callback.|
 
 ## Functions
 
@@ -189,12 +189,12 @@ Returns: void
 
 **(url: string, [transition: TransitionAnimation \| string], [replace: boolean]) => void**
 
-Parameters: 
+Parameters:
 
 * **nextUrl**: string<br/>A string representation of the URL to navigate to as a part of the navigation event.
 * **navigate**: [NavigationMethod](#navigationmethod)<br/>A function that can issue a new navigation from within the context of the previous navigation.
 
-Returns: boolean. If `true`, the navigation occurs. Otherwise, the navigation is cancelled. 
+Returns: boolean. If `true`, the navigation occurs. Otherwise, the navigation is cancelled.
 
 ### NavigationMethod
 
@@ -213,5 +213,3 @@ Parameters:
 * (Optional) **replace**: boolean<br/>Indicates if the navigation should replace the current history entry, instead of creating a new one that the user can navigate back to. If a value is not provided, the default is `false`.
 
 Returns: void
-
-

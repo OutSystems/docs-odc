@@ -25,7 +25,7 @@ Applies to **Mobile** apps only.
 
 Offline sync patterns are not implemented correctly.
 
-## Impact 
+## Impact
 
 Offline synchronization is crucial to ensure data consistency between the device and the server. It is essential for maintaining functionality when the device is not connected to the internet, allowing users to continue using the app, and ensuring that any changes made locally are reflected on the server once connectivity is restored.
 

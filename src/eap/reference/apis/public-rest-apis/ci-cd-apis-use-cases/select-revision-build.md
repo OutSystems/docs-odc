@@ -29,13 +29,13 @@ Before using the APIs to get the revision and build of your asset, ensure that y
 * The key of the asset to be deployed.
 
     <div class="info" markdown="1">
-    
+
     To get the asset key, go to **Portal** > **Apps**, and select the asset you want to deploy. In the URL, copy the asset key after "application?id=", as shown in this example:
 
-    ![Screenshot of the ODC Portal showing how to retrieve the asset key from the asset URL](images/asset-key-pl.png "Get the asset key")    
+    ![Screenshot of the ODC Portal showing how to retrieve the asset key from the asset URL](images/asset-key-pl.png "Get the asset key")
 
     You can also retrieve the asset key programmatically, using `GET /api/asset-repository/v1/assets` with the necessary filters.
-    
+
     </div>
 
 ## Select the revision and build of the asset to be deployed
@@ -43,20 +43,20 @@ Before using the APIs to get the revision and build of your asset, ensure that y
 To get the revision and build of the asset in your CI/CD pipeline, follow these steps:
 
 1. To get the list of all revisions for an asset, use:  
-     
-    `GET /api/asset-repository/v1/assets/{assetKey}/revisions` 
-     
+
+    `GET /api/asset-repository/v1/assets/{assetKey}/revisions`
+
     Pass the asset key.  
-     
-    From the list of revisions in the response, select the asset revision you want to deploy. The revision number is used in the next step. 
+
+    From the list of revisions in the response, select the asset revision you want to deploy. The revision number is used in the next step.
 
 1. To get the build key associated with the selected revision, use:  
-     
+
     `GET /api/builds/v1/build-operations?assetKey={assetKey}&assetRevision={assetRevision}&byBuildType=Release`
 
-    You can only deploy builds of type **Release**, so in this scenario, you filter the results to get only builds of that type. 
+    You can only deploy builds of type **Release**, so in this scenario, you filter the results to get only builds of that type.
 
-    The response contains the build key, which you can then use to [deploy the asset](deploy-asset.md). 
+    The response contains the build key, which you can then use to [deploy the asset](deploy-asset.md).
 
 ## Next steps
 

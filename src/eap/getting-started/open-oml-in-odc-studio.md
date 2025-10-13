@@ -55,6 +55,6 @@ With the app or library open in ODC Studio, you can export the .oml file by foll
 
 1. Select **Export** and then click **Save**.
 
-1. Name the .oml file as required and save it to your desired location. 
+1. Name the .oml file as required and save it to your desired location.
 
 You can also use the shortcut `Ctrl + s` on Windows or `Cmd + s` on macOS.

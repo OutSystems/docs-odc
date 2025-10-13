@@ -34,7 +34,7 @@ _Inputs_
 **Username**
 :   Type: Text. Mandatory.
     Identification of the user changing the password.
-    
+
 **NewPassword**
 :   Type: Text. Mandatory.
     Identification of the user changing the password.
@@ -106,7 +106,7 @@ _Outputs_
 **RegistrationResult**
 :   Type: [FinishUserRegistrationResult](#finishuserregistrationresult)  
     Result of the user registration action. Returns a user identifier if the user was successfully registered. Returns a failure reason if unsuccessful.
-    
+
 ### FinishUpdateEmail
 
 _Client action_
@@ -125,7 +125,7 @@ _Outputs_
 :   Type: [FinishUpdateEmailResult](#finishupdateemailresult)  
     Result of the the action. If true, the action was successful.
 
-*FinishUpdateEmailFailureReason**
+**FinishUpdateEmailFailureReason**
 :   Type: [FinishUpdateEmailFailureReason](#finishupdateemailfailurereason)  
     Contains the reason for failure if the action is not successful.
 
@@ -142,6 +142,7 @@ _Outputs_
     Result of the password policy action. Returns boolean values for the password complexity criteria.
 
 ### GetUserProfile
+
 _Client action_
 
 Returns logged-in user's information from the identity provider and updates the [User entity](#user-1) with that information.
@@ -198,7 +199,7 @@ _Inputs_
 
 <div class="info" markdown="1">
 
-The user's email cannot be removed from their profile. 
+The user's email cannot be removed from their profile.
 
 </div>
 
@@ -211,7 +212,7 @@ _Outputs_
 **StartUpdateEmailFailureReasom**
 :   Type: [StartUpdateEmailFailureReason](#startupdateemailfailurereason)
     Contains the reason for failure if the action isn't successful.
-    
+
 ### StartUserRegistration
 
 _Server action_
@@ -223,7 +224,7 @@ Due to a temporary technical limitation, you must add this action from the publi
 </div>
 
 Registers the user in the built-in identity provider by creating the user as active. Call the action **FinishUserRegistration** to change the user's temporary password. The server action throws an exception if the built-in identity provider is disabled for the current app. ODC temporarily locks users out after repeated failed attempts to complete their registration. The lockout duration increases with each additional failed attempt, starting at just a few seconds and reaching a maximum of approximately 5 minutes.
- 
+
 _Inputs_
 
 **User**
@@ -245,13 +246,13 @@ Allows a logged-in user to edit profile information. User can't change user emai
 _Inputs_
 
 **User**
-:   Type: [UserUpdateInfo](#UserUpdateInfo). Mandatory.
+:   Type: [UserUpdateInfo](#userupdateinfo). Mandatory.
     New user information used to update the user.
 
 _Outputs_
 
 **UpdateUserResult**
-:   Type: [UpdateUserResult](#UpdateUserResult)  
+:   Type: [UpdateUserResult](#updateuserresult)  
     Result of the update user action. Returns the failure reason if unsuccessful.
 
 ### ValidatePasswordComplexity
@@ -269,14 +270,14 @@ _Inputs_
 _Outputs_
 
 **PasswordValidationResult**
-:   Type: [PasswordValidationResult](#PasswordValidationResult)  
+:   Type: [PasswordValidationResult](#passwordvalidationresult)  
     Result of the password validation action. Returns boolean values for the password validity and complexity criteria.
 
 ## Structures
 
 ### ChangePasswordResult
 
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
@@ -286,7 +287,7 @@ ChangePasswordFailureReason
 
 ### FinishPasswordResetResult
 
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
@@ -296,7 +297,7 @@ FinishResetPasswordFailureReason
 
 ### FinishUserRegistrationResult
 
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
@@ -309,7 +310,7 @@ FinishUserRegistrationFailureReason
 
 ### PasswordComplexityPolicy
 
-*Attributes*
+_Attributes_
 
 MinimumLength
 :   Type: Integer
@@ -328,7 +329,7 @@ SpecialCharacterRequired
 
 ### PasswordValidationResult
 
-*Attributes*
+_Attributes_
 
 IsValid
 :   Type: Boolean
@@ -350,7 +351,7 @@ MissingSpecialCharacter
 
 ### StartResetPasswordResult
 
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
@@ -360,7 +361,7 @@ VerificationCode
 
 ### StartUpdateEmailResult
 
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
@@ -370,28 +371,28 @@ VerificationCode
 
 ### StartUpdateEmailFailureReason
 
-*Attributes*
+_Attributes_
 
 InvalidEmail
 :   Type: Boolean
 
 ### FinishUpdateEmailResult
 
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
 
 ### FinishUpdateEmailFailureReason
 
-*Attributes*
+_Attributes_
 
 InvalidVerificationCode
 :   Type: Boolean
 
 ### FinishResetPasswordFailureReason
 
-*Attributes*
+_Attributes_
 
 PasswordComplexityPolicyFailed
 :   Type: Boolean
@@ -404,7 +405,7 @@ InvalidEmail
 
 ### UserInfo
 
-*Attributes*
+_Attributes_
 
 Name
 :   Type: Text
@@ -417,16 +418,16 @@ PhotoURL
 
 ### StartUserRegistrationResult
 
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
 
 StartUserRegistrationFailureReason
 :   Type: StartUserRegistrationFailureReason
-     * InvalidEmail
-     * InvalidName
-     * UserAlreadyRegistered
+     *InvalidEmail
+     *InvalidName
+     *UserAlreadyRegistered
 
 VerificationCode
 :   Type: Text
@@ -442,7 +443,7 @@ UserId
 
 ### UserUpdateInfo
 
-*Attributes*
+_Attributes_
 
 Name
 :   Type: Text
@@ -452,7 +453,7 @@ PhotoURL
 
 ### UpdateUserResult
 
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
@@ -469,7 +470,7 @@ UpdateUserFailureReason
 
 The end-user of the apps.
 
-*Attributes*
+_Attributes_
 
 Id
 :   Type: Text

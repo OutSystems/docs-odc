@@ -69,7 +69,7 @@ To consume a single REST API method, follow these steps:
 
 1. Enter the request and the response structures of the API. To enter these details, you can test the API and use the test result.
 
-    Alternatively, you can add the JSON structure or plain text example directly in the **Request** and **Response** fields. 
+    Alternatively, you can add the JSON structure or plain text example directly in the **Request** and **Response** fields.
 
     To test the API, click the **Test** tab. If you have parameters in your **Method URL**, you need to enter the parameter values to execute the test:
 
@@ -81,17 +81,17 @@ To consume a single REST API method, follow these steps:
 
 1. Click **Test**. If the test is successful, you see the method's response in the Response area.
 
-    Click **Copy to Response body** to fill in this response structure in **Response**. 
+    Click **Copy to Response body** to fill in this response structure in **Response**.
 
     For HTTP methods such as `POST` or `PUT`, click **Copy to Request body** to fill in this request structure to **Request**.
 
     ![Option to copy test request to request body in REST API consumption dialog in ODC Studio](images/rest-consume-test-request-copy-odcs.png "Consume REST API Method - Copy to Request Body")
-    
+
 1. Check if the **Request** and **Response** information is correct in the **Body** tab and click **OK**:
 
     ![Body tab in REST API consumption dialog showing request and response structure in ODC Studio](images/rest-consume-body-odcs.png "Consume REST API Method - Body Tab")
 
-Once you have successfully added the API method, ODC Studio automatically [creates structures and API method](#what-odc-studio-creates-when-you-import-a-rest-api) for the API. 
+Once you have successfully added the API method, ODC Studio automatically [creates structures and API method](#what-odc-studio-creates-when-you-import-a-rest-api) for the API.
 
 You can use the ODC portal to change the base URL at any time using the app configuration.
 
@@ -161,9 +161,9 @@ To configure the base URL and basic authentication credentials, follow these ste
 
 1. Go to ODC Portal and select your app.
 
-2. Click **Configuration > Consumed REST APIs**.
+1. Click **Configuration > Consumed REST APIs**.
 
-3. Edit the details and click **Save**.
+1. Edit the details and click **Save**.
 
 The newly configured base URL and authentication details now applies to the API for that stege.
 
@@ -244,4 +244,3 @@ For example, you can't use any of the following URLs because they're not current
 ### Online training
 
 * [Consuming REST APIs ODC Online training](https://learn.outsystems.com/training/journeys/consuming-rest-api-207) online course
-

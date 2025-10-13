@@ -21,7 +21,7 @@ helpids:
 ---
 # Streamed log data
 
-The following table lists the log attributes that are streamed from your ODC app to APM tools. 
+The following table lists the log attributes that are streamed from your ODC app to APM tools.
 
 | **Attribute name**        | **Data type** | **Description**                                            |
 | ------------------------- | ------------- | ---------------------------------------------------------- |
@@ -41,7 +41,6 @@ The following table lists the log attributes that are streamed from your ODC app
 | RequestPath               | String        | Path of the request that originated the log                |
 | exception\_stacktrace     | String        | Stack trace from the error                                 |
 | exception\_message        | String        | Error message                                              |
-
 
 ## Related resources
 

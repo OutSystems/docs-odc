@@ -25,7 +25,7 @@ The subscription console is only accessible to users with the **View subscriptio
 
 </div>
 
-The subscription console has three main areas. 
+The subscription console has three main areas.
 
 * **Subscription information.** This displays your Edition, End-date, and Activation code.
 * **Overview tab**. This gives you a birds-eye view of all relevant parameters of your subscription.

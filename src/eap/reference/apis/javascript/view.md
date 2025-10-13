@@ -53,8 +53,9 @@ Returns: Element
 Register a function that provides a list of values to apply to the document `body`'s `name` attribute.
 
 The function is expected to return, at minimum:
-- A string representing the orientation the device is in. Either `portrait` or `landscape` should be used.
-- A string representing the device type. Either `phone` or `tablet` should be used.
+
+* A string representing the orientation the device is in. Either `portrait` or `landscape` should be used.
+* A string representing the device type. Either `phone` or `tablet` should be used.
 
 The function provided may emit other class names in addition to the device orientation and type names.
 
@@ -62,7 +63,7 @@ This function will be called upon whenever certain events, such as device orient
 
 Parameters:
 
-* **getter**: function<br/>A function that returns current orientation and device classes to apply. The function should accept no parameters, and return an array of strings. 
+* **getter**: function<br/>A function that returns current orientation and device classes to apply. The function should accept no parameters, and return an array of strings.
 
 Returns: void
 
@@ -85,5 +86,3 @@ Checks if the current view state was restored from cache.
 Returns: boolean
 
 Returns `true` when the current view state was restored from cache, or `false` otherwise.
-
-

@@ -22,7 +22,7 @@ topic:
 
 The **Code quality** dashboard provides insights into code quality patterns and specific findings across your apps, giving developers and technical leads the visibility they need to maintain high code quality standards. You can access the dashboard from **ODC Portal > Code Quality**. The **Overview** tab gives you a bird's-eye view of technical debt distribution across your organization, and the **Findings** tab provides detailed information to help solve specific code quality problems.
 
-### Technical debt distribution
+## Technical debt distribution
 
 From the **Overview** tab in the **Code quality** dashboard, you can:
 
@@ -40,7 +40,7 @@ From the **Overview** tab in the **Code quality** dashboard, you can:
 
 For more information about how **Code quality** works, refer to [Getting started with Code quality as a technical lead](getting-started-aims-tl.md).
 
-### Investigate specific findings
+## Investigate specific findings
 
 From the **Findings** tab of the  **Code quality** dashboard, you can:
 

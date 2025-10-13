@@ -16,7 +16,7 @@ coverage-type:
   - apply
 ---
 
-# Add decisions 
+# Add decisions
 
 When implementing your workflow, use a Decision node to create multiple paths based on conditions. By default, the Decision node provides two outcomes. Define the condition for each outcome. The conditions are evaluated one at a time and can only follow through on one outcome.
 
@@ -32,13 +32,13 @@ To include decisions in a workflow, follow these steps:
 
    b. **Fetch more data**: (Optional) Select a service action from the corresponding ODC app and enter the service action's corresponding input parameters. For example, you can select a service action (GetFinancialStatus) and then define the condition for the Outcomes.
 
-   c. **Outcome 1**: Enter the condition to evaluate. If the condition is evaluated as true, then the workflow follows this path. 
+   c. **Outcome 1**: Enter the condition to evaluate. If the condition is evaluated as true, then the workflow follows this path.
 
-   d. **Outcome 2**:  If the condition for Outcome 1 is false, enter the condition to evaluate for this outcome. 
+   d. **Outcome 2**:  If the condition for Outcome 1 is false, enter the condition to evaluate for this outcome.
 
    e. **Otherwise branch:** If all conditions fail, the workflow follows this branch. **Note:** The order of the outcomes determines the position on the sidebar, with the last position being the otherwise branch. You can rename Outcomes to provide more meaningful names for the conditional paths.
 
-If your workflow involves multiple conditional paths, you can add more than two outcomes to a decision. The following elements are available for use in the expression editor while specifying the condition: 
+If your workflow involves multiple conditional paths, you can add more than two outcomes to a decision. The following elements are available for use in the expression editor while specifying the condition:
 
 * Output parameters from previously executed elements in the process flow path
 

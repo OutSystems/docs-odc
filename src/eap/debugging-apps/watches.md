@@ -29,17 +29,15 @@ Using watches you can inspect:
 * Variables
 * Screen widgets
 
-
 ## Add a Watch
 
 To watch an app element do the following:
 
 1. Run the app in Debug mode.
 1. Right-click the element to watch.
-1. Select the "Add To Debug Watches" option in the pop-up menu. 
+1. Select the "Add To Debug Watches" option in the pop-up menu.
 
-All watched app elements are alphabetically listed in the Watches Tab. 
-
+All watched app elements are alphabetically listed in the Watches Tab.
 
 ## Remove a Watch
 
@@ -48,13 +46,11 @@ To remove a watch from a app element do the following:
 1. Right-click on the watched element in the Watches Tab.
 1. Select the option "Remove Watch" in the pop-up menu.
 
-
 ## Remove All Watches
 
 To remove all watches do the following:
 
 1. Right-click anywhere on the Watches Tab area.
-1. Select the "Remove All Watches" option in the pop-up menu. 
+1. Select the "Remove All Watches" option in the pop-up menu.
 
 Alternatively, select the "Remove All Watches" option available in the Debugger menu.
-

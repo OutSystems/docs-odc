@@ -20,7 +20,6 @@ topic:
 
 # ODC Studio Shortcuts
 
-
 ## General
 
 |Description|Windows|macOS|
@@ -46,7 +45,7 @@ topic:
 |Look for help, by telling us what you want to do|F1||
 |Rename selected element|F2||
 |Open selected dropdwon|F4|F4|
-|Open Preferences||Cmd+comma||
+|Open Preferences| |Cmd+comma|
 
 ## Basic Development
 
@@ -63,7 +62,7 @@ topic:
 |Open list of shortcuts|Ctrl+Shift+K||
 |Delete Extended Property|Ctrl+D||
 |Remove unused references|Ctrl+Shift+D|Cmd+Shift+D|
-|Show/hide development tabs||Cmd+Opt+D|
+|Show/hide development tabs| |Cmd+Opt+D|
 |Ctrl+Shift+R|Cmd+Shift+R|Check for dependency updates|
 
 ## Navigation
@@ -128,7 +127,7 @@ topic:
 |---|---|---|
 |Run and Debug in Personal Area|F6|Cmd+F6|
 |Debug in Public Area|F7|Cmd+F7|
-|Stop Debug|Shift+F6 (Shift+F7)|Shift+Cmd+F6 (Shift+Cmd+F7)||
+|Stop Debug|Shift+F6 (Shift+F7)|Shift+Cmd+F6 (Shift+Cmd+F7)|
 |Add/remove breakpoint|F8|Cmd+F8|
 |Disable/enable breakpoint|Ctrl+F8|Shift+Cmd+F8|
 |Step into|F11|Cmd+F11|

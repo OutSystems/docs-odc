@@ -71,10 +71,11 @@ Returns: void
 ### FeedbackMessageType
 
 The type of the feedback message. There are four numeric values that correspond to different types of messages:
-- 0 = Info
-- 1 = Success
-- 2 = Warning 
-- 3 = Error
+
+* 0 = Info
+* 1 = Success
+* 2 = Warning
+* 3 = Error
 
 The type specified when creating the feedback message affects its CSS styling:
 
@@ -93,4 +94,3 @@ The type specified when creating the feedback message affects if it will automat
 |  1   |    Success    |       Yes        |
 |  2   |    Warning    |        No        |
 |  3   |     Error     |        No        |
-

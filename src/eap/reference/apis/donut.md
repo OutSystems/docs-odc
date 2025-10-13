@@ -20,7 +20,7 @@ coverage-type:
 
 This example shows how you can create a simple Donut Chart.
 
-1. From the Toolbox, drag the **Donut Chart** widget to the Screen. 
+1. From the Toolbox, drag the **Donut Chart** widget to the Screen.
 
     ![Screenshot showing the Donut Chart widget being dragged to the screen in the design interface](images/chartdonut-drag-ss.png "Dragging Donut Chart Widget")
 
@@ -30,15 +30,15 @@ This example shows how you can create a simple Donut Chart.
 
 1. Click **+[0]** and set the **Label** and **Value** properties using [fixed data](data.md#populate-your-chart-with-fixed-data) or [variable data](data.md#populate-your-chart-with-variable-data).
 
-    This example uses fixed data. These properties define the first data point. Each data point corresponds to a slice on the donut chart. 
+    This example uses fixed data. These properties define the first data point. Each data point corresponds to a slice on the donut chart.
 
     ![Screenshot illustrating the process of setting a label and value for a data point in the Donut Chart](images/chartdonut-datapoint-ss.png "Setting a Data Point")
 
 1. To add more data points, repeat steps 2 and 3.
-    
+
     ![Screenshot showing additional data points being added to the Donut Chart](images/chartdonut-extra-datapoints-ss.png "Adding More Data Points")
 
-1. To customize the inner size of the Donut Chart, set the value of the **InnerSize** property. 
+1. To customize the inner size of the Donut Chart, set the value of the **InnerSize** property.
 
     In this example, the **InnerSize** property is set to 60% (by default, the **InnerSize** property is 50%).
 
@@ -47,4 +47,3 @@ This example shows how you can create a simple Donut Chart.
 After following these steps, you can publish your module:
 
 ![Image of the final Donut Chart pattern as it appears after publishing the module](images/chartdonut-result.png "Final Donut Chart Pattern Result")
-

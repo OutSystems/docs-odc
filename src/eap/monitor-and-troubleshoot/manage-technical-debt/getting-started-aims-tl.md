@@ -25,8 +25,8 @@ Before you can start using **Code Quality**, ensure that:
 
 * You've activated **Code Quality** in your organization. For more information, refer to [Setting up Code quality](how-does-aims-works.md).
 * You have the relevant permissions:
-  * To edit a finding: **Edit/Change Code Quality findings**
-  * To view a finding: **View Code Quality findings**. You only have permissions to view findings for the apps you have permission to view.
+    * To edit a finding: **Edit/Change Code Quality findings**
+    * To view a finding: **View Code Quality findings**. You only have permissions to view findings for the apps you have permission to view.
 
 ## What Code quality offers a technical lead
 

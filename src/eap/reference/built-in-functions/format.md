@@ -24,14 +24,14 @@ Builds a Text output of the specified Currency 'value', preceded by the currency
   
 When rounding, the function behaves differently depending on where you use it:  
   
-- In the <b>server-side logic</b>, it applies the method round half up (rounds to the nearest integer, 0.5 rounds up).  
-- In <b>client-side logic</b>, it applies the method round half to even (rounds to the nearest integer, 0.5 rounds to the nearest even integer).  
+* In the <b>server-side logic</b>, it applies the method round half up (rounds to the nearest integer, 0.5 rounds up).  
+* In <b>client-side logic</b>, it applies the method round half to even (rounds to the nearest integer, 0.5 rounds to the nearest even integer).  
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -78,14 +78,14 @@ Builds a Text output of the specified Decimal 'value', using 'decimal_digits' af
   
 When rounding, the function behaves differently depending on where you use it:  
   
-- In the <b>server-side logic</b>, it applies the method round half up (rounds to the nearest integer, 0.5 rounds up).  
-- In <b>client-side logic</b>, it applies the method round half to even (rounds to the nearest integer, 0.5 rounds to the nearest even integer).  
+* In the <b>server-side logic</b>, it applies the method round half up (rounds to the nearest integer, 0.5 rounds up).  
+* In <b>client-side logic</b>, it applies the method round half to even (rounds to the nearest integer, 0.5 rounds to the nearest even integer).  
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -128,14 +128,14 @@ Builds a Text output of the specified Decimal 'value', followed by '%' using 'de
   
 When rounding, the function behaves differently depending on where you use it:  
   
-- In the <b>server-side logic</b>, it applies the method round half up (rounds to the nearest integer, 0.5 rounds up).  
-- In <b>client-side logic</b>, it applies the method round half to even (rounds to the nearest integer, 0.5 rounds to the nearest even integer).  
+* In the <b>server-side logic</b>, it applies the method round half up (rounds to the nearest integer, 0.5 rounds up).  
+* In <b>client-side logic</b>, it applies the method round half to even (rounds to the nearest integer, 0.5 rounds to the nearest even integer).  
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -173,9 +173,9 @@ Builds a Text output of the specified phone number Text 'value', starting with t
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -223,9 +223,9 @@ Builds a Text output of the specified Text 'value', by limiting it to the specif
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -267,42 +267,55 @@ FormatText("12345", 10, 20, False, "#") = "12345#####"
 
 Builds a Text output of the specified Date Time 'value' using the specified 'format'. Formatting pattern can be any combination of the following:  
 Day:  
-- d: day without leading zero;  
-- dd: day WITH leading zero;  
-- ddd: abbreviated day name;  
-- dddd: full day name;  
+
+* d: day without leading zero;  
+* dd: day WITH leading zero;  
+* ddd: abbreviated day name;  
+* dddd: full day name;  
+
 Month:  
-- M: month without leading zero;  
-- MM: month WITH leading zero;  
-- MMM: abbreviated month name;  
-- MMMM: full month name;  
+
+* M: month without leading zero;  
+* MM: month WITH leading zero;  
+* MMM: abbreviated month name;  
+* MMMM: full month name;  
+
 Year:  
-- y: last one or two digits of the year;  
-- yy: last two digits of the year;  
-- yyyy: year;  
+
+* y: last one or two digits of the year;  
+* yy: last two digits of the year;  
+* yyyy: year;  
+
 Hour:  
-- h: hour from 0 to 12 without leading zero;  
-- hh: hour from 0 to 12 WITH leading zero;  
-- H: hour from 0 to 24 without leading zero;  
-- HH: hour from 0 to 24 WITH leading zero;  
+
+* h: hour from 0 to 12 without leading zero;  
+* hh: hour from 0 to 12 WITH leading zero;  
+* H: hour from 0 to 24 without leading zero;  
+* HH: hour from 0 to 24 WITH leading zero;  
+
 Minute:  
-- m: minutes without leading zero;  
-- mm: minutes WITH leading zero;  
+
+* m: minutes without leading zero;  
+* mm: minutes WITH leading zero;  
+
 Second:  
-- s: seconds without leading zero;  
-- ss: seconds WITH leading zero;  
+
+* s: seconds without leading zero;  
+* ss: seconds WITH leading zero;  
+
 AM Designator:  
-- t: first letter of AM or PM;  
-- tt: AM or PM.  
+
+* t: first letter of AM or PM;  
+* tt: AM or PM.  
   
 If you want to output any of these characters then precede it with '\'.  
 Changing the environment date format does not change the way the FormatDateTime function formats the dates.  
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 

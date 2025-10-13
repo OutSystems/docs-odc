@@ -147,7 +147,7 @@ For detailed information, refer to [Streamed trace data](stream-app-analytics-tr
 
 * **Request duration**: The distribution of request processing times, categorized into millisecond buckets.
 
-* **Total invocations**:  The total number of times a server-side action (for example, data action, or consumed REST/SOAP method) is called during a request. 
+* **Total invocations**:  The total number of times a server-side action (for example, data action, or consumed REST/SOAP method) is called during a request.
 
 * **Invocation duration**: The distribution of processing times for the server-side action invocations, categorized into millisecond buckets.
 

@@ -27,7 +27,7 @@ A sequence of Aggregates referencing one another usually leads to unnecessary da
 
 ## Why is this happening?
 
-Aggregates reference one another leading to multiple database queries, causing unnecessary data-fetching and latency. 
+Aggregates reference one another leading to multiple database queries, causing unnecessary data-fetching and latency.
 
 ![An action flow diagram showing a sequence of two aggregates referencing one another.](images/odcs-connected-aggregates.png "Sequence of connected Aggregates")
 

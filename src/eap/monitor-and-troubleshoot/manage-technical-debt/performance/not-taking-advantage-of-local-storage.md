@@ -30,7 +30,7 @@ If the app uses too many screen data actions to gather data from the server, it 
 
 ## Why is this happening?
 
-The app relies too heavily on screen data actions. 
+The app relies too heavily on screen data actions.
 
 ## How to fix
 

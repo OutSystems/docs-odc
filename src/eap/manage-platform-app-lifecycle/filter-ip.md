@@ -32,19 +32,19 @@ For more information on ODC's built-in security, refer to [Security of OutSystem
 ## Prerequisites
 
 * A subscription to the Sentry add-on. Contact your account manager for provisioning.  
-* **View configurations** and **Manage IP Restrictions** permissions. 	
+* **View configurations** and **Manage IP Restrictions** permissions.  
 
 ## Control access with IP filters
 
 ODC provides a method to manage network access to your apps through IP filters, enhancing security. This system revolves around **IP filter groups**, logical containers for access policies. Within these groups, you define rules, specifying the IP addresses permitted or blocked from accessing your apps. Each rule can contain up to 20 IP address entries.
 
-A use case includes: 
+A use case includes:
 
 * Restricting access to internal apps.
 
 If your apps contain sensitive company data, you can use IP filters to ensure they're only accessible from your internal network.
 
-An example includes: 
+An example includes:
 
 * Limiting access to an employee database to only office IP addresses.
 
@@ -52,7 +52,7 @@ ODC automatically generates a **default IP filter group** for each stage. Admini
 
 When configuring an IP filter group, you must select its access control method: an **AllowList**, where all traffic is denied unless specifically permitted by a rule, or a **DenyList**, where all traffic is allowed unless explicitly denied by a rule. IP filter groups and their rules are stage-specific, operating independently for each app stage. Administrators can associate an app with only one IP filter group per stage. For operational flexibility, administrators can enable or disable individual IP filter rules within a group through rule activation without requiring deletion.
 
-A use case includes: 
+A use case includes:
 
 * Partner access to Production (Allowlist).
 
@@ -64,7 +64,7 @@ An example includes:
 
 ### Associate apps with IP filter groups before deployment
 
-To ensure consistent security from deployment, associate an app with a specific IP filter group for a given stage, even if the app hasn't been deployed to that stage yet. This approach guarantees that the system applies the correct IP filter rules to the app immediately upon deployment. It prevents any brief periods where the app might be exposed to default or incorrect rules. 
+To ensure consistent security from deployment, associate an app with a specific IP filter group for a given stage, even if the app hasn't been deployed to that stage yet. This approach guarantees that the system applies the correct IP filter rules to the app immediately upon deployment. It prevents any brief periods where the app might be exposed to default or incorrect rules.
 
 ## Create an IP filter group
 
@@ -72,32 +72,32 @@ Follow these steps to create a new IP filter group:
 
 1. Go to the ODC Portal.  
 1. Go to the **Configure** tab and select **IP filters**.  
-1. Select the stage.   
-1. Click **Create group**.   
+1. Select the stage.
+1. Click **Create group**.
 1. Enter the following:  
    * **Name**: A unique name for the group.  
    * **Description** (Optional).  
    * **Access control method**:  
      * AllowList  
      * DenyList
-     
+
 ![ODC Portal interface for creating a new IP filter group with options for name, description, and access control method.](images/create-filter-group-pl.png "Create IP Filter Group")
 
 ### Add rules to a group
 
-Follow these steps to add rules to a group: 
+Follow these steps to add rules to a group:
 
 1. Select the IP filter group.  
-1. Click **Edit**.   
-1. In the **Group configuration** section, click the **Rules** tab.   
-1. Click **Add allow rule** if the access control method is AllowList, or **Add deny rule** if the access control method is DenyList.   
+1. Click **Edit**.
+1. In the **Group configuration** section, click the **Rules** tab.
+1. Click **Add allow rule** if the access control method is AllowList, or **Add deny rule** if the access control method is DenyList.
 1. Enter the following:  
     * **Name**: A name for the rule.  
     * **IP addresses**: Enter up to 20 IPv4 or IPv6 addresses or ranges.  
-1. Click **Add**.   
-1. Click **Done**.   
-1. In the **Group configuration** section, click the **Apps** tab.   
-1. Select **Manage apps** and add apps to the group and apply rules. Since an app can only belong to one group at a time, adding apps to this IP filter group removes them from their current group.   
+1. Click **Add**.
+1. Click **Done**.
+1. In the **Group configuration** section, click the **Apps** tab.
+1. Select **Manage apps** and add apps to the group and apply rules. Since an app can only belong to one group at a time, adding apps to this IP filter group removes them from their current group.
 1. Click **Done**.
 
 ![ODC Portal interface for adding an allow rule to an IP filter group, including fields for rule name and IP addresses.](images/add-rule-pl.png "Add Allow Rule")

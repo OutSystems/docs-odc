@@ -53,11 +53,13 @@ At a high-level, you:
 ## Other plugin integrations
 
 If you are using a plugin that needs specific rules on distinct Shielded apps, you can create rules at application level or at plugin level. The following rules apply:
+
 1. Rules in the app extensibility configuration completely replace the default OutSystems rules
 1. Rules defined in the plugin/library extensibility configuration are appended
 1. Rules from the app (default or replaced) always come first in the final rules file
 
 If you want to configure specific rules for a custom plugin, you can also add the `AppShieldObfuscationRules` preference on your plugin, like so:
+
 ```
 {
     "plugin": <your plugin object>,

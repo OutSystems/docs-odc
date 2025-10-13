@@ -105,7 +105,7 @@ Here is the reference of the actions you can use from the File Plugin. File Plug
 
 ## Storage type
 
-Information about the **StorageTypeId** property, which tells the app where to store the files. This property is available in some of the actions of the plugin. 
+Information about the **StorageTypeId** property, which tells the app where to store the files. This property is available in some of the actions of the plugin.
 
 | StorageTypeId                     | Description                                                                                                     |
 | --------------------------------- | --------------------------------------------------------------------------------------------------------------- |

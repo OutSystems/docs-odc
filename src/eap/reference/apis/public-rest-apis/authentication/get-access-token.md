@@ -14,11 +14,11 @@ audience:
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=4711-44
 ---
-# Get access token 
+# Get access token
 
 Once you have the client credentials, you can use the client ID and client secret to generate an access token from the authorization server. This article explains how to get the access token to access the public REST APIs. It is intended for developers who want to access the OutSystems' public APIs.
 
-Here's the diagram that represents OAuth 2.0 client credentials flow for authenticating REST APIs. It illustrates the entire lifecycle of an access token, from its initial generation and storage to its use in API calls. 
+Here's the diagram that represents OAuth 2.0 client credentials flow for authenticating REST APIs. It illustrates the entire lifecycle of an access token, from its initial generation and storage to its use in API calls.
 
 ![Diagram showing the OAuth 2.0 client credentials flow for authenticating REST APIs, including steps for obtaining, storing, and using an access token.](images/odc-api-get-access-token-diag.png "OAuth 2.0 Client Credentials Flow Diagram")
 
@@ -38,8 +38,8 @@ To get an access token, follow these steps:
 
     Where `ODC_PORTAL_DOMAIN` is the domain of your organization.
 
-2. Retrieve the `token_endpoint` metadata value from the Discovery document.
-   
+1. Retrieve the `token_endpoint` metadata value from the Discovery document.
+
 **Using `curl`**
 
 1. Send a POST request to the `token_endpoint` retrieved from the Discovery document.
@@ -67,7 +67,7 @@ OutSystems recommends implementing the logic for generating the access token usi
     * **URL**: `token_endpoint` retrieved from the previous step
     * **Request body**: `grant_type=client_credentials&client_id=clientID&client_secret=secret`
 
-2. Pass the following details to the API:
+1. Pass the following details to the API:
 
     ```plaintext
     grant_type = client_credentials
@@ -92,12 +92,12 @@ OutSystems recommends implementing the logic for generating the access token usi
     <div class="info" markdown="1">
 
     The validity of the access token is 12 hours, irrespective of the expiration date of the client credentials. You must ensure that you request a new token before or after the previous token's expiration, as needed. Keep the access token safe while it is still valid.
-    
+
     </div>
 
 ### Encrypt and store the access token
 
-To prevent unauthorized access and enable token reuse, store the access token in an encrypted format in a secure storage and reuse it as long as it has not expired. 
+To prevent unauthorized access and enable token reuse, store the access token in an encrypted format in a secure storage and reuse it as long as it has not expired.
 
 OutSystems recommends that you store the access token in an entity in an encrypted format. You can use the in-built security server action [**AES\_Encrypt**](../../../libraries/security.md#aes_encrypt) to encrypt the token using binary cipher text.
 
@@ -112,11 +112,10 @@ For each subsequent API call:
    * If the token has expired, mark the existing token as invalid and generate a new access token.
    * If the token has not expired and is valid, then decrypt the access token. You can use the in-built security server action [**AES\_Decrypt**](../../../libraries/security.md#aes_decrypt) to decrypt the token using binary cipher text.  
   
-2. Use the decrypted token in your API request.
+1. Use the decrypted token in your API request.
 
-3. You can now [call APIs](call-api.md) from the ODC app with a valid access token.
+1. You can now [call APIs](call-api.md) from the ODC app with a valid access token.
 
 ## Next step
 
 [Call API using the access token](call-api.md)
-

@@ -22,7 +22,7 @@ OutSystems Text library provides functionality to manipulate texts as, for examp
 
 ## Actions
 
-### Format_DateTime 
+### Format_DateTime
 
 Formats a DateTime by replacing the allowed keywords with their values.  
 Available Keywords:  
@@ -38,7 +38,7 @@ Available Keywords:
 [mm] - Represents the minute as a number from 0 through 59;  
 [ss] - Represents the seconds as a number from 00 through 59;
 
-*Inputs*
+_Inputs_
 
 DateTime
 :   Type: DateTime. Mandatory.  
@@ -48,7 +48,7 @@ Format
 :   Type: Text. Mandatory.  
     The Text with the available keywords used to format the Date Time.
 
-*Outputs*
+_Outputs_
 
 FormattedDateTime
 :   Type: Text.  
@@ -58,7 +58,7 @@ FormattedDateTime
 
 Replaces all occurrences of a specified regular expression pattern with a replacement string.
 
-*Inputs*
+_Inputs_
 
 Text
 :   Type: Text. Mandatory.  
@@ -84,7 +84,7 @@ SingleLine
 :   Type: Boolean. Default: False.  
     Changes the meaning of the dot (.) so it matches every character (instead of every character except \n).
 
-*Outputs*
+_Outputs_
 
 Result
 :   Type: Text.  
@@ -94,7 +94,7 @@ Result
 
 Searches the input string for an occurrence of a regular expression.
 
-*Inputs*
+_Inputs_
 
 Text
 :   Type: Text. Mandatory.  
@@ -116,7 +116,7 @@ SingleLine
 :   Type: Boolean. Default: False.  
     Changes the meaning of the dot (.) so it matches every character (instead of every character except \n).
 
-*Outputs*
+_Outputs_
 
 Found
 :   Type: Boolean.  
@@ -134,7 +134,7 @@ FirstIndex
 
 Concatenates all the strings in a List, yielding a single string. The individual elements are separated, in the resulting string, by the string Separator.
 
-*Inputs*
+_Inputs_
 
 List
 :   Type: RecordList of Text). Mandatory.  
@@ -144,7 +144,7 @@ Separator
 :   Type: Text. Mandatory.  
     Separating element.
 
-*Outputs*
+_Outputs_
 
 Text
 :   Type: Text.  
@@ -154,7 +154,7 @@ Text
 
 Reports the index position of the last occurrence of a specified Pattern within a Text.
 
-*Inputs*
+_Inputs_
 
 Text
 :   Type: Text.  
@@ -164,7 +164,7 @@ Pattern
 :   Type: Text. Mandatory.  
     The pattern to seek.
 
-*Outputs*
+_Outputs_
 
 Position
 :   Type: Integer.  
@@ -174,7 +174,7 @@ Position
 
 Splits a string into individual elements delimited by any of the characters in Delimiters.
 
-*Inputs*
+_Inputs_
 
 Text
 :   Type: Text. Mandatory.  
@@ -184,7 +184,7 @@ Delimiters
 :   Type: Text. Mandatory.  
     Contains all the characters that should be considered as separators.
 
-*Outputs*
+_Outputs_
 
 List
 :   Type: RecordList of [Text](#Structure_Text).  
@@ -194,7 +194,7 @@ List
 
 Appends a string to a StringBuilder.
 
-*Inputs*
+_Inputs_
 
 StringBuilder
 :   Type: Object. Mandatory.  
@@ -208,34 +208,33 @@ String
 
 Creates a StringBuilder. Use it if you need to create a string by repeatedly appending substrings. A StringBuilder optimizes memory management when dealing with highly dynamic strings.
 
-*Inputs*
+_Inputs_
 
 InitialCapacity
 :   Type: Integer. Mandatory.  
     Initial capacity of the StringBuilder buffer. The buffer will be automatically resized if its capacity is exceeded. Set it to the maximum expected capacity to avoid buffer resizing.
 
-*Outputs*
+_Outputs_
 
 StringBuilder
 :   Type: Object.  
     The StringBuilder instance. Use it as input to the other StringBuilder Actions.
 
-### StringBuilder_ToString 
+### StringBuilder_ToString
 
 Returns the content of the StringBuilder's buffer.
 
-*Inputs*
+_Inputs_
 
 StringBuilder
 :   Type: Object. Mandatory.  
     The StringBuilder instance. Returned by the Action StringBuilder_Create.
 
-*Outputs*
+_Outputs_
 
 String
 :   Type: Text.  
     The content of the StringBuilder's buffer.
-
 
 ## Structures
 
@@ -243,7 +242,7 @@ String
 
 Structure with single Text attribute
 
-*Attributes*
+_Attributes_
 
 Value
 :   Type: Text (50). Mandatory.  

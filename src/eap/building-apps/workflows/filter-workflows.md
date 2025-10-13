@@ -30,7 +30,7 @@ Before you can create an aggregate that filters activities in a specific workflo
     ![Screenshot showing how to copy the process definition key in the ODC Portal](images/process-def-key-pl.png "Copy the process definition key in ODC Portal")
 
 * Copy the **ActivityDefinitionId** - In the Workflow editor, go to a specific activity, click the ellipsis, and select **Copy activity definition key**. The activity definition key identifies the specific activity in a workflow.
-    
+
     ![Screenshot showing how to copy the activity definition key in the ODC Portal](images/activity-def-key-pl.png "Copy the process definition key in ODC Portal")
 
 The following is an example of how you can create an aggregate that filters a specific workflow process by a specific human activity.
@@ -45,8 +45,8 @@ The following is an example of how you can create an aggregate that filters a sp
 
     * **ProcessDefinition.Key** = the definition process key of the workflow
 
-    This returns all human activities with that key in that specific workflow. 
-     
+    This returns all human activities with that key in that specific workflow.
+
     ![Screenshot showing the GetHumanActivityInstances aggregate in ODC Studio](images/workflows-agg-filter-odcs.png "GetHumanActivityInstances aggregate in ODC Studio")
 
 ## Related resources

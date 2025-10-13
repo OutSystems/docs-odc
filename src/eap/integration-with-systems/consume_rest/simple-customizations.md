@@ -25,16 +25,16 @@ topic:
 When consuming a REST API, you can add logic to customize the information sent in requests or received in responses. Use the following callbacks for this purpose:
 
 **OnBeforeRequest**
-:   Use to modify the information of the original request, such as the URL, the request text or the headers. 
+:   Use to modify the information of the original request, such as the URL, the request text or the headers.
 
 **OnAfterResponse**
-:   Use to modify the information of the original response, such as the status code or the response text. 
+:   Use to modify the information of the original response, such as the status code or the response text.
 
 ![Diagram showing the flow of OnBeforeRequest and OnAfterResponse callbacks in OutSystems Developer Cloud.](images/callbacks-diag.png "Callbacks Diagram")
 
 <div class="info" markdown="1">
 
-With these callbacks, you can only add HTTP headers or change their values but you can't remove the existing headers. 
+With these callbacks, you can only add HTTP headers or change their values but you can't remove the existing headers.
 
 </div>
 
@@ -46,13 +46,13 @@ To customize the request before it's sent, follow these steps:
 
 1. Set the **On Before Request** property of the REST API to `New OnBeforeRequest`.
   
-    ![Screenshot showing how to set the On Before Request property in OutSystems.](images/rest-new-onbeforerequest-odcs.png "Setting the On Before Request Property")    
+    ![Screenshot showing how to set the On Before Request property in OutSystems.](images/rest-new-onbeforerequest-odcs.png "Setting the On Before Request Property")
 
-    The REST API now includes an **OnBeforeRequest** action.   
+    The REST API now includes an **OnBeforeRequest** action.
 
-1. Double-click the newly created action to edit it. 
+1. Double-click the newly created action to edit it.
 
-1. Add your own logic to customize the request. 
+1. Add your own logic to customize the request.
 
 ### Example use case: Adding a header for token-based authentication
 

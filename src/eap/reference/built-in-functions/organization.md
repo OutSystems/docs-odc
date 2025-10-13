@@ -24,9 +24,9 @@ Returns the name of the current language locale of the user session. The name of
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Output
 
@@ -44,9 +44,9 @@ Returns the user agent, as indicated by the header of the HTTP message.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Output
 
@@ -64,6 +64,7 @@ GetUserAgent() = "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like
 Returns the name of the app that is processing the request.
 
 ### Examples
+
 ```
 GetAppName() = "MyApp"
 ```

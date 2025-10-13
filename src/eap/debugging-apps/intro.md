@@ -35,11 +35,11 @@ When debugging an action in your library, ensure that the app is using the most 
 
 To debug your app, do the following in ODC Studio:
 
-1. Click the **1-Click Publish** button to save the latest changes in the app before debugging. 
+1. Click the **1-Click Publish** button to save the latest changes in the app before debugging.
 
 1. Set one or more [breakpoints](breakpoints.md) in the app you're debugging.
 
-1. Before debugging a **native mobile app**, choose a debugging target in the [Debugger tab](debugger-ui-reference.md): Android, iOS, or Google Chrome which emulates a device. The section [Mobile Debugging Scenarios](#mobile-debugging-scenarios) includes further details about the different targets. If you're debugging a **mobile app distributed as a PWA**, select **Emulate using Google Chrome** in **Debugger** > **Debug Setup**. 
+1. Before debugging a **native mobile app**, choose a debugging target in the [Debugger tab](debugger-ui-reference.md): Android, iOS, or Google Chrome which emulates a device. The section [Mobile Debugging Scenarios](#mobile-debugging-scenarios) includes further details about the different targets. If you're debugging a **mobile app distributed as a PWA**, select **Emulate using Google Chrome** in **Debugger** > **Debug Setup**.
 
 1. Start debugger by clicking the **Start Debugging** button in the [Debugger tab](debugger-ui-reference.md). When you're debugging mobile apps using the Google Chrome target, ODC Studio opens a dedicated Chrome browser instance for debugging only.
 
@@ -64,15 +64,15 @@ There are different ways of debugging a mobile app that help you discover, under
 Use the Chrome browser on your computer to debug your mobile app if you don't need to execute native plugins, as the native plugins can't run on a personal computer. This option is convenient to test the logic of the app. However, to check the performance or experience of the mobile app, test your app on a real device. Also consider this scenario if all the native plugins in the mobile app have action wrappers defined that return mock data when the plugin isn't available.
 
 **Install the mobile app on a device**
-    
-Test the mobile app directly on a device as your users would run it. It's the best place to test the performance and experience of your app. You can do it on an iOS or Android device. Generate the native app package for your app in ODC Studio using the `Debug` (Android) or `Development` (iOS) build type, install it on the device, and follow the steps below according to your mobile device platform. 
+
+Test the mobile app directly on a device as your users would run it. It's the best place to test the performance and experience of your app. You can do it on an iOS or Android device. Generate the native app package for your app in ODC Studio using the `Debug` (Android) or `Development` (iOS) build type, install it on the device, and follow the steps below according to your mobile device platform.
 
 * **To test a mobile app on an iOS device**:
-    
+
     1. On your **Windows computer**, install [iTunes](https://www.apple.com/itunes/download/).
 
-    1. On your **device**, turn the **Web Inspector** option **On**. 
-    
+    1. On your **device**, turn the **Web Inspector** option **On**.
+
         For detailed instructions, refer to [Troubleshoot Debugger Connection Issues](troubleshoot-debugger-connection.md#web-inspector-is-not-enabled-on-your-device).
 
     1. Connect your mobile device to the **computer** using a USB cable.
@@ -80,9 +80,9 @@ Test the mobile app directly on a device as your users would run it. It's the be
         The **Trust This Computer** popup is displayed on your device.
 
     1. Click **Trust** to allow debugging on the device.
-    
+
 * **To test a mobile app on an Android device:**
-    
+
     1. On your **device**, turn [USB debugging On](https://developer.android.com/studio/debug/dev-options.html#enable).
 
     1. Connect your mobile device to the computer using a USB cable.
@@ -90,7 +90,7 @@ Test the mobile app directly on a device as your users would run it. It's the be
         The **Allow USB debugging** popup is displayed.
 
     1. Click **Allow** to allow debugging on your device.
-    
+
     For more information, refer to [Troubleshoot Debugger Connection Issues](troubleshoot-debugger-connection.md).
 
 If you need to troubleshoot app crashes, a plugin, or check the native code of apps, debug your apps with the mobile platform's native tools, such as Android Studio for Android and Xcode for iOS. Before debugging using the native tools, you must generate a mobile package with `Debug` (Android) or `Development` (iOS) build type.

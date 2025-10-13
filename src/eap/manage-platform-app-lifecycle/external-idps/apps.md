@@ -90,7 +90,7 @@ If you chose the delete the built-in login screen scenario, to modify the user i
 
 1. Add the **GetExternalLoginURL** [public element](../../building-apps/libraries/use-public-elements.md) after the **GetMyProvider** run client action, and in its properties, set the **IdentityProvider** to `GetMyProvider.MyProvider`.
 
-1. Drag a **Destination** element on top of the **End** element, select **RedirectToURL**, and set its **URL** property to `GetExternalLoginURL.ExternalLoginURL`. 
+1. Drag a **Destination** element on top of the **End** element, select **RedirectToURL**, and set its **URL** property to `GetExternalLoginURL.ExternalLoginURL`.
 
     The app redirects the user to this URL to perform the login.
 
@@ -131,12 +131,12 @@ For each app you want to modify, open it in ODC Studio and follow these steps:
 If you chose the modify the login screen scenario, to add a login button with an external provider to the built-in login screen, follow one of the three options below. To add multiple buttons, repeat the steps.
 
 **Option 1: Drag a button from the toolbox**
-:   
+:
 
    1. [Create the DataActionMyProvider](#create-data-action) Data action.
 
    1. To load the login screen onto the canvas, go to the **Interface** tab, expand **UI Flows** > **Common**, and double-click **Login**.  
-   
+
    1. Drag a **Button** element from the toolbox to the screen and place it next to or below the existing **Log in** button.  
 
    1. In the **Button** properties, set the **Text** to `Log in with`. You may also want to modify the **Text** property of the pre-existing **Log in** button.
@@ -144,35 +144,35 @@ If you chose the modify the login screen scenario, to add a login button with an
    1. Drag an **Expression** element from the toolbox to the canvas, inside the previous button, and next to the **Text** element.
 
    1. In the **Expression** properties, set the **Value** to `DataActionMyProvider.MyProvider`.
-    
+
        ![Modified login screen with buttons for built-in and external provider login.](images/login-screen-modified-odcs.png "Login screen modified")
-   
+
    1. In the enclosing **Button** properties, Set the **On Click** property to **New Client Action**.
 
    1. Name it `LogInWith_<ExternalIdP>`. For example, `LogInWith_AzureAD`.
 
 **Option 2: Add a built-in social login button (only for Google, Facebook, and Apple)**
-:   
-   
+:
+
    1. Add a [social login button](../sso.md#add-the-social-login-button-to-the-login-screen).  
-    
+
    1. In its Properties, select **New Client Action** from the **Handler** dropdown.
 
    1. Name it `LogInWith_<ExternalIdP>`. For example, `LogInWith_AzureAD`.
 
 **Option 3: Use official login buttons for LinkedIn or Microsoft Entra ID**
-:   
-   
+:
+
    LinkedIn and Microsoft Entra ID are not included in the list of Identity Providers available for the built-in **social login button**. To use their official login buttons, follow these steps:
-   
+
    1. Download the official button image from the provider's website: [LinkedIn](https://content.linkedin.com/content/dam/developer/branding/signin_with_linkedin-buttons.zip) or [Microsoft](https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-branding-in-apps#referring-to-microsoft-entra-accounts-in-your-application).
-   
+
    1. In ODC Studio, go to the **Elements** tab, and import the button image.  
 
    1. Drag an **Image** widget to the login screen canvas.  
 
    1. In the **Image** properties, select the uploaded image from the **Image** dropdown.  
-    
+
    1. Set the **Event** property to `onclick` and the **Handler** to `New Client Action`.
 
    1. Name it `LogInWith_<ExternalIdP>`. For example, `LogInWith_AzureAD`.
@@ -207,7 +207,7 @@ If you chose the modify the login screen scenario, to modify the user info bar l
 
 If you chose the modify the login screen scenario, to modify the user info bar logout flow, follow these steps:
 
-1. To open the **ClientLogout** client action, go to the **Interface** tab, expand **UI Flows** > **Common** > **UserInfo**, and then double-click **ClientLogout**. 
+1. To open the **ClientLogout** client action, go to the **Interface** tab, expand **UI Flows** > **Common** > **UserInfo**, and then double-click **ClientLogout**.
 
 1. In the **Logic** tab, expand **Client Actions** > **(System)**, and drag the **IsExternalUser** action between the **Start** and the **Logout** nodes.
 
@@ -218,7 +218,7 @@ If you chose the modify the login screen scenario, to modify the user info bar l
 1. Copy the **Clear client variables Assign** element, paste it in the **True** branch to the right of the **GetExternalLogoutURL** action.
 
 1. Add a **Destination** to the right of the **Clear client variables Assign**, in the **True** branch. Select **RedirectToURL**, and in its properties, set the **URL** to `GetExternalLogoutURL.ExternalLogoutURL`.
-    
+
     ![Flow diagram showing the logout process with an added IdP button.](images/clientlogout-if-added-idp-odcs.png "ClientLogout flow after modification")
 
 1. To save, click **Publish**.
@@ -231,10 +231,10 @@ To create the server action that fetches the setting:
 
 1. In ODC Studio, create a new setting of the text data type, and name it `MyProvider`.
 
-1. Create a new server action, name it `GetMyProvider`, and set the **Function** property to **Yes**. 
+1. Create a new server action, name it `GetMyProvider`, and set the **Function** property to **Yes**.
 
     Setting it as a function lets you get the output of the action in expressions, without exposing the server action publicly in a data action. Additionally, you can [set the value of MyProvider in the ODC Portal](#modify-setting-odc-portal), without needing to republish the app.
-    
+
     <div class="info" markdown="1">
 
     The name of the IdP is **case sensitive**. Make sure it matches the IdP's name in the Identity providers page in the ODC Portal.

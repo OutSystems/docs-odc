@@ -24,7 +24,7 @@ coverage-type:
 
 With Workflows, you can design, implement, and automate [business processes](business-processes.md) such as vacation approval, loan approval, or order management and integrate them in your apps. A workflow is a repeatable process consisting of tasks to be completed in a specific sequence. Workflows introduce automation in your apps by allowing you to design and implement repeatable business processes, automating tasks and interactions that would otherwise require manual intervention. For detailed information about how to implement workflows in ODC, refer to [Implement workflows](workflow-components.md).
 
-Workflows are triggered by events in ODC apps. For detailed information about how to create, trigger, and handle events, refer to [Implement events](../../building-apps/events/implement-events.md). 
+Workflows are triggered by events in ODC apps. For detailed information about how to create, trigger, and handle events, refer to [Implement events](../../building-apps/events/implement-events.md).
 
 Here are some examples of events that can trigger a workflow:
 
@@ -82,9 +82,9 @@ ODC provides a **workflow editor**, a visual web-based tool for implementing wor
 
 <div class="info" markdown="1">
 
-To use workflows you need the requisite *Asset Management* permission(s). To get the necessary permission(s), contact the administrator from your ODC organization.
+To use workflows you need the requisite _Asset Management_ permission(s). To get the necessary permission(s), contact the administrator from your ODC organization.
 
-</div> 
+</div>
 
 With workflow editor, you can:
 
@@ -107,7 +107,7 @@ With search, you can do the following:
 
 **Edit properties**: Edit a specific expression or an outcome in the corresponding panel or editor.
 
-**Add new flow-steps**: Select a flow-step and type add. A list of flow-steps to be added appears, allowing you to insert them into your workflow. 
+**Add new flow-steps**: Select a flow-step and type add. A list of flow-steps to be added appears, allowing you to insert them into your workflow.
 
 ### Managing workflow revisions
 
@@ -129,11 +129,11 @@ Here are some points to consider as you implement workflows in ODC:
 
 * **Workflows can be implemented, tested, and deployed across stages independent of ODC apps and libraries**. Because they rely on the app's public elements, they are subject to impact analysis. For detailed information about deploying workflows, refer to [Deploying assets](../../deploying-apps/deploy-apps.md).  
 
-* **Workflows can have** [**multiple revisions**](../../deploying-apps/deploy-apps.md#multiple-revisions-of-a-workflow) **running simultaneously in the same stage**, and every revision can have one or more instances of the workflow in execution. An instance is a unit of execution of a workflow. Each instance can run up to 1,000 activities. 
+* **Workflows can have** [**multiple revisions**](../../deploying-apps/deploy-apps.md#multiple-revisions-of-a-workflow) **running simultaneously in the same stage**, and every revision can have one or more instances of the workflow in execution. An instance is a unit of execution of a workflow. Each instance can run up to 1,000 activities.
 
     <div class="info" markdown="1">
-    
-    In the development stage, you can only have instances running in the last five revisions. For example, if there are five revisions (revisions 1 to 5) in the development stage with active instances running in each one, once revision six is created, all active instances running in revision one are terminated immediately. There is no limit to the number of revision instances for the QA and production stages. 
+
+    In the development stage, you can only have instances running in the last five revisions. For example, if there are five revisions (revisions 1 to 5) in the development stage with active instances running in each one, once revision six is created, all active instances running in revision one are terminated immediately. There is no limit to the number of revision instances for the QA and production stages.
 
     </div>
 
@@ -157,4 +157,4 @@ Here are some points to consider as you implement workflows in ODC:
 
 ### Online training
 
-* [Building workflows in ODC](https://learn.outsystems.com/training/journeys/building-workflows-in-odc-2690) 
+* [Building workflows in ODC](https://learn.outsystems.com/training/journeys/building-workflows-in-odc-2690)

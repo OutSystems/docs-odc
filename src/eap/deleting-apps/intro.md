@@ -23,9 +23,9 @@ topic:
 
 During the development process, you may create apps or libraries for testing. As time goes on, you may no longer need these apps or libraries. OutSystems Developer Cloud (ODC) lets you safely delete apps, and libraries from stages such as Development. You can't delete apps and libraries from your Production stage. Having a clean stage makes it faster to find the apps and libraries you need.
 
-To delete an app or library, open ODC Portal and select **Apps** from the left nav menu. Click on the app or library you want to delete. In the details screen that opens click the three-dots in the upper-right corner and select **Delete app** or **Delete library**. 
+To delete an app or library, open ODC Portal and select **Apps** from the left nav menu. Click on the app or library you want to delete. In the details screen that opens click the three-dots in the upper-right corner and select **Delete app** or **Delete library**.
 
-You cannot delete apps and libraries deployed to the Production stage. 
+You cannot delete apps and libraries deployed to the Production stage.
 
 * To delete an app already deployed to Production, you must first undeploy the app from the Production stage.
 * To delete a library already deployed to Production, you must first update all consumers of the library deployed to the Production stage, remove the dependency to the library from those consumers, and then promote those new revisions to the Production stage.
@@ -39,7 +39,7 @@ In addition, to having the correct permission, you can only **delete an app** if
 * It's not a system app, such as OutSystems Sample Data
 * It hasn’t been deployed to the Production stage
 * If it has no unresolved blockers and dependencies
- 
+
 You can also **delete an app template** if it isn't a system app template, such as a Template Web App, or a screen template, such as Screen Templates Web.
 
  <div class="info" markdown="1">

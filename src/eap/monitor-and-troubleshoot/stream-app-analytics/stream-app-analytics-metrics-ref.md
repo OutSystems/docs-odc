@@ -38,7 +38,6 @@ These metrics streamed from your ODC app to APM tools have metric-specific attri
 
 Additionally, all of these metrics share common resource attributes. Resource attributes are key-value pairs that describe the entity producing telemetry data (for example, a service, host, or container), providing essential context for filtering, grouping, and analyzing metrics, traces, and logs in APM tools. For more information about these common resource attributes, refer to the [Resource attributes table](#resource-attributes).
 
-
 ## Streamed metrics
 
 The following table outlines the metrics streamed from your ODC app to APM tools.
@@ -51,35 +50,35 @@ The following table outlines the metrics streamed from your ODC app to APM tools
 |  `outsystems_total_invocations`  |  `Counter`   |  Number of invocations of  elements such as `REST_CONSUME_ACTION, SERVICE_ACTION_CALL, SCREEN_SERVICE_AGGREGATE, SCREEN_SERVICE_DATA_ACTION, SERVER_QUERY_AGGREGATE, SERVER_QUERY_SQL, SERVER_ENTITY_ACTION, SERVER_QUERY_EXTERNAL_ACTION, EXTERNAL_LIBRARY_ACTION, SEND_EMAIL, GLOBAL_EVENT_TRIGGER`  |
 |  `outsystems_invocation_duration_millis` |  `Histogram` |  Number of invocations elements such as `REST_CONSUME_ACTION, SERVICE_ACTION_CALL, SCREEN_SERVICE_AGGREGATE, SCREEN_SERVICE_DATA_ACTION, SERVER_QUERY_AGGREGATE, SERVER_QUERY_SQL, SERVER_ENTITY_ACTION, SERVER_QUERY_EXTERNAL_ACTION, EXTERNAL_LIBRARY_ACTION, SEND_EMAIL, GLOBAL_EVENT_TRIGGER` distributed into millisecond buckets. |
 
-# Request attributes
+## Request attributes
 
 The following table outlines the request attributes streamed from your ODC app to APM tools for the `outsystems_total_requests` and `outsystems_request_duration_millis` metrics.
 
-|                                |                              | 
+|                                |                              |
 | ------------------------------ | ---------------------------- |
 |  **Attribute name**            | **Possible values/Example**  |
-| `status`                       | <li>`success`</li> <li>`failure` </li>   | 
-| `outsystems.element.type`      | <li>`REST_EXPOSE_ACTION` (`Backend Runtime`)</li><li>`SERVICE_ACTION` (`Backend Runtime`)</li><li>`TIMER` (`Backend Runtime`)</li><li>`GLOBAL_EVENT_HANDLER` (`Backend Runtime`) </li>| 
-|`outsystems.origin.element.name` |  `OnClickAction` | 
+| `status`                       | <li>`success`</li> <li>`failure` </li>   |
+| `outsystems.element.type`      | <li>`REST_EXPOSE_ACTION` (`Backend Runtime`)</li><li>`SERVICE_ACTION` (`Backend Runtime`)</li><li>`TIMER` (`Backend Runtime`)</li><li>`GLOBAL_EVENT_HANDLER` (`Backend Runtime`) </li>|
+|`outsystems.origin.element.name` |  `OnClickAction` |
 | `outsystems.origin.element.key` |  `bc82cc28-6ad4-4cd2-ac6c-a584330d1291.ac82cc28-6ad4-4cd2-ac6c-a584330d1292` |
-| `outsystems.element.name`  |  `LandingScreen`      | 
+| `outsystems.element.name`  |  `LandingScreen`      |
 | `outsystems.element.key`   | `bc82cc28-6ad4-4cd2-ac6c-a584330d1291.bc82cc28-6ad4-4cd2-ac6c-a584330d1293`      |
-| `country`                           | `PT`    | 
+| `country`                           | `PT`    |
 | `browser`                           | <li> `Chrome`</li><li>`Safari`</li><li> `Edge`</li><li>`Firefox`</li><li> `Opera`</li><li>`Other` </li>  |
 
-### Invocation attributes
+## Invocation attributes
 
 The following table outlines the invocation attributes streamed from your ODC app to APM tools for the `outsystems_total_invocations` and `outsystems_invocation_duration_millis` metrics.
 
-|                                       |                                |                  
-| ------------------------------------- | ------------------------------ | 
-|  **Attribute name**                   |  **Possible values/Example**   | 
+|                                       |                                |
+| ------------------------------------- | ------------------------------ |
+|  **Attribute name**                   |  **Possible values/Example**   |
 |  `status`                            | <li> `success`</li><li> `failure`  </li>   |  
-|  `outsystems.element.type`           | <li>`REST_CONSUME_ACTION`</li><li> `SERVICE_ACTION_CALL`</li><li> `SCREEN_SERVICE_AGGREGATE`</li><li>`SCREEN_SERVICE_DATA_ACTION`</li><li> `SERVER_QUERY_AGGREGATE`</li><li>`SERVER_QUERY_SQL`</li><li>`SERVER_ENTITY_ACTION`</li><li>`SERVER_QUERY_EXTERNAL_ACTION`</li><li>`EXTERNAL_LIBRARY_ACTION`</li><li>`SEND_EMAIL`</li><li>`GLOBAL_EVENT_TRIGGER`</li> | 
-|  `outsystems.element.name`   | `FetchOrders`   | 
+|  `outsystems.element.type`           | <li>`REST_CONSUME_ACTION`</li><li> `SERVICE_ACTION_CALL`</li><li> `SCREEN_SERVICE_AGGREGATE`</li><li>`SCREEN_SERVICE_DATA_ACTION`</li><li> `SERVER_QUERY_AGGREGATE`</li><li>`SERVER_QUERY_SQL`</li><li>`SERVER_ENTITY_ACTION`</li><li>`SERVER_QUERY_EXTERNAL_ACTION`</li><li>`EXTERNAL_LIBRARY_ACTION`</li><li>`SEND_EMAIL`</li><li>`GLOBAL_EVENT_TRIGGER`</li> |
+|  `outsystems.element.name`   | `FetchOrders`   |
 | `outsystems.element.key` | `bc82cc28-6ad4-4cd2-ac6c-a584330d1291.bc82cc28-6ad4-4cd2-ac6c-a584330d1293`|
 
-# Resource attributes
+## Resource attributes
 
 The following table details the common resource attributes streamed from your ODC app to APM tools.
 

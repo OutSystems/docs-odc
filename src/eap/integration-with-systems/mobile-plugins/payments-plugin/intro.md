@@ -44,7 +44,6 @@ The following is a high-level process describing how to add and configure the Pa
 
 </div>
 
-
 ## Compatibility with operating systems
 
 The mobile Payments Plugin is available for both iOS (Apple Pay) and Android (Google Pay).
@@ -115,41 +114,41 @@ At this point, you're ready to configure payments for your app in the Payments C
 1. For Apple Pay, you should fill the following fields:
 
     * Merchant ID: The merchant ID. **This field is only required for Apple Pay**. You can get this identifier from Apple Developer, where you configured the Apple Pay Payment Processing capability for your app.
-      
+
     * Name: The merchant name.
-      
+
     * Country: The merchant country.
- 
+
     * Allowed networks: The networks that the merchant allows (VISA, MasterCard, Amex, etc).
- 
+
     * Supported capabilities: The capabilities that the merchant supports (Debit, Credit, 3DS, etc).
- 
+
     * Supported card countries: The supported card countries that the merchant supports. The default value is "All countries" but you can specify specific countries.
   
     * Required contacts for shipping: The shipping contact information that you require from the user to execute the payment (name, email, phone number and postal address).
- 
+
     * Required contacts for billing: The billing contact information that you require from the user to execute the payment (name, email, phone number and postal address).
- 
+
     * Payment Service Provider (PSP): The identification of the Payment Service Provider (PSP) that you are going to use to process the payment. For Stripe, you should insert the publishable key you get from your Stripe configuration. For Adyen, you should insert the merchant ID. You can also set a custom PSP by using the provider's ID and the merchant ID.
 
-5. For Google Pay, you should fill the following fields:
+1. For Google Pay, you should fill the following fields:
 
     * Name: The merchant name.
-      
+
     * Country: The merchant country.
- 
+
     * Allowed networks: The networks that the merchant allows (VISA, MasterCard, Amex, etc).
- 
+
     * Supported capabilities: The capabilities that the merchant supports (Debit, Credit, 3DS, etc).
- 
+
     * Supported card countries: The supported card countries that the merchant supports. You can't change this field for Google Pay.
- 
+
     * Allowed countries to ship: The supported countries the merchant ships to. The default value is "All countries" but you can specify specific countries.
- 
+
     * Required contacts for shipping: The shipping contact information that you require from the user to execute the payment (name, email, phone number and postal address).
- 
+
     * Required contacts for billing: The billing contact information that you require from the user to execute the payment (name, email, phone number and postal address).
- 
+
     * Payment Service Provider (PSP): The identification of the Payment Service Provider (PSP) that you are going to use to process the payment. For Stripe, insert the publishable key you get from your Stripe configuration. For Adyen, you should insert the merchant ID. You can also set a custom PSP by using the provider's ID and the merchant ID.
 
 <div class="info" markdown="1">
@@ -204,12 +203,11 @@ To process payments with Stripe using an OutSystems implementation, complete the
 
    1. In your Payments app, create two secret settings PaymentsId and PaymentsSecret.
 
-      ![Screenshot of creating PaymentsId and PaymentsSecret in the app settings within ODC Studio](images/create-payments-id-and-payments-secret-odcs.png "Creating PaymentsId and PaymentsSecret in Settings")   
+      ![Screenshot of creating PaymentsId and PaymentsSecret in the app settings within ODC Studio](images/create-payments-id-and-payments-secret-odcs.png "Creating PaymentsId and PaymentsSecret in Settings")
 
    1. Navigate to **Apps** > **Payments Configurator** and select **Application Secrets**. Your app’s Application ID and Application Secret details display. Make a note of these values and add in your app settings by navigating to  **ODC Portal** > **Settings**.
 
       ![Screenshot showing the process of finding and adding the app's Application ID and Secret details in ODC Studio](images/find-and-add-app-secret-details-pl.png "Adding the App Secret Details")
-
 
 ### Create logic to set up the plugin
 
@@ -233,7 +231,7 @@ Follow these steps, to verify the plugin’s availability, trigger the payment b
 
    1. To set the condition results and message, set the condition of the **If** node to CheckPaymentsPlugin.**IsAvailable**. Then in the False branch of the **If**, add a **Message**, set the message **Type** to **Error** and set a message for the user.
 
-1. Set up the plugin.
+   1. Set up the plugin.
 
    To set up the plugin, use the **SetupPaymentsPlugin** client action.​​ This action gets the information inside the Payments Plugin Configurator app about the Apple Pay or Google Pay configuration. This illustration represents the second part of the action from the sample app.
 
@@ -244,15 +242,15 @@ Follow these steps, to verify the plugin’s availability, trigger the payment b
      ![Screenshot showing the setup of the Payments Plugin and logic to trigger the payment action in ODC Studio](images/create-logic-to-trigger-payment-action-odcs.png "Creating Logic to Trigger Payment Action")
 
    1. For testing configuration, use a test stage for payments.
-      
+
       * For **Android** (Google Pay), use the SetupPaymentsPlugin.**Environment** parameter to set the Test stage of your payments. During development, use the Test option. Remember to change this to Production when you are releasing your app to the store.
-            
+
       * For **iOS** (Apple Pay), to learn more about sandbox testing, see [Sandbox Testing](https://developer.apple.com/apple-pay/sandbox-testing/).
-            
+
    1. To handle the response from the SetupPaymentsPlugin, after the SetupPaymentsPlugin node, add an **If** condition and evaluate the success of this operation. In the False branch of the **If**, add a **Message**, set the message **Type** to **Error**, and set a message for end-users in case of failure to set up the Payments Plugin.
 
 1. Verify if Apple Pay or Google Pay is available.
-   
+
    As a best practice, OutSystems recommends that you verify if Apple Pay or Google Pay is available and configured on the device. If a valid card is available, use the call **IsReadyToPay** client action. To implement this verification, follow these steps:
 
    1. In ODC Studio, after setting up the plugin, add the **IsReadyToPay** action.
@@ -260,11 +258,11 @@ Follow these steps, to verify the plugin’s availability, trigger the payment b
    1. To handle the response from the **IsReadyToPay** action, set the logic to apply conditions for your app based on whether the user has Apple Pay or Google Pay available or neither configured on the device, and if there’s any valid card to make the payment.
   
    1. To handle the response from the **IsReadyToPay** action, set the logic to apply conditions for your app. The logic must be based on the following conditions:
-      
+
       * If the Apple Pay or Google Pay are available, or if neither are configured on the user's device.
-      
+
       * If there’s any valid card added by the user on the device to make the payment.
-      
+
     ![Screenshot of the logic to verify if Apple Pay or Google Pay is ready for payments in ODC Studio](images/create-logic-to-verify-pay-wallets-odcs.png "Creating Logic to Verify Pay Wallets")
 
     <div class="info" markdown="1">
@@ -304,4 +302,3 @@ To trigger the payment on your app's screen, complete the following steps:
 Notice that the **TriggerPayment** Client action has the optional parameters **PSP**, **ClientID**, and **ClientSecret**. If you want to process payments with Stripe using the Payments Plugin, you should set **PSP** to **Entities.PaymentServiceProvider.Stripe**. Obtain the **ClientID** and **ClientSecret** field values from the Payments Configurator dashboard by clicking the **Application Secrets** button inside your app's configuration. Don't pass the **ClientSecret** value directly to the **TriggerPayment** Client action. Instead, it's recommended you save this value securely by creating an Aggregate to obtain it and pass it to the Client action. It's suggested you save the **ClientSecret** in a Site Property. Find more info on Site Properties [here](https://success.outsystems.com/Documentation/11/Reference/OutSystems_Language/Data/Handling_Data/Site_Property). Note that if the **PSP** parameter of the **TriggerPayment** client action is set to **Entities.PaymentServiceProvider.None**, no PSP payment processing takes place.
 
 </div>
-

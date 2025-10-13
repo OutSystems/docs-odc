@@ -49,7 +49,7 @@ The following types of changes are logged automatically:
 
 * When a retry operation is used
 
-# Benefits of using logs
+## Benefits of using logs
 
 With workflow logs, you can:
 

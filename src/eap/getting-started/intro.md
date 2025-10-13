@@ -25,7 +25,6 @@ topic:
 
 OutSystems Developer Cloud (ODC) is a cloud-native app development platform that provides a modular, scalable environment in which you develop and deploy your apps. With ODC you can build and deploy enterprise-grade, mission-critical apps in weeks. You can build web apps, web portals, mobile apps, and business workflows faster than with traditional development tools. You can then deploy your apps in a scalable, secure, and high-performance environment.
 
-
 ## Access the ODC Portal
 
 When your company acquires ODC you'll be registered as user, this will generate an email, from which you can start using ODC. To do it, open the email and locate the link to the ODC Portal. Then click the link to go to the login page.
@@ -52,8 +51,8 @@ From the ODC Portal, when you click **Create**, ODC gives you the option to crea
 * With Mentor, OutSystems AI App generator, where from a prompt you can use AI to generate your app.
 * Using ODC Studio, which if select, automatically opens ODC Studio and displays some choices. From it, you can select:
 
-  * **App** to create a new Web, Tablet, or Phone app from scratch
-  * **Library** to create a new library from scratch
+    * **App** to create a new Web, Tablet, or Phone app from scratch
+    * **Library** to create a new library from scratch
 
 You create apps in the ODC Portal, and then you use ODC Studio to build out your app. In ODC you deploy to a **stage**. A stage, such as Development, is a step within your continuous delivery pipeline.
 

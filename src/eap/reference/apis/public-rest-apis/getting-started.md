@@ -23,14 +23,14 @@ This article describes how to get started with the ODC REST APIs, including how 
 
 Before making your first API call, ensure you have:
 
-1. Access to ODC portal to [create an API client](authentication/create-api-client.md). The API client in the ODC portal allows you to create an API account and generate 
+1. Access to ODC portal to [create an API client](authentication/create-api-client.md). The API client in the ODC portal allows you to create an API account and generate
 OAuth 2.0 client credentials that you can use in exchange for the access token. For more information, refer to [About the API client](authentication/about-api-client.md).
 
 1. Valid [client credentials](authentication/create-api-client.md#copy-client-credentials). The OAuth 2.0 client credentials include the client ID and client secret copied from the API client.
 
 ## Get your access token
 
-To use the ODC REST API, you need an access token. 
+To use the ODC REST API, you need an access token.
 With the client credentials, [get a valid access token](authentication/get-access-token.md).
 
 ## Make your first API call
@@ -56,7 +56,7 @@ ACCESS\_TOKEN is the access token retrieved using the client credentials
 
 ## Next step
 
-- Refer [User management API reference](../identity-v1.md)
+* Refer [User management API reference](../identity-v1.md)
 
 ## Related resources
 
@@ -65,7 +65,3 @@ ACCESS\_TOKEN is the access token retrieved using the client credentials
 * [Copy client credentials](authentication/create-api-client.md#copy-client-credentials)
 
 * [Get access token](authentication/get-access-token.md)
-
-
-
-

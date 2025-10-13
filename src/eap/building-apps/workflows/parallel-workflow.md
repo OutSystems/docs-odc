@@ -29,9 +29,9 @@ You can gain the following benefits by implementing parallel paths in your workf
 
 ## Add parallel node
 
-The **Parallel** node in a workflow acts as a branching mechanism, splitting the main flow into multiple paths that run concurrently. 
+The **Parallel** node in a workflow acts as a branching mechanism, splitting the main flow into multiple paths that run concurrently.
 
-The following are some key considerations for **Parallel** node behavior: 
+The following are some key considerations for **Parallel** node behavior:
 
 * Parallel node names must be unique. The default name is Parallel.
 
@@ -43,24 +43,24 @@ The following are some key considerations for **Parallel** node behavior: 
 
 * A **Parallel** node has no **End** or **Terminate** node inside it. The **Parallel** node has no mandatory properties, and execution can pass through this node when it's empty.
 
-* You can create a maximum of two nested parallel flows within a parallel path. 
+* You can create a maximum of two nested parallel flows within a parallel path.
 
 <div class="info" markdown="1">
 
 All paths in a parallel node must be completed before the workflow proceeds.
 
-</div> 
+</div>
 
 ### Example: Onboarding a new employee
 
 When implementing your onboarding workflow, you can use a **Parallel** node to split the process into separate paths for the HR and IT departments, allowing both to be handled simultaneously rather than sequentially. While the HR department manages tasks such as setting up building access and assigning the new employee a desk, the IT department simultaneously provisions a laptop and configures access to company systems. By running these tasks in parallel, the employee's workspace and digital tools are ready upon arrival, significantly reducing onboarding time and accelerating their time to productivity.
 
-In the following example, once the hiring manager approves the new employee, the workflow branches into parallel paths, splitting the main flow into independent paths running simultaneously. 
+In the following example, once the hiring manager approves the new employee, the workflow branches into parallel paths, splitting the main flow into independent paths running simultaneously.
 
 **HR department:** The HR department is notified about the new employee who needs a desk assigned to them.
 
 **IT department path:** The IT department is notified about the new employee who needs equipment and access to company systems.
 
-The workflow automatically proceeds once both paths are completed, and the employee is notified that everything is ready. 
+The workflow automatically proceeds once both paths are completed, and the employee is notified that everything is ready.
 
 ![Screenshot of a workflow that uses the parallel node to onboard a new employee](images/parallel-node-example-we.png "Parallel node example")

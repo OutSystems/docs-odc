@@ -20,7 +20,7 @@ topic:
 
 # Bar Chart
 
-This example shows how you can create a simple Bar Chart with a customized legend. 
+This example shows how you can create a simple Bar Chart with a customized legend.
 
 1. From the Toolbox, drag the **Bar Chart** widget to the Screen.
 
@@ -53,4 +53,3 @@ This example shows how you can create a simple Bar Chart with a customized legen
 After following these steps, you can publish your module:
 
 ![Image of the final result displaying a Bar Chart with a customized legend in the published module](images/chartbar-result.png "Final Bar Chart Result")
-

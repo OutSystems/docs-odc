@@ -131,7 +131,6 @@ First of all, check if you have any notification referring to the USB mode, like
 
 If you find these options, try to switch between them (`MTP`, `PTP` and `Camera` modes), disconnecting and reconnecting the device to the PC, and retrying the device discovery in ODC Studio.
 
-
 ### USB Debugging was not allowed in device { #usb-debugging-was-not-allowed-in-device }
 
 Whenever an Android device is connected to a PC, a request to allow USB Debugging is shown on the device. This request should be accepted so that ODC Studio can communicate with the device.
@@ -142,7 +141,7 @@ If you get a pop-up on your device like the one below, just tap **OK** and try a
 
 ### More than one Android device is connected to your PC { #more-than-one-android-device-is-connected-to-your-pc }
 
-Only one device from each platform (Android/iOS) can be connected to the PC for the device discovery process to run successfully. 
+Only one device from each platform (Android/iOS) can be connected to the PC for the device discovery process to run successfully.
 
 Ensure that you only have one Android device connected to your PC.
 
@@ -165,7 +164,7 @@ If you are running ODC Studio on Windows, one of the requirements for the debugg
 
 ### Web Inspector is not enabled on your device { #web-inspector-is-not-enabled-on-your-device }
 
-To ensure that your device is correctly detected you should make sure that the Web Inspector is enabled. 
+To ensure that your device is correctly detected you should make sure that the Web Inspector is enabled.
 
 Do the following:
 
@@ -192,7 +191,6 @@ Check [Apple Support](https://support.apple.com/en-us/HT202778) for more informa
 You can only connect one device from each platform (Android/iOS) to the PC for the device discovery process to run successfully.
 
 Ensure that you only have one iOS device connected to your PC.
-
 
 ## Issues During App Detection by ODC Studio
 

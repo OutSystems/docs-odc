@@ -25,12 +25,10 @@ ODC provides a set of user and access management APIs that allow you to programm
 
 * [Create a single user and assign a role to the user](create-user-assign-role.md)
 
-OutSystems recommends that you consume all the user and access management APIs in a separate [library](../../../libraries/intro.md) and create individual server actions that invoke the corresponding REST API. This allows you to reuse the APIs across different ODC apps.  For detailed information about how to consume REST APIs, refer to [Consume one or more REST API methods](../../../../integration-with-systems/consume_rest/consume-a-rest-api.md). 
+OutSystems recommends that you consume all the user and access management APIs in a separate [library](../../../libraries/intro.md) and create individual server actions that invoke the corresponding REST API. This allows you to reuse the APIs across different ODC apps.  For detailed information about how to consume REST APIs, refer to [Consume one or more REST API methods](../../../../integration-with-systems/consume_rest/consume-a-rest-api.md).
 
 To explore a sample user and access management ODC library, refer to the User Management Connector in the [User Management Forge component](https://www.outsystems.com/forge/component-overview/21016/users-management-odc).
 
 ## Related resources
 
 * [User management in ODC](../../../../user-management/intro.md)
-
-

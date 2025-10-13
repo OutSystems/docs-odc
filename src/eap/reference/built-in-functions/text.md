@@ -24,9 +24,9 @@ Returns a single-character string corresponding to the 'c' character code.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -52,9 +52,9 @@ Warning: Since this function only encodes strings that will be used in HTML lite
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -86,9 +86,9 @@ Warning: Since this function only encodes strings that will be used in JavaScrip
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -119,9 +119,9 @@ Warning: Since this function only encodes string literals, it does not protect y
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: No
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: No
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -151,9 +151,9 @@ Replaces all non-alphanumeric characters in a string, i.e. characters outside of
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -184,9 +184,9 @@ Returns the zero-based position in Text 't' where 'search' Text can be found. Re
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -239,9 +239,9 @@ Returns the number of characters in Text 't'.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -266,9 +266,9 @@ Returns a string containing the New Line (Return) character.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Output
 
@@ -280,9 +280,9 @@ Returns Text 't' after replacing all Text occurrences of 'search' with 'replace'
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Cannot be used inside aggregates with entity attributes as parameters.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Cannot be used inside aggregates with entity attributes as parameters.
 
 ### Parameters
 
@@ -316,9 +316,9 @@ Returns a sub-string of 't' beginning at 'start' zero-based position and with 'l
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -354,9 +354,9 @@ Converts Text 't' to the equivalent lowercase text.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -380,9 +380,9 @@ Converts Text 't' to the equivalent uppercase text.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -406,9 +406,9 @@ Removes all leading and trailing space characters (' ') from Text 't'.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -433,9 +433,9 @@ Removes all trailing space characters (' ') from Text 't'.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -460,9 +460,9 @@ Removes all leading space characters (' ') from Text 't'.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 

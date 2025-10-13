@@ -24,7 +24,7 @@ Applies to **Mobile** apps only.
 
 </div>
 
-Keep the splash screen simple and fast by minimizing the number of requests to the server and avoiding complex UI logic. 
+Keep the splash screen simple and fast by minimizing the number of requests to the server and avoiding complex UI logic.
 
 ## Impact
 

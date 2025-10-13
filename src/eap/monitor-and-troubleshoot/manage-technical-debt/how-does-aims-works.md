@@ -32,7 +32,7 @@ Code quality uses the Data platform, which may process data outside your ODC org
 
 ## Prerequisites
 
-To activate **Code quality**, you must have the **View Code Quality findings** permission. 
+To activate **Code quality**, you must have the **View Code Quality findings** permission.
 
 ## Activating Code quality
 
@@ -41,7 +41,7 @@ To activate **Code quality**, follow these steps:
 1. In the Portal, go to **Analyze** > **Code quality**.
 
 1. Click **Activate code quality**.
-    
+
     ![Activate code quality button in the ODC Portal with a description of code quality analysis.](images/aims-activation-pl.png "Activate Code Quality")
 
 Code quality is activated and begins analyzing your apps. The initial analysis may take several minutes, depending on the number and size of your apps. Once complete, you can view the results on the Code quality dashboard. For more information about the **Code quality** dashboard, refer to [Working with Code quality](working-with-code-quality.md).

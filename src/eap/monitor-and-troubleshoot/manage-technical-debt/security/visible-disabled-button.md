@@ -26,7 +26,7 @@ A disabled button doesn't prevent an experienced person from re-enabling the but
 
 ## Why is this happening?
 
-A disabled button remains visible when the **Enabled** property is set to False, and the **Visible** property is set to True. 
+A disabled button remains visible when the **Enabled** property is set to False, and the **Visible** property is set to True.
 
 ![Button properties configuration showing Enabled set to False and Visible set to True.](images/odcs-enable-visible.png "Button Properties Configuration")
 

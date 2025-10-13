@@ -42,7 +42,7 @@ Your app has a server action or aggregate executed in the client-side logic of a
 
 ## How to fix
 
-If you don't need the screen to be accessed by everyone, change it to be accessible only to authenticated users. 
+If you don't need the screen to be accessed by everyone, change it to be accessible only to authenticated users.
 
 If you need the screen to be accessed by everyone:
 

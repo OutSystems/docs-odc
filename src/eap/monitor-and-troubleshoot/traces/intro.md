@@ -31,7 +31,7 @@ Ensure you have the following permissions:
 * Access app logs and traces.
 * Access user information.
 
-You can analyze client-side execution with [client-side traces](client-side-traces.md). This provides insights into elements such as Blocks or Client actions. 
+You can analyze client-side execution with [client-side traces](client-side-traces.md). This provides insights into elements such as Blocks or Client actions.
 
 ## Spans
 

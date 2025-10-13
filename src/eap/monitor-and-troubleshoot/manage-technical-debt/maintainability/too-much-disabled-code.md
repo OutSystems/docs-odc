@@ -28,7 +28,7 @@ Keeping a large amount of disabled code creates clutter and makes it difficult t
 
 ## Why is this happening?
 
-Too much disabled code results from deactivating code sections but not removing them. 
+Too much disabled code results from deactivating code sections but not removing them.
 
 ## How to fix
 

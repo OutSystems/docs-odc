@@ -108,7 +108,3 @@ An **end-user role** is a set of permissions assigned to users who interact with
 * [User management API reference](../identity-v1.md)
 
 * [Portfolio management API reference](../portfolio-v1.md)
-
-
-
-

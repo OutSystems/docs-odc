@@ -24,7 +24,6 @@ topic:
 
 For each stage in which you deploy apps, ODC comes with a **built-in** OutSystems domain for end-user access. The table below shows built-in domains if you have three stages.
 
-
 | Stage       | Built-in domain                      |
 | ----------- | ------------------------------------ |
 | Development | `<customername>-dev.outsystems.app`  |
@@ -53,7 +52,7 @@ ODC automatically issues X.509 certificates after verifying the domain ownership
 
 A **root domain** is the main part of a website’s address. It is the **highest level of your website’s identity** on the internet, and all subdomains are based on it.
 
-Some domain registrars may not allow creating CNAME records when existing DNS records exist for the same name. This typically applies to root domains (such as `example.com`) and subdomains(such as `dev.example.com`) that already have other records. 
+Some domain registrars may not allow creating CNAME records when existing DNS records exist for the same name. This typically applies to root domains (such as `example.com`) and subdomains(such as `dev.example.com`) that already have other records.
 
 You need to use a custom domain without linked DNS records if your domain registrar has restricted CNAME creation.
 

@@ -21,7 +21,7 @@ topic:
   - using-cordova-plugins
 ---
 
-# Health and Fitness Plugin using HealthKit and Google Fit 
+# Health and Fitness Plugin using HealthKit and Google Fit
 
 <div class="info" markdown="1">
 
@@ -31,7 +31,7 @@ Applies only to Mobile Apps.
 
 The Health & Fitness plugin enables you to access and use health and fitness data in a mobile app. The plugin provides access to the Apple HealthKit and Google Fit APIs by letting you use data relevant to your health and fitness use cases.
 
-The plugin is unaware of the provider you use for data, but you always need to request permissions from users to access data. The plugin saves no health and fitness data in the device. In cases where your app writes data to the APIs, the package name is the identifier of the data source. 
+The plugin is unaware of the provider you use for data, but you always need to request permissions from users to access data. The plugin saves no health and fitness data in the device. In cases where your app writes data to the APIs, the package name is the identifier of the data source.
 
 As a good practice, verify the plugin is available in the app and prevent the app from crashing. Use the **Logic** > **Client Actions** > **HealthFitnessPlugin** > **CheckHealthFitnessPlugin** action to check for the plugin availability. If the plugin isn't available to the app, display an error to your users.
 
@@ -53,7 +53,7 @@ This sample app shows you how to do the following with the health and fitness da
 * Retrieve raw data related to workouts for a specific period (iOS only).
 * Use the data in user interface, such as cards, tables, and graphs
 
-![Screenshot of the Health & Fitness sample app interface](images/sample-app.png "Health & Fitness Sample App") 
+![Screenshot of the Health & Fitness sample app interface](images/sample-app.png "Health & Fitness Sample App")
 
 ## Enabling your users to track their health and fitness data
 
@@ -106,7 +106,7 @@ Refer to the sample app for more examples.
 
 Start, for example, by defining a variable that corresponds to the type of output you want to show. Create a variable that holds the data so that you can access, store, and display the number of steps taken in a day (1).
 
-![Screenshot of a sample user interface displaying health data like daily step count](images/sample-interface-odcs.png "Sample User Interface for Health Data") 
+![Screenshot of a sample user interface displaying health data like daily step count](images/sample-interface-odcs.png "Sample User Interface for Health Data")
 
 To show the step count for the day, you can use an **Expression** and customize the look and feel of the parent widget (2).
 
@@ -118,9 +118,9 @@ The health or fitness query parameters might include:
 
 * period: start, end
 * time unit: second, minute, hour, day, week, month, year
-* operation type: sum, min, max, average 
+* operation type: sum, min, max, average
   
-![Screenshot demonstrating how to access health and fitness data using the AdvancedQuery action](images/get-fitness-data-odcs.png "Accessing Health and Fitness Data") 
+![Screenshot demonstrating how to access health and fitness data using the AdvancedQuery action](images/get-fitness-data-odcs.png "Accessing Health and Fitness Data")
 
 <div class="info" markdown="1">
 
@@ -160,7 +160,7 @@ To check that writing the health or fitness data on the device is working, verif
 
 ### Create logic to define a background job
 
-To define a background job you can use the **SetBackgroundJob** action. Set the parameters for the type of health or fitness variable you want to keep evaluating, define the notification trigger condition and its frequency, and define the notification content. 
+To define a background job you can use the **SetBackgroundJob** action. Set the parameters for the type of health or fitness variable you want to keep evaluating, define the notification trigger condition and its frequency, and define the notification content.
 
 <div class="info" markdown="1">
 
@@ -187,7 +187,6 @@ In the case of a heart rate monitoring alarm, try to strike a balance between jo
 Consider the following parametrization for a background job that will notify you if your heart rate is above 190 bpm, with a maximum notification frequency of one notification per minute:
 
 ![Screenshot showing the parametrization for a heart rate monitoring background job](images/set-background-job2-odcs.png "Setting Up a Heart Rate Monitoring Alarm")
-
 
 After you have created your background job you can update it or delete it using the **UpdateBackgroundJob** action or the **DeleteBackgroundJob** action, respectively.
 

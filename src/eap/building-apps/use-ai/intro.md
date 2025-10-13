@@ -101,4 +101,3 @@ By exposing agents in an ODC app with a REST API, you can consume AI agents from
 * [Using the AI Agent Builder](overall-process.md)
 
 * [Configure your AI model](configure-model/intro.md)
-

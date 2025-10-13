@@ -94,11 +94,11 @@ Applies to version 1.1.0 and higher.
 
 </div>
 
-You can set the content of the authentication dialog that appears to the end-user when accessing key-value pairs. More specifically, you can set values for the dialog's **title** and **subtitle**. For devices with an Android version below or equal to 10, you can also set the value for the **cancel button** (also known as **negative button**). 
+You can set the content of the authentication dialog that appears to the end-user when accessing key-value pairs. More specifically, you can set values for the dialog's **title** and **subtitle**. For devices with an Android version below or equal to 10, you can also set the value for the **cancel button** (also known as **negative button**).
 
 <div class="info" markdown="1">
 
-For Android versions 10 or lower, these values only apply to biometric authentication (for example, fingerprint). These values also apply to Android version 11 and higher when using the standard authentication methods. 
+For Android versions 10 or lower, these values only apply to biometric authentication (for example, fingerprint). These values also apply to Android version 11 and higher when using the standard authentication methods.
 
 For Android versions 10 or lower, when using standard authentication methods (for example, PIN), the Android system uses predefined values.
 
@@ -135,12 +135,12 @@ The app with the KeyStore Plugin can run on many Android or iOS devices, with di
 
 The following actions can handle errors. Use the actions with the **If** nodes to check for errors and control how the app works.
 
-Variable|Action|Description
----|---|---
-IsAvailable|CheckKeyStorePlugin|True if the KeyStore Plugin is available in the app.
-Success|SetValue|True if there aren't errors while setting a new key-value pair.
-Success|GetValue|True if there aren't errors while getting a key-value pair.
-Success|RemoveKey|True if there aren't errors while removing a key-value pair.
+| Variable|Action|Description |
+| ---|---|--- |
+| IsAvailable|CheckKeyStorePlugin|True if the KeyStore Plugin is available in the app. |
+| Success|SetValue|True if there aren't errors while setting a new key-value pair. |
+| Success|GetValue|True if there aren't errors while getting a key-value pair. |
+| Success|RemoveKey|True if there aren't errors while removing a key-value pair. |
 
 ## Reference
 
@@ -150,20 +150,20 @@ More information about the plugin.
 
 The KeyStore plugin uses a Cordova plugin. For more information check [cordova-plugin-secure-storage](https://github.com/OutSystems/cordova-plugin-secure-storage). The following actions are available in the plugin.
 
-Action|Description|Available in PWA
----|---|---
-CheckKeyStorePlugin|Checks if the KeyStore Plugin is available in the app.|Yes
-SetValue|Adds or sets the key with the value in the store.|Yes
-GetValue|Gets the value associated with the key from the store.|Yes
-RemoveKey|Removes the key and its associated value from the store.|Yes
+| Action|Description|Available in PWA |
+| ---|---|--- |
+| CheckKeyStorePlugin|Checks if the KeyStore Plugin is available in the app.|Yes |
+| SetValue|Adds or sets the key with the value in the store.|Yes |
+| GetValue|Gets the value associated with the key from the store.|Yes |
+| RemoveKey|Removes the key and its associated value from the store.|Yes |
 
 ### MABS compatibility
 
 The table shows the compatibility of the KeyStore Plugin with the Mobile Apps Builds Service (MABS).
 
-Plugin version|Compatible with MABS version|Notes
----|---|--
-1.0.0 and later|MABS 9.0 and later.|
+| Plugin version|Compatible with MABS version|Notes |
+| ---|---|-- |
+| 1.0.0 and later|MABS 9.0 and later.| |
 
 ## Known issues
 

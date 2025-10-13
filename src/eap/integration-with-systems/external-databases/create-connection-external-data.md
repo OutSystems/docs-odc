@@ -22,7 +22,7 @@ audience:
 
 # Create connections to external data sources
 
-To integrate with external data sources using [Data Fabric](intro.md), Administrators need to create the connections to the external data sources and AI search services in the ODC Portal. Then, in ODC studio, developers use the data through entities or server actions in their apps. 
+To integrate with external data sources using [Data Fabric](intro.md), Administrators need to create the connections to the external data sources and AI search services in the ODC Portal. Then, in ODC studio, developers use the data through entities or server actions in their apps.
 
 The supported data sources are listed at [ODC system requirements](../../getting-started/system-requirements.md#supported-external-data-sources).
 
@@ -47,7 +47,7 @@ To access private data that is not available over the internet, connect to your 
 * All data sources:
     1. In the ODC Portal, open the connection configuration screen. First, toggle on the `Private gateway` and then enter the port number in the `Private gateway port` field.
 * SAP BAPI database:
-    1. Run the Cloud Connector with the following command: `./outsystemscc --header "token: <token>" <secure-gateway-address> R:<local-port>:<sap-ip-address>:<remote-port>`. This directs traffic from `secure-gateway:<local-port>` to `<sap-ip-address>:<remote-port>`. 
+    1. Run the Cloud Connector with the following command: `./outsystemscc --header "token: <token>" <secure-gateway-address> R:<local-port>:<sap-ip-address>:<remote-port>`. This directs traffic from `secure-gateway:<local-port>` to `<sap-ip-address>:<remote-port>`.
     1. To route requests through the Cloud Connector and still use a valid Application Server value, a [SAP Router](https://support.sap.com/en/tools/connectivity-tools/saprouter.html) is needed.
 * Azure SQL Server (all instances):
     1. Proxy mode is required, as it ensures a stable connection by routing all traffic through the Azure SQL Gateway.
@@ -61,7 +61,7 @@ To create a new database connection, go to the ODC Portal and follow these steps
 1. In the connection form, enter the required connection information.
     * If you're adding a database connection, refer to the [database connection parameters](#connection-parameters).
     * If you're adding an AI search service, refer to the [AI search service connnection parameters](#ai-search-service-connection-parameters).
-1. After entering the information, click the **Test connection** button at the bottom of the form. If the test fails, a message displays. Make the necessary changes and test again. 
+1. After entering the information, click the **Test connection** button at the bottom of the form. If the test fails, a message displays. Make the necessary changes and test again.
 1. To apply to stages, you can choose one of the following.
     * Click **Apply to all stages** to use the same connection information in all stages.
     * Select the stage name to use connection information for a single stage.
@@ -77,7 +77,7 @@ After connecting to an external database, select the entity names and attributes
     ![Screenshot showing the process of selecting entities and attributes from an external database in OutSystems Developer Cloud Portal](images/external-db-entity-pp.png "External Database Entities Selection")
 
 1. From the **Entity** name column, select the entities and attributes you want to use.
-1. Click **Save** to confirm. 
+1. Click **Save** to confirm.
 
 Selected entities and attributes are now available as [public elements](../../building-apps/libraries/use-public-elements.md). In ODC Studio, developers can rename entities, allowing for clearer descriptions. For example, an entity initially named Product_id_version1 can be renamed to Product_id.
 
@@ -104,7 +104,7 @@ For existing connections, when objects are changed or new ones introduced, it's 
 
 ## Connection parameters
 
-Administrators  must supply the following information to connect to the external connector. 
+Administrators  must supply the following information to connect to the external connector.
 
 | Parameter | Description | Needs testing connection when edited | Notes |
 |--|--|--|--|
@@ -128,7 +128,7 @@ Administrators  must supply the following information to connect to the external
 | SAP route string | A route string describes the connection path between ODC and SAP BAPI | Yes | |
 
 ### Additional parameters
- 
+
 You can use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, you can use `;` semi-colon as a separator for SQL Server connections or the `&` character for other connections. Hover over the info icon to confirm. Different databases may require different parameters, for example:
 
 * For **SQL Server** and **Azure SQL**, to select the desired schema on the database, enter `currentSchema=<schema-name>`. For **Oracle** to select the desired schema on the database, enter `current_schema=<schema-name>`
@@ -228,7 +228,7 @@ Oracle
 
     * Seconds: 31 years, 9 months, 9 days, 1 hour, 46 minutes, and 39 seconds
     * Minutes: 1901 years, 4 months, 29 days, 10 hours, 39 minutes, and 59 seconds
-            
+
 * Oracle treats empty strings as NULL values. When inserting or updating a nullable text attribute with a value, Oracle stores NULL regardless of the Null Behavior configuration.
 
 </div>
@@ -291,18 +291,19 @@ SAP OData
 * The CreateOrUpdate entity action is not available for any entity.
 * Deep updates and deletes are not available. However, you can use the Update and Delete entity actions to update or delete records individually, as long as those actions are available for the given entities.
 * Bulk insert/update entity action is unavailable for any entity due to SAP's lack of UPSERT support.  
-* Some Update entity actions may fail if SAP requires the **If-Match** header. 
+* Some Update entity actions may fail if SAP requires the **If-Match** header.
     * For example, an error message `_The Data Service Request is required to be conditional. Try using the 'If-Match' header.`
 * Composite keys: SAP entities can have composite primary keys.
     * Entities and entity actions: The entity won't have a primary key if there is a composite key. ODC won't mark any key as a primary key. Hence, you don't get the Update entity action. Also, the Create entity action has no output parameter ID.
     * Deep insert server action: The server action provides an output parameter for each PK. The data types and the names of these parameters are based on the original input structure.
 * In SAP, computed attributes are categorized into the following types with distinct behaviors:
-    * Primitive Data Types: 
+    * Primitive Data Types:
         * Read/Write Operations: These attributes support both read and write operations.
         * Potential Issues: Writing data to these attributes may cause runtime errors due to conflicts with SAP business rules.
     * Complex Data Types:
         * Read Operations: Reading data from complex attributes is not supported.
         * Write Operations: Writing to complex attributes is allowed but may result in runtime errors caused by SAP business rules. For example, an error `\[/IWBEP/CM\_V4\_COS/028] Complex property \&lt;attribute_name&gt; is computed and not changeable`.
 * SAP v4 entities do not support NULL values. You can override the default value at the attribute level. Users must manually delete the default value during input in the app to prevent NULL values from being written to SAP.
+
 </div>
-</div> 
+</div>

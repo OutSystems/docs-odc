@@ -33,7 +33,7 @@ Server-side logic breaks down into multiple separate Aggregates or Server Action
 
 ## How to fix
 
-Instead of sequencing a set of server requests or server Aggregates on your client-side code, compose all required server logic in a single Server Action. This reduces the number of server requests. 
+Instead of sequencing a set of server requests or server Aggregates on your client-side code, compose all required server logic in a single Server Action. This reduces the number of server requests.
 
 ![A Client Action flow with a single Run Server Action node.](images/odcs-single-server-action.png "Single Server request inside a Client Action")
 

@@ -51,7 +51,7 @@ Before you can view or export audit logs, you must have the **Audit Trail View**
 
 ## View audit trail in the ODC Portal
 
-From the **Audit trail** interface, you can: 
+From the **Audit trail** interface, you can:
 
 * **View logs from the last 30 days**: You can access a rolling 30-day log history directly in the Portal. Audit logs up to 3 months old [can be exported to CSV](#export-csv).
 * **Search and filter log attributes**: Easily find what you're looking for by searching and filtering on core log attributes.
@@ -98,7 +98,7 @@ ODC's Audit Trail helps you oversee operations critical to data security and ope
 
 <div class="info" markdown="1">
 
-Audit trail logs do not track actions made within your app's runtime. 
+Audit trail logs do not track actions made within your app's runtime.
 
 </div>
 
@@ -152,7 +152,7 @@ Track how you grant and revoke access within your organization. This includes bo
 
 ### Asset management
 
-Get a detailed record of actions on your core app development resources, including web app, mobile app, workflows, libraries, external libraries, widget libraries, external connections, search connections, extension libraries, AI agents, and AI models. 
+Get a detailed record of actions on your core app development resources, including web app, mobile app, workflows, libraries, external libraries, widget libraries, external connections, search connections, extension libraries, AI agents, and AI models.
 
 * Create asset
 
@@ -179,7 +179,7 @@ Get a detailed record of actions on your core app development resources, includi
 * CreateMCPConnection
 
 * DeleteExternalConnection
-    
+
 * DeleteSearchServiceConnection
 
 * DeleteMCPConnection
@@ -191,7 +191,6 @@ There are two types of log attributes: **Foundational** (visible in the ODC Port
 ### Foundational attributes
 
 Foundational attributes help you understand key details about each action directly in the ODC Portal interface.
-
 
 | **Attribute name** |              **Definition**                             |
 | ------------------ | --------------------------------------------------------|
@@ -233,7 +232,7 @@ When you export your audit data to a CSV file, additional, more detailed attribu
 
 * **Binary configurations** display \*\*\*\*\*\*\* instead of the binary value. A binary can contain secret data.
 
-* When you add or remove users from end user groups, the logs show the **difference** between the old value and the new value. All other logs show the old value and the new value. End user groups can contain thousands of user values. To ensure high performance, Audit trail prioritizes showing the smaller `diff` rather than the full list of end users. 
+* When you add or remove users from end user groups, the logs show the **difference** between the old value and the new value. All other logs show the old value and the new value. End user groups can contain thousands of user values. To ensure high performance, Audit trail prioritizes showing the smaller `diff` rather than the full list of end users.
 
 * If an OutSystems support agent needs to access your ODC tenant as part of a support ticket, audit trail logs the time of access. Access is automatically revoked when no longer needed, and always expires after a maximum of four hours.
 

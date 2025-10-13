@@ -18,7 +18,7 @@ coverage-type:
 
 # Line Chart
 
-This example shows how you can create a simple Line Chart with a Spline line and custom markers. 
+This example shows how you can create a simple Line Chart with a Spline line and custom markers.
 
 1. From the Toolbox, drag the **Line Chart** widget to the Screen.
 
@@ -30,7 +30,7 @@ This example shows how you can create a simple Line Chart with a Spline line and
 
 1. Click **+[0]** and set the **Label** and **Value** properties using [fixed data](data.md#populate-your-chart-with-fixed-data) or [variable data](data.md#populate-your-chart-with-variable-data).
 
-    This example uses fixed data. These properties define the first data point. Each data point corresponds to a point on the line chart. 
+    This example uses fixed data. These properties define the first data point. Each data point corresponds to a point on the line chart.
 
     ![Screenshot demonstrating how to set the Label and Value properties for a data point in the Line Chart](images/chartline-datapoint-ss.png "Setting a Data Point")
 
@@ -57,4 +57,3 @@ This example shows how you can create a simple Line Chart with a Spline line and
 After following these steps, you can publish your module:
 
 ![Image of the final result showing a completed Line Chart pattern with a Spline line and custom markers](images/chartline-result.png "Final Line Chart Pattern Result")
-

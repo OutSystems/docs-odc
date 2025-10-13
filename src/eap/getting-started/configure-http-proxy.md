@@ -24,6 +24,7 @@ topic:
 This article explains how to configure a HTTP proxy server on your local computer to be used by ODC Studio. This applies when developers are working on a network where communications to the Internet need to go through an HTTP proxy.
 
 To configure a HTTP proxy server:
+
 1. [Configure the proxy server in the operating system](#configure-proxy-OS)
 1. [Configure the proxy authentication in ODC Studio](#configure-proxy-odc-studio)
 
@@ -33,7 +34,7 @@ ODC Studio relies on the proxy servers (HTTP and HTTPS) that are defined in the 
 
 ### Windows setup
 
-1. Click the **Start** icon and select **Settings**. 
+1. Click the **Start** icon and select **Settings**.
 
     ![Opening Windows Settings for HTTP Proxy configuration](images/windows-http-proxy-settings.png "Windows HTTP Proxy Settings")
 
@@ -47,7 +48,7 @@ ODC Studio relies on the proxy servers (HTTP and HTTPS) that are defined in the 
 
     1. Enable the **Use a proxy server** toggle.
 
-    1. In the **Address** field, enter ``http=example.net:9090;https=example.net:9090``replacing ``example.net`` with your proxy server name or IP address and ``9090`` with your proxy server port. 
+    1. In the **Address** field, enter ``http=example.net:9090;https=example.net:9090``replacing ``example.net`` with your proxy server name or IP address and ``9090`` with your proxy server port.
 
     1. Leave the **Port** field empty.
 

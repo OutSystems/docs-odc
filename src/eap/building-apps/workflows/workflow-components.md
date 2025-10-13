@@ -24,7 +24,7 @@ You can implement a workflow in the workflow editor using the following nodes:
 
 * [Conditional start](add-conditional-start.md) - Allows the workflow to start based on specific conditions.
 
-* [Automatic activity](add-automatic-activity.md) - Represents an automated step that executes without any human intervention. 
+* [Automatic activity](add-automatic-activity.md) - Represents an automated step that executes without any human intervention.
 
 * [Human activity](add-human-activity.md) - Represents a step where a human user needs to perform an action and make a decision.
 
@@ -66,7 +66,7 @@ Here's the loan approval process:
 
     ![Example workflow of approving a bank transaction](images/example-workflow-pl.png "Example workflow of approving a bank transaction")
 
-For detailed step-by-step information about using workflows, refer to [Using workflows](using-workflows.md). 
+For detailed step-by-step information about using workflows, refer to [Using workflows](using-workflows.md).
 
 ## How the workflow works
 
@@ -80,20 +80,20 @@ As users complete their assigned tasks, events are triggered in the app to signa
 
 At any given time, based on the progress of the activity, the workflow node can be in one of the following statuses:
 
-- **Running** - The activity is currently being executed, such as when a service action is retrieving data.
+* **Running** - The activity is currently being executed, such as when a service action is retrieving data.
 
-- **Waiting** - The activity is on hold, awaiting further action. For instance, the **HumanActivityNode** can be on stand-by for manual intervention or the **AutomaticActivityNode** can be waiting for a scheduled event.
+* **Waiting** - The activity is on hold, awaiting further action. For instance, the **HumanActivityNode** can be on stand-by for manual intervention or the **AutomaticActivityNode** can be waiting for a scheduled event.
 
-- **Completed** -  The activity has finished, allowing the workflow to proceed to the next step.
+* **Completed** -  The activity has finished, allowing the workflow to proceed to the next step.
 
-- **Terminated** - The activity and the entire workflow is terminated following the successful execution of the **ProcessTerminate** API or any other unexpected terminate activity.
+* **Terminated** - The activity and the entire workflow is terminated following the successful execution of the **ProcessTerminate** API or any other unexpected terminate activity.
 
-- **Error** - The activity encounters an issue, which can happen due to:
-  * An error in the service action that the activity calls.
-  * Reaching the maximum number of retries without successful execution.
-  * Temporary problems, such as a service action being unavailable.
+* **Error** - The activity encounters an issue, which can happen due to:
+    * An error in the service action that the activity calls.
+    * Reaching the maximum number of retries without successful execution.
+    * Temporary problems, such as a service action being unavailable.
 
-- **Open** - The human activity has been opened by an end-user but has not yet proceeded to execution.
+* **Open** - The human activity has been opened by an end-user but has not yet proceeded to execution.
 
 <div class="info" markdown="1">
 

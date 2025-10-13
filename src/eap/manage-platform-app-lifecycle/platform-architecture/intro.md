@@ -55,7 +55,7 @@ The following diagram shows the high-level architecture of the development Platf
 
 #### Data platform { #data-platform }
 
-The **Data platform** collects, processes, and stores data from several sources. This information is then made available for analysis and visualization, allowing customers to monitor their apps’ performance and usage, and track platform operations. The Data platform is also responsible for processing Mentor App Generator’s data. 
+The **Data platform** collects, processes, and stores data from several sources. This information is then made available for analysis and visualization, allowing customers to monitor their apps’ performance and usage, and track platform operations. The Data platform is also responsible for processing Mentor App Generator’s data.
 
 ##### Features that send data to the Data platform
 
@@ -93,7 +93,7 @@ The Runtime **Load Balancer** handles all requests to the apps.
 
 The following diagram shows the high-level Runtime architecture.
 
-![Diagram depicting the high-level Runtime architecture within OutSystems Developer Cloud.](images/architecture-runtime-diag.png "Runtime Architecture") 
+![Diagram depicting the high-level Runtime architecture within OutSystems Developer Cloud.](images/architecture-runtime-diag.png "Runtime Architecture")
 
 ## Key technologies of the cloud-native infrastructure
 
@@ -171,6 +171,7 @@ Each Runtime stage has an isolated Amazon Aurora Serverless database. The follow
 The Amazon Aurora database architecture model decouples compute and storage, and both automatically scale independently. The Database CPU and Memory automatically scale as the amount of load increases, and the database storage volume automatically scales as the amount of data stored increases.
 
 #### High Availability - Data (HA)
+
 When enabled, a second (standby) database is deployed in a separate availability zone.  Whenever an availability zone fails or the primary database becomes unavailable, the standby database is automatically promoted to the primary, and traffic is automatically routed to the new primary database, ensuring minimal disruption.  Without HA, failover is not immediate and the primary database can take a few minutes to recover in a secondary availability zone.  As the data is automatically written to multiple AZ's, there is no loss of data in the event of a failure.
 
 #### Platform to Runtime
@@ -210,7 +211,6 @@ In the ODC architecture, caches optimize performance by storing certain informat
 * Metadata: This type of data is cached during connection creation or when refreshing metadata in the ODC Portal. The data is then stored in serverless, NoSQL databases.
 * Query statements that execute in runtime Apps are cached to maintain consistent execution plans in the underlying system to enhance performance. Developers should follow security best practices and avoid sensitive data in query statements.
 * Query results are cached in Kubernetes pod memory. This cache expiration is defined by developer at the aggregate level.
-
 
 ### Connection secrets
 

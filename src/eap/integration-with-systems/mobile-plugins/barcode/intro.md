@@ -54,13 +54,13 @@ To create the logic to scan for barcodes, follow these steps in ODC Studio:
 
 1. Go to **Logic** > **Client Actions** > **BarcodePlugin**.
 
-2. To open the camera in your app for scanning, drag the **ScanBarcode** action to the flow.
+1. To open the camera in your app for scanning, drag the **ScanBarcode** action to the flow.
 
     ![ODC Studio flow showing the ScanBarcode client action for implementing barcode scanning logic](images/client-action-odcs.png "Client Action to Scan a Barcode")
 
     In the **ScanBarcode** action, you can set scan instructions, back or front camera, or UI orientation, and enable the scan button. For more information about the **ScanBarcode** action, see [Scanning options](#scanning-options).
 
-3. Check the **ScanResult** text for the result of the scan.
+1. Check the **ScanResult** text for the result of the scan.
 
 To prevent errors, it's a good practice to first check if the plugin is available using the action **CheckBarcodePlugin**. To confirm the device can read the barcodes, verify that the value of **ScanBarcode.Success** is True. See the [demo app](#demo-app) for the examples.
 
@@ -78,21 +78,21 @@ The following list shows which barcode formats the plugin can read.
 
 * UPC-A
 * UPC-E (*)
-* EAN-8 
-* EAN-13 
+* EAN-8
+* EAN-13
 * ISBN-10 (*)
-* ISBN-13 
-* ISBN-13 Dual Barcode 
-* Code 39 
+* ISBN-13
+* ISBN-13 Dual Barcode
+* Code 39
 * Code 93
-* Code 128 
+* Code 128
 * GS1 DataBar (**)
-* ITF-14 
+* ITF-14
 * Codabar (*)
-* QR Code 
-* PDF 417 
-* Data Matrix 
-* Aztec Code 
+* QR Code
+* PDF 417
+* Data Matrix
+* Aztec Code
 
 (*) Not Supported in PWA.
 
@@ -110,8 +110,8 @@ The following list shows which barcode formats the plugin can read.
 
 Here is the list of parameters you can use in the plugin actions.
 
-| Action                   | Description                                   | 
-| ------------------------ | --------------------------------------------- | 
+| Action                   | Description                                   |
+| ------------------------ | --------------------------------------------- |
 | **ScanInstructions**    | Displays the scanning instructions. |
 | **CameraDirection**    | Select the front or back camera as default when triggering a new scan action. |
 | **ScanOrientation**    | Allows you to set the Scan UI to Adaptive, which detects your device's orientation, Landscape, or Portrait mode. |
@@ -143,6 +143,7 @@ On some devices with a low-resolution front camera, the app doesn't scan barcode
 Scanning barcodes in PWA can be faulty in poor conditions. For example, when there's insufficient lighting, or when the user is pointing the camera at a slight angle.
 
 Also, on some devices, it's not possible to scan certain codes. The following are ways you can work around this:
+
 * Try to change the camera using the camera selection dropdown, setting the **ShowCameraSelection** input parameter to **True**.
 * Specify the code format with the **Hint** input parameter.
 * Increase the number of FPS (max 1000, and this value is not recommended) passed in the **ScannerFPS** input parameter.

@@ -22,9 +22,9 @@ topic:
 
 # Use REST APIs in your app
 
-You can use REST APIs in your app to retrieve or update data from an external systems or leverage the resources of your ODC tenant, such as users, groups, app roles. For detailed information about using resources of your ODC tenant at runtime, refer to [ODC REST APIs](../../reference/apis/public-rest-apis/overview.md). 
+You can use REST APIs in your app to retrieve or update data from an external systems or leverage the resources of your ODC tenant, such as users, groups, app roles. For detailed information about using resources of your ODC tenant at runtime, refer to [ODC REST APIs](../../reference/apis/public-rest-apis/overview.md).
 
-To use the REST APIs in your app, you must consume the APIs in ODC Studio. 
+To use the REST APIs in your app, you must consume the APIs in ODC Studio.
 
 Before you consume the API, ensure that you have the following details from the API reference documentation.
 
@@ -36,7 +36,7 @@ For authenticating the APIs, you must follow the authentication requirements of 
 The external API can support any one of the following authentication methods:
 
 * **Basic authentication** - Configure the authentication credentials such as username and password while consuming the APIs. For detailed information, refer to [Configure basic authentication](#configure-basic-authentication).
-* **Token-based authentication** - For token-based authentication such as OAuth 2.0, you must implement logic to generate the access token and include the token in the header. ODC REST APIs follows OAuth 2.0 for authentication. 
+* **Token-based authentication** - For token-based authentication such as OAuth 2.0, you must implement logic to generate the access token and include the token in the header. ODC REST APIs follows OAuth 2.0 for authentication.
 * **API Keys or other methods** – For any other authentication methods, get the keys and implement logic for configuring the neceessary headers.
 
 Here's the high-level process for consuming REST APIs in ODC Studio:
@@ -61,7 +61,7 @@ If you want to **expose** an OutSystems REST API, check [Expose REST APIs](../ex
 
 Each REST API you consume has its own security and authentication requirements. This means you may need to create an account, obtain an API key, or use access tokens. To successfully consume a REST API in OutSystems, you must understand and comply with the security model defined by the API provider.
 
-ODC has built-in support for REST APIs that support **basic authentication**. For detailed information, refer to [Configure basic authentication](#configure-basic-authentication). 
+ODC has built-in support for REST APIs that support **basic authentication**. For detailed information, refer to [Configure basic authentication](#configure-basic-authentication).
 
 To use other token-based authentication methods, refer to [Configure token-based authentication](#configure-token-based-authentication).
 
@@ -84,9 +84,9 @@ For detailed information, refer to [Consuming a REST API ODC training](https://l
 
 ODC does not provide built-in support for token-based authentication such as OAuth 2.0 authorization. In such cases to authenticate the API call you must:
 
-1. [Generate the access token.](generate-reuse-oauth-token.md) 
-   
-1. Include the [token in the request header](simple-customizations.md#example-use-case-adding-a-header-for-token-based-authentication) using the **OnBeforeRequest** callback. 
+1. [Generate the access token.](generate-reuse-oauth-token.md)
+
+1. Include the [token in the request header](simple-customizations.md#example-use-case-adding-a-header-for-token-based-authentication) using the **OnBeforeRequest** callback.
 
 ## Related resources
 

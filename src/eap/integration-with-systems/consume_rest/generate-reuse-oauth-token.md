@@ -22,17 +22,17 @@ helpids:
 
 To consume an external API with OAuth 2.0, you must obtain an access token. You can get this token by obtaining the authorization grant details, such as the client credentials—client ID and client secret and exchanging the grant for an access token. This access token can then be used to make authenticated API calls. For detailed information about the different authorization grant types and OAuth authorization flow, refer to the [OAuth 2.0 Authorization Framework.](https://datatracker.ietf.org/doc/html/rfc6749)
 
-The authorization grant type depends on the authorization flow implemented by the external API. 
+The authorization grant type depends on the authorization flow implemented by the external API.
 
 This article is intended for developers who know how to build apps and consume REST APIs in ODC.
 
 OutSystems recommends that you encapsulate the logic for generating access tokens in a separate server action in a library so that it can be reused across all apps. To explore a sample library, refer to OpenID Connector in [ODC User Management Forge](https://www.outsystems.com/forge/component-overview/21016/users-management-odc) component.  
 
-This diagram represents a detailed client credentials grant flow for an authenticating a REST API. It illustrates the entire lifecycle of an access token, from its initial generation and storage to its use in API calls. 
+This diagram represents a detailed client credentials grant flow for an authenticating a REST API. It illustrates the entire lifecycle of an access token, from its initial generation and storage to its use in API calls.
 
 ![Diagram showing the OAuth 2.0 client credentials grant flow for generating and reusing access tokens in API calls.](images/access-token-flow-diag.png "OAuth 2.0 Client Credentials Grant Flow Diagram")
 
-Here’s the development pattern that you can use to consume external REST APIs that use OAuth 2.0 client credentials grant flow authorization. 
+Here’s the development pattern that you can use to consume external REST APIs that use OAuth 2.0 client credentials grant flow authorization.
 
 ## Get authorization grant details
 
@@ -101,9 +101,9 @@ A successful response returns a JSON object containing the access_token, token_t
 
 ## Encrypt and store the access token
 
-To prevent unauthorized access and enable token reuse, store the access token in an encrypted format in a secure storage and reuse it as long as it has not expired. If the access token expires, use the refresh token to obtain a new one or generate a new one. 
+To prevent unauthorized access and enable token reuse, store the access token in an encrypted format in a secure storage and reuse it as long as it has not expired. If the access token expires, use the refresh token to obtain a new one or generate a new one.
 
-OutSystems recommends that you store the access token in an entity in an encrypted format. 
+OutSystems recommends that you store the access token in an entity in an encrypted format.
 
 ## Reuse of token
 
@@ -126,7 +126,7 @@ For each subsequent API call:
 
 ### Pass the token in the API call
 
-Once you have the token, you can include it as a **Bearer** token in the **Authorization** header of your API request. 
+Once you have the token, you can include it as a **Bearer** token in the **Authorization** header of your API request.
 
 Use the **OnBeforeRequest** callback to dynamically add or update the token to the HTTP request header before sending the request. For detailed information, refer to [Example use case: Adding a header for token-based authentication](simple-customizations.md#example-use-case-adding-a-header-for-token-based-authentication).
 
@@ -134,7 +134,7 @@ Use the **OnBeforeRequest** callback to dynamically add or update the token to t
 
 ### ODC REST API access token generation
 
-* [Get access token ](../../reference/apis/public-rest-apis/authentication/get-access-token.md)
+* [Get access token](../../reference/apis/public-rest-apis/authentication/get-access-token.md)
 
 ### Add token to the header and consume the API
 

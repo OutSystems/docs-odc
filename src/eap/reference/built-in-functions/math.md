@@ -24,9 +24,9 @@ Returns the absolute value (unsigned magnitude) of the decimal number 'n'.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -50,9 +50,9 @@ Returns the remainder of decimal division of 'n' by 'm'.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -81,9 +81,9 @@ Returns 'n' raised to the power of 'm'.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -107,15 +107,15 @@ Power(-10.89, 2.3) = 0
 Power(-10.89, -5) = -6.52920946044017E-06
 ```
 
-## Round 
+## Round
 
 Returns the Decimal number 'n' rounded to a specific number of 'fractional digits'.  
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Cannot be used inside aggregates with entity attributes as parameters.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Cannot be used inside aggregates with entity attributes as parameters.
 
 ### Parameters
 
@@ -131,15 +131,15 @@ Use it to specify the number of fractional digits that n has to be rounded to. T
 
 Type: Decimal  
 
-## Sqrt 
+## Sqrt
 
 Returns the square root of the Decimal number 'n'.  
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -163,9 +163,9 @@ Returns the Decimal number 'n' truncated to integer removing the decimal part of
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 

@@ -91,7 +91,7 @@ Remember to edit the following:
 
 ```
 
-# Related resources
+## Related resources
 
 * [Streaming observability data](stream-app-analytics-overview.md)
 

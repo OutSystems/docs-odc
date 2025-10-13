@@ -55,4 +55,3 @@ Now, [copy the client secret](./create-api-client.md#copy-client-credentials) im
 ## Next step
 
 [Get access token using client credentials flow](get-access-token.md)
-

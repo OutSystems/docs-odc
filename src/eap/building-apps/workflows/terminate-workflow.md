@@ -16,7 +16,7 @@ outsystems-tools:
 ---
 # Terminate a workflow
 
-When implementing your workflow, you can use a **Terminate** node to stop the workflow execution. 
+When implementing your workflow, you can use a **Terminate** node to stop the workflow execution.
 
 When a **Terminate** node is reached in a workflow:
 

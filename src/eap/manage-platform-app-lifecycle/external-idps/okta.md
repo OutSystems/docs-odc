@@ -20,7 +20,7 @@ topic:
 
 # Add Okta for use as an external identity provider
 
-ODC admins can configure Okta as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab. 
+ODC admins can configure Okta as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab.
 
 To launch the **New provider** configuration screen, click the **Add Provider** > **OpenID Connect** button. Now follow these steps:
 
@@ -56,7 +56,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. Complete the configuration in ODC Portal by leaving the **PKCE** as the default value (**SHA-256**) and fields in **Claim Mapping** section as default values (**name**, **email**) and clicking **Save**.
 
-ODC tests the configuration and on success adds Okta to the list of available providers. If the test fails, a notification with the error displays. 
+ODC tests the configuration and on success adds Okta to the list of available providers. If the test fails, a notification with the error displays.
 
 Now follow the steps [here](intro.md#apply-an-external-idp) to apply for the newly added Okta provider for use by your organization or apps.
 
@@ -64,7 +64,7 @@ Now follow the steps [here](intro.md#apply-an-external-idp) to apply for the new
 
 To add permitted redirects for the Okta provider follow the steps below.
 
-1. Click **Applications > Applications** in Okta Portal to navigate to the main screen of the new application. 
+1. Click **Applications > Applications** in Okta Portal to navigate to the main screen of the new application.
 
 1. Select **General settings** and click **Edit**.
 

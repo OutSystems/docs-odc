@@ -29,7 +29,7 @@ outsystems-tools:
 
 With ODC's **Analytics Stream**, you can stream your observability data in an OpenTelemetry Protocol (OTLP) format to different Application Performance Monitoring (APM) tools so that you can analyze, monitor, and proactively troubleshoot your system. You can easily integrate your app with any APM tool, as most monitoring tools support data ingestion in OpenTelemetry (OTel) format.
 
-# Set up observability data streams
+## Set up observability data streams
 
 Here is the overview of the process for streaming observability data to different APM tools:
 
@@ -67,7 +67,7 @@ For detailed information on streaming observability data to different APM tools,
 
 ## Related resources
 
-* [Streaming observability data ](stream-app-analytics-overview.md)
+* [Streaming observability data](stream-app-analytics-overview.md)
 
 * [Set up the OpenTelemetry Collector](stream-app-analytics-opentelemetry.md)
 

@@ -95,4 +95,3 @@ If you want to use the created IdP in your app, make sure you modify the login a
 
 * [IdP and end-user group mapping](end-user-group-mapping.md).
 * [Add Okta for use as an external identity provider](okta.md).
-

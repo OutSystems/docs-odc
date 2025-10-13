@@ -22,7 +22,7 @@ topic:
 
 # Types of apps you can build
 
-You can create several types of apps in OutSystems Developer Cloud (ODC). 
+You can create several types of apps in OutSystems Developer Cloud (ODC).
 
 From ODC Portal, navigate to the **Apps** screen and click **Create app**. ODC Studio launches and the **What would you like to create?** window displays. Click **App** to see the options.
 
@@ -30,7 +30,7 @@ From ODC Portal, navigate to the **Apps** screen and click **Create app**. ODC S
 
 * Select **Web app** if you want to:
     * Create an app that users run mainly in a desktop browser, .
-* Select **Phone app** or **Tablet app** if you want to: 
+* Select **Phone app** or **Tablet app** if you want to:
     * Create a mobile app to submit to Apple App Store or Google Play. You can also distribute a mobile app as a downloadable package to a group of users.
     * Create a lightweight app and share it as a Progressive Web App (PWA) from your website. Users can put the app icon on their mobile home screen.
 
@@ -39,7 +39,6 @@ From ODC Portal, navigate to the **Apps** screen and click **Create app**. ODC S
 **Libraries** exist at the same level as apps and let you share code between apps. You can learn more about them in [App Architecture](../app-architecture/intro.md#libraries-in-odc).
 
 </div>
-
 
 ## What's a Web app?
 
@@ -54,7 +53,7 @@ When you develop a Web app:
 
 ## What's a Mobile app?
 
-In ODC, a Mobile App is an app that compiles to a native mobile Android or iOS app. 
+In ODC, a Mobile App is an app that compiles to a native mobile Android or iOS app.
 
 You can develop for Android and iOS at the same time, as the underlying code is cross-platform. The default app templates of this type are **Phone app** and **Tablet app**.
 
@@ -62,7 +61,7 @@ There are two ways you can distribute a Mobile app:
 
 * **Native app package** - A dedicated OutSystems cloud service generates native mobile builds for you, to distribute your app in the app stores or internally to a group of users.
 
-* **Progressive Web App (PWA)** - PWAs are lightweight apps that have the look and feel of native mobile apps. They're quick to distribute and install directly from your website, as they don't depend on the app stores. 
+* **Progressive Web App (PWA)** - PWAs are lightweight apps that have the look and feel of native mobile apps. They're quick to distribute and install directly from your website, as they don't depend on the app stores.
 
 ## Comparison between Web apps and Mobile apps
 

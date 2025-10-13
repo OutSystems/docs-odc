@@ -274,4 +274,3 @@ If you encounter a lockout scenario, open a support ticket. A support agent can 
 * [Best practices for user management](../../user-management/best-practices-user-management.md).
 * [Managing authorization and authentication for end-users](../../user-management/end-users/intro.md).
 * [Managing authorization and authentication for members (IT-users)](../../user-management/it-users/intro.md).
-

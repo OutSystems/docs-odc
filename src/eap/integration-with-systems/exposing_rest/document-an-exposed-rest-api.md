@@ -38,7 +38,6 @@ OutSystems publishes the documentation under the base URL of the REST API. To op
 
     ![Screenshot showing how to open REST API documentation in ODC Studio](images/rest-open-documentation-ss.png "Open REST API Documentation")
 
-
 The resulting documentation is a standard swagger. You can see a [live example of a Contacts REST API here](https://expertsmobile.outsystems.com/ContactsAPI/rest/v1/).
 
 ![Screenshot of OutSystems REST API documentation interface with various HTTP method types for the Contacts API.](images/contacts-rest-swagger.png "Overview of REST API Documentation")

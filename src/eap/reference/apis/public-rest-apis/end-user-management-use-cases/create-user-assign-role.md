@@ -21,7 +21,7 @@ outsystems-tools:
   - odc studio
 helpids:
 ---
-# Creating a single user and assigning a role 
+# Creating a single user and assigning a role
 
 This use case outlines the steps to programmatically create a [new user](../../../../user-management/intro.md) and then assign a specific application role to that user in ODC Studio using ODC REST APIs. This is useful for automating user provisioning and access control.
 
@@ -55,9 +55,9 @@ To create a single user and assign a role to the user using ODC REST API, follow
 
 1. To grant an application role to the user, use:  
 
-   `POST /users/{key}/application-roles/{roleKey}`   
+   `POST /users/{key}/application-roles/{roleKey}`
 
-      Pass the user key and the application role key obtained from the previous steps.   
+      Pass the user key and the application role key obtained from the previous steps.
 
     On successful execution of the API,  the specified application role is assigned to the newly created user, and the user's access permissions now include those granted by the assigned role.
 
@@ -66,4 +66,3 @@ To create a single user and assign a role to the user using ODC REST API, follow
 * [User and Access Management API reference](../../identity-v1.md)
 
 * [User management in ODC](../../../../user-management/intro.md)
-

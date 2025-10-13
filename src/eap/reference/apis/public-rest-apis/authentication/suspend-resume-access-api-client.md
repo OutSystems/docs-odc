@@ -15,7 +15,7 @@ figma:
 ---
 # Suspend and resume access to API Client
 
-You can suspend and resume access to an API client at any time. Once you suspend access to an API client, the access token associated with the API client immediately becomes invalid and can no longer be used to access the APIs. For continued API access, you must resume access to the API client. This article is intended for administrators who govern and manage who can access to OutSystems APIs and data. 
+You can suspend and resume access to an API client at any time. Once you suspend access to an API client, the access token associated with the API client immediately becomes invalid and can no longer be used to access the APIs. For continued API access, you must resume access to the API client. This article is intended for administrators who govern and manage who can access to OutSystems APIs and data.
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ When you suspend an API client:
 
 * all secrets and access tokens become invalid immediately,
 
-* you cannot access the API using the access token, and 
+* you cannot access the API using the access token, and
 
 * the status of the API client changes to **Suspended**.
 
@@ -57,7 +57,7 @@ When you resume access to the suspended API client:
 
 <div class="info" markdown="1">
 
-To delete the suspended API client, on the API Client details page, click the ellipsis menu and select **Delete API Client**. 
+To delete the suspended API client, on the API Client details page, click the ellipsis menu and select **Delete API Client**.
 
 </div>
 
@@ -66,4 +66,3 @@ To delete the suspended API client, on the API Client details page, click the el
 * [Generate a new client secret](generate-new-secret.md)
 
 * [Get access token using client credentials flow](get-access-token.md)
-

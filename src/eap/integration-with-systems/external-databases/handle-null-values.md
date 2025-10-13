@@ -52,7 +52,7 @@ Data manipulation statements such as [INSERT/UPSERT](../../building-apps/data/fe
 
 Administrators must configure default values. ODC suggests default values for every data type, which admins can change. Administrators can configure default values at the connection and attribute level.
 
-* Connection level: All nullable attributes of all entities in the connection. 
+* Connection level: All nullable attributes of all entities in the connection.
 * Attribute level: All selected attribute defines unique behavior for the selected attribute.
 
 <div class="info" markdown="1">

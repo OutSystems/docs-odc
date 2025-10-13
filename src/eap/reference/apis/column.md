@@ -20,7 +20,7 @@ topic:
 
 # Column Chart
 
-This example shows how to create a simple Column Chart with data labels. 
+This example shows how to create a simple Column Chart with data labels.
 
 1. From the Toolbox, drag the **Column Chart** widget to the Screen.
 
@@ -32,7 +32,7 @@ This example shows how to create a simple Column Chart with data labels.
 
 1. Click **+[0]** and set the **Label** and **Value** properties using [fixed data](data.md#populate-your-chart-with-fixed-data) or [variable data](data.md#populate-your-chart-with-variable-data).
 
-    This example uses fixed data. These properties define the first data point. Each data point corresponds to a point on the column chart. 
+    This example uses fixed data. These properties define the first data point. Each data point corresponds to a point on the column chart.
 
     ![Screenshot illustrating how to set the Label and Value properties for a data point in the Column Chart widget](images/chartcolumn-datapointlist-ss.png "Setting the Data Point Properties")
 
@@ -53,4 +53,3 @@ This example shows how to create a simple Column Chart with data labels.
 After following these steps, you can publish your module:
 
 ![Image of the final result displaying a Column Chart with data labels after following the tutorial steps](images/chartcolumn-result.png "Final Column Chart Pattern Result")
-

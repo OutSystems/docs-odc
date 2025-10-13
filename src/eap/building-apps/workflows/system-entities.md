@@ -30,10 +30,10 @@ The following **system entities** are available in ODC Studio for workflows:
 The following **static entities** are available in ODC Studio for workflows:
 
 * **ActivityKind**: Types of activities that can be added to a workflow
-* **ActivityStatus**: Status of an activity 
-* **ProcessStatus**: Status of a process instance 
+* **ActivityStatus**: Status of an activity
+* **ProcessStatus**: Status of a process instance
 
-## Workflow entity relationships 
+## Workflow entity relationships
 
 The following diagram illustrates the relationship between the entities that are available for workflows.
 
@@ -43,7 +43,7 @@ The following diagram illustrates the relationship between the entities that are
 
 * [Build UI components using workflow entities](filter-workflows.md)
 
-ODC provides a set of system actions to modify workflows at runtime in ODC Studio. 
+ODC provides a set of system actions to modify workflows at runtime in ODC Studio.
 
 * [HumanActivityAssign](../../reference/system-actions/workflows.md#humanactivityassign)
   

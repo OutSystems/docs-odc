@@ -37,7 +37,7 @@ To enable streaming observability data using **Dynatrace** as the destination to
 
 1. Get the Dynatrace API token (must have the ingest logs permissions).
 
-Once you've completed these steps, go to the ODC Portal and [configure a stream](stream-app-analytics-configure.md). 
+Once you've completed these steps, go to the ODC Portal and [configure a stream](stream-app-analytics-configure.md).
 
 <div class="info" markdown="1">
 

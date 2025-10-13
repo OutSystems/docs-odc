@@ -24,7 +24,7 @@ topic:
 
 # Build a basic Web app
 
-In this tutorial you'll build a basic **To Do list web app** from scratch. You can use your app to create, track and edit personal tasks. Building with ODC is fast; it should only take five minutes to go from scratch to a basic working app. 
+In this tutorial you'll build a basic **To Do list web app** from scratch. You can use your app to create, track and edit personal tasks. Building with ODC is fast; it should only take five minutes to go from scratch to a basic working app.
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ To get started, you'll need:
 
 ## Get building
 
-From ODC Portal, navigate to the **Apps** screen and click **Create app**. ODC Studio launches and the **What would you like to create?** window displays. Click **App > Web App**. Follow the steps below. 
+From ODC Portal, navigate to the **Apps** screen and click **Create app**. ODC Studio launches and the **What would you like to create?** window displays. Click **App > Web App**. Follow the steps below.
 
 ### Step 1 - Define basic details
 
@@ -43,7 +43,7 @@ Name your app and add a description. Optionally define the color scheme and add 
 
 ![Screenshot of entering app details in OutSystems Developer Cloud](images/enter-app-details-ss.png "Enter App Details")
 
-### Step 2 - Bootstrap data 
+### Step 2 - Bootstrap data
 
 Click the **Data** tab on the right pane of ODC Studio. Right-click the Database folder and select **Import New Entities from Excel..**. Browse for the `task_data.xlsx` file (downloaded in Prerequisites section), select and click **Open**.
 
@@ -83,8 +83,7 @@ Click the green **1-Click-Publish** button in the top center of the workspace. T
 
 ![Screenshot of the tasks list app running in a web browser](images/tasks-list-app-in-browser.png "View App in Browser")
 
-
-### Next steps.. 
+### Next steps..
 
 You can take the basic app you've built and improve it in many ways. For example, you could add logic to delete tasks or add user authentication. Check out the resources below.
 
@@ -103,4 +102,3 @@ There are [free online courses](https://learn.outsystems.com/training/journeys/w
 ### Community
 
 The OutSystems community welcomes all. Join the community in the Forum, to share tips about working with OutSystems, get fresh ideas for your projects, or [talk about ODC with other developers](https://www.outsystems.com/forums/tag/6904/odc).
-

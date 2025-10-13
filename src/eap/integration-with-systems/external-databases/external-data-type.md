@@ -41,6 +41,7 @@ This mapping supports key features like aggregates, data mashups, and SQL querie
 The table below shows how common SQL node types map to OutSystems and external system data types.
 
 For more on converting values, see:
+
 * [Type conversion (SQL)](../../building-apps/data/fetch-data/sql/ansi-92-operators.md#type-conversion)
 * [Convert data types (expressions)](../../building-apps/data/convert-data-types.md)
 

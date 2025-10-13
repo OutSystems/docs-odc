@@ -32,25 +32,25 @@ To refresh a REST API service:
 
     ![Screenshot showing how to refresh a REST API named 'Customers' in ODC Studio](images/rest-refresh-1-odcs.png "Select REST API")
 
-1. In the Refresh REST API popup, click **Yes**. 
+1. In the Refresh REST API popup, click **Yes**.
 
     When you click **Yes**, any changes made to the previous version are lost.  
 
     ![Confirmation popup for refreshing a REST API in ODC Studio](images/rest-refresh-confirm-2-odcs.png "Refresh REST API")
 
-1. Enter the REST API URL or upload a new file, and click **Refresh Methods**. 
+1. Enter the REST API URL or upload a new file, and click **Refresh Methods**.
 
     In this example, the URL points to a JSON file that contains the complete list of REST methods.
 
     ![Dialog box to enter REST API URL or upload a new file for refreshing methods in ODC Studio](images/rest-refresh-URL-3-odcs.png "Enter REST API URL")
 
-1. Select the methods you would like to consume. 
-    
+1. Select the methods you would like to consume.
+
     Note that:
-    
+
     * The methods you select overwrite previously consumed methods for the service. Ensure you select all methods you want to consume, even if they haven't changed.
     * The following settings are **not** overridden when you refresh:
-            
+
         * Basic authentication
         * Advanced settings (Date Format, On Before Request and On After Response)
         * HTTP headers
@@ -58,10 +58,10 @@ To refresh a REST API service:
     The method format displays as **method name/relative endpoint** and, if applicable, **(Deleted)** or **(outdated)**.
 
     Where:
-    
+
     * method name = the method you may select to consume or update
-    *  /relative endpoint = endpoint relative to the base URL
-    *  (Deleted) or (outdated) = if applicable, identifies methods that were previously imported but no longer exist in the latest specification
+    * /relative endpoint = endpoint relative to the base URL
+    * (Deleted) or (outdated) = if applicable, identifies methods that were previously imported but no longer exist in the latest specification
 
     This example shows all available methods selected. **GetCustomersWithOrders** shows as **Deleted**, which means you can't select it.
 
@@ -84,9 +84,9 @@ To manually update a REST method:
 
 1. Update the REST API Method information to reflect the change you want to execute, such as adding new parameters to the request structure:
 
-    ![Interface for updating REST API method information in ODC Studio](images/rest-change-1-odcs.png "Update the REST API method information") 
+    ![Interface for updating REST API method information in ODC Studio](images/rest-change-1-odcs.png "Update the REST API method information")
 
-1. Click **Finish**. 
+1. Click **Finish**.
 
 ## Adapt your application to the changes
 

@@ -57,7 +57,7 @@ There is no information about libraries, as libraries are bundled with apps. In 
 
 ## Deploy to stages
 
-Use ODC Studio to create and publish your apps. Use the ODC Portal to create and publish your workflows and deploy both apps and workflows to different stages. 
+Use ODC Studio to create and publish your apps. Use the ODC Portal to create and publish your workflows and deploy both apps and workflows to different stages.
 
 When you build and publish an app or workflow, your asset becomes available in the development stage. You can only publish to development and then deploy to other stages.
 
@@ -80,7 +80,7 @@ To deploy your asset to a stage:
 1. (Optional) To deploy the asset to the next stage, click **Deploy Now**.
 
     <div class="info" markdown="1">
-    
+
     If you are deploying an app to production, you can change the version number before deploying.
 
     </div>
@@ -91,21 +91,21 @@ For more information about the impact analysis report, refer to [Understanding t
 
 ## Versions and revisions
 
-Versions and revisions help you track changes in your assets. You can publish your apps and workflows to Development, and every time you publish, the revision number increments by one. Revision numbers are whole numbers displayed below the asset's name on the **Deployments** screen. 
+Versions and revisions help you track changes in your assets. You can publish your apps and workflows to Development, and every time you publish, the revision number increments by one. Revision numbers are whole numbers displayed below the asset's name on the **Deployments** screen.
 
 Versions and revisions help you keep track of changes in your workflows in different stages, such as:
 
 * **Development**: When you publish your asset in the Development stage, ODC automatically creates a new revision and its number increments by one.
 
     <div class="info" markdown="1">
-    
+
     You can not change the asset revision number.
 
     </div>
 
 * **QA**: You can deploy any revision of your asset from Development to QA.
 
-* **Production**: After testing, when you deploy your asset from QA  to Production, ODC assigns a three-part semantic version number in the format major.minor.patch. The system always suggests a version (the first suggestion is always 0.1.0). Depending on the changes you deploy to Production, you can change the version number (it must be equal to or higher than the previous version). 
+* **Production**: After testing, when you deploy your asset from QA  to Production, ODC assigns a three-part semantic version number in the format major.minor.patch. The system always suggests a version (the first suggestion is always 0.1.0). Depending on the changes you deploy to Production, you can change the version number (it must be equal to or higher than the previous version).
 
 ### Multiple revisions of a workflow { #workflow-revisions }
 
@@ -115,7 +115,7 @@ For example, consider a bank loan application workflow with three workflow revis
 
 **Scenario**
 
-Two users (user 1 and user 2)  (each user application = an instance) initiate the application process using  version 1.0.0 revision 2 of the workflow, typically taking a month or two to complete. During this time, a newer workflow version version 1.1.0 revision 3 with an additional step may be deployed. 
+Two users (user 1 and user 2)  (each user application = an instance) initiate the application process using  version 1.0.0 revision 2 of the workflow, typically taking a month or two to complete. During this time, a newer workflow version version 1.1.0 revision 3 with an additional step may be deployed.
 
 Then, two new users (user 3 and user 4) initiate the application process using version 1.1.0 revision 3 of the workflow. During this time, the latest workflow version 1.2.0 revision 4 with more enhancements may be deployed.
 
@@ -151,7 +151,7 @@ When you deploy an asset in the ODC Portal, ODC automatically runs an impact ana
 
 When **deploying an app**, the impact analysis report displays:
 
-* Potential impacts the app you are deploying could have on workflows and consumer apps 
+* Potential impacts the app you are deploying could have on workflows and consumer apps
 
 * Potential impacts producer apps could have on the app you are deploying
 

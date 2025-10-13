@@ -24,9 +24,9 @@ Returns a full email address string containing the display name (usually it's th
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: No
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: No
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -36,7 +36,7 @@ The display name of the email address which usually is the name of the email add
 
 email
 :    Type: Text. Mandatory.  
-The email address itself, for example, john.smith@example.com.
+The email address itself, for example, <john.smith@example.com>.
 
 ### Output
 
@@ -52,13 +52,13 @@ EmailAddressCreate("Mary Jones", "mary.jones​@example.com") = "Mary Jones" <ma
 ## EmailAddressValidate
 
 Returns true if Text 'address' is a valid email address. Note that EmailAddressValidate("") returns True.  
-This built-in function implements the validation specified by HTML5 (https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address) which has a practical approach to RFC 5322.  
+This built-in function implements the validation specified by HTML5 (<https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address>) which has a practical approach to RFC 5322.  
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 

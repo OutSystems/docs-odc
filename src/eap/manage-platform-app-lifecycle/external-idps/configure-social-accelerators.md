@@ -44,45 +44,45 @@ To add a new social provider using an accelerator, you need to get the following
 
 ### Apple
 
-Accelerator field | Information required | Description
----|---|---
-Client ID | Identifier | A public identifier your app on the provider side. It's a string type value available to any registered developer on Apple Developer. You can access the Identifier value on the Certificates, Identifiers, and Profiles pages of your app.
-Key ID | Key ID | Key ID corresponding to your Secret (`.p8`).
-Team ID | Team ID | Identifier of your team on Apple Developer.
-Client secret | Private key (`.p8`) | The private key generated and downloaded from Apple (refer to [Create a private key to access a service](https://developer.apple.com/help/account/manage-keys/create-a-private-key)). The downloaded file is in .p8 format but can be opened with a text editor - copy the entire text content and paste directly in the Client Secret field on ODC Portal. This private key will be used to create the required client secret.
+| Accelerator field | Information required | Description |
+| ---|---|--- |
+| Client ID | Identifier | A public identifier your app on the provider side. It's a string type value available to any registered developer on Apple Developer. You can access the Identifier value on the Certificates, Identifiers, and Profiles pages of your app. |
+| Key ID | Key ID | Key ID corresponding to your Secret (`.p8`). |
+| Team ID | Team ID | Identifier of your team on Apple Developer. |
+| Client secret | Private key (`.p8`) | The private key generated and downloaded from Apple (refer to [Create a private key to access a service](https://developer.apple.com/help/account/manage-keys/create-a-private-key)). The downloaded file is in .p8 format but can be opened with a text editor - copy the entire text content and paste directly in the Client Secret field on ODC Portal. This private key will be used to create the required client secret. |
 
 For further guidance, check [Configure app capabilities - About Sign in with Apple](https://developer.apple.com/help/account/configure-app-capabilities/about-sign-in-with-apple).
 
 ### Google
 
-Accelerator field | Information required | Description
----|---|---
-Client ID | Client ID | A public identifier for your app on the provider side. It's a string type value available to any registered developer on the Google Cloud Platform. You can access the ClientID value on the OAuth Consent tab on your app's Credentials screen.
-Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on the Google Cloud Platform. You can access the ClientSecret value on the OAuth Consent tab on your app's Credentials screen.
+| Accelerator field | Information required | Description |
+| ---|---|--- |
+| Client ID | Client ID | A public identifier for your app on the provider side. It's a string type value available to any registered developer on the Google Cloud Platform. You can access the ClientID value on the OAuth Consent tab on your app's Credentials screen. |
+| Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on the Google Cloud Platform. You can access the ClientSecret value on the OAuth Consent tab on your app's Credentials screen. |
 
 For further guidance, check [Google Identity - Authentication](https://developers.google.com/identity/gsi/web/guides/overview).
 
 ### Facebook
 
-Accelerator field | Information required | Description
----|---|---
-Client ID | App ID | A public identifier for your app on the provider side. It's a string type value available to any registered developer on Meta for Developers. You can access the AppID value in your app's settings.
-Client Secret | App Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on Meta for Developers. You can access the AppSecret value in your app's settings.
+| Accelerator field | Information required | Description |
+| ---|---|--- |
+| Client ID | App ID | A public identifier for your app on the provider side. It's a string type value available to any registered developer on Meta for Developers. You can access the AppID value in your app's settings. |
+| Client Secret | App Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on Meta for Developers. You can access the AppSecret value in your app's settings. |
 
 For further guidance, check [Facebook Login - Documentation - Facebook for Developers](https://developers.facebook.com/docs/facebook-login/).
 
 ### LinkedIn
 
-Accelerator field | Information required | Description
----|---|---
-Client ID | Client ID | A public identifier for your app on the provider side. It's a string-type value available to any registered developer on LinkedIn. You can access the ClientID value on the Auth tab on your app's Credentials screen.
-Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string-type value type value available to any registered developer on LinkedIn. You can access the ClientSecret value on the Auth tab on your app's Credentials screen.
+| Accelerator field | Information required | Description |
+| ---|---|--- |
+| Client ID | Client ID | A public identifier for your app on the provider side. It's a string-type value available to any registered developer on LinkedIn. You can access the ClientID value on the Auth tab on your app's Credentials screen. |
+| Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string-type value type value available to any registered developer on LinkedIn. You can access the ClientSecret value on the Auth tab on your app's Credentials screen. |
 
 For further guidance, check [Sign In with LinkedIn using OpenID Connect](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2).
 
 ## Next steps
 
-* [Assign the provider](intro.md#assign-an-external-idp) 
+* [Assign the provider](intro.md#assign-an-external-idp)
 * [Implement the authentication logic](apps.md)
 
 ## Related resources

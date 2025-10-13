@@ -19,13 +19,13 @@ figma:
 
 # API authentication and authorization
 
-Authentication ensures the identity of the user or system accessing the API. 
+Authentication ensures the identity of the user or system accessing the API.
 
 The ODC REST APIs uses the [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) protocol for authorization and authentication, which is based on the [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) framework.  OIDC enables user authentication via token-based mechanisms, ensuring a secure and standardized way to verify users' identities.
 
-Authorization determines the level of access granted to an authenticated user or system. 
+Authorization determines the level of access granted to an authenticated user or system.
 
-The ODC REST APIs uses [OAuth 2.0](#about-oauth-20-and-oidc) framework to manage and enforce access controls via access tokens. These tokens dictate what ODC APIs and data you are authorized to access. 
+The ODC REST APIs uses [OAuth 2.0](#about-oauth-20-and-oidc) framework to manage and enforce access controls via access tokens. These tokens dictate what ODC APIs and data you are authorized to access.
 
 For detailed information, refer to [Using OAuth 2.0 to access APIs](using-oauth-access-api.md).
 
@@ -59,6 +59,6 @@ You can  then use the client credentials to generate an access token which you c
 
 ## Related resources
 
-- [Using OAuth 2.0 to access APIs](using-oauth-access-api.md)
+* [Using OAuth 2.0 to access APIs](using-oauth-access-api.md)
 
-- [Configure API access using an API Client](create-api-client.md)
+* [Configure API access using an API Client](create-api-client.md)

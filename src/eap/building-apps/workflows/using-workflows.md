@@ -25,7 +25,7 @@ To implement your workflow, use the workflow editor, a web-based editor accessib
 
 Workflows support [basic input parameters](../data/data-types.md) except binary data type. Parameters with the text data type support a maximum of 2000 characters. For more information about built-in functions available for Workflows, refer to, [Built-in functions for workflows](built-in-functions.md).
 
-</div> 
+</div>
 
 Workflows are always triggered by events. To start a workflow, you must always associate an event from the ODC app. For example, if you are implementing a loan approval workflow, you can trigger the workflow when you receive a new loan request by choosing the **NewLoanapplication** event from the ODC app for the **Start** node.
 
@@ -43,7 +43,7 @@ To implement a workflow, follow these steps:
 
 1. Go to **Workflows**.
 
-1. Click **Create workflow**. 
+1. Click **Create workflow**.
 
     You are brought to the web-based workflow editor.
 
@@ -77,11 +77,11 @@ For detailed information on how to use different nodes in  your workflow, refer
 
 * [Go to a previous step](go-to-previous-step.md)
 
-### Step 2: Test the workflow 
+### Step 2: Test the workflow
 
-Before deploying the workflow, you can test it by triggering its execution from the app. 
+Before deploying the workflow, you can test it by triggering its execution from the app.
 
-The workflow details, including any errors, can be viewed from the **Instances** tab in the Portal. 
+The workflow details, including any errors, can be viewed from the **Instances** tab in the Portal.
 
 <div class="info" markdown="1">
 
@@ -96,7 +96,7 @@ To deploy your workflow and app, follow these steps:
 1. Deploy the app to the QA stage.
 
     <div class="info" markdown="1">
-    
+
     Before the app is deployed, an impact analysis is performed in the background. For more information, refer to [Understanding the impact analysis report](../../deploying-apps/deploy-apps.md#understanding-the-impact-analysis-report).
 
     </div>
@@ -104,7 +104,7 @@ To deploy your workflow and app, follow these steps:
 1. Deploy the workflow to the QA.
 
     <div class="info" markdown="1">
-    
+
     Before the workflow is deployed, an impact analysis is performed in the background. For more information, refer to [Understanding the impact analysis report](../../deploying-apps/deploy-apps.md#understanding-the-impact-analysis-report).
 
     </div>
@@ -126,4 +126,3 @@ To deploy your workflow and app, follow these steps:
 * [Troubleshooting workflows](troubleshooting-workflows.md)
 
 * [Deploy workflows](../../deploying-apps/deploy-apps.md)
-
