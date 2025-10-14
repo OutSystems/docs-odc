@@ -2,7 +2,7 @@
 guid: 543d1a8f-c7cf-4bdb-8b67-28634a6f750a
 locale: en-us
 summary: Learn how to manage the authorization and authentication of IT users in OutSystems Developer Cloud (ODC), including role assignments and access control.
-figma:
+figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3885-162&t=Z9ZC4tpt2fDH1vlP-1
 coverage-type:
   - apply
   - understand
@@ -34,6 +34,8 @@ With built-in authentication, you manage members (IT-users) directly in the ODC 
 
 To manage members using built-in authentication, follow these steps:
 
+![Diagram showing steps to manage members with built-in authentication: create custom roles, create members, grant or revoke roles.](images/managing-members-built-in-authentication-diag.png "Managing Members with Built-in Authentication")
+
 1. (Optional) [Create custom roles](../roles.md#create-custom-roles-for-members-it-users): Define [roles](../roles.md) with specific permissions in the ODC Portal.
 
 1. [Create members](../create-deactivate-and-delete-users.md#create-new-members-it-users): Add new users in the ODC Portal at the organization or app level during creation. You can also [create users programmatically using APIs](../../reference/apis/identity-v1.md), without assigning roles.
@@ -45,6 +47,8 @@ To manage members using built-in authentication, follow these steps:
 You can configure ODC to use an external IdP (such as Microsoft Entra ID or Google) for authentication.
 
 To manage members with external IdP authentication, follow these steps:
+
+![Diagram showing steps to manage members with external IdP authentication: create custom roles, configure an IdP, add members, grant or revoke roles.](images/managing-members-external-idp-authentication-diag.png "Managing Members with External IdP Authentication")
 
 1. (Optional) [Create custom roles](../roles.md#create-custom-roles-for-members-it-users): Define [roles](../roles.md) with specific permissions in the ODC Portal.
 
