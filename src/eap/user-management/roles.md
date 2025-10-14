@@ -27,7 +27,7 @@ This article covers permissions for [members (IT-users)](intro.md#members-it-use
 
 In ODC, you control what your members (IT-users) can do by assigning them roles. A role is a set of permissions that you can grant at the **organization** and **asset** (**app**) [**scopes**](intro.md#organization-app-stage-and-app-scope).
 
-ODC allows implementing user access control policies on the following domains:
+ODC allows implementing user access control policies on these domains:
 
 * Asset (apps and libraries) management
 * Stage visibility
@@ -50,20 +50,20 @@ The fundamental rule is that permissions are cumulative. A role assigned at the 
 
 <div class="info" markdown="1">
 
-An app-level role can grant additional permissions for that specific app, but it can never revoke permissions a user already has from an organization-level role.
+An app-level role can grant additional permissions for that specific app, but it can't revoke permissions a user already has from an organization-level role.
 
 </div>
 
 ### Permission scenarios
 
-Here’s how this principle works in practice.
+Here's how this principle works in practice.
 
 **Scenario 1: A more permissive role is assigned at the app level**
 :   A user has a general role for the organization but needs elevated permissions for one app:
 
     * Organization Role: Developer.
     * App Role: Administrator.
-    * Result: The user has Developer permissions across the organization. For the specific app where they are an Administrator, they gain the additional permissions of that role. For example, they can now manage that app's configurations in Production stage, a permission the Developer role doesn't have.
+    * Result: The user has Developer permissions across the organization. For the specific app where they're an Administrator, they gain the additional permissions of that role. For example, they can now manage that app's configurations in Production stage, a permission the Developer role doesn't have.
 
 **Scenario 2: A less permissive role is assigned at the app level**
 :   A user has a high-level role for the organization, and a more restrictive role is assigned for one app:
@@ -72,7 +72,7 @@ Here’s how this principle works in practice.
     * App Role: **Developer**.
     * Result: The organization-level permissions prevail. Since app-level roles can't remove permissions, the user remains an Administrator for the entire organization, including the specific app. The Developer role at the app level has no effect.
 
-## Types of roles for members (IT-users) { #types-of-roles }
+## Types of roles for members (IT-users) {#types-of-roles}
 
 ODC provides two types of roles for members (IT-users), built-in roles, and custom roles.
 
@@ -93,15 +93,15 @@ ODC includes two built-in organization roles:
 
 You can't delete or modify built-in roles, but you can duplicate them to create custom roles.
 
-To see the full list of permissions for the **Admin** or **Developer** role, in the ODC Portal, go to **Organization roles**, and then click **Admin** or **Developer**. Both roles are identified with the **Built-in role** label.
+To see the full list of permissions for the **Admin** or **Developer** role, in the ODC Portal, go to **Organization roles**, and then click **Admin** or **Developer**. Both roles display the **Built-in role** label.
 
-### Custom roles { #custom-roles }
+### Custom roles {#custom-roles}
 
-You can create custom roles to tailor permissions to your organization's needs. Custom roles let you select specific [permissions](#permissions-registry) and apply them at **organization** or **app stage** [scope](intro.md#organization-app-stage-and-app-scope). After creating a custom role, you need to assign it to users either at **organization scope** or to specific **apps**. For more details on how to create custom roles and how to assign a role to a user, refer to [Create custom roles for members](#create-custom-roles-for-it-users) and [Grant or revoke roles to members](grant-and-revoke-user-roles.md#grant-roles-to-members).
+You can create custom roles to tailor permissions to your organization's needs. Custom roles let you select specific [permissions](#permissions-registry) and apply them at **organization** or **app stage** [scope](intro.md#organization-app-stage-and-app-scope). After creating a custom role, you need to assign it to users either at **organization scope** or to specific **apps**. For more details on creating custom roles and assigning roles to users, refer to [Create custom roles for members](#create-custom-roles-for-it-users) and [Grant or revoke roles to members](grant-and-revoke-user-roles.md#grant-roles-to-members).
 
 For more details about recommended custom roles, refer to [Recommended custom roles for members (IT-users)](#recommended-custom-roles).
 
-## Create custom roles for members (IT-users) { #create-custom-roles-for-it-users }
+## Create custom roles for members (IT-users) {#create-custom-roles-for-it-users}
 
 To create a custom role for members, follow these steps:
 
@@ -111,13 +111,13 @@ To create a custom role for members, follow these steps:
 1. Select the permissions you want to assign. You may limit some [permissions](#permissions-registry) to specific stages if needed.  
 1. Click **Create** to save the role.
 
-## ODC permissions { #permissions-registry }
+## ODC permissions {#permissions-registry}
 
 The following table lists the permissions you can assign to custom roles. For more details on **organization** (global) and **asset** (**app**) scope, refer to [Organization, app stage, and app scope](intro.md#organization-app-stage-and-app-scope).
 
 <div class="info" markdown="1">
 
-Some permissions are automatically inherited by others to ensure consistent behavior and prevent errors. When configuring custom roles in the ODC Portal, selecting a permission may automatically select additional related permissions due to these dependencies.
+Some permissions are automatically inherited by others to ensure consistent behavior and prevent errors. When you configure custom roles in the ODC Portal, selecting a permission may automatically select additional related permissions due to these dependencies.
 
 </div>
 
@@ -162,14 +162,14 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Support                   | View all support cases             | Users can view all the organization's support cases.                                                                                                                                                        | Organization                         |
 | Subscriptions             | View subscription                  | Users can view the organization's subscription information.                                                                                                                                                 | Organization                         |
 
-## Recommended custom roles for members (IT-users) { #recommended-custom-roles }
+## Recommended custom roles for members (IT-users) {#recommended-custom-roles}
 
-As a general guideline, you can create the following custom roles based on the scope to use when assigning roles to a member:
+As a general guideline, you can create these custom roles based on the scope to use when assigning roles to a member:
 
 * **App scope**: Basic Developer, Tech Lead.
 * **Organization scope**: Basic Member, Architect, Tenant Admin.
 
-In this reference model, the **Architect** role is responsible for the ownership and lifecycle of the asset portfolio, including creating, deleting, and installing assets from Forge, as well as managing releases. The **Tenant Admin** role focuses on global infrastructure configurations, not on asset or release management. If a user needs both sets of permissions, assign the built-in **Admin** role, which combines all capabilities.  
+In this reference model, the **Architect** role owns and manages the asset portfolio lifecycle, including creating, deleting, and installing assets from Forge, as well as managing releases. The **Tenant Admin** role focuses on global infrastructure configurations, not on asset or release management. If a user needs both sets of permissions, assign the built-in **Admin** role, which combines all capabilities.  
 
 This approach supports a DevOps-oriented model, where delivery teams (**Tech Lead** + **Developers**) have full ownership of their assigned assets (and only theirs).
 
