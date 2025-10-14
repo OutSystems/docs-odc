@@ -21,6 +21,12 @@ helpids:
 
 This article explains how to use OutSystems APIs to programmatically retrieve the correct revision and build of your asset and prepare it for deployment. This is useful for ensuring consistent, traceable builds across your delivery pipeline.
 
+<div class="info" markdown="1">
+
+A **build** is the process of compiling your code and creating a deployable package. When you create or modify an asset in ODC Studio, OutSystems generates a new revision. To deploy this revision to an environment, you must first build it (either by clicking 1-Click Publish in ODC Studio, or programmatically by using the [Build Operations API](../../build-v1.md)). Each successful build generates a build key, which uniquely identifies the build for deployment and traceability.
+
+</div>
+
 ## Prerequisites
 
 Before using the APIs to get the revision and build of your asset, ensure that you have:
