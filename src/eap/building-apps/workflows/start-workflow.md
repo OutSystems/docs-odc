@@ -18,7 +18,17 @@ coverage-type:
 
 # Start a workflow
 
-A workflow in the Workflow editor always begins with the **Start** node. To trigger the workflow execution, follow these steps:
+Every workflow in the Workflow editor begins with a **Start** node. This node serves as the entry point that connects your ODC app's user interface to automated business processes. When users interact with your app, such as submitting a loan application or placing an order, these actions trigger events that initiate workflows through the **Start** node.
+
+Using events to trigger workflows follows an [**event-driven architecture**](../events/intro.md) where user actions translate into business process events. For example, when a user submits a loan application through your app's form, it triggers a `LoanApplicationSubmitted` event. The **Start** node receives this event along with all the relevant data (user information, loan amount, documents) and passes it to the subsequent workflow activities for processing.
+
+For detailed information about creating and handling events in ODC, refer to [Implement events](../events/implement-events.md).
+
+You can also use [conditional starts](add-conditional-start.md) to handle other events that might occur while your main workflow is running. For example, in a loan approval workflow, you might add a conditional start that triggers a cancellation process if the user decides to cancel their loan application while it's being reviewed.
+
+## How to start a workflow
+
+To trigger the workflow execution, follow these steps:
 
 1. Assign an event to the **Start** node.
 
@@ -32,11 +42,33 @@ A workflow in the Workflow editor always begins with the **Start** node. To trig
 
 ## Instance label { #instance-label }
 
-You can define the **Instance label** from the **Start** node. The instance label is a descriptive custom identifier that you can assign to a workflow instance. It links a user-friendly business reference to the instance, making it easier to identify and track it. Each time a workflow is triggered, a new instance is created, and the instance label helps uniquely identify that specific instance.
+When working with workflows, technical IDs such as ``Process_12345`` don't provide much information. Instance labels allow you to create meaningful names such as ``Loan 67890 - John Smith`` that make it easy to identify specific workflow instances.
 
-Instance labels make it easier to track and manage individual workflow executions. The instance label is a dynamic expression that accepts values such as the start event's input parameters, runtime properties, and built-in functions. It has access to the **ActivityInstanceId**, **ProcessInstanceId**, and any values from the **Start** node.
+You can define an **Instance label** in the **Start** node. The instance label assigns a custom identifier to each workflow instance. Each time a workflow is triggered, a new instance is created, and the instance label helps you uniquely identify that specific instance.
 
-Instance labels can help you filter your workflow instances and identify them in log reports. Additionally, if an error occurs in a workflow, the instance label helps pinpoint which specific workflow instance needs attention. For example, in a loan request approval, you might want a custom label that describes the instance ID and the ID of the loan that triggered that workflow. This way, when troubleshooting multiple instances, you can easily identify which instance corresponds to a certain loan request. In that case, you define the instance label as ``"Process with Id" + ProcessInstanceId + "started by a new loan with ID" + Start.NewLoan.LoanId.`` **Note**: The **Instance label** has a maximum length of 100 characters. If your expression is longer than the maximum, it will be truncated at runtime.
+Instance labels help you:
+
+* **Identify workflows**: Use user-friendly names instead of technical IDs
+
+* **Troubleshoot issues**: Quickly find specific workflow instances in logs
+
+* **Track progress**: Monitor and distinguish between workflow instances in the Portal
+
+When creating instance labels, keep the following in mind:
+
+* **What you can use**: The instance label is a dynamic expression that accepts values such as the start event's input parameters, runtime properties, and built-in functions. It has access to the ``ActivityInstanceId``, ``ProcessInstanceId``, and any values from the **Start** node.
+
+* **How to write it**: Create an expression using text, variables, and functions
+
+* **Character limit**: Maximum 100 characters (longer expressions are truncated at runtime)
+
+The following is an example of how to structure an instance label:
+
+For a loan request approval, you might want a custom label that describes the instance ID and the ID of the loan that triggered that workflow. This way, when troubleshooting multiple instances, you can easily identify which instance corresponds to a certain loan request.
+
+```
+"Process with Id" + ProcessInstanceId + "started by a new loan with ID" + Start.NewLoan.LoanId
+```
 
 ![Screenshot of instance label expression](images/instance-label-output-we.png "Instance label")
 
