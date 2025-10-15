@@ -152,12 +152,12 @@ For the list of patches for known vulnerabilities, see **Portal** > **App securi
 
 * The list of apps with known vulnerabilities
 * Classification of the vulnerabilities
-* Scheduled fixing of the critical vulnerabilities
+* Fixing schedule of the vulnerabilities
 
-The patching process upgrades your apps, and the process is:
+The patching process upgrades your apps, and the process can be:
 
-* Automatic. OutSystems patches the critical vulnerabilities automatically.
-* Manual. Developers can patch non-critical vulnerabilities manually during the regular SDLC process.
+* Automatic: OutSystems patches the vulnerabilities automatically.
+* Manual: Developers can patch vulnerabilities manually during the regular SDLC process.
 
 ##### Automatic patching
 
