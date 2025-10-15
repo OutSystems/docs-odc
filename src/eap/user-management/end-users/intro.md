@@ -78,7 +78,7 @@ To manage end-users using external IdP authentication, follow these steps:
 
     ODC automatically assigns mapped users to the end-user group when they log in using the external IdP.
 
-    After a user logs in and is mapped to one or more groups, any changes to their group membership in the IdP will only be reflected in ODC the next time the user logs in. Until then, the user will continue to appear as a member of their previously mapped groups.
+    After a user logs in and ODC maps them to one or more groups, any changes to their group membership in the IdP appear in ODC only the next time the user logs in. Until then, the user continues to appear as a member of their previously mapped groups.
 
     </div>
 
@@ -92,7 +92,7 @@ To manage end-users using external IdP authentication, follow these steps:
 
     When users log in using an external IdP, ODC automatically registers them after their first successful login.
 
-    For more details about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](../../manage-platform-app-lifecycle/external-idps/intro.md#claim-mapping-logic).
+    For more information about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](../../manage-platform-app-lifecycle/external-idps/intro.md#claim-mapping-logic).
 
     </div>
 
@@ -100,7 +100,7 @@ To manage end-users using external IdP authentication, follow these steps:
 
     * Programmatically: [Create users via API](../../reference/apis/identity-v1.md).
 
-1. [Assign roles](../grant-and-revoke-user-roles.md#grant-roles-to-end-users) or [groups](groups.md) to end-users if you haven't already done so during the manual creation of users. This step is not necessary if you mapped IdP groups to end-user groups: ODC automatically adds users to the appropriate groups and assigns them the roles configured for the group.
+1. [Assign roles](../grant-and-revoke-user-roles.md#grant-roles-to-end-users) or [groups](groups.md) to end-users if you haven't already done so during the manual creation of users. This step isn't necessary if you mapped IdP groups to end-user groups: ODC automatically adds users to the appropriate groups and assigns them the roles configured for the group.
 
 1. Modify the [end-user login and logout flows](../../manage-platform-app-lifecycle/external-idps/apps.md) for each app you plan to integrate with the external IdP.
 
