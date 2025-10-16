@@ -74,7 +74,7 @@ You can manage end-user groups through the ODC Portal.
 
 To create a new end-user group in ODC, follow these steps:
 
-1. In the ODC Portal, go to  **Manage** > **End-user groups**.
+1. In the ODC Portal, go to **Manage** > **End-user groups**.
 1. Click **Create group**, and then select the [stage](intro.md#organization-app-stage-and-app-scope) (for example, **Development**, **QA**, or **Production**).
 
     <div class="info" markdown="1">
@@ -107,7 +107,7 @@ All users in the end-user group automatically inherit the updated roles. This on
 
 To add or remove users from an end-user group in ODC, follow these steps:
 
-1. In the ODC Portal, go to **Manage**, > **End-user groups**.
+1. In the ODC Portal, go to **Manage** > **End-user groups**.
 1. In the **End-user groups** list, click the end-user group you want to edit.
 1. On the **Users** tab, click **Assign users**.
 1. Select or clear the users you want to add or remove from the end-user group.
@@ -122,7 +122,6 @@ Deleting an end-user group removes all role assignments the user inherited from 
 To delete an end-user group in ODC, follow these steps:
 
 1. In the ODC Portal, go to **Manage** > **End-user groups**.
-1. In the ODC Portal, under **Manage**, go to **End-user groups**.
 1. In the **End-user groups** list, click the end-user group you want to edit.
 1. Remove all users from the end-user group.  
 
