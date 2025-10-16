@@ -5,7 +5,7 @@ locale: en-us
 guid: 0f6e0ee0-427a-4ed6-b1f9-506cf094363c
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=8220-468&t=lcANYydeFAf1Fkpn-1
 audience:
   - mobile developers
   - frontend developers
@@ -29,11 +29,16 @@ You **can** add a **Go to a flow step** in the following places:
 
 You **cannot** add a **Go to a flow step** in the following places:
 
-* Between the main workflow and conditional start events (creates an invalid workflow structure)
-* Between the main workflow and a parallel flow (can create runtime inconsistencies)
-* Between parallel branches (cannot jump from one branch to another)
-* Between a parallel flow and a nested parallel flow (can create runtime inconsistencies)
-* To the first activity of a different decision path (breaks decision logic flow)
+* Between the main workflow (1) and conditional start events (2). This creates an invalid workflow structure.
+    ![Diagram showing an invalid workflow structure between the main workflow and conditional start events.](images/main-conditional-we.png "Invalid Workflow Structure")
+* Between the main workflow (1) and a parallel flow (2). This can create runtime inconsistencies.
+    ![Diagram illustrating runtime inconsistencies when adding a Go to a flow step between the main workflow and a parallel flow.](images/main-parallel-we.png "Runtime Inconsistencies")
+* Between parallel paths (1) and (2). Workflows cannot jump from one path to another.
+    ![Diagram showing that workflows cannot jump between parallel paths.](images/parallel-paths-we.png "Invalid Parallel Path Jump")
+* Between a parallel flow (1) and a nested parallel flow (2). This can create runtime inconsistencies.
+    ![Diagram illustrating runtime inconsistencies when adding a Go to a flow step between a parallel flow and a nested parallel flow.](images/parallel-nested-we.png "Nested Parallel Flow Inconsistencies")
+* Immediately after an Outcome (1) to the first activity of a different decision path (2). This breaks decision logic flow.
+    ![Diagram showing that adding a Go to a flow step immediately after an outcome to the first activity of a different decision path breaks decision logic flow.](images/immediate-outcome-we.png "Breaking Decision Logic Flow")
 
 ## Variable access
 
@@ -48,11 +53,13 @@ And it doesn't have access to:
 * **Outputs from activities that exist before in the target node path**: If a workflow execution ends up in a node via a **go to a flow step**, that node doesn't have visibility over the previous nodes of its own path.
 * **Outputs from activities that happen before the source node if in a path different from the target**: These activities are executed within the path from the source node, and when the **go to a flow step** is added, the target node doesn't have context on what happened before on the source path.
 
+![Diagram explaining variable access when using Go to a flow step in workflows.](images/variable-access-we.png "Variable Access in Go to a Flow Step")
+
 ## Example loan approval workflow
 
 Here's a bank loan approval example showing **Go to a flow step** in action:
 
-![Screenshot of the ODC Portal with **Go to a flow step** for banking example](images/go-to-previous-step-workflow-pl.png "ODC Portal Banking example")
+![Screenshot of the ODC Portal showing a banking example workflow with Go to a flow step.](images/go-to-previous-step-workflow-pl.png "ODC Portal Banking Example")
 
 **Scenario**: A customer applies for a loan. If documents are incomplete, the application goes back for document review.
 
