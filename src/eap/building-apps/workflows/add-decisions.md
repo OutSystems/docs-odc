@@ -62,7 +62,7 @@ If your workflow involves multiple conditional paths, you can add more than two 
 
 * [Add wait](add-wait.md)
 
-* [Go to a previous step](go-to-previous-step.md)
+* [Go to a flow step](go-to-previous-step.md)
 
 ## Related resources
 

@@ -88,7 +88,7 @@ To use workflows you need the requisite _Asset Management_ permission(s). To get
 
 With workflow editor, you can:
 
-* Implement your workflow using a set of nodes such as **Start**, **End**, **HumanActivity**, **AutomaticActivity**, **Go to a previous step**, and **Decision**. For detailed information, refer to [Implement workflows](workflow-components.md).
+* Implement your workflow using a set of nodes such as **Start**, **End**, **HumanActivity**, **AutomaticActivity**, **Go to a flow step**, and **Decision**. For detailed information, refer to [Implement workflows](workflow-components.md).
 
 * Select service actions and events to exchange data between the app and the workflow.
 For example, while implementing a human activity in a workflow, you can select a service action from the app to retrieve the manager's user ID. You can then use that user ID to assign human activity to the manager within the workflow.

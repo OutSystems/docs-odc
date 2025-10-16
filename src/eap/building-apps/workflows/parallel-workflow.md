@@ -15,6 +15,7 @@ outsystems-tools:
 coverage-type:
   - remember
 ---
+
 # Implement parallel paths
 
 Parallel paths in a workflow allow you to organize tasks so that multiple tasks can be performed simultaneously rather than sequentially. You can use parallel paths in workflows where tasks don't need to be completed sequentially, for example, when onboarding a new employee. Traditionally, HR might handle paperwork, benefits, and company policies first, followed by IT setting up the computer and granting system access. Parallel paths allow these things to happen simultaneously, ensuring the new employee becomes productive more quickly.
@@ -37,9 +38,9 @@ The following are some key considerations for **Parallel** node behavior:
 
 * Nodes within parallel paths can access data from preceding steps, regardless of their location in the workflow. However, subsequent nodes outside of parallel flow cannot access outputs within parallel flows.
 
-* When a **Go to a previous step** node is within a parallel node, you do not have the **Change to End** or **Change to Terminate** options. You only have the **Reconnect with other paths** option.
+* When a **Go to a flow step** is within a parallel node, you do not have the **Change to End** or **Change to Terminate** options. You only have the **Reconnect with other paths** option.
 
-* A **Go to a previous** **step** node can only go back to a previous node within the parallel flow and within that path. However, a **Go to a previous** **step** in the main workflow can target a **Parallel** node.
+* A **Go to a flow step** node can only go back to a previous node within the parallel flow and within that path. However, a **Go to a flow step** in the main workflow can target a **Parallel** node.
 
 * A **Parallel** node has no **End** or **Terminate** node inside it. The **Parallel** node has no mandatory properties, and execution can pass through this node when it's empty.
 

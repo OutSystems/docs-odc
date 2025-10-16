@@ -75,7 +75,7 @@ For detailed information on how to use different nodes in  your workflow, refer
 
 * [Add decisions](add-decisions.md)
 
-* [Go to a previous step](go-to-previous-step.md)
+* [Go to a flow step](go-to-previous-step.md)
 
 ### Step 2: Test the workflow
 

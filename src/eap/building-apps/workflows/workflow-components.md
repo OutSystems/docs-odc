@@ -30,7 +30,7 @@ You can implement a workflow in the workflow editor using the following nodes:
 
 * [Decision](add-decisions.md) - Allows the workflow to branch into different paths based on conditions.
 
-* [Go to a previous step](go-to-previous-step.md) - Allows the workflow to loop back to an earlier step. This is useful for iterative processes.
+* [Go to a flow step](go-to-previous-step.md) - Allows the workflow to redirect execution to any previous node in the workflow. This is useful for iterative processes and error handling.
 
 * [Parallel](parallel-workflow.md) - Allows the workflow to execute multiple tasks in parallel.
 

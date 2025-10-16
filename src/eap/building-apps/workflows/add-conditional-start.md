@@ -20,7 +20,11 @@ outsystems-tools:
 
 When implementing your workflow, you can use a **Conditional Start** node to trigger a flow that only executes when certain events are triggered and defined conditions are met after the main workflow has started. For example, in a loan approval workflow, you can use a conditional start to trigger a flow for loan cancellation. You can add as many conditional start flows as you need to your workflow.
 
-**Note**: As long as a workflow instance is running, the conditional start is always listening for the trigger event and any defined conditions.
+<div class="info" markdown="1">
+
+As long as a workflow instance is running, the conditional start is always listening for the trigger event and any defined conditions.
+
+</div>
 
 When an **End** node is reached in a conditional start flow, the main workflow continues executing until it reaches an **End** or **Terminate** node, at which point the workflow instance status changes to **Done**.
 
@@ -48,7 +52,11 @@ To include a **Conditional Start** in your workflow, follow these steps:
 
 1. Add the event and define any conditions that will trigger the conditional start flow.
 
-    **Note**: Each conditional start only starts listening for events after the main flow starts its execution.
+    <div class="info" markdown="1">
+
+    Each conditional start only starts listening for events after the main flow starts its execution.
+
+    </div>
 
     ![Screenshot of event and the conditions that triggers the conditional start flow](images/conditional-start-event-pl.png "Event and conditions that trigger the conditional start flow")
 
