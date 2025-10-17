@@ -44,7 +44,7 @@ Mapped end-users can't be unmapped directly from the ODC Portal. To unmap end-us
 
 </div>
 
-![Diagram illustrating End-user groups with IdP claim-based mapping](images/end-user-group-with-idp-mapping-diag.png "End-user groups with IdP mapping")
+![Diagram showing the mapping of IdP groups to ODC end-user groups, including roles and stages.](images/end-user-group-with-idp-mapping-diag.png "Diagram illustrating End-user groups with IdP mapping")
 
 For more information about the high-level steps you need to complete to manage end-users, refer to [Managing end-users with external Identity Provider (IdP) authentication](../../user-management/end-users/intro.md#managing-end-users-with-external-identity-provider-idp-authentication).
 
@@ -71,7 +71,7 @@ Before mapping groups, ensure you have:
 
 </div>
 
-## Group claims { #group-claims }
+## Group claims {#group-claims}
 
 A claim is a statement that an entity makes about itself. An entity can be a user or an app.
 
@@ -112,7 +112,7 @@ You can manage mappings in the ODC Portal from either:
 * The [**End-user groups** page](#mapping-end-user-groups-option)
 * The [**Identity providers** page](#mapping-idp-option)
 
-## Managing end-user group mapping from the end-user groups page { #mapping-end-user-groups-option }
+## Managing end-user group mapping from the end-user groups page {#mapping-end-user-groups-option}
 
 From the **End-user groups** page, you can:
 
@@ -120,7 +120,7 @@ From the **End-user groups** page, you can:
 * [Edit an end-user group mapping](#edit-mapping-end-user-groups-option)
 * [Delete an end-user group mapping](#delete-mapping-end-user-groups-option)
 
-### Create an end-user group mapping { #create-mapping-end-user-groups-option }
+### Create an end-user group mapping {#create-mapping-end-user-groups-option}
 
 To map an IdP group to an end-user group from the **End-user groups** page, follow these steps:
 
@@ -129,7 +129,9 @@ To map an IdP group to an end-user group from the **End-user groups** page, foll
 1. Go to the **Group mappings** tab.
 1. Click **Add group mapping**.
 1. Select a provider from the **Provider** dropdown list.
-1. Enter the **Claim name**, **Claim value (provider group)**, and optionally the **Delimiter**.  
+1. Enter the **Claim name**, **Claim value (provider group)**, and optionally the **Delimiter**.
+  
+    ![Screenshot of the Add group mapping dialog in the ODC Portal, showing fields for Provider, Claim name, Claim value, and Delimiter.](images/add-group-mapping-pl.png "Add group mapping in ODC Portal")
 For more details about group claims and their maximum length values, refer to [Group claims](#group-claims).
 1. Click **Save**.
 
@@ -141,7 +143,7 @@ You can view mappings by status (**Active**/**Inactive**). An **Inactive** statu
 
 </div>
 
-### Edit an end-user group mapping { #edit-mapping-end-user-groups-option }
+### Edit an end-user group mapping {#edit-mapping-end-user-groups-option}
 
 To edit an end-user group mapping from the **End-user groups** page, follow these steps:
 
@@ -161,7 +163,7 @@ You can view mappings by status (**Active**/**Inactive**). An **Inactive** statu
 
 </div>
 
-### Delete an end-user group mapping { #delete-mapping-end-user-groups-option }
+### Delete an end-user group mapping {#delete-mapping-end-user-groups-option}
 
 Deleting a mapping removes the group claim and breaks the link between the IdP and ODC group. End-users relying only on that mapping lose access.
 
@@ -175,7 +177,7 @@ To delete an end-user group mapping from the **End-user groups** page, follow th
 
 The mapping is deleted. Deleting an end-user group also removes all mappings and revokes group-based access.
 
-## Managing end-user group mapping from the Identity providers page { #mapping-idp-option }
+## Managing end-user group mapping from the Identity providers page {#mapping-idp-option}
 
 From the **Identity providers** page, you can:
 
@@ -183,7 +185,7 @@ From the **Identity providers** page, you can:
 * [Edit an end-user group mapping](#edit-mapping-idp-option)
 * [Delete an end-user group mapping](#delete-mapping-idp-option)
 
-### Create an end-user group mapping { #create-mapping-idp-option }
+### Create an end-user group mapping {#create-mapping-idp-option}
 
 To map an IdP group to an end-user group from the **Identity providers** page, follow these steps:
 
@@ -205,7 +207,7 @@ You can view mappings by status (**Active**/**Inactive**). An **Inactive** statu
 
 </div>
 
-### Edit an end-user group mapping { #edit-mapping-idp-option }
+### Edit an end-user group mapping {#edit-mapping-idp-option}
 
 To edit an end-user group mapping from the **Identity providers** page, follow these steps:
 
@@ -228,7 +230,7 @@ You can view mappings by status (**Active**/**Inactive**). An **Inactive** statu
 
 </div>
 
-### Delete an end-user group mapping { #delete-mapping-idp-option }
+### Delete an end-user group mapping {#delete-mapping-idp-option}
 
 Deleting a mapping removes the group claim and breaks the link between the IdP and ODC group. End-users relying only on that mapping lose access.
 
