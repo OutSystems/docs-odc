@@ -188,6 +188,8 @@ The general platform limits are:
 | Self-registration verification token (minutes) |      15 | The maximum duration within which the user can complete the self-registration process. |
 | Compute Instances (per app)              |        16 | The maximum number of compute instances that can be consumed when scaling apps horizontally. |
 | Analytics Stream connections             |         5 | The maximum number of Analytics Stream connections that can exist simultaneously. |
+| Max IP Filter Rules                      |        20 | The maximum number of IP filter rules that can be added to each IP filter group. |
+| Max IP Addresses (per rule)              |        20 | The maximum number of IP addresses that can be added to each IP filter rule. |
 
 ### Logs and traces
 

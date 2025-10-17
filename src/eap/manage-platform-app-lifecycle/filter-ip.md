@@ -36,7 +36,7 @@ For more information on ODC's built-in security, refer to [Security of OutSystem
 
 ## Control access with IP filters
 
-ODC provides a method to manage network access to your apps through IP filters, enhancing security. This system revolves around **IP filter groups**, logical containers for access policies. Within these groups, you define rules, specifying the IP addresses permitted or blocked from accessing your apps. Each rule can contain up to 20 IP address entries.
+ODC provides a method to manage network access to your apps through IP filters, enhancing security. This system revolves around **IP filter groups**, logical containers for access policies. Within these groups, you define rules, specifying the IP addresses permitted or blocked from accessing your apps. Each IP filter group can contain up to 20 rules, and each rule can contain up to 20 IP address entries.
 
 A use case includes:
 
