@@ -41,6 +41,7 @@ exceptions:
   - MABS
   - NET
   - NTLM
+  - NULL
   - ODC
   - OKTA
   - OML
