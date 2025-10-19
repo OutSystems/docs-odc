@@ -149,36 +149,33 @@ The following parameters are required when configuring connections for different
 
 The table outlines the parameters necessary to configure an Azure AI Search connection.
 
-|                |                                                                   |
-| -------------- | ----------------------------------------------------------------- |
-| **Parameter**  | **Description**                                                   |
-| **URL**        | The REST API endpoint of your Azure AI Search service.            |
-| **Index name** | The name of the index you have created in Azure AI Search.        |
-| **API key**    | The API key for authenticating with your Azure AI Search service. |
-| **Query type** | The syntax used for querying your Azure AI Search index.          |
+| **Parameter** | **Description** |
+| --- | --- |
+| **URL** | The REST API endpoint of your Azure AI Search service. |
+| **Index name** | The name of the index you have created in Azure AI Search. |
+| **API key** | The API key for authenticating with your Azure AI Search service. |
+| **Query type** | The syntax used for querying your Azure AI Search index. |
 
 ### Amazon Kendra parameters
 
 The table outlines the parameters necessary to configure an Amazon Kendra connection.
 
-|                |                                                                    |
-| -------------- | ------------------------------------------------------------------ |
-| **Parameter**  | **Description**                                                    |
-| **URL**        | The REST API endpoint for your Amazon Kendra service.              |
-| **Index ID**   | The ID of the Kendra index you want to connect to.                 |
-| **Access key** | The AWS access key ID for an IAM user with Kendra permissions.     |
+| **Parameter** | **Description** |
+| --- | --- |
+| **URL** | The REST API endpoint for your Amazon Kendra service. |
+| **Index ID** | The ID of the Kendra index you want to connect to. |
+| **Access key** | The AWS access key ID for an IAM user with Kendra permissions. |
 | **Secret key** | The AWS secret access key associated with the provided access key. |
 
 ### Custom search service parameters
 
 The table outlines the parameters necessary to configure a connection to a custom search service.
 
-|                   |                                                                    |
-| ----------------- | ------------------------------------------------------------------ |
-| **Parameter**     | **Description**                                                    |
-| **Endpoint**      | The URL of your custom-built search service API endpoint.          |
-| **Headers Name**  | The name of the authentication header required by your custom API. |
-| **Headers Value** | The value of the authentication header for your custom API.        |
+| **Parameter** | **Description** |
+| --- | --- |
+| **Endpoint** | The URL of your custom-built search service API endpoint. |
+| **Headers Name** | The name of the authentication header required by your custom API. |
+| **Headers Value** | The value of the authentication header for your custom API. |
 
 ## Considerations when integrating external systems
 
