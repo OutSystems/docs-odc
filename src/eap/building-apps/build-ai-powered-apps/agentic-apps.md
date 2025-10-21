@@ -25,6 +25,8 @@ In ODC Studio, you can integrate AI capabilities into your apps either by callin
 
 An **Agentic app** uses one or more AI agents to perform tasks, automate workflows, or handle complex multi‑step interactions. Unlike traditional apps that rely on direct user input for each step, agentic apps can act autonomously or semi‑autonomously—making decisions, invoking external tools, and coordinating logic. These apps consume the capabilities exposed by AI agents.
 
+![Dropdown menu in ODC Studio showing options for creating different types of apps, with 'Agentic app' selected.](images/app-dropdown-odcs.png "ODC Studio App Type Selection")
+
 ## AI models
 
 In ODC, an AI model is a pre-trained algorithm or deployed machine learning service that provides a specific capability (for example, summarization, extraction, or generation). Call these models directly from your app logic using the `Call<AIModelName>` server action. For more information, see [AI models and search services in ODC](ai-models.md).
@@ -32,8 +34,6 @@ In ODC, an AI model is a pre-trained algorithm or deployed machine learning serv
 ## Use AI agents
 
 AI agents in ODC run without a user interface. They orchestrate AI models, business data, and external tools to add autonomy and decision-making. An agent app consumes AI model capabilities via a `Call<AIModelName>` server action and exposes its logic through a `Call<AgentName>` service action to any consuming app. For more information, see [Build AI-powered apps](intro.md).
-
-![Dropdown menu in ODC Studio showing options for creating different types of apps, with 'Agentic app' selected.](images/app-dropdown-odcs.png "ODC Studio App Type Selection")
 
 ### Understand the relationship
 
