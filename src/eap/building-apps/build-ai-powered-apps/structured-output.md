@@ -23,7 +23,7 @@ topic:
 
 In ODC you can have the responses of your agents in a predetermined structured output. This is especially important for use cases where you want to have a more structured response, instead of free text.
 
-To do this you need to use the Structured Output option in your Call Agent.
+To do this you need to use the Structured Output option in your CallAgent.
 
 <div class="info" markdown="1">
 
@@ -33,11 +33,11 @@ Action calling and structured output can't be used on the same Agent call. If yo
 
 ## Using structured output
 
-To use a structured output approach in your agentic app do the following:
+To use a structured output approach in your Agentic app do the following:
 
-1. In your Agent Flow, double click your Call Agent action.
+1. In your AgentFlow, double click your Call Agent action.
 
-    ![Screenshot showing the Call Agent action in the Agent Flow.](images/stuctured-output-agent-odcs.png "Call Agent Action in Agent Flow")
+    ![Screenshot showing the Call Agent action in the AgentFlow.](images/stuctured-output-agent-odcs.png "Call Agent Action in AgentFlow")
 
 1. In the Call Agent, select the **Structured output** tab.
 
@@ -59,14 +59,14 @@ To use a structured output approach in your agentic app do the following:
 
     ![Screenshot showing the Response parameter type set to a structure in the Call Agent.](images/structured-output-type-odcs.png "Response Parameter Type")
 
-## Changing your Agent Flow logic to accommodate for a structured output
+## Changing your AgentFlow logic to accommodate for a structured output
 
 If you are using structured output on your agentic app, you have to adapt the response of your agent call to be able to receive a structure as output.
 
 To do it:
 
-1. In your agent flow, change the Response output parameter to the structure type you created.
+1. In your AgentFlow, change the Response output parameter to the structure type you created.
 
-1. If you want to are storing the model answers in the Store memory you it's recommended that instead of using storing the structured output, you first serialize the structure output, and use the serialization as the item to store on the Store Memory node. This is also important if you want to use the responses on a workflow.
+1. For storing model answers in the Store Memory node, best practice is to first serialize the structured output. Use the resulting serialized data as the item to store, not the raw structured output itself. This approach is also crucial for passing the responses correctly within a Workflow.
 
 1. If you use the serialization, you then need to deserialize into a structure on your consumer app.
