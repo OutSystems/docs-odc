@@ -54,7 +54,6 @@ Before adding a configured connection to your model provider:
 * Obtain the necessary access credentials and details the specific provider requires, such as API keys, endpoint URLs, deployment names, model IDs, and access or secret keys. Refer to the [AI model parameters](#ai-model-parameters) section below for details.
 * Ensure you have the required permissions within ODC to manage AI models. Note that managing AI models utilizes the same permissions as managing connections within the ODC Portal.
 
-These prerequisites don't apply when adding an ODC trial model.
 
 ## Add AI models { #add-ai-models }
 
