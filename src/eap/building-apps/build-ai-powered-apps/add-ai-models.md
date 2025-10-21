@@ -54,7 +54,6 @@ Before adding a configured connection to your model provider:
 * Obtain the necessary access credentials and details the specific provider requires, such as API keys, endpoint URLs, deployment names, model IDs, and access or secret keys. Refer to the [AI model parameters](#ai-model-parameters) section below for details.
 * Ensure you have the required permissions within ODC to manage AI models. Note that managing AI models utilizes the same permissions as managing connections within the ODC Portal.
 
-
 ## Add AI models { #add-ai-models }
 
 Follow these steps to add an AI model connection or an ODC trial model in the ODC Portal:
@@ -92,7 +91,7 @@ Follow these steps to add an AI model connection or an ODC trial model in the OD
 
 1. Click **Save** to confirm.
 
-After you complete the steps, ODC redirects you to the main AI models page. You can now use the newly added model connection or ODC trial model within your apps in ODC Studio.
+After you complete the steps, ODC redirects you to the main AI models page. To use this model in your app, you must go to ODC Studio and add it as a [public element](../../app-architecture/reuse-elements.md#public-elements).
 
 ## AI model parameters { #ai-model-parameters }
 
