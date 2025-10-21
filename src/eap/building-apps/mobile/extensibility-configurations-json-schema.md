@@ -5,7 +5,7 @@ locale: en-us
 guid: ecb98e61-f07f-4204-a899-9fd1d5460fbf
 app_type: mobile apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8030-23
 audience:
   - mobile developers
 outsystems-tools:
@@ -13,11 +13,10 @@ outsystems-tools:
 coverage-type:
   - understand
   - remember
+helpids: 30680
 ---
 
 # Extensibility configurations JSON schema
-
-The **Extensibility Configurations** field provides additional settings as a JSON string. You can change a number of settings in ODC Studio, such as the name of the app. Some advanced settings are available in the **Extensibility Configurations** only (for example, adding custom mobile plugins). You can edit **Extensibility Configurations** in the properties of your home module.
 
 <div class="info" markdown="1">
 
@@ -25,120 +24,48 @@ Applies only to mobile apps.
 
 </div>
 
-## Property schema
+**Extensibility Configurations** are JSON-based settings used to customize mobile app builds. The extensibility configurations allow you to customize the mobile app's native preferences using a JSON string. You can configure your extensibility from **App** > **Edit app properties** > **Extensibility**.
 
-The value of the **Extensibility Configurations** property of a mobile app module is a JSON object. What follows is the JSON schema outlining the most common options. There may be other options applicable in your use case, if the feature you're using provides them.
+![Screenshot of the Extensibility tab in the Edit app properties window showing JSON configurations for permissions, orientation, and target device.](images/edit-app-extensibility-odcs.png "Editing App Extensibility Configurations in ODC")
 
-```javascript
-{
-    "plugin": {
-        // Use only one the following ways to reference a plugin
-        "url": "<The url to a public git repository containing your plugin>",
-        // or
-        "identifier": "<The identifier for your plugin>",
-        // If the plugin requires additional settings
-        "variables": [
-            {
-                "name": "<The attribute name for your plugin variable>",
-                "value": "<The attribute value for your plugin variable>"
-            },
-            /* ...more variables, if needed... */
-        ]
-    },
-    "preferences": {
-        // Common preferences for iOS and Android, like status bar customization settings
-        "global": [
-            {
-                "name": "<The preference name for your Android/iOS application>",
-                "value": "<The preference value for your Android/iOS application>"
-            },
-            /* ...more global preferences... */
-        ],
-        // Just for Android
-        "android": [
-            {
-                "name": "<The preference name for your Android application>",
-                "value": "<The preference value for your Android application>"
-            },
-            /* ...more Android preferences... */
-        ],
-        // Just for iOS
-        "ios": [
-            {
-                "name": "<The preference name for your iOS application>",
-                "value": "<The preference value for your iOS application>"
-            },
-            /* ...more iOS preferences... */
-        ]
-    },
-    "resources": {
-        // Common resources for iOS and Android
-         "global": {
-            "<The key of the resource>": {
-                "src": $settings.<any-binary-setting>,
-                "target": "<The path to where the resource will be copied within the Android/iOS project>"
-            },
-            /* ...more global resources... */
-        },
-        // Just for Android
-        "android": {
-            "<The key of the resource>": {
-                "src": $settings.<any-binary-setting>,
-                "target": "<The path to where the resource will be copied within the Android project>"
-            },
-            /* ...more Android resources... */
-        },
-        // Just for iOS
-        "ios": {
-            "<The key of the resource>": {
-                "src": $settings.<any-binary-setting>,
-                "target": "<The path to where the resource will be copied within the iOS project>"
-            },
-            /* ...more iOS resources... */
-        }
-    },
-    "icons": { ... },
-    "splashscreens": { ... }
-}
-```
+Some of these properties can be configured visually via the mobile app properties. For detailed information, refer to [Configuring mobile apps](configuring-mobile-apps.md).
 
-## Preferences
+## Why are extensibility configurations needed?
 
-The following section provides more details about the options you can use in the `preferences` top-level property. For a comprehensive list of the available settings, see [preferences in Config.xml](https://cordova.apache.org/docs/en/dev/config_ref/index.html#preference) by Apache Cordova.
+Extensibility configurations are essential for customizing mobile apps and managing plugins to meet specific requirements. For detailed information about different use cases, refer to [Using extensibility configurations](extensibility-configurations-use-cases.md).
 
-| Property                          | Platform | Default | Description |
-| --------------------------------- | -------- | ------- | ----------- |
-| (iOS_FEATURE)UsageDescription    | iOS        | NA       | Adds preferences that match the pattern of UsageDescription to the Info.plist file. For full list, see [Cocoa Keys](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW1) and filter by UsageDescription. For an example, see information about [iOS usage descriptions](https://success.outsystems.com/Support/Release_Notes/Mobile_Apps_Build_Service_Versions/MABS_7_Release_notes#ios-usage-descriptions) in the release notes. |
-| AddUploadWidgetPermissions      | Android, iOS        | false       | Set as false to skip adding permissions required by the upload widget to AndroidManifest.xml and/or Info.plist. For an example, see information about [Upload widget permissions](https://success.outsystems.com/Support/Release_Notes/Mobile_Apps_Build_Service_Versions/MABS_7_Release_notes#upload-widget-permissions) in the release notes. |
-| EnableRefererHeaderCustomScheme | iOS        | false       | Set to true to inject the `Referer: URL` in the requests of the native app, where `URL` is the app domain.         |
-| InitLoggerSyncDelay             | Android        | 0       | Seconds to delay the logger synchronization after the initialization.         |
-| RemoveUserCertificates          | Android        |true for MABS ≥ 9; <br/> false for MABS &lt; 9| Set to true to remove user certificates from the trust anchors in network_security_config.xml.         |
-| FilterTouchesWhenObscured | Android |true for MABS ≥ 9<br/> false for MABS &lt; 9| Defines the value of the filterTouchesWhenObscured property of WebView on Android. Set to true to prevent the app from handling touches while obscured by other apps. Learn more about filterTouchesWhenObscured [here](https://developer.android.com/reference/android/view/View#security).|
-| DisableInspectorNotification | iOS | false | Set to true to remove the notification from the [Network inspector](https://www.outsystems.com/tk/redirect?g=2bea2ff9-7655-4952-a00c-2a3f1e3316e9) plugin in iOS debug builds. |
-| DeepLinksHandlerType | Android, iOS | default | Defines how the mobile app [handles deeplinks](customize-deeplink-behavior.md). This can have 4 possible values: `default`, `event`, `function` or `legacy`. |
+Here are some ways in which you can use the extensibility configurations:
 
-## Resources
+### Customize mobile app properties
 
-The following section provides more details on the `resources` top-level property. The feature translates into the `resource-file` feature on [Cordova](https://cordova.apache.org/docs/en/12.x/config_ref/#resource-file). These resources are included in the folder `www`, available for use within the project compilation. Use **OutSystems Resources** with **Deploy Action** set to **Deploy to Target Directory** in the application project.  
+You can customize mobile app properties, such as display name, orientation, permissions, and splash screens, to meet specific requirements via the [app extensibility configurations JSON file](extensibility-configurations/extensibility-app-reference.md).
 
-* The `src` property of a resource is relative to the location of `config.xml` (project root). Since the resources become available in the `www` folder, the value should start with it.
-* If you add the resource `my-resource.ext` in ODC Studio, the value should be `www/my-resource.ext`.
-* The `target` property of a resource is relative to the Android/iOS project. If a resource with the same name already exists in the specified `target`, it is overridden.
-* For Android, the path is relative to `<project_root>/platforms/android`.
-* For iOS, the path is relative to `<project_root>/platforms/ios/<app_name>/Resources`
+### Manage plugins
 
-As an example of the usage of this feature on an OutSystems-supported plugin, see the [Firebase supported plugins documentation](../../integration-with-systems/mobile-plugins/firebase-plugin/intro.md#adding-google-services-configuration-file).
+Define and manage native plugins, specifying their source, required variables, and permissions via [library extensibility configurations JSON file](extensibility-configurations/extensibility-lib-reference.md). 
 
-## Constraints
+Within the app and library extensibility configurations, you can perform native project modifications via the [build actions](build-actions.md). Build Actions use YAML files to define a sequence of customizations to be applied to the mobile project during the build process. With build actions you can modify **Info.plist** or **build.gradle** files in a structured and repeatable way.
 
-To ensure the platform can build your app successfully and that your app works correctly, keep in mind the following restraints for the **Extensibility Configurations** JSON.
+Build actions is the modern replacement for Cordova hooks and is available in both the app and library configuration. You can use build actions only for Capacitor apps.
 
-### Generic
+### Build plugins that support dual framework
 
-Generic constants, applicable to all parts of the **Extensibility Configurations** JSON.
+Support plugins that wrap Cordova, Capacitor, or both. This allows library creators to build a single wrapper that can be used in either a Cordova project or in a modern Capacitor project, facilitating a smoother transition.
 
-* The JSON schema and key/value pairs must follow the structure described in this topic.
+### Configure and manage build time settings
 
-* The first-level key/value pairs are optional and their order is not relevant.
+You can configure and manage build time settings for your mobile app using **Extensibility settings**. You can declare these settings for your mobile app in ODC Studio and from ODC Portal, you can define and manage these settings for different deployment stages. For detailed information, refer to [Configuring mobile apps](configuring-mobile-apps.md).
 
-* Write the name of each name/value pair using lowercase letters because the JSON is case-sensitive.
+## Related resources
+
+For more information about configuring your app using universal extensibility configurations:
+
+* [Universal extensibility configurations JSON schema](extensibility-configurations.md)
+
+* [Using extensibility configurations](extensibility-configurations-use-cases.md) 
+
+For more information about configuring your app using Cordova-based extensibility configurations:
+
+* [Cordova-based extensibility configurations JSON schema](legacy-extensibility-configuration.md)
+
+* [Cordova-based extensibility configurations use cases](cordova-extensibility-configurations-use-cases.md)

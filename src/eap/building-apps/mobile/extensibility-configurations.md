@@ -4,7 +4,7 @@ tags: extensibility configurations, json configuration, mobile build service, mo
 locale: en-us
 guid: 941e56cf-aacf-43bf-9d1c-f131565036e6
 app_type: mobile apps
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2600&t=ZwHw8hXeFhwYsO5V-1
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8221-2
 platform-version: odc
 audience:
   - mobile developers
@@ -18,120 +18,59 @@ coverage-type:
   - remember
 topic:
   - customize-mobile-apps
+helpids: 30664
 ---
 
-# Advanced configurations for mobile app
+# Universal extensibility configurations JSON schema
 
-ODC provides ways to configure your mobile app's native shell. Most preferences can be configured using the extensibility, which receives [the configuration JSON](extensibility-configurations-json-schema.md). Some of these preferences you can found in the **Mobile** tab to change the most used preferences in the UI.
+With the introduction of the modern [Capacitor](https://capacitorjs.com/docs) framework the extensibility configurations support both Capacitor and Cordova frameworks and are managed through two distinct JSON files.
 
-For control and configuring options not exposed in the **Mobile** tab, you can edit the Extensibility Configurations. This page details how to modify the JSON structure to achieve these customizations.
+* [App extensibility configurations JSON file](extensibility-configurations/extensibility-app-reference.md)
 
-Some of the functionalities you can change with Extensibility Configurations include:
+* [Library extensibility configurations JSON file](extensibility-configurations/extensibility-lib-reference.md)
 
-* Defining portrait or landscape orientation
-* Setting up a splash screen
-* Defining a minimum mobile platform version
-* Adding mobile plugins
-* Changing deep link behavior
-* Configuring domains
-* Customizing the status bar
-* Modifying the app icon
+OutSystems recommends adopting the universal schema because of the following benefits:
 
-## Managing configurations across stages
+* Provides better modularity and maintainability by separating app and library configurations
 
-Define default Extensibility Configurations in ODC Studio. You can then override these defaults in the ODC Portal for deployment stages (for example, development or production) to apply environment settings. Portal configurations take precedence over Studio defaults during deployment to that stage.
+* Enables structured and repeatable modifications/customizations using [build actions](build-actions.md) that are available within the app and library extensibility schema.
 
-## Extensibility Configurations editor
+* Supports auto-complete and synctactical validation for preferences and values.
 
-In ODC Studio, open your mobile app, and under **Edit app properties** go to **Extensibility**. Double-click the field to open the editor.
+This screenshot illustrates auto-complete support for JSON while configuring your apps through **Extensibility**.
 
-![Screenshot of the Extensibility Configurations editor in OutSystems Developer Cloud Studio with areas A, B, and C highlighted](images/extensibility-configurations-editor-odcs.png "Extensibility Configurations Editor in ODC Studio")
+![Screenshot showing auto-complete support for JSON configuration in OutSystems Developer Cloud.](images/extensibility-auto-complete-odcs-pl.png "Auto-complete Support for JSON Configuration")
 
-The editor consists of the following:
+The [Cordova-based extensibility configuration schema](legacy-extensibility-configuration.md) doesn't have separate app and library contexts and doesn't support build actions.
 
-* JSON text editor that checks your syntax **(A)**.
-* Context pane with items you can reference by dragging or double-clicking **(B)**.
-* Details pane that lets you view the properties without closing the editor **(C)**.
+<div class="warning" markdown="1">
 
-## Referencing the values in the ODC Studio
-
-In ODC Studio, go to **Data** > **Settings** and create the values you need in your app. Then, in the Extensibility Configurations editor, reference the value from the scope pane. You can also reference images you add to your app.
-
-## Changing the settings in the ODC Portal
-
-Once you publish your app, go to **ODC Portal** > **(your app)** > **Configuration** > **Settings**. Select the setting you want to edit, change the value, and apply the change.
-
-<div class="info" markdown="1">
-
-Changing the values of Setting in ODC Portal doesn't trigger automatic generation of a new mobile package. See [Create mobile app package](creating-mobile-package.md) for more information on how to create a package for iOS or Android.
+The support for the Cordova-based schema will be deprecated soon. If the app includes both Cordova-based and universal schema, the Cordova-based schema is ignored.
 
 </div>
 
-## Sample use cases
+However, If you're building apps with Apache Cordova framework using MABS versions older than 12, you can continue to use the [Cordova-based extensibility configurations  JSON schema](legacy-extensibility-configuration.md).
 
-Here are some use cases of the JSON and how you can change behavior of your mobile app.
+If you attempt to use the Cordova-based schema with the Capacitor apps an error is thrown. For detailed information, refer to [Troubleshooting errors](extensibility-configurations/troubleshooting-errors.md).
 
-### Lock the screen orientation
+## App extensibility configurations JSON schema
 
-The value is hard-coded and locks the screen to portrait.
+[App configuration](extensibility-configurations/extensibility-app-reference.md)is defined at the mobile app level. You use it to customize the final mobile app package, setting properties like the display name, orientation, app-wide permissions, and splash screen. This is the primary configuration you edit when building your app.
 
-    {
-    (...)
-        "preferences": {
-            "global": [{
-                "name": "orientation",
-                "value": "portrait"
-            }]
-        }
-    (...)
-    }
+For detailed information about app configurations use cases, refer to [Using extensibility configuration JSON schema](extensibility-configurations-use-cases.md).
 
-### Define a custom variable
+## Library extensibility configurations JSON schema
 
-You can define a variable in  **Data** > **Settings** and reference it.
+[Library (or plugin) configuration](extensibility-configurations/extensibility-lib-reference.md) is defined within a library module. You use it to define the native plugin that the library wraps. In library configuration, you can specify the plugin source, such as npm, its required variables, and the specific permissions the plugin needs to function. You edit this configuration file when creating or wrapping a mobile plugin.
 
-    {
-    (...)
-        "preferences": {
-            "global": [{
-                "name": "MySampleSetting",
-                "value": $settings.MobileAppSetting1
-            }]
-        }
-    (...)
-    }
+For detailed information about library configurations use cases, refer to [Using extensibility configuration JSON schema](extensibility-configurations-use-cases.md).
 
-### Define a private git repository for a custom mobile plugin
+## Related resources
 
-You can use secrets to add private data to the JSON of a plugin or app.
+For more information about configuring your app using universal extensibility configurations:
 
-For example, you may need to point to a private git repository accessed by a token. To do this:
+* [App extensibility configuration JSON schema](extensibility-configurations/extensibility-app-reference.md)
 
-1. Define, `MyRepoXWithToken`, for example, as the setting for the `url` of the plugin:
+* [Library (plugin) extensibility configuration JSON schema](extensibility-configurations/extensibility-lib-reference.md)
 
-        {
-        (...)
-            "plugin": {
-                "url": $settings.MyRepoXWithToken
-            }
-        (...)
-        }
-
-1. Mark it as a secret and set its value with your secret, for example `"https://[TOKEN]@github.com/OutSystems/cordova-plugin-camera.git#v1"`
-
-You could also use a secret to use an API key on a preference on a plugin, for example.
-
-### Reference an image
-
-You can also reference images in the JSON file.
-
-    {
-    (...)
-        "icons": {
-            "android": [{
-                "resource": $images.Logo,
-                "density": "ldpi"
-            }]
-        }
-    (...)
-    }
+* [Using extensibility configurations](extensibility-configurations-use-cases.md)

@@ -352,9 +352,28 @@
         # Create a mobile package
         - href: eap/building-apps/mobile/configuring-mobile-apps.md
         - topics:
-            - href: eap/building-apps/mobile/extensibility-configurations.md
+            # Intro to extensibility configurations
+                          
             - href: eap/building-apps/mobile/extensibility-configurations-json-schema.md
-            - href: eap/building-apps/mobile/customize-deeplink-behavior.md
+             # Universal extensibility configurations
+            - href: eap/building-apps/mobile/extensibility-configurations.md
+            - topics:
+                - href: eap/building-apps/mobile/extensibility-configurations/extensibility-app-reference.md
+                - href: eap/building-apps/mobile/extensibility-configurations/extensibility-lib-reference.md
+                - href: eap/building-apps/mobile/extensibility-configurations-use-cases.md
+             # Cordova-based extensibility configurations
+            - href: eap/building-apps/mobile/legacy-extensibility-configuration.md
+            - topics:
+                - href: eap/building-apps/mobile/cordova-extensibility-configurations-use-cases.md
+            - href: eap/building-apps/mobile/build-actions.md
+            - topics:
+                - href: eap/building-apps/mobile/build-actions-android.md
+                - href: eap/building-apps/mobile/build-actions-iOS.md
+                
+            - href: eap/building-apps/mobile/extensibility-configurations/troubleshooting-errors.md
+            
+             
+        - href: eap/building-apps/mobile/mabs-overview.md
         - href: eap/building-apps/mobile/creating-mobile-package.md
         - href: eap/building-apps/mobile/privacy-updates-for-apple-app-store-submissions.md
         # Progressive web app
@@ -506,6 +525,7 @@
         - href: eap/integration-with-systems/mobile-plugins/payments-plugin/intro.md
         - href: eap/integration-with-systems/mobile-plugins/ssl-pinning/intro.md
         - href: eap/integration-with-systems/mobile-plugins/using-cordova-plugins.md
+        - href: eap/integration-with-systems/mobile-plugins/migrate-cordova-plugin.md 
     #Javascript    
     - href: eap/integration-with-systems/javascript/javascript.md
     - topics:

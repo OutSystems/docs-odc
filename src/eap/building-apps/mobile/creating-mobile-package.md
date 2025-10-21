@@ -20,55 +20,78 @@ topic:
 
 # Create mobile app package
 
-After creating a mobile app in ODC (OutSystems Developer Cloud) Studio, you can create a mobile app package in ODC Portal. The following list describes the overall process of making your app available for users:
+A mobile app package is a compiled version of your mobile app, ready for installation on devices or distribution through app stores. It includes all the necessary resources, configurations, and code to run the app on specific platforms such as iOS or Android.
+
+ODC uses a cloud service called **Mobile Apps Build Service (MABS)** to generate these packages, so you don't need to manage the native SDKs.
+
+MABS versions earlier than 12.0 use Apache Cordova as its underlying hybrid framework. [MABS 12](mabs-overview.md) supports both Cordova and Capacitor as a dual-stack solution.
+
+After creating a mobile app in ODC Studio, you can create a mobile app package in ODC Portal.
+
+Here's the overall process to make your app available to your users:
 
 1. Develop your app. You can quickly preview your app in a browser as you develop.
-1. Try your app on a mobile device by creating a debug package for installation.  
+
+1. Try your app on a mobile device by creating a debug package for installation.
+
 1. Create your production mobile package.
+
 1. Distribute your app by submitting it as a package to an app store or sharing it internally for a direct download.
 
 <div class="warning" markdown="1">
 
-Avoid changing the app name. If you change the app name, ODC changes the URL, which is the app's identifier. To learn more, refer [considerations when building mobile apps](#considerations-when-building-mobile-apps).
+Avoid changing the app name when building mobile apps. If you change the app name, ODC changes the URL, which is the app's identifier. To learn more, refer to [considerations when building mobile apps](#considerations-when-building-mobile-apps).
 
 </div>
 
-## Creating an iOS or Android Package
+## Create an iOS or Android package
 
-Go to ODC Portal and in the app details page, click **Mobile distribution**. To create a package click **Create package**. From the same screen, you can create an iOS or Android package. ODC can process two packages at the same time. Once you click the **Create Package** button, the ODC Portal displays a screen for you to provide configuration information. On first use, ODC Portal prefills some iOS and Android configuration fields for you.
+To create an iOS or Android package, follow these steps:
 
-Once the creation of the package completes, the display shows you the date and time it was last created, who created it, and a link to download the package. The page also shows the PWA QR code, information about the version, build type, and app identifier.  
+1. Go to the ODC Portal and navigate to the app details page.
 
-To configure a package, you can use the default settings or enter information specific to your package. The required fields have an asterisk. The following sections contain a list of the fields to complete and a short description.
+1. Click **Mobile distribution**.
 
-## iOS package
+1. Click **Create package** to start the process.
+From the same screen, you can create an iOS or Android package. ODC can process two packages at the same time.
+  
+    ![Screenshot of the ODC Portal showing the option to create a new mobile package for iOS.](images/create-mobile-package-pl.png "Create Mobile Package in ODC Portal")
 
-Settings for creating an iOS package.
+1. Select the **Build type**, the way you want to distribute this mobile package, such as a stage, the app store, or in-house for testing purposes
 
-* **Build type** - the way you want to distribute this mobile package such as a stage, the app store or in-house for testing purposes
-* **App identifier** - a unique identifier for your app in stores
-* **Certificate** - authentication used in Apple’s iOS developer program
-* **Certificate password** - the password to use for the authentication process
-* **Provisioning profile** - the profile that matches the certificate
-* **Mobile Apps Build Service (MABS) version** - a cloud service used by ODC to generate your packages
-* **Version (Major, Minor, Patch)** - the ODC Portal suggests a version number, but you can enter any version number that's equal to or higher than the previous version
-* **Version code** - a number that increments by one every time MABS generates a new package. You can change this number, but it must be higher than the previous version
+1. Enter the  **App identifier**, a unique identifier for your app in stores
 
-## Android package
+1. (For iOS package) Provide the **Certificate**, **Certificate password**, and **Provisioning profile**.
 
-Settings for creating an Android package.
+1. (For Android package) Provide the Keystore details such as **Keystore** binary file, **Keystore password**, **Alias**, and **Alias password**.
 
-* **Build type** - the way you want to distribute this mobile package, such as a stage, a Google Play (app bundle), debug, or release
-* **App identifier / Keystore details** - a unique identifier for your app in stores and Keystore details
-* **Mobile Apps Build Service (MABS) version**  - a cloud service used by ODC to generate your package
-* **Version (Major, Minor, Patch)** - ODC Portal suggests a version number, but you can enter any version number that's equal to or higher than the previous version
-* **Version code** - a number that increments by one every time MABS generates a new package. You can change this number, but it must be higher than the previous version.
+2. Select the **Mobile Apps Build Service (MABS) version**. You can select either the stable version or a particular MABS version. If you choose version **12.0**, then select either **Cordova** or **Capacitor** as the mobile framework. For detailed information about dusal stack support in MABS, refer to [Capacitor and Cordova support in MABS](mabs-overview.md).
 
-## App versions and MABS
+    ![Screenshot of the ODC Portal showing the configuration fields for creating an iOS package.](images/create-ios-android-package-pl.png "Create iOS or Android Package Configuration")
 
-ODC uses OutSystems **Mobile App Build Service (MABS)**. MABS is a cloud service that generates mobile packages. OutSystems continually improves MABS and makes new versions available. On the create package page, you can select the MABS version you want to use to create the mobile packages. ODC Portal records the MABS version you chose to generate the mobile package.  
+3. Enter the **Version (Major, Minor, Patch)** number. If you want to modify the version, enter any version number that's equal to or higher than the previous version
 
-The mobile package includes a version code field that's different from the app version. A version code is an internal number associated with the current code used to create the mobile package. App stores use this number to determine whether one version is more recent than another version. By default, the version code increments by one every time MABS creates a mobile app package. The version of the app that gets created in ODC Studio isn't production-ready. This means it’s not ready for distribution, but you can use it to create a package.
+* Enter the **Version code**, a number that increments by one every time MABS generates a new package. You can change this number, but it must be higher than the previous version.
+
+Once you've finished creating the package, you can view the following details:
+
+* Package creation date and time
+
+* Package creator
+
+* Link to download the package
+
+The page also shows the PWA QR code, version information, build type, and app identifier.
+
+## Understanding MABS and versioning in mobile app packages
+
+ OutSystems improves MABS and makes new versions available to support new SDKs and essential toolchain upgrades. On the create package page, you can select the MABS version you want to use to create the mobile packages. For detailed information about the MABS versioning, refer to [MABS versioning and lifecycle](https://success.outsystems.com/support/release_notes/mobile_apps_build_service_versions/mabs_versioning_and_lifecycle/).
+
+ The ODC Portal records the MABS version you chose to generate the mobile package.
+
+The mobile package includes a version code field that's different from the app version. A version code is an internal number associated with the current code used to create the mobile package.
+
+App stores use this number to determine whether one version is more recent than another version. By default, the version code increments by one every time MABS creates a mobile app package. The version of the app that gets created in ODC Studio isn't production-ready. This means it’s not ready for distribution, but you can use it to create a package.
 
 <div class="warning" markdown="1">
 
@@ -81,17 +104,32 @@ _QR CODE is a registered trademark of Denso Wave Incorporated._
 
 ## Download mobile app build logs { #download-mobile-app-build-logs }
 
-You can obtain the build logs of your mobile apps in the ODC Portal. Build logs are available for successful and failed builds, and each platform (Android and iOS) has its build log.
+From the ODC Portal, you can download the mobile package after a successful build. However, build logs are always available, whether the package creation succeeds or fails.
 
 To obtain a mobile app build log:
 
-1. In the ODC Portal, go to **Apps** and click your mobile app name to navigate to the mobile app detail page.
-1. In the **Mobile distribution** tab, click the log icon for the desired platform to download the build log.
-    ![Screenshot showing how to download logs for mobile packages in ODC Portal](images/Logs-mobile-odcs.png "Download Logs for Mobile Packages")
+1. Go to the ODC Portal.
+
+1. Navigate to mobile app detail page.
+
+1. Click **Mobile distribution**.
+
+1. Choose the platform iOS or Android. If the package is successfully created, download the package.
+To download the logs, click the ellipsis.
+
+  ![Screenshot showing how to download logs for mobile packages in ODC Portal.](images/mobile-package-logs-pl.png "Download Logs for Mobile Packages")
 
 ## View package history
 
-You can view the package history of your mobile app in the ODC Portal. The package history allows you to monitor the following:
+You can access the package history to review previously created mobile packages. Package history helps troubleshoot failures by showing whether issues occurred in earlier versions or resulted from recent changes.
+
+<div class="info" markdown="1">
+
+For MABS 12, the package history and distribution details indicate the framework used for each build. Existing builds are tagged as Cordova builds.
+
+</div>
+
+You can also download the mobile package, logs, and source code files when available. The package history allows you to monitor the following:
 
 * Successful and failed mobile package creation requests
 * Mobile app version
@@ -100,29 +138,27 @@ You can view the package history of your mobile app in the ODC Portal. The packa
 * Timestamp of when the mobile package creation process started
 * Person who triggered the mobile package creation process
 
-You can also download package, log, and source code files.
+To view the package history of your mobile app, follow these steps:
 
-Monitoring your package history and having access to package resources helps you troubleshoot. The package history allows you to identify whether an issue occurs on previous versions or is a new issue created by recent changes to the package.
+1. Go to the ODC Portal.
 
-To view the package history of your mobile app:
+1. Navigate to mobile app detail page.
 
-1. In the ODC Portal, click the relevant mobile app.
-
-1. Select the **Mobile distribution** tab and click **View history**.
-
-    ![Screenshot of the mobile distribution tab highlighting the 'View history' button in ODC Portal](images/viewhistory-mobdistribution-odcs.png "Mobile Distribution Tab - View History")
+1. Select **Mobile distribution** and click **View history**.
 
     The package history is displayed.
 
-    ![Screenshot displaying the package history of a mobile app in ODC Portal](images/viewhistory-packagehistory-odcs.png "Package History Overview")
+    ![Screenshot displaying the package history of a mobile app in ODC Portal.](images/view-package-history-pl.png "Package History Overview")
 
-For more information about troubleshooting your apps, see [Monitor and troubleshoot apps](../../monitor-and-troubleshoot/monitor-apps.md).
+    Successful builds show a **Created** status, while failed builds show **Failed**. The failed builds also includes the specific error that resulted in the failure for easy troubleshooting.
+
+    ![Screenshot showing a failed mobile build error in the package history.](images/mobile-build-failed-error-pl.png "Mobile Build Failed Error")
 
 ## Considerations when building mobile apps
 
-Consider the following when creating mobile apps.
+Consider the following when building mobile apps.
 
-### Change app name breaks experience in mobile apps { #changing-app-name }
+### Changing the app name breaks the experience in mobile apps { #changing-app-name }
 
 Avoid changing the app name. If you change the app's name, ODC changes the URL, which is the app's identifier. This adversely impacts the mobile apps already running on devices or in distribution because:
 
@@ -145,4 +181,6 @@ OutSystems recommends the Chrome browser for previewing the mobile app in the OD
 
 ## Related resources
 
-* [Native App Generation](https://learn.outsystems.com/training/journeys/native-app-generation-677) online course
+* [MABS versioning and lifecycle](https://success.outsystems.com/support/release_notes/mobile_apps_build_service_versions/mabs_versioning_and_lifecycle/)
+
+* [Building Cordova and Capacitor apps in MABS 12](mabs-overview.md)
