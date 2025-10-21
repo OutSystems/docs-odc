@@ -23,7 +23,7 @@ helpids: 30646, 30647, 30649, 30650
 
 In ODC Studio, you can integrate AI capabilities into your apps either by calling AI models directly or by orchestrating them through AI agents. Choose the approach that matches how dynamic and autonomous the required behavior must be.
 
-An **agentic app** uses one or more AI agents to perform tasks, automate workflows, or handle complex multi‑step interactions. Unlike traditional apps that rely on direct user input for each step, agentic apps can act autonomously or semi‑autonomously—making decisions, invoking external tools, and coordinating logic. These apps consume the capabilities exposed by AI agents.
+An **Agentic app** uses one or more AI agents to perform tasks, automate workflows, or handle complex multi‑step interactions. Unlike traditional apps that rely on direct user input for each step, agentic apps can act autonomously or semi‑autonomously—making decisions, invoking external tools, and coordinating logic. These apps consume the capabilities exposed by AI agents.
 
 ## AI models
 
@@ -33,7 +33,7 @@ In ODC, an AI model is a pre-trained algorithm or deployed machine learning serv
 
 AI agents in ODC run without a user interface. They orchestrate AI models, business data, and external tools to add autonomy and decision-making. An agent app consumes AI model capabilities via a `Call<AIModelName>` server action and exposes its logic through a `Call<AgentName>` service action to any consuming app. For more information, see [Build AI-powered apps](intro.md).
 
-![ODC Studio interface showing options to create a Web app, Mobile app, or Agent.](images/agent-app-odcs.png "ODC Studio App Creation Options")
+![Dropdown menu in ODC Studio showing options for creating different types of apps, with 'Agentic app' selected.](images/app-dropdown-odcs.png "ODC Studio App Type Selection")
 
 ### Understand the relationship
 
@@ -64,7 +64,7 @@ System prompts (also called system instructions or system messages) are instruct
 State persistence is the ability of an AI agent to retain and recall information from past interactions, decisions, or observations. Unlike single-shot AI model calls, which are stateless, memory allows an agent to build a continuous understanding of a situation, user, or ongoing process.
 
 * **Why it matters for agents:** For an agent to perform complex, multi-step tasks or engage in extended interactions, it must remember what has occurred. Without memory, each interaction is isolated, leading to repetitive questions, incoherent responses, or an inability to complete processes that span multiple steps or sessions. Memory enables personalization, context retention, and learning over time.
-* **How it works in ODC agents:** In ODC, the `StoreMemory` action, a key part of the AgentTask logic, serves this purpose. This action lets developers explicitly save relevant data, such as previous user queries, AI model outputs, intermediate decisions, or system states, that the agent might need to recall in future interactions or steps. You can then retrieve and integrate this stored memory into subsequent prompts or decision-making. For more information, see [Creating an AI agent in ODC Studio](create-agent.md).
+* **How it works in ODC agents:** In ODC, the `StoreMemory` action, a key part of the AgentFlow logic, serves this purpose. This action lets developers explicitly save relevant data, such as previous user queries, AI model outputs, intermediate decisions, or system states, that the agent might need to recall in future interactions or steps. You can then retrieve and integrate this stored memory into subsequent prompts or decision-making. For more information, see [Creating an AI agent in ODC Studio](create-agent.md).
 * **Benefits:** Memory enhances the agent's intelligence and utility by enabling it to:
     * Maintain conversational context across multiple turns.
     * Learn from past interactions to improve future performance.
