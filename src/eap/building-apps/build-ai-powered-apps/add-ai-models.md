@@ -44,7 +44,39 @@ Using the [ODC API contract](ai-models.md#custom-model-connections), you can add
 
 **ODC trial models:**
 
-ODC provides ready-to-use trial models for quick testing and exploration in the development stage. These include GPT-4o via Azure OpenAI and Claude 3.7 Sonnet via Amazon Bedrock. Trial models via Azure OpenAI allow only 100 calls per tenant. Trial models via Amazon Bedrock allow up to 1000 calls and serve for initial evaluation before you set up your own configured connection.
+ODC provides ready-to-use trial models for quick testing and exploration in the development stage. In every tenant and Personal Edition, the following models are available:
+
+* **GPT-4o** via Azure Open AI
+* **Claude 3.7 Sonnet** via Amazon Bedrock
+* **Amazon Nova Pro** via Amazon Bedrock
+
+Trial models have limits, which, when reached, prevent the further use of the models. You can check your consumption on the Trial Model details page on the ODC Portal.
+
+The following tables shows the current limits of the available Trial Models.
+
+**GPT-4o**
+
+|Context|Maximum number of Requests|Requests rate limit| Maximum number of Tokens|Tokens Rate limit|
+|--|--|--|--|--|
+|Licensed Customers|100|N.A.|N.A.|N.A.|
+
+**Claude 3.7 Sonnet**
+
+|Context|Maximum number of Requests|Requests rate limit| Maximum number of Tokens|Tokens Rate limit|
+|--|--|--|--|--|
+|Licensed Customers|1000|N.A.|N.A.|N.A.|
+|Personal Edition|3000|30 per minute|5 Million|100000 per minute|
+
+**Amazon Nova Pro**
+
+|Context|Maximum number of Requests|Requests rate limit| Maximum number of Tokens|Tokens Rate limit|
+|--|--|--|--|--|
+|Licensed Customers|1000|N.A.|N.A.|N.A.|
+|Personal Edition|1000|3 per minute|1 Million|12000 per minute|
+
+**Note:** Note that the information on this article reflects the limits for trial models added at the present date and that these limits can be subject to change without notice period.
+
+Also, note that AI Model providers can impose limits themselves, so we encourage you to check the AI Models providers documentation to learn more about those limits.
 
 ## Prerequisites
 

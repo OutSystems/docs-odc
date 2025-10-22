@@ -38,7 +38,11 @@ The following video walks you through adding and configuring AI models, using AI
 
 <iframe src="https://player.vimeo.com/video/1112003106" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Video on how to implement AI model calls in your app logic.</iframe>
 
-First, identify the name you gave your [AI model connection](add-ai-models.md#add-ai-models) in the **ODC Portal**. Navigate to **INTEGRATE** > **AI models**, select your model, and check the **Name** field in its **Details**. ODC uses this name, referred to here as **(model name)**, to expose an action named **Call(model name)**.
+First, you must find the specific Server Action ODC creates for your model.
+
+1. **Find the connection name:** In the ODC Portal, navigate to **INTEGRATE > AI models**. Select your model and check the **Name** field in its **Details**, referred to here as **(model name)**. 
+1. **Find the Server Action in ODC Studio:** In ODC Studio, go to the **Logic** tab. Under **Server Actions** looks for the action named **Call(model name)**.
+1. **Add it as public element if missing:** If you can't find the Server Action, add it as a [public element](../../app-architecture/reuse-elements.md#public-elements)
 
 This section explains how to call a configured AI model from your ODC app logic. This is how the interaction generally works when your ODC app logic communicates with an AI model using the provided structures:
 
