@@ -180,3 +180,9 @@ As an example of the usage of this feature on an OutSystems-supported plugin, se
 * [Universal extensibility configuration JSON schema](extensibility-configurations.md)
 
 * [Troubleshooting errors](extensibility-configurations/troubleshooting-errors.md)
+
+<div class="info" markdown="1">
+
+Extensibility configurations may be processed by OutSystems for the purposes of service improvement and troubleshooting. These configurations should not include or permit access by OutSystems to personal data or confidential or sensitive information. Customers are responsible for ensuring that no personal data or confidential or sensitive information is accessible to OutSystems through any Extensibility configurations. Where such information is included in those configurations, customers should use secret settings to prevent personal data or confidential or sensitive information from being collected by OutSystems.
+
+</div>

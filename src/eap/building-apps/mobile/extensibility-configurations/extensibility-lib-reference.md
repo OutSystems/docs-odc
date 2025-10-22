@@ -19,8 +19,6 @@ helpids:
 
 <div class="info" markdown="1">
 
-Extensibility configurations may be processed by OutSystems for the purposes of service improvement and troubleshooting. These configurations should not include or permit access by OutSystems to personal data or confidential or sensitive information. Customers are responsible for ensuring that no personal data or confidential or sensitive information is accessible to OutSystems through any Extensibility configurations. Where such information is included in those configurations, customers should use secret settings to prevent personal data or confidential or sensitive information from being collected by OutSystems.
-
 The schema may change with every new MABS version.
 
 </div>
@@ -679,3 +677,9 @@ The parameters to pass values to the variables defined on the yaml.
 
 * Optional  
 * Type: `object`
+
+<div class="info" markdown="1">
+
+Extensibility configurations may be processed by OutSystems for the purposes of service improvement and troubleshooting. These configurations should not include or permit access by OutSystems to personal data or confidential or sensitive information. Customers are responsible for ensuring that no personal data or confidential or sensitive information is accessible to OutSystems through any Extensibility configurations. Where such information is included in those configurations, customers should use secret settings to prevent personal data or confidential or sensitive information from being collected by OutSystems.
+
+</div>

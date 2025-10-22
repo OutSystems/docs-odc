@@ -30,6 +30,12 @@ Applies only to mobile apps.
 
 Some of these properties can be configured visually via the mobile app properties. For detailed information, refer to [Configuring mobile apps](configuring-mobile-apps.md).
 
+<div class="info" markdown="1">
+
+Extensibility configurations may be processed by OutSystems for service improvement and troubleshooting purposes. You are fully responsible for ensuring these configurations never contain, or allow OutSystems to access, any personal, confidential, or sensitive information. If a configuration must include sensitive details, you must use the ODC's secret settings to prevent sensitive data from being collected or accessed by OutSystems.
+
+</div>
+
 ## Why are extensibility configurations needed?
 
 Extensibility configurations are essential for customizing mobile apps and managing plugins to meet specific requirements. For detailed information about different use cases, refer to [Using extensibility configurations](extensibility-configurations-use-cases.md).
