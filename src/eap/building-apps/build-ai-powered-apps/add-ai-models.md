@@ -50,7 +50,7 @@ ODC provides ready-to-use trial models for quick testing and exploration in the 
 * **Claude 3.7 Sonnet** via Amazon Bedrock
 * **Amazon Nova Pro** via Amazon Bedrock
 
-Trial models have limits, which, when reached, prevent the further use of the models. You can check your consumption on the Trial Model details page on the ODC Portal.
+Trial models have limits, which, when reached, prevent the further use of the models. They're not bound by a specific time frame. You can check your consumption on the Trial Model details page on the ODC Portal.
 
 The following tables shows the current limits of the available Trial Models.
 
