@@ -74,9 +74,11 @@ The following tables shows the current limits of the available Trial Models.
 |Licensed Customers|1000|N.A.|N.A.|N.A.|
 |Personal Edition|1000|3 per minute|1 Million|12000 per minute|
 
-**Note:** Note that the information on this article reflects the limits for trial models added at the present date and that these limits can be subject to change without notice period.
+<div class="info" markdown="1">
 
-Also, note that AI Model providers can impose limits themselves, so we encourage you to check the AI Models providers documentation to learn more about those limits.
+The information in this article reflects the limits for trial models added at the present date and that these limits can be subject to change without notice period. Also, note that AI Model providers can impose limits themselves. For detailed information on limits, refer to the AI model provider's documentation.
+
+</div>
 
 ## Prerequisites
 
