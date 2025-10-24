@@ -199,7 +199,7 @@ For more details about group claims and their maximum length values, refer to [G
 You can filter groups by stage.
 1. Click **Save**.
 
-The  mapping is created.
+The mapping is created.
 
 <div class="info" markdown="1">
 
@@ -222,7 +222,7 @@ For more details about group claims and their maximum length values, refer to [G
 You can filter groups by stage.
 1. Click **Save**.
 
-The  mapping is updated.
+The mapping is updated.
 
 <div class="info" markdown="1">
 
