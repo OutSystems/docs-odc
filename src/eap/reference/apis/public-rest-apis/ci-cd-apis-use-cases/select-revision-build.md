@@ -31,8 +31,9 @@ A **build** is the process of compiling your code and creating a deployable pack
 
 Before using the APIs to get the revision and build of your asset, ensure that you have:
 
-* [Generated an access token](../authentication/get-access-token.md) with the necessary permissions.  
-* The key of the asset to be deployed.
+* [Generated an access token](../authentication/get-access-token.md) with this [permission](../authentication/create-api-client.md#edit-permissions-of-api-client):
+    * [Asset management > Open](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/build_operations_api/#get-/build-operations)
+* The key of the asset to be deployed
 
     <div class="info" markdown="1">
 
@@ -44,7 +45,7 @@ Before using the APIs to get the revision and build of your asset, ensure that y
 
     </div>
 
-## Select the revision and build of the asset to be deployed
+## Select the revision and build of the asset to be deployed {#select}
 
 To get the revision and build of the asset in your CI/CD pipeline, follow these steps:
 
@@ -66,4 +67,5 @@ To get the revision and build of the asset in your CI/CD pipeline, follow these 
 
 ## Next steps
 
+* [Setting the release version and release notes](set-version-release-notes.md)
 * [Deploying your asset to the target stage](deploy-asset.md)

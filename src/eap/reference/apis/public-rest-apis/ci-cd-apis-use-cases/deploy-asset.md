@@ -25,8 +25,10 @@ This article explains how to use OutSystems APIs to programmatically deploy an a
 
 Before using the APIs to deploy your asset to a target stage, ensure that you have:
 
-* [Generated an access token](../authentication/get-access-token.md) with the necessary permissions.  
-* The [key of the build](select-revision-build.md) to be deployed.  
+* [Generated an access token](../authentication/get-access-token.md) with these [permissions](../authentication/create-api-client.md#edit-permissions-of-api-client):
+    * [Stage > View stage](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/deployments_api/#get-/deployment-operations)  
+    * [Release management > Deploy apps](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/deployments_api/#post-/deployment-operations)
+* The [key of the build](select-revision-build.md) to be deployed
 * The environment key of the target stage
 
     <div class="info" markdown="1">
