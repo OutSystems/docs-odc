@@ -33,7 +33,7 @@ To view and modify the app properties, click the app name and select **Mobile**.
 
 The mobile app properties work correctly only if the extensibility scripts are error-free. If there are errors, ODC Studio displays a warning message. To get details about the issue, hover over the warning icon beside a property title in the **Mobile** tab. The same behavior occurs when the mobile app property uses a placeholder variable in the extensibility script.
 
-While the mobile app properties syncs with the underlying extensibility configuration files, for advanced use cases you can directly edit the [Extensibility configurations](extensibility-configurations-json-schema.md) files. These JSON files offer granular control over your mobile app's build process and enable custom adjustments.
+While the mobile app properties sync with the underlying extensibility configuration files, for advanced use cases you can directly edit the [Extensibility configurations](extensibility-configurations-json-schema.md) files. These JSON files offer granular control over your mobile app's build process and enable custom adjustments.
 
 ## Configure extensibility settings
 
