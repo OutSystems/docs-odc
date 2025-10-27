@@ -228,9 +228,9 @@ When you export your audit data to a CSV file, additional, more detailed attribu
 
 <div class="info" markdown="1">
 
-* **Secret configurations** display \*\*\*\*\*\*\* instead of the actual value.
+* **Secret configurations** such as an external database password or an API key, display \*\*\*\*\*\*\* instead of the actual value.
 
-* **Binary configurations** display \*\*\*\*\*\*\* instead of the binary value. A binary can contain secret data.
+* **Binary configurations** such as uploaded files used for building your app, display \*\*\*\*\*\*\* instead of the binary value. A binary can contain secret data.
 
 * When you add or remove users from end user groups, the logs show the **difference** between the old value and the new value. All other logs show the old value and the new value. End user groups can contain thousands of user values. To ensure high performance, Audit trail prioritizes showing the smaller `diff` rather than the full list of end users.
 
