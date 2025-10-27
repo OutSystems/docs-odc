@@ -9,7 +9,6 @@ figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troublesh
 audience:
   - backend developers
   - full stack developers
-  - data engineers
 outsystems-tools:
   - odc studio
   - odc portal

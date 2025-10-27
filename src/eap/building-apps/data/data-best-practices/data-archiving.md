@@ -12,7 +12,6 @@ audience:
   - platform administrators
   - tech leads
   - architects
-  - data engineers
 outsystems-tools:
   - odc studio
 ---

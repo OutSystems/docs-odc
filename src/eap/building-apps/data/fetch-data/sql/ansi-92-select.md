@@ -11,7 +11,6 @@ app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - backend developers
-  - data engineers
 tags: sql, mashup queries, select statement, with clause, database queries
 outsystems-tools:
   - odc studio
