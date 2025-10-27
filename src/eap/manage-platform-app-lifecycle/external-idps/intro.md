@@ -248,10 +248,13 @@ If this is the user's first time logging in with this IdP, ODC creates both a ne
 
 ### Email verification logic
 
-The "IdP email is verified" check depends on the **Trust all user emails as verified** configuration in the ODC Portal that you set when you create an IdP.
+User emails are verified in the following ways:
 
-* **If `Trust all user emails as verified` is set to `Yes`:** The IdP email is considered verified regardless of any claims from the IdP.
-* **If `Trust all user emails as verified` is set to `No`:** ODC relies on the `email_verified` claim provided by the IdP. If the claim is `true`, the email is verified; otherwise, it is not.
+* **User verification** - ODC requires users to verify their email addresses by completing an email verification flow to confirm ownership.
+
+* **Trust identity provider** - ODC honors the `email_verified` claim from the identity provider. If the claim is missing or invalid, emails are considered unverified. Users with unverified email addresses must validate their email through the IdP.
+
+* **Trust all user emails as verified** - ODC considers all user emails from the IdP as verified.
 
 ## Avoid lockout scenarios { #lockout }
 
