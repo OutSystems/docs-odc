@@ -99,6 +99,14 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 18.133.40.32, 18.168.96.203, 52.56.82.205 |
 | Production | 18.134.166.61, 18.168.216.210, 52.56.140.63 |
 
+#### Europe (Ireland)
+
+| Stage type | IP addresses |
+| ----- | ----- |
+| Development | 176.34.238.77, 54.247.112.214, 52.30.168.24 |
+| Non-production | 34.251.61.185, 52.18.84.11, 52.211.9.249 |
+| Production | 54.76.0.216, 54.72.139.76, 52.51.220.40 |
+
 #### Europe (Frankfurt)
 
 | Stage type | IP addresses |

@@ -82,7 +82,7 @@ The Data platform runs in a designated region based on your ODC organization’s
 | :--- | :--- |
 | US East (North Virginia), CA (Canada Central) | US East (North Virginia) |
 | South America (São Paulo) | South America (São Paulo) |
-| Europe (Frankfurt), Europe (London), Middle East (Tel Aviv), Middle East (UAE) | Europe (Frankfurt) |
+| Europe (Frankfurt), Europe (London), Europe (Ireland), Middle East (Tel Aviv), Middle East (UAE) | Europe (Frankfurt) |
 | Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta) | Asia Pacific (Singapore) |
 
 ### Runtime { #runtime }
