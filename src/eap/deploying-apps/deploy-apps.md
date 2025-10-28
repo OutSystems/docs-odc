@@ -25,7 +25,7 @@ helpids: 30685
 
 Use OutSystems Developer Cloud (ODC) Portal to deploy your assets (apps and workflows). In ODC, you deploy your assets to stages. A stage is a step within your delivery pipeline that includes runtime resources. By default, ODC includes two stages: development and production.
 
-ODC has a single code repository. When you deploy in ODC Studio, your asset is containerized, deployed to the development stage, and a container image is available. When you're ready to deploy your asset to the next stage your asset deploys without the need to recompile code again.
+ODC has a single code repository. When you deploy an asset in ODC Studio, it is [containerized](../getting-started/capacity-limits.md), deployed to the development stage, and a container image is created. When you're ready to deploy your asset to the next stage, your asset deploys without the need to recompile code again.
 
 Assets in each stage are isolated from each other. When you publish an asset to the development stage, it doesn't impact the assets running in other stages. Similarly, publishing assets to production doesn't affect assets in a previous stage, such as development.
 
@@ -89,6 +89,12 @@ Your asset is deployed to your selected stage. To roll back an update from a st
 
 For more information about the impact analysis report, refer to [Understanding the impact analysis report](#understanding-the-impact-analysis-report).
 
+## Undeploy assets
+
+You can undeploy assets from any stage in the ODC Portal. To undeploy an asset, go to the asset detail and select **&#183;&#183;&#183;** > **Undeploy**.
+
+When you undeploy an asset, it no longer consumes containers in that stage. For more information about resource consumption, refer to [Monitor ODC resource capacity](../getting-started/capacity-limits.md).
+
 ## Versions and revisions
 
 Versions and revisions help you track changes in your assets. You can publish your apps and workflows to Development, and every time you publish, the revision number increments by one. Revision numbers are whole numbers displayed below the asset's name on the **Deployments** screen.
@@ -113,15 +119,15 @@ You can have multiple revisions of a workflow in the same stage. A revision can 
 
 For example, consider a bank loan application workflow with three workflow revisions in production.
 
-**Scenario**
+#### Scenario
 
-Two users (user 1 and user 2)  (each user application = an instance) initiate the application process using  version 1.0.0 revision 2 of the workflow, typically taking a month or two to complete. During this time, a newer workflow version version 1.1.0 revision 3 with an additional step may be deployed.
+Two users (user 1 and user 2) initiate the application process using version 1.0.0 revision 2 of the workflow. Each user application represents an instance. The process typically takes a month or two to complete. During this time, a newer workflow version 1.1.0 revision 3 with an additional step may be deployed.
 
 Then, two new users (user 3 and user 4) initiate the application process using version 1.1.0 revision 3 of the workflow. During this time, the latest workflow version 1.2.0 revision 4 with more enhancements may be deployed.
 
 ![Diagram showing multiple revisions of a bank loan application workflow with different users completing processes in various versions and revisions.](images/application-workflow-diag.png "Example Application Workflow")
 
-**Outcome**
+#### Outcome
 
 * Users 1 and 2 complete the application process on version 1.0.0 revision 2.
 

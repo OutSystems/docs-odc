@@ -21,7 +21,12 @@ topic:
 
 # Deleting apps and libraries
 
-During the development process, you may create apps or libraries for testing. As time goes on, you may no longer need these apps or libraries. OutSystems Developer Cloud (ODC) lets you safely delete apps, and libraries from stages such as Development. You can't delete apps and libraries from your Production stage. Having a clean stage makes it faster to find the apps and libraries you need.
+During the development process, you may create apps or libraries for testing. As time goes on, you may no longer need these assets. OutSystems Developer Cloud (ODC) lets you safely delete apps and libraries that are deployed in all stages except your production stage.
+
+Deleting assets that are no longer needed is useful for:
+
+* **Improved organization**: Deleting unused assets makes it faster to find the apps and libraries you need.
+* **Resource optimization**: When you delete an asset, it no longer [consumes compute instances](../getting-started/capacity-limits.md) in any stage.
 
 To delete an app or library, open ODC Portal and select **Apps** from the left nav menu. Click on the app or library you want to delete. In the details screen that opens click the three-dots in the upper-right corner and select **Delete app** or **Delete library**.
 

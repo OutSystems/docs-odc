@@ -123,12 +123,13 @@ For example, if you have reached the limit for the number of CIs, ODC displays a
 
 ## Optimize consumption { #optimize }
 
-To ensure your assets don’t consume more resources than necessary, it’s important to take the most out of the subscribed resources. Make sure to:
+To ensure your assets don't consume more resources than necessary, it's important to take the most out of the subscribed resources. Make sure to:
 
 * Apply OutSystems best practices such as [Best practices for data management](../building-apps/data/data-best-practices/intro.md) and [Best practices for logic](../building-apps/logic/best-practices-logic.md).
 * Monitor [Code quality](../monitor-and-troubleshoot/manage-technical-debt/managing-tech-debt.md) to prevent common performance pitfalls.
 * Leverage [ODC analytics](../monitor-and-troubleshoot/app-health.md) to identify performance improvements.
 * Use [ODC logs and traces](../monitor-and-troubleshoot/monitor-apps.md) to identify and troubleshoot performance issues.
+* Remove unused assets by [deleting assets](../deleting-apps/intro.md) that are no longer needed or [undeploying assets](../deploying-apps/deploy-apps.md#undeploy-assets) from stages where they're not required.
 
 ## What happens when you exceed a resource limit { #limits }
 
