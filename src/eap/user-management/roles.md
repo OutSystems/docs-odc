@@ -40,7 +40,7 @@ ODC allows implementing user access control policies on these domains:
 * Support cases management
 * Subscription management
 
-## Effective permissions calculation
+## Effective permissions calculation { #effective-permissions-calculation }
 
 Permissions are applied at the **organization** or **app stage** [scope](intro.md#organization-app-stage-and-app-scope). A user's total permissions are the sum of all roles assigned to them at both the **organization** and **asset** (**app**) [**scopes**](intro.md#organization-app-stage-and-app-scope). You can assign one role for the organization scope, and one role for each app.
 

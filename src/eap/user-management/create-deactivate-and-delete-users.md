@@ -70,6 +70,12 @@ To manually register [members (IT-users)](intro.md#members-it-users), follow the
 
       ![Screenshot of the Invite user screen in ODC Portal showing fields for email, organization access, and scope selection.](images/create-new-member-pl.png "Invite new member in ODC Portal")
 
+    <div class="info" markdown="1">
+
+    For more details about how permissions are applied at the **organization** or **apps** scope, refer to [effective permissions](roles.md#effective-permissions-calculation) calculation.
+
+    </div>
+
 1. Click **Send invite**.
 
     The invited user receives an email with a verification code and a link to join your tenant in the ODC Portal.
