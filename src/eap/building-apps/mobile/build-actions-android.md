@@ -25,7 +25,11 @@ This article provides reference documentation for all Android build actions avai
 
 ## appName
 
-**Type**: `string`
+**Type**:
+
+```TypeScript
+string
+```
 
 **Description**: Updates the app display name, by changing the label attribute in the AndroidManifest.xml file, or setting the strings resource value when a resource value is referenced in the manifest.
 
@@ -42,8 +46,7 @@ platforms:
 **Type**:
 
 ```TypeScript
-
-type: `Array<
+Array<
   | {
       file: string;
       target: string;
@@ -68,7 +71,7 @@ type: `Array<
       file: string;
       delete: string; // xpath
     }
->`
+>
 ```
 
 **Description**: Applies modifications against Android Manifest XML files.
@@ -117,7 +120,7 @@ platforms:
 **Type**:
 
 ```TypeScript
-type: `Array<
+Array<
   | {
       file: string;
       target: object;
@@ -134,14 +137,16 @@ type: `Array<
       target: object;
       replace: object;
     }
->`;
+>;
+```
 
 **Description**: Applies modifications to Gradle files.
 
 **Insert**:
-   * Inserts new Gradle snippets.
-   * Accepts either a raw string of Groovy-based Gradle, or an object.
-   * When inserting an object, this operation takes an `insertType` of either `method` (default) or `variable` which will create either a method call (`methodName methodArg`) or an assignment (`variable = value`).
+
+* Inserts new Gradle snippets.
+* Accepts either a raw string of Groovy-based Gradle, or an object.
+* When inserting an object, this operation takes an `insertType` of either `method` (default) or `variable` which will create either a method call (`methodName methodArg`) or an assignment (`variable = value`).
 **Replace**: Replaces existing Gradle configurations.
 
 **Conditional**: Yes
@@ -198,7 +203,7 @@ platforms:
 **Type**:
 
 ```TypeScript
-type: `Array<
+Array<
   | {
       path: string;
       file: string;
@@ -209,7 +214,7 @@ type: `Array<
       file: string;
       source: string;
     }
->`;
+>;
 ```
 
 **Description**: Creates new resource files that will be stored under the `res` folder of the Android project structure.
@@ -243,15 +248,15 @@ platforms:
         source: ../common/test/fixtures/icon.png
       - path: drawable
         file: remote-icon.png
-        source: [OutSystems Icon](https://www.outsystems.com/icon.png)
+        source: https://www.outsystems.com/icon.png
 ```
 
 ## json
 
-  **Type**:
+**Type**:
 
 ```TypeScript
-type: `Array<
+Array<
   | {
       file: string;
       set: object;
@@ -260,7 +265,7 @@ type: `Array<
       file: string;
       merge: object;
     }
->`;
+>;
 ```
 
 **Description**: Modifies the content of JSON files.
@@ -286,10 +291,10 @@ platforms:
 
 ## xml
 
-  **Type**:
+**Type**:
 
 ```TypeScript
-type: `Array<
+Array<
   | {
       file: string;
       target: string;
@@ -319,7 +324,7 @@ type: `Array<
       file: string;
       delete: string; // xpath
     }
->`;
+>;
 ```
 
 **Description**: Applies modifications to the specified XML file.
@@ -350,7 +355,11 @@ platforms:
 
 ## copy
 
-**Type**: `Array<{ src: string; dest: string; }>`
+**Type**:
+
+```TypeScript
+Array<{ src: string; dest: string; }>
+```
 
 **Description**: Copies files, directories, or URLs relative to the root of the Android project.
 
@@ -364,7 +373,7 @@ platforms:
         dest: app/google-services.json
       - src: old/path/of/directory
         dest: new/path/of/directory
-      - src: [OutSystems File](https://www.outsystems.com/file.png)
+      - src: https://www.outsystems.com/file.png
         dest: new/path/of/file.png
 ```
 
@@ -373,7 +382,7 @@ platforms:
 **Type**:
 
 ```TypeScript
-type: `Array<
+Array<
   | {
       source: string;
       targetDir: string;
@@ -387,7 +396,7 @@ type: `Array<
       file: string;
       patchFile: string;
     }
->`;
+>;
 ```
 
 **Description**: Adds source code files to the project or applies patches to source files.
@@ -410,16 +419,19 @@ platforms:
       - file: MainActivity.java
         target: /import com.getcapacitor.BridgeActivity;/
         replace: |
-
-import com.getcapacitor.BridgeActivity;
-          import com.cordova.plugin.splashscreenvideo.VideoDialogFragment;
+            import com.getcapacitor.BridgeActivity;
+            import com.cordova.plugin.splashscreenvideo.VideoDialogFragment;
       - file: MainActivity.java
         patchFile: 'patches/MainActivity.patch'
 ```
 
 ## tar
 
-**Type**: `Array<{ src: string; dest: string; command: 'c' | 'r' | 'u' | 'x'; }>`
+**Type**:
+
+```TypeScript
+Array<{ src: string; dest: string; command: 'c' | 'r' | 'u' | 'x'; }>
+```
 
 **Description**: Adds tar support to build actions.
 

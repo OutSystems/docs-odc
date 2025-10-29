@@ -51,7 +51,11 @@ platforms:
 
 ### displayName
 
-**Type**: `string`
+**Type**:
+
+```TypeScript
+string
+```
 
 **Description**: Updates the app display name, which appears on a device when installed.
 
@@ -65,7 +69,11 @@ platforms:
 
 ### productName
 
-**Type**: `string`
+**Type**:
+
+```TypeScript
+string
+```
 
 **Description**: Updates the product name, which appears in the App Store and on a device when installed.
 
@@ -79,7 +87,11 @@ platforms:
 
 ### buildSettings
 
-**Type**: `Record<string, string>`
+**Type**:
+
+```TypeScript
+Record<string, string>
+```
 
 **Description**: Sets build settings.
 
@@ -90,24 +102,22 @@ platforms:
   ios:
     buildSettings:
       ENABLE_BITCODE: false
-      SWIFT_VERSION: 5.0
+      SWIFT_VERSION: '5.0'
 ```
 
 ### buildPhases
 
 **Type**:
 
- ```TypeScript
-
-type: `Array<{
+```TypeScript
+Array<{
   comment: string;
   shellPath: string;
   shellScript: string;
   inputPaths?: Array<string>;
   outputPaths?: Array<string>;
   replace?: boolean;
-}>`;
-
+}>;
 ```
 
 **Description**: Sets build phases scripts to run. By default, values should be merge unless replace is set to `true` to overwrite the entire target object with a given comment.
@@ -130,13 +140,11 @@ platforms:
 **Type**:
 
 ```TypeScript
-
-type: `Array<{
+Array<{
   file?: string;
   replace?: boolean;
   entries: Array<any>;
-}>`;
-
+}>;
 ```
 
 **Description**: Updates the **Info.plist** file for the specified target and build, or default target and all builds when not specified. Or updates a given plist file if provided.
@@ -165,12 +173,10 @@ platforms:
 **Type**:
 
 ```TypeScript
-
-type: `Array<{
+Array<{
   replace?: boolean;
   entries: Array<any>;
-}>`;
-
+}>;
 ```
 
 **Description**: Updates the PrivacyInfo.xcprivacy file for the specified target and build, or default target and all builds of not specified.
@@ -199,12 +205,10 @@ platforms:
 **Type**:
 
 ```TypeScript
-
-type: `Array<{
+Array<{
   entries: Array<Record<string, boolean | string | string[]>>;
   replace?: boolean;
-}>`;
-
+}>;
 ```
 
 **Description**: Updates the .entitlements file for the specified target and build, or the default target and all builds if not specified.
@@ -228,14 +232,12 @@ platforms:
 **Type**:
 
 ```TypeScript
-
-type: `Array<{
+Array<{
   name: string;
   customFramework?: boolean;
   link?: boolean;
   embed?: boolean;
-}>`;
-
+}>;
 ```
 
 **Description**: Adds core frameworks to the iOS project.
@@ -255,8 +257,7 @@ platforms:
 **Type**:
 
 ```TypeScript
-
-type: `Array<
+Array<
   | {
       file: string;
       set: object;
@@ -265,7 +266,7 @@ type: `Array<
       file: string;
       merge: object;
     }
->`;
+>;
 
 ```
 
@@ -297,12 +298,11 @@ platforms:
 **Type**:
 
 ```TypeScript
-
-`Array<
+Array<
   | {
       file: string;
       target: string;
-      attrs: `Record<string, string>`;
+      attrs: Record<string, string>;
     }
   | {
       file: string;
@@ -328,7 +328,7 @@ platforms:
       file: string;
       delete: string;
     }
->`;
+>;
 ```
 
 **Description**: Applies modifications to the specified XML file.
@@ -358,12 +358,10 @@ platforms:
 **Type**:
 
 ```TypeScript
-
-`Array<{
+Array<{
   src: string;
   dest: string;
-}>`;
-
+}>;
 ```
 
 **Description**: Copies files, directories, or URLs relative to the root of the iOS project.
@@ -387,8 +385,7 @@ platforms:
 **Type**:
 
 ```TypeScript
-
-`Array<
+Array<
   | {
       file: string;
       set: Record<string, string>;
@@ -397,8 +394,7 @@ platforms:
       file: string;
       setFromJson: string;
     }
->`;
-
+>;
 ```
 
 **Description**: Updates `.strings` files to add/update localization/translation strings.
@@ -420,10 +416,14 @@ platforms:
 
 ### xcconfig
 
-**Type**: `Array<{
+**Type**:
+
+```TypeScript
+Array<{
   file: string;
   set: Record<string, string>;
-}>`
+}>
+```
 
 **Description**: Updates `.xcconfig` files to add/update build configurations.
 
@@ -440,7 +440,10 @@ platforms:
 
 ### code
 
-**Type**: `Array<
+**Type**:
+
+```TypeScript
+Array<
   | {
       source: string;
       compilerFlags?: string;
@@ -454,7 +457,8 @@ platforms:
       file: string;
       patchFile: string;
     }
->`
+>
+```
 
 **Description**: Adds source code files to the project or applies patches to source files.
 
@@ -485,13 +489,11 @@ platforms:
 **Type**:
 
 ```TypeScript
-
-`Array<{
+Array<{
   src: string;
   dest: string;
   command: 'c' | 'r' | 'u' | 'x';
-}>`;
-
+}>;
 ```
 
 **Description**: Adds tar support to build actions.

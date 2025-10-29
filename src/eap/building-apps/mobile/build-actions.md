@@ -20,15 +20,21 @@ helpids:
 
 # Build actions
 
-You can use build actions to perform native project modifications such as modifying **Android Manifest file**, **Info.plist** or **build.gradle** files in a structured and repeatable way. Build Actions use YAML-based configuration file and a set of predefined constructs to define and apply modifications to a mobile app during the build process. Build actions are integrated into the mobile app build process via [Extensibility](extensibility-configurations-json-schema.md). 
+You can use build actions to perform native project modifications such as modifying **Android Manifest file**, **Info.plist** or **build.gradle** files in a structured and repeatable way. Build Actions use YAML-based configuration file and a set of predefined constructs to define and apply modifications to a mobile app during the build process. Build actions are integrated into the mobile app build process via [Extensibility](extensibility-configurations-json-schema.md).
 
 You can configure your extensibility from **App** > **Edit app properties** > **Extensibility**.
 
-Build actions are the modern replacement for Cordova hooks and is available in both the [app](extensibility-configurations/extensibility-app-reference.md) and [library](extensibility-configurations/extensibility-lib-reference.md) extensibility configuration. You can use build actions only for Capacitor apps.
+Build actions are the modern replacement for Cordova hooks and is available in both the [app](extensibility-configurations/extensibility-app-reference.md) and [library](extensibility-configurations/extensibility-lib-reference.md) extensibility configuration.
+
+<div class="info" markdown="1">
+
+You can use build actions only for Capacitor apps.
+
+</div>
 
 The actions execute after the `cap sync` command during the build.
 
-The build actions are platform specific. For detailed information about iOS build actions, refer to [iOS build actions](build-actions-iOS.md). For detailed information about Android build actions, refer to [Andriod build actions](build-actions-android.md).
+The build actions are platform specific. For detailed information about iOS build actions, refer to [iOS build actions](build-actions-iOS.md). For detailed information about Android build actions, refer to [Android build actions](build-actions-android.md).
 
 ## Use cases for build actions
 
@@ -50,7 +56,7 @@ Here are some ways in which you can use build actions for customizing your iOS a
 
 * Update the **Info.plist** file for the specified target and build. For example, to define custom URL schemes (CFBundleURLSchemes) or add other key-value entries.
 
-* Setting specific Xcode build settings, such as disabling Bitcode or specifying the Swift version.
+* Set specific Xcode build settings, such as disabling Bitcode or specifying the Swift version.
 
 * Modify the **.entitlements** file to configure app capabilities such as keychain access groups.
 
@@ -83,7 +89,7 @@ platforms:
 
 In ODC Studio, add the YAML file as a resource. Set  **Deploy Action** to **Deploy to Target Directory**.
 
-#### Step 3: Configure Extensibility
+### Step 3: Configure Extensibility
 
 Under **App > Edit app properties > Extensibility**, add the configuration to resolve variables defined within the YAML file. The `parameters` property is used to resolve the variables.
 
@@ -133,7 +139,6 @@ Example: `gt(3,1)`
 Example: `lt(1,3)`
 
 ```yaml
-
 variables:
   APPLY_PATH:
     default: 0
