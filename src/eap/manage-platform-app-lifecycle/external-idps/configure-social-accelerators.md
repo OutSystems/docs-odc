@@ -2,10 +2,10 @@
 summary: Social provider accelerator requirements for authentication in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 3080f31e-088b-4278-a2b8-1134a5a40255
-app_type: mobile apps, reactive web apps
+app_type: mobile apps,reactive web apps
 platform-version: odc
-tags: authentication, identity provider, openid connect, security, social login
-figma:
+tags: authentication,identity provider,openid connect,security,social login
+figma: 
 audience:
   - mobile developers
   - frontend developers
@@ -16,6 +16,10 @@ topic:
   - idp-saml
 outsystems-tools:
   - odc portal
+coverage-type:
+  - apply
+  - understand
+helpids: 30711
 ---
 
 # Configure social providers with accelerators

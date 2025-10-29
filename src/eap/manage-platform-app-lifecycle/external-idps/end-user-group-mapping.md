@@ -1,5 +1,5 @@
 ---
-helpids: 30469
+helpids: 30469, 30706
 summary: OutSystems Developer Cloud (ODC) facilitates efficient onboarding by enabling group mapping from identity providers to automate role assignments.
 locale: en-us
 guid: 84c9098b-c486-483f-9836-70b8faee63fa

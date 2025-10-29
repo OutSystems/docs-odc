@@ -5,7 +5,7 @@ summary: Manage end-user groups using OutSystems Developer Cloud (ODC), integrat
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3750-47
 coverage-type:
   - apply
-app_type: mobile apps, reactive web apps
+app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - none
@@ -15,6 +15,7 @@ outsystems-tools:
 topic:
   - user-groups
   - assign-to-user-groups
+helpids: 30705
 ---
 
 # Manage end-user groups

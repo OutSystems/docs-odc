@@ -2,9 +2,8 @@
 guid: 32f57458-d846-40e5-bef8-154c0bca4e41
 locale: en-us
 summary: Learn how to create, deactivate, and delete users in the system.
-figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3704-89&t=9snmrSiMZOFs7g77-1
-
-app_type: mobile apps, reactive web apps
+figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3704-89
+app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - platform administrators
@@ -20,6 +19,7 @@ topic:
   - assign-to-user-groups
   - built-in-authentication
   - creating-users
+helpids: 30703
 ---
 
 # Create, activate, deactivate, and delete users

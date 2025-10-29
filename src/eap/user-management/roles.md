@@ -1,12 +1,12 @@
 ---
-helpids: 30493
+helpids: 30493, 30704
 summary: OutSystems Developer Cloud (ODC) features organization and end-user roles to manage access and permissions within its development environment.
 locale: en-us
 guid: 766ab743-31f2-4f58-ad91-a4cd0db8ab93
-app_type: mobile apps, reactive web apps
+app_type: mobile apps,reactive web apps
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3717-132
 platform-version: odc
-tags: access management, permissions, user onboarding, user roles, organization management
+tags: access management,permissions,user onboarding,user roles,organization management
 audience:
   - full stack developers
   - platform administrators

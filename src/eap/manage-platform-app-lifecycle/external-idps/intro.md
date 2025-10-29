@@ -22,7 +22,7 @@ topic:
   - external-idps
   - idp-openidp
   - idp-saml
-helpids: 
+helpids: 30707
 ---
 
 # Configure authentication with external identity providers
