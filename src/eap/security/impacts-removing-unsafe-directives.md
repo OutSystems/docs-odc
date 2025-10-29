@@ -31,19 +31,23 @@ This document examines the potential consequences of removing these directives a
 
 ## Impacts on OutSystems components
 
-### [OutSystems Charts](../reference/apis/chart-intro.md)
+### OutSystems Charts
 
 * **Issue**: Version 1 of the Charts component may experience runtime issues.
 
 * **Recommendation**: Update to the latest version of the Charts component.
 
-### [OutSystems Data Grid](../building-apps/ui/patterns/interaction/data-grid/data-grid-overview.md)
+For more information about OutSystems Charts, refer to [OutSystems Charts](../reference/apis/chart-intro.md).
+
+### OutSystems Data Grid
 
 * **Issue**: The **Calculated Column**  won't work.
 
 * **Workaround**: Avoid using **Calculated Columns**.
 
-### [OutSystems Maps](../building-apps/ui/patterns/interaction/map/intro.md)
+For more inforamtion about OutSystems Data Grid, refer to [OutSystems Data Grid](../building-apps/ui/patterns/interaction/data-grid/data-grid-overview.md).
+
+### OutSystems Maps
 
 The following table summarizes the OutSystems map and Leaflet map functionality when the unsafe CSP directives are removed.
 
@@ -74,6 +78,8 @@ The following table summarizes the OutSystems map and Leaflet map functionality 
 * **Issue**: Leaflet map tiles not visible
 
 * **Workaround**: Missing in the CSP configuration the following domain: ``tile.openstreetmap.org``
+
+For more information about OutSystems Maps, refer to [OutSystems Maps](../building-apps/ui/patterns/interaction/map/intro.md).
 
 ### Mobile UI
 
