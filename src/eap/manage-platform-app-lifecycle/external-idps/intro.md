@@ -257,21 +257,19 @@ For SAML providers, you can choose from the following email verification methods
 
 * **User verification**: ODC requires users to verify their email addresses by completing an email verification flow to confirm ownership.
 
-* **Trust identity provider**: The identity provider includes email verification information in its attributes, and ODC trusts the verification status. The IdP must have the email verification claim configured in the Verified email field. If no valid email verification claim is returned, users are considered to have an unverified email.
-
 * **Trust identity provider**: The identity provider includes email verification information in its attributes, and ODC trusts the verification status. The IdP must have the email verification claim configured in the **Verified email** field. If no valid email verification claim is returned, users are considered to have an unverified email.
 
-* **Trust all user emails as verified** - ODC considers all user emails from the IdP as verified
+* **Trust all user emails as verified**: ODC considers all user emails from the IdP as verified
 
 #### OIDC and social accelerator providers
 
 For OIDC and social accelerator providers, you can choose from the following email verification methods:
 
-* **User verification** - ODC requires users to verify their email addresses by completing an email verification flow to confirm ownership.
+* **User verification**: ODC requires users to verify their email addresses by completing an email verification flow to confirm ownership.
 
-* **Trust identity provider** - ODC honors the ``email_verified`` claim from the identity provider. If the claim is missing or invalid, emails are considered unverified. Users with unverified email addresses must validate their email through the IdP.
+* **Trust identity provider**: ODC honors the ``email_verified`` claim from the identity provider. If the claim is missing or invalid, emails are considered unverified. Users with unverified email addresses must validate their email through the IdP.
 
-* **Trust all user emails as verified** - ODC considers all user emails from the IdP as verified.
+* **Trust all user emails as verified**:  ODC considers all user emails from the IdP as verified.
 
 ## Avoid lockout scenarios { #lockout }
 
