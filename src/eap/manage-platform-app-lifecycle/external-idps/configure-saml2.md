@@ -139,13 +139,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     * Want assertions signed
     * NameID policy format
 
-1. In the **Organization user email verification** section, choose one of the following options for handling email verification:
-
-    * **User verification**: Choose this option to always verify users' emails using ODC's email verification flow, even if they’ve already been verified by the identity provider.
-
-    * **Trust identity provider**: Choose this option if your identity provider includes email verification information in its attributes and you want to trust that verification status. If you choose this option, you must map the identity provider's email verification claim in the **Verified email** field. If no valid email verification claim is returned, users are considered to have an unverified email.
-
-    * **Trust all user emails as verified:** Choose this option to automatically trust all email addresses from a provider, regardless of whether they are verified or not.
+1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](intro.md#email-verification-logic).
 
 1. Click **Next**.
 
