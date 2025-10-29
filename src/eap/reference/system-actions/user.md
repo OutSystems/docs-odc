@@ -185,7 +185,7 @@ _Outputs_
 :   Type: [StartResetPasswordResult](#startpasswordresetresult)
     Result of the action. Returns the verification code if successful.
 
-### StartUpdateEmail
+### StartUpdateEmail { #startupdateemail }
 
 _Server action_
 
