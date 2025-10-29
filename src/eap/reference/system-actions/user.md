@@ -165,7 +165,7 @@ _Outputs_
 :   Type: Boolean.
     True if the logged user is an external user.
 
-### StartResetPassword
+### StartResetPassword { startresetpassword }
 
 _Server action_
 
