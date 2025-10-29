@@ -141,11 +141,13 @@ OutSystems recommends default values to ensure the platform works as expected. I
 
 ## Required values {#required-values}
 
-The **Required values** are the values that ODC automatically applies to the directive for the applications to work correctly. These values can't be removed.
+The **Required values** are the values that ODC automatically applies to the directive for the apps to work correctly. These values can be removed, but doing so may impact the functionality of your apps.
 
 * ``unsafe-inline``: The unsafe-inline directive allows the use of inline resources such as inline ``<script>``and ``<style>`` elements, ``javascript: URLs``, and inline event handlers that are currently used by the platform.
 
 * ``unsafe-eval``: The unsafe-eval directive allows the web pages to evaluate strings as code. This directive consists of the eval function, the function constructor, and some usages of the setTimeout and setInterval functions that are currently used by the platform.
+
+For more details about the impacts of removing `unsafe-eval` and `unsafe-inline` directives, refer to [Impacts of removing unsafe directives](./impacts-removing-unsafe-directives.md).
 
 ## Operational and security considerations
 

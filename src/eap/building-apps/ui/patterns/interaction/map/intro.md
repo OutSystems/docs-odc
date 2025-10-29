@@ -21,7 +21,7 @@ topic:
 
 # Map
 
-The OutSystems **Map** component allows you to add maps to your applications with single or multiple locations. The Map component is fully customizable, allowing you to, for example, change map behaviors, search for locations, and plan your route.
+The OutSystems **Map** component allows you to add maps to your apps with single or multiple locations. The Map component is fully customizable, allowing you to, for example, change map behaviors, search for locations, and plan your route.
 
 ## Static maps
 

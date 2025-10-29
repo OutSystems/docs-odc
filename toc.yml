@@ -536,7 +536,8 @@
 - topics:
     - href: eap/security/hipaa.md
     - href: eap/security/pci.md
-    - href: eap/security/configure-csp.md   
+    - href: eap/security/configure-csp.md
+    - href: eap/security/impacts-removing-unsafe-directives.md
     - href: eap/security/app-shield/intro.md
     - topics: 
         - href: eap/security/app-shield/protection-features-description.md
