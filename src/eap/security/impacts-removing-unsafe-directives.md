@@ -77,16 +77,22 @@ The following table summarizes the OutSystems map and Leaflet map functionality 
 
 ### Mobile UI
 
+<div class="info" markdown="1">
+
+Mobile UI is only available to Early Access Program (EAP) customers.
+
+</div>
+
 * **Issues**: Some patterns, such as **Card**, **Date Picker**, **Input OTP**, and **Text Area**, may lose some styling.
 
-* **Workarounds**:
+* **Workarounds**
 
-* **Card**: Add`'unsafe-inline'` to the `style-src` directive
+    * **Card**: Add`'unsafe-inline'` to the `style-src` directive
 
-* **Date Picker**: Add `'unsafe-inline'` and `connect-src: data:` to the `style-src` directive
+    * **Date Picker**: Add `'unsafe-inline'` and `connect-src: data:` to the `style-src` directive
 
-* **Input OTP**: Add `'unsafe-inline'` to the `style-src` directive
+    * **Input OTP**: Add `'unsafe-inline'` to the `style-src` directive
 
-* **Text Area**: Add `'unsafe-inline'` to the `style-src` directive
+    * **Text Area**: Add `'unsafe-inline'` to the `style-src` directive
 
 Some patterns may break visually due to missing CSS. Adjust the CSP configuration as needed to restore functionality.
