@@ -1,6 +1,6 @@
 ---
-summary: none
-tags: none
+summary: Use OutSystems Mentor to transform natural language prompts into functional apps with data models, UI, and business logic. Refine your app with AI-powered suggestions in the App Editor.
+tags: app development, ai-powered tool, rapid prototyping, natural language processing, application lifecycle
 guid: b17a8f2d-c767-49b4-9f50-381329442aba
 locale: en-us
 app_type: reactive web apps
@@ -8,15 +8,17 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=6814-98&t=06ppRqezdRkEkuAh-1
 outsystems-tools:
   - portal
+  - ai mentor studio
 coverage-type:
-  - understand 
+  - understand
 audience:
   - frontend developers
   - backend developers
   - full stack developers
   - ui designers
+topic:
+  - creating-apps
 ---
-
 # About Mentor App Generator and Editor
 
 OutSystems Mentor is a suite of GenAI capabilities that accelerates the application development lifecycle. Mentor addresses common challenges such as time-consuming prototyping and converting requirements into functional code.
