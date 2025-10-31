@@ -93,13 +93,11 @@ platforms:
         attrs:
           android:name: com.ionicframework.intune.IntuneApplication
       - file: AndroidManifest.xml
-        target: manifest/application
+        target: manifest
         merge: |
-          <application>
-            <queries>
+          <queries>
               <package android:name="com.azure.authenticator" />
-            </queries>
-          </application>
+          </queries>
       - file: AndroidManifest.xml
         target: manifest
         inject: |
