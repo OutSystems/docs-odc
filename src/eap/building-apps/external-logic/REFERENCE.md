@@ -441,3 +441,10 @@ Allows renaming the .NET struct property/field without breaking ODC
 apps consuming it. This property holds the original name of the
 struct property/field, so the key generated from the struct name
 remains unchanged, and app references are not broken.
+
+## Related resources
+
+* [External libraries SDK README](README.md)
+  
+* [Extend your apps with custom code](intro.md)
+  
