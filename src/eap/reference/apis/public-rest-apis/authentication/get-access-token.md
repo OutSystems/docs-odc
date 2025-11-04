@@ -16,7 +16,7 @@ figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=471
 ---
 # Get access token
 
-Once you have the client credentials, you can use the client ID and client secret to generate an access token from the authorization server. This article explains how to get the access token to access the public REST APIs. It is intended for developers who want to access the OutSystems' public APIs.
+Once you have the client credentials, you can use the client ID and client secret to generate an access token from the authorization server. This article explains how to get the access token to access the public REST APIs. It is intended for developers who want to access the OutSystems public APIs.
 
 Here's the diagram that represents OAuth 2.0 client credentials flow for authenticating REST APIs. It illustrates the entire lifecycle of an access token, from its initial generation and storage to its use in API calls.
 
@@ -40,7 +40,7 @@ To get an access token, follow these steps:
 
 1. Retrieve the `token_endpoint` metadata value from the Discovery document.
 
-**Using `curl`**
+### Using curl
 
 1. Send a POST request to the `token_endpoint` retrieved from the Discovery document.
 
@@ -54,10 +54,12 @@ To get an access token, follow these steps:
     * `CLIENT_SECRET` is the client secret configured in the ODC app.
 
     <div class="info" markdown="1">
+
     While calling the API from the ODC app, you must manually encode the client secret using the **EncodeURL()** function.
+
     </div>
 
-**Using OutSystems language**
+### Using OutSystems language
 
 OutSystems recommends implementing the logic for generating the access token using client credentials in a library to be reused across different apps.
 
