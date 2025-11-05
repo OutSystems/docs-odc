@@ -40,7 +40,7 @@ The following diagram illustrates the steps to implement external logic in ODC.
 
 ## Build the external logic
 
-To build the external logic using custom C# code, you must use the stand-alone tool kit [OutSystems External Libraries SDK](https://www.nuget.org/packages/OutSystems.ExternalLibraries.SDK). This external OutSystems SDK library allows you to decorate your C# code with SDK attributes that map to OutSystems' visual language elements. For detailed information, refer to the [SDK documentation](README.md). The SDK documentation provides instructions that guide you through every step, from project creation to packaging your built custom C# code into a ZIP file for upload to the ODC Portal.
+To build the external logic using custom C# code, you must use the stand-alone tool kit [OutSystems External Libraries SDK](https://www.nuget.org/packages/OutSystems.ExternalLibraries.SDK). This external OutSystems SDK library allows you to decorate your C# code with SDK attributes that map to OutSystems visual language elements. For detailed information, refer to the [SDK documentation](README.md). The SDK documentation provides instructions that guide you through every step, from project creation to packaging your built custom C# code into a ZIP file for upload to the ODC Portal.
 
 You don't need an  ODC organization account to use the SDK.
 
@@ -71,7 +71,7 @@ A list of pending uploads and published external libraries is displayed.
 
 1. Upload the zip file and  click **Continue**.
 
-    If there are errors in the code, click **View errors** to see the full list of errors. You must fix the errors in the C# code before before proceeding. For detailed troubleshooting information, refer to [External Libraries SDK errors](../../../error/elg/intro.md). Once you've fixed all the errors, click **Upload other file** to upload the revised ZIP file.
+    If there are errors in the code, click **View errors** to see the full list of errors. You must fix the errors in the C# code before proceeding. For detailed troubleshooting information, refer to [External Libraries SDK errors](../../../error/elg/intro.md). Once you've fixed all the errors, click **Upload other file** to upload the revised ZIP file.
 
     <div class="info" markdown="1">
 
