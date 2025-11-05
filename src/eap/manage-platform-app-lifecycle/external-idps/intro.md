@@ -188,7 +188,31 @@ For SAML 2.0 providers, the **scope cannot be changed** after the provider is cr
 
 </div>
 
-## User matching and profiles
+## Email verification logic { #email-verification-logic }
+
+While configuring an IdP, ODC provides different user email verification approaches depending on your IdP type:
+
+### SAML providers
+
+For SAML providers, you can choose from the following email verification methods:
+
+* **User verification**: ODC requires users to verify their email addresses by completing an email verification flow to confirm ownership.
+
+* **Trust identity provider**: The IdP includes email verification information in its attributes, and ODC trusts the verification status. The IdP must have the email verification claim configured in the **Verified email** field. If no valid email verification claim is returned, users are considered to have an unverified email.
+
+* **Trust all user emails as verified**: ODC considers all user emails from the IdP as verified
+
+### OIDC and social accelerator providers
+
+For OIDC and social accelerator providers, you can choose from the following email verification methods:
+
+* **User verification**: ODC requires users to verify their email addresses by completing an email verification flow to confirm ownership.
+
+* **Trust identity provider**: ODC honors the ``email_verified`` claim from the IdP. If the claim is missing or invalid, emails are considered unverified. Users with unverified email addresses must validate their email through the IdP.
+
+* **Trust all user emails as verified**:  ODC considers all user emails from the IdP as verified.
+
+## User matching and profile creation { #claim-mapping-logic }
 
 ODC handles user profile matching differently depending on how users are created and which identity providers they use.
 
@@ -204,8 +228,6 @@ Combining profiles for users who fail to match on login is not supported. This r
 
 </div>
 
-## Understand the user creation and claim mapping logic { #claim-mapping-logic }
-
 <div class="info" markdown="1">
 
 You must map either the **Username** or **Email** field. If the IdP is (or will be) assigned to the Organization scope, mapping the **email** claim is mandatory. If both the **Username** and **Email** fields are empty, a validation error displays.
@@ -218,58 +240,34 @@ The following flow details how ODC handles user login and profile matching when 
 
 When users attempt to log in with an IdP, ODC first checks if they have an **existing IdP profile** (stores IdP **ID** and **subject**, plus the email verification state) associated with that specific IdP. An IdP profile is created for a user the first time they log in with that IdP or if it's created via an API. There are two options:
 
-**Option A: User has an existing IdP profile**  
+**Option A: User has an existing IdP profile for this IdP**  
 If a user has a previously created IdP profile, ODC attempts to find a matching ODC profile.
 
 * **If an ODC profile match is found:**
-    * **Is the user logging in to an app?** If yes, the user is logged in.
-    * **If the user is not logging in to an app:**
-        * **Is the IdP email verified?**
-            * **Yes:** The ODC profile's email is marked as verified, and the user is logged in.
-            * **No:** ODC checks how the ODC profile was matched.
-                * **Was the profile matched on email?**
-                    * **Yes:** The login attempt fails to prevent unauthorized access with an unverified email.
-                    * **No:** The user is logged in.
+    * **Is the user logging in to an app?** If yes, the user is logged in with app roles.
+    * **If the user is logging in to the organization (ODC Portal or ODC Studio):**
+        * **Is the **Trust all user emails as verified** or the **Trust identity provider** option configured?**
+            * **Yes:** Updates the ODC profile with IdP email and verified state, and logs in the user with or without organization roles.
+            * **No:** Logs in the user with or without organization roles.
 
-* **If no ODC profile match is found:** A new ODC profile is created for the user.
-    * **Is the user logging in to an app?**
-        * **Yes:** A new ODC profile is created with an unverified email, and the user is logged in.
-        * **No:** ODC checks if the IdP email is verified.
-            * **Is the IdP email verified?**
-                * **Yes:** A new ODC profile is created, the email is marked as verified, and the user is logged in.
-                * **No:** A new ODC profile is created with an unverified email, and the user is logged in.
+**Option B: User doesn't have an IdP profile for this IdP**  
+If this is the user's first login with this IdP, ODC creates both a new IdP profile and a new ODC profile.
 
-**Option B: User doesn't have an IdP profile**
-
-If this is the user's first time logging in with this IdP, ODC creates both a new IdP profile and a new ODC profile.
-
-* **Is the IdP email verified?**
-    * **Yes:** A new ODC profile is created, the email is marked as verified, and the user is logged in.
-    * **No:** A new ODC profile is created with an unverified email, and the user is logged in.
-
-### Email verification logic { #email-verification-logic }
-
-ODC provides different user email verification approaches depending on your identity provider type:
-
-#### SAML providers
-
-For SAML providers, you can choose from the following email verification methods:
-
-* **User verification**: ODC requires users to verify their email addresses by completing an email verification flow to confirm ownership.
-
-* **Trust identity provider**: The identity provider includes email verification information in its attributes, and ODC trusts the verification status. The IdP must have the email verification claim configured in the **Verified email** field. If no valid email verification claim is returned, users are considered to have an unverified email.
-
-* **Trust all user emails as verified**: ODC considers all user emails from the IdP as verified
-
-#### OIDC and social accelerator providers
-
-For OIDC and social accelerator providers, you can choose from the following email verification methods:
-
-* **User verification**: ODC requires users to verify their email addresses by completing an email verification flow to confirm ownership.
-
-* **Trust identity provider**: ODC honors the ``email_verified`` claim from the identity provider. If the claim is missing or invalid, emails are considered unverified. Users with unverified email addresses must validate their email through the IdP.
-
-* **Trust all user emails as verified**:  ODC considers all user emails from the IdP as verified.
+* **If the IdP email matches an existing ODC profile:**
+    * **If the IdP profile exists for the email and IdP**: The users has a duplicated email, so the email isn't recorded in the ODC profile.
+        * **Is the user logging in to an app?** Creates a new ODC profile, with email unverified, and logs in the user with app roles.
+        * **If the user is logging in to the organization (ODC Portal or ODC Studio):**
+            * **Is the **Trust all user emails as verified** or the **Trust identity provider** option configured?**
+                * **Yes:** Creates a new ODC profile, with IdP email in verified state, and logs in the user with or without organization roles.
+                * **No:** Creates a new ODC profile, with IdP email in unverified state, and logs in the user without organization roles.
+    * **If the IdP profile doesn't exist for the email and IdP**:
+        * Go to option A (ODC profile match found).
+* **If the IdP email doesn't match an existing ODC profile:**
+    * **Is the user logging in to an app?** Creates a new ODC profile, with email unverified, and logs in the user with app roles.
+    * **If the user is logging in to the organization (ODC Portal or ODC Studio):**
+        * **Is the **Trust all user emails as verified** or the **Trust identity provider** option configured?**
+            * **Yes:** Creates a new ODC profile, with IdP email in verified state, and logs in the user with or without organization roles.
+            * **No:** Creates a new ODC profile, with IdP email in unverified state, and logs in the user without organization roles.
 
 ## Avoid lockout scenarios { #lockout }
 
