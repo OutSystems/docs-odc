@@ -60,7 +60,6 @@ OutSystems supports the following Operating Systems. This list is subject to cha
     * macOS Tahoe since ODC Studio 1.6.5
     * macOS Sequoia since ODC Studio 1.5.0
     * macOS Sonoma since ODC Studio 1.4.10
-    * macOS Ventura since ODC Studio 1.4.10
 
 * Windows:
     * Windows 11 (64-bit) since ODC Studio 1.3.15
