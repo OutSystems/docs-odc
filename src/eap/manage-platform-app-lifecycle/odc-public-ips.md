@@ -38,7 +38,7 @@ If you'd like to be informed of any IP address changes, please subscribe to upda
 
 </div>
 
-## Runtime applications accessing internal resources { #runtime-accessing-internal }
+## Runtime applications accessing internal resources {#runtime-accessing-internal}
 
 OutSystems Developer Cloud (ODC) applications often need to connect to external or internal systems, such as APIs or databases. The recommended approaches for securely connecting ODC to private systems are, in order of preference:
 
@@ -47,7 +47,12 @@ OutSystems Developer Cloud (ODC) applications often need to connect to external 
 
 <div class="info" markdown="1">
 
-IP allowlisting can't be applied to [custom code](../building-apps/external-logic/intro.md) that make outbound calls to internal resources. In these scenarios, the outbound traffic doesn't originate from the shared ODC public IP addresses, and therefore can't be controlled using IP allowlisting. To securely connect custom code to internal systems, you must use the [ODC Private Gateway](private-gateway.md).
+IP allowlisting can't be applied to:
+
+* [custom code](../building-apps/external-logic/intro.md) that make outbound calls to internal resources.
+* Requests from your ODC apps to AWS services (such as S3) that are located in the same region as your ODC tenant.
+
+In these scenarios, the outbound traffic doesn't originate from the shared ODC public IP addresses, and therefore can't be controlled using IP allowlisting. To securely connect custom code to internal systems, you must use the [ODC Private Gateway](private-gateway.md).
 
 </div>
 
@@ -179,7 +184,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 108.137.107.109, 108.137.147.80, 16.78.156.70 |
 | Production | 108.137.159.172, 16.79.51.184, 43.218.83.26 |
 
-## Streaming app analytics { #streaming-app-analytics }
+## Streaming app analytics {#streaming-app-analytics}
 
 [Analytics stream](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md) uses the ODC Data platform to continuously stream app analytics to external Application Performance Monitoring (APM) tools.
 
