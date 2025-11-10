@@ -35,7 +35,7 @@ This document examines the potential consequences of removing these directives a
 
 * **Issue**: Version 1 of the Charts component may experience runtime issues.
 
-* **Recommendation**: Update to the latest version of the Charts component.
+    * **Recommendation**: Update to the latest version of the Charts component.
 
 For more information about OutSystems Charts, refer to [OutSystems Charts](../reference/apis/chart-intro.md).
 
@@ -43,7 +43,7 @@ For more information about OutSystems Charts, refer to [OutSystems Charts](../re
 
 * **Issue**: The **Calculated Column**  won't work.
 
-* **Workaround**: Avoid using **Calculated Columns**.
+    * **Workaround**: Avoid using **Calculated Columns**.
 
 For more inforamtion about OutSystems Data Grid, refer to [OutSystems Data Grid](../building-apps/ui/patterns/interaction/data-grid/data-grid-overview.md).
 
@@ -71,13 +71,17 @@ The following table summarizes the OutSystems map and Leaflet map functionality 
 
 * **Issue**: Interaction and visual issues
 
-* **Workaround**: Change CSP rules. For more information, refer to [Google's Content Security Policy guide](https://developers.google.com/maps/documentation/javascript/content-security-policy#example).
+    * **Workaround**: Change CSP rules. For more information, refer to [Google's Content Security Policy guide](https://developers.google.com/maps/documentation/javascript/content-security-policy#example).
 
 #### Leaflet maps
 
 * **Issue**: Leaflet map tiles not visible
 
-* **Workaround**: Missing in the CSP configuration the following domain: ``tile.openstreetmap.org``
+    * **Workaround**: Missing in the CSP configuration the following domain: ``tile.openstreetmap.org``
+
+* **Issue:** Leaflet map directions not working
+
+    * **Workaround**: Add the [api.mapbox.com](https://api.mapbox.com/) domain to the `connect-src` directive.
 
 For more information about OutSystems Maps, refer to [OutSystems Maps](../building-apps/ui/patterns/interaction/map/intro.md).
 
