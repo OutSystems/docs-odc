@@ -20,7 +20,7 @@ topic:
 
 # Expressions
 
-An expression consists of operands and operators, or just one operand. For example, **n + 1** is an expression with two operands, **n** and **1**, joined by the addition operator +.
+An expression consists of operands and operators, or just one operand. For example, **n + 1** is an expression with two operands, **n** and **1**, joined by the addition operator **+**.
 
 Here is how you can edit expressions and show the expression values.
 
