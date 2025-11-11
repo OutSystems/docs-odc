@@ -31,7 +31,7 @@ In a cloud-native architecture, you can use a single app in ODC:
 
 Apps scale independently, which reduces the time and cost associated with scaling all your apps. Independent app scaling is very useful, for example, when a single feature has a high load. It also helps to ensure life-cycle independence among teams.
 
-![Diagram illustrating the cloud-native approach in OutSystems Developer Clouds architecture.](images/app-architecture-diag.png "Cloud-Native Architecture Approach Diagram")
+![Diagram illustrating the cloud-native approach in OutSystems Developer Cloud's architecture.](images/app-architecture-diag.png "Cloud-Native Architecture Approach Diagram")
 
 ## Apps in ODC
 
@@ -52,6 +52,16 @@ The runtime of each app is loosely coupled. Consuming services from other apps i
 
 Containerization makes your apps highly scalable. Apps scale requests and users in an automated and transparent way. The app's database is also highly scalable. For more information, refer to [Cloud-native architecture of OutSystems Developer Cloud](../manage-platform-app-lifecycle/platform-architecture/intro.md#auto-scaling-1).
 
+## AI-powered architecture { #aipowered }
+
+ODC includes Agent Workbench, a capability that allows you to embed generative AI directly into your apps. This introduces an AI-powered layer to your app architecture, enabling you to build intelligent, interactive, and automated solutions.
+
+![Diagram showing the integration of AI-powered Agentic apps with web and mobile apps in OutSystems Developer Cloud.](images/ai-powered-architecture-diag.png "AI-Powered Architecture Diagram")
+
+Architecturally, Agentic apps are distinct elements you create and configure within the ODC platform. They're then securely consumed by your web and mobile apps through a dedicated Service Action, `Call<AgentName>`. This design allows you to manage the Agentic app's logic independently from your consumer app's core logic.
+
+For a detailed explanation of how to create, configure, and integrate Agentic apps, refer to [Agentic apps in ODC](../building-apps/build-ai-powered-apps/agentic-apps.md)
+
 ## Libraries in ODC { #libraries }
 
 Libraries let you share code between apps. Libraries work similarly to packages such as NuGet in .NET or npm in JavaScript. Libraries keep the elements centralized, reducing maintenance cost and promoting ownership.
@@ -66,19 +76,19 @@ Versioning of libraries enables systematic updates and integration of your libra
 
 Learn more about the fundamentals of libraries and how versioning works in the [Libraries](../building-apps/libraries/libraries.md#libraries-versioning) article.
 
-## How apps work with libraries
+## How apps work with Libraries
 
-Apps can consume libraries through strong dependencies, which are packaged when published.
+Apps can consume Libraries through strong dependencies, which are packaged when published.
 
 ![Diagram illustrating an app consuming a library through strong dependencies and how it is packaged when published in OutSystems Developer Cloud.](images/app-consuming-library-diag.png "App Consuming Library Diagram")
 
-The packaged library is included in the generated container when you publish an app.
+The packaged Library is included in the generated container when you publish an app.
 
 ![Diagram explaining the inclusion of packaged libraries in the container image during app deployment in OutSystems Developer Cloud.](images/how-libraries-work-diag.png "How Libraries Work in App Deployment")
 
 The container image is reused as you advance an app's deployment from Development to QA or QA to Production. Each stage's configurations are applied to the deployment process.
 
-Apps hold all the configuration values, even those implemented at the consumed libraries level. This enables developers to set different configurations for each stage.
+Apps hold all the configuration values, even those implemented at the consumed Libraries level. This enables developers to set different configurations for each stage.
 
 ![Diagram showing the deployment process of an app from Development to QA and Production with container image reuse and configuration applications in OutSystems Developer Cloud.](images/deployment-process-diag.png "App Deployment Process Diagram")
 
