@@ -35,10 +35,14 @@ string
 
 **Conditional**: No
 
-```yaml
-platforms:
-  android:
-    appName: OutSystems App Name
+```json
+{
+    "platforms": {
+        "android": {
+            "appName": "OutSystems App Name"
+        }
+    }
+}
 ```
 
 ## manifest
@@ -84,33 +88,41 @@ Array<
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  android:
-    manifest:
-      - file: AndroidManifest.xml
-        target: manifest/application
-        attrs:
-          android:name: com.ionicframework.intune.IntuneApplication
-      - file: AndroidManifest.xml
-        target: manifest
-        merge: |
-          <queries>
-              <package android:name="com.azure.authenticator" />
-          </queries>
-      - file: AndroidManifest.xml
-        target: manifest
-        inject: |
-          <sample-tag>
-              <package android:name="com.azure.authenticator" />
-          </sample-tag>
-      - file: AndroidManifest.xml
-        target: manifest/application/application
-        deleteAttributes:
-          - android:name
-          - another:attribute
-      - file: AndroidManifest.xml
-        delete: //intent-filter
+```json
+{
+    "platforms": {
+        "android": {
+            "manifest": [
+                {
+                    "file": "AndroidManifest.xml",
+                    "target": "manifest/application",
+                    "attrs": {
+                        "android:name": "com.ionicframework.intune.IntuneApplication"
+                    }
+                },
+                {
+                    "file": "AndroidManifest.xml",
+                    "target": "manifest",
+                    "merge": "<queries>\n    <package android:name=\"com.azure.authenticator\" />\n</queries>\n"
+                },
+                {
+                    "file": "AndroidManifest.xml",
+                    "target": "manifest",
+                    "inject": "<sample-tag>\n    <package android:name=\"com.azure.authenticator\" />\n</sample-tag>\n"
+                },
+                {
+                    "file": "AndroidManifest.xml",
+                    "target": "manifest/application/application",
+                    "deleteAttributes": ["android:name", "another:attribute"]
+                },
+                {
+                    "file": "AndroidManifest.xml",
+                    "delete": "//intent-filter"
+                }
+            ]
+        }
+    }
+}
 ```
 
 ## gradle
@@ -149,51 +161,91 @@ Array<
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  android:
-    gradle:
-      - file: build.gradle
-        target:
-          buildscript:
-        insert:
-          - classpath: "'org.javassist:javassist:3.27.0-GA'"
-      - file: build.gradle
-        target:
-          allprojects:
-            repositories:
-        insert:
-          - maven:
-              - url: 'https://example.com'
-              - name: 'Duo-SDK-Feed'
-      - file: variables.gradle
-        target:
-          ext:
-        insertType: 'variable'
-        insert:
-          - firebaseMessagingVersion: '20.0.6'
-      - file: app/build.gradle
-        target:
-        insert: |
-          apply plugin: 'com.microsoft.intune.mam'
-          intunemam {
-            includeExternalLibraries = ["androidx.*", "com.getcapacitor.*"]
-          }
-      - file: app/build.gradle
-        target:
-          android:
-            buildTypes:
-              release:
-                minifyEnabled:
-        replace:
-          minifyEnabled: true
-      - file: app/build.gradle
-        target:
-          android:
-            buildTypes:
-              implementation:
-        replace:
-          implementation: "'test-implementation'"
+```json
+{
+    "platforms": {
+        "android": {
+            "gradle": [
+                {
+                    "file": "build.gradle",
+                    "target": {
+                        "buildscript": null
+                    },
+                    "insert": [
+                        {
+                            "classpath": "'org.javassist:javassist:3.27.0-GA'"
+                        }
+                    ]
+                },
+                {
+                    "file": "build.gradle",
+                    "target": {
+                        "allprojects": {
+                            "repositories": null
+                        }
+                    },
+                    "insert": [
+                        {
+                            "maven": [
+                                {
+                                    "url": "https://example.com"
+                                },
+                                {
+                                    "name": "Duo-SDK-Feed"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "file": "variables.gradle",
+                    "target": {
+                        "ext": null
+                    },
+                    "insertType": "variable",
+                    "insert": [
+                        {
+                            "firebaseMessagingVersion": "20.0.6"
+                        }
+                    ]
+                },
+                {
+                    "file": "app/build.gradle",
+                    "target": null,
+                    "insert": "apply plugin: 'com.microsoft.intune.mam'\nintunemam {\n  includeExternalLibraries = [\"androidx.*\", \"com.getcapacitor.*\"]\n}\n"
+                },
+                {
+                    "file": "app/build.gradle",
+                    "target": {
+                        "android": {
+                            "buildTypes": {
+                                "release": {
+                                    "minifyEnabled": null
+                                }
+                            }
+                        }
+                    },
+                    "replace": {
+                        "minifyEnabled": true
+                    }
+                },
+                {
+                    "file": "app/build.gradle",
+                    "target": {
+                        "android": {
+                            "buildTypes": {
+                                "implementation": null
+                            }
+                        }
+                    },
+                    "replace": {
+                        "implementation": "'test-implementation'"
+                    }
+                }
+            ]
+        }
+    }
+}
 ```
 
 ## res
@@ -219,34 +271,30 @@ Array<
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  android:
-    res:
-      - path: raw
-        file: auth_config.json
-        text: |
-          {
-            "client_id": "$INTUNE_CLIENT_ID",
-            "authorization_user_agent": "DEFAULT",
-            "redirect_uri": "msauth://$PACKAGE_NAME/$HASH",
-            "broker_redirect_uri_registered": true,
-            "authorities": [
-              {
-                "type": "AAD",
-                "audience": {
-                  "type": "AzureADMyOrg",
-                  "tenant_id": "$INTUNE_TENANT_ID"
+```json
+{
+    "platforms": {
+        "android": {
+            "res": [
+                {
+                    "path": "raw",
+                    "file": "auth_config.json",
+                    "text": "{\n  \"client_id\": \"$INTUNE_CLIENT_ID\",\n  \"authorization_user_agent\": \"DEFAULT\",\n  \"redirect_uri\": \"msauth://$PACKAGE_NAME/$HASH\",\n  \"broker_redirect_uri_registered\": true,\n  \"authorities\": [\n    {\n      \"type\": \"AAD\",\n      \"audience\": {\n        \"type\": \"AzureADMyOrg\",\n        \"tenant_id\": \"$INTUNE_TENANT_ID\"\n      }\n    }\n  ]\n}\n"
+                },
+                {
+                    "path": "drawable",
+                    "file": "icon.png",
+                    "source": "../common/test/fixtures/icon.png"
+                },
+                {
+                    "path": "drawable",
+                    "file": "remote-icon.png",
+                    "source": "https://www.outsystems.com/icon.png"
                 }
-              }
             ]
-          }
-      - path: drawable
-        file: icon.png
-        source: ../common/test/fixtures/icon.png
-      - path: drawable
-        file: remote-icon.png
-        source: https://www.outsystems.com/icon.png
+        }
+    }
+}
 ```
 
 ## json
@@ -273,18 +321,31 @@ Array<
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  android:
-    json:
-      - file: google-services.json
-        set:
-          project_info:
-            project_id: 'MY_ID'
-      - file: google-services.json
-        merge:
-          data:
-            field: 'MY_FIELD'
+```json
+{
+    "platforms": {
+        "android": {
+            "json": [
+                {
+                    "file": "google-services.json",
+                    "set": {
+                        "project_info": {
+                            "project_id": "MY_ID"
+                        }
+                    }
+                },
+                {
+                    "file": "google-services.json",
+                    "merge": {
+                        "data": {
+                            "field": "MY_FIELD"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
 ```
 
 ## xml
@@ -335,20 +396,25 @@ Array<
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  android:
-    xml:
-      - file: app/file.xml
-        target: entries/field
-        merge: |
-          <field>
-            <string>Value</string>
-          </field>
-      - resFile: values/strings.xml
-        target: resources/string[@name="app_name"]
-        replace: |
-          <string name="app_name">Awesome App</string>
+```json
+{
+    "platforms": {
+        "android": {
+            "xml": [
+                {
+                    "file": "app/file.xml",
+                    "target": "entries/field",
+                    "merge": "<field>\n  <string>Value</string>\n</field>\n"
+                },
+                {
+                    "resFile": "values/strings.xml",
+                    "target": "resources/string[@name=\"app_name\"]",
+                    "replace": "<string name=\"app_name\">Awesome App</string>\n"
+                }
+            ]
+        }
+    }
+}
 ```
 
 ## copy
@@ -363,16 +429,27 @@ Array<{ src: string; dest: string; }>
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  android:
-    copy:
-      - src: ../firebase/google-services.json
-        dest: app/google-services.json
-      - src: old/path/of/directory
-        dest: new/path/of/directory
-      - src: https://www.outsystems.com/file.png
-        dest: new/path/of/file.png
+```json
+{
+    "platforms": {
+        "android": {
+            "copy": [
+                {
+                    "src": "../firebase/google-services.json",
+                    "dest": "app/google-services.json"
+                },
+                {
+                    "src": "old/path/of/directory",
+                    "dest": "new/path/of/directory"
+                },
+                {
+                    "src": "https://www.outsystems.com/file.png",
+                    "dest": "new/path/of/file.png"
+                }
+            ]
+        }
+    }
+}
 ```
 
 ## code
@@ -408,19 +485,28 @@ Array<
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  android:
-    code:
-      - source: files/FooBar.java
-        targetDir: src/com/foo/bar
-      - file: MainActivity.java
-        target: /import com.getcapacitor.BridgeActivity;/
-        replace: |
-            import com.getcapacitor.BridgeActivity;
-            import com.cordova.plugin.splashscreenvideo.VideoDialogFragment;
-      - file: MainActivity.java
-        patchFile: 'patches/MainActivity.patch'
+```json
+{
+    "platforms": {
+        "android": {
+            "code": [
+                {
+                    "source": "files/FooBar.java",
+                    "targetDir": "src/com/foo/bar"
+                },
+                {
+                    "file": "MainActivity.java",
+                    "target": "/import com.getcapacitor.BridgeActivity;/",
+                    "replace": "import com.getcapacitor.BridgeActivity;\nimport com.cordova.plugin.splashscreenvideo.VideoDialogFragment;\n"
+                },
+                {
+                    "file": "MainActivity.java",
+                    "patchFile": "patches/MainActivity.patch"
+                }
+            ]
+        }
+    }
+}
 ```
 
 ## tar
@@ -435,11 +521,18 @@ Array<{ src: string; dest: string; command: 'c' | 'r' | 'u' | 'x'; }>
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  android:
-    tar:
-      - source: files/FooBar.tar
-        targetDir: files/FooBar
-        action: x
+```json
+{
+    "platforms": {
+        "android": {
+            "tar": [
+                {
+                    "source": "files/FooBar.tar",
+                    "targetDir": "files/FooBar",
+                    "action": "x"
+                }
+            ]
+        }
+    }
+}
 ```

@@ -72,7 +72,6 @@ The extensibility configuration for libraries allows the declaration of the asso
 | [pluginConfigurations](#pluginconfigurations) | `object` | Optional |
 | [buildConfigurations](#buildconfigurations) | `object` | Optional |
 
-
 **Example**
 
 ```json
@@ -87,7 +86,7 @@ The extensibility configuration for libraries allows the declaration of the asso
 
 ```
 
-## pluginConfigurations 
+## pluginConfigurations
 
 The plugin specification.
 
@@ -96,7 +95,7 @@ The plugin specification.
 * Optional  
 * Type: `object`
 
-### properties 
+### properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -133,8 +132,7 @@ Example:
 | :---- | :---- | :---- |
 | [preferences](#preferences) | `string` | Required |
 
-
-#### preferences 
+#### preferences
 
 A set of Cordova [preferences](https://cordova.apache.org/docs/en/11.x/config_ref/#preference) associated with the plugin. Configuration values can be static or a reference to a Setting. Additionally, configurations can be declared globally or per platform, with the platform-specific value taking precedence over the global one.
 
@@ -168,7 +166,7 @@ A set of Cordova [preferences](https://cordova.apache.org/docs/en/11.x/config_re
 
 ```
 
-### capacitor 
+### capacitor
 
 An object with the required specification for a given Capacitor plugin.
 
@@ -183,7 +181,7 @@ An object with the required specification for a given Capacitor plugin.
 | :---- | :---- | :---- |
 | [configurations](#configurations) | `object` | Optional |
 
-#### configurations 
+#### configurations
 
 An object with configuration values specified by plugin class name. Multiple configurations can be provided for multiple plugins simultaneously. This is useful in scenarios where a plugin depends on other plugins that require configurations on their own.
 
@@ -263,8 +261,7 @@ Plugin configurations specific to iOS. If a configuration with the same name exi
 | :---- | :---- | :---- |
 | Additional properties | `object` | Optional |
 
-
-### permissions 
+### permissions
 
 Declares which Android permissions or iOS usage descriptions the plugin defines.
 
@@ -346,7 +343,7 @@ In the above example, both usage description keys `NSCameraUsageDescription` and
 | :---- | :---- | :---- |
 | [Additional properties](#ios-additional-properties) | `object` | Optional |
 
-#### ios additional properties 
+#### ios additional properties
 
 Any property name is valid as long as the value follows the following schema
 
@@ -359,7 +356,7 @@ Any property name is valid as long as the value follows the following schema
 | :---- | :---- | :---- |
 | description | `string` | Optional |
 
-## buildConfigurations 
+## buildConfigurations
 
 `buildConfigurations`
 
@@ -432,8 +429,7 @@ An object with the required specification for a given Cordova plugin.
 | :---- | :---- | :---- |
 | [source](#source) | `string` | Required |
 
-
-#### source 
+#### source
 
 The source of the Cordova plugin, from where it is fetched for installation and, if needed, the Cordova plugin variables.
 
@@ -449,8 +445,7 @@ The source of the Cordova plugin, from where it is fetched for installation and,
 | [npm](#npm) | `string` | Required |
 | [variables](#variables) | `object` | Optional |
 
-
-#### npm 
+#### npm
 
 A valid npm [package spec](https://docs.npmjs.com/cli/v10/using-npm/package-spec) from where to fetch the plugin.
 
@@ -459,7 +454,7 @@ A valid npm [package spec](https://docs.npmjs.com/cli/v10/using-npm/package-spec
 * Required  
 * Type: `string`
 
-#### variables 
+#### variables
 
 An object with the plugin variables required for installation. Object key maps to variable name and associated value maps to variable value.
 
@@ -550,7 +545,7 @@ A valid npm [package spec](https://docs.npmjs.com/cli/v10/using-npm/package-spec
 * Required  
 * Type: `string`
 
-### resources 
+### resources
 
 Set of resources that can be copied from a specific source to a target location within the generated mobile project
 
@@ -635,16 +630,16 @@ The target location for the resource in the form of a file path
 
 ### buildAction
 
-Build actions enable developers to customize their mobile projects. It is available for MABS 12 and uses YAML files to define which customization is to be done on the mobile project. The YAML definition for each build action can be found [here](https://docs.google.com/document/d/1wK1j6RBTUnq1d6OyUbPiNMkxM7c9gXwDfwpMwWxHzqg/edit?tab=t.0). 
+Build actions enable developers to customize their mobile projects. It is available for MABS 12 and uses JSON files to define which customization is to be done on the mobile project. The JSON definition for each build action can be found [here](../build-actions.md).
 
-To run multiple changes, you need to add all to the YAML file, and MABS will run each action following the order of the YAML file, top to bottom.
+To run multiple changes, you need to add all to the JSON file, and MABS will run each action following the order of the JSON file, top to bottom.
 
 If you have build configurations defined at the plugin and app level, the plugin runs first.
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
 | config | `Object` | Required |
-| parameters | `object` | Optional | 
+| parameters | `object` | Optional |
 
 **Example**
 
@@ -652,7 +647,7 @@ If you have build configurations defined at the plugin and app level, the plugin
 {
   "buildConfigurations": {
     "buildAction": {
-        "config": "$resources.buildAction.yaml",
+        "config": "$resources.buildAction.json",
         "parameters": {
 "parameter1" : "parameterValue1",
 "parameter2" : "parameterValue2"
@@ -661,9 +656,10 @@ If you have build configurations defined at the plugin and app level, the plugin
   }
 }
 ```
-#### config 
 
-Reference to the resource uploaded on IDE, under resources. The file must have *Deploy Action* as *Deploy to Target Directory.*
+#### config
+
+Reference to the resource uploaded on IDE, under resources. The file must have _Deploy Action_ as _Deploy to Target Directory._
 
 | ❗️settings not supported |
 | :---- |
@@ -673,7 +669,7 @@ Reference to the resource uploaded on IDE, under resources. The file must have *
 
 #### parameters
 
-The parameters to pass values to the variables defined on the yaml. 
+The parameters to pass values to the variables defined on the json.
 
 * Optional  
 * Type: `object`

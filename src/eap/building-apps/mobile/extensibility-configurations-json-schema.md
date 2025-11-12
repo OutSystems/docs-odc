@@ -48,9 +48,9 @@ You can customize mobile app properties, such as display name, orientation, perm
 
 ### Manage plugins
 
-Define and manage native plugins, specifying their source, required variables, and permissions via [library extensibility configurations JSON file](extensibility-configurations/extensibility-lib-reference.md). 
+Define and manage native plugins, specifying their source, required variables, and permissions via [library extensibility configurations JSON file](extensibility-configurations/extensibility-lib-reference.md).
 
-Within the app and library extensibility configurations, you can perform native project modifications via the [build actions](build-actions.md). Build Actions use YAML files to define a sequence of customizations to be applied to the mobile project during the build process. With build actions you can modify **Info.plist** or **build.gradle** files in a structured and repeatable way.
+Within the app and library extensibility configurations, you can perform native project modifications via the [build actions](build-actions.md). Build Actions use JSON files to define a sequence of customizations to be applied to the mobile project during the build process. With build actions you can modify **Info.plist** or **build.gradle** files in a structured and repeatable way.
 
 Build actions is the modern replacement for Cordova hooks and is available in both the app and library configuration. You can use build actions only for Capacitor apps.
 
@@ -68,7 +68,7 @@ For more information about configuring your app using universal extensibility co
 
 * [Universal extensibility configurations JSON schema](extensibility-configurations.md)
 
-* [Using extensibility configurations](extensibility-configurations-use-cases.md) 
+* [Using extensibility configurations](extensibility-configurations-use-cases.md)
 
 For more information about configuring your app using Cordova-based extensibility configurations:
 

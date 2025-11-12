@@ -170,7 +170,7 @@ Below is an example of an Android-specific preference:
 
 You can currently set the preference values in both ODC library and app extensibility configurations (compatible with MABS 11).
 
-In Capacitor builds, the preference value cannot be changed  the default value is always used. To allow for easier customization of these variables by OutSystems users, we recommend using Settings in ODC. 
+In Capacitor builds, the preference value cannot be changed  the default value is always used. To allow for easier customization of these variables by OutSystems users, we recommend using Settings in ODC.
 Using ODC Studio, you can add Settings to your Library by going into “Data” \-\> “Settings” \-\> Right-click \-\> “Add Setting”.
 OutSystems developers are able to customize the setting value without having to change the App’s Extensibility \- in the App’s “Configuration” tab inside ODC Portal.
 
@@ -179,33 +179,40 @@ OutSystems developers are able to customize the setting value without having to 
 Cordova hooks exist to allow plugin developers to perform custom actions and setup that is otherwise not possible when configuring the `plugin.xml`.
 MABS 12 overcomes this with a new feature called [build actions](../../building-apps/mobile/build-actions.md). With Build Actions, you can do various customizations on native mobile apps, writing minimal code.
 
-There are separate build actions for [iOS](../../building-apps/mobile/build-actions-iOS.md) and [Android](../../building-apps/mobile/build-actions-android.md) platform. 
+There are separate build actions for [iOS](../../building-apps/mobile/build-actions-iOS.md) and [Android](../../building-apps/mobile/build-actions-android.md) platform.
 
-You set up build actions in a single .yaml file. This example changes the app’s name:
+You set up build actions in a single .json file. This example changes the app’s name:
 
-```yaml
-variables:
-  APP_NAME:
-    type: string
-    default: "My OutSystems App"
-platforms:
-  android:
-    appName: $APP_NAME
-  ios:
-    displayName: $APP_NAME
+```json
+{
+    "variables": {
+        "APP_NAME": {
+            "type": "string",
+            "default": "My OutSystems App"
+        }
+    },
+    "platforms": {
+        "android": {
+            "appName": "$APP_NAME"
+        },
+        "ios": {
+            "displayName": "$APP_NAME"
+        }
+    }
+}
 ```
 
 Where `APP_NAME` is a variable that you can specify when invoking the build actions.
 
-In ODC Studio, include the yaml file in **Data > Resources**.
+In ODC Studio, include the json file in **Data > Resources**.
 
-In the library’s extensibility, add the reference to the .yaml file, and pass the `APP_NAME` parameter.  You can specify a setting so that users can customize the value on their app via ODC Portal:
+In the library’s extensibility, add the reference to the .json file, and pass the `APP_NAME` parameter.  You can specify a setting so that users can customize the value on their app via ODC Portal:
 
 ```json
 {
    "buildConfigurations": {
         "buildAction": {
-            "config": $resources.setAppName.yaml,
+            "config": $resources.setAppName.json,
             "parameters": {
                 "APP_NAME": $settings.AppName
             }
@@ -213,6 +220,7 @@ In the library’s extensibility, add the reference to the .yaml file, and pass 
     },
 }
 ```
+
 OutSystems recommends always using build action however there may be specific uses that cannot be accomplished with build actions. In such scenarios, you can use [Capacitor Hooks](https://capacitorjs.com/docs/cli/hooks), which allow you to run scripts in different phases of the Capacitor build process.
 
 ### Migrate “config-file” changes
@@ -266,7 +274,7 @@ Here’s an example for a change in Android’s `strings.xml` via Cordova `plugi
 </config-file>
 ```
 
-Here’s how you can convert it to a build actions .yaml file:
+Here’s how you can convert it to a build actions .json file:
 
 ```json
 
@@ -289,9 +297,9 @@ Here are some common examples:
 
 | Context | Cordova-specific code | Migration to Capacitor |
 | :---- | :---- | :---- |
-| Checking if Cordova exists.  | *typeof(cordova) \!== “undefined”* | *typeof(Capacitor) \!== “undefined”* You should have both checks for the plugin to be compatible with Cordova and Capacitor. |
-| Checking if Cordova plugin is defined. | *typeof(\<cordova\_plugin\_clobber) \!== “undefined”* | No changes needed. |
-| Get the platform. To run code depending on which platform the app is running on. | *let platform \= cordova.platformId* | *let platform \= Capacitor.getPlatform(); if (\!platform) {     platform \= cordova.platformId; }* |
+| Checking if Cordova exists.  | _typeof(cordova) \!== “undefined”_ | _typeof(Capacitor) \!== “undefined”_ You should have both checks for the plugin to be compatible with Cordova and Capacitor. |
+| Checking if Cordova plugin is defined. | _typeof(\<cordova\_plugin\_clobber) \!== “undefined”_ | No changes needed. |
+| Get the platform. To run code depending on which platform the app is running on. | _let platform \= cordova.platformId_ | _let platform \= Capacitor.getPlatform(); if (\!platform) {     platform \= cordova.platformId; }_ |
 
 For some of the checks in the table above, you can use the official [Common Plugin in ODC](common-plugin/intro.md) (version 1.1.0 is compatible with both Cordova and Capacitor):
 

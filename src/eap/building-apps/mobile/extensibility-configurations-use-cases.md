@@ -27,7 +27,7 @@ With extensibility configurations, you can:
 * Customize app properties such as orientation, splash screens, and status bars.
 * Integrate and configure mobile plugins for extended functionality.
 * Define permissions and deep link behaviors.
-* Apply advanced build actions using YAML files.
+* Apply advanced build actions using JSON files.
 
 ## App configuration use cases
 
@@ -97,13 +97,13 @@ Customize the splash screen to display a specific image, with different configur
 
 ### Advance customization using build actions
 
-Enables advanced customization of the native mobile project using YAML files. This is the modern replacement for Cordova hooks. The YAML file defines a series of actions to be performed on the project.
+Enables advanced customization of the native mobile project using JSON files. This is the modern replacement for Cordova hooks. The JSON file defines a series of actions to be performed on the project.
 
 ```json
 {
   "buildConfigurations": {
     "buildAction": {
-      "config": "$resources.buildAction.yaml",
+      "config": "$resources.buildAction.json",
       "parameters": {
         "parameter1": "parameterValue1",
         "parameter2": "parameterValue2"
@@ -264,15 +264,15 @@ Copy resources from a specified source to a target location within the mobile pr
 }
 ```
 
-### Define build actions with a yaml file
+### Define build actions with a json file
 
-Use build actions to customize mobile projects with a YAML file. Define a config that references the YAML file and pass parameters to it.
+Use build actions to customize mobile projects with a JSON file. Define a config that references the JSON file and pass parameters to it.
 
 ```json
 {
   "buildConfigurations": {
     "buildAction": {
-      "config": "$resources.buildAction.yaml",
+      "config": "$resources.buildAction.json",
       "parameters": {
         "parameter1": "parameterValue1",
         "parameter2": "parameterValue2"

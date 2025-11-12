@@ -367,7 +367,7 @@ Defines the supported network protocol for the app: HTTPS or both HTTPS and HTTP
 | `"https"` |
 | `"https_http"` |
 
-###  trustedCA
+### trustedCA
 
 | ❗️Android only |
 | :---- |
@@ -489,7 +489,7 @@ Control for how long, in milliseconds, the launch splash screen is visible when 
 * Optional  
 * Type: `number`
 
-###  autoHide
+### autoHide
 
 Whether to auto hide the splash after `duration`
 
@@ -546,7 +546,6 @@ Set of resources that can be copied from a specific source to a target location 
 | :---- | :---- | :---- |
 | [android](#resource-item) | `array` of `object` | Optional |
 | [ios](#resource-item) | `array` of `object` | Optional |
-
 
 #### android
 
@@ -627,7 +626,7 @@ Properties:
 | [android](#android-1) | `object` | Optional |
 | [ios](#ios-1) | `object` | Optional |
 
-#### android 
+#### android
 
 Android specific configurations for the splash screen
 
@@ -657,8 +656,8 @@ Properties:
 | :---- | :---- | :---- |
 | [logo](#logo) | `string` | Optional |
 
+#### logo
 
-#### logo 
 Customize the logo based splash screen experience. When using `appIcon`, the application icon will be used in the center of the splash screen. Otherwise a path or reference to an image can be provided
 
 `logo`
@@ -669,14 +668,14 @@ Customize the logo based splash screen experience. When using `appIcon`, the app
 The value of this property can be:
 
 * `string` representing a file path relative to the root folder of the generated project  
-* Reference to an OutSystems application image via `$images`   
+* Reference to an OutSystems application image via `$images`
 * Literal value `appIcon`
 
-### buildAction 
+### buildAction
 
-Build actions enable developers to customize their mobile projects. It is available for MABS 12 and uses YAML files to define which customization is to be done on the mobile project. The YAML definition for each build action can be found [here](https://docs.google.com/document/d/1wK1j6RBTUnq1d6OyUbPiNMkxM7c9gXwDfwpMwWxHzqg/edit?tab=t.0). 
+Build actions enable developers to customize their mobile projects. It is available for MABS 12 and uses JSON files to define which customization is to be done on the mobile project. For more information about the JSON definition for each build action, refer to [Build actions](../build-actions.md).
 
-To run multiple changes, you need to add all to the YAML file, and MABS will run each action following the order of the YAML file, top to bottom.
+To run multiple changes, you need to add all to the JSON file, and MABS will run each action following the order of the JSON file, top to bottom.
 
 If you have build configurations defined at the plugin and app level, the plugin runs first.
 
@@ -685,14 +684,13 @@ If you have build configurations defined at the plugin and app level, the plugin
 | config | `Object` | Required |
 | parameters | `object` | Optional |
 
-
 **Example**
 
 ```json
 {
   "buildConfigurations": {
     "buildAction": {
-        "config": "$resources.buildAction.yaml",
+        "config": "$resources.buildAction.json",
         "parameters": {
 "parameter1" : "parameterValue1",
 "parameter2" : "parameterValue2"
@@ -702,9 +700,9 @@ If you have build configurations defined at the plugin and app level, the plugin
 }
 ```
 
-#### config 
+#### config
 
-Reference to the resource uploaded on IDE, under resources. The file must have *Deploy Action* as *Deploy to Target Directory.*
+Reference to the resource uploaded on IDE, under resources. The file must have _Deploy Action_ as _Deploy to Target Directory._
 
 | ❗️settings not supported |
 | :---- |
@@ -712,9 +710,9 @@ Reference to the resource uploaded on IDE, under resources. The file must have *
 * Required  
 * Type: `object`
 
-#### parameters 
+#### parameters
 
-The parameters to pass values to the variables defined on the yaml. 
+The parameters to pass values to the variables defined on the json.
 
 * Optional  
 * Type: `object`

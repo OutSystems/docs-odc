@@ -20,7 +20,7 @@ helpids:
 
 # Build actions
 
-You can use build actions to perform native project modifications such as modifying **Android Manifest file**, **Info.plist** or **build.gradle** files in a structured and repeatable way. Build Actions use YAML-based configuration file and a set of predefined constructs to define and apply modifications to a mobile app during the build process. Build actions are integrated into the mobile app build process via [Extensibility](extensibility-configurations-json-schema.md).
+You can use build actions to perform native project modifications such as modifying **Android Manifest file**, **Info.plist** or **build.gradle** files in a structured and repeatable way. Build Actions use JSON-based configuration file and a set of predefined constructs to define and apply modifications to a mobile app during the build process. Build actions are integrated into the mobile app build process via [Extensibility](extensibility-configurations-json-schema.md).
 
 You can configure your extensibility from **App** > **Edit app properties** > **Extensibility**.
 
@@ -66,49 +66,52 @@ Here are some ways in which you can use build actions for customizing your iOS a
 
 To use build actions in your app, follow these steps:
 
-### Step 1: Create a YAML file
-  
-Define your build actions in a YAML file, for example, `buildAction.yaml file`. Define variables at the root level of your YAML file using the `variables` property. These variables can be strings, numbers, arrays, or objects, and can be referenced later in your build actions. You also must include a `platforms` property to define platform-specific operations. The allowed child keys are `android` and `ios`.
+### Step 1: Create a JSON file
 
-```yaml
-variables:
-  APP_NAME:
-    type: string
-  EXAMPLE_NUMBER:
-    default: -1
-    type: number
+Define your build actions in a JSON file, for example, `buildAction.json` file. Define variables at the root level of your JSON file using the `variables` property. These variables can be strings, numbers, arrays, or objects, and can be referenced later in your build actions. You also must include a `platforms` property to define platform-specific operations. The allowed child keys are `android` and `ios`.
 
-platforms:
-  android:
-    appName: $APP_NAME
-  ios:
-    displayName: $APP_NAME
+```json
+{
+    "variables": {
+        "APP_NAME": {
+            "type": "string"
+        },
+        "EXAMPLE_NUMBER": {
+            "default": -1,
+            "type": "number"
+        }
+    },
+    "platforms": {
+        "android": {
+            "appName": "$APP_NAME"
+        },
+        "ios": {
+            "displayName": "$APP_NAME"
+        }
+    }
+}
 ```
 
-### Step 2: Add the YAML file as a resource
+### Step 2: Add the JSON file as a resource
 
-In ODC Studio, add the YAML file as a resource. Set  **Deploy Action** to **Deploy to Target Directory**.
+In ODC Studio, add the JSON file as a resource. Set **Deploy Action** to **Deploy to Target Directory**.
 
 ### Step 3: Configure Extensibility
 
-Under **App > Edit app properties > Extensibility**, add the configuration to resolve variables defined within the YAML file. The `parameters` property is used to resolve the variables.
+Under **App > Edit app properties > Extensibility**, add the configuration to resolve variables defined within the JSON file. The `parameters` property is used to resolve the variables.
 
-```yaml
+```json
 {
-  "version": "1",
-  "buildConfigurations": 
-  {
-      "buildAction": 
-      {
-          "config": $resources.buildAction.yaml,
-          "parameters": 
-          {
-              "APP_NAME": "Holiday tracker",
-              "EXAMPLE_NUMBER": 5
-          }
-               
-      }
-  }
+    "version": "1",
+    "buildConfigurations": {
+        "buildAction": {
+            "config": $resources.buildAction.json,
+            "parameters": {
+                "APP_NAME": "Holiday tracker",
+                "EXAMPLE_NUMBER": 5
+            }
+        }
+    }
 }
 ```
 
@@ -138,18 +141,26 @@ Example: `gt(3,1)`
 **lt**: Evaluates to `true` if the left argument is less than or equal to the right. The arguments must be numeric.
 Example: `lt(1,3)`
 
-```yaml
-variables:
-  APPLY_PATH:
-    default: 0
-    type: number
-
-platforms:
-  ios:
-    code:
-      - file: App/AppDelegate.swift
-        condition: ge($APPLY_PATH, 0) # greater-than or equal
-        patchFile: patches/ChangeAppDelegate.patch
+```json
+{
+    "variables": {
+        "APPLY_PATH": {
+            "default": 0,
+            "type": "number"
+        }
+    },
+    "platforms": {
+        "ios": {
+            "code": [
+                {
+                    "file": "App/AppDelegate.swift",
+                    "condition": "ge($APPLY_PATH, 0)" /* greater-than or equal */,
+                    "patchFile": "patches/ChangeAppDelegate.patch"
+                }
+            ]
+        }
+    }
+}
 ```
 
 ## Related resources
@@ -163,7 +174,5 @@ Here's the platform specific build actions reference files:
 Here's the detailed information about extensibility configuration JSON schema:
 
 * [Extensibility configuration JSON schema](extensibility-configurations-json-schema.md)
-  
 * [App extensibility configuration JSON schema](extensibility-configurations/extensibility-app-reference.md)
-  
 * [Library extensibility configuration JSON schema](extensibility-configurations/extensibility-lib-reference.md)

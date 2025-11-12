@@ -1,7 +1,7 @@
 ---
 guid: 3e9cca36-951b-4500-9ad3-8a930b13848e
 locale: en-us
-summary: This documents provides reference information for iOS build actions explaining the different settings and properties of the YAML file.
+summary: This documents provides reference information for iOS build actions explaining the different settings and properties of the JSON file.
 figma: 
 coverage-type:
   - remember
@@ -25,26 +25,27 @@ This article provides reference documentation for all iOS build actions availabl
 
 ## Targets and builds
 
-Build actions for iOS support different targets and builds. These are optional and specified as parent keys in the YAML. The following build actions example omits targets and builds, but they are always valid.
+Build actions for iOS support different targets and builds. These are optional and specified as parent keys in the JSON. The following build actions example omits targets and builds, but they are always valid.
 
-```yaml
-platforms:
-  ios:
-    productName: Every build and target gets this value!
-    builds:
-      Debug:
-        displayName: Debug App
-      Release:
-        displayName: Prod App
-    targets:
-      App:
-        # Operations for the App target (the default for Capacitor apps)
-      My App Clip:
-        builds:
-          Debug:
-            # Operations for the My App Clip target and Debug build
-          Release:
-            # Operations for the My App Clip target and Release build
+```json
+{
+    "platforms": {
+        "ios": {
+            "productName": "Every build and target gets this value!",
+            "builds": {
+                "Debug": { "displayName": "Debug App" },
+                "Release": { "displayName": "Prod App" }
+            },
+            "targets": {
+                "App": /* Operations for the App target (the default for Capacitor apps) */,
+                "My App Clip": {
+                    "builds": { "Debug": /* Operations for the My App Clip target and Debug build */,
+                    "Release": /* Operations for the My App Clip target and Release build */ }
+                }
+            }
+        }
+    }
+}
 ```
 
 ## Actions
@@ -61,10 +62,14 @@ string
 
 **Conditional**: No
 
-```yaml
-platforms:
-  ios:
-    displayName: OutSystems App Name
+```json
+{
+    "platforms": {
+        "ios": {
+            "displayName": "OutSystems App Name"
+        }
+    }
+}
 ```
 
 ### productName
@@ -79,10 +84,14 @@ string
 
 **Conditional**: No
 
-```yaml
-platforms:
-  ios:
-    productName: OutSystems App Name
+```json
+{
+    "platforms": {
+        "ios": {
+            "productName": "OutSystems App Name"
+        }
+    }
+}
 ```
 
 ### buildSettings
@@ -97,12 +106,17 @@ Record<string, string>
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  ios:
-    buildSettings:
-      ENABLE_BITCODE: false
-      SWIFT_VERSION: '5.0'
+```json
+{
+    "platforms": {
+        "ios": {
+            "buildSettings": {
+                "ENABLE_BITCODE": false,
+                "SWIFT_VERSION": "5.0"
+            }
+        }
+    }
+}
 ```
 
 ### buildPhases
@@ -124,15 +138,24 @@ Array<{
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  ios:
-    buildPhases:
-      - replace: true
-        comment: Crashlytics
-        shellPath: '/bin/sh'
-        shellScript: '"${PODS_ROOT}/FirebaseCrashlytics/run"'
-        inputPaths: ['"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)"']
+```json
+{
+    "platforms": {
+        "ios": {
+            "buildPhases": [
+                {
+                    "replace": true,
+                    "comment": "Crashlytics",
+                    "shellPath": "/bin/sh",
+                    "shellScript": "\"${PODS_ROOT}/FirebaseCrashlytics/run\"",
+                    "inputPaths": [
+                        "\"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)\""
+                    ]
+                }
+            ]
+        }
+    }
+}
 ```
 
 ### plist
@@ -153,19 +176,34 @@ By default, values should be merged unless replace is set to `true` to overwrite
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  ios:
-    plist:
-      - replace: true
-        file: GoogleService-Info.plist
-        entries:
-          - Key: Value
-      - replace: false
-        entries:
-          - CFBundleURLTypes:
-              - CFBundleURLSchemes:
-                  - AdditionalBundleURLScheme
+```json
+{
+    "platforms": {
+        "ios": {
+            "plist": [
+                {
+                    "replace": true,
+                    "file": "GoogleService-Info.plist",
+                    "entries": [{ "Key": "Value" }]
+                },
+                {
+                    "replace": false,
+                    "entries": [
+                        {
+                            "CFBundleURLTypes": [
+                                {
+                                    "CFBundleURLSchemes": [
+                                        "AdditionalBundleURLScheme"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
 ```
 
 ### xcprivacy
@@ -185,19 +223,30 @@ By default, values are merged unless replace is set to `true` to overwrite the e
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  ios:
-    xcprivacy:
-      - replace: true
-        entries:
-          - NSPrivacyTracking: []
-      - replace: false
-        entries:
-          - NSPrivacyAccessedAPITypes:
-              NSPrivacyAccessedAPIType: NSPrivacyAccessedAPICategoryUserDefaults
-              NSPrivacyAccessedAPITypeReasons:
-                - CA92.1
+```json
+{
+    "platforms": {
+        "ios": {
+            "xcprivacy": [
+                {
+                    "replace": true,
+                    "entries": [{ "NSPrivacyTracking": [] }]
+                },
+                {
+                    "replace": false,
+                    "entries": [
+                        {
+                            "NSPrivacyAccessedAPITypes": {
+                                "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults",
+                                "NSPrivacyAccessedAPITypeReasons": ["CA92.1"]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
 ```
 
 ### entitlements
@@ -217,14 +266,26 @@ By default, values are merged unless replace is set to `true` to overwrite the e
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  ios:
-    entitlements:
-      replace: true
-      entries:
-        - keychain-access-groups: ['$BUNDLE_ID', 'com.microsoft.intune.mam', 'com.microsoft.adalcache']
-        - something-else: true
+```json
+{
+    "platforms": {
+        "ios": {
+            "entitlements": {
+                "replace": true,
+                "entries": [
+                    {
+                        "keychain-access-groups": [
+                            "$BUNDLE_ID",
+                            "com.microsoft.intune.mam",
+                            "com.microsoft.adalcache"
+                        ]
+                    },
+                    { "something-else": true }
+                ]
+            }
+        }
+    }
+}
 ```
 
 ### frameworks
@@ -244,12 +305,14 @@ Array<{
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  ios:
-    frameworks:
-      - AudioToolbox.framework
-      - CoreServices.framework
+```json
+{
+    "platforms": {
+        "ios": {
+            "frameworks": ["AudioToolbox.framework", "CoreServices.framework"]
+        }
+    }
+}
 ```
 
 ### json
@@ -279,18 +342,31 @@ The operation supports two modes:
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  ios:
-    json:
-      - file: google-services.json
-        set:
-          project_info:
-            project_id: 'MY_ID'
-      - file: google-services.json
-        merge:
-          data:
-            field: 'MY_FIELD'
+```json
+{
+    "platforms": {
+        "ios": {
+            "json": [
+                {
+                    "file": "google-services.json",
+                    "set": {
+                        "project_info": {
+                            "project_id": "MY_ID"
+                        }
+                    }
+                },
+                {
+                    "file": "google-services.json",
+                    "merge": {
+                        "data": {
+                            "field": "MY_FIELD"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
 ```
 
 ### xml
@@ -341,16 +417,20 @@ Array<
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  ios:
-    xml:
-      - file: app/file.xml
-        target: entries/field
-        merge: |
-          <field>
-            <string>Value</string>
-          </field>
+```json
+{
+    "platforms": {
+        "ios": {
+            "xml": [
+                {
+                    "file": "app/file.xml",
+                    "target": "entries/field",
+                    "merge": "<field>\n  <string>Value</string>\n</field>\n"
+                }
+            ]
+        }
+    }
+}
 ```
 
 ### copy
@@ -368,16 +448,27 @@ Array<{
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  ios:
-    copy:
-      - src: ../firebase/GoogleService-Info.plist
-        dest: App/GoogleService-Info.plist
-      - src: old/path/of/directory
-        dest: new/path/of/directory
-      - src: https://example.com/file.png
-        dest: new/path/of/file.png
+```json
+{
+    "platforms": {
+        "ios": {
+            "copy": [
+                {
+                    "src": "../firebase/GoogleService-Info.plist",
+                    "dest": "App/GoogleService-Info.plist"
+                },
+                {
+                    "src": "old/path/of/directory",
+                    "dest": "new/path/of/directory"
+                },
+                {
+                    "src": "https://example.com/file.png",
+                    "dest": "new/path/of/file.png"
+                }
+            ]
+        }
+    }
+}
 ```
 
 ### strings
@@ -403,15 +494,25 @@ It allows the direct definition of objects into the file using the `set` key, or
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  ios:
-    strings:
-      - file: App/Localizable.strings
-        set:
-          'Insert Element': 'Insert Element'
-      - file: App/Localizable.strings
-        setFromJson: 'lang/en.json'
+```json
+{
+    "platforms": {
+        "ios": {
+            "strings": [
+                {
+                    "file": "App/Localizable.strings",
+                    "set": {
+                        "Insert Element": "Insert Element"
+                    }
+                },
+                {
+                    "file": "App/Localizable.strings",
+                    "setFromJson": "lang/en.json"
+                }
+            ]
+        }
+    }
+}
 ```
 
 ### xcconfig
@@ -429,13 +530,21 @@ Array<{
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  ios:
-    xcconfig:
-      - file: App/Config.xcconfig
-        set:
-          'PRODUCT_NAME': '$NAME'
+```json
+{
+    "platforms": {
+        "ios": {
+            "xcconfig": [
+                {
+                    "file": "App/Config.xcconfig",
+                    "set": {
+                        "PRODUCT_NAME": "$NAME"
+                    }
+                }
+            ]
+        }
+    }
+}
 ```
 
 ### code
@@ -468,20 +577,31 @@ iOS also has the code action, but the type of the object is slightly different.
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  ios:
-    code:
-      - source: files/CustomBridge.swift
-      - source: files/FooBarLib.a
-        compilerFlags: '-fno-objc-arc'
-      - file: App/AppDelegate.swift
-        target: /import Capacitor/
-        replace: |
-          import Capacitor
-          import WatchConnectivity
-      - file: App/AppDelegate.swift
-        patchFile: patches/ChangeAppDelegate.patch
+```json
+{
+    "platforms": {
+        "ios": {
+            "code": [
+                {
+                    "source": "files/CustomBridge.swift"
+                },
+                {
+                    "source": "files/FooBarLib.a",
+                    "compilerFlags": "-fno-objc-arc"
+                },
+                {
+                    "file": "App/AppDelegate.swift",
+                    "target": "/import Capacitor/",
+                    "replace": "import Capacitor\nimport WatchConnectivity\n"
+                },
+                {
+                    "file": "App/AppDelegate.swift",
+                    "patchFile": "patches/ChangeAppDelegate.patch"
+                }
+            ]
+        }
+    }
+}
 ```
 
 ### tar
@@ -500,11 +620,18 @@ Array<{
 
 **Conditional**: Yes
 
-```yaml
-platforms:
-  ios:
-    tar:
-      - source: files/FooBar.tar
-        targetDir: files/FooBar
-        action: x
+```json
+{
+    "platforms": {
+        "ios": {
+            "tar": [
+                {
+                    "source": "files/FooBar.tar",
+                    "targetDir": "files/FooBar",
+                    "action": "x"
+                }
+            ]
+        }
+    }
+}
 ```
