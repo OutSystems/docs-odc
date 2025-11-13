@@ -79,9 +79,14 @@ ODC facilitates the development and management of intelligent apps. ODC provides
 
 ## Next steps
 
+After learning the concepts for building AI-powered apps, you can begin by configuring and integrating your AI models and search services.
+
 * [AI models and search services in ODC](ai-models.md)
 * [Adding AI models](add-ai-models.md)
 * [Adding search services](add-ai-search-services.md)
 * [Integrating AI models and search services](integrate-ai-models-logic-rag.md)
+
+## Related Resources
+
 * [Agentic apps in ODC](agentic-apps.md)
 * [External tools (MCP servers & prebuilt connectors)](tools/intro.md)
