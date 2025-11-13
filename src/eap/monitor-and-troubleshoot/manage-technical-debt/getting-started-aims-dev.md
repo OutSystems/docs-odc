@@ -79,6 +79,7 @@ To change the status of a finding, click on the status dropdown and select your 
 ![Screenshot showing the status dropdown to change the status of a finding.](images/change-status-finding-pl.png "Changing the status of a finding")
 
 If you select **Dismissed**, a dialog appears for you to provide a reason for the dismissal. Select your reason and optionally write a comment. Click **Dismiss finding**.
+Dismissed findings are excluded from score calculations.
 
 If you select **Snoozed**, a dialog also appears so you can select how long you want to snooze the finding. Select your desired time frame, optionally write a comment, and confirm by clicking **Snooze finding**.
 
