@@ -47,7 +47,7 @@ Follow these steps to retrieve the connectionId from the ODC Portal:
 
 <div class="info" markdown="1">
 
-For existing connections, when stored procedures are changed or new ones introduced, it's necessary to refresh the connection to fetch the new metadata. In the ODC Portal, click **Import** on the connection and then **Refresh list**.
+For existing connections, when stored procedures are changed or new ones are introduced, it's necessary to refresh the connection to fetch the new metadata. In the ODC Portal, click **Import** on the connection and then **Refresh list**.
 
 </div>
 
@@ -70,14 +70,14 @@ When using named assignments, the parameters may be specified in any order. The 
 
 When using positional assignments, values of the correct type must be provided in the same order as the parameters are declared in the definition of the action in the external system.
 
-If the action has optional parameters (can be `NULL` or have a default value) then a combination of positional and named assignments may be used.
-In this case, the positional assignments must be specified before the named assignments. If a parameter can be `NULL` and has a default value, then assigning the parameter to `NULL` will set the parameter to `NULL`. For the default value to be used, the parameter must not be assigned at all.
+If the action has optional parameters (can be `NULL` or have a default value), then a combination of positional and named assignments may be used.
+In this case, the positional assignments must be specified before the named assignments. If a parameter can be `NULL` and has a default value, then assigning the parameter to `NULL` will set the parameter to `NULL`. For the default value to be used, the parameter must not be assigned.
 
-Values must be assigned for all mandatory parameters (`NOT NULL` and no default value). This applies to parameters of all types including outputs.
+Values must be assigned for all mandatory parameters (`NOT NULL` and no default value). This applies to parameters of all types, including outputs.
 The values can only be literals or dynamic parameters, expressions containing operators or functions aren't supported.
 
 The result of `CALL` depends on the definition of the action in the external system. If the action returns a result using `SELECT`, then `CALL` will return that result.
-If an action returns multiple results using `SELECT`, then `CALL` will only return the result of the last `SELECT`.
+If an action returns multiple results, then `CALL` will only return the result of the first statement that returns a result.
 For all other actions, `CALL` will return a single record containing a value of `-1`.
 
 <div class="info" markdown="1">
@@ -92,8 +92,9 @@ For all other actions, `CALL` will return a single record containing a value of 
 
 ## Known issues
 
-* `CALL` can only be used in a multi statement context with at least one other statement that uses an entity from the same connection.
+* `CALL` can only be used in a multi-statement context with at least one other statement that uses an entity from the same connection.
 * Named assignments can't be used with Microsoft SQL Server. This means that all optional parameters must be assigned values in `CALL`.
+* For Microsoft SQL Server, using `SET NOCOUNT ON` inside actions will prevent the row count from being returned when executing `DDL` and `DML` statements.
 
 ## Examples
 
