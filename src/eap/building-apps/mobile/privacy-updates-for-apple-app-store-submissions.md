@@ -116,21 +116,24 @@ The following table contains the required key and recommended reason value for t
 
 ## Providing a privacy manifest file in ODC
 
-To create a binary setting in the browser:
+To create a binary setting in the browser, follow these steps:
 
-1. In ODC Studio, in the **Data** tab, click **Settings**. Right-click and select **Add Setting**.
+1. In ODC Studio, navigate to **App > Edit app properties > Extensibility**.
 
-1. Name your file similar to "PrivacyInfoFile” and ensure the **Data Type** is set to `Binary Data` and **Publish**.
+1. Right-click **Extensibility Settings**, click **Add Extensibility Setting**.
+   For detailed information about using extensibility settings, refer to [Configuring mobile apps](../../building-apps/mobile/configuring-mobile-apps.md#configure-extensibility-settings-configure-extensibility-settings).
 
-    ![Screenshot showing how to add a Privacy Info File setting in ODC Studio with the Data Type set to Binary Data.](images/privacy-info-file-setting-odcs.png "Adding a Privacy Info File in ODC Studio")
+2. Name your file similar to "PrivacyInfoFile” and ensure the **Data Type** is set to `Binary Data` and **Publish**.
 
-1. In the portal, navigate to **Apps,** and select your app.
+3. In the portal, navigate to **Apps,** and select your app.
 
-1. On the **"PrivacyInfoFile"** dropdown list, select **Edit**.
+4. Navigate to **Mobile distribution** and select **Extensibility settings**.
+
+5. On the **"PrivacyInfoFile"** dropdown list, select **Edit**.
 
     ![Screenshot of the ODC portal highlighting the PrivacyInfoFile setting with an Edit option.](images/edit-privacy-setting-pl.png "Editing Privacy Info File in ODC Portal")
 
-1. Upload your PrivacyInfo.xcprivacy file and **Save**.
+6. Upload your PrivacyInfo.xcprivacy file and **Save**.
 
 In ODC Studio, to configure your Extensibility Configurations:
 
@@ -140,15 +143,27 @@ In ODC Studio, to configure your Extensibility Configurations:
 
     ```
     {
-        "resources": {
-            "ios": {
-                "PrivacyInfoFile": {
-                    "src": $settings.PrivacyInfoFile,
-                    "target": "PrivacyInfo.xcprivacy"
-                }
-            }
-        }
+        "buildConfigurations": {
+            "resources": {
+                "ios": [
+                    {
+                        "source": "$extensibilitySettings.PrivacyInfoFile",
+                        "target": "PrivacyInfo.xcprivacy"
+                    }
+                ]
+            }
+        },
+        "resources": {
+            "ios": {
+                "PrivacyInfoFile": {
+                    "src": $extensibilitySettings.PrivacyInfoFile,
+                    "target": "PrivacyInfo.xcprivacy"
+                }
+            }
+        }
     }
     ```
 
-1. The name of the object property inside `ios` and `src` must match the name of the setting. `Target` must be set to `PrivacyInfo.xcprivacy`. You can replace `PrivacyInfoFile` with any name.
+1. The name of the object property inside `ios` and `src` must match the name of the setting. `Target` must be set to `PrivacyInfo.xcprivacy`.
+
+1. Both `buildConfigurations.resources.ios` is necessary for building Capacitor applications and `resources.ios.PrivacyInfoFile` is necessary for building Cordova apps.  You can specify both, as in the example.

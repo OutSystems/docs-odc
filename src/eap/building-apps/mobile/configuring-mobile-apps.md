@@ -35,7 +35,7 @@ The mobile app properties work correctly only if the extensibility scripts are e
 
 While the mobile app properties sync with the underlying extensibility configuration files, for advanced use cases you can directly edit the [Extensibility configurations](extensibility-configurations-json-schema.md) files. These JSON files offer granular control over your mobile app's build process and enable custom adjustments.
 
-## Configure extensibility settings
+## Configure extensibility settings {#configure-extensibility-settings}
 
 To configure the build time settings for your app, click the app name and select **Extensibility**. You can also add new and delete settings directly from ODC Studio.
 
