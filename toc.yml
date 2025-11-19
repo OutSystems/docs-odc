@@ -717,6 +717,7 @@
     - topics:
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/select-revision-build.md 
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/set-version-release-notes.md
+        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/asset-configurations.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/deploy-asset.md    
 
 # Reference

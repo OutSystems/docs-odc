@@ -26,6 +26,7 @@ By integrating OutSystems APIs with the automation tools you already use, you ca
 
 As part of a CI/CD pipeline, you can use OutSystems APIs to:
 
-1. [Select the revision and build of the asset you want to deploy](select-revision-build.md)
-1. [Set the release version and release notes](set-version-release-notes.md)
-1. [Deploy your asset to the target stage](deploy-asset.md)
+* [Select the revision and build of the asset you want to deploy](select-revision-build.md)
+* [Set the release version and release notes](set-version-release-notes.md)
+* [Review asset configurations](asset-configurations.md)
+* [Deploy your asset to the target stage](deploy-asset.md)

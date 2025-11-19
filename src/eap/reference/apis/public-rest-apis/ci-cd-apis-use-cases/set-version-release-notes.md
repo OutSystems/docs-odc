@@ -62,4 +62,5 @@ Before deploying to production, define a release version and release notes, and 
 
 ## Next steps
 
+* [Reviewing asset configurations](asset-configurations.md)
 * [Deploying your asset to the target stage](deploy-asset.md)

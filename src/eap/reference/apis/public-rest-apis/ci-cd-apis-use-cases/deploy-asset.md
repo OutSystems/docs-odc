@@ -17,6 +17,7 @@ outsystems-tools:
   - odc portal
 helpids:
 ---
+
 # Deploying your asset to the target stage
 
 This article explains how to use OutSystems APIs to programmatically deploy an asset to a target stage and monitor the deployment status to confirm the process is complete. This is useful for automating deployments while reducing manual intervention.
@@ -26,6 +27,7 @@ This article explains how to use OutSystems APIs to programmatically deploy an a
 Before using the APIs to deploy your asset to a target stage, ensure that you have:
 
 * [Generated an access token](../authentication/get-access-token.md) with these [permissions](../authentication/create-api-client.md#edit-permissions-of-api-client):
+    * [Configuration management \> Edit configurations](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/asset_configurations_api/#patch-/environments/-environmentKey-/applications/-applicationKey-/configurations)
     * [Stage > View stage](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/deployments_api/#get-/deployment-operations)  
     * [Release management > Deploy apps](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/deployments_api/#post-/deployment-operations)
 * The [key of the build](select-revision-build.md) to be deployed
@@ -41,7 +43,54 @@ Before using the APIs to deploy your asset to a target stage, ensure that you ha
 
     </div>
 
-## Deploy your asset to the target stage
+## Set the asset configurations to the target stage {#configurations}
+
+If you need to set [configurations](asset-configurations.md) for this asset in the target stage, set them before proceeding with the deployment.
+
+To set the asset configurations, use:
+
+`PATCH /api/asset-configurations/v1/environments/{environmentKey}/applications/{applicationKey}/configurations`
+
+Pass the configurations in the body. To check all types of configurations you can set, refer to the [Asset Configurations API](../../asset-config-v1.md) reference. To check the key of each configuration, [review the available configurations for the asset](asset-configurations.md).
+
+For example, to ensure that a specific timer is inactive after deployment:
+
+    {
+    "key": null,
+    "revisionBaseline": "2",
+    "timers": 
+      [
+        {
+        "configs": [
+          {
+          "value": "False",
+          "key": "IsActive"
+          }
+        ],
+        "key": "2kk222k2-2222-2222-22k2-2k2k2222kk22"
+        }
+      ]
+    }
+
+<div class="info" markdown="1">
+
+The revisionBaseline is used by the OutSystems platform to validate whether the configuration key and value type exist in that revision context. It’s not used to ensure that the configuration is only applied when the revision reaches the target stage.
+
+</div>
+
+After calling this endpoint, the changed configurations will be pending. These configurations are applied automatically during the [deployment](#deploy).
+
+<div class="info" markdown="1">
+
+If you want to apply the configurations without waiting for the next deployment, and the asset is already deployed in the target environment, you can trigger an **Apply Configurations** operation:
+
+`POST /api/deployments/v1/deployment-operations`
+
+In the body, set the operation as ApplyConfigs.
+
+</div>
+
+## Deploy your asset to the target stage {#deploy}
 
 To deploy your asset to a target stage in your CI/CD pipeline, follow these steps:
 
@@ -62,6 +111,12 @@ To deploy your asset to a target stage in your CI/CD pipeline, follow these step
     If this API call is successful, the response should show the status as "Running". If this is not the case, check the [Deployments API reference](https://www.outsystems.com/tk/redirect?g=acf7cd06-3fe1-4bd3-85e8-06cd11aa0a7d) for more information on other statuses.
 
     The response also contains the operation key, necessary for the next step.  
+
+    <div class="info" markdown="1">
+
+    The deployment operation applies any pending configurations to the asset.
+
+    </div>
 
 1. To get the list of deployment operations and check if your deployment finished successfully, use:  
 
