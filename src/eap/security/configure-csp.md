@@ -147,7 +147,7 @@ The **Required values** are the values that ODC automatically applies to the dir
 
 * ``unsafe-eval``: The unsafe-eval directive allows the web pages to evaluate strings as code. This directive consists of the eval function, the function constructor, and some usages of the setTimeout and setInterval functions that are currently used by the platform.
 
-For more details about the impacts of removing `unsafe-eval` and `unsafe-inline` directives, refer to [Impacts of removing unsafe directives](./impacts-removing-unsafe-directives.md).
+For more details about the impacts of removing `unsafe-eval` and `unsafe-inline` directives, refer to [Impacts of removing unsafe directives](impacts-removing-unsafe-directives.md).
 
 ## Operational and security considerations
 
