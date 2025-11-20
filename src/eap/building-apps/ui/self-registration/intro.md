@@ -5,7 +5,7 @@ locale: en-us
 guid: cb22b88a-f8ec-416c-8f77-8ac814d58bd7
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=3208-22063
 audience:
   - mobile developers
   - frontend developers
@@ -21,45 +21,51 @@ topic:
 
 # Self-registration flow
 
-The self-registration flow enables users to register and access your app without human intervention. This flow is specifically designed for cases where the _built-in identity provider_ is used and is _not applicable for external identity providers_ (e.g., Google, Facebook, or other third-party identity providers). Depending upon the type of app you create, users may find your app from your website through a Google search. If you have an app that requires users to register to log in, you may need to provide them with an email link to your app.
+A self-registration flow lets users sign up and access your app without human intervention, making it easier to scale onboarding and reduce manual account provisioning. Users create their own accounts directly from your app or website.
 
-You might also want users to be validated as part of the sign-in process. Many apps use a verification process in which you provide users with a verification code. You can use verification codes to confirm the validity of the user using the email address.
+ODC Studio lets you build custom registration logic to address your company's requirements. This includes security rules, for example, user validation and password policies, or other business rules.
 
-<div class="info" markdown="1">
-
-The OutSystems Developer Cloud (ODC) Portal provides access to the Forge. In Forge, you might want to review or use an unsupported component called “Vonage Messaging” that enables you to send a verification code using SMS.
-
-</div>
-
-You can also use the [provided OML](resources/SelfRegistrationSample.oml). The OML is an example app with the self-registration flow implemented. You can follow the steps in the OML directly to copy elements. The example app is a template for the self-registration flow.
-
-Users then follow a self-registration process to gain access to the app. To personalize your users experience, you create screens, logic, emails, and validations in ODC studio.
-
-You start by creating a **Signup** screen. A signup screen usually requires users to enter a username and an email address. Security of your app and systems is essential. If your company has security requirements for logging into an app, you can use ODC Studio to create logic to register a user. Writing business logic lets you define the actions. For example, using logic, you can:
-
-* Create actions that send emails
-* Generate a verification code that gets included in the email to the user
-* Verify the verification code the user submits
-
-Verification codes enable you to confirm that the person registering has access to that email. In ODC, you can **create an email to send the verification code**.
+As a best practice, confirm the user's email during sign-up by sending a one-time verification code via email.
 
 <div class="info" markdown="1">
 
-To use email, you must have an email provider configured.
+This flow is available only with the **built-in** identity provider and doesn't apply to external identity providers, such as Google or Facebook.
 
 </div>
 
-OutSystems provides a sample email that you can update, making the process easier and quicker. You can change the subject line, the message, the note text, and the body of the email.
+<div class="info" markdown="1">
 
-Once users enter a validation code, you must verify the code. You create a form to validate the verification code. Using the Form widget, you create a form to capture the data. You can define the logic that:
+You can save time by installing the [User Self Registration Flow](https://www.outsystems.com/forge/component-overview/17017/user-self-registration-flow-odc) asset from the **Forge** in the ODC Portal, which implements the flow described in this article.
 
-* Sets the verification code
-* Verifies the password follows the password policy
-* Defines which screen to display once the user logs in
+</div>
 
-Use the following links in the order that they appear to learn how to:
+## Prerequisites
 
-* [Create a Signup screen, so users can register to use your app](screen.md)
-* [Create logic to register a user](logic.md)
-* [Create an email to send the verification code](email.md)
-* [Create a form to validate the verification code](create-validation-form.md)
+Before you begin, set up an email provider in the ODC Portal to let your app send verification codes during the self-registration flow. For step-by-step guidance, see [Configure SMTP settings for emails](../../../manage-platform-app-lifecycle/configure-emails.md).
+
+## Understand the self-registration flow
+
+The following diagram illustrates the typical steps in a self-registration flow:
+
+![Diagram illustrating the steps in a self-registration flow, including sign-up, email verification, password validation, and role assignment.](images/self-registration-flow-diag.png "Self-registration flow diagram")
+
+To build the self-registration flow in ODC Studio, follow these high-level steps:
+
+1. [Create the Sign up screen](screen.md) with name and email input fields.
+1. [Create logic to register a user](logic.md), including:
+    * The **SignUpOnClick** client action
+    * The **DoSignup** server action with user validation logic
+    * Input validation for email, name, and duplicate users
+    * Sending the verification email (**Send Email** widget on success)
+1. [Create an email to send the verification code](email.md).
+
+    Customize the sample email template provided by OutSystems (subject, message, note text, and body).
+
+1. [Create a verification code and password verification form](create-validation-form.md) that:
+
+    * Shows the verification code input after the user receives the email
+    * Validates the verification code
+    * Validates the password against your password policy and confirms the passwords match
+    * Grants a role after successful registration (see [Secure an app with roles](../../../user-management/secure-app-with-roles.md))
+    * Navigates to the appropriate screen after successful sign-in
+  
