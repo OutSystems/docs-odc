@@ -31,7 +31,7 @@ In this example, we create a dropdown tags search for a list of employees and a 
 
     The Dropdown Tags widget is displayed.
 
-    ![Screenshot of the Dropdown Tags widget in ODC Studio toolbox](images/dropdowntags-widget-ss.png "Dropdown Tags Widget in ODC Studio")
+    ![Screenshot of the Dropdown Tags widget in ODC Studio toolbox](images/dropdowntags-widget-ss.png "Dropdown Tags Widget in ODC Studio toolbox")
 
 1. From the Toolbox, drag the Dropdown Search widget into the Main Content area of your application's screen.
 
