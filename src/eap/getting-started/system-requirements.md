@@ -177,7 +177,7 @@ The following table shows the limits of the ODC to keep in mind when you are bui
 The general platform limits are:
 
 | **Name**                                 | **Limit** | **Description** |
-| ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
 | DB backup retention (days)               |        30 | The maximum number of days database backups are retained. |
 | Expose REST API method timeout (seconds) |        60 | The maximum amount of time an Expose REST API method executes before timing out. |
 | Service action timeout (seconds)         |       100 | The time a service action waits for a response before timing out. |
@@ -197,7 +197,7 @@ The general platform limits are:
 The logs and traces limits are:
 
 | **Name**                                 | **Limit** | **Description** |
-| ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
 | App log retention (days)                 |        28 | The maximum number of days that logs are retained (plus 21 days of additional backup retrievable via support ticket). |
 | Log rate/minute (thousands)              |         2 | The maximum rate at which logs can be captured, in thousands per minute. |
 | Trace retention (days)                   |        28 | The maximum number of days that traces are retained (plus 21 days of additional backup retrievable via support ticket). |
@@ -213,7 +213,7 @@ The logs and traces limits are:
 The event limits are:
 
 | **Name**                                 | **Limit** | **Description** |
-| ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
 | Concurrent events                        |       100 | The maximum number of events that can run concurrently per app, regardless of the number of containers supporting the app. |
 | Event duration (minutes)                 |         2 | The maximum duration of a handler of an event in minutes. |
 | Events per queue                         |    10,000 | The maximum number of events that can be queued. Upon reaching the limit, an exception is thrown. |
@@ -223,7 +223,7 @@ The event limits are:
 The custom code limits are:
 
 | **Name**                                 | **Limit** | **Description** |
-| ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
 | Custom code execution duration (seconds) |        95 | The maximum time a single custom code function can execute. |
 | Custom code memory (MB)                  |     1,024 | The maximum memory available for custom code functions while executing. |
 | Custom code storage (MB)                 |       512 | The maximum amount of ephemeral storage available for custom code functions while executing. |
@@ -234,13 +234,13 @@ The custom code limits are:
 The workflow limits are:
 
 | **Name**                                 | **Limit** | **Description** |
-| ---------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
 | Workflow activity max duration (seconds) |       120 | The maximum duration of a workflow activity. |
 
 ### AI Mentor
 
 | **Name**                                    | **Limit** | **Description** |
-| ------------------------------------------- | --------: | ----------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
 | App Generator max apps generated per day    |        20 | The maximum number of apps that can be generated in a day. |
 | App Generator max apps generated per minute |         2 | The maximum number of apps that can be generated in a minute. |
 | App Editor tab per user and app             |         1 | The maximum number of App Editor tabs that can be opened per user and app |

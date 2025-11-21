@@ -39,8 +39,7 @@ Before you begin, make sure you have:
 
 * A Microsoft Entra ID tenant and Azure Portal access with permission to create App registrations and client secrets.
 * A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
-
-You must have the [**Manage authentication**](../../reference/built-in-functions/roles.md#permissions-registry) permissions.
+* The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 
 ## Configure Microsoft Entra ID
 

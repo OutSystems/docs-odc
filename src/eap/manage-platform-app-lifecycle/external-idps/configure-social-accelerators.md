@@ -31,7 +31,7 @@ This article provides step-by-step instructions for adding social providers with
 Before you begin, make sure you have:
 
 * A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
-* The **Manage authentication** permissions.
+* The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 * A registered app in your social provider portal, with the required values for your provider ready (refer to [Social provider requirements](#social-provider-requirements); for example, Client ID and Client Secret).
 
 <div class="info" markdown="1">

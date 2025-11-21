@@ -34,7 +34,7 @@ Review the [System considerations](intro.md#system-considerations) for external 
 
 </div>
 
-You must have the [**Manage authentication**](../../reference/built-in-functions/roles.md#permissions-registry) permissions.
+You must have the [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 
 ## Configure Okta
 

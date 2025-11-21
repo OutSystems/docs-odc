@@ -27,8 +27,10 @@ After you add an external identity provider (IdP), assign it to one or more [sco
 
 ## Prerequisites
 
+Before you begin, ensure the following:
+
 * The IdP configuration exists (refer to [Add an external IdP](intro.md#add-an-external-idp)).
-* You must have the [**Manage authentication**](../../reference/built-in-functions/roles.md#permissions-registry) permissions.
+* You must have the [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 
 ## Assign an IdP to your organization or to a stage
 

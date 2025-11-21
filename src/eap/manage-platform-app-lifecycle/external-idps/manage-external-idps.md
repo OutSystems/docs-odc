@@ -25,6 +25,10 @@ helpids:
 
 This article covers the lifecycle management of your external IdPs, including replacing, unassigning, and deleting them.
 
+## Prerequisites
+
+You must have the [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
+
 ## Replace an external IdP { #replace-idp }
 
 To replace an external identity provider (IdP) in ODC, follow these steps:

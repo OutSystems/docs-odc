@@ -29,6 +29,8 @@ Redirect URIs tell the identity provider where to send users after login or logo
 
 ## Prerequisites
 
+Before you begin, ensure the following:
+
 * You already [added the external IdP](intro.md#add-an-external-idp) in the ODC Portal.
 * You have access to the external IdP application registration (for example, a Microsoft Entra ID app registration or an Okta application).
 

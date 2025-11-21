@@ -31,7 +31,7 @@ This article provides step-by-step instructions for adding SAML 2.0 identity pro
 Before you begin, make sure you have:
 
 * A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, ODC only supports SP-initiated flows and recommends signed responses).
-* The **Manage authentication** permissions.
+* The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 
 From your provider, have the following ready:
 

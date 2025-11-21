@@ -38,7 +38,7 @@ If you're adding [Microsoft Entra ID](azure-ad.md) or [Okta](okta.md), you can u
 Before you begin, make sure you have:
 
 * A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
-* The **Manage authentication** permissions.
+* The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 * A registered app in your provider portal, with the following values ready:
 
     * OpenID configuration URL (**Discovery endpoint**).
