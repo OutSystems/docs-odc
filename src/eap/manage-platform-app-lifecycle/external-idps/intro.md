@@ -126,8 +126,6 @@ Copy the Login and Logout URLs from the ODC Portal and paste them in your provid
 
 Refer to the dedicated article for assignment steps: [Assign an external identity provider](assign-idp.md).
 
-[Scopes for assigning IdPs](#scopes-for-assigning-idps-scopes-for-assigning-idps)
-
 ### Step 4: Use an IdP in your apps (for end-users only)
 
 When you assign a provider for use by the apps, you need to create the logic in ODC Studio for each app you want to use it. For guidance on how to create the logic, refer to [Use external identity providers in an app](apps.md).
