@@ -90,7 +90,7 @@ Before updating the actions, delete the input parameter **CustomerEmail** by exp
     1. **ApplicationName** as `GetAppName()`
     1. Leave the **From** property empty or add the email address configured in the ODC Portal.
 
-    ![Diagram showing how to set user registration email properties in OutSystems](images/user-registration-variables-odcs.png "User Registration Variables")
+    ![Diagram showing how to set user registration email properties in OutSystems](images/variable-odcs.png "User Registration Variables")
 
     <div class="info" markdown="1">
 
@@ -100,7 +100,7 @@ Before updating the actions, delete the input parameter **CustomerEmail** by exp
 
 1. From the **Interface tab**, click  the **SignUp screen** > **SignUpOnClick** action to display **SignUpOnClick** on the canvas.
 
-    ![Flowchart detailing the SignUpOnClick client action input parameters in OutSystems](images/signup-dosignup-input-parameters-odcs.png "SignUp OnClick Client Action")
+    ![Flowchart detailing the SignUpOnClick client action input parameters in OutSystems](images/signup-do-signup-input-parameters-odcs.png "SignUp OnClick client action")
 
 1. From the canvas, click the **DoSignup** action to display the Properties panel, and confirm the following properties:
 
@@ -128,4 +128,6 @@ Before updating the actions, delete the input parameter **CustomerEmail** by exp
 
     `DoSignup.ErrorMessage`
 
-You can now [create a form to validate the verification code.](create-validation-form.md)
+    ![Flowchart detailing the SignUpOnClick client action](images/verification-odcs.png "SignUp OnClick action")
+
+You can now [create a form to validate the verification code](create-validation-form.md).

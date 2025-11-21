@@ -40,7 +40,7 @@ Before you begin creating the verification code and password verification form, 
 
 To create a verification code condition in ODC Studio, follow these steps:
 
-1. Go to the **Interface** tab, expand **UI Flows** > **Common**, right-click **SignUp**, and select **Add Local Variable**.
+1. Go to the **Interface** > **Elements** tab, expand **UI Flows** > **Common**, right-click **SignUp**, and select **Add Local Variable**.
 1. Set the new local variable's name to **IsVerificationCodeVisible**, set **Data Type** to `Boolean`, and **Default Value** to `False`.
 1. Double-click the **SignUp** screen to open it, click the **Widget Tree** tab, right-click **SignupForm**, and click **Enclose in If**.
 1. In the **If** properties, set **Condition** to **IsVerificationCodeVisible**, then right-click the **If** element and select **Swap Content**.
@@ -119,10 +119,22 @@ To ensure users follow the password policy, you must validate the password. Foll
 To update the verification form, follow these steps:
 
 1. From the **Interface** tab, right-click the **VerificationCodeForm** form and select **Insert Widget** > **Container**. Name it `Footer` and set its **Style Classes** property to `"login-button margin-top-l"`.
+
+1. From the **Widget Tree**, right-click the **Footer** container, then select **Insert Widget** > **Button**.
+1. For the new button:
+    1. Set the **On Click** event to **Common\\Login** screen, and then replace the text inside the button to `Cancel`.
+    1. Set the **Style Classes** property to `"btn margin-top-base"` and the **Is Form Default** property to `No`.
+    1. In the **Styles** tab, in the **Layout** section, set the **Width** property to `fill`.
+
 1. From the **Widget Tree**, right-click the **Footer** container, then select **Insert Widget** > **Block**, and add a **ButtonLoading** block.
-1. Set the **IsLoading** property to `IsExecuting` and **ExtendedClasses** to `full-width`.
-1. Expand **ButtonLoading** > **Button** > **Button**, set **Enable** to `VerificationCodeForm.Valid`, and replace the text inside the button with `Set Password`.
-1. For the **On Click** event, select **New Client Action** from the dropdown and name it `FinishRegistration`.
+1. For the new **ButtonLoading** block:
+    1. From the **Widget Tree**, right-click the new **ButtonLoading** block, then select **Move before**.
+    1. Set the **IsLoading** property to `IsExecuting` and **ExtendedClasses** to `"full-width"`.
+    1. Expand **ButtonLoading** > **Button** > **Button**, set **Enable** to `VerificationCodeForm.Valid`, and replace the text inside the button with `Set Password`.
+
+        ![Screenshot providing an overview of the verification code form in ODC Studio](images/verification-code-overivew-odcs.png "Verification Code Form Overview")
+
+    1. For the **On Click** event, select **New Client Action** from the dropdown and name it `FinishRegistration`.
 1. In the new **FinishRegistration** action, delete the **If** element. Drag an **Assign** widget after the **Start** element, and assign the `IsExecuting` variable to `True`.
 1. Add the **FinishUserRegistration** [public element](../../libraries/use-public-elements.md) after the **Assign** element, and set the **Email** property to `UserEmail`, the **Password** property to `Password`, and the **VerificationCode** property to `VerificationCode`.
 
@@ -141,7 +153,7 @@ To complete the registration process and handle the result, do the following:
 1. Right-click the new **FinishSignUp** server action and select **Add Input Parameter**. Name it `UserId` and set the **Data Type** to `User Identifier`.
 1. In the new **FinishSignUp** server action, after the **Start** node, drag a **Run Server Action** widget, search for **Grant&lt;YOUR_ROLE_NAME&gt;Role**, and set the **UserId** to `UserId`.
 
-    ![Screenshot illustrating how to drag a GrantRole server action and add the user ID in ODC Studio](images/grant-role-values-odcs.png "Drag a GrantRole Server Action and Add the User ID")
+    ![Screenshot illustrating how to drag a GrantRole Server Action and add the user ID in ODC Studio](images/grant-role-values-odcs.png "Drag a GrantRole Server Action and Add the User ID")
 
 1. Back to the  **FinishRegistration** screen client action:
     1. Select the **FinishSignUp** Run Server Action, and set the **UserId** to `FinishUserRegistration.RegistrationResult.UserId`.
@@ -157,24 +169,7 @@ To complete the registration process and handle the result, do the following:
 
 ## Add the sign up link to the login screen
 
-To enable users to navigate to sign up, add a button on the **Signup** screen and a link on the **Login** screen.
-
-### Add a button to the Signup screen
-
-To add a sign up button to the **Signup** screen, follow these steps:
-
-1. Open the **Signup** screen.
-1. Drag a **Button** widget after the **Set Password** button.
-1. For the new button:
-    1. Set the **On Click** event to **Common\\Login** screen, and then replace the text inside the button to `Cancel`.
-    1. Set the **Style Classes** property to `btn margin-top-base` and the **Is Form Default** property to `No`.
-    1. In the **Styles** tab, in the **Layout** section, set the **Width** property to `fill`.
-
-![Screenshot providing an overview of the verification code form in ODC Studio](images/verification-code-overivew-odcs.png "Verification Code Form Overview")
-
-### Add a sign up link to the Login screen
-
-To add a sign up link to the Login screen, follow these steps:
+To enable users to navigate to sign up, add a link on the **Login** screen:
 
 1. Open the **Login** screen, and select the **Widget Tree**.
 1. Add a **Container** into the **LoginForm**.

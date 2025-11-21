@@ -69,3 +69,6 @@ To build the self-registration flow in ODC Studio, follow these high-level steps
     * Grants a role after successful registration (see [Secure an app with roles](../../../user-management/secure-app-with-roles.md))
     * Navigates to the appropriate screen after successful sign-in
   
+## Related resources
+
+* [Managing authorization and authentication for end-users](../../../user-management/end-users/intro.md)
