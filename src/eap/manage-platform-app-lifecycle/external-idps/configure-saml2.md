@@ -22,19 +22,30 @@ topic:
 helpids: 30672, 30673
 ---
 
-# Configure SAML 2.0 identity providers
+# Add a SAML 2.0 identity provider
 
-This article provides step-by-step instructions for configuring SAML 2.0 identity providers in OutSystems Developer Cloud (ODC).
+This article provides step-by-step instructions for adding SAML 2.0 identity providers in OutSystems Developer Cloud (ODC).
 
 ## Prerequisites
 
-You must have the **Manage authentication** permissions.
+Before you begin, make sure you have:
 
-## Configure SAML 2.0 provider
+* A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, ODC only supports SP-initiated flows and recommends signed responses).
+* The **Manage authentication** permissions.
 
-You can configure a SAML 2.0 provider by navigating to the **ODC Portal** > **Manage** > **Identity providers**.
+From your provider, have the following ready:
 
-To launch the **New provider** configuration screen, click the **Add Provider** dropdown and select **SAML 2.0**. Then follow these steps:
+* SAML metadata URL or metadata XML file.
+* Provider configuration details (Entity ID, SSO URL, certificates).
+
+## Add a SAML 2.0 provider
+
+To add a SAML 2.0 provider in the ODC Portal:
+
+1. Go to **Manage** > **Identity providers**.
+1. Open the **Add provider** menu and choose **SAML 2.0**.
+
+After selecting **SAML 2.0**, complete these steps:
 
 ### Step 1: Enter a provider name
 
@@ -72,7 +83,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     * X509 certificates
     * Redirect URLs
 
-    You can retrieve this information using an XML file or manually.
+    You can retrieve this information from the ODC Portal using an XML file or manually.
 
 1. Enter this metadata in your identity provider's configuration page.
 
@@ -80,7 +91,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 ### Step 4: Configure provider
 
-1. Retrieve and import the **identity provider metadata**.
+1. From your provider, retrieve the **identity provider metadata** and import it into the ODC Portal.
 
     * Identity provider entity ID
     * Single sign-on service URL
@@ -114,7 +125,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     <div class="info" markdown="1">
 
-    For more details about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](intro.md#claim-mapping-logic).
+    For more details about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](identity-claims-email-verification.md#claim-mapping-logic).
 
     </div>
 
@@ -139,7 +150,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     * Want assertions signed
     * NameID policy format
 
-1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](intro.md#email-verification-logic).
+1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
 
 1. Click **Next**.
 
@@ -149,14 +160,13 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 ODC adds the provider to the list of available providers.
 
-## Next steps
+## Next step
 
-* [Assign the provider](intro.md#assign-an-external-idp)
-* [Implement the authentication logic](apps.md)
+* [Assign an IdP](assign-idp.md)
 
 ## Related resources
 
-* [Configure OpenID Connect identity providers](configure-openid-connect.md)
-* [Configure social providers with accelerators](configure-social-accelerators.md)
-* [Microsoft Entra ID configuration](azure-ad.md)
-* [Okta configuration](okta.md)
+* [Add an OpenID Connect identity provider](configure-openid-connect.md)
+* [Add a social identity provider with accelerators](configure-social-accelerators.md)
+* [Add Microsoft Entra ID for use as external identity provider](azure-ad.md)
+* [Add Okta for use as an external identity provider](okta.md)

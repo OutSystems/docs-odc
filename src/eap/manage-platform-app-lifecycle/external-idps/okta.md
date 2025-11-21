@@ -20,13 +20,31 @@ topic:
 
 # Add Okta for use as an external identity provider
 
+<div class="warning" markdown="1">
+
+This page is provided as a reference. For the latest instructions about adding Okta as an external IdP, refer to the official [Okta documentation](https://help.okta.com/en-us/content/index.htm?cshid=csh-index).
+
+</div>
+
+## Prerequisites
+
+<div class="info" markdown="1">
+
+Review the [System considerations](intro.md#system-considerations) for external identity providers.
+
+</div>
+
+You must have the [**Manage authentication**](../../reference/built-in-functions/roles.md#permissions-registry) permissions.
+
+## Configure Okta
+
 ODC admins can configure Okta as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab.
 
-To launch the **New provider** configuration screen, click the **Add Provider** > **OpenID Connect** button. Now follow these steps:
+To open the **New provider** configuration screen, click the **Add Provider** > **OpenID Connect** button. Now follow these steps:
 
 1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
 
-1. Login to the [**Okta Portal**](https://login.okta.com/). Navigate to the **Applications > Applications** screen and click **Create App Integration** to create a new application.
+1. Login to the [**Okta Portal**](https://login.okta.com/). In the **Admin Console**, go to the **Applications > Applications** screen and click **Create App Integration** to create a new app.
 
     ![Okta dashboard highlighting the 'Create App Integration' button.](images/create-app-integration-ok.png "Okta Create App Integration")
 
@@ -34,7 +52,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     ![Okta 'Create a new app integration' wizard with 'OIDC - OpenID Connect' and 'Web Application' selected.](images/config-app-integration-ok.png "Okta App Integration Configuration")
 
-1. Add a name for your application and select **Skip group assignment for now** in the assignments section. Click **Save**.
+1. Add a name for your app and select **Skip group assignment for now** in the assignments section. Click **Save**.
 
 1. Navigate to the **Security > API** screen and click **default** under the entry for the new application.
 
@@ -46,7 +64,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. Click **Get details** in **ODC Portal**. This retrieves the JSON of the Okta OpenID configuration and shows a preview.
 
-1. Copy the value of the **Client ID** field from the main screen of the new application in Okta Portal and paste it into the **Client ID** field in ODC Portal. Repeat for the **Client Secret** field.
+1. Copy the value of the **Client ID** field from the main screen of the new app in Okta Portal and paste it into the **Client ID** field in ODC Portal. Repeat for the **Client Secret** field.
 
     ![Okta application details showing the 'Client ID' and 'Client Secret' fields.](images/add-client-id-secret-ok.png "Okta Client ID and Secret")
 
@@ -54,17 +72,17 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     ODC safely stores the configuration details in a secret manager.
     </div>
 
-1. Complete the configuration in ODC Portal by leaving the **PKCE** as the default value (**SHA-256**) and fields in **Claim Mapping** section as default values (**name**, **email**) and clicking **Save**.
+1. Complete the configuration in ODC Portal by leaving the **PKCE** as the default value (**SHA-256**) and fields in **Claim Mapping** section as default values (**name**, **email**, **picture**) and clicking **Save**.
 
 ODC tests the configuration and on success adds Okta to the list of available providers. If the test fails, a notification with the error displays.
 
-Now follow the steps [here](intro.md#apply-an-external-idp) to apply for the newly added Okta provider for use by your organization or apps.
+To enable the newly added Okta provider for your organization or apps, follow the instructions in [Assign an external IdP](assign-idp.md).
 
-## Configure redirect URLs
+## Configure the redirect URIs { #setup-redirect-urls }
 
-To add permitted redirects for the Okta provider follow the steps below.
+To add permitted redirects for the Okta provider, follow these steps:
 
-1. Click **Applications > Applications** in Okta Portal to navigate to the main screen of the new application.
+1. Click **Applications > Applications** in Okta Portal to navigate to the main screen of the new app.
 
 1. Select **General settings** and click **Edit**.
 
@@ -76,4 +94,41 @@ To add permitted redirects for the Okta provider follow the steps below.
 
 1. Click **Save**.
 
-If you applied the newly added Okta provider for use in your apps, now follow the steps [here](apps.md).
+## Assign the app to users
+
+1. In **Okta Portal**, open **Applications > Applications** and select the app you created.
+
+1. Open the **Assign Users to App** tab and click **Assign**.
+
+1. Choose **People** or **Groups**, pick the intended users or groups, and click **Assign**.
+
+1. Click **Done** after completing the assignments.
+
+## Create an access policy
+
+1. In **Okta Portal**, go to **Security > API** and open **Authorization Servers**.
+
+1. Select **default** (or the authorization server you use) and open the **Access Policies** tab.
+
+1. Click **Add Policy**, enter a name.
+
+1. Set **Assign to** to **The following clients**, and select your app.
+
+1. Click **Create Policy**.
+
+1. For the new policy, click **Add rule**.
+
+1. In **Grant type is**, enable **Authorization Code**.
+
+1. In **Scopes**, allow the following scopes: `openid`, `profile`, and `email` (add any others your app requires). Click **Create rule**.
+
+1. Ensure the new rule is enabled and appears before any more restrictive rules in the list (Okta evaluates access policy rules top-to-bottom).
+
+## Next step
+
+If you want to use the created IdP in your app, ensure that you modify the login and logout flows accordingly. For more information, refer to [Use external identity providers in an app](apps.md).
+
+## Related resources
+
+* [IdP and end-user group mapping](end-user-group-mapping.md)
+* [Configure authentication with external identity providers](intro.md)

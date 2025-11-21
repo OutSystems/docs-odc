@@ -23,22 +23,41 @@ topic:
   - idp-openidp
 ---
 
-# Configure OpenID Connect identity providers
+# Add an OpenID Connect identity provider
 
-This article provides step-by-step instructions for configuring OpenID Connect (OIDC) identity providers in ODC.
+This article provides step-by-step instructions for adding an OpenID Connect (OIDC) identity provider in ODC.
 
 <div class="info" markdown="1">
 
-If you're configuring [Microsoft Entra ID](azure-ad.md) or [Okta](okta.md), you can use the specific guides for detailed provider setup instructions.
+If you're adding [Microsoft Entra ID](azure-ad.md) or [Okta](okta.md), you can use the specific guides for detailed provider setup instructions.
 
 </div>
 
-## Configure OpenID Connect provider
+## Prerequisites
 
-ODC admins can configure an OpenID Connect provider by navigation to the **ODC Portal** > **Manage** > **Identity providers**.
+Before you begin, make sure you have:
 
-To launch the **New provider** configuration screen, click the **Add Provider** dropdown and select **OpenID Connect**. Then follow these steps:
+* A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
+* The **Manage authentication** permissions.
+* A registered app in your provider portal, with the following values ready:
 
+    * OpenID configuration URL (**Discovery endpoint**).
+    * Provider credentials (**Client ID** and **Client secret**).
+
+    Some providers use different field names, such as **Application ID** for **Client ID** or **Value** for **Client secret**. Refer to the provider's documentation for guidance.
+
+<div class="info" markdown="1">
+
+When registering your web application in your identity provider’s portal, if you're prompted to provide redirect URIs, leave the fields empty or use placeholder URIs. You’ll update these with the correct values in a later step of this guide.
+
+</div>
+
+## Add an OpenID Connect provider
+
+To add a new OpenID Connect provider, follow these steps:
+
+1. In the ODC Portal, go to **Manage** > **Identity providers**.
+1. To open the **New provider** configuration screen, click the **Add Provider** dropdown and select **OpenID Connect**.
 1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
 
 1. Enter the URL of the OpenID configuration in the **Discovery endpoint** field.
@@ -55,7 +74,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     </div>
 
-1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](intro.md#email-verification-logic).
+1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
 
 1. Configure claim mapping in the **Claim Mapping** section.
 
@@ -63,7 +82,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     <div class="info" markdown="1">
 
-    For more details about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](intro.md#claim-mapping-logic).
+    For more details about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](identity-claims-email-verification.md#claim-mapping-logic).
 
     </div>
 
@@ -71,14 +90,13 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 ODC adds the provider to the list of available providers.
 
-## Next steps
+## Next step
 
-* [Assign the provider](intro.md#assign-an-external-idp)
-* [Implement the authentication logic](apps.md)
+* [Set up redirect URIs for an external IdP](redirect-uris.md)
 
 ## Related resources
 
-* [Configure SAML 2.0 identity providers](configure-saml2.md)
-* [Configure social providers with accelerators](configure-social-accelerators.md)
-* [Microsoft Entra ID configuration](azure-ad.md)
-* [Okta configuration](okta.md)
+* [Add a SAML 2.0 identity provider](configure-saml2.md)
+* [Add a social identity provider with accelerators](configure-social-accelerators.md)
+* [Add Microsoft Entra ID for use as external identity provider](azure-ad.md)
+* [Add Okta for use as an external identity provider](okta.md)

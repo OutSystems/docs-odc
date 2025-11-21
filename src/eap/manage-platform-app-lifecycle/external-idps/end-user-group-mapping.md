@@ -250,6 +250,6 @@ For more information about the high-level steps you must complete to manage end-
 
 ## Related resources
 
-* [Best practices for user governance](../../user-management/best-practices-user-management.md)
+* [Best practices for user management](../../user-management/best-practices-user-management.md)
 * [Managing authorization and authentication for end-users](../../user-management/end-users/intro.md)
 * [Managing authorization and authentication for members (IT-users)](../../user-management/it-users/intro.md)

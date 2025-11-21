@@ -21,11 +21,28 @@ topic:
 
 # Add Microsoft Entra ID for use as external identity provider
 
+<div class="warning" markdown="1">
+
+This page is provided as a reference. For the latest instructions about adding Microsoft Entra ID as an external IdP, refer to the official [Microsoft Entra ID documentation](https://learn.microsoft.com/entra/identity-platform/).
+
+</div>
+
 <div class="info" markdown="1">
 
 **Microsoft Entra ID** was formerly known as **Microsoft Azure AD**.
 
 </div>
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+* A Microsoft Entra ID tenant and Azure Portal access with permission to create App registrations and client secrets.
+* A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
+
+You must have the [**Manage authentication**](../../reference/built-in-functions/roles.md#permissions-registry) permissions.
+
+## Configure Microsoft Entra ID
 
 ODC admins can configure Microsoft Entra ID as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab.
 
@@ -67,7 +84,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. In the ODC Portal, click **Save**. The **Configuration** tab for the newly created IdP opens.
 
-1. Assign the newly created IdP either to your **Organization** or the app stage you want (**Apps in Development**, **Apps in QA**, or **Apps in Production**). Refer to [Assign an external IdP](intro.md#assign-an-external-idp).
+1. Assign the newly created IdP either to your **Organization** or the app stage you want (for example, **Apps in Development**, **Apps in QA**, or **Apps in Production**). Refer to [Assign an external IdP](assign-idp.md).
 
 1. Go to the **Redirect URLs** tab, and copy the **Login URL** and **Logout URL** for the built-in domain.  
 
@@ -75,23 +92,35 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     <div class="info" markdown="1">
 
-    Copy the URLs for either your **Organization** or the app stage you want (**Apps in Development**, **Apps in QA**, or **Apps in Production**).
+    Copy the URLs for either your **Organization** or the app stage you want (for example, **Apps in Development**, **Apps in QA**, or **Apps in Production**).
 
     </div>
 
-1. In the Azure Portal, open your app registration and add the copied **Login** and **Logout** URLs to the list of **Redirect URIs**. For more information, see the [Microsoft Entra ID documentation](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app#add-a-redirect-uri). Click **Next**.
+1. In the Azure Portal, open your app registration and add the redirect URIs. To do this, go to the **Overview** page and follow these steps:
+   1. Click **Add a Redirect URI**.
+   1. Click **Add a platform** and select **Web**.  
+
+        <div class="warning" markdown="1">
+
+        Don't select **Single Page Application (SPA)**. Using the SPA option causes authentication failures during the sign-in flow.
+
+        </div>
+
+   1. In the **Redirect URIs** text box, paste the copied **Login** and **Logout** URLs.
+   1. Select the **Access tokens** and **ID tokens** checkboxes.
+   1. Click **Configure**.
+
+   If you're using the connector for multiple assignment types (for example, for different environments), repeat this process to add more redirect URIs. For more information, see the [Microsoft Entra ID documentation](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app#add-a-redirect-uri).
 
 1. To enable additional Claims, such as JWT Tokens via Claims Mapping Policy in Microsoft Entra ID, manually add the required property to the app manifest configuration on Microsoft Entra ID. For more information, see [Adding user optional and mapped claims in the Microsoft Entra ID authentication token](https://devblogs.microsoft.com/premier-developer/adding-user-optional-and-mapped-claims-in-the-azure-ad-authentication-token/).
 
    ODC tests the configuration and, on success, adds Microsoft Entra ID to the list of available providers. If the test fails, an error notification appears.
 
-<div class="warning" markdown="1">
+## Next step
 
 If you want to use the created IdP in your app, make sure you modify the login and logout flows. Refer to [Use external identity providers in an app](apps.md).
-
-</div>
 
 ## Related resources
 
 * [IdP and end-user group mapping](end-user-group-mapping.md).
-* [Add Okta for use as an external identity provider](okta.md).
+* [Configure authentication with external identity providers](intro.md).

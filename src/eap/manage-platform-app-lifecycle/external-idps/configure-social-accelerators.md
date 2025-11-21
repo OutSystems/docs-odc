@@ -22,21 +22,40 @@ coverage-type:
 helpids: 30711
 ---
 
-# Configure social providers with accelerators
+# Add a social identity provider with accelerators
 
-ODC admins can configure social providers with accelerators by navigating to the **ODC Portal** > **Manage** > **Identity providers** tab.
+This article provides step-by-step instructions for adding social providers with accelerators in ODC.
 
-To launch the **New provider** configuration screen, click the **Add Provider** dropdown and select **the social provider** (Apple, Google, Facebook, or LinkedIn). Then follow these steps:
+## Prerequisites
 
+Before you begin, make sure you have:
+
+* A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
+* The **Manage authentication** permissions.
+* A registered app in your social provider portal, with the required values for your provider ready (refer to [Social provider requirements](#social-provider-requirements); for example, Client ID and Client Secret).
+
+<div class="info" markdown="1">
+
+When registering your web app in your identity provider’s portal, if you're prompted to provide redirect URIs, leave the fields empty or use placeholder URIs. You'll update these with the correct values in a later step of this guide.
+
+</div>
+
+## Add a social provider with accelerators
+
+To add a new social identity provider with accelerators, follow these steps:
+
+1. In the ODC Portal, go to **Manage** > **Identity providers**.
+1. To open the **New provider** configuration screen, click the **Add Provider** dropdown and select the social provider (Apple, Google, Facebook, or LinkedIn).
 1. Enter a name for the new provider in the **Provider name** field.
-
-1. Fill in the configuration fields with the information required from your provider (see provider-specific requirements below).
+1. Complete the configuration fields with the information required from your provider (refer to [Social provider requirements](#social-provider-requirements).
 
     <div class="info" markdown="1">
 
     ODC safely stores the configuration details in a secret manager.
 
     </div>
+
+1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
 
 1. Click **Save**.
 
@@ -53,16 +72,18 @@ To add a new social provider using an accelerator, you need to get the following
 | Client ID | Identifier | A public identifier your app on the provider side. It's a string type value available to any registered developer on Apple Developer. You can access the Identifier value on the Certificates, Identifiers, and Profiles pages of your app. |
 | Key ID | Key ID | Key ID corresponding to your Secret (`.p8`). |
 | Team ID | Team ID | Identifier of your team on Apple Developer. |
-| Client secret | Private key (`.p8`) | The private key generated and downloaded from Apple (refer to [Create a private key to access a service](https://developer.apple.com/help/account/manage-keys/create-a-private-key)). The downloaded file is in .p8 format but can be opened with a text editor - copy the entire text content and paste directly in the Client Secret field on ODC Portal. This private key will be used to create the required client secret. |
+| Client secret | Private key (`.p8`) | The private key generated and downloaded from Apple (refer to [Create a private key to access a service](https://developer.apple.com/help/account/manage-keys/create-a-private-key)). The downloaded file is in .p8 format, but can be opened with a text editor. Copy the entire text content and paste it directly into the **Client Secret** field in the ODC Portal. This private key is used to create the required client secret. |
 
 For further guidance, check [Configure app capabilities - About Sign in with Apple](https://developer.apple.com/help/account/configure-app-capabilities/about-sign-in-with-apple).
 
-### Google
+## Google
 
 | Accelerator field | Information required | Description |
 | ---|---|--- |
 | Client ID | Client ID | A public identifier for your app on the provider side. It's a string type value available to any registered developer on the Google Cloud Platform. You can access the ClientID value on the OAuth Consent tab on your app's Credentials screen. |
-| Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on the Google Cloud Platform. You can access the ClientSecret value on the OAuth Consent tab on your app's Credentials screen. |
+| Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on the Google Cloud Platform. In the **API & Services** product, you can access the **ClientID** value on the **Credentials** tab on your app's **Credentials** screen. For your app, select **Download OAuth client**.  |
+
+ You must have the **Identity Platform** API enabled in the Google Console.
 
 For further guidance, check [Google Identity - Authentication](https://developers.google.com/identity/gsi/web/guides/overview).
 
@@ -70,8 +91,8 @@ For further guidance, check [Google Identity - Authentication](https://developer
 
 | Accelerator field | Information required | Description |
 | ---|---|--- |
-| Client ID | App ID | A public identifier for your app on the provider side. It's a string type value available to any registered developer on Meta for Developers. You can access the AppID value in your app's settings. |
-| Client Secret | App Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on Meta for Developers. You can access the AppSecret value in your app's settings. |
+| App ID | App ID | A public identifier for your app on the provider side. It's a string type value available to any registered developer on Meta for Developers. You can access the AppID value in your app's settings. |
+| App Secret | App Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on Meta for Developers. You can access the **AppSecret** value in your app's settings. |
 
 For further guidance, check [Facebook Login - Documentation - Facebook for Developers](https://developers.facebook.com/docs/facebook-login/).
 
@@ -79,19 +100,18 @@ For further guidance, check [Facebook Login - Documentation - Facebook for Devel
 
 | Accelerator field | Information required | Description |
 | ---|---|--- |
-| Client ID | Client ID | A public identifier for your app on the provider side. It's a string-type value available to any registered developer on LinkedIn. You can access the ClientID value on the Auth tab on your app's Credentials screen. |
-| Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string-type value type value available to any registered developer on LinkedIn. You can access the ClientSecret value on the Auth tab on your app's Credentials screen. |
+| Client ID | Client ID | A public identifier for your app on the provider side. It's a string-type value available to any registered developer on LinkedIn. You can access the **ClientID** value on the **Auth** tab on your app's Credentials screen. |
+| Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string-type value type value available to any registered developer on LinkedIn. You can access the **ClientSecret** value on the **Auth** tab on your app's **Credentials** screen. |
 
 For further guidance, check [Sign In with LinkedIn using OpenID Connect](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2).
 
-## Next steps
+## Next step
 
-* [Assign the provider](intro.md#assign-an-external-idp)
-* [Implement the authentication logic](apps.md)
+* [Set up redirect URIs for an external IdP](redirect-uris.md)
 
 ## Related resources
 
-* [Configure OpenID Connect identity providers](configure-openid-connect.md)
-* [Configure SAML 2.0 identity providers](configure-saml2.md)
-* [Microsoft Entra ID configuration](azure-ad.md)
-* [Okta configuration](okta.md)
+* [Add an OpenID Connect identity provider](configure-openid-connect.md)
+* [Add a SAML 2.0 identity provider](configure-saml2.md)
+* [Add Microsoft Entra ID for use as external identity provider](azure-ad.md)
+* [Add Okta for use as an external identity provider](okta.md)

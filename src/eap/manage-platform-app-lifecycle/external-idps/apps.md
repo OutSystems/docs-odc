@@ -22,7 +22,13 @@ topic:
 
 # Use external identity providers (IdPs) in an app
 
-In the ODC Portal, you can configure external IdPs to manage authentication for different app stages (Development, QA, Production), ensuring that users authenticate through the provider assigned to their respective stage. After you [assign an External IdP](intro.md#assign-an-external-idp) to one or more stages in the ODC Portal, you need to update the end-user login and logout flows for each app you want to integrate with it.
+In the ODC Portal, you can configure external IdPs to manage authentication for different app stages (Development, QA, Production), ensuring that users authenticate through the provider assigned to their respective stage. After you [assign an IdP](assign-idp.md) to one or more stages in the ODC Portal, you must update the end-user login and logout flows for each app you want to integrate with it.
+
+## Prerequisites
+
+Before you start, complete steps 1–3 (up to and including “Assign an IdP”) in [Configuring and using an external IdP](intro.md#configuring-using-idp).
+
+## Choose an integration option
 
 You can choose one of the following options (you need to update the end-user login and logout flows in a different way depending on the scenario you choose):
 
@@ -30,7 +36,7 @@ You can choose one of the following options (you need to update the end-user log
 
 * [**Modify the built-in login screen to add buttons for external provider login.**](#modify-to-add-button) The recommended solution if using multiple external providers or a single external provider and retain the option to login with the built-in provider.
 
-After you complete the steps for your selected solution, republish the app, and [deploy the new revision in the ODC Portal to the appropriate stages](../../deploying-apps/deploy-apps.md) where the IdP is active.
+After you complete the steps for your selected solution, republish the app, and [deploy the new revision](../../deploying-apps/deploy-apps.md) to the stages where the IdP is active.
 
 <div class="info" markdown="1">
 
@@ -149,7 +155,7 @@ If you chose the modify the login screen scenario, to add a login button with an
 
    1. In the enclosing **Button** properties, Set the **On Click** property to **New Client Action**.
 
-   1. Name it `LogInWith_<ExternalIdP>`. For example, `LogInWith_AzureAD`.
+    1. Name it `LogInWith_ExternalIdP`. For example, `LogInWith_AzureAD`.
 
 **Option 2: Add a built-in social login button (only for Google, Facebook, and Apple)**
 :
@@ -158,12 +164,12 @@ If you chose the modify the login screen scenario, to add a login button with an
 
    1. In its Properties, select **New Client Action** from the **Handler** dropdown.
 
-   1. Name it `LogInWith_<ExternalIdP>`. For example, `LogInWith_AzureAD`.
+    1. Name it `LogInWith_ExternalIdP`. For example, `LogInWith_AzureAD`.
 
 **Option 3: Use official login buttons for LinkedIn or Microsoft Entra ID**
 :
 
-   LinkedIn and Microsoft Entra ID are not included in the list of Identity Providers available for the built-in **social login button**. To use their official login buttons, follow these steps:
+    LinkedIn and Microsoft Entra ID aren't included in the list of Identity Providers available for the built-in **social login button**. To use their official login buttons, follow these steps:
 
    1. Download the official button image from the provider's website: [LinkedIn](https://content.linkedin.com/content/dam/developer/branding/signin_with_linkedin-buttons.zip) or [Microsoft](https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-branding-in-apps#referring-to-microsoft-entra-accounts-in-your-application).
 
@@ -175,9 +181,9 @@ If you chose the modify the login screen scenario, to add a login button with an
 
    1. Set the **Event** property to `onclick` and the **Handler** to `New Client Action`.
 
-   1. Name it `LogInWith_<ExternalIdP>`. For example, `LogInWith_AzureAD`.
+    1. Name it `LogInWith_ExternalIdP`. For example, `LogInWith_AzureAD`.
 
-### Modify the user info bar login flow { #modify-the-user-info-bar-login-flow-idp-button-added-alongside-the-built-in-login }
+### Modify the user info bar login flow {#modify-the-user-info-bar-login-flow-idp-button-added-alongside-the-built-in-login}
 
 If you chose the modify the login screen scenario, to modify the user info bar login flow, follow these steps:
 
@@ -189,7 +195,7 @@ If you chose the modify the login screen scenario, to modify the user info bar l
 
     ![Flow diagram showing the new client action flow.](images/new-client-action-odcs.png "New client action flow")
 
-1. Open the `LogInWith_<ExternalIdP>` action you created when you [modified the login screen](#modify-the-login-screen-add-an-idp-button-alongside-the-built-in-login), and delete the **LoginForm.Valid?** element and associated logic.
+1. Open the `LogInWith_ExternalIdP` action you created when you [modified the login screen](#modify-the-login-screen-add-an-idp-button-alongside-the-built-in-login), and delete the **LoginForm.Valid?** element and associated logic.
 
 1. Add the **GetMyProvider** wrapper client action you created after the **LastRequest** **Destination** element.
 
@@ -203,7 +209,7 @@ If you chose the modify the login screen scenario, to modify the user info bar l
 
     ![Flow diagram showing the new UserInfo action for external login.](images/new-userinfo-action-odcs.png "New UserInfo action")
 
-### Modify the user info bar logout flow { #modify-the-user-info-bar-logout-flow-idp-button-added-alongside-the-built-in-login }
+### Modify the user info bar logout flow {#modify-the-user-info-bar-logout-flow-idp-button-added-alongside-the-built-in-login}
 
 If you chose the modify the login screen scenario, to modify the user info bar logout flow, follow these steps:
 
@@ -223,7 +229,7 @@ If you chose the modify the login screen scenario, to modify the user info bar l
 
 1. To save, click **Publish**.
 
-## Create a server action to fetch a setting with the IdP's name { #create-a-server-action-with-idp-name }
+## Create a server action to fetch a setting with the IdP's name {#create-a-server-action-with-idp-name}
 
 For the **IdentityProvider** property of the **GetExternalLoginURL** action, instead of entering the provider's name as a string, it's a better practice to create an action that uses a setting, and modify the setting in the ODC Portal if needed.
 
@@ -249,7 +255,7 @@ To create the server action that fetches the setting:
 
     ![Flow diagram showing the new server action flow.](images/new-server-action-odcs.png "New server action flow")
 
-## Create a wrapper client action { #create-a-wrapper-client-action-with-idp-name }
+## Create a wrapper client action {#create-a-wrapper-client-action-with-idp-name}
 
 To be able to use the output parameter of the server action in the logic flow where you add the GetExternalLoginURL action without exposing a server action to public access without authentication, you need to create a client action. Follow these steps:
 
@@ -265,7 +271,7 @@ To be able to use the output parameter of the server action in the logic flow wh
 
     ![Flow diagram showing the new client action flow.](images/new-client-action-odcs.png "New client action flow")
 
-## Create a data action { #create-data-action }
+## Create a data action {#create-data-action}
 
 To be able to use the setting with the IdP name in an **Expression** in the Login screen, you need to create a data action in the Login screen that fetches the data from the server action. Follow these steps:
 
@@ -281,7 +287,7 @@ To be able to use the setting with the IdP name in an **Expression** in the Logi
 
     ![Flow diagram showing the new data action flow.](images/new-data-action-odcs.png "New data action flow")
 
-## Modify a setting in the ODC Portal { #modify-setting-odc-portal }
+## Modify a setting in the ODC Portal {#modify-setting-odc-portal}
 
 To modify a setting in the ODC Portal:
 
@@ -296,6 +302,10 @@ To modify a setting in the ODC Portal:
 1. Enter the new value.
 
 1. Click **Save**.
+
+## Next step
+
+(Optional) Add an [end-user group mapping](end-user-group-mapping.md).
 
 ## Related resources
 

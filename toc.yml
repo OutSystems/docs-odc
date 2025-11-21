@@ -599,6 +599,10 @@
         - href: eap/manage-platform-app-lifecycle/external-idps/azure-ad.md
         - href: eap/manage-platform-app-lifecycle/external-idps/okta.md
         - href: eap/manage-platform-app-lifecycle/external-idps/end-user-group-mapping.md
+        - href: eap/manage-platform-app-lifecycle/external-idps/manage-external-idps.md
+        - href: eap/manage-platform-app-lifecycle/external-idps/assign-idp.md
+        - href: eap/manage-platform-app-lifecycle/external-idps/redirect-uris.md
+        - href: eap/manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md
     - href: eap/user-management/passwords.md
 
 # Monitoring and troubleshooting

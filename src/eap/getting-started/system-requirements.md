@@ -158,12 +158,13 @@ For more information, refer to [Integrate with external data sources using Data 
 
 ODC supports all IdPs that follow the OIDC standard. The following IdPs have been successfully tested to integrate with ODC apps:
 
-* Linkedin
+* LinkedIn
 * Google
 * Ping Federation Identity
 * Facebook
 * Apple
 * Microsoft Entra ID (formerly known as Azure AD)
+* Microsoft Entra External ID (formerly known as Azure AD B2C)
 * Okta
 * Keycloak
 
