@@ -1,11 +1,11 @@
 ---
-summary: Use concise prompts to request specific UI patterns and layouts that Mentor can generate or refine.
+summary: Use prompts to request specific UI patterns and layouts that Mentor can generate or refine.
 tags: ui patterns, components, prompts, mentor, reactive web apps
 guid: 4719a8d7-dea6-491c-879c-47c57e88f6c1
 locale: en-us
 app_type: reactive web apps
 platform-version: odc
-figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8087-2&p=f&t=rgnVMRZqI2WrC6iK-0
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8087-2
 outsystems-tools:
   - portal
 coverage-type:
@@ -18,13 +18,59 @@ audience:
   - ui designers
 ---
 
-# Prompts cookbook
+# Prompting guide
 
-Use this cookbook to compose clear prompts for layouts and UI patterns Mentor can generate or refine. It complements "About Mentor App Generator and Editor" by focusing on UI expression: turning layout intent, entity structure, static values, roles, and refinement steps into model updates. Mentor interprets pattern keywords (table, card list, master detail, map), associates them with the entities and attributes you mention, and updates screens without raw code. Favor incremental refinement prompts over broad restatements.
+Use this guide to compose clear prompts for layouts and UI patterns Mentor can generate or refine. It covers general best practices for interacting with Mentor and provides a cookbook of specific UI patterns.
 
-## Using this cookbook effectively
+<div class="info" markdown="1">
 
-This guide helps you achieve three key outcomes:
+Mentor is designed to support English. You can enter prompts and requirement documents in other languages, but English is recommended.
+
+</div>
+
+## Natural language prompts
+
+When providing a text prompt to the App Generator, use clear and structured language.
+
+![Best practices for prompts: clarity, structured data model, roles, styling, integrations](images/natural-language-prompts-best-practices-ams.png "Best Practices for Natural Language Prompts")
+
+* **Be clear and concise**: Include the app name, purpose, and main functionality in one to two sentences  
+    * Example: Create an Employee Onboarding app that tracks employee details, onboarding steps, and status. It should have list and edit screens and roles for HR and Managers.
+* **Structure the data model**: Mention entities and attributes if you know them  
+    * Example: The app should have entities for Employees (Name, ID, Department, Role) and Onboarding Steps (Step Name, Status, Due Date).
+* **Add role-specific details**: Mention roles and permissions if you know them  
+    * Example: Managers can update onboarding steps. HR can add and edit employee records.
+* **Include styling preferences**: Mention themes, colors, or visual requirements  
+    * Example: The app should use the "Corporate" theme with blue primary color and display data in card format.
+* **Specify data sources and integrations**: Mention external systems or data sources when relevant  
+    * Example: Customer data comes from Salesforce and product information from SAP.
+
+Example prompt following these practices:
+
+"Create an Inventory Management app to track Products (Name, ID, Stock) and Orders (Order ID, Product, Quantity, Status). Managers can view stock. Administrators can update inventory. Use the 'Professional' theme available in the tenant. Integrate customer data from Salesforce and product catalog from SAP."
+
+## App Editor prompt best practices
+
+Follow these practices when using keyword prompts in the App Editor:
+
+* **Be specific about changes**: Use short prompts to add data  
+    * Example: Add validation rules to the email field
+* **Use role-based prompts**: Include roles explicitly to enhance security  
+    * Example: Add a new role: Manager
+* **Focus on data model refinements**: Specify exactly what to add  
+    * Example: Add salary to Employee
+* **Avoid ambiguity**: Avoid vague prompts such as "Make the app better"  
+    * Example: Instead of "improve the app," use "add email validation to the contact form"
+
+![Best practices for keyword prompts: specificity, roles, refinement, clarity](images/prompt-best-practices-ams.png "Best Practices for Keyword Prompts")
+
+## Prompts cookbook
+
+The cookbook section focuses on UI expression: turning layout intent, entity structure, static values, roles, and refinement steps into model updates. Mentor interprets pattern keywords (table, card list, master detail, map), associates them with the entities and attributes you mention, and updates screens without raw code. Use incremental refinement prompts over broad restatements.
+
+### Use this cookbook
+
+This guide covers three areas:
 
 * **Pick an appropriate pattern** - Use the Pattern selection quick guide to match your data and use case.
 * **Combine layout intent with entities, roles, and actions** - Structure prompts with specific details rather than vague descriptions.
@@ -32,21 +78,21 @@ This guide helps you achieve three key outcomes:
 
 Pattern names are recognized flexibly. You can say "card list" or "cards list". Focus on intent and data.
 
-## Pattern selection quick guide
+### Select a pattern
 
 Use this table to choose a UI pattern based on your dataset shape, visual emphasis, and refinement needs.
 
 | Pattern | Use for | Avoid when | Common refinements |
-|---------|---------|------------|--------------------|
-| Dashboard | High-level KPIs, metrics summary, and data visualization at a glance | Detailed record editing or browsing individual items | Add counter with aggregation function, add chart type |
-| Table | Dense tabular comparison; many columns | Highly visual summaries; mobile card-first | Add calculated column |
-| Card list | Visual scanning of records with key attributes | Need wide column comparison | Add tags, actions on each card |
-| Card gallery | Image-centric content (products, media) | Text-heavy data | Add category filter, lazy load |
-| Master detail | Fast browse and inspect a record | Very small datasets | Add tabs, related lists |
-| Card list with detail (sidebar) | Keep list visible while editing | Screen space is limited | Add inline edit for key field |
-| Card list with map | Geo context alongside list | No location data | Add clustering, status tags |
+| --------- | --------- | ------------ | -------------------- |
+| Dashboard | High-level KPIs, metrics summary, and data visualization | Detailed record editing or browsing individual items | Add counter with aggregation function, add chart type, adjust column layout |
+| Table | Dense tabular comparison; many columns | Visual summaries; mobile layouts | Add calculated column |
+| Card list | Visual scanning of records with key attributes | Wide column comparison | Add tags, actions on each card |
+| Gallery | Image-centric content (products, media) | Text-heavy data | Add category filter |
+| Master detail | Browse and inspect a record (max 5 attributes in table view) | Very small datasets; entities with dependents | Add tabs, related lists, switch to card list for more attributes |
+| List with popup | Simple entities with 5 or fewer non-ID attributes | Entities with more than 5 attributes or dependent entities | Switch to table layout |
+| List with map | Location context alongside list | No location data | Add clustering, status tags |
 
-## How to structure prompts
+### How to structure prompts
 
 Include the following when relevant:
 
@@ -58,6 +104,16 @@ Include the following when relevant:
 
 Avoid vague phrases like "make it nicer". Be explicit about the change.
 
+### Understand pattern constraints
+
+Mentor enforces constraints based on entity structure and relationships. Patterns convert automatically when constraints apply.
+
+* **Popup pattern**: Available only for entities with 5 or fewer non-ID attributes. Entities exceeding this limit convert to table pattern
+* **Master detail with table**: Limited to 5 attributes in the list portion. For more attributes, use card list or gallery pattern
+* **Map pattern**: List portion always uses vertical card list pattern
+* **Dashboard lists**: Display maximum 5 records. Filters, pagination, and navigation to edit or view screens are not available
+* **Entities with dependents**: Cannot use popup or master-detail patterns. Dependent entities are those with a single foreign key reference to the target entity
+
 ## Lists and tabular patterns
 
 These patterns organize multiple records for browsing, comparison, or selection. Choose based on data density and visual emphasis needs.
@@ -66,26 +122,26 @@ These patterns organize multiple records for browsing, comparison, or selection.
 
 ![Table](images/sample-table.png "Table layout with sortable columns")
 
-Use when you need to compare many records across consistent attributes.  
-Avoid when you need visual emphasis or a card metaphor.
+Use when users need dense, side-by-side comparison of many records across consistent attributes.  
+Avoid when you need strong visual emphasis, image-first layouts, or card metaphors.
 
-**Prompt progression**
+#### Prompt progression
 
-Start with basic prompts and add details for better results:
+Start with basic prompts and add details as needed:
 
 * Basic: List `Product` records in a table.
-* Better: List `Product` records in a table with columns: `Name`, `SKU`, `Stock`, `Price`.
+* Detailed: List `Product` records in a table with columns: `Name`, `SKU`, `Stock`, `Price`.
 
 ### Card list
 
 ![Card list](images/sample-card-list.png "Card list showing items as cards")
 
-Use when you need to display records as visual blocks with a few key fields.
+Use when users should scan records as compact cards with a few key fields and tags, rather than compare many columns.
 
-**Prompt progression**
+#### Prompt progression
 
 * Basic: Show `Employee` records as a card list.
-* Better: Show `Employee` records as a card list with `Name`, `Department`, `Role`, and a colored tag for `Status`.
+* Detailed: Show `Employee` records as a card list with `Name`, `Department`, `Role`, and a colored tag for `Status`.
 
 ### Card gallery
 
@@ -93,10 +149,10 @@ Use when you need to display records as visual blocks with a few key fields.
 
 Use when you have image or media-heavy datasets.
 
-**Prompt progression**
+#### Prompt progression
 
 * Basic: Show `Product` records as a card gallery with image and `Name`.
-* Better: Show `Product` records as a gallery with image, `Name`, a category tag, and `Price`.
+* Detailed: Show `Product` records as a gallery with image, `Name`, a category tag, and `Price`.
 
 ## Dashboard patterns
 
@@ -127,7 +183,15 @@ Dashboards support the following aggregation functions on counters and charts:
 * **Max**: Maximum value of a numeric field.
 * **Min**: Minimum value of a numeric field.
 
-**Prompt progression**
+### Column layouts
+
+Dashboards support multiple column arrangements:
+
+* **Equal columns**: 2 to 6 columns with equal width for symmetrical layouts
+* **Asymmetric layouts**: 2:1 ratio (two-thirds and one-third) or 3:1 ratio (three-quarters and one-quarter). The narrow column cannot contain list sections
+* **Row structure**: Each section element creates a new row unless wrapped in a column layout
+
+#### Prompt progression
 
 * Basic: Create a dashboard with total orders counter.
 * Better: Create a dashboard with a counter for total orders (Count), a vertical bar chart for sales by month (Sum of `OrderValue`), and recent orders list.
@@ -141,12 +205,12 @@ These patterns let users browse a list and view or edit record details simultane
 
 ![Master detail](images/sample-master-detail-screen.png "Master detail layout")
 
-Use when you need to browse records and view details without navigating away from the list.
+Use when browsing records and viewing details without navigating away from the list. When using table pattern for the list portion, limit to 5 attributes. For more attributes, use card list or gallery pattern.
 
-**Prompt progression**
+#### Prompt progression
 
 * Basic: Use a master detail layout for `Customer` records.
-* Better: Master detail for `Customer` records with list on the left (`Name`, `Segment`) and right panel tabs: Profile, Orders, Notes.
+* Detailed: Master detail for `Customer` records with list on the left (`Name`, `Segment`) and right panel tabs: Profile, Orders, Notes.
 
 ### Card list with detail in sidebar
 
@@ -154,10 +218,10 @@ Use when you need to browse records and view details without navigating away fro
 
 Use when you need frequent detail editing and the list context must remain.
 
-**Prompt progression**
+#### Prompt progression
 
 * Basic: Card list with detail in a sidebar for `Project` records.
-* Better: Card list (`Name`, `Owner`, `Status` tag). Selecting a card opens a sidebar with `Description` and `DueDate`.
+* Detailed: Card list (`Name`, `Owner`, `Status` tag). Selecting a card opens a sidebar with `Description` and `DueDate`.
 
 ## Spatial patterns
 
@@ -169,10 +233,10 @@ These patterns add location context to help users make geography-based decisions
 
 Use when location information supports decision making.
 
-**Prompt progression**
+#### Prompt progression
 
 * Basic: Card list with map for `FieldWorkOrder` records.
-* Better: Card list with map for `WorkOrder` records (`Title`, `AssignedUser`, `Status` tag, `Address`). Map uses markers at `Address`.
+* Detailed: Card list with map for `WorkOrder` records (`Title`, `AssignedUser`, `Status` tag, `Address`). Map uses markers at `Address`.
 
 ## Multi-pattern scenarios
 
@@ -210,6 +274,9 @@ Action: Change layout to `PreferredPattern` for `Entity`.
 Issue: No map shown.  
 Action: Confirm the entity has an address or location attribute and restate: Show map next to list using `Location`.
 
+Issue: Pattern changed unexpectedly.  
+Action: Mentor converts patterns automatically to respect constraints. Review **Pattern constraints and auto-adjustments** to see how popup, master detail, and other patterns may be adjusted, then refine your prompt or entity structure.
+
 ## Glossary
 
 Quick reference for terms used in the prompt examples.
@@ -222,4 +289,4 @@ Quick reference for terms used in the prompt examples.
 
 ## Related
 
-* Learn about [natural language prompts and requirement documents](intro.md).
+* Learn about [Build apps with AI](intro.md).

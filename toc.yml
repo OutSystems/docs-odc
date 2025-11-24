@@ -20,7 +20,11 @@
     # AI Mentor
     - href: eap/building-apps/ai-mentor/intro.md
     - topics:
+        - href: eap/building-apps/ai-mentor/thinking-with-ai.md
+        - href: eap/building-apps/ai-mentor/mentor.md
         - href: eap/building-apps/ai-mentor/prompts.md
+        - href: eap/building-apps/ai-mentor/requirements-doc.md
+        - href: eap/building-apps/ai-mentor/sdlc.md
     # Build AI-powered apps
     - href: eap/building-apps/build-ai-powered-apps/intro.md
     - topics:
