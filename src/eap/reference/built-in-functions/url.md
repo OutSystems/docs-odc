@@ -18,22 +18,6 @@ coverage-type:
 
 # URL
 
-## GetDefaultDomain
-
-Returns the domain set as default in the stage where this app is running.
-
-### Output
-
-**DefaultDomain**; data type **Text**
-
-If no custom domain is set as default, the built-in domain is returned.  
-
-### Examples
-
-```
-GetDefaultDomain() = "example.com"
-```
-
 ## GetBookmarkableURL
 
 Returns the URL of the screen that is currently being processed.  

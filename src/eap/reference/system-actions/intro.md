@@ -28,3 +28,4 @@ Here are the system actions available in ODC:
 * [Authentication system actions](auth.md)
 * [User system actions](user.md)
 * [Workflows system actions](workflows.md)
+* [GetDefaultDomain server action](get-default-domain.md)
