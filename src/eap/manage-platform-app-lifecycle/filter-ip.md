@@ -52,6 +52,12 @@ ODC automatically generates a **default IP filter group** for each stage. Admini
 
 When configuring an IP filter group, you must select its access control method: an **AllowList**, where all traffic is denied unless specifically permitted by a rule, or a **DenyList**, where all traffic is allowed unless explicitly denied by a rule. IP filter groups and their rules are stage-specific, operating independently for each app stage. Administrators can associate an app with only one IP filter group per stage. For operational flexibility, administrators can enable or disable individual IP filter rules within a group through rule activation without requiring deletion.
 
+<div class="info" markdown="1">
+
+When working with IP filters in environments that support both IPv4 and IPv6 (dual-stack networks), it's important to understand that modern operating systems and browsers typically prefer IPv6 connections when available. This means that if a client device has both IPv4 and IPv6 connectivity, it will connect using IPv6, and the client won't attempt to connect using IPv4. Consequently, only the IPv6 address is evaluated by the IP filter, and any IPv4 rules are never tested. To ensure comprehensive access control and avoid unexpected behavior, add both the IPv4 and IPv6 addresses to your filter rules when configuring AllowLists or DenyLists.
+
+</div>
+
 A use case includes:
 
 * Partner access to Production (Allowlist).
@@ -92,8 +98,15 @@ Follow these steps to add rules to a group:
 1. In the **Group configuration** section, click the **Rules** tab.
 1. Click **Add allow rule** if the access control method is AllowList, or **Add deny rule** if the access control method is DenyList.
 1. Enter the following:  
-    * **Name**: A name for the rule.  
-    * **IP addresses**: Enter up to 20 IPv4 or IPv6 addresses or ranges.  
+   * **Name**: A name for the rule.  
+   * **IP addresses**: Enter up to 20 IPv4 or IPv6 addresses or ranges.
+
+   <div class="info" markdown="1">
+
+   When adding IP addresses to a rule, include both the IPv4 and IPv6 addresses for each client or network you want to control. Modern systems typically prefer IPv6 connections when available, so having only an IPv4 address in your rule may not provide the expected access control if the client connects via IPv6.
+
+   </div>
+
 1. Click **Add**.
 1. Click **Done**.
 1. In the **Group configuration** section, click the **Apps** tab.
