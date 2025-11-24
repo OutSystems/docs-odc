@@ -58,7 +58,7 @@ This is a summary of common behaviors. For a complete list of features and requi
 
 To process an image, your app's logic must pass it to the agentic app as part of the message prompt. This typically involves an end-user uploading a file, which is then passed into the agentic app's logic.
 
-In your consumer app's logic, you pass the required data to the agentic app. The agentic app uses this data to populate the `UserMessage content` structure. You must provide the required data- the text prompt, the image URL, or its Base64-encoded binary data.
+In your consumer app's logic, you pass the required data to the agentic app. The agentic app uses this data to populate the `UserMessage content` structure. You must provide the required data, the text prompt, the image URL, or its Base64-encoded binary data.
 
 You can pass the image in one of two ways:
 
