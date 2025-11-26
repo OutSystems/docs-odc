@@ -148,5 +148,9 @@ Also, on some devices, it's not possible to scan certain codes. The following ar
 * Specify the code format with the **Hint** input parameter.
 * Increase the number of FPS (max 1000, and this value is not recommended) passed in the **ScannerFPS** input parameter.
 
+### ScanOrientation has no effect in tablets on Android 16 and above
+
+For apps that target Android 16 or above running on tablets, the **ScanOrientation** input parameter of the **ScanBarcode** client action has no effect.
+
 ______________________________________________________________
 _QR CODE is a registered trademark of Denso Wave Incorporated._
