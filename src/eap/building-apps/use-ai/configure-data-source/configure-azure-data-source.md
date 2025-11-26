@@ -28,34 +28,38 @@ To configure Azure AI search service, follow these steps:
 
 1. Log into the Azure portal and sign in with your subscription username and password.
 
-1. [Create](https://learn.microsoft.com/en-us/azure/search/search-create-service-portal) an Azure AI search service.
+2. [Create](https://learn.microsoft.com/en-us/azure/search/search-create-service-portal) an Azure AI search service.
 
     **Note**: Once you create the AI search service, deploying it can take some time before you can proceed to the next step.
 
-1. [Create](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal) an Azure BLOB storage account.
+3. [Create](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal) an Azure BLOB storage account.
+![Storage Accounts](images/menu-expand-sml.png)
 For more information about Azure BLOB storage, refer to [Introduction to Azure Blob Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction#create-a-storage-account).
 
-1. Upload your files.
+4. Upload your files.
+![Storage File upload](images/storage-file-upload.png)
 
-1. From AI search service, add data source.
+5. From AI search service, add data source.
+![Add data source](images/add-data-source.png)
 
-1. Choose existing connections and select the storage account and the container created on step 3 and save.
+6. Choose existing connections and select the storage account and the container created on step 3 and save.
 
-1. From AI search service, import data and select the data source you just added.
+7. From AI search service, import data and select the data source you just added.
+![Import data](images/ai-search-import-data.png)
 
-1. Follow the wizard.
+9. Follow the wizard.
 
     **Note**: Wait for few moments, and click the indexer to ensure that the run is finished with all the documents you added.
 
-1. Go to the index, and validate that the content field can be retrieved.
+10. Go to the index, and validate that the content field can be retrieved.
 
     **Note**: The content index is mandatory. The content field must be of type string, and the field name must be in lowercase.
 
-1. Retrieve the Azure AI search [service keys and the endpoint](https://learn.microsoft.com/en-us/azure/search/search-get-started-rest#copy-a-key-and-url).
+11. Retrieve the Azure AI search [service keys and the endpoint](https://learn.microsoft.com/en-us/azure/search/search-get-started-rest#copy-a-key-and-url).
 
-1. Copy the name of the index.
+12. Copy the name of the index.
 
-1. Use the service key, endpoint, and index name to add an Azure AI data source in the AI Agent Builder.
+13. Use the service key, endpoint, and index name to add an Azure AI data source in the AI Agent Builder.
 
 ## Next steps
 
