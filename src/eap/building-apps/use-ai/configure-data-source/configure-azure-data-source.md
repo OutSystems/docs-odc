@@ -34,17 +34,18 @@ To configure Azure AI search service, follow these steps:
 
 3. [Create](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal) an Azure BLOB storage account.
 ![Storage Accounts](images/menu-expand-sml.png)
+
 For more information about Azure BLOB storage, refer to [Introduction to Azure Blob Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction#create-a-storage-account).
 
-4. Upload your files.
+5. Upload your files.
 ![Storage File upload](images/storage-file-upload.png)
 
-5. From AI search service, add data source.
+6. From AI search service, add data source.
 ![Add data source](images/add-data-source.png)
 
-6. Choose existing connections and select the storage account and the container created on step 3 and save.
+7. Choose existing connections and select the storage account and the container created on step 3 and save.
 
-7. From AI search service, import data and select the data source you just added.
+8. From AI search service, import data and select the data source you just added.
 ![Import data](images/ai-search-import-data.png)
 
 9. Follow the wizard.
