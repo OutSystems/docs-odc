@@ -56,7 +56,7 @@ To access private data that is not available over the internet, connect to your 
 
 To create a new database connection, go to the ODC Portal and follow these steps:
 
-1. From the ODC Portal nav menu, select **Integrate** > **Connections**, and click the **Create connection** button. <br/> The **select a provider** popup displays.
+1. From the ODC Portal navigation menu, select **Integrate** > **Connections**, and click the **Create connection** button. <br/> The **select a provider** popup displays.
 1. Select the required provider and click **Confirm**.
 1. In the connection form, enter the required connection information.
     * If you're adding a database connection, refer to the [database connection parameters](#connection-parameters).
@@ -72,14 +72,14 @@ To handle null values while integrating with external systems. Administrators mu
 
 After connecting to an external database, select the entity names and attributes available in ODC Portal. To select entities, go to the ODC Portal and follow these steps:
 
-1. From the ODC Portal nav menu, select **Integrate** > **Connections**, and click **Select entities** to display the **Add entities** connection screen. <br/>The connection screen displays the available entities retrieved from the database.
+1. From the ODC Portal navigation menu, select **Integrate** > **Connections**. Identify the connection you want to edit, and select **Import**. <br/>The connection screen displays the available entities retrieved from the database.
 
     ![Screenshot showing the process of selecting entities and attributes from an external database in OutSystems Developer Cloud Portal](images/external-db-entity-pp.png "External Database Entities Selection")
 
 1. From the **Entity** name column, select the entities and attributes you want to use.
 1. Click **Save** to confirm.
 
-Selected entities and attributes are now available as [public elements](../../building-apps/libraries/use-public-elements.md). In ODC Studio, developers can rename entities, allowing for clearer descriptions. For example, an entity initially named Product_id_version1 can be renamed to Product_id.
+Selected entities and attributes are now available as [public elements](../../building-apps/libraries/use-public-elements.md). In ODC Studio, developers can rename entities for clearer descriptions. For example, you can rename an entity initially named Product_id_version1 to Product_id.
 
 <div class="info" markdown="1">
 
@@ -91,7 +91,7 @@ There is no limit to the number of entities you can add from the external databa
 
 To edit an existing database connection, go to ODC Portal and follow these steps:
 
-1. From the ODC Portal nav menu, select **Integrate** > **Connections** to display the list of connections.
+1. From the ODC Portal navigation menu, select **Integrate** > **Connections** to display the list of connections.
 1. From the list of connections, select the one to edit.
 
 You can only change the name and description without testing your connection again. For more information about external data type mapping to OutSystems data type, refer to [External data type mapping.](external-data-type.md)
