@@ -96,6 +96,12 @@ Role changes take effect at different times depending on how and where you apply
     * In server-side logic, the updated role is available immediately.
     * In client-side logic, the updated role becomes available when the affected user's session token renews (every 5 minutes) or when they log in again.
 
+<div class="info" markdown="1">
+
+Always validate user permissions on server-side logic. This is a [best practice](../building-apps/logic/best-practices-logic.md) to protect against malicious users attempting to access or modify unauthorized data.
+
+</div>
+
 ### Restrict access to a screen
 
 To allow only users with a certain role to access a screen, you need to [create some roles first](#create-end-user-roles). You can then allow only registered users to access screens in the app, which is a [best practice to protect your screens](../building-apps/ui/creating-screens/best-practices-screens.md#roles).
