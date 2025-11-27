@@ -25,21 +25,21 @@ topic:
 
 # Secure your app with end-user roles
 
-When you create a role, and assign it to a user, you can control access to screens, data and functionalities of your app. You can manage user roles from ODC (OutSystems Developer Cloud) Studio and from ODC Portal. In ODC Studio, you design logic to control access.
+When you create a role and assign it to a user, you can control access to screens, data, and functionalities of your app. You can manage user roles from ODC (OutSystems Developer Cloud) Studio and from the ODC Portal. In ODC Studio, you design logic to control access.
 
 When setting up roles for end-users, consider the following:
 
 * What do the end-users need to accomplish?
-* What screens do they need to be able to access?
+* What screens do they need to access?
 * What tasks do you want them to be able to do?
-* What information can end-users see and what needs to remain inaccessible?
+* What information can end-users see, and what needs to remain inaccessible?
 
 ## How to use roles
 
 This is an overview of how to use roles:
 
 1. In ODC Studio, create end-user roles.
-1. In ODC Portal, assign end-user roles to users.
+1. In the ODC Portal, assign end-user roles to users.
 1. In ODC Studio, use end-user roles to control access to the parts of the app. You can also grant and revoke a role to any user programmatically.
 
 ![Diagram illustrating the process of using roles in OutSystems Developer Cloud](images/overview-how-to-use-roles-diag.png "How you can use roles")
@@ -58,23 +58,23 @@ To create roles in ODC Studio during design, follow these steps:
 
 When ODC Studio creates a role, it also creates a set of related actions you can use to [manage roles](#manage-roles-in-app-runtime) during runtime.
 
-### Assign roles to users in the ODC Portal
+### Assign end-user roles to users
 
 After you publish an app that has end-user roles, the end-user roles are available in ODC Portal. For more details on how to assign end-user roles, refer to [Grant or revoke roles to end-users](grant-and-revoke-user-roles.md#grant-roles-to-end-users).
 
-### Manage roles in app runtime
+### Use end-user roles to control access in app runtime
 
-After you create a role, ODC Studio also creates the following actions to let you manage the roles during the app runtime, in the app logic. These actions let you programmatically check, grant, or revoke a role.
+After you create an end-user role, ODC Studio also creates the following actions that enable you to manage the end-user roles in teh app logic. These actions let you programmatically check, grant, or revoke a role. The actions apply to the currently logged-in user if the UserId parameter is not specified.
 
-| Action             | Example           | Description                                             |
-| :------------------ | :----------------- | :------------------------------------------------------- |
-| CheckROLENAMERole* | CheckManagerRole  | Returns True if the current user has the ROLENAME role. |
-| GrantROLENAMERole  | GrantManagerRole  | Grants ROLENAME to the user with the UserId.            |
-| RevokeROLENAMERole | RevokeManagerRole | Revokes ROLENAME from the user with the UserId.          |
+|                        |                                      |                   |                                                         |
+| ---------------------- | ------------------------------------ | ----------------- | ------------------------------------------------------- |
+| **Action**             | **Client-side or Server-side logic** | **Example**       | **Description**                                         |
+| CheckROLENAMERole (\*) | Client-side logic                    | CheckManagerRole  | Returns True if the current user has the ROLENAME role. |
+| CheckROLENAMERole      | Server-side logic                    | CheckManagerRole  | Returns True if the current user has the ROLENAME role. |
+| GrantROLENAMERole      | Server-side logic                    | GrantManagerRole  | Grants ROLENAME to the user with the UserId.            |
+| RevokeROLENAMERole     | Server-side logic                    | RevokeManagerRole | Revokes ROLENAME from the user with the UserId.         |
 
-**Notes**
-
-(*) Available for both client and server logic. The light icon denotes the client-side version. The action applies to the currently logged-in user if the UserId parameter is not specified.
+**Note:** (*) The light icon denotes the client-side version.
 
 ## Control access in your app with end-user roles { #control-access-in-your-app-with-end-user-roles }
 
@@ -86,9 +86,19 @@ After you assign roles to your end-users, you can:
 
 ![Diagram showing how to control access in your app with end-user roles](images/control-access-in-your-app-end-user-roles-diag.png "Control access in your app")
 
+### Understanding role updates
+
+Role changes take effect at different times depending on how and where you apply them:
+
+* **Changes to current user's own role**: When you change your own role in the app runtime using `GrantROLENAMERole()` or `RevokeROLENAMERole()`, the changes take effect immediately.
+
+* **Changes to other users' roles**: When you change another user's role using `GrantROLENAMERole(UserId)` or `RevokeROLENAMERole(UserId)` in the app runtime, or by applying changes in the ODC Portal or using the [User and Access Management API](../reference/apis/identity-v1.md), the changes take effect at different times:
+    * In server-side logic, the updated role is available immediately.
+    * In client-side logic, the updated role becomes available when the affected user's session token renews (every 5 minutes) or when they log in again.
+
 <div class="info" markdown="1">
 
-Logged-in users needs to log out and log back in for changes in their assigned roles or role permissions to become effective.
+Always validate user permissions on server-side logic. This is a [best practice](../building-apps/logic/best-practices-logic.md) to protect against malicious users attempting to access or modify unauthorized data.
 
 </div>
 
@@ -117,5 +127,9 @@ For example, you can create a filter in an aggregate with the expression `CheckA
 ## Related resources
 
 * [Best practices for user governance](best-practices-user-management.md)
+
 * [Create, activate, deactivate, and delete users](create-deactivate-and-delete-users.md)
+
+* [Best practices for logic](../building-apps/logic/best-practices-logic.md)
+
 * [Role-based Security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course
