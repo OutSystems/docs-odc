@@ -169,7 +169,7 @@ The following sections describe the plugin in more detail.
 
 ### Actions
 
-The following is a reference list of actions you can use for the Camera plugin. The Camera plugin uses a Cordova plugin. For more inforamtion, see [cordova-plugin-camera](https://github.com/OutSystems/cordova-plugin-camera).
+The following is a reference list of actions you can use for the Camera plugin. The Camera plugin uses a Cordova plugin. For more information, see [cordova-plugin-camera](https://github.com/OutSystems/cordova-plugin-camera).
 
 |Action|Description|Available in PWA|
 |-|-|-|
