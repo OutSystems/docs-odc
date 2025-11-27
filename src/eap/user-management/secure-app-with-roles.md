@@ -64,7 +64,7 @@ After you publish an app that has end-user roles, the end-user roles are availab
 
 ### Use end-user roles to control access in app runtime
 
-After you create an end-user role, ODC Studio also creates the following actions that enable you to manage the end-user roles in teh app logic. These actions let you programmatically check, grant, or revoke a role. The actions apply to the currently logged-in user if the UserId parameter is not specified.
+After you create an end-user role, ODC Studio also creates the following actions that enable you to manage the end-user roles in the app logic. These actions let you programmatically check, grant, or revoke a role. The actions apply to the currently logged-in user if the UserId parameter is not specified.
 
 |                        |                                      |                   |                                                         |
 | ---------------------- | ------------------------------------ | ----------------- | ------------------------------------------------------- |
@@ -96,12 +96,6 @@ Role changes take effect at different times depending on how and where you apply
     * In server-side logic, the updated role is available immediately.
     * In client-side logic, the updated role becomes available when the affected user's session token renews (every 5 minutes) or when they log in again.
 
-<div class="info" markdown="1">
-
-Always validate user permissions on server-side logic. This is a [best practice](../building-apps/logic/best-practices-logic.md) to protect against malicious users attempting to access or modify unauthorized data.
-
-</div>
-
 ### Restrict access to a screen
 
 To allow only users with a certain role to access a screen, you need to [create some roles first](#create-end-user-roles). You can then allow only registered users to access screens in the app, which is a [best practice to protect your screens](../building-apps/ui/creating-screens/best-practices-screens.md#roles).
@@ -117,6 +111,12 @@ To allow only users with a certain role to access a screen, you need to [create 
 In ODC Studio, in the logic of actions, use **CheckROLENAMERole()** function in the If element. You can do that by adding the If element to the logic flow, and then editing the **Condition** field.
 
 For example, if you enter `CheckManagerRole()` in the **Condition** field of the If element, the logic of the true branch runs only if the current user has a Manager role.
+
+<div class="info" markdown="1">
+
+Always validate user permissions on server-side logic. This is a [best practice](../building-apps/logic/best-practices-logic.md) to protect against malicious users attempting to access or modify unauthorized data.
+
+</div>
 
 ### Restrict access to data
 
