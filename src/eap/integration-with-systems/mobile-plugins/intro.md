@@ -62,6 +62,7 @@ The table shows the OutSystems-supported mobile plugins that you can find in the
 | File               | Manage files and folders within the app sandbox.             | No               |
 | File Transfer      | Upload and download files in background.                     | Yes              |
 | File Viewer        | View remote or app resource files.                           | No               |
+| Haptics   | Provide physical feedback to your app users through touch and vibration. | No          |
 | Health & Fitness   | Provides access to health and fitness data. Uses HealthKit API for iOS and Health Connect API for Android. | No          |
 | InAppBrowser   | Open external URLs directly in your application. | No          |
 | Keyboard          | Keyboard display, visibility control, and keyboard event tracking. | No               |
