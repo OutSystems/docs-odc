@@ -523,6 +523,9 @@
         - href: eap/integration-with-systems/mobile-plugins/health-fitness/intro.md
         - topics: 
             - href: eap/integration-with-systems/mobile-plugins/health-fitness/intro_v2.md
+        - href: eap/integration-with-systems/mobile-plugins/haptics-plugin/intro.md
+        - topics:
+            - href: eap/integration-with-systems/mobile-plugins/haptics-plugin/haptics-ref.md
         - href: eap/integration-with-systems/mobile-plugins/keystore-plugin/intro.md
         - topics:
             - href: eap/integration-with-systems/mobile-plugins/keystore-plugin/keystore-ref.md
