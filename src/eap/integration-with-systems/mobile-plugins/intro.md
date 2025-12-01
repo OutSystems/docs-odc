@@ -25,7 +25,7 @@ Plugins provide important functionalities to native mobile apps, letting you use
 
 [Mobile Apps Build Service (MABS 12)](../../building-apps/mobile/mabs-overview.md) introduces support for the Capacitor framework alongside Cordova, providing you a modern, flexible way to build mobile apps. When building your mobile apps with MABS 12, you can choose between the Cordova and Capacitor frameworks.
 
-For new mobile apps, to leverage Capacitor, consider building Capacitor plugins for use in your mobile apps. For detailed information about building Capacitor plugins, refer to [How to build a Capacitor plugin](https://docs.google.com/document/d/1OtPcZy19-XqsTfNuCKtpg-G4I_XEmp-2uhHhcbpE7Cg/edit?tab=t.0#heading=h.oebpf6wacdvm). 
+For new mobile apps, to leverage Capacitor, consider building Capacitor plugins for use in your mobile apps. For detailed information about building Capacitor plugins, refer to [How to build a Capacitor plugin](https://docs.google.com/document/d/1OtPcZy19-XqsTfNuCKtpg-G4I_XEmp-2uhHhcbpE7Cg/edit?tab=t.0#heading=h.oebpf6wacdvm).
 
 For existing apps, to leverage the modern capabilities, consider migrating your existing mobile apps to the Capacitor framework by adapting your existing custom Cordova plugins for Capacitor or developing native Capacitor plugins. For detailed information about migrating the plugins, refer to [Migrate plugins to Capacitor](migrate-cordova-plugin.md).
 
@@ -47,7 +47,6 @@ Here are some guidelines for using a Cordova plugin with Capacitor:
 
 The table shows the OutSystems-supported mobile plugins that you can find in the Forge repository. Some of them are already supported when distributing your app as a Progressive Web App (PWA).
 
-
 | Plugin                    | Description                                                  | Supported in PWA |
 | ------------------------- | ------------------------------------------------------------ | ---------------- |
 | Analytics | Firebase-based plugin that lets you gather information about app use.        | No               |
@@ -65,11 +64,12 @@ The table shows the OutSystems-supported mobile plugins that you can find in the
 | File Viewer        | View remote or app resource files.                           | No               |
 | Health & Fitness   | Provides access to health and fitness data. Uses HealthKit API for iOS and Health Connect API for Android. | No          |
 | InAppBrowser   | Open external URLs directly in your application. | No          |
+| Keyboard          | Keyboard display, visibility control, and keyboard event tracking. | No               |
 | Key Store          | Store encrypted key-value pairs with optional authentication. | No               |
 | Local Notifications          | Send app notifications to the device when the application isn't running in the foreground. | No               |
 | Location           | Access the GPS capabilities the device.                      | Yes              |
 | OneSignal Notifications      | Push notifications using OneSignal, with deep-linking and actions. | No               |
-| Payments | Allows the addition of a payments experience using Apple Pay and Google Pay.	| No |
+| Payments | Allows the addition of a payments experience using Apple Pay and Google Pay. | No |
 | Performance Monitoring | Firebase-based plugin that lets you understand how you can improve the performance of your app. | No |
 | SSL Pinning | Provide an extra layer of security to HTTPS communications by adding a verification of the server certificate against hashes of public keys. | No |
 | Touch ID | Use authentication with biometrics in your application. | No |
@@ -88,11 +88,10 @@ The plugins are available from the Forge repository. To use a plugin in your app
 
 To install a supported plugin from Forge:
 
-1. Find the plugin you want to use in the [list of supported mobile plugins](#the-list-of-supported-mobile-plugins).
+1. Find the plugin you want to use in the [list of supported mobile plugins](#supported-mobile-plugins).
 
 1. In **ODC Portal** > **Forge** find the plugin and open the details page.
 
 1. Click **Install** and follow the instructions to install the plugin. Optionally, install the demo app that comes with the plugin.
 
 1. Once the installation finishes, add the actions you want to use as public elements in your mobile app.
-
