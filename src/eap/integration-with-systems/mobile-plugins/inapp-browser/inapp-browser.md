@@ -16,6 +16,7 @@ coverage-type:
   - apply
 topic:
   - using-cordova-plugins
+  - using-capacitor-plugins
 ---
 
 # InApp Browser Plugin
@@ -30,7 +31,9 @@ This documentation page applies to version 2.0.0 of the plugin and onwards.
 
 Use the InAppBrowser Plugin to open external URLs directly in your application, either within a web view, or a system in-app browser (Custom Tabs for Android and SafariViewController for iOS). You can also use the plugin to open URLs in the device's default browser.
 
-All three browser targets of the plugin behave like standard web browsers, and can't access Cordova APIs. For this reason, the plugin is recommended if you need to load third-party (untrusted) content, instead of loading it into the main Cordova WebView (for example, using the RedirectToURL destination). The plugin's browser targets are not subject to the whitelist.
+All three browser targets of the plugin behave like standard web browsers, and can't access Cordova or Capacitor APIs. For this reason, the plugin is recommended if you need to load third-party (untrusted) content, instead of loading it into the main Cordova or Capacitor WebView (for example, using the RedirectToURL destination). The plugin's browser targets are not subject to the allowlist.
+
+The InAppBrowser Plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check[cordova-outsystems-inappbrowser](https://github.com/OutSystems/cordova-outsystems-inappbrowser) and [capacitor-os-inappbrowser](https://github.com/ionic-team/capacitor-os-inappbrowser).
 
 As a good practice, verify that the plugin is available in the app. Use the **Logic > Client Actions > InAppBrowserPlugin > CheckInAppBrowserPlugin** action to check for the plugin's availability before using other plugin actions. If the plugin isn't available to the app, display an error to your users.
 

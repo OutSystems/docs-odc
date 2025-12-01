@@ -18,6 +18,7 @@ coverage-type:
   - remember
 topic:
   - using-cordova-plugins
+  - using-capacitor-plugins
 ---
 
 # Barcode Plugin
@@ -122,7 +123,7 @@ Here is the list of parameters you can use in the plugin actions.
 | **ScannerFPS**    | **Only applies to PWA/Web**. A direct mapping to HTML5Qr-Code `fps`. This number represents the number of frames per second the scanner reads and thus scans a code. Values over (and including) 1000 are not recommended as they will break the app. |
 | **AndroidScanningLibrary**    | **Only applies to Android**. Defines which Android library to use when scanning - ML Kit or ZXing. |
 
-The Barcode Plugin uses a Cordova plugin, and for more information check [cordova-outsystems-barcode](https://github.com/OutSystems/cordova-outsystems-barcode).
+The Barcode Plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check[cordova-outsystems-barcode](https://github.com/OutSystems/cordova-outsystems-barcode) and [capacitor-barcode-scanner](https://github.com/ionic-team/capacitor-barcode-scanner).
 
 ## Known issues
 

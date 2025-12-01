@@ -17,6 +17,7 @@ coverage-type:
   - apply
 topic:
   - using-cordova-plugins
+  - using-capacitor-plugins
 ---
 
 # File Viewer plugin
@@ -115,7 +116,7 @@ More information about parts of the plugin.
 
 ### Actions
 
-Here is the reference of the actions you can use from the File Viewer plugin. The File Viewer plugin uses Cordova and Capacitor plugins. For more information check out [cordova-outsystems-file-viewer](https://github.com/ionic-team/cordova-outsystems-file-viewer) and [capacitor/file-viewer](https://github.com/ionic-team/capacitor-file-viewer).
+Here is the reference of the actions you can use from the File Viewer plugin. The File Viewer plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check out [cordova-outsystems-file-viewer](https://github.com/ionic-team/cordova-outsystems-file-viewer) and [capacitor/file-viewer](https://github.com/ionic-team/capacitor-file-viewer).
 
 | Action                               | Description                                                                                  |
 | ------------------------------------ | -------------------------------------------------------------------------------------------- |

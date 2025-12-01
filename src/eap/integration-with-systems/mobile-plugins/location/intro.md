@@ -17,6 +17,7 @@ coverage-type:
   - remember
 topic:
   - using-cordova-plugins
+  - using-capacitor-plugins
 ---
 
 # Location Plugin
@@ -111,7 +112,7 @@ Here is the list of actions you can use to handle the errors. Use these actions 
 
 ## Actions
 
-Here is the reference of the actions you can use from the plugin. Location Plugin uses a Cordova plugin, and for more information check [cordova-plugin-geolocation](https://github.com/OutSystems/cordova-plugin-geolocation).
+Here is the reference of the actions you can use from the plugin. The Location Plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check[cordova-outsystems-geolocation](https://github.com/ionic-team/cordova-outsystems-geolocation) and [capacitor-geolocation](https://github.com/ionic-team/capacitor-geolocation).
 
 | Action              | Description                                                                                 | Available in PWA |
 | ------------------- | ------------------------------------------------------------------------------------------- | ---------------- |

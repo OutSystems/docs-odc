@@ -17,6 +17,7 @@ coverage-type:
   - remember
 topic:
   - using-cordova-plugins
+  - using-capacitor-plugins
 ---
 
 # File Transfer Plugin
@@ -97,7 +98,7 @@ This plugin doesn't offer the upload features in a PWA context, since the Upload
 
 ## Reference
 
-The File Transfer Plugin uses a Cordova plugin. For more information refer to [cordova-plugin-file-transfer](https://github.com/apache/cordova-plugin-file-transfer).
+The File Transfer Plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check[cordova-outsystems-file-transfer](https://github.com/ionic-team/cordova-outsystems-file-transfer) and [capacitor-file-transfer](https://github.com/ionic-team/capacitor-file-transfer).
 
 ### Actions
 
@@ -198,7 +199,7 @@ Starting with version 2.0.0 of the Plugin, specific errors are returned on nativ
 
 | Error code        | Platform(s)       | Message                                                                                                                   |
 | ------------------| ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| OS-PLUG-FLTR-0001 | Android, iOS, PWA | Cordova isn't defined.                                                                                                    |
+| OS-PLUG-FLTR-0001 | Android, iOS, PWA | Cordova/Capacitor isn't defined.                                                                                                    |
 | OS-PLUG-FLTR-0002 | Android, iOS      | The app is running with an old version of the plugin. Please create a new mobile package.                                 |
 | OS-PLUG-FLTR-0003 | Android, iOS      | The File Transfer plugin is not loaded. Make sure the mobile package is valid.                                            |
 | OS-PLUG-FLTR-0004 | Android, iOS      | The method's input parameters aren't valid.                                                                               |
