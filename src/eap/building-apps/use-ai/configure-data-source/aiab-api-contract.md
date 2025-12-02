@@ -64,11 +64,44 @@ The following tables detail the input and output parameters.
 
 ## Request
 
-![Screenshot of request code](images/api-contract-request.png "Request code")
+```
+{
+  "index": "string",
+  "searchText": "string",
+  "tags": [
+    {
+      "key": "string",
+      "value": "string"
+    }
+  ],
+  "pageSize": 100,
+  "pageNumber": 2,
+  "scoreLimit": 5.7,
+  "extendedProperties": "{\"extra_property\":\"value\"}"
+}
+```
 
 ## Response
 
-![Screenshot of response code](images/api-contract-response.png "Response code")
+```
+{
+    "documents": [
+  {
+    "id": "string",
+    "title": "string",
+    "content": "string",
+    "url": "string",
+    "tags": [
+      {
+        "name": "value",
+      }
+    ],
+    "score": 7.5,
+    "extendedProperties": "{\"prop\":\"value\"}"
+        }
+    ]
+}
+```
 
 ## Errors
 
