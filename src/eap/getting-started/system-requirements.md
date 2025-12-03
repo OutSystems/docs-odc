@@ -200,7 +200,7 @@ The logs and traces limits are:
 | ---------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
 | App log retention (days)                 |        28 | The maximum number of days that logs are retained (plus 21 days of additional backup retrievable via support ticket). |
 | Log rate/minute (thousands)              |         2 | The maximum rate at which logs can be captured, in thousands per minute. |
-| Trace retention (days)                   |        28 | The maximum number of days that traces are retained (plus 21 days of additional backup retrievable via support ticket). |
+| Trace retention (days)                   |        28 | The maximum number of days that traces are retained. |
 | Trace size (number of spans)             |     10000 | The maximum number of spans per trace shown in the ODC Portal. |
 | Trace spans rate/minute (thousands)      |        50 | The maximum rate at which trace spans can be captured, in thousands per minute. |
 | Trace span size (KB)                     |         1 | The maximum size of a trace span, in KB, streamed with Analytics Stream. |
