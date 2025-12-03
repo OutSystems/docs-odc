@@ -182,7 +182,7 @@
           {
             "name": "nameOrEmailContains",
             "in": "query",
-            "description": "Filters users by name or email address. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. Incorrect: .../users?email=john+doe@example.com. Correct: .../users?email=john%2Bdoe@example.com",
+            "description": "Filters list by name or email.Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: .../users?email=`john+doe@example.com` \n\nCorrect: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -190,7 +190,7 @@
           {
             "name": "nameOrEmailOrUsernameContains",
             "in": "query",
-            "description": "Filters users by name or email address or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. Incorrect: .../users?email=john+doe@example.com. Correct: .../users?email=john%2Bdoe@example.com",
+            "description": "Filters users by name or email address or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: .../users?email=`john+doe@example.com` \n\nCorrect: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -599,7 +599,7 @@
           {
             "name": "nameOrEmailContains",
             "in": "query",
-            "description": "Filters users by name or email address. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. Incorrect: .../users?email=john+doe@example.com. Correct: .../users?email=john%2Bdoe@example.com",
+            "description": "Filters list by name or email.Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: .../users?email=`john+doe@example.com` \n\nCorrect: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -607,7 +607,7 @@
           {
             "name": "nameOrEmailOrUsernameContains",
             "in": "query",
-            "description": "Filters users by name or email or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. Incorrect: .../users?email=john+doe@example.com. Correct: .../users?email=john%2Bdoe@example.com",
+            "description": "Filters users by name or email address or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: .../users?email=`john+doe@example.com` \n\nCorrect: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -1939,7 +1939,7 @@
           {
             "name": "nameOrEmailContains",
             "in": "query",
-            "description": "Filters list by name or email.Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. Incorrect: .../users?email=john+doe@example.com. Correct: .../users?email=john%2Bdoe@example.com",
+            "description": "Filters list by name or email.Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: .../users?email=`john+doe@example.com` \n\nCorrect: .../users?email=john%2Bdoe@example.com",
             "schema": {
               "type": "string"
             }
@@ -1947,7 +1947,7 @@
           {
             "name": "nameOrEmailOrUsernameContains",
             "in": "query",
-            "description": "Filters list by name, email, or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. Incorrect: .../users?email=john+doe@example.com. Correct: .../users?email=john%2Bdoe@example.com",
+            "description": "Filters users by name or email address or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: .../users?email=`john+doe@example.com` \n\nCorrect: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -3184,7 +3184,7 @@
           {
             "name": "nameOrEmailContains",
             "in": "query",
-            "description": "Filters users by name or email address. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. Incorrect: .../users?email=john+doe@example.com. Correct: .../users?email=john%2Bdoe@example.com",
+            "description": "Filters list by name or email. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: .../users?email=`john+doe@example.com` \n\nCorrect: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -3192,7 +3192,7 @@
           {
             "name": "nameOrEmailOrUsernameContains",
             "in": "query",
-            "description": "Filters users by name or email address or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. Incorrect: .../users?email=john+doe@example.com. Correct: .../users?email=john%2Bdoe@example.com",
+            "description": "Filters users by name or email address or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: .../users?email=`john+doe@example.com` \n\nCorrect: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -3200,7 +3200,7 @@
           {
             "name": "userKeys",
             "in": "query",
-            "description": "Only returns users that match the specified keys. For more than one key, separates the keys with a comma. Allows up to 20 user keys.",
+            "description": "Only returns users that match the specified keys. For more than one key, separate the keys with a comma. Allows up to 20 user keys.",
             "schema": {
               "type": "string"
             }
