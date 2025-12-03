@@ -100,18 +100,38 @@ By default, when using the Health and Fitness plugin, your app will be configure
 
 To configure the access type for a given Health Connect data type (variable), you simply define an Android preference in your app's Extensibility Configurations, as follows:
 
+(Recommended) Using the universal extensibility configurations schema:
+
 ```json
-        {
-            "preferences": {
-                "android": [
-                    {
-                        "name": "<VARIABLE_NAME>",
-                        "value": "<ACCESS_TYPE>"
-                    }
-                ]
-            }
+{
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "android": {
+          "VARIABLE_NAME": "ACCESS_TYPE"
         }
+      }
+    }
+  }
+}
 ```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "android": [
+      {
+        "name": "VARIABLE_NAME",
+        "value": "ACCESS_TYPE"
+      }
+    ]
+  }
+}
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 For specific variables, the **name** of the preference should be the **Identifier** of the variable record in the **AllVariables** static entity of the plugin. For heart rate, for example, the **name** of the preference should be "HeartRate".
 
@@ -123,30 +143,53 @@ Note that the most specific preference has precedence over less specific ones. F
 
 Here's a concrete example of a configuration that sets write access to the "Steps" variable, read access to all fitness variables (except for "Steps"), write access to all health variables (e.g. "HeartRate"), and read and write access to all remaining variables ("AllVariables):
 
+(Recommended) Using the universal extensibility configurations schema:
+
 ```json
-        {
-            "preferences": {
-                "android": [
-                    {
-                        "name": "Steps",
-                        "value": "Write"
-                    },
-                    {
-                        "name": "FitnessVariables",
-                        "value": "Read"
-                    },
-                    {
-                        "name": "HealthVariables",
-                        "value": "Write"
-                    },
-                    {
-                        "name": "AllVariables",
-                        "value": "ReadWrite"
-                    },
-                ]
-            }
+{
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "android": {
+          "Steps": "Write",
+          "FitnessVariables": "Read",
+          "HealthVariables": "Write",
+          "AllVariables": "ReadWrite",
         }
+      }
+    }
+  }
+}
 ```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "android": [
+      {
+        "name": "Steps",
+        "value": "Write"
+      },
+      {
+        "name": "FitnessVariables",
+        "value": "Read"
+      },
+      {
+        "name": "HealthVariables",
+        "value": "Write"
+      },
+      {
+        "name": "AllVariables",
+        "value": "ReadWrite"
+      }
+    ]
+  }
+}
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 ## (Optional) Disable access to older history data (Android only)
 
@@ -156,18 +199,38 @@ From version 1.4.0 of the plugin, you can access data older than that. A new per
 
 If you want to disable access to older data and disable the permission request, set the`DisableReadHealthDataHistory` preference in the Extensibility Configurations to **true**, as follows:
 
+(Recommended) Using the universal extensibility configurations schema:
+
 ```json
-        {
-            "preferences": {
-                "android": [
-                    {
-                        "name": "DisableReadHealthDataHistory",
-                        "value": true
-                    }
-                ]
-            }
+{
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "android": {
+          "DisableReadHealthDataHistory": true
         }
-````
+      }
+    }
+  }
+}
+```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "android": [
+      {
+        "name": "DisableReadHealthDataHistory",
+        "value": true
+      }
+    ]
+  }
+}
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 ## Enabling your users to track their health and fitness data
 
@@ -323,18 +386,38 @@ With that said, it is a best practice to present a message to the user explainin
 
 By default, all necessary background job Android permissions (e.g. "android.permission.ACTIVITY_RECOGNITION") are configured. If you don't want to use background job features and don't want these permissions to be included in your app, set the (`DisableBackgroundJobs`) preference in the Extensibility Configurations to **true**, as follows:
 
+(Recommended) Using the universal extensibility configurations schema:
+
 ```json
-        {
-            "preferences": {
-                "android": [
-                    {
-                        "name": "DisableBackgroundJobs",
-                        "value": true
-                    }
-                ]
-            }
+{
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "android": {
+          "DisableBackgroundJobs": true
         }
+      }
+    }
+  }
+}
 ```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "android": [
+      {
+        "name": "DisableBackgroundJobs",
+        "value": true
+      }
+    ]
+  }
+}
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 #### Additional information about background jobs in Android
 
@@ -342,22 +425,43 @@ When using the **SetBackgroundJob** client action, the **IMMEDIATE** option for 
 
 Background jobs run using foreground services, which results in a temporary notification being shown to the user. In most cases, as the background job processing is fast, the temporary notification won't be presented to the user. Nevertheless, you can define the **title** and **description** of this notification, in case it is shown. By default, we already set a title and description, but you can define your own values as follows:
 
+(Recommended) Using the universal extensibility configurations schema:
+
 ```json
-        {
-            "preferences": {
-                "android": [
-                    {
-                        "name": "BackgroundNotificationTitle",
-                        "value": "Measuring your health and fitness data."
-                    },
-                    {
-                        "name": "BackgroundNotificationDescription",
-                        "value": "Your health and fitness data is being measured in the background."
-                    }
-                ]
-            }
+{
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "android": {
+          "BackgroundNotificationTitle": "Measuring your health and fitness data.",
+          "BackgroundNotificationDescription": "Your health and fitness data is being measured in the background."
         }
+      }
+    }
+  }
+}
 ```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "android": [
+      {
+        "name": "BackgroundNotificationTitle",
+        "value": "Measuring your health and fitness data."
+      },
+      {
+        "name": "BackgroundNotificationDescription",
+        "value": "Your health and fitness data is being measured in the background."
+      }
+    ]
+  }
+}
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 ### Create logic to disconnect your Android app from Health Connect
 

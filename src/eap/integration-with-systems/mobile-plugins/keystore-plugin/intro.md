@@ -106,26 +106,48 @@ For Android versions 10 or lower, when using standard authentication methods (fo
 
 To set the values for these fields, define the following Android preferences in your app's Extensibility Configurations:
 
+(Recommended) Using the universal extensibility configurations schema:
+
 ```json
-        {
-            "preferences": {
-                "android": [
-                    {
-                        "name": "AuthPromptTitle",
-                        "value": "Authentication required"
-                    },
-                    {
-                        "name": "AuthPromptSubtitle",
-                        "value": "Please authenticate to continue"
-                    },
-                    {
-                        "name": "AuthPromptCancelButton",
-                        "value": "Cancel"
-                    }
-                ]
-            }
+{
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "android": {
+          "AuthPromptTitle": "Authentication required",
+          "AuthPromptSubtitle": "Please authenticate to continue",
+          "AuthPromptCancelButton": "Cancel"
         }
+      }
+    }
+  }
+}
 ```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "android": [
+      {
+        "name": "AuthPromptTitle",
+        "value": "Authentication required"
+      },
+      {
+        "name": "AuthPromptSubtitle",
+        "value": "Please authenticate to continue"
+      },
+      {
+      "name": "AuthPromptCancelButton",
+      "value": "Cancel"
+      }
+    ]
+  }
+}
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 **Note:** These preferences are optional. If they're not set, then the values in the example above are used by default.
 
@@ -135,12 +157,12 @@ The app with the KeyStore Plugin can run on many Android or iOS devices, with di
 
 The following actions can handle errors. Use the actions with the **If** nodes to check for errors and control how the app works.
 
-| Variable|Action|Description |
-| ---|---|--- |
-| IsAvailable|CheckKeyStorePlugin|True if the KeyStore Plugin is available in the app. |
-| Success|SetValue|True if there aren't errors while setting a new key-value pair. |
-| Success|GetValue|True if there aren't errors while getting a key-value pair. |
-| Success|RemoveKey|True if there aren't errors while removing a key-value pair. |
+| Variable    | Action             | Description                                                                 |
+| :---------- | :----------------- | :-------------------------------------------------------------------------- |
+| IsAvailable | CheckKeyStorePlugin | True if the KeyStore Plugin is available in the app.                        |
+| Success     | SetValue           | True if there aren't errors while setting a new key-value pair.             |
+| Success     | GetValue           | True if there aren't errors while getting a key-value pair.                 |
+| Success     | RemoveKey          | True if there aren't errors while removing a key-value pair.                |
 
 ## Reference
 
@@ -150,20 +172,20 @@ More information about the plugin.
 
 The KeyStore plugin uses a Cordova plugin. For more information check [cordova-plugin-secure-storage](https://github.com/OutSystems/cordova-plugin-secure-storage). The following actions are available in the plugin.
 
-| Action|Description|Available in PWA |
-| ---|---|--- |
-| CheckKeyStorePlugin|Checks if the KeyStore Plugin is available in the app.|Yes |
-| SetValue|Adds or sets the key with the value in the store.|Yes |
-| GetValue|Gets the value associated with the key from the store.|Yes |
-| RemoveKey|Removes the key and its associated value from the store.|Yes |
+| Action              | Description                                                   | Available in PWA |
+| :------------------ | :------------------------------------------------------------ | :--------------- |
+| CheckKeyStorePlugin | Checks if the KeyStore Plugin is available in the app.        | Yes              |
+| SetValue            | Adds or sets the key with the value in the store.             | Yes              |
+| GetValue            | Gets the value associated with the key from the store.        | Yes              |
+| RemoveKey           | Removes the key and its associated value from the store.      | Yes              |
 
 ### MABS compatibility
 
 The table shows the compatibility of the KeyStore Plugin with the Mobile Apps Builds Service (MABS).
 
-| Plugin version|Compatible with MABS version|Notes |
-| ---|---|-- |
-| 1.0.0 and later|MABS 9.0 and later.| |
+| Plugin version   | Compatible with MABS version | Notes |
+| :--------------- | :--------------------------- | :---- |
+| 1.0.0 and later  | MABS 9.0 and later.          |       |
 
 ## Known issues
 

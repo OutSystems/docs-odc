@@ -116,33 +116,73 @@ If you want to present an alert before the iOS tracking permission dialog, enabl
 
 ![Shows the RequestTrackingAuthorization client action parameters in ODC Studio](images/firebase-request-tracking-authorization-flow-odcs.png "Firebase Request Tracking Authorization Flow in ODC Studio")
 
-By default, the **NSUserTrackingUsageDescription** field is set to `AppName needs your attention.`. As explained by Apple [here](https://developer.apple.com/documentation/apptrackingtransparency), this property must contain "a message that informs the user why an app is requesting permission to use data for tracking the user or the device.". You can set your custom description by including an iOS-specific preference (`USER_TRACKING_DESCRIPTION_IOS`) in the Extensibility Configurations of the application, as follows:
+By default, the **NSUserTrackingUsageDescription** field is set to `AppName needs your attention.`. Apple’s [App Tracking Transparency documentation](https://developer.apple.com/documentation/apptrackingtransparency) states that this property must contain "a message that informs the user why an app is requesting permission to use data for tracking the user or the device.". You can set your custom description by including an iOS-specific preference (`USER_TRACKING_DESCRIPTION_IOS`) in the Extensibility Configurations of the application, as follows:
 
-```JSON
+(Recommended) Using the universal extensibility configurations schema:
+
+```json
 {
-    "preferences": {
-        "ios": [{
-            "name": "USER_TRACKING_DESCRIPTION_IOS",
-            "value": "This is an example of a description."
-        }]
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "ios": {
+          "USER_TRACKING_DESCRIPTION_IOS": "This is an example of a description.",
+        }
+      }
     }
+  }
 }
 ```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "ios": [{
+      "name": "USER_TRACKING_DESCRIPTION_IOS",
+      "value": "This is an example of a description."
+    }]
+  }
+}
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 You can use the **RequestTrackingAuthorization** action multiple times in the same app because iOS remembers a user's choice. iOS only prompts users again after they uninstall and then reinstall the app on the device.
 
 By default, an app using the Firebase Analytics plugin is able to trigger the native AppTrackingTransparency framework. It also contains the **NSUserTrackingUsageDescription** field in the app's **\*-Info.plist** file. If you don't want to trigger the framework and don't want to include the description field in the **.plist** file, you can disable this through the Extensibility Configurations as follows:
 
-```JSON
+(Recommended) Using the universal extensibility configurations schema:
+
+```json
 {
-    "preferences": {
-        "ios": [{
-            "name": "EnableAppTrackingTransparencyPrompt",
-            "value": "false"
-        }]
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "ios": {
+          "EnableAppTrackingTransparencyPrompt": false,
+        }
+      }
     }
+  }
 }
 ```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "ios": [{
+      "name": "EnableAppTrackingTransparencyPrompt",
+      "value": "false"
+    }]
+  }
+}
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 <div class="info" markdown="1">
 
@@ -206,22 +246,36 @@ For more information on which event requires which parameters, refer to [Google'
 
 Starting in version **1.1.2**, the Firebase Analytics plugin can effectively enable and disable data collection. For the `SetEnabled` client action to properly work, the following needs to be added to your app's Extensibility Configurations:
 
-```JSON
+(Recommended) Using the universal extensibility configurations schema:
+
+```json
 {
-    "preferences": {
-        ...
-        "global": [
-            ...,
-            {
-                "name": "ANALYTICS_COLLECTION_ENABLED",
-                "value": "false"
-            },
-            ...
-        ],
-        ...
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "ANALYTICS_COLLECTION_ENABLED": false
+      }
     }
+  }
 }
 ```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "global": [
+      {
+        "name": "ANALYTICS_COLLECTION_ENABLED",
+        "value": "false"
+      },
+    ]
+  }
+}
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 <div class="info" markdown="1">
 

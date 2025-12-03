@@ -85,19 +85,19 @@ This sample app shows you how to do the following:
 
 The following steps describe how to create a back-end notification service and how to prepare a mobile app to respond with push notifications:
 
-1. [Set up a back-end notification service using the send Notifications REST API methods](#setup-back-end).
+1. [Set up a back-end notification service using the send Notifications REST API methods](#set-up-a-back-end-notification-service).
 
-1. [Enable basic notification functions in your app using the plugin's actions](#enable-notifications-plugins).
+1. [Enable basic notification functions in your app using the plugin's actions](#enable-basic-notification-functions-in-your-app).
 
-1. [Enable notifications with custom actions](#enable-custom-actions).
+1. [Enable notifications with custom actions](#enable-notifications-with-custom-actions).
 
-1. [Enable notifications with custom sounds](#enable-custom-sounds).
+1. [Enable notifications with custom sounds](#enable-notifications-with-custom-sounds).
 
-1. [Manage the experience of in-app notifications using the Notifications block](#manage-notification-ux).
+1. [Manage the experience of in-app notifications using the Notifications block](#manage-the-experience-of-in-app-notifications-using-the-notifications-block).
 
-1. [Manage the experience of custom actions using the Notifications block](#manage-custom-actions-ux).
+1. [Manage the experience of custom actions using the Notifications block](#manage-the-experience-of-custom-actions-using-the-notifications-block).
 
-### Set up a back-end notification service { #setup-back-end }
+### Set up a back-end notification service
 
 To set up a back-end notification service, do the following:
 
@@ -155,7 +155,7 @@ For silent notifications (**SendSilentNotificationToUsers** and **SendSilentNoti
 
 For topic notifications (**SendNotificationToTopics**, **SendSilentNotificationToTopics**), set the topics for which a notification will be delivered to in the **SendToTopics** structure attribute.
 
-### Enable basic notification functions in your app { #enable-notifications-plugins }
+### Enable basic notification functions in your app
 
 This section describes some of the actions that you can use to leverage notification functions on your mobile app.
 
@@ -211,7 +211,7 @@ Finally, you can give users the ability to clear all app's notifications remaini
 
 ![Diagram showing the logic to clear all notifications from the notification center in Firebase Messaging](images/firebase-messaging-with-clear-notifications-logic-odcs.png "Clear Notifications Logic Flow")
 
-### Enable notifications with custom actions { #enable-custom-actions }
+### Enable notifications with custom actions
 
 To enhance your notification with custom actions you must use the **v2 REST API**, with the **ActionList** parameter inside the Notification parameter on the **SendNotificationToTopics** or **SendNotificationToUsers** REST API methods.
 
@@ -225,7 +225,7 @@ OutSystems offers the following types of custom actions:
 
 * **Internal route** - Sends an event to be handled by the app, similar to a basic notification click.
 
-    * For this action, you must check the **Manage the experience of custom actions**.
+* For this action, you must check **Manage the experience of custom actions using the Notifications block**.
 
 * **Web route** - Opens a given URL in the device’s browser.
 
@@ -233,7 +233,7 @@ OutSystems offers the following types of custom actions:
 
 * **Reply field** - Opens a text field that lets users send a text directly to the app.
 
-### Enable notifications with custom sound { #enable-custom-sounds }
+### Enable notifications with custom sounds
 
 To enhance your notification with custom sounds, follow these steps:
 
@@ -251,7 +251,7 @@ It is important to note the following requirements for custom sounds:
 
 * The sounds.zip file should be included with the “Deploy Action” set to “Deploy to Target Directory”.
 
-### Manage the experience of in-app notifications { #manage-notification-ux }
+### Manage the experience of in-app notifications using the Notifications block
 
 By default, a cloud messaging notification displays in the notification center. However, you can also display the notification in-app when the app is on the foreground. To enable this notification, you can use the **NotificationsHandler** block. This block triggers events that pass the parameters of both notifications and silent notifications to the context of the app.
 
@@ -259,7 +259,7 @@ You need to add this block to each screen that might handle the notification con
 
 Optionally, you can use the **NotificationDialog** block, which provides a notification dialog UI inside the app.
 
-### Manage the experience of custom actions using the Notifications block. { #manage-custom-actions-ux }
+### Manage the experience of custom actions using the Notifications block
 
 By default, a cloud messaging notification displays in the notification center. However, you can also display the notification in-app when the app is in the foreground. To enable this you can use the **NotificationsHandler** block, using **InternalRouteActionClicked** for custom actions. This block triggers events that pass the parameters of both notifications and silent notifications to the context of the app.
 
@@ -275,20 +275,20 @@ If you want to navigate to a screen inside your app when the end-user clicks on 
 
 By default, the Cloud Messaging plugin defines values for the notification channel name and description on local notifications. But in some instances, you might want to define a different default value by adding the following name and value properties on the extensibility configurations of your app:
 
-```JSON
+```json
 {
-    "preferences": {
-        "android": [
-            {
-                "name": "NotificationChannelDefaultName",
-                "value": "This is my channel Name"
-            },
-            {
-                "name": "NotificationChannelDefaultDescription",
-                "value": "This is my channel Description"
-            }
-        ],
-    }
+  "preferences": {
+    "android": [
+      {
+        "name": "NotificationChannelDefaultName",
+        "value": "This is my channel Name"
+      },
+      {
+        "name": "NotificationChannelDefaultDescription",
+        "value": "This is my channel Description"
+      }
+    ],
+  }
 }
 ```
 

@@ -79,23 +79,23 @@ This sample app shows you how to do the following:
 
 The following steps describe how to create a back-end notification service and how to prepare a mobile app to respond with push notifications:
 
-1. [Set up a back-end notification service using the send Notifications Server Actions](#setup-back-end).
+1. [Set up a back-end notification service using the send Notifications Server Actions](#set-up-a-back-end-notification-service).
 
-1. [Enable basic notification functions in your app using the plugin's actions](#enable-notifications-plugins).
+1. [Enable basic notification functions in your app using the plugin's actions](#enable-basic-notification-functions-in-your-app).
 
-1. [Enable notifications with custom actions](#enable-custom-actions).
+1. [Enable notifications with custom actions](#enable-notifications-with-custom-actions).
 
-1. [Enable notifications with custom sounds](#enable-custom-sounds).
+1. [Enable notifications with custom sounds](#enable-notifications-with-custom-sounds).
 
-1. [Enable notifications with a custom icon and icon color for Android devices](#custom-android-notification).
+1. [Enable notifications with a custom icon and icon color for Android devices](#enable-notifications-with-a-custom-icon-and-icon-color-for-android-devices).
 
-1. [Manage the experience of in-app notifications using the Notifications block](#manage-notification-ux).
+1. [Manage the experience of in-app notifications using the Notifications block](#manage-the-experience-of-in-app-notifications-using-the-notifications-block).
 
-1. [Manage the experience of custom actions using the Notifications block](#manage-custom-actions-ux).
+1. [Manage the experience of custom actions using the Notifications block](#manage-the-experience-of-custom-actions-using-the-notifications-block).
 
-1. [Extend to your use case: authenticate your notification requests to FCM HTTP v1 REST API](#custom-notification-requests).
+1. [Extend to your use case: authenticate your notification requests to FCM HTTP v1 REST API](#authenticate-push-notification-requests-to-fcm-http-v1-api).
 
-### Set up a back-end notification service { #setup-back-end }
+### Set up a back-end notification service
 
 <div class="info" markdown="1">
 
@@ -138,17 +138,17 @@ To set up a back-end notification service, do the following:
         The Original Service Account JSON format is:
 
         ```JSON
-        { 
+        {
             "type": "service_account",
-            "project_id": "<your-id>",
-            "private_key_id": "<your-private-key-id",
-            "private_key": "<your-private-key",
-            "client_email": "<your-client-email>",
-            "client_id": "<your-client-id",
+            "project_id": "YOUR_PROJECT_ID",
+            "private_key_id": "YOUR_PRIVATE_KEY_ID",
+            "private_key": "YOUR_PRIVATE_KEY",
+            "client_email": "YOUR_CLIENT_EMAIL",
+            "client_id": "YOUR_CLIENT_ID",
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
             "token_uri": "https://oauth2.googleapis.com/token",
-            "auth_provider_x509_cert_url": "<cert-url>",
-            "client_x509_cert_url": "<client-cert-url",
+            "auth_provider_x509_cert_url": "AUTH_PROVIDER_CERT_URL",
+            "client_x509_cert_url": "CLIENT_CERT_URL",
             "universe_domain": "googleapis.com"
         }
          ```
@@ -156,15 +156,15 @@ To set up a back-end notification service, do the following:
         While the FirebaseProjectInfo JSON setting should be:
 
         ```JSON
-        { 
+        {
             "type": "service_account",
-            "project_id": "<your-id>",
-            "client_email": "<your-client-email>",
-            "client_id": "<your-client-id",
+            "project_id": "YOUR_PROJECT_ID",
+            "client_email": "YOUR_CLIENT_EMAIL",
+            "client_id": "YOUR_CLIENT_ID",
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
             "token_uri": "https://oauth2.googleapis.com/token",
-            "auth_provider_x509_cert_url": "<cert-url>",
-            "client_x509_cert_url": "<client-cert-url",
+            "auth_provider_x509_cert_url": "AUTH_PROVIDER_CERT_URL",
+            "client_x509_cert_url": "CLIENT_CERT_URL",
             "universe_domain": "googleapis.com"
         }
          ```
@@ -189,7 +189,7 @@ For silent notifications (**SendSilentNotificationToUsers** and **SendSilentNoti
 
 For topic notifications (**SendNotificationToTopics**, **SendSilentNotificationToTopics**), set the topics for which a notification will be delivered to in the **SendToTopics** structure attribute.
 
-#### Sending notifications to a  100+ users list{ #send-notifications-limited-list }
+#### Send notifications to a 100+ users list
 
 <div class="info" markdown="1">
 
@@ -207,7 +207,7 @@ Inside a Timer, you can iterate over your user list and send notifications to up
 To learn more about how to use Timers, see the [documentation](https://success.outsystems.com/documentation/outsystems_developer_cloud/building_apps/use_timers/).
 </div>
 
-## Enable basic notification functions in your app { #enable-notifications-plugins }
+## Enable basic notification functions in your app
 
 This section describes some of the actions that you can use to leverage notification functions on your mobile app.
 
@@ -251,7 +251,7 @@ Finally, you might want to give the opportunity to your user to clear all the ap
 
 ![Screenshot of the action to clear all notifications in Firebase Messaging](images/firebase-messaging-with-clear-notifications-logic-odcs.png "Firebase Messaging Clear Notifications")
 
-### Enable notifications with custom actions { #enable-custom-actions }
+### Enable notifications with custom actions
 
 To enhance your notification with custom actions you must use the **Plugin's Server Actions**, using the **ActionList** parameter inside the Notification parameter on the **SendNotificationToTopics** or **SendNotificationToUsers** Server Actions.
 
@@ -259,7 +259,7 @@ We offer the following types of custom actions:
 
 * **Internal route** - Sends an event to be handled by the app, similar to a basic notification click.
 
-    * For this action, you must check the **Manage the experience of custom actions**.
+    * For this action, you must check **Manage the experience of custom actions using the Notifications block**.
 
 * **Web route** - Opens a given URL in the device’s browser.
 
@@ -267,7 +267,7 @@ We offer the following types of custom actions:
 
 * **Reply field** - Opens a text field that lets users send a text directly to the app.
 
-### Enable notifications with custom sound { #enable-custom-sounds }
+### Enable notifications with custom sounds
 
 To enhance your notification with custom sounds,  follow these steps:
 
@@ -285,7 +285,7 @@ It is important to note the following requirements for custom sounds:
 
 * The sounds.zip file should be included with the “Deploy Action” set to “Deploy to Target Directory”.
 
-## Enable notifications with a custom icon and icon color - Android only {#custom-android-notification}
+## Enable notifications with a custom icon and icon color for Android devices
 
 By default, a Cloud Messaging notification will use the app's launcher icon as the notification icon. However, for **Android** notifications, you can also define a custom icon and a custom icon color.
 To setup a custom icon and custom icon color for Android notifications, follow these steps:
@@ -296,37 +296,76 @@ To setup a custom icon and custom icon color for Android notifications, follow t
 
 1. Update the Application's Extensibility Configuration JSON so that the different icon resolutions are added to their correct paths
 
-```JSON
- "resources": {
-        "android": {
-            "AndroidResource": {
-                "src": "www/google-services.json",
-                "target": "app/google-services.json"
-            },
-            "NotificationIcon24": {
-                "src": "www/icon/notification_icon_24.png",
-                "target": "app/src/main/res/drawable-mdpi/notification_icon.png"
-            },
-            "NotificationIcon36": {
-                "src": "www/icon/notification_icon_36.png",
-                "target": "app/src/main/res/drawable-hdpi/notification_icon.png"
-            },
-            "NotificationIcon48": {
-                "src": "www/icon/notification_icon_48.png",
-                "target": "app/src/main/res/drawable-xhdpi/notification_icon.png"
-            },
-            "NotificationIcon72": {
-                "src": "www/icon/notification_icon_72.png",
-                "target": "app/src/main/res/drawable-xxhdpi/notification_icon.png"
-            },
-            "NotificationIcon96": {
-                "src": "www/icon/notification_icon_96.png",
-                "target": "app/src/main/res/drawable-xxxhdpi/notification_icon.png"
-            }
-            
-        }
-    }
+```json
+
 ```
+
+(Recommended) Using the universal extensibility configurations schema:
+
+```json
+{
+  "buildConfigurations": {
+    "resources": {
+      "android": [
+        {
+          "source": "$resources.notification_icon_24.png",
+          "target": "app/src/main/res/drawable-mdpi/notification_icon.png"
+        },
+        {
+          "source": "$resources.notification_icon_36.png",
+          "target": "app/src/main/res/drawable-hdpi/notification_icon.png"
+        },
+        {
+          "source": "$resources.notification_icon_48.png",
+          "target": "app/src/main/res/drawable-xhdpi/notification_icon.png"
+        },
+        {
+          "source": "$resources.notification_icon_72.png",
+          "target": "app/src/main/res/drawable-xxhdpi/notification_icon.png"
+        },
+        {
+          "source": "$resources.notification_icon_96.png",
+          "target": "app/src/main/res/drawable-xxxhdpi/notification_icon.png"
+        }
+      ]
+    }
+  }
+}
+```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "resources": {
+    "android": {
+      "NotificationIcon24": {
+        "src": "$resources.notification_icon_24.png",
+        "target": "app/src/main/res/drawable-mdpi/notification_icon.png"
+      },
+      "NotificationIcon36": {
+        "src": "$resources.notification_icon_36.png",
+        "target": "app/src/main/res/drawable-hdpi/notification_icon.png"
+      },
+      "NotificationIcon48": {
+        "src": "$resources.notification_icon_48.png",
+        "target": "app/src/main/res/drawable-xhdpi/notification_icon.png"
+      },
+      "NotificationIcon72": {
+        "src": "$resources.notification_icon_72.png",
+        "target": "app/src/main/res/drawable-xxhdpi/notification_icon.png"
+      },
+      "NotificationIcon96": {
+        "src": "$resources.notification_icon_96.png",
+        "target": "app/src/main/res/drawable-xxxhdpi/notification_icon.png"
+      }
+    }
+  }
+}
+
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 1. In your push notification request, either via the plugin's `SendNotificationToUsers` or `SendNotificationToTopic` Server Actions, specify the custom icon and color
 
@@ -339,7 +378,7 @@ To setup a custom icon and custom icon color for Android notifications, follow t
 
 </div>
 
-## Manage the experience of in-app notifications { #manage-notification-ux }
+## Manage the experience of in-app notifications using the Notifications block
 
 By default, a cloud messaging notification displays in the notification center. However, you can also display the notification in-app when the app is on the foreground. To enable this notification, you can use the **NotificationsHandler** block. This block triggers events that pass the parameters of both notifications and silent notifications to the context of the app.
 
@@ -347,7 +386,7 @@ You need to add this block to each screen that might handle the notification con
 
 Optionally, you can use the **NotificationDialog** block, which provides a notification dialog UI inside the app.
 
-## Manage the experience of custom actions using the Notifications block. { #manage-custom-actions-ux }
+## Manage the experience of custom actions using the Notifications block
 
 By default, a cloud messaging notification displays in the notification center. However, you can also display the notification in-app when the app is in the foreground. To enable this you can use the **NotificationsHandler** block, using **InternalRouteActionClicked** for custom actions. This block triggers events that pass the parameters of both notifications and silent notifications to the context of the app.
 
@@ -371,22 +410,43 @@ When sending a notification with a deep link, you should avoid using the followi
 
 By default, the Cloud Messaging plugin defines values for the notification channel name and description on local notifications. But in some instances, you might want to define a different default value by adding the following name and value properties on the extensibility configurations of your app:
 
-```JSON
+(Recommended) Using the universal extensibility configurations schema:
+
+```json
 {
-    "preferences": {
-        "android": [
-            {
-                "name": "NotificationChannelDefaultName",
-                "value": "This is my channel Name"
-            },
-            {
-                "name": "NotificationChannelDefaultDescription",
-                "value": "This is my channel Description"
-            }
-        ],
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "android": {
+          "NotificationChannelDefaultName": "This is my channel Name",
+          "NotificationChannelDefaultDescription": "This is my channel Description",
+        }
+      }
     }
+  }
 }
 ```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "android": [
+      {
+        "name": "NotificationChannelDefaultName",
+        "value": "This is my channel Name"
+      },
+      {
+        "name": "NotificationChannelDefaultDescription",
+        "value": "This is my channel Description"
+      }
+    ],
+  }
+}
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 The following image illustrates how the notification channel's name and description will appear in the user device:
 
@@ -409,7 +469,7 @@ To have a better idea of what BigQuery is and how to enable it within the Fireba
 
 The feature is disabled by default. To enable it, `SetDeliveryMetricsExportToBigQuery` needs to be called with its `Enable` input parameter set to `true`.
 
-## Authenticate push notification requests to FCM HTTP v1 API {#custom-notification-requests}
+## Authenticate push notification requests to FCM HTTP v1 API
 
 Firebase Cloud Messaging offers a variety of uses cases with their HTTP v1 API which aren't covered by the Cloud Messaging Plugin's Server Actions, and as they can be very use-case specific, these Server Actions won't ever fully cover 100% of the HTTP v1 API.
 
@@ -432,49 +492,49 @@ As explained in the following [page](https://firebase.google.com/docs/cloud-mess
 
 Returns the Firebase Access Token of the Firebase Project defined in the OutSystems app settings. This token expires after one hour.
 
-|Parameter| Type | Data Type | Description |
-|:--------|:--------|:----------|:------------|
-| Token | Output | Text | The generated access token. Expires after one hour. |
+| Parameter | Type   | Data type | Description                                           |
+| :-------- | :----- | :-------- | :---------------------------------------------------- |
+| Token     | Output | Text      | The generated access token. Expires after one hour.   |
 
 ### SendNotificationToTopics
 
 Sends a notification to all users associated with a topic or group of topics.
 
-|Parameter| Type | Data Type | Description |
-|:--------|:--------|:----------|:------------|
-| AuthToken | Input | Text | The Firebase Access Token. |
-| SendRequest | Input | SendToTopics Data Structure | The notification to topics request. |
-| Response | Output | FirebaseResponse Data Structure | The Response sent by Firebase. |
+| Parameter   | Type   | Data type                    | Description                          |
+| :---------- | :----- | :--------------------------- | :----------------------------------- |
+| AuthToken   | Input  | Text                         | The Firebase Access Token.           |
+| SendRequest | Input  | SendToTopics Data Structure  | The notification to topics request.  |
+| Response    | Output | FirebaseResponse Data Structure | The response sent by Firebase.    |
 
 ### SendNotificationToUsers
 
 Sends a notification to a user or group of users.
 
-| Parameter| Type | Data Type | Description |
-|:--------|:--------|:----------|:------------|
-| AuthToken | Input | Text | The Firebase Access Token. |
-| SendRequest | Input | SendToUsers Data Structure | The notification to users request. |
-| Response | Output | FirebaseResponse Data Structure | The Response sent by Firebase. |
+| Parameter   | Type   | Data type                   | Description                         |
+| :---------- | :----- | :-------------------------- | :---------------------------------- |
+| AuthToken   | Input  | Text                        | The Firebase Access Token.          |
+| SendRequest | Input  | SendToUsers Data Structure  | The notification to users request.  |
+| Response    | Output | FirebaseResponse Data Structure | The response sent by Firebase.   |
 
 ### SendSilentNotificationToTopics
 
 Sends a silent notification to all users associated with a topic or group of topics.
 
-|Parameter| Type | Data Type | Description |
-|:--------|:--------|:----------|:------------|
-| AuthToken | Input | Text | The Firebase Access Token. |
-| SendRequest | Input | SilentTopicNotification Data Structure | The silent notification to topic request. |
-| Response | Output | FirebaseResponse Data Structure | The Response sent by Firebase. |
+| Parameter   | Type   | Data type                           | Description                                    |
+| :---------- | :----- | :---------------------------------- | :--------------------------------------------- |
+| AuthToken   | Input  | Text                               | The Firebase Access Token.                     |
+| SendRequest | Input  | SilentTopicNotification Data Structure | The silent notification to topic request.   |
+| Response    | Output | FirebaseResponse Data Structure    | The response sent by Firebase.                 |
 
 ### SendSilentNotificationToUsers
 
-SendSilentNotificationToUsersSends a silent notification to a user or group of users.
+SendSilentNotificationToUsers sends a silent notification to a user or group of users.
 
-|Parameter| Type | Data Type | Description |
-|:--------|:--------|:----------|:------------|
-| AuthToken | Input | Text | The Firebase Access Token. |
-| SendRequest | Input | SilentUserNotification Data Structure | The silent notification to users request. |
-| Response | Output | FirebaseResponse Data Structure | The Response sent by Firebase. |
+| Parameter   | Type   | Data type                          | Description                                     |
+| :---------- | :----- | :--------------------------------- | :---------------------------------------------- |
+| AuthToken   | Input  | Text                              | The Firebase Access Token.                      |
+| SendRequest | Input  | SilentUserNotification Data Structure | The silent notification to users request.    |
+| Response    | Output | FirebaseResponse Data Structure   | The response sent by Firebase.                  |
 
 ## Limitations
 

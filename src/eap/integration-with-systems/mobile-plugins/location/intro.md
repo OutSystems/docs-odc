@@ -34,24 +34,43 @@ See [Adding plugins](../intro.md#adding-plugins) to learn how to install and ref
 
 To use the Location Plugin on iOS, you should provide descriptions for two property list keys: **NSLocationWhenInUseUsageDescription** and **NSLocationAlwaysAndWhenInUseUsageDescription**.
 
-This can be done by setting two iOS preferences in your app's Extensibility Configurations file, as follows:
+This can be done by setting two iOS permissions in your app's Extensibility Configurations file, as follows:
+
+(Recommended) Using the universal extensibility configurations schema:
 
 ```json
-        {
-            "preferences": {
-                "ios": [
-                    {
-                        "name": "NSLocationAlwaysAndWhenInUseUsageDescription",
-                        "value": "This app accesses your location to give you the best restaurants near you."
-                    },
-                    {
-                        "name": "NSLocationWhenInUseUsageDescription",
-                        "value": "This app accesses your location to give you the best restaurants near you."
-                    }
-                ]
-            }
-        }
+{
+  "appConfigurations": {
+    "permissions": {
+      "ios": {
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app accesses your location to give you the best restaurants near you.",
+        "NSLocationWhenInUseUsageDescription": "This app accesses your location to give you the best restaurants near you."
+      }
+    }
+  }
+}
 ```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "ios": [
+      {
+        "name": "NSLocationAlwaysAndWhenInUseUsageDescription",
+        "value": "This app accesses your location to give you the best restaurants near you."
+      },
+      {
+        "name": "NSLocationWhenInUseUsageDescription",
+        "value": "This app accesses your location to give you the best restaurants near you."
+      }
+    ]
+  }
+}
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 ## Creating logic to get the device location
 
@@ -102,11 +121,11 @@ The app with the Location Plugin can run on many Android or iOS devices, with di
 Here is the list of actions you can use to handle the errors. Use these actions with the **If** nodes to check for errors and control how the app works.
 
 | Variable    | Action              | Description                                                                    |
-| ----------- | ------------------- | ------------------------------------------------------------------------------ |
+| :---------- | :------------------ | :----------------------------------------------------------------------------- |
 | IsAvailable | CheckLocationPlugin | True if the Location Plugin is available in the app.                           |
 | Success     | GetLocation         | True if there aren't errors while getting the device position.                 |
-| Success     | WatchPosition       | True if there aren't errors while receiving position updates in real time.          |
-| Success     | ClearWatch          | True if there aren't errors while canceling position updates in real time. |
+| Success     | WatchPosition       | True if there aren't errors while receiving position updates in real time.     |
+| Success     | ClearWatch          | True if there aren't errors while canceling position updates in real time.     |
 
 ![Flowchart demonstrating how to handle errors when using the Location Plugin in ODC Studio](images/handling-errors-odcs.png "Handling Errors")
 
@@ -115,9 +134,9 @@ Here is the list of actions you can use to handle the errors. Use these actions 
 Here is the reference of the actions you can use from the plugin. The Location Plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check[cordova-outsystems-geolocation](https://github.com/ionic-team/cordova-outsystems-geolocation) and [capacitor-geolocation](https://github.com/ionic-team/capacitor-geolocation).
 
 | Action              | Description                                                                                 | Available in PWA |
-| ------------------- | ------------------------------------------------------------------------------------------- | ---------------- |
+| :------------------ | :------------------------------------------------------------------------------------------ | :--------------- |
 | CheckLocationPlugin | Checks if the location plugin is available in the app.                                      | Yes              |
-| GetLocation         | Get the current GPS information if the GPS is enabled on the device.                        | Yes              |
+| GetLocation         | Gets the current GPS information if the GPS is enabled on the device.                       | Yes              |
 | WatchPosition       | Tracks the device position and triggers OnPositionChanged event from LocationTracker block. | Yes              |
 | ClearWatch          | Clears a previously registered position watch.                                              | Yes              |
 
@@ -126,6 +145,6 @@ Here is the reference of the actions you can use from the plugin. The Location P
 The table shows the compatibility of the Location Plugin with the Mobile Apps Builds Service (MABS).
 
 | Plugin version  | Compatible with MABS version | Notes |
-| --------------- | ---------------------------- | ----- |
+| :-------------- | :--------------------------- | :---- |
 | 1.0.1 and later | MABS 10.0 and later.         |       |
 | 0.1.0 and later | MABS 9.0 and later.          |       |

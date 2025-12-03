@@ -132,15 +132,35 @@ To create the logic to close an open browser, follow these steps in ODC Studio:
 
 To enable your app to open HTTP URLs in the web view, set the **InAppBrowserCleartextTrafficPermitted** preference in your app's Extensibility Configurations, as follows:
 
+(Recommended) Using the universal extensibility configurations schema:
+
 ```json
-        {
-            "preferences": {
-                "android": [
-                    {
-                        "name": "InAppBrowserCleartextTrafficPermitted",
-                        "value": true
-                    }
-                ]
-            }
+{
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "android": {
+          "InAppBrowserCleartextTrafficPermitted": "true"
         }
+      }
+    }
+  }
+}
 ```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "android": [
+      {
+        "name": "InAppBrowserCleartextTrafficPermitted",
+        "value": true
+      }
+    ]
+  }
+}
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
