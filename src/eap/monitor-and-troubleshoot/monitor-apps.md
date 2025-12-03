@@ -86,7 +86,7 @@ Each log and each trace has a unique ID contained in the URL (`...?id=x...`). If
 
 ## Retaining data
 
-You can access logs, traces, and metrics data up to four weeks old within the ODC Portal. While the system automatically deletes this data after seven weeks, you can also stream logs, traces, and metrics to external destinations. This enables extended retention periods and seamless integration with other APM tools. For more information about streaming observability data, refer to [Streaming observability data](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md).
+You can access logs, traces, and metrics data up to four weeks old within the ODC Portal. You can also stream logs, traces, and metrics to external destinations. This enables extended retention periods and seamless integration with other APM tools. For more information about streaming observability data, refer to [Streaming observability data](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md).
 
 ## Related resources
 
@@ -94,3 +94,4 @@ You can access logs, traces, and metrics data up to four weeks old within the OD
 * [Monitor assets with ODC Analytics](app-health.md)
 * [Manage technical debt in ODC](../monitor-and-troubleshoot/manage-technical-debt/managing-tech-debt.md)
 * [Traces](../monitor-and-troubleshoot/traces/intro.md)
+* [Platform limits](../getting-started/system-requirements.md#platform-limits)
