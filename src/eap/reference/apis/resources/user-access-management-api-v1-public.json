@@ -216,7 +216,7 @@
           {
             "name": "limit",
             "in": "query",
-            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100. Default value: 100.",
             "schema": {
               "type": "integer",
               "format": "int32"
