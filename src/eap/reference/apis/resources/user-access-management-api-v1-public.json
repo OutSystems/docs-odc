@@ -80,7 +80,7 @@
           {
             "name": "limit",
             "in": "query",
-            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100. Default value: 100.",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -599,7 +599,7 @@
           {
             "name": "nameOrEmailContains",
             "in": "query",
-            "description": "Filters list by name or email.Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: .../users?email=`john+doe@example.com` \n\nCorrect: .../users?email=`john%2Bdoe@example.com`",
+            "description": "Filters list by name or email. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: .../users?email=`john+doe@example.com` \n\nCorrect: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -607,7 +607,7 @@
           {
             "name": "nameOrEmailOrUsernameContains",
             "in": "query",
-            "description": "Filters users by name or email address or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: .../users?email=`john+doe@example.com` \n\nCorrect: .../users?email=`john%2Bdoe@example.com`",
+            "description": "Filters users by name, email address, or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: .../users?email=`john+doe@example.com` \n\nCorrect: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
