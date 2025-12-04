@@ -67,6 +67,8 @@ The schema may change with every new MABS version.
 
 [autoHide](#autohide)
 
+[webViewUpdate](#webviewupdate)
+
 [buildConfigurations](#buildconfigurations)
 
 [Properties](#properties-1)
@@ -133,6 +135,7 @@ Application configurations are a set of configurations that modify multiple runt
 | [systembars](#systembars) | `object` | Optional | true |
 | [appendUserAgent](#appenduseragent) | `string` | Optional | true |
 | [splashscreen](#splashscreen) | `object` | Optional | true |
+| [webViewUpdate](#webviewupdate) | `object` | Optional | false |
 
 Overriding property values per platform is achieved by referencing those properties inside `ios` and/or `android` property. Example:
 
@@ -497,6 +500,74 @@ Whether to auto hide the splash after `duration`
 
 * Optional  
 * Type: `boolean`
+
+### webViewUpdate
+
+Displays an alert prompting the user to update the Android System WebView via the Google Play Store. Only applies to OutSystems Capacitor Android apps, which require a minimum WebView version of 102.
+
+**Example**
+
+```json
+{
+  "appConfigurations": {
+    "webViewUpdate": {
+      "enabled": true,
+      "title": "WebView Update Required",
+      "message": "Please update to continue.",
+      "updateButtonLabel": "Update"
+    }
+  }
+}
+```
+
+`webViewUpdate`
+
+* Optional
+* Type: `object`
+
+| Property | Type | Required |
+| :---- | :---- | :---- |
+| [enabled](#enabled) | `boolean` | Optional |
+| [title](#title) | `string` | Optional |
+| [message](#message) | `string` | Optional |
+| [updateButtonLabel](#updatebuttonlabel) | `string` | Optional |
+
+### enabled
+
+Determines whether the alert is shown when the device’s WebView version is below the minimum required
+
+`enabled`
+
+* Optional
+* Type: `boolean`
+* Defaults to true
+
+### title
+
+Title text displayed in the update alert dialog
+
+`title`
+
+* Optional
+* Type: `string`
+
+### message
+
+Message text displayed in the update alert dialog
+
+`message`
+
+* Optional
+* Type: `string`
+
+### updateButtonLabel
+
+Label for the button that takes the user to the Google Play Store to update WebView
+
+`updateButtonLabel`
+
+* Optional
+* Type: `string`
 
 ## buildConfigurations
 
