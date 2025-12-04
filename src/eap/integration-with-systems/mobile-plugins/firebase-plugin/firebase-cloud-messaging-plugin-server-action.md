@@ -99,7 +99,7 @@ The following steps describe how to create a back-end notification service and h
 
 <div class="info" markdown="1">
 
-The Cloud Messaging Configurator, version 0.1.2 and older, is deprecated. For more information, see [Firebase Cloud Messaging HTTP protocol](https://firebase.google.com/docs/cloud-messaging/http-server-ref). This means the **v2** and **v1** endpoints will no longer be functional.
+The Cloud Messaging Configurator, version 0.1.2 and older, is deprecated. For more information, see [Firebase Cloud Messaging HTTP protocol](https://firebase.google.com/docs/cloud-messaging/http-server-ref). This means the **v2** and **v1** endpoints are no longer functional.
 
 The Cloud Messaging Configurator's REST APIs have been replaced by server actions available on the Firebase Cloud Messaging Plugin. If you are consuming these APIs, they must be replaced with the server actions as soon as possible.
 
@@ -107,8 +107,8 @@ The Cloud Messaging Configurator's REST APIs have been replaced by server action
 
 To set up a back-end notification service, do the following:
 
-1. Install the **Cloud Messaging Plugin** from [Forge] forge component in your environment.
-    This component includes four **Server Actions** that allow you to send notifications to a list of users or topics and one **Server Action** to generate an **Access Token**.
+1. Install the **Cloud Messaging Plugin** Forge component in your environment.
+    This component includes four **Server Actions** that send notifications to a list of users or topics and one **Server Action** to generate an **Access Token**.
 
 1. Create a new app to serve as your backend notification service.
 
@@ -137,37 +137,37 @@ To set up a back-end notification service, do the following:
 
         The Original Service Account JSON format is:
 
-        ```JSON
-        {
-            "type": "service_account",
-            "project_id": "YOUR_PROJECT_ID",
-            "private_key_id": "YOUR_PRIVATE_KEY_ID",
-            "private_key": "YOUR_PRIVATE_KEY",
-            "client_email": "YOUR_CLIENT_EMAIL",
-            "client_id": "YOUR_CLIENT_ID",
-            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-            "token_uri": "https://oauth2.googleapis.com/token",
-            "auth_provider_x509_cert_url": "AUTH_PROVIDER_CERT_URL",
-            "client_x509_cert_url": "CLIENT_CERT_URL",
-            "universe_domain": "googleapis.com"
-        }
-         ```
+          ```JSON
+          {
+              "type": "service_account",
+              "project_id": "YOUR_PROJECT_ID",
+              "private_key_id": "YOUR_PRIVATE_KEY_ID",
+              "private_key": "YOUR_PRIVATE_KEY",
+              "client_email": "YOUR_CLIENT_EMAIL",
+              "client_id": "YOUR_CLIENT_ID",
+              "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+              "token_uri": "https://oauth2.googleapis.com/token",
+              "auth_provider_x509_cert_url": "AUTH_PROVIDER_CERT_URL",
+              "client_x509_cert_url": "CLIENT_CERT_URL",
+              "universe_domain": "googleapis.com"
+          }
+          ```
 
         While the FirebaseProjectInfo JSON setting should be:
 
-        ```JSON
-        {
-            "type": "service_account",
-            "project_id": "YOUR_PROJECT_ID",
-            "client_email": "YOUR_CLIENT_EMAIL",
-            "client_id": "YOUR_CLIENT_ID",
-            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-            "token_uri": "https://oauth2.googleapis.com/token",
-            "auth_provider_x509_cert_url": "AUTH_PROVIDER_CERT_URL",
-            "client_x509_cert_url": "CLIENT_CERT_URL",
-            "universe_domain": "googleapis.com"
-        }
-         ```
+          ```JSON
+          {
+              "type": "service_account",
+              "project_id": "YOUR_PROJECT_ID",
+              "client_email": "YOUR_CLIENT_EMAIL",
+              "client_id": "YOUR_CLIENT_ID",
+              "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+              "token_uri": "https://oauth2.googleapis.com/token",
+              "auth_provider_x509_cert_url": "AUTH_PROVIDER_CERT_URL",
+              "client_x509_cert_url": "CLIENT_CERT_URL",
+              "universe_domain": "googleapis.com"
+          }
+          ```
 
 1. Create the logic to store and manage your Firebase Access Token in the app you just created.
 
@@ -185,9 +185,9 @@ Moreover, to send a notification specifically to all Android or iOS users, you s
 
 Other available methods include **SendNotificationToTopics**, **SendSilentNotificationToUsers**, and **SendSilentNotificationToTopics**.
 
-For silent notifications (**SendSilentNotificationToUsers** and **SendSilentNotificationToTopics**), the **TimeToLive** structure attribute sets the notifications' expiration time. More specifically, if the **TimeValue** for a specific **TimeUnit** is greater than 0, the message will persist in the local storage and be delivered at the first opportunity, until the expiration time has passed.
+For silent notifications (**SendSilentNotificationToUsers** and **SendSilentNotificationToTopics**), the **TimeToLive** structure attribute sets the notifications' expiration time. More specifically, if the **TimeValue** for a specific **TimeUnit** is greater than 0, the message persists in the local storage and is delivered at the first opportunity, until the expiration time has passed.
 
-For topic notifications (**SendNotificationToTopics**, **SendSilentNotificationToTopics**), set the topics for which a notification will be delivered to in the **SendToTopics** structure attribute.
+For topic notifications (**SendNotificationToTopics**, **SendSilentNotificationToTopics**), set the topics to which a notification is delivered in the **SendToTopics** structure attribute.
 
 #### Send notifications to a 100+ users list
 
@@ -221,7 +221,7 @@ To prevent errors, it's a good practice to first check if the plugin is availabl
 
 After registering the device on the Firebase Cloud Messaging service, the active device's token becomes available and can be retrieved using the action **GetToken**. For iOS devices, the Apple Push Notification service token can also be retrieved, using the **GetAPNsToken** action.
 
-To manage topic subscriptions, you can use the **Subscribe / Unsubscribe** actions. The user will need to set the topic name to which the app will subscribe (or unsubscribe). If the topic doesn't exist yet on the Firebase Cloud Messaging project, it creates a new one.
+To manage topic subscriptions, you can use the **Subscribe / Unsubscribe** actions. The user needs to set the topic name to which the app subscribes (or unsubscribes). If the topic doesn't exist yet on the Firebase Cloud Messaging project, it creates a new one.
 
 ![Screenshot displaying the logic for adding a topic in Firebase Messaging](images/firebase-messaging-with-logic-of-add-topic-odcs.png "Firebase Messaging Add Topic Logic")
 
@@ -287,7 +287,7 @@ It is important to note the following requirements for custom sounds:
 
 ## Enable notifications with a custom icon and icon color for Android devices
 
-By default, a Cloud Messaging notification will use the app's launcher icon as the notification icon. However, for **Android** notifications, you can also define a custom icon and a custom icon color.
+By default, a Cloud Messaging notification uses the app's launcher icon as the notification icon. However, for **Android** notifications, you can also define a custom icon and a custom icon color.
 To setup a custom icon and custom icon color for Android notifications, follow these steps:
 
 1. Upload your custom icon (and it's various resolutions) to the resources of your application
@@ -295,10 +295,6 @@ To setup a custom icon and custom icon color for Android notifications, follow t
     ![Screenshot showing the different custom icon resolutions in application's Resources](images/firebase-messaging-custom-icon-resources-odcs.png "Custom Android Icon Resources")
 
 1. Update the Application's Extensibility Configuration JSON so that the different icon resolutions are added to their correct paths
-
-```json
-
-```
 
 (Recommended) Using the universal extensibility configurations schema:
 
@@ -373,7 +369,7 @@ Note that you can only use the Cordova-based extensibility for MABS versions low
 
 <div class="info" markdown="1">
 
-* If no value for the custom **Icon** is passed, the app's launcher icon will be used, and the **Color** won't be applied.
+* If no value for the custom **Icon** is passed, the app's launcher icon is used, and the **Color** isn't applied.
 * The value passed to **Color** must be a RGB HEX code (`#rrggbb`).
 
 </div>
@@ -408,7 +404,13 @@ When sending a notification with a deep link, you should avoid using the followi
 
 ## Optional setup for notification Channel Name and Description - Android only
 
-By default, the Cloud Messaging plugin defines values for the notification channel name and description on local notifications. But in some instances, you might want to define a different default value by adding the following name and value properties on the extensibility configurations of your app:
+<div class="info" markdown="1">
+
+This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-plugin-in-capacitor-apps) on how to configure this for Capacitor apps.
+
+</div>
+
+By default, the Cloud Messaging plugin defines values for the notification channel name and description on local notifications. But in some instances, you might want to define a different default value by adding the following name and value properties on the extensibility configurations of your app.
 
 (Recommended) Using the universal extensibility configurations schema:
 
@@ -448,11 +450,99 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 
 Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
-The following image illustrates how the notification channel's name and description will appear in the user device:
+The following image illustrates how the notification channel's name and description appear in the user device:
 
 ![Screenshot of notification channel name and description](images/fcm-notification-channel.png "Notification Channel")
 
-### Enable message delivery data export to BigQuery
+## Optional setup for custom schemes - iOS only
+
+<div class="info" markdown="1">
+
+This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-plugin-in-capacitor-apps) on how to configure this for Capacitor apps.
+
+</div>
+
+If you plan on having push notifications that link to other iOS apps (e.g. a push notification that when clicked opens Google Maps mobile app), then you'll need to provide what are the schemes you'll plan to use. You can do that by providing a list of comma-separated values on the extensibility configurations of your app.
+
+(Recommended) Using the universal extensibility configurations schema:
+
+```json
+{
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "ios": {
+          "APPLICATION_SCHEMES": "comgooglemaps,appcustomscheme"
+        }
+      }
+    }
+  }
+}
+```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "ios": [
+      {
+        "name": "APPLICATION_SCHEMES",
+        "value": "comgooglemaps,appcustomscheme"
+      }
+    ],
+  }
+}
+```
+
+Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
+
+## Using the plugin in Capacitor apps
+
+If you want to update the notification channel name and description on Android for Capacitor apps, you should set the **NotificationChannelDefaultName** and **NotificationChannelDefaultDescription** extensibility settings on your application’s detail page on the ODC Portal, under the Mobile distribution tab.
+
+If you want to allow specific custom schemes when clicking push notifications (equivalent to Cordova's **APPLICATION_SCHEMES**), you should use a build action. To configure the build action, follow these steps:
+
+1. Create a .json file to configure the build action to add the **LSApplicationQueriesSchemes** key to your app's **Info.plist** file, like this example below:
+
+        ```json
+        {
+          "platforms": {
+            "ios": {
+              "plist": [
+                {
+                  "entries": [
+                    {
+                      "LSApplicationQueriesSchemes": [
+                        "comgooglemaps",
+                        "appcustomscheme"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+        ```
+
+1. Then, in your app, go to the Resources folder in the Data tab and import a new resource: your .json file. Set the “Deploy Action” to “Deploy to Target Directory".
+
+1. Finally, include the file in your app’s Extensibility Configurations, like so:
+
+        ```json
+        {
+          "buildConfigurations": {
+            "buildAction": {
+              "config": $resources.yourJsonFileName.json
+            }
+          }
+        }
+        ```
+
+For more info about build actions, see [Build actions in the official OutSystems documentation](https://success.outsystems.com/documentation/outsystems_developer_cloud/building_apps/mobile_apps/configuring_mobile_apps/build_actions/).
+
+## Enable message delivery data export to BigQuery
 
 BigQuery allows to:
 
@@ -500,41 +590,41 @@ Returns the Firebase Access Token of the Firebase Project defined in the OutSyst
 
 Sends a notification to all users associated with a topic or group of topics.
 
-| Parameter   | Type   | Data type                    | Description                          |
-| :---------- | :----- | :--------------------------- | :----------------------------------- |
-| AuthToken   | Input  | Text                         | The Firebase Access Token.           |
-| SendRequest | Input  | SendToTopics Data Structure  | The notification to topics request.  |
-| Response    | Output | FirebaseResponse Data Structure | The response sent by Firebase.    |
+| Parameter   | Type   | Data type                       | Description                         |
+| :---------- | :----- | :------------------------------ | :---------------------------------- |
+| AuthToken   | Input  | Text                            | The Firebase Access Token.          |
+| SendRequest | Input  | SendToTopics Data Structure     | The notification to topics request. |
+| Response    | Output | FirebaseResponse Data Structure | The response sent by Firebase.      |
 
 ### SendNotificationToUsers
 
 Sends a notification to a user or group of users.
 
-| Parameter   | Type   | Data type                   | Description                         |
-| :---------- | :----- | :-------------------------- | :---------------------------------- |
-| AuthToken   | Input  | Text                        | The Firebase Access Token.          |
-| SendRequest | Input  | SendToUsers Data Structure  | The notification to users request.  |
-| Response    | Output | FirebaseResponse Data Structure | The response sent by Firebase.   |
+| Parameter   | Type   | Data type                       | Description                         |
+| :---------- | :----- | :------------------------------ | :---------------------------------- |
+| AuthToken   | Input  | Text                            | The Firebase Access Token.          |
+| SendRequest | Input  | SendToUsers Data Structure      | The notification to users request.  |
+| Response    | Output | FirebaseResponse Data Structure | The response sent by Firebase.      |
 
 ### SendSilentNotificationToTopics
 
 Sends a silent notification to all users associated with a topic or group of topics.
 
-| Parameter   | Type   | Data type                           | Description                                    |
-| :---------- | :----- | :---------------------------------- | :--------------------------------------------- |
-| AuthToken   | Input  | Text                               | The Firebase Access Token.                     |
-| SendRequest | Input  | SilentTopicNotification Data Structure | The silent notification to topic request.   |
-| Response    | Output | FirebaseResponse Data Structure    | The response sent by Firebase.                 |
+| Parameter   | Type   | Data type                              | Description                                  |
+| :---------- | :----- | :------------------------------------- | :------------------------------------------- |
+| AuthToken   | Input  | Text                                   | The Firebase Access Token.                   |
+| SendRequest | Input  | SilentTopicNotification Data Structure | The silent notification to topic request.    |
+| Response    | Output | FirebaseResponse Data Structure        | The response sent by Firebase.               |
 
 ### SendSilentNotificationToUsers
 
 SendSilentNotificationToUsers sends a silent notification to a user or group of users.
 
-| Parameter   | Type   | Data type                          | Description                                     |
-| :---------- | :----- | :--------------------------------- | :---------------------------------------------- |
-| AuthToken   | Input  | Text                              | The Firebase Access Token.                      |
+| Parameter   | Type   | Data type                             | Description                                  |
+| :---------- | :----- | :------------------------------------ | :------------------------------------------- |
+| AuthToken   | Input  | Text                                  | The Firebase Access Token.                   |
 | SendRequest | Input  | SilentUserNotification Data Structure | The silent notification to users request.    |
-| Response    | Output | FirebaseResponse Data Structure   | The response sent by Firebase.                  |
+| Response    | Output | FirebaseResponse Data Structure       | The response sent by Firebase.               |
 
 ## Limitations
 

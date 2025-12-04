@@ -80,6 +80,12 @@ To navigate to the Health Connect app, simply call the **OpenHealthConnectApp** 
 
 ## Providing the Privacy Policy file (Android only)
 
+<div class="info" markdown="1">
+
+This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-plugin-in-capacitor-apps) on how to configure this for Capacitor apps.
+
+</div>
+
 You must provide the privacy policy file through the Resources of your app. This file holds the content that your end-users see after clicking on the privacy policy link that appears in the permissions screen when calling the **RequestPermissions** client action. It should contain the rationale of the requested permissions, describing how your app uses and handles the user's data.
 
 To add the privacy policy file to your mobile app, complete the following steps:
@@ -96,7 +102,13 @@ To add the privacy policy file to your mobile app, complete the following steps:
 
 ## (Optional) Configuring which Health Connect data types you wish to access (Android only)
 
-By default, when using the Health and Fitness plugin, your app will be configured to access every Health Connect data type the plugin provides. In other words, every variable will be configured to have read and write access. If you wish to provide a custom configuration, you can do so through the Extensibility Configurations of your app.
+<div class="info" markdown="1">
+
+This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-plugin-in-capacitor-apps) on how to configure this for Capacitor apps.
+
+</div>
+
+By default, when using the Health and Fitness plugin, your app is configured to access every Health Connect data type the plugin provides. In other words, every variable is configured to have read and write access. If you wish to provide a custom configuration, you can do so through the Extensibility Configurations of your app.
 
 To configure the access type for a given Health Connect data type (variable), you simply define an Android preference in your app's Extensibility Configurations, as follows:
 
@@ -139,7 +151,7 @@ You can also define preferences for variable groups (e.g. fitness variables). Mo
 
 The **value** of the preference should be the access type for the variable, which can be one of the following: "Read", "Write", or "ReadWrite".
 
-Note that the most specific preference has precedence over less specific ones. For example, if the "Steps" variable is set to have write access, while the "FitnessVariables" group is set to have read access, every fitness variable will be set to have read access, except for "Steps", which will have write access instead.
+Note that the most specific preference has precedence over less specific ones. For example, if the "Steps" variable is set to have write access, while the "FitnessVariables" group is set to have read access, every fitness variable is set to have read access, except for "Steps", which has write access instead.
 
 Here's a concrete example of a configuration that sets write access to the "Steps" variable, read access to all fitness variables (except for "Steps"), write access to all health variables (e.g. "HeartRate"), and read and write access to all remaining variables ("AllVariables):
 
@@ -192,6 +204,12 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 ## (Optional) Disable access to older history data (Android only)
+
+<div class="info" markdown="1">
+
+This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-plugin-in-capacitor-apps) on how to configure this for Capacitor apps.
+
+</div>
 
 By default, your app can only access data from Health Connect starting 30 days prior to the first permission granted by a user. For example, if a user grants health permissions to the app on May 25, the plugin can get Health data from April 25 onward.
 
@@ -306,7 +324,7 @@ Verify that access and storage of health or fitness data on the device works. Ch
 
 #### Notes about AdvancedQuery on Android
 
-* The **TimeUnit** parameter can't be set to **MILLISECONDS** or **SECONDS**. By default, **TimeUnit** will be set to **MINUTE**.
+* The **TimeUnit** parameter can't be set to **MILLISECONDS** or **SECONDS**. By default, **TimeUnit** is set to **MINUTE**.
 * The query result for **BloodPressure** is a list with structure **[systolic, diastolic, systolic, diastolic]**, where each element on the list is a pair of two readings. Example: [118, 76, 119, 77].
 * The dates returned in the **Result** and **ResultDataPoints** output parameters are in the UTC timezone.
 
@@ -348,7 +366,7 @@ Parametrization for two different use cases of a background job is shown below:
 
 #### Setting up a daily steps goal
 
-In the case of a daily steps goal evaluator, you will probably want to issue a single notification per day if the daily steps goal is met. To achieve this you can use the following parametrization:
+In the case of a daily steps goal evaluator, you probably want to issue a single notification per day if the daily steps goal is met. To achieve this you can use the following parametrization:
 
 ![Screenshot illustrating the setup of a background job for monitoring daily steps goal](images/set-background-job-odcs.png "Setting Up a Daily Steps Goal Background Job")
 
@@ -356,7 +374,7 @@ In the case of a daily steps goal evaluator, you will probably want to issue a s
 
 In the case of a heart rate monitoring alarm, try to strike a balance between job frequency and notification frequency. For example, you may want to check your heart rate every ten seconds. However, you would probably find it intrusive to receive notifications every time your heart rate goes above, or drops below, a certain value.
 
-Consider the following parametrization for a background job that will notify you if your heart rate is above 190 bpm, with a maximum notification frequency of one notification per minute:
+Consider the following parametrization for a background job that notifies you if your heart rate is above 190 bpm, with a maximum notification frequency of one notification per minute:
 
 ![Screenshot showing the parametrization for a heart rate monitoring background job](images/set-background-job2-odcs.png "Setting Up a Heart Rate Monitoring Alarm")
 
@@ -366,7 +384,7 @@ To verify that the background job was successfully created, check if the value o
 
 #### Setting a background job in Android
 
-Starting in Android 15, when setting a background job for the first time, the Health Connect permission to read data in the background will be requested.
+Starting in Android 15, when setting a background job for the first time, the Health Connect permission to read data in the background is requested.
 
 <div class="info" markdown="1">
 
@@ -378,11 +396,17 @@ For more information about the behavior changes of your app related to the priva
 
 </div>
 
-Starting in Android 14, when setting a background job for the first time, for some variables, the permission to schedule exact alarms will be requested. More specifically, this permission will be requested when setting the first background job if the variable is one of the following: weight, height, sleep, blood glucose, or body fat percentage.
+Starting in Android 14, when setting a background job for the first time, for some variables, the permission to schedule exact alarms is requested. More specifically, this permission is requested when setting the first background job if the variable is one of the following: weight, height, sleep, blood glucose, or body fat percentage.
 
 With that said, it is a best practice to present a message to the user explaining why these permissions are necessary (e.g. to get notifications about health and fitness data), before calling the **SetBackgroundJob** client action.
 
 #### (Optional) Opt-out of permissions for background jobs (Android only)
+
+<div class="info" markdown="1">
+
+This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-plugin-in-capacitor-apps) on how to configure this for Capacitor apps.
+
+</div>
 
 By default, all necessary background job Android permissions (e.g. "android.permission.ACTIVITY_RECOGNITION") are configured. If you don't want to use background job features and don't want these permissions to be included in your app, set the (`DisableBackgroundJobs`) preference in the Extensibility Configurations to **true**, as follows:
 
@@ -421,7 +445,13 @@ Note that you can only use the Cordova-based extensibility for MABS versions low
 
 #### Additional information about background jobs in Android
 
-When using the **SetBackgroundJob** client action, the **IMMEDIATE** option for the **JobFrequency** field of the **Variable** input parameter only applies to the following variables: steps, heart rate, calories burned, blood pressure, basal metabolic rate, walking speed, and distance. For the other variables (weight, height, sleep, blood glucose, body fat percentage, oxygen saturation and body temperature), the **IMMEDIATE** option will run every minute, as it is the minimum recommended frequency for alarms on Android.
+<div class="info" markdown="1">
+
+This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-plugin-in-capacitor-apps) on how to configure this for Capacitor apps.
+
+</div>
+
+When using the **SetBackgroundJob** client action, the **IMMEDIATE** option for the **JobFrequency** field of the **Variable** input parameter only applies to the following variables: steps, heart rate, calories burned, blood pressure, basal metabolic rate, walking speed, and distance. For the other variables (weight, height, sleep, blood glucose, body fat percentage, oxygen saturation and body temperature), the **IMMEDIATE** option runs every minute, as it is the minimum recommended frequency for alarms on Android.
 
 Background jobs run using foreground services, which results in a temporary notification being shown to the user. In most cases, as the background job processing is fast, the temporary notification won't be presented to the user. Nevertheless, you can define the **title** and **description** of this notification, in case it is shown. By default, we already set a title and description, but you can define your own values as follows:
 
@@ -475,7 +505,37 @@ Your app should be implemented so that when a user chooses to disconnect it from
 
 </div>
 
-### Handling errors
+## Using the plugin in Capacitor apps
+
+For Capacitor, the plugin has multiple extensibility settings that you can set to configure different things.
+
+You can change Extensibility Settings by opening your application in ODC Portal and going to Mobile distribution tab.
+
+### Providing the Privacy Policy file in your Capacitor app (Android only)
+
+For Capacitor, the plugin provices an optional extensibility setting for the **PrivacyPolicyURL**, which you can set to point to the URL with your privacy policy. Note that this URL should point to a **.txt** file with your privacy policy. If you're already [using a txt file in your resources](#providing-the-privacy-policy-file-android-only), you can keep using it in Capacitor and leave the extensibility setting empty.
+
+### (Optional) Configuring which Health Connect data types you wish to access in your Capacitor app (Android only)
+
+Similar to the preferences that can be set in the Extensibility Configurations [for Cordova apps](#optional-configuring-which-health-connect-data-types-you-wish-to-access-android-only), there is an extensibility setting for each Health Connect data type (e.g. Steps) that can be set to the following values: **Read**, **Write**, **ReadWrite**, **None**. There are also settings for **AllVariables**, **HealthVariables**, **FitnessVariables**, and **ProfileVariables**, that can be set to the same values.
+
+### (Optional) Disable access to older history data in your Capacitor app (Android only)
+
+Similar to the preference that could be set in the Extensibility Configurations [for Cordova apps](#optional-disable-access-to-older-history-data-android-only), there is the **DisableReadHealthDataHistory** extensibility setting that can be set to **True** if you want to disable access to older history data.
+
+### (Optional) Opt-out of permissions for background jobs in your Capacitor app (Android only)
+
+Similar to the preference that could be set in the Extensibility Configurations [for Cordova apps](#optional-opt-out-of-permissions-for-background-jobs-android-only), there is the **DisableBackgroundJobs** extensibility setting that can be set to **True** if you're not planning on using background jobs and want don't want those permissions to be added to your app.
+
+#### Additional information about background jobs in your Capacitor Android app
+
+Similar to the preferences that could be set in the Extensibility Configurations [for Cordova apps](#additional-information-about-background-jobs-in-android), there are the **BackgroundNotificationTitle** and **BackgroundNotificationDescription** extensibility settings that you can use to set the title and description of the background notification that appears when a background job is running.
+
+### (Optional) Set health descriptions (iOS only)
+
+For iOS, two extensibility settings can be used to set the **NSHealthShareUsageDescription** and **NSHealthUpdateUsageDescription** descriptions in your app's **Info.plist** file: introduced: **HealthShareDescription** and **HealthUpdateDescription**.
+
+## Handling errors
 
 The app with the plugin can run on many Android or iOS devices, with different hardware and configurations. To ensure a good user experience and prevent the app from crashing, handle the errors within the app.
 

@@ -70,8 +70,6 @@ To add a Firebase plugin to your mobile app, complete the following steps:
 
 <div class="info" markdown="1">
 
-To learn how to use the Firebase Cloud Messaging plugin using Cloud Messaging Configurator REST APIs, refer to [Firebase Cloud Messaging Plugin](firebase-cloud-messaging-plugin-configurator-api.md).
-
 To learn how to use the Firebase Cloud Messaging plugin using server actions, refer to [Firebase Cloud Messaging Plugin](firebase-cloud-messaging-plugin-server-action.md).
 
 </div>
@@ -197,7 +195,7 @@ If your app collects user data for advertising purposes, also known as Attributi
 Starting in version **1.4.0**, a new client action named `LogEvent` is available and should be used instead of the deprecated `DEPRECATED_LogEvent`.
 This new version introduces support for passing event parameters as a list, providing better structure and flexibility when logging events.
 
-Each event must include an `EventName` and can optionally include a list of key–value pairs via the `EventParameters` input. A maximum of 25 parameters is allowed per event. If more than 25 parameters are provided, only 25 will be sent to Firebase Analytics and the rest will be discarded. Note that since parameter order is not guaranteed, any of the extra parameters may be ignored.
+Each event must include an `EventName` and can optionally include a list of key–value pairs via the `EventParameters` input. A maximum of 25 parameters is allowed per event. If more than 25 parameters are provided, only 25 are sent to Firebase Analytics and the rest are discarded. Note that since parameter order is not guaranteed, any of the extra parameters may be ignored.
 
 To further illustrate this example, the following shows a typical usage of the `LogEvent` client action:
 
@@ -282,6 +280,20 @@ Note that you can only use the Cordova-based extensibility for MABS versions low
 Keep in mind that:
 
 * For `SetEnabled` to have any effect on the data collection, the preference needs to be included.
-* The preference only needs to be added when you want to control the collection. If not provided or is used with another value (for example: `true`), the collection will be enabled, and it won't be possible to change it.
+* The preference only needs to be added when you want to control the collection. If not provided or is used with another value (for example: `true`), the collection is enabled, and it isn't possible to change it.
 
 </div>
+
+#### Using the plugin in Capacitor apps
+
+The plugin has three Extensibility Settings that you can set in the Mobile distribution tab of your application’s detail page on the ODC Portal - **AnalyticsCollectionEnabled**, **EnableAppTrackingTransparencyPrompt**”, and **UserTrackingUsageDescription**. Note that currently these settings are only used for Capacitor apps, not Cordova ones.
+
+If you need to disable Analytics collection in your app, you can set the **AnalyticsCollectionEnabled** setting to **False**, since it is **True** by default. You can also enable Analytics collection in runtime using the **SetEnabled** client action.
+
+If you do not want to show the App Tracking Transparency prompt on iOS, you can disable its usage by setting the **EnableAppTrackingTransparencyPrompt** setting to **False**, since it is **True** by default. This also means that the value set for **UserTrackingUsageDescription** isn't used, since the prompt isn't shown.
+
+### Additional information for Firebase Crashlytics
+
+#### Using the plugin in Capacitor apps
+
+If you need to disable Crashlytics collection in your app, you can set the **CrashlyticsCollectionEnabled** setting to **False**, since it is **True** by default, in your app’s Mobile distribution tab in the ODC portal. You can also enable Crashlytics collection in runtime using the **SetEnabled** client action.

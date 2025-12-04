@@ -106,6 +106,12 @@ For Android versions 10 or lower, when using standard authentication methods (fo
 
 To set the values for these fields, define the following Android preferences in your app's Extensibility Configurations:
 
+<div class="info" markdown="1">
+
+This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-plugin-in-capacitor-apps) on how to configure this for Capacitor apps.
+
+</div>
+
 (Recommended) Using the universal extensibility configurations schema:
 
 ```json
@@ -151,18 +157,28 @@ Note that you can only use the Cordova-based extensibility for MABS versions low
 
 **Note:** These preferences are optional. If they're not set, then the values in the example above are used by default.
 
+#### Using the plugin in Capacitor apps
+
+If you wish to customize the text content for the authentication dialog, you can do so by changing the following Extensibility Settings in the ODC Portal, under your application's Mobile distribution tab:
+
+* **AuthPromptTitle**
+* **AuthPromptSubtitle**
+* **AuthPromptCancelButton**
+
+These settings have default values (same defaults as Cordova), so if you do not need customization you do not need to change those Extensibility Settings.
+
 ## Handling errors
 
 The app with the KeyStore Plugin can run on many Android or iOS devices, with different hardware and configurations. To provide a good user experience and prevent the app from crashing, handle errors within the app.
 
 The following actions can handle errors. Use the actions with the **If** nodes to check for errors and control how the app works.
 
-| Variable    | Action             | Description                                                                 |
-| :---------- | :----------------- | :-------------------------------------------------------------------------- |
-| IsAvailable | CheckKeyStorePlugin | True if the KeyStore Plugin is available in the app.                        |
-| Success     | SetValue           | True if there aren't errors while setting a new key-value pair.             |
-| Success     | GetValue           | True if there aren't errors while getting a key-value pair.                 |
-| Success     | RemoveKey          | True if there aren't errors while removing a key-value pair.                |
+| Variable    | Action              | Description                                                     |
+| :---------- | :------------------ | :-------------------------------------------------------------- |
+| IsAvailable | CheckKeyStorePlugin | True if the KeyStore Plugin is available in the app.            |
+| Success     | SetValue            | True if there aren't errors while setting a new key-value pair. |
+| Success     | GetValue            | True if there aren't errors while getting a key-value pair.     |
+| Success     | RemoveKey           | True if there aren't errors while removing a key-value pair.    |
 
 ## Reference
 

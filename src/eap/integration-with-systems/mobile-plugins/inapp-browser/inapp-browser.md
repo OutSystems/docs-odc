@@ -130,6 +130,12 @@ To create the logic to close an open browser, follow these steps in ODC Studio:
 
 ## Opening HTTP URLs with OpenInWebView on Android
 
+<div class="info" markdown="1">
+
+This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-plugin-in-capacitor-apps) on how to configure this for Capacitor apps.
+
+</div>
+
 To enable your app to open HTTP URLs in the web view, set the **InAppBrowserCleartextTrafficPermitted** preference in your app's Extensibility Configurations, as follows:
 
 (Recommended) Using the universal extensibility configurations schema:
@@ -164,3 +170,9 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 ```
 
 Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
+
+## Using the plugin in Capacitor apps
+
+If you need to enable your Android app to open HTTP URLs in the plugin's WebView you should set the **CleartextTrafficPermitted** Extensibility Setting to **True**.
+
+You can change Extensibility Settings by opening your application in ODC Portal and going to Mobile distribution tab.
