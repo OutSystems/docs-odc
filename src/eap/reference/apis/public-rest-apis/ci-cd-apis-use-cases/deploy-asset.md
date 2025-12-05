@@ -30,7 +30,7 @@ Before using the APIs to deploy your asset to a target stage, ensure that you ha
     * [Configuration management \> Edit configurations](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/asset_configurations_api/#patch-/environments/-environmentKey-/applications/-applicationKey-/configurations)
     * [Stage > View stage](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/deployments_api/#get-/deployment-operations)  
     * [Release management > Deploy apps](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/deployments_api/#post-/deployment-operations)
-* The [key of the build](select-revision-build.md) to be deployed
+* The [key of the  **Release** build](select-revision-build.md) to be deployed.
 * The environment key of the target stage
 
     <div class="info" markdown="1">
@@ -107,7 +107,13 @@ To deploy your asset to a target stage in your CI/CD pipeline, follow these step
         "revision": 1,  
         "environmentKey": "1ee11e11-1111-1111-e1ee-1e111e11eee1"  
         }
-        
+
+    <div class="info" markdown="1">
+
+    You can only deploy builds of type **Release**.
+
+    </div>
+
     If this API call is successful, the response should show the status as "Running". If this is not the case, check the [Deployments API reference](https://www.outsystems.com/tk/redirect?g=acf7cd06-3fe1-4bd3-85e8-06cd11aa0a7d) for more information on other statuses.
 
     The response also contains the operation key, necessary for the next step.  
