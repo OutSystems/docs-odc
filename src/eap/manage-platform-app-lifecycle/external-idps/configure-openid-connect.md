@@ -21,6 +21,7 @@ coverage-type:
 topic:
   - external-idps
   - idp-openidp
+helpids: 30711
 ---
 
 # Add an OpenID Connect identity provider
@@ -35,9 +36,10 @@ If you're adding [Microsoft Entra ID](azure-ad.md) or [Okta](okta.md), you can u
 
 ## Prerequisites
 
-Before you begin, make sure you have:
+Before you begin, ensure you have:
 
 * A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
+* Enabled refresh tokens: If your provider allows it, ensure your IdP issues refresh tokens (Refresh Token grant) and that the `offline_access` scope is enabled and consented. For behavior details, refer to [Refresh token-driven user revalidation (OIDC only)](intro.md#refresh-token-sync-oidc).
 * The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 * A registered app in your provider portal, with the following values ready:
 

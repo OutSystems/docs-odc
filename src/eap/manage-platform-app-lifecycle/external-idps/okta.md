@@ -28,13 +28,10 @@ This page is provided as a reference. For the latest instructions about adding O
 
 ## Prerequisites
 
-<div class="info" markdown="1">
+Before you begin, ensure you have:
 
-Review the [System considerations](intro.md#system-considerations) for external identity providers.
-
-</div>
-
-You must have the [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
+* A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
+* The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 
 ## Configure Okta
 
@@ -51,6 +48,16 @@ To open the **New provider** configuration screen, click the **Add Provider** > 
 1. In the **Create a new app integration** wizard, select **OIDC - OpenID Connect** under Sign-in method and **Web Application** under **Application type**. Click **Next**.
 
     ![Okta 'Create a new app integration' wizard with 'OIDC - OpenID Connect' and 'Web Application' selected.](images/config-app-integration-ok.png "Okta App Integration Configuration")
+
+1. In **Grant type**, select **Refresh Token** (keep **Authorization Code** checked for web apps).
+
+    For more details, refer to [Refresh tokens overview in Okta](https://developer.okta.com/docs/guides/refresh-tokens/overview/).
+
+    <div class="info" markdown="1">
+
+    For more details about ODC behavior, refer to [Refresh token-driven user revalidation (OIDC only)](intro.md#refresh-token-sync-oidc).
+
+    </div>
 
 1. Add a name for your app and select **Skip group assignment for now** in the assignments section. Click **Save**.
 
@@ -110,19 +117,35 @@ To add permitted redirects for the Okta provider, follow these steps:
 
 1. Select **default** (or the authorization server you use) and open the **Access Policies** tab.
 
-1. Click **Add Policy**, enter a name.
+1. Add a new policy:
 
-1. Set **Assign to** to **The following clients**, and select your app.
+    1. Click **Add Policy**, and enter a name.
 
-1. Click **Create Policy**.
+    1. Set **Assign to** to **The following clients**, and select your app.
 
-1. For the new policy, click **Add rule**.
+    1. Click **Create Policy**.
 
-1. In **Grant type is**, enable **Authorization Code**.
+    1. For the new policy, click **Add rule**.
 
-1. In **Scopes**, allow the following scopes: `openid`, `profile`, and `email` (add any others your app requires). Click **Create rule**.
+    1. In **Grant type**, select **Authorization Code** and **Refresh Token**.
+
+    1. In **Scopes** (or **Scopes requested**), include `offline_access` along with `openid`, `profile`, and `email` (add any others your app requires).
+
+        If your app prompts for consent, users must consent to `offline_access` the first time.
+
+    1. Configure token lifetimes:
+        * **Access token lifetime**: set per your security requirements.
+        * **Refresh token lifetime**: configure both absolute and idle expiration per your requirements.
+
+    1. Click **Create rule**.
 
 1. Ensure the new rule is enabled and appears before any more restrictive rules in the list (Okta evaluates access policy rules top-to-bottom).
+
+<div class="info" markdown="1">
+
+For more details, refer to [Configure access policies and rules in Okta](https://help.okta.com/oie/en-us/content/topics/security/api-config-access-policies.htm).
+
+</div>
 
 ## Next step
 

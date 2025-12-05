@@ -1,5 +1,5 @@
 ---
-helpids: 30469, 30706
+helpids: 30469
 summary: OutSystems Developer Cloud (ODC) facilitates efficient onboarding by enabling group mapping from identity providers to automate role assignments.
 locale: en-us
 guid: 84c9098b-c486-483f-9836-70b8faee63fa
@@ -36,7 +36,7 @@ You can only map [end-users](../../user-management/intro.md#end-users). You can'
 
 </div>
 
-Mapping synchronizes end-user permissions on each login. ODC updates the roles of existing users based on current mappings. If a user no longer satisfies the mapping (for example, they're removed from the IdP group or the claim value changes), they lose access, though the mapping remains visible in ODC until the next login.
+Mapping synchronizes end-user permissions on each login, or on the next refresh token cycle when using OIDC with refresh tokens enabled. ODC updates the roles of existing users based on current mappings. If a user no longer satisfies the mapping (for example, they're removed from the IdP group or the claim value changes), they lose access to the ODC apps and features that the mapping granted. The mapping remains visible in ODC until the next login or refresh. With OIDC refresh tokens enabled, end-users removed or deleted from the IdP are logged out on the next refresh. For details, refer to [Refresh token-driven user revalidation (OIDC only)](intro.md#refresh-token-sync-oidc).
 
 <div class="info" markdown="1">
 

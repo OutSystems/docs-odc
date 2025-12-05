@@ -28,7 +28,7 @@ This article provides step-by-step instructions for adding SAML 2.0 identity pro
 
 ## Prerequisites
 
-Before you begin, make sure you have:
+Before you begin, ensure you have:
 
 * A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, ODC only supports SP-initiated flows and recommends signed responses).
 * The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
@@ -37,6 +37,12 @@ From your provider, have the following ready:
 
 * SAML metadata URL or metadata XML file.
 * Provider configuration details (Entity ID, SSO URL, certificates).
+
+<div class="info" markdown="1">
+
+SAML 2.0 doesn’t issue refresh tokens. The refresh-token revalidation and auto-logout behavior don’t apply to SAML-only setups. For behavior details, refer to [Refresh token-driven user revalidation (OIDC only)](intro.md#refresh-token-sync-oidc).
+
+</div>
 
 ## Add a SAML 2.0 provider
 

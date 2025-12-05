@@ -37,13 +37,13 @@ This diagram illustrates the distinct categories of users within ODC and their t
 
 ODC supports three main types of users: Members (IT-users), End-users, and API clients.
 
-### Members (IT-users) { #members-it-users }
+### Members (IT-users) {#members-it-users}
 
 Members, such as administrators, developers, and architects, access the ODC Portal and ODC Studio to build, manage, and deploy apps. They can also have custom roles with specific permissions and don't count for licensing. These users aren't included in your licensed end-user count, so adding members doesn't affect your licensing limits.
 
 For more information, refer to [Managing members](it-users/intro.md).
 
-### End-users { #end-users }
+### End-users {#end-users}
 
 End-users interact with your web or mobile apps but don't access the ODC Portal or ODC Studio. They're typically external users or internal users with limited access.
 
@@ -59,7 +59,7 @@ API clients are non-human users that interact with ODC programmatically.
 
 For more information, refer to [ODC REST APIs](../reference/apis/public-rest-apis/overview.md), [About the API client](../reference/apis/public-rest-apis/authentication/about-api-client.md), and [Getting started with APIs](../reference/apis/public-rest-apis/getting-started.md).
 
-## Authentication and authorization in ODC { #authentication-and-authorization-in-odc }
+## Authentication and authorization in ODC {#authentication-and-authorization-in-odc}
 
 Authentication and authorization in ODC ensure secure access to resources by verifying user identities and defining what actions they can perform within the platform.
 
@@ -95,7 +95,13 @@ Authentication verifies a user’s identity before granting access. ODC supports
 
     * [Use external identity providers in an app](../manage-platform-app-lifecycle/external-idps/apps.md).
 
-### Authorization { #authorization }
+    <div class="info" markdown="1">
+
+    When using OIDC with refresh tokens, ODC supports mid-session revalidation and auto-logout on refresh. For more information, refer to [Refresh token-driven user revalidation (OIDC only)](../manage-platform-app-lifecycle/external-idps/intro.md#refresh-token-sync-oidc).
+
+    </div>
+
+### Authorization {#authorization}
 
 Authorization determines what a user can do after authentication. It's managed through:
 
@@ -117,7 +123,7 @@ Authorization determines what a user can do after authentication. It's managed t
 
     For more information, refer to [Manage end-user groups](end-users/groups.md).
 
-## Organization, app stage, and app scope { #organization-app-stage-and-app-scope }
+## Organization, app stage, and app scope {#organization-app-stage-and-app-scope}
 
 ODC organizes access into three scopes:
 

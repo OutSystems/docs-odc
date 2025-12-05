@@ -46,7 +46,7 @@ This is an overview of how to use roles:
 
 You can also use the ODC [User management REST APIs](../reference/apis/identity-v1.md) for programmatically managing the user and access related operations. For detailed information about how to use these APIs, refer to [Getting started](../reference/apis/public-rest-apis/getting-started.md).
 
-### Create end-user roles { #create-end-user-roles }
+### Create end-user roles {#create-end-user-roles}
 
 To create roles in ODC Studio during design, follow these steps:
 
@@ -76,7 +76,7 @@ After you create an end-user role, ODC Studio also creates the following actions
 
 **Note:** (*) The light icon denotes the client-side version.
 
-## Control access in your app with end-user roles { #control-access-in-your-app-with-end-user-roles }
+## Control access in your app with end-user roles {#control-access-in-your-app-with-end-user-roles}
 
 After you assign roles to your end-users, you can:
 
@@ -98,7 +98,7 @@ Role changes take effect at different times depending on how and where you apply
 
 <div class="info" markdown="1">
 
-Always validate user permissions on server-side logic. This is a [best practice](../building-apps/logic/best-practices-logic.md) to protect against malicious users attempting to access or modify unauthorized data.
+Logged-in users typically need to log out and log back in again for role or permission changes to take effect. However, when using an OIDC IdP that issues refresh tokens, changes can propagate on the next refresh, and users deleted from the IdP are logged out on refresh. For more information, refer to [Refresh token-driven user revalidation (OIDC only)](../manage-platform-app-lifecycle/external-idps/intro.md#refresh-token-sync-oidc).
 
 </div>
 

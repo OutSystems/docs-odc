@@ -147,6 +147,12 @@ Deleting a user can't be undone. If you may need to restore access in the future
 
 </div>
 
+<div class="info" markdown="1">
+
+When users are deleted at the external IdP, ODC logs them out at the next refresh when using OIDC with refresh tokens (the `offline_access` scope). Refer to [Refresh token-driven user revalidation (OIDC only)](../manage-platform-app-lifecycle/external-idps/intro.md#refresh-token-sync-oidc).
+
+</div>
+
 ## Related resources
 
 * [Best practices for user governance](best-practices-user-management.md)

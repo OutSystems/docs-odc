@@ -134,6 +134,31 @@ When you assign a provider for use by the apps, you need to create the logic in 
 
 Mapping groups from your identity provider to end-user groups in ODC can automate the assignment of roles to end-users based on their group membership, streamlining access management. For more details about how these groups are mapped and for setup instructions and best practices, refer to [IdP and end-user group mapping](end-user-group-mapping.md).
 
+## Refresh token-driven user revalidation (OIDC only) { #refresh-token-sync-oidc }
+
+This section explains how ODC uses OIDC refresh tokens to revalidate users mid-session and apply IdP-side changes while a session is active. This behavior applies to OpenID Connect identity providers.
+
+<div class="info" markdown="1">
+
+SAML 2.0 providers aren’t affected by this behavior because they don’t use refresh tokens.
+
+</div>
+
+### Prerequisites
+
+Ensure you meet the following prerequisites:
+
+* The IdP issues refresh tokens and the refresh token flow is active.
+* The `offline_access` scope is configured and consented in the IdP.
+
+### Refresh behavior
+
+On token refresh, ODC does the following:
+
+* ODC revalidates the user against the external IdP during token refresh.
+* If the user was deleted from the IdP, ODC ends the session on the next token refresh (forced logout). This applies to the ODC Portal, ODC Studio, and end-user apps.
+* If the user exists, ODC refreshes profile attributes (for example, username, name, photo, email) and reevaluates IdP group mappings, updating end-user roles accordingly.
+
 ## Related resources
 
 * [Manage external identity providers](manage-external-idps.md): Replace, unassign, edit, or delete IdPs
