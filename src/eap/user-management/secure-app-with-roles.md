@@ -62,7 +62,7 @@ When ODC Studio creates a role, it also creates a set of related actions you can
 
 After you publish an app that has end-user roles, the end-user roles are available in ODC Portal. For more details on how to assign end-user roles, refer to [Grant or revoke roles to end-users](grant-and-revoke-user-roles.md#grant-roles-to-end-users).
 
-### Use end-user roles to control access in app runtime
+### Use end-user roles to control access in app runtime {#manage-roles-in-app-runtime}
 
 After you create an end-user role, ODC Studio also creates the following actions that enable you to manage the end-user roles in the app logic. These actions let you programmatically check, grant, or revoke a role. The actions apply to the currently logged-in user if the UserId parameter is not specified.
 
