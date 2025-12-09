@@ -58,7 +58,6 @@ The table shows the OutSystems-supported mobile plugins that you can find in the
 | Cloud Messaging | Firebase-based plugin to give your app users a state-of-the-art notifications experience. | No |
 | Contacts  | Access the contacts of your device.    | No               |
 | Crash Reporting | Firebase-based plugin that provides realtime crash reporting to help you track, prioritize, and fix stability issues. | No |
-| Dynamic Links | Firebase-based plugin that lets you manage links outside of your app. | No |
 | File               | Manage files and folders within the app sandbox.             | No               |
 | File Transfer      | Upload and download files in background.                     | Yes              |
 | File Viewer        | View remote or app resource files.                           | No               |
