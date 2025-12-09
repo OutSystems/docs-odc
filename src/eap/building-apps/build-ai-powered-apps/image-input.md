@@ -16,6 +16,7 @@ outsystems-tools:
   - odc studio
 helpids:
 ---
+
 # Image input for AI models
 
 In OutSystems Developer Cloud (ODC), you can create multimodal prompts combining text and visual data using AI models  that support image inputs. When you build your agentic app, you must select a multi-modal AI models, as text-only models don’t support this functionality and return an error. For supported models, your agentic apps can process images to build advanced AI solutions.
@@ -39,7 +40,7 @@ These are general guidelines. For the most up-to-date and detailed requirements,
 
 The corresponding MIME types for these formats are `image/png`, `image/jpeg`, `image/webp`, and `image/gif`. If you use a file format the AI model does not support, it returns an error.
 
-## Model-specific behavior { #behavior }
+## Model-specific behavior {#behavior}
 
 Different AI models may have unique requirements or behaviors when processing images.
 
@@ -58,7 +59,7 @@ This is a summary of common behaviors. For a complete list of features and requi
 
 To process an image, your app's logic must pass it to the agentic app as part of the message prompt. This typically involves an end-user uploading a file, which is then passed into the agentic app's logic.
 
-In your consumer app's logic, you pass the required data to the agentic app. The agentic app uses this data to populate the `UserMessage content` structure. You must provide the required data, the text prompt, the image URL, or its Base64-encoded binary data.
+In your consumer app's logic, you pass the required data to the agentic app. The agentic app uses this data to populate the **UserMessage content** structure. You must provide the required data- the text prompt, the image URL, or its Base64-encoded binary data.
 
 You can pass the image in one of two ways:
 
@@ -76,9 +77,17 @@ When building the message, use the following inputs within the `UserMessage.Cont
 
 <div class="info" markdown="1">
 
-In the `BuildMessages` Server Action flow of your agentic app, you must append each content item separately to construct a message with multiple parts. For example, to send a text prompt with an image, you first append the text content, and then append the image content. Don't try to combine different data types, like passing Base64-encoded data in the `ContentText` field.
+In the **BuildMessages** Server Action flow of your agentic app, you must append each content item separately to construct a message with multiple parts. For example, to send a text prompt with an image, you first append the text content, and then append the image content. Don't try to combine different data types, like passing Base64-encoded data in the **ContentText** field.
 
 </div>
+
+## Example in practice
+
+For a detailed step-by-step guide on how to build a multimodal agent, refer to the [Build the Intake Agent Exercise](https://www.outsystems.com/tk/redirect?g=c0209c24-b5d1-45b3-ade3-56412b832c90). This exercise demonstrates how to:
+
+* Pass multiple document types including PNG and PDF to a Claude Sonnet model.
+* Use the **ContentBinaryData** input to upload files from your app.
+* Implement a common business use case: extracting and validating data from documents to automate a process.
 
 ## Common errors
 
