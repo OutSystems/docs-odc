@@ -15,7 +15,7 @@ outsystems-tools:
 topic:
   - user-groups
   - assign-to-user-groups
-helpids: 30705, 30706
+helpids: 30705
 ---
 
 # Manage end-user groups

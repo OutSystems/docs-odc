@@ -35,7 +35,7 @@ This page is provided as a reference. For the latest instructions about adding M
 
 ## Prerequisites
 
-Before you begin, ensure you have:
+Before you begin, make sure you have:
 
 * A Microsoft Entra ID tenant and Azure Portal access with permission to create App registrations and client secrets.
 * A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
@@ -78,20 +78,6 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
     ODC safely stores the configuration details in a secret manager.
 
     </div>
-
-1. Enable refresh tokens (`offline_access`) for your app:
-   1. In **Azure Portal**, open your app registration and go to **API permissions**.
-   1. Click **+ Add a permission** > **Microsoft Graph** > **Delegated permissions**. Search for and select: **openid**, **profile**, and **offline_access**. Then click **Add permissions**.
-   1. If your organization requires pre-approval, click **Grant admin consent for your organization**.
-   1. Ensure your authorization requests include the `offline_access` scope so Microsoft Entra ID can issue a refresh token during the token exchange. For more details, refer to Microsoft documentation:
-     * [Permissions and consent overview for the Microsoft identity platform](https://learn.microsoft.com/entra/identity-platform/permissions-consent-overview)
-     * [Refresh tokens](https://learn.microsoft.com/entra/identity-platform/refresh-tokens)
-
-        <div class="info" markdown="1">
-
-        For more details about ODC behavior, refer to [Refresh token-driven user revalidation (OIDC only)](intro.md#refresh-token-sync-oidc).
-
-        </div>
 
 1. Complete the configuration in ODC Portal by leaving the **PKCE** as the default value (**SHA-256**) and the fields in the **Claim Mapping** section as default values (**name**, **email**).
 

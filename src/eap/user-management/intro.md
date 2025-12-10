@@ -95,12 +95,6 @@ Authentication verifies a user’s identity before granting access. ODC supports
 
     * [Use external identity providers in an app](../manage-platform-app-lifecycle/external-idps/apps.md).
 
-    <div class="info" markdown="1">
-
-    When using OIDC with refresh tokens, ODC supports mid-session revalidation and auto-logout on refresh. For more information, refer to [Refresh token-driven user revalidation (OIDC only)](../manage-platform-app-lifecycle/external-idps/intro.md#refresh-token-sync-oidc).
-
-    </div>
-
 ### Authorization {#authorization}
 
 Authorization determines what a user can do after authentication. It's managed through:

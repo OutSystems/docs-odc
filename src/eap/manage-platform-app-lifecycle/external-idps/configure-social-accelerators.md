@@ -31,7 +31,6 @@ This article provides step-by-step instructions for adding social providers with
 Before you begin, make sure you have:
 
 * A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
-* Enabled refresh tokens: If your provider allows it, ensure your provider issues refresh tokens and that the `offline_access` scope is enabled and consented (when available). For behavior details, refer to [Refresh token-driven user revalidation (OIDC only)](intro.md#refresh-token-sync-oidc).
 * The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 * A registered app in your social provider portal, with the required values for your provider ready (refer to [Social provider requirements](#social-provider-requirements); for example, Client ID and Client Secret).
 

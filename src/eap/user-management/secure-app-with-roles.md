@@ -98,7 +98,7 @@ Role changes take effect at different times depending on how and where you apply
 
 <div class="info" markdown="1">
 
-Logged-in users typically need to log out and log back in again for role or permission changes to take effect. However, when using an OIDC IdP that issues refresh tokens, changes can propagate on the next refresh, and users deleted from the IdP are logged out on refresh. For more information, refer to [Refresh token-driven user revalidation (OIDC only)](../manage-platform-app-lifecycle/external-idps/intro.md#refresh-token-sync-oidc).
+Always validate user permissions on server-side logic. This is a [best practice](../building-apps/logic/best-practices-logic.md) to protect against malicious users attempting to access or modify unauthorized data.
 
 </div>
 

@@ -68,8 +68,6 @@ If you integrate external IdPs with ODC, you can automate end-user onboarding an
 
 When using an external IdP, if your IdP allows it, create groups and restrict access in the provider's side so that only specific groups can log in. Then, [map IdP groups to end-user groups in ODC](../manage-platform-app-lifecycle/external-idps/end-user-group-mapping.md), and assign roles to the group.
 
-For OIDC providers, if you enable refresh tokens, ODC applies mid-session deprovisioning and updates profile/claim attributes on the next refresh. For more information, refer to [Refresh token-driven user revalidation (OIDC only)](../manage-platform-app-lifecycle/external-idps/intro.md#refresh-token-sync-oidc).
-
 ### Benefits
 
 This approach helps prevent unauthorized access and speeds up the onboarding process of end-users. When end-users are created automatically in ODC after their first login using an external IdP, ODC automatically assigns roles to them according to the end-user group you mapped.
