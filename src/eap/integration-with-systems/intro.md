@@ -20,6 +20,8 @@ coverage-type:
 
 OutSystems Developer Cloud (ODC) provides various options for integrating with your external systems. Depending on your specific requirements, you can choose the most suitable option for a seamless integration:
 
+* [AI Integration](../building-apps/build-ai-powered-apps/intro.md) - Build intelligent apps by connecting your [AI models](../building-apps/build-ai-powered-apps/ai-models.md), [agentic apps](../building-apps/build-ai-powered-apps/agentic-apps.md), and [grounding data](../building-apps/build-ai-powered-apps/agentic-apps.md#grounding).
+
 * [OutSystems Data Fabric](external-databases/intro.md) - Enables you to query your external data seamlessly and use [data mashup](../building-apps/data/fetch-data/data-mash.md) to combine data from different sources. Take the following into consideration:
 
     * Make sure ODC [supports your external data sources](../getting-started/system-requirements.md#supported-external-data-sources).

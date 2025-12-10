@@ -472,6 +472,8 @@
 # Integration with external systems
 - href: eap/integration-with-systems/intro.md
 - topics:
+    # AI integration
+    - href: eap/integration-with-systems/ai-integration.md
     # Integrate with external data sources using Data Fabric
     - href: eap/integration-with-systems/external-databases/intro.md
     - topics: 
