@@ -120,6 +120,14 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 3.126.108.4, 3.72.145.236, 3.74.85.23 |
 | Production | 18.157.156.208, 18.197.117.16, 3.74.248.145  |
 
+#### South Africa (Cape Town)
+
+| Stage type | IP addresses |
+| ----- | ----- |
+| Development | 13.246.216.152, 15.240.21.182, 15.240.31.136 |
+| Non-production | 13.244.181.185, 13.247.253.92, 16.28.115.21 |
+| Production | 13.244.83.19, 13.245.107.229, 15.240.18.88 |
+
 #### Middle East (Tel Aviv)
 
 | Stage | IP Addresses |
@@ -167,6 +175,14 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Development | 13.115.101.217, 43.206.9.200, 54.95.243.193 |
 | Non-production | 3.114.73.211, 54.65.22.77, 52.68.216.19 |
 | Production | 13.113.135.146, 18.177.235.172, 43.206.17.115 |
+
+#### Asia Pacific (Hong Kong)
+
+| Stage | IP Addresses |
+| ----- | ----- |
+| Development | 95.40.151.52, 18.166.240.189, 18.163.106.244 |
+| Non-production | 43.198.188.11, 18.163.17.217, 43.199.52.53 |
+| Production | 43.199.192.1, 18.166.231.39, 54.46.28.133 |
 
 #### Asia Pacific (Sydney)
 

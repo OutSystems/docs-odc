@@ -39,7 +39,7 @@ The following diagram shows the high-level architecture of the OutSystems Develo
 
  All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of OutSystems Developer Cloud](networking.md) to learn more.
 
-### Platform { #platform }
+### Platform {#platform}
 
 The development **Platform** comprises multiple services, each responsible for specific functions that facilitate the building and deployment of apps. All the Platform services benefit from a resilient microservices design with a REST API web service interface. Developers, DevOps engineers, and architects interact with these services using ODC Studio and ODC Portal.
 
@@ -53,7 +53,7 @@ The following diagram shows the high-level architecture of the development Platf
 
 ![Diagram showing the high-level architecture of the development Platform in OutSystems Developer Cloud.](images/high-level-architecture-platform-diag.png "Development Platform Architecture")
 
-#### Data platform { #data-platform }
+#### Data platform {#data-platform}
 
 The **Data platform** collects, processes, and stores data from several sources. This information is then made available for analysis and visualization, allowing customers to monitor their apps’ performance and usage, and track platform operations. The Data platform is also responsible for processing Mentor App Generator’s data.
 
@@ -82,10 +82,10 @@ The Data platform runs in a designated region based on your ODC organization’s
 | :--- | :--- |
 | US East (North Virginia), CA (Canada Central) | US East (North Virginia) |
 | South America (São Paulo) | South America (São Paulo) |
-| Europe (Frankfurt), Europe (London), Europe (Ireland), Middle East (Tel Aviv), Middle East (UAE) | Europe (Frankfurt) |
-| Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta) | Asia Pacific (Singapore) |
+| Europe (Frankfurt), Europe (London), Europe (Ireland), Middle East (Tel Aviv), Middle East (UAE), South Africa (Cape Town) | Europe (Frankfurt) |
+| Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta), Asia Pacific (Hong Kong) | Asia Pacific (Singapore) |
 
-### Runtime { #runtime }
+### Runtime {#runtime}
 
 In OutSystems Developer Cloud, the **Runtime** is independent of the Platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed apps. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
 
@@ -105,7 +105,7 @@ The core of both the Platform and each of the Runtime stages is the **Kubernetes
 
 Powered by AWS Elastic Kubernetes Service (EKS), the Platform and each of the Runtime stages use a cluster: an isolated, scalable, and self-healing compute capacity.
 
-#### Platform cluster { #platform-cluster }
+#### Platform cluster {#platform-cluster}
 
 To run on a Kubernetes cluster, each Platform service is packaged into a **container**. A container is a lightweight, standalone, executable software package. It includes everything the app needs to run: code, runtime, system tools, system libraries, and settings. See [Security in OutSystems Developer Cloud](../../security/security.md#containers) for more information about container security.
 
@@ -178,7 +178,7 @@ When enabled, a second (standby) database is deployed in a separate availability
 
 Build Service stores the app container image and passes the image to a Runtime stage for deployment. OutSystems follows the "Build once, deploy anywhere" **continuous delivery** principle, which makes OutSystems Developer Cloud an efficient cloud product.
 
-## Customer data handling in Data Fabric { #data-fabric }
+## Customer data handling in Data Fabric {#data-fabric}
 
 Many times your data is stored in an external location. Data Fabric helps you to access and integrate data into your apps.
 
@@ -238,7 +238,7 @@ ODC monitoring and observability tools never log sensitive data to ensure confid
 
 When a connection to an external system is deleted in ODC Portal or an ODC subscription is terminated, persistently stored customer metadata is automatically deleted. When deleting the customer environment without removing the connection, the in-memory database clears the metadata approximately 4 hours later.
 
-## Logging, monitoring, and analytics { #logging-monitoring-analytics }
+## Logging, monitoring, and analytics {#logging-monitoring-analytics}
 
 Logs and metrics are collected from each of the app containers running in each Runtime stage cluster. Developers and DevOps engineers can filter logs on ODC Portal.
 
