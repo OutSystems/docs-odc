@@ -33,7 +33,7 @@ Support for querying data using SQL with Salesforce and SAP systems is still exp
 
 </div>
 
-## Statements { #statements }
+## Statements {#statements}
 
 SQL statements define the actions your query performs. Each statement type serves a specific purpose, such as retrieving or modifying data.
 
@@ -47,7 +47,7 @@ Entity names must be enclosed in `{ }` and attributes must be enclosed in `[ ]`.
 
 An important difference to note in ANSI-92 SQL compared to some commonly used database systems is that unquoted identifiers are automatically uppercased. For example, `subquery.id` is converted to `SUBQUERY.ID`. To preserve the original letter casing of identifiers, they must be enclosed in `[ ]` or `" "`. Identifiers are case-sensitive and so care must be taken when working with a combination of quoted and unquoted identifiers. For example, `subquery.[id]` isn't a valid reference to `subquery.id` because `id` isn't considered to be the same as `ID`.
 
-### Multiple statements { #multiple-statements }
+### Multiple statements {#multiple-statements}
 
 Multiple statements delimited by `;` can be executed on an external system in a single SQL Node.
 
@@ -72,7 +72,7 @@ The following table lists the compatibility of multiple statements with each dat
 | Salesforce           | Yes                 | No                      |
 | SAP OData            | Yes                 | No                      |
 
-#### Syntax for multiple statements { #syntax-multiple-statements }
+#### Syntax for multiple statements {#syntax-multiple-statements}
 
 `statement ; statement;`
 
@@ -91,7 +91,7 @@ SELECT {entity2}.* FROM {entity2};
 
 ```
 
-## Supported operations { #supported-operations }
+## Supported operations {#supported-operations}
 
 ANSI-92 operations define what each SQL statement does. The following operations are supported:
 
@@ -107,9 +107,9 @@ ANSI-92 operations define what each SQL statement does. The following operations
 
 * [**DELETE**](ansi-92-delete.md): Deletes records in an external entity.
 
-* [**CALL**](stored-procedure.md): Executes stored procedures or functions on the external system.
+* [**CALL**](stored-procedure.md): Executes stored procedures on the external system.
 
-## Operators { #operators }
+## Operators {#operators}
 
 Operators let you compare values, filter results, and build logic into your SQL statements.
 
@@ -117,7 +117,7 @@ ANSI-92 supports standard comparison, logical, and pattern-matching operators.
 
 For examples and usage guidance, see the article on [ANSI-92 operators and functions](ansi-92-operators.md).
 
-## Data types { #data-types }
+## Data types {#data-types}
 
 SQL data types define the kind of data you can store and work with in your queries. ANSI-92 uses common types that are supported by most systems.
 ODC has an internal SQL type system with mappings to/from attribute data types in external systems.
@@ -133,7 +133,7 @@ Null value handling can be configured in ODC Portal as explained [here](../../..
 
 For details on supported types and platform-specific differences, see the [data types reference](ansi-92-data-types.md).
 
-## Query execution { #query-execution }
+## Query execution {#query-execution}
 
 In ODC, queries on external entities aren't sent directly to external systems. ODC parses your SQL, normalizes it, and then generates SQL in the dialect of each external system in order to execute your query. This allows queries to be written in a common language for all external systems and also makes it possible to build mashup queries which can reference entities in multiple external systems.
 
