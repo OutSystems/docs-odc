@@ -221,4 +221,4 @@ Use the following table to identify the Data platform region that serves your OD
 | US East (North Virginia), CA (Canada Central) | US East (North Virginia) | 54.89.107.154, 54.84.58.61, 35.172.177.93 |
 | South America (São Paulo) | South America (São Paulo) | 54.94.69.128, 18.229.244.40, 15.229.64.9 |
 | Europe (Frankfurt), Europe (London), Middle East (Tel Aviv), Middle East (UAE), South Africa (Cape Town) | Europe (Frankfurt) | 3.73.166.181, 52.59.51.255, 18.194.166.197 |
-| Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta) | Asia Pacific (Singapore), Asia Pacific (Hong Kong) | 52.76.74.134, 18.143.210.11, 52.74.33.192 |
+| Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta), Asia Pacific (Hong Kong) | Asia Pacific (Singapore) | 52.76.74.134, 18.143.210.11, 52.74.33.192 |
