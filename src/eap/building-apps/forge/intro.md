@@ -19,7 +19,7 @@ coverage-type:
 
 # Forge
 
-Forge is a repository of reusable software assets such as libraries, web apps, and mobile apps. Available to OutSystems developers, partners, prospects, and customers, Forge powers app development with high-quality assets. The shared assets in Forge help members overcome technical challenges and help to solve business use cases.
+[Forge](https://www.outsystems.com/forge/) is a repository of reusable software assets such as libraries, web apps, and mobile apps. Available to OutSystems developers, partners, prospects, and customers, Forge powers app development with high-quality assets. The shared assets in Forge help members overcome technical challenges and help to solve business use cases.
 
 OutSystems provides guidance to document and submit your asset for approval by OutSystems. Documenting and submitting your assets for approval helps to ensure the assets usability and increases usage by other Forge members. The Forge self-service model helps increase the number of solutions available to the community.
 
