@@ -8,7 +8,7 @@ platform-version: odc
 figma:
 outsystems-tools:
   - portal
-  - ai mentor studio
+  - ai mentor
 coverage-type:
   - understand
 audience:

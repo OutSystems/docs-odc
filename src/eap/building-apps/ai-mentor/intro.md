@@ -5,10 +5,10 @@ guid: b17a8f2d-c767-49b4-9f50-381329442aba
 locale: en-us
 app_type: reactive web apps
 platform-version: odc
-figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=6814-98&t=06ppRqezdRkEkuAh-1
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6814-98
 outsystems-tools:
   - portal
-  - ai mentor studio
+  - ai mentor
 coverage-type:
   - understand
 audience:
@@ -23,6 +23,12 @@ topic:
 # Build apps with AI
 
 OutSystems Mentor is a suite of generative AI capabilities for the application development lifecycle. Mentor addresses common challenges such as time-consuming prototyping and converting requirements into functional code.
+
+<div class="info" markdown="1">
+
+This content covers Mentor for app generation in ODC. For technical debt management in OutSystems 11, see [AI Mentor Studio](https://success.outsystems.com/documentation/11/monitoring_and_troubleshooting_apps/manage_technical_debt/).
+
+</div>
 
 * **Mentor App Generator** transforms ideas into an OutSystems app. It uses natural language prompts or requirement documents and grounds its suggestions with your existing enterprise data for contextual relevance.
 
@@ -96,7 +102,7 @@ To create an app with Mentor:
 
 1. Edit the data model and roles if needed. Click **Generate** to create the app and open it in the App Editor.
 
-    ![Screen to edit data model and roles before generating the app, showing Inventory Management app with data entities and roles.](images/ai-mentor-edit-data-roles-generate-pl.png "Edit Data and Roles")
+    ![Screen to edit data model and roles before generating the app, showing Inventory Management app with data entities and roles.](images/ai-mentor-edit-data-roles-during-generation-pl.png "Edit Data and Roles")
 
 1. Use the App Editor to fine-tune the app with prompts. When the app meets your needs, click **Publish**.
 

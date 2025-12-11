@@ -8,7 +8,7 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8327-67&p=f&t=Wym62fkSpj2wy7Rs-0
 outsystems-tools:
   - portal
-  - ai mentor studio
+  - ai mentor
 coverage-type:
   - apply
 audience:
