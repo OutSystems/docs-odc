@@ -16,7 +16,7 @@ topic:
   - wrap-cordova-plugin
 ---
 
-# Using Cordova Plugins
+# Using Cordova plugins
 
 <div class="info" markdown="1">
 

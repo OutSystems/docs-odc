@@ -517,7 +517,7 @@ Array<
 Array<{ src: string; dest: string; command: 'c' | 'r' | 'u' | 'x'; }>
 ```
 
-**Description**: Adds tar support to build actions.
+**Description**: Adds tar support to build actions
 
 **Conditional**: Yes
 

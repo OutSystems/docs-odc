@@ -65,13 +65,15 @@ From the same screen, you can create an iOS or Android package. ODC can process 
 
 1. (For Android package) Provide the Keystore details such as **Keystore** binary file, **Keystore password**, **Alias**, and **Alias password**.
 
-2. Select the **Mobile Apps Build Service (MABS) version**. You can select either the stable version or a particular MABS version. If you choose version **12.0**, then select either **Cordova** or **Capacitor** as the mobile framework. For detailed information about dusal stack support in MABS, refer to [Capacitor and Cordova support in MABS](mabs-overview.md).
+1. Select the **Mobile Apps Build Service (MABS) version**. You can select either the stable version or a particular MABS version. If you choose version **12.0**, then select either **Cordova** or **Capacitor** as the mobile framework. Ensure that all the plugins you use in the app are compatible with the chosen framework. For detailed information about dual stack support in MABS, refer to [Capacitor and Cordova support in MABS](mabs-overview.md).
 
-    ![Screenshot of the ODC Portal showing the configuration fields for creating an iOS package.](images/create-ios-android-package-pl.png "Create iOS or Android Package Configuration")
+    ![Screenshot of the ODC Portal showing the configuration fields for creating an iOS package.](images/mabs-selection-pl.png "Create iOS or Android Package Configuration")
 
-3. Enter the **Version (Major, Minor, Patch)** number. If you want to modify the version, enter any version number that's equal to or higher than the previous version
+1. Enter the **Version (Major, Minor, Patch)** number. If you want to modify the version, enter any version number that's equal to or higher than the previous version
 
 * Enter the **Version code**, a number that increments by one every time MABS generates a new package. You can change this number, but it must be higher than the previous version.
+
+1. Click **Create iOS package** or **Create Android package** depending on what you want your build.
 
 Once you've finished creating the package, you can view the following details:
 
@@ -82,6 +84,8 @@ Once you've finished creating the package, you can view the following details:
 * Link to download the package
 
 The page also shows the PWA QR code, version information, build type, and app identifier.
+
+For detailed information about troubleshooting, refer to [MABS errors](https://success.outsystems.com/support/errors/mabs_errors/).
 
 ## Understanding MABS and versioning in mobile app packages
 
@@ -98,9 +102,6 @@ App stores use this number to determine whether one version is more recent than 
 Sometimes, you need to change the default mobile app version number or the code number. For example, if you are migrating an existing app from another provider to OutSystems, your app's current version number or version code in the app store might be higher than the OutSystems version numbers. In this case, you need to set the OutSystems version number or version code number to a higher value than what's in the store.
 
 </div>
-
-______________________________________________________________
-_QR CODE is a registered trademark of Denso Wave Incorporated._
 
 ## Download mobile app build logs { #download-mobile-app-build-logs }
 
@@ -184,3 +185,8 @@ OutSystems recommends the Chrome browser for previewing the mobile app in the OD
 * [MABS versioning and lifecycle](https://success.outsystems.com/support/release_notes/mobile_apps_build_service_versions/mabs_versioning_and_lifecycle/)
 
 * [Building Cordova and Capacitor apps in MABS 12](mabs-overview.md)
+
+* [MABS errors](https://success.outsystems.com/support/errors/mabs_errors/)
+
+______________________________________________________________
+_QR CODE is a registered trademark of Denso Wave Incorporated._

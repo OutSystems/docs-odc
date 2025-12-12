@@ -1,7 +1,7 @@
 ---
 guid: 35892a80-96be-43bf-a89f-8d535b5b6f09
 locale: en-us
-summary: This article explains what are build action and how you can use build action to configure your mobile apps.
+summary: This article explains what build actions are and how you can use build actions to configure your mobile apps.
 figma: 
 coverage-type:
   - apply
@@ -20,7 +20,7 @@ helpids:
 
 # Build actions
 
-You can use build actions to perform native project modifications such as modifying **Android Manifest file**, **Info.plist** or **build.gradle** files in a structured and repeatable way. Build Actions use JSON-based configuration file and a set of predefined constructs to define and apply modifications to a mobile app during the build process. Build actions are integrated into the mobile app build process via [Extensibility](extensibility-configurations-json-schema.md).
+You can use build actions to perform native project modifications such as modifying **Android Manifest file**, **Info.plist** or **build.gradle** files in a structured and repeatable way. Build actions use JSON-based configuration file and a set of predefined constructs to define and apply modifications to a mobile app during the build process. Build actions are integrated into the mobile app build process via [Extensibility](extensibility-configurations-json-schema.md).
 
 You can configure your extensibility from **App** > **Edit app properties** > **Extensibility**.
 
@@ -28,7 +28,7 @@ Build actions are the modern replacement for Cordova hooks and is available in b
 
 <div class="info" markdown="1">
 
-You can use build actions only for Capacitor apps.
+Build actions are available only on Capacitor mobile apps.
 
 </div>
 
@@ -135,10 +135,10 @@ Example: `ge(3,1)`
 **le**: Evaluates to `true` if the left argument is less than or equal to the right. The arguments must be numeric.
 Example: `le(1,3)`
 
-**gt**: Evaluates to `true` if the left argument is greater than or equal to the right. The arguments must be numeric.
+**gt**: Evaluates to `true` if the left argument is greater than the right. The arguments must be numeric.
 Example: `gt(3,1)`
 
-**lt**: Evaluates to `true` if the left argument is less than or equal to the right. The arguments must be numeric.
+**lt**: Evaluates to `true` if the left argument is less than the right. The arguments must be numeric.
 Example: `lt(1,3)`
 
 ```json
@@ -171,7 +171,7 @@ Here's the platform specific build actions reference files:
 
 * [Android build actions](build-actions-android.md)
 
-Here's the detailed information about extensibility configuration JSON schema:
+Explore these resources to learn more about extensibility configuration JSON schema:
 
 * [Extensibility configuration JSON schema](extensibility-configurations-json-schema.md)
 * [App extensibility configuration JSON schema](extensibility-configurations/extensibility-app-reference.md)

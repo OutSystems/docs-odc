@@ -25,7 +25,7 @@ This article provides reference documentation for all iOS build actions availabl
 
 ## Targets and builds
 
-Build actions for iOS support different targets and builds. These are optional and specified as parent keys in the JSON. The following build actions example omits targets and builds, but they are always valid.
+Build actions for iOS support different targets and builds. These are optional and are specified as parent keys in the JSON. The following build actions example omits targets and builds, but they are always valid.
 
 ```json
 {

@@ -21,6 +21,12 @@ topic:
 
 # App architecture
 
+<div class="info" markdown="1">
+
+OutSystems is progressively rolling out mobile libraries.
+
+</div>
+
 With OutSystems Developer Cloud (ODC), architects can design apps to solve business problems and automate business processes using a **cloud-native** approach to the architecture. In a cloud-native architecture, an app is decomposed into loosely coupled and independently deployable components or services.
 
 In a cloud-native architecture, you can use a single app in ODC:
@@ -66,9 +72,14 @@ For a detailed explanation of how to create, configure, and integrate Agentic ap
 
 Libraries let you share code between apps. Libraries work similarly to packages such as NuGet in .NET or npm in JavaScript. Libraries keep the elements centralized, reducing maintenance cost and promoting ownership.
 
-Apps can reference libraries, and libraries can also reference other libraries. This creates a strong dependency. This means that if something in a library changes and an app is consuming it can have an impact that leads to breaking changes.
+ODC supports the following types of libraries:
 
-Libraries are packaged with apps when an app is published, and each app consumes library packages and a library version in its container.
+* **General-purpose libraries**: Provide reusable UI and logic elements for both web and mobile apps
+* **Mobile libraries**: Specialized libraries for mobile apps only. These libraries enable you to wrap native plugins such as Cordova and Capacitor plugins and create mobile-specific UI components. For detailed information, refer to [Mobile libraries](../building-apps/libraries/libraries.md#mobile-libraries-mobile-libraries).
+
+Apps can reference libraries, and libraries can also reference other libraries. This creates a strong dependency. This means that if something in a library changes and an app is consuming it, the change can have an impact that leads to breaking changes.
+
+Libraries are packaged with apps when an app is published. Each app consumes library packages and a library version in its container.
 
 ![Diagram showing how libraries are used to share code between apps and how they create strong dependencies in OutSystems Developer Cloud.](images/libraries-odc-diag.png "Libraries in OutSystems Developer Cloud")
 

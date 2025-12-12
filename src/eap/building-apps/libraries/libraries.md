@@ -15,9 +15,16 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+helpids: 30736
 ---
 
 # Libraries
+
+<div class="info" markdown="1">
+
+OutSystems is progressively rolling out mobile libraries.
+
+</div>
 
 Libraries are a core building block for OutSystems Developer Cloud (ODC) developers and serve as **repositories of reusable UI and logic elements**.
 
@@ -34,13 +41,57 @@ Common use cases for libraries include:
 
 ![Diagram illustrating the concept of libraries in OutSystems Developer Cloud as repositories of reusable UI and logic elements.](images/libraries-diag.png "ODC Libraries Conceptual Diagram")
 
-OutSystems Developer Cloud (ODC) elevates the library to a **top-level concept**. Libraries exist at the same level as Web Apps and Mobile Apps and have an **independent lifecycle**. For more information on how to think about libraries in the context of your app's architecture, see [App Architecture](../../app-architecture/intro.md#libraries-in-odc--libraries-).
+OutSystems Developer Cloud (ODC) elevates the general-purpose library and mobile library to  top-level assets. They exist at the same level as web Apps and mobile Apps and have an independent lifecycle. For detailed information about how to think about libraries in the context of your app's architecture, refer to [App Architecture](../../app-architecture/intro.md#libraries-in-odc--libraries-).
 
-## Libraries versioning
+## Mobile libraries {mobile-libraries}
+
+Mobile libraries are a specialized type of library designed specifically for mobile apps. While general-purpose libraries provide reusable UI and logic elements for both web apps, the mobile library serves as the core reusable component for mobile-specific requirements related to native capabilities and extensibility.
+
+### Key use cases for mobile libraries
+
+Here are some ways in which you can use mobile libraries:
+
+* **Plugin wrappers**: Wrap native plugins such as Cordova and Capacitor plug-ins to expose native device functionality to your mobile apps. For example, you can use mobile libraries to wrap plugins for camera, GPS, and barcode scanner access. For detailed information, refer to [Integrate Capacitor plugin into mobile app](../../integration-with-systems/mobile-plugins/capacitor-plugins/integrate-plugin-in-app.md).
+
+* **Extensibility configurations**: Configure your plugin wrapper using the universal extensibility configuration JSON schema. For detailed information, refer to [Plugin configuration use cases](../../building-apps/mobile/extensibility-configurations-use-cases.md#plugin-configuration-use-cases-plugin-use-cases).
+
+* **Reusable mobile UI components**: Create mobile-specific UI components that combine native functionality with visual elements, such as a custom camera component with image filters or a location picker with map integration.
+
+* **Organization-wide mobile standards**: Establish standardized implementations for common mobile patterns such as biometric authentication, push notifications, or offline data synchronization that all mobile apps in your organization can use.
+
+### Mobile libraries compared to general-purpose libraries
+
+Both mobile libraries and general-purpose libraries in ODC share the core purpose of packaging reusable functionality. However, they are specialized for different environments and needs, particularly in terms of native mobile device capabilities.
+
+Both library types share these characteristics:
+
+* **Stateless design**: Can't persist data; focuses on providing only functionality and logic
+* **Versioning**: Use the same mechanism for revision and [version management](#libraries-versioning-libraries-versioning)
+* **Lifecycle**: Top-level assets that have independent development, testing, and [release cycles](#release-a-new-version-of-a-library-release-library)
+* **Consumption model**: Apps and libraries [reference and update](use-public-elements.md) dependencies in a similar way.
+
+The following table highlights the key differences:
+
+| Aspect | General-purpose libraries | Mobile libraries |
+| --- | --- | --- |
+| **Target platform** | Web and mobile apps | Mobile apps only |
+| **Purpose** | Build reusable logic using server actions, client actions, UI blocks, themes, and utilities | Build reusable mobile-specific assets, logic, and extensibility configurations |
+| **Extensibility configurations** | Not applicable | Includes extensibility configurations for plugin management |
+| **UI components** | Build UI components using both OutSystems UI and Mobile UI | Build mobile-specific UI components using the Mobile UI framework |
+| **Consumption restrictions** | Can be consumed by web apps, mobile apps, mobile libraries and other general-purpose libraries | Can only be consumed by mobile apps and other mobile libraries |
+| **Dependency direction** | Cannot consume mobile libraries | Can consume general-purpose libraries |
+
+<div class="info" markdown="1">
+
+In ODC Studio, If you have an existing general-purpose library that includes extensibility configurations, the general-purpose library is automatically converted to a mobile library. Then, you must republish the library. If the library was published in Forge, you must resubmit it.
+
+</div>
+
+## Libraries versioning {libraries-versioning}
 
 Versioning enables systematic updates and integration of your library's elements into apps and other libraries within your organization. This **ensures consistency and prevents unexpected breaking changes** within the development environment. Versioning applies to all types of libraries in ODC organization: libraries you create, system libraries that OutSystems provides (OutSystems UI, for example), and [external logic libraries](../external-logic/intro.md).
 
-The concept of **versioning is core to the development lifecycle of a library**, forming a cyclical process comprised of three main steps. First, the [revision of a library is iteratively developed and tested](#test-a-revision-of-a-library) to ensure its functionality and stability. Once tested successfully, a [new version of the library can be released](#release-a-new-version-of-a-library) for use. Lastly, developers [decide whether to use this new version](#decide-if-to-consume-a-new-version-of-a-library-in-your-app-or-library) in their apps or libraries.
+The concept of versioning is core to the development lifecycle of a library, forming a cyclical process comprised of three main steps. First, the [revision of a library is iteratively developed and tested](#test-a-revision-of-a-library) to ensure its functionality and stability. Once tested successfully, a [new version of the library can be released](#release-a-new-version-of-a-library-release-library) for use. Lastly, developers [decide whether to use this new version](#update-to-a-new-library-version-update-consumers) in their apps or libraries.
 
 ![Flowchart showing the development lifecycle of a library in ODC, including development, testing, and release stages.](images/development-lifecyle-library-diag.png "Library Development Lifecycle Diagram")
 
@@ -56,13 +107,15 @@ After creating a library, you can test it by publishing the library. When you pu
 
 <div class="info" markdown="1">
 
-You can test your library in only one test app at a time. You can first test the library with one app, then close it, and then select a different app to test the library. For example, if you are creating a library for use in both web and mobile apps, you would use such a procedure to test the library in both app types.
+You can test your library in only one test app at a time. You can first test the library with one app, then close it, and then select a different app to test the library.
+
+Mobile libraries can only be tested in mobile apps. When you publish a mobile library, you only get the option to test in a mobile app.
 
 </div>
 
 OutSystems recommends testing libraries in a test app rather than in apps for production to ensure only the developers testing the app are impacted by changes. Having a test app(s) for each library creates a consistent test set for regression testing to ensure changes in the library don't break existing functionality. Also, you can use test apps for manual testing or a test framework like Behavior Driven Development (BDD) to execute these tests.
 
-### Release a new version of a library { #release-library }
+### Release a new version of a library {#release-library}
 
 <div class="info" markdown="1">
 
@@ -106,7 +159,7 @@ It's important to add any information about the changes you made, such as any ne
 
 Review the release information and then click **Release library**. A green banner displays when your library is successfully released.
 
-### Decide if to consume a new version of a library in your app or library { #update-consumers }
+### Update to a new library version {#update-consumers}
 
 When you open your app or library in ODC Studio, ODC Studio automatically updates app dependencies. If there are library updates, ODC Studio displays a popup to either review or dismiss the updates.
 

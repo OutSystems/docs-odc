@@ -19,51 +19,17 @@ helpids:
 
 <div class="info" markdown="1">
 
-The schema may change with every new MABS version.
+OutSystems is progressively rolling out mobile libraries.
 
 </div>
 
-[pluginConfigurations](#pluginconfigurations)
+<div class="info" markdown="1">
 
-[properties](#properties)
+The schema may change with every new MABS version.
 
-[cordova](#cordova)
+Only mobile libraries can be used to specify the library extensibility configuration JSON schema.
 
-[preferences](#preferences)
-
-[capacitor](#capacitor)
-
-[configurations](#configurations)
-
-[permissions](#permissions)
-
-[android](#android-android)
-
-[ios](#ios-ios)
-
-[buildConfigurations](#buildconfigurations)
-
-[properties](#properties-properties-1)
-
-[cordova](#cordova-cordova-1)
-
-[source](#source)
-
-[capacitor](#capacitor-capacitor-1)
-
-[source](#source-source-1)
-
-[resources](#resources)
-
-[android](#android-android-1)
-
-[ios](#ios-ios-1)
-
-[buildAction](#buildaction)
-
-[config](#config)
-
-[parameters](#parameters)
+</div>
 
 The extensibility configuration for libraries allows the declaration of the associated Cordova plugins, Capacitor plugins, or both.
 

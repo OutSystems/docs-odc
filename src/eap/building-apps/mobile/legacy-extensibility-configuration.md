@@ -20,13 +20,19 @@ helpids:
 
 <div class="info" markdown="1">
 
+OutSystems is progressively rolling out the automatic migration of Cordova-based schema to universal schema.
+
+</div>
+
+<div class="info" markdown="1">
+
 Applies only to Cordova apps.
 
 </div>
 
 This article describes the Cordova-based extensibility configuration JSON schema that is used to customize mobile apps using only Apache Cordova framework.
 
-To configure both Capacitor and Cordova apps. You must use the [Universal extensibility configurations JSON schema](extensibility-configurations-json-schema.md) 
+To configure both Capacitor and Cordova apps. You must use the [Universal extensibility configurations JSON schema](extensibility-configurations-json-schema.md). OutSystems recommends that you [migrate your existing Cordova-based schema to the universal schema](migrate-cordova-schema.md) for modern Capacitor cross-platform native runtime support, enhanced development experience, and better structure and maintainability of your configurations.
 
 ## Property schema
 
@@ -109,14 +115,14 @@ The value of the **Extensibility Configurations** property of a mobile app modul
 
 The following section provides more details about the options you can use in the `preferences` top-level property. For a comprehensive list of the available settings, refer to [preferences in Config.xml](https://cordova.apache.org/docs/en/dev/config_ref/index.html#preference) by Apache Cordova.
 
-| Property                          | Platform | Default | Description |
+| Property | Platform | Default | Description |
 | --------------------------------- | -------- | ------- | ----------- |
-| (iOS_FEATURE)UsageDescription    | iOS        | NA       | Adds preferences that match the pattern of UsageDescription to the Info.plist file. For the full list, refer to [Cocoa Keys](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW1) and filter by UsageDescription. For an example, refer to information about [iOS usage descriptions](https://success.outsystems.com/Support/Release_Notes/Mobile_Apps_Build_Service_Versions/MABS_7_Release_notes#ios-usage-descriptions) in the release notes. |
-| AddUploadWidgetPermissions      | Android, iOS        | false       | Set as false to skip adding permissions required by the upload widget to AndroidManifest.xml and/or Info.plist. For an example, refer to information about [Upload widget permissions](https://success.outsystems.com/Support/Release_Notes/Mobile_Apps_Build_Service_Versions/MABS_7_Release_notes#upload-widget-permissions) in the release notes. |
-| EnableRefererHeaderCustomScheme | iOS        | false       | Set to true to inject the `Referer: URL` in the requests of the native app, where `URL` is the app domain.         |
-| InitLoggerSyncDelay             | Android        | 0       | Seconds to delay the logger synchronization after the initialization.         |
-| RemoveUserCertificates          | Android        |true | Set to true to remove user certificates from the trust anchors in network_security_config.xml.         |
-| FilterTouchesWhenObscured | Android |true| Defines the value of the filterTouchesWhenObscured property of WebView on Android. Set to true to prevent the app from handling touches while obscured by other apps. For detailed information about filterTouchesWhenObscured, refer to [Android documentation](https://developer.android.com/reference/android/view/View#security).|
+| (iOS_FEATURE)UsageDescription | iOS | NA | Adds preferences that match the pattern of UsageDescription to the Info.plist file. For the full list, refer to [Cocoa Keys](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW1) and filter by UsageDescription. For an example, refer to information about [iOS usage descriptions](https://success.outsystems.com/Support/Release_Notes/Mobile_Apps_Build_Service_Versions/MABS_7_Release_notes#ios-usage-descriptions) in the release notes. |
+| AddUploadWidgetPermissions | Android, iOS | false | Set as false to skip adding permissions required by the upload widget to AndroidManifest.xml and/or Info.plist. For an example, refer to information about [Upload widget permissions](https://success.outsystems.com/Support/Release_Notes/Mobile_Apps_Build_Service_Versions/MABS_7_Release_notes#upload-widget-permissions) in the release notes. |
+| EnableRefererHeaderCustomScheme | iOS | false | Set to true to inject the `Referer: URL` in the requests of the native app, where `URL` is the app domain. |
+| InitLoggerSyncDelay | Android | 0 | Seconds to delay the logger synchronization after the initialization. |
+| RemoveUserCertificates | Android | true | Set to true to remove user certificates from the trust anchors in network_security_config.xml. |
+| FilterTouchesWhenObscured | Android | true | Defines the value of the filterTouchesWhenObscured property of WebView on Android. Set to true to prevent the app from handling touches while obscured by other apps. For detailed information about filterTouchesWhenObscured, refer to [Android documentation](https://developer.android.com/reference/android/view/View#security). |
 | DisableInspectorNotification | iOS | false | Set to true to remove the notification from the [Network inspector](https://www.outsystems.com/tk/redirect?g=2bea2ff9-7655-4952-a00c-2a3f1e3316e9) plugin in iOS debug builds. |
 | DeepLinksHandlerType | Android, iOS | default | Defines how the mobile app [handles deeplinks](extensibility-configurations.md#customize-deeplink-behavior). This can have 4 possible values: `default`, `event`, `function` or `legacy`. |
 

@@ -374,17 +374,69 @@
             - topics:
                 - href: eap/building-apps/mobile/build-actions-android.md
                 - href: eap/building-apps/mobile/build-actions-iOS.md
-                
+              
+            - href: eap/building-apps/mobile/migrate-cordova-schema.md
             - href: eap/building-apps/mobile/extensibility-configurations/troubleshooting-errors.md
-            
-             
-        - href: eap/building-apps/mobile/mabs-overview.md
+    #Mobile plug-ins
+        - href: eap/integration-with-systems/mobile-plugins/intro.md
+        - topics:
+            - href: eap/integration-with-systems/mobile-plugins/capacitor-plugins/integrate-plugin-in-app.md
+            - href: eap/integration-with-systems/mobile-plugins/migrate-cordova-plugin.md
+            - href: eap/integration-with-systems/mobile-plugins/capacitor-plugins/dual-stack-plugin.md
+            - href: eap/integration-with-systems/mobile-plugins/capacitor-plugins/build-capacitor-plugin.md
+            - topics:
+                - href: eap/integration-with-systems/mobile-plugins/capacitor-plugins/setup-and-implementation.md
+                - href: eap/integration-with-systems/mobile-plugins/capacitor-plugins/android-implementation.md
+                - href: eap/integration-with-systems/mobile-plugins/capacitor-plugins/ios-implementation.md
+        
+            - href: eap/integration-with-systems/mobile-plugins/using-cordova-plugins.md
+        #OS supported mobile plugins 
+            - href: eap/integration-with-systems/mobile-plugins/os-supported-plugins.md
+            - topics:
+                - href: eap/integration-with-systems/mobile-plugins/barcode/intro.md
+                - href: eap/integration-with-systems/mobile-plugins/camera/intro.md
+                - topics:
+                    - href: eap/integration-with-systems/mobile-plugins/camera/camera-ref.md
+                - href: eap/integration-with-systems/mobile-plugins/common-plugin/intro.md
+                - href: eap/integration-with-systems/mobile-plugins/file-plugin/intro.md
+                - topics:        
+                    - href: eap/integration-with-systems/mobile-plugins/file-plugin/file-plugin-ref.md
+                    - href: eap/integration-with-systems/mobile-plugins/file-plugin/file-plugin-migration-guide.md
+                    - href: eap/integration-with-systems/mobile-plugins/file-plugin/file-plugin-version-1.md
+                - href: eap/integration-with-systems/mobile-plugins/file-transfer-plugin/intro.md
+                - href: eap/integration-with-systems/mobile-plugins/file-viewer/intro.md
+                - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/intro.md
+                - topics:
+                    - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/firebase-cloud-messaging-plugin-server-action.md
+                    - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/firebase-cloud-messaging-plugin-configurator-api.md
+                    - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/firebase-cm-plugin-api-v1-v2.md
+                - href: eap/integration-with-systems/mobile-plugins/health-fitness/intro.md
+                - topics: 
+                    - href: eap/integration-with-systems/mobile-plugins/health-fitness/intro_v2.md
+                - href: eap/integration-with-systems/mobile-plugins/haptics-plugin/intro.md
+                - topics:
+                    - href: eap/integration-with-systems/mobile-plugins/haptics-plugin/haptics-ref.md
+                - href: eap/integration-with-systems/mobile-plugins/inapp-browser/inapp-browser.md
+                - href: eap/integration-with-systems/mobile-plugins/keystore-plugin/intro.md
+                - topics:
+                    - href: eap/integration-with-systems/mobile-plugins/keystore-plugin/keystore-ref.md
+                - href: eap/integration-with-systems/mobile-plugins/keyboard-plugin/intro.md
+                - topics:
+                    - href: eap/integration-with-systems/mobile-plugins/keyboard-plugin/keyboard-ref.md
+                - href: eap/integration-with-systems/mobile-plugins/location/intro.md
+                - href: eap/integration-with-systems/mobile-plugins/payments-plugin/intro.md
+                - href: eap/integration-with-systems/mobile-plugins/ssl-pinning/intro.md
+         
+        
         - href: eap/building-apps/mobile/creating-mobile-package.md
-        - href: eap/building-apps/mobile/privacy-updates-for-apple-app-store-submissions.md
-        # Progressive web app
-        - href: eap/building-apps/mobile/pwa.md
-        # Keeping apps up to date for your users
+        - topics:
+            - href: eap/building-apps/mobile/mabs-overview.md
+        - href: eap/building-apps/mobile/migrate-cordova-to-capacitor.md
+         # Keeping apps up to date for your users
         - href: eap/building-apps/mobile/apps-up-to-date.md
+         # Progressive web app
+        - href: eap/building-apps/mobile/pwa.md
+        - href: eap/building-apps/mobile/privacy-updates-for-apple-app-store-submissions.md
     
     # Emails
     - href: eap/building-apps/sending-emails/intro.md
@@ -501,44 +553,8 @@
         - href: eap/integration-with-systems/exposing_rest/throw-a-custom-error-in-an-exposed-rest-api.md
         - href: eap/integration-with-systems/exposing_rest/change-the-http-status-code-of-a-rest-api.md
         - href: eap/integration-with-systems/exposing_rest/built-in-http-status-codes.md
-    #Mobile plug-ins
-    - href: eap/integration-with-systems/mobile-plugins/intro.md
-    - topics:
-        - href: eap/integration-with-systems/mobile-plugins/barcode/intro.md
-        - href: eap/integration-with-systems/mobile-plugins/camera/intro.md
-        - href: eap/integration-with-systems/mobile-plugins/common-plugin/intro.md
-        - topics:
-            - href: eap/integration-with-systems/mobile-plugins/camera/camera-ref.md
-        - href: eap/integration-with-systems/mobile-plugins/file-plugin/intro.md
-        - topics:        
-            - href: eap/integration-with-systems/mobile-plugins/file-plugin/file-plugin-ref.md
-            - href: eap/integration-with-systems/mobile-plugins/file-plugin/file-plugin-migration-guide.md
-            - href: eap/integration-with-systems/mobile-plugins/file-plugin/file-plugin-version-1.md
-        - href: eap/integration-with-systems/mobile-plugins/file-transfer-plugin/intro.md
-        - href: eap/integration-with-systems/mobile-plugins/file-viewer/intro.md
-        - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/intro.md
-        - topics:
-            - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/firebase-cloud-messaging-plugin-server-action.md
-            - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/firebase-cloud-messaging-plugin-configurator-api.md
-            - href: eap/integration-with-systems/mobile-plugins/firebase-plugin/firebase-cm-plugin-api-v1-v2.md
-        - href: eap/integration-with-systems/mobile-plugins/health-fitness/intro.md
-        - topics: 
-            - href: eap/integration-with-systems/mobile-plugins/health-fitness/intro_v2.md
-        - href: eap/integration-with-systems/mobile-plugins/haptics-plugin/intro.md
-        - topics:
-            - href: eap/integration-with-systems/mobile-plugins/haptics-plugin/haptics-ref.md
-        - href: eap/integration-with-systems/mobile-plugins/inapp-browser/inapp-browser.md
-        - href: eap/integration-with-systems/mobile-plugins/keystore-plugin/intro.md
-        - topics:
-            - href: eap/integration-with-systems/mobile-plugins/keystore-plugin/keystore-ref.md
-        - href: eap/integration-with-systems/mobile-plugins/keyboard-plugin/intro.md
-        - topics:
-            - href: eap/integration-with-systems/mobile-plugins/keyboard-plugin/keyboard-ref.md
-        - href: eap/integration-with-systems/mobile-plugins/location/intro.md
-        - href: eap/integration-with-systems/mobile-plugins/payments-plugin/intro.md
-        - href: eap/integration-with-systems/mobile-plugins/ssl-pinning/intro.md
-        - href: eap/integration-with-systems/mobile-plugins/using-cordova-plugins.md
-        - href: eap/integration-with-systems/mobile-plugins/migrate-cordova-plugin.md 
+    
+    
     #Javascript    
     - href: eap/integration-with-systems/javascript/javascript.md
     - topics:

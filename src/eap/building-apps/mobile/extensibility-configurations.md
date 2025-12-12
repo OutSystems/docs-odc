@@ -23,6 +23,12 @@ helpids: 30664
 
 # Universal extensibility configurations JSON schema
 
+<div class="info" markdown="1">
+
+OutSystems is progressively rolling out the automatic migration of Cordova-based schema to universal schema.
+
+</div>
+
 With the introduction of the modern [Capacitor](https://capacitorjs.com/docs) framework the extensibility configurations support both Capacitor and Cordova frameworks and are managed through two distinct JSON files.
 
 * [App extensibility configurations JSON file](extensibility-configurations/extensibility-app-reference.md)
@@ -35,7 +41,7 @@ OutSystems recommends adopting the universal schema because of the following ben
 
 * Enables structured and repeatable modifications/customizations using [build actions](build-actions.md) that are available within the app and library extensibility schema.
 
-* Supports auto-complete and synctactical validation for preferences and values.
+* Supports auto-complete and syntactical validation for preferences and values.
 
 This screenshot illustrates auto-complete support for JSON while configuring your apps through **Extensibility**.
 
@@ -45,17 +51,27 @@ The [Cordova-based extensibility configuration schema](legacy-extensibility-conf
 
 <div class="warning" markdown="1">
 
-The support for the Cordova-based schema will be deprecated soon. If the app includes both Cordova-based and universal schema, the Cordova-based schema is ignored.
+The support for the Cordova-based schema will be deprecated soon. OutSystems recommends [migrating to the universal schema](migrate-cordova-schema.md).
 
 </div>
 
-However, If you're building apps with Apache Cordova framework using MABS versions older than 12, you can continue to use the [Cordova-based extensibility configurations  JSON schema](legacy-extensibility-configuration.md).
+## Schema requirements by MABS version {schema-mabs-versions}
+
+The extensibility configuration schema you must use depends on your MABS version:
+
+* **MABS 12 or later**: For configuring Capacitor or Cordova apps, you must use the universal schema. The Cordova-based schema is not supported.
+
+* **MABS 11.2 to 12.x**: For Cordova apps, you can use either the universal schema or the Cordova-based schema, but you can only use one of them in your app. If the app includes both the schemas, the universal schema takes precedence and the Cordova-based schema is ignored.
+
+* **MABS 11.1 or earlier**: You must use only Cordova-based schema. The universal schema is not supported in these versions.
+
+If you're building apps with Apache Cordova framework using MABS versions older than 12, you can continue to use the [Cordova-based extensibility configurations JSON schema](legacy-extensibility-configuration.md).
 
 If you attempt to use the Cordova-based schema with the Capacitor apps an error is thrown. For detailed information, refer to [Troubleshooting errors](extensibility-configurations/troubleshooting-errors.md).
 
 ## App extensibility configurations JSON schema
 
-[App configuration](extensibility-configurations/extensibility-app-reference.md)is defined at the mobile app level. You use it to customize the final mobile app package, setting properties like the display name, orientation, app-wide permissions, and splash screen. This is the primary configuration you edit when building your app.
+[App configuration](extensibility-configurations/extensibility-app-reference.md) is defined at the mobile app level. You use it to customize the final mobile app package, setting properties like the display name, orientation, app-wide permissions, and splash screen. This is the primary configuration you edit when building your app.
 
 For detailed information about app configurations use cases, refer to [Using extensibility configuration JSON schema](extensibility-configurations-use-cases.md).
 
@@ -67,7 +83,7 @@ For detailed information about library configurations use cases, refer to [Using
 
 ## Related resources
 
-For more information about configuring your app using universal extensibility configurations:
+Explore these resources to learn more about configuring your app using universal extensibility configurations:
 
 * [App extensibility configuration JSON schema](extensibility-configurations/extensibility-app-reference.md)
 

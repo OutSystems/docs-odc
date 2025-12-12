@@ -23,74 +23,6 @@ The schema may change with every new MABS version.
 
 </div>
 
-[appConfigurations](#appconfigurations)
-
-[Properties](#properties)
-
-[cordova](#cordova)
-
-[permissions](#permissions)
-
-[displayName](#displayname)
-
-[orientation](#orientation)
-
-[orientation Constraints](#orientation-constraints)
-
-[targetDevice](#targetdevice)
-
-[targetDevice Constraints](#targetdevice-constraints)
-
-[backgroundColor](#backgroundcolor)
-
-[backgroundColor Constraints](#backgroundcolor-constraints)
-
-[deeplinksHandler](#deeplinkshandler)
-
-[deeplinksHandler Constraints](#deeplinkshandler-constraints)
-
-[network](#network)
-
-[connections](#connections)
-
-[trustedCA](#trustedca)
-
-[systembars](#systembars)
-
-[style](#style)
-
-[appendUserAgent](#appenduseragent)
-
-[splashscreen](#splashscreen)
-
-[duration](#duration)
-
-[autoHide](#autohide)
-
-[webViewUpdate](#webviewupdate)
-
-[buildConfigurations](#buildconfigurations)
-
-[Properties](#properties-1)
-
-[resources](#resources)
-
-[android](#android)
-
-[ios](#ios)
-
-[splashscreens](#splashscreens)
-
-[android](#android-1)
-
-[ios](#ios-ios-1)
-
-[buildAction](#buildaction)
-
-[config](#config)
-
-[parameters](#parameters)
-
 The extensibility configuration for the application defines a set of configurations that pertain to a specific application. At the top level, it is composed by the following properties:
 
 | Property | Type | Required |
@@ -113,7 +45,7 @@ Example:
 
 ## appConfigurations
 
-Application configurations are a set of configurations that modify multiple runtime aspects/behaviors of the mobile application, from background color to how long the splash screen is visible on app launch.
+App configurations are a set of configurations that modify multiple runtime aspects and behaviors of the mobile app, from background color to how long the splash screen is visible on app launch.
 
 `appConfigurations`
 

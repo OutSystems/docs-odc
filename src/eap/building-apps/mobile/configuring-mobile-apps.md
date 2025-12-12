@@ -21,7 +21,7 @@ outsystems-tools:
   - odc studio
 helpids:
 ---
-# Configuring mobile apps
+# Configure mobile apps
 
 You can configure your mobile app via the mobile app properties. For customizing and enhancing mobile app functionality beyond the default settings and for more granular control over the mobile app's build process, you can directly edit the [extensibility configuration JSON files](extensibility-configurations.md).
 
@@ -37,15 +37,74 @@ While the mobile app properties sync with the underlying extensibility configura
 
 ## Configure extensibility settings {#configure-extensibility-settings}
 
-To configure the build time settings for your app, click the app name and select **Extensibility**. You can also add new and delete settings directly from ODC Studio.
+You can configure the build time settings for your app using extensibility settings. These settings can be directly added from the ODC Studio. In mobile apps, extensibility settings are a replacement for [ODC app settings](../../manage-platform-app-lifecycle/configure-app-settings.md).
+
+The extensibility settings provide centralized configuration management and the flexibility to customize app behavior without changing the code.
+
+To add a new extensibility setting, follow these steps:
+
+1. Click the app name and select **Extensibility**.
+1. Right-click **Extensibility Settings** and select **Add Extensibility Setting**.
+1. Enter the details for the extensibility setting, such as name, description, and data type.
+
+You can directly reference these extensibility settings in the extensibility configurations schema using `$extensibilitySettings`.
+
+In this screenshot, the extensibility setting `GoogleServicesAndroid` is referenced in the extensibility configurations using `$extensibilitySettings`
 
 ![ODC Studio interface showing the extensibility configurations editor with settings for GoogleServicesAndroid.](images/extensibility-configurations-editor-odcs.png "Extensibility Configurations Editor in ODC Studio")
 
+### Using extensibility settings with universal schema
+
+This example demonstrates how you can reference extensibility settings like `CameraUsageDescription`, `ApiKey`, and `ServerUrl` in both Cordova and Capacitor configurations within the same plugin.
+
+```json
+{
+    "buildConfigurations": {
+        "cordova": {
+            "source": {
+                "npm": "@my-company/cordova-plugin@1.0.0"
+            }
+        },
+        "capacitor": {
+            "source": {
+                "npm": "@my-company/capacitor-plugin@1.0.0"
+            }
+        }
+    },
+    "pluginConfigurations": {
+        "permissions": {
+            "ios": {
+                "NSCameraUsageDescription": {
+                    "description": "$extensibilitySettings.CameraUsageDescription"
+                }
+            },
+            "android": [
+                "android.permission.CAMERA"
+            ]
+        },
+        "cordova": {
+            "preferences": {
+                "API_KEY": "$extensibilitySettings.ApiKey",
+                "SERVER_URL": "$extensibilitySettings.ServerUrl"
+            }
+        },
+        "capacitor": {
+            "configurations": {
+                "MyPlugin": {
+                    "apiKey": "$extensibilitySettings.ApiKey",
+                    "serverUrl": "$extensibilitySettings.ServerUrl"
+                }
+            }
+        }
+    }
+}
+```
+
 ## Define extensibility settings
 
-Once the app is published, you can define the extensibility settings in ODC Portal for different deployment stages.
+Once the extensibility setting is configured in the ODC Studio and the app is published, you must define the value for the extensibility setting in the ODC Portal. You can define a unique value for for each deployment stage.
 
-To define the settings, follow these steps:
+To define the value for the extensibility setting, follow these steps:
 
 1. Go to ODC Portal.
 
@@ -53,6 +112,18 @@ To define the settings, follow these steps:
 
     ![ODC Portal interface showing the extensibility settings for mobile distribution packages.](images/extensibility-setting-pl.png "Extensibility Settings in ODC Portal")
 
-1. Edit the setting.
+1. Edit the extensibility setting.
+
+<div class="info" markdown="1">
 
 You must regenerate the mobile package every time you change the value of the extensibility settings. For detailed information, refer to [Create mobile app package](creating-mobile-package.md).
+
+</div>
+
+## Related resources
+
+For more information, refer to the following resources:
+
+* [Universal extensibility configuration JSON schema](extensibility-configurations.md)
+
+* [Cordova-based extensibility configuration JSON schema](legacy-extensibility-configuration.md)
