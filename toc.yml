@@ -354,6 +354,10 @@
     # Mobile apps
     - href: eap/building-apps/mobile/intro.md
     - topics:
+        # Mobile UI
+        - href: eap/building-apps/mobile/mobile-ui/mobile-ui-overview.md
+        - topics:
+            - href: eap/building-apps/mobile/mobile-ui/framework-comparison.md
         # Create a mobile package
         - href: eap/building-apps/mobile/configuring-mobile-apps.md
         - topics:
