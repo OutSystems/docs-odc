@@ -16,12 +16,18 @@ coverage-type:
   - remember
 ---
 
-# Edit app and library properties
+# Edit app, library, and mobile library properties
 
-This article demonstrates how you can edit the app and library properties (i.e. the  metadata) in ODC.
+<div class="info" markdown="1">
+
+OutSystems is progressively rolling out mobile libraries.
+
+</div>
+
+This article demonstrates how you can edit the app, library, and mobile library properties, that is, the metadata in ODC.
 <iframe src="https://player.vimeo.com/video/1069574566" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">How to edit the app and library properties - Metadata</iframe>
 
-The **Edit app properties** and **Edit library properties** dialog lets you configure your app and library components in ODC Studio. Using different tabs, you can edit **Details**, **Properties**, **Messages** and, **Extensibility** properties.
+Depending on what you want to edit, the **Edit app properties**, **Edit library properties**, and **Edit mobile library properties** dialog box allows you to configure your app, library, and mobile library properties in ODC Studio. Using different tabs, you can edit **Details**, **Properties**, **Messages** and, **Extensibility** properties.
 
 <div class="info" markdown="1">
 
@@ -29,9 +35,13 @@ After setting the properties, no save action is necessary. These changes save au
 
 </div>
 
-## Access app and library properties
+## Access app, library, and mobile library properties
 
-One way to access the dialog is to open your app and then click the **Edit app properties** or the **Edit library properties** icon.
+To edit the properties, follow these steps:
+
+1. Go to ODC Studio.
+1. Depending on what you to edit, click the app, or library, or mobile library.
+   The edit properties dialog box is displayed.
 
 ![Image showing how to access edit properties icon](images/edit-app-icon-odcs.png "Access edit app properties icon")
 
@@ -48,7 +58,7 @@ On the **Details** tab, you can modify the following:
 
 ![Image showing details tab properties](images/details-tab-odcs.png "Details tab properties")
 
-### Properties
+### Properties {edit-app}
 
 On the **Properties** tab, you can modify the following:
 
@@ -95,9 +105,9 @@ Validation Messages
 
 ### Details
 
-Refer to Edit app properties.
+Refer to [Edit app](#properties-edit-app) properties.
 
-### Properties
+### Properties {library-properties}
 
 On the **Properties** tab, you can modify the following:
 
@@ -112,7 +122,7 @@ Required Scripts
 
 * Add Required Script
 
-### Messages
+### Messages {library-messages}
 
 On the **Messages** tab, you can modify the following:
 
@@ -129,12 +139,28 @@ Validation Messages
 * Invalid Phone
 * Invalid Email
 
+To configure extensibility, you must use only mobile libraries.
+
+## Edit mobile library properties
+
+### Details
+
+Refer to [Edit app](#properties-edit-app) properties.
+
+### Properties
+
+Refer to [Library properties](#properties-library-properties).
+
+### Messages
+
+Refer to [Library messages](#messages-library-messages).
+
 ### Extensibility
 
-In the library dialog, the **Extensibility** tab includes the following:
+In the mobile library dialog, the **Extensibility** tab includes the following:
 
 * A JSON text editor that checks your syntax (1).
 * A context pane with items you can reference by dragging or double-clicking (2).
 * A details pane that lets you view the properties without closing the editor (3).
 
-![Image showing extensibility tab](images/extensibility-tab-odcs.png "Extensibility in library dialog")
+![Image showing extensibility tab](images/extensibility-tab-odcs.png "Extensibility in mobile library dialog")
