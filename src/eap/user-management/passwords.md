@@ -31,7 +31,6 @@ New users must set up their own passwords. Passwords must be at least 12 charact
 
 * One numeric digit
 * One upper-case letter
-* One special character from this set: `! \ # $ % & ' ( ) * + , - . / : ; < = > ? @ [`
 
 <div class="info" markdown="1">
 
@@ -43,7 +42,7 @@ Only users can manage their own passwords. Admins can't change or recover passwo
 
 ODC temporarily locks users out after five consecutive failed sign-in or password change attempts. The lockout duration increases with each additional failed attempt, starting at just a few seconds and reaching a maximum of approximately 5 minutes. After the lockout period passes, your user information returns to the initial state.
 
-## Password reset for members (IT-users) { #password-reset-members }
+## Password reset for members (IT-users) {#password-reset-members}
 
 [Members](intro.md#members-it-users) can recover their password by clicking **Forgot password?** in the ODC Portal login page.
 
