@@ -33,7 +33,7 @@ Mentor fits into the OutSystems Developer Cloud (ODC) platform as an AI-accelera
 
 If you already develop in ODC Studio, think of Mentor as an alternative starting point for new apps. Instead of beginning with blank templates and manually configuring screens, entities, and roles, you can describe your requirements in natural language. Mentor generates the app scaffolding—complete with data models, UI layouts, and security roles—which you can then refine through the App Editor before transitioning to ODC Studio.
 
-This transition happens naturally when your development needs move beyond what the App Editor supports. When you need custom client or server actions, advanced aggregates with complex filtering, or integrations with external systems through REST you move to ODC Studio for more control. For supported patterns, Mentor and ODC Studio work together bi-directionally. Changes you make in ODC Studio sync back to the App Editor, and changes in the App Editor reflect in Studio, giving you the flexibility to work in whichever environment suits your current task.
+This transition happens naturally when your development needs move beyond what the App Editor supports. When you need custom client or server actions, advanced aggregates with complex filtering, or integrations with external systems through REST you move to ODC Studio for more control.
 
 ### For O11 developers
 
@@ -45,23 +45,21 @@ One architectural difference to note: ODC uses a cloud-native, stage-based deplo
 
 ## Generate initial app
 
-The journey begins with Mentor App Generator, where you provide either natural language prompts or requirement documents. It interprets your input and creates a complete app foundation: a data model with entities, attributes, and relationships; a user interface with screens, layouts, and navigation; security roles and authorization rules; and basic business logic to tie everything together.
+The journey begins with Mentor App Generator, where you provide natural language prompts or requirement documents. Mentor interprets your input and creates a complete app foundation: data model, user interface, security roles, and basic business logic.
 
-Once Mentor App Generator creates this foundation, Mentor App Editor becomes your workspace for refinement. Through iterative prompts, you can modify entities, adjust roles, change screen layouts, and add business logic. The App Editor's AI-powered suggestion system analyzes your changes and updates the app structure accordingly, showing you immediate visual feedback so you can evaluate each modification before committing to it.
+Once Mentor App Generator creates this foundation, Mentor App Editor becomes your workspace for refinement. Through iterative prompts, you can modify entities, adjust roles, change screen layouts, and add business logic. The App Editor's AI-powered suggestion system analyzes your changes and updates the app structure. AI Mentor provides immediate visual feedback so you can evaluate each modification before committing to it.
 
 ## Transition to ODC Studio
 
-As your app grows more complex, you'll eventually need capabilities that extend beyond Mentor App Editor's supported patterns. This is when you transition to ODC Studio. The transition happens naturally—when you need custom client or server actions, advanced aggregates with complex filtering, integrations with external systems through REST or SOAP, custom CSS or JavaScript, or complex business logic that requires the OutSystems visual language, ODC Studio provides the full development environment you need.
-
-Mentor App Editor doesn't disappear after this transition. For supported patterns, it remains available alongside ODC Studio, and you can switch between the two tools as your needs dictate. Need to add a new entity or adjust security roles? Use Mentor App Editor. Need to write a complex server action? Use ODC Studio. The bi-directional nature of the integration means your work in either tool reflects in the other.
+As your app grows more complex, you'll need capabilities beyond Mentor App Editor's patterns. This is when you transition to ODC Studio. Examples include custom actions, advanced aggregates, external integrations, custom CSS or JavaScript, and complex business logic.
 
 ## Test, deploy, and maintain
 
-Testing Mentor-generated apps follows the same approaches as any ODC app. You can test manually in the Development stage, automate your tests through ODC APIs, or conduct user acceptance testing before production deployment. There's no special process required because Mentor-generated apps are, fundamentally, ODC apps.
+Testing Mentor-generated apps follows the same approaches as any ODC app. You can test manually in the Development stage, automate your tests through ODC APIs, or conduct user acceptance testing before production deployment. No additional process is required because Mentor-generated apps are, fundamentally, ODC apps.
 
 Deployment works identically as well. You move your app through the standard ODC stages—Development to QA to Production—using the deployment pipeline. From the deployment system's perspective, there's no difference between an app generated by Mentor and one built entirely in ODC Studio.
 
-Long-term maintenance requires a balanced approach between tools. Use ODC Studio for your ongoing development work and bug fixes—the detailed, code-level work that happens throughout an app's lifetime. Return to Mentor App Editor when you need to make structural changes like adding entities, modifying data models, or adjusting security roles. These architectural modifications often work more efficiently through the App Editor's conversational interface. Version control and lifecycle management continue to follow standard ODC processes regardless of which tool you use for specific tasks.
+Long-term maintenance requires a balanced approach between tools. Use ODC Studio for your ongoing development work and bug fixes—the detailed, code-level work that happens throughout an app's lifecycle. Return to Mentor App Editor when you need to make structural changes like adding entities, modifying data models, or adjusting security roles. These architectural modifications often work more efficiently through the App Editor's conversational interface. Version control and lifecycle management continue to follow standard ODC processes regardless of which tool you use for specific tasks.
 
 ## Govern and collaborate
 

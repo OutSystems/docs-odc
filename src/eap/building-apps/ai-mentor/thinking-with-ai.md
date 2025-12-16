@@ -1,6 +1,6 @@
 ---
-summary: Understanding the mental model shift from UI-driven to conversational development with AI-powered tools.
-tags: mental models, ai development, llm, conversational development, prompt engineering
+summary: Understanding the conceptual shift from UI-driven to conversational development with AI-powered tools.
+tags: ai development, llm, conversational development, prompt engineering
 guid: f3c8d2a1-7e4b-4d9c-8f2a-9b5c6e3d1a0f
 locale: en-us
 app_type: reactive web apps
@@ -50,11 +50,11 @@ Effective collaboration with Mentor requires understanding what each partner con
 
 **Be explicit.** Clear statements of requirements work best. Specify entities and attributes, define user roles and permissions, and describe UI patterns. The AI cannot infer unstated requirements or fill in missing details like a human colleague.
 
-**Provide structure.** When the data model is known, define it upfront. Specify entity relationships explicitly—"Customer has many Orders (One-to-Many), Order has many Products (Many-to-Many)." Include static entities for status or category fields. More structure enables more accurate generation.
+**Provide structure.** When the data model is known, define it upfront. Specify entity relationships explicitly—"Customer has many Orders (One-to-Many), Order has many Products (Many-to-Many)." Include static entities for status or category fields. More structure in your prompt enables more accurate generation.
 
 **Iterate incrementally.** Start with a foundation and refine through focused prompts. Make one change at a time and evaluate results before continuing. This approach works better with LLMs than attempting to specify everything perfectly upfront.
 
-Common mistakes to avoid: treating the AI like a human colleague who infers context from conversation, expecting perfection in the first generation, or being either too vague ("make it nice") or overwhelming with detail in a single prompt.
+Common mistakes to avoid: treating Mentor like a human colleague who infers context, expecting perfection in the first generation, or providing prompts that are too vague or too detailed.
 
 Consider this contrast:
 
@@ -72,7 +72,7 @@ Start with a foundation that establishes the core data model and main screens. R
 
 The App Editor provides immediate visual feedback with sample data for evaluating each change before moving forward. This rapid iteration enables shaping the app toward requirements without writing code or navigating complex configuration screens.
 
-Mentor App Editor excels at structural changes—entities, data models, roles, standard UI patterns. Custom business logic, complex aggregates, external system integrations, or performance optimization require transitioning to ODC Studio. For supported patterns, changes sync bi-directionally, providing flexibility to use the right tool for each task.
+Mentor App Editor excels at structural changes—entities, data models, roles, standard UI patterns. Custom business logic, complex aggregates, external system integrations, or performance optimization require transitioning to ODC Studio.
 
 Success with AI-assisted development depends on understanding collaboration with a pattern-recognition system rather than instructing a traditional tool. Clear communication, structured thinking, and iterative refinement are core skills.
 

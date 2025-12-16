@@ -64,6 +64,24 @@ Follow these practices when using keyword prompts in the App Editor:
 
 ![Best practices for keyword prompts: specificity, roles, refinement, clarity](images/prompt-best-practices-ams.png "Best Practices for Keyword Prompts")
 
+### Data model prompt examples
+
+Use these prompts to manage entities and attributes:
+
+* **Add entity**: Add entity "TicketStatus" to my app data
+* **Add external entity**: Add entity "Customer" from the "Customers" Salesforce connection
+* **Delete entity**: Delete the entity "TicketComment"
+* **Add attribute**: Add attribute "priority" to my "SupportTickets" entity
+* **Delete attribute**: Delete the attribute "priority"
+
+### Authorization prompt examples
+
+Use these prompts to manage roles and permissions:
+
+* **Add role**: Add a role called Status Manager
+* **Delete role**: Delete the role "Staff"
+* **Edit permissions**: Remove access from the "viewer" role to the "Task" data and related screens
+
 ## Prompts cookbook
 
 The cookbook section focuses on UI expression: turning layout intent, entity structure, static values, roles, and refinement steps into model updates. Mentor interprets pattern keywords (table, card list, master detail, map), associates them with the entities and attributes you mention, and updates screens without raw code. Use incremental refinement prompts over broad restatements.
@@ -153,6 +171,17 @@ Use when you have image or media-heavy datasets.
 
 * Basic: Show `Product` records as a card gallery with image and `Name`.
 * Detailed: Show `Product` records as a gallery with image, `Name`, a category tag, and `Price`.
+
+### List with popup
+
+Use when you have simple entities with 5 or fewer non-ID attributes and want to edit or view records without navigating to a separate screen.
+
+The popup pattern displays edit and view screens within modal dialogs that overlay the list.
+
+#### Prompt progression
+
+* Basic: List `Task` records with popup for editing.
+* Detailed: List `Task` records in a table. Selecting a record opens a popup with `Title`, `DueDate`, `Priority`, and `Status` for editing.
 
 ## Dashboard patterns
 
@@ -257,35 +286,6 @@ Use these approaches to adjust patterns or add functionality without starting ov
 If you chose the wrong pattern, request a replacement: Change the current layout to a master detail layout for `Customer` records.
 
 Mentor suggestions support add operations. To modify existing elements, rephrase changes as additions. Note: Filters, sorting controls, and search inputs require manual configuration. The navigation layout (horizontal or side) applies to your entire app.
-
-## Troubleshooting
-
-Use these targeted fixes when the output doesn't match the prompt intent.
-
-Issue: Pattern not applied.  
-Action: Re-specify the entity, pattern, and key fields in one prompt.
-
-Issue: Missing fields.  
-Action: Add `FieldName` to the `Entity` list.
-
-Issue: Wrong layout.  
-Action: Change layout to `PreferredPattern` for `Entity`.
-
-Issue: No map shown.  
-Action: Confirm the entity has an address or location attribute and restate: Show map next to list using `Location`.
-
-Issue: Pattern changed unexpectedly.  
-Action: Mentor converts patterns automatically to respect constraints. Review **Pattern constraints and auto-adjustments** to see how popup, master detail, and other patterns may be adjusted, then refine your prompt or entity structure.
-
-## Glossary
-
-Quick reference for terms used in the prompt examples.
-
-* Card list: List of records as uniform cards.
-* Card gallery: Image-first variant of a card list.
-* Master detail: Two-pane list plus selected record details.
-* Sidebar (side panel): Persistent vertical navigation or detail area.
-* Tag: Visual label for a static entity value (status, priority).
 
 ## Related
 

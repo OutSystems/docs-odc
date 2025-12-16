@@ -32,7 +32,7 @@ This content covers Mentor for app generation in ODC. For technical debt managem
 
 * **Mentor App Generator** transforms ideas into an OutSystems app. It uses natural language prompts or requirement documents and grounds its suggestions with your existing enterprise data for contextual relevance.
 
-* **Mentor App Editor** lets you visually iterate on the generated app using AI-powered suggestions. For supported patterns, it is bi-directionally interoperable with ODC Studio, providing a workflow from initial idea to deployment.
+* **Mentor App Editor** lets you visually iterate on the generated app using AI-powered suggestions, providing a workflow from initial idea to deployment.
 
 Mentor supports app creation while maintaining development standards.
 
@@ -48,13 +48,13 @@ Mentor supports app creation while maintaining development standards.
 
 Mentor represents a shift from traditional UI-driven development to a prompt-based workflow. Instead of navigating menus and clicking buttons to configure screens and data structures, you describe your requirements in natural language, and Mentor generates the app foundation.
 
-To understand the fundamental mental model shift for AI-assisted development, see [Thinking with AI](thinking-with-ai.md).
+To understand the conceptual shift for AI-assisted development, see [Thinking with AI](thinking-with-ai.md).
 
 ### Think in patterns
 
 Mentor is a pattern-matching system that requires explicit instructions. Unlike a human colleague who can infer intent from context, Mentor interprets your prompts literally and applies recognized patterns to generate OutSystems apps. To work with Mentor:
 
-* **Be explicit**: Clearly state what you want the app to do, what data it needs, and how users will interact with it
+* **Be explicit**: Clearly state what you want the app to do, what data it needs, and how users interact with it
 * **Provide structure**: Define entities, attributes, relationships, and roles when you know them
 * **Iterate**: Start with a foundation and refine it through the App Editor using incremental prompts
 

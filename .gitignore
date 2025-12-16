@@ -15,3 +15,6 @@ config.yml
 
 # Ignore all files inside the 'styles' folder
 styles/*
+
+# Ignore all files inside the '.vscode' folder
+.vscode/*
