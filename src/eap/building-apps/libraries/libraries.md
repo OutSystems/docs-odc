@@ -15,7 +15,7 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
-helpids: 30736
+helpids: 30736, 30740
 ---
 
 # Libraries

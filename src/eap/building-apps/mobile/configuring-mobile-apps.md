@@ -35,6 +35,32 @@ The mobile app properties work correctly only if the extensibility scripts are e
 
 While the mobile app properties sync with the underlying extensibility configuration files, for advanced use cases you can directly edit the [Extensibility configurations](extensibility-configurations-json-schema.md) files. These JSON files offer granular control over your mobile app's build process and enable custom adjustments.
 
+## Configure extensibility configurations {configure-extensibility}
+
+You can configure extensibility configurations using [universal extensibility configurations JSON schema](extensibility-configurations.md) for your mobile app and plugins in ODC Studio.
+
+To configure extensibility configurations, follow these steps:
+
+1. Go to ODC Studio.
+1. Click the app or mobile library name.
+    The edit properties dialog box is displayed.
+1. Select **Extensibility**.
+1. In the JSON editor, define your extensibility configurations using the [universal extensibility configurations schema](extensibility-configurations.md). For detailed information, refer to [App extensibility configuration](extensibility-configurations/extensibility-app-reference.md) and [Library(plugin) extensibility configurations](extensibility-configurations/extensibility-lib-reference.md).
+
+The **Extensibility** includes:
+
+* A JSON text editor that checks your syntax (1).
+* A context pane with items you can reference by dragging or double-clicking (2).
+* A details pane that lets you view the properties without closing the editor (3).
+
+![ODC Studio interface showing the extensibility tab with a JSON text editor, context pane, and details pane.](images/extensibility-tab-odcs.png "Extensibility Tab in ODC Studio")
+
+### Specify framework compatibility
+
+For mobile libraries that wrap mobile plugins, ODC Studio automatically selects the **Cordova** or **Capacitor** checkbox based on your plugin source. For example, if your extensibility configurations reference a Cordova plugin source, the Cordova checkbox is automatically selected.
+
+If your Cordova plugin also works with Capacitor, you can manually select the **Capacitor** checkbox to indicate cross-framework compatibility. This is useful for simple plugins that work across both frameworks.
+
 ## Configure extensibility settings {#configure-extensibility-settings}
 
 You can configure the build time settings for your app using extensibility settings. These settings can be directly added from the ODC Studio. In mobile apps, extensibility settings are a replacement for [ODC app settings](../../manage-platform-app-lifecycle/configure-app-settings.md).
@@ -102,7 +128,7 @@ This example demonstrates how you can reference extensibility settings like `Cam
 
 ## Define extensibility settings
 
-Once the extensibility setting is configured in the ODC Studio and the app is published, you must define the value for the extensibility setting in the ODC Portal. You can define a unique value for for each deployment stage.
+Once the extensibility setting is configured in the ODC Studio and the app is published, you must define the value for the extensibility setting in the ODC Portal. You can define a unique value for each deployment stage.
 
 To define the value for the extensibility setting, follow these steps:
 

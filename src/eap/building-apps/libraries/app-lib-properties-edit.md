@@ -157,10 +157,4 @@ Refer to [Library messages](#messages-library-messages).
 
 ### Extensibility
 
-In the mobile library dialog, the **Extensibility** tab includes the following:
-
-* A JSON text editor that checks your syntax (1).
-* A context pane with items you can reference by dragging or double-clicking (2).
-* A details pane that lets you view the properties without closing the editor (3).
-
-![Image showing extensibility tab](images/extensibility-tab-odcs.png "Extensibility in mobile library dialog")
+For detailed information about configuring extensibility, refer to [Configure extensibility configurations](../../building-apps/mobile/configuring-mobile-apps.md#configure-extensibility-configurations-configure-extensibility).
