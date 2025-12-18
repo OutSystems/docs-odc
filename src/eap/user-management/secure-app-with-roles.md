@@ -25,7 +25,7 @@ topic:
 
 # Secure your app with end-user roles
 
-When you create a role and assign it to a user, you can control access to screens, data, and functionalities of your app. You can manage user roles from ODC (OutSystems Developer Cloud) Studio and from the ODC Portal. In ODC Studio, you design logic to control access.
+When you create a role, and assign it to a user, you can control access to screens, data and functionalities of your app. Use ODC Studio to create roles and design logic to control access. Use the ODC Portal to assign roles to users.
 
 When setting up roles for end-users, consider the following:
 
@@ -34,47 +34,44 @@ When setting up roles for end-users, consider the following:
 * What tasks do you want them to be able to do?
 * What information can end-users see, and what needs to remain inaccessible?
 
-## How to use roles
+## Managing end-user roles
 
 This is an overview of how to use roles:
 
-1. In ODC Studio, create end-user roles.
-1. In the ODC Portal, assign end-user roles to users.
-1. In ODC Studio, use end-user roles to control access to the parts of the app. You can also grant and revoke a role to any user programmatically.
+1. In ODC Studio, create end-user roles and publish the app.
+1. In the ODC Portal, assign end-user roles to users per app and stage (for example, **Development**, **QA** or **Production**).
+1. In ODC Studio, use end-user roles in your logic to control what end-users can do or access. You can also grant and revoke roles programmatically.
 
 ![Diagram illustrating the process of using roles in OutSystems Developer Cloud](images/overview-how-to-use-roles-diag.png "How you can use roles")
 
-You can also use the ODC [User management REST APIs](../reference/apis/identity-v1.md) for programmatically managing the user and access related operations. For detailed information about how to use these APIs, refer to [Getting started](../reference/apis/public-rest-apis/getting-started.md).
+You can also use the ODC [User management REST APIs](../reference/apis/identity-v1.md) to manage users and access programmatically. For detailed information about how to use these APIs, refer to [Getting started](../reference/apis/public-rest-apis/getting-started.md).
 
 ### Create end-user roles {#create-end-user-roles}
 
-To create roles in ODC Studio during design, follow these steps:
+To create end-user roles in ODC Studio, follow these steps:
 
-1. Go to the **Logic** tab > **Roles** > right-click the **Roles** folder > select **Add Role**.
+1. In the **Logic** tab, right-click the **Roles** folder, and select **Add Role**.
+1. In the new role properties, enter **Name** and **Description**.
+1. If you want the role to be available in other apps or libraries, set **Public** to `Yes`. The default is `No`.
+1. Publish the app so the role appears in the ODC Portal.
 
-1. Enter **Name**, **Description**.
-
-1. Select **Yes** from **Public** drop-down to set the role as Public. The default value is No.
-
-When ODC Studio creates a role, it also creates a set of related actions you can use to [manage roles](#manage-roles-in-app-runtime) during runtime.
+When you create a role, ODC Studio creates a set of related actions you can use to [manage roles](#manage-roles-in-app-runtime) during runtime.
 
 ### Assign end-user roles to users
 
-After you publish an app that has end-user roles, the end-user roles are available in ODC Portal. For more details on how to assign end-user roles, refer to [Grant or revoke roles to end-users](grant-and-revoke-user-roles.md#grant-roles-to-end-users).
+After you publish an app, its end-user roles are available in the ODC Portal. For more details on how to assign end-user roles, refer to [Grant or revoke roles to end-users](grant-and-revoke-user-roles.md#grant-roles-to-end-users).
 
-### Use end-user roles to control access in app runtime
+### Use end-user roles to control access in app runtime {#manage-roles-in-app-runtime}
 
-After you create an end-user role, ODC Studio also creates the following actions that enable you to manage the end-user roles in the app logic. These actions let you programmatically check, grant, or revoke a role. The actions apply to the currently logged-in user if the UserId parameter is not specified.
+After you create a role, ODC Studio also creates the following actions to let you manage the roles during the app runtime. These actions let you programmatically check, grant, or revoke a role in the app logic.
 
-|                        |                                      |                   |                                                         |
-| ---------------------- | ------------------------------------ | ----------------- | ------------------------------------------------------- |
-| **Action**             | **Client-side or Server-side logic** | **Example**       | **Description**                                         |
-| CheckROLENAMERole (\*) | Client-side logic                    | CheckManagerRole  | Returns True if the current user has the ROLENAME role. |
-| CheckROLENAMERole      | Server-side logic                    | CheckManagerRole  | Returns True if the current user has the ROLENAME role. |
-| GrantROLENAMERole      | Server-side logic                    | GrantManagerRole  | Grants ROLENAME to the user with the UserId.            |
-| RevokeROLENAMERole     | Server-side logic                    | RevokeManagerRole | Revokes ROLENAME from the user with the UserId.         |
+|Action|Example|Description|
+|:-----|:------|:----------|
+|Check&lt;ROLENAME&gt;Role*|CheckManagerRole|Returns `True` if the current user has the &lt;ROLENAME&gt; role.|
+|Grant&lt;ROLENAME&gt;Role|GrantManagerRole|Grants the &lt;ROLENAME&gt; role to the user with the UserId.|
+|Revoke&lt;ROLENAME&gt;Role|RevokeManagerRole|Revokes the &lt;ROLENAME&gt; role from the user with the UserId.|
 
-**Note:** (*) The light icon denotes the client-side version.
+(*) Available for both client and server logic. The light icon denotes the client-side version. The action applies to the currently logged-in user if the UserId parameter isn't specified.
 
 ## Control access in your app with end-user roles {#control-access-in-your-app-with-end-user-roles}
 
@@ -98,44 +95,39 @@ Role changes take effect at different times depending on how and where you apply
 
 <div class="info" markdown="1">
 
-Always validate user permissions on server-side logic. This is a [best practice](../building-apps/logic/best-practices-logic.md) to protect against malicious users attempting to access or modify unauthorized data.
+Logged-in users need to log out and log back in for changes in their assigned roles or role permissions to become effective.
 
 </div>
 
 ### Restrict access to a screen
 
-To allow only users with a certain role to access a screen, you need to [create some roles first](#create-end-user-roles). You can then allow only registered users to access screens in the app, which is a [best practice to protect your screens](../building-apps/ui/creating-screens/best-practices-screens.md#roles).
+To allow only users with a certain role to access a screen in ODC Studio, you need to [create the role first](#create-end-user-roles). You can then allow only registered users to access screens in the app, which is a [best practice to protect your screens](../building-apps/ui/creating-screens/best-practices-screens.md#roles).
 
-1. Select the screen for which you want to edit the access.
-
-1. From the screen properties, select **Authorization** > **Accessible by** and from the list select **Authenticated users**. The list of roles from all apps under the Organization where the roles are set as public shows in the **Authorization** section.
-
-1. Select at least one user role from the list to give access to the screen.
+1. In the **Interface** > **Elements** tabs, select the screen.
+1. From the screen properties, from the **Accessible by** dropdown, select **Authenticated users**. The **Authorization** section lists all roles set as **public** in the apps of your organization.
+1. In the **Authorization** section, select the checkbox of at least one end-user role to grant access to the screen.
 
 ### Restrict logic flows
 
-In ODC Studio, in the logic of actions, use **CheckROLENAMERole()** function in the If element. You can do that by adding the If element to the logic flow, and then editing the **Condition** field.
+To restrict what a user can do in your app, verify their role on server-side logic. This is a [best practice to protect your app](../building-apps/logic/best-practices-logic.md#validate-permissions-server-side) against malicious users attempting to access or modify unauthorized data.
 
-For example, if you enter `CheckManagerRole()` in the **Condition** field of the If element, the logic of the true branch runs only if the current user has a Manager role.
+1. In ODC Studio, open the action where you want to restrict the logic.
+1. Add an **If** element to the action flow.
+1. In the **Condition** field of the **If** element, use `Check<ROLENAME>Role()`.
 
-<div class="info" markdown="1">
-
-Always validate user permissions on server-side logic. This is a [best practice](../building-apps/logic/best-practices-logic.md) to protect against malicious users attempting to access or modify unauthorized data.
-
-</div>
+For example, set the condition to `CheckManagerRole()`. The logic of the **True** branch runs only if the current user has the Manager role.
 
 ### Restrict access to data
 
-Use **CheckROLENAMERole()** function in expressions to verify that the user of the app has a role.
+To verify that the user has a role in ODC Studio, use `Check<ROLENAME>Role()` in expressions.
 
-For example, you can create a filter in an aggregate with the expression `CheckAdminsRole() = True`. This aggregate now returns data only if the signed-in user has the Admin role, which is a [best practice to protect sensitive data](../building-apps/ui/creating-screens/best-practices-fetch-display-data.md#restrict-access).
+For example, add a filter to an aggregate with `CheckManagerRole() = True`. The aggregate returns data only if the signed-in user has the Manager role, which is a [best practice to protect sensitive data](../building-apps/ui/creating-screens/best-practices-fetch-display-data.md#restrict-access).
 
 ## Related resources
 
-* [Best practices for user governance](best-practices-user-management.md)
-
+* [Best practices for user management in ODC](best-practices-user-management.md)
+* [Grant and revoke user roles](grant-and-revoke-user-roles.md#grant-roles-to-end-users)
+* [Manage end-user groups](end-users/groups.md)
 * [Create, activate, deactivate, and delete users](create-deactivate-and-delete-users.md)
-
 * [Best practices for logic](../building-apps/logic/best-practices-logic.md)
-
 * [Role-based Security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course
