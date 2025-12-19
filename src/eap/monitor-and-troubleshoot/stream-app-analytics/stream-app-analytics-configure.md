@@ -56,21 +56,14 @@ This example demonstrates the process of creating a stream using **New Relic** a
 
         ![ODC Portal interface showing a successful connection message after testing the stream.](images/app-analytics-success-pl.png "Successful Connection")
 
-    * **Unsuccessful connection:** If the connection fails, a warning message is displayed.
+    * **Unsuccessful connection:** If the connection fails, an error message is displayed.
 
-        ![ODC Portal interface showing a warning message after a failed connection test.](images/app-analytics-fail-pl.png "Unsuccessful Connection")
+        ![ODC Portal interface showing an error message after a failed connection test.](images/app-analytics-fail-pl.png "Unsuccessful Connection")
 
         In this case:  
 
-        * Retry the test connection.  
         * Review the destination information you entered to ensure its accuracy.  
         * If the issue persists, consult the relevant troubleshooting documentation for the recommended action.
-
-    <div class="info" markdown="1">
-
-    If a connection can't be established due to changes in the destination URL, authentication credentials, or temporary unavailability of the APM destination tool, the streaming service automatically retries sending the same batch of observability data for a certain period.
-
-    </div>
 
 1. Enter the source details and click **Save**.
 

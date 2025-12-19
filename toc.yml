@@ -659,7 +659,10 @@
         - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-log-ref.md
         - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-traces-ref.md
         - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-metrics-ref.md
-    - href: eap/monitor-and-troubleshoot/audit-trail.md
+    - href: eap/monitor-and-troubleshoot/audit-trail/audit-trail.md
+    - topics:
+        - href: eap/monitor-and-troubleshoot/audit-trail/audit-trail-streaming.md
+        - href: eap/monitor-and-troubleshoot/audit-trail/audit-trail-requirements.md
     # Manage technical debt
     - href: eap/monitor-and-troubleshoot/manage-technical-debt/managing-tech-debt.md
     - topics:

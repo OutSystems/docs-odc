@@ -21,20 +21,24 @@ coverage-type:
 
 Allowlisting is a security mechanism that restricts access to a network or system by only allowing specific IP addresses to connect.
 
-In ODC, there are two main scenarios where you may need to configure allowlisting:
+In ODC, you may need to configure allowlisting in the following scenarios:
 
 * [Runtime applications accessing internal resources](#runtime-accessing-internal):
 
     Your ODC apps may need to call internal APIs, databases, or other private services. In this case, the recommended approach is to use  [ODC Private Gateway](private-gateway.md). As a fallback option, you may also allowlist the ODC runtime egress IPs in your firewalls or access policies so that these outbound requests are accepted.
 
-* [Streaming app analytics](#streaming-app-analytics):
+* [Streaming observability data](#streaming-app-analytics):
 
-    With [Analytics stream](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md), the ODC [Data platform](platform-architecture/intro.md#data-platform) can stream app analytics to third-party APM tools. To receive them, the APM tool must expose a reachable ingestion endpoint. Customers can secure this setup by allowlisting the ODC Analytics stream egress IPs so only authorized traffic is permitted.
+    With [Analytics stream](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md), the ODC [Data platform](platform-architecture/intro.md#data-platform) can stream observability data to third-party APM tools. To receive them, the APM tool must expose a reachable ingestion endpoint. You can secure this setup by allowlisting the ODC Data platform egress IPs so only authorized traffic is permitted.
+
+* [Streaming audit trail logs](#streaming-audit-trail):
+
+    With [audit trail streaming](../monitor-and-troubleshoot/audit-trail/audit-trail-streaming.md), the ODC [Data platform](platform-architecture/intro.md#data-platform) can stream audit trail logs to SIEM tools. To receive them, the SIEM tool must expose a reachable ingestion endpoint. You can secure this setup by allowlisting the ODC Data platform egress IPs so only authorized traffic is permitted.
 
 <div class="info" markdown="1">
 
 OutSystems tries to ensure that these IP addresses remain unchanged as much as possible, however, the list of public IPs may change over time due to infrastructure updates, though such changes would be rare and unexpected.
-If you'd like to be informed of any IP address changes, please subscribe to updates to the [OutSystems status page](https://status.outsystems.com/).
+If you want to be informed of any IP address changes, please subscribe to updates to the [OutSystems status page](https://status.outsystems.com/).
 
 </div>
 
@@ -114,11 +118,11 @@ Each region is presented in its own section, review only the ones relevant to yo
 
 #### Europe (Frankfurt)
 
-| Stage type | IP addresses |
-| ----- | ----- |
-| Development | 3.74.249.67, 3.74.54.131, 52.58.149.36 |
-| Non-production | 3.126.108.4, 3.72.145.236, 3.74.85.23 |
-| Production | 18.157.156.208, 18.197.117.16, 3.74.248.145 |
+|Stage type|IP addresses|
+|-----|-----|
+|Development|3.74.249.67, 3.74.54.131, 52.58.149.36|
+|Non-production|3.126.108.4, 3.72.145.236, 3.74.85.23|
+|Production|18.157.156.208, 18.197.117.16, 3.74.248.145|
 
 #### South Africa (Cape Town)
 
@@ -200,21 +204,25 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 108.137.107.109, 108.137.147.80, 16.78.156.70 |
 | Production | 108.137.159.172, 16.79.51.184, 43.218.83.26 |
 
-## Streaming app analytics {#streaming-app-analytics}
+## Streaming observability data {#streaming-app-analytics}
 
-[Analytics stream](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md) uses the ODC Data platform to continuously stream app analytics to external Application Performance Monitoring (APM) tools.
+[Analytics stream](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md) uses the ODC Data platform to continuously stream observability data to external application performance monitoring (APM) tools.
 
-Before configuring IP allowlisting, review the [Analytics stream connectivity requirements](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md#prerequisites).
+Before configuring IP allowlisting, review the [connectivity requirements](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md#prerequisites).
 
-When your APM tool is hosted in a private network, you must allow inbound access only from the ODC Data platform egress IP addresses. To do so, you need to know:
+## Streaming audit trail logs {#streaming-audit-trail}
+
+[Audit trail streaming](../monitor-and-troubleshoot/audit-trail/audit-trail-streaming.md) uses the ODC Data platform to securely stream platform audit logs to Security Information and Event Management (SIEM) tools for real-time monitoring and compliance.
+
+Before configuring IP allowlisting, review the [Requirements for streaming audit trail logs](../monitor-and-troubleshoot/audit-trail/audit-trail-requirements.md).
+
+## Data platform public IP addresses {#data-platform-public-ip-addresses}
+
+When your APM or SIEM tool is hosted in a private network, you must only allow inbound access from the ODC Data platform egress IP addresses. To do so, you need to know:
 
 * The region where your ODC tenant is hosted.
 
-* The public IP addresses of the Data platform region that serves your ODC region.
-
-### Data platform public IP addresses
-
-Use the following table to identify the Data platform region that serves your ODC region and the corresponding IP addresses you must allowlist.
+* The public IP addresses of the Data platform region that serves your ODC region and the corresponding IP addresses you must allowlist.
 
 | Customer regions | Data platform region | Data platform IPs |
 | --- | --- | --- |
