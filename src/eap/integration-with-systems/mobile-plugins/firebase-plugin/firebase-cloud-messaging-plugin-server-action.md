@@ -1,10 +1,10 @@
 ---
-summary: Learn how to implement and manage Firebase Cloud Messaging in OutSystems Developer Cloud (ODC) for enhanced mobile app notifications.
+summary: Learn how to implement and manage Firebase Cloud Messaging in OutSystems Developer Cloud (ODC) for mobile app notifications.
 tags: firebase, notifications, mobile app development, push notifications, plugin integration
 locale: en-us
 guid: a8f7486e-a655-4da7-bed6-37d6867166b2
 app_type: mobile apps
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5002%3A165&mode=design&t=qrb6BRX1TGRFDKu7-1
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5002-165
 platform-version: odc
 audience:
   - mobile developers
@@ -21,31 +21,27 @@ coverage-type:
 
 <div class="info" markdown="1">
 
-This article applies only to Firebase Cloud Messaging plugin version 1.0.0 and newer. The newer versions use [server actions](#server-actions-reference) to manage the notifications.
+This article applies only to Firebase Cloud Messaging plugin version 1.0.0 and newer. The newer versions use [server actions](#server-actions-reference) to manage the notifications. From plugin version `3.0.0` onwards, the server actions are no longer part of the plugin. They have been moved to a separate library called **Firebase Cloud Messaging Server Actions**, available on Forge.
 
-If you are still using Firebase Cloud Messaging plugin version 0.1.2 and older, OutSystems recommends that you migrate to version 1.0.0 and newer by June 2024.
+If you are still using Firebase Cloud Messaging plugin version 0.1.2 and older, OutSystems recommends that you migrate to version 1.0.0 and newer.
 
 </div>
 
-The [Firebase Cloud Messaging plugin](https://www.outsystems.com/forge/component-overview/12174/cloud-messaging-plugin-firebase) allows you to set a notification experience that starts the Firebase cross-platform messaging solution. This plugin lets you send normal and silent notifications to your mobile app users. Normal notifications can include customizable actions and sounds.
-
-Normal notifications have a UI that displays visual and auditory cues. The cues either display in the app's notifications area or in the app's scope. Silent notifications don't display any visual cues. Notifications can deliver a data package to the app (called extra data) in the form of a key-value pairs list.
-
-OutSystems also has notification features you can use to create custom actions and custom sounds.
+The **Firebase Cloud Messaging plugin** allows you to set a notification experience that starts the Firebase cross-platform messaging solution. This plugin lets you send normal and silent notifications to your mobile app users. Normal notifications can include customizable actions and sounds.
 
 <div class="info" markdown="1">
 
-You can install the Firebase Cloud Messaging Plugin from the Forge in ODC Portal.
+You can install the Firebase Cloud Messaging plugin from the Forge in ODC Portal.
 
 </div>
 
-Normal notifications have a UI that displays visual and auditory cues. The cues either display in the notifications area of the app or in the scope of the app. Silent notifications don't display any visual cues. Notifications can deliver a data package to the app (called extra data) in the form of a key-value pairs list.
+Normal notifications have a UI that displays visual and auditory cues. The cues either display in the notifications area of the app or in the scope of the app. Silent notifications don't display any visual cues. Notifications can deliver a data package to the app (called extra data). This data takes the form of a key-value pairs list.
 
 OutSystems also has notification features you can use to create custom actions and custom sounds.  
 
 Following is a high-level process describing how to implement and manage the notifications of your OutSystems app.
 
-1. Use the **Firebase Cloud Messaging Plugin’s Server Actions** to set up a back-end notification service.
+1. Use the **Firebase Cloud Messaging Server Actions** library to set up a back-end notification service.
 
 1. Use the **Firebase Cloud Messaging Plugin's Client Actions** to implement basic notification functions in your app.
 
@@ -79,7 +75,7 @@ This sample app shows you how to do the following:
 
 The following steps describe how to create a back-end notification service and how to prepare a mobile app to respond with push notifications:
 
-1. [Set up a back-end notification service using the send Notifications Server Actions](#set-up-a-back-end-notification-service).
+1. [Set up a back-end notification service using the Firebase Cloud Messaging Server Actions library](#set-up-a-back-end-notification-service).
 
 1. [Enable basic notification functions in your app using the plugin's actions](#enable-basic-notification-functions-in-your-app).
 
@@ -101,23 +97,20 @@ The following steps describe how to create a back-end notification service and h
 
 The Cloud Messaging Configurator, version 0.1.2 and older, is deprecated. For more information, see [Firebase Cloud Messaging HTTP protocol](https://firebase.google.com/docs/cloud-messaging/http-server-ref). This means the **v2** and **v1** endpoints are no longer functional.
 
-The Cloud Messaging Configurator's REST APIs have been replaced by server actions available on the Firebase Cloud Messaging Plugin. If you are consuming these APIs, they must be replaced with the server actions as soon as possible.
+The Cloud Messaging Configurator's REST APIs have been replaced by server actions available on the Firebase Cloud Messaging Plugin until version `2.3.5`. Starting on version `3.0.0`, they were removed from the plugin and are available in the Firebase Cloud Messaging Server Actions instead. If you are still consuming the REST APIs, they must be replaced with the server actions as soon as possible.
 
 </div>
 
 To set up a back-end notification service, do the following:
 
-1. Install the **Cloud Messaging Plugin** Forge component in your environment.
-    This component includes four **Server Actions** that send notifications to a list of users or topics and one **Server Action** to generate an **Access Token**.
+1. Install the **Firebase Cloud Messaging Server Actions** Forge component in your environment. This component includes four **Server Actions** that send notifications to a list of users or topics. It also includes one **Server Action** to generate an **Access Token**.
 
 1. Create a new app to serve as your backend notification service.
 
-   This app can be a Reactive Web or Mobile app.
+1. In the newly created application, consume the **Firebase Cloud Messaging Server Actions** library. Add the server actions, along with its associated static entities.
 
-1. In the newly created application, consume the **Firebase Cloud Messaging Plugin** and add the server Actions, along with its associated static entities.
-
-   ![Screenshot showing how to import the Server Actions.](images/fcm-server-actions-import.png "Firebase Messaging Cloud Plugin Server Actions Import")
-   ![Screenshot showing how to import the Static Entities.](images/fcm-static-entities-import.png "Firebase Messaging Cloud Plugin Static Entities Import")
+   ![Screenshot showing how to import the Server Actions.](images/fcm-server-actions-import.png "Firebase Cloud Messaging Server Actions Import")
+   ![Screenshot showing how to import the Static Entities.](images/fcm-static-entities-import.png "Firebase Cloud Messaging Server Actions Static Entities Import")
 
 1. Get your Firebase Service Account File via **Firebase Console > Settings > Service Accounts > Generate new private key**
 
@@ -171,11 +164,9 @@ To set up a back-end notification service, do the following:
 
 1. Create the logic to store and manage your Firebase Access Token in the app you just created.
 
-    Call the new server action GetAcessToken and store its return value. This token expires after one hour and, to avoid calling the action GetAccessToken unnecessarily, its value, along with its creation time, should be stored in a Database table. Before calling the server action, check if the token has expired and only then refresh its value.
+    Call the new server action GetAcessToken and store its return value. This token expires after one hour. To avoid calling the action GetAccessToken unnecessarily, store its value and creation time in a Database table. Before calling the server action, check if the token has expired and only then refresh its value.
 
-Now you can start to create the UI for your back-end notification service. For example, to send a notification to a user on the associated Firebase project (using an app with the Cloud Messaging plugin), associate the **SendNotificationToUsers** Server Action to a button and add logic to retrieve your Service Account file.
-
-If you want to send the notification to specific users, note that these are identified by their Firebase Token, that can be obtained with the **GetToken** client action. You can find this ID on the Firebase Project Settings under the Cloud Messaging tab.
+Now you can start to create the UI for your back-end notification service. If you want to send the notification to specific users, note that these are identified by their Firebase Token, that can be obtained with the **GetToken** client action of the **Firebase Cloud Messaging Plugin**.
 
 To send a notification to all users, or to all Android or iOS users, you need to fill the **SenderID** structure attribute of the **SendRequest** parameter. You can find this ID on the Firebase Project Settings under the Cloud Messaging tab.
 
@@ -193,7 +184,7 @@ For topic notifications (**SendNotificationToTopics**, **SendSilentNotificationT
 
 <div class="info" markdown="1">
 
-Starting from Firebase Cloud Messaging Plugin version 0.1.3 and onwards, sending notifications to an unlimited list of users is not supported.
+From Firebase Cloud Messaging plugin version 0.1.3 onwards, sending notifications to more than 100 users in a single request is not supported. This limitation also applies to the Firebase Cloud Messaging Server Actions library.
 
 </div>
 
@@ -204,7 +195,9 @@ Both server actions have a limit of 100 users (**SendToUsers** parameter), throw
 Inside a Timer, you can iterate over your user list and send notifications to up to 100 users at a time.
 
 <div class="info" markdown="1">
+
 To learn more about how to use Timers, see the [documentation](https://success.outsystems.com/documentation/outsystems_developer_cloud/building_apps/use_timers/).
+
 </div>
 
 ## Enable basic notification functions in your app
@@ -253,7 +246,7 @@ Finally, you might want to give the opportunity to your user to clear all the ap
 
 ### Enable notifications with custom actions
 
-To enhance your notification with custom actions you must use the **Plugin's Server Actions**, using the **ActionList** parameter inside the Notification parameter on the **SendNotificationToTopics** or **SendNotificationToUsers** Server Actions.
+To enhance your notification with custom actions you must use the **Firebase Cloud Messaging Server Actions** library, using the **ActionList** parameter inside the **Notification** parameter on the **SendNotificationToTopics** or **SendNotificationToUsers** Server Actions.
 
 We offer the following types of custom actions:
 
@@ -269,13 +262,13 @@ We offer the following types of custom actions:
 
 ### Enable notifications with custom sounds
 
-To enhance your notification with custom sounds,  follow these steps:
+To enhance your notification with custom sounds, follow these steps:
 
 1. Put the .wav files you want to use as notification sounds into a .zip file called **sounds.zip**.
 
 1. Upload the .zip file to the app’s Resources folder.
 
-1. Use the **Plugin's Server Actions**, using the **Sound** parameter inside the **Notification** parameter on the **SendNotificationToTopics** or **SendNotificationToUsers methods**.
+1. Use the **Firebase Cloud Messaging Server Actions** library, using the **Sound** parameter inside the **Notification** parameter on the **SendNotificationToTopics** or **SendNotificationToUsers** methods.
 
 It is important to note the following requirements for custom sounds:
 
@@ -290,11 +283,11 @@ It is important to note the following requirements for custom sounds:
 By default, a Cloud Messaging notification uses the app's launcher icon as the notification icon. However, for **Android** notifications, you can also define a custom icon and a custom icon color.
 To setup a custom icon and custom icon color for Android notifications, follow these steps:
 
-1. Upload your custom icon (and it's various resolutions) to the resources of your application
+1. Upload your custom icon (and it's various resolutions) to the resources of your mobile app
 
     ![Screenshot showing the different custom icon resolutions in application's Resources](images/firebase-messaging-custom-icon-resources-odcs.png "Custom Android Icon Resources")
 
-1. Update the Application's Extensibility Configuration JSON so that the different icon resolutions are added to their correct paths
+1. Update the application's Extensibility Configuration JSON so that the different icon resolutions are added to their correct paths
 
 (Recommended) Using the universal extensibility configurations schema:
 
@@ -363,7 +356,7 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 
 Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
-1. In your push notification request, either via the plugin's `SendNotificationToUsers` or `SendNotificationToTopic` Server Actions, specify the custom icon and color
+1. In your push notification request, either via the `SendNotificationToUsers` or `SendNotificationToTopic` server actions available in the Firebase Cloud Messaging Server Actions library, specify the custom icon and color in the **Android** attribute.
 
     ![Screenshot showing Android notification configuration](images/fcm-custom-android-notification-odcs.png "Custom Android Icon and Color Configuration")
 
@@ -392,7 +385,7 @@ Add this block to each screen that might handle the notification content.
 
 When the end-user clicks on a notification in the notification center, the app opens by default. If you want your app to handle the notification click, you can use the **NotificationsHandler** block and define a handler for the **NotificationClicked** event.
 
-If you want to navigate to a screen inside your app when the end-user clicks on a notification, you can use the **BuildInternalDeepLink** client action from the plugin. You should pass the name of the destination screen to the **Notification > DeepLink** attribute of the **SendRequest** parameter of the server action you called to deliver the notification (**SendNotificationToUsers** or **SendNotificationToTopics**). If you want the **BuildInternalDeepLink** action to build a deep link with query parameters, you should set the **key-value** pairs using the **ExtraDataList** attribute.
+If you want to navigate to a screen inside your app when the end-user clicks on a notification, you can use the **BuildInternalDeepLink** client action from the plugin. You should pass the name of the destination screen to the **Notification > DeepLink** attribute of the **SendRequest** parameter of the server action you called to send the notification (**SendNotificationToUsers** or **SendNotificationToTopics**). If you want the **BuildInternalDeepLink** action to build a deep link with query parameters, you should set the **key-value** pairs using the **ExtraDataList** attribute.
 
 Our Sample App has this scenario implemented. If you want your app to do something else when the end-user clicks on a notification, simply implement your logic in the handler you create for the **NotificationClicked** event.
 
@@ -402,7 +395,7 @@ When sending a notification with a deep link, you should avoid using the followi
 
 </div>
 
-## Optional setup for notification Channel Name and Description - Android only
+## Optional setup for notification channel name and description - Android only
 
 <div class="info" markdown="1">
 
@@ -410,7 +403,7 @@ This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-p
 
 </div>
 
-By default, the Cloud Messaging plugin defines values for the notification channel name and description on local notifications. But in some instances, you might want to define a different default value by adding the following name and value properties on the extensibility configurations of your app.
+By default, the Cloud Messaging plugin defines values for the notification channel name and description on local notifications. However, in some instances, you might want to define a different default value. You can do this by adding the following name and value properties on the extensibility configurations of your app.
 
 (Recommended) Using the universal extensibility configurations schema:
 
@@ -462,7 +455,7 @@ This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-p
 
 </div>
 
-If you plan on having push notifications that link to other iOS apps (e.g. a push notification that when clicked opens Google Maps mobile app), then you'll need to provide what are the schemes you'll plan to use. You can do that by providing a list of comma-separated values on the extensibility configurations of your app.
+If you plan on having push notifications that link to other iOS apps (for example, a push notification that when clicked opens Google Maps mobile app), you need to provide the schemes you plan to use. You can do that by providing a list of comma-separated values on the extensibility configurations of your app.
 
 (Recommended) Using the universal extensibility configurations schema:
 
@@ -501,7 +494,7 @@ Note that you can only use the Cordova-based extensibility for MABS versions low
 
 If you want to update the notification channel name and description on Android for Capacitor apps, you should set the **NotificationChannelDefaultName** and **NotificationChannelDefaultDescription** extensibility settings on your application’s detail page on the ODC Portal, under the Mobile distribution tab.
 
-If you want to allow specific custom schemes when clicking push notifications (equivalent to Cordova's **APPLICATION_SCHEMES**), you should use a build action. To configure the build action, follow these steps:
+If you want to allow specific custom schemes when clicking push notifications (equivalent to Cordova's **APPLICATION_SCHEMES**), use a build action. Follow these steps to configure the build action:
 
 1. Create a .json file to configure the build action to add the **LSApplicationQueriesSchemes** key to your app's **Info.plist** file, like this example below:
 
@@ -526,7 +519,7 @@ If you want to allow specific custom schemes when clicking push notifications (e
         }
         ```
 
-1. Then, in your app, go to the Resources folder in the Data tab and import a new resource: your .json file. Set the “Deploy Action” to “Deploy to Target Directory".
+1. In your app, go to the Resources folder in the Data tab and import a new resource: your .json file. Set the "Deploy Action" to "Deploy to Target Directory".
 
 1. Finally, include the file in your app’s Extensibility Configurations, like so:
 
@@ -561,9 +554,9 @@ The feature is disabled by default. To enable it, `SetDeliveryMetricsExportToBig
 
 ## Authenticate push notification requests to FCM HTTP v1 API
 
-Firebase Cloud Messaging offers a variety of uses cases with their HTTP v1 API which aren't covered by the Cloud Messaging Plugin's Server Actions, and as they can be very use-case specific, these Server Actions won't ever fully cover 100% of the HTTP v1 API.
+Firebase Cloud Messaging offers a variety of uses cases with their HTTP v1 API which aren't covered by the Server Actions offered in the Firebase Cloud Messaging Server Actions library (and until version `2.3.5` of the Firebase Cloud Messaging Plugin), and as they can be very use-case specific. As such, our Server Actions won't ever fully cover 100% of the HTTP v1 API.
 
-Nevertheless, starting from version `2.2.0` of the plugin, it's possible to use the token generated with the `GetAccessToken` Server Action to authenticate requests for Firebase's HTTP v1 API.
+Nevertheless, starting from version `2.2.0` of the plugin, you can use the token generated with the `GetAccessToken` Server Action to authenticate requests for Firebase's HTTP v1 API. Note that starting on version `3.0.0` of the plugin, this server action has been moved to the Firebase Cloud Messaging Server Actions library.
 
 <div class="info" markdown="1">
 
@@ -642,7 +635,7 @@ For both iOS and Android.
 
 Firebase SDKs for Android and iOS don't support subscribing to topics if the name contains spaces, like `TV Shows`.
 
-### On Transitive Dependencies
+### On transitive dependencies
 
 Starting on version 4.0.0 of the plugin, builds of your app can fail if:
 
