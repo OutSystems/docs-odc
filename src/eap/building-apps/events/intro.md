@@ -35,25 +35,25 @@ Here are some examples of events that can occur in an app.
 
 An event includes metadata, such as the event type, timestamp, source of the event, and payload, along with additional data about the event's occurrence.
 
-## Components of EDA
+## Components of event-driven architecture
 
 The main components of event-driven architecture are:
 
-**Event producers**
+* **Event producers**
 
-**Producer** apps that define and trigger an event based on a specific action or change in state. When an event is triggered, the producer app publishes the event in the event router.
+* **Producer** apps that define and trigger an event based on a specific action or change in state. When an event is triggered, the producer app publishes the event in the event router.
 
-**Event consumers**
+* **Event consumers**
 
-**Consumer** apps that subscribe to specific events through the event router and perform actions based on the event data they receive.
+* **Consumer** apps that subscribe to specific events through the event router and perform actions based on the event data they receive.
 
-**Event router**
+* **Event router**
 
 The medium through which events flow from producers to consumers. It is the middleware that manages the distribution of events in the system.
 
 ![Diagram showing event producer, event router, and event subscriber apps in event-driven architecture.](images/events-architecture-diag.png "Event-driven architecture components")
 
-## How EDA works
+## How event-driven architecture works
 
 Here's an example of an event-driven architecture for an eCommerce site.
 
@@ -61,7 +61,7 @@ Customer actions from various sources such as web app, mobile app, and telephone
 
 ![Diagram illustrating event producers and consumers in an eCommerce site using event-driven architecture.](images/event-driven-architecture-example-diag.png "Event-driven architecture example for eCommerce")
 
-## Benefits of EDA
+## Benefits of event-driven architecture
 
 Here are some benefits of adopting event-driven architecture:
 
@@ -71,7 +71,7 @@ Here are some benefits of adopting event-driven architecture:
 
 * Enhances system reliability and fault tolerance. If one app fails, other apps can continue operating independently, minimizing the impact of failures on the overall system.
 
-## Use cases of EDA
+## Use cases of event-driven architecture
 
 Here are some scenarios where EDA can be used.
 
@@ -91,4 +91,4 @@ Here are some scenarios where EDA can be used.
 
 * [Event-driven architecture in ODC](backend-events.md)
 
-* [Implements events in ODC](implement-events.md)
+* [Implement events in ODC](implement-events.md)
