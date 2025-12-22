@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Asset Repository API",
-    "description": "REST endpoints for retrieving information about assets revisions.\n",
+    "description": "REST endpoints for retrieving information about assets revisions. ",
     "version": "v1"
   },
   "servers": [
@@ -14,22 +14,19 @@
       "url": "https://{odc-portal-domain}/api/asset-repository/v1",
       "description": "Replace {odc-portal-domain} with the domain of your organization.",
       "variables": {
-        "odc-portal-domain": {
-          "default": "ODC_PORTAL_DOMAIN",
+        "{odc-portal-domain}": {
+          "default": "{odc-portal-domain}",
           "description": "The domain of your organization"
         }
       }
     }
   ],
-  "security": [{
-    "bearerAuth": []
-  }],
   "paths": {
     "/assets": {
       "post": {
         "tags": [],
         "summary": "Creates a new revision of an asset.",
-        "description": "Creates a new revision for an asset from a source code file (OML/XIF).\n\nIf the asset does not exist, it creates the asset and its first revision.\n\nYou can provide the source code as an application/octet-stream or as a multipart/form-data file.\n\nTo create an asset, API Client needs the **Asset management > Create** permission.\n\nTo create a new revision for an existing asset, API Client needs the **Asset management > Change** permission.",
+        "description": "If the asset does not exist, it creates the asset and its first revision.\n\nThe new revision can be created from a source file (OML/XIF) or, for new assets, created empty or cloned from a template.\n\nWhen providing the source file, you can pass it as a fileUri or send the binary directly using the application/octet-stream or multipart/form-data content types.\n\nTo create an asset, API Client needs the **Asset management > Create** permission.\n\nTo create a new revision for an existing asset, API Client needs the **Asset management > Change** permission.",
         "operationId": "AssetRepository_CreateAssetRevision",
         "requestBody": {
           "content": {
@@ -100,6 +97,16 @@
           },
           "403": {
             "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "content": {
               "application/json": {
                 "schema": {
@@ -1714,6 +1721,37 @@
         "additionalProperties": false,
         "description": "Represents a version of an application."
       },
+      "AssetCreateFromTemplateRequest": {
+        "type": "object",
+        "properties": {
+          "assetName": {
+            "type": "string",
+            "description": "Name of the new asset to be created. Mandatory when creating an empty asset or an asset based on a template.",
+            "nullable": true
+          },
+          "assetType": {
+            "type": "string",
+            "description": "Type of the new asset to be created. Mandatory when creating an empty asset or an asset based on a template.\n\nRecognized values are [WebApplication, MobileApplication, MobileLibrary, LowCodeLibrary, Agent, Workflow]",
+            "nullable": true
+          },
+          "templateKey": {
+            "type": "string",
+            "description": "Asset key to be used as template for the new asset, optional and can be null. To get the template key, use GET /assets and filter by template type (refer to the endpoint description)",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the asset. Optional and can be null.",
+            "nullable": true
+          },
+          "iconBase64": {
+            "type": "string",
+            "description": "Base64 data containing the icon for the new asset. Optional and can be null.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "AssetDependencyProducer": {
         "required": [
           "key"
@@ -1858,7 +1896,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Extra embedded fields to include in the output",
+            "description": "Extra embedded fields to include in the output, recognized values are [releaseNote, icon, sourceCode, signature, metadata]",
             "nullable": true
           }
         },
@@ -1884,6 +1922,14 @@
           "runtime": {
             "type": "string",
             "description": "If the asset is of the 'External Library' type, this field will inform us in which runtime the high-code was written to run",
+            "nullable": true
+          },
+          "mobileFrameworks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "If the asset is of the 'Mobile Library' type, this field will inform us in which mobile frameworks are supported",
             "nullable": true
           },
           "assemblyVersion": {
@@ -2146,6 +2192,15 @@
             "description": "(Optional) Allows providing application source code for the new version (OML or XIF formats are supported). \n\nIf an OML or XIF is provided, its key is used to associate to the correct application - The application key must always match the OML/XIF key",
             "format": "uri",
             "nullable": true
+          },
+          "assetCreationDetails": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AssetCreateFromTemplateRequest"
+              }
+            ],
+            "description": "(Optional) Allows providing a configuration to create a new asset as first revision, either from a template or as an empty OML \n\nOnly usable when the source file is not provided.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2217,6 +2272,14 @@
           "runtime": {
             "type": "string",
             "description": "If the asset is of the 'External Library' type, this field will inform us in which runtime the high-code was written to run",
+            "nullable": true
+          },
+          "mobileFrameworks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "If the asset is of the 'Mobile Library' type, this field will inform us in which mobile frameworks are supported",
             "nullable": true
           },
           "assemblyVersion": {
@@ -2338,7 +2401,13 @@
           "SelfHostedManage",
           "LogStreamingManage",
           "AuditTrailView",
-          "AuditTrailStreamingConfiguration"
+          "AuditTrailStreamingConfiguration",
+          "UpdatesView",
+          "UpdatesManage",
+          "SubscriptionView",
+          "SubscriptionManage",
+          "OrgManage",
+          "AuditStreamingManage"
         ],
         "type": "string"
       },
@@ -2405,14 +2474,6 @@
         },
         "additionalProperties": false,
         "description": "Represents an upload response"
-      }
-    },
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "description": "Enter your bearer token in the format 'Bearer {token}'",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
       }
     }
   }
