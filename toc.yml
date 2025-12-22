@@ -759,6 +759,9 @@
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/set-version-release-notes.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/asset-configurations.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/deploy-asset.md    
+        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/release-library.md
+    - href: eap/reference/apis/external-library-generation-api-v1.md
+    - href: eap/reference/apis/public-rest-apis/upload-external-library-api.md
 
 # Reference
 - href: eap/reference/intro.md

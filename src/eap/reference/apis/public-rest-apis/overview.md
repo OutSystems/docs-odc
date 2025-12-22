@@ -93,6 +93,16 @@ The Asset Configurations REST API enables you to manage configuration settings f
 
 For detailed information about the endpoints, refer to [Asset Configurations API reference](../asset-config-v1.md).
 
+### External library generation
+
+The External Library Generation REST API enables you to generate and manage external libraries from high-code packages. You can use this API to:
+
+* Generate and manage external libraries from .NET packages to integrate high-code functionality into your ODC apps.
+
+* Retrieve information about your external libraries.
+
+For detailed information about the endpoints, refer to [External Library Generation API reference](../external-library-generation-api-v1.md).
+
 ## Terminology mapping between the ODC Portal and ODC APIs
 
 A **stage** in ODC refers to the place where you deploy your apps, such as the Development stage and the Production stage. In ODC REST APIs, the **ODC stage** is represented as an **environment** resource.

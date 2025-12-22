@@ -30,3 +30,4 @@ As part of a CI/CD pipeline, you can use OutSystems APIs to:
 * [Set the release version and release notes](set-version-release-notes.md)
 * [Review asset configurations](asset-configurations.md)
 * [Deploy your asset to the target stage](deploy-asset.md)
+* [Release a library](release-library.md)

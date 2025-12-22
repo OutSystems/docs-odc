@@ -1,0 +1,1104 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "External Library Generation Service API",
+    "description": "API for generating and managing external libraries from high-code packages.\n",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://ODC_PORTAL_DOMAIN/api/external-libraries/v1",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/external-libraries/v1",
+      "description": "Replace {odc-portal-domain} with the domain of your organization.",
+      "variables": {
+        "odc-portal-domain": {
+          "default": "ODC_PORTAL_DOMAIN",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/generation-operations": {
+      "post": {
+        "tags": [
+          "GenerationOperations"
+        ],
+        "summary": "Generate an external library from a high-code package.",
+        "description": "Asynchronously generates an external library using the HighCode package, containing the compiled code of the library.\n\nRequired permissions:\n - If generation operation corresponds to a new library: **Asset management > Create**\n - If generation operation corresponds to a new version of an existing library: **Asset management > Change** for that specific library key",
+        "operationId": "GenerationOperations_CreateGenerationOperation",
+        "requestBody": {
+          "description": "External library generation operation creation request.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Models.GenerationOperationCreationRequest"
+                  }
+                ],
+                "description": "Request to create a generation operation."
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The generation operation key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.CreationOperationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request is malformed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "Required permissions:\n - If generation operation corresponds to a new library: **Asset management > Create**\n - If generation operation corresponds to a new version of an existing library: **Asset management > Change** for that specific library key"
+      },
+      "get": {
+        "tags": [
+          "GenerationOperations"
+        ],
+        "summary": "Returns the list of generation operations.",
+        "description": "Gets the list of all available generation operations.\n\nAPI Client needs at least one permission.",
+        "operationId": "GenerationOperations_GetGenerationOperations",
+        "responses": {
+          "200": {
+            "description": "The list of generation operations.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.GenerationOperationListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "Client cancelled the execution of the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/generation-operations/{operationKey}": {
+      "delete": {
+        "tags": [
+          "GenerationOperations"
+        ],
+        "summary": "Deletes a generation operation.",
+        "description": "Deletes a specific generation operation and all associated logs.\n\nRequired permissions:\n - If generation operation corresponds to a new library: **Asset management > Create**\n - If generation operation corresponds to a new version of an existing library: **Asset management > Change** for that specific library key",
+        "operationId": "GenerationOperations_DeleteGenerationOperationByOperationKey",
+        "parameters": [
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "The operation key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Generation operation was successfully deleted."
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Generation Operation not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method Not Allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "Client cancelled the execution of the request."
+          }
+        },
+        "x-os-permissions": "Required permissions:\n - If generation operation corresponds to a new library: **Asset management > Create**\n - If generation operation corresponds to a new version of an existing library: **Asset management > Change** for that specific library key"
+      },
+      "get": {
+        "tags": [
+          "GenerationOperations"
+        ],
+        "summary": "Returns the details of a generation operation.",
+        "description": "Returns the details of a generation operation its key.\n\nAPI Client needs at least one permission.",
+        "operationId": "GenerationOperations_GetGenerationOperationByOperationKey",
+        "parameters": [
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "The operation key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The generation operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.GenerationOperationResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "Client cancelled the execution of the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Generation Operation not found."
+          }
+        }
+      }
+    },
+    "/generation-operations/{operationKey}/contents": {
+      "get": {
+        "tags": [
+          "GenerationOperations"
+        ],
+        "summary": "Returns the contents of the specified generation operation.",
+        "description": "Returns the actions and structures defined on the high code package corresponding to the specified generation operation\n\nRequired permissions:\n - If generation operation corresponds to a new library: **Asset management > Create**\n - If generation operation corresponds to a new version of an existing library: **Asset management > Change** for that specific library key",
+        "operationId": "GenerationOperations_GetGenerationOperationContents",
+        "parameters": [
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "The generation operation key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The generation operation contents.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.GenerationOperationContentsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Generation operation key is not a valid GUID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "generation operation not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "Client cancelled the execution of the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "Required permissions:\n - If generation operation corresponds to a new library: **Asset management > Create**\n - If generation operation corresponds to a new version of an existing library: **Asset management > Change** for that specific library key"
+      }
+    },
+    "/generation-operations/{operationKey}/log-messages": {
+      "get": {
+        "tags": [
+          "GenerationOperations"
+        ],
+        "summary": "Get log messages.",
+        "description": "Returns the validation messages for the specified generation operation.\n\nRequired permissions:\n - If generation operation has no library key associated (failed to get extracted from high code): **Asset management > Create** or **Asset management > Change**\n - If generation operation corresponds to a new library: **Asset management > Create**\n - If generation operation corresponds to a new version of an existing library: **Asset management > Change** for that specific library key",
+        "operationId": "GenerationOperations_GetGenerationOperationLogMessages",
+        "parameters": [
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "The generation operation key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The generation operation details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.GenerationOperationLogMessagesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Generation operation key is not a valid GUID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Generation operation not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "Client cancelled the execution of the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "Required permissions:\n - If generation operation has no library key associated (failed to get extracted from high code): **Asset management > Create** or **Asset management > Change**\n - If generation operation corresponds to a new library: **Asset management > Create**\n - If generation operation corresponds to a new version of an existing library: **Asset management > Change** for that specific library key"
+      }
+    },
+    "/assets/{assetKey}/revisions/{revision}/source-code-download": {
+      "post": {
+        "tags": [
+          "SourceCodeDownload"
+        ],
+        "summary": "Create Download Operation.",
+        "description": "Asynchronously initiates the process to download the source code of a published external library.\n\nRequired permissions: **Asset management > Change**",
+        "operationId": "SourceCodeDownload_CreateDownloadOperation",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "Key of the desired external library.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revision",
+            "in": "path",
+            "description": "Id of the desired revision.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "The download operation key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.CreationOperationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request is malformed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Specified asset and revision not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "Required permissions: **Asset management > Change**"
+      }
+    },
+    "/assets/{assetKey}/revisions/{revision}/source-code-download/{operationKey}": {
+      "get": {
+        "tags": [
+          "SourceCodeDownload"
+        ],
+        "summary": "Get Download Operation.",
+        "description": "Retrieves the current status of a download operation and the source code download URL if ready\n\nRequired permissions: **Asset management > Change**",
+        "operationId": "SourceCodeDownload_GetDownloadUri",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "Key of the desired external library.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revision",
+            "in": "path",
+            "description": "Id of the desired revision.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "Key of the download operation.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The download operation status and the source code download URL.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.UploadResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request is malformed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Specified asset, revision or download operation not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "Required permissions: **Asset management > Change**"
+      }
+    },
+    "/uploads": {
+      "get": {
+        "tags": [
+          "Upload"
+        ],
+        "summary": "Returns an Upload Schema.",
+        "description": "Returns an Upload Schema containing a pre-signed uploadURL for uploading external library source code and an associated downloadURL to retrieve the uploaded source code.\n\nRequired permissions: **Asset management > Create**",
+        "operationId": "Upload_UploadOperation",
+        "responses": {
+          "200": {
+            "description": "UploadResponse.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.UploadResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request is malformed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "Required permissions: **Asset management > Create**"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Microsoft.AspNetCore.Mvc.ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code applicable to the problem.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation of the error.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem.",
+            "nullable": true
+          },
+          "traceId": {
+            "type": "string",
+            "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
+          }
+        },
+        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+      },
+      "OutSystems.ExternalLibraryGeneration.Application.Enums.ChangeType": {
+        "enum": [
+          "None",
+          "Added",
+          "Removed",
+          "Updated",
+          "Unchanged"
+        ],
+        "type": "string"
+      },
+      "OutSystems.ExternalLibraryGeneration.Application.Enums.JobValidationMessageType": {
+        "enum": [
+          "None",
+          "Information",
+          "Warning",
+          "Error"
+        ],
+        "type": "string"
+      },
+      "OutSystems.ExternalLibraryGeneration.Application.Enums.ParameterType": {
+        "enum": [
+          "None",
+          "Input",
+          "Output"
+        ],
+        "type": "string"
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.ActionResponse": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the action",
+            "nullable": true
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.ParameterResponse"
+            },
+            "description": "List of parameters of the action",
+            "nullable": true
+          },
+          "changeType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Application.Enums.ChangeType"
+              }
+            ],
+            "description": "Change compared with previous version"
+          },
+          "iconBase64": {
+            "type": "string",
+            "description": "Icon of the action represented in Base64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.AttributeResponse": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the attribute",
+            "nullable": true
+          },
+          "dataType": {
+            "type": "string",
+            "description": "OutSystems data type of the attribute",
+            "nullable": true
+          },
+          "changeType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Application.Enums.ChangeType"
+              }
+            ],
+            "description": "Change compared with previous version"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.CreationOperationResponse": {
+        "type": "object",
+        "properties": {
+          "operationKey": {
+            "type": "string",
+            "description": "The operation key",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.GenerationOperationContentsResponse": {
+        "type": "object",
+        "properties": {
+          "actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.ActionResponse"
+            },
+            "description": "List of actions defined in the HCPkg. Contains the delta for the currently published version in the update scenario",
+            "nullable": true
+          },
+          "structures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.StructureResponse"
+            },
+            "description": "List of structures defined in the HCPkg. Contains the delta for the currently published version in the update scenario",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.GenerationOperationListResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.GenerationOperationResponse"
+            },
+            "description": "List of generation operations, sorted by CreatedAt descending",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.GenerationOperationLogMessagesResponse": {
+        "type": "object",
+        "properties": {
+          "validationMessages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.GenerationOperationValidationMessageResponse"
+            },
+            "description": "List of validation messages",
+            "nullable": true
+          },
+          "finishedAt": {
+            "type": "string",
+            "description": "Timestamp of when the creation process ended, in UTC",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.GenerationOperationResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Id of the external library generation operation.",
+            "format": "uuid"
+          },
+          "filename": {
+            "type": "string",
+            "description": "Name of the file containing the high code package.",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Timestamp of when the operation was created, in UTC",
+            "format": "date-time"
+          },
+          "libraryKey": {
+            "type": "string",
+            "description": "Key of the library generated from the high code package. Only available after status is ReadyForReview inclusive",
+            "format": "uuid",
+            "nullable": true
+          },
+          "libraryName": {
+            "type": "string",
+            "description": "Name of the library generated from the high code package. Only available after status is ReadyForReview inclusive",
+            "nullable": true
+          },
+          "libraryDescription": {
+            "type": "string",
+            "description": "Description of the library generated from the high code package. Only available after status is ReadyForReview inclusive",
+            "nullable": true
+          },
+          "libraryIconUri": {
+            "type": "string",
+            "description": "Uri to be used to fetch the library's icon. This Uri will have an expiration time of 30 minutes",
+            "nullable": true
+          },
+          "libraryUri": {
+            "type": "string",
+            "description": "Uri to be used to fetch the library.",
+            "nullable": true
+          },
+          "isNewLibrary": {
+            "type": "boolean",
+            "description": "States if the external library was already published before. Only available after status is ReadyForReview inclusive",
+            "nullable": true
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Enums.GenerationOperationStatus"
+              }
+            ],
+            "description": "Status of the external library generation operation"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response object for generation operations."
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.GenerationOperationValidationMessageResponse": {
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "type": "string",
+            "description": "Error Code for reference",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "description": "Detailed message of the error",
+            "nullable": true
+          },
+          "type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Application.Enums.JobValidationMessageType"
+              }
+            ],
+            "description": "Type of the validation message"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.ParameterResponse": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the parameter",
+            "nullable": true
+          },
+          "dataType": {
+            "type": "string",
+            "description": "OutSystems data type of the parameter",
+            "nullable": true
+          },
+          "parameterType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Application.Enums.ParameterType"
+              }
+            ],
+            "description": "Type of parameter"
+          },
+          "changeType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Application.Enums.ChangeType"
+              }
+            ],
+            "description": "Change compared with previous version"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.StructureResponse": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the Structure",
+            "nullable": true
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.AttributeResponse"
+            },
+            "description": "List of attributes of the structure",
+            "nullable": true
+          },
+          "changeType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Application.Enums.ChangeType"
+              }
+            ],
+            "description": "Change compared with previous version"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.UploadResponse": {
+        "required": [
+          "downloadUrl",
+          "uploadUrl"
+        ],
+        "type": "object",
+        "properties": {
+          "uploadUrl": {
+            "type": "string",
+            "description": "The pre-signed URL to upload the HighCode package.",
+            "nullable": true
+          },
+          "downloadUrl": {
+            "type": "string",
+            "description": "The pre-signed URL to download the HighCode package.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Enums.GenerationOperationStatus": {
+        "enum": [
+          "None",
+          "Generating",
+          "GenerationError",
+          "ReadyForReview",
+          "Downloading",
+          "DownloadError",
+          "Completed"
+        ],
+        "type": "string",
+        "description": "Status of a generation operation in the v1beta1 API"
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Models.GenerationOperationCreationRequest": {
+        "type": "object",
+        "properties": {
+          "fileName": {
+            "type": "string",
+            "description": "The name of the file that contains the high code binary."
+          },
+          "highCodeBinaryUri": {
+            "type": "string",
+            "description": "The Uri to fetch the zip archive containing the high code binary."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request to create a generation operation."
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}

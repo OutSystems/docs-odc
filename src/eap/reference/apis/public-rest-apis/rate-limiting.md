@@ -34,6 +34,7 @@ The rate limits per organization are as follows:
 | [Asset Repository](https://www.outsystems.com/tk/redirect?g=9598cb1d-a50e-48d7-a43a-6582e43fd48b) | 100 | `POST /assets`: **10** |
 | [Asset Configurations](https://www.outsystems.com/tk/redirect?g=cb142916-250b-42b9-a983-7ccdaa028480) | 100 | None |
 | [Dependency Management](https://www.outsystems.com/tk/redirect?g=8a687cef-649f-4387-85e3-027954ac92cf) | 100 | None |
+| [External Library Generation](https://www.outsystems.com/tk/redirect?g=47875596-0618-4d20-824a-fbbaea2d353b) | 100 | `POST` methods: **10** (per endpoint) |
 
 ## Exceeding the rate limit
 
