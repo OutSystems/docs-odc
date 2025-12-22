@@ -27,13 +27,9 @@ In ODC, you may need to configure allowlisting in the following scenarios:
 
     Your ODC apps may need to call internal APIs, databases, or other private services. In this case, the recommended approach is to use  [ODC Private Gateway](private-gateway.md). As a fallback option, you may also allowlist the ODC runtime egress IPs in your firewalls or access policies so that these outbound requests are accepted.
 
-* [Streaming observability data](#streaming-app-analytics):
+* [Streaming observability and audit trails](#streaming-analytics-audit-trail): You can stream [observability data](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md) to APM tools and [audit trail logs](../monitor-and-troubleshoot/audit-trail/audit-trail-streaming.md) to SIEM tools. To receive them, these tools must expose a reachable ingestion endpoint. You can secure this setup by allowlisting the ODC Data platform egress IPs so only authorized traffic is permitted.
 
-    With [Analytics stream](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md), the ODC [Data platform](platform-architecture/intro.md#data-platform) can stream observability data to third-party APM tools. To receive them, the APM tool must expose a reachable ingestion endpoint. You can secure this setup by allowlisting the ODC Data platform egress IPs so only authorized traffic is permitted.
-
-* [Streaming audit trail logs](#streaming-audit-trail):
-
-    With [audit trail streaming](../monitor-and-troubleshoot/audit-trail/audit-trail-streaming.md), the ODC [Data platform](platform-architecture/intro.md#data-platform) can stream audit trail logs to SIEM tools. To receive them, the SIEM tool must expose a reachable ingestion endpoint. You can secure this setup by allowlisting the ODC Data platform egress IPs so only authorized traffic is permitted.
+* [Platform unification between O11 and ODC](#platform-unification): For self-managed O11 infrastructures integrating with ODC, the O11 LifeTime must allow inbound connections from ODC. You can secure this setup by allowlisting the ODC Platform egress IPs.
 
 <div class="info" markdown="1">
 
@@ -204,25 +200,21 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 108.137.107.109, 108.137.147.80, 16.78.156.70 |
 | Production | 108.137.159.172, 16.79.51.184, 43.218.83.26 |
 
-## Streaming observability data {#streaming-app-analytics}
+## Streaming analytics and audit trail data {#streaming-analytics-audit-trail}
 
-[Analytics stream](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md) uses the ODC Data platform to continuously stream observability data to external application performance monitoring (APM) tools.
+ODC can stream data to external monitoring and compliance tools:
 
-Before configuring IP allowlisting, review the [connectivity requirements](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md#prerequisites).
+* **[Analytics stream](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md)**: Continuously streams observability data to external application performance monitoring (APM) tools.
 
-## Streaming audit trail logs {#streaming-audit-trail}
+* **[Audit trail streaming](../monitor-and-troubleshoot/audit-trail/audit-trail-streaming.md)**: Streams platform audit logs to Security Information and Event Management (SIEM) tools for real-time monitoring and compliance.
 
-[Audit trail streaming](../monitor-and-troubleshoot/audit-trail/audit-trail-streaming.md) uses the ODC Data platform to securely stream platform audit logs to Security Information and Event Management (SIEM) tools for real-time monitoring and compliance.
-
-Before configuring IP allowlisting, review the [Requirements for streaming audit trail logs](../monitor-and-troubleshoot/audit-trail/audit-trail-requirements.md).
-
-## Data platform public IP addresses {#data-platform-public-ip-addresses}
-
-When your APM or SIEM tool is hosted in a private network, you must only allow inbound access from the ODC Data platform egress IP addresses. To do so, you need to know:
+Both features use the same ODC Data platform egress IP addresses. When your APM or SIEM tool is hosted in a private network, you must allow inbound access from the ODC Data platform egress IP addresses. To do so, you need to know:
 
 * The region where your ODC tenant is hosted.
 
 * The public IP addresses of the Data platform region that serves your ODC region and the corresponding IP addresses you must allowlist.
+
+The following table lists the Data platform IPs for each customer region. All connections use TCP port 443.
 
 | Customer regions | Data platform region | Data platform IPs |
 | --- | --- | --- |
@@ -230,3 +222,26 @@ When your APM or SIEM tool is hosted in a private network, you must only allow i
 | South America (São Paulo) | South America (São Paulo) | 54.94.69.128, 18.229.244.40, 15.229.64.9 |
 | Europe (Frankfurt), Europe (London), Middle East (Tel Aviv), Middle East (UAE), South Africa (Cape Town) | Europe (Frankfurt) | 3.73.166.181, 52.59.51.255, 18.194.166.197 |
 | Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta), Asia Pacific (Hong Kong) | Asia Pacific (Singapore) | 52.76.74.134, 18.143.210.11, 52.74.33.192 |
+
+## Platform unification between O11 and ODC{#platform-unification}
+
+For Platform unification between O11 and ODC, the O11 LifeTime of self-managed infrastructures must allow inbound connections from ODC. Configure your firewall to allow TCP port 443 from the following IP addresses based on your ODC region:
+
+| Region | IP addresses |
+| --- | --- |
+| US East (North Virginia) | 34.238.16.57, 35.171.116.62, 44.205.76.95 |
+| Canada (Central) | 15.156.111.116, 15.157.157.17, 99.79.146.82 |
+| South America (São Paulo) | 15.229.160.206, 15.229.178.94, 18.230.53.140 |
+| Europe (London) | 13.41.171.86, 18.133.210.215, 3.11.141.71 |
+| Europe (Ireland) | 108.128.109.103, 54.72.146.7, 63.34.80.90 |
+| Europe (Frankfurt) | 18.156.39.89, 3.72.181.27, 3.74.37.89 |
+| South Africa (Cape Town) | 13.247.5.224, 15.240.8.216, 16.28.128.241 |
+| Middle East (Tel Aviv) | 51.17.142.29, 51.17.176.86, 51.17.196.54 |
+| Middle East (UAE) | 3.29.29.17, 40.172.51.231, 40.172.58.40 |
+| Asia Pacific (Mumbai) | 13.200.88.64, 3.111.176.42, 43.204.167.155 |
+| Asia Pacific (Singapore) | 13.215.4.92, 13.250.223.227, 13.250.228.210 |
+| Asia Pacific (Seoul) | 3.35.244.148, 43.200.195.81, 54.180.169.238 |
+| Asia Pacific (Tokyo) | 13.231.89.119, 54.150.81.106, 54.92.69.227 |
+| Asia Pacific (Hong Kong) | 16.162.148.223, 16.163.135.72, 43.199.227.110 |
+| Asia Pacific (Sydney) | 52.64.237.50, 52.64.66.142, 54.79.135.111 |
+| Asia Pacific (Jakarta) | 108.137.120.230, 16.79.9.133, 43.218.208.114 |
