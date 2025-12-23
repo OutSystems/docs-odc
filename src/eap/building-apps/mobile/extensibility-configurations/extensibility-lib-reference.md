@@ -43,10 +43,10 @@ The extensibility configuration for libraries allows the declaration of the asso
 ```json
 {
   "pluginConfigurations": {
-    ...
+    // ...
   },
   "buildConfigurations": {
-    ...
+    // ...
   }
 }
 
@@ -101,6 +101,12 @@ Example:
 #### preferences
 
 A set of Cordova [preferences](https://cordova.apache.org/docs/en/11.x/config_ref/#preference) associated with the plugin. Configuration values can be static or a reference to a Setting. Additionally, configurations can be declared globally or per platform, with the platform-specific value taking precedence over the global one.
+
+`preferences`
+
+* Optional
+* Type: `object`
+* Placeholders: `extensibility settings`
 
 **Example**
 
@@ -170,11 +176,11 @@ Example:
         },
         "AnotherPlugin": {
           "ios": {
-            "Pref5Dynamic": "$settings.Pref5DynamicValue",
+            "Pref5Dynamic": "$extensibilitySettings.Pref5DynamicValue",
             "Pref6Static": "tangerine"
           },
           "android": {
-            "Pref5Dynamic": "$settings.Pref5DynamicValue",
+            "Pref5Dynamic": "$extensibilitySettings.Pref5DynamicValue",
             "Pref6Static": "lemon"
           }
         }
@@ -188,6 +194,7 @@ Example:
 
 * Optional  
 * Type: `object`
+* Placeholders: `extensibility settings`
 
 **Properties**
 
@@ -205,6 +212,7 @@ Plugin configurations specific to Android. If a configuration with the same name
 
 * Optional  
 * Type: `object`
+* Placeholders: `extensibility settings`
 
 Properties:
 
@@ -220,6 +228,7 @@ Plugin configurations specific to iOS. If a configuration with the same name exi
 
 * Optional  
 * Type: `object`
+* Placeholders: `extensibility settings`
 
 **Properties**
 
@@ -255,6 +264,7 @@ Declares which Android permissions or iOS usage descriptions the plugin defines.
 
 * Optional  
 * Type: `object`
+* Placeholders: `extensibility settings`
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -269,6 +279,7 @@ List of android permissions required by the plugin.
 
 * Optional  
 * Type: `array` of `string`
+* Placeholders: `extensibility settings`
 
 #### ios {#ios}
 
@@ -302,6 +313,7 @@ In the above example, both usage description keys `NSCameraUsageDescription` and
 
 * Optional  
 * Type: `object`
+* Placeholders: `extensibility settings`
 
 **Properties**
 
@@ -322,6 +334,12 @@ Any property name is valid as long as the value follows the following schema
 | :---- | :---- | :---- |
 | description | `string` | Optional |
 
+`description`
+
+* Optional
+* Type: `string`
+* Placeholders: `extensibility settings`
+
 ## buildConfigurations
 
 `buildConfigurations`
@@ -331,11 +349,11 @@ Any property name is valid as long as the value follows the following schema
 
 ### properties {#properties-1}
 
-| Property | Type | Required |  |
+| Property | Type | Required | |
 | :---- | :---- | :---- | :---- |
-| [cordova](#cordova-1) | `object` | Required if `capacitor` is missing |  |
-| [capacitor](#capacitor-1) | `object` | Required if `cordova` is missing |  |
-| [resources](#resources) | `array of object` | Optional |  |
+| [cordova](#cordova-1) | `object` | Required if `capacitor` is missing | |
+| [capacitor](#capacitor-1) | `object` | Required if `cordova` is missing | |
+| [resources](#resources) | `array of object` | Optional | |
 | [buildAction](#buildaction) | `object` | Optional | false |
 
 Set of build time configurations allowing to configure the plugin sources and build time resources.
@@ -419,6 +437,7 @@ A valid npm [package spec](https://docs.npmjs.com/cli/v10/using-npm/package-spec
 
 * Required  
 * Type: `string`
+* Placeholders: `extensibility settings`
 
 #### variables
 
@@ -437,7 +456,7 @@ An object with the plugin variables required for installation. Object key maps t
           "integerVar": 1,
           "numberVar": 8.9,
           "boolVar": true,
-          "placeholderVar": "$settings.SomeSetting"
+          "placeholderVar": "$extensibilitySettings.SomeSetting"
         }
       }
     }
@@ -451,6 +470,7 @@ Variable values can be a static value or a reference to a Setting.
 
 * Optional  
 * Type: `object`
+* Placeholders: `extensibility settings`
 
 **Properties**
 
@@ -510,6 +530,7 @@ A valid npm [package spec](https://docs.npmjs.com/cli/v10/using-npm/package-spec
 
 * Required  
 * Type: `string`
+* Placeholders: `extensibility settings`
 
 ### resources
 
@@ -523,13 +544,13 @@ Set of resources that can be copied from a specific source to a target location 
     "resources": {
       "ios": [
         {
-          "source": "$settings.GoogleServiceInfoPlist",
+          "source": "$extensibilitySettings.GoogleServiceInfoPlist",
           "target": "GoogleService-Info.plist"
         }
       ],
       "android": [
         {
-          "source": "$settings.GoogleServicesJsonBinary",
+          "source": "$extensibilitySettings.GoogleServicesJsonBinary",
           "target": "android/app/src/main/res/google-services.json"
         }
       ]
@@ -577,14 +598,21 @@ A list of resources to be added to the generated iOS project.
 
 `source`
 
-The source for the resource. One of:
+The source for the resource. Can be one of the following:
 
 * `string` representing a file path relative to the root folder of the generated project  
-* Reference to a Setting that holds a `string` value representing a path relative to the root folder of the generated project. E.g. `$settings.SomeTextSetting`  
-* Reference to a Binary Setting  
+* Reference to a Setting that holds a `string` value representing a path relative to the root folder of the generated project. E.g. `$extensibilitySettings.SomeTextSetting`  
+* Reference to a Binary Setting via `$extensibilitySettings`
 * Reference to an OutSystems application image via `$images`
+* Reference to an OutSystems application resource via `$resources`
 
-`Target`
+Use one of the above.
+
+* Required
+* Type: `string`
+* Placeholders: `extensibility settings`, `extensibility binary settings`, `images`, `resources`
+
+`target`
 
 | ❗️For Android, the target location is relative to the android project located under `android/` For iOS, the target location is relative to the App folder inside `ios/App/App/` |
 | :---- |
@@ -593,6 +621,10 @@ The source for the resource. One of:
 | :---- |
 
 The target location for the resource in the form of a file path
+
+* Required
+* Type: `string`
+* Placeholders: `extensibility settings`
 
 ### buildAction
 
@@ -615,9 +647,9 @@ If you have build configurations defined at the plugin and app level, the plugin
     "buildAction": {
         "config": "$resources.buildAction.json",
         "parameters": {
-"parameter1" : "parameterValue1",
-"parameter2" : "parameterValue2"
-}
+        "parameter1" : "parameterValue1",
+        "parameter2" : "parameterValue2"
+      }
     }
   }
 }
@@ -625,20 +657,26 @@ If you have build configurations defined at the plugin and app level, the plugin
 
 #### config
 
-Reference to the resource uploaded on IDE, under resources. The file must have _Deploy Action_ as _Deploy to Target Directory._
+Reference to the resource uploaded on IDE, under resources. The file must have _Deploy Action_ as _Deploy to Target Directory._ An extensibility setting can also be used to reference a file path.
 
-| ❗️settings not supported |
+| ❗️extensibility binary settings not supported |
 | :---- |
+
+`config`
 
 * Required  
 * Type: `object`
+* Placeholders: `extensibility settings`, `resources`
 
 #### parameters
 
 The parameters to pass values to the variables defined on the json.
 
+`parameters`
+
 * Optional  
 * Type: `object`
+* Placeholders: `extensibility settings`
 
 <div class="info" markdown="1">
 

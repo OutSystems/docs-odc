@@ -126,6 +126,7 @@ Key-value pair of [Cordova preferences](https://cordova.apache.org/docs/en/12.x/
 
 * Optional  
 * Type: `object`
+* Placeholders: `extensibility settings`
 
 Properties:
 
@@ -161,6 +162,7 @@ Define Android permissions or iOS usage descriptions in the application.
 
 * Optional  
 * Type: `object`
+* Placeholders: `extensibility settings`
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -174,7 +176,8 @@ Override the user-visible name for the application
 `displayName`
 
 * Optional  
-* Type: `string`  
+* Type: `string`
+* Placeholders: _none_
 * Defaults to the OutSystems application name
 
 ### orientation
@@ -185,6 +188,7 @@ The orientation of the app's user interface
 
 * Optional  
 * Type: `string`
+* Placeholders: _none_
 
 #### Orientation Constraints
 
@@ -207,6 +211,7 @@ The device family being targeted by application.
 
 * Optional  
 * Type: `string`
+* Placeholders: _none_
 
 #### targetDevice constraints
 
@@ -225,7 +230,8 @@ The WebView and splash screen background color
 `backgroundColor`
 
 * Optional  
-* Type: `string`  
+* Type: `string`
+* Placeholders: _none_
 * Defaults to the primary color of the OutSystems application
 
 #### backgroundColor constraints
@@ -251,7 +257,8 @@ Defines how the mobile app handles deeplinks. It can be the default handler, an 
 `deeplinksHandler`
 
 * Optional  
-* Type: `string`  
+* Type: `string`
+* Placeholders: _none_
 * Default value: `default`
 
 #### deeplinksHandler constraints
@@ -292,6 +299,7 @@ Defines the supported network protocol for the app: HTTPS or both HTTPS and HTTP
 
 * Optional  
 * Type: `string`
+* Placeholders: _none_
 
 #### connections constraints
 
@@ -313,6 +321,7 @@ Sets the type of trusted certificate authorities for the app: `system`, `custom`
 
 * Optional  
 * Type: `string`
+* Placeholders: _none_
 
 #### trustedCA constraints
 
@@ -362,6 +371,7 @@ Sets the overall system bars style. The style is based on the device appearance.
 
 * Optional  
 * Type: `string`
+* Placeholders: _none_
 
 #### style constraints
 
@@ -381,6 +391,7 @@ String to append to the original user agent of the app's main WebView
 
 * Optional  
 * Type: `string`
+* Placeholders: _none_
 
 ### splashscreen
 
@@ -423,6 +434,7 @@ Control for how long, in milliseconds, the launch splash screen is visible when 
 
 * Optional  
 * Type: `number`
+* Placeholders: _none_
 
 ### autoHide
 
@@ -432,6 +444,7 @@ Whether to auto hide the splash after `duration`
 
 * Optional  
 * Type: `boolean`
+* Placeholders: _none_
 
 ### webViewUpdate
 
@@ -472,6 +485,7 @@ Determines whether the alert is shown when the device’s WebView version is bel
 
 * Optional
 * Type: `boolean`
+* Placeholders: _none_
 * Defaults to true
 
 ### title
@@ -482,6 +496,7 @@ Title text displayed in the update alert dialog
 
 * Optional
 * Type: `string`
+* Placeholders: _none_
 
 ### message
 
@@ -491,6 +506,7 @@ Message text displayed in the update alert dialog
 
 * Optional
 * Type: `string`
+* Placeholders: _none_
 
 ### updateButtonLabel
 
@@ -500,6 +516,7 @@ Label for the button that takes the user to the Google Play Store to update WebV
 
 * Optional
 * Type: `string`
+* Placeholders: _none_
 
 ## buildConfigurations
 
@@ -525,13 +542,13 @@ Set of resources that can be copied from a specific source to a target location 
     "resources": {
       "ios": [
         {
-          "source": "$settings.GoogleServiceInfoPlist",
+          "source": "$extensibilitySettings.GoogleServiceInfoPlist",
           "target": "GoogleService-Info.plist"
         }
       ],
       "android": [
         {
-          "source": "$settings.GoogleServicesJsonBinary",
+          "source": "$extensibilitySettings.GoogleServicesJsonBinary",
           "target": "android/app/src/main/res/google-services.json"
         }
       ]
@@ -579,14 +596,21 @@ Properties:
 
 `source`
 
-The source for the resource. One of:
+The source for the resource. Can be one of the following:
 
 * `string` representing a file path relative to the root folder of the generated project  
-* Reference to a Setting that holds a `string` value representing a path relative to the root folder of the generated project. E.g. `$settings.SomeTextSetting`  
-* Reference to a Binary Setting  
+* Reference to a Setting that holds a `string` value representing a path relative to the root folder of the generated project. E.g. `$extensibilitySettings.SomeTextSetting`
+* Reference to a Binary Setting via `$extensibilitySettings`
 * Reference to an OutSystems application image via `$images`
+* Reference to an OutSystems application resource via `$resources`
 
-`Target`
+Use one of the above.
+
+* Required
+* Type: `string`
+* Placeholders: `extensibility settings`, `extensibility binary settings`, `images`, `resources`
+
+`target`
 
 | ❗️For Android, the target location is relative to the android project located under `android/` For iOS, the target location is relative to the App folder inside `ios/App/App/` |
 | :---- |
@@ -595,6 +619,10 @@ The source for the resource. One of:
 | :---- |
 
 The target location for the resource in the form of a file path
+
+* Required
+* Type: `string`
+* Placeholders: `extensibility settings`
 
 ### splashscreens
 
@@ -665,14 +693,18 @@ Customize the logo based splash screen experience. When using `appIcon`, the app
 
 `logo`
 
-* Optional  
-* Type: `string`
-
-The value of this property can be:
+The value of this property can be one of the following:
 
 * `string` representing a file path relative to the root folder of the generated project  
 * Reference to an OutSystems application image via `$images`
+* Reference to an OutSystems application resource via `$resources`
 * Literal value `appIcon`
+
+Use one of the above.
+
+* Optional  
+* Type: `string`
+* Placeholders: `images`, `resources`
 
 ### buildAction
 
@@ -695,9 +727,9 @@ If you have build configurations defined at the plugin and app level, the plugin
     "buildAction": {
         "config": "$resources.buildAction.json",
         "parameters": {
-"parameter1" : "parameterValue1",
-"parameter2" : "parameterValue2"
-}
+        "parameter1" : "parameterValue1",
+        "parameter2" : "parameterValue2"
+      }
     }
   }
 }
@@ -705,20 +737,26 @@ If you have build configurations defined at the plugin and app level, the plugin
 
 #### config
 
-Reference to the resource uploaded on IDE, under resources. The file must have _Deploy Action_ as _Deploy to Target Directory._
+Reference to the resource uploaded on IDE, under resources. The file must have _Deploy Action_ as _Deploy to Target Directory._ An extensibility setting can also be used to reference a file path.
 
-| ❗️settings not supported |
+| ❗️extensibility binary settings not supported |
 | :---- |
+
+`config`
 
 * Required  
 * Type: `object`
+* Placeholders: `extensibility settings`, `resources`
 
 #### parameters
 
 The parameters to pass values to the variables defined on the json.
 
+`parameters`
+
 * Optional  
 * Type: `object`
+* Placeholders: `extensibility settings`
 
 <div class="info" markdown="1">
 
