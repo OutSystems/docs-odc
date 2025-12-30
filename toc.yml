@@ -753,9 +753,11 @@
     - href: eap/reference/apis/dependency-v1.md
     - href: eap/reference/apis/asset-v1.md
     - href: eap/reference/apis/asset-config-v1.md
+    - href: eap/reference/apis/code-quality-api-v1.md
     - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/intro.md
     - topics:
-        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/select-revision-build.md 
+        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/select-revision-build.md
+        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/code-quality.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/generated-code-sast.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/set-version-release-notes.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/asset-configurations.md

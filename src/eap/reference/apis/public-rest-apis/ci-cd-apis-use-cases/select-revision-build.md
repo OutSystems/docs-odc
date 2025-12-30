@@ -67,6 +67,7 @@ To get the revision and build of the asset in your CI/CD pipeline, follow these 
 
 ## Next steps
 
+* [Evaluating code quality](code-quality.md)
 * [Retrieving generated code for SAST analysis](generated-code-sast.md)
 * [Setting the release version and release notes](set-version-release-notes.md)
 * [Reviewing asset configurations](asset-configurations.md)

@@ -49,6 +49,12 @@ For more information about findings, refer to [Working with Code quality](workin
 
 Both developers and technical leads use **Code quality** during the development phase. Developers fix technical debt before apps move to the testing phase. Technical leads identify improvement areas and common pitfalls, allowing them to grow their teams' proficiency.
 
+<div class="info" markdown="1">
+
+For programmatic access to **Code quality** data, you can use the [Code quality API](../../reference/apis/code-quality-api-v1.md) to integrate code quality functionality into your own tools and workflows. For more information on how to programmatically retrieve the code quality analysis of an asset, refer to [Evaluating code quality using OutSystems APIs](../../reference/apis/public-rest-apis/ci-cd-apis-use-cases/code-quality.md).
+
+</div>
+
 ## For technical leads
 
 As a technical lead, you can view code quality metrics across your team's apps. This shows you the current state of technical debt, which apps have the most issues, and what types of problems are most common.

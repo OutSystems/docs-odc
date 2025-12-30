@@ -59,4 +59,5 @@ You can perform SAST analysis by adding the generated code to a repository where
 ## Next steps
 
 * [Setting the release version and release notes](set-version-release-notes.md)
+* [Reviewing asset configurations](asset-configurations.md)
 * [Deploying your asset to the target stage](deploy-asset.md)

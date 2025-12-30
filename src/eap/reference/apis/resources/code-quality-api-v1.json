@@ -1,0 +1,2101 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Code Quality API",
+    "description": "Provides APIs to submit code analysis requests and retrieve information about code quality findings, application scores, and analysis results.",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://ODC_PORTAL_DOMAIN/api/code-quality/v1",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/code-quality/v1",
+      "description": "Replace {odc-portal-domain} with the domain of your organization.",
+      "variables": {
+        "odc-portal-domain": {
+          "default": "ODC_PORTAL_DOMAIN",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/code-analyses/{analysisKey}": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves the details of a code analysis request.",
+        "description": "Retrieves the current status and results of a code analysis request, including quality score and findings.\n\n\n\nExample: GET /code-quality/v1/code-analyses/be77b25f-c738-462f-8f19-7114fc4f9923\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "operationId": "CodeAnalysisControllerV_GetAnalysisRequestStatus",
+        "parameters": [
+          {
+            "name": "analysisKey",
+            "in": "path",
+            "description": "The unique identifier (GUID) of the analysis request",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Limit",
+            "in": "query",
+            "description": "Number of findings to return in the response.",
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "example": 25
+            },
+            "example": 25
+          },
+          {
+            "name": "Offset",
+            "in": "query",
+            "description": "Number of findings to skip for pagination.",
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32",
+              "example": 10
+            },
+            "example": 10
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CodeAnalysisStatusResponseV1"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CodeAnalysisStatusResponseV1"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+      }
+    },
+    "/code-analyses": {
+      "post": {
+        "tags": [],
+        "summary": "Submits a code analysis request for an asset revision.",
+        "description": "Initiates code analysis for a specific asset revision, returning an analysis key for status tracking.\n\n\n\nExample: POST /code-quality/v1/code-analyses\n\nAPI Client needs the **AI Mentor System > Manage Code Quality findings** permission.",
+        "operationId": "CodeAnalysisControllerV_SubmitCodeAnalysisRequest",
+        "requestBody": {
+          "description": "The analysis request containing the asset key and revision to analyze",
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "CodeAnalysisRequest",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AdhocAnalysisRequestV1"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "title": "CodeAnalysisRequest",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AdhocAnalysisRequestV1"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CodeAnalysisResponseV1"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CodeAnalysisResponseV1"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "x-os-permissions": "API Client needs the **AI Mentor System > Manage Code Quality findings** permission."
+      }
+    },
+    "/findings": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves a list of code quality findings.",
+        "description": "Retrieves a paginated list of code quality findings with comprehensive filtering, sorting, and field selection capabilities.\n\n\n\nExample: GET /code-quality/v1/findings?assetKeys=abc123&severities=High&status=Open&limit=20\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "operationId": "FindingsControllerV_GetFindings",
+        "parameters": [
+          {
+            "name": "AssetKeys",
+            "in": "query",
+            "description": "Filter by asset keys (unique identifiers).",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "IsLatest",
+            "in": "query",
+            "description": "Filter to return only findings from the most recent analysis snapshot.",
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "example": true
+          },
+          {
+            "name": "Sort",
+            "in": "query",
+            "description": "Sort results by specified fields.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "Fields",
+            "in": "query",
+            "description": "Select specific fields to return in the response.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "Categories",
+            "in": "query",
+            "description": "Filter by finding categories.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Categories"
+              }
+            }
+          },
+          {
+            "name": "Status",
+            "in": "query",
+            "description": "Filter by finding status.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "AssetType",
+            "in": "query",
+            "description": "Filter by asset type.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/AssetType"
+              }
+            }
+          },
+          {
+            "name": "Severities",
+            "in": "query",
+            "description": "Filter by finding severity levels.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/FindingSeverity"
+              }
+            }
+          },
+          {
+            "name": "PatternIds",
+            "in": "query",
+            "description": "Filter by code pattern identifiers.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "Since",
+            "in": "query",
+            "description": "Start date for filtering findings by discovery time.",
+            "schema": {
+              "type": "string",
+              "example": "2022-06-01T00:00:00"
+            },
+            "example": "2022-06-01T00:00:00"
+          },
+          {
+            "name": "To",
+            "in": "query",
+            "description": "End date for filtering findings by discovery time.",
+            "schema": {
+              "type": "string",
+              "example": "2022-12-31T23:59:59"
+            },
+            "example": "2022-12-31T23:59:59"
+          },
+          {
+            "name": "Limit",
+            "in": "query",
+            "description": "Number of records to return per page.",
+            "schema": {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "example": 50
+            },
+            "example": 50
+          },
+          {
+            "name": "Offset",
+            "in": "query",
+            "description": "Number of records to skip for pagination.",
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32",
+              "example": 100
+            },
+            "example": 100
+          },
+          {
+            "name": "CreatedBy",
+            "in": "query",
+            "description": "Filter by creator user IDs.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FindingsResponseV1PagedListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FindingsResponseV1PagedListResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+      }
+    },
+    "/assets-quality-metrics": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves quality metrics for assets.",
+        "description": "Retrieves quality metrics and findings distribution for assets, including quality scores and findings grouped by severity and status, with comparison to previous analysis.\n\n\n\nExample: GET /code-quality/v1/assets-quality-metrics?assetType=Application&limit=50&sort=-score\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "operationId": "FindingsOverviewControllerV_GetAppsOverview",
+        "parameters": [
+          {
+            "name": "AssetKeys",
+            "in": "query",
+            "description": "Filter by asset keys (unique identifiers).",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "Sort",
+            "in": "query",
+            "description": "Sort results by specified fields.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "Status",
+            "in": "query",
+            "description": "Filter by finding status.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/FindingStatus"
+              }
+            }
+          },
+          {
+            "name": "AssetType",
+            "in": "query",
+            "description": "Filter by asset type.",
+            "schema": {
+              "type": "string",
+              "example": "WebApplication"
+            },
+            "example": "WebApplication"
+          },
+          {
+            "name": "Categories",
+            "in": "query",
+            "description": "Filter by finding categories.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Categories"
+              }
+            }
+          },
+          {
+            "name": "Severities",
+            "in": "query",
+            "description": "Filter by finding severity levels.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/FindingSeverity"
+              }
+            }
+          },
+          {
+            "name": "Since",
+            "in": "query",
+            "description": "Start date for filtering findings by discovery time.",
+            "schema": {
+              "type": "string",
+              "example": "2022-06-01T00:00:00"
+            },
+            "example": "2022-06-01T00:00:00"
+          },
+          {
+            "name": "To",
+            "in": "query",
+            "description": "End date for filtering findings by discovery time.",
+            "schema": {
+              "type": "string",
+              "example": "2022-12-31T23:59:59"
+            },
+            "example": "2022-12-31T23:59:59"
+          },
+          {
+            "name": "ScoreRanges",
+            "in": "query",
+            "description": "Filter by quality score ranges.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "Limit",
+            "in": "query",
+            "description": "Number of records to return per page.",
+            "schema": {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "example": 50
+            },
+            "example": 50
+          },
+          {
+            "name": "Offset",
+            "in": "query",
+            "description": "Number of records to skip for pagination.",
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32",
+              "example": 100
+            },
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppsOverviewResponseV1PagedListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppsOverviewResponseV1PagedListResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+      }
+    },
+    "/assets/{assetKey}/revisions/{revision}/analysis-summary": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves the analysis summary for an asset revision.",
+        "description": "Retrieves the analysis summary for a specific asset revision, including findings breakdown by severity and the quality score.\n\n\n\nExample: GET /code-quality/v1/assets/53fcbdc7-be3c-4532-866c-a296336133b0/revisions/8/analysis-summary\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "operationId": "FindingsOverviewControllerV_GetAssetRevisionFindingsSummary",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The unique identifier of the asset",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revision",
+            "in": "path",
+            "description": "The revision number of the asset to retrieve analysis for",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetRevisionSummaryResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetRevisionSummaryResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+      }
+    },
+    "/findings-summary": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves a multi-dimensional findings summary.",
+        "description": "Retrieves a multi-dimensional summary of findings, aggregated by customizable grouping parameters such as category, status, and severity.\n\n\n\nExample: GET /code-quality/v1/findings-summary?groupBy=Category,Status,Severity&categories=Security\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "operationId": "FindingsOverviewControllerV_GetFindingsSummary",
+        "parameters": [
+          {
+            "name": "AssetKeys",
+            "in": "query",
+            "description": "Filter by asset keys (unique identifiers).",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "GroupBy",
+            "in": "query",
+            "description": "Grouping parameters for organizing the findings summary.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "FetchChange",
+            "in": "query",
+            "description": "Include changes compared to previous analysis.",
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "example": true
+          },
+          {
+            "name": "AssetType",
+            "in": "query",
+            "description": "Filter by asset type.",
+            "schema": {
+              "type": "string",
+              "example": "WebApplication"
+            },
+            "example": "WebApplication"
+          },
+          {
+            "name": "Categories",
+            "in": "query",
+            "description": "Filter by finding categories.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Categories"
+              }
+            }
+          },
+          {
+            "name": "Severities",
+            "in": "query",
+            "description": "Filter by finding severity levels.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/FindingSeverity"
+              }
+            }
+          },
+          {
+            "name": "Since",
+            "in": "query",
+            "description": "Start date for filtering findings by discovery time.",
+            "schema": {
+              "type": "string",
+              "example": "2022-06-01T00:00:00"
+            },
+            "example": "2022-06-01T00:00:00"
+          },
+          {
+            "name": "To",
+            "in": "query",
+            "description": "End date for filtering findings by discovery time.",
+            "schema": {
+              "type": "string",
+              "example": "2022-12-31T23:59:59"
+            },
+            "example": "2022-12-31T23:59:59"
+          },
+          {
+            "name": "ScoreRanges",
+            "in": "query",
+            "description": "Filter by quality score ranges.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "Limit",
+            "in": "query",
+            "description": "Number of records to return per page.",
+            "schema": {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "example": 50
+            },
+            "example": 50
+          },
+          {
+            "name": "Offset",
+            "in": "query",
+            "description": "Number of records to skip for pagination.",
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32",
+              "example": 100
+            },
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FindingsSummaryResponseV1"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FindingsSummaryResponseV1"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+      }
+    },
+    "/findings-trend": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves historical trend data for findings.",
+        "description": "Retrieves historical trend data for findings over time, showing how findings and quality scores evolved across analyses. Useful for visualizing trends and patterns over time.\n\n\n\nExample: GET /code-quality/v1/findings-trend?assetKeys=abc123&since=2024-01-01&to=2024-12-31\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "operationId": "FindingsOverviewControllerV_GetFindingsTrend",
+        "parameters": [
+          {
+            "name": "AssetKeys",
+            "in": "query",
+            "description": "Filter by asset keys (unique identifiers).",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "Scores",
+            "in": "query",
+            "description": "Filter by quality score ranges.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "AssetType",
+            "in": "query",
+            "description": "Filter by asset type.",
+            "schema": {
+              "type": "string",
+              "example": "WebApplication"
+            },
+            "example": "WebApplication"
+          },
+          {
+            "name": "Categories",
+            "in": "query",
+            "description": "Filter by finding categories.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Categories"
+              }
+            }
+          },
+          {
+            "name": "Severities",
+            "in": "query",
+            "description": "Filter by finding severity levels.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/FindingSeverity"
+              }
+            }
+          },
+          {
+            "name": "Since",
+            "in": "query",
+            "description": "Start date for filtering findings by discovery time.",
+            "schema": {
+              "type": "string",
+              "example": "2022-06-01T00:00:00"
+            },
+            "example": "2022-06-01T00:00:00"
+          },
+          {
+            "name": "To",
+            "in": "query",
+            "description": "End date for filtering findings by discovery time.",
+            "schema": {
+              "type": "string",
+              "example": "2022-12-31T23:59:59"
+            },
+            "example": "2022-12-31T23:59:59"
+          },
+          {
+            "name": "ScoreRanges",
+            "in": "query",
+            "description": "Filter by quality score ranges.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "Limit",
+            "in": "query",
+            "description": "Number of records to return per page.",
+            "schema": {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "example": 50
+            },
+            "example": 50
+          },
+          {
+            "name": "Offset",
+            "in": "query",
+            "description": "Number of records to skip for pagination.",
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32",
+              "example": 100
+            },
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FindingsTrendResponseV1ResultsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FindingsTrendResponseV1ResultsResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+      }
+    },
+    "/analysis-status": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves the current synchronization status of Code Quality data.",
+        "description": "Retrieves the current synchronization status of Code Quality data, including the latest and last successful analysis details with metrics about new and resolved findings.\n\n\n\nExample: GET /code-quality/v1/analysis-status\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "operationId": "SyncControllerV_GetAnalysisStatus",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusSyncResponseV1"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusSyncResponseV1"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AdhocAnalysisRequestV1": {
+        "title": "CodeAnalysisRequest",
+        "required": [
+          "assetKey",
+          "assetRevision"
+        ],
+        "type": "object",
+        "properties": {
+          "assetKey": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Unique identifier of the asset to analyze.",
+            "example": "12345678-1234-1234-1234-123456789abc"
+          },
+          "assetRevision": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Revision number of the asset to analyze.",
+            "format": "int32",
+            "example": 42
+          }
+        },
+        "additionalProperties": false
+      },
+      "AppsOverviewResponseV1": {
+        "title": "AppsOverviewResponse",
+        "type": "object",
+        "properties": {
+          "assetName": {
+            "type": "string",
+            "nullable": true
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "Unique identifier of the asset.",
+            "nullable": true
+          },
+          "assetRevision": {
+            "type": "integer",
+            "description": "Revision number of the asset.",
+            "format": "int32"
+          },
+          "score": {
+            "title": "ScoreChange",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ScoreChangeV1"
+              }
+            ],
+            "description": "Quality score with change compared to previous analysis.",
+            "nullable": true
+          },
+          "severity": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/FindingsChangeV1"
+            },
+            "description": "Findings count grouped by severity level (Low, Medium, High, Critical).",
+            "nullable": true
+          },
+          "status": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/FindingsChangeV1"
+            },
+            "description": "Findings count grouped by status (Open, Resolved, Dismissed, Snoozed, Closed).",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Overview response for an asset, including quality scores and findings distribution by severity and status.",
+        "example": {
+          "assetKey": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+          "assetRevision": 42,
+          "score": {
+            "latestScore": 78,
+            "differenceScore": 5
+          },
+          "severity": {
+            "Low": {
+              "latestFindingsCount": 15,
+              "findingsDifferenceCount": 3
+            },
+            "Medium": {
+              "latestFindingsCount": 8,
+              "findingsDifferenceCount": 2
+            },
+            "High": {
+              "latestFindingsCount": 5,
+              "findingsDifferenceCount": 0
+            },
+            "Critical": {
+              "latestFindingsCount": 2,
+              "findingsDifferenceCount": 1
+            }
+          },
+          "status": {
+            "Open": {
+              "latestFindingsCount": 18,
+              "findingsDifferenceCount": 3
+            },
+            "Resolved": {
+              "latestFindingsCount": 10,
+              "findingsDifferenceCount": 5
+            },
+            "Dismissed": {
+              "latestFindingsCount": 2,
+              "findingsDifferenceCount": 0
+            }
+          },
+          "assetName": "MyWebApplication"
+        }
+      },
+      "AppsOverviewResponseV1PagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AppsOverviewResponseV1"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "AssetRevisionSummary": {
+        "type": "object",
+        "properties": {
+          "lowSeverity": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mediumSeverity": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "highSeverity": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "criticalSeverity": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "qualityScore": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetRevisionSummaryResponse": {
+        "type": "object",
+        "properties": {
+          "assetKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "assetRevision": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "analysisDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "summary": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AssetRevisionSummary"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetType": {
+        "enum": [
+          "WebApplication",
+          "MobileApplication",
+          "LowCodeLibrary",
+          "MobileLibrary"
+        ],
+        "type": "string"
+      },
+      "Categories": {
+        "enum": [
+          "performance",
+          "security",
+          "architecture",
+          "maintainability"
+        ],
+        "type": "string"
+      },
+      "CodeAnalysisResponseV1": {
+        "title": "CodeAnalysisResponse",
+        "type": "object",
+        "properties": {
+          "analysisKey": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CodeAnalysisStatusResponseV1": {
+        "title": "CodeAnalysisStatusResponse",
+        "type": "object",
+        "properties": {
+          "analysisKey": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "findings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RevisionFindingsResponseV1"
+            },
+            "nullable": true
+          },
+          "qualityScore": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ElementPath": {
+        "type": "object",
+        "properties": {
+          "elementKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "elementName": {
+            "type": "string",
+            "nullable": true
+          },
+          "elementType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FindingSeverity": {
+        "enum": [
+          "Low",
+          "Medium",
+          "High",
+          "Critical"
+        ],
+        "type": "string"
+      },
+      "FindingStatus": {
+        "enum": [
+          "Open",
+          "Resolved",
+          "Dismissed",
+          "Snoozed",
+          "Closed"
+        ],
+        "type": "string"
+      },
+      "FindingsChangeV1": {
+        "title": "FindingsChange",
+        "type": "object",
+        "properties": {
+          "latestFindingsCount": {
+            "type": "integer",
+            "description": "Number of findings in the current/latest analysis.",
+            "format": "int32",
+            "nullable": true
+          },
+          "findingsDifferenceCount": {
+            "type": "integer",
+            "description": "Change in findings count compared to previous analysis.",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Findings count with change information."
+      },
+      "FindingsResponseV1": {
+        "title": "FindingsResponse",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "patternId": {
+            "type": "string",
+            "nullable": true
+          },
+          "discoveredOn": {
+            "type": "string",
+            "nullable": true
+          },
+          "rediscoveredOn": {
+            "type": "string",
+            "nullable": true
+          },
+          "elementKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "elementName": {
+            "type": "string",
+            "nullable": true
+          },
+          "elementType": {
+            "type": "string",
+            "nullable": true
+          },
+          "elementPath": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ElementPath"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "elementLastModifiedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "elementLastModifiedOn": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereElementKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereElementName": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereElementType": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereElementPath": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ElementPath"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "whereElementLastModifiedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereElementLastModifiedOn": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "dismissReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "snoozedUntil": {
+            "type": "string",
+            "nullable": true
+          },
+          "severity": {
+            "type": "string",
+            "nullable": true
+          },
+          "assetKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "assetRevision": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FindingsResponseV1PagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FindingsResponseV1"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "FindingsSummaryMetricResponseV1": {
+        "title": "FindingsSummaryMetricResponse",
+        "type": "object",
+        "properties": {
+          "latestFindingsCount": {
+            "type": "integer",
+            "description": "Number of findings in the current/latest analysis.",
+            "format": "int32"
+          },
+          "findingsDifferenceCount": {
+            "type": "integer",
+            "description": "Change in findings count compared to the previous analysis.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FindingsSummaryResponseV1": {
+        "title": "FindingsSummaryResponse",
+        "type": "object",
+        "properties": {
+          "totalFindings": {
+            "title": "FindingsSummaryMetricResponse",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FindingsSummaryMetricResponseV1"
+              }
+            ],
+            "description": "Total count of findings across all groups.",
+            "nullable": true
+          },
+          "results": {
+            "type": "object",
+            "description": "Hierarchical breakdown of findings grouped by the requested parameters (e.g., Category → Status → Severity).\n\nEach level contains either nested groups (as dictionaries) or leaf metrics with count information.\n\nThe structure depth and keys depend on the GroupBy parameter specified in the request.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Summary response containing total findings count and hierarchical breakdown based on grouping parameters.",
+        "example": {
+          "totalFindings": {
+            "latestFindingsCount": 150,
+            "findingsDifferenceCount": 12
+          },
+          "results": {
+            "Security": {
+              "Open": {
+                "High": {
+                  "latestFindingsCount": 25,
+                  "findingsDifferenceCount": 3
+                },
+                "Critical": {
+                  "latestFindingsCount": 8,
+                  "findingsDifferenceCount": 0
+                }
+              },
+              "Resolved": {
+                "Medium": {
+                  "latestFindingsCount": 42,
+                  "findingsDifferenceCount": 9
+                }
+              }
+            },
+            "Performance": {
+              "Open": {
+                "Low": {
+                  "latestFindingsCount": 35,
+                  "findingsDifferenceCount": 5
+                },
+                "Medium": {
+                  "latestFindingsCount": 18,
+                  "findingsDifferenceCount": 2
+                }
+              }
+            },
+            "Maintainability": {
+              "Dismissed": {
+                "Low": {
+                  "latestFindingsCount": 22,
+                  "findingsDifferenceCount": 7
+                }
+              }
+            }
+          }
+        }
+      },
+      "FindingsTrendResponseV1": {
+        "title": "FindingsTrendResponse",
+        "type": "object",
+        "properties": {
+          "openFindingsCount": {
+            "type": "integer",
+            "description": "Represents the count of open findings for the specified day.\n\nThis property is used to track the number of findings that are still open on that day.",
+            "format": "int64"
+          },
+          "snoozedFindingsCount": {
+            "type": "integer",
+            "description": "Represents the count of snoozed findings for the specified day.\n\nThis property is used to track the number of findings that are still snoozed on that day.",
+            "format": "int64"
+          },
+          "resolvedFindingsCount": {
+            "type": "integer",
+            "description": "Represents the count of resolved findings for the specified day.\n\nThis property is used to track the number of findings that are still resolved on that day.",
+            "format": "int64"
+          },
+          "dismissedFindingsCount": {
+            "type": "integer",
+            "description": "Represents the count of dismissed findings for the specified day.\n\nThis property is used to track the number of findings that are still dismissed on that day.",
+            "format": "int64"
+          },
+          "closedFindingsCount": {
+            "type": "integer",
+            "description": "Represents the count of closed findings for the specified day.\n\nThis property is used to track the number of findings that have been closed on that day.",
+            "format": "int64"
+          },
+          "analysisDate": {
+            "type": "string",
+            "description": "Represents the day of the findings trend data.\n\nThe format is typically \"YYYY-MM-DD\".",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FindingsTrendResponseV1ResultsResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FindingsTrendResponseV1"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LastSuccessfulAnalysisV1": {
+        "title": "LastSuccessfulAnalysis",
+        "type": "object",
+        "properties": {
+          "startedOn": {
+            "type": "string",
+            "description": "The date and time of when the analysis started",
+            "format": "date-time"
+          },
+          "completedOn": {
+            "type": "string",
+            "description": "The date and time of when the analysis finished",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "description": "The status of the analysis",
+            "nullable": true
+          },
+          "newFindingsCount": {
+            "type": "integer",
+            "description": "The count of the new findings",
+            "format": "int32",
+            "nullable": true
+          },
+          "solvedFindingsCount": {
+            "type": "integer",
+            "description": "The count of the solved findings",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the last successful analysis"
+      },
+      "LatestAnalysisV1": {
+        "title": "LatestAnalysis",
+        "type": "object",
+        "properties": {
+          "startedOn": {
+            "type": "string",
+            "description": "The date and time of when the analysis started",
+            "format": "date-time"
+          },
+          "completedOn": {
+            "type": "string",
+            "description": "The date and time of when the analysis finished",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "description": "The status of the analysis",
+            "nullable": true
+          },
+          "newFindingsCount": {
+            "type": "integer",
+            "description": "The count of the new findings",
+            "format": "int32",
+            "nullable": true
+          },
+          "solvedFindingsCount": {
+            "type": "integer",
+            "description": "The count of the solved findings",
+            "format": "int32",
+            "nullable": true
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "The error code returned in case the latest analysis has failed status",
+            "nullable": true
+          },
+          "errorMessage": {
+            "type": "string",
+            "description": "The error message returned in case the latest analysis has failed status",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the latest analysis (may include error information)"
+      },
+      "NextAnalysisV1": {
+        "title": "NextAnalysis",
+        "type": "object",
+        "properties": {
+          "scheduledOn": {
+            "type": "string",
+            "description": "The date and time of when the analysis was scheduled to run",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the next scheduled analysis"
+      },
+      "PageInfoWithTotals": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of results in the current page.",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limit of results per page.",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset of the current page of results.",
+            "format": "int32"
+          },
+          "nextPageOffset": {
+            "type": "integer",
+            "description": "Offset of the next page of results.",
+            "format": "int32"
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total of results.",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": "Total of result pages.",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains response page information including totals."
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code applicable to the problem.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation of the error.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem.",
+            "nullable": true
+          },
+          "traceId": {
+            "type": "string",
+            "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
+          }
+        },
+        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+      },
+      "RevisionFindingsResponseV1": {
+        "title": "RevisionFindingsResponse",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "patternId": {
+            "type": "string",
+            "nullable": true
+          },
+          "discoveredOn": {
+            "type": "string",
+            "nullable": true
+          },
+          "rediscoveredOn": {
+            "type": "string",
+            "nullable": true
+          },
+          "elementKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "elementName": {
+            "type": "string",
+            "nullable": true
+          },
+          "elementType": {
+            "type": "string",
+            "nullable": true
+          },
+          "elementPath": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ElementPath"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "elementLastModifiedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "elementLastModifiedOn": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereElementKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereElementName": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereElementType": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereElementPath": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ElementPath"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "whereElementLastModifiedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereElementLastModifiedOn": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "dismissReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "snoozedUntil": {
+            "type": "string",
+            "nullable": true
+          },
+          "severity": {
+            "type": "string",
+            "nullable": true
+          },
+          "assetKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "assetRevision": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ScoreChangeV1": {
+        "title": "ScoreChange",
+        "type": "object",
+        "properties": {
+          "latestScore": {
+            "type": "integer",
+            "description": "Quality score from the current/latest analysis (0-100).",
+            "format": "int32",
+            "nullable": true
+          },
+          "differenceScore": {
+            "type": "integer",
+            "description": "Change in quality score compared to previous analysis.",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Quality score with change information."
+      },
+      "StatusSyncResponseResultV1": {
+        "title": "StatusAnalysisResponseResult",
+        "type": "object",
+        "properties": {
+          "lastSuccessfulAnalysis": {
+            "title": "LastSuccessfulAnalysis",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/LastSuccessfulAnalysisV1"
+              }
+            ],
+            "description": "Info about the latest successful analysis",
+            "nullable": true
+          },
+          "latestAnalysis": {
+            "title": "LatestAnalysis",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/LatestAnalysisV1"
+              }
+            ],
+            "description": "Info about the latest analysis",
+            "nullable": true
+          },
+          "nextAnalysis": {
+            "title": "NextAnalysis",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NextAnalysisV1"
+              }
+            ],
+            "description": "Info about the next analysis",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StatusSyncResponseV1": {
+        "title": "StatusAnalysisResponse",
+        "type": "object",
+        "properties": {
+          "result": {
+            "title": "StatusAnalysisResponseResult",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StatusSyncResponseResultV1"
+              }
+            ],
+            "description": "The result of the status sync",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

@@ -103,6 +103,18 @@ The External Library Generation REST API enables you to generate and manage exte
 
 For detailed information about the endpoints, refer to [External Library Generation API reference](../external-library-generation-api-v1.md).
 
+### Code quality
+
+The Code quality REST API enables you to analyze and monitor the technical debt of your ODC assets. You can use this API to:
+
+* Submit code analysis requests.
+
+* Retrieve detailed findings about architecture, security, performance, and maintainability issues.
+
+* Monitor quality scores and track trends over time to improve code standards.
+
+For detailed information about the endpoints, refer to [Code quality API reference](../code-quality-api-v1.md).
+
 ## Terminology mapping between the ODC Portal and ODC APIs
 
 A **stage** in ODC refers to the place where you deploy your apps, such as the Development stage and the Production stage. In ODC REST APIs, the **ODC stage** is represented as an **environment** resource.
