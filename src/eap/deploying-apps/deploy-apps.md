@@ -89,6 +89,20 @@ Your asset is deployed to your selected stage. To roll back an update from a st
 
 For more information about the impact analysis report, refer to [Understanding the impact analysis report](#understanding-the-impact-analysis-report).
 
+## Deployment considerations for agentic apps { #deploy-agentic }
+
+Agentic apps follow the standard ODC continuous delivery model. They're built and containerized in the Development stage, and that exact container is promoted to subsequent stages. However, due to their autonomous nature, specific rules apply to their deployment and dependencies.
+
+### Deployment dependencies
+
+Agentic apps are often part of a larger system or involving workflows. You must manage the deployment order of these assets carefully to avoid runtime errors or blocked deployments.
+
+<div class="info" markdown="1">
+
+If you deploy a **workflow** that triggers an event in an agentic app, you must ensure the agentic app is deployed to the target stage (Quality or Production) **before** or **simultaneously** with the workflow. If the agentic app is missing from the target stage, the deployment of the workflow will be blocked due to missing dependencies.
+
+</div>
+
 ## Undeploy assets
 
 You can undeploy assets from any stage in the ODC Portal. To undeploy an asset, go to the asset detail and select **&#183;&#183;&#183;** > **Undeploy**.

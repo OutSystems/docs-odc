@@ -37,6 +37,7 @@
     - topics:
         - href: eap/building-apps/build-ai-powered-apps/agentic-apps.md
         - topics:
+            - href: eap/building-apps/build-ai-powered-apps/agentic-patterns.md
             - href: eap/building-apps/build-ai-powered-apps/create-agent.md
             - href: eap/building-apps/build-ai-powered-apps/consumer-app.md
             - href: eap/building-apps/build-ai-powered-apps/function-calling.md
@@ -482,6 +483,7 @@
             - href: eap/building-apps/workflows/go-to-previous-step.md
             - href: eap/building-apps/workflows/terminate-workflow.md
             - href: eap/building-apps/workflows/end-workflow.md
+        - href: eap/building-apps/workflows/agentic-workflows.md
         - href: eap/building-apps/workflows/logs.md
         - href: eap/building-apps/workflows/troubleshooting-workflows.md
         - href: eap/building-apps/workflows/filter-workflows.md

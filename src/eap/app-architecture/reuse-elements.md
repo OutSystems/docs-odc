@@ -31,13 +31,11 @@ Dependencies are categorized into two types: **strong** and **weak**, based on t
 
     * Two Libraries sharing elements
 
-    * A Library sharing elements with an app
-
-    * An Agentic app sharing an Entity or Structure with an app
+    * A Library sharing elements with an app (web, mobile or agentic apps)
 
 * **Weak dependencies:** Weak dependencies are created between assets that are deployed independently. For example, a weak dependency occurs when:
 
-    * One app reuses an element from another app
+    * One app reuses an element from another app. This includes web and mobile apps interacting with agentic apps (in either direction).
 
     * A Workflow reuses an element from an app
 

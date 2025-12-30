@@ -24,7 +24,7 @@ You manage your AI model connections within ODC. This includes adding new connec
 
 Once an AI model connection is configured, you can create logic in ODC Studio to call the model. These calls can range from text prompts to complex input parameter interactions. This includes using features like tools associated with the LLM or specific parameters defined in the contract for custom model connections.
 
-In addition to directly interacting with AI models, ODC enables you to connect to AI search services like Azure AI Search, Amazon Kendra, or custom search providers. These services let you index your organization's specific knowledge base. By retrieving relevant information from this indexed content, you can provide context to AI models, enhancing the quality and grounding of their responses through a pattern known as Retrieval-Augmented Generation (RAG).
+To retrieve information from a configured knowledge base connection such as Azure AI Search, Amazon Kendra, or custom search providers, [you call a specific service action provided by ODC](add-ai-search-services.md). This action performs a semantic search, fetching data based on the meaning and intent of your query rather than just keywords. You typically use this retrieved data within your app logic by passing it as context to a configured AI model to enhance quality and grounding, effectively implementing the Retrieval-augmented generation (RAG) pattern.
 
 ![Diagram showing three steps: 1. Set up your AI Service (Cloud Provider), 2. Integrate AI models and search services (ODC Portal), 3. Add AI models and search services (ODC Studio).](images/steps-diag.png "Steps to Integrate AI Models and Search Services")
 

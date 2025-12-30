@@ -69,6 +69,25 @@ Use cases suited for AI agents include:
 * Automatic intake of supplier quotes by processing complex supplier quotes for clinical studies, extracting data, populating a budget workbook, comparing against rate sheets, and providing feedback/error reporting.  
 * Accelerate equity research report creation in the financial industry by collecting and ingesting data from various sources, reducing report writing time.
 
+### The reason-act loop
+
+Agents use the **ReAct** (Reason+Act) framework. This framework instructs the agent to follow a continuous cognitive cycle, rather than a static script, allowing it to dynamically adapt its behavior to achieve a goal.
+
+The cycle consists of three steps:
+
+1. **Thought**: The agent analyzes the user's goal and the information in its memory. It plans the next logical step to take.  
+1. **Action**: Based on its reasoning, the agent selects a specific action (server action) to execute and defines the necessary inputs. The agent relies on the action's name and description to make this decision. You must write clear and detailed descriptions for your inputs and outputs to ensure the agent has sufficient context to select them accurately. For more information about agent actions, refer to [AI agent actions](function-calling.md).  
+1. **Observation**: The tool executes and returns a result. This result is the **observation** that the agent uses to update its understanding before the loop restarts.
+
+### Agent memory systems
+
+To obtain the biggest benefit from this framework, agents requires specific types of memory to maintain context, process complex tasks, and recall information:
+
+* **Short-term memory:** Acts as the agent's immediate workspace for the conversation. It lets the agent maintain context within a single session, allowing for coherent, multi-turn dialogues. This is typically handled by the model's finite context window.  
+* **Working memory:** A temporary space used to hold information and intermediate steps during the execution of a single task. As the agent cycles through the reason-act loop, it updates this memory to track its progress toward the specific goal.  
+* **Long-term memory:** Provides persistent storage, allowing the agent to recall information across multiple distinct sessions. This is often implemented using external storage, such as a Vector Database, to store user preferences or past interactions over extended periods.  
+* **Domain knowledge:** The repository of structured, factual information (like internal documents or policies) that grounds the agent's responses. This is implemented via [AI Search Services (RAG)](ai-models.md).
+
 ### External tools
 
 External tools let agents invoke functionality that lives outside your ODC apps—either through custom MCP servers you host or prebuilt connectors (such as SerpAPI). Start with the [External tools overview](tools/intro.md) to choose the right approach. For detailed MCP server setup, see [MCP servers](tools/mcp-connectors.md).
