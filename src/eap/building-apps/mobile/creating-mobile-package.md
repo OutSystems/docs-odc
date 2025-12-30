@@ -40,7 +40,7 @@ Here's the overall process to make your app available to your users:
 
 <div class="warning" markdown="1">
 
-Avoid changing the app name when building mobile apps. If you change the app name, ODC changes the URL, which is the app's identifier. To learn more, refer to [considerations when building mobile apps](#considerations-when-building-mobile-apps).
+Avoid changing the app name when building mobile apps. If you change the app name, ODC updates the URL, which serves as the app's identifier. To learn more, refer to [considerations when building mobile apps](#considerations-when-building-mobile-apps).
 
 </div>
 
@@ -53,7 +53,7 @@ To create an iOS or Android package, follow these steps:
 1. Click **Mobile distribution**.
 
 1. Click **Create package** to start the process.
-From the same screen, you can create an iOS or Android package. ODC can process two packages at the same time.
+From the same screen, you can create an iOS or Android package. ODC can process two packages simultaneously.
   
     ![Screenshot of the ODC Portal showing the option to create a new mobile package for iOS.](images/create-mobile-package-pl.png "Create Mobile Package in ODC Portal")
 
@@ -89,7 +89,7 @@ For detailed information about troubleshooting, refer to [MABS errors](https://s
 
 ## Understanding MABS and versioning in mobile app packages
 
- OutSystems improves MABS and makes new versions available to support new SDKs and essential toolchain upgrades. On the create package page, you can select the MABS version you want to use to create the mobile packages. For detailed information about the MABS versioning, refer to [MABS versioning and lifecycle](https://success.outsystems.com/support/release_notes/mobile_apps_build_service_versions/mabs_versioning_and_lifecycle/).
+OutSystems enhances MABS and releases new versions to support the latest SDKs and essential toolchain upgrades. On the create package page, you can select the MABS version you want to use to create the mobile packages. For detailed information about the MABS versioning, refer to [MABS versioning and lifecycle](https://success.outsystems.com/support/release_notes/mobile_apps_build_service_versions/mabs_versioning_and_lifecycle/).
 
  The ODC Portal records the MABS version you chose to generate the mobile package.
 
@@ -111,7 +111,7 @@ To obtain a mobile app build log:
 
 1. Go to the ODC Portal.
 
-1. Navigate to mobile app detail page.
+1. Navigate to the mobile app detail page.
 
 1. Click **Mobile distribution**.
 
@@ -122,7 +122,7 @@ To download the logs, click the ellipsis.
 
 ## View package history
 
-You can access the package history to review previously created mobile packages. Package history helps troubleshoot failures by showing whether issues occurred in earlier versions or resulted from recent changes.
+You can access the package history to review previously created mobile packages. Package history helps troubleshoot failures by showing whether issues occurred in earlier versions or were caused by recent changes.
 
 <div class="info" markdown="1">
 
@@ -143,7 +143,7 @@ To view the package history of your mobile app, follow these steps:
 
 1. Go to the ODC Portal.
 
-1. Navigate to mobile app detail page.
+1. Navigate to the mobile app detail page.
 
 1. Select **Mobile distribution** and click **View history**.
 
@@ -151,7 +151,7 @@ To view the package history of your mobile app, follow these steps:
 
     ![Screenshot displaying the package history of a mobile app in ODC Portal.](images/view-package-history-pl.png "Package History Overview")
 
-    Successful builds show a **Created** status, while failed builds show **Failed**. The failed builds also includes the specific error that resulted in the failure for easy troubleshooting.
+    Successful builds show a **Created** status, while failed builds show **Failed**. The failed builds also include the specific error that resulted in the failure for easy troubleshooting.
 
     ![Screenshot showing a failed mobile build error in the package history.](images/mobile-build-failed-error-pl.png "Mobile Build Failed Error")
 
@@ -166,19 +166,25 @@ Avoid changing the app name. If you change the app's name, ODC changes the URL, 
 * Updates over the air aren't delivered.
 * All data and server actions fail.
 * Application logs (native and runtime) are no longer available since logs are stored locally on the device and are associated with the application URL. This also occurs after updating the native package to the new version, pointing to the new URL.
-* The outdated app version can still be opened and run. The app may have limited usability depending on the logic flow (use of server actions, for example). Sometimes, it's not obvious to users that a problem exists or the app isn't functioning correctly.
+* The outdated app version can still be opened and run. The app may have limited usability depending on the logic flow (use of server actions, for example). Sometimes, it's not immediately apparent to app users that a problem exists or the app isn't functioning correctly.
 
 ### You can't preview a mobile app in the Safari browser within the ODC Portal
 
-Using the Safari browser to preview a mobile app within the ODC Portal doesn't work. The app and the preview render within an iFrame in different domains, and due to security restrictions from Apple, Safari can't access the content.
+Using the Safari browser to preview a mobile app within the ODC Portal is not supported. The app and the preview render within an iframe in different domains, and due to security restrictions from Apple, Safari can't access the content.
 
 OutSystems recommends using the Chrome browser to preview the mobile app in the ODC Portal.
 
 ### App login doesn't work in the preview if you're using Safari or any other browser configured to block third-party cookies
 
-More and more browsers are blocking third-party cookies by default. Using the Safari browser or any other browser configured to block third-party cookies to preview a mobile app within the ODC Portal prevents the login screen in your application from working. The app and the preview render within an iFrame in different domains and due to the configuration to block third-party cookies, the login doesn't work.
+Increasingly, browsers are blocking third-party cookies by default. Using the Safari browser or any other browser configured to block third-party cookies to preview a mobile app within the ODC Portal prevents the login screen in your application from working. The app and the preview render within an iframe in different domains, and due to the configuration to block third-party cookies, the login doesn't work.
 
 OutSystems recommends the Chrome browser for previewing the mobile app in the ODC Portal. If the browser is blocking third-party cookies, you can disable that feature in the browser's security settings.
+
+### Google Play’s 16 KB page size compatibility requirement
+
+As of November 1, 2025, all new apps and updates submitted to Google Play must support 16 KB page sizes. This applies to apps targeting Android devices 15 and above. [Google blog](https://android-developers.googleblog.com/2025/05/prepare-play-apps-for-devices-with-16kb-page-size.html).
+
+OutSystems applications and supported plugins built with MABS 11 or greater are fully compliant. Developers should ensure their third-party plugins are also compliant before submitting to Google Play.
 
 ## Related resources
 
