@@ -2,19 +2,21 @@
 guid: fc8b0661-525c-4f75-8217-4d9aec2cd312
 locale: en-us
 summary: This article provide complete details on app extensibility configuration JSON schema.
-figma:
+figma: 
 coverage-type:
   - remember
 topic:
+  - customize-mobile-apps
 app_type: mobile apps
 platform-version: odc
 audience:
   - mobile developers
-tags: Mobile,json extensibility,json configuration
+tags: mobile,json extensibility,json configuration
 outsystems-tools:
-  - none
-helpids:
+  - odc studio
+helpids: 
 ---
+
 # App extensibility configuration JSON schema
 
 <div class="info" markdown="1">
@@ -64,7 +66,7 @@ App configurations are a set of configurations that modify multiple runtime aspe
 | [backgroundColor](#backgroundcolor) | `string` | Optional | true |
 | [deeplinksHandler](#deeplinkshandler) | `string` | Optional | true |
 | [network](#network) | `object` | Optional | true |
-| [systembars](#systembars) | `object` | Optional | true |
+| [systemBars](#systembars) | `object` | Optional | true |
 | [appendUserAgent](#appenduseragent) | `string` | Optional | true |
 | [splashscreen](#splashscreen) | `object` | Optional | true |
 | [webViewUpdate](#webviewupdate) | `object` | Optional | false |
@@ -88,7 +90,7 @@ Where `displayName` value is overridden specifically for Android.
 
 Sets Cordova preferences for the application. Preference values can be set globally for both platforms or overridden per platform.
 
-**Example**
+#### Example
 
 ```json
 {
@@ -112,7 +114,7 @@ Here, the Cordova preference `SomePreference` is being set globally with a value
 * Optional  
 * Type: `object`
 
-**Properties**
+#### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -140,10 +142,13 @@ Properties:
 
 Define Android permissions or iOS usage descriptions in the application.
 
-| ❗️ Permissions/usage descriptions values set at the application level take precedence over the values defined on Libraries Extensibility Configuration. |
-| :---- |
+<div class="info" markdown="1">
 
-**Example**
+Permissions/usage descriptions values set at the application level take precedence over the values defined on Libraries Extensibility Configuration.
+
+</div>
+
+#### Example
 
 ```
 {
@@ -202,8 +207,11 @@ The orientation of the app's user interface
 
 ### targetDevice
 
-| ❗️ iOS only |
-| :---- |
+<div class="info" markdown="1">
+
+iOS only
+
+</div>
 
 The device family being targeted by application.
 
@@ -241,8 +249,6 @@ The WebView and splash screen background color
 ```
 ^#[0-9a-fA-F]{6}$
 ```
-
-[try pattern](https://regexr.com/?expression=%5E%23%5B0-9a-fA-F%5D%7B6%7D%24)
 
 ### deeplinksHandler
 
@@ -312,8 +318,11 @@ Defines the supported network protocol for the app: HTTPS or both HTTPS and HTTP
 
 ### trustedCA
 
-| ❗️Android only |
-| :---- |
+<div class="info" markdown="1">
+
+Android only
+
+</div>
 
 Sets the type of trusted certificate authorities for the app: `system`, `custom` or `both`.
 
@@ -333,20 +342,20 @@ Sets the type of trusted certificate authorities for the app: `system`, `custom`
 | `"user"` |
 | `"both"` |
 
-### systembars
+### systemBars
 
 System bars configurations.
 
-**Example**
+#### Example
 
 ```json
 {
   "appConfigurations": {
-    "systembars": {
+    "systemBars": {
       "style": "light"
     },
     "android": {
-      "systembars": {
+      "systemBars": {
         "style": "default"
       }
     }
@@ -354,7 +363,7 @@ System bars configurations.
 }
 ```
 
-`systembars`
+`systemBars`
 
 * Optional  
 * Type: `object`
@@ -362,6 +371,7 @@ System bars configurations.
 | Property | Type | Required |
 | :---- | :---- | :---- |
 | [style](#style) | `string` | Optional |
+| [statusBarBackgroundColor](#statusbarbackgroundcolor) | `string` | Optional |
 
 ### style
 
@@ -383,6 +393,24 @@ Sets the overall system bars style. The style is based on the device appearance.
 | `"dark"` |
 | `"light"` |
 
+### statusBarBackgroundColor
+
+Sets the status bar background color. This property allows you to customize the color of the status bar to match your app's design.
+
+`statusBarBackgroundColor`
+
+* Optional  
+* Type: `string`
+* Placeholders: _none_
+
+#### statusBarBackgroundColor constraints
+
+**pattern**: the string must match the following regular expression:
+
+```
+^#[0-9a-fA-F]{6}$
+```
+
 ### appendUserAgent
 
 String to append to the original user agent of the app's main WebView
@@ -397,7 +425,7 @@ String to append to the original user agent of the app's main WebView
 
 Splash screen configurations.
 
-**Example**
+#### Example
 
 ```json
 {
@@ -450,7 +478,7 @@ Whether to auto hide the splash after `duration`
 
 Displays an alert prompting the user to update the Android System WebView via the Google Play Store. Only applies to OutSystems Capacitor Android apps, which require a minimum WebView version of 102.
 
-**Example**
+#### Example
 
 ```json
 {
@@ -534,7 +562,7 @@ Build configurations are a set of configurations used at build time such as addi
 
 Set of resources that can be copied from a specific source to a target location within the generated mobile project
 
-**Example**
+#### Example
 
 ```json
 {
@@ -612,11 +640,12 @@ Use one of the above.
 
 `target`
 
-| ❗️For Android, the target location is relative to the android project located under `android/` For iOS, the target location is relative to the App folder inside `ios/App/App/` |
-| :---- |
+<div class="info" markdown="1">
 
-| Note that `resources` copying occurs before `cap sync` is executed. If a target location is affected by the result of `cap sync`, the resources might be missing |
-| :---- |
+* For Android, the target location is relative to the android project located under `android/` For iOS, the target location is relative to the App folder inside `ios/App/App/`
+* Note that `resources` copying occurs before `cap sync` is executed. If a target location is affected by the result of `cap sync`, the resources might be missing.
+
+</div>
 
 The target location for the resource in the form of a file path
 
@@ -628,7 +657,7 @@ The target location for the resource in the form of a file path
 
 Assets to customize the splash screen experience. By default, MABS 12 applications have a splash screen composed of a solid background color. Using `splashscreens` build configurations, the splash screen can be configured to have an image in the center of the screen.
 
-**Example**
+#### Example
 
 ```json
 {
@@ -719,7 +748,7 @@ If you have build configurations defined at the plugin and app level, the plugin
 | config | `Object` | Required |
 | parameters | `object` | Optional |
 
-**Example**
+#### Example
 
 ```json
 {
@@ -739,8 +768,11 @@ If you have build configurations defined at the plugin and app level, the plugin
 
 Reference to the resource uploaded on IDE, under resources. The file must have _Deploy Action_ as _Deploy to Target Directory._ An extensibility setting can also be used to reference a file path.
 
-| ❗️extensibility binary settings not supported |
-| :---- |
+<div class="info" markdown="1">
+
+The extensibility binary settings is not supported.
+
+</div>
 
 `config`
 
