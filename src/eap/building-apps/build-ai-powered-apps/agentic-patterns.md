@@ -2,7 +2,7 @@
 guid: 5332e43d-bd1c-4403-8f46-5cbdaf198318
 locale: en-us
 summary: Design AI systems with agentic patterns in OutSystems Developer Cloud (ODC), understanding sequential and loop agent patterns for task coordination.
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=8733-89&t=dpsTJPtDSEXmwI6w-1
 coverage-type:
   - remember
   - understand
@@ -29,6 +29,8 @@ These patterns define the basic sequence and flow of tasks between agents.
 
 ### Sequential agent pattern
 
+![Diagram showing a sequential agent pattern where input is processed by a series of AI agents in a specific order to produce output.](images/sequential-agent-pattern-diag.png "Sequential Agent Pattern Diagram")
+
 In a sequential pattern, a complex task is broken down into smaller steps, and a dedicated, specialized agent is assigned to handle each step in a specific order.
 
 The output from one agent becomes the direct input for the next agent in the sequence. This pattern makes the system highly modular, as each agent is an expert at its specific job.
@@ -36,6 +38,8 @@ The output from one agent becomes the direct input for the next agent in the seq
 Use this pattern to automate a **New vendor contract review**, where data collection precedes legal review, and finally, a third agent assesses financial risk.
 
 ### Loop agent pattern
+
+![Diagram illustrating a loop agent pattern where input is processed by AI agents in a continuous cycle until a termination condition is met.](images/loop-agent-pattern-diag.png "Loop Agent Pattern Diagram")
 
 In a loop pattern, a team of specialized agents collaborates on a shared task or workspace, such as a document or plan. They interact in a continuous cycle of contribution and refinement.
 
@@ -53,6 +57,8 @@ These patterns focus on efficiency and synthesizing information from multiple so
 
 ### Parallel agent pattern
 
+![Diagram depicting a parallel agent pattern where input is divided and processed concurrently by multiple AI agents to produce output.](images/parallel-agent-pattern-diag.png "Parallel Agent Pattern Diagram")
+
 The parallel agent pattern enables multiple agents to run concurrently, thereby speeding up processes. This pattern is ideal when a large workload can be broken down into independent sub-tasks that don't rely on each other.
 
 This pattern typically works as follows:
@@ -66,6 +72,8 @@ Use this pattern for processing a **Vendor contract** where **Legal**, **Financi
 
 ### Aggregator agent pattern
 
+![Diagram showing an aggregator agent pattern where multiple inputs are collected and synthesized by an AI agent to produce a unified output.](images/aggregator-agent-pattern-diag.png "Aggregator Agent Pattern Diagram")
+
 An aggregator agent gathers and consolidates information from multiple sources or other agents to produce a unified, single output. It acts as the opposite of a dispatcher because it collects rather than distributes.
 
 The aggregator typically sits at the end of a parallel operation and follows this logic:
@@ -74,13 +82,15 @@ The aggregator typically sits at the end of a parallel operation and follows thi
 1. **Collect:** It gathers the individual pieces of information from each agent.
 1. **Synthesize:** It applies logic to merge, rank, filter, and combine the pieces into a final response.
 
-Use this pattern for a **Vendor report agent** that compiles separate legal, financial, and security reviews into a single comprehensive risk report. 
+Use this pattern for a **Vendor report agent** that compiles separate legal, financial, and security reviews into a single comprehensive risk report.
 
 ## Routing and orchestration patterns
 
 These patterns manage decision-making and control flow within the system.
 
 ### Router agent pattern
+
+![Diagram illustrating a router agent pattern where input is analyzed and routed by an AI agent to the appropriate downstream agents to produce output.](images/router-agent-pattern-diag.png "Router Agent Pattern Diagram")
 
 A router agent is a single agent that analyzes incoming requests to determine their intent. It then directs the request to the correct downstream agent or system best equipped to handle that specific task.
 
@@ -90,9 +100,11 @@ The router follows an analyze-and-delegate logic:
 1. **Classify intent:** It analyzes the query to understand the user's purpose. For example, "Is this a math problem?" or "Is this a request for data?"
 1. **Route:** Based on the classification, it selects the most suitable specialist from a pool of available agents and forwards the request.
 
-Use this pattern for an **Inquiry classifier agent** in customer support that analyzes incoming messages and routes them to either a **Policies agent** or an **Order shipment agent** based on the topic. 
+Use this pattern for an **Inquiry classifier agent** in customer support that analyzes incoming messages and routes them to either a **Policies agent** or an **Order shipment agent** based on the topic.
 
 ### Supervisor agent pattern
+
+![Diagram depicting a supervisor agent pattern where a supervisor AI agent manages and coordinates multiple AI agents to complete a complex task.](images/supervisor-agent-pattern-diag.png "Supervisor Agent Pattern Diagram")
 
 A supervisor agent serves as a central orchestrator, managing a complex process. Unlike a simple router, the supervisor is involved in the entire lifecycle of the task.
 
@@ -107,6 +119,8 @@ Use this pattern to orchestrate a multi-step **Onboarding workflow** where the s
 
 ### Hierarchical agent pattern
 
+![Diagram showing a hierarchical agent pattern where a supervisor AI agent delegates tasks to manager AI agents, who then assign tasks to worker AI agents.](images/hierarchical-agent-pattern-diag.png "Hierarchical Agent Pattern Diagram")
+
 The hierarchical agent pattern is a scalable version of the supervisor pattern, creating a multi-level organizational chart.
 
 Instead of a single manager, high-level managers delegate to mid-level managers, who then delegate to front-line workers. This solves complex problems through recursive decomposition and aggregation.
@@ -119,6 +133,8 @@ These patterns define how agents share information and interact in unstructured 
 
 ### Shared memory pattern
 
+![Diagram illustrating a shared memory pattern where AI agents read from and write to a common memory system to process input and produce output.](images/shared-memory-pattern-diag.png "Shared Memory Pattern Diagram")
+
 In a shared memory pattern, the operation centers on a common data repository, often referred to as a **blackboard** or **workspace**.
 
 All participating agents have permission to read from and write to this shared memory. Agents communicate implicitly by modifying the shared state rather than sending explicit messages to one another.
@@ -127,6 +143,8 @@ Use this pattern for a **Contract review system** where multiple agents (legal a
 
 ### Network agent pattern
 
+![Diagram depicting a network agent pattern where multiple AI agents interact directly with each other in a dynamic network to process input and produce output.](images/network-agent-pattern-diag.png "Network Agent Pattern Diagram")
+
 A network agent pattern consists of a collection of autonomous agents operating in a shared environment without a central controller.
 
 The system's overall behavior emerges from local, peer-to-peer interactions. Agents communicate directly with one another in a dynamic, graph-like structure to negotiate, cooperate, or compete based on predefined rules.
@@ -134,6 +152,8 @@ The system's overall behavior emerges from local, peer-to-peer interactions. Age
 Use this pattern to simulate a **Market economy** where independent **Buyer** and **Seller agents** interact and negotiate prices directly with one another to determine market equilibrium.
 
 ### Human-in-the-loop pattern
+
+![Diagram showing a human-in-the-loop pattern where AI agents process input and pause for human intervention at critical points before producing output.](images/human-in-the-loop-pattern-diag.png "Human-in-the-Loop Pattern Diagram")
 
 A human-in-the-loop system intentionally pauses the AI process at a critical or low-confidence juncture to request input from a human user.
 
