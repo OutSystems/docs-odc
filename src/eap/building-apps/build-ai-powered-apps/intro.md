@@ -5,7 +5,7 @@ guid: f217cece-7042-4055-811a-948ed6244007
 locale: en-us
 app_type: mobile apps,reactive web apps
 platform-version: odc
-figma: 
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=7061-614&t=dpsTJPtDSEXmwI6w-1
 topic:
   - machine-learning
   - chatbots
@@ -75,6 +75,8 @@ Agents use the **ReAct** (Reason+Act) framework. This framework instructs the ag
 
 The cycle consists of three steps:
 
+![Diagram showing the Reason-Act loop with steps: Thought, Action, and Observation.](images/reason-act-loop-diag.png "Reason-Act Loop Diagram")
+
 1. **Thought**: The agent analyzes the user's goal and the information in its memory. It plans the next logical step to take.  
 1. **Action**: Based on its reasoning, the agent selects a specific action (server action) to execute and defines the necessary inputs. The agent relies on the action's name and description to make this decision. You must write clear and detailed descriptions for your inputs and outputs to ensure the agent has sufficient context to select them accurately. For more information about agent actions, refer to [AI agent actions](function-calling.md).  
 1. **Observation**: The tool executes and returns a result. This result is the **observation** that the agent uses to update its understanding before the loop restarts.
@@ -92,7 +94,7 @@ To obtain the biggest benefit from this framework, agents requires specific type
 
 External tools let agents invoke functionality that lives outside your ODC apps—either through custom MCP servers you host or prebuilt connectors (such as SerpAPI). Start with the [External tools overview](tools/intro.md) to choose the right approach. For detailed MCP server setup, see [MCP servers](tools/mcp-connectors.md).
 
-## Monitoring Agentic apps
+## Monitoring agentic apps
 
 ODC facilitates the development and management of intelligent apps. ODC provides a dedicated **app analytics dashboard** to monitor the performance, usage, and errors of your deployed apps. This dashboard offers key metrics such as **health score, top apps by usage, request volume and rate, error counts and rates, and response times**. It provides a comprehensive overview of app performance. For detailed insights into user engagement, feature utilization, and performance trends across different geographies and browsers, refer to the [Monitor assets with ODC Analytics](../../monitor-and-troubleshoot/app-health.md). It also provides specific element and AI model metrics.
 

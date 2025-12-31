@@ -2,7 +2,7 @@
 guid: 2d97c9e1-6bd4-48ef-8efc-66b75069eb5f
 locale: en-us
 summary: Integrate intelligent agents into business workflows using OutSystems Developer Cloud (ODC) to automate multi-step processes efficiently with structure and oversight.
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=8733-184&t=dpsTJPtDSEXmwI6w-1
 coverage-type:
   - remember
   - understand
@@ -26,6 +26,8 @@ This document outlines the core patterns for integrating agents into your workfl
 
 In ODC, workflows interact with agents primarily through **automatic activities**. An automatic activity represents a step in the process that's completed by the system without human intervention.
 
+![Diagram showing a sequential agent workflow pattern with multiple automatic activities and AI agents.](images/sequential-agent-workflow-pattern-diag.png "Sequential Agent Workflow Pattern Diagram")
+
 To use an agent in a workflow, follow these steps:
 
 1. Add an **automatic activity** to your flow.  
@@ -40,6 +42,8 @@ Use the **Parallel** flow element to execute multiple, non-dependent agent tasks
 
 For example, in a **New vendor contract review** process, you might need both a **Legal review** and a **Financial review**. These reviews don't depend on each other.
 
+![Diagram illustrating a parallel agent workflow pattern with multiple automatic activities and AI agents running simultaneously.](images/parallel-agent-workflow-pattern-diag.png "Parallel Agent Workflow Pattern Diagram")
+
 To implement this pattern, follow these steps:
 
 1. Add a **parallel** element to your workflow.  
@@ -50,6 +54,8 @@ To implement this pattern, follow these steps:
 ## Loop workflow
 
 Use a **Loop** pattern to iteratively refine an agent's output until it meets a specific quality standard. This is useful for tasks such as drafting content or generating code, where the initial result may require improvement.
+
+![Diagram depicting a loop agent workflow pattern with automatic activities, decision nodes, and iterative agent tasks.](images/loop-agent-workflow-pattern-diag.png "Loop Agent Workflow Pattern Diagram")
 
 To implement this pattern, follow these steps:
 
@@ -63,6 +69,8 @@ To implement this pattern, follow these steps:
 Agents may require human oversight for high-stakes decisions or when their confidence is low. You implement this using **human activity** blocks.
 
 A human activity pauses the workflow until a specific user or group performs a task.
+
+![Diagram showing a human-in-the-loop workflow pattern with automatic activities, parallel tasks, and human activity blocks.](images/human-in-the-loop-workflow-pattern-diag.png "Human-in-the-Loop Workflow Pattern Diagram")
 
 To implement this pattern, follow these steps:
 
