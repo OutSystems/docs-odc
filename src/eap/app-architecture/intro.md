@@ -21,12 +21,6 @@ topic:
 
 # App architecture
 
-<div class="info" markdown="1">
-
-OutSystems is progressively rolling out mobile libraries.
-
-</div>
-
 With OutSystems Developer Cloud (ODC), architects can design apps to solve business problems and automate business processes using a **cloud-native** approach to the architecture. In a cloud-native architecture, an app is decomposed into loosely coupled and independently deployable components or services.
 
 In a cloud-native architecture, you can use a single app in ODC:

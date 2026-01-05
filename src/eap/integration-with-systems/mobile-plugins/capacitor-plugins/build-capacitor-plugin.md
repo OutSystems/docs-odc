@@ -21,12 +21,6 @@ helpids:
 
 # Building a Capacitor plugin from scratch
 
-<div class="info" markdown="1">
-
-OutSystems is progressively rolling out mobile libraries.
-
-</div>
-
 This article provides a comprehensive guide for building custom Capacitor plugins for ODC mobile apps. It's intended for mobile plugin developers with experience in Capacitor plugin development who need to create native functionality not available in existing plugins.
 
 As you build your Capacitor plugin, consider the [Capacitor plugin abstraction patterns](https://capacitorjs.com/docs/plugins/tutorial/code-abstraction-patterns).

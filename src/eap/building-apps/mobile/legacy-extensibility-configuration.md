@@ -20,12 +20,6 @@ helpids:
 
 <div class="info" markdown="1">
 
-OutSystems is progressively rolling out the automatic migration of Cordova-based schema to universal schema.
-
-</div>
-
-<div class="info" markdown="1">
-
 Applies only to Cordova apps.
 
 </div>

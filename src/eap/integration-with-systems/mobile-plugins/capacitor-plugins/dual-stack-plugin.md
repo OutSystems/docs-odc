@@ -21,12 +21,6 @@ topic:
 
 # Implement a dual‑stack plugin
 
-<div class="info" markdown="1">
-
-OutSystems is progressively rolling out mobile libraries.
-
-</div>
-
 A dual-stack plugin is an OutSystems plugin that contains both Cordova and Capacitor plugin implementations. Based on the app's framework, the plugin automatically selects the appropriate native code. This approach ensures that the plugin is compatible with both Cordova and Capacitor apps while enabling you to leverage Capacitor's modern capabilities without breaking existing Cordova-based apps.
 
 This article explains how to adapt the existing OutSystems plugin to support both Capacitor and Cordova plugin implementations.

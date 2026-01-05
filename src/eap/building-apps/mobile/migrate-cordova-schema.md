@@ -20,12 +20,6 @@ helpids: 30735
 
 <div class="info" markdown="1">
 
-OutSystems is progressively rolling out the automatic migration of Cordova-based schema to universal schema.
-
-</div>
-
-<div class="info" markdown="1">
-
 This migration applies only to existing mobile apps or libraries that contain extensibility configurations using the Cordova-based schema.
 
 </div>

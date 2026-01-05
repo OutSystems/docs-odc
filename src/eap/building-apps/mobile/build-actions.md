@@ -24,7 +24,7 @@ You can use build actions to perform native project modifications such as modify
 
 You can configure your extensibility from **App** > **Edit app properties** > **Extensibility**.
 
-Build actions are the modern replacement for Cordova hooks and is available in both the [app](extensibility-configurations/extensibility-app-reference.md) and [library](extensibility-configurations/extensibility-lib-reference.md) extensibility configuration.
+Build actions are the modern replacement for Cordova hooks and are available in both the [app](extensibility-configurations/extensibility-app-reference.md) and [library](extensibility-configurations/extensibility-lib-reference.md) extensibility configuration.
 
 <div class="info" markdown="1">
 
@@ -96,7 +96,7 @@ Define your build actions in a JSON file, for example, `buildAction.json` file. 
 
 In ODC Studio, add the JSON file as a resource. Set **Deploy Action** to **Deploy to Target Directory**.
 
-### Step 3: Configure Extensibility
+### Step 3: Configure extensibility
 
 Under **App > Edit app properties > Extensibility**, add the configuration to resolve variables defined within the JSON file. The `parameters` property is used to resolve the variables.
 

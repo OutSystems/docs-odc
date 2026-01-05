@@ -23,12 +23,6 @@ helpids: 30664
 
 # Universal extensibility configurations JSON schema
 
-<div class="info" markdown="1">
-
-OutSystems is progressively rolling out the automatic migration of Cordova-based schema to universal schema.
-
-</div>
-
 With the introduction of the modern [Capacitor](https://capacitorjs.com/docs) framework the extensibility configurations support both Capacitor and Cordova frameworks and are managed through two distinct JSON files.
 
 * [App extensibility configurations JSON file](extensibility-configurations/extensibility-app-reference.md)

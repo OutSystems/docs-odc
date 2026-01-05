@@ -20,12 +20,6 @@ helpids: 30736, 30740
 
 # Libraries
 
-<div class="info" markdown="1">
-
-OutSystems is progressively rolling out mobile libraries.
-
-</div>
-
 Libraries are a core building block for OutSystems Developer Cloud (ODC) developers and serve as **repositories of reusable UI and logic elements**.
 
 Important for promoting code reusability and maintainability, libraries allow developers to create consistent apps quickly. By using libraries, organizations can reduce overall app development time.

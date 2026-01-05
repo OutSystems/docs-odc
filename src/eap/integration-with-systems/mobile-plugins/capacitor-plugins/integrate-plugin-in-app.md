@@ -20,12 +20,6 @@ helpids:
 
 # Integrate Capacitor plugin into a mobile app
 
-<div class="info" markdown="1">
-
-OutSystems is progressively rolling out mobile libraries.
-
-</div>
-
 To use a Capacitor plugin in an app, you must create a [mobile library](../../../building-apps/libraries/libraries.md#mobile-libraries-mobile-libraries) that acts as a wrapper for the plugin. You can then include this mobile library in the app where the plugin's functionality is required. In this article, the [@capacitor/barcode scanner plugin](https://capacitorjs.com/docs/apis/barcode-scanner) is used as an example to explain how to integrate a plugin into an ODC app and use its functionality to scan a code.
 
 You can either [build a Capacitor plugin](build-capacitor-plugin.md) from scratch or use [officially supported](https://capacitorjs.com/docs/plugins) Capacitor plugins.

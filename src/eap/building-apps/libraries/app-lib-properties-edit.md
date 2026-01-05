@@ -18,12 +18,6 @@ coverage-type:
 
 # Edit app, library, and mobile library properties
 
-<div class="info" markdown="1">
-
-OutSystems is progressively rolling out mobile libraries.
-
-</div>
-
 This article demonstrates how you can edit the app, library, and mobile library properties, that is, the metadata in ODC.
 <iframe src="https://player.vimeo.com/video/1069574566" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">How to edit the app and library properties - Metadata</iframe>
 

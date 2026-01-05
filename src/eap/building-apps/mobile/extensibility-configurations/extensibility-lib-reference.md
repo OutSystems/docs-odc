@@ -19,12 +19,6 @@ helpids:
 
 <div class="info" markdown="1">
 
-OutSystems is progressively rolling out mobile libraries.
-
-</div>
-
-<div class="info" markdown="1">
-
 The schema may change with every new MABS version.
 
 Only mobile libraries can be used to specify the library extensibility configuration JSON schema.
@@ -38,7 +32,7 @@ The extensibility configuration for libraries allows the declaration of the asso
 | [pluginConfigurations](#pluginconfigurations) | `object` | Optional |
 | [buildConfigurations](#buildconfigurations) | `object` | Optional |
 
-**Example**
+Example
 
 ```json
 {
@@ -92,7 +86,7 @@ Example:
 * Optional  
 * Type: `object`
 
-**Properties**
+#### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -108,7 +102,7 @@ A set of Cordova [preferences](https://cordova.apache.org/docs/en/11.x/config_re
 * Type: `object`
 * Placeholders: `extensibility settings`
 
-**Example**
+Example
 
 ```json
 {
@@ -147,7 +141,7 @@ An object with the required specification for a given Capacitor plugin.
 * Optional  
 * Type: `object`
 
-**Properties**
+#### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -196,7 +190,7 @@ Example:
 * Type: `object`
 * Placeholders: `extensibility settings`
 
-**Properties**
+##### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -230,7 +224,7 @@ Plugin configurations specific to iOS. If a configuration with the same name exi
 * Type: `object`
 * Placeholders: `extensibility settings`
 
-**Properties**
+##### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -243,7 +237,7 @@ Declares which Android permissions or iOS usage descriptions the plugin defines.
 | ❗️ Permissions/usage description values set at the application level take precedence over the values defined on Libraries Extensibility Configuration. |
 | :---- |
 
-**Example**
+Example
 
 ```json
 {
@@ -315,7 +309,7 @@ In the above example, both usage description keys `NSCameraUsageDescription` and
 * Type: `object`
 * Placeholders: `extensibility settings`
 
-**Properties**
+##### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -328,7 +322,7 @@ Any property name is valid as long as the value follows the following schema
 * Optional  
 * Type: `object`
 
-**Properties:**
+##### Properties:
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -358,7 +352,7 @@ Any property name is valid as long as the value follows the following schema
 
 Set of build time configurations allowing to configure the plugin sources and build time resources.
 
-**Example**
+Example
 
 ```json
 {
@@ -385,7 +379,7 @@ Set of build time configurations allowing to configure the plugin sources and bu
 
 An object with the required specification for a given Cordova plugin.
 
-**Example**
+Example
 
 ```json
 {
@@ -407,7 +401,7 @@ An object with the required specification for a given Cordova plugin.
 * Optional  
 * Type: `object`
 
-**Properties**
+#### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -422,7 +416,7 @@ The source of the Cordova plugin, from where it is fetched for installation and,
 * Required  
 * Type: `object`
 
-**Properties**
+##### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -443,7 +437,7 @@ A valid npm [package spec](https://docs.npmjs.com/cli/v10/using-npm/package-spec
 
 An object with the plugin variables required for installation. Object key maps to variable name and associated value maps to variable value.
 
-**Example**
+Example
 
 ```json
 {
@@ -472,7 +466,7 @@ Variable values can be a static value or a reference to a Setting.
 * Type: `object`
 * Placeholders: `extensibility settings`
 
-**Properties**
+##### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -482,7 +476,7 @@ Variable values can be a static value or a reference to a Setting.
 
 An object with the required specification for a given Capacitor plugin.
 
-**Example**
+Example
 
 ```json
 {
@@ -536,7 +530,7 @@ A valid npm [package spec](https://docs.npmjs.com/cli/v10/using-npm/package-spec
 
 Set of resources that can be copied from a specific source to a target location within the generated mobile project
 
-**Example**
+Example
 
 ```json
 {
@@ -589,7 +583,7 @@ A list of resources to be added to the generated iOS project.
 
 #### resource item {#resource-item}
 
-**Properties**
+##### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -639,7 +633,7 @@ If you have build configurations defined at the plugin and app level, the plugin
 | config | `Object` | Required |
 | parameters | `object` | Optional |
 
-**Example**
+Example
 
 ```json
 {
