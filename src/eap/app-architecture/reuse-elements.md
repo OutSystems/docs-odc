@@ -47,27 +47,25 @@ For more information about dependencies, refer to [Understand strong and weak de
 
 To expose and share a public element for reuse, you set its **Public** property to **Yes**. However, you can't share some elements, and in such cases, the element's **Public** property is set to **No** and can't be changed.
 
-The following table lists elements and their possible Public property values.
+The following table lists elements that can be made public in at least one asset type.
 
-| Element type    | Can elements be public in apps? | Can elements be public in libraries? | Can elements be public in Agentic apps? |
+| Element type | Can elements be public in apps? | Can elements be public in libraries? | Can elements be public in Agentic apps? |
 | --------------- | ------------------------------- | ------------------------------------ | ------------------------------------ |
-| Blocks                    | No                              | Yes                                  | Not applicable                                  |
-| Client Actions            | No                              | Yes                                  | Not applicable                                  |
-| Entities                  | Yes                             | Not applicable                       | Yes                                             |
-| Exceptions                | No                              | No                                   | No                                              |
-| Images                    | No                              | Yes                                  | Not applicable                                  |
-| Local storage Entities    | No                              | Not applicable                       | Not applicable                                  |
-| Processes                 | No                              | Not applicable                       | No                                              |
-| Resources                 | No                              | No                                   | No                                              |
-| Roles                     | Yes                             | Not applicable                       | Not applicable                                  |
-| Screens in Web apps       | Yes                             | Not Applicable                       | Not applicable                                  |
-| Screens in Mobile apps    | No                              | Not Applicable                       | Not applicable                                  |
-| Scripts                   | No                              | No                                   | No                                              |
-| Server Actions            | No                              | Yes                                  | Yes                                  |
-| Service Actions           | Yes                             | Not applicable                       | Yes                                  |
-| Static Entities           | Yes                             | Yes                                  | Yes                                  |
-| Structures                | Yes, only if you use them as parameters in Service Actions. | Yes, only if you use them as parameters in public actions or public blocks. | Yes, only if you use them as parameters in Service Actions.                                   |
-| Themes                    | No                              | Yes                                  | Not applicable                                  |
+| Blocks | No | Yes | Not applicable |
+| Client Actions | No | Yes | Not applicable |
+| Entities | Yes | Not applicable | Yes |
+| Exceptions | No | No | No |
+| Images | No | Yes | Not applicable |
+| Local storage Entities | No | Not applicable | Not applicable |
+| Processes | No | Not applicable | No |
+| Resources | No | No | No |
+| Roles | Yes | Not applicable | Yes |
+| Screens in Web apps | Yes | Not Applicable | Not applicable |
+| Server Actions | No | Yes | No |
+| Service Actions | Yes | Not applicable | Yes |
+| Static Entities | Yes | Yes | Yes |
+| Structures | Yes, only if you use them as parameters in Service Actions. | Yes, only if you use them as parameters in public actions or public blocks. | Yes, only if you use them as parameters in Service Actions. |
+| Themes | No | Yes | Not applicable |
 
 In addition to the element types detailed in the table, other components can also become public for reuse:
 
