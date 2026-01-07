@@ -1085,6 +1085,173 @@
         "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
       }
     },
+    "/patterns": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves a list of code patterns.",
+        "description": "Returns a paginated list of all available code patterns that can be detected during code analysis, including their names, descriptions, and metadata.\n\n\n\nExample: GET /code-quality/v1/patterns?limit=50\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "operationId": "PatternsControllerV_GetPatterns",
+        "parameters": [
+          {
+            "name": "Limit",
+            "in": "query",
+            "description": "Max records (1-1000).",
+            "schema": {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Offset",
+            "in": "query",
+            "description": "Records to skip (0+).",
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatternsResponsePagedListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+      }
+    },
+    "/patterns/{patternId}": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves details for a specific code pattern.",
+        "description": "Returns detailed information about a specific code pattern, including its description, category, severity, and detection rules.\n\n\n\nExample: GET /code-quality/v1/patterns/pattern-id-123\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "operationId": "PatternsControllerV_GetPatternsById",
+        "parameters": [
+          {
+            "name": "patternId",
+            "in": "path",
+            "description": "ID of the pattern",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatternsResponsePagedListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+      }
+    },
     "/analysis-status": {
       "get": {
         "tags": [],
@@ -1294,37 +1461,6 @@
         "additionalProperties": false,
         "description": "Represents a response containing a paged set of results."
       },
-      "AssetRevisionSummary": {
-        "type": "object",
-        "properties": {
-          "lowSeverity": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "mediumSeverity": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "highSeverity": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "criticalSeverity": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "qualityScore": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "AssetRevisionSummaryResponse": {
         "type": "object",
         "properties": {
@@ -1340,12 +1476,19 @@
             "type": "string",
             "format": "date"
           },
+          "qualityScore": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
           "summary": {
+            "title": "FindingsSummary",
             "allOf": [
               {
-                "$ref": "#/components/schemas/AssetRevisionSummary"
+                "$ref": "#/components/schemas/FindingsSummary"
               }
             ],
+            "description": "Overview of Finding Summary by categories and severities",
             "nullable": true
           }
         },
@@ -1368,6 +1511,54 @@
           "maintainability"
         ],
         "type": "string"
+      },
+      "CodeAnalysisCategories": {
+        "title": "CodeAnalysisCategories",
+        "type": "object",
+        "properties": {
+          "security": [
+            "SeverityBreakdown",
+            [
+              {
+                "$ref": "#/components/schemas/SeverityBreakdown"
+              }
+            ],
+            "Findings Count grouped by severity level (Low, Medium, High, Critical)",
+            true
+          ],
+          "performance": {
+            "title": "SeverityBreakdown",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SeverityBreakdown"
+              }
+            ],
+            "description": "Findings Count grouped by severity level (Low, Medium, High, Critical)",
+            "nullable": true
+          },
+          "architecture": {
+            "title": "SeverityBreakdown",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SeverityBreakdown"
+              }
+            ],
+            "description": "Findings Count grouped by severity level (Low, Medium, High, Critical)",
+            "nullable": true
+          },
+          "maintainability": {
+            "title": "SeverityBreakdown",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SeverityBreakdown"
+              }
+            ],
+            "description": "Findings Count grouped by severity level (Low, Medium, High, Critical)",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Finding Counts for all analysis categories and severities"
       },
       "CodeAnalysisResponseV1": {
         "title": "CodeAnalysisResponse",
@@ -1406,6 +1597,16 @@
           "qualityScore": {
             "type": "number",
             "format": "double"
+          },
+          "summary": {
+            "title": "FindingsSummary",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FindingsSummary"
+              }
+            ],
+            "description": "Overview of Finding Summary by categories and severities",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1597,6 +1798,24 @@
         },
         "additionalProperties": false,
         "description": "Represents a response containing a paged set of results."
+      },
+      "FindingsSummary": {
+        "title": "FindingsSummary",
+        "type": "object",
+        "properties": {
+          "categories": {
+            "title": "CodeAnalysisCategories",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CodeAnalysisCategories"
+              }
+            ],
+            "description": "Finding Counts for all analysis categories and severities",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Overview of Finding Summary by categories and severities"
       },
       "FindingsSummaryMetricResponseV1": {
         "title": "FindingsSummaryMetricResponse",
@@ -1865,6 +2084,91 @@
         "additionalProperties": false,
         "description": "Contains response page information including totals."
       },
+      "PatternsResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "impact": {
+            "type": "string",
+            "nullable": true
+          },
+          "howToSolve": {
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentationUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "showFlowViz": {
+            "type": "boolean"
+          },
+          "showOpenInSS": {
+            "type": "boolean"
+          },
+          "showHierarchyTree": {
+            "type": "boolean"
+          },
+          "showConsumedElements": {
+            "type": "boolean"
+          },
+          "showWhereObject": {
+            "type": "boolean"
+          },
+          "showWhoObject": {
+            "type": "boolean"
+          },
+          "showCreatedByUsername": {
+            "type": "boolean"
+          },
+          "severity": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatternsResponsePagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PatternsResponse"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
       "ProblemDetails": {
         "type": "object",
         "properties": {
@@ -2033,6 +2337,30 @@
         },
         "additionalProperties": false,
         "description": "Quality score with change information."
+      },
+      "SeverityBreakdown": {
+        "title": "SeverityBreakdown",
+        "type": "object",
+        "properties": {
+          "lowSeverity": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "mediumSeverity": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "highSeverity": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "criticalSeverity": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Findings Count grouped by severity level (Low, Medium, High, Critical)"
       },
       "StatusSyncResponseResultV1": {
         "title": "StatusAnalysisResponseResult",
