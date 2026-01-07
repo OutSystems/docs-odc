@@ -135,10 +135,11 @@ To ensure your assets don't consume more resources than necessary, it's importan
 
 When approaching or surpassing capacity limits, the following issues may occur:
 
-* Compute instances: If you reach the CIs limit, you cannot
+* Compute instances: If you reach the CIs limit, you may not be able to:
     * Publish new apps and agents
     * Update existing ones with new revisions
     * Run workflows and timers
+    * Scale apps
 * Custom code execution duration: Calls to custom code libraries can cause errors and fail until the next day. This can lead to runtime errors in consumers.
 * Database compute and database storage: Apps and agents can experience performance issues, such as slower response times or timeout errors when accessing the database if there is insufficient capacity to accommodate all of the requests.
 * Analytics stream: You are warned when your organization's volume of streamed data is approaching the capacity limit.
