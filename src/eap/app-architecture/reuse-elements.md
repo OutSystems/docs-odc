@@ -49,35 +49,32 @@ To expose and share a public element for reuse, you set its **Public** property 
 
 The following table lists elements that can be made public in at least one asset type.
 
-| Element type | Can elements be public in apps? | Can elements be public in libraries? | Can elements be public in Agentic apps? |
+| Element type | Can be public in web and mobile apps? | Can be public in libraries? | Can be public in agentic apps? |
 | --------------- | ------------------------------- | ------------------------------------ | ------------------------------------ |
 | Blocks | No | Yes | Not applicable |
-| Client Actions | No | Yes | Not applicable |
+| Client actions | No | Yes | Not applicable |
 | Entities | Yes | Not applicable | Yes |
-| Exceptions | No | No | No |
 | Images | No | Yes | Not applicable |
-| Local storage Entities | No | Not applicable | Not applicable |
-| Processes | No | Not applicable | No |
-| Resources | No | No | No |
+| Events | Yes | Not applicable | Yes |
 | Roles | Yes | Not applicable | Yes |
-| Screens in Web apps | Yes | Not Applicable | Not applicable |
-| Server Actions | No | Yes | No |
-| Service Actions | Yes | Not applicable | Yes |
-| Static Entities | Yes | Yes | Yes |
-| Structures | Yes, only if you use them as parameters in Service Actions. | Yes, only if you use them as parameters in public actions or public blocks. | Yes, only if you use them as parameters in Service Actions. |
+| Screens | Yes, only in web apps | Not applicable | Not applicable |
+| Server actions | No | Yes | No |
+| Service actions | Yes | Not applicable | Yes |
+| Static entities | Yes | Yes | Yes |
+| Structures | Yes, only if you use them as parameters in service actions. | Yes, only if you use them as parameters in public actions or public blocks. | Yes, only if you use them as parameters in service actions. |
 | Themes | No | Yes | Not applicable |
 
 In addition to the element types detailed in the table, other components can also become public for reuse:
 
-* **Data fabric connections**: When you define or select entities and actions within a data fabric connection, they automatically become public elements. This allows you to reuse them in other assets such as Web and Mobile apps.
+* **Data fabric connections**: When you define or select entities and actions within a data fabric connection, they automatically become public elements. This allows you to reuse them in other assets such as web and mobile apps.
 
 * **AI models**: You can consume actions exposed by AI models as public elements, enabling their integration into various apps.
 
-While you can't directly make a Server Action public within an app, you can expose it for reuse by right-clicking it and selecting **Expose as Service Action**. This action creates a Service Action that invokes the original Server Action and inherits its properties, effectively making it public.
+While you can't directly make a server action public within an app, you can expose it for reuse by right-clicking it and selecting **Expose as Service Action**. This action creates a service action that invokes the original server action and inherits its properties, effectively making it public.
 
 ## Validating consumers and producers in the ODC Portal
 
-In the ODC Portal, the asset detail page lists producers and consumers. Understanding your asset's consumers is crucial for communicating changes, such as a bug fix in a Service Action, to the development team. Similarly, it's important to know the producers from which you reuse elements for your asset's functionality.
+In the ODC Portal, the asset detail page lists producers and consumers. Understanding your asset's consumers is crucial for communicating changes, such as a bug fix in a service action, to the development team. Similarly, it's important to know the producers from which you reuse elements for your asset's functionality.
 
 The **Producers** tab displays the complete hierarchy of direct and indirect producers contributing to delivering your assets' functionality. When you select a producer,  the elements that the direct consumer of this producer is reusing are displayed. For each producer, the version (or revision) that is being used is also displayed.
 
