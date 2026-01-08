@@ -66,6 +66,7 @@ With this information, you can plan and prioritize your team's maintenance and i
 
 For detailed information about specific code patterns and best practices, refer to:
 
+* [Architecture findings](architecture/architecture.md)
 * [Performance findings](performance/performance.md)
 * [Maintainability findings](maintainability/maintainability.md)
 * [Security findings](security/security.md)
