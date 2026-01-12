@@ -513,11 +513,11 @@ You can change Extensibility Settings by opening your application in ODC Portal 
 
 ### Providing the Privacy Policy file in your Capacitor app (Android only)
 
-For Capacitor, the plugin provices an optional extensibility setting for the **PrivacyPolicyURL**, which you can set to point to the URL with your privacy policy. Note that this URL should point to a **.txt** file with your privacy policy. If you're already [using a txt file in your resources](#providing-the-privacy-policy-file-android-only), you can keep using it in Capacitor and leave the extensibility setting empty.
+For Capacitor, the plugin provides an optional extensibility setting for the **PrivacyPolicyURL**, which you can set to point to the URL with your privacy policy. Note that this URL should point to a **.txt** file with your privacy policy. If you're already [using a txt file in your resources](#providing-the-privacy-policy-file-android-only), you can keep using it in Capacitor and leave the extensibility setting empty.
 
 ### (Optional) Configuring which Health Connect data types you wish to access in your Capacitor app (Android only)
 
-Similar to the preferences that can be set in the Extensibility Configurations [for Cordova apps](#optional-configuring-which-health-connect-data-types-you-wish-to-access-android-only), there is an extensibility setting for each Health Connect data type (e.g. Steps) that can be set to the following values: **Read**, **Write**, **ReadWrite**, **None**. There are also settings for **AllVariables**, **HealthVariables**, **FitnessVariables**, and **ProfileVariables**, that can be set to the same values.
+Similar to the preferences that can be set in the Extensibility Configurations [for Cordova apps](#optional-configuring-which-health-connect-data-types-you-wish-to-access-android-only), there is an extensibility setting for each Health Connect data type (e.g. StepsAccess) that can be set to the following values: **Read**, **Write**, **ReadWrite**, **None**. There are also settings for **AllVariablesAccess**, **HealthVariablesAccess**, **FitnessVariablesAccess**, and **ProfileVariablesAccess**, that can be set to the same values.
 
 ### (Optional) Disable access to older history data in your Capacitor app (Android only)
 
