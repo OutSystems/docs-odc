@@ -364,7 +364,7 @@
         - href: eap/building-apps/mobile/configuring-mobile-apps.md
         - topics:
             # Intro to extensibility configurations
-                          
+            - href: eap/building-apps/mobile/extensibility-configurations/customize-system-bars-edge-to-edge.md              
             - href: eap/building-apps/mobile/extensibility-configurations-json-schema.md
              # Universal extensibility configurations
             - href: eap/building-apps/mobile/extensibility-configurations.md
