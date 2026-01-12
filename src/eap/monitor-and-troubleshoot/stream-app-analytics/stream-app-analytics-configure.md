@@ -30,6 +30,12 @@ Before creating a stream, refer to the [prerequisites for streaming observabilit
 
 This example demonstrates the process of creating a stream using **New Relic** as the destination APM tool. The steps might vary slightly depending on the APM tool you select.
 
+<div class="info" markdown="1">
+
+When sending observability data from multiple environments to the same destination, create one stream and select the necessary environments. A single stream automatically sends logs, metrics, and traces to your destination APM tool, so you don't need to create separate streams for each data type.
+
+</div>
+
 1. In the ODC Portal, go to **Configure** > **Streams.**  
 
 1. Click **Create Stream**.
@@ -80,12 +86,6 @@ A stream can have one of the following statuses:
 * **Active with errors:** The stream is currently running and attempting to send data, but encountering some errors. You should investigate these errors to ensure all data is being delivered correctly. Check the stream details or logs for more information on the specific errors.  
 
 * **Inactive:**  When you manually deactivate a stream, it transitions to an inactive state, and no data is sent to the APM tool. You can reactivate an inactive stream. Once the stream is successfully reactivated, its status will change to **Active**.
-
-<div class="info" markdown="1">
-
-When sending logs from multiple environments to a same destination, create one connection while selecting multiple environments.
-
-</div>
 
 ## Next steps
 
