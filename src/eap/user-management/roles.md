@@ -140,7 +140,7 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Configuration management | View configurations | Users can view app or library configurations in a given stage. | Organization <br/> Asset |
 | Configuration management | Edit configurations | Users can change app or library configurations in a given stage. | Organization <br/> Asset |
 | Configuration management | Configure connections | Users can view and edit connection configurations in a given stage. | Organization |
-| Configuration management | Manage custom domains | Users can view, create, edit, and delete custom domains for apps. | Organization |
+| Configuration management | Manage domains | Users can create, edit, and delete stage level domains for end-user access. | Organization |
 | Configuration management | Manage Email SMTP configuration | Users can view, create, edit, and delete SMTP emails. | Organization |
 | Configuration management | Manage API clients | Users can manage API Clients, create, suspend, delete, change permissions, and rotate secrets.  <br/>**Note:** This permission allows users to create API clients that can modify their own permissions. | Organization |
 | Configuration management | Manage CSP | The user can view, create, edit, and delete CSP (Content Security Policy) rules at each stage. | Organization |
