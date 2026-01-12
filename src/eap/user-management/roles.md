@@ -134,7 +134,7 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Monitoring | Access asset logs and traces | Users can view asset logs and traces in a given stage. | Organization <br/> Asset |
 | Monitoring | Access user information | Users can view user information connected to a given log or activity. | Organization <br/> Asset |
 | Monitoring | App security | The user with this permission has access to the Vulnerability Overview report screen. | Organization <br/> Asset |
-| Monitoring | Audit Trail View | This permission enables users to view the audit logs. | Organization |
+| Monitoring | View audit trail | This permission enables users to view the audit logs. | Organization |
 | AI Mentor System | Edit/Change Code Quality findings | Provides access to a Code Quality Console and interactive capabilities, including the ability to modify the status of findings and manage comments. Additionally, if permissions are set at the organizational level, users will see which organizational users have introduced those findings, change status, and add comments. | Organization <br/> Asset |
 | AI Mentor System | View Code Quality findings | Provides users access to a Code Quality Console to monitor code standards and allow visibility of application findings for those with appropriate permissions. Additionally, If the permissions are set at the organizational level it will allow users to see which organizational users have introduced those findings. | Organization <br/> Asset |
 | Configuration management | View configurations | Users can view app or library configurations in a given stage. | Organization <br/> Asset |
