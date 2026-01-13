@@ -22,6 +22,12 @@ topic:
 
 # Themes
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 A theme gives you the ability to style various parts of your app differently depending on the context. Themes can be simple such as one that uses different colors and backgrounds or font sizes and icons. Using CSS, you can achieve the same results as a theme by piecing together various CSS variables in a context (such as black and white) to enable a better presentation of an app.
 
 By default, an app theme is available in every app, enabling you to customize the look and feel by adding your custom CSS. You also have the option to create multiple themes inside one app.

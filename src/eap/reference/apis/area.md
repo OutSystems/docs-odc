@@ -18,6 +18,12 @@ coverage-type:
 
 # Area Chart
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 This example shows how you can create a simple Area Chart with a Stacked Series.
 
 1. From the Toolbox, drag the **Area Chart** widget to the Screen.

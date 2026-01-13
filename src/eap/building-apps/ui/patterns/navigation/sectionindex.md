@@ -18,6 +18,12 @@ coverage-type:
 
 # Section Index
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 You can use the Section Index UI Pattern to organize the content of a screen, enabling quick navigation within the page.
 
 ![Example of a Section Index UI Pattern on a mobile app screen](images/sectionindex-example.png "Section Index Example")
@@ -75,14 +81,14 @@ After following these steps and publishing the app, you can test the pattern in 
 ### Section Index
 
 | **Property** | **Description** |
-|---|---|
-|SmoothScrolling (Boolean): Optional | If True, navigation to the destination is animated. If False, the navigation is instant. The default value is True.|
-|IsFixed (Text): Optional | If True, the Section Index Pattern is always in the same position on the screen. This is the default. If False, the Section Index Pattern scrolls with the page content. The default value is False.|
-|ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1" "myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
+| --- | --- |
+| SmoothScrolling (Boolean): Optional | If True, navigation to the destination is animated. If False, the navigation is instant. The default value is True. |
+| IsFixed (Text): Optional | If True, the Section Index Pattern is always in the same position on the screen. This is the default. If False, the Section Index Pattern scrolls with the page content. The default value is False. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1" "myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
 
 ### Section Index Item
 
 | **Property** | **Description** |
-|---|---|
-|ScrollToWidgetId (Text): Mandatory | Element to where the page navigates.|
-|ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1" "myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
+| --- | --- |
+| ScrollToWidgetId (Text): Mandatory | Element to where the page navigates. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1" "myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |

@@ -20,6 +20,12 @@ coverage-type:
 
 # Progress Circle
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 You can use the Progress Circle UI Pattern to show the current progress of an operation flow. The progress is incremented in fractions of the circular badge.
 
 ![Screenshot of an example progress circle showing current operation flow progress](images/progresscircle-example-ss.png "Example Progress Circle")
@@ -76,12 +82,12 @@ After following these steps and publishing the app, you can test the pattern in 
 
 ## Properties
 
-| Property                      | Description                                                                                             |
-|-------------------------------|---------------------------------------------------------------------------------------------------------|
+| Property | Description |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | Progress (Integer): Mandatory | Progress percentage. Usually a number between 0 and 100. You can also use functions or local variables. |
-|ProgressColor (Color Identifier): Optional | The color that fills the circle, as progress goes up, using the OutSystems UI Color palette. |
-|TrailColor (Text): Optional | The color of the empty part of the progress circle, using the OutSystems UI Color palette.  |
-|Thickness (Integer): Optional | The thickness of the circle that marks the progress. |
-|OptionalConfigs.Shape (Shape Identifier): Optional  | Set the progress circle shape.|
-|OptionalConfigs.AnimateInitialProgress (Boolean): Optional  | If True, the progress from zero to the progress value is animated. This is the default.|
-|ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <br/>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
+| ProgressColor (Color Identifier): Optional | The color that fills the circle, as progress goes up, using the OutSystems UI Color palette. |
+| TrailColor (Text): Optional | The color of the empty part of the progress circle, using the OutSystems UI Color palette. |
+| Thickness (Integer): Optional | The thickness of the circle that marks the progress. |
+| OptionalConfigs.Shape (Shape Identifier): Optional | Set the progress circle shape. |
+| OptionalConfigs.AnimateInitialProgress (Boolean): Optional | If True, the progress from zero to the progress value is animated. This is the default. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <br/>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |

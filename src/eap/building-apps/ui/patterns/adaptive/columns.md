@@ -19,6 +19,12 @@ coverage-type:
 
 # Columns
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 You can use the Columns UI Pattern to split content into separate columns, improving the way information is displayed on-screen.
 
 ## How to use the Columns UI Pattern
@@ -45,8 +51,8 @@ You can use the Columns UI Pattern to split content into separate columns, impro
 
 ## Properties
 
-| **Property** |  **Description** |
-| ---|--- |
+| **Property** | **Description** |
+| --- | --- |
 | GutterSize (GutterSizeIdentifier): Optional | Defines the space between columns.<br/><br/>Examples<br/><br/><ul><li>_Empty_ - Leaves a space of 16px between columns. This is the default (Entities.GutterSize.Base).</li><li>_Entities.GutterSize.None_ - No space between columns.</li></ul> |
 | TabletBehavior (BreakColumns Identifier): Optional | Defines how the columns are displayed on tablets. The predefined options for the tablet behavior are:<br/><br/><ul><li>All</li><li>First</li><li>Last</li><li>Middle</li><li>None</li></ul>See below for an example of how each of the options look. |
 | PhoneBehavior (BreakColumns Identifier): Optional | Defines how the columns are displayed on phones. The predefined options for the phone behavior are:<br/><br/><ul><li>All</li><li>First</li><li>Last</li><li>Middle</li><li>None</li></ul>See below for an example of how each of the options look. |

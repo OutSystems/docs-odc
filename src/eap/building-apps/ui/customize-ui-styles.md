@@ -20,6 +20,12 @@ topic:
 
 # Customize UI styles
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 Users interact with your apps through the user interface (UI). As a developer, your goal is to follow UI standards defined by your organization but also to create an app that looks good and is easy to use.
 
 In the UI, you define the structure of how your apps look when built. OutSystems provides a UI framework which is the base. On top of the framework, you apply the styles you want to customize and incorporate into your design.  

@@ -21,6 +21,12 @@ topic:
 
 # Mouse Events
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 You can use the Mouse Events UI Pattern when the user needs to select elements on the interface with high precision.
 
 ## How to Use the Mouse Events UI Pattern

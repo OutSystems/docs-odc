@@ -1,5 +1,5 @@
 ---
-summary: Learn to create and reuse UI blocks across apps with OutSystems Developer Cloud (ODC) for efficient development.
+summary: Learn to UI blocks across apps with OutSystems Developer Cloud (ODC) for efficient development.
 tags: ui development, component reusability
 locale: en-us
 guid: a62501dc-9ec8-41f6-add8-50b3e3934b8b
@@ -20,6 +20,12 @@ topic:
 ---
 
 # Create and Reuse Screen Blocks
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
 
 You can reuse blocks within the same app or, if you want to reuse blocks across your apps, create public blocks in a library. With Blocks, you can have part of the UI in one place, so changes to the Blocks are automatically visible in all Screens that use it.
 

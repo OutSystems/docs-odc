@@ -19,6 +19,12 @@ coverage-type:
 
 # Action Sheet
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 You can use the Action Sheet UI Patterns to add a menu that slides from the bottom of the screen when triggered by a user action.
 
 ![Screenshot of the Action Sheet trigger in a mobile app interface](images/actionsheet-1-ss.png "Action Sheet Trigger")
@@ -67,7 +73,7 @@ After following these steps and publishing the app, you can test the pattern in 
 
 ## Properties
 
-| Property                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| IsOpen(Boolean): Mandatory | Assign a variable open/close the Action Sheet.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ExtendedClass              | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.<br/><br/>Examples<br/><br/><ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
+| Property | Description |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| IsOpen(Boolean): Mandatory | Assign a variable open/close the Action Sheet. |
+| ExtendedClass | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.<br/><br/>Examples<br/><br/><ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |

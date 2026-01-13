@@ -20,6 +20,12 @@ topic:
 
 # Create screen from scratch
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 A Screen is a user interface (UI) element that contains other UI elements for users to interact. An empty Screen contains a basic layout for you to add widgets. A Screen based on a Screen Template has predefined content that works as a demo.
 
 How Screens show in an app to you users depends on the app type:
