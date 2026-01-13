@@ -57,7 +57,7 @@ The value is hard-coded and locks the screen to portrait.
 
 ### Define a custom variable
 
-You can define a variable in  **Data** > **Settings** and reference it.
+You can define a variable in **Extensibility** > **Extensibility Settings** and reference it.
 
     {
     (...)
@@ -77,7 +77,6 @@ You can use secrets to add private data to the JSON of a plugin or app.
 For example, you may need to point to a private git repository accessed by a token. To do this:
 
 1. Define, `MyRepoXWithToken`, for example, as the setting for the `url` of the plugin:
-   
 
         {
         (...)
@@ -87,14 +86,14 @@ For example, you may need to point to a private git repository accessed by a tok
         (...)
         }
 
-2. Mark it as a secret and set its value with your secret, for example `"https://[TOKEN]@github.com/OutSystems/cordova-plugin-camera.git#v1"`
+1. Mark it as a secret and set its value with your secret, for example `"https://[TOKEN]@github.com/OutSystems/cordova-plugin-camera.git#v1"`
 
 You could also use a secret to use an API key on a preference on a plugin, for example.
 
 ### Reference an image
 
 You can also reference images in the JSON file.
-    
+
     {
     (...)
         "icons": {
@@ -105,7 +104,6 @@ You can also reference images in the JSON file.
         }
     (...)
     }
-
 
 ### Customize deeplink behavior
 
@@ -148,11 +146,13 @@ if (channel) {
 ```
 
 Example for `function`:
+
 ```
 window.handleOpenURL = function (url) {
     ...
 }
 ```
+
 To make this change available for the users, [publish and generate a new mobile application](creating-mobile-package.md) and distribute it.
 
 ## Related resources
@@ -160,5 +160,3 @@ To make this change available for the users, [publish and generate a new mobile 
 * [Extensibility configuration JSON schema](extensibility-configurations-json-schema.md)
   
 * [Cordova-based extensibility configuration JSON schema](legacy-extensibility-configuration.md)
-
-

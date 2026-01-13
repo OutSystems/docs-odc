@@ -78,7 +78,7 @@ The value of the **Extensibility Configurations** property of a mobile app modul
         // Common resources for iOS and Android
          "global": {
             "<The key of the resource>": {
-                "src": $settings.<any-binary-setting>,
+                "src": $extensibilitySettings.<any-binary-setting>,
                 "target": "<The path to where the resource will be copied within the Android/iOS project>"
             },
             /* ...more global resources... */
@@ -86,7 +86,7 @@ The value of the **Extensibility Configurations** property of a mobile app modul
         // Just for Android
         "android": {
             "<The key of the resource>": {
-                "src": $settings.<any-binary-setting>,
+                "src": $extensibilitySettings.<any-binary-setting>,
                 "target": "<The path to where the resource will be copied within the Android project>"
             },
             /* ...more Android resources... */
@@ -94,7 +94,7 @@ The value of the **Extensibility Configurations** property of a mobile app modul
         // Just for iOS
         "ios": {
             "<The key of the resource>": {
-                "src": $settings.<any-binary-setting>,
+                "src": $extensibilitySettings.<any-binary-setting>,
                 "target": "<The path to where the resource will be copied within the iOS project>"
             },
             /* ...more iOS resources... */

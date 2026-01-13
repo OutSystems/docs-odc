@@ -21,7 +21,7 @@ topic:
   - using-capacitor-plugins
 ---
 
-# Barcode Plugin
+# Barcode plugin
 
 The Barcode Plugin lets users of the app scan 1D and 2D barcodes. This plugin works with native mobile apps, progressive web apps (PWAs), and web apps. Set the options in the plugin to customize the scanner, add instructions, or change the camera direction.
 
@@ -67,7 +67,7 @@ To prevent errors, it's a good practice to first check if the plugin is availabl
 
 ## (Optional) Setting description for NSCameraUsageDescription (iOS only)
 
-By default, **NSCameraUsageDescription** will be set to "We access your camera to scan barcodes.". If you want to use a different description, you can do it by setting the **CameraUsageDescription** setting in the ODC Portal in **Apps** > **`<Your app>`** > **Configuration** > **Settings** > **CameraUsageDescription** > **Edit**.
+By default, **NSCameraUsageDescription** will be set to "We access your camera to scan barcodes.". If you want to use a different description, you can do it by setting the **CameraUsageDescription** extensibility setting in the ODC Portal in **Apps** > **`<Your app>`** > **Mobile Distribution** > **Extensibility settings** > **CameraUsageDescription** > **Edit**.
 
 ## Reference
 
@@ -111,17 +111,17 @@ The following list shows which barcode formats the plugin can read.
 
 Here is the list of parameters you can use in the plugin actions.
 
-| Action                   | Description                                   |
+| Action | Description |
 | ------------------------ | --------------------------------------------- |
-| **ScanInstructions**    | Displays the scanning instructions. |
-| **CameraDirection**    | Select the front or back camera as default when triggering a new scan action. |
-| **ScanOrientation**    | Allows you to set the Scan UI to Adaptive, which detects your device's orientation, Landscape, or Portrait mode. |
-| **ScanButton**    | If set to True, enables a scan button in the Scan UI. Pressing the button triggers the scan action instead of scanning automatically when framing the code. |
-| **ScanButtonText**    | Defines the text shown on the scan button when it is set to True. |
-| **ShowCameraSelection**    | **Only applies to PWA/Web**. If true, the scanner experience in PWA will include UI for the end-user to switch between the device's cameras. |
-| **Hint**    | **Only applies to PWA/Web**. A code format of type `<Formats Identifier>`. If set, it only scans codes of the specified format. |
-| **ScannerFPS**    | **Only applies to PWA/Web**. A direct mapping to HTML5Qr-Code `fps`. This number represents the number of frames per second the scanner reads and thus scans a code. Values over (and including) 1000 are not recommended as they will break the app. |
-| **AndroidScanningLibrary**    | **Only applies to Android**. Defines which Android library to use when scanning - ML Kit or ZXing. |
+| **ScanInstructions** | Displays the scanning instructions. |
+| **CameraDirection** | Select the front or back camera as default when triggering a new scan action. |
+| **ScanOrientation** | Allows you to set the Scan UI to Adaptive, which detects your device's orientation, Landscape, or Portrait mode. |
+| **ScanButton** | If set to True, enables a scan button in the Scan UI. Pressing the button triggers the scan action instead of scanning automatically when framing the code. |
+| **ScanButtonText** | Defines the text shown on the scan button when it is set to True. |
+| **ShowCameraSelection** | **Only applies to PWA/Web**. If true, the scanner experience in PWA will include UI for the end-user to switch between the device's cameras. |
+| **Hint** | **Only applies to PWA/Web**. A code format of type `<Formats Identifier>`. If set, it only scans codes of the specified format. |
+| **ScannerFPS** | **Only applies to PWA/Web**. A direct mapping to HTML5Qr-Code `fps`. This number represents the number of frames per second the scanner reads and thus scans a code. Values over (and including) 1000 are not recommended as they will break the app. |
+| **AndroidScanningLibrary** | **Only applies to Android**. Defines which Android library to use when scanning - ML Kit or ZXing. |
 
 The Barcode Plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check[cordova-outsystems-barcode](https://github.com/OutSystems/cordova-outsystems-barcode) and [capacitor-barcode-scanner](https://github.com/ionic-team/capacitor-barcode-scanner).
 

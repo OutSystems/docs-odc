@@ -15,11 +15,11 @@ coverage-type:
   - apply
 ---
 
-# SSL Pinning Plugin
+# SSL Pinning plugin
 
 <div class="info" markdown="1">
 
-The SSL Pinning Plugin applies applies only to Mobile Apps.
+The SSL Pinning plugin applies only to mobile apps.
 
 </div>
 
@@ -159,7 +159,7 @@ The following is a configuration example generated in real-time for an applicati
            
     }
 
-### Install the SSL Plugin from Forge
+### Install the SSL Pinning plugin from Forge
 
 Install the SSL Pinning Plugin from [Forge](https://www.outsystems.com/forge/) in your stage. For the plugin installation instructions, see [Installing a plugin](../intro.md/#installing-a-plugin-and-adding-a-public-element-to-your-app).
 
@@ -169,11 +169,10 @@ Add the configuration file to the mobile app, so that the build service can bund
 
 Go to the ODC Portal to complete the following steps in your mobile app.
 
-1. Open the ODC Portal or ODC Studio, and open your mobile app.
-    * In the ODC Portal, navigate to the **Configuration tab**.
-    * In ODC Studio, navigate to your app list > **Configure app** > **Configuration tab**.
+1. Open the ODC Portal and navigate to your app's details page.
+    * In the detail page, navigate to the **Mobile distribution** tab, and then click on **Extensibility settings**.
 
-1. Locate the **PinningConfiguration** setting.
+1. Locate the **PinningConfiguration** extensibility setting.
     This setting automatically appears after you add a dependency to the SSL Pinning plugin in your mobile app.
 
 1. Select the context menu, select **Edit**, and upload your **pinning.json** file.
@@ -232,7 +231,7 @@ To test that the SSL Pinning rejects a certification, do the following:
 
 1. The Mobile app won’t work because the SSL Pinning displays an error due to an invalid certificate.
 
-## SSL pinning for multiple servers
+## SSL Pinning for multiple servers
 
 If you want your mobile app to perform the SSL Pinning validations when connecting to multiple servers, complete the following steps:
 

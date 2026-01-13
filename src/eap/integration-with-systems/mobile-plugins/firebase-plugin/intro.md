@@ -18,11 +18,11 @@ topic:
   - using-cordova-plugins
 ---
 
-# Firebase Plugins
+# Firebase plugins
 
 <div class="info" markdown="1">
 
-Applies only to Mobile Apps.
+Applies only to mobile apps.
 
 </div>
 
@@ -76,25 +76,25 @@ To learn how to use the Firebase Cloud Messaging plugin using server actions, re
 
 ## Adding Google services configuration file
 
-You must provide the plugin configuration file as settings in the ODC Portal for an app with a Firebase Plugin. To add the Firebase configuration to your app, complete the following steps:
+You must provide the plugin configuration files as extensibility settings in the ODC Portal for an app using at lesat one of the Firebase Plugins. To add the Firebase configuration to your app, complete the following steps:
 
 1. Open the ODC Portal.
 
-1. From the left Navigation menu, select **Apps**. From the details page, select your app. Then select **Settings**.
+1. From the left Navigation menu, select **Apps**. From the details page, select your app. Then, go to the **Mobile Distribution** tab and select **Extensibility settings**.
 
-    Complete the two Firebase settings **GoogleServicesAndroid** and **GoogleServicesIos**.
+    Configure the two Firebase settings **GoogleServicesAndroid** and **GoogleServicesIos**.
 
     ![Shows the Google services configuration files added in the Firebase settings panel](images/add-google-services-config-files-in-firebase-settings-pl.png "Adding Google Services Configuration Files in Firebase Settings")
 
 1. Select the context menu associated with the GoogleServicesAndroid setting, then select **Edit** and upload the **google-services.json** file.
 
-1. In the Firebase settings, select the context menu associated with the GoogleServicesIos setting, then select **Edit** and upload the **GoogleService-Info.plist** file.
+1. Select the context menu associated with the GoogleServicesIos setting, then select **Edit** and upload the **GoogleService-Info.plist** file.
 
 <div class="info" markdown="1">
 
 * Binary Data Settings have a 5KB size limit. If your Google Services configuration file exceeds this limit, consider creating a new Firebase Project or using one with fewer apps associated with it.
 
-* Add the Google services configuration files only for the first Firebase plugin in your app. The next Firebase plugin you add uses the same configuration files.
+* Add the Google services configuration files only when adding the first Firebase plugin to your app. The next Firebase plugin you add uses the same configuration files.
 
 * Even though these settings are optional and you may choose to generate a build for only one platform (Android or iOS), you must add both the Google services configuration files, one for each platform. This requirement is temporary.
 
@@ -296,4 +296,4 @@ If you do not want to show the App Tracking Transparency prompt on iOS, you can 
 
 #### Using the plugin in Capacitor apps
 
-If you need to disable Crashlytics collection in your app, you can set the **CrashlyticsCollectionEnabled** setting to **False**, since it is **True** by default, in your app’s Mobile distribution tab in the ODC portal. You can also enable Crashlytics collection in runtime using the **SetEnabled** client action.
+If you need to disable Crashlytics collection in your app, you can set the **CrashlyticsCollectionEnabled** extensibility setting to **False**, since it is **True** by default, in your app’s Mobile distribution tab in the ODC portal. You can also enable Crashlytics collection in runtime using the **SetEnabled** client action.
