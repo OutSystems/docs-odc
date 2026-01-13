@@ -152,9 +152,9 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | User management | View end users | Users can view users with end-user roles. | Organization <br/> Asset |
 | User management | View organization members | Users can view users with organization roles. | Organization |
 | User management | Manage users | Users can view, activate, deactivate, and delete other organization members and end users. | Organization |
-| User management | Manage end-user access | Users can grant or revoke end-user roles. | Organization <br/> Asset |
+| User management | Manage end-user access | Users can invite users and grant or revoke end-user roles. | Organization <br/> Asset |
 | User management | Manage end-user groups | Users can view, create, edit, and delete end-user groups. | Organization |
-| User management | Manage organization access | Users can view organization members and grant or revoke organization roles. | Organization |
+| User management | Manage member access | Users can view organization members and grant or revoke organization roles. | Organization |
 | User management | Manage organization roles | Users can create, edit, and delete organization roles. | Organization |
 | User management | Manage authentication | The user with this permission can view and manage the authentication providers to access the organization and apps. | Organization |
 | Forge | Install/Update assets | Users can install or update assets from Forge. | Organization |
