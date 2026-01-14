@@ -122,3 +122,4 @@ For technical limitations, see [OutSystems system requirements for ODC](../../ge
 
 * [Prompting guide](prompts.md)
 * [Use requirement documents](requirements-doc.md)
+* [AI tools for working with Mentor](ai-tools.md)

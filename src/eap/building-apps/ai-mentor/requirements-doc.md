@@ -171,3 +171,4 @@ The following sample documents demonstrate requirement structures for different 
 ## Related
 
 * [Prompting guide](prompts.md)
+* [AI tools for working with Mentor](ai-tools.md)
