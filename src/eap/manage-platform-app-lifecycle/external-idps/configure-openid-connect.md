@@ -48,7 +48,7 @@ Before you begin, make sure you have:
 
 <div class="info" markdown="1">
 
-When registering your web application in your identity provider’s portal, if you're prompted to provide redirect URIs, leave the fields empty or use placeholder URIs. You’ll update these with the correct values in a later step of this guide.
+When registering your web app in your identity provider’s portal, if you're prompted to provide redirect URIs, leave the fields empty or use placeholder URIs. You’ll update these with the correct values in a later step of this guide.
 
 </div>
 
@@ -89,6 +89,12 @@ To add a new OpenID Connect provider, follow these steps:
 1. Click **Save**.
 
 ODC adds the provider to the list of available providers.
+
+    <div class="warning" markdown="1">
+
+    If you make any changes to the client secret after it has been applied, the changes may take up to one hour to take effect due to caching. During this period, the previously applied client secret remains in use. To prevent downtime, keep the old client secret configured in your external IdP for at least one hour after the change.
+
+    </div>
 
 ## Next step
 
