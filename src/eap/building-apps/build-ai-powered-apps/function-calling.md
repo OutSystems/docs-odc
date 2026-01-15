@@ -21,7 +21,7 @@ Function calling is the ability of an [AI model](ai-models.md) to go beyond gene
 
 ## Action calling
 
-In ODC, the `Call Agent` element within an `Agent Flow` orchestrates this process. When you trigger an agent, it dynamically decides the best course of action using an AI model's reasoning. This can involve calling a single Server Action, a sequence of different actions, or the same action multiple times.
+In ODC, the `Call Agent` element within an `Agent Flow` orchestrates this process. When you trigger an agent, it dynamically decides the best course of action using an AI model's reasoning. This can involve calling a single server action, a sequence of different actions, or the same action multiple times.
 
 The AI model decides based on the context you provide, which includes:
 
@@ -31,14 +31,14 @@ The AI model decides based on the context you provide, which includes:
 
 The core of this functionality lies in how you define actions for your agent.
 
-* **Actions are Server Actions**: In the context of an AI agent, an action is a standard Server Action. You grant the agent the ability to use these actions to perform its tasks.  
+* **Actions are server actions**: In the context of an AI agent, an action is a standard Server Action. You grant the agent the ability to use these actions to perform its tasks.  
 * **Agent autonomy**: You provide the agent with a set of available actions. The AI model autonomously decides which action (or sequence of actions) is appropriate by analyzing the prompts and the purpose of each action you've exposed.
 
-Providing actions is optional. If you don't provide any Server Actions, the agent relies exclusively on the AI model's internal knowledge to generate responses.
+Providing actions is optional. If you don't provide any server actions, the agent relies exclusively on the AI model's internal knowledge to generate responses.
 
 <div class="info" markdown="1">
 
-Action calling and structured output can't be used on the same Agent call. If you want to use action calling and structure output, you must do action calling on an Agent call and then do the Structure output on another Agent call.
+Action calling and structured output can't be used on the same Agent call. If you want to use action calling and structure output, you must do action calling on an Agent call and then do the Structure output on another agent call.
 
 </div>
 
@@ -61,11 +61,11 @@ The AI model's ability to choose the correct action depends entirely on the text
 
 The more detailed and clear your descriptions are, the better the model’s reasoning is, leading to more accurate action calls.
 
-#### Guide the Call Condition
+#### Guide the call condition
 
-The **Call Condition** setting is a safeguard within the **Action calling settings**. Its purpose is to prevent an AI agent from getting stuck in a loop or consuming excessive resources during runtime. You can define specific limits that, once reached, stop the agent from calling any more actions for the current task.
+The **Call cCndition** setting is a safeguard within the **Action calling settings**. Its purpose is to prevent an AI agent from getting stuck in a loop or consuming excessive resources during runtime. You can define specific limits that, once reached, stop the agent from calling any more actions for the current task.
 
-The agent concludes its reasoning loop when it meets a Call Condition. The agent then generates a final response to the user based on the information gathered up to that point.
+The agent concludes its reasoning loop when it meets a call condition. The agent then stops execution and raises an error to prevent infinite loops or excessive resource consumption.
 
 You define an expression that evaluates after each action call. If the expression evaluates to `True`, the agent stops calling any more actions for the current task.
 
@@ -73,23 +73,23 @@ You define an expression that evaluates after each action call. If the expressio
 
 In Action calling, a **loop** is a single cycle where the AI model calls an action and then uses that action's output to reason about the next step. An agent can loop multiple times to gather enough information before generating a final answer.
 
-Your Call Condition expression can use any of the variables that are in scope when Call Agent runs. As in any Server Action, these are the variables set by actions earlier in the logic flow of AgentFlow. Additionally, it can also use the following internal variables that track the agent’s progress in real-time:
+Your call condition expression can use any of the variables that are in scope when **call agent** runs. As in any server action, these are the variables set by actions earlier in the logic flow of **AgentFlow**. Additionally, it can also use the following internal variables that track the agent’s progress in real-time:
 
-* `TokenUsage`: Represents the total number of tokens the agent may consume in one execution of Call Agent. For example, the expression `TokenUsage = 8000` limits token use to a maximum of 8000 tokens.  
+* `TokenUsage`: Represents the total number of tokens the agent may consume in one execution of **call agent**. For example, the expression `TokenUsage = 3000` limits token use to a maximum of 3000 tokens.  
 * `LoopCount`: Represents the number of reasoning loops the agent has executed in the current task.  
-* `TotalCallsCount`: Represents the total number of individual actions the agent has called across all loops. For example, if the agent calls **action 1** ten times and **action 2** fifteen, the `TotalCallsCount` is 25.
+* `TotalCallsCount`: Represents the total number of individual actions the agent has called across all loops. For example, if the agent calls **action 1** ten times and **action 2** twenty, the `TotalCallsCount` is 30.
 
 The agent may continue to execute actions as long as your expression evaluates to `False`.
 
 <div class="info" markdown="1">
 
-Use the **Call Condition** for process control and the **Max Tokens** setting for output control. The Call Condition stops the agent's execution and throws an error if it meets its expression, which prevents infinite loops. In contrast, the Max Tokens setting limits the final response length by returning a successful but potentially truncated output without an error, which manages the answer's cost and verbosity.
+Use the **call condition** for process control and the **Max Tokens** setting for output control. The call condition stops the agent's execution and throws an error if it meets its expression, which prevents infinite loops. In contrast, the **Max Tokens** setting limits the final response length by returning a successful but potentially truncated output without an error, which manages the answer's cost and verbosity.
 
 </div>
 
 ##### Examples
 
-Here are some example expressions for the Call Condition:
+Here are some example expressions for the call condition:
 
 * To stop the process before it consumes 3000 tokens: `TokenUsage < 8000`  
 * To limit the agent to a maximum of fifty reasoning loops: `LoopCount < 50`  
