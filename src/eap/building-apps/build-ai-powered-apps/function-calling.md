@@ -21,7 +21,7 @@ Function calling is the ability of an [AI model](ai-models.md) to go beyond gene
 
 ## Action calling
 
-In ODC, the `Call Agent` element within an `Agent Flow` orchestrates this process. When you trigger an agent, it dynamically decides the best course of action using an AI model's reasoning. This can involve calling a single server action, a sequence of different actions, or the same action multiple times.
+In ODC, the **Call Agent** element within an **Agent Flow** orchestrates this process. When you trigger an agent, it dynamically decides the best course of action using an AI model's reasoning. This can involve calling a single server action, a sequence of different actions, or the same action multiple times.
 
 The AI model decides based on the context you provide, which includes:
 
@@ -63,7 +63,7 @@ The more detailed and clear your descriptions are, the better the model’s reas
 
 #### Guide the call condition
 
-The **Call cCndition** setting is a safeguard within the **Action calling settings**. Its purpose is to prevent an AI agent from getting stuck in a loop or consuming excessive resources during runtime. You can define specific limits that, once reached, stop the agent from calling any more actions for the current task.
+The **Call condition** setting is a safeguard within the **Action calling settings**. Its purpose is to prevent an AI agent from getting stuck in a loop or consuming excessive resources during runtime. You can define specific limits that, once reached, stop the agent from calling any more actions for the current task.
 
 The agent concludes its reasoning loop when it meets a call condition. The agent then stops execution and raises an error to prevent infinite loops or excessive resource consumption.
 
