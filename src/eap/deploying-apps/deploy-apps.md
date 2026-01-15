@@ -89,7 +89,7 @@ Your asset is deployed to your selected stage. To roll back an update from a st
 
 For more information about the impact analysis report, refer to [Understanding the impact analysis report](#understanding-the-impact-analysis-report).
 
-## Deployment considerations for agentic apps { #deploy-agentic }
+## Deployment considerations for agentic apps {#deploy-agentic}
 
 Agentic apps follow the standard ODC continuous delivery model. They're built and containerized in the Development stage, and that exact container is promoted to subsequent stages. However, due to their autonomous nature, specific rules apply to their deployment and dependencies.
 
@@ -99,7 +99,7 @@ Agentic apps are often part of a larger system or involving workflows. You must 
 
 <div class="info" markdown="1">
 
-If you deploy a **workflow** that triggers an event in an agentic app, you must ensure the agentic app is deployed to the target stage (Quality or Production) **before** or **simultaneously** with the workflow. If the agentic app is missing from the target stage, the deployment of the workflow will be blocked due to missing dependencies.
+If you deploy a **workflow** that triggers an event in an agentic app, you must ensure the agentic app is deployed to the target stage (Quality or Production) **before** the workflow. If the agentic app is missing from the target stage, the deployment of the workflow will be blocked due to missing dependencies.
 
 </div>
 
@@ -127,7 +127,7 @@ Versions and revisions help you keep track of changes in your workflows in diffe
 
 * **Production**: After testing, when you deploy your asset from QA  to Production, ODC assigns a three-part semantic version number in the format major.minor.patch. The system always suggests a version (the first suggestion is always 0.1.0). Depending on the changes you deploy to Production, you can change the version number (it must be equal to or higher than the previous version).
 
-### Multiple revisions of a workflow { #workflow-revisions }
+### Multiple revisions of a workflow {#workflow-revisions}
 
 You can have multiple revisions of a workflow in the same stage. A revision can have multiple instances. Once an instance starts execution in a revision, it completes its execution within that specific revision. Subsequent deployments of newer revisions or versions do not affect these running instances. Once all instances of a revision are completed or terminated, the revision is removed from the stage (unless it is the latest one deployed).  
 
