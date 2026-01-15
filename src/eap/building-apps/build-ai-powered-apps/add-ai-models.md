@@ -25,7 +25,7 @@ ODC lets you connect your OutSystems apps to external large language models, oft
 
 ODC supports connections to AI models from multiple providers, offering flexibility in choosing the right model for your use case:
 
-**Natively supported providers:**
+### Natively supported providers
 
 * **Amazon Bedrock** – Compatible with the [Bedrock Converse API](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html) for access to multiple foundation models.
 * **Azure OpenAI** – Microsoft OpenAI service for enterprise-grade AI models.
@@ -38,11 +38,11 @@ ODC supports connections to AI models from multiple providers, offering flexibil
 * **AI21** – AI21 Labs' Jurassic models for text generation and comprehension.
 * **IBM watsonx.ai** – IBM enterprise AI platform for building and deploying models.
 
-**Custom connections:**
+### Custom connections
 
 Using the [ODC API contract](ai-models.md#custom-model-connections), you can add connections to your provisioned models through **Custom connections**. This allows you to integrate with LLMs from various providers or your own private models that are not natively supported by ODC.
 
-**ODC trial models:**
+### ODC trial models
 
 ODC provides ready-to-use trial models for quick testing and exploration in the development stage. In every tenant and Personal Edition, the following models are available:
 
@@ -54,25 +54,25 @@ Trial models have limits, which, when reached, prevent the further use of the mo
 
 The following tables shows the current limits of the available Trial Models.
 
-**GPT-4o**
+#### GPT-4o
 
-|Context|Maximum number of Requests|Requests rate limit| Maximum number of Tokens|Tokens Rate limit|
-|--|--|--|--|--|
-|Licensed Customers|100|N.A.|N.A.|N.A.|
+| Context | Maximum number of Requests | Requests rate limit | Maximum number of Tokens | Tokens Rate limit |
+| -- | -- | -- | -- | -- |
+| Licensed Customers | 100 | N.A. | N.A. | N.A. |
 
-**Claude 3.7 Sonnet**
+#### Claude 3.7 Sonnet
 
-|Context|Maximum number of Requests|Requests rate limit| Maximum number of Tokens|Tokens Rate limit|
-|--|--|--|--|--|
-|Licensed Customers|1000|N.A.|N.A.|N.A.|
-|Personal Edition|3000|30 per minute|5 Million|100000 per minute|
+| Context | Maximum number of Requests | Requests rate limit | Maximum number of Tokens | Tokens Rate limit |
+| -- | -- | -- | -- | -- |
+| Licensed Customers | 1000 | N.A. | N.A. | N.A. |
+| Personal Edition | 3000 | 30 per minute | 5 Million | 100000 per minute |
 
-**Amazon Nova Pro**
+#### Amazon Nova Pro
 
-|Context|Maximum number of Requests|Requests rate limit| Maximum number of Tokens|Tokens Rate limit|
-|--|--|--|--|--|
-|Licensed Customers|1000|N.A.|N.A.|N.A.|
-|Personal Edition|1000|3 per minute|1 Million|12000 per minute|
+| Context | Maximum number of Requests | Requests rate limit | Maximum number of Tokens | Tokens Rate limit |
+| -- | -- | -- | -- | -- |
+| Licensed Customers | 1000 | N.A. | N.A. | N.A. |
+| Personal Edition | 1000 | 3 per minute | 1 Million | 12000 per minute |
 
 <div class="info" markdown="1">
 
@@ -88,7 +88,7 @@ Before adding a configured connection to your model provider:
 * Obtain the necessary access credentials and details the specific provider requires, such as API keys, endpoint URLs, deployment names, model IDs, and access or secret keys. Refer to the [AI model parameters](#ai-model-parameters) section below for details.
 * Ensure you have the required permissions within ODC to manage AI models. Note that managing AI models utilizes the same permissions as managing connections within the ODC Portal.
 
-## Add AI models { #add-ai-models }
+## Add AI models {#add-ai-models}
 
 Follow these steps to add an AI model connection or an ODC trial model in the ODC Portal:
 
@@ -97,6 +97,7 @@ Follow these steps to add an AI model connection or an ODC trial model in the OD
 1. Click **Add AI model**. The **Add AI model** dialog opens.
 
 1. Choose the type of model you want to add by selecting the appropriate tab:
+
     * **Provider tab**: Select this tab to configure your own AI model from a supported provider or a custom connection.
 
     * **Trial tab**: Select this tab to add a ready-to-use ODC trial model, for example, GPT or Claude Sonnet.
@@ -125,9 +126,9 @@ Follow these steps to add an AI model connection or an ODC trial model in the OD
 
 1. Click **Save** to confirm.
 
-After you complete the steps, ODC redirects you to the main AI models page. To use this model in your app, you must go to ODC Studio and add it as a [public element](../../app-architecture/reuse-elements.md#public-elements).
+After you complete the steps, ODC redirects you to the main AI models page. To use this model in your app, you must go to ODC Studio and add it as a [public element](../../app-architecture/reuse-elements.md#public-elements). Search for the server action named `Call<ModelName`, where `<ModelName>` is the name you defined in the ODC Portal.
 
-## AI model parameters { #ai-model-parameters }
+## AI model parameters {#ai-model-parameters}
 
 Use the following parameters when configuring endpoints for the supported AI model providers in the ODC Portal. The specific parameters required depend on the provider you choose.
 
@@ -160,13 +161,13 @@ Use these parameters when configuring Amazon Bedrock model endpoints.
 
 Use these parameters when configuring custom connection AI models and their endpoints in the ODC Portal.
 
-| Parameter   | Description | Notes |
+| Parameter | Description | Notes |
 | :---------- | :-------------------------------------- | :----------------------------------- |
-| Name        | User-defined, identifiable name for the endpoint instance. |  Differentiates between multiple endpoints for the same custom AI model connection. |
-| Model ID    | Identifies the specific custom model you use. | |
-| URL         | The endpoint URL for the custom AI service or model API.| Enter the base URL provided by the custom model service.                                                                                                                                           |
-| Priority    | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | ODC assigns Priority 1 to the first endpoint by default. You can adjust priorities if multiple endpoints exist.                                                                             |
-| Headers     | A set of HTTP headers required by the custom API (authentication, content type, etc.).  | For the endpoint dialog to add necessary key-value pairs (for example, `Content-Type`, `Authorization`). These are specific to the API you are connecting to.                         |
+| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same custom AI model connection. |
+| Model ID | Identifies the specific custom model you use. | |
+| URL | The endpoint URL for the custom AI service or model API. | Enter the base URL provided by the custom model service. |
+| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | ODC assigns Priority 1 to the first endpoint by default. You can adjust priorities if multiple endpoints exist. |
+| Headers | A set of HTTP headers required by the custom API (authentication, content type, etc.). | For the endpoint dialog to add necessary key-value pairs (for example, `Content-Type`, `Authorization`). These are specific to the API you are connecting to. |
 
 ### Databricks parameters
 
@@ -177,7 +178,7 @@ Use these parameters when configuring Databricks AI model endpoints.
 | Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Databricks model connection. |
 | Serving endpoint name | Identifies the specific Databricks model you use. | Obtain from your Databricks workspace. |
 | Personal access token (PAT) | The authentication token required to access the Databricks API. | Obtain from your Databricks workspace. Treat this securely. |
-| URL | The endpoint URL for the Databricks model API. | Obtain from your Databricks workspace configuration. URL should follow this format: [Databricks instance name]/serving-endpoints|
+| URL | The endpoint URL for the Databricks model API. | Obtain from your Databricks workspace configuration. URL should follow this format: [Databricks instance name]/serving-endpoints |
 | Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
 
 ### Gemini parameters
@@ -220,44 +221,44 @@ Use these parameters when configuring OpenAI model endpoints (direct OpenAI API,
 
 Use these parameters when configuring IBM watsonx.ai model endpoints.
 
-| Parameter   | Description | Notes |
+| Parameter | Description | Notes |
 | :---------- | :-------------------------------------- | :----------------------------------- |
-| Project ID  | The identifier for your IBM watsonx.ai project. | This is a stage-level configuration and you must set before adding endpoints. Changing the Project ID requires re-testing and saving all endpoints in the stage. |
-| Name        | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same IBM watsonx.ai model connection. |
-| Model ID    | Identifies the specific IBM watsonx.ai model you use. | Obtain from your IBM watsonx.ai workspace. |
-| API key     | The authentication key required to access the IBM watsonx.ai API. | Obtain from your IBM watsonx.ai account. Treat this securely. |
-| URL         | The endpoint URL for the IBM watsonx.ai API. | Obtain from your IBM watsonx.ai workspace configuration. |
-| Priority    | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
+| Project ID | The identifier for your IBM watsonx.ai project. | This is a stage-level configuration and you must set before adding endpoints. Changing the Project ID requires re-testing and saving all endpoints in the stage. |
+| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same IBM watsonx.ai model connection. |
+| Model ID | Identifies the specific IBM watsonx.ai model you use. | Obtain from your IBM watsonx.ai workspace. |
+| API key | The authentication key required to access the IBM watsonx.ai API. | Obtain from your IBM watsonx.ai account. Treat this securely. |
+| URL | The endpoint URL for the IBM watsonx.ai API. | Obtain from your IBM watsonx.ai workspace configuration. |
+| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
 
 ### Anthropic parameters
 
-| Parameter   | Description | Notes |
+| Parameter | Description | Notes |
 | :---------- | :-------------------------------------- | :----------------------------------- |
-| Name        | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Anthropic model connection. |
-| Model ID    | The identifier for the specific Anthropic model used. | For example, claude-3-sonnet-20240229-v1:0. |
-| API key     | The authentication key required to access the Anthropic API. | Obtain from your Anthropic account. Treat this securely. |
-| URL         | The endpoint URL for the Anthropic API. | Typically `https://api.anthropic.com`. |
-| Priority    | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
+| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Anthropic model connection. |
+| Model ID | The identifier for the specific Anthropic model used. | For example, claude-3-sonnet-20240229-v1:0. |
+| API key | The authentication key required to access the Anthropic API. | Obtain from your Anthropic account. Treat this securely. |
+| URL | The endpoint URL for the Anthropic API. | Typically `https://api.anthropic.com`. |
+| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
 
 ### Cohere parameters
 
-| Parameter   | Description | Notes |
+| Parameter | Description | Notes |
 | :---------- | :-------------------------------------- | :----------------------------------- |
-| Name        | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Cohere model connection. |
-| Model ID    | The identifier for the specific Cohere model used. | For example, command-r-plus. |
-| API key     | The authentication key required to access the Cohere API. | Obtain from your Cohere account. Treat this securely. |
-| URL         | The endpoint URL for the Cohere API. | Typically `https://api.cohere.ai`. |
-| Priority    | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
+| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Cohere model connection. |
+| Model ID | The identifier for the specific Cohere model used. | For example, command-r-plus. |
+| API key | The authentication key required to access the Cohere API. | Obtain from your Cohere account. Treat this securely. |
+| URL | The endpoint URL for the Cohere API. | Typically `https://api.cohere.ai`. |
+| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
 
 ### AI21 parameters
 
-| Parameter   | Description | Notes |
+| Parameter | Description | Notes |
 | :---------- | :-------------------------------------- | :----------------------------------- |
-| Name        | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same AI21 model connection. |
-| Model ID    | The identifier for the specific AI21 model used. | For example, jurassic-2-ultra. |
-| API key     | The authentication key required to access the AI21 API. | Obtain from your AI21 account. Treat this securely. |
-| URL         | The endpoint URL for the AI21 API. | Typically `https://api.ai21.com/studio/v1`. |
-| Priority    | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
+| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same AI21 model connection. |
+| Model ID | The identifier for the specific AI21 model used. | For example, jurassic-2-ultra. |
+| API key | The authentication key required to access the AI21 API. | Obtain from your AI21 account. Treat this securely. |
+| URL | The endpoint URL for the AI21 API. | Typically `https://api.ai21.com/studio/v1`. |
+| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | You can adjust priorities if multiple endpoints exist. |
 
 ## Next steps
 
