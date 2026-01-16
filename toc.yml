@@ -511,6 +511,7 @@
     - href: eap/debugging-apps/breakpoints.md
     - href: eap/debugging-apps/watches.md
     - href: eap/debugging-apps/threads.md
+    - href: eap/debugging-apps/inspect-network-traffic.md
     - href: eap/debugging-apps/debugger-ui-reference.md
     - href: eap/debugging-apps/troubleshoot-debugger-connection.md
 
