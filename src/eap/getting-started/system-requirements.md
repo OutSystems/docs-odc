@@ -191,6 +191,7 @@ The general platform limits are:
 | Analytics Stream connections | 5 | The maximum number of Analytics Stream connections that can exist simultaneously. |
 | Max IP Filter Rules | 20 | The maximum number of IP filter rules that can be added to each IP filter group. |
 | Max IP Addresses (per rule) | 20 | The maximum number of IP addresses that can be added to each IP filter rule. |
+| API clients | 35 | The maximum number of API clients that can be defined. |
 
 ### Logs and traces
 
