@@ -580,7 +580,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.UploadResponse"
+                  "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.SourceCodeDownload"
                 }
               }
             }
@@ -1011,6 +1011,45 @@
         },
         "additionalProperties": false
       },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.SourceCodeDownload": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key of the download operation.",
+            "format": "uuid"
+          },
+          "fileUri": {
+            "type": "string",
+            "description": "The source code presigned URL.",
+            "nullable": true
+          },
+          "libraryKey": {
+            "type": "string",
+            "description": "The key of the specified library.",
+            "format": "uuid"
+          },
+          "libraryName": {
+            "type": "string",
+            "description": "The name of the specified library.",
+            "nullable": true
+          },
+          "libraryDescription": {
+            "type": "string",
+            "description": "The description of the specified library.",
+            "nullable": true
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Enums.SourceCodeDownloadStatus"
+              }
+            ],
+            "description": "The status of the download operation."
+          }
+        },
+        "additionalProperties": false
+      },
       "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Controllers.DataObjects.StructureResponse": {
         "type": "object",
         "properties": {
@@ -1070,6 +1109,15 @@
         ],
         "type": "string",
         "description": "Status of a generation operation in the v1beta1 API"
+      },
+      "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Enums.SourceCodeDownloadStatus": {
+        "enum": [
+          "None",
+          "Generating",
+          "GenerationError",
+          "ReadyForDownload"
+        ],
+        "type": "string"
       },
       "OutSystems.ExternalLibraryGeneration.Service.V1Beta1.Models.GenerationOperationCreationRequest": {
         "type": "object",
