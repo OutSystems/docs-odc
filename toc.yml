@@ -547,6 +547,7 @@
     - topics:
         - href: eap/integration-with-systems/consume_rest/consume-a-rest-api.md
         - href: eap/integration-with-systems/consume_rest/generate-reuse-oauth-token.md
+        - href: eap/integration-with-systems/consume_rest/token-based-auth-consume-dev-pattern.md
         - href: eap/integration-with-systems/consume_rest/rest-api-structures.md
         - href: eap/integration-with-systems/consume_rest/simple-customizations.md
         - href: eap/integration-with-systems/consume_rest/refresh-rest-service.md

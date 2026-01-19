@@ -88,6 +88,8 @@ ODC does not provide built-in support for token-based authentication such as OAu
 
 1. Include the [token in the request header](simple-customizations.md#example-use-case-adding-a-header-for-token-based-authentication) using the **OnBeforeRequest** callback.
 
+For a high-level development pattern that shows how to design token acquisition, storage, and reuse for JWT-based APIs, refer to [Token-based authentication pattern for consumed REST APIs](token-based-auth-consume-dev-pattern.md).
+
 ## Related resources
 
 ### Getting started
