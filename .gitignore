@@ -18,3 +18,5 @@ styles/*
 
 # Ignore all files inside the '.vscode' folder
 .vscode/*
+# Ignore all mcp.json files anywhere in the repo
+**/mcp.json
