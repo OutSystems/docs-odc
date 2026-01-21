@@ -25,15 +25,13 @@ Many external REST APIs use **[JSON Web Tokens (JWT)](https://en.wikipedia.org/w
 
 This article describes a **technology-agnostic development pattern** for consuming REST APIs that use token-based authentication with JWTs. The pattern isn't tied to a specific library or component.
 
-<!-- TODO: Add the following after the Forge component is published
 <div class="info" markdown="1">
 
-If you prefer to start from a prebuilt accelerator instead of implementing the pattern from scratch, consider using the [**ODC REST Connector – Secure Token Auth for O11**](https://www.outsystems.com/forge/) Forge component (ODC, client-side).
+If you prefer to start from a prebuilt accelerator instead of implementing the pattern from scratch, consider using the [**ODC REST Connector – Secure Token Auth for O11**](https://www.outsystems.com/forge/component-overview/23091/odc-rest-connector-client-odc) Forge component (ODC, client-side).
 
 This Forge component is a community-provided accelerator and **isn't officially supported by OutSystems**. Review the source code, perform a security assessment, and validate that it meets your organization's requirements before using it in production.
 
 </div>
--->
 
 ## When to use this pattern
 
