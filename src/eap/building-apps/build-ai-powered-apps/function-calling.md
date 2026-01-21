@@ -2,7 +2,7 @@
 guid: aec0cd3b-dcd4-4077-b0c0-04e987bdb690
 locale: en-us
 summary: Create AI agents in OutSystems Developer Cloud (ODC) using function calling to fulfill complex user requests with dynamic action orchestration.
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8940-10&p=f&t=3HWJrxoEM8IMLFsU-0
 coverage-type:
   - understand
 topic:
@@ -30,6 +30,8 @@ The AI model decides based on the context you provide, which includes:
 * The metadata of the available actions (their names, descriptions, and input parameters).
 
 The core of this functionality lies in how you define actions for your agent.
+
+![Flowchart showing the AI agent action calling process, from user prompt through Call Agent orchestration to final response, including the reasoning loop and decision points for action execution.](images/ai-agent-action-calling-flow-diag.png "AI Agent Action Calling Flow")
 
 * **Actions are server actions**: In the context of an AI agent, an action is a standard Server Action. You grant the agent the ability to use these actions to perform its tasks.  
 * **Agent autonomy**: You provide the agent with a set of available actions. The AI model autonomously decides which action (or sequence of actions) is appropriate by analyzing the prompts and the purpose of each action you've exposed.
@@ -69,15 +71,17 @@ The agent concludes its reasoning loop when it meets a call condition. The agent
 
 You define an expression that evaluates after each action call. If the expression evaluates to `True`, the agent stops calling any more actions for the current task.
 
+![Flowchart illustrating the decision process for call conditions in action calling, showing the steps from calling an action, updating variables, evaluating call condition expression, and either continuing or stopping execution.](images/call-condition-flow-diag.png "Call Condition Decision Flow Diagram")
+
 #### Loops and internal variables
 
 In Action calling, a **loop** is a single cycle where the AI model calls an action and then uses that action's output to reason about the next step. An agent can loop multiple times to gather enough information before generating a final answer.
 
 Your call condition expression can use any of the variables that are in scope when **call agent** runs. As in any server action, these are the variables set by actions earlier in the logic flow of **AgentFlow**. Additionally, it can also use the following internal variables that track the agent’s progress in real-time:
 
-* `TokenUsage`: Represents the total number of tokens the agent may consume in one execution of **call agent**. For example, the expression `TokenUsage = 3000` limits token use to a maximum of 3000 tokens.  
+* `TokenUsage`: Represents the total number of tokens the agent may consume in one execution of **call agent**. For example, the expression `TokenUsage = 8000` limits token use to a maximum of 8000 tokens.  
 * `LoopCount`: Represents the number of reasoning loops the agent has executed in the current task.  
-* `TotalCallsCount`: Represents the total number of individual actions the agent has called across all loops. For example, if the agent calls **action 1** ten times and **action 2** twenty, the `TotalCallsCount` is 30.
+* `TotalCallsCount`: Represents the total number of individual actions the agent has called across all loops. For example, if the agent calls **action 1** 15 times and **action 2** 10, the `TotalCallsCount` is 25.
 
 The agent may continue to execute actions as long as your expression evaluates to `False`.
 
@@ -91,7 +95,7 @@ Use the **call condition** for process control and the **Max Tokens** setting fo
 
 Here are some example expressions for the call condition:
 
-* To stop the process before it consumes 3000 tokens: `TokenUsage < 8000`  
-* To limit the agent to a maximum of fifty reasoning loops: `LoopCount < 50`  
-* To stop the agent after it has made a total of thirty action calls (regardless of the number of loops): `TotalCallsCount < 25`  
+* To stop the process before it consumes 8000 tokens: `TokenUsage < 8000`  
+* To limit the agent to a maximum of 50 reasoning loops: `LoopCount < 50`  
+* To stop the agent after it has made a total of 25 action calls (regardless of the number of loops): `TotalCallsCount < 25`  
 * To apply multiple conditions simultaneously: `TokenUsage < 8000 and TotalCallsCount < 25`
