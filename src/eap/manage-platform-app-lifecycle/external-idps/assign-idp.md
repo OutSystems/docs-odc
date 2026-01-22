@@ -76,7 +76,7 @@ When you assign a provider for the organization's use, you don't need to do anyt
 
 Choose your next step depending on your use case:
 
-* For end-users: [Use external identity providers (IdPs) in an app](apps.md)
+* For end-users: [Use an IdP in your apps](intro.md#use-an-idp-in-your-apps)
 
 * Optional: [Add an end-user group mapping](end-user-group-mapping.md)
 

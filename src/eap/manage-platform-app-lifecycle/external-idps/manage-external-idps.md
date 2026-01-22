@@ -29,17 +29,23 @@ This article covers the lifecycle management of your external IdPs, including re
 
 You must have the [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 
-## Replace an external IdP { #replace-idp }
+## Replace an external IdP {#replace-idp}
 
 To replace an external identity provider (IdP) in ODC, follow these steps:
 
 1. Complete steps 1–3 (up to and including “Assign an IdP”) in [Configuring and using an external IdP](intro.md#configuring-using-idp) for your new provider.
 
-1. Update your apps to use the new provider:
+1. If any apps implement custom login logic (for example, use a setting or explicitly set the **IdentityProvider** property), update those apps to use the new provider:
 
-    * If you use a setting with the IdP name, [update the setting in the ODC Portal](apps.md#modify-setting-odc-portal) so all your apps are directed to the new IdP. There's no need to republish the apps.
+    * If you use a setting with the IdP name, [update the setting in the ODC Portal](../configure-app-settings.md#view-and-edit-default-values-of-the-app-settings) so all your apps are directed to the new IdP. There's no need to republish the apps.
 
-    * If you don’t use a setting with the IdP name, in each app in ODC Studio set the **IdentityProvider** property to your IdP name (instead of `GetMyProvider.MyProvider`) wherever you set it (refer to [Use external identity providers in an app](apps.md)). Then, republish the apps.
+    * If you don’t use a setting with the IdP name, in each app in ODC Studio set the **IdentityProvider** property to your IdP name (instead of `GetMyProvider.MyProvider`) wherever you set it (refer to [Delete the built-in login screen and redirect to an external provider](apps-delete-login-screen.md) or [Modify the built-in login screen for external provider login](apps.md)). Then, republish the apps.
+
+    <div class="info" markdown="1">
+
+    If your apps rely only on the pre-built login screen with stage-assigned IdPs and don’t have custom login logic, you typically don’t need to change the apps when you replace a provider. Updating the IdP assignments in the ODC Portal is enough.
+
+    </div>
 
 1. After verifying successful authentication with the new IdP, [unassign the old IdP](#unassign-idp).
 
@@ -53,7 +59,7 @@ The issuer is a unique identifier for your external IdP. ODC relies on it to ass
 
 </div>
 
-## Unassign an external IdP { #unassign-idp }
+## Unassign an external IdP {#unassign-idp}
 
 When you need to remove an existing external identity provider from your organization or apps, use the following options:
 
@@ -81,7 +87,7 @@ For SAML 2.0 providers, the **scope cannot be changed** after the provider is cr
 
 </div>
 
-## Avoid lockout scenarios { #lockout }
+## Avoid lockout scenarios {#lockout}
 
 A lockout occurs when all users lose access to the ODC Portal and ODC Studio, or any apps developed in ODC.
 
