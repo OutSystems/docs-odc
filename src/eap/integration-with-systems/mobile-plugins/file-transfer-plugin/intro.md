@@ -22,12 +22,6 @@ topic:
 
 # File Transfer Plugin
 
-<div class="info" markdown="1">
-
-Applies only to Mobile and Reactive Web Apps.
-
-</div>
-
 The File Transfer Plugin lets you download and upload files in your Mobile App or, in the case of a Progressive Web App (PWA), from your device. The plugin provides advanced file transfer that runs in the background, and, in the case of a Mobile App, continues even when the user closes or suspends the app.
 
 The File Transfer Plugin also has a progress update for transfers that take longer, for example video, music, and large images.
@@ -126,33 +120,33 @@ The following table contains the reference of the client actions that were depre
 
 Here is the reference for the events you can use from the File Transfer Plugin, available in **UI Flows** > **FileTransferPlugin** > **FileTransfer**.
 
-| Event                  | Block              | Description              |
-| ---------------------- | ------------------ |------------------ |
+| Event | Block | Description |
+| ---------------------- | ------------------ | ------------------ |
 | **OnDownloadComplete** | **HandleDownload** | Called when the download has completed, with a **FileDownloadResult** object. |
-| **OnDownloadError**    | **HandleDownload** | Called when an error occurs. Invoked with a **FileTransferError** object. |
+| **OnDownloadError** | **HandleDownload** | Called when an error occurs. Invoked with a **FileTransferError** object. |
 | **OnDownloadProgress** | **HandleDownload** | Called whenever a new chunk of data is downloaded, with a **Progress** object. |
-| **OnUploadComplete**   | **HandleUpload**   | Called when the upload has completed, with a **FileUploadResult** object. |
-| **OnUploadError**      | **HandleUpload**   | Called when an error occurs. Invoked with a **FileTransferError** object. |
-| **OnUploadProgress**   | **HandleUpload**   | Called whenever a new chunk of data is uploaded, with a **Progress** object. |
+| **OnUploadComplete** | **HandleUpload** | Called when the upload has completed, with a **FileUploadResult** object. |
+| **OnUploadError** | **HandleUpload** | Called when an error occurs. Invoked with a **FileTransferError** object. |
+| **OnUploadProgress** | **HandleUpload** | Called whenever a new chunk of data is uploaded, with a **Progress** object. |
 
 ### Structures
 
 #### Progress
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | Loaded | Integer | The size, in bytes, of the data that has been transferred. |
 | Total | Integer | The total size, in bytes, of the data being transferred. |
 | LengthComputable | Boolean | Indicates if the ratio between **Loaded** and **Total** is calculable. |
 
 #### FileTransferError
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | Code | Text | One of the predefined error codes listed below. |
 | Message | Text | One of the predefined error messages listed below. |
 | Source | Text | The source's URL. |
-| Target| Text | The target's URL. |
+| Target | Text | The target's URL. |
 | HttpStatus | Text | HTTP status code. |
 | Body | Text | The request's (download/upload) response's body. |
 | Exception | Text | The message of the thrown exception. |
@@ -175,19 +169,19 @@ List of predefined error codes for lower versions of the plugin:
 
 #### FileDownloadResult
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | isFile | Boolean | Returns **True** if the result is a file. |
 | isDirectory | Boolean | Returns **True** if the result is a directory. |
-| name| Text | Name of the stored file. |
+| name | Text | Name of the stored file. |
 | fullPath | Text | Path to the stored file. |
-| **(Removed in version 2.0.0)** filesystems | Text | Device-absolute-file-paths for the downloaded data. The goal of this parameter was to maintain backwards compatibility for older versions of the plugin. Fore more information check [here](https://github.com/OutSystems/cordova-plugin-file-transfer?tab=readme-ov-file#backwards-compatibility-notes). |
+| **(Removed in version 2.0.0)** filesystems | Text | Device-absolute-file-paths for the downloaded data. The goal of this parameter was to maintain backwards compatibility for older versions of the plugin. For more information, refer to [backwards compatibility notes](https://github.com/OutSystems/cordova-plugin-file-transfer?tab=readme-ov-file#backwards-compatibility-notes). |
 | nativeURL | Text | Native URL path to the stored file. |
 
 #### FileUploadResult
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | bytesSent | Long Integer | Number of bytes sent in the uploaded file. |
 | responseCode | Text | Response code from the server. |
 | response | Text | Response received from the server. |
@@ -197,19 +191,19 @@ List of predefined error codes for lower versions of the plugin:
 
 Starting with version 2.0.0 of the Plugin, specific errors are returned on native platforms and PWAs.
 
-| Error code        | Platform(s)       | Message                                                                                                                   |
-| ------------------| ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| OS-PLUG-FLTR-0001 | Android, iOS, PWA | Cordova/Capacitor isn't defined.                                                                                                    |
-| OS-PLUG-FLTR-0002 | Android, iOS      | The app is running with an old version of the plugin. Please create a new mobile package.                                 |
-| OS-PLUG-FLTR-0003 | Android, iOS      | The File Transfer plugin is not loaded. Make sure the mobile package is valid.                                            |
-| OS-PLUG-FLTR-0004 | Android, iOS      | The method's input parameters aren't valid.                                                                               |
-| OS-PLUG-FLTR-0005 | Android, iOS, PWA | Invalid server URL was provided - &lt;URL&gt; or URL to connect to is either null or empty.                                     |
-| OS-PLUG-FLTR-0006 | Android           | Unable to perform operation, user denied permission request.                                                              |
-| OS-PLUG-FLTR-0007 | Android, iOS      | Operation failed because file does not exist.                                                                             |
-| OS-PLUG-FLTR-0008 | Android, iOS, PWA | Failed to connect to server.                                                                                              |
-| OS-PLUG-FLTR-0009 | Android, iOS      | The server responded with HTTP 304 – Not Modified. If you want to avoid this, check your headers related to HTTP caching. |
-| OS-PLUG-FLTR-0010 | Android, iOS, PWA | HTTP error: &lt;responseCode&gt; - &lt;message&gt;                                                                                    |
-| OS-PLUG-FLTR-0011 | Android, iOS      | The operation failed with an error - &lt;detailedError&gt;                                                                      |
+| Error code | Platform(s) | Message |
+| ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| OS-PLUG-FLTR-0001 | Android, iOS, PWA | Cordova/Capacitor isn't defined. |
+| OS-PLUG-FLTR-0002 | Android, iOS | The app is running with an old version of the plugin. Please create a new mobile package. |
+| OS-PLUG-FLTR-0003 | Android, iOS | The File Transfer plugin is not loaded. Make sure the mobile package is valid. |
+| OS-PLUG-FLTR-0004 | Android, iOS | The method's input parameters aren't valid. |
+| OS-PLUG-FLTR-0005 | Android, iOS, PWA | Invalid server URL was provided - &lt;URL&gt; or URL to connect to is either null or empty. |
+| OS-PLUG-FLTR-0006 | Android | Unable to perform operation, user denied permission request. |
+| OS-PLUG-FLTR-0007 | Android, iOS | Operation failed because file does not exist. |
+| OS-PLUG-FLTR-0008 | Android, iOS, PWA | Failed to connect to server. |
+| OS-PLUG-FLTR-0009 | Android, iOS | The server responded with HTTP 304 – Not Modified. If you want to avoid this, check your headers related to HTTP caching. |
+| OS-PLUG-FLTR-0010 | Android, iOS, PWA | HTTP error: &lt;responseCode&gt; - &lt;message&gt; |
+| OS-PLUG-FLTR-0011 | Android, iOS | The operation failed with an error - &lt;detailedError&gt; |
 
 ## Known issues and limitations
 
