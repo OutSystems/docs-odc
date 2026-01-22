@@ -51,6 +51,7 @@ To support edge-to-edge display, several CSS variables and JavaScript APIs have 
 
 | Property | Status | Description |
 | --- | --- | --- |
+| window.OSNavigationBar.setNavigationBarColor | Added | Sets the navigation bar background color at runtime. |
 | window.statusbar.visible | Added | Gets the current visibility state of the status bar. |
 | window.statusbar.setBackgroundColor | Added | Sets the status bar background color at runtime. |
 | window.StatusBar.* | Removed | All legacy StatusBar API methods removed. |
@@ -191,6 +192,7 @@ This section covers system bar customization for Cordova-based mobile apps.
 | Preference | Status | Description |
 | --- | --- | --- |
 | AndroidEdgeToEdge | Added | Cordova preference that controls whether the app uses edge-to-edge display on Android. |
+| NavigationBarBackgroundColor | Added | Controls the background color of the navigation bar. |
 | StatusBarBackgroundColor | Modified | Now part of SystemBars; controls status bar color when edge-to-edge is disabled. |
 | StatusBarDefaultScrollToTop | Removed | No longer supported. |
 | StatusBarOverlaysWebView | Removed | Behavior now controlled by AndroidEdgeToEdge. |
@@ -230,16 +232,30 @@ Controls whether your app uses edge-to-edge display on Android devices.
 
 When set to `true`, use the `--safe-area-inset-*` CSS variables to prevent content from being hidden behind system UI.
 
-**StatusBarBackgroundColor**
-**Type:** String (hex color)  
-**Default:** App primary color  
-**Format:** `#RRGGBB`  
-**Platforms:** Android  
+**NavigationBarBackgroundColor**
+**Type:** String (hex color)
+**Default:** Value of `BackgroundColor` preference
+**Format:** `#RRGGBB` or `#00000000`
+**Platforms:** Android
 **Configuration:** Extensibility configuration
 
-Sets the background color of the status bar. The text and icon color (light or dark) is automatically determined for optimal contrast.
+The background color of the navigation bar.
 
-This preference only applies when `AndroidEdgeToEdge` is `false`. When edge-to-edge is enabled, the status bar is always transparent.
+* If set to `#00000000`, the navigation bar follows the device theme.
+* If set to any other hex color, the navigation bar uses that color and it does not change when the device theme changes.
+* If not set, it matches the color defined in the `BackgroundColor` preference, which by default is your application's primary color.
+
+Has no effect when `AndroidEdgeToEdge` is set to `True` on Android 15+.
+
+**StatusBarBackgroundColor**
+**Type:** String (hex color)  
+**Default:** Value of `BackgroundColor` preference, which is your app primary color  
+**Format:** `#RRGGBB` or `#00000000`
+**Platforms:** Android  
+**Configuration:** Extensibility configuration
+The background color of the status bar.
+
+Operates the same way as `NavigationBarBackgroundColor`,with the addition that the status bar style (light or dark text and icons) is automatically determined based on the color for optimal contrast.
 
 ### Cordova configuration examples
 
@@ -256,6 +272,21 @@ To set a custom background color for the status bar use the following configurat
     "preferences": {
         "global": [{
             "name": "StatusBarBackgroundColor",
+            "value": "#AF9200"
+        }]
+    }
+}
+```
+
+#### Custom navigation bar color
+
+To set a custom background color for the navigation bar, use the following configuration:
+
+```json
+{
+    "preferences": {
+        "global": [{
+            "name": "NavigationBarBackgroundColor",
             "value": "#AF9200"
         }]
     }
