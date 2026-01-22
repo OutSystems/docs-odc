@@ -18,7 +18,7 @@ topic:
   - using-cordova-plugins
 ---
 
-# Payments Plugin
+# Payments plugin
 
 <div class="info" markdown="1">
 
@@ -183,7 +183,8 @@ To process payments with Stripe using an OutSystems implementation, complete the
 
    ![Screenshot of editing app details and downloading the Payments Plugin configuration as a JSON file](images/edit-app-details-and-download-configuration.png "Editing App Details and Downloading Configuration")
 
-1. In the ODC portal, in your Payments app, add the **PaymentsPluginConfiguration.json** file as a Resource of your app.
+1. In the ODC portal, in your Payments app, add the **PaymentsPluginConfiguration.json** file as a resource of your app.
+To add the file, click the Payments app and navigate to **Mobile distribution > Extensibility settings**. For detailed information about extensibility settings, refer to [Configure extensibility settings](../../../building-apps/mobile/configuring-mobile-apps.md#define-extensibility-settings)
 
    <div class="info" markdown="1">
 
@@ -191,7 +192,7 @@ To process payments with Stripe using an OutSystems implementation, complete the
 
    </div>
 
-   ![Screenshot showing the addition of the PaymentsPluginConfiguration.json file to the Payments app in ODC Studio](images/add-payments-json-file-pl.png "Adding Payments Related JSON File")
+   ![Screenshot showing the addition of the PaymentsPluginConfiguration.json file to the Payments app in ODC Portal](images/add-payments-json-file-pl.png "Adding Payments Related JSON File")
 
    <div class="info" markdown="1">
 
@@ -208,6 +209,10 @@ To process payments with Stripe using an OutSystems implementation, complete the
    1. Navigate to **Apps** > **Payments Configurator** and select **Application Secrets**. Your app’s Application ID and Application Secret details display. Make a note of these values and add in your app settings by navigating to  **ODC Portal** > **Settings**.
 
       ![Screenshot showing the process of finding and adding the app's Application ID and Secret details in ODC Studio](images/find-and-add-app-secret-details-pl.png "Adding the App Secret Details")
+
+1. Finally, you will need to go to "Consumed REST APIs" in your app, open "authentication", and replace `your_domain` with your environment where you opened Payments Configurator earlier.
+
+   ![Screenshot showing where you need to edit the domain to use in the plugin's REST API](images/configure-domain-payments-plugin-pl.png "Configure your domain for REST API")
 
 ### Create logic to set up the plugin
 
