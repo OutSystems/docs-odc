@@ -4,8 +4,8 @@ tags: outsystems libraries,code reusability,app lifecycle management
 locale: en-us
 guid: 7e20ed99-3098-4d7c-b7fd-1a5794f8377d
 app_type: mobile apps,reactive web apps
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8796-388
 platform-version: odc
-figma: 
 audience:
   - mobile developers
   - frontend developers
@@ -45,7 +45,11 @@ For more information about dependencies, refer to [Understand strong and weak de
 
 ## Public elements { #public-elements }
 
-To expose and share a public element for reuse, you set its **Public** property to **Yes**. However, you can't share some elements, and in such cases, the element's **Public** property is set to **No** and can't be changed.
+To expose and share a public element for reuse, you set its **Public** property to **Yes**.
+
+![Screenshot showing how to set the Public property to Yes for an element in OutSystems Developer Cloud.](images/set-public-odcs.png "Setting Public Property")
+
+However, you can't share some elements, and in such cases, the element's **Public** property is either not visible, or set to **No** and can't be changed.
 
 The following table lists elements that can be made public in at least one asset type.
 
@@ -71,6 +75,32 @@ In addition to the element types detailed in the table, other components can als
 * **AI models**: You can consume actions exposed by AI models as public elements, enabling their integration into various apps.
 
 While you can't directly make a server action public within an app, you can expose it for reuse by right-clicking it and selecting **Expose as Service Action**. This action creates a service action that invokes the original server action and inherits its properties, effectively making it public.
+
+## Consuming public elements
+
+When you want to use a public element from a different asset you must first add them to your current asset, establishing the relationship of Producer and Consumer. Learn more about this type of relationship in [Understand strong and weak dependencies](../building-apps/reuse/intro.md).
+
+Follow these steps on how to add public elements to your asset.
+
+1. Open the **Add public elements** window.
+
+    ![Screenshot of the Add public elements window in OutSystems Developer Cloud.](images/add-public-elements-odcs.png "Add Public Elements Window")
+
+1. Use the filter and search options to find the elements you want to consume, and select them.
+
+1. Click **Add**.
+
+    <div class="info" markdown="1">
+
+    If you want to consume a public element from a library, make sure [the library has been released](../building-apps/libraries/libraries.md#release-library).
+
+    </div>
+
+    ![Screenshot showing the selection of public elements to add in OutSystems Developer Cloud.](images/choose-add-public-elements-odcs.png "Choosing Public Elements to Add")
+
+The elements are now available to use in your asset.
+
+![Screenshot showing a consumed public element ready to be used in OutSystems Developer Cloud.](images/element-consumed-ready-to-use-odcs.png "Element Ready to Use")
 
 ## Validating consumers and producers in the ODC Portal
 
