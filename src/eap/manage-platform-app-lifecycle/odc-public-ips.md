@@ -25,7 +25,7 @@ In ODC, you may need to configure allowlisting in the following scenarios:
 
 * [Runtime applications accessing internal resources](#runtime-accessing-internal):
 
-    Your ODC apps may need to call internal APIs, databases, or other private services. In this case, the recommended approach is to use  [ODC Private Gateway](private-gateway.md). As a fallback option, you may also allowlist the ODC runtime egress IPs in your firewalls or access policies so that these outbound requests are accepted.
+    Your ODC apps may need to call internal APIs, databases, SMTP servers, or other private services. In this case, the recommended approach is to use  [ODC Private Gateway](private-gateway.md). As a fallback option, you may also allowlist the ODC runtime egress IPs in your firewalls or access policies so that these outbound requests are accepted.
 
 * [Streaming observability and audit trails](#streaming-analytics-audit-trail): You can stream [observability data](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md) to APM tools and [audit trail logs](../monitor-and-troubleshoot/audit-trail/audit-trail-streaming.md) to SIEM tools. To receive them, these tools must expose a reachable ingestion endpoint. You can secure this setup by allowlisting the ODC Data platform egress IPs so only authorized traffic is permitted.
 
