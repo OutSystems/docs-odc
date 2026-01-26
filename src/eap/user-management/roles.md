@@ -33,7 +33,7 @@ ODC allows implementing user access control policies on these domains:
 * Stage visibility
 * Release management
 * Application monitoring
-* AI Mentor System
+* Analyze
 * Configuration and connection management
 * User management
 * Forge access
@@ -128,40 +128,43 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Asset management | Debug | Users can view, open and debug assets. | Organization <br/> Asset |
 | Asset management | Change | Users can view, open, debug and publish assets. | Organization <br/> Asset |
 | Asset management | Delete | Users can delete assets. | Organization <br/> Asset |
-| Stage | View stage | Users can view a given stage. | Organization |
-| Release management | Deploy apps | Users can initiate asset deployments to a specified stage and undeploy from the production stage. | Organization <br/> Asset |
+| Portfolio management | View stage | Users can view a given stage. | Organization |
+| Release management | Deploy assets | Users can initiate asset deployments to a specified stage and undeploy from the production stage. | Organization <br/> Asset |
 | Release management | Release | Users can release an asset, assign a version number (1.0.0), and add release notes. | Organization <br/> Asset |
 | Monitoring | Access asset logs and traces | Users can view asset logs and traces in a given stage. | Organization <br/> Asset |
 | Monitoring | Access user information | Users can view user information connected to a given log or activity. | Organization <br/> Asset |
-| Monitoring | App security | The user with this permission has access to the Vulnerability Overview report screen. | Organization <br/> Asset |
-| Monitoring | View audit trail | This permission enables users to view the audit logs. | Organization |
-| AI Mentor System | Edit/Change Code Quality findings | Provides access to a Code Quality Console and interactive capabilities, including the ability to modify the status of findings and manage comments. Additionally, if permissions are set at the organizational level, users will see which organizational users have introduced those findings, change status, and add comments. | Organization <br/> Asset |
-| AI Mentor System | View Code Quality findings | Provides users access to a Code Quality Console to monitor code standards and allow visibility of application findings for those with appropriate permissions. Additionally, If the permissions are set at the organizational level it will allow users to see which organizational users have introduced those findings. | Organization <br/> Asset |
-| Configuration management | View configurations | Users can view app or library configurations in a given stage. | Organization <br/> Asset |
+| Analyze | Manage code quality findings | Provides access to a Code Quality Console and interactive capabilities, including the ability to modify the status of findings and manage comments. Additionally, if permissions are set at the organizational level, users will see which organizational users have introduced those findings, change status, and add comments. | Organization <br/> Asset |
+| Analyze | View code quality findings | Users can view code quality findings in apps they have permissions to open. | Organization <br/> Asset |
+| Configuration management | View configurations | Users can view all configurations within this category for the selected stages. | Organization <br/> Asset |
 | Configuration management | Edit configurations | Users can change app or library configurations in a given stage. | Organization <br/> Asset |
-| Configuration management | Configure connections | Users can view and edit connection configurations in a given stage. | Organization |
+| Configuration management | Configure connections | Users can edit connection configurations in a given stage. | Organization |
 | Configuration management | Manage domains | Users can create, edit, and delete stage level domains for end-user access. | Organization |
-| Configuration management | Manage Email SMTP configuration | Users can view, create, edit, and delete SMTP emails. | Organization |
+| Configuration management | Manage Email configuration | Users can create, edit, and delete SMTP emails. | Organization |
 | Configuration management | Manage API clients | Users can manage API Clients, create, suspend, delete, change permissions, and rotate secrets.  <br/>**Note:** This permission allows users to create API clients that can modify their own permissions. | Organization |
-| Configuration management | Manage CSP | The user can view, create, edit, and delete CSP (Content Security Policy) rules at each stage. | Organization |
-| Configuration management | Manage log streaming | Users can view, create, edit, and delete streams. | Organization |
+| Configuration management | Manage CSP | The user can create, edit, and delete CSP (Content Security Policy) rules at each stage. | Organization |
+| Configuration management | Manage app analytics stream | Users can view, create, edit, and delete streams. | Organization |
 | Configuration management | Manage audit trail stream | Users can view, create, edit, and delete audit trail streams. | Organization |
+| Configuration management | Manage IP filters | Users can create, edit, delete and assign IP rules to apps. | Organization |
+| Configuration management | Manage private gateways | Users can activate and deactivate private gateways as well as renew a gateway's access token. | Organization |
 | Connection management | Create | Users can create connections. | Organization |
-| Connection management | Change | Users can view connections and edit entities, name, and description. | Organization |
+| Connection management | Change | Users can edit entities, name, and description. | Organization |
 | Connection management | Delete | Users can delete connections. | Organization |
-| User management | View end users | Users can view users with end-user roles. | Organization <br/> Asset |
-| User management | View organization members | Users can view users with organization roles. | Organization |
-| User management | Manage users | Users can view, activate, deactivate, and delete other organization members and end users. | Organization |
+| User management | View end-users | View users with end-user roles. | Organization <br/> Asset |
+| User management | View members | Users can view users with organization roles. | Organization |
+| User management | Manage users | View, activate, deactivate, and delete other organization members and end-users. | Organization |
 | User management | Manage end-user access | Users can invite users and grant or revoke end-user roles. | Organization <br/> Asset |
-| User management | Manage end-user groups | Users can view, create, edit, and delete end-user groups. | Organization |
-| User management | Manage member access | Users can view organization members and grant or revoke organization roles. | Organization |
+| User management | Manage end-user groups | View, create, edit, and delete end-user groups. | Organization |
+| User management | Manage member access | Users can invite organization members and grant or revoke organization roles. | Organization |
 | User management | Manage organization roles | Users can create, edit, and delete organization roles. | Organization |
 | User management | Manage authentication | The user with this permission can view and manage the authentication providers to access the organization and apps. | Organization |
+| User management | View audit trail | This permission enables users to view the audit logs. | Organization |
 | Forge | Install/Update assets | Users can install or update assets from Forge. | Organization |
 | Forge | Submit/Edit assets | Users can submit assets to Forge and edit them. | Organization |
 | Support | Open support cases | Users can open and view their support cases. | Organization |
 | Support | View all support cases | Users can view all the organization's support cases. | Organization |
 | Subscriptions | View subscription | Users can view the organization's subscription information. | Organization |
+| Maintenance | View platform updates | Users can view the list of asset and platform updates. | Organization <br/> Asset |
+| OutSystems 11 | Manage O11 configuration | Provides users access to OutSystems 11 configurations, allowing connectivity to the Conversion Assessment Tool on the O11 infrastructure and enabling Code Conversion and Data Migration. | Organization |
 
 ## Recommended custom roles for members (IT-users) {#recommended-custom-roles}
 
@@ -182,7 +185,7 @@ The following table outlines the permissions you can configure for each of these
 | Stage visibility | View all stages | View all stages | View Development Stage | View all stages | View all stages |
 | Release management | Release Assets<br/>Deploy to Development | Release Assets<br/>Deploy to all stages | Not allowed | Release Assets<br/>Deploy to all stages | Not allowed |
 | Monitoring | Monitor all stages | Monitor all stages<br/>View security vulnerabilities | Not allowed | Monitor all stages<br/>View security vulnerabilities | Monitor all stages<br/>View security vulnerabilities |
-| AI Mentor System | View <br/>Code Quality findings | Edit <br/>Code Quality finding | Not allowed | Edit <br/>Code Quality finding | Edit <br/>Code Quality finding |
+| Analyze | View <br/>Code Quality findings | Edit <br/>Code Quality finding | Not allowed | Edit <br/>Code Quality finding | Edit <br/>Code Quality finding |
 | Configuration <br/>Connection management | Apply app configurations <br/>in Development | Apply app configurations <br/>in all stages<br/>Configure external entities | Not allowed | View app configurations <br/>in all stages<br/>Configure external entities | Apply infra configurations in all stages<br/>Create and delete connections <br/>Manage API Clients |
 | User management | View end-users | Manage <br/>end-user access and groups | Not allowed | View organization users | Manage users and organization roles<br/>Manage authentication providers |
 | Forge access | Not allowed | Submit assets | Not allowed | Install and submit assets | Not allowed |
