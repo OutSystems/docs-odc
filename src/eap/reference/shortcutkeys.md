@@ -30,16 +30,16 @@ topic:
 |Cut|Ctrl+X (Shift+Del)|Cmd+X|
 |Undo|Ctrl+Z|Cmd+Z|
 |Redo|Ctrl+Y|Shift+Cmd+Z|
-|Open module from the environment|Ctrl+O|Cmd+O|
-|Open module from file|Ctrl+Shift+O|Shift+Cmd+O|
-|Save or export module|Ctrl+S|Cmd+S|
+|Open app from the organization|Ctrl+O|Cmd+O|
+|Open app from file|Ctrl+Shift+O|Shift+Cmd+O|
+|Save or export app|Ctrl+S|Cmd+S|
 |Save As|Ctrl+Shift+S|Shift+Cmd+S|
 |Zoom in|Ctrl+Plus|Cmd+Plus|
 |Zoom out|Ctrl+Minus|Cmd+Minus|
 |Zoom 100%|Ctrl+0|Cmd+0|
 |Auto-complete|Ctrl+Space|Ctrl+Space|
 |Select all elements|Ctrl+A|Cmd+A|
-|Close module|Ctrl+F4|Cmd+W|
+|Close tab|Ctrl+F4|Cmd+W|
 |Apply the primary action on the current pop-up window|Ctrl+Enter|Cmd+Enter|
 |Cancel and close the current pop-up window|Esc|Esc|
 |Look for help, by telling us what you want to do|F1||
@@ -55,7 +55,7 @@ topic:
 |Hide/show warning in TrueChange tab|Ctrl+H|Shift+Cmd+H|
 |Enable/disable Styles Editor|Ctrl+J||
 |Refresh Aggregate's data preview|Ctrl+L|Cmd+R|
-|Compare and Merge module with published version|Ctrl+M|Shift+Cmd+M|
+|Compare and merge app or library with published revision|Ctrl+M|Shift+Cmd+M|
 |Create new element|Ctrl+N|Cmd+N|
 |Open Manage Dependencies window|Ctrl+Q|Cmd+D|
 |Refresh all in Manage Dependencies window|Ctrl+R|Cmd+R|
@@ -91,7 +91,7 @@ topic:
 |Open search dialog|Ctrl+F|Cmd+F|
 |Open Find and Replace window|Ctrl+R|Alt+Cmd+F|
 |Find usages of the selected element|F12|Cmd+E|
-|Find usages of the selected element in all modules|Ctrl+F12|Alt+Cmd+E|
+|Find usages of the selected element in all apps and libraries|Ctrl+F12|Alt+Cmd+E|
 |Replace all text occurrences or element usages|Ctrl+H|Shift+Cmd+H|
 |Go to next text occurrence or element usage|F3|Cmd+G or F3|
 |Go to previous text occurrence or element usage|Shift+F3|Shift+Cmd+G or Shift+F3|
@@ -125,8 +125,7 @@ topic:
 
 |Description|Windows|macOS|
 |---|---|---|
-|Run and Debug in Personal Area|F6|Cmd+F6|
-|Debug in Public Area|F7|Cmd+F7|
+|Start Debugging|F7|Cmd+F7|
 |Stop Debug|Shift+F6 (Shift+F7)|Shift+Cmd+F6 (Shift+Cmd+F7)|
 |Add/remove breakpoint|F8|Cmd+F8|
 |Disable/enable breakpoint|Ctrl+F8|Shift+Cmd+F8|
