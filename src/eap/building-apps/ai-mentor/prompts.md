@@ -107,6 +107,7 @@ Use this table to choose a UI pattern based on your dataset shape, visual emphas
 | Card list | Visual scanning of records with key attributes | Wide column comparison | Add tags, actions on each card |
 | Gallery | Image-centric content (products, media) | Text-heavy data | Add category filter |
 | Master detail | Browse and inspect a record (max 5 attributes in table view) | Very small datasets; entities with dependents | Add tabs, related lists, switch to card list for more attributes |
+| Card list with detail on accordion | Compact browsing with expandable details (max 5 fields in detail) | More than 5 detail fields or multiple sections need to be open | Switch to sidebar pattern for multiple open items |
 | List with popup | Simple entities with 5 or fewer non-ID attributes | Entities with more than 5 attributes or dependent entities | Switch to table layout |
 | List with map | Location context alongside list | No location data | Add clustering, status tags |
 
@@ -128,6 +129,7 @@ Mentor enforces constraints based on entity structure and relationships. Pattern
 
 * **Popup pattern**: Available only for entities with 5 or fewer non-ID attributes. Entities exceeding this limit convert to table pattern
 * **Master detail with table**: Limited to 5 attributes in the list portion. For more attributes, use card list or gallery pattern
+* **Accordion pattern**: Limited to 5 fields in the expandable detail section. Only available for card lists. Only one accordion item expands at a time
 * **Map pattern**: List portion always uses vertical card list pattern
 * **Dashboard lists**: Display maximum 5 records. Filters, pagination, and navigation to edit or view screens are not available
 * **Entities with dependents**: Cannot use popup or master-detail patterns. Dependent entities are those with a single foreign key reference to the target entity
@@ -152,7 +154,7 @@ Start with basic prompts and add details as needed:
 
 ### Card list
 
-![Card list](images/sample-card-list.png "Card list showing items as cards")
+![Card list](images/sample-card-list-docs.png "Card list showing items as cards")
 
 Use when users should scan records as compact cards with a few key fields and tags, rather than compare many columns.
 
@@ -251,6 +253,16 @@ Use when you need frequent detail editing and the list context must remain.
 
 * Basic: Card list with detail in a sidebar for `Project` records.
 * Detailed: Card list (`Name`, `Owner`, `Status` tag). Selecting a card opens a sidebar with `Description` and `DueDate`.
+
+### Card list with detail on accordion
+
+Use when you need compact browsing with expandable details that reveal in place. Only one accordion item expands at a time to avoid visual clutter.
+Avoid when you have more than 5 detail fields or need multiple sections open simultaneously for comparison.
+
+#### Prompt progression
+
+* Basic: Card list with detail on accordion for `Order` records.
+* Detailed: Card list with detail on accordion for `Order` records (`OrderNumber`, `Customer`, `Status` tag). Expanding shows `OrderDate`, `TotalAmount`, `ShippingAddress`, `Notes`.
 
 ## Spatial patterns
 
