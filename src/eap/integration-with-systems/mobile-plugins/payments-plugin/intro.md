@@ -87,7 +87,7 @@ To configure your payment account in the Stripe dashboard, create a [Stripe](htt
 
 ### Configure a mobile payment service for your app
 
-Before triggering a payment in an app, you need to configure a mobile payment method service (such as [Apple Pay](https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest) and [Google Pay](https://developers.google.com/pay/api/android/reference/request-objects)’s base information) in the app using the Payments Plugin Configurator, a Reactive Web app.
+Before triggering a payment in an app, configure a mobile payment method service using the Payments Plugin Configurator, a Reactive Web app. Configure the base information for [Apple Pay](https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest), [Google Pay](https://developers.google.com/pay/api/android/reference/request-objects), or both.
 
 <div class="info" markdown="1">
 
@@ -99,9 +99,9 @@ You need the following information:
 
 * Access to the Payments Configurator at `https://<your-environment>/PaymentsConfigurator/`, where you should replace `<your-environment>` with your development environment address.
 
-* Access to a configuration of Google Pay for Android and/or Apple Pay for iOS to use in your app.
+* Access to a configuration of Google Pay for Android, Apple Pay for iOS, or both to use in your app.
 
-* Access to a configuration of a Payment Service Provider (PSP), for example Stripe, that will be used to process payments.
+* Access to a configuration of a Payment Service Provider (PSP), for example Stripe, to process payments.
 
 At this point, you're ready to configure payments for your app in the Payments Configurator. Follow these steps:
 
@@ -109,7 +109,7 @@ At this point, you're ready to configure payments for your app in the Payments C
 
 1. To add a new configuration for your app, click the **Add new app** button and write the name of your app configuration. The description is optional.
 
-1. After adding the app, locate it in the application list, and click the edit button to edit the configuration for your app. Now you can add your Google Pay and/or Apple Pay configuration.
+1. After adding the app, locate it in the application list, and click the edit button to edit the configuration for your app. Now you can add your Google Pay configuration, Apple Pay configuration, or both.
 
 1. For Apple Pay, you should fill the following fields:
 
@@ -196,7 +196,7 @@ To add the file, click the Payments app and navigate to **Mobile distribution > 
 
    <div class="info" markdown="1">
 
-   Repeat the above steps each time you change the Apple Pay and/or Google Pay configuration on the Payments Plugin Configurator app.
+   Repeat these steps each time you change the Apple Pay or Google Pay configuration on the Payments Plugin Configurator app.
 
    </div>
 
@@ -210,7 +210,7 @@ To add the file, click the Payments app and navigate to **Mobile distribution > 
 
       ![Screenshot showing the process of finding and adding the app's Application ID and Secret details in ODC Studio](images/find-and-add-app-secret-details-pl.png "Adding the App Secret Details")
 
-1. Finally, you will need to go to "Consumed REST APIs" in your app, open "authentication", and replace `your_domain` with your environment where you opened Payments Configurator earlier.
+1. Finally, go to "Consumed REST APIs" in your app, open "authentication", and replace `your_domain` with your environment where you opened Payments Configurator earlier.
 
    ![Screenshot showing where you need to edit the domain to use in the plugin's REST API](images/configure-domain-payments-plugin-pl.png "Configure your domain for REST API")
 
@@ -304,6 +304,6 @@ To trigger the payment on your app's screen, complete the following steps:
 
 <div class="info" markdown="1">
 
-Notice that the **TriggerPayment** Client action has the optional parameters **PSP**, **ClientID**, and **ClientSecret**. If you want to process payments with Stripe using the Payments Plugin, you should set **PSP** to **Entities.PaymentServiceProvider.Stripe**. Obtain the **ClientID** and **ClientSecret** field values from the Payments Configurator dashboard by clicking the **Application Secrets** button inside your app's configuration. Don't pass the **ClientSecret** value directly to the **TriggerPayment** Client action. Instead, it's recommended you save this value securely by creating an Aggregate to obtain it and pass it to the Client action. It's suggested you save the **ClientSecret** in a Site Property. Find more info on Site Properties [here](https://success.outsystems.com/Documentation/11/Reference/OutSystems_Language/Data/Handling_Data/Site_Property). Note that if the **PSP** parameter of the **TriggerPayment** client action is set to **Entities.PaymentServiceProvider.None**, no PSP payment processing takes place.
+Notice that the **TriggerPayment** Client action has the optional parameters **PSP**, **ClientID**, and **ClientSecret**. If you want to process payments with Stripe using the Payments Plugin, you should set **PSP** to **Entities.PaymentServiceProvider.Stripe**. Obtain the **ClientID** and **ClientSecret** field values from the Payments Configurator dashboard by clicking the **Application Secrets** button inside your app's configuration. Don't pass the **ClientSecret** value directly to the **TriggerPayment** Client action. Instead, it's recommended you save this value securely by creating an Aggregate to obtain it and pass it to the Client action. It's suggested you save the **ClientSecret** in a Setting. Note that if the **PSP** parameter of the **TriggerPayment** client action is set to **Entities.PaymentServiceProvider.None**, no PSP payment processing takes place.
 
 </div>

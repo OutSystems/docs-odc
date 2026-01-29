@@ -34,7 +34,7 @@ Although this article focuses on purging data from the database’s entities, yo
 
 To ensure the data model includes the necessary information to implement the purge algorithm, it's recommended to add **control columns** to your entities that define when records should be purged.
 
-For example, a purge condition might specify purging records with update timestamps older than a certain number of days (specified using a [Setting](../../../manage-platform-app-lifecycle/configuration-management.md#managing-settings)), or purging records marked by a specific boolean control column.
+For example, a purge condition might specify purging records with update timestamps older than a certain number of days. You can specify this value using a [Setting](../../../manage-platform-app-lifecycle/configuration-management.md#managing-settings). Alternatively, purge records marked by a specific boolean control column.
 
 Here are some examples of possible control columns. You can define any other that apply to your use case:
 
@@ -56,7 +56,7 @@ The following is an example of the purge process logic:
 
 ![Logic flow of the Timer implementing the purging process](images/data-purging-timer-logic-odcs.png "Data Purging Process Diagram")
 
-1. **Set Purge Threshold** - Sets the number of records to purge by iteration. This threshold can be defined using a Site Property, so it can be adjusted without redeploying the module.
+1. **Set Purge Threshold** - Sets the number of records to purge by iteration. This threshold can be defined using a Setting, so it can be adjusted without redeploying the app.
 
 1. **Set StartTime** - Sets a local variable with the current time when the execution starts.
 
@@ -72,13 +72,13 @@ The following is an example of the purge process logic:
 
 1. **WakePurgeData** - Re-wakes the Timer to check if there are still records to purge.
 
-The whole system may require multiple Timers to purge data from different entities. Each Timer will have its purge condition, aligned with the use case associated with that Entity.
+The whole system may require multiple Timers to purge data from different entities. Each Timer has its own purge condition, aligned with the use case associated with that Entity.
 
 ## Common pitfall scenarios
 
 ### No referential integrity strategy
 
-When implementing your data purging mechanism, you have to consider the [referential integrity (Delete Rule)](../modeling/relationship/relationships.md#referential-integrity) defined for the relationships between the Entities in your model, as it directly impacts the sequence of your deletion flow.
+When implementing your data purging mechanism, consider the [referential integrity (Delete Rule)](../modeling/relationship/relationships.md#referential-integrity) defined for the relationships between the Entities in your model. This directly impacts the sequence of your deletion flow.
 
 During the design phase of your Entities model, make sure you correctly set the **Delete Rule** for the several relationships, as described below, taking the data purging requirement into consideration. Otherwise, you might end up with a complex and hard to maintain purging implementation.
 
@@ -86,18 +86,18 @@ The `Protect` approach
 :   If you keep the `Protect` default value for the **Delete Rule** of all the Entities relationships in your model, the result is having a more complex data purging flow or getting a database exception when trying to delete records following the wrong deletion order.
 
 The cascade delete approach
-:   Having the **Delete Rule** set to `Delete` - cascade delete behavior - is the scenario that most benefits the purging implementation, as it ensures that when you delete the main record, all the related records are automatically deleted. Therefore, for a simpler data purging implementation, you should design your Entities model to use the cascade delete rule as much as possible. On the other side, make sure to respect the expected system behavior in each use case.
+:   Having the **Delete Rule** set to `Delete` (cascade delete behavior) is the scenario that most benefits the purging implementation. When you delete the main record, all the related records are automatically deleted. For a simpler data purging implementation, design your Entities model to use the cascade delete rule as much as possible. Make sure to respect the expected system behavior in each use case.
 
 The `Ignore` approach
-:   Having the **Delete Rule** set to `Ignore` will allow you to delete a record from the main Entity and keep all the related records. While this approach facilitates your data purging flow, use it carefully, as it might lead to an inconsistent data model. If you need to keep only the related records for compliance purposes, bear in mind that you will never be able to retrieve and show the detailed information of the main record.
+:   Having the **Delete Rule** set to `Ignore` allows you to delete a record from the main Entity and keep all the related records. While this approach facilitates your data purging flow, use it carefully, as it might lead to an inconsistent data model. If you keep only the related records for compliance purposes, you can't retrieve and show the detailed information of the main record.
 
 ### Lack of transient data purging
 
-All transient data must be purged periodically. You should discuss these purging mechanisms for each project, as soon as the business concepts and master data are identified.
+All transient data must be purged periodically. Discuss these purging mechanisms for each project as soon as the business concepts and primary data are identified.
 
 Examples of transient data that might require purging:
 
-* **Users that are no longer active** - If you delete users, be careful how to handle the related data. If you consider setting the **Delete Rule** to `Ignore`, instead of `Delete`, you will never be able to retrieve and show the user's detailed information.
+* **Users that are no longer active** - If you delete users, be careful how to handle the related data. If you set the **Delete Rule** to `Ignore` instead of `Delete`, you can't retrieve and show the user's detailed information.
 
 * **Users that started the online registration process but never concluded it** - In this case, you may want to keep the users as prospects during a certain amount of time before being purged. The purge may take place after synchronizing relevant metrics with external sources.
 
