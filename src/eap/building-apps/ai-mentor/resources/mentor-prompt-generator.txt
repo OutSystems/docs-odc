@@ -21,7 +21,11 @@ I will provide you with one or more of the following:
 * Wireframes or UI descriptions
 * Data schemas or models
 
-[PASTE YOUR ARTIFACTS HERE]
+---
+
+**PASTE YOUR ARTIFACTS BELOW THIS LINE. Delete this instruction and replace with your content.**
+
+[Your artifacts go here]
 
 ---
 
@@ -64,6 +68,10 @@ Storage: [Specify if stored locally or externally]
 * [AttributeName]: [DataType], [clear description of purpose]
 * [AttributeName]: [DataType], [clear description of purpose]
 
+**Validation rules:**
+
+* [AttributeName]: [Validation type and details]
+
 **Entity Relationships:**
 
 * [Describe relationships using One-to-Many, Many-to-Many, or One-to-One]
@@ -83,6 +91,18 @@ Use these specific data types:
 * **Phone Number**: Contact numbers
 * **User Identifier**: References to OutSystems users
 
+#### Validation rule types
+
+Mentor supports these validation types:
+
+* **Mandatory**: Field must have a value
+* **Past date**: Date must be in the past
+* **Future date**: Date must be in the future
+* **Value range**: Numeric value must be within specified minimum/maximum
+* **Text length**: Text must not exceed specified character limit
+* **Email format**: Must be a valid email address format
+* **Phone format**: Must be a valid phone number format
+
 #### Static entities
 
 For lookup/reference data:
@@ -101,43 +121,155 @@ For each role:
 * [EntityName]: [Full Access / Edit Access / View Access]
 * Special permissions: [Any row-level rules or ownership-based restrictions]
 
-### 5. Main features and screens (Required)
+### 5. Stateflows (If applicable)
+
+For entities with lifecycle states, define the stateflow:
+
+**Entity: [EntityName]**
+
+**Statuses:** [List all possible statuses, e.g., Draft, Submitted, Approved, Rejected]
+
+**Transitions:**
+
+* [FromStatus] → [ToStatus]: [Conditions - which roles can perform, required attributes]
+* [FromStatus] → [ToStatus]: [Conditions]
+
+**Example:**
+
+**Entity: Request**
+
+**Statuses:** Draft, Submitted, Under Review, Approved, Rejected
+
+**Transitions:**
+
+* Draft → Submitted: Requester role, all mandatory fields must be filled
+* Submitted → Under Review: Reviewer role
+* Under Review → Approved: Manager role, requires ApprovalNotes attribute
+* Under Review → Rejected: Manager role, requires RejectionReason attribute
+* Rejected → Draft: Requester role (allows resubmission)
+
+### 6. Main features and screens (Required)
 
 List each screen with:
 
 * Screen name and purpose
-* Screen type/pattern: [gallery, card list, master-detail, table, form, map view]
+* Screen type/pattern (see pattern reference below)
 * Key features and interactions
 * Navigation flow
-* Validation rules
 * Business logic requirements
 
+#### Screen pattern reference
+
+Choose patterns based on data characteristics:
+
+| Pattern | Use when | Constraints |
+| ------- | -------- | ----------- |
+| Table | Dense tabular comparison with many columns | Avoid for mobile or visual summaries |
+| Card list | Scanning records with key fields and tags | Better than table for fewer columns |
+| Card gallery | Image or media-heavy datasets | Requires image attribute |
+| List with popup | Simple entities, quick edit/view | Only for entities with 5 or fewer non-ID attributes |
+| Master detail | Browse and inspect records simultaneously | Table portion limited to 5 attributes; use card list for more |
+| Card list with detail in sidebar | Frequent detail editing while keeping list context | Good for workflows |
+| Card list with map | Location-based decisions | Requires address or coordinate attributes |
+| Dashboard | High-level KPIs, metrics, and data visualization | Not for detailed record editing |
+
+**Pattern constraints:**
+
+* Popup pattern: Only available for entities with 5 or fewer non-ID attributes. Entities exceeding this limit should use table pattern.
+* Master detail with table: Limited to 5 attributes in the list portion. For more attributes, specify card list or gallery.
+* Entities with dependents: Cannot use popup or master-detail patterns. Dependent entities have a single foreign key reference to the target entity.
+
+#### Using tabs
+
+For screens with related content, specify tab organization:
+
+* Tab 1: [Tab name] - [Content description]
+* Tab 2: [Tab name] - [Content description]
+
 **Example:**
+
+**Screen: Customer Detail**
+
+* Type: Master detail with tabs
+* Purpose: View and edit customer information with related data
+* Tabs:
+    * Profile: Customer attributes (Name, Email, Phone, Address)
+    * Orders: List of related Order records
+    * Notes: Customer notes and comments
+* Business logic: Show only active customers by default
+
+**Example:**
+
 **Screen: Product Catalog**
 
-* Type: Card List
+* Type: Card Gallery
 * Purpose: Display all active products with search and filter
 * Features: Search by name, filter by category, click to view details
 * Business logic: Only show products where IsActive = true
 
-### 6. Dashboards (If applicable)
+### 7. Dashboards (If applicable)
 
-Specify dashboard components clearly:
+Specify dashboard components clearly.
+
+#### Supported components
+
+**Counters:** Display key metrics prominently
+**Charts:** Visualize data trends and distributions
+**Lists:** Display up to 5 records (top items, most recent, etc.)
+
+#### Supported chart types
+
+* Vertical Bar Chart
+* Horizontal Bar Chart
+* Line Chart
+* Pie Chart
+* Donut Chart
+* Area Chart
+
+#### Aggregation functions
+
+Specify how metrics are calculated:
+
+* **Count**: Total number of records
+* **Sum**: Total of a numeric field across records
+* **Avg**: Average value of a numeric field
+* **Max**: Maximum value of a numeric field
+* **Min**: Minimum value of a numeric field
+
+#### Column layouts
+
+Dashboards support these arrangements:
+
+* **Equal columns**: 2 to 6 columns with equal width
+* **Asymmetric 2:1**: Two-thirds and one-third width
+* **Asymmetric 3:1**: Three-quarters and one-quarter width
+
+Note: Narrow columns in asymmetric layouts cannot contain list sections.
+
+**Dashboard specification format:**
 
 **Dashboard should consist of:**
 
-* [Metric name] as a counter
-* [Metric name] as a counter
-* [Chart title] as a [Donut Chart / Vertical Bar Chart / Line Chart / Area Chart]
-* [Chart title] as a [Chart type] showing [data breakdown]
+* [Metric name] as a counter ([Aggregation function])
+* [Metric name] as a counter ([Aggregation function])
+* [Chart title] as a [Chart type] showing [data breakdown] ([Aggregation function])
+* [List title] as a list showing [criteria, e.g., "most recent 5 orders"]
+
+**Layout:** [Specify column arrangement if not default]
 
 **Example:**
 
-* Total Active Orders as a counter
-* Revenue by Month as a Vertical Bar Chart
-* Orders by Status as a Donut Chart
+**Dashboard should consist of:**
 
-### 7. External integrations (Optional)
+* Total Orders as a counter (Count)
+* Total Revenue as a counter (Sum of OrderValue)
+* Orders by Status as a Donut Chart (Count grouped by Status)
+* Revenue by Month as a Vertical Bar Chart (Sum of OrderValue grouped by Month)
+* Recent Orders as a list showing most recent 5 orders
+
+**Layout:** 3 equal columns for counters, full width for charts
+
+### 8. External integrations (Optional)
 
 If applicable:
 
@@ -157,10 +289,12 @@ If applicable:
 
 * Detailed entity definitions with explicit data types
 * Clear relationships (One-to-Many, Many-to-Many)
+* Validation rules for data integrity
+* Stateflows for entities with lifecycle states
 * Functional requirements describing what the app should do
-* Specific UI layouts and screen types
-* Dashboard specifications with chart types
-* Business logic and validation rules
+* Specific UI layouts and screen patterns
+* Dashboard specifications with chart types and aggregation functions
+* Business logic and workflow rules
 * Entity-level and row-level access control
 
 ### Avoid
@@ -179,6 +313,7 @@ If applicable:
 * Provide examples where helpful
 * Be explicit about constraints and validation rules
 * State assumptions clearly
+* Write in English (recommended for best results with Mentor)
 
 ---
 
@@ -189,6 +324,7 @@ If applicable:
 1. **Resolve conflicts**: If artifacts contradict each other, flag the conflict and propose the most logical resolution
 1. **Maintain business perspective**: Focus on what the app should do (business logic) rather than how to implement it (technical details)
 1. **Be comprehensive**: Include all entities, relationships, screens, and permissions even if not explicitly stated but clearly implied
+1. **Apply pattern constraints**: When recommending screen patterns, respect the constraints (e.g., popup only for entities with 5 or fewer non-ID attributes)
 
 ---
 
@@ -201,7 +337,7 @@ Generate the requirement document in a clean, readable format using:
 * Consistent formatting
 * Proper spacing between sections
 
-The document should be ready to upload to OutSystems Mentor as a .txt or .docx file (maximum 5 MB).
+The document should be ready to upload to OutSystems Mentor as a .txt, .docx, or .pdf file (maximum 5 MB).
 
 ---
 
