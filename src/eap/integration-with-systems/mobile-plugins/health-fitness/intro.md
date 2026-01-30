@@ -554,7 +554,6 @@ Following is a list of actions you can use to make sure there are no errors:
 | **Success**     | UpdateBackgroundJob      | True if there aren't errors while updating a background job.        |
 | **Success**     | ListBackgroundJobs       | True if there aren't errors while listing the background jobs.      |
 | **Success**     | OpenHealthConnectApp     | True if there aren't errors while opening the Health Connect app.   |
-| **Success**     | DisableGoogleFit         | True if there aren't errors while disconnecting from Google Fit.    |
 | **Success**     | DisableHealthConnect     | True if there aren't errors while disconnecting from Health Connect.|
 
 (*) There are several actions in the Health & Fitness plugin that begin with **Get** and have a **Success** variable.
