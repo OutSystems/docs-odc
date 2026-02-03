@@ -64,7 +64,7 @@ To add a button from the toolbox, follow these steps:
 
        1. Name the data action `DataActionMyIdentityProvider`.
 
-       1. Name the output parameter `MyIdentityProvider`.
+       1. Add an output parameter of the **Text** data type, and name it `MyIdentityProvider`.
 
        1. Add an **Assign** after the **Start** element.
 
@@ -120,7 +120,7 @@ If you chose the modify the login screen scenario, to modify the user info bar l
 
 1. Create the `GetMyIdentityProvider` server action to fetch a setting with the IdP's name. This action lets you use a setting instead of hardcoding the provider name when you configure the **GetExternalLoginURL** action.
 
-    1. In ODC Studio, create a new setting of the text data type, and name it `MyIdentityProvider`.
+    1. In ODC Studio, create a new setting of the **Text** data type, and name it `MyIdentityProvider`.
 
     1. Create a new server action, name it `GetMyIdentityProvider`, and set the **Function** property to **Yes**.
 
@@ -132,7 +132,7 @@ If you chose the modify the login screen scenario, to modify the user info bar l
 
         </div>
 
-    1. Add an output parameter, and name it `MyIdentityProvider`.
+    1. Add an output parameter of the **Text** data type, and name it `MyIdentityProvider`.
 
     1. Add an **Assign** element after the **Start** element.
 
@@ -144,7 +144,7 @@ If you chose the modify the login screen scenario, to modify the user info bar l
 
     1. In ODC Studio, create a new client action, and name it `GetMyIdentityProvider`.
 
-    1. Add an output parameter, and name it `MyIdentityProvider`.
+    1. Add an output parameter of the **Text** data type, and name it `MyIdentityProvider`.
 
     1. Add the MyIdentityProvider server action you created after the **Start** element.
 
