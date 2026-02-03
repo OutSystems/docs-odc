@@ -56,6 +56,14 @@ You can also add logging capabilities directly into your custom C# code. To log 
 
 Once you build and publish the C# code as an ODC external library, the logs in your custom code can be accessed and viewed from the **ODC Portal** just like other [app logs](../../monitor-and-troubleshoot/monitor-apps.md). The logs help you monitor and troubleshoot your external logic effectively and ensure that your custom code behaves as expected.
 
+<div class="info" markdown="1">
+
+Don't use `Console.WriteLine` or similar methods for logging. Console logs aren't visible in the ODC Portal but can be accessed by OutSystems staff in lower level system logs.
+
+Ensure also that logs don't expose sensitive information, such as personal data or credentials, to comply with data protection regulations.
+
+</div>
+
 ## Upload and publish the external logic
 
 <div class="info" markdown="1">

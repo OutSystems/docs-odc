@@ -47,6 +47,67 @@ This architecture has several important implications:
 
 By designing your external libraries with these considerations in mind, you can ensure that they function correctly and efficiently within the broader architecture of your ODC apps.
 
+## Always use structured logging with ILogger
+
+Implement logging in your external libraries to track behavior and diagnose issues. Follow these best practices:
+
+* **Always add logging**: Don't skip logging in your external libraries. Proper logging is essential for troubleshooting issues in production.
+
+* **Use the ILogger interface**: Your custom code must use the [Microsoft Extension ILogger Interface](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger?view=net-8.0-pp) provided in the Library class constructor. Don't use `Console.WriteLine`. Console logs aren't visible in the ODC Portal but can be accessed by OutSystems staff in lower level system logs.
+
+* **Use appropriate [log levels](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.loglevel?view=net-8.0-pp)**:  This helps you filter logs effectively when troubleshooting. In the ODC logs, only Information and higher levels are captured and visible in the [ODC Portal logs](../../monitor-and-troubleshoot/monitor-apps.md).
+
+* **Don't log sensitive information**: Ensure that logging doesn't expose personal data or credentials, to comply with data protection regulations.
+
+The following example shows how to inject `ILogger` in the constructor and use different log levels:
+
+```csharp
+using Microsoft.Extensions.Logging;
+using System.Diagnostics;
+
+namespace MyCompany
+{
+    public class MyLibrary : IMyLibrary
+    {
+        private readonly ILogger _logger;
+
+        public MyLibrary(ILogger logger)
+        {
+            _logger = logger;
+        }
+
+        // Helper to capitalize a word properly
+        private static string Capitalize(string s) {
+          return string.IsNullOrWhiteSpace(s) ? "" : 
+              char.ToUpper(s[0]) + s.Substring(1).ToLower();
+        }
+
+        public string SayHello(string name, string title = "Mr./Ms.")
+        {
+            using var activity = Activity.Current?.Source.StartActivity("MyLibrary.SayHello");
+            try
+            {
+                _logger.LogInformation("Saying hello to {Name} with title {Title}", name, title);
+
+                // Split the name into parts
+                var parts = name.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+                // Extract first and last name (with basic safety)
+                string first = parts.Length > 0 ? parts[0] : "";
+                string last  = parts.Length > 1 ? parts[^1] : "";
+
+                return $"Hello, {title} {Capitalize(first)} {Capitalize(last)}";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while formatting Name.");
+                throw new ArgumentException($"Failed to format name: {name}", ex);
+            }
+        }
+    }
+}
+```
+
 ## Memory usage
 
 To prevent memory leaks it's important to properly dispose of objects that manage system resources. In .NET, classes that implement the `IDisposable` interface require explicit cleanup. You can use [`using` statements](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/using) to ensure these objects are properly disposed when they go out of scope.
