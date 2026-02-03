@@ -28,8 +28,6 @@ OutSystems Developer Cloud (ODC) provides various options for integrating with y
 
     * When data mashup is required, make sure Data Fabric [record limit](../building-apps/data/fetch-data/data-mashup-errors.md) complies with your app needs.
 
-    * You must use [aggregates](../building-apps/data/fetch-data/aggregate.md) to fetch data. Currently, Data Fabric doesn't support SQL elements.
-
 * [REST APIs](consume_rest/intro.md) - Enables you to retrieve or manipulate information from external systems that provide REST APIs for that effect.
 
 * [Custom code](../building-apps/external-logic/intro.md) - Enables you to integrate with your external systems for use cases that can't be fully covered using the above integrations.
