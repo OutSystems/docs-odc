@@ -79,9 +79,9 @@ In Action calling, a **loop** is a single cycle where the AI model calls an acti
 
 Your call condition expression can use any of the variables that are in scope when **call agent** runs. As in any server action, these are the variables set by actions earlier in the logic flow of **AgentFlow**. Additionally, it can also use the following internal variables that track the agent’s progress in real-time:
 
-* `TokenUsage`: Represents the total number of tokens the agent may consume in one execution of **call agent**. For example, the expression `TokenUsage = 8000` limits token use to a maximum of 8000 tokens.  
+* `TokenUsage`: Represents the total number of tokens the agent may consume in one execution of **call agent**. For example, the expression `TokenUsage = 3000` limits token use to a maximum of 3000 tokens.  
 * `LoopCount`: Represents the number of reasoning loops the agent has executed in the current task.  
-* `TotalCallsCount`: Represents the total number of individual actions the agent has called across all loops. For example, if the agent calls **action 1** 15 times and **action 2** 10, the `TotalCallsCount` is 25.
+* `TotalCallsCount`: Represents the total number of individual actions the agent has called across all loops. For example, if the agent calls **action 1** 15 times and **action 2** 15, the `TotalCallsCount` is 30.
 
 The agent may continue to execute actions as long as your expression evaluates to `False`.
 
@@ -95,7 +95,7 @@ Use the **call condition** for process control and the **Max Tokens** setting fo
 
 Here are some example expressions for the call condition:
 
-* To stop the process before it consumes 8000 tokens: `TokenUsage < 8000`  
-* To limit the agent to a maximum of 50 reasoning loops: `LoopCount < 50`  
-* To stop the agent after it has made a total of 25 action calls (regardless of the number of loops): `TotalCallsCount < 25`  
-* To apply multiple conditions simultaneously: `TokenUsage < 8000 and TotalCallsCount < 25`
+* To stop the process before it consumes 3000 tokens: `TokenUsage >= 3000`  
+* To limit the agent to a maximum of 50 reasoning loops: `LoopCount >= 50`  
+* To stop the agent after it has made a total of 30 action calls (regardless of the number of loops): `TotalCallsCount >= 30`  
+* To apply multiple conditions simultaneously: `TokenUsage >= 3000 or TotalCallsCount >= 30`
