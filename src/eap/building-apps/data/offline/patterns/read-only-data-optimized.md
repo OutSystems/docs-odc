@@ -41,9 +41,9 @@ The following is an overview of the Read-Only data optimized pattern logic:
 
 1. ![Icon representing a client device in the Read-Only Data Optimized pattern](images/icon-client.png "Client Icon") Deletes and recreates data in the local storage with the data received from the server.
 
-Download the [sample module for the Read-Only Data Optimized pattern](http://www.outsystems.com/forge/component/1638/Offline+Data+Sync+Patterns/), which uses companies as an example for data synchronization. The following sections explain the data model and logic used in the sample module.
+Download the [sample module for the Read-Only Data Optimized pattern](https://www.outsystems.com/forge/component-overview/16956/offline-data-sync-patterns-read-only-optimized-odc), which uses companies as an example for data synchronization. The following sections explain the data model and logic used in the sample module.
 
-## Data Model
+## Data model
 
 The sample defines a database entity `Company` and its local storage counterpart `LocalCompany`. Additionally, the `SyncProperties` local storage entity keeps track of the last synchronization date and time.
 
@@ -55,7 +55,7 @@ The sample defines a database entity `Company` and its local storage counterpart
 
 The application logic must keep the entity attributes `ModifiedOn` and `IsActive` updated.
 
-## OnSync Logic
+## OnSync logic
 
 Here’s how the `OnSync` client action works:
 
@@ -67,7 +67,7 @@ Here’s how the `OnSync` client action works:
 1. Iterate through the list of deleted (inactive) `Company` records from the server and delete the corresponding records in the local storage.
 1. Update the `SyncProperties.LastSync` attribute with the synchronization timestamp from the server.
 
-## ServerDataSync Logic
+## ServerDataSync logic
 
 Here’s how the `ServerDataSync` server action works:
 
@@ -102,7 +102,7 @@ Company.IsActive = False and
 
 * [Read-Only data synchronization pattern](read-only-data.md)
   
-* [Read/Write data last Write wins synchronization pattern](read-write-data-last-write-wins.md)
+* [Read/Write data last write wins synchronization pattern](read-write-data-last-write-wins.md)
   
 * [Read/Write data One-to-Many synchronization pattern](read-write-data-one-to-many.md)
   

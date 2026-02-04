@@ -55,7 +55,7 @@ Here’s an overview of the Read/Write Data with Conflict Detection pattern:
 
 You must implement a mechanism, either automatic or manual, to resolve detected conflicts. For example, you can present the client and server versions of the records side by side and allow the user to select which version to keep.
 
-Download the [sample module for the Read/Write Data with Conflict Detection pattern](http://www.outsystems.com/forge/component/1638/Offline+Data+Sync+Patterns/), which uses companies as an example for data synchronization. The following sections provide detailed descriptions of the data model and logic used in the sample module.
+Download the [sample module for the Read/Write Data with Conflict Detection pattern](https://www.outsystems.com/forge/component-overview/16953/offline-data-sync-patterns-r-w-conflict-detect-odc), which uses companies as an example for data synchronization. The following sections provide detailed descriptions of the data model and logic used in the sample module.
 
 ## Data model
 

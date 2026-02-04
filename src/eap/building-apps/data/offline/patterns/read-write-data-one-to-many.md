@@ -40,17 +40,17 @@ Here’s an overview of the Read/Write Data One-to-Many pattern:
 1. ![Icon representing the server in data synchronization](images/icon-server.png "Server Icon") The server sends updated database data to the client.
 1. ![Icon representing the client in data synchronization](images/icon-client.png "Client Icon") The client deletes and recreates local storage data with the server data.
 
-**About the mapping**
+## About the mapping
 
 In this sample pattern, a dictionary maintains the relationship between the parent and child entity records. When syncing new parent entity records with the server, the dictionary tracks the correspondence between the original ID in local storage and the new ID in the server database. This mapping is necessary because parent and child records are not created on the server simultaneously. The dictionary updates unsynced child records with the foreign keys generated on the server database.
 
 | Key: local record ID | Value: server record ID |
-| ---------------------|------------------------ |
-| 5                    | 135 |
-| 6                    | 136 |
-| 7                    | 150 |
+| --------------------- | ------------------------ |
+| 5 | 135 |
+| 6 | 136 |
+| 7 | 150 |
 
-You can download the [sample module for the Read/Write Data One-to-Many pattern](http://www.outsystems.com/forge/component/1638/Offline+Data+Sync+Patterns/) and examine the logic in your environment.
+You can download the [sample module for the Read/Write Data One-to-Many pattern](https://www.outsystems.com/forge/component-overview/16955/offline-data-sync-patterns-r-w-one-to-many-odc) and examine the logic in your environment.
 
 ## Data model
 
