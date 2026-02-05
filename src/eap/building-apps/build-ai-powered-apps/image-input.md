@@ -36,7 +36,7 @@ These are general guidelines. For the most up-to-date and detailed requirements,
 | Supported formats | PNG (.png), JPEG (.jpeg, .jpg), WebP (.webp), GIF (.gif, non-animated) |
 | File size | Up to 20MB per image. |
 | Resolution | **Minimum:** 512px x 512px  **Maximum:** 768px on the shortest side and 2000px on the longest side. |
-| Content | <ul><li>No watermarks or logos.</li><li>No text embedded in the image.</li><li>No NSFW (not safe for work) content.</li><li>Must be clear enough for a person to understand.</li></ul> |
+| Content | <ul><li>No NSFW (not safe for work) content.</li><li>Must be clear enough for a person to understand.</li></ul><br/>**Note**: Images containing watermarks, logos, or embedded text are accepted, but the AI model may not always interpret or identify them accurately. |
 
 The corresponding MIME types for these formats are **image/png**, **image/jpeg**, **image/webp**, and **image/gif**. If you use a file format the AI model does not support, it returns an error.
 
