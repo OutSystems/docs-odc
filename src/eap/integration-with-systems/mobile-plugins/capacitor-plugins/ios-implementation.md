@@ -24,7 +24,7 @@ For detailed information about how to build the iOS layer of your Capacitor plug
 
 ## Prerequisites
 
-To implement iOS native functionality for your Capacitor plugin, ensure you have:
+Before implementing the iOS native functionality for your Capacitor plugin, ensure that you have:
 
 * Node.js (version 16 or later) and npm installed
 * Basic knowledge of TypeScript/JavaScript for the web layer
@@ -61,6 +61,42 @@ Here's a code snippet of the scanBarcode function on iOS, in Swift:
 ## Configure iOS permissions and dependencies
 
 If your plugin has functionality on iOS that requires permissions from the end user, then you must implement the permissions pattern. For detailed information, refer to [Permissions](https://capacitorjs.com/docs/plugins/ios#permissions).
+
+## Configure Apple privacy manifests
+
+Apple requires all apps to provide a `PrivacyInfo.xcprivacy` file. If your plugin accesses specific APIs that impact user privacy, you must bundle this manifest within your plugin so that it is automatically included in the app's privacy report.
+
+For a full list of APIs that require a recorded reason and the specific data types that Apple tracks, refer to [Privacy manifest files](https://developer.apple.com/documentation/bundleresources/privacy-manifest-files) in the Apple developer documentation.
+
+### Create the privacy manifest
+
+To ensure compatibility with swift package manager (SPM) support and to follow standard iOS development practices, place your manifest inside the `Sources` directory of your plugin.
+
+1. Navigate to your plugin's ios/ folder.
+
+1. Create the file in the path -  `ios/Sources/{PLUGIN_NAME}/PrivacyInfo.xcprivacy` where PLUGIN_NAME is the name of your plugin.
+
+1. In the privacy file, declare your `NSPrivacyAccessedAPITypes`, `NSPrivacyCollectedDataTypes`, and `NSPrivacyTracking` as required by your plugin's functionality.
+
+### Update the `.podspec` file
+
+To ensure the manifest is correctly discovered by Xcode without conflicting with the main app's own manifest, you must bundle it using `resource_bundles`. This namespaces the file within a unique bundle during the build process.
+
+Update your plugin's `.podspec` file located in the `ios/` directory to include the privacy manifest as a resource bundle. Verify that the file path in the configuration matches the exact location where you created the `PrivacyInfo.xcprivacy` file in the previous step:
+
+```ruby
+Pod::Spec.new do |s|
+  s.name = 'YOUR_PLUGIN_NAME'
+  # ... other configuration ...
+
+  # Bundles the privacy manifest into a dedicated resource bundle
+  s.resource_bundles = {
+    'YOUR_PLUGIN_NAME_Privacy' => ['ios/Sources/YourPluginName/PrivacyInfo.xcprivacy']
+  }
+end
+```
+
+Do not add the manifest to `s.resources`. Using `s.resources` places the file in the main app bundle's root. This causes a collision and potential file overwrite if the app developer or another plugin also provides a `PrivacyInfo.xcprivacy` file.
 
 ## Next steps
 
