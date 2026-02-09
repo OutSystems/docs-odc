@@ -131,6 +131,12 @@ So, you must include all the hashes from the Amazon root certificates into your 
 
 The following is a configuration example generated in real-time for an application available on the domain my.custom-domain.com with the hashes from the Amazon root certificates:
 
+<div class="info" markdown="1">
+
+This setup is specific to Cordova. Refer to [Using the plugin in Capacitor apps](#using-plugin-capacitor-apps) on how to configure this for Capacitor apps.
+
+</div>
+
     {
     
        "hosts":[
@@ -231,7 +237,13 @@ To test that the SSL Pinning rejects a certification, do the following:
 
 1. The Mobile app won’t work because the SSL Pinning displays an error due to an invalid certificate.
 
-## SSL Pinning for multiple servers
+## SSL Pinning for multiple servers {#multiple-servers}
+
+<div class="info" markdown="1">
+
+This setup is specific to Cordova. Refer to [Using the plugin in Capacitor apps](#using-plugin-capacitor-apps) on how to configure this for Capacitor apps.
+
+</div>
 
 If you want your mobile app to perform the SSL Pinning validations when connecting to multiple servers, complete the following steps:
 
@@ -275,6 +287,107 @@ If you want your mobile app to perform the SSL Pinning validations when connecti
 
 1. Bundle the configuration file and implement the verification in your mobile app (as explained for a single server).
 
+## Using the plugin in Capacitor apps {#using-plugin-capacitor-apps}
+
+<div class="info" markdown="1">
+
+Support for Capacitor was added in version 1.2.0 of the SSL Pinning Plugin.
+
+</div>
+
+When using this plugin in a Capacitor app, the configuration process differs from Cordova. Instead of using extensibility settings, Capacitor apps require build action JSON files to inject the SSL pinning configuration directly into the native platform files during the build process.
+
+Follow these steps to configure the build action:
+
+1. Create a .json file to configure the build action for both Android and iOS platforms:
+
+   * **For Android**: Configure domains using `<domain>` elements within `<domain-config>` sections, and certificate pins using `<pin>` elements within `<pin-set>` sections.
+   * **For iOS**: Specify the domain within the `TSKPinnedDomains` property, and list each certificate pin in the `TSKPublicKeyHashes` array.
+
+   To configure multiple servers as shown in [SSL Pinning for multiple servers](#multiple-servers), use the following build action configuration:
+
+<div class="info" markdown="1">
+
+If you only target one platform, you can remove the unused platform section from the JSON configuration.
+
+</div>
+
+   ```json
+   {
+     "platforms": {
+       "android": {
+         "xml": [
+           {
+             "resFile": "xml/network_security_config.xml",
+             "target": "network-security-config",
+             "inject": "<domain-config>\n  <domain includeSubdomains=\"true\">www.myserver1.com</domain>\n  <pin-set>\n    <pin digest=\"SHA-256\">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</pin>\n    <pin digest=\"SHA-256\">BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=</pin>\n  </pin-set>\n</domain-config>"
+           },
+           {
+             "resFile": "xml/network_security_config.xml",
+             "target": "network-security-config",
+             "inject": "<domain-config>\n  <domain includeSubdomains=\"true\">www.myserver2.com</domain>\n  <pin-set>\n    <pin digest=\"SHA-256\">CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC=</pin>\n    <pin digest=\"SHA-256\">DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD=</pin>\n  </pin-set>\n</domain-config>"
+           }
+         ]
+       },
+       "ios": {
+         "plist": [
+           {
+             "replace": true,
+             "entries": [
+               {
+                 "TSKConfiguration": {
+                   "TSKSwizzleNetworkDelegates": true,
+                   "TSKPinnedDomains": {
+                     "www.myserver1.com": {
+                       "TSKDisableDefaultReportUri": true,
+                       "TSKEnforcePinning": true,
+                       "TSKIncludeSubdomains": false,
+                       "TSKPublicKeyHashes": [
+                         "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+                         "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB="
+                       ]
+                     },
+                     "www.myserver2.com": {
+                       "TSKDisableDefaultReportUri": true,
+                       "TSKEnforcePinning": true,
+                       "TSKIncludeSubdomains": false,
+                       "TSKPublicKeyHashes": [
+                         "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC=",
+                         "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD="
+                       ]
+                     }
+                   }
+                 }
+               }
+             ]
+           }
+         ]
+       }
+     }
+   }
+   ```
+
+1. In your app, go to the **Resources** folder in the **Data** tab and import your build action JSON file as a new resource (for example, `ssl-pinning-build-action.json`). Set the **Deploy Action** to **Deploy to Target Directory**.
+
+1. Finally, include the file in your app's **Extensibility** configuration. Reference the exact filename you used in the previous step:
+
+   ```json
+   {
+     "buildConfigurations": {
+       "buildAction": {
+         "config": "$resources.ssl-pinning-build-action.json"
+       }
+     }
+   }
+   ```
+
+1. Publish your app, which triggers a new mobile build that includes the certificate pins from your build action.
+
 ## Plan for the certificate renewal
 
-If you're planning to update your certificate soon, release a new version of the app with the JSON configuration containing the hash values for both the current certificate and the new certificate. Do this before you update the certificate to give users enough time to update the app. This ensures that when you update the certificate, the app continues to work.
+If you plan to update your certificate, release a new version of the app with the updated configuration containing the hash values for both the current certificate and the new certificate:
+
+* **For Cordova apps**: Update your JSON configuration file.
+* **For Capacitor apps**: Update your build action JSON file.
+
+Do this before you update the certificate to give users enough time to update the app. This ensures that when you update the certificate, the app continues to work.
