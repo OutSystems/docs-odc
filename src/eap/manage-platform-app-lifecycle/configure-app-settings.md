@@ -26,6 +26,8 @@ In ODC Studio, for new or existing apps in the **development stage**, you can:
 
 * [View and edit the default values of app settings](#view-and-edit-default-values-of-the-app-settings)
 
+* [Use app settings in your app](#use-app-settings-in-your-app)
+
 ## Create or change settings {#create-or-change-settings}
 
 To create or change app settings, follow these steps:
@@ -44,13 +46,13 @@ You must publish your app after you make any changes.
 
 If you're storing sensitive information such as passwords or an access token in the setting, set the **Is secret** property to True. For more information about the **Is secret** property, refer to [Set as Secret](../security/set-as-secret.md). For more information about settings and their properties, refer to [Setting properties](#setting-properties).
 
-## Organize settings into folders { #organize-settings-into-folders}
+## Organize settings into folders {#organize-settings-into-folders}
 
 To organize your app settings into folders:
 
-1. Right-click the **Settings** folder and select **Add folder**
+1. Right-click the **Settings** folder and select **Add folder**.
 
-1. Drag and drop each of the settings into the relevant folders.
+1. Drag each setting into the relevant folder.
 
     ![Settings organized into folders in ODC Studio.](images/setting-folder-odcs.png "Organize Settings into Folders")
 
@@ -64,15 +66,17 @@ In the ODC Portal, you can view and edit default settings for all apps on a spec
 
 1. Select **Settings**.
 
-    The app settings are displayed. Settings inherited from libraries are also displayed.
+    The portal lists the app settings. It also lists settings inherited from libraries.
 
-    ![ODC Portal showing the settingsfor an app.](images/app-settings-pl.png "App Settings in ODC Portal")
+    ![ODC Portal showing the settings for an app.](images/app-settings-pl.png "App Settings in ODC Portal")
 
-1. To view the setting details, select the ellipsis and select **View**
+1. To view the setting details, select the ellipsis and select **View**.
 
 1. To edit the setting details, select the ellipsis and select **Edit**.
 
 1. After making your changes, click **Save**.
+
+    The app uses the updated value the next time it reads the setting.
 
 **Note**: The file size limit for binary data settings is 5.8KB.
 
@@ -82,17 +86,54 @@ Remember, settings are stage-specific.
 
 </div>
 
+## Use app settings in your app {#use-app-settings-in-your-app}
+
+After you create a setting, you can refer to it in ODC Studio using `Settings.<SettingName>`. For example, if you create a **Text** setting named `MyIdentityProvider`, you can read its value with `Settings.MyIdentityProvider`.
+
+### Use settings in server-side logic
+
+Settings are available in server-side logic, such as server actions.
+
+1. In ODC Studio, create (or open) a server action.
+
+1. Use the setting in an expression, for example:
+
+    * Assign a variable to `Settings.MyIdentityProvider`.
+    * Use it as an input to another action.
+
+### Use settings in client-side logic
+
+If you need a setting value in client-side logic (for example, in a client action), create a server action that returns the value, and then call that server action from the client.
+
+1. In ODC Studio, create a server action named `GetMyIdentityProvider` and set **Function** to **Yes**.
+
+1. Add an output parameter of the **Text** data type named `MyIdentityProvider`.
+
+1. Add an **Assign** after the **Start** element.
+
+1. In the **Assign** properties, set `MyIdentityProvider` to `Settings.MyIdentityProvider`.
+
+1. In a client action, call the `GetMyIdentityProvider` server action and use its output.
+
+    <div class="info" markdown="1">
+
+    Don’t return **secret** settings to the client. Keep secret values on the server side.
+
+    </div>
+
+For an end-to-end example that uses a setting to avoid hardcoding an identity provider name in a login flow, refer to [Modify the user info bar login flow](external-idps/apps.md#modify-the-user-info-bar-login-flow-idp-button-added-alongside-the-built-in-login).
+
 ## Setting properties {#setting-properties}
 
 The following table shows the available settings and their properties.
 
-| Property| Description|Mandatory|
-|---|---|---|
+| Property | Description | Mandatory |
+| --- | --- | --- |
 | Name | Setting name | Yes |
 | Description | Detailed description of the setting. Useful for documentation purposes. The maximum size of this property is 2000 characters. | No |
-| Data Type | The settings data type.|Yes|
-| Is secret | Encrypts and protects sensitive settings such as passwords and access tokens. A setting with the **Is secret** property enabled does not have a default value. |No|
-| Default Value | Initial value of this setting. If undefined, the default value of the data type is used. This does not apply to settings that have the **Is secret** property enabled. The maximum size of this property is 2000 characters.|No|
+| Data Type | The settings data type. | Yes |
+| Is secret | Encrypts and protects sensitive settings such as passwords and access tokens. A setting with the **Is secret** property enabled does not have a default value. | No |
+| Default Value | Initial value of this setting. If undefined, the default value of the data type is used. This does not apply to settings that have the **Is secret** property enabled. The maximum size of this property is 2000 characters. | No |
 
 ## Related sources
 
