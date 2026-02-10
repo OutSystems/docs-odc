@@ -45,7 +45,7 @@ Following is a high-level process describing how to implement and manage the not
 
 1. Use the **Firebase Cloud Messaging Plugin's Client Actions** to implement basic notification functions in your app.
 
-1. To prevent app runtime errors, verify if the plugin is available during runtime in your app. To check the availability of your plugin, from Service Studio, go to **Logic** > **Client Actions** > **CloudMessagingPlugin** > **CheckCloudMessagingPlugin** action. If the plugin isn't available in your app, display an error to your end-users.
+1. To prevent app runtime errors, verify if the plugin is available during runtime in your app. To check the availability of your plugin, from ODC Studio, go to **Logic** > **Client Actions** > **CloudMessagingPlugin** > **CheckCloudMessagingPlugin** action. If the plugin isn't available in your app, display an error to your end-users.
 
 <div class="info" markdown="1">
 
