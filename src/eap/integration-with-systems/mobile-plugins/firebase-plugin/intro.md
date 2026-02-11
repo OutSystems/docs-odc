@@ -3,7 +3,7 @@ summary: Explore Firebase-based plugins for mobile app development on OutSystems
 locale: en-us
 guid: 050c7d77-0418-4f38-9bb8-7b0275931b80
 app_type: mobile apps
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4345%3A125&mode=design&t=OmSDtxS14Ggp4J6f-1
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=4345-125&p=f&t=VeBxifb5s4k6YDSA-0
 platform-version: odc
 tags: mobile app development, firebase integration, plugin management, cloud services, cross-platform development
 audience:
@@ -145,8 +145,6 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 }
 ```
 
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
-
 You can use the **RequestTrackingAuthorization** action multiple times in the same app because iOS remembers a user's choice. iOS only prompts users again after they uninstall and then reinstall the app on the device.
 
 By default, an app using the Firebase Analytics plugin is able to trigger the native AppTrackingTransparency framework. It also contains the **NSUserTrackingUsageDescription** field in the app's **\*-Info.plist** file. If you don't want to trigger the framework and don't want to include the description field in the **.plist** file, you can disable this through the Extensibility Configurations as follows:
@@ -179,8 +177,6 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
   }
 }
 ```
-
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 <div class="info" markdown="1">
 
@@ -272,8 +268,6 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
   }
 }
 ```
-
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 <div class="info" markdown="1">
 

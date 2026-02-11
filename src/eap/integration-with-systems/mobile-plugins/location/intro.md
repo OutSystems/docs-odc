@@ -4,37 +4,41 @@ tags: gps integration, plugin installation, real-time tracking, error handling, 
 locale: en-us
 guid: f2b0feab-c558-4d7f-b507-4511ae094677
 app_type: mobile apps
-figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7693&t=ZwHw8hXeFhwYsO5V-1
-platform-version: odc
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=3203-7693&p=f&t=HgzpbirauijY3Jp8-0
 audience:
   - mobile developers
   - frontend developers
   - full stack developers
-outsystems-tools:
-  - odc studio
+platform-version: odc
 coverage-type:
   - apply
   - remember
+outsystems-tools:
+  - odc studio
 topic:
   - using-cordova-plugins
   - using-capacitor-plugins
 ---
 
-# Location Plugin
+# Location plugin
 
-Use the Location Plugin to enable an application to access the GPS capabilities of the user device, like latitude, longitude, and altitude. This plugin works with native mobile apps, progressive web apps (PWAs), and web apps.
+Use the location plugin to enable an application to access the GPS capabilities of the user device, like latitude, longitude, and altitude. This plugin works with native mobile apps, progressive web apps (PWAs), and web apps.
 
 <div class="info" markdown="1">
 
-See [Adding plugins](../intro.md#adding-plugins) to learn how to install and reference a plugin in your OutSystems apps, and how to install a demo app.
+Refer to [Use mobile plugins](../intro.md#adding-plugins) to learn how to install and reference a plugin in your OutSystems apps.
 
 </div>
 
-## Adding necessary permissions (Property List Keys) for Location (iOS only)
+## Add necessary permissions (property list keys) for location (iOS only)
 
-To use the Location Plugin on iOS, you should provide descriptions for two property list keys: **NSLocationWhenInUseUsageDescription** and **NSLocationAlwaysAndWhenInUseUsageDescription**.
+To use the location plugin on iOS, provide descriptions for two property list keys: **NSLocationWhenInUseUsageDescription** and **NSLocationAlwaysAndWhenInUseUsageDescription**.
 
-This can be done by setting two iOS permissions in your app's Extensibility Configurations file, as follows:
+From plugin version 2.2.0, set the **LocationWhenInUseUsageDescription** and **LocationAlwaysAndWhenInUseUsageDescription** extensibility settings in the **Mobile distribution** tab of the ODC Portal.
+
+If you don't configure these settings, the plugin uses default values.
+
+For plugin versions earlier than 2.2.0, add the permissions to the app extensibility configurations:
 
 (Recommended) Using the universal extensibility configurations schema:
 
@@ -70,55 +74,55 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 }
 ```
 
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
+## Using the plugin
 
-## Creating logic to get the device location
+To use the location plugin actions in **ODC Studio**, go to **Logic** > **Client Actions** > **LocationPlugin**.
 
-The Location Plugin actions are in the **Logic** tab of ODC Studio, in **Client Actions** > **LocationPlugin**.
+<div class="info" markdown="1">
 
-To prevent errors, it's a best practice to first check if the plugin is available (1) with the action **CheckLocationPlugin**. If the plugin isn't available to the app, display an error to the user.
+To prevent errors, check if the plugin is available with the action **CheckLocationPlugin** before calling any other client action. If the plugin isn't available, display an error to the user.
 
-Otherwise, you can use the **GetLocation** action to get the device current location (2). In the GetLocation action you can enable the high accuracy mode, define the timeout of the action and set the maximum age (in milliseconds) to use the cached location.
+</div>
 
-Check if getting the device location works by verifying the value of **GetLocation.Success** (3) is **True**. If **True**, you can handle the device location data and apply any logic that you want. If **False**, you can show an **Error** to the user.
+### Get device location
+
+Use the **GetLocation** action to retrieve the current device location (latitude, longitude, altitude).
+
+You can configure the action to:
+
+* Enable high accuracy mode.
+* Define a timeout.
+* Set a maximum age (in milliseconds) to use a cached location.
+
+Handle the **Success** output parameter to ensure the operation worked. If **True**, use the location data from the output. If **False**, handle the error.
 
 ![Flowchart showing the logic to get device location using the Location Plugin in ODC Studio](images/logic-to-get-device-location-odcs.png "Logic to Get Device Location")
 
-## Check current device location in real time
+### Track location in real time
 
-To check the device location in real time and have a good user experience:
+To monitor the device location in real time and update your app as the position changes, follow these steps:
 
-* Add the **LocationTracker** block on your screen
-* Use the **WatchPosition** action to update location in real time
-* Create logic to handle the event of the position changing
-* Create logic to handle errors
-* See the sections that follow for more information
-
-## Add the LocationTracker block on your screen
-
-To check if the device location changed, you can drag the **LocationTracker** block on your screen (4). This block handles the **OnPositionChanged** event to trigger another action in your app logic.
+1. Drag the **LocationTracker** block to your screen. This block handles the **OnPositionChanged** event.
 
 ![Screenshot of the process to add the LocationTracker block on a screen in ODC Studio](images/add-location-tracker-ocds.png "Add LocationTracker Block")
 
-## Use the WatchPosition action to update location in real time
-
-After adding the **LocationTracker** block in your app, you need to use the **WatchPosition** action to trigger and start monitoring the device position (5). Use the **WatchPosition** action in the flow that suits your app use case. The inputs are the same as in **GetLocation** action to update the device location in real time.
-
-As an output, this **WatchPosition** action returns a **WatchId**, an identifier that you can use in the **ClearWatch** action to stop the process of actively updating the device position.
+1. Use the **WatchPosition** action to start monitoring the device position. Call this action in a flow that suits your use case (for example, on screen initialization).
+    * This action returns a **WatchId**. Store this identifier if you need to stop monitoring later.
 
 ![Illustration of using the WatchPosition action to update device location in real time in ODC Studio](images/watch-position-action-odcs.png "WatchPosition Action")
 
-## Create logic to handle the event of the position changing
-
-At last, you need to create a custom action and use it as the **Handler** of the **OnPositionChanged** event in the **LocationTracker** block (6). This event of the position changing returns the **Location** structure and the **WatchId**.
+1. Create a client action to handle the **OnPositionChanged** event from the **LocationTracker** block.
+    * This event provides the new **Location** structure and the **WatchId**.
 
 ![Diagram showing the logic to handle the event of the device's position changing in ODC Studio](images/logic-handle-event-odcs.png "Logic to Handle Event of Position Changing")
 
+1. To stop monitoring, use the **ClearWatch** action with the **WatchId** you stored earlier.
+
 ## Handling errors
 
-The app with the Location Plugin can run on many Android or iOS devices, with different hardware and configurations. To ensure a good user experience and prevent the app from crashing, handle the errors within the app.
+Apps with the Location Plugin run on many Android or iOS devices, with different hardware and configurations. To ensure a good user experience and prevent the app from crashing, handle the errors within the app.
 
-Here is the list of actions you can use to handle the errors. Use these actions with the **If** nodes to check for errors and control how the app works.
+The following actions help you handle errors. Use these actions with **If** nodes to check for errors and control how the app works.
 
 | Variable    | Action              | Description                                                                    |
 | :---------- | :------------------ | :----------------------------------------------------------------------------- |
@@ -131,7 +135,7 @@ Here is the list of actions you can use to handle the errors. Use these actions 
 
 ## Actions
 
-Here is the reference of the actions you can use from the plugin. The Location Plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check[cordova-outsystems-geolocation](https://github.com/ionic-team/cordova-outsystems-geolocation) and [capacitor-geolocation](https://github.com/ionic-team/capacitor-geolocation).
+The following actions are available in the plugin. The Location Plugin is dual-stack, using a Cordova plugin for Cordova apps and a Capacitor plugin for Capacitor apps. For more information, refer to [cordova-outsystems-geolocation](https://github.com/ionic-team/cordova-outsystems-geolocation) and [capacitor-geolocation](https://github.com/ionic-team/capacitor-geolocation).
 
 | Action              | Description                                                                                 | Available in PWA |
 | :------------------ | :------------------------------------------------------------------------------------------ | :--------------- |

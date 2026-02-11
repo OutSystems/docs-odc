@@ -88,12 +88,6 @@ Any value chosen for the KeyAuthentication variable doesn't affect the security 
 
 #### (Optional) Set the authentication dialog content (Android only)
 
-<div class="info" markdown="1">
-
-Applies to version 1.1.0 and higher.
-
-</div>
-
 You can set the content of the authentication dialog that appears to the end-user when accessing key-value pairs. More specifically, you can set values for the dialog's **title** and **subtitle**. For devices with an Android version below or equal to 10, you can also set the value for the **cancel button** (also known as **negative button**).
 
 <div class="info" markdown="1">
@@ -104,13 +98,22 @@ For Android versions 10 or lower, when using standard authentication methods (fo
 
 </div>
 
-To set the values for these fields, define the following Android preferences in your app's Extensibility Configurations:
+Use the plugin extensibility settings if:
 
-<div class="info" markdown="1">
+* You're using the plugin in a Capacitor app.
+* You're using plugin version 1.3.0 or later in a Cordova app.
 
-This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-plugin-in-capacitor-apps) on how to configure this for Capacitor apps.
+To customize the authentication dialog text, configure the following extensibility settings in the **Mobile distribution** tab of the ODC Portal:
 
-</div>
+* **AuthPromptTitle**
+* **AuthPromptSubtitle**
+* **AuthPromptCancelButton**
+
+These settings have default values. Change them only if you need customization.
+
+If you're using a Cordova app with plugin version 1.2.8 or earlier, use the following configuration.
+
+Define the following Android preferences in the app extensibility configurations:
 
 (Recommended) Using the universal extensibility configurations schema:
 
@@ -153,19 +156,7 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 }
 ```
 
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
-
 **Note:** These preferences are optional. If they're not set, then the values in the example above are used by default.
-
-#### Using the plugin in Capacitor apps
-
-If you wish to customize the text content for the authentication dialog, you can do so by changing the following Extensibility Settings in the ODC Portal, under your application's Mobile distribution tab:
-
-* **AuthPromptTitle**
-* **AuthPromptSubtitle**
-* **AuthPromptCancelButton**
-
-These settings have default values (same defaults as Cordova), so if you do not need customization you do not need to change those Extensibility Settings.
 
 ## Handling errors
 

@@ -406,6 +406,8 @@
                 - topics:
                     - href: eap/integration-with-systems/mobile-plugins/camera/camera-ref.md
                 - href: eap/integration-with-systems/mobile-plugins/common-plugin/intro.md
+                - href: eap/integration-with-systems/mobile-plugins/calendar/intro.md
+                - href: eap/integration-with-systems/mobile-plugins/contacts/intro.md
                 - href: eap/integration-with-systems/mobile-plugins/file-plugin/intro.md
                 - topics:        
                     - href: eap/integration-with-systems/mobile-plugins/file-plugin/file-plugin-ref.md

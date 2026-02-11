@@ -20,11 +20,22 @@ topic:
   - using-cordova-plugins
 ---
 
-# Camera Plugin
+# Camera plugin
 
-The Camera plugin allows users to take pictures and capture videos with their mobile devices. This plugin works with both native mobile apps and progressive web apps (PWAs).
+The camera plugin allows users to take pictures and capture videos with their mobile devices. This plugin works with both native mobile apps and progressive web apps (PWAs).
 
 For more information about how to install and reference a plugin in your app, see [Mobile plugins](../intro.md).
+
+## Adding necessary permissions (property list keys) for the plugin — iOS only
+
+To use the camera plugin on iOS, provide descriptions for the following property list keys:
+
+* **NSCameraUsageDescription**
+* **NSPhotoLibraryUsageDescription**
+* **NSPhotoLibraryAddUsageDescription**
+* **NSMicrophoneUsageDescription**
+
+The plugin provides default values for these descriptions. From version 1.4.0 of the plugin, you can set your own descriptions using the extensibility settings: **CameraUsageDescription**, **NSPhotoLibraryUsageDescription**, **NSPhotoLibraryAddUsageDescription**, and **NSMicrophoneUsageDescription**. Set these in the **Mobile distribution** tab on your app's detail page in the Portal.
 
 ## Demo app
 
@@ -149,15 +160,15 @@ An app with the Camera plugin can run on many Android or iOS devices with differ
 
 The following is the list of actions you can use to handle the errors.
 
-|Variable|Action|Description|
-|-|-|-|
-|**IsAvailable**|**CheckCameraPlugin**| True if the camera plugin is available in the app.|
-|**Success**|**TakePicture**|True if there aren't errors while taking a picture.|
-|**Success**|**ChooseGalleryPicture**|True if there aren't errors while opening a picture from the gallery.|
-|**Success**|**EditPicture**| True if there aren't errors while editing a picture.|
-|**Success**|**RecordVideo**|True if there aren't errors while recording a video.|
-|**Success**|**ChooseFromGallery**|True if there aren't errors while opening a media file from the gallery.|
-|**Success**|**PlayVideo**|True if there aren't errors while playing a video.|
+| Variable | Action | Description |
+| - | - | - |
+| **IsAvailable** | **CheckCameraPlugin** | True if the camera plugin is available in the app. |
+| **Success** | **TakePicture** | True if there aren't errors while taking a picture. |
+| **Success** | **ChooseGalleryPicture** | True if there aren't errors while opening a picture from the gallery. |
+| **Success** | **EditPicture** | True if there aren't errors while editing a picture. |
+| **Success** | **RecordVideo** | True if there aren't errors while recording a video. |
+| **Success** | **ChooseFromGallery** | True if there aren't errors while opening a media file from the gallery. |
+| **Success** | **PlayVideo** | True if there aren't errors while playing a video. |
 
 You can use these actions with the **If** nodes to check for errors and control how the app works.
 
@@ -189,17 +200,17 @@ The following is a reference list of actions you can use for the Camera plugin. 
 
 Change the properties of the **TakePicture** action to adjust how the app handles the images.
 
-| Property               | Description                                                                                                                    |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------|
-| **Quality**            | The quality of the picture, in percentage. See the section about[Quality and app responsiveness](#image-quality-and-app-responsiveness).         |
-| **Width**              | The width of the picture in pixels.                                                                                           |
-| **Height**             | The height of the picture in pixels.                                                                                          |
+| Property | Description |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Quality** | The quality of the picture, in percentage. See the section about[Quality and app responsiveness](#image-quality-and-app-responsiveness). |
+| **Width** | The width of the picture in pixels. |
+| **Height** | The height of the picture in pixels. |
 | **CorrectOrientation** | If **True**, the plugin fixes the orientation if users take a photo and rotate the device. Applies to native mobile apps only. |
-| **EncodingType**       | Select the **JPEG** or **PNG** format.                                                                                         |
-| **SaveToPhotoAlbum**   | If **True**, the app saves the image to the device.                                                                            |
-| **CameraDirection**    | Select the front or back camera as the default when taking a new picture.                                                      |
-| **AllowEdit**          | If **True**, an Edit step is added after the take or choose picture step.                                                      |
-| **AllowMultiplePictures**| PWA only. Enables taking multiple pictures. Add the **CameraPlugin** theme to your app to ensure this feature works.        |
+| **EncodingType** | Select the **JPEG** or **PNG** format. |
+| **SaveToPhotoAlbum** | If **True**, the app saves the image to the device. |
+| **CameraDirection** | Select the front or back camera as the default when taking a new picture. |
+| **AllowEdit** | If **True**, an Edit step is added after the take or choose picture step. |
+| **AllowMultiplePictures** | PWA only. Enables taking multiple pictures. Add the **CameraPlugin** theme to your app to ensure this feature works. |
 
 <div class="info" markdown="1">
 

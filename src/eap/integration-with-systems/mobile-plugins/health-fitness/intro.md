@@ -143,8 +143,6 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 }
 ```
 
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
-
 For specific variables, the **name** of the preference should be the **Identifier** of the variable record in the **AllVariables** static entity of the plugin. For heart rate, for example, the **name** of the preference should be "HeartRate".
 
 You can also define preferences for variable groups (e.g. fitness variables). More specifically, you can define preferences for the following variable groups: "AllVariables", "FitnessVariables", "HealthVariables", and "ProfileVariables".
@@ -201,8 +199,6 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 }
 ```
 
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
-
 ## (Optional) Disable access to older history data (Android only)
 
 <div class="info" markdown="1">
@@ -247,8 +243,6 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
   }
 }
 ```
-
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 ## Enabling your users to track their health and fitness data
 
@@ -539,8 +533,6 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 }
 ```
 
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
-
 #### Additional information about background jobs in Android
 
 <div class="info" markdown="1">
@@ -588,8 +580,6 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
   }
 }
 ```
-
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 ### Create logic to disconnect your Android app from Health Connect
 

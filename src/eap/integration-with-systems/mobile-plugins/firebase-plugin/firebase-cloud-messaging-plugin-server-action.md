@@ -354,8 +354,6 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 
 ```
 
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
-
 1. In your push notification request, either via the `SendNotificationToUsers` or `SendNotificationToTopic` server actions available in the Firebase Cloud Messaging Server Actions library, specify the custom icon and color in the **Android** attribute.
 
     ![Screenshot showing Android notification configuration](images/fcm-custom-android-notification-odcs.png "Custom Android Icon and Color Configuration")
@@ -441,8 +439,6 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 }
 ```
 
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
-
 The following image illustrates how the notification channel's name and description appear in the user device:
 
 ![Screenshot of notification channel name and description](images/fcm-notification-channel.png "Notification Channel")
@@ -487,8 +483,6 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
   }
 }
 ```
-
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 ## Using the plugin in Capacitor apps
 

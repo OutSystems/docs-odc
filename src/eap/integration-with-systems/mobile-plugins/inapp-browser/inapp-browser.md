@@ -169,8 +169,6 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 }
 ```
 
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
-
 ## Adding necessary permissions to upload files within the web view on iOS
 
 To allow users to upload photos or videos in a page opened in a web view (using **OpenInWebView**), you may need to configure specific iOS usage descriptions. If the web page gives users the option to capture new photos or videos, you must add the iOS usage descriptions for the camera and microphone to your app.
@@ -210,8 +208,6 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
   }
 }
 ```
-
-Note that you can only use the Cordova-based extensibility for MABS versions lower than 12. It won't work on MABS 12.
 
 ## Using the plugin in Capacitor apps
 
