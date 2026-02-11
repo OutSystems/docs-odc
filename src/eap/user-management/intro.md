@@ -50,7 +50,9 @@ End-users interact with your web or mobile apps but don't access the ODC Portal 
 You can group end-users to simplify management. Internal and external end-user capacities are [licensed separately](https://www.outsystems.com/tk/redirect?g=907b0fd3-bc46-4391-aae2-673296d795d9). For details on classifying internal and external users, refer to [Classify Users in ODC](classify-users.md). For more information on how to manage end-users, refer to [Managing end-users](end-users/intro.md).
 
 <div class="info" markdown="1">
+
 A single user in ODC can act as both a member and an end-user, depending on their assigned roles.
+
 </div>
 
 ### API clients
