@@ -285,6 +285,8 @@ exceptions:
   - Visual Studio Code
   - .NET
   - NuGet
+  - Key Store Plugin
+  
 # Industry
   - API
   - HTML
@@ -316,6 +318,7 @@ exceptions:
   - QA
   - DEV
   - PRD
+  - SEO
 # Country
   - US East
   - North Virginia
