@@ -108,7 +108,11 @@ This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-p
 
 </div>
 
-By default, when using the Health and Fitness plugin, your app is configured to access every Health Connect data type the plugin provides. In other words, every variable is configured to have read and write access. If you wish to provide a custom configuration, you can do so through the Extensibility Configurations of your app.
+By default, the Health and Fitness plugin configures your app to access every Health Connect data type with read and write access. To provide a custom configuration, use either extensibility settings or the app extensibility configurations.
+
+From plugin version 1.7.0, use extensibility settings to set each Health Connect data type (for example, StepsAccess for Steps). Set these settings to one of the following values: **Read**, **Write**, **ReadWrite**, **None**. You can also use **AllVariablesAccess**, **HealthVariablesAccess**, **FitnessVariablesAccess**, and **ProfileVariablesAccess** settings.
+
+For plugin versions earlier than 1.7.0, use the app extensibility configurations.
 
 To configure the access type for a given Health Connect data type (variable), you simply define an Android preference in your app's Extensibility Configurations, as follows:
 
@@ -211,7 +215,11 @@ By default, your app can only access data from Health Connect starting 30 days p
 
 From version 1.4.0 of the plugin, you can access data older than that. A new permission is requested in the **RequestPermission** client action.
 
-If you want to disable access to older data and disable the permission request, set the`DisableReadHealthDataHistory` preference in the Extensibility Configurations to **true**, as follows:
+From plugin version 1.7.0, to disable access to older data and the permission request, set the **DisableReadHealthDataHistory** extensibility setting to **True**. Set this in your app's detail page in the ODC Portal, under the **Mobile distribution** tab.
+
+For plugin versions earlier than 1.7.0, use the following configuration.
+
+Set the **DisableReadHealthDataHistory** preference in the app extensibility configurations to **true**, as follows:
 
 (Recommended) Using the universal extensibility configurations schema:
 
@@ -500,7 +508,13 @@ This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-p
 
 </div>
 
-By default, all necessary background job Android permissions (e.g. "android.permission.ACTIVITY_RECOGNITION") are configured. If you don't want to use background job features and don't want these permissions to be included in your app, set the (`DisableBackgroundJobs`) preference in the Extensibility Configurations to **true**, as follows:
+By default, all necessary background job Android permissions (e.g. "android.permission.ACTIVITY_RECOGNITION") are configured. To disable background job features and exclude these permissions from your app, remove them.
+
+From plugin version 1.7.0, set the **DisableBackgroundJobs** extensibility setting to **True**. Set it in your app's detail page in the ODC Portal, under the **Mobile distribution** tab.
+
+For plugin versions earlier than 1.7.0, use the following configuration.
+
+Set the **DisableBackgroundJobs** preference in the extensibility configurations to **true**, as follows:
 
 (Recommended) Using the universal extensibility configurations schema:
 
@@ -543,7 +557,11 @@ This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-p
 
 When using the **SetBackgroundJob** client action, the **IMMEDIATE** option for the **JobFrequency** field of the **Variable** input parameter only applies to the following variables: steps, heart rate, calories burned, blood pressure, basal metabolic rate, walking speed, and distance. For the other variables (weight, height, sleep, blood glucose, body fat percentage, oxygen saturation and body temperature), the **IMMEDIATE** option runs every minute, as it is the minimum recommended frequency for alarms on Android.
 
-Background jobs run using foreground services, which results in a temporary notification being shown to the user. In most cases, as the background job processing is fast, the temporary notification won't be presented to the user. Nevertheless, you can define the **title** and **description** of this notification, in case it is shown. By default, we already set a title and description, but you can define your own values as follows:
+Background jobs run using foreground services, which shows a temporary notification to the user. Usually, the notification isn't shown because the background job processing is fast. However, you can define the **title** and **description** of this notification, in case it is shown. Default values are provided, but you can define custom ones.
+
+From plugin version 1.7.0, use the **BackgroundNotificationTitle** and **BackgroundNotificationDescription** extensibility settings. Set values for these in your app's detail page in the ODC Portal, under the **Mobile distribution** tab.
+
+For plugin versions earlier than 1.7.0, use the following configuration:
 
 (Recommended) Using the universal extensibility configurations schema:
 
@@ -597,7 +615,7 @@ Your app should be implemented so that when a user chooses to disconnect it from
 
 For Capacitor, the plugin has multiple extensibility settings that you can set to configure different things.
 
-You can change Extensibility Settings by opening your application in ODC Portal and going to Mobile distribution tab.
+Change extensibility settings by opening your application in the ODC Portal and going to the **Mobile distribution** tab.
 
 ### Providing the Privacy Policy file in your Capacitor app (Android only)
 
@@ -621,7 +639,7 @@ Similar to the preferences that could be set in the Extensibility Configurations
 
 ### (Optional) Set health descriptions (iOS only)
 
-For iOS, two extensibility settings can be used to set the **NSHealthShareUsageDescription** and **NSHealthUpdateUsageDescription** descriptions in your app's **Info.plist** file: introduced: **HealthShareDescription** and **HealthUpdateDescription**.
+For iOS, use the **HealthShareDescription** and **HealthUpdateDescription** extensibility settings to set the **NSHealthShareUsageDescription** and **NSHealthUpdateUsageDescription** descriptions in your app's **Info.plist** file. Set these in your app's detail page in the ODC Portal, under the **Mobile distribution** tab.
 
 ## Handling errors
 
