@@ -21,6 +21,8 @@ outsystems-tools:
 ---
 # Best practices for using external libraries
 
+Follow these recommendations to ensure your external libraries are secure, efficient, and integrate seamlessly with your ODC apps.
+
 ## Use with the private gateway feature
 
 You can connect your external library to private data and private services ("endpoints") that aren't accessible by the internet by using the [Private Gateway feature](../../manage-platform-app-lifecycle/private-gateway.md).
@@ -44,6 +46,8 @@ This architecture has several important implications:
 * **Latency:** Since an HTTPS call is made each time a server action in an external library is called, a small amount of latency is introduced in the execution time. Minimizing the number of calls to external libraries and batching operations where possible can help mitigate the impact of this latency.
 
 * **Independence:** External libraries run independently of the ODC app. This means they don't have direct access to the app's resources, context, or state, other than what you explicitly provide as an input parameter.
+
+* **Plugin execution context:** External libraries operate within a plugin-based architecture that uses isolated assembly loading to manage dependencies. Avoid external dependencies or code that requires dynamic assembly loading or relies on expectations of where assemblies are located (for example, using `AppDomain.CurrentDomain.BaseDirectory`). These patterns may lead to unexpected behavior in this environment. External libraries shouldn't depend on the published structure of their assets in the file system or on dynamic loading mechanisms that assume a standalone app context, as these behaviors aren't supported in this architecture.
 
 By designing your external libraries with these considerations in mind, you can ensure that they function correctly and efficiently within the broader architecture of your ODC apps.
 
@@ -148,6 +152,8 @@ To use a large binary file in custom code you can:
 1. Host the binary file on a file-sharing service and implement logic in your custom code to download the file from the URL.
 
 ## Related resources
+
+For more related resources, refer to the following articles:
 
 * [Extend your apps with custom code](intro.md)
 
