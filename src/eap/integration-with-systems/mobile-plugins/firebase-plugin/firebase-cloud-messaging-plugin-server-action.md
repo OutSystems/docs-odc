@@ -401,7 +401,11 @@ This setup is specific to Cordova. Refer to [the Capacitor section](#using-the-p
 
 </div>
 
-By default, the Cloud Messaging plugin defines values for the notification channel name and description on local notifications. However, in some instances, you might want to define a different default value. You can do this by adding the following name and value properties on the extensibility configurations of your app.
+By default, the Cloud Messaging plugin defines values for the notification channel name and description on local notifications. However, in some instances, you might want to define a different default value.
+
+From plugin version 3.2.0, use the **NotificationChannelDefaultName** and **NotificationChannelDefaultDescription** extensibility settings to set custom values. Set these in the **Mobile Distribution** tab of the ODC Portal.
+
+For plugin versions earlier than 3.2.0, set these values by adding the following preferences to the app extensibility configurations:
 
 (Recommended) Using the universal extensibility configurations schema:
 

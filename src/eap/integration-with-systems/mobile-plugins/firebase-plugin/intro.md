@@ -76,7 +76,7 @@ To learn how to use the Firebase Cloud Messaging plugin using server actions, re
 
 ## Adding Google services configuration file
 
-You must provide the plugin configuration files as extensibility settings in the ODC Portal for an app using at lesat one of the Firebase Plugins. To add the Firebase configuration to your app, complete the following steps:
+You must provide the plugin configuration files as extensibility settings in the ODC Portal for an app using at least one of the Firebase Plugins. To add the Firebase configuration to your app, complete the following steps:
 
 1. Open the ODC Portal.
 
@@ -114,7 +114,18 @@ If you want to present an alert before the iOS tracking permission dialog, enabl
 
 ![Shows the RequestTrackingAuthorization client action parameters in ODC Studio](images/firebase-request-tracking-authorization-flow-odcs.png "Firebase Request Tracking Authorization Flow in ODC Studio")
 
-By default, the **NSUserTrackingUsageDescription** field is set to `AppName needs your attention.`. Apple’s [App Tracking Transparency documentation](https://developer.apple.com/documentation/apptrackingtransparency) states that this property must contain "a message that informs the user why an app is requesting permission to use data for tracking the user or the device.". You can set your custom description by including an iOS-specific preference (`USER_TRACKING_DESCRIPTION_IOS`) in the Extensibility Configurations of the application, as follows:
+By default, the **NSUserTrackingUsageDescription** field is set to `<AppName> needs your attention.` Apple’s [App Tracking Transparency documentation](https://developer.apple.com/documentation/apptrackingtransparency) states that this property must contain "a message that informs the user why an app is requesting permission to use data for tracking the user or the device.".
+
+Use the **UserTrackingUsageDescription** extensibility setting to set your custom description. Use the extensibility settings if:
+
+* You're using the plugin in a Capacitor app
+* You're using plugin version 1.6.0 or later in a Cordova app.
+
+Set this in your app's detail page in the ODC Portal under the **Mobile Distribution** tab.
+
+If you're using a Cordova app with plugin version 1.5.1 or earlier, use the following configuration.
+
+Set your custom description by including an iOS-specific preference (`USER_TRACKING_DESCRIPTION_IOS`) in the app extensibility configurations, as follows:
 
 (Recommended) Using the universal extensibility configurations schema:
 
@@ -147,7 +158,18 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 
 You can use the **RequestTrackingAuthorization** action multiple times in the same app because iOS remembers a user's choice. iOS only prompts users again after they uninstall and then reinstall the app on the device.
 
-By default, an app using the Firebase Analytics plugin is able to trigger the native AppTrackingTransparency framework. It also contains the **NSUserTrackingUsageDescription** field in the app's **\*-Info.plist** file. If you don't want to trigger the framework and don't want to include the description field in the **.plist** file, you can disable this through the Extensibility Configurations as follows:
+By default, an app using the Firebase Analytics plugin triggers the native AppTrackingTransparency framework. It also contains the **NSUserTrackingUsageDescription** field in the app's **\*-Info.plist** file. To prevent triggering the framework and exclude the description field from the **.plist** file, disable this by setting the **EnableAppTrackingTransparencyPrompt** extensibility setting.
+
+Use the extensibility setting if:
+
+* You're using the plugin in a Capacitor app
+* You're using plugin version 1.6.0 or later in a Cordova app.
+
+Set it to **False** in your app's detail page in the ODC Portal under the **Mobile Distribution** tab.
+
+If you're using a Cordova app with plugin version 1.5.1 or earlier, use the following configuration.
+
+Disable this in the app extensibility configurations as follows:
 
 (Recommended) Using the universal extensibility configurations schema:
 
@@ -188,8 +210,7 @@ If your app collects user data for advertising purposes, also known as Attributi
 
 #### Custom events
 
-Starting in version **1.4.0**, a new client action named `LogEvent` is available and should be used instead of the deprecated `DEPRECATED_LogEvent`.
-This new version introduces support for passing event parameters as a list, providing better structure and flexibility when logging events.
+Starting in version **1.4.0**, a new client action named `LogEvent` is available and should be used instead of the deprecated `DEPRECATED_LogEvent`. This new version introduces support for passing event parameters as a list, providing better structure and flexibility when logging events.
 
 Each event must include an `EventName` and can optionally include a list of key–value pairs via the `EventParameters` input. A maximum of 25 parameters is allowed per event. If more than 25 parameters are provided, only 25 are sent to Firebase Analytics and the rest are discarded. Note that since parameter order is not guaranteed, any of the extra parameters may be ignored.
 
@@ -236,9 +257,20 @@ You can also select the key for each parameter you want included in the event lo
 
 For more information on which event requires which parameters, refer to [Google's documentation page regarding 'measure ecommerce'](https://developers.google.com/analytics/devguides/collection/ga4/ecommerce).
 
-#### Enable/disable data collection
+#### Enable/disable analytics data collection
 
-Starting in version **1.1.2**, the Firebase Analytics plugin can effectively enable and disable data collection. For the `SetEnabled` client action to properly work, the following needs to be added to your app's Extensibility Configurations:
+From version **1.1.2**, the Firebase Analytics plugin enables or disables data collection using the `SetEnabled` client action. You can also enable or disable data collection in build time, either by using an extensibility setting or setting a preference in your app's extensibility configurations. By default data collection is enabled.
+
+Use the **AnalyticsCollectionEnabled** extensibility setting if:
+
+* You're using the plugin in a Capacitor app
+* You're using plugin version 1.6.0 or later in a Cordova app.
+
+Set it to **False** in your app's detail page in the ODC Portal under the **Mobile Distribution** tab to disable data collection.
+
+If you're using a Cordova app with plugin version 1.5.1 or earlier, use the following configuration.
+
+Add the following to your app's extensibility configurations:
 
 (Recommended) Using the universal extensibility configurations schema:
 
@@ -282,12 +314,13 @@ Keep in mind that:
 
 The plugin has three Extensibility Settings that you can set in the Mobile distribution tab of your application’s detail page on the ODC Portal - **AnalyticsCollectionEnabled**, **EnableAppTrackingTransparencyPrompt**”, and **UserTrackingUsageDescription**. Note that currently these settings are only used for Capacitor apps, not Cordova ones.
 
-If you need to disable Analytics collection in your app, you can set the **AnalyticsCollectionEnabled** setting to **False**, since it is **True** by default. You can also enable Analytics collection in runtime using the **SetEnabled** client action.
+#### Enable/disable crashlytics data collection
 
-If you do not want to show the App Tracking Transparency prompt on iOS, you can disable its usage by setting the **EnableAppTrackingTransparencyPrompt** setting to **False**, since it is **True** by default. This also means that the value set for **UserTrackingUsageDescription** isn't used, since the prompt isn't shown.
+The Firebase Crashlytics plugin can effectively enable and disable data collection using the **SetEnabled** client action. You can also enable or disable data collection in build time by using the **CrashlyticsCollectionEnabled** extensibility setting. Note that by default data collection is enabled.
 
-### Additional information for Firebase Crashlytics
+You can use the extensibility setting exposed by the plugin if:
 
-#### Using the plugin in Capacitor apps
+* You're using the plugin in a Capacitor app
+* You're using at least version 1.4.0 of the plugin in a Cordova app.
 
-If you need to disable Crashlytics collection in your app, you can set the **CrashlyticsCollectionEnabled** extensibility setting to **False**, since it is **True** by default, in your app’s Mobile distribution tab in the ODC portal. You can also enable Crashlytics collection in runtime using the **SetEnabled** client action.
+You can set it to **False** in your app's detail page on the Portal under the **Mobile Distribution** tab to disable data collection.
