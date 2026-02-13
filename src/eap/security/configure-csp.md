@@ -5,7 +5,7 @@ guid: fb46979d-73a3-43ad-9c85-a6b96381c2a6
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/design/kw9RAhge7eEpiKLnvKnOek/Security-of-OutSystems-Developer-Cloud?node-id=5005-10
+figma: 
 audience:
   - mobile developers
   - frontend developers
@@ -21,13 +21,11 @@ coverage-type:
 
 <div class="info" markdown="1">
 
- Applies to Web Apps and Mobile Apps distributed as Progressive Web Apps only.
+CSP applies to all web and PWA apps. For mobile apps, CSP is enforced only in apps built with MABS 12 (released on February 13th, 2026) or later MABS version.
 
 </div>
 
-A content security policy (CSP) is a web security standard that helps protect your apps from various security threats, such as malicious code execution or the loading of untrusted content. By controlling which content sources browsers can load, CSP shields your app from malicious scripts, unapproved resources, and other security threats, ensuring its integrity and safety.
-
-To implement a CSP, you define a policy in HTTP headers, set explicit content rules that browsers enforce, and reduce points of vulnerability. For example, the `script-src` directive controls where JavaScript can load from, and browsers block any content that doesn't comply with the policy.
+A content security policy (CSP) is a web security standard that helps protect your web, mobile, and progressive web apps (PWA) apps from various security threats, such as malicious code execution or the loading of untrusted content. By controlling which content sources browsers can load, CSP shields your app from malicious scripts, unapproved resources, and other security threats, ensuring its integrity and safety.
 
 The benefits of a CSP include:
 
@@ -37,117 +35,81 @@ The benefits of a CSP include:
 
 * **Strengthens app security**: Reduces vulnerabilities and protects your app's integrity by enforcing stricter content loading policies.
 
-## Activate a CSP
+To [implement a CSP](implement-csp.md), you define a policy in HTTP headers, set explicit content rules that browsers enforce, and reduce points of vulnerability. For example, the `script-src` directive controls where JavaScript can load from, and browsers block any content that doesn't comply with the policy.
 
-The ODC Portal allows you to activate CSP per stage. By default, CSP directives are not activated, meaning that no security settings are configured. For example, no content or iframes will be blocked by default.
+## Understanding CSP in mobile apps
 
-Once you activate your CSP, you can configure it as an **allow list**, permitting only the specified content in your apps while blocking all other sources by default.
+ODC mobile apps are hybrid apps that combine web technologies with native capabilities. Hybrid apps use WebView components that function like embedded web browsers. Hybrid mobile apps are vulnerable to web-based attacks because WebView components can load and execute content similar to regular web browsers. CSP provides an additional security layer by restricting which scripts can run and which external sources can load content, protecting against cross-site scripting (XSS) attacks and unauthorized resource loading.
 
-### Prerequisites
+<div class="info" markdown="1">
 
-You must have **CSP Management** permissions.  
+You activate or deactivate CSP at the stage level, not per individual mobile app.
 
-### Activating a CSP {#activating-a-csp}
+</div>
 
-To activate a CSP for a stage, follow these steps:
+### How CSP is implemented in ODC mobile apps
 
-1. From the ODC Portal, navigate to **Configure** > **Content security policy**.
+ODC mobile apps enforce CSP by using a native caching system that delivers CSP settings to the WebView through HTTP headers. When you activate, update, or deactivate a CSP, the policy changes automatically apply to all mobile apps without requiring a new build. However, the updates may not take effect immediately, as each mobile app picks up the new CSP status the next time it contacts the server.
 
-1. Select the stage you want to apply the CSP to.
+When you generate a mobile app with CSP activated, the current policies are bundled with the app package and used as a fallback if the app launches offline immediately after installation. If you update the CSP later, the bundled fallback policy drifts from the current policy. However, once the app launches online again, the updated CSP changes are fetched immediately.
 
-    ![Screenshot showing the selected stage to activate the CSP.](images/csp-stage-pl.png "Selected stage to activate the CSP")
+The process that retrieves and saves the new CSP runs at launch but does not block the app from loading. As a result, the process may finish later depending on factors such as network speed or system load. The updated CSP therefore only takes effect the next time the app is launched.
 
-1. Click **Edit**.
+## iOS specific considerations
 
-1. Toggle the **Status** to **Active** and click **Save**.
+iOS native mobile apps have unique CSP requirements due to how iOS handles content loading in WebViews.
 
-    The default directives are applied to all apps in the selected stage.
+iOS loads content in native mobile apps using the `outsystems://` protocol instead of the standard `https://` protocol. This creates a CSP validation issue:
 
-    ![Screenshot showing the CSP default values set to active.](images/csp-defaults-pl.png "CSP default values set to active")
+Without the `https://` protocol, iOS attempts to match `outsystems://*.amazonaws.com` which
+does not match your intended resource: `https://*.amazonaws.com`. Therefore CSP blocks the resource, causing failures.
 
-    <div class="info" markdown="1">
+With the `https://` protocol, CSP allows `https://*.amazonaws.com` and iOS correctly translates this for validation. Therefore, the resources load successfully
 
-    The total character limit for directive values per stage is 1500.
+For detailed troubleshooting, refer to [Login failed when logging into an app using iOS devices](https://success.outsystems.com/support/troubleshooting/incident_models/incident_models_outsystems_developer_cloud/login_failed_when_logging_into_an_app_using_ios_devices/)
 
-    </div>
+### Required configuration for iOS
 
-## Configure a CSP
+For all external domains in the following directives, always include the explicit `https://` protocol:
 
-The ODC Portal allows you to configure a CSP's directive values. Customizing a CSP's default values is important because the default configuration may not align with your app's specific security needs, functionality, and architecture. For example, you can enable trusted third-party services such as YouTube or allow iframes for embedded content.
+* `connect-src`
+* `script-src`
+* `style-src`
+* `img-src`
+* `font-src`
+* `media-src`
 
-### Prerequisites
+### iOS configuration examples
 
-* You must have **CSP Management** permissions.
+Incorrect configuration (causes iOS failures):
 
-* You must have a [CSP activated.](#activating-a-csp)
+```
+connect-src: 'self' *.amazonaws.com [your-domain].outsystems.app/identity
+img-src: 'self' data: blob: cdn.example.com
+script-src: 'self' 'unsafe-inline' 'unsafe-eval' maps.googleapis.com
+```
 
-### Configuring a CSP {#configuring-a-csp}
+Correct configuration (works on iOS and Android):
 
-To configure the CSP, follow these steps:
+```
+connect-src: 'self' https://*.amazonaws.com https://[your-domain].outsystems.app/identity
+img-src: 'self' data: blob: https://cdn.example.com
+script-src: 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com
+```
 
-1. From the ODC Portal, navigate to **Configure** > **Content security policy**
+### Using iframes in iOS apps
 
-1. Click **Edit**.
+If you want to use both CSP directives and iframes in your iOS apps, add the following to the **frame-ancestors** directive field:
 
-    ![Screenshot showing the option to edit CSP settings.](images/csp-edit-pl.png "Edit CSP settings")
+```
+    outsystems://YOUR_APP_URL
+    https://YOUR_APP_URL
 
-1. Edit the directive values.
+```
 
-    ![Screenshot showing the configuration of CSP directive values.](images/csp-configure-pl.png "Configure CSP directive values")
+Failure to do so prevents content from rendering. You can identify the issue by searching for the **Interrupting main resource load due to CSP frame-ancestors or X-Frame-Options** error log.
 
-1. Click **Save**.
-
-    The configured directive values are applied to all the apps in that stage.
-
-    <div class="info" markdown="1">
-
-    Some image file content configurations may take up to 24 hours to be applied or removed.
-
-    </div>
-
-You can reset the CSP's directive values to their default values at any time by clicking **Reset to defaults** and then **Save**.
-
-## Default directives
-
-The table below describes the list of default directives for OutSystem's content security policy. The [Default values](#default-values) column indicates the values that OutSystems automatically applies when you activate a content security policy. These defaults are set to be as restrictive as possible, maximizing security configuration while also enabling full app runtime functionality. You can customize these default values to suit your needs. For more details, refer to [Configure a CSP](#configuring-a-csp). Some default values cannot be removed; for more information, refer to the [required values](#required-values) section.
-
-|   Directive |              Description             | Default values |
-|-------------| ------------------------------------ | -------------- |
-|base-uri     | The domains that can be used as base URLs for app screens. The source expression ``'self'`` refers to the origin from which the protected document is being served, including the same URL scheme and port number. You must include the single quotes. Example: ``base-uri 'self';``  |``'self'``|
-|connect-src | The domains from which apps are allowed to load resources using script interfaces.<br/> The ``*.amazonaws.com`` value is required when using ODC's built-in identity provider. <br/> The ``<yourBuiltInDomain-stage>.outsystems.app/identity`` value is required when using ODC's built-in identity provider and a custom domain.| ``'self'``<br/>  ``*.amazonaws.com``<br/>  ``<yourBuiltInDomain-stage>.outsystems.app/identity``|
-|default-src | The domains from which apps are allowed to load resources by default. Any resource type dedicated directive (such as ``object-src`` or ``img-src``) that's not defined will inherit this configuration.|``'self'``|
-|font-src|The domains from which apps are allowed to load fonts.|``'self'``<br/>``data:``|
-|frame-ancestors|The domains that are allowed to embed apps in a frame.|``'self'``|
-|frame-src|The domains that are allowed to embed apps in a frame.|``'self'``|
-|img-src|The domains from which apps are allowed to load images.|``'self'``<br/> ``data:`` <br/> ``blob:``|
-|media-src|The domains from which apps are allowed to load media files.|``'self'``|
-|object-src|The domains from which apps are allowed to load objects (for ``<object>``, ``<embed>`` and ``<applet>`` elements).|``'self'``|
-|script-src|The domains from which apps are allowed to load scripts.|``'self'``<br/> ``'unsafe-inline'``<br/>``'unsafe-eval'``|
-|style-src|The domains from which apps are allowed to load styles.|``'self'``<br/> ``'unsafe-inline'``|
-
-## Default values {#default-values}
-
-OutSystems recommends default values to ensure the platform works as expected. If these values are removed, OutSystems recommends you test your apps to ensure they work as expected.
-
-* ``'self'``: Allows content to be loaded only from the same origin as the app. This helps prevent unauthorized content from being loaded.
-
-* ``data``: Allows resources to be loaded, such as images and fonts, using data: URLs. This is often required for inline assets.
-
-* ``blob``: Enables support for binary large object (blob) URLs, which are often used for dynamically generated media content and file downloads.
-
-* ``*.amazonaws.com``: Allows access to AWS-hosted services, including the managed identity service necessary for authentication.
-
-* ``<yourBuiltInDomain-stage>.outsystems.app/identity``: Ensures compatibility with the built-in identity service when using a custom domain. Only the built-in domain is preconfigured and does not require additional setup. All other domains, including custom domains or the built-in domain, must be explicitly configured.
-
-## Required values {#required-values}
-
-The **Required values** are the values that ODC automatically applies to the directive for the apps to work correctly. These values can be removed, but doing so may impact the functionality of your apps.
-
-* ``unsafe-inline``: The unsafe-inline directive allows the use of inline resources such as inline ``<script>``and ``<style>`` elements, ``javascript: URLs``, and inline event handlers that are currently used by the platform.
-
-* ``unsafe-eval``: The unsafe-eval directive allows the web pages to evaluate strings as code. This directive consists of the eval function, the function constructor, and some usages of the setTimeout and setInterval functions that are currently used by the platform.
-
-For more details about the impacts of removing `unsafe-eval` and `unsafe-inline` directives, refer to [Impacts of removing unsafe directives](impacts-removing-unsafe-directives.md).
+For additional information about using iframes in iOS devices, refer to [Troubleshooting OutSystems apps on iOS devices](https://success.outsystems.com/support/enterprise_customers/troubleshooting/troubleshooting_outsystems_apps_on_ios_devices/)
 
 ## Operational and security considerations
 
@@ -156,3 +118,13 @@ Operational and security considerations are crucial when implementing a CSP. A p
 * **Missing policies**: Ensure you configure policies that allow all sources used in your apps. Otherwise, users may have issues such as videos not showing or CSS not being applied.
 
 * **Too permissive policies**: Be cautious when allowing resources to be loaded from everywhere (by using ``\*`` in the domain list). Hackers may use links, scripts, or other resources in your apps to redirect users to malicious pages.
+
+**Protocol requirement:** Always use explicit `https://` protocols in all CSP directive domains to ensure your apps work correctly across iOS and Android.
+
+**Directive length limit:** Each stage can have a maximum of 1500 characters for all directive values combined.
+
+## Related resources
+
+* [Implement content security policy](implement-csp.md)
+  
+* [Impacts of removing unsafe directives](impacts-removing-unsafe-directives.md)

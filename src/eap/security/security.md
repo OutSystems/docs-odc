@@ -119,6 +119,22 @@ Private Gateways is an ODC feature that lets you connect your apps to private da
 
 For more information see [Configure a private gateway to your network](../manage-platform-app-lifecycle/private-gateway.md).
 
+### Content security policy
+
+Content Security Policy (CSP) is a web security standard that protects your web, mobile, and progressive web apps from cross-site scripting (XSS) attacks and other code injection threats. CSP works by controlling which content sources browsers can load, blocking malicious scripts and unapproved resources before they can execute.
+
+ODC allows you to customize CSP directives per stage through the ODC Portal. You can configure policies as an allow list, permitting only specified content sources while blocking all others by default. This includes controlling where JavaScript, images, fonts, and other resources can load from.
+
+Key benefits of configuring CSP include:
+
+* **XSS attack prevention**: Stops unauthorized scripts from executing malicious actions
+* **Resource control**: Restricts loading of unapproved images, plugins, and frames
+* **Enhanced security posture**: Reduces vulnerabilities by enforcing stricter content loading policies
+
+For mobile apps built with MABS 12 or later, CSP policies automatically apply without requiring a new build.
+
+For more information about understanding and implementing CSP, refer to [Content security policy](configure-csp.md).
+
 ## Containers
 
 Each Platform service is built as a .NET, Linux-based container image. All the functionality a service provides is available as a microservice through an API, and each API is versioned to allow for seamless evergreen upgrades. When a developer publishes an app, it's built using the latest version of each Platform service, each of which incorporates the latest security updates.
@@ -234,7 +250,7 @@ For more information, see the [User management article](../user-management/intro
 
 OutSystems maintains formal policies and procedures for managing security incidents. This ensures appropriate and prompt handling of any incident. The Security Incident Management Procedures outline the response to vulnerabilities in ODC infrastructure, security breaches, and incidents. The procedure explains the identification, reporting, and action taken for incidents.
 
-### OutSystems Security Operations Center
+### OutSystems security operations center
 
 OutSystems proactively monitors ODC infrastructure, events, and availability 24 hours a day, seven days a week. Any unexpected alert, including privacy breaches, either automatically detected or resulting from a human log review, triggers a Security Incident Response.
 
