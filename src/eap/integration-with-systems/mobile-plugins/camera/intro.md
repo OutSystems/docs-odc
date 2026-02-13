@@ -83,6 +83,12 @@ You can find all of the available actions for the Camera plugin by navigating to
 
 ## Recording a video
 
+<div class="info" markdown="1">
+
+Applies only to Native Mobile Apps. Not available on PWAs.
+
+</div>
+
 To allow users record a video:
 
 * Create a user interface
@@ -116,6 +122,14 @@ Video files stored in the cache are deleted when the app closes. When setting th
     ![Flowchart showing the subsequent steps in the logic for capturing a video](images/capture-video-logic-2-ss.png "Capture Video Logic Flow 2")
 
 ## Selecting media from the gallery
+
+<div class="info" markdown="1">
+
+Applies only to Native Mobile Apps. Not available on PWAs.
+
+Until support is added for PWAs, you may use **DEPRECATED_ChooseGalleryPicture**.
+
+</div>
 
 You can allow users to choose a media file from the device gallery, either a picture, a video, or both, using the **ChooseFromGallery** action.
 
@@ -177,6 +191,8 @@ You can use these actions with the **If** nodes to check for errors and control 
 ## Reference
 
 The following sections describe the plugin in more detail.
+
+For reference on the available client actions and structures, refer to the [Camera Plugin Reference Page](./camera-ref.md).
 
 ### Actions
 
