@@ -27,6 +27,8 @@ This functionality uses the Data platform, which may process data outside your O
 
 OutSystems Developer Cloud (ODC) provides an analytics dashboard that monitors apps based on performance, usage, and errors.
 
+![Screenshot of the Analytics dashboard.](images/analytics-dashboard-pl.png "Analytics dashboard")
+
 The dashboard shows the following key metrics:
 
 * Health score: How your apps perform, considering response times, successful requests, errors, and etc.
@@ -41,7 +43,7 @@ Based on the health score, the dashboard organizes the apps into **Critical**, *
 
 The analytics dashboard provides an overview of the apps of a selected stage for up to 30 days. You can click the graphs for metrics such as errors, response time, and requests to view detailed information.
 
-![Screenshot of selecting a specific metric in ODC analytics.](images/specific-metirc-pl.png "Selecting a Specific Metric in ODC Analytics")
+![Screenshot of selecting a specific metric in ODC analytics.](images/specific-metric-pl.png "Selecting a Specific Metric in ODC Analytics")
 
 ## App analytics
 
@@ -52,7 +54,7 @@ You can drill down into specific apps to get more information about how the app 
 For each app, the analytics dashboard provides insights such as:
 
 * Health score
-* Active users
+* Users - authenticated and anonymous
 * User geolocation with performance and error data by region
 * Browser information
 * Error and response time
@@ -78,7 +80,7 @@ For each app, the analytics dashboard provides insights such as:
 
 <div class="info" markdown="1">
 
-Geolocation information can take up to 20 minutes to synchronize with active user data.
+Geolocation information can take up to 20 minutes to synchronize with user data.
 
 </div>
 
@@ -107,13 +109,13 @@ Analytics helps you understand how your apps are performing. It summarizes the f
 
 ### Health score
 
-An app's health score is expressed as a numerical score from 1 to 100 and is based on the app's response time and errors during the selected period of time (minimum 5 minutes, maximum 30 days). There are three health score categories:
+An app's health score is a numerical score from 1 to 100 and is based on the app's response time and errors over the selected period of time (minimum 5 minutes, maximum 30 days). There are three health score categories:
 
 * Critical (0-70)
 * Moderate (70-85)
 * Good (85-100)
 
-An app's health score calculation follows the Application Performance Index (APDEX) industry standard. The score is calculated by dividing the number of successful requests to the app's elements by the total number of requests over the selected period. A request is successful if it's completed without errors and the response time is less than a defined threshold.
+An app's health score calculation follows the Application Performance Index (APDEX) industry standard. The score is calculated by dividing the number of successful requests to the app's elements by the total number of requests over the selected period. A request is successful if it completes without errors and the response time is below a defined threshold.
 
 The APDEX calculation used is **APDEX = (a + b) / c**. Here's a breakdown of the APDEX calculation. You can use this calculation as is or adapt it to suit your specific needs.
 
@@ -121,15 +123,15 @@ The APDEX calculation used is **APDEX = (a + b) / c**. Here's a breakdown of the
 * **b** = (Number of successful requests **between 300ms and 1199ms**) / 2
 * **c** = Total number of requests
 
-### Active users
+### Users
 
-The number of unique users visiting the app helps you understand its usage over time.
+The number of authenticated and anonymous users visiting the app helps you understand its usage over time.
 
 ### Geography
 
-Geographical distribution of users, errors, and overall end-user response time for this app. You can sort the data by unique users, errors, and user response time. There are three categories:
+Geographical distribution of users, errors, and overall end-user response time for this app. You can sort the data by authenticated users, anonymous users, errors, and user response time. There are three categories:
 
-* Countries with users
+* Countries with users (authenticated or anonymous)
 * Countries with errors
 * Response time by country
 
@@ -139,7 +141,7 @@ Distribution of browser usage among end-users accessing this app. It categorizes
 
 ### Errors
 
-Errors are the issues that occur when requests are made to an app, which causes it to malfunction or crash. There are three error metrics:
+Errors are issues that occur when requests are made to an app, which causes it to malfunction or crash. The following are the error metrics:
 
 * Total errors: The total number of errors that occur when requests are made to an app.
 * Error rate: The rate at which errors occur when requests are made to an app.
@@ -147,7 +149,7 @@ Errors are the issues that occur when requests are made to an app, which causes 
 
 ### Response time
 
-Response time is the amount of time taken to complete a request. The nth percentile response time is the duration under which n% of requests are completed. There are three response time metrics:
+Response time is the time it takes to complete a request. The nth percentile response time is the duration under which n% of requests are completed. There are three response time metrics:
 
 * P90:  90th percentile response time
 * P95: 95th percentile response time
@@ -160,7 +162,7 @@ Requests are the number of app interactions done using screens, APIs, or timers.
 * Total requests: The total number of requests made to an app.
 * Request rate: The rate at which the requests are sent to an app.
 
-## AI model Metrics
+## AI model metrics
 
 ODC provides monitoring for your configured AI Model connections, offering insights into their usage, performance, and any operational errors. These metrics help you track consumption, identify potential bottlenecks, and understand how your models are used by different consumer apps.
 
@@ -196,7 +198,7 @@ Native ODC agent apps are only available to Early Access Program (EAP) customers
 
 </div>
 
-ODC monitors your [agents](../building-apps/build-ai-powered-apps/intro.md), offering insights into their usage, performance, and operational errors. These metrics help you track agent activity, identify bottlenecks, and understand how your agents are used by different consumers
+ODC monitors your [agents](../building-apps/build-ai-powered-apps/intro.md) and provides insights into their usage, performance, and operational errors. These metrics help you track agent activity, identify bottlenecks, and understand how your agents are used by different consumers
 
 * **Requests**
     * **Total requests:** The total number of requests made to the agent.  
@@ -205,7 +207,7 @@ ODC monitors your [agents](../building-apps/build-ai-powered-apps/intro.md), off
 
 * **Response time**
 
-    Response time refers to the time taken for the agent to process a request across all consuming elements.
+    Response time is the time it takes the agent to process a request across all consuming elements.
 
     * Response time metrics include:
         * **P90:** 90th percentile response time.  
@@ -221,18 +223,19 @@ ODC monitors your [agents](../building-apps/build-ai-powered-apps/intro.md), off
     * **Requests with errors:** Lists recent requests that encountered errors, including the timestamp, source element, and duration.
 
 * **Slowest requests**
+  
     * **Slowest requests:** This list includes the requests with the longest duration, including the timestamp, source element, and duration.
 
 ## Element metrics
 
-![Screenshot displaying various app metrics in ODC analytics.](images/Analytics-elements-dashboard-pl.png "Various App Metrics in ODC Analytics")
+![Screenshot displaying various app metrics in ODC analytics.](images/analytics-elements-dashboard-pl.png "Various App Metrics in ODC Analytics")
 
 ### Element requests
 
-A list of elements by type and their daily amount of requests. There are two element metrics:
+A list of elements by type and their daily number of requests. There are two element metrics:
 
 * Elements
-* Elements types
+* Element types
 
 ### Element response time
 
