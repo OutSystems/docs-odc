@@ -35,7 +35,7 @@ By default, ODC mobile apps opt out of edge-to-edge to maintain backward compati
 
 ## What changed
 
-To support edge-to-edge display, several CSS variables and JavaScript APIs have been added, modified, or deprecated.
+To support edge-to-edge display, several CSS variables have been added.
 
 ### CSS variable changes
 
@@ -46,15 +46,6 @@ To support edge-to-edge display, several CSS variables and JavaScript APIs have 
 | --safe-area-inset-left | Added | Left inset (safe area). |
 | --safe-area-inset-right | Added | Right inset (safe area). |
 | --status-bar-height | Deprecated | Use `--safe-area-inset-top` instead. |
-
-### JavaScript API changes
-
-| Property | Status | Description |
-| --- | --- | --- |
-| window.OSNavigationBar.setNavigationBarColor | Added | Sets the navigation bar background color at runtime. |
-| window.statusbar.visible | Added | Gets the current visibility state of the status bar. |
-| window.statusbar.setBackgroundColor | Added | Sets the status bar background color at runtime. |
-| window.StatusBar.* | Removed | All legacy StatusBar API methods removed. |
 
 ## Capacitor apps
 
@@ -191,7 +182,7 @@ This section covers system bar customization for Cordova-based mobile apps.
 
 | Preference | Status | Description |
 | --- | --- | --- |
-| AndroidEdgeToEdge | Added | Cordova preference that controls whether the app uses edge-to-edge display on Android. |
+| AndroidEdgeToEdge | Added | Cordova preference that controls whether the app uses edge-to-edge display on Android. This only effects Android 15+, as lower versions of Android don't support edge to edge mode. |
 | NavigationBarBackgroundColor | Added | Controls the background color of the navigation bar. |
 | StatusBarBackgroundColor | Modified | Now part of SystemBars; controls status bar color when edge-to-edge is disabled. |
 | StatusBarDefaultScrollToTop | Removed | No longer supported. |
@@ -317,6 +308,13 @@ When using edge-to-edge display, you must handle safe area insets in your CSS to
 
 </div>
 
+### Cordova JavaScript API
+
+| API | Supported Platforms | Notes |
+| --- | --- | --- |
+| window.OSNavigationBar.setNavigationBarColor | Android | Sets the background color behind the navigation bar when an Android app isn't in EdgeToEdge mode |
+| window.statusbar.setBackgroundColor | Android | Sets the background color behind the status bar when an Android app isn't in EdgeToEdge mode |
+
 ## Safe area inset support {#safe-area-insets}
 
 <div class="info" markdown="1">
@@ -348,14 +346,12 @@ The inset variables behave differently depending on your configuration:
 | --- | --- |
 | `AndroidEdgeToEdge` = `false` | All insets return `0` (webview is already positioned between system bars) |
 | `AndroidEdgeToEdge` = `true` | Insets reflect actual system UI dimensions |
-| Status bar hidden via API | Top inset returns `0` |
 
 **For Capacitor apps:**
 
 | Scenario | Inset Values |
 | --- | --- |
 | Default behavior | Insets reflect actual system UI dimensions |
-| Status bar hidden via API | Top inset returns `0` |
 
 ### Best practices for using insets
 
@@ -392,47 +388,6 @@ Apply safe area insets to your layout containers:
 For best results with safe area insets, ensure your app uses the latest version of OutSystemsUI. Older versions may not fully support the new CSS variables.
 
 </div>
-
-## Runtime API
-
-For dynamic control of system bars at runtime, use the SystemBars JavaScript API.
-
-### Check status bar visibility
-
-```javascript
-// Check if status bar is currently visible
-const isVisible = window.statusbar.visible;
-```
-
-### Set status bar color dynamically
-
-```javascript
-// Change status bar color at runtime (hex format)
-if (window.statusbar && window.statusbar.setBackgroundColor) {
-    window.statusbar.setBackgroundColor('#FF5733');
-}
-```
-
-<div class="info" markdown="1">
-
-The runtime API is available in both Cordova and Capacitor apps. Ensure you check for API availability before calling methods to maintain compatibility.
-
-</div>
-
-## Migration from legacy StatusBar API
-
-If your app uses the legacy `window.StatusBar` API, update your code to use the new SystemBars API:
-
-| Legacy API | New API | Notes |
-| --- | --- | --- |
-| `StatusBar.backgroundColorByHexString()` | `window.statusbar.setBackgroundColor()` | Use hex format: `#RRGGBB` |
-| `StatusBar.hide()` | Not supported | Status bar visibility controlled by system |
-| `StatusBar.show()` | Not supported | Status bar visibility controlled by system |
-| `StatusBar.isVisible` | `window.statusbar.visible` | Read-only property |
-| `StatusBar.overlaysWebView()` | `AndroidEdgeToEdge` preference | Use extensibility configuration |
-| `StatusBar.styleDefault()` | Automatic | Style determined by background color |
-| `StatusBar.styleLightContent()` | Automatic | Style determined by background color |
-| `StatusBar.styleDarkContent()` | Automatic | Style determined by background color |
 
 ## Troubleshooting
 
