@@ -119,9 +119,9 @@ Operational and security considerations are crucial when implementing a CSP. A p
 
 * **Too permissive policies**: Be cautious when allowing resources to be loaded from everywhere (by using ``\*`` in the domain list). Hackers may use links, scripts, or other resources in your apps to redirect users to malicious pages.
 
-**Protocol requirement:** Always use explicit `https://` protocols in all CSP directive domains to ensure your apps work correctly across iOS and Android.
+* **Protocol requirement:** Always use explicit `https://` protocols in all CSP directive domains to ensure your apps work correctly across iOS and Android.
 
-**Directive length limit:** Each stage can have a maximum of 1500 characters for all directive values combined.
+* **Directive length limit:** Each stage can have a maximum of 1500 characters for all directive values combined.
 
 ## Related resources
 
