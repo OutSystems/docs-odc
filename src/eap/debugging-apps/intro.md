@@ -114,4 +114,5 @@ When debugging an app and checking the values of the Date Time data type, keep i
 For more information about debugging, refer to the following resources:
 
 * [Inspect network traffic](inspect-network-traffic.md)
+* [Debug agentic apps](../building-apps/build-ai-powered-apps/debug-agentic-apps.md)
 * [Debugging in OutSystems](https://learn.outsystems.com/training/journeys/debugging-639) online course

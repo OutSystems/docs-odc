@@ -44,6 +44,7 @@
             - href: eap/building-apps/build-ai-powered-apps/function-calling.md
             - href: eap/building-apps/build-ai-powered-apps/image-input.md
             - href: eap/building-apps/build-ai-powered-apps/testing.md
+            - href: eap/building-apps/build-ai-powered-apps/debug-agentic-apps.md
             - href: eap/building-apps/build-ai-powered-apps/structured-output.md            
             - href: eap/building-apps/build-ai-powered-apps/prompt-engineering.md            
             - href: eap/building-apps/build-ai-powered-apps/agent-long-running.md
