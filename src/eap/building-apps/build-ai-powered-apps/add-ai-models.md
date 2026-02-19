@@ -154,7 +154,7 @@ Use these parameters when configuring Amazon Bedrock model endpoints.
 | Model ID | The unique identifier for the specific Amazon Bedrock foundation model or its Amazon Resource Name (ARN). | For example, anthropic.claude-3-sonnet-20240229-v1:0. Refer to [AWS documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html) for model IDs. |
 | Access key | The authentication access key ID for your AWS IAM user or role with permissions for Bedrock. | Obtain from the AWS console or security credentials. |
 | Secret key | The secret access key associated with the Access key for AWS authentication. | Obtain from the AWS console or security credentials. Treat this securely. |
-| URL | The Invoke URL for Amazon Bedrock. | Ensure the AWS region matches your model's region; the URL typically follows the format runtime.bedrock.\[aws-region\].amazonaws.com. |
+| URL | The Invoke URL for Amazon Bedrock. | Ensure the AWS region matches your model's region; the URL typically follows the format `https://bedrock-runtime.[aws-region].amazonaws.com`. |
 | Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | ODC assigns Priority 1 to the first endpoint by default. You can adjust priorities if multiple endpoints exist. |
 
 ### Custom AI model parameters
