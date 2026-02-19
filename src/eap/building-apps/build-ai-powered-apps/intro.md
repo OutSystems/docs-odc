@@ -25,19 +25,31 @@ helpids:
 
 # Build AI-powered apps
 
-Automate business processes, enhance productivity, and enable new user experience patterns by integrating AI into your business using OutSystems Developer Cloud (ODC). ODC provides a platform that combines low-code development with AI integration features, simplifying the creation of AI-enhanced solutions. Incorporating AI into your ODC apps and workflows enables capabilities such as:
+Automate business processes, enhance productivity, and enable new user experience patterns by integrating AI into your business. ODC combines low-code development with AI integration features, simplifying the creation of AI-enhanced solutions. Incorporate AI into your ODC apps and workflows to enable capabilities such as:
 
-* Respond dynamically to changing conditions in real time.  
-* Generate personalized and relevant content on demand.  
-* Inject AI-driven insights and decision-making into business workflows.  
+* Respond dynamically to changing conditions in real time.
+* Generate personalized and relevant content on demand.
+* Inject AI-driven insights and decision-making into business workflows.
 * Facilitate interactions through natural language.
 * Orchestrate complex tasks and workflows autonomously.
 
-ODC offers built-in tools to help you incorporate these AI functionalities. The platform enables you to use large language models (LLMs) through AI models and AI agents. You can connect these models with your organizational data through integrated search services, a process known as retrieval-augmented generation (RAG). You can also configure AI-driven behaviors and manage the overall process. This lets you add intelligence to your app logic and user interfaces.
+Use the built-in tools in ODC to incorporate these AI functionalities. The platform enables you to use large language models (LLMs) through AI models and AI agents. Connect these models with your organizational data through integrated search services, a process known as retrieval-augmented generation (RAG). Configure AI-driven behaviors and manage the overall process to add intelligence to your app logic and user interfaces.
+
+## Understanding AI models and AI agents
+
+ODC provides native support for building AI-powered applications by combining **AI models** and **AI agents**.
+
+* **AI model:** The LLM that provides intelligence, reasoning, and generation capabilities.
+* **AI agent:** The system you build around the model. It gives the model access to tools, data, and context, allowing it to perceive, decide, and act.
+
+In ODC, you define the level of autonomy and complexity for your agent based on your needs:
+
+* **Direct model use:** You tightly control the agent. Your app logic dictates exactly what data to fetch and what prompt to send to the model. The model just responds. This is best for deterministic tasks like summarization or classification.
+* **Autonomous agent:** You give the agent more freedom. The agent uses the [Reason-Act (ReAct) framework](#reason-act-loop) to dynamically decide which actions to use to achieve a goal. This is best for complex, multi-step workflows.
 
 ## Choosing your AI tool
 
-ODC provides access to AI models in the ODC Portal through native support for AI models and agents and the [AI Agent Builder via Forge](../use-ai/intro.md). Both enhance apps with AI capabilities but differ in their range of functions and ideal use cases. Understanding these differences helps you select the appropriate tool for your needs.
+ODC provides access to native support for [AI models](ai-models.md) and [agents](agentic-apps.md) and the [AI Agent Builder via Forge](../use-ai/intro.md). Both enhance apps with AI capabilities but differ in their range of functions and ideal use cases. Understanding these differences helps you select the appropriate tool for your needs.
 
 <div class="info" markdown="1">
 
@@ -47,7 +59,7 @@ OutSystems recommends using native support for AI models and agents whenever the
 
 ### AI models
 
-AI models are available in the ODC Portal. They are best suited for integrating AI capabilities into **pre-defined processes** or app logic. In this approach, your app orchestrates the steps, fetches any necessary data, which can be real-time data, and passes it as context to the model. The model then performs tasks like analysis or generation based on the provided context, supporting a relatively **limited or pre-defined set of requests**.
+[AI models](ai-models.md) are available in the ODC Portal. Use them directly to integrate AI capabilities into **pre-defined processes** or app logic. In this approach, your app orchestrates the steps, fetches any necessary data, such as real-time data, and passes it as context to the model. The model then performs tasks like analysis or generation based on the provided context, supporting a relatively **limited or pre-defined set of requests**.
 
 Use cases suited for this approach include:
 
@@ -59,17 +71,17 @@ Use cases suited for this approach include:
 
 ### AI agents
 
-AI agents handle more complex and autonomous tasks directly within your low-code environment. They can independently manage multi-step workflows, interact with various systems and data sources, and make decisions based on their defined objectives and the information they gather. You can extend their capabilities by connecting them to external tools (custom MCP servers or prebuilt connectors). See [External tools](tools/intro.md) for an overview and, if needed, the implementation details for [MCP servers](tools/mcp-connectors.md).
+[AI agents](agentic-apps.md) handle more complex and autonomous tasks directly within your low-code environment. They independently manage multi-step workflows, interact with various systems and data sources, and make decisions based on their defined objectives and the information they gather. Extend their capabilities by connecting them to external tools (custom MCP servers or prebuilt connectors). Refer to [External tools](tools/intro.md) for an overview and, if needed, the implementation details for [MCP servers](tools/mcp-connectors.md).
 
-Use cases suited for AI agents include:
+Use cases for AI agents include:
 
-* Intelligent automation of customer service inquiries, autonomously accessing knowledge bases, processing information, and resolving issues.  
-* Dynamic inventory monitoring and automated low-stock alerts.  
-* Automated data aggregation and report generation from internal data sources.
-* Automatic intake of supplier quotes by processing complex supplier quotes for clinical studies, extracting data, populating a budget workbook, comparing against rate sheets, and providing feedback/error reporting.  
-* Accelerate equity research report creation in the financial industry by collecting and ingesting data from various sources, reducing report writing time.
+* **Automating customer service inquiries** by autonomously accessing knowledge bases, processing information, and resolving issues.
+* **Monitoring inventory dynamically** and sending automated low-stock alerts.
+* **Aggregating data automatically** and generating reports from internal data sources.
+* **Processing supplier quotes automatically** for clinical studies by extracting data, populating a budget workbook, comparing against rate sheets, and providing feedback/error reporting.
+* **Accelerating equity research report creation** in the financial industry by collecting and ingesting data from various sources, reducing report writing time.
 
-### The reason-act loop
+### The reason-act loop {#reason-act-loop}
 
 Agents use the **ReAct** (Reason+Act) framework. This framework instructs the agent to follow a continuous cognitive cycle, rather than a static script, allowing it to dynamically adapt its behavior to achieve a goal.
 
@@ -83,31 +95,33 @@ The cycle consists of three steps:
 
 ### Agent memory systems
 
-To obtain the biggest benefit from this framework, agents requires specific types of memory to maintain context, process complex tasks, and recall information:
+To obtain the biggest benefit from this framework, agents require specific types of memory to maintain context, process complex tasks, and recall information:
 
-* **Short-term memory:** Acts as the agent's immediate workspace for the conversation. It lets the agent maintain context within a single session, allowing for coherent, multi-turn dialogues. This is typically handled by the model's finite context window.  
-* **Working memory:** A temporary space used to hold information and intermediate steps during the execution of a single task. As the agent cycles through the reason-act loop, it updates this memory to track its progress toward the specific goal.  
-* **Long-term memory:** Provides persistent storage, allowing the agent to recall information across multiple distinct sessions. This is often implemented using external storage, such as a Vector Database, to store user preferences or past interactions over extended periods.  
-* **Domain knowledge:** The repository of structured, factual information (like internal documents or policies) that grounds the agent's responses. This is implemented via [AI Search Services (RAG)](ai-models.md).
+* **Short-term memory:** Acts as the agent's immediate workspace for the conversation. It lets the agent maintain context within a single session, allowing for coherent, multi-turn dialogues. This is typically handled by the model's finite context window.
+* **Working memory:** Holds information and intermediate steps during the execution of a single task. As the agent cycles through the reason-act loop, it updates this memory to track its progress toward the specific goal.
+* **Long-term memory:** Provides persistent storage, allowing the agent to recall information across multiple distinct sessions. This is often implemented using external storage, such as a Vector Database, to store user preferences or past interactions over extended periods.
+* **Domain knowledge:** Stores structured, factual information (like internal documents or policies) that grounds the agent's responses. This is implemented via [AI Search Services (RAG)](ai-models.md).
 
 ### External tools
 
-External tools let agents invoke functionality that lives outside your ODC apps—either through custom MCP servers you host or prebuilt connectors (such as SerpAPI). Start with the [External tools overview](tools/intro.md) to choose the right approach. For detailed MCP server setup, see [MCP servers](tools/mcp-connectors.md).
+Use external tools to invoke functionality residing outside your ODC apps—either through custom MCP servers you host or prebuilt connectors (such as SerpAPI). Start with the [External tools overview](tools/intro.md) to choose the right approach. For detailed MCP server setup, refer to [MCP servers](tools/mcp-connectors.md).
 
 ## Monitoring agentic apps
 
-ODC facilitates the development and management of intelligent apps. ODC provides a dedicated **app analytics dashboard** to monitor the performance, usage, and errors of your deployed apps. This dashboard offers key metrics such as **health score, top apps by usage, request volume and rate, error counts and rates, and response times**. It provides a comprehensive overview of app performance. For detailed insights into user engagement, feature utilization, and performance trends across different geographies and browsers, refer to the [Monitor assets with ODC Analytics](../../monitor-and-troubleshoot/app-health.md). It also provides specific element and AI model metrics.
+ODC simplifies the development and management of intelligent apps. Use the dedicated **app analytics dashboard** to monitor performance, usage, and errors of deployed apps. The dashboard displays key metrics such as **health score, top apps by usage, request volume and rate, error counts and rates, and response times**. It provides a comprehensive overview of app performance. For detailed insights into user engagement, feature utilization, and performance trends across different geographies and browsers, refer to [Monitor assets with ODC Analytics](../../monitor-and-troubleshoot/app-health.md). The dashboard also displays specific element and AI model metrics.
 
 ## Next steps
 
-After learning the concepts for building AI-powered apps, you can begin by configuring and integrating your AI models and search services.
+After learning the concepts for building AI-powered apps, begin by configuring and integrating your AI models and search services.
 
 * [AI models and search services in ODC](ai-models.md)
 * [Adding AI models](add-ai-models.md)
 * [Adding search services](add-ai-search-services.md)
 * [Integrating AI models and search services](integrate-ai-models-logic-rag.md)
 
-## Related Resources
+## Related resources
+
+For more information regarding related resources refer to the following:
 
 * [Agentic apps in ODC](agentic-apps.md)
 * [External tools (MCP servers & prebuilt connectors)](tools/intro.md)
