@@ -21,6 +21,12 @@ helpids:
 
 # iOS build actions
 
+<div class="info" markdown="1">
+
+Build actions are supported only for mobile apps that use Capacitor. Cordova-based mobile apps do not support build actions.
+
+</div>
+
 This article provides reference documentation for all iOS build actions available in mobile app development. [Build actions](build-actions.md) allow you to customize and configure iOS mobile apps beyond the standard low-code capabilities such as updating and modifying the **Info.plist** file and setting specific build settings.
 
 ## Targets and builds

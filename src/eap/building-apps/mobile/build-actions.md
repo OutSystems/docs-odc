@@ -20,17 +20,17 @@ helpids:
 
 # Build actions
 
+<div class="info" markdown="1">
+
+Build actions are supported only for mobile apps that use Capacitor. Cordova-based mobile apps do not support build actions.
+
+</div>
+
 You can use build actions to perform native project modifications such as modifying **Android Manifest file**, **Info.plist** or **build.gradle** files in a structured and repeatable way. Build actions use JSON-based configuration file and a set of predefined constructs to define and apply modifications to a mobile app during the build process. Build actions are integrated into the mobile app build process via [Extensibility](extensibility-configurations-json-schema.md).
 
 You can configure your extensibility from **App** > **Edit app properties** > **Extensibility**.
 
 Build actions are the modern replacement for Cordova hooks and are available in both the [app](extensibility-configurations/extensibility-app-reference.md) and [library](extensibility-configurations/extensibility-lib-reference.md) extensibility configuration.
-
-<div class="info" markdown="1">
-
-Build actions are available only on Capacitor mobile apps.
-
-</div>
 
 The actions execute after the `cap sync` command during the build.
 

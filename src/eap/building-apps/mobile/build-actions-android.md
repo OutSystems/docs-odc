@@ -21,6 +21,12 @@ helpids:
 
 # Android build actions
 
+<div class="info" markdown="1">
+
+Build actions are supported only for mobile apps that use Capacitor. Cordova-based mobile apps do not support build actions.
+
+</div>
+
 This article provides reference documentation for all Android build actions available in mobile app development. [Build Actions](build-actions.md) allow you to customize and configure Android mobile apps beyond the standard low-code capabilities such as modifying the **AndroidManifest.xml** file or inserting new Gradle snippets.
 
 ## appName
