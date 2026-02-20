@@ -80,7 +80,7 @@ The service account token flow is the following. In this scenario, your ODC app 
 1. **Validate request**: The REST API sends the `Authorization` header to the Auth Service for validation.
 1. **Verify token**: The Auth Service validates the token.
 1. **Return validation**: The Auth Service returns the validation result to the REST API.
-1. **Process request**: The REST API processes the request.
+1. **Process request**: The REST API verifies the token signature to detect tampering. It uses a JWK the issuer provides or retrieves the public JWK from the issuer’s JWKS endpoint. Then the REST API processes the request.
 1. **Return response**: The REST API returns the response to the app.
 1. **Show data**: The app returns the response to the user.
 
@@ -103,8 +103,8 @@ In a credential-based flow, your ODC app (as the client application) authenticat
 1. **Validate request**: The REST API sends the `Authorization` header to the Auth Service for validation.
 1. **Validate token**: The auth provider validate access token.
 1. **Return validation**: The auth provider returns the token validation to the server API.
-1. **Process request**: The server API, on valid token, process the request.
-1. **Return response**: The server API sends the response to the app.
+1. **Process request**: The REST API verifies the token signature to detect tampering. It uses a JWK the issuer provides or retrieves the public JWK from the issuer’s JWKS endpoint. Then the REST API processes the request.
+1. **Return response**: The REST API sends the response to the app.
 
 Different projects can implement the authentication side in different ways (externally with access tokens, or internally with JWT or custom tokens).
 

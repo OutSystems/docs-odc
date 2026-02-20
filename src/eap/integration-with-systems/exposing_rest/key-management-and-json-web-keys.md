@@ -72,3 +72,7 @@ The exact storage mechanism for keys in ODC depends on your architecture. Common
 * **Configuration libraries**: Store keys in a secret setting or encrypt keys before storing them in entities. If you use an entity, encrypt the key by using [AES_Encrypt](../../reference/libraries/security.md#aes_encrypt) before you store it and decrypt it by using [AES_Decrypt](../../reference/libraries/security.md#aes_decrypt) when you retrieve it.
 * **External identity provider integration**: Retrieve keys from your identity provider's JWK endpoint.
 * **Forge components**: Use community-supported components that abstract JWK parsing and validation logic.
+
+## Related resources
+
+* [Token-based authentication for exposed REST APIs](token-based-auth-expose-dev-pattern.md)
