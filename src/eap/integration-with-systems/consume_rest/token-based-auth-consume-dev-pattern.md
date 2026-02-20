@@ -27,9 +27,12 @@ This article describes a **technology-agnostic development pattern** for consumi
 
 <div class="info" markdown="1">
 
-If you prefer to start from a prebuilt accelerator instead of implementing the pattern from scratch, consider using the [**ODC REST Connector – Secure Token Auth for O11**](https://www.outsystems.com/forge/component-overview/23091/odc-rest-connector-client-odc) Forge component (ODC, client-side).
+For interoperability between O11 and ODC, see also the [development pattern for securing exposed REST APIs in O11 with JWT-based tokens](https://www.outsystems.com/tk/redirect?g=5f8c0c2b-41e0-4a0d-9b3b-2f5a6a1d9f11). If you prefer to start from a prebuilt accelerator instead of implementing the pattern from scratch, consider using these Forge components:
 
-This Forge component is a community-provided accelerator and **isn't officially supported by OutSystems**. Review the source code, perform a security assessment, and validate that it meets your organization's requirements before using it in production.
+* [**ODC REST Connector – Secure Token Auth for O11**](https://www.outsystems.com/forge/component-overview/23091/odc-rest-connector-client-odc) (ODC, client-side)
+* [**O11 Service Account Manager – Secure Token Auth for ODC**](https://www.outsystems.com/forge/component-overview/23018/o11-service-account-manager-server-o11) (O11, server-side)
+
+These Forge components are community-provided accelerators and **aren't officially supported by OutSystems**. Review the source code, perform a security assessment, and validate that they meet your organization's requirements before using them in production.
 
 </div>
 
@@ -209,10 +212,6 @@ You can apply this pattern in different contexts:
 
 ## Related resources
 
-<!--  
-Add link to O11 token-based exposed REST API after it's published.
--->
 * [Use REST APIs in your app](intro.md)
-* [Generate and reuse OAuth access token](generate-reuse-oauth-token.md)
-* [Customize API request and response headers](simple-customizations.md)
-* [Handling REST errors](handling-rest-errors.md)
+* [Token-based authentication for exposed REST APIs in ODC](../exposing_rest/token-based-auth-expose-dev-pattern.md)
+* [Token-based authentication for exposed REST APIs in OutSystems 11](https://www.outsystems.com/tk/redirect?g=5f8c0c2b-41e0-4a0d-9b3b-2f5a6a1d9f11)

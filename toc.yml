@@ -560,6 +560,8 @@
     - href: eap/integration-with-systems/exposing_rest/intro.md
     - topics:
         - href: eap/integration-with-systems/exposing_rest/expose-a-rest-api.md
+        - href: eap/integration-with-systems/exposing_rest/token-based-auth-expose-dev-pattern.md
+        - href: eap/integration-with-systems/exposing_rest/key-management-and-json-web-keys.md
         - href: eap/integration-with-systems/exposing_rest/customize-rest-urls.md
         - href: eap/integration-with-systems/exposing_rest/document-an-exposed-rest-api.md
         - href: eap/integration-with-systems/exposing_rest/throw-a-custom-error-in-an-exposed-rest-api.md
