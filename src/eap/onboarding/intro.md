@@ -5,7 +5,7 @@ locale: en-us
 guid: cb10aa0f-4e5b-4a29-92ce-03fbc813bc14
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/RJa2jhHlZ3O7UDDV8zWIwZ/Onboarding-for-OutSystems-developers?node-id=2449-32709
 audience:
   - mobile developers
   - full stack developers
@@ -91,41 +91,6 @@ Note the following related to timers in ODC:
 * Timers are set in UTC (Coordinated Universal Time).
 * The "Weekday of month" option doesn't exist in ODC.
 
-## Time
-
-In ODC, users can work with three different data types for date and time:
-
-* Date: Represents a specific calendar date.
-* Time: Represents a specific time of day.
-* DateTime: Represents both a date and a time.
-
-The Date and Time data types are stored and displayed exactly as defined by the user.
-
-For DateTime, the data is stored in UTC but displayed using the device's time zone. For example:
-
-* If a user opens the app on their computer in Boston, MA (UTC-4), they see the time as 5:00 am.
-* If the same app is opened on a computer in Lisbon, Portugal (UTC+1), the time is shown as 10:00 am.
-
-This adjustment accounts for Daylight Saving Time (DST). For instance, if a user saves a DateTime value in the database as April 18, 2022, 5:00 am in Boston, MA, it will consistently display as:
-
-* April 18, 2022, 5:00 am in Boston, MA.
-* April 18, 2022, 10:00 am in Lisbon, Portugal.
-
-![Diagram illustrating how time is saved in UTC format in ODC](images/utc-save-to-server-diag.png "Saving time in UTC in ODC")
-
-When built-in functions are called, the server returns the data to the devices. The DateTime displays on both devices in the local time.
-
-![Diagram showing the process of getting time in UTC format from the server in ODC](images/utc-get-from-server-diag.png "Getting time in UTC in ODC")
-
-The following guidelines provide additional details on handling date and time data:
-
-* Client-side calls: Return the device's local DateTime.
-* Server-side calls: Return the current DateTime in UTC.
-* SQL query calls: Return the current DateTime in UTC.
-* DateTime types: Stored and calculated in the UTC time zone, with no adjustments for Daylight Saving Time (DST).
-* Displaying DateTime: Displayed in the device's time zone, including adjustments for DST.
-* Date and Time types: Stored in the database and displayed exactly as entered, without any conversions.
-
 ## Previewing data in Entities
 
 When you preview data of an Entity, the value of the Date Time is in UTC.
@@ -142,7 +107,7 @@ The following table lists tasks in the ODC compared to OutSystems 11.
 | ----------- | ----------- | ----------- |
 | [Apps configuration management](../manage-platform-app-lifecycle/configuration-management.md) | LifeTime | **ODC Portal** > **Apps** |
 | Create a mobile package | Service Studio, Service Center | **ODC Portal** > **(app details)** > **Mobile distribution** |
-| Deploy an app to a stage.| LifeTime | **ODC Portal** > **Delivery** > **Deployments**.|
+| Deploy an app to a stage. | LifeTime | **ODC Portal** > **Delivery** > **Deployments**. |
 | Manage users, roles, and permissions | LifeTime | **ODC Portal** > **Users & access** |
 | Manage end-users | Users console | **ODC Portal** > **Users & access** |
 | Set access to end-user with specific roles to a screen in ODC Studio | screen > **Roles** | screen > **Authorization** > **Accessible by** |
