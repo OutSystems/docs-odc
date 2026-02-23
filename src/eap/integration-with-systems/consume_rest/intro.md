@@ -37,7 +37,7 @@ The external API can support any one of the following authentication methods:
 
 * **Basic authentication** - Configure the authentication credentials such as username and password while consuming the APIs. For detailed information, refer to [Configure basic authentication](#configure-basic-authentication).
 * **Token-based authentication** - For token-based authentication such as OAuth 2.0, you must implement logic to generate the access token and include the token in the header. ODC REST APIs follows OAuth 2.0 for authentication.
-* **API Keys or other methods** – For any other authentication methods, get the keys and implement logic for configuring the neceessary headers.
+* **API Keys or other methods** – For any other authentication methods, get the keys and implement logic for configuring the necessary headers.
 
 Here's the high-level process for consuming REST APIs in ODC Studio:
 
