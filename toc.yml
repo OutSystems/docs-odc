@@ -764,6 +764,11 @@
     - href: eap/reference/apis/deployment-v1.md
     - href: eap/reference/apis/dependency-v1.md
     - href: eap/reference/apis/asset-v1.md
+    - href: eap/reference/apis/public-rest-apis/asset-governance-use-cases/asset-governance-intro.md
+    - topics:
+        - href: eap/reference/apis/public-rest-apis/asset-governance-use-cases/list-templates.md
+        - href: eap/reference/apis/public-rest-apis/asset-governance-use-cases/create-asset.md
+        - href: eap/reference/apis/public-rest-apis/asset-governance-use-cases/manage-asset-permissions.md
     - href: eap/reference/apis/asset-config-v1.md
     - href: eap/reference/apis/code-quality-api-v1.md
     - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/intro.md
