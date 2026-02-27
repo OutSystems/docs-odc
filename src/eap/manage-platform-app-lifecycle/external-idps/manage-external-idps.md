@@ -1,5 +1,5 @@
 ---
-summary: Replace, unassign, edit, or delete external identity providers and avoid lockout scenarios in OutSystems Developer Cloud (ODC).
+summary: Manage identity providers in OutSystems Developer Cloud (ODC), including external IdP lifecycle tasks and removing the built-in IdP assignment.
 locale: en-us
 guid: d1584f5d-164f-4411-9846-77651e486d89
 audience:
@@ -21,19 +21,19 @@ app_type: mobile apps,reactive web apps
 helpids: 
 ---
 
-# Manage external identity providers
+# Manage identity providers
 
-This article covers the lifecycle management of your external IdPs, including replacing, unassigning, and deleting them.
+This article covers identity provider management in ODC. It explains how to replace, unassign, edit, or delete external IdPs, and how to remove the built-in identity provider assignment.
 
 ## Prerequisites
 
-You must have the [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
+You must have the [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission to manage identity provider assignments.
 
 ## Replace an external IdP {#replace-idp}
 
 To replace an external identity provider (IdP) in ODC, follow these steps:
 
-1. Complete steps 1–3 (up to and including “Assign an IdP”) in [Configuring and using an external IdP](intro.md#configuring-using-idp) for your new provider.
+1. Complete steps 1–3 (up to and including **Assign an IdP**) in [Configuring and using an external IdP](intro.md#configuring-using-idp) for your new provider.
 
 1. If any apps implement custom login logic (for example, use a setting or explicitly set the **IdentityProvider** property), update those apps to use the new provider:
 
@@ -69,7 +69,7 @@ When you need to remove an existing external identity provider from your organiz
 
 ## Edit or delete an external IdP
 
-You can only edit or delete a provider that is not in use. To edit or delete an external IdP, navigate to the **ODC Portal** > **Manage** > **Identity providers** . Then, follow these steps:
+You can only edit or delete a provider that is not in use. To edit or delete an external IdP, in the ODC Portal go to **Manage** > **Identity providers**. Then, follow these steps:
 
 1. Click on the provider card you want to edit or delete.
 
@@ -91,7 +91,7 @@ For SAML 2.0 providers, the **scope cannot be changed** after the provider is cr
 
 A lockout occurs when all users lose access to the ODC Portal and ODC Studio, or any apps developed in ODC.
 
-This can happen if you remove the built-in IdP assignment on the **Identity Providers** page in the ODC Portal, either for the organization (for IT-users) or an app stage (for end-users), and your external IdP isn't working correctly.
+This can happen if you remove the built-in IdP assignment on the **Identity providers** page in the ODC Portal, either for the organization (for IT-users) or an app stage (for end-users), and your external IdP isn't working correctly.
 
 <div class="warning" markdown="1">
 
@@ -104,6 +104,22 @@ To avoid lockouts when changing providers, refer to [Replace an external IdP](#r
 There are a few reasons why your external IdP might not be working correctly. It could be because you didn't set it up correctly or assign it to the appropriate stage. It could also be due to an issue on the provider's side.
 
 If you encounter a lockout scenario, open a support ticket. A support agent can sign in to the tenant and reactivate the built-in provider. This allows users to log in or reset passwords for accounts using the built-in provider.
+
+## Remove the built-in identity provider {#remove-built-in-idp-assignment}
+
+To remove the built-in IdP assignment, follow these steps:
+
+1. In the ODC Portal, go to **Manage** > **Identity providers**.
+
+1. Click **Built-in provider**.
+
+1. Click **Unassign**.
+
+1. Clear the checkboxes for the scope you want to unassign.
+
+1. Click **Next**.
+
+1. Confirm the changes.
 
 ## Related resources
 

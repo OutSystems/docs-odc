@@ -44,13 +44,15 @@ ODC also provides accelerators for [commonly used social providers](configure-so
 IdPs are assigned to the organization or to a stage, never to an individual app:
 
 * **Organization scope**: Members (IT-users) can sign in to the ODC Portal and ODC Studio with the IdP.
-* **Stage scope**: All apps in that stage can use the IdP for end-user sign-in. For apps created with ODC Studio version 1.3.0 or later, the pre-built login screen automatically shows the IdPs assigned to the stage, so you usually don’t need to change the app’s login logic. For apps created before this behavior was introduced, or if you want to customize the default behavior, refer to [Step 4: Use an IdP in your apps (for end-users only)](#step-4-use-an-idp-in-your-apps-for-end-users-only).
+* **Stage scope**: All apps in that stage can use the IdP for end-user sign-in. For apps created with ODC Studio version 1.3.0 or later, the pre-built login screen automatically shows the IdPs assigned to the stage, so you usually don’t need to change the app’s login logic. For apps created before this behavior was introduced, or if you want to customize the default behavior, refer to [Step 4: Use an IdP in your apps (for end-users only)](#use-an-idp-in-your-apps).
 
 The following diagram shows an example setup.
 
 ![External IdPs concept](images/external-idps-example-diag.png "External IdPs concept")
 
-You can assign more than one identity provider to the same scope. A single stage can have multiple active IdPs at once, including multiple custom external IdPs, and you can also keep the built-in provider active. If you want users associated with an external provider to retain their profile and associated roles, they should use the same email address as on the built-in provider. For more details, refer to [User matching and profile creation](identity-claims-email-verification.md#claim-mapping-logic).
+You can assign more than one identity provider to the same scope. A single stage can have multiple active IdPs at once, including multiple custom external IdPs, and you can keep the built-in provider active. If you want users to authenticate only through external IdPs for a scope, remove the built-in identity provider assignment. For more information, refer to [Manage identity providers](manage-external-idps.md#remove-built-in-idp-assignment).
+
+If you want users associated with an external provider to retain their profile and associated roles, they should use the same email address as on the built-in provider. For more details, refer to [User matching and profile creation](identity-claims-email-verification.md#claim-mapping-logic).
 
 The way you configure scopes differs slightly depending on the authentication protocol:
 
@@ -153,7 +155,7 @@ Mapping groups from your identity provider to end-user groups in ODC can automat
 
 ## Related resources
 
-* [Manage external identity providers](manage-external-idps.md): Replace, unassign, edit, or delete IdPs
+* [Manage identity providers](manage-external-idps.md): Replace, unassign, edit, or delete external IdPs and remove the built-in identity provider assignment
 * [Identity claims, email verification, and profile matching logic](identity-claims-email-verification.md)
 * [Best practices for user management](../../user-management/best-practices-user-management.md)
 * [Managing authorization and authentication for end-users](../../user-management/end-users/intro.md)

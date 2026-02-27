@@ -14,7 +14,7 @@ coverage-type:
   - understand
   - apply
 helpids: 30712, 30682, 30681
-figma:
+figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=4072-148
 app_type: mobile apps,reactive web apps
 tags: email verification, profile matching, external identity providers, identity claims, saml providers
 outsystems-tools:
@@ -29,7 +29,7 @@ Use this guide to choose email verification behavior and understand how ODC matc
 
 Identity providers issue claims (for example, email, email_verified, username, and subject/sub). ODC uses these to verify emails and to match external logins to ODC profiles. For mapping requirements and behavior, see [User matching and profile creation](#claim-mapping-logic). For group-based access using claims, refer to [IdP and end-user group mapping](end-user-group-mapping.md).
 
-## Email verification logic { #email-verification-logic }
+## Email verification logic {#email-verification-logic}
 
 While configuring an IdP, ODC provides different user email verification approaches depending on your IdP type.
 
@@ -53,7 +53,7 @@ For SAML providers, you can choose from the following email verification methods
 
 * **Trust all user emails as verified**: ODC considers all user emails from the IdP as verified.
 
-## User matching and profile creation { #claim-mapping-logic }
+## User matching and profile creation {#claim-mapping-logic}
 
 <div class="info" markdown="1">
 
@@ -77,7 +77,7 @@ ODC doesn't support merging profiles when a login doesn't match an existing ODC 
 
 </div>
 
-### User matching and profile creation flow { #profile-creation-flow }
+### User matching and profile creation flow {#profile-creation-flow}
 
 The following flow details how ODC handles user login and profile matching when using an external IdP, based on IdP claims and ODC profile data.
 
@@ -117,4 +117,4 @@ If this is the user's first login with this IdP, ODC creates both a new IdP prof
 ## Related resources
 
 * [Configuring authentication with external identity providers](intro.md)
-* [Manage external identity providers](manage-external-idps.md)
+* [Manage identity providers](manage-external-idps.md)

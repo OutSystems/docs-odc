@@ -75,6 +75,10 @@ Authentication verifies a user’s identity before granting access. ODC supports
 
     Built-in authentication provides a simple and secure way to manage user access without relying on external identity providers.
 
+    ODC supports built-in authentication through Identity Service, the built-in identity provider (IdP). You can choose whether users authenticate through the built-in IdP for the organization or stage scope. To remove built-in authentication for a scope, remove the built-in IdP assignment in the ODC Portal under **Manage** > **Identity providers**. IdP assignments apply to the organization or stage scope, not individual apps.
+
+    Test your external IdP setup before you remove the built-in IdP assignment to avoid lockouts. For more information, refer to [Avoid lockout scenarios](../manage-platform-app-lifecycle/external-idps/manage-external-idps.md#lockout).
+
     With built-in authentication:
 
     * Members can securely access the ODC Portal and ODC Studio, for managing apps and resources.

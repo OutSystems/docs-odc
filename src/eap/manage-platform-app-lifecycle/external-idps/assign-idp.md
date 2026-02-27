@@ -82,7 +82,7 @@ Choose your next step depending on your use case:
 
 ## Related resources
 
-* [Manage external identity providers](manage-external-idps.md): Replace, unassign, edit, or delete IdPs
+* [Manage identity providers](manage-external-idps.md): Replace, unassign, edit, or delete external IdPs and remove the built-in identity provider assignment
 * [Identity claims, email verification, and profile matching logic](identity-claims-email-verification.md)
 * [Configuring authentication with external identity providers](intro.md)
 * [Set up redirect URIs](redirect-uris.md)
