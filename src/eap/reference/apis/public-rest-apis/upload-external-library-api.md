@@ -16,7 +16,7 @@ outsystems-tools:
   - odc portal
 helpids:
 ---
-# Upload an external library using OutSystems APIs
+# External library management
 
 OutSystems lets you [extend your ODC apps with external logic](https://success.outsystems.com/documentation/outsystems_developer_cloud/building_apps/extend_your_apps_with_custom_code/) using high-code libraries. This article explains how to use OutSystems APIs to programmatically upload a high-code library for your ODC assets to consume. You can upload a new library or a new version of an existing library.
 

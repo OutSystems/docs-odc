@@ -21,7 +21,7 @@ outsystems-tools:
   - odc portal
 helpids:
 ---
-# CI/CD in ODC
+# CI/CD automation
 
 CI/CD is an approach to building and delivering software with automation across the app lifecycle. It combines continuous integration (CI) and continuous delivery (CD). Continuous integration involves frequently testing, verifying, and integrating changes into app code. Continuous delivery means building assets that can be released to production at any time. Together, CI/CD shortens the time from development to production while reducing the risk of breaking changes.
 

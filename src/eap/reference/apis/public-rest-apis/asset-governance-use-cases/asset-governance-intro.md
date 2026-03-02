@@ -20,7 +20,7 @@ outsystems-tools:
   - odc studio
 helpids:
 ---
-# Governance model for asset creation
+# Asset creation governance
 
 You can use ODC REST APIs to restrict who creates new assets in your development stage and automate approved creation requests. You prevent unapproved assets from accumulating, such as unused or duplicate apps, libraries, agents, and workflows. You keep visibility and control over what assets exist, who owns them, and why you created them.
 
