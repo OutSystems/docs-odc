@@ -85,14 +85,60 @@ To stream audit trail logs to AWS Firehose, you must:
 
 1. Configure the delivery stream destination (for example, Amazon S3, Amazon Redshift, Amazon OpenSearch Service, or a third-party service provider).
 
-    * Ensure your Firehose destination (for example, S3 bucket or  OpenSearch domain) has the appropriate permissions and configurations to receive data.
+    * Ensure your Firehose destination (for example, S3 bucket or OpenSearch domain) has the appropriate permissions and configurations to receive data.
 
-1. Create an IAM role with permissions to put records into the Firehose delivery stream.
+1. Create an AWS Identity and Access Management (IAM) policy that grants write access to the Firehose delivery stream.
 
-    * The IAM role must have the `firehose:PutRecord` and `firehose:PutRecordBatch` permissions for the delivery stream.
-    * Configure the trust policy for the IAM role, using your tenant ID as the external key.
+    * The IAM policy must include `firehose:PutRecord` and `firehose:PutRecordBatch` on your Firehose delivery stream Amazon Resource Name (ARN).
 
-1. Get the Firehose delivery stream name and AWS region. Note the AWS region where your delivery stream is hosted (for example, `us-east-1` or `eu-west-1`).
+    ```json
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "firehose:PutRecord",
+                    "firehose:PutRecordBatch"
+                ],
+                "Resource": "arn:aws:firehose:<region>:<customer_aws_account_id>:deliverystream/<stream_name>"
+            }
+        ]
+    }
+    ```
+
+1. Create an IAM role that OutSystems can assume to stream audit logs to your Firehose delivery stream.
+
+    * In the IAM role trust policy, set `Principal > AWS` to the OutSystems AWS account ID for the audit trail streaming service.
+    * In the IAM role trust policy, set `Condition > StringEquals > sts:ExternalId` to your tenant ID.
+    * To get the OutSystems AWS account ID for audit trail streaming and your tenant ID, open a [support ticket](https://success.outsystems.com/support/home/).
+    * Attach the IAM policy (created in the previous step) to the IAM role.
+
+    ```json
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Principal": {
+                    "AWS": "arn:aws:iam::<outsystems_stream_aws_account_id>:root"
+                },
+                "Action": "sts:AssumeRole",
+                "Condition": {
+                    "StringEquals": {
+                        "sts:ExternalId": "<tenant_id>"
+                    }
+                }
+            }
+        ]
+    }
+    ```
+
+1. Collect the following information from your AWS account to configure AWS Firehose in the ODC Portal:
+
+    * Amazon Resource Name (ARN) of the IAM role.
+    * Firehose delivery stream name.
+    * AWS region (for example, `us-east-1` or `eu-west-1`).
 
 Once you've completed these requirements, go to the ODC Portal and [configure the audit trail stream](audit-trail-streaming.md#create-an-audit-trail-stream).
 
