@@ -146,6 +146,7 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Configuration management | Manage audit trail stream | Users can view, create, edit, and delete audit trail streams. | Organization |
 | Configuration management | Manage IP filters | Users can create, edit, delete and assign IP rules to apps. | Organization |
 | Configuration management | Manage private gateways | Users can activate and deactivate private gateways as well as renew a gateway's access token. | Organization |
+| Configuration management | Manage agent guardrails | Users can configure agent guardrails for agent elements. | Organization |
 | Connection management | Create | Users can create connections. | Organization |
 | Connection management | Change | Users can edit entities, name, and description. | Organization |
 | Connection management | Delete | Users can delete connections. | Organization |
