@@ -623,7 +623,9 @@
     - href: eap/manage-platform-app-lifecycle/subscription-console.md
     - href: eap/getting-started/capacity-limits.md
     - href: eap/deleting-apps/intro.md
-
+    - href: eap/manage-platform-app-lifecycle/self-service-db-operations.md    
+    - topics:
+        - href: eap/manage-platform-app-lifecycle/platform-updates/postgres16-update.md
 # User management
 - href: eap/user-management/intro.md 
 - topics:
