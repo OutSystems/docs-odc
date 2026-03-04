@@ -28,39 +28,39 @@ The following tables detail the input and output parameters.
 ## HTTP Parameters
 
 | Parameter | Description | Mandatory/Optional |
-|----------|----------|----------|
-| endpoint    | Url to be called   | Mandatory  |
-| HTTP Headers (List of key-value pairs)    | Allows support sending HTTP headers required by service. Example, authentication headers API Key: xxxx or Access-Key: xxxx Access Secret: xxxx   | Optional  |
+| ---------- | ---------- | ---------- |
+| endpoint | Url to be called | Mandatory |
+| HTTP Headers (List of key-value pairs) | Allows support sending HTTP headers required by service. Example, authentication headers API Key: xxxx or Access-Key: xxxx Access Secret: xxxx | Optional |
 
 ## Input
 
 | Parameter | Description | Mandatory/Optional |
-|----------|----------|----------|
-| index    | Allows to specify the index identifier   | Optional   |
-| searchText    | The text to be searched   | Mandatory   |
-| tags    | A list of key-value pairs to filter the results   | Optional   |
-| pageSize    | Maximum number of results to return   | Optional   |
-| pageNumber    | To support pagination.(initial page: 1)   | Optional  |
-| scoreLimit    | The score below which the results are not considered.   | Optional   |
-| extraBody   | JSON text that will be embedded into the upstream payload. This allows passing parameters unsupported by this service that the caller knows is supported by the upstream provider.   | Optional   |
+| ---------- | ---------- | ---------- |
+| index | Allows to specify the index identifier | Optional |
+| searchText | The text to be searched | Mandatory |
+| tags | A list of key-value pairs to filter the results | Optional |
+| pageSize | Maximum number of results to return | Optional |
+| pageNumber | To support pagination.(initial page: 1) | Optional |
+| scoreLimit | The score below which the results are not considered. Score values depend on the underlying search algorithm used. Consult the documentation of the AI Search system you are connecting with to learn about the possible score ranges. | Optional |
+| extraBody | JSON text that will be embedded into the upstream payload. This allows passing parameters unsupported by this service that the caller knows is supported by the upstream provider. | Optional |
 
 ## Output
 
 | Parameter | Description | Mandatory/Optional |
-|----------|----------|----------|
-| documents    | list of documents   | Mandatory   |
+| ---------- | ---------- | ---------- |
+| documents | list of documents | Mandatory |
 
-## Output - Document
+## Document properties
 
 | Parameter | Description | Mandatory/Optional |
-|----------|----------|----------|
-| id    |    |    |
-| title    |    |    |
-| content    |    |    |
-| url    |    |    |
-| tags    | A list of key-value pairs   |    |
-| score    |    |    |
-| extraBody    | A JSON object that allows developers to include additional information that is relevant for their application when using this service.   |    |
+| ---------- | ---------- | ---------- |
+| id | | |
+| title | | |
+| content | | |
+| url | | |
+| tags | A list of key-value pairs | |
+| score | The relevance score of the document. Score values depend on the underlying search algorithm used. Consult the documentation of the AI Search system you are connecting with to learn about the possible score ranges. | |
+| extraBody | A JSON object that allows developers to include additional information that is relevant for their application when using this service. | |
 
 ## Request
 
@@ -85,21 +85,22 @@ The following tables detail the input and output parameters.
 
 ```
 {
-    "documents": [
-  {
-    "id": "string",
-    "title": "string",
-    "content": "string",
-    "url": "string",
-    "tags": [
-      {
-        "name": "value",
-      }
-    ],
-    "score": 7.5,
-    "extendedProperties": "{\"prop\":\"value\"}"
+  "documents": [
+    {
+      "id": "string",
+      "title": "string",
+      "content": "string",
+      "url": "string",
+      "tags": [
+        {
+          "key": "string",
+          "value": "string"
         }
-    ]
+      ],
+      "score": 7.5,
+      "extendedProperties": "{\"prop\":\"value\"}"
+    }
+  ]
 }
 ```
 
@@ -108,7 +109,7 @@ The following tables detail the input and output parameters.
 Errors are returned with a message and a HTTP status code.
 
 | HTTP Status Code | Name | Details |
-|----------|----------|----------|
-| 400    | Access Denied   |    |
-| 400    | Invalid Inputs   |    |
-| 500    | Internal Failure   | Used for errors that weren't handled by the service.    |
+| ---------- | ---------- | ---------- |
+| 400 | Access Denied | |
+| 400 | Invalid Inputs | |
+| 500 | Internal Failure | Used for errors that weren't handled by the service. |
