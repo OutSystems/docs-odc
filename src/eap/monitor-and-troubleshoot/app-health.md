@@ -230,6 +230,8 @@ ODC monitors your [agents](../building-apps/build-ai-powered-apps/intro.md) and 
 
 Element metrics show element-level requests, response time, errors, requests with errors, and the slowest requests.
 
+![Screenshot displaying various app metrics in ODC analytics.](images/analytics-elements-dashboard-pl.png "Various App Metrics in ODC Analytics")
+
 ### Element requests
 
 A list of elements by type and their daily number of requests. There are two element metrics:
