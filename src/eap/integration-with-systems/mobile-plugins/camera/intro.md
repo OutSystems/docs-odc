@@ -85,7 +85,7 @@ You can find all of the available actions for the Camera plugin by navigating to
 
 <div class="info" markdown="1">
 
-Applies only to Native Mobile Apps. Not available on PWAs.
+Applies to native mobile apps only. Not available in PWAs.
 
 </div>
 
@@ -117,7 +117,7 @@ Video files stored in the cache are deleted when the app closes. When setting th
 1. To prevent errors, it's best practice to  check if the **CheckCameraPlugin** action is available for the plugin. If the plugin isn't available for the app, display an error to the user.
 1. Otherwise, allow users to capture a video by opening the camera with **RecordVideo** action. In the **RecordVideo** action, you can set the parameters for saving the recorded media to the device’s gallery.
 1. Check if recording videos on the device works by verifying that the value of **RecordVideo.Success** is **True**.
-1. If yes, handle the picture data in **RecordVideo.MediaResult** by assigning it to a variable of the **MediaResult** data type.
+1. If **RecordVideo.Success** is **True**, assign **RecordVideo.MediaResult** to a variable of the **MediaResult** data type.
 
     ![Flowchart showing the subsequent steps in the logic for capturing a video](images/capture-video-logic-2-ss.png "Capture Video Logic Flow 2")
 
@@ -125,9 +125,9 @@ Video files stored in the cache are deleted when the app closes. When setting th
 
 <div class="info" markdown="1">
 
-Applies only to Native Mobile Apps. Not available on PWAs.
+**ChooseFromGallery** is available in native mobile apps only.
 
-Until support is added for PWAs, you may use **DEPRECATED_ChooseGalleryPicture**.
+Until support is added for PWAs, you can use the **DEPRECATED_ChooseGalleryPicture** action.
 
 </div>
 
@@ -242,13 +242,23 @@ Change the properties of the **RecordVideo** action to adjust how the app handle
 |-|-|
 |**SaveToGallery**|If **True**, the app saves the video to the device.|
 
-### MABS compatibility
+## MABS compatibility
 
 The following table shows the compatibility of the Camera plugin with the Mobile Apps Builds Service (MABS).
 
-| Plugin version  | Compatible with MABS version | Notes |
-| --------------- | ---------------------------- | ----- |
-| 1.0.0 and later | MABS 9.0 and later.          |       |
+| Plugin version   | Compatible with MABS version | Notes |
+| ---------------- | ---------------------------- | ----- |
+| 1.3.3 and later  | MABS 12.0 and later.         |       |
+| 1.1.4 to 1.3.2   | MABS 11.x.                   |       |
+
+## PWA functionality
+
+In PWAs, the camera plugin has these limitations when compared to native mobile apps:
+
+* The **RecordVideo** and **PlayVideo** client actions and blocks aren't available. Video capture and playback are available in native mobile apps only.
+* The **EditURIPicture** client action and block aren't available. Use **EditPicture**.
+* The **ChooseFromGallery** client action and block aren't available. Use the **DEPRECATED_ChooseGalleryPicture** action.
+* The **MediaResult** data structure only offers **Type** and **Thumbnail** attributes. **URI** and **Metadata** are available in native mobile apps only. Use **Thumbnail** to retrieve the image captured by the camera.
 
 ## Known issues and workarounds
 
