@@ -195,6 +195,7 @@ exceptions:
 
 # Events
   - OnClick
+  - On Click
   - On Initialize
   - On Ready
   - On Render
@@ -208,6 +209,7 @@ exceptions:
   - SyncContacts
   - ServerDataSync
 # UI Patterns and Widgets
+  - Action Sheet
   - Animated Label
   - Columns
   - Carousel
@@ -221,6 +223,7 @@ exceptions:
   - Progress Circle
   - Range Slider
   - Range Slider Interval
+  - Section Index
   - Split Screen
   - Stacked Cards
   - Submenu
@@ -310,30 +313,31 @@ exceptions:
   - Font Awesome
   
 # Industry
+  - AI
   - API
-  - HTML
+  - ARIA
   - APIs
+  - CI/CD
+  - CICD
+  - DREAD
+  - DevOps
+  - EAP
+  - FAQ
+  - FCM
   - IP
   - ID
-  - FAQ
   - TLS
-  - AI
   - DNS
   - TLS
   - UI
   - SAST
   - REST
+  - HTML
   - HTTP
-  - FCM
-  - CI/CD
-  - CICD
-  - EAP
   - JavaScript
   - MCP
   - PR
   - UI
-  - DREAD
-  - DevOps
   - SOAP
   - PaaS
   - SDK
