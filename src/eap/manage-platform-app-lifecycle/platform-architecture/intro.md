@@ -87,7 +87,7 @@ The Data platform runs in a designated region based on your ODC organization’s
 
 ### Runtime {#runtime}
 
-In OutSystems Developer Cloud, the **Runtime** is independent of the Platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed apps. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
+In OutSystems Developer Cloud, the **runtime** is independent of the platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed apps. Each stage is an isolated runtime environment. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
 
 The Runtime **Load Balancer** handles all requests to the apps.
 
@@ -119,7 +119,7 @@ The following diagram shows how auto-scaling works inside the Platform cluster.
 
 The **auto scale controller** monitors the CPU and RAM usage of each running service. It continuously checks the usage against the cluster compute capacity allocated and allocates additional capacity if the CPU and RAM usage exceeds a defined threshold.
 
-The auto scale controller makes the adjustment in real time, with no user interaction required.
+The auto-scale controller makes the adjustment in real time with no user interaction required.
 
 The isolated Platform cluster resources its overall compute capacity from a multi-tenant pool. This means it's scalable.
 
@@ -129,7 +129,7 @@ In the example of the Build Service in the [previous section](#platform), the co
 
 The Build Service packages each container image into a separate container, making the infrastructure resilient to individual resource-intensive app(s) that degrade the performance of other apps.
 
-##### High Availability - Apps (HA)
+##### High availability for apps
 
 When enabled, ODC replicates app containers running in each Runtime (Production) cluster across multiple availability zones to ensure high availability. An availability zone is a distinct location in the cloud that's engineered to be isolated from failure.  Whenever a failure occurs in an availability zone, or an application container becomes unavailable, traffic is automatically routed to the healthy app container ensuring no disruption.  Without HA, failover is not immediate and may take a few minutes to recover as additional application containers are launched into different availability zones.
 
@@ -143,7 +143,7 @@ The following diagram illustrates how auto-scaling works inside the Runtime clus
 
 The **auto scale controller** monitors the CPU and RAM usage of each app container. It continuously checks the usage against the cluster compute capacity allocated and allocates additional capacity if the CPU and RAM usage exceeds a defined threshold.
 
-The auto scale controller makes the adjustment in real time, with no user interaction required.
+The auto-scale controller makes the adjustment in real time with no user interaction required.
 
 The overall compute capacity for the isolated Runtime stage cluster is scalable because it's resourced from a multi-tenant pool.
 
@@ -170,11 +170,11 @@ Each Runtime stage has an isolated Amazon Aurora Serverless database. The follow
 
 The Amazon Aurora database architecture model decouples compute and storage, and both automatically scale independently. The Database CPU and Memory automatically scale as the amount of load increases, and the database storage volume automatically scales as the amount of data stored increases.
 
-#### High Availability - Data (HA)
+#### High availability for data
 
-When enabled, a second (standby) database is deployed in a separate availability zone.  Whenever an availability zone fails or the primary database becomes unavailable, the standby database is automatically promoted to the primary, and traffic is automatically routed to the new primary database, ensuring minimal disruption.  Without HA, failover is not immediate and the primary database can take a few minutes to recover in a secondary availability zone.  As the data is automatically written to multiple AZ's, there is no loss of data in the event of a failure.
+When enabled, a second (standby) database is deployed in a separate availability zone.  Whenever an availability zone fails or the primary database becomes unavailable, the standby database is automatically promoted to the primary, and traffic is automatically routed to the new primary database, ensuring minimal disruption.  Without HA, failover is not immediate and the primary database can take a few minutes to recover in a secondary availability zone.  As the data is automatically written to multiple AZs, there is no loss of data in the event of a failure.
 
-#### Platform to Runtime
+#### Platform to runtime
 
 Build Service stores the app container image and passes the image to a Runtime stage for deployment. OutSystems follows the "Build once, deploy anywhere" **continuous delivery** principle, which makes OutSystems Developer Cloud an efficient cloud product.
 
@@ -200,7 +200,7 @@ Different types of data are stored distinctively in memory:
 
 * **Query parameter** values are held by Kubernetes Pod memory and the in-memory database, typically discarded once the client consumes the result. If an error prevents the client from closing the statement, which triggers deletion, the parameter values are deleted after roughly 5 minutes.
 * **Query results** reside in memory in the Kubernetes Pod memory, with the same retention time as query parameter values.
-* **Metadata**, such as, tables, columns, Primary Key/Foreign Key constraints, remain in memory in the Kubernetes Pod and the in-memory database for the connection's duration.
+* **Metadata**, such as tables, columns, Primary Key/Foreign Key constraints, remain in memory in the Kubernetes Pod and the in-memory database for the connection's duration.
 
 ![Diagram illustrating the storage and retention of query parameter values, query results, and metadata in memory within OutSystems Developer Cloud.](images/memory-usage-diag.png "Memory Data Handling")
 
@@ -210,7 +210,7 @@ In the ODC architecture, caches optimize performance by storing certain informat
 
 * Metadata: This type of data is cached during connection creation or when refreshing metadata in the ODC Portal. The data is then stored in serverless, NoSQL databases.
 * Query statements that execute in runtime Apps are cached to maintain consistent execution plans in the underlying system to enhance performance. Developers should follow security best practices and avoid sensitive data in query statements.
-* Query results are cached in Kubernetes pod memory. This cache expiration is defined by developer at the aggregate level.
+* Query results are cached in Kubernetes pod memory. This cache expiration is defined by the developer at the aggregate level.
 
 ### Connection secrets
 
