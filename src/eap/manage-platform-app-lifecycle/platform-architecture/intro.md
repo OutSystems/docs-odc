@@ -37,7 +37,7 @@ The following diagram shows the high-level architecture of the OutSystems Develo
 
 ![Diagram illustrating the high-level architecture of the OutSystems Developer Cloud with Platform and Runtime stages.](images/high-level-architecture-diag.png "High-level Architecture of OutSystems Developer Cloud")
 
- All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of OutSystems Developer Cloud](networking.md) to learn more.
+All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of OutSystems Developer Cloud](networking.md) to learn more.
 
 ### Platform {#platform}
 
@@ -45,7 +45,7 @@ The development **Platform** comprises multiple services, each responsible for s
 
 The Platform **Load Balancer** handles all requests to the services.
 
-An example of a service is the Build Service. When developers click the 1-Click Publish button in ODC Studio, the Build Service takes the OutSystems visual language model (OML project) and compiles it into a deployable app.
+An example of a service is the Build service. When developers click the 1-Click Publish button in ODC Studio, the Build service takes the OutSystems visual language model (OML project) and compiles it into a deployable app.
 
 All the Platform services are multi-tenant and benefit from automatic recovery and continuous upgrades.
 
@@ -131,7 +131,11 @@ The Build Service packages each container image into a separate container, makin
 
 ##### High availability for apps
 
-When enabled, ODC replicates app containers running in each Runtime (Production) cluster across multiple availability zones to ensure high availability. An availability zone is a distinct location in the cloud that's engineered to be isolated from failure.  Whenever a failure occurs in an availability zone, or an application container becomes unavailable, traffic is automatically routed to the healthy app container ensuring no disruption.  Without HA, failover is not immediate and may take a few minutes to recover as additional application containers are launched into different availability zones.
+High availability (HA) is an optional add-on available only for production stages:
+
+* When enabled, ODC replicates app containers running in each runtime cluster across multiple availability zones (AZ) to ensure high availability. An availability zone is a distinct location in the cloud that's engineered to be isolated from failure.  Whenever a failure occurs in an AZ, or an application container becomes unavailable, traffic is automatically routed to the healthy app container ensuring no disruption.  
+
+* Without HA, failover isn't immediate and may take a few minutes to recover as additional application containers are launched into different AZs.
 
 ##### Auto-scaling
 
@@ -172,7 +176,11 @@ The Amazon Aurora database architecture model decouples compute and storage, and
 
 #### High availability for data
 
-When enabled, a second (standby) database is deployed in a separate availability zone.  Whenever an availability zone fails or the primary database becomes unavailable, the standby database is automatically promoted to the primary, and traffic is automatically routed to the new primary database, ensuring minimal disruption.  Without HA, failover is not immediate and the primary database can take a few minutes to recover in a secondary availability zone.  As the data is automatically written to multiple AZs, there is no loss of data in the event of a failure.
+High availability (HA) is an optional add-on available for production stages:
+
+* When enabled, a second (standby) runtime database is deployed in a separate availability zone (AZ).  Whenever an AZ fails or the primary database becomes unavailable, the standby database is automatically promoted to the primary, and traffic is automatically routed to the new primary database, ensuring minimal disruption.  
+
+* Without HA, failover isn't immediate and the primary database can take a few minutes to recover in a secondary availability zone.  As the data is automatically written to multiple AZs, there's no loss of data in the event of a failure.
 
 #### Platform to runtime
 
@@ -186,7 +194,7 @@ Many times your data is stored in an external location. Data Fabric helps you to
 
 Customers use [Data Fabric connectors](../../integration-with-systems/external-databases/intro.md) for integrations. Data Fabric processes all your external system data uniformly, with no persistent storage within Data Fabric or ODC architecture.
 
-Data Fabric Connectors retrieve essential metadata from external systems, making it crucial for developers to select integration tables, objects, and columns. The selected metadata is securely stored in serverless, NoSQL databases during the connection's lifetime in the ODC Portal.
+Data Fabric Connectors retrieve essential metadata from external systems, making it crucial for developers to select integration tables, objects, and columns. The selected metadata is securely stored in serverless, NoSQL databases for the duration of the connection in the ODC Portal.
 
 ### Memory
 
@@ -200,7 +208,7 @@ Different types of data are stored distinctively in memory:
 
 * **Query parameter** values are held by Kubernetes Pod memory and the in-memory database, typically discarded once the client consumes the result. If an error prevents the client from closing the statement, which triggers deletion, the parameter values are deleted after roughly 5 minutes.
 * **Query results** reside in memory in the Kubernetes Pod memory, with the same retention time as query parameter values.
-* **Metadata**, such as tables, columns, Primary Key/Foreign Key constraints, remain in memory in the Kubernetes Pod and the in-memory database for the connection's duration.
+* **Metadata**, such as tables, columns, primary and foreign key constraints, remain in memory in the Kubernetes pod and the in-memory database for the connection's duration.
 
 ![Diagram illustrating the storage and retention of query parameter values, query results, and metadata in memory within OutSystems Developer Cloud.](images/memory-usage-diag.png "Memory Data Handling")
 
@@ -216,11 +224,11 @@ In the ODC architecture, caches optimize performance by storing certain informat
 
 When creating a connection, developers must supply external system details such as username, password, and host. ODC securely stores sensitive data like passwords by encrypting them as secrets in a cloud secret store. Passwords are never stored in clear text and secrets are not human-readable. Secrets are decrypted only when connecting to the external system by an automated process and without human intervention.
 
-When editing an existing connection, secrets are not fetched and decrypted from the cloud secret store. Instead, the developer will have to provide the details considered secrets one more time to save the connection.
+When editing an existing connection, secrets are not fetched and decrypted from the cloud secret store. Instead, the developer must provide the details considered secrets again to save the connection.
 
 ### Data in transit
 
-Queries executed by developers in data preview (ODC Studio) or by end-users in runtime Apps, along with their results, traverse different channels for communication. Queries begin at the frontend, pass through various Kubernetes services, connect to the customer's system, and returns to the frontend with query results.
+Queries executed by developers in data preview (ODC Studio) or by end-users in runtime apps, along with their results, traverse different channels for communication. Queries begin at the frontend, pass through various Kubernetes services, connect to the customer's system, and return to the frontend with query results.
 
 ![Flow diagram showing the path of data in transit from execution of queries to the return of results in OutSystems Developer Cloud.](images/data-in-transit-diag.png "Data Transit Flow")
 
@@ -232,7 +240,7 @@ There are two communication channels in this process:
 
 ### Monitoring
 
-ODC monitoring and observability tools never log sensitive data to ensure confidentiality. Sensitive data is omitted to prevent human readability. For troubleshooting purposes, queries are logged when errors occur, query results aren't logged. In the interest of security, query results are never logged, not even for troubleshooting purposes.
+ODC monitoring and observability tools never log sensitive data to ensure confidentiality. Sensitive data is omitted so it can't be read by humans. For troubleshooting purposes, queries are logged when errors occur, query results aren't logged. In the interest of security, query results are never logged, not even for troubleshooting purposes.
 
 ### Departure
 
