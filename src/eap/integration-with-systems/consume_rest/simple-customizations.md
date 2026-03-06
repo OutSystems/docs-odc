@@ -30,7 +30,7 @@ When consuming a REST API, you can add logic to customize the information sent i
 **OnAfterResponse**
 :   Use to modify the information of the original response, such as the status code or the response text.
 
-![Diagram showing the flow of OnBeforeRequest and OnAfterRequest callbacks in OutSystems Developer Cloud.](images/callbacks-diag.png "Callbacks Diagram")
+![Diagram showing the flow of OnBeforeRequest and OnAfterResponse callbacks in OutSystems Developer Cloud.](images/callbacks-diag.png "Callbacks Diagram")
 
 <div class="info" markdown="1">
 
