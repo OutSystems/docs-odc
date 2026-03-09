@@ -64,17 +64,17 @@ For more information about the OutSystems API contract, refer to [OutSystems API
 
 The following are the parameters to add a custom AI model,
 
-| Parameter name| Description | Notes |
-|--|----|--|
-| Name(AI model)  | An identifiable name for the AI model. | |
-| Id              | Identifier for the AI model, Auto-filled with the Name field without blank spaces. You can also edit the field. |  |
-| Description     |  Description of the AI model. | Optional |
-| Name (endpoint) | An identifiable name for the endpoint. |  |
-| Endpoint URL    | URL of the custom-built AI model connector. | |
-| Status          | The current state of the AI model.  | Optional |
-| Priority        | The priority level of the endpoint determines the order in which the agent utilizes it. For example, A priority 1 endpoint is used first. If it experiences an outage, the priority 2 endpoint takes over to prevent downtime.  | The first endpoint you add is always assigned the first priority. |
-| Name (header)   | The name of the header  | |
-| Value           | The value of the header | |
+| Parameter name | Description | Notes |
+| -- | ---- | -- |
+| Name(AI model) | An identifiable name for the AI model. | |
+| Id | Identifier for the AI model, Auto-filled with the Name field without blank spaces. You can also edit the field. | |
+| Description | Description of the AI model. | Optional |
+| Name (endpoint) | An identifiable name for the endpoint. | |
+| Endpoint URL | URL of the custom-built AI model connector. | |
+| Status | The current state of the AI model. | Optional |
+| Priority | The priority level of the endpoint determines the order in which the agent utilizes it. For example, A priority 1 endpoint is used first. If it experiences an outage, the priority 2 endpoint takes over to prevent downtime. | The first endpoint you add is always assigned the first priority. |
+| Name (header) | The name of the header | |
+| Value | The value of the header | |
 
 ## Next steps
 

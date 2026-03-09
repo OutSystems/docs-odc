@@ -50,13 +50,13 @@ The following example shows a scenario in which you want to add or update the na
 
 ## Properties
 
-|Name|Description |Mandatory| Observations |
-|---|---|---|---|
-|Name|Identifies an element in the scope where it is defined, like a screen, action, or app/library.| Yes| |
-|Description| Text that documents the element.  |  | Useful for documentation purposes. The maximum size of this property is 2000 characters. |
-|Record Definition|Entity or structure that defines the structure of the data that you want to load. |Yes | The attribute labels must match the column header names in the imported Excel.  |
-|File Content| Holds the Excel file.| Yes | The expected data type is Binary Data.|
-|Sheet Name| Name of the Excel sheet to import. By default, the first sheet is imported unless a sheet named 'Sheet1' exists in the file. |  |The expected data type is Text.                            |
+| Name | Description | Mandatory | Observations |
+| --- | --- | --- | --- |
+| Name | Identifies an element in the scope where it is defined, like a screen, action, or app/library. | Yes | |
+| Description | Text that documents the element. | | Useful for documentation purposes. The maximum size of this property is 2000 characters. |
+| Record Definition | Entity or structure that defines the structure of the data that you want to load. | Yes | The attribute labels must match the column header names in the imported Excel. |
+| File Content | Holds the Excel file. | Yes | The expected data type is Binary Data. |
+| Sheet Name | Name of the Excel sheet to import. By default, the first sheet is imported unless a sheet named 'Sheet1' exists in the file. | | The expected data type is Text. |
 
 ## Related resources
 

@@ -21,7 +21,7 @@ coverage-type:
 ## Actions
 
 | Action | Description |
-| ---|--- |
+| --- | --- |
 | XmlAttribute_GetValue | Returns the value of a Xml Attribute. |
 | XmlAttribute_SetValue | Sets the value of a Xml Attribute. |
 | XmlDocument_CreateRootElement | Creates a root Xml Element in a Xml Document. |

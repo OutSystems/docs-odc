@@ -40,11 +40,11 @@ The following example shows a scenario in which you export a list of employees f
 
 ## Properties
 
-|Name|Description|Mandatory|Default value|Observations |
-|---|---|---|---|---|
-|Name|Identifies an element in the scope where it's defined, like a screen, action, or app/library.| Yes| RecordListToExcel1 | |
-|Description| Text that documents the element.  | No | | Useful for documentation purposes. The maximum size of this property is 2000 characters. |
-|Record List| Holds the list of records to be exported to an Excel file |Yes | | The required type for this property is **Record List**.  |
+| Name | Description | Mandatory | Default value | Observations |
+| --- | --- | --- | --- | --- |
+| Name | Identifies an element in the scope where it's defined, like a screen, action, or app/library. | Yes | RecordListToExcel1 | |
+| Description | Text that documents the element. | No | | Useful for documentation purposes. The maximum size of this property is 2000 characters. |
+| Record List | Holds the list of records to be exported to an Excel file | Yes | | The required type for this property is **Record List**. |
 
 ## Related resources
 

@@ -33,13 +33,13 @@ Any users with an email address matching those domains are classified as interna
 
 ODC classifies users without an email address as internal users. You can implement flows that promote users to [update an email](../reference/system-actions/user.md#startupdateemail) address in their User Profile.
 
-| Criteria         | Internal End-User                                             | External End-User                                              |
-|----------------------|-------------------------------------------------------------------|---------------------------------------------------------------------|
-| **Email domain**     | Matches a domain you configured in the ODC Portal                | Doesn't match any configured domain                                |
-| **No email address** | Counted as internal                                              | Not applicable                                                      |
-| **License usage**    | Counts toward internal end-user quota                            | Counts toward external end-user quota                              |
-| **Typical users**    | Employees, internal collaborators                                | Customers, partners, third parties                                        |
-| **How to configure** | Add your organization's email domains in the **Manage Subscription** section of the ODC Portal | Automatically applies to all other domains                          |
+| Criteria | Internal End-User | External End-User |
+| ---------------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| **Email domain** | Matches a domain you configured in the ODC Portal | Doesn't match any configured domain |
+| **No email address** | Counted as internal | Not applicable |
+| **License usage** | Counts toward internal end-user quota | Counts toward external end-user quota |
+| **Typical users** | Employees, internal collaborators | Customers, partners, third parties |
+| **How to configure** | Add your organization's email domains in the **Manage Subscription** section of the ODC Portal | Automatically applies to all other domains |
 
 ## Configure your domains for user classification
 

@@ -107,22 +107,22 @@ For existing connections, when objects are changed or new ones introduced, it's 
 Administrators  must supply the following information to connect to the external connector.
 
 | Parameter | Description | Needs testing connection when edited | Notes |
-|--|--|--|--|
-| Connection name | The name of the connection | No |  |
+| -- | -- | -- | -- |
+| Connection name | The name of the connection | No | |
 | Description | Information about the database connection | No | Optional |
-| Username | Username to access the database | Yes |  |
-| Password | Password to access the database | Yes |  |
+| Username | Username to access the database | Yes | |
+| Password | Password to access the database | Yes | |
 | Server for SQL server and Azure SQL \ Host for Oracle server | Endpoint for your database connection | Yes | For Private Gateway, enter `secure-gateway`. |
 | Port | The port number to connect to the database | Yes | A default port number is shown that can changed. IF you're using Private Gateway, enter the port configured in the Cloud Connector. |
-| Database for SQL server and Azure SQL \ Service name for Oracle server | Name of the database | Yes |  |
+| Database for SQL server and Azure SQL \ Service name for Oracle server | Name of the database | Yes | |
 | Additional parameters | Additional parameters for a database connection | Yes | For more information, see [additional parameters](#additional-parameters) |
-| SAP Server domain | SAP server/host address| Yes |  |
+| SAP Server domain | SAP server/host address | Yes | |
 | SAP Client | If the SAP system has multiple clients, you must provide a client number. Leave the input blank if you connect to the default client | Yes | Optional |
-| Manual entry | To manually enter the Service URL| Yes | If you select "Manual entry" for a private gateway, then the domain must be `secure-gateway:<port>/..`|
+| Manual entry | To manually enter the Service URL | Yes | If you select "Manual entry" for a private gateway, then the domain must be `secure-gateway:<port>/..` |
 | Basic authentication type | Basic is a simpler authentication method than OAuth | Yes | |
 | Sandbox connection | Sandbox enables a partial or full copy of production data to test the connector. | Yes | |
 | Schema | Optional schema name for PostgreSQL connections | Yes | If provided, it specifies the default schema to be used. |
-| Application Server | Hostname of the SAP application server where the remote function calls are executed. | Yes |  |
+| Application Server | Hostname of the SAP application server where the remote function calls are executed. | Yes | |
 | System ID | Three-letter identifier of the SAP installation to which to connect. | Yes | |
 | Instance Number | Two-digit identifier of the SAP instance to which to connect. | Yes | |
 | SAP route string | A route string describes the connection path between ODC and SAP BAPI | Yes | |

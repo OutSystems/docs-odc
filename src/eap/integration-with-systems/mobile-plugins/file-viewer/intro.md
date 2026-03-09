@@ -118,15 +118,15 @@ More information about parts of the plugin.
 
 Here is the reference of the actions you can use from the File Viewer plugin. The File Viewer plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check out [cordova-outsystems-file-viewer](https://github.com/ionic-team/cordova-outsystems-file-viewer) and [capacitor/file-viewer](https://github.com/ionic-team/capacitor-file-viewer).
 
-| Action                               | Description                                                                                  |
+| Action | Description |
 | ------------------------------------ | -------------------------------------------------------------------------------------------- |
-| **CheckFileViewerPlugin**            | Checks if the plugin is loaded.                                                              |
-| **OpenDocumentFromLocalPath**        | Opens a file stored in the local filesystem. For PWA, a file picker is opened.               |
-| **OpenDocumentFromResources**        | Opens a file from the app resources.                                                 |
-| **OpenDocumentFromUrl**              | Opens a file from a remote URL.                                                              |
+| **CheckFileViewerPlugin** | Checks if the plugin is loaded. |
+| **OpenDocumentFromLocalPath** | Opens a file stored in the local filesystem. For PWA, a file picker is opened. |
+| **OpenDocumentFromResources** | Opens a file from the app resources. |
+| **OpenDocumentFromUrl** | Opens a file from a remote URL. |
 | **PreviewMediaContentFromLocalPath** | iOS only. Opens media files in the device's local filesystem, using a built-in media player. |
-| **PreviewMediaContentFromResources** | iOS only. Opens media files from the app resources, using a built-in media player.   |
-| **PreviewMediaContentFromUrl**       | iOS only. Opens media files from a URL, using a built-in media player.                       |
+| **PreviewMediaContentFromResources** | iOS only. Opens media files from the app resources, using a built-in media player. |
+| **PreviewMediaContentFromUrl** | iOS only. Opens media files from a URL, using a built-in media player. |
 
 #### Deprecated Client Actions
 
@@ -142,18 +142,18 @@ The following client actions are still offered, but have been deprecated since v
 
 Since version 2.0.0 of the Plugin, specific errors are returned on native platforms.
 
-| Error code        | Platform(s)      | Message                                                                                   |
-| ------------------| ---------------- | ----------------------------------------------------------------------------------------- |
-| OS-PLUG-FLVW-0001 | Android, iOS     | Cordova and Capacitor isn't defined.                                                        |
-| OS-PLUG-FLVW-0002 | Android, iOS     | The app is running with an old version of the plugin. Please create a new mobile package. |
-| OS-PLUG-FLVW-0003 | Android, iOS     | File Viewer Plugin is not loaded.                                                         |
-| OS-PLUG-FLVW-0004 | Android, iOS     | The file you are trying to open does not exist.                                           |
-| OS-PLUG-FLVW-0005 | Android, iOS     | The URL you are trying to open is malformed.                                              |
-| OS-PLUG-FLVW-0006 | Android, iOS     | Path of the file to open is either null or empty.                                         |
-| OS-PLUG-FLVW-0007 | Android, iOS     | URL to open is either null or empty.                                                      |
-| OS-PLUG-FLVW-0008 | Android, iOS     | Could not open the file.                                                                  |
-| OS-PLUG-FLVW-0009 | Android, iOS     | Invalid parameters.                                                                       |
-| OS-PLUG-FLVW-0010 | Android          | There is no app to open this file.                                                        |
-| OS-PLUG-FLVW-0011 | iOS              | Cordova / Capacitor bridge isn’t initialized.                                             |
-| OS-PLUG-FLVW-0012 | iOS              | The download failed.                                                                      |
-| OS-PLUG-FLVW-0013 | iOS              | The file has no extension.                                                                |
+| Error code | Platform(s) | Message |
+| ------------------ | ---------------- | ----------------------------------------------------------------------------------------- |
+| OS-PLUG-FLVW-0001 | Android, iOS | Cordova and Capacitor isn't defined. |
+| OS-PLUG-FLVW-0002 | Android, iOS | The app is running with an old version of the plugin. Please create a new mobile package. |
+| OS-PLUG-FLVW-0003 | Android, iOS | File Viewer Plugin is not loaded. |
+| OS-PLUG-FLVW-0004 | Android, iOS | The file you are trying to open does not exist. |
+| OS-PLUG-FLVW-0005 | Android, iOS | The URL you are trying to open is malformed. |
+| OS-PLUG-FLVW-0006 | Android, iOS | Path of the file to open is either null or empty. |
+| OS-PLUG-FLVW-0007 | Android, iOS | URL to open is either null or empty. |
+| OS-PLUG-FLVW-0008 | Android, iOS | Could not open the file. |
+| OS-PLUG-FLVW-0009 | Android, iOS | Invalid parameters. |
+| OS-PLUG-FLVW-0010 | Android | There is no app to open this file. |
+| OS-PLUG-FLVW-0011 | iOS | Cordova / Capacitor bridge isn’t initialized. |
+| OS-PLUG-FLVW-0012 | iOS | The download failed. |
+| OS-PLUG-FLVW-0013 | iOS | The file has no extension. |

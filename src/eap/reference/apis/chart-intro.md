@@ -30,15 +30,15 @@ The Charts extensibility allows you to create, populate, and customize charts. O
 
 OutSystems provides a collection of charts that allow you to build your screens with a simple drag-and-drop from ODC Studio's toolbox.
 
-|Widget|Description |
-|---|---|
-|[Area Chart](area.md)|The Area Chart is composed of data points plotted and connected by a line with a colored area below the line.|
-|[Bar Chart](bar.md)|The Bar Chart is a simple, two-dimensional chart where rectangular bars are placed along the X-Axis with bar length representing the value for a specific category.|
-|[Column Chart](column.md)|The Column Chart is a two-dimensional chart where rectangular bars are placed along the Y-Axis with bar height representing the value for a specific category.|
-|[Donut Chart](donut.md)|The Donut Chart is a circular graph that displays data in rings, where each ring represents a category and the size of the ring corresponds to the value of the data being presented.|
-|[Line Chart](line.md)|The Line Chart is a simple, two-dimensional chart where each point represents a single value. The data points are joined by a line to depict a trend, usually a period of time. |
-|[Pie Chart](pie.md)|The Pie Chart is a circular graph that displays data in sections, where each section represents a category and the size of the section corresponds to the value of the data being presented.|
-|[Radar Chart](radar.md)|The Radar Chart, also known as a polar chart, illustrates multivariate data in a two-dimensional chart, plotted along a radial axis.|
+| Widget | Description |
+| --- | --- |
+| [Area Chart](area.md) | The Area Chart is composed of data points plotted and connected by a line with a colored area below the line. |
+| [Bar Chart](bar.md) | The Bar Chart is a simple, two-dimensional chart where rectangular bars are placed along the X-Axis with bar length representing the value for a specific category. |
+| [Column Chart](column.md) | The Column Chart is a two-dimensional chart where rectangular bars are placed along the Y-Axis with bar height representing the value for a specific category. |
+| [Donut Chart](donut.md) | The Donut Chart is a circular graph that displays data in rings, where each ring represents a category and the size of the ring corresponds to the value of the data being presented. |
+| [Line Chart](line.md) | The Line Chart is a simple, two-dimensional chart where each point represents a single value. The data points are joined by a line to depict a trend, usually a period of time. |
+| [Pie Chart](pie.md) | The Pie Chart is a circular graph that displays data in sections, where each section represents a category and the size of the section corresponds to the value of the data being presented. |
+| [Radar Chart](radar.md) | The Radar Chart, also known as a polar chart, illustrates multivariate data in a two-dimensional chart, plotted along a radial axis. |
 
 ## Addons
 

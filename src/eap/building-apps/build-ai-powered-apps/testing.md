@@ -69,12 +69,12 @@ Testing occurs within the development environment. ODC Studio doesn't connect to
 
 * The exposed service action must include the following parameters for the test app to generate successfully. The names and data types must be an exact match.
 
-|                   |             |         |
+| | | |
 | ----------------- | ----------- | --------- |
-| Type of Parameter | Name        | Data type |
-| Input             | SessionId   | Text      |
-| Input             | UserInput   | Text      |
-| Output            | Response    | Text      |
+| Type of Parameter | Name | Data type |
+| Input | SessionId | Text |
+| Input | UserInput | Text |
+| Output | Response | Text |
 
 You can include more parameters in your service action as needed.
 
