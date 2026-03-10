@@ -123,17 +123,17 @@ To create a binary setting in the browser, follow these steps:
 1. Right-click **Extensibility Settings**, click **Add Extensibility Setting**.
    For detailed information about using extensibility settings, refer to [Configuring mobile apps](../../building-apps/mobile/configuring-mobile-apps.md#configure-extensibility-settings-configure-extensibility-settings).
 
-2. Name your file similar to "PrivacyInfoFile” and ensure the **Data Type** is set to `Binary Data` and **Publish**.
+1. Name your file similar to "PrivacyInfoFile” and ensure the **Data Type** is set to `Binary Data` and **Publish**.
 
-3. In the portal, navigate to **Apps,** and select your app.
+1. In the portal, navigate to **Apps,** and select your app.
 
-4. Navigate to **Mobile distribution** and select **Extensibility settings**.
+1. Navigate to **Mobile distribution** and select **Extensibility settings**.
 
-5. On the **"PrivacyInfoFile"** dropdown list, select **Edit**.
+1. On the **"PrivacyInfoFile"** dropdown list, select **Edit**.
 
     ![Screenshot of the ODC portal highlighting the PrivacyInfoFile setting with an Edit option.](images/edit-privacy-setting-pl.png "Editing Privacy Info File in ODC Portal")
 
-6. Upload your PrivacyInfo.xcprivacy file and **Save**.
+1. Upload your PrivacyInfo.xcprivacy file and **Save**.
 
 In ODC Studio, to configure your Extensibility Configurations:
 
