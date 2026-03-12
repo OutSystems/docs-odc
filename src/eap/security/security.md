@@ -164,7 +164,7 @@ A static code analysis tool scans [Platform service](../manage-platform-app-life
 
 Daily vulnerability scanning of the container registry covers the current version of the Platform service container images and all the deployed app images across all customer Runtime stages. When a vulnerability is detected, OutSystems security engineers fix it and release a new version of the affected Platform service(s) or app base container image.
 
-For the list of patches for known vulnerabilities, see **Portal** > **App security**. The app security screen shows the following:
+For the list of patches for known vulnerabilities, in the **Portal**, see **Maintain** > **Platform Updates** > **App security** tab. The app security screen shows the following:
 
 * The list of apps with known vulnerabilities
 * Classification of the vulnerabilities
@@ -222,7 +222,7 @@ A network namespace isolates each stage [within each organization's Runtime](#is
 
 Each Runtime stage has an isolated Amazon Aurora Serverless database. The database for the Production stage is designed to support high availability, with the ability to add a read replica in a different Availability Zone (AZ) to ensure immediate failover in the event of an AZ outage or failure.
 
-For more information see [Cloud-native architecture of OutSystems Developer Cloud](../manage-platform-app-lifecycle/platform-architecture/identity.md#runtime-data).
+For more information, see [Cloud-native architecture of OutSystems Developer Cloud](../manage-platform-app-lifecycle/platform-architecture/identity.md#runtime-data).
 
 ### Encryption at-rest
 
@@ -262,7 +262,7 @@ Customers can report suspected privacy or security incidents through the Support
 
 OutSystems created a public vulnerability policy to provide customers with guidance and information in the event of a vulnerability reported in an OutSystems product.
 
-For more information see [ODC vulnerability policy](https://success.outsystems.com/support/security/vulnerabilities/).
+For more information, see [ODC vulnerability policy](https://success.outsystems.com/support/security/vulnerabilities/).
 
 ---
 <div class="info" markdown="1">
