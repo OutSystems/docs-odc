@@ -47,7 +47,7 @@ Download and store locally only the minimum subset of data relevant to the user 
 
 </div>
 
-Download the [sample module for the Read-Only Data pattern](https://www.outsystems.com/forge/component-overview/16957/offline-data-sync-patterns-read-only-simple-odc), which uses companies as an example for data synchronization. The following sections explain how to automatically generate this synchronization pattern and provide detailed descriptions of the data model and logic used in the sample module.
+Explore the Forge component [Offline Data Sync Patterns - Read Only Simple](https://www.outsystems.com/forge/component-overview/16957/offline-data-sync-patterns-read-only-simple-odc), which uses companies as an example for data synchronization to understand more about this pattern. The following sections explain how to automatically generate this synchronization pattern and provide detailed descriptions of the component's data model and logic.
 
 ## Automatically generate the pattern for an entity
 
