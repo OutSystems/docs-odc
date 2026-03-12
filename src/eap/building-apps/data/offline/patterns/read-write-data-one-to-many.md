@@ -50,7 +50,7 @@ In this sample pattern, a dictionary maintains the relationship between the pare
 | 6 | 136 |
 | 7 | 150 |
 
-You can download the [sample module for the Read/Write Data One-to-Many pattern](https://www.outsystems.com/forge/component-overview/16955/offline-data-sync-patterns-r-w-one-to-many-odc) and examine the logic in your environment.
+Explore the Forge component [Offline Data Sync Patterns - R/W One To Many](https://www.outsystems.com/forge/component-overview/16955/offline-data-sync-patterns-r-w-one-to-many-odc) and examine the logic in your environment
 
 ## Data model
 

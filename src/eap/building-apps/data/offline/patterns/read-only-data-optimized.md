@@ -41,7 +41,7 @@ The following is an overview of the Read-Only data optimized pattern logic:
 
 1. ![Icon representing a client device in the Read-Only Data Optimized pattern](images/icon-client.png "Client Icon") Deletes and recreates data in the local storage with the data received from the server.
 
-Download the [sample module for the Read-Only Data Optimized pattern](https://www.outsystems.com/forge/component-overview/16956/offline-data-sync-patterns-read-only-optimized-odc), which uses companies as an example for data synchronization. The following sections explain the data model and logic used in the sample module.
+Explore the Forge component [Offline Data Sync Patterns - Read Only Optimized](https://www.outsystems.com/forge/component-overview/16956/offline-data-sync-patterns-read-only-optimized-odc), which uses companies as an example for data synchronization tand examine the logic in your environment. The following sections explain the component's data model and logic.
 
 ## Data model
 
