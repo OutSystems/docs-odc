@@ -55,7 +55,7 @@ To add a semantic search to your app:
     ![ODC Studio interface showing the semantic search element added to a server action flow.](images/semantic-search-odcs.png "Adding Semantic Search to Logic Flow")
 1. In the semantic search properties, make sure to:
     1. Write a Search Query to be used by the semantic search to perform the search.
-    1. Select the source. This will require to select and entity that you've made searchable before.
+    1. Select the source. This will require to select an entity that you've made searchable before.
     1. Check all the searchable attributes that you want to use on your search
 
     ![ODC Studio interface showing the properties of a semantic search element, including search query and searchable attributes.](images/semantic-search-details-odcs.png "Semantic Search Properties")
