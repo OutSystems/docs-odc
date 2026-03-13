@@ -31,23 +31,23 @@ This document examines the potential consequences of removing these directives a
 
 ## Impacts on OutSystems components
 
-### OutSystems Charts
+### OutSystems charts
 
 * **Issue**: Version 1 of the Charts component may experience runtime issues.
 
-    * **Recommendation**: Update to the latest version of the Charts component.
+    * **Recommendation**: Migrate each chart block to the new Charts component versions in your app (for example, replace `DonutChart_V1` with `DonutChart`). In ODC Studio you will see blocks with the '_V1' suffix and blocks without it; migrate your implementation to the non-suffixed blocks. For more information, see [Charts FAQs](https://charts.outsystems.com/).
 
 For more information about OutSystems Charts, refer to [OutSystems Charts](../reference/apis/chart-intro.md).
 
-### OutSystems Data Grid
+### OutSystems data grid
 
 * **Issue**: The **Calculated Column**  won't work.
 
     * **Workaround**: Avoid using **Calculated Columns**.
 
-For more inforamtion about OutSystems Data Grid, refer to [OutSystems Data Grid](../building-apps/ui/patterns/interaction/data-grid/data-grid-overview.md).
+For more inforamtion about OutSystems data grid, refer to [OutSystems Data Grid](../building-apps/ui/patterns/interaction/data-grid/data-grid-overview.md).
 
-### OutSystems Maps
+### OutSystems maps
 
 The following table summarizes the OutSystems map and Leaflet map functionality when the unsafe CSP directives are removed.
 
