@@ -134,7 +134,7 @@ The editor tracks errors in real-time as you build. You can monitor and access t
 
 #### Navigate and resolve errors
 
-The **notfication** panel eliminates manual searching within large workflows. Interact with the panel to speed up your debugging process:
+The **notification** panel eliminates manual searching within large workflows. Interact with the panel to speed up your debugging process:
 
 * **Search and filter**: Use the search bar in the panel to find specific errors by **Activity**, **Property** or **Message**.
 * **Inspect details**: View the specific cause of the error.
