@@ -112,7 +112,6 @@ The following versions of systems are supported to integrate with ODC using [Dat
 
 * **Microsoft SQL Server**:
 
-    * SQL Server 2014
     * SQL Server 2016
     * SQL Server 2017
     * SQL Server 2019
