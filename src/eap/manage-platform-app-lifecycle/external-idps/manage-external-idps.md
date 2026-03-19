@@ -16,9 +16,10 @@ tags: external identity providers,idp management,odc authentication,idp replacem
 outsystems-tools:
   - odc studio
   - odc portal
-figma: 
+figma:
 app_type: mobile apps,reactive web apps
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # Manage identity providers
@@ -39,7 +40,7 @@ To replace an external identity provider (IdP) in ODC, follow these steps:
 
     * If you use a setting with the IdP name, [update the setting in the ODC Portal](../configure-app-settings.md#view-and-edit-default-values-of-the-app-settings) so all your apps are directed to the new IdP. There's no need to republish the apps.
 
-    * If you don’t use a setting with the IdP name, in each app in ODC Studio set the **IdentityProvider** property to your IdP name (instead of `GetMyProvider.MyProvider`) wherever you set it (refer to [Delete the built-in login screen and redirect to an external provider](apps-delete-login-screen.md) or [Modify the built-in login screen for external provider login](apps.md)). Then, republish the apps.
+    * If you don’t use a setting with the IdP name, in each app in ODC Studio set the **IdentityProvider** property to your IdP name (instead of `GetMyProvider.MyProvider`) wherever you set it (refer to [Redirect to an external provider by adding an alternate path](apps-delete-login-screen.md) or [Modify the built-in login screen for external provider login](apps.md)). Then, republish the apps.
 
     <div class="info" markdown="1">
 

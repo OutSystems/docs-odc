@@ -18,6 +18,7 @@ coverage-type:
   - apply
 topic:
   - external-idps
+isautopublish: true
 ---
 
 # Modify the built-in login screen for external provider login
@@ -32,7 +33,7 @@ This page is for scenarios where you want to customize the built-in login screen
 
 <div class="info" markdown="1">
 
-If you prefer to delete the built-in login screen and redirect users directly to a single external identity provider, refer to [Delete the built-in login screen and redirect to an external provider](apps-delete-login-screen.md).
+If you prefer to redirect users to a single external identity provider while keeping the built-in login path for easy revert, refer to [Redirect to an external provider by adding an alternate path](apps-delete-login-screen.md).
 
 </div>
 

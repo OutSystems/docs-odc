@@ -17,6 +17,7 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+isautopublish: true
 ---
 
 # Impacts of removing unsafe directives
