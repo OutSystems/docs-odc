@@ -138,11 +138,11 @@ If you’re working with apps that were created before this built-in logic was a
 **Option 1: Do nothing (default behavior)**
 :   Rely on the pre-built login screen that ODC Studio provides. The login screen automatically lists the IdPs assigned to the app’s stage. You manage which IdPs are shown to end-users by assigning or unassigning them from the stage in the ODC Portal.
 
-**Option 2: Add an alternate path to redirect to an external provider**  
-:   Use this option when you want to redirect users to a single external IdP while keeping the built-in login path so you can revert easily. For detailed steps, refer to [Redirect to an external provider by adding an alternate path](apps-delete-login-screen.md).
+**Option 2: Bypass the built-in login screen and redirect to an external provider**  
+   Use this option when you want to redirect users to a single external IdP while keeping the built-in login path so you can revert easily. For detailed steps, refer to [Bypass the built-in login screen and redirect to an external provider](apps-delete-login-screen.md).
 
 **Option 3: Modify the built-in login screen to add buttons for external provider login**  
-:   Use this option when you want to keep the built-in login (for example, the built-in provider) and add one or more buttons for external IdPs, or when you want to customize how external providers appear. For detailed steps, refer to [Modify the built-in login screen to add buttons for external provider login](apps.md).
+   Use this option when you want to keep the built-in login (for example, the built-in provider) and add one or more buttons for external IdPs, or when you want to customize how external providers appear. For detailed steps, refer to [Modify the built-in login screen to add buttons for external provider login](apps.md).
 
 <div class="info" markdown="1">
 

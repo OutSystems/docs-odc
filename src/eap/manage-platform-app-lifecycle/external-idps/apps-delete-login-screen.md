@@ -21,7 +21,7 @@ topic:
 isautopublish: true
 ---
 
-# Redirect to an external provider by adding an alternate path
+# Bypass the built-in login screen and redirect to an external provider
 
 For apps created with ODC Studio version 1.3.0 or later, the pre-built login screen automatically shows the Identity Providers (IdPs) assigned to the app’s stage (for example, Development). In those apps, you typically don’t need to change the login screen or flows to support external IdPs—just assign the IdPs you want to the appropriate stage in the ODC Portal.
 
