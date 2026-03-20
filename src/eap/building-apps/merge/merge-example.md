@@ -14,6 +14,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+isautopublish: true
 ---
 
 # Compare and merge example with conflicts
@@ -27,7 +28,7 @@ Due to conflicts, you can't automatically integrate your changes. ODC displays t
 After analyzing the **Compare and Merge** window, you find that:
 
 * You both edited the CSS on the "ClientList" screen. You must resolve the conflicting changes.
-* You both edited the "Section" Assign on the "ButtonOnClick" action. You need to resolve the conflicting changes.
+* You both edited the "Section" Assign on the "SaveOnClick" action. You need to resolve the conflicting changes.
 * The other developer added a new screen called "Report." There are no conflicts to resolve here.
 
 Follow these steps to resolve the conflicts.
@@ -44,9 +45,9 @@ Follow these steps to resolve the conflicts.
 
     ![Compare and Merge section with the 'Done and back' button in the lower right corner](images/merge-example-compare-odcs.png "Merge Example")
 
-1. Double-click **SaveOnClick** to open the **Compare and Merge - ButtonOnClick** window. You see that the `Section` assign element has conflicting values.
+1. Double-click **SaveOnClick** to open the **Compare and Merge - SaveOnClick** window. You see that the `Section` assign element has conflicting values.
 
-    ![Compare and Merge - ButtonOnClick window showing conflicting 'Section' assign values](images/visual-element-changes-odcs.png "Visual Element Changes")
+    ![Compare and Merge - SaveOnClick window showing conflicting 'Section' assign values](images/visual-element-changes-odcs.png "Visual Element Changes")
 
 1. Click on the value viewer labeled by the three dots (`...`) next to the **Assignments** value to open **Compare and Merge - Value** window.
 
@@ -54,7 +55,7 @@ Follow these steps to resolve the conflicts.
 
     ![Checkbox selected in the Merged revision pane indicating a resolved conflict in the app](images/text-changes-checkbox-odcs.png "Resolved Conflicts")
 
-1. Click **Done and back** in the lower right corner to return to the **Compare and Merge - ButtonOnClick** section.
+1. Click **Done and back** in the lower right corner to return to the **Compare and Merge - SaveOnClick** section.
 
 1. Click **Back** in the lower right corner to return to the main **Compare and Merge** window. If there are no conflicts (no elements highlighted in red), you can publish the app.
 
