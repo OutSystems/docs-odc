@@ -15,6 +15,7 @@ outsystems-tools:
 coverage-type:
   - remember
   - understand
+isautopublish: true
 ---
 
 # Allowlisting ODC public IP addresses
@@ -128,7 +129,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 13.244.181.185, 13.247.253.92, 16.28.115.21 |
 | Production | 13.244.83.19, 13.245.107.229, 15.240.18.88 |
 
-#### Middle East (Tel Aviv)
+#### Israel (Tel Aviv)
 
 | Stage | IP Addresses |
 | ----- | ----- |
@@ -220,7 +221,7 @@ The following table lists the Data platform IPs for each customer region. All co
 | --- | --- | --- |
 | US East (North Virginia), CA (Canada Central) | US East (North Virginia) | 54.89.107.154, 54.84.58.61, 35.172.177.93 |
 | South America (São Paulo) | South America (São Paulo) | 54.94.69.128, 18.229.244.40, 15.229.64.9 |
-| Europe (Frankfurt), Europe (London), Middle East (Tel Aviv), Middle East (UAE), South Africa (Cape Town) | Europe (Frankfurt) | 3.73.166.181, 52.59.51.255, 18.194.166.197 |
+| Europe (Frankfurt), Europe (London), Israel (Tel Aviv), Middle East (UAE), South Africa (Cape Town) | Europe (Frankfurt) | 3.73.166.181, 52.59.51.255, 18.194.166.197 |
 | Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta), Asia Pacific (Hong Kong) | Asia Pacific (Singapore) | 52.76.74.134, 18.143.210.11, 52.74.33.192 |
 
 ## Platform unification between O11 and ODC{#platform-unification}
@@ -236,7 +237,7 @@ For Platform unification between O11 and ODC, the O11 LifeTime of self-managed i
 | Europe (Ireland) | 108.128.109.103, 54.72.146.7, 63.34.80.90 |
 | Europe (Frankfurt) | 18.156.39.89, 3.72.181.27, 3.74.37.89 |
 | South Africa (Cape Town) | 13.247.5.224, 15.240.8.216, 16.28.128.241 |
-| Middle East (Tel Aviv) | 51.17.142.29, 51.17.176.86, 51.17.196.54 |
+| Israel (Tel Aviv) | 51.17.142.29, 51.17.176.86, 51.17.196.54 |
 | Middle East (UAE) | 3.29.29.17, 40.172.51.231, 40.172.58.40 |
 | Asia Pacific (Mumbai) | 13.200.88.64, 3.111.176.42, 43.204.167.155 |
 | Asia Pacific (Singapore) | 13.215.4.92, 13.250.223.227, 13.250.228.210 |
