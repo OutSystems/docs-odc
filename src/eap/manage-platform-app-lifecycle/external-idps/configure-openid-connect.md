@@ -21,6 +21,7 @@ coverage-type:
 topic:
   - external-idps
   - idp-openidp
+isautopublish: true
 ---
 
 # Add an OpenID Connect identity provider
@@ -90,11 +91,11 @@ To add a new OpenID Connect provider, follow these steps:
 
 ODC adds the provider to the list of available providers.
 
-    <div class="warning" markdown="1">
+<div class="warning" markdown="1">
 
-    If you make any changes to the client secret after it has been applied, the changes may take up to one hour to take effect due to caching. During this period, the previously applied client secret remains in use. To prevent downtime, keep the old client secret configured in your external IdP for at least one hour after the change.
+If you make any changes to the client secret after it has been applied, the changes may take up to one hour to take effect due to caching. During this period, the previously applied client secret remains in use. To prevent downtime, keep the old client secret configured in your external IdP for at least one hour after the change.
 
-    </div>
+</div>
 
 ## Next step
 
