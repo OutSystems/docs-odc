@@ -22,7 +22,8 @@ audience:
 outsystems-tools:
   - odc portal
   - user management app
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # Classify end-users in ODC
