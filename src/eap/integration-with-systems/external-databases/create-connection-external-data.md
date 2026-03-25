@@ -18,6 +18,7 @@ audience:
   - full stack developers
   - mobile developers
   - frontend developers
+isautopublish: true
 ---
 
 # Create connections to external data sources
@@ -47,7 +48,19 @@ To access private data that is not available over the internet, connect to your 
 * All data sources:
     1. In the ODC Portal, open the connection configuration screen. First, toggle on the `Private gateway` and then enter the port number in the `Private gateway port` field.
 * SAP BAPI database:
-    1. Run the Cloud Connector with the following command: `./outsystemscc --header "token: <token>" <secure-gateway-address> R:<local-port>:<sap-ip-address>:<remote-port>`. This directs traffic from `secure-gateway:<local-port>` to `<sap-ip-address>:<remote-port>`.
+    1. Run the Cloud Connector with the following command:
+
+        ```
+        ./outsystemscc --header "token: TOKEN" SECURE_GATEWAY_ADDRESS R:LOCAL_PORT:SAP_IP_ADDRESS:REMOTE_PORT
+        ```
+
+        Replace the following:
+
+        * `TOKEN`: Token value used by Cloud Connector.
+        * `SECURE_GATEWAY_ADDRESS`: Address of the secure gateway endpoint.
+        * `LOCAL_PORT`: Local port used by the secure gateway.
+        * `SAP_IP_ADDRESS`: IP address of the SAP host.
+        * `REMOTE_PORT`: Port used by the SAP service.
     1. To route requests through the Cloud Connector and still use a valid Application Server value, a [SAP Router](https://support.sap.com/en/tools/connectivity-tools/saprouter.html) is needed.
 * Azure SQL Server (all instances):
     1. Proxy mode is required, as it ensures a stable connection by routing all traffic through the Azure SQL Gateway.
@@ -118,7 +131,7 @@ Administrators  must supply the following information to connect to the external
 | Additional parameters | Additional parameters for a database connection | Yes | For more information, see [additional parameters](#additional-parameters) |
 | SAP Server domain | SAP server/host address | Yes | |
 | SAP Client | If the SAP system has multiple clients, you must provide a client number. Leave the input blank if you connect to the default client | Yes | Optional |
-| Manual entry | To manually enter the Service URL | Yes | If you select "Manual entry" for a private gateway, then the domain must be `secure-gateway:<port>/..` |
+| Manual entry | To manually enter the Service URL | Yes | If you select "Manual entry" for a private gateway, then the domain must be `secure-gateway:PORT/..`. Replace `PORT` with your private gateway port. |
 | Basic authentication type | Basic is a simpler authentication method than OAuth | Yes | |
 | Sandbox connection | Sandbox enables a partial or full copy of production data to test the connector. | Yes | |
 | Schema | Optional schema name for PostgreSQL connections | Yes | If provided, it specifies the default schema to be used. |
@@ -131,13 +144,16 @@ Administrators  must supply the following information to connect to the external
 
 You can use advanced parameters to add additional parameters for a database connection. If there is more than one parameter, you can use `;` semi-colon as a separator for SQL Server connections or the `&` character for other connections. Hover over the info icon to confirm. Different databases may require different parameters, for example:
 
-* For **SQL Server** and **Azure SQL**, to select the desired schema on the database, enter `currentSchema=<schema-name>`. For **Oracle** to select the desired schema on the database, enter `current_schema=<schema-name>`
+* For **SQL Server** and **Azure SQL**, to select the desired schema on the database, enter `currentSchema=SCHEMA_NAME`. For **Oracle** to select the desired schema on the database, enter `current_schema=SCHEMA_NAME`. Replace `SCHEMA_NAME` with the schema name.
 * To establish a connection with the **SQL Server** and allow the client to bypass certificate validation, add the `trustServerCertificate=true` parameter to the additional parameters.
 * You can configure connection pool size for all available relational database connectors. Changing the connection pool size can significantly impact performance.
     * `minConnectionPoolSize`: Default value of 0.
     * `maxConnectionPoolSize`: Default value of 400, as it was the best performer in OutSystems performance tests.
 * The `statsRefreshFrequencyMinutes` parameter, available for all connectors, allows you to adjust how often statistics are refreshed. This adjustment helps Data Fabric connectors maintain optimal query performance. If your external system has a limited number of API requests, it's advisable to increase the refresh frequency. The default value for this parameter is 15 minutes, with a minimum allowable value of 5 minutes. An example of the use of this parameter is: `statsRefreshFrequencyMinutes=30`.
 * For **Salesforce**, include `ArchiveMode=True` in the additional parameters to enable fetching deleted and archived records in queries. By default, the archive mode is disabled. Enabling this mode allows queries to retrieve more data, but handle it with caution, as it may impact performance.
+* For **SAP OData**, set `Pagesize=PAGE_SIZE` in the additional parameters to control the maximum number of rows returned per page when fetching data from SAP OData. Replace `PAGE_SIZE` with the number of rows you want per page. A larger page size improves performance but increases memory use per page.
+
+    If you don't specify `Pagesize`, OutSystems applies a default of `1000` to help keep each response within the maximum allowed body size (10 MB). Very large page sizes produce responses above that limit and may result in a `Bad gateway` error.
 
 ![Screenshot showing the process of additional parameters in OutSystems Developer Cloud Portal](images/additional-parameters-external-systems-pp.png "External Database additional parameters")
 
@@ -182,7 +198,14 @@ The table outlines the parameters necessary to configure a connection to a custo
 Consider the following when integrating an external system.
 
 * .NET does not support the Julian calendar for Oracle and Salesforce, and the minimum supported timestamp value is -62135596800000. To avoid .NET breaking, send the maximum value between the original timestamp and the minimum supported to convert dates like 0001-01-01 to 0001-01-03.
-* Importing Views in ODC Studio only generates `Create<EntityName>` and `DeleteAll<EntityAction>` actions. Since Views don't have primary keys, ODC doesn't generate other entity actions. Inserting a record in a View works only when the View comprises 1 table in the database. When View comprises more than 1 table, you may get an error.
+* Importing Views in ODC Studio only generates `CreateENTITY_NAME` and `DeleteAllENTITY_ACTION` actions.
+
+    Where:
+
+    * `ENTITY_NAME`: Name of the entity.
+    * `ENTITY_ACTION`: Name of the entity action.
+
+    Since Views don't have primary keys, ODC doesn't generate other entity actions. Inserting a record in a View works only when the View comprises one table in the database. When View comprises more than one table, you may get an error.
 * When a database user lacks the necessary permissions to access the table that a Foreign Key (FK) points to, the Foreign Key is treated as a regular column. This can result in errors during the insertion or updating of records. To prevent such issues, it is advisable to ensure that the user can access all the tables required by the application.
 * In a composite key scenario in ODC Studio, entities have only one attribute marked as the Identifier, while the remaining primary keys are treated as regular attributes. As a result, it's crucial to handle entity actions such as Update or Delete with caution. An incorrect update or delete action could result in updating or deleting unintended records in external systems, as these actions rely solely on the single Identifier. For the SAP OData connector, the behavior differs: in a composite key scenario, ODC does not designate any attribute as the Identifier.
 
@@ -299,7 +322,8 @@ SAP OData
         * Potential Issues: Writing data to these attributes may cause runtime errors due to conflicts with SAP business rules.
     * Complex Data Types:
         * Read Operations: Reading data from complex attributes is not supported.
-        * Write Operations: Writing to complex attributes is allowed but may result in runtime errors caused by SAP business rules. For example, an error `\[/IWBEP/CM\_V4\_COS/028] Complex property \&lt;attribute_name&gt; is computed and not changeable`.
+        * Write Operations: Writing to complex attributes is allowed but may result in runtime errors caused by SAP business rules.  
+        For example, an error `\[/IWBEP/CM\_V4\_COS/028] Complex property \&lt;ATTRIBUTE_NAME&gt; is computed and not changeable`.  Replace `ATTRIBUTE_NAME` with the SAP attribute name.
 * SAP v4 entities do not support NULL values. You can override the default value at the attribute level. Users must manually delete the default value during input in the app to prevent NULL values from being written to SAP.
 
 </div>
