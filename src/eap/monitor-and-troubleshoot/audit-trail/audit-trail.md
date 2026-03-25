@@ -12,7 +12,7 @@ outsystems-tools:
 coverage-type:
   - remember
   - understand
-content-type: 
+content-type:
 audience:
   - platform administrators
   - tech leads
@@ -23,6 +23,7 @@ topic:
   - config-app-before-deploy
   - environments-stages
   - deployment-options
+isautopublish: true
 ---
 # Audit trail
 
@@ -205,6 +206,12 @@ Get a detailed record of actions on your core app development resources, includi
 * DeleteSearchServiceConnection
 
 * DeleteMCPConnection
+
+### OutSystems 11 configuration management
+
+Track changes to your configurations for [O11 and ODC platform interoperability](https://www.outsystems.com/tk/redirect?g=6d794961-6191-4e75-a22d-45b8f8b411e3).
+
+* Configure connection to O11 LifeTime environment
 
 ## Understanding log attributes
 
