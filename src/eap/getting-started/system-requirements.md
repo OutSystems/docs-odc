@@ -17,6 +17,7 @@ coverage-type:
   - remember
 topic:
   - download-and-set-up
+isautopublish: true
 ---
 
 # OutSystems system requirements for ODC
@@ -191,6 +192,7 @@ The general platform limits are:
 | Max IP Filter Rules | 20 | The maximum number of IP filter rules that can be added to each IP filter group. |
 | Max IP Addresses (per rule) | 20 | The maximum number of IP addresses that can be added to each IP filter rule. |
 | API clients | 35 | The maximum number of API clients that can be defined. |
+| Non-production stages | 10 | The maximum number of non-production stages that can be added to a portfolio. |
 
 ### Logs and traces
 
