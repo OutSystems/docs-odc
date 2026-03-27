@@ -1,6 +1,6 @@
 ---
-summary: Learn how to use OutSystems Developer Cloud (ODC) to synchronize offline data in mobile apps with a structured framework.
-tags: offline data synchronization, mobile ui framework, entity management, client logic, server logic
+summary: Learn how to synchronize data between a mobile app and the server, with offline support, using the accelerators and custom logic.
+tags: offline data synchronization, mobile apps, accelerators, client-server sync, data consistency
 locale: en-us
 guid: 06c3cb30-b81d-4d6d-8e98-aef3c11d949c
 app_type: mobile apps
@@ -8,95 +8,137 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7931-20
 audience:
   - mobile developers
+  - frontend developers
+  - full stack developers
 outsystems-tools:
   - odc studio
 coverage-type:
   - understand
   - apply
 topic:
-  - offline-synch
+  - offline-sync
+isautopublish: true
 ---
 
-# Implement offline sync
+# Implement offline data synchronization
 
 <div class="info" markdown="1">
 
-Applies only to Mobile Apps.
+Applies only to mobile apps.
 
 </div>
 
-OutSystems provides a [framework for syncing data](<sync-reference.md>) between your mobile app and server. The framework includes actions and events available in **Screens**, enabling you to create business logic, trigger syncs, and respond to sync outcomes and network status changes. Use this framework to sync only the data you need, keeping the process lightweight.
+Mobile apps frequently need to work in environments with poor or no internet connectivity. To ensure users can access and modify data without interruption, you need a mechanism to synchronize local data with the server.
 
-This article uses the read-only sync mechanism as an example, but you can apply the process to other sync patterns. In this example, the product catalog is stored on the server, and during the sync, the app updates the local product list.
+OutSystems provides an [offline data synchronization framework](sync-reference.md) that handles the complexity of tracking changes, updating local storage, and syncing with the server in the background.
 
-For local entities created with the **Add Entity from Database** command, you can use accelerators. Some parts of the logic can be generated automatically by right-clicking these local entities and selecting one of the **Create Action to Sync Data** commands.
+## The synchronization lifecycle
 
-## Step 1: Create client and server logic
+The synchronization lifecycle ensures the user has access to up-to-date information and that any changes made offline are safely sent to the server.
 
-Create the business logic for updating records for individual entities in the client OnSync folder. The complexity of the client and server logic for data sync depends on your business needs and implementation. Here are the common implementation parts:
+For a conceptual overview, check the [Data synchronization overview](https://www.outsystems.com/tk/redirect?g=122e47e2-7035-4919-9d14-217ebb9ce1d6) training.
 
-* Create actions to update local entities during the sync in **Logic** > **Client Actions** > **OnSync** folder.
-* Create actions to fetch data from the server and perform updates on the server in **Logic** > **Server Actions** > **OnSync** folder.
-* Pass the sync data between the server and client actions.
+The synchronization process typically follows these stages:
 
-In this example, the client `SyncProducts` action updates the local data through the local entities with new data from the server. Place this logic into the framework to prepare it for running in the background.
+![Diagram showing the sync trigger, execution, and feedback stages.](images/sync-stages-diag.png "Synchronization Lifecycle Stages")
 
-![Diagram showing the creation of client and server logic for data synchronization in a mobile app](images/step-1-offline-odcs.png "Client and Server Logic Creation")
+1. **Trigger**: The sync process starts. This can happen **automatically** (for example, when the device comes online, when the app resumes) or **manually** (for example, a user taps a **Sync** button).
+1. **Execution**: The app runs the synchronization logic in the background to avoid blocking the user interface.
+    * **Client actions**: Collect local changes and send them to the server.
+    * **Server actions**: Process the changes, update the server database, and return the latest data.
+    * **Client actions**: Update the local storage with the new data from the server.
+1. **Feedback**: The app notifies the user of the sync status (for example, **Syncing...**, **Sync complete**, or **Sync failed**) so the user knows their data is safe.
 
-## Step 2: Place the local entity action in the OnSync system event
+## Accelerate implementation
 
-Place the actions for updating local and remote storage in the flow of the `OnSync` system event. To create the system event, open **Logic**, right-click the **Client Actions** node in the tree, and select **Add System Event** > **On Sync**. This allows you to run the sync in the background without affecting other app processes.
+The fastest way to implement data synchronization is to use the **Create Action to Sync Data** accelerators in ODC Studio. These commands automatically generate the necessary logic to synchronize your local entities with the server entities.
 
-In this example, there is only one action (`SyncProducts`), which is placed in the `OnSync` flow. You are now ready to configure the manual start of the sync.
+To use an accelerator, follow these steps:
 
-![Flowchart demonstrating the placement of the local entity action within the OnSync action](images/step-2-offline-odcs.png "Local Entity Action Placement")
+![Screenshot of the Create Action to Sync Data option in ODC Studio.](images/create-action-to-sync-data-odcs.png "Create Action to Sync Data")
 
-## Step 3: Configure manual start of the sync
+1. In the **Data** tab, expand **Local Storage**.
+1. Select the local storage entities you want to synchronize.
+1. Right-click the selection and select **Create Action to Sync Data (Read-Only)**. This generates logic to fetch data from the server and update the local storage. Use this when the mobile app only reads data (for example, a [product catalog](patterns/read-only-data.md)).
 
-Start the manual sync using `OnSync` from **Logic** > **Client Actions** > **OnSync**. Place the `OnSync` in the flow where the sync should start.
+ODC Studio creates the synchronization actions in the **Logic** tab under **Client Actions** > **SyncTask**. You can then call these actions in your sync logic.
 
-In this example, a button calls the action named `SyncOnClick`, and within the action's flow, the `OnSync` is dragged and dropped. After ensuring the updating logic works as expected, configure the automatic start of the sync.
+## Implement sync logic manually
 
-![Screenshot of the process to configure manual start of data synchronization in a mobile app](images/step-3-offline-odcs.png "Manual Sync Configuration")
+If the accelerators don't meet your needs (for example, if you have complex business rules or multiple data sources), you can implement the synchronization logic manually. For guidance on logic structure, refer to the [offline data sync patterns](patterns/intro.md).
 
-## Step 4: Configure automatic start of the sync
+The goal is to create a client action that updates local storage and connect it to the app's **OnSync** system event.
 
-Click the app name, select the **Mobile** tab, and choose the automatic synchronization settings that best suit your app.
+### Step 1: Create server logic
 
-In this example, the sync does not start automatically under any conditions, so all values are unchecked.
+First, create a server action to handle the data exchange on the backend.
 
-![Interface showing the configuration settings for automatic start of data synchronization](images/step-4-offline-odcs.png "Automatic Sync Configuration")
+1. Add a **server action**. For example, `ServerDataSync`.
+1. Implement the logic to:
+    * Fetch the required data from the database (using aggregates or SQL).
+    * Process any input data sent from the client.
+    * Return the updated data as output parameters.
 
-## Sync Logic Flow
+### Step 2: Create client logic
 
-This is the flow of the sync execution stages. Note that they do not map to the steps used to create the sync logic.
+Next, create a client action to handle the synchronization on the device.
 
-![Illustration of the stages involved in the execution flow of data synchronization logic](images/sync-stages-diag.png "Sync Logic Execution Flow")
+1. In the **Logic** tab, navigate to **Client Actions**.
+1. Right-click the **OnSync** folder (if it exists) or **Client Actions** and add a new action called, for example, `SyncTask`.
+1. Implement the logic to:
+    * Call the `ServerDataSync` action you created in step 1.
+    * Use the output from the server to update the **local storage** entities (using **CreateOrUpdate** actions).
 
-Stage 1
-: `OnSync` runs the actions for updating local storage in the background. You can start this system event manually by placing it directly in a flow or automatically through an event configured in the **Mobile** tab.
+### Step 3: Connect to the OnSync system event
 
-Stage 2
-: The actions initiated by `OnSync` collect locally changed records and send them to the server.
+Finally, configure the app to run your sync logic in the background.
 
-Stage 3
-: The server processes the requests and returns the updated data.
+![Screenshot of the OnSync logic flow in ODC Studio.](images/onsync-logic-odcs.png "OnSync Logic")
 
-Stage 4
-: The actions in `OnSync` update the local storage with the data received from the server.
+1. In the **Logic** tab, right-click **Client Actions** and select **Add System Event** > **OnSync**.
+1. In the **OnSync** action flow, drag your `SyncTask` client action (created in step 2) onto the flow.
 
-<div class="info" markdown="1">
+This ensures that whenever the synchronization triggers, the app carries out your custom logic in the background.
 
-Now that you know how to implement offline synchronization, check the [Offline sync checklist](sync-checklist.md) to avoid common issues in your solution.
+## Configure synchronization triggers
 
-</div>
+You can configure the app to synchronize data automatically based on system events, or let the user trigger it manually. For a complete list of properties, refer to [Sync configurations](sync-reference.md#sync-configurations).
+
+### Automatic synchronization
+
+To configure automatic triggers, follow these steps:
+
+1. Click the app name in the **Interface** tab.
+1. In the **Properties** pane, select the **Mobile** tab.
+1. Configure the following properties:
+
+    ![Screenshot of the Mobile tab properties for sync configuration, including options for Synchronize On Online, Synchronize On Resume, Retry Synchronizations, and Retry Interval.](images/automatic-triggers-odcs.png "Mobile Tab Properties for Sync Configuration")
+
+    * **Synchronize On Online**: Enable to trigger the sync automatically when the device network status changes to online.
+    * **Synchronize On Resume**: Enable to trigger the sync automatically when the app resumes from the background.
+    * **Synchronize On Login**: Enable to trigger the sync automatically after the user logs in.
+
+### Manual synchronization
+
+To let the user start the synchronization manually (for example, by tapping a **Sync** button):
+
+1. In your screen logic or client action, drag the **OnSync** system event onto the flow.
+1. This action triggers the background synchronization process defined in the **OnSync** handler.
+
+## Handle sync feedback
+
+Since synchronization runs in the background, you must provide visual feedback to the user. The app should communicate when a sync starts, completes, or encounters an error.
+
+To implement feedback, add the following system events in your **layout** block or specific **screens**:
+
+* **OnSyncStart**: Use this event to show feedback (for example, display a **Syncing** message or a loading spinner).
+* **OnSyncComplete**: Use this event to hide the feedback message or notify the user of success.
+* **OnSyncError**: Use this event to handle errors gracefully (for example, display a **Sync failed** message or log the error).
+
+This approach ensures users are always aware of the apps data status, improving the overall user experience.
 
 ## Related resources
 
+For related resources about implementing offline data synchronization refer to:
+
 * [Offline sync checklist](sync-checklist.md)
-
-* [Sync framework reference](sync-reference.md)
-  
-* [Offline data sync patterns](patterns/intro.md)
-
-* [Offline data synchronization mobile apps](intro.md)
