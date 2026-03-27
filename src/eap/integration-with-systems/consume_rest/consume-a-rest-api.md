@@ -16,11 +16,12 @@ coverage-type:
   - apply
 topic:
   - consume-refresh-methods
+isautopublish: true
 ---
 
 # Consume one or more REST API methods
 
-Consuming [ODC REST APIs](../../reference/apis/public-rest-apis/overview.md) in you app lets you integrate external data and functionality into your OutSystems Developer Cloud (ODC) apps. This allows your apps to interact with services provided by third-party platforms, internal microservices, or APIs exposed by other ODC libraries or apps. Before starting the consumption process in ODC Studio, ensure you have the details from the target API's documentation, including its base URL, required authentication methods, and the structure of relevant request and response parameters.
+Consuming [REST APIs](../../reference/apis/public-rest-apis/overview.md) in your app lets you integrate external data and functionality into your OutSystems Developer Cloud (ODC) apps. This allows your apps to interact with services provided by third-party platforms, internal microservices, or APIs exposed by other ODC libraries or apps. Before starting the consumption process in ODC Studio, ensure you have the details from the target API's documentation, including its base URL, required authentication methods, and the structure of relevant request and response parameters.
 
 <div class="info" markdown="1">
 
