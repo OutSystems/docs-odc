@@ -16,6 +16,7 @@ outsystems-tools:
   - none
 coverage-type:
   - understand
+isautopublish: true
 ---
 
 # Security of OutSystems Developer Cloud
@@ -52,7 +53,7 @@ The network layer of ODC uses encryption, a WAF (Web Application Firewall), intr
 
 ### Encryption in transit
 
-All incoming requests to the [Platform services and Runtime](../manage-platform-app-lifecycle/platform-architecture/identity.md#Platform) terminate at an HTTPS endpoint via [Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security) and are end-to-end encrypted. ODC supports TLS 1.3.
+All incoming requests to the [Platform services and Runtime](../manage-platform-app-lifecycle/platform-architecture/identity.md#Platform) terminate at an HTTPS endpoint and are end-to-end encrypted. We implement [HTTP Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security) (HSTS) as a native default, which forces all browser communications over encrypted channels and prevents downgrade attacks. ODC supports TLS 1.3, ensuring high-performance encryption for all platform-wide communications.
 
 ### Web Application Firewall
 
