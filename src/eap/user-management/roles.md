@@ -19,6 +19,7 @@ coverage-type:
 topic:
   - role-assignment
   - create-a-team
+isautopublish: true
 ---
 
 # Roles and permissions for members (IT-users)
@@ -135,6 +136,8 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Monitoring | Access user information | Users can view user information connected to a given log or activity. | Organization <br/> Asset |
 | Analyze | Manage code quality findings | Provides access to a Code Quality Console and interactive capabilities, including the ability to modify the status of findings and manage comments. Additionally, if permissions are set at the organizational level, users will see which organizational users have introduced those findings, change status, and add comments. | Organization <br/> Asset |
 | Analyze | View code quality findings | Users can view code quality findings in apps they have permissions to open. | Organization <br/> Asset |
+| Analyze | View evaluations | View evaluation runs and results. Allows read-only access to evaluation data (run history, pass/fail results, traces, judge scores). | Organization |
+| Analyze | Manage evaluations | Users can create, configure, and run evaluations in the development stage. | Organization |
 | Configuration management | View configurations | Users can view all configurations within this category for the selected stages. | Organization <br/> Asset |
 | Configuration management | Edit configurations | Users can change app or library configurations in a given stage. | Organization <br/> Asset |
 | Configuration management | Configure connections | Users can edit connection configurations in a given stage. | Organization |
