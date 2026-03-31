@@ -16,6 +16,7 @@ coverage-type:
   - remember
 topic:
   - service-studio-overview
+isautopublish: true
 ---
 
 # ODC Studio Shortcuts
@@ -44,14 +45,15 @@ topic:
 | Cancel and close the current pop-up window | Esc | Esc |
 | Look for help, by telling us what you want to do | F1 | |
 | Rename selected element | F2 | |
-| Open selected dropdwon | F4 | F4 |
+| Open selected dropdown | F4 | F4 |
 | Open Preferences | | Cmd+comma |
 
 ## Basic Development
 
 | Description | Windows | macOS |
 | --- | --- | --- |
-| | F5 | 1-Click Publish |
+| 1-Click Publish | F5 | F5 |
+| Ask Mentor | Ctrl+Shift+A | Shift+Cmd+A |
 | Hide/show warning in TrueChange tab | Ctrl+H | Shift+Cmd+H |
 | Enable/disable Styles Editor | Ctrl+J | |
 | Refresh Aggregate's data preview | Ctrl+L | Cmd+R |

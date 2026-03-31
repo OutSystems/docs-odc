@@ -21,3 +21,10 @@ styles/*
 .vscode/*
 # Ignore all mcp.json files anywhere in the repo
 **/mcp.json
+
+# Internal planning docs
+**/plan-*.md
+
+# Claude Code files
+CLAUDE.md
+PLAN.md

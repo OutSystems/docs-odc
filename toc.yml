@@ -14,19 +14,34 @@
 - topics:
     - href: eap/onboarding/differences-sql.md
 
+# Agentic development
+- href: eap/agentic-development/intro.md
+- topics:
+    # Create apps (Mentor Web)
+    - href: eap/agentic-development/mentor-web/how-it-works.md
+    - topics:
+        - href: eap/agentic-development/mentor-web/create-app.md
+        - href: eap/agentic-development/mentor-web/blueprint.md
+        - href: eap/agentic-development/mentor-web/prompts.md
+        - href: eap/agentic-development/mentor-web/requirements-doc.md
+        - href: eap/agentic-development/mentor-web/capabilities.md
+        - href: eap/agentic-development/mentor-web/ai-tools.md
+    # Modify apps (Mentor Studio)
+    - href: eap/agentic-development/mentor-studio/how-it-works.md
+    - topics:
+        - href: eap/agentic-development/mentor-studio/modify-app.md
+        - href: eap/agentic-development/mentor-studio/prompts.md
+        - href: eap/agentic-development/mentor-studio/capabilities.md
+    # Concepts
+    - href: eap/agentic-development/effective-prompts.md
+    - href: eap/agentic-development/thinking-with-ai.md
+    - href: eap/agentic-development/architecture.md
+    - href: eap/agentic-development/sdlc.md
+    - href: eap/agentic-development/ai-limitations.md
+
 # Building apps
 - href: eap/building-apps/intro.md
 - topics:
-    # AI Mentor
-    - href: eap/building-apps/ai-mentor/intro.md
-    - topics:
-        - href: eap/building-apps/ai-mentor/thinking-with-ai.md
-        - href: eap/building-apps/ai-mentor/mentor.md
-        - href: eap/building-apps/ai-mentor/prompts.md
-        - href: eap/building-apps/ai-mentor/requirements-doc.md
-        - href: eap/building-apps/ai-mentor/capabilities.md
-        - href: eap/building-apps/ai-mentor/sdlc.md
-        - href: eap/building-apps/ai-mentor/ai-tools.md
     # Build AI-powered apps
     - href: eap/building-apps/build-ai-powered-apps/intro.md
     - topics:
@@ -314,7 +329,6 @@
     # Logic
     - href: eap/building-apps/logic/intro.md
     - topics:
-        - href: eap/building-apps/logic/ai-assisted-dev.md    
         - href: eap/building-apps/logic/input-parameter.md
         - href: eap/building-apps/logic/local-variable.md
         - href: eap/building-apps/logic/output-parameter.md
@@ -328,6 +342,7 @@
             - href: eap/building-apps/logic/expressions/operators.md
             - href: eap/building-apps/logic/expressions/operands.md
         - href: eap/building-apps/logic/best-practices-logic.md
+        - href: eap/building-apps/logic/ai-logic-suggestions.md
     # Extend your apps with external logic
     - href: eap/building-apps/external-logic/intro.md
     - topics: 

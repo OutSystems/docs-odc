@@ -18,6 +18,7 @@ coverage-type:
 topic:
   - choose-app-type
   - basic-architecture
+isautopublish: true
 ---
 
 # Types of apps you can build
@@ -26,7 +27,7 @@ You can create different types of apps in OutSystems Developer Cloud (ODC).
 
 ![Screenshot of the 'What would you like to create?' window in OutSystems Developer Cloud with options to create different types of apps](images/types-of-apps-odcs.png "ODC App Creation Options")
 
-* Select **Web app** if you want to create an app that users run mainly in a desktop browser.
+* Select **Web app** if you want to create an app that users run mainly in a desktop browser. You can build a web app from scratch in ODC Studio or generate one from natural language descriptions using [agentic development](../agentic-development/intro.md).
 * Select **Mobile app** if you want to create an app to submit to Apple App Store or Google Play. You can also distribute a mobile app as a downloadable package to a group of users or as a Progressive Web App (PWA).
 * Select **Agentic app** if you want to build an app that uses AI to perform tasks, automate Workflows, or handle complex, multi-step interactions.
 
