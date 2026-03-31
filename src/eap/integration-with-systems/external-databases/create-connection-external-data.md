@@ -146,9 +146,21 @@ You can use advanced parameters to add additional parameters for a database conn
 
 * For **SQL Server** and **Azure SQL**, to select the desired schema on the database, enter `currentSchema=SCHEMA_NAME`. For **Oracle** to select the desired schema on the database, enter `current_schema=SCHEMA_NAME`. Replace `SCHEMA_NAME` with the schema name.
 * To establish a connection with the **SQL Server** and allow the client to bypass certificate validation, add the `trustServerCertificate=true` parameter to the additional parameters.
-* You can configure connection pool size for all available relational database connectors. Changing the connection pool size can significantly impact performance.
-    * `minConnectionPoolSize`: Default value of 0.
-    * `maxConnectionPoolSize`: Default value of 400, as it was the best performer in OutSystems performance tests.
+* You can configure connection pool settings for all available relational database connectors. Changing the connection pool settings can significantly impact performance.
+    * `testOnBorrow` controls when and how often the health of pooled connections is tested to verify connectivity to the database.
+        * When `true`, connections will be tested every time they are borrowed from the pool, this increases the reliability of query execution but decreases performance.
+        * When `false`, pooled connections will be tested periodically while they are idle in the pool, this decreases the reliability of query exuection but increases performance.
+        * Default value of `false` because it offers improved performance and connectivity to databases tends to be reliable
+    * `minIdleMinutes` is the minimum amount of time in minutes that a connection must remain idle for in the pool before it may be closed
+        * Default value of `10` minutes because databases are often configured to close idle connections/sessions after a period of inactivity
+    * `maxLifetimeMinutes` is the maximum amount of time in minutes that a connection may be used for
+        * After this time has elapsed, the connection will not be used to execute any new queries and will eventually be closed
+        * Default value of `0` which means that connections will be open indefinitely provided that they are healthy and do not remain idle for longer than `minIdleMinutes`
+    * `maxConnectionPoolSize` is the maximum number of connections that can be open (in use or idle) at any given time
+        * Default and maximum supported value of 400, as it was the best performer in OutSystems performance tests
+    * `minConnectionPoolSize` is the number of connections that must always be available (idle) in the pool
+        * Default value of `0` which means that all idle connections will eventually be closed after an extended period of inactivity
+        * Must be less than or equal to `maxConnectionPoolSize`
 * The `statsRefreshFrequencyMinutes` parameter, available for all connectors, allows you to adjust how often statistics are refreshed. This adjustment helps Data Fabric connectors maintain optimal query performance. If your external system has a limited number of API requests, it's advisable to increase the refresh frequency. The default value for this parameter is 15 minutes, with a minimum allowable value of 5 minutes. An example of the use of this parameter is: `statsRefreshFrequencyMinutes=30`.
 * For **Salesforce**, include `ArchiveMode=True` in the additional parameters to enable fetching deleted and archived records in queries. By default, the archive mode is disabled. Enabling this mode allows queries to retrieve more data, but handle it with caution, as it may impact performance.
 * For **SAP OData**, set `Pagesize=PAGE_SIZE` in the additional parameters to control the maximum number of rows returned per page when fetching data from SAP OData. Replace `PAGE_SIZE` with the number of rows you want per page. A larger page size improves performance but increases memory use per page.
