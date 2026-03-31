@@ -70,9 +70,12 @@
             - href: eap/building-apps/build-ai-powered-apps/structured-output.md            
             - href: eap/building-apps/build-ai-powered-apps/prompt-engineering.md            
             - href: eap/building-apps/build-ai-powered-apps/agent-long-running.md
+            - href: eap/building-apps/build-ai-powered-apps/agent-2-agent/agent-2-agent.md
+            - topics:
+                - href: eap/building-apps/build-ai-powered-apps/agent-2-agent/using-agent-2-agent.md
             - href: eap/building-apps/build-ai-powered-apps/semantic-search/semantic-search-intro.md
             - topics:
-                - href: eap/building-apps/build-ai-powered-apps/semantic-search/using-semantic-search.md 
+                - href: eap/building-apps/build-ai-powered-apps/semantic-search/using-semantic-search.md                 
             # MCPs and other tools
             - href: eap/building-apps/build-ai-powered-apps/tools/intro.md
             - topics:
