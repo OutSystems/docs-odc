@@ -24,23 +24,23 @@ To add connections to external agents in the ODC portal using A2A:
 
 1. Go to the ODC portal and navigate to the **Integrate** section and select **Connections**.
 
-    ![ODC portal Connections page showing an empty list of connections and the Create connection button highlighted in the top-right corner.](./images/creating-connection-pl.png "Connections page with Create connection button in ODC portal")
+    ![ODC portal Connections page showing an empty list of connections and the Create connection button highlighted in the top-right corner.](images/creating-connection-pl.png "Connections page with Create connection button in ODC portal")
 
 1. Click on **Create connection** and select **A2A**.
 
-    ![Connections dialog in the ODC portal with the A2A provider tile highlighted among the available connection providers.](./images/a2a-connection-pl.png "Select A2A provider when creating a connection")
+    ![Connections dialog in the ODC portal with the A2A provider tile highlighted among the available connection providers.](images/a2a-connection-pl.png "Select A2A provider when creating a connection")
 
 1. Give a **Name** to your connection and provide the **URL** of the agent you want to connect to. This should be the base URL of the agent's A2A endpoint.
 
-    ![A2A connection configuration screen showing the Overview section with the Name field and the Setup connection section with the agent URL field highlighted.](./images/a2a-details-pl.png "Configure A2A connection name and URL")
+    ![A2A connection configuration screen showing the Overview section with the Name field and the Setup connection section with the agent URL field highlighted.](images/a2a-details-pl.png "Configure A2A connection name and URL")
 
 1. Click on **Get details** to fetch the agent card. The agent card is a JSON document that describes the agent's capabilities, skills, and how to interact with it.
 
-    ![A2A connection screen displaying the Agent card Details tab populated with the agent name, description, provider, and version after clicking Get details.](./images/a2a-get-details-pl.png "View agent card details after fetching A2A metadata")
+    ![A2A connection screen displaying the Agent card Details tab populated with the agent name, description, provider, and version after clicking Get details.](images/a2a-get-details-pl.png "View agent card details after fetching A2A metadata")
 
 1. Review the details to ensure they match your expectations and select the **Skills** tab to check the agent skills and authentication requirements.
 
-    ![A2A connection screen with the Agent card Skills tab open, listing skills with their descriptions, tags, and supported authentication methods in the Authentication column.](./images/a2a-supported-auth-pl.png "Review agent skills and authentication requirements")
+    ![A2A connection screen with the Agent card Skills tab open, listing skills with their descriptions, tags, and supported authentication methods in the Authentication column.](images/a2a-supported-auth-pl.png "Review agent skills and authentication requirements")
 
 1. Select the appropriate authentication mechanism from the drop-down and provide the necessary credentials or tokens as specified in the agent card. The supported authentication mechanisms are:
 
@@ -54,7 +54,7 @@ To add connections to external agents in the ODC portal using A2A:
 
     <div class="info" markdown="1">
 
-        Note that the dropdown shows both the OutSystems supported authentication methods and the authentication methods declared in the agent card. If the agent card declares an authentication method that is not currently supported by OutSystems, you won't be able to select it in the dropdown.
+    Note that the dropdown shows both the OutSystems supported authentication methods and the authentication methods declared in the agent card. If the agent card declares an authentication method that is not currently supported by OutSystems, you won't be able to select it in the dropdown.
 
     </div>
 
@@ -64,11 +64,11 @@ To add connections to external agents in the ODC portal using A2A:
 
 1. Then click on **Save** to save the connection.
 
-    ![A2A connection screen showing API key authentication selected with key fields filled in, a green successful connection test message, and the Save button highlighted.](./images/a2a-auth-details-pl.png "Set API key authentication and save A2A connection")
+    ![A2A connection screen showing API key authentication selected with key fields filled in, a green successful connection test message, and the Save button highlighted.](images/a2a-auth-details-pl.png "Set API key authentication and save A2A connection")
 
 1. The external agent is added to your connections lists and it's now available for use in your ODC applications and workflows, allowing you to leverage its capabilities through the A2A protocol.
 
-    ![Connections page in the ODC portal showing a single A2A connection named Remote Agent in the list of connections.](./images/a2a-connection-created-pl.png "A2A connection listed in ODC portal Connections page")
+    ![Connections page in the ODC portal showing a single A2A connection named Remote Agent in the list of connections.](images/a2a-connection-created-pl.png "A2A connection listed in ODC portal Connections page")
 
 When you create the A2A connection, a `SendMessage` server action is automatically created for you to send messages to the remote agent. You can use this action in your ODC agentic apps to communicate with the remote agent and leverage its capabilities in your applications.
 This server action's description comes from the remote agent-card JSON file. It should include the remote agent's name, description, and skills, so the ODC agent knows how to delegate requests to the right remote agent using this action as a tool.
@@ -80,17 +80,17 @@ To use the external agent in your ODC applications:
 
 1. In your client agentic app add the `SendMessage` action from your A2A connection as a public element.
 
-    ![ODC Studio dialog for adding public elements, with the SendMessage action from the RemoteAgent module selected in the list.](./images/a2a-public-element-odcs.png "Add SendMessage as a public element in ODC Studio")
+    ![ODC Studio dialog for adding public elements, with the SendMessage action from the RemoteAgent module selected in the list.](images/a2a-public-element-odcs.png "Add SendMessage as a public element in ODC Studio")
 
 1. Inside your client agentic app logic flow, open the call Agent action.
 
 1. Inside the call agent details, click **Add action** on the Action calling tab and select the SendMessage action from your A2A connection.
 
-    ![ODC Studio Select ActionHandler dialog with the RemoteAgent SendMessage server action highlighted for use in the agent’s action calling configuration.](./images/a2a-call-odcs.png "Select SendMessage action in agent action calling settings")
+    ![ODC Studio Select ActionHandler dialog with the RemoteAgent SendMessage server action highlighted for use in the agent’s action calling configuration.](images/a2a-call-odcs.png "Select SendMessage action in agent action calling settings")
 
 1. Then, provide the necessary input parameters for the SendMessage action, such as the Task ID, Message content, and any required metadata. The Task ID should be unique for each task you want to create with the remote agent.
 
-    ![Action calling configuration panel for the SendMessage action showing editable input parameters such as ContextId, TaskId, and UserMessage with descriptions generated by AI.](./images/a2a-call-details-odcs.png "Configure SendMessage input parameters for the agent call")
+    ![Action calling configuration panel for the SendMessage action showing editable input parameters such as ContextId, TaskId, and UserMessage with descriptions generated by AI.](images/a2a-call-details-odcs.png "Configure SendMessage input parameters for the agent call")
 
 ## Guidance for agents that receive/send files
 
