@@ -760,7 +760,7 @@
         - href: eap/monitor-and-troubleshoot/traces/server-side-traces.md
         - href: eap/monitor-and-troubleshoot/traces/client-side-traces.md
     
-# REST APIs
+# REST APIs 
 - href: eap/reference/apis/public-rest-apis/overview.md
 - topics:
     - href: eap/reference/apis/public-rest-apis/getting-started.md
@@ -786,6 +786,7 @@
         - href: eap/reference/apis/dependency-v1.md
         - href: eap/reference/apis/asset-v1.md
         - href: eap/reference/apis/asset-config-v1.md
+        - href: eap/reference/apis/env-config-v1.md
         - href: eap/reference/apis/code-quality-api-v1.md
         - href: eap/reference/apis/external-library-generation-api-v1.md
 

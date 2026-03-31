@@ -14,6 +14,7 @@ content-type:
 audience:
   - backend developers
   - platform administrators
+isautopublish: true
 ---
 
 # Rate limits for the APIs
@@ -29,12 +30,13 @@ The rate limits per organization are as follows:
 | :--- | :--- | :--- |
 | [User and access management](../identity-v1.md) | 100 | `POST /users/bulk`: **5** |
 | [Portfolio](../portfolio-v1.md) | 100 | None |
-| [Build Operations](https://www.outsystems.com/tk/redirect?g=a359bc7f-74a0-4723-9f13-ca851718dc89) | 100 | `POST` methods: **10** (per endpoint) |
+| [Build operations](https://www.outsystems.com/tk/redirect?g=a359bc7f-74a0-4723-9f13-ca851718dc89) | 100 | `POST` methods: **10** (per endpoint) |
 | [Deployments](https://www.outsystems.com/tk/redirect?g=acf7cd06-3fe1-4bd3-85e8-06cd11aa0a7d) | 100 | `POST` methods: **10** (per endpoint) |
-| [Asset Repository](https://www.outsystems.com/tk/redirect?g=9598cb1d-a50e-48d7-a43a-6582e43fd48b) | 100 | `POST /assets`: **10** |
-| [Asset Configurations](https://www.outsystems.com/tk/redirect?g=cb142916-250b-42b9-a983-7ccdaa028480) | 100 | None |
-| [Dependency Management](https://www.outsystems.com/tk/redirect?g=8a687cef-649f-4387-85e3-027954ac92cf) | 100 | None |
-| [External Library Generation](https://www.outsystems.com/tk/redirect?g=47875596-0618-4d20-824a-fbbaea2d353b) | 100 | `POST` methods: **10** (per endpoint) |
+| [Asset repository](https://www.outsystems.com/tk/redirect?g=9598cb1d-a50e-48d7-a43a-6582e43fd48b) | 100 | `POST /assets`: **10** |
+| [Asset configurations](https://www.outsystems.com/tk/redirect?g=cb142916-250b-42b9-a983-7ccdaa028480) | 100 | None |
+| [Dependency management](https://www.outsystems.com/tk/redirect?g=8a687cef-649f-4387-85e3-027954ac92cf) | 100 | None |
+| [Environment configurations](../env-config-v1.md) | 10 | None |
+| [External library generation](https://www.outsystems.com/tk/redirect?g=47875596-0618-4d20-824a-fbbaea2d353b) | 100 | `POST` methods: **10** (per endpoint) |
 | [Code quality](https://www.outsystems.com/tk/redirect?g=56511d24-4834-4a34-aed7-226f63891109) | 100 | `POST /code-analyses`: **10** |
 
 ## Exceeding the rate limit

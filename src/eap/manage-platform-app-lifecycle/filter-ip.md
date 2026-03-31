@@ -16,6 +16,7 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+isautopublish: true
 ---
 
 # Manage IP filters
@@ -71,6 +72,12 @@ An example includes:
 ### Associate apps with IP filter groups before deployment
 
 To ensure consistent security from deployment, associate an app with a specific IP filter group for a given stage, even if the app hasn't been deployed to that stage yet. This approach guarantees that the system applies the correct IP filter rules to the app immediately upon deployment. It prevents any brief periods where the app might be exposed to default or incorrect rules.
+
+<div class="info" markdown="1">
+
+You can also create, update, and delete IP filter groups and their rules programmatically using the [Environment Configurations API](../reference/apis/env-config-v1.md).
+
+</div>
 
 ## Create an IP filter group
 
