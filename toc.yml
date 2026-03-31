@@ -619,6 +619,16 @@
     - topics:
         - href: eap/manage-platform-app-lifecycle/platform-architecture/networking.md
         - href: eap/manage-platform-app-lifecycle/platform-architecture/identity.md
+    - href: eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md
+    - topics:
+        - href: eap/manage-platform-app-lifecycle/self-hosted/sh-install-reqs.md
+        - href: eap/manage-platform-app-lifecycle/self-hosted/sh-cluster-components.md
+        - href: eap/manage-platform-app-lifecycle/self-hosted/sh-shared-responsibility.md
+        - href: eap/manage-platform-app-lifecycle/self-hosted/install-sh-process.md
+        - topics:
+            - href: eap/manage-platform-app-lifecycle/self-hosted/sh-db-setup.md
+            - href: eap/manage-platform-app-lifecycle/self-hosted/install-sh.md
+            - href: eap/manage-platform-app-lifecycle/self-hosted/sh-domain-config.md
     - href: eap/manage-platform-app-lifecycle/configuration-management.md
     - href: eap/manage-platform-app-lifecycle/configure-app-settings.md
     - href: eap/manage-platform-app-lifecycle/custom-domains.md
