@@ -26,12 +26,6 @@ isautopublish: true
 
 Building apps often starts with translating requirements into screens, data models, and logic, work that follows predictable patterns. OutSystems Agentic Development accelerates this by letting you describe app requirements in natural language and having ODC generate or modify the app structure for you. Agentic development works through two tools: Mentor Web for creating apps in ODC Portal and Mentor Studio for modifying apps in ODC Studio. You stay in control by reviewing proposed changes and refining them through follow-up prompts before applying anything.
 
-<div class="info" markdown="1">
-
-For a video walkthrough of agentic development concepts and tools, take the [Agentic development](https://www.outsystems.com/tk/redirect?g=eb9a16f2-f6b9-4903-9be8-122a0188f113) online course.
-
-</div>
-
 ![Mentor Web showing the app generation chat interface, and Mentor Studio showing the Mentor panel in ODC Studio.](images/ai-app-code-gen-pl-odcs.png "Mentor Web and Mentor Studio")
 
 Choose your starting point based on what you want to accomplish:

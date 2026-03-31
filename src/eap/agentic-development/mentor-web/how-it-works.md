@@ -116,4 +116,3 @@ Each phase of the app generation workflow connects to deeper guidance on prompts
 * For the full list of UI patterns, dashboard types, and elements that Mentor Web generates, refer to [Capabilities and patterns for Mentor Web](capabilities.md).
 * For modifying existing apps in ODC Studio, refer to [AI development in Mentor Studio](../mentor-studio/how-it-works.md).
 * For step-by-step guidance on creating an app, refer to [Create an app with AI in ODC Portal](create-app.md).
-* [Agentic development](https://www.outsystems.com/tk/redirect?g=eb9a16f2-f6b9-4903-9be8-122a0188f113) online course — video walkthrough of the Mentor Web workflow

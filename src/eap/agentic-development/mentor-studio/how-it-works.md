@@ -112,4 +112,3 @@ Mentor Studio is one of two AI development tools in ODC. The following resources
 * For prompting strategies that apply across all Mentor tools, refer to [Effective prompts for Mentor](../effective-prompts.md).
 * For creating or iterating on apps in the browser editor, refer to [How AI app generation works](../mentor-web/how-it-works.md).
 * For background on agentic development concepts, refer to [Thinking with AI](../thinking-with-ai.md).
-* [Agentic development](https://www.outsystems.com/tk/redirect?g=eb9a16f2-f6b9-4903-9be8-122a0188f113) online course — video walkthrough of the Mentor Studio workflow
