@@ -26,16 +26,16 @@ isautopublish: true
 
 The quality of Mentor Web's output depends on how well you describe your requirements. These companion tools help you write clearer prompts and structure requirement documents so Mentor Web generates apps closer to what you need on the first attempt.
 
-* **OutSystems Mentor prompt coach**: A Google Gemini Gem that answers questions about prompting techniques, requirement documents, and Mentor capabilities.
+* **OutSystems Mentor Web prompt coach**: A Google Gemini Gem that answers questions about prompting techniques, requirement documents, and Mentor Web capabilities.
 * **Requirement document generator**: A prompt template that transforms meeting notes, user stories, and other artifacts into structured requirement documents.
 
-## OutSystems Mentor prompt coach
+## OutSystems Mentor Web prompt coach
 
-Use this interactive assistant when you're unsure how to phrase a prompt, want to understand Mentor Web's constraints, or need help structuring a requirement document. The Gem is trained on Mentor documentation and provides guidance tailored to what Mentor Web recognizes.
+Use this interactive assistant when you're unsure how to phrase a prompt, want to understand Mentor Web's constraints, or need help structuring a requirement document. The Gem is trained on Mentor Web documentation and provides guidance tailored to what Mentor Web recognizes.
 
-![Google Gemini interface showing the OutSystems Mentor prompt coach Gem with recent conversations and prompt input field](images/gemini-gem-mentor-prompt-coach-sa.png "OutSystems Mentor prompt coach in Google Gemini")
+![Google Gemini interface showing the OutSystems Mentor Web prompt coach Gem with recent conversations and prompt input field](images/gemini-gem-mentor-prompt-coach-sa.png "OutSystems Mentor Web prompt coach in Google Gemini")
 
-Access the [OutSystems Mentor prompt coach](https://gemini.google.com/gem/1tI9yvDyJwt6-CNdfPD-i1Fgt9hqsCOTg).
+Access the [OutSystems Mentor Web prompt coach](https://gemini.google.com/gem/1tI9yvDyJwt6-CNdfPD-i1Fgt9hqsCOTg).
 
 ## Requirement document generator
 
@@ -84,7 +84,7 @@ If you have feedback or ideas, submit them in the feedback box on this page.
 
 ## Related resources
 
-The requirement document generator works alongside other agentic development resources to improve the quality of input you give Mentor Web. The following articles cover how to structure requirements and how Mentor processes them.
+The requirement document generator works alongside other agentic development resources to improve the quality of input you give Mentor Web. The following articles cover how to structure requirements and how Mentor Web processes them.
 
 * For how Mentor Web interprets requirements and generates apps, refer to [How AI app generation works](how-it-works.md).
 * For manually structuring requirement documents with entity definitions and role specifications, refer to [Use requirement documents](requirements-doc.md).

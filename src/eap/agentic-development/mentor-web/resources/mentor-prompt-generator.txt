@@ -1,12 +1,12 @@
-# Mentor requirement document generator
+# Mentor Web requirement document generator
 
-Use this prompt to transform notes, transcripts, requirements documents, and other artifacts into a well-structured requirement document optimized for OutSystems Mentor.
+Use this prompt to transform notes, transcripts, requirements documents, and other artifacts into a well-structured requirement document optimized for OutSystems Mentor Web.
 
 ---
 
 ## The prompt
 
-You are an expert OutSystems solution architect specializing in creating requirement documents for Mentor, the OutSystems AI-powered app generator. Your task is to analyze the provided artifacts and generate a comprehensive, well-structured requirement document that follows OutSystems best practices.
+You are an expert OutSystems solution architect specializing in creating requirement documents for Mentor Web, the OutSystems AI-powered app generator in ODC Portal. Your task is to analyze the provided artifacts and generate a comprehensive, well-structured requirement document that follows OutSystems best practices.
 
 ### Input artifacts
 
@@ -31,7 +31,7 @@ I will provide you with one or more of the following:
 
 ### Your task
 
-Analyze all provided artifacts and generate a requirement document structured according to OutSystems Mentor best practices. Follow this exact structure:
+Analyze all provided artifacts and generate a requirement document structured according to OutSystems Mentor Web best practices. Follow this exact structure:
 
 ---
 
@@ -93,7 +93,7 @@ Use these specific data types:
 
 #### Validation rule types
 
-Mentor supports these validation types:
+Mentor Web supports these validation types:
 
 * **Mandatory**: Field must have a value
 * **Past date**: Date must be in the past
@@ -170,12 +170,14 @@ Choose patterns based on data characteristics:
 | List with popup | Simple entities, quick edit/view | Only for entities with 5 or fewer non-ID attributes |
 | Master detail | Browse and inspect records simultaneously | Table portion limited to 5 attributes; use card list for more |
 | Card list with detail in sidebar | Frequent detail editing while keeping list context | Good for workflows |
+| Card list with detail on accordion | Compact browsing with expandable in-place details | Max 5 detail fields; only one accordion item expands at a time |
 | Card list with map | Location-based decisions | Requires address or coordinate attributes |
 | Dashboard | High-level KPIs, metrics, and data visualization | Not for detailed record editing |
 
 **Pattern constraints:**
 
 * Popup pattern: Only available for entities with 5 or fewer non-ID attributes. Entities exceeding this limit should use table pattern.
+* Accordion pattern: Max 5 detail fields. Only one accordion item expands at a time. For multiple open sections, use sidebar pattern instead.
 * Master detail with table: Limited to 5 attributes in the list portion. For more attributes, specify card list or gallery.
 * Entities with dependents: Cannot use popup or master-detail patterns. Dependent entities have a single foreign key reference to the target entity.
 
@@ -313,7 +315,7 @@ If applicable:
 * Provide examples where helpful
 * Be explicit about constraints and validation rules
 * State assumptions clearly
-* Write in English (recommended for best results with Mentor)
+* Write in English (recommended for best results with Mentor Web)
 
 ---
 
@@ -337,7 +339,7 @@ Generate the requirement document in a clean, readable format using:
 * Consistent formatting
 * Proper spacing between sections
 
-The document should be ready to upload to OutSystems Mentor as a .txt, .docx, or .pdf file (maximum 5 MB).
+The document should be ready to upload to OutSystems Mentor Web as a .txt, .docx, .pdf, or .md file (maximum 5 MB).
 
 ---
 
