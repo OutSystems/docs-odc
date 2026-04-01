@@ -17,6 +17,7 @@ tags: infrastructure,requirements,database,authentication,monitoring
 outsystems-tools:
   - self hosted console
 helpids: 30551, 30563
+isautopublish: true
 ---
 # System and network requirements for Self-hosted ODC
 
@@ -28,7 +29,9 @@ The system requirements are:
 
 * A RedHat OpenShift cluster on version 4.17 through 4.20.
 
-* The OpenShift cluster must have at least 5 worker nodes each with 8 CPU cores, 32GB of RAM, and 250GB of disk space. This cluster must be dedicated to ODC functions. You must not install or run any other applications, services, or operators that could conflict with the proper operation of OutSystems services. Such conflicts could lead to platform instability, deployment failures, or loss of support.
+* The OpenShift cluster must have at least 5 worker nodes each with 8 CPU cores, 32GB of RAM, and 250GB of disk space.
+
+* The cluster should only host [components installed via the self-hosted setup](sh-cluster-components.md) and applications deployed through ODC. Services not provided as part of the ODC self-hosted setup like databases, IdP, or APM should run outside the cluster. ODC services and apps may scale normally by adding pods. ODC platform components installed in the cluster are intended exclusively to support ODC runtime and must not be used by external applications or integrations.
 
 * The OpenShift storage backend must be able to provision at least 769 GB of persistent storage. The installation process reserves this capacity through persistent volume claims (PVCs) for core services such as Vault, NATS, Keycloak, Redis, and internal PostgreSQL instances. The installation process creates these PVCs as it installs the services.
 
