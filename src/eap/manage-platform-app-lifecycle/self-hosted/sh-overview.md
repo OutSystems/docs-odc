@@ -22,7 +22,7 @@ helpids:
 isautopublish: true
 ---
 
-# Overview of ODC Self-hosted
+# ODC Self-hosted
 
 The OutSystems Developer Cloud (ODC) offers a flexible deployment model that allows you to choose between a fully cloud-managed solution and a self-hosted deployment. The self-hosted model is designed to meet the needs of organizations that prioritize data security, regulatory compliance, and infrastructure customization. This model allows businesses to maintain control over their data and infrastructure while leveraging the power of the ODC platform for application development and management.
 
