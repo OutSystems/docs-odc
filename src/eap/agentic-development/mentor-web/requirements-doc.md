@@ -51,11 +51,11 @@ Use the following table as a checklist when preparing your requirement document.
 | Section | Required | What to include | Example details |
 | --- | --- | --- | --- |
 | App overview | Yes | Purpose of the app, high-level goals, key users | 1-2 paragraph description of the business problem and desired outcome |
-| General app settings | Optional | Theme, branding, localization, accessibility requirements | `"Use the 'Mentor' theme available in the ODC tenant."` |
-| Data model | Yes | Entities with data types, relationships, static entities and records | List entities such as `Employee`, `OnboardingStep`; specify relationships (One-to-Many, Many-to-Many) and static lookups |
-| Roles and permissions | Yes | Roles, entity-level access, row-level rules, special permissions | Define access by role (Full/Edit/View) and note any ownership-based restrictions |
-| Main features and screens | Yes | Screen list, layouts, dashboard expectations, UX notes | Identify screen patterns (table, master detail) and required charts or counters |
-| External integrations | Optional | External data sources, system dependencies, integration direction | `"Customer data is sourced from Salesforce."` |
+| General app settings | Optional | Theme, branding, localization, accessibility requirements | "Use the 'Mentor' theme available in the ODC tenant." |
+| Data model | Yes | Entities with data types, relationships, static entities and records | List entities such as Employee, OnboardingStep; specify relationships (One-to-Many, Many-to-Many) and static lookups |
+| Roles and permissions | Yes | Roles, entity-level access, row-level rules, additional permissions | Define access by role (Full/Edit/View) and note any ownership-based restrictions |
+| Main features and screens | Yes | Screen list, layouts, dashboard expectations, UX notes | Identify screen patterns (table, master-detail) and required charts or counters |
+| External integrations | Optional | External data sources, system dependencies, integration direction. Data Fabric connections must exist in ODC before generation. | "Customer data is sourced from the Salesforce connection in ODC." |
 
 ### Specify data types for attributes
 
@@ -119,7 +119,7 @@ Records: Pending, Confirmed, Processing, Shipped, Delivered, Cancelled
 
 #### Role with permissions
 
-Document roles by specifying entity-level access and any special considerations.
+Document roles by specifying entity-level access and any additional considerations.
 
 ```
 Role: Sales Rep

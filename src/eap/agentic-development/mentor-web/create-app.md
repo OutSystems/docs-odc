@@ -32,6 +32,7 @@ For a conceptual overview of phases and checkpoints, refer to [How AI app genera
 Before creating an app, verify the following:
 
 * Access to an ODC organization with agentic development enabled.
+* If your app references external data, set up Data Fabric connections in ODC before you start. Mentor can reference connected entities during generation but cannot create connections.
 
 Agentic development is an emerging capability with some constraints. Keep these in mind when creating apps:
 

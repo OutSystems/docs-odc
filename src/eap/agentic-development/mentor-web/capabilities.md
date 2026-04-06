@@ -38,7 +38,7 @@ During generation, Mentor Web converts natural language prompts or requirement d
 
 Mentor builds the data model by detecting entities, attributes, and relationships from input. You review and modify the proposed structure before generation, and Mentor handles validation rules automatically.
 
-* **Data integration**. Connect to Data Fabric and public entities with read/write access.
+* **Data integration**. Reference entities from existing Data Fabric connections and public entities with read/write access. Set up Data Fabric connections in ODC before using Mentor.
 * **Data manipulation**. Add, change, or remove entities and attributes before generation.
 * **Static entity detection**. Recognize status and category fields as static entities with predefined records, displayed as tags in the UI.
 * **Data management**. Download existing data or upload new data to replace sample data.

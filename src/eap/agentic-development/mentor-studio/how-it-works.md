@@ -101,7 +101,7 @@ Mentor Studio works with web apps and can modify logic, UI, and data through con
 Follow these guidelines to improve outcomes:
 
 * **Be specific.** Provide detailed requirements instead of generic instructions so Mentor doesn't have to make assumptions.
-* **Break down complex requests.** Send one requirement per prompt rather than combining multiple requirements in a single message.
+* **Break down complex requests.** Send one requirement per prompt, review the result, then build on it. Smaller prompts produce more predictable outcomes and make it easier to spot what went wrong. For decomposition strategies and examples, refer to [Effective prompts for Mentor](../effective-prompts.md#decomposition).
 
 ## Related resources
 
