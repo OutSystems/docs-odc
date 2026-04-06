@@ -68,6 +68,8 @@ To compare two prompt strategies or two implementations **at the same time** wit
 
 Strong datasets improve regression signal and make judge results easier to interpret.
 
+![Diagram showing strong test cases at the center with four branches: cover real scenarios, keep one intent per row, stabilize expectations, and plan data dependencies.](images/strong-test-cases-diag.png "Principles for designing strong test cases")
+
 * **Cover real scenarios** your users trigger, including typical and edge inputs.
 * **Keep one intent per row** so a failed case points to a clear gap (wrong tool, wrong arguments, wrong final answer).
 * **Stabilize expectations** when the correct answer is deterministic, use judgement-friendly expected text when the answer is naturally variable, per the judge options your organization enables.
@@ -156,7 +158,7 @@ To create and save a dataset, follow these steps:
 1. Edit the template JSON to add your test cases. For recommendations on coverage and expectations, refer to [Design strong test cases](#design-strong-test-cases) earlier in this topic.
 1. Upload the completed JSON file.
 1. Click **Save**.
-  ![Create dataset screen displaying dataset details fields, the Download template button, file upload area, and the Save action highlighted.](images/create-dataset-pl.png "Create dataset form in ODC Portal")
+  ![ODC Portal Create dataset page with Dataset details fields, Download template button, JSON file upload area, and the Save button highlighted and numbered to show the steps.](images/create-dataset-pl.png "Create dataset form in ODC Portal")
 
 After you save, the row data is read-only. To change test rows, prepare a new JSON file and follow your team's process for updating datasets (for example, creating a new dataset).
 
