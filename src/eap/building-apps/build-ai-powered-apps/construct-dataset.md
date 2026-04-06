@@ -149,15 +149,14 @@ Field names, nesting, and types for the JSON file follow the product contract fo
 
 To create and save a dataset, follow these steps:
 
-1. In the **ODC Portal**, navigate to **CREATE** > **Agents** > **Datasets**.
+1. In the **ODC Portal**, navigate to **ANALYZE** > **Agent evaluations** > **Datasets**.
 1. Select **Create dataset**.
 1. Enter the **Dataset details**: **Name**, **Description** (optional), **Agentic app**, and **Service action**.
 1. Download the template.
 1. Edit the template JSON to add your test cases. For recommendations on coverage and expectations, refer to [Design strong test cases](#design-strong-test-cases) earlier in this topic.
 1. Upload the completed JSON file.
 1. Click **Save**.
-
-![Create dataset screen displaying dataset details fields, the Download template button, file upload area, and the Save action highlighted.](images/create-dataset-pl.png "Create dataset form in ODC Portal")
+  ![Create dataset screen displaying dataset details fields, the Download template button, file upload area, and the Save action highlighted.](images/create-dataset-pl.png "Create dataset form in ODC Portal")
 
 After you save, the row data is read-only. To change test rows, prepare a new JSON file and follow your team's process for updating datasets (for example, creating a new dataset).
 
