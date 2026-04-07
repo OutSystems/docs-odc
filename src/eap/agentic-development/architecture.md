@@ -25,7 +25,7 @@ isautopublish: true
 
 # Architecture
 
-Agentic development in OutSystems combines three components to transform natural language into app structures. This architecture applies to both Mentor Web and Mentor Studio.
+Agentic development in OutSystems combines three components to transform natural language into app structures. This architecture applies to both Mentor Web and Mentor Studio. Together, these components form the foundation of the OutSystems Enterprise Context Graph, the contextual architecture that gives AI agents the understanding to work across complex systems.
 
 * **AI agents** interpret natural language and map it to OutSystems development patterns.
 * **OutSystems Model** (the app model, not an AI model) represents the app's structure, data, logic, and UI at a high level of abstraction.
