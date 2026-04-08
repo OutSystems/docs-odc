@@ -92,10 +92,4 @@ Use these exact names:
 * ODC Studio
 * ODC Portal
 * AI Mentor Studio
-* Mentor
-* Mentor Web
-* Mentor Studio
-* Data Fabric
-* Data Platform
-* OutSystems Model
 * Forge
