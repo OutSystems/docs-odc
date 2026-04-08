@@ -13,6 +13,7 @@ outsystems-tools:
 coverage-type:
   - remember
   - understand
+isautopublish: true
 ---
 
 # Keeping apps up to date for your users
@@ -41,7 +42,7 @@ When there's a new version on the server, the app updates itself and notifies th
 
 **Attention-requiring upgrade.** An attention-requiring upgrade may happen when the user is on a screen that's changed in the new app version. If the user does something in the app that requires interaction with the server, that interaction may fail due to the upgrade requirements. For example, tapping a button to save data calls a server action, but because that action now has a different signature, the action fails. The user then sees a message that a new app version is available and required to proceed. Clicking the message updates the app. After the update, the app loads the updated screen and shows the update confirmation message.
 
-When there's a form widget on the screen, the message about the required update also informs the user that the information they entered in the Form will be lost, because the app needs to reload. The data saved in local storage and client variables remains unaffected.
+When a form widget is on the screen, the update message informs the user that the form information is lost when the app reloads. The data saved in local storage and client variables remains unaffected.
 
 ## Situations when the update isn't possible in the device
 
@@ -52,7 +53,7 @@ There may be situations when the automatic update of the app isn't possible in t
   
 In situations where the app can't update itself on the device of the user, the app rolls back to the most recent fully working version. There's also a message that the update wasn't possible and that the user should restart the app and then try updating the app again.
 
-When the error happens while updating the local storage data model, possibly because the existing data is incompatible with the new data model, the message informs the user that they may need to reinstall the app if the problem persists. The reinstallation clears the current app data.
+When the error happens while updating the local storage data model, the existing data may be incompatible with the new model. The message then informs the user to reinstall the app if the problem persists. The reinstallation clears the current app data.
 
 You can find the issue in the logs by looking for "Upgrade failed - rolling back to previous application version". The information in the log should help you discover the cause of the upgrade failure and implement a fix in a new version of the app.
 
@@ -70,4 +71,4 @@ Some changes require installation of an updated app package on the user device. 
 
 These changes may negatively affect the user experience in the outdated apps, but the issues are automatically fixed when the user upgrades to the latest app package. In the case of plugins, it's a good practice to include fallbacks in the apps to avoid crashing until the latest app version is on the device.
 
-When installing a new version of an Android app using the build type **Debug**, uninstall the previous version from the device before installing the new one. This guarantees the new features work correctly.
+When installing a new version of an Android app using the [**Debug** build type](mobile-build-types.md#debug-android-debug), uninstall the previous version from the device before installing the new one. This guarantees the new features work correctly.

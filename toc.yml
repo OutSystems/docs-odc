@@ -468,6 +468,7 @@
         
         - href: eap/building-apps/mobile/creating-mobile-package.md
         - topics:
+            - href: eap/building-apps/mobile/mobile-build-types.md
             - href: eap/building-apps/mobile/mabs-overview.md
         - href: eap/building-apps/mobile/migrate-cordova-to-capacitor.md
          # Keeping apps up to date for your users

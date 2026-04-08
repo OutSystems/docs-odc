@@ -16,6 +16,7 @@ coverage-type:
   - remember
 topic:
   - app-distribution
+isautopublish: true
 ---
 
 # Create mobile app package
@@ -57,11 +58,25 @@ From the same screen, you can create an iOS or Android package. ODC can process 
   
     ![Screenshot of the ODC Portal showing the option to create a new mobile package for iOS.](images/create-mobile-package-pl.png "Create Mobile Package in ODC Portal")
 
-1. Select the **Build type**, the way you want to distribute this mobile package, such as a stage, the app store, or in-house for testing purposes
+1. Select the **Build type**.
+    This determines how the mobile package is compiled, signed, and distributed. The available build types vary by platform:
+
+   * For iOS:
+     * **Simulator**: For testing your app in the Xcode iOS Simulator on a Mac. This build does not run on physical devices.
+     * **Development**: For testing your app on registered physical devices during development.
+     * **App Store**: For submitting your app to the Apple App Store for public distribution.
+     * **Ad-hoc**: For distributing a release version to a selected group of testers outside the App Store.
+     * **In-house**: For distributing your app internally within your organization. Available to Apple Enterprise Program members only.
+
+   * For Android:
+     * **Debug**: For development and testing on physical devices or emulators. This build is not intended for Google Play Store submission.
+     * **Release**: For creating a production-ready app to distribute through the Google Play Store or other channels.
+
+   Choosing the correct build type ensures your app reaches the target audience with the proper credentials. For detailed information about each build type, refer to [Mobile app build types](mobile-build-types.md).
 
 1. Enter the  **App identifier**, a unique identifier for your app in stores
 
-1. (For iOS package) Provide the **Certificate**, **Certificate password**, and **Provisioning profile**.
+1. (For iOS package) Provide the **Certificate**, **Certificate password**, and **Provisioning profile**. For **Simulator** builds, you don't need to provide the certificate or provisioning details.
 
 1. (For Android package) Provide the Keystore details such as **Keystore** binary file, **Keystore password**, **Alias**, and **Alias password**.
 
@@ -75,17 +90,19 @@ From the same screen, you can create an iOS or Android package. ODC can process 
 
 1. Click **Create iOS package** or **Create Android package** depending on what you want your build.
 
-Once you've finished creating the package, you can view the following details:
+Once you've successfully created the package, you can view the following details:
 
 * Package creation date and time
-
 * Package creator
-
+* Version and revision details
+* Build type
+* MABS version used to build the package
+* Mobile framework
+* App Id
 * Link to download the package
+* QR code for PWA
 
-The page also shows the PWA QR code, version information, build type, and app identifier.
-
-For detailed information about troubleshooting, refer to [MABS errors](https://success.outsystems.com/support/errors/mabs_errors/).
+For detailed information about errors you encounter while building your package, refer to [MABS errors](https://success.outsystems.com/support/errors/mabs_errors/).
 
 ## Understanding MABS and versioning in mobile app packages
 
@@ -99,7 +116,7 @@ App stores use this number to determine whether one version is more recent than 
 
 <div class="warning" markdown="1">
 
-Sometimes, you need to change the default mobile app version number or the code number. For example, if you are migrating an existing app from another provider to OutSystems, your app's current version number or version code in the app store might be higher than the OutSystems version numbers. In this case, you need to set the OutSystems version number or version code number to a higher value than what's in the store.
+Sometimes, you need to change the default mobile app version number or the code number. For example, when migrating from another provider to OutSystems, your current version number or code in the app store might be higher than the OutSystems version numbers. In this case, you need to set the OutSystems version number or version code number to a higher value than what's in the store.
 
 </div>
 
@@ -151,7 +168,7 @@ To view the package history of your mobile app, follow these steps:
 
     ![Screenshot displaying the package history of a mobile app in ODC Portal.](images/view-package-history-pl.png "Package History Overview")
 
-    Successful builds show a **Created** status, while failed builds show **Failed**. The failed builds also include the specific error that resulted in the failure for easy troubleshooting.
+    Successful builds have a **Created** status, and failed builds have a **Failed** status.The failed builds also include the specific error that caused the failure.
 
     ![Screenshot showing a failed mobile build error in the package history.](images/mobile-build-failed-error-pl.png "Mobile Build Failed Error")
 
@@ -176,7 +193,7 @@ OutSystems recommends using the Chrome browser to preview the mobile app in the 
 
 ### App login doesn't work in the preview if you're using Safari or any other browser configured to block third-party cookies
 
-Increasingly, browsers are blocking third-party cookies by default. Using the Safari browser or any other browser configured to block third-party cookies to preview a mobile app within the ODC Portal prevents the login screen in your application from working. The app and the preview render within an iframe in different domains, and due to the configuration to block third-party cookies, the login doesn't work.
+Increasingly, browsers are blocking third-party cookies by default. Using the Safari browser or any browser that blocks third-party cookies prevents the login screen in your application from working when previewing the ODC Portal. The app and the preview render within an iframe in different domains, and due to the configuration to block third-party cookies, the login doesn't work.
 
 OutSystems recommends the Chrome browser for previewing the mobile app in the ODC Portal. If the browser is blocking third-party cookies, you can disable that feature in the browser's security settings.
 
@@ -188,6 +205,8 @@ OutSystems applications and supported plugins built with MABS 11 or greater are 
 
 ## Related resources
 
+* [Mobile app build types](mobile-build-types.md)
+  
 * [MABS versioning and lifecycle](https://success.outsystems.com/support/release_notes/mobile_apps_build_service_versions/mabs_versioning_and_lifecycle/)
 
 * [Building Cordova and Capacitor apps in MABS 12](mabs-overview.md)
