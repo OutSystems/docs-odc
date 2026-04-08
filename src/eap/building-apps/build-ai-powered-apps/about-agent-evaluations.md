@@ -2,7 +2,7 @@
 guid: 8029c6d3-8b9f-4f93-a0ad-fa04790013a5
 locale: en-us
 summary: How agent evaluations in OutSystems Developer Cloud (ODC) run a service action against a dataset, capture traces, and score results with the platform judge for repeatable regression checks.
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=9558-10&t=6tQ3UXW50szDuHeL-1
 coverage-type:
   - understand
 topic:
@@ -41,6 +41,8 @@ Because the platform treats the **service action** as a black box, it measures r
 ## How an evaluation run works
 
 An evaluation run moves from the **dataset** through the **service action**, into a captured trace, through scoring, and into per-case results you can compare across runs.
+
+![Diagram showing the agent evaluation flow from dataset in JSON, through the service action and execution trace, to the platform judge and final evaluation results for each test case.](images/evals-flow-diag.png "End-to-end flow of an agent evaluation run in OutSystems")
 
 ### Dataset
 
