@@ -15,6 +15,7 @@ outsystems-tools:
 coverage-type:
   - understand
   - remember
+isautopublish: true
 ---
 
 # Monitor assets with ODC Analytics
@@ -125,7 +126,17 @@ The APDEX calculation used is **APDEX = (a + b) / c**. Here's a breakdown of the
 
 ### Users
 
-The number of authenticated and anonymous users visiting the app helps you understand its usage over time.
+The number of authenticated and anonymous users visiting the app helps you understand its usage over time. The **Analytics** console tracks the following user categories separately:
+
+* **Anonymous users** — Visits to screens where the user isn't logged in.
+
+* **Authenticated users** — Visits from users who are logged in.
+
+<div class="info" markdown="1">
+
+A user who accesses the login screen before logging in generates both an anonymous visit and an authenticated visit. The **Analytics** console tracks these visits separately and doesn't merge them, so the same user appears in both categories.
+
+</div>
 
 ### Geography
 
