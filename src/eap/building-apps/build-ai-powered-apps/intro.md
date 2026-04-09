@@ -67,7 +67,7 @@ Use cases suited for this approach include:
 * Generating articles, brainstorming ideas, or creating marketing content based on **provided context**.  
 * Providing personalized recommendations using historical user data **supplied by the app**.  
 * Summarizing key points from real-time meeting transcripts **provided by the app**.  
-* Answering user queries based on product documentation **and** current user status information **fetched by the app and passed as context**.
+* Answering user queries based on product documentation and current user status information **fetched by the app and passed as context**.
 
 ### AI agents
 
