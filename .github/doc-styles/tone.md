@@ -92,5 +92,4 @@ Use these exact names:
 * ODC Studio
 * ODC Portal
 * AI Mentor Studio
-* Sentry for ODC (Sentry for OutSystems Developer Cloud)
 * Forge
