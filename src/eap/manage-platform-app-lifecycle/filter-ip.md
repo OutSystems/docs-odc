@@ -29,7 +29,7 @@ For more information on ODC's built-in security, refer to [Security of OutSystem
 
 ## Prerequisites {#prerequisites}
 
-* A subscription to the Sentry add-on. Contact your account manager for provisioning.  
+* A subscription to Sentry for ODC. Contact your account manager for provisioning.  
 * **View configurations** and **Manage IP Restrictions** permissions.  
 
 ## Control access with IP filters {#control-access-with-ip-filters}

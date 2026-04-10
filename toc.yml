@@ -607,6 +607,7 @@
 # Security
 - href: eap/security/security.md
 - topics:
+    - href: eap/security/sentry.md
     - href: eap/security/hipaa.md
     - href: eap/security/pci.md
     - href: eap/security/configure-csp.md
