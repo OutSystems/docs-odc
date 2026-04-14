@@ -433,8 +433,11 @@
             - topics:
                 - href: eap/integration-with-systems/mobile-plugins/barcode/intro.md
                 - href: eap/integration-with-systems/mobile-plugins/camera/intro.md
-                - topics:
+                - topics:  
                     - href: eap/integration-with-systems/mobile-plugins/camera/camera-ref.md
+                    - href: eap/integration-with-systems/mobile-plugins/camera/camera-migration-guide-1-to-2.md
+                    - href: eap/integration-with-systems/mobile-plugins/camera/camera-version-1.md
+                    - href: eap/integration-with-systems/mobile-plugins/camera/camera-ref-version-1.md
                 - href: eap/integration-with-systems/mobile-plugins/common-plugin/intro.md
                 - href: eap/integration-with-systems/mobile-plugins/calendar/intro.md
                 - href: eap/integration-with-systems/mobile-plugins/contacts/intro.md
