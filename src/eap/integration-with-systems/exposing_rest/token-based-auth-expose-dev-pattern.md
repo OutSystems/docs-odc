@@ -17,8 +17,9 @@ audience:
 tags: rest apis,security,authentication,jwt,token-based authentication
 outsystems-tools:
   - odc studio
-helpids: 
+helpids:
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8972-210
+isautopublish: true
 ---
 
 # Token-based authentication for exposed REST APIs
@@ -253,7 +254,7 @@ When you implement this pattern, apply the following security best practices:
 
 * **Protect tokens in transit and at rest**
     * In ODC, REST services are always exposed over HTTPS (TLS). You can't disable SSL/TLS or accept plain HTTP.
-        * Use [**Code quality**](../../monitor-and-troubleshoot/manage-technical-debt/managing-tech-debt.md), powered by [Mentor](../../building-apps/ai-mentor/intro.md), to scan for [exposed REST services without authentication](../../monitor-and-troubleshoot/manage-technical-debt/security/exposed-rest-services-are-not-secured.md).
+        * Use [**Code quality**](../../monitor-and-troubleshoot/manage-technical-debt/managing-tech-debt.md), powered by [Mentor](../../agentic-development/intro.md), to scan for [exposed REST services without authentication](../../monitor-and-troubleshoot/manage-technical-debt/security/exposed-rest-services-are-not-secured.md).
     * If you log or store tokens anywhere, mask them in logs and encrypt them before persisting to prevent leakage. In ODC, use an application-level encryption mechanism such as [AES_Encrypt](../../reference/libraries/security.md#aes_encrypt) so that you store only ciphertext in the database, and use [AES_Decrypt](../../reference/libraries/security.md#aes_decrypt) to decrypt values only inside trusted server-side logic when strictly needed.
 
 * **Defend against replay attacks**

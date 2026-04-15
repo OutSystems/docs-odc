@@ -16,6 +16,7 @@ exceptions:
   - Agent Workbench
   - Center
   - Conversion Assessment Tool
+  - DbCleaner
   - Integration Builder
   - Service
   - Studio
@@ -55,6 +56,7 @@ exceptions:
   - Data Fabric
   - Integration Studio
   - Platform Server
+  - Private Gateway
   - 1-Click Publish
   - True Change
   - IdP
@@ -141,6 +143,10 @@ exceptions:
   - JSON
   - Cordova-based
   - Cordova-only
+  - Cordova
+  - Capacitor
+  - Ad-Hoc
+  - In-House
   - ViewState
   - WorkflowNewCustomerLoan
   - NSCameraUsageDescription
@@ -192,7 +198,9 @@ exceptions:
   - Plugin Manager
   - MediaResult data
   - MediaMetadata data
-  - Employee
+  - RequestPart
+  - Form URL
+  - Create/Upgrade
 
 # Events
   - OnClick
@@ -251,6 +259,8 @@ exceptions:
   - IdPs
   - Azure
   - BuildMessages
+  - DOCX
+  - Markdown
   - Microsoft Entra
   - Microsoft Entra ID
   - Cascading Style Sheets
@@ -309,18 +319,30 @@ exceptions:
   - NuGet
   - Key Store Plugin
   - Camera Plugin
+  - TakePhoto
+  - EditPhoto
+  - MediaResult
   - SAML
   - Plugin Manager
   - Phosphor
   - Font Awesome
+  - Oracle
+  - SQL Server
+  - MCP
+  - A2A
   
 # Industry
   - AI
   - API
   - ARIA
+  - Accessible Rich Internet Applications
   - APIs
+  - CDN
+  - Claude Code
   - CI/CD
   - CICD
+  - CI
+  - DB2
   - DEV
   - DNS
   - DREAD
@@ -332,6 +354,7 @@ exceptions:
   - ID
   - JavaScript
   - MCP
+  - Nginx
   - TLS
   - TLS
   - UI

@@ -17,6 +17,7 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+isautopublish: true
 ---
 
 # Configure a private gateway to your network
@@ -55,6 +56,12 @@ The following diagram shows a sample ODC customer setup for a Private Gateway th
 ![Diagram illustrating a sample OutSystems Developer Cloud customer setup for an active Private Gateway on two stages](images/private-gateways-diag.png "Sample ODC Customer Setup for a Private Gateway")
 
 Like the apps running in a stage, each Private Gateway benefits from automatic failover.
+
+<div class="info" markdown="1">
+
+You can also activate and deactivate a Private Gateway, retrieve its status, and rotate its key programmatically using the [Environment Configurations API](../reference/apis/env-config-v1.md).
+
+</div>
 
 ## Activate a Private Gateway
 

@@ -16,6 +16,7 @@ tags: ai governance, agent guardrails, content filtering, data protection, risk 
 outsystems-tools:
   - odc portal
 helpids: 30739
+isautopublish: true
 ---
 
 # Agent guardrails
@@ -115,7 +116,7 @@ You can configure different dimensions of protection. To ensure optimal performa
 
 ### Filter categories
 
-* **Prompt attack protection**: Detects user messages that attempt to bypass safety measures or extract confidential data.
+* **Prompt Attack Protection**: Detects user messages that attempt to bypass safety measures or extract confidential data.
 
 * **Personal information exposure (PII) filters**: Detects personally identifiable information (PII) and sensitive data in user messages and AI model responses.
 

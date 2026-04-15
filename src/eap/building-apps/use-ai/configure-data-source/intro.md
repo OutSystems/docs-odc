@@ -14,6 +14,7 @@ outsystems-tools:
   - ai agent builder
 coverage-type:
   - apply
+isautopublish: true
 ---
 
 # Configure your data sources
@@ -41,7 +42,7 @@ To add data sources and use them in the AI Agent Builder you must:
 
 ## Related resources
 
-* [Configure Azure AI search with BLOB storage](configure-azure-data-source.md)
+* [Set up Azure AI search with blob storage](configure-azure-data-source.md)
 
 * [Add Azure AI Search data source in the AI Agent Builder app](add-azure-data-source-to-aibuilder.md)
 

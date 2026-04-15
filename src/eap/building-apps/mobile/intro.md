@@ -13,6 +13,7 @@ outsystems-tools:
 coverage-type:
   - none
 helpids: 30625
+isautopublish: true
 ---
 
 # Mobile apps
@@ -68,11 +69,11 @@ All [OutSystems supported mobile plugins](../../integration-with-systems/mobile-
 
 ### Generating mobile packages
 
-From the ODC portal, use MABS 12 to generate your native iOS/Android mobile package. For detailed information, refer to [Create mobile app package](creating-mobile-package.md).
+From the ODC portal, use MABS 12 to generate your native iOS/Android mobile package. Before creating a package, select the build type that matches your distribution goal. For more information about the available build types and their signing requirements, refer to [Mobile app build types](mobile-build-types.md). For detailed information about creating a package, refer to [Create mobile app package](creating-mobile-package.md).
 
 ### Changes from Cordova to Capacitor apps {#cordova-capacitor-changes}
 
-The transition from an OutSystems Cordova app to a Capacitor app brings several significant updates focusing on adopting the Capacitor cross-platform native runtime and modernizing the build process and extensibility.
+The transition from an OutSystems Cordova app to a Capacitor app involves adopting the Capacitor native runtime and modernizing the build process and extensibility.
 
 | Feature | Cordova app | Capacitor app |
 | -------------------------------- | -------------------------------------------------- | ------------------------------------------------- |

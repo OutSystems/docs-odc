@@ -2,7 +2,7 @@
 summary: This article provides an overview of MABS and specifics of MABS12.
 tags: mabs, hybrid mobile apps, capacitor, cordova, outsystems
 locale: en-us
-guid: 6b8e1729-3b16-4945-bf72-c22628e71421  
+guid: 6b8e1729-3b16-4945-bf72-c22628e71421
 app_type: mobile apps
 platform-version: odc
 figma:
@@ -13,6 +13,7 @@ outsystems-tools:
 coverage-type:
   - understand
   - remember
+isautopublish: true
 ---
 # Capacitor and Cordova support in MABS
 
@@ -34,7 +35,7 @@ For detailed information about using plugins in Capacitor apps, refer to [Using 
   
 * **For existing Cordova apps with a tight deadline:** Continue with the Cordova stack and prepare for transition to Capacitor.
   
-* **For existing Cordova apps in a regular maintenance or improvement cycle:** Try the Capacitor stack, identify any plugin incompatibilities, and gradually work on the migration. For detailed information about how to adapt Cordovoa plugins, refer to [Adapt Cordova plugin for compatibility with Capacitor](../../integration-with-systems/mobile-plugins/migrate-cordova-plugin.md).
+* **For existing Cordova apps in a regular maintenance or improvement cycle:** Try the Capacitor stack, identify any plugin incompatibilities, and gradually work on the migration. For detailed information about how to adapt Cordova plugins, refer to [Adapt Cordova plugin for compatibility with Capacitor](../../integration-with-systems/mobile-plugins/migrate-cordova-plugin.md).
 
 ## Related resources
 

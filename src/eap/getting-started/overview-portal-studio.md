@@ -15,6 +15,7 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - remember
+isautopublish: true
 ---
 
 # UI overview of ODC Portal and ODC Studio
@@ -64,7 +65,7 @@ From the top right, you can select **Download ODC Studio** or **Create app**. Wh
 
 To open an existing app or see the details, hover over the app to display the **ellipsis** (3-dots). Then select either **Open in ODC** or **View Details**.
 
-To create a new app from the ODC Portal, select **Create app**, and then choose either a Web app, a Mobile app, an Agentic app, Library, or Mobile library.
+To create a new app from the ODC Portal, select **Create app**, and then choose either a Web app, a Mobile app, an Agentic app, Library, or Mobile library. When you create a web app, you can build it from scratch in ODC Studio or generate it with Mentor Web using [agentic development](../agentic-development/intro.md).
 
 ![Options for creating an app, or library in the ODC Portal with types of apps to choose from](images/app-library-template-odcs.png "ODC Portal App Creation Options")
 

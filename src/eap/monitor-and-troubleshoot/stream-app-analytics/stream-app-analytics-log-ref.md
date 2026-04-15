@@ -18,29 +18,32 @@ audience:
   - tech leads
   - architects
 helpids:
+isautopublish: true
 ---
 # Streamed log data
 
 The following table lists the log attributes that are streamed from your ODC app to APM tools.
 
-| **Attribute name**        | **Data type** | **Description**                                            |
+| **Attribute name** | **Data type** | **Description** |
 | ------------------------- | ------------- | ---------------------------------------------------------- |
-| Action\_Name              | String        | Name of the action being called                            |
-| TimerName                 | String        | Name of the timer being called                             |
-| message                   | String        | Log message                                                |
-| outsystems\_app\_key      | GUID          | ID of the app where the message is logged                  |
-| outsystems\_app\_name     | String        | Name of the application where the message is logged        |
-| outsystems\_app\_version  | String        | Version of the app where the message is logged             |
-| outsystems\_app\_revision | Int           | ID of the application revision where the message is logged |
-| outsystems\_tenant\_key   | GUID          | ID of the tenant where the message is logged               |
-| outsystems\_env\_key      | GUID          | ID of the tenant stage where the message is logged         |
-| span\_id                  | GUID          | Span ID associated with the log record                     |
-| trace\_id                 | GUID          | Trace ID associated with the log record                    |
-| outsystems\_timer\_key    | GUID          | ID of the timer where the message is logged                |
-| service\_name             | String        | Name of the service where the message is logged            |
-| RequestPath               | String        | Path of the request that originated the log                |
-| exception\_stacktrace     | String        | Stack trace from the error                                 |
-| exception\_message        | String        | Error message                                              |
+| Action\_Name | String | Name of the action being called |
+| TimerName | String | Name of the timer being called |
+| message | String | Log message |
+| outsystems\_app\_key | GUID | ID of the app where the message is logged |
+| outsystems\_app\_name | String | Name of the application where the message is logged |
+| outsystems\_app\_version | String | Version of the app where the message is logged |
+| outsystems\_app\_revision | Int | ID of the application revision where the message is logged |
+| outsystems\_tenant\_key | GUID | ID of the tenant where the message is logged |
+| outsystems\_env\_key | GUID | ID of the tenant stage where the message is logged |
+| span\_id | GUID | Span ID associated with the log record |
+| trace\_id | GUID | Trace ID associated with the log record |
+| outsystems\_timer\_key | GUID | ID of the timer where the message is logged |
+| service\_name | String | Name of the service where the message is logged |
+| RequestPath | String | Path of the request that originated the log |
+| exception\_stacktrace | String | Stack trace from the error |
+| exception\_message | String | Error message |
+| outsystems.agent.key | GUID | Agent ID where the message is logged |
+| outsystems.workload.type | String | Identification type: app or agent |
 
 ## Related resources
 

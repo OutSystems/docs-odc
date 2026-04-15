@@ -16,25 +16,23 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+isautopublish: true
 ---
 
 # Manage IP filters
 
-<div class="info" markdown="1">
-
-IP filters require an add-on [subscription](subscription-console.md). Please contact your OutSystems account team for more information.
-
-</div>
-
 This article is intended for administrators who need to control network access to their apps in ODC. Administrators can enhance security by creating and managing IP filter groups and defining access rules for each stage to specify which IP addresses are allowed. IP filters in ODC don't restrict access to the ODC Portal itself. They only apply to deployed assets such as apps, agents, workflows, custom code executions, and REST API calls between apps.
+
+On OutSystems-hosted stages, you can manage IP-based access control directly from the Portal. For self-hosted stages, skip to [IP filtering on self-hosted stages](#sh-ip-filtering).
+
 For more information on ODC's built-in security, refer to [Security of OutSystems Developer Cloud.](../security/security.md)
 
-## Prerequisites
+## Prerequisites {#prerequisites}
 
-* A subscription to the Sentry add-on. Contact your account manager for provisioning.  
+* A subscription to Sentry for ODC. Contact your account manager for provisioning.  
 * **View configurations** and **Manage IP Restrictions** permissions.  
 
-## Control access with IP filters
+## Control access with IP filters {#control-access-with-ip-filters}
 
 ODC provides a method to manage network access to your apps through IP filters, enhancing security. This system revolves around **IP filter groups**, logical containers for access policies. Within these groups, you define rules, specifying the IP addresses permitted or blocked from accessing your apps. Each IP filter group can contain up to 20 rules, and each rule can contain up to 20 IP address entries.
 
@@ -50,11 +48,18 @@ An example includes:
 
 ODC automatically generates a **default IP filter group** for each stage. Administrators can change the access control method of this pre-defined group at any time. New apps are automatically associated with each stage's default group. For more specific control, administrators can create **IP filter groups**. These customizable groups enforce tailored access policies for designated app sets.
 
-When configuring an IP filter group, you must select its access control method: an **AllowList**, where all traffic is denied unless specifically permitted by a rule, or a **DenyList**, where all traffic is allowed unless explicitly denied by a rule. IP filter groups and their rules are stage-specific, operating independently for each app stage. Administrators can associate an app with only one IP filter group per stage. For operational flexibility, administrators can enable or disable individual IP filter rules within a group through rule activation without requiring deletion.
+When configuring an IP filter group, you must select its access control method:
+
+* **AllowList**, where all traffic is denied unless specifically permitted by a rule.
+* **DenyList**, where all traffic is allowed unless explicitly denied by a rule.
+
+IP filter groups and their rules are stage-specific, operating independently for each app stage. Administrators can associate an app with only one IP filter group per stage. For operational flexibility, administrators can enable or disable individual IP filter rules within a group through rule activation without requiring deletion.
+
+End users whose IP address is blocked by an active filter rule receive a **403 Forbidden** error when attempting to access the application.
 
 <div class="info" markdown="1">
 
-When working with IP filters in environments that support both IPv4 and IPv6 (dual-stack networks), it's important to understand that modern operating systems and browsers typically prefer IPv6 connections when available. This means that if a client device has both IPv4 and IPv6 connectivity, it will connect using IPv6, and the client won't attempt to connect using IPv4. Consequently, only the IPv6 address is evaluated by the IP filter, and any IPv4 rules are never tested. To ensure comprehensive access control and avoid unexpected behavior, add both the IPv4 and IPv6 addresses to your filter rules when configuring AllowLists or DenyLists.
+In environments with both IPv4 and IPv6 (dual-stack networks), IP filters need extra care. Modern operating systems and browsers prefer IPv6 when it is available. If a client has both IPv4 and IPv6 connectivity, it connects using IPv6. It does not use IPv4 for that connection. Only the IPv6 address is evaluated by the IP filter, so IPv4 rules are not tested. When you configure AllowLists or DenyLists, add both IPv4 and IPv6 addresses for each client or network you want to control. That way you maintain full access control and avoid unexpected behavior.
 
 </div>
 
@@ -68,11 +73,17 @@ An example includes:
 
 * For the Production stage, an IP filter group uses an **AllowList**. Rules within it allow access from partner IPs: `203.0.113.0/24` (Partner A), `198.51.100.10` (Partner B), and `2001:DB8:0002::/48` (Partner C). The system blocks all other IPs. The Development stage for the same app can have a different IP filter group and access control method, demonstrating the **stage-specific** nature of the configuration.
 
-### Associate apps with IP filter groups before deployment
+### Associate apps with IP filter groups before deployment {#associate-apps-ip-filter-groups}
 
-To ensure consistent security from deployment, associate an app with a specific IP filter group for a given stage, even if the app hasn't been deployed to that stage yet. This approach guarantees that the system applies the correct IP filter rules to the app immediately upon deployment. It prevents any brief periods where the app might be exposed to default or incorrect rules.
+To ensure consistent security from deployment, associate an app with a specific IP filter group for a given stage. You can do so even if the app hasn't been deployed to that stage yet. This approach guarantees that the system applies the correct IP filter rules to the app immediately upon deployment. It prevents any brief periods where the app might be exposed to default or incorrect rules.
 
-## Create an IP filter group
+<div class="info" markdown="1">
+
+You can also create, update, and delete IP filter groups and their rules programmatically using the [Environment Configurations API](../reference/apis/env-config-v1.md).
+
+</div>
+
+## Create an IP filter group {#create-ip-filter-group}
 
 Follow these steps to create a new IP filter group:
 
@@ -89,7 +100,7 @@ Follow these steps to create a new IP filter group:
 
 ![ODC Portal interface for creating a new IP filter group with options for name, description, and access control method.](images/create-filter-group-pl.png "Create IP Filter Group")
 
-### Add rules to a group
+### Add rules to a group {#add-rules-to-group}
 
 Follow these steps to add rules to a group:
 
@@ -115,12 +126,18 @@ Follow these steps to add rules to a group:
 
 ![ODC Portal interface for adding an allow rule to an IP filter group, including fields for rule name and IP addresses.](images/add-rule-pl.png "Add Allow Rule")
 
-## Manage IP filter groups and rules
+## Manage IP filter groups and rules {#manage-ip-filter-groups}
 
 You can manage IP filter groups and the rules. For IP filter groups, you have the flexibility to:
 
 * **Manage apps:** Add or remove apps associated with a specific IP filter group.  
 * **Edit group details:** Modify the group's name and description. Note that administrators can't change the access control method (AllowList/DenyList) after creating the group.  
 * **Edit or delete rules:** Modify existing rules within a group or remove them entirely.  
-* **Copy groups:** Duplicate a user-created IP filter group and associated apps and/or rules to another stage.  
+* **Copy groups:** Duplicate a user-created IP filter group to another stage, including associated apps, rules, or both.  
 * **Delete groups:** Remove user-created IP filter groups when they're no longer needed.
+
+## IP filtering in self-hosted stages {#sh-ip-filtering}
+
+For self-hosted stages, IP-based access control is not managed through the ODC Portal. Inbound traffic reaches your apps through a customer-managed load balancer and ingress layer. You can apply access restrictions at those layers. For example, use load balancer rules, cluster network policies, or firewall and security group settings upstream of the cluster. The right approach depends on your network architecture and where you need enforcement in the traffic path.
+
+For an overview of inbound traffic to self-hosted stages, see the [inbound traffic configuration guide](self-hosted/sh-domain-config.md). See also [network requirements](self-hosted/sh-install-reqs.md#network-reqs).

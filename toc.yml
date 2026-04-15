@@ -14,19 +14,34 @@
 - topics:
     - href: eap/onboarding/differences-sql.md
 
+# Agentic development
+- href: eap/agentic-development/intro.md
+- topics:
+    # Create apps (Mentor Web)
+    - href: eap/agentic-development/mentor-web/how-it-works.md
+    - topics:
+        - href: eap/agentic-development/mentor-web/create-app.md
+        - href: eap/agentic-development/mentor-web/blueprint.md
+        - href: eap/agentic-development/mentor-web/prompts.md
+        - href: eap/agentic-development/mentor-web/requirements-doc.md
+        - href: eap/agentic-development/mentor-web/capabilities.md
+        - href: eap/agentic-development/mentor-web/ai-tools.md
+    # Modify apps (Mentor Studio)
+    - href: eap/agentic-development/mentor-studio/how-it-works.md
+    - topics:
+        - href: eap/agentic-development/mentor-studio/modify-app.md
+        - href: eap/agentic-development/mentor-studio/prompts.md
+        - href: eap/agentic-development/mentor-studio/capabilities.md
+    # Concepts
+    - href: eap/agentic-development/effective-prompts.md
+    - href: eap/agentic-development/thinking-with-ai.md
+    - href: eap/agentic-development/architecture.md
+    - href: eap/agentic-development/sdlc.md
+    - href: eap/agentic-development/ai-limitations.md
+
 # Building apps
 - href: eap/building-apps/intro.md
 - topics:
-    # AI Mentor
-    - href: eap/building-apps/ai-mentor/intro.md
-    - topics:
-        - href: eap/building-apps/ai-mentor/thinking-with-ai.md
-        - href: eap/building-apps/ai-mentor/mentor.md
-        - href: eap/building-apps/ai-mentor/prompts.md
-        - href: eap/building-apps/ai-mentor/requirements-doc.md
-        - href: eap/building-apps/ai-mentor/capabilities.md
-        - href: eap/building-apps/ai-mentor/sdlc.md
-        - href: eap/building-apps/ai-mentor/ai-tools.md
     # Build AI-powered apps
     - href: eap/building-apps/build-ai-powered-apps/intro.md
     - topics:
@@ -48,12 +63,19 @@
             - href: eap/building-apps/build-ai-powered-apps/image-input.md
             - href: eap/building-apps/build-ai-powered-apps/testing.md
             - href: eap/building-apps/build-ai-powered-apps/debug-agentic-apps.md
+            - href: eap/building-apps/build-ai-powered-apps/about-agent-evaluations.md
+            - topics:
+                - href: eap/building-apps/build-ai-powered-apps/construct-dataset.md
+                - href: eap/building-apps/build-ai-powered-apps/run-your-first-evaluation.md
             - href: eap/building-apps/build-ai-powered-apps/structured-output.md            
             - href: eap/building-apps/build-ai-powered-apps/prompt-engineering.md            
             - href: eap/building-apps/build-ai-powered-apps/agent-long-running.md
+            - href: eap/building-apps/build-ai-powered-apps/agent-2-agent/agent-2-agent.md
+            - topics:
+                - href: eap/building-apps/build-ai-powered-apps/agent-2-agent/using-agent-2-agent.md
             - href: eap/building-apps/build-ai-powered-apps/semantic-search/semantic-search-intro.md
             - topics:
-                - href: eap/building-apps/build-ai-powered-apps/semantic-search/using-semantic-search.md 
+                - href: eap/building-apps/build-ai-powered-apps/semantic-search/using-semantic-search.md                 
             # MCPs and other tools
             - href: eap/building-apps/build-ai-powered-apps/tools/intro.md
             - topics:
@@ -180,6 +202,9 @@
         # Reuse ui
         - href: eap/building-apps/ui/reuse/intro.md
         - href: eap/building-apps/ui/reuse/block-create-reuse.md
+        # Icons
+        - href: eap/building-apps/ui/icons/intro.md
+        - href: eap/building-apps/ui/icons/icon-widget-ref.md
         # Patterns
         - href: eap/building-apps/ui/patterns/intro.md
         - topics:
@@ -310,7 +335,6 @@
     # Logic
     - href: eap/building-apps/logic/intro.md
     - topics:
-        - href: eap/building-apps/logic/ai-assisted-dev.md    
         - href: eap/building-apps/logic/input-parameter.md
         - href: eap/building-apps/logic/local-variable.md
         - href: eap/building-apps/logic/output-parameter.md
@@ -324,6 +348,7 @@
             - href: eap/building-apps/logic/expressions/operators.md
             - href: eap/building-apps/logic/expressions/operands.md
         - href: eap/building-apps/logic/best-practices-logic.md
+        - href: eap/building-apps/logic/ai-logic-suggestions.md
     # Extend your apps with external logic
     - href: eap/building-apps/external-logic/intro.md
     - topics: 
@@ -411,8 +436,11 @@
             - topics:
                 - href: eap/integration-with-systems/mobile-plugins/barcode/intro.md
                 - href: eap/integration-with-systems/mobile-plugins/camera/intro.md
-                - topics:
+                - topics:  
                     - href: eap/integration-with-systems/mobile-plugins/camera/camera-ref.md
+                    - href: eap/integration-with-systems/mobile-plugins/camera/camera-migration-guide-1-to-2.md
+                    - href: eap/integration-with-systems/mobile-plugins/camera/camera-version-1.md
+                    - href: eap/integration-with-systems/mobile-plugins/camera/camera-ref-version-1.md
                 - href: eap/integration-with-systems/mobile-plugins/common-plugin/intro.md
                 - href: eap/integration-with-systems/mobile-plugins/calendar/intro.md
                 - href: eap/integration-with-systems/mobile-plugins/contacts/intro.md
@@ -446,6 +474,7 @@
         
         - href: eap/building-apps/mobile/creating-mobile-package.md
         - topics:
+            - href: eap/building-apps/mobile/mobile-build-types.md
             - href: eap/building-apps/mobile/mabs-overview.md
         - href: eap/building-apps/mobile/migrate-cordova-to-capacitor.md
          # Keeping apps up to date for your users
@@ -584,6 +613,7 @@
 # Security
 - href: eap/security/security.md
 - topics:
+    - href: eap/security/sentry.md
     - href: eap/security/hipaa.md
     - href: eap/security/pci.md
     - href: eap/security/configure-csp.md
@@ -615,6 +645,16 @@
     - topics:
         - href: eap/manage-platform-app-lifecycle/platform-architecture/networking.md
         - href: eap/manage-platform-app-lifecycle/platform-architecture/identity.md
+    - href: eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md
+    - topics:
+        - href: eap/manage-platform-app-lifecycle/self-hosted/sh-install-reqs.md
+        - href: eap/manage-platform-app-lifecycle/self-hosted/sh-cluster-components.md
+        - href: eap/manage-platform-app-lifecycle/self-hosted/sh-shared-responsibility.md
+        - href: eap/manage-platform-app-lifecycle/self-hosted/install-sh-process.md
+        - topics:
+            - href: eap/manage-platform-app-lifecycle/self-hosted/sh-db-setup.md
+            - href: eap/manage-platform-app-lifecycle/self-hosted/install-sh.md
+            - href: eap/manage-platform-app-lifecycle/self-hosted/sh-domain-config.md
     - href: eap/manage-platform-app-lifecycle/configuration-management.md
     - href: eap/manage-platform-app-lifecycle/configure-app-settings.md
     - href: eap/manage-platform-app-lifecycle/custom-domains.md
@@ -657,6 +697,7 @@
         - href: eap/manage-platform-app-lifecycle/external-idps/assign-idp.md
         - href: eap/manage-platform-app-lifecycle/external-idps/redirect-uris.md
         - href: eap/manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md
+    - href: eap/user-management/configure-user-session.md
     - href: eap/user-management/passwords.md
 
 # Monitoring and troubleshooting
@@ -746,7 +787,7 @@
         - href: eap/monitor-and-troubleshoot/traces/server-side-traces.md
         - href: eap/monitor-and-troubleshoot/traces/client-side-traces.md
     
-# REST APIs
+# REST APIs 
 - href: eap/reference/apis/public-rest-apis/overview.md
 - topics:
     - href: eap/reference/apis/public-rest-apis/getting-started.md
@@ -772,6 +813,7 @@
         - href: eap/reference/apis/dependency-v1.md
         - href: eap/reference/apis/asset-v1.md
         - href: eap/reference/apis/asset-config-v1.md
+        - href: eap/reference/apis/env-config-v1.md
         - href: eap/reference/apis/code-quality-api-v1.md
         - href: eap/reference/apis/external-library-generation-api-v1.md
 

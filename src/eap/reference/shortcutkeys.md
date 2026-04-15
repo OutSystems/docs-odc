@@ -16,9 +16,10 @@ coverage-type:
   - remember
 topic:
   - service-studio-overview
+isautopublish: true
 ---
 
-# ODC Studio Shortcuts
+# ODC Studio shortcuts
 
 ## General
 
@@ -44,14 +45,16 @@ topic:
 | Cancel and close the current pop-up window | Esc | Esc |
 | Look for help, by telling us what you want to do | F1 | |
 | Rename selected element | F2 | |
-| Open selected dropdwon | F4 | F4 |
+| Open selected dropdown | F4 | F4 |
 | Open Preferences | | Cmd+comma |
 
-## Basic Development
+## Basic development
 
 | Description | Windows | macOS |
 | --- | --- | --- |
-| | F5 | 1-Click Publish |
+| 1-Click Publish | F5 | F5 |
+| 1-Click Publish with comment | Shift+F5 | Shift+F5 |
+| Ask Mentor | Ctrl+Shift+A | Shift+Cmd+A |
 | Hide/show warning in TrueChange tab | Ctrl+H | Shift+Cmd+H |
 | Enable/disable Styles Editor | Ctrl+J | |
 | Refresh Aggregate's data preview | Ctrl+L | Cmd+R |
@@ -97,7 +100,7 @@ topic:
 |Go to previous text occurrence or element usage|Shift+F3|Shift+Cmd+G or Shift+F3|
 |Search widgets or blocks in the Toolbox|Ctrl+E|Shift+Cmd+E|
 
-## Screen Editor
+## Screen editor
 
 |Description|Windows|macOS|
 |---|---|---|
@@ -111,7 +114,7 @@ topic:
 |Move Table's row up|Ctrl+Up|Cmd+Up|
 |Move Table's row down|Ctrl+Down|Cmd+Down|
 
-## Flow Editor
+## Flow editor
 
 |Description|Windows|macOS|
 |---|---|---|

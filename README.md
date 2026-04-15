@@ -65,8 +65,8 @@ _Note:_ For some reason, Markdown documents do not automatically assume these se
 **Install a spell checker**
 
 1. Open _View > Extensions_.
-2. Search and install the offline spell checker by Michael Vernier, called SpellChecker.
-3. Reload the window.
+1. Search and install the offline spell checker by Michael Vernier, called SpellChecker.
+1. Reload the window.
 
 ### Visual Studio 2017 (with Markdown Editor extension)
 

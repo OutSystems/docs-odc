@@ -14,6 +14,7 @@ audience:
 figma:
 outsystems-tools:
   - odc portal
+isautopublish: true
 ---
 
 # API references
@@ -27,5 +28,6 @@ Use these API reference documents to explore endpoints, request and response sch
 * [Dependency Management API](../dependency-v1.md)
 * [Asset Repository API](../asset-v1.md)
 * [Asset Configurations API](../asset-config-v1.md)
+* [Environment Configurations API](../env-config-v1.md)
 * [Code quality API](../code-quality-api-v1.md)
 * [External Library Generation Service API](../external-library-generation-api-v1.md)

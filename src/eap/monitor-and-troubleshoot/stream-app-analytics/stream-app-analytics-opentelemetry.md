@@ -18,6 +18,7 @@ audience:
   - tech leads
   - architects
 helpids:
+isautopublish: true
 ---
 # Set up the OpenTelemetry Collector
 
@@ -43,7 +44,11 @@ To receive logs in Datadog, Splunk, or Amazon S3, you must set up an OpenTelemet
 
 <div class="info" markdown="1">
 
-If the OpenTelemetry Collector implementation is OLTP over HTTP, according to the [OpenTelemetry specification](https://opentelemetry.io/docs/specs/otlp/#otlphttp-request), standard paths must be used. The URL provided in the ODC Portal will be automatically manipulated to send logs, traces, and metrics to the following distinct paths: Logs: `v1/logs` Traces: `v1/traces` Metrics: `v1/metrics` To avoid unexpected connection failure, you should keep track and renew the SSL/TLS certificate used in the OpenTelemetry collector before the expiration date.  
+* If the OpenTelemetry Collector implementation is OTLP over HTTP, according to the [OpenTelemetry specification](https://opentelemetry.io/docs/specs/otlp/#otlphttp-request), standard paths must be used. The URL provided in the ODC Portal is automatically manipulated to send logs, traces, and metrics to the following distinct paths: Logs: `v1/logs` Traces: `v1/traces` Metrics: `v1/metrics`
+
+* To avoid unexpected connection failures, keep track and renew the SSL/TLS certificate used in the OpenTelemetry Collector before the expiration date.
+
+* When selecting the **Other** connection type, each batch of streamed data can reach up to 9.8 MB in size. Ensure your OpenTelemetry Collector is configured to accept payloads of this size to avoid log rejection.
 
 </div>
 

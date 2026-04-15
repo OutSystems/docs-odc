@@ -20,6 +20,7 @@ topic:
   - publish-an-app
   - test-share-app-users
   - screen-scaffolding
+isautopublish: true
 ---
 
 # Build a basic Web app
@@ -83,13 +84,17 @@ Click the green **1-Click-Publish** button in the top center of the workspace. T
 
 ![Screenshot of the tasks list app running in a web browser](images/tasks-list-app-in-browser.png "View App in Browser")
 
-### Next steps..
+### Next steps
 
 You can take the basic app you've built and improve it in many ways. For example, you could add logic to delete tasks or add user authentication. Check out the resources below.
 
 ## Resources
 
 There are lots of resources available to help you continue your ODC journey.
+
+### Agentic development
+
+You can also use [agentic development](../agentic-development/intro.md) to generate or modify apps from natural language descriptions.
 
 ### Documentation
 

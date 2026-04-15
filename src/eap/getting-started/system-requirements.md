@@ -17,6 +17,7 @@ coverage-type:
   - remember
 topic:
   - download-and-set-up
+isautopublish: true
 ---
 
 # OutSystems system requirements for ODC
@@ -112,7 +113,6 @@ The following versions of systems are supported to integrate with ODC using [Dat
 
 * **Microsoft SQL Server**:
 
-    * SQL Server 2014
     * SQL Server 2016
     * SQL Server 2017
     * SQL Server 2019
@@ -184,7 +184,8 @@ The general platform limits are:
 | Timer execution timeout (minutes) | 60 | The maximum time a timer can execute. |
 | Entity Action Execution duration (seconds) | 30 | The maximum execution duration of a single Entity Action in seconds. |
 | Upload request size (MB) | 28.6 | The maximum file size allowed when uploading. |
-| User session (hours) | 12 | The maximum session duration before the user must re-authenticate. This value can't be changed and the duration is not extended while user is authenticated. |
+| End-user session (hours) | 12 | The default maximum session duration for end-users accessing apps. You can [configure session duration and idle timeout](../user-management/configure-user-session.md) per stage. |
+| Member session (hours) | 12 | The maximum session duration for members (IT-users) accessing the ODC Portal and ODC Studio. This value can't be changed. |
 | Invitation verification token (days) | 7 | The maximum duration the verification token is valid for the user to complete their registration. |
 | Self-registration verification token (minutes) | 15 | The maximum duration within which the user can complete the self-registration process. |
 | Compute Instances (per app) | 16 | The maximum number of compute instances that can be consumed when scaling apps horizontally. |
@@ -192,6 +193,7 @@ The general platform limits are:
 | Max IP Filter Rules | 20 | The maximum number of IP filter rules that can be added to each IP filter group. |
 | Max IP Addresses (per rule) | 20 | The maximum number of IP addresses that can be added to each IP filter rule. |
 | API clients | 35 | The maximum number of API clients that can be defined. |
+| Non-production stages | 10 | The maximum number of non-production stages that can be added to a portfolio. |
 
 ### Logs and traces
 

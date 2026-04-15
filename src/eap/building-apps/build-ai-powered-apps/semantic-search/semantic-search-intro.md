@@ -21,7 +21,7 @@ helpids:
 
 <div class="info" markdown="1">
 
-Semantic search is in Beta. For more information about Beta features, refer to [OutSystems product releases](https://success.outsystems.com/support/release_notes/outsystems_product_releases/#beta)
+Semantic search is in Beta. For more information about Beta features, refer to [OutSystems product releases](https://success.outsystems.com/support/release_notes/outsystems_product_releases/#beta). If you want to try this new capability contact your OutSystems account team.
 
 </div>
 
@@ -59,7 +59,8 @@ To work effectively, don't turn large datasets into a single vector, as this obs
 
 In ODC case, you are able to select the entities and their attributes that are subjected to semantic search and use different methods for the content chunking, namely:
 
-* **Smart chunking (default)**: Adapts automatically to the specific content found within searchable fields.
+* **Smart chunking (default)**: Adapts automatically to the specific content found within searchable fields. This chunking method combines recursive chunking with default separators.
+
 * **Fixed-sized chunking**: Defines a specific maximum character count per chunk and a set overlap between them.  
 * **Sentence-based**: With this chunking method, you explicitly define how many sentences your chunks are allowed to have, and also the maximum number of characters and overlap for your chunks.
 * **Recursive chunking**: Defines character limits and overlaps while prioritizing a hierarchy of specific characters as delimiters.  

@@ -18,6 +18,7 @@ content-type:
 coverage-type:
   - remember
 topic:
+isautopublish: true
 ---
 
 # External data type mapping
@@ -84,7 +85,7 @@ Only the data types that have a mapping are supported. Data types not present in
 | INT8<br/>DECFLOAT16<br/>DECFLOAT3<br/>UTCLONG                                                                                                                                                                                                               | Currently not supported and won't appear in ODC Portal.                                              |
 | Other data types                                                                                                                                                                                                                                            | No official support. Attributes may not appear in the ODC Portal or may exhibit unexpected behavior. |
 
-## Salesforce custom columns mapping
+## Salesforce custom columns mapping {#salesforce-custom-columns-mapping}
 
 Although Salesforce supports multiple data types in the built-in tables, the following mapping are for the custom columns:
 

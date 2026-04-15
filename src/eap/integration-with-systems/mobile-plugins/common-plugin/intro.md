@@ -22,27 +22,27 @@ Applies only to Mobile Apps.
 
 </div>
 
-The Common Plugin provides you with a set of actions that facilitates obtaining crucial information for the development of mobile apps.
+The Common plugin provides you with a set of actions that facilitate obtaining crucial information for the development of mobile apps.
 
 <div class="info" markdown="1">
 
-To learn how to install and reference a plugin in your OutSystems apps, as well as how to install a demo app, refer to  [Adding plugins](../intro.md#adding-plugins).
+To learn how to install and reference a plugin in your OutSystems apps, as well as how to install a demo app, refer to [Adding plugins](../intro.md#adding-plugins).
 
 </div>
 
-Using the Common Plugin you will be able to:
+Using the Common plugin you will be able to:
 
-1. Write to the device's console - **ConsoleLog** client action.
+1. Write to the device console with the **ConsoleLog** client action.
 
-1. Get the value of the **device.uuid** variable, which should uniquely identify the current device/installation - **GetDeviceID** client action.
+1. Get the value of the **device.uuid** variable, which should uniquely identify the current device/installation, with the **GetDeviceID** client action.
 
-1. Check the device’s operating system in which the app is running- **GetOperatingSystem** client action.
+1. Get the operating system the app runs on with the **GetOperatingSystem** client action.
 
-1. Get the Capacitor or Cordova platform information - **GetPlatform** client action.
+1. Get the Capacitor or Cordova platform information with the **GetPlatform** client action.
 
-1. Get the Webview's User Agent - **GetUserAgent** client action.
+1. Get the Webview's User Agent with the **GetUserAgent** client action.
 
-1. Checks if Cordova is defined or not - **IsCordovaDefined** client action.
+1. Check whether Cordova is defined with the **IsCordovaDefined** client action.
 
     <div class="info" markdown="1">
 
@@ -50,7 +50,7 @@ Using the Common Plugin you will be able to:
 
     </div>
 
-1. Create a scope for your plugin needs - more information bellow.
+1. Create a scope for your plugin needs. For more information, refer to [Plugin manager](#plugin-manager).
 
 1. Get the mobile framework that the application is using - **GetNativeMobileFramework** client action.
 

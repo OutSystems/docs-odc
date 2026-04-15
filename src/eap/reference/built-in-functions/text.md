@@ -14,6 +14,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+isautopublish: true
 ---
 
 # Text
@@ -284,6 +285,8 @@ Type: Text
 
 Returns Text 't' after replacing all Text occurrences of 'search' with 'replace'.  
 
+If the 'search' parameter is empty, the behavior differs between server-side and client-side logic. In client-side logic, the function inserts the 'replace' value at every character position in the input string, including the start and end. In server-side logic, the function returns an empty string. To avoid unexpected results when variables are used dynamically, validate that the 'search' parameter isn't empty before calling this function.
+
 Available in:  
 
 * Server-side logic: Yes
@@ -314,6 +317,10 @@ Type: Text
 Replace("First string", "xx", "") = "First string"
 Replace("First string", "First", "Second") = "Second string"
 Replace("First string", "First", "") = " string"
+Replace("01245", "", "abc") = "abc0abc1abc2abc4abc5abc"  // client-side only
+Replace("01245", "", "abc") = ""  // server-side only
+Replace("01245", "", "") = "01245"  // client-side only
+Replace("01245", "", "") = ""  // server-side only
 ```
 
 ## Substr
@@ -410,6 +417,8 @@ ToUpper("First string") = "FIRST STRING"
 
 Removes all leading and trailing space characters (' ') from Text 't'.  
 
+In server-side logic, this function only removes standard ASCII space characters (Unicode `U+0020`). Other whitespace characters, such as ideographic spaces (`U+3000`), tabs, or non-breaking spaces, aren't removed. In client-side logic, the JavaScript-based implementation removes all Unicode whitespace characters.
+
 Available in:  
 
 * Server-side logic: Yes
@@ -437,6 +446,8 @@ Trim("First string ") = "First string"
 
 Removes all trailing space characters (' ') from Text 't'.  
 
+In server-side logic, this function only removes standard ASCII space characters (Unicode `U+0020`). Other whitespace characters, such as ideographic spaces (`U+3000`), tabs, or non-breaking spaces, aren't removed. In client-side logic, the JavaScript-based implementation removes all Unicode whitespace characters.
+
 Available in:  
 
 * Server-side logic: Yes
@@ -463,6 +474,8 @@ TrimEnd("First string ") = "First string"
 ## TrimStart
 
 Removes all leading space characters (' ') from Text 't'.  
+
+In server-side logic, this function only removes standard ASCII space characters (Unicode `U+0020`). Other whitespace characters, such as ideographic spaces (`U+3000`), tabs, or non-breaking spaces, aren't removed. In client-side logic, the JavaScript-based implementation removes all Unicode whitespace characters.
 
 Available in:  
 
