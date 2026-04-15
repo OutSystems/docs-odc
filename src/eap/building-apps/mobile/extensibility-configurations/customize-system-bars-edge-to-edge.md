@@ -12,6 +12,7 @@ coverage-type:
   - apply
 outsystems-tools:
   - none
+isautopublish: true
 ---
 # Customize system bars with edge-to-edge display
 
@@ -21,7 +22,7 @@ Applies to mobile apps only.
 
 </div>
 
-Android 16 introduces mandatory edge-to-edge enforcement for all apps targeting SDK 36 and above. Edge-to-edge display extends your app content to the full screen, including areas behind the status bar and navigation bar. This document explains how to configure your ODC mobile apps to handle system bars correctly on modern Android devices.
+Android 16 introduces mandatory edge-to-edge enforcement for all apps targeting SDK 36 and above. Edge-to-edge display extends your app content to the full screen, including areas behind the status bar and navigation bar. You can also opt in to edge-to-edge on older Android versions using the `AndroidEdgeToEdge` Cordova preference. This document explains how to configure your ODC mobile apps to handle system bars correctly on modern Android devices.
 
 ## Understanding edge-to-edge display
 
@@ -182,7 +183,8 @@ This section covers system bar customization for Cordova-based mobile apps.
 
 | Preference | Status | Description |
 | --- | --- | --- |
-| AndroidEdgeToEdge | Added | Cordova preference that controls whether the app uses edge-to-edge display on Android. This only effects Android 15+, as lower versions of Android don't support edge to edge mode. |
+| AndroidEdgeToEdge | Added | Cordova preference that controls whether the app uses edge-to-edge display on Android. |
+| EdgeToEdgeGlyphTheme | Added | Controls the color of system bar glyphs (icons and text) when edge-to-edge is enabled. Accepts `dark` or `light`. Falls back to luminance-based detection if not set or invalid. |
 | NavigationBarBackgroundColor | Added | Controls the background color of the navigation bar. |
 | StatusBarBackgroundColor | Modified | Now part of SystemBars; controls status bar color when edge-to-edge is disabled. |
 | StatusBarDefaultScrollToTop | Removed | No longer supported. |
@@ -223,6 +225,20 @@ Controls whether your app uses edge-to-edge display on Android devices.
 
 When set to `true`, use the `--safe-area-inset-*` CSS variables to prevent content from being hidden behind system UI.
 
+**EdgeToEdgeGlyphTheme**
+**Type:** String
+**Default:** Automatic (luminance-based detection)
+**Values:** `dark`, `light`
+**Platforms:** Android
+**Configuration:** Cordova build preference
+
+Controls the color of system bar glyphs (icons and text) when `AndroidEdgeToEdge` is set to `True`. In edge-to-edge mode the system bar background is transparent, so the automatic luminance-based detection may not produce the desired result. This preference lets you explicitly choose glyph colors to match your app's background.
+
+* **`dark`:** Dark-colored glyphs, suitable for light backgrounds.
+* **`light`:** Light-colored glyphs, suitable for dark backgrounds.
+* If not set or set to an unrecognized value, falls back to automatic luminance-based detection.
+* Has no effect when `AndroidEdgeToEdge` is set to `False`.
+
 **NavigationBarBackgroundColor**
 **Type:** String (hex color)
 **Default:** Value of `BackgroundColor` preference
@@ -236,7 +252,7 @@ The background color of the navigation bar.
 * If set to any other hex color, the navigation bar uses that color and it does not change when the device theme changes.
 * If not set, it matches the color defined in the `BackgroundColor` preference, which by default is your application's primary color.
 
-Has no effect when `AndroidEdgeToEdge` is set to `True` on Android 15+.
+Has no effect when `AndroidEdgeToEdge` is set to `True`.
 
 **StatusBarBackgroundColor**
 **Type:** String (hex color)  
@@ -307,6 +323,25 @@ To enable edge-to-edge display, configure the `AndroidEdgeToEdge` Cordova prefer
 When using edge-to-edge display, you must handle safe area insets in your CSS to prevent content from being hidden behind system UI. Refer to [Safe area inset support](#safe-area-insets).
 
 </div>
+
+#### Edge-to-edge with explicit glyph color
+
+To set a specific glyph color for system bar icons and text in edge-to-edge mode, add the `EdgeToEdgeGlyphTheme` preference:
+
+```json
+{
+    "appConfigurations": {
+        "cordova": {
+            "preferences": {
+                "android": {
+                    "AndroidEdgeToEdge": true,
+                    "EdgeToEdgeGlyphTheme": "dark"
+                }
+            }
+        }
+    }
+}
+```
 
 ### Cordova JavaScript API
 
@@ -414,10 +449,6 @@ For best results with safe area insets, ensure your app uses the latest version 
 **Possible causes:**
 
 * `AndroidEdgeToEdge` is set to `false` (expected behavior)
-* Status bar is hidden
-* Running on an older Android version or WebView implementation
-
-**Solution:** Verify your configuration and test on an Android 15+ device.
 
 ## Related resources
 
