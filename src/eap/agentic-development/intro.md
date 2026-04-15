@@ -1,6 +1,6 @@
 ---
-summary: Agentic development uses AI to create and modify apps through Mentor Web and Mentor Studio.
-tags: agentic development, app generation, code generation
+summary: Agentic development is the product capability at the center of OutSystems Agentic Systems Engineering. It uses AI to create and modify apps through Mentor Web and Mentor Studio.
+tags: agentic development, agentic systems engineering, app generation, code generation
 guid: 7681329f-0fe1-47ea-9d99-911eddfac02b
 locale: en-us
 app_type: reactive web apps
@@ -26,8 +26,6 @@ isautopublish: true
 
 Building apps often starts with translating requirements into screens, data models, and logic, work that follows predictable patterns. OutSystems Agentic Development accelerates this by letting you describe app requirements in natural language and having ODC generate or modify the app structure for you. Agentic development works through two tools: Mentor Web for creating apps in ODC Portal and Mentor Studio for modifying apps in ODC Studio. You stay in control by reviewing proposed changes and refining them through follow-up prompts before applying anything.
 
-Agentic development is the product capability at the center of OutSystems Agentic Systems Engineering, the broader approach to building governed, enterprise-ready agentic systems. This documentation covers the tools and workflows available in ODC: Mentor Web and Mentor Studio.
-
 <div class="info" markdown="1">
 
 For a video walkthrough of agentic development concepts and tools, take the [Agentic development](https://www.outsystems.com/tk/redirect?g=eb9a16f2-f6b9-4903-9be8-122a0188f113) online course.
@@ -52,6 +50,10 @@ Agentic development and AI-powered apps serve different purposes:
 * **AI-powered apps** are apps that use AI capabilities at runtime. These apps call AI models to provide intelligent features to end users.
 
 This guide covers agentic development. To build apps that use AI models, refer to [Build AI-powered apps](../building-apps/build-ai-powered-apps/intro.md).
+
+## Agentic Systems Engineering
+
+OutSystems Agentic Systems Engineering is the OutSystems approach to building governed, enterprise-ready agentic systems. Agentic development is the product capability at the center of this approach, providing the tools and workflows for creating and modifying apps through conversation: Mentor Web for creating apps in ODC Portal and Mentor Studio for modifying apps in ODC Studio. For the architecture that underpins agentic development, including the Enterprise Context Graph, refer to [Architecture](architecture.md).
 
 ## How it works
 

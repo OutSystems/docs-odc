@@ -21,6 +21,7 @@ topic:
   - user-groups
   - org-roles
   - permissions
+isautopublish: true
 ---
 
 # User management
@@ -91,7 +92,7 @@ Authentication verifies a user’s identity before granting access. ODC supports
 
     * You can enforce password policies, such as complexity, to enhance security.
 
-    * ODC manages user sessions with a default timeout of 12 hours to ensure secure access.
+    * ODC manages user sessions with a default timeout of 12 hours. You can [configure session duration and idle timeout](configure-user-session.md) per stage to meet your security requirements.
 
 * **External Identity Providers (IdPs)**: Use third-party IdPs for authentication.  
 

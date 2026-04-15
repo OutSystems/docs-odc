@@ -1,6 +1,6 @@
 ---
-summary: AI agents, the OutSystems Model, and the compiler work together to transform natural language into app structures.
-tags: architecture, llm, app model, app generation, model-driven development
+summary: The OutSystems Enterprise Context Graph combines AI agents, the OutSystems Model, and the compiler to transform natural language into app structures.
+tags: architecture, enterprise context graph, llm, app model, app generation, model-driven development
 guid: d79811bf-4406-465e-b4b2-0351b967d20e
 locale: en-us
 app_type: reactive web apps
@@ -25,7 +25,7 @@ isautopublish: true
 
 # Architecture
 
-Agentic development in OutSystems combines three components to transform natural language into app structures. This architecture applies to both Mentor Web and Mentor Studio. Together, these components form the foundation of the OutSystems Enterprise Context Graph, the contextual architecture that gives AI agents the understanding to work across complex systems.
+Agentic development in OutSystems combines three components to transform natural language into app structures. This architecture applies to both Mentor Web and Mentor Studio. Together with tenant context, these components form the OutSystems Enterprise Context Graph — the contextual architecture that provides AI agents with a high-fidelity understanding of enterprise apps, data, and dependencies.
 
 * **AI agents** interpret natural language and map it to OutSystems development patterns.
 * **OutSystems Model** (the app model, not an AI model) represents the app's structure, data, logic, and UI at a high level of abstraction.

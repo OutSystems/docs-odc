@@ -184,7 +184,8 @@ The general platform limits are:
 | Timer execution timeout (minutes) | 60 | The maximum time a timer can execute. |
 | Entity Action Execution duration (seconds) | 30 | The maximum execution duration of a single Entity Action in seconds. |
 | Upload request size (MB) | 28.6 | The maximum file size allowed when uploading. |
-| User session (hours) | 12 | The maximum session duration before the user must re-authenticate. This value can't be changed and the duration is not extended while user is authenticated. |
+| End-user session (hours) | 12 | The default maximum session duration for end-users accessing apps. You can [configure session duration and idle timeout](../user-management/configure-user-session.md) per stage. |
+| Member session (hours) | 12 | The maximum session duration for members (IT-users) accessing the ODC Portal and ODC Studio. This value can't be changed. |
 | Invitation verification token (days) | 7 | The maximum duration the verification token is valid for the user to complete their registration. |
 | Self-registration verification token (minutes) | 15 | The maximum duration within which the user can complete the self-registration process. |
 | Compute Instances (per app) | 16 | The maximum number of compute instances that can be consumed when scaling apps horizontally. |

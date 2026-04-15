@@ -2,7 +2,7 @@
 guid: 7b6cb77f-a789-48ae-8070-1631b51722d8
 locale: en-us
 summary: This article provides a list of OutSystems supported mobile plugins that are ODC libraries that wrap the plugin.
-figma: 
+figma:
 coverage-type:
   - remember
 topic:
@@ -14,6 +14,7 @@ tags: Plugins,mobile plugins,plugin integration
 outsystems-tools:
   - none
 helpids:
+isautopublish: true
 ---
 # OutSystems supported mobile plugins
 
@@ -33,7 +34,7 @@ The table lists the OutSystems-supported mobile plugins available in the [Forge]
 | Ciphered Local Storage | Keep your mobile application's sensitive data safe using a ciphered local storage database. | No |
 | [Cloud Messaging](firebase-plugin/intro.md) | Firebase-based plugin to give your app users a state-of-the-art notifications experience. | No |
 | Contacts | Access the contacts of your device. | No |
-| Crash Reporting | Firebase-based plugin that provides realtime crash reporting to help you track, prioritize, and fix stability issues. | No |
+| Crash Reporting | Firebase-based plugin that provides real-time crash reporting to help you track, prioritize, and fix stability issues. | No |
 | [File](file-plugin/intro.md) | Manage files and folders within the app sandbox. | No |
 | [File Transfer](file-transfer-plugin/intro.md) | Upload and download files in background. | Yes |
 | [File Viewer](file-viewer/intro.md) | View remote or app resource files. | No |

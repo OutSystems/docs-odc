@@ -15,6 +15,7 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - remember
+isautopublish: true
 ---
 
 # Authentication system actions
@@ -23,15 +24,15 @@ Authentication actions for built-in and/or external identity providers.
 
 ## Actions
 
-### Login
+### `Login`
 
-_Client action_
+#### Client action
 
 Performs a login in to the built-in identity provider using a username and password.
-After logging in, the user session remains active for 12 hours. Once this period ends, users must log in again. Note that the 12-hour session timeout can't be configured.
+After logging in, the user session remains active based on the configured [session duration settings](../../user-management/configure-user-session.md). By default, the session timeout is 12 hours.
 User profile information is synchronized to the [User entity](user.md#user-1) before this action is finished. Throws an exception if the built-in identity provider is disabled for the current app.
 
-_Inputs_
+#### Inputs
 
 **Username**
 :   Type: Text. Mandatory.
@@ -41,15 +42,15 @@ _Inputs_
 :   Type: Text. Mandatory.
     Password of the user logging in.
 
-_Outputs_
+#### Outputs
 
 **UserLoginResult**
 :   Type: Structure.
     Result of the user login action. Returns a user identifier if the user was successfully logged in. Returns a failure reason if unsuccessful.
 
-### GetExternalLoginURL
+### `GetExternalLoginURL`
 
-_Client action_
+#### Client action
 
 <div class="info" markdown="1">
 
@@ -59,7 +60,7 @@ You must first add this action due to a temporary technical limitation. Navigate
 
 Returns the URL to which the user should be redirected in order to login in an external provider.
 
-_Inputs_
+#### Inputs
 
 **ReturnToURL**
 :   Type: Text.
@@ -69,7 +70,7 @@ _Inputs_
 :   Type: Text.
     Identity provider where the user will log in. Defined as the provider name in ODC Portal.
 
-_Outputs_
+#### Outputs
 
 **ExternalLoginURL**
 :   Type: Text.  
@@ -81,15 +82,15 @@ You can learn about how to use this action in your apps [here](../../manage-plat
 
 </div>
 
-### Logout
+### `Logout`
 
-_Client action_
+#### Client action
 
 Logs out the user from the built-in identity provider.
 
-### GetExternalLogoutURL
+### `GetExternalLogoutURL`
 
-_Client action_
+#### Client action
 
 <div class="info" markdown="1">
 
@@ -104,13 +105,13 @@ If an IdentityProvider is configured for the current app and the user is current
 
 Throws an exception if no external identity provider is configured for the current app or if the user is not currently logged in with an external provider.
 
-_Inputs_
+#### Inputs
 
 **CallbackURL**
 :   Type: Text.
     URL called after the logout process. The provider will redirect users to this URL after a successful logout.
 
-_Outputs_
+#### Outputs
 
 **ExternalLogoutURL**
 :   Type: Text.
@@ -118,9 +119,9 @@ _Outputs_
 
 ## Structures
 
-### UserLoginResult
+### `UserLoginResult`
 
-_Attributes_
+#### Attributes
 
 RetryAfterSeconds
 :   Type: Integer

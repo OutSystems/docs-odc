@@ -202,6 +202,9 @@
         # Reuse ui
         - href: eap/building-apps/ui/reuse/intro.md
         - href: eap/building-apps/ui/reuse/block-create-reuse.md
+        # Icons
+        - href: eap/building-apps/ui/icons/intro.md
+        - href: eap/building-apps/ui/icons/icon-widget-ref.md
         # Patterns
         - href: eap/building-apps/ui/patterns/intro.md
         - topics:
@@ -433,8 +436,11 @@
             - topics:
                 - href: eap/integration-with-systems/mobile-plugins/barcode/intro.md
                 - href: eap/integration-with-systems/mobile-plugins/camera/intro.md
-                - topics:
+                - topics:  
                     - href: eap/integration-with-systems/mobile-plugins/camera/camera-ref.md
+                    - href: eap/integration-with-systems/mobile-plugins/camera/camera-migration-guide-1-to-2.md
+                    - href: eap/integration-with-systems/mobile-plugins/camera/camera-version-1.md
+                    - href: eap/integration-with-systems/mobile-plugins/camera/camera-ref-version-1.md
                 - href: eap/integration-with-systems/mobile-plugins/common-plugin/intro.md
                 - href: eap/integration-with-systems/mobile-plugins/calendar/intro.md
                 - href: eap/integration-with-systems/mobile-plugins/contacts/intro.md
@@ -607,6 +613,7 @@
 # Security
 - href: eap/security/security.md
 - topics:
+    - href: eap/security/sentry.md
     - href: eap/security/hipaa.md
     - href: eap/security/pci.md
     - href: eap/security/configure-csp.md
@@ -690,6 +697,7 @@
         - href: eap/manage-platform-app-lifecycle/external-idps/assign-idp.md
         - href: eap/manage-platform-app-lifecycle/external-idps/redirect-uris.md
         - href: eap/manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md
+    - href: eap/user-management/configure-user-session.md
     - href: eap/user-management/passwords.md
 
 # Monitoring and troubleshooting

@@ -18,6 +18,7 @@ tags: database events, odc, data integrity, automation, real-time data updates
 outsystems-tools:
   - odc studio
 helpids:
+isautopublish: true
 ---
 
 # Database events
@@ -77,7 +78,10 @@ To create a database event, follow these steps:
 
 1. Publish the app.
 
-The database event is created. It triggers whenever the corresponding entity action executes.
+The platform creates a database event whenever the corresponding entity action executes.
+The platform guarantees that it processes all events. However, the implemented logic may determine a different processing order than the trigger order.
+
+For each trigger event, the handler logic executes exactly once. The platform produces no duplicates.
 
 For detailed information about handling database events, refer to [Handle an event](implement-events.md#handle-an-event).
 

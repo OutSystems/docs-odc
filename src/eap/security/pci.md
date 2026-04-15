@@ -2,7 +2,7 @@
 guid: ed54cb24-49f0-41f5-b1af-f8c081d526ed
 locale: en-us
 summary: Ensure PCI compliance with OutSystems Developer Cloud (ODC) by using secure payment gateways, iFrame, URL redirection, and tokenization.
-figma: 
+figma:
 coverage-type:
   - understand
   - apply
@@ -16,14 +16,15 @@ tags: pci compliance,payment gateways,tokenization,security
 outsystems-tools:
   - odc portal
   - odc studio
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # PCI compliance with ODC
 
 The PCI (Payment Card Industry) Security Standards Council aims to help secure payments worldwide. This council is also responsible for ensuring that organizations meet the requirements through validation and certification.
 
-[Sentry for ODC](https://www.outsystems.com/low-code-platform/security/sentry/) (OutSystems Developer Cloud) provides PCI compliance. ODC Sentry is compliant with PCI DSS SAQ D service provider standards.
+[Sentry for ODC](https://www.outsystems.com/low-code-platform/security/sentry/) (OutSystems Developer Cloud) provides PCI compliance. Sentry for ODC is compliant with PCI DSS SAQ D service provider standards.
 
 To comply with PCI eData Security Standard (DSS), companies processing credit card data must ensure that cardholder data is safe.
 
@@ -41,4 +42,4 @@ If you need more control over the payment process, you can use tokenization, whe
 
 You should always ensure that no payment card information is ever stored or processed in OutSystems applications. For more details on the supported integration options, refer to your PCI DSS-certified processor.
 
-[Sentry for ODC](https://www.outsystems.com/low-code-platform/security/sentry/) ensures your ODC usage is PCI compliant. In accordance with the [OutSystems Cloud shared responsibility model](https://www.outsystems.com/tk/redirect?g=b04339ce-7b9f-4c93-94b7-e4cf397eab47), apps should be designed to meet PCI guidance, and a third-party audit may be required to ensure apps are PCI compliant. To confirm that you're using ODC Sentry, check your [Subscription console](../manage-platform-app-lifecycle/subscription-console.md). Contact your account manager for assistance.
+[Sentry for ODC](https://www.outsystems.com/low-code-platform/security/sentry/) ensures your ODC usage is PCI compliant. In accordance with the [OutSystems Cloud shared responsibility model](https://www.outsystems.com/tk/redirect?g=b04339ce-7b9f-4c93-94b7-e4cf397eab47), apps should be designed to meet PCI guidance, and a third-party audit may be required to ensure apps are PCI compliant. To confirm that you're using Sentry for ODC, check your [Subscription console](../manage-platform-app-lifecycle/subscription-console.md). Contact your account manager for assistance.

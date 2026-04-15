@@ -15,6 +15,7 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+isautopublish: true
 ---
 
 # CALL external stored procedures in ANSI-92 queries
@@ -29,7 +30,7 @@ Stored procedures let you reuse logic defined in your external database. They're
 
 Stored procedures can’t be created or called for internal entities (the entities created in ODC Studio).
 
-## Retrieve the connectionId { #retrieve-connectionid }
+## Retrieve the connectionId {#retrieve-connectionid}
 
 The `CALL` statement requires a `connectionId` that identifies the [connection to the data source done in Portal](../../../../integration-with-systems/external-databases/create-connection-external-data.md).
 
@@ -51,7 +52,7 @@ For existing connections, when stored procedures are changed or new ones are int
 
 </div>
 
-## Using the CALL statement { #using-call }
+## Using the CALL statement {#using-call}
 
 ```sql
 CALL action ( [ assignment ] [, assignment ]* )
@@ -88,6 +89,30 @@ For all other actions, `CALL` will return a single record containing a value of 
 * If the action returns any attributes of an unsupported type, the attributes will be present in the result of `CALL` however the values for those attributes will always be `NULL`.
 * ODC doesn't support the declaration of variables, so it isn't possible to retrieve the (mutated) value of an output parameter after the action has been executed.
 
+### Packaged Store procedures
+
+Calling _packaged stored procedures_ directly from a SQL node is currently _not supported_. The SQL node expects a standalone procedure name and cannot resolve the "dot" notation used for packages (e.g., `PackageName.ProcedureName`).
+
+If you need to execute logic contained within a package, follow this workaround:
+
+1. _Create a Standalone Wrapper:_ In your external database, create a regular, standalone stored procedure that invokes the desired packaged logic.
+
+-- In your external database
+
+```sql
+CREATE OR REPLACE PROCEDURE MyStandaloneWrapper(p_param IN VARCHAR2) IS
+BEGIN
+  MyPackage.MyPackagedProcedure(p_param);
+END MyStandaloneWrapper;
+```
+
+1. _Call the Wrapper from ODC:_ In the ODC SQL node, call the standalone wrapper using the standard syntax. Ensure the procedure name is in _uppercase_.
+
+```sql
+CALL "connection-id"."MYSTANDALONEWRAPPER"(@Parameter);
+SELECT * FROM {ENTITY}
+```
+
 </div>
 
 ## Known issues
@@ -116,7 +141,7 @@ SELECT 1 FROM {entity1} LIMIT 1;
 CALL "connectionId"."actionName" ('test', 123, "param" = @dynamic);
 ```
 
-## Compatibility { #compatibility }
+## Compatibility {#compatibility}
 
 | Data source          | Supported actions | Positional parameters | Named parameters |
 | -------------------- | ----------------- | --------------------- | ---------------- |

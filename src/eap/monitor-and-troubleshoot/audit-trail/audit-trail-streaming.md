@@ -21,6 +21,7 @@ topic:
   - app-settings
   - app-configuration
   - debug-troubleshoot-logic
+isautopublish: true
 ---
 
 # Stream audit trail logs
@@ -43,7 +44,7 @@ Streaming audit trail logs to your SIEM tool provides several key advantages:
 
 Before you start streaming audit trail logs, ensure you have:
 
-* Subscription to Sentry. Contact your account manager for provisioning.
+* Subscription to Sentry for ODC. Contact your account manager for provisioning.
 
 * **Manage audit trail streaming** permission in the ODC Portal.
 

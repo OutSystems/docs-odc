@@ -5,7 +5,7 @@ guid: 6b41adf6-f9aa-48c7-a3d2-70e39c0cb8e8
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
 outsystems-tools:
   - odc portal
 coverage-type:
@@ -20,6 +20,7 @@ audience:
 topic:
   - app-settings
   - app-configuration
+isautopublish: true
 ---
 
 # Requirements for streaming audit trail logs
@@ -30,7 +31,7 @@ Before you stream audit trail logs to your security information and event manage
 
 Regardless of which SIEM tool you choose, you must have:
 
-* An **ODC Sentry** subscription. Audit trail streaming is part of the ODC Sentry package. Contact your account manager for provisioning.
+* A **Sentry for ODC** subscription. Audit trail streaming is part of the Sentry for ODC package. Contact your account manager for provisioning.
 
 * The **Manage audit trail streaming** permission in the ODC Portal to create and configure streams.
 
