@@ -70,6 +70,12 @@ To consume a single REST API method, follow these steps:
 
 1. Enter the request and the response structures of the API. To enter these details, you can test the API and use the test result.
 
+    <div class="info" markdown="1">
+
+    Handling large responses can lead to slower ODC Studio performance.
+
+    </div>
+
     Alternatively, you can add the JSON structure or plain text example directly in the **Request** and **Response** fields.
 
     To test the API, click the **Test** tab. If you have parameters in your **Method URL**, you need to enter the parameter values to execute the test:
