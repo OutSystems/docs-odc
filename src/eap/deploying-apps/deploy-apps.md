@@ -19,6 +19,7 @@ coverage-type:
 topic:
   - deploy-apps-in-lt-portal
 helpids: 30685
+isautopublish: true
 ---
 
 # Deploying assets
@@ -99,7 +100,7 @@ Agentic apps are often part of a larger system or involving workflows. You must 
 
 <div class="info" markdown="1">
 
-If you deploy a **workflow** that triggers an event in an agentic app, you must ensure the agentic app is deployed to the target stage (Quality or Production) **before** the workflow. If the agentic app is missing from the target stage, the deployment of the workflow will be blocked due to missing dependencies.
+If you deploy a **workflow** that triggers an event in an agentic app, you must ensure the agentic app is deployed to the target stage (Quality or Production) **before** the workflow. If the agentic app is missing from the target stage, the workflow deployment is blocked due to missing dependencies.
 
 </div>
 

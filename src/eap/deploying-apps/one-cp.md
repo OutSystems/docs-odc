@@ -15,9 +15,12 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+isautopublish: true
 ---
 
 # Understanding 1-Click Publish
+
+1-Click Publish compiles your code and deploys it to the Development stage. Each publish creates a new revision of your app or library. You can optionally add a comment describing your changes when publishing.
 
 ## Publishing an app
 
@@ -44,3 +47,18 @@ When you click the 1-Click Publish button to publish a library, ODC initiates th
 1. The ODC compiler stores the compiled library build and integrates it into the container image.
 
 Libraries within ODC do not handle data management or generate database scripts, as ODC doesn't deploy libraries into containers. Instead, libraries define static entities that function as enumerations without query capabilities.
+
+## Adding a comment when publishing
+
+You can add a comment when publishing to describe the changes you made. Comments help your team understand the intent behind each revision, improving traceability and collaboration.
+
+![Screenshot of ODC Studio showing the Publish dropdown with 1-Click Publish and 1-Click Publish with Comment options](images/publish-with-comment-odcs.png "1-Click Publish with Comment in ODC Studio")
+
+To publish with a comment, do one of the following in ODC Studio:
+
+* Click the dropdown arrow on the **Publish** button and select **1-Click Publish with comment**.
+* Press **Shift+F5** (Windows) or **Shift+Cmd+F5** (macOS).
+
+In the dialog that opens, type your comment and publish. The comment is optional and supports up to 2,000 characters. After publishing, the comment becomes a permanent, read-only record of that revision.
+
+To review comments, open ODC Studio and go to **App** > **View revisions**.
