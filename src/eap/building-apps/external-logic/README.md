@@ -147,7 +147,7 @@ For detailed information about errors, refer to [External libraries SDK errors](
     1. Execute `dotnet publish -c Release --no-self-contained`
 
         The published code runs in a Linux container. If your library has runtime-specific dependencies then you should publish it specifying the runtime:
-        `dotnet publish -c Release linux-x64 --no-self-contained`
+        `dotnet publish -c Release -r linux-x64 --no-self-contained`
 
 1. Zip the contents of the publish output folder to the root of a ZIP file.
      * For a cross-platform publish, the folder path is `./{NAME_OF_SOLUTION}/bin/Release/net8.0/publish/*`.
