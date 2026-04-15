@@ -202,6 +202,9 @@
         # Reuse ui
         - href: eap/building-apps/ui/reuse/intro.md
         - href: eap/building-apps/ui/reuse/block-create-reuse.md
+        # Icons
+        - href: eap/building-apps/ui/icons/intro.md
+        - href: eap/building-apps/ui/icons/icon-widget-ref.md
         # Patterns
         - href: eap/building-apps/ui/patterns/intro.md
         - topics:
