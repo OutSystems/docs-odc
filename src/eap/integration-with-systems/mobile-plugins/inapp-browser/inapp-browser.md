@@ -14,9 +14,12 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - using-cordova-plugins
+  - using-capacitor-plugins
 ---
 
-# InApp Browser Plugin
+# InAppBrowser plugin
 
 <div class="info" markdown="1">
 
@@ -26,9 +29,11 @@ Applies only to Mobile Apps.
 
 This documentation page applies to version 2.0.0 of the plugin and onwards.
 
-Use the InAppBrowser Plugin to open external URLs directly in your application, either within a web view, or a system in-app browser (Custom Tabs for Android and SafariViewController for iOS). You can also use the plugin to open URLs in the device's default browser.
+Use the InAppBrowser plugin to open external URLs directly in your application, either within a web view, or a system in-app browser (Custom Tabs for Android and SafariViewController for iOS). You can also use the plugin to open URLs in the device's default browser.
 
-All three browser targets of the plugin behave like standard web browsers, and can't access Cordova APIs. For this reason, the plugin is recommended if you need to load third-party (untrusted) content, instead of loading it into the main Cordova WebView (for example, using the RedirectToURL destination). The plugin's browser targets are not subject to the whitelist.
+All three browser targets of the plugin behave like standard web browsers, and can't access Cordova or Capacitor APIs. For this reason, the plugin is recommended if you need to load third-party (untrusted) content, instead of loading it into the main Cordova or Capacitor WebView (for example, using the RedirectToURL destination). The plugin's browser targets are not subject to the allowlist.
+
+The InAppBrowser plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check [cordova-outsystems-inappbrowser](https://github.com/OutSystems/cordova-outsystems-inappbrowser) and [capacitor-os-inappbrowser](https://github.com/ionic-team/capacitor-os-inappbrowser).
 
 As a good practice, verify that the plugin is available in the app. Use the **Logic > Client Actions > InAppBrowserPlugin > CheckInAppBrowserPlugin** action to check for the plugin's availability before using other plugin actions. If the plugin isn't available to the app, display an error to your users.
 
@@ -48,11 +53,11 @@ To create the logic to open a URL in a web view, follow these steps in ODC Studi
 
     ![Screenshot showing the OpenInWebView action in ODC Studio's client actions for the InAppBrowser Plugin](images/open-in-web-view-odcs.png "ODC Studio Client Actions for InAppBrowser Plugin")
 
-2. Pass in the URL you want to open, as a **Text**, in the **URL** input parameter of the **OpenInWebView**.
-   
-3. Optionally, you can set the **Options** input parameter, passing in a structure of type **WebViewOptions**.
+1. Pass in the URL you want to open, as a **Text**, in the **URL** input parameter of the **OpenInWebView**.
 
-4. As a good practice, you should handle the result of calling the action by checking the **Success** output parameter. If any errors or warnings occur, you can check them using the **Error** and **Warning** output parameters.
+1. Optionally, you can set the **Options** input parameter, passing in a structure of type **WebViewOptions**.
+
+1. As a good practice, you should handle the result of calling the action by checking the **Success** output parameter. If any errors or warnings occur, you can check them using the **Error** and **Warning** output parameters.
 
 Here's the result of opening a URL in the web view, on Android:
 
@@ -66,11 +71,11 @@ To create the logic to open a URL in a system browser (SafariViewController for 
 
     ![Screenshot showing the OpenInSystemBrowser action in ODC Studio's client actions for the InAppBrowser Plugin](images/open-in-system-browser-odcs.png "ODC Studio Client Actions for InAppBrowser Plugin")
 
-2. Pass in the URL you want to open, as a **Text**, in the **URL** input parameter of the **OpenInSystemBrowser**.
-   
-3. Optionally, you can set the **Options** input parameter, passing in a structure of type **SystemBrowserOptions**.
+1. Pass in the URL you want to open, as a **Text**, in the **URL** input parameter of the **OpenInSystemBrowser**.
 
-4. As a good practice, you should handle the result of calling the action by checking the **Success** output parameter. If any errors or warnings occur, you can check them using the **Error** and **Warning** output parameters.
+1. Optionally, you can set the **Options** input parameter, passing in a structure of type **SystemBrowserOptions**.
+
+1. As a good practice, you should handle the result of calling the action by checking the **Success** output parameter. If any errors or warnings occur, you can check them using the **Error** and **Warning** output parameters.
 
 Here's the result of opening a URL in the system browser, on iOS:
 
@@ -84,19 +89,32 @@ To create the logic to open a URL in an external browser, outside the your app, 
 
     ![Screenshot showing the OpenInExternalBrowser action in ODC Studio's client actions for the InAppBrowser Plugin](images/open-in-external-browser-odcs.png "ODC Studio Client Actions for InAppBrowser Plugin")
 
-2. Pass in the URL you want to open, as a **Text**, in the **URL** input parameter of the **OpenInExternalBrowser**.
+1. Pass in the URL you want to open, as a **Text**, in the **URL** input parameter of the **OpenInExternalBrowser**.
 
-3. As a good practice, you should handle the result of calling the action by checking the **Success** output parameter. If any errors or warnings occur, you can check them using the **Error** and **Warning** output parameters.
+1. As a good practice, you should handle the result of calling the action by checking the **Success** output parameter. If any errors or warnings occur, you can check them using the **Error** and **Warning** output parameters.
 
 Here's the result of opening a URL in the external browser, on Android (Google Chrome):
 
 ![Screenshot of a URL opened in an external browser on an Android device](images/external-browser-android.png "External Browser on Android")
 
-## Handle browser events (only applies to OpenInWebView and OpenInSystemBrowser)
+## Handle browser events
 
-Your app can handle events triggered when the browser finishes loading the URL and when the user closes the browser.
+Your app can handle events triggered when the browser finishes loading a URL, when navigation occurs, and when the user closes the browser.
 
-To enable this you can use the **InAppBrowserEvents** block, which let's you handle the **OnBrowserPageLoaded** and **OnBrowserClosed** events. You should add this block to every screen that you want these events to be handled in.
+To enable this functionality, use the **InAppBrowserEvents** block. This block allows you to handle the following events:
+
+* **OnBrowserPageLoaded**: Triggered when the browser finishes loading a page.
+* **OnBrowserPageNavigationCompleted**: Triggered when navigation within the browser is completed.
+* **OnBrowserClosed**: Triggered when the browser is closed by the user.
+
+Add the **InAppBrowserEvents** block to every screen where you want these events to be handled.
+
+<div class="info" markdown="1">
+
+* **OnBrowserPageLoaded** and **OnBrowserClosed** apply only to the **OpenInWebView** and **OpenInSystemBrowser** actions.
+* **OnBrowserPageNavigationCompleted** applies only to the **OpenInWebView** action.
+
+</div>
 
 ## Close (only applies to OpenInWebView and OpenInSystemBrowser)
 
@@ -108,21 +126,94 @@ To create the logic to close an open browser, follow these steps in ODC Studio:
 
     ![Screenshot showing the Close action in ODC Studio's client actions for the InAppBrowser Plugin](images/close-browser-odcs.png "ODC Studio Client Actions for InAppBrowser Plugin")
 
-3. As a good practice, you should handle the result of calling the action by checking the **Success** output parameter. If any errors or warnings occur, you can check them using the **Error** and **Warning** output parameters.
+1. As a good practice, you should handle the result of calling the action by checking the **Success** output parameter. If any errors or warnings occur, you can check them using the **Error** and **Warning** output parameters.
 
 ## Opening HTTP URLs with OpenInWebView on Android
 
-To enable your app to open HTTP URLs in the web view, set the **InAppBrowserCleartextTrafficPermitted** preference in your app's Extensibility Configurations, as follows:
+The plugin provides an extensibility setting that can be used to enable your app to open HTTP URLs in the web view. Use the extensibility setting exposed by the plugin if:
+
+* You're using the plugin in a Capacitor app.
+* You're using at least version 2.8.0 in a Cordova app.
+
+To enable, set the **AllowHttpTraffic** extensibility setting in your app's detail page in the Portal, under the **Mobile distribution** tab. If you don't explicitly set this setting, it won't be enabled by default.
+
+If you're using a Cordova app with an older version of the plugin (until 2.7.3), use the following configuration.
+
+Set the **InAppBrowserCleartextTrafficPermitted** preference in your app's extensibility configurations, as follows:
+
+(Recommended) Using the universal extensibility configurations schema:
 
 ```json
-        {
-            "preferences": {
-                "android": [
-                    {
-                        "name": "InAppBrowserCleartextTrafficPermitted",
-                        "value": true
-                    }
-                ]
-            }
+{
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "android": {
+          "InAppBrowserCleartextTrafficPermitted": "true"
         }
+      }
+    }
+  }
+}
 ```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "android": [
+      {
+        "name": "InAppBrowserCleartextTrafficPermitted",
+        "value": true
+      }
+    ]
+  }
+}
+```
+
+## Adding necessary permissions to upload files within the web view on iOS
+
+To allow users to upload photos or videos in a page opened in a web view (using **OpenInWebView**), you may need to configure specific iOS usage descriptions. If the web page gives users the option to capture new photos or videos, you must add the iOS usage descriptions for the camera and microphone to your app.
+
+To add the necessary usage descriptions, set the following preferences in the Extensibility Configurations of your app.
+
+(Recommended) Using the universal extensibility configurations schema:
+
+```json
+{
+  "appConfigurations": {
+    "permissions": {
+      "ios": {
+        "NSCameraUsageDescription": "This app uses the camera to take photos and record videos.",
+        "NSMicrophoneUsageDescription": "This app uses the microphone when recording videos."
+      }
+    }
+  }
+}
+```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "ios": [
+      {
+        "name": "NSCameraUsageDescription",
+        "value": "This app uses the camera to take photos and record videos."
+      },
+      {
+        "name": "NSMicrophoneUsageDescription",
+        "value": "This app uses the microphone when recording videos."
+      }
+    ]
+  }
+}
+```
+
+## Using the plugin in Capacitor apps
+
+If you need to enable your Android app to open HTTP URLs in the plugin's WebView you should set the **CleartextTrafficPermitted** Extensibility Setting to **True**.
+
+You can change Extensibility Settings by opening your application in ODC Portal and going to Mobile distribution tab.

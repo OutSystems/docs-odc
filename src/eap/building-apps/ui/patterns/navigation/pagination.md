@@ -15,9 +15,17 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - add-widget-ui-pattern
 ---
 
 # Pagination
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
 
 You can use the Pagination UI pattern to help users find a specific item on long listings. This pattern is typically used on listings, such as e-commerce category pages, search engines, and article archives.
 
@@ -67,16 +75,14 @@ You can use the Pagination UI pattern to help users find a specific item on long
 
     ![Screenshot of setting Start Index and Max. Records properties in the aggregate for Pagination](images/pagination-14-ss.png "Setting Aggregate Properties for Pagination Widget")
 
-
-
 After following these steps and publishing the app, you can test the pattern in your app.
 
 ## Properties
 
-| Property                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| StartIndex (Integer): Mandatory  | Sets the initial index to start pagination.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| MaxRecords (Integer): Mandatory  | Number of records to display per page.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| TotalCount (Integer): Mandatory  | Total number of records in the list.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| ShowGoToPage (Boolean): Optional | If True, there's an input box that allows the user to enter and jump to a specific page. If False, there is no functionality to jump to a specific page. This is the default.                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ExtendedClass (Text): Optional   | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
+| Property | Description |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| StartIndex (Integer): Mandatory | Sets the initial index to start pagination. |
+| MaxRecords (Integer): Mandatory | Number of records to display per page. |
+| TotalCount (Integer): Mandatory | Total number of records in the list. |
+| ShowGoToPage (Boolean): Optional | If True, there's an input box that allows the user to enter and jump to a specific page. If False, there is no functionality to jump to a specific page. This is the default. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |

@@ -1,5 +1,5 @@
 ---
-summary: Configure OAuth 2.0 to access REST APIs with OutSystems Data Cloud (ODC), obtain client credentials, generate access tokens, and authorize API calls.
+summary: Configure OAuth 2.0 to access REST APIs with OutSystems Developer Cloud (ODC), obtain client credentials, generate access tokens, and authorize API calls.
 tags: oauth 2.0, api authorization, rest apis, access token, client credentials
 outsystems-tools:
   - odc portal
@@ -14,6 +14,7 @@ audience:
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=3492-39
 ---
+
 # Using OAuth 2.0 to access the APIs
 
 The ODC REST APIs use the [OAuth 2.0 framework](https://datatracker.ietf.org/doc/html/rfc6749) for authorization.

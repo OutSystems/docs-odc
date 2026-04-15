@@ -15,9 +15,17 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - add-widget-ui-pattern
 ---
 
 # Section Group
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
 
 You can use the Section Group UI Pattern to keep the context of the header while scrolling through content.
 
@@ -27,7 +35,7 @@ You can use the Section Group UI Pattern to keep the context of the header while
   
     The Section Group widget is displayed.
 
-    ![Screenshot of the Section Group widget in the ODC Studio Toolbox](images/sectiongroup-1-ss.png "Section Group Widget in ODC Studio Toolbox") 
+    ![Screenshot of the Section Group widget in the ODC Studio Toolbox](images/sectiongroup-1-ss.png "Section Group Widget in ODC Studio Toolbox")
 
 1. To From the Toolbox, drag the **Section Group** widget into the **Main Content** area of your application's screen.
 
@@ -37,7 +45,7 @@ You can use the Section Group UI Pattern to keep the context of the header while
 
 1. Add your content to the placeholders.
 
-    In this example, we add a title to the Title placeholder and some text to the Content placeholder. 
+    In this example, we add a title to the Title placeholder and some text to the Content placeholder.
 
     ![Example of adding a title and text to the Section Group placeholders](images/sectiongroup-3-ss.png "Adding Content to Section Group Widget Placeholders")
 
@@ -57,8 +65,8 @@ After following these steps and publishing the app, you can test the pattern in 
 
 ## Properties
 
-| Property                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| HasStickyTitles (Boolean): Optional | If set to True, the section titles stay at the top of the page while the user scrolls through the content. If false, the section titles scroll with the content.                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| TopPosition (Integer): Optional     | Sets the position of the first section title. Only applicable when **HasStickyTitles** property is set to True.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| ExtendedClass (Text): Optional      | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
+| Property | Description |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| HasStickyTitles (Boolean): Optional | If set to True, the section titles stay at the top of the page while the user scrolls through the content. If false, the section titles scroll with the content. |
+| TopPosition (Integer): Optional | Sets the position of the first section title. Only applicable when **HasStickyTitles** property is set to True. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |

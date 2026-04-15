@@ -10,6 +10,9 @@
         {
           "type": "string",
           "pattern": "^\\d+(,\\s*\\d+)*$"
+        },
+        {
+          "type": "null"
         }
       ]
     },
@@ -132,6 +135,19 @@
         ]
       },
       "uniqueItems": true
+    },
+    "topic": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "isautopublish": {
+      "type": "boolean"
     }
   },
   "required": [

@@ -1,6 +1,6 @@
 ---
-summary: Exposed REST services should enforce SSL/TLS, and authetication.
-tags: ssl/tls, authentication, rest services, security, vulnerability
+summary: Exposed REST services should enforce authentication to protect against unauthorized access.
+tags: authentication, rest services, security, vulnerability
 guid: d669fc5b-08da-4bff-954f-cc007ade6174
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -17,18 +17,23 @@ outsystems-tools:
 ---
 # Exposed REST services without authentication
 
-Exposed REST services should enforce SSL/TLS, and authentication.
+Exposed REST services should enforce authentication to protect against unauthorized access.
+
+<div class="info" markdown="1">
+
+In ODC, SSL/TLS is always enforced for all REST services and you can't disable it, ensuring secure communication by default.
+
+</div>
 
 ## Impact
 
-Without authentication, REST endpoints are vulnerable to unauthorized access, data breaches, and misuse
+Without authentication, REST endpoints are vulnerable to unauthorized access, data breaches, and misuse.
 
 ## Why is this happening?
 
 The exposed REST API isn't protected. The authentication is set to **None**.
 
  ![Screenshot showing the authentication setting set to None in the REST service security options.](images/odcs-authentication-none.png "Authentication Setting in REST Service")
-
 
 ## How to fix
 

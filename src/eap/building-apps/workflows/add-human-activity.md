@@ -5,7 +5,7 @@ locale: en-us
 guid: 9b6fcc2b-f38c-4225-b5a0-4989655f9545
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5911-44
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7444-121
 audience:
   - mobile developers
   - frontend developers
@@ -17,87 +17,66 @@ coverage-type:
   - remember
 ---
 
-# Add human activity
+# Human activity in a workflow
 
-When implementing your workflow, you can include tasks to be carried out by the end-user. This is accomplished by including a **HumanActivity** node in your workflow. 
+When implementing your workflow, you'll encounter scenarios that require manual intervention from the users. Think of it as a designated point in your workflow where the app hands off a specific action to a person or a role within your organization. The user then completes the task through a form or screen in the app, and once it’s done, the app triggers an event to signal that the human activity is complete, allowing the workflow to move forward.
 
-In the workflow editor for **HumanActivityNode**:
+Here's the high-level process involved in completing a manual activity in a workflow:
 
-* Specify a task and assign it to an end-user of your ODC app. You can change the user ID programmatically in ODC Studio using the [HumanActivityAssign](#programmatic-assign) API to assign a task to a different end-user. 
+1. The workflow reaches the human activity node in the workflow editor.
 
-    **Note**: You must develop your own custom notifications using the **HumanActivityInstance** entity to remind users of pending tasks.
+1. A custom notification is triggered and the app notifies the user of the pending manual task.
 
-* Select the **Close on** event and set the conditions within the human activity. If the conditions are not set, all human activities listening for the **Close on** event will end on the event's occurrence.
+1. The user completes the manual task on the screen in the ODC app. Once the user completes the manual task, the close on event is triggered in the app.
 
-After the human activity executes, its status remains Open, Running, or Waiting until the ODC app triggers the **Close on** event. In ODC Studio, you must build your own logic that triggers the **Close on** event to end the human activity. 
+1. On the trigger of the close-on event, the human activity node in the workflow editor is considered completed, and the workflow moves to the next step.
 
-When the **Close on** event occurs, and conditions within the human activity are met, the human activity ends, and the workflow moves to the next step.
+![Diagram showing the process of completing a human activity in a workflow, including nodes for human activity, notification dashboard, ODC app screen, and automatic activity.](images/human-activity-flow-diag.png "Human Activity Workflow Diagram")
 
-To include human activity in a workflow, follow these steps:
+To integrate these manual tasks in your ODC workflow:
 
-1. From the workflow editor, click the (+) icon between the two nodes and choose **Human activity**.
+* Add the **HumanActivity** node in the workflow editor to include a manual task in your workflow.
 
-1. Enter the following details in the sidebar:
+* Configure  the **HumanActivity** node and select service actions from your app that can provide more context to the user and pass data to the workflow. For detailed information about how to add and configure **HumanActivity** node, refer to [Add human activity](add-human-activity-procedure.md).
 
-    a. **Add description**: (Optional) Brief description of the human activity task to be carried out.
+* Develop the screen or form in your app where the user can perform the human activity.
 
-    b. **Fetch more data**: (Optional) Select a service action from the ODC app. You can add multiple service actions from different apps. For example, you can select a service action, GetUserDocs, from the Loans app and a service action GetManagerName from the Directory app. If the service action has one or more input parameters, enter values for the mandatory input parameters to execute the service action. 
+* Develop custom notifications to remind users of the pending human activities. For more details, refer to [Build notifications to handle human activity](#build-notifications-to-handle-human-activity).
 
-    c. **Assign to**: (Optional) Identifies who the activity is assigned to. You can assign an activity to a user ID or a Public role. 
-    **Note:** You can change the User ID at runtime in ODC Studio using the **HumanActivityAssign** server action under **System**.
+* From the screen, trigger the  event to close the human activity. For example, you can trigger the **Close on** event by clicking the Submit button on the screen. For detailed information about triggering events, refer to [Trigger an event](../../building-apps/events/implement-events.md#trigger-an-event).
 
-    d. **Destination screen:** (Optional) Select the public screen of your app where the user must perform the human activity. If applicable, you can enter input parameters in this screen to pass context from the workflow to your app.
+Now, when the user completes the human activity on the screen, the **Close on** event is triggered, and the human activity in the workflow is considered completed, and the workflow proceeds to the next step. Optionally, you can configure a duration by which the human activity should be completed. For more details, refer to [Implement SLA's in human activity](#implement-slas-in-human-activity).
 
-    **Note:** The destination screen is stored as a relative URL in the URL attribute of the system entity **HumanActivityInstance**. After the workflow revision has been published, if the app name, screen name, or attributes of the destination screen are changed, the URL stored in the system entity becomes invalid. In such cases, you must create re-publish the workflow and create a new revision.
-    
-    e. **Display message**: (Optional) Click the text area to open the Expression Editor and edit the condition on the editor. You can add more data so that more information is available for use within the scope of the Expression editor.
+You can also use low-code APIs at runtime to open a human activity, assign a human activity to a different user, and release a human activity from a user. For detailed information, refer to [Modify human activity at runtime](human-activity-states.md#modify-human-activity-at-runtime).
 
-    f. **Close on**: (Mandatory) Select the event and define the conditions within the human activity.  
-    
-    * The left side of each condition is always one of the event's input parameters.
-    * On the right side, you can select either a literal value or a value from a drop-down list.
-    * The condition is considered true when the left side equals the right side.
-	
-    If multiple conditions are defined, they are combined using the AND operator and evaluated together as True or False. For example, in a human document review scenario, only when the event **LoanReview** occurs, and both conditions (DocsVerified=OK AND NumberDocsReviewed=NumberDocsSubmitted) are simultaneously true, will the human activity be closed, and the workflow moves on to the next step.
+## Build notifications to handle human activity
 
-    Once the event occurs and the conditions are met, **HumanActivityStatus** changes from **Waiting** or ****Running** to **Completed**, and the workflow moves on to the next step. 
+In ODC, you must develop your own custom notification system to remind users of the pending manual tasks. Here are some of the standard notification systems that can be implemented:
 
-## Modify human activity at runtime
+* Emails
+* Interactive dashboards in apps
+* In-app notifications
+* Push notifications for mobile apps
+* SMS/Text message notifications
 
-At runtime from the ODC Studio, you can use the low-code APIs to do the following:
-git 
+ODC enables you to build these notifications using specific system entities. For example, you can build an interactive dashboard in your app that filters workflows by a specific human activity. For detailed information, refer to [Build UI components using workflow entities](filter-workflows.md).
 
-* [Manually assign or re-assign human activity to a different user](../../reference/system-actions/workflows.md#humanactivityassign)
+## Implement SLAs in human activity
 
-* [Open a human activity](../../reference/system-actions/workflows.md#humanactivityopen)
+You can implement service level agreements (SLAs) for a human activity. For example, in your loan approval workflow, you can configure it so that the **DocumentReview** manual task is completed within the agreed-upon timeframe. For detailed information, refer to [Implementing SLAs in workflow](sla-workflow.md).
 
-* [Release a human activity from a user](../../reference/system-actions/workflows.md#humanactivityrelease)
+## Related resources
 
-Here's the human activity status transition diagram that describes the status transitions of human activity node on execution of the low-code APIs.
+### Human activity states
 
-![Diagram showing the state transitions of human activity in a workflow, including states like Running, Waiting, Open, Completed, Terminated, and Error, with transitions triggered by events and actions.](images/activity-status-transition-diag.png "Human Activity State Transition Diagram")
+* [Human activity status definitions](human-activity-states.md)
 
-For detailed information about different statuses, refer to [Statuses of workflow nodes](workflow-components.md#statuses-of-workflow-nodes).
+### Implement workflows
 
-## Human activity status definitions
- 
-At any given time, based on the progress of the human activity, the **HumanActivityNode** can be in one of the following statuses:
+* [Add human activity](add-human-activity-procedure.md)
+  
+* [Implement SLAs in a workflow](sla-workflow.md)
 
-- **Running** - The human activity is currently being executed, such as when a service action is retrieving data.
+* [Troubleshooting workflows](troubleshooting-workflows.md)
 
-- **Waiting** - The human activity is on hold, awaiting further action. For instance, it may be paused for manual intervention.
-
-- **Completed** -  The human activity has finished, allowing the workflow to proceed to the next step.
-
-- **Terminated** - The human activity and the entire workflow is terminated following the successful execution of the **ProcessTerminate** API.
-
-- **Error** - The human activity encounters an issue, which can happen due to:
-  * A failure in the service action it depends on.
-  * Reaching the maximum number of retries without successful execution.
-  * Temporary problems, such as a service being unavailable.
-
-- **Open** - The human activity has been opened by an end-user but has not yet proceeded to execution.
-
-## Next step
-
-Create customized dashboards and screens where users can view and act on tasks assigned to them or their roles. For detailed information, refer to [Build UI components using workflow entities](filter-workflows.md).
+* [Deploy workflows](../../deploying-apps/deploy-apps.md)

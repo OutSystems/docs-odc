@@ -44,4 +44,3 @@ To select the **Extract to Action** feature:
 1. Select **Extract to Action**.
 
 ![Context menu showing the 'Extract to Action' option highlighted in a flow diagram.](images/odcs-extract-to-action.png "Extract to Action Feature")
-

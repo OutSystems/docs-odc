@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - self-registration
 ---
 
 # Create email to send verification code
@@ -40,7 +42,7 @@ Follow these steps to create your own email.
     <div class="info" markdown="1">
 
     You're receiving this e-mail because you requested a password reset for your user account. To set a new password, use the button below or insert the following verification code in the reset password page.
-    
+
     </div>
 
     New note text:
@@ -48,17 +50,17 @@ Follow these steps to create your own email.
     <div class="info" markdown="1">
 
     Thank you for joining us. We’re glad to have you on board. You're receiving this e-mail because you registered in our _Your Name_ Portal. You now have a verification code.
-    
+
     </div>
 
 1. On the canvas, click on the text below the unique verification code. Then in Properties, replace the text.
-    
+
     <div class="info" markdown="1">
 
     This verification code expires in 1 hour.
 
     </div>
-    
+
     New note text:
 
     <div class="info" markdown="1">
@@ -79,19 +81,26 @@ Follow these steps to create your own email.
 
 Before updating the actions, delete the input parameter **CustomerEmail** by expanding the **UserRegistration** element in the **Elements** tab, then follow the steps below.
 
-1. From the **Logic** tab, click **server actions** > **DoSignup** action to display logic on canvas.
+1. From the **Logic** tab, click **Server actions** > **DoSignup** action to display logic on canvas.
 
-    ![Diagram showing how to set user registration email properties in OutSystems](images/user-registration-variables-odcs.png "User Registration Variables")
-
-1. From the canvas, click **UserRegistration** element to display Properties panel. Set the following properties:
+1. From the canvas, click the **UserRegistration** email element, and set the following properties:
 
     1. **CustomerName** to `user.Name`
     1. **VerificationCode** to `StartUserRegistration.UserRegistrationResult.VerificationCode`
     1. **ApplicationName** as `GetAppName()`
+    1. Leave the **From** property empty or add the email address configured in the ODC Portal.
+
+    ![Diagram showing how to set user registration email properties in OutSystems](images/variable-odcs.png "User Registration Variables")
+
+    <div class="info" markdown="1">
+
+    Be careful when editing the From property in the Send Email action. Most spam algorithms reject emails with a misconfigured from field.
+
+    </div>
 
 1. From the **Interface tab**, click  the **SignUp screen** > **SignUpOnClick** action to display **SignUpOnClick** on the canvas.
- 
-    ![Flowchart detailing the SignUpOnClick client action input parameters in OutSystems](images/signup-dosignup-input-parameters-odcs.png "SignUp OnClick Client Action")
+
+    ![Flowchart detailing the SignUpOnClick client action input parameters in OutSystems](images/signup-do-signup-input-parameters-odcs.png "SignUp OnClick client action")
 
 1. From the canvas, click the **DoSignup** action to display the Properties panel, and confirm the following properties:
 
@@ -119,5 +128,6 @@ Before updating the actions, delete the input parameter **CustomerEmail** by exp
 
     `DoSignup.ErrorMessage`
 
-You can now [create a form to validate the verification code.](create-validation-form.md)
+    ![Flowchart detailing the SignUpOnClick client action](images/verification-odcs.png "SignUp OnClick action")
 
+You can now [create a form to validate the verification code](create-validation-form.md).

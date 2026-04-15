@@ -15,9 +15,17 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - add-widget-ui-pattern
 ---
 
 # Chat Message
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
 
 You can use the Chat Message UI Pattern to display conversational posts in notifications or chat screens. It can be used to display content such as photos, text, images, delivery times, and statuses.
 
@@ -39,7 +47,7 @@ You can use the Chat Message UI Pattern to display conversational posts in notif
 
 1. Add the relevant content to the placeholders.
 
-    In this example, we add the user avatar to the Image placeholder and text to the Content placeholder. 
+    In this example, we add the user avatar to the Image placeholder and text to the Content placeholder.
 
     ![Screenshot of adding user avatar and text to the Chat Message placeholders](images/chatmessage-4-ss.png "Customizing Chat Message Content")
 
@@ -53,9 +61,9 @@ After following these steps and publishing the app, you can test the pattern in 
 
 ## Properties
 
-| Property                                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| DisplayOnRight (Boolean): Optional                 | If True, the pattern is right aligned. If False, the pattern is left aligned. This is the default value.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Time (Time): Optional                              | Message timestamp.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| MessageStatus (MessageStatus Identifier): Optional | The status of the current message, for example, sent recieved, read, and hidden.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ExtendedClass (Text): Optional                     | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
+| Property | Description |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DisplayOnRight (Boolean): Optional | If True, the pattern is right aligned. If False, the pattern is left aligned. This is the default value. |
+| Time (Time): Optional | Message timestamp. |
+| MessageStatus (MessageStatus Identifier): Optional | The status of the current message, for example, sent recieved, read, and hidden. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |

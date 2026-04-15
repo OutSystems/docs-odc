@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - remember
   - understand
+topic:
+  - write-expressions-guide
 ---
 
 # Edit expressions
@@ -58,4 +60,4 @@ An expression is what you edit in the expression editor. An expression consists 
 
 ### Expression widget
 
-To quickly display the result of an expression, use the Expression widget. 
+To quickly display the result of an expression, use the Expression widget.

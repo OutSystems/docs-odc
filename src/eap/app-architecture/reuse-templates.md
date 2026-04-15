@@ -53,7 +53,5 @@ To help with that task, we will create a template to be the base of all planned 
     `This is the BrandTwee corporate template, which provides a set of common forms using our corporate image guidelines.`
 
 1. Define an icon for the app.
-1. Develop what you want to provide with this template, such as the form screens and their validations, and adjust the base theme to match the company's brand image. 
+1. Develop what you want to provide with this template, such as the form screens and their validations, and adjust the base theme to match the company's brand image.
 1. Publish. Once published, it becomes available in the templates list when we create a new application.
-
-

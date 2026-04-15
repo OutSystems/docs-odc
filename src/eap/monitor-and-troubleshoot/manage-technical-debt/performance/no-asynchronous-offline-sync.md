@@ -14,7 +14,7 @@ audience:
 outsystems-tools:
   - none
 ---
-# No asynchronous Offline sync
+# Server data not storing asynchronously
 
 <div class="info" markdown="1">
 
@@ -28,13 +28,12 @@ Server data isn't stored in the local database asynchronously.
 
 Synchronously storing server data blocks screens and/or actions that may impact the overall user experience.
 
-## Why is this happening? 
+## Why is this happening?
 
 This issue arises because the server data in the mobile application is stored in the local database synchronously, rather than asynchronously
 
 ## How to fix
 
 Use TriggerOfflineDataSync to execute OfflineDataSync asynchronously and react to the OnSyncComplete event to update UI modules.
-
 
 For more information, see the [Data Synchronization](https://learn.outsystems.com/training/journeys/data-synchronization-668) online course.

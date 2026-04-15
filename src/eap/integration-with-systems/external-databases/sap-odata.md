@@ -1,23 +1,22 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports writing data to SAP O Data connection.
-tags: 
-outsystems-tools: 
+tags:
+outsystems-tools:
 guid: 5f66d96c-a0ac-4b19-8211-a576a044468c
 locale: en-us
 app_type: mobile apps, reactive web apps
 content-type:
-    - conceptual
-    - procedure
-audience: 
+  - conceptual
+  - procedure
+audience:
 platform-version: odc
 figma: https://www.figma.com/design/AOyPMm22N6JFaAYeejDoge/Configuration-management?node-id=3711-10&t=3EmFUNoGU0AIgLBT-1
 ---
-
 # Write data to SAP OData external connection
 
 In OutSystems Developer Cloud (ODC), you can write data to an external SAP OData data source using the following methods:
 
-* Entity actions for non-hierarchial data: If you don't select hierarchical attributes in the ODC Portal, ODC generates default entity actions that interact with the entity's collection endpoint. 
+* Entity actions for non-hierarchial data: If you don't select hierarchical attributes in the ODC Portal, ODC generates default entity actions that interact with the entity's collection endpoint.
 * Custom server actions (deep insert actions): If you select hierarchical attributes in the ODC Portal, ODC creates custom server actions to handle hierarchical data. These actions allow you to insert an entity and its related entities in a single request.
 
 ODC generates a deep insert action for each entity with hierarchical attributes (navigation properties) selected in the ODC Portal. ODC also generates server actions when attributes with complex data (Record or Record List attributes) types are selected in the ODC Portal. If you select a complex data type without any navigation properties, the server action only inserts data into the corresponding entity.
@@ -26,7 +25,7 @@ ODC generates a deep insert action for each entity with hierarchical attributes 
 
 <div class="info" markdown="1">
 
-Navigation properties define the relationships between entities and describe the paths linking an entity to its related entities. Each navigation property is linked to an association defining the relationship between entities. 
+Navigation properties define the relationships between entities and describe the paths linking an entity to its related entities. Each navigation property is linked to an association defining the relationship between entities.
 
 </div>
 

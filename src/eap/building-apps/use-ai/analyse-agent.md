@@ -16,7 +16,7 @@ coverage-type:
   - apply
 ---
 
-# Analyze agent 
+# Analyze agent
 
 AI Agent Builder analytics provides insights into the usage of AI agents, models, and data sources. This helps you understand current costs and predict future allocations based on usage patterns. Additionally, you can troubleshoot latency issues without accessing logs in the ODC Portal.
 
@@ -37,7 +37,7 @@ To overview the costs, performance, and usage of the available AIAB models, foll
 
 ![Screenshot of the AI Agent Builder Analytics dashboard showing metrics for agents, AI models, and data sources, including total calls, tokens by call, average response time, and a graph of the number of calls by agent.](images/analyze-an-agent-ai.png "AI Agent Builder Analytics Dashboard")
 
-You can also export usage data of AI agents, models, and data sources for custom analytics. 
+You can also export usage data of AI agents, models, and data sources for custom analytics.
 
 ## Troubleshooting AI agents
 

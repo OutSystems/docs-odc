@@ -16,9 +16,17 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - add-widget-ui-pattern
 ---
 
 # Flip Content
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
 
 You can use the Flip Content UI Pattern to display information that when, for example, is clicked, flips and displays different information.
 
@@ -49,8 +57,9 @@ You can use the Flip Content UI Pattern to display information that when, for ex
     ![Screenshot of the Properties tab for customizing the Flip Content's appearance](images/flipcontent-properties-ss.png "Flip Content Properties")
 
 ## Properties
-| Property                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| StartsFlipped (Boolean): Optional | If True, the CardFront content is displayed first before flipping. If False, the CardBack content is displayed first before flipping. This is the default.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| FlipOnClick (Boolean): Optional   | If True, the flip event is triggered when the Flip Content card (front or back) is clicked. This is the default. If False, you can define the action that triggers the flip event.                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ExtendedClass (Text): Optional    | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
+
+| Property | Description |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| StartsFlipped (Boolean): Optional | If True, the CardFront content is displayed first before flipping. If False, the CardBack content is displayed first before flipping. This is the default. |
+| FlipOnClick (Boolean): Optional | If True, the flip event is triggered when the Flip Content card (front or back) is clicked. This is the default. If False, you can define the action that triggers the flip event. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |

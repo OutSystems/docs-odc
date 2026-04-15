@@ -23,8 +23,8 @@ Returns True when the logged in end-user has the specific role. The function all
 
 Available in:  
 
-  * Server action
-  * Service action
+* Server action
+* Service action
 
 ### Input
 

@@ -16,11 +16,14 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - creating-app-from-scratch
+isautopublish: true
 ---
 
 # Create your hello world app
 
-This article demonstrates how you can create a "Hello, world!" app in ODC.
+This article demonstrates how you can create a "Hello, world!" app in ODC manually. You can also generate apps from natural language descriptions using [agentic development](../agentic-development/intro.md).
 
 <iframe src="https://player.vimeo.com/video/1034568771" width="750" height="422" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">Demo showing how to create a Hello world app in ODC Studio.</iframe>
 
@@ -36,15 +39,13 @@ For more information on accessing ODC Studio and Portal, see [Getting started wi
 
 ## Create the app
 
-Open ODC Studio and follow these steps to create your "Hello, world" app: 
+Open ODC Studio and follow these steps to create your "Hello, world" app:
 
-1. Click **Create** (the + icon).
-2. Select **App** and click **Continue**.
-3. Select **Web app** and click **Continue**.
-4. Enter the name of your app and click **Create app**.
-5. From the toolbox, drag a Screen to the canvas.
+1. Select **Create** > **Web app** > **Continue in ODC Studio**. Select **Continue** to confirm. The app details screen opens.
+1. Enter the name of your app and select **Create app**.
+1. From the toolbox, drag a screen to the canvas. The **New Screen** window opens.
 
-     ![Screenshot showing the process of dragging a screen component onto the canvas in ODC Studio](images/hello-world-drag-screen-odcs.png "Dragging a Screen to the Canvas in ODC Studio")
+     ![Screenshot showing the process of dragging a screen component onto the canvas in ODC Studio](images/hello-world-drag-screen-odcs.png "Dragging a screen to the canvas in ODC Studio")
 
      <div class="info" markdown="1">
 
@@ -52,18 +53,18 @@ Open ODC Studio and follow these steps to create your "Hello, world" app:
 
      </div>
 
-6. To create an empty screen, click **Create screen**.
-    
+1. In the **New Screen** window, select **Empty**, and then **Create screen**.
+
     ODC Studio creates a screen with the name Screen1.
 
-7. Click the title placeholder in the empty screen and enter `Hello, world!`.
-8. Go to the **Interface** tab, double-click **MainFlow**, and select Screen1. 
-9. Set the **Accessible by** screen property to **Everyone**.
+1. Click the title placeholder in the empty screen and enter `Hello, world!`.
+1. Go to the **Interface** tab, double-click **MainFlow**, and select Screen1.
+1. Set the **Accessible by** screen property to **Everyone**.
 
     ![Image depicting the process of setting the screen property 'Accessible by' to 'Everyone' in ODC Studio](images/hello-world-authorization-everyone-odcs.png "Setting Screen Authorization to Everyone in ODC Studio")
 
-10. Click the **1-Click Publish** button.
-    
+1. Click the **1-Click Publish** button.
+
     ODC is now compiling, optimizing, and publishing your app in the development stage.
 
-11. Click **Open in browser** to view your app.
+1. Click **Open in browser** to view your app.

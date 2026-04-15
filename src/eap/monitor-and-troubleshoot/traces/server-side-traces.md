@@ -39,7 +39,7 @@ The following are different types of server-side traces:
 
 For more information, refer to [Traces](intro.md).
 
-## Turn server-side traces on or off
+## Turn server-side traces on or off {#turn-on-off}
 
 All apps have their server-side traces on by default. Follow these steps to turn server-side traces off or on:
 

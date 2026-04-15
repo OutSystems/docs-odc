@@ -18,9 +18,15 @@ coverage-type:
 
 # Area Chart
 
-This example shows how you can create a simple Area Chart with a Stacked Series. 
+<div class="info" markdown="1">
 
-1. From the Toolbox, drag the **Area Chart** widget to the Screen. 
+Applies to the OutSystems UI framework only.
+
+</div>
+
+This example shows how you can create a simple Area Chart with a Stacked Series.
+
+1. From the Toolbox, drag the **Area Chart** widget to the Screen.
 
     ![Screenshot showing the Area Chart widget being dragged to the screen in the development environment](images/chartarea-drag-ss.png "Dragging the Area Chart Widget")
 
@@ -28,9 +34,9 @@ This example shows how you can create a simple Area Chart with a Stacked Series.
 
     ![Screenshot of the Properties tab with the Data Point List property expanded](images/chartarea-expand-ss.png "Expanding the Data Point List Property")
 
-1. Click **+[0]** and set the **Label** and **Value** properties using [fixed data](data.md#populate-your-chart-with-fixed-data) or [variable data](data.md#populate-your-chart-with-variable-data). 
+1. Click **+[0]** and set the **Label** and **Value** properties using [fixed data](data.md#populate-your-chart-with-fixed-data) or [variable data](data.md#populate-your-chart-with-variable-data).
 
-    This example uses fixed data. These properties define the first data point. Each data point corresponds to a point on the area chart. 
+    This example uses fixed data. These properties define the first data point. Each data point corresponds to a point on the area chart.
 
     ![Screenshot illustrating how to set the Label and Value properties for a data point in the Area Chart](images/chartarea-datapointlist-ss.png "Setting the Data Point Properties")
 

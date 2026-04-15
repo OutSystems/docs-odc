@@ -15,6 +15,9 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+topic:
+  - changing-endpoints
+  - app-settings
 ---
 
 # Configuration management
@@ -45,31 +48,7 @@ The values you change take effect when the asynchronous apply process completes.
 
 Settings are custom public values that change the behavior of the app or library in a stage. Once you create the setting values in ODC Studio and publish the app, you can override the default values in the ODC Portal without having to republish or redeploy the app.
 
-In ODC Studio, for new or published apps in the **development stage only** you can:
-
-* Create or change settings
-* Arrange settings into folders
-* View and edit the default values of the runtime settings
-
-Open your app in ODC Studio and go to **Data** > **Settings** to add or edit settings. You need to publish your app after any changes you make.
-
-In the ODC Portal, for all apps **of a given stage only** you can view or override the default values of the settings for the stage.
-
-From the ODC Portal menu, click **Configuration**. An accordion format displays a list of configurations by type such as settings and timers.
-
-![Configuration management screen](images/configuration-management-pl.png "Configuration management screen")
-
-To see the list of settings, click the down arrow and open the accordion. A list of settings displays. To change values, click a setting. The sidebar opens and displays the current values.
-
-After you make the changes, apply the settings to make the new values available.
-
-Remember, settings are stage-specific.
-
-For more information, refer to:
-
-* [Settings' best practices](../building-apps/data/data-best-practices/intro.md#settings)
-
-* [Settings](https://learn.outsystems.com/training/journeys/settings-370) online course
+For more information about configuring app settings, refer to [Configure app settings](configure-app-settings.md).
 
 ## Managing timers
 
@@ -95,3 +74,9 @@ In the ODC Studio, you define which systems you want to integrate with to presen
 To access the list of REST integrations, go to the **Configuration** tab for your app. From here you can get access to the **Consumed REST APIs**. The bubble to the right of the section name shows the number of APIs in each category.
 
 When you click **Consumed REST APIs**, a list of the consumed APIs displays. To manage a Consumed REST integration, click on the integration name. The sidebar opens for you to make updates. When you apply your changes, ODC saves them, and your new Consumed REST integrations settings are available.
+
+## Automating configuration management via APIs
+
+You can automate configuration management tasks using the ODC REST APIs. This enables you to integrate configuration changes into CI/CD pipelines, infrastructure-as-code frameworks, or custom management tools.
+
+For more information, refer to the [Asset Configurations API reference](../reference/apis/asset-config-v1.md).

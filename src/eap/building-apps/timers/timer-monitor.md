@@ -24,7 +24,7 @@ Timer logs display the following:
 
 * If a timer is running and when it started
 * The last time a timer executed
-* How long the action took to compete
+* How long the action took to complete
 
 You can sort the log list by severity and display any combination of errors, warnings, and informational messages.  
 

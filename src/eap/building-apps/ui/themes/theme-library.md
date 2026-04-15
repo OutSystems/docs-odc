@@ -15,6 +15,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - reuse-ui
+  - layouts
+isautopublish: true
 ---
 
 # Use Theme Library for app branding
@@ -29,7 +33,7 @@ From ODC Studio, click **Create** and select **Library**. Since this is a librar
 
 ![Specify Library Name, icon and description](images/library-details-odcs.png "Specify Library Name, icon and description")
 
-## Name the theme by following the recommended naming convention 
+## Name the theme by following the recommended naming convention
 
 To create a theme, go to ODC Studio and from the **Themes** folder, in the **Interface** tab, create a new theme. Name it with the prefix `Theme_` and then add the name you prefer. For the default base theme, select **OutSystems UI**.
 
@@ -39,13 +43,11 @@ If the **OutSystems UI** theme is unavailable, add a public element. Search for 
 
 </div>
 
-Since there are no layouts yet, a message displays informing you to select a layout. In the next step add the layouts. Then select which layout will be the default layout for your theme.
-
-![Theme is available in Themes folder](images/themes-folder-odcs.png "Theme is available in Themes folder")
-
 ## Create the theme structure
 
-You create the theme structure in ODC Studio. From the **Interface** tab, select **UI Flows**, and then create a new UI flow. From your existing app in the common flow, copy and paste the **Menu_Icon** and the **RedirectToURL** to the new flow in the library.
+Open the OutSystems app that you want to use as the foundation for your new theme library. The following steps guide you through copying the necessary elements from this app to your new theme library.
+
+You create the theme structure in ODC Studio. In your app, go to the **Interface** tab. Inside the **UI Flows** folder, you find a common flow. Open the common flow to find and copy the **Menu_Icon** block and the **RedirectToURL** to the new flow in the library.
 
 ![Theme common components are available in Theme common flow](images/theme-common-flow-odcs.png "Theme common components are available in Theme common flow")
 
@@ -61,13 +63,13 @@ For errors related to the app title, add a placeholder instead of a block so you
 
 ![Layout placeholders and structure. Adding an ApplicationTitle placeholder](images/add-applicationtitle-placeholder-odcs.png "Layout placeholders and structure. Adding an ApplicationTitle placeholder")
 
-If you decide to use a placeholder, from the  **Layout_Top_Menu**, select **LayoutWrapper** > **Header2** > **Container** > **Container** after the **MenuIcon** block drag the placeholder in the block and in the styles property, inside the Layout section, remove one col, and in the margin-left, remove the content inside.
+If you decide to use a placeholder, in **Layout_Top_Menu**, select **LayoutWrapper** > **Header2** > **Container** > **Container**. After the **MenuIcon** block, drag the placeholder into the block. In the styles property, inside the Layout section, remove one col. In the margin-left, remove the content inside.
 
 ![Placeholder styles properties](images/placeholder-styles-properties-odcs.png "Placeholder styles properties")
 
 Select all images that are common between apps.
 
-1. Copy and paste to the **Images** folder inside your library. 
+1. Copy and paste to the **Images** folder inside your library.
 1. Add the prefix of your library before each image name to be more accessible, identifying which images are in your apps.
 
 ![Make theme images public to be used in other applications](images/select-all-images-odcs.png "Make theme images public to be used in other applications")
@@ -96,7 +98,7 @@ Depending upon your use case, you have two different options. Use the option mos
 
 ![Applications layout placeholders structure with common blocks inside placeholders](images/layout-placeholders-option1-odcs.png "Applications layout placeholders structure with common blocks inside placeholders")
 
-* **Option 2:** You don't need to add the placeholder and the **Menu** block directly. In this way, every time a developer creates a new screen, and the menu is already with the layout, developers can use the accelerator to drag a screen on top of the menu and automatically create the menu item. However, it's more maintainable and bulletproof because developers can change anything in the header. 
+* **Option 2:** You don't need to add the placeholder and the **Menu** block directly. In this way, every time a developer creates a new screen, and the menu is already with the layout, developers can use the accelerator to drag a screen on top of the menu and automatically create the menu item. However, it's more maintainable and bulletproof because developers can change anything in the header.
 
 ![Applications layout placeholders structure with common blocks inside placeholders](images/layout-placeholders-option2-odcs.png "Applications layout placeholders structure with common blocks inside placeholders")
 
@@ -106,11 +108,11 @@ After setting the layouts, you must set the **App_LayoutTopMenu** in the app the
 
 ## Extra placeholders
 
-Since you're adding extra placeholders, the default `ph` class to remove `divs` without content won’t work if the placeholder is empty. To make sure you can use the same behavior in the **OnReady** layout event, add the following script:
+Since you're adding extra placeholders, the default `.placeholder-empty` class to remove `divs` without content won’t work if the placeholder is empty. To make sure you can use the same behavior in the **OnReady** layout event, add the following script:
 
 ```
-var emptyPh = document.querySelectorAll("ph:empty"); 
-emptyPh.forEach(function (a) {
+var emptyPlaceholder = document.querySelectorAll(".placeholder-empty:empty"); 
+emptyPlaceholder.forEach(function (a) {
     a.parentNode.remove();
 })
 ```
@@ -121,6 +123,6 @@ This script can be converted to a global client action and used in any layout.
 
 </div>
 
-![Global client action available in Theme to clean PH](images/global-client-action-available-odcs.png "Global client action available in Theme to clean PH")
+![Global client action available in Theme to clean placeholder-empty class](images/global-client-action-available-odcs.png "Global client action available in Theme to clean PH")
 
-![How to use the Global client action to clean PH in the layouts](images/how-to-use-global-client-action-odcs.png "How to use the Global client action to clean PH in the layouts")
+![How to use the Global client action to clean placeholder-empty class in the layouts](images/how-to-use-global-client-action-odcs.png "How to use the Global client action to clean placeholder-empty class in the layouts")

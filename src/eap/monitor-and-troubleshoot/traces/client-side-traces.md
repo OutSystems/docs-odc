@@ -38,7 +38,7 @@ The following are different types of client-side traces:
 
 For more information, refer to [Traces](intro.md).
 
-## Enable client-side traces
+## Enable client-side traces {#enable-client-side}
 
 <div class="warning" markdown="1">
 
@@ -66,11 +66,9 @@ The ODC Portal initially displays traces of the order in which they arrive. Span
 
 Backend traces typically arrive first. When client-side traces arrive, they regroup with the backend traces. However, client-side information may sometimes not arrive due to an error or a limit being reached. In these cases, only traces with backend information remain available.
 
-
 ### Out-of-order spans
 
 Client actions can execute in less than a millisecond. This makes it appear that two actions happened simultaneously. In the ODC Portal, spans are displayed based on arrival time, which can cause consecutive actions to appear out of order.
-
 
 ### Empty block
 
@@ -79,7 +77,6 @@ When an action is called, a span is created even if the action doesn't affect yo
 ![Screenshot of an empty block span in ODC Portal.](images/empty-block-span-pl.png "Empty Block Span in ODC Portal")
 
 If an exception triggers the handler, ODC records a span, even if it doesn't result in errors. This also applies to other elements, such as action spans.
-
 
 ### Multiple spans after an interaction
 
@@ -90,7 +87,7 @@ Screen traces monitor the rendering of a screen, whether it's the initial render
 * The user navigates to a new screen.
 * The internal state of a widget on the screen changes.
 
-## Considerations working with traces { #considerations }
+## Considerations working with traces {#considerations}
 
 Client-side spans are collected and stored on the client side and sent to the ODC data service in batches of up to 1000 spans. Trace requests are rate-limited, and all spans within trace requests that exceed these limits are discarded.
 

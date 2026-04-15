@@ -18,7 +18,7 @@ coverage-type:
 
 # Fetch data from the database in OutSystems
 
-When developing apps, you often need to fetch data from a database to display it on the screen. An efficient approach to retrieving data from databases in OutSystems is to use an [Aggregate](aggregate.md). 
+When developing apps, you often need to fetch data from a database to display it on the screen. An efficient approach to retrieving data from databases in OutSystems is to use an [Aggregate](aggregate.md).
 
 [Entities](../modeling/entity.md) serve as the data sources, while aggregates access and organize that data for specific app purposes. Aggregates can perform various operations, such as combining data from multiple entities using joins, applying filters to retrieve specific data, and sorting data for display or further processing.
 

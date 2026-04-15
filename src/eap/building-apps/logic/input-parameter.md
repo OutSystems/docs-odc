@@ -16,10 +16,11 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - input-parameters
 ---
 
 # Input Parameter
-
 
 An Input Parameter allows you to provide data to an element for further use. The Input Parameter becomes available in that element's scope.
 

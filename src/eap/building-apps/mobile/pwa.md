@@ -29,9 +29,8 @@ The main benefits of PWAs:
 * PWAs can run on a web browser with the same offline capabilities of a mobile app.
 * They update the moment you publish changes to your OutSystems environment.
 * Lighter on user devices' systems resources.
- 
-PWA in OutSystems is a distribution mode for mobile apps. You can simultaneously distribute a mobile app as a native mobile app and as a PWA.
 
+PWA in OutSystems is a distribution mode for mobile apps. You can simultaneously distribute a mobile app as a native mobile app and as a PWA.
 
 ## PWA is active by default
 
@@ -41,7 +40,7 @@ Select **Phone App** or **Tablet App** when you're creating a new app in ODC Stu
 
 To run the PWA, open your mobile device and scan the QR code in one of the following places:
   
-* In ODC Portal, click the app icon to open the detail, then click **Preview app** and look for **As PWA**. 
+* In ODC Portal, click the app icon to open the detail, then click **Preview app** and look for **As PWA**.
 * In ODC Studio, click the app from the main screen and look under **PWA**.
 
 After you push your app to production, share the QR code from the production stage of ODC Portal to your users.
@@ -63,7 +62,7 @@ Follow these steps to install and run your PWA on an iOS device.
 1. Visit the app URL in Safari.
 
 1. Tap the Share button. The share menu opens.
-   
+
     ![Screenshot showing the Share button in Safari on an iOS device for adding a PWA to the home screen](images/pwa-share-button-ios.png "Share Button in Safari on iOS")
 
 1. Tap **Add to home screen**. The confirmation screen opens.

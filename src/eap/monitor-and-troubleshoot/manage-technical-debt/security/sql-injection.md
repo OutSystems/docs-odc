@@ -13,7 +13,6 @@ audience:
   - backend developers
   - platform administrators
   - tech leads
-  - data engineers
 outsystems-tools:
   - odc studio
   - odc portal

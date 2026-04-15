@@ -1,0 +1,409 @@
+# Adapted from Microsoft.Headings
+# Changed: exceptions
+# Previous link: https://docs.microsoft.com/en-us/style-guide/capitalization
+extends: capitalization
+message: "'%s' should use sentence-style capitalization."
+level: error
+scope: heading
+match: $sentence
+indicators:
+  - ':'
+  - '.'
+exceptions:
+# Product
+  - Application Objects
+  - AO
+  - Agent Workbench
+  - Center
+  - Conversion Assessment Tool
+  - DbCleaner
+  - Integration Builder
+  - Service
+  - Studio
+  - LifeTime
+  - Technical Preview
+  - O11
+  - ODC
+  - OutSystems
+  - OutSystems Cloud
+  - OutSystems Developer Cloud
+  - Personal Edition
+  - Portal
+  - Workflow Builder
+  - AI Mentor Studio
+  - AIMS
+  - MABS
+  - Mentor
+  - Mobile Apps Builder Service
+  - UsersIdP
+  - Build Operations
+  - Build Operations API
+  - Dependency Management
+  - Dependency Management API
+  - GetGroundingData
+  - Data
+  - GetGroundingData
+  - Call Agent
+  - StoreMemory
+  - Agent Workbench
+  - Asset Repository
+  - Asset Repository API
+  - Asset Configurations
+  - Asset Configurations API
+  - Forge
+  - Self-hosted
+  - Cloud demo
+  - Data Fabric
+  - Integration Studio
+  - Platform Server
+  - Private Gateway
+  - 1-Click Publish
+  - True Change
+  - IdP
+  - IdPs
+  - Customer Portal
+  - Workflows Editor
+  - Workflows
+  - PWA
+  
+# Concepts
+  - Action
+  - Activity
+  - Agents
+  - Aggregate
+  - Ajax
+  - App
+  - Application
+  - App Auth Service
+  - Area
+  - Attribute
+  - Block
+  - BPT
+  - BPT_API
+  - Business Process
+  - Callback
+  - Client
+  - EC
+  - Email
+  - Entity
+  - Entities
+  - EPA_Taskbox
+  - EPA_TaskboxExtension
+  - Exception
+  - GetUserId
+  - HMAC
+  - Identifier
+  - IDE
+  - IT
+  - JWT
+  - JSON Web Keys
+  - JWK
+  - Library
+  - Local
+  - Method
+  - Mobile
+  - Mobile Apps Build Service
+  - Module
+  - OpenID Connect
+  - Parameter
+  - Personal
+  - Process
+  - Progressive
+  - Public
+  - Reactive
+  - Record
+  - Refresh
+  - Resource
+  - Role
+  - RSA
+  - RAG
+  - Screen
+  - Server
+  - Service
+  - Session
+  - SQL
+  - Static
+  - Structure
+  - Taskbox
+  - Task
+  - Epic
+  - Template
+  - Theme
+  - Timer
+  - Traditional
+  - Variable
+  - Web
+  - WCAG 2.2 AA
+  - GetAcessToken
+  - SendNotificationToTopics
+  - SendNotificationToUsers
+  - SendSilentNotificationToTopics
+  - SendSilentNotificationToUsers
+  - Create/Upgrade
+  - JSON
+  - Cordova-based
+  - Cordova-only
+  - Cordova
+  - Capacitor
+  - Ad-Hoc
+  - In-House
+  - ViewState
+  - WorkflowNewCustomerLoan
+  - NSCameraUsageDescription
+  - ScanOrientation
+  - OS-BERT-60400
+  - Intake
+  - Enrichment
+  - Underwriter
+  - Communication
+  - Paula
+  - USB
+  - PC
+  - NaN
+  - EXTRACT
+  - AdvancedQuery
+  - GetWorkoutsData
+  - Read-Only
+  - Read-Write
+  - LLM
+  - CSP
+  - Web Application Firewall
+  - ChangePassword
+  - FinishResetPassword
+  - FinishUserRegistration
+  - GetPasswordComplexityPolicy
+  - GetUserProfile
+  - IsExternalUser
+  - StartResetPassword 
+  - StartUserRegistration
+  - UpdateUserProfile
+  - ValidatePasswordComplexity
+  - ChangePasswordResult
+  - FinishPasswordResetResult
+  - FinishUserRegistrationResult
+  - PasswordComplexityPolicy
+  - PasswordValidationResult
+  - StartResetPasswordResult
+  - FinishResetPasswordFailureReason
+  - UserInfo
+  - StartUserRegistrationResult
+  - UserUpdateInfo
+  - UpdateUserResult
+  - CameraDirection
+  - TakePicture
+  - PlayVideo
+  - EditPicture
+  - MediaType
+  - CheckCameraPlugin
+  - Plugin Manager
+  - MediaResult data
+  - MediaMetadata data
+  - RequestPart
+  - Form URL
+  - Create/Upgrade
+
+# Events
+  - OnClick
+  - On Click
+  - On Initialize
+  - On Ready
+  - On Render
+  - On After Fetch
+  - On Parameters Changed
+  - On Destroy
+  - On Application Ready
+  - On Application Resume
+  - OnSync
+  - SyncCompanies
+  - SyncContacts
+  - ServerDataSync
+# UI Patterns and Widgets
+  - Action Sheet
+  - Animated Label
+  - Columns
+  - Carousel
+  - Checkbox
+  - Columns
+  - Date Picker
+  - Dropdown Server Side
+  - Gallery
+  - Lightbox Image
+  - Master Detail
+  - Progress Circle
+  - Range Slider
+  - Range Slider Interval
+  - Section Index
+  - Section Index Item
+  - Split Screen
+  - Stacked Cards
+  - Submenu
+  - Swipe Events
+  - Switch
+  - Touch Events
+  - User Avatar
+# Widgets
+  - Widget
+  - Link
+  - List Item
+# Third Party
+  - Active Directory
+  - AgentFlow
+  - Agent Flow
+  - Amazon Kendra
+  - Android
+  - Google
+  - Apple Developer
+  - AWS Firehose
+  - JSON
+  - IdP
+  - IdPs
+  - Azure
+  - BuildMessages
+  - DOCX
+  - Markdown
+  - Microsoft Entra
+  - Microsoft Entra ID
+  - Cascading Style Sheets
+  - CallAgent01_Intake 
+  - CSS
+  - Chrome
+  - Code
+  - Docker
+  - DOM
+  - Excel
+  - Okta
+  - Git
+  - GitHub
+  - Figma
+  - Jira
+  - Confluence
+  - Google Play
+  - HIPPA
+  - iOS
+  - Integrated Authentication
+  - Kubernetes
+  - Loan Origination
+  - LoanOrigination
+  - Package
+  - Store
+  - Tips
+  - Tricks
+  - TypeScript
+  - Windows
+  - Visual Studio
+  - URI
+  - URIs
+  - SAP
+  - XSS
+  - CSV
+  - Firebase Cloud Messaging
+  - Firebase Performance
+  - Platform Tab in Oracle
+  - Privacy Policy file
+  - Health and Fitness Plugin
+  - HealthKit
+  - Health Connect
+  - Firebase Analytics
+  - Firebase Crashlytics
+  - SSL Pinning
+  - OpenTelemetry Collector
+  - Amazon Bedrock
+  - IBM
+  - GPT-4o
+  - Claude 3.7 Sonnet
+  - Amazon Nova Pro
+  - Chrome DevTools
+  - Microsoft Visual Studio
+  - Visual Studio Code
+  - .NET
+  - NuGet
+  - Key Store Plugin
+  - Camera Plugin
+  - TakePhoto
+  - EditPhoto
+  - MediaResult
+  - SAML
+  - Plugin Manager
+  - Phosphor
+  - Font Awesome
+  - Oracle
+  - SQL Server
+  - MCP
+  - A2A
+  
+# Industry
+  - AI
+  - API
+  - ARIA
+  - Accessible Rich Internet Applications
+  - APIs
+  - CDN
+  - Claude Code
+  - CI/CD
+  - CICD
+  - CI
+  - DB2
+  - DEV
+  - DNS
+  - DREAD
+  - DevOps
+  - EAP
+  - FAQ
+  - FCM
+  - IP
+  - ID
+  - JavaScript
+  - MCP
+  - Nginx
+  - TLS
+  - TLS
+  - UI
+  - SAST
+  - REST
+  - HTML
+  - HTTP
+  - PR
+  - UI
+  - SOAP
+  - SDK
+  - QA
+  - PRD
+  - SEO
+  - VPN
+# Country
+  - US East
+  - North Virginia
+  - Canada
+  - Central
+  - South America
+  - São Paulo
+  - Europe
+  - London
+  - Ireland
+  - Frankfurt
+  - South Africa
+  - Cape Town
+  - Middle East
+  - Tel Aviv
+  - UAE
+  - Asia Pacific
+  - Mumbai
+  - Singapore
+  - Seoul
+  - Tokyo
+  - Hong Kong
+  - Sydney
+  - Jakarta
+  - Europe
+  - London
+# Certifications and Boot Camps
+  - Associate Developer
+  - Boot Camp
+  - Mobile Developer specialization
+  - Front-end Developer specialization
+  - Tech Lead exam
+  - Platform Ops exam
+  - Delivery Specialist exam
+  - Web Developer Specialist exam
+# Errors
+  - \bOS-(?:[A-Z]+-){1,2}\d+\b

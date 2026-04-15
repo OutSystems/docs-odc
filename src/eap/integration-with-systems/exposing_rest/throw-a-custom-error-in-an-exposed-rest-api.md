@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - error-codes
 ---
 
 # Throw a Custom Error in an Exposed REST API

@@ -16,15 +16,16 @@ audience:
 platform-version: odc
 figma:
 ---
+
 # API authentication and authorization
 
-Authentication ensures the identity of the user or system accessing the API. 
+Authentication ensures the identity of the user or system accessing the API.
 
 The ODC REST APIs uses the [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) protocol for authorization and authentication, which is based on the [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) framework.  OIDC enables user authentication via token-based mechanisms, ensuring a secure and standardized way to verify users' identities.
 
-Authorization determines the level of access granted to an authenticated user or system. 
+Authorization determines the level of access granted to an authenticated user or system.
 
-The ODC REST APIs uses [OAuth 2.0](#about-oauth-20-and-oidc) framework to manage and enforce access controls via access tokens. These tokens dictate what ODC APIs and data you are authorized to access. 
+The ODC REST APIs uses [OAuth 2.0](#about-oauth-20-and-oidc) framework to manage and enforce access controls via access tokens. These tokens dictate what ODC APIs and data you are authorized to access.
 
 For detailed information, refer to [Using OAuth 2.0 to access APIs](using-oauth-access-api.md).
 
@@ -40,15 +41,15 @@ In OAuth 2.0, grants are the different ways a client (a system that requires acc
 
 OAuth 2.0 defines different grant types, which specify the steps the client needs to follow to receive an access token. The different grant types are:
 
-- Authorization Code Grant
+* Authorization Code Grant
 
-- Implicit Grant
+* Implicit Grant
 
-- Client Credentials Grant
+* Client Credentials Grant
 
-- Resource Owner Password Credentials (ROPC) Grant
+* Resource Owner Password Credentials (ROPC) Grant
 
-- Authorization Code with PKCE (Proof Key for Code Exchange)
+* Authorization Code with PKCE (Proof Key for Code Exchange)
 
 The [Client Credentials Grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4) is designed for server-to-server communication. It allows a client to directly authenticate with the authorization server to obtain an access token using the client credentials (client ID and secret). This grant type is ideal for API access from the backend systems.
 
@@ -58,6 +59,6 @@ You can  then use the client credentials to generate an access token which you c
 
 ## Related resources
 
-- [Using OAuth 2.0 to access APIs](using-oauth-access-api.md)
+* [Using OAuth 2.0 to access APIs](using-oauth-access-api.md)
 
-- [Configure API access using an API Client](create-api-client.md)
+* [Configure API access using an API Client](create-api-client.md)

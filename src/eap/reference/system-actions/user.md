@@ -27,7 +27,7 @@ User actions for built-in and/or external identity providers.
 
 _Client action_
 
-Allows a logged-in user to change their password and, from the Portal, requires the current password to reset it. When disabled from the current app, it throws an exception by the built-in identity provider. For more information about passwords,  check [Passwords](https://success.outsystems.com/documentation/outsystems_developer_cloud/user_management/passwords/).
+Allows a logged-in user to change their password. Changing passwords for users with access to the ODC Portal is not supported through this system action, even if the user also has application roles. For more information about passwords, check [Passwords](https://success.outsystems.com/documentation/outsystems_developer_cloud/user_management/passwords/).
 
 _Inputs_
 
@@ -53,7 +53,7 @@ _Outputs_
 
 _Client action_
 
-Finalizes the reset password operation, using a verification code received by email. When disabled from the current app, it throws an exception by the built-in identity provider.
+Finalizes the reset password operation, using a verification code that can be received by email. The client action throws an exception if the built-in identity provider is disabled for the current app.
 
 _Inputs_
 
@@ -85,7 +85,7 @@ Due to a temporary technical limitation, add this action from the public element
 
 </div>
 
-Sets the user as active and their password in the built-in identity provider and logs the user in.<br/>Call the action StartUserRegistration to register the user and obtain a temporary password.
+Activates the user’s password in the built-in identity provider and logs the user in.<br/>Call the action StartUserRegistration to register the user and obtain a temporary password.
 
 _Inputs_
 
@@ -107,11 +107,33 @@ _Outputs_
 :   Type: [FinishUserRegistrationResult](#finishuserregistrationresult)  
     Result of the user registration action. Returns a user identifier if the user was successfully registered. Returns a failure reason if unsuccessful.
 
+### FinishUpdateEmail
+
+_Client action_
+
+Finalizes the update email operation, using a verification code.
+
+_Inputs_
+
+**VerificationCode**
+:   Type: Text. Mandatory.
+    Verification code for the email change operation.
+
+_Outputs_
+
+**FinishUpdateEmailResult**
+:   Type: [FinishUpdateEmailResult](#finishupdateemailresult)  
+    Result of the the action. If true, the action was successful.
+
+**FinishUpdateEmailFailureReason**
+:   Type: [FinishUpdateEmailFailureReason](#finishupdateemailfailurereason)  
+    Contains the reason for failure if the action is not successful.
+
 ### GetPasswordComplexityPolicy
 
 _Client action_
 
-Gets the configured password policy for the built-in identity provider. Used to enable client-side validation in a user registration flow. When disabled from the current app, it throws an exception by the built-in identity provider.
+Gets the configured password policy for the built-in identity provider. Used to enable client-side validation in a user registration flow. The client action throws an exception if the built-in identity provider is disabled for the current app.
 
 _Outputs_
 
@@ -120,6 +142,7 @@ _Outputs_
     Result of the password policy action. Returns boolean values for the password complexity criteria.
 
 ### GetUserProfile
+
 _Client action_
 
 Returns logged-in user's information from the identity provider and updates the [User entity](#user-1) with that information.
@@ -142,50 +165,13 @@ _Outputs_
 :   Type: Boolean.
     True if the logged user is an external user.
 
-### ResetPassword
-_Client action_
-
-Allows a user to reset their password using a verification code received via email. Throws an exception if the built-in identity provider is disabled for the current app.
-
-_Inputs_
-
-**Email**
-:   Type: Text. Mandatory.
-    Email of the user.
-
-**ResetToken**
-:   Type: Text. Mandatory.
-    Verification code for the password change operation.
-
-**NewPassword**
-:   Type: Text. Mandatory.
-    New password defined by the user.
-
-_Outputs_
-
-**ResetPasswordResult**
-:   Type: [ResetPasswordResult](#resetpasswordresult)  
-    Result of the reset password action. Returns the failure reason if unsuccessful.
-
-### SendResetPasswordEmail
-
-_Client action_
-
-Triggers the reset password flow, which sends an email to the user with a verification code used to reset the password.  When disabled from the current app, it throws an exception by the built-in identity provider.
-
-_Inputs_
-
-**Email**
-:   Type: Text. Mandatory.
-    User email receives a recovery link. If no user with such email is found, no email sends.
-
-### StartResetPassword
+### StartResetPassword { startresetpassword }
 
 _Server action_
 
-Triggers the reset password operation, returning a verification code that sends by email to the user. Use the FinishResetPassword action, which receives a verification code as an input, to complete the password reset operation. When disabled from the current app, it throws an exception by the built-in identity provider.
+Triggers the reset password operation, returning a verification code that sends by email to the user. Use the FinishResetPassword action, which receives a verification code as an input, to complete the password reset operation. The server action throws an exception if the built-in identity provider is disabled for the current app.
 
-Resetting passwords for members with access to ODC Portal isn't supported through this system action, even if the member also has application roles. If this action is called with a ODC Portal member e-mail no verification code is returned. Members must always reset their password using the **Forgot password?** link in ODC Portal.
+Resetting passwords for members with access to ODC Portal isn't supported through this system action, even if the member also has application roles. If this action is called with a ODC Portal member e-mail no verification code is returned. Members must always reset their password using the **Forgot password?** link in ODC Portal. ODC temporarily locks users out after repeated failed passsword reset attempts. The lockout duration increases with each additional failed attempt, starting at just a few seconds and reaching a maximum of approximately 5 minutes.
 
 _Inputs_
 
@@ -198,7 +184,35 @@ _Outputs_
 **StartResetPasswordResult**
 :   Type: [StartResetPasswordResult](#startpasswordresetresult)
     Result of the action. Returns the verification code if successful.
-    
+
+### StartUpdateEmail { #startupdateemail }
+
+_Server action_
+
+Triggers the update email operation for users who don't have access to the ODC Portal, returning a verification code that can be sent by email to the user. ODC temporarily locks users out after repeated failed attempts to update their email. The lockout duration increases with each additional failed attempt, starting at just a few seconds and reaching a maximum of approximately 5 minutes.
+
+_Inputs_
+
+**Email**
+:   Type: Text. Mandatory.
+    User's new email.
+
+<div class="info" markdown="1">
+
+The user's email cannot be removed from their profile.
+
+</div>
+
+_Outputs_
+
+**StartUpdateEmailResult**
+:   Type: [StartUpdateEmailResult](#startupdateemailresult)
+    Verification code created by the identity provider. **FinishUpdateEmail** is used to verify the email defined by the user.
+
+**StartUpdateEmailFailureReasom**
+:   Type: [StartUpdateEmailFailureReason](#startupdateemailfailurereason)
+    Contains the reason for failure if the action isn't successful.
+
 ### StartUserRegistration
 
 _Server action_
@@ -209,7 +223,7 @@ Due to a temporary technical limitation, you must add this action from the publi
 
 </div>
 
-Registers the user in the built-in identity provider by creating the user as inactive and setting a temporary password. Synchronizes the [User entity](#user-1) with the identity provider. Call the action FinishUserRegistration to activate the user and change the password. When disabled from the current app, it throws an exception by the built-in identity provider.
+Registers the user in the built-in identity provider by creating the user as active. Call the action **FinishUserRegistration** to change the user's temporary password. The server action throws an exception if the built-in identity provider is disabled for the current app. ODC temporarily locks users out after repeated failed attempts to complete their registration. The lockout duration increases with each additional failed attempt, starting at just a few seconds and reaching a maximum of approximately 5 minutes.
 
 _Inputs_
 
@@ -227,25 +241,25 @@ _Outputs_
 
 _Server action_
 
-Allows a logged-in user to edit profile information. User can't change user email using this action. When disabled from the current app, it throws an exception by the built-in identity provider.
+Allows a logged-in user to edit profile information. User can't change user email using this action. The server action throws an exception if the built-in identity provider is disabled for the current app.
 
 _Inputs_
 
 **User**
-:   Type: [UserUpdateInfo](#UserUpdateInfo). Mandatory.
+:   Type: [UserUpdateInfo](#userupdateinfo). Mandatory.
     New user information used to update the user.
 
 _Outputs_
 
 **UpdateUserResult**
-:   Type: [UpdateUserResult](#UpdateUserResult)  
+:   Type: [UpdateUserResult](#updateuserresult)  
     Result of the update user action. Returns the failure reason if unsuccessful.
 
 ### ValidatePasswordComplexity
 
 _Client action_
 
-Validates a user's password with the password complexity policy. When disabled from the current app, it throws an exception by the built-in identity provider.
+Validates a user's password with the password complexity policy. The client action throws an exception if the built-in identity provider is disabled for the current app.
 
 _Inputs_
 
@@ -256,14 +270,14 @@ _Inputs_
 _Outputs_
 
 **PasswordValidationResult**
-:   Type: [PasswordValidationResult](#PasswordValidationResult)  
+:   Type: [PasswordValidationResult](#passwordvalidationresult)  
     Result of the password validation action. Returns boolean values for the password validity and complexity criteria.
 
 ## Structures
 
 ### ChangePasswordResult
 
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
@@ -273,7 +287,7 @@ ChangePasswordFailureReason
 
 ### FinishPasswordResetResult
 
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
@@ -283,7 +297,7 @@ FinishResetPasswordFailureReason
 
 ### FinishUserRegistrationResult
 
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
@@ -296,7 +310,7 @@ FinishUserRegistrationFailureReason
 
 ### PasswordComplexityPolicy
 
-*Attributes*
+_Attributes_
 
 MinimumLength
 :   Type: Integer
@@ -315,7 +329,7 @@ SpecialCharacterRequired
 
 ### PasswordValidationResult
 
-*Attributes*
+_Attributes_
 
 IsValid
 :   Type: Boolean
@@ -335,19 +349,9 @@ MissingNumber
 MissingSpecialCharacter
 :   Type: Boolean
 
-### ResetPasswordResult
+### StartResetPasswordResult
 
-*Attributes*
-
-Success
-:   Type: Boolean
-
-ResetPasswordFailureReason
-:   Type: ResetPasswordFailureReason
-
-### StartPasswordResetResult
-
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
@@ -355,9 +359,53 @@ Success
 VerificationCode
 :   Type: Text
 
+### StartUpdateEmailResult
+
+_Attributes_
+
+Success
+:   Type: Boolean
+
+VerificationCode
+:   Type: Text
+
+### StartUpdateEmailFailureReason
+
+_Attributes_
+
+InvalidEmail
+:   Type: Boolean
+
+### FinishUpdateEmailResult
+
+_Attributes_
+
+Success
+:   Type: Boolean
+
+### FinishUpdateEmailFailureReason
+
+_Attributes_
+
+InvalidVerificationCode
+:   Type: Boolean
+
+### FinishResetPasswordFailureReason
+
+_Attributes_
+
+PasswordComplexityPolicyFailed
+:   Type: Boolean
+
+InvalidVerificationCode
+:   Type: Boolean
+
+InvalidEmail
+:   Type: Boolean
+
 ### UserInfo
 
-*Attributes*
+_Attributes_
 
 Name
 :   Type: Text
@@ -370,16 +418,16 @@ PhotoURL
 
 ### StartUserRegistrationResult
 
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
 
 StartUserRegistrationFailureReason
 :   Type: StartUserRegistrationFailureReason
-     * InvalidEmail
-     * InvalidName
-     * UserAlreadyRegistered
+     *InvalidEmail
+     *InvalidName
+     *UserAlreadyRegistered
 
 VerificationCode
 :   Type: Text
@@ -393,9 +441,9 @@ VerificationCode
 UserId
 :   Type: User Identifier
 
-### UpdateUserInfo
+### UserUpdateInfo
 
-*Attributes*
+_Attributes_
 
 Name
 :   Type: Text
@@ -405,7 +453,7 @@ PhotoURL
 
 ### UpdateUserResult
 
-*Attributes*
+_Attributes_
 
 Success
 :   Type: Boolean
@@ -422,7 +470,7 @@ UpdateUserFailureReason
 
 The end-user of the apps.
 
-*Attributes*
+_Attributes_
 
 Id
 :   Type: Text

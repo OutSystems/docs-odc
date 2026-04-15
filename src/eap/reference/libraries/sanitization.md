@@ -26,13 +26,13 @@ The OutSystems Sanitization library provides actions to avoid code injection in 
 
 Returns a comma-delimited text value containing all the integer values provided as input. The returned value can be safely used in a SQL &quot;IN&quot; clause.
 
-*Inputs*
+_Inputs_
 
 ValueList
 :   Type: RecordList of [IntegerLiteral](#Structure_IntegerLiteral). Mandatory.  
     The list of integer values to include.
 
-*Outputs*
+_Outputs_
 
 Output
 :   Type: Text.  
@@ -55,13 +55,13 @@ BuildSafe_InClauseIntegerList(ListB) = "0"
 
 Returns a comma-delimited text value with the encoded version of all the text values provided as input. The returned value can be safely used in a SQL &quot;IN&quot; clause.
 
-*Inputs*
+_Inputs_
 
 ValueList
 :   Type: RecordList of [TextLiteral](#Structure_TextLiteral). Mandatory.  
     The list of text values to include.
 
-*Outputs*
+_Outputs_
 
 Output
 :   Type: Text.  
@@ -84,13 +84,13 @@ BuildSafe_InClauseTextList(ListB) = "''"
 
 Sanitizes the provided HTML using the HtmlSanitizer NuGet package.  
 
-*Inputs*
+_Inputs_
 
 Html
 :   Type: Text. Mandatory.  
     The HTML to sanitize.
 
-*Outputs*
+_Outputs_
 
 SanitizedHtml
 :   Type: Text.  
@@ -100,13 +100,13 @@ SanitizedHtml
 
 Verifies the provided JavaScript to ensure it only contains JavaScript/JSON literals such as string, array, or object literals. If it contains anything else, an INVALID JAVASCRIPT LITERAL exception is thrown. Learn more about JavaScript literals in the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Literals).
 
-*Inputs*
+_Inputs_
 
 JavascriptLiteral
 :   Type: Text. Mandatory.  
     The JavaScript literal to verify.
 
-*Outputs*
+_Outputs_
 
 SanitizedJavascriptLiteral
 :   Type: Text.  
@@ -118,7 +118,7 @@ SanitizedJavascriptLiteral
 
 Simple structure holding a long integer value. Used as a record definition when providing a list of IntegerLiteral records to include in a SQL &quot;IN&quot; clause.
 
-*Attributes*
+_Attributes_
 
 Value
 :   Type: LongInteger. Mandatory.  
@@ -128,7 +128,7 @@ Value
 
 Simple structure holding a text value. Used as a record definition when providing a list of TextLiteral records to include in a SQL &quot;IN&quot; clause.
 
-*Attributes*
+_Attributes_
 
 Value
 :   Type: Text (2000). Mandatory.  

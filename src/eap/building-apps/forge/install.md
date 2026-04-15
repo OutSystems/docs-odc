@@ -17,21 +17,33 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - install-forge-component
 ---
 
 # Install or update a Forge asset
 
 Forge assets become available only after they go through a submission and approval process. Once an asset is in Forge, users can install it in their organization. The asset is then accessible in ODC Studio. The label displays additional information on the details page. A Forge asset can have any of the following labels.
 
-| Label / button | Description                                                                               |
+| Label / button | Description |
 | :-------------- | :----------------------------------------------------------------------------------------- |
-| Install        | The asset is ready to install                                                             |
-| Installing     | The asset is installing                                                                   |
-| Installed      | The asset is installed and is ready to use                                                |
-| Update         | The asset has an update that hasn't yet been installed in your organization’s environment |
-| Updating       | The asset is updating                                                                      |
+| Install | The asset is ready to install |
+| Installing | The asset is installing |
+| Installed | The asset is installed and is ready to use |
+| Update | The asset has an update that hasn't yet been installed in your organization’s environment |
+| Updating | The asset is updating |
 
-Following are procedures to Install and Update a Forge asset.
+Following the procedures to Install and Update a Forge asset.
+
+<div class="info" markdown="1">
+
+If you are installing an Agentic app, you must have the AI Trial Model used in the app added to your tenant. To do this:
+
+1. Go to AI Models on ODC Portal.
+1. Click on **Add AI Model**.
+1. Add the available trial models on the Trial Models tab.
+
+</div>
 
 ## Install a Forge asset
 

@@ -5,7 +5,7 @@ locale: en-us
 guid: 55ef1d73-dac8-48e6-8b15-dc6990779660
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=3202-7454
 audience:
   - mobile developers
   - frontend developers
@@ -15,80 +15,73 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - using-cordova-plugins
 ---
 
-# Mobile plugins
+# Use mobile plugins
 
-Plugins provide important functionalities to native mobile apps, letting you use many of the hardware capabilities of mobile devices. You can add notifications, use camera or global positioning services, read QR codes, and more.
+ Plugins provide essential functionality to native mobile apps, enabling access to device hardware capabilities such as notifications, the camera, GPS, QR code reading, and more.
 
-## The list of supported mobile plugins
+From [Mobile Apps Build Service (MABS 12)](../../building-apps/mobile/mabs-overview.md) onward, ODC supports the Capacitor cross-platform native runtime alongside Cordova, providing you with a modern and flexible way to build mobile apps. When [building](../../building-apps/mobile/creating-mobile-package.md) your mobile apps with MABS 12, you can choose between the Cordova and Capacitor.
 
-The table shows the OutSystems-supported mobile plugins that you can find in the Forge repository. Some of them are already supported when distributing your app as a Progressive Web App (PWA).
+## Using plugins in Capacitor apps {#use-plugins-capacitor-apps}
 
+When building a Capacitor-based mobile app, you have several options for integrating plugins depending on your specific needs and available resources.
 
-| Plugin                    | Description                                                  | Supported in PWA |
-| ------------------------- | ------------------------------------------------------------ | ---------------- |
-| Analytics | Firebase-based plugin that lets you gather information about app use.        | No               |
-| AppShield | Protect your mobile apps from tampering. OutSystems AppShield hardens the native mobile build, enabling the app to detect attempts of modification and misuse. | No |
-| Barcode            | Access the camera to scan barcodes and QR codes.                    | Yes              |
-| Calendar           | Access the calendar of your device.                                 | No               |
-| Camera             | Access the camera capabilities of the device.                       | Yes              |
-| Ciphered Local Storage  | Keep your mobile application's sensitive data safe using a ciphered local storage database.    | No               |
-| Cloud Messaging | Firebase-based plugin to give your app users a state-of-the-art notifications experience. | No |
-| Contacts  | Access the contacts of your device.    | No               |
-| Crash Reporting | Firebase-based plugin that provides realtime crash reporting to help you track, prioritize, and fix stability issues. | No |
-| Dynamic Links | Firebase-based plugin that lets you manage links outside of your app. | No |
-| File               | Manage files and folders within the app sandbox.             | No               |
-| File Transfer      | Upload and download files in background.                     | Yes              |
-| File Viewer        | View remote or app resource files.                           | Yes              |
-| Health & Fitness   | Provides access to health and fitness data. Uses HealthKit API for iOS and Health Connect API for Android. | No          |
-| InAppBrowser   | Open external URLs directly in your application. | No          |
-| Key Store          | Store encrypted key-value pairs with optional authentication. | No               |
-| Local Notifications          | Send app notifications to the device when the application isn't running in the foreground. | No               |
-| Location           | Access the GPS capabilities the device.                      | Yes              |
-| OneSignal Notifications      | Push notifications using OneSignal, with deep-linking and actions. | No               |
-| Payments | Allows the addition of a payments experience using Apple Pay and Google Pay.	| No |
-| Performance Monitoring | Firebase-based plugin that lets you understand how you can improve the performance of your app. | No |
-| SSL Pinning | Provide an extra layer of security to HTTPS communications by adding a verification of the server certificate against hashes of public keys. | No |
-| Touch ID | Use authentication with biometrics in your application. | No |
+Here's the decision flow for plugin integration in Capacitor apps:
 
-### Notes
+![Flowchart showing the decision process for integrating plugins in Capacitor apps, including options for using Forge plugins, custom Cordova plugins, community-supported plugins, or building plugins from scratch.](images/decision-flow-plugin-integration-diag.png "Decision Flow for Plugin Integration in Capacitor Apps")
+
+### Check Forge for Capacitor-supported plugins
+
+Search [Forge](https://www.outsystems.com/forge/) for Capacitor-supported plugins that meet your requirements. If available, download and integrate the plugin into your app. For detailed information, refer to [Install a plugin and use it in your app](os-supported-plugins.md#install-a-plugin-and-use-it-in-your-app).
+
+All OutSystems-supported plugins can be used in both Cordova and Capacitor apps.
+
+### Use existing custom Cordova plugins
+
+If no Forge plugin exists but you already have an ODC library that references the Cordova plugin, you can make that library work with Capacitor apps. In some cases, the Cordova plugin itself doesn’t require any code changes. You only need to update the extensibility configurations in your ODC library so that it correctly references the plugin for Capacitor compatibility.
+
+However, if your plugin relies on Cordova-specific functionalities such as preferences, hooks, or certain config-file changes, you may need to adapt the plugin. For detailed information about making Cordova plugins compatible with Capacitor, refer to [Adapt Cordova plugin for compatibility with Capacitor](migrate-cordova-plugin.md).
+
+For maximum compatibility and performance optimization, consider making your existing ODC library that references the Cordova plugin dual-stack. In this scenario, you must implement a separate Capacitor plugin alongside your existing Cordova implementation. A dual-stack plugin provides separate implementations for each framework. You can reference both plugin implementations in the extensibility configuration of the ODC library. For detailed information, refer to [Building a dual-stack plugin](capacitor-plugins/dual-stack-plugin.md). This approach allows you to leverage Capacitor-specific features while maintaining full Cordova support.
+
+### Use an official or community-supported Capacitor plugin
+
+If you don't have an existing Cordova plugin, check if the functionality you need already exists as an [official or community-supported](https://capacitorjs.com/docs/plugins) Capacitor plugin. If yes, create a [wrapper ODC library](capacitor-plugins/integrate-plugin-in-app.md) to integrate the Capacitor plugin into your app.
+
+### Build a Capacitor plugin from scratch
+
+When no existing solution meets your needs, build a custom Capacitor plugin. Then, develop a corresponding [wrapper ODC library](capacitor-plugins/integrate-plugin-in-app.md) to expose the plugin's functionality in your app. For detailed information about building Capacitor plugins, refer to [Build a Capacitor plugin from scratch](capacitor-plugins/build-capacitor-plugin.md).
+
+## Accessing plugins
+
+During the build process, all Capacitor plugins are automatically bundled and made available globally through `window.CapacitorPlugins`. This includes:
+
+* Official Capacitor plugins
+* Third-party plugins from npm
+* Your custom-built plugins
+
+You reference plugins in your library's extensibility configuration.
+
+For detailed information, refer to [Integrate Capacitor plugin into mobile app](capacitor-plugins/integrate-plugin-in-app.md).
+
+## Important considerations when using plugins
 
 When working with the plugins:
 
+* Only install plugins from trusted sources. For detailed information, refer to [Security considerations](capacitor-plugins/integrate-plugin-in-app.md#plugin-security).
 * Use the plugin that supports iOS or Android, depending on your target platform. The app creation fails if you use a plugin that isn't supported on the target platform. For more information on app generation errors check the [list of MABS errors](https://success.outsystems.com/support/errors/mabs_errors/).
 * Each time you add, remove, or modify the plugin in an app, OutSystems creates a mobile package which you then have to distribute to the users for installation.
 * Include the plugin license in your app to respect the license agreements of that plugin. These license agreements are usually placed in the About page of the app that uses them.
 
-## Installing a plugin and adding a public element to your app { #adding-plugins }
+## Related resources
 
-The plugins are available from the Forge repository. To use a plugin in your app, you first need to install the plugin to your organization and add the plugin elements to your app.
+* [OutSystems supported mobile plugins](os-supported-plugins.md)
 
-To install a supported plugin from Forge:
+* [Integrate Capacitor plugin into mobile app](capacitor-plugins/integrate-plugin-in-app.md)
 
-1. Find the plugin you want to use in the [list of supported mobile plugins](#the-list-of-supported-mobile-plugins).
+* [Adapt Cordova plugin for compatibility with Capacitor](migrate-cordova-plugin.md)
 
-1. In **ODC Portal** > **Forge** find the plugin and open the details page.
-
-1. Click **Install** and follow the instructions to install the plugin. Optionally, install the demo app that comes with the plugin.
-
-1. Once the installation finishes, add the actions you want to use as public elements in your mobile app.
-
-## Built-in plugins
-
-All mobile apps generated by OutSystems include a native shell with the following built-in plugins that are used internally, handling a variety of housekeeping and infrastructure tasks. While you may see the names of these built-in plugins in the native mobile shell logs they're not user-configurable.
-
-
-| Plugin            | Description                                                                                                                         |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| OS Auth           | Handles OAuth flows and ensures compliance with the guidelines for SSO using the right WebView instances types for Android and iOS. |
-| OS Cache          | Lets your application to run offline or with bad network conditions.                                                                |
-| OS Cordova Loader | Loads the Cordova engine on your app.                                                                                               |
-| OS Deeplinks      | Opens hyperlinks to specific screens of your app.                                                                                   |
-| OS DB Upgrader    | Manages the local storage of your app.                                                                                              |
-| OS Manifest       | Provides a parser for the app manifest.                                                                                             |
-| OS Pre-Bundle     | Handles the content of the app pre-bundled resources.                                                                               |
-| OS Security       | Provides the APIs for the security layer.                                                                                           |
-| NetworkStatus     | Lets your app know when the device is online/offline and informs of the type of network available (for example, WiFi, 3G, 4G).      |
-
-
+* [Build a Capacitor plugin from scratch](capacitor-plugins/build-capacitor-plugin.md)

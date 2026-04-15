@@ -19,7 +19,7 @@ coverage-type:
 
 # Integrate agent into your app
 
-You can create an agent in the AI Agent Builder and use that agent in your app by invoking the **CallAgent** [service action ](https://success.outsystems.com/documentation/11/developing_an_application/reuse_and_refactor/use_services_to_expose_functionality/)and configuring the agent ID. This article explains how to integrate the agent into your app.
+You can create an agent in the AI Agent Builder and use that agent in your app by invoking the **CallAgent** [service action](https://success.outsystems.com/documentation/11/developing_an_application/reuse_and_refactor/use_services_to_expose_functionality/)and configuring the agent ID. This article explains how to integrate the agent into your app.
 
 ## Prerequisites
 
@@ -44,7 +44,7 @@ The public elements page  displays.
 
 1. Configure the following information for the service action:
 
-    **AgentId** - Identifier of the agent that AI uses to generate the response. OutSystems recommends creating a setting to hold this value, as you need different values in different stages. The AgentID is automatically populated from the app settings. 
+    **AgentId** - Identifier of the agent that AI uses to generate the response. OutSystems recommends creating a setting to hold this value, as you need different values in different stages. The AgentID is automatically populated from the app settings.
 
     **ChatMessages** - A list of chat messages exchanged between the agent and the user from oldest to newest. The AI model uses these chat messages to generate the response.
 

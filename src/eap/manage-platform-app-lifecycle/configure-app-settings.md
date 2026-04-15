@@ -1,0 +1,142 @@
+---
+summary: Easily configure app settings in development with OutSystems Developer Cloud (ODC), including creating settings, organizing folders, and editing runtime values.
+tags: app configuration, odc studio, runtime settings, development, data management
+guid: 0624bc73-64c2-45bb-a740-c4cef83989fc
+locale: en-us
+app_type: mobile apps, reactive web apps
+platform-version: odc
+figma: https://www.figma.com/design/AOyPMm22N6JFaAYeejDoge/Configuration-management?node-id=3763-113
+api-render: false
+outsystems-tools:
+  - odc studio
+coverage-type:
+content-type:
+audience:
+  - mobile developers
+  - frontend developers
+  - full stack developers
+---
+# Configure app settings
+
+In ODC Studio, for new or existing apps in the **development stage**, you can:
+
+* [Create or change settings](#create-or-change-settings)
+
+* [Organize settings into folders](#organize-settings-into-folders)
+
+* [View and edit the default values of app settings](#view-and-edit-default-values-of-the-app-settings)
+
+* [Use app settings in your app](#use-app-settings-in-your-app)
+
+## Create or change settings {#create-or-change-settings}
+
+To create or change app settings, follow these steps:
+
+1. Open your app in ODC Studio and go to **Data** > **Settings**.
+
+1. To create a setting, right-click the settings folder and select **Add Setting**.
+
+    ![Context menu in ODC Studio showing the option to add a new setting.](images/add-setting-odcs.png "Add Setting in ODC Studio")
+
+1. You can configure the settings from the **Properties** tab.
+
+    ![Properties tab in ODC Studio displaying the configuration options for a setting.](images/setting-property-odcs.png "Setting Properties in ODC Studio")
+
+You must publish your app after you make any changes.
+
+If you're storing sensitive information such as passwords or an access token in the setting, set the **Is secret** property to True. For more information about the **Is secret** property, refer to [Set as Secret](../security/set-as-secret.md). For more information about settings and their properties, refer to [Setting properties](#setting-properties).
+
+## Organize settings into folders {#organize-settings-into-folders}
+
+To organize your app settings into folders:
+
+1. Right-click the **Settings** folder and select **Add folder**.
+
+1. Drag each setting into the relevant folder.
+
+    ![Settings organized into folders in ODC Studio.](images/setting-folder-odcs.png "Organize Settings into Folders")
+
+## View and edit default values of the app settings {#view-and-edit-default-values-of-the-app-settings}
+
+In the ODC Portal, you can view and edit default settings for all apps on a specific stage. To do this:
+
+1. From the ODC Portal, select your app.
+
+1. The **Configuration** tab displays the app settings by type, such as Settings and Emails.
+
+1. Select **Settings**.
+
+    The portal lists the app settings. It also lists settings inherited from libraries.
+
+    ![ODC Portal showing the settings for an app.](images/app-settings-pl.png "App Settings in ODC Portal")
+
+1. To view the setting details, select the ellipsis and select **View**.
+
+1. To edit the setting details, select the ellipsis and select **Edit**.
+
+1. After making your changes, click **Save**.
+
+    The app uses the updated value the next time it reads the setting.
+
+**Note**: The file size limit for binary data settings is 5.8KB.
+
+<div class="info" markdown="1">
+
+Remember, settings are stage-specific.
+
+</div>
+
+## Use app settings in your app {#use-app-settings-in-your-app}
+
+After you create a setting, you can refer to it in ODC Studio using `Settings.<SettingName>`. For example, if you create a **Text** setting named `MyIdentityProvider`, you can read its value with `Settings.MyIdentityProvider`.
+
+### Use settings in server-side logic
+
+Settings are available in server-side logic, such as server actions.
+
+1. In ODC Studio, create (or open) a server action.
+
+1. Use the setting in an expression, for example:
+
+    * Assign a variable to `Settings.MyIdentityProvider`.
+    * Use it as an input to another action.
+
+### Use settings in client-side logic
+
+If you need a setting value in client-side logic (for example, in a client action), create a server action that returns the value, and then call that server action from the client.
+
+1. In ODC Studio, create a server action named `GetMyIdentityProvider` and set **Function** to **Yes**.
+
+1. Add an output parameter of the **Text** data type named `MyIdentityProvider`.
+
+1. Add an **Assign** after the **Start** element.
+
+1. In the **Assign** properties, set `MyIdentityProvider` to `Settings.MyIdentityProvider`.
+
+1. In a client action, call the `GetMyIdentityProvider` server action and use its output.
+
+    <div class="info" markdown="1">
+
+    Don’t return **secret** settings to the client. Keep secret values on the server side.
+
+    </div>
+
+For an end-to-end example that uses a setting to avoid hardcoding an identity provider name in a login flow, refer to [Modify the user info bar login flow](external-idps/apps.md#modify-the-user-info-bar-login-flow-idp-button-added-alongside-the-built-in-login).
+
+## Setting properties {#setting-properties}
+
+The following table shows the available settings and their properties.
+
+| Property | Description | Mandatory |
+| --- | --- | --- |
+| Name | Setting name | Yes |
+| Description | Detailed description of the setting. Useful for documentation purposes. The maximum size of this property is 2000 characters. | No |
+| Data Type | The settings data type. | Yes |
+| Is secret | Encrypts and protects sensitive settings such as passwords and access tokens. A setting with the **Is secret** property enabled does not have a default value. | No |
+| Default Value | Initial value of this setting. If undefined, the default value of the data type is used. This does not apply to settings that have the **Is secret** property enabled. The maximum size of this property is 2000 characters. | No |
+
+## Related sources
+
+* [Best practices for data management](../building-apps/data/data-best-practices/intro.md)
+
+* [OutSystems Training: Settings](https://learn.outsystems.com/training/journeys/settings-370)

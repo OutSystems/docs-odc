@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - document-apis
 ---
 
 # Document an Exposed REST API
@@ -35,7 +37,6 @@ OutSystems publishes the documentation under the base URL of the REST API. To op
 1. Choose **Open Documentation**.
 
     ![Screenshot showing how to open REST API documentation in ODC Studio](images/rest-open-documentation-ss.png "Open REST API Documentation")
-
 
 The resulting documentation is a standard swagger. You can see a [live example of a Contacts REST API here](https://expertsmobile.outsystems.com/ContactsAPI/rest/v1/).
 

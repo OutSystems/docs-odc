@@ -16,9 +16,12 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - aggregates
+  - joins
 ---
 
-# Aggregate
+# Query data using aggregates
 
 Aggregates allow you to fetch data using an optimized query, tailored to your usage. Aggregates automatically absorb changes in the data model and can load the local database's data from the server. They support combining several entities and advanced filtering, and bring only the attributes that are used on the screen or action. Attributes also abstract the underlying model for the developer, allowing attribute renaming and changes to the data type.  
 
@@ -31,7 +34,7 @@ In Mobile and Web Apps, Aggregates can be client-side or server-side:
 
 ## How to create an aggregate
 
-You can create Aggregates in Screens, Blocks, or Action flows. 
+You can create Aggregates in Screens, Blocks, or Action flows.
 
 ### Create an Aggregate in a Screen or Block
 
@@ -46,11 +49,11 @@ For more information, refer to the [best practices for fetching and displaying d
 
 ### Create an Aggregate in an Action
 
-To add an Aggregate to an Action, drag an **Aggregate** from the toolbox to the flow. 
+To add an Aggregate to an Action, drag an **Aggregate** from the toolbox to the flow.
 
 ![Screenshot showing how to add an Aggregate to an Action by dragging it from the toolbox to the flow in ODC Studio](images/aggregate-server-side-ss.png "Add Aggregate to an Action")
 
-There are cases when you always need to fetch all records from the database, for example, to populate drop-down box lists. If you fetch all records using a Data Action, leave the **Max. Records** field empty. In Data Actions, the **Max. Records** value is optional. If you don't provide a value, the Data Action fetches all records from the database. 
+There are cases when you always need to fetch all records from the database, for example, to populate drop-down box lists. If you fetch all records using a Data Action, leave the **Max. Records** field empty. In Data Actions, the **Max. Records** value is optional. If you don't provide a value, the Data Action fetches all records from the database.
 
 <div class="info" markdown="1">
 
@@ -60,8 +63,8 @@ There are cases when you always need to fetch all records from the database, for
 
 See also the best practices for using aggregates in your logic:
 
- * [Don't add aggregates inside a cycle](../../logic/best-practices-logic.md#aggregates-inside-cycle)
- * [Avoid isolating a single aggregate in an action](../../logic/best-practices-logic.md#isolated-aggregates)
+* [Don't add aggregates inside a cycle](../../logic/best-practices-logic.md#aggregates-inside-cycle)
+* [Avoid isolating a single aggregate in an action](../../logic/best-practices-logic.md#isolated-aggregates)
 
 ## How to add a data source to an Aggregate
 
@@ -95,29 +98,29 @@ To learn more about writing better queries, refer to [writing better queries in 
 ## Properties
 
 | Name | Description | Mandatory | Default value | Observations |
-|------|-------------|-----------|--------------|-------------|
-| Name | Identifies an element in the scope where it is defined, like a screen, action, or app. | Yes |   |   |
-| Description | Text that documents the element. |   |   | Useful for documentation purpose. The maximum size of this property is 2000 characters. |
-| Timeout ("Server Request Timeout" for Screen Aggregates) | Maximum time in seconds to wait for the Aggregate to return data before triggering a Communication Exception. Overrides the [default timeout defined at the app level](../../../getting-started/system-requirements.md#server-request-timeout). |   |   | Property doesn't exist for client-side Aggregates. There is a [maximum value](../../../getting-started/system-requirements.md#server-request-timeout). |
-| Max. Records | Maximum number of records read from the database. |   |   |  |
-| Cache in Minutes | Maximum time content or results are stored in memory. When undefined, nothing is cached. |   |   | Property not available in client actions. |
-| Start Index | Index of the first List item to iterate. Can be an expression. |   |   | The expression used in this property (if present) is evaluated before the web screen preparation. |
-| Fetch |   | Yes | At start |   |
+| ------ | ------------- | ----------- | -------------- | ------------- |
+| Name | Identifies an element in the scope where it is defined, like a screen, action, or app. | Yes | | |
+| Description | Text that documents the element. | | | Useful for documentation purpose. The maximum size of this property is 2000 characters. |
+| Timeout ("Server Request Timeout" for Screen Aggregates) | Maximum time in seconds to wait for the Aggregate to return data before triggering a Communication Exception. Overrides the [default timeout defined at the app level](../../../getting-started/system-requirements.md#server-request-timeout). | | | Property doesn't exist for client-side Aggregates. There is a [maximum value](../../../getting-started/system-requirements.md#server-request-timeout). |
+| Max. Records | Maximum number of records read from the database. | | | |
+| Cache in Minutes | Maximum time content or results are stored in memory. When undefined, nothing is cached. | | | Property not available in client actions. |
+| Start Index | Index of the first List item to iterate. Can be an expression. | | | The expression used in this property (if present) is evaluated before the web screen preparation. |
+| Fetch | | Yes | At start | |
 
 ### Events
 
 | Name | Description | Mandatory | Default value | Observations |
-|------|-------------|-----------|--------------|-------------|
-| On After Fetch | Action executed after the Aggregate fetches data from the data source. |   |   |   |
+| ------ | ------------- | ----------- | -------------- | ------------- |
+| On After Fetch | Action executed after the Aggregate fetches data from the data source. | | | |
 
 ## Runtime Properties
 
 | Name | Description | Read Only | Type | Observations |
-|------|-------------|----------|-------|--------------|
-| List | Collection of records returned by the performed query. |  | Record List |  |
-| Count | Number of records returned by the Count query. |  | Long Integer |  |
-| IsDataFetched | True when data has been fetched from the database and is ready to be used. | Yes | Boolean |  |
-| HasFetchError | True when there is an error during data fetch due to a server error or communication timeout. | Yes | Boolean |  |
+| ------ | ------------- | ---------- | ------- | -------------- |
+| List | Collection of records returned by the performed query. | | Record List | |
+| Count | Number of records returned by the Count query. | | Long Integer | |
+| IsDataFetched | True when data has been fetched from the database and is ready to be used. | Yes | Boolean | |
+| HasFetchError | True when there is an error during data fetch due to a server error or communication timeout. | Yes | Boolean | |
 
 ## Related resources
 

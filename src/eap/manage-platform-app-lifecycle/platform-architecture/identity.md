@@ -17,6 +17,10 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+topic:
+  - built-in-authentication
+  - authorization
+isautopublish: true
 ---
 
 # Architecture of authentication and authorization mechanism
@@ -37,7 +41,7 @@ You can also use an external, self-managed OpenID Connect (OIDC) IdP as the auth
 
 Your organization's developers, DevOps engineers and architects are granted **organization permissions** to use ODC Studio and ODC Portal to access the Platform services.
 
-Users of your apps are granted **app permissions** to access secured screens, data and logic flows. Developers create app roles in ODC Studio and assign them to users in ODC Portal. 
+Users of your apps are granted **app permissions** to access secured screens, data and logic flows. Developers create app roles in ODC Studio and assign them to users in ODC Portal.
 
 Go to [User management](../../user-management/intro.md) for more information on user permissions and roles.
 
@@ -49,7 +53,7 @@ Apps run in containers in the Runtime and expose secure REST API endpoints. For 
 
 ## Token technology
 
-The Identity Service uses JSON Web Token (JWT) technology, an open standard the Identity Service uses to define identity information as a JSON object. The key benefits of this technology include: 
+The Identity Service uses JSON Web Token (JWT) technology, an open standard the Identity Service uses to define identity information as a JSON object. The key benefits of this technology include:
 
 * JWTs are cryptographically signed using a public/private key pair which safeguards them from being modified by an attacker and ensures their authenticity.
 * JWTs are self-contained, meaning they're quick to validate as they don't require a server database lookup. This means quick access to the Platform services and apps.
@@ -60,7 +64,7 @@ The Identity Service follows the OIDC standard: an identity layer on top of the 
 
 ODC includes built-in protection against session fixation attacks, where an attacker tries to hijack a valid user session. ODC ensures that the session identifier is transparently changed on each login and validates this on every request, preventing session fixation attacks.
 
-ODC also serializes and deserializes session data using a built-in anti-tampering JSON deserialization mechanism. 
+ODC also serializes and deserializes session data using a built-in anti-tampering JSON deserialization mechanism.
 
 ## User flow
 
@@ -83,6 +87,6 @@ If the token validation is successful, the edge of the service checks the user's
 
 The **ID** token contains information about the identity of the authenticated user, such as name and email. The **access** token contains information about the user's permissions. Transfer of JWTs between the client and service is over the OAuth 2 protocol.
 
-When a user logs out, the tokens are invalidated. The tokens have a maximum lifespan of 12 hours. When the tokens expire, the user has to re-authenticate.
+When a user logs out, the tokens are invalidated. When the tokens expire, the user has to re-authenticate. By default, the maximum session duration is 12 hours. For end-user app sessions, you can [configure session duration and idle timeout](../../user-management/configure-user-session.md) per stage.
 
 In the diagram, a user working in ODC Portal to access a REST API endpoint in a second Platform service is a valid example. Another valid example is a user working in a browser to access a REST API endpoint on a protected screen in an app.

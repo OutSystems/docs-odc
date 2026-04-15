@@ -18,7 +18,13 @@ coverage-type:
 
 # Radar Chart
 
-This example shows how you can create a simple Radar Chart with multiple series types. 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
+This example shows how you can create a simple Radar Chart with multiple series types.
 
 1. From the Toolbox, drag the **Radar Chart** widget to the Screen.
 
@@ -38,7 +44,7 @@ This example shows how you can create a simple Radar Chart with multiple series 
 
     ![Screenshot showing the Series Name property being set in the Radar Chart configuration](images/chartradar-seriesname-ss.png "Setting the Series Name")
 
-1. To add more data points, repeat steps 2 and 3. 
+1. To add more data points, repeat steps 2 and 3.
 
     ![Screenshot demonstrating how to add additional data points to the Radar Chart](images/chartradar-extra-datapoints-ss.png "Adding More Data Points")
 

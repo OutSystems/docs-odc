@@ -17,7 +17,7 @@ coverage-type:
   - apply
 ---
 
-# Using the AI Agent Builder 
+# Using the AI Agent Builder
 
 With AI Agent Builder, you can combine AI model, instructions, additional data sources to create agents for a specific use case. You can then integrate the agent into your existing app to build generative AI applications. You also have the option to choose from a variety of [sample apps](intro.md#sample-apps) that closely matches your use case and download the OML. The OML file consists of entities, screens, call to an Agent, and an integration template for the external solutions in the app, such as Zendesk for Salesforce.
 
@@ -48,10 +48,10 @@ Before using the AI Agent Builder, ensure you have:
 1. Assign yourself the **Configurator** end-user role for the AI Agent Builder app. For detailed information about how to assign end-user roles in ODC portal, refer to [end-user roles](../../../eap/user-management/roles.md#end-user-roles)
 
 1. Open the AI Agent Builder app in the ODC portal.
-    
+
     1. From the home page of the ODC portal, Click **Apps**. A list of all apps display.
 
-    1. Search for **AI Agent Builder**. 
+    1. Search for **AI Agent Builder**.
 
     1. Click **AI Agent Builder** app. The AI Agent Builder app details page display.
 
@@ -61,7 +61,7 @@ Now you are inside the AI Agent Builder app.
 
 ### Step 2: Configure the AI Agent Builder app
 
-1. Log into the AI Agent Builder app. 
+1. Log into the AI Agent Builder app.
 
 1. [Configure and add the AI model](configure-model/intro.md).
 
@@ -83,7 +83,7 @@ Now you are inside the AI Agent Builder app.
 
   (Or)
 
-### Step 3b: Create your custom AI agent 
+### Step 3b: Create your custom AI agent
 
 1. [Create an agent](create-agent.md) for your AI use case either from scratch or by using agent templates. Optionally, you can add a data source while creating the agent to improve the quality of the AI-generated response.
 
@@ -91,7 +91,7 @@ Now you are inside the AI Agent Builder app.
 
 1. Save the new agent and copy the Agent ID.
 
-### Step 4: Integrate the agent into your app 
+### Step 4: Integrate the agent into your app
 
 For detailed information, refer to [Integrate the agent into your app](integrate-agent.md).
 

@@ -45,6 +45,4 @@ Make sure the class that implements this interface is public:
         // Implement interface methods
     }
 
-
-
 If the problem persists, create a case with [OutSystems Support](https://www.outsystems.com/support/portal/open-support-case?ErrorCode=OS-ELG-MODL-05018).

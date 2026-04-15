@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - dependencies
 ---
 
 # Understand strong and weak dependencies

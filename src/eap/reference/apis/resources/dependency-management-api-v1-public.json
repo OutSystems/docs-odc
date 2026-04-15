@@ -1,0 +1,2159 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Dependency Management API",
+    "description": "REST endpoints for launching ang getting results of impact analysis in the deployment and deletion of an asset.\n",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://ODC_PORTAL_DOMAIN/api/dependency-management/v1",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/dependency-management/v1",
+      "description": "Replace {odc-portal-domain} with the domain of your organization.",
+      "variables": {
+        "odc-portal-domain": {
+          "default": "ODC_PORTAL_DOMAIN",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "security": [{
+    "bearerAuth": []
+  }],
+  "paths": {
+    "/deletion-analyses/{analysisKey}": {
+      "get": {
+        "tags": [],
+        "summary": "Returns the deletion analysis result",
+        "description": "Returns the deletion analysis report once the analysis is completed.\n\n",
+        "operationId": "DeletionAnalysis_GetResult",
+        "parameters": [
+          {
+            "name": "analysisKey",
+            "in": "path",
+            "description": "Analysis key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicDeletionAnalysisReportPublicAnalysisResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/deletion-analyses": {
+      "post": {
+        "tags": [],
+        "summary": "Launches a Deletion Analysis Process",
+        "description": "Launches a Deletion Analysis Process. This evaluates the impacts of deleting the associated asset.\n\nFor applications and agents, considers the impacts of undeploying them from their running stages, on their consumers\n\nFor libraries, considers what running applications are still consuming them, and evaluating the impact they'll have, on not being available to build, going forward\n\nAPI Client needs the **Asset management > Delete** permission.",
+        "operationId": "DeletionAnalysis_LaunchDeletionAnalysis",
+        "requestBody": {
+          "description": "LaunchDeletionAnalysisRequest with the application to be deleted.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PublicLaunchDeletionAnalysisRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PublicLaunchDeletionAnalysisRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReferenceKeyResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Asset management > Delete** permission."
+      }
+    },
+    "/deployment-analyses/{analysisKey}": {
+      "get": {
+        "tags": [],
+        "summary": "Returns the deployment analysis result",
+        "description": "Returns the deployment analysis report once the analysis is completed.\n\n",
+        "operationId": "DeploymentAnalysis_GetResult",
+        "parameters": [
+          {
+            "name": "analysisKey",
+            "in": "path",
+            "description": "Analysis key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicDeploymentAnalysisReportPublicAnalysisResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/deployment-analyses": {
+      "post": {
+        "tags": [],
+        "summary": "Launches a Deployment Analysis Process",
+        "description": "Launches a Deployment Analysis Process, detecting impacts that promoting this asset to a new stage might have on its consumers, and what might be the impacts on itself, as it relates to its producers\n\nAPI Client needs the **Release management > Deploy apps** permission.",
+        "operationId": "DeploymentAnalysis_LaunchDeploymentAnalysis",
+        "requestBody": {
+          "description": "LaunchDeploymentAnalysisRequest with the revision to be deployed, and the environment to be deployed to.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PublicLaunchDeploymentAnalysisRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PublicLaunchDeploymentAnalysisRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReferenceKeyResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Release management > Deploy apps** permission."
+      }
+    },
+    "/assets/{assetKey}/consumers": {
+      "get": {
+        "tags": [],
+        "summary": "Lists all consumer assets of an asset.",
+        "description": "Returns a list of assets that consume a specific asset.\n\n",
+        "operationId": "DependencyManagement_ListAssetConsumers",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Filters consumers by a specific environment. Only assets deployed in this environment are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "publicElementKey",
+            "in": "query",
+            "description": "Filters consumers by a specific public element they use.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "allowMultipleVersions",
+            "in": "query",
+            "description": "If true, returns multiple versions of a consumer asset. If false, returns only the highest version. Defaults to false.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Used for sorting the list. Ascending by default. Prepend a hyphen, \"-\", to get a descending sort. Allowed: name.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetDependencyListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetKey}/revisions/{revisionNumber}/producer-graph": {
+      "get": {
+        "tags": [],
+        "summary": "Lists the producer assets that a specific asset revision depends on.",
+        "description": "Lists the producer dependency graph for an asset revision.\n\n",
+        "operationId": "DependencyManagement_ListAssetProducerGraph",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionNumber",
+            "in": "path",
+            "description": "The revision number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "maxDepth",
+            "in": "query",
+            "description": "The maximum depth to explore in the dependency hierarchy. Default is 0 (infinite).",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Filters producers by a specific environment. Only assets deployed in this environment are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "producerTypeFilter",
+            "in": "query",
+            "description": "Filters producers by type. Allowed values: Deployable, Libraries, All.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Used for sorting the list. Ascending by default. Prepend a hyphen, \"-\", to get a descending sort. Allowed: name.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetDependencyProducerListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetKey}/revisions/{revisionNumber}/producers": {
+      "get": {
+        "tags": [],
+        "summary": "Lists the producer assets that a specific asset revision depends on.",
+        "description": "Returns a list of all producer assets that a specific asset revision depends on, directly or indirectly.\n\n",
+        "operationId": "DependencyManagement_ListAssetProducers",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionNumber",
+            "in": "path",
+            "description": "The revision number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "maxDepth",
+            "in": "query",
+            "description": "The maximum depth to explore in the dependency hierarchy. Default is 0 (infinite).",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Filters producers by a specific environment. Only assets deployed in this environment are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "producerTypeFilter",
+            "in": "query",
+            "description": "Filters producers by type. Allowed values: Deployable, Libraries, All.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Used for sorting the list. Ascending by default. Prepend a hyphen, \"-\", to get a descending sort. Allowed: name.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetDependencyWithProducerReferencesListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetKey}/revisions/{revisionNumber}/consumers": {
+      "get": {
+        "tags": [],
+        "summary": "Lists all consumer assets of an asset revision.",
+        "description": "Returns a list of assets that consume a specific revision of an asset.\n\n",
+        "operationId": "DependencyManagement_ListAssetRevisionConsumers",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionNumber",
+            "in": "path",
+            "description": "The revision number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Filters consumers by a specific environment. Only assets deployed in this environment are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "publicElementKey",
+            "in": "query",
+            "description": "Filters consumers by a specific public element they use.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "allowMultipleVersions",
+            "in": "query",
+            "description": "If true, returns multiple versions of a consumer asset. If false, returns only the highest version. Defaults to false.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Used for sorting the list. Ascending by default. Prepend a hyphen, \"-\", to get a descending sort. Allowed: name.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetDependencyListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetKey}/revisions/{revisionNumber}/public-elements": {
+      "get": {
+        "tags": [],
+        "summary": "Lists all the public elements of a specific asset revision.",
+        "description": "Returns a list of public elements for a specific asset revision.\n\n",
+        "operationId": "DependencyManagement_ListAssetRevisionPublicElements",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionNumber",
+            "in": "path",
+            "description": "The revision number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Used for sorting the list. Ascending by default. Prepend a hyphen, \"-\", to get a descending sort. Allowed: name.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "includeHidden",
+            "in": "query",
+            "description": "If the result should include hidden elements. Default is true.",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicElementStringTypesListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetKey}/revisions/{revisionNumber}/referenced-elements": {
+      "get": {
+        "tags": [],
+        "summary": "Lists all public elements referenced by a specific asset revision.",
+        "description": "Returns a list of all public elements referenced by a specific asset revision, as defined in the IDE.\n\nAPI Client needs the **Asset management > Open** permission.",
+        "operationId": "DependencyManagement_ListReferencedElements",
+        "parameters": [
+          {
+            "name": "assetKey",
+            "in": "path",
+            "description": "The asset's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "revisionNumber",
+            "in": "path",
+            "description": "The revision number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Used for sorting the list. Ascending by default. Prepend a hyphen, \"-\", to get a descending sort. Allowed: name.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "includeHidden",
+            "in": "query",
+            "description": "If the result should include hidden elements. Default is true.",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReferencedElementStringTypesListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Asset management > Open** permission."
+      }
+    },
+    "/public-elements/search": {
+      "post": {
+        "tags": [],
+        "summary": "Lists all public elements of assets according to the complex filter.",
+        "description": "Only public elements that the user has permission to reference are returned.\n\n",
+        "operationId": "DependencyManagement_SearchPublicElements",
+        "requestBody": {
+          "description": "The search filter criteria.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DependenciesPublicElementFilter"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DependenciesPublicElementFilter"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicElementStringTypesPagedListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnalysisReportType": {
+        "enum": [
+          "Deployment",
+          "Deletion"
+        ],
+        "type": "string"
+      },
+      "AnalysisStatus": {
+        "enum": [
+          "NoIssuesFound",
+          "WarningsFound",
+          "ErrorsFound"
+        ],
+        "type": "string"
+      },
+      "ApplicationConflictType": {
+        "enum": [
+          "NameCollision",
+          "MissingApplication",
+          "UrlDiscrepancy",
+          "UnsupportedRuntime"
+        ],
+        "type": "string"
+      },
+      "ApplicationIssue": {
+        "type": "object",
+        "properties": {
+          "conflictType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ApplicationConflictType"
+              }
+            ],
+            "description": "Conflict Type"
+          },
+          "conflictSeverity": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ConflictSeverity"
+              }
+            ],
+            "description": "Conflict Severity"
+          },
+          "hint": {
+            "type": "string",
+            "description": "Hint to understand the conflict",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConflictSeverity": {
+        "enum": [
+          "Warning",
+          "Error"
+        ],
+        "type": "string"
+      },
+      "ElementConflictType": {
+        "enum": [
+          "MissingElement",
+          "IncompatibleElement"
+        ],
+        "type": "string"
+      },
+      "ElementIssue": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Element Name",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Element type",
+            "nullable": true
+          },
+          "conflictType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ElementConflictType"
+              }
+            ],
+            "description": "Conflict Type"
+          },
+          "conflictSeverity": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ConflictSeverity"
+              }
+            ],
+            "description": "Conflict Severity"
+          },
+          "incompatibilityType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IncompatibilityType"
+              }
+            ],
+            "description": "Type of incompatibility, if any",
+            "nullable": true
+          },
+          "hint": {
+            "type": "string",
+            "description": "Hint to help identify the conflict",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EnvironmentReport": {
+        "type": "object",
+        "properties": {
+          "environmentKey": {
+            "type": "string",
+            "description": "Environment key",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Environment name",
+            "nullable": true
+          },
+          "purpose": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TenantEnvironmentPurpose"
+              }
+            ],
+            "description": "Environment purpose"
+          }
+        },
+        "additionalProperties": false
+      },
+      "IncompatibilityType": {
+        "enum": [
+          "None",
+          "MissingMandatoryInputParameter",
+          "InputParameterMismatch",
+          "InputParameterTypeMismatch",
+          "OutputParameterMismatch",
+          "OutputParameterTypeMismatch",
+          "MissingMandatoryEntityAttribute",
+          "EntityAttributeMismatch",
+          "EntityAttributeTypeMismatch",
+          "MissingMandatoryStructureAttribute",
+          "StructureAttributeMismatch",
+          "StructureAttributeTypeMismatch",
+          "MissingRecord",
+          "RecordIdentifierMismatch",
+          "ScreenNameMismatch",
+          "ScreenPageNameMismatch",
+          "ScreenURLStructureMismatch",
+          "ServerEntityNameMismatch",
+          "ServiceActionNameMismatch",
+          "StaticEntityNameMismatch",
+          "StructureNameMismatch",
+          "MissingScreen",
+          "MissingServerEntity",
+          "MissingServiceAction",
+          "MissingStaticEntity",
+          "MissingStructure",
+          "MissingConsumerElementSignature",
+          "EventNameMismatch",
+          "MissingEvent",
+          "InputParameterDefaultValueMismatch",
+          "ScreenUrlDiscrepancy",
+          "MissingRole"
+        ],
+        "type": "string"
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code applicable to the problem.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation of the error.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem.",
+            "nullable": true
+          },
+          "traceId": {
+            "type": "string",
+            "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
+          }
+        },
+        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+      },
+      "ProcessStatus": {
+        "enum": [
+          "InProgress",
+          "Finished",
+          "Failed"
+        ],
+        "type": "string"
+      },
+      "PublicApplicationReport": {
+        "type": "object",
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "description": "Revision, if applicable",
+            "format": "int32",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of application",
+            "nullable": true
+          },
+          "referenceType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReferenceType"
+              }
+            ],
+            "description": "Reference Type of the application"
+          },
+          "elementLevelIssues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ElementIssue"
+            },
+            "description": "List of Element Level Issues",
+            "nullable": true
+          },
+          "applicationLevelIssues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationIssue"
+            },
+            "description": "List of Application Level Issues",
+            "nullable": true
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "Asset Key",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicDeletionAnalysisReport": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AnalysisStatus"
+              }
+            ],
+            "description": "Analysis global status",
+            "readOnly": true
+          },
+          "deployedEnvironments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReport"
+            },
+            "description": "List of environments where application is deployed",
+            "nullable": true
+          },
+          "impactedAssets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PublicImpactedApplication"
+            },
+            "description": "List of impacted assets",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicDeletionAnalysisReportPublicAnalysisResult": {
+        "type": "object",
+        "properties": {
+          "analysisKey": {
+            "type": "string",
+            "description": "Key of the analysis",
+            "nullable": true
+          },
+          "type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AnalysisReportType"
+              }
+            ],
+            "description": "Type of analysis",
+            "nullable": true
+          },
+          "processStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProcessStatus"
+              }
+            ],
+            "description": "Status of the analysis"
+          },
+          "error": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProblemDetails"
+              }
+            ],
+            "properties": {
+              "traceId": {
+                "type": "string",
+                "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
+              },
+              "errorCode": {
+                "type": "string",
+                "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
+              }
+            },
+            "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs).",
+            "nullable": true
+          },
+          "report": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PublicDeletionAnalysisReport"
+              }
+            ],
+            "description": "Report",
+            "nullable": true
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "Environment Key, if any",
+            "format": "uuid",
+            "nullable": true
+          },
+          "startedAt": {
+            "type": "string",
+            "description": "Start date of the analysis",
+            "format": "date-time"
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "Asset Key",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicDependencyPath": {
+        "type": "object",
+        "properties": {
+          "indirectElements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PublicIndirectElement"
+            },
+            "description": "List of indirect Element elements reference in this dependency path",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicDeployedRevision": {
+        "type": "object",
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "description": "Deployed Application Revision",
+            "format": "int32"
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "Environment in which application is deployed",
+            "nullable": true
+          },
+          "consumerType": {
+            "type": "string",
+            "description": "Application Consumer Type",
+            "nullable": true
+          },
+          "severity": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ConflictSeverity"
+              }
+            ],
+            "description": "Conflict severity"
+          },
+          "indirectLibraryHint": {
+            "type": "string",
+            "description": "Indirect library hint",
+            "nullable": true
+          },
+          "indirectDependencies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PublicDependencyPath"
+            },
+            "description": "Indirect dependencies for the library",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicDeploymentAnalysisReport": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AnalysisStatus"
+              }
+            ],
+            "description": "Analysis global status",
+            "readOnly": true
+          },
+          "impactedAssets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PublicApplicationReport"
+            },
+            "description": "List of impacted assets",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicDeploymentAnalysisReportPublicAnalysisResult": {
+        "type": "object",
+        "properties": {
+          "analysisKey": {
+            "type": "string",
+            "description": "Key of the analysis",
+            "nullable": true
+          },
+          "type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AnalysisReportType"
+              }
+            ],
+            "description": "Type of analysis",
+            "nullable": true
+          },
+          "processStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProcessStatus"
+              }
+            ],
+            "description": "Status of the analysis"
+          },
+          "error": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProblemDetails"
+              }
+            ],
+            "properties": {
+              "traceId": {
+                "type": "string",
+                "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
+              },
+              "errorCode": {
+                "type": "string",
+                "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
+              }
+            },
+            "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs).",
+            "nullable": true
+          },
+          "report": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PublicDeploymentAnalysisReport"
+              }
+            ],
+            "description": "Report",
+            "nullable": true
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "Environment Key, if any",
+            "format": "uuid",
+            "nullable": true
+          },
+          "startedAt": {
+            "type": "string",
+            "description": "Start date of the analysis",
+            "format": "date-time"
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "Asset Key",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicImpactedApplication": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Impacted application name",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Impacted application type",
+            "nullable": true
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "Asset Key",
+            "nullable": true
+          },
+          "deployedRevisions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PublicDeployedRevision"
+            },
+            "description": "Deployed Revisions of the impacted application",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicIndirectElement": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Element Application Name",
+            "nullable": true
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Element Application Revision",
+            "format": "int32"
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "Asset Key",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicLaunchDeletionAnalysisRequest": {
+        "type": "object",
+        "properties": {
+          "assetKey": {
+            "type": "string",
+            "description": "Asset Key for the analysis",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicLaunchDeploymentAnalysisRequest": {
+        "type": "object",
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "description": "Intended revision to deploy",
+            "format": "int32"
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "Intended Environment Key to deploy to",
+            "nullable": true
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "Asset Key for the analysis",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReferenceKeyResponse": {
+        "type": "object",
+        "properties": {
+          "analysisKey": {
+            "type": "string",
+            "description": "Analysis Key",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReferenceType": {
+        "enum": [
+          "Producer",
+          "Consumer",
+          "None",
+          "Deployed"
+        ],
+        "type": "string"
+      },
+      "TenantEnvironmentPurpose": {
+        "enum": [
+          "Unknown",
+          "Development",
+          "NonProduction",
+          "Production"
+        ],
+        "type": "string"
+      },
+      "ApplicationFilter": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Key of the application to filter by",
+            "nullable": true
+          },
+          "digest": {
+            "type": "string",
+            "description": "Digest of the application to filter by, if empty will use the latest revision",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetDependency": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Key (format: guid)."
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Revision number.",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the application.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the application.",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Descriptive value for the asset type.",
+            "nullable": true
+          },
+          "signatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the the signature of any of the public elements of the application has changes.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "compatibilitySignatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the signature of any of the public elements of the application might have breaking changes.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "modelDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the application model has any changes.",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetDependencyListResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDependency"
+            },
+            "description": "List of results.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a list of results."
+      },
+      "AssetDependencyProducer": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Key (format: guid)."
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Revision number.",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the application.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the application.",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Descriptive value for the asset type.",
+            "nullable": true
+          },
+          "signatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the the signature of any of the public elements of the application has changes.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "compatibilitySignatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the signature of any of the public elements of the application might have breaking changes.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "modelDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the application model has any changes.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "producers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDependencyProducer"
+            },
+            "description": "All child producers this producer depends on.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetDependencyProducerListResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDependencyProducer"
+            },
+            "description": "List of results.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a list of results."
+      },
+      "AssetDependencyWithProducerReferences": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Key (format: guid)."
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Revision number.",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the application.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the application.",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Descriptive value for the asset type.",
+            "nullable": true
+          },
+          "signatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the the signature of any of the public elements of the application has changes.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "compatibilitySignatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the signature of any of the public elements of the application might have breaking changes.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "modelDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the application model has any changes.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "isDirectProducer": {
+            "type": "boolean",
+            "description": "Indicates if this asset is a direct producer of the asset this http call was made under."
+          },
+          "producers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "All child producers this producer depends on.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetDependencyWithProducerReferencesListResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDependencyWithProducerReferences"
+            },
+            "description": "List of results.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a list of results."
+      },
+      "DependenciesPublicElementFilter": {
+        "type": "object",
+        "properties": {
+          "elementNameContains": {
+            "type": "string",
+            "description": "Filter where the element name must contain the keyword if specified",
+            "nullable": true
+          },
+          "elementNameOrDescriptionContains": {
+            "type": "string",
+            "description": "Filter where the element name or description must contain the keyword if specified",
+            "nullable": true
+          },
+          "elementType": {
+            "type": "string",
+            "description": "Filter where the element must be of this type if specified",
+            "nullable": true
+          },
+          "includeHidden": {
+            "type": "boolean",
+            "description": "Filter if hidden elements should be included or not",
+            "nullable": true
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limits the number of returned elements",
+            "format": "int32",
+            "nullable": true
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offsets the returned elements",
+            "format": "int32",
+            "nullable": true
+          },
+          "sort": {
+            "type": "string",
+            "description": "Sorts the returned elements by the specified field",
+            "nullable": true
+          },
+          "sortAscending": {
+            "type": "boolean",
+            "description": "Specifies if the sort order should be ascending or descending",
+            "nullable": true
+          },
+          "assetFilters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationFilter"
+            },
+            "description": "Filters which asset elements to search by",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageInfoWithTotals": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of results in the current page.",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limit of results per page.",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset of the current page of results.",
+            "format": "int32"
+          },
+          "nextPageOffset": {
+            "type": "integer",
+            "description": "Offset of the next page of results.",
+            "format": "int32"
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total of results.",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": "Total of result pages.",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains response page information including totals."
+      },
+      "PublicElementStringTypes": {
+        "type": "object",
+        "properties": {
+          "assetKey": {
+            "type": "string",
+            "description": "Unique identifier of the owner asset",
+            "nullable": true
+          },
+          "assetName": {
+            "type": "string",
+            "description": "Name of the owner asset",
+            "nullable": true
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Revision number that identifies the owner asset version",
+            "format": "int32"
+          },
+          "tag": {
+            "type": "string",
+            "description": "Tag of the owner asset",
+            "nullable": true
+          },
+          "key": {
+            "type": "string",
+            "description": "Unique identifier (per asset) of the public element",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Element name",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Element description",
+            "nullable": true
+          },
+          "signatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the signature of the public element has changes. (format: guid)",
+            "nullable": true
+          },
+          "compatibilitySignatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the signature of the public element might have breaking changes. (format: guid)",
+            "nullable": true
+          },
+          "isHidden": {
+            "type": "boolean",
+            "description": "True if the element is not marked as public, but is still shared with consumers because another public element uses it (e.g. image, block)"
+          },
+          "assetType": {
+            "type": "string",
+            "description": "Type of the owner asset",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of public element",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a public element of an asset."
+      },
+      "PublicElementStringTypesListResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PublicElementStringTypes"
+            },
+            "description": "List of results.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a list of results."
+      },
+      "PublicElementStringTypesPagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PublicElementStringTypes"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "ReferencedElementStringTypes": {
+        "type": "object",
+        "properties": {
+          "assetKey": {
+            "type": "string",
+            "description": "Unique identifier of the asset that references the element",
+            "nullable": true
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Revision number that identifies the version of the asset that references the element",
+            "format": "int32"
+          },
+          "key": {
+            "type": "string",
+            "description": "Unique identifier (per asset) of the referenced public element",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Element name",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Element description",
+            "nullable": true
+          },
+          "isHidden": {
+            "type": "boolean",
+            "description": "If it is a hidden reference",
+            "nullable": true
+          },
+          "signatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the signature of the public element has changes. (format: guid)",
+            "nullable": true
+          },
+          "compatibilitySignatureDigest": {
+            "type": "string",
+            "description": "Digest that allows checking if the signature of the public element might have breaking changes. (format: guid)",
+            "nullable": true
+          },
+          "producerAssetKey": {
+            "type": "string",
+            "description": "Unique identifier of the referenced asset",
+            "nullable": true
+          },
+          "producerAssetName": {
+            "type": "string",
+            "description": "Name of the referenced asset",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of referenced public element",
+            "nullable": true
+          },
+          "producerAssetType": {
+            "type": "string",
+            "description": "Type of the referenced asset",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReferencedElementStringTypesListResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReferencedElementStringTypes"
+            },
+            "description": "List of results.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a list of results."
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

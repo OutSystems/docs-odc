@@ -1,15 +1,17 @@
 ---
 summary: Learn best practices for securing API credentials in OutSystems Developer Cloud (ODC), including safe storage, HTTPS usage, and access controls.
-tags: 
-outsystems-tools: 
+tags: api security, oauth, best practices, client credentials, access control
+outsystems-tools:
+  - none
 guid: 7b0b7f02-8329-4f68-863c-041ba0e7a294
 locale: en-us
 app_type: mobile apps, reactive web apps
-content-type: 
-    - best practice
-audience: 
+content-type:
+  - best practice
+audience:
+  - full stack developers
 platform-version: odc
-figma: 
+figma:
 ---
 # Best practices for keeping API credentials secure
 

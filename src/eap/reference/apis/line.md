@@ -18,7 +18,13 @@ coverage-type:
 
 # Line Chart
 
-This example shows how you can create a simple Line Chart with a Spline line and custom markers. 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
+This example shows how you can create a simple Line Chart with a Spline line and custom markers.
 
 1. From the Toolbox, drag the **Line Chart** widget to the Screen.
 
@@ -30,7 +36,7 @@ This example shows how you can create a simple Line Chart with a Spline line and
 
 1. Click **+[0]** and set the **Label** and **Value** properties using [fixed data](data.md#populate-your-chart-with-fixed-data) or [variable data](data.md#populate-your-chart-with-variable-data).
 
-    This example uses fixed data. These properties define the first data point. Each data point corresponds to a point on the line chart. 
+    This example uses fixed data. These properties define the first data point. Each data point corresponds to a point on the line chart.
 
     ![Screenshot demonstrating how to set the Label and Value properties for a data point in the Line Chart](images/chartline-datapoint-ss.png "Setting a Data Point")
 

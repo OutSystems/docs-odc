@@ -53,7 +53,7 @@ When querying your entities is taking too long, creating entity [indexes](../mod
 
 * Create composite indexes when you have aggregates or SQL queries with multiple attribute filters. Ensure the attribute order in the index matches the order used in the aggregates or SQL queries.
 
-* Prioritize indexing attributes with a wide range of unique values, such as dates or small texts, to achieve better performance. Indexing attributes with low variability, such as boolean attributes, has less impact on performance. 
+* Prioritize indexing attributes with a wide range of unique values, such as dates or small texts, to achieve better performance. Indexing attributes with low variability, such as boolean attributes, has less impact on performance.
 
 * Limit the number of indexes, as too many indexes can slow down inserts and updates. Prioritize indexes that support critical queries, and [monitor the app performance](../../../monitor-and-troubleshoot/app-health.md) regularly to ensure those indexes balance read and write performance according to the app needs.
 

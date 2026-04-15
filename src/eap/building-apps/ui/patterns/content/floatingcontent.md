@@ -19,6 +19,12 @@ coverage-type:
 
 # Floating Content
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 You can use the Floating Content UI Pattern to display content on top of other screen elements, such as a map with navigation instructions.
 
 ![Screenshot of Floating Content UI Pattern overlaying a map](images/floatingcontent-1-ss.png "Floating Content UI Pattern on a Map")
@@ -33,7 +39,7 @@ You can use the Floating Content UI Pattern to display content on top of other s
 
 1. From the Toolbox, drag the Floating Content widget into the Main Content area of your application's screen.
 
-    In this example, the Main Content area of already contains an image of a map. 
+    In this example, the Main Content area of already contains an image of a map.
 
     ![Screenshot of dragging the Floating Content widget into the Main Content area with a map background](images/floatingcontent-3-ss.png "Dragging Floating Content Widget into Main Content Area")
 
@@ -41,7 +47,7 @@ You can use the Floating Content UI Pattern to display content on top of other s
 
 1. Add the relevant content to the placeholder.
 
-    In this example, we add a Search widget. 
+    In this example, we add a Search widget.
 
     ![Screenshot showing the addition of a Search widget to the Floating Content placeholder](images/floatingcontent-4-ss.png "Adding Content to Floating Content Widget")
 
@@ -49,16 +55,16 @@ You can use the Floating Content UI Pattern to display content on top of other s
 
     ![Screenshot of the Properties tab for the Floating Content widget with Position property highlighted](images/floatingcontent-5-ss.png "Setting Properties of Floating Content Widget")
 
-After following these steps and publishing the app, you can test the pattern in your app. 
+After following these steps and publishing the app, you can test the pattern in your app.
 
 ## Properties
 
 ### Floating Content
 
-| **Property**                              | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Position (Position Identifier): Mandatory | The position the floating content is displayed on screen.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| UseFullHeight (Boolean): Optional         | If True, the widget takes up the full height of the screen. If False, the widget doesn't take up the full height of the screen. This is the default.                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| UseFullWidth (Boolean): Optional          | If True, the widget takes up the full width of the screen. If False, the widget doesn't take up the full width of the screen. This is the default.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| UseMargin (Boolean): Optional             | If True, a margin is applied to the widget. This is the default. If False, there is no margin applied to the widget.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ExtendedClass (Text): Optional            | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.<br/><br/>Examples<br/><br/> <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
+| **Property** | **Description** |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Position (Position Identifier): Mandatory | The position the floating content is displayed on screen. |
+| UseFullHeight (Boolean): Optional | If True, the widget takes up the full height of the screen. If False, the widget doesn't take up the full height of the screen. This is the default. |
+| UseFullWidth (Boolean): Optional | If True, the widget takes up the full width of the screen. If False, the widget doesn't take up the full width of the screen. This is the default. |
+| UseMargin (Boolean): Optional | If True, a margin is applied to the widget. This is the default. If False, there is no margin applied to the widget. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.<br/><br/>Examples<br/><br/> <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |

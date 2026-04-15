@@ -14,6 +14,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+isautopublish: true
 ---
 
 # Text
@@ -24,9 +25,9 @@ Returns a single-character string corresponding to the 'c' character code.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -48,13 +49,13 @@ Chr(88) = "X"
 
 Replaces special characters in a string so that you can use it in HTML literals. Use this function when using un-escaped expressions that contain content provided by end-users.  
   
-Warning: Since this function only encodes strings that will be used in HTML literals, it does not protect you from cross-site scripting (XSS) or JavaScript injection vulnerabilities on its own. <b>Do not</b> use this function to encode text that might get executed as JavaScript code, only to encode HTML literals.  
+Warning: Since this function only encodes strings that will be used in HTML literals, it does not protect you from cross-site scripting (XSS) or JavaScript injection vulnerabilities on its own. **Do not** use this function to encode text that might get executed as JavaScript code, only to encode HTML literals.  
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -82,13 +83,13 @@ Value = "<dl><dt>" + EncodeHtml(ArticleTitle) + "</dt><dd>" + EncodeHtml(Article
 
 Replaces special characters in a string so that you can use it in JavaScript literals. Use this function when using un-escaped expressions that contain content provided by end-users.  
   
-Warning: Since this function only encodes strings that will be used in JavaScript literals, it does not protect you from cross-site scripting (XSS) or JavaScript injection vulnerabilities on its own. <b>Do not</b> use this function to encode text that might get executed as JavaScript code, only to encode JavaScript literals.  
+Warning: Since this function only encodes strings that will be used in JavaScript literals, it does not protect you from cross-site scripting (XSS) or JavaScript injection vulnerabilities on its own. **Do not** use this function to encode text that might get executed as JavaScript code, only to encode JavaScript literals.  
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -115,13 +116,13 @@ Script = "ChangeContainerContent('" + ModalTitle.Id + "', '" + EncodeJavaScript(
 
 Replaces special characters in a string literal so that you can use it in a SQL statement. Use this function when the Expand Inline property of a Query Parameter is enabled to escape content provided by end-users.  
   
-Warning: Since this function only encodes string literals, it does not protect you from SQL injection vulnerabilities on its own. <b>Do not</b> use this function to encode text that might get executed as part of the SQL statement. Check the OutSystems Best Practices documentation for more information on building dynamic SQL statements the right way.  
+Warning: Since this function only encodes string literals, it does not protect you from SQL injection vulnerabilities on its own. **Do not** use this function to encode text that might get executed as part of the SQL statement. Check the OutSystems Best Practices documentation for more information on building dynamic SQL statements the right way.  
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: No
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: No
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -147,13 +148,19 @@ extraFilters = If(lastnameFilter <> "", "AND [Users].{Lastname} like '%" + Encod
 
 ## EncodeUrl
 
-Replaces all non-alphanumeric characters in a string, i.e. characters outside of the [0-9a-zA-Z] range, so that you can safely use it in URL parameter values. Use this function to build URLs in your app that may contain content provided by end-users, e.g. when dynamically building URLs to an external site.  
+Replaces all non-alphanumeric characters in a string, i.e. characters outside of the [0-9a-zA-Z] range, so that you can safely use it in URL parameter values. Use this function to build URLs in your app that may contain content provided by end-users, e.g. when dynamically building URLs to an external site.
+
+<div class="warning" markdown="1">
+
+Don't use `EncodeUrl` for parameters passed to consumed REST APIs. OutSystems automatically encodes REST Consume parameters. Using `EncodeUrl` in this context causes double encoding, which can lead to authentication failures or unexpected behavior.
+
+</div>
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
@@ -184,9 +191,9 @@ Returns the zero-based position in Text 't' where 'search' Text can be found. Re
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -239,9 +246,9 @@ Returns the number of characters in Text 't'.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -266,9 +273,9 @@ Returns a string containing the New Line (Return) character.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Output
 
@@ -278,11 +285,13 @@ Type: Text
 
 Returns Text 't' after replacing all Text occurrences of 'search' with 'replace'.  
 
+If the 'search' parameter is empty, the behavior differs between server-side and client-side logic. In client-side logic, the function inserts the 'replace' value at every character position in the input string, including the start and end. In server-side logic, the function returns an empty string. To avoid unexpected results when variables are used dynamically, validate that the 'search' parameter isn't empty before calling this function.
+
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Cannot be used inside aggregates with entity attributes as parameters.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Cannot be used inside aggregates with entity attributes as parameters.
 
 ### Parameters
 
@@ -308,6 +317,10 @@ Type: Text
 Replace("First string", "xx", "") = "First string"
 Replace("First string", "First", "Second") = "Second string"
 Replace("First string", "First", "") = " string"
+Replace("01245", "", "abc") = "abc0abc1abc2abc4abc5abc"  // client-side only
+Replace("01245", "", "abc") = ""  // server-side only
+Replace("01245", "", "") = "01245"  // client-side only
+Replace("01245", "", "") = ""  // server-side only
 ```
 
 ## Substr
@@ -316,9 +329,9 @@ Returns a sub-string of 't' beginning at 'start' zero-based position and with 'l
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -354,9 +367,9 @@ Converts Text 't' to the equivalent lowercase text.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -380,9 +393,9 @@ Converts Text 't' to the equivalent uppercase text.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -404,11 +417,13 @@ ToUpper("First string") = "FIRST STRING"
 
 Removes all leading and trailing space characters (' ') from Text 't'.  
 
+In server-side logic, this function only removes standard ASCII space characters (Unicode `U+0020`). Other whitespace characters, such as ideographic spaces (`U+3000`), tabs, or non-breaking spaces, aren't removed. In client-side logic, the JavaScript-based implementation removes all Unicode whitespace characters.
+
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -431,11 +446,13 @@ Trim("First string ") = "First string"
 
 Removes all trailing space characters (' ') from Text 't'.  
 
+In server-side logic, this function only removes standard ASCII space characters (Unicode `U+0020`). Other whitespace characters, such as ideographic spaces (`U+3000`), tabs, or non-breaking spaces, aren't removed. In client-side logic, the JavaScript-based implementation removes all Unicode whitespace characters.
+
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 
@@ -458,11 +475,13 @@ TrimEnd("First string ") = "First string"
 
 Removes all leading space characters (' ') from Text 't'.  
 
+In server-side logic, this function only removes standard ASCII space characters (Unicode `U+0020`). Other whitespace characters, such as ideographic spaces (`U+3000`), tabs, or non-breaking spaces, aren't removed. In client-side logic, the JavaScript-based implementation removes all Unicode whitespace characters.
+
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Can be used with attributes in aggregates.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Can be used with attributes in aggregates.
 
 ### Parameters
 

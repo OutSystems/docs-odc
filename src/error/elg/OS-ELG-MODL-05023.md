@@ -34,8 +34,8 @@ You must fix this error in your C# project before you can publish the external l
 
 Make sure the required assembly is included in your external library. Check:
 
--  It's properly referenced.
--  It's not marked as `PrivateAssets` in case it's a NuGet reference.
--  You're [using `dotnet publish`](../../eap/building-apps/external-logic/README.md#usage) and including all resulting assemblies in the ZIP file.
+* It's properly referenced.
+* It's not marked as `PrivateAssets` in case it's a NuGet reference.
+* You're [using `dotnet publish`](../../eap/building-apps/external-logic/README.md#usage) and including all resulting assemblies in the ZIP file.
 
 If the problem persists, create a case with [OutSystems Support](https://www.outsystems.com/support/portal/open-support-case?ErrorCode=OS-ELG-MODL-05023).

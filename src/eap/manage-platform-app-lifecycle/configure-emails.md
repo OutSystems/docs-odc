@@ -16,43 +16,103 @@ outsystems-tools:
 coverage-type:
   - apply
   - understand
+topic:
+  - how-to-send-emails
 ---
 
-# Configure emails
+# Configure SMTP settings for emails
 
-Emails are an integral part of any app you develop because you can send app users such things as invitations or notifications. An OutSystems app sends emails using SMTP (Simple Mail Transference Protocol). In OutSystems Developer Cloud (ODC), you configure emails in the ODC Portal.
+The ODC apps sends emails using SMTP. For secure SMTP authentication, ODC supports both basic username/password and the more modern OAuth 2.0 authorization framework. Given the increasing security risks associated with basic authentication many providers are phasing out username/password authentication in favor of OAuth 2.0.
 
-You create an email configuration for a stage. You can have different configurations for each stage, but you can only have one configuration per stage.
+Here are some of the advantages of using OAuth 2.0 for SMTP authentication:
 
-To create and manage an email configuration, you need to have an organization role that includes the **Manage Email Configurations** permission.
-This document describes how to:
+* Replaces long-lived passwords with short-lived access tokens. These tokens have limited scope and expiry, reducing the risk of credential misuse.
 
-* Create a test list.
-* Set up email for the first time.
-* Modify an email configuration.
+* Allows you to grant specific permissions (scopes) to an app. For SMTP, this means an app can be authorized only to send emails without gaining access to read, delete, or manage your mailbox in other ways.
+
+* Access tokens can be revoked or rotated without impacting a user's main credentials, allowing for more flexible access control.
+
+* Widely supported by SMTP providers such as Google and Microsoft and is the modern industry standard for secure authorization.
+
+This article explains how to:
+
+* [Set up email for the first time](#set-up-email-for-the-first-time)
+* [Create a test list](#create-a-test-list)
 
 ## Set up email for the first time
 
-Before apps can send emails, you must create the email in ODC Studio.
+To send emails, you must configure the SMTP settings for the emails in the ODC portal. These settings can be configured one for each stage and each stage can have different configuration.
 
-1. To begin, open the ODC Portal, and from the Navigation menu, select **Configurations** > **Emails**. The **Email configurations** page opens.  
-1. Complete the following fields. Required fields display with an asterisk.
-      * **Stage** - from the drop down select one or more stages.
-      * **Server** - enter the IP address of the SMTP server and the port number. The SMTP port number defaults to 587, but you can change it. Note that port 25 isn't supported.
+### Prerequisites
 
-        <div class="info" markdown="1">
+Before configuring the SMTP settings for the email:
 
-        SMTP port 25 isn't supported due to security and abuse concerns, which can impact the domain's reputation. Port 25 is often targeted for spam and unauthorized access, leading to restrictions by ISPs.
+* Ensure that you have the organization role that includes the **Manage Email Configurations** permission.
+* If your SMTP server is private ensure that it's reachable from your ODC apps:
+    * [Private gateway](private-gateway.md) is the recommended method to establish a private connection.
+    * As an alternative, [IP allowlisting](odc-public-ips.md) can also be used.
 
-        </div>
-        
-      * **Requires Authentication** - Check to require authentication and then enter the user name and password to authenticate.
+### Configure email settings
+
+To configure the SMTP settings for the email, follow these steps:
+
+1. Go to ODC Portal.
+
+1. Select **CONFIGURE** > **Emails**.
+The Emails configurations page is displayed  
+
+1. Select the stage where you want to configure the email settings.
+
+1. (Mandatory) Enter the **SMTP server** IP address.
+
+1. Enter the **SMTP port**. The default SMTP port is 587.  
+
+    <div class="info" markdown="1">
+
+    SMTP port 25 isn't supported due to security risks which can impact the domain's reputation. Port 25 is often targeted for spam and unauthorized access, leading to restrictions by ISPs.
+
+    </div>
+
+1. Select the authentication type from the drop-down.
+
+    For **OAuth 2.0 - client credentials** authentication, enter the following fields:
+
+    <div class="info" markdown="1">
+
+    The configuration fields can be obtained from the infrastructure admin who is responsible to configure the SMTP server.
+
+    </div>
+
+    * **Server Token URL**: (Mandatory) URL of the authorization server that is used to obtain an OAuth 2.0 access token and refresh token. It is also used to refresh the token.
+
+    * **Client ID**: (Mandatory) Used to identify the ODC app when it requests authorization and access tokens from the OAuth 2.0 authorization server such as Google or Microsoft.
+
+    * **Client Secret**: (Mandatory) Secure credential used along with the client id to identify the ODC app when it requests authorization and access tokens from the OAuth 2.0 authorization server.
+
+    * **Scopes**: The level of permission and access granted to the ODC app for the email account.
+    The access token issued to the app by the authorization server is only valid for the permissions defined by the scopes. For example, the default scope for Microsoft Exchange is `https://outlook.office365.com/.default`, which provides broad access to read emails, send emails, and access all mailboxes.
+
+      <div class="info" markdown="1">
+
+      Different email providers might define their own scopes for SMTP access. You must consult the documentation of the specific provider you are using to identify the correct scope(s) required for sending emails via SMTP using OAuth 2.0.
+
+      </div>
+
+    For **Basic** authentication, enter the **Username** and **Password** to authenticate.
+
+1. Enter the email address and name of the sender.
 
 1. Click **Save** to save your configuration. The change applies to all apps automatically.
 
+At any time you can modify these settings for that stage by clicking **Edit**.
+
 ## Create a test list
 
-ODC enables you to create email test lists, which are very useful for testing. For each app that uses the email feature, you can create an email test list. This list of email addresses gets used whenever your app sends an email. For example, if you have an app in development, and want to test a feature you can send an email to your test list team. You configure your app in the ODC Portal using the App configurations screen. To use the test list you must set the toggle to **active**.
+You can create email test lists, which are helpful for testing email functionality in your apps. For every app that uses email, you can set up a dedicated test list - a group of email addresses that receives all outgoing emails during testing.
+
+For example, if you're developing an app and want to test an email feature, the app sends messages to the addresses in the test list instead of real users.
+
+You can configure this in the ODC Portal under the app **Configurations** screen. To activate the test list for your app, turn on the Active toggle.
 
 <div class="info" markdown="1">
 
@@ -62,17 +122,18 @@ If your email test list is inactive, the email configuration uses the email list
 
 To create a test list:
 
-1. From the ODC Portal, select your App.
-1. On the Configuration page, open the email section.
+1. From the ODC Portal, select your app.
+
+1. On the **Configuration** page, open the email section.
+
 1. Click on the Test list and then click **Edit**. The test list opens.
+
 1. From the list you can add or remove users and then use the toggle to activate the list.  
+
 1. Click **Save**. Remember the test list must be set to **Active** to use it.
 
-## Modify an email configuration
+## Related resources
 
-You can make changes to an email configuration on a stage.
+* [Emails](../building-apps/sending-emails/intro.md)
 
-1. To change an email configuration, go to ODC Portal and select **Configurations** > **Email**.
-1. Locate the configuration you want to change and click **Edit**.  
-1. Select or verify the stage.
-1. Make the change, and click **Save**. The change applies to all apps automatically.
+* [Sending emails](../building-apps/sending-emails/sending.md)

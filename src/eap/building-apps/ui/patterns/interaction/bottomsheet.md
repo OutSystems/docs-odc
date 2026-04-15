@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - add-widget-ui-pattern
 ---
 
 # Bottom Sheet
@@ -22,6 +24,12 @@ coverage-type:
 <div class="info" markdown="1">
 
 Applies to Mobile Apps only.
+
+</div>
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
 
 </div>
 
@@ -45,7 +53,7 @@ In this example, we create a button that opens and closes the Bottom Sheet widge
 
     ![Screenshot of the Bottom Sheet widget with TopBar and Content placeholders in ODC Studio](images/bottomsheet-placeholder-ss.png "Bottom Sheet Widget Placeholder")
 
-1. Add the relevant content to the TopBar and Content placeholders. 
+1. Add the relevant content to the TopBar and Content placeholders.
 
     ![Screenshot showing the addition of text, icon, and a close button to the Bottom Sheet widget placeholders](images/bottomsheet-content-ss.png "Adding Content to Bottom Sheet widget")
 
@@ -79,14 +87,14 @@ In this example, we create a button that opens and closes the Bottom Sheet widge
 
     ![Screenshot of the Properties tab showing the customization options for the Bottom Sheet pattern](images/bottomsheet-properties-ss.png "Customizing Bottom Sheet widget Properties")
 
-After following these steps and publishing the app, you can test the pattern in your app. 
+After following these steps and publishing the app, you can test the pattern in your app.
 
 ![Image of the Bottom Sheet pattern as it appears in the published mobile app](images/bottomsheet-resultapp.png "Bottom Sheet in Published App")
 
 ## Properties
 
-| Property                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Shape (Shape Identifier): Optional | Set the Bottom Sheet shape. The predefined options are SoftRounded, Rounded, and Sharp. For example, Entities.Shape.Rounded inherits the rounded style. This is the default shape.                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ShowHandler (Boolean): Optional    | Set to True to display a handler above the Bottom Sheet. The default value is True.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| ExtendedClass (Text): Optional     | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <br/>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
+| Property | Description |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Shape (Shape Identifier): Optional | Set the Bottom Sheet shape. The predefined options are SoftRounded, Rounded, and Sharp. For example, Entities.Shape.Rounded inherits the rounded style. This is the default shape. |
+| ShowHandler (Boolean): Optional | Set to True to display a handler above the Bottom Sheet. The default value is True. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <br/>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |

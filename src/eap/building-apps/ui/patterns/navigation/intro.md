@@ -1,6 +1,6 @@
 ---
-tags: navigation, mobile apps, reactive web apps, outsystems data cloud
-summary: Learn about navigation for mobile and reactive web apps on OutSystems Data Cloud (ODC).
+tags: navigation, mobile apps, reactive web apps
+summary: Learn about navigation for mobile and reactive web apps on OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: 05acc388-98c5-4a5b-aeea-f3c4ea11b16a
 app_type: mobile apps, reactive web apps
@@ -15,4 +15,3 @@ outsystems-tools:
   - odc portal
 ---
 # Navigation
-

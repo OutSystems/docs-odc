@@ -49,7 +49,7 @@ To add a custom data source, follow these steps:
    * **Description** - (Optional) Description of the data source.
 
    * **Endpoint** - URL of custom-built data connecter.
-   
+
 1. Click **Add header**
 
 1. Enter the authentication header details:
@@ -64,7 +64,7 @@ The custom data source is added to your configurations.
 
 ## Build a data connector
 
-1. Add your data to an AI search service provider of your choice. 
+1. Add your data to an AI search service provider of your choice.
 
 1. Build a data connector to that service in compliance with the OutSystems API contract
 

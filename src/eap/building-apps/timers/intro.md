@@ -14,13 +14,15 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+topic:
+  - process-data-timers
 ---
 
 # Use Timers
 
 You can use **Timers** to execute asynchronous logic in your OutSystems application. This is useful when running batch tasks like sending emails at a predetermined time, or when executing logic to configure an application after its deployment.
 
-## How Timers work 
+## How Timers work
 
 In OutSystems Developer Cloud (ODC), OutSystems implements timers using the underlying container infrastructure and its job scheduler features (cron jobs).
 
@@ -31,16 +33,20 @@ When you first publish an application, ODC creates a background job and the asso
 * Startup date
 * Status of other control properties
 
-The Timer manager container service listens for the creation of the Timer resources which specifies the Timer's type and its schedule (either on-demand or scheduled). The Timer manager also starts the job container that remotely calls the Application business logic specified in the OutSystems Timer. The Timer manager also updates the status and control properties of the Timer resources along its lifecycle.
+The timer manager container service listens for the creation of the Timer resources which specifies the Timer's type and its schedule (either on-demand or scheduled). The timer manager also starts the job container that remotely calls the app business logic specified in the Timer. The timer manager also updates the status and control properties of the Timer resources along its lifecycle.
+
+While distinct timers can run concurrently, the timer manager service ensures that only one instance of each timer runs at a time, preventing concurrency issues such as deadlocks.
 
 The container infrastructure triggers the background jobs that have the schedule type of **scheduled**. The Timer manager service triggers jobs that have the schedule type of **on-demand**.
 
-From ODC Portal, using the **Wake** function, you can launch on-demand timers asynchronously. The **Wake** function creates an event that the Timer manager uses to start the Timer job.
+From ODC Portal, using **Run now**, you can launch on-demand timers asynchronously. This creates an event that the Timer manager uses to start the Timer job.
 
 ## Timers timeout
 
-By default, the timeout of a Timer is set to 20 minutes. You can change the timeout using the **Timeout in Minutes** property of the Timer. There is a [maximum value](../../getting-started/system-requirements.md#timers-timeout).
+By default, a Timer has a timeout of 20 minutes, which you can change using its **Timeout in Minutes** property. The [maximum value](../../getting-started/system-requirements.md#platform-limits) that you can set for timer execution timeout is defined by the ODC platform limits.
 
-If the action associated with a Timer doesn't end within a predefined time, the action aborts and the Timer stops. This is an error. The timer tries to execute three more times. The number of retries isn't configurable.
+If the Timer’s action doesn’t complete within the specified timeout, the action aborts, timer stops, and an error is logged. The timer then automatically retries up to three times. This timer retry count cannot be changed.
 
-For queries inside timer logic, the **Server Request Timeout** property has a [maximum value](../../getting-started/system-requirements.md#timers-timeout).
+Each timer retry resets the timeout period, so the total timer execution time can exceed the original timeout. In the worst case, the timer could run up to four times the defined timeout  which includes the initial attempt and 3 retries.
+
+For queries inside timer logic, the **Server Request Timeout** property has a [maximum value](../../getting-started/system-requirements.md#platform-limits).

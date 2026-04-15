@@ -15,9 +15,17 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - add-widget-ui-pattern
 ---
 
 # Range Slider
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
 
 You can use the Range Slider UI Pattern to allow users select a single value between two range values. This pattern enables the adjustment of content within a predetermined range. Moving the slider along the track increases or decreases the value.  
 
@@ -43,8 +51,8 @@ In this example, we create a Range Slider that allows the user select the number
 
     ![Dragging the Range Slider widget into the Main Content area of an application screen](images/rangeslider-dragwidget-ss.png "Dragging Range Slider Widget")
 
-1. On the **Properties** tab, enter the mandatory minimum, maximum, and starting values. 
-    
+1. On the **Properties** tab, enter the mandatory minimum, maximum, and starting values.
+
     In this example, we add static values.
 
     ![Entering mandatory minimum, maximum, and starting values for the Range Slider in the Properties tab](images/rangeslider-prop-vals-ss.png "Adding Mandatory Values to Range Slider")
@@ -75,7 +83,7 @@ In this example, we create a Range Slider that allows the user select the number
 
     ![Setting the Assign action variables and values in the client action for the Range Slider](images/rangeslider-assign-ss.png "Setting Assign Variables and Values")
 
-1.  You can configure the Range Slider by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties, for example, the size. For more configurations, expand the **OptionalConfigs** property.
+1. You can configure the Range Slider by selecting the pattern, and on the **Properties** tab, set the relevant (optional) properties, for example, the size. For more configurations, expand the **OptionalConfigs** property.
 
     ![Configuring optional properties of the Range Slider on the Properties tab](images/rangeslider-properties-ss.png "Configuring Range Slider Properties")
 
@@ -83,17 +91,16 @@ After following these steps and publishing the app, you can test the pattern in 
 
 ## Properties
 
-| Property                                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| MinValue (Decimal): Mandatory                         | Slider's minimum value.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| MaxValue (Decimal): Mandatory                         | Slider's maximum value.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| StartingValue (Decimal): Mandatory                    | Value selected by default when the page is rendered. Must be between min and max values.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| Orientation (Orientation Identifier): Optional        | Sets the Range Slider direction. Default value is horizontal.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Size (Text): Optional                                 | Sets the Range Slider size. If horizontal, the size is the width. Otherwise (vertical), the size is the height.  Accepts any kind of unit (px, %, vw). Default value is 100%.                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ExtendedClass (Text): Optional                        | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
-| OptionalConfigs.ShowFloatingLabel (Boolean): Optional | Set to True to add a floating label above the handler. Default value is False.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| OptionalConfigs.Step (Decimal): Optional              | Slider moves in increments of steps. If the step is set to 10, the slider increases or decreases in units of 10, for example, 0 to 10, to 20, to 30, and so on.                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| OptionalConfigs.ShowTickMarks (Boolean): Optional     | Set to True to display tick marks below the slider. Default value is False. To generate the tick marks, you must set the TickMarksInterval to True.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| OptionalConfigs.TickMarksInterval (Integer): Optional | Range interval after which a tick mark is displayed (when ShowTickMarks is set to True). For example, if TickMarksInterval = 5, a tick mark is shown for each 5 steps. The value cannot be less than 0 (library restraint).                                                                                                                                                                                                                                                                                                                                                                                                             |
-| OptionalConfigs.IsDisabled (Boolean): Optional        | Set as True to disable the Range Slider. Default value is False.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-
+| Property | Description |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MinValue (Decimal): Mandatory | Slider's minimum value. |
+| MaxValue (Decimal): Mandatory | Slider's maximum value. |
+| StartingValue (Decimal): Mandatory | Value selected by default when the page is rendered. Must be between min and max values. |
+| Orientation (Orientation Identifier): Optional | Sets the Range Slider direction. Default value is horizontal. |
+| Size (Text): Optional | Sets the Range Slider size. If horizontal, the size is the width. Otherwise (vertical), the size is the height.  Accepts any kind of unit (px, %, vw). Default value is 100%. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
+| OptionalConfigs.ShowFloatingLabel (Boolean): Optional | Set to True to add a floating label above the handler. Default value is False. |
+| OptionalConfigs.Step (Decimal): Optional | Slider moves in increments of steps. If the step is set to 10, the slider increases or decreases in units of 10, for example, 0 to 10, to 20, to 30, and so on. |
+| OptionalConfigs.ShowTickMarks (Boolean): Optional | Set to True to display tick marks below the slider. Default value is False. To generate the tick marks, you must set the TickMarksInterval to True. |
+| OptionalConfigs.TickMarksInterval (Integer): Optional | Range interval after which a tick mark is displayed (when ShowTickMarks is set to True). For example, if TickMarksInterval = 5, a tick mark is shown for each 5 steps. The value cannot be less than 0 (library restraint). |
+| OptionalConfigs.IsDisabled (Boolean): Optional | Set as True to disable the Range Slider. Default value is False. |

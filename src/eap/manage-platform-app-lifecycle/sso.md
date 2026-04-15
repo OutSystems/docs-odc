@@ -17,6 +17,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - external-idps
 ---
 
 # Single sign-on

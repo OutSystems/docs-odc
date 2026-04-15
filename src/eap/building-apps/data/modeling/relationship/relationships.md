@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - data-relationships
 ---
 
 # Relationships between entities
@@ -22,7 +24,7 @@ This article introduces the concepts of relationships between entities.
 
 When you move your data model design from the conceptual phase to the logical phase, you must define the type of relationship that exists between the entities. Go to [Data modeling](../../modeling.md) for more information on the different phases of data model design.
 
-By default, OutSystems Developer Cloud (ODC) automatically creates an entity with the `Id` attribute. The `Id` attribute uniquely identifies each record in the entity. It's the primary key in the physical data model. 
+By default, OutSystems Developer Cloud (ODC) automatically creates an entity with the `Id` attribute. The `Id` attribute uniquely identifies each record in the entity. It's the primary key in the physical data model.
 
 Developers create an entity relationship between entity A and entity B by changing the **Data Type** of an attribute in entity B to `<entity A> Id`. In OutSystems this attribute in entity B is called the reference attribute. It's the foreign key in the physical data model. When a developer defines a reference attribute, OutSystems automatically creates:
 
@@ -86,7 +88,11 @@ Referential integrity refers to the consistency of the relationships between ent
 
 When you create a relationship between entity A and entity B, you must specify the referential integrity that you want to apply in your data model. You define what must happen in entity B if the corresponding record in entity A is deleted. In ODC, this behavior is defined by the value of the **Delete Rule** property of the reference attribute. By default, the **Delete Rule** is set to **Protect** for entities in the same app but you can change it according to the desired behavior.
 
+<div class="info" markdown="1">
+
 Relationships between entities in different apps works differently. The **Delete rule** is always set to **Ignore**.
+
+</div>
 
 ### Protect  
 

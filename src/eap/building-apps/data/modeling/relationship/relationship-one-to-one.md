@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - data-relationships
 ---
 
 # Create a One-to-One Relationship
@@ -28,7 +30,6 @@ To create a one-to-one relationship to an existing entity:
 1. [Create an Entity](../entity-create.md).
 1. Change the `Id` attribute to be the identifier of the entity you want to extend.
 1. Add the attributes.
-
 
 ## Example
 
@@ -57,4 +58,3 @@ Since we are using the `User` system entity to store the end-users it is not pos
 ![Entity diagram showing the one-to-one relationship between User and Profile entities with attributes Twitter, Facebook, and Photo](images/one-to-one-relationship-1.png "One-to-One Relationship Entity Diagram")
 
 As a result, you have the `Profile` entity extending the `User` entity. Every time a `Profile` record is created its identifier should have the value of the `User` record identifier it belongs to.
-

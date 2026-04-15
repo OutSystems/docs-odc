@@ -60,7 +60,7 @@ yourClientAsyncAction().then(function() {
 
 Parameters:
 
-* **category**: string<br/>A string that allows error logs to be grouped together. This is useful when you have multiple calls to `error()` in different parts of your application. 
+* **category**: string<br/>A string that allows error logs to be grouped together. This is useful when you have multiple calls to `error()` in different parts of your application.
 * **messageOrError**: string \| Error<br/>Error or message to log.
 * (Optional) **error**: Error<br/>Error object.
 
@@ -78,4 +78,3 @@ Parameters:
 * **message**: string<br/>The message to be logged.
 
 Returns: void
-

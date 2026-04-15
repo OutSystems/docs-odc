@@ -25,7 +25,7 @@ For performance, the OutSystems query optimizer ensures that the output of Aggre
 
 ## Why is this happening?
 
-This occurs because the Count property of an Aggregate or SQL query results were returned. 
+This occurs because the Count property of an Aggregate or SQL query results were returned.
 
 ## How to fix
 

@@ -18,7 +18,7 @@ outsystems-tools:
 ---
 # Reminder comments
 
-A comment is set as a reminder. 
+A comment is set as a reminder.
 
 ## Impact
 
@@ -32,6 +32,6 @@ The comment has the **Is Reminder** property set to Yes. ODC Studio automaticall
 
 ## How to fix
 
-Resolve the issue or finish the task related to the reminder comment. When completed, remove the comment or change **Is Reminder** to No. 
+Resolve the issue or finish the task related to the reminder comment. When completed, remove the comment or change **Is Reminder** to No.
 
 **Note:** Removing the keywords (TODO, TBD, REMINDER) from the comment doesn't automatically set the **Is Reminder** property to No.

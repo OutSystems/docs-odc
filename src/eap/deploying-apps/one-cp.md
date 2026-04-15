@@ -33,7 +33,7 @@ OutSystems Developer Cloud (ODC) automates app publishing with its 1-Click Publi
 When you deploy your app from the Development stage to the QA stage, ODC follows these steps:
 
 1. ODC grabs the container image for the specified version of the app.
-1. ODC updates app configurations for the QA stage as per your updates in the ODC Portal. 
+1. ODC updates app configurations for the QA stage as per your updates in the ODC Portal.
 1. ODC retrieves the container image of the app version and integrates the updated configurations.
 
 ## Publishing a library
@@ -44,4 +44,3 @@ When you click the 1-Click Publish button to publish a library, ODC initiates th
 1. The ODC compiler stores the compiled library build and integrates it into the container image.
 
 Libraries within ODC do not handle data management or generate database scripts, as ODC doesn't deploy libraries into containers. Instead, libraries define static entities that function as enumerations without query capabilities.
- 

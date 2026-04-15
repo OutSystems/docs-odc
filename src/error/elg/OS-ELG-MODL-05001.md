@@ -1,5 +1,5 @@
 ---
-summary: No valid .NET 8 assembly found in your file.
+summary: File does not contain a valid compiled external library, or the compiled assembly was not built using a supported .NET version.
 tags: .net 8, assembly validation, mobile app development, application publishing, troubleshooting
 guid: 007f935e-fade-46ab-8058-61d57f294bc1
 locale: en-us
@@ -20,11 +20,11 @@ coverage-type:
 
 ## Error message
 
-`No valid .NET 8 assembly found in your file.`
+`File does not contain a valid compiled external library, or the compiled assembly was not built using a supported .NET version.`
 
 ## Cause
 
-No valid .NET 8 assembly found in your file.
+File does not contain a valid compiled external library, or the compiled assembly was not built using a supported .NET version.
 
 ## Impact
 

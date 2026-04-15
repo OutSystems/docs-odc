@@ -14,9 +14,17 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - customize-app-styles
 ---
 
 # Customize UI styles
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
 
 Users interact with your apps through the user interface (UI). As a developer, your goal is to follow UI standards defined by your organization but also to create an app that looks good and is easy to use.
 

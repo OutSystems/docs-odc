@@ -32,7 +32,6 @@ This issue occurs because identity information is retrieved on the client side a
 
 ![Screenshot showing the usage of the GetUserId function in a server action.](images/odcs-getuserid.png "GetUserId function usage example")
 
-
 ## How to fix
 
 Identity information should be obtained on server calls using functions like `GetUserId` and executed on the server, never sent as a regular action parameter. Performing `GetUserId` on the server ensures proper identity flow, is secure, and can’t be manipulated.

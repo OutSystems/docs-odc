@@ -30,11 +30,17 @@ For SEO purposes and end-user friendliness, allow an end-user to navigate to a r
 
 Achieve this by using a reverse proxy or CDN.
 
+<div class="warning" markdown="1">
+
+Due to technical limitations you can't use **Amazon CloudFront** for this workaround.
+
+</div>
+
 Refer to [Improve SEO with prerendering](improve-seo-prerendering.md#domain) which outlines how to configure the reverse proxy Nginx in front of ODC.
 
 Using a reverse proxy or CDN, you can redirect a root domain or other subdomain, e.g., example.com to a default ODC app located at `www.example.com/appx/home` (`{domain}/{app}/{screen}`).
 
-The following snippet is an example of how to achieve this using Nginx reverse proxy: 
+The following snippet is an example of how to achieve this using Nginx reverse proxy:
 
 Modify the file `nginx/sites-available/default`
 

@@ -18,16 +18,16 @@ coverage-type:
   - remember
 ---
 
-# Add a custom AI model 
+# Add a custom AI model
 
-You can add a custom AI model to the AI Agent Builder to support any Large Language Model (LLM). A custom model allows you to fine-tune and tailor the model's behavior. This customization can enhance performance and improve accuracy. 
+You can add a custom AI model to the AI Agent Builder to support any Large Language Model (LLM). A custom model allows you to fine-tune and tailor the model's behavior. This customization can enhance performance and improve accuracy.
 
 ## Prerequisites
 
 To integrate a custom AI model, ensure you:
 
-- Build an AI model connector in compliance with the [API contract](aiab-custom-model-api-contract.md) established by OutSystems.
-- Gain access to the AI Agent Builder app with the Configurator role assigned in the ODC portal.
+* Build an AI model connector in compliance with the [API contract](aiab-custom-model-api-contract.md) established by OutSystems.
+* Gain access to the AI Agent Builder app with the Configurator role assigned in the ODC portal.
 
 ## Add a custom AI Model
 
@@ -51,10 +51,12 @@ You can add more endpoints and adjust their priority level order. You can edit t
 To build an AI model connector, follow these steps:
 
 1. Build the AI model connector for your LLM service according to the OutSystems API contract.
-  * Set up the endpoints to be accessible via HTTP(S). You can either make the endpoint publicly discoverable or use a Private Gateway. To learn more, refer to [Configure a private gateway](../../../manage-platform-app-lifecycle/private-gateway.md)
-  * Ensure that AI model endpoints are synchronous, as the AI Agent Builder does not support asynchronous requests (streaming).
-  * Implement authentication schemes for your REST endpoints.
-2. Authenticate and integrate your AI model connector with the AI Agent Builder.
+
+   * Set up the endpoints to be accessible via HTTP(S). You can either make the endpoint publicly discoverable or use a Private Gateway. To learn more, refer to [Configure a private gateway](../../../manage-platform-app-lifecycle/private-gateway.md)
+   * Ensure that AI model endpoints are synchronous, as the AI Agent Builder does not support asynchronous requests (streaming).
+   * Implement authentication schemes for your REST endpoints.
+
+1. Authenticate and integrate your AI model connector with the AI Agent Builder.
 
 For more information about the OutSystems API contract, refer to [OutSystems API Contract](aiab-custom-model-api-contract.md).
 
@@ -62,17 +64,17 @@ For more information about the OutSystems API contract, refer to [OutSystems API
 
 The following are the parameters to add a custom AI model,
 
-| Parameter name| Description | Notes |
-|--|----|--|
-| Name(AI model)  | An identifiable name for the AI model. | |
-| Id              | Identifier for the AI model, Auto-filled with the Name field without blank spaces. You can also edit the field. |  |
-| Description     |  Description of the AI model. | Optional |
-| Name (endpoint) | An identifiable name for the endpoint. |  |
-| Endpoint URL    | URL of the custom-built AI model connector. | |
-| Status          | The current state of the AI model.  | Optional |
-| Priority        | The priority level of the endpoint determines the order in which the agent utilizes it. For example, A priority 1 endpoint is used first. If it experiences an outage, the priority 2 endpoint takes over to prevent downtime.  | The first endpoint you add is always assigned the first priority. |
-| Name (header)   | The name of the header  | |
-| Value           | The value of the header | |
+| Parameter name | Description | Notes |
+| -- | ---- | -- |
+| Name(AI model) | An identifiable name for the AI model. | |
+| Id | Identifier for the AI model, Auto-filled with the Name field without blank spaces. You can also edit the field. | |
+| Description | Description of the AI model. | Optional |
+| Name (endpoint) | An identifiable name for the endpoint. | |
+| Endpoint URL | URL of the custom-built AI model connector. | |
+| Status | The current state of the AI model. | Optional |
+| Priority | The priority level of the endpoint determines the order in which the agent utilizes it. For example, A priority 1 endpoint is used first. If it experiences an outage, the priority 2 endpoint takes over to prevent downtime. | The first endpoint you add is always assigned the first priority. |
+| Name (header) | The name of the header | |
+| Value | The value of the header | |
 
 ## Next steps
 

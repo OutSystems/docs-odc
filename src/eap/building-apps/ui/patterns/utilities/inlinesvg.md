@@ -19,6 +19,12 @@ coverage-type:
 
 # Inline SVG
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 You can use the Inline SVG UI Pattern to change fill and stroke properties or animate the SVG paths.
 
 **How to use the Inline SVG UI Pattern**
@@ -34,16 +40,16 @@ You can use the Inline SVG UI Pattern to change fill and stroke properties or an
     1. In the Toolbox, click **Search in other modules**.
 
     1. In **Search in other Modules**, remove any spaces between words in your search text.
-    
-    1. Select the widget you want to add from the **OutSystemsUI** module, and click **Add Dependency**. 
-    
+
+    1. Select the widget you want to add from the **OutSystemsUI** module, and click **Add Dependency**.
+
     1. In the Toolbox, search for the widget again.
 
 1. From the Toolbox, drag the Inline SVG widget into the Main Content area of your application's screen.
 
     ![Screenshot showing how to drag the Inline SVG widget into the main content area of an application screen](images/inlinesvg-3-ss.png "Dragging Inline SVG Widget into Main Content Area")
 
-1. On the **Properties** tab, in the **SVGCode** property, set your SVG code. 
+1. On the **Properties** tab, in the **SVGCode** property, set your SVG code.
 
     In this example, we enter the following:
 
@@ -63,7 +69,7 @@ Using the example above, the results are as follows:
 
 ## Properties
 
-| Property                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SVGCode (Text): Optional       | SVG markup code that is appended onto the HTML.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Property | Description |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SVGCode (Text): Optional | SVG markup code that is appended onto the HTML. |
 | ExtendedClass (Text): Optional | <p>Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.</p> <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |

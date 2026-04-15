@@ -99,4 +99,3 @@ Parameters:
 * **total**: number - the total number of files to upgrade.
 
 Returns: void
-

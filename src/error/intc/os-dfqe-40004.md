@@ -39,7 +39,7 @@ Enter the correct username and password.
 Input the correct environment server/hostname without a protocol or path. Use the following examples as guidance.
 
 * Correct: mydevenv.outsystems.com
-* Incorrect: https://mydevenv.outsystems.com
+* Incorrect: <https://mydevenv.outsystems.com>
 * Incorrect: mydevenv.outsystems.com/XE
 
 ### Wrong database
@@ -123,7 +123,7 @@ Enter the correct username and password.
 Enter the correct environment server/hostname without a protocol or path. Use the following examples as guidance.
 
 * Correct: mydevenv.outsystems.com
-* Incorrect: https://mydevenv.outsystems.com
+* Incorrect: <https://mydevenv.outsystems.com>
 * Incorrect: mydevenv.outsystems.com/XE
 
 ### Wrong database
@@ -188,7 +188,7 @@ Enter the correct API key.
 1. Enter the SAP server domain without a protocol or path. Use the following examples as guidance.
 
 * Correct: mydevenv.outsystems.com
-* Incorrect: https://mydevenv.outsystems.com
+* Incorrect: <https://mydevenv.outsystems.com>
 * Incorrect: mydevenv.outsystems.com/XE
 
 1. Verify the status of the SAP server domain with your IT department. If the server is online, you may need to configure a private gateway to allow connections from ODC to your server. For more information, see [private gateways](../../eap/manage-platform-app-lifecycle/private-gateway.md).

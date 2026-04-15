@@ -1,0 +1,1376 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Asset Configurations API",
+    "description": "REST endpoints to get and update global environment settings and to manage configuration for individual agents and applications.\n",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://ODC_PORTAL_DOMAIN/api/asset-configurations/v1",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/asset-configurations/v1",
+      "description": "Replace {odc-portal-domain} with the domain of your organization.",
+      "variables": {
+        "odc-portal-domain": {
+          "default": "ODC_PORTAL_DOMAIN",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "security": [{
+    "bearerAuth": []
+  }],
+  "paths": {
+    "/environments/{environmentKey}/agents/{agentKey}/revisions/deployed/configurations": {
+      "get": {
+        "tags": [],
+        "summary": "Gets the configurations of an agent.",
+        "description": "Returns the agent configurations for the deployed revision.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "AssetConfiguration_GetAgentDeployedConfiguration",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "agentKey",
+            "in": "path",
+            "description": "The agent's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Comma-separated list of fields to include. Allowed values: systemConfigurations, settings, timers, integrations, libraries.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "showBinaryValues",
+            "in": "query",
+            "description": "Specifies whether to return the binary values.",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentConfigResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/agents/{agentKey}/revisions/{baselineRevision}/configurations": {
+      "get": {
+        "tags": [],
+        "summary": "Gets the configurations of an agent revision.",
+        "description": "Returns the configurations for a specific revision of an agent.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "AssetConfiguration_GetAgentRevisionConfiguration",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "agentKey",
+            "in": "path",
+            "description": "The agent's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Comma-separated list of fields to include. Allowed values: systemConfigurations, settings, timers, integrations, libraries.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "baselineRevision",
+            "in": "path",
+            "description": "The agent revision.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "showBinaryValues",
+            "in": "query",
+            "description": "Specifies whether to return the binary values.",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentConfigResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/applications/{applicationKey}/revisions/deployed/configurations": {
+      "get": {
+        "tags": [],
+        "summary": "Gets the configurations of an app.",
+        "description": "Returns the app configurations for the deployed revision.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "AssetConfiguration_GetApplicationDeployedConfiguration",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "path",
+            "description": "The app's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Comma-separated list of fields to include. Allowed values: systemConfigurations, settings, timers, integrations, libraries.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "showBinaryValues",
+            "in": "query",
+            "description": "Specifies whether to return the binary values.",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationConfigResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/applications/{applicationKey}/revisions/{baselineRevision}/configurations": {
+      "get": {
+        "tags": [],
+        "summary": "Gets the configurations of an app revision.",
+        "description": "Returns the app configurations for a given revision.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "AssetConfiguration_GetApplicationRevisionConfiguration",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "path",
+            "description": "The app's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Comma-separated list of fields to include. Allowed values: systemConfigurations, settings, timers, integrations, libraries.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "baselineRevision",
+            "in": "path",
+            "description": "The app revision.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "showBinaryValues",
+            "in": "query",
+            "description": "Specifies whether to return the binary values.",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationConfigResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/agents/{agentKey}/configurations": {
+      "patch": {
+        "tags": [],
+        "summary": "Updates the configurations of an agent.",
+        "description": "Updates the configuration values for an agent. Only the provided elements are changed.\n\nAPI Client needs the **Configuration management > Edit configurations** permission for the target environment (stage).",
+        "operationId": "AssetConfiguration_PatchAgent",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "agentKey",
+            "in": "path",
+            "description": "The agent's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Configurations to patch in",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AgentConfigPatch"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AgentConfigPatch"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Edit configurations** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/applications/{applicationKey}/configurations": {
+      "patch": {
+        "tags": [],
+        "summary": "Updates the configurations of an app.",
+        "description": "Updates the configuration values for an app. Only the provided elements are changed.\n\nAPI Client needs the **Configuration management > Edit configurations** permission for the target environment (stage).",
+        "operationId": "AssetConfiguration_PatchApplication",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "path",
+            "description": "The app's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Configurations to patch in",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/ApplicationConfigPatch"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/ApplicationConfigPatch"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Edit configurations** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/default-system-configurations": {
+      "get": {
+        "tags": [],
+        "summary": "Gets the default system configurations for an environment (stage)",
+        "description": "Returns the default system configurations for an environment (stage).\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "EnvironmentConfiguration_Get",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentConfigResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      },
+      "patch": {
+        "tags": [],
+        "summary": "Updates the default system configurations of an environment (stage).",
+        "description": "Updates the default system configuration values for an environment. Only the provided elements are changed.\n\nTo update configurations, API Client needs the **Configuration management > Edit configurations** permission for the target environment (stage).\n\nTo update email configurations, API Client needs the **Configuration management > Manage Email SMTP configuration** permission for the target environment (stage).",
+        "operationId": "EnvironmentConfiguration_Patch",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Environment configurations to be changed",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/EnvironmentConfigPatch"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/EnvironmentConfigPatch"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "To update configurations, API Client needs the **Configuration management > Edit configurations** permission for the target environment (stage).\n\nTo update email configurations, API Client needs the **Configuration management > Manage Email SMTP configuration** permission for the target environment (stage)."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AgentConfigPatch": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "revisionBaseline": {
+            "type": "integer",
+            "description": "The asset's revision.",
+            "format": "int32",
+            "nullable": true
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigPatch"
+            },
+            "description": "The asset's settings.",
+            "nullable": true
+          },
+          "timers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TimerPatch"
+            },
+            "description": "Timer configurations",
+            "nullable": true
+          },
+          "integrations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationPatch"
+            },
+            "description": "Integration configurations",
+            "nullable": true
+          },
+          "libraries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LibraryConfigPatch"
+            },
+            "description": "Libraries configurations",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AgentConfigResult": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the configuration",
+            "nullable": true
+          },
+          "revisionBaseline": {
+            "type": "integer",
+            "description": "Revision of the application",
+            "format": "int32",
+            "nullable": true
+          },
+          "revisionDeployed": {
+            "type": "integer",
+            "description": "Revision deployed of the application",
+            "format": "int32",
+            "nullable": true
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigResult"
+            },
+            "description": "Settings of the application",
+            "nullable": true
+          },
+          "timers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TimerResult"
+            },
+            "description": "Timer configurations",
+            "nullable": true
+          },
+          "integrations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationResult"
+            },
+            "description": "Integration configurations",
+            "nullable": true
+          },
+          "libraries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LibraryConfigResult"
+            },
+            "description": "Libraries configurations",
+            "nullable": true
+          },
+          "deployedAt": {
+            "type": "string",
+            "description": "Date of the last deployment of the configuration",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApplicationConfigPatch": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "revisionBaseline": {
+            "type": "integer",
+            "description": "The asset's revision.",
+            "required": true,
+            "format": "int32",
+            "nullable": true
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigPatch"
+            },
+            "description": "The asset's settings.",
+            "nullable": true
+          },
+          "timers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TimerPatch"
+            },
+            "description": "Timer configurations",
+            "nullable": true
+          },
+          "integrations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationPatch"
+            },
+            "description": "Integration configurations",
+            "nullable": true
+          },
+          "libraries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LibraryConfigPatch"
+            },
+            "description": "Libraries configurations",
+            "nullable": true
+          },
+          "systemConfigurations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigPatch"
+            },
+            "description": "System Configurations for the Environment configurations",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApplicationConfigResult": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the configuration",
+            "nullable": true
+          },
+          "revisionBaseline": {
+            "type": "integer",
+            "description": "Revision of the application",
+            "format": "int32",
+            "nullable": true
+          },
+          "revisionDeployed": {
+            "type": "integer",
+            "description": "Revision deployed of the application",
+            "format": "int32",
+            "nullable": true
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigResult"
+            },
+            "description": "Settings of the application",
+            "nullable": true
+          },
+          "timers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TimerResult"
+            },
+            "description": "Timer configurations",
+            "nullable": true
+          },
+          "integrations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationResult"
+            },
+            "description": "Integration configurations",
+            "nullable": true
+          },
+          "libraries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LibraryConfigResult"
+            },
+            "description": "Libraries configurations",
+            "nullable": true
+          },
+          "deployedAt": {
+            "type": "string",
+            "description": "Date of the last deployment of the configuration",
+            "format": "date-time",
+            "nullable": true
+          },
+          "systemConfigurations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigResult"
+            },
+            "description": "System Configurations for the Environment configurations",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataType": {
+        "enum": [
+          "Text",
+          "Integer",
+          "LongInteger",
+          "Decimal",
+          "Boolean",
+          "DateTime",
+          "Date",
+          "Time",
+          "PhoneNumber",
+          "Email",
+          "Currency",
+          "EntityIdentifierType",
+          "BinaryUrl"
+        ],
+        "type": "string"
+      },
+      "EnvironmentConfigPatch": {
+        "type": "object",
+        "properties": {
+          "systemConfigurations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigPatch"
+            },
+            "description": "System Configurations for the Environment configurations",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EnvironmentConfigResult": {
+        "type": "object",
+        "properties": {
+          "systemConfigurations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigResult"
+            },
+            "description": "System Configurations for the Environment configurations",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GenericConfigPatch": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key of the value being changed",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "The new value",
+            "nullable": true
+          },
+          "filename": {
+            "type": "string",
+            "description": "For binary values, the original file name, to be stored",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GenericConfigResult": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the configuration",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the configuration",
+            "nullable": true
+          },
+          "dataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DataType"
+              }
+            ],
+            "description": "Type of the configuration",
+            "nullable": true
+          },
+          "defaultValue": {
+            "type": "string",
+            "description": "Default value of the configuration",
+            "nullable": true
+          },
+          "deployedValue": {
+            "type": "string",
+            "description": "Current deployed value of the configuration",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Last set value of the configuration",
+            "nullable": true
+          },
+          "valueOrigin": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Origin"
+              }
+            ],
+            "description": "The origin of the value (e.g: Environment, Application, Library)",
+            "nullable": true
+          },
+          "deployedValueOrigin": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Origin"
+              }
+            ],
+            "description": "The origin of the current deployed value (e.g: Environment, Application, Library)",
+            "nullable": true
+          },
+          "isSecret": {
+            "type": "boolean",
+            "description": "If the configuration is a secret"
+          },
+          "valueSetAfterDeploy": {
+            "type": "boolean",
+            "description": "If a secret was set after the last successful deployment",
+            "nullable": true
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "Date of the last update of the configuration",
+            "format": "date-time",
+            "nullable": true
+          },
+          "filename": {
+            "type": "string",
+            "description": "For binary values, the original file name",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IntegrationPatch": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "configs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigPatch"
+            },
+            "description": "List of configurations properties to patch",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IntegrationResult": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the configuration",
+            "nullable": true
+          },
+          "pluginType": {
+            "type": "string",
+            "description": "The type of the Integration used (e.g: RestConsumer, RestExpose)",
+            "nullable": true
+          },
+          "configs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigResult"
+            },
+            "description": "List of configurations properties",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LibraryConfigPatch": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "revision": {
+            "type": "integer",
+            "description": "The revision of the library being patched",
+            "format": "int32",
+            "nullable": true
+          },
+          "systemConfigurations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigPatch"
+            },
+            "description": "System Configurations for the Environment configurations",
+            "nullable": true
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigPatch"
+            },
+            "description": "Settings of the application",
+            "nullable": true
+          },
+          "integrations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationPatch"
+            },
+            "description": "Integration configurations",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LibraryConfigResult": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the configuration",
+            "nullable": true
+          },
+          "revision": {
+            "type": "integer",
+            "description": "The revision of the library",
+            "format": "int32",
+            "nullable": true
+          },
+          "revisionBaseline": {
+            "type": "integer",
+            "description": "Base revision of the library",
+            "format": "int32",
+            "nullable": true
+          },
+          "systemConfigurations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigResult"
+            },
+            "description": "System Configurations for the Environment configurations",
+            "nullable": true
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigResult"
+            },
+            "description": "Settings of the application",
+            "nullable": true
+          },
+          "integrations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationResult"
+            },
+            "description": "Integration configurations",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Origin": {
+        "enum": [
+          "EnvironmentLevelOverride",
+          "EnvironmentLevelDefault",
+          "ApplicationLevelOverride",
+          "ApplicationLevelDefault",
+          "LibraryLevelOverride",
+          "LibraryLevelDefault"
+        ],
+        "type": "string"
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code applicable to the problem.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation of the error.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem.",
+            "nullable": true
+          },
+          "traceId": {
+            "type": "string",
+            "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
+          }
+        },
+        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+      },
+      "TimerPatch": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "configs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigPatch"
+            },
+            "description": "List of configurations properties to patch",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TimerResult": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the configuration",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the Timer configuration",
+            "nullable": true
+          },
+          "configs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenericConfigResult"
+            },
+            "description": "List of configurations properties",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

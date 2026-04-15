@@ -15,13 +15,21 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - add-widget-ui-pattern
 ---
 
 # Stacked Cards
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 You can use Stacked Cards UI Pattern to add swipeable cards that can be dragged in multiple directions triggering events, such as deny, approve, and archive. This pattern is ideal when you want to individually scan multiple cards.
 
-   ![Example of Stacked Cards UI Pattern in a mobile app interface](images/stackedcards-1.png "Stacked Cards UI Pattern")
+![Example of Stacked Cards UI Pattern in a mobile app interface](images/stackedcards-1.png "Stacked Cards UI Pattern")
 
 ## How to use the Stacked Cards Pattern
 
@@ -86,4 +94,3 @@ After following these steps and publishing the app, you can test the pattern in 
 ## Compatibility with other patterns
 
 Avoid using the Stacked Cards Pattern inside patterns with swipe events / touch events, like [Tabs](../navigation/tabs.md) or [Carousel](carousel.md).
-

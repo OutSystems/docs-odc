@@ -20,6 +20,7 @@ outsystems-tools:
 The default timeout for server action requests is more than 10 seconds, or an explicit timeout in a server call is more than 10 seconds.
 
 ## Impact
+
 Server requests should be efficient. 10 seconds is all it takes for a device to go to sleep mode or lose network connectivity. A high timeout can lead to poor user experience. If the server is slow or unresponsive, the user might have to wait indefinitely for the request to complete.
 
 ## Why is this happening

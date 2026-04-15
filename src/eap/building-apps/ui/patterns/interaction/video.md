@@ -15,9 +15,17 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - add-widget-ui-pattern
 ---
 
 # Video
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
 
 You can use the Video UI pattern to embed a native video player into your application.
 
@@ -32,8 +40,8 @@ You can use the Video UI pattern to embed a native video player into your applic
 1. From the Toolbox, drag the Video widget into the Main Content area of your application's screen.
 
     ![Screenshot showing the Video widget being dragged into the Main Content area of an application screen](images/video-3-ss.png "Dragging Video Widget into Main Content Area")
- 
-1. On the **Properties** tab, set the **VideoURL** property to the source video file you want to embed in your app. 
+
+1. On the **Properties** tab, set the **VideoURL** property to the source video file you want to embed in your app.
 
     * If using an external source file, insert the file URL.
 
@@ -44,7 +52,7 @@ You can use the Video UI pattern to embed a native video player into your applic
         1. On the **Data** tab, right-click the **Resources** folder and select **Import Resource**.
 
             ![Screenshot of the Data tab with the option to Import Resource into the Resources folder](images/video-5-ss.png "Importing Video Resource")
-        
+
         1. Browse and select the video file you want to add and click **Open**.
 
         1. On the **Resource** properties tab, from the **Deploy Action** drop-down, select **Deploy to Target Directory**.
@@ -52,11 +60,11 @@ You can use the Video UI pattern to embed a native video player into your applic
             ![Screenshot of the Resource properties tab with Deploy Action set to Deploy to Target Directory](images/video-6-ss.png "Setting Deploy Action for Video Resource")
 
         1. On the **Interface** tab, from the **Widget Tree**, select the Video pattern.
-       
+
         1. In the **VideoURL** property, enter the runtime path of the video file.
 
             ![Screenshot showing the VideoURL property being set with the runtime path of the video file](images/video-7-ss.png "Entering Runtime Path in VideoURL Property")
-    
+
             **Tip**: You can copy the runtime path from the Resource Runtime Path property tab.
 
             ![Screenshot of the Resource Runtime Path property tab with the runtime path available for copying](images/video-8-ss.png "Copying Runtime Path from Resource Properties")
@@ -65,18 +73,18 @@ You can use the Video UI pattern to embed a native video player into your applic
 
     ![Screenshot of the Video Properties tab with optional properties like height, width, and audio settings](images/video-9-ss.png "Defining Optional Video Properties")
 
-After following these steps and publishing the app, you can test the pattern in your app. 
-       
+After following these steps and publishing the app, you can test the pattern in your app.
+
 ## Properties
 
-| Property                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| VideoURL (Text): Mandatory   | The video file URL or the runtime path of the resource video file.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| PosterURL (Text): Optional   | The URL to the poster image that displays before the video starts.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| Width (Text): Optional       | Width (in pixel or percentage) of the video.<br/><br/>Examples<br/><br/><ul><li>_Blank_ - The video is 100% wide. This is the default value.</li><li>_150_ - The video is 150px wide.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Height (Text): Optional      | Height (in pixel or percentage) of the video.<br/><br/>Examples<br/><br/><ul><li>_Blank_ - The video is 100% high. This is the default value.</li><li>_150_ - The video is 150px high.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Muted (Boolean): Optional    | If True, the video audio is muted. If False, the video audio is not muted. This is the default.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Loop (Boolean): Optional     | If True, the video replays as soon as it ends. If False, the video does not replay. This is the default.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| Controls (Boolean): Optional | If True, the video controls are enabled. If False, the video controls are disabled. This is the default.<br/>**Note** In the case of mobile apps, the controls are always enabled.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| Autoplay (Boolean): Optional | If True, the video starts once the page is loaded. If False, the video doesn't start immediately. This is the default.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ExtendedClass                | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.<br/><br/>Examples<br/><br/><ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
+| Property | Description |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| VideoURL (Text): Mandatory | The video file URL or the runtime path of the resource video file. |
+| PosterURL (Text): Optional | The URL to the poster image that displays before the video starts. |
+| Width (Text): Optional | Width (in pixel or percentage) of the video.<br/><br/>Examples<br/><br/><ul><li>_Blank_ - The video is 100% wide. This is the default value.</li><li>_150_ - The video is 150px wide.</li></ul> |
+| Height (Text): Optional | Height (in pixel or percentage) of the video.<br/><br/>Examples<br/><br/><ul><li>_Blank_ - The video is 100% high. This is the default value.</li><li>_150_ - The video is 150px high.</li></ul> |
+| Muted (Boolean): Optional | If True, the video audio is muted. If False, the video audio is not muted. This is the default. |
+| Loop (Boolean): Optional | If True, the video replays as soon as it ends. If False, the video does not replay. This is the default. |
+| Controls (Boolean): Optional | If True, the video controls are enabled. If False, the video controls are disabled. This is the default.<br/>**Note** In the case of mobile apps, the controls are always enabled. |
+| Autoplay (Boolean): Optional | If True, the video starts once the page is loaded. If False, the video doesn't start immediately. This is the default. |
+| ExtendedClass | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.<br/><br/>Examples<br/><br/><ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |

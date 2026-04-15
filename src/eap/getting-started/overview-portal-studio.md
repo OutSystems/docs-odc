@@ -15,6 +15,7 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - remember
+isautopublish: true
 ---
 
 # UI overview of ODC Portal and ODC Studio
@@ -23,7 +24,7 @@ OutSystems Developer Cloud (ODC) is a cloud-native, low-code development platfor
 
 <div class="info" markdown="1">
 
-You can switch between Dark and Light themes in the ODC Portal and ODC Studio. 
+You can switch between Dark and Light themes in the ODC Portal and ODC Studio.
 
 </div>
 
@@ -32,6 +33,12 @@ You can switch between Dark and Light themes in the ODC Portal and ODC Studio.
 The ODC Portal is a unified console to manage, monitor, and deploy apps, and to manage users and their access. Once you sign in to ODC, the ODC Portal home page displays.
 
 What displays depends on your role. The images for this document are taken by a person with a role that has full access. Your role may have less access to the tools and apps. The following image shows the home screen when you first sign in to the ODC Portal.
+
+<div class="info" markdown="1">
+
+You can access ODC Portal on both desktop and mobile. However, the experience isn't fully optimized for mobile use. For full functionality and the best usability, we recommend using a desktop or laptop.
+
+</div>
 
 ![Screenshot of the ODC Portal home page showing the navigation menu and user options](images/portal-home-page-pl.png "ODC Portal Home Page")
 
@@ -50,17 +57,17 @@ The **top bar** in the Portal enables you to:
 
 Above the Navigation menu, the name of the tenant you're accessing displays.
 
-Each menu item on the **Navigation menu** provides functionality related to its name. ODC uses an accordion to display more or less information. When the arrow to the right of the menu name points up, that accordion is open. For example, **Users & access** and **Configuration** are open and show more options. When the arrow points down, such as for **Monitoring**, additional options don’t display.
+Each menu item on the **Navigation menu** provides functionality related to its name. ODC uses an accordion to display more or less information. When the arrow to the right of the menu name points up, that accordion is open.
 
-The **apps** you see when you first access the ODC Portal are only the apps to which you have access. When you select a menu option, the display in the middle changes. For example, if you select **Users & Access** > **Users**, then information related to users displays. In addition, the choices available at the top of the Portal canvas also change. All options that display relate to your choice from the Navigation menu.
+The **apps** you see when you first access the ODC Portal are only the apps to which you have access. When you select a menu option, the display in the middle changes. For example, if you select **Manage** > **Users**, then information related to users displays. In addition, the choices available at the top of the Portal canvas also change. All options that display relate to your choice from the Navigation menu.
 
 From the top right, you can select **Download ODC Studio** or **Create app**. When you click **Create app**, ODC Studio automatically opens.
 
 To open an existing app or see the details, hover over the app to display the **ellipsis** (3-dots). Then select either **Open in ODC** or **View Details**.
 
-To create a new app from the ODC Portal, select **Create app**, and then choose either an App, a Library, or a template. Templates help speed up your development process. If you select an app, you can then choose the type of app (web, tablet, or phone).
+To create a new app from the ODC Portal, select **Create app**, and then choose either a Web app, a Mobile app, an Agentic app, Library, or Mobile library. When you create a web app, you can build it from scratch in ODC Studio or generate it with Mentor Web using [agentic development](../agentic-development/intro.md).
 
-![Options for creating an app, library, or template in the ODC Portal with types of apps to choose from](images/app-library-template-odcs.png "ODC Portal App Creation Options")
+![Options for creating an app, or library in the ODC Portal with types of apps to choose from](images/app-library-template-odcs.png "ODC Portal App Creation Options")
 
 ## The ODC Studio
 
@@ -70,7 +77,7 @@ The ODC Studio is an Integrated Development Environment (IDE), and it’s where 
 
 The **top row** identifies that you are in ODC Studio, the name of the tenant, and the name of your app.
 
-The **second** row shows the **hamburger** icon, the name of the app, and in the center, the **1-Click Publish** button. When you click the publish button, your app deploys, and the status displays in the **1-Click Publish** tab at the bottom of the screen. If an error exists, the **1-Click Publish** button becomes unavailable and displays with a red x. 
+The **second** row shows the **hamburger** icon, the name of the app, and in the center, the **1-Click Publish** button. When you click the publish button, your app deploys, and the status displays in the **1-Click Publish** tab at the bottom of the screen. If an error exists, the **1-Click Publish** button becomes unavailable and displays with a red x.
 
 <div class="info" markdown="1">
 
@@ -88,7 +95,7 @@ The **Development** tabs (**Process**, **Interface**, **Logic**, and **Data**) d
 
 ![Interface elements tab in ODC Studio showing available UI components and properties](images/interface-elements-tab-odcs.png "ODC Studio Interface Elements Tab")
 
-The section below the horizontal rule is the **Properties panel**.  The element you select, determines what properties display and are necessary for you to complete. 
+The section below the horizontal rule is the **Properties panel**.  The element you select, determines what properties display and are necessary for you to complete.
 
 ![Properties panel in ODC Studio with options and settings for the selected app element](images/properties-panel-odcs.png "ODC Studio Properties Panel")
 

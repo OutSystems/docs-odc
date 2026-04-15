@@ -24,14 +24,14 @@ The functions below related with BackHandlers ([registerBackNavigationHandler](#
 
 ## Summary
 
-|Functions|Description|
-|---|---|
-|[navigateBack](#navigateback)|Performs a back navigation, using an optional transition animation.|
-|[navigateForward](#navigateforward)|Performs a forward navigation, using an optional transition animation.|
-|[navigateTo](#navigateto)|Performs a navigation to a provided URL using an optional transition animation.|
-|[navigatedFromHistory](#navigatedfromhistory)|Checks if the current screen was loaded from the browser's history.|
-|[registerBackNavigationHandler](#registerbacknavigationhandler)|Registers a callback function in a queue to be called when navigating back.|
-|[registerNavigationHandler](#registerNavigationHandler)| Overrides the navigation handler with a provided callback.|
+| Functions | Description |
+| --- | --- |
+| [navigateBack](#navigateback) | Performs a back navigation, using an optional transition animation. |
+| [navigateForward](#navigateforward) | Performs a forward navigation, using an optional transition animation. |
+| [navigateTo](#navigateto) | Performs a navigation to a provided URL using an optional transition animation. |
+| [navigatedFromHistory](#navigatedfromhistory) | Checks if the current screen was loaded from the browser's history. |
+| [registerBackNavigationHandler](#registerbacknavigationhandler) | Registers a callback function in a queue to be called when navigating back. |
+| [registerNavigationHandler](#registernavigationhandler) | Overrides the navigation handler with a provided callback. |
 
 ## Functions
 
@@ -189,12 +189,12 @@ Returns: void
 
 **(url: string, [transition: TransitionAnimation \| string], [replace: boolean]) => void**
 
-Parameters: 
+Parameters:
 
 * **nextUrl**: string<br/>A string representation of the URL to navigate to as a part of the navigation event.
 * **navigate**: [NavigationMethod](#navigationmethod)<br/>A function that can issue a new navigation from within the context of the previous navigation.
 
-Returns: boolean. If `true`, the navigation occurs. Otherwise, the navigation is cancelled. 
+Returns: boolean. If `true`, the navigation occurs. Otherwise, the navigation is cancelled.
 
 ### NavigationMethod
 

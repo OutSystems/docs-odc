@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - static-entities
 ---
 
 # Static Entities
@@ -46,7 +48,7 @@ To add a Static Entity to your app, do the following in ODC Studio:
 ODC Studio creates the following Attributes automatically:
 
 **Id**
-:   Identifies a record and is always unique. Using auto-number is not recommended, as it might generate issues in complex scenarios.
+:   Identifies a record and is always unique.
 
 **Label**
 :   Holds a value to display in an application.
@@ -57,14 +59,13 @@ ODC Studio creates the following Attributes automatically:
 **Is_Active**
 :   Defines whether a record is available during runtime. For example, the records with **Is_Active** set to false aren't used when scaffolding uses the Static Entity.
 
-
 ## Convert Static Entity to Entity
 
-You can convert existing Static Entities to Entities. To convert a Static Entity to Entity, right-click on the Static Entity, navigate to the **Advanced** help menu and then select **Convert to Entity**. 
+You can convert existing Static Entities to Entities. To convert a Static Entity to Entity, right-click on the Static Entity, navigate to the **Advanced** help menu and then select **Convert to Entity**.
 
 After converting a Static Entity to an Entity:
 
-* The records from the Static Entity become available through database queries, via Aggregate or SQL Query 
+* The records from the Static Entity become available through database queries, via Aggregate or SQL Query
 * The **Records** folder is no longer available in ODC Studio
 
 Note that it's also possible to convert an Entity to Static Entity.

@@ -9,7 +9,6 @@ figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troublesh
 audience:
   - backend developers
   - full stack developers
-  - data engineers
 outsystems-tools:
   - odc studio
   - odc portal
@@ -37,4 +36,3 @@ The query retrieves and processes additional data beyond what is needed for the 
 Use a simplified SQL query to efficiently count the results, removing unneeded extra data and joins.
 
 For more information, refer to the [best practice for optimizing record counting](../../../building-apps/ui/creating-screens/best-practices-fetch-display-data.md#record-counting).
-

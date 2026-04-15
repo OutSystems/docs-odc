@@ -15,11 +15,13 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - get-data-from-external-db
 ---
 
 # Handle null values
 
-To handle null values while integrating with external systems. Administrators must assign new values to represent null values in external databases. You can use the following options to handle null values.
+To handle null values while integrating with external systems, administrators must assign new values to represent null values in external databases. You can use the following options to handle null values.
 
 * Overwrite database NULL values(default option):
     * When writing data, ODC stores default values instead of null values in external databases.
@@ -41,11 +43,16 @@ An entity level configuration takes priority over the connection level.
 
 Null behavior doesn't apply to primary and foreign keys. They keep null values in the database.
 
+Null behavior applies to SQL Nodes with external entities when using [SELECT](../../building-apps/data/fetch-data/sql/ansi-92-select.md) but only if the external entity is set as the output type.
+When using a structure as the output type, null values will be converted to the default values configured on the structure attributes. If no default value is configured for a given structure attribute, then the default value for the OutSystems [data type](../../building-apps/data/data-types.md) applies.
+
+Data manipulation statements such as [INSERT/UPSERT](../../building-apps/data/fetch-data/sql/ansi-92-insert.md) and [UPDATE](../../building-apps/data/fetch-data/sql/ansi-92-update.md) will not convert default values to null values, they will be passed without modification to the external system. However, it is possible to implement this conversion using the `NULLIF` function, for more information please see [Conditional functions and operators](../../building-apps/data/fetch-data/sql/ansi-92-operators.md#conditional-functions).
+
 ## Default value configuration
 
 Administrators must configure default values. ODC suggests default values for every data type, which admins can change. Administrators can configure default values at the connection and attribute level.
 
-* Connection level: All nullable attributes of all entities in the connection. 
+* Connection level: All nullable attributes of all entities in the connection.
 * Attribute level: All selected attribute defines unique behavior for the selected attribute.
 
 <div class="info" markdown="1">

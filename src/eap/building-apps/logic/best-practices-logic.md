@@ -22,7 +22,7 @@ In OutSystems, your apps' logic is implemented through actions. Follow these rec
 ## Avoid multiple server calls in a client action flow { #multiple-server-calls }
 
 Multiple server calls inside client actions can lead to performance issues.
-Each call results in a separate server request, leading to numerous round trips between the client and server, which can increase latency. 
+Each call results in a separate server request, leading to numerous round trips between the client and server, which can increase latency.
 
 The following is an example of a client action flow with several sequenced server calls, which is not a good practice:
 
@@ -47,7 +47,7 @@ This results in significant performance degradation, particularly with large dat
 
 When adding aggregates or SQL queries to an action flow, consider the following:
 
-* Avoid executing aggregates or SQL queries inside a For Each cycle. 
+* Avoid executing aggregates or SQL queries inside a For Each cycle.
 
 * Instead of adding an aggregate or SQL query inside a cycle, add a more complex one that gets all the needed information before the cycle.
 
@@ -67,11 +67,11 @@ When calling aggregates in your logic flows, follow these recommendations:
 
 * Avoid creating an action exclusively to execute an aggregate. Instead, call the aggregate directly in your logic flow.
 
-* If you need to isolate an aggregate in an action for code reusability purposes, make sure to define the output parameters according to the attributes needed from the aggregate. 
+* If you need to isolate an aggregate in an action for code reusability purposes, make sure to define the output parameters according to the attributes needed from the aggregate.
 
 ### Benefits
 
-Calling an aggregate directly instead of wrapping it in an action allows the platform to automatically detect the necessary fields to fetch, thus improving your app's performance. 
+Calling an aggregate directly instead of wrapping it in an action allows the platform to automatically detect the necessary fields to fetch, thus improving your app's performance.
 
 ## Avoid hard-coded values { #hard-coded-values }
 
@@ -129,7 +129,7 @@ You can reinforce this best practice by [restricting access to fetched data](../
 
 ### Benefits
 
-Validating permissions on the server-side logic improves your app's security, as it guarantees the logged-in user has authorization to execute the operation. 
+Validating permissions on the server-side logic improves your app's security, as it guarantees the logged-in user has authorization to execute the operation.
 
 ## Avoid exposing server actions on public screens
 

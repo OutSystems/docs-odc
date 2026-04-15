@@ -24,15 +24,14 @@ Returns the largest number of 'n' and 'm'.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
 n
 :    Type: Decimal. Mandatory.  
-
 
 m
 :    Type: Decimal. Mandatory.  
@@ -54,15 +53,14 @@ Returns the smallest number of 'n' and 'm'.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 
 n
 :    Type: Decimal. Mandatory.  
-
 
 m
 :    Type: Decimal. Mandatory.  
@@ -84,9 +82,9 @@ Returns -1 if 'n' is negative; 1 if 'n' is positive; 0 if 'n' is 0.
 
 Available in:  
 
-  * Server-side logic: Yes
-  * Client-side logic: Yes
-  * Database: Function is evaluated before the aggregate is executed.
+* Server-side logic: Yes
+* Client-side logic: Yes
+* Database: Function is evaluated before the aggregate is executed.
 
 ### Parameters
 

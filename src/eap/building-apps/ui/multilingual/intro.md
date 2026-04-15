@@ -14,6 +14,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - translating-apps
 ---
 
 # Multilingual apps
@@ -24,7 +26,7 @@ When translating apps, note the following important information about language c
 
 * The default language code is **en-US**.
 * The current language is bound to the user session and when the user logs out, the language code automatically changes to the default language code.
-* All language codes are in the [RFC 1766](https://tools.ietf.org/html/rfc1766) standard format.
+* The list of selectable language codes is obtained through the operating system. As a result, the options displayed may be influenced by your local system configurations.
 * Language codes are **case sensitive**.
 
 ## Getting started
@@ -41,4 +43,3 @@ You can translate the following elements of your app:
 * Text literals in expressions
 * Validation messages, widget confirmation messages, and empty state messages
 * Static entities. Check [Working with Static Entities](translate-your-app.md#working-with-static-entities) for important notes.
-

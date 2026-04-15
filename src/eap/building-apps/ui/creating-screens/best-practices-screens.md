@@ -21,13 +21,13 @@ OutSystems enables you to build [screens](../screen-about.md) quickly and intuit
 
 ## Use OutSystems widgets and UI patterns instead of high-code
 
-OutSystems offers a comprehensive set of widgets and UI patterns to build your app's UI. 
+OutSystems offers a comprehensive set of widgets and UI patterns to build your app's UI.
 
 ### Recommendations
 
 When building screens in OutSystems:
 
-* Use OutSystems widgets and UI patterns instead of using high-code. These components follow best practices for design and functionality and are customizable. 
+* Use OutSystems widgets and UI patterns instead of using high-code. These components follow best practices for design and functionality and are customizable.
 
 * Use high-code only in advanced extensibility scenarios.
 
@@ -67,7 +67,7 @@ Using CSS in a separate location instead of inline offers several long-term adva
 
 * **Performance:** By keeping CSS in a separate location, styles can be cached by browsers, reducing load time. This makes your screens faster and more efficient.
 
-* **Maintainability:** When you need to change a style, you only need to do it in one place instead of going through every element where you defined that style inline. 
+* **Maintainability:** When you need to change a style, you only need to do it in one place instead of going through every element where you defined that style inline.
 
 * **Collaboration**: By keeping CSS separate, you improve collaboration with other developers or designers, who don't need to be familiar with all the code to be able to edit styles.
 
@@ -79,9 +79,9 @@ Large images increase bandwidth usage and processing time, slowing screen render
 
 When adding images to your screens:
 
-* Reduce the size of images to the minimum needed to be correctly displayed to the user (below 150KB for mobile apps, and 500KB for web apps). 
+* Reduce the size of images to the minimum needed to be correctly displayed to the user (below 150KB for mobile apps, and 500KB for web apps).
 
-* Reduce the images' resolution to a maximum of 1024px. Simply setting their width/height to lower values doesn't reduce the bandwidth needed to fetch the image from the server. 
+* Reduce the images' resolution to a maximum of 1024px. Simply setting their width/height to lower values doesn't reduce the bandwidth needed to fetch the image from the server.
 
 * Consider having big images as external resources, not contained inside the app.
 

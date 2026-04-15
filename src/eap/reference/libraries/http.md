@@ -26,35 +26,33 @@ The OutSystems HTTP library provides actions to manipulate HTTP requests and res
 
 Generates an absolute URL based on the URL provided.
 
-*Inputs*
+_Inputs_
 
 URL
 :   Type: Text. Mandatory.  
     Relative or absolute URL.
 
-*Outputs*
+_Outputs_
 
 AbsoluteURL
 :   Type: Text.  
     Absolute URL.
 
-
 ### Request_GetCookie
 
 Returns the value for the specified cookie from the current HTTP request.
 
-*Inputs*
+_Inputs_
 
 Name
 :   Type: Text. Mandatory.  
     The name of the cookie to be retrieved.
 
-*Outputs*
+_Outputs_
 
 Value
 :   Type: Text.  
     The value for the specified cookie. If no cookie exists, returns empty.
-
 
 ### Request_GetDomain
 
@@ -62,59 +60,55 @@ Returns the host part of the current HTTP request as seen by the browser.
 
 Examples:
 
-When the browser uses the address "http://support.domain.com/site/welcome.aspx?id=12345", Request_GetDomain() = "support.domain.com".
+When the browser uses the address "<http://support.domain.com/site/welcome.aspx?id=12345>", Request_GetDomain() = "support.domain.com".
 
-*Outputs*
+_Outputs_
 
 Domain
 :   Type: Text.  
     The domain of the current HTTP request.
 
-
-### Request_GetFiles 
+### Request_GetFiles
 
 Returns the list of files submitted in the current HTTP request.
 
-*Outputs*
+_Outputs_
 
 RequestFiles
 :   Type: RecordList of [RequestFile](#Structure_RequestFile).  
     Record list of files submitted in the current HTTP request.
 
-
-### Request_GetHeaders 
+### Request_GetHeaders
 
 Returns the value of the specified header in the current HTTP request.
 
-*Inputs*
+_Inputs_
 
 Name
 :   Type: Text. Mandatory.  
     The name of the header.
 
-*Outputs*
+_Outputs_
 
 Value
 :   Type: Text.  
     The value of the specified header. If the header is not present or has no value, returns empty.
 
-
-### Request_GetURL 
+### Request_GetURL
 
 Returns the absolute URL of the current request. If SEO rules are applied, returns the resulting URL and not the URL displayed in the user's browser.
 
-*Outputs*
+_Outputs_
 
 URL
 :   Type: Text.  
     The URL of the current request.
 
-
-### Request_ReplaceDomain 
+### Request_ReplaceDomain
 
 Replaces the domain in the URL with the given domain. This function doesn't accept JavaScript as a URL.
 
-*Inputs*
+_Inputs_
 
 URL
 :   Type: Text. Mandatory.  
@@ -124,23 +118,22 @@ Domain
 :   Type: Text.  
     The new domain to put in the URL. If no value is given, the domain of the current request is used.
 
-*Outputs*
+_Outputs_
 
 NewURL
 :   Type: Text.  
     The URL with the new domain.
 
-
-### Request_SubmitGetRequest 
+### Request_SubmitGetRequest
 
 Submits an HTTP GET request given the respective arguments and URL, and returns the request response content
 
-*Inputs*
+_Inputs_
 
 URL
 :   Type: Text. Mandatory.  
     The URL of the HTTP GET request.
-    
+
 Arguments
 :   Type: Text. Mandatory.  
     The arguments of the HTTP GET request.
@@ -153,7 +146,7 @@ KeepAlive
 :   Type: Boolean.  
     Indicates if the connection to the Internet resource is persistent. If no value is given, defaults to false.
 
-*Outputs*
+_Outputs_
 
 TextContent
 :   Type: Text.  
@@ -167,12 +160,11 @@ BinaryContentType
 :   Type: Text.  
    The value of the Content-Type header returned with the response.
 
-
-### Response_AddHeader 
+### Response_AddHeader
 
 Adds a header to the current HTTP response.
 
-*Inputs*
+_Inputs_
 
 Name
 :   Type: Text. Mandatory.  
@@ -182,12 +174,11 @@ Value
 :   Type: Text. Mandatory.  
    The value of the header to be added.
 
-
-### Response_SetCookie 
+### Response_SetCookie
 
 Sets a cookie in the current HTTP response.
 
-*Inputs*
+_Inputs_
 
 CookieName
 :   Type: Text. Mandatory.  
@@ -222,12 +213,11 @@ CookieSameSite
 :   Type: Text.  
     The value of the Cookie SameSite attribute. Can be one of the following: "", "None", "Lax", and "Strict". If no value is given, defaults to what is defined in the security settings for the current environment.
 
-
-### Response_SetStatusCode 
+### Response_SetStatusCode
 
 Sets the status code of the current HTTP response.
 
-*Inputs*
+_Inputs_
 
 StatusCode
 :   Type: Integer. Mandatory.  

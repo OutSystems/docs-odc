@@ -61,7 +61,7 @@ Changing the sample data in your screen templates allows you to create entities 
 ODC automatically creates sample data when the app is published. However, you may need to reset it. If any app extends the provided entities, the Foreign Key constraint prevents the timer from running successfully. In this case, delete such references (records) before resetting the sample data.
 
 1. Go to the ODC Portal and click **Apps.** Then, search for **Sample Data** and click it.
-    
+
     ![ODC Portal with the Apps section open and the Sample Data app highlighted.](images/sample-data-odc-portal.png "ODC Portal Sample Data App")
 
 1. Expand the **Timers** section, and you'll see all the available timers.
@@ -73,10 +73,10 @@ ODC automatically creates sample data when the app is published. However, you ma
 Another way to do this is programmatically, using the available API, similar to the Service Actions **DownloadOriginalData** and **Import**:
 
 1. Create your own reset sample data logic and drag and drop the available service action into your logic flow.
-    
+
     ![ODC Studio showing the logic flow for resetting sample data with the ResetAllSampleData service action.](images/reset-sample-data-api.png "Reset Sample Data Logic Flow in ODC Studio")
 
-You can also reset the following timers: 
+You can also reset the following timers:
 
 * DailyRefresh: Runs the bootstrap action to make sure sample data is available.
 * Timer_BootstrapSampleData Runs when the module is published, bootstrapping the sample data for all entities.

@@ -24,7 +24,7 @@ When you deploy an asset (app or workflow) to a stage, ODC checks for inconsiste
 
 When the impact analysis finishes, you can view how the inconsistencies might affect your assets. Using the information from the analysis report, you can make an informed decision and decide on the next best action.
 
-On the **Deployment** screen, a history of the asset deployments and their status is displayed. You start by choosing an asset to deploy, then select the asset revision, and then ODC analyzes the impacts. 
+On the **Deployment** screen, a history of the asset deployments and their status is displayed. You start by choosing an asset to deploy, then select the asset revision, and then ODC analyzes the impacts.
 
 The **Impact Analysis** report shows the results in sections. A section only displays if the analysis found an inconsistency. If no inconsistency is found, and the report indicates everything is OK, you can proceed.
 

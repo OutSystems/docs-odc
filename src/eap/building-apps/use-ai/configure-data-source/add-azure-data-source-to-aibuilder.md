@@ -55,8 +55,6 @@ The **Add data source** page displays.
 
     * **Index name** - Name of the index created in the Azure portal.
 
-    * **API version** - (Read only) Identifies the Azure AI Search [Rest API](https://learn.microsoft.com/en-us/rest/api/searchservice/) version
-
     * **API key** - API key for use on every API request.
 
     For more information about retrieving the URL and the API key, refer to [Copy a key and URL](https://learn.microsoft.com/en-us/azure/search/search-get-started-rest#copy-a-key-and-url).

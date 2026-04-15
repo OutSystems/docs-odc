@@ -1,11 +1,11 @@
 ---
-summary: Learn how to configure external identity providers for authentication in OutSystems Developer Cloud (ODC), supporting OpenID Connect and social logins.
+summary: Configure external identity providers for authentication in OutSystems Developer Cloud (ODC), supporting OpenID Connect, SAML 2.0, and social logins.
 locale: en-us
 guid: 5aa8692d-68bf-41a1-89ec-5e8fc7069e29
-app_type: mobile apps, reactive web apps
-figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=design&node-id=3405%3A24&mode=design&t=Oyyu3fjPlmIYwh5h-1
+app_type: mobile apps,reactive web apps
+figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3405-24
 platform-version: odc
-tags: authentication, identity provider, openid connect, security, social login
+tags: authentication,identity provider,openid connect,saml,security
 audience:
   - mobile developers
   - frontend developers
@@ -18,169 +18,146 @@ coverage-type:
   - understand
   - apply
   - remember
+topic:
+  - external-idps
+  - idp-openidp
+  - idp-saml
+helpids: 30707
+isautopublish: true
 ---
 
-# Configure authentication with external identity providers
+# Configuring authentication with external identity providers
 
-OutSystems Developer Cloud (ODC) comes bundled with Identity Service, a built-in Identity Provider (IdP). It provides authentication, authorization, and user management for your [organization](../platform-architecture/intro.md#platform) and apps. You access your organization services through ODC Portal and ODC Studio. As the default IdP, Identity Service is always available.
+OutSystems Developer Cloud (ODC) comes bundled with Identity Service, a built-in Identity Provider (IdP). It provides authentication, authorization, and user management for your [organization](../platform-architecture/intro.md#platform) and apps. You access your organization's services through the ODC Portal and ODC Studio. As the default IdP, Identity Service is always available.
 
-In addition, you can use an external, self-managed IdP as an authentication provider for your organization and your apps. You can use any IdP that follows the OpenID Connect (OIDC) standard and uses the `client_secret_post` authentication method. You can configure most commercial IdPs, such as Microsoft Entra ID and Okta, to support this standard. ODC supports using **PKCE** (Proof Key for Code Exchange) with external IdPs for an additional layer of security.
+In addition, you can use an external, self-managed IdP as an authentication provider for your organization and your apps. ODC supports two main authentication protocols:
 
-ODC doesn't support dynamic issuer URIs, usually found in multi-tenant configurations of IdP apps. The Discovery endpoint needs to return static URIs. If you use dynamic URIs, the authentication process throws an error similar to:
+* **OpenID Connect (OIDC)** - An identity layer on top of OAuth 2.0. ODC supports using **proof key for code exchange** (PKCE) with OIDC providers for an additional layer of security.
 
-    Wrong issuer from token.
-    Got: https://login.microsoftonline.com/<customer-tenant-id>/v2.0
-    Expected: https://login.microsoftonline.com/{tenantid}/v2.0
+* **SAML 2.0** - An XML-based standard for exchanging authentication and authorization data between identity providers and service providers.
 
-**Note:** ODC supports all IdPs that follow the OIDC standard. The following IdPs have been successfully tested to integrate with ODC apps:
+You can configure most commercial IdPs to support these standards.
 
-* Linkedin
-* Google
-* Ping Federation Identity
-* Facebook
-* Apple
-* Microsoft Entra ID (formerly known as Azure AD)
-* Okta
-* Keycloak
+ODC also provides accelerators for [commonly used social providers](configure-social-accelerators.md) that use OpenID Connect for social authentication. These accelerators simplify the process of adding social login options for both your organization and your apps.
 
-You can use an accelerator to add [commonly used social providers](#social-accelerators) for use as social authentication for your organization and your apps.
+## Scopes for assigning IdPs {#scopes-for-assigning-idps}
 
-When you successfully configure and save an external IdP to ODC, it becomes an option for use as an active provider for your organization, your apps, or both. You can use multiple active providers for your organization and each stage your apps are deployed to. You must use the same provider(s) for all the apps deployed to a given stage. The following diagram shows an example setup.
+IdPs are assigned to the organization or to a stage, never to an individual app:
+
+* **Organization scope**: Members (IT-users) can sign in to the ODC Portal and ODC Studio with the IdP.
+* **Stage scope**: All apps in that stage can use the IdP for end-user sign-in. For apps created with ODC Studio version 1.3.0 or later, the pre-built login screen automatically shows the IdPs assigned to the stage, so you usually don’t need to change the app’s login logic. For apps created before this behavior was introduced, or if you want to customize the default behavior, refer to [Step 4: Use an IdP in your apps (for end-users only)](#use-an-idp-in-your-apps).
+
+The following diagram shows an example setup.
 
 ![External IdPs concept](images/external-idps-example-diag.png "External IdPs concept")
 
-## Before you begin
+You can assign more than one identity provider to the same scope. A single stage can have multiple active IdPs at once, including multiple custom external IdPs, and you can keep the built-in provider active. If you want users to authenticate only through external IdPs for a scope, remove the built-in identity provider assignment. For more information, refer to [Manage identity providers](manage-external-idps.md#remove-built-in-idp-assignment).
+
+If you want users associated with an external provider to retain their profile and associated roles, they should use the same email address as on the built-in provider. For more details, refer to [User matching and profile creation](identity-claims-email-verification.md#claim-mapping-logic).
+
+The way you configure scopes differs slightly depending on the authentication protocol:
+
+* **OpenID Connect providers**: You can apply the same IdP configuration to multiple scopes (both organization and any number of stages).
+* **SAML 2.0 providers**: You can only define one scope (organization **or** a specific stage) per configuration. However, you can still create and assign multiple SAML 2.0 providers to the same scope if needed.
+
+## System considerations {#system-considerations}
+
+ODC has the following limitations for external identity providers:
+
+### System considerations for OpenID Connect
+
+* ODC doesn't support dynamic issuer URIs, usually found in multi-tenant configurations of IdP apps. The Discovery endpoint needs to return static URIs. If you use dynamic URIs, the authentication process throws an error similar to:
+
+    ```
+    Wrong issuer from token.
+    Got: https://login.microsoftonline.com/<customer-tenant-id>/v2.0
+    Expected: https://login.microsoftonline.com/{tenantid}/v2.0
+    ```
+
+* Only the `client_secret_post` authentication method is supported.
+
+### System considerations for SAML 2.0
+
+* Only SAML 2.0 SP-initiated flows are supported.
+* OutSystems recommends that SAML responses are signed.
 
 <div class="info" markdown="1">
 
-If you're configuring [Microsoft Entra ID](azure-ad.md) or [Okta](okta.md) you can skip this section and follow the specific guidance by following one of the embedded links.
+For the supported external identity providers, refer to the [OutSystems system requirements for ODC](../../getting-started/system-requirements.md#supported-external-identity-providers).
 
 </div>
 
-Before you begin configuring an external identity provider for use in ODC, you need to get the following information from the provider:
+## Adding and using an external IdP {#configuring-using-idp}
 
-* URL of the OpenID configuration
-* Provider credentials. Your provider might use different names for these fields such as **Application ID** for the **Client ID** field and **Client secret** or **Value** for the **Client secret (secret value)** field. For more guidance, see your provider's support documentation.
+This section guides you through the process of adding, assigning, and using an external IdP in your apps.
 
-If you want a user associated with an external provider to retain their profile and associated roles, they should use the same email address as on the built-in provider.
+### Step 1: Add an external IdP {#add-an-external-idp}
 
-## Add an external IdP
+ODC admins can configure an external IdP by navigating to the **ODC Portal** > **Manage** > **Identity providers** tab. A list of built-in providers and any external IdPs already added displays.
 
-ODC admins can configure an external IdP by going to the ODC Portal and selecting the **Identity providers** tab. A list of built-in providers and any external IdPs already added displays.
+The configuration process depends on the authentication protocol your identity provider uses:
 
-To launch the **New provider** configuration screen, click the **Add Provider** dropdown and select **OpenID Connect** or a social provider. Now follow these steps:
+* **[Add an OpenID Connect provider](configure-openid-connect.md)**
 
-### OpenID Connect
+    Use this option for identity providers that support the OpenID Connect standard. This includes most commercial IdPs such as Microsoft Entra ID, Microsoft Entra External ID (formerly known as Azure AD B2C), Okta, and Google.
 
-1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
+* **[Add a SAML 2.0 provider](configure-saml2.md)**
 
-1. Enter the URL of the OpenID configuration in the **Discovery endpoint** field. 
+    Use this option for enterprise identity providers that use the SAML 2.0 standard.
 
-1. Click **Get details**. ODC retrieves the JSON of the OpenID configuration and shows a preview. 
+* **[Add a Social provider with accelerators](configure-social-accelerators.md)**
 
-1. Enter the credentials for the provider in the **Client ID** and **Client secret (secret value)** fields. Then, select **PKCE** if your provider supports it.
+    Use this option to add social authentication providers such as Apple, Google, Facebook, or LinkedIn using ODC's built-in accelerators.
 
-    <div class="info" markdown="1">
-    
-    ODC safely stores the configuration details in a secret manager.
-    
-    </div>
+For specific guidance on popular providers, refer to:
 
-1. If your provider uses different attribute names, then in the **Claim Mapping** section overwrite the prefilled **Name**, **Email** and **Photo URL** fields. Otherwise, skip this step. For more guidance, see your provider's support documentation.
+* [Microsoft Entra ID (OpenID Connect)](azure-ad.md)
 
-1. Click **Save**. ODC adds the provider to the list of available providers. If this fails, a notification with the error displays.
+* [Okta (OpenID Connect)](okta.md)
 
-### Social provider with accelerator
+### Step 2: Configure the redirect URIs {#idp-configure-uri}
 
-1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
+<div class="info" markdown="1">
 
-1. Fill in the configuration fields with the [information required from your provider](#social-accelerators).
+Applies to OIDC only, including social providers with accelerators, as they use OIDC.
 
-    <div class="info" markdown="1">
+</div>
 
-    ODC safely stores the configuration details in a secret manager.
+Copy the Login and Logout URLs from the ODC Portal and paste them in your provider's portal. Refer to [Set up redirect URIs for an external IdP](redirect-uris.md) for full instructions.
 
-    </div>
+### Step 3: Assign an external IdP {#assign-an-external-idp}
 
-1. Click **Save**. ODC adds the provider to the list of available providers. If this fails, a notification with the error displays.
+Refer to the dedicated article for assignment steps: [Assign an external identity provider](assign-idp.md).
 
-## Assign an external IdP
+### Step 4: Use an external IdP in your apps (for end-users only) {#use-an-idp-in-your-apps}
 
-To assign an added external IdP, navigate to the **Identity providers** tab in ODC Portal. Then follow these steps:
+After you assign a provider to a stage, apps in that stage can use it for end-user sign-in. For apps created with ODC Studio version 1.3.0 or later, the pre-built login screen already includes the IdPs assigned to the stage (for example, Development), so you typically don’t need to change any login logic in the app. Make sure that only the IdPs you want to expose to all apps in a stage are assigned to that stage.
 
-1. Click on the provider card you want to assign as a provider for your organization, your apps, or both.
+If you’re working with apps that were created before this built-in logic was added, or if you want to customize or override the default behavior, you can choose one of the following options:
 
-1. Check the summary in the **Configurations** tab. If you want to proceed, click the **Assign** button (when provider not assigned anywhere yet) or **Manage assignments** (when already assigned).
+**Option 1: Do nothing (default behavior)**
+:   Rely on the pre-built login screen that ODC Studio provides. The login screen automatically lists the IdPs assigned to the app’s stage. You manage which IdPs are shown to end-users by assigning or unassigning them from the stage in the ODC Portal.
 
-1. Check the boxes of where you want to assign the provider and then click **Next**.
+**Option 2: Bypass the built-in login screen and redirect to an external provider**  
+   Use this option when you want to redirect users to a single external IdP while keeping the built-in login path so you can revert easily. For detailed steps, refer to [Bypass the built-in login screen and redirect to an external provider](apps-delete-login-screen.md).
 
-    <div class="info" markdown="1">
+**Option 3: Modify the built-in login screen to add buttons for external provider login**  
+   Use this option when you want to keep the built-in login (for example, the built-in provider) and add one or more buttons for external IdPs, or when you want to customize how external providers appear. For detailed steps, refer to [Modify the built-in login screen to add buttons for external provider login](apps.md).
 
-    When you switch the IdP for your organization or apps, all signed-in users are automatically logged out and logged in
+<div class="info" markdown="1">
 
-    </div>
+If an app doesn't include the pre-built login logic (for example, an older app created before the pre-built login screen was available, or an app where the login flows were heavily customized), you can either follow Option 2 or Option 3 to implement or update the required login flows, or create a new app, inspect its pre-built login screen and related flows, and copy the relevant logic into your existing app.
 
-1. Read the confirmation pop-up and then do one of the following:
+</div>
 
-    * Click the **Confirm changes** button to proceed.
-    * Click the **Cancel** to exit.
+### (Optional) Step 5: Add an end-user group mapping
 
-    Once ODC applies the provider successfully, a notification displays.
+Mapping groups from your identity provider to end-user groups in ODC can automate the assignment of roles to end-users based on their group membership, streamlining access management. For more details about how these groups are mapped and for setup instructions and best practices, refer to [IdP and end-user group mapping](end-user-group-mapping.md).
 
-1. Copy the pair(s) of **Redirect URLs** to the list of permitted redirects in the setup page of your external provider. You should copy the pair(s) for both the built-in domain and any active [custom domains](../custom-domains.md). If you're configuring [Okta](okta.md#setup-redirect-urls) you can follow the embedded link for specific guidance. Otherwise see your provider's support documentation for further guidance (for example, [Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-redirect-uri)). Click **Next**.
+## Related resources
 
-When you assign a provider for use by the apps, you need to create the logic in ODC Studio for each app you want to use it. For guidance on how to create the logic, see [Use external identity providers in an app](apps.md).
-
-You don't need to do anything else when you assign a provider for use by the organization. The option to log in with the provider becomes immediately available for users on the ODC Portal and ODC Studio login screens.
-
-## Edit the configuration or delete an external IdP
-
-You can only edit or delete a provider not in use. Navigate to the **Identity providers** tab in ODC Portal. Then:
-
-1. Click on the provider card you want to edit or delete.
-
-1. Click the **ellipsis** (3-dots) to the right of the **Assign** button. Then click the **Edit configuration** or **Delete provider** button to launch the edit page or launch the delete confirm pop-up.
-
-## Social accelerators
-
-ODC provides accelerators to add commonly used social providers easily.
-
-To add a new social provider using an accelerator you need to get the following information from your provider:
-
-### Apple
-
-Accelerator field | Information required | Description
----|---|---
-Client ID | Identifier | A public identifier your app on the provider side. It's a string type value available to any registered developer on Apple Developer. You can access the Identifier value on the Certificates, Identifiers, and Profiles pages of your app.
-Key ID | Key ID | Key ID corresponding to your Secret (`.p8`).
-Team ID | Team ID | Identifier of your team on Apple Developer.
-Client secret | Private key (`.p8`) | The private key generated and downloaded from Apple (refer to [Create a private key to access a service](https://developer.apple.com/help/account/manage-keys/create-a-private-key)). The downloaded file is in .p8 format but can be opened with a text editor - copy the entire text content and paste directly in the Client Secret field on ODC Portal. This private key will be used to create the required client secret.
-
-For further guidance, check [Configure app capabilities - About Sign in with Apple](https://developer.apple.com/help/account/configure-app-capabilities/about-sign-in-with-apple).
-
-### Google
-
-Accelerator field | Information required | Description
----|---|---
-Client ID | Client ID | A public identifier your app on the provider side. It's a string type value available to any registered developer on the Google Cloud Platform. You can access the ClientID value on the OAuth Consent tab on your app's Credentials screen.
-Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string type value type value available to any registered developer on the Google Cloud Platform. You can access the ClientSecret value on the OAuth Consent tab on your app's Credentials screen.
-
-For further guidance, check [Google Identity - Authentication](https://developers.google.com/identity/gsi/web/guides/overview).
-
-### Facebook
-
-Accelerator field | Information required | Description
----|---|---
-Client ID | App ID | A public identifier your app on the provider side. It's a string type value available to any registered developer on Meta for Developers. You can access the AppID value in your app's settings.
-Client Secret | App Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on Meta for Developers. You can access the AppSecret value in your app's settings.
-
-For further guidance, check [Facebook Login - Documentation - Facebook for Developers](https://developers.facebook.com/docs/facebook-login/).
-
-### LinkedIn
-
-Accelerator field | Information required | Description
----|---|---
-Client ID | Client ID | A public identifier for your app on the provider side. It's a string-type value available to any registered developer on Linkedin. You can access the ClientID value on the Auth tab on your app's Credentials screen.
-Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string-type value type value available to any registered developer on Linkedin. You can access the ClientSecret value on the Auth tab on your app's Credentials screen.
-
-For further guidance, check [Sign In with LinkedIn using OpenID Connect](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2).
+* [Manage identity providers](manage-external-idps.md): Replace, unassign, edit, or delete external IdPs and remove the built-in identity provider assignment
+* [Identity claims, email verification, and profile matching logic](identity-claims-email-verification.md)
+* [Best practices for user management](../../user-management/best-practices-user-management.md)
+* [Managing authorization and authentication for end-users](../../user-management/end-users/intro.md)
+* [Managing authorization and authentication for members (IT-users)](../../user-management/it-users/intro.md)

@@ -30,7 +30,7 @@ You must fix this error in your C# project before you can publish the external l
 
 ## Recommended action
 
-Make sure only one class implements the interface decorated with `OSInterface`. 
+Make sure only one class implements the interface decorated with `OSInterface`.
 
 For example, suppose you have the following code with two classes (`MyLibraryA` and `MyLibraryB`) implementing the same OSInterface-decorated interface (`IMyLibrary`):
 

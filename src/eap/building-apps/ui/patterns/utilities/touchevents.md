@@ -15,9 +15,17 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - add-widget-ui-pattern
 ---
 
 # Touch Events
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
 
 You can use the Touch Events UI Pattern to enable touch events on a specific widget.
 
@@ -52,9 +60,9 @@ You can use the Touch Events UI pattern to hide a header during a scroll action.
 After following these steps and publishing the module, you can test the pattern in your app.
 
 | Element | Code |
-|---|---|
-|![JavaScript code snippet for hiding a header on scroll](images/JS_hide.png "JavaScript Code to Hide Header") |  var header = document.querySelector(".header");<br/>header.classList.add("hide");<br/>header.classList.add("header-on-scroll"); |
-|![JavaScript code snippet for showing a header on scroll](images/JS_show.png "JavaScript Code to Show Header") |  var header = document.querySelector(".header");<br/>header.classList.remove("hide");<br/>header.classList.remove("header-on-scroll"); |
+| --- | --- |
+| ![JavaScript code snippet for hiding a header on scroll](images/JS_hide.png "JavaScript Code to Hide Header") | var header = document.querySelector(".header");<br/>header.classList.add("hide");<br/>header.classList.add("header-on-scroll"); |
+| ![JavaScript code snippet for showing a header on scroll](images/JS_show.png "JavaScript Code to Show Header") | var header = document.querySelector(".header");<br/>header.classList.remove("hide");<br/>header.classList.remove("header-on-scroll"); |
   
 **Result**
 
@@ -62,9 +70,9 @@ After following these steps and publishing the module, you can test the pattern 
 
 ## Properties
 
-|**Property** |  **Description** |
-|---|---|
-| WidgetId  |  This is the element that responds to the touch you configure.|
+| **Property** | **Description** |
+| --- | --- |
+| WidgetId | This is the element that responds to the touch you configure. |
 
 ## Compatibility with other patterns
 

@@ -14,9 +14,17 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - create-screen-scratch
 ---
 
 # Create screen from scratch
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
 
 A Screen is a user interface (UI) element that contains other UI elements for users to interact. An empty Screen contains a basic layout for you to add widgets. A Screen based on a Screen Template has predefined content that works as a demo.
 
@@ -38,7 +46,7 @@ To create a Screen, follow these steps in ODC Studio:
     ![Context menu in ODC Studio showing the option to Add Screen](images/add-screen-odcs.png "Adding a New Screen")
 
 1. Select one of the following:
-    
+
     * **Empty**, to create an empty Screen
     * A Screen Template, to create a Screen based on a template
 

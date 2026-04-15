@@ -14,6 +14,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+topic:
+  - rest-webservice-data
+  - define-methods
 ---
 
 # Expose a REST API
@@ -43,14 +46,14 @@ Your REST API endpoints are accessible after deploying the application.
 
 Examples:
 
-Default Endpoint | Description  
----|---  
-`GET https://<server>/PhoneAPI/rest/v1/GetContacts` | Gets all contacts.
-`GET https://<server>/PhoneAPI/rest/v1/GetContact` | Gets a contact.
-`POST https://<server>/PhoneAPI/rest/v1/CreateContact` | Creates a contact.
-`PUT https://<server>/PhoneAPI/rest/v1/UpdateContact` | Updates a contact.
-`DELETE https://<server>/PhoneAPI/rest/v1/DeleteContact` | Deletes a contact.
-`GET https://<server>/PhoneAPI/rest/v1/GetContactAddresses` | Gets all addresses of a contact.
+| Default Endpoint | Description |
+| --- | --- |
+| `GET https://<server>/PhoneAPI/rest/v1/GetContacts` | Gets all contacts. |
+| `GET https://<server>/PhoneAPI/rest/v1/GetContact` | Gets a contact. |
+| `POST https://<server>/PhoneAPI/rest/v1/CreateContact` | Creates a contact. |
+| `PUT https://<server>/PhoneAPI/rest/v1/UpdateContact` | Updates a contact. |
+| `DELETE https://<server>/PhoneAPI/rest/v1/DeleteContact` | Deletes a contact. |
+| `GET https://<server>/PhoneAPI/rest/v1/GetContactAddresses` | Gets all addresses of a contact. |
   
 OutSystems defines the default endpoints based on the HTTP Method (`GET`, `POST`, `PUT`, `DELETE`) and on the name of the REST API Methods, but you can [customize the endpoints](customize-rest-urls.md) according to your needs.
 

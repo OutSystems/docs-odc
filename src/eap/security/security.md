@@ -16,6 +16,7 @@ outsystems-tools:
   - none
 coverage-type:
   - understand
+isautopublish: true
 ---
 
 # Security of OutSystems Developer Cloud
@@ -52,7 +53,7 @@ The network layer of ODC uses encryption, a WAF (Web Application Firewall), intr
 
 ### Encryption in transit
 
-All incoming requests to the [Platform services and Runtime](../manage-platform-app-lifecycle/platform-architecture/identity.md#Platform) terminate at an HTTPS endpoint and are end-to-end encrypted. ODC supports TLS 1.3.
+All incoming requests to the [Platform services and Runtime](../manage-platform-app-lifecycle/platform-architecture/identity.md#Platform) terminate at an HTTPS endpoint and are end-to-end encrypted. We implement [HTTP Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security) (HSTS) as a native default, which forces all browser communications over encrypted channels and prevents downgrade attacks. ODC supports TLS 1.3, ensuring high-performance encryption for all platform-wide communications.
 
 ### Web Application Firewall
 
@@ -89,13 +90,7 @@ OutSystems staff actively monitor all systems and the appropriate teams follow u
 
 The independence of the Platform and Runtime reduces the attack surface of the deployed apps as they're isolated from other ODC components.
 
-The Platform services can't connect directly to any deployed app or Runtime database. They conduct all communication (for example, to deploy an app or change an app setting) through secure messaging using NATS (Neural Autonomic Transport System).
-
-<div class="info" markdown="1">
-
-NATS is a highly reliable messaging system that's designed to deliver messages quickly and efficiently, even when there are network disruptions or failures. This design ensures reliable handling of internal requests between the Platform and Runtime stages, minimizing downtime and potential system disruptions.
-
-</div>
+The Platform services can't connect directly to any deployed app or Runtime database. They conduct all communication (for example, to deploy an app or change an app setting) through secure messaging.
 
 Each customer's ODC organization has a standard Runtime setup of isolated and independent stages such as Development and Production.
 
@@ -124,6 +119,22 @@ For more information see [Architecture of authentication and authorization mecha
 Private Gateways is an ODC feature that lets you connect your apps to private data and private services ("endpoints") that aren't accessible by the internet.
 
 For more information see [Configure a private gateway to your network](../manage-platform-app-lifecycle/private-gateway.md).
+
+### Content security policy
+
+Content Security Policy (CSP) is a web security standard that protects your web, mobile, and progressive web apps from cross-site scripting (XSS) attacks and other code injection threats. CSP works by controlling which content sources browsers can load, blocking malicious scripts and unapproved resources before they can execute.
+
+ODC allows you to customize CSP directives per stage through the ODC Portal. You can configure policies as an allow list, permitting only specified content sources while blocking all others by default. This includes controlling where JavaScript, images, fonts, and other resources can load from.
+
+Key benefits of configuring CSP include:
+
+* **XSS attack prevention**: Stops unauthorized scripts from executing malicious actions
+* **Resource control**: Restricts loading of unapproved images, plugins, and frames
+* **Enhanced security posture**: Reduces vulnerabilities by enforcing stricter content loading policies
+
+For mobile apps built with MABS 12 or later, CSP policies automatically apply without requiring a new build.
+
+For more information about understanding and implementing CSP, refer to [Content security policy](configure-csp.md).
 
 ## Containers
 
@@ -154,16 +165,16 @@ A static code analysis tool scans [Platform service](../manage-platform-app-life
 
 Daily vulnerability scanning of the container registry covers the current version of the Platform service container images and all the deployed app images across all customer Runtime stages. When a vulnerability is detected, OutSystems security engineers fix it and release a new version of the affected Platform service(s) or app base container image.
 
-For the list of patches for known vulnerabilities, see **Portal** > **App security**. The app security screen shows the following:
+For the list of patches for known vulnerabilities, in the **Portal**, see **Maintain** > **Platform Updates** > **App security** tab. The app security screen shows the following:
 
 * The list of apps with known vulnerabilities
 * Classification of the vulnerabilities
-* Scheduled fixing of the critical vulnerabilities
+* Fixing schedule of the vulnerabilities
 
-The patching process upgrades your apps, and the process is:
+The patching process upgrades your apps, and the process can be:
 
-* Automatic. OutSystems patches the critical vulnerabilities automatically.
-* Manual. Developers can patch non-critical vulnerabilities manually during the regular SDLC process.
+* Automatic: OutSystems patches the vulnerabilities automatically.
+* Manual: Developers can patch vulnerabilities manually during the regular SDLC process.
 
 ##### Automatic patching
 
@@ -182,7 +193,7 @@ All the users with the Administrator built-in role in your ODC organization rece
 
 ##### Manual patching
 
-Republish the app to trigger an upgrade process for an affected app manually. Open the app in ODC Studio and press the 1-Click Publish button. This patches the app in the development stage. Promote the app to all other stages to ensure that the most secure version of the app is running in all stages. 
+Republish the app to trigger an upgrade process for an affected app manually. Open the app in ODC Studio and press the 1-Click Publish button. This patches the app in the development stage. Promote the app to all other stages to ensure that the most secure version of the app is running in all stages.
 
 ##### Malware scanning
 
@@ -212,21 +223,21 @@ A network namespace isolates each stage [within each organization's Runtime](#is
 
 Each Runtime stage has an isolated Amazon Aurora Serverless database. The database for the Production stage is designed to support high availability, with the ability to add a read replica in a different Availability Zone (AZ) to ensure immediate failover in the event of an AZ outage or failure.
 
-For more information see [Cloud-native architecture of OutSystems Developer Cloud](../manage-platform-app-lifecycle/platform-architecture/identity.md#runtime-data).
+For more information, see [Cloud-native architecture of OutSystems Developer Cloud](../manage-platform-app-lifecycle/platform-architecture/identity.md#runtime-data).
 
 ### Encryption at-rest
 
 OutSystems uses a Key Management Service (KMS) to store and manage the keys used to secure customer data.
 
-ODC encrypts data at rest, including all backup instances, using the industry standard AES-256 algorithm.
+ODC encrypts data at rest, including all backup instances, using the industry standard AES-256-GCM algorithm.
 
 ## Log security and retention
 
-ODC ensures the privacy and availability of your application logs and traces. 
+ODC ensures the privacy and availability of your application logs and traces.
 
-Application logs and traces are encrypted in transit with TLS, and at rest using the industry-standard AES-256 algorithm. ODC utilizes role-based permissions to ensure that only you can view your data. Other ODC tenants can't access your logs or traces. OutSystems Support requires documented permission before accessing your data. 
+Application logs and traces are encrypted in transit with TLS, and at rest using the industry-standard AES-256 algorithm. ODC utilizes role-based permissions to ensure that only you can view your data. Other ODC tenants can't access your logs or traces. OutSystems Support requires documented permission before accessing your data.
 
-Developers can view logs and traces up to four weeks old within ODC Portal. They can retrieve logs and traces between four and seven weeks old by opening a support ticket. The system deletes logs and traces after seven weeks.
+Developers can view logs and traces up to four weeks old within ODC Portal. To retain logs and traces beyond the four-week period, learn more about exporting them using the [Analytics Stream](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md). The system deletes logs and traces after seven weeks.
 
 For more information on logs and traces, see [Monitor and troubleshoot apps](../monitor-and-troubleshoot/monitor-apps.md).
 
@@ -240,7 +251,7 @@ For more information, see the [User management article](../user-management/intro
 
 OutSystems maintains formal policies and procedures for managing security incidents. This ensures appropriate and prompt handling of any incident. The Security Incident Management Procedures outline the response to vulnerabilities in ODC infrastructure, security breaches, and incidents. The procedure explains the identification, reporting, and action taken for incidents.
 
-### OutSystems Security Operations Center
+### OutSystems security operations center
 
 OutSystems proactively monitors ODC infrastructure, events, and availability 24 hours a day, seven days a week. Any unexpected alert, including privacy breaches, either automatically detected or resulting from a human log review, triggers a Security Incident Response.
 
@@ -252,11 +263,11 @@ Customers can report suspected privacy or security incidents through the Support
 
 OutSystems created a public vulnerability policy to provide customers with guidance and information in the event of a vulnerability reported in an OutSystems product.
 
-For more information see [ODC vulnerability policy](https://success.outsystems.com/support/security/vulnerabilities/).
+For more information, see [ODC vulnerability policy](https://success.outsystems.com/support/security/vulnerabilities/).
 
 ---
 <div class="info" markdown="1">
 
-Some features mentioned in this article may require add-ons to the ODC Platform edition. Please contact your OutSystems account team for more information.
+Some features mentioned in this article may require an add-on [subscription](../manage-platform-app-lifecycle/subscription-console.md). Please contact your OutSystems account team for more information.
 
 </div>

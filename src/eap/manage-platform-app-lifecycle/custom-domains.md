@@ -16,12 +16,14 @@ outsystems-tools:
 coverage-type:
   - apply
   - understand
+topic:
+  - app-settings
+isautopublish: true
 ---
 
 # Configure custom domains for apps
 
 For each stage in which you deploy apps, ODC comes with a **built-in** OutSystems domain for end-user access. The table below shows built-in domains if you have three stages.
-
 
 | Stage       | Built-in domain                      |
 | ----------- | ------------------------------------ |
@@ -33,13 +35,19 @@ It's not possible to change the built-in OutSystems domain that is defined when 
 
 In addition, ODC lets you make your apps accessible to end-users through your organization's domain(s). In a given stage, your apps can be available through one or more custom domains that you add to that stage. Each custom domain must be unique to a customer and stage.
 
+<div class="info" markdown="1">
+
+You can also manage custom domains programmatically, including adding and deleting domains and setting the default domain, using the [Environment Configurations API](../reference/apis/env-config-v1.md).
+
+</div>
+
 When you add a custom domain to a stage, all apps deployed to that stage are accessible through the domain. The following table shows a possible setup for a customer who has three stages and wants one custom subdomain for each stage:
 
-| Stage       | Custom domain    |
-| ----------- | ---------------- |
-| Development | `dev.example.com`|
-| Test        | `test.example.com`|
-| Production  | `www.example.com`|
+| Stage       | Custom domain      |
+| ----------- | ------------------ |
+| Development | `dev.example.com`  |
+| Test        | `test.example.com` |
+| Production  | `www.example.com`  |
 
 <div class="info" markdown="1">
 
@@ -49,7 +57,9 @@ ODC automatically issues X.509 certificates after verifying the domain ownership
 
 ## Add a custom domain
 
-Some domain registrars may not allow creating CNAME records when existing DNS records exist for the same name. This typically applies to root domains (such as `example.com`) and subdomains(such as `dev.example.com`) that already have other records. 
+A **root domain** is the main part of a website’s address. It is the **highest level of your website’s identity** on the internet, and all subdomains are based on it.
+
+Some domain registrars may not allow creating CNAME records when existing DNS records exist for the same name. This typically applies to root domains (such as `example.com`) and subdomains(such as `dev.example.com`) that already have other records.
 
 You need to use a custom domain without linked DNS records if your domain registrar has restricted CNAME creation.
 
@@ -87,7 +97,7 @@ You can set your custom domain as the default domain. This means that:
 
 * Apps running on a stage are accessed from ODC Portal and ODC Studio using the default domain instead of the built-in one
 * Debugging in the development stage connects to the app using the default domain configured in development
-* You can use the [GetDefaultDomain](../reference/built-in-functions/url.md) system action to build URLs within your apps, explicitly using the default domain
+* You can use the [GetDefaultDomain](../reference/system-actions/get-default-domain.md) server action to build URLs within your apps, explicitly using the default domain
 * Emails that are sent from your OutSystems app that contain links to specific screens use the default domain instead of the built-in one
 
 To set a custom domain as the default domain, follow the [Add a custom domain](#add-a-custom-domain) steps. Once the domain is active, click the ellipsis menu, and select **Set as default**.
@@ -97,13 +107,14 @@ To set a custom domain as the default domain, follow the [Add a custom domain](#
 <div class="info" markdown="1">
 
 * When a tenant is first created, the **built-in domains are always set as default**.
-* You can set any domain as default only if it is **active**.
+* You can set any domain as default only if it's **active**.
 * You can only set **one custom domain as the default** domain per stage.
-* You **cannot delete a default domain**. You'll must set another domain as default first before deleting the current one.
+* You **cannot delete a default domain**. You must set another domain as default first before deleting the current one.
+* The built-in domain can't be deleted.
 
 </div>
 
-### Add a CNAME record to your domain's DNS records  { #add-CNAME-box }
+### Add a CNAME record to your domain's DNS records  {#add-CNAME-box}
 
 <div class="info" markdown="1">
 
@@ -130,8 +141,8 @@ To delete a custom domain, from the ODC Portal, navigate to **Configurations** >
 1. Click the card of the custom domain you want to delete. The **Set up your domain** screen displays and you see the status next to the domain name.
 1. Click the **ellipsis** (3-dots) to the right of the domain status and select **Delete domain**.
 1. Before confirming the deletion of the domain, review the information in the popup box. Then do one of the following:
-     * To confirm, click the **Delete domain** button.
-     * To cancel, click **Cancel** and exit.
+    * To confirm, click the **Delete domain** button.
+    * To cancel, click **Cancel** and exit.
 
 <div class="info" markdown="1">
 
@@ -141,4 +152,11 @@ The certificate ODC issued for the domain will automatically renew if the CNAME 
 
 ## Developing apps with custom domains
 
-When an app uses a background process to generate the URL of a screen, the built-in domain is used. You override the built-in domain by building an expression of the URL with the custom domain, for example in the case of a [link widget in an email](../building-apps/sending-emails/widgets.md#widgets-available-in-emails). To help you build multiple expressions you can create an app setting, for example **App_Domain**, containing the domain.
+When your app generates the URL of a screen outside an HTTP request (for example, in a background process), OutSystems uses the built-in domain by default.
+
+To use a custom domain in generated URLs, the custom domain must be **Active**. You only need to set a custom domain as the **default domain** if you want OutSystems-generated links and tooling to use that domain automatically.
+
+To override the built-in domain in your own URL expressions, use one of the following approaches:
+
+* **Default domain**: Set an **active** custom domain as the stage default, then use the [GetDefaultDomain](../reference/system-actions/get-default-domain.md) server action when you build URLs.
+* **Specific domain**: Use a specific **active** custom domain in your expression. For example, store the domain in an app setting (such as **App_Domain**) and use it when you build URLs. This approach is useful when you generate links for a domain that isn't the stage default.
