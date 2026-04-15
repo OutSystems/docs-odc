@@ -47,7 +47,7 @@ Your REST API endpoints are accessible after deploying the application.
 Examples:
 
 | Default Endpoint | Description |
-| ---|--- |
+| --- | --- |
 | `GET https://<server>/PhoneAPI/rest/v1/GetContacts` | Gets all contacts. |
 | `GET https://<server>/PhoneAPI/rest/v1/GetContact` | Gets a contact. |
 | `POST https://<server>/PhoneAPI/rest/v1/CreateContact` | Creates a contact. |

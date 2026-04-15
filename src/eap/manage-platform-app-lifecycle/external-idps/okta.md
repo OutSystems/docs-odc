@@ -126,7 +126,9 @@ To add permitted redirects for the Okta provider, follow these steps:
 
 ## Next step
 
-If you want to use the created IdP in your app, ensure that you modify the login and logout flows accordingly. For more information, refer to [Use external identity providers in an app](apps.md).
+* For end-users: [Use an IdP in your apps](intro.md#use-an-idp-in-your-apps)
+
+* Optional: [Add an end-user group mapping](end-user-group-mapping.md)
 
 ## Related resources
 

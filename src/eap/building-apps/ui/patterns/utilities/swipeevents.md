@@ -21,6 +21,12 @@ topic:
 
 # Swipe Events
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 You can use the Swipe Events UI Pattern to enable swiping on a specific widget.
 
 ## How to use the Swipe Events UI Pattern
@@ -71,6 +77,6 @@ After following these steps and publishing the app, you can test the pattern in 
 
 ## Properties
 
-| **Property** |  **Description** |
-|---|---|
-| WidgetId (Text): Mandatory |  Element that's swipeable.  |
+| **Property** | **Description** |
+| --- | --- |
+| WidgetId (Text): Mandatory | Element that's swipeable. |

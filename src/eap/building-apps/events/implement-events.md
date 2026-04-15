@@ -21,7 +21,7 @@ helpids:
 
 Events allow apps to communicate changes and updates asynchronously. You can create events in an app to notify other apps when specific actions occur. These events can then be triggered within the app's logic and handled either in the same app or in other apps that consume the event.
 
-## Create an event
+## Create an event {create-event}
 
 You can create events in your ODC apps to capture and communicate important changes. Events enables asynchronous communication between apps. For example, in an eCommerce app, you can create an **OnPurchaseStarted** event that is triggered whenever a customer initiates a purchase. You can pass details such as the product ID in your event and communicate asynchronously to other apps, such as an Inventory app to update stock levels or a Fraud Detection app to monitor suspicious transactions.
 

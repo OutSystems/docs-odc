@@ -17,7 +17,7 @@ outsystems-tools:
 ---
 # Data archiving best practice
 
-Data archiving is the process of identifying and moving data from the **primary storage** into an **archive storage**, for long term storage. Archived data consists of data that's no longer relevant for daily operations but that's still important to the organization and may be needed for future reference, or data that must be retained for regulatory compliance.
+Data archiving is the process of identifying and moving data from the **primary storage** into an **archive storage** for long-term storage. Archived data is no longer relevant for daily operations but remains important to the organization. It may be needed for future reference or must be retained for regulatory compliance.
 
 Data archiving is an important [data management practice](intro.md#data-purging-archiving) when dealing with a large volume of application data. Reducing the amount of active data allows the application to respond faster, helping to prevent performance issues.
 
@@ -25,15 +25,15 @@ This article describes a best practice for implementing data archiving using Out
 
 ## Archive location
 
-The implementation below focuses on how to achieve an archiving strategy using OutSystems. You will create [new entities](../modeling/entity.md) in your OutSystems apps to store the archived data.
+The implementation below focuses on how to achieve an archiving strategy using OutSystems. To store the archived data, create [new entities](../modeling/entity.md) in your OutSystems apps.
 
-Depending on your enterprise architecture, if you need to archive data using an external solution, such as data lakes or cloud storage services, you can [integrate with your external data source](../../../integration-with-systems/external-databases/intro.md) and adapt the described archiving implementation to your case.
+Depending on your enterprise architecture, you may need to archive data using an external solution, such as data lakes or cloud storage services. In this case, you can [integrate with your external data source](../../../integration-with-systems/external-databases/intro.md) and adapt the described archiving implementation.
 
 ## Preparing your data
 
 To ensure the data model includes the necessary information to implement the archive algorithm, it's recommended to add **control columns** to your entities that define when records should be archived.
 
-For example, an archive condition might specify archiving records with update timestamps older than a certain number of days (specified using a [Setting](../../../manage-platform-app-lifecycle/configuration-management.md#managing-settings)), or archiving records marked by a specific boolean control column.
+For example, an archive condition might specify archiving records with update timestamps older than a certain number of days. You can specify this value using a [Setting](../../../manage-platform-app-lifecycle/configuration-management.md#managing-settings). Alternatively, archive records marked by a specific boolean control column.
 
 Here are some examples of possible control columns. You can define any other that apply to your use case:
 
@@ -61,11 +61,11 @@ Consider this approach if you need the archived data to be **searchable** in the
 
 This section details a light archiving architecture and mechanism that minimizes the impact on the main applications and processes.
 
-**Step 1. Create an archive storage that mirrors the primary storage**
+#### Step 1. Create an archive storage that mirrors the primary storage
 
 Identify and prepare the **primary storage** data:
 
-1. Identify the entities that store the data you want to archive. These entities will form your **primary storage**.
+1. Identify the entities that store the data you want to archive. These entities form your **primary storage**.
 
 1. Add an **IsArchived** attribute to each of the **primary storage** entities.
 
@@ -87,7 +87,7 @@ Mirror the **primary storage** entities in the **archive storage** side, in a wa
 
 ![Diagram showing the primary storage entities and the archive storage entities.](images/data-archiving-archive-storage-diag.png "Light Archiving Step 1: Primary and archive storage structure")
 
-**Step 2. Implement the archiving process logic to store the main data into the archive storage**
+#### Step 2. Implement the archiving process logic to store the main data into the archive storage
 
 This logic implements all the archiving logic, such as:
 
@@ -101,7 +101,7 @@ You can use [Settings](../../../manage-platform-app-lifecycle/configuration-mana
 
 ![Flowchart illustrating the archiving logic connecting the primary storage to the archive storage, with the ODC Portal/Backoffice component at the top](images/data-archiving-archive-logic-diag.png "Light Archiving Step 2: Archiving logic")
 
-**Step 3. Create a Timer to asynchronously run the archiving process**
+#### Step 3. Create a Timer to asynchronously run the archiving process
 
 Create a [Timer](../../timers/intro.md) that runs your archiving logic implemented in Step 2.
 
@@ -111,7 +111,7 @@ The following is an example of the archiving process logic:
 
 ![Logic flow of the Timer implementing the archiving process](images/data-archiving-timer-logic-odcs.png "Light Archiving Step 4: Archiving Timer")
 
-1. **Set Archive Threshold** - Sets the number of records to archive by iteration. This threshold can be defined using a Site Property, so it can be adjusted without redeploying the module.
+1. **Set Archive Threshold** - Sets the number of records to archive by iteration. This threshold can be defined using a Setting, so it can be adjusted without redeploying the app.
 
 1. **Set StartTime** - Sets a local variable with the current time when the execution starts.
 
@@ -135,7 +135,7 @@ Make sure the Timer:
 * Is resilient to failure.
 * Avoids repeated work.
 
-**Step 4. Purge the archived data from the primary storage**
+#### Step 4. Purge the archived data from the primary storage
 
 Delete the data that's already archived from the primary storage. Use an independent log execution Timer, with its own schedule and running in off-peak hours.
 
@@ -143,7 +143,7 @@ Delete the data that's already archived from the primary storage. Use an indepen
 
 For further information, see the [best practices for data purging](data-purging.md).
 
-**Step 5. Create UI that enables end users to search and restore data**
+#### Step 5. Create UI that enables end users to search and restore data
 
 If needed, create UI where the end user can interact with the archived data:
 
@@ -158,7 +158,7 @@ Due to the volume of data, the archive storage is less performant than the prima
 
 You should consider this approach when the data is archived due to historical or legal requirements and data is only needed on rare occasions.
 
-**Step 1. Create a centralized component to serve as an archive across your organization's app portfolio**
+#### Step 1. Create a centralized component to serve as an archive across your organization's app portfolio
 
 This component is used as a centralized, general-purpose archiving storage across your organization's app portfolio.
 
@@ -168,7 +168,7 @@ The archived records are stored in a flat structured entity which combines the a
 
 This solution eliminates the need to design and maintain a separate archive repository for each entity. However, it's important to consider that with this approach, all archived data is stored in a single set of entities. Over time, these entities may grow significantly, which could create performance bottlenecks, particularly when performing audits. To mitigate this, you can reduce maintenance complexity by creating a separate clone of the archive component for each group of related business applications.
 
-**Step 2. In each OutSystems app, implement the archiving process using the centralized archive**
+#### Step 2. In each OutSystems app, implement the archiving process using the centralized archive
 
 Each business app is responsible for moving its records into the centralized archive. The archiving criteria can vary from application to application (inactive records, last update timestamp, creation date, etc).
 
@@ -188,13 +188,13 @@ Make sure to discuss the business requirements and determine the more effective 
 
 The archive storage contains a higher volume of information and is consulted less often than the primary storage. It’s commonly accepted by end users that queries over the archive take longer to retrieve information, so the development team tends to not optimize the archive Entities.
 
-However, lack of optimization, such as proper indexes, may cause the end user experience to deteriorate over time and eventually renders the end user unable to retrieve any information due to timeouts.
+However, lack of optimization, such as proper indexes, may cause the end user experience to deteriorate over time. Eventually, this can prevent end users from retrieving any information due to timeouts.
 
 Always keep the archive storage optimized to return information as fast as possible.
 
 ### Archiving without purging
 
-If you have no purging strategy on the archive storage the data will grow and the archive storage will become slower.
+Without a purging strategy, the data in the archive storage grows and the archive storage becomes slower.
 
 When the archived data is no longer required, you should purge it. [See more details about data purging.](data-purging.md)
 

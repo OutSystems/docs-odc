@@ -20,6 +20,12 @@ topic:
 
 # Column Chart
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 This example shows how to create a simple Column Chart with data labels.
 
 1. From the Toolbox, drag the **Column Chart** widget to the Screen.

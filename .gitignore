@@ -6,6 +6,7 @@ rules/
 config.yml
 .vscode/settings.json
 .DS_Store
+.idea/
 .aider*
 # Ignore all .vale.ini files anywhere in the repo
 **/.vale.ini
@@ -15,3 +16,15 @@ config.yml
 
 # Ignore all files inside the 'styles' folder
 styles/*
+
+# Ignore all files inside the '.vscode' folder
+.vscode/*
+# Ignore all mcp.json files anywhere in the repo
+**/mcp.json
+
+# Internal planning docs
+**/plan-*.md
+
+# Claude Code files
+CLAUDE.md
+PLAN.md

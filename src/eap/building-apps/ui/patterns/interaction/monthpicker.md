@@ -19,6 +19,12 @@ coverage-type:
 
 # Month Picker
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 You can use the Month Picker UI Pattern to allow users input a month of the year. The Month Picker Pattern is based on the [flatpickr library](https://flatpickr.js.org/) For more advanced options, you can refer to this library.
 
 ## How to use the Month Picker UI Pattern
@@ -79,10 +85,10 @@ You can use the [FormatDateTime](../../../../reference/built-in-functions/format
 
 ## Properties
 
-| Property  | Description  |
-|---|---|
-|  DateFormat (Text): Optional | Set the input date format. If empty, the date is the same as the server format. |
-|  InitialMonth (MonthYear): Optional | The initial selected month and year for the Month Picker. If not set, no initial month is selected. |
-| MinMonth (MonthYear): Optional  |  Set the minimum month that can be selected. Any month before this is disabled and cannot be selected. |
-| MaxMonth (MonthYear): Optional  | Set the maximum month that can be selected. Any month after this is disabled and cannot be selected.  |
-| ExtendedClass (Text): Optional  | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |
+| Property | Description |
+| --- | --- |
+| DateFormat (Text): Optional | Set the input date format. If empty, the date is the same as the server format. |
+| InitialMonth (MonthYear): Optional | The initial selected month and year for the Month Picker. If not set, no initial month is selected. |
+| MinMonth (MonthYear): Optional | Set the minimum month that can be selected. Any month before this is disabled and cannot be selected. |
+| MaxMonth (MonthYear): Optional | Set the maximum month that can be selected. Any month after this is disabled and cannot be selected. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <p>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul></p>You can also use the classes available on the OutSystems UI. |

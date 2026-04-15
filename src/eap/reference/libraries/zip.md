@@ -21,7 +21,7 @@ coverage-type:
 ## Actions
 
 | Action | Description |
-| ---|--- |
+| --- | --- |
 | AddFile | Adds a file to a Zip. The Action CommitChanges must be called after adding all the files. |
 | CommitChanges | Commits any changes made to a Zip in memory. If AddFile is used, this Action must be called before GetZipBinary or GetFiles. |
 | CreateZip | Creates a memory representation of a Zip file and returns a handle that must be passed to the other Actions. |

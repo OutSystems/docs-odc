@@ -81,7 +81,7 @@ Following are the color descriptions.
 | Color | Name | Meaning |
 | --- | --- | --- |
 | ![Color reference indicating a gray highlight for a deleted line in the merge comparison](images/color-modifed-deleted.png "Color Reference for Deleted Line") | Gray | Deleted line |
-| ![Color reference indicating a green highlight for an inserted line in the merge comparison](images/color-modifed-added.png "Color Reference for Inserted Line") | Green| Inserted line |
+| ![Color reference indicating a green highlight for an inserted line in the merge comparison](images/color-modifed-added.png "Color Reference for Inserted Line") | Green | Inserted line |
 | ![Color reference indicating a light blue highlight for an unchanged line with no conflicts in the merge comparison](images/color-modifed-light.png "Color Reference for Unchanged Line") | Light blue | The modified line with no changes and conflicts, no changes in this revision |
 | ![Color reference indicating a red highlight for a line modified in both versions with conflicts in the merge comparison](images/color-modifed-conflict.png "Color Reference for Conflicted Line") | Red | Modified in both versions with conflicts |
 

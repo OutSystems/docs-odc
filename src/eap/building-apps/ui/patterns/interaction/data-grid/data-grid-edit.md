@@ -17,6 +17,12 @@ outsystems-tools:
 ---
 # Edit data in OutSystems Data Grid
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 This example shows how to edit data in the Grid using columns.
 
 **Prerequisites:**
@@ -53,13 +59,13 @@ This example shows how to edit data in the Grid using columns.
 
     This example uses the following:
 
-    | **Widget** | **Property** |
-    |---|---|
-    |**Number Column** | Header: "Stock" <br/> Binding: "Sample_Product.Stock"|
-    | **Currency Column**| Header: "Price"<br/> Binding: "Sample_Product.Price" |
-    |**Checkbox Column** | Header: "Is Favorite"<br/>Binding: "Sample_Product.IsFavourite" |  
+| **Widget** | **Property** |
+| --- | --- |
+| **Number Column** | Header: "Stock" <br/> Binding: "Sample_Product.Stock" |
+| **Currency Column** | Header: "Price"<br/> Binding: "Sample_Product.Price" |
+| **Checkbox Column** | Header: "Is Favorite"<br/>Binding: "Sample_Product.IsFavourite" |
 
-    ![Screenshot showing the Data Grid with added columns for Name, Stock, Price, and Is Favorite with their respective bindings.](images/grid-edit-addcol-odcs.png "Adding Columns to Data Grid")
+  ![Screenshot showing the Data Grid with added columns for Name, Stock, Price, and Is Favorite with their respective bindings.](images/grid-edit-addcol-odcs.png "Adding Columns to Data Grid")
 
 After following these steps and publishing the module, you can test the component in your app. Double-click a cell to edit its content.
 

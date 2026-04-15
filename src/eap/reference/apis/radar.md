@@ -18,6 +18,12 @@ coverage-type:
 
 # Radar Chart
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 This example shows how you can create a simple Radar Chart with multiple series types.
 
 1. From the Toolbox, drag the **Radar Chart** widget to the Screen.

@@ -19,6 +19,12 @@ coverage-type:
 
 # Master Detail
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 You can use the Master Detail Pattern to display a master list of items and their related details, for example, a list of employees and their corresponding details.
 
 ![Overview of the Master Detail Pattern showing a list of items and their details](images/masterdetail-2.png "Master Detail Pattern Overview")

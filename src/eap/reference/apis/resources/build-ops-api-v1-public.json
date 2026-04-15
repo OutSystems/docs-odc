@@ -14,8 +14,8 @@
       "url": "https://{odc-portal-domain}/api/builds/v1",
       "description": "Replace {odc-portal-domain} with the domain of your organization.",
       "variables": {
-        "odc-portal-domain": {
-          "default": "ODC_PORTAL_DOMAIN",
+        "{odc-portal-domain}": {
+          "default": "{odc-portal-domain}",
           "description": "The domain of your organization"
         }
       }
@@ -150,6 +150,174 @@
           },
           "403": {
             "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "You need the **Asset management > Open** permission."
+      }
+    },
+    "/build-operations/{operationKey}/generated-code": {
+      "get": {
+        "tags": [
+          "Build"
+        ],
+        "summary": "Gets generated code produced by a given build",
+        "description": "This resource is only available after calling POST /build-operations/{operationKey}/generated-code with the respective build key.\n\n            \n\n Example:\n\n     GET /builds/v1/build-operations/be77b25f-c738-462f-8f19-7114fc4f9923/generated-code\n\nYou need the **Asset management > Open** permission.",
+        "operationId": "BuildV_GetSourceCode",
+        "parameters": [
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "The key of the build",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details about the generated code",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedCodePackageResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Couldn't find generated code package for the given build",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "You need the **Asset management > Open** permission."
+      },
+      "post": {
+        "tags": [
+          "Build"
+        ],
+        "summary": "Starts packaging the code generated for a given build",
+        "description": "Example:\n\n    POST /builds/v1/build-operations/be77b25f-c738-462f-8f19-7114fc4f9923/generated-code\n\nYou need the **Asset management > Open** permission.",
+        "operationId": "BuildV_StartSourceCodeProcess",
+        "parameters": [
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "The key of the build",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Indicates whether the packaging was initiated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedCodePackagingResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Couldn't find build",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Build is not valid for generated code packaging",
             "content": {
               "application/json": {
                 "schema": {
@@ -569,6 +737,77 @@
         "type": "string",
         "description": "The type of build"
       },
+      "GeneratedCodePackageResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GeneratedCodePackagingStatus"
+              }
+            ],
+            "description": "The current status of the packaging."
+          },
+          "uri": {
+            "type": "string",
+            "description": "The URI of the generated code package.",
+            "nullable": true
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeneratedCodePackagingError"
+            },
+            "description": "The list of errors that occurred while packaging.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the result of packaging a build's generated code."
+      },
+      "GeneratedCodePackagingError": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "description": "The timestamp representing the instant when the message was issued",
+            "format": "date-time"
+          },
+          "severity": {
+            "type": "string",
+            "description": "The severity of the error: Error, Info, Warning, etc.",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The content of the error",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A message issued during the packaging of a build's generated code"
+      },
+      "GeneratedCodePackagingResponse": {
+        "type": "object",
+        "properties": {
+          "isSuccessful": {
+            "type": "boolean",
+            "description": "Indicates whether the packaging was initiated successfully."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the response from initiating the packaging of a build's generated code."
+      },
+      "GeneratedCodePackagingStatus": {
+        "enum": [
+          "NotStarted",
+          "Running",
+          "Finished",
+          "TimedOut",
+          "Failed"
+        ],
+        "type": "string"
+      },
       "ProblemDetails": {
         "type": "object",
         "properties": {
@@ -661,7 +900,9 @@
       }
     }
   },
-  "security": [{
-    "bearerAuth": []
-  }]
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
 }

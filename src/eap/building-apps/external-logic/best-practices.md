@@ -21,6 +21,8 @@ outsystems-tools:
 ---
 # Best practices for using external libraries
 
+Follow these recommendations to ensure your external libraries are secure, efficient, and integrate seamlessly with your ODC apps.
+
 ## Use with the private gateway feature
 
 You can connect your external library to private data and private services ("endpoints") that aren't accessible by the internet by using the [Private Gateway feature](../../manage-platform-app-lifecycle/private-gateway.md).
@@ -45,7 +47,70 @@ This architecture has several important implications:
 
 * **Independence:** External libraries run independently of the ODC app. This means they don't have direct access to the app's resources, context, or state, other than what you explicitly provide as an input parameter.
 
+* **Plugin execution context:** External libraries operate within a plugin-based architecture that uses isolated assembly loading to manage dependencies. Avoid external dependencies or code that requires dynamic assembly loading or relies on expectations of where assemblies are located (for example, using `AppDomain.CurrentDomain.BaseDirectory`). These patterns may lead to unexpected behavior in this environment. External libraries shouldn't depend on the published structure of their assets in the file system or on dynamic loading mechanisms that assume a standalone app context, as these behaviors aren't supported in this architecture.
+
 By designing your external libraries with these considerations in mind, you can ensure that they function correctly and efficiently within the broader architecture of your ODC apps.
+
+## Always use structured logging with ILogger
+
+Implement logging in your external libraries to track behavior and diagnose issues. Follow these best practices:
+
+* **Always add logging**: Don't skip logging in your external libraries. Proper logging is essential for troubleshooting issues in production.
+
+* **Use the ILogger interface**: Your custom code must use the [Microsoft Extension ILogger Interface](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger?view=net-8.0-pp) provided in the Library class constructor. Don't use `Console.WriteLine`. Console logs aren't visible in the ODC Portal but can be accessed by OutSystems staff in lower level system logs.
+
+* **Use appropriate [log levels](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.loglevel?view=net-8.0-pp)**:  This helps you filter logs effectively when troubleshooting. In the ODC logs, only Information and higher levels are captured and visible in the [ODC Portal logs](../../monitor-and-troubleshoot/monitor-apps.md).
+
+* **Don't log sensitive information**: Ensure that logging doesn't expose personal data or credentials, to comply with data protection regulations.
+
+The following example shows how to inject `ILogger` in the constructor and use different log levels:
+
+```csharp
+using Microsoft.Extensions.Logging;
+using System.Diagnostics;
+
+namespace MyCompany
+{
+    public class MyLibrary : IMyLibrary
+    {
+        private readonly ILogger _logger;
+
+        public MyLibrary(ILogger logger)
+        {
+            _logger = logger;
+        }
+
+        // Helper to capitalize a word properly
+        private static string Capitalize(string s) {
+          return string.IsNullOrWhiteSpace(s) ? "" : 
+              char.ToUpper(s[0]) + s.Substring(1).ToLower();
+        }
+
+        public string SayHello(string name, string title = "Mr./Ms.")
+        {
+            using var activity = Activity.Current?.Source.StartActivity("MyLibrary.SayHello");
+            try
+            {
+                _logger.LogInformation("Saying hello to {Name} with title {Title}", name, title);
+
+                // Split the name into parts
+                var parts = name.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+                // Extract first and last name (with basic safety)
+                string first = parts.Length > 0 ? parts[0] : "";
+                string last  = parts.Length > 1 ? parts[^1] : "";
+
+                return $"Hello, {title} {Capitalize(first)} {Capitalize(last)}";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while formatting Name.");
+                throw new ArgumentException($"Failed to format name: {name}", ex);
+            }
+        }
+    }
+}
+```
 
 ## Memory usage
 
@@ -87,6 +152,8 @@ To use a large binary file in custom code you can:
 1. Host the binary file on a file-sharing service and implement logic in your custom code to download the file from the URL.
 
 ## Related resources
+
+For more related resources, refer to the following articles:
 
 * [Extend your apps with custom code](intro.md)
 

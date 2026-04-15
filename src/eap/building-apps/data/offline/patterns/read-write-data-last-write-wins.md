@@ -43,7 +43,7 @@ Here’s an overview of the Read/Write Data Last Write Wins pattern:
 
 1. ![Icon representing a mobile client in the Read/Write Data Last Write Wins pattern](images/icon-client.png "Client Icon") Deletes and recreates data in the local storage with the data received from the server.
 
-Download the [sample module for the Read/Write Data Last Write Wins pattern](http://www.outsystems.com/forge/component/1638/Offline+Data+Sync+Patterns/), which uses companies as an example for data synchronization. The following sections explain how to automatically generate this synchronization pattern and provide detailed descriptions of the data model and logic used in the sample module.
+Explore the Forge component [Offline Data Sync Patterns - R/W Last Wins](https://www.outsystems.com/forge/component-overview/16954/offline-data-sync-patterns-r-w-last-wins-odc), which uses companies as an example for data synchronization and examine the logic in your environment. The following sections explain how to automatically generate this synchronization pattern and provide detailed descriptions of the data model and logic used in the component.
 
 ## Automatically generate the pattern for an entity
 

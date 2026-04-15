@@ -22,7 +22,7 @@ Data Grid for Reactive Web Apps is built on top of [Mescius Data Grid](https://d
 ## Summary
 
 | Widget | Description |
-| ---|--- |
+| --- | --- |
 | [ActionColumn](<#ActionColumn>) | Column for your GridContainer Block to render number fields. Drag as many columns as  you need into the GridColumnsPlaceholder in the GridContainer Block. |
 | [CheckboxColumn](<#CheckboxColumn>) | Column for your GridContainer Block to render boolean fields. Drag as many columns as you need into the GridColumnsPlaceholder in the GridContainer Block. |
 | [ContextMenu](<#ContextMenu>) | Add a context menu to the grid. Default options: Copy, Copy with headers, Export to CSV to Excel Freeze column(s), Unfreeze column(s). |
@@ -51,7 +51,7 @@ Data Grid for Reactive Web Apps is built on top of [Mescius Data Grid](https://d
 | [TextColumn](<#TextColumn>) | Column for your GridContainer Block to render text fields. Drag as many columns as you need into the GridColumnsPlaceholder in the GridContainer Block. |
 
 | Client Action | Description |
-| ---|--- |
+| --- | --- |
 | [ActivateFilter](<#Client_ActivateFilter>) | Activates a filter on a given column. |
 | [AddClass](<#Client_AddClass>) | Adds a CSS class to a specific row on the grid. |
 | [AddNewRows](<#Client_AddNewRows>) | Adds new lines to the grid (depending on the number of lines that are selected). |
@@ -78,7 +78,7 @@ Data Grid for Reactive Web Apps is built on top of [Mescius Data Grid](https://d
 | [UnfreezeColumns](<#Client_UnfreezeColumns>) | Unfreezes all columns on the grid. |
 
 | Structure | Description |
-| ---|--- |
+| --- | --- |
 | [ActionOptionalConfigs](<#Structure_ActionOptionalConfigs>) | Additional configurations that can be set in the Action column. |
 | [ActiveFilters](<#Structure_ActiveFilters>) | Contains the information of a given filter of a column. |
 | [BindingValue](<#Structure_BindingValue>) | Represents the content of a cell. |
@@ -107,7 +107,7 @@ Data Grid for Reactive Web Apps is built on top of [Mescius Data Grid](https://d
 | [RowData](<#Structure_RowData>) | Represent the data source of a row. |
 
 | Static Entity | Description |
-| ---|--- |
+| --- | --- |
 | [AlignMode](<#StaticEntity_AlignMode>) | Alignment modes for the column **Align** parameter. Has the values Center, Left and Right. |
 | [DateOperator](<#StaticEntity_DateOperator>) | Operators used by the Date and DateTime conditional format. |
 | [Filter_OperatorType](<#StaticEntity_Filter_OperatorType>) | Operators supported by the filter. |

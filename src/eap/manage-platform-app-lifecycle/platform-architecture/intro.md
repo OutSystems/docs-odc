@@ -37,15 +37,15 @@ The following diagram shows the high-level architecture of the OutSystems Develo
 
 ![Diagram illustrating the high-level architecture of the OutSystems Developer Cloud with Platform and Runtime stages.](images/high-level-architecture-diag.png "High-level Architecture of OutSystems Developer Cloud")
 
- All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of OutSystems Developer Cloud](networking.md) to learn more.
+All external requests to both the Platform and each of the Runtime stages go through a Content Delivery Network (CDN) and Web Application Firewall (WAF). All internal and external requests are encrypted using Transport Layer Security (TLS). See [Cloud-native network architecture and security of OutSystems Developer Cloud](networking.md) to learn more.
 
-### Platform { #platform }
+### Platform {#platform}
 
 The development **Platform** comprises multiple services, each responsible for specific functions that facilitate the building and deployment of apps. All the Platform services benefit from a resilient microservices design with a REST API web service interface. Developers, DevOps engineers, and architects interact with these services using ODC Studio and ODC Portal.
 
 The Platform **Load Balancer** handles all requests to the services.
 
-An example of a service is the Build Service. When developers click the 1-Click Publish button in ODC Studio, the Build Service takes the OutSystems visual language model (OML project) and compiles it into a deployable app.
+An example of a service is the Build service. When developers click the 1-Click Publish button in ODC Studio, the Build service takes the OutSystems visual language model (OML project) and compiles it into a deployable app.
 
 All the Platform services are multi-tenant and benefit from automatic recovery and continuous upgrades.
 
@@ -53,7 +53,7 @@ The following diagram shows the high-level architecture of the development Platf
 
 ![Diagram showing the high-level architecture of the development Platform in OutSystems Developer Cloud.](images/high-level-architecture-platform-diag.png "Development Platform Architecture")
 
-#### Data platform { #data-platform }
+#### Data platform {#data-platform}
 
 The **Data platform** collects, processes, and stores data from several sources. This information is then made available for analysis and visualization, allowing customers to monitor their apps’ performance and usage, and track platform operations. The Data platform is also responsible for processing Mentor App Generator’s data.
 
@@ -82,12 +82,12 @@ The Data platform runs in a designated region based on your ODC organization’s
 | :--- | :--- |
 | US East (North Virginia), CA (Canada Central) | US East (North Virginia) |
 | South America (São Paulo) | South America (São Paulo) |
-| Europe (Frankfurt), Europe (London), Europe (Ireland), Middle East (Tel Aviv), Middle East (UAE) | Europe (Frankfurt) |
-| Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta) | Asia Pacific (Singapore) |
+| Europe (Frankfurt), Europe (London), Europe (Ireland), Middle East (Tel Aviv), Middle East (UAE), South Africa (Cape Town) | Europe (Frankfurt) |
+| Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta), Asia Pacific (Hong Kong) | Asia Pacific (Singapore) |
 
-### Runtime { #runtime }
+### Runtime {#runtime}
 
-In OutSystems Developer Cloud, the **Runtime** is independent of the Platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed apps. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
+In OutSystems Developer Cloud, the **runtime** is independent of the platform and comprises multiple **stages**, each independent of the other, that serve to host and run the deployed apps. Each stage is an isolated runtime environment. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
 
 The Runtime **Load Balancer** handles all requests to the apps.
 
@@ -105,7 +105,7 @@ The core of both the Platform and each of the Runtime stages is the **Kubernetes
 
 Powered by AWS Elastic Kubernetes Service (EKS), the Platform and each of the Runtime stages use a cluster: an isolated, scalable, and self-healing compute capacity.
 
-#### Platform cluster { #platform-cluster }
+#### Platform cluster {#platform-cluster}
 
 To run on a Kubernetes cluster, each Platform service is packaged into a **container**. A container is a lightweight, standalone, executable software package. It includes everything the app needs to run: code, runtime, system tools, system libraries, and settings. See [Security in OutSystems Developer Cloud](../../security/security.md#containers) for more information about container security.
 
@@ -119,7 +119,7 @@ The following diagram shows how auto-scaling works inside the Platform cluster.
 
 The **auto scale controller** monitors the CPU and RAM usage of each running service. It continuously checks the usage against the cluster compute capacity allocated and allocates additional capacity if the CPU and RAM usage exceeds a defined threshold.
 
-The auto scale controller makes the adjustment in real time, with no user interaction required.
+The auto-scale controller makes the adjustment in real time with no user interaction required.
 
 The isolated Platform cluster resources its overall compute capacity from a multi-tenant pool. This means it's scalable.
 
@@ -129,9 +129,13 @@ In the example of the Build Service in the [previous section](#platform), the co
 
 The Build Service packages each container image into a separate container, making the infrastructure resilient to individual resource-intensive app(s) that degrade the performance of other apps.
 
-##### High Availability - Apps (HA)
+##### High availability for apps
 
-When enabled, ODC replicates app containers running in each Runtime (Production) cluster across multiple availability zones to ensure high availability. An availability zone is a distinct location in the cloud that's engineered to be isolated from failure.  Whenever a failure occurs in an availability zone, or an application container becomes unavailable, traffic is automatically routed to the healthy app container ensuring no disruption.  Without HA, failover is not immediate and may take a few minutes to recover as additional application containers are launched into different availability zones.
+High availability (HA) is an optional add-on available only for production stages:
+
+* When enabled, ODC replicates app containers running in each runtime cluster across multiple availability zones (AZ) to ensure high availability. An availability zone is a distinct location in the cloud that's engineered to be isolated from failure.  Whenever a failure occurs in an AZ, or an application container becomes unavailable, traffic is automatically routed to the healthy app container ensuring no disruption.  
+
+* Without HA, failover isn't immediate and may take a few minutes to recover as additional application containers are launched into different AZs.
 
 ##### Auto-scaling
 
@@ -143,7 +147,7 @@ The following diagram illustrates how auto-scaling works inside the Runtime clus
 
 The **auto scale controller** monitors the CPU and RAM usage of each app container. It continuously checks the usage against the cluster compute capacity allocated and allocates additional capacity if the CPU and RAM usage exceeds a defined threshold.
 
-The auto scale controller makes the adjustment in real time, with no user interaction required.
+The auto-scale controller makes the adjustment in real time with no user interaction required.
 
 The overall compute capacity for the isolated Runtime stage cluster is scalable because it's resourced from a multi-tenant pool.
 
@@ -170,15 +174,19 @@ Each Runtime stage has an isolated Amazon Aurora Serverless database. The follow
 
 The Amazon Aurora database architecture model decouples compute and storage, and both automatically scale independently. The Database CPU and Memory automatically scale as the amount of load increases, and the database storage volume automatically scales as the amount of data stored increases.
 
-#### High Availability - Data (HA)
+#### High availability for data
 
-When enabled, a second (standby) database is deployed in a separate availability zone.  Whenever an availability zone fails or the primary database becomes unavailable, the standby database is automatically promoted to the primary, and traffic is automatically routed to the new primary database, ensuring minimal disruption.  Without HA, failover is not immediate and the primary database can take a few minutes to recover in a secondary availability zone.  As the data is automatically written to multiple AZ's, there is no loss of data in the event of a failure.
+High availability (HA) is an optional add-on available for production stages:
 
-#### Platform to Runtime
+* When enabled, a second (standby) runtime database is deployed in a separate availability zone (AZ).  Whenever an AZ fails or the primary database becomes unavailable, the standby database is automatically promoted to the primary, and traffic is automatically routed to the new primary database, ensuring minimal disruption.  
+
+* Without HA, failover isn't immediate and the primary database can take a few minutes to recover in a secondary availability zone.  As the data is automatically written to multiple AZs, there's no loss of data in the event of a failure.
+
+#### Platform to runtime
 
 Build Service stores the app container image and passes the image to a Runtime stage for deployment. OutSystems follows the "Build once, deploy anywhere" **continuous delivery** principle, which makes OutSystems Developer Cloud an efficient cloud product.
 
-## Customer data handling in Data Fabric { #data-fabric }
+## Customer data handling in Data Fabric {#data-fabric}
 
 Many times your data is stored in an external location. Data Fabric helps you to access and integrate data into your apps.
 
@@ -186,7 +194,7 @@ Many times your data is stored in an external location. Data Fabric helps you to
 
 Customers use [Data Fabric connectors](../../integration-with-systems/external-databases/intro.md) for integrations. Data Fabric processes all your external system data uniformly, with no persistent storage within Data Fabric or ODC architecture.
 
-Data Fabric Connectors retrieve essential metadata from external systems, making it crucial for developers to select integration tables, objects, and columns. The selected metadata is securely stored in serverless, NoSQL databases during the connection's lifetime in the ODC Portal.
+Data Fabric Connectors retrieve essential metadata from external systems, making it crucial for developers to select integration tables, objects, and columns. The selected metadata is securely stored in serverless, NoSQL databases for the duration of the connection in the ODC Portal.
 
 ### Memory
 
@@ -200,7 +208,7 @@ Different types of data are stored distinctively in memory:
 
 * **Query parameter** values are held by Kubernetes Pod memory and the in-memory database, typically discarded once the client consumes the result. If an error prevents the client from closing the statement, which triggers deletion, the parameter values are deleted after roughly 5 minutes.
 * **Query results** reside in memory in the Kubernetes Pod memory, with the same retention time as query parameter values.
-* **Metadata**, such as, tables, columns, Primary Key/Foreign Key constraints, remain in memory in the Kubernetes Pod and the in-memory database for the connection's duration.
+* **Metadata**, such as tables, columns, primary and foreign key constraints, remain in memory in the Kubernetes pod and the in-memory database for the connection's duration.
 
 ![Diagram illustrating the storage and retention of query parameter values, query results, and metadata in memory within OutSystems Developer Cloud.](images/memory-usage-diag.png "Memory Data Handling")
 
@@ -210,17 +218,17 @@ In the ODC architecture, caches optimize performance by storing certain informat
 
 * Metadata: This type of data is cached during connection creation or when refreshing metadata in the ODC Portal. The data is then stored in serverless, NoSQL databases.
 * Query statements that execute in runtime Apps are cached to maintain consistent execution plans in the underlying system to enhance performance. Developers should follow security best practices and avoid sensitive data in query statements.
-* Query results are cached in Kubernetes pod memory. This cache expiration is defined by developer at the aggregate level.
+* Query results are cached in Kubernetes pod memory. This cache expiration is defined by the developer at the aggregate level.
 
 ### Connection secrets
 
 When creating a connection, developers must supply external system details such as username, password, and host. ODC securely stores sensitive data like passwords by encrypting them as secrets in a cloud secret store. Passwords are never stored in clear text and secrets are not human-readable. Secrets are decrypted only when connecting to the external system by an automated process and without human intervention.
 
-When editing an existing connection, secrets are not fetched and decrypted from the cloud secret store. Instead, the developer will have to provide the details considered secrets one more time to save the connection.
+When editing an existing connection, secrets are not fetched and decrypted from the cloud secret store. Instead, the developer must provide the details considered secrets again to save the connection.
 
 ### Data in transit
 
-Queries executed by developers in data preview (ODC Studio) or by end-users in runtime Apps, along with their results, traverse different channels for communication. Queries begin at the frontend, pass through various Kubernetes services, connect to the customer's system, and returns to the frontend with query results.
+Queries executed by developers in data preview (ODC Studio) or by end-users in runtime apps, along with their results, traverse different channels for communication. Queries begin at the frontend, pass through various Kubernetes services, connect to the customer's system, and return to the frontend with query results.
 
 ![Flow diagram showing the path of data in transit from execution of queries to the return of results in OutSystems Developer Cloud.](images/data-in-transit-diag.png "Data Transit Flow")
 
@@ -232,13 +240,13 @@ There are two communication channels in this process:
 
 ### Monitoring
 
-ODC monitoring and observability tools never log sensitive data to ensure confidentiality. Sensitive data is omitted to prevent human readability. For troubleshooting purposes, queries are logged when errors occur, query results aren't logged. In the interest of security, query results are never logged, not even for troubleshooting purposes.
+ODC monitoring and observability tools never log sensitive data to ensure confidentiality. Sensitive data is omitted so it can't be read by humans. For troubleshooting purposes, queries are logged when errors occur, query results aren't logged. In the interest of security, query results are never logged, not even for troubleshooting purposes.
 
 ### Departure
 
 When a connection to an external system is deleted in ODC Portal or an ODC subscription is terminated, persistently stored customer metadata is automatically deleted. When deleting the customer environment without removing the connection, the in-memory database clears the metadata approximately 4 hours later.
 
-## Logging, monitoring, and analytics { #logging-monitoring-analytics }
+## Logging, monitoring, and analytics {#logging-monitoring-analytics}
 
 Logs and metrics are collected from each of the app containers running in each Runtime stage cluster. Developers and DevOps engineers can filter logs on ODC Portal.
 

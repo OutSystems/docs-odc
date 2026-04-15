@@ -2,19 +2,21 @@
 guid: fc8b0661-525c-4f75-8217-4d9aec2cd312
 locale: en-us
 summary: This article provide complete details on app extensibility configuration JSON schema.
-figma:
+figma: 
 coverage-type:
   - remember
 topic:
+  - customize-mobile-apps
 app_type: mobile apps
 platform-version: odc
 audience:
   - mobile developers
-tags: Mobile,json extensibility,json configuration
+tags: mobile,json extensibility,json configuration
 outsystems-tools:
-  - none
-helpids:
+  - odc studio
+helpids: 
 ---
+
 # App extensibility configuration JSON schema
 
 <div class="info" markdown="1">
@@ -22,72 +24,6 @@ helpids:
 The schema may change with every new MABS version.
 
 </div>
-
-[appConfigurations](#appconfigurations)
-
-[Properties](#properties)
-
-[cordova](#cordova)
-
-[permissions](#permissions)
-
-[displayName](#displayname)
-
-[orientation](#orientation)
-
-[orientation Constraints](#orientation-constraints)
-
-[targetDevice](#targetdevice)
-
-[targetDevice Constraints](#targetdevice-constraints)
-
-[backgroundColor](#backgroundcolor)
-
-[backgroundColor Constraints](#backgroundcolor-constraints)
-
-[deeplinksHandler](#deeplinkshandler)
-
-[deeplinksHandler Constraints](#deeplinkshandler-constraints)
-
-[network](#network)
-
-[connections](#connections)
-
-[trustedCA](#trustedca)
-
-[systembars](#systembars)
-
-[style](#style)
-
-[appendUserAgent](#appenduseragent)
-
-[splashscreen](#splashscreen)
-
-[duration](#duration)
-
-[autoHide](#autohide)
-
-[buildConfigurations](#buildconfigurations)
-
-[Properties](#properties-1)
-
-[resources](#resources)
-
-[android](#android)
-
-[ios](#ios)
-
-[splashscreens](#splashscreens)
-
-[android](#android-1)
-
-[ios](#ios-ios-1)
-
-[buildAction](#buildaction)
-
-[config](#config)
-
-[parameters](#parameters)
 
 The extensibility configuration for the application defines a set of configurations that pertain to a specific application. At the top level, it is composed by the following properties:
 
@@ -111,7 +47,7 @@ Example:
 
 ## appConfigurations
 
-Application configurations are a set of configurations that modify multiple runtime aspects/behaviors of the mobile application, from background color to how long the splash screen is visible on app launch.
+App configurations are a set of configurations that modify multiple runtime aspects and behaviors of the mobile app, from background color to how long the splash screen is visible on app launch.
 
 `appConfigurations`
 
@@ -130,9 +66,10 @@ Application configurations are a set of configurations that modify multiple runt
 | [backgroundColor](#backgroundcolor) | `string` | Optional | true |
 | [deeplinksHandler](#deeplinkshandler) | `string` | Optional | true |
 | [network](#network) | `object` | Optional | true |
-| [systembars](#systembars) | `object` | Optional | true |
+| [systemBars](#systembars) | `object` | Optional | true |
 | [appendUserAgent](#appenduseragent) | `string` | Optional | true |
 | [splashscreen](#splashscreen) | `object` | Optional | true |
+| [webViewUpdate](#webviewupdate) | `object` | Optional | false |
 
 Overriding property values per platform is achieved by referencing those properties inside `ios` and/or `android` property. Example:
 
@@ -153,7 +90,7 @@ Where `displayName` value is overridden specifically for Android.
 
 Sets Cordova preferences for the application. Preference values can be set globally for both platforms or overridden per platform.
 
-**Example**
+#### Example
 
 ```json
 {
@@ -177,7 +114,7 @@ Here, the Cordova preference `SomePreference` is being set globally with a value
 * Optional  
 * Type: `object`
 
-**Properties**
+#### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -191,6 +128,7 @@ Key-value pair of [Cordova preferences](https://cordova.apache.org/docs/en/12.x/
 
 * Optional  
 * Type: `object`
+* Placeholders: `extensibility settings`
 
 Properties:
 
@@ -204,10 +142,13 @@ Properties:
 
 Define Android permissions or iOS usage descriptions in the application.
 
-| ❗️ Permissions/usage descriptions values set at the application level take precedence over the values defined on Libraries Extensibility Configuration. |
-| :---- |
+<div class="info" markdown="1">
 
-**Example**
+Permissions/usage descriptions values set at the application level take precedence over the values defined on Libraries Extensibility Configuration.
+
+</div>
+
+#### Example
 
 ```
 {
@@ -226,6 +167,7 @@ Define Android permissions or iOS usage descriptions in the application.
 
 * Optional  
 * Type: `object`
+* Placeholders: `extensibility settings`
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -239,7 +181,8 @@ Override the user-visible name for the application
 `displayName`
 
 * Optional  
-* Type: `string`  
+* Type: `string`
+* Placeholders: _none_
 * Defaults to the OutSystems application name
 
 ### orientation
@@ -250,6 +193,7 @@ The orientation of the app's user interface
 
 * Optional  
 * Type: `string`
+* Placeholders: _none_
 
 #### Orientation Constraints
 
@@ -263,8 +207,11 @@ The orientation of the app's user interface
 
 ### targetDevice
 
-| ❗️ iOS only |
-| :---- |
+<div class="info" markdown="1">
+
+iOS only
+
+</div>
 
 The device family being targeted by application.
 
@@ -272,6 +219,7 @@ The device family being targeted by application.
 
 * Optional  
 * Type: `string`
+* Placeholders: _none_
 
 #### targetDevice constraints
 
@@ -290,7 +238,8 @@ The WebView and splash screen background color
 `backgroundColor`
 
 * Optional  
-* Type: `string`  
+* Type: `string`
+* Placeholders: _none_
 * Defaults to the primary color of the OutSystems application
 
 #### backgroundColor constraints
@@ -300,8 +249,6 @@ The WebView and splash screen background color
 ```
 ^#[0-9a-fA-F]{6}$
 ```
-
-[try pattern](https://regexr.com/?expression=%5E%23%5B0-9a-fA-F%5D%7B6%7D%24)
 
 ### deeplinksHandler
 
@@ -316,7 +263,8 @@ Defines how the mobile app handles deeplinks. It can be the default handler, an 
 `deeplinksHandler`
 
 * Optional  
-* Type: `string`  
+* Type: `string`
+* Placeholders: _none_
 * Default value: `default`
 
 #### deeplinksHandler constraints
@@ -357,6 +305,7 @@ Defines the supported network protocol for the app: HTTPS or both HTTPS and HTTP
 
 * Optional  
 * Type: `string`
+* Placeholders: _none_
 
 #### connections constraints
 
@@ -369,8 +318,11 @@ Defines the supported network protocol for the app: HTTPS or both HTTPS and HTTP
 
 ### trustedCA
 
-| ❗️Android only |
-| :---- |
+<div class="info" markdown="1">
+
+Android only
+
+</div>
 
 Sets the type of trusted certificate authorities for the app: `system`, `custom` or `both`.
 
@@ -378,6 +330,7 @@ Sets the type of trusted certificate authorities for the app: `system`, `custom`
 
 * Optional  
 * Type: `string`
+* Placeholders: _none_
 
 #### trustedCA constraints
 
@@ -389,20 +342,20 @@ Sets the type of trusted certificate authorities for the app: `system`, `custom`
 | `"user"` |
 | `"both"` |
 
-### systembars
+### systemBars
 
 System bars configurations.
 
-**Example**
+#### Example
 
 ```json
 {
   "appConfigurations": {
-    "systembars": {
+    "systemBars": {
       "style": "light"
     },
     "android": {
-      "systembars": {
+      "systemBars": {
         "style": "default"
       }
     }
@@ -410,7 +363,7 @@ System bars configurations.
 }
 ```
 
-`systembars`
+`systemBars`
 
 * Optional  
 * Type: `object`
@@ -418,6 +371,7 @@ System bars configurations.
 | Property | Type | Required |
 | :---- | :---- | :---- |
 | [style](#style) | `string` | Optional |
+| [statusBarBackgroundColor](#statusbarbackgroundcolor) | `string` | Optional |
 
 ### style
 
@@ -427,6 +381,7 @@ Sets the overall system bars style. The style is based on the device appearance.
 
 * Optional  
 * Type: `string`
+* Placeholders: _none_
 
 #### style constraints
 
@@ -438,6 +393,24 @@ Sets the overall system bars style. The style is based on the device appearance.
 | `"dark"` |
 | `"light"` |
 
+### statusBarBackgroundColor
+
+Sets the status bar background color. This property allows you to customize the color of the status bar to match your app's design.
+
+`statusBarBackgroundColor`
+
+* Optional  
+* Type: `string`
+* Placeholders: _none_
+
+#### statusBarBackgroundColor constraints
+
+**pattern**: the string must match the following regular expression:
+
+```
+^#[0-9a-fA-F]{6}$
+```
+
 ### appendUserAgent
 
 String to append to the original user agent of the app's main WebView
@@ -446,12 +419,13 @@ String to append to the original user agent of the app's main WebView
 
 * Optional  
 * Type: `string`
+* Placeholders: _none_
 
 ### splashscreen
 
 Splash screen configurations.
 
-**Example**
+#### Example
 
 ```json
 {
@@ -488,6 +462,7 @@ Control for how long, in milliseconds, the launch splash screen is visible when 
 
 * Optional  
 * Type: `number`
+* Placeholders: _none_
 
 ### autoHide
 
@@ -497,6 +472,79 @@ Whether to auto hide the splash after `duration`
 
 * Optional  
 * Type: `boolean`
+* Placeholders: _none_
+
+### webViewUpdate
+
+Displays an alert prompting the user to update the Android System WebView via the Google Play Store. Only applies to OutSystems Capacitor Android apps, which require a minimum WebView version of 102.
+
+#### Example
+
+```json
+{
+  "appConfigurations": {
+    "webViewUpdate": {
+      "enabled": true,
+      "title": "WebView Update Required",
+      "message": "Please update to continue.",
+      "updateButtonLabel": "Update"
+    }
+  }
+}
+```
+
+`webViewUpdate`
+
+* Optional
+* Type: `object`
+
+| Property | Type | Required |
+| :---- | :---- | :---- |
+| [enabled](#enabled) | `boolean` | Optional |
+| [title](#title) | `string` | Optional |
+| [message](#message) | `string` | Optional |
+| [updateButtonLabel](#updatebuttonlabel) | `string` | Optional |
+
+### enabled
+
+Determines whether the alert is shown when the device’s WebView version is below the minimum required
+
+`enabled`
+
+* Optional
+* Type: `boolean`
+* Placeholders: _none_
+* Defaults to true
+
+### title
+
+Title text displayed in the update alert dialog
+
+`title`
+
+* Optional
+* Type: `string`
+* Placeholders: _none_
+
+### message
+
+Message text displayed in the update alert dialog
+
+`message`
+
+* Optional
+* Type: `string`
+* Placeholders: _none_
+
+### updateButtonLabel
+
+Label for the button that takes the user to the Google Play Store to update WebView
+
+`updateButtonLabel`
+
+* Optional
+* Type: `string`
+* Placeholders: _none_
 
 ## buildConfigurations
 
@@ -514,7 +562,7 @@ Build configurations are a set of configurations used at build time such as addi
 
 Set of resources that can be copied from a specific source to a target location within the generated mobile project
 
-**Example**
+#### Example
 
 ```json
 {
@@ -522,13 +570,13 @@ Set of resources that can be copied from a specific source to a target location 
     "resources": {
       "ios": [
         {
-          "source": "$settings.GoogleServiceInfoPlist",
+          "source": "$extensibilitySettings.GoogleServiceInfoPlist",
           "target": "GoogleService-Info.plist"
         }
       ],
       "android": [
         {
-          "source": "$settings.GoogleServicesJsonBinary",
+          "source": "$extensibilitySettings.GoogleServicesJsonBinary",
           "target": "android/app/src/main/res/google-services.json"
         }
       ]
@@ -576,28 +624,40 @@ Properties:
 
 `source`
 
-The source for the resource. One of:
+The source for the resource. Can be one of the following:
 
 * `string` representing a file path relative to the root folder of the generated project  
-* Reference to a Setting that holds a `string` value representing a path relative to the root folder of the generated project. E.g. `$settings.SomeTextSetting`  
-* Reference to a Binary Setting  
+* Reference to a Setting that holds a `string` value representing a path relative to the root folder of the generated project. E.g. `$extensibilitySettings.SomeTextSetting`
+* Reference to a Binary Setting via `$extensibilitySettings`
 * Reference to an OutSystems application image via `$images`
+* Reference to an OutSystems application resource via `$resources`
 
-`Target`
+Use one of the above.
 
-| ❗️For Android, the target location is relative to the android project located under `android/` For iOS, the target location is relative to the App folder inside `ios/App/App/` |
-| :---- |
+* Required
+* Type: `string`
+* Placeholders: `extensibility settings`, `extensibility binary settings`, `images`, `resources`
 
-| Note that `resources` copying occurs before `cap sync` is executed. If a target location is affected by the result of `cap sync`, the resources might be missing |
-| :---- |
+`target`
+
+<div class="info" markdown="1">
+
+* For Android, the target location is relative to the android project located under `android/` For iOS, the target location is relative to the App folder inside `ios/App/App/`
+* Note that `resources` copying occurs before `cap sync` is executed. If a target location is affected by the result of `cap sync`, the resources might be missing.
+
+</div>
 
 The target location for the resource in the form of a file path
+
+* Required
+* Type: `string`
+* Placeholders: `extensibility settings`
 
 ### splashscreens
 
 Assets to customize the splash screen experience. By default, MABS 12 applications have a splash screen composed of a solid background color. Using `splashscreens` build configurations, the splash screen can be configured to have an image in the center of the screen.
 
-**Example**
+#### Example
 
 ```json
 {
@@ -662,14 +722,18 @@ Customize the logo based splash screen experience. When using `appIcon`, the app
 
 `logo`
 
-* Optional  
-* Type: `string`
-
-The value of this property can be:
+The value of this property can be one of the following:
 
 * `string` representing a file path relative to the root folder of the generated project  
 * Reference to an OutSystems application image via `$images`
+* Reference to an OutSystems application resource via `$resources`
 * Literal value `appIcon`
+
+Use one of the above.
+
+* Optional  
+* Type: `string`
+* Placeholders: `images`, `resources`
 
 ### buildAction
 
@@ -684,7 +748,7 @@ If you have build configurations defined at the plugin and app level, the plugin
 | config | `Object` | Required |
 | parameters | `object` | Optional |
 
-**Example**
+#### Example
 
 ```json
 {
@@ -692,9 +756,9 @@ If you have build configurations defined at the plugin and app level, the plugin
     "buildAction": {
         "config": "$resources.buildAction.json",
         "parameters": {
-"parameter1" : "parameterValue1",
-"parameter2" : "parameterValue2"
-}
+        "parameter1" : "parameterValue1",
+        "parameter2" : "parameterValue2"
+      }
     }
   }
 }
@@ -702,20 +766,29 @@ If you have build configurations defined at the plugin and app level, the plugin
 
 #### config
 
-Reference to the resource uploaded on IDE, under resources. The file must have _Deploy Action_ as _Deploy to Target Directory._
+Reference to the resource uploaded on IDE, under resources. The file must have _Deploy Action_ as _Deploy to Target Directory._ An extensibility setting can also be used to reference a file path.
 
-| ❗️settings not supported |
-| :---- |
+<div class="info" markdown="1">
+
+The extensibility binary settings is not supported.
+
+</div>
+
+`config`
 
 * Required  
 * Type: `object`
+* Placeholders: `extensibility settings`, `resources`
 
 #### parameters
 
 The parameters to pass values to the variables defined on the json.
 
+`parameters`
+
 * Optional  
 * Type: `object`
+* Placeholders: `extensibility settings`
 
 <div class="info" markdown="1">
 

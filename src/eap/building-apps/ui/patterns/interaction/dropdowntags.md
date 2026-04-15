@@ -21,6 +21,12 @@ topic:
 
 # Dropdown Tags
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 The Dropdown Tags UI Pattern offers multiple choice options to the user when when using a dropdown search.
 
 **How to use the Dropdown Tags UI Pattern**
@@ -82,14 +88,14 @@ After following these steps and publishing the app, you can test the pattern in 
 
 ## Properties
 
-| Property                                            | Description                                               |
-|-----------------------------------------------------|-----------------------------------------------------------|
-| OptionsList (DropdownTagsOption List): Mandatory    | List of items to show in the dropdown.                    |
-| SelectedOptions (DropdownTagsOption List): Optional | Defines preselected items in the dropdown list.           |
-| Prompt (Text): Optional                             | Text that is displayed when no items are selected.        |
-| OptionalConfigs.IsDisabled (Boolean): Optional      | Set as True to disable the Dropdown.                      |
-| OptionalConfigs.NoResultsText (Text): Optional      | Text that is displayed when there are no results to show. |
-| OptionalConfigs.SearchPrompt (Text): Optional       | Prompt text displayed in the search input box.            |
-| OptionalConfigs.NoOptionsText (Text): Optional      | Set the message that is displayed in the Dropdown list when there are no options available.<br/><br/>The default message is: **There are no options to show.** |
-|OptionalConfigs.SanitizeDropdownValues (Boolean): Optional |Set true to assure the values inputted in the dropdown will be sanitized or false if you want to explicitly allow custom code to run.<br/>By setting it to true it will replace HTML tags from option's text (value and label) to prevent potential injected code execution.<br/>This option is not enabled by default to avoid performance issues.<br/><br/>**Note:** When using OutSystems UI prior to version 2.23.0 and do not explicitly need to use HTML, ensure that the client action ``SetVirtualSelectConfigs`` is executed in the ``Initialized`` event handler of the Dropdown Tags block, with ``enableSecureText = Entities.BooleanTypes.True`` to prevent potential injected code execution. |
-|ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.<br/><br/>Examples<br/><br/> <ul><li>_Blank_ - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
+| Property | Description |
+| ----------------------------------------------------- | ----------------------------------------------------------- |
+| OptionsList (DropdownTagsOption List): Mandatory | List of items to show in the dropdown. |
+| SelectedOptions (DropdownTagsOption List): Optional | Defines preselected items in the dropdown list. |
+| Prompt (Text): Optional | Text that is displayed when no items are selected. |
+| OptionalConfigs.IsDisabled (Boolean): Optional | Set as True to disable the Dropdown. |
+| OptionalConfigs.NoResultsText (Text): Optional | Text that is displayed when there are no results to show. |
+| OptionalConfigs.SearchPrompt (Text): Optional | Prompt text displayed in the search input box. |
+| OptionalConfigs.NoOptionsText (Text): Optional | Set the message that is displayed in the Dropdown list when there are no options available.<br/><br/>The default message is: **There are no options to show.** |
+| OptionalConfigs.SanitizeDropdownValues (Boolean): Optional | Set true to assure the values inputted in the dropdown will be sanitized or false if you want to explicitly allow custom code to run.<br/>By setting it to true it will replace HTML tags from option's text (value and label) to prevent potential injected code execution.<br/>This option is not enabled by default to avoid performance issues.<br/><br/>**Note:** When using OutSystems UI prior to version 2.23.0 and do not explicitly need to use HTML, ensure that the client action ``SetVirtualSelectConfigs`` is executed in the ``Initialized`` event handler of the Dropdown Tags block, with ``enableSecureText = Entities.BooleanTypes.True`` to prevent potential injected code execution. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.<br/><br/>Examples<br/><br/> <ul><li>_Blank_ - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |

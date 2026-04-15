@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Portfolio API",
-    "description": "REST endpoints for retrieving information about assets and environments in your organization.\n",
+    "description": "REST endpoints for retrieving information about assets and environments in your organization.",
     "version": "v1"
   },
   "servers": [
@@ -69,7 +69,7 @@
           {
             "name": "permissionFilter",
             "in": "query",
-            "description": "Filter applications by permission type.",
+            "description": "Filter by permission type. Format: 'PermissionType' or 'PermissionType.EnvironmentKey' for environment-specific permissions. Available values: AppViewSourceCode | AppDebug | AppChange | AppDelete | AppDeploy | AppRelease | AppMonitor | AppMonitorUserInfo | AppSecurityView | CodeQualityManage | CodeQualityView | AppUserView | AppAccessManage | AppGroupManage | CfgView | ConnConfig | AppCfgChange. Example: 'AppDeploy' or 'AppDeploy.123e4567-e89b-12d3-a456-426614174000'",
             "schema": {
               "type": "string"
             }
@@ -95,7 +95,7 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "Sort order of the elements.\n\n-element1 for descending, element2 for ascending.\n\nFor nested sorting, the format is element1[key].element2 .\n\nMultiple orders joined by comma.\n\nExample: -element1,element2 to sort by element1 descending then by element2 ascending.\n\nSupported values for first order sorting: deployments (nested).\n\nFor nested sorting: deploymentDateTime.\n\nExample: deployments[environmentkey].deploymentDatetime .",
+            "description": "Sort order of the elements.\n-element1 for descending, element2 for ascending.\nFor nested sorting, the format is element1[key].element2 .\nMultiple orders joined by comma.\nExample: -element1,element2 to sort by element1 descending then by element2 ascending.\nSupported values for first order sorting: deployments (nested).\nFor nested sorting: deploymentDateTime.\nExample: deployments[environmentkey].deploymentDatetime .\nAttention: the sorting only applies to the assets, not to the deployments.\nThe deployments will always be sorted by the DeploymentDatetime, descending.",
             "schema": {
               "type": "string"
             }
@@ -545,7 +545,7 @@
   },
   "security": [
     {
-      "bearerAuth": [ ]
+      "bearerAuth": []
     }
   ],
   "tags": [

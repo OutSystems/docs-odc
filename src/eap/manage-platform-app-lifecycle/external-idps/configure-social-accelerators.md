@@ -47,7 +47,7 @@ To add a new social identity provider with accelerators, follow these steps:
 1. In the ODC Portal, go to **Manage** > **Identity providers**.
 1. To open the **New provider** configuration screen, click the **Add Provider** dropdown and select the social provider (Apple, Google, Facebook, or LinkedIn).
 1. Enter a name for the new provider in the **Provider name** field.
-1. Complete the configuration fields with the information required from your provider (refer to [Social provider requirements](#social-provider-requirements).
+1. Complete the configuration fields with the information required from your provider (refer to [Social provider requirements](#social-provider-requirements)).
 
     <div class="info" markdown="1">
 
@@ -68,7 +68,7 @@ To add a new social provider using an accelerator, you need to get the following
 ### Apple
 
 | Accelerator field | Information required | Description |
-| ---|---|--- |
+| --- | --- | --- |
 | Client ID | Identifier | A public identifier your app on the provider side. It's a string type value available to any registered developer on Apple Developer. You can access the Identifier value on the Certificates, Identifiers, and Profiles pages of your app. |
 | Key ID | Key ID | Key ID corresponding to your Secret (`.p8`). |
 | Team ID | Team ID | Identifier of your team on Apple Developer. |
@@ -79,9 +79,9 @@ For further guidance, check [Configure app capabilities - About Sign in with App
 ## Google
 
 | Accelerator field | Information required | Description |
-| ---|---|--- |
+| --- | --- | --- |
 | Client ID | Client ID | A public identifier for your app on the provider side. It's a string type value available to any registered developer on the Google Cloud Platform. You can access the ClientID value on the OAuth Consent tab on your app's Credentials screen. |
-| Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on the Google Cloud Platform. In the **API & Services** product, you can access the **ClientID** value on the **Credentials** tab on your app's **Credentials** screen. For your app, select **Download OAuth client**.  |
+| Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on the Google Cloud Platform. In the **API & Services** product, you can access the **ClientID** value on the **Credentials** tab on your app's **Credentials** screen. For your app, select **Download OAuth client**. |
 
  You must have the **Identity Platform** API enabled in the Google Console.
 
@@ -90,7 +90,7 @@ For further guidance, check [Google Identity - Authentication](https://developer
 ### Facebook
 
 | Accelerator field | Information required | Description |
-| ---|---|--- |
+| --- | --- | --- |
 | App ID | App ID | A public identifier for your app on the provider side. It's a string type value available to any registered developer on Meta for Developers. You can access the AppID value in your app's settings. |
 | App Secret | App Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on Meta for Developers. You can access the **AppSecret** value in your app's settings. |
 
@@ -99,7 +99,7 @@ For further guidance, check [Facebook Login - Documentation - Facebook for Devel
 ### LinkedIn
 
 | Accelerator field | Information required | Description |
-| ---|---|--- |
+| --- | --- | --- |
 | Client ID | Client ID | A public identifier for your app on the provider side. It's a string-type value available to any registered developer on LinkedIn. You can access the **ClientID** value on the **Auth** tab on your app's Credentials screen. |
 | Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string-type value type value available to any registered developer on LinkedIn. You can access the **ClientSecret** value on the **Auth** tab on your app's **Credentials** screen. |
 

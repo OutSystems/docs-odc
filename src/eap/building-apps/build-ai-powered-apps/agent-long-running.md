@@ -71,7 +71,7 @@ On your Agentic app side:
 
 1. Finally, you need to create a timer to create a job to clean up the Queue for the items that were already completed.
 
-<div class= "info" markdown="1">
+<div class="info" markdown="1">
 
 To see the details of this implementation, download the [Async Summarizer App sample](resources/AsyncSummarizerApp.oml), and the [Async Summarizer Agent sample](resources/AsyncSummarizerAgent.oml), or look for the same apps on your tenant Forge.
 

@@ -25,7 +25,7 @@ helpids: 30685
 
 Use OutSystems Developer Cloud (ODC) Portal to deploy your assets (apps and workflows). In ODC, you deploy your assets to stages. A stage is a step within your delivery pipeline that includes runtime resources. By default, ODC includes two stages: development and production.
 
-ODC has a single code repository. When you deploy an asset in ODC Studio, it is [containerized](../getting-started/capacity-limits.md), deployed to the development stage, and a container image is created. When you're ready to deploy your asset to the next stage, your asset deploys without the need to recompile code again.
+ODC has a single code repository. When you deploy an asset in ODC Studio, it is [containerized](../app-architecture/intro.md), deployed to the development stage, and a container image is created. When you're ready to deploy your asset to the next stage, your asset deploys without the need to recompile code again.
 
 Assets in each stage are isolated from each other. When you publish an asset to the development stage, it doesn't impact the assets running in other stages. Similarly, publishing assets to production doesn't affect assets in a previous stage, such as development.
 
@@ -89,6 +89,20 @@ Your asset is deployed to your selected stage. To roll back an update from a st
 
 For more information about the impact analysis report, refer to [Understanding the impact analysis report](#understanding-the-impact-analysis-report).
 
+## Deployment considerations for agentic apps {#deploy-agentic}
+
+Agentic apps follow the standard ODC continuous delivery model. They're built and containerized in the Development stage, and that exact container is promoted to subsequent stages. However, due to their autonomous nature, specific rules apply to their deployment and dependencies.
+
+### Deployment dependencies
+
+Agentic apps are often part of a larger system or involving workflows. You must manage the deployment order of these assets carefully to avoid runtime errors or blocked deployments.
+
+<div class="info" markdown="1">
+
+If you deploy a **workflow** that triggers an event in an agentic app, you must ensure the agentic app is deployed to the target stage (Quality or Production) **before** the workflow. If the agentic app is missing from the target stage, the deployment of the workflow will be blocked due to missing dependencies.
+
+</div>
+
 ## Undeploy assets
 
 You can undeploy assets from any stage in the ODC Portal. To undeploy an asset, go to the asset detail and select **&#183;&#183;&#183;** > **Undeploy**.
@@ -113,7 +127,7 @@ Versions and revisions help you keep track of changes in your workflows in diffe
 
 * **Production**: After testing, when you deploy your asset from QA  to Production, ODC assigns a three-part semantic version number in the format major.minor.patch. The system always suggests a version (the first suggestion is always 0.1.0). Depending on the changes you deploy to Production, you can change the version number (it must be equal to or higher than the previous version).
 
-### Multiple revisions of a workflow { #workflow-revisions }
+### Multiple revisions of a workflow {#workflow-revisions}
 
 You can have multiple revisions of a workflow in the same stage. A revision can have multiple instances. Once an instance starts execution in a revision, it completes its execution within that specific revision. Subsequent deployments of newer revisions or versions do not affect these running instances. Once all instances of a revision are completed or terminated, the revision is removed from the stage (unless it is the latest one deployed).  
 

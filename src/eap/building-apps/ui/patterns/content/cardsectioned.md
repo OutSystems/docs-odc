@@ -20,6 +20,12 @@ coverage-type:
 
 # Card Sectioned
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 Groups information in a small block organized with different sections for title, image and content that can be easily noticeable in the screen.
 
 Use the Card Sectioned pattern to group short pieces of information and highlight them on the screen.
@@ -54,9 +60,9 @@ After following these steps and publishing the app, you can test the pattern in 
 
 ## Properties
 
-| Property                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UsePadding (Boolean): Optional   | If True, content has padding. This is the default. If False, the content has no padding.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| IsVertical (Boolean): Optional   | If True, the Card Sectioned pattern displays vertically. This is the default. If false, the pattern displays horizontally.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ImagePadding (Boolean): Optional | If True, a padding of 24px is applied to the image. This is the default. If False, no padding is applied to teh image.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| ExtendedClass (Text): Optional   | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.<p>Examples</p><ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
+| Property | Description |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| UsePadding (Boolean): Optional | If True, content has padding. This is the default. If False, the content has no padding. |
+| IsVertical (Boolean): Optional | If True, the Card Sectioned pattern displays vertically. This is the default. If false, the pattern displays horizontally. |
+| ImagePadding (Boolean): Optional | If True, a padding of 24px is applied to the image. This is the default. If False, no padding is applied to teh image. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS.<p>Examples</p><ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |

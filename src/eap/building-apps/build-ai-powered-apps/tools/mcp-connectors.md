@@ -42,6 +42,29 @@ In the MCP domain, a capability is a "tool". When you import an MCP tool through
 * MCP tool or tool: the capability exposed by the MCP server.
 * Server action: the OutSystems artifact created from an imported MCP tool.
 
+## Transport types
+
+MCP servers communicate using one of two transport protocols. The transport type determines how ODC Portal exchanges messages with the server—either through discrete HTTP calls or a persistent event stream.
+
+| Transport type | URL suffix | Description |
+| --- | --- | --- |
+| Streamable HTTP | `/mcp` | Standard HTTP request/response. Each tool call is a separate request. |
+| SSE (Server-Sent Events) | `/sse` | Persistent connection that streams responses in real time. |
+
+Select the transport type that matches your server's endpoint suffix.
+
+## Authentication methods
+
+MCP servers may require authentication to protect access to tools and data. ODC supports several authentication methods depending on how the server validates requests.
+
+* **User login (OAuth)**: Delegates authentication to an identity provider. The user completes an OAuth flow, and ODC Portal uses the resulting token. When you enter the server URL, ODC Portal attempts to discover remaining fields automatically. If discovery fails, manually provide the token URL, client ID, client secret, authorization URL, refresh token URL, resource URI, and scopes.
+
+* **System to system (OAuth)**: Uses client credentials to authenticate without user interaction. Provide the server token URL, client ID, client secret, and scopes.
+
+* **API key**: Sends a static key with each request. Provide the key value and select the key location (authorization header or custom header).
+
+* **No auth**: The server allows unauthenticated access. No additional configuration required.
+
 ## Use MCP capabilities
 
 Custom MCP servers let you connect to any system that supports the protocol. At a high level: create a connection in ODC Portal, import selected tools, then reference them in ODC Studio and agent configurations.
@@ -50,15 +73,21 @@ Custom MCP servers let you connect to any system that supports the protocol. At 
 
 In ODC Portal you can create a connection to an MCP server.
 
-### Connection discovery
+### Configure a connection
 
-Create or edit a connection (Integrate > Connections > Create connection > MCP server).
+In ODC Portal, go to **Integrate** > **Connections** > **Create connection** > **MCP server**.
 
-When you enter the server URL, the portal tries to discover and fill remaining details. If discovery fails, enter them manually.
+Select a [transport type](#transport-types) based on your server endpoint, then choose an [authentication method](#authentication-methods) and provide the required credentials. Select **Test connection** to verify authentication and confirm the MCP server returns available tools.
 
-For OAuth, provide client ID, client secret, authorization URL, token URL, and scope, then finish the OAuth flow. For an API key, provide the key value, header name (often Authorization or X-API-Key), and any prefix (such as Bearer or ApiKey).
+<div class="info" markdown="1">
 
-Test the connection to confirm authentication and that the MCP server returns available tools.
+If your MCP server is on a private network:
+
+* Enable the **Private Gateway** toggle.
+* Enter the port configured in your Cloud Connector.
+* For **System to system** authentication, also enter the port for the server token URL. Use the same port in both fields if both services share a port.
+
+</div>
 
 ### Import tools
 

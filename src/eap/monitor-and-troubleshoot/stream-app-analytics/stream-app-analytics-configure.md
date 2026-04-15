@@ -30,6 +30,12 @@ Before creating a stream, refer to the [prerequisites for streaming observabilit
 
 This example demonstrates the process of creating a stream using **New Relic** as the destination APM tool. The steps might vary slightly depending on the APM tool you select.
 
+<div class="info" markdown="1">
+
+When sending observability data from multiple environments to the same destination, create one stream and select the necessary environments. A single stream automatically sends logs, metrics, and traces to your destination APM tool, so you don't need to create separate streams for each data type.
+
+</div>
+
 1. In the ODC Portal, go to **Configure** > **Streams.**  
 
 1. Click **Create Stream**.
@@ -56,21 +62,14 @@ This example demonstrates the process of creating a stream using **New Relic** a
 
         ![ODC Portal interface showing a successful connection message after testing the stream.](images/app-analytics-success-pl.png "Successful Connection")
 
-    * **Unsuccessful connection:** If the connection fails, a warning message is displayed.
+    * **Unsuccessful connection:** If the connection fails, an error message is displayed.
 
-        ![ODC Portal interface showing a warning message after a failed connection test.](images/app-analytics-fail-pl.png "Unsuccessful Connection")
+        ![ODC Portal interface showing an error message after a failed connection test.](images/app-analytics-fail-pl.png "Unsuccessful Connection")
 
         In this case:  
 
-        * Retry the test connection.  
         * Review the destination information you entered to ensure its accuracy.  
         * If the issue persists, consult the relevant troubleshooting documentation for the recommended action.
-
-    <div class="info" markdown="1">
-
-    If a connection can't be established due to changes in the destination URL, authentication credentials, or temporary unavailability of the APM destination tool, the streaming service automatically retries sending the same batch of observability data for a certain period.
-
-    </div>
 
 1. Enter the source details and click **Save**.
 
@@ -87,12 +86,6 @@ A stream can have one of the following statuses:
 * **Active with errors:** The stream is currently running and attempting to send data, but encountering some errors. You should investigate these errors to ensure all data is being delivered correctly. Check the stream details or logs for more information on the specific errors.  
 
 * **Inactive:**  When you manually deactivate a stream, it transitions to an inactive state, and no data is sent to the APM tool. You can reactivate an inactive stream. Once the stream is successfully reactivated, its status will change to **Active**.
-
-<div class="info" markdown="1">
-
-When sending logs from multiple environments to a same destination, create one connection while selecting multiple environments.
-
-</div>
 
 ## Next steps
 

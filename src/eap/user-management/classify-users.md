@@ -22,24 +22,31 @@ audience:
 outsystems-tools:
   - odc portal
   - user management app
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # Classify end-users in ODC
 
-By default, in ODC, all end-users are considered internal until you configure specific domains that you own in the ODC Portal.
+In ODC, end-user classification depends on which internal user domains are defined for your subscription. A user with an email address in one of those domains is internal; a user with an email address outside those domains is external. If no internal user domains are defined yet, every end-user is counted as internal. Define and change internal user domains in the ODC Portal.
 
-Any users with an email address matching those domains are classified as internal, and any other email domains are classified as external. This is important because [internal and external end-user capacities are licensed separately](https://www.outsystems.com/tk/redirect?g=907b0fd3-bc46-4391-aae2-673296d795d9).
+<div class="info" markdown="1">
+
+For ODC subscriptions provisioned after March 20, 2026, OutSystems defines those internal user domains using the email domain of the owner on the contract. New subscriptions therefore already have internal user domains defined, without an extra setup step. Change the domains in the ODC Portal when you need a different configuration than that default.
+
+</div>
+
+This is important because [internal and external end-user capacities are licensed separately](https://www.outsystems.com/tk/redirect?g=907b0fd3-bc46-4391-aae2-673296d795d9).
 
 ODC classifies users without an email address as internal users. You can implement flows that promote users to [update an email](../reference/system-actions/user.md#startupdateemail) address in their User Profile.
 
-| Criteria         | Internal End-User                                             | External End-User                                              |
-|----------------------|-------------------------------------------------------------------|---------------------------------------------------------------------|
-| **Email domain**     | Matches a domain you configured in the ODC Portal                | Doesn't match any configured domain                                |
-| **No email address** | Counted as internal                                              | Not applicable                                                      |
-| **License usage**    | Counts toward internal end-user quota                            | Counts toward external end-user quota                              |
-| **Typical users**    | Employees, internal collaborators                                | Customers, partners, third parties                                        |
-| **How to configure** | Add your organization's email domains in the **Manage Subscription** section of the ODC Portal | Automatically applies to all other domains                          |
+| Criteria | Internal End-User | External End-User |
+| ---------------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| **Email domain** | Matches an internal user domain defined for your subscription in the ODC Portal | Doesn't match any defined internal user domain |
+| **No email address** | Counted as internal | Not applicable |
+| **License usage** | Counts toward internal end-user quota | Counts toward external end-user quota |
+| **Typical users** | Employees, internal collaborators | Customers, partners, third parties |
+| **How to configure** | Add your organization's email domains in the **Manage Subscription** section of the ODC Portal | Automatically applies to all other domains |
 
 ## Configure your domains for user classification
 

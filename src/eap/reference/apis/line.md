@@ -18,6 +18,12 @@ coverage-type:
 
 # Line Chart
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 This example shows how you can create a simple Line Chart with a Spline line and custom markers.
 
 1. From the Toolbox, drag the **Line Chart** widget to the Screen.

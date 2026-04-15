@@ -1,5 +1,5 @@
 ---
-summary: In this article, you will learn how to get an access token using the client credentials.
+summary: Learn how to get an access token using the client credentials.
 tags: access token, authentication, client credentials, rest api, outsystems
 outsystems-tools:
   - odc portal
@@ -53,12 +53,6 @@ To get an access token, follow these steps:
     * `CLIENT_ID` is the client ID configured in the ODC app.
     * `CLIENT_SECRET` is the client secret configured in the ODC app.
 
-    <div class="info" markdown="1">
-
-    While calling the API from the ODC app, you must manually encode the client secret using the **EncodeURL()** function.
-
-    </div>
-
 ### Using OutSystems language
 
 OutSystems recommends implementing the logic for generating the access token using client credentials in a library to be reused across different apps.
@@ -74,10 +68,10 @@ OutSystems recommends implementing the logic for generating the access token usi
     ```plaintext
     grant_type = client_credentials
     client_id = Settings.ClientId
-    client_secret = EncodeURL(Settings.ClientSecret)
+    client_secret = Settings.ClientSecret
     ```
 
-    In this implementation, the client ID and client secret are stored in the app settings. You must manually encode the client secret using the `EncodeURL` function.
+    In this implementation, the client ID and client secret are stored in the app settings.
 
     **Sample Response:**
 

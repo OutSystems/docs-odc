@@ -13,12 +13,13 @@ topic:
 coverage-type:
   - apply
   - understand
-figma: 
+figma:
 app_type: reactive web apps,mobile apps
 tags: authentication,identity provider,saml,external idp assignment,odc
 outsystems-tools:
   - odc portal
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # Assign an external identity provider
@@ -56,7 +57,7 @@ To assign an existing external IdP, follow these steps:
 
     <div class="info" markdown="1">
 
-    When you switch the IdP for your organization or apps, all signed-in users are automatically logged out and prompted to log in again.
+    When you switch the IdP for your organization or apps, all signed-in users are logged out within approximately 5 minutes (during their next refresh token cycle) and must log in again.
 
     For providers that use a client secret, changes can take up to 1 hour to take effect due to caching. During this time, ODC continues to use the old client secret. Keep the old client secret configured in your external IdP for at least 1 hour to prevent downtime.
 
@@ -76,13 +77,13 @@ When you assign a provider for the organization's use, you don't need to do anyt
 
 Choose your next step depending on your use case:
 
-* For end-users: [Use external identity providers (IdPs) in an app](apps.md)
+* For end-users: [Use an IdP in your apps](intro.md#use-an-idp-in-your-apps)
 
 * Optional: [Add an end-user group mapping](end-user-group-mapping.md)
 
 ## Related resources
 
-* [Manage external identity providers](manage-external-idps.md): Replace, unassign, edit, or delete IdPs
+* [Manage identity providers](manage-external-idps.md): Replace, unassign, edit, or delete external IdPs and remove the built-in identity provider assignment
 * [Identity claims, email verification, and profile matching logic](identity-claims-email-verification.md)
 * [Configuring authentication with external identity providers](intro.md)
 * [Set up redirect URIs](redirect-uris.md)

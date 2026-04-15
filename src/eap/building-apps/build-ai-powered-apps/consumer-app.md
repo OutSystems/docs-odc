@@ -22,7 +22,19 @@ helpids:
 
 Consumer apps are the user-facing applications that interact with AI agents to provide intelligent experiences to end users. These apps manage user sessions, process user input, and orchestrate communication with AI agents to deliver contextual, conversation-driven functionality.
 
- When making calls to the AI agent, the consumer app must pass the `UserInput` and `SessionId` parameters. The `UserInput` contains the user's message, query, or request that the agent processes. The `SessionId` [maintains conversation context across multiple interactions](agentic-apps.md#state-persistence), ensuring the agentic app can reference previous exchanges and provide contextually relevant responses. Generate a unique `SessionId` using the `GenerateGuid` Server action in ODC Studio, though you can use any method that produces a unique identifier.
+<div class="info" markdown="1">
+
+Relationships between agentic, web, mobile apps, and libraries are governed by specific dependency rules to ensure that those apps are loosely coupled. Before adding references, review the architectural guidelines in [Reuse elements across apps](../../app-architecture/reuse-elements.md)
+
+</div>
+
+When making calls to the AI agent, the consumer app must pass the `UserInput` and `SessionId` parameters. The `UserInput` contains the user's message, query, or request that the agent processes. The `SessionId` [maintains conversation context across multiple interactions](agentic-apps.md#state-persistence), ensuring the agentic app can reference previous exchanges and provide contextually relevant responses. Generate a unique `SessionId` using the `GenerateGuid` Server action in ODC Studio, though you can use any method that produces a unique identifier.
+
+<div class="warning" markdown="1">
+
+Before deploying an app or workflow that consumes an agent to a new stage (like Quality or Production), ensure the agentic app is deployed to that stage first. For more details on the agent lifecycle, refer to [Deploying assets](../../deploying-apps/deploy-apps.md#deployment-considerations-for-agentic-apps--deploy-agentic)
+
+</div>
 
 ## High-level process overview
 

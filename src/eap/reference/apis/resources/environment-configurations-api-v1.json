@@ -1,0 +1,1957 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Environment Configurations API",
+    "description": "REST endpoints for managing environment (stage) configurations in ODC. Covers custom domains, IP filters, and Private Gateways, enabling you to automate the same configurations available in ODC Portal.",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://ODC_PORTAL_DOMAIN/api/environment-configurations/v1",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/environment-configurations/v1",
+      "description": "Replace {odc-portal-domain} with the domain of your organization.",
+      "variables": {
+        "{odc-portal-domain}": {
+          "default": "{odc-portal-domain}",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/environments/{environmentKey}/domains/{domainKey}": {
+      "delete": {
+        "tags": [
+          "Domains"
+        ],
+        "summary": "Deletes a domain from an environment (stage).",
+        "description": "Deletes a domain from an environment (stage).\n\nAPI Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage).",
+        "operationId": "Domains_Delete",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "domainKey",
+            "in": "path",
+            "description": "The domain's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage)."
+      },
+      "get": {
+        "tags": [
+          "Domains"
+        ],
+        "summary": "Returns the details of a specific domain for the given environment (stage).",
+        "description": "Returns the details of a specific domain for the given environment (stage).\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "Domains_Get",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "domainKey",
+            "in": "path",
+            "description": "The domain's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Domain"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      },
+      "patch": {
+        "tags": [
+          "Domains"
+        ],
+        "summary": "Patches the default app (App Domain) for the specified custom domain.",
+        "description": "Patches the default app (App Domain) for the specified custom domain.\n\nAPI Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage).",
+        "operationId": "Domains_Patch",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "domainKey",
+            "in": "path",
+            "description": "The domain's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The patch request containing the application key and redirect option.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DomainPatchRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DomainPatchRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DomainPatchResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/domains": {
+      "get": {
+        "tags": [
+          "Domains"
+        ],
+        "summary": "Returns a list of domains for a specific environment (stage).",
+        "description": "Returns a list of domains for a specific environment (stage).\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "Domains_Get",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results to return. Allowed values: 1 to 100. Default value: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the first result to return. Default value: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DomainPagedListResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      },
+      "post": {
+        "tags": [
+          "Domains"
+        ],
+        "summary": "Creates a new domain for the specified environment (stage). You can provide the domain's hostname and name.",
+        "description": "Creates a new domain for the specified environment (stage). You can provide the domain's hostname and name.\n\nAPI Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage).",
+        "operationId": "Domains_Post",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The domain object with the necessary information",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DomainRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DomainRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Domain"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/default-domain": {
+      "get": {
+        "tags": [
+          "Domains"
+        ],
+        "summary": "Retrieves the default domain for the given environment (stage).",
+        "description": "Retrieves the default domain for the given environment (stage).\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "EnvironmentConfigurations_Get",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultDomainResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      },
+      "patch": {
+        "tags": [
+          "Domains"
+        ],
+        "summary": "Updates the default domain for the given environment (stage).",
+        "description": "Updates the default domain for the given environment (stage).\n\nAPI Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage).",
+        "operationId": "EnvironmentConfigurations_Patch",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The request object containing the new Default Domain.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchDefaultDomainRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchDefaultDomainRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/ip-filter-groups/{ipFilterGroupKey}": {
+      "delete": {
+        "tags": [
+          "IP filters"
+        ],
+        "summary": "Deletes a specific IP filter group for an environment (stage).",
+        "description": "Deletes a specific IP filter group for an environment (stage).\n\nAPI Client needs the **Configuration management > Manage IP filters** permission for the target environment (stage).",
+        "operationId": "IpFilterGroups_Delete",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipFilterGroupKey",
+            "in": "path",
+            "description": "The IP filter group's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Manage IP filters** permission for the target environment (stage)."
+      },
+      "get": {
+        "tags": [
+          "IP filters"
+        ],
+        "summary": "Returns information about a specific IP filter group for an environment (stage).",
+        "description": "Returns information about a specific IP filter group for an environment (stage).\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "IpFilterGroups_Get",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipFilterGroupKey",
+            "in": "path",
+            "description": "The IP filter group's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpFilterGroup"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      },
+      "patch": {
+        "tags": [
+          "IP filters"
+        ],
+        "summary": "Updates an IP filter group for an environment (stage).",
+        "description": "Updates an IP filter group for an environment (stage).\n\nAPI Client needs the **Configuration management > Manage IP filters** permission for the target environment (stage).",
+        "operationId": "IpFilterGroups_Patch",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipFilterGroupKey",
+            "in": "path",
+            "description": "The IP filter group's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the IP filter group being updated.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchIpFilterGroup"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchIpFilterGroup"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Manage IP filters** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/ip-filter-groups": {
+      "get": {
+        "tags": [
+          "IP filters"
+        ],
+        "summary": "Returns the list of IP filter groups for an environment (stage).",
+        "description": "Returns the list of IP filter groups for an environment (stage).\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "IpFilterGroups_List",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "appKeys",
+            "in": "query",
+            "description": "Comma-separated list of app keys to filter the results.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpFilterGroups"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      },
+      "post": {
+        "tags": [
+          "IP filters"
+        ],
+        "summary": "Creates a new IP filter group in an environment (stage).",
+        "description": "Creates a new IP filter group in an environment (stage).\n\nAPI Client needs the **Configuration management > Manage IP filters** permission for the target environment (stage).",
+        "operationId": "IpFilterGroups_Post",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the new IP filter group.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BaseIpFilterGroup"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BaseIpFilterGroup"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpFilterGroupKey"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Manage IP filters** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/private-gateway/activation": {
+      "post": {
+        "tags": [
+          "Private gateways"
+        ],
+        "summary": "Activates a private gateway.",
+        "description": "Activates a private gateway.\n\nAPI Client needs the **Configuration management > Manage private gateways** permission for the target environment (stage).",
+        "operationId": "PrivateGateway_Activation",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SecureGatewayToken"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Manage private gateways** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/private-gateway/deactivation": {
+      "post": {
+        "tags": [
+          "Private gateways"
+        ],
+        "summary": "Deactivates a private gateway.",
+        "description": "Deactivates a private gateway.\n\nAPI Client needs the **Configuration management > Manage private gateways** permission for the target environment (stage).",
+        "operationId": "PrivateGateway_Deactivation",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SecureGatewayToken"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Manage private gateways** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/private-gateway": {
+      "get": {
+        "tags": [
+          "Private gateways"
+        ],
+        "summary": "Gets the private gateway status.",
+        "description": "Gets the private gateway status.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "PrivateGateway_Get",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SecureGateway"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/private-gateway/key-rotation": {
+      "post": {
+        "tags": [
+          "Private gateways"
+        ],
+        "summary": "Rotates the private gateway key.",
+        "description": "Rotates the private gateway key.\n\nAPI Client needs the **Configuration management > Manage private gateways** permission for the target environment (stage).",
+        "operationId": "PrivateGateway_KeyRotation",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SecureGatewayToken"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Manage private gateways** permission for the target environment (stage)."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BaseIpFilterGroup": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the IP filter group.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the IP filter group.",
+            "nullable": true
+          },
+          "accessType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IpFilterGroupAccessType"
+              }
+            ],
+            "description": "The default access type of the IP filter group, after all rules are applied."
+          },
+          "ipRules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IpFilterGroupRule"
+            },
+            "description": "The list of IP filter rules associated with this group.",
+            "nullable": true
+          },
+          "appKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The list of all app keys that are explicitly assigned to this group.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DefaultDomainResponse": {
+        "type": "object",
+        "properties": {
+          "defaultDomain": {
+            "type": "string",
+            "description": "The default domain for the given environment (stage).",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Domain": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The domain's unique identifier.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The domain's name.",
+            "nullable": true
+          },
+          "hostname": {
+            "type": "string",
+            "description": "The hostname used to access the applications that are deployed in the environment.",
+            "nullable": true
+          },
+          "cNameValue": {
+            "type": "string",
+            "description": "The CName related to the domain.",
+            "nullable": true
+          },
+          "builtIn": {
+            "type": "boolean",
+            "description": "Indicates if the domain is provided by OutSystems."
+          },
+          "certificate": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DomainCertificate"
+              }
+            ],
+            "description": "The associated certificate for the domain.",
+            "nullable": true
+          },
+          "isDefault": {
+            "type": "boolean",
+            "description": "Indicates if this domain is set as the default one for applications in the environment (stage)."
+          },
+          "defaultApplicationKey": {
+            "type": "string",
+            "description": "If this domain is set as the default one for this application key in that environment",
+            "format": "uuid",
+            "nullable": true
+          },
+          "redirectOption": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RedirectOption"
+              }
+            ],
+            "description": "The type of redirect to use, enum of [Permanent, Temporary, None]\nDefault is Permanent (301) redirect."
+          }
+        },
+        "additionalProperties": false
+      },
+      "DomainCertificate": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DomainCertificateStatus"
+              }
+            ],
+            "description": "Current status of the certificate"
+          },
+          "cNameKey": {
+            "type": "string",
+            "description": "Key correlating CName with certificate",
+            "nullable": true
+          },
+          "cNameValue": {
+            "type": "string",
+            "description": "CName correlated to certificate",
+            "nullable": true
+          },
+          "renewalEligibility": {
+            "type": "boolean",
+            "description": "If it is renewable"
+          },
+          "statusErrorCode": {
+            "type": "string",
+            "description": "Associated error value for when the status is in Error",
+            "nullable": true
+          },
+          "statusErrorMessage": {
+            "type": "string",
+            "description": "Associated error message for when the status is in Error",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DomainCertificateStatus": {
+        "enum": [
+          "Creating",
+          "PendingValidation",
+          "Issued",
+          "Failed",
+          "Deleting",
+          "Deleted",
+          "Expired",
+          "Active"
+        ],
+        "type": "string"
+      },
+      "DomainPagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Domain"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "DomainPatchRequest": {
+        "type": "object",
+        "properties": {
+          "defaultApplicationKey": {
+            "type": "string",
+            "description": "The application key to set as the default for the domain.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "redirectOption": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RedirectOption"
+              }
+            ],
+            "description": "The type of redirect to use, enum of [Permanent, Temporary, None]\nDefault is Permanent (301) redirect."
+          }
+        },
+        "additionalProperties": false
+      },
+      "DomainPatchResponse": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Domain"
+              }
+            ],
+            "description": "The updated domain information after the patch operation",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DomainRequest": {
+        "type": "object",
+        "properties": {
+          "hostname": {
+            "type": "string",
+            "description": "The hostname for the new domain.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name for the new domain.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IpFilterGroup": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the IP filter group.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the IP filter group.",
+            "nullable": true
+          },
+          "accessType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IpFilterGroupAccessType"
+              }
+            ],
+            "description": "The default access type of the IP filter group, after all rules are applied."
+          },
+          "ipRules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IpFilterGroupRule"
+            },
+            "description": "The list of IP filter rules associated with this group.",
+            "nullable": true
+          },
+          "appKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The list of all app keys that are explicitly assigned to this group.",
+            "nullable": true
+          },
+          "key": {
+            "type": "string",
+            "description": "The unique identifier of the IP filter group.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IpFilterGroupAccessType": {
+        "enum": [
+          "DENYLIST",
+          "ALLOWLIST"
+        ],
+        "type": "string"
+      },
+      "IpFilterGroupKey": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the Ip filter group",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IpFilterGroupRule": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the IP rule.",
+            "nullable": true
+          },
+          "ranges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The list of the IP ranges (e.g: 0.0.0.0-0.0.0.3).",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean",
+            "description": "Indicates if the IP rule is currently active."
+          }
+        },
+        "additionalProperties": false
+      },
+      "IpFilterGroups": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IpFilterGroup"
+            },
+            "description": "The list of IP filter groups.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageInfoWithTotals": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of results in the current page.",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limit of results per page.",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset of the current page of results.",
+            "format": "int32"
+          },
+          "nextPageOffset": {
+            "type": "integer",
+            "description": "Offset of the next page of results.",
+            "format": "int32"
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total of results.",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": "Total of result pages.",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains response page information including totals."
+      },
+      "PatchDefaultDomainRequest": {
+        "type": "object",
+        "properties": {
+          "defaultDomain": {
+            "type": "string",
+            "description": "The default domain to set for the environment (stage).",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatchIpFilterGroup": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the group",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the group",
+            "nullable": true
+          },
+          "accessType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IpFilterGroupAccessType"
+              }
+            ],
+            "description": "Default access type in group, after all rules are applied",
+            "nullable": true
+          },
+          "ipRules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IpFilterGroupRule"
+            },
+            "description": "All the rules associated with this group",
+            "nullable": true
+          },
+          "appKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of all applications that are explicitly assigned to this group.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code applicable to the problem.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation of the error.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem.",
+            "nullable": true
+          },
+          "traceId": {
+            "type": "string",
+            "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
+          }
+        },
+        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+      },
+      "RedirectOption": {
+        "enum": [
+          "Permanent",
+          "Temporary",
+          "None"
+        ],
+        "type": "string",
+        "description": "The type of redirect to use for domains."
+      },
+      "SecureGateway": {
+        "type": "object",
+        "properties": {
+          "serverActive": {
+            "type": "boolean",
+            "description": "Indicates if the private gateway service is active."
+          },
+          "serverHealth": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ServerHealth"
+              }
+            ],
+            "description": "Indicates the health status of the private gateway."
+          },
+          "isDeactivating": {
+            "type": "boolean",
+            "description": "Indicates if the private gateway is in the process of deactivating."
+          },
+          "url": {
+            "type": "string",
+            "description": "The url value to connect to the private gateway.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SecureGatewayToken": {
+        "type": "object",
+        "properties": {
+          "authToken": {
+            "type": "string",
+            "description": "The authentication token for the private gateway.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServerHealth": {
+        "enum": [
+          "Healthy",
+          "Unhealthy"
+        ],
+        "type": "string"
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Domains",
+      "description": "Manage custom domains for environments."
+    },
+    {
+      "name": "IP filters",
+      "description": "Create, update, and delete IP filter groups and rules."
+    },
+    {
+      "name": "Private gateways",
+      "description": "Activate, deactivate, and manage private gateways."
+    }
+  ]
+}

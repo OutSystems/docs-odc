@@ -19,6 +19,7 @@ coverage-type:
 topic:
   - outsystems-overview
   - download-and-set-up
+isautopublish: true
 ---
 
 # Getting started
@@ -61,7 +62,7 @@ When you select a **Web app**, you have the option of how you want to create you
 
 * Create your Web app from scratch in ODC Studio.
 
-* Generate with Mentor.
+* Generate with Mentor. Describe your app requirements in natural language, and ODC generates a full-stack app with data models, screens, and logic. To learn more, see [Agentic development](../agentic-development/intro.md).
 
 You create apps in the ODC Portal, and then you use ODC Studio to build out your app. In ODC you deploy to a **stage**. A stage, such as Development, is a step within your continuous delivery pipeline.
 

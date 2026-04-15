@@ -17,6 +17,12 @@ outsystems-tools:
 ---
 # OutSystems Data Grid for ODC
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 The OutSystems Data Grid is a supported component available in Forge, that allows you to view, explore, and edit large amounts of data in a familiar spreadsheet interface.
 
 You can use the OutSystems Data Grid component to create enterprise-grade interfaces that are more suitable and time-effective than designing a custom solution every time you need to manipulate dense datasets.  

@@ -16,9 +16,10 @@ coverage-type:
   - apply
 topic:
   - using-cordova-plugins
+  - using-capacitor-plugins
 ---
 
-# InApp Browser Plugin
+# InAppBrowser plugin
 
 <div class="info" markdown="1">
 
@@ -28,9 +29,11 @@ Applies only to Mobile Apps.
 
 This documentation page applies to version 2.0.0 of the plugin and onwards.
 
-Use the InAppBrowser Plugin to open external URLs directly in your application, either within a web view, or a system in-app browser (Custom Tabs for Android and SafariViewController for iOS). You can also use the plugin to open URLs in the device's default browser.
+Use the InAppBrowser plugin to open external URLs directly in your application, either within a web view, or a system in-app browser (Custom Tabs for Android and SafariViewController for iOS). You can also use the plugin to open URLs in the device's default browser.
 
-All three browser targets of the plugin behave like standard web browsers, and can't access Cordova APIs. For this reason, the plugin is recommended if you need to load third-party (untrusted) content, instead of loading it into the main Cordova WebView (for example, using the RedirectToURL destination). The plugin's browser targets are not subject to the whitelist.
+All three browser targets of the plugin behave like standard web browsers, and can't access Cordova or Capacitor APIs. For this reason, the plugin is recommended if you need to load third-party (untrusted) content, instead of loading it into the main Cordova or Capacitor WebView (for example, using the RedirectToURL destination). The plugin's browser targets are not subject to the allowlist.
+
+The InAppBrowser plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check [cordova-outsystems-inappbrowser](https://github.com/OutSystems/cordova-outsystems-inappbrowser) and [capacitor-os-inappbrowser](https://github.com/ionic-team/capacitor-os-inappbrowser).
 
 As a good practice, verify that the plugin is available in the app. Use the **Logic > Client Actions > InAppBrowserPlugin > CheckInAppBrowserPlugin** action to check for the plugin's availability before using other plugin actions. If the plugin isn't available to the app, display an error to your users.
 
@@ -127,17 +130,90 @@ To create the logic to close an open browser, follow these steps in ODC Studio:
 
 ## Opening HTTP URLs with OpenInWebView on Android
 
-To enable your app to open HTTP URLs in the web view, set the **InAppBrowserCleartextTrafficPermitted** preference in your app's Extensibility Configurations, as follows:
+The plugin provides an extensibility setting that can be used to enable your app to open HTTP URLs in the web view. Use the extensibility setting exposed by the plugin if:
+
+* You're using the plugin in a Capacitor app.
+* You're using at least version 2.8.0 in a Cordova app.
+
+To enable, set the **AllowHttpTraffic** extensibility setting in your app's detail page in the Portal, under the **Mobile distribution** tab. If you don't explicitly set this setting, it won't be enabled by default.
+
+If you're using a Cordova app with an older version of the plugin (until 2.7.3), use the following configuration.
+
+Set the **InAppBrowserCleartextTrafficPermitted** preference in your app's extensibility configurations, as follows:
+
+(Recommended) Using the universal extensibility configurations schema:
 
 ```json
-        {
-            "preferences": {
-                "android": [
-                    {
-                        "name": "InAppBrowserCleartextTrafficPermitted",
-                        "value": true
-                    }
-                ]
-            }
+{
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "android": {
+          "InAppBrowserCleartextTrafficPermitted": "true"
         }
+      }
+    }
+  }
+}
 ```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "android": [
+      {
+        "name": "InAppBrowserCleartextTrafficPermitted",
+        "value": true
+      }
+    ]
+  }
+}
+```
+
+## Adding necessary permissions to upload files within the web view on iOS
+
+To allow users to upload photos or videos in a page opened in a web view (using **OpenInWebView**), you may need to configure specific iOS usage descriptions. If the web page gives users the option to capture new photos or videos, you must add the iOS usage descriptions for the camera and microphone to your app.
+
+To add the necessary usage descriptions, set the following preferences in the Extensibility Configurations of your app.
+
+(Recommended) Using the universal extensibility configurations schema:
+
+```json
+{
+  "appConfigurations": {
+    "permissions": {
+      "ios": {
+        "NSCameraUsageDescription": "This app uses the camera to take photos and record videos.",
+        "NSMicrophoneUsageDescription": "This app uses the microphone when recording videos."
+      }
+    }
+  }
+}
+```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "ios": [
+      {
+        "name": "NSCameraUsageDescription",
+        "value": "This app uses the camera to take photos and record videos."
+      },
+      {
+        "name": "NSMicrophoneUsageDescription",
+        "value": "This app uses the microphone when recording videos."
+      }
+    ]
+  }
+}
+```
+
+## Using the plugin in Capacitor apps
+
+If you need to enable your Android app to open HTTP URLs in the plugin's WebView you should set the **CleartextTrafficPermitted** Extensibility Setting to **True**.
+
+You can change Extensibility Settings by opening your application in ODC Portal and going to Mobile distribution tab.

@@ -21,7 +21,13 @@ helpids:
 
 # Android build actions
 
-This article provides reference documentation for all Android build actions available in mobile app development. [Build Actions](build-actions.md) allow you to customize and configure Android mobile apps beyond the standard low-code capabilities such as modifying Android Manifest file, inserting new Gradle snippets.
+<div class="info" markdown="1">
+
+Build actions are supported only for mobile apps that use Capacitor. Cordova-based mobile apps do not support build actions.
+
+</div>
+
+This article provides reference documentation for all Android build actions available in mobile app development. [Build Actions](build-actions.md) allow you to customize and configure Android mobile apps beyond the standard low-code capabilities such as modifying the **AndroidManifest.xml** file or inserting new Gradle snippets.
 
 ## appName
 
@@ -78,7 +84,7 @@ Array<
 >
 ```
 
-**Description**: Applies modifications against Android Manifest XML files.
+**Description**: Applies modifications against **AndroidManifest.xml** files.
 
 * `attrs`: Updates the attributes to the target XML element.
 * `merge`: Merges the given XML tree.
@@ -517,7 +523,7 @@ Array<
 Array<{ src: string; dest: string; command: 'c' | 'r' | 'u' | 'x'; }>
 ```
 
-**Description**: Adds tar support to build actions.
+**Description**: Adds tar support to build actions
 
 **Conditional**: Yes
 

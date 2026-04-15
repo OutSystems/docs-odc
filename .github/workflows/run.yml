@@ -55,7 +55,7 @@ jobs:
       pull-request: ${{ steps.PR.outputs.number }}
       pull-request-title: ${{ steps.PR.outputs.pr_title }}
       skip-jira: ${{ github.ref_name != github.event.repository.default_branch && contains(steps.PR.outputs.pr_labels, 'skip-jira') }}
-      publish-pp: ${{ github.ref_name != github.event.repository.default_branch && contains(steps.PR.outputs.pr_labels, 'publish-pp') }}
+      publish-dev: ${{ github.ref_name != github.event.repository.default_branch && contains(steps.PR.outputs.pr_labels, 'publish-dev') }}
 
   jira:
     name: "JIRA"
@@ -82,6 +82,32 @@ jobs:
     if: needs.pr-info.outputs.changed-files != ''
     uses: ./.github/workflows/style-guide-validation.yml
     secrets: inherit
+    with:
+      changed-files: ${{ needs.pr-info.outputs.changed-files }}
+      pull-request: ${{ needs.pr-info.outputs.pull-request }}
+
+  validate-toc:
+    name: Validate files in TOC
+    needs: [pr-info]
+    if: needs.pr-info.outputs.changed-files != ''
+    uses: ./.github/workflows/validate-toc.yml
+    with:
+      changed-files: ${{ needs.pr-info.outputs.changed-files }}
+    secrets: inherit
+
+  auto-publish-documentation:
+    name: Auto-publish documentation
+    needs: [pr-info]
+    if: github.event_name == 'pull_request' && needs.pr-info.outputs.changed-files != '' && github.event.pull_request.base.ref == github.event.repository.default_branch
+    uses: OutSystems/tk-cicd/.github/workflows/auto-publish-documentation.yml@main
+    with:
+      changed-files: ${{ needs.pr-info.outputs.changed-files }}
+      pr-number: ${{ needs.pr-info.outputs.pull-request }}
+      base-sha: ${{ github.event.pull_request.base.sha }}
+      enable_auto_publish_new_files: ${{ vars.ENABLE_AUTO_PUBLISH_NEW_FILES != '' && vars.ENABLE_AUTO_PUBLISH_NEW_FILES || 'true' }}
+      enable_auto_publish_updated_files: ${{ vars.ENABLE_AUTO_PUBLISH_UPDATED_FILES != '' && vars.ENABLE_AUTO_PUBLISH_UPDATED_FILES || 'true' }}
+    secrets:
+      github-token: ${{ secrets.TOOLS_PAT }}
 
   auto-fill:
     if: github.event_name == 'pull_request'
@@ -103,8 +129,6 @@ jobs:
 
   validations:
     name: Misc validations
-    needs: frontmatter
-    if: needs.frontmatter.result == 'success'
     uses: ./.github/workflows/validations.yml
     secrets: inherit
     with:
@@ -118,13 +142,13 @@ jobs:
     uses: ./.github/workflows/build.yml
     secrets: inherit
 
-  publish-pp:
-    name: Publish PP
-    uses: OutSystems/tk-cicd/.github/workflows/publish-pp.yml@main
+  publish-dev:
+    name: Publish Dev
+    uses: OutSystems/tk-cicd/.github/workflows/auto-publish.yml@main
     needs: [pr-info, tools]
-    if: needs.pr-info.outputs.publish-pp == 'true'
+    if: needs.pr-info.outputs.publish-dev == 'true'
     with:
-      target-branch: ${{ vars.PP_BRANCH }}
+      target-branch: ${{ vars.DEV_BRANCH }}
       pr-number: ${{ needs.pr-info.outputs.pull-request }}
       changed-files: ${{ needs.pr-info.outputs.changed-files }}
     secrets:

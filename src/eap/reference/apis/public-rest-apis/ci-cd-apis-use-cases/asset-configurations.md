@@ -25,7 +25,7 @@ This article explains how to use OutSystems APIs to check the current configurat
 
 Before using the APIs to review asset configurations, ensure that you have:
 
-* [Generated an access token](../authentication/get-access-token.md) with this [permission](../authentication/create-api-client.md#edit-permissions-of-api-client):
+* [Generated an access token](../authentication/get-access-token.md) from an API client with this [permission](../authentication/create-api-client.md#edit-permissions-of-api-client): :
     * [Configuration management > View configurations](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/asset_configurations_api/#get-/environments/-environmentKey-/applications/-applicationKey-/revisions/deployed/configurations)
 * The [key of the asset](select-revision-build.md#prerequisites) to be deployed
 * The stage’s environment key for which you want to check the configurations

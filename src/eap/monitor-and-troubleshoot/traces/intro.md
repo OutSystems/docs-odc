@@ -20,37 +20,30 @@ coverage-type:
 
 # Traces
 
-A trace is a record that captures the sequence of events when an app executes logic in OutSystems Developer Cloud(ODC). ODC uses distributed traces to monitor requests in multiple components of the architecture. Each component, referred to as a span, is associated with a single request.
+OutSystems Developer Cloud (ODC) uses distributed tracing to capture the complete lifecycle of an application request. A single user action, such as clicking a button, often triggers a cascade of events across multiple components. A trace is a record that groups every related event for a specific request.
 
-Traces provide information and pinpoint issues in ODC Studio. They are linked with logs to identify problems enabling you to easily debug apps.
+While logs record **what** happened, traces provide the context of **when** and **where** it happened. This context allows you to visualize the request's full lifecycle, helping you troubleshoot issues faster and pinpoint performance bottlenecks.
 
-For example, examining a trace linked to a REST API request reveals the request method, duration, URL, and flow across system components. This allows you to assess the performance of each span and identify errors.
+## Spans {#spans}
 
-Ensure you have the following permissions:
+The events contained by the trace that represent individual units of work, such as a database query, an API call, or a server action are called spans. Each span includes timing information such as its start time and duration.
 
-* Access app logs and traces.
-* Access user information.
+Spans are organized hierarchically. For example, a client action (span A) may call a server action (span B), which then executes an aggregate (span C). In this chain, span C is a child of span B, which is a child of span A.
 
-You can analyze client-side execution with [client-side traces](client-side-traces.md). This provides insights into elements such as Blocks or Client actions.
+![Diagram showing hierarchical spans in a trace with client action, server action, and aggregate.](images/trace-span-example-os-elements-diag.png "Trace Span Example")
 
-## Spans
+Due to issues like network failures or incomplete data collection, spans can end up without a clear parent. These are called orphan spans, and can be found at the root of the trace.
 
-Spans are a series of time intervals tagged within a trace. They allow insights into processing requests across different components. Each span includes details such as its start and end time and duration.
+ODC calculates the total duration of a trace from the start time of the first span to the end time of the last span. However, the following scenarios may cause the trace duration to deviate from this standard calculation:
 
-![Diagram showing a trace with spans A, B, C, D, and E, illustrating their start and end times and durations.](images/trace-span-example-diag.png "Trace with Spans Example")
+* Keep-alive elements such as carousels.
+* Asynchronous operations, where the parent span does not wait for the child span to complete.
 
-For example, a trace that triggers spans A through E, with each span representing a distinct part of the process. The execution begins with span A, triggering subsequent spans:
+## Trace retention and sampling {#retention-sampling}
 
-1. Span A (parent span) triggers span B (child span). After triggering span B and span A triggers span E(child span)
-1. Span B (parent span) triggers span C (child span), span D (child span), and span E (child span)
-1. Span B finishes only after span D
-1. Span A finishes only after span E
+In order to prevent information overload from too much data, traces are retained or discarded according to various criteria.
 
-Orphan spans are spans without a clear parent span, as the orphan span could have a parent span. For example, if span E becomes an orphan, the association between span E and B becomes unclear. This indicates a connectivity problem, where there is an error in the expected sequence of spans. Such issues can arise from network failures or incomplete data collection.
-
-## Sampling in traces
-
-In ODC, sampling involves selecting traces that match any of the following criteria:
+All traces matching the following criteria are retained:
 
 * Traces with error spans.
 * Traces with timers lasting more than 5 seconds.
@@ -58,48 +51,56 @@ In ODC, sampling involves selecting traces that match any of the following crite
 * Traces with REST APIs (Consume, Expose) lasting more than 200 ms.
 * Traces with a duration of more than 1 second.
 
-ODC samples 2 percent of the total traces that do not meet any of the above criteria. These good traces provide insights into execution flows. For example, if your app generates 15 traces in ODC:
+ODC further retains 2 percent of the total traces that do not meet any of the negative criteria. These traces demonstrate correct execution flows.
 
-* 2 have error spans.
-* 3 have trace duration more tha 1 sec.
-* 10 have no errors & duration is 5 ms.
+Consider an example of an app that had 110 traces captured. These included 5 traces with errors, 5 slow traces (>1 second duration), and 100 healthy traces (<1 second duration, no errors). In this scenario, ODC retains all 10 of the error and slow traces, and a sample of 2 out of the 100 healthy traces.
 
-ODC stores the 2 error traces and the 3 slow traces. ODC samples 2 percent of the 10 good traces with a duration of 5 ms for reporting.
+## Set up traces {#set-up-traces}
+
+ODC supports capture of [server-side traces](server-side-traces.md) and [client-side traces](client-side-traces.md). To turn this functionality on and off, make sure you have the **Edit asset configurations** permission.
+
+Server-side traces are enabled by default, you [can switch them on or off](server-side-traces.md#turn-on-off) in your app configuration section in the ODC Portal. If you have server-side traces enabled, you can also [enable capture of client-side traces](client-side-traces.md#enable-client-side) in the app configuration section in the ODC Portal.
 
 <div class="info" markdown="1">
 
-Sampling occurs at the trace level rather than the span level. This helps prevent information overload from noisy traces by displaying only relevant information.
+Turning on client-side traces requires server-side being on first. Disabling server-side traces, disables client-side traces too.
 
 </div>
 
-To access the latest traces, click the **Refresh** button on the **Traces** screen, as some traces may be in a processing state. ODC displays traces from the development stage, ordered by time in descending order. You can filter the options to narrow traces by parent span or date. You can view traces from the previous 30 days to the current date in 14-day intervals.
+## Access traces {#access-traces}
 
-ODC calculates the total duration of a trace from the start time of the first span to the end time of the last span. This represents the overall time taken to execute all spans within the trace. However, there are situations where total duration differs, such as:
+You can access trace data in the ODC Portal. Ensure that as an IT user you have the **Access app logs and traces** and **Access user information** permissions.
 
-* Keep-alive elements such as carousels.
-* Asynchronous operations, where the parent span does not wait for the child span to complete.
+1. From the ODC Portal menu, go to **Monitor** > **Traces**.
 
-## Using traces
+    ![Screenshot of the ODC Portal menu highlighting the Traces option under the Monitor section.](images/monitor-traces-pl.png "Monitor Traces Menu")
 
-The following steps describe how to use traces to debug your apps.
+1. The traces page displays the most recent traces. Select the desired stage and use the filters to help locate a specific trace. Traces are not available instantly and may be in a processing state. To fetch newly processed traces, select **Refresh**.
 
-1. To display the details of the traces from the ODC Portal, select **Monitoring** > **Traces** and click the trace's date/time under the **Started on** column. On the left side of the screen, each span of the trace is displayed in order of execution alongside its duration.
+1. Select the timestamp in the **Started on** column to open the trace details page.
 
-1. To display the ODC internal spans for additional context and troubleshooting, click **Show details**(Eye).
+    ![Screenshot of the traces page showing the most recent traces with a timestamp in the Started on column.](images/select-trace-pl.png "Select Trace")
+
+1. In the trace details page, you can browse the list of spans of the current trace. The spans are displayed in a nested structure to visualize the parent-child relationships between spans. By clicking any row on the list pane, you can see attributes and details for the chosen span on the details pane.
+
+    ![Screenshot of the trace details page showing a nested structure of spans and details for the selected span.](images/trace-detail-pl.png "Trace Details Page")
+
+1. Spans linked to logs are marked with a **document icon**. Select the span and navigate to the **Related logs** section in the details pane to view the entries.
+
+    ![Screenshot showing spans linked to logs marked with a document icon and related logs section in the details pane.](images/trace-related-log-pl.png "Trace Related Logs")
+
+1. To view internal ODC spans, toggle **Show details** (eye icon).
   
     ![Screenshot showing a list of all spans in the ODC Portal, including details like start time, app, element, status, duration, and related logs.](images/eye-all-spans-pl.png "List of All Spans in ODC Portal")
 
-1. To display related logs, click the document icon next to the error.
+## Considerations and constraints {#considerations-constraints}
 
-1. To display its attributes and any related logs, go to the right side of the screen and click a span.
+As you work with traces, keep in mind that traces may cause performance degradation in complex apps. OutSystems recommends turning off client-side traces to mitigate the issue.
 
-1. To further debug the element causing the error, open ODC Studio to debug the specific element further.
+Find more about limits and retention policies of traces in [System requirements](../../getting-started/system-requirements.md#logs-and-traces).
 
-## Considerations working with traces
+For information on how to stream traces from ODC to third-party application performance monitoring tools, refer to [Streaming observability data](../stream-app-analytics/stream-app-analytics-overview.md).
 
- As you work with traces, keep the following in mind:
+## Related resources
 
-* Traces exceeding the size of 15 MB are automatically dropped.
-* ODC displays traces up to 5000 spans for a single trace.
-* In complex apps, traces may cause performance degradation.
-    * OutSystems recommends turning off the client-side traces to mitigate the issue.
+[Streamed trace data](../stream-app-analytics/stream-app-analytics-traces-ref.md)

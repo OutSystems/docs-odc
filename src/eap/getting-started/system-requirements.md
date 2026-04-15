@@ -17,6 +17,7 @@ coverage-type:
   - remember
 topic:
   - download-and-set-up
+isautopublish: true
 ---
 
 # OutSystems system requirements for ODC
@@ -40,7 +41,7 @@ Before you set up ODC Studio, make sure your computer meets the following requir
 
 <div class="info" markdown="1">
 
-If you are working on a network where communications to the Internet are routed via an HTTP proxy, then refer to [How to configure HTTP proxy in ODC studio](configure-http-proxy.md) for configuration instructions.
+If your network uses an HTTP proxy, then refer to [How to configure HTTP proxy in ODC studio](configure-http-proxy.md) for configuration instructions.
 
 </div>
 
@@ -112,7 +113,6 @@ The following versions of systems are supported to integrate with ODC using [Dat
 
 * **Microsoft SQL Server**:
 
-    * SQL Server 2014
     * SQL Server 2016
     * SQL Server 2017
     * SQL Server 2019
@@ -176,74 +176,82 @@ The following table shows the limits of the ODC to keep in mind when you are bui
 
 The general platform limits are:
 
-| **Name**                                 | **Limit** | **Description** |
+| **Name** | **Limit** | **Description** |
 | ---------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
-| DB backup retention (days)               |        30 | The maximum number of days database backups are retained. |
-| Expose REST API method timeout (seconds) |        60 | The maximum amount of time an Expose REST API method executes before timing out. |
-| Service action timeout (seconds)         |       100 | The time a service action waits for a response before timing out. |
-| Timer execution timeout (minutes)        |        60 | The maximum time a timer can execute. |
-| Entity Action Execution duration (seconds) |        30 | The maximum execution duration of a single Entity Action in seconds. |
-| Upload request size (MB)                 |      28.6 | The maximum file size allowed when uploading. |
-| User session (hours)                     |        12 | The maximum session duration after which the user will be asked to authenticate again. This value can't be changed and the duration is not extended while user is authenticated. |
-| Invitation verification token (days)     |         7 | The maximum duration the verification token is valid for the user to complete their registration. |
-| Self-registration verification token (minutes) |      15 | The maximum duration within which the user can complete the self-registration process. |
-| Compute Instances (per app)              |        16 | The maximum number of compute instances that can be consumed when scaling apps horizontally. |
-| Analytics Stream connections             |         5 | The maximum number of Analytics Stream connections that can exist simultaneously. |
-| Max IP Filter Rules                      |        20 | The maximum number of IP filter rules that can be added to each IP filter group. |
-| Max IP Addresses (per rule)              |        20 | The maximum number of IP addresses that can be added to each IP filter rule. |
+| DB backup retention (days) | 30 | The maximum number of days database backups are retained. |
+| Expose REST API method timeout (seconds) | 60 | The maximum amount of time an Expose REST API method executes before timing out. |
+| Service action timeout (seconds) | 100 | The time a service action waits for a response before timing out. |
+| Timer execution timeout (minutes) | 60 | The maximum time a timer can execute. |
+| Entity Action Execution duration (seconds) | 30 | The maximum execution duration of a single Entity Action in seconds. |
+| Upload request size (MB) | 28.6 | The maximum file size allowed when uploading. |
+| End-user session (hours) | 12 | The default maximum session duration for end-users accessing apps. You can [configure session duration and idle timeout](../user-management/configure-user-session.md) per stage. |
+| Member session (hours) | 12 | The maximum session duration for members (IT-users) accessing the ODC Portal and ODC Studio. This value can't be changed. |
+| Invitation verification token (days) | 7 | The maximum duration the verification token is valid for the user to complete their registration. |
+| Self-registration verification token (minutes) | 15 | The maximum duration within which the user can complete the self-registration process. |
+| Compute Instances (per app) | 16 | The maximum number of compute instances that can be consumed when scaling apps horizontally. |
+| Analytics Stream connections | 5 | The maximum number of Analytics Stream connections that can exist simultaneously. |
+| Max IP Filter Rules | 20 | The maximum number of IP filter rules that can be added to each IP filter group. |
+| Max IP Addresses (per rule) | 20 | The maximum number of IP addresses that can be added to each IP filter rule. |
+| API clients | 35 | The maximum number of API clients that can be defined. |
+| Non-production stages | 10 | The maximum number of non-production stages that can be added to a portfolio. |
 
 ### Logs and traces
 
 The logs and traces limits are:
 
-| **Name**                                 | **Limit** | **Description** |
+| **Name** | **Limit** | **Description** |
 | ---------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
-| App log retention (days)                 |        28 | The maximum number of days that logs are retained (plus 21 days of additional backup retrievable via support ticket). |
-| Log rate/minute (thousands)              |         2 | The maximum rate at which logs can be captured, in thousands per minute. |
-| Trace retention (days)                   |        28 | The maximum number of days that traces are retained (plus 21 days of additional backup retrievable via support ticket). |
-| Trace size (number of spans)             |     10000 | The maximum number of spans per trace shown in the ODC Portal. |
-| Trace spans rate/minute (thousands)      |        50 | The maximum rate at which trace spans can be captured, in thousands per minute. |
-| Trace span size (KB)                     |         1 | The maximum size of a trace span, in KB, streamed with Analytics Stream. |
-| Log size (MB)                            |         1 | The maximum size of a log record, in MB, streamed with Analytics Stream. |
-| Client side trace requests every minute per stage  |        400 | The maximum number of client-side trace requests every minute. |
-| Client side trace requests daily per stage  |           3500 | The maximum number of client-side trace requests daily. |
+| App log retention (days) | 28 | The maximum number of days that logs are retained (plus 21 days of additional backup). |
+| Log rate/minute (thousands) | 2 | The maximum rate at which logs can be captured, in thousands per minute. |
+| Log size (MB) | 1 | The maximum size of a log record, in MB, streamed with Analytics Stream. |
+| Trace retention (days) | 30 | The maximum number of days that traces are retained. |
+| Trace size (number of spans) | 8000 | The maximum number of spans per trace shown in the ODC Portal. |
+| Trace size (KB) | 12288 | The maximum size of a trace, in KB. |
+| Trace spans rate/minute (thousands) | 50 | The maximum rate at which trace spans can be captured, in thousands per minute. |
+| Trace span size (KB) | 1 | The maximum size of a trace span, in KB, streamed with Analytics Stream. |
 
 ### Events
 
 The event limits are:
 
-| **Name**                                 | **Limit** | **Description** |
+| **Name** | **Limit** | **Description** |
 | ---------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
-| Concurrent events                        |       100 | The maximum number of events that can run concurrently per app, regardless of the number of containers supporting the app. |
-| Event duration (minutes)                 |         2 | The maximum duration of a handler of an event in minutes. |
-| Events per queue                         |    10,000 | The maximum number of events that can be queued. Upon reaching the limit, an exception is thrown. |
+| Concurrent events | 100 | The maximum number of events that can run concurrently per app, regardless of the number of containers supporting the app. |
+| Event duration (minutes) | 2 | The maximum duration of a handler of an event in minutes. |
+| Events per queue | 10,000 | The maximum number of events that can be queued. Upon reaching the limit, an exception is thrown. |
 
 ### Custom code
 
 The custom code limits are:
 
-| **Name**                                 | **Limit** | **Description** |
+| **Name** | **Limit** | **Description** |
 | ---------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
-| Custom code execution duration (seconds) |        95 | The maximum time a single custom code function can execute. |
-| Custom code memory (MB)                  |     1,024 | The maximum memory available for custom code functions while executing. |
-| Custom code storage (MB)                 |       512 | The maximum amount of ephemeral storage available for custom code functions while executing. |
-| Custom code payload size (MB)            |       5.5 | The maximum payload for inputs and outputs of a custom code action. |
+| Custom code execution duration (seconds) | 95 | The maximum time a single custom code function can execute. |
+| Custom code memory (MB) | 1,024 | The maximum memory available for custom code functions while executing. |
+| Custom code storage (MB) | 512 | The maximum amount of ephemeral storage available for custom code functions while executing. |
+| Custom code payload size (MB) | 5.5 | The maximum payload for inputs and outputs of a custom code action. |
 
 ### Workflows
 
 The workflow limits are:
 
-| **Name**                                 | **Limit** | **Description** |
+| **Name** | **Limit** | **Description** |
 | ---------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
-| Workflow activity max duration (seconds) |       120 | The maximum duration of a workflow activity. |
+| Workflow activity max duration (seconds) | 120 | The maximum duration of a workflow activity. |
 
-### AI Mentor
+### Mentor
 
-| **Name**                                    | **Limit** | **Description** |
+The Mentor limits are:
+
+| **Name** | **Limit** | **Description** |
 | ------------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
-| App Generator max apps generated per day    |        20 | The maximum number of apps that can be generated in a day. |
-| App Generator max apps generated per minute |         2 | The maximum number of apps that can be generated in a minute. |
-| App Editor tab per user and app             |         1 | The maximum number of App Editor tabs that can be opened per user and app |
+| App Generator max apps generated per day | 20 | The maximum number of apps that can be generated in a day. |
+| App Generator max apps generated per minute | 2 | The maximum number of apps that can be generated in a minute. |
+| App Editor tab per user and app | 1 | The maximum number of App Editor tabs that can be opened per user and app |
+
+### ODC REST APIs
+
+For information about ODC API rate limits, refer to [Rate limits for the APIs](../reference/apis/public-rest-apis/rate-limiting.md).
 
 ### Server request timeout
 

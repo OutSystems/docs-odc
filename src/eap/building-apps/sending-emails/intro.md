@@ -56,13 +56,13 @@ For more information about emails, see the following resources:
 | If you want to... | Check out... |
 | - | - |
 | Create a new email | [Creating a new Email](working.md#create-a-new-email) |
-| Add content for an email | [Adding content to Email](working.md#add-content-to-an-email)|
-| Add content based on user inputs  | [Modify content in Emails](working.md#modify-content-in-emails)|
-| Add attachment to emails  | [Adding email attachments](attachments.md)|
-| Create logic to send emails | [Sending Emails](sending.md)|
-| See what widgets you can use  | [Widgets available in Emails](widgets.md#widgets-available-in-emails)|
-| See what data types you can use in inputs  | [Available data types](../data/data-types.md), in particular [compound data types](../data/data-types.md#compound-data-types)  |
-| Validate or format email addresses | [Email built-in functions](../../reference/built-in-functions/email.md)  |
+| Add content for an email | [Adding content to Email](working.md#add-content-to-an-email) |
+| Add content based on user inputs | [Modify content in Emails](working.md#modify-content-in-emails) |
+| Add attachment to emails | [Adding email attachments](attachments.md) |
+| Create logic to send emails | [Sending Emails](sending.md) |
+| See what widgets you can use | [Widgets available in Emails](widgets.md#widgets-available-in-emails) |
+| See what data types you can use in inputs | [Available data types](../data/data-types.md), in particular [compound data types](../data/data-types.md#compound-data-types) |
+| Validate or format email addresses | [Email built-in functions](../../reference/built-in-functions/email.md) |
 
 ## More about emails in ODC
 

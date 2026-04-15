@@ -16,54 +16,57 @@ coverage-type:
   - remember
 topic:
   - service-studio-overview
+isautopublish: true
 ---
 
-# ODC Studio Shortcuts
+# ODC Studio shortcuts
 
 ## General
 
-|Description|Windows|macOS|
-|---|---|---|
-|Copy|Ctrl+C (Ctrl+Ins)|Cmd+C|
-|Paste|Ctrl+V (Shift+Ins)|Cmd+V|
-|Paste As|Ctrl+Shift+V|Shift+Cmd+V|
-|Cut|Ctrl+X (Shift+Del)|Cmd+X|
-|Undo|Ctrl+Z|Cmd+Z|
-|Redo|Ctrl+Y|Shift+Cmd+Z|
-|Open module from the environment|Ctrl+O|Cmd+O|
-|Open module from file|Ctrl+Shift+O|Shift+Cmd+O|
-|Save or export module|Ctrl+S|Cmd+S|
-|Save As|Ctrl+Shift+S|Shift+Cmd+S|
-|Zoom in|Ctrl+Plus|Cmd+Plus|
-|Zoom out|Ctrl+Minus|Cmd+Minus|
-|Zoom 100%|Ctrl+0|Cmd+0|
-|Auto-complete|Ctrl+Space|Ctrl+Space|
-|Select all elements|Ctrl+A|Cmd+A|
-|Close module|Ctrl+F4|Cmd+W|
-|Apply the primary action on the current pop-up window|Ctrl+Enter|Cmd+Enter|
-|Cancel and close the current pop-up window|Esc|Esc|
-|Look for help, by telling us what you want to do|F1||
-|Rename selected element|F2||
-|Open selected dropdwon|F4|F4|
-|Open Preferences| |Cmd+comma|
+| Description | Windows | macOS |
+| --- | --- | --- |
+| Copy | Ctrl+C (Ctrl+Ins) | Cmd+C |
+| Paste | Ctrl+V (Shift+Ins) | Cmd+V |
+| Paste As | Ctrl+Shift+V | Shift+Cmd+V |
+| Cut | Ctrl+X (Shift+Del) | Cmd+X |
+| Undo | Ctrl+Z | Cmd+Z |
+| Redo | Ctrl+Y | Shift+Cmd+Z |
+| Open module from the environment | Ctrl+O | Cmd+O |
+| Open module from file | Ctrl+Shift+O | Shift+Cmd+O |
+| Save or export module | Ctrl+S | Cmd+S |
+| Save As | Ctrl+Shift+S | Shift+Cmd+S |
+| Zoom in | Ctrl+Plus | Cmd+Plus |
+| Zoom out | Ctrl+Minus | Cmd+Minus |
+| Zoom 100% | Ctrl+0 | Cmd+0 |
+| Auto-complete | Ctrl+Space | Ctrl+Space |
+| Select all elements | Ctrl+A | Cmd+A |
+| Close module | Ctrl+F4 | Cmd+W |
+| Apply the primary action on the current pop-up window | Ctrl+Enter | Cmd+Enter |
+| Cancel and close the current pop-up window | Esc | Esc |
+| Look for help, by telling us what you want to do | F1 | |
+| Rename selected element | F2 | |
+| Open selected dropdown | F4 | F4 |
+| Open Preferences | | Cmd+comma |
 
-## Basic Development
+## Basic development
 
-|Description|Windows|macOS|
-|---|---|---|
-||F5|1-Click Publish|
-|Hide/show warning in TrueChange tab|Ctrl+H|Shift+Cmd+H|
-|Enable/disable Styles Editor|Ctrl+J||
-|Refresh Aggregate's data preview|Ctrl+L|Cmd+R|
-|Compare and Merge module with published version|Ctrl+M|Shift+Cmd+M|
-|Create new element|Ctrl+N|Cmd+N|
-|Open Manage Dependencies window|Ctrl+Q|Cmd+D|
-|Refresh all in Manage Dependencies window|Ctrl+R|Cmd+R|
-|Open list of shortcuts|Ctrl+Shift+K||
-|Delete Extended Property|Ctrl+D||
-|Remove unused references|Ctrl+Shift+D|Cmd+Shift+D|
-|Show/hide development tabs| |Cmd+Opt+D|
-|Ctrl+Shift+R|Cmd+Shift+R|Check for dependency updates|
+| Description | Windows | macOS |
+| --- | --- | --- |
+| 1-Click Publish | F5 | F5 |
+| 1-Click Publish with comment | Shift+F5 | Shift+F5 |
+| Ask Mentor | Ctrl+Shift+A | Shift+Cmd+A |
+| Hide/show warning in TrueChange tab | Ctrl+H | Shift+Cmd+H |
+| Enable/disable Styles Editor | Ctrl+J | |
+| Refresh Aggregate's data preview | Ctrl+L | Cmd+R |
+| Compare and Merge module with published version | Ctrl+M | Shift+Cmd+M |
+| Create new element | Ctrl+N | Cmd+N |
+| Open Manage Dependencies window | Ctrl+Q | Cmd+D |
+| Refresh all in Manage Dependencies window | Ctrl+R | Cmd+R |
+| Open list of shortcuts | Ctrl+Shift+K | |
+| Delete Extended Property | Ctrl+D | |
+| Remove unused references | Ctrl+Shift+D | Cmd+Shift+D |
+| Show/hide development tabs | | Cmd+Opt+D |
+| Ctrl+Shift+R | Cmd+Shift+R | Check for dependency updates |
 
 ## Navigation
 
@@ -97,7 +100,7 @@ topic:
 |Go to previous text occurrence or element usage|Shift+F3|Shift+Cmd+G or Shift+F3|
 |Search widgets or blocks in the Toolbox|Ctrl+E|Shift+Cmd+E|
 
-## Screen Editor
+## Screen editor
 
 |Description|Windows|macOS|
 |---|---|---|
@@ -111,7 +114,7 @@ topic:
 |Move Table's row up|Ctrl+Up|Cmd+Up|
 |Move Table's row down|Ctrl+Down|Cmd+Down|
 
-## Flow Editor
+## Flow editor
 
 |Description|Windows|macOS|
 |---|---|---|

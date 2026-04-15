@@ -27,6 +27,12 @@ An **Agentic app** uses one or more AI agents to perform tasks, automate workflo
 
 ![Dropdown menu in ODC Studio showing options for creating different types of apps, with 'Agentic app' selected.](images/app-dropdown-odcs.png "ODC Studio App Type Selection")
 
+<div class="info" markdown="1">
+
+Like web and mobile apps, agentic apps use a specialized architecture where each app is deployed into its own isolated container. Libraries consumed by an agentic app are packaged directly inside that container. This means if multiple apps consume the same library, each receives its own independent copy at runtime. Refer to [App architecture](../../app-architecture/intro.md) for more information.
+
+</div>
+
 ## AI models
 
 In ODC, an AI model is a pre-trained algorithm or deployed machine learning service that provides a specific capability (for example, summarization, extraction, or generation). Call these models directly from your app logic using the `Call<AIModelName>` server action. For more information, see [AI models and search services in ODC](ai-models.md).

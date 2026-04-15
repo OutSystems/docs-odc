@@ -18,6 +18,12 @@ coverage-type:
 
 # Dynamic charts using fixed and variable data
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 To add data to your chart you must input **DataPoint** labels and values for the **DataPointList** property.
 
 There are two different ways to add data to the **DataPointList** property: **Fixed data** and **Variable data**.

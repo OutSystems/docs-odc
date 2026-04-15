@@ -18,30 +18,39 @@ outsystems-tools:
   - odc portal
 helpids:
 ---
-# Migrate Cordova plugin to Capacitor plugin
 
-This article explains how you can migrate OutSystems Mobile Plugins to use [Capacitor](https://capacitorjs.com/), a modern native runtime framework for mobile apps. ODC app plugins rely on [Cordova](https://cordova.apache.org/) to access native functionalities. With MABS 12, you can build both Capacitor and Cordova apps. This means you can update your MABS version and continue using the Cordova framework and your existing plugins without changes. However, we recommend switching to the Capacitor framework to leverage its modern capabilities.
+# Adapt Cordova plugin for compatibility with Capacitor
 
-Capacitor supports [Cordova Plugins](https://capacitorjs.com/docs/plugins/cordova), though with some limitations. To address these limitation, MABS 12 introduces capabilities such as universal extensibility and build actions that, when used with guidance provided in this article, allow you to make OutSystems plugins compatible with both Cordova (MABS 11) and Capacitor (MABS 12), enabling a dual-stack approach.
+Existing plugins rely on [Cordova](https://cordova.apache.org/) to access native functionalities. With [MABS 12](../../building-apps/mobile/mabs-overview.md), you can build both Capacitor and Cordova apps. This means you can update your MABS version and continue using the Cordova framework and your existing plugins without any changes. However, OutSystems recommends switching to the Capacitor cross-platform native runtime to leverage its modern capabilities.
 
-To achieve this, you can follow two main approaches:
+If you are building a Capacitor app and you already have an ODC library that references the Cordova plugin, you can make that library work with Capacitor apps. In some cases, the Cordova plugin itself doesn’t require any code changes. You only need to update the extensibility configurations in your ODC library so that it correctly references the plugin for Capacitor compatibility. However, if your plugin relies on Cordova-specific functionalities that are not supported by Capacitor, you must adapt the plugin. By adapting the plugin, you can integrate and use your existing plugin within your Capacitor-based app.
 
-Approach 1: Make an existing Cordova Plugin compatible with Capacitor for use in Capacitor apps.
+If adapting requires significant changes to core functionality, consider building a [dual-stack plugin](capacitor-plugins/dual-stack-plugin.md) for better performance and long-term maintenance.
+
+This article explains how you can adapt your existing Cordova plugin for use with [Capacitor](https://capacitorjs.com/) apps.
+
+## Approaches for Cordova plugin compatibility
+
+While Capacitor provides [built-in support for Cordova Plugins](https://capacitorjs.com/docs/plugins/cordova), certain Cordova-specific features don't apply directly to the Capacitor environment. To bridge this gap, MABS 12 introduces capabilities such as including [universal extensibility configurations](../../building-apps/mobile/extensibility-configurations.md) and [build actions](../../building-apps/mobile/build-actions.md). These capabilities enable you to create plugins that work across both Cordova and Capacitor.
+
+Here are the two main approaches to ensure Cordova plugins work with Capacitor:
+
+Approach 1: Modify the [extensibility of OutSystems](#changes-in-extensibility-configurations-for-all-plugins-changes-in-extensibility) plugin and if needed adapt the Cordova plugin for Capacitor compatibility.
   
-Approach 2: Create a Capacitor Plugin with the same functionality as the existing Cordova Plugin. Then, configure the OutSystems plugin to use either one based on the available native mobile framework.
+Approach 2: Create a Capacitor plugin with the same functionality as the existing Cordova Plugin. Then, update the OutSystems plugin to use either of the implementations based on the available native mobile framework. For detailed information, refer to [Implement a dual-stack plugin](capacitor-plugins/dual-stack-plugin.md)
 
 Approach 1 is quicker and requires less effort, while approach 2 allows you to leverage Capacitor-specific functionalities directly in your plugin. You can also adopt a phased migration, starting with Approach 1 and later progressing to Approach 2.
 
-## Changes in extensibility configurations for all plugins
+## Changes in extensibility configurations for all plugins {#changes-in-extensibility}
 
-With MABS 12, extensibility configurations now follow a [universal extensibility schema](../../building-apps/mobile/extensibility-configurations.md). You need to update your OutSystems plugin, even if you only use Cordova.
+With MABS 12, extensibility configurations follow [universal extensibility schema](../../building-apps/mobile/extensibility-configurations.md). You must update your OutSystems plugin, even if you only use Cordova.
 
-For example, if your mobile plugin is offered as a library on ODC, and your current extensibility Configurations are:
+For example, if your mobile plugin is offered as a library on ODC, and your extensibility configurations are:
 
 ```json
 {
     "plugin": {
-        "url":"<url_to_cordova_plugin>",
+        "url":"{url_to_cordova_plugin}",
         "variables": [
             {
                 "name": "CUSTOM_CORDOVA_PREFENCE",
@@ -64,7 +73,7 @@ To comply with MABS 12’s universal schema, you must update your extensibility 
     "buildConfigurations": {
         "cordova": {
             "source": {
-                "npm": "<url_to_cordova_plugin>"
+                "npm": "{url_to_cordova_plugin}"
             },
             "preferences": {
                 "CUSTOM_CORDOVA_PREFENCE": "cordova_preference_value"
@@ -90,12 +99,12 @@ To comply with MABS 12’s universal schema, you must update your extensibility 
 
 Key differences between the Cordova-based and Universal schema are:
 
-1. The `plugin` block is now under `buildConfigurations` > `cordova`.
-2. Cordova preferences, previously under `plugin` > `variables` are now in `buildConfigurations` > `cordova` >  `preferences`.
+* The `plugin` block is under `buildConfigurations` > `cordova`.
+* Cordova preferences, previously under `plugin` > `variables` are now in `buildConfigurations` > `cordova` >  `preferences`.
 
-The Cordova-based extensibility configurations remain to ensure the OutSystems Plugin works in MABS 11.
+The Cordova-based extensibility configurations remain to ensure the  plugin works in MABS 11.
 
-If you choose to support Capacitor, additional changes may be required in your library’s extensibility. These are described later in this document. For detailed information refer to [Library (plugin) extensibility configuration JSON schema](../../building-apps/mobile/extensibility-configurations/extensibility-lib-reference.md).
+If you choose to support Capacitor, additional changes may be required in your library’s extensibility. For detailed information refer to [Library (plugin) extensibility configuration JSON schema](../../building-apps/mobile/extensibility-configurations/extensibility-lib-reference.md).
 
 ## Use Cordova plugins in Capacitor
 
@@ -103,21 +112,25 @@ Capacitor supports Cordova Plugins. Depending on your plugin, you may not requir
 
 This section first describes scenarios where no changes are needed, followed by required changes to ensure full compatibility with MABS 12 and Capacitor.
 
-### Existing Cordova-Capacitor compatibility
+### Evaluate plugin.xml compatibility with Capacitor
 
-In most cases, the source code of the Cordova Plugin—whether JavaScript, TypeScript, Java, Kotlin, Swift, or Objective-C—doesn’t require changes to be compatible with Capacitor. One exception is if it uses [Cordova-specific functionalities](#cordova-specific-references).
+In most cases, the source code of the Cordova plugin—whether JavaScript, TypeScript, Java, Kotlin, Swift, or Objective-C—doesn't require changes to be compatible with Capacitor. One exception is if it uses [Cordova-specific functionalities](#adapt-cordova-specific-references-adapt-cordova-specific-references).
 
 The main file you need to analyze to determine if a Cordova Plugin is fully compatible with Capacitor is the `plugin.xml` file.
 
 Capacitor in OutSystems processes some elements in a Cordova `plugin.xml` file:
 
 * The `js-module` block, where you define your clobbers to access Cordova plugin methods in OutSystems JavaScript blocks.
+  
 * Tags for defining native source code and native dependencies—`source-file`, `header-file`, `resource-file`, `lib-file` `framework`, `podspec`.
+  
 * The `features` inside the `config-file` block.
-* Dependencies on other Cordova plugins using the “dependency” tag. However, you must ensure those dependencies are compatible with Capacitor as well.
+  
+* Dependencies on other Cordova plugins using the `dependency` tag. However, you must ensure those dependencies are compatible with Capacitor as well.
+  
 * Limited support for `config-file` and `edit-config`—changes for the Android platform, and exclusively for `AndroidManifest.xml`.
 
-For example, if you have an OutSystems Plugin for accessing the phone’s contacts, and the Cordova `plugin.xml` file looks like this:
+For example, if you have an OutSystems supported Cordova plugin for accessing the phone’s contacts, and the Cordova `plugin.xml` file looks like this:
 
 ```xml
 <plugin>
@@ -144,22 +157,30 @@ For example, if you have an OutSystems Plugin for accessing the phone’s contac
 </plugin>
 ```
 
-Then the plugin should be compatible with Capacitor out of the box, apart from the [extensibility configuration changes](#changes-in-extensibility-configurations-for-all-plugins). Regardless, you should test your plugin on an OutSystems app built with MABS 12 and Capacitor to confirm everything works as expected.
+Then the plugin should be compatible with Capacitor out of the box, apart from the [extensibility configuration changes](#changes-in-extensibility-configurations-for-all-plugins-changes-in-extensibility). Regardless, you should test your plugin on an app built with MABS 12 and Capacitor to confirm everything works as expected.
 
-### Changes required for Capacitor compatibility
+### Changes required for Capacitor compatibility {#changes-required-for-capacitor-compatbility}
 
-These Cordova functionalities in `plugin.xml` are not supported by Capacitor directly:
+The following Cordova functionalities in `plugin.xml` are not supported by Capacitor directly:
 
 * `preference` -  setting plugin variables, be it globally or per platform.
 * `hooks`  running scripts at different points of the Cordova lifecycle.
 * Most changes that use `config-file` or `edit-config`. For instance, changes to `Info.plist` on iOS in `plugin.xml` are not directly supported by Capacitor.
 
-If your OutSystems plugin uses any of the above mentioned functionalities from Cordova, there will be migration work to make the plugin compatible with Capacitor.
+If your OutSystems plugin uses any of the above mentioned functionalities from Cordova, you must do the following to ensure compatibility:
 
-### Migrate Cordova preferences
+* [Migrate Cordova preferences](#migrate-cordova-preferences-migrate-cordova-preferences)
 
-Cordova preferences allow for the creation of variables that can be customized by users of a Plugin. These preferences can then be used elsewhere in `plugin.xml`.
-Below is an example of an Android-specific preference:
+* [Use build actions for Cordova hooks](#use-build-actions-for-cordova-hooks-use-build-actions-for-cordova-hooks)
+
+* [Migrate config file changes](#migrate-config-file-changes-migrate-config-file-changes)
+
+* [Adapt Cordova-specific references](#adapt-cordova-specific-references-adapt-cordova-specific-references)
+
+#### Migrate Cordova preferences {#migrate-cordova-preferences}
+
+Cordova preferences allow for the creation of variables that can be customized by plugin users. These preferences can then be used elsewhere in `plugin.xml`.
+Here is an example of an Android-specific preference:
 
 ```xml
 <preference name="MY_CUSTOM_STRING" default="default-value" />
@@ -168,16 +189,15 @@ Below is an example of an Android-specific preference:
 </config-file>
 ```
 
-You can currently set the preference values in both ODC library and app extensibility configurations (compatible with MABS 11).
+You can set the preference values in both ODC library and app extensibility configurations (compatible with MABS 11).
 
-In Capacitor builds, the preference value cannot be changed  the default value is always used. To allow for easier customization of these variables by OutSystems users, we recommend using Settings in ODC.
-Using ODC Studio, you can add Settings to your Library by going into “Data” \-\> “Settings” \-\> Right-click \-\> “Add Setting”.
-OutSystems developers are able to customize the setting value without having to change the App’s Extensibility \- in the App’s “Configuration” tab inside ODC Portal.
+In Capacitor builds, the preference value cannot be changed - the default value is always used. To allow for easier customization of these variables, OutSystems recommends using [extensibility settings](../../building-apps/mobile/configuring-mobile-apps.md#configure-extensibility-settings-configure-extensibility-settings).
 
-### Migrate Cordova hooks
+#### Use build actions for Cordova hooks {#use-build-actions-for-cordova-hooks}
 
-Cordova hooks exist to allow plugin developers to perform custom actions and setup that is otherwise not possible when configuring the `plugin.xml`.
-MABS 12 overcomes this with a new feature called [build actions](../../building-apps/mobile/build-actions.md). With Build Actions, you can do various customizations on native mobile apps, writing minimal code.
+Cordova hooks provide a mechanism for plugin developers to perform advanced configuration tasks during the build process that cannot be achieved through standard `plugin.xml` declarations alone.
+
+With MABS 12, you can use [build actions](../../building-apps/mobile/build-actions.md) to perform native project modifications such as modifying **Android Manifest file**, **Info.plist** or **build.gradle** files in a structured and repeatable way with minimal code.
 
 There are separate build actions for [iOS](../../building-apps/mobile/build-actions-iOS.md) and [Android](../../building-apps/mobile/build-actions-android.md) platform.
 
@@ -206,7 +226,7 @@ Where `APP_NAME` is a variable that you can specify when invoking the build acti
 
 In ODC Studio, include the json file in **Data > Resources**.
 
-In the library’s extensibility, add the reference to the .json file, and pass the `APP_NAME` parameter.  You can specify a setting so that users can customize the value on their app via ODC Portal:
+In the library’s extensibility, add the reference to the .json file, and pass the `APP_NAME` parameter.  You can specify an [extensibility setting](../../building-apps/mobile/configuring-mobile-apps.md#configure-extensibility-settings) so that users can customize the value on their app via ODC Portal:
 
 ```json
 {
@@ -214,16 +234,16 @@ In the library’s extensibility, add the reference to the .json file, and pass 
         "buildAction": {
             "config": $resources.setAppName.json,
             "parameters": {
-                "APP_NAME": $settings.AppName
+                "APP_NAME": $extensibilitySettings.AppName
             }
         }
     },
 }
 ```
 
-OutSystems recommends always using build action however there may be specific uses that cannot be accomplished with build actions. In such scenarios, you can use [Capacitor Hooks](https://capacitorjs.com/docs/cli/hooks), which allow you to run scripts in different phases of the Capacitor build process.
+OutSystems recommends always using build actions. However, there may be specific uses that cannot be accomplished with build actions. In such scenarios, you can use [Capacitor Hooks](https://capacitorjs.com/docs/cli/hooks), which allow you to run scripts in different phases of the Capacitor build process.
 
-### Migrate “config-file” changes
+#### Migrate `config-file` changes {#migrate-config-file-changes}
 
 Most `config-file` declarations in Cordova’s `plugin.xml` do not work out-of-the-box in Capacitor. Depending on the change, there are multiple ways to migrate.
 
@@ -242,7 +262,7 @@ You add the following content to the library’s extensibility, leveraging ODC s
     "plugin": {
         "variables": [{
             "name": "CAMERA_USAGE_DESCRIPTION",
-            "value": $settings.CameraUsageDescription
+            "value": $extensibilitySettings.CameraUsageDescription
         }]
     }
     "pluginConfigurations": {
@@ -252,7 +272,7 @@ You add the following content to the library’s extensibility, leveraging ODC s
             ]
             "ios": {
                 "NSCameraUsageDescription": {
-                    "description": $settings.CameraUsageDescription
+                    "description": $extensibilitySettings.CameraUsageDescription
                 }
             }
         }
@@ -260,11 +280,11 @@ You add the following content to the library’s extensibility, leveraging ODC s
 }
 ```
 
-Where the setting name is `CameraUsageDescription`, and `plugin variables` block is added in case you want to use the setting to set a [Cordova preference](#migrate-cordova-preferences) for MABS 11.
+Here the extensibility setting name is `CameraUsageDescription`. In the example, `plugin variables` block is added in case you want to use the setting to set a [Cordova preference](#migrate-cordova-preferences) for MABS 11.
 
-There’s also an `android` block for permissions. Even though Capacitor supports permission changes via Cordova `plugin.xml`, you can still declare it in your ODC library extensibility, and it can make it clearer for other OutSystems developers what permissions your plugin (and therefore, their app) requires.
+The `android` block explicitly declares the camera permission your plugin requires. While Capacitor can automatically handle permissions through Cordova's `plugin.xml`, declaring them in your ODC library extensibility provides better transparency. This makes it immediately clear to other developers what permissions your plugin needs and how it will affect their app's permission requirements.
 
-For other changes in `Info.plist` files, as well as changes in other Android files, you should use [build actions](../../building-apps/mobile/build-actions.md).
+For other changes in `Info.plist` files, as well as changes in other Android files, you must use [build actions](../../building-apps/mobile/build-actions.md).
 
 Here’s an example for a change in Android’s `strings.xml` via Cordova `plugin.xml`:
 
@@ -274,30 +294,35 @@ Here’s an example for a change in Android’s `strings.xml` via Cordova `plugi
 </config-file>
 ```
 
-Here’s how you can convert it to a build actions .json file:
+Here's how you can convert it to a build actions .json file:
 
 ```json
-
-platforms:
-  android:
-    xml:
-      - resFile: values/strings.xml
-        target: resources
-        merge: |
-          <string name="custom">Custom String</string>
-
+{
+    "platforms": {
+        "android": {
+            "xml": [
+                {
+                    "resFile": "values/strings.xml",
+                    "target": "resources",
+                    "merge": "&lt;string name='custom'&gt;Custom String&lt;/string&gt;"
+                }
+            ]
+        }
+    }
+}
 ```
 
-### Cordova-specific references
+#### Adapt Cordova-specific references {#adapt-cordova-specific-references}
 
-In a MABS 12 build that uses Capacitor, the Cordova framework won’t be available, and any usages of Cordova-specific APIs by your plugin may need to be refactored so that your plugin works well in Capacitor.
+When you build your Capacitor mobile package with MABS 12, refactor any Cordova-specific APIs your plugin uses to ensure it works in Capacitor.
 
-You should analyse JavaScript blocks in your OutSystems plugin, and, if possible, the JavaScript code of the Cordova plugin for Cordova framework API accesses.
+You must analyse the JavaScript blocks in your OutSystems plugin, and, if possible, the JavaScript code of the Cordova plugin for Cordova framework API access.
+
 Here are some common examples:
 
 | Context | Cordova-specific code | Migration to Capacitor |
 | :---- | :---- | :---- |
-| Checking if Cordova exists.  | _typeof(cordova) \!== “undefined”_ | _typeof(Capacitor) \!== “undefined”_ You should have both checks for the plugin to be compatible with Cordova and Capacitor. |
+| Checking if Cordova exists. | _typeof(cordova) \!== “undefined”_ | _typeof(Capacitor) \!== “undefined”_ You should have both checks for the plugin to be compatible with Cordova and Capacitor. |
 | Checking if Cordova plugin is defined. | _typeof(\<cordova\_plugin\_clobber) \!== “undefined”_ | No changes needed. |
 | Get the platform. To run code depending on which platform the app is running on. | _let platform \= cordova.platformId_ | _let platform \= Capacitor.getPlatform(); if (\!platform) {     platform \= cordova.platformId; }_ |
 
@@ -307,76 +332,18 @@ For some of the checks in the table above, you can use the official [Common Plug
   
 * `GetOperatingSystem` - Returns `Android`, `iOS`, or `Other`
 
-## Two plugins: Cordova and Capacitor
+## Related resources
 
-To fully make your OutSystems plugin dual-stack, and to be able to better leverage Capacitor, the best option is to have a Capacitor plugin that is based off of the existing Cordova Plugin.
+Explore these resources to learn more about plugin integration
 
-### Building a Capacitor plugin
+* [Implement dual-stack plugin](capacitor-plugins/dual-stack-plugin.md)
 
-For detailed information about building a Capacitor plugin, refer to [How to build a Capacitor plugin](https://docs.google.com/document/d/1OtPcZy19-XqsTfNuCKtpg-G4I_XEmp-2uhHhcbpE7Cg/edit?usp=sharing).
+* [Build a Capacitor plugin from scratch](capacitor-plugins/build-capacitor-plugin.md)
 
-Here's some important points to remember on building a Capacitor plugin, based on an existing Cordova plugin:
+Explore these resources to learn more about the capabilities introduced from MABS 12:
 
-* Like Cordova plugins, you can define a JavaScript API that the OutSystems plugin will consume. Under the hood, Cordova / Capacitor will call the appropriate native implementation.
-  
-* Most of the native code (Java and/or Kotlin for Android, Objective-C and/or Swift for iOS) from the Cordova Plugin can be reused for Capacitor.To promote reusability, you can create a native library for each platform.
-  
-* OutSystems recommends to publish the Capacitor Plugin to the [npm registry](https://www.npmjs.com/). Alternatively, if you have the plugin hosted in a GitHub repository, you may use that instead.
+* [Universal extensibility configuration JSON schema](../../building-apps/mobile/extensibility-configurations.md)
 
-### Use Capacitor plugin in OutSystems
+* [Build actions](../../building-apps/mobile/build-actions.md)
 
-You will need to make changes in your existing OutSystems Plugin to decide whether to use Capacitor or Cordova.
-
-Let’s use an example to illustrate the changes you would do: You have a Cordova plugin to scan QR Codes **cordova.plugin.qrcode**. You created a new Capacitor plugin, published in npm with id `@my-org/qr-code-capacitor` named `QrCode`.
-
-You should update your plugin extensibility configurations as follows:
-
-```json
-{
-    "buildConfigurations": {
-        "cordova": {
-            "source": {
-                "npm": "@my-org/cordova.plugin.qrcode@1.2.0"
-            }
-        },
-        "capacitor": {
-            "source": {
-                "npm": "@my-org/qr-code-capacitor@1.0.0"
-            }
-        },
-    },
-    "plugin": {
-        "identifier": "@my-org/cordova.plugin.qrcode@1.2.0"
-    }
-}
-```
-
-Where the `buildConfigurations` block is used for MABS 12, and `plugin` for MABS 11 and below. Note how the Cordova plugin is declared side by side with the Capacitor inside `buildConfigurations`. This is because app users may configure MABS 12 to use either Cordova or Capacitor, so both need to be declared.
-
-If you instead have your Capacitor (or Cordova) plugin in a GitHub repository, you should create a git tag and change the extensibility:
-
-```
-               "npm":"https://github.com/<org-name>/<capacitor-plugin-repo-name>#1.0.0"
-```
-
-For the client actions of your ODC Library, you will need to update your JavaScript blocks that reference the Cordova plugin.
-
-If you’re on a Capacitor app, use the Capacitor plugin, otherwise, you should use the Cordova plugin. If both Cordova and Capacitor plugins have a `scanQRCode` method, you should have a code block like below:
-
-```javascript
-if (typeof(Capacitor) !== 'undefined') {
-    // Capacitor app - use Capacitor Plugin
-    Capacitor.Plugins.QrCode.scanQRCcode();
-} else {
-    // otherwise - use Cordova Plugin
-    cordova.plugins.qrcode.scanQRCcode();
-}
-```
-
-Alternatively, you can accomplish the same logic using the [Common Plugin’s](common-plugin/intro.md) `GetNativeMobileFramework` client action, having a JavaScript block for the Cordova call and one for Capacitor.
-
-### Additional changes
-
-Keep in mind however that there are certain functionalities in Cordova Plugins that aren’t supported in Capacitor Plugins directly such as plugin hooks and some changes  via `plugin.xml`.
-
-For more information on Cordova features and how to map them in MABS 12 Capacitor builds, refer to [Changes required for Capacitor compatibility](#changes-required-for-capacitor-compatibility).
+* [Extensibility settings](../../building-apps/mobile/configuring-mobile-apps.md#)

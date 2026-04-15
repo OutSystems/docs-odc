@@ -19,7 +19,7 @@ outsystems-tools:
   - forge
 helpids:
 ---
-# User and access management API use cases
+# User and access management
 
 ODC provides a set of user and access management APIs that allow you to programmatically create, view, and manage users and their permissions at runtime. For detailed information on individual endpoints of these APIs, refer to [User and access management API](../../identity-v1.md). You can use these APIs to do the following:
 

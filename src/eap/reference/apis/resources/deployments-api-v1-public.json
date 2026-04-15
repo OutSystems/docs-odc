@@ -102,13 +102,9 @@
           {
             "name": "permissionFilter",
             "in": "query",
-            "description": "Filter assets by permission type.",
+            "description": "Filter by permission type. Format: 'PermissionType' or 'PermissionType.EnvironmentKey' for environment-specific permissions. Available values: AppViewSourceCode | AppDebug | AppChange | AppDelete | AppDeploy | AppRelease | AppMonitor | AppMonitorUserInfo | AppSecurityView | CodeQualityManage | CodeQualityView | AppUserView | AppAccessManage | AppGroupManage | CfgView | ConnConfig | AppCfgChange. Example: 'AppDeploy' or 'AppDeploy.123e4567-e89b-12d3-a456-426614174000'",
             "schema": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/PermissionFilter"
-                }
-              ]
+              "type": "string"
             }
           },
           {
@@ -1048,86 +1044,6 @@
         ],
         "type": "string"
       },
-      "PermissionFilter": {
-        "type": "object",
-        "properties": {
-          "permissionType": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/PermissionType"
-              }
-            ],
-            "description": "PermissionType to Filter applications"
-          },
-          "environmentKey": {
-            "type": "string",
-            "description": "Environment key to join with permission Type and filter applications",
-            "format": "uuid",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Filter Applications"
-      },
-      "PermissionType": {
-        "enum": [
-          "AppCreate",
-          "AppView",
-          "AppDebug",
-          "AppChange",
-          "AppDelete",
-          "AppUserView",
-          "OpenTicket",
-          "ViewAllTickets",
-          "ViewSubscriptions",
-          "AppDeploy",
-          "AppRelease",
-          "AppMonitor",
-          "AppMonitorUserInfo",
-          "UserManage",
-          "AppAccessManage",
-          "OrgAccessManage",
-          "OrgRolesManage",
-          "OrgUserView",
-          "CfgView",
-          "AppCfgChange",
-          "ConnUse",
-          "ConnChange",
-          "ConnConfig",
-          "DomainManage",
-          "EmailManage",
-          "NetworkManage",
-          "GatewayManage",
-          "OrgAuthManage",
-          "StageView",
-          "OrgView",
-          "ForgeInstall",
-          "ForgeShare",
-          "ForgeAdmin",
-          "SystemAssetInstall",
-          "ExternalAssetInstall",
-          "IdentitySupport",
-          "AppViewSourceCode",
-          "ConnCreate",
-          "ConnDelete",
-          "AppGroupManage",
-          "ConnManage",
-          "AppSecurityView",
-          "AppGroupView",
-          "ApiClientManage",
-          "CSPManage",
-          "CodeQualityView",
-          "CodeQualityManage",
-          "MigrationDataManage",
-          "MigrationCodeManage",
-          "MigrationConfigManage",
-          "SelfHostedManage",
-          "LogStreamingManage",
-          "AuditTrailView",
-          "AuditTrailStreamingConfiguration"
-        ],
-        "type": "string"
-      },
       "ProblemDetails": {
         "type": "object",
         "properties": {
@@ -1332,9 +1248,11 @@
       }
     }
   },
-  "security": [{
-    "bearerAuth": []
-  }],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
   "tags": [
     {
       "name": "public",

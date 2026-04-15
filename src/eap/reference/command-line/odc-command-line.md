@@ -39,8 +39,8 @@ The syntax is composed of a **command** and it’s **arguments**. The command de
 
 ## Summary of available commands
 
-| Command| Description |
-| ---|--- |
+| Command | Description |
+| --- | --- |
 | [-create](#create) | Opens the ODC Studio dialog to create a new application. |
 | [-diff](#diff) | Opens the [**Compare and Merge**](../../building-apps/merge/merge-example.md) window using the 2 apps passed as parameters. |
 | [-merge](#merge) | Attempts to merge two locally saved apps. The  [**Compare and Merge**](../../building-apps/merge/merge-example.md) window opens and the elements that can be merged will be selected. |
@@ -63,8 +63,8 @@ Syntax
  Example: `odcstudio.exe -create NewApplication -url dev.example.com -userName DevDave --password mypassword`
 
 | Argument | Type | Description | Example |
-| ---|---|---|--- |
-| `-url <hostName>`| Optional | Address of the stage to create the app in. | dev.example.com |
+| --- | --- | --- | --- |
+| `-url <hostName>` | Optional | Address of the stage to create the app in. | dev.example.com |
 | `-userName <user>` | Optional | The username used to connect to ODC Studio | DevDave |
 | `-password <password>` | Optional | The password that corresponds to the provided username | mypassword |
 
@@ -77,7 +77,7 @@ Syntax
 :   Example: `odcstudio.exe -diff "C:\Program Files\OutSystems\ComponentsCore.oml" "C:\Program Files\OutSystems\ComponentsCore2.oml"`
 
 | Argument | Type | Description | Example |
-| ---|---|---|--- |
+| --- | --- | --- | --- |
 | `localApp.oml` | Mandatory | Source app to use in the comparison. This is the app that appears on the left side of the **Compare and Merge** dialog, labeled as **Your version**. | C:\Program Files\OutSystems\ComponentsCore.oml |
 | `foreignApp.oml` | Mandatory | Target app to use in the comparison. This is the app that appears on the right side of the **Compare and Merge** dialog, labeled as **The other version**. | C:\Program Files\OutSystems\ComponentsCore2.oml |
 
@@ -90,7 +90,7 @@ Syntax
 :   Example: `odcstudio.exe -merge "C:\Program Files\OutSystems\ComponentsCore.oml" "C:\Program Files\OutSystems\ComponentsCore2.oml"`
 
 | Argument | Type | Description | Example |
-| ---|---|---|--- |
+| --- | --- | --- | --- |
 | `localApp.oml` | Mandatory | Source app to use in the comparison. This is the app that appears on the left side of the **Compare and Merge** dialog, labeled as **Your version**. | C:\Program Files\OutSystems\ComponentsCore.oml |
 | `foreignApp.oml` | Mandatory | Target app to use in the comparison. This is the app that appears on the right side of the **Compare and Merge** dialog, labeled as **The other version**. | C:\Program Files\OutSystems\ComponentsCore2.oml |
 
@@ -103,7 +103,7 @@ Syntax
 :   Example: `odcstudio.exe -openModuleFromUrl (https://www.example.com/MyApp.oml)`
 
 | Argument | Type | Description | Example |
-| ---|---|---|--- |
+| --- | --- | --- | --- |
 | `url.oml` | Mandatory | The path to the remote location of the app. | <https://www.example.com/MyApp.oml> |
 
 ### -refresh { #refresh }
@@ -115,7 +115,7 @@ Syntax
 :   Example: `odcstudio.exe -refresh "C:\Program Files\MyApp.oml" "C:\Program Files\verify.xml" dev.example.com admin AdminPassword`
 
 | Argument | Type | Description | Example |
-| ---|---|---|--- |
+| --- | --- | --- | --- |
 | `myApp.oml` | Mandatory | The path to a locally saved app. | C:\Program Files\MyApp.oml |
 | `verify.xml` | Mandatory | The path in which to save the log file "verify.xml". | C:\Program Files\verify.xml |
 | `hostName` | Mandatory | The hostname of the stage to compare the references of the local app. | dev.example.com |
@@ -135,5 +135,5 @@ Syntax
 :   Example: `odcstudio.exe -recover "C:\Program Files\OutSystems\ComponentsCore.oml"`
 
 | Argument | Type | Description | Example |
-| ---|---|---|--- |
+| --- | --- | --- | --- |
 | `myApp.oml` | Mandatory | The path to a locally saved app. | "C:\Program Files\OutSystems\ComponentsCore.oml" |

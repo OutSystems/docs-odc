@@ -21,11 +21,17 @@ helpids:
 
 # iOS build actions
 
-This article provides reference documentation for all iOS build actions available in mobile app development. [Build actions](build-actions.md) allow you to customize and configure iOS mobile apps beyond the standard low-code capabilities such as updating and modifying **Info.plist** file and setting specific build settings.
+<div class="info" markdown="1">
+
+Build actions are supported only for mobile apps that use Capacitor. Cordova-based mobile apps do not support build actions.
+
+</div>
+
+This article provides reference documentation for all iOS build actions available in mobile app development. [Build actions](build-actions.md) allow you to customize and configure iOS mobile apps beyond the standard low-code capabilities such as updating and modifying the **Info.plist** file and setting specific build settings.
 
 ## Targets and builds
 
-Build actions for iOS support different targets and builds. These are optional and specified as parent keys in the JSON. The following build actions example omits targets and builds, but they are always valid.
+Build actions for iOS support different targets and builds. These are optional and are specified as parent keys in the JSON. The following build actions example omits targets and builds, but they are always valid.
 
 ```json
 {
@@ -134,7 +140,7 @@ Array<{
 }>;
 ```
 
-**Description**: Sets build phases scripts to run. By default, values should be merge unless replace is set to `true` to overwrite the entire target object with a given comment.
+**Description**: Specifies custom shell scripts to run during the project build phases. By default, these scripts are added to the existing build phases. If `replace` is set to `true`, the build process uses the `comment` property as a unique identifier to find and overwrite an existing build phase with the new configuration.
 
 **Conditional**: Yes
 
@@ -170,7 +176,7 @@ Array<{
 }>;
 ```
 
-**Description**: Updates the **Info.plist** file for the specified target and build, or default target and all builds when not specified. Or updates a given plist file if provided.
+**Description**: Updates the **Info.plist** file for the specified target and build, or default target and all builds when not specified. You can use it, for example, to define custom URL schemes (CFBundleURLSchemes) or add other key-value entries. You can also update a specific plist file if provided.
 
 By default, values should be merged unless replace is set to `true` to overwrite the entire target object.
 
@@ -626,8 +632,8 @@ Array<{
         "ios": {
             "tar": [
                 {
-                    "source": "files/FooBar.tar",
-                    "targetDir": "files/FooBar",
+                    "src": "files/FooBar.tar",
+                    "dest": "files/FooBar",
                     "action": "x"
                 }
             ]

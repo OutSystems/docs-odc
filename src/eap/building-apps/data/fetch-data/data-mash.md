@@ -1,6 +1,6 @@
 ---
-summary: Learn to manage data with Aggregates in OutSystems Developer Cloud (ODC), supporting optimized client-side and server-side queries.
-tags: data management, data aggregation, data analysis, data integration, data fabric
+summary: Learn how to query data from several external data sources in OutSystems Developer Cloud (ODC).
+tags: data management, data aggregation, data analysis, data integration, data fabric, data mashup
 locale: en-us
 guid: 49e82c30-f818-4e76-9961-1ccae5852e4e
 app_type: mobile apps, reactive web apps
@@ -19,7 +19,7 @@ coverage-type:
 
 # Combine data from different sources using data mashup
 
-When you integrate your app with different external data sources using [OutSystems Data Fabric](../../../integration-with-systems/external-databases/intro.md), you can use **data mashup** in an [aggregate](aggregate.md) to fetch combined data from those sources.
+When you integrate your app with different external data sources using [OutSystems Data Fabric](../../../integration-with-systems/external-databases/intro.md), you can use **data mashup** in an [aggregate](aggregate.md) or [SQL node](sql/use-sql.md) to fetch combined data from those sources.
 
 Some benefits of data mashup are:
 
@@ -27,7 +27,7 @@ Some benefits of data mashup are:
 * Improved data analysis: You can leverage data from various databases to gain deeper insights and make better business decisions.
 * Increased flexibility: You get greater flexibility in data analysis and reporting.
 
-To mash up data from different external data sources, Administrators must [create a connection](../../../integration-with-systems/external-databases/create-connection-external-data.md) for each external source in ODC Portal and select the entities to use in your app. Then, in ODC Studio, you can create an [aggregate](aggregate.md) to combine those entities from the different external sources, and also with your OutSystems [entities](../modeling/entity.md).
+To mash up data from different external data sources, Administrators must [create a connection](../../../integration-with-systems/external-databases/create-connection-external-data.md) for each external source in ODC Portal and select the entities to use in your app. Then, in ODC Studio, you can create an [aggregate](aggregate.md) or [SQL node](sql/use-sql.md) to combine those entities from the different external sources, and also with your OutSystems [entities](../modeling/entity.md).
 
 ![Screenshot showing an integration with external sources and an aggregate using data mashup to combine data from the external entities.](images/data-mashup-odcs.png "Aggregate using data mashup from external entities")
 

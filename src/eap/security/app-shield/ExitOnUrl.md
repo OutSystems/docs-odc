@@ -138,21 +138,21 @@ A list of reasons for app shutdown in iOS devices.
 
 A list of reasons for app shutdown in Android devices.
 
-| Decimal | Explanation                                                               |
+| Decimal | Explanation |
 | ------- | ------------------------------------------------------------------------- |
-| 00      | Device is rooted                                                          |
-| 01      | Application is modified or repackaged<br />**Note**: Removed from AppShield version 1.4.0 because it was not guaranteed to be triggered.                                                                            |
-| 02      | Application is being run in an emulator<br />**Note**: Removed from AppShield version 1.4.0 because it was not guaranteed to be triggered.                                                                            |
-| 03      | Java debugger attached to app                                             |
-| 04      | Untrusted keyboard detected                                               |
-| 05      | Untrusted screen reader detected                                          |
-| 06      | Native code hooks, possibly inserted by malicious app                     |
-| 08      | Shield could not read configuration file                                  |
-| 09      | Problem with Native Debugger Protection                                   |
-| 19      | Problem initializing Shield                                               |
-| 1a      | Developer options enabled on device                                       |
-| 1b      | Untrusted installer found on device                                       |
-| 20      | App received termination signal                                           |
-| 21      | Application crashed outside of Java-code, either native library or Shield |
-| 22      | Hooking frameworks detected                                               |
-| 23      | Native debugger prevention not possible on this device                    |
+| 00 | Device is rooted |
+| 01 | Application is modified or repackaged<br />**Note**: Removed from AppShield version 1.4.0 because it was not guaranteed to be triggered. |
+| 02 | Application is being run in an emulator<br />**Note**: Removed from AppShield version 1.4.0 because it was not guaranteed to be triggered. |
+| 03 | Java debugger attached to app |
+| 04 | Untrusted keyboard detected |
+| 05 | Untrusted screen reader detected |
+| 06 | Native code hooks, possibly inserted by malicious app |
+| 08 | Shield could not read configuration file |
+| 09 | Problem with Native Debugger Protection |
+| 19 | Problem initializing Shield |
+| 1a | Developer options enabled on device |
+| 1b | Untrusted installer found on device |
+| 20 | App received termination signal |
+| 21 | Application crashed outside of Java-code, either native library or Shield |
+| 22 | Hooking frameworks detected |
+| 23 | Native debugger prevention not possible on this device |

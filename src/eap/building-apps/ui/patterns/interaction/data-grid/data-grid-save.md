@@ -16,6 +16,12 @@ outsystems-tools:
 ---
 # Save changes in OutSystems Data Grid
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 This example shows how to edit the Grid data and save those changes to the database.
 
 **Prerequisites:**
@@ -70,12 +76,12 @@ This example shows how to edit the Grid data and save those changes to the datab
 
     In this example the following is added:
 
-    | **Logic** | **Property** | **Value** |
-    |---|---|---|
-    | **For Each**  | Record List | EditedProducts (Input Parameter) |
-    | **Run Server Action** | Source | EditedProducts.Current |
+| **Logic** | **Property** | **Value** |
+| --- | --- | --- |
+| **For Each** | Record List | EditedProducts (Input Parameter) |
+| **Run Server Action** | Source | EditedProducts.Current |
 
-    ![Screenshot showing the logic added to update data in the database using a For Each loop and Run Server Action.](images/grid-save-logic-odcs.png "Adding Logic to Update Data in the Database")
+![Screenshot showing the logic added to update data in the database using a For Each loop and Run Server Action.](images/grid-save-logic-odcs.png "Adding Logic to Update Data in the Database")
 
 1. Return to the **Save** button logic and call the **UpdateProducts** server action and set the **EditedProdcuts** to the output of the **JSON Deserialize** node.
 

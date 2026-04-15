@@ -45,7 +45,12 @@ To send emails, you must configure the SMTP settings for the emails in the ODC p
 
 ### Prerequisites
 
-Before configuring the SMTP settings for the email, ensure that you have the organization role that includes the **Manage Email Configurations** permission.
+Before configuring the SMTP settings for the email:
+
+* Ensure that you have the organization role that includes the **Manage Email Configurations** permission.
+* If your SMTP server is private ensure that it's reachable from your ODC apps:
+    * [Private gateway](private-gateway.md) is the recommended method to establish a private connection.
+    * As an alternative, [IP allowlisting](odc-public-ips.md) can also be used.
 
 ### Configure email settings
 

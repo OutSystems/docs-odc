@@ -89,7 +89,7 @@ Since the input parameter is part of the data of the block, the [Render](#on-ren
 ## Lifecycle event handlers
 
 | Event | Description |
-| ------|------------ |
+| ------ | ------------ |
 | [On Initialize](#on-initialize) | Occurs after checking the permission of the user to access the Screen, but before navigating to the Screen and fetching data. In Blocks, it occurs after the navigation. You can use it to initialize the Screen or Block by setting its default data. |
 | [On Ready](#on-ready) | Occurs after the Screen or Block DOM is ready, before the transition starts. |
 | [On Render](#on-render) | Occurs right after the Screen or Block On Ready event handler and every time the data of a Screen or Block changes. You can use it to update some third-party component. |

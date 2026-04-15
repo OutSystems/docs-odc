@@ -74,25 +74,25 @@ The following tables detail the specific criteria **Code quality** uses to assig
 ## Security
 
 | Severity | Definition |
-|----------|------------|
-| **Low** | Minor deviation from best practices. While it poses minimal risk now, it should be addressed to prevent potential future vulnerabilities as the app evolves.|
-| **Medium** | Poor security practice that does not directly expose a vulnerability.|
+| ---------- | ------------ |
+| **Low** | Minor deviation from best practices. While it poses minimal risk now, it should be addressed to prevent potential future vulnerabilities as the app evolves. |
+| **Medium** | Poor security practice that does not directly expose a vulnerability. |
 | **High** | Confirmed vulnerability with a limited scope or one that requires a hard-to-trigger exploit (for example, passing identity information as a server action parameter). |
-| **Critical** | Directly exploitable vulnerability with a broad scope and a low-effort exploit (for example, exposed REST services without authentication, SQL injection).|
+| **Critical** | Directly exploitable vulnerability with a broad scope and a low-effort exploit (for example, exposed REST services without authentication, SQL injection). |
 
 ## Performance
 
 | Severity | Definition |
-|----------|------------|
+| ---------- | ------------ |
 | **Low** | Inefficient code that has a negligible impact on app performance, even under load. Rarely affects app performance. |
 | **Medium** | In some circumstances, may cause noticeable inefficiencies. Under heavy load, it can impact parts of the app. |
-| **High** | Always causes noticeable performance issues. May cause timeouts under load and potentially impact other apps.|
+| **High** | Always causes noticeable performance issues. May cause timeouts under load and potentially impact other apps. |
 | **Critical** | Severe performance bottlenecks that significantly degrade user experience. Affects multiple apps and blocks scalability. |
 
 ## Maintainability
 
 | Severity | Definition |
-|----------|------------|
+| ---------- | ------------ |
 | **Low** | Minor readability or style issues. Code can be modified with minimal context. |
 | **Medium** | Logic is hard to follow or modify. Requires team-level knowledge to make changes safely. Increases onboarding. |
 | **High** | High risk of introducing bugs when making changes. Requires deep knowledge to modify code safely. Significantly slows development iterations. |
@@ -101,8 +101,8 @@ The following tables detail the specific criteria **Code quality** uses to assig
 ## Architecture
 
 | Severity | Definition |
-|----------|------------|
-| **Low** | Minor misalignment with architectural guidelines. Limited to isolated features. No impact on other parts of the asset or team workflow.|
-| **Medium** | Mixed responsibilities or misplaced logic, but contained within one asset or team. Doesn't affect other assets or teams.|
+| ---------- | ------------ |
+| **Low** | Minor misalignment with architectural guidelines. Limited to isolated features. No impact on other parts of the asset or team workflow. |
+| **Medium** | Mixed responsibilities or misplaced logic, but contained within one asset or team. Doesn't affect other assets or teams. |
 | **High** | Creates cross-team dependencies or significant code duplication. Affects reusability and team autonomy. Changes in one team can block another. |
-| **Critical** | Systemic architectural problems causing widespread cross-team dependencies. Teams can't deploy or evolve independently, leading to slower delivery and quality problems.|
+| **Critical** | Systemic architectural problems causing widespread cross-team dependencies. Teams can't deploy or evolve independently, leading to slower delivery and quality problems. |
