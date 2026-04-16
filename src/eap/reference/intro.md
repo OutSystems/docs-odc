@@ -14,6 +14,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+isautopublish: true
 ---
 
 # OutSystems language and elements
@@ -37,7 +38,7 @@ The OutSystems BinaryData library provides actions to manipulate binary data, su
 | [ConvertEncoding](libraries/binarydata.md#ConvertEncoding) | Converts a range of bytes in a BinaryData from one encoding to another. | Yes |
 | [TextToBinaryData](libraries/binarydata.md#TextToBinaryData) | Converts a Text into binary content. If no encoding is supplied, the system's default ANSI encoding will be used. | Yes |
 
-### Date Time
+### `Date Time`
 
 The OutSystems DateTime library provides actions to access and manipulate DateTime objects, such as retrieving the quarter of a specific date or determining if a date is set on a leap year.
 
@@ -103,7 +104,7 @@ The OutSystems Security library provides actions to perform several security rel
 | [AES_Decrypt](libraries/security.md#AES_Decrypt) | Decrypts the text using the provided key. Decrypts using AES in Cipher-Block Chaining mode with initialization vector extracted for the start of the ciphertext and PKCS7 padding. Validates the authenticity of the encryption with HMAC using the same key. | No |
 | [CryptoRandomInt](libraries/security.md#CryptoRandomInt) | Generates a random number using a cryptographic random number generator, within a range defined by a minimum value (‘MinVal') and maximum value ('MaxVal'). | No |
 | [GenerateSecurePassword](libraries/security.md#GenerateSecurePassword) | Generates a secure password using a cryptographic random number generator. | No |
-| [ComputeHash](libraries/security.md#ComputeHash) | Computes the hash of the given data (this data will be UTF-8 encoded prior to hashing). | No |
+| [ComputeHash](libraries/security.md#ComputeHash) | Computes the hash of the given text (the text is UTF-8 encoded before hashing). | No |
 | [ComputeMAC](libraries/security.md#ComputeMAC) | Computes the MAC of the given data (this data will be UTF-8 encoded prior). | No |
 | [JWT_SetShowPII](libraries/security.md#JWT_SetShowPII) | Defines whether the personally identifiable information ('PII') is shown on exceptions raised when working with tokens. | No |
 | [JWT_CreateToken](libraries/security.md#JWT_CreateToken) | Creates and signs a JWT token. | No |
@@ -132,7 +133,7 @@ OutSystems Text library provides functionality to manipulate texts as, for examp
 | [StringBuilder_Create](libraries/text.md#StringBuilder_Create) | Creates a StringBuilder. Use it if you need to create a string by repeatedly appending substrings. A StringBuilder optimizes memory management when dealing with highly dynamic strings. | Yes |
 | [StringBuilder_ToString](libraries/text.md#StringBuilder_ToString) | Returns the content of the StringBuilder's buffer. | Yes |
 
-### TextDictionary
+### `TextDictionary`
 
 | Action | Description | Available as function? |
 | --- | --- | --- |
@@ -203,7 +204,7 @@ The OutSystems URL library provides actions to manipulate URLs, such as decoding
 
 When designing the business logic of your apps, you can use built-in functions. They are available in the **Built-in Functions** folder of the expression editor.
 
-### Data Conversion
+### `Data Conversion`
 
 | Name | Description (abbreviated) |
 | --- | --- |
@@ -252,7 +253,7 @@ When designing the business logic of your apps, you can use built-in functions. 
 | [TimeToText](built-in-functions/data-conversion.md#TimeToText) | Converts Time 't' to a Text value in the format "HH:mm:ss". |
 | [ToObject](built-in-functions/data-conversion.md#ToObject) | Converts expression 'exp' to an Object value. |
 
-### Date and Time
+### `Date and Time`
 
 | Name | Description (abbreviated) |
 | --- | --- |
