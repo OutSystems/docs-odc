@@ -19,6 +19,7 @@ coverage-type:
   - unblock
 topic:
   - legacy-systems-integration
+isautopublish: true
 ---
 
 # External libraries SDK README
