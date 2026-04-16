@@ -27,7 +27,7 @@ To run ODC Self-hosted, your infrastructure must meet specific baseline requirem
 
 The system requirements are:
 
-* A RedHat OpenShift cluster on version 4.17 through 4.20.
+* A RedHat OpenShift cluster on version 4.20.
 
 * The OpenShift cluster must have at least 5 worker nodes each with 8 CPU cores, 32GB of RAM, and 250GB of disk space.
 
