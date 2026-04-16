@@ -16,6 +16,7 @@ tags: ai agent development,odc studio,outsystems ai,large language models,mobile
 outsystems-tools:
   - odc studio
 helpids: 30645, 30648
+isautopublish: true
 ---
 
 # Creating an agent in ODC Studio
@@ -60,7 +61,7 @@ An `AgentFlow` server action encapsulates the agent functionality. It orchestrat
 
 * `GetGroundingData` – Retrieves contextual or [grounding data](agentic-apps.md#grounding) the model needs. Use custom logic to gather context from data sources such as an AI search service, REST API, aggregate, or static text.
 * `BuildMessages` – Builds the prompt and conversation history that the model receives. It combines user input, prior conversation turns, and grounding data. Use an Assign node to define the [system prompt](agentic-apps.md#system-prompts).
-* `Call<AgentName>` – Sends the formatted messages to the selected AI model and receives a response. The agent can include actions the model can invoke, such as those from an [MCP server](tools/mcp-connectors.md), if they use simple data types. The agent can also include a structured format that can be included in your agent’s response. You can also perform tests by entering different messages to evaluate how the selected models respond.
+* `Call<AIModelName>` (added from the **Call Agent** toolbox element) – Sends the formatted messages to the selected AI model and receives a response. The agent can include actions the model can invoke, such as those from an [MCP server](tools/mcp-connectors.md), if they use simple data types. The agent can also include a structured format that can be included in your agent’s response. You can also perform tests by entering different messages to evaluate how the selected models respond.
 * `StoreMemory` – Saves the conversation or generated information for future reference. This maintains context and enables multi-turn or personalized interactions. For details about state persistence, refer to [Agentic apps in ODC](agentic-apps.md#state-persistence).
 
 The service action encapsulates the agent logic. After you publish, the service action becomes available for other apps to reference.
