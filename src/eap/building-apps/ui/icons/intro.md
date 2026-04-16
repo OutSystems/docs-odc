@@ -34,6 +34,12 @@ Starting from version 2.28.0, OutSystems UI supports both the Font Awesome and [
 
 Phosphor is the default icon library for new apps in OutSystems UI. [Font Awesome](https://fontawesome.com/) remains available for existing apps and legacy compatibility.
 
+<div class="info" markdown="1">
+
+To use Phosphor icons, you need OutSystems UI version 2.28.0 or newer and ODC Studio version 1.7.3 or later.
+
+</div>
+
 You can choose which icon library your app uses by setting the **Icon Library** property at the [theme level](../themes/intro.md#theme-properties-theme-properties). By default, new apps use the Phosphor icon library, while existing apps created before OutSystems UI 2.28.0 continue using FontAwesome for compatibility. You can update this setting at any time to match your design needs.
 
 ### What are Phosphor icons
