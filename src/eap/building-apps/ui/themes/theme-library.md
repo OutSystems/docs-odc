@@ -108,11 +108,11 @@ After setting the layouts, you must set the **App_LayoutTopMenu** in the app the
 
 ## Extra placeholders
 
-Since you're adding extra placeholders, the default `.placeholder-empty` class to remove `divs` without content won’t work if the placeholder is empty. To make sure you can use the same behavior in the **OnReady** layout event, add the following script:
+Since you're adding extra placeholders, the default `placeholder-empty` class to remove `divs` without content won’t work if the placeholder is empty. To make sure you can use the same behavior in the **OnReady** layout event, add the following script:
 
 ```
-var emptyPlaceholder = document.querySelectorAll(".placeholder-empty:empty"); 
-emptyPlaceholder.forEach(function (a) {
+var emptyPh = document.querySelectorAll("placeholder-empty:empty"); 
+emptyPh.forEach(function (a) {
     a.parentNode.remove();
 })
 ```
@@ -125,4 +125,10 @@ This script can be converted to a global client action and used in any layout.
 
 ![Global client action available in Theme to clean placeholder-empty class](images/global-client-action-available-odcs.png "Global client action available in Theme to clean PH")
 
-![How to use the Global client action to clean placeholder-empty class in the layouts](images/how-to-use-global-client-action-odcs.png "How to use the Global client action to clean placeholder-empty class in the layouts")
+![How to use the Global client action to clean PH in the layouts](images/how-to-use-global-client-action-odcs.png "How to use the Global client action to clean PH in the layouts")
+
+<div class="warning" markdown="1">
+
+Starting with OutSystems UI version 2.28.0, the CSS class `ph` has been deprecated and replaced by `placeholder-empty`. This change was implemented to resolve naming collisions with the Phosphor icon library. Since Phosphor uses the `ph` prefix for its own iconography, the overlap caused styling conflicts and rendering issues across the platform. By transitioning to a more descriptive class name, you can use the icon library without interfering with built-in UI placeholders.
+
+</div>
