@@ -15,6 +15,7 @@ audience:
 tags: sql queries, odc studio, advanced data operations, data retrieval
 outsystems-tools:
   - odc studio
+isautopublish: true
 ---
 
 # Query data using SQL
@@ -52,7 +53,7 @@ You can also test SQL queries directly in ODC Studio. This helps you validate th
 <div class="warning" markdown="1">
 
 When querying external entities, be careful when using Test Query in ODC Studio for SQL nodes that contain ```INSERT``` , ```UPDATE``` , ```DELETE```, or ```CALL``` statements.
-These statements will be committed immediately and this can lead to unintended changes in the external database.
+These statements are committed immediately, which can lead to unintended changes in the external database.
 This doesn't apply to internal entities. OutSystems protects internal data during test queries, and the use of ```COMMIT``` isn't allowed.
 
 </div>
@@ -81,4 +82,6 @@ To ensure maintainability and performance when using SQL nodes:
 
 * **Define output structures:** Ensure that the output structure of the SQL node matches the expected result set, aligning with the defined data types and schema.
 
-While Aggregates should be the default choice for data operations in ODC due to their integration and optimization benefits, SQL nodes provide the flexibility needed for complex and specific database interactions. By understanding when and how to use SQL nodes effectively, you can create robust, efficient, and maintainable applications.
+* **Select only the required attributes**: Avoid using `SELECT {Entity}.*` because SQL nodes do not automatically optimize the query like Aggregates do. Fetching every attribute uses more memory and reduces performance. The performance impact increases for entities with many attributes, such as Salesforce entities. Create an output structure with only the attributes you need, and list them explicitly in your `SELECT` statement.
+
+Use Aggregates as the default choice for data operations in ODC because of their integration and optimization benefits. Use SQL nodes when you need flexibility for complex, specific database interactions. This approach helps you create robust, efficient, and maintainable applications.
