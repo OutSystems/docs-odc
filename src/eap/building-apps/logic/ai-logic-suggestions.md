@@ -71,3 +71,5 @@ Enable or disable AI logic suggestions in ODC Studio **Preferences** under **AI-
 ## How it works
 
 AI logic suggestions uses an OutSystems proprietary machine learning model trained on anonymized development patterns. Unlike [agentic development tools](../../agentic-development/intro.md) that use external Large Language Models, AI logic suggestions runs entirely within OutSystems infrastructure.
+
+![Diagram of the AI code completion machine learning engine architecture](images/ai-code-completion-ml-engine-architecture-diag.png "AI code completion ML engine architecture")
