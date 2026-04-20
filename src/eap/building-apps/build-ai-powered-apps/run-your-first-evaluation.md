@@ -59,7 +59,7 @@ Use this procedure to create an evaluation in the ODC Portal, attach your **data
 
 To create and save an evaluation, follow these steps:
 
-1. In the **ODC Portal**, navigate to **CREATE** > **Agents** > **Evaluations**.
+1. In the **ODC Portal**, navigate to **CREATE** > **Analyze** > **Agent evaluations**.
 1. Select **Create evaluation**.
 1. Enter the **Name** and the **Description** (optional) of the evaluation.
 1. Select the **Dataset** for this evaluation.
