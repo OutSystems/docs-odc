@@ -13,6 +13,7 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - remember
+isautopublish: true
 ---
 
 # Subscription console
@@ -43,7 +44,7 @@ The **Overview** tab provides visibility of all your relevant consumptions, name
 * [Database compute](../getting-started/capacity-limits.md#resource-limits). Displays the amount of compute resources allocated to the database and consumption, that is shared across all apps. In the details, you can see the information by stage and filter it by time.
 * [Database storage](../getting-started/capacity-limits.md#resource-limits). Displays the amount of storage allocated to the database and consumption, that is shared across all apps. In the details, you can see the information by stage and filter it by time.
 * [External end users](https://www.outsystems.com/tk/redirect?g=907b0fd3-bc46-4391-aae2-673296d795d9) and [Internal end users](https://www.outsystems.com/tk/redirect?g=907b0fd3-bc46-4391-aae2-673296d795d9). Displays the number of external end users available and consumed in your Production stage. In the details, you can define [your user domains](../user-management/classify-users.md) to manage your users correctly.
-* [Agent executions](https://www.outsystems.com/tk/redirect?g=9fafc3bd-31db-46b9-99a5-36d7aaaaebc8). Displays the number of times agents were executed in the current month. In the details, you can filter the information by stage and by month starting from November 2025. From the beginning of February 2026, your currently available 10k executions will be reduced to 1k per month if you did not take advantage of the Agent Workbench launch promotion.
+* [Agent executions](https://www.outsystems.com/tk/redirect?g=9fafc3bd-31db-46b9-99a5-36d7aaaaebc8). Displays the number of times agents were executed in the current month. In the details, you can filter the information by stage and by month starting from November 2025.
 * [Analytics stream](../getting-started/capacity-limits.md#resource-limits). Displays the combined volume of app logs, traces, and metrics streamed per month from your organization.
 
 <div class="info" markdown="1">
