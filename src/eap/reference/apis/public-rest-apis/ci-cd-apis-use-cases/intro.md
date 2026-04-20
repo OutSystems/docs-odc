@@ -2,7 +2,7 @@
 guid: 7edaa93d-b5a7-4aba-b126-10ddfcced471
 locale: en-us
 summary: Learn how CI/CD works in OutSystems Developer Cloud (ODC) and how to automate it with OutSystems APIs.
-figma: 
+figma:
 coverage-type:
   - understand
 topic:
@@ -20,6 +20,7 @@ outsystems-tools:
   - odc studio
   - odc portal
 helpids:
+isautopublish: true
 ---
 # CI/CD automation
 
@@ -41,7 +42,7 @@ For more information about deploying and testing your apps across stages, refer 
 
 ## Automating CI/CD with OutSystems APIs
 
-You can use OutSystems APIs to integrate with third-party CI/CD tools such as [Jenkins](https://www.jenkins.io/) or [Azure DevOps](https://azure.microsoft.com/en-us/products/devops). This allows you to automate CI/CD and manage the process from code to production, reducing the need to trigger each step in the ODC Portal.
+You can use OutSystems APIs to integrate with third-party CI/CD tools such as [Jenkins](https://www.jenkins.io/) or [Azure DevOps](https://azure.microsoft.com/en-us/products/devops). This allows you to automate CI/CD and manage the process from code to production, reducing the need to trigger each step in the ODC Portal. To orchestrate these APIs in a Jenkins pipeline, refer to the [`OutSystems/odc-jenkins-pipeline`](https://github.com/OutSystems/odc-jenkins-pipeline) repository, a community accelerator provided as-is. OutSystems doesn’t provide active support for this repository, so the pipeline implementation isn’t guaranteed to reflect the latest API behavior. Review and validate the pipeline implementation before you use it in your CI/CD process.
 
 By integrating OutSystems APIs with the automation tools you already use, you can improve your processes, enforce quality gates, and deliver reliable apps to your users faster.
 
