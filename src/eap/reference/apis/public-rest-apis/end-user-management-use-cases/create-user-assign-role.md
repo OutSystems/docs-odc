@@ -20,6 +20,7 @@ tags: rest apis, user management, role assignment, automation, access control
 outsystems-tools:
   - odc studio
 helpids:
+isautopublish: true
 ---
 # Creating a single user and assigning a role
 
@@ -44,6 +45,14 @@ To create a single user and assign a role to the user using ODC REST API, follow
       Pass the user’s email address. Optionally, provide the user's name, photo URL, and active status. Additionally, indicate if you want to add the user to the built-in provider in the request body.  
 
       On successful execution of the API, a new user is created, and the API response contains the newly created **user's key (UUID)**. This key is used in the subsequent steps.  
+
+      <div class="info" markdown="1">
+
+      If you create the user using the API and want the user to set a password and finish the registration process, use the reset password flow. Call [**StartResetPassword**](../../../system-actions/user.md#startresetpassword) to send the verification code email, then call [**FinishResetPassword**](../../../system-actions/user.md#finishresetpassword) with the verification code and the new password.
+
+      For more information about resetting passwords, refer to [Passwords](../../../../user-management/passwords.md).
+
+      </div>
 
 1. To get the application role key for a specific role, use:
 
