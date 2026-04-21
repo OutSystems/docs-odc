@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.4",
   "info": {
     "title": "Asset Repository API",
     "description": "REST endpoints for retrieving information about assets revisions. ",
@@ -26,7 +26,7 @@
       "post": {
         "tags": [],
         "summary": "Creates a new revision of an asset.",
-        "description": "If the asset does not exist, it creates the asset and its first revision.\n\nThe new revision can be created from a source file (OML/XIF) or, for new assets, created empty or cloned from a template.\n\nWhen providing the source file, you can pass it as a fileUri or send the binary directly using the application/octet-stream or multipart/form-data content types.\n\nTo create an asset, API Client needs the **Asset management > Create** permission.\n\nTo create a new revision for an existing asset, API Client needs the **Asset management > Change** permission.",
+        "description": "If the asset does not exist, it creates the asset and its first revision.\nThe new revision can be created from a source file (OML/XIF) or, for new assets, created empty or cloned from a template.\nWhen providing the source file, you can pass it as a fileUri or send the binary directly using the application/octet-stream or multipart/form-data content types.\n\nTo create an asset, API Client needs the **Asset management > Create** permission.\n\nTo create a new revision for an existing asset, API Client needs the **Asset management > Change** permission.",
         "operationId": "AssetRepository_CreateAssetRevision",
         "requestBody": {
           "content": {
@@ -175,7 +175,7 @@
           {
             "name": "embed",
             "in": "query",
-            "description": "Embedded resources to return with the Asset Revision.",
+            "description": "Embedded resources to return with the asset revision. Recognized values are [releaseNote, icon, sourceCode, signature, metadata].",
             "schema": {
               "type": "array",
               "items": {
@@ -313,6 +313,16 @@
               }
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
           "default": {
             "description": "Error",
             "content": {
@@ -330,7 +340,7 @@
       "delete": {
         "tags": [],
         "summary": "Deletes an asset.",
-        "description": "Deletes an asset. You cannot delete built-in assets.\n\nAPI Client needs the **Asset management > Delete** permission.",
+        "description": "Deleting an asset is an irreversible action. When doing so, an internal event is triggered to remove it from all stages where it's published and to also delete all associated runtime data. Built-in assets are protected and cannot be deleted.\n\nAPI Client needs the **Asset management > Delete** permission.",
         "operationId": "AssetRepository_DeleteAsset",
         "parameters": [
           {
@@ -387,6 +397,16 @@
               }
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
           "default": {
             "description": "Error",
             "content": {
@@ -418,7 +438,7 @@
           {
             "name": "embed",
             "in": "query",
-            "description": "Embedded resources to return with the Asset Revision.",
+            "description": "Embedded resources to return with the asset revision. Recognized values are [releaseNote, icon, sourceCode, signature, metadata].",
             "schema": {
               "type": "array",
               "items": {
@@ -460,6 +480,16 @@
           },
           "404": {
             "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "content": {
               "application/json": {
                 "schema": {
@@ -500,7 +530,7 @@
           {
             "name": "embed",
             "in": "query",
-            "description": "Embedded resources to return with the Asset Revision",
+            "description": "Embedded resources to return with the asset revision. Recognized values are [releaseNote, icon, sourceCode, signature, metadata].",
             "schema": {
               "type": "array",
               "items": {
@@ -542,6 +572,16 @@
           },
           "404": {
             "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "content": {
               "application/json": {
                 "schema": {
@@ -582,7 +622,7 @@
           {
             "name": "embed",
             "in": "query",
-            "description": "Embedded resources to return with the Asset Revision",
+            "description": "Embedded resources to return with the asset revision. Recognized values are [releaseNote, icon, sourceCode, signature, metadata].",
             "schema": {
               "type": "array",
               "items": {
@@ -624,6 +664,16 @@
           },
           "404": {
             "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "content": {
               "application/json": {
                 "schema": {
@@ -674,7 +724,7 @@
           {
             "name": "embed",
             "in": "query",
-            "description": "Embedded resources to return with the Asset Revision",
+            "description": "Embedded resources to return with the asset revision. Recognized values are [releaseNote, icon, sourceCode, signature, metadata].",
             "schema": {
               "type": "array",
               "items": {
@@ -716,6 +766,16 @@
           },
           "404": {
             "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "content": {
               "application/json": {
                 "schema": {
@@ -828,6 +888,16 @@
                 }
               }
             }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
           }
         },
         "x-os-permissions": "API Client needs the **Asset management > Change** or **Release management > Release** permission."
@@ -893,6 +963,16 @@
           },
           "404": {
             "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "content": {
               "application/json": {
                 "schema": {
@@ -982,6 +1062,16 @@
               }
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
           "default": {
             "description": "Error",
             "content": {
@@ -1055,6 +1145,16 @@
           },
           "404": {
             "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "content": {
               "application/json": {
                 "schema": {
@@ -1144,6 +1244,16 @@
               }
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
           "default": {
             "description": "Error",
             "content": {
@@ -1225,6 +1335,16 @@
               }
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
           "default": {
             "description": "Error",
             "content": {
@@ -1258,7 +1378,7 @@
           {
             "name": "modelDigest",
             "in": "query",
-            "description": "Match revisions with a specific model digest",
+            "description": "Match revisions with a specific model digest.",
             "schema": {
               "type": "string"
             }
@@ -1266,7 +1386,7 @@
           {
             "name": "revisionDateTimeSince",
             "in": "query",
-            "description": "Match revisions created since a specific date",
+            "description": "Match revisions created since a specific date.",
             "schema": {
               "type": "string",
               "format": "date-time"
@@ -1275,7 +1395,7 @@
           {
             "name": "revisionDateTimeTo",
             "in": "query",
-            "description": "Match revisions created until a specific date",
+            "description": "Match revisions created until a specific date.",
             "schema": {
               "type": "string",
               "format": "date-time"
@@ -1292,7 +1412,7 @@
           {
             "name": "tag",
             "in": "query",
-            "description": "Matches revisions with the specific tag",
+            "description": "Matches revisions with the specific tag.",
             "schema": {
               "type": "string"
             }
@@ -1308,7 +1428,7 @@
           {
             "name": "embed",
             "in": "query",
-            "description": "Embedded resources to return with the Asset Revision",
+            "description": "Embedded resources to return with the asset revision. Recognized values are [releaseNote, icon, sourceCode, signature, metadata].",
             "schema": {
               "type": "array",
               "items": {
@@ -1319,7 +1439,7 @@
           {
             "name": "limit",
             "in": "query",
-            "description": "Maximum number of results returned",
+            "description": "Maximum number of results returned.",
             "schema": {
               "maximum": 1000,
               "minimum": 1,
@@ -1331,7 +1451,7 @@
           {
             "name": "offset",
             "in": "query",
-            "description": "Offset of the first result returned",
+            "description": "Offset of the first result returned.",
             "schema": {
               "maximum": 2147483647,
               "minimum": 0,
@@ -1374,6 +1494,16 @@
           },
           "404": {
             "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "content": {
               "application/json": {
                 "schema": {
@@ -1465,6 +1595,16 @@
               }
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
           "default": {
             "description": "Error",
             "content": {
@@ -1482,7 +1622,7 @@
       "post": {
         "tags": [],
         "summary": "Creates a new upload operation for uploading files.",
-        "description": "Generates a pre-signed URL that you can use to upload a file.\n\nThis URL can then be used in other endpoints that require a file upload, such as creating a new asset revision.\n\n",
+        "description": "Generates a pre-signed URL that you can use to upload a file.\nThis URL can then be used in other endpoints that require a file upload, such as creating a new asset revision.\n\n",
         "operationId": "Uploads_CreateUpload",
         "responses": {
           "201": {
@@ -1497,6 +1637,16 @@
           },
           "401": {
             "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "content": {
               "application/json": {
                 "schema": {
@@ -1731,7 +1881,7 @@
           },
           "assetType": {
             "type": "string",
-            "description": "Type of the new asset to be created. Mandatory when creating an empty asset or an asset based on a template.\n\nRecognized values are [WebApplication, MobileApplication, MobileLibrary, LowCodeLibrary, Agent, Workflow]",
+            "description": "Type of the new asset to be created. Mandatory when creating an empty asset or an asset based on a template.\nRecognized values are [WebApplication, MobileApplication, MobileLibrary, LowCodeLibrary, Agent, Workflow]",
             "nullable": true
           },
           "templateKey": {
@@ -2170,7 +2320,7 @@
         "properties": {
           "tag": {
             "type": "string",
-            "description": "SemVer tag to associate with the revision to be created.\n\nMust not exist and be of the “Major#.Minor#.Patch#” format",
+            "description": "SemVer tag to associate with the revision to be created.\nMust not exist and be of the “Major#.Minor#.Patch#” format",
             "nullable": true
           },
           "releaseNotes": {
@@ -2189,7 +2339,7 @@
           },
           "fileUri": {
             "type": "string",
-            "description": "(Optional) Allows providing application source code for the new version (OML or XIF formats are supported). \n\nIf an OML or XIF is provided, its key is used to associate to the correct application - The application key must always match the OML/XIF key",
+            "description": "(Optional) Allows providing application source code for the new version (OML or XIF formats are supported). \nIf an OML or XIF is provided, its key is used to associate to the correct application - The application key must always match the OML/XIF key",
             "format": "uri",
             "nullable": true
           },
@@ -2199,7 +2349,7 @@
                 "$ref": "#/components/schemas/AssetCreateFromTemplateRequest"
               }
             ],
-            "description": "(Optional) Allows providing a configuration to create a new asset as first revision, either from a template or as an empty OML \n\nOnly usable when the source file is not provided.",
+            "description": "(Optional) Allows providing a configuration to create a new asset as first revision, either from a template or as an empty OML \nOnly usable when the source file is not provided.",
             "nullable": true
           }
         },
@@ -2210,23 +2360,23 @@
         "properties": {
           "key": {
             "type": "string",
-            "description": "Key of the application to filter by\n\nMandatory",
+            "description": "Key of the application to filter by\nMandatory",
             "nullable": true
           },
           "digest": {
             "type": "string",
-            "description": "Digest of the application to filter by, if empty will be ignored\n\nEither digest, revision or IsHighestTag are mandatory",
+            "description": "Digest of the application to filter by, if empty will be ignored\nEither digest, revision or IsHighestTag are mandatory",
             "nullable": true
           },
           "revision": {
             "type": "integer",
-            "description": "Revision of the application to filter by, if null it will be ignored\n\nEither digest, revision or IsHighestTag are mandatory",
+            "description": "Revision of the application to filter by, if null it will be ignored\nEither digest, revision or IsHighestTag are mandatory",
             "format": "int32",
             "nullable": true
           },
           "isHighestTag": {
             "type": "boolean",
-            "description": "Flag to filter application for the highest tag, if false it will be ignored\n\nEither digest, revision or IsHighestTag are mandatory"
+            "description": "Flag to filter application for the highest tag, if false it will be ignored\nEither digest, revision or IsHighestTag are mandatory"
           }
         },
         "additionalProperties": false
@@ -2236,7 +2386,7 @@
         "properties": {
           "tag": {
             "type": "string",
-            "description": "SemVer tag to associate with the revision\n\nMust exist and be of the “Major#.Minor#.Patch#” format",
+            "description": "SemVer tag to associate with the revision\nMust exist and be of the “Major#.Minor#.Patch#” format",
             "nullable": true
           },
           "releaseNotes": {
@@ -2328,8 +2478,9 @@
           },
           "nextPageOffset": {
             "type": "integer",
-            "description": "Offset of the next page of results.",
-            "format": "int32"
+            "description": "Offset of the next page of results. Null when there is no next page.",
+            "format": "int32",
+            "nullable": true
           },
           "totalResults": {
             "type": "integer",
@@ -2348,66 +2499,23 @@
       },
       "PermissionType": {
         "enum": [
-          "AppCreate",
-          "AppView",
           "AppDebug",
           "AppChange",
           "AppDelete",
           "AppUserView",
-          "OpenTicket",
-          "ViewAllTickets",
-          "ViewSubscriptions",
           "AppDeploy",
           "AppRelease",
           "AppMonitor",
           "AppMonitorUserInfo",
-          "UserManage",
           "AppAccessManage",
-          "OrgAccessManage",
-          "OrgRolesManage",
-          "OrgUserView",
           "CfgView",
           "AppCfgChange",
-          "ConnUse",
-          "ConnChange",
           "ConnConfig",
-          "DomainManage",
-          "EmailManage",
-          "NetworkManage",
-          "GatewayManage",
-          "OrgAuthManage",
-          "StageView",
-          "OrgView",
-          "ForgeInstall",
-          "ForgeShare",
-          "ForgeAdmin",
-          "SystemAssetInstall",
-          "ExternalAssetInstall",
-          "IdentitySupport",
           "AppViewSourceCode",
-          "ConnCreate",
-          "ConnDelete",
           "AppGroupManage",
-          "ConnManage",
-          "AppSecurityView",
-          "AppGroupView",
-          "ApiClientManage",
-          "CSPManage",
           "CodeQualityView",
           "CodeQualityManage",
-          "MigrationDataManage",
-          "MigrationCodeManage",
-          "MigrationConfigManage",
-          "SelfHostedManage",
-          "LogStreamingManage",
-          "AuditTrailView",
-          "AuditTrailStreamingConfiguration",
-          "UpdatesView",
-          "UpdatesManage",
-          "SubscriptionView",
-          "SubscriptionManage",
-          "OrgManage",
-          "AuditStreamingManage"
+          "UpdatesView"
         ],
         "type": "string"
       },
