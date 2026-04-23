@@ -43,20 +43,27 @@ Each build type requires a specific combination of certificate and provisioning 
 
 ### Simulator {#iOS-simulator}
 
-The **Simulator** build type runs and tests your app in the iOS Simulator on a Mac. This allows you to validate your app’s behavior and appearance without connecting a real device or needing an Apple Developer account. Simulator testing is different from testing on physical devices, therefore, OutSystems recommends that you verify critical features on actual hardware as well. For more details, see [Testing in Simulator versus testing on hardware devices](https://developer.apple.com/documentation/xcode/testing-in-simulator-versus-testing-on-hardware-devices) in the Xcode documentation. Unlike the other iOS build types, a simulator build doesn't produce an IPA file and doesn't run on physical devices. Use this build type when you want to quickly test your app's behavior on different iOS device models and screen sizes without provisioning a physical device.
+The **Simulator** build type runs and tests your app in the iOS Simulator on a Mac. This allows you to validate your app’s behavior and appearance without connecting a real device or needing an Apple Developer account. They do not require any certificates or provisioning profiles and produces an `.app` bundle not an IPA file.
 
-Here are some additional details about Simulator build type:
+Use this build type when you want to quickly test your app's behavior on different iOS device models and screen sizes without provisioning a physical device. OutSystems recommends verifying critical features on actual hardware as well.
 
-* **Output**: `.app` bundle (not an IPA file).
-* **Certificate required**: None.
-* **Provisioning profile required**: None.
-* **Device restriction**: Runs only in the Xcode iOS Simulator on a Mac. It isn't installable on physical devices. For more information about running apps in the iOS Simulator, refer to [Running your app in Simulator or on a device](https://developer.apple.com/documentation/xcode/running-your-app-in-simulator-or-on-a-device) in the Xcode documentation.
+For detailed information about running apps in the iOS Simulator, refer to [Running your app in Simulator or on a device](https://developer.apple.com/documentation/xcode/running-your-app-in-simulator-or-on-a-device) in the Xcode documentation.
 
-Here are some of key differences between simulator and device builds.
+#### Limitations
 
-* Simulator builds compile for the x86_64 or arm64 simulator architecture, not for the ARM architecture used by physical iOS devices.
-* No code signing is required because the simulator doesn't enforce the same security model as physical devices.
-* Simulator builds aren't distributable. They're strictly for local development and testing.
+The Simulator build type has important differences compared to other physical device builds. Review these before deciding to use this build type:
+
+* **Not installable on physical devices**: Runs only in the Xcode iOS Simulator on a Mac. They can't be installed on physical iOS devices.
+
+* **Not distributable**: Strictly for local development and testing. They can't be shared or submitted to the App Store.
+
+* **Different architecture**: Compiles for the x86_64 or arm64 simulator architecture, not the ARM architecture used by physical iOS devices. Some device-specific behaviors may not reproduce accurately in the simulator.
+
+* **No code signing**: Doesn't enforce the same security model as physical devices, so no code signing is applied.
+
+* **AppShield not applied**: If your app uses AppShield, you can still build it using the Simulator build type, but shielding is not applied. To test security-sensitive features, use a Development or Ad-Hoc build on a physical device.
+
+For a detailed comparison of simulator and physical device testing, refer to [Testing in Simulator versus testing on hardware devices](https://developer.apple.com/documentation/xcode/testing-in-simulator-versus-testing-on-hardware-devices) in the Xcode documentation.
 
 ### Development {#iOS-dev}
 
