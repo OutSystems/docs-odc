@@ -16,6 +16,7 @@ audience:
   - mobile developers
   - frontend developers
 topic:
+isautopublish: true
 ---
 # Adding AI models
 
@@ -46,8 +47,8 @@ Using the [ODC API contract](ai-models.md#custom-model-connections), you can add
 
 ODC provides ready-to-use trial models for quick testing and exploration in the development stage. In every tenant and Personal Edition, the following models are available:
 
-* **GPT-4o** via Azure Open AI
-* **Claude 3.7 Sonnet** via Amazon Bedrock
+* **GPT-5** via OpenAI
+* **Claude Haiku 4.5** via Amazon Bedrock
 * **Amazon Nova Pro** via Amazon Bedrock
 
 Trial models have limits, which, when reached, prevent the further use of the models. They're not bound by a specific time frame. You can check your consumption on the Trial Model details page on the ODC Portal.
