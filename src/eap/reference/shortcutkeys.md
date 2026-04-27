@@ -52,7 +52,7 @@ isautopublish: true
 | Description | Windows | macOS |
 | --- | --- | --- |
 | 1-Click Publish | F5 | F5 |
-| 1-Click Publish with comment | Shift+F5 | Shift+Cmd+F5 |
+| 1-Click Publish with message | Shift+F5 | Shift+Cmd+F5 |
 | Ask Mentor | Ctrl+Shift+A | Shift+Cmd+A |
 | Hide/show warning in TrueChange tab | Ctrl+H | Shift+Cmd+H |
 | Enable/disable Styles Editor | Ctrl+J | |

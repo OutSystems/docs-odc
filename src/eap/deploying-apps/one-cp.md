@@ -8,7 +8,6 @@ platform-version: odc
 figma: https://www.figma.com/file/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?type=design&node-id=3436%3A10&mode=design&t=4YrXFNtkgIwzVp3T-1
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
   - odc portal
@@ -19,7 +18,7 @@ isautopublish: true
 
 # Understanding 1-Click Publish
 
-1-Click Publish compiles your code and deploys it to the Development stage. Each publish creates a new revision of your app or library. You can optionally add a comment describing your changes when publishing.
+1-Click Publish compiles your code and deploys it to the Development stage. Each publish creates a new revision of your app or library. You can optionally add a message describing your changes when publishing.
 
 ## Publishing an app
 
@@ -47,17 +46,17 @@ When you click the 1-Click Publish button to publish a library, ODC initiates th
 
 Libraries within ODC do not handle data management or generate database scripts, as ODC doesn't deploy libraries into containers. Instead, libraries define static entities that function as enumerations without query capabilities.
 
-## Adding a comment when publishing
+## Adding a message when publishing
 
-You can add a comment when publishing to describe the changes you made. Comments help your team understand the intent behind each revision, improving traceability and collaboration.
+You can add a message when publishing to describe the changes you made. Messages help your team understand the intent behind each revision, improving traceability and collaboration.
 
-![Screenshot of ODC Studio showing the Publish dropdown with 1-Click Publish and 1-Click Publish with Comment options](images/publish-with-comment-odcs.png "1-Click Publish with Comment in ODC Studio")
+![Screenshot of ODC Studio showing the Publish dropdown with 1-Click Publish and 1-Click Publish with Message options](images/publish-with-comment-odcs.png "1-Click Publish with Message in ODC Studio")
 
-To publish with a comment, do one of the following in ODC Studio:
+To publish with a message, do one of the following in ODC Studio:
 
-* Click the dropdown arrow on the **Publish** button and select **1-Click Publish with comment**.
+* Click the dropdown arrow on the **Publish** button and select **1-Click Publish with message**.
 * Press **Shift+F5** (Windows) or **Shift+Cmd+F5** (macOS).
 
-In the dialog that opens, type your comment and publish. The comment is optional and supports up to 2,000 characters. After publishing, the comment becomes a permanent, read-only record of that revision.
+In the dialog that opens, type your message and publish. The message is optional and supports up to 2,000 characters. After publishing, the message becomes a permanent, read-only record of that revision.
 
-To review comments, open ODC Studio and go to **App** > **View revisions**.
+To review messages, open ODC Studio and go to **App** > **View revisions**.
