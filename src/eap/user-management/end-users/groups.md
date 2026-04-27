@@ -14,6 +14,9 @@ topic:
   - user-groups
   - assign-to-user-groups
 helpids: 30705
+isautopublish: true
+audience:
+  - Platform administrator
 ---
 # Manage end-user groups
 
@@ -48,7 +51,11 @@ Here are some key benefits and practical applications of using end-user groups i
 
     For more information about mapping IdP groups to end-user groups, refer to [IdP and end-user group mapping](../../manage-platform-app-lifecycle/external-idps/end-user-group-mapping.md).
 
-**Note:** Group mapping handles role assignment. User creation and identification still rely on the IdP claims you mapped when you configured an IdP. For more information about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](../../manage-platform-app-lifecycle/external-idps/intro.md#claim-mapping-logic).
+<div class="info" markdown="1">
+
+Group mapping handles role assignment. User creation and profile matching still rely on claim mapping settings. For more information, refer to [Claim mapping and profile matching](../../manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md#claim-mapping-logic).
+
+</div>
 
 ## Prerequisites
 

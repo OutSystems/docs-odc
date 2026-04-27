@@ -9,8 +9,8 @@ coverage-type:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - Platform administrator
   - Developer
+  - Platform administrator
 tags: authorization,authentication,outsystems,end-users
 outsystems-tools:
   - odc portal
@@ -19,7 +19,8 @@ topic:
   - authorization
   - authentication
   - built-in-authentication
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # Managing authorization and authentication for end-users
@@ -58,7 +59,7 @@ To manage end-users using built-in authentication, follow these steps:
 
 1. [Restrict access in your app with end-user roles](../secure-app-with-roles.md#control-access-in-your-app-with-end-user-roles) to control which users can access specific screens, data, and app features based on their roles.
 
-## Managing end-users with external Identity Provider (IdP) authentication
+## Managing end-users with external identity provider (IdP) authentication
 
 You can integrate ODC with external Identity Providers (IdPs) for authentication (for example, Azure AD, Google), and manage end-users in the ODC Portal and ODC Studio.
 
@@ -92,7 +93,7 @@ To manage end-users using external IdP authentication, follow these steps:
 
     When users log in using an external IdP, ODC automatically registers them after their first successful login.
 
-    For more information about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](../../manage-platform-app-lifecycle/external-idps/intro.md#claim-mapping-logic).
+    For more information about claim mapping and profile matching, refer to [Claim mapping and profile matching](../../manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md#claim-mapping-logic).
 
     </div>
 

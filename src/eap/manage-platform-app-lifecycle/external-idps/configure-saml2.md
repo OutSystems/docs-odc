@@ -7,8 +7,6 @@ platform-version: odc
 tags: saml configuration,identity providers,single sign-on,authentication
 audience:
   - Platform administrator
-  - Developer
-  - Front-end developer
 figma:
 outsystems-tools:
   - odc studio
@@ -19,6 +17,7 @@ topic:
   - external-idps
   - idp-saml
 helpids: 30672, 30673
+isautopublish: true
 ---
 
 # Add a SAML 2.0 identity provider
@@ -50,7 +49,7 @@ After selecting **SAML 2.0**, complete these steps:
 
 1. Enter a name for the new provider in the **Provider name** field.
 
-    This can be any name less than 255 characters and can't include special characters.
+    This can be any name less than 255 characters and must only include letters, numbers, and spaces.
 
 1. Click **Next**.
 
@@ -68,7 +67,7 @@ After selecting **SAML 2.0**, complete these steps:
 
     <div class="info" markdown="1">
 
-    You can't change the scope once the provider is configured.
+    You can't change the scope after you configure the provider.
 
     </div>
 
@@ -124,7 +123,7 @@ After selecting **SAML 2.0**, complete these steps:
 
     <div class="info" markdown="1">
 
-    For more details about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](identity-claims-email-verification.md#claim-mapping-logic).
+    For more information about claim mapping and profile matching, refer to [Claim mapping and profile matching](identity-claims-email-verification.md#claim-mapping-logic).
 
     </div>
 
@@ -140,7 +139,7 @@ After selecting **SAML 2.0**, complete these steps:
 
     <div class="info" markdown="1">
 
-    Changing any of these settings will modify the ``sp_metadata.xml`` file.
+    Changing any of these settings modifies the ``sp_metadata.xml`` file.
 
     </div>
 
@@ -149,7 +148,11 @@ After selecting **SAML 2.0**, complete these steps:
     * Want assertions signed
     * NameID policy format
 
-1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
+1. In the **Organization user email verification** section, choose one of the options for handling email verification.  
+    For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
+
+1. In the **User profile matching** section, select the attribute (fallback option) ODC uses to match external logins to ODC profiles when a subject match isn't found.
+    For more information about the options and when to use each one, refer to [Profile matching for external IdPs](identity-claims-email-verification.md#profile-matching-external-idps).
 
 1. Click **Next**.
 

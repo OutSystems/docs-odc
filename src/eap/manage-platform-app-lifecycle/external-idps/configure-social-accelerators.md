@@ -5,10 +5,8 @@ guid: 3080f31e-088b-4278-a2b8-1134a5a40255
 app_type: mobile apps,reactive web apps
 platform-version: odc
 tags: authentication,identity provider,openid connect,security,social login
-figma: 
+figma:
 audience:
-  - Developer
-  - Front-end developer
   - Platform administrator
 topic:
   - external-idps
@@ -19,6 +17,7 @@ coverage-type:
   - apply
   - understand
 helpids: 30711
+isautopublish: true
 ---
 
 # Add a social identity provider with accelerators
@@ -54,7 +53,11 @@ To add a new social identity provider with accelerators, follow these steps:
 
     </div>
 
-1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
+1. In the **Organization user email verification** section, choose one of the options for handling email verification.  
+    For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
+
+1. In the **User profile matching** section, select the attribute (fallback option) ODC uses to match external logins to ODC profiles when a subject match isn't found.
+    For more information about the options and when to use each one, refer to [Profile matching for external IdPs](identity-claims-email-verification.md#profile-matching-external-idps).
 
 1. Click **Save**.
 

@@ -8,14 +8,13 @@ figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=de
 platform-version: odc
 audience:
   - Platform administrator
-  - Front-end developer
-  - Developer
 outsystems-tools:
   - odc portal
 coverage-type:
   - apply
 topic:
   - external-idps
+isautopublish: true
 ---
 
 # Add Okta for use as an external identity provider
@@ -72,7 +71,15 @@ To open the **New provider** configuration screen, click the **Add Provider** > 
     ODC safely stores the configuration details in a secret manager.
     </div>
 
-1. Complete the configuration in ODC Portal by leaving the **PKCE** as the default value (**SHA-256**) and fields in **Claim Mapping** section as default values (**name**, **email**, **picture**) and clicking **Save**.
+1. Complete the configuration in the ODC Portal:
+    1. Confirm **PKCE** is set to **SHA-256**.
+    1. In the **Organization user email verification** section, choose one of the options for handling email verification.  
+    For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
+    1. In the **User profile matching** section, select the attribute (fallback option) ODC uses to match external logins to ODC profiles when a subject match isn't found.
+    For more information about the options and when to use each one, refer to [Profile matching for external IdPs](identity-claims-email-verification.md#profile-matching-external-idps).
+    1. Confirm the fields in the **Claim Mapping** section are set to the default values: **username**, **email**, **name**, and **picture**.
+    1. Click **Save**.  
+    The **Configuration** tab for the newly created IdP opens.
 
 ODC tests the configuration and on success adds Okta to the list of available providers. If the test fails, a notification with the error displays.
 

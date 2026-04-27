@@ -10,7 +10,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
   - Platform administrator
-  - Developer
 tags: authorization, authentication, role assignments, access control, user management
 outsystems-tools:
   - odc portal
@@ -20,6 +19,7 @@ topic:
   - built-in-mechanisms
   - external-auth-mechanisms
   - user-roles
+isautopublish: true
 ---
 
 # Managing authorization and authentication for members (IT-users)
@@ -68,7 +68,7 @@ To manage members with external IdP authentication, follow these steps:
 
     When users log in using an external IdP, ODC automatically registers them after their first successful login.
 
-    For more details about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](../../manage-platform-app-lifecycle/external-idps/intro.md#claim-mapping-logic).
+    For more information about claim mapping and profile matching, refer to [Claim mapping and profile matching](../../manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md#claim-mapping-logic).
 
     </div>
 

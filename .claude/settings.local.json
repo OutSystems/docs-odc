@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import json,sys; d=json.load\\(sys.stdin\\); links=d.get\\('fields',{}\\).get\\('issuelinks',[]\\); print\\(json.dumps\\(links, indent=2\\)\\) if links else print\\('No issuelinks field found. Available fields:'\\); [print\\(k\\) for k in sorted\\(d.get\\('fields',{}\\).keys\\(\\)\\)]\")",
+      "Bash(python -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('Parent:', json.dumps\\(d.get\\('fields',{}\\).get\\('parent'\\), indent=2\\)\\); print\\('Epic:', d.get\\('fields',{}\\).get\\('customfield_10006'\\) or d.get\\('fields',{}\\).get\\('customfield_10011'\\)\\)\")",
+      "Bash(acli jira:*)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('fields',{}\\).get\\('priority',{}\\), indent=2\\)\\)\")",
+      "Bash(python -c ':*)",
+      "Read(//c/Users/U004669/.config/acli/**)",
+      "Read(//c/Users/U004669/.acli/**)",
+      "Bash(env)",
+      "Read(//c/Users/U004669/**)",
+      "Bash(acli --help)",
+      "Bash(powershell.exe -Command ':*)"
+    ]
+  }
+}

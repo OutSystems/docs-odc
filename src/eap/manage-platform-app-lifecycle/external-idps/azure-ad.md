@@ -8,14 +8,13 @@ figma:
 platform-version: odc
 audience:
   - Platform administrator
-  - Developer
-  - Front-end developer
 outsystems-tools:
   - odc portal
 coverage-type:
   - apply
 topic:
   - external-idps
+isautopublish: true
 ---
 
 # Add Microsoft Entra ID for use as external identity provider
@@ -48,7 +47,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
 
-1. Login to the [**Azure Portal**](https://portal.azure.com/) and create a new app registration in the Microsoft Entra ID screen. For guidance, see Microsoft documentation [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app).
+1. Log in to the [**Azure Portal**](https://portal.azure.com/) and create a new app registration in the Microsoft Entra ID screen. For guidance, refer to [Register an application in Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app).
 
     <div class="info" markdown="1">
 
@@ -78,9 +77,13 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     </div>
 
-1. Complete the configuration in ODC Portal by leaving the **PKCE** as the default value (**SHA-256**) and the fields in the **Claim Mapping** section as default values (**name**, **email**).
-
-1. In the ODC Portal, click **Save**. The **Configuration** tab for the newly created IdP opens.
+1. Complete the configuration in the ODC Portal:
+    1. Confirm **PKCE** is set to **SHA-256**.
+    1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
+    1. In the **User profile matching** section, select the attribute (fallback option) ODC uses to match external logins to ODC profiles when a subject match isn't found. For more information about the options and when to use each one, refer to [Profile matching for external IdPs](identity-claims-email-verification.md#profile-matching-external-idps).
+    1. Confirm the fields in the **Claim Mapping** section are set to the default values: **username**, **email**, **name**, and **picture**.
+    1. Click **Save**.  
+    The **Configuration** tab for the newly created IdP opens.
 
 1. Assign the newly created IdP either to your **Organization** or the app stage you want (for example, **Apps in Development**, **Apps in QA**, or **Apps in Production**). Refer to [Assign an external IdP](assign-idp.md).
 
@@ -122,5 +125,5 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 ## Related resources
 
-* [IdP and end-user group mapping](end-user-group-mapping.md).
-* [Configure authentication with external identity providers](intro.md).
+* [IdP and end-user group mapping](end-user-group-mapping.md)
+* [Configure authentication with external identity providers](intro.md)

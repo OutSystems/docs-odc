@@ -6,8 +6,6 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 tags: authentication, identity provider, openid connect, security, social login
 audience:
-  - Developer
-  - Front-end developer
   - Platform administrator
 outsystems-tools:
   - odc studio
@@ -58,7 +56,7 @@ To add a new OpenID Connect provider, follow these steps:
 
 1. In the ODC Portal, go to **Manage** > **Identity providers**.
 1. To open the **New provider** configuration screen, click the **Add Provider** dropdown and select **OpenID Connect**.
-1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
+1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and must only include letters, numbers, and spaces.
 
 1. Enter the URL of the OpenID configuration in the **Discovery endpoint** field.
 
@@ -76,13 +74,16 @@ To add a new OpenID Connect provider, follow these steps:
 
 1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
 
+1. In the **User profile matching** section, select the attribute (fallback option) ODC uses to match external logins to ODC profiles when a subject match isn't found.
+    For more information about the options and when to use each one, refer to [Profile matching for external IdPs](identity-claims-email-verification.md#profile-matching-external-idps).
+
 1. Configure claim mapping in the **Claim Mapping** section.
 
     If your provider uses different attribute names, overwrite the prefilled **Username**, **Email**, **Name**, and **Photo URL** values. For more guidance, refer to your provider's support documentation.
 
     <div class="info" markdown="1">
 
-    For more details about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](identity-claims-email-verification.md#claim-mapping-logic).
+    For more information about claim mapping and profile matching, refer to [Claim mapping and profile matching](identity-claims-email-verification.md#claim-mapping-logic).
 
     </div>
 

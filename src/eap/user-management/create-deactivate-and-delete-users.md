@@ -7,12 +7,12 @@ app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - Platform administrator
-  - Developer
 tags: user management,create user,deactivate user,delete user,user roles
 outsystems-tools:
   - odc portal
 coverage-type:
   - apply
+  - unblock
 topic:
   - manage-users
   - deleting-users
@@ -20,6 +20,7 @@ topic:
   - built-in-authentication
   - creating-users
 helpids: 30703
+isautopublish: true
 ---
 
 # Create, activate, deactivate, and delete users
@@ -44,7 +45,7 @@ You can add users to your ODC organization (tenant) as either [members (IT-users
 
 When users log in using an external IdP, ODC automatically registers them after their first successful login.
 
-For more details about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](../manage-platform-app-lifecycle/external-idps/intro.md#claim-mapping-logic).
+For more information about claim mapping and profile matching, refer to [Claim mapping and profile matching](../manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md#claim-mapping-logic).
 
 For more information about granting roles, refer to [Grant and revoke user roles](grant-and-revoke-user-roles.md).
 
@@ -114,6 +115,100 @@ To manually register [end-users](intro.md#end-users), follow these steps:
     To edit the roles you assigned during the creation process, refer to [Grant and revoke user roles](grant-and-revoke-user-roles.md).
 
     </div>
+
+### Invitations, reinvitations, and user statuses {#invitations-reinvitations-and-user-statuses}
+
+ODC assigns each user a status that indicates whether they completed registration and whether they can log in. The status affects login behavior and what happens when you invite a user by using an email address that already exists in your organization.
+
+#### User statuses
+
+The following are the user statuses:
+
+* **Active**: The user completed registration and can log in.
+* **Invited**: The user received an invitation email but hasn't completed the registration.  
+    An invited user completes the registration by following the link in the invitation email and entering the verification code in the ODC Portal.
+* **Pending registration**: The user started the self-registration but hasn’t completed it.  
+    A user completes the self-registration by opening the verification email, following the link, entering the verification code, and setting a password.
+* **Inactive**: An administrator deactivated the user. ODC blocks this user from logging in until an administrator activates the user again.
+
+In the [User and access management API](../reference/apis/identity-v1.md), `isActive` controls the user’s initial status. Set `isActive` to `true` in order to create the user as **Active**, or to `false` for **Inactive**.
+
+#### Common status transitions
+
+Here are some typical ways the user status can change:
+
+* **Invited** to **Active**: The user completes the registration.
+* **Pending registration** to **Active**: The user completes the self-registration.
+* **Active** to **Inactive**: An administrator deactivates the user.
+* **Inactive** to **Active**: An administrator activates the user.
+
+<div class="info" markdown="1">
+
+If a user was **Invited**, didn't complete the registration, and then signs in through an [external identity provider (IdP)](../manage-platform-app-lifecycle/external-idps/intro.md), ODC changes the user status to **Active**. The user can still complete the registration later to set up a password for built-in authentication.
+
+For more information, refer to [Built-in authentication in combination with external IdPs](../manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md#built-in-authentication-password-sign-in).
+
+</div>
+
+#### Common scenarios for user status and external IdP access
+
+The following table summarizes common scenarios for user status and external IdP access:
+
+| Scenario | Status | Can access via external IdP |
+| :---- | :---- | :---- |
+| User invited, hasn't completed registration | **Invited** | Yes, status remains **Invited** |
+| User invited, logs in via external IdP, then completes registration | **Invited** → **Active** | Yes throughout |
+| User invited, never completes registration, only uses external IdP | **Invited** (permanently or [workaround](#enable-built-in-authentication) is used) | Yes, but no built-in IdP access |
+| User self-registers, hasn't completed registration | **Pending registration** | Yes, status remains **Pending registration** |
+| User created via external IdP only | **Active** | Yes, but no built-in IdP access |
+| User inactivated by admin | **Inactive** | No |
+
+#### Invite an existing user of the built-in IdP in the ODC Portal
+
+If you invite a user by using an email address that already belongs to an existing user, the ODC Portal behavior depends on the user’s status:  
+
+* **Active**: The ODC Portal blocks the invitation and shows an error. Update roles for the existing user instead of creating a new user.
+* **Invited**: Use **Resend invitation** to send a new invite email.
+
+#### Invite an existing user of the built-in IdP using the user and access management API
+
+Use the [user and access management API](../reference/apis/identity-v1.md) to add the user to the built-in IdP when the user was created for an external IdP. For more information, refer to [Enable built-in authentication for an external IdP user](#enable-built-in-authentication).
+
+### Enable built-in authentication for an external IdP user {#enable-built-in-authentication}
+
+Use this procedure when a user was created only after logging in with an external IdP and needs to log in with built-in authentication. For example, this applies if the external IdP isn’t assigned to the organization.
+
+To enable built-in authentication for an existing user, follow these steps:
+
+1. Create a built-in identity provider profile for the user by calling `POST /users` in the [User and access management API](../reference/apis/identity-v1.md) and setting `addToBuiltInIdentityProvider` to `true`.
+
+    Use the exact email address of the existing user profile.
+
+    Example request body:
+
+    ```
+    {
+        "email": "user@example.com",
+        "isActive": true,
+        "addToBuiltInIdentityProvider": true,
+        "name": "Ignored",
+        "photoUrl": null
+    }
+    ```
+
+    <div class="info" markdown="1">
+
+    Keep these considerations in mind:
+
+    * The email address must match the existing user profile exactly.
+    * Include `name` and `photoUrl` in the request body. These fields are required, but ODC doesn’t overwrite existing user profile data.
+    * This action doesn’t send an email to the user.
+
+    </div>
+
+1. Ask the user to reset their password.
+
+    For more information, refer to [Passwords](passwords.md).
 
 ## Deactivate and activate users
 
