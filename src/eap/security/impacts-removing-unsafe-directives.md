@@ -88,12 +88,6 @@ For more information about OutSystems Maps, refer to [OutSystems Maps](../buildi
 
 ### Mobile UI
 
-<div class="info" markdown="1">
-
-Mobile UI is only available to Early Access Program (EAP) customers.
-
-</div>
-
 * **Issues**: Some patterns, such as **Card**, **Date Picker**, **Input OTP**, and **Text Area**, may lose some styling.
 
 * **Workarounds**
