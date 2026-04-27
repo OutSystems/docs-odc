@@ -9,6 +9,7 @@ platform-version: odc
 audience:
   - Developer
   - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal
@@ -24,6 +25,12 @@ isautopublish: true
 This article provides recommendations for compatible tools and software versions that you can use with OutSystems Developer Cloud (ODC) Portal and ODC Studio.
 
 To access ODC portal and connect to ODC Studio, ensure your local network allows access to `*.outsystems.dev` domains. For end-users to access ODC apps, their network must allow access to the `*.outsystems.app` domain or the [custom domain](../manage-platform-app-lifecycle/custom-domains.md) defined for each stage.
+
+<div class="info" markdown="1">
+
+ODC Portal and ODC Studio validate authentication tokens against UTC time. If your computer's clock drifts more than 5 minutes from the actual time, token validation fails and you can't log in. Enable the "set time automatically" setting in your operating system to prevent this issue.
+
+</div>
 
 ## ODC Portal
 
