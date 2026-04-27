@@ -11,8 +11,8 @@ outsystems-tools:
 coverage-type:
 content-type:
 audience:
-  - platform administrators
-  - full stack developers
+  - Platform administrator
+  - Developer
 topic:
 isautopublish: true
 ---

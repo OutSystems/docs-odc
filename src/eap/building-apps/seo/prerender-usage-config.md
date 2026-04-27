@@ -9,8 +9,8 @@ figma:
 coverage-type:
   - remember
 audience:
-  - frontend developers
-  - platform administrators
+  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal

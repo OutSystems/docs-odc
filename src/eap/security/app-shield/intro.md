@@ -8,7 +8,7 @@ platform-version: odc
 helpids: 30472
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3963%3A21612&mode=design&t=TyGh9pLEHaqLAxxu-1
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - forge
   - odc studio

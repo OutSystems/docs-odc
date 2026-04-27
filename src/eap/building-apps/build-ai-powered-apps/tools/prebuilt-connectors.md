@@ -12,9 +12,8 @@ coverage-type:
 topic:
   - integration
 audience:
-  - full stack developers
-  - tech leads
-  - backend developers
+  - Developer
+  - Tech lead
 outsystems-tools:
   - odc portal
   - odc studio

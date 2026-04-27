@@ -9,8 +9,8 @@ content-type:
   - procedure
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6246-92
 audience:
-  - frontend developers
-  - full stack developers
+  - Front-end developer
+  - Developer
 outsystems-tools:
   - odc studio
 ---

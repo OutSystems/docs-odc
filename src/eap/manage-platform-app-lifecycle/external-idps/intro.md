@@ -7,10 +7,9 @@ figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-
 platform-version: odc
 tags: authentication,identity provider,openid connect,saml,security
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal

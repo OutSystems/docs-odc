@@ -9,8 +9,8 @@ content-type:
   - reference
 figma:
 audience:
-  - frontend developers
-  - business analysts
+  - Front-end developer
+  - Business analyst
 outsystems-tools:
   - odc studio
 ---

@@ -7,9 +7,8 @@ platform-version: odc
 figma:
 tags: ui testing, scripted testing, exploratory testing, user experience testing, automated testing
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - none
 coverage-type:

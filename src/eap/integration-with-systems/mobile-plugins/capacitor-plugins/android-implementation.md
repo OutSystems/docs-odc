@@ -10,7 +10,7 @@ topic:
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 tags: capacitor plugins, android native implementation, kotlin, java, android project, barcode scanner plugin
 outsystems-tools:
   - none

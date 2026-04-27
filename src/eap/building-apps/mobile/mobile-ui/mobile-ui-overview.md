@@ -12,8 +12,8 @@ coverage-type:
   - understand
 content-type: 
 audience:   
-  - mobile developers
-  - frontend developers
+  - Developer
+  - Front-end developer
 topic: 
 ---
 

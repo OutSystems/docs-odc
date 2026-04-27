@@ -9,8 +9,8 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - apply
 audience:
-  - frontend developers
-  - full stack developers
+  - Front-end developer
+  - Developer
 outsystems-tools:
   - none
 ---

@@ -6,9 +6,8 @@ guid: 63f8b0fe-24f6-48bd-a3a8-90c372949aad
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - backend developers
-  - full stack developers
-  - architects
+  - Developer
+  - Architect
 outsystems-tools:
   - odc studio
 coverage-type:

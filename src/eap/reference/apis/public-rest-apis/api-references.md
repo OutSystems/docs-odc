@@ -8,9 +8,8 @@ platform-version: odc
 content-type:
   - reference
 audience:
-  - backend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Platform administrator
 figma:
 outsystems-tools:
   - odc portal

@@ -9,8 +9,8 @@ content-type:
   - conceptual
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6245-10
 audience:
-  - frontend developers
-  - full stack developers
+  - Front-end developer
+  - Developer
 outsystems-tools:
   - odc portal
   - forge

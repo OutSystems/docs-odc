@@ -10,9 +10,8 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - backend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Platform administrator
 tags: sql types,data mapping,type conversion,null handling
 outsystems-tools:
   - odc portal

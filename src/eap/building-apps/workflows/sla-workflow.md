@@ -13,9 +13,8 @@ content-type:
   - conceptual
   - best practice
 audience: 
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 ---
 
 # Implementing SLAs in workflows

@@ -7,8 +7,6 @@ coverage-type:
   - apply
 app_type: mobile apps,reactive web apps
 platform-version: odc
-audience:
-  - none
 tags: end-user management,group management,user groups,jira integration,access control
 outsystems-tools:
   - none
@@ -17,7 +15,6 @@ topic:
   - assign-to-user-groups
 helpids: 30705
 ---
-
 # Manage end-user groups
 
 End-user groups in OutSystems Developer Cloud (ODC) help you efficiently manage app access by grouping users with the same roles and permissions. By assigning roles to groups instead of individual users, you can simplify user onboarding, streamline access management, and ensure consistent security policies across your organization.

@@ -8,8 +8,6 @@ platform-version: odc
 figma:
 coverage-type:
   - none
-audience:
-  - none
 outsystems-tools:
   - odc studio
   - odc portal

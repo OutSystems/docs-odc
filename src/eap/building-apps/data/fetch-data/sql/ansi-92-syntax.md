@@ -10,9 +10,7 @@ topic:
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - backend developers
-  - full stack developers
-  - mobile developers
+  - Developer
 tags: sql syntax, ansi-92, external entities, sql queries
 outsystems-tools:
   - odc studio

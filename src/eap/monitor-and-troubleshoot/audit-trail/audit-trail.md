@@ -14,8 +14,8 @@ coverage-type:
   - understand
 content-type:
 audience:
-  - platform administrators
-  - tech leads
+  - Platform administrator
+  - Tech lead
 topic:
   - app-settings
   - app-configuration

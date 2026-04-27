@@ -10,9 +10,9 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - frontend developers
-  - mobile developers
-  - platform administrators
+  - Front-end developer
+  - Developer
+  - Platform administrator
 tags: server calls, client-side logic, security issues, frontend security, authentication
 outsystems-tools:
   - odc portal

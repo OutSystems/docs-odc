@@ -11,7 +11,7 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - full stack developers
+  - Developer
 tags: agentic apps testing, quick validation, development lifecycle, odc studio, automated test app
 outsystems-tools:
   - odc studio

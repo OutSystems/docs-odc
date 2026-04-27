@@ -6,10 +6,9 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 tags: authentication, identity provider, openid connect, security, social login
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal

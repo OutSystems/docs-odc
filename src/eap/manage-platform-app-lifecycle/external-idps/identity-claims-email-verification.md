@@ -3,8 +3,8 @@ summary: Configure email verification and profile matching logic for external id
 locale: en-us
 guid: bf560c9c-82b5-4c8a-ba11-09939bcc8d87
 audience:
-  - platform administrators
-  - full stack developers
+  - Platform administrator
+  - Developer
 platform-version: odc
 topic:
   - external-idps

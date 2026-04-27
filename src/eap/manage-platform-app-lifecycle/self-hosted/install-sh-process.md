@@ -8,9 +8,8 @@ topic:
 app_type: reactive web apps, mobile apps
 platform-version: odc
 audience:
-  - platform administrators
-  - architects
-  - infrastructure managers
+  - Platform administrator
+  - Architect
 tags: self-hosted installation, outsystems developer cloud, infrastructure provisioning, database configuration, platform setup
 outsystems-tools:
   - self hosted console

@@ -7,11 +7,8 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&
 platform-version: odc
 tags: database operations, data consistency, transaction management, entity management, system behaviors
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - backend developers
-  - ui designers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

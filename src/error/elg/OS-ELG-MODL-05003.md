@@ -9,9 +9,8 @@ figma:
 coverage-type:
   - unblock
 audience:
-  - backend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Platform administrator
 outsystems-tools:
   - none
 ---

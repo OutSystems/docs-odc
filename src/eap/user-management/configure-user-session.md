@@ -7,8 +7,8 @@ figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-
 platform-version: odc
 tags: session management, security, authentication, user management, compliance
 audience:
-  - platform administrators
-  - full stack developers
+  - Platform administrator
+  - Developer
 outsystems-tools:
   - odc portal
 coverage-type:

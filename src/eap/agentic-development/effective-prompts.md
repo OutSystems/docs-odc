@@ -15,9 +15,8 @@ coverage-type:
   - understand
   - apply
 audience:
-  - frontend developers
-  - backend developers
-  - full stack developers
+  - Front-end developer
+  - Developer
 isautopublish: true
 ---
 

@@ -10,8 +10,7 @@ coverage-type:
   - unblock
   - remember
 audience:
-  - backend developers
-  - full stack developers
+  - Developer
 outsystems-tools:
   - none
 ---

@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3457-10&t=VbpYriya8ET1cuRr-1
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

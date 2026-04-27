@@ -9,8 +9,8 @@ figma:
 coverage-type:
   - evaluate
 audience:
-  - platform administrators
-  - frontend developers
+  - Platform administrator
+  - Front-end developer
 outsystems-tools:
   - odc studio
 ---

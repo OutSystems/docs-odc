@@ -9,9 +9,9 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - evaluate
 audience:
-  - full stack developers
-  - platform administrators
-  - architects
+  - Developer
+  - Platform administrator
+  - Architect
 outsystems-tools:
   - odc portal
 ---

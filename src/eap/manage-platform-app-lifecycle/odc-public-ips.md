@@ -7,9 +7,9 @@ app_type: mobile apps, reactive web apps
 figma:
 platform-version: odc
 audience:
-  - platform administrators
-  - tech leads
-  - architects
+  - Platform administrator
+  - Tech lead
+  - Architect
 outsystems-tools:
   - odc portal
 coverage-type:

@@ -11,7 +11,7 @@ topic:
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 tags: capacitor plugins, mobile development, native plugins, plugin development, outsystems plugins
 outsystems-tools:
   - odc studio

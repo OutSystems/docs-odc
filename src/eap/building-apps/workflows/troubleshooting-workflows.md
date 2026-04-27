@@ -8,8 +8,6 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5860-10
 coverage-type:
   - apply
-audience:
-  - none
 outsystems-tools:
   - odc portal
 ---

@@ -7,7 +7,7 @@ figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=desi
 platform-version: odc
 tags: mobile payment integration, apple pay, google pay, plugin configuration, payment processing
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - forge
   - odc studio

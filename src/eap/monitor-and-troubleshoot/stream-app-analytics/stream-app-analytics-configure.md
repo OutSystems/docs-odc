@@ -12,9 +12,8 @@ coverage-type:
   - apply
 content-type: 
 audience:
-  - backend developers
-  - infrastructure managers
-  - platform administrators
+  - Developer
+  - Platform administrator
 helpids: 30636
 ---
 

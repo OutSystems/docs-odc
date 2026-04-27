@@ -9,9 +9,8 @@ coverage-type:
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - backend developers
-  - mobile developers
-  - tech leads
+  - Developer
+  - Tech lead
 tags: sql queries, odc studio, advanced data operations, data retrieval
 outsystems-tools:
   - odc studio

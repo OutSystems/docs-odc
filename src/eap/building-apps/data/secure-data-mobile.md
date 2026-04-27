@@ -10,7 +10,7 @@ topic:
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 tags: secure mobile data, mobile app security, data protection, app development
 outsystems-tools:
   - forge

@@ -11,9 +11,8 @@ outsystems-tools:
 coverage-type:
 content-type:
 audience:
-  - backend developers
-  - full stack developers
-  - architects
+  - Developer
+  - Architect
 topic:
 ---
 

@@ -10,7 +10,7 @@ coverage-type:
   - understand
   - apply
 audience:
-  - full stack developers
+  - Developer
 outsystems-tools:
   - odc studio
 topic:

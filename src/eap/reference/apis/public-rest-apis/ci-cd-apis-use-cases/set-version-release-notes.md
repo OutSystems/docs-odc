@@ -10,8 +10,8 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - full stack developers
-  - tech leads
+  - Developer
+  - Tech lead
 tags: release version, release notes, api usage, deployment automation, outsystems apis
 outsystems-tools:
   - odc portal

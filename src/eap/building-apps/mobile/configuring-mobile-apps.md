@@ -11,10 +11,9 @@ topic:
 app_type: mobile apps
 platform-version: odc
 audience:
-  - frontend developers
-  - full stack developers
-  - mobile developers
-  - tech leads
+  - Front-end developer
+  - Developer
+  - Tech lead
 tags: mobile app configuration, extensibility scripts, mobile tab settings, outsystems developer cloud, mobile development
 outsystems-tools:
   - mobile plugins

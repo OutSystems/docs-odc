@@ -10,9 +10,8 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - infrastructure managers
-  - platform administrators
-  - tech leads
+  - Platform administrator
+  - Tech lead
 tags: self-hosted,installation,guide
 outsystems-tools:
   - self hosted console

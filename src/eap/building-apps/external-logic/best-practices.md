@@ -10,10 +10,9 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - backend developers
-  - architects
-  - full stack developers
-  - tech leads
+  - Developer
+  - Architect
+  - Tech lead
 tags: external libraries, best practices, private gateway, cloud connectivity, architecture
 helpids:
 outsystems-tools:

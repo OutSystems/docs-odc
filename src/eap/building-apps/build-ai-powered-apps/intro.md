@@ -18,8 +18,8 @@ outsystems-tools:
 coverage-type:
   - understand
 audience:
-  - mobile developers
-  - frontend developers
+  - Developer
+  - Front-end developer
 helpids: 
 ---
 

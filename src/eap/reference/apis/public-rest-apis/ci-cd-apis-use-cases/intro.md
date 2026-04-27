@@ -10,11 +10,10 @@ topic:
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - architects
-  - tech leads
-  - full stack developers
-  - platform administrators
-  - infrastructure managers
+  - Architect
+  - Tech lead
+  - Developer
+  - Platform administrator
 tags: ci/cd, continuous integration, continuous delivery, deployment automation, outsystems api, jenkins integration, azure devops
 outsystems-tools:
   - odc studio

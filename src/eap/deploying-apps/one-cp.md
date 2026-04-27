@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/file/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?type=design&node-id=3436%3A10&mode=design&t=4YrXFNtkgIwzVp3T-1
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
   - odc portal

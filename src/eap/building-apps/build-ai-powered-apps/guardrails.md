@@ -10,8 +10,8 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - platform administrators
-  - full stack developers
+  - Platform administrator
+  - Developer
 tags: ai governance, agent guardrails, content filtering, data protection, risk prevention
 outsystems-tools:
   - odc portal

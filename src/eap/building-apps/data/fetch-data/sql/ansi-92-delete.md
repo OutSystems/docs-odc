@@ -10,9 +10,8 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - backend developers
-  - full stack developers
-  - tech leads
+  - Developer
+  - Tech lead
 tags: sql,delete statement,database,ansi-92,queries
 outsystems-tools:
   - odc studio

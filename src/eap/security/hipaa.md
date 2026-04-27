@@ -10,8 +10,8 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - architects
-  - tech leads
+  - Architect
+  - Tech lead
 tags: hipaa compliance,healthcare applications,security,patient-centric,lifecycle management
 outsystems-tools:
   - odc portal

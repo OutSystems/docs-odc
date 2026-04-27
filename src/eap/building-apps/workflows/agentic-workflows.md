@@ -10,7 +10,7 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - full stack developers
+  - Developer
 tags: agentic workflows, automatic activities, parallel workflow, business processes, odc portal
 outsystems-tools:
   - odc portal

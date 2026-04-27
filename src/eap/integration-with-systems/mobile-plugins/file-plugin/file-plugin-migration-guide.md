@@ -8,7 +8,7 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=7389-54&t=d0OAm2Kd3QpfpZ1C-1
 
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
 coverage-type:

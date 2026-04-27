@@ -7,9 +7,8 @@ platform-version: odc
 content-type:
   - reference
 audience:
-  - backend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Platform administrator
 figma:
 api-render: true
 tags: environment configurations api, rest api reference, identity service api, odc environment settings, api specification

@@ -7,10 +7,9 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?node-id=3570-10
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc portal
 coverage-type:

@@ -7,8 +7,8 @@ platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=4694-117
 tags: ide usage, reactive web apps, tutorials for beginners, command line interface, app management
 audience:
-  - frontend developers
-  - full stack developers
+  - Front-end developer
+  - Developer
 outsystems-tools:
   - odc studio
 coverage-type:

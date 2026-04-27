@@ -10,9 +10,7 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - backend developers
-  - full stack developers
-  - mobile developers
+  - Developer
 tags: oauth 2.0, access token, api authentication, rest api, authorization grant
 outsystems-tools:
   - odc studio

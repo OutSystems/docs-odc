@@ -8,9 +8,8 @@ topic:
 app_type: reactive web apps, mobile apps
 platform-version: odc
 audience:
-  - platform administrators
-  - infrastructure managers
-  - architects
+  - Platform administrator
+  - Architect
 tags: self-hosted cluster, openshift, secrets management, hashicorp vault, observability
 outsystems-tools:
   - self hosted console

@@ -7,7 +7,7 @@ app_type: mobile apps
 platform-version: odc
 figma:
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
   - odc portal

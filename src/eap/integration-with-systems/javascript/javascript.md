@@ -7,9 +7,8 @@ platform-version: odc
 figma: https://www.figma.com/design/hdmSs8a8ifLQTmDBJmkJnD/Integration-with-external-systems?node-id=4601-280
 summary: Explore how ODC enhances mobile and reactive apps by integrating JavaScript for extended functionality.
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

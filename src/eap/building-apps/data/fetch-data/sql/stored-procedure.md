@@ -7,9 +7,7 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7307-1657
 audience:
-  - backend developers
-  - full stack developers
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
 coverage-type:

@@ -12,7 +12,7 @@ outsystems-tools:
   - odc studio
   - odc portal
 audience:
-  - full stack developers
+  - Developer
 isautopublish: true
 ---
 

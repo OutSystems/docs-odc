@@ -10,8 +10,8 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - frontend developers
-  - full stack developers
+  - Front-end developer
+  - Developer
 tags: icons,OutSystems UI
 outsystems-tools:
   - odc studio

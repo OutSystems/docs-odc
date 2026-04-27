@@ -13,8 +13,8 @@ coverage-type:
   - understand
   - apply
 audience:
-  - mobile developers
-  - frontend developers
+  - Developer
+  - Front-end developer
 topic:
 isautopublish: true
 ---

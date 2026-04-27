@@ -10,9 +10,8 @@ topic:
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - infrastructure managers
-  - platform administrators
-  - tech leads
+  - Platform administrator
+  - Tech lead
 tags: ai search services, custom search service, rag best practices, odc portal
 outsystems-tools:
   - odc portal

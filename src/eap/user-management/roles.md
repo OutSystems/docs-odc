@@ -8,8 +8,8 @@ figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-
 platform-version: odc
 tags: access management,permissions,user onboarding,user roles,organization management
 audience:
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal

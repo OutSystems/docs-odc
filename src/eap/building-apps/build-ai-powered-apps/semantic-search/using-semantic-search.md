@@ -10,10 +10,9 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - frontend developers
-  - backend developers
-  - tech leads
-  - full stack developers
+  - Front-end developer
+  - Developer
+  - Tech lead
 tags: semantic search, odc studio, data models, mobile apps, reactive web apps
 outsystems-tools:
   - odc studio

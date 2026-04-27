@@ -9,9 +9,8 @@ figma:
 coverage-type:
   - evaluate
 audience:
-  - frontend developers
-  - full stack developers
-  - mobile developers
+  - Front-end developer
+  - Developer
 outsystems-tools:
   - none
 topic:

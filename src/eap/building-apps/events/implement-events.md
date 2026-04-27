@@ -10,8 +10,7 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - backend developers
-  - mobile developers
+  - Developer
 tags: event handling, asynchronous communication, odc, backend development, mobile development
 outsystems-tools:
   - odc studio

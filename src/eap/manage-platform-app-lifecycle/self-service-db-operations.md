@@ -12,8 +12,7 @@ coverage-type:
   - apply
   - understand
 audience:
-  - infrastructure managers
-  - platform administrators
+  - Platform administrator
 topic:
 helpids: 30745
 ---

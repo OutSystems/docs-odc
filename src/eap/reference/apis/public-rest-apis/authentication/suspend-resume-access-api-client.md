@@ -9,7 +9,7 @@ app_type: reactive web apps, mobile apps
 content-type:
   - procedure
 audience:
-  - platform administrators
+  - Platform administrator
 platform-version: odc
 figma:
 ---

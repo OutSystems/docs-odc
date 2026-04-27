@@ -9,7 +9,7 @@ figma:
 coverage-type:
   - apply
 audience:
-  - frontend developers
+  - Front-end developer
 outsystems-tools:
   - none
 ---

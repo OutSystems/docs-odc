@@ -14,10 +14,8 @@ outsystems-tools:
 coverage-type:
   - understand
 audience:
-  - frontend developers
-  - backend developers
-  - full stack developers
-  - ui designers
+  - Front-end developer
+  - Developer
 topic:
   - creating-apps
 isautopublish: true

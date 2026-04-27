@@ -9,9 +9,9 @@ coverage-type:
   - understand
   - remember
 audience:
-  - full stack developers
-  - tech leads
-  - platform administrators
+  - Developer
+  - Tech lead
+  - Platform administrator
 outsystems-tools:
   - none
 topic:

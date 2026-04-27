@@ -9,7 +9,7 @@ platform-version: odc
 coverage-type:
 - understand
 audience:
-  - full stack developers
+  - Developer
 outsystems-tools:
   - none
 ---

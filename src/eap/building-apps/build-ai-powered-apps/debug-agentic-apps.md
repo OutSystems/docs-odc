@@ -6,8 +6,8 @@ tags: agentic apps,debugging,breakpoints,odc studio
 platform-version: odc
 app_type: mobile apps,reactive web apps
 audience:
-  - full stack developers
-  - tech leads
+  - Developer
+  - Tech lead
 outsystems-tools:
   - odc studio
 coverage-type:

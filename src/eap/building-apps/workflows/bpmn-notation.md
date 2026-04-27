@@ -11,8 +11,6 @@ outsystems-tools:
   - none
 coverage-type:
 content-type:
-audience:
-  - none
 topic:
 ---
 # Notation Reference for BPMN Practitioners

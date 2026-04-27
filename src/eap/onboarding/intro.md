@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/RJa2jhHlZ3O7UDDV8zWIwZ/Onboarding-for-OutSystems-developers?node-id=2449-32709
 audience:
-  - mobile developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal

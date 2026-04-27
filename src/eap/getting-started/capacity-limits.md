@@ -13,9 +13,9 @@ coverage-type:
   - remember
   - understand
 audience:
-  - platform administrators
-  - architects
-  - tech leads
+  - Platform administrator
+  - Architect
+  - Tech lead
 topic:
 helpids: 30559,30560,30561,30562
 ---
@@ -58,7 +58,7 @@ ODC optimizes resource usage with [automatic scaling](../manage-platform-app-lif
 * **Production stage apps and agents** share the scaling behavior of non-production stages, but in subscriptions with high availability consume a minimum of 2 CIs to increase availability.
 * **Workflows and timers** on all stages consume CIs only while executing. Once they're finished executing the logic, they scale to zero immediately and don't incur cold-start delays. Multiple active instances of the **same** workflow revision share a single CI. However, if active instances belong to **different** revisions, each revision consumes a separate CI.
 
-## Monitoring resource consumption { #monitor }
+## Monitoring resource consumption {#monitor}
 
 ODC Portal helps you track resource usage trends to help you ensure that your apps maintain high performance and responsiveness during traffic spikes.
 
@@ -121,7 +121,7 @@ ODC alerts you when resource consumption approaches or exceeds limits:
 
 For example, if you have reached the limit for the number of CIs, ODC displays an error notification and logs details about assets deployment failure.
 
-## Optimize consumption { #optimize }
+## Optimize consumption {#optimize}
 
 To ensure your assets don't consume more resources than necessary, it's important to take the most out of the subscribed resources. Make sure to:
 
@@ -131,7 +131,7 @@ To ensure your assets don't consume more resources than necessary, it's importan
 * Use [ODC logs and traces](../monitor-and-troubleshoot/monitor-apps.md) to identify and troubleshoot performance issues.
 * Remove unused assets by [deleting assets](../deleting-apps/intro.md) that are no longer needed or [undeploying assets](../deploying-apps/deploy-apps.md#undeploy-assets) from stages where they're not required.
 
-## What happens when you exceed a resource limit { #limits }
+## What happens when you exceed a resource limit {#limits}
 
 When approaching or surpassing capacity limits, the following issues may occur:
 

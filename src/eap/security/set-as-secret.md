@@ -7,10 +7,9 @@ platform-version: odc
 figma:
 tags: secret management, security, encryption, application configuration, sensitive data protection
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal

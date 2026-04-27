@@ -7,11 +7,10 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A516&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - architects
-  - business analysts
+  - Architect
+  - Business analyst
+  - Developer
+  - Tech lead
 outsystems-tools:
   - none
 coverage-type:
@@ -88,7 +87,7 @@ Clear ownership requires and means you have only one go-to person for each busin
 
 It's important to start simple. When the business evolves, if necessary you iterate and add complexity.
 
-### Best Practices
+### Best practices
 
 **Ensure clear ownership by having only one business owner** for the **Home Insurance** app.
 

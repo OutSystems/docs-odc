@@ -11,8 +11,8 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - full stack developers
-  - tech leads
+  - Developer
+  - Tech lead
 tags: code quality analysis, outsystems apis, asset revision, ai mentor system, tech debt basics
 outsystems-tools:
   - odc portal

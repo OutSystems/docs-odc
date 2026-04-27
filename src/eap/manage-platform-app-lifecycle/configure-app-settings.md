@@ -12,9 +12,8 @@ outsystems-tools:
 coverage-type:
 content-type:
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 ---
 # Configure app settings
 

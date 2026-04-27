@@ -16,9 +16,8 @@ topic:
   - users-licensing
   - user-management
 audience:
-  - infrastructure managers
-  - platform administrators
-  - tech leads
+  - Platform administrator
+  - Tech lead
 outsystems-tools:
   - odc portal
   - user management app

@@ -8,8 +8,6 @@ platform-version: odc
 figma:
 coverage-type:
   - unblock
-audience:
-  - none
 outsystems-tools:
   - none
 ---

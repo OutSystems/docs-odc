@@ -10,9 +10,8 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - backend developers
-  - full stack developers
-  - tech leads
+  - Developer
+  - Tech lead
 tags: sql operators,functions,external systems,null behavior,comparison operators
 outsystems-tools:
   - odc studio

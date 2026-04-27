@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/8RLmb1pp1PYm5xqtrnq5O8/Debugging-apps?type=design&node-id=2901%3A72&t=sdGPdlxTkpCARchu-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

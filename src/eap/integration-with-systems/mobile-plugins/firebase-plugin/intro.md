@@ -7,7 +7,7 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 platform-version: odc
 tags: mobile app development, firebase integration, plugin management, cloud services, cross-platform development
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - forge
   - odc studio

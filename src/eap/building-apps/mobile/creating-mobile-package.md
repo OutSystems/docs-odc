@@ -7,7 +7,7 @@ app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2598&mode=design&t=TyGh9pLEHaqLAxxu-1
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
   - odc portal

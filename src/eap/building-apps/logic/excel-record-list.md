@@ -12,8 +12,7 @@ outsystems-tools:
 coverage-type:
 content-type:
 audience:
-  - full stack developers
-  - backend developers
+  - Developer
 ---
 
 # Excel to Record List

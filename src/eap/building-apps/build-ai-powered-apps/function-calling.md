@@ -9,7 +9,7 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - full stack developers
+  - Developer
 tags: ai agents, function calling, agentcore, action calling, outsystems developer cloud
 outsystems-tools:
   - odc studio

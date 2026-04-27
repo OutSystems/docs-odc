@@ -7,10 +7,9 @@ app_type: mobile apps,reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?node-id=2901-72
 audience:
-  - architects
-  - infrastructure managers
-  - platform administrators
-  - tech leads
+  - Architect
+  - Platform administrator
+  - Tech lead
 outsystems-tools:
   - odc portal
 coverage-type:

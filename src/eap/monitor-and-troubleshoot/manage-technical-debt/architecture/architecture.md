@@ -8,10 +8,8 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - architects
-  - mobile developers
-  - full stack developers
-  - test engineers
+  - Architect
+  - Developer
 tags: code analysis, architecture patterns, fixing issues, impact analysis, outsystems odc
 outsystems-tools:
   - odc studio

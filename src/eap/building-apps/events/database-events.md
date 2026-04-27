@@ -10,10 +10,8 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - backend developers
-  - architects
-  - full stack developers
-  - mobile developers
+  - Developer
+  - Architect
 tags: database events, odc, data integrity, automation, real-time data updates
 outsystems-tools:
   - odc studio

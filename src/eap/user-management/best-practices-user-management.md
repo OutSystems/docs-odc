@@ -11,9 +11,8 @@ topic:
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - infrastructure managers
-  - tech leads
-  - platform administrators
+  - Tech lead
+  - Platform administrator
 tags: user management,least privilege,api validation,api security,identity providers
 outsystems-tools:
   - odc portal

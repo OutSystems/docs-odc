@@ -9,8 +9,6 @@ coverage-type:
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
-audience:
-  - none
 tags: ai integration, mobile apps, reactive web apps
 outsystems-tools:
   - odc studio

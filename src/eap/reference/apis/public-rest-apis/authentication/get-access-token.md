@@ -9,8 +9,7 @@ app_type: reactive web apps, mobile apps
 content-type:
   - procedure
 audience:
-  - backend developers
-  - full stack developers
+  - Developer
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=4711-44
 ---

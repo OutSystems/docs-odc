@@ -10,8 +10,8 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - full stack developers
-  - tech leads
+  - Developer
+  - Tech lead
 tags: sast analysis, code retrieval, outsystems apis, security testing, high-code generation
 outsystems-tools:
   - odc studio

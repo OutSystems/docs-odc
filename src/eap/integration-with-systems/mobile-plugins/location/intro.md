@@ -6,9 +6,8 @@ guid: f2b0feab-c558-4d7f-b507-4511ae094677
 app_type: mobile apps
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=3203-7693&p=f&t=HgzpbirauijY3Jp8-0
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 platform-version: odc
 coverage-type:
   - apply

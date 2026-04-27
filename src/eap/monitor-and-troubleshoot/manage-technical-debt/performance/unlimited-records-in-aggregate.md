@@ -10,10 +10,9 @@ coverage-type:
   - unblock
   - remember
 audience:
-  - full stack developers
-  - backend developers
-  - tech leads
-  - platform administrators
+  - Developer
+  - Tech lead
+  - Platform administrator
 outsystems-tools:
   - odc studio
 ---

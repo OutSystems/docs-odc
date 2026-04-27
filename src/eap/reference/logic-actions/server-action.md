@@ -7,9 +7,8 @@ platform-version: odc
 figma:
 tags: server-side logic, server actions, action properties, web development
 audience:
-  - backend developers
-  - full stack developers
-  - architects
+  - Developer
+  - Architect
 outsystems-tools:
   - odc studio
 coverage-type:

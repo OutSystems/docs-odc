@@ -13,9 +13,7 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - backend developers
-  - full stack developers
-  - mobile developers
+  - Developer
 tags: rest apis, user management, role assignment, automation, access control
 outsystems-tools:
   - odc studio

@@ -11,7 +11,7 @@ topic:
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 tags: Mobile,Android,Build Actions,Extensibility,Configuration
 outsystems-tools:
   - odc studio

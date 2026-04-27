@@ -7,10 +7,9 @@ figma:
 platform-version: odc
 tags: password management,security protocols,authentication,user management,account lockout
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc portal
 coverage-type:

@@ -10,10 +10,9 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - infrastructure managers
-  - platform administrators
-  - tech leads
-  - architects
+  - Platform administrator
+  - Tech lead
+  - Architect
 tags: inbound traffic, load balancer configuration, gloo ingress gateway, openshift routing, self-hosted odc networking
 outsystems-tools:
   - none

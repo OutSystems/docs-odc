@@ -7,9 +7,8 @@ platform-version: odc
 figma:
 app_type: mobile apps
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

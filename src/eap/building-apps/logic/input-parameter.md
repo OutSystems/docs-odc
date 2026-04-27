@@ -8,9 +8,8 @@ figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=desi
 platform-version: odc
 tags: mobile apps, client actions, input parameters
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

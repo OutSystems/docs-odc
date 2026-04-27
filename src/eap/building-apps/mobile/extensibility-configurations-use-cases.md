@@ -10,7 +10,7 @@ topic:
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 tags: Mobile,Extensibility
 outsystems-tools:
   - odc studio

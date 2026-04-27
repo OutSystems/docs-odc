@@ -10,10 +10,9 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - architects
-  - infrastructure managers
-  - platform administrators
-  - tech leads
+  - Architect
+  - Platform administrator
+  - Tech lead
 tags: self-hosted,responsibility model,cloud,infrastructure,outsystems
 outsystems-tools:
   - odc portal

@@ -7,8 +7,7 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=8567-107&t=LCn8qts7zhzBhd87-1
 tags: mobile plugins, capacitor, cordova, mabs
 audience:
-  - mobile developers
-  - full stack developers
+  - Developer
 outsystems-tools:
   - odc studio
   - odc portal

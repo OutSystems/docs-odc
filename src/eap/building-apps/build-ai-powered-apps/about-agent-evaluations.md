@@ -9,8 +9,8 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - tech leads
-  - full stack developers
+  - Tech lead
+  - Developer
 tags: ai agent testing,automated evaluation,black box testing,agent benchmarks,outsystems service actions
 outsystems-tools:
   - odc portal

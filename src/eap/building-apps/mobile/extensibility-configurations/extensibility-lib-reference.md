@@ -9,7 +9,7 @@ topic:
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 tags: json configuration,Mobile,mobile app build service,mobile app extensibility,mobile apps
 outsystems-tools:
   - none

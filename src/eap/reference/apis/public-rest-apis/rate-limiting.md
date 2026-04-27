@@ -12,8 +12,8 @@ content-type:
   - best practice
   - conceptual
 audience:
-  - backend developers
-  - platform administrators
+  - Developer
+  - Platform administrator
 isautopublish: true
 ---
 

@@ -7,7 +7,7 @@ figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=desi
 platform-version: odc
 tags: ssl pinning, mobile app security, certificate validity, https communications, plugin installation
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
 coverage-type:

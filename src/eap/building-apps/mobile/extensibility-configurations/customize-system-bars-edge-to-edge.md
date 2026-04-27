@@ -7,7 +7,7 @@ app_type: mobile apps
 figma:
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 coverage-type:
   - apply
 outsystems-tools:

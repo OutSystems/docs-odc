@@ -7,9 +7,8 @@ platform-version: odc
 content-type:
   - reference
 audience:
-  - backend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Platform administrator
 figma:
 api-render: true
 tags: asset management, rest api, api documentation, backend development, outsystems

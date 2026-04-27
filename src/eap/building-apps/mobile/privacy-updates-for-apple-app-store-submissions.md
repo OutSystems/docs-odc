@@ -7,7 +7,7 @@ app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/file/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?type=design&node-id=3440%3A34&mode=design&t=sLtP6F4ZsrU6wCQB-1
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - none
 coverage-type:

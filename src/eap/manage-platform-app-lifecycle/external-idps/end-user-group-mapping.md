@@ -8,10 +8,9 @@ figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-
 platform-version: odc
 tags: identity and access management, user onboarding, role management, identity providers, group mapping
 audience:
-  - platform administrators
-  - full stack developers
-  - mobile developers
-  - frontend developers
+  - Platform administrator
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc portal
 coverage-type:

@@ -9,7 +9,7 @@ topic:
 app_type: reactive web apps
 platform-version: odc
 audience:
-  - frontend developers
+  - Front-end developer
 tags: ui components,icon widget,phosphor icons,widget properties,user interface
 outsystems-tools:
   - odc studio

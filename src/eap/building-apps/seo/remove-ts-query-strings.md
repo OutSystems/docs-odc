@@ -9,9 +9,9 @@ figma:
 coverage-type:
   - remember
 audience:
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Front-end developer
+  - Developer
+  - Platform administrator
 outsystems-tools:
   - none
 ---

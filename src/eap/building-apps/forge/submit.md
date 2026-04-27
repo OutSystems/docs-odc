@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/njWXlTZbh2jXc522APrwUf/Forge?type=design&node-id=2902%3A10&t=7VtW3Ksp7qzfotTh-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - forge
   - odc portal

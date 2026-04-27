@@ -8,8 +8,8 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 audience:
-  - platform administrators
-  - full stack developers
+  - Platform administrator
+  - Developer
 outsystems-tools:
   - ai agent builder
 coverage-type:

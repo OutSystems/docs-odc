@@ -9,10 +9,9 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - infrastructure managers
-  - platform administrators
-  - tech leads
-  - architects
+  - Platform administrator
+  - Tech lead
+  - Architect
 tags: infrastructure,requirements,database,authentication,monitoring
 outsystems-tools:
   - self hosted console

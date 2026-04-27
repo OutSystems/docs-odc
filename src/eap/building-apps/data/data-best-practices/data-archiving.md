@@ -9,9 +9,9 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - evaluate
 audience:
-  - platform administrators
-  - tech leads
-  - architects
+  - Platform administrator
+  - Tech lead
+  - Architect
 outsystems-tools:
   - odc studio
 ---

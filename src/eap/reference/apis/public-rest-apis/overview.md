@@ -9,8 +9,7 @@ app_type: reactive web apps, mobile apps
 content-type:
   - conceptual
 audience:
-  - backend developers
-  - full stack developers
+  - Developer
 platform-version: odc
 figma:
 ---

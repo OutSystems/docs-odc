@@ -7,7 +7,7 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5631-492
 audience:
-  - business analysts
+  - Business analyst
 outsystems-tools:
   - none
 coverage-type:

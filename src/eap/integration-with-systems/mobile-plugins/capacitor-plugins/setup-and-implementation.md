@@ -10,7 +10,7 @@ topic:
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 tags: Plugins,capacitor framework,typescript
 outsystems-tools:
   - none

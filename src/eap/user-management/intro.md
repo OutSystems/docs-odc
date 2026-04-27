@@ -7,8 +7,8 @@ figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=de
 platform-version: odc
 tags: user management, access control, role-based access control, group management, permissions
 audience:
-  - platform administrators
-  - full stack developers
+  - Platform administrator
+  - Developer
 outsystems-tools:
   - odc studio
   - odc portal

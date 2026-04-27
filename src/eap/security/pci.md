@@ -10,8 +10,8 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - architects
-  - tech leads
+  - Architect
+  - Tech lead
 tags: pci compliance,payment gateways,tokenization,security
 outsystems-tools:
   - odc portal

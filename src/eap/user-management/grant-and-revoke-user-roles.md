@@ -6,8 +6,8 @@ figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Platform administrator
 tags: user roles,permissions
 outsystems-tools:
   - odc portal

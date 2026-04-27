@@ -10,9 +10,9 @@ topic:
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - frontend developers
-  - full stack developers
-  - tech leads
+  - Front-end developer
+  - Developer
+  - Tech lead
 tags: ai integration, search services, mobile app development, chatbot development, reactive web apps
 outsystems-tools:
   - odc studio

@@ -9,7 +9,7 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - backend developers
+  - Developer
 tags: odc events, event payload, event delivery, event queue, event execution
 outsystems-tools:
   - odc studio

@@ -7,9 +7,8 @@ app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/design/8RLmb1pp1PYm5xqtrnq5O8/Debugging-apps?node-id=4601-30
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

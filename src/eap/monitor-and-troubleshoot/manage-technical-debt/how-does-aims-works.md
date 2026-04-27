@@ -10,9 +10,9 @@ coverage-type:
   - understand
   - apply
 audience:
-  - full stack developers
-  - platform administrators
-  - tech leads
+  - Developer
+  - Platform administrator
+  - Tech lead
 outsystems-tools:
   - odc studio
   - odc portal

@@ -9,8 +9,8 @@ figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troublesh
 coverage-type:
   - understand
 audience:
-  - full stack developers
-  - tech leads
+  - Developer
+  - Tech lead
 outsystems-tools:
   - none
 topic:

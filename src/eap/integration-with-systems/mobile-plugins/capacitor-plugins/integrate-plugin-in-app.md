@@ -10,7 +10,7 @@ topic:
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 tags: Plugins,mobile plugins,plugin integration
 outsystems-tools:
   - odc studio

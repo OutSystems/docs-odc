@@ -10,10 +10,10 @@ topic:
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - architects
-  - tech leads
-  - platform administrators
-  - full stack developers
+  - Architect
+  - Tech lead
+  - Platform administrator
+  - Developer
 tags: asset governance, asset creation, templates, access management, rest api, outsystems api
 outsystems-tools:
   - odc portal

@@ -9,8 +9,8 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - tech leads
-  - full stack developers
+  - Tech lead
+  - Developer
 tags: semantic search, ai search, llm, vector embeddings, outsystems developer cloud
 outsystems-tools:
   - odc studio

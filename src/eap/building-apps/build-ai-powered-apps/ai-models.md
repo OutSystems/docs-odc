@@ -12,8 +12,8 @@ coverage-type:
   - understand
   - apply
 audience:
-  - mobile developers
-  - frontend developers
+  - Developer
+  - Front-end developer
 ---
 
 # AI models and search services in ODC

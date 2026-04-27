@@ -7,10 +7,9 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=3401%3A734&t=hXGTDybYCg38Lul5-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal

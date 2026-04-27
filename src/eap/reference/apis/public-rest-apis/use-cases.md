@@ -8,8 +8,7 @@ platform-version: odc
 content-type:
   - conceptual
 audience:
-  - backend developers
-  - full stack developers
+  - Developer
 figma:
 outsystems-tools:
   - none

@@ -7,11 +7,9 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/wMgr3GDiuAdkPics5gzXx9/Cloud-native-architecture-of-OutSystems-Developer-Cloud?type=design&node-id=3001%3A25&t=wS2nDUn4cr9EORu8-1
 platform-version: odc
 audience:
-  - full stack developers
-  - platform administrators
-  - infrastructure managers
-  - ui designers
-  - tech leads
+  - Developer
+  - Platform administrator
+  - Tech lead
 outsystems-tools:
   - odc studio
   - odc portal

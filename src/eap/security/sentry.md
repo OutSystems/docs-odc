@@ -9,9 +9,9 @@ topic:
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - platform administrators
-  - architects
-  - tech leads
+  - Platform administrator
+  - Architect
+  - Tech lead
 tags: sentry, security, compliance, ip filters, audit trail, hipaa, pci
 outsystems-tools:
   - odc portal

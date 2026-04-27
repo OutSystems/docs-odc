@@ -9,9 +9,7 @@ figma:
 coverage-type:
   - apply
 audience:
-  - backend developers
-  - full stack developers
-  - infrastructure managers
+  - Developer
 outsystems-tools:
   - odc studio
   - odc portal

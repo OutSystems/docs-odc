@@ -11,9 +11,8 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - backend developers
-  - full stack developers
-  - architects
+  - Developer
+  - Architect
 tags: rest apis,security,authentication,jwt,token-based authentication
 outsystems-tools:
   - odc studio

@@ -8,9 +8,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=4110-2
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
   - odc portal

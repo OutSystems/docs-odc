@@ -7,9 +7,8 @@ figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=469
 summary: OutSystems ODC supports Client Variables in Mobile and Reactive Web apps for client-side data storage in a key-value format.
 tags: client variables, data storage, data types, client-side data management, environment configuration
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

@@ -10,8 +10,8 @@ topic:
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
-  - tech leads
+  - Developer
+  - Tech lead
 tags: Mobile,mobile app extensibility,extensibility configuration
 outsystems-tools:
   - odc studio

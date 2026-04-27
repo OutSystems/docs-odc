@@ -7,9 +7,8 @@ figma:
 platform-version: odc
 tags: cloud messaging, api reference, notifications, deprecated features, firebase cloud messaging
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

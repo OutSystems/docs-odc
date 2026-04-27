@@ -8,8 +8,7 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7453-435
 tags: asynchronous communication, event handling, pub/sub model, task automation, data orchestration
 audience:
-  - backend developers
-  - full stack developers
+  - Developer
 outsystems-tools:
   - odc studio
   - odc portal

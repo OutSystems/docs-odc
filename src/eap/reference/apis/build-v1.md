@@ -7,9 +7,8 @@ platform-version: odc
 content-type:
   - reference
 audience:
-  - backend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Platform administrator
 figma:
 api-render: true
 tags: build operations api, rest api, endpoint details, backend development, full stack development

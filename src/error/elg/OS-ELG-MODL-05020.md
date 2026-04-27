@@ -9,8 +9,7 @@ figma:
 coverage-type:
   - unblock
 audience:
-  - backend developers
-  - full stack developers
+  - Developer
 outsystems-tools:
   - odc studio
   - odc portal

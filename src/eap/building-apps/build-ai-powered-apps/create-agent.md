@@ -9,9 +9,8 @@ topic:
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - full stack developers
-  - tech leads
-  - backend developers
+  - Developer
+  - Tech lead
 tags: ai agent development,odc studio,outsystems ai,large language models,mobile apps
 outsystems-tools:
   - odc studio

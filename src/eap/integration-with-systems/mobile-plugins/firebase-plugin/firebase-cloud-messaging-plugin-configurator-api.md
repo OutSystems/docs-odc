@@ -7,10 +7,9 @@ app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4352%3A160&mode=design&t=qrb6BRX1TGRFDKu7-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - forge
   - odc portal

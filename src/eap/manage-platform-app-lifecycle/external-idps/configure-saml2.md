@@ -6,10 +6,9 @@ app_type: mobile apps,reactive web apps
 platform-version: odc
 tags: saml configuration,identity providers,single sign-on,authentication
 audience:
-  - platform administrators
-  - full stack developers
-  - mobile developers
-  - frontend developers
+  - Platform administrator
+  - Developer
+  - Front-end developer
 figma:
 outsystems-tools:
   - odc studio

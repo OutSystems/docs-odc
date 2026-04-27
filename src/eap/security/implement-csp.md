@@ -7,10 +7,9 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/kw9RAhge7eEpiKLnvKnOek/Security-of-OutSystems-Developer-Cloud?node-id=5005-10
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc portal
 coverage-type:

@@ -7,9 +7,8 @@ platform-version: odc
 content-type:
   - reference
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 figma:
 api-render: true
 tags: portfolio rest api, portfolio api endpoint, api reference, mobile apps integration, reactive web apps integration

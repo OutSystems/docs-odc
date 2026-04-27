@@ -3,8 +3,8 @@ summary: Assign an external identity provider to your organization or app stages
 locale: en-us
 guid: 883c4583-27f6-4617-bcba-9cb26c4abd9e
 audience:
-  - platform administrators
-  - full stack developers
+  - Platform administrator
+  - Developer
 platform-version: odc
 topic:
   - external-idps

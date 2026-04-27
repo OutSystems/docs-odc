@@ -7,9 +7,8 @@ platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5024%3A1029&mode=design&t=EwnGtDJiGAm6txO0-1
 tags: data modeling, outsystems developer cloud
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

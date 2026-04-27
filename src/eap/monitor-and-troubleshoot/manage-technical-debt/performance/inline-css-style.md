@@ -10,9 +10,8 @@ coverage-type:
   - unblock
   - remember
 audience:
-  - frontend developers
-  - ui designers
-  - full stack developers
+  - Front-end developer
+  - Developer
 outsystems-tools:
   - none
 ---

@@ -9,8 +9,7 @@ coverage-type:
   - remember
 tags: keystore plugin, client actions, error handling, mobile apps, outsystems
 audience:
-  - mobile developers
-  - full stack developers
+  - Developer
 outsystems-tools:
   - odc studio
 ---

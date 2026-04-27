@@ -7,9 +7,8 @@ platform-version: odc
 figma:
 tags: debugging, watches, odc studio
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

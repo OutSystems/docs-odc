@@ -13,10 +13,9 @@ coverage-type:
 content-type:
   - process
 audience:
-  - platform administrators
-  - infrastructure managers
-  - tech leads
-  - architects
+  - Platform administrator
+  - Tech lead
+  - Architect
 topic:
   - app-settings
   - app-configuration

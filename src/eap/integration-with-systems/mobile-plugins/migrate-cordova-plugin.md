@@ -11,7 +11,7 @@ topic:
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 tags: plugin migration, cordova, capacitor, mobile development, outsystems plugins
 outsystems-tools:
   - odc studio

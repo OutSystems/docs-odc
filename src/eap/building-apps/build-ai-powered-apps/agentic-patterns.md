@@ -10,8 +10,8 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - architects
-  - full stack developers
+  - Architect
+  - Developer
 tags: ai systems, agentic patterns, sequential agent, loop agent, outsystems developer cloud
 outsystems-tools:
   - odc studio

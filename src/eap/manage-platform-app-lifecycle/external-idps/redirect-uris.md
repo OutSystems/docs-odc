@@ -3,9 +3,9 @@ summary: Set up redirect URIs for OpenID Connect external identity providers in 
 locale: en-us
 guid: 52d83cda-27cb-4f02-aad6-c8b0876e5d10
 audience:
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Front-end developer
+  - Developer
+  - Platform administrator
 platform-version: odc
 topic:
   - external-idps

@@ -14,9 +14,8 @@ coverage-type:
   - understand
 content-type:
 audience:
-  - full stack developers
-  - tech leads
-  - backend developers
+  - Developer
+  - Tech lead
 topic:
 ---
 # Structured output

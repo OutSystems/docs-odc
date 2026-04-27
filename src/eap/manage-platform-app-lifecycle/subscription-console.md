@@ -7,8 +7,8 @@ figma:
 platform-version: odc
 tags: subscription management, application management, user management, permission control, licensing
 audience:
-  - platform administrators
-  - full stack developers
+  - Platform administrator
+  - Developer
 outsystems-tools:
   - odc portal
 coverage-type:

@@ -9,8 +9,8 @@ coverage-type:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - platform administrators
-  - full stack developers
+  - Platform administrator
+  - Developer
 tags: authorization,authentication,outsystems,end-users
 outsystems-tools:
   - odc portal

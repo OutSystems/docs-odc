@@ -10,8 +10,8 @@ topic:
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - full stack developers
-  - tech leads
+  - Developer
+  - Tech lead
 tags: asset creation, asset repository, templates, rest api, outsystems api
 outsystems-tools:
   - odc portal

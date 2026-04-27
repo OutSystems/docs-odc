@@ -9,8 +9,8 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - full stack developers
-  - tech leads
+  - Developer
+  - Tech lead
 tags: external library upload, outsystems apis, odc assets, high-code libraries, programming external libraries
 outsystems-tools:
   - odc portal

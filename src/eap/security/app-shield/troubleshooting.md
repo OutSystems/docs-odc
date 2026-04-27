@@ -6,7 +6,7 @@ guid: 32618ed1-02a2-409d-83a2-307f0afdde96
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
   - odc portal

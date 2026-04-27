@@ -9,8 +9,8 @@ figma: https://www.figma.com/design/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?node
 coverage-type:
   - understand
 audience:
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Platform administrator
 outsystems-tools:
   - odc portal
 ---

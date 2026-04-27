@@ -7,10 +7,8 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/r2zu8cQscEuqfT3j3sfTjm/Testing-Apps?node-id=4601-233
 audience:
-  - mobile developers
-  - frontend developers
-  - backend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
   - forge

@@ -9,8 +9,8 @@ topic:
 app_type: reactive web apps, mobile apps
 platform-version: odc
 audience:
-  - tech leads
-  - full stack developers
+  - Tech lead
+  - Developer
 tags: agent evaluations, dataset, JSON, service actions, agentic apps
 outsystems-tools:
   - odc portal

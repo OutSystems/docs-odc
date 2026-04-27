@@ -8,9 +8,8 @@ topic:
 app_type: reactive web apps, mobile apps
 platform-version: odc
 audience:
-  - platform administrators
-  - infrastructure managers
-  - architects
+  - Platform administrator
+  - Architect
 tags: postgresql configuration, self-hosted stages, database requirements, outsystems developer cloud, infrastructure setup
 outsystems-tools:
   - self hosted console

@@ -3,7 +3,7 @@ summary: Manage identity providers in OutSystems Developer Cloud (ODC), includin
 locale: en-us
 guid: d1584f5d-164f-4411-9846-77651e486d89
 audience:
-  - platform administrators
+  - Platform administrator
 platform-version: odc
 topic:
   - external-idps

@@ -14,10 +14,9 @@ content-type:
   - procedure
   - reference
 audience:
-  - platform administrators
-  - full stack developers
-  - mobile developers
-  - frontend developers
+  - Platform administrator
+  - Developer
+  - Front-end developer
 isautopublish: true
 ---
 

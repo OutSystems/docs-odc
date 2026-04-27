@@ -8,10 +8,9 @@ platform-version: odc
 helpids: 30702
 figma:
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc portal
 coverage-type:
