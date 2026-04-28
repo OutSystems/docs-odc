@@ -15,36 +15,34 @@ outsystems-tools:
 coverage-type:
   - understand
 audience:
-  - Front-end developer
   - Developer
 isautopublish: true
 ---
 
 # AI development in Mentor Studio
 
-Mentor Studio brings conversational AI directly into ODC Studio. You describe requirements in natural language, and Mentor transforms them into generated or modified logic, screens, and data within existing apps. This approach extends beyond initial app creation to support ongoing development, refinement, and feature enhancement.
+Mentor Studio brings conversational AI into ODC Studio. You describe requirements in natural language, and Mentor transforms them into generated or modified logic, screens, and data within existing apps. Mentor Studio supports ongoing development of existing apps.
 
-Mentor analyzes the existing app model and generates changes that integrate with existing elements. Server actions, screen modifications, entity additions, and complex logic can be created through conversation. Mentor respects user permissions and follows OutSystems patterns when generating changes.
+Mentor analyzes the app model and generates changes that integrate with the existing elements. Mentor creates server actions, screen modifications, entity additions, and logic through conversation. Mentor enforces user permissions and follows OutSystems patterns when generating changes.
 
-Use Mentor Studio to add features, fix issues, or refine logic in apps you're actively developing. To create a new app from requirements, refer to [AI app generation in Mentor Web](../mentor-web/how-it-works.md).
+Use Mentor Studio to add features, fix issues, or refine logic in apps you're developing. To create a new app from requirements, refer to [AI app generation in Mentor Web](../mentor-web/how-it-works.md).
 
 ![ODC Studio showing the Mentor panel with a prompt and the resulting generated action](images/mentor-sample-prompt-resulting-code-odcs.png "Mentor generating a ValidateCreditCardNumber action from a natural language prompt")
 
-The image shows a typical Mentor interaction in ODC Studio. (A) **Mentor panel**. The prompt describes a credit card validation requirement, specifying the expected format, character limits, and Luhn algorithm check. (B) **Generated action flow**. Mentor creates the ValidateCreditCardNumber action with the complete logic, including input validation, format checks, and the checksum calculation, (C) **Element tree**. The generated elements appear in the app structure, including the new action and its input/output parameters.
+The image shows a Mentor interaction in ODC Studio. (A) **Mentor panel**. The prompt describes a credit card validation requirement, specifying the expected format, character limits, and Luhn algorithm check. (B) **Generated action flow**. Mentor creates the ValidateCreditCardNumber action with the complete logic, including input validation, format checks, and the checksum calculation, (C) **Element tree**. The generated elements appear in the app structure, including the new action and its input/output parameters.
 
 ## Interacting with Mentor Studio
 
-Mentor is available in ODC Studio through the Mentor panel. Select the Mentor icon in the toolbar to open the panel. The panel remains open while you work and lets you describe requirements, review changes, and send follow-up prompts. You can continue working on the app or switch to another app while Mentor processes a request. Each app has its own Mentor conversation, so you can use Mentor across multiple tabs at the same time.
+Mentor is available in ODC Studio through the Mentor panel. Select the Mentor icon in the toolbar to open the panel. The panel remains open while you work and lets you describe requirements, review changes, and send follow-up prompts. Continue working on the app or switch to another app while Mentor processes a request. Use Mentor across multiple tabs at the same time, with each app maintaining its own conversation.
 
 The Mentor panel includes several interaction options:
 
-* **View changes.** After Mentor generates modifications, select this button to see a summary of what changed. The summary highlights affected elements and the nature of each change.
+* **Dock or undock.** Toggle the panel between docked in ODC Studio and a separate window. Use the dock icon in the panel header.
 * **Thumbs up or thumbs down.** Rate each response to help improve Mentor. Select thumbs up for helpful responses or thumbs down when the outcome doesn't meet expectations.
-* **Megaphone icon.** Share detailed feedback about your experience. Describe the action, expected result, and actual outcome. This feedback helps the development team understand real-world usage patterns and prioritize improvements.
+* **View changes.** After Mentor generates modifications, select this button to see a summary of what changed. The summary highlights affected elements and the nature of each change.
+* **Feedback icon.** Share detailed feedback about your experience. Describe the action, expected result, and actual outcome. This feedback helps the development team understand your usage patterns and prioritize improvements.
 
-![Mentor Studio panel with feedback options highlighted.](images/send-feedback-about-ai-features-odcs.png "Send feedback about Mentor Studio")
-
-Feedback is particularly valuable during general availability as the feature continues to evolve based on user input.
+![Mentor Studio panel showing the chat UI](images/mentor-studio-ui-odcs.png "Mentor Studio panel in ODC Studio")
 
 ## The workflow
 
@@ -59,7 +57,7 @@ The workflow consists of three phases:
 
 1. **Iterate as needed.** Refine through follow-up prompts or start a new conversation for different requirements.
 
-This iterative approach supports both small adjustments and complex multi-step development tasks.
+This iterative approach supports both small adjustments and multi-step development tasks.
 
 <div class="warning" markdown="1">
 
@@ -67,7 +65,7 @@ Don't include personally identifiable information (PII) in prompts. Use placehol
 
 </div>
 
-Mentor uses AI agents to process requests. When you describe a goal, Mentor analyzes the current app model, plans the required changes, and generates modifications that integrate with existing elements. This agent-based processing enables Mentor to handle multi-step tasks and coordinate changes across different parts of the app.
+Mentor uses AI agents to process requests. When you describe a goal, Mentor analyzes the current app model, plans the required changes, and generates modifications that integrate with existing elements. This agent-based processing lets Mentor handle multi-step tasks and coordinate changes across different parts of the app.
 
 ## Capabilities
 
@@ -94,7 +92,7 @@ For real-time suggestions while building logic flows manually, [AI logic suggest
 
 ## Constraints
 
-Mentor Studio works with web apps and can modify logic, UI, and data through conversation. For constraints and current limitations, refer to [Known limitations](../ai-limitations.md).
+Mentor Studio works with web apps and modifies logic, UI, and data through conversation. For constraints and current limitations, refer to [Known limitations](../ai-limitations.md).
 
 ## Best practices
 
@@ -112,4 +110,4 @@ Mentor Studio is one of two AI development tools in ODC. The following resources
 * For prompting strategies that apply across all Mentor tools, refer to [Effective prompts for Mentor](../effective-prompts.md).
 * For creating or iterating on apps in the browser editor, refer to [How AI app generation works](../mentor-web/how-it-works.md).
 * For background on agentic development concepts, refer to [Thinking with AI](../thinking-with-ai.md).
-* [Agentic development](https://www.outsystems.com/tk/redirect?g=eb9a16f2-f6b9-4903-9be8-122a0188f113) online course — video walkthrough of the Mentor Studio workflow
+* [Agentic development](https://www.outsystems.com/tk/redirect?g=eb9a16f2-f6b9-4903-9be8-122a0188f113) online course: a video walkthrough of the Mentor Studio workflow.

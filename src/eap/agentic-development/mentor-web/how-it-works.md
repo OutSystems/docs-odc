@@ -12,8 +12,8 @@ outsystems-tools:
 coverage-type:
   - understand
 audience:
-  - Front-end developer
   - Developer
+  - Front-end developer
 topic:
   - creating-apps
 isautopublish: true
@@ -76,7 +76,7 @@ The generated app includes:
 
 * Data model with entities, attributes, and relationships
 * Security roles with entity-level permissions
-* Screens using patterns such as tables, card lists, and master-detail views
+* Screens using patterns such as tables, card lists, and detail views
 * Basic logic for CRUD operations, navigation, and authorization
 
 The generated app follows the same ODC patterns and conventions as manually built apps. The underlying app model is identical to apps built in ODC Studio.
@@ -103,7 +103,7 @@ Refinement in the editor processes requests differently than initial generation.
 
 ## Continue in ODC Studio
 
-After generation and refinement in the editor, open the app in ODC Studio when development requires capabilities beyond Mentor Web, such as complex business logic, external integrations, or advanced UI customization. ODC Studio provides full access to the OutSystems development environment. For a breakdown of what Mentor handles and what requires ODC Studio, refer to [When to use each tool](../intro.md#when-to-use-each-tool).
+After generation and refinement, open the app in ODC Studio when development requires capabilities beyond Mentor Web. Examples include complex business logic, external integrations, or advanced UI customization. ODC Studio provides full access to the OutSystems development environment. For a breakdown of what Mentor handles and what requires ODC Studio, refer to [When to use each tool](../intro.md#when-to-use-each-tool).
 
 ## Related resources
 
@@ -114,4 +114,4 @@ Each phase of the app generation workflow connects to deeper guidance on prompts
 * For the full list of UI patterns, dashboard types, and elements that Mentor Web generates, refer to [Capabilities and patterns for Mentor Web](capabilities.md).
 * For modifying existing apps in ODC Studio, refer to [AI development in Mentor Studio](../mentor-studio/how-it-works.md).
 * For step-by-step guidance on creating an app, refer to [Create an app with AI in ODC Portal](create-app.md).
-* [Agentic development](https://www.outsystems.com/tk/redirect?g=eb9a16f2-f6b9-4903-9be8-122a0188f113) online course — video walkthrough of the Mentor Web workflow
+* [Agentic development](https://www.outsystems.com/tk/redirect?g=eb9a16f2-f6b9-4903-9be8-122a0188f113) online course: a video walkthrough of the Mentor Web workflow.

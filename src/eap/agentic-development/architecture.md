@@ -14,9 +14,9 @@ outsystems-tools:
 coverage-type:
   - understand
 audience:
-  - Front-end developer
-  - Developer
   - Architect
+  - Developer
+  - Tech lead
 topic:
   - creating-apps
 isautopublish: true
@@ -24,7 +24,7 @@ isautopublish: true
 
 # Architecture
 
-Agentic development in OutSystems combines three components to transform natural language into app structures. This architecture applies to both Mentor Web and Mentor Studio. Together with tenant context, these components form the OutSystems Enterprise Context Graph — the contextual architecture that provides AI agents with a high-fidelity understanding of enterprise apps, data, and dependencies.
+Agentic development in OutSystems combines three components to transform natural language into app structures. This architecture applies to both Mentor Web and Mentor Studio. Together with tenant context, these components form the OutSystems Enterprise Context Graph, the contextual architecture that provides AI agents with a high-fidelity understanding of enterprise apps, data, and dependencies.
 
 * **AI agents** interpret natural language and map it to OutSystems development patterns.
 * **OutSystems Model** (the app model, not an AI model) represents the app's structure, data, logic, and UI at a high level of abstraction.
@@ -108,7 +108,7 @@ A typical workflow might be:
 1. **Extend in Mentor Studio.** Open the app in ODC Studio and use Mentor Studio to add features, fix issues, or extend logic.
 1. **Manual development.** Use ODC Studio's visual tools for advanced development that requires capabilities beyond the supported patterns.
 
-All tools work with the same app model. Apps created through agentic development are standard OutSystems apps with no lock-in or special handling required. You can switch between AI-assisted prompts and manual development at any time.
+All tools work with the same app model. Apps created through agentic development are standard OutSystems apps with no lock-in or extra handling required. You can switch between AI-assisted prompts and manual development at any time.
 
 ## Related resources
 
