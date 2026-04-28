@@ -13,8 +13,8 @@ coverage-type:
   - understand
   - apply
 audience:
-  - Front-end developer
   - Developer
+  - Front-end developer
 isautopublish: true
 ---
 
@@ -49,6 +49,14 @@ Use these prompts to apply or change themes during the blueprint phase. Specify 
 * **In a requirement document**: Include a General app settings section with `"Use the 'CorporateBrand' theme available in the ODC tenant."`
 
 After generation, you can't change the theme through Mentor. To switch themes after generation, change it in ODC Studio.
+
+### Light and dark theme prompts
+
+When no named theme is specified, Mentor applies the light theme by default. Mentor switches to the dark theme when you request it, or when the chosen primary color lacks sufficient contrast on a light background.
+
+* **Request the dark theme in your initial prompt**: Create an Inventory app using the dark theme.
+* **Switch theme during blueprint review**: Change the app to the dark theme.
+* **In a requirement document**: Include a General app settings section with "Use the dark theme."
 
 ### Theme compatibility requirements
 
