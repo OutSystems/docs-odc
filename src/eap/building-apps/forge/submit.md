@@ -8,12 +8,12 @@ figma: https://www.figma.com/file/njWXlTZbh2jXc522APrwUf/Forge?type=design&node-
 platform-version: odc
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - forge
   - odc portal
 coverage-type:
   - apply
+isautopublish: true
 ---
 
 # Submit assets to Forge
@@ -33,6 +33,7 @@ To submit an asset, your asset must meet the following prerequisites:
 * Asset names must be unique. The name can't be the same as a name used for a previously submitted Forge asset.
 * Submit any dependencies first because you can’t proceed with submission if you’re missing a dependency.
 * Assets must have a short description and an icon that you can edit in the original asset.
+* Include the [required documentation](document.md) and best practices for your asset.
 * Assets must be versioned except for App Templates that are versioned by Forge. Versioning assets is slightly different for apps and libraries.
     * To version libraries, [release them](../libraries/libraries.md#release-library).
     * To version apps, [deploy them](../../deploying-apps/deploy-apps.md) from the Deployment console to production.
