@@ -1,6 +1,13 @@
 ---
 summary: Use prompts to request specific UI patterns and layouts that Mentor can generate or refine.
-tags: ui patterns, components, prompts, agentic development
+tags:
+  - Agentic
+  - Authorization
+  - Data Model
+  - Mentor
+  - Mentor Web
+  - Themes
+  - UI Patterns
 guid: 4719a8d7-dea6-491c-879c-47c57e88f6c1
 locale: en-us
 app_type: reactive web apps
@@ -49,14 +56,6 @@ Use these prompts to apply or change themes during the blueprint phase. Specify 
 * **In a requirement document**: Include a General app settings section with `"Use the 'CorporateBrand' theme available in the ODC tenant."`
 
 After generation, you can't change the theme through Mentor. To switch themes after generation, change it in ODC Studio.
-
-### Light and dark theme prompts
-
-When no named theme is specified, Mentor applies the light theme by default. Mentor switches to the dark theme when you request it, or when the chosen primary color lacks sufficient contrast on a light background.
-
-* **Request the dark theme in your initial prompt**: Create an Inventory app using the dark theme.
-* **Switch theme during blueprint review**: Change the app to the dark theme.
-* **In a requirement document**: Include a General app settings section with "Use the dark theme."
 
 ### Theme compatibility requirements
 

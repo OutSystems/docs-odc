@@ -1,6 +1,13 @@
 ---
 summary: Mentor Web generates data models, authorization rules, dashboards, UI layouts, and refinement options during app creation.
-tags: app generation, data integration, entity management, authorization, dashboard creation
+tags:
+  - AI
+  - Authorization
+  - Data Model
+  - Entities
+  - Mentor
+  - Mentor Web
+  - Screens
 guid: bd40bfc1-f77a-4604-80de-17f457d45603
 locale: en-us
 app_type: reactive web apps
@@ -58,7 +65,6 @@ Mentor selects screen patterns based on entity structure and relationships. Patt
 * **Context-aware layouts**. Generate layouts based on data context, such as list with map view for entities containing addresses or card layout for personal attributes.
 * **Theme application**. Apply themes when specified in the prompt or requirement document. Reference themes by name, for example, `Use the CorporateBrand theme`. You can set or change the theme at any point during the blueprint phase. After generation, theme changes require ODC Studio. If no theme is specified, Mentor applies the default OutSystems UI. For prompt examples, see [Theme prompts](prompts.md#theme-prompts).
 * **UI styling**. Apply a curated default color palette when no theme is specified, selecting from a set of primary colors with adaptive backgrounds for a consistent look. Suggest styling elements such as primary color and icon based on app context.
-* **Light and dark theme selection**. Default to the light theme. Switch to the dark theme when the prompt or requirement document requests it, or when the selected primary color lacks sufficient contrast against a light background.
 * **AI-suggested icons**. Apply Font Awesome icons for menu items and the app logo.
 
 ### Dashboards
