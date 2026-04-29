@@ -10,9 +10,14 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - Platform administrator
   - Developer
-tags: ai governance, agent guardrails, content filtering, data protection, risk prevention
+  - Platform administrator
+tags:
+  - Agentic
+  - AI
+  - Logging
+  - Monitoring
+  - Security
 outsystems-tools:
   - odc portal
 helpids: 30739
@@ -20,12 +25,6 @@ isautopublish: true
 ---
 
 # Agent guardrails
-
-<div class="info" markdown="1">
-
-Agent guardrails are in Beta. For more information about Beta features, refer to [OutSystems product releases](https://success.outsystems.com/support/release_notes/outsystems_product_releases/#beta)
-
-</div>
 
 Agent guardrails are a safety and governance layer designed to ensure your AI agents behave responsibly. They act as an interceptor between your agent and the AI model, monitoring both user inputs (prompts) and model outputs (responses) in real-time.
 
@@ -92,7 +91,7 @@ If your environment is hosted in a Basic coverage region, guardrails only functi
 
 ### Unsupported regions
 
-Guardrails are currently unavailable in the following regions. In these regions, the Guardrail Runtime service isn't accessible, and safety rules can't be applied to agent transactions.
+Guardrails don't operate in the following regions. The Guardrail Runtime service doesn't run in these regions, so it doesn't enforce safety rules on agent transactions.
 
 * Cape Town (af-south-1)
 
@@ -124,7 +123,7 @@ You can configure different dimensions of protection. To ensure optimal performa
 
 ### Action to take on detection
 
-When a violation is detected, the guardrail performs one of the following actions based on your configuration:
+When the guardrail detects a violation, it performs one of the following actions based on your configuration:
 
 * **Block request and raise exception**: Stops the transaction entirely.
 
@@ -140,11 +139,13 @@ When a violation is detected, the guardrail performs one of the following action
 
 ## Configuration
 
-Guardrails are managed directly within the ODC Portal. To balance governance with flexibility, configuration occurs at two levels:
+You manage guardrails directly in the ODC Portal. To balance governance with flexibility, you configure guardrails at two levels:
 
-* **Stage level**: Defines the baseline safety standards (severity and enforcement) for each environment (Development, QA, Production).
+* **Baseline guardrails***: Sets the baseline safety standards (severity and enforcement) for each environment (Development, QA, Production). When you enable a stage-level policy, it applies to every agent in that stage.
 
-* **Agent level**: Enables or disables the stage-level guardrails for specific agents.
+* **Agent level guardrails**: If there's no baseline guardrails defined, you can enable guardrails on a per-agent basis. This allows you to apply specific protections to high-risk agents without enforcing them across the board.
+
+If there are baseline guardrails defined, you can make the guardrail stricter at the agent level, but not more lenient. For example, if you set a policy to "Log and continue" at the stage level, you can choose to "Block and raise exception" for a specific agent, but not the other way around.
 
 The following diagram shows a possible guardrail configuration by stage:
 

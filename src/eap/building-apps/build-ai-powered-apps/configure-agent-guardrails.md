@@ -10,19 +10,19 @@ app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
   - Platform administrator
-tags: ai governance, agent guardrails, configuration, safety, compliance, administration
+tags:
+  - Agentic
+  - AI
+  - Logging
+  - Monitoring
+  - Security
 outsystems-tools:
   - odc portal
 helpids: 30738, 30739
+isautopublish: true
 ---
 
 # Configure agent guardrails
-
-<div class="info" markdown="1">
-
-Agent guardrails are in Beta. For more information about Beta features, refer to [OutSystems product releases](https://success.outsystems.com/support/release_notes/outsystems_product_releases/#beta)
-
-</div>
 
 This article explains how to configure agent guardrails in the ODC Portal. You can establish high-level safety policies at the stage level and then enable them for specific agents.
 
@@ -38,13 +38,13 @@ Before you configure agent guardrails, ensure that you have:
 
 * **AI agents**: At least one AI agent created in your organization. If you need to create agents first, refer to [Creating an agent](create-agent.md).
 
-## Configure stage-level guardrails
+## Configure baseline guardrails
 
-Stage-level configuration allows you to set safety standards appropriate for each environment in your development lifecycle. For example, you can choose strict blocking rules for **Production** while allowing logging-only rules in **Development**.
+Baseline configuration allows you to set safety standards appropriate for each stage in your development lifecycle. For example, you can choose strict blocking rules for **Production** while allowing logging-only rules in **Development**.
 
-To configure guardrails for a stage:
+To configure baseline guardrails for a stage:
 
-1. In the ODC Portal, navigate to **CONFIGURE** > **Agent guardrails**.
+1. In the ODC Portal, navigate to **Management** > **CONFIGURE** > **Agent guardrails**.
 
 1. Select the target stage: **Development**, **QA**, or **Production**.
 
@@ -58,23 +58,53 @@ To configure guardrails for a stage:
 
 1. Click **Save**.
 
+1. A confirmation popup appears, indicating that your changes are being applied to all agents of that stage. Click **Save** to proceed.
+
 1. Repeat these steps for other stages as needed.
 
-![Screenshot of the Agent guardrails configuration page in the ODC Portal, showing options for prompt attack detection, personal information exposure, and harmful content filtering.](images/config-stage-pl.png "Configuring Agent Guardrails in ODC Portal")
+![ODC Portal Management page showing the Agent guardrails screen for the Development stage, with prompt attack detection, personal information exposure, and harmful content filtering options highlighted and a Save button in the top-right corner.](images/config-stage-pl.png "Configure stage-level agent guardrails in the ODC Portal")
 
-## Enable agent-level guardrails
+## Agent-level guardrails
 
-Once stage policies are defined, you must enable them for your agents. You can toggle guardrails on or off for specific agents within each stage, allowing you to tailor protection based on the agent's risk profile.
+Agent-level guardrails have two different use cases:
 
-To configure guardrails for an agent:
+* **Override baseline guardrails policies**: If you have a baseline guardrails policy in place but want to enforce stricter rules for a specific agent, you can enable guardrails at the agent level.
+
+    For example, if you set a policy to "Log and continue" at the stage level, you can choose to "Block and raise exception" for a specific agent that handles sensitive data, while allowing other agents in the same stage to follow the more lenient policy.
+
+* **Enable guardrails without baseline policies**: If you haven't defined any baseline policies, you can enable guardrails directly on specific agents. This allows you to apply protections to high-risk agents without enforcing them across the entire stage.
+
+### Override baseline guardrails policies
+
+To configure guardrails for an agent that has baseline guardrails policies:
 
 1. In the ODC Portal, navigate to your target agent app.
 
 1. Select the stage (**Development**, **QA**, **Production**) where you want to modify settings.
 
-1. Locate the guardrails settings and toggle it to enable or disable.
+1. Under the **Agent elements** tab you can see the current inherited configuration for the guardrail. Click **Edit** to override the currently defined policies:
 
-![Screenshot of the ODC Portal showing the option to enable guardrails for an agent.](images/config-agent-pl.png "Enable Guardrails for an Agent")
+    ![Agent elements tab for an agent in the ODC Portal showing inherited guardrails with prompt attack detection and personal information exposure set to Log and continue, and an Edit button on the right.](images/override-guardrail-landing-pl.png "View inherited guardrails for an agent")
+
+1. Select the desired policy for each filter, and click Save to commit the change.
+
+    ![Agent elements tab in edit mode where prompt attack detection is set to Block request and raise exception instead of Log and continue, with a Save button highlighted on the right.](images/override-guardrail-edit-pl.png "Override stage-level guardrails for an agent")
+
+### Enable guardrails without baseline policies
+
+To configure guardrails for an agent without baseline policies:
+
+1. In the ODC Portal, navigate to your target agent app.
+
+1. Select the stage (**Development**, **QA**, **Production**) where you want to modify settings.
+
+1. Under the **Agent elements** tab you can see the current guardrails state for the agent, click **Edit** to enable or change the current guardrails for the agent:
+
+    ![Agent elements tab for an agent in the ODC Portal showing prompt attack detection, personal information exposure, and harmful content filtering all marked as Inactive, with an Edit button on the right.](images/agent-guardrail-landing-pl.png "Agent with guardrails disabled at the agent level")
+
+1. Click the toggle to enable the policy, select the desired policy for each filter, and click Save to commit the change
+
+    ![Agent elements tab in edit mode where the prompt attack detection toggle is enabled, Block request and raise exception is selected, and a Save button is highlighted while other guardrails remain disabled.](images/agent-guardrail-config-pl.png "Enable and configure guardrails for an agent without stage policies")
 
 ## Handling violations
 
@@ -99,7 +129,3 @@ To view guardrail logs:
 1. Filter for guardrail events to review specific violations or interventions.
 
 For more information about logs, refer to [Monitoring and troubleshooting apps](../../monitor-and-troubleshoot/monitor-apps.md#logs).
-
-## Known issues
-
-Guardrail logs currently don't display the name of the app that triggered the guardrail. In the **Asset** column of the log entry, the ODC Portal displays a placeholder image and no name.
