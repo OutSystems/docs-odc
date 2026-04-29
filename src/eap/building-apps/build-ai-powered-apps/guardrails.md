@@ -141,7 +141,7 @@ When the guardrail detects a violation, it performs one of the following actions
 
 You manage guardrails directly in the ODC Portal. To balance governance with flexibility, you configure guardrails at two levels:
 
-* **Baseline guardrails***: Sets the baseline safety standards (severity and enforcement) for each environment (Development, QA, Production). When you enable a stage-level policy, it applies to every agent in that stage.
+* **Baseline guardrails**: Sets the baseline safety standards (severity and enforcement) for each environment (Development, QA, Production). When you enable a stage-level policy, it applies to every agent in that stage.
 
 * **Agent level guardrails**: If there's no baseline guardrails defined, you can enable guardrails on a per-agent basis. This allows you to apply specific protections to high-risk agents without enforcing them across the board.
 
