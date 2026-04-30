@@ -1,5 +1,5 @@
 ---
-summary: Use prompts to request specific UI patterns and layouts that Mentor can generate or refine.
+summary: Mentor Web prompts for OutSystems Developer Cloud (ODC) apps covering UI patterns, data model changes, authorization, themes, and dashboards.
 tags:
   - Agentic
   - Authorization
@@ -17,7 +17,7 @@ outsystems-tools:
   - portal
   - mentor web
 coverage-type:
-  - understand
+  - remember
   - apply
 audience:
   - Developer
@@ -63,6 +63,16 @@ Mentor validates theme compatibility before applying it. For a theme to work wit
 
 * The theme must have the layout block property set in ODC Studio.
 * The layout must include these placeholders: Header, Breadcrumbs, Title, Actions, and MainContent.
+
+### Dark theme prompts
+
+Mentor Web generates a dark theme in two cases: when you request it explicitly, or when you request a primary color whose luminance pairs better with a dark background. In the second case, Mentor Web evaluates the color and selects the theme that meets WCAG contrast standards.
+
+Use the following prompts to request a dark theme:
+
+* **In your initial prompt**: Include "Use a dark theme." in the prompt that creates the app. Mentor Web only applies a dark theme when you request it in the initial prompt.
+* **In a requirement document**: Include a General app settings section with "Use a dark theme."
+* **Through a primary color that pairs with a dark theme**: Specify the primary color in your prompt or requirement document, for example, "Use cyan as the primary color."
 
 ## UI patterns cookbook
 
