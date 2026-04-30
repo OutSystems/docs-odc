@@ -19,6 +19,7 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+  - evaluate
 audience:
   - Developer
   - Front-end developer
@@ -53,7 +54,7 @@ Use these prompts to apply or change themes during the blueprint phase. Specify 
 
 * **Set a theme in your initial prompt**: Create an Inventory app using the "Mentor" theme available in the ODC tenant.
 * **Change the theme during blueprint review**: Change the theme to CorporateBrand.
-* **In a requirement document**: Include a General app settings section with `"Use the 'CorporateBrand' theme available in the ODC tenant."`
+* **In a requirement document**: Include a General app settings section with "Use the 'CorporateBrand' theme available in the ODC tenant."
 
 After generation, you can't change the theme through Mentor. To switch themes after generation, change it in ODC Studio.
 
@@ -117,8 +118,8 @@ Avoid when you need strong visual emphasis, image-first layouts, or card metapho
 
 Start with basic prompts and add details as needed:
 
-* Basic: List `Product` records in a table.
-* Detailed: List `Product` records in a table with columns: `Name`, `SKU`, `Stock`, `Price`.
+* Basic: List "Product" records in a table.
+* Detailed: List "Product" records in a table with columns: "Name", "SKU", "Stock", "Price".
 
 ### Card list
 
@@ -128,8 +129,8 @@ Use when you want to scan records as compact cards with a few key fields and tag
 
 #### Prompt progression
 
-* Basic: Show `Employee` records as a card list.
-* Detailed: Show `Employee` records as a card list with `Name`, `Department`, `Role`, and a colored tag for `Status`.
+* Basic: Show "Employee" records as a card list.
+* Detailed: Show "Employee" records as a card list with "Name", "Department", "Role", and a colored tag for "Status".
 
 ### Card gallery
 
@@ -139,8 +140,8 @@ Use when you have image or media-heavy datasets.
 
 #### Prompt progression
 
-* Basic: Show `Product` records as a card gallery with image and `Name`.
-* Detailed: Show `Product` records as a gallery with image, `Name`, a category tag, and `Price`.
+* Basic: Show "Product" records as a card gallery with image and "Name".
+* Detailed: Show "Product" records as a gallery with image, "Name", a category tag, and "Price".
 
 ### List with popup
 
@@ -150,8 +151,8 @@ The popup pattern displays edit and view screens within modal dialogs that overl
 
 #### Prompt progression
 
-* Basic: List `Task` records with popup for editing.
-* Detailed: List `Task` records in a table. Selecting a record opens a popup with `Title`, `DueDate`, `Priority`, and `Status` for editing.
+* Basic: List "Task" records with popup for editing.
+* Detailed: List "Task" records in a table. Selecting a record opens a popup with "Title", "DueDate", "Priority", and "Status" for editing.
 
 ## Dashboard patterns
 
@@ -168,8 +169,8 @@ Dashboards support counters, charts (bar, line, pie, donut), and lists. Use aggr
 #### Prompt progression
 
 * Basic: Create a dashboard with total orders counter.
-* Better: Create a dashboard with a counter for total orders (Count), a vertical bar chart for sales by month (Sum of `OrderValue`), and recent orders list.
-* Advanced: Add a pie chart showing order distribution by category (Count of `Order` grouped by `Category`).
+* Better: Create a dashboard with a counter for total orders (Count), a vertical bar chart for sales by month (Sum of "OrderValue"), and recent orders list.
+* Advanced: Add a pie chart showing order distribution by category (Count of "Order" grouped by "Category").
 
 ## Master detail and in-place detail patterns
 
@@ -183,8 +184,8 @@ Use when browsing records and viewing details without leaving the list. When usi
 
 #### Prompt progression
 
-* Basic: Use a master detail layout for `Customer` records.
-* Detailed: Master detail for `Customer` records with list on the left (`Name`, `Segment`) and right panel tabs: Profile, Orders, Notes.
+* Basic: Use a master detail layout for "Customer" records.
+* Detailed: Master detail for "Customer" records with list on the left ("Name", "Segment") and right panel tabs: Profile, Orders, Notes.
 
 ### Card list with detail in sidebar
 
@@ -194,8 +195,8 @@ Use when you need frequent detail editing and the list context must remain.
 
 #### Prompt progression
 
-* Basic: Card list with detail in a sidebar for `Project` records.
-* Detailed: Card list (`Name`, `Owner`, `Status` tag). Selecting a card opens a sidebar with `Description` and `DueDate`.
+* Basic: Card list with detail in a sidebar for "Project" records.
+* Detailed: Card list ("Name", "Owner", "Status" tag). Selecting a card opens a sidebar with "Description" and "DueDate".
 
 ### Card list with detail on accordion
 
@@ -204,8 +205,8 @@ Avoid when you have more than 5 detail fields or need multiple sections open sim
 
 #### Prompt progression
 
-* Basic: Card list with detail on accordion for `Order` records.
-* Detailed: Card list with detail on accordion for `Order` records (`OrderNumber`, `Customer`, `Status` tag). Expanding shows `OrderDate`, `TotalAmount`, `ShippingAddress`, `Notes`.
+* Basic: Card list with detail on accordion for "Order" records.
+* Detailed: Card list with detail on accordion for "Order" records ("OrderNumber", "Customer", "Status" tag). Expanding shows "OrderDate", "TotalAmount", "ShippingAddress", "Notes".
 
 ## Spatial patterns
 
@@ -219,8 +220,8 @@ Use when location information supports decision making.
 
 #### Prompt progression
 
-* Basic: Card list with map for `FieldWorkOrder` records.
-* Detailed: Card list with map for `WorkOrder` records (`Title`, `AssignedUser`, `Status` tag, `Address`). Map uses markers at `Address`.
+* Basic: Card list with map for "FieldWorkOrder" records.
+* Detailed: Card list with map for "WorkOrder" records ("Title", "AssignedUser", "Status" tag, "Address"). Map uses markers at "Address".
 
 ## Multi-pattern scenarios
 
@@ -228,17 +229,17 @@ Combine multiple patterns in a single prompt to create complete app experiences.
 
 ### Asset tracking scenario
 
-Initial prompt: Create an Asset Tracking app with a dashboard (total assets, assets needing maintenance), a card list with map for `Asset` records, and side menu.
+Initial prompt: Create an Asset Tracking app with a dashboard (total assets, assets needing maintenance), a card list with map for "Asset" records, and side menu.
 
 ### Customer management scenario
 
-Initial prompt: Create a master detail layout for `Customer` records with tabs Profile, Orders, Tickets. Include a dashboard with total customers and open tickets.
+Initial prompt: Create a master detail layout for "Customer" records with tabs Profile, Orders, Tickets. Include a dashboard with total customers and open tickets.
 
 ## Refinement strategies
 
 Use these approaches to adjust patterns or add functionality without starting over.
 
-If you chose the wrong pattern, request a replacement: Change the current layout to a master detail layout for `Customer` records.
+If you chose the wrong pattern, request a replacement: Change the current layout to a master detail layout for "Customer" records.
 
 Mentor suggestions support add operations. To modify existing elements, rephrase changes as additions. Note: Filters, sorting controls, and search inputs require manual configuration. The navigation layout (horizontal or side) applies to your entire app.
 
