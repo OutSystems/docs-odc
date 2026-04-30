@@ -1,6 +1,13 @@
 ---
-summary: OutSystems Developer Cloud (ODC) facilitates the sharing of reusable elements across applications, enhancing development efficiency and consistency.
-tags: outsystems libraries,code reusability,app lifecycle management
+summary: OutSystems Developer Cloud (ODC) public elements enable code reuse across apps through producer-consumer strong and weak dependencies.
+tags:
+  - Blocks
+  - Entities
+  - Events
+  - Libraries
+  - Modular Programming
+  - Roles
+  - Screens
 locale: en-us
 guid: 7e20ed99-3098-4d7c-b7fd-1a5794f8377d
 app_type: mobile apps,reactive web apps
@@ -8,7 +15,6 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 platform-version: odc
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -18,6 +24,7 @@ coverage-type:
 topic:
   - dependencies
 helpids: 30644
+isautopublish: true
 ---
 
 # Reuse elements across apps
@@ -69,7 +76,7 @@ The following table lists elements that can be made public in at least one asset
 
 In addition to the element types detailed in the table, other components can also become public for reuse:
 
-* **Data fabric connections**: When you define or select entities and actions within a data fabric connection, they automatically become public elements. This allows you to reuse them in other assets such as web and mobile apps.
+* **Data Fabric connections**: When you define or select entities and actions within a Data Fabric connection, they automatically become public elements. This allows you to reuse them in other assets such as web and mobile apps.
 
 * **AI models**: You can consume actions exposed by AI models as public elements, enabling their integration into various apps.
 
