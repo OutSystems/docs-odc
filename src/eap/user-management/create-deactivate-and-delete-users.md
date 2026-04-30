@@ -1,13 +1,16 @@
 ---
 guid: 32f57458-d846-40e5-bef8-154c0bca4e41
 locale: en-us
-summary: Learn how to create, deactivate, and delete users in the system.
+summary: "OutSystems Developer Cloud (ODC) user management: create, deactivate, activate, and delete members and end-users in the ODC Portal."
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3704-89
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - Platform administrator
-tags: user management,create user,deactivate user,delete user,user roles
+tags:
+  - End-users
+  - IT Users
+  - Roles
 outsystems-tools:
   - odc portal
 coverage-type:
@@ -176,7 +179,7 @@ Use the [user and access management API](../reference/apis/identity-v1.md) to ad
 
 ### Enable built-in authentication for an external IdP user {#enable-built-in-authentication}
 
-Use this procedure when a user was created only after logging in with an external IdP and needs to log in with built-in authentication. For example, this applies if the external IdP isn’t assigned to the organization.
+Use this procedure when a user was created only after logging in with an external IdP and needs to log in with built-in authentication too. For example, this applies if the external IdP isn’t assigned to the organization.
 
 To enable built-in authentication for an existing user, follow these steps:
 
