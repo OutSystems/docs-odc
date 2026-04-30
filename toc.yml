@@ -993,6 +993,20 @@
         - href: error/intc/os-intc-60006.md
         - href: error/intc/os-dfqe-40004.md  
         - href: error/intc/os-intc-api-50002.md
+    # Errors Mentor Studio
+    - href: error/aisa/mentor-studio-errors.md
+    - topics:
+        - href: error/aisa/os-aisa-40001.md
+        - href: error/aisa/os-aisa-40002.md
+        - href: error/aisa/os-aisa-40005.md
+        - href: error/aisa/os-aisa-42901.md
+        - href: error/aisa/os-aisa-42902.md
+        - href: error/aisa/os-aisa-42903.md
+        - href: error/aisa/os-aisa-49901.md
+        - href: error/aisa/os-aisa-50001.md
+        - href: error/aisa/os-aisa-50002.md
+        - href: error/aisa/os-aisa-50003.md
+        - href: error/aisa/os-aisa-50301.md
     # Errors App and Library dependency errors
     - href: error/aldi/intro.md
     - topics:

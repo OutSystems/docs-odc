@@ -1,6 +1,12 @@
 ---
 summary: Agentic development has constraints for both app generation in Mentor Web and app modification in Mentor Studio.
-tags: agentic development, limitations, app generation
+tags:
+  - Agentic
+  - AI
+  - Mentor
+  - Mentor Studio
+  - Mentor Web
+  - Troubleshooting
 guid: 53247733-479b-4853-90a8-dd366ce0fba3
 locale: en-us
 app_type: reactive web apps
@@ -101,4 +107,5 @@ These limitations reflect the current state of AI-assisted development and will 
 
 * For what Mentor Web generates, including supported UI patterns and dashboard types, refer to [Capabilities and patterns for Mentor Web](mentor-web/capabilities.md).
 * For what Mentor Studio generates and modifies within existing apps, refer to [Capabilities and patterns for Mentor Studio](mentor-studio/capabilities.md).
+* For Mentor Studio error codes and recommended actions, refer to [Mentor Studio errors](../../error/aisa/mentor-studio-errors.md).
 * For an overview of both tools and guidance on when to use each, refer to [Introduction to agentic development](intro.md).
