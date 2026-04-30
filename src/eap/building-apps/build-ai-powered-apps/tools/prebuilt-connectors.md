@@ -17,6 +17,7 @@ audience:
 outsystems-tools:
   - odc portal
   - odc studio
+isautopublish: true
 ---
 
 # Prebuilt connectors
@@ -39,9 +40,11 @@ In ODC Portal, go to **Integrate > Connections** and create a connection. Select
 
 Select **Import** and choose only the tools (server actions) you need. Optionally rename them. Imported tools appear in ODC Studio as server actions.
 
+ODC validates each tool's JSON schema during import. A tool imports as a server action when its inputs are supported. Output fields ODC can type arrive as typed values. Other output fields are typed as text and carry a JSON-formatted string at runtime. Refer to [Unsupported structures](unsupported-structures.md) for the patterns and how to fix them.
+
 ## Use tools in apps and agents
 
-Add the imported tools as dependencies in ODC Studio. Invoke them in server logic or in an agent’s **Call Agent** element. Map required inputs (such as query text) and implement error handling—for example, invalid or expired key, empty results, or rate limit exceeded.
+Add the imported tools as dependencies in ODC Studio. Invoke them in server logic or in an agent’s **Call Agent** element. Map required inputs (such as query text) and implement error handling. Common cases include invalid or expired key, empty results, or rate limit exceeded.
 
 ## Related topics
 

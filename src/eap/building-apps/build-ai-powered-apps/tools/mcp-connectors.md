@@ -17,6 +17,7 @@ audience:
 outsystems-tools:
   - odc portal
   - odc studio
+isautopublish: true
 ---
 
 # Use MCP servers
@@ -43,7 +44,7 @@ In the MCP domain, a capability is a "tool". When you import an MCP tool through
 
 ## Transport types
 
-MCP servers communicate using one of two transport protocols. The transport type determines how ODC Portal exchanges messages with the server—either through discrete HTTP calls or a persistent event stream.
+MCP servers communicate using one of two transport protocols. The transport type determines how ODC Portal exchanges messages with the server, either through discrete HTTP calls or a persistent event stream.
 
 | Transport type | URL suffix | Description |
 | --- | --- | --- |
@@ -93,6 +94,8 @@ If your MCP server is on a private network:
 Select **Import** in the connection list to bring tools (server actions) into ODC. Select only the tools you need. Optionally rename them. They then appear in ODC Studio as server actions.
 
 ![ODC Portal interface showing the selection of actions from an MCP example connection.](images/mcp-import-actions-pl.png "Importing MCP tools in Portal")
+
+ODC validates each tool's JSON schema during import. A tool imports as a server action when its inputs are supported. Output fields ODC can type arrive as typed values. Other output fields are typed as text and carry a JSON-formatted string at runtime. Refer to [Unsupported structures](unsupported-structures.md) for the patterns and how to fix them.
 
 ### Add dependencies
 

@@ -10,8 +10,7 @@
       "Read(//c/Users/U004669/.acli/**)",
       "Bash(env)",
       "Read(//c/Users/U004669/**)",
-      "Bash(acli --help)",
-      "Bash(powershell.exe -Command ':*)"
+      "Bash(acli --help)"
     ]
   }
 }

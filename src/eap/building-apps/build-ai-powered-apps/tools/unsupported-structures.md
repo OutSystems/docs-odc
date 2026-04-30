@@ -1,6 +1,6 @@
 ---
 guid: debf6461-bb1c-45cb-9335-c2d8111dc937
-summary: Unsupported MCP actions in OutSystems Developer Cloud (ODC) occur due to complex data structures; fix by simplifying schemas on the external MCP Server.
+summary: Unsupported MCP actions in OutSystems Developer Cloud (ODC) occur due to complex input data structures; fix by simplifying schemas on the external MCP Server.
 locale: en-us
 figma:
 tags: mcp servers,ai agents,external tools,enterprise integration
@@ -17,162 +17,161 @@ audience:
 outsystems-tools:
   - odc portal
   - odc studio
+isautopublish: true
 ---
 
 # Unsupported MCP data structures
 
-Some actions from an external MCP server may be disabled in any ODC app, not just agentic apps, because their underlying data structures are too complex for ODC to handle. This is a built-in safety feature to prevent errors. The fix requires simplifying the action's schema on the external MCP server itself.
+ODC supports a wide range of data structures from external MCP server actions. ODC imports an action when all its inputs are supported. For outputs, ODC supports nearly all structures. Fields it can type arrive as typed values. Other fields are typed as text and carry a JSON-formatted string at runtime. Deserialize the field to read its nested values.
 
-## Why you can't import an action or find a specific parameter
+## How ODC handles imported actions
 
-The ODC Portal automatically checks the JSON schema of every action you try to import. If an action's inputs or outputs use a data structure that is too complex, ODC marks it as unsupported and disables it to ensure your application remains stable.
+ODC validates the JSON schema of every action during import. An action imports as a server action when its input structures are supported. Actions with unsupported output patterns also import, with the affected output fields typed as text. At runtime, those fields carry a JSON-formatted string.
 
-Depending on the pattern, the action can be completely disabled or a parameter or field can be omitted from the action's signature instead. The following sections explain the patterns and results.
+The following sections describe how unsupported input patterns affect import. Some patterns make the entire action unavailable. Others cause specific input parameters or fields to be omitted from the action's signature.
 
-## Unsupported data structures that lead to disabled actions
+## Unsupported input patterns that make an action unavailable
 
-If a field within a parameter is unsupported, the parent parameter is automatically flagged as unsupported. This flag immediately causes the entire action to be marked as unsupported.
+If a field within an input parameter is unsupported, the parent parameter is flagged as unsupported, which makes the entire action unavailable. The patterns below trigger this behavior only when they appear in inputs.
 
-If any part of an action uses one of the patterns below, the entire action is disabled:
+### Multi-type anyOf, oneOf, allOf
 
-* **anyOf**, **oneOf** or **allOf** with more than one type (unless one is **null**).
-* An array of types like `["string", "number"]` with more than one item (unless one is `null`).
-* Array without an `items` schema.
+The action is unavailable when `anyOf`, `oneOf`, or `allOf` lists more than one type, unless one of the types is `null`.
 
-Example:
+### Array of multiple types
 
+The action is unavailable when a parameter declares an array of types like `["string", "number"]` with more than one item, unless one is `null`.
+
+### Array without an items schema
+
+The action is unavailable when an array doesn't define `items`.
+
+```json
+{
+  "type": "array",
+  "prefixItems": [
+    { "type": "string" }
+  ]
+}
 ```
+
+### Array of arrays
+
+The action is unavailable when an array contains arrays.
+
+```json
+{
+  "type": "array",
+  "items": [
     {
       "type": "array",
-      "prefixItems": [
-        { "type": "string" }
-      ]
+      "items": { "type": "string" }
     }
+  ]
+}
 ```
 
-* Array of arrays.
+### External references
 
-Example:
+The action is unavailable when a `$ref` points to a schema not included in the input schema.
 
-```
-    {
-      "type": "array",
-      "items": [
-        {
-          "type": "array",
-          "items": { "type": "string" }
-        }
-      ]
-    }
+```json
+{
+  "ReferenceToExternalSchema": {
+    "$ref": "otherFile.json#/definitions/ExternalType"
+  }
+}
 ```
 
-* References that aren't included in the input/output schema.
+### Object without properties
 
-Example:
-
-```
-    {
-      "ReferenceToExternalSchema": {
-        "$ref": "otherFile.json#/definitions/ExternalType"
-      }
-    }
-```
-
-* An object without `properties`.
+The action is unavailable when an object schema has no typed properties. This happens directly, when only `additionalProperties` is defined, or indirectly, when every property is recursive and gets omitted.
 
 Example where only `additionalProperties` is defined:
 
-  ```
-    {
-      "type": "object",
-      "additionalProperties": {
-        ...
-      }
+```json
+{
+  "type": "object",
+  "additionalProperties": {
+    ...
+  }
+}
+```
+
+Example where the only typed property is recursive, leaving the object without properties:
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$dynamicAnchor": "node",
+  "type": "object",
+  "properties": {
+    "nextNode": {
+        "$dynamicRef": "#node"
     }
-  ```
+  }
+}
+```
 
-Example where the only property is recursive (recursive properties are omitted)
+## Unsupported input patterns that omit parameters or fields
 
-  ```
-    {
-      "$schema": "https://json-schema.org/draft/2020-12/schema",
-      "$dynamicAnchor": "node",
-      "type": "object",
-      "properties": {
-        "nextNode": {
-            "$dynamicRef": "#node"
-        }
-      }
-    }
-  ```
+If an input parameter or field uses a recursive reference, ODC omits it from the action's signature and imports the rest of the action.
 
-## Unsupported data structures that lead to omitted parameters or fields
+### Recursive ref
 
-If an action's inputs or outputs contain a recursive parameter or field, ODC omits them from the action's signature to ensure your app remains stable.
-
-* Properties that create recursive references are omitted.
+Properties that reference themselves through `$ref` are omitted.
 
 Example where `children` is omitted:
 
-  ```
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "person": {
-          "$ref": "#/$defs/PersonType"
-          }
-      },
-      "$defs": {
-        "PersonType": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "age": {
-              "type": "number"
-            },
-            "children": {
-              "type": "array",
-              "items": {
-                "$ref": "#/$defs/PersonType"
-              }
-            },
-          }
-        }
-      }
+```json
+"inputSchema": {
+  "type": "object",
+  "properties": {
+    "person": {
+      "$ref": "#/$defs/PersonType"
     }
-  ```
-
-* Properties with dynamic references `$dynamicRef` or the older `$recursiveRef` are omitted.
-
-Example where `children` is omitted:
-
-  ```
-    {
-      "$schema": "https://json-schema.org/draft/2020-12/schema",
-      "$dynamicAnchor": "node",
+  },
+  "$defs": {
+    "PersonType": {
       "type": "object",
       "properties": {
-        "name": {
-          "type": "string"
-        },
-        "age": {
-          "type": "number"
-        },
+        "name": { "type": "string" },
+        "age": { "type": "number" },
         "children": {
           "type": "array",
-          "items": {
-            "$dynamicRef": "#node"
-          }
+          "items": { "$ref": "#/$defs/PersonType" }
         }
       }
     }
-  ```
+  }
+}
+```
 
-## How to fix a disabled action or omitted parameters and fields
+### Dynamic references
 
-You can't enable an unsupported action from within ODC. To enable the action, you must make the necessary data structure changes on the external MCP Server, where it is defined as a **tool**. To successfully fix these issues, you must have direct control and modification access to the external MCP Server.
+Properties using `$dynamicRef` or the older `$recursiveRef` are omitted.
+
+Example where `children` is omitted:
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$dynamicAnchor": "node",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "age": { "type": "number" },
+    "children": {
+      "type": "array",
+      "items": { "$dynamicRef": "#node" }
+    }
+  }
+}
+```
+
+## How to make an unavailable action available
+
+To make an unavailable action available, change the data structures on the external MCP server, where the action is defined as a **tool**. You need direct control and modification access to the external MCP server to apply these fixes.
 
 ### Option 1: Simplify the original tool
 
@@ -180,4 +179,4 @@ The best solution is to refactor the tool to use simpler data structures. For ex
 
 ### Option 2: Create a wrapper tool
 
-If you can't change the original tool, create a wrapper tool on the MCP Server. This new tool acts as a middleman. It calls the complex tool in the background but uses a simplified set of inputs and outputs that are compatible with ODC.
+If you can't change the original tool, create a wrapper tool on the MCP Server. This new tool acts as a middleman. It calls the complex tool in the background but uses a simplified set of inputs that are compatible with ODC.

@@ -5,15 +5,20 @@ summary: Create AI agents in OutSystems Developer Cloud (ODC) using function cal
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8940-10&p=f&t=3HWJrxoEM8IMLFsU-0
 coverage-type:
   - understand
+  - apply
 topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: ai agents, function calling, agentcore, action calling, outsystems developer cloud
+tags:
+  - Agentic
+  - AI
+  - Logic
 outsystems-tools:
   - odc studio
 helpids:
+isautopublish: true
 ---
 # AI agent actions
 
@@ -62,6 +67,8 @@ The AI model's ability to choose the correct action depends entirely on the text
 * **Parameter descriptions**: Explain what each input and output represents and provide context on expected values or formats.
 
 The more detailed and clear your descriptions are, the better the model’s reasoning is, leading to more accurate action calls.
+
+For an MCP tool's output, ODC delivers each field as a typed value when it can. Fields it can't type arrive as text containing a JSON-formatted string. Deserialize those fields to access nested values, and account for this in your output descriptions. Refer to [Unsupported structures](tools/unsupported-structures.md).
 
 #### Guide the call condition
 
