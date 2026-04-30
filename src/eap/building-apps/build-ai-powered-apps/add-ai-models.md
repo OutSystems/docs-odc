@@ -55,13 +55,13 @@ Trial models have limits, which, when reached, prevent the further use of the mo
 
 The following tables shows the current limits of the available Trial Models.
 
-#### GPT-4o
+#### GPT-5
 
 | Context | Maximum number of Requests | Requests rate limit | Maximum number of Tokens | Tokens Rate limit |
 | -- | -- | -- | -- | -- |
 | Licensed Customers | 100 | N.A. | N.A. | N.A. |
 
-#### Claude 3.7 Sonnet
+#### Claude Haiku 4.5
 
 | Context | Maximum number of Requests | Requests rate limit | Maximum number of Tokens | Tokens Rate limit |
 | -- | -- | -- | -- | -- |
@@ -101,7 +101,7 @@ Follow these steps to add an AI model connection or an ODC trial model in the OD
 
     * **Provider tab**: Select this tab to configure your own AI model from a supported provider or a custom connection.
 
-    * **Trial tab**: Select this tab to add a ready-to-use ODC trial model, for example, GPT or Claude Sonnet.
+    * **Trial tab**: Select this tab to add a ready-to-use ODC trial model, for example, GPT-5 or Claude Haiku 4.5.
 
 1. **For Provider tab**: Select your desired provider from the available options and click **Confirm** to proceed to the configuration details.
 

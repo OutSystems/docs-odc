@@ -38,7 +38,7 @@ Beyond native support for Azure OpenAI and Amazon Bedrock, ODC allows you to con
 
 When building your connector service, implement a supported authentication scheme and ensure its endpoint is accessible to ODC, potentially using a private gateway for non-public endpoints. The connector must process requests and format responses, including handling standard parameters like messages and temperature, according to the OutSystems API contract details. Your service should also return standard HTTP status codes for errors. Once your connector service is deployed and accessible, add it to the ODC Portal by selecting **Custom connection** as the provider type during the **Add AI model** process and entering your connector's URL and authentication details.
 
-![Screenshot of the 'Add AI model' interface in ODC Portal, showing options for Amazon Bedrock, Azure OpenAI, Custom connection, and trial models like GPT-4o and Claude 3.7 Sonnet.](images/custom-connection-pl.png "Add AI Model - Custom Connection")
+![Screenshot of the 'Add AI model' interface in ODC Portal, showing options for Amazon Bedrock, Azure OpenAI, Custom connection, and trial models like GPT-5 and Claude Haiku 4.5.](images/custom-connection-pl.png "Add AI Model - Custom Connection")
 
 For more information, download and inspect the [Swagger file](resources/swagger.json). Note that property names should use camelCase.
 
