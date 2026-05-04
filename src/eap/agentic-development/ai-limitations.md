@@ -1,12 +1,11 @@
 ---
-summary: Agentic development has constraints for both app generation in Mentor Web and app modification in Mentor Studio.
+summary: OutSystems Developer Cloud (ODC) Mentor Web and Mentor Studio limitations, covering session persistence, blueprint phases, and editor restrictions.
 tags:
   - Agentic
   - AI
   - Mentor
   - Mentor Studio
   - Mentor Web
-  - Troubleshooting
 guid: 53247733-479b-4853-90a8-dd366ce0fba3
 locale: en-us
 app_type: reactive web apps
@@ -19,10 +18,9 @@ outsystems-tools:
   - mentor studio
 coverage-type:
   - remember
-  - understand
 audience:
-  - Front-end developer
   - Developer
+  - Front-end developer
 topic:
   - creating-apps
 isautopublish: true
@@ -65,12 +63,6 @@ To discover available changes at any point, ask Mentor Web "What can I change th
 ## Development in ODC Studio (Mentor Studio)
 
 The following limitations apply when modifying existing apps through Mentor Studio.
-
-### Supported asset types
-
-Mentor Studio supports a subset of OutSystems asset types.
-
-* **Web apps only.** Mentor Studio supports web apps only. Build libraries, services, and mobile apps manually in ODC Studio.
 
 ### Scope of operations
 

@@ -1,6 +1,13 @@
 ---
-summary: Agentic development is the product capability at the center of OutSystems Agentic Systems Engineering. It uses AI to create and modify apps through Mentor Web and Mentor Studio.
-tags: agentic development, agentic systems engineering, app generation, code generation
+summary: Agentic development in OutSystems Developer Cloud (ODC) uses AI to create and modify apps through Mentor Web and Mentor Studio.
+tags:
+  - Agentic
+  - AI
+  - Development lifecycle
+  - Mentor
+  - Mentor Studio
+  - Mentor Web
+  - Security
 guid: 7681329f-0fe1-47ea-9d99-911eddfac02b
 locale: en-us
 app_type: reactive web apps
@@ -13,8 +20,8 @@ outsystems-tools:
   - mentor studio
 coverage-type:
   - understand
+  - evaluate
 audience:
-  - Front-end developer
   - Developer
 topic:
   - creating-apps
@@ -93,12 +100,12 @@ Agentic development supports different phases of the software development lifecy
 
 ## When to use each tool
 
-Agentic development provides two tools for different stages of development. **Mentor Web** creates new apps and iterates on them through natural language in ODC Portal, targeting straightforward to moderate projects. **Mentor Studio** modifies apps of any complexity through conversation in the full development environment. Both tools follow OutSystems patterns for security, architecture, and code quality.
+Agentic development provides two tools for different stages of development. **Mentor Web** creates new apps and iterates on them through natural language in ODC Portal, targeting straightforward to moderate projects. **Mentor Studio** modifies apps of any complexity through conversation in the full development environment, including agents in Agent Workbench. Both tools follow OutSystems patterns for security, architecture, and code quality.
 
 | Aspect | Mentor Web | Mentor Studio |
 | ------ | ---------- | ------------- |
 | Best for | Creating new apps, rapid prototyping, iterating on generated apps | Modifying apps, adding features, extending logic, explaining code, documenting elements, identifying technical debt |
-| App type | New and existing web apps | Any existing web app |
+| App type | New and existing web apps | Web apps; libraries and agentic apps (beta) |
 | Complexity | Common app patterns and structures | Any, including advanced logic and integrations |
 | Access | **ODC Portal** > **Apps** > **Create app** > **Generate with Mentor** | **ODC Studio** > **Mentor** icon in toolbar |
 | Tutorial | [Create an app with AI](mentor-web/create-app.md) | [Modify an app with AI](mentor-studio/modify-app.md) |
@@ -124,7 +131,7 @@ What requires manual development:
 * Complex business logic and multi-step workflows
 * External system integrations (REST APIs, custom connectors)
 * Custom CSS, JavaScript, or advanced UI customization
-* Mobile apps and libraries
+* Mobile apps
 * Performance optimization and advanced queries
 
 For the complete list of constraints, refer to [Known limitations](ai-limitations.md).

@@ -7,7 +7,7 @@ tags:
   - Logic
   - Mentor
   - Mentor Studio
-  - UI
+  - Screens
 guid: 27f4f846-5c2d-44fd-b9a2-99f5d2770cb2
 locale: en-us
 app_type: reactive web apps
@@ -21,6 +21,7 @@ outsystems-tools:
   - mentor studio
 coverage-type:
   - understand
+  - apply
 audience:
   - Developer
 isautopublish: true
@@ -76,22 +77,11 @@ Mentor uses AI agents to process requests. When you describe a goal, Mentor anal
 
 ## Capabilities
 
-Mentor generates and modifies elements across these categories:
-
-* **Logic:** server actions, client actions, service actions, aggregates, and SQL nodes.
-* **UI:** screens, web blocks, and emails.
-* **Data:** entities, attributes, and relationships.
-* **Other:** timers and events.
-
-Mentor also analyzes existing code:
-
-* **Code analysis:** explains existing logic, suggests implementation approaches, and identifies areas for improvement.
-
-For detailed capabilities and use cases, refer to [Capabilities and patterns for Mentor Studio](capabilities.md).
+Mentor edits the elements the open asset supports and analyzes existing code to explain logic, suggest implementation approaches, and identify areas for improvement. For the full list of supported tasks and asset coverage, refer to [Capabilities and patterns for Mentor Studio](capabilities.md).
 
 <div class="info" markdown="1">
 
-Mentor operates on web apps only. For libraries, services, and mobile apps, build them manually in ODC Studio.
+Mentor Studio edits web apps in general availability. Library and agentic app editing is in beta and requires opt-in. Build mobile apps manually in ODC Studio. To enable the beta, refer to [Element coverage](capabilities.md#element-coverage).
 
 </div>
 
@@ -99,7 +89,7 @@ For real-time suggestions while building logic flows manually, [AI logic suggest
 
 ## Constraints
 
-Mentor Studio works with web apps and modifies logic, UI, and data through conversation. For constraints and current limitations, refer to [Known limitations](../ai-limitations.md).
+Mentor Studio edits web apps, libraries, and agentic apps through conversation. The elements available in each conversation depend on the asset type. For constraints and current limitations, refer to [Known limitations](../ai-limitations.md).
 
 ## Best practices
 
