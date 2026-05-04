@@ -32,13 +32,17 @@ This cookbook provides prompt examples for UI patterns, data model changes, and 
 
 ## Data model prompts
 
-Use these prompts to manage entities and attributes:
+Use these prompts to manage entities, attributes, and static entity records:
 
 * **Add entity**: Add entity "TicketStatus" to my app data
 * **Add external entity**: Add entity "Customer" from the "Customers" Salesforce connection
 * **Delete entity**: Delete the entity "TicketComment"
 * **Add attribute**: Add attribute "priority" to my "SupportTickets" entity
 * **Delete attribute**: Delete the attribute "priority"
+* **Add static entity record**: Add a record "Completed" to the "OrderStatus" static entity
+* **Delete static entity record**: Delete the "Pending" record from the "OrderStatus" static entity
+
+Deleting a static entity record also removes dashboard counters and filters that reference the deleted value. For details, refer to [Refinement capabilities](capabilities.md#refinement-capabilities).
 
 ## Authorization prompts
 
