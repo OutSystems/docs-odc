@@ -1,6 +1,8 @@
 ---
-summary: Manage and reschedule updates for the OutSystems Developer Cloud (ODC) infrastructure using the ODC Portal, ensuring flexibility and preparation for infrastructure managers.
-tags: infrastructure management, platform updates, scheduling updates, odc portal, outsystems developer cloud
+summary: "OutSystems Developer Cloud (ODC) infrastructure updates: reschedule updates by stage and track lifecycle states in the ODC Portal."
+tags:
+  - Infrastructure
+  - Lifecycle
 guid: b34fef09-2fa8-4b16-ad5c-b7d032d7032f
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -15,6 +17,7 @@ audience:
   - Platform administrator
 topic:
 helpids: 30745
+isautopublish: true
 ---
 # Managing platform infrastructure updates
 
@@ -79,3 +82,5 @@ Updates have a life cycle and within that life cycle the process goes through se
 1. Always make sure to check the documentation page for the update to check for breaking changes and guidance on what to do in case of any.
 
 1. It's recommended that you do the update on dev first, test the update and then do the remainder stages. This is especially important if the update introduces breaking changes.
+
+1. The users with the `UpdatesManage` claim that appear in the portal as **Manage platform updates** receive the email notifications for the platform updates.
