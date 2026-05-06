@@ -127,7 +127,7 @@ Operational and security considerations are crucial when implementing a CSP. A p
 
 * **Directive length limit:** Each stage can have a maximum of 1500 characters for all directive values combined.
 
-* **Configuration propagation time**: After you configure or update a CSP, changes may not apply to your apps immediately. For cloud-hosted stages, new settings take up to 24 hours to take effect. For self-hosted stages, the time depends on your CDN cache settings.New settings take effect once the cache clears.
+* **Configuration propagation time**: After you configure or update a CSP, changes may not apply to your apps immediately. For cloud-hosted stages, new settings take up to 24 hours to take effect. For self-hosted stages, the time depends on your CDN cache settings. New settings take effect once the cache clears.
 
 ## Related resources
 
