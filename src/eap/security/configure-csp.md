@@ -1,11 +1,16 @@
 ---
 summary: Enhance app security on OutSystems Developer Cloud (ODC) with Content Security Policy (CSP) to prevent XSS attacks and block unapproved resources.
-tags: web security, content security policy, csp, mobile apps, odc
+tags:
+  - iOS
+  - Mobile app
+  - Native App
+  - Security
+  - Web
 guid: fb46979d-73a3-43ad-9c85-a6b96381c2a6
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
 audience:
   - Developer
   - Front-end developer
@@ -14,17 +19,17 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
-  - apply
+isautopublish: true
 ---
 # Content security policy
 
 <div class="info" markdown="1">
 
-CSP applies to all web and PWA apps. For mobile apps, CSP is enforced only in apps built with MABS 12 (released on February 13th, 2026) or later MABS version.
+CSP applies to all web and PWA apps. For mobile apps, CSP is enforced only in apps built with MABS 12 (released on February 13, 2026) or a later MABS version.
 
 </div>
 
-A content security policy (CSP) is a web security standard that helps protect your web, mobile, and progressive web apps (PWA) apps from various security threats, such as malicious code execution or the loading of untrusted content. By controlling which content sources browsers can load, CSP shields your app from malicious scripts, unapproved resources, and other security threats, ensuring its integrity and safety.
+A content security policy (CSP) is a web security standard that helps protect your web, mobile, and progressive web apps (PWA) from various security threats, such as malicious code execution or the loading of untrusted content. By controlling which content sources browsers can load, CSP shields your app from malicious scripts, unapproved resources, and other security threats, ensuring its integrity and safety.
 
 The benefits of a CSP include:
 
@@ -61,7 +66,7 @@ iOS native mobile apps have unique CSP requirements due to how iOS handles conte
 iOS loads content in native mobile apps using the `outsystems://` protocol instead of the standard `https://` protocol. This creates a CSP validation issue:
 
 Without the `https://` protocol, iOS attempts to match `outsystems://*.amazonaws.com` which
-does not match your intended resource: `https://*.amazonaws.com`. Therefore CSP blocks the resource, causing failures.
+does not match your intended resource: `https://*.amazonaws.com`. Therefore, CSP blocks the resource, causing failures.
 
 With the `https://` protocol, CSP allows `https://*.amazonaws.com` and iOS correctly translates this for validation. Therefore, the resources load successfully
 
@@ -121,6 +126,8 @@ Operational and security considerations are crucial when implementing a CSP. A p
 * **Protocol requirement:** Always use explicit `https://` protocols in all CSP directive domains to ensure your apps work correctly across iOS and Android.
 
 * **Directive length limit:** Each stage can have a maximum of 1500 characters for all directive values combined.
+
+* **Configuration propagation time**: After you configure or update a CSP, changes may not apply to your apps immediately. For cloud-hosted stages, new settings take up to 24 hours to take effect. For self-hosted stages, the time depends on your CDN cache settings.New settings take effect once the cache clears.
 
 ## Related resources
 
