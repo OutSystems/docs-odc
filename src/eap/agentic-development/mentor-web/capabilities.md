@@ -99,7 +99,7 @@ The editor displays generated screens alongside the data model and roles, giving
 Mentor Web offers the following additional capabilities for refining apps in the editor.
 
 * **WYSIWYG refinement**. Preview screens and data models immediately with automatic validation. Applied suggestions appear with sample data.
-* **App customization**. Customize the app name and icon.
+* **App customization**. Customize the app name and icon. The app name follows ODC application naming rules; refer to [Application naming and URLs](../../building-apps/app-naming.md).
 
 <div class="info" markdown="1">
 

@@ -1,6 +1,13 @@
 ---
 summary: Create a basic app with AI in ODC Portal. Follow a step-by-step procedure to provide input, review the blueprint, generate, and refine in the editor.
-tags: app creation, agentic development, prompts, requirement documents, app generation
+tags:
+  - Agentic
+  - AI
+  - Data Model
+  - Mentor
+  - Mentor Web
+  - Screens
+  - Web
 guid: b66ada45-7ffd-473e-a085-e706da1fe0d1
 locale: en-us
 app_type: reactive web apps
@@ -12,8 +19,8 @@ outsystems-tools:
 coverage-type:
   - apply
 audience:
-  - Front-end developer
   - Developer
+  - Front-end developer
 topic:
   - creating-apps
 isautopublish: true
@@ -36,6 +43,7 @@ Agentic development is an emerging capability with some constraints. Keep these 
 
 * Closing or refreshing the browser loses the conversation and blueprint.
 * Conversations support approximately 10 prompts before you need to start a new conversation.
+* Generated app names follow ODC application naming rules. If the prompt produces a name without Latin letters, edit the name before publishing. For details, refer to [Application naming and URLs](../../building-apps/app-naming.md).
 
 For all constraints, refer to [Known limitations](../ai-limitations.md).
 

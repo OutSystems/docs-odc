@@ -1,19 +1,25 @@
 ---
 summary: Discover how to build a basic To Do list web app using OutSystems Developer Cloud (ODC) in just five minutes.
-tags: web development, data import
+tags:
+  - 1-Click Publish
+  - Data
+  - Data Model
+  - Entities
+  - Screens
+  - UI
+  - Web
 locale: en-us
 guid: c344796f-8d4a-4e49-9c8c-094222cd1f5d
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?type=design&node-id=2467%3A32718&t=O0Q2LHKWp3UPsYth-1
 platform-version: odc
 audience:
-  - Front-end developer
   - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
   - odc portal
 coverage-type:
-  - understand
   - apply
 topic:
   - creating-app-from-scratch
@@ -40,11 +46,11 @@ From ODC Portal, navigate to the **Apps** screen and click **Create app**. ODC S
 
 ### Step 1 - Define basic details
 
-Name your app and add a description. Optionally define the color scheme and add a custom icon. Click the **Create app** button to continue. You can always fine-tune these details later on.
+Name your app and add a description. Optionally define the color scheme and add a custom icon. Click the **Create app** button to continue. You can always fine-tune these details later on. The app's display name converts to the URL path; for the rules, refer to [Application naming and URLs](../building-apps/app-naming.md).
 
 ![Screenshot of entering app details in OutSystems Developer Cloud](images/enter-app-details-ss.png "Enter App Details")
 
-### Step 2 - Bootstrap data
+### Step 2 - bootstrap data
 
 Click the **Data** tab on the right pane of ODC Studio. Right-click the Database folder and select **Import New Entities from Excel..**. Browse for the `task_data.xlsx` file (downloaded in Prerequisites section), select and click **Open**.
 
@@ -58,7 +64,7 @@ Click the **Data** tab on the right pane of ODC Studio. Right-click the Database
 
 An entity is an element that allows you to persist and access information needed in your app. You now have an entity in your app called **Task**.
 
-### Step 3 - Generate User Interface (UI)
+### Step 3 - generate user interface (UI)
 
 Click the adjacent **Interface** tab and then double-click **MainFlow**. Verify **MainFlow** displays in the top right corner of the working canvas. Return to the **Data** tab and drag the **Task** entity onto the **MainFlow** canvas.
 

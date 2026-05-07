@@ -42,6 +42,8 @@
 # Building apps
 - href: eap/building-apps/intro.md
 - topics:
+    # Application naming and URLs
+    - href: eap/building-apps/app-naming.md
     # Build AI-powered apps
     - href: eap/building-apps/build-ai-powered-apps/intro.md
     - topics:
@@ -932,6 +934,7 @@
     - topics:
         - href: error/bld/OS-BLD-FE-40001.md
         - href: error/bld/OS-APPS-40008.md
+        - href: error/bld/OS-APPS-40047.md
     # Errors External Libraries SDK
     - href: error/elg/intro.md
     - topics:

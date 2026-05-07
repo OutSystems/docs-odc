@@ -1,6 +1,12 @@
 ---
-summary: OutSystems Developer Cloud (ODC) streamlines mobile app packaging and distribution for iOS and Android platforms.
-tags: mobile app distribution, ios packaging, android packaging, app store submission, mobile app configuration
+summary: OutSystems Developer Cloud (ODC) mobile app packaging walks you through creating iOS and Android builds with MABS and selecting the right build type.
+tags:
+  - Android
+  - Capacitor
+  - Cordova
+  - iOS
+  - Logging
+  - Mobile app
 locale: en-us
 guid: 4e816fa7-fffc-48c4-b205-13f7165d3775
 app_type: mobile apps
@@ -184,6 +190,8 @@ Avoid changing the app name. If you change the app's name, ODC changes the URL, 
 * All data and server actions fail.
 * Application logs (native and runtime) are no longer available since logs are stored locally on the device and are associated with the application URL. This also occurs after updating the native package to the new version, pointing to the new URL.
 * The outdated app version can still be opened and run. The app may have limited usability depending on the logic flow (use of server actions, for example). Sometimes, it's not immediately apparent to app users that a problem exists or the app isn't functioning correctly.
+
+For the rules ODC applies when generating the URL from the app name, refer to [Application naming and URLs](../app-naming.md).
 
 ### You can't preview a mobile app in the Safari browser within the ODC Portal
 

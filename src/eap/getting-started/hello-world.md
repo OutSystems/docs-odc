@@ -1,6 +1,11 @@
 ---
 summary: Learn how to create a "Hello, world!" app using OutSystems Developer Cloud (ODC) by following step-by-step instructions in ODC Studio.
-tags: getting started, application development
+tags:
+  - 1-Click Publish
+  - Deploy
+  - Screens
+  - UI
+  - Web
 locale: en-us
 guid: 96080429-23d5-45e0-b43b-c353192ed4bf
 app_type: mobile apps, reactive web apps
@@ -13,7 +18,6 @@ outsystems-tools:
   - odc studio
   - odc portal
 coverage-type:
-  - understand
   - apply
 topic:
   - creating-app-from-scratch
@@ -41,7 +45,7 @@ For more information on accessing ODC Studio and Portal, see [Getting started wi
 Open ODC Studio and follow these steps to create your "Hello, world" app:
 
 1. Select **Create** > **Web app** > **Continue in ODC Studio**. Select **Continue** to confirm. The app details screen opens.
-1. Enter the name of your app and select **Create app**.
+1. Enter the name of your app and select **Create app**. Use a name that contains at least one Latin letter so the URL path resolves correctly. For details, refer to [Application naming and URLs](../building-apps/app-naming.md).
 1. From the toolbox, drag a screen to the canvas. The **New Screen** window opens.
 
      ![Screenshot showing the process of dragging a screen component onto the canvas in ODC Studio](images/hello-world-drag-screen-odcs.png "Dragging a screen to the canvas in ODC Studio")

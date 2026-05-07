@@ -1,6 +1,10 @@
 ---
 summary: Explore app management and creation with OutSystems Developer Cloud (ODC), featuring ODC Portal and ODC Studio.
-tags: app management, cloud-native development, user interface customization, user access management, app deployment
+tags:
+  - 1-Click Publish
+  - Debugging
+  - Deploy
+  - UI
 locale: en-us
 guid: 6795fecc-61f8-4cae-93f9-098b1cfa092b
 app_type: mobile apps, reactive web apps
@@ -64,7 +68,7 @@ From the top right, you can select **Download ODC Studio** or **Create app**. Wh
 
 To open an existing app or see the details, hover over the app to display the **ellipsis** (3-dots). Then select either **Open in ODC** or **View Details**.
 
-To create a new app from the ODC Portal, select **Create app**, and then choose either a Web app, a Mobile app, an Agentic app, Library, or Mobile library. When you create a web app, you can build it from scratch in ODC Studio or generate it with Mentor Web using [agentic development](../agentic-development/intro.md).
+To create a new app from the ODC Portal, select **Create app**, and then choose either a Web app, a Mobile app, an Agentic app, Library, or Mobile library. When you create a web app, you can build it from scratch in ODC Studio or generate it with Mentor Web using [agentic development](../agentic-development/intro.md). The display name you choose converts to the app's URL path; for the rules, refer to [Application naming and URLs](../building-apps/app-naming.md).
 
 ![Options for creating an app, or library in the ODC Portal with types of apps to choose from](images/app-library-template-odcs.png "ODC Portal App Creation Options")
 
