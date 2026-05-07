@@ -1,19 +1,24 @@
 ---
 helpids: 30493, 30704
-summary: OutSystems Developer Cloud (ODC) features organization and end-user roles to manage access and permissions within its development environment.
+summary: OutSystems Developer Cloud (ODC) member roles assign cumulative permissions at organization and app scopes, with built-in roles and custom role creation.
 locale: en-us
 guid: 766ab743-31f2-4f58-ad91-a4cd0db8ab93
 app_type: mobile apps,reactive web apps
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3717-132
 platform-version: odc
-tags: access management,permissions,user onboarding,user roles,organization management
+tags:
+  - Authorization
+  - IT Roles
+  - IT Users
+  - Roles
+  - Security
 audience:
-  - Developer
   - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal
 coverage-type:
+  - remember
   - understand
   - apply
 topic:
@@ -90,7 +95,7 @@ ODC includes two built-in organization roles:
 | Role | Description |
 | ---------------- | --------------------------------------------------------------------------------------------- |
 | Administrator | Full access to all platform features, including user management, deployment, and configuration. |
-| Developer | Access to build and manage apps. Can invite new users and grant end-user roles, but only for the **Development** stage. |
+| Developer | Access to the ODC Portal and ODC Studio to build and manage apps, and to open apps and view their details. Can invite new users and grant end-user roles, but only for the **Development** stage. |
 
 You can't delete or modify built-in roles, but you can duplicate them to create custom roles.
 
