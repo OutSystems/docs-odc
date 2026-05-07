@@ -41,9 +41,13 @@ For more information about OutSystems Charts, refer to [OutSystems Charts](../re
 
 ### OutSystems data grid
 
+#### < v2.23.0
 * **Issue**: The **Calculated Column**  won't work.
 
     * **Workaround**: Avoid using **Calculated Columns**.
+
+#### >= v2.23.0
+* No known issues.
 
 For more inforamtion about OutSystems data grid, refer to [OutSystems Data Grid](../building-apps/ui/patterns/interaction/data-grid/data-grid-overview.md).
 
