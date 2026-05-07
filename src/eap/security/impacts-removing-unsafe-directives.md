@@ -49,7 +49,7 @@ For more information about OutSystems Charts, refer to [OutSystems Charts](../re
 #### >= v2.23.0
 * No known issues.
 
-For more inforamtion about OutSystems data grid, refer to [OutSystems Data Grid](../building-apps/ui/patterns/interaction/data-grid/data-grid-overview.md).
+For more information about OutSystems data grid, refer to [OutSystems Data Grid](../building-apps/ui/patterns/interaction/data-grid/data-grid-overview.md).
 
 ### OutSystems maps
 
