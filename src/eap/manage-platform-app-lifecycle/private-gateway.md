@@ -1,6 +1,9 @@
 ---
 summary: OutSystems Developer Cloud (ODC) features Private Gateways, a secure solution for connecting apps to private network endpoints.
-tags: cloud infrastructure, security, connectivity, cloud-native solutions, multitenant architecture
+tags:
+  - Private Gateway
+  - REST
+  - Security
 locale: en-us
 guid: 9a023d82-da5b-4164-8f3f-9d6c35444b50
 app_type: mobile apps, reactive web apps
@@ -8,7 +11,6 @@ figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-managemen
 platform-version: odc
 audience:
   - Developer
-  - Front-end developer
   - Platform administrator
 outsystems-tools:
   - none
@@ -30,7 +32,7 @@ Private Gateway is a secure-by-design solution for the cloud-native, multi-tenan
 
 * Provides fine-tuned control over what data is accessible. You can control the ingress while not exposing any private endpoints.
 * Highly flexible and configurable. For example, supports connecting to your private endpoints hosted in multi-tenant, multi-zone, or multi-region environments.
-* Strong scaling and failover capabilities.
+* Strong scaling and failover capabilities, with throughput tested in excess of 100 MB/s.
 * Apps and their data remain isolated.
 * Traffic and requests are unidirectional (only supports requests originating from ODC apps).
 
