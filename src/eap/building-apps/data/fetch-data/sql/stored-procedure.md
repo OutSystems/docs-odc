@@ -1,6 +1,8 @@
 ---
 summary: Execute stored procedures from external entities using SQL nodes in OutSystems Developer Cloud (ODC) by obtaining a connectionId from Portal and using the CALL statement.
-tags: stored procedures, external entities, sql nodes, odc, database integration, sql queries, call statement, named parameters, positional parameters
+tags:
+  - External Databases
+  - SQL
 guid: b6caded7-82fc-4ce9-a8a2-6bd771c9e33b
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -12,7 +14,6 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
-  - remember
 isautopublish: true
 ---
 
@@ -153,6 +154,7 @@ CALL "connectionId"."actionName" ('test', 123, "param" = @dynamic);
 ## Microsoft SQL Server
 
 * Stored procedures that use `EXEC` or `EXECUTE` may not return the expected result.
+* Stored procedures that use temporary tables may not return the expected result. Use Common Table Expressions (CTEs) instead.
 * Named assignment of parameters is not supported, please use the positional assignment syntax instead.
 
 ```sql
