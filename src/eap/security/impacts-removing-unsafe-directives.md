@@ -1,6 +1,13 @@
 ---
-summary: Learn about the impacts of removing unsafe directives in reactive web apps
-tags: CSP, security, unsafe-inline, unsafe-eval
+summary: CSP unsafe directives removal in OutSystems Developer Cloud (ODC) impacts charts, data grids, maps, and mobile UI, with workarounds for each issue.
+tags:
+  - CSS
+  - JavaScript
+  - Mobile app
+  - OutSystems UI
+  - Security
+  - UI
+  - UI Patterns
 guid: 6c2f1c26-58b9-46a6-ba0f-f7c432c6a4bc
 locale: en-us
 app_type: reactive web apps
@@ -15,7 +22,7 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
-  - apply
+  - unblock
 isautopublish: true
 ---
 
@@ -41,11 +48,14 @@ For more information about OutSystems Charts, refer to [OutSystems Charts](../re
 
 ### OutSystems data grid
 
-* **Issue**: The **Calculated Column**  won't work.
-
+* **Versions earlier than 2.23.0**
+    * **Issue**: **Calculated Column** won't work.
     * **Workaround**: Avoid using **Calculated Columns**.
 
-For more inforamtion about OutSystems data grid, refer to [OutSystems Data Grid](../building-apps/ui/patterns/interaction/data-grid/data-grid-overview.md).
+* **Version 2.23.0 or higher**
+    * No known issues related to removing unsafe CSP directives.
+
+For more information about OutSystems Data Grid, refer to [OutSystems Data Grid](../building-apps/ui/patterns/interaction/data-grid/data-grid-overview.md).
 
 ### OutSystems maps
 
