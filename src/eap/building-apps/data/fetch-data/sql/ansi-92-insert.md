@@ -2,22 +2,26 @@
 guid: 22582d71-e681-4548-a658-ed3eabda5ed0
 locale: en-us
 summary: Learn to use INSERT and UPSERT statements in ANSI-92 queries to create or update records on external entities from OutSystems Developer Cloud (ODC).
-figma: 
+figma:
 coverage-type:
-  - apply
+  - remember
   - understand
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - Developer
-  - Tech lead
-tags: sql statements,database operations,data insertion,record update
+tags:
+  - Data
+  - Entities
+  - External Databases
+  - SQL
 outsystems-tools:
   - odc studio
+isautopublish: true
 ---
 
-# INSERT and UPSERT statements in ANSI-92 queries
+# `INSERT` and `UPSERT` statements in ANSI-92 queries
 
 ```sql
 { INSERT | UPSERT } INTO entity
@@ -43,7 +47,7 @@ When using a `VALUES` clause, it must include one or more tuples containing valu
 
 When using a `SELECT` instead of `VALUES`, the query must return records with attributes which match the number and types of the target attributes. This syntax is only [supported](#supported-operations) with some external systems and all entities referenced in the query must be from the same connection (reading from one external system and writing to another is not supported). The full [SELECT](ansi-92-select.md) syntax may be used including `WITH` and set operations such as `UNION`.
 
-An `INSERT` statement that inserts a single record into an entity with one or more primary key attributes may return a result containing the inserted values of those attributes. The behaviour varies between external systems, refer to [Returned Primary Key Attributes](#returned-primary-key-attributes) for more information. This only applies when using `VALUES` or an equivalent `SELECT` which does not reference an entity.
+An `INSERT` statement that inserts a single record into an entity with one or more primary key attributes may return a result containing the inserted values of those attributes. The behavior varies between external systems, refer to [Returned Primary Key Attributes](#returned-primary-key-attributes) for more information. This only applies when using `VALUES` or an equivalent `SELECT` which does not reference an entity.
 
 An `INSERT` statement that inserts a single record into an entity which does not have primary key attributes won't return a result.
 
@@ -125,20 +129,21 @@ SELECT {other}.[id], {other}.[value]
 FROM {other};
 ```
 
-## Supported operations { #supported-operations }
+## Supported operations {#supported-operations}
 
 | Data source          | Insert (single) | Insert (multiple) | Upsert (single) | Upsert (multiple) | Insert/Upsert Select |
-| -------------------- | --------------- | ----------------- | --------------- | ----------------- | -------------------- |
+|----------------------|-----------------|-------------------| --------------- |-------------------|----------------------|
 | Microsoft SQL Server | Yes             | Yes               | Yes             | Yes               | Yes                  |
-| MySQL                | Yes             | Yes               | Yes             | Yes               | Yes                  |
+| MySQL                | Yes             | Yes               | Yes             | Yes               | No                   |
 | Oracle               | Yes             | Yes               | Yes             | Yes               | Yes                  |
 | PostgreSQL           | Yes             | Yes               | Yes             | Yes               | Yes                  |
 | Salesforce           | Yes             | Yes               | No              | No                | No                   |
 | SAP OData            | Yes<sup>1</sup> | No                | No              | No                | No                   |
+| Snowflake            | Yes             | No                | Yes             | No                | No                   |
 
 <sup>1</sup>: The entity must have a `POST` API. `INSERT` and `UPSERT` do not support writing to SAP OData Navigation Properties (`Record` attributes), please use the generated deep insert [server actions](../../../../integration-with-systems/external-databases/sap-odata.md) for this use case instead.
 
-## Returned primary key attributes { ##returned-primary-key-attributes }
+## Returned primary key attributes {##returned-primary-key-attributes}
 
 | Data source          | Returned primary key attributes                                    |
 | :------------------- | ------------------------------------------------------------------ |
