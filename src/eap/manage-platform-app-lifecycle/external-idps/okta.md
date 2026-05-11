@@ -35,6 +35,12 @@ Review the [System considerations](intro.md#system-considerations) for external 
 
 You must have the [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 
+<div class="warning" markdown="1">
+
+Your identity provider's endpoints (Discovery, JWKS, token, and userinfo) must be publicly reachable. ODC validates tokens by retrieving signing keys from the JWKS endpoint, so providers that aren't accessible from the public internet aren't supported.
+
+</div>
+
 ## Configure Okta
 
 ODC admins can configure Okta as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab.

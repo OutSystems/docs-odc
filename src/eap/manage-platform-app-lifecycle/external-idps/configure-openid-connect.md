@@ -1,10 +1,16 @@
 ---
-summary: Learn how to configure external identity providers for authentication in OutSystems Developer Cloud (ODC), supporting OpenID Connect and social logins.
+summary: OpenID Connect (OIDC) identity provider setup in OutSystems Developer Cloud (ODC), covering discovery endpoint, credentials, PKCE, and claim mapping.
 locale: en-us
 guid: fbdf0874-6c92-41ec-8188-bc7b97bd7878
 app_type: mobile apps, reactive web apps
 platform-version: odc
-tags: authentication, identity provider, openid connect, security, social login
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - OIDC
+  - Security
 audience:
   - Platform administrator
 outsystems-tools:
@@ -12,9 +18,7 @@ outsystems-tools:
   - odc portal
 figma:
 coverage-type:
-  - understand
   - apply
-  - remember
 topic:
   - external-idps
   - idp-openidp
@@ -43,6 +47,12 @@ Before you begin, make sure you have:
     * Provider credentials (**Client ID** and **Client secret**).
 
     Some providers use different field names, such as **Application ID** for **Client ID** or **Value** for **Client secret**. Refer to the provider's documentation for guidance.
+
+<div class="warning" markdown="1">
+
+Your identity provider's endpoints (Discovery, JWKS, token, and userinfo) must be publicly reachable. ODC validates tokens by retrieving signing keys from the JWKS endpoint, so providers that aren't accessible from the public internet aren't supported.
+
+</div>
 
 <div class="info" markdown="1">
 

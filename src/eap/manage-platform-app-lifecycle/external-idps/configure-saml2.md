@@ -36,6 +36,12 @@ From your provider, have the following ready:
 * SAML metadata URL or metadata XML file.
 * Provider configuration details (Entity ID, SSO URL, certificates).
 
+<div class="warning" markdown="1">
+
+Your identity provider's endpoints (metadata, SSO, and single logout URLs) must be publicly reachable. ODC's identity broker contacts these endpoints during authentication, so providers that aren't accessible from the public internet aren't supported.
+
+</div>
+
 ## Add a SAML 2.0 provider
 
 To add a SAML 2.0 provider in the ODC Portal:
