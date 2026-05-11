@@ -309,7 +309,7 @@
           "users"
         ],
         "summary": "Bulk create users and optionally in the built-in identity provider.",
-        "description": "The number of users added must be between 1 and 100 (inclusive), otherwise returns Bad Request.\nReturns an operations status object with an operation key that can be used later to get the status of the bulk create.\n\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "The number of users added must be between 1 and 100 (inclusive), otherwise a bad request is returned.\nReturns an operations status object with an operation key that can be used later to get the status of the bulk create.\n            \nAPI Client needs the User management > Manage users permission.\n\nAPI Client needs the **User management > Manage users** permission.",
         "operationId": "BulkUserProfile_CreateBulkUserProfilesOperation",
         "requestBody": {
           "description": "Bulk Create User Request.",
@@ -394,8 +394,8 @@
         "tags": [
           "users"
         ],
-        "summary": "/// Get the bulk user operation status.",
-        "description": "Returns an operations status object that contains the overall status of the bulk operation. \nIf the bulk operation has a status of 'Finished' or 'FinishedWithErrors', \nthe result of each and every item in the list is returned as well. \nIf the bulk operation is 'Pending' or 'Processing', only the overall status is returned.\n\nAPI Client needs the **User management > Manage users** permission.",
+        "summary": "Get the bulk user operation status.",
+        "description": "Returns an operations status object that contains the overall status of the bulk operation.\nIf the bulk operation has a Finished or FinishedWithError status,\nthe result of each and every item in the list is returned as well.\nIf the bulk operation has a Pending or Processing status, only the overall status is returned.\n            \nAPI Client needs the User management > Manage users permission.\n\nAPI Client needs the **User management > Manage users** permission.",
         "operationId": "BulkUserProfile_GetBulkUserProfileOperationStatus",
         "parameters": [
           {
