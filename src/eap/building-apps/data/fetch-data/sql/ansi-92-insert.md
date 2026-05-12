@@ -20,7 +20,7 @@ outsystems-tools:
 isautopublish: true
 ---
 
-# `INSERT` and `UPSERT` statements in ANSI-92 queries
+# _INSERT_ and _UPSERT_ statements in ANSI-92 queries
 
 ```sql
 { INSERT | UPSERT } INTO entity
