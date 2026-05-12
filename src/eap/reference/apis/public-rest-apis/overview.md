@@ -1,6 +1,13 @@
 ---
-summary: This article provides an overview of the OutSystems Developer Cloud (ODC) REST APIs.
-tags: rest apis, authentication, user management, automation, oauth 2.0
+summary: OutSystems Developer Cloud (ODC) REST APIs cover user management, deployments, builds, and code quality, all secured with OAuth 2.0 and OIDC.
+tags:
+  - Authentication
+  - Authorization
+  - Deploy
+  - OAuth
+  - OIDC
+  - REST
+  - Web services
 outsystems-tools:
   - odc portal
 guid: be12dc22-fd28-4edb-af36-1edda72bddc3
@@ -10,8 +17,13 @@ content-type:
   - conceptual
 audience:
   - Developer
+  - Platform administrator
+coverage-type:
+  - remember
+  - understand
 platform-version: odc
 figma:
+isautopublish: true
 ---
 
 # ODC REST APIs
@@ -44,7 +56,7 @@ The portfolio management REST API enables you to view a list of deployed assets 
 
 For detailed information about the endpoints, refer to [Portfolio management API reference](../portfolio-v1.md).
 
-### Build Operations
+### Build operations
 
 The Build Operations REST API enables you to programmatically manage build processes for your ODC assets. You can use this API to:
 
@@ -64,7 +76,7 @@ The Deployments REST API enables you to automate the deployment lifecycle of you
 
 For detailed information about the endpoints, refer to [Deployments API reference](../deployment-v1.md).
 
-### Dependency Management
+### Dependency management
 
 The Dependency Management REST API enables you to analyze and understand dependencies between assets before making changes. You can use this API to:
 
@@ -76,13 +88,13 @@ The Dependency Management REST API enables you to analyze and understand depende
 
 For detailed information about the endpoints, refer to [Dependency Management API reference](../dependency-v1.md).
 
-### Asset Repository
+### Asset repository
 
 The Asset Repository REST API enables you to access information about your ODC assets and manage their revisions.
 
 For detailed information about the endpoints, refer to [Asset Repository API reference](../asset-v1.md).
 
-### Asset Configurations
+### Asset configurations
 
 The Asset Configurations REST API enables you to manage configuration settings for your ODC environments and assets. You can use this API to:
 
@@ -91,6 +103,18 @@ The Asset Configurations REST API enables you to manage configuration settings f
 * Manage configuration settings for individual assets.
 
 For detailed information about the endpoints, refer to [Asset Configurations API reference](../asset-config-v1.md).
+
+### Environment configurations
+
+The Environment Configurations REST API helps you ensure consistent security and connectivity across your IT landscape. You can use this API to:
+
+* Manage IP filters.
+
+* Manage private gateways.
+
+* Manage custom domains.
+
+For detailed information about the endpoints, refer to [Environment configurations API reference](../env-config-v1.md).
 
 ### External library generation
 
