@@ -5,7 +5,6 @@ summary: Learn to use INSERT and UPSERT statements in ANSI-92 queries to create 
 figma:
 coverage-type:
   - remember
-  - understand
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
@@ -143,7 +142,7 @@ FROM {other};
 
 <sup>1</sup>: The entity must have a `POST` API. `INSERT` and `UPSERT` do not support writing to SAP OData Navigation Properties (`Record` attributes), please use the generated deep insert [server actions](../../../../integration-with-systems/external-databases/sap-odata.md) for this use case instead.
 
-## Returned primary key attributes {##returned-primary-key-attributes}
+## Returned primary key attributes {#returned-primary-key-attributes}
 
 | Data source          | Returned primary key attributes                                    |
 | :------------------- | ------------------------------------------------------------------ |
