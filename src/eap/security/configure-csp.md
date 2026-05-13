@@ -1,11 +1,15 @@
 ---
-summary: Enhance app security on OutSystems Developer Cloud (ODC) with Content Security Policy (CSP) to prevent XSS attacks and block unapproved resources.
-tags: web security, content security policy, csp, mobile apps, odc
+summary: Content Security Policy (CSP) on OutSystems Developer Cloud (ODC) protects apps from XSS, with iOS directive requirements and misconfiguration risks.
+tags:
+  - iOS
+  - Mobile app
+  - Security
+  - Web
 guid: fb46979d-73a3-43ad-9c85-a6b96381c2a6
 locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma: 
+figma:
 audience:
   - Developer
   - Front-end developer
@@ -15,6 +19,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+  - evaluate
+isautopublish: true
 ---
 # Content security policy
 

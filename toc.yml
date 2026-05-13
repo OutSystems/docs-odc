@@ -42,6 +42,8 @@
 # Building apps
 - href: eap/building-apps/intro.md
 - topics:
+    # Application naming and URLs
+    - href: eap/building-apps/app-naming.md
     # Build AI-powered apps
     - href: eap/building-apps/build-ai-powered-apps/intro.md
     - topics:
@@ -522,6 +524,7 @@
             - href: eap/building-apps/workflows/go-to-previous-step.md
             - href: eap/building-apps/workflows/terminate-workflow.md
             - href: eap/building-apps/workflows/end-workflow.md
+            - href: eap/building-apps/workflows/publish-workflows.md
         - href: eap/building-apps/workflows/agentic-workflows.md
         - href: eap/building-apps/workflows/logs.md
         - href: eap/building-apps/workflows/troubleshooting-workflows.md
@@ -580,6 +583,7 @@
         - href: eap/integration-with-systems/external-databases/handle-null-values.md
         - href: eap/integration-with-systems/external-databases/sap-odata.md
         - href: eap/integration-with-systems/external-databases/external-data-type.md
+        - href: eap/integration-with-systems/external-databases/snowflake.md
     #Consume REST API 
     - href: eap/integration-with-systems/consume_rest/intro.md
     - topics:
@@ -931,6 +935,7 @@
     - topics:
         - href: error/bld/OS-BLD-FE-40001.md
         - href: error/bld/OS-APPS-40008.md
+        - href: error/bld/OS-APPS-40047.md
     # Errors External Libraries SDK
     - href: error/elg/intro.md
     - topics:

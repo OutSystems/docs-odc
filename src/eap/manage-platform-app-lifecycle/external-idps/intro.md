@@ -5,10 +5,16 @@ guid: 5aa8692d-68bf-41a1-89ec-5e8fc7069e29
 app_type: mobile apps,reactive web apps
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3405-24
 platform-version: odc
-tags: authentication,identity provider,openid connect,saml,security
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - OIDC
+  - SAML
+  - Security
 audience:
   - Developer
-  - Front-end developer
   - Platform administrator
 outsystems-tools:
   - odc studio
@@ -16,7 +22,6 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
-  - remember
 topic:
   - external-idps
   - idp-openidp
@@ -62,6 +67,10 @@ The way you configure scopes differs slightly depending on the authentication pr
 ## System considerations {#system-considerations}
 
 ODC has the following limitations for external identity providers:
+
+### General system considerations
+
+* The external IdP's endpoints (such as Discovery, JWKS, token, userinfo, SSO, and metadata) must be reachable from the public internet. ODC's identity broker calls these endpoints to complete the authentication flow and validate tokens or assertions, so IdPs behind a private network, VPN, or IP allowlist aren't supported.
 
 ### System considerations for OpenID Connect
 

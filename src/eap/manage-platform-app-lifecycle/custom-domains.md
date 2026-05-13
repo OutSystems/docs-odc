@@ -1,15 +1,17 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports custom domain configuration for app stages, with automatic SSL certificate issuance and domain validation.
-tags: ssl certificates, domain configuration, access control, user roles, custom domain setup
+tags:
+  - Domains
+  - End-users
+  - Security
 locale: en-us
 guid: da18534d-84c8-4a52-bca8-85ebb3b1e082
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/AOyPMm22N6JFaAYeejDoge/Configuration-management?node-id=3674-148
 audience:
-  - Platform administrator
   - Developer
-  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal
@@ -86,6 +88,12 @@ For each external identity provider in use by your apps, a new pair of redirect 
 </div>
 
 Once ODC detects the provided CNAME records in the domain's DNS records, ownership is validated and traffic is routed from the domain to your apps. This may take up to 20 minutes, before which the domain may not be ready to use and an error displays if visiting an app through it. Once ownership is validated, the status of the domain changes to **Active** and it's ready to use.
+
+<div class="info" markdown="1">
+
+If customers are routing traffic through a reverse proxy, they must configure it to preserve the original Host header so that ODC recognizes the access as being via the custom domain.
+
+</div>
 
 ODC generates a public X.509 certificate to enable TLS communication over the domain. The generated certificate is valid for 395 days. If the provided CNAME records remain in the domain's DNS records, ODC automatically renews the certificate before expiry.
 

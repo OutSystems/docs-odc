@@ -39,6 +39,12 @@ Before you begin, make sure you have:
 * A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
 * The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 
+<div class="warning" markdown="1">
+
+Your identity provider's endpoints (Discovery, JWKS, token, and userinfo) must be publicly reachable. ODC validates tokens by retrieving signing keys from the JWKS endpoint, so providers that aren't accessible from the public internet aren't supported.
+
+</div>
+
 ## Configure Microsoft Entra ID
 
 ODC admins can configure Microsoft Entra ID as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab.

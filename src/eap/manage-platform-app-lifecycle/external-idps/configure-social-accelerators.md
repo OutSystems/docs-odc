@@ -32,6 +32,12 @@ Before you begin, make sure you have:
 * The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 * A registered app in your social provider portal, with the required values for your provider ready (refer to [Social provider requirements](#social-provider-requirements); for example, Client ID and Client Secret).
 
+<div class="warning" markdown="1">
+
+Your identity provider's endpoints (Discovery, JWKS, token, and userinfo) must be publicly reachable. ODC validates tokens by retrieving signing keys from the JWKS endpoint, so providers that aren't accessible from the public internet aren't supported.
+
+</div>
+
 <div class="info" markdown="1">
 
 When registering your web app in your identity provider’s portal, if you're prompted to provide redirect URIs, leave the fields empty or use placeholder URIs. You'll update these with the correct values in a later step of this guide.

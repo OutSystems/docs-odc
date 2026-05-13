@@ -17,7 +17,8 @@ tags: self-hosted,responsibility model,cloud,infrastructure,outsystems
 outsystems-tools:
   - odc portal
   - self hosted console
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # Self-hosted ODC shared responsibility model
@@ -131,7 +132,8 @@ Customers are responsible for securing access to their infrastructure and runtim
 
 * Providing and maintaining an OIDC-compliant identity provider.
 * Managing role-based access control (RBAC) within their cluster.
-* Enforcing security policies (for example, network segmentation, firewall rules).
+* Enforcing security policies (for example, network segmentation, firewall rules, Private Gateway, IP filtering).
+* IP filtering and Private Gateway configurations are only available for stages in the OutSystems Cloud. Customers are responsible for applying equivalent network security controls directly in their infrastructure for self-hosted stages.
 
 OutSystems integrates with customer-provided identity systems but does not control access policies within the self-hosted environment.
 
@@ -145,12 +147,12 @@ Customers are fully responsible for the applications they develop and deploy int
 
 OutSystems provides telemetry data through the monitoring platform, but customers must host and operate their own observability destination.
 
-### Customers must ensure readiness for platform services updates
+### Customers must maintain continuous platform connectivity
 
-OutSystems is responsible for updating the self-hosted services, but those updates require cooperation from the customer. Customers are expected to:
+OutSystems is responsible for updating the self-hosted services and for collecting telemetry from them, but both require continuous cooperation from the customer. All [network requirements](sh-install-reqs.md), including telemetry endpoints, must remain continuously available. Customers are responsible for ensuring this and are expected to:
 
-* Maintain connectivity between their hosting environment and the OutSystems cloud.
-* Ensure that update channels are open and not blocked by firewall or proxy configurations.
+* Maintain connectivity between their hosting environment and the OutSystems cloud at all times.
+* Ensure that update channels and telemetry endpoints are open and not blocked by firewall or proxy configurations. OutSystems requires telemetry to be active and reachable at all times in the self-hosted stages.
 * Avoid changes that could interfere with the deployment or operation of OutSystems-managed components.
 
 Customers are not responsible for the self-hosted services update logic itself, but must ensure their infrastructure does not prevent it.

@@ -11,13 +11,17 @@ topic:
   - idp-saml
 coverage-type:
   - understand
-  - apply
-  - remember
-  - unblock
+  - evaluate
 helpids: 30764
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=4072-148
 app_type: mobile apps,reactive web apps
-tags: email verification,profile matching,external identity providers,identity claims,saml providers
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - OIDC
+  - SAML
 outsystems-tools:
   - none
 isautopublish: true
@@ -309,7 +313,16 @@ and the invalid permissions page displays.
 
 ODC matches returning users by subject first. Email changes affect how ODC matches the first login for an IdP that the user hasn’t used before.
 
-* **User has logged in at least once with the IdP**: ODC matches the user by subject. For logging in to the organization (ODC Portal or ODC Studio), when you select **Trust identity provider** or **Trust all user emails as verified**, ODC updates the email stored in the ODC profile.
+* **User has logged in at least once with the IdP**: ODC matches the user by subject. When logging in to the organization (ODC Portal or ODC Studio), if you select **Trust identity provider** or **Trust all user emails as verified**, ODC updates the email and verification state stored in the ODC profile.
+
+    <div class="info" markdown="1">
+
+    For IdPs with the **Trust identity provider** option selected, EmailVerified follows the `email_verified` claim on each login. It can transition from `true` to `false` when the claim is missing or `false`, and back to `true` on the next login through an IdP that writes a verified email (for example, the built-in IdP or any IdP with **Trust all user emails as verified** selected).
+
+    For IdPs with the **User verification** option selected, login alone doesn't change the email or the verification state stored in the ODC profile. While logged in through such an IdP, the user can complete the email verification flow to set EmailVerified to `true`.
+
+    </div>
+
 * **User has never logged in with the IdP**: On the first login, ODC uses the IdP **User profile matching** setting as fallback. When **User profile matching** is **Email**, and the user’s email changed in the IdP before their first login, ODC can’t match an invited or pre-created profile that used the old email address. If **Auto-create users on login** is selected, ODC creates a new ODC profile.
 
     This behavior can result in two ODC profiles for the same person.

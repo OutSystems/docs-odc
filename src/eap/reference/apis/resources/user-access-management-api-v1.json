@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.4",
   "info": {
     "title": "User and Access Management API",
     "description": "REST endpoints for retrieving and managing user and access in your organization.",
@@ -21,9 +21,6 @@
       }
     }
   ],
-  "security": [{
-    "bearerAuth": []
-  }],
   "paths": {
     "/application-roles": {
       "get": {
@@ -80,7 +77,7 @@
           {
             "name": "limit",
             "in": "query",
-            "description": "Maximum number of results returned. Allowed values: 1 to 100. Default value: 100.",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -102,7 +99,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApplicationRoleResponsePaginatedResponse"
+                  "$ref": "#/components/schemas/ApplicationRoleApiResponsePaginatedResponseApi"
                 }
               }
             }
@@ -182,7 +179,7 @@
           {
             "name": "nameOrEmailContains",
             "in": "query",
-            "description": "Filters list by name or email. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: `.../users?nameOrEmailContains=john+doe@example.com` \n\nCorrect: `.../users?nameOrEmailContains=john%2Bdoe@example.com`",
+            "description": "Filters users by name or email address. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +\n            \n Incorrect: .../users?email=`john+doe@example.com`.\n            \n Correct: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -190,7 +187,7 @@
           {
             "name": "nameOrEmailOrUsernameContains",
             "in": "query",
-            "description": "Filters users by name, email address, or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: `.../users?nameOrEmailOrUsernameContains=john+doe@example.com` \n\nCorrect: `.../users?nameOrEmailOrUsernameContains=john%2Bdoe@example.com`",
+            "description": "Filters users by name or email address or username.. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +\n            \n Incorrect: .../users?email=`john+doe@example.com`.\n            \n Correct: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -216,7 +213,7 @@
           {
             "name": "limit",
             "in": "query",
-            "description": "Maximum number of results returned. Allowed values: 1 to 100. Default value: 100.",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -246,7 +243,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/UserProfileEmbed"
+                "$ref": "#/components/schemas/UserProfileEmbedType"
               }
             }
           }
@@ -257,7 +254,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RoleUserResponsePaginatedResponse"
+                  "$ref": "#/components/schemas/RoleUserResponsePaginatedResponseApi"
                 }
               }
             }
@@ -312,7 +309,7 @@
           "users"
         ],
         "summary": "Bulk create users and optionally in the built-in identity provider.",
-        "description": "Returns an operations status object with an operation key that can be used later to get the status of the bulk create.\n\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "The number of users added must be between 1 and 100 (inclusive), otherwise a bad request is returned.\nReturns an operations status object with an operation key that can be used later to get the status of the bulk create.\n            \nAPI Client needs the User management > Manage users permission.\n\nAPI Client needs the **User management > Manage users** permission.",
         "operationId": "BulkUserProfile_CreateBulkUserProfilesOperation",
         "requestBody": {
           "description": "Bulk Create User Request.",
@@ -321,7 +318,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/UserProfileCreateRequestBulkApiRequest"
+                    "$ref": "#/components/schemas/UserProfileCreateApiRequestBulkApiRequest"
                   }
                 ]
               }
@@ -330,7 +327,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/UserProfileCreateRequestBulkApiRequest"
+                    "$ref": "#/components/schemas/UserProfileCreateApiRequestBulkApiRequest"
                   }
                 ]
               }
@@ -339,7 +336,14 @@
         },
         "responses": {
           "202": {
-            "description": "Accepted"
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkUserProfileOperationApiRecordBulkApiResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request",
@@ -391,7 +395,7 @@
           "users"
         ],
         "summary": "Get the bulk user operation status.",
-        "description": "Returns an operations status object that contains the overall status of the bulk operation. \n\nIf the bulk operation has a status of 'Finished' or 'FinishedWithErrors', the result of each and every item in the list is returned as well. \n\nIf the bulk operation is 'Pending' or 'Processing', only the overall status is returned.\n\nAPI Client needs the **User management > Manage users** permission.",
+        "description": "Returns an operations status object that contains the overall status of the bulk operation.\nIf the bulk operation has a Finished or FinishedWithError status,\nthe result of each and every item in the list is returned as well.\nIf the bulk operation has a Pending or Processing status, only the overall status is returned.\n            \nAPI Client needs the User management > Manage users permission.\n\nAPI Client needs the **User management > Manage users** permission.",
         "operationId": "BulkUserProfile_GetBulkUserProfileOperationStatus",
         "parameters": [
           {
@@ -410,7 +414,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BulkUserProfileOperationRecordBulkApiResponse"
+                  "$ref": "#/components/schemas/BulkUserProfileOperationApiRecordBulkApiResponse"
                 }
               }
             }
@@ -599,7 +603,7 @@
           {
             "name": "nameOrEmailContains",
             "in": "query",
-            "description": "Filters list by name or email. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: `.../users?nameOrEmailContains=john+doe@example.com` \n\nCorrect: `.../users?nameOrEmailContains=john%2Bdoe@example.com`",
+            "description": "Filters users by name or email address. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +\n            \n Incorrect: .../users?email=`john+doe@example.com`.\n            \n Correct: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -607,7 +611,7 @@
           {
             "name": "nameOrEmailOrUsernameContains",
             "in": "query",
-            "description": "Filters users by name, email address, or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: `.../users?nameOrEmailOrUsernameContains=john+doe@example.com` \n\nCorrect: `.../users?nameOrEmailOrUsernameContains=john%2Bdoe@example.com`",
+            "description": "Filters users by name or email or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +\n            \n Incorrect: .../users?email=`john+doe@example.com`.\n            \n Correct: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -675,7 +679,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/UserProfileEmbed"
+                "$ref": "#/components/schemas/UserProfileEmbedType"
               }
             }
           }
@@ -686,7 +690,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GroupUserPaginatedResponse"
+                  "$ref": "#/components/schemas/GroupUserResponsePaginatedResponseApi"
                 }
               }
             }
@@ -760,7 +764,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/CreationGroupRequest"
+                    "$ref": "#/components/schemas/GroupCreateRequest"
                   }
                 ]
               }
@@ -769,7 +773,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/CreationGroupRequest"
+                    "$ref": "#/components/schemas/GroupCreateRequest"
                   }
                 ]
               }
@@ -782,7 +786,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreationGroupResponse"
+                  "$ref": "#/components/schemas/GroupCreateResponse"
                 }
               }
             }
@@ -880,7 +884,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GroupResponsePaginatedResponse"
+                  "$ref": "#/components/schemas/GroupApiResponsePaginatedResponseApi"
                 }
               }
             }
@@ -1051,7 +1055,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GroupResponse"
+                  "$ref": "#/components/schemas/GroupApiResponse"
                 }
               }
             }
@@ -1396,7 +1400,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApplicationRoleResponsePaginatedResponse"
+                  "$ref": "#/components/schemas/ApplicationRoleApiResponsePaginatedResponseApi"
                 }
               }
             }
@@ -1455,6 +1459,267 @@
         "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
       }
     },
+    "/groups/{key}/claim-mappings/{mappingKey}": {
+      "delete": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Delete a Group Idp Mapping.",
+        "description": "Delete a specified Group Idp Mapping object using its key.\n\nAPI Client needs the **User management > Manage end-user groups** permission.",
+        "operationId": "GroupIdpClaimMapping_DeleteGroupIdpClaimMapping",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The key of the Group for the Idp Mapping object to delete.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "mappingKey",
+            "in": "path",
+            "description": "Claim Mapping key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > Manage end-user groups** permission."
+      }
+    },
+    "/identity-providers": {
+      "get": {
+        "tags": [
+          "identity-providers"
+        ],
+        "summary": "Returns a list of identity providers.",
+        "description": "Returns a list of identity providers for the given conditions/filters. Use query parameters to filter the result based on different criteria.\n\nAPI client must have at least one permission.",
+        "operationId": "IdentityProvider_QueryIdentityProviders",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "description": "Unique identifier of the identity provider.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "nameContains",
+            "in": "query",
+            "description": "Pattern to be searched in provider name.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results returned. Allowed values: 1 to 100 Default value: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the first result returned. Default value: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdentityProviderResponsePaginatedResponseApi"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission."
+      }
+    },
+    "/identity-providers/{key}": {
+      "get": {
+        "tags": [
+          "identity-providers"
+        ],
+        "summary": "Retrieves an identity provider.",
+        "description": "Returns the identity provider by key.\n\nAPI client must have at least one permission.",
+        "operationId": "IdentityProvider_ReadIdentityProvider",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The Identity Provider Key.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "header",
+            "description": "Optional API key from header for authentication.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdentityProviderResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission."
+      }
+    },
     "/organization-roles": {
       "post": {
         "tags": [
@@ -1470,7 +1735,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/OrganizationRoleCreationRequest"
+                    "$ref": "#/components/schemas/OrganizationRoleCreateRequest"
                   }
                 ]
               }
@@ -1479,7 +1744,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/OrganizationRoleCreationRequest"
+                    "$ref": "#/components/schemas/OrganizationRoleCreateRequest"
                   }
                 ]
               }
@@ -1492,7 +1757,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrganizationRoleCreationResponse"
+                  "$ref": "#/components/schemas/OrganizationRoleCreateResponse"
                 }
               }
             }
@@ -1545,7 +1810,7 @@
           "organization-roles"
         ],
         "summary": "Returns the list of organization roles.",
-        "description": "Returns a list of organization roles. Use query parameters to filter the result based on different criteria.\n\nAPI Client needs at least one User management permission.",
+        "description": "Returns a list of organization roles. Use query parameters to filter the result based on different criteria.\n\nAPI client must have at least one permission.",
         "operationId": "OrganizationRole_QueryOrganizationRoles",
         "parameters": [
           {
@@ -1598,7 +1863,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrganizationRoleHttpResponsePaginatedResponse"
+                  "$ref": "#/components/schemas/OrganizationRoleApiResponsePaginatedResponseApi"
                 }
               }
             }
@@ -1654,7 +1919,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs at least one User management permission."
+        "x-os-permissions": "API client must have at least one permission."
       }
     },
     "/organization-roles/{key}": {
@@ -1739,7 +2004,7 @@
           "organization-roles"
         ],
         "summary": "Returns information for an organization role.",
-        "description": "Returns details about an organization role based on the organization role key.\n\nAPI Client needs at least one User management permission.",
+        "description": "Returns details about an organization role based on the organization role key.\n\nAPI client must have at least one permission.",
         "operationId": "OrganizationRole_ReadOrganizationRole",
         "parameters": [
           {
@@ -1759,7 +2024,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrganizationRoleHttpResponse"
+                  "$ref": "#/components/schemas/OrganizationRoleApiResponse"
                 }
               }
             }
@@ -1815,7 +2080,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs at least one User management permission."
+        "x-os-permissions": "API client must have at least one permission."
       },
       "patch": {
         "tags": [
@@ -1922,9 +2187,9 @@
         "tags": [
           "organization-roles"
         ],
-        "summary": "List users with a specific organization role.",
-        "description": "Returns a list of users with a specific organization role, based on the organization role key.\n\nUse query parameters to filter the result based on different criteria.\n\nAPI client needs the **User management > View organization members** permission.",
-        "operationId": "OrganizationRole_QueryUsersByOrganizationRole",
+        "summary": "Returns a list of users with a specific organization role.",
+        "description": "Returns a list of users with a specific organization role, based on the organization role key.\nUse query parameters to filter the result based on different criteria.\n\nAPI Client needs the **User management > View organization members** permission.",
+        "operationId": "OrganizationRole_QueryUsersByRole",
         "parameters": [
           {
             "name": "key",
@@ -1939,7 +2204,7 @@
           {
             "name": "nameOrEmailContains",
             "in": "query",
-            "description": "Filters list by name or email. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: `.../users?nameOrEmailContains=john+doe@example.com` \n\nCorrect: `.../users?nameOrEmailContains=john%2Bdoe@example.com`",
+            "description": "Filters list by name or email. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +\n            \n Incorrect: .../users?email=`john+doe@example.com`.\n            \n Correct: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -1947,7 +2212,7 @@
           {
             "name": "nameOrEmailOrUsernameContains",
             "in": "query",
-            "description": "Filters users by name, email address, or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: `.../users?nameOrEmailOrUsernameContains=john+doe@example.com` \n\nCorrect: `.../users?nameOrEmailOrUsernameContains=john%2Bdoe@example.com`",
+            "description": "Filters list by name, email, or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +\n            \n Incorrect: .../users?email=`john+doe@example.com`.\n            \n Correct: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -1985,7 +2250,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/UserProfileEmbed"
+                "$ref": "#/components/schemas/UserProfileEmbedType"
               }
             }
           }
@@ -1996,7 +2261,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RoleUserResponsePaginatedResponse"
+                  "$ref": "#/components/schemas/RoleUserResponsePaginatedResponseApi"
                 }
               }
             }
@@ -2052,230 +2317,7 @@
             }
           }
         },
-        "x-os-permissions": "API client needs the **User management > View organization members** permission."
-      }
-    },
-    "/subjects": {
-      "get": {
-        "tags": [
-          "subjects"
-        ],
-        "summary": "Retrieves the information for users or API clients based on given keys.",
-        "description": "Retrieves the information for users or API clients based on given keys.",
-        "operationId": "Subjects_QuerySubjects",
-        "parameters": [
-          {
-            "name": "keys",
-            "in": "query",
-            "description": "Users or/and API clients keys.",
-            "required": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "format": "uuid"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SubjectQueryResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too Many Requests",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/subjects/me": {
-      "get": {
-        "tags": [
-          "subjects"
-        ],
-        "summary": "Retrieves the information for an user or API client based on the user/client’s access token.",
-        "description": "Retrieves the information for an user or API client based on the user/client’s access token.",
-        "operationId": "Subjects_ReadSelf",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SubjectResponseApiModel"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too Many Requests",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/subjects/{key}": {
-      "get": {
-        "tags": [
-          "subjects"
-        ],
-        "summary": "Retrieves the information for an user or API client based on the specified key.",
-        "description": "Retrieves the information for an user or API client based on the specified key.",
-        "operationId": "Subjects_ReadSubject",
-        "parameters": [
-          {
-            "name": "key",
-            "in": "path",
-            "description": "User or API client key.",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SubjectResponseApiModel"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too Many Requests",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
+        "x-os-permissions": "API Client needs the **User management > View organization members** permission."
       }
     },
     "/permissions": {
@@ -2284,7 +2326,7 @@
           "permissions"
         ],
         "summary": "Returns the list of permissions.",
-        "description": "Returns all permissions.\n\nUse query parameters to filter the result based on different criteria.\n\nAPI Client needs at least one User management permission.",
+        "description": "Returns the list of permissions.\nUse query parameters to filter the result based on different criteria.\n\nAPI client must have at least one permission.",
         "operationId": "Permission_QueryPermissions",
         "parameters": [
           {
@@ -2320,7 +2362,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PermissionResponsePaginatedResponse"
+                  "$ref": "#/components/schemas/PermissionResponsePaginatedResponseApi"
                 }
               }
             }
@@ -2366,7 +2408,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs at least one User management permission."
+        "x-os-permissions": "API client must have at least one permission."
       }
     },
     "/permissions/{key}": {
@@ -2375,7 +2417,7 @@
           "permissions"
         ],
         "summary": "Retrieve details about a permission.",
-        "description": "Returns details about a permission based on the permission key.\n\nAPI Client needs at least one User management permission.",
+        "description": "Returns details about a permission based on the permission key.\n\nAPI client must have at least one permission.",
         "operationId": "Permission_ReadPermission",
         "parameters": [
           {
@@ -2451,7 +2493,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs at least one User management permission."
+        "x-os-permissions": "API client must have at least one permission."
       }
     },
     "/users/{key}/application-roles/{roleKey}": {
@@ -2706,7 +2748,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApplicationRoleResponsePaginatedResponse"
+                  "$ref": "#/components/schemas/ApplicationRoleApiResponsePaginatedResponseApi"
                 }
               }
             }
@@ -2771,7 +2813,7 @@
           "users"
         ],
         "summary": "Returns the list of organization roles associated with a user.",
-        "description": "Returns a list of organization roles based on the user key.\n\nIf the authenticated user is requesting their own roles, no permission is required.\n\nAPI Client needs the **User management > View members** or **User management > Manage users** permissions.",
+        "description": "Returns the list of organization roles associated with a user.\nIf the authenticated user is requesting their own roles, no permission is required.\n\nAPI Client needs the **User management > View organization members** or **User management > Manage users** permissions.",
         "operationId": "UserOrganizationRoles_GetUserOrganizationRoles",
         "parameters": [
           {
@@ -2809,7 +2851,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrganizationRoleByUserResponsePaginatedResponse"
+                  "$ref": "#/components/schemas/OrganizationRoleByUserApiResponsePaginatedResponseApi"
                 }
               }
             }
@@ -2865,7 +2907,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View members** or **User management > Manage users** permissions."
+        "x-os-permissions": "API Client needs the **User management > View organization members** or **User management > Manage users** permissions."
       }
     },
     "/users/{key}/organization-roles/{roleKey}": {
@@ -2905,7 +2947,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/GrantDetails"
+                    "$ref": "#/components/schemas/GrantDetailsRequest"
                   }
                 ]
               }
@@ -2914,7 +2956,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/GrantDetails"
+                    "$ref": "#/components/schemas/GrantDetailsRequest"
                   }
                 ]
               }
@@ -3014,7 +3056,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/RevokeDetails"
+                    "$ref": "#/components/schemas/RevokeDetailsRequest"
                   }
                 ]
               }
@@ -3023,7 +3065,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/RevokeDetails"
+                    "$ref": "#/components/schemas/RevokeDetailsRequest"
                   }
                 ]
               }
@@ -3103,7 +3145,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/UserProfileCreateRequest"
+                    "$ref": "#/components/schemas/UserProfileCreateApiRequest"
                   }
                 ]
               }
@@ -3112,7 +3154,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/UserProfileCreateRequest"
+                    "$ref": "#/components/schemas/UserProfileCreateApiRequest"
                   }
                 ]
               }
@@ -3125,7 +3167,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/NewUserProfileResponse"
+                  "$ref": "#/components/schemas/UserProfileCreateResponse"
                 }
               }
             }
@@ -3178,13 +3220,13 @@
           "users"
         ],
         "summary": "Returns the list of users based on specified conditions.",
-        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission.",
+        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** or **User management > View organization members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission.",
         "operationId": "UserProfile_QueryUsers",
         "parameters": [
           {
             "name": "nameOrEmailContains",
             "in": "query",
-            "description": "Filters list by name or email. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: `.../users?nameOrEmailContains=john+doe@example.com` \n\nCorrect: `.../users?nameOrEmailContains=john%2Bdoe@example.com`",
+            "description": "Filters users by name or email address. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +\n            \n Incorrect: .../users?email=`john+doe@example.com`.\n            \n Correct: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -3192,7 +3234,7 @@
           {
             "name": "nameOrEmailOrUsernameContains",
             "in": "query",
-            "description": "Filters users by name, email address, or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +. \n\nIncorrect: `.../users?nameOrEmailOrUsernameContains=john+doe@example.com` \n\nCorrect: `.../users?nameOrEmailOrUsernameContains=john%2Bdoe@example.com`",
+            "description": "Filters users by name or email address or username. Parameter value must be URL-encoded (percent-encoding) to ensure it's correctly interpreted by the server. Example: Searching for an email with a +\n            \n Incorrect: .../users?email=`john+doe@example.com`.\n            \n Correct: .../users?email=`john%2Bdoe@example.com`",
             "schema": {
               "type": "string"
             }
@@ -3200,7 +3242,7 @@
           {
             "name": "userKeys",
             "in": "query",
-            "description": "Only returns users that match the specified keys. For more than one key, separate the keys with a comma. Allows up to 20 user keys.",
+            "description": "Only returns users that match the specified keys. For more than one key, separates the keys with a comma. Allows up to 20 user keys.",
             "schema": {
               "type": "string"
             }
@@ -3284,7 +3326,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/UserProfileEmbed"
+                "$ref": "#/components/schemas/UserProfileEmbedType"
               }
             }
           },
@@ -3313,7 +3355,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserProfilePaginatedResponse"
+                  "$ref": "#/components/schemas/UserProfileApiResponsePaginatedResponseApi"
                 }
               }
             }
@@ -3359,7 +3401,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View organization members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission."
       }
     },
     "/users/{key}": {
@@ -3444,7 +3486,7 @@
           "users"
         ],
         "summary": "Retrieves a user.",
-        "description": "Retrieves detailed information about a user using the user's key.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission.",
+        "description": "Retrieves detailed information about a user using the user's key.\n\nAPI Client needs the **User management > View end users** or **User management > View organization members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission.",
         "operationId": "UserProfile_GetUser",
         "parameters": [
           {
@@ -3464,7 +3506,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/UserProfileEmbed"
+                "$ref": "#/components/schemas/UserProfileEmbedType"
               }
             }
           }
@@ -3475,7 +3517,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserProfile"
+                  "$ref": "#/components/schemas/UserProfileApiResponse"
                 }
               }
             }
@@ -3531,7 +3573,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View organization members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission."
       },
       "patch": {
         "tags": [
@@ -3715,7 +3757,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserGroupResponsePaginatedResponse"
+                  "$ref": "#/components/schemas/UserGroupResponsePaginatedResponseApi"
                 }
               }
             }
@@ -3777,43 +3819,7 @@
   },
   "components": {
     "schemas": {
-      "ApiClientSubject": {
-        "required": [
-          "clientId"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string",
-            "description": "Api Client key.",
-            "format": "uuid"
-          },
-          "name": {
-            "type": "string",
-            "description": "Api Client name.",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "description": "Api Client description.",
-            "nullable": true
-          },
-          "clientId": {
-            "type": "string",
-            "description": "Api Client client id.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "AssetContext": {
-        "enum": [
-          "Organization",
-          "Asset"
-        ],
-        "type": "string"
-      },
-      "ApplicationRoleResponse": {
+      "ApplicationRoleApiResponse": {
         "type": "object",
         "properties": {
           "key": {
@@ -3849,13 +3855,13 @@
         },
         "additionalProperties": false
       },
-      "ApplicationRoleResponsePaginatedResponse": {
+      "ApplicationRoleApiResponsePaginatedResponseApi": {
         "type": "object",
         "properties": {
           "results": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ApplicationRoleResponse"
+              "$ref": "#/components/schemas/ApplicationRoleApiResponse"
             },
             "description": "The List of results.",
             "nullable": true
@@ -3863,7 +3869,7 @@
           "page": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/PageInfoWithTotals"
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
               }
             ],
             "description": "The details of the page information.",
@@ -3871,6 +3877,23 @@
           }
         },
         "additionalProperties": false
+      },
+      "AssetContext": {
+        "enum": [
+          "Organization",
+          "Asset",
+          "Portfolios"
+        ],
+        "type": "string"
+      },
+      "BulkApiOperationStatus": {
+        "enum": [
+          "Error",
+          "Inserted",
+          "Updated",
+          "Deleted"
+        ],
+        "type": "string"
       },
       "BulkApiStatus": {
         "enum": [
@@ -3881,19 +3904,7 @@
         ],
         "type": "string"
       },
-      "BulkOperationStatus": {
-        "enum": [
-          "Error",
-          "Inserted",
-          "Updated",
-          "Deleted"
-        ],
-        "type": "string"
-      },
-      "BulkUserProfileOperationRecord": {
-        "required": [
-          "email"
-        ],
+      "BulkUserProfileOperationApiRecord": {
         "type": "object",
         "properties": {
           "key": {
@@ -3906,11 +3917,60 @@
             "type": "string",
             "description": "Email of the user",
             "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "description": "The user's username for the IdP",
+            "nullable": true
+          },
+          "subject": {
+            "type": "string",
+            "description": "The user's subject claim value for the IdP",
+            "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "BulkUserProfileOperationRecordBulkApiResponse": {
+      "BulkUserProfileOperationApiRecordBulkApiOperation": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "Error",
+              "Inserted",
+              "Updated",
+              "Deleted"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BulkApiOperationStatus"
+              }
+            ],
+            "description": "Status of the individual operation in the list of bulk operations.\nFor example: Inserted, Updated, Errored"
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "Self-support error code for the one operation if any error occured.",
+            "nullable": true
+          },
+          "errorMessage": {
+            "type": "string",
+            "description": "Self-support error message for the one operation if any error occured.",
+            "nullable": true
+          },
+          "record": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BulkUserProfileOperationApiRecord"
+              }
+            ],
+            "description": "A JSON object containing some extra info about the record in this operation.\nThis could contain some pieces of request info as well as additional info from the operation output.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BulkUserProfileOperationApiRecordBulkApiResponse": {
         "type": "object",
         "properties": {
           "key": {
@@ -3934,65 +3994,156 @@
           },
           "errorCode": {
             "type": "string",
-            "description": "Self Service error code for the overall bulk API operation.\n\nFor example, when the operation times out.",
+            "description": "Self Service error code for the overall bulk API operation.\nFor example, when the operation times out.",
             "nullable": true
           },
           "errorMessage": {
             "type": "string",
-            "description": "Self Service error message for the overall bulk API operation.\n\nFor example, when the operation times out.",
+            "description": "Self Service error message for the overall bulk API operation.\nFor example, when the operation times out.",
             "nullable": true
           },
           "operations": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/BulkUserProfileOperationRecordBulkOperation"
+              "$ref": "#/components/schemas/BulkUserProfileOperationApiRecordBulkApiOperation"
             },
-            "description": "Details of each operation performed in the bulk request.\n\nAvailable when the bulk operation has Finished or FinishedWithErrors.\n\nThis will be an empty list when the bulk operation is Pending or Progressing.",
+            "description": "Details of each operation performed in the bulk request.\nAvailable when the bulk operation has Finished or FinishedWithErrors.\nThis will be an empty list when the bulk operation is Pending or Progressing.",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "BulkUserProfileOperationRecordBulkOperation": {
+      "ClientAssertionSigningAlgorithmServiceModel": {
+        "enum": [
+          "ES256",
+          "ES384",
+          "ES512",
+          "HS256",
+          "HS384",
+          "HS512",
+          "PS256",
+          "PS384",
+          "PS512",
+          "RS256",
+          "RS384",
+          "RS512"
+        ],
+        "type": "string"
+      },
+      "ClientAuthenticationMethodServiceModel": {
+        "enum": [
+          "client_secret_post",
+          "client_secret_basic",
+          "client_secret_jwt",
+          "private_key_jwt"
+        ],
+        "type": "string"
+      },
+      "EmailTrustTypeServiceModel": {
+        "enum": [
+          "None",
+          "EmailVerifiedClaim",
+          "All"
+        ],
+        "type": "string"
+      },
+      "GrantDetailsRequest": {
         "type": "object",
         "properties": {
-          "status": {
-            "enum": [
-              "Error",
-              "Inserted",
-              "Updated",
-              "Deleted"
-            ],
+          "grantPeriod": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/BulkOperationStatus"
+                "$ref": "#/components/schemas/GrantPeriodApiModel"
               }
             ],
-            "description": "Status of the individual operation in the list of bulk operations.\n\nFor example: Inserted, Updated, Errored"
-          },
-          "errorCode": {
-            "type": "string",
-            "description": "Self-support error code for the one operation if any error occured.",
+            "description": "Gets or sets the grant period.",
             "nullable": true
           },
-          "errorMessage": {
-            "type": "string",
-            "description": "Self-support error message for the one operation if any error occured.",
-            "nullable": true
-          },
-          "record": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/BulkUserProfileOperationRecord"
-              }
-            ],
-            "description": "A JSON object containing some extra info about the record in this operation.\n\nThis could contain some pieces of request info as well as additional info from the operation output.",
+          "assetKeys": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Gets or sets the asset keys.",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "CreationGroupRequest": {
+      "GrantPeriodApiModel": {
+        "type": "object",
+        "properties": {
+          "startTime": {
+            "type": "string",
+            "description": "The start date and time in utc.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "description": "The end date and time in utc.",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupApiResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key of the group.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the group.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the group.",
+            "nullable": true
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "The environment key.",
+            "format": "uuid"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "The last updated date and time of the group.",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupApiResponsePaginatedResponseApi": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GroupApiResponse"
+            },
+            "description": "The List of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
+              }
+            ],
+            "description": "The details of the page information.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupCreateRequest": {
         "type": "object",
         "properties": {
           "name": {
@@ -4031,7 +4182,7 @@
         },
         "additionalProperties": false
       },
-      "CreationGroupResponse": {
+      "GroupCreateResponse": {
         "type": "object",
         "properties": {
           "key": {
@@ -4042,150 +4193,7 @@
         },
         "additionalProperties": false
       },
-      "GrantDetails": {
-        "type": "object",
-        "properties": {
-          "grantPeriod": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/GrantPeriod"
-              }
-            ],
-            "description": "Gets or sets the grant period.",
-            "nullable": true
-          },
-          "assetKeys": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "description": "Gets or sets the asset keys.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "GrantPeriod": {
-        "type": "object",
-        "properties": {
-          "startTime": {
-            "type": "string",
-            "description": "The start date and time in utc.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "endTime": {
-            "type": "string",
-            "description": "The end date and time in utc.",
-            "format": "date-time",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "GroupResponse": {
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string",
-            "description": "The key of the group.",
-            "format": "uuid"
-          },
-          "name": {
-            "type": "string",
-            "description": "The name of the group.",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "description": "The description of the group.",
-            "nullable": true
-          },
-          "environmentKey": {
-            "type": "string",
-            "description": "The environment key.",
-            "format": "uuid"
-          },
-          "updatedAt": {
-            "type": "string",
-            "description": "The last updated date and time of the group.",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "GroupResponsePaginatedResponse": {
-        "type": "object",
-        "properties": {
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GroupResponse"
-            },
-            "description": "The List of results.",
-            "nullable": true
-          },
-          "page": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/PageInfoWithTotals"
-              }
-            ],
-            "description": "The details of the page information.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "GroupUser": {
-        "type": "object",
-        "properties": {
-          "membershipTypes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MembershipType"
-            },
-            "description": "The list of membership types of this user in this group. Allowed values are 'Assigned' (if directly added to the group) or 'Mapped' (if added via group mappings).",
-            "nullable": true
-          },
-          "user": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/GroupUserProfile"
-              }
-            ],
-            "description": "The user details.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a user in a group."
-      },
-      "GroupUserPaginatedResponse": {
-        "type": "object",
-        "properties": {
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GroupUser"
-            },
-            "description": "The List of results.",
-            "nullable": true
-          },
-          "page": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/PageInfoWithTotals"
-              }
-            ],
-            "description": "The details of the page information.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "GroupUserProfile": {
+      "GroupUserProfileResponse": {
         "type": "object",
         "properties": {
           "key": {
@@ -4204,12 +4212,18 @@
             "nullable": true
           },
           "status": {
+            "enum": [
+              "Active",
+              "Invited",
+              "Inactive",
+              "PendingRegistration"
+            ],
             "allOf": [
               {
                 "$ref": "#/components/schemas/UserProfileStatus"
               }
             ],
-            "description": "The user's status."
+            "description": "The user's status. Allowed values are 'Active', 'Inactive', 'PendingRegistration' and 'Invited'."
           },
           "photoUrl": {
             "type": "string",
@@ -4224,7 +4238,7 @@
           "embedded": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/UserProfileEmbedded"
+                "$ref": "#/components/schemas/UserProfileEmbeddedResponse"
               }
             ],
             "description": "The embedded information to provide. (optional) Only available when the request includes the query parameter `embed=`, e.g. `embed=userIdentityProviders`",
@@ -4234,6 +4248,200 @@
         "additionalProperties": false,
         "description": "The profile of a group member."
       },
+      "GroupUserResponse": {
+        "type": "object",
+        "properties": {
+          "membershipTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MembershipType"
+            },
+            "description": "The list of membership types of this user in this group. Allowed values are 'Assigned' (if directly added to the group) or 'Mapped' (if added via group mappings).",
+            "nullable": true
+          },
+          "user": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GroupUserProfileResponse"
+              }
+            ],
+            "description": "The user details.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a user in a group."
+      },
+      "GroupUserResponsePaginatedResponseApi": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GroupUserResponse"
+            },
+            "description": "The List of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
+              }
+            ],
+            "description": "The details of the page information.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HostingServiceModel": {
+        "enum": [
+          "oscloud",
+          "selfhosted"
+        ],
+        "type": "string"
+      },
+      "IdentityProviderResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Gets or sets the key associated with the identity provider.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "Gets or sets the name of the identity provider.",
+            "nullable": true
+          },
+          "oidcConfiguration": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OidcConfigurationResponse"
+              }
+            ],
+            "description": "Gets or sets the OIDC configuration of the identity provider.",
+            "nullable": true
+          },
+          "samlConfiguration": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SamlConfigurationItemModel"
+            },
+            "description": "Gets or sets the SAML configuration as a dynamic JSON object.",
+            "nullable": true
+          },
+          "tokenNormalizations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TokenNormalizationModel"
+            },
+            "description": "Gets or sets a list of token normalization map of the identity provider.",
+            "nullable": true
+          },
+          "lastUpdatedDate": {
+            "type": "string",
+            "description": "Gets or sets the last updated date of the identity provider.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "type": {
+            "enum": [
+              "OIDC",
+              "SAML",
+              "Cognito"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderTypeServiceModel"
+              }
+            ],
+            "description": "Gets or sets the provider type."
+          },
+          "subtype": {
+            "enum": [
+              "Custom",
+              "AppleId",
+              "Google",
+              "Facebook",
+              "LinkedIn"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderSubtypeServiceModel"
+              }
+            ],
+            "description": "Gets or sets the provider subtype."
+          },
+          "emailTrustType": {
+            "enum": [
+              "None",
+              "EmailVerifiedClaim",
+              "All"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EmailTrustTypeServiceModel"
+              }
+            ],
+            "description": "Gets or sets the email trust type of the identity provider."
+          },
+          "hosting": {
+            "enum": [
+              "oscloud",
+              "selfhosted"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HostingServiceModel"
+              }
+            ],
+            "description": "Gets or sets the hosting type of the identity provider."
+          },
+          "autoCreateProfiles": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether to automatically create profiles."
+          },
+          "profileLinkingField": {
+            "enum": [
+              "Email",
+              "Username",
+              "None"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProfileLinkingFieldServiceModel"
+              }
+            ],
+            "description": "Gets or sets the profile linking field."
+          }
+        },
+        "additionalProperties": false
+      },
+      "IdentityProviderResponsePaginatedResponseApi": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdentityProviderResponse"
+            },
+            "description": "The List of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
+              }
+            ],
+            "description": "The details of the page information.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "MembershipType": {
         "enum": [
           "Assigned",
@@ -4241,13 +4449,138 @@
         ],
         "type": "string"
       },
-      "NewUserProfileResponse": {
+      "OidcConfigurationResponse": {
         "type": "object",
         "properties": {
-          "key": {
+          "discoveryUrl": {
             "type": "string",
-            "description": "The user's key.",
+            "description": "Gets or sets discovery url of the identity provider.",
+            "nullable": true
+          },
+          "authorizationUrl": {
+            "type": "string",
+            "description": "Gets or sets authorization url of the identity provider.",
+            "nullable": true
+          },
+          "tokenUrl": {
+            "type": "string",
+            "description": "Gets or sets token url of the identity provider.",
+            "nullable": true
+          },
+          "userInfoUrl": {
+            "type": "string",
+            "description": "Gets or sets userInfo url of the identity provider.",
+            "nullable": true
+          },
+          "logoutUrl": {
+            "type": "string",
+            "description": "Gets or sets logout url of the identity provider.",
+            "nullable": true
+          },
+          "jwksUrl": {
+            "type": "string",
+            "description": "Gets or sets json web key sets url of the identity provider.",
+            "nullable": true
+          },
+          "issuer": {
+            "type": "string",
+            "description": "Gets or sets issuer of the identity provider.",
+            "nullable": true
+          },
+          "clientAuthenticationMethod": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ClientAuthenticationMethodServiceModel"
+              }
+            ],
+            "description": "Gets or sets client authentication method of the identity provider.",
+            "nullable": true
+          },
+          "clientAssertionSigningAlgorithm": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ClientAssertionSigningAlgorithmServiceModel"
+              }
+            ],
+            "description": "Gets or sets client assertation signing algorithm of the identity provider.",
+            "nullable": true
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Gets or sets list of scopes supported by the identity provider.",
+            "nullable": true
+          },
+          "clientId": {
+            "type": "string",
+            "description": "Gets or sets client id provided by the identity provider.",
+            "nullable": true
+          },
+          "clientSecret": {
+            "type": "string",
+            "description": "Gets or sets client secret provided by the identity provider.",
+            "nullable": true
+          },
+          "usePkce": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether true if authorization code flow should be used."
+          },
+          "pkceMethod": {
+            "enum": [
+              "plain",
+              "S256"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PkceMethodServiceModel"
+              }
+            ],
+            "description": "Gets or sets pkceMethod of the identity provider."
+          },
+          "providerCustomConfig": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderCustomConfigModel"
+              }
+            ],
+            "description": "Gets or sets ProviderCustomConfig of the identity provider.",
+            "nullable": true
+          },
+          "suppressNonceVerification": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether gets or Sets the field SuppressNonceVerification."
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrgRolePermissionDetailsApiResponse": {
+        "type": "object",
+        "properties": {
+          "permissionKey": {
+            "type": "string",
+            "description": "Gets or sets the permission key.",
             "format": "uuid"
+          },
+          "environmentKeys": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Gets or sets the environment keys.",
+            "nullable": true
+          },
+          "claimName": {
+            "type": "string",
+            "description": "Gets or sets the claim name.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Gets or sets the permission name.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -4260,91 +4593,7 @@
         ],
         "type": "string"
       },
-      "OrganizationRoleByUserResponse": {
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string",
-            "description": "Gets or sets organization role key.",
-            "format": "uuid"
-          },
-          "name": {
-            "type": "string",
-            "description": "Gets or sets organization role name.",
-            "nullable": true
-          },
-          "grantPeriod": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/GrantPeriod"
-              }
-            ],
-            "description": "Gets or sets the period during which the role is valid.",
-            "nullable": true
-          },
-          "assetKey": {
-            "type": "string",
-            "description": "Gets or sets the asset key.",
-            "format": "uuid",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "OrganizationRoleByUserResponsePaginatedResponse": {
-        "type": "object",
-        "properties": {
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OrganizationRoleByUserResponse"
-            },
-            "description": "The List of results.",
-            "nullable": true
-          },
-          "page": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/PageInfoWithTotals"
-              }
-            ],
-            "description": "The details of the page information.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "OrganizationRoleCreationRequest": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Gets or sets the name of Organization Role.",
-            "nullable": true
-          },
-          "permissions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PermissionDetails"
-            },
-            "description": "Gets or sets the list of permissions for the Organization Role.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "OrganizationRoleCreationResponse": {
-        "type": "object",
-        "properties": {
-          "orgRoleKey": {
-            "type": "string",
-            "description": "Gets or sets the Organization Role Key.",
-            "format": "uuid"
-          }
-        },
-        "additionalProperties": false
-      },
-      "OrganizationRoleHttpResponse": {
+      "OrganizationRoleApiResponse": {
         "required": [
           "permissions"
         ],
@@ -4363,7 +4612,7 @@
           "permissions": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PermissionDetails"
+              "$ref": "#/components/schemas/OrgRolePermissionDetailsApiResponse"
             },
             "description": "Gets or sets the permissions.",
             "nullable": true
@@ -4375,13 +4624,13 @@
         },
         "additionalProperties": false
       },
-      "OrganizationRoleHttpResponsePaginatedResponse": {
+      "OrganizationRoleApiResponsePaginatedResponseApi": {
         "type": "object",
         "properties": {
           "results": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/OrganizationRoleHttpResponse"
+              "$ref": "#/components/schemas/OrganizationRoleApiResponse"
             },
             "description": "The List of results.",
             "nullable": true
@@ -4389,11 +4638,95 @@
           "page": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/PageInfoWithTotals"
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
               }
             ],
             "description": "The details of the page information.",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrganizationRoleByUserApiResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Gets or sets organization role key.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "Gets or sets organization role name.",
+            "nullable": true
+          },
+          "grantPeriod": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GrantPeriodApiModel"
+              }
+            ],
+            "description": "Gets or sets the period during which the role is valid.",
+            "nullable": true
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "Gets or sets the asset key.",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrganizationRoleByUserApiResponsePaginatedResponseApi": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationRoleByUserApiResponse"
+            },
+            "description": "The List of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
+              }
+            ],
+            "description": "The details of the page information.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrganizationRoleCreateRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Gets or sets the name of Organization Role.",
+            "nullable": true
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PermissionDetailsRequest"
+            },
+            "description": "Gets or sets the list of permissions for the Organization Role.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrganizationRoleCreateResponse": {
+        "type": "object",
+        "properties": {
+          "orgRoleKey": {
+            "type": "string",
+            "description": "Gets or sets the Organization Role Key.",
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -4409,7 +4742,7 @@
           "permissions": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PermissionDetails"
+              "$ref": "#/components/schemas/PermissionDetailsRequest"
             },
             "description": "Gets or sets the list of permissions for the organization role.",
             "nullable": true
@@ -4417,7 +4750,7 @@
         },
         "additionalProperties": false
       },
-      "PageInfoWithTotals": {
+      "PageInfoWithTotalsApi": {
         "required": [
           "count",
           "limit",
@@ -4440,18 +4773,18 @@
             "description": "The offset of the current page of results.",
             "format": "int32"
           },
+          "totalResults": {
+            "type": "integer",
+            "description": "The total number of results.",
+            "format": "int32",
+            "nullable": true
+          },
           "nextPageOffset": {
             "type": "integer",
             "description": "The offset of the next page of results. (optional)",
             "format": "int32",
             "nullable": true,
             "readOnly": true
-          },
-          "totalResults": {
-            "type": "integer",
-            "description": "The total number of results.",
-            "format": "int32",
-            "nullable": true
           },
           "totalPages": {
             "type": "integer",
@@ -4527,7 +4860,7 @@
         },
         "additionalProperties": false
       },
-      "PermissionDetails": {
+      "PermissionDetailsRequest": {
         "type": "object",
         "properties": {
           "permissionKey": {
@@ -4552,6 +4885,28 @@
           "name": {
             "type": "string",
             "description": "Gets or sets the permission name.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PermissionInheritance": {
+        "required": [
+          "realmStages"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Gets or sets the permission key.",
+            "format": "uuid"
+          },
+          "realmStages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StageServiceModel"
+            },
+            "description": "Gets or sets the realm stage list.",
             "nullable": true
           }
         },
@@ -4600,7 +4955,7 @@
           "inherits": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PermissionWithStages"
+              "$ref": "#/components/schemas/PermissionInheritance"
             },
             "description": "Gets or sets the inherits.",
             "nullable": true
@@ -4621,11 +4976,16 @@
             "type": "string",
             "description": "Gets or sets the claim name.",
             "nullable": true
+          },
+          "remarks": {
+            "type": "string",
+            "description": "Gets or sets the remarks for the permission.",
+            "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "PermissionResponsePaginatedResponse": {
+      "PermissionResponsePaginatedResponseApi": {
         "type": "object",
         "properties": {
           "results": {
@@ -4639,7 +4999,7 @@
           "page": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/PageInfoWithTotals"
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
               }
             ],
             "description": "The details of the page information.",
@@ -4648,27 +5008,12 @@
         },
         "additionalProperties": false
       },
-      "PermissionWithStages": {
-        "required": [
-          "realmStages"
+      "PkceMethodServiceModel": {
+        "enum": [
+          "plain",
+          "S256"
         ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string",
-            "description": "Gets or sets the permission key.",
-            "format": "uuid"
-          },
-          "realmStages": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Stage"
-            },
-            "description": "Gets or sets the realm stage list.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
+        "type": "string"
       },
       "ProblemDetails": {
         "type": "object",
@@ -4710,7 +5055,49 @@
         },
         "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
       },
-      "RevokeDetails": {
+      "ProfileLinkingFieldServiceModel": {
+        "enum": [
+          "Email",
+          "Username",
+          "None"
+        ],
+        "type": "string"
+      },
+      "ProviderCustomConfigModel": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "Gets or sets the KeyId value.",
+            "nullable": true
+          },
+          "teamId": {
+            "type": "string",
+            "description": "Gets or sets the TeamId value.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProviderSubtypeServiceModel": {
+        "enum": [
+          "Custom",
+          "AppleId",
+          "Google",
+          "Facebook",
+          "LinkedIn"
+        ],
+        "type": "string"
+      },
+      "ProviderTypeServiceModel": {
+        "enum": [
+          "OIDC",
+          "SAML",
+          "Cognito"
+        ],
+        "type": "string"
+      },
+      "RevokeDetailsRequest": {
         "type": "object",
         "properties": {
           "assetKeys": {
@@ -4744,6 +5131,12 @@
             "nullable": true
           },
           "status": {
+            "enum": [
+              "Active",
+              "Invited",
+              "Inactive",
+              "PendingRegistration"
+            ],
             "allOf": [
               {
                 "$ref": "#/components/schemas/UserProfileStatus"
@@ -4765,16 +5158,16 @@
           "_embedded": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/UserProfileEmbedded"
+                "$ref": "#/components/schemas/UserProfileEmbeddedResponse"
               }
             ],
-            "description": "The embedded information to provide. (optional)\n\nOnly available when the request includes the query parameter `embed=`,\n\ne.g. `embed=userIdentityProviders`",
+            "description": "The embedded information to provide. (optional)\nOnly available when the request includes the query parameter `embed=`,\ne.g. `embed=userIdentityProviders`",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "RoleUserResponsePaginatedResponse": {
+      "RoleUserResponsePaginatedResponseApi": {
         "type": "object",
         "properties": {
           "results": {
@@ -4788,7 +5181,7 @@
           "page": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/PageInfoWithTotals"
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
               }
             ],
             "description": "The details of the page information.",
@@ -4797,7 +5190,23 @@
         },
         "additionalProperties": false
       },
-      "Stage": {
+      "SamlConfigurationItemModel": {
+        "type": "object",
+        "properties": {
+          "configName": {
+            "type": "string",
+            "description": "Gets or sets the ConfigName value.",
+            "nullable": true
+          },
+          "configValue": {
+            "type": "string",
+            "description": "Gets or sets the ConfigValue value.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StageServiceModel": {
         "enum": [
           "PRD",
           "QA",
@@ -4806,58 +5215,21 @@
         ],
         "type": "string"
       },
-      "SubjectQueryResponse": {
+      "TokenNormalizationModel": {
         "type": "object",
         "properties": {
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SubjectResponseApiModel"
-            },
-            "description": "Gets or sets the users or/and Api clients",
+          "normalClaim": {
+            "type": "string",
+            "description": "Gets or sets the NormalClaim value.",
+            "nullable": true
+          },
+          "foreignClaim": {
+            "type": "string",
+            "description": "Gets or sets the ForeignClaim value.",
             "nullable": true
           }
         },
         "additionalProperties": false
-      },
-      "SubjectResponseApiModel": {
-        "type": "object",
-        "properties": {
-          "subjectType": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/SubjectType"
-              }
-            ],
-            "description": "Type of the subject."
-          },
-          "user": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UserSubject"
-              }
-            ],
-            "description": "User response. Returned if the SubjectType is User.",
-            "nullable": true
-          },
-          "apiClient": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/ApiClientSubject"
-              }
-            ],
-            "description": "Api client response. Returned if the SubjectType is ApiClient.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "SubjectType": {
-        "enum": [
-          "User",
-          "ApiClient"
-        ],
-        "type": "string"
       },
       "UserGroupResponse": {
         "required": [
@@ -4877,17 +5249,16 @@
           "group": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/GroupResponse"
+                "$ref": "#/components/schemas/GroupApiResponse"
               }
             ],
             "description": "A group that a user is part of.",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "Represents a group that a user is part of."
+        "additionalProperties": false
       },
-      "UserGroupResponsePaginatedResponse": {
+      "UserGroupResponsePaginatedResponseApi": {
         "type": "object",
         "properties": {
           "results": {
@@ -4901,7 +5272,7 @@
           "page": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/PageInfoWithTotals"
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
               }
             ],
             "description": "The details of the page information.",
@@ -4910,7 +5281,7 @@
         },
         "additionalProperties": false
       },
-      "UserIdpProfile": {
+      "UserIdpProfileResponse": {
         "type": "object",
         "properties": {
           "userKey": {
@@ -4968,7 +5339,21 @@
         },
         "additionalProperties": false
       },
-      "UserProfile": {
+      "UserProfileAccessResponse": {
+        "type": "object",
+        "properties": {
+          "hasOrganizationRoles": {
+            "type": "boolean",
+            "description": "User has organization-level roles"
+          },
+          "hasApplicationRoles": {
+            "type": "boolean",
+            "description": "User has application roles"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserProfileApiResponse": {
         "type": "object",
         "properties": {
           "key": {
@@ -4987,6 +5372,12 @@
             "nullable": true
           },
           "status": {
+            "enum": [
+              "Active",
+              "Invited",
+              "Inactive",
+              "PendingRegistration"
+            ],
             "allOf": [
               {
                 "$ref": "#/components/schemas/UserProfileStatus"
@@ -4997,7 +5388,7 @@
           "access": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/UserProfileAccess"
+                "$ref": "#/components/schemas/UserProfileAccessResponse"
               }
             ],
             "description": "The user's profile access.",
@@ -5030,38 +5421,44 @@
           "_embedded": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/UserProfileEmbedded"
+                "$ref": "#/components/schemas/UserProfileEmbeddedResponse"
               }
             ],
-            "description": "The embedded information to provide. (optional)\n\nOnly available when the request includes the query parameter `embed=`,\n\ne.g. `embed=applicationRoles`",
+            "description": "The embedded information to provide. (optional)\nOnly available when the request includes the query parameter `embed=`,\ne.g. `embed=applicationRoles`",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "UserProfileAccess": {
+      "UserProfileApiResponsePaginatedResponseApi": {
         "type": "object",
         "properties": {
-          "hasOrganizationRoles": {
-            "type": "boolean",
-            "description": "User has organization-level roles"
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserProfileApiResponse"
+            },
+            "description": "The List of results.",
+            "nullable": true
           },
-          "hasApplicationRoles": {
-            "type": "boolean",
-            "description": "User has application roles"
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
+              }
+            ],
+            "description": "The details of the page information.",
+            "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "UserProfileCreateRequest": {
-        "required": [
-          "email"
-        ],
+      "UserProfileCreateApiRequest": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
-            "description": "The user’s name.",
+            "description": "The user's name.",
             "nullable": true
           },
           "email": {
@@ -5081,11 +5478,27 @@
           "addToBuiltInIdentityProvider": {
             "type": "boolean",
             "description": "Creates the user in the built-in identity provider. Default is false (not created in the built-in identity provider)."
+          },
+          "identityProviderKey": {
+            "type": "string",
+            "description": "The identity provider key. When provided, a UserIdpProfile will be created or linked.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "subject": {
+            "type": "string",
+            "description": "The user’s subject claim value for this IdP.",
+            "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "description": "The user’s username for this IdP.",
+            "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "UserProfileCreateRequestBulkApiRequest": {
+      "UserProfileCreateApiRequestBulkApiRequest": {
         "required": [
           "records"
         ],
@@ -5094,7 +5507,7 @@
           "records": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserProfileCreateRequest"
+              "$ref": "#/components/schemas/UserProfileCreateApiRequest"
             },
             "description": "The list of requests",
             "nullable": true
@@ -5102,20 +5515,31 @@
         },
         "additionalProperties": false
       },
-      "UserProfileEmbed": {
+      "UserProfileCreateResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The user's key.",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserProfileEmbedType": {
         "enum": [
           "ApplicationRoles",
           "UserIdentityProviders"
         ],
         "type": "string"
       },
-      "UserProfileEmbedded": {
+      "UserProfileEmbeddedResponse": {
         "type": "object",
         "properties": {
           "applicationRoles": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ApplicationRoleResponse"
+              "$ref": "#/components/schemas/ApplicationRoleApiResponse"
             },
             "description": "List of application roles.",
             "nullable": true
@@ -5123,32 +5547,9 @@
           "userIdentityProviders": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserIdpProfile"
+              "$ref": "#/components/schemas/UserIdpProfileResponse"
             },
             "description": "List of user identity providers.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "UserProfilePaginatedResponse": {
-        "type": "object",
-        "properties": {
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UserProfile"
-            },
-            "description": "The List of results.",
-            "nullable": true
-          },
-          "page": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/PageInfoWithTotals"
-              }
-            ],
-            "description": "The details of the page information.",
             "nullable": true
           }
         },
@@ -5183,32 +5584,6 @@
           "PendingRegistration"
         ],
         "type": "string"
-      },
-      "UserSubject": {
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string",
-            "description": "User key.",
-            "format": "uuid"
-          },
-          "name": {
-            "type": "string",
-            "description": "User name.",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "description": "User email.",
-            "nullable": true
-          },
-          "photoUrl": {
-            "type": "string",
-            "description": "User photo url.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
       }
     },
     "securitySchemes": {
@@ -5219,5 +5594,10 @@
         "bearerFormat": "JWT"
       }
     }
-  }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
 }
