@@ -5,6 +5,7 @@ summary: Learn to use INSERT and UPSERT statements in ANSI-92 queries to create 
 figma:
 coverage-type:
   - remember
+  - apply
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
@@ -20,7 +21,7 @@ outsystems-tools:
 isautopublish: true
 ---
 
-# _INSERT_ and _UPSERT_ statements in ANSI-92 queries
+# INSERT and UPSERT statements in ANSI-92 queries
 
 ```sql
 { INSERT | UPSERT } INTO entity
