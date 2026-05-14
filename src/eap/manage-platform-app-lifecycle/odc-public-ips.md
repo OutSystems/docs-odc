@@ -217,7 +217,7 @@ For background on the network requirements and the protocol-based security model
 
 <div class="info" markdown="1">
 
-This method uses shared IP addresses. All ODCtenants in the same region will share these IPs.
+This method uses shared IP addresses. All ODC tenants in the same region will share these IPs.
 
 </div>
 
@@ -271,7 +271,7 @@ The following table lists the Data platform IPs for each customer region. All co
 | Europe (Frankfurt), Europe (London), Israel (Tel Aviv), Middle East (UAE), South Africa (Cape Town) | Europe (Frankfurt) | 3.73.166.181, 52.59.51.255, 18.194.166.197 |
 | Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta), Asia Pacific (Hong Kong) | Asia Pacific (Singapore) | 52.76.74.134, 18.143.210.11, 52.74.33.192 |
 
-## Platform unification between O11 and ODC{#platform-unification}
+## Platform unification between O11 and ODC {#platform-unification}
 
 For Platform unification between O11 and ODC, the O11 LifeTime of self-managed infrastructures must allow inbound connections from ODC.
 
