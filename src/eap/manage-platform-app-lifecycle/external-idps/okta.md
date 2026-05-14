@@ -1,6 +1,11 @@
 ---
 summary: OutSystems Developer Cloud (ODC) allows admins to configure Okta as an external identity provider through its portal interface.
-tags: identity and access management, okta integration, oidc, security configuration, api management
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - OIDC
 locale: en-us
 guid: 0a284428-86c4-4b57-b912-b122674b69e4
 app_type: mobile apps, reactive web apps
@@ -27,19 +32,11 @@ This page is provided as a reference. For the latest instructions about adding O
 
 ## Prerequisites
 
-<div class="info" markdown="1">
+* Review the [System considerations](intro.md#system-considerations) for external identity providers.
 
-Review the [System considerations](intro.md#system-considerations) for external identity providers.
+* You must have the [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 
-</div>
-
-You must have the [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
-
-<div class="warning" markdown="1">
-
-Your identity provider's endpoints (Discovery, JWKS, token, and userinfo) must be publicly reachable. ODC validates tokens by retrieving signing keys from the JWKS endpoint, so providers that aren't accessible from the public internet aren't supported.
-
-</div>
+* Your identity provider's endpoints (Discovery, JWKS, token, and userinfo) must be reachable by ODC. ODC validates tokens by retrieving signing keys from the JWKS endpoint. Either expose these endpoints publicly, or restrict access by allowlisting the ODC identity egress IP addresses in your firewall. For the list of IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp). For background on the network requirements and the protocol-based security model, refer to [Network considerations](intro.md#network-considerations).
 
 ## Configure Okta
 

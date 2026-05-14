@@ -4,7 +4,13 @@ locale: en-us
 guid: b5f8692d-68bf-41a1-89ec-5e8fc7069e31
 app_type: mobile apps,reactive web apps
 platform-version: odc
-tags: saml configuration,identity providers,single sign-on,authentication
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - SAML
+  - SSO
 audience:
   - Platform administrator
 figma:
@@ -36,11 +42,7 @@ From your provider, have the following ready:
 * SAML metadata URL or metadata XML file.
 * Provider configuration details (Entity ID, SSO URL, certificates).
 
-<div class="warning" markdown="1">
-
-Your identity provider's endpoints (metadata, SSO, and single logout URLs) must be publicly reachable. ODC's identity broker contacts these endpoints during authentication, so providers that aren't accessible from the public internet aren't supported.
-
-</div>
+* Your identity provider's endpoints (metadata, SSO, and single logout URLs) must be reachable by ODC. ODC's identity broker contacts these endpoints during authentication. Either expose these endpoints publicly, or restrict access by allowlisting the ODC identity egress IP addresses in your firewall. For the list of IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp). For background on the network requirements and the protocol-based security model, refer to [Network considerations](intro.md#network-considerations).
 
 ## Add a SAML 2.0 provider
 

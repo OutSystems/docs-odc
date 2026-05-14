@@ -1,15 +1,21 @@
 ---
-summary: Securely connect ODC applications to external systems using hostname-based access or whitelist public IPs.
-tags: application security, network security, access control
+summary: OutSystems Developer Cloud (ODC) egress IP addresses to allowlist for runtime apps, external IdPs, observability streaming, and O11 unification by region.
+tags:
+  - Authentication
+  - External Authentication
+  - IdP
+  - Infrastructure
+  - IP Filters
+  - Private Gateway
+  - Security
 locale: en-us
 guid: 2356ff87-f2e9-4ab2-81bf-34ebcffe68c2
 app_type: mobile apps, reactive web apps
 figma:
 platform-version: odc
 audience:
-  - Platform administrator
-  - Tech lead
   - Architect
+  - Platform administrator
 outsystems-tools:
   - odc portal
 coverage-type:
@@ -31,6 +37,8 @@ In ODC, you may need to configure allowlisting in the following scenarios:
 * [Streaming observability and audit trails](#streaming-analytics-audit-trail): You can stream [observability data](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md) to APM tools and [audit trail logs](../monitor-and-troubleshoot/audit-trail/audit-trail-streaming.md) to SIEM tools. To receive them, these tools must expose a reachable ingestion endpoint. You can secure this setup by allowlisting the ODC Data platform egress IPs so only authorized traffic is permitted.
 
 * [Platform unification between O11 and ODC](#platform-unification): For self-managed O11 infrastructures integrating with ODC, the O11 LifeTime must allow inbound connections from ODC. You can secure this setup by allowlisting the ODC Platform egress IPs.
+
+* [Authentication with external identity providers](#authentication-external-idp): If your users authenticate through an external identity provider (IdP) hosted in a private network, the IdP must allow inbound connections from ODC. You can secure this setup by allowlisting the ODC identity egress IPs.
 
 <div class="info" markdown="1">
 
@@ -201,6 +209,39 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 108.137.107.109, 108.137.147.80, 16.78.156.70 |
 | Production | 108.137.159.172, 16.79.51.184, 43.218.83.26 |
 
+## Authentication with external identity providers {#authentication-external-idp}
+
+When your users authenticate through an external identity provider (IdP), the authentication requests are sent from the ODC identity egress IP addresses. If your IdP is hosted in a private network, you must allow inbound access from the ODC identity egress IP addresses based on your ODC region. The same IP addresses apply to all stage types (Development, Non-production, and Production).
+
+For background on the network requirements and the protocol-based security model, refer to [Network considerations](external-idps/intro.md#network-considerations).
+
+<div class="info" markdown="1">
+
+This method uses shared IP addresses. All ODCtenants in the same region will share these IPs.
+
+</div>
+
+Configure your firewall to allow TCP port 443 from the following IP addresses based on your ODC region:
+
+| Region | IP addresses |
+| --- | --- |
+| US East (North Virginia) | 3.208.177.153, 3.226.215.83, 52.5.9.181 |
+| Canada (Central) | 15.157.15.65, 35.183.55.202, 99.79.180.149 |
+| South America (São Paulo) | 18.229.23.112, 52.67.12.132, 54.207.62.214 |
+| Europe (London) | 13.43.51.237, 3.8.76.165, 35.176.26.72 |
+| Europe (Ireland) | 34.252.73.130, 52.16.63.99, 54.78.172.186 |
+| Europe (Frankfurt) | 18.158.174.41, 18.197.0.24, 3.75.30.32 |
+| South Africa (Cape Town) | 13.247.205.230, 16.28.132.200, 16.28.36.149 |
+| Israel (Tel Aviv) | 51.16.113.217, 51.17.143.25, 51.17.172.171 |
+| Middle East (UAE) | 3.28.112.44, 3.29.221.140, 40.172.6.163 |
+| Asia Pacific (Mumbai) | 13.200.119.72, 3.109.172.165, 3.111.135.88 |
+| Asia Pacific (Singapore) | 18.141.123.148, 52.74.226.31, 54.254.61.74 |
+| Asia Pacific (Seoul) | 15.164.76.246, 43.200.185.229, 54.180.68.246 |
+| Asia Pacific (Tokyo) | 18.177.184.214, 18.180.72.76, 54.150.136.31 |
+| Asia Pacific (Hong Kong) | 18.167.22.65, 18.167.8.6, 95.40.133.223 |
+| Asia Pacific (Sydney) | 13.55.58.47, 52.62.227.220, 54.79.184.178 |
+| Asia Pacific (Jakarta) | 108.137.16.206, 16.79.38.96, 16.79.8.236 |
+
 ## Streaming analytics and audit trail data {#streaming-analytics-audit-trail}
 
 ODC can stream data to external monitoring and compliance tools:
@@ -215,6 +256,12 @@ Both features use the same ODC Data platform egress IP addresses. When your APM 
 
 * The public IP addresses of the Data platform region that serves your ODC region and the corresponding IP addresses you must allowlist.
 
+<div class="info" markdown="1">
+
+This method uses shared IP addresses. All ODC tenants in the same region will share these IPs.
+
+</div>
+
 The following table lists the Data platform IPs for each customer region. All connections use TCP port 443.
 
 | Customer regions | Data platform region | Data platform IPs |
@@ -226,7 +273,15 @@ The following table lists the Data platform IPs for each customer region. All co
 
 ## Platform unification between O11 and ODC{#platform-unification}
 
-For Platform unification between O11 and ODC, the O11 LifeTime of self-managed infrastructures must allow inbound connections from ODC. Configure your firewall to allow TCP port 443 from the following IP addresses based on your ODC region:
+For Platform unification between O11 and ODC, the O11 LifeTime of self-managed infrastructures must allow inbound connections from ODC.
+
+<div class="info" markdown="1">
+
+This method uses shared IP addresses. All ODC tenants in the same region will share these IPs.
+
+</div>
+
+Configure your firewall to allow TCP port 443 from the following IP addresses based on your ODC region:
 
 | Region | IP addresses |
 | --- | --- |

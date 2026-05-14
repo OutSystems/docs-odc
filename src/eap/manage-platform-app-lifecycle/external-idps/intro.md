@@ -68,9 +68,13 @@ The way you configure scopes differs slightly depending on the authentication pr
 
 ODC has the following limitations for external identity providers:
 
-### General system considerations
+### Network considerations {#network-considerations}
 
-* The external IdP's endpoints (such as Discovery, JWKS, token, userinfo, SSO, and metadata) must be reachable from the public internet. ODC's identity broker calls these endpoints to complete the authentication flow and validate tokens or assertions, so IdPs behind a private network, VPN, or IP allowlist aren't supported.
+The external IdP's endpoints (such as Discovery, JWKS, Token, UserInfo, SSO, and metadata) must be reachable by the ODC Identity broker. ODC's identity broker calls these endpoints to complete the authentication flow and validate tokens or assertions.
+
+The recommended approach is to make these endpoints reachable from the public internet. The security model is protocol-based. Trust comes from signed tokens and assertions, cryptographic validation against the IdP's signing keys, and HTTPS/TLS on all calls. ODC also enforces standard issuer, audience, and signature checks. Exposing the OIDC/SAML endpoints only exposes the metadata and validation surface defined by those standards, not the underlying directory or administrative interfaces of the IdP.
+
+If your IdP can't be exposed to the public internet, allowlist the ODC Identity IPs at your firewall instead. This way, only inbound traffic from ODC reaches the IdP endpoints. For the current list of Identity IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp).
 
 ### System considerations for OpenID Connect
 

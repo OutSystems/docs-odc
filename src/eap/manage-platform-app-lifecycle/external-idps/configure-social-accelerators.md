@@ -1,10 +1,16 @@
 ---
-summary: Social provider accelerator requirements for authentication in OutSystems Developer Cloud (ODC).
+summary: Social provider accelerators in OutSystems Developer Cloud (ODC) let you add Apple, Google, Facebook, or LinkedIn as an external IdP.
 locale: en-us
 guid: 3080f31e-088b-4278-a2b8-1134a5a40255
 app_type: mobile apps,reactive web apps
 platform-version: odc
-tags: authentication,identity provider,openid connect,security,social login
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - OIDC
+  - Security
 figma:
 audience:
   - Platform administrator
@@ -14,8 +20,8 @@ topic:
 outsystems-tools:
   - odc portal
 coverage-type:
+  - remember
   - apply
-  - understand
 helpids: 30711
 isautopublish: true
 ---
@@ -32,17 +38,9 @@ Before you begin, make sure you have:
 * The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 * A registered app in your social provider portal, with the required values for your provider ready (refer to [Social provider requirements](#social-provider-requirements); for example, Client ID and Client Secret).
 
-<div class="warning" markdown="1">
+* Your identity provider's endpoints (Discovery, JWKS, token, and userinfo) must be reachable by ODC. ODC validates tokens by retrieving signing keys from the JWKS endpoint. Either expose these endpoints publicly, or restrict access by allowlisting the ODC identity egress IP addresses in your firewall. For the list of IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp). For background on the network requirements and the protocol-based security model, refer to [Network considerations](intro.md#network-considerations).
 
-Your identity provider's endpoints (Discovery, JWKS, token, and userinfo) must be publicly reachable. ODC validates tokens by retrieving signing keys from the JWKS endpoint, so providers that aren't accessible from the public internet aren't supported.
-
-</div>
-
-<div class="info" markdown="1">
-
-When registering your web app in your identity provider’s portal, if you're prompted to provide redirect URIs, leave the fields empty or use placeholder URIs. You'll update these with the correct values in a later step of this guide.
-
-</div>
+* When registering your web app in your identity provider’s portal, if you're prompted to provide redirect URIs, leave the fields empty or use placeholder URIs. You'll update these with the correct values in a later step of this guide.
 
 ## Add a social provider with accelerators
 
