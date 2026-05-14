@@ -1,6 +1,10 @@
 ---
 summary: Configure A2A connections to external agents in OutSystems Developer Cloud (ODC), setting URLs, reviewing skills, and choosing OAuth, bearer, or API key auth.
-tags: a2a connections, external agents, authentication, integrations, odc portal
+tags:
+  - AI
+  - Agentic
+  - Authentication
+  - OAuth
 guid: 8764e4f7-25f3-4a21-b6a9-000c59f4a93a
 locale: en-us
 app_type: reactive web apps
@@ -9,10 +13,11 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 outsystems-tools:
   - odc portal
 coverage-type:
+  - apply
 content-type:
 audience:
-  - Platform administrator
   - Developer
+  - Platform administrator
 topic:
 isautopublish: true
 ---
@@ -70,6 +75,11 @@ To add connections to external agents in the ODC portal using A2A:
 
     ![Connections page in the ODC portal showing a single A2A connection named Remote Agent in the list of connections.](images/a2a-connection-created-pl.png "A2A connection listed in ODC portal Connections page")
 
+<div class="info" markdown="1">
+
+If an agent card is updated, edit the connection, click **Get details** again, click **Test connection**, and then click **Save** to apply the updated agent card.
+
+</div>
 When you create the A2A connection, a `SendMessage` server action is automatically created for you to send messages to the remote agent. You can use this action in your ODC agentic apps to communicate with the remote agent and leverage its capabilities in your applications.
 This server action's description comes from the remote agent-card JSON file. It should include the remote agent's name, description, and skills, so the ODC agent knows how to delegate requests to the right remote agent using this action as a tool.
 A2A protocol support sending the message with multiple parts and each part can be of TextPart, FilePart, and DataPart types.
