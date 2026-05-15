@@ -1,6 +1,7 @@
 ---
 summary: This article describes the rate limiting information for ODC REST APIs.
-tags: rate limiting, apis, rest api, best practices, outsystems
+tags:
+  - REST
 guid: 00b00239-a7db-4759-be9c-47c3d59255fb
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -14,6 +15,8 @@ content-type:
 audience:
   - Developer
   - Platform administrator
+coverage-type:
+  - remember
 isautopublish: true
 ---
 
@@ -38,6 +41,7 @@ The rate limits per organization are as follows:
 | [Environment configurations](../env-config-v1.md) | 10 | None |
 | [External library generation](https://www.outsystems.com/tk/redirect?g=47875596-0618-4d20-824a-fbbaea2d353b) | 100 | `POST` methods: **10** (per endpoint) |
 | [Code quality](https://www.outsystems.com/tk/redirect?g=56511d24-4834-4a34-aed7-226f63891109) | 100 | `POST /code-analyses`: **10** |
+| [Subscription](../subscription-v1.md) | 100 | None |
 
 ## Exceeding the rate limit
 

@@ -1,0 +1,1109 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Subscription API",
+    "description": "REST endpoints for retrieving information about subscription and entitlement data and usage.\n",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://ODC_PORTAL_DOMAIN/api/subscription/v1",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/subscription/v1",
+      "description": "Replace {odc-portal-domain} with the domain of your organization.",
+      "variables": {
+        "{odc-portal-domain}": {
+          "default": "{odc-portal-domain}",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/environments/{environmentKey}/entitlements/usage/by-asset": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves usage information for assets by entitlement in a specific environment.",
+        "description": "Retrieves usage data per asset (application, library) for entitlements in a specific environment.\n\nAPI Client needs the **Stage > View stage** permission for the target stage.",
+        "operationId": "Subscription_GetAssetUsage",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "Environment key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entitlementIds",
+            "in": "query",
+            "description": "Optional comma-separated entitlement IDs. Valid values: applicationObjects, maxComputeReplicas, maxCustomCodeTotalDuration, agentExecutions",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assetKeys",
+            "in": "query",
+            "description": "Optional comma-separated asset keys (GUIDs) to filter results",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assetName",
+            "in": "query",
+            "description": "Optional partial or full asset name for case-insensitive search",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "detailKey",
+            "in": "query",
+            "description": "Optional filter by detail key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "detailName",
+            "in": "query",
+            "description": "Optional filter by detail name (case-insensitive partial match)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Comma-separated metrics to sort by. Prefix with '+' for ascending (default) or '-' for descending. Example: \"applicationObjects,-maxComputeReplicas\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "since",
+            "in": "query",
+            "description": "Start date for usage data (ISO 8601 format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "description": "End date for usage data (ISO 8601 format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of asset rows to return. Default: 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of asset rows to skip for pagination. Default: 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnifiedEntitlementByAssetBlockPagedListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the target stage."
+      }
+    },
+    "/environments/{environmentKey}/entitlements": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves information on the entitlements for a specific environment.",
+        "description": "Retrieves information on the entitlements for a specific environment.\n\nAPI Client needs the **Stage > View stage** permission for the target stage.",
+        "operationId": "Subscription_GetEnvironmentEntitlements",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "Environment key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentEntitlements"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the target stage."
+      }
+    },
+    "/environments/{environmentKey}/entitlements/usage": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves usage data for entitlements in a specific environment.",
+        "description": "Retrieves usage data for entitlements in a specific environment.\n\nAPI Client needs the **Stage > View stage** permission for the target stage.",
+        "operationId": "Subscription_GetEnvironmentUsage",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "Environment key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "granularity",
+            "in": "query",
+            "description": "Data granularity (summary, hour, day, month). Defaults to summary.",
+            "schema": {
+              "type": "string",
+              "default": "summary"
+            }
+          },
+          {
+            "name": "since",
+            "in": "query",
+            "description": "Start date for usage data (ISO 8601 format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "description": "End date for usage data (ISO 8601 format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entitlementIds",
+            "in": "query",
+            "description": "Optional comma-separated entitlement IDs. Valid values: applicationObjects, maxComputeReplicas, maxDbCompute, maxDbStorage, maxCustomCodeTotalDuration, agentExecutions, internalUsers, externalUsers",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "aggregations",
+            "in": "query",
+            "description": "Optional comma-separated aggregation functions. Valid values: Total, Max, P95, P90",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntitlementUsageItemListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the target stage."
+      }
+    },
+    "/organization/configurations": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves information of the organization configurations.",
+        "description": "Retrieves information of the organization configurations.\n\nAPI Client needs the **Subscriptions > View subscription** permission.",
+        "operationId": "Subscription_GetOrganizationConfigurations",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganizationConfigurations"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Subscriptions > View subscription** permission."
+      },
+      "patch": {
+        "tags": [],
+        "summary": "Patches editable organization configurations.",
+        "description": "Patches editable organization configurations.\n\nAPI Client needs the **Subscriptions > Manage subscription** permission to change organization configurations.",
+        "operationId": "Subscription_PatchOrganizationConfigurations",
+        "requestBody": {
+          "description": "Entitlement information",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/OrganizationConfigurations"
+                  }
+                ],
+                "description": "Represents the configurations for the Organization."
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/OrganizationConfigurations"
+                  }
+                ],
+                "description": "Represents the configurations for the Organization."
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Subscriptions > Manage subscription** permission to change organization configurations."
+      }
+    },
+    "/organization/entitlements": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves information on the entitlements for the organization.",
+        "description": "Retrieves information on the entitlements for the organization.\n\nAPI client must have at least one permission.",
+        "operationId": "Subscription_GetOrganizationEntitlements",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganizationEntitlements"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission."
+      }
+    },
+    "/organization/entitlements/usage": {
+      "get": {
+        "tags": [],
+        "summary": "Retrieves usage data for entitlements for the organization.",
+        "description": "Retrieves usage data for entitlements for the organization.\n\nAPI client must have at least one permission.",
+        "operationId": "Subscription_GetOrganizationUsage",
+        "parameters": [
+          {
+            "name": "granularity",
+            "in": "query",
+            "description": "Data granularity (summary, hour, day, month). Defaults to summary.",
+            "schema": {
+              "type": "string",
+              "default": "summary"
+            }
+          },
+          {
+            "name": "since",
+            "in": "query",
+            "description": "Start date for usage data (ISO 8601 format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "description": "End date for usage data (ISO 8601 format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entitlementIds",
+            "in": "query",
+            "description": "Optional comma-separated entitlement IDs. Valid value: appAnalyticsStreamLimit",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "aggregations",
+            "in": "query",
+            "description": "Optional comma-separated aggregation functions. Valid values: Total, Max, P95, P90",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntitlementUsageItemListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddOn": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "AddOn Title",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "AddOn description",
+            "nullable": true
+          },
+          "documentationUrl": {
+            "type": "string",
+            "description": "Addon documentation Url",
+            "nullable": true
+          },
+          "dataType": {
+            "type": "string",
+            "description": "Addon Data type",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Addon name",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Addon value",
+            "nullable": true
+          },
+          "isNullable": {
+            "type": "boolean",
+            "description": "Defines if the addOn can have a null value"
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AddOnStatus"
+              }
+            ],
+            "description": "Defines whether the addOn is active or Not"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the addOn information"
+      },
+      "AddOnStatus": {
+        "enum": [
+          "active",
+          "inactive"
+        ],
+        "type": "string"
+      },
+      "BaseEnvironmentMeasuredEntitlement": {
+        "type": "object",
+        "properties": {
+          "maxValue": {
+            "type": "integer",
+            "description": "Maximum value allowed for the environment entitlement",
+            "format": "int32",
+            "nullable": true
+          },
+          "measuredValue": {
+            "type": "integer",
+            "description": "Current value for the given entitlement",
+            "format": "int64",
+            "nullable": true
+          },
+          "lastUpdatedDate": {
+            "type": "string",
+            "description": "Last time it was updated",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the measured entitlement information"
+      },
+      "EntitlementUsageItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Entitlement identifier (e.g., \"applicationObjects\").",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable name of the entitlement.",
+            "nullable": true
+          },
+          "aggregation": {
+            "type": "string",
+            "description": "Aggregation function applied (e.g., \"avg\", \"max\", \"total\").",
+            "nullable": true
+          },
+          "lastUpdatedDate": {
+            "type": "string",
+            "description": "Last time this usage data was updated.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "usage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UsageDataPoint"
+            },
+            "description": "Time series of usage data points.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents usage data for a single entitlement type."
+      },
+      "EntitlementUsageItemListResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntitlementUsageItem"
+            },
+            "description": "List of results.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a list of results."
+      },
+      "EnvironmentEntitlements": {
+        "type": "object",
+        "properties": {
+          "addOns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AddOn"
+            },
+            "description": "List of addOns in an environment",
+            "nullable": true
+          },
+          "limits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Limit"
+            },
+            "description": "List of Limits in an environment",
+            "nullable": true
+          },
+          "users": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EnvironmentUsersEntitlement"
+              }
+            ],
+            "description": "Represents the users in an environment",
+            "nullable": true
+          },
+          "applicationObjects": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BaseEnvironmentMeasuredEntitlement"
+              }
+            ],
+            "description": "Represents the application objects in an environment",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the entitlements present in an environment"
+      },
+      "EnvironmentUsersEntitlement": {
+        "type": "object",
+        "properties": {
+          "internal": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BaseEnvironmentMeasuredEntitlement"
+              }
+            ],
+            "description": "Represents the internal users of an environment",
+            "nullable": true
+          },
+          "external": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BaseEnvironmentMeasuredEntitlement"
+              }
+            ],
+            "description": "Represents the external users of an environment",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Limit": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Limit Name",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Limit Value",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Limit Description",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "Limit Title",
+            "nullable": true
+          },
+          "documentationUrl": {
+            "type": "string",
+            "description": "Limit DocumentationUrl",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrganizationConfigurations": {
+        "type": "object",
+        "properties": {
+          "areAllEmailDomainsInternal": {
+            "type": "boolean",
+            "description": "Defines whether all email user domains are internal or not"
+          },
+          "internalEmailDomains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of email user domains to be considered as internal",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the configurations for the Organization."
+      },
+      "OrganizationEntitlements": {
+        "type": "object",
+        "properties": {
+          "subscriptionStartDate": {
+            "type": "string",
+            "description": "Date when the organization first subscribed",
+            "format": "date-time"
+          },
+          "subscriptionEndDate": {
+            "type": "string",
+            "description": "Date when the organization subscription will end",
+            "format": "date-time",
+            "nullable": true
+          },
+          "adminEmailDomain": {
+            "type": "string",
+            "description": "Domain of the admin email",
+            "nullable": true
+          },
+          "edition": {
+            "type": "string",
+            "description": "Edition",
+            "nullable": true
+          },
+          "editionId": {
+            "type": "string",
+            "description": "Edition Id",
+            "nullable": true
+          },
+          "addOns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AddOn"
+            },
+            "description": "Collection of the addOns the organization subscribed to",
+            "nullable": true
+          },
+          "limits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Limit"
+            },
+            "description": "Collection of the limits the organization contracted to",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the entitlements present in an organization"
+      },
+      "PageInfoWithTotals": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of results in the current page.",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limit of results per page.",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset of the current page of results.",
+            "format": "int32"
+          },
+          "nextPageOffset": {
+            "type": "integer",
+            "description": "Offset of the next page of results. Null when there is no next page.",
+            "format": "int32",
+            "nullable": true
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total of results.",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": "Total of result pages.",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains response page information including totals."
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code applicable to the problem.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation of the error.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem.",
+            "nullable": true
+          },
+          "traceId": {
+            "type": "string",
+            "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
+          }
+        },
+        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+      },
+      "UnifiedEntitlementAssetRow": {
+        "type": "object",
+        "properties": {
+          "assetKey": {
+            "type": "string",
+            "description": "Asset unique identifier (GUID).",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Asset name.",
+            "nullable": true
+          },
+          "assetType": {
+            "type": "string",
+            "description": "Asset type (e.g., \"Application\", \"Library\").",
+            "nullable": true
+          },
+          "value": {
+            "type": "number",
+            "description": "Aggregated usage value for this asset.",
+            "format": "double",
+            "nullable": true
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UnifiedEntitlementDetailRow"
+            },
+            "description": "Detail-level breakdown within this asset's entitlement usage.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a single asset row with entitlement usage value."
+      },
+      "UnifiedEntitlementByAssetBlock": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Entitlement identifier (e.g., \"applicationObjects\").",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable name of the entitlement.",
+            "nullable": true
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UnifiedEntitlementAssetRow"
+            },
+            "description": "Collection of assets with usage values for this entitlement.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents usage data for a single entitlement type, with breakdown by assets."
+      },
+      "UnifiedEntitlementByAssetBlockPagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UnifiedEntitlementByAssetBlock"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "UnifiedEntitlementDetailRow": {
+        "type": "object",
+        "properties": {
+          "detailKey": {
+            "type": "string",
+            "description": "Detail unique identifier.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Detail name.",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Detail type.",
+            "nullable": true
+          },
+          "value": {
+            "type": "number",
+            "description": "Usage value for this detail.",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a detail-level breakdown within an asset's entitlement usage."
+      },
+      "UsageDataPoint": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "description": "Timestamp for this data point.",
+            "format": "date-time"
+          },
+          "value": {
+            "type": "number",
+            "description": "Usage value at this timestamp.",
+            "format": "double",
+            "nullable": true
+          },
+          "cumulativeValue": {
+            "type": "number",
+            "description": "Cumulative aggregation value up to this timestamp. Only present for certain aggregation types.",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a single data point in a usage time series."
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}

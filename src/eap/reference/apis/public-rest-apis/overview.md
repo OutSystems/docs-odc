@@ -138,6 +138,16 @@ The Code quality REST API enables you to analyze and monitor the technical debt 
 
 For detailed information about the endpoints, refer to [Code quality API reference](../code-quality-api-v1.md).
 
+### Subscription
+
+The Subscription REST API enables you to access subscription metrics, for example, application object count and consumption, and end-user capacity usage. You can use this API to:
+
+* Build custom alerting systems based on subscription usage metrics.
+
+* Automate internal cross-charging between business units.
+
+For detailed information about the endpoints, refer to [Subscription API reference](../subscription-v1.md).
+
 ## Terminology mapping between the ODC Portal and ODC APIs
 
 A **stage** in ODC refers to the place where you deploy your apps, such as the Development stage and the Production stage. In ODC REST APIs, the **ODC stage** is represented as an **environment** resource.

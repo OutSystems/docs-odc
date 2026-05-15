@@ -1,6 +1,7 @@
 ---
 summary: This article provides links to the API reference documentation for the ODC REST APIs.
-tags: rest apis, api references, odc, api documentation
+tags:
+  - REST
 guid: 3f2d0f1e-6d14-4b2a-a2bf-6fcb1c3b7b2c
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -10,6 +11,8 @@ content-type:
 audience:
   - Developer
   - Platform administrator
+coverage-type:
+  - remember
 figma:
 outsystems-tools:
   - odc portal
@@ -30,3 +33,4 @@ Use these API reference documents to explore endpoints, request and response sch
 * [Environment Configurations API](../env-config-v1.md)
 * [Code quality API](../code-quality-api-v1.md)
 * [External Library Generation Service API](../external-library-generation-api-v1.md)
+* [Subscription API](../subscription-v1.md)
