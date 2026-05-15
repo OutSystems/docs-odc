@@ -520,86 +520,122 @@
   },
   "components": {
     "schemas": {
-      "AddOn": {
+      "Addon": {
         "type": "object",
         "properties": {
-          "title": {
+          "id": {
             "type": "string",
-            "description": "AddOn Title",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "description": "AddOn description",
-            "nullable": true
-          },
-          "documentationUrl": {
-            "type": "string",
-            "description": "Addon documentation Url",
-            "nullable": true
-          },
-          "dataType": {
-            "type": "string",
-            "description": "Addon Data type",
+            "description": "Internal name (internal identifier of the Add-on, visible in APIs only).",
             "nullable": true
           },
           "name": {
             "type": "string",
-            "description": "Addon name",
+            "description": "Name of the Add-on.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the Add-on that explains the purpose.",
+            "nullable": true
+          },
+          "documentationUrl": {
+            "type": "string",
+            "description": "Documentation URL for the Add-on.",
+            "nullable": true
+          },
+          "dataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DataType"
+              }
+            ],
+            "description": "Data type of the value associated with the addon, one of [\"bool\", \"float\", \"str\", \"int\"].",
             "nullable": true
           },
           "value": {
             "type": "string",
-            "description": "Addon value",
+            "description": "Value associated with the Add-on. A null value means not subscribed.",
             "nullable": true
           },
-          "isNullable": {
-            "type": "boolean",
-            "description": "Defines if the addOn can have a null value"
+          "startDate": {
+            "type": "string",
+            "description": "Date when the Add-on starts to be available.",
+            "nullable": true
           },
-          "status": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AddOnStatus"
-              }
-            ],
-            "description": "Defines whether the addOn is active or Not"
+          "endDate": {
+            "type": "string",
+            "description": "Date when the Add-on expires (e.g. trials or time-bound Add-ons).",
+            "nullable": true
+          },
+          "unit": {
+            "type": "string",
+            "description": "Unit type of the value (e.g. gigabyte, terabyte, second, minute, hour).",
+            "nullable": true
           }
         },
         "additionalProperties": false,
-        "description": "Represents the addOn information"
+        "description": "Represents the Add-on information."
       },
-      "AddOnStatus": {
+      "DataType": {
         "enum": [
-          "active",
-          "inactive"
+          "Bool",
+          "Float",
+          "Str",
+          "Int"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Data type of the value of an addon or entitlement."
       },
-      "BaseEnvironmentMeasuredEntitlement": {
+      "Entitlement": {
         "type": "object",
         "properties": {
-          "maxValue": {
-            "type": "integer",
-            "description": "Maximum value allowed for the environment entitlement",
-            "format": "int32",
-            "nullable": true
-          },
-          "measuredValue": {
-            "type": "integer",
-            "description": "Current value for the given entitlement",
-            "format": "int64",
-            "nullable": true
-          },
-          "lastUpdatedDate": {
+          "id": {
             "type": "string",
-            "description": "Last time it was updated",
-            "format": "date-time",
+            "description": "Internal identifier of the entitlement, visible in APIs only.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the entitlement.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the entitlement.",
+            "nullable": true
+          },
+          "documentationUrl": {
+            "type": "string",
+            "description": "Entitlement documentation URL.",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "A value that is assigned to the entitlement, overriding the default value.",
+            "nullable": true
+          },
+          "dataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DataType"
+              }
+            ],
+            "description": "Data type of the value associated with the entitlement , one of [\"bool\", \"float\", \"str\", \"int\"].",
+            "nullable": true
+          },
+          "unit": {
+            "type": "string",
+            "description": "Unit type of the value (e.g. gigabyte, terabyte, second, minute, hour).",
+            "nullable": true
+          },
+          "kind": {
+            "type": "string",
+            "description": "Indicates the kind of the entitlement. This is an open list with current values of (feature, limit, other). New values should be treated the same as \"other\".",
             "nullable": true
           }
         },
         "additionalProperties": false,
-        "description": "Represents the measured entitlement information"
+        "description": "Represents the Entitlement information."
       },
       "EntitlementUsageItem": {
         "type": "object",
@@ -655,98 +691,25 @@
       "EnvironmentEntitlements": {
         "type": "object",
         "properties": {
-          "addOns": {
+          "addons": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/AddOn"
+              "$ref": "#/components/schemas/Addon"
             },
             "description": "List of addOns in an environment",
             "nullable": true
           },
-          "limits": {
+          "entitlements": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Limit"
+              "$ref": "#/components/schemas/Entitlement"
             },
-            "description": "List of Limits in an environment",
-            "nullable": true
-          },
-          "users": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EnvironmentUsersEntitlement"
-              }
-            ],
-            "description": "Represents the users in an environment",
-            "nullable": true
-          },
-          "applicationObjects": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/BaseEnvironmentMeasuredEntitlement"
-              }
-            ],
-            "description": "Represents the application objects in an environment",
+            "description": "List of entitlements in an environment",
             "nullable": true
           }
         },
         "additionalProperties": false,
         "description": "Represents the entitlements present in an environment"
-      },
-      "EnvironmentUsersEntitlement": {
-        "type": "object",
-        "properties": {
-          "internal": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/BaseEnvironmentMeasuredEntitlement"
-              }
-            ],
-            "description": "Represents the internal users of an environment",
-            "nullable": true
-          },
-          "external": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/BaseEnvironmentMeasuredEntitlement"
-              }
-            ],
-            "description": "Represents the external users of an environment",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Limit": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Limit Name",
-            "nullable": true
-          },
-          "value": {
-            "type": "string",
-            "description": "Limit Value",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "description": "Limit Description",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "description": "Limit Title",
-            "nullable": true
-          },
-          "documentationUrl": {
-            "type": "string",
-            "description": "Limit DocumentationUrl",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
       },
       "OrganizationConfigurations": {
         "type": "object",
@@ -772,44 +735,50 @@
         "properties": {
           "subscriptionStartDate": {
             "type": "string",
-            "description": "Date when the organization first subscribed",
-            "format": "date-time"
-          },
-          "subscriptionEndDate": {
-            "type": "string",
-            "description": "Date when the organization subscription will end",
+            "description": "Date when the organization first subscribed.",
             "format": "date-time",
             "nullable": true
           },
-          "adminEmailDomain": {
+          "subscriptionEndDate": {
             "type": "string",
-            "description": "Domain of the admin email",
+            "description": "Date when the organization subscription will end.",
+            "format": "date-time",
             "nullable": true
           },
           "edition": {
             "type": "string",
-            "description": "Edition",
+            "description": "Name of the Edition.",
             "nullable": true
           },
           "editionId": {
             "type": "string",
-            "description": "Edition Id",
+            "description": "Identifier of the Edition.",
             "nullable": true
           },
-          "addOns": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AddOn"
-            },
-            "description": "Collection of the addOns the organization subscribed to",
+          "editionFamilyId": {
+            "type": "string",
+            "description": "Identifier of the EditionFamily.",
             "nullable": true
           },
-          "limits": {
+          "activationCode": {
+            "type": "string",
+            "description": "Organization Activation Code",
+            "nullable": true
+          },
+          "addons": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Limit"
+              "$ref": "#/components/schemas/Addon"
             },
-            "description": "Collection of the limits the organization contracted to",
+            "description": "Collection of the addOns the organization is subscribed to.",
+            "nullable": true
+          },
+          "entitlements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Entitlement"
+            },
+            "description": "Collection of the entitlements the organization is entitled to.",
             "nullable": true
           }
         },
@@ -1047,6 +1016,14 @@
   "security": [
     {
       "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "private"
+    },
+    {
+      "name": "public"
     }
   ]
 }
