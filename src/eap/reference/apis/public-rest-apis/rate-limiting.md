@@ -1,7 +1,5 @@
 ---
-summary: This article describes the rate limiting information for ODC REST APIs.
-tags:
-  - REST
+tags: REST
 guid: 00b00239-a7db-4759-be9c-47c3d59255fb
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -17,15 +15,16 @@ audience:
   - Platform administrator
 coverage-type:
   - remember
+  - understand
 isautopublish: true
+summary: OutSystems Developer Cloud (ODC) API rate limits define per-domain and per-endpoint request caps, managing traffic for user, portfolio, build, and deployment APIs.
 ---
-
 # Rate limits for the APIs
 
 API rate limits work at two levels:
 
 * **Domain-wide limits**: All requests to endpoints within an API domain share a total request pool per minute.
-* **Specific endpoint limits**: Some endpoints have individual limits, but these requests still count toward the domain-wide limit.
+* **Specific endpoint limits**: Some endpoints have individual limits. If an endpoint isn't listed, it uses the domain-wide limit. These requests still count toward the domain-wide limit.
 
 The rate limits per organization are as follows:
 
@@ -41,6 +40,7 @@ The rate limits per organization are as follows:
 | [Environment configurations](../env-config-v1.md) | 10 | None |
 | [External library generation](https://www.outsystems.com/tk/redirect?g=47875596-0618-4d20-824a-fbbaea2d353b) | 100 | `POST` methods: **10** (per endpoint) |
 | [Code quality](https://www.outsystems.com/tk/redirect?g=56511d24-4834-4a34-aed7-226f63891109) | 100 | `POST /code-analyses`: **10** |
+| [Native mobile build](../native-mobile-builds-api-v1.md) | 100 | `POST` methods: **5** (per endpoint)<br/>`PATCH` methods: **10** (per endpoint) |
 | [Subscription](../subscription-v1.md) | 100 | None |
 
 ## Exceeding the rate limit

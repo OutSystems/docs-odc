@@ -813,6 +813,7 @@
         - href: eap/reference/apis/identity-v1.md
         - href: eap/reference/apis/portfolio-v1.md
         - href: eap/reference/apis/build-v1.md
+        - href: eap/reference/apis/native-mobile-builds-api-v1.md
         - href: eap/reference/apis/deployment-v1.md
         - href: eap/reference/apis/dependency-v1.md
         - href: eap/reference/apis/asset-v1.md
@@ -840,6 +841,7 @@
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/set-version-release-notes.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/asset-configurations.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/deploy-asset.md
+        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/automating-mobile-builds-and-store-upload.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/release-library.md
     - href: eap/reference/apis/public-rest-apis/upload-external-library-api.md
 

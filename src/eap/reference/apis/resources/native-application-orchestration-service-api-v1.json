@@ -1,0 +1,2747 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Native Mobile Build API",
+    "description": "API for building and managing native mobile applications.",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://ODC_PORTAL_DOMAIN/api/native-mobile-builds/v1",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/native-mobile-builds/v1",
+      "description": "Replace {odc-portal-domain} with the domain of your organization.",
+      "variables": {
+        "odc-portal-domain": {
+          "default": "ODC_PORTAL_DOMAIN",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/build-operations/{operationKey}": {
+      "get": {
+        "tags": [
+          "BuildOperations"
+        ],
+        "summary": "Returns the details for a given build operation",
+        "description": "The build operation key is generated when the build operation is created and returned in the response of the create API.\n\nIt can also be obtained through the list API.\n\nRate Limit: 100 requests per minute\n\nAPI Client needs the **Stage > View stage** permission.",
+        "operationId": "GET_BuildOperations_Get",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Environment key",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "query",
+            "description": "Application key",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "Build operation key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The details of the build operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuildOperationResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request is malformed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The specified environment, application or build operation was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. The rate limit for the API has been exceeded. \nRate Limit: 100 requests per minute",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission."
+      }
+    },
+    "/build-operations/{operationKey}/log-messages": {
+      "get": {
+        "tags": [
+          "BuildOperations"
+        ],
+        "summary": "Returns the progress messages for a given native build",
+        "description": "Progress messages provide step-by-step status updates on the build process. Supports pagination via limit and offset parameters.\n\nRate Limit: 100 requests per minute\n\nAPI Client needs the **Stage > View stage** permission.",
+        "operationId": "GET_BuildOperations_GetMessages",
+        "parameters": [
+          {
+            "name": "operationKey",
+            "in": "path",
+            "description": "Native build key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Environment key",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "query",
+            "description": "Application key",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the last page, to get the following page with the same filters applied.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Max number of elements that should be returned in a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of progress messages for the native build operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32TaskProgressMessagePagedListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The specified environment, application or build operation was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. The rate limit for the API has been exceeded. \nRate Limit: 100 requests per minute",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request is malformed."
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission."
+      }
+    },
+    "/build-operations": {
+      "get": {
+        "tags": [
+          "BuildOperations"
+        ],
+        "summary": "Lists all build operations for filtering criteria",
+        "description": "Results can optionally be filtered by build status, platform, or revision. Supports pagination via limit and offset parameters.\n\nRate Limit: 100 requests per minute\n\nAPI Client needs the **Stage > View stage** permission.",
+        "operationId": "GET_BuildOperations_List",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Environment key",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "query",
+            "description": "Application key",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "mobilePlatform",
+            "in": "query",
+            "description": "Filter by mobile platform type, if filled.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/MobilePlatform"
+                }
+              ]
+            }
+          },
+          {
+            "name": "revision",
+            "in": "query",
+            "description": "Filter by revision number, if filled.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Filter by status of the build, if filled.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/BuildStatus"
+                }
+              ]
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the last page, to get the following page with the same filters applied.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Max number of elements that should be returned in a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of build operations matching the filtering criteria.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuildOperationResultPagedListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request is malformed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. The rate limit for the API has been exceeded. \nRate Limit: 100 requests per minute",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission."
+      },
+      "post": {
+        "tags": [
+          "BuildOperations"
+        ],
+        "summary": "Starts a new native build",
+        "description": "This is an asynchronous operation. The response contains the details of the created build operation, including its\ngenerated key, which can be used to query the operation status and details through other APIs.\n\nRate Limit: 5 requests per minute\n\nAPI Client needs the **Release management > Deploy apps** permission.",
+        "operationId": "POST_BuildOperations_Post",
+        "requestBody": {
+          "description": "Details of the build operation request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuildOperationRequest"
+                  }
+                ],
+                "description": "Build operation request"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuildOperationRequest"
+                  }
+                ],
+                "description": "Build operation request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The native build operation was created successfully. The response contains the details of the created build operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuildOperationResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The specified environment or application was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. The rate limit for the API has been exceeded. \nRate Limit: 100 requests per minute",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Release management > Deploy apps** permission."
+      }
+    },
+    "/build-operations/version-suggestions": {
+      "post": {
+        "tags": [
+          "BuildOperations"
+        ],
+        "summary": "Returns the suggested versions of the next build for the request platform(s)",
+        "description": "Provides both the version number and version code for the next build. If no platform is specified, suggestions are returned for both iOS and Android.\n\nRate Limit: 5 requests per minute\n\nAPI Client needs the **Stage > View stage** permission.",
+        "operationId": "POST_BuildOperations_PostVersionSuggestions",
+        "requestBody": {
+          "description": "Details of the version suggestion request. See OutSystems.NativeApplicationOrchestration.Contracts.V1.Models.Public.VersionSuggestionsRequest",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/VersionSuggestionsRequest"
+                  }
+                ],
+                "description": "Version suggestions request"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/VersionSuggestionsRequest"
+                  }
+                ],
+                "description": "Version suggestions request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The suggested version number and version code of the next native build for the given environment key, application key and platform.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Android": {
+                      "$ref": "#/components/schemas/NativeBuildVersions"
+                    },
+                    "iOS": {
+                      "$ref": "#/components/schemas/NativeBuildVersions"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The specified environment or application was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. The rate limit for the API has been exceeded. \nRate Limit: 5 requests per minute",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request is malformed."
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission."
+      }
+    },
+    "/build-operations/native-build-validation": {
+      "post": {
+        "tags": [
+          "BuildOperations"
+        ],
+        "summary": "Check if a new native build is needed for one or all platforms",
+        "description": "Results indicate whether the current build artifacts are up to date or if a rebuild is required. If no platform is specified, validation is performed for both iOS and Android.\n\nRate Limit: 5 requests per minute\n\nAPI Client needs the **Stage > View stage** permission.",
+        "operationId": "POST_BuildOperations_ValidateNativeBuild",
+        "requestBody": {
+          "description": "Details of the native build validation request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuildOperationValidationRequest"
+                  }
+                ],
+                "description": "Native build validation request for public API"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuildOperationValidationRequest"
+                  }
+                ],
+                "description": "Native build validation request for public API"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The validation results for the given build key, revision and platform.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuildOperationValidationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request is malformed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The specified environment or application was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. The rate limit for the API has been exceeded. \nRate Limit: 5 requests per minute",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Stage > View stage** permission."
+      }
+    },
+    "/environments/{environmentKey}/applications/{applicationKey}/configurations/android": {
+      "get": {
+        "tags": [
+          "NativeMobileConfigurations"
+        ],
+        "summary": "Returns the deployed platform-specific native configuration for a given Android application",
+        "description": "The response includes all the necessary information to build and deploy an Android native mobile application,\nsuch as keystore files and other related configurations.\n\nRate Limit: 100 requests per minute\n\nAPI Client needs the **Configuration management > View configurations** permission.",
+        "operationId": "GET_NativeBuildConfigurations_GetAndroidMobileConfiguration",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "Environment key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "path",
+            "description": "Application key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Android configuration details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AndroidBuildConfigurationResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The specified environment or application does not exist, or there is no mobile configuration deployed for the specified application.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The rate limit for viewing mobile configurations has been exceeded. \nRate Limit: 100 requests per minute",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission."
+      },
+      "patch": {
+        "tags": [
+          "NativeMobileConfigurations"
+        ],
+        "summary": "Updates the Native Mobile Configuration for Android Applications",
+        "description": "Allows modifying keystore files and other related settings required for building and deploying the application.\nOnly the fields provided in the request body are updated; omitted fields remain unchanged.\n\nRate Limit: 10 requests per minute\n\nAPI Client needs the **Configuration management > Edit configurations** permission.",
+        "operationId": "PATCH_NativeBuildConfigurations_UpdateMobileAndroidConfiguration",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "Environment key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "path",
+            "description": "Application key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Mobile Configuration update payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AndroidBuildConfigurationRequest"
+                  }
+                ],
+                "description": "Result payload model for native Android Build configurations"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AndroidBuildConfigurationRequest"
+                  }
+                ],
+                "description": "Result payload model for native Android Build configurations"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Mobile configuration updated successfully."
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The specified environment or application does not exist, or there is no mobile configuration deployed for the specified application.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The rate limit for editing mobile configurations has been exceeded. \nRate Limit: 10 requests per minute",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Edit configurations** permission."
+      }
+    },
+    "/environments/{environmentKey}/applications/{applicationKey}/configurations/ios": {
+      "get": {
+        "tags": [
+          "NativeMobileConfigurations"
+        ],
+        "summary": "Returns the deployed native configuration for a given iOS application",
+        "description": "The response includes all the necessary information to build and deploy an iOS native mobile application,\nsuch as certificates, provisioning profiles, and other related configurations.\n\nRate Limit: 100 requests per minute\n\nAPI Client needs the **Configuration management > View configurations** permission.",
+        "operationId": "GET_NativeBuildConfigurations_GetIosMobileConfiguration",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "Environment key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "path",
+            "description": "Application key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "iOS configuration details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IosBuildConfigurationResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The specified environment or application does not exist, or there is no mobile configuration deployed for the specified application.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The rate limit for viewing mobile configurations has been exceeded. \nRate Limit: 100 requests per minute",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission."
+      },
+      "patch": {
+        "tags": [
+          "NativeMobileConfigurations"
+        ],
+        "summary": "Updates the Native Mobile Configuration for iOS Applications",
+        "description": "Allows modifying certificates, provisioning profiles, and other related settings required for building and deploying the application.\nOnly the fields provided in the request body are updated; omitted fields remain unchanged.\n\nRate Limit: 10 requests per minute\n\nAPI Client needs the **Configuration management > Edit configurations** permission.",
+        "operationId": "PATCH_NativeBuildConfigurations_UpdateMobileIosConfiguration",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "Environment key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "path",
+            "description": "Application key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Mobile Configuration update payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IosBuildConfigurationRequest"
+                  }
+                ],
+                "description": "Request payload model for native IOS Build configurations"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IosBuildConfigurationRequest"
+                  }
+                ],
+                "description": "Request payload model for native IOS Build configurations"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Mobile configuration updated successfully."
+          },
+          "401": {
+            "description": "Not authorized to perform the requested operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The specified environment or application does not exist, or there is no mobile configuration deployed for the specified application.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The rate limit for editing mobile configurations has been exceeded. \nRate Limit: 10 requests per minute",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Edit configurations** permission."
+      }
+    },
+    "/native-builder-versions": {
+      "get": {
+        "tags": [
+          "NativeBuilderVersions"
+        ],
+        "summary": "Returns the list of possible native builder versions",
+        "description": "\nRate Limit: 100 requests per minute per tenant\n\nAPI client must have at least one permission.",
+        "operationId": "GET_NativeBuilderVersions_List",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NativeBuilderVersionListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission."
+      }
+    },
+    "/environments/{environmentKey}/applications/{applicationKey}/configurations/extensibility-settings": {
+      "get": {
+        "tags": [
+          "NativeBuildExtensibilitySettings"
+        ],
+        "summary": "Gets extensibility settings for the given application.",
+        "description": "\nRate Limit: 100 requests per minute per tenant\n\nAPI Client needs the **Configuration management > View configurations** permission.",
+        "operationId": "GET_NativeBuildExtensibilitySettings_Get",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "Environment key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "path",
+            "description": "Application key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtensibilitySettingsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission."
+      },
+      "patch": {
+        "tags": [
+          "NativeBuildExtensibilitySettings"
+        ],
+        "summary": "Patches extensibility settings for a given application",
+        "description": "\nRate Limit: 10 requests per minute per tenant\n\nAPI Client needs the **Configuration management > Edit configurations** permission.",
+        "operationId": "PATCH_NativeBuildExtensibilitySettings_Patch",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "Environment key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationKey",
+            "in": "path",
+            "description": "Application key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/ExtensibilitySettingsRequest"
+                  }
+                ],
+                "description": "Extensibility Setting model for request to NAOS.10 PatchExtensibilitySettings endpoint\nRefer to [HLD](https://outsystemsrd.atlassian.net/wiki/spaces/RDSD/pages/4224516209/Solution+Enabler+-+Mobile+High+Level+Design#NAOS-API) for example payload"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/ExtensibilitySettingsRequest"
+                  }
+                ],
+                "description": "Extensibility Setting model for request to NAOS.10 PatchExtensibilitySettings endpoint\nRefer to [HLD](https://outsystemsrd.atlassian.net/wiki/spaces/RDSD/pages/4224516209/Solution+Enabler+-+Mobile+High+Level+Design#NAOS-API) for example payload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Edit configurations** permission."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AndroidBuildConfigurationRequest": {
+        "type": "object",
+        "properties": {
+          "keystore": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "Android Keystore Reference",
+            "nullable": true
+          },
+          "keystoreName": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "Android Keystore Name",
+            "nullable": true
+          },
+          "keystorePassword": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "Android Keystore Password",
+            "nullable": true
+          },
+          "alias": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "Android Alias",
+            "nullable": true
+          },
+          "aliasPassword": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "Android Alias Password",
+            "nullable": true
+          },
+          "appIdentifier": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "Application Identifier",
+            "nullable": true
+          },
+          "buildType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AndroidBuildTypePatchConfig"
+              }
+            ],
+            "description": "Native Build Type",
+            "nullable": true
+          },
+          "mabsVersion": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "Mabs Version Number",
+            "nullable": true
+          },
+          "mobileFramework": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobileFrameworkNullablePatchConfig"
+              }
+            ],
+            "description": "The framework that should be used when building mobile applications",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Result payload model for native Android Build configurations"
+      },
+      "AndroidBuildConfigurationResult": {
+        "required": [
+          "alias",
+          "aliasPassword",
+          "appIdentifier",
+          "buildType",
+          "keystore",
+          "keystoreName",
+          "keystorePassword",
+          "mabsVersion",
+          "mobileFramework"
+        ],
+        "type": "object",
+        "properties": {
+          "keystore": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecretConfig"
+              }
+            ],
+            "description": "Android Keystore Reference",
+            "nullable": true
+          },
+          "keystoreName": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringConfig"
+              }
+            ],
+            "description": "Android Keystore Name",
+            "nullable": true
+          },
+          "keystorePassword": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecretConfig"
+              }
+            ],
+            "description": "Android Keystore Password",
+            "nullable": true
+          },
+          "alias": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecretConfig"
+              }
+            ],
+            "description": "Android Alias",
+            "nullable": true
+          },
+          "aliasPassword": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecretConfig"
+              }
+            ],
+            "description": "Android Alias Password",
+            "nullable": true
+          },
+          "appIdentifier": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringConfig"
+              }
+            ],
+            "description": "Application Identifier",
+            "nullable": true
+          },
+          "buildType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AndroidBuildTypeNullableConfig"
+              }
+            ],
+            "description": "Native Build Type",
+            "nullable": true
+          },
+          "mabsVersion": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringConfig"
+              }
+            ],
+            "description": "Mabs Version Number",
+            "nullable": true
+          },
+          "mobileFramework": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobileFrameworkNullableConfig"
+              }
+            ],
+            "description": "Mobile framework",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request payload model for native Android Build configurations"
+      },
+      "AndroidBuildType": {
+        "enum": [
+          "Bundle",
+          "Debug",
+          "Release"
+        ],
+        "type": "string",
+        "description": "Android Build type"
+      },
+      "AndroidBuildTypeNullableConfig": {
+        "required": [
+          "dataType"
+        ],
+        "type": "object",
+        "properties": {
+          "isSecret": {
+            "type": "boolean",
+            "description": "Date string for date field was last updated",
+            "readOnly": true
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "Date string for date field was last updated",
+            "format": "date-time",
+            "nullable": true
+          },
+          "value": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AndroidBuildType"
+              }
+            ],
+            "description": "Config Value",
+            "nullable": true
+          },
+          "dataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GenericConfigDataType"
+              }
+            ],
+            "description": "Value data type"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get request basic config value"
+      },
+      "AndroidBuildTypePatchConfig": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AndroidBuildType"
+              }
+            ],
+            "description": "Config Value"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Patch request basic config value"
+      },
+      "AppShieldUsage": {
+        "enum": [
+          "Unused",
+          "Disabled",
+          "Applied"
+        ],
+        "type": "string",
+        "description": "AppShield usage in the native build"
+      },
+      "BuildOperationRequest": {
+        "type": "object",
+        "properties": {
+          "buildKey": {
+            "type": "string",
+            "description": "Unique identifier of the build",
+            "format": "uuid"
+          },
+          "revision": {
+            "type": "integer",
+            "description": "App revision",
+            "format": "int32"
+          },
+          "mobileVersionNumber": {
+            "type": "string",
+            "description": "Mobile package Version: incremental number with the format major.minor.patch",
+            "nullable": true
+          },
+          "mobileVersionCode": {
+            "type": "integer",
+            "description": "Mobile package Version Code: an incremental integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "mobilePlatform": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobilePlatform"
+              }
+            ],
+            "description": "Mobile platform"
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "Unique identifier of the environment",
+            "format": "uuid"
+          },
+          "applicationKey": {
+            "type": "string",
+            "description": "Unique identifier of the application",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Build operation request"
+      },
+      "BuildOperationResult": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Native Build Key",
+            "format": "uuid"
+          },
+          "applicationKey": {
+            "type": "string",
+            "description": "Application Key",
+            "format": "uuid"
+          },
+          "buildKey": {
+            "type": "string",
+            "description": "Build Key",
+            "format": "uuid"
+          },
+          "appIdentifier": {
+            "type": "string",
+            "description": "AppIdentifier",
+            "nullable": true
+          },
+          "buildType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BuildType"
+              }
+            ],
+            "description": "BuildType",
+            "nullable": true
+          },
+          "revision": {
+            "type": "integer",
+            "description": "Revision",
+            "format": "int32"
+          },
+          "mobilePlatform": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobilePlatform"
+              }
+            ],
+            "description": "MobilePlatform"
+          },
+          "mobileFramework": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobileFramework"
+              }
+            ],
+            "description": "The mobile framework (e.g., Cordova, Capacitor) used for the build.",
+            "nullable": true
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BuildStatus"
+              }
+            ],
+            "description": "Status"
+          },
+          "estimatedFinishDateTime": {
+            "type": "string",
+            "description": "EstimatedFinishDateTime",
+            "format": "date-time",
+            "nullable": true
+          },
+          "appBinaryDownloadUrl": {
+            "type": "string",
+            "description": "AppBinaryDownloadUrl",
+            "nullable": true
+          },
+          "appSourceDownloadUrl": {
+            "type": "string",
+            "description": "AppSourceDownloadUrl",
+            "nullable": true
+          },
+          "mobileBuildLogUrl": {
+            "type": "string",
+            "description": "MobileBuildLogUrl",
+            "nullable": true
+          },
+          "appShieldMappingUrl": {
+            "type": "string",
+            "description": "AppShieldMappingUrl",
+            "nullable": true
+          },
+          "appShieldUsage": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AppShieldUsage"
+              }
+            ],
+            "description": "AppShieldUsage",
+            "nullable": true
+          },
+          "mobileVersionNumber": {
+            "type": "string",
+            "description": "MobileVersionNumber",
+            "nullable": true
+          },
+          "mobileVersionCode": {
+            "type": "integer",
+            "description": "MobileVersionCode",
+            "format": "int32",
+            "nullable": true
+          },
+          "startedDateTime": {
+            "type": "string",
+            "description": "StartedDateTime",
+            "format": "date-time"
+          },
+          "finishedDateTime": {
+            "type": "string",
+            "description": "FinishedDateTime",
+            "format": "date-time",
+            "nullable": true
+          },
+          "nativeBuilderVersion": {
+            "type": "string",
+            "description": "NativeBuilderVersion",
+            "nullable": true
+          },
+          "isNativeBuilderVersionLocked": {
+            "type": "boolean",
+            "description": "IsNativeBuilderVersionLocked",
+            "nullable": true
+          },
+          "requestingUserKey": {
+            "type": "string",
+            "description": "RequestingUserId",
+            "nullable": true
+          },
+          "appDeploymentFileDownloadUrl": {
+            "type": "string",
+            "description": "Deployment file download URL (for iOS builds with status Done)",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Build operation result"
+      },
+      "BuildOperationResultPagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuildOperationResult"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "BuildOperationValidationRequest": {
+        "type": "object",
+        "properties": {
+          "environmentKey": {
+            "type": "string",
+            "description": "Unique identifier of the environment",
+            "format": "uuid"
+          },
+          "applicationKey": {
+            "type": "string",
+            "description": "Unique identifier of the application",
+            "format": "uuid"
+          },
+          "buildKey": {
+            "type": "string",
+            "description": "Unique identifier of the build",
+            "format": "uuid"
+          },
+          "revision": {
+            "type": "integer",
+            "description": "App revision",
+            "format": "int32"
+          },
+          "mobilePlatform": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobilePlatform"
+              }
+            ],
+            "description": "Mobile platform (optional). If not specified, returns validation for all platforms.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Native build validation request for public API"
+      },
+      "BuildOperationValidationResponse": {
+        "type": "object",
+        "properties": {
+          "platformResults": {
+            "type": "object",
+            "properties": {
+              "Android": {
+                "$ref": "#/components/schemas/NativeBuildValidationResult"
+              },
+              "iOS": {
+                "$ref": "#/components/schemas/NativeBuildValidationResult"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Native Build Validation results by mobile platform",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Native build validation response for public API"
+      },
+      "BuildStatus": {
+        "enum": [
+          "Waiting",
+          "Validating",
+          "Building",
+          "Shielding",
+          "Finished",
+          "Error"
+        ],
+        "type": "string",
+        "description": "Build status"
+      },
+      "BuildType": {
+        "enum": [
+          "Bundle",
+          "Debug",
+          "Release",
+          "Development",
+          "AppStore",
+          "Adhoc",
+          "InHouse",
+          "Simulator"
+        ],
+        "type": "string",
+        "description": "Build type"
+      },
+      "ExtensibilitySettingsItemRequest": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Value to be set for the configuration",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "description": "Metadata of the configuration",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the basic configuration properties for NAOS.10"
+      },
+      "ExtensibilitySettingsItemResponse": {
+        "required": [
+          "defaultValue",
+          "description",
+          "isSecret",
+          "key",
+          "name",
+          "value",
+          "valueOrigin"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the configuration",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the configuration",
+            "nullable": true
+          },
+          "dataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GenericConfigDataType"
+              }
+            ],
+            "description": "Type of the configuration"
+          },
+          "defaultValue": {
+            "type": "string",
+            "description": "Default value of the configuration",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Last set value of the configuration",
+            "nullable": true
+          },
+          "valueOrigin": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Origin"
+              }
+            ],
+            "description": "The origin of the value. Either being overridden by the user or set to its default."
+          },
+          "isSecret": {
+            "type": "boolean",
+            "description": "If the configuration is a secret"
+          },
+          "isMandatory": {
+            "type": "boolean",
+            "description": "If the configuration is mandatory"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "Date of the last update of the configuration",
+            "format": "date-time",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "description": "Metadata of the configuration",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the basic configuration properties that will be returned in the GET endpoint"
+      },
+      "ExtensibilitySettingsRequest": {
+        "type": "object",
+        "properties": {
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExtensibilitySettingsItemRequest"
+            },
+            "description": "Extensibility settings to be updated",
+            "nullable": true
+          },
+          "libraries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LibraryConfigurationRequest"
+            },
+            "description": "Library configurations",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Extensibility Setting model for request to NAOS.10 PatchExtensibilitySettings endpoint\nRefer to [HLD](https://outsystemsrd.atlassian.net/wiki/spaces/RDSD/pages/4224516209/Solution+Enabler+-+Mobile+High+Level+Design#NAOS-API) for example payload"
+      },
+      "ExtensibilitySettingsResponse": {
+        "type": "object",
+        "properties": {
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExtensibilitySettingsItemResponse"
+            },
+            "description": "Extensibility settings to be returned",
+            "nullable": true
+          },
+          "libraries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LibraryConfigurationResponse"
+            },
+            "description": "Library configurations",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Extensibility Settings model to describe response to NAOS.9 GetExtensibilitySettings endpoint\n/// Refer to [HLD](https://outsystemsrd.atlassian.net/wiki/spaces/RDSD/pages/4224516209/Solution+Enabler+-+Mobile+High+Level+Design#NAOS-API) for example response"
+      },
+      "GenericConfigDataType": {
+        "enum": [
+          "Text",
+          "Integer",
+          "LongInteger",
+          "Decimal",
+          "Boolean",
+          "DateTime",
+          "Date",
+          "Time",
+          "PhoneNumber",
+          "Email",
+          "Currency",
+          "EntityIdentifierType",
+          "BinaryUrl"
+        ],
+        "type": "string",
+        "description": "Type of configuration"
+      },
+      "Int32PageInfo": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of results in the current page.",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limit of results per page.",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset of the current page of results.",
+            "format": "int32"
+          },
+          "nextPageOffset": {
+            "type": "integer",
+            "description": "Offset of the next page of results.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains response page information."
+      },
+      "Int32TaskProgressMessagePagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Int32PageInfo"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaskProgressMessage"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "IosBuildConfigurationRequest": {
+        "type": "object",
+        "properties": {
+          "certificate": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "IOS Signing Cert Reference",
+            "nullable": true
+          },
+          "certificateName": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "IOS Signing Cert Name",
+            "nullable": true
+          },
+          "certificatePassword": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "IOS Signing Cert Password",
+            "nullable": true
+          },
+          "provisioningProfile": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "IOS Provisioning Profile Reference",
+            "nullable": true
+          },
+          "provisioningProfileName": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "IOS Provisioning Profile Name",
+            "nullable": true
+          },
+          "appIdentifier": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "Application Identifier",
+            "nullable": true
+          },
+          "buildType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IosBuildTypePatchConfig"
+              }
+            ],
+            "description": "Native Build Type",
+            "nullable": true
+          },
+          "mabsVersion": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringPatchConfig"
+              }
+            ],
+            "description": "Mabs Version Number",
+            "nullable": true
+          },
+          "mobileFramework": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobileFrameworkNullablePatchConfig"
+              }
+            ],
+            "description": "The framework that should be used when building mobile applications",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request payload model for native IOS Build configurations"
+      },
+      "IosBuildConfigurationResult": {
+        "required": [
+          "appIdentifier",
+          "buildType",
+          "certificate",
+          "certificateName",
+          "certificatePassword",
+          "mabsVersion",
+          "mobileFramework",
+          "provisioningProfile",
+          "provisioningProfileName"
+        ],
+        "type": "object",
+        "properties": {
+          "certificate": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecretConfig"
+              }
+            ],
+            "description": "IOS Signing Cert Reference",
+            "nullable": true
+          },
+          "certificateName": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringConfig"
+              }
+            ],
+            "description": "IOS Signing Cert Name",
+            "nullable": true
+          },
+          "certificatePassword": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SecretConfig"
+              }
+            ],
+            "description": "IOS Signing Cert Password",
+            "nullable": true
+          },
+          "provisioningProfile": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringConfig"
+              }
+            ],
+            "description": "IOS Provisioning Profile Reference",
+            "nullable": true
+          },
+          "provisioningProfileName": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringConfig"
+              }
+            ],
+            "description": "IOS Provisioning Profile Name",
+            "nullable": true
+          },
+          "appIdentifier": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringConfig"
+              }
+            ],
+            "description": "Application Identifier",
+            "nullable": true
+          },
+          "buildType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IosBuildTypeNullableConfig"
+              }
+            ],
+            "description": "Native Build Type",
+            "nullable": true
+          },
+          "mabsVersion": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringConfig"
+              }
+            ],
+            "description": "Mabs Version Number",
+            "nullable": true
+          },
+          "mobileFramework": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobileFrameworkNullableConfig"
+              }
+            ],
+            "description": "Mobile framework",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Result payload model for native IOS Build configurations"
+      },
+      "IosBuildType": {
+        "enum": [
+          "Development",
+          "AppStore",
+          "Adhoc",
+          "InHouse",
+          "Simulator"
+        ],
+        "type": "string",
+        "description": "IOS Build type"
+      },
+      "IosBuildTypeNullableConfig": {
+        "required": [
+          "dataType"
+        ],
+        "type": "object",
+        "properties": {
+          "isSecret": {
+            "type": "boolean",
+            "description": "Date string for date field was last updated",
+            "readOnly": true
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "Date string for date field was last updated",
+            "format": "date-time",
+            "nullable": true
+          },
+          "value": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IosBuildType"
+              }
+            ],
+            "description": "Config Value",
+            "nullable": true
+          },
+          "dataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GenericConfigDataType"
+              }
+            ],
+            "description": "Value data type"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get request basic config value"
+      },
+      "IosBuildTypePatchConfig": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IosBuildType"
+              }
+            ],
+            "description": "Config Value"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Patch request basic config value"
+      },
+      "LibraryConfigurationRequest": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExtensibilitySettingsItemRequest"
+            },
+            "description": "Settings associated with Library configuration",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Library configurations for Extensibility settings"
+      },
+      "LibraryConfigurationResponse": {
+        "required": [
+          "key",
+          "revision"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key identifier of the configuration",
+            "nullable": true
+          },
+          "revision": {
+            "type": "integer",
+            "description": "The revision number of the configuration",
+            "format": "int32"
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExtensibilitySettingsItemResponse"
+            },
+            "description": "Settings associated with Library configuration",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Library configurations for Extensibility settings"
+      },
+      "MessageSeverity": {
+        "enum": [
+          "Info",
+          "Warning",
+          "Error"
+        ],
+        "type": "string"
+      },
+      "Metadata": {
+        "required": [
+          "key",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Metadata Item Key",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Metadata Item Value",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Metadata about Extensibility setting"
+      },
+      "MobileFramework": {
+        "enum": [
+          "Capacitor",
+          "Cordova"
+        ],
+        "type": "string",
+        "description": "This enum is used to specify which framework should be used when building mobile applications"
+      },
+      "MobileFrameworkNullableConfig": {
+        "required": [
+          "dataType"
+        ],
+        "type": "object",
+        "properties": {
+          "isSecret": {
+            "type": "boolean",
+            "description": "Date string for date field was last updated",
+            "readOnly": true
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "Date string for date field was last updated",
+            "format": "date-time",
+            "nullable": true
+          },
+          "value": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobileFramework"
+              }
+            ],
+            "description": "Config Value",
+            "nullable": true
+          },
+          "dataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GenericConfigDataType"
+              }
+            ],
+            "description": "Value data type"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get request basic config value"
+      },
+      "MobileFrameworkNullablePatchConfig": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobileFramework"
+              }
+            ],
+            "description": "Config Value",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Patch request basic config value"
+      },
+      "MobilePlatform": {
+        "enum": [
+          "Android",
+          "iOS"
+        ],
+        "type": "string",
+        "description": "Mobile platform"
+      },
+      "NativeBuildValidationResult": {
+        "enum": [
+          "NativeBuildNeeded",
+          "NativeBuildNotNeeded",
+          "MissingConfiguration"
+        ],
+        "type": "string",
+        "description": "Native Build Validation Result"
+      },
+      "NativeBuildVersions": {
+        "type": "object",
+        "properties": {
+          "mobileVersionNumber": {
+            "type": "string",
+            "description": "The suggested Mobile Version Number. Format X.Y.Z",
+            "nullable": true
+          },
+          "mobileVersionCode": {
+            "type": "integer",
+            "description": "The suggested Mobile Version Code.\nIncreasing integer that indicates if one version was build after another",
+            "format": "int32"
+          },
+          "mobilePlatform": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobilePlatform"
+              }
+            ],
+            "description": "The mobile platform the suggested versions are related to"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Describes the suggested next mobile version"
+      },
+      "NativeBuilderVersion": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string",
+            "description": "The MABS version",
+            "nullable": true
+          },
+          "state": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NativeBuilderVersionState"
+              }
+            ],
+            "description": "The MABS version state"
+          },
+          "supportedMobileFrameworks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MobileFramework"
+            },
+            "description": "Supported Mobile Frameworks for the given MABS version",
+            "nullable": true
+          },
+          "defaultMobileFramework": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobileFramework"
+              }
+            ],
+            "description": "The Default Mobile Framework for the given MABS version"
+          },
+          "endOfSupportDate": {
+            "type": "string",
+            "description": "The End of Support Date for the given MABS version in DateOnly format (MM-dd-yyyy)",
+            "format": "date",
+            "nullable": true
+          },
+          "endOfLifeDate": {
+            "type": "string",
+            "description": "The End of Life Date for the given MABS version in DateOnly format (MM-dd-yyyy)",
+            "format": "date",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Native builder version"
+      },
+      "NativeBuilderVersionListResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NativeBuilderVersion"
+            },
+            "description": "List of results.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a list of results."
+      },
+      "NativeBuilderVersionState": {
+        "enum": [
+          "Active",
+          "Beta",
+          "Canary",
+          "Deprecated",
+          "Obsolete"
+        ],
+        "type": "string",
+        "description": "Native Builder Version State"
+      },
+      "Origin": {
+        "enum": [
+          "Override",
+          "Default"
+        ],
+        "type": "string",
+        "description": "The origin of the value. Either being overridden by the user or set to its default."
+      },
+      "PageInfoWithTotals": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of results in the current page.",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limit of results per page.",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset of the current page of results.",
+            "format": "int32"
+          },
+          "nextPageOffset": {
+            "type": "integer",
+            "description": "Offset of the next page of results.",
+            "format": "int32"
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total of results.",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": "Total of result pages.",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains response page information including totals."
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code applicable to the problem.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation of the error.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem.",
+            "nullable": true
+          },
+          "traceId": {
+            "type": "string",
+            "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
+          }
+        },
+        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+      },
+      "SecretConfig": {
+        "required": [
+          "dataType"
+        ],
+        "type": "object",
+        "properties": {
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "Date string for date field was last updated",
+            "format": "date-time",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Null Value",
+            "nullable": true,
+            "readOnly": true
+          },
+          "dataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GenericConfigDataType"
+              }
+            ],
+            "description": "Value data type"
+          },
+          "isSecret": {
+            "type": "boolean",
+            "description": "Date string for date field was last updated",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get request secret config value"
+      },
+      "StringConfig": {
+        "required": [
+          "dataType"
+        ],
+        "type": "object",
+        "properties": {
+          "isSecret": {
+            "type": "boolean",
+            "description": "Date string for date field was last updated",
+            "readOnly": true
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "Date string for date field was last updated",
+            "format": "date-time",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Config Value",
+            "nullable": true
+          },
+          "dataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GenericConfigDataType"
+              }
+            ],
+            "description": "Value data type"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get request basic config value"
+      },
+      "StringPatchConfig": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "Config Value",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Patch request basic config value"
+      },
+      "TaskProgressMessage": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "description": "message timestamp",
+            "format": "date-time"
+          },
+          "type": {
+            "type": "string",
+            "description": "message type (e.g., error code)",
+            "nullable": true
+          },
+          "severity": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MessageSeverity"
+              }
+            ],
+            "description": "message severity (info, warning or error)"
+          },
+          "message": {
+            "type": "string",
+            "description": "message detail",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a user facing message about the progress of an operation."
+      },
+      "VersionSuggestionsRequest": {
+        "type": "object",
+        "properties": {
+          "environmentKey": {
+            "type": "string",
+            "description": "Unique identifier of the environment",
+            "format": "uuid"
+          },
+          "applicationKey": {
+            "type": "string",
+            "description": "Unique identifier of the application",
+            "format": "uuid"
+          },
+          "mobilePlatform": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MobilePlatform"
+              }
+            ],
+            "description": "The mobile platform for which the version suggestions are being requested.\nIf not provided, suggestions for both platforms will be returned.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Version suggestions request"
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "private",
+      "description": "Native build operations"
+    },
+    {
+      "name": "public",
+      "description": "Native builder versions operations"
+    }
+  ]
+}

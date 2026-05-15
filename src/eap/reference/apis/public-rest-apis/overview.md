@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) REST APIs cover user management, deployments, builds, and code quality, all secured with OAuth 2.0 and OIDC.
+summary: OutSystems Developer Cloud (ODC) REST APIs for user management, deployments, builds, and code quality with OAuth 2.0 authentication.
 tags:
   - Authentication
   - Authorization
@@ -7,7 +7,7 @@ tags:
   - OAuth
   - OIDC
   - REST
-  - Web services
+  - Roles
 outsystems-tools:
   - odc portal
 guid: be12dc22-fd28-4edb-af36-1edda72bddc3
@@ -28,9 +28,9 @@ isautopublish: true
 
 # ODC REST APIs
 
-The OutSystems Developer Cloud (ODC) REST APIs allow you to create scripts, automation, and applications that leverage the resources of your ODC tenant, such as Users, Groups, App Roles, etc. You can use these APIs to automate and extend the built-in functionality provided with ODC.
+The OutSystems Developer Cloud (ODC) REST APIs allow you to create scripts, automation, and applications that leverage the resources of your ODC tenant, such as Users, Groups, and App Roles. You can use these APIs to automate and extend the built-in functionality provided with ODC.
 
-The ODC REST APIs uses the [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) protocol for authorization and authentication, which is based on the [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) framework. For detailed information about the authentication process, refer to [Using OAuth 2.0 to access public REST APIs](authentication/using-oauth-access-api.md).
+The ODC REST APIs use the [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) protocol for authorization and authentication, which is based on the [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) framework. For detailed information about the authentication process, refer to [Using OAuth 2.0 to access public REST APIs](authentication/using-oauth-access-api.md).
 
 ## Usage
 
@@ -65,6 +65,18 @@ The Build Operations REST API enables you to programmatically manage build proce
 * Monitor the status and progress of ongoing builds.
 
 For detailed information about the endpoints, refer to [Build Operations API reference](../build-v1.md).
+
+### Native mobile builds
+
+The Native Mobile Build REST API enables you to build and manage native mobile app packages for your ODC apps. You can use this API to:
+
+* Review and update iOS and Android configurations, such as app identifiers and signing assets.
+
+* Validate if a new native build is required.
+
+* Start and monitor native build operations and retrieve download links.
+
+For detailed information about the endpoints, refer to [Native Mobile Build API reference](../native-mobile-builds-api-v1.md).
 
 ### Deployments
 
@@ -163,3 +175,5 @@ An **end-user role** is a set of permissions assigned to users who interact with
 * [User management API reference](../identity-v1.md)
 
 * [Portfolio management API reference](../portfolio-v1.md)
+
+* [Native Mobile Build API reference](../native-mobile-builds-api-v1.md)
