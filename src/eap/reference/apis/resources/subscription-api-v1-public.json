@@ -380,63 +380,6 @@
           }
         },
         "x-os-permissions": "API Client needs the **Subscriptions > View subscription** permission."
-      },
-      "patch": {
-        "tags": [],
-        "summary": "Patches editable organization configurations.",
-        "description": "Patches editable organization configurations.\n\nAPI Client needs the **Subscriptions > Manage subscription** permission to change organization configurations.",
-        "operationId": "Subscription_PatchOrganizationConfigurations",
-        "requestBody": {
-          "description": "Entitlement information",
-          "content": {
-            "application/json": {
-              "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/OrganizationConfigurations"
-                  }
-                ],
-                "description": "Represents the configurations for the Organization."
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/OrganizationConfigurations"
-                  }
-                ],
-                "description": "Represents the configurations for the Organization."
-              }
-            }
-          }
-        },
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "OK"
-          }
-        },
-        "x-os-permissions": "API Client needs the **Subscriptions > Manage subscription** permission to change organization configurations."
       }
     },
     "/organization/entitlements": {
