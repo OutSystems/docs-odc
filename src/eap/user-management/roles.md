@@ -171,7 +171,6 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Forge | Submit/Edit assets | Users can submit assets to Forge and edit them. | Organization |
 | Support | Open support cases | Users can open and view their support cases. | Organization |
 | Support | View all support cases | Users can view all the organization's support cases. | Organization |
-| Subscriptions | Manage subscription | Users can manage internal user domains for their subscription. | Organization |
 | Subscriptions | View subscription | Users can view the organization's subscription information. | Organization |
 | Maintenance | View platform updates | Users can view the list of asset and platform updates. | Organization <br/> Asset |
 | OutSystems 11 | Manage O11 configuration | Provides users access to OutSystems 11 configurations, allowing connectivity to the Conversion Assessment Tool on the O11 infrastructure and enabling Code Conversion and Data Migration. | Organization |
