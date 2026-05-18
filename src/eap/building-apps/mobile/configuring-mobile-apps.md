@@ -1,86 +1,135 @@
 ---
 guid: c7ec5c23-c83f-4bd7-ae95-c33d04f49a44
 locale: en-us
-summary: Configure mobile apps using OutSystems Developer Cloud (ODC) with low-code and advanced extensibility options, including syncing mobile tab settings and resolving script errors.
+summary: OutSystems Developer Cloud (ODC) mobile app configuration covers appearance, offline data sync, and extensibility settings in ODC Studio.
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=7401-11&t=2pZi2xy9GJPakYPF-1
 coverage-type:
-  - evaluate
   - remember
+  - apply
 topic:
   - customize-mobile-apps
 app_type: mobile apps
 platform-version: odc
 audience:
-  - Front-end developer
   - Developer
-  - Tech lead
-tags: mobile app configuration, extensibility scripts, mobile tab settings, outsystems developer cloud, mobile development
+tags:
+  - Capacitor
+  - Cordova
+  - Data Synchronization
+  - iOS
+  - Mobile app
+  - Plugins
+  - Settings
 outsystems-tools:
   - mobile plugins
   - odc studio
-helpids:
+helpids: 30770
+isautopublish: true
 ---
+
 # Configure mobile apps
 
-You can configure your mobile app via the mobile app properties. For customizing and enhancing mobile app functionality beyond the default settings and for more granular control over the mobile app's build process, you can directly edit the [extensibility configuration JSON files](extensibility-configurations.md).
+You can configure and manage your mobile app’s configuration from  **Edit app properties** dialog. To access the app properties, open ODC Studio, click your app name, and select **Edit app properties**.
 
-## Configure mobile properties
+The app properties is organized into **General** and **Mobile** properties:
 
-To view and modify the app properties, click the app name and select **Mobile**. The changes made in the mobile properties automatically sync with the extensibility configuration script, and vice versa. For example, configuring a property in **Mobile** updates the corresponding property in the script, and changes in the script reflect in the **Mobile** properties.
+* [General](../../building-apps/libraries/app-lib-properties-edit.md#general-settings-general-settings) - Settings that apply to both web and mobile apps, such as app details, validation messages, and advanced settings.
+* [Mobile](#mobile-properties-mobile-settings) - Settings specific to mobile apps, such as appearance, offline data sync, and extensibility.
 
-![ODC Studio interface showing the mobile tab settings for screen orientation and target device.](images/mobile-app-configuration-odcs.png "Mobile App Configuration in ODC Studio")
+For mobile apps, changes made in the app properties automatically sync with the underlying [extensibility configuration JSON files](extensibility-configurations.md). For advanced use cases that require granular control over the build process, you can directly edit those JSON files. Examples include adding custom Cordova preferences, configuring build actions, or setting platform-specific resource paths.
 
-The mobile app properties work correctly only if the extensibility scripts are error-free. If there are errors, ODC Studio displays a warning message. To get details about the issue, hover over the warning icon beside a property title in the **Mobile** tab. The same behavior occurs when the mobile app property uses a placeholder variable in the extensibility script.
+To find a specific property, use the search field on the sidebar.
 
-While the mobile app properties sync with the underlying extensibility configuration files, for advanced use cases you can directly edit the [Extensibility configurations](extensibility-configurations-json-schema.md) files. These JSON files offer granular control over your mobile app's build process and enable custom adjustments.
+## General properties
 
-## Configure extensibility configurations {configure-extensibility}
+These are properties that apply to web, mobile apps, general-purpose library, and mobile library such as details, messages, and advanced settings. For detailed information, refer to [General properties](../../building-apps/libraries/app-lib-properties-edit.md#general-settings-general-settings).
 
-You can configure extensibility configurations using [universal extensibility configurations JSON schema](extensibility-configurations.md) for your mobile app and plugins in ODC Studio.
+## Mobile properties {#mobile-settings}
 
-To configure extensibility configurations, follow these steps:
+These are settings specific to mobile apps, such as appearance, permissions, offline data sync, and extensibility.
 
-1. Go to ODC Studio.
-1. Click the app or mobile library name.
-    The edit properties dialog box is displayed.
-1. Select **Extensibility**.
-1. In the JSON editor, define your extensibility configurations using the [universal extensibility configurations schema](extensibility-configurations.md). For detailed information, refer to [App extensibility configuration](extensibility-configurations/extensibility-app-reference.md) and [Library(plugin) extensibility configurations](extensibility-configurations/extensibility-lib-reference.md).
+### Appearance {#mobile-appearance}
 
-The **Extensibility** includes:
+You can use the **Appearance** page to configure how your mobile app looks and behaves on devices.
 
-* A JSON text editor that checks your syntax (1).
-* A context pane with items you can reference by dragging or double-clicking (2).
-* A details pane that lets you view the properties without closing the editor (3).
+#### Display name
 
-![ODC Studio interface showing the extensibility tab with a JSON text editor, context pane, and details pane.](images/extensibility-tab-odcs.png "Extensibility Tab in ODC Studio")
+The user-visible name that appears on the device home screen and in the app switcher. By default, this matches the app **Name** from the **Details** page. Set a different display name when you need to use a shorter name for the home screen, localize the name for different regions, or apply specific branding.
 
-### Specify framework compatibility
+This property maps to `appConfigurations.displayName` in the [app extensibility JSON](extensibility-configurations/extensibility-app-reference.md).
 
-For mobile libraries that wrap mobile plugins, ODC Studio automatically selects the **Cordova** or **Capacitor** checkbox based on your plugin source. For example, if your extensibility configurations reference a Cordova plugin source, the Cordova checkbox is automatically selected.
+By changing the **Display name** you can modify the name of your app in stores and devices without changing the URL.
 
-If your Cordova plugin also works with Capacitor, you can manually select the **Capacitor** checkbox to indicate cross-framework compatibility. This is useful for simple plugins that work across both frameworks.
+#### Screen orientation
 
-## Configure extensibility settings {#configure-extensibility-settings}
+Controls whether the app locks to a specific orientation or adapts to the device position. The following options are available:
 
-You can configure the build time settings for your app using extensibility settings. These settings can be directly added from the ODC Studio. In mobile apps, extensibility settings are a replacement for [ODC app settings](../../manage-platform-app-lifecycle/configure-app-settings.md).
+* **Adaptive** -  The app rotates freely based on how the user holds the device. Use this option when your UI supports both portrait and landscape layouts.
+* **Portrait** -  Locks the app to portrait mode. Use this option for content-heavy apps such as news readers or chat apps.
+* **Landscape** - Locks the app to landscape mode. Use this option for media players, dashboards, or drawing apps.
 
-The extensibility settings provide centralized configuration management and the flexibility to customize app behavior without changing the code.
+This property maps to `appConfigurations.orientation` in the [app extensibility JSON](extensibility-configurations/extensibility-app-reference.md#orientation), where **Adaptive** corresponds to `"all"`, **Portrait** to `"portrait"`, and **Landscape** to `"landscape"`.
 
-To add a new extensibility setting, follow these steps:
+#### Target device
 
-1. Click the app name and select **Extensibility**.
-1. Right-click **Extensibility Settings** and select **Add Extensibility Setting**.
+<div class="info" markdown="1">
+
+Applies to iOS only.
+
+</div>
+
+Specifies the device family that the app targets. The following options are available:
+
+* **Both** - The app runs on iPhones and iPads.
+* **Only phone** - The app runs only on iPhones.
+* **Only tablet** - The app runs only on iPads.
+
+This property affects the iOS App Store listing and how the app adapts its layout to different screen sizes. It maps to `appConfigurations.targetDevice` in the [app extensibility JSON](extensibility-configurations/extensibility-app-reference.md#targetdevice).
+
+#### Status bar content color
+
+Controls the color of icons and text in the device status bar (the bar on the screen that shows the time, battery, and signal). The following options are available:
+
+* **System** - Automatically adapts to the device's light or dark mode. The status bar uses dark icons on light backgrounds and light icons on dark backgrounds.
+* **Light** - Forces light-colored icons and text. Use this option when your app has a dark header or background.
+* **Dark** - Forces dark-colored icons and text. Use this option when your app has a light header or background.
+
+This setting maps to `appConfigurations.systemBars.style` in the [app extensibility JSON](extensibility-configurations/extensibility-app-reference.md#systembars), where **System** corresponds to `"default"`, **Light** to `"light"`, and **Dark** to `"dark"`.
+
+For more information about customizing system bars, refer to [Customize system bars with edge-to-edge display](extensibility-configurations/customize-system-bars-edge-to-edge.md).
+
+### Offline data sync {#offline-data-sync}
+
+You can use the **Offline Data Sync** page to configure when and how your app synchronizes data between the device and the server. These settings control the automatic sync behavior that works with the [offline data synchronization framework](../../building-apps/data/offline/intro.md).
+
+The following table describes each setting:
+
+| Setting | Description | When to enable |
+| :---- | :---- | :---- |
+| **Synchronize on device online** | Triggers a data sync when the device regains network connectivity. | Enable for apps where data consistency matters, such as field service or inventory apps. |
+| **Synchronize on app resume** | Triggers a data sync when the app returns to the foreground after being in the background. | Enable for apps where users expect fresh data each time they open the app. |
+| **Retry synchronization after failure** | Automatically retries a failed sync. When enabled, a **Seconds to retry** field appears where you set the delay between retry attempts. | Enable for apps that operate in areas with unreliable connectivity. Disable if you prefer users to trigger syncs manually. |
+
+For detailed information about implementing offline data synchronization, refer to [Offline data synchronization in mobile apps](../../building-apps/data/offline/intro.md).
+
+### Extensibility settings {#configure-extensibility-settings}
+
+You can use **Extensibility settings** to define build-time settings for your app. In mobile apps, extensibility settings replace [ODC app settings](../../manage-platform-app-lifecycle/configure-app-settings.md). They provide centralized configuration management and the flexibility to customize app behavior without changing the code.
+
+To add an extensibility setting, follow these steps:
+
+1. In the context pane, right-click **Extensibility Settings** and select **Add Extensibility Setting**.
 1. Enter the details for the extensibility setting, such as name, description, and data type.
 
-You can directly reference these extensibility settings in the extensibility configurations schema using `$extensibilitySettings`.
+Reference extensibility settings in the JSON editor using `$extensibilitySettings`.
 
-In this screenshot, the extensibility setting `GoogleServicesAndroid` is referenced in the extensibility configurations using `$extensibilitySettings`
+In this screenshot, `$extensibilitySettings.AppDisplayName` references a setting named `AppDisplayName`.
 
-![ODC Studio interface showing the extensibility configurations editor with settings for GoogleServicesAndroid.](images/extensibility-configurations-editor-odcs.png "Extensibility Configurations Editor in ODC Studio")
+![ODC Studio Extensibility settings editor showing JSON appConfigurations and the AppDisplayName extensibility setting selected in the context pane with its details on the right.](images/extensibility-configurations-editor-odcs.png "Extensibility settings editor in ODC Studio")
 
-### Using extensibility settings with universal schema
+#### Using extensibility settings with universal schema
 
-This example demonstrates how you can reference extensibility settings like `CameraUsageDescription`, `ApiKey`, and `ServerUrl` in both Cordova and Capacitor configurations within the same plugin.
+This example demonstrates how to reference extensibility settings like `CameraUsageDescription`, `ApiKey`, and `ServerUrl` in both Cordova and Capacitor configurations within the same plugin.
 
 ```json
 {
@@ -125,30 +174,63 @@ This example demonstrates how you can reference extensibility settings like `Cam
 }
 ```
 
-## Define extensibility settings
+#### Define extensibility settings in ODC Portal
 
-Once the extensibility setting is configured in the ODC Studio and the app is published, you must define the value for the extensibility setting in the ODC Portal. You can define a unique value for each deployment stage.
+Once you configure an extensibility setting in ODC Studio and publish the app, define its value in ODC Portal. You can define a unique value for each deployment stage.
 
-To define the value for the extensibility setting, follow these steps:
+To define the value for an extensibility setting, follow these steps:
 
 1. Go to ODC Portal.
-
 1. Click the app and select **Mobile distribution** > **Extensibility settings**.
 
-    ![ODC Portal interface showing the extensibility settings for mobile distribution packages.](images/extensibility-setting-pl.png "Extensibility Settings in ODC Portal")
+    ![ODC Portal Mobile distribution page displaying the Extensibility settings section with an AppDisplayName setting and its current value for the mobile package.](images/extensibility-setting-pl.png "Extensibility settings in ODC Portal mobile distribution")
 
 1. Edit the extensibility setting.
 
 <div class="info" markdown="1">
 
-You must regenerate the mobile package every time you change the value of the extensibility settings. For detailed information, refer to [Create mobile app package](creating-mobile-package.md).
+You must regenerate the mobile package every time you change the value of an extensibility setting. For detailed information, refer to [Create mobile app package](creating-mobile-package.md).
 
 </div>
 
+### Configure extensibility configurations {#configure-extensibility}
+
+You can configure extensibility configurations using [universal extensibility configurations JSON schema](extensibility-configurations.md) for your mobile app and plugins in ODC Studio.
+
+To configure extensibility configurations, follow these steps:
+
+1. Go to ODC Studio.
+1. Click the app or mobile library name. The **Edit app settings** dialog box is displayed.
+1. Select **Extensibility settings**.
+1. In the JSON editor, define your extensibility configurations using the universal extensibility configurations schema. For detailed information, refer to [App extensibility configuration](extensibility-configurations/extensibility-app-reference.md) and [Library(plugin) extensibility configurations](./extensibility-configurations/extensibility-lib-reference.md).
+
+The **Extensibility** includes:
+
+* A JSON text editor with syntax checking and auto-complete support.
+* A context pane that lists items you can reference in the JSON, such as extensibility settings, scripts, and resources. Drag or double-click an item to insert a reference.
+* A details pane that shows properties of the selected item without closing the editor.
+
+![ODC Studio Extensibility settings page for a mobile library, showing the Mobile plugin compatibility section with Capacitor and Cordova checkboxes, and three numbered callouts highlighting the JSON editor (1), the context pane with Extensibility Settings and Images (2), and the empty details pane (3).](images/extensibility-tab-odcs.png "Extensibility tab in mobile library properties")
+
+#### Specify framework compatibility
+
+For [mobile libraries](../../building-apps/libraries/libraries.md) that wrap mobile plugins, ODC Studio automatically selects the **Cordova** or **Capacitor** checkbox based on your plugin source. For example, if your extensibility configurations reference a Cordova plugin source, the Cordova checkbox is automatically selected.
+
+If your Cordova plugin also works with Capacitor, manually select the **Capacitor** checkbox to indicate cross-framework compatibility. This is useful for simple plugins that work across both frameworks.
+
 ## Related resources
 
-For more information, refer to the following resources:
+The following resources provide additional detail on configuring and extending your mobile apps.
+
+### Extensibility configurations
 
 * [Universal extensibility configuration JSON schema](extensibility-configurations.md)
-
+* [App extensibility configuration](extensibility-configurations/extensibility-app-reference.md)
+* [Library extensibility configurations](extensibility-configurations/extensibility-lib-reference.md)
 * [Cordova-based extensibility configuration JSON schema](legacy-extensibility-configuration.md)
+
+### Mobile capabilities
+
+* [Offline data synchronization in mobile apps](../../building-apps/data/offline/intro.md)
+  
+* [Customize system bars with edge-to-edge display](extensibility-configurations/customize-system-bars-edge-to-edge.md)

@@ -1,6 +1,13 @@
 ---
-summary: OutSystems Developer Cloud (ODC) offers libraries as repositories for reusable UI and logic elements, streamlining app development and maintenance.
-tags: code reusability, ui component library, design consistency, middleware integration, business theming
+summary: OutSystems Developer Cloud (ODC) libraries are stateless, reusable repositories for web and mobile apps, with versioning and release management.
+tags:
+  - Development lifecycle
+  - Libraries
+  - Lifecycle
+  - Logic
+  - Mobile app
+  - Plugins
+  - Testing
 locale: en-us
 guid: 5102d9d1-9716-46aa-9ab7-3c9640a7f79c
 app_type: mobile apps, reactive web apps
@@ -8,13 +15,13 @@ figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=desi
 platform-version: odc
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - none
 coverage-type:
   - understand
   - apply
 helpids: 30736, 30740
+isautopublish: true
 ---
 
 # Libraries
@@ -34,11 +41,11 @@ Common use cases for libraries include:
 
 ![Diagram illustrating the concept of libraries in OutSystems Developer Cloud as repositories of reusable UI and logic elements.](images/libraries-diag.png "ODC Libraries Conceptual Diagram")
 
-OutSystems Developer Cloud (ODC) elevates the general-purpose library and mobile library to  top-level assets. They exist at the same level as web Apps and mobile Apps and have an independent lifecycle. For detailed information about how to think about libraries in the context of your app's architecture, refer to [App Architecture](../../app-architecture/intro.md#libraries-in-odc--libraries-).
+OutSystems Developer Cloud (ODC) elevates the general-purpose library and mobile library to  top-level assets. They exist at the same level as web apps and mobile apps and have an independent lifecycle. For detailed information about how to think about libraries in the context of your app's architecture, refer to [App Architecture](../../app-architecture/intro.md#libraries-in-odc--libraries-).
 
 ## Mobile libraries {mobile-libraries}
 
-Mobile libraries are a specialized type of library designed specifically for mobile apps. While general-purpose libraries provide reusable UI and logic elements for both web apps, the mobile library serves as the core reusable component for mobile-specific requirements related to native capabilities and extensibility.
+Mobile libraries are a specialized type of library designed specifically for mobile apps. General-purpose libraries provide reusable UI and logic elements for web apps. Mobile libraries serve as the core reusable component for mobile-specific requirements, such as native capabilities and extensibility.
 
 ### Key use cases for mobile libraries
 
@@ -88,7 +95,7 @@ The concept of versioning is core to the development lifecycle of a library, for
 
 ![Flowchart showing the development lifecycle of a library in ODC, including development, testing, and release stages.](images/development-lifecyle-library-diag.png "Library Development Lifecycle Diagram")
 
-After you've published and tested a library in ODC Studio, its revision number automatically increments by one, serving as a snapshot of the library's development at a particular point. The number is immutable and works the same way as the revision number of an app. At this point in the lifecycle, any published changes aren't available to other apps and libraries in your organization.
+After you publish and test a library in ODC Studio, its revision number automatically increments by one. This number serves as a snapshot of the library's development at a particular point. The number is immutable and works the same way as the revision number of an app. At this point in the lifecycle, any published changes aren't available to other apps and libraries in your organization.
 
 Conversely, you set the version number during a library's release and it represents a stable, consumable state of the library. When you release, the accumulated changes become available to other apps and libraries in your organization. The version number is a stable identifier that persists, marking the mature instances of the library.
 
