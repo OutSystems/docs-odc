@@ -6,13 +6,21 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - understand
   - apply
+  - evaluate
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - Front-end developer
   - Developer
-tags: icons,OutSystems UI
+  - Front-end developer
+tags:
+  - Best Practices
+  - Front-End
+  - Libraries
+  - OutSystems UI
+  - Themes
+  - UI
+  - Widgets
 outsystems-tools:
   - odc studio
 isautopublish: true
@@ -102,7 +110,7 @@ When your apps include blocks or libraries that use different icon libraries, ke
 
 * You cannot change the icon library for blocks that are referenced from other libraries directly within your app.
   
-* If a referenced block uses a different icon library than your app's theme, ODC Studio displays an error message explaining the mismatch. To resolve the issue, navigate to the producer library where the block is defined and update its icon library setting to match your apps's theme.
+* If a referenced block uses a different icon library than your app's theme, ODC Studio displays a warning message explaining the mismatch. To resolve the issue, navigate to the producer library where the block is defined and update its icon library setting to match your apps's theme.
 
 * You can copy and paste UI elements containing icons between app's using different icon libraries. However, when you paste an icon from a different library, ODC Studio displays a **TrueChange** warning.  To resolve, you can open the icon widget dialog to manually change the icon to one available in the current theme.
   
