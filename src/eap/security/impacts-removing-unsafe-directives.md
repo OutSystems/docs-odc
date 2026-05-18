@@ -3,7 +3,6 @@ summary: CSP unsafe directives removal in OutSystems Developer Cloud (ODC) impac
 tags:
   - CSS
   - JavaScript
-  - Mobile app
   - OutSystems UI
   - Security
   - UI
@@ -97,16 +96,22 @@ For more information about OutSystems Maps, refer to [OutSystems Maps](../buildi
 
 ### Mobile UI
 
-* **Issues**: Some patterns, such as **Card**, **Date Picker**, **Input OTP**, and **Text Area**, may lose some styling.
+* **Versions earlier than 1.1.1**
+    * **Issues**: Some patterns, such as **Icon**, **Card**, **Date Picker**, **Input OTP**, and **Text Area**, may lose some styling or some icons may fail to load in the application.
+    * **Workarounds**:
 
-* **Workarounds**
+        * **Card**: Add`'unsafe-inline'` to the `style-src` directive
 
-    * **Card**: Add`'unsafe-inline'` to the `style-src` directive
+        * **Date Picker**: Add `'unsafe-inline'` and `connect-src: data:` to the `style-src` directive
 
-    * **Date Picker**: Add `'unsafe-inline'` and `connect-src: data:` to the `style-src` directive
+        * **Input OTP**: Add `'unsafe-inline'` to the `style-src` directive
 
-    * **Input OTP**: Add `'unsafe-inline'` to the `style-src` directive
+        * **Text Area**: Add `'unsafe-inline'` to the `style-src` directive
 
-    * **Text Area**: Add `'unsafe-inline'` to the `style-src` directive
+        * **Icon**: Add `'blob'` to the `connect-src` directive
 
-Some patterns may break visually due to missing CSS. Adjust the CSP configuration as needed to restore functionality.
+    Some patterns may break visually due to missing CSS. Adjust the CSP configuration as needed to restore functionality.
+
+* **Version 1.1.1 or higher**
+    * **Issues**: **Icon** may fail to load in the application.
+    * **Workaround**: Add `'blob'` to the `connect-src` directive.
