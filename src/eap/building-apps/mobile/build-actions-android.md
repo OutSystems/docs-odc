@@ -1,22 +1,26 @@
 ---
 guid: e694bb62-9815-4b62-9ed6-7ce9c35653a5
 locale: en-us
-summary: This articles provides reference information for Android Build Actions in mobile apps, including all available properties, actions, and configuration options.
-figma: 
+summary: Android build actions in OutSystems Developer Cloud (ODC). Reference for Capacitor app manifest, Gradle, XML, JSON, copy, code, and tar.
+figma:
 coverage-type:
   - remember
-  - understand
 topic:
   - customize-mobile-apps
 app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: Mobile,Android,Build Actions,Extensibility,Configuration
+tags:
+  - Android
+  - Capacitor
+  - Mobile app
+  - Native App
 outsystems-tools:
   - odc studio
   - odc portal
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # Android build actions
@@ -29,7 +33,7 @@ Build actions are supported only for mobile apps that use Capacitor. Cordova-bas
 
 This article provides reference documentation for all Android build actions available in mobile app development. [Build Actions](build-actions.md) allow you to customize and configure Android mobile apps beyond the standard low-code capabilities such as modifying the **AndroidManifest.xml** file or inserting new Gradle snippets.
 
-## appName
+## `appName`
 
 **Type**:
 
@@ -37,7 +41,7 @@ This article provides reference documentation for all Android build actions avai
 string
 ```
 
-**Description**: Updates the app display name, by changing the label attribute in the AndroidManifest.xml file, or setting the strings resource value when a resource value is referenced in the manifest.
+**Description**: Updates the app display name by changing the label attribute in the AndroidManifest.xml file or setting the strings resource value when a resource value is referenced in the manifest.
 
 **Conditional**: No
 
@@ -51,7 +55,7 @@ string
 }
 ```
 
-## manifest
+## `manifest`
 
 **Type**:
 
@@ -131,7 +135,7 @@ Array<
 }
 ```
 
-## gradle
+## `gradle`
 
 **Type**:
 
@@ -254,7 +258,7 @@ Array<
 }
 ```
 
-## res
+## `res`
 
 **Type**:
 
@@ -303,7 +307,7 @@ Array<
 }
 ```
 
-## json
+## `json`
 
 **Type**:
 
@@ -354,7 +358,7 @@ Array<
 }
 ```
 
-## xml
+## `xml`
 
 **Type**:
 
@@ -423,7 +427,7 @@ Array<
 }
 ```
 
-## copy
+## `copy`
 
 **Type**:
 
@@ -458,7 +462,7 @@ Array<{ src: string; dest: string; }>
 }
 ```
 
-## code
+## `code`
 
 **Type**:
 
@@ -515,12 +519,12 @@ Array<
 }
 ```
 
-## tar
+## `tar`
 
 **Type**:
 
 ```TypeScript
-Array<{ src: string; dest: string; command: 'c' | 'r' | 'u' | 'x'; }>
+Array<{ src: string; dest: string; action: 'c' | 'r' | 'u' | 'x'; }>
 ```
 
 **Description**: Adds tar support to build actions
@@ -533,8 +537,8 @@ Array<{ src: string; dest: string; command: 'c' | 'r' | 'u' | 'x'; }>
         "android": {
             "tar": [
                 {
-                    "source": "files/FooBar.tar",
-                    "targetDir": "files/FooBar",
+                    "src": "files/FooBar.tar",
+                    "dest": "files/FooBar",
                     "action": "x"
                 }
             ]
