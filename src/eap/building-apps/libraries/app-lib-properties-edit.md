@@ -1,9 +1,11 @@
 ---
-summary: Learn how to configure app and library components in OutSystems Developer Cloud (ODC) using the Edit properties dialog in ODC Studio.
+summary: "OutSystems Developer Cloud (ODC) app and library properties: edit details, validation messages, and advanced settings in ODC Studio."
 tags:
   - Libraries
   - Mobile app
+  - Screens
   - Settings
+  - Themes
 locale: en-us
 guid: 5923266e-a350-4775-a6ea-8c6882b8755c
 app_type: mobile apps, reactive web apps
@@ -143,5 +145,3 @@ On the **Extensibility settings** page, you can configure your plugins's extensi
 The following resources provide additional details on configuring your apps:
 
 * [Mobile settings](../../building-apps/mobile/configuring-mobile-apps.md#mobile-settings-mobile-settings)
-
-*
