@@ -15,6 +15,7 @@ tags: capacitor framework,Plugins,swift language
 outsystems-tools:
   - none
 helpids:
+isautopublish: true
 ---
 # iOS native implementation
 
@@ -62,6 +63,34 @@ Here's a code snippet of the scanBarcode function on iOS, in Swift:
 
 If your plugin has functionality on iOS that requires permissions from the end user, then you must implement the permissions pattern. For detailed information, refer to [Permissions](https://capacitorjs.com/docs/plugins/ios#permissions).
 
+## Add Swift Package Manager support
+
+Swift Package Manager (SPM) is replacing CocoaPods as the dependency management toolchain for iOS Capacitor builds. All plugins must include a `Package.swift` file to be compatible with the SPM build toolchain.
+
+<div class="warning" markdown="1">
+
+CocoaPods-only plugins are not compatible with SPM-based builds. Plugins that lack a `Package.swift` file cause build failures when the app uses the SPM toolchain.
+
+</div>
+
+### Create the `Package.swift` file
+
+The Capacitor [plugin generator](https://capacitorjs.com/docs/plugins/creating-plugins#plugin-generator) scaffolds a `Package.swift` file automatically. If your plugin was created without one, add a `Package.swift` file to the root of your plugin project, alongside the `.podspec` file.
+
+The `Package.swift` file must:
+
+* Declare your plugin as a library target
+* List any native dependencies your plugin requires
+* Set the source path to `ios/Sources/PLUGIN_NAME`
+
+Replace `PLUGIN_NAME` with the name of your plugin.
+
+For detailed information about the Swift package format, refer to [PackageDescription](https://developer.apple.com/documentation/packagedescription) in the Apple developer documentation.
+
+### Migrate existing plugins
+
+If your plugin currently relies on a `.podspec` file only, add a `Package.swift` file alongside it. Maintain both files during the transition period so that your plugin remains compatible with both CocoaPods and SPM toolchains.
+
 ## Configure Apple privacy manifests
 
 Apple requires all apps to provide a `PrivacyInfo.xcprivacy` file. If your plugin accesses specific APIs that impact user privacy, you must bundle this manifest within your plugin so that it is automatically included in the app's privacy report.
@@ -82,7 +111,7 @@ To ensure compatibility with swift package manager (SPM) support and to follow s
 
 To ensure the manifest is correctly discovered by Xcode without conflicting with the main app's own manifest, you must bundle it using `resource_bundles`. This namespaces the file within a unique bundle during the build process.
 
-Update your plugin's `.podspec` file located in the `ios/` directory to include the privacy manifest as a resource bundle. Verify that the file path in the configuration matches the exact location where you created the `PrivacyInfo.xcprivacy` file in the previous step:
+Update your plugin's `.podspec` file to include the privacy manifest as a resource bundle. Verify that the file path in the configuration matches the exact location where you created the `PrivacyInfo.xcprivacy` file in the previous step:
 
 ```ruby
 Pod::Spec.new do |s|
@@ -97,6 +126,21 @@ end
 ```
 
 Do not add the manifest to `s.resources`. Using `s.resources` places the file in the main app bundle's root. This causes a collision and potential file overwrite if the app developer or another plugin also provides a `PrivacyInfo.xcprivacy` file.
+
+### Update the `Package.swift` file
+
+If your plugin includes a `Package.swift` file, declare the privacy manifest as a resource in your package target. This ensures the manifest is bundled correctly when the app builds with the SPM toolchain.
+
+```swift
+.target(
+    name: "YourPluginName",
+    dependencies: [],
+    path: "Sources/YourPluginName",
+    resources: [
+        .process("PrivacyInfo.xcprivacy")
+    ]
+)
+```
 
 ## Next steps
 

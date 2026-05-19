@@ -2,11 +2,11 @@
 guid: 83738400-1f27-4729-9e11-c630d38ea933
 locale: en-us
 summary: This article explains the different app and library use cases of extensibility configurations JSON schema.
-figma: 
+figma:
 coverage-type:
   - apply
   - understand
-topic: 
+topic:
 app_type: mobile apps
 platform-version: odc
 audience:
@@ -14,7 +14,8 @@ audience:
 tags: Mobile,Extensibility
 outsystems-tools:
   - odc studio
-helpids: 
+helpids:
+isautopublish: true
 ---
 # Using universal extensibility configurations JSON schema
 
@@ -109,6 +110,24 @@ Enables advanced customization of the native mobile project using JSON files. Th
         "parameter2": "parameterValue2"
       }
     }
+  }
+}
+```
+
+### Enable SPM preview for iOS builds
+
+Opt into the Swift Package Manager (SPM) build toolchain for iOS Capacitor builds. Enable this setting to test your app against the SPM-based toolchain before it becomes the default, or if your app depends on an SPM-exclusive plugin.
+
+<div class="info" markdown="1">
+
+The `spmPreview` setting is a preview feature available in MABS 12.1 and later. When this flag is set to `true`, CocoaPods dependencies are not compatible. Test your app thoroughly before distributing production builds with this setting enabled.
+
+</div>
+
+```json
+{
+  "buildConfigurations": {
+    "spmPreview": true
   }
 }
 ```

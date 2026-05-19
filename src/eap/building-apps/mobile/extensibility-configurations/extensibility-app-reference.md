@@ -2,7 +2,7 @@
 guid: fc8b0661-525c-4f75-8217-4d9aec2cd312
 locale: en-us
 summary: This article provide complete details on app extensibility configuration JSON schema.
-figma: 
+figma:
 coverage-type:
   - remember
 topic:
@@ -14,7 +14,8 @@ audience:
 tags: mobile,json extensibility,json configuration
 outsystems-tools:
   - odc studio
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # App extensibility configuration JSON schema
@@ -557,6 +558,7 @@ Build configurations are a set of configurations used at build time such as addi
 | [resources](#resources) | `object` | Optional | false |
 | [splashscreens](#splashscreens) | `object` | Optional | false |
 | [buildAction](#buildaction) | `object` | Optional | false |
+| [spmPreview](#spmpreview) | `boolean` | Optional | false |
 
 ### resources
 
@@ -789,6 +791,38 @@ The parameters to pass values to the variables defined on the json.
 * Optional  
 * Type: `object`
 * Placeholders: `extensibility settings`
+
+### spmPreview
+
+Enables the Swift Package Manager (SPM) build toolchain for iOS Capacitor builds. When set to `true`, the iOS build uses SPM instead of CocoaPods for dependency management.
+
+<div class="info" markdown="1">
+
+The `spmPreview` setting is a preview feature available in MABS 12.1 and later. It applies to iOS builds only. The default build behavior is unchanged when this setting is omitted or set to `false`.
+
+</div>
+
+<div class="warning" markdown="1">
+
+Test your app thoroughly before distributing production builds with `spmPreview` enabled.
+
+</div>
+
+#### Example
+
+```json
+{
+  "buildConfigurations": {
+    "spmPreview": true
+  }
+}
+```
+
+`spmPreview`
+
+* Optional
+* Type: `boolean`
+* Placeholders: _none_
 
 <div class="info" markdown="1">
 
