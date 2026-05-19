@@ -1,6 +1,11 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers comprehensive tools for monitoring and troubleshooting applications through logs and traces within its portal.
-tags: monitoring, troubleshooting, log analysis, error handling, performance optimization
+tags:
+  - Debugging
+  - Logging
+  - Monitoring
+  - Performance
+  - Troubleshooting
 locale: en-us
 guid: ca7cae65-c466-4d93-bab6-85ac740519c0
 app_type: mobile apps, reactive web apps
@@ -8,11 +13,12 @@ platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=2449-32709&t=EnvgiDeMCyCzCWPm-1
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+  - apply
+isautopublish: true
 ---
 
 # Monitoring and troubleshooting apps
@@ -25,7 +31,7 @@ Complementing logs and traces, metrics provide a quantitative view of your app's
 
 <div class="info" markdown="1">
 
-This functionality uses the Data platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data platform](../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
+This functionality uses the Data Platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data Platform](../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
 
 </div>
 
@@ -37,7 +43,7 @@ Each log has a level of severity: **Error**, **Warning**, and **Information**.
 
 ![Logs screen showing error logs from the development stage with filter options.](images/logs-screen-pl.png "Logs Screen")
 
-By default, when you open the **Logs** screen you see error logs from the development stage ordered by time in descending order. Use the filter inputs to filter logs by stage, app, severity, date/time, user, and message. You can filter logs by date back up to four weeks in an interval of up to two weeks.
+By default, when you open the **Logs** screen you see error logs from the development stage ordered by time in descending order. Use the filter inputs to filter logs by stage, asset (app or agent), severity, date/time, user, and message. You can filter logs by date back up to four weeks in an interval of up to two weeks.
 
 When you click the embedded link of a log's date/time, you open the detail page for that unique log. You see the log message, stack trace, and any logs related to the same request. Go to the log's associated trace by clicking the **Go to trace** button. When a log doesn't have an associated trace, the button is disabled. Currently, you only see traces for requests using server-side elements.
 
@@ -59,11 +65,11 @@ Traces take a few minutes to generate and display. It takes time for ODC to aggr
 
 </div>
 
-By default, when you open the **Traces** screen, you see traces from the development stage ordered by time in descending order. The stage filter of the Logs and Traces screens are synchronized. This means if you were viewing production logs in the Logs screen, you see production logs in the Traces screen.
+By default, when you open the **Traces** screen, you see traces from the development stage ordered by time in descending order. The stage filter of the **Logs** and **Traces** screens are synchronized. This means if you were viewing production logs in the Logs screen, you see production logs in the **Traces** screen.
 
 ![Traces screen showing traces from the development stage with filter options.](images/traces-screen-pl.png "Traces Screen")
 
-Use the filter inputs to filter traces by stage, app, element type, trace status, total duration, date/time, and user. You can filter traces by date back up to four weeks in an interval of up to two weeks.
+Use the filter inputs to filter traces by stage, app, element type, trace status, total duration, date/time, and user. You can filter traces by date back up to four weeks in an interval of up to two weeks. The **Traces** screen filters by app only. An app's trace captures agent activity as spans, so agents aren't a separate filter option.
 
 When you click the embedded link of a trace's date/time, you open the detail page for that unique trace. On the left side of the screen you see each span of the trace in order of execution alongside its duration. A red circle with X next to a span indicates an error. If any span of a trace has an error then the status of the trace is **Error**. Otherwise the trace status is **OK**.
 
