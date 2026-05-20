@@ -48,7 +48,7 @@ Mentor Web does not persist conversations and work in progress automatically.
 You can configure some options only before generating the app for the first time.
 
 * **Validation rules.** You can configure validation rules only before the first blueprint generation.
-* **Theme configuration.** You can set or change the theme during the blueprint phase. After generation, theme changes require ODC Studio. The theme must have the layout block property set and include these placeholders: Header, Breadcrumbs, Title, Actions, and MainContent.
+* **Theme configuration.** You can set or change the theme during the blueprint phase, either through the theme picker or through prompts. After generation, theme changes require ODC Studio. The theme must have the layout block property set and include these placeholders: Header, Breadcrumbs, Title, Actions, and MainContent.
 
 ### Editor
 

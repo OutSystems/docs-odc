@@ -54,8 +54,9 @@ Use these prompts to manage roles and permissions:
 
 ## Theme prompts
 
-Use these prompts to apply or change themes during the blueprint phase. Specify the exact theme name as it appears in your ODC tenant. Mentor validates that the theme is compatible before applying it.
+Use these prompts to apply or change themes during the blueprint phase. Specify the exact theme name as it appears in your ODC tenant. Mentor is aware of the themes available in your ODC tenant and validates that the selected theme is compatible before applying it. As an alternative to prompts, you can pick a theme through the blueprint UI; refer to [Select a theme](blueprint.md#select-a-theme).
 
+* **List available themes**: Which themes are available for this app?
 * **Set a theme in your initial prompt**: Create an Inventory app using the "Mentor" theme available in the ODC tenant.
 * **Change the theme during blueprint review**: Change the theme to CorporateBrand.
 * **In a requirement document**: Include a General app settings section with "Use the 'CorporateBrand' theme available in the ODC tenant."

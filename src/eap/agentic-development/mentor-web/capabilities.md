@@ -43,7 +43,7 @@ During generation, Mentor Web converts natural language prompts or requirement d
 
 Mentor builds the data model by detecting entities, attributes, and relationships from input. You review and modify the proposed structure before generation, and Mentor handles validation rules automatically.
 
-* **Data integration**. Reference entities from existing Data Fabric connections and public entities with read/write access. Set up Data Fabric connections in ODC before using Mentor.
+* **Data integration**. Reference entities from existing Data Fabric connections and public entities with read/write access. Mentor is aware of the public entities available in your ODC tenant, so you can ask about them or reference them by name in prompts. Set up Data Fabric connections in ODC before using Mentor.
 * **Data manipulation**. Add, change, or remove entities and attributes before generation.
 * **Static entity detection**. Recognize status and category fields as static entities with predefined records, displayed as tags in the UI.
 * **Data management**. Download existing data or upload new data to replace sample data.
@@ -62,6 +62,7 @@ Mentor suggests roles based on app context and applies authorization rules at th
 
 * **Predefined roles**. Receive role suggestions based on app context, then modify as needed.
 * **Authorization rules**. Control entity-level read and edit access by role, including ownership-based permissions for records associated with the logged-in user, team, or department.
+* **Login screen**. The generated app uses the pre-built ODC login screen for end-user sign-in. The login screen automatically lists any external identity providers (IdPs) assigned to the stage, so you usually don't need to change the app's login logic to use them. For details on configuring external IdPs and the supported login behavior, refer to [Configuring authentication with external identity providers](../../manage-platform-app-lifecycle/external-idps/intro.md).
 
 ### Screen generation
 
@@ -69,7 +70,7 @@ Mentor selects screen patterns based on entity structure and relationships. Patt
 
 * **Screen pattern selection**. Match patterns to entity structure. Popup for entities with five or fewer non-ID attributes, table for larger entities, tabs for organizing related content.
 * **Context-aware layouts**. Generate layouts based on data context, such as list with map view for entities containing addresses or card layout for personal attributes.
-* **Theme application**. Apply themes when specified in the prompt or requirement document. Reference themes by name, for example, "Use the CorporateBrand theme". You can set or change the theme at any point during the blueprint phase. After generation, theme changes require ODC Studio. If no theme is specified, Mentor applies the default OutSystems UI. For prompt examples, refer to [Theme prompts](prompts.md#theme-prompts).
+* **Theme application**. Apply themes when specified in the prompt or requirement document. Mentor is aware of the themes available in your ODC tenant, so you can ask which themes you can pick from or reference one by name, for example, "Use the CorporateBrand theme". You can set or change the theme at any point during the blueprint phase, either through prompts or through the theme picker in the blueprint. After generation, theme changes require ODC Studio. If no theme is specified, Mentor applies the default OutSystems UI. For the picker workflow, refer to [Select a theme](blueprint.md#select-a-theme). For prompt examples, refer to [Theme prompts](prompts.md#theme-prompts).
 * **UI styling**. Apply a curated default color palette when no theme is specified, selecting from a set of primary colors with adaptive backgrounds for a consistent look. Suggest styling elements such as primary color and icon based on app context.
 * **Dark theme generation**. Generate a dark theme when the requirement document or prompt requests it, or when the requested primary color pairs better with a dark background. Mentor Web evaluates color luminance to select the theme that meets WCAG contrast standards.
 * **AI-suggested icons**. Apply Font Awesome icons for menu items and the app logo.

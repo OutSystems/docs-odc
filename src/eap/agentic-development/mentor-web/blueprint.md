@@ -1,6 +1,13 @@
 ---
-summary: The blueprint validates how AI interprets requirements before generation, showing entities, roles, screens, and relationships for review.
-tags: blueprint, app generation, requirement validation, data model, agentic development
+summary: Mentor Web blueprint in OutSystems Developer Cloud (ODC) shows AI-interpreted entities, roles, and screens before app generation for review.
+tags:
+  - Agentic
+  - AI
+  - Data Model
+  - Entities
+  - Mentor
+  - Mentor Web
+  - Screens
 guid: ba4f9725-3ca4-4644-8e69-742b0ee7068d
 locale: en-us
 app_type: reactive web apps
@@ -11,9 +18,10 @@ outsystems-tools:
   - mentor web
 coverage-type:
   - understand
+  - apply
 audience:
-  - Front-end developer
   - Developer
+  - Front-end developer
 topic:
   - creating-apps
 isautopublish: true
@@ -53,6 +61,12 @@ For prompt patterns, refer to [Prompts for Mentor Web](prompts.md).
 ## Switch between local and referenced entities
 
 You can switch an entity between local and referenced directly in the blueprint. Local entities are defined within the app. Referenced entities come from other apps or external connections through Data Fabric. Switching between the two lets you iterate faster when deciding whether to build a custom data structure or reuse an existing one from another app or system.
+
+## Select a theme {#select-a-theme}
+
+The blueprint includes a theme picker so you can choose a theme from the ones available in your ODC tenant before generation. Mentor checks the theme for compatibility upfront, which avoids discovering an incompatible theme after generation. For the compatibility criteria, refer to [Theme compatibility requirements](prompts.md#theme-compatibility-requirements).
+
+The picker is a UI shortcut. You can still set or change the theme through prompts at any point during the blueprint phase, and you can combine both approaches in the same session. For prompt examples, refer to [Theme prompts](prompts.md#theme-prompts).
 
 ## Resolve interpretation differences
 
