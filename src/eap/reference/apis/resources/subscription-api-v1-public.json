@@ -26,7 +26,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves usage information for assets by entitlement in a specific environment.",
-        "description": "Retrieves usage data per asset (application, library) for entitlements in a specific environment.\n\nAPI Client needs the **Stage > View stage** permission for the target stage.",
+        "description": "Retrieves usage data per asset (application, library) for entitlements in a specific environment.\n\nTo fetch the usage, API Client needs the **Stage > View stage** and **Subscriptions > View subscription** permissions in the target stage.",
         "operationId": "Subscription_GetAssetUsage",
         "parameters": [
           {
@@ -163,14 +163,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the target stage."
+        "x-os-permissions": "To fetch the usage, API Client needs the **Stage > View stage** and **Subscriptions > View subscription** permissions in the target stage."
       }
     },
     "/environments/{environmentKey}/entitlements": {
       "get": {
         "tags": [],
         "summary": "Retrieves information on the entitlements for a specific environment.",
-        "description": "Retrieves information on the entitlements for a specific environment.\n\nAPI Client needs the **Stage > View stage** permission for the target stage.",
+        "description": "Retrieves information on the entitlements for a specific environment.\n\nTo fetch the entitlements, API Client needs the **Stage > View stage** permission in the target stage.\nTo additionally fetch the add-ons, API Client also needs the **Subscriptions > View subscription** permission.",
         "operationId": "Subscription_GetEnvironmentEntitlements",
         "parameters": [
           {
@@ -225,14 +225,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the target stage."
+        "x-os-permissions": "To fetch the entitlements, API Client needs the **Stage > View stage** permission in the target stage.\nTo additionally fetch the add-ons, API Client also needs the **Subscriptions > View subscription** permission."
       }
     },
     "/environments/{environmentKey}/entitlements/usage": {
       "get": {
         "tags": [],
         "summary": "Retrieves usage data for entitlements in a specific environment.",
-        "description": "Retrieves usage data for entitlements in a specific environment.\n\nAPI Client needs the **Stage > View stage** permission for the target stage.",
+        "description": "Retrieves usage data for entitlements in a specific environment.\n\nTo fetch the usage, API Client needs the **Stage > View stage** and **Subscriptions > View subscription** permissions in the target stage.",
         "operationId": "Subscription_GetEnvironmentUsage",
         "parameters": [
           {
@@ -328,7 +328,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Stage > View stage** permission for the target stage."
+        "x-os-permissions": "To fetch the usage, API Client needs the **Stage > View stage** and **Subscriptions > View subscription** permissions in the target stage."
       }
     },
     "/organization/configurations": {
@@ -386,7 +386,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves information on the entitlements for the organization.",
-        "description": "Retrieves information on the entitlements for the organization.\n\nAPI client must have at least one permission.",
+        "description": "Retrieves information on the entitlements for the organization.\n\nTo fetch the entitlements, API Client needs at least one permission.\nTo additionally fetch the add-ons and subscription details, API Client also needs the **Subscriptions > View subscription** permission.",
         "operationId": "Subscription_GetOrganizationEntitlements",
         "responses": {
           "200": {
@@ -430,14 +430,14 @@
             }
           }
         },
-        "x-os-permissions": "API client must have at least one permission."
+        "x-os-permissions": "To fetch the entitlements, API Client needs at least one permission.\nTo additionally fetch the add-ons and subscription details, API Client also needs the **Subscriptions > View subscription** permission."
       }
     },
     "/organization/entitlements/usage": {
       "get": {
         "tags": [],
         "summary": "Retrieves usage data for entitlements for the organization.",
-        "description": "Retrieves usage data for entitlements for the organization.\n\nAPI client must have at least one permission.",
+        "description": "Retrieves usage data for entitlements for the organization.\n\nAPI Client needs the **Subscriptions > View subscription** permission.",
         "operationId": "Subscription_GetOrganizationUsage",
         "parameters": [
           {
@@ -514,7 +514,7 @@
             }
           }
         },
-        "x-os-permissions": "API client must have at least one permission."
+        "x-os-permissions": "API Client needs the **Subscriptions > View subscription** permission."
       }
     }
   },
