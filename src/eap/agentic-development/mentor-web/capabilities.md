@@ -50,6 +50,12 @@ Mentor builds the data model by detecting entities, attributes, and relationship
 * **Data source swapping**. Switch entities between local and referenced (from other apps or external connections) directly in the blueprint, so you can iterate on whether to build custom data or reuse existing sources.
 * **Field-level validation**. Generate client-side validation rules including mandatory fields, date constraints, value ranges, and format validation for email and phone numbers.
 
+<div class="info" markdown="1">
+
+Mentor Web uses sample data in generated apps only when you access Mentor Web via the built-in OutSystems domain. Mentor Web can't populate sample data when you access it via a custom domain.
+
+</div>
+
 ### Security
 
 Mentor suggests roles based on app context and applies authorization rules at the entity level. You adjust role definitions and permissions before generation.
