@@ -1,7 +1,11 @@
 ---
 helpids: 30501, 30502
-summary: Learn how to create connections to external data sources in the ODC Portal.
-tags: database integration, data security, data fabric, private gateways, configuration management
+summary: "OutSystems Developer Cloud (ODC) external database connections in ODC Portal: create connections, select entities, and configure deployment stages."
+tags:
+  - Data
+  - Entities
+  - External Databases
+  - Private Gateway
 guid: 32004a44-1a95-46b2-abcb-88ad76f51961
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -15,8 +19,9 @@ content-type:
   - reference
 audience:
   - Platform administrator
-  - Developer
-  - Front-end developer
+coverage-type:
+  - remember
+  - apply
 isautopublish: true
 ---
 
@@ -63,6 +68,21 @@ To access private data that is not available over the internet, connect to your 
     1. To route requests through the Cloud Connector and still use a valid Application Server value, a [SAP Router](https://support.sap.com/en/tools/connectivity-tools/saprouter.html) is needed.
 * Azure SQL Server (all instances):
     1. Proxy mode is required, as it ensures a stable connection by routing all traffic through the Azure SQL Gateway.
+* Oracle Real Application Clusters (RAC):
+    1. Oracle Real Application Clusters (RAC) is supported through the Private Gateway when using Oracle Connection Manager (CMAN) in Traffic Director Mode as an intermediary proxy between ODC and Oracle Single Client Access Name (SCAN).
+    1. Run the Cloud Connector with the following command:
+
+        ```
+        ./outsystemscc --header "token: TOKEN" SECURE_GATEWAY_ADDRESS R:LOCAL_PORT:CMAN_ADDRESS:REMOTE_PORT
+        ```
+
+        Replace the following:
+
+        * `TOKEN`: Token value used by Cloud Connector.
+        * `SECURE_GATEWAY_ADDRESS`: Address of the secure gateway endpoint.
+        * `LOCAL_PORT`: Local port used by the secure gateway.
+        * `CMAN_ADDRESS`: IP address of the Oracle CMAN host.
+        * `REMOTE_PORT`: Port used by the Oracle CMAN.
 
 ## Create a new connection
 

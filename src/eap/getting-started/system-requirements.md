@@ -1,6 +1,11 @@
 ---
 summary: OutSystems Developer Cloud (ODC) system requirements guide for optimal use of ODC Portal and ODC Studio.
-tags: system requirements, network configuration, browser compatibility, hardware requirements, operating system compatibility
+tags:
+  - External Databases
+  - IdP
+  - Infrastructure
+  - Mobile app
+  - OIDC
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
 app_type: mobile apps, reactive web apps
@@ -156,7 +161,14 @@ The following versions of systems are supported to integrate with ODC using [Dat
 
 * **Salesforce**
 
-* **Oracle 19c**
+* **Oracle**
+
+  OutSystems supports Oracle single-instance database and Oracle Real Application Clusters (RAC).
+  
+  To connect to Oracle RAC, use a Private Gateway with Oracle Connection Manager (CMAN) configured in Traffic Director Mode as a proxy between ODC and the Oracle Single Client Access Name (SCAN). For configuration details, refer to [Create connections to external data
+  sources](../integration-with-systems/external-databases/create-connection-external-data.md).
+
+    * Oracle 19c
 
 For more information, refer to [Integrate with external data sources using Data Fabric](../integration-with-systems/external-databases/intro.md).
 
