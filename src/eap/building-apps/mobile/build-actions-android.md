@@ -91,10 +91,22 @@ Array<
 **Description**: Applies modifications against **AndroidManifest.xml** files.
 
 * `attrs`: Updates the attributes to the target XML element.
-* `merge`: Merges the given XML tree.
-* `inject`: Injects the given XML tree.
+* `merge`: Merges a single XML element into the target.
+* `inject`: Injects a single XML element under the target.
 * `deleteAttributes`: Deletes the given attributes.
 * `delete`: Deletes nodes selected targeted with provided xpath.
+
+<div class="info" markdown="1">
+
+The value of `inject` and `merge` is a single, well-formed XML element. Multiple sibling elements at the top level aren't supported. To apply several changes, declare one `manifest` entry per change.
+
+</div>
+
+<div class="info" markdown="1">
+
+`merge` expects a matching root node. The algorithm merges any node that matches with at least all of the supplied node's attributes, or appends any new children not found in the target. Attributes on the fragment root are part of the match key and aren't added to the target. To add or update attributes, use `attrs`.
+
+</div>
 
 **Conditional**: Yes
 
@@ -128,6 +140,34 @@ Array<
                 {
                     "file": "AndroidManifest.xml",
                     "delete": "//intent-filter"
+                }
+            ]
+        }
+    }
+}
+```
+
+The following example adds three activity aliases by declaring one `manifest` entry per alias:
+
+```json
+{
+    "platforms": {
+        "android": {
+            "manifest": [
+                {
+                    "file": "AndroidManifest.xml",
+                    "target": "manifest/application",
+                    "inject": "<activity-alias android:name=\".AliasOne\" android:targetActivity=\".MainActivity\" />"
+                },
+                {
+                    "file": "AndroidManifest.xml",
+                    "target": "manifest/application",
+                    "inject": "<activity-alias android:name=\".AliasTwo\" android:targetActivity=\".MainActivity\" />"
+                },
+                {
+                    "file": "AndroidManifest.xml",
+                    "target": "manifest/application",
+                    "inject": "<activity-alias android:name=\".AliasThree\" android:targetActivity=\".MainActivity\" />"
                 }
             ]
         }
