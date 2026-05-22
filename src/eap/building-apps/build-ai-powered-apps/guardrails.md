@@ -81,7 +81,7 @@ Guardrail capabilities are divided into **Enhanced** and **Basic** coverage tier
 | Coverage tier | Affected regions | Language support |
 | -------------- | ------------------ | ------------------ |
 | **Enhanced** | All regions not listed in Basic coverage tier | **60+ Languages**<br/>(Full Support) |
-| **Basic** | • Canada (ca-central-1)<br/>• São Paulo (sa-east-1)<br/>• London (eu-west-2) | **English, French, Spanish ONLY**<br/>(Restricted Support) |
+| **Basic** | • Canada (Central)<br/>• South America (São Paulo)<br/>• Europe (London) | **English, French, Spanish ONLY**<br/>(Restricted Support) |
 
 <div class="info" markdown="1">
 
@@ -93,15 +93,8 @@ If your environment is hosted in a Basic coverage region, guardrails only functi
 
 Guardrails don't operate in the following regions. The Guardrail Runtime service doesn't run in these regions, so it doesn't enforce safety rules on agent transactions.
 
-* Cape Town (af-south-1)
-
-* Hong Kong (ap-east-1)
-
-* Jakarta (ap-southeast-3)
-
-* Tel Aviv (il-central-1)
-
-* UAE (me-central-1)
+* South Africa (Cape Town)
+* Asia Pacific (Hong Kong)
 
 <div class="info" markdown="1">
 
