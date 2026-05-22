@@ -11,8 +11,8 @@ figma: https://www.figma.com/design/la33iciyGndnV5JRqR359g/Managing-OutSystems-p
 outsystems-tools:
   - odc portal
 coverage-type:
+  - remember
   - apply
-  - understand
 audience:
   - Platform administrator
 topic:
@@ -21,7 +21,7 @@ isautopublish: true
 ---
 # Managing platform infrastructure updates
 
-Whenever OutSystems updates the ODC platform infrastructure, it's done within a set time window. Within that time, you have the flexibility to reschedule these updates for each stage of your tenant. This allows you to pick the most convenient time to prepare for the changes and ensure a smooth update process.
+Whenever OutSystems updates the ODC platform infrastructure, it's done within a set time window. Within that time, you have the flexibility to reschedule these updates for each stage of your tenant. This allows you to pick the most convenient time to prepare for the changes and ensure a smooth update process. Only users with Administrator role can reschedule the operations.
 
 ## Where to find the upcoming updates
 
