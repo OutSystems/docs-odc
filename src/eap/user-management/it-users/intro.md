@@ -10,7 +10,14 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
   - Platform administrator
-tags: authorization, authentication, role assignments, access control, user management
+tags:
+  - Authentication
+  - Authorization
+  - External Authentication
+  - IdP
+  - IT Roles
+  - IT Users
+  - Roles
 outsystems-tools:
   - odc portal
   - odc studio
@@ -40,11 +47,23 @@ To manage members using built-in authentication, follow these steps:
 
 1. [Create members](../create-deactivate-and-delete-users.md#create-new-members-it-users): Add new users in the ODC Portal at the organization or app level during creation. You can also [create users programmatically using APIs](../../reference/apis/identity-v1.md), without assigning roles.
 
-1. [Grant or revoke roles](../grant-and-revoke-user-roles.md#grant-roles-to-members): Assign or remove roles as needed. If roles were assigned during creation, use this step only to make changes. You can also assign roles using [APIs](../../reference/apis/identity-v1.md).
+1. [Grant or revoke roles](../grant-and-revoke-user-roles.md#grant-roles-to-members): Assign or remove roles as needed. If you assigned roles during creation, use this step only to make changes. You can also assign roles using [APIs](../../reference/apis/identity-v1.md).
 
 ## Managing members (IT-users) with external IdP authentication
 
 You can configure ODC to use an external IdP (such as Microsoft Entra ID or Google) for authentication.
+
+<div class="info" markdown="1">
+
+Assigning an organization role doesn’t change where a user signs in.
+
+To sign in to the ODC Portal or ODC Studio through an external IdP, assign the IdP to the **Organization scope**. For more information, refer to [Scopes for assigning IdPs](../../manage-platform-app-lifecycle/external-idps/intro.md#scopes-for-assigning-idps).
+
+If the IdP isn’t assigned to the organization scope, the user can sign in through a different IdP assigned to the organization scope, or through the built-in identity provider (if the user has set up a password). For more information about enabling built-in authentication for existing users, refer to [Enable built-in authentication for an external IdP user](../create-deactivate-and-delete-users.md#enable-built-in-authentication).
+
+Users that sign in through an external IdP manage their passwords in the identity provider. ODC doesn’t store external IdP passwords.
+
+</div>
 
 To manage members with external IdP authentication, follow these steps:
 
@@ -60,7 +79,7 @@ To manage members with external IdP authentication, follow these steps:
 
     * Programmatically: [Create users via API](../../reference/apis/identity-v1.md).
 
-    * Automatically: Wait for the member to be created after their first successful login through the IdP.
+    * Automatically: Wait for ODC to create the member after their first successful login through the IdP.
 
     <div class="info" markdown="1">
 
@@ -82,4 +101,4 @@ To manage members with external IdP authentication, follow these steps:
 * [Grant and revoke user roles](../grant-and-revoke-user-roles.md#grant-roles-to-members)
 * [Configure authentication with external identity providers](../../manage-platform-app-lifecycle/external-idps/intro.md)
 * [Managing authorization and authentication for end-users](../end-users/intro.md)
-* [Password reset](../passwords.md#reset)
+* [Password reset](../passwords.md#password-reset-members)
