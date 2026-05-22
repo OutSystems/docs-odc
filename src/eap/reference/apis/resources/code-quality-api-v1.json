@@ -26,7 +26,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves the details of a code analysis request.",
-        "description": "Retrieves the current status and results of a code analysis request, including quality score and findings.\n\n\n\nExample: GET /code-quality/v1/code-analyses/be77b25f-c738-462f-8f19-7114fc4f9923\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "description": "Retrieves the current status and results of a code analysis request, including quality score and findings.\n\n\n\nExample: GET /code-quality/v1/code-analyses/be77b25f-c738-462f-8f19-7114fc4f9923\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "CodeAnalysisControllerV_GetAnalysisRequestStatus",
         "parameters": [
           {
@@ -123,14 +123,14 @@
             "bearerAuth": []
           }
         ],
-        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+        "x-os-permissions": "API Client needs the **Analyze > View Code Quality findings** permission."
       }
     },
     "/code-analyses": {
       "post": {
         "tags": [],
         "summary": "Submits a code analysis request for an asset revision.",
-        "description": "Initiates code analysis for a specific asset revision, returning an analysis key for status tracking.\n\n\n\nExample: POST /code-quality/v1/code-analyses\n\nAPI Client needs the **AI Mentor System > Manage Code Quality findings** permission.",
+        "description": "Initiates code analysis for a specific asset revision, returning an analysis key for status tracking.\n\n\n\nExample: POST /code-quality/v1/code-analyses\n\nAPI Client needs the **Analyze > Manage code quality findings** permission.",
         "operationId": "CodeAnalysisControllerV_SubmitCodeAnalysisRequest",
         "requestBody": {
           "description": "The analysis request containing the asset key and revision to analyze",
@@ -214,14 +214,14 @@
             "bearerAuth": []
           }
         ],
-        "x-os-permissions": "API Client needs the **AI Mentor System > Manage Code Quality findings** permission."
+        "x-os-permissions": "API Client needs the **Analyze > Manage code quality findings** permission."
       }
     },
     "/findings": {
       "get": {
         "tags": [],
         "summary": "Retrieves a list of code quality findings.",
-        "description": "Retrieves a paginated list of code quality findings with comprehensive filtering, sorting, and field selection capabilities.\n\n\n\nExample: GET /code-quality/v1/findings?assetKeys=abc123&severities=High&status=Open&limit=20\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "description": "Retrieves a paginated list of code quality findings with comprehensive filtering, sorting, and field selection capabilities.\n\n\n\nExample: GET /code-quality/v1/findings?assetKeys=abc123&severities=High&status=Open&limit=20\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "FindingsControllerV_GetFindings",
         "parameters": [
           {
@@ -437,14 +437,14 @@
             "bearerAuth": []
           }
         ],
-        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+        "x-os-permissions": "API Client needs the **Analyze > View Code Quality findings** permission."
       }
     },
     "/assets-quality-metrics": {
       "get": {
         "tags": [],
         "summary": "Retrieves quality metrics for assets.",
-        "description": "Retrieves quality metrics and findings distribution for assets, including quality scores and findings grouped by severity and status, with comparison to previous analysis.\n\n\n\nExample: GET /code-quality/v1/assets-quality-metrics?assetType=Application&limit=50&sort=-score\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "description": "Retrieves quality metrics and findings distribution for assets, including quality scores and findings grouped by severity and status, with comparison to previous analysis.\n\n\n\nExample: GET /code-quality/v1/assets-quality-metrics?assetType=Application&limit=50&sort=-score\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "FindingsOverviewControllerV_GetAppsOverview",
         "parameters": [
           {
@@ -627,14 +627,14 @@
             "bearerAuth": []
           }
         ],
-        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+        "x-os-permissions": "API Client needs the **Analyze > View Code Quality findings** permission."
       }
     },
     "/assets/{assetKey}/revisions/{revision}/analysis-summary": {
       "get": {
         "tags": [],
         "summary": "Retrieves the analysis summary for an asset revision.",
-        "description": "Retrieves the analysis summary for a specific asset revision, including findings breakdown by severity and the quality score.\n\n\n\nExample: GET /code-quality/v1/assets/53fcbdc7-be3c-4532-866c-a296336133b0/revisions/8/analysis-summary\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "description": "Retrieves the analysis summary for a specific asset revision, including findings breakdown by severity and the quality score.\n\n\n\nExample: GET /code-quality/v1/assets/53fcbdc7-be3c-4532-866c-a296336133b0/revisions/8/analysis-summary\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "FindingsOverviewControllerV_GetAssetRevisionFindingsSummary",
         "parameters": [
           {
@@ -714,14 +714,14 @@
             "bearerAuth": []
           }
         ],
-        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+        "x-os-permissions": "API Client needs the **Analyze > View Code Quality findings** permission."
       }
     },
     "/findings-summary": {
       "get": {
         "tags": [],
         "summary": "Retrieves a multi-dimensional findings summary.",
-        "description": "Retrieves a multi-dimensional summary of findings, aggregated by customizable grouping parameters such as category, status, and severity.\n\n\n\nExample: GET /code-quality/v1/findings-summary?groupBy=Category,Status,Severity&categories=Security\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "description": "Retrieves a multi-dimensional summary of findings, aggregated by customizable grouping parameters such as category, status, and severity.\n\n\n\nExample: GET /code-quality/v1/findings-summary?groupBy=Category,Status,Severity&categories=Security\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "FindingsOverviewControllerV_GetFindingsSummary",
         "parameters": [
           {
@@ -903,14 +903,14 @@
             "bearerAuth": []
           }
         ],
-        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+        "x-os-permissions": "API Client needs the **Analyze > View Code Quality findings** permission."
       }
     },
     "/findings-trend": {
       "get": {
         "tags": [],
         "summary": "Retrieves historical trend data for findings.",
-        "description": "Retrieves historical trend data for findings over time, showing how findings and quality scores evolved across analyses. Useful for visualizing trends and patterns over time.\n\n\n\nExample: GET /code-quality/v1/findings-trend?assetKeys=abc123&since=2024-01-01&to=2024-12-31\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "description": "Retrieves historical trend data for findings over time, showing how findings and quality scores evolved across analyses. Useful for visualizing trends and patterns over time.\n\n\n\nExample: GET /code-quality/v1/findings-trend?assetKeys=abc123&since=2024-01-01&to=2024-12-31\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "FindingsOverviewControllerV_GetFindingsTrend",
         "parameters": [
           {
@@ -1082,14 +1082,14 @@
             "bearerAuth": []
           }
         ],
-        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+        "x-os-permissions": "API Client needs the **Analyze > View Code Quality findings** permission."
       }
     },
     "/patterns": {
       "get": {
         "tags": [],
         "summary": "Retrieves a list of code patterns.",
-        "description": "Returns a paginated list of all available code patterns that can be detected during code analysis, including their names, descriptions, and metadata.\n\n\n\nExample: GET /code-quality/v1/patterns?limit=50\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "description": "Returns a paginated list of all available code patterns that can be detected during code analysis, including their names, descriptions, and metadata.\n\n\n\nExample: GET /code-quality/v1/patterns?limit=50\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "PatternsControllerV_GetPatterns",
         "parameters": [
           {
@@ -1172,14 +1172,14 @@
             "bearerAuth": []
           }
         ],
-        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+        "x-os-permissions": "API Client needs the **Analyze > View Code Quality findings** permission."
       }
     },
     "/patterns/{patternId}": {
       "get": {
         "tags": [],
         "summary": "Retrieves details for a specific code pattern.",
-        "description": "Returns detailed information about a specific code pattern, including its description, category, severity, and detection rules.\n\n\n\nExample: GET /code-quality/v1/patterns/pattern-id-123\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "description": "Returns detailed information about a specific code pattern, including its description, category, severity, and detection rules.\n\n\n\nExample: GET /code-quality/v1/patterns/pattern-id-123\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "PatternsControllerV_GetPatternsById",
         "parameters": [
           {
@@ -1249,14 +1249,14 @@
             "bearerAuth": []
           }
         ],
-        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+        "x-os-permissions": "API Client needs the **Analyze > View Code Quality findings** permission."
       }
     },
     "/analysis-status": {
       "get": {
         "tags": [],
         "summary": "Retrieves the current synchronization status of Code Quality data.",
-        "description": "Retrieves the current synchronization status of Code Quality data, including the latest and last successful analysis details with metrics about new and resolved findings.\n\n\n\nExample: GET /code-quality/v1/analysis-status\n\nAPI Client needs the **AI Mentor System > View Code Quality findings** permission.",
+        "description": "Retrieves the current synchronization status of Code Quality data, including the latest and last successful analysis details with metrics about new and resolved findings.\n\n\n\nExample: GET /code-quality/v1/analysis-status\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "SyncControllerV_GetAnalysisStatus",
         "responses": {
           "200": {
@@ -1315,7 +1315,7 @@
             "bearerAuth": []
           }
         ],
-        "x-os-permissions": "API Client needs the **AI Mentor System > View Code Quality findings** permission."
+        "x-os-permissions": "API Client needs the **Analyze > View Code Quality findings** permission."
       }
     }
   },
