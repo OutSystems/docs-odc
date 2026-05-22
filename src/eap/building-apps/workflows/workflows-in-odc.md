@@ -1,5 +1,5 @@
 ---
-summary: Learn all about workflows in ODC
+summary: Workflows in OutSystems Developer Cloud (ODC) automate business processes like approvals and order management using a visual, event-driven editor.
 tags: workflows, business process automation, workflow editor, process automation, outsystems developer cloud
 locale: en-us
 guid: 70b986e2-cd07-48a6-92c0-e57751112bb7
@@ -16,6 +16,7 @@ outsystems-tools:
 coverage-type:
   - understand
   - evaluate
+isautopublish: true
 ---
 
 # Workflows in ODC
@@ -141,6 +142,12 @@ The **notification** panel eliminates manual searching within large workflows. I
     * Opens the properties configuration panel.
     * Highlights the specific property field that requires attention.
 * **Real-time updates**: As you resolve issues, such as selecting a missing event or fixing a broken expression, the error count in the notification badge decreases automatically.
+
+## Compare workflow revisions
+
+When a workflow has multiple published versions, you can compare any two revisions side by side. Color coding highlights additions, deletions, and modifications so you know exactly what to keep.
+
+[Learn more about compare workflow revisions](compare-versions.md).
 
 ## Key considerations for implementing workflows
 

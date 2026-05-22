@@ -53,3 +53,11 @@ When multiple developers are working on the same workflow, it's possible to enco
 Similarly, when you open a workflow that has a newer published revision than your last saved session, the open-workflow conflict dialog shows the message of that newer revision.
 
 ![Screenshot of open workflow conflict message in the workflow editor](images/recover-message-pl.png "Open workflow conflict message")
+
+## Comparing your changes before publishing
+
+If someone published a newer revision while you were editing, a dialog appears when you click **Publish**.
+
+Click **Compare both versions** to open a side-by-side comparison of your version and the latest published revision before deciding whether to override or cancel.
+
+For more information, see [Compare revisions when publishing](compare-versions.md#compare-revisions-when-publishing).
