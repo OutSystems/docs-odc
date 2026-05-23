@@ -3,7 +3,6 @@ summary: OutSystems Developer Cloud (ODC) system requirements guide for optimal 
 tags:
   - External Databases
   - IdP
-  - Infrastructure
   - Mobile app
   - OIDC
 locale: en-us
@@ -13,7 +12,6 @@ figma: https://www.figma.com/design/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-
 platform-version: odc
 audience:
   - Developer
-  - Front-end developer
   - Platform administrator
 outsystems-tools:
   - odc studio
@@ -29,7 +27,7 @@ isautopublish: true
 
 This article provides recommendations for compatible tools and software versions that you can use with OutSystems Developer Cloud (ODC) Portal and ODC Studio.
 
-To access ODC portal and connect to ODC Studio, ensure your local network allows access to `*.outsystems.dev` domains. For end-users to access ODC apps, their network must allow access to the `*.outsystems.app` domain or the [custom domain](../manage-platform-app-lifecycle/custom-domains.md) defined for each stage.
+To access ODC Portal and connect to ODC Studio, ensure your local network allows access to `*.outsystems.dev` domains. For end-users to access ODC apps, their network must allow access to the `*.outsystems.app` domain or the [custom domain](../manage-platform-app-lifecycle/custom-domains.md) defined for each stage.
 
 <div class="info" markdown="1">
 
@@ -52,7 +50,7 @@ Before you set up ODC Studio, make sure your computer meets the following requir
 
 <div class="info" markdown="1">
 
-If your network uses an HTTP proxy, then refer to [How to configure HTTP proxy in ODC studio](configure-http-proxy.md) for configuration instructions.
+If your network uses an HTTP proxy, then refer to [How to configure HTTP proxy in ODC Studio](configure-http-proxy.md) for configuration instructions.
 
 </div>
 
@@ -66,7 +64,7 @@ The following are the minimum recommended hardware requirements. However, keep i
 
 ### Operating systems
 
-OutSystems supports the following Operating Systems. This list is subject to change. OutSystems supports Operating Systems for six months after the manufacturer's end-of-life date. For example, if your Operating System reaches its end-of-life on May 1, then OutSystems supports your operating system until November 1.
+OutSystems supports the following operating systems. This list is subject to change. OutSystems supports operating systems for six months after the manufacturer's end-of-life date.
 
 * macOS:
     * macOS Tahoe since ODC Studio 1.6.5
@@ -76,6 +74,16 @@ OutSystems supports the following Operating Systems. This list is subject to cha
 * Windows:
     * Windows 11 (64-bit) since ODC Studio 1.3.15
     * Windows 10 (64-bit)
+
+### Network access requirements {#network-odc-studio}
+
+ODC Studio requires outbound TCP 443 access to `*.outsystems.com` and `outsystems.com` for the following features:
+
+* What's new dialog
+* Automatic updates
+* Telemetry, feedback, and error submission
+* Creating apps from sample apps
+* In-product documentation links
 
 ### Requirements for client-side debugging
 

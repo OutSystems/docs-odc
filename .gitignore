@@ -28,3 +28,5 @@ styles/*
 # Claude Code files
 CLAUDE.md
 PLAN.md
+.claude/skills/validate-screenshots/scripts/__pycache__/has_shadow.cpython-314.pyc
+.claude/settings.local.json
