@@ -1,6 +1,9 @@
 ---
 summary: Monitor resource capacity in OutSystems Developer Cloud (ODC) using the ODC Portal to optimize and track usage.
-tags: odc resource monitoring,capacity management,resource optimization,cloud resource allocation
+tags:
+  - Monitoring
+  - Optimization
+  - Performance
 guid: 25a0f102-51ac-4d76-8376-72b14f0f6218
 locale: en-us
 app_type: mobile apps,reactive web apps
@@ -13,11 +16,12 @@ coverage-type:
   - remember
   - understand
 audience:
-  - Platform administrator
   - Architect
+  - Platform administrator
   - Tech lead
 topic:
 helpids: 30559,30560,30561,30562
+isautopublish: true
 ---
 
 # Monitor ODC resource capacity
@@ -147,3 +151,9 @@ When approaching or surpassing capacity limits, the following issues may occur:
 When resource consumption is at its limit and actions that consume further resources are performed (like publishing a new app, for example), ODC displays an error. You may see these errors in ODC Studio when publishing, in ODC Portal when deploying to the next stage, or when manually running a timer. Other errors may also show at app runtime. These errors are also recorded in the [ODC logs](../monitor-and-troubleshoot/monitor-apps.md#logs).
 
 ![A screenshot displaying logs when execeeding compute instances](images/logs-exceeding-compute-pl.png "Compute Instance Metric Log")
+
+<div class="info" markdown="1">
+
+[Automatic patching](../security/security.md#vulnerability-patching) of applications will cause a rolling update and temporary increased compute instance consumption. This process is exempt from compute instance limits.
+
+</div>
