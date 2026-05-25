@@ -1,6 +1,10 @@
 ---
-summary: In this article, you will learn about generating new secret for an API client.
-tags: api client, client secret, generate secret, access token, api credentials
+summary: ODC API client secret regeneration in OutSystems Developer Cloud (ODC) — replace an expired or uncopied secret and update your app.
+tags:
+  - Authentication
+  - OAuth
+  - REST
+  - Security
 outsystems-tools:
   - odc portal
 guid: cb9abd38-9a1e-4524-a7ec-c154eb710d83
@@ -9,10 +13,13 @@ app_type: reactive web apps, mobile apps
 content-type:
   - procedure
 audience:
-  - Platform administrator
   - Developer
+  - Platform administrator
+coverage-type:
+  - apply
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=3504-23&t=Ee0vNUQza7lfj7Sy-1
+isautopublish: true
 ---
 # Generate client secret
 
@@ -30,13 +37,13 @@ Once a new client secret is generated:
 
 1. Use the new credentials to generate a fresh access token.
 
-The old access token remains valid for only up to 12 hrs after it was issued, regardless of the client secret’s expiration date.
+The old access token remains valid for only up to 72 hrs after it was issued, regardless of the client secret’s expiration date.
 
 Each API client can have only one client secret at a time.
 
 ##  Prerequisites
 
-Before generating a new secret for a client ID, ensure the API client has already been created in the ODC portal.
+Before generating a new secret for a client ID, ensure the API client has already been created in the ODC Portal.
 
 ## Generate secret
 
