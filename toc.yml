@@ -615,6 +615,9 @@
     - topics:
         - href: eap/integration-with-systems/javascript/async.md
         - href: eap/integration-with-systems/javascript/use-external-lib.md
+
+# Extending O11 with ODC
+- href: extending-o11-odc/extend-o11-odc.md
 # Security
 - href: eap/security/security.md
 - topics:
