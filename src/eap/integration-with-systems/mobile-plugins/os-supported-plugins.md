@@ -5,12 +5,20 @@ summary: This article provides a list of OutSystems supported mobile plugins tha
 figma:
 coverage-type:
   - remember
+  - apply
 topic:
 app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: Plugins,mobile plugins,plugin integration
+  - Front-end developer
+tags:
+  - Capacitor
+  - Cordova
+  - Forge
+  - Libraries
+  - Mobile app
+  - Plugins
 outsystems-tools:
   - none
 helpids:
@@ -30,7 +38,7 @@ The table lists the OutSystems-supported mobile plugins available in the [Forge]
 | AppShield | Protect your mobile apps from tampering. OutSystems AppShield hardens the native mobile build, enabling the app to detect attempts of modification and misuse. | No |
 | [Barcode](barcode/intro.md) | Access the camera to scan barcodes and QR codes. | Yes |
 | Calendar | Access the calendar of your device. | No |
-| Camera | Access the camera capabilities of the device. | Yes |
+| [Camera](./camera/intro.md) | Access the camera capabilities of the device. | Yes |
 | Ciphered Local Storage | Keep your mobile application's sensitive data safe using a ciphered local storage database. | No |
 | [Cloud Messaging](firebase-plugin/intro.md) | Firebase-based plugin to give your app users a state-of-the-art notifications experience. | No |
 | Contacts | Access the contacts of your device. | No |
