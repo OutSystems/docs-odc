@@ -1,6 +1,9 @@
 ---
 summary: OutSystems Developer Cloud (ODC) features an HTTP library with actions for managing HTTP requests and responses.
-tags: http requests, http responses, api development, web services, server communication
+tags:
+  - Libraries
+  - REST
+  - Web services
 locale: en-us
 guid: 8ab99495-136e-4261-a791-bee1c58d4a79
 app_type: mobile apps, reactive web apps
@@ -8,11 +11,11 @@ platform-version: odc
 figma:
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+isautopublish: true
 ---
 
 # HTTP
@@ -21,39 +24,39 @@ The OutSystems HTTP library provides actions to manipulate HTTP requests and res
 
 ## Actions
 
-### Request_AbsoluteURL
+### `Request_AbsoluteURL`
 
 Generates an absolute URL based on the URL provided.
 
-_Inputs_
+#### Inputs
 
 URL
 :   Type: Text. Mandatory.  
     Relative or absolute URL.
 
-_Outputs_
+#### Outputs
 
 AbsoluteURL
 :   Type: Text.  
     Absolute URL.
 
-### Request_GetCookie
+### `Request_GetCookie`
 
 Returns the value for the specified cookie from the current HTTP request.
 
-_Inputs_
+#### Inputs
 
 Name
 :   Type: Text. Mandatory.  
     The name of the cookie to be retrieved.
 
-_Outputs_
+#### Outputs
 
 Value
 :   Type: Text.  
     The value for the specified cookie. If no cookie exists, returns empty.
 
-### Request_GetDomain
+### `Request_GetDomain`
 
 Returns the host part of the current HTTP request as seen by the browser.
 
@@ -61,53 +64,69 @@ Examples:
 
 When the browser uses the address "<http://support.domain.com/site/welcome.aspx?id=12345>", Request_GetDomain() = "support.domain.com".
 
-_Outputs_
+#### Outputs
 
 Domain
 :   Type: Text.  
     The domain of the current HTTP request.
 
-### Request_GetFiles
+### `Request_GetFiles`
 
 Returns the list of files submitted in the current HTTP request.
 
-_Outputs_
+#### Outputs
 
 RequestFiles
 :   Type: RecordList of [RequestFile](#Structure_RequestFile).  
     Record list of files submitted in the current HTTP request.
 
-### Request_GetHeaders
+### `Request_GetHeaders`
 
 Returns the value of the specified header in the current HTTP request.
 
-_Inputs_
+#### Inputs
 
 Name
 :   Type: Text. Mandatory.  
     The name of the header.
 
-_Outputs_
+#### Outputs
 
 Value
 :   Type: Text.  
     The value of the specified header. If the header is not present or has no value, returns empty.
 
-### Request_GetURL
+### `Request_GetMethod`
+
+Returns the HTTP method (verb) of the current incoming request.
+
+<div class="info" markdown="1">
+
+This action is only meaningful when executing inside an exposed REST API handler. In all other ODC contexts, such as Timers, Service Actions, and Screen Services, the method is always `POST`. Inside an Event, returns an empty string as there is no underlying HTTP request.
+
+</div>
+
+#### Outputs
+
+Method
+:   Type: Text.  
+    The HTTP method of the current request. Returns empty if unavailable.
+
+### `Request_GetURL`
 
 Returns the absolute URL of the current request. If SEO rules are applied, returns the resulting URL and not the URL displayed in the user's browser.
 
-_Outputs_
+#### Outputs
 
 URL
 :   Type: Text.  
     The URL of the current request.
 
-### Request_ReplaceDomain
+### `Request_ReplaceDomain`
 
 Replaces the domain in the URL with the given domain. This function doesn't accept JavaScript as a URL.
 
-_Inputs_
+#### Inputs
 
 URL
 :   Type: Text. Mandatory.  
@@ -117,17 +136,17 @@ Domain
 :   Type: Text.  
     The new domain to put in the URL. If no value is given, the domain of the current request is used.
 
-_Outputs_
+#### Outputs
 
 NewURL
 :   Type: Text.  
     The URL with the new domain.
 
-### Request_SubmitGetRequest
+### `Request_SubmitGetRequest`
 
 Submits an HTTP GET request given the respective arguments and URL, and returns the request response content
 
-_Inputs_
+#### Inputs
 
 URL
 :   Type: Text. Mandatory.  
@@ -145,7 +164,7 @@ KeepAlive
 :   Type: Boolean.  
     Indicates if the connection to the Internet resource is persistent. If no value is given, defaults to false.
 
-_Outputs_
+#### Outputs
 
 TextContent
 :   Type: Text.  
@@ -159,11 +178,11 @@ BinaryContentType
 :   Type: Text.  
    The value of the Content-Type header returned with the response.
 
-### Response_AddHeader
+### `Response_AddHeader`
 
 Adds a header to the current HTTP response.
 
-_Inputs_
+#### Inputs
 
 Name
 :   Type: Text. Mandatory.  
@@ -173,11 +192,11 @@ Value
 :   Type: Text. Mandatory.  
    The value of the header to be added.
 
-### Response_SetCookie
+### `Response_SetCookie`
 
 Sets a cookie in the current HTTP response.
 
-_Inputs_
+#### Inputs
 
 CookieName
 :   Type: Text. Mandatory.  
@@ -212,12 +231,12 @@ CookieSameSite
 :   Type: Text.  
     The value of the Cookie SameSite attribute. Can be one of the following: "", "None", "Lax", and "Strict". If no value is given, defaults to what is defined in the security settings for the current environment.
 
-### Response_SetStatusCode
+### `Response_SetStatusCode`
 
 Sets the status code of the current HTTP response.
 
-_Inputs_
+#### Inputs
 
 StatusCode
 :   Type: Integer. Mandatory.  
-    The status code of the response, such as 404, 403.
+    The status code of the response, such as 404 or 403.
