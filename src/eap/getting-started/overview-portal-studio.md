@@ -1,9 +1,12 @@
 ---
-summary: Explore app management and creation with OutSystems Developer Cloud (ODC), featuring ODC Portal and ODC Studio.
+summary: "ODC Portal and ODC Studio UI overview for OutSystems Developer Cloud (ODC): navigate the console, build apps, and use Mentor AI."
 tags:
   - 1-Click Publish
   - Debugging
   - Deploy
+  - Mentor
+  - Mentor Studio
+  - Mentor Web
   - UI
 locale: en-us
 guid: 6795fecc-61f8-4cae-93f9-098b1cfa092b
@@ -23,7 +26,7 @@ isautopublish: true
 
 # UI overview of ODC Portal and ODC Studio
 
-OutSystems Developer Cloud (ODC) is a cloud-native, low-code development platform. It provides the tools you need to build, deploy, and evolve your apps quickly. ODC includes the ODC Portal and the ODC Studio, which together make it easy for you to complete all the tasks from one place when you build, deploy, and manage your apps. Having quick access to the tools you need accelerates the speed at which you build and deliver your apps. ODC also includes built-in accelerators that help guide you as you develop your app.
+OutSystems Developer Cloud (ODC) splits the developer experience across two surfaces. The **ODC Portal** is where you create, deploy, and manage apps. The **ODC Studio** is where you build and debug them. Both are AI-first: Mentor Web generates apps in the Portal, and Mentor Studio extends them inside the Studio. AI-built apps inherit the same compiler, delivery pipeline, security, observability, and governance as any ODC app.
 
 <div class="info" markdown="1">
 
@@ -33,30 +36,24 @@ You can switch between Dark and Light themes in the ODC Portal and ODC Studio.
 
 ## ODC Portal
 
-The ODC Portal is a unified console to manage, monitor, and deploy apps, and to manage users and their access. Once you sign in to ODC, the ODC Portal home page displays.
+The ODC Portal is a unified console for managing, monitoring, and deploying apps, and for managing users and their access. It is also the entry point for **Mentor Web**, the AI tool that generates new apps from a natural-language prompt. After you sign in to ODC, the ODC Portal home page displays.
 
-What displays depends on your role. The images for this document are taken by a person with a role that has full access. Your role may have less access to the tools and apps. The following image shows the home screen when you first sign in to the ODC Portal.
+What displays depends on your role. The screenshots in this document come from a role with full access; your role may show fewer tools and apps. The following image shows the home screen when you first sign in to the ODC Portal.
 
 <div class="info" markdown="1">
 
-You can access ODC Portal on both desktop and mobile. However, the experience isn't fully optimized for mobile use. For full functionality and the best usability, we recommend using a desktop or laptop.
+You can access ODC Portal on both desktop and mobile. The experience isn't fully optimized for mobile. For full functionality and the best usability, use a desktop or laptop.
 
 </div>
 
 ![Screenshot of the ODC Portal home page showing the navigation menu and user options](images/portal-home-page-pl.png "ODC Portal Home Page")
 
-<div class="info" markdown="1">
-
-Although the ODC Portal and ODC Studio have the same look, different options are available. For example, in the ODC Portal, the Navigation menu displays on the left, and in ODC Studio, the Toolbox displays on the left.
-
-</div>
-
 The **top bar** in the Portal enables you to:
 
-* Open and close the Navigation menu by clicking the hamburger icon
-* View the name of your location (ODC Portal or ODC Studio)
-* Access ODC documentation and support, and provide OutSystems with feedback by clicking the question mark icon
-* Update your profile, change your password, change the theme from dark to light, and logout, by clicking your initials or image
+* Open and close the Navigation menu by clicking the hamburger icon.
+* View the name of your current location, either ODC Portal or ODC Studio.
+* Access ODC documentation, support, and feedback by clicking the question mark icon.
+* Update your profile, change your password, switch the theme, or sign out by clicking your initials or image.
 
 Above the Navigation menu, the name of the tenant you're accessing displays.
 
@@ -66,48 +63,54 @@ The **apps** you see when you first access the ODC Portal are only the apps to w
 
 From the top right, you can select **Download ODC Studio** or **Create app**. When you click **Create app**, ODC Studio automatically opens.
 
-To open an existing app or see the details, hover over the app to display the **ellipsis** (3-dots). Then select either **Open in ODC** or **View Details**.
+To open an existing app or view its details, hover over the app to display the **ellipsis** icon. Then select either **Open in ODC** or **View Details**.
 
-To create a new app from the ODC Portal, select **Create app**, and then choose either a Web app, a Mobile app, an Agentic app, Library, or Mobile library. When you create a web app, you can build it from scratch in ODC Studio or generate it with Mentor Web using [agentic development](../agentic-development/intro.md). The display name you choose converts to the app's URL path; for the rules, refer to [Application naming and URLs](../building-apps/app-naming.md).
+To create a new app from the ODC Portal, select **Create app**, then choose a type: Web app, Mobile app, Agentic app, Library, or Mobile library. For a Web app you then pick the build path. **Generate with Mentor** opens Mentor Web for AI app generation, and **Continue in ODC Studio** opens the visual editor. Refer to [Create an app with AI in ODC Portal](../agentic-development/mentor-web/create-app.md) for the Mentor Web walkthrough.
+
+The display name you enter converts to the app's URL path. For naming rules, refer to [Application naming and URLs](../building-apps/app-naming.md).
 
 ![Options for creating an app, or library in the ODC Portal with types of apps to choose from](images/app-library-template-odcs.png "ODC Portal App Creation Options")
 
-## The ODC Studio
+## ODC Studio
 
-The ODC Studio is an Integrated Development Environment (IDE), and it’s where you build and debug your app using OutSystems visual programming language. After you select an app, ODC Studio opens and displays the ODC Studio canvas. In the canvas, you can design, publish, and debug your apps and libraries.
+ODC Studio is an Integrated Development Environment (IDE) where you build and debug your apps. It combines a **visual editor** for hands-on assembly with **Mentor Studio**, the AI assistant that adds features, extends logic, explains code, and identifies technical debt through conversation. After you select an app, ODC Studio opens and displays the canvas. There you design, publish, and debug your apps and libraries, working by hand, through Mentor, or both. Refer to [Modify an app with AI](../agentic-development/mentor-studio/modify-app.md) for the Mentor Studio walkthrough.
 
 ![Full view of the ODC Studio interface highlighting the development environment and app management features](images/studio-full-page-odcs.png "ODC Studio Home Screen")
 
 The **top row** identifies that you are in ODC Studio, the name of the tenant, and the name of your app.
 
-The **second** row shows the **hamburger** icon, the name of the app, and in the center, the **1-Click Publish** button. When you click the publish button, your app deploys, and the status displays in the **1-Click Publish** tab at the bottom of the screen. If an error exists, the **1-Click Publish** button becomes unavailable and displays with a red x.
+The second row shows the **hamburger** icon, the name of the app, and in the center, the **1-Click Publish** button. When you click the publish button, your app deploys, and the status displays in the **1-Click Publish** tab at the bottom of the screen. If an error exists, the **1-Click Publish** button becomes unavailable and displays with a red x.
 
 <div class="info" markdown="1">
 
-The **1-Click Publish** tab displays on the bottom of the screen display after you click the publish button.
+The **1-Click Publish** tab appears at the bottom of the screen after you click the publish button.
 
 </div>
 
-The **Toolbox** on the left provides shortcuts to common elements you need when creating your app. The elements in the toolbox change depending on your actions. For example, if you are creating a flow, ODC Studio displays the elements you can use in your logic flow. If you're editing UI, the toolbox shows the widgets. Presenting information to you at the point of need helps accelerate your development. You can drag an element from the toolbox to the workspace. The following screenshot shows how the User Interface (UI) changes, for example, when creating an app.
+The **Toolbox** on the left provides shortcuts to common elements you need when creating your app. The elements in the toolbox change depending on your actions. If you are creating a flow, ODC Studio displays the elements you can use in your logic flow. If you're editing UI, the toolbox shows the widgets. You drag elements from the toolbox to the workspace. The following screenshot shows how the User Interface (UI) changes when you create an app.
 
 ![ODC Studio canvas area displaying the user interface and development tabs for app creation](images/studio-canvas-odcs.png "ODC Studio Canvas")
 
-The **canvas** is in the middle. This is where you design and develop your apps logic and UI.
+The **canvas** is in the middle. This is where you design and develop your app's logic and UI.
 
-The **Development** tabs (**Process**, **Interface**, **Logic**, and **Data**) display on the right side of the UI. Each tab shows elements and properties related to your selection. What you select also determines what options are available in the toolbox and in the canvas. This makes it easier for you to complete a task.
+On the right side of the UI, you see four **Development** tabs: **Process**, **Interface**, **Logic**, and **Data**. Each tab shows elements and properties related to your selection. What you select also determines what options are available in the toolbox and in the canvas. This makes it easier for you to complete a task.
 
 ![Interface elements tab in ODC Studio showing available UI components and properties](images/interface-elements-tab-odcs.png "ODC Studio Interface Elements Tab")
 
-The section below the horizontal rule is the **Properties panel**.  The element you select, determines what properties display and are necessary for you to complete.
+The section below the horizontal rule is the **Properties panel**. The element you select determines what properties display and which ones you complete.
 
 ![Properties panel in ODC Studio with options and settings for the selected app element](images/properties-panel-odcs.png "ODC Studio Properties Panel")
 
-At the bottom of your screen several tabs display providing additional information.
+At the bottom of your screen, several tabs show additional information:
 
-* The **TrueChange** tab displays the existing errors and warnings in your app. If you double-click a specific error or warning, ODC Studio takes you directly to that occurrence.
-* The **Debugger** tab helps you to debug your app. Here you can start the debugger and see the content of your variables step by step.
-*The **1-Click Publish** tab displays after the first time you click the **1-Click Publish** button. The status shows the publish process as it progresses.
-* The **Search Results** tab: lists the results of a search performed in the app. If you double-click a specific result, ODC Studio takes you directly to that occurrence.
-* The **Status bar** (right side) displays information about the user, the current environment, and when the app was last published.
+* The **TrueChange** tab displays the existing errors and warnings in your app. Double-click an error or warning to jump to its location.
+* The **Debugger** tab helps you debug your app. Start the debugger and inspect the content of your variables step by step.
+* The **1-Click Publish** tab displays after the first time you click the **1-Click Publish** button. The status shows the publish process as it progresses.
+* The **Search Results** tab lists the results of a search performed in the app. Double-click a result to jump to its location.
+* The **Status bar** on the right side displays information about the user, the current environment, and when the app was last published.
 
-To learn more about the ODC user interface, see the [ODC Studio Overview](https://www.outsystems.com/training/courses/233/odc-studio-overview/) training course.
+## Related resources
+
+* [Getting started](intro.md) for the platform overview and the AI-first build paths.
+* [Agentic development](../agentic-development/intro.md) for how Mentor Web and Mentor Studio work.
+* [ODC Studio Overview](https://www.outsystems.com/training/courses/233/odc-studio-overview/) online course.

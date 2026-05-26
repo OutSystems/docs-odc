@@ -1,6 +1,13 @@
 ---
-summary: Explore app development with OutSystems Developer Cloud (ODC), a scalable platform for building and deploying enterprise-grade applications.
-tags: cloud-native, enterprise applications, scalability, deployment, app management
+summary: "OutSystems Developer Cloud (ODC) getting started: create Web, Mobile, and Agentic apps using ODC Portal, ODC Studio, and Mentor AI tools."
+tags:
+  - Agentic
+  - AI
+  - Deploy
+  - Mentor
+  - Mentor Studio
+  - Mentor Web
+  - Mobile app
 locale: en-us
 guid: 6B0090D9-8EE9-479F-9251-CCB490D2EBB6
 app_type: mobile apps, reactive web apps
@@ -23,11 +30,13 @@ isautopublish: true
 
 # Getting started
 
-OutSystems Developer Cloud (ODC) is a cloud-native app development platform. It provides a modular, scalable environment for developing and deploying your apps. With ODC you can build and deploy enterprise-grade, mission-critical apps in weeks. You can build Web apps, Web portals, Mobile apps, Agentic apps, and business Workflows faster than with traditional development tools. You can then deploy your apps in a scalable, secure, and high-performance environment.
+OutSystems Developer Cloud (ODC) is a cloud-native, AI-first app development platform. You describe the app you want and ODC generates a working Web app, Mobile app, Agentic app, or business workflow in minutes. AI-built apps are enterprise-grade by default: they inherit the platform's compiler, delivery pipeline, security, observability, governance, and scalable runtime. ODC takes you from idea to production in weeks, with the same standards applied whether you built with AI or by hand.
+
+Two tools deliver the AI side. **Mentor Web** in ODC Portal generates a new app from a natural-language prompt. **Mentor Studio** inside ODC Studio extends and refines an open app through conversation. Both sit alongside the visual editor, so you choose AI, manual, or a mix at any point. For an overview of the AI path, refer to [Agentic development](../agentic-development/intro.md).
 
 ## Access the ODC Portal
 
-When your company acquires ODC, you're registered as a user, generating an email from which you can start using ODC. To do this, open the email and locate the link to the ODC Portal. Then click the link to go to the login page.
+When your organization acquires ODC, you receive an account email with a link to ODC Portal. Open the email and click the link to reach the login page.
 
 **ODC Portal** provides a unified experience that consolidates all your SDLC experience in one place. The ODC Portal and ODC Studio work together, making it quick to get the tools you need to develop and deploy your apps.
 
@@ -50,22 +59,24 @@ From the ODC Portal, when you click **Create**, ODC gives you the option to crea
 
 ![Screenshot showing the options to create different types of apps in ODC Portal: Web app, Mobile app, Agentic app, and Library](images/type-of-app-pl.png "Create App Options")
 
-* A **Web app**
-* A **Mobile app**
-* An **Agentic app**
-* A **Library**
+* **Web app.** An app users run in a desktop or mobile browser.
+* **Mobile app.** A native Android or iOS app you distribute through app stores, or a Progressive Web App served from your website.
+* **Agentic app.** A backend app that uses AI at runtime to perform tasks, automate workflows, or handle multi-step interactions for other apps to consume.
+* **Library.** A reusable element that shares code, themes, or data between apps.
 
-When you select a **Web app**, you have the option of how you want to create your app. You can:
+For more on what each asset type does, refer to [Types of apps you can build](types-of-apps.md).
+
+For a Web app you then pick the build path. ODC offers two:
 
 ![Screenshot showing the options to create a Web app in ODC Portal: create from scratch in ODC Studio or generate with Mentor](images/create-an-web-app-pl.png "Create Web App Options")
 
-* Create your Web app from scratch in ODC Studio.
+* **Generate with Mentor Web.** Describe the app in natural language, and ODC produces a full-stack structure with a data model, screens, logic, and roles. The published app opens in the browser when generation finishes. Refer to [Create an app with AI in ODC Portal](../agentic-development/mentor-web/create-app.md) for the walkthrough.
 
-* Generate with Mentor. Describe your app requirements in natural language, and ODC generates a full-stack app with data models, screens, and logic. To learn more, see [Agentic development](../agentic-development/intro.md).
+* **Continue in ODC Studio.** Open an empty app in the visual editor and assemble screens, data, and logic by hand. **Mentor Studio** sits in the editor's toolbar. Open the panel and prompt for the parts you don't want to build by hand.
 
-You create apps in the ODC Portal, and then you use ODC Studio to build out your app. In ODC you deploy to a **stage**. A stage, such as Development, is a step within your continuous delivery pipeline.
+You create apps in the ODC Portal, then build them out in ODC Studio. In ODC you deploy to a **stage**. A stage, such as Development, is a step within your continuous delivery pipeline.
 
-You can create templates, which you can use as a starting point to develop your apps. You can use templates to define the look and feel of your apps, put in place common functionality or to manage dependencies. To learn more about templates, see [create a custom app template.](../app-architecture/reuse-templates.md)
+Templates give you a starting point for new apps. Use templates to define look and feel, share common functionality, or manage dependencies. To learn more about templates, refer to [Create a custom app template](../app-architecture/reuse-templates.md).
 
 ## Preview an app
 
@@ -81,11 +92,11 @@ Before you can use ODC Studio, download it from the ODC Portal. You can use the 
 
 ![Screenshot showing the download ODC Studio button in the top-right corner of the ODC Portal](images/downlad-odc-studio-pl.png "Download ODC Studio")
 
-Once you install ODC Studio, you are ready to create an app. When you start the **Create App** process in ODC Portal, it triggers the opening of ODC Studio. You are now ready to develop your app.
+After installing ODC Studio, you're ready to develop your apps. Starting the **Create App** process in ODC Portal opens ODC Studio automatically.
 
-In ODC Studio you use visual programming elements to build your apps faster. ODC Studio accelerates the speed of development because you can share such things as templates, elements, and themes. You can also use drag and drop to quickly create UIs, business processes, and business logic in your apps.
+ODC Studio combines a **visual editor** with **Mentor Studio**, the AI assistant in the same canvas. You build by drag-and-drop using elements from the toolbox, by conversation through Mentor Studio in the toolbar, or by combining both. Mentor handles routine assembly while you focus on the logic that needs your judgment. Click the **Mentor** icon in the toolbar to open the Mentor panel and describe the change you want. Refer to [AI development in Mentor Studio](../agentic-development/mentor-studio/how-it-works.md) for the workflow.
 
-You can speed up development using pre-built screen templates, which provide both UI and logic for most app types. Additionally, OutSystems Forge offers a wide variety of apps and plugins to use as a foundation for your project.
+Pre-built screen templates and OutSystems Forge speed up either path: templates provide UI and logic for most app types, and Forge offers a library of apps and plugins to use as a foundation.
 
 ![Screenshot of the Forge tab in ODC Studio showing available apps and components from the OutSystems community](images/forge-tab-pl.png "Forge Tab in ODC Studio")
 
@@ -93,6 +104,7 @@ To publish your app, click **1-Click publish**. By default your app publishes to
 
 ## Related resources
 
-* [ODC Overview](https://learn.outsystems.com/training/journeys/odc-overview-576) online course
-
-* [ODC Studio Overview](https://learn.outsystems.com/training/journeys/odc-studio-overview-577) online course
+* [Types of apps you can build](types-of-apps.md).
+* [Agentic development](../agentic-development/intro.md).
+* [ODC Overview](https://learn.outsystems.com/training/journeys/odc-overview-576) online course.
+* [ODC Studio Overview](https://learn.outsystems.com/training/journeys/odc-studio-overview-577) online course.

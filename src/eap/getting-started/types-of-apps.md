@@ -1,6 +1,13 @@
 ---
-summary: Explore the diverse app development capabilities of OutSystems Developer Cloud (ODC), including web and mobile applications.
-tags: pwa (progressive web apps), app development, mobile app distribution, responsive design
+summary: "OutSystems Developer Cloud (ODC) app types: Web, Mobile, Agentic, libraries, and workflows — and how to choose the right one for your use case."
+tags:
+  - Agentic
+  - Libraries
+  - Mentor Studio
+  - Mentor Web
+  - Mobile app
+  - Native App
+  - Web
 locale: en-us
 guid: 2c23e305-f3ca-46cc-a8c8-a29c409a9ccf
 app_type: mobile apps, reactive web apps
@@ -22,19 +29,15 @@ isautopublish: true
 
 # Types of apps you can build
 
-You can create different types of apps in OutSystems Developer Cloud (ODC).
+OutSystems Developer Cloud (ODC) supports several top-level asset types: Web apps, Mobile apps, Agentic apps, libraries, and workflows. You select the type when you create the asset. **Agentic development** through Mentor Web and Mentor Studio is the default build path for Web apps, and Mentor Studio extends to libraries and Agentic apps in beta. The visual editor in ODC Studio is available for every type. For the full list of assets each AI tool supports, refer to [Agentic development](../agentic-development/intro.md).
 
 ![Screenshot of the 'What would you like to create?' window in OutSystems Developer Cloud with options to create different types of apps](images/types-of-apps-odcs.png "ODC App Creation Options")
 
-* Select **Web app** if you want to create an app that users run mainly in a desktop browser. You can build a web app from scratch in ODC Studio or generate one from natural language descriptions using [agentic development](../agentic-development/intro.md).
+* Select **Web app** if you want to create an app that users run mainly in a desktop browser.
 * Select **Mobile app** if you want to create an app to submit to Apple App Store or Google Play. You can also distribute a mobile app as a downloadable package to a group of users or as a Progressive Web App (PWA).
-* Select **Agentic app** if you want to build an app that uses AI to perform tasks, automate Workflows, or handle complex, multi-step interactions.
+* Select **Agentic app** if you want to build an app that uses AI at runtime to perform tasks, automate workflows, or handle complex, multi-step interactions.
 
-<div class="info" markdown="1">
-
-**Libraries** exist at the same level as apps and let you share code between apps. You can learn more about them in [App Architecture](../app-architecture/intro.md#libraries-in-odc).
-
-</div>
+The runtime type and the build approach are independent choices. An **Agentic app** is the runtime type: an app that calls AI when users run it. **Agentic development** is how you build apps with AI assistance from Mentor Web or Mentor Studio. The two are independent. You can build an Agentic app manually, or use agentic development to produce a Web app.
 
 ## What's a Web app?
 
@@ -49,15 +52,12 @@ When you develop a Web app:
 
 ## What's a Mobile app?
 
-In ODC, a Mobile App is an app that compiles to a native mobile Android or iOS app.
+In ODC, a Mobile app compiles to a native Android or iOS app. The same app adjusts to the device form factor at runtime, so you build once and ship to phone and tablet from a single source.
 
-You can develop for Android and iOS at the same time, as the underlying code is cross-platform. The default app templates of this type are **Phone app** and **Tablet app**.
+You can distribute a Mobile app in two ways:
 
-There are two ways you can distribute a Mobile app:
-
-* **Native app package** - A dedicated OutSystems cloud service generates native mobile builds for you, to distribute your app in the app stores or internally to a group of users.
-
-* **Progressive Web App (PWA)** - PWAs are lightweight apps that have the look and feel of native mobile apps. They're quick to distribute and install directly from your website, as they don't depend on the app stores.
+* **Native app package.** A dedicated OutSystems cloud service generates native mobile builds for you to distribute in the app stores or internally to a group of users.
+* **Progressive Web App (PWA).** Lightweight apps with the look and feel of native mobile apps. They're quick to distribute and install directly from your website, and they don't depend on the app stores.
 
 ## What's an Agentic app?
 
@@ -75,7 +75,15 @@ Here is a table comparing the features of Web, Mobile, and Agentic apps.
 |**Access to device hardware**|![Diagram showing HTML5 supported device capabilities for Web apps](images/mobile-vs-web-access-device-web-diag.png "Web App Device Hardware Access")<br/>HTML5 supported device capabilities.|![Diagram showing native mobile apps access to device capabilities through Cordova plugins and limited access for PWAs](images/mobile-vs-web-access-device-mobile-diag.png "Mobile App Device Hardware Access")<br/>Native mobile apps access a range of device capabilities through Cordova plugins. PWAs use dedicated plugins, which by design can access only hardware that the browser running the PWA allows.|![Diagram showing that Agentic apps provide capabilities to other apps without a direct user experience](images/agentic-not-applicable-diag.png "Agentic App Capabilities")<br/>Not applicable. Operates on the server-side.|
 |**Offline capabilities**|![Diagram indicating no offline capabilities for Web apps](images/mobile-vs-web-offline-web-diag.png "Web App Offline Capabilities")<br/>No offline capabilities.|![Diagram showing offline data storage options for native mobile apps and PWAs](images/mobile-vs-web-offline-mobile-diag.png "Mobile App Offline Capabilities")<br/>For storing offline data, native mobile apps use local storage and PWAs use browser storage.|![Diagram indicating no offline capabilities for Web apps](images/mobile-vs-web-offline-web-diag.png "Web App Offline Capabilities")<br/>No offline capabilities.|
 |**Deployment and updates**|![Diagram explaining automatic updates for Web apps upon browser page refresh](images/mobile-vs-web-deployments-web-diag.png "Web App Deployment and Updates")<br/>Updates are automatic when users refresh the browser page.|![Diagram explaining update mechanisms for native mobile apps and automatic updates for PWAs](images/mobile-vs-web-deployments-mobile-diag.png "Mobile App Deployment and Updates")<br/>Native mobile apps can update automatically, and users need to install a new version only when you change the native shell. PWAs update automatically when the app detects a new version.|![Diagram showing that the server deploys updates for Agentic apps, making them immediately available to consuming apps](images/agentic-updates-diag.png "Agentic App Updates")<br/>The server deploys updates, making them immediately available to consuming apps.|
-|**Distribution**|![Diagram showing the distribution of Web apps through sharing the app link](images/mobile-vs-web-distribution-web-diag.png "Web App Distribution")<br/>Share the app link with users.|![Diagram showing distribution options for native mobile apps and direct running of PWAs from a website](images/mobile-vs-web-distribution-mobile-diag.png "Mobile App Distribution") ![Diagram showing the distribution of Web apps through sharing the app link](images/mobile-vs-web-distribution-web-diag.png "Web App Distribution")<br/>You can distribute native mobile apps in-house or through the app stores. Users can run a PWA directly from your website, and add the app icon to the device home screen.|![Diagram showing that Agentic apps are exposed and consumed as a Service Action by other apps within the ODC environment](images/agentic-consumed-exposed-diag.png "Agentic App Consumption")<br/>Exposed and consumed as a Service Action by other apps within the ODC environment.|
+|**Distribution**|![Diagram showing the distribution of Web apps through sharing the app link](images/mobile-vs-web-distribution-web-diag.png "Web App Distribution")<br/>Share the app link with users.|![Diagram showing distribution options for native mobile apps and direct running of PWAs from a website](images/mobile-vs-web-distribution-mobile-diag.png "Mobile App Distribution")<br/>You can distribute native mobile apps in-house or through the app stores. Users can run a PWA directly from your website, and add the app icon to the device home screen.|![Diagram showing that Agentic apps are exposed and consumed as a Service Action by other apps within the ODC environment](images/agentic-consumed-exposed-diag.png "Agentic App Consumption")<br/>Exposed and consumed as a Service Action by other apps within the ODC environment.|
+
+## What's a library?
+
+A library is a reusable top-level asset that other apps consume for UI components, logic, or themes. Libraries are stateless by design: they provide functionality without persisting data, which keeps apps modular and reduces duplication. ODC supports general-purpose libraries for web and mobile apps, and mobile libraries for native mobile capabilities. For details, refer to [Libraries](../building-apps/libraries/libraries.md).
+
+## What's a workflow?
+
+A workflow automates a business process: a repeatable sequence of activities, decisions, and human approvals that runs in response to events from your apps. You design workflows in the workflow editor, a visual web-based tool in ODC Portal. Workflows are a top-level asset type with their own independent lifecycle, alongside apps and libraries. For details, refer to [Workflows in ODC](../building-apps/workflows/workflows-in-odc.md).
 
 ## Related resources
 
