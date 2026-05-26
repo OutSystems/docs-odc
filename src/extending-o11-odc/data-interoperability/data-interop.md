@@ -23,7 +23,7 @@ tags:
 outsystems-tools:
   - lifetime
   - odc portal
-helpids: 30730
+helpids: 30730, 30686
 isautopublish: true
 ---
 
