@@ -71,6 +71,8 @@ openssl rsa -in rsa_key.p8 -pubout -out rsa_key.pub
 
 Store both `rsa_key.p8` (private key) and `rsa_key.pub` (public key) in a secure location, such as a password manager.
 
+**Note**: The ODC Snowflake connector supports 4096-bit RSA private keys.
+
 ## Step 3: Assign the public key to the Snowflake user
 
 In the Snowflake web interface, open `rsa_key.pub` and copy the key content between the `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----` lines, **excluding** those header/footer lines themselves.
