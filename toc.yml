@@ -62,6 +62,7 @@
                 - href: eap/building-apps/build-ai-powered-apps/configure-agent-guardrails.md
             - href: eap/building-apps/build-ai-powered-apps/consumer-app.md
             - href: eap/building-apps/build-ai-powered-apps/function-calling.md
+            - href: eap/building-apps/build-ai-powered-apps/convert-docx-to-markdown.md
             - href: eap/building-apps/build-ai-powered-apps/image-input.md
             - href: eap/building-apps/build-ai-powered-apps/testing.md
             - href: eap/building-apps/build-ai-powered-apps/debug-agentic-apps.md

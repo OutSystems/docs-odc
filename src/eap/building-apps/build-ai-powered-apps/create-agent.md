@@ -11,7 +11,10 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: ai agent development,odc studio,outsystems ai,large language models,mobile apps
+tags:
+  - Agentic
+  - AI
+  - Mobile app
 outsystems-tools:
   - odc studio
 helpids: 30645, 30648
@@ -52,7 +55,7 @@ Build the foundational elements of your agent by defining grounding data and sys
 
 ### 4. Add actions
 
-Provide your agent with specific capabilities by adding server actions that it can call autonomously. Actions enable your agent to go beyond generating text responses and interact with external systems, process data, or execute business logic. The AI model analyzes the context and autonomously decides which actions to call based on the user's request and the action descriptions you provide. Refer to [AI agent actions](function-calling.md) for more information about adding actions. The agent can include actions such as those from an [MCP server](tools/mcp-connectors.md).
+Provide your agent with specific capabilities by adding server actions that it can call autonomously. Actions enable your agent to go beyond generating text responses and interact with external systems, process data, or execute business logic. The AI model analyzes the context and autonomously decides which actions to call based on the user's request and the action descriptions you provide. Refer to [AI agent actions](function-calling.md) for more information about adding actions. The agent can include actions such as those from an [MCP server](tools/mcp-connectors.md). To ingest content from files such as Word documents, PDFs, spreadsheets, presentations, HTML, or plain text, use the `OmniDoc2MD` Forge component to convert them to Markdown. For more information, refer to [Convert files to Markdown](convert-docx-to-markdown.md).
 
 ### 5. Build agent functionality
 

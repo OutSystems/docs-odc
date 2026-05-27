@@ -41,6 +41,9 @@ The core of this functionality lies in how you define actions for your agent.
 * **Actions are server actions**: In the context of an AI agent, an action is a standard Server Action. You grant the agent the ability to use these actions to perform its tasks.  
 * **Agent autonomy**: You provide the agent with a set of available actions. The AI model autonomously decides which action (or sequence of actions) is appropriate by analyzing the prompts and the purpose of each action you've exposed.
 
+To ingest content from files such as Word documents, PDFs, spreadsheets, presentations, HTML, or plain text in Agent Workbench, add the `OmniDoc2MD` Forge component to your app and expose its conversion server action as an action. It converts file binaries to Markdown while preserving structure and extracting images.
+For more information, refer to [Convert files to Markdown](convert-docx-to-markdown.md).
+
 Providing actions is optional. If you don't provide any server actions, the agent relies exclusively on the AI model's internal knowledge to generate responses.
 
 <div class="info" markdown="1">
