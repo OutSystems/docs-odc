@@ -21,7 +21,7 @@ isautopublish: true
 
 # Manage agentic apps from the ODC Portal
 
-The ODC Portal's **Agents** page lists every agentic app in your tenant. Use it to open an existing agentic app and review the agents inside, or to create a new agentic app. To open the page, sign in to the ODC Portal and select **Agents** from the **Create** group.
+The **Agents** page in the ODC Portal is the console for managing your agentic apps and the AI agents they contain. It lists every agentic app in your tenant. Use it to open an existing agentic app and review the agents inside, or to create a new agentic app. To open the page, sign in to the ODC Portal and select **Agents** from the **Create** group.
 
 ## What you can do from this page
 
