@@ -279,9 +279,9 @@ The Mentor limits are:
 
 For information about ODC API rate limits, refer to [Rate limits for the APIs](../reference/apis/public-rest-apis/rate-limiting.md).
 
-### Server request timeout
+### Default timeout in seconds
 
-The maximum value of the **Server Request Timeout** property is 60 seconds for queries or actions initiated on the client side. The default value of the property is 10 seconds. You can change the default value in the app's property editor.
+The maximum value of the **Default Timeout in Seconds** property is 60 seconds for queries or actions initiated on the client side. The default value of the property is 10 seconds. You can change the default value in the App properties configuration menu, under the Advanced settings.
 
 ![Screenshot of app's property editor](images/edit-app-properties-odcs.png "Edit App Properties")
 
