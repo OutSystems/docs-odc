@@ -118,6 +118,9 @@
             # Analyse agent
             - href: eap/building-apps/use-ai/analyse-agent.md
 
+    # Manage agentic apps
+    - href: eap/building-apps/manage-agentic-apps/agents-page.md
+
     # Data management
     - href: eap/building-apps/data/intro.md
     - topics:
