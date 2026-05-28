@@ -118,9 +118,6 @@
             # Analyse agent
             - href: eap/building-apps/use-ai/analyse-agent.md
 
-    # Manage agentic apps
-    - href: eap/building-apps/manage-agentic-apps/agents-page.md
-
     # Data management
     - href: eap/building-apps/data/intro.md
     - topics:
@@ -693,6 +690,7 @@
     - href: eap/manage-platform-app-lifecycle/sso.md
     - href: eap/manage-platform-app-lifecycle/filter-ip.md
     - href: eap/manage-platform-app-lifecycle/subscription-console.md
+    - href: eap/manage-platform-app-lifecycle/manage-agentic-apps.md
     - href: eap/getting-started/capacity-limits.md
     - href: eap/deleting-apps/intro.md
     - href: eap/manage-platform-app-lifecycle/self-service-db-operations.md    
