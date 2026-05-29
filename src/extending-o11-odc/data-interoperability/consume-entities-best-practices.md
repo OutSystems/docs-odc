@@ -82,41 +82,19 @@ Due to [Oracle DBMS's representation of empty strings](https://www.outsystems.co
 
 When consuming O11 Oracle entities in ODC apps, **Data Fabric follows the same O11 behavior** for read and write operations, adding a single space character (`" "`) to represent an empty text value.
 
-However, the following situations in ODC may differ from the behavior you are used to in O11:
+However, ODC may behave differently from O11 in some empty text handling situations. The following behaviors apply when using the built-in functions `Trim()`, `ToLower()`, `ToUpper()`, `Substr()`, `Index()`, and the `+` (concatenation) operator:
 
-* ODC maintains a **consistent behavior across aggregates and SQL nodes** for comparisons with an empty string `("")` or `Trim()` function. This contrasts with O11, where SQL nodes don't include the single space character (`" "`) to match aggregates behavior.
+* ODC maintains a **consistent behavior across aggregates and SQL nodes** for comparisons with an empty string (`""`) or the indicated functions and operator. This contrasts with O11, where **SQL nodes** don't include the single space character (`" "`) to match aggregates behavior.
 
-* When evaluating logic involving **trimmed entity attributes**, ODC replaces the outputs of the `Trim()` function with a single space character (`" "`). This ensures that expressions evaluate as `True` for string-to-string equality. Consequently, some expressions that evaluate as `False` in O11, evaluate as `True` in ODC, for example:
+* When using the indicated functions or operator on **entity attributes that return empty text**, ODC replaces the result with a single space character (`" "`). This ensures that expressions evaluate as `True` for string-to-string equality. Consequently, some expressions that evaluate as `False` in O11, evaluate as `True` in ODC, for example:
 
     * `Trim("") = Trim("")`
     * `Trim(" ") = Trim("")`
-    * `Trim("") = Trim(" ")`
-    * `Trim("") = " "`
+    * `ToLower("") = ToLower(" ")`
 
 ### Known issues
 
 There are currently some known issues that you need to account for in your ODC apps when consuming O11 Oracle entities.
-
-#### Built-in functions
-
-Currently, for the below built-in functions or text operators, ODC isn't adding a single space character (" ") to represent an empty text value as expected. Thus, beware of the following function-specific behaviors in your ODC apps when handling empty text:
-
-* `ToLower()`/`ToUpper()` - To have the same behavior as O11, you must compare with a single space character:
-
-    * `MyO11Entity.Description = ToLower(" ")`
-    * `MyO11Entity.Description = ToUpper(" ")`
-
-* `+` operator - If a concatenation results in an empty string, ODC doesn't automatically add a single space character:
-
-    * `MyO11Entity.Description = "" + ""`
-
-* `Substr()` - If the result is an empty string, ODC doesn't add a single space character:
-
-    * `MyO11Entity.Description = Substr(MyO11Entity.Name,2,0)`
-
-* `Index()` - Searching for a single space character using the `Index()` function only returns records containing a single space character, and not null values:
-
-    * `Index(MyO11Entity.Description, " ") = 0`
 
 #### Redundant empty filters in aggregates
 
