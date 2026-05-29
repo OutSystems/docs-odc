@@ -856,6 +856,11 @@
         - href: eap/reference/apis/public-rest-apis/asset-governance-use-cases/list-templates.md
         - href: eap/reference/apis/public-rest-apis/asset-governance-use-cases/create-asset.md
         - href: eap/reference/apis/public-rest-apis/asset-governance-use-cases/manage-asset-permissions.md
+    - href: eap/reference/apis/public-rest-apis/asset-deletion-governance/asset-deletion-governance-intro.md
+    - topics:
+        - href: eap/reference/apis/public-rest-apis/asset-deletion-governance/perform-deletion-analysis.md
+        - href: eap/reference/apis/public-rest-apis/asset-deletion-governance/review-deletion-analysis-results.md
+        - href: eap/reference/apis/public-rest-apis/asset-deletion-governance/delete-asset.md
     - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/intro.md
     - topics:
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/select-revision-build.md

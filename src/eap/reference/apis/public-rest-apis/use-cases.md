@@ -12,6 +12,7 @@ audience:
 figma:
 outsystems-tools:
   - none
+isautopublish: true
 ---
 
 # ODC REST API use cases
@@ -20,5 +21,6 @@ Use these use case guides to automate common workflows with the ODC REST APIs:
 
 * [User and access management](end-user-management-use-cases/intro.md)
 * [Asset creation governance](asset-governance-use-cases/asset-governance-intro.md)
+* [Asset deletion governance](asset-deletion-governance/asset-deletion-governance-intro.md)
 * [CI/CD automation](ci-cd-apis-use-cases/intro.md)
 * [External library management](upload-external-library-api.md)
