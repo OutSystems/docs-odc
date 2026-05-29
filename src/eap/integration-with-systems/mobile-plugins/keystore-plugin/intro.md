@@ -13,6 +13,7 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+isautopublish: true
 ---
 
 # Key Store Plugin
@@ -30,6 +31,14 @@ Use the Key Store Plugin to enable an application to securely store, get and rem
 See [Adding plugins](../intro.md) to learn how to install a plugin in your OutSystems apps.
 
 </div>
+
+## Add iOS permissions for the plugin
+
+From version 1.4.0, to use the **InvalidateOnBiometricChange** feature on iOS, provide a description for the following property list key:
+
+* **NSFaceIDUsageDescription**
+
+By default, **NSFaceIDUsageDescription** is set to "We use your facial features for authentication purposes." You can set your own description using the extensibility setting **FaceIdUsageDescription**. Set this in the **Mobile distribution** tab on your app's detail page in the Portal.
 
 ## Manage your secrets
 
@@ -157,6 +166,26 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 ```
 
 **Note:** These preferences are optional. If they're not set, then the values in the example above are used by default.
+
+### Invalidate secrets on biometric change
+
+<div class="info" markdown="1">
+
+Available from version 1.4.0.
+
+</div>
+
+You can set the **InvalidateOnBiometricChange** parameter in the **SetValue** client action to automatically invalidate a stored secret when the device's biometric configuration changes (for example, a new fingerprint is enrolled). This parameter only takes effect when **KeyAuthentication** is **True**.
+
+By default, secrets are not invalidated on biometric change (**False**). If **True**, the secret becomes inaccessible after a biometric change and you must set it again.
+
+<div class="info" markdown="1">
+
+Invalidation only applies to secrets saved with **InvalidateOnBiometricChange** set to **True**. Secrets previously saved without this flag are not affected.
+
+On Android, invalidation only occurs if the secret was saved with Class 3 (Strong) biometrics. If the secret was not saved with Class 3 biometrics, the **InvalidateOnBiometricChange** parameter is ignored.
+
+</div>
 
 ## Handling errors
 
