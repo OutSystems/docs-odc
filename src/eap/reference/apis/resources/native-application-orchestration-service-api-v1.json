@@ -2,7 +2,7 @@
   "openapi": "3.0.4",
   "info": {
     "title": "Native Mobile Build API",
-    "description": "API for building and managing native mobile applications.",
+    "description": "API for building and managing native mobile applications.\n",
     "version": "v1"
   },
   "servers": [
@@ -28,7 +28,7 @@
           "BuildOperations"
         ],
         "summary": "Returns the details for a given build operation",
-        "description": "The build operation key is generated when the build operation is created and returned in the response of the create API.\n\nIt can also be obtained through the list API.\n\nRate Limit: 100 requests per minute\n\nAPI Client needs the **Stage > View stage** permission.",
+        "description": "The build operation key is generated when the build operation is created and returned in the response of the create API.\nIt can also be obtained through the list API.\n\nRate Limit: 100 requests per minute\n\nAPI Client needs the **Stage > View stage** permission.",
         "operationId": "GET_BuildOperations_Get",
         "parameters": [
           {
@@ -377,7 +377,7 @@
           "BuildOperations"
         ],
         "summary": "Starts a new native build",
-        "description": "This is an asynchronous operation. The response contains the details of the created build operation, including its\ngenerated key, which can be used to query the operation status and details through other APIs.\n\nRate Limit: 5 requests per minute\n\nAPI Client needs the **Release management > Deploy apps** permission.",
+        "description": "This is an asynchronous operation. The response contains the details of the created build operation, including its\ngenerated key, which can be used to query the operation status and details through other APIs.\n\nRate Limit: 5 requests per minute\n\nAPI Client needs the **Release management > Deploy assets** permission.",
         "operationId": "POST_BuildOperations_Post",
         "requestBody": {
           "description": "Details of the build operation request",
@@ -456,7 +456,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Release management > Deploy apps** permission."
+        "x-os-permissions": "API Client needs the **Release management > Deploy assets** permission."
       }
     },
     "/build-operations/version-suggestions": {
@@ -737,7 +737,7 @@
           "NativeMobileConfigurations"
         ],
         "summary": "Updates the Native Mobile Configuration for Android Applications",
-        "description": "Allows modifying keystore files and other related settings required for building and deploying the application.\nOnly the fields provided in the request body are updated; omitted fields remain unchanged.\n\nRate Limit: 10 requests per minute\n\nAPI Client needs the **Configuration management > Edit configurations** permission.",
+        "description": "Allows modifying keystore files and other related settings required for building and deploying the application.\nOnly the fields provided in the request body are updated; omitted fields remain unchanged.\n\nRate Limit: 10 requests per minute\n\nAPI Client needs the **Configuration management > Edit asset configurations** permission.",
         "operationId": "PATCH_NativeBuildConfigurations_UpdateMobileAndroidConfiguration",
         "parameters": [
           {
@@ -822,7 +822,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Configuration management > Edit configurations** permission."
+        "x-os-permissions": "API Client needs the **Configuration management > Edit asset configurations** permission."
       }
     },
     "/environments/{environmentKey}/applications/{applicationKey}/configurations/ios": {
@@ -904,7 +904,7 @@
           "NativeMobileConfigurations"
         ],
         "summary": "Updates the Native Mobile Configuration for iOS Applications",
-        "description": "Allows modifying certificates, provisioning profiles, and other related settings required for building and deploying the application.\nOnly the fields provided in the request body are updated; omitted fields remain unchanged.\n\nRate Limit: 10 requests per minute\n\nAPI Client needs the **Configuration management > Edit configurations** permission.",
+        "description": "Allows modifying certificates, provisioning profiles, and other related settings required for building and deploying the application.\nOnly the fields provided in the request body are updated; omitted fields remain unchanged.\n\nRate Limit: 10 requests per minute\n\nAPI Client needs the **Configuration management > Edit asset configurations** permission.",
         "operationId": "PATCH_NativeBuildConfigurations_UpdateMobileIosConfiguration",
         "parameters": [
           {
@@ -989,7 +989,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Configuration management > Edit configurations** permission."
+        "x-os-permissions": "API Client needs the **Configuration management > Edit asset configurations** permission."
       }
     },
     "/native-builder-versions": {
@@ -1114,7 +1114,7 @@
           "NativeBuildExtensibilitySettings"
         ],
         "summary": "Patches extensibility settings for a given application",
-        "description": "\nRate Limit: 10 requests per minute per tenant\n\nAPI Client needs the **Configuration management > Edit configurations** permission.",
+        "description": "\nRate Limit: 10 requests per minute per tenant\n\nAPI Client needs the **Configuration management > Edit asset configurations** permission.",
         "operationId": "PATCH_NativeBuildExtensibilitySettings_Patch",
         "parameters": [
           {
@@ -1148,7 +1148,7 @@
                     "$ref": "#/components/schemas/ExtensibilitySettingsRequest"
                   }
                 ],
-                "description": "Extensibility Setting model for request to NAOS.10 PatchExtensibilitySettings endpoint\nRefer to [HLD](https://outsystemsrd.atlassian.net/wiki/spaces/RDSD/pages/4224516209/Solution+Enabler+-+Mobile+High+Level+Design#NAOS-API) for example payload"
+                "description": "Optional extensibility settings and library-specific configurations to apply."
               }
             },
             "application/*+json": {
@@ -1158,7 +1158,7 @@
                     "$ref": "#/components/schemas/ExtensibilitySettingsRequest"
                   }
                 ],
-                "description": "Extensibility Setting model for request to NAOS.10 PatchExtensibilitySettings endpoint\nRefer to [HLD](https://outsystemsrd.atlassian.net/wiki/spaces/RDSD/pages/4224516209/Solution+Enabler+-+Mobile+High+Level+Design#NAOS-API) for example payload"
+                "description": "Optional extensibility settings and library-specific configurations to apply."
               }
             }
           },
@@ -1199,7 +1199,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Configuration management > Edit configurations** permission."
+        "x-os-permissions": "API Client needs the **Configuration management > Edit asset configurations** permission."
       }
     }
   },
@@ -1787,7 +1787,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Represents the basic configuration properties for NAOS.10"
+        "description": "A configuration item identified by a key, with an optional new value for the configuration  and optional metadata entries."
       },
       "ExtensibilitySettingsItemResponse": {
         "required": [
@@ -1889,7 +1889,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Extensibility Setting model for request to NAOS.10 PatchExtensibilitySettings endpoint\nRefer to [HLD](https://outsystemsrd.atlassian.net/wiki/spaces/RDSD/pages/4224516209/Solution+Enabler+-+Mobile+High+Level+Design#NAOS-API) for example payload"
+        "description": "Optional extensibility settings and library-specific configurations to apply."
       },
       "ExtensibilitySettingsResponse": {
         "type": "object",
@@ -1912,7 +1912,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Extensibility Settings model to describe response to NAOS.9 GetExtensibilitySettings endpoint\n/// Refer to [HLD](https://outsystemsrd.atlassian.net/wiki/spaces/RDSD/pages/4224516209/Solution+Enabler+-+Mobile+High+Level+Design#NAOS-API) for example response"
+        "description": "The extensibility settings and library configurations for the application."
       },
       "GenericConfigDataType": {
         "enum": [
@@ -2524,8 +2524,9 @@
           },
           "nextPageOffset": {
             "type": "integer",
-            "description": "Offset of the next page of results.",
-            "format": "int32"
+            "description": "Offset of the next page of results. Null when there is no next page.",
+            "format": "int32",
+            "nullable": true
           },
           "totalResults": {
             "type": "integer",
@@ -2730,18 +2731,37 @@
     }
   },
   "security": [
-    {
-      "bearerAuth": []
-    }
+    {}
   ],
   "tags": [
+    {
+      "name": "public",
+      "description": "Native builder versions operations"
+    },
+    {
+      "name": "BuildOperations"
+    },
     {
       "name": "private",
       "description": "Native build operations"
     },
     {
-      "name": "public",
-      "description": "Native builder versions operations"
+      "name": "NativeMobileBuilds"
+    },
+    {
+      "name": "NativeMobileConfigurations"
+    },
+    {
+      "name": "NativeBuilderVersions"
+    },
+    {
+      "name": "NativeBuildExtensibilitySettings"
+    },
+    {
+      "name": "NativeBuildValidation"
+    },
+    {
+      "name": "NativeBuildVersions"
     }
   ]
 }
