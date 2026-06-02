@@ -1,7 +1,9 @@
 ---
 helpids: 30667
 summary: Use structured output in OutSystems Developer Cloud (ODC) for agent responses. This guide details steps to configure structured outputs in ODC Studio.
-tags: agent flow, call agent, structured output, mobile apps, reactive web apps
+tags:
+  - Agentic
+  - AI
 guid: 30673751-695d-425c-9af4-436815350f87
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -17,6 +19,7 @@ audience:
   - Developer
   - Tech lead
 topic:
+isautopublish: true
 ---
 # Structured output
 
@@ -32,9 +35,9 @@ Action calling and structured output can't be used on the same Agent call. If yo
 
 ## Using structured output
 
-To use a structured output approach in your Agentic app do the following:
+To use a structured output approach in your Agentic app, do the following:
 
-1. In your AgentFlow, double click your Call Agent action.
+1. In your AgentFlow, double-click your Call Agent action.
 
     ![Screenshot showing the Call Agent action in the AgentFlow.](images/stuctured-output-agent-odcs.png "Call Agent Action in AgentFlow")
 
@@ -46,11 +49,17 @@ To use a structured output approach in your Agentic app do the following:
 
     ![Screenshot showing the Add structure button in the Structured output tab.](images/structured-output-add-odcs.png "Add Structure Button")
 
-1. You can create a new structure by clicking New Structure, or add one by selecting your desired from the displayed structure list and clicking Select. Note that if you create a new structure you have to go to ODC Studio Data tab and add your structure elements. They'll be immediately reflected on your Structured output window.
+1. You can create a new structure by clicking New Structure, or add one by selecting your desired from the displayed structure list and clicking Select. Note that if you create a new structure you have to go to ODC Studio Data tab and add your structure elements. They'll be immediately reflected in your Structured output window.
 
-    ![Screenshot of the Add Structures window with a list of available structures.](images/structured-output-params-odcs.png "Add Structures Window")
+   ![Screenshot of the Add Structures window with a list of available structures.](images/structured-output-params-odcs.png "Add Structures Window")
 
-1. In every field of the structure you can add a Description that helps the AI model provide the response in the most accurate way for your structure.
+<div class="warning" markdown="1">
+
+OutSystems follows the OpenAI Structured Output specification, which enforces minimum and maximum value constraints on numeric data types. Some LLMs may not support these constraints. As a workaround, consider using the JSON or Text data type instead.
+
+</div>
+
+1. In every field of the structure, you can add a Description that helps the AI model provide the response in the most accurate way for your structure.
 
     ![Screenshot showing the Description field for a structure in the Structured output tab.](images/structured-output-desc-odcs.png "Structure Description Field")
 
