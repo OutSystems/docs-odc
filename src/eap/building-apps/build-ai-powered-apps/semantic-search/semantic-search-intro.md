@@ -68,7 +68,7 @@ In ODC case, you are able to select the entities and their attributes that are s
 
 ## Regional availability and limitations
 
-Semantic search relies on cloud AI infrastructure. Due to regional service availability differences, semantic search varies depending on the region where your ODC environment is hosted.
+Semantic search relies on cloud AI infrastructure. Due to regional differences in service availability, semantic search functions differently in the way it handles data, depending on where your ODC environment is hosted.
 
 <div class="info" markdown="1">
 
@@ -78,7 +78,7 @@ Semantic search relies on cloud AI infrastructure. Due to regional service avail
 
 ### Unsupported regions
 
-ODC semantic search is currently unavailable in the following regions:
+ODC semantic search triggers cross-region data transfers in the following regions:
 
 * Cape Town (af-south-1)
 * Hong Kong (ap-east-1)
@@ -87,7 +87,7 @@ ODC semantic search is currently unavailable in the following regions:
 * Tel Aviv (il-central-1)
 * UAE (me-central-1)
 
-In these specific regions, semantic search triggers cross-region data transfers. To maintain data residency compliance, avoid deploying semantic search within these territories. In case you still want to use semantic search in one of these regions, note that the data will be routed to the European region (eu-central-1) and then back to your region.
+To maintain data residency compliance, avoid deploying semantic search within these territories. In case you still want to use semantic search in one of these regions, note that the data will be routed to the European region (eu-central-1) and then back to your region. However, no data is stored outside of your region. This constraint is due to the embedding model not being deployed in these regions.
 
 <div class="info" markdown="1">
 
@@ -97,7 +97,7 @@ To determine your ODC environment's region, refer to the information provided wh
 
 ### Usage of multiple languages
 
-Semantic search over app data supports, in theory, most languages. The following languages have dictionaries that usually enable better results:
+Semantic search over app data supports most languages. Still, the following languages have dictionaries that usually enable better results:
 
 * English
 * Czech
