@@ -16,6 +16,7 @@ outsystems-tools:
   - odc studio
   - odc portal
 helpids:
+isautopublish: true
 ---
 # Semantic search in ODC apps
 
@@ -69,6 +70,31 @@ In ODC case, you are able to select the entities and their attributes that are s
 
 Semantic search relies on cloud AI infrastructure. Due to regional service availability differences, semantic search varies depending on the region where your ODC environment is hosted.
 
+<div class="info" markdown="1">
+
+**Semantic search is available for all customers in all regions.** We recommend that you read this section carefully, as there are some regional constraints.
+
+</div>
+
+### Unsupported regions
+
+ODC semantic search is currently unavailable in the following regions:
+
+* Cape Town (af-south-1)
+* Hong Kong (ap-east-1)
+* Jakarta (ap-southeast-3)
+* Singapore (ap-southeast-1)
+* Tel Aviv (il-central-1)
+* UAE (me-central-1)
+
+In these specific regions, semantic search triggers cross-region data transfers. To maintain data residency compliance, avoid deploying semantic search within these territories. In case you still want to use semantic search in one of these regions, note that the data will be routed to the European region (eu-central-1) and then back to your region.
+
+<div class="info" markdown="1">
+
+To determine your ODC environment's region, refer to the information provided when you purchased ODC or contact your account manager.
+
+</div>
+
 ### Usage of multiple languages
 
 Semantic search over app data supports, in theory, most languages. The following languages have dictionaries that usually enable better results:
@@ -90,22 +116,3 @@ Semantic search over app data supports, in theory, most languages. The following
 * Swedish
 
 These dictionaries address language-specific nuances, such as acronyms, cultural context, and other details, enabling the system to understand phrases better. In all other languages, punctuation is used to divide sentences, which might lead to less accurate results. Also, note that if the system doesn't identify the language, it defaults to English.
-
-### Unsupported regions
-
-ODC semantic search is currently unavailable in the following regions:
-
-* Cape Town (af-south-1)
-* Hong Kong (ap-east-1)
-* Jakarta (ap-southeast-3)
-* Singapore (ap-southeast-1)
-* Tel Aviv (il-central-1)
-* UAE (me-central-1)
-
-In these specific regions, semantic search triggers cross-region data transfers. To maintain data residency compliance, avoid deploying semantic search within these territories. In case you still want to use semantic search in one of these regions, note that the data will be routed to the European region (eu-central-1) and then back to your region.
-
-<div class="info" markdown="1">
-
-To determine your ODC environment's region, refer to the information provided when you purchased ODC or contact your account manager.
-
-</div>
