@@ -53,7 +53,7 @@ To use a structured output approach in your Agentic app, do the following:
 
    ![Screenshot of the Add Structures window with a list of available structures.](images/structured-output-params-odcs.png "Add Structures Window")
 
-<div class="warning" markdown="1">
+<div class="info" markdown="1">
 
 OutSystems follows the OpenAI Structured Output specification, which enforces minimum and maximum value constraints on numeric data types. Some LLMs may not support these constraints. As a workaround, consider using the JSON or Text data type instead.
 
