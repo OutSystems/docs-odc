@@ -1059,6 +1059,10 @@
         - href: error/ctxs/os-ctxs-50202.md
         - href: error/ctxs/os-ctxs-50301.md
         - href: error/ctxs/os-ctxs-50302.md
+    # Errors AI agent connections
+    - href: error/abrs/intro.md
+    - topics:
+        - href: error/abrs/os-abrs-conn-50000.md
     # Errors App and Library dependency errors
     - href: error/aldi/intro.md
     - topics:
