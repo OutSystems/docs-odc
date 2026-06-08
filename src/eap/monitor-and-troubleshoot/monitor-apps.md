@@ -45,6 +45,12 @@ Each log has a level of severity: **Error**, **Warning**, and **Information**.
 
 By default, when you open the **Logs** screen you see error logs from the development stage ordered by time in descending order. Use the filter inputs to filter logs by stage, asset (app or agent), severity, date/time, user, and message. You can filter logs by date back up to four weeks in an interval of up to two weeks.
 
+<div class="info" markdown="1">
+
+The **Logs** screen returns at most 10,000 log entries per search. If your filters match more than 10,000 entries, you aren't seeing all of them. Narrow the time window so the matching entries fall within the 10,000 limit. To analyze higher log volumes or retain logs longer, stream them to an external destination. Refer to [Streaming observability data](stream-app-analytics/stream-app-analytics-overview.md).
+
+</div>
+
 When you click the embedded link of a log's date/time, you open the detail page for that unique log. You see the log message, stack trace, and any logs related to the same request. Go to the log's associated trace by clicking the **Go to trace** button. When a log doesn't have an associated trace, the button is disabled. Currently, you only see traces for requests using server-side elements.
 
 ![Log details screen displaying the message, stack trace, and related logs.](images/logs-details-screen-pl.png "Log Details Screen")

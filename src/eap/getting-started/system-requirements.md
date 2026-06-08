@@ -1,8 +1,10 @@
 ---
 summary: OutSystems Developer Cloud (ODC) system requirements guide for optimal use of ODC Portal and ODC Studio.
 tags:
+  - External Authentication
   - External Databases
   - IdP
+  - Mentor
   - Mobile app
   - OIDC
 locale: en-us
@@ -230,8 +232,9 @@ The logs and traces limits are:
 | App log retention (days) | 28 | The maximum number of days that logs are retained (plus 21 days of additional backup). |
 | Log rate/minute (thousands) | 2 | The maximum rate at which logs can be captured, in thousands per minute. |
 | Log size (MB) | 1 | The maximum size of a log record, in MB, streamed with Analytics Stream. |
+| Logs shown in ODC Portal | 10 000 | The maximum number of log entries a single search returns in the ODC Portal. If a search matches more entries, narrow the time window so the matching entries fall within this limit. |
 | Trace retention (days) | 30 | The maximum number of days that traces are retained. |
-| Trace size (number of spans) | 8000 | The maximum number of spans per trace shown in the ODC Portal. |
+| Trace size (number of spans) | 8 000 | The maximum number of spans per trace shown in the ODC Portal. |
 | Trace size (KB) | 12288 | The maximum size of a trace, in KB. |
 | Trace spans rate/minute (thousands) | 50 | The maximum rate at which trace spans can be captured, in thousands per minute. |
 | Trace span size (KB) | 1 | The maximum size of a trace span, in KB, streamed with Analytics Stream. |
@@ -244,7 +247,7 @@ The event limits are:
 | ---------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
 | Concurrent events | 100 | The maximum number of events that can run concurrently per app, regardless of the number of containers supporting the app. |
 | Event duration (minutes) | 2 | The maximum duration of a handler of an event in minutes. |
-| Events per queue | 10,000 | The maximum number of events that can be queued. Upon reaching the limit, an exception is thrown. |
+| Events per queue | 10 000 | The maximum number of events that can be queued. Upon reaching the limit, an exception is thrown. |
 
 ### Custom code
 
@@ -253,7 +256,7 @@ The custom code limits are:
 | **Name** | **Limit** | **Description** |
 | ---------------------------------------- | :-------: | ----------------------------------------------------------------------------------------------------------------------- |
 | Custom code execution duration (seconds) | 95 | The maximum time a single custom code function can execute. |
-| Custom code memory (MB) | 1,024 | The maximum memory available for custom code functions while executing. |
+| Custom code memory (MB) | 1 024 | The maximum memory available for custom code functions while executing. |
 | Custom code storage (MB) | 512 | The maximum amount of ephemeral storage available for custom code functions while executing. |
 | Custom code payload size (MB) | 5.5 | The maximum payload for inputs and outputs of a custom code action. |
 
