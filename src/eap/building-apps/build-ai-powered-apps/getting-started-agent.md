@@ -20,7 +20,7 @@ helpids:
 isautopublish: true
 ---
 
-# Getting atarted with an Agentic app
+# Getting started with an Agentic app
 
 Quickly build your first agentic app in ODC Studio by creating an app and customizing its system message. Afterwards, you can learn more about customizing it in depth, including [configuring AI models, creating agents, defining grounding data, system messages, and actions in ODC.](create-agent.md)
 
