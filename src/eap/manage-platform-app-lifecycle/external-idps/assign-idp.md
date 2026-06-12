@@ -4,7 +4,6 @@ locale: en-us
 guid: 883c4583-27f6-4617-bcba-9cb26c4abd9e
 audience:
   - Platform administrator
-  - Developer
 platform-version: odc
 topic:
   - external-idps
@@ -12,10 +11,14 @@ topic:
   - idp-saml
 coverage-type:
   - apply
-  - understand
 figma:
 app_type: reactive web apps,mobile apps
-tags: authentication,identity provider,saml,external idp assignment,odc
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - SAML
 outsystems-tools:
   - odc portal
 helpids:
@@ -37,7 +40,7 @@ Before you begin, ensure the following:
 
 To assign an existing external IdP, follow these steps:
 
-1. In the ODC Portal go to **Manage** > **Identity providers**.
+1. In the ODC Portal go to **Management** > **Govern** > **Identity providers**.
 
 1. Click on the provider card you want to assign.
 

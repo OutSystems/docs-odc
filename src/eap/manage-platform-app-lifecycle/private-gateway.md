@@ -1,9 +1,11 @@
 ---
 summary: OutSystems Developer Cloud (ODC) features Private Gateways, a secure solution for connecting apps to private network endpoints.
 tags:
+  - Infrastructure
   - Private Gateway
   - REST
   - Security
+  - Web services
 locale: en-us
 guid: 9a023d82-da5b-4164-8f3f-9d6c35444b50
 app_type: mobile apps, reactive web apps
@@ -65,7 +67,7 @@ You can also activate and deactivate a Private Gateway, retrieve its status, and
 
 ## Activate a Private Gateway
 
-To activate a Private Gateway, navigate to the **Private Gateways** tab in the ODC Portal. Then follow these steps.
+To activate a Private Gateway, in the ODC Portal go to **Management** > **Configure** > **Private gateways**. Then follow these steps.
 
 1. Select the tab of the stage for which you want to activate a Private Gateway. The **Status** shows **Inactive**.
 1. Click the Toggle icon to activate. It should only take a few seconds.

@@ -6,11 +6,16 @@ guid: 84c9098b-c486-483f-9836-70b8faee63fa
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3765-89
 platform-version: odc
-tags: identity and access management, user onboarding, role management, identity providers, group mapping
+tags:
+  - Authentication
+  - Authorization
+  - End-user Authentication
+  - End-users
+  - External Authentication
+  - Groups
+  - IdP
 audience:
   - Platform administrator
-  - Developer
-  - Front-end developer
 outsystems-tools:
   - odc portal
 coverage-type:
@@ -19,6 +24,7 @@ coverage-type:
 topic:
   - user-mapping
   - assign-to-user-groups
+isautopublish: true
 ---
 
 # IdP and end-user group mapping
@@ -123,7 +129,7 @@ From the **End-user groups** page, you can:
 
 To map an IdP group to an end-user group from the **End-user groups** page, follow these steps:
 
-1. In the ODC Portal, under **Manage**, go to **End-user groups**.
+1. In the ODC Portal, go to **Management** > **Govern** > **End-user groups**.
 1. Search for the group you want to map, and then click it.
 1. Go to the **Group mappings** tab.
 1. Click **Add group mapping**.
@@ -146,7 +152,7 @@ You can view mappings by status (**Active**/**Inactive**). An **Inactive** statu
 
 To edit an end-user group mapping from the **End-user groups** page, follow these steps:
 
-1. In the ODC Portal, under **Manage**, go to **End-user groups**.
+1. In the ODC Portal, go to **Management** > **Govern** > **End-user groups**.
 1. Search for the group you want to map, and then click it.
 1. Go to the **Group mappings** tab.
 1. For each group mapping you want to update, next to **Status**, click the ellipsis (...).
@@ -168,7 +174,7 @@ Deleting a mapping removes the group claim and breaks the link between the IdP a
 
 To delete an end-user group mapping from the **End-user groups** page, follow these steps:
 
-1. In the ODC Portal, under **Manage**, go to **End-user groups**.
+1. In the ODC Portal, go to **Management** > **Govern** > **End-user groups**.
 1. Search for the group you want to map, and then click it.
 1. Go to the **Group mappings** tab.
 1. For each group mapping you want to delete, next to **Status**, click the ellipsis (...).
@@ -188,7 +194,7 @@ From the **Identity providers** page, you can:
 
 To map an IdP group to an end-user group from the **Identity providers** page, follow these steps:
 
-1. In the ODC Portal, under **Manage**, go to **Identity providers**.
+1. In the ODC Portal, go to **Management** > **Govern** > **Identity providers**.
 1. Search for the IdP you want to configure, and then click on it.
 1. Go to the **Group mappings** tab.
 1. Click **Add group mapping**.
@@ -210,7 +216,7 @@ You can view mappings by status (**Active**/**Inactive**). An **Inactive** statu
 
 To edit an end-user group mapping from the **Identity providers** page, follow these steps:
 
-1. In the ODC Portal, under **Manage**, go to **Identity providers**.
+1. In the ODC Portal, go to **Management** > **Govern** > **Identity providers**.
 1. Search for the IdP you want to configure, and then click on it.
 1. Go to the **Group mappings** tab.
 1. For each group mapping you want to update, next to **Status**, click the ellipsis (...).
@@ -235,7 +241,7 @@ Deleting a mapping removes the group claim and breaks the link between the IdP a
 
 To delete an end-user group mapping from the **Identity providers** page, follow these steps:
 
-1. In the ODC Portal, under **Manage**, go to **Identity providers**.
+1. In the ODC Portal, go to **Management** > **Govern** > **Identity providers**.
 1. Search for the IdP you want to configure, and then click on it.
 1. Go to the **Group mappings** tab.
 1. For each group mapping you want to delete, next to **Status**, click the ellipsis (...).

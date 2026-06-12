@@ -6,9 +6,13 @@ figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - Developer
   - Platform administrator
-tags: user roles,permissions
+tags:
+  - Authorization
+  - End-users
+  - IT Roles
+  - IT Users
+  - Roles
 outsystems-tools:
   - odc portal
 coverage-type:
@@ -19,6 +23,7 @@ topic:
   - updating-users
   - authorization
   - user-management
+isautopublish: true
 ---
 
 # Grant and revoke user roles
@@ -54,7 +59,7 @@ Members (IT-users) can have roles at different scopes within your organization. 
 To grant or revoke a role for a member (IT-user):
 
 1. Go to the **ODC Portal**.
-1. In the **Manage** section, go to **Users**.
+1. Go to **Management** > **Govern** > **Users**.
 1. Search for the member you want to update, and then click anywhere in the user's row.
 
 1. To grant or revoke a role at the [**Organization scope**](intro.md#organization-app-stage-and-app-scope):
@@ -94,7 +99,7 @@ To grant or revoke a role for an end-user:
 
 1. Go to the **ODC Portal**.
 
-1. In the **Manage** section, go to **Users**.
+1. Go to **Management** > **Govern** > **Users**.
 
 1. Search for the end-user you want to update, and then click anywhere in the user's row.
 

@@ -104,7 +104,7 @@ ODC includes two built-in organization roles:
 
 You can't delete or modify built-in roles, but you can duplicate them to create custom roles.
 
-To see the full list of permissions for the **Admin** or **Developer** role, in the ODC Portal, go to **Organization roles**, and then click **Admin** or **Developer**. Both roles display the **Built-in role** label.
+To see the full list of permissions for the **Admin** or **Developer** role, in the ODC Portal, go to **Management** > **Govern** > **Organization roles**, and then click **Admin** or **Developer**. Both roles display the **Built-in role** label.
 
 ### Custom roles {#custom-roles}
 
@@ -116,7 +116,7 @@ For more details about recommended custom roles, refer to [Recommended custom ro
 
 To create a custom role for members, follow these steps:
 
-1. In the ODC Portal, under **Manage**, go to **Organization roles**.
+1. In the ODC Portal, go to **Management** > **Govern** > **Organization roles**.
 1. Click **Create role**.
 1. Enter a name for the role.
 1. Select the permissions you want to assign. You may limit some [permissions](#permissions-registry) to specific stages if needed.  
@@ -188,7 +188,7 @@ As a general guideline, you can create these custom roles based on the scope to 
 * **App scope**: Basic Developer, Tech Lead.
 * **Organization scope**: Basic Member, Architect, Tenant Admin.
 
-In this reference model, the **Architect** role owns and manages the asset portfolio lifecycle, including creating, deleting, and installing assets from Forge, as well as managing releases. The **Tenant Admin** role focuses on global infrastructure configurations, not on asset or release management. If a user needs both sets of permissions, assign the built-in **Admin** role, which combines all capabilities.  
+In this reference model, the **Architect** role owns and manages the asset lifecycle, including creating, deleting, and installing assets from Forge, as well as managing releases. The **Tenant Admin** role focuses on global infrastructure configurations, not on asset or release management. If a user needs both sets of permissions, assign the built-in **Admin** role, which combines all capabilities.  
 
 This approach supports a DevOps-oriented model, where delivery teams (**Tech Lead** + **Developers**) have full ownership of their assigned assets (and only theirs).
 

@@ -1,14 +1,21 @@
 ---
-summary: OutSystems Developer Cloud (ODC) facilitates user management by assigning roles and permissions to control access to resources and apps.
+summary: OutSystems Developer Cloud (ODC) user management covers user types, authentication, roles, permissions, groups, and access scopes.
 locale: en-us
 guid: 9e0fb9b7-d2b0-419f-a5d8-5b5ed730da5e
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=design&node-id=2449%3A32709&t=qXDLlqyCzAMXQgr0-1
 platform-version: odc
-tags: user management, access control, role-based access control, group management, permissions
+tags:
+  - Authentication
+  - Authorization
+  - End-user Authentication
+  - End-users
+  - IdP
+  - IT Users
+  - Roles
 audience:
-  - Platform administrator
   - Developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal
@@ -76,7 +83,7 @@ Authentication verifies a user’s identity before granting access. ODC supports
 
     Built-in authentication provides a simple and secure way to manage user access without relying on external identity providers.
 
-    ODC supports built-in authentication through Identity Service, the built-in identity provider (IdP). You can choose whether users authenticate through the built-in IdP for the organization or stage scope. To remove built-in authentication for a scope, remove the built-in IdP assignment in the ODC Portal under **Manage** > **Identity providers**. IdP assignments apply to the organization or stage scope, not individual apps.
+    ODC supports built-in authentication through Identity Service, the built-in identity provider (IdP). You can choose whether users authenticate through the built-in IdP for the organization or stage scope. To remove built-in authentication for a scope, remove the built-in IdP assignment in the ODC Portal under **Management** > **Govern** > **Identity providers**. IdP assignments apply to the organization or stage scope, not individual apps.
 
     Test your external IdP setup before you remove the built-in IdP assignment to avoid lockouts. For more information, refer to [Avoid lockout scenarios](../manage-platform-app-lifecycle/external-idps/manage-external-idps.md#lockout).
 

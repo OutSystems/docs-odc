@@ -1,6 +1,9 @@
 ---
-summary: Learn about the process for streaming audit trail logs to Security Information and Event Management (SIEM) tools for real-time monitoring and compliance
-tags: audit trail,siem integration,security monitoring,compliance,opentelemetry
+summary: OutSystems Developer Cloud (ODC) audit trail streaming lets you send platform logs to your SIEM tool for real-time threat detection and compliance.
+tags:
+  - Logging
+  - Monitoring
+  - Security
 guid: 000ca25b-a3c6-42d5-9ab9-8f3219f0a283
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -14,8 +17,6 @@ content-type:
   - process
 audience:
   - Platform administrator
-  - Tech lead
-  - Architect
 topic:
   - app-settings
   - app-configuration
@@ -53,7 +54,7 @@ Before you start streaming audit trail logs, ensure you have:
 
 This example demonstrates the process of creating an audit trail stream. The steps might vary slightly depending on the SIEM tool you select.
 
-1. In the ODC Portal, go to **Configure** > **Streams**.
+1. In the ODC Portal, go to **Management** > **Configure** > **Streams**.
 
 1. Click **Create Stream** and select **Audit trail**.
 

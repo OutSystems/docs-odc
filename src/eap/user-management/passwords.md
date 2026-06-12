@@ -3,25 +3,28 @@ summary: Learn password management and recovery protocols for OutSystems Develop
 locale: en-us
 guid: 41b86768-295e-4aeb-98ed-9a0f6db4cfd2
 app_type: mobile apps,reactive web apps
-figma: 
+figma:
 platform-version: odc
-tags: password management,security protocols,authentication,user management,account lockout
+tags:
+  - Authentication
+  - End-user Authentication
+  - End-users
+  - IT Users
+  - Security
+  - Troubleshooting
 audience:
   - Developer
-  - Front-end developer
   - Platform administrator
 outsystems-tools:
   - odc portal
 coverage-type:
-  - remember
-  - unblock
-  - understand
-  - evaluate
   - apply
+  - unblock
 topic:
   - passwords
   - lockout
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # Passwords
@@ -68,7 +71,7 @@ In these screens ODC implements a flow to authenticate password resets with a ve
 
 ## Email configuration and troubleshooting
 
-To ensure the password reset process works as expected, make sure you configure your ODC tenant to send emails. To do this, verify the email settings in the **Emails** page of the ODC Portal, under the **Configure** section. For step-by-step instructions, refer to [Configure emails](../manage-platform-app-lifecycle/configure-emails.md).
+To ensure the password reset process works as expected, make sure you configure your ODC tenant to send emails. To do this, verify the email settings in the ODC Portal under **Management** > **Configure** > **Emails**. For step-by-step instructions, refer to [Configure emails](../manage-platform-app-lifecycle/configure-emails.md).
 
 If users aren’t receiving the password reset email, ask them to check their spam folder or email filters. Password reset messages come from `noreply@outsystems.dev`.
 

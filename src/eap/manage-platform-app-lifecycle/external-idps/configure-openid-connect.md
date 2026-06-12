@@ -40,7 +40,9 @@ If you're adding [Microsoft Entra ID](azure-ad.md) or [Okta](okta.md), you can u
 Before you begin, make sure you have:
 
 * A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
+
 * The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
+
 * A registered app in your provider portal, with the following values ready:
 
     * OpenID configuration URL (**Discovery endpoint**).
@@ -56,9 +58,11 @@ Before you begin, make sure you have:
 
 To add a new OpenID Connect provider, follow these steps:
 
-1. In the ODC Portal, go to **Manage** > **Identity providers**.
+1. In the ODC Portal, go to **Management** > **Govern** > **Identity providers**.
+
 1. To open the **New provider** configuration screen, click the **Add Provider** dropdown and select **OpenID Connect**.
-1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and must only include letters, numbers, and spaces.
+
+1. Enter a name for the new provider in the Provider name field. This can be any name less than 255 characters and must only include letters, numbers, and spaces.
 
 1. Enter the URL of the OpenID configuration in the **Discovery endpoint** field.
 

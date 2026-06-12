@@ -105,7 +105,7 @@ This section guides you through the process of adding, assigning, and using an e
 
 ### Step 1: Add an external IdP {#add-an-external-idp}
 
-ODC admins can configure an external IdP by navigating to the **ODC Portal** > **Manage** > **Identity providers** tab. A list of built-in providers and any external IdPs already added displays.
+ODC admins can configure an external IdP by navigating to the **ODC Portal** > **Management** > **Govern** > **Identity providers**. A list of built-in providers and any external IdPs already added displays.
 
 The configuration process depends on the authentication protocol your identity provider uses:
 

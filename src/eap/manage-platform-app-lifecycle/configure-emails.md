@@ -1,14 +1,17 @@
 ---
 summary: Learn to configure and manage SMTP email settings in OutSystems Developer Cloud (ODC) for app stages.
-tags: email configuration, smtp settings, security multi-stage configuration, cloud services
+tags:
+  - Authentication
+  - OAuth
+  - Private Gateway
+  - Security
+  - Settings
 locale: en-us
 guid: 48490651-74d0-459b-a0c4-4b40df93d56e
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 audience:
-  - Front-end developer
-  - Developer
   - Platform administrator
 outsystems-tools:
   - odc studio
@@ -18,6 +21,7 @@ coverage-type:
   - understand
 topic:
   - how-to-send-emails
+isautopublish: true
 ---
 
 # Configure SMTP settings for emails
@@ -58,8 +62,9 @@ To configure the SMTP settings for the email, follow these steps:
 
 1. Go to ODC Portal.
 
-1. Select **CONFIGURE** > **Emails**.
-The Emails configurations page is displayed  
+1. Go to **Management** > **Configure** > **Emails**.
+
+    The Emails configurations page is displayed.
 
 1. Select the stage where you want to configure the email settings.
 

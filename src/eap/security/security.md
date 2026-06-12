@@ -1,12 +1,20 @@
 ---
 summary: OutSystems Developer Cloud (ODC) employs secure-by-design principles, featuring multi-layered security and compliance with industry standards.
-tags: secure by design, owasp, security engineering principles, infrastructure as code, policy enforcement
+tags:
+  - Authentication
+  - Infrastructure
+  - Monitoring
+  - OIDC
+  - OWASP
+  - Private Gateway
+  - Security
 locale: en-us
 guid: bffd8c9e-16b6-4458-a146-ddb6f8077e12
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/kw9RAhge7eEpiKLnvKnOek/Security-of-OutSystems-Developer-Cloud?type=design&node-id=3001%3A25&t=vm4lMbILR8ugorQK-1
 platform-version: odc
 audience:
+  - Architect
   - Developer
   - Front-end developer
   - Platform administrator
@@ -164,7 +172,7 @@ A static code analysis tool scans [Platform service](../manage-platform-app-life
 
 Daily vulnerability scanning of the container registry covers the current version of the Platform service container images and all the deployed app images across all customer Runtime stages. When a vulnerability is detected, OutSystems security engineers fix it and release a new version of the affected Platform service(s) or app base container image.
 
-For the list of patches for known vulnerabilities, in the **Portal**, see **Maintain** > **Platform Updates** > **App security** tab. The app security screen shows the following:
+For the list of patches for known vulnerabilities, in the ODC Portal go to **Management** > **Maintain** > **Platform updates**, then select the **App security** tab. The app security screen shows the following:
 
 * The list of apps with known vulnerabilities
 * Classification of the vulnerabilities

@@ -1,6 +1,8 @@
 ---
 summary: Configure streams in OutSystems Developer Cloud (ODC) Portal to send observability data to APM tools with server details and authentication.
-tags: stream configuration,apm integration,data streaming,observability
+tags:
+  - Logging
+  - Monitoring
 guid: 512ce9da-a8bc-42b5-87a3-091e80535a06
 locale: en-us
 app_type: mobile apps,reactive web apps
@@ -10,11 +12,12 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - apply
-content-type: 
+content-type:
 audience:
   - Developer
   - Platform administrator
 helpids: 30636
+isautopublish: true
 ---
 
 # Configure analytics streams in the ODC Portal
@@ -35,7 +38,7 @@ When sending observability data from multiple environments to the same destinati
 
 </div>
 
-1. In the ODC Portal, go to **Configure** > **Streams.**  
+1. In the ODC Portal, go to **Management** > **Configure** > **Streams.**  
 
 1. Click **Create Stream**.
 

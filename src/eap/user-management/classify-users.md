@@ -1,15 +1,18 @@
 ---
 summary: Configure domains in OutSystems Developer Cloud (ODC) to classify internal and external users, making sure proper licensing of user capacities.
-tags: user management, domain configuration, internal users, external users
+tags:
+  - Domains
+  - End-users
 guid: f3211746-db90-4515-8175-888d00e14bd9
 locale: en-us
 app_type: mobile apps,reactive web apps
 platform-version: odc
-figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3539-11
+figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=4348-2
 content-type:
   - procedure
 coverage-type:
   - apply
+  - understand
 topic:
   - users-in-os
   - user-types
@@ -17,7 +20,6 @@ topic:
   - user-management
 audience:
   - Platform administrator
-  - Tech lead
 outsystems-tools:
   - odc portal
   - user management app
@@ -45,13 +47,11 @@ ODC classifies users without an email address as internal users. You can impleme
 | **No email address** | Counted as internal | Not applicable |
 | **License usage** | Counts toward internal end-user quota | Counts toward external end-user quota |
 | **Typical users** | Employees, internal collaborators | Customers, partners, third parties |
-| **How to configure** | Add your organization's email domains in the **Manage Subscription** section of the ODC Portal | Automatically applies to all other domains |
+| **How to configure** | Add your organization's email domains in the ODC Portal under **Management** > **Admin** > **Subscription** | Automatically applies to all other domains |
 
 ## Configure your domains for user classification
 
-1. In the ODC Portal, click your tenant name, and select **Manage Subscription**.
-
-    ![ODC Portal showing the Manage Subscription option under the tenant name.](images/manage-subscription-pl.png "Manage Subscription Console")
+1. In the ODC Portal, go to **Management** > **Admin** > **Subscription**.
 
 1. From the **Overview** tab, click **External end users** or **Internal end users**.
 

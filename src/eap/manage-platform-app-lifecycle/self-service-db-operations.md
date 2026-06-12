@@ -27,9 +27,9 @@ Whenever OutSystems updates the ODC platform infrastructure, it's done within a 
 
 In your ODC Portal you can find a list of all scheduled updates on your infrastructure, see there details and reschedule any of the operations. To do this:
 
-1. On the ODC Portal, click **Maintain** -> **Platform updates**. This opens the Platform updates screen.
+1. In the ODC Portal, go to **Management** > **Maintain** > **Platform updates**.
 
-1. On the Platform updates screen select the **Infrastructure** tab.
+1. On the **Platform updates** screen, select the **Infrastructure** tab.
 
 1. Here, you'll find a list of all upcoming updates, with information on:
 

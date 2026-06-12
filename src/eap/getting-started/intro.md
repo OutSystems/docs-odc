@@ -3,11 +3,11 @@ summary: "OutSystems Developer Cloud (ODC) getting started: create Web, Mobile, 
 tags:
   - Agentic
   - AI
-  - Deploy
   - Mentor
   - Mentor Studio
   - Mentor Web
   - Mobile app
+  - Web
 locale: en-us
 guid: 6B0090D9-8EE9-479F-9251-CCB490D2EBB6
 app_type: mobile apps, reactive web apps
@@ -15,8 +15,6 @@ platform-version: odc
 figma: https://www.figma.com/design/zohMj3VpAEA6P9J9azwqQq/Getting-started-with-ODC?node-id=3570-10
 audience:
   - Developer
-  - Front-end developer
-  - Platform administrator
 outsystems-tools:
   - odc portal
 coverage-type:
@@ -49,8 +47,7 @@ From the ODC Portal, you have access to:
 * **Monitor** - use to view all logs, traces and analytics
 * **Analyze** - use to check and ensure code quality and app security
 * **Integrate** - use to integrate your apps with other systems
-* **Manage** - use to do all your user management and API permissions management
-* **Configure** - use to make all your relevant configurations
+* **Management** - use to view organization and subscription details, govern access, and configure organization settings
 * **Forge** - use to access a repository of apps and components developed by a community of ODC developers to create your own apps.
 
 ## Create an app

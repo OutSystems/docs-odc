@@ -1,6 +1,11 @@
 ---
-summary: This article explains how to suspend and resume access to an API client.
-tags: api client management, suspend api access, resume api access, outsystems, odc portal
+summary: "OutSystems Developer Cloud (ODC) API client access: suspend or resume from the ODC Portal to immediately invalidate or restore access tokens."
+tags:
+  - Authentication
+  - OAuth
+  - REST
+  - Security
+  - Web services
 outsystems-tools:
   - odc portal
 guid: 45df5a2d-a458-4597-a7e4-a1457ee065fd
@@ -10,8 +15,11 @@ content-type:
   - procedure
 audience:
   - Platform administrator
+coverage-type:
+  - apply
 platform-version: odc
 figma:
+isautopublish: true
 ---
 # Suspend and resume access to API Client
 
@@ -29,7 +37,9 @@ To suspend and resume access to the API client, follow these steps:
 
 1. Log into the ODC portal.
 
-1. Under **Manage**, click **API clients**. A list of API Clients is displayed.
+1. In the ODC Portal, go to **Management** > **Govern** > **API clients**.
+
+    A list of API clients is displayed.
 
 1. From the API Client list, click the API Client to be suspended. The API Client details page is displayed.
 

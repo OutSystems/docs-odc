@@ -9,8 +9,6 @@ tags:
   - End-user Authentication
   - External Authentication
   - IdP
-  - OIDC
-  - Security
 figma:
 audience:
   - Platform administrator
@@ -46,7 +44,7 @@ Before you begin, make sure you have:
 
 To add a new social identity provider with accelerators, follow these steps:
 
-1. In the ODC Portal, go to **Manage** > **Identity providers**.
+1. In the ODC Portal, go to **Management** > **Govern** > **Identity providers**.
 1. To open the **New provider** configuration screen, click the **Add Provider** dropdown and select the social provider (Apple, Google, Facebook, or LinkedIn).
 1. Enter a name for the new provider in the **Provider name** field.
 1. Complete the configuration fields with the information required from your provider (refer to [Social provider requirements](#social-provider-requirements)).

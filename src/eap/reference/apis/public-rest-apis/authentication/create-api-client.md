@@ -1,7 +1,12 @@
 ---
 helpids: 30566
 summary: Learn how to configure API access for OutSystems Developer Cloud (ODC) using an API client, including creating clients, managing credentials, and setting permissions.
-tags: api configuration, oauth 2.0, client credentials, rest apis, api security
+tags:
+  - Authentication
+  - Authorization
+  - OAuth
+  - REST
+  - Security
 outsystems-tools:
   - odc portal
 guid: 9698d698-520b-4362-858c-034f0d76ccbd
@@ -11,8 +16,11 @@ content-type:
   - procedure
 audience:
   - Platform administrator
+coverage-type:
+  - apply
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=3497-27&t=Ee0vNUQza7lfj7Sy-1
+isautopublish: true
 ---
 # Configure API access using an API client
 
@@ -39,9 +47,9 @@ To create a new API client, follow these steps:
 
 1. Log into the ODC portal.
 
-1. Under **Manage**, click **API clients**.
+1. In the ODC Portal, go to **Management** > **Govern** > **API clients**.
 
-A list of API Clients is displayed.
+    A list of API clients is displayed.
 
 1. Click **Create API Client**.
 
@@ -77,7 +85,7 @@ A list of API Clients is displayed.
 
 1. Click **Create API Client**.
 
-    On successfully creating the API client, the client credentials page displays the **client ID**,  **client secret**, and the expiration date of the client secret. Now, you must [copy the the client credentials](#copy-client-credentials).
+    On successfully creating the API client, the client credentials page displays the **client ID**,  **client secret**, and the expiration date of the client secret. Now, you must [copy the client credentials](#copy-client-credentials).
 
     To create a copy of an API client, go to the API Client details page, click the ellipsis menu, and select **Duplicate API client**. This opens the Create API client page with all fields pre-filled. You can modify any details as needed before creating a new API client.
 

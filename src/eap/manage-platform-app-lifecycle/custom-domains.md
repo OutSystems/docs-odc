@@ -2,7 +2,6 @@
 summary: OutSystems Developer Cloud (ODC) supports custom domain configuration for app stages, with automatic SSL certificate issuance and domain validation.
 tags:
   - Domains
-  - End-users
   - Security
 locale: en-us
 guid: da18534d-84c8-4a52-bca8-85ebb3b1e082
@@ -65,12 +64,12 @@ Some domain registrars may not allow creating CNAME records when existing DNS re
 
 You need to use a custom domain without linked DNS records if your domain registrar has restricted CNAME creation.
 
-To add a custom domain, from the ODC Portal, select **Configurations** > **Domains** and then follow these steps.
+To add a custom domain, from the ODC Portal, select **Management** > **Configure** > **Domains** and then follow these steps.
 
 1. From the Stage dropdown menu, select the stage for which you want to add a domain.
 1. From the top-right, click the **Add domain** button to display the **Add a domain** popup box.
 1. Enter the domain you want to add, then click **Add**. The **Set up your domain** screen displays with the **Pending validation** status next to the domain name.
-1. Now, you must **Validate ownership of the domain** and **Point the domain to your apps**. You do this by adding the two provided CNAME records, two name-value pairs, to the DNS records of your domain registrar (the company that manages the reservation of your domain name). To add a **CNAME** record, follow the steps in the [box below](#add-CNAME-box).
+1. Now, you must **Validate ownership of the domain** and **Point the domain to your apps**. You do this by adding the two provided CNAME records, two name-value pairs, to the DNS records of your domain registrar (the company that manages the reservation of your domain name). To add a **CNAME** record, follow the steps in the [box below](#add-cname-box).
 1. ODC uses AWS Certificate Manager (ACM) to issue certificates. If your domain has Certification Authority Authorization (CAA) enabled, you must add a DNS record to specify that ACM is allowed to issue a certificate for your domain. The process of adding a DNS record is detailed in the [ACM documentation](https://docs.aws.amazon.com/acm/latest/userguide/setup-caa.html).
 
 **Note**: To set a custom domain as the default domain, refer to [Default domain](#default-domain).
@@ -122,7 +121,7 @@ To set a custom domain as the default domain, follow the [Add a custom domain](#
 
 </div>
 
-### Add a CNAME record to your domain's DNS records  {#add-CNAME-box}
+### Add a CNAME record to your domain's DNS records {#add-cname-box}
 
 <div class="info" markdown="1">
 
@@ -143,7 +142,7 @@ To add the CNAME record to your domain registrar, complete the following steps. 
 
 ## Delete a custom domain
 
-To delete a custom domain, from the ODC Portal, navigate to **Configurations** > **Domains** and then follow these steps.
+To delete a custom domain, from the ODC Portal, navigate to **Management** > **Configure** > **Domains** and then follow these steps.
 
 1. Click the dropdown menu and select the stage for which you want to add a domain. The list of domains displays the built-in domain and any custom domains already added to the selected stage.
 1. Click the card of the custom domain you want to delete. The **Set up your domain** screen displays and you see the status next to the domain name.

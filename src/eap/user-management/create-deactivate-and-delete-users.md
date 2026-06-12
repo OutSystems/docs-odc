@@ -8,14 +8,16 @@ platform-version: odc
 audience:
   - Platform administrator
 tags:
+  - Authentication
   - End-users
+  - IdP
   - IT Users
+  - Lifecycle
   - Roles
 outsystems-tools:
   - odc portal
 coverage-type:
   - apply
-  - unblock
 topic:
   - manage-users
   - deleting-users
@@ -60,7 +62,7 @@ To manually register [members (IT-users)](intro.md#members-it-users), follow the
 
 1. Go to the **ODC Portal**.
 
-1. Under **Manage**, go to **Users**.
+1. Go to **Management** > **Govern** > **Users**.
 
 1. Click **Invite user**.
 
@@ -101,7 +103,7 @@ To manually register [members (IT-users)](intro.md#members-it-users), follow the
 To manually register [end-users](intro.md#end-users), follow these steps:
 
 1. Go to the **ODC Portal**.
-1. Under **Manage**, go to **Users**.
+1. Go to **Management** > **Govern** > **Users**.
 1. Click **Invite user**.
 1. Enter the user’s email address, and then expand **End-user access**.
 1. Select the [end-user groups](./end-users/groups.md) you want to assign to the user.
@@ -220,7 +222,7 @@ You can deactivate users to temporarily prevent them from accessing the ODC Port
 To deactivate or activate a user, follow these steps:
 
 1. Go to the **ODC Portal**.
-1. Under **Manage**, go to **Users**.
+1. Go to **Management** > **Govern** > **Users**.
 1. For each user you want to update, under **Actions**, click the three dots (**...**).
 1. Click **Deactivate user** or **Activate user** as appropriate, and then confirm the action.
 
@@ -233,7 +235,7 @@ To deactivate or activate a user, follow these steps:
 Deleting a user permanently removes their access and all related data from the system. This action can't be undone.
 
 1. Go to the **ODC Portal**.
-1. Under **Manage**, go to **Users**.
+1. Go to **Management** > **Govern** > **Users**.
 1. For each user you want to delete, under **Actions**, click the three dots (**...**).
 1. Click **Delete**, and then confirm the action.
 

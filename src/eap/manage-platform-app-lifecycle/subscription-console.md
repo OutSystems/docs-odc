@@ -5,10 +5,11 @@ guid: 504cdfa5-68d4-46ce-8363-e08aa05e4514
 app_type: mobile apps, reactive web apps
 figma:
 platform-version: odc
-tags: subscription management, application management, user management, permission control, licensing
+tags:
+  - End-users
+  - Monitoring
 audience:
   - Platform administrator
-  - Developer
 outsystems-tools:
   - odc portal
 coverage-type:
@@ -18,7 +19,7 @@ isautopublish: true
 
 # Subscription console
 
-The subscription console is a centralized hub for viewing application objects (AOs), end-users, and add-ons. To access the subscription console, sign in the ODC Portal, click the **Organization** dropdown, and select **Manage Subscriptions**.
+The subscription console is a centralized hub for viewing application objects (AOs), end-users, and add-ons. To access the subscription console, in the ODC Portal go to **Management** > **Admin** > **Subscription**.
 
 <div class="info" markdown="1">
 

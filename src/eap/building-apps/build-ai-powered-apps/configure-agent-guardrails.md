@@ -44,7 +44,7 @@ Baseline configuration allows you to set safety standards appropriate for each s
 
 To configure baseline guardrails for a stage:
 
-1. In the ODC Portal, navigate to **Management** > **CONFIGURE** > **Agent guardrails**.
+1. In the ODC Portal, navigate to **Management** > **Configure** > **Agent guardrails**.
 
 1. Select the target stage: **Development**, **QA**, or **Production**.
 

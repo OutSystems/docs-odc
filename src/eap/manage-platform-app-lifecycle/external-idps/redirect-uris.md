@@ -3,8 +3,6 @@ summary: Set up redirect URIs for OpenID Connect external identity providers in 
 locale: en-us
 guid: 52d83cda-27cb-4f02-aad6-c8b0876e5d10
 audience:
-  - Front-end developer
-  - Developer
   - Platform administrator
 platform-version: odc
 topic:
@@ -12,14 +10,19 @@ topic:
   - idp-openidp
 coverage-type:
   - apply
-  - remember
-  - understand
 figma:
 app_type: reactive web apps,mobile apps
-tags: openid connect, external identity provider, identity management, redirect uris, authentication setup
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - OIDC
+  - SSO
 outsystems-tools:
   - odc portal
 helpids:
+isautopublish: true
 ---
 # Configure redirect URIs for an external IdP { #idp-configure-uri }
 
@@ -36,7 +39,7 @@ Before you begin, ensure the following:
 
 ## Set up redirect URIs for your provider
 
-1. In the ODC Portal go to **Manage** > **Identity providers**.
+1. In the ODC Portal go to **Management** > **Govern** > **Identity providers**.
 
 1. Click the provider for which you want to configure the redirect URIs.
 

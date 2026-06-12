@@ -1,6 +1,9 @@
 ---
-summary: Explore how OutSystems Developer Cloud (ODC) enhances app security through configurable IP filters to restrict access based on IP addresses.
-tags: application security, network security, access control, configuration management, cloud platforms
+summary: OutSystems Developer Cloud (ODC) IP filters let you restrict app access by stage using AllowList or DenyList rules in the ODC Portal.
+tags:
+  - Groups
+  - IP Filters
+  - Security
 locale: en-us
 guid: 269db566-d03b-49ae-84d8-c4aa181d8a88
 app_type: mobile apps, reactive web apps
@@ -8,8 +11,6 @@ figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-managemen
 platform-version: odc
 audience:
   - Platform administrator
-  - Developer
-  - Front-end developer
 outsystems-tools:
   - odc portal
 coverage-type:
@@ -87,7 +88,7 @@ You can also create, update, and delete IP filter groups and their rules program
 Follow these steps to create a new IP filter group:
 
 1. Go to the ODC Portal.  
-1. Go to the **Configure** tab and select **IP filters**.  
+1. Go to **Management** > **Configure** > **IP filters**.  
 1. Select the stage.
 1. Click **Create group**.
 1. Enter the following:  

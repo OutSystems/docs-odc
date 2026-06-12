@@ -1,13 +1,18 @@
 ---
 guid: 16164200-5eb0-43b4-b43d-018634c3f330
 locale: en-us
-summary: Manage end-user groups using OutSystems Developer Cloud (ODC), integrating with Jira for streamlined user and group management.
+summary: OutSystems Developer Cloud (ODC) end-user groups let you centralize role assignment, simplify onboarding, and automate access via IdP integration.
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3750-47
 coverage-type:
+  - understand
   - apply
 app_type: mobile apps,reactive web apps
 platform-version: odc
-tags: end-user management,group management,user groups,jira integration,access control
+tags:
+  - End-users
+  - Groups
+  - IdP
+  - Roles
 outsystems-tools:
   - none
 topic:
@@ -73,7 +78,7 @@ You can manage end-user groups through the ODC Portal.
 
 Follow these steps to create a new end-user group in ODC:
 
-1. In the ODC Portal, go to **Manage** > **End-user groups**.
+1. In the ODC Portal, go to **Management** > **Govern** > **End-user groups**.
 1. Click **Create group**, and then select the [stage](intro.md#organization-app-stage-and-app-scope) (for example, **Development**, **QA**, or **Production**).
 
     ![Screenshot of the ODC Portal showing the option to create a group and select a stage (Development, QA, or Production).](images/end-user-group-stage-pl.png "Create group for stage selection")
@@ -95,7 +100,7 @@ Follow these steps to create a new end-user group in ODC:
 
 Follow these steps to change the roles of an end-user group:
 
-1. In the ODC Portal, go to **Manage** > **End-user groups**.
+1. In the ODC Portal, go to **Management** > **Govern** > **End-user groups**.
 1. In the **End-user groups** list, click the end-user group you want to edit.
 1. On the **End-user roles** tab, click **Manage roles**.
 1. Select or clear the roles you want to grant or revoke to the end-user group for each app.
@@ -107,7 +112,7 @@ All users in the end-user group automatically inherit the updated roles. This on
 
 Follow these steps to add or remove users from an end-user group in ODC:
 
-1. In the ODC Portal, go to **Manage** > **End-user groups**.
+1. In the ODC Portal, go to **Management** > **Govern** > **End-user groups**.
 1. In the **End-user groups** list, click the end-user group you want to edit.
 1. On the **Users** tab, click **Assign users**.
 1. Select or clear the users you want to add or remove from the end-user group.
@@ -121,7 +126,7 @@ Deleting an end-user group removes all role assignments the user inherited from 
 
 Follow these steps to delete an end-user group in ODC:
 
-1. In the ODC Portal, go to **Manage** > **End-user groups**.
+1. In the ODC Portal, go to **Management** > **Govern** > **End-user groups**.
 1. In the **End-user groups** list, click the end-user group you want to edit.
 1. Remove all users from the end-user group.  
 
@@ -135,7 +140,7 @@ The end-user group is deleted.
 
 Follow these steps to update the end-user group name and description in ODC:
 
-1. In the ODC Portal, go to **Manage** > **End-user groups**.
+1. In the ODC Portal, go to **Management** > **Govern** > **End-user groups**.
 1. In the **End-user groups** list, click the end-user group you want to edit.
 1. Click **Edit group details**.
 1. Enter the new **group name** and **group description**.

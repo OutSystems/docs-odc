@@ -2,8 +2,8 @@
 summary: "ODC Portal and ODC Studio UI overview for OutSystems Developer Cloud (ODC): navigate the console, build apps, and use Mentor AI."
 tags:
   - 1-Click Publish
+  - AI
   - Debugging
-  - Deploy
   - Mentor
   - Mentor Studio
   - Mentor Web
@@ -59,7 +59,7 @@ Above the Navigation menu, the name of the tenant you're accessing displays.
 
 Each menu item on the **Navigation menu** provides functionality related to its name. ODC uses an accordion to display more or less information. When the arrow to the right of the menu name points up, that accordion is open.
 
-The **apps** you see when you first access the ODC Portal are only the apps to which you have access. When you select a menu option, the display in the middle changes. For example, if you select **Manage** > **Users**, then information related to users displays. In addition, the choices available at the top of the Portal canvas also change. All options that display relate to your choice from the Navigation menu.
+The **apps** you see when you first access the ODC Portal are only the apps to which you have access. When you select a menu option, the display in the middle changes. For example, if you select **Management** > **Govern** > **Users**, then information related to users displays. In addition, the choices available at the top of the Portal canvas also change. All options that display relate to your choice from the Navigation menu.
 
 From the top right, you can select **Download ODC Studio** or **Create app**. When you click **Create app**, ODC Studio automatically opens.
 

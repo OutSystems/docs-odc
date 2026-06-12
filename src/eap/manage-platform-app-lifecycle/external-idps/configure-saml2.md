@@ -48,7 +48,7 @@ From your provider, have the following ready:
 
 To add a SAML 2.0 provider in the ODC Portal:
 
-1. Go to **Manage** > **Identity providers**.
+1. Go to **Management** > **Govern** > **Identity providers**.
 1. Open the **Add provider** menu and choose **SAML 2.0**.
 
 After selecting **SAML 2.0**, complete these steps:

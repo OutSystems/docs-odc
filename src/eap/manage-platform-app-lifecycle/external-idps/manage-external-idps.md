@@ -12,7 +12,14 @@ topic:
 coverage-type:
   - apply
   - understand
-tags: external identity providers,idp management,odc authentication,idp replacement,idp lifecycle
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - OIDC
+  - SAML
+  - Security
 outsystems-tools:
   - odc studio
   - odc portal
@@ -70,7 +77,7 @@ When you need to remove an existing external identity provider from your organiz
 
 ## Edit or delete an external IdP
 
-You can only edit or delete a provider that is not in use. To edit or delete an external IdP, in the ODC Portal go to **Manage** > **Identity providers**. Then, follow these steps:
+You can only edit or delete a provider that is not in use. To edit or delete an external IdP, in the ODC Portal go to **Management** > **Govern** > **Identity providers**. Then, follow these steps:
 
 1. Click on the provider card you want to edit or delete.
 
@@ -110,7 +117,7 @@ If you encounter a lockout scenario, open a support ticket. A support agent can 
 
 To remove the built-in IdP assignment, follow these steps:
 
-1. In the ODC Portal, go to **Manage** > **Identity providers**.
+1. In the ODC Portal, go to **Management** > **Govern** > **Identity providers**.
 
 1. Click **Built-in provider**.
 
