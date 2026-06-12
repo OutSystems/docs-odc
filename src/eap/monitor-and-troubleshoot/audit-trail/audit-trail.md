@@ -1,6 +1,6 @@
 ---
 helpids: 30635
-summary: OutSystems Developer Cloud (ODC)'s audit trail ensures compliance, aids troubleshooting, and tracks platform operations for effective incident response.
+summary: OutSystems Developer Cloud (ODC) Audit trails ensure compliance, aid troubleshooting, and track platform operations for effective incident response.
 tags:
   - Events
   - Logging
@@ -31,7 +31,7 @@ topic:
   - deployment-options
 isautopublish: true
 ---
-# Audit trail
+# Audit trails
 
 <div class="info" markdown="1">
 
@@ -43,7 +43,7 @@ Within the OutSystems ODC platform, an **audit trail** is a critical, chronologi
 
 An audit trail provides an effective way to track temporal information. Every significant action creates a record detailing what happened and when. For effective analysis, these records must be collected in a central place where they can be searched, correlated, and analyzed – for ODC, this central place is the **ODC Portal** > **Management** > **Admin** > **Audit trails**.
 
-ODC's audit trail provides you with a comprehensive, immutable record of significant actions and changes within your environment. It helps you monitor security, maintain compliance, and troubleshoot operational issues by clearly showing who did what, where, and when across your platform. Audit trails offer significant advantages:
+ODC's Audit trails provide you with a comprehensive, immutable record of significant actions and changes within your environment. They help you monitor security, maintain compliance, and troubleshoot operational issues by clearly showing who did what, where, and when across your platform. Audit trails offer significant advantages:
 
 * **Compliance**: Verifiable documentary evidence to meet regulatory standards and internal policies.
 
@@ -57,7 +57,7 @@ ODC's audit trail provides you with a comprehensive, immutable record of signifi
 
 Before you can view or export audit logs, you must have the **Audit Trail View** role.
 
-## View audit trail in the ODC Portal
+## View audit trails in the ODC Portal
 
 From the **Audit trails** interface, you can:
 
@@ -123,7 +123,7 @@ For more information about setting up and configuring audit trail streaming, ref
 
 ## Track auditable events
 
-ODC's Audit trail helps you oversee operations critical to data security and operational integrity. ODC tracks the following types of auditable operations. These operations relate to user actions and configurations made in the ODC Portal, ODC Studio, and through OutSystems Public APIs.
+ODC's Audit trails help you oversee operations critical to data security and operational integrity. ODC tracks the following types of auditable operations. These operations relate to user actions and configurations made in the ODC Portal, ODC Studio, and through OutSystems Public APIs.
 
 <div class="info" markdown="1">
 
@@ -267,7 +267,7 @@ When you export your audit data to a CSV file, additional, more detailed attribu
 
 * **Binary configurations** such as uploaded files used for building your app, display \*\*\*\*\*\*\* instead of the binary value. A binary can contain secret data.
 
-* When you add or remove users from end-user groups, the logs show the **difference** between the old value and the new value. All other logs show the old value and the new value. End user groups can contain thousands of user values. To ensure high performance, Audit trail prioritizes showing the smaller `diff` rather than the full list of end users.
+* When you add or remove users from end-user groups, the logs show the **difference** between the old value and the new value. All other logs show the old value and the new value. End user groups can contain thousands of user values. To ensure high performance, Audit trails prioritize showing the smaller `diff` rather than the full list of end users.
 
 * If an OutSystems support agent needs to access your ODC tenant as part of a support ticket, audit trail logs the time of access. Access is automatically revoked when no longer needed, and always expires after a maximum of four hours.
 

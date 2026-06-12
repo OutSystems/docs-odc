@@ -109,7 +109,7 @@ A stream can have one of the following statuses:
 
 ## Related resources
 
-* [Audit trail](audit-trail.md)
+* [Audit trails](audit-trail.md)
 
 * [Requirements for streaming audit trail logs](audit-trail-requirements.md)
 

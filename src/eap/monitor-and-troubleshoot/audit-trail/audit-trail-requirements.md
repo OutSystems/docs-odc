@@ -304,6 +304,6 @@ Once you've verified compatibility, go to the ODC Portal and [configure the audi
 
 * [Stream audit trail logs](audit-trail-streaming.md)
 
-* [Audit trail](audit-trail.md)
+* [Audit trails](audit-trail.md)
 
 * [Allowlisting ODC public IP addresses](../../manage-platform-app-lifecycle/odc-public-ips.md)
