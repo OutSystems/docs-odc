@@ -1,6 +1,10 @@
 ---
-summary: Learn about the requirements for streaming audit trail logs to different SIEM tools including Datadog, Splunk, AWS Firehose, and other security monitoring platforms
-tags: audit trail,siem integration,security monitoring,datadog,splunk,aws firehose,requirements
+summary: OutSystems Developer Cloud (ODC) audit trail streaming requirements, covering Datadog, Splunk, AWS Firehose, API keys, and IAM roles.
+tags:
+  - Authentication
+  - Logging
+  - Monitoring
+  - Security
 guid: 6b41adf6-f9aa-48c7-a3d2-70e39c0cb8e8
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -304,6 +308,6 @@ Once you've verified compatibility, go to the ODC Portal and [configure the audi
 
 * [Stream audit trail logs](audit-trail-streaming.md)
 
-* [Audit trails](audit-trail.md)
+* [Audit trail](audit-trail.md)
 
 * [Allowlisting ODC public IP addresses](../../manage-platform-app-lifecycle/odc-public-ips.md)
