@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.4",
   "info": {
     "title": "Portfolio API",
     "description": "REST endpoints for retrieving information about assets and environments in your organization.\n",
@@ -475,8 +475,9 @@
           },
           "nextPageOffset": {
             "type": "integer",
-            "description": "Offset of the next page of results.",
-            "format": "int32"
+            "description": "Offset of the next page of results. Null when there is no next page.",
+            "format": "int32",
+            "nullable": true
           },
           "totalResults": {
             "type": "integer",
@@ -552,6 +553,12 @@
     {
       "name": "public",
       "description": ""
+    },
+    {
+      "name": "deployed-assets"
+    },
+    {
+      "name": "environments"
     }
   ]
 }
