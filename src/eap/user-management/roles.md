@@ -156,7 +156,7 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Configuration management | Manage CSP | The user can create, edit, and delete CSP (Content Security Policy) rules at each stage. | Organization |
 | Configuration management | Manage app analytics stream | Users can view, create, edit, and delete streams. | Organization |
 | Configuration management | Manage IP filters | Users can create, edit, delete and assign IP rules to apps. | Organization |
-| Configuration management | Manage private gateways | Users can activate and deactivate private gateways as well as renew a gateway's access token. | Organization |
+| Configuration management | Manage private gateways | Users can activate and deactivate private gateways and renew a gateway's access token. | Organization |
 | Configuration management | Manage agent guardrails | Users can configure agent guardrails to be applied to agent elements. | Organization |
 | Connection management | Create | Users can create connections. | Organization |
 | Connection management | Change | Users can edit entities, name, and description. | Organization |
@@ -170,6 +170,7 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | End-user management | View end-users | View users with end-user roles. | Organization <br/> Asset |
 | End-user management | Manage end-user access | Users can invite users and grant or revoke end-user roles. | Organization <br/> Asset |
 | End-user management | Manage end-user groups | View, create, edit, and delete end-user groups and group mappings. | Organization |
+| Organization management | Manage organization | Users can edit the organization settings, including the organization name and domain. | Organization |
 | Organization management | View audit trail | This permission enables users to view the audit logs. | Organization |
 | Organization management | Manage audit trail stream | Users can view, create, edit, and delete audit trail streams. | Organization |
 | Organization management | Manage O11 configurations | Provides users access to OutSystems 11 configurations, allowing connectivity to the Conversion Assessment Tool on the O11 infrastructure and enabling Code Conversion and Data Migration. | Organization |
@@ -188,7 +189,7 @@ As a general guideline, you can create these custom roles based on the scope to 
 * **App scope**: Basic Developer, Tech Lead.
 * **Organization scope**: Basic Member, Architect, Tenant Admin.
 
-In this reference model, the **Architect** role owns and manages the asset lifecycle, including creating, deleting, and installing assets from Forge, as well as managing releases. The **Tenant Admin** role focuses on global infrastructure configurations, not on asset or release management. If a user needs both sets of permissions, assign the built-in **Admin** role, which combines all capabilities.  
+In this reference model, the **Architect** role owns and manages the asset lifecycle, including creating, deleting, and installing assets from Forge, and managing releases. The **Tenant Admin** role focuses on global infrastructure configurations, not on asset or release management. If a user needs both sets of permissions, assign the built-in **Admin** role, which combines all capabilities.  
 
 This approach supports a DevOps-oriented model, where delivery teams (**Tech Lead** + **Developers**) have full ownership of their assigned assets (and only theirs).
 
