@@ -27,7 +27,7 @@ isautopublish: true
 
 # Create connections to external data sources
 
-To integrate with external data sources using [Data Fabric](intro.md), Administrators need to create the connections to the external data sources and AI search services in the ODC Portal. Then, in ODC studio, developers use the data through entities or server actions in their apps.
+To integrate with external data sources using [Data Fabric](intro.md), Administrators need to create the connections to the external data sources and AI search services in the ODC Portal. Then, in ODC Studio, developers use the data through entities or server actions in their apps.
 
 The supported data sources are listed at [ODC system requirements](../../getting-started/system-requirements.md#supported-external-data-sources).
 
@@ -55,7 +55,7 @@ To access private data that is not available over the internet, connect to your 
     1. Run the Cloud Connector with the following command:
 
         ```
-        ./outsystemscc --header "token: TOKEN" SECURE_GATEWAY_ADDRESS R:LOCAL_PORT:SAP_IP_ADDRESS:REMOTE_PORT
+        ./outsystemscc --header "token: TOKEN" SECURE_GATEWAY_ADDRESS R:LOCAL_PORT:SAP_HOST:REMOTE_PORT
         ```
 
         Replace the following:
@@ -63,7 +63,7 @@ To access private data that is not available over the internet, connect to your 
         * `TOKEN`: Token value used by Cloud Connector.
         * `SECURE_GATEWAY_ADDRESS`: Address of the secure gateway endpoint.
         * `LOCAL_PORT`: Local port used by the secure gateway.
-        * `SAP_IP_ADDRESS`: IP address of the SAP host.
+        * `SAP_HOST`: IP address or hostname of the SAP host.
         * `REMOTE_PORT`: Port used by the SAP service.
     1. To route requests through the Cloud Connector and still use a valid Application Server value, a [SAP Router](https://support.sap.com/en/tools/connectivity-tools/saprouter.html) is needed.
 * Azure SQL Server (all instances):
@@ -81,7 +81,7 @@ To access private data that is not available over the internet, connect to your 
         * `TOKEN`: Token value used by Cloud Connector.
         * `SECURE_GATEWAY_ADDRESS`: Address of the secure gateway endpoint.
         * `LOCAL_PORT`: Local port used by the secure gateway.
-        * `CMAN_ADDRESS`: IP address of the Oracle CMAN host.
+        * `CMAN_ADDRESS`: IP address or hostname of the Oracle CMAN host.
         * `REMOTE_PORT`: Port used by the Oracle CMAN.
 
 ## Create a new connection
@@ -319,7 +319,7 @@ Salesforce
 <div class="os-accordion__content" markdown="1">
 
 * Entities and attributes for Salesforce are displayed using their API names, such as CustomObject_c, instead of Field Labels or Field Names, such as CustomObject.
-* Custom attributes and their data types in Salesforce have different mapping than the built-in attributes. For more information, see [salesforce custom columns mapping](#salesforce-custom-columns-mapping).
+* Custom attributes and their data types in Salesforce have different mapping than the built-in attributes. For more information, see [salesforce custom columns mapping](external-data-type.md#salesforce-custom-columns-mapping).
 * Salesforce doesn't support leading and trailing white spaces. Salesforce removes those white spaces. While inserting an empty string, Salesforce inserts NULL instead.
 * Salesforce is case-insensitive, and `ToUpper`/`ToLower` built-in functions don't have the expected behavior in aggregates.
 * When sorting queries by ID, the Salesforce API orders the Id attribute in a case-sensitive manner, which differs from the expected case-insensitive sorting of other attributes. While regular attributes are sorted in the standard order (A, a, B, b, C, c), the Id attribute is sorted with uppercase letters first, followed by lowercase letters (A, B, C, a, b, c).
