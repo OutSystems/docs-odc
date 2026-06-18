@@ -247,7 +247,7 @@
       "post": {
         "tags": [],
         "summary": "Launches a Deployment Analysis Process",
-        "description": "Launches a Deployment Analysis Process, detecting impacts that promoting this asset to a new stage might have on its consumers, and what might be the impacts on itself, as it relates to its producers\n\nAPI Client needs the **Release management > Deploy apps** permission.",
+        "description": "Launches a Deployment Analysis Process, detecting impacts that promoting this asset to a new stage might have on its consumers, and what might be the impacts on itself, as it relates to its producers\n\nAPI Client needs the **Release management > Deploy assets** permission.",
         "operationId": "DeploymentAnalysis_LaunchDeploymentAnalysis",
         "requestBody": {
           "description": "LaunchDeploymentAnalysisRequest with the revision to be deployed, and the environment to be deployed to.",
@@ -314,7 +314,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Release management > Deploy apps** permission."
+        "x-os-permissions": "API Client needs the **Release management > Deploy assets** permission."
       }
     },
     "/assets/{assetKey}/consumers": {
