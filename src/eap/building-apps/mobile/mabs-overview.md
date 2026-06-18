@@ -1,11 +1,18 @@
 ---
-summary: This article provides an overview of MABS and specifics of MABS12.
-tags: mabs, hybrid mobile apps, capacitor, cordova, outsystems
+summary: MABS 12 for OutSystems Developer Cloud (ODC) supports both Capacitor and Cordova frameworks for building native iOS and Android mobile apps.
+tags:
+  - Android
+  - Capacitor
+  - Cordova
+  - iOS
+  - Mobile app
+  - Native App
+  - Plugins
 locale: en-us
 guid: 6b8e1729-3b16-4945-bf72-c22628e71421
 app_type: mobile apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=9552-53
 audience:
   - Developer
 outsystems-tools:
@@ -23,6 +30,8 @@ MABS supports different versions. Each is designed to be compatible with specifi
 
 MABS versions earlier than 12.0 use Apache Cordova as its underlying hybrid framework.
 
+![Diagram showing the evolution of MABS framework support from Cordova-only to dual-stack support with Cordova and Capacitor.](images/mabs-framework-support-diag.png "MABS Framework Support Evolution")
+
 ## Dual stack support in MABS 12
 
 MABS 12 supports building both **Cordova apps** and [**Capacitor apps**](https://capacitorjs.com/). From ODC Portal, while building the mobile package, you can [select the mobile framework](creating-mobile-package.md) Cordova or Capacitor. The default framework for MABS 12 is Capacitor.
@@ -36,6 +45,8 @@ For detailed information about using plugins in Capacitor apps, refer to [Using 
 * **For existing Cordova apps with a tight deadline:** Continue with the Cordova stack and prepare for transition to Capacitor.
   
 * **For existing Cordova apps in a regular maintenance or improvement cycle:** Try the Capacitor stack, identify any plugin incompatibilities, and gradually work on the migration. For detailed information about how to adapt Cordova plugins, refer to [Adapt Cordova plugin for compatibility with Capacitor](../../integration-with-systems/mobile-plugins/migrate-cordova-plugin.md).
+
+![Flowchart for choosing between Cordova and Capacitor frameworks based on the type of app: new app, existing Cordova app with tight deadline, or existing Cordova app in regular cycle.](images/framework-selection-decision-diag.png "Framework Selection Decision Flow")
 
 ## Related resources
 
