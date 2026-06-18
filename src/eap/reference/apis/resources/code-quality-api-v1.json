@@ -1516,16 +1516,16 @@
         "title": "CodeAnalysisCategories",
         "type": "object",
         "properties": {
-          "security": [
-            "SeverityBreakdown",
-            [
+          "security": {
+            "title": "SeverityBreakdown",
+            "allOf": [
               {
                 "$ref": "#/components/schemas/SeverityBreakdown"
               }
             ],
-            "Findings Count grouped by severity level (Low, Medium, High, Critical)",
-            true
-          ],
+            "description": "Findings Count grouped by severity level (Low, Medium, High, Critical)",
+            "nullable": true
+          },
           "performance": {
             "title": "SeverityBreakdown",
             "allOf": [
