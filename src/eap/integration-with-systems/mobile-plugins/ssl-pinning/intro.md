@@ -5,7 +5,13 @@ guid: 607a5bdb-b74e-4d53-88f6-a6ac8389873e
 app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4307-248&mode=design&t=LCxHTNNeg6HjzPVf-0
 platform-version: odc
-tags: ssl pinning, mobile app security, certificate validity, https communications, plugin installation
+tags:
+  - Capacitor
+  - Cordova
+  - Mobile app
+  - Native App
+  - Plugins
+  - Security
 audience:
   - Developer
 outsystems-tools:
@@ -13,6 +19,7 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+isautopublish: true
 ---
 
 # SSL Pinning plugin
@@ -37,13 +44,13 @@ To learn how to install and reference a plugin in your OutSystems mobile apps, a
 
 ## More about certificates
 
-To keep your stages secure, OutSystems continuously updates server certificates for their domains. This is important especially if your stages use OutSystems default domains and certificates.
+To keep your stages secure, OutSystems continuously updates the server certificates for its domains, including the OutSystems built-in domain (`*.outsystems.app`).
 
 <div class="info" markdown="1">
 
-When certificates change, the stages using these certificates in their apps may stop working. To fix this problem, you must generate a new app and distribute the app. Due to any unforeseen circumstances, if OutSystems is unable to notify you every time there is a change or you miss a notification, everyone involved is at risk.
+Because OutSystems rotates these individual server certificates over time, don't pin your mobile app to a specific OutSystems certificate. If you pin to a certificate that later changes, the app stops connecting to the server until you build and distribute a new version.
 
-OutSystems no longer supports the native Mobile apps generation when using SSL Pinning to pin your apps to OutSystems managed certificates. This change affects all stages, production and non-production. If this change affects your stages, get new domains and certificates, and provide their details to OutSystems.
+Instead, pin to the Amazon root certificate hashes, which remain stable when OutSystems rotates the underlying certificates. For details, refer to [Important note about certificate hashes for ODC](#important-note-about-certificate-hashes-for-odc).
 
 </div>
 
@@ -129,7 +136,7 @@ In ODC, you can continue to use custom SSL domains without using your own certif
 
 So, you must include all the hashes from the Amazon root certificates into your JSON configuration file (for example, pinning.json). To access all the hashes, see [Amazon root certificates](https://www.amazontrust.com/repository/).
 
-The following is a configuration example generated in real-time for an application available on the domain my.custom-domain.com with the hashes from the Amazon root certificates:
+The following is a configuration example generated in real-time for an application available on the domain your.custom-domain.com with the hashes from the Amazon root certificates:
 
 <div class="info" markdown="1">
 
@@ -143,7 +150,7 @@ This setup is specific to Cordova. Refer to [Using the plugin in Capacitor apps]
        
                   {
           
-                     "host":"my.custom-domain.com",
+                     "host":"your.custom-domain.com",
              
                      "hashes":[
              
@@ -385,7 +392,7 @@ If you only target one platform, you can remove the unused platform section from
 
 ## Plan for the certificate renewal
 
-If you plan to update your certificate, release a new version of the app with the updated configuration containing the hash values for both the current certificate and the new certificate:
+If you plan to update your certificate, first release a new version of the app. The updated configuration must include hash values for both the current and the new certificate:
 
 * **For Cordova apps**: Update your JSON configuration file.
 * **For Capacitor apps**: Update your build action JSON file.
