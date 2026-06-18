@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.4",
+  "openapi": "3.0.3",
   "info": {
     "title": "Environment Configurations API",
     "description": "REST endpoints for managing environment (stage) configurations in ODC. Covers custom domains, IP filters, and Private Gateways, enabling you to automate the same configurations available in ODC Portal.",

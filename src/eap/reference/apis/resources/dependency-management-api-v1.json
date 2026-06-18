@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.4",
+  "openapi": "3.0.3",
   "info": {
     "title": "Dependency Management API",
     "description": "REST endpoints for launching and getting results of impact analysis in the deployment and deletion of an asset.\n",

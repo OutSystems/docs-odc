@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.4",
+  "openapi": "3.0.3",
   "info": {
     "title": "Native Mobile Build API",
     "description": "API for building and managing native mobile applications.\n",

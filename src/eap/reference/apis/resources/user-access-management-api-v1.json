@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.4",
+  "openapi": "3.0.3",
   "info": {
     "title": "User and Access Management API",
     "description": "REST endpoints for retrieving and managing user and access in your organization.",

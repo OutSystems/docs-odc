@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.4",
+  "openapi": "3.0.3",
   "info": {
     "title": "Portfolio API",
     "description": "REST endpoints for retrieving information about assets and environments in your organization.\n",
