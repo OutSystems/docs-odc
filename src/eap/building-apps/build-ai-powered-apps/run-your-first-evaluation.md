@@ -11,7 +11,11 @@ platform-version: odc
 audience:
   - Tech lead
   - Developer
-tags: agent evaluations, dataset, agentic apps, odc portal
+tags:
+  - Agentic
+  - AI
+  - Quality Assurance
+  - Testing
 outsystems-tools:
   - odc portal
 helpids:
@@ -19,7 +23,7 @@ isautopublish: true
 ---
 # Run your first evaluation
 
-This article describes how to run an **agent evaluation** in the ODC Portal after you have a dataset saved for your agentic app and service action. The evaluation runs each test case in the dataset through your service action, then scores the outcomes against the criteria you defined.
+This article describes how to run an **agent evaluation** in the ODC Portal after you have a dataset saved for your agentic app and service action. The evaluation runs each test case in the dataset through your service action, then scores the outcomes against the criteria you defined. You can also cancel a run that is in progress and review the history of all runs for an evaluation, including how scores change as you refine your agent and dataset over time.
 
 ## Availability
 
@@ -29,7 +33,7 @@ Evaluation runs and the scores you review in the ODC Portal are available only i
 
 Before you run an evaluation, confirm the following:
 
-* **Dataset**: A dataset saved in the ODC Portal for the agentic app and service action you plan to evaluate. If you still need to create or upload it, refer to [Construct the dataset](construct-dataset.md).
+* **Dataset**: A dataset saved in the ODC Portal for the agentic app and service action you plan to evaluate. If you still need to create or upload one, refer to [Create and manage datasets](construct-dataset.md).
 * **Agentic app** and **service action**: The same pair linked to that dataset. The service action is the executable unit the evaluation runs against.
 * **Published after feature release**: The target agentic app must be republished at least once after agent evaluations are enabled for your organization.
 
@@ -70,9 +74,80 @@ To create and save an evaluation, follow these steps:
 
 After you save, the evaluation is stored with your dataset and judge criteria selections. When you run it, the platform uses those choices to score each test case. You can run the same evaluation again whenever you need to. Each run appears in the run list with its own scores.
 
+## Start a run
+
+To start an evaluation run, open the evaluation and select **Run evaluation**. The run appears in the **Runs** tab with a **Running** status, a progress indicator, and a **Started on** timestamp.
+
+If the dataset has a **setup** action configured, the platform executes it before any test cases run. If setup fails, the entire run is aborted — refer to [Run failure states](#run-failure-states) for details.
+
+## Cancel a run
+
+If you triggered a run with the wrong dataset, or a run is taking longer than expected, you can stop it before it finishes.
+
+To cancel a run in progress:
+
+1. Open the evaluation that's running and you want to cancel, in the **Evaluations** tab.
+1. In the evaluation details screen, you can see a card for each run for that evaluation.
+1. Click **Cancel** on the card corresponding to the evaluation that's running and you want to cancel.
+
+The run stops and transitions to **Cancelled** status. A **Finished on** timestamp appears on the card.
+
+**What happens when you cancel:**
+
+* If setup was still executing, it is aborted.
+* Test case execution stops as soon as possible for any cases still in progress.
+* If the dataset has a **teardown** action configured, it runs even after cancellation — to leave the environment in a clean state.
+* No test case scores are returned for a cancelled run.
+
 ## Review evaluation results {#review-evaluation-results}
 
 To review scores, select the **Evaluations** tab in the **ODC Portal**. Each evaluation lists its runs, the **overall score**, and the **judge criteria** scores.
+
+To review scores, go to the **Runs** tab inside an evaluation. Each run card shows the run status, the **Started on** timestamp, and — once the run has ended — a **Finished on** timestamp alongside the status badge. Completed runs show the **overall score** and the **judge criteria** scores. Select a run to open the full report and review per-test-case results.
+
+### Run statuses
+
+Each run can move through the following statuses.
+
+| Status | What it means |
+| --- | --- |
+| **Running** | The run is in progress. Setup, test cases, or judging may be executing. |
+| **Completed** | All test cases executed and were scored. Results are available. |
+| **Failed** | The run did not complete. This can happen if setup failed, if test case execution encountered an error, or if the judging step failed. The run report explains which stage failed. |
+| **Cancelled** | The run was stopped by the user. No scores are returned. |
+
+You can filter the Runs tab by status, including **Cancelled**, to focus on a specific subset of runs. Use the date presets at the top of the tab to narrow the view by time window. Run data is stored for 30 days.
+
+### Comparing runs across dataset versions
+
+Each run card shows the **dataset name** and the **dataset version** — the timestamp of the last time the dataset was modified before that run was triggered. This lets you see at a glance whether two runs used the same test cases.
+
+If you edited the dataset between runs, the version timestamps differ and the runs aren't directly comparable. Adjust expected outputs in the dataset only when the correct agent behavior has intentionally changed, so that version differences stay meaningful.
+
+## Run failure states {#run-failure-states}
+
+A run can fail at different stages. The run card and expanded run details explain which stage failed so you know where to investigate.
+
+### Setup failed
+
+When the setup action could not complete:
+
+* The run shows as **Failed**.
+* No test cases executed and no scores are available.
+* Expanding the run shows an alert and **Setup: Failed** in the details.
+* Teardown still ran after the setup failure to clean up any partial environment state.
+
+To investigate, check the logs for the app that contains the setup service action.
+
+### Teardown failed
+
+When the evaluation completed but the teardown action could not complete:
+
+* The run shows as **Completed**. Test case scores are valid and available.
+* Expanding the run shows an alert and **Teardown: Failed** in the details.
+* The cleanup step did not finish. Test data or environment state from this run may still be present in your external system.
+
+To investigate, check the logs for the app that contains the teardown service action, and clean up the environment manually if needed.
 
 ## Related resources
 

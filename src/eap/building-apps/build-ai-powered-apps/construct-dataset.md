@@ -1,7 +1,7 @@
 ---
 guid: 7f2a9c01-8b4d-4e1f-9c3a-2d8e6f1a4b0c
 locale: en-us
-summary: Build a dataset as JSON that matches your service action interface so agent evaluations run consistent test cases and judge results against expected outputs and tool use.
+summary: "OutSystems Developer Cloud (ODC) agent evaluation datasets: upload JSON test cases matching your service action to run structured evaluations."
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=9564-1843&p=f&t=Eg8vOD7VJBTISsgI-0
 coverage-type:
   - apply
@@ -11,16 +11,20 @@ platform-version: odc
 audience:
   - Tech lead
   - Developer
-tags: agent evaluations, dataset, JSON, service actions, agentic apps
+tags:
+  - AI
+  - Agentic
+  - Quality Assurance
+  - Testing
 outsystems-tools:
   - odc portal
   - odc studio
 helpids:
 isautopublish: true
 ---
-# Construct the dataset
+# Create and manage datasets
 
-A **dataset** is the benchmark you attach to an **agentic app** and a **service action** for agent evaluations. Each row is one test case. The dataset supplies values the platform passes into the service action during the run and the reference data the platform judge uses when it scores results.
+A **dataset** is the benchmark you attach to an **agentic app** and a **service action** for agent evaluations. Each row is one test case. The dataset supplies values the platform passes into the service action during the run and the reference data the platform judge uses when it scores results. Once saved, a dataset can be edited at any time, so you can refine test cases, fix expected outputs, and extend coverage without recreating the dataset from scratch.
 
 ## Prerequisites
 
@@ -73,7 +77,8 @@ Strong datasets improve regression signal and make judge results easier to inter
 * **Cover real scenarios** your users trigger, including typical and edge inputs.
 * **Keep one intent per row** so a failed case points to a clear gap (wrong tool, wrong arguments, wrong final answer).
 * **Stabilize expectations** when the correct answer is deterministic, use judgement-friendly expected text when the answer is naturally variable, per the judge options your organization enables.
-* **Plan data dependencies** the service action needs (for example, records in a database or responses from dependencies). Setup and teardown of that data sit outside the evaluation feature scope. Your team supplies a consistent environment for the run.
+* **Plan data dependencies** the service action needs (for example, records in a database or responses from dependencies). You can automate this using the setup and teardown actions
+     configured on the dataset, to do it see [Configure setup and teardown](#configure-setup-and-teardown).
 
 ## Example dataset JSON
 
@@ -157,11 +162,90 @@ To create and save a dataset, follow these steps:
 1. Download the template.
 1. Edit the template JSON to add your test cases. For recommendations on coverage and expectations, refer to [Design strong test cases](#design-strong-test-cases) earlier in this topic.
 1. Upload the completed JSON file.
+1. Optionally, configure a **Setup** action and a **Teardown** action to prepare and clean up the evaluation environment. Refer to [Configure setup and teardown](#configure-setup-and-teardown) to know how to do this.
 1. Click **Save**.
   ![ODC Portal Create dataset page with Dataset details fields, Download template button, JSON file upload area, and the Save button highlighted and numbered to show the steps.](images/create-dataset-pl.png "Create dataset form in ODC Portal")
 
-After you save, the row data is read-only. To change test rows, prepare a new JSON file and follow your team's process for updating datasets (for example, creating a new dataset).
+After you save, the dataset is associated with the agentic app and service action you selected. That association is permanent, you cannot change it on an existing dataset. You can edit the test cases at any time. To do it, see [Edit a dataset](#edit-a-dataset).
+
+## Edit a dataset
+
+After running an evaluation, you may find test cases with incorrect expected outputs, missing coverage, or scenarios that no longer apply. You can open a saved dataset and update it without recreating it from scratch.
+
+The **agentic app** and **service action** association is set at creation and cannot be changed on an existing dataset.
+
+To edit a dataset:
+
+1. In the **ODC Portal**, navigate to **ANALYZE** > **Agent evaluations** > **Datasets**.
+1. From the list, select the dataset you want to update. You can filter by **Agentic app** to narrow the list.
+1. Select **Edit**.
+1. The dataset opens in the same view used to create it, pre-populated with the existing test cases.
+1. Make your changes:
+   * To **update** a test case, select its card and edit the fields.
+   * To **add** test cases, select **Add test case** at the bottom of the list, or upload a new JSON file. Note that uploading a file replaces all existing test cases.
+   * To **remove** a test case, open its card click the **Delete** icon.
+1. Select **Save** to apply your changes.
+
+### How edits affect evaluation runs
+
+Edits to a dataset apply to future runs only. Existing run reports are unchanged — each run records the dataset name and the dataset version (the timestamp of the last edit before the run started). If you edit a dataset and run it again, the run history shows the version timestamps side by side, so you can see which runs used the same test cases.
+
+## Export a dataset as JSON
+
+You can export a saved dataset as a JSON file to back it up, store it alongside your agent code in version control, share it with colleagues working in a different environment, or edit it offline and re-import it.
+
+To export a dataset:
+
+1. Open the dataset you want to export.
+1. Select the **Export** dropdown and choose **Export as JSON**.
+1. Save the file when prompted.
+
+The exported file contains the test cases only. Inputs and expected outputs are exported as structured JSON objects, not serialized strings. The format is the same as the JSON upload format, so the file can be re-imported as-is.
+
+<div class="info" markdown="1">
+
+Re-importing an exported file creates a new dataset — it does not overwrite the original.
+
+</div>
+
+## Configure setup and teardown
+
+Many agents depend on data in external systems: a CRM, a test database, an order fixture. If that data is absent or stale when a run starts, test cases fail for the wrong reason. Setup and teardown let you automate environment preparation so every run starts from a known state.
+
+* **Setup** — a service action that runs once before test case execution begins. Use it to seed data, reset state, or load fixtures.
+* **Teardown** — a service action that runs once after all test cases complete. Use it to delete temporary records, restore defaults, or clean up side effects.
+
+Both are optional. You can configure either, both, or neither. The platform invokes them automatically on every evaluation run that uses the dataset. For details on what happens when setup or teardown fails, refer to [Run your first evaluation](run-your-first-evaluation.md).
+
+### Add setup and teardown actions
+
+You can configure setup and teardown when you create a dataset or when you edit an existing one. The **Setup and teardown** section appears below the test cases area.
+
+1. Scroll to the **Setup and teardown** section.
+1. Enable the **Setup and teardown** toggle. When the toggle is off, the dropdowns are visible but inactive.
+1. To add a **Setup** action:
+   1. Select the **App** that contains the service action.
+   1. Select the **Service action** from that app.
+1. To add a **Teardown** action, repeat the previous step for the teardown fields.
+1. Select **Save dataset**.
+
+The configured actions appear in the dataset details alongside the agentic app, service action, and test case count.
+
+### Constraints
+
+<div class="warning" markdown="1">
+
+**Setup and teardown service actions must require no input parameters.** The platform invokes these actions with no arguments. If you select an action with required parameters, the platform shows an error and prevents the selection. If the action has only optional parameters, a warning is shown and the selection is allowed. Optional parameters aren't sent.
+
+Design your setup and teardown actions to be self-contained. They should read any configuration from your app's settings or entities rather than from parameters passed at call time.
+
+</div>
+
+* The service action can come from **any app** in your organization — it is not restricted to the agentic app being evaluated.
+* Setup and teardown run **once per evaluation run**, not once per test case.
+* **Input parameters are not supported** for setup and teardown actions.
 
 ## Next steps
 
 * To run an evaluation with your saved dataset, refer to [Run your first evaluation](run-your-first-evaluation.md).
+* To understand what happens during a run when setup or teardown is configured, including failure behavior, refer to [Run your first evaluation](run-your-first-evaluation.md).
