@@ -12,6 +12,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+isautopublish: true
 ---
 
 # File Plugin version 2 reference page
@@ -24,7 +25,7 @@ If you are looking for information about version 1.x of the File Plugin, refer t
 
 <div class="info" markdown="1">
 
-If you are looking to migrate from version 1.X.X of the File Plugin to 2.0.0 or higher, refer to the [migration guide](file-plugin-migration-guide.md).
+If you are looking to migrate from version 1.x.x of the File Plugin to 2.0.0 or higher, refer to the [migration guide](file-plugin-migration-guide.md).
 
 </div>
 
@@ -90,29 +91,13 @@ The **GetMetadata** and **ListDirectory** client actions return a structure cont
 | **ModificationTime**    | Date Time of last modification.                        |
 | **URI**                 | Full URI path to the file or directory (e.g. file://). |
 
-### Errors
+### Error codes
 
-Starting on version 2.0.0 of the File Plugin, specific errors are returned on native platforms.
-
-| Error code        | Platform(s)      | Message                                                                                             |
-| ------------------| ---------------- | --------------------------------------------------------------------------------------------------- |
-| OS-PLUG-FILE-0001 | Android, iOS     | Cordova and Capacitor isn't defined.                                                                |
-| OS-PLUG-FILE-0002 | Android, iOS     | The app is running with an old version of the plugin. Please create a new mobile package.           |
-| OS-PLUG-FILE-0003 | Android, iOS     | The File plugin is not defined. Make sure the mobile package is valid.                              |
-| OS-PLUG-FILE-0004 | iOS              | Cordova / Capacitor bridge isn’t initialized.                                                       |
-| OS-PLUG-FILE-0005 | Android, iOS     | The action input parameters aren’t valid.                                                           |
-| OS-PLUG-FILE-0006 | Android, iOS     | Invalid path was provided.                                                                          |
-| OS-PLUG-FILE-0007 | Android          | Unable to perform file operation, user denied permission request.                                   |
-| OS-PLUG-FILE-0008 | Android, iOS     | Operation failed because file does not exist.                                                       |
-| OS-PLUG-FILE-0009 | Android          | Operation not supported for provided input.                                                         |
-| OS-PLUG-FILE-0010 | Android, iOS     | Directory already exists, cannot be overwritten.                                                    |
-| OS-PLUG-FILE-0011 | Android, iOS     | Missing parent directory – possibly recursive=false was passed or parent directory creation failed. |
-| OS-PLUG-FILE-0012 | Android, iOS     | Cannot delete directory with children; received recursive=false but directory has contents.         |
-| OS-PLUG-FILE-0013 | Android, iOS     | The operation failed with an error.                                                                 |
+For a complete list of mobile plugin errors, their causes, impact, and recommended solutions, see the [Mobile Plugins errors page](https://www.outsystems.com/tk/redirect?g=8ae41e18-fa7d-4cbe-a223-226a14abd8bf).
 
 ## Deprecated elements
 
-The following section details the elements that were available in version 1.X.X of the File Plugin. These were marked as deprecated in version 2.0.0.
+The following section details the elements that were available in version 1.x.x of the File Plugin. These were marked as deprecated in version 2.0.0.
 
 <div class="warning" markdown="1">
 
