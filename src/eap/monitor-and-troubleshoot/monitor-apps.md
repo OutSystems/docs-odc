@@ -75,7 +75,7 @@ By default, when you open the **Traces** screen, you see traces from the develop
 
 ![Traces screen showing traces from the development stage with filter options.](images/traces-screen-pl.png "Traces Screen")
 
-Use the filter inputs to filter traces by stage, app, element type, trace status, total duration, date/time, and user. You can filter traces by date back up to four weeks in an interval of up to two weeks. The **Traces** screen filters by app only. An app's trace captures agent activity as spans, so agents aren't a separate filter option.
+Use the filter inputs to filter traces by stage, asset (app or agent), element type, trace status, total duration, date/time, and user. You can filter traces by date back up to four weeks in an interval of up to two weeks. When you filter by an agent, you see traces where that agent is the origin of the trace, meaning flows triggered by an Event Handler, a Timer, or a REST Expose. Traces where the agent runs as a span inside another app's trace aren't returned by the agent filter.
 
 When you click the embedded link of a trace's date/time, you open the detail page for that unique trace. On the left side of the screen you see each span of the trace in order of execution alongside its duration. A red circle with X next to a span indicates an error. If any span of a trace has an error then the status of the trace is **Error**. Otherwise the trace status is **OK**.
 
