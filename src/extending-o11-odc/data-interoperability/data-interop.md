@@ -17,8 +17,8 @@ tags:
   - Data
   - Development lifecycle
   - Entities
+  - External Databases
   - Infrastructure
-  - Lifecycle
   - Security
 outsystems-tools:
   - lifetime
@@ -89,7 +89,9 @@ Application runtime communication depends on your O11 infrastructure setup:
 
     * Creating a dedicated database user for each O11 environment, and managing the database permissions required for the integration. See [Data interoperability for O11 self-managed infrastructures](data-interop-self-managed.md) for further details.
 
-Platform communication from the ODC Portal to O11 LifeTime is established via REST APIs, secured by token authentication and restricted to HTTPS via IP allowlisting.
+Platform communication from ODC to O11 LifeTime is established via a REST API over HTTPS, restricted by IP allowlisting, and bound to your ODC organization. ODC validates the organization ID when you configure the connection, preventing another ODC organization from connecting to your O11 infrastructure.
+
+To protect against repeated configuration attempts across organizations, ODC also applies an exponential cooldown to failed configuration attempts per organization and LifeTime target.
 
 ### Data access governance
 

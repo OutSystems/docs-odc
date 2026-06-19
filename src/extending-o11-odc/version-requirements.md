@@ -37,10 +37,20 @@ The following table lists the minimum **Platform Server** and **LifeTime** versi
 
 | Capability | Minimum Platform Server | Minimum LifeTime |
 | --- | --- | --- |
-| Data interoperability | 11.40.0 | 11.28.0 |
-| Infrastructures with additional pipelines | 11.40.0 | 11.28.2 |
-| Write capability for Oracle databases | 11.41.0 | 11.28.0 |
-| User and Tenant system entities exposed to ODC | 11.41.0 | 11.28.2 |
+| Data interoperability | 11.40.0 | 11.28.0 **\*** |
+| Infrastructures with additional pipelines | 11.40.0 | 11.28.2 **\*** |
+| Write capability for Oracle databases | 11.41.0 | 11.28.0 **\*** |
+| User and Tenant system entities exposed to ODC | 11.41.0 | 11.28.2 **\*** |
+
+<div class="warning" markdown="1">
+
+**\*** To use connections with a LifeTime service account that is bound to your ODC organization you need LifeTime 11.29.0 or later.
+
+Starting June 29, 2026, creating or generating a LifeTime service account access token for data interoperability requires LifeTime 11.29.0 or later.
+
+After upgrading LifeTime to 11.29.0 or later, update your integration to use service accounts created with the new version. For the updated steps, see [Configure LifeTime access for ODC interoperability](data-interoperability/configure-connection.md#connect-o11-infrastructure).
+
+</div>
 
 <div class="info" markdown="1">
 

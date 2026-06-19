@@ -1,7 +1,7 @@
 ---
 guid: 500ca4f7-24b5-4b70-9534-8f2873b745dd
 locale: en-us
-summary: Learn how to configure the O11 connector in the ODC Portal
+summary: OutSystems Developer Cloud (ODC) O11 connection configuration in ODC Portal, covering infrastructure linking, connection creation, and entity import.
 figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?node-id=2618-222
 coverage-type:
   - apply
@@ -11,7 +11,11 @@ platform-version: odc
 audience:
   - Tech lead
   - Platform administrator
-tags: entities, data interoperability
+tags:
+  - Data
+  - Entities
+  - External Databases
+  - Infrastructure
 outsystems-tools:
   - odc portal
 helpids:
@@ -30,7 +34,9 @@ Start by [connecting ODC to your O11 infrastructure](#connect-o11-infrastructure
 
 Before you start, ensure the following requirements are met:
 
-* The O11 entities you want to use in ODC have already [been exposed using the O11 LifeTime console](expose-entities.md).
+* You have LifeTime 11.29.0 or later installed.
+
+* The O11 entities you want to use in ODC have already [been exposed in LifeTime](expose-entities.md).
 
 * The user connecting ODC to the O11 infrastructure has the **Administrator** role.
 
@@ -50,29 +56,35 @@ Before you start, ensure the following requirements are met:
 
 <div class="info" markdown="1">
 
-This step requires the **Administrator** role.
+This step requires the **Administrator** role and LifeTime 11.29.0 or later.
 
 </div>
 
-This is a one-time setup that establishes the link between your ODC organization and your O11 infrastructure. Follow these steps:
+This is a one-time setup that establishes the link between your ODC organization and your O11 infrastructure.
 
-1. Log into the ODC Portal.
+To prevent cross-organization access, ODC accepts only LifeTime service accounts that you bind to your ODC organization ID in LifeTime, and validates that binding when you save the configuration.
 
-1. Go to **OUTSYSTEMS 11 > Configurations**.
+For this configuration you have to switch between the ODC Portal and LifeTime to complete the setup. Follow these steps:
 
-1. If it's not configured yet, configure the connection to the O11 infrastructure that you want to integrate with:
+1. In the ODC Portal, go to **OUTSYSTEMS 11 > Configurations**.
 
-    * Set the **URL** of the LifeTime environment.
+1. Set the **URL** of the LifeTime environment you want to integrate with.
 
-    * Set the **Authentication Token** of the [service account](https://www.outsystems.com/tk/redirect?g=1f0c3b37-45b9-4a4d-b640-016dac5f5d6b) you'll use to access the LifeTime environment.
+1. Copy the **ODC organization ID** shown on the page.
 
-    <div class="info" markdown="1">
+1. In LifeTime, [create a new service account](https://www.outsystems.com/tk/redirect?g=1f0c3b37-45b9-4a4d-b640-016dac5f5d6b) bound to your ODC organization:
 
-    This service account must have the **Administrator** role.
+    1. Assign the **Administrator** role to the service account.
 
-    </div>
+    1. Set **Service account consumer** to **ODC**.
 
-    ![Connect ODC to O11 LifeTime](images/configure-odc-o11-connection-pl.png "Connect ODC to O11 LifeTime")
+    1. Paste the value you copied into the **ODC organization ID** field.
+
+    1. Save the service account and copy the generated authentication token.
+
+1. Back in the ODC Portal, paste the value into the **Authentication Token** field.
+
+1. Click **Save**. ODC validates the token against your ODC organization ID.
 
 ## Create an O11 data connection {#create-connection}
 

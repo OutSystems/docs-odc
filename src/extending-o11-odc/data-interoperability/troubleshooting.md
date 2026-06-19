@@ -1,7 +1,7 @@
 ---
 guid: b8bedc84-3aed-47e6-a6f7-f610c3741fed
 locale: en-us
-summary: Learn how to solve some common issues with data interoperability between ODC and O11.
+summary: "OutSystems Developer Cloud (ODC) data interoperability troubleshooting: resolve connection errors, missing prerequisites, and entity exposure in O11."
 figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?node-id=2637-905
 coverage-type:
   - unblock
@@ -11,7 +11,13 @@ platform-version: odc
 audience:
   - Platform administrator
   - Tech lead
-tags: entities,data interoperability,troubleshooting
+tags:
+  - Data
+  - Entities
+  - Infrastructure
+  - Platform Server
+  - Private Gateway
+  - Troubleshooting
 outsystems-tools:
   - lifetime
   - odc portal
@@ -22,6 +28,10 @@ isautopublish: true
 # Troubleshooting data interoperability issues
 
 This page describes some common issues you may encounter when using data interoperability between ODC and O11, and how to solve them.
+
+## Failure in validation of organization ID
+
+When creating a new connection between your ODC and O11 infrastructure, if validation fails, the page displays an error message. Review the service account configuration in LifeTime to ensure that **Service account consumer** is set to **ODC** and that **ODC organization ID** matches the value in the ODC Portal. Refer to [Connect ODC to your O11 infrastructure](configure-connection.md#connect-o11-infrastructure) for more.
 
 ## Missing prerequisites in OutSystems 11 database connection {#missing-prerequisites}
 
@@ -44,6 +54,21 @@ Make sure:
 * Your O11 infrastructure follow the [prerequisites for data interoperability](data-interop.md#prerequisites).
 
 * The connection from your ODC tenant to the O11 infrastructure is correctly configured. See [Connect ODC to your O11 infrastructure](configure-connection.md#connect-o11-infrastructure) for further details.
+
+## Connection in Failed state after token rotation
+
+In **ODC Portal > INTEGRATE > Connections**, an O11 connection shows the **Error connecting** status after the connection token has been rotated in O11 LifeTime.
+
+![Error in O11 connection in ODC Portal](images/troubleshooting-connection-error-retry-pl.png "Error in O11 connection in ODC Portal")
+
+This happens when ODC does not automatically detect the rotated token.
+
+### Recommended action
+
+1. In **ODC Portal**, go to **INTEGRATE > Connections**.
+1. On the failed connection, open the ellipsis menu (**...**) and select **Retry Connection**.
+
+If the connection remains in the **Failed** state, ask the O11 LifeTime administrator to rotate the Private Gateway token again, then repeat the **Retry Connection** step.
 
 ## Error exposing entities in LifeTime
 
