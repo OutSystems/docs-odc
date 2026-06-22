@@ -1,6 +1,12 @@
 ---
 summary: The OutSystems Enterprise Context Graph combines AI agents, the OutSystems Model, and the compiler to transform natural language into app structures.
-tags: architecture, enterprise context graph, llm, app model, app generation, model-driven development
+tags:
+  - Agentic
+  - AI
+  - Architecture
+  - Mentor
+  - Mentor Studio
+  - Mentor Web
 guid: d79811bf-4406-465e-b4b2-0351b967d20e
 locale: en-us
 app_type: reactive web apps
@@ -42,7 +48,9 @@ This is why explicit, structured prompts produce better results than vague descr
 
 ## Tenant context
 
-The Mentor tools in ODC retrieve context from your development environment to generate more relevant results. This applies to both new app creation and modification of existing apps. The context includes existing entities, public actions, Data Fabric connections, and app metadata from your tenant. When you reference existing elements in a prompt, Mentor uses this context to understand the relationships and generate code that integrates correctly.
+The Mentor tools in ODC retrieve context from your development environment to generate more relevant results. This applies to both new app creation and modification of existing apps. The context includes existing entities, the public elements that other apps expose (such as actions and entities), Data Fabric connections, and app metadata from your tenant. When you reference existing elements in a prompt, Mentor uses this context to understand the relationships and generate code that integrates correctly.
+
+Tenant context includes the public elements that other apps expose for reuse. Mentor references and reuses these public elements when generating or modifying an app, so you can build on existing assets without recreating them. For background on public elements and producer-consumer dependencies, refer to [Reuse elements across apps](../app-architecture/reuse-elements.md).
 
 A populated development environment improves results. If your tenant contains entities, actions, and established patterns, Mentor can reference them when generating new elements. For new tenants with minimal existing structure, Mentor relies more heavily on the prompt and recognized patterns.
 

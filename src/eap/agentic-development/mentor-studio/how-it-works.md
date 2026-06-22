@@ -31,7 +31,7 @@ isautopublish: true
 
 Mentor Studio brings conversational AI into ODC Studio. You describe requirements in natural language, and Mentor transforms them into generated or modified logic, screens, and data within existing apps. Mentor Studio supports ongoing development of existing apps.
 
-Mentor analyzes the app model and generates changes that integrate with the existing elements. Mentor creates server actions, screen modifications, entity additions, and logic through conversation. Mentor enforces user permissions and follows OutSystems patterns when generating changes.
+Mentor analyzes the app model and generates changes that integrate with the existing elements. Mentor also draws on tenant context, so it references and reuses public elements that other apps expose in your tenant. Mentor creates server actions, screen modifications, entity additions, and logic through conversation. Mentor enforces user permissions and follows OutSystems patterns when generating changes.
 
 Use Mentor Studio to add features, fix issues, or refine logic in apps you're developing. To create a new app from requirements, refer to [AI app generation in Mentor Web](../mentor-web/how-it-works.md).
 

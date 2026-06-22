@@ -1,6 +1,13 @@
 ---
-summary: Prompt examples for modifying apps with Mentor Studio, organized by logic, UI, data, and code analysis tasks.
-tags: prompts, agentic development
+summary: Mentor Studio prompt examples for OutSystems Developer Cloud (ODC) apps, covering logic, UI, data, debugging, refactoring, and task decomposition.
+tags:
+  - AI
+  - Data
+  - Logic
+  - Mentor
+  - Mentor Studio
+  - Technical Debt
+  - UI
 guid: a69ed2b1-c692-4f80-801c-0acafacccdfa
 locale: en-us
 app_type: reactive web apps
@@ -23,7 +30,7 @@ This cookbook provides prompt examples for modifying apps with Mentor Studio. Ex
 
 ## Before you start
 
-Mentor doesn't detect the current screen or selection, so reference elements by name in every prompt. For example, "modify the ValidateEmail action" instead of "modify this action." For general prompting strategies, refer to [Effective prompts for Mentor](../effective-prompts.md).
+Mentor doesn't detect the current screen or selection, so reference elements by name in every prompt. For example, "modify the ValidateEmail action" instead of "modify this action." After you add a public element through **Add public elements**, reference it by name the same way. Mentor can also find and add a public element when you reference one it locates in the tenant.
 
 ## Logic
 
@@ -51,6 +58,15 @@ Use these prompts to create or modify entities, attributes, and relationships.
 
 * Basic: Add a `Priority` attribute to the `Task` entity.
 * Detailed: Create a `Comment` entity linked to the `Ticket` entity with attributes `CommentText` (Text), `CreatedBy` (User reference), and `CreatedDate` (DateTime). Set up a one-to-many relationship where each Ticket can have multiple Comments.
+
+## Reuse public elements
+
+Use these prompts to reuse public elements that other apps expose in the tenant. Add the element through **Add public elements** first, or let Mentor find and add it for you.
+
+### Prompt progression
+
+* Basic: Use the public `CallAgent01_Intake` action to call the intake agent from a new `ProcessIntake` screen.
+* Detailed: List the public elements available in this tenant, then add the `CallAgent01_Intake` action from the `LoanOrigination` app and call it from a new `ProcessIntake` screen that captures applicant documents.
 
 ## Add documentation
 

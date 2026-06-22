@@ -2,10 +2,10 @@
 summary: Mentor Studio in OutSystems Developer Cloud (ODC) generates server actions, screens, entities, aggregates, and analyzes existing app code.
 tags:
   - Agentic
-  - Aggregates
   - AI
   - Entities
   - Logic
+  - Mentor
   - Mentor Studio
   - Screens
 guid: 5abbc7b0-dedb-49ec-9af5-41e3220bb071
@@ -71,6 +71,20 @@ Mentor Studio supports a range of development tasks. The following table describ
 | Modernize legacy code | Redesign UI patterns or refactor outdated logic | "Update the CustomerList screen to use the card layout." |
 | Manage technical debt | Identify areas that need improvement | "What technical debt exists in the OrderManagement app?" |
 | Break down complex tasks | Decompose large requirements into smaller steps | "Break down adding user authentication into tasks." |
+| Reuse existing assets | Reference public elements that other apps expose in the tenant | "Use the public Customer entity from the CRM app to build a contacts screen." |
+
+## Reuse tenant public elements
+
+Mentor Studio reuses the public elements that other apps expose in your tenant, so you build on existing assets instead of recreating them. Reusable public elements include entities, actions, and the actions that call agents from agentic apps, such as a `CallAgent01_Intake` action exposed by a loan origination app.
+
+The reliable path is to add the element yourself, then reference it:
+
+1. In ODC Studio, add the public element to your app through the **Add public elements** flow. For the steps, refer to [Use public elements](../../building-apps/libraries/use-public-elements.md).
+1. Reference the element by name in your prompt and ask Mentor to use it, for example "Call the `CallAgent01_Intake` action from a new intake screen."
+
+Mentor can also add a public element for you as a convenience. When you reference an element that Mentor locates in the tenant, Mentor surfaces the matching public elements, asks you to confirm, and adds the one you select. Confirm the producer when several elements share a name, so Mentor consumes the correct one.
+
+Mentor and the **Add public elements** flow find an element only when the producer set its **Public** property to **Yes** and published it to the environment. For background on public elements and producer-consumer dependencies, refer to [Reuse elements across apps](../../app-architecture/reuse-elements.md).
 
 ## Scope
 

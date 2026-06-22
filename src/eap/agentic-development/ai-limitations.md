@@ -78,12 +78,6 @@ Mentor Studio does not have full awareness of the current ODC Studio state.
 * **Conversation length.** Long iterations may reach the maximum conversation length. Start a new conversation if responses become inconsistent.
 * **No chat persistence.** Closing the app tab clears the conversation history.
 
-### Dependencies
-
-External elements require manual setup before Mentor Studio can use them.
-
-* **Public elements.** Mentor Studio cannot add public elements directly. Add dependencies to the app first through **Manage Dependencies**, then ask Mentor to use them.
-
 ### Reliability
 
 Mentor Studio can attempt any modification within a web app, but success varies by task complexity. Focused, atomic tasks, such as adding a single entity or creating a server action, tend to produce more consistent results than complex, multi-step changes. These limitations reflect the current state of AI code generation technology.
