@@ -1,6 +1,9 @@
 ---
 summary: Learn how to manage Static Entities in OutSystems Developer Cloud (ODC) for predefined data sets with global scope.
-tags: data modeling, database design
+tags:
+  - Data
+  - Data Model
+  - Entities
 locale: en-us
 guid: 1093da45-38cc-47b6-aaa2-7123a1d2d964
 app_type: mobile apps, reactive web apps
@@ -16,15 +19,16 @@ coverage-type:
   - apply
 topic:
   - static-entities
+isautopublish: true
 ---
 
 # Static Entities
 
-A **Static Entity** consists of a set of named values. Think of Static Entities as literal values stored in a database whose scope is always global. The **Records** folder of the Static Entity holds the data, and the Attributes define the structure of the data.
+A **Static Entity** consists of a set of named values. Think of Static Entities as literal values whose scope is always global. The **Records** folder of the Static Entity holds the data, and the Attributes define the structure of the data.
 
-The only action available for the Static Entities is the **Get&lt;StaticEntity&gt;** action, because OutSystems manages the data persistence for you.
+The only action available for Static Entities in an app is the **Get&lt;StaticEntity&gt;** action, because OutSystems manages the data persistence for you.
 
-When modeling your data, keep in mind that Static Entities can only contain foreign keys of other Static Entities. For more information check out [Entity Relationships](relationship/relationships.md).
+In an app, a Static Entity is backed by a database table, so it can only contain foreign keys to other Static Entities. In a library, a Static Entity has no database table and behaves as an enumerated constant, so this table-level rule doesn't apply. For more information, refer to [Entity Relationships](relationship/relationships.md).
 
 OutSystems recommends using [entities](entity.md) to store dynamically changing information. For example, in a finance app, the user's address could change.
 

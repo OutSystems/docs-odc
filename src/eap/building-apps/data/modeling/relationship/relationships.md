@@ -1,6 +1,10 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports the management of one-to-one, one-to-many, and many-to-many entity relationships in data models.
-tags: data modeling, entity relationships, database design, primary key, foreign key
+tags:
+  - Data
+  - Data Integrity
+  - Data Model
+  - Entities
 locale: en-us
 guid: 34840e6f-13be-4db8-ae48-dd118a9fe303
 app_type: mobile apps, reactive web apps
@@ -15,6 +19,7 @@ coverage-type:
   - understand
 topic:
   - data-relationships
+isautopublish: true
 ---
 
 # Relationships between entities
@@ -85,37 +90,39 @@ To learn more about many-to-many relationships, refer to [many-to-many relations
 
 Referential integrity refers to the consistency of the relationships between entities. It's important that you maintain referential integrity to prevent database errors.
 
+Referential integrity applies to entities and to Static Entities in an app, which are backed by database tables. A Static Entity in a library behaves as an enumerated constant with no database table, so these rules don't apply to it.
+
 When you create a relationship between entity A and entity B, you must specify the referential integrity that you want to apply in your data model. You define what must happen in entity B if the corresponding record in entity A is deleted. In ODC, this behavior is defined by the value of the **Delete Rule** property of the reference attribute. By default, the **Delete Rule** is set to **Protect** for entities in the same app but you can change it according to the desired behavior.
 
 <div class="info" markdown="1">
 
-Relationships between entities in different apps works differently. The **Delete rule** is always set to **Ignore**.
+Relationships between entities in different apps works differently. The **Delete Rule** is always set to **Ignore**.
 
 </div>
 
 ### Protect  
 
-When you set the delete rule of the reference attribute to protect, it prevents deletion of records in entity A while there are associated records in entity B.
+When you set the **Delete Rule** of the reference attribute to **Protect**, it prevents deletion of records in entity A while there are associated records in entity B.
 
 The **Protect** value is commonly used when the user can delete entity data directly from an app screen.
 
-For example, when you set the delete rule of the reference attribute to protect between `Customer` and `Order` entities, a user can't delete customer records that have associated orders.
+For example, when you set the **Delete Rule** of the reference attribute to **Protect** between `Customer` and `Order` entities, a user can't delete customer records that have associated orders.
 
 ### Delete
 
-When you set the delete rule of the reference attribute to delete it guarantees that when a record of entity A is deleted, all the associated records in entity B are also deleted. This mechanism is commonly known as cascade delete.
+When you set the **Delete Rule** of the reference attribute to **Delete**, it guarantees that when a record of entity A is deleted, all the associated records in entity B are also deleted. This mechanism is commonly known as cascade delete.
 
 You can use the **Delete** value when you implement a [data purging](../../data-best-practices/data-purging.md) mechanism, where you need to automatically cascade a delete across the whole data model.
 
-For example, when you set the delete rule of the reference attribute to delete between `Order` and `OrderItems` entities, when an order is deleted, all related order items are automatically deleted.
+For example, when you set the **Delete Rule** of the reference attribute to **Delete** between `Order` and `OrderItems` entities, when an order is deleted, all related order items are automatically deleted.
 
 ### Ignore
 
-When you set the delete rule of the reference attribute to ignore it enables you to delete records in entity A but keep the associated records in entity B.
+When you set the **Delete Rule** of the reference attribute to **Ignore**, it enables you to delete records in entity A but keep the associated records in entity B.
 
 You can use the **Ignore** value when implementing a historical [data archiving](../../data-best-practices/data-archiving.md) mechanism.
 
-For example, suppose every operation performed on `Order` is audited to `OrderHistory`. Setting the the delete rule of the reference attribute to ignore between `Order` and `OrderHistory` entities allows you to delete an order and retain the associated audit record.
+For example, suppose every operation performed on `Order` is audited to `OrderHistory`. Setting the **Delete Rule** of the reference attribute to **Ignore** between `Order` and `OrderHistory` entities allows you to delete an order and retain the associated audit record.
 
 ## Related resources
 
