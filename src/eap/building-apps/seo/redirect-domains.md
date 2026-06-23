@@ -1,6 +1,9 @@
 ---
-summary: How to navigate to a root domain and access a default ODC app.
-tags: seo, redirection, reverse proxy, nginx configuration, cdn
+summary: OutSystems Developer Cloud (ODC) root domain redirect using Nginx reverse proxy or CDN to route users to a default app for improved SEO.
+tags:
+  - Domains
+  - Infrastructure
+  - Web
 guid: b622d85c-f6f8-4833-984e-6f825c68754b
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -13,8 +16,15 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+isautopublish: true
 ---
 # Redirect domains
+
+<div class="info" markdown="1">
+
+To set an app as the entry point for a custom domain root URL without a reverse proxy or CDN, refer to [Default app for a custom domain](../../manage-platform-app-lifecycle/default-app-for-domain.md).
+
+</div>
 
 <div class="warning" markdown="1">
 

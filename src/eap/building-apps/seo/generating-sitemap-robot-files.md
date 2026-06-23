@@ -1,6 +1,10 @@
 ---
-summary: How to generate and sitemap and robot file.
-tags: sitemap.xml, robots.txt, website crawlers, seo, indexing
+summary: "OutSystems Developer Cloud (ODC) sitemap.xml and robots.txt: use a REST API to generate dynamic sitemaps and static files to control crawler access."
+tags:
+  - Optimization
+  - REST
+  - Screens
+  - Web
 guid: 7e883e55-675d-4cb8-a0b5-805d2eaf60dd
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -13,6 +17,7 @@ audience:
   - Developer
 outsystems-tools:
   - none
+isautopublish: true
 ---
 # Generating sitemap and robots files
 
@@ -94,7 +99,7 @@ A list of URLs for your app’s screens are displayed. Validate if new URLs appe
 
 ### Add sitemap.xml to the root directory of a domain
 
-ODC doesn't support the functionality to set an app at the root directory of a domain. Refer to [Sitemap.xml](improve-seo-prerendering.md#sitemapxml-sitemap) for how the sitemap is configured with the help of a Reverse Proxy or CDN.
+To make `sitemap.xml` available at the root of your custom domain, set a default app for the domain. Refer to [Default app for a custom domain](../../manage-platform-app-lifecycle/default-app-for-domain.md).
 
 ## Robots.txt { #robot }
 
@@ -127,4 +132,4 @@ To create a static `robots.txt` file, follow these steps:
 
 ### Add robots.txt to the root directory of a domain
 
-ODC doesn’t support the functionality to set an app at the root directory of a domain. Refer to [Robots.txt](improve-seo-prerendering.md#robotstxt--robots) for how the robots file can be configured with the help of a Reverse Proxy or CDN.
+To make `robots.txt` available at the root of your custom domain, set a default app for the domain. Refer to [Default app for a custom domain](../../manage-platform-app-lifecycle/default-app-for-domain.md).
