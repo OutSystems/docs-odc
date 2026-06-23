@@ -1,17 +1,23 @@
 ---
 guid: 83738400-1f27-4729-9e11-c630d38ea933
 locale: en-us
-summary: This article explains the different app and library use cases of extensibility configurations JSON schema.
+summary: "OutSystems Developer Cloud (ODC) extensibility configurations use cases: app orientation, splash screens, deeplinks, plugin sources, and permissions."
 figma:
 coverage-type:
   - apply
-  - understand
 topic:
 app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: Mobile,Extensibility
+tags:
+  - Android
+  - Capacitor
+  - Cordova
+  - iOS
+  - Libraries
+  - Mobile app
+  - Plugins
 outsystems-tools:
   - odc studio
 helpids:
@@ -83,16 +89,16 @@ Customize the splash screen to display a specific image, with different configur
 
 ```json
 {
-  "buildConfigurations": {
-    "splashscreens": {
-      "android": {
-        "logo": "$images.MyAppLogoFromAnotherDepartment"
-      },
-      "ios": {
-        "logo": "appIcon"
-      }
-    }
-  }
+  "buildConfigurations": {
+    "splashscreens": {
+      "android": {
+        "logo": "$images.MyAppLogoFromAnotherDepartment"
+      },
+      "ios": {
+        "logo": "appIcon"
+      }
+    }
+  }
 }
 ```
 

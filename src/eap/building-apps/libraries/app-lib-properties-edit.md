@@ -108,7 +108,7 @@ The following table describes each setting on the **Advanced settings** page:
 | :---- | :---- | :---- |
 | **Default Theme** | The theme applied to all screens in the app. Controls the visual appearance such as colors, fonts, and spacing. | The theme included with the app template. |
 | **Default Screen** | The first screen that loads when the app opens. This is the home screen of your app. | The first screen in the main flow. |
-| **Splash Screen** | The splash screen displayed when loading a website. For mobile apps, the splash screen is configured in | The default splash screen included with the app template. |
+| **Splash Screen** | The splash screen displayed when loading a website. For mobile apps, the splash screen is configured in [app settings](../../building-apps/mobile/configuring-mobile-apps.md#splash-screen-splash-screen). For detailed information about customizing splash screen for mobile apps, refer to [Customize splash screen](../../building-apps/mobile/configure-splash-screen.md) | The default splash screen included with the app template. |
 | **Global Exception Handler** | The action that runs when an unhandled exception occurs anywhere in the app. | `Common\OnException` |
 | **Default Transition** | The screen transition animation used when navigating between screens. Options include **Slide from Right**, **Fade**, and others. | Slide from Right |
 | **Default Timeout in seconds** | The maximum time, in seconds, that the app waits for a server request to complete before timing out. | `10` |

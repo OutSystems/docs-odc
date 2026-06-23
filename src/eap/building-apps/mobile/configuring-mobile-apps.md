@@ -98,6 +98,10 @@ This setting maps to `appConfigurations.systemBars.style` in the [app extensibil
 
 For more information about customizing system bars, refer to [Customize system bars with edge-to-edge display](extensibility-configurations/customize-system-bars-edge-to-edge.md).
 
+### Splash screen {#splash-screen}
+
+You can use the **Splash screen** page to customize the introductory screen that appears while your app initializes, including the splash type, branding, and loading behavior. For detailed information, refer to [Customize the splash screen](configure-splash-screen.md).
+
 ### Offline data sync {#offline-data-sync}
 
 You can use the **Offline Data Sync** page to configure when and how your app synchronizes data between the device and the server. These settings control the automatic sync behavior that works with the [offline data synchronization framework](../../building-apps/data/offline/intro.md).

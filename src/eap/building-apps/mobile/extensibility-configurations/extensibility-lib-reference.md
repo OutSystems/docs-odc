@@ -1,7 +1,7 @@
 ---
 guid: 50dda025-21a0-4063-a2e1-483761eb7797
 locale: en-us
-summary: This article provides detailed information about Library extensibility configuration schema.
+summary: "OutSystems Developer Cloud (ODC) library extensibility configuration JSON schema: pluginConfigurations for Cordova and Capacitor, buildConfigurations."
 figma:
 coverage-type:
   - remember
@@ -10,10 +10,18 @@ app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: json configuration,Mobile,mobile app build service,mobile app extensibility,mobile apps
+tags:
+  - Android
+  - Capacitor
+  - Cordova
+  - iOS
+  - Libraries
+  - Mobile app
+  - Plugins
 outsystems-tools:
   - none
 helpids:
+isautopublish: true
 ---
 # Library (plugin) extensibility configuration JSON schema
 
@@ -46,16 +54,16 @@ Example
 
 ```
 
-## pluginConfigurations
+## `pluginConfigurations`
 
-The plugin specification.
+The `pluginConfigurations` object declares the plugin specification, including Cordova or Capacitor settings and permissions.
 
 `pluginConfigurations`
 
 * Optional  
 * Type: `object`
 
-### properties
+### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -63,7 +71,7 @@ The plugin specification.
 | [capacitor](#capacitor) | `object` | Required if `cordova` is missing |
 | [permissions](#permissions) | `array of object` | Optional |
 
-### cordova
+### `cordova`
 
 An object with the required specification for a given Cordova plugin.
 
@@ -92,7 +100,7 @@ Example:
 | :---- | :---- | :---- |
 | [preferences](#preferences) | `string` | Required |
 
-#### preferences
+#### `preferences`
 
 A set of Cordova [preferences](https://cordova.apache.org/docs/en/11.x/config_ref/#preference) associated with the plugin. Configuration values can be static or a reference to a Setting. Additionally, configurations can be declared globally or per platform, with the platform-specific value taking precedence over the global one.
 
@@ -132,7 +140,7 @@ Example
 
 ```
 
-### capacitor
+### `capacitor`
 
 An object with the required specification for a given Capacitor plugin.
 
@@ -147,7 +155,7 @@ An object with the required specification for a given Capacitor plugin.
 | :---- | :---- | :---- |
 | [configurations](#configurations) | `object` | Optional |
 
-#### configurations
+#### `configurations`
 
 An object with configuration values specified by plugin class name. Multiple configurations can be provided for multiple plugins simultaneously. This is useful in scenarios where a plugin depends on other plugins that require configurations on their own.
 
@@ -194,11 +202,11 @@ Example:
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
-| [`android`](#android-2) | `object` | Optional |
-| `ios` | `object` | Optional |
+| [android](#android-android-2) | `object` | Optional |
+| [ios](#ios-ios-2) | `object` | Optional |
 | Additional properties | `object` | Optional |
 
-#### android {#android-2}
+#### `android` {#android-2}
 
 Plugin configurations specific to Android. If a configuration with the same name exists globally (i.e. at the root of `configurations` object), the value from `android` takes precedence.
 
@@ -214,7 +222,7 @@ Properties:
 | :---- | :---- | :---- |
 | Additional properties | `object` | Optional |
 
-#### ios {#ios-2}
+#### `ios` {#ios-2}
 
 Plugin configurations specific to iOS. If a configuration with the same name exists globally (i.e. at the root of `configurations` object), the value from `ios` takes precedence.
 
@@ -230,7 +238,7 @@ Plugin configurations specific to iOS. If a configuration with the same name exi
 | :---- | :---- | :---- |
 | Additional properties | `object` | Optional |
 
-### permissions
+### `permissions`
 
 Declares which Android permissions or iOS usage descriptions the plugin defines.
 
@@ -262,12 +270,12 @@ Example
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
-| [android](#android) | `array` of `string` | Optional |
-| [ios](#ios) | `object` | Optional |
+| [android](#android-android) | `array` of `string` | Optional |
+| [ios](#ios-ios) | `object` | Optional |
 
-#### android {#android}
+#### `android` {#android}
 
-List of android permissions required by the plugin.
+List of Android permissions required by the plugin.
 
 `android`
 
@@ -275,7 +283,7 @@ List of android permissions required by the plugin.
 * Type: `array` of `string`
 * Placeholders: `extensibility settings`
 
-#### ios {#ios}
+#### `ios` {#ios}
 
 In iOS, to be able to access protected resources such as location information, bluetooth interface, or user's photos, the system asks for permissions on behalf of the application. Developers are expected to provide “usage descriptions” that are presented to the end users when prompting for permission to access the associated protected resources.
 
@@ -313,16 +321,16 @@ In the above example, both usage description keys `NSCameraUsageDescription` and
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
-| [Additional properties](#ios-additional-properties) | `object` | Optional |
+| [Additional properties](#additional-properties-ios-additional-properties) | `object` | Optional |
 
-#### ios additional properties
+#### `additional properties` {#ios-additional-properties}
 
 Any property name is valid as long as the value follows the following schema
 
 * Optional  
 * Type: `object`
 
-##### Properties:
+##### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -334,23 +342,23 @@ Any property name is valid as long as the value follows the following schema
 * Type: `string`
 * Placeholders: `extensibility settings`
 
-## buildConfigurations
+## `buildConfigurations`
+
+The `buildConfigurations` object defines build-time settings such as plugin sources, build resources, and build actions.
 
 `buildConfigurations`
 
 * Optional  
 * Type: `object`
 
-### properties {#properties-1}
+### Properties {#properties-1}
 
 | Property | Type | Required | |
 | :---- | :---- | :---- | :---- |
-| [cordova](#cordova-1) | `object` | Required if `capacitor` is missing | |
-| [capacitor](#capacitor-1) | `object` | Required if `cordova` is missing | |
+| [cordova](#cordova-cordova-1) | `object` | Required if `capacitor` is missing | |
+| [capacitor](#capacitor-capacitor-1) | `object` | Required if `cordova` is missing | |
 | [resources](#resources) | `array of object` | Optional | |
 | [buildAction](#buildaction) | `object` | Optional | false |
-
-Set of build time configurations allowing to configure the plugin sources and build time resources.
 
 Example
 
@@ -375,7 +383,7 @@ Example
 }
 ```
 
-### cordova {#cordova-1}
+### `cordova` {#cordova-1}
 
 An object with the required specification for a given Cordova plugin.
 
@@ -407,7 +415,7 @@ Example
 | :---- | :---- | :---- |
 | [source](#source) | `string` | Required |
 
-#### source
+#### `source`
 
 The source of the Cordova plugin, from where it is fetched for installation and, if needed, the Cordova plugin variables.
 
@@ -420,10 +428,10 @@ The source of the Cordova plugin, from where it is fetched for installation and,
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
-| [npm](#npm) | `string` | Required |
+| [npm](#npm-plugin-package-source) | `string` | Required |
 | [variables](#variables) | `object` | Optional |
 
-#### npm
+#### `npm` {#plugin-package-source}
 
 A valid npm [package spec](https://docs.npmjs.com/cli/v10/using-npm/package-spec) from where to fetch the plugin.
 
@@ -433,7 +441,7 @@ A valid npm [package spec](https://docs.npmjs.com/cli/v10/using-npm/package-spec
 * Type: `string`
 * Placeholders: `extensibility settings`
 
-#### variables
+#### `variables`
 
 An object with the plugin variables required for installation. Object key maps to variable name and associated value maps to variable value.
 
@@ -472,7 +480,7 @@ Variable values can be a static value or a reference to a Setting.
 | :---- | :---- | :---- |
 | Additional properties | `string` or `boolean` or `number` or `integer` | Optional |
 
-### capacitor {#capacitor-1}
+### `capacitor` {#capacitor-1}
 
 An object with the required specification for a given Capacitor plugin.
 
@@ -495,13 +503,13 @@ Example
 * Optional  
 * Type: `object`
 
-Properties:
+#### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
-| [source](#source-1) | `object` | Required |
+| [source](#source-source-1) | `object` | Required |
 
-#### source {#source-1}
+#### `source` {#source-1}
 
 The source of the capacitor plugin
 
@@ -510,13 +518,13 @@ The source of the capacitor plugin
 * Required  
 * Type: `object`
 
-Properties:
+##### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
-| [npm](#npm-1) | `string` | Required |
+| [npm](#npm-npm-1) | `string` | Required |
 
-#### npm {#npm-1}
+#### `npm` {#npm-1}
 
 A valid npm [package spec](https://docs.npmjs.com/cli/v10/using-npm/package-spec) from where to fetch the plugin.
 
@@ -526,7 +534,7 @@ A valid npm [package spec](https://docs.npmjs.com/cli/v10/using-npm/package-spec
 * Type: `string`
 * Placeholders: `extensibility settings`
 
-### resources
+### `resources`
 
 Set of resources that can be copied from a specific source to a target location within the generated mobile project
 
@@ -560,10 +568,10 @@ Example
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
-| [android](#resource-item) | `array` of `object` | Optional |
-| [ios](#resource-item) | `array` of `object` | Optional |
+| [android](#android-android-1) | `array` of `object` | Optional |
+| [ios](#ios-ios-1) | `array` of `object` | Optional |
 
-#### android {#android-1}
+#### `android` {#android-1}
 
 A list of resources to be added to the generated Android project.
 
@@ -572,7 +580,7 @@ A list of resources to be added to the generated Android project.
 * Optional  
 * Type: `array` of [resource](#resource-item) items
 
-#### ios {#ios-1}
+#### `ios` {#ios-1}
 
 A list of resources to be added to the generated iOS project.
 
@@ -581,7 +589,7 @@ A list of resources to be added to the generated iOS project.
 * Optional  
 * Type: `array` of [resource](#resource-item) items
 
-#### resource item {#resource-item}
+#### `resource` Item {#resource-item}
 
 ##### Properties
 
@@ -620,18 +628,24 @@ The target location for the resource in the form of a file path
 * Type: `string`
 * Placeholders: `extensibility settings`
 
-### buildAction
+### `buildAction`
 
-Build actions enable developers to customize their mobile projects. It is available for MABS 12 and uses JSON files to define which customization is to be done on the mobile project. The JSON definition for each build action can be found [here](../build-actions.md).
+<div class="info" markdown="1">
 
-To run multiple changes, you need to add all to the JSON file, and MABS will run each action following the order of the JSON file, top to bottom.
+Build actions apply only to Capacitor apps.
+
+</div>
+
+Build actions enable developers to customize their mobile projects. Build actions use JSON files to define customizations applied to the mobile project. For details on the JSON definition for each build action, refer to the reference files for [iOS build actions](../build-actions-iOS.md) and [Android build actions](../build-actions-android.md).
+
+To run multiple changes, add all of them to the JSON file, and MABS will run each action in the order of the JSON file, top to bottom.
 
 If you have build configurations defined at the plugin and app level, the plugin runs first.
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
-| config | `Object` | Required |
-| parameters | `object` | Optional |
+| [config](#config) | `Object` | Required |
+| [parameters](#parameters) | `object` | Optional |
 
 Example
 
@@ -649,7 +663,7 @@ Example
 }
 ```
 
-#### config
+#### `config`
 
 Reference to the resource uploaded on IDE, under resources. The file must have _Deploy Action_ as _Deploy to Target Directory._ An extensibility setting can also be used to reference a file path.
 
@@ -662,9 +676,9 @@ Reference to the resource uploaded on IDE, under resources. The file must have _
 * Type: `object`
 * Placeholders: `extensibility settings`, `resources`
 
-#### parameters
+#### `parameters`
 
-The parameters to pass values to the variables defined on the json.
+The parameters to pass values to the variables defined on the JSON.
 
 `parameters`
 

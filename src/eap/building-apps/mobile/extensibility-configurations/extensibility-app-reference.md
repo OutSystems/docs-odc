@@ -1,7 +1,7 @@
 ---
 guid: fc8b0661-525c-4f75-8217-4d9aec2cd312
 locale: en-us
-summary: This article provide complete details on app extensibility configuration JSON schema.
+summary: "OutSystems Developer Cloud (ODC) app extensibility configuration JSON schema, covering appConfigurations and buildConfigurations properties."
 figma:
 coverage-type:
   - remember
@@ -11,7 +11,13 @@ app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: mobile,json extensibility,json configuration
+tags:
+  - Android
+  - Capacitor
+  - Cordova
+  - iOS
+  - Mobile app
+  - Settings
 outsystems-tools:
   - odc studio
 helpids:
@@ -46,7 +52,7 @@ Example:
 }
 ```
 
-## appConfigurations
+## `appConfigurations`
 
 App configurations are a set of configurations that modify multiple runtime aspects and behaviors of the mobile app, from background color to how long the splash screen is visible on app launch.
 
@@ -87,7 +93,7 @@ Overriding property values per platform is achieved by referencing those propert
 
 Where `displayName` value is overridden specifically for Android.
 
-### cordova
+### `cordova`
 
 Sets Cordova preferences for the application. Preference values can be set globally for both platforms or overridden per platform.
 
@@ -119,9 +125,9 @@ Here, the Cordova preference `SomePreference` is being set globally with a value
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
-| [preferences](#cordova-preferences) | `object` | Optional |
+| [preferences](#preferences-cordova-preferences) | `object` | Optional |
 
-#### cordova preferences
+#### `preferences` {#cordova-preferences}
 
 Key-value pair of [Cordova preferences](https://cordova.apache.org/docs/en/12.x/config_ref/index.html#preference) to be set.
 
@@ -131,7 +137,7 @@ Key-value pair of [Cordova preferences](https://cordova.apache.org/docs/en/12.x/
 * Type: `object`
 * Placeholders: `extensibility settings`
 
-Properties:
+##### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -139,13 +145,13 @@ Properties:
 | `ios` | `object` | Optional |
 | Additional properties | any of the following: `string` or `boolean` or `number` or `integer` | Optional |
 
-### permissions
+### `permissions`
 
-Define Android permissions or iOS usage descriptions in the application.
+Define Android permissions or iOS usage descriptions in the app.
 
 <div class="info" markdown="1">
 
-Permissions/usage descriptions values set at the application level take precedence over the values defined on Libraries Extensibility Configuration.
+Permissions/usage descriptions values set at the app level take precedence over the values defined on library extensibility configuration.
 
 </div>
 
@@ -175,7 +181,7 @@ Permissions/usage descriptions values set at the application level take preceden
 | android | `array` of `string` | Optional |
 | ios | `object` | Optional |
 
-### displayName
+### `displayName`
 
 Override the user-visible name for the application
 
@@ -186,7 +192,7 @@ Override the user-visible name for the application
 * Placeholders: _none_
 * Defaults to the OutSystems application name
 
-### orientation
+### `orientation`
 
 The orientation of the app's user interface
 
@@ -196,7 +202,7 @@ The orientation of the app's user interface
 * Type: `string`
 * Placeholders: _none_
 
-#### Orientation Constraints
+#### `orientation` Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -206,7 +212,7 @@ The orientation of the app's user interface
 | `"landscape"` |
 | `"all"` |
 
-### targetDevice
+### `targetDevice`
 
 <div class="info" markdown="1">
 
@@ -222,7 +228,7 @@ The device family being targeted by application.
 * Type: `string`
 * Placeholders: _none_
 
-#### targetDevice constraints
+#### `targetDevice` Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -232,7 +238,7 @@ The device family being targeted by application.
 | `"tablet"` |
 | `"all"` |
 
-### backgroundColor
+### `backgroundColor`
 
 The WebView and splash screen background color
 
@@ -243,7 +249,7 @@ The WebView and splash screen background color
 * Placeholders: _none_
 * Defaults to the primary color of the OutSystems application
 
-#### backgroundColor constraints
+#### `backgroundColor` Constraints
 
 **pattern**: the string must match the following regular expression:
 
@@ -251,7 +257,7 @@ The WebView and splash screen background color
 ^#[0-9a-fA-F]{6}$
 ```
 
-### deeplinksHandler
+### `deeplinksHandler`
 
 <div class="info" markdown="1">
 
@@ -268,7 +274,7 @@ Defines how the mobile app handles deeplinks. It can be the default handler, an 
 * Placeholders: _none_
 * Default value: `default`
 
-#### deeplinksHandler constraints
+#### `deeplinksHandler` Constraints
 
 <div class="info" markdown="1">
 
@@ -276,7 +282,7 @@ Applies only to Cordova apps.
 
 </div>
 
-**enum**: the value of this property must be equal to one of the following values:
+**enum**: the value of this property must be equal to one of the following values:`
 
 | Value |
 | :---- |
@@ -284,7 +290,7 @@ Applies only to Cordova apps.
 | `"event"` |
 | `"function"` |
 
-### network
+### `network`
 
 Defines the supported network protocol for the app: HTTPS or both HTTPS and HTTP
 
@@ -298,7 +304,7 @@ Defines the supported network protocol for the app: HTTPS or both HTTPS and HTTP
 | [connections](#connections) | `string` | Optional |
 | [trustedCA](#trustedca) | `string` | Optional |
 
-### connections
+### `connections`
 
 Defines the supported network protocol for the app: HTTPS or both HTTPS and HTTP
 
@@ -308,7 +314,7 @@ Defines the supported network protocol for the app: HTTPS or both HTTPS and HTTP
 * Type: `string`
 * Placeholders: _none_
 
-#### connections constraints
+#### `connections` Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -317,7 +323,7 @@ Defines the supported network protocol for the app: HTTPS or both HTTPS and HTTP
 | `"https"` |
 | `"https_http"` |
 
-### trustedCA
+### `trustedCA`
 
 <div class="info" markdown="1">
 
@@ -333,7 +339,7 @@ Sets the type of trusted certificate authorities for the app: `system`, `custom`
 * Type: `string`
 * Placeholders: _none_
 
-#### trustedCA constraints
+#### `trustedCA` Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -343,7 +349,7 @@ Sets the type of trusted certificate authorities for the app: `system`, `custom`
 | `"user"` |
 | `"both"` |
 
-### systemBars
+### `systemBars`
 
 System bars configurations.
 
@@ -374,7 +380,7 @@ System bars configurations.
 | [style](#style) | `string` | Optional |
 | [statusBarBackgroundColor](#statusbarbackgroundcolor) | `string` | Optional |
 
-### style
+### `style`
 
 Sets the overall system bars style. The style is based on the device appearance. If the device is using Dark mode, the system bars text will be light. If the device is using Light mode, the system bars text will be dark
 
@@ -384,7 +390,7 @@ Sets the overall system bars style. The style is based on the device appearance.
 * Type: `string`
 * Placeholders: _none_
 
-#### style constraints
+#### `style` Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -394,7 +400,7 @@ Sets the overall system bars style. The style is based on the device appearance.
 | `"dark"` |
 | `"light"` |
 
-### statusBarBackgroundColor
+### `statusBarBackgroundColor`
 
 Sets the status bar background color. This property allows you to customize the color of the status bar to match your app's design.
 
@@ -404,7 +410,7 @@ Sets the status bar background color. This property allows you to customize the 
 * Type: `string`
 * Placeholders: _none_
 
-#### statusBarBackgroundColor constraints
+#### `statusBarBackgroundColor` Constraints
 
 **pattern**: the string must match the following regular expression:
 
@@ -412,7 +418,7 @@ Sets the status bar background color. This property allows you to customize the 
 ^#[0-9a-fA-F]{6}$
 ```
 
-### appendUserAgent
+### `appendUserAgent`
 
 String to append to the original user agent of the app's main WebView
 
@@ -422,9 +428,15 @@ String to append to the original user agent of the app's main WebView
 * Type: `string`
 * Placeholders: _none_
 
-### splashscreen
+### `splashscreen`
 
 Splash screen configurations.
+
+<div class="info" markdown="1">
+
+These extensibility configurations are overridden if you configure the splash screen through App settings. For more information, refer to [Configure splash screen](../configure-splash-screen.md).
+
+</div>
 
 #### Example
 
@@ -455,9 +467,15 @@ Splash screen configurations.
 | [duration](#duration) | `number` | Optional |
 | [autoHide](#autohide) | `boolean` | Optional |
 
-### duration
+### `duration`
 
-Control for how long, in milliseconds, the launch splash screen is visible when `autoHide` is enabled
+Control the duration, in milliseconds, that the launch splash screen is visible when `autoHide` is enabled.
+
+<div class="info" markdown="1">
+
+This value does not affect Capacitor apps built with MABS 12.1 or later. It applies only to Cordova apps.
+
+</div>
 
 `duration`
 
@@ -465,9 +483,15 @@ Control for how long, in milliseconds, the launch splash screen is visible when 
 * Type: `number`
 * Placeholders: _none_
 
-### autoHide
+### `autoHide`
 
-Whether to auto hide the splash after `duration`
+Whether to auto-hide the splash after `duration`.
+
+<div class="info" markdown="1">
+
+This value does not affect Capacitor apps built with MABS 12.1 or later. It applies only to Cordova apps.
+
+</div>
 
 `autoHide`
 
@@ -475,7 +499,7 @@ Whether to auto hide the splash after `duration`
 * Type: `boolean`
 * Placeholders: _none_
 
-### webViewUpdate
+### `webViewUpdate`
 
 Displays an alert prompting the user to update the Android System WebView via the Google Play Store. Only applies to OutSystems Capacitor Android apps, which require a minimum WebView version of 102.
 
@@ -506,7 +530,7 @@ Displays an alert prompting the user to update the Android System WebView via th
 | [message](#message) | `string` | Optional |
 | [updateButtonLabel](#updatebuttonlabel) | `string` | Optional |
 
-### enabled
+### `enabled`
 
 Determines whether the alert is shown when the device’s WebView version is below the minimum required
 
@@ -517,7 +541,7 @@ Determines whether the alert is shown when the device’s WebView version is bel
 * Placeholders: _none_
 * Defaults to true
 
-### title
+### `title`
 
 Title text displayed in the update alert dialog
 
@@ -527,7 +551,7 @@ Title text displayed in the update alert dialog
 * Type: `string`
 * Placeholders: _none_
 
-### message
+### `message`
 
 Message text displayed in the update alert dialog
 
@@ -537,7 +561,7 @@ Message text displayed in the update alert dialog
 * Type: `string`
 * Placeholders: _none_
 
-### updateButtonLabel
+### `updateButtonLabel`
 
 Label for the button that takes the user to the Google Play Store to update WebView
 
@@ -547,20 +571,20 @@ Label for the button that takes the user to the Google Play Store to update WebV
 * Type: `string`
 * Placeholders: _none_
 
-## buildConfigurations
+## `buildConfigurations`
 
-Build configurations are a set of configurations used at build time such as adding build resources or configuring the assets for the splash screen
+Build configurations are a set of configurations used at build time such as adding build resources or configuring the assets for the splash screen.
 
-### **Properties**
+### Properties
 
 | Property | Type | Required | Per platform override |
 | :---- | :---- | :---- | :---- |
 | [resources](#resources) | `object` | Optional | false |
 | [splashscreens](#splashscreens) | `object` | Optional | false |
 | [buildAction](#buildaction) | `object` | Optional | false |
-| [spmPreview](#spmpreview) | `boolean` | Optional | false |
+| [spmPreview](#spmpreview-spmpreview) | 'object' | Optional | false |
 
-### resources
+### `resources`
 
 Set of resources that can be copied from a specific source to a target location within the generated mobile project
 
@@ -597,7 +621,7 @@ Set of resources that can be copied from a specific source to a target location 
 | [android](#resource-item) | `array` of `object` | Optional |
 | [ios](#resource-item) | `array` of `object` | Optional |
 
-#### android
+#### `android`
 
 A list resources to be added to the generated Android project.
 
@@ -606,7 +630,7 @@ A list resources to be added to the generated Android project.
 * Optional  
 * Type: `array` of [resource](#resource-item) items
 
-#### ios
+#### `ios`
 
 A list resources to be added to the generated iOS project.
 
@@ -615,9 +639,9 @@ A list resources to be added to the generated iOS project.
 * Optional  
 * Type: `array` of [resource](#resource-item) items
 
-#### resource item
+#### `resource` Item
 
-Properties:
+##### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
@@ -655,7 +679,13 @@ The target location for the resource in the form of a file path
 * Type: `string`
 * Placeholders: `extensibility settings`
 
-### splashscreens
+### `splashscreens`
+
+<div class="info" markdown="1">
+
+For Capacitor apps, these extensibility configurations are overridden if you configure the splash screen through app properties. For more information, refer to [Configure splash screen](../configure-splash-screen.md).
+
+</div>
 
 Assets to customize the splash screen experience. By default, MABS 12 applications have a splash screen composed of a solid background color. Using `splashscreens` build configurations, the splash screen can be configured to have an image in the center of the screen.
 
@@ -681,14 +711,14 @@ Assets to customize the splash screen experience. By default, MABS 12 applicatio
 * Optional  
 * Type: `object`
 
-Properties:
+#### Properties
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
-| [android](#android-1) | `object` | Optional |
-| [ios](#ios-1) | `object` | Optional |
+| [android](#android-android-1) | `object` | Optional |
+| [ios](#ios-ios-1) | `object` | Optional |
 
-#### android
+#### `android` {#android-1}
 
 Android specific configurations for the splash screen
 
@@ -703,7 +733,7 @@ Properties:
 | :---- | :---- | :---- |
 | [logo](#logo) | `string` | Optional |
 
-#### ios {#ios-1}
+#### `ios` {#ios-1}
 
 iOS specific configurations for the splash screen
 
@@ -718,7 +748,7 @@ Properties:
 | :---- | :---- | :---- |
 | [logo](#logo) | `string` | Optional |
 
-#### logo
+#### `logo`
 
 Customize the logo based splash screen experience. When using `appIcon`, the application icon will be used in the center of the splash screen. Otherwise a path or reference to an image can be provided
 
@@ -737,7 +767,7 @@ Use one of the above.
 * Type: `string`
 * Placeholders: `images`, `resources`
 
-### buildAction
+### `buildAction`
 
 Build actions enable developers to customize their mobile projects. It is available for MABS 12 and uses JSON files to define which customization is to be done on the mobile project. For more information about the JSON definition for each build action, refer to [Build actions](../build-actions.md).
 
@@ -747,8 +777,8 @@ If you have build configurations defined at the plugin and app level, the plugin
 
 | Property | Type | Required |
 | :---- | :---- | :---- |
-| config | `Object` | Required |
-| parameters | `object` | Optional |
+| [config](#config) | `Object` | Required |
+| [parameters](#parameters) | `object` | Optional |
 
 #### Example
 
@@ -766,7 +796,7 @@ If you have build configurations defined at the plugin and app level, the plugin
 }
 ```
 
-#### config
+#### `config`
 
 Reference to the resource uploaded on IDE, under resources. The file must have _Deploy Action_ as _Deploy to Target Directory._ An extensibility setting can also be used to reference a file path.
 
@@ -782,7 +812,7 @@ The extensibility binary settings is not supported.
 * Type: `object`
 * Placeholders: `extensibility settings`, `resources`
 
-#### parameters
+#### `parameters`
 
 The parameters to pass values to the variables defined on the json.
 
@@ -792,7 +822,7 @@ The parameters to pass values to the variables defined on the json.
 * Type: `object`
 * Placeholders: `extensibility settings`
 
-### spmPreview
+### `spmPreview` {#spmPreview}
 
 Enables the Swift Package Manager (SPM) build toolchain for iOS Capacitor builds. When set to `true`, the iOS build uses SPM instead of CocoaPods for dependency management.
 

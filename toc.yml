@@ -401,9 +401,12 @@
             - href: eap/building-apps/mobile/mobile-ui/framework-comparison.md
         # Create a mobile package
         - href: eap/building-apps/mobile/configuring-mobile-apps.md
-        - topics:
+        - topics:          
+            # Customize system bars and edge-to-edge display
+            - href: eap/building-apps/mobile/extensibility-configurations/customize-system-bars-edge-to-edge.md
+            # Configure splash screen
+            - href: eap/building-apps/mobile/configure-splash-screen.md              
             # Intro to extensibility configurations
-            - href: eap/building-apps/mobile/extensibility-configurations/customize-system-bars-edge-to-edge.md              
             - href: eap/building-apps/mobile/extensibility-configurations-json-schema.md
              # Universal extensibility configurations
             - href: eap/building-apps/mobile/extensibility-configurations.md
@@ -412,9 +415,11 @@
                 - href: eap/building-apps/mobile/extensibility-configurations/extensibility-lib-reference.md
                 - href: eap/building-apps/mobile/extensibility-configurations-use-cases.md
              # Cordova-based extensibility configurations
+            
             - href: eap/building-apps/mobile/legacy-extensibility-configuration.md
             - topics:
                 - href: eap/building-apps/mobile/cordova-extensibility-configurations-use-cases.md
+            
             - href: eap/building-apps/mobile/build-actions.md
             - topics:
                 - href: eap/building-apps/mobile/build-actions-android.md
