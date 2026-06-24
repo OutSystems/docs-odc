@@ -3,6 +3,7 @@ summary: Learn how to designate a default app for a custom domain in ODC so end-
 tags:
   - Domains
   - End-users
+  - Web
 locale: en-us
 guid: c518c071-ef6a-4c10-b947-2fd93f6dc4d2
 app_type: reactive web apps
@@ -93,7 +94,7 @@ To change the default app, follow the same steps and select a different app in s
 
 When you set a default app for a custom domain, ODC evaluates requests against application paths before the root path. The following table shows how ODC handles requests when `MyApp` is the default app for `www.company.com`, and `MyApp` has a screen named `OtherApp`.
 
-| URL | Redirect: no app | Redirect: permanent or temporary |
+| URL | Redirect: no redirect | Redirect: permanent or temporary |
 | --- | --- | --- |
 | `www.company.com` | Loads `MyApp` home screen | Loads `MyApp` home screen |
 | `www.company.com/MyApp` | Loads `MyApp` home screen | Redirects to `www.company.com` |
