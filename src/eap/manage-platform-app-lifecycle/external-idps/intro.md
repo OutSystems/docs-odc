@@ -32,7 +32,7 @@ isautopublish: true
 
 # Configuring authentication with external identity providers
 
-OutSystems Developer Cloud (ODC) comes bundled with Identity Service, a built-in Identity Provider (IdP). It provides authentication, authorization, and user management for your [organization](../platform-architecture/intro.md#platform) and apps. You access your organization's services through the ODC Portal and ODC Studio. As the default IdP, Identity Service is always available.
+OutSystems Developer Cloud (ODC) includes an Identity Service that acts as the central identity broker for your [organization](../platform-architecture/intro.md#platform) and apps. It handles authentication, authorization, and user management. The Identity Service includes a built-in identity provider (IdP) assigned by default, so authentication is available out of the box, and you can access your organization's services through the ODC Portal and ODC Studio.
 
 In addition, you can use an external, self-managed IdP as an authentication provider for your organization and your apps. ODC supports two main authentication protocols:
 
