@@ -6,8 +6,8 @@ tags:
   - Mentor Studio
   - Mentor Web
   - Mobile app
-  - Native App
   - Web
+  - Workflows
 locale: en-us
 guid: 2c23e305-f3ca-46cc-a8c8-a29c409a9ccf
 app_type: mobile apps, reactive web apps
@@ -21,6 +21,7 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+  - evaluate
 topic:
   - choose-app-type
   - basic-architecture
@@ -29,7 +30,7 @@ isautopublish: true
 
 # Types of apps you can build
 
-OutSystems Developer Cloud (ODC) supports several top-level asset types: Web apps, Mobile apps, Agentic apps, libraries, and workflows. You select the type when you create the asset. **Agentic development** through Mentor Web and Mentor Studio is the default build path for Web apps, and Mentor Studio extends to libraries and Agentic apps in beta. The visual editor in ODC Studio is available for every type. For the full list of assets each AI tool supports, refer to [Agentic development](../agentic-development/intro.md).
+OutSystems Developer Cloud (ODC) supports several top-level asset types: Web apps, Mobile apps, Agentic apps, libraries, and workflows. You select the type when you create the asset. **Agentic development** through Mentor Web and Mentor Studio is the default build path for Web apps, and Mentor Studio extends to libraries and Agentic apps. The visual editor in ODC Studio is available for every type. For the full list of assets each AI tool supports, refer to [Agentic development](../agentic-development/intro.md).
 
 ![Screenshot of the 'What would you like to create?' window in OutSystems Developer Cloud with options to create different types of apps](images/types-of-apps-odcs.png "ODC App Creation Options")
 
@@ -59,7 +60,7 @@ You can distribute a Mobile app in two ways:
 * **Native app package.** A dedicated OutSystems cloud service generates native mobile builds for you to distribute in the app stores or internally to a group of users.
 * **Progressive Web App (PWA).** Lightweight apps with the look and feel of native mobile apps. They're quick to distribute and install directly from your website, and they don't depend on the app stores.
 
-## What's an Agentic app?
+## What's an agentic app?
 
 In ODC, an Agentic app is a type of app that uses AI to act autonomously. These apps perform background operations and lack a user interface. Instead, Web or Mobile apps consume their capabilities to create intelligent, automated experiences.
 

@@ -1,6 +1,13 @@
 ---
-summary: Agentic development shifts app creation from UI-driven configuration to prompt-based conversation with AI.
-tags: agentic development, llm, prompt-based development, prompt engineering
+summary: Agentic development in OutSystems Developer Cloud (ODC) shifts app creation from UI configuration to describing intent in natural language prompts.
+tags:
+  - Agentic
+  - AI
+  - Data Model
+  - Mentor
+  - Mentor Studio
+  - Mentor Web
+  - Roles
 guid: f3c8d2a1-7e4b-4d9c-8f2a-9b5c6e3d1a0f
 locale: en-us
 app_type: reactive web apps
@@ -83,6 +90,14 @@ The iteration cycle follows three steps:
 Agentic development provides immediate visual feedback with sample data for evaluating each change before moving forward. This rapid iteration enables shaping the app toward requirements without writing code or navigating complex configuration screens.
 
 Agentic development excels at structural changes: entities, data models, roles, standard UI patterns. Custom business logic, complex aggregates, external system integrations, or performance optimization require transitioning to ODC Studio. For a breakdown of when to transition, refer to [When to use each tool](intro.md#when-to-use-each-tool).
+
+## Match oversight to impact
+
+The effort you spend reviewing a change scales with its complexity and reach.
+
+A contained change, such as adding an attribute, affects a single element and is straightforward to verify after Mentor Studio applies it. A change that spans multiple elements, dependencies, or workflows affects more of the app, and an incorrect assumption propagates further. For changes of this kind, the Mentor tools present their intended work for review before applying it: the blueprint in Mentor Web, and proposed changes in Mentor Studio. Reviewing and accepting a proposal before Mentor applies it keeps the change supervised and verifiable.
+
+For how this works when modifying apps, refer to [AI development in Mentor Studio](mentor-studio/how-it-works.md).
 
 ## Related resources
 

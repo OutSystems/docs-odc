@@ -65,7 +65,7 @@ OutSystems Agentic Systems Engineering is the OutSystems approach to building go
 
 Agentic development follows an iterative workflow for both creating and modifying apps: describe, review, and refine.
 
-You describe app requirements through prompts or requirement documents. ODC interprets the input and proposes changes through a [blueprint](mentor-web/blueprint.md) or implementation plan. You review and adjust the proposed changes, then continue iterating until the app meets requirements.
+You describe app requirements through prompts or requirement documents. ODC interprets the input and presents it for review as a [blueprint](mentor-web/blueprint.md) in Mentor Web, or as proposed changes in Mentor Studio. You review and adjust the blueprint or proposed changes, then continue iterating until the app meets requirements.
 
 For new apps, the workflow is: describe requirements, review the blueprint, generate and publish, refine in Mentor Web, and continue in Mentor Studio when needed.
 
@@ -85,7 +85,7 @@ Agentic development supports app creation and ongoing modification through conve
 
 * **App generation**: Full-stack web apps created from natural language descriptions, including data models, screens, logic, and roles. The proposed app structure is reviewed and refined through a blueprint before generation.
 * **App modification**: Features added, logic extended, and existing apps modified through conversation in Mentor Web or Mentor Studio.
-* **Implementation plans**: Proposed changes reviewed before application, with the ability to accept or reject.
+* **Proposed changes**: For complex modifications, Mentor Studio proposes the changes for review before applying them, so you accept, reject, or refine them.
 
 ## Where AI fits in your workflow
 
@@ -105,7 +105,7 @@ Agentic development provides two tools for different stages of development. **Me
 | Aspect | Mentor Web | Mentor Studio |
 | ------ | ---------- | ------------- |
 | Best for | Creating new apps, rapid prototyping, iterating on generated apps | Modifying apps, adding features, extending logic, explaining code, documenting elements, identifying technical debt |
-| App type | New and existing web apps | Web apps; libraries and agentic apps (beta) |
+| App type | New and existing web apps | Web apps, libraries, and agentic apps |
 | Complexity | Common app patterns and structures | Any, including advanced logic and integrations |
 | Access | **ODC Portal** > **Apps** > **Create app** > **Generate with Mentor** | **ODC Studio** > **Mentor** icon in toolbar |
 | Tutorial | [Create an app with AI](mentor-web/create-app.md) | [Modify an app with AI](mentor-studio/modify-app.md) |

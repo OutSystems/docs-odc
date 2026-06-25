@@ -7,7 +7,7 @@ tags:
   - Logic
   - Mentor
   - Mentor Studio
-  - Screens
+  - Technical Debt
 guid: 5abbc7b0-dedb-49ec-9af5-41e3220bb071
 locale: en-us
 app_type: reactive web apps
@@ -37,16 +37,10 @@ This page describes what Mentor Studio edits and the types of tasks it supports.
 Mentor Studio edits the elements the open asset supports. Each asset type has its own architecture, which determines what's available in a Mentor conversation. Refer to the asset documentation for the complete element list:
 
 * [Apps](../../app-architecture/intro.md) covers web apps.
-* [Libraries](../../building-apps/libraries/libraries.md) covers general-purpose and mobile libraries (beta).
-* [Agentic apps in ODC](../../building-apps/build-ai-powered-apps/agentic-apps.md) covers agentic apps (beta). Mentor Studio edits agents in Agent Workbench, the ODC capability for building and managing agents.
+* [Libraries](../../building-apps/libraries/libraries.md) covers general-purpose and mobile libraries.
+* [Agentic apps in ODC](../../building-apps/build-ai-powered-apps/agentic-apps.md) covers agentic apps. Mentor Studio edits agents in Agent Workbench, the ODC capability for building and managing agents.
 
 Generated code follows OutSystems conventions and integrates with the existing app model. Build mobile apps manually in ODC Studio.
-
-<div class="info" markdown="1">
-
-To edit libraries and agentic apps, open **ODC Studio** > **Settings** and select **Enable Mentor for Agentic apps and Libraries** under **Beta**.
-
-</div>
 
 ## Code analysis
 
@@ -66,6 +60,7 @@ Mentor Studio supports a range of development tasks. The following table describ
 | Add features | Create entities, screens, or logic for a requirement | "Create a Comment entity linked to the Ticket entity with a list screen." |
 | Add documentation | Generate descriptions for elements and add comments to explain code | "Add descriptions to all server actions in the OrderManagement app." |
 | Explain code | Understand unfamiliar logic or get an overview of app structure | "Explain what the GetActiveOrders aggregate does." |
+| Compare changes | Compare the current state against the prior state | "Show me what changed in the CreateOrder action." |
 | Fix errors and warnings | Resolve TrueChange errors and warnings | "Fix the errors in the CreateOrder action." |
 | Find and fix bugs | Identify inconsistencies or unexpected behavior | "Check the ProcessPayment action for potential bugs." |
 | Modernize legacy code | Redesign UI patterns or refactor outdated logic | "Update the CustomerList screen to use the card layout." |

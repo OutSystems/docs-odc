@@ -1,5 +1,5 @@
 ---
-summary: The OutSystems Enterprise Context Graph combines AI agents, the OutSystems Model, and the compiler to transform natural language into app structures.
+summary: "OutSystems Developer Cloud (ODC) agentic development: AI agents, the OutSystems Model, and the compiler form the Enterprise Context Graph."
 tags:
   - Agentic
   - AI
@@ -40,7 +40,7 @@ Understanding how these components work together explains why explicit prompts p
 
 ## AI agents
 
-Agentic development uses AI agents that combine general-purpose Large Language Models with OutSystems-specific knowledge and instructions. Unlike simple prompt-response AI, these agents autonomously plan, reason through multi-step tasks, and coordinate changes across different parts of an app. They understand natural language and map it to OutSystems development patterns. When you write a prompt or upload a requirement document, the agents interpret intent and identify entities, relationships, roles, and UI patterns. This interpretation becomes the blueprint (in Mentor Web) or implementation plan (in Mentor Studio) that you review before changes are applied.
+Agentic development uses AI agents that combine general-purpose Large Language Models with OutSystems-specific knowledge and instructions. Unlike simple prompt-response AI, these agents autonomously plan, reason through multi-step tasks, and coordinate changes across different parts of an app. They understand natural language and map it to OutSystems development patterns. When you write a prompt or upload a requirement document, the agents interpret intent and identify entities, relationships, roles, and UI patterns. This interpretation becomes the blueprint (in Mentor Web) or the proposed changes (in Mentor Studio) that you review before changes are applied.
 
 The agents are equipped with knowledge of common app structures: entities and their relationships, user roles and permissions, screen layouts, and business logic patterns. When input matches these recognized patterns, agentic development generates accurate structures. When input is ambiguous or uses terms that don't match recognized patterns, the agents make their best interpretation based on context.
 
@@ -99,7 +99,7 @@ The diagram shows the components involved in app modification. When you enter a 
 * **Context analysis.** Mentor reads the current app model, including entities, screens, actions, and relationships.
 * **Input.** A prompt expressing your intent: changes, explanations, code review, or implementation guidance.
 * **Interpretation.** The AI agents analyze the prompt in the context of the existing app structure.
-* **Implementation plan.** Mentor presents the proposed changes for review before applying them.
+* **Proposed changes.** Mentor Studio presents the changes it plans to make for review, and applies them only after you accept.
 * **App update.** After approval, Mentor applies the changes to the app model.
 * **Compilation.** When published, the compiler translates the updated app model into deployable code.
 
