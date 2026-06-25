@@ -256,7 +256,7 @@ Azure SQL
 * When creating the Azure SQL connection in ODC Portal, insert the same username format (`username@instance-name`) on the username input.
 * When creating the Azure SQL connection in ODC Portal, in Additional Parameters input you might need to add `encrypt=true;trustServerCertificate=true;`.
 
-## Authenticate with Microsoft Entra ID
+**Authenticate with Microsoft Entra ID**
 
 The Azure SQL connector supports Microsoft Entra ID (formerly Azure Active Directory) authentication using a Service Principal. This lets you use identity-based access to Azure SQL databases, aligned with your organization's security policies managed through Entra ID.
 
