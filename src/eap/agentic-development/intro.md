@@ -38,7 +38,7 @@ For a video walkthrough of agentic development concepts and tools, take the [Age
 
 </div>
 
-![Mentor Web showing the app generation chat interface, and Mentor Studio showing the Mentor panel in ODC Studio.](images/ai-app-code-gen-pl-odcs.png "Mentor Web and Mentor Studio")
+![Mentor Web showing the app generation chat interface, and Mentor Studio showing the Mentor panel in ODC Studio.](images/ai-app-code-gen-odcs.png "Mentor Web and Mentor Studio")
 
 Choose your starting point based on what you want to accomplish:
 
