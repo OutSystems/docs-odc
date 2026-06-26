@@ -90,26 +90,23 @@ The same app can be the default app for more than one custom domain.
 
 To change the default app, follow the same steps and select a different app in step 5. To remove the default app, select **No App**. Republish the app again to apply the changes.
 
-## URL behavior
-
-When you set a default app for a custom domain, ODC evaluates requests against application paths before the root path. The following table shows how ODC handles requests when `MyApp` is the default app for `www.company.com`, and `MyApp` has a screen named `OtherApp`.
-
-| URL | Redirect: no redirect | Redirect: permanent or temporary |
-| --- | --- | --- |
-| `www.company.com` | Loads `MyApp` home screen | Loads `MyApp` home screen |
-| `www.company.com/MyApp` | Loads `MyApp` home screen | Redirects to `www.company.com` |
-| `www.company.com/MyApp/OtherApp` | Loads `MyApp` `OtherApp` screen | Redirects to `www.company.com/OtherApp` |
-| `www.company.com/OtherApp` | Loads `OtherApp` home screen | Loads `OtherApp` home screen |
-
-When you open an app from ODC Studio or the ODC Portal, for example, by clicking **Open in browser**, ODC uses the stage's default domain, not the app domain.
-
-Built-in functions such as `GetURLHost` and `GetRelativeURL` return the URL of the end-user's request.
-
-## Limitations
+## Known limitations
 
 ### Screen name collision
 
 If `MyApp` has a screen named `OtherApp` and you enable the redirect, accessing `www.company.com/MyApp/OtherApp` redirects to `www.company.com/OtherApp`. ODC loads the `OtherApp` app, not the `OtherApp` screen inside `MyApp`. To avoid this, do not give screens the same name as other apps deployed to the same stage when the redirect is enabled.
+
+### Cross-app navigation
+
+When the default app is loaded at the root URL, the client-side router cannot disambiguate between another app on the same domain and a screen inside the default app. Cross-app navigation using Navigation Nodes fails with a "Screen not found" error.
+
+To navigate to another app within the same domain, bypass Navigation Nodes and use a JavaScript node with `window.location.assign(<url>)`.
+
+### Open in browser and URL functions
+
+When you open an app from ODC Studio or the ODC Portal by clicking **Open in browser**, ODC uses the stage's default domain, not the app domain.
+
+Built-in functions such as `GetURLHost` and `GetRelativeURL` return the URL of the end-user's request.
 
 ### Deleting or undeploying the default app
 
