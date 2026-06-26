@@ -685,8 +685,10 @@
         - href: eap/manage-platform-app-lifecycle/self-hosted/install-sh-process.md
         - topics:
             - href: eap/manage-platform-app-lifecycle/self-hosted/sh-db-setup.md
+            - href: eap/manage-platform-app-lifecycle/self-hosted/sh-registry.md
             - href: eap/manage-platform-app-lifecycle/self-hosted/install-sh.md
             - href: eap/manage-platform-app-lifecycle/self-hosted/sh-domain-config.md
+            - href: eap/manage-platform-app-lifecycle/self-hosted/sh-open-configurator.md
     - href: eap/manage-platform-app-lifecycle/configuration-management.md
     - href: eap/manage-platform-app-lifecycle/configure-app-settings.md
     - href: eap/manage-platform-app-lifecycle/custom-domains.md

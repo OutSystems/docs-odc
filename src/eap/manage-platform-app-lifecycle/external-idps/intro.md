@@ -12,7 +12,6 @@ tags:
   - IdP
   - OIDC
   - SAML
-  - Security
 audience:
   - Developer
   - Platform administrator
@@ -57,12 +56,35 @@ The following diagram shows an example setup.
 
 You can assign more than one identity provider to the same scope. A single stage can have multiple active IdPs at once, including multiple custom external IdPs, and you can keep the built-in provider active. If you want users to authenticate only through external IdPs for a scope, remove the built-in identity provider assignment. For more information, refer to [Manage identity providers](manage-external-idps.md#remove-built-in-idp-assignment).
 
+<div class="warning" markdown="1">
+
+In a self-hosted tenant, all stages require an external IdP for end-user authentication, including the Development stage. Refer to [Identity providers in self-hosted tenants](#idp-self-hosted).
+
+</div>
+
 If you want users associated with an external provider to retain their profile and associated roles, they should use the same email address as on the built-in provider. For more details, refer to [User matching and profile creation](identity-claims-email-verification.md#claim-mapping-logic).
 
 The way you configure scopes differs slightly depending on the authentication protocol:
 
 * **OpenID Connect providers**: You can apply the same IdP configuration to multiple scopes (both organization and any number of stages).
 * **SAML 2.0 providers**: You can only define one scope (organization **or** a specific stage) per configuration. However, you can still create and assign multiple SAML 2.0 providers to the same scope if needed.
+
+## Identity providers in self-hosted tenants {#idp-self-hosted}
+
+In a self-hosted tenant, end users of every stage must authenticate through an external OIDC identity provider. This includes the Development stage, which runs in the OutSystems Cloud. If a stage has no external IdP assigned, the pre-built login screen has nothing to show and app authentication fails.
+
+The built-in provider is only available for IT-user sign-in to the ODC Portal and ODC Studio. It cannot be used for end-user authentication in any stage.
+
+Two separate OIDC connector configurations are required, one for each deployment context:
+
+* **For Cloud**: Assigned to the Development stage. Requires a client secret.
+* **For self-hosted**: Assigned to Test and Production stages. Does not require a client secret (public client).
+
+A connector created as one type cannot be assigned to stages of the other type.
+
+The same underlying IdP service can back both connectors. A common setup uses one IdP service with two app registrations: one for Development and one shared across Test and Production.
+
+To add each connector type, go to **ODC Portal** > **Management** > **Govern** > **Identity providers**. In the **Add Provider** dropdown, select **OpenID Connect** under the relevant section (**For Cloud** or **For self-hosted**). After adding both connectors, assign each to its corresponding stage.
 
 ## System considerations {#system-considerations}
 
@@ -86,7 +108,7 @@ If your IdP can't be exposed to the public internet, allowlist the ODC Identity 
     Expected: https://login.microsoftonline.com/{tenantid}/v2.0
     ```
 
-* Only the `client_secret_post` authentication method is supported.
+* Only the `client_secret_post` authentication method is supported for providers used in cloud stages. In self-hosted tenants, providers configured **For self-hosted** are public clients and do not require a client secret.
 
 ### System considerations for SAML 2.0
 

@@ -29,9 +29,11 @@ In this model:
 
 * The **ODC Portal** and **development stage** are hosted and operated by OutSystems in the cloud. Customers are responsible for the applications and data they create in this environment, but not for the infrastructure or platform services that support them.
 
-* The **self-hosted stages** (such as Test and Production) run in infrastructure fully managed by the customer. These stages rely on OpenShift and PostgreSQL clusters provisioned and operated by the customer. However, key OutSystems components—such as runtime services, secrets management, and telemetry collectors—are deployed into these environments by OutSystems. While these services run within the customer’s infrastructure, they remain fully owned, patched, and evolved by OutSystems.
+* The **self-hosted stages** (such as Test and Production) run in infrastructure fully managed by the customer. These stages rely on Kubernetes and PostgreSQL clusters provisioned and operated by the customer. However, key OutSystems components—such as runtime services, secrets management, and telemetry collectors—are deployed into these environments by OutSystems. While these services run within the customer’s infrastructure, they remain fully owned, patched, and evolved by OutSystems.
 
 This architecture enables customers to meet regulatory, integration, and operational requirements while continuing to benefit from OutSystems’ managed platform updates and support. At the same time, it introduces a clear operational boundary: **OutSystems manages the platform; customers manage the runtime infrastructure**.
+
+Self-hosted ODC stages can run on OpenShift, AKS, EKS, or GKE. This document covers the shared responsibility model across all supported distributions.
 
 This article defines how responsibilities are split across that boundary. It's intended for:
 
@@ -45,7 +47,7 @@ By understanding this shared responsibility model, customers can:
 * Ensure infrastructure readiness for platform operations.
 * Confidently scale and operate their self-hosted ODC environments in coordination with OutSystems.
 
-## Responsibility model
+## Responsibility model {#responsibility-model}
 
 The ODC self-hosted model introduces a clear operational boundary between what OutSystems delivers and maintains, and what the customer must provision, operate, and secure.
 
@@ -73,11 +75,11 @@ The lower layers reflect the customer's responsibilities. These include provisio
 
 ![Diagram of the ODC self-hosted shared responsibility model, showing OutSystems responsibilities for portal, development stage, and OutSystems services in the cloud and self-hosted infrastructure, and customer responsibilities for apps, data, infrastructure expertise, identity provider, network, databases, APM, and sizing.](images/sh-responsability-mode-diag.png "Shared responsibility model for ODC self-hosted across OutSystems cloud and customer infrastructure")
 
-## OutSystems responsibilities
+## OutSystems responsibilities {#outsystems-responsibilities}
 
 OutSystems is responsible for the design, operation, and continuous evolution of the ODC platform. In the self-hosted model, this includes components that run in the OutSystems cloud as well as services that are deployed into customer infrastructure.
 
-### OutSystems cloud-hosted platform services
+### OutSystems cloud-hosted platform services {#cloud-hosted-services}
 
 These services are fully operated by OutSystems and hosted in the cloud. Customers interact with them through standard platform interfaces, but do not provision or maintain them.
 
@@ -89,7 +91,7 @@ OutSystems is responsible for:
 
 These services remain fully under OutSystems’ control for availability, security, scalability, and updates.
 
-### OutSystems self-hosted services
+### OutSystems self-hosted services {#self-hosted-services}
 
 These are services provided and maintained by OutSystems, but deployed inside the customer’s infrastructure to support the operation of the self-hosted stages.
 
@@ -101,32 +103,32 @@ OutSystems is responsible for:
 
 These services include the core runtime services that execute applications, along with supporting components for secrets management, telemetry collection, deployment orchestration, and infrastructure integration.
 
-Although these services run inside the customer’s OpenShift environment, customers **must not modify, patch, or replace them**. Instead, customers are responsible for:
+Although these services run inside the customer’s Kubernetes cluster, customers **must not modify, patch, or replace them**. Instead, customers are responsible for:
 
 * Provisioning and maintaining the infrastructure where these services run.
 * Ensuring that infrastructure meets system and network requirements and is accessible for updates.
 
 This split allows customers to maintain control over their data and hosting model, while preserving OutSystems’ ability to deliver a consistent and supportable platform experience.
 
-## Customer responsibilities
+## Customer responsibilities {#customer-responsibilities}
 
 In the ODC self-hosted model, customers take ownership of the hosting environment where the self-hosted stages run. This includes provisioning and operating the infrastructure, securing access, and managing the data and applications that live within these environments.
 
 To ensure a successful deployment, customers are responsible for maintaining a stable, secure, and accessible hosting environment that meets the platform’s system requirements.
 
-### Customers must have infrastructure expertise
+### Customers must have infrastructure expertise {#infrastructure-expertise}
 
 Because the self-hosted stages depend on infrastructure components operated by the customer, teams must have the skills and experience to manage that environment. This includes:
 
-* Container orchestration and RedHat OpenShift.
+* Experience operating a production Kubernetes cluster (OpenShift, AKS, EKS, or GKE), including networking, storage, and RBAC.
 * PostgreSQL database management.
 * Enterprise networking, including DNS, routing, and firewalls.
 
 OutSystems does not manage or support the infrastructure layer directly. Customers must ensure they have qualified personnel to provision, monitor, and troubleshoot the hosting environment.
 
-Customers are responsible for sizing the infrastructure that hosts self-hosted stages. This includes the OpenShift and PostgreSQL clusters and any supporting services. Infrastructure must be provisioned with enough capacity to support ODC self-hosted [installation requirements](sh-install-reqs.md), application workloads, and operational continuity, including during updates and peak usage periods.
+Customers are responsible for sizing the infrastructure that hosts self-hosted stages. This includes the Kubernetes and PostgreSQL clusters and any supporting services. Infrastructure must be provisioned with enough capacity to support ODC self-hosted [installation requirements](sh-install-reqs.md), application workloads, and operational continuity, including during updates and peak usage periods.
 
-### Customers must secure access and identity
+### Customers must secure access and identity {#access-identity}
 
 Customers are responsible for securing access to their infrastructure and runtime stages. This includes:
 
@@ -137,7 +139,7 @@ Customers are responsible for securing access to their infrastructure and runtim
 
 OutSystems integrates with customer-provided identity systems but does not control access policies within the self-hosted environment.
 
-### Customers are responsible for application lifecycle and observability
+### Customers are responsible for application lifecycle and observability {#app-lifecycle}
 
 Customers are fully responsible for the applications they develop and deploy into both cloud-hosted and self-hosted stages. This includes:
 
@@ -147,7 +149,16 @@ Customers are fully responsible for the applications they develop and deploy int
 
 OutSystems provides telemetry data through the monitoring platform, but customers must host and operate their own observability destination.
 
-### Customers must maintain continuous platform connectivity
+### Customers must manage the custom container registry {#manage-registry}
+
+For custom registry configurations, customers are responsible for:
+
+* Provisioning and maintaining the external OCI registry before starting setup.
+* Rotating registry credentials before expiry.
+* Configuring and maintaining retention and garbage collection policies on the registry.
+* Maintaining registry connectivity after setup.
+
+### Customers must maintain continuous platform connectivity {#platform-connectivity}
 
 OutSystems is responsible for updating the self-hosted services and for collecting telemetry from them, but both require continuous cooperation from the customer. All [network requirements](sh-install-reqs.md), including telemetry endpoints, must remain continuously available. Customers are responsible for ensuring this and are expected to:
 
@@ -157,7 +168,7 @@ OutSystems is responsible for updating the self-hosted services and for collecti
 
 Customers are not responsible for the self-hosted services update logic itself, but must ensure their infrastructure does not prevent it.
 
-### Customers must ensure database upgrades
+### Customers must ensure database upgrades {#database-upgrades}
 
 ODC follows a versioning and compatibility strategy for the PostgreSQL databases used in self-hosted stages.
 
@@ -179,11 +190,11 @@ To avoid such risks, customers should:
 * Plan internal upgrade cycles to align with the platform's supported versions.
 * Provision new tenants with self-hosted stages on the most recent supported PostgreSQL version.
 
-## Best practices for a smooth operation
+## Best practices for a smooth operation {#best-practices}
 
 To ensure the long-term success and supportability of an ODC self-hosted deployment, customers should adopt practices that align with the shared responsibility model and anticipate key operational requirements.
 
-### Maintain infrastructure readiness for platform updates
+### Maintain infrastructure readiness for platform updates {#infra-readiness}
 
 OutSystems self-hosted services fetch periodic updates. While the update logic is handled by OutSystems, successful delivery depends on network requirements to be met.
 
@@ -191,23 +202,23 @@ OutSystems self-hosted services fetch periodic updates. While the update logic i
 * Avoid firewall or proxy changes that may block critical update channels.  
 * Monitor infrastructure health to prevent issues that could disrupt deployment or patching.
 
-### Monitor your own infrastructure and applications
+### Monitor your own infrastructure and applications {#monitor-infra}
 
 OutSystems does not operate the customer’s hosting environment or application workloads. Customers are responsible for ensuring infrastructure and applications perform as expected.
 
-* Use appropriate tooling to monitor OpenShift, PostgreSQL, networking, and storage health.
+* Use appropriate tooling to monitor your Kubernetes cluster, PostgreSQL, networking, and storage health.
 * Configure observability and alerting in your APM tool to track application behavior.
 * Investigate incidents starting from your infrastructure and app layers before escalating to OutSystems.
 
-### Keep your system versions and configuration aligned with prerequisites
+### Keep your system versions and configuration aligned with prerequisites {#version-alignment}
 
 OutSystems publishes system requirements and version compatibility guidelines. Staying within those parameters avoids deployment failures and support risks.
 
 * Regularly review system requirement updates.
-* Plan upgrades to OpenShift or PostgreSQL in coordination with OutSystems recommendations.
+* Plan upgrades to your Kubernetes cluster or PostgreSQL in coordination with OutSystems recommendations.
 * Avoid unsupported customizations to infrastructure components.
 
-### Assign clear internal ownership for each responsibility area
+### Assign clear internal ownership for each responsibility area {#internal-ownership}
 
 The hybrid architecture touches multiple domains—platform, infrastructure, security, and observability. Clarity on who owns what within the customer organization helps reduce misalignment and delays.
 

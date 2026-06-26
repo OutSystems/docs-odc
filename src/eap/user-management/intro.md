@@ -101,7 +101,13 @@ Authentication verifies a user’s identity before granting access. ODC supports
 
     * ODC manages user sessions with a default timeout of 12 hours. You can [configure session duration and idle timeout](configure-user-session.md) per stage to meet your security requirements.
 
-* **External Identity Providers (IdPs)**: Use third-party IdPs for authentication.  
+    <div class="info" markdown="1">
+
+    In self-hosted tenants, the built-in provider is only available for IT-user sign-in to the ODC Portal and ODC Studio. End-user authentication requires an external IdP for every stage.
+
+    </div>
+
+* **External Identity Providers (IdPs)**: Use third-party IdPs for authentication. In self-hosted tenants, an external IdP is mandatory for end-user authentication in every stage, including the Development stage. For details, refer to [Identity providers in self-hosted tenants](../manage-platform-app-lifecycle/external-idps/intro.md#idp-self-hosted).
 
     For more information, refer to:
 
