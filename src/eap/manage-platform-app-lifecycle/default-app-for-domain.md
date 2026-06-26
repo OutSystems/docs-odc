@@ -2,7 +2,6 @@
 summary: Learn how to designate a default app for a custom domain in ODC so end-users can access your app directly at the root URL.
 tags:
   - Domains
-  - End-users
   - Web
 locale: en-us
 guid: c518c071-ef6a-4c10-b947-2fd93f6dc4d2
@@ -24,7 +23,7 @@ helpids: 30719
 
 # Default app for a custom domain
 
-When you set a **default app for a custom domain**, ODC loads that app at the root URL, for example `www.company.com`. Set a default app when one app serves as the primary entry point for a custom domain, such as a customer portal or marketing site.
+When you set a **default app for a custom domain**, ODC loads that app at the root URL, for example `www.example.com`. Set a default app when one app serves as the primary entry point for a custom domain, such as a customer portal or marketing site.
 
 <div class="info" markdown="1">
 
@@ -66,7 +65,7 @@ To set a default app, follow these steps:
 
     ![ODC Portal Default App section showing the Redirect options: Permanent using HTTP 301, Temporary using HTTP 302, and No redirect.](images/default-app-redirect-pl.png "Redirect options in the Default App section")
 
-    * **Permanent (301)**: Redirects `www.company.com/AppName` to `www.company.com`. Recommended for production. This is the default setting.
+    * **Permanent (301)**: Redirects `www.example.com/AppName` to `www.example.com`. Recommended for production. This is the default setting.
 
     * **Temporary (302)**: Same redirect, but signals a temporary arrangement to browsers and search engines. Use for testing or short-term promotions.
 
@@ -94,11 +93,11 @@ To change the default app, follow the same steps and select a different app in s
 
 ### Screen name collision
 
-If `MyApp` has a screen named `OtherApp` and you enable the redirect, accessing `www.company.com/MyApp/OtherApp` redirects to `www.company.com/OtherApp`. ODC loads the `OtherApp` app, not the `OtherApp` screen inside `MyApp`. To avoid this, do not give screens the same name as other apps deployed to the same stage when the redirect is enabled.
+If `MyApp` has a screen named `OtherApp` and you enable the redirect, accessing `www.example.com/MyApp/OtherApp` redirects to `www.example.com/OtherApp`. ODC loads the `OtherApp` app, not the `OtherApp` screen inside `MyApp`. To avoid this, do not give screens the same name as other apps deployed to the same stage when the redirect is enabled.
 
 ### Cross-app navigation
 
-When the default app is loaded at the root URL, the client-side router cannot disambiguate between another app on the same domain and a screen inside the default app. Cross-app navigation using Navigation Nodes fails with a "Screen not found" error.
+When the default app is loaded at the root URL, the client-side router cannot distinguish between another app on the same domain and a screen inside the default app. Cross-app navigation using navigation nodes fails with a ``Screen not found`` error.
 
 To navigate to another app within the same domain, bypass Navigation Nodes and use a JavaScript node with `window.location.assign(<url>)`.
 
