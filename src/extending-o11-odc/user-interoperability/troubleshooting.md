@@ -6,10 +6,19 @@ figma: https://www.figma.com/design/rWH1MmckD8Wz3H9D2QQEiT/Platform-Unification-
 coverage-type:
   - unblock
 topic:
-app_type: mobile apps,reactive web apps,traditional web apps
+app_type: mobile apps,reactive web apps
 platform-version: odc
-audience: Developer,Platform administrator
-tags: Authentication,End-user Authentication,End-users,IdP,Roles,SSO,Troubleshooting
+audience:
+  - Developer
+  - Platform administrator
+tags:
+  - Authentication
+  - End-user Authentication
+  - End-users
+  - IdP
+  - Roles
+  - SSO
+  - Troubleshooting
 outsystems-tools:
   - none
 helpids:

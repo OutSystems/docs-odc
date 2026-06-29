@@ -13,9 +13,10 @@ audience:
   - Platform administrator
   - Tech lead
 tags:
+  - Authentication
   - Data
+  - External Authentication
   - Infrastructure
-  - Lifecycle
   - Logic
   - Platform Server
 outsystems-tools:
@@ -37,16 +38,14 @@ The following table lists the minimum **Platform Server** and **LifeTime** versi
 
 | Capability | Minimum Platform Server | Minimum LifeTime |
 | --- | --- | --- |
-| Data interoperability | 11.40.0 | 11.28.0 **\*** |
-| Infrastructures with additional pipelines | 11.40.0 | 11.28.2 **\*** |
-| Write capability for Oracle databases | 11.41.0 | 11.28.0 **\*** |
-| User and Tenant system entities exposed to ODC | 11.41.0 | 11.28.2 **\*** |
+| - ODC read/write O11 data for SQL Server<br/>- ODC read O11 data for Oracle<br/>- Support for infrastructures with additional pipelines | 11.40.0 | 11.29.0 **\*** |
+| - ODC write O11 data for Oracle<br/>- User and Tenant system entities exposed to ODC | 11.41.0 | 11.29.0 **\*** |
 
-<div class="warning" markdown="1">
+<div class="info" markdown="1">
 
-**\*** To use connections with a LifeTime service account that is bound to your ODC organization you need LifeTime 11.29.0 or later.
+**\*** **LifeTime 11.29.0** ensures connectivity through a LifeTime service account bound to your ODC organization. If you have a previous version of LifeTime, existing LifeTime service account access tokens continue to work until they expire.
 
-Starting June 29, 2026, creating or generating a LifeTime service account access token for data interoperability requires LifeTime 11.29.0 or later.
+Creating or generating a new LifeTime service account access token for data interoperability requires LifeTime 11.29.0 or later.
 
 After upgrading LifeTime to 11.29.0 or later, update your integration to use service accounts created with the new version. For the updated steps, see [Configure LifeTime access for ODC interoperability](data-interoperability/configure-connection.md#connect-o11-infrastructure).
 
@@ -76,5 +75,19 @@ The following table lists the minimum **Platform Server** version required for l
 
 Your development teams also need the following tool versions:
 
-* Service Studio 11.55.59.64640 or later
-* ODC Studio 1.6.21 (Build 9475) or later
+* **Service Studio 11.55.59.64640** or later
+* **ODC Studio 1.6.21 (Build 9475)** or later
+
+## User interoperability {#user-interop}
+
+The following table lists the minimum **Platform Server** version required for user interoperability with O11 built-in authentication:
+
+| Capability | Minimum Platform Server |
+| --- | --- |
+| User interoperability with O11 built-in authentication | 11.27.0 |
+
+<div class="info" markdown="1">
+
+User interoperability with **O11 external authentication** doesn't require any specific version of OutSystems components.
+
+</div>

@@ -6,10 +6,17 @@ figma: https://www.figma.com/design/rWH1MmckD8Wz3H9D2QQEiT/Platform-Unification-
 coverage-type:
   - apply
 topic:
-app_type: reactive web apps,mobile apps
+app_type: mobile apps,reactive web apps
 platform-version: odc
-audience: Front-end developer,Developer
-tags: Authentication,End-user Authentication,External Authentication,IdP,SSO
+audience:
+  - Developer
+  - Front-end developer
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - SSO
 outsystems-tools:
   - odc studio
 helpids:

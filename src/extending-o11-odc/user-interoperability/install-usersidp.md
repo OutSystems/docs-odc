@@ -6,10 +6,19 @@ figma: https://www.figma.com/design/rWH1MmckD8Wz3H9D2QQEiT/Platform-Unification-
 coverage-type:
   - apply
 topic:
-app_type: mobile apps,reactive web apps,traditional web apps
-platform-version: o11
-audience: Tech lead,Platform administrator
-tags: Authentication,End-user Authentication,End-users,External Authentication,IdP,OIDC,SSO
+app_type: mobile apps,reactive web apps
+platform-version: odc
+audience:
+  - Platform administrator
+  - Tech lead
+tags:
+  - Authentication
+  - End-user Authentication
+  - End-users
+  - External Authentication
+  - IdP
+  - OIDC
+  - SSO
 outsystems-tools:
   - forge
   - user management app
