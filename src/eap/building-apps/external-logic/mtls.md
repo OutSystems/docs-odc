@@ -4,15 +4,15 @@ tags: mtls, rest apis, .net development, c# programming, software development ki
 locale: en-us
 guid: e7dd9dd2-dccf-4da1-8eb3-f94dd1982534
 app_type: mobile apps, reactive web apps
-figma: 
+figma:
 platform-version: odc
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+isautopublish: true
 ---
 
 # Supporting mTLS in ODC
@@ -64,9 +64,9 @@ To create an OutSystems external library that consumes a mTLS API in C#, follow 
 
 To set up your external library project, follow these steps:
 
-1. To create your library using the class library template, run the following code. Give the project a name, such as `ConsumeMTLSExample`, and select **.NET 8.0 (Long-term support)** as the framework.
+1. To create your library using the class library template, run the following code. Give the project a name, such as `ConsumeMTLSExample`. The command creates a class library targeting the .NET version installed in the [prerequisites](README.md#prerequisites).
 
-    `dotnet new classlib --language "C#" --framework "net8.0" -o ConsumeMTLSExample`
+    `dotnet new classlib --language "C#" -o ConsumeMTLSExample`
 
 ### Generate the API client code
 
@@ -178,7 +178,7 @@ For more information about the NSwag CLI, go to the [NSwag documentation page](h
 
 <div class="warning" markdown="1">
 
-At the [mTLS example project](https://github.com/OutSystems/OutSystems.ExternalLibraries.SDK-templates/tree/main/templates/mtls/resources) the NSwag templates and config files are examples that can be changed to better comply with any development guidelines. As long as it also complies with OutSystems' custom code [requirements](https://success.outsystems.com/documentation/outsystems_developer_cloud/building_apps/extend_your_apps_with_custom_code/external_libraries_sdk_readme/#from-scratch)
+At the [mTLS example project](https://github.com/OutSystems/OutSystems.ExternalLibraries.SDK-templates/tree/main/templates/mtls/resources) the NSwag templates and config files are examples that can be changed to better comply with any development guidelines. As long as it also complies with the OutSystems custom code [requirements](https://success.outsystems.com/documentation/outsystems_developer_cloud/building_apps/extend_your_apps_with_custom_code/external_libraries_sdk_readme/#from-scratch)
 
 </div>
 
@@ -300,7 +300,7 @@ To test the custom code and create a C# test project, follow these steps:
 1. Once you finish the code, save the project and publish it. For example, right-click **ConsumeMTLSExample** and select **Open in Terminal**. Run the command,
     ` dotnet publish -c Release `
 
-1. Zip the published output folder (for example, ConsumeMTLSExample > bin > Release > net8.0 > publish) to the root folder of a ZIP file. For example, `ExternalLibrary.zip` is the name of your external library.
+1. Zip the contents of the publish output folder to the root of a ZIP file. The folder is inside the project's `bin/Release` directory, under a subfolder matching your target framework. For example, `ExternalLibrary.zip` is the name of your external library.
 
 ## Upload the library to ODC Portal
 

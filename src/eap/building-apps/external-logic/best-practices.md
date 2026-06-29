@@ -17,6 +17,7 @@ tags: external libraries, best practices, private gateway, cloud connectivity, a
 helpids:
 outsystems-tools:
   - none
+isautopublish: true
 ---
 # Best practices for using external libraries
 
@@ -56,9 +57,9 @@ Implement logging in your external libraries to track behavior and diagnose issu
 
 * **Always add logging**: Don't skip logging in your external libraries. Proper logging is essential for troubleshooting issues in production.
 
-* **Use the ILogger interface**: Your custom code must use the [Microsoft Extension ILogger Interface](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger?view=net-8.0-pp) provided in the Library class constructor. Don't use `Console.WriteLine`. Console logs aren't visible in the ODC Portal but can be accessed by OutSystems staff in lower level system logs.
+* **Use the ILogger interface**: Your custom code must use the [Microsoft Extension ILogger Interface](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger) provided in the Library class constructor. Don't use `Console.WriteLine`. Console logs aren't visible in the ODC Portal but can be accessed by OutSystems staff in lower level system logs.
 
-* **Use appropriate [log levels](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.loglevel?view=net-8.0-pp)**:  This helps you filter logs effectively when troubleshooting. In the ODC logs, only Information and higher levels are captured and visible in the [ODC Portal logs](../../monitor-and-troubleshoot/monitor-apps.md).
+* **Use appropriate [log levels](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.loglevel)**:  This helps you filter logs effectively when troubleshooting. In the ODC logs, only Information and higher levels are captured and visible in the [ODC Portal logs](../../monitor-and-troubleshoot/monitor-apps.md).
 
 * **Don't log sensitive information**: Ensure that logging doesn't expose personal data or credentials, to comply with data protection regulations.
 
