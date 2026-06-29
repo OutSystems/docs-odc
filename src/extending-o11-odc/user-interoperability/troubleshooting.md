@@ -24,6 +24,7 @@ outsystems-tools:
 helpids:
 isautopublish: true
 ---
+
 # Troubleshooting user interoperability issues
 
 This page describes some common issues you may encounter for [user interoperability between ODC and O11 apps](intro.md), and how to solve them.

@@ -25,6 +25,7 @@ outsystems-tools:
 helpids:
 isautopublish: true
 ---
+
 # Set up O11 and ODC single sign-on for O11 external authentication
 
 ![Diagram of user interoperability, step 1](images/user-interoperability-process-external-1-diag.png "User interoperability, step 1")
@@ -41,13 +42,13 @@ To set up O11 and ODC single sign-on for an O11 external authentication scenario
 
 ## Set up O11 external identity provider in ODC {#setup}
 
-When your O11 apps authenticate end users through an external identity provider (IdP), configure authentication with the same external IdP in ODC. Refer to [ODC documentation](https://www.outsystems.com/tk/redirect?g=5aa8692d-68bf-41a1-89ec-5e8fc7069e29) to execute the following steps:
+When your O11 apps authenticate end users through an external identity provider (IdP), configure authentication with the same external IdP in ODC. Refer to [ODC documentation](../../eap/manage-platform-app-lifecycle/external-idps/intro.md) to execute the following steps:
 
-1. [Add the external IdP in ODC](https://success.outsystems.com/documentation/outsystems_developer_cloud/user_management/configuring_authentication_with_external_identity_providers/#add-an-external-idp).
+1. [Add the external IdP in ODC](../../eap/manage-platform-app-lifecycle/external-idps/intro.md#add-an-external-idp).
 
     <div class="info" markdown="1">
 
-    If you plan to [convert your O11 apps to ODC](https://www.outsystems.com/tk/redirect?g=0a6f2684-c594-4eca-9cbf-0780c9b3c5ae), select one of the following values for the [user profile matching](https://www.outsystems.com/tk/redirect?g=bf560c9c-82b5-4c8a-ba11-09939bcc8d87) fallback attribute:
+    If you plan to [convert your O11 apps to ODC](https://www.outsystems.com/tk/redirect?g=0a6f2684-c594-4eca-9cbf-0780c9b3c5ae), select one of the following values for the [user profile matching](../../eap/manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md#user-profile-matching) fallback attribute:
 
     * **Email**
     * **Username**
@@ -56,9 +57,9 @@ When your O11 apps authenticate end users through an external identity provider 
 
     </div>
 
-1. [Configure the redirect URIs](https://success.outsystems.com/documentation/outsystems_developer_cloud/user_management/configuring_authentication_with_external_identity_providers/#idp-configure-uri).
+1. [Configure the redirect URIs](../../eap/manage-platform-app-lifecycle/external-idps/intro.md#idp-configure-uri).
 
-1. [Assign the external IdP](https://success.outsystems.com/documentation/outsystems_developer_cloud/user_management/configuring_authentication_with_external_identity_providers/#assign-an-external-idp) to your ODC stages for end-user authentication.
+1. [Assign the external IdP](../../eap/manage-platform-app-lifecycle/external-idps/intro.md#assign-an-external-idp) to your ODC stages for end-user authentication.
 
 End users then sign in once at the IdP and reuse that session across your O11 and ODC apps, with no separate credentials to manage on the ODC side.
 

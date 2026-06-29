@@ -25,13 +25,14 @@ outsystems-tools:
 helpids:
 isautopublish: true
 ---
+
 # Set up O11 and ODC single sign-on for O11 built-in authentication
 
 ![Diagram of user interoperability, step 1](images/user-interoperability-process-1-diag.png "User interoperability, step 1")
 
 This page describes how you set up [O11 and ODC single sign-on](intro.md) when your end users authenticate in your O11 apps using the **Internal** [built-in authentication](https://www.outsystems.com/tk/redirect?g=eaa92f05-a00d-4e75-a937-8c100b81d6df) - the end-user information is stored in the OutSystems database.
 
-In this scenario, the [UsersIdP component](https://www.outsystems.com/forge/component-overview/25077/o11-users-idp-o11) enables the **O11 Users app** to act as an [external OpenID Connect provider](https://www.outsystems.com/tk/redirect?g=5aa8692d-68bf-41a1-89ec-5e8fc7069e29) for your ODC organization.
+In this scenario, the [UsersIdP component](https://www.outsystems.com/forge/component-overview/25077/o11-users-idp-o11) enables the **O11 Users app** to act as an [external OpenID Connect provider](../../eap/manage-platform-app-lifecycle/external-idps/intro.md) for your ODC organization.
 
 ![Diagram of user interoperability](images/user-interop-diag.png "User interoperability")
 
@@ -63,7 +64,7 @@ The UsersIdP component **isn't supported** for O11 apps using a user provider ot
 
 Before you install and configure the UsersIdP component in an **O11 environment**, make sure the following requirements are met:
 
-* Your O11 environments meet the required **Platform Server** and **OutSystems UI** versions. Refer to [interoperability version requirements](https://www.outsystems.com/tk/redirect?g=b6c0c043-0b0a-4825-9271-afaa60bd2ee9) for the full list.
+* Your O11 environments meet the required **Platform Server** version. Refer to [interoperability version requirements](../version-requirements.md#user-interop) for the full list.
 
 * The environment is accessible from your ODC tenant over HTTPS.
 
@@ -122,7 +123,7 @@ Once you have the UsersIdP component deployed in the O11 environment, you can pr
 
 1. Click **Save**.
 
-1. Check the **Include Groups Claim** option if you want to map your [O11 end-user groups](https://www.outsystems.com/tk/redirect?g=17e0082a-7169-482d-a383-89eeab15b9df) to [ODC end-user groups](https://www.outsystems.com/tk/redirect?g=16164200-5eb0-43b4-b43d-018634c3f330).
+1. Check the **Include Groups Claim** option if you want to map your [O11 end-user groups](https://www.outsystems.com/tk/redirect?g=17e0082a-7169-482d-a383-89eeab15b9df) to [ODC end-user groups](../../eap/user-management/end-users/groups.md).
 
     <div class="info" markdown="1">
 
@@ -194,7 +195,7 @@ In ODC, add OutSystems 11 as external identity provider to create the connection
 
     * Copy the UsersIdP client secret you previously saved to the **Client secret.**
 
-    * On the **User profile mapping** section, select the fallback attribute that ODC uses for [profile matching](https://www.outsystems.com/tk/redirect?g=bf560c9c-82b5-4c8a-ba11-09939bcc8d87).
+    * On the **User profile mapping** section, select the fallback attribute that ODC uses for [profile matching](../../eap/manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md#user-profile-matching).
 
     ![Identity provider details](images/install-id-provider-details-pl.png "Identity provider details")
 

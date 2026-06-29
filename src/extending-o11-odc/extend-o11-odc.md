@@ -39,7 +39,7 @@ O11 and ODC interoperability covers three areas:
 
 * [Logic interoperability](logic-interoperability/logic-interop.md): O11 and ODC apps call each other's business logic via REST
 
-* [User interoperability](https://www.outsystems.com/tk/redirect?g=501b4fbe-f991-40da-9cae-e21d4c5025fc): End users authenticate once and navigate seamlessly between O11 and ODC apps without re-authenticating
+* [User interoperability](user-interoperability/intro.md): End users authenticate once and navigate seamlessly between O11 and ODC apps without re-authenticating
 
 ## Interoperability use cases
 

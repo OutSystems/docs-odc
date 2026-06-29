@@ -25,15 +25,16 @@ outsystems-tools:
 helpids:
 isautopublish: true
 ---
+
 # Map O11 and ODC end-user groups
 
 ![Diagram of user interoperability, step 3](images/user-interoperability-process-3-diag.png "User interoperability, step 3")
 
 After you set up [single sign-on between O11 and ODC](intro.md) and [adjusted your apps](modify-odc-app.md), end users authenticating through O11 can sign in to your ODC apps.
 
-To control what those end users can do in your ODC apps once signed in, map your existing [O11 end-user groups](https://www.outsystems.com/tk/redirect?g=17e0082a-7169-482d-a383-89eeab15b9df) to the corresponding [ODC end-user groups](https://www.outsystems.com/tk/redirect?g=16164200-5eb0-43b4-b43d-018634c3f330):
+To control what those end users can do in your ODC apps once signed in, map your existing [O11 end-user groups](https://www.outsystems.com/tk/redirect?g=17e0082a-7169-482d-a383-89eeab15b9df) to the corresponding [ODC end-user groups](../../eap/user-management/end-users/groups.md):
 
-* For each ODC end-user group that should receive O11 users, [create an end-user group mapping](https://success.outsystems.com/documentation/outsystems_developer_cloud/user_management/configuring_authentication_with_external_identity_providers/idp_and_end_user_group_mapping/#create-mapping-end-user-groups-option).
+* For each ODC end-user group that should receive O11 users, [create an end-user group mapping](../../eap/manage-platform-app-lifecycle/external-idps/end-user-group-mapping.md#create-mapping-end-user-groups-option).
 
     <div class="info" markdown="1">
 
@@ -41,7 +42,7 @@ To control what those end users can do in your ODC apps once signed in, map your
 
     * Make sure the **Include Groups Claim** option is enabled in the [UsersIdP client for the O11 environment](install-usersidp.md#step-1).
 
-    * Use the following values when [creating the end-user group mapping](https://success.outsystems.com/documentation/outsystems_developer_cloud/user_management/configuring_authentication_with_external_identity_providers/idp_and_end_user_group_mapping/#mapping-end-user-groups-option):<!-- TODO: Add relative link -->
+    * Use the following values when [creating the end-user group mapping](../../eap/manage-platform-app-lifecycle/external-idps/end-user-group-mapping.md#create-mapping-end-user-groups-option):
 
         * **Provider**: The OutSystems11 identity provider for the O11 environment your are configuring
 

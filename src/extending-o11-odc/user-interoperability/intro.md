@@ -26,6 +26,7 @@ outsystems-tools:
 helpids:
 isautopublish: true
 ---
+
 # User interoperability
 
 As you build new ODC apps while maintaining your O11 portfolio, your end users might navigate across both platforms. A fragmented login experience across platforms can disrupt their workflow, so it's crucial to plan for seamless authentication.
@@ -54,7 +55,7 @@ Configuring SSO between your O11 and ODC apps involves the following key steps:
 
     <div class="info" markdown="1">
 
-    Align [O11 session timeout](https://www.outsystems.com/tk/redirect?g=74fffe9e-d6fa-4ea9-a8ae-aa7a34a37511) and [ODC session timeout](https://www.outsystems.com/tk/redirect?g=596ba2aa-7ea4-4498-9f65-242e0b24e047), so end users don't get unexpected re-authentications when switching platforms.
+    Align [O11 session timeout](https://www.outsystems.com/tk/redirect?g=74fffe9e-d6fa-4ea9-a8ae-aa7a34a37511) and [ODC session timeout](../../eap/user-management/configure-user-session.md), so end users don't get unexpected re-authentications when switching platforms.
 
     </div>
 

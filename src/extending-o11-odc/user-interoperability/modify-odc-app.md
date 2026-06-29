@@ -22,6 +22,7 @@ outsystems-tools:
 helpids:
 isautopublish: true
 ---
+
 # Adjust apps for O11 and ODC single sign-on
 
 ![Diagram of user interoperability, step 2](images/user-interoperability-process-2-diag.png "User interoperability, step 2")
