@@ -641,6 +641,15 @@
     - href: extending-o11-odc/logic-interoperability/logic-interop.md
     - topics: 
         - href: extending-o11-odc/logic-interoperability/logic-interop-best-practices.md
+    # User interoperability
+    - href: extending-o11-odc/user-interoperability/intro.md
+    - topics:
+        - href: extending-o11-odc/user-interoperability/install-usersidp.md
+        - href: extending-o11-odc/user-interoperability/setup-external-idp.md
+        - href: extending-o11-odc/user-interoperability/modify-odc-app.md
+        - href: extending-o11-odc/user-interoperability/map-end-user-groups.md
+        - href: extending-o11-odc/user-interoperability/troubleshooting.md
+
 
 # Security
 - href: eap/security/security.md
