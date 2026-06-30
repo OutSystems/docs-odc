@@ -1,11 +1,16 @@
 ---
-summary: Explore advanced file transfer capabilities in mobile apps using the File Transfer Plugin on OutSystems Developer Cloud (ODC).
-tags: file management, plugin integration, background processing, error handling, mobile app development
+summary: Explore advanced file transfer capabilities in mobile apps using the File transfer plugin on OutSystems Developer Cloud (ODC).
+tags:
+  - Capacitor
+  - Cordova
+  - Events
+  - Mobile app
+  - Plugins
 locale: en-us
 guid: d64fd114-f737-4eb1-b5b1-f334420dfce3
 app_type: mobile apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=10123-18
 audience:
   - Developer
   - Front-end developer
@@ -17,13 +22,14 @@ coverage-type:
 topic:
   - using-cordova-plugins
   - using-capacitor-plugins
+isautopublish: true
 ---
 
-# File Transfer Plugin
+# File transfer plugin
 
-The File Transfer Plugin lets you download and upload files in your Mobile App or, in the case of a Progressive Web App (PWA), from your device. The plugin provides advanced file transfer that runs in the background, and, in the case of a Mobile App, continues even when the user closes or suspends the app.
+The File transfer plugin lets you download and upload files in your Mobile App or, in the case of a Progressive Web App (PWA), from your device. The plugin provides advanced file transfer that runs in the background, and, in the case of a Mobile App, continues even when the user closes or suspends the app.
 
-The File Transfer Plugin also has a progress update for transfers that take longer, for example video, music, and large images.
+The File transfer plugin also has a progress update for transfers that take longer, for example video, music, and large images.
 
 The plugin can currently handle files up to [maximum size](../../../getting-started/system-requirements.md#upload-request-size). Larger files will be rejected with an error.
 
@@ -33,17 +39,17 @@ See [Installing plugins](../intro.md) to learn how to install and reference a pl
 
 </div>
 
-## Using the File Transfer Plugin
+## Using the File transfer plugin
 
-To add the File Transfer Plugin to your app, follow these steps:
+To add the File transfer plugin to your app, follow these steps:
 
 1. Install the **FileTransfer** plugin and reference it in your app. For detailed instructions, refer to [Installing a plugin and adding a public element to your app](../intro.md#installing-a-plugin-and-adding-a-public-element-to-your-app).
 
 1. Open ODC Studio.
 
-1. Navigate to **Logic** > **Client Actions**, then select the File Transfer Plugin and use the actions in your logic.
+1. Navigate to **Logic** > **Client Actions**, then select the File transfer plugin and use the actions in your logic.
 
-    ![Shows how to create and use the File Transfer plugin from the ODC Studio Logic tab](images/create-and-use-filetransfer-plugin-in-logic-tab-odcs.png "Using the File Transfer Plugin in ODC Studio Logic Tab")
+    ![Shows how to create and use the File transfer plugin from the ODC Studio Logic tab](images/create-and-use-filetransfer-plugin-in-logic-tab-odcs.png "Using the File transfer plugin in ODC Studio Logic Tab")
 
 It's also possible to know the progress, completion and error of your download/upload task. To subscribe and access these events, you need to use the plugin's **HandleDownload** and **HandleUpload** UI Blocks.
 
@@ -53,21 +59,21 @@ To add and use these UI blocks to your app, follow these steps:
 
     If you wish to handle these events across the whole app, you can also add the UI Blocks to your **Interface** > **Elements** > **UI Flows** > **Common** > **Layout**.
 
-    ![Shows how to add and use the File Transfer plugin from the ODC Studio Interface tab](images/create-and-use-filetransfer-plugin-in-interface-tab-odcs.png "Using the File Transfer Plugin in ODC Studio Interface Tab")
+    ![Shows how to add and use the File transfer plugin from the ODC Studio Interface tab](images/create-and-use-filetransfer-plugin-in-interface-tab-odcs.png "Using the File transfer plugin in ODC Studio Interface Tab")
 
-    ![Shows how to add and use the File Transfer plugin from the ODC Studio Interface tab](images/filetransfer-handledown-in-widget-tree.png "Using the File Transfer Plugin in ODC Studio Interface Tab")
+    ![Shows how to add and use the File transfer plugin from the ODC Studio Interface tab](images/filetransfer-handledown-in-widget-tree-odcs.png "Using the File transfer plugin in ODC Studio Interface Tab")
 
 1. Set the handlers for **OnDownloadComplete**, **OnDownloadError**, **OnDownloadProgress**, **OnUploadComplete**, **OnUploadError**, and on **OnUploadProgress** events.
 
     In these event handlers, you can define your own logic and what to do with the event data. For example, setting the progress on a **ProgressBar** widget for **OnUploadProgress** and **OnDownloadProgress** events.
 
-    ![Shows the new handlers for HandleDownload events](images/add-handlers-to-events.png "Settings Handlers for HandleDownload events.")
+    ![Shows the new handlers for HandleDownload events](images/add-handlers-to-events-odcs.png "Settings Handlers for HandleDownload events.")
 
 ## Progressive Web Apps vs Mobile Apps
 
-In a Mobile App, the File Transfer Plugin uses the [File Plugin](../file-plugin/intro.md) to save and manage the downloaded files inside the app's sandboxed file system, as well as upload files from it. This means it's possible to choose where to save a downloaded file given a path, as well as upload a file from its path. As of now, the File Plugin is not PWA compatible and as so, it's not possible to access and manage a file system in a PWA or browser context.
+In a Mobile App, the File transfer plugin uses the [File Plugin](../file-plugin/intro.md) to save and manage the downloaded files inside the app's sandboxed file system, as well as upload files from it. This means it's possible to choose where to save a downloaded file given a path, as well as upload a file from its path. As of now, the File Plugin is not PWA compatible and as so, it's not possible to access and manage a file system in a PWA or browser context.
 
-In the following sections, it's explained how the PWA implementation of the File Transfer Plugin works around this limitation.
+In the following sections, it's explained how the PWA implementation of the File transfer plugin works around this limitation.
 
 ### Download
 
@@ -91,11 +97,11 @@ This plugin doesn't offer the upload features in a PWA context, since the Upload
 
 ## Reference
 
-The File Transfer Plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check[cordova-outsystems-file-transfer](https://github.com/ionic-team/cordova-outsystems-file-transfer) and [capacitor-file-transfer](https://github.com/ionic-team/capacitor-file-transfer).
+The File transfer plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check[cordova-outsystems-file-transfer](https://github.com/ionic-team/cordova-outsystems-file-transfer) and [capacitor-file-transfer](https://github.com/ionic-team/capacitor-file-transfer).
 
 ### Actions
 
-Here is the reference for the actions you can use from the File Transfer Plugin, available in **Logic** > **Client Actions** > **FileTransferPlugin**.
+Here is the reference for the actions you can use from the File transfer plugin, available in **Logic** > **Client Actions** > **FileTransferPlugin**.
 
 Starting on version 2.0.0, all client actions were deprecated and replaced with new ones. Some input and output parameters also changed.
 
@@ -117,7 +123,7 @@ The following table contains the reference of the client actions that were depre
 
 ### Events
 
-Here is the reference for the events you can use from the File Transfer Plugin, available in **UI Flows** > **FileTransferPlugin** > **FileTransfer**.
+Here is the reference for the events you can use from the File transfer plugin, available in **UI Flows** > **FileTransferPlugin** > **FileTransfer**.
 
 | Event | Block | Description |
 | ---------------------- | ------------------ | ------------------ |
@@ -138,7 +144,7 @@ Here is the reference for the events you can use from the File Transfer Plugin, 
 | Total | Integer | The total size, in bytes, of the data being transferred. |
 | LengthComputable | Boolean | Indicates if the ratio between **Loaded** and **Total** is calculable. |
 
-#### FileTransferError
+#### `FileTransferError`
 
 | Parameter | Data Type | Description |
 | :-------- | :---------- | :------------ |
@@ -166,7 +172,7 @@ List of predefined error codes for lower versions of the plugin:
 * 4 = `ABORT_ERR`
 * 5 = `NOT_MODIFIED_ERR`
 
-#### FileDownloadResult
+#### `FileDownloadResult`
 
 | Parameter | Data Type | Description |
 | :-------- | :---------- | :------------ |
@@ -177,7 +183,7 @@ List of predefined error codes for lower versions of the plugin:
 | **(Removed in version 2.0.0)** filesystems | Text | Device-absolute-file-paths for the downloaded data. The goal of this parameter was to maintain backwards compatibility for older versions of the plugin. For more information, refer to [backwards compatibility notes](https://github.com/OutSystems/cordova-plugin-file-transfer?tab=readme-ov-file#backwards-compatibility-notes). |
 | nativeURL | Text | Native URL path to the stored file. |
 
-#### FileUploadResult
+#### `FileUploadResult`
 
 | Parameter | Data Type | Description |
 | :-------- | :---------- | :------------ |
@@ -186,23 +192,9 @@ List of predefined error codes for lower versions of the plugin:
 | response | Text | Response received from the server. |
 | headers | Text | HTTP headers used in the upload. |
 
-### Errors
+### Error codes
 
-Starting with version 2.0.0 of the Plugin, specific errors are returned on native platforms and PWAs.
-
-| Error code | Platform(s) | Message |
-| ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| OS-PLUG-FLTR-0001 | Android, iOS, PWA | Cordova/Capacitor isn't defined. |
-| OS-PLUG-FLTR-0002 | Android, iOS | The app is running with an old version of the plugin. Please create a new mobile package. |
-| OS-PLUG-FLTR-0003 | Android, iOS | The File Transfer plugin is not loaded. Make sure the mobile package is valid. |
-| OS-PLUG-FLTR-0004 | Android, iOS | The method's input parameters aren't valid. |
-| OS-PLUG-FLTR-0005 | Android, iOS, PWA | Invalid server URL was provided - &lt;URL&gt; or URL to connect to is either null or empty. |
-| OS-PLUG-FLTR-0006 | Android | Unable to perform operation, user denied permission request. |
-| OS-PLUG-FLTR-0007 | Android, iOS | Operation failed because file does not exist. |
-| OS-PLUG-FLTR-0008 | Android, iOS, PWA | Failed to connect to server. |
-| OS-PLUG-FLTR-0009 | Android, iOS | The server responded with HTTP 304 – Not Modified. If you want to avoid this, check your headers related to HTTP caching. |
-| OS-PLUG-FLTR-0010 | Android, iOS, PWA | HTTP error: &lt;responseCode&gt; - &lt;message&gt; |
-| OS-PLUG-FLTR-0011 | Android, iOS | The operation failed with an error - &lt;detailedError&gt; |
+For a complete list of mobile plugin errors, their causes, impact, and recommended solutions, see the [Mobile Plugins errors page](https://www.outsystems.com/tk/redirect?g=8ae41e18-fa7d-4cbe-a223-226a14abd8bf).
 
 ## Known issues and limitations
 
