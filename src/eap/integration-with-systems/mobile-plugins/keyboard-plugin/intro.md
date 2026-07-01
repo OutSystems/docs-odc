@@ -1,6 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports the Keyboard Plugin for keyboard display and visibility control, and event tracking for when the keyboard shows and hides.
-tags: mobile development, keyboard, plugin integration, mobile app development
+tags:
+  - Android
+  - Blocks
+  - Capacitor
+  - Events
+  - iOS
+  - Mobile app
+  - Plugins
 locale: en-us
 guid: 0bc905b8-1635-4a06-b439-4bb8059f7f9b
 app_type: mobile apps, reactive web apps
@@ -14,6 +21,7 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+isautopublish: true
 ---
 
 # Keyboard plugin
@@ -22,7 +30,7 @@ coverage-type:
 
 Applies only to Mobile Apps.
 
-The Keyboard Plugin available in the ODC Forge is currently only available for MABS 12 or higher, and Capacitor. It uses the [@capacitor/keyboard](https://capacitorjs.com/docs/apis/keyboard) plugin.
+The Keyboard plugin available in the ODC Forge is currently only available for MABS 12 or higher, and Capacitor. It uses the [@capacitor/keyboard](https://capacitorjs.com/docs/apis/keyboard) plugin.
 
 </div>
 
@@ -35,6 +43,36 @@ As a best practice, always verify that the plugin is available in the app. Use t
 For detailed information about how to install a plugin in your app, refer to  [Adding plugins](../intro.md).
 
 </div>
+
+## Keyboard background changes in iOS 26
+
+iOS 26 and later changed the keyboard appearance. On iOS 26 and later, a black backdrop appears behind the keyboard in plugin versions 1.2.2 and lower. Version 1.2.3 fixes the black backdrop and introduces the **KeyboardBackdropBehavior** extensibility setting to customize the keyboard backdrop.
+
+Here are the possible values for **KeyboardBackdropBehavior**:
+
+* **dom** (Default): The Keyboard plugin looks at the DOM for the screen's background color and applies it as the background behind the keyboard whenever the keyboard opens.
+* **auto**: The Keyboard plugin uses the [**backgroundColor**](../../../building-apps/mobile/extensibility-configurations/extensibility-app-reference.md#backgroundColor) defined in the app's extensibility configuration, which defaults to the app's primary color, and applies it as the keyboard background. If none is provided, the plugin looks at the DOM as described in the **dom** option.
+* **off**: Keyboard backdrop color is not changed. Same behavior as 1.2.2 and older.
+
+To change the **KeyboardBackdropBehavior** value, go to your mobile app's detail page in the ODC Portal and select the **Mobile Distribution**.
+
+![Screenshot showing where to change **KeyboardBackdropBehavior** for your app in ODC Portal](images/change-keyboard-backdrop-behavior-pl.png "Changing the keyboard backdrop behavior")
+
+If closing the keyboard on iOS 26 and later shows a brief color flicker, the [**backgroundColor**](../../../building-apps/mobile/extensibility-configurations/extensibility-app-reference.md#backgroundColor) value doesn't match your app's actual background. Set **backgroundColor** to your app's actual background color to fix the flicker.
+
+Under your app's **Extensibility Configurations** tab, explicitly add the [**backgroundColor**](../../../building-apps/mobile/extensibility-configurations/extensibility-app-reference.md#backgroundColor) property. For example, if your app's background is white:
+
+```json
+{
+    "appConfigurations": {
+        "backgroundColor": "#FFFFFF"
+    }
+}
+```
+
+Set **KeyboardBackdropBehavior** to **auto** in the ODC Portal under the **Mobile Distribution** tab. With **auto**, the plugin uses the **backgroundColor** you set explicitly instead of reading from the DOM.
+
+Then, [rebuild](../../../building-apps/mobile/creating-mobile-package.md) your mobile app with MABS and test the keyboard behavior.
 
 ## Show the device's keyboard (Android only)
 
