@@ -46,6 +46,8 @@ When your O11 apps authenticate end users through an external identity provider 
 
 1. [Add the external IdP in ODC](../../eap/manage-platform-app-lifecycle/external-idps/intro.md#add-an-external-idp).
 
+    If you select **None** for the [user profile matching](../../eap/manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md#user-profile-matching) fallback attribute, don't map the [**Email** claim](../../eap/manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md#claim-mapping-logic). This setup **isn't compatible** with O11 and ODC single sign-on for external authentication.
+
     <div class="info" markdown="1">
 
     If you plan to [convert your O11 apps to ODC](https://www.outsystems.com/tk/redirect?g=0a6f2684-c594-4eca-9cbf-0780c9b3c5ae), select one of the following values for the [user profile matching](../../eap/manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md#user-profile-matching) fallback attribute:
