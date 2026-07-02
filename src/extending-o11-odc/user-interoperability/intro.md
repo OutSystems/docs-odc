@@ -29,7 +29,8 @@ isautopublish: true
 
 # User interoperability
 
-As you build new ODC apps while maintaining your O11 portfolio, your end users might navigate across both platforms. A fragmented login experience across platforms can disrupt their workflow, so it's crucial to plan for seamless authentication.
+As you build new ODC apps while maintaining your O11 portfolio, your end users might navigate across both platforms.
+A fragmented login experience across platforms can disrupt their workflow, so it's crucial to plan for seamless authentication.
 
 ![Diagram of user interoperability](images/user-interoperability-diag.png "User interoperability")
 
