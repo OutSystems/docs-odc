@@ -25,8 +25,8 @@
     "/environments/{environmentKey}/entitlements/usage/by-asset": {
       "get": {
         "tags": [],
-        "summary": "Retrieves usage information for assets by entitlement in a specific environment.",
-        "description": "Retrieves usage data per asset (application, library) for entitlements in a specific environment.\n\nTo fetch the usage, API Client needs the **Stage > View stage** and **Subscriptions > View subscription** permissions in the target stage.",
+        "summary": "Retrieves usage data per asset (application, library) for entitlements in a specific environment.",
+        "description": "Paginated; supports filtering and sort by metric.\n\nTo fetch the usage, API Client needs the **Stage > View stage** and **Subscriptions > View subscription** permissions in the target stage.",
         "operationId": "Subscription_GetAssetUsage",
         "parameters": [
           {
@@ -119,6 +119,14 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "aggregations",
+            "in": "query",
+            "description": "Optional comma-separated aggregation functions. Valid values: Total, Max, P95, P90",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -170,7 +178,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves information on the entitlements for a specific environment.",
-        "description": "Retrieves information on the entitlements for a specific environment.\n\nTo fetch the entitlements, API Client needs the **Stage > View stage** permission in the target stage.\nTo additionally fetch the add-ons, API Client also needs the **Subscriptions > View subscription** permission.",
+        "description": "Entitlements and add-ons are shown with sufficient permissions.\n\nTo fetch the entitlements, API Client needs the **Stage > View stage** permission in the target stage.\nTo additionally fetch the add-ons, API Client also needs the **Subscriptions > View subscription** permission.",
         "operationId": "Subscription_GetEnvironmentEntitlements",
         "parameters": [
           {
@@ -232,7 +240,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves usage data for entitlements in a specific environment.",
-        "description": "Retrieves usage data for entitlements in a specific environment.\n\nTo fetch the usage, API Client needs the **Stage > View stage** and **Subscriptions > View subscription** permissions in the target stage.",
+        "description": "Filter by entitlement, date range, and aggregation.\n\nTo fetch the usage, API Client needs the **Stage > View stage** and **Subscriptions > View subscription** permissions in the target stage.",
         "operationId": "Subscription_GetEnvironmentUsage",
         "parameters": [
           {
@@ -281,6 +289,14 @@
             "name": "aggregations",
             "in": "query",
             "description": "Optional comma-separated aggregation functions. Valid values: Total, Max, P95, P90",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assetKeys",
+            "in": "query",
+            "description": "Optional comma-separated asset keys (GUIDs) to filter results",
             "schema": {
               "type": "string"
             }
@@ -335,7 +351,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves information of the organization configurations.",
-        "description": "Retrieves information of the organization configurations.\n\nAPI Client needs the **Subscriptions > View subscription** permission.",
+        "description": "Read-only view of organization settings.\n\nAPI Client needs the **Subscriptions > View subscription** permission.",
         "operationId": "Subscription_GetOrganizationConfigurations",
         "responses": {
           "200": {
@@ -386,7 +402,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves information on the entitlements for the organization.",
-        "description": "Retrieves information on the entitlements for the organization.\n\nTo fetch the entitlements, API Client needs at least one permission.\nTo additionally fetch the add-ons and subscription details, API Client also needs the **Subscriptions > View subscription** permission.",
+        "description": "Entitlements and add-ons are shown with sufficient permissions\n\nTo fetch the entitlements, API Client needs at least one permission.\nTo additionally fetch the add-ons and subscription details, API Client also needs the **Subscriptions > View subscription** permission.",
         "operationId": "Subscription_GetOrganizationEntitlements",
         "responses": {
           "200": {
@@ -437,7 +453,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves usage data for entitlements for the organization.",
-        "description": "Retrieves usage data for entitlements for the organization.\n\nAPI Client needs the **Subscriptions > View subscription** permission.",
+        "description": "Filter by entitlement, date range, and aggregation.\n\nAPI Client needs the **Subscriptions > View subscription** permission.",
         "operationId": "Subscription_GetOrganizationUsage",
         "parameters": [
           {
@@ -468,7 +484,7 @@
           {
             "name": "entitlementIds",
             "in": "query",
-            "description": "Optional comma-separated entitlement IDs. Valid value: appAnalyticsStreamLimit",
+            "description": "Optional comma-separated entitlement IDs. Valid values: appAnalyticsStreamLimit, applicationObjects, internalUsers, externalUsers",
             "schema": {
               "type": "string"
             }
@@ -477,6 +493,14 @@
             "name": "aggregations",
             "in": "query",
             "description": "Optional comma-separated aggregation functions. Valid values: Total, Max, P95, P90",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assetKeys",
+            "in": "query",
+            "description": "Optional comma-separated asset keys (GUIDs) to filter results",
             "schema": {
               "type": "string"
             }
@@ -888,6 +912,12 @@
             "format": "double",
             "nullable": true
           },
+          "revision": {
+            "type": "integer",
+            "description": "Asset revision number.",
+            "format": "int32",
+            "nullable": true
+          },
           "details": {
             "type": "array",
             "items": {
@@ -911,6 +941,11 @@
           "name": {
             "type": "string",
             "description": "Human-readable name of the entitlement.",
+            "nullable": true
+          },
+          "aggregation": {
+            "type": "string",
+            "description": "Aggregation function applied to this entitlement's values (e.g., \"Total\", \"Max\", \"P95\", \"P90\").",
             "nullable": true
           },
           "assets": {
