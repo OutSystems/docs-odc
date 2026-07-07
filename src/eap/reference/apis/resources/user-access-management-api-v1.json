@@ -52,10 +52,34 @@
           {
             "name": "environmentKey",
             "in": "query",
-            "description": "Filters application roles by environment key (stage).",
+            "description": "Filters application roles by environment key (stage). Mutually exclusive with `environmentKeys`.",
             "schema": {
               "type": "string",
               "format": "uuid"
+            }
+          },
+          {
+            "name": "environmentKeys",
+            "in": "query",
+            "description": "Filters application roles by environment keys (stages). Comma-separated list of environment keys. Mutually exclusive with `environmentKey`.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "portfolioKeys",
+            "in": "query",
+            "description": "Only returns application roles in environments belonging to the specified portfolios.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
             }
           },
           {
@@ -594,10 +618,22 @@
           {
             "name": "userKey",
             "in": "query",
-            "description": "The user's key.",
+            "description": "The user's key. Mutually exclusive with `userKeys`.",
             "schema": {
               "type": "string",
               "format": "uuid"
+            }
+          },
+          {
+            "name": "userKeys",
+            "in": "query",
+            "description": "Only returns the users matching any of the specified keys. Comma-separated list of user keys. Mutually exclusive with `userKey`.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
             }
           },
           {
@@ -853,10 +889,43 @@
           {
             "name": "environmentKey",
             "in": "query",
-            "description": "Only returns groups associated to the specified environment (stage).",
+            "description": "Only returns groups associated with the specified environment (stage). Mutually exclusive with `environmentKeys`.",
             "schema": {
               "type": "string",
               "format": "uuid"
+            }
+          },
+          {
+            "name": "environmentKeys",
+            "in": "query",
+            "description": "Only returns groups associated with any of the specified environments (stages). Comma-separated list of environment keys. Mutually exclusive with `environmentKey`.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "identityProviderKey",
+            "in": "query",
+            "description": "Only returns groups with claim mappings for the specified identity provider.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "portfolioKeys",
+            "in": "query",
+            "description": "Only returns groups in environments belonging to any of the specified portfolios.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
             }
           },
           {
@@ -1353,10 +1422,22 @@
           {
             "name": "applicationRoleKey",
             "in": "query",
-            "description": "The application role key.",
+            "description": "The application role key. Mutually exclusive with `applicationRoleKeys`.",
             "schema": {
               "type": "string",
               "format": "uuid"
+            }
+          },
+          {
+            "name": "applicationRoleKeys",
+            "in": "query",
+            "description": "Only returns the application roles matching any of the specified keys. Comma-separated list of application role keys. Mutually exclusive with `applicationRoleKey`.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
             }
           },
           {
@@ -2188,7 +2269,7 @@
           "organization-roles"
         ],
         "summary": "Returns a list of users with a specific organization role.",
-        "description": "Returns a list of users with a specific organization role, based on the organization role key.\nUse query parameters to filter the result based on different criteria.\n\nAPI Client needs the **User management > View organization members** permission.",
+        "description": "Returns a list of users with a specific organization role, based on the organization role key.\nUse query parameters to filter the result based on different criteria.\n\nAPI Client needs the **User management > View members** permission.",
         "operationId": "OrganizationRole_QueryUsersByRole",
         "parameters": [
           {
@@ -2317,7 +2398,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View organization members** permission."
+        "x-os-permissions": "API Client needs the **User management > View members** permission."
       }
     },
     "/permissions": {
@@ -2700,19 +2781,79 @@
           {
             "name": "assetKey",
             "in": "query",
-            "description": "Only returns application roles for the specified asset.",
+            "description": "Only returns application roles for the specified asset. Mutually exclusive with `assetKeys`.",
             "schema": {
               "type": "string",
               "format": "uuid"
             }
           },
           {
+            "name": "assetKeys",
+            "in": "query",
+            "description": "Only returns application roles for any of the specified assets. Comma-separated list of asset keys. Mutually exclusive with `assetKey`.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
             "name": "environmentKey",
             "in": "query",
-            "description": "Only returns application roles in the specified environment (stage).",
+            "description": "Only returns application roles in the specified environment (stage). Mutually exclusive with `environmentKeys`.",
             "schema": {
               "type": "string",
               "format": "uuid"
+            }
+          },
+          {
+            "name": "environmentKeys",
+            "in": "query",
+            "description": "Only returns application roles in any of the specified environments (stages). Mutually exclusive with `environmentKey`.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "portfolioKeys",
+            "in": "query",
+            "description": "Only returns application roles in the environments belonging to any of the specified portfolios.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "groupKeys",
+            "in": "query",
+            "description": "Only returns application roles inherited from the specified groups.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "applicationRoleKeys",
+            "in": "query",
+            "description": "Only returns the application roles matching any of the specified keys. Comma-separated list of application role keys.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
             }
           },
           {
@@ -2740,6 +2881,17 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "assignmentSources",
+            "in": "query",
+            "description": "Filters by assignment source. Repeatable. Allowed: Direct, GroupAssigned, GroupMapped. Empty or omitted defaults to Direct. The IsDirectlyAssigned flag and AssignedGroups list on each returned role reflect only the selected sources.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/AssignmentSource"
+              }
+            }
           }
         ],
         "responses": {
@@ -2748,7 +2900,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApplicationRoleApiResponsePaginatedResponseApi"
+                  "$ref": "#/components/schemas/UserApplicationRoleApiResponsePaginatedResponseApi"
                 }
               }
             }
@@ -2813,7 +2965,7 @@
           "users"
         ],
         "summary": "Returns the list of organization roles associated with a user.",
-        "description": "Returns the list of organization roles associated with a user.\nIf the authenticated user is requesting their own roles, no permission is required.\n\nAPI Client needs the **User management > View organization members** or **User management > Manage users** permissions.",
+        "description": "Returns the list of organization roles associated with a user.\nIf the authenticated user is requesting their own roles, no permission is required.\n\nAPI Client needs the **User management > View members** or **User management > Manage users** permissions.",
         "operationId": "UserOrganizationRoles_GetUserOrganizationRoles",
         "parameters": [
           {
@@ -2824,6 +2976,29 @@
             "schema": {
               "type": "string",
               "format": "uuid"
+            }
+          },
+          {
+            "name": "scopes",
+            "in": "query",
+            "description": "Optional. Comma-separated. `Organization` returns roles assigned in Organization scope; `Asset` returns roles assigned in Asset scope. Both together (or omitted) returns all.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/OrganizationRoleAssignmentScope"
+              }
+            }
+          },
+          {
+            "name": "assetKeys",
+            "in": "query",
+            "description": "Optional. Comma-separated list of asset keys. Only returns organization roles assigned in Asset scope for any of the specified assets.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
             }
           },
           {
@@ -2907,7 +3082,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View organization members** or **User management > Manage users** permissions."
+        "x-os-permissions": "API Client needs the **User management > View members** or **User management > Manage users** permissions."
       }
     },
     "/users/{key}/organization-roles/{roleKey}": {
@@ -2916,7 +3091,7 @@
           "users"
         ],
         "summary": "Grant organization roles to a user.",
-        "description": "Assigns organization roles to a user based on the user key.\n\nAPI Client needs the **User management > Manage organization access** permission.",
+        "description": "Assigns organization roles to a user based on the user key.\n\nAPI Client needs the **User management > Manage member access** permission.",
         "operationId": "UserOrganizationRoles_GrantOrganizationRoleToUser",
         "parameters": [
           {
@@ -3018,14 +3193,14 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage organization access** permission."
+        "x-os-permissions": "API Client needs the **User management > Manage member access** permission."
       },
       "delete": {
         "tags": [
           "users"
         ],
         "summary": "Delete a user's organization roles.",
-        "description": "Revokes organization roles for a user.\n\nAPI Client needs the **User management > Manage organization access** permission.",
+        "description": "Revokes organization roles for a user.\n\nAPI Client needs the **User management > Manage member access** permission.",
         "operationId": "UserOrganizationRoles_RevokeOrganizationRoleForUser",
         "parameters": [
           {
@@ -3127,7 +3302,177 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > Manage organization access** permission."
+        "x-os-permissions": "API Client needs the **User management > Manage member access** permission."
+      }
+    },
+    "/users/count": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Returns the user count based on specified conditions.",
+        "description": "Returns the user count that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission.",
+        "operationId": "UserProfile_CountUsers",
+        "parameters": [
+          {
+            "name": "domains",
+            "in": "query",
+            "description": "Only counts users with the specified domains.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Only counts users with the specified status.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/UserProfileStatus"
+                }
+              ]
+            }
+          },
+          {
+            "name": "hasOrganizationRoles",
+            "in": "query",
+            "description": "When set to true, only counts users that have at least one organization role. Default is false.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasApplicationRoles",
+            "in": "query",
+            "description": "When set to true, only counts users that have at least one application role. Default is false.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "environmentKeys",
+            "in": "query",
+            "description": "Only counts users that have roles in any of the specified environments (stages).",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "portfolioKeys",
+            "in": "query",
+            "description": "Only counts users that have roles in any of the specified portfolios.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "loggedInEnvironmentKeys",
+            "in": "query",
+            "description": "Only counts users that have logged in to any of the specified environments (stages). When combined with last login date filters, the date range applies to the per-environment login timestamp.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "loggedInPortfolioKeys",
+            "in": "query",
+            "description": "Only counts users that have logged in to any environment in the specified portfolios. When combined with last login date filters, the date range applies to the per-environment login timestamp.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "lastLoginAtSince",
+            "in": "query",
+            "description": "Only counts users whose last login occurred on or after the specified date and time. Applies to the top-level last login unless logged-in environment or portfolio filters are specified.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "lastLoginAtTo",
+            "in": "query",
+            "description": "Only counts users whose last login occurred before or on the specified date and time. Applies to the top-level last login unless logged-in environment or portfolio filters are specified.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileCountApiResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission."
       }
     },
     "/users": {
@@ -3220,7 +3565,7 @@
           "users"
         ],
         "summary": "Returns the list of users based on specified conditions.",
-        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** or **User management > View organization members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission.",
+        "description": "Returns a list of users that match the specified filters. Use query parameters to refine the search.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission.",
         "operationId": "UserProfile_QueryUsers",
         "parameters": [
           {
@@ -3313,10 +3658,69 @@
           {
             "name": "environmentKey",
             "in": "query",
-            "description": "Only returns users that have roles in the specified environment (stage).",
+            "description": "Only returns users that have roles in the specified environment (stage). Mutually exclusive with `environmentKeys`.",
             "schema": {
               "type": "string",
               "format": "uuid"
+            }
+          },
+          {
+            "name": "environmentKeys",
+            "in": "query",
+            "description": "Only returns users that have roles in any of the specified environments (stages). Comma-separated list of environment keys. Mutually exclusive with `environmentKey`.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "portfolioKeys",
+            "in": "query",
+            "description": "Only returns users that have roles in any of the specified portfolios.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "domains",
+            "in": "query",
+            "description": "Only returns users with the specified domains.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "loggedInEnvironmentKeys",
+            "in": "query",
+            "description": "Only returns users that have logged in to any of the specified environments (stages). When combined with last login date filters, the date range applies to the per-environment login timestamp.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "loggedInPortfolioKeys",
+            "in": "query",
+            "description": "Only returns users that have logged in to any environment in the specified portfolios. When combined with last login date filters, the date range applies to the per-environment login timestamp.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
             }
           },
           {
@@ -3401,7 +3805,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View organization members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission."
       }
     },
     "/users/{key}": {
@@ -3486,7 +3890,7 @@
           "users"
         ],
         "summary": "Retrieves a user.",
-        "description": "Retrieves detailed information about a user using the user's key.\n\nAPI Client needs the **User management > View end users** or **User management > View organization members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission.",
+        "description": "Retrieves detailed information about a user using the user's key.\n\nAPI Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission.",
         "operationId": "UserProfile_GetUser",
         "parameters": [
           {
@@ -3573,7 +3977,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View organization members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View organization members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View organization members** permissions, or the **User management > Manage users** permission."
+        "x-os-permissions": "API Client needs the **User management > View end users** or **User management > View members** or **User management > Manage users** permissions. If API Client has the **User management > View end users** permission, retrieves the list of users with end-user roles. If API Client has the **User management > View members** permission, retrieves the list of users with organization roles. To get a list of all users (with or without roles), the API client needs either both the **User management > View end users** and **User management > View members** permissions, or the **User management > Manage users** permission."
       },
       "patch": {
         "tags": [
@@ -3714,10 +4118,34 @@
           {
             "name": "environmentKey",
             "in": "query",
-            "description": "Filters groups by environment key. (stage)",
+            "description": "Filters groups by environment key (stage). Mutually exclusive with `environmentKeys`.",
             "schema": {
               "type": "string",
               "format": "uuid"
+            }
+          },
+          {
+            "name": "environmentKeys",
+            "in": "query",
+            "description": "Filters groups by environment keys (stages). Comma-separated list of environment keys. Mutually exclusive with `environmentKey`.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
+            "name": "portfolioKeys",
+            "in": "query",
+            "description": "Only returns groups in environments belonging to any of the specified portfolios.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
             }
           },
           {
@@ -3851,6 +4279,11 @@
             "type": "string",
             "description": "The claim name.",
             "nullable": true
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "The portfolio key associated with the environment.",
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -3881,8 +4314,43 @@
       "AssetContext": {
         "enum": [
           "Organization",
-          "Asset",
-          "Portfolios"
+          "Asset"
+        ],
+        "type": "string"
+      },
+      "AssignedGroupInfoApiResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The application group key.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the application group.",
+            "nullable": true
+          },
+          "membershipType": {
+            "enum": [
+              "Assigned",
+              "Mapped"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MembershipType"
+              }
+            ],
+            "description": "The membership type of the user in the application group."
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssignmentSource": {
+        "enum": [
+          "Direct",
+          "GroupAssigned",
+          "GroupMapped"
         ],
         "type": "string"
       },
@@ -4047,6 +4515,31 @@
         ],
         "type": "string"
       },
+      "ForeignClaimModel": {
+        "required": [
+          "name",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Gets or sets Name of the claim to match in the foreign token."
+          },
+          "valueDelimiter": {
+            "type": "string",
+            "description": "Gets or sets string to split the foreign claim value on.",
+            "nullable": true
+          },
+          "value": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Gets or sets exact match string for the entire foreign claim value or one of the, split elements if a delimiter was specified."
+          }
+        },
+        "additionalProperties": false
+      },
       "GrantDetailsRequest": {
         "type": "object",
         "properties": {
@@ -4066,6 +4559,12 @@
               "format": "uuid"
             },
             "description": "Gets or sets the asset keys.",
+            "nullable": true
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "Gets or sets the portfolio key this assignment belongs to. Optional; applies only to asset-scoped grants\nand, when omitted, the assignment is associated with the tenant's main portfolio.",
+            "format": "uuid",
             "nullable": true
           }
         },
@@ -4112,10 +4611,23 @@
             "description": "The environment key.",
             "format": "uuid"
           },
+          "portfolioKey": {
+            "type": "string",
+            "description": "The portfolio key associated with the environment.",
+            "format": "uuid"
+          },
           "updatedAt": {
             "type": "string",
             "description": "The last updated date and time of the group.",
             "format": "date-time"
+          },
+          "groupIdpClaimMappings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GroupIdpClaimMappingEmbedded"
+            },
+            "description": "The group's identity providers claim mappings.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -4193,6 +4705,41 @@
         },
         "additionalProperties": false
       },
+      "GroupIdpClaimMappingEmbedded": {
+        "required": [
+          "foreignClaim",
+          "key",
+          "providerKey"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Claim mapping identifier.",
+            "format": "uuid"
+          },
+          "providerKey": {
+            "type": "string",
+            "description": "The key of the associated IdP object.",
+            "format": "uuid"
+          },
+          "foreignClaim": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ForeignClaimModel"
+              }
+            ],
+            "description": "Foreign Claim."
+          },
+          "lastUpdatedDate": {
+            "type": "string",
+            "description": "The last updated date field.",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "GroupUserProfileResponse": {
         "type": "object",
         "properties": {
@@ -4235,7 +4782,7 @@
             "description": "The date of the last time the user logged in.",
             "format": "date-time"
           },
-          "embedded": {
+          "_embedded": {
             "allOf": [
               {
                 "$ref": "#/components/schemas/UserProfileEmbeddedResponse"
@@ -4365,7 +4912,8 @@
               "AppleId",
               "Google",
               "Facebook",
-              "LinkedIn"
+              "LinkedIn",
+              "OutSystems11"
             ],
             "allOf": [
               {
@@ -4572,6 +5120,15 @@
             "description": "Gets or sets the environment keys.",
             "nullable": true
           },
+          "portfolioKeys": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Gets or sets the portfolio keys.",
+            "nullable": true
+          },
           "claimName": {
             "type": "string",
             "description": "Gets or sets the claim name.",
@@ -4647,6 +5204,14 @@
         },
         "additionalProperties": false
       },
+      "OrganizationRoleAssignmentScope": {
+        "enum": [
+          "Organization",
+          "Asset"
+        ],
+        "type": "string",
+        "description": "API query scope for listing a user's organization role assignments."
+      },
       "OrganizationRoleByUserApiResponse": {
         "type": "object",
         "properties": {
@@ -4672,6 +5237,12 @@
           "assetKey": {
             "type": "string",
             "description": "Gets or sets the asset key.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "Gets or sets the portfolio key this assignment belongs to.",
             "format": "uuid",
             "nullable": true
           }
@@ -4877,6 +5448,15 @@
             "description": "Gets or sets the environment keys.",
             "nullable": true
           },
+          "portfolioKeys": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Gets or sets the portfolio keys.",
+            "nullable": true
+          },
           "claimName": {
             "type": "string",
             "description": "Gets or sets the claim name.",
@@ -4907,6 +5487,15 @@
               "$ref": "#/components/schemas/StageServiceModel"
             },
             "description": "Gets or sets the realm stage list.",
+            "nullable": true
+          },
+          "realmPortfolio": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PortfolioInheritanceServiceModel"
+              }
+            ],
+            "description": "Gets or sets the realm portfolio.",
             "nullable": true
           }
         },
@@ -4964,6 +5553,10 @@
             "type": "boolean",
             "description": "Gets or sets a value indicating whether permission applies to a specific stage."
           },
+          "allowPortfolios": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether permission applies to a specific portfolio."
+          },
           "allowedScopes": {
             "type": "array",
             "items": {
@@ -5012,6 +5605,14 @@
         "enum": [
           "plain",
           "S256"
+        ],
+        "type": "string"
+      },
+      "PortfolioInheritanceServiceModel": {
+        "enum": [
+          "SAME_PORTFOLIO",
+          "MAIN_PORTFOLIO",
+          "ALL_PORTFOLIO"
         ],
         "type": "string"
       },
@@ -5085,7 +5686,8 @@
           "AppleId",
           "Google",
           "Facebook",
-          "LinkedIn"
+          "LinkedIn",
+          "OutSystems11"
         ],
         "type": "string"
       },
@@ -5226,6 +5828,82 @@
           "foreignClaim": {
             "type": "string",
             "description": "Gets or sets the ForeignClaim value.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserApplicationRoleApiResponse": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The application role key.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the application role.",
+            "nullable": true
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "The environment key.",
+            "format": "uuid"
+          },
+          "assetKey": {
+            "type": "string",
+            "description": "The asset key.",
+            "format": "uuid"
+          },
+          "externalKey": {
+            "type": "string",
+            "description": "The unique identifier for an application role independently of the environment.",
+            "format": "uuid"
+          },
+          "claim": {
+            "type": "string",
+            "description": "The claim name.",
+            "nullable": true
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "The portfolio key associated with the environment.",
+            "format": "uuid"
+          },
+          "isDirectlyAssigned": {
+            "type": "boolean",
+            "description": "Indicates whether the role is directly assigned to the user."
+          },
+          "assignedGroups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssignedGroupInfoApiResponse"
+            },
+            "description": "The application groups through which the user inherits this role, if any.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserApplicationRoleApiResponsePaginatedResponseApi": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserApplicationRoleApiResponse"
+            },
+            "description": "The List of results.",
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotalsApi"
+              }
+            ],
+            "description": "The details of the page information.",
             "nullable": true
           }
         },
@@ -5421,7 +6099,7 @@
           "_embedded": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/UserProfileEmbeddedResponse"
+                "$ref": "#/components/schemas/UserProfileWithApplicationRolesEmbeddedResponse"
               }
             ],
             "description": "The embedded information to provide. (optional)\nOnly available when the request includes the query parameter `embed=`,\ne.g. `embed=applicationRoles`",
@@ -5449,6 +6127,16 @@
             ],
             "description": "The details of the page information.",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserProfileCountApiResponse": {
+        "type": "object",
+        "properties": {
+          "userCount": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -5584,6 +6272,28 @@
           "PendingRegistration"
         ],
         "type": "string"
+      },
+      "UserProfileWithApplicationRolesEmbeddedResponse": {
+        "type": "object",
+        "properties": {
+          "applicationRoles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserApplicationRoleApiResponse"
+            },
+            "description": "List of application roles. Each role includes whether it is directly assigned to the user\nand the application groups through which the user inherits it, if any.",
+            "nullable": true
+          },
+          "userIdentityProviders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserIdpProfileResponse"
+            },
+            "description": "List of user identity providers.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       }
     },
     "securitySchemes": {
@@ -5598,6 +6308,47 @@
   "security": [
     {
       "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "public"
+    },
+    {
+      "name": "application-roles"
+    },
+    {
+      "name": "private"
+    },
+    {
+      "name": "bcdr"
+    },
+    {
+      "name": "users"
+    },
+    {
+      "name": "groups"
+    },
+    {
+      "name": "identity-providers"
+    },
+    {
+      "name": "migration"
+    },
+    {
+      "name": "oidc-clients"
+    },
+    {
+      "name": "organization-roles"
+    },
+    {
+      "name": "permissions"
+    },
+    {
+      "name": "realms"
+    },
+    {
+      "name": "subjects"
     }
   ]
 }
