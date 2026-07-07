@@ -1,7 +1,7 @@
 ---
 guid: df9453d8-437e-41fe-b32c-57f9fcde7d24
 locale: en-us
-summary: This article describes how to build iOS native implementation for a Capacitor plugin using Barcode scanner example.
+summary: iOS native implementation for Capacitor plugins in OutSystems Developer Cloud (ODC) covers Swift code, SPM support, and Apple privacy manifests.
 figma:
 coverage-type:
   - apply
@@ -11,7 +11,12 @@ app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: capacitor framework,Plugins,swift language
+tags:
+  - Capacitor
+  - iOS
+  - Mobile app
+  - Native App
+  - Plugins
 outsystems-tools:
   - none
 helpids:
@@ -19,7 +24,7 @@ isautopublish: true
 ---
 # iOS native implementation
 
-This article explains how to implement iOS native support for Capacitor plugins in mobile apps. It is intended for mobile plugin developers who want to implement iOS-specific functionality when [building Capacitor plugins](build-capacitor-plugin.md) from scratch.
+This article explains how to implement iOS native support for Capacitor plugins in mobile apps. It is intended for mobile plugin developers who want to implement iOS-specific functionality when [building Capacitor plugins](build-capacitor-plugin.md) from scratch. For an overview of the plugin structure, refer to [Capacitor plugin architecture](capacitor-plugin-architecture.md).
 
 For detailed information about how to build the iOS layer of your Capacitor plugin, refer to [Capacitor iOS Plugin Guide](https://capacitorjs.com/docs/plugins/ios).
 
@@ -63,7 +68,7 @@ Here's a code snippet of the scanBarcode function on iOS, in Swift:
 
 If your plugin has functionality on iOS that requires permissions from the end user, then you must implement the permissions pattern. For detailed information, refer to [Permissions](https://capacitorjs.com/docs/plugins/ios#permissions).
 
-## Add Swift Package Manager support
+## Add SPM support
 
 Swift Package Manager (SPM) is replacing CocoaPods as the dependency management toolchain for iOS Capacitor builds. All plugins must include a `Package.swift` file to be compatible with the SPM build toolchain.
 
@@ -153,6 +158,8 @@ After building the iOS native implementation, follow these steps:
 1. [Integrate the plugin into an ODC app](integrate-plugin-in-app.md)
 
 ## Related resources
+
+For detailed information about plugin structure, refer to [Capacitor plugin architecture](capacitor-plugin-architecture.md).
 
 For more details, explore these resources from the official Capacitor documentation:
 

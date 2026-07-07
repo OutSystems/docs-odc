@@ -5,7 +5,13 @@ guid: 9c8d2f5d-7d8e-4f5f-b4a2-3a4f2a2a6c9d
 app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=8567-107&t=LCn8qts7zhzBhd87-1
-tags: mobile plugins, capacitor, cordova, mabs
+tags:
+  - Capacitor
+  - Cordova
+  - JavaScript
+  - Mobile app
+  - Native App
+  - Plugins
 audience:
   - Developer
 outsystems-tools:
@@ -16,6 +22,7 @@ coverage-type:
   - understand
 topic:
   - mobile-plugins
+isautopublish: true
 ---
 
 # Implement a dual‑stack plugin
@@ -132,6 +139,8 @@ Alternatively, you can use the ODC [Common Plugin](../common-plugin/intro.md) an
 Some Cordova functionalities, such as plugin hooks and certain features in `plugin.xml`, aren't directly supported by Capacitor. If your plugin uses these features, perform additional changes to ensure compatibility. For detailed information, refer to [Changes required for Capacitor compatibility](../migrate-cordova-plugin.md#changes-required-for-capacitor-compatibility-changes-required-for-capacitor-compatbility)
 
 ## Related resources
+
+For detailed information about Capacitor plugin structure, refer to [Capacitor plugin architecture](capacitor-plugin-architecture.md).
 
 Explore these resources to learn more about using plugins in Capacitor apps:
 

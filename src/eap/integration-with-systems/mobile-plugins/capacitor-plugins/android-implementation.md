@@ -11,14 +11,21 @@ app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: capacitor plugins, android native implementation, kotlin, java, android project, barcode scanner plugin
+tags:
+  - Android
+  - Capacitor
+  - Java
+  - Mobile app
+  - Native App
+  - Plugins
 outsystems-tools:
   - none
 helpids:
+isautopublish: true
 ---
 # Android native implementation
 
-This article covers the Android native implementation for Capacitor plugins in ODC mobile apps. It is intended for mobile plugin developers who want to implement Android-specific functionality when [building Capacitor plugins](build-capacitor-plugin.md) from scratch.
+This article covers the Android native implementation for Capacitor plugins in ODC mobile apps. It is intended for mobile plugin developers who want to implement Android-specific functionality when [building Capacitor plugins](build-capacitor-plugin.md) from scratch. For an overview of the Capacitor plugin structure, refer to [Capacitor plugin architecture](capacitor-plugin-architecture.md).
 
 For detailed information about how to build the Android layer of your Capacitor plugin, refer to the [Capacitor Android Plugin Guide](https://capacitorjs.com/docs/plugins/android).
 
@@ -69,6 +76,10 @@ After building the Android native implementation, follow these steps:
 1. [Integrate the plugin into an ODC app](integrate-plugin-in-app.md)
 
 ## Related resources
+
+For background on the plugin structure, refer to:
+
+* [Capacitor plugin architecture](capacitor-plugin-architecture.md)
 
 Explore these resources from the official Capacitor documentation to learn more about plugin development:
 

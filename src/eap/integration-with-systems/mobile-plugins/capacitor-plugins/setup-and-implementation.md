@@ -1,7 +1,7 @@
 ---
 guid: 40b21bde-218b-4ae4-b86c-e2970b835391
 locale: en-us
-summary: This article explains how to scaffold a Capacitor plugin project and define the interface layer.
+summary: "Capacitor plugin setup for OutSystems Developer Cloud (ODC): scaffold the project, define the TypeScript interface layer, and register your plugin."
 figma:
 coverage-type:
   - apply
@@ -11,14 +11,18 @@ app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: Plugins,capacitor framework,typescript
+tags:
+  - Capacitor
+  - Mobile app
+  - Plugins
 outsystems-tools:
   - none
 helpids:
+isautopublish: true
 ---
 # Set up Capacitor plugin project and define the interface layer
 
-This article covers the initial setup and web layer implementation that serves as the entry point for your plugin's functionality. It is intended for mobile plugin developers who want to [build Capacitor plugin](build-capacitor-plugin.md) from scratch.
+This article covers the initial setup and web layer implementation that serves as the entry point for your plugin's functionality. It is intended for mobile plugin developers who want to [build Capacitor plugin](build-capacitor-plugin.md) from scratch. For an overview of the plugin structure, refer to [Capacitor plugin architecture](capacitor-plugin-architecture.md).
 
 Before implementing platform-specific code, you must first design your plugin's API using TypeScript. This API defines the methods and data structures that will be consistent across all platforms. For detailed information about designing the interface, refer to [Designing the Plugin API](https://capacitorjs.com/docs/plugins/tutorial/designing-the-plugin-api).
 
@@ -87,6 +91,10 @@ Build the native implementations for each platform:
 * [iOS native implementation](ios-implementation.md)
 
 ## Related resources
+
+For background on the three-layer plugin structure, refer to:
+
+* [Capacitor plugin architecture](capacitor-plugin-architecture.md)
 
 Explore these resources from the official Capacitor documentation to learn more about plugin development:
 

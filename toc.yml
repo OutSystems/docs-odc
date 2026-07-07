@@ -430,6 +430,7 @@
     #Mobile plug-ins
         - href: eap/integration-with-systems/mobile-plugins/intro.md
         - topics:
+            - href: eap/integration-with-systems/mobile-plugins/capacitor-plugins/capacitor-plugin-architecture.md
             - href: eap/integration-with-systems/mobile-plugins/capacitor-plugins/integrate-plugin-in-app.md
             - href: eap/integration-with-systems/mobile-plugins/migrate-cordova-plugin.md
             - href: eap/integration-with-systems/mobile-plugins/capacitor-plugins/dual-stack-plugin.md

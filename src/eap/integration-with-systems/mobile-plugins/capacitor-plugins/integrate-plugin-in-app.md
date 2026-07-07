@@ -1,21 +1,28 @@
 ---
 guid: 81bb4dc0-2e5c-41d9-a700-3de2f79926c7
 locale: en-us
-summary: This article describes the steps involved in integrating a plugin into an ODC app and use its functions.
+summary: "Capacitor plugin integration in OutSystems Developer Cloud (ODC): wrap a plugin in a mobile library, configure extensibility, and call it via JavaScript."
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8369-7
 coverage-type:
   - apply
   - understand
-topic: 
+topic:
 app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: Plugins,mobile plugins,plugin integration
+tags:
+  - Capacitor
+  - JavaScript
+  - Libraries
+  - Mobile app
+  - Plugins
+  - Security
 outsystems-tools:
   - odc studio
   - odc portal
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # Integrate Capacitor plugin into a mobile app
@@ -124,6 +131,12 @@ The `scanBarcode` function returns a string with the result of scanning the barc
 
 ![Diagram showing the assignment of output parameters from the scanBarcode function in the Barcode Plugin in ODC Studio.](images/assign-output-params-odcs.png "Assign Output Parameters")
 
+<div class="info" markdown="1">
+
+For plugin methods that return a complex object, serialize the result to a JSON string in the JavaScript node, then use a **JSON Deserialize** node in the client action to assign it directly to a structure output parameter, instead of assigning each field individually. This approach depends on the plugin's output matching the structure's definition.
+
+</div>
+
 ## Step 4: Use the mobile library in the app
 
 Create an app that uses the **Barcode Plugin**. [Add the mobile library](../../../building-apps/libraries/use-public-elements.md) in the app. In the app, call the client action and display its output.
@@ -150,7 +163,9 @@ When integrating Capacitor plugins, keep the following security considerations i
 
 ## Related resources
 
-For more information, refer to the following resources:
+For detailed information about plugin structure, refer to [Capacitor plugin architecture](capacitor-plugin-architecture.md).
+
+For more information, refer to:
 
 * [Universal extensibility configuration JSON schema](../../../building-apps/mobile/extensibility-configurations.md)
 
