@@ -56,6 +56,12 @@ Before you begin, make sure you have:
 
 ## Add an OpenID Connect provider
 
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, you add an OIDC provider once at the organization level and then assign it to stages in one or more portfolios. For more information about portfolio-scoped IdP assignment, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
+
+</div>
+
 To add a new OpenID Connect provider, follow these steps:
 
 1. In the ODC Portal, go to **Management** > **Govern** > **Identity providers**.

@@ -1,7 +1,6 @@
 ---
 summary: OutSystems Developer Cloud (ODC) IP filters let you restrict app access by stage using AllowList or DenyList rules in the ODC Portal.
 tags:
-  - Groups
   - IP Filters
   - Security
 locale: en-us
@@ -21,10 +20,15 @@ isautopublish: true
 
 # Manage IP filters
 
-This article is intended for administrators who need to control network access to their apps in ODC. Administrators can enhance security by creating and managing IP filter groups and defining access rules for each stage to specify which IP addresses are allowed. IP filters in ODC don't restrict access to the ODC Portal itself. They only apply to deployed assets such as apps, agents, workflows, custom code executions, and REST API calls between apps.
+<div class="info" markdown="1">
+
+IP filters require an add-on [subscription](subscription-console.md). Please contact your OutSystems account team for more information.
+
+</div>
+
+This article is intended for administrators who need to control network access to their apps in ODC. Administrators can enhance security by creating and managing IP filter groups and defining access rules for each stage to specify which IP addresses are allowed. In a multi-portfolio organization, IP filter rules are applied per stage within a portfolio. For more information, refer to [Configuration management with multiple portfolios](portfolios/portfolios-configurations.md). IP filters in ODC don't restrict access to the ODC Portal itself. They only apply to deployed assets such as apps, agents, workflows, custom code executions, and REST API calls between apps.
 
 On OutSystems-hosted stages, you can manage IP-based access control directly from the Portal. For self-hosted stages, skip to [IP filtering on self-hosted stages](#sh-ip-filtering).
-
 For more information on ODC's built-in security, refer to [Security of OutSystems Developer Cloud.](../security/security.md)
 
 ## Prerequisites {#prerequisites}

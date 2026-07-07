@@ -8,12 +8,12 @@ figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-
 platform-version: odc
 tags:
   - Authentication
-  - Authorization
   - End-user Authentication
   - End-users
   - External Authentication
   - Groups
   - IdP
+  - Roles
 audience:
   - Platform administrator
 outsystems-tools:

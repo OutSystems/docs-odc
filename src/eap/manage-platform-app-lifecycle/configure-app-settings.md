@@ -1,6 +1,9 @@
 ---
-summary: Easily configure app settings in development with OutSystems Developer Cloud (ODC), including creating settings, organizing folders, and editing runtime values.
-tags: app configuration, odc studio, runtime settings, development, data management
+summary: "OutSystems Developer Cloud (ODC) app settings: create, organize into folders, and edit stage-specific default values in ODC Studio and ODC Portal."
+tags:
+  - Logic
+  - Security
+  - Settings
 guid: 0624bc73-64c2-45bb-a740-c4cef83989fc
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -10,10 +13,12 @@ api-render: false
 outsystems-tools:
   - odc studio
 coverage-type:
+  - remember
+  - apply
 content-type:
 audience:
   - Developer
-  - Front-end developer
+isautopublish: true
 ---
 # Configure app settings
 
@@ -81,7 +86,9 @@ In the ODC Portal, you can view and edit default settings for all apps on a spec
 
 <div class="info" markdown="1">
 
-Remember, settings are stage-specific.
+Default values for app settings are stage-specific.
+
+In a multi-portfolio organization, configure default values separately for each portfolio and stage.
 
 </div>
 

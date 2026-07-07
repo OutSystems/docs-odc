@@ -1,7 +1,6 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers comprehensive tools for monitoring and troubleshooting applications through logs and traces within its portal.
 tags:
-  - Debugging
   - Logging
   - Monitoring
   - Performance
@@ -32,6 +31,12 @@ Complementing logs and traces, metrics provide a quantitative view of your app's
 <div class="info" markdown="1">
 
 This functionality uses the Data Platform, which may process data outside your ODC organization region to provide its capabilities. For more information, refer to [Data Platform](../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
+
+</div>
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, monitoring and logs are scoped per portfolio. For more information, refer to [Configuration management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-configurations.md).
 
 </div>
 

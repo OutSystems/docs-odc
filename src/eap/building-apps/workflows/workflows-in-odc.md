@@ -1,6 +1,10 @@
 ---
-summary: Workflows in OutSystems Developer Cloud (ODC) automate business processes like approvals and order management using a visual, event-driven editor.
-tags: workflows, business process automation, workflow editor, process automation, outsystems developer cloud
+summary: OutSystems Developer Cloud (ODC) workflows automate business processes using a visual editor with event triggers, human activities, and decisions.
+tags:
+  - Business Processes
+  - Events
+  - Triggers
+  - Workflows
 locale: en-us
 guid: 70b986e2-cd07-48a6-92c0-e57751112bb7
 app_type: mobile apps, reactive web apps
@@ -8,8 +12,6 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5633-900
 audience:
   - Developer
-  - Front-end developer
-  - Business analyst
 outsystems-tools:
   - odc portal
   - workflow builder
@@ -166,6 +168,8 @@ Here are some points to consider as you implement workflows in ODC:
     In the development stage, you can only have instances running in the last five revisions. For example, if there are five revisions (revisions 1 to 5) in the development stage with active instances running in each one, once revision six is created, all active instances running in revision one are terminated immediately. There is no limit to the number of revision instances for the QA and production stages.
 
     </div>
+
+* **Workflows are portfolio-scoped**: If your organization uses [portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md), each workflow belongs to one portfolio. Workflows consume events, screens, roles, and service actions from apps in the same portfolio. To share logic across portfolios, use [libraries](../libraries/libraries.md).
 
 ## Known constraints
 

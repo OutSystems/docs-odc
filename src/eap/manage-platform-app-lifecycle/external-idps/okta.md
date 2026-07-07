@@ -6,6 +6,7 @@ tags:
   - External Authentication
   - IdP
   - OIDC
+  - Security
 locale: en-us
 guid: 0a284428-86c4-4b57-b912-b122674b69e4
 app_type: mobile apps, reactive web apps
@@ -39,6 +40,12 @@ This page is provided as a reference. For the latest instructions about adding O
 * Your identity provider's endpoints (Discovery, JWKS, token, and userinfo) must be reachable by ODC. ODC validates tokens by retrieving signing keys from the JWKS endpoint. Either expose these endpoints publicly, or restrict access by allowlisting the ODC identity egress IP addresses in your firewall. For the list of IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp). For background on the network requirements and the protocol-based security model, refer to [Network considerations](intro.md#network-considerations).
 
 ## Configure Okta
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, you add an Okta provider once at the organization level and then assign it to stages in one or more portfolios. For more information about portfolio-scoped IdP assignment, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
+
+</div>
 
 ODC admins can configure Okta as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab.
 

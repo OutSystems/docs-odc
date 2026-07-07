@@ -49,7 +49,7 @@ Before you begin, ensure the following:
 
     <div class="info" markdown="1">
 
-    Copy the URLs for either your **Organization** or the app stage you want (for example, **Apps in Development**, **Apps in QA**, or **Apps in Production**). You can add more later.
+    Copy the URLs for either your **Organization** or the app stage you want (for example, **Apps in Development**, **Apps in QA**, or **Apps in Production**). You can add more later. In a multi-portfolio organization, copy the URLs for each stage you want the provider to cover.
 
     </div>
 

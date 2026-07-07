@@ -2,7 +2,7 @@
 summary: OutSystems Developer Cloud (ODC) employs secure-by-design principles, featuring multi-layered security and compliance with industry standards.
 tags:
   - Authentication
-  - Infrastructure
+  - IdP
   - Monitoring
   - OIDC
   - OWASP

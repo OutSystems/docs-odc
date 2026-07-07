@@ -38,6 +38,12 @@ Before you configure agent guardrails, ensure that you have:
 
 * **AI agents**: At least one AI agent created in your organization. If you need to create agents first, refer to [Creating an agent](create-agent.md).
 
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, configure guardrails separately for each portfolio's stages. For more information about portfolios, refer to [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md).
+
+</div>
+
 ## Configure baseline guardrails
 
 Baseline configuration allows you to set safety standards appropriate for each stage in your development lifecycle. For example, you can choose strict blocking rules for **Production** while allowing logging-only rules in **Development**.

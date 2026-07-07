@@ -1,7 +1,12 @@
 ---
-summary: Learn how to consume REST APIs using OutSystems Developer Cloud (ODC) by understanding API documentation, security requirements, and data type mappings.
+summary: "REST API consumption in OutSystems Developer Cloud (ODC): add methods via OpenAPI spec and configure basic or token-based auth in ODC Studio."
 helpids: 30484
-tags: rest apis, api authentication, data type mapping, api security, api documentation
+tags:
+  - Authentication
+  - External Authentication
+  - OAuth
+  - REST
+  - Security
 locale: en-us
 guid: b7e2daa5-b34c-4907-885b-56574bf14295
 app_type: mobile apps, reactive web apps
@@ -9,14 +14,14 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=3101-11328
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
   - understand
-  - remember
+  - apply
 topic:
   - consume-refresh-methods
+isautopublish: true
 ---
 
 # Use REST APIs in your app
@@ -24,6 +29,16 @@ topic:
 You can use REST APIs in your app to retrieve or update data from an external systems or leverage the resources of your ODC tenant, such as users, groups, app roles. For detailed information about using resources of your ODC tenant at runtime, refer to [ODC REST APIs](../../reference/apis/public-rest-apis/overview.md).
 
 To use the REST APIs in your app, you must consume the APIs in ODC Studio.
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, apps in different portfolios don't share public elements from apps (service actions, entities). REST APIs are a common way to share data across portfolios.
+
+To adopt a REST API across portfolios for an existing flow, publish the app that exposes the API, update the consuming apps, and validate the flow in each stage before you stop using the previous implementation.
+
+For more information, refer to [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md#whats-shared-and-portfolio-scoped) and [Portfolio planning and setup](../../manage-platform-app-lifecycle/portfolios/portfolios-plan.md#putting-the-plan-into-action).
+
+</div>
 
 Before you consume the API, ensure that you have the following details from the API reference documentation.
 
@@ -42,7 +57,7 @@ Here's the high-level process for consuming REST APIs in ODC Studio:
 
 * [Add a single API method](consume-a-rest-api.md#add-a-single-rest-api-method--single-method-) or [Add multiple API methods](consume-a-rest-api.md#add-several-methods-of-a-rest-api--all-methods-) by importing the OpenAPI specification file.
   
-* [Configure the API authentication](#configure-the-api-authentication) details for the REST API. For configuring basic authentication, refer to [Configure basic authentication](#configure-basic-authentication). For configuring token-based authentication, refer to [Configure token-based authentication](#configure-token-based-authentication).
+* [Configure the API authentication](#configure-api-authentication) details for the REST API. For configuring basic authentication, refer to [Configure basic authentication](#configure-basic-authentication). For configuring token-based authentication, refer to [Configure token-based authentication](#configure-token-based-authentication).
   
 * (Optional) [Customize](simple-customizations.md) the request and response headers using specific callbacks.
   

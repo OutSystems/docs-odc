@@ -4,7 +4,6 @@ tags:
   - Development lifecycle
   - Libraries
   - Lifecycle
-  - Logic
   - Mobile app
   - Plugins
   - Testing
@@ -37,9 +36,14 @@ Libraries are **stateless by design**, which means they can't persist data. Not 
 Common use cases for libraries include:
 
 * As a wrapper around an external system. A library can act as middleware between your apps and an external system (a RESTful service, for example) by abstracting and centralizing the layer consumed by different apps.
-* As a repository of business style guides and themes. This enables the implementation of desired visuals for reuse across your organization's app portfolio.
 
-![Diagram illustrating the concept of libraries in OutSystems Developer Cloud as repositories of reusable UI and logic elements.](images/libraries-diag.png "ODC Libraries Conceptual Diagram")
+* As a repository of business style guides and themes. This enables the implementation of desired visuals for reuse across your organization's apps.
+
+  ![Diagram illustrating the concept of libraries in OutSystems Developer Cloud as repositories of reusable UI and logic elements.](images/libraries-diag.png "ODC Libraries Conceptual Diagram")
+
+In a multi-portfolio organization, libraries are the primary mechanism for sharing logic across portfolios. Unlike public elements from apps (such as service actions and entities), which are available only within the same portfolio, libraries are reusable across all portfolios in your organization. For more information, refer to [Development with multiple portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-develop.md).
+
+<!-- TODO: Add cross-portfolio libraries diagram here showing libraries consumed by apps in different portfolios. -->
 
 OutSystems Developer Cloud (ODC) elevates the general-purpose library and mobile library to  top-level assets. They exist at the same level as web apps and mobile apps and have an independent lifecycle. For detailed information about how to think about libraries in the context of your app's architecture, refer to [App Architecture](../../app-architecture/intro.md#libraries-in-odc--libraries-).
 

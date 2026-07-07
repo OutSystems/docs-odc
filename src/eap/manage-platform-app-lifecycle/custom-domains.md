@@ -34,7 +34,7 @@ For each stage in which you deploy apps, ODC comes with a **built-in** OutSystem
 
 It's not possible to change the built-in OutSystems domain that is defined when the ODC infrastructure is created. Apps are always accessible to end-users through built-in domains. For example, an app named MyApp deployed to the Development stage is accessible at `<customername>-dev.outsystems.app/MyApp`. If you want to restrict access, you can use [end-user roles](../user-management/secure-app-with-roles.md).
 
-In addition, ODC lets you make your apps accessible to end-users through your organization's domain(s). In a given stage, your apps can be available through one or more custom domains that you add to that stage. Each custom domain must be unique to a customer and stage.
+In addition, ODC lets you make your apps accessible to end-users through your organization's domain(s). In a given stage, your apps can be available through one or more custom domains that you add to that stage. Each custom domain must be unique to a customer and stage. In a multi-portfolio organization, you configure custom domains for stages in each portfolio. For more information, refer to [Configuration management with multiple portfolios](portfolios/portfolios-configurations.md).
 
 <div class="info" markdown="1">
 

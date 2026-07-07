@@ -15,6 +15,7 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 platform-version: odc
 audience:
   - Developer
+  - Tech lead
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -31,19 +32,25 @@ isautopublish: true
 
 You can share public elements across your assets to accelerate development and enable consistency. Reusing a public element creates a **dependency** between the two assets involved: one as the **producer** and the other as the **consumer**.
 
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, public elements from apps (web, mobile, and agentic apps) are reusable only within the same portfolio. Libraries and external libraries are reusable across portfolios.
+
+</div>
+
 Dependencies are categorized into two types: **strong** and **weak**, based on the nature of the assets involved.
 
 * **Strong dependencies**: Strong dependencies are created when elements are shared between assets that aren't deployed independently. These non-deployable assets include all types of libraries and connections. Examples of strong dependencies include:
 
-    * Two Libraries sharing elements
+    * Two libraries sharing elements
 
-    * A Library sharing elements with an app (web, mobile or agentic apps)
+    * A library sharing elements with an app (web, mobile or agentic apps)
 
 * **Weak dependencies:** Weak dependencies are created between assets that are deployed independently. For example, a weak dependency occurs when:
 
     * One app reuses an element from another app. This includes web and mobile apps interacting with agentic apps (in either direction).
 
-    * A Workflow reuses an element from an app
+    * A workflow reuses an element from an app
 
     * An app reuses elements from a connection
 
@@ -55,7 +62,7 @@ To expose and share a public element for reuse, you set its **Public** property 
 
 ![Screenshot showing how to set the Public property to Yes for an element in OutSystems Developer Cloud.](images/set-public-odcs.png "Setting Public Property")
 
-However, you can't share some elements, and in such cases, the element's **Public** property is either not visible, or set to **No** and can't be changed.
+Some elements can't be shared. In those cases, the element's **Public** property is either not visible, or set to **No** and can't be changed.
 
 The following table lists elements that can be made public in at least one asset type.
 
@@ -84,15 +91,21 @@ While you can't directly make a server action public within an app, you can expo
 
 ## Consuming public elements
 
-When you want to use a public element from a different asset you must first add them to your current asset, establishing the relationship of Producer and Consumer. Learn more about this type of relationship in [Understand strong and weak dependencies](../building-apps/reuse/intro.md).
+To use a public element from a different asset, first add it to your current asset. This establishes the relationship of producer and consumer. Learn more about this relationship in [Understand strong and weak dependencies](../building-apps/reuse/intro.md).
 
-Follow these steps on how to add public elements to your asset.
+Follow these steps to add public elements to your asset.
 
 1. Open the **Add public elements** window.
 
     ![Screenshot of the Add public elements window in OutSystems Developer Cloud.](images/add-public-elements-odcs.png "Add Public Elements Window")
 
 1. Use the filter and search options to find the elements you want to consume, and select them.
+
+    <div class="info" markdown="1">
+
+    In a multi-portfolio organization, the list includes public elements from apps (including agentic apps) only in the portfolio of the asset you're editing.
+
+    </div>
 
 1. Click **Add**.
 
@@ -110,7 +123,9 @@ The elements are now available to use in your asset.
 
 ## Validating consumers and producers in the ODC Portal
 
-In the ODC Portal, the asset detail page lists producers and consumers. Understanding your asset's consumers is crucial for communicating changes, such as a bug fix in a service action, to the development team. Similarly, it's important to know the producers from which you reuse elements for your asset's functionality.
+In the ODC Portal, the asset detail page lists producers and consumers. Knowing your asset's consumers helps you communicate changes, such as a bug fix in a service action, to the development team. Similarly, knowing the producers helps you understand which elements your asset depends on.
+
+If apps in more than one portfolio consume a library, use the producers and consumers list to assess the impact of library changes.
 
 The **Producers** tab displays the complete hierarchy of direct and indirect producers contributing to delivering your assets' functionality. When you select a producer,  the elements that the direct consumer of this producer is reusing are displayed. For each producer, the version (or revision) that is being used is also displayed.
 
@@ -119,3 +134,15 @@ The platform determines the versions (or revisions) being used in an asset based
 * **For weak dependencies**: The revision used is the one currently deployed in the same stage where the consumer app is running.
 
 * **For strong dependencies**: The platform uses the revision that is directly referenced by the asset itself (direct dependencies). If not directly referenced, it uses the revision in use by the closest producer in the dependency tree.
+
+## Related resources
+
+For more information about dependency types, how to consume elements, and how portfolios affect sharing, refer to:
+
+* [Understand strong and weak dependencies](../building-apps/reuse/intro.md)
+
+* [Use public elements](../building-apps/libraries/use-public-elements.md)
+
+* [Libraries](../building-apps/libraries/libraries.md)
+
+* [Asset portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-overview.md)

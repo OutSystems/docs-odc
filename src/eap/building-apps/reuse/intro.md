@@ -5,23 +5,35 @@ guid: 908a38d8-c72c-47c4-81e1-63bccbaa4d1d
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-tags: application architecture, dependency management
+tags:
+  - Architecture
+  - Libraries
+  - Microservices
+  - Modular Programming
 audience:
+  - Architect
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
+  - remember
   - understand
 topic:
   - dependencies
+isautopublish: true
 ---
 
 # Understand strong and weak dependencies
 
-Strong and weak dependencies are related to how information is exposed and used in OutSystems by producers and consumers. Producers typically expose functionality for consumers to use. For example, a Producer might be a Library that implements and exposes functionality, and the consumer is an app using the exposed functionality.
+Strong and weak dependencies are related to how information is exposed and used in OutSystems by producers and consumers. Producers typically expose functionality for consumers to use. For example, a producer might be a library that implements and exposes functionality, and the consumer is an app using the exposed functionality.
 
 Depending on the type of element exposed by a producer, OutSystems generates a **strong** or a **weak** dependency between the producer and its consumers.
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, public elements from apps, such as service actions and entities, are reusable only within the same portfolio. Libraries and external libraries are reusable across portfolios. This means weak dependencies (app-to-app) only exist within a portfolio, while strong dependencies (via libraries) can span portfolios.
+
+</div>
 
 ## Strong dependencies
 
@@ -38,3 +50,13 @@ A weak dependency means a **weak relationship** between the consumer and produce
 Dependencies between apps are always weak dependencies, following a micro-services architecture pattern. The consumer app does not require the producer's code for building purposes. Still, it requires knowing the signature of the reusable app elements (Service Actions and Entities) to reuse those elements.
 
 In runtime, the consumer only needs to know the **signature** of the element to reuse it. For this reason, when the [producer changes only the implementation](handle-changes.md#change-functionality-in-the-producer-module) of the exposed elements, the consumer immediately starts using the latest producer version in runtime.
+
+## Related resources
+
+For more information about reusing elements and managing dependencies, refer to:
+
+* [Reuse elements across apps](../../app-architecture/reuse-elements.md)
+
+* [Libraries](../libraries/libraries.md)
+
+* [Handle changes in producers](handle-changes.md)

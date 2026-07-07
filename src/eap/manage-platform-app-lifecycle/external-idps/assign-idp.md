@@ -18,6 +18,7 @@ tags:
   - End-user Authentication
   - External Authentication
   - IdP
+  - OIDC
   - SAML
 outsystems-tools:
   - odc portal
@@ -37,6 +38,12 @@ Before you begin, ensure the following:
 * You must have the [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 
 ## Assign an IdP to your organization or to a stage
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, assign IdPs to stages in the portfolio or portfolios you want to assign the IdP to. For more information, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
+
+</div>
 
 To assign an existing external IdP, follow these steps:
 

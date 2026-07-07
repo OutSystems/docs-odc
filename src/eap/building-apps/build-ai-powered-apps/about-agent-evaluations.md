@@ -11,7 +11,11 @@ platform-version: odc
 audience:
   - Tech lead
   - Developer
-tags: ai agent testing,automated evaluation,black box testing,agent benchmarks,outsystems service actions
+tags:
+  - Agentic
+  - AI
+  - Quality Assurance
+  - Testing
 outsystems-tools:
   - odc portal
 helpids: "30761"
@@ -23,6 +27,8 @@ isautopublish: true
 **Agent evaluations** run a **service action** against a fixed set of test cases from a **dataset**, capture an **execution trace** for each case, and score outcomes with the **platform judge**. The main benefit is repeatability: after you change prompts, tools, or grounding logic, you can run the same benchmark again and see which cases still pass, which fail, and how scores moved without re-evaluating every scenario by hand.
 
 You exercise the full path where **system prompts** and **grounding** are built inside logic (not typed into the dataset), so each run reflects how your agent behaves for that service action.
+
+In a multi-portfolio organization, evaluations are scoped to agents in each portfolio. For more information about portfolios, refer to [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md).
 
 ## Prerequisites
 

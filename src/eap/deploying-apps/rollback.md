@@ -1,6 +1,8 @@
 ---
 summary: OutSystems Developer Cloud (ODC) allows you to rollback apps in ODC Portal.
-tags: rollback, versioning, dependency management, application deployment, odc
+tags:
+  - Deploy
+  - Troubleshooting
 guid: 340707ce-9540-4d8e-a025-aba9119da926
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -8,11 +10,13 @@ platform-version: odc
 figma: https://www.figma.com/design/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?node-id=3496-71&t=XDhAhNM4YGofhRUm-1
 coverage-type:
   - understand
+  - apply
 audience:
   - Developer
   - Platform administrator
 outsystems-tools:
   - odc portal
+isautopublish: true
 ---
 # Rollback apps
 
@@ -23,6 +27,12 @@ When apps have dependencies, managing versions is critical to ensure stability. 
 ![Diagram of rolling back an app in ODC Portal example](images/rollback-asset-odcs.png "Example application rollback")
 
 For example, consider App A, which depends on App B. You publish a new version for App B, which causes deployment inconsistencies with App A. To fix this, you must roll App B back to a stable version.
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, refer to [Asset deployment with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-deploy-assets.md).
+
+</div>
 
 To roll an app back, follow these steps:
 

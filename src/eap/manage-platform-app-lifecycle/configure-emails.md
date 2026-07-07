@@ -6,6 +6,7 @@ tags:
   - Private Gateway
   - Security
   - Settings
+  - Testing
 locale: en-us
 guid: 48490651-74d0-459b-a0c4-4b40df93d56e
 app_type: mobile apps, reactive web apps
@@ -25,6 +26,8 @@ isautopublish: true
 ---
 
 # Configure SMTP settings for emails
+
+In a multi-portfolio organization, you configure SMTP settings per portfolio and stage. For more information, refer to [Configuration management with multiple portfolios](portfolios/portfolios-configurations.md).
 
 The ODC apps sends emails using SMTP. For secure SMTP authentication, ODC supports both basic username/password and the more modern OAuth 2.0 authorization framework. Given the increasing security risks associated with basic authentication many providers are phasing out username/password authentication in favor of OAuth 2.0.
 

@@ -3,6 +3,7 @@ summary: Configure streams in OutSystems Developer Cloud (ODC) Portal to send ob
 tags:
   - Logging
   - Monitoring
+  - Settings
 guid: 512ce9da-a8bc-42b5-87a3-091e80535a06
 locale: en-us
 app_type: mobile apps,reactive web apps
@@ -14,7 +15,6 @@ coverage-type:
   - apply
 content-type:
 audience:
-  - Developer
   - Platform administrator
 helpids: 30636
 isautopublish: true
@@ -35,6 +35,8 @@ This example demonstrates the process of creating a stream using **New Relic** a
 <div class="info" markdown="1">
 
 When sending observability data from multiple environments to the same destination, create one stream and select the necessary environments. A single stream automatically sends logs, metrics, and traces to your destination APM tool, so you don't need to create separate streams for each data type.
+
+In a multi-portfolio organization, select the stages you want to include for each portfolio.
 
 </div>
 

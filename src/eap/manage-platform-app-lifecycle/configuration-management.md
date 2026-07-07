@@ -1,6 +1,10 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables efficient app configuration management without the need for redeployment.
-tags: configuration management, deployment, infrastructure management, app settings, stage-specific configuration
+tags:
+  - CI/CD
+  - REST
+  - Settings
+  - Timers
 locale: en-us
 guid: e32e1f5f-83b6-4b00-a593-83ba5017fc16
 app_type: mobile apps, reactive web apps
@@ -8,30 +12,40 @@ figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-managemen
 platform-version: odc
 audience:
   - Developer
-  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal
 coverage-type:
   - understand
+  - apply
 topic:
   - changing-endpoints
   - app-settings
+isautopublish: true
 ---
 
 # Configuration management
 
 OutSystems Developer Cloud (ODC) Portal lets you adjust the configuration values for your apps. Changes to configuration values don't require you to redeploy your app. This increases the speed in which changes to the app are available to customers and reduces the number of times a deployment is necessary.
 
-You configure the supporting infrastructure for your apps at the stage level. Supporting infrastructure includes custom domains and external identity providers. Applying a configuration to a stage applies to all the apps deployed to that stage.
+You configure supporting infrastructure for your apps at the stage level. Supporting infrastructure includes custom domains, external identity providers, and external connections. Applying a configuration to a stage applies to all the apps deployed to that stage.
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, supporting infrastructure is configured at the portfolio level. Each portfolio has its own set of stages, and configurations apply to the apps deployed to a stage within that portfolio. For more information, refer to [Asset portfolios](portfolios/portfolios-overview.md).
+
+</div>
 
 ## How configuration management works
 
-For app configurations, developers create settings with default values in ODC  Studio. From the ODC Portal, you select the stage on which you want to work. Then you can view and modify some configuration and settings values for apps deployed on that stage.
+For app configurations, developers create settings with default values in ODC Studio. From the ODC Portal, you select the stage on which you want to work. In a multi-portfolio organization, you select the portfolio first, then the stage. You then view and modify configuration and settings values for apps deployed on that stage.
 
 You can override the configuration values from ODC Studio in non-development stages. When you deploy your app to Test, you can change the configuration values to mirror production values for testing and troubleshooting. Then when you move this configuration to Production you can change your values using real data. The changes you make are specific to a stage. This process occurs without needing to publish your app again.
 
 ![How configuration management works](images/config-management-works-diag.png "How configuration management works")
+
+<!-- TODO: Update this diagram in Figma to show the Organization → Portfolio → Stage hierarchy. -->
 
 App configurations can use one of the following values:
 
@@ -42,6 +56,8 @@ App configurations can use one of the following values:
 The values you change take effect when the asynchronous apply process completes. The apply process saves the new values and updates the configuration.
 
 ![Apply configurations](images/config-management-apply-diag.png "Apply configurations")
+
+<!-- TODO: Update this diagram in Figma to include portfolio context in the apply flow. -->
 
 ## Managing settings
 
@@ -54,8 +70,11 @@ For more information about configuring app settings, refer to [Configure app set
 Timers execute logic in apps. In ODC Studio, your developers set the default values for the timers. For example, you can use timers to:
 
 * Run batch tasks
+
 * Run logic in an app at a specific time
+
 * Start actions that are machine intensive during high availability times
+
 * Set how long a task should run before it times out
 
 You can change the values in the ODC Portal. Access timers from the **Configuration** tab in ODC Portal. When you open the **Timers** section, a list of timers displays along with the schedule name and status. When you click on the name of a timer, the current values display in the sidebar.
@@ -79,3 +98,13 @@ When you click **Consumed REST APIs**, a list of the consumed APIs displays. To 
 You can automate configuration management tasks using the ODC REST APIs. This enables you to integrate configuration changes into CI/CD pipelines, infrastructure-as-code frameworks, or custom management tools.
 
 For more information, refer to the [Asset Configurations API reference](../reference/apis/asset-config-v1.md).
+
+## Related resources
+
+For more information about app-level settings and how portfolios affect configuration scope, refer to:
+
+* [Configure app settings](configure-app-settings.md)
+
+* [Configuration management with multiple portfolios](portfolios/portfolios-configurations.md)
+
+* [Asset portfolios](portfolios/portfolios-overview.md)

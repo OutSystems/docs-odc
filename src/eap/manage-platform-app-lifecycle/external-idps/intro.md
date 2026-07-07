@@ -43,12 +43,20 @@ You can configure most commercial IdPs to support these standards.
 
 ODC also provides accelerators for [commonly used social providers](configure-social-accelerators.md) that use OpenID Connect for social authentication. These accelerators simplify the process of adding social login options for both your organization and your apps.
 
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, identity provider assignment is portfolio-scoped. For more information, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
+
+</div>
+
 ## Scopes for assigning IdPs {#scopes-for-assigning-idps}
 
 IdPs are assigned to the organization or to a stage, never to an individual app:
 
 * **Organization scope**: Members (IT-users) can sign in to the ODC Portal and ODC Studio with the IdP.
 * **Stage scope**: All apps in that stage can use the IdP for end-user sign-in. For apps created with ODC Studio version 1.3.0 or later, the pre-built login screen automatically shows the IdPs assigned to the stage, so you usually don’t need to change the app’s login logic. For apps created before this behavior was introduced, or if you want to customize the default behavior, refer to [Step 4: Use an IdP in your apps (for end-users only)](#use-an-idp-in-your-apps).
+
+In a multi-portfolio organization, stage-level IdP assignments become portfolio-scoped. You assign an IdP to stages in one or more portfolios, and each portfolio can use different IdPs. For more information, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
 
 The following diagram shows an example setup.
 
@@ -191,7 +199,13 @@ Mapping groups from your identity provider to end-user groups in ODC can automat
 ## Related resources
 
 * [Manage identity providers](manage-external-idps.md): Replace, unassign, edit, or delete external IdPs and remove the built-in identity provider assignment
+
 * [Identity claims, email verification, and profile matching logic](identity-claims-email-verification.md)
+
+* [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md)
+
 * [Best practices for user management](../../user-management/best-practices-user-management.md)
+
 * [Managing authorization and authentication for end-users](../../user-management/end-users/intro.md)
+
 * [Managing authorization and authentication for members (IT-users)](../../user-management/it-users/intro.md)

@@ -687,6 +687,17 @@
     - topics:
         - href: eap/manage-platform-app-lifecycle/platform-architecture/networking.md
         - href: eap/manage-platform-app-lifecycle/platform-architecture/identity.md
+    - href: eap/manage-platform-app-lifecycle/portfolios/portfolios-overview.md
+    - topics:
+        - href: eap/manage-platform-app-lifecycle/portfolios/portfolios-plan.md
+        - href: eap/manage-platform-app-lifecycle/portfolios/portfolios-app-architecture.md
+        - href: eap/manage-platform-app-lifecycle/portfolios/portfolios-user-management.md
+        - href: eap/manage-platform-app-lifecycle/portfolios/portfolios-configurations.md
+        - href: eap/manage-platform-app-lifecycle/portfolios/portfolios-identity-providers.md
+        - href: eap/manage-platform-app-lifecycle/portfolios/portfolios-develop.md
+        - href: eap/manage-platform-app-lifecycle/portfolios/portfolios-forge.md
+        - href: eap/manage-platform-app-lifecycle/portfolios/portfolios-deploy-assets.md
+        - href: eap/manage-platform-app-lifecycle/portfolios/portfolios-best-practices.md
     - href: eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md
     - topics:
         - href: eap/manage-platform-app-lifecycle/self-hosted/sh-install-reqs.md

@@ -53,6 +53,12 @@ ODC provides ready-to-use trial models for quick testing and exploration in the 
 
 Trial models have limits, which, when reached, prevent the further use of the models. They're not bound by a specific time frame. You can check your consumption on the Trial Model details page on the ODC Portal.
 
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, trial models are available only in the main portfolio.
+
+</div>
+
 The following tables shows the current limits of the available Trial Models.
 
 #### GPT-5

@@ -1,6 +1,10 @@
 ---
 summary: OutSystems Developer Cloud (ODC) facilitates the exposure of methods through REST APIs with a defined execution flow.
-tags: rest apis, api development, authentication, api security, data serialization
+tags:
+  - Authentication
+  - REST
+  - Security
+  - Web services
 locale: en-us
 guid: 79ddbf86-371c-41cf-b9c9-45545b74957f
 app_type: mobile apps, reactive web apps
@@ -8,7 +12,6 @@ figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=desi
 platform-version: odc
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -16,6 +19,7 @@ coverage-type:
 topic:
   - rest-webservice-data
   - define-methods
+isautopublish: true
 ---
 
 # Exposing REST APIs
@@ -25,6 +29,14 @@ OutSystems allows you to [expose methods using a REST API](expose-a-rest-api.md)
 <div class="info" markdown="1">
 
 If you want to **consume** a REST API, check [Consume REST APIs](../consume_rest/intro.md).
+
+</div>
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, exposing a REST API is a common way to share data across portfolios. Apps in different portfolios don't share public elements from apps (service actions, entities).
+
+For more information, refer to [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md#whats-shared-and-portfolio-scoped).
 
 </div>
 

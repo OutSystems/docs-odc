@@ -1,6 +1,11 @@
 ---
-summary: Learn how to start a workflow
-tags: workflow editor, event triggering, node configuration, workflow design, workflow management
+summary: OutSystems Developer Cloud (ODC) workflow Start node assigns event triggers and instance labels to launch automated business processes.
+tags:
+  - Business Processes
+  - Events
+  - Triggers
+  - Troubleshooting
+  - Workflows
 locale: en-us
 guid: 43686a97-7a1c-4ae6-a775-bffb57ac2cd9
 app_type: mobile apps, reactive web apps
@@ -8,11 +13,12 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=6048-7&t=ykwyzPl8nKCnnRYC-1
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
+  - apply
   - remember
+isautopublish: true
 ---
 
 # Start a workflow
@@ -33,13 +39,19 @@ To trigger the workflow execution, follow these steps:
 
     When this event is triggered, the workflow begins.
 
+    <div class="info" markdown="1">
+
+    In a multi-portfolio organization, only events, screens, roles, and service actions from apps in the same portfolio are available.
+
+    </div>
+
 1. (Optional) Add an [Instance label](#instance-label).
 
     An instance label uniquely identifies an instance, making it useful when troubleshooting workflow instances and in workflow logs.
 
     ![Screenshot of instance label expression](images/instance-label-we.png "Instance label")
 
-## Instance label { #instance-label }
+## Instance label {#instance-label}
 
 When working with workflows, technical IDs such as ``Process_12345`` don't provide much information. Instance labels allow you to create meaningful names such as ``Loan 67890 - John Smith`` that make it easy to identify specific workflow instances.
 

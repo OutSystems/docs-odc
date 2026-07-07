@@ -1,7 +1,13 @@
 ---
 helpids: 30642, 30643
 summary: Stream observability data in real-time from OutSystems Developer Cloud (ODC) to various APM tools using OpenTelemetry framework.
-tags: observability,real-time monitoring,app performance,opentelemetry,apm tools
+tags:
+  - Data
+  - Debugging
+  - Logging
+  - Monitoring
+  - Performance
+  - Troubleshooting
 guid: 43e08fbf-f050-4946-aad2-289ab110be44
 locale: en-us
 app_type: mobile apps,reactive web apps
@@ -10,13 +16,13 @@ figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troublesh
 outsystems-tools:
   - odc portal
 coverage-type:
-  - apply
   - understand
-content-type: 
+content-type:
 audience:
   - Developer
   - Platform administrator
   - Tech lead
+isautopublish: true
 ---
 
 # Streaming observability data
@@ -53,7 +59,7 @@ Before you start streaming observability data, ensure you have:
 
     * Controlled exposure: When the APM tool is on-premises, the endpoint is accessible through a firewall, a reverse proxy, or both in the customer’s DMZ, ensuring that the internal APM system is never directly exposed.
 
-    * IP allowlisting: Firewall rules can restrict inbound traffic to the specific egress IP addresses of the OutSystems data platform, reducing exposure to the broader internet. The list of IP addresses can be found [here](../../manage-platform-app-lifecycle/odc-public-ips.md).
+    * IP allowlisting: Firewall rules can restrict inbound traffic to the specific egress IP addresses of the OutSystems data platform, reducing exposure to the broader internet. For more information, refer to [Allowlisting ODC public IP addresses](../../manage-platform-app-lifecycle/odc-public-ips.md).
 
     * Auditing and monitoring: All traffic passes through the firewall or proxy layer, which can log, monitor, and rate-limit requests.
 
@@ -97,7 +103,7 @@ ODC uses the [OpenTelemetry Protocol (OTLP)](https://opentelemetry.io/docs/specs
 
 </div>
 
-## Supported APM tools
+## Supported application performance monitoring tools
 
 ODC supports the following tools:
 

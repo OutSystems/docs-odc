@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) audit trail streaming lets you send platform logs to your SIEM tool for real-time threat detection and compliance.
+summary: Audit trail streaming in OutSystems Developer Cloud (ODC) lets you send platform logs to your SIEM tool for real-time threat detection and compliance.
 tags:
   - Logging
   - Monitoring
@@ -27,6 +27,12 @@ isautopublish: true
 # Stream audit trail logs
 
 With ODC's **audit trail streaming**, you can securely stream platform audit logs directly to your preferred security information and event management (SIEM) solutions or other security monitoring repositories. This enables continuous threat detection and anomaly analysis by integrating ODC with your existing monitoring tools, eliminating the need to manually export and upload audit logs.
+
+<div class="info" markdown="1">
+
+In a [multi-portfolio organization](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md), audit trail streaming includes events across all portfolios.
+
+</div>
 
 ## Benefits of audit trail streaming
 
@@ -109,8 +115,12 @@ A stream can have one of the following statuses:
 
 ## Related resources
 
+For more information about audit trail streaming and related topics, refer to:
+
 * [Audit trail](audit-trail.md)
 
 * [Requirements for streaming audit trail logs](audit-trail-requirements.md)
+
+* [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md)
 
 * [Allowlisting ODC public IP addresses](../../manage-platform-app-lifecycle/odc-public-ips.md)

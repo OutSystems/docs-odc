@@ -7,7 +7,7 @@ guid: f3211746-db90-4515-8175-888d00e14bd9
 locale: en-us
 app_type: mobile apps,reactive web apps
 platform-version: odc
-figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=4348-2
+figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3539-11
 content-type:
   - procedure
 coverage-type:

@@ -1,5 +1,5 @@
 ---
-summary: Create a basic app with AI in ODC Portal. Follow a step-by-step procedure to provide input, review the blueprint, generate, and refine in the editor.
+summary: Mentor Web in OutSystems Developer Cloud (ODC) Portal generates apps from prompts; you review the blueprint, refine screens, and publish.
 tags:
   - Agentic
   - AI
@@ -20,7 +20,6 @@ coverage-type:
   - apply
 audience:
   - Developer
-  - Front-end developer
 topic:
   - creating-apps
 isautopublish: true
@@ -53,7 +52,13 @@ The following procedure uses an Employee Onboarding app as an example to demonst
 
 To create an Employee Onboarding app with AI in ODC Portal:
 
-1. Go to **Portal** > **Apps** > **Create** > **Web app** > **Generate with Mentor**.
+1. Go to **Portal** > **Apps**.
+
+1. [Optional] In a multi-portfolio organization, select the portfolio where you want to create the app.
+
+      For more information about portfolios, refer to [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md).
+
+1. Go to **Create** > **Web app** > **Generate with Mentor**.
 
       The app creation screen opens with a prompt field and an option to upload a requirements file.
 

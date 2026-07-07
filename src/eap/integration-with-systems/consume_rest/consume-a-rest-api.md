@@ -1,6 +1,10 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports consuming single or multiple REST API methods with Swagger integration.
-tags: swagger integration, rest api integration
+tags:
+  - Authentication
+  - REST
+  - Security
+  - Web services
 locale: en-us
 guid: 1901abf6-d016-4fc6-84df-c8ea2fe92003
 app_type: mobile apps, reactive web apps
@@ -8,7 +12,6 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 platform-version: odc
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -158,6 +161,8 @@ Once you have consumed the API in ODC Studio. You can modify the following detai
 * Basic authentication details such as **username** and **password**. The authentication credentials can also be configured for every stage.
 
 <div class="info" markdown="1">
+
+In a multi-portfolio organization, each portfolio has its own stages. Configure the base URL and basic authentication credentials for the stages in the portfolio that contains the consuming app.
 
 For ODC REST APIs, you can keep the same base URL.
 

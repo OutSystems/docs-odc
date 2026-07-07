@@ -54,7 +54,7 @@ You can manage user roles for both members [(IT-users)](#grant-roles-to-members)
 
 ### Grant or revoke roles for members (IT-users) {#grant-roles-to-members}
 
-Members (IT-users) can have roles at different scopes within your organization. You can assign organization-level roles for tenant-wide access or app-specific roles for granular permissions.
+Members (IT-users) can have roles at different scopes within your organization. You can assign organization-level roles for tenant-wide access or app-specific roles for granular permissions. In a multi-portfolio organization, you assign roles per portfolio. For more information, refer to [User management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md).
 
 To grant or revoke a role for a member (IT-user):
 

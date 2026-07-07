@@ -1,6 +1,12 @@
 ---
-summary: Manage technical debt and enhance code quality in OutSystems Developer Cloud (ODC) using Code Quality powered by Mentor for optimal performance, maintainability, and security.
-tags: code quality, technical debt, mentor, code analysis, outsystems development cloud
+summary: OutSystems Developer Cloud (ODC) Code Quality powered by Mentor analyzes apps for security, performance, and maintainability to reduce technical debt.
+tags:
+  - Architecture
+  - Development lifecycle
+  - Mentor
+  - Performance
+  - Security
+  - Technical Debt
 guid: 6be15662-74c5-4c35-9a7d-16a28816614c
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -15,10 +21,17 @@ outsystems-tools:
   - none
 topic:
   - manage-tech-debt
+isautopublish: true
 ---
 # Manage technical debt in ODC
 
 **Code quality**, powered by Mentor, is an OutSystems Developer Cloud (ODC) solution to help improve your team's code quality and manage technical debt. Managing your technical debt increases your team's agility and productivity while lowering the maintenance costs of developing your apps.
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, code quality findings are scoped to assets in a portfolio. For more information about portfolios, refer to [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md).
+
+</div>
 
 **Code quality** analyzes your code against established best practices and coding patterns. It scans your apps for potential issues in four key areas: security vulnerabilities, performance problems, maintainability concerns, and architecture patterns. When the analysis is complete, it provides a detailed report showing specific findings with guidance on how to fix them.
 

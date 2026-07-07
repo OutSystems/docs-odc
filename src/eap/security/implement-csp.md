@@ -1,9 +1,10 @@
 ---
-summary: Learn how to activate and configure Content Security Policy (CSP) in OutSystems Developer Cloud (ODC) to enhance app security.
+summary: "Content Security Policy (CSP) in OutSystems Developer Cloud (ODC): activate per stage, configure directives, and manage default and required values."
 tags:
   - iOS
   - Mobile app
   - Security
+  - Web
 guid: 6575ff95-52d4-4f2b-acf8-945066b73217
 locale: en-us
 app_type: mobile apps, reactive web apps

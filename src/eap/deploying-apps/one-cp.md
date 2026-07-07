@@ -1,6 +1,11 @@
 ---
 summary: OutSystems Developer Cloud (ODC) simplifies app and library publishing with an automated 1-Click Publish feature.
-tags: application deployment, cloud infrastructure
+tags:
+  - 1-Click Publish
+  - Deploy
+  - Development lifecycle
+  - Libraries
+  - Lifecycle
 locale: en-us
 guid: 2c3f88e1-c53a-450d-9e36-ac83a7bf7a5d
 app_type: mobile apps, reactive web apps
@@ -13,6 +18,7 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - understand
+  - apply
 isautopublish: true
 ---
 
@@ -30,6 +36,12 @@ OutSystems Developer Cloud (ODC) automates app publishing with its 1-Click Publi
 1. The ODC Deployment tool deploys the container image in the Kubernetes cluster using app configurations set in the ODC Portal. Simultaneously, the ODC Data tool starts executing the database scripts.
 
 ![Diagram illustrating the app publishing workflow after 1-Click Publish in ODC, showing steps from ODC Studio to Kubernetes deployment.](images/1-CP-ODC.png "App Publishing Workflow Diagram")
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, refer to [Asset deployment with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-deploy-assets.md).
+
+</div>
 
 When you deploy your app from the Development stage to the QA stage, ODC follows these steps:
 

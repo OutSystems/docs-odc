@@ -14,6 +14,7 @@ coverage-type:
 audience:
   - Developer
   - Front-end developer
+isautopublish: true
 ---
 
 # AI models and search services in ODC
@@ -31,6 +32,12 @@ To retrieve information from a configured knowledge base connection such as Azur
 ## Use trial models { #trial }
 
 To help you quickly experiment with AI features without immediately setting up your model connection, ODC offers pre-configured trial models (provided via Azure OpenAI and Amazon Bedrock). You can add these models directly within ODC and call them from your apps running in the Development stage. Note that trial models via Azure OpenAI are limited to 100 calls per ODC tenant and trial models via Amazon Bedrock allow up to 1000 and are intended for initial testing or proof-of-value exploration before configuring your persistent AI model connection.
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, trial models are available only in the main portfolio.
+
+</div>
 
 ## Custom model connections { #custom-model-connections }
 

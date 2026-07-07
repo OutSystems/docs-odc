@@ -1,5 +1,5 @@
 ---
-summary: "ODC Portal and ODC Studio UI overview for OutSystems Developer Cloud (ODC): navigate the console, build apps, and use Mentor AI."
+summary: ODC Portal and ODC Studio interface overview for OutSystems Developer Cloud (ODC), covering Navigation menu, Toolbox, canvas, and Development tabs.
 tags:
   - 1-Click Publish
   - AI
@@ -21,6 +21,7 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - remember
+  - understand
 isautopublish: true
 ---
 

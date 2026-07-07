@@ -7,6 +7,7 @@ tags:
   - Entities
   - External Databases
   - Private Gateway
+  - Settings
 guid: 32004a44-1a95-46b2-abcb-88ad76f51961
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -19,6 +20,7 @@ content-type:
   - procedure
   - reference
 audience:
+  - Developer
   - Platform administrator
 coverage-type:
   - remember
@@ -31,6 +33,14 @@ isautopublish: true
 To integrate with external data sources using [Data Fabric](intro.md), Administrators need to create the connections to the external data sources and AI search services in the ODC Portal. Then, in ODC Studio, developers use the data through entities or server actions in their apps.
 
 The supported data sources are listed at [ODC system requirements](../../getting-started/system-requirements.md#supported-external-data-sources).
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, connections are portfolio-scoped. Configure a connection separately for each portfolio's stages.
+
+For more information, refer to [Configuration management with multiple portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-configurations.md).
+
+</div>
 
 Administrators must:
 
@@ -168,14 +178,14 @@ You can use advanced parameters to add additional parameters for a database conn
 * To establish a connection with the **SQL Server** and allow the client to bypass certificate validation, add the `trustServerCertificate=true` parameter to the additional parameters.
 * You can configure connection pool settings for all available relational database connectors. Changing the connection pool settings can significantly impact performance.
     * `testOnBorrow` controls when and how often the health of pooled connections is tested to verify connectivity to the database.
-        * When `true`, connections will be tested every time they are borrowed from the pool, this increases the reliability of query execution but decreases performance.
-        * When `false`, pooled connections will be tested periodically while they are idle in the pool, this decreases the reliability of query exuection but increases performance.
+        * When `true`, connections are tested every time they are borrowed from the pool, this increases the reliability of query execution but decreases performance.
+        * When `false`, pooled connections are tested periodically while they are idle in the pool, this decreases the reliability of query exuection but increases performance.
         * Default value of `false` because it offers improved performance and connectivity to databases tends to be reliable
     * `minIdleMinutes` is the minimum amount of time in minutes that a connection must remain idle for in the pool before it may be closed
         * Default value of `10` minutes because databases are often configured to close idle connections/sessions after a period of inactivity
     * `maxLifetimeMinutes` is the maximum amount of time in minutes that a connection may be used for
-        * After this time has elapsed, the connection will not be used to execute any new queries and will eventually be closed
-        * Default value of `0` which means that connections will be open indefinitely provided that they are healthy and do not remain idle for longer than `minIdleMinutes`
+        * After this time has elapsed, the connection is not used to execute any new queries and is eventually closed
+        * Default value of `0` which means that connections are open indefinitely provided that they are healthy and do not remain idle for longer than `minIdleMinutes`
     * `maxConnectionPoolSize` is the maximum number of connections that can be open (in use or idle) at any given time
         * Default and maximum supported value of 400, as it was the best performer in OutSystems performance tests
     * `minConnectionPoolSize` is the number of connections that must always be available (idle) in the pool
@@ -338,7 +348,7 @@ Salesforce
 <div class="os-accordion__content" markdown="1">
 
 * Entities and attributes for Salesforce are displayed using their API names, such as CustomObject_c, instead of Field Labels or Field Names, such as CustomObject.
-* Custom attributes and their data types in Salesforce have different mapping than the built-in attributes. For more information, see [salesforce custom columns mapping](external-data-type.md#salesforce-custom-columns-mapping).
+* Custom attributes and their data types in Salesforce have different mapping than the built-in attributes. For more information, refer to [Salesforce custom columns mapping](external-data-type.md#salesforce-custom-columns-mapping).
 * Salesforce doesn't support leading and trailing white spaces. Salesforce removes those white spaces. While inserting an empty string, Salesforce inserts NULL instead.
 * Salesforce is case-insensitive, and `ToUpper`/`ToLower` built-in functions don't have the expected behavior in aggregates.
 * When sorting queries by ID, the Salesforce API orders the Id attribute in a case-sensitive manner, which differs from the expected case-insensitive sorting of other attributes. While regular attributes are sorted in the standard order (A, a, B, b, C, c), the Id attribute is sorted with uppercase letters first, followed by lowercase letters (A, B, C, a, b, c).

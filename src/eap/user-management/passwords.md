@@ -18,6 +18,7 @@ audience:
 outsystems-tools:
   - odc portal
 coverage-type:
+  - understand
   - apply
   - unblock
 topic:

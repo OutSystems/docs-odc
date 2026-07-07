@@ -19,7 +19,6 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
-  - evaluate
 isautopublish: true
 ---
 # Content security policy
@@ -49,6 +48,8 @@ ODC mobile apps are hybrid apps that combine web technologies with native capabi
 <div class="info" markdown="1">
 
 You activate or deactivate CSP at the stage level, not per individual mobile app.
+
+In a multi-portfolio organization, configure CSP separately for each portfolio and stage.
 
 </div>
 

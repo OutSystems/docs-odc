@@ -1,13 +1,18 @@
 ---
-summary: OutSystems Developer Cloud (ODC) facilitates app deployment across multiple stages with containerization and a unified code repository.
-tags: continuous deployment,containerization,deployment stages,code repository,deployment isolation
+summary: "OutSystems Developer Cloud (ODC) asset deployment: deploy apps and workflows across stages, track revisions, and review impact analysis results."
+tags:
+  - Agentic
+  - CI/CD
+  - Deploy
+  - Development lifecycle
+  - Workflows
 locale: en-us
 guid: d0aa50bf-0378-4bb9-8c4f-71b37092dd8b
 app_type: mobile apps,reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?node-id=2901-72
 audience:
-  - Architect
+  - Developer
   - Platform administrator
   - Tech lead
 outsystems-tools:
@@ -28,6 +33,12 @@ Use OutSystems Developer Cloud (ODC) Portal to deploy your assets (apps and work
 ODC has a single code repository. When you deploy an asset in ODC Studio, it is [containerized](../app-architecture/intro.md), deployed to the development stage, and a container image is created. When you're ready to deploy your asset to the next stage, your asset deploys without the need to recompile code again.
 
 Assets in each stage are isolated from each other. When you publish an asset to the development stage, it doesn't impact the assets running in other stages. Similarly, publishing assets to production doesn't affect assets in a previous stage, such as development.
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, an asset is deployed and promoted only through the stages of its portfolio. For more information, refer to [Asset deployment with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-deploy-assets.md).
+
+</div>
 
 ## Track releases across stages
 
@@ -194,5 +205,9 @@ An asset can have one of the following deployment statuses:
 You can access the log information for each **asset deployment** by clicking the row for which you want more information.
 
 ## Related resources
+
+For more information about deployment and delivery in ODC, refer to:
+
+* [Asset portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-overview.md)
 
 * [Continuous Delivery in ODC](https://learn.outsystems.com/training/journeys/continuous-delivery-2396) online course

@@ -1,6 +1,8 @@
 ---
-summary: OutSystems Developer Cloud (ODC) enables users to expose and manage REST APIs for system integration and data manipulation.
-tags: rest api development, system integration, api versioning
+summary: "OutSystems Developer Cloud (ODC) REST API: create a service and define HTTP methods in ODC Studio to expose your app data to external systems."
+tags:
+  - REST
+  - Web services
 locale: en-us
 guid: 22e6fa5b-6ad0-43bd-b530-dbb948e4c073
 app_type: mobile apps, reactive web apps
@@ -8,7 +10,6 @@ platform-version: odc
 figma:
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -16,6 +17,7 @@ coverage-type:
 topic:
   - rest-webservice-data
   - define-methods
+isautopublish: true
 ---
 
 # Expose a REST API
@@ -28,6 +30,14 @@ If you want to expose methods to allow other systems to retrieve or manipulate i
 1. Right-click REST and select **Expose REST API...**
 1. Set the name of your REST API.  
     A common recommendation is to name the exposed REST API according to its version. You could name the API `v1` for the first version of a REST API. You can also use a different name, like `PhoneBook`.  
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, apps in other portfolios may consume your REST API. Treat the API signature (endpoints, request and response structures, and authentication requirements) as a contract.
+
+Keep changes backward compatible when possible. For breaking changes, expose a new version of the API (for example, `v2`) and update the consuming apps.
+
+</div>
 
 ## Create the REST API Method
 

@@ -4,7 +4,6 @@ locale: en-us
 summary: Ensure responsible AI behavior with OutSystems Developer Cloud (ODC) guardrails for real-time monitoring and enforcement of safety rules.
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8952-10&p=f&t=dTw7xI6tOViV5aq9-0
 coverage-type:
-  - remember
   - understand
 topic:
 app_type: reactive web apps,mobile apps
@@ -12,10 +11,10 @@ platform-version: odc
 audience:
   - Developer
   - Platform administrator
+  - Tech lead
 tags:
   - Agentic
   - AI
-  - Logging
   - Monitoring
   - Security
 outsystems-tools:
@@ -139,6 +138,8 @@ You manage guardrails directly in the ODC Portal. To balance governance with fle
 * **Agent level guardrails**: If there's no baseline guardrails defined, you can enable guardrails on a per-agent basis. This allows you to apply specific protections to high-risk agents without enforcing them across the board.
 
 If there are baseline guardrails defined, you can make the guardrail stricter at the agent level, but not more lenient. For example, if you set a policy to "Log and continue" at the stage level, you can choose to "Block and raise exception" for a specific agent, but not the other way around.
+
+In a multi-portfolio organization, stage-level guardrails are configured separately for each portfolio's stages. For more information about portfolios, refer to [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md).
 
 The following diagram shows a possible guardrail configuration by stage:
 

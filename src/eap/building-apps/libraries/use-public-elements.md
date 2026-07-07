@@ -1,6 +1,9 @@
 ---
 summary: Explore how to extend app capabilities using public elements and libraries in OutSystems Developer Cloud (ODC).
-tags: application development, library management, http communication, modular architecture
+tags:
+  - Libraries
+  - Logic
+  - Modular Programming
 locale: en-us
 guid: abe6d7fc-04ae-45ed-8630-cf3e7e9b86ef
 app_type: mobile apps, reactive web apps
@@ -8,13 +11,14 @@ platform-version: odc
 figma:
 audience:
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+  - apply
 topic:
   - add-module-dependency
+isautopublish: true
 ---
 
 # Use public elements
@@ -22,6 +26,8 @@ topic:
 You can use public elements to extend the capabilities of your app. Public elements are elements [shared by members of your organization](../../app-architecture/reuse-elements.md#public-elements) or packaged into libraries that come bundled with OutSystems Developer Cloud (ODC).
 
 For example, you can use elements in the HTTP library to extend your app to handle HTTP requests and responses. The HTTP library comes bundled with ODC.
+
+In a multi-portfolio organization, service actions and entities from apps are portfolio-scoped, while library public elements are reusable across portfolios. For more information, refer to [Reuse elements across apps](../../app-architecture/reuse-elements.md).
 
 ## Add public elements
 
@@ -40,3 +46,11 @@ When you add a public element from a provided library, it becomes available to u
 The public element may also be available as function in the **User Functions** folder of the expression editor. You can use a function in the logic flow in any expression of any server action or service action. You can check if an action is available as a function in the [reference documentation](../../reference/intro.md#libraries). Public elements consumed from external logic are never available as functions. To learn more about external logic, see [external logic](../external-logic/intro.md).
 
 The functions available in the provided libraries complement the built-in functions found in the **Built-in Functions** folder of the expression editor.
+
+## Related resources
+
+For more information about reuse and libraries, refer to:
+
+* [Reuse elements across apps](../../app-architecture/reuse-elements.md)
+
+* [Libraries](libraries.md)

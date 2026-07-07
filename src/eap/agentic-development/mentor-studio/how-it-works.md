@@ -35,6 +35,12 @@ Mentor analyzes the app model and generates changes that integrate with the exis
 
 Mentor uses AI agents to process requests. When you describe a goal, Mentor analyzes the current app model, plans the required changes, and generates modifications that integrate with existing elements. This agent-based processing lets Mentor handle multi-step tasks and coordinate changes across different parts of the app. Mentor Studio works on the OutSystems app model rather than raw code, and draws on the Enterprise Context Graph for a high-fidelity view of your apps, data, and dependencies. For this architecture, refer to [Architecture](../architecture.md).
 
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, for more information about roles, portfolio-scoped permissions, and development with multiple portfolios, refer to [User management with multiple portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md) and [Development with multiple portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-develop.md).
+
+</div>
+
 Use Mentor Studio to add features, fix issues, or refine logic in apps you're developing. To create a new app from requirements, refer to [AI app generation in Mentor Web](../mentor-web/how-it-works.md).
 
 ![ODC Studio with the Mentor panel creating a ValidateCreditCardNumber client action from a natural language prompt, showing the generated validation flow and the new action in the elements tree.](images/mentor-sample-prompt-resulting-code-odcs.png "Mentor generating a ValidateCreditCardNumber action from a natural language prompt")

@@ -1,6 +1,13 @@
 ---
-summary: AI app generation transforms requirements into working apps through five phases - input, blueprint review, generation and publication, refinement in the editor, and continuation in Mentor Studio.
-tags: app generation, agentic development, model-driven development, prompt engineering, workflow
+summary: "Mentor Web in OutSystems Developer Cloud (ODC) creates apps in five phases: input, blueprint review, generation, prompt refinement, and ODC Studio."
+tags:
+  - Agentic
+  - AI
+  - Data Model
+  - Entities
+  - Mentor
+  - Mentor Web
+  - Screens
 guid: 8f4a2e1d-9b7c-4a3f-8d6e-5c9f3a2b1e0d
 locale: en-us
 app_type: reactive web apps
@@ -13,7 +20,6 @@ coverage-type:
   - understand
 audience:
   - Developer
-  - Front-end developer
 topic:
   - creating-apps
 isautopublish: true
@@ -24,6 +30,12 @@ isautopublish: true
 AI app generation in OutSystems follows a structured workflow that balances AI generation with human validation. The process transforms natural language requirements into working apps through iterative cycles of description, review, and refinement.
 
 Use Mentor Web to turn requirements into a working app. To modify and extend an existing app, refer to [AI development in Mentor Studio](../mentor-studio/how-it-works.md).
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, Mentor generates the app in the portfolio you selected and can reference public elements from apps in that portfolio and libraries from any portfolio. For more information, refer to [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md).
+
+</div>
 
 ![Mentor Web showing the Mentor panel with a prompt and an attached requirement document, ready to generate an app.](images/ai-gen-app-provide-input-pl.png "Provide input to Mentor Web")
 

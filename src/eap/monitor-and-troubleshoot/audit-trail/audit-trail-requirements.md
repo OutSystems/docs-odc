@@ -18,8 +18,6 @@ content-type:
   - reference
 audience:
   - Platform administrator
-  - Tech lead
-  - Architect
 topic:
   - app-settings
   - app-configuration
@@ -192,6 +190,8 @@ The following JSON schema defines the structure of audit trail logs:
         "Category": { "type": "string" },
         "EventId": { "type": "string" },
         "TenantId": { "type": "string" },
+        "PortfolioId": { "type": "string" },
+        "PortfolioName": { "type": "string" },
         "EnvironmentId": { "type": "string" },
         "EnvironmentName": { "type": "string" },
         "Ring": { "type": "string" },
@@ -266,6 +266,8 @@ The following example shows the structure of an audit trail log event:
     "Category": "UserManagement",
     "EventId": "evt-789654",
     "TenantId": "tenant-123",
+    "PortfolioId": "port-789",
+    "PortfolioName": "Portfolio",
     "EnvironmentId": "env-456",
     "EnvironmentName": "Production",
     "Ring": "R1",
@@ -309,5 +311,7 @@ Once you've verified compatibility, go to the ODC Portal and [configure the audi
 * [Stream audit trail logs](audit-trail-streaming.md)
 
 * [Audit trail](audit-trail.md)
+
+* [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md)
 
 * [Allowlisting ODC public IP addresses](../../manage-platform-app-lifecycle/odc-public-ips.md)

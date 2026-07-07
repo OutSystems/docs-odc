@@ -10,6 +10,7 @@ tags:
   - External Authentication
   - IdP
   - SAML
+  - Security
   - SSO
 audience:
   - Platform administrator
@@ -75,7 +76,7 @@ After selecting **SAML 2.0**, complete these steps:
 
     <div class="info" markdown="1">
 
-    You can't change the scope after you configure the provider.
+    You can't change the scope after you configure the provider. In a multi-portfolio organization, the stage you select belongs to one portfolio. Add a separate SAML 2.0 provider for each stage you want to cover.
 
     </div>
 

@@ -50,6 +50,12 @@ Before you begin, make sure you have:
 
 ## Configure Microsoft Entra ID
 
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, you add a Microsoft Entra ID provider once at the organization level and then assign it to stages in one or more portfolios. For more information about portfolio-scoped IdP assignment, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
+
+</div>
+
 ODC admins can configure Microsoft Entra ID as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab.
 
 To launch the **New provider** configuration screen, click the **Add Provider** > **OpenID Connect** button. Now follow these steps:

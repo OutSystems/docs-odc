@@ -10,7 +10,7 @@ tags:
   - Authorization
   - End-user Authentication
   - End-users
-  - IdP
+  - Groups
   - IT Users
   - Roles
 audience:
@@ -147,7 +147,7 @@ ODC organizes access into three scopes:
 
 * **App scope**: Access to a specific application.
 
-These scopes define the level at which you can assign [roles](#authorization) and permissions to users, as well as configure [end-user groups](end-users/groups.md) and [Identity Providers (IdPs)](../../../build/eap/manage-platform-app-lifecycle/external-idps/intro.html). While roles are assigned at the organization or app level, app stage scope is mainly relevant when assigning permissions while creating [custom roles](roles.md) and when managing IdPs. Understanding these scopes helps you control what resources users can access and what actions they can perform, ensuring secure and efficient management.
+These scopes define the level at which you can assign [roles](#authorization) and permissions to users, as well as configure [end-user groups](end-users/groups.md) and [Identity Providers (IdPs)](../../../build/eap/manage-platform-app-lifecycle/external-idps/intro.html). While roles are assigned at the organization or app level, app stage scope is mainly relevant when assigning permissions while creating [custom roles](roles.md) and when managing IdPs. In a multi-portfolio organization, some permissions become portfolio-scoped, adding a level between organization and stage. For more information, refer to [User management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md). Understanding these scopes helps you control what resources users can access and what actions they can perform, ensuring secure and efficient management.
 
 ![Diagram illustrating organization and app scope](images/org-stage-app-scope-diag.png "Organization and App Scope in ODC")
 

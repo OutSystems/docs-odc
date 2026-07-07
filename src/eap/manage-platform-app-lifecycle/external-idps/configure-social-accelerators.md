@@ -9,6 +9,9 @@ tags:
   - End-user Authentication
   - External Authentication
   - IdP
+  - OAuth
+  - OIDC
+  - Security
 figma:
 audience:
   - Platform administrator
@@ -41,6 +44,12 @@ Before you begin, make sure you have:
 * When registering your web app in your identity provider’s portal, if you're prompted to provide redirect URIs, leave the fields empty or use placeholder URIs. You'll update these with the correct values in a later step of this guide.
 
 ## Add a social provider with accelerators
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, you add a social identity provider once at the organization level and then assign it to stages in one or more portfolios. For more information about portfolio-scoped IdP assignment, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
+
+</div>
 
 To add a new social identity provider with accelerators, follow these steps:
 

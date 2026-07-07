@@ -3,6 +3,7 @@ helpids: 30635
 summary: OutSystems Developer Cloud (ODC)'s audit trail ensures compliance, aids troubleshooting, and tracks platform operations for effective incident response.
 tags:
   - Events
+  - IT Users
   - Logging
   - Monitoring
   - Roles
@@ -43,11 +44,19 @@ Within the OutSystems ODC platform, an **audit trail** is a critical, chronologi
 
 An audit trail provides an effective way to track temporal information. Every significant action creates a record detailing what happened and when. For effective analysis, these records must be collected in a central place where they can be searched, correlated, and analyzed – for ODC, this central place is the **ODC Portal** > **Management** > **Admin** > **Audit trail**.
 
-ODC's audit trail provides you with a comprehensive, immutable record of significant actions and changes within your environment. It helps you monitor security, maintain compliance, and troubleshoot operational issues by clearly showing who did what, where, and when across your platform. Audit trails offer significant advantages:
+ODC's audit trail provides you with a comprehensive, immutable record of significant actions and changes within your environment. It helps you monitor security, maintain compliance, and troubleshoot operational issues by clearly showing who did what, where, and when across your platform.
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, an audit trail logs events across the organization. Each entry includes portfolio context, which helps you distinguish stage-level events across portfolios. For more information about portfolios, refer to [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md).
+
+</div>
+
+An audit trail offers significant advantages:
 
 * **Compliance**: Verifiable documentary evidence to meet regulatory standards and internal policies.
 
-* **Troubleshooting**: Troubleshooting: Help diagnose operational issues by revealing who made changes, where they were made, and when.
+* **Troubleshooting**: Help diagnose operational issues by revealing who made changes, where they were made, and when.
 
 * **Incident response**: Crucial for reconstructing events, tracing malicious activity, and understanding the scope of any breach.
 
@@ -57,7 +66,7 @@ ODC's audit trail provides you with a comprehensive, immutable record of signifi
 
 Before you can view or export audit logs, you must have the **Audit Trail View** role.
 
-## View audit trail in the ODC Portal
+## View an audit trail in the ODC Portal
 
 From the **Audit trail** interface, you can:
 
@@ -79,7 +88,7 @@ The logs display the most important information about **platform operations**. Y
 
     ![Screenshot of the ODC Portal showing the Audit trail screen](images/audit-trail-pl.png "Audit trail")
 
-### Exporting logs to CSV {# export-csv}
+### Exporting logs to CSV {#export-csv}
 
 You can export your logs to a CSV file. This gives you even more flexibility:
 
@@ -179,6 +188,12 @@ Track how you grant and revoke access within your organization. This includes bo
 
 * Unassign users from  end user group
 
+### Stage management
+
+Track stage-level changes, such as renaming a stage or changing stage order within a portfolio.
+
+* Update stage (`UpdateEnvironment`)
+
 ### Asset management
 
 Get a detailed record of actions on your core app development resources, including web app, mobile app, workflows, libraries, external libraries, widget libraries, external connections, search connections, extension libraries, AI agents, and AI models.
@@ -233,7 +248,7 @@ Foundational attributes help you understand key details about each action direct
 | **Operation** | The specific action you performed. |
 | **Entity type** | The type of entity affected by the action. |
 | **User** | The human-readable username of the user who performed the action (often an email address). |
-| **Scope** | The human-readable name for the development stage. If not applicable to a stage, this displays ``Organizational``. |
+| **Scope** | Identifies where the event took place. Displays the portfolio name for portfolio-scoped events, the stage name for stage-scoped events, or `Organization` for organizational-level events (for example, User Login). |
 | **Message** | A descriptive message detailing the effect of the action you took. <br/> **Note:**  The message in the ODC Portal **describes the difference** between the previous and updated configuration values. When you export your logs, the **EntityOldValue** and **EntityNewValue** fields show a **complete view of the changed values**. |
 | **Status** | The outcome of the operation:<br/><br/>**Success**: The operation completed as expected.<br/><br/>**Failed**: The operation started but didn't complete.<br/><br/>**Unknown**: The operation started, but its completion status isn't confirmed (often indicates a system issue). |
 
@@ -245,8 +260,10 @@ When you export your audit data to a CSV file, additional, more detailed attribu
 | ------------------------------- | --------------------------------------------- | ----------------------- |
 | **Event_EventId** | A unique identifier for the audit event. | String (unique alphanumeric ID) |
 | **Event_TenantId** | The unique identifier for your tenant (organization or customer account). | String (UUID) |
-| **Event_EnvironmentId** | The unique identifier of the development stage where the event took place. | String (UUID) |
-| **Event_EnvironmentName** | The human-readable name of the development stage (for example, `Production`, `Staging`, or `NonProduction1`). | String |
+| **Event_PortfolioKey** | The unique identifier of the portfolio where the event took place, if the event is portfolio-scoped. Empty for organizational-level and stage-level events that don't belong to a portfolio. | String (UUID) |
+| **Event_PortfolioName** | The human-readable name of the portfolio (for example, `Internal Applications`). Empty for organizational-level events. | String |
+| **Event_EnvironmentId** | The unique identifier of the stage where the event took place. | String (UUID) |
+| **Event_EnvironmentName** | The human-readable name of the stage (for example, `Production` or `NonProduction`). | String |
 | **Event_DateTime** | The timestamp when the audit event was recorded. | ISO 8601 Date-Time String (for example, `2025-02-13T14:35:20Z`) |
 | **Event_Request_SourceIp** | The IP address of the user or system that initiated the request. | String (IPv4 or IPv6 address) |
 | **Event_Request_TraceId** | A unique identifier used to trace the request across distributed systems. | String (UUID) |
@@ -267,16 +284,39 @@ When you export your audit data to a CSV file, additional, more detailed attribu
 
 * **Binary configurations** such as uploaded files used for building your app, display \*\*\*\*\*\*\* instead of the binary value. A binary can contain secret data.
 
-* When you add or remove users from end-user groups, the logs show the **difference** between the old value and the new value. All other logs show the old value and the new value. End user groups can contain thousands of user values. To ensure high performance, Audit trail prioritizes showing the smaller `diff` rather than the full list of end users.
+* When you add or remove users from end-user groups, the logs show the **difference** between the old value and the new value. All other logs show the old value and the new value. End user groups can contain thousands of user values. To ensure high performance, an audit trail prioritizes showing the smaller `diff` rather than the full list of end users.
 
 * If an OutSystems support agent needs to access your ODC tenant as part of a support ticket, audit trail logs the time of access. Access is automatically revoked when no longer needed, and always expires after a maximum of four hours.
 
 </div>
 
+### How the scope attribute maps to CSV columns
+
+In the ODC Portal audit trail view, the **Scope** attribute shows a single value for each event. In the exported CSV, that information is split across the following columns:
+
+* `Event_EnvironmentId`
+* `Event_EnvironmentName`
+* `Event_PortfolioKey`
+* `Event_PortfolioName`
+
+Which columns have values depends on where the event took place:
+
+| Event scope | `Event_EnvironmentId` | `Event_EnvironmentName` | `Event_PortfolioKey` | `Event_PortfolioName` |
+| --- | --- | --- | --- | --- |
+| Organizational-level (for example, User Login) | Empty | Empty | Empty | Empty |
+| Portfolio-level | Empty | Empty | UUID | Portfolio name |
+| Stage-level within a portfolio | UUID | Stage name | UUID | Portfolio name |
+
+When you filter the export by `Event_PortfolioKey`, you get both portfolio-level and stage-level events for that portfolio.
+
 ## Related resources
+
+For more information about audit trail and related topics, refer to:
 
 * [Stream audit trail logs](audit-trail-streaming.md)
 
 * [Requirements for streaming audit trail logs](audit-trail-requirements.md)
+
+* [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md)
 
 * [Allowlisting ODC public IP addresses](../../manage-platform-app-lifecycle/odc-public-ips.md)

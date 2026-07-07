@@ -102,13 +102,15 @@ ODC includes two built-in organization roles:
 | Administrator | Full access to all platform features, including user management, deployment, and configuration. |
 | Developer | Access to the ODC Portal and ODC Studio to build and manage apps, and to open apps and view their details. Can invite new users and grant end-user roles, but only for the **Development** stage. |
 
+In a multi-portfolio organization, built-in roles behave differently. For more information, refer to [User management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md).
+
 You can't delete or modify built-in roles, but you can duplicate them to create custom roles.
 
 To see the full list of permissions for the **Admin** or **Developer** role, in the ODC Portal, go to **Management** > **Govern** > **Organization roles**, and then click **Admin** or **Developer**. Both roles display the **Built-in role** label.
 
 ### Custom roles {#custom-roles}
 
-You can create custom roles to tailor permissions to your organization's needs. Custom roles let you select specific [permissions](#permissions-registry) and apply them at **organization** or **app stage** [scope](intro.md#organization-app-stage-and-app-scope). After creating a custom role, you need to assign it to users either at **organization scope** or to specific **apps**. For more details on creating custom roles and assigning roles to users, refer to [Create custom roles for members](#create-custom-roles-for-it-users) and [Grant or revoke roles to members](grant-and-revoke-user-roles.md#grant-roles-to-members).
+You can create custom roles to tailor permissions to your organization's needs. Custom roles let you select specific [permissions](#permissions-registry) and apply them at **organization** or **app stage** [scope](intro.md#organization-app-stage-and-app-scope). After creating a custom role, you need to assign it to users either at **organization scope** or to specific **apps**. In a multi-portfolio organization, you assign custom roles per portfolio. For more information, refer to [User management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md). For more details on creating custom roles and assigning roles to users, refer to [Create custom roles for members](#create-custom-roles-for-it-users) and [Grant or revoke roles to members](grant-and-revoke-user-roles.md#grant-roles-to-members).
 
 For more details about recommended custom roles, refer to [Recommended custom roles for members (IT-users)](#recommended-custom-roles).
 
@@ -139,6 +141,8 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Asset management | Debug | Users can view, open and debug assets. | Organization <br/> Asset |
 | Asset management | Change | Users can view, open, debug and publish assets. | Organization <br/> Asset |
 | Asset management | Delete | Users can delete assets. | Organization <br/> Asset |
+| Portfolio management | Manage portfolio | Users can rename a portfolio and manage its settings. | Organization |
+| Portfolio management | Manage stage | Users can rename a stage and change stage order within a portfolio. | Organization |
 | Portfolio management | View stage | View a given stage. | Organization |
 | Portfolio management | Manage stages | Manage the stage properties, including its name. Necessary to configure self-hosted stages. | Organization |
 | Release management | Deploy assets | Users can initiate asset deployments to a specified stage and undeploy from the production stage. | Organization <br/> Asset |
@@ -179,6 +183,7 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Forge | Submit/Edit assets | Users can submit assets to Forge and edit them. | Organization |
 | Support | Open support cases | Users can open and view their support cases. | Organization |
 | Support | View all support cases | Users can view all the organization's support cases. | Organization |
+| Subscriptions | Manage subscription | Users can manage their subscription's internal user email domains. | Organization |
 | Subscriptions | View subscription | Users can view the organization's subscription information. | Organization |
 | Maintenance | View platform updates | Users can view the list of asset and platform updates. | Organization <br/> Asset |
 | Maintenance | Manage platform updates | Users can manage the scheduling of updates. | Organization |
@@ -215,6 +220,7 @@ The following table outlines the permissions you can configure for each of these
 * [Create, activate, deactivate, and delete users](create-deactivate-and-delete-users.md)
 * [Grant or revoke roles to members](grant-and-revoke-user-roles.md#grant-roles-to-members)
 * [Best practices for user governance](best-practices-user-management.md)
+* [User management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md)
 * [Role-based security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course
 * [Managing authorization and authentication for end-users](end-users/intro.md)
 * [User management](intro.md)

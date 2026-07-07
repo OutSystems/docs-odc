@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) system requirements guide for optimal use of ODC Portal and ODC Studio.
+summary: OutSystems Developer Cloud (ODC) system requirements for ODC Studio and ODC Portal, including hardware, OS support, browsers, and platform limits.
 tags:
   - External Authentication
   - External Databases
@@ -7,6 +7,7 @@ tags:
   - Mentor
   - Mobile app
   - OIDC
+  - Workflows
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
 app_type: mobile apps, reactive web apps
@@ -201,6 +202,12 @@ For more information, refer to [Configure authentication with external identity 
 ## Platform limits
 
 The following table shows the limits of the ODC to keep in mind when you are building apps. Unless otherwise noted, each limit is stage-specific. These limits cannot be exceeded and may cause errors or a drop in performance if reached.
+
+<div class="info" markdown="1">
+
+In a [multi-portfolio organization](../manage-platform-app-lifecycle/portfolios/portfolios-overview.md), stage-specific limits apply to each portfolio's stages.
+
+</div>
 
 The general platform limits are:
 

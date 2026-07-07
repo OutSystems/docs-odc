@@ -1,6 +1,7 @@
 ---
-summary: Explore how to install and update Forge assets in OutSystems Developer Cloud (ODC) for enhanced functionality.
-tags: forge asset management, asset installation, asset updates, outsystems developer cloud, odc studio
+summary: "Forge assets in OutSystems Developer Cloud (ODC): install from ODC Portal, update to the latest version, or clone assets to customize them."
+tags:
+  - Forge
 helpids: 30477
 locale: en-us
 guid: 515576a8-5acd-449b-af7c-d2c0670056dd
@@ -18,11 +19,18 @@ coverage-type:
   - apply
 topic:
   - install-forge-component
+isautopublish: true
 ---
 
 # Install or update a Forge asset
 
 Forge assets become available only after they go through a submission and approval process. Once an asset is in Forge, users can install it in their organization. The asset is then accessible in ODC Studio. The label displays additional information on the details page. A Forge asset can have any of the following labels.
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, Forge installation and updates are portfolio-scoped. For more information, refer to [Forge assets with multiple portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-forge.md).
+
+</div>
 
 | Label / button | Description |
 | :-------------- | :----------------------------------------------------------------------------------------- |

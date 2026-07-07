@@ -1,14 +1,19 @@
 ---
-summary: Explore data sharing techniques in OutSystems Developer Cloud (ODC) for app integration and external system connectivity.
-tags: data sharing, app integration, server actions, producer and consumer apps
+summary: OutSystems Developer Cloud (ODC) data sharing covers server actions, producer/consumer apps, service actions, and REST APIs for app integration.
+tags:
+  - Data
+  - Entities
+  - Logic
+  - REST
+  - Web services
 locale: en-us
 guid: dcc95e95-aa1d-4c97-a2fa-24a18fb753e2
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2502&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
+  - Architect
   - Developer
-  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -16,6 +21,7 @@ coverage-type:
 topic:
   - allow-apps-read-data
   - allow-apps-edit-data
+isautopublish: true
 ---
 
 # Sharing data defined in OutSystems
@@ -58,7 +64,9 @@ To manipulate entity data, you create a server action. You can use a server acti
 
 ## Sharing data between OutSystems apps
 
-You share an entity from your producer app by setting its public flag to **Yes**. You can then use entities for read-only purposes in consumer apps.
+You share an entity from your producer app by setting its public flag to **Yes**. You can then use entities for read-only purposes in consumer apps. To write to a shared entity from another app, you create a service action in the producer app.
+
+In a [multi-portfolio organization](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md), entities and service actions from apps are available only within the same portfolio. To share data across portfolios, expose a [REST API](../../integration-with-systems/exposing_rest/intro.md) from the data-owning app.
 
 To manipulate entity data in a consumer app, you create a server action in the producer app. You then wrap the server action in a service action to share it. Developers can then use the service action in a client action or timer in a consumer app. The following diagram shows the action wrap hierarchy.
 
