@@ -29,7 +29,7 @@ isautopublish: true
 
 OutSystems Developer Cloud (ODC) is cloud-native. This means that the infrastructure of both the development **platform**, for building and deploying apps, and the independent **runtime**, for hosting and running the deployed apps, is built and deployed in the cloud. For more information, refer to [What Is Cloud Native?](https://www.outsystems.com/glossary/what-is-cloud-native/).
 
-## OutSystems Developer Cloud
+## OutSystems Developer Cloud {#outsystems-developer-cloud}
 
 In addition to access to **ODC Studio** and [**ODC Portal**](../../onboarding/intro.md#ODC-portal), each ODC customer has:
 
@@ -67,7 +67,7 @@ The following diagram shows the high-level architecture of the development platf
 
 The **data platform** collects, processes, and stores data from several sources. This information is then made available for analysis and visualization, allowing customers to monitor app performance and usage and track platform operations. The data platform is also responsible for processing Mentor App Generator's data.
 
-##### Features that send data to the data platform
+##### Features that send data to the data platform {#data-platform-features}
 
 The data platform receives data from the following features:
 
@@ -82,7 +82,7 @@ The following diagram shows how different ODC features interact through the data
 
 ![Diagram showing how different ODC features interact through the Data platform to exchange and process information.](images/data-platform-diag.png "Data Platform Interaction")
 
-##### Data residency
+##### Data residency {#data-residency}
 
 The Data platform runs in a designated region based on your ODC organization’s region. For example, if your ODC organization is located in the Asia Pacific (Mumbai) region, the Data platform is hosted in the Asia Pacific (Singapore) region.
 
@@ -94,6 +94,8 @@ The Data platform runs in a designated region based on your ODC organization’s
 | South America (São Paulo) | South America (São Paulo) |
 | Europe (Frankfurt), Europe (London), Europe (Ireland), Middle East (Tel Aviv), Middle East (UAE), South Africa (Cape Town) | Europe (Frankfurt) |
 | Asia Pacific (Singapore), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Sydney), Asia Pacific (Jakarta), Asia Pacific (Hong Kong) | Asia Pacific (Singapore) |
+
+To check your own Platform region and Data platform region, refer to [View your ODC subscription and organization information](../subscription-console.md#platform-regions).
 
 ### Runtime {#runtime}
 
@@ -107,11 +109,11 @@ The following diagram shows the high-level runtime architecture, including the r
 
 ![Diagram depicting the high-level runtime architecture in ODC.](images/architecture-runtime-diag.png "Runtime architecture")
 
-## Key technologies of the cloud-native infrastructure
+## Key technologies of the cloud-native infrastructure {#key-technologies}
 
 The following is an overview of the cloud technologies used by ODC.
 
-### Kubernetes
+### Kubernetes {#kubernetes}
 
 The core of both the platform and each of the runtime stages is the **Kubernetes cluster**.
 
@@ -121,7 +123,7 @@ Powered by AWS Elastic Kubernetes Service (EKS), the platform and each runtime s
 
 To run on a Kubernetes cluster, each platform service is packaged into a **container**. A container is a lightweight, standalone, executable software package. It includes everything the app needs to run: code, runtime, system tools, system libraries, and settings. For more information about container security, refer to [Security in OutSystems Developer Cloud](../../security/security.md#containers).
 
-##### Auto-scaling
+##### Auto-scaling {#platform-auto-scaling}
 
 The compute capacity for each running platform service is scalable. Many developers use the Build Service and other services concurrently without degrading platform performance. This lets multiple teams rapidly scale the development process independently of deployed apps.
 
@@ -135,13 +137,13 @@ The auto-scale controller makes the adjustment in real time with no user interac
 
 The isolated platform cluster sources its overall compute capacity from a multi-tenant pool. This means it's scalable.
 
-#### Runtime cluster
+#### Runtime cluster {#runtime-cluster}
 
 In the example of the Build Service in the [previous section](#platform), the compiled app generated is a **container image**. An instance of a container image is a container. For more information about container security, refer to [Security in OutSystems Developer Cloud](../../security/security.md#containers).
 
 The Build Service packages each container image into a separate container, making the infrastructure resilient to individual resource-intensive app(s) that degrade the performance of other apps.
 
-##### High availability for apps
+##### High availability for apps {#ha-apps}
 
 High availability (HA) is an optional add-on available only for production stages:
 
@@ -149,7 +151,7 @@ High availability (HA) is an optional add-on available only for production stage
 
 * Without HA, failover isn't immediate and may take a few minutes to recover as additional application containers are launched into different AZs.
 
-##### Auto-scaling
+##### Auto-scaling {#runtime-auto-scaling}
 
 The compute capacity for each app container running in each non-Development runtime stage is scalable. This lets each app scale independently.
 
@@ -163,9 +165,9 @@ The auto-scale controller makes the adjustment in real time with no user interac
 
 The overall compute capacity for the isolated runtime stage cluster is scalable because it's resourced from a multi-tenant pool.
 
-### Databases and data stores
+### Databases and data stores {#databases-data-stores}
 
-#### Platform data
+#### Platform data {#platform-data}
 
 Each platform service makes calls to the databases and data stores.
 
@@ -178,7 +180,7 @@ The following table describes the platform databases and data stores.
 | Configuration and metadata from the Build Service. | DynamoDB | Configuration and metadata include settings, build parameters, and other service-specific information required for the operation of the Build Service. A fully managed, serverless, key-value NoSQL database designed to run high-performance apps at any scale. |
 | Current and historic app container images. | Elastic Container Registry (ECR) | A fully-managed Docker container registry that makes it easy to store, share, and deploy container images. |
 
-#### Runtime data
+#### Runtime data {#runtime-data}
 
 Each runtime stage has an isolated Amazon Aurora Serverless database. In a multi-portfolio organization, each portfolio has its own stages, and each stage has its own database. The following diagram shows an example of the database architecture for a runtime stage.
 
@@ -186,7 +188,7 @@ Each runtime stage has an isolated Amazon Aurora Serverless database. In a multi
 
 The Amazon Aurora database architecture model decouples compute and storage, and both automatically scale independently. The Database CPU and Memory automatically scale as the amount of load increases, and the database storage volume automatically scales as the amount of data stored increases.
 
-#### High availability for data
+#### High availability for data {#ha-data}
 
 High availability (HA) is an optional add-on available for production stages:
 
@@ -194,7 +196,7 @@ High availability (HA) is an optional add-on available for production stages:
 
 * Without HA, failover isn't immediate, and the primary database can take a few minutes to recover in a secondary availability zone. Because data is written to multiple AZs, failures don't cause data loss.
 
-#### Platform to runtime
+#### Platform to runtime {#platform-to-runtime}
 
 Build Service stores the app container image and passes it to a runtime stage for deployment. OutSystems follows the **build once, deploy anywhere** continuous delivery principle, which makes ODC an efficient cloud product.
 
@@ -202,13 +204,13 @@ Build Service stores the app container image and passes it to a runtime stage fo
 
 Many times your data is stored in an external location. Data Fabric helps you to access and integrate data into your apps.
 
-### Data stored in external systems
+### Data stored in external systems {#external-data}
 
 Customers use [Data Fabric connectors](../../integration-with-systems/external-databases/intro.md) for integrations. Data Fabric processes all your external system data uniformly, with no persistent storage within Data Fabric or ODC architecture.
 
 Data Fabric connectors retrieve essential metadata from external systems, which developers use to select integration tables, objects, and columns. The selected metadata is securely stored in serverless, NoSQL databases during the connection's lifetime in ODC Portal.
 
-### Memory
+### Memory {#memory}
 
 Data Fabric executes queries on the external system during runtime in OutSystems apps or when developers preview data in ODC Studio. Once the data is fetched, it's stored in memory for processing before being sent to runtime apps or ODC Studio.
 
@@ -225,7 +227,7 @@ Different types of data are stored distinctively in memory:
 
 ![Diagram illustrating the storage and retention of query parameter values, query results, and metadata in memory in ODC.](images/memory-usage-diag.png "Memory data handling")
 
-### Caches
+### Caches {#caches}
 
 In the ODC architecture, caches optimize performance by storing certain information. This principle extends to integration with external systems, caching the following types of information:
 
@@ -233,13 +235,13 @@ In the ODC architecture, caches optimize performance by storing certain informat
 * Query statements that execute in runtime Apps are cached to maintain consistent execution plans in the underlying system to enhance performance. Developers should follow security best practices and avoid sensitive data in query statements.
 * Query results are cached in Kubernetes pod memory. This cache expiration is defined by the developer at the aggregate level.
 
-### Connection secrets
+### Connection secrets {#connection-secrets}
 
 When creating a connection, developers must supply external system details such as username, password, and host. ODC securely stores sensitive data like passwords by encrypting them as secrets in a cloud secret store. Passwords are never stored in clear text and secrets are not human-readable. Secrets are decrypted only when connecting to the external system by an automated process and without human intervention.
 
 When editing an existing connection, ODC doesn't fetch and decrypt secrets from the cloud secret store. Instead, you enter the secret details again to save the connection.
 
-### Data in transit
+### Data in transit {#data-transit}
 
 Queries executed by developers in data preview (ODC Studio) or by end-users in runtime apps, along with their results, traverse different channels for communication. Queries begin at the frontend, pass through various Kubernetes services, connect to the customer's system, and return to the frontend with query results.
 
@@ -251,11 +253,11 @@ There are two communication channels in this process:
 
 * **REST APIs**: All endpoints exclusively use HTTPS for transit. Each HTTP request maintains access control through web tokens. Web tokens contain only essential information for authentication and authorization, and to validate the caller's access to the API.
 
-### Monitoring
+### Monitoring {#monitoring}
 
 ODC monitoring and observability tools never log sensitive data to ensure confidentiality. Sensitive data is omitted so it can't be read by humans. For troubleshooting purposes, queries are logged when errors occur, query results aren't logged. In the interest of security, query results are never logged, not even for troubleshooting purposes.
 
-### Departure
+### Departure {#departure}
 
 When a connection to an external system is deleted in ODC Portal or an ODC subscription is terminated, persistently stored customer metadata is automatically deleted. When deleting the customer environment without removing the connection, the in-memory database clears the metadata approximately 4 hours later.
 

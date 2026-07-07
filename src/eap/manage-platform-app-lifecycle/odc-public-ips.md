@@ -40,6 +40,8 @@ In ODC, you may need to configure allowlisting in the following scenarios:
 
 * [Authentication with external identity providers](#authentication-external-idp): If your users authenticate through an external identity provider (IdP) hosted in a private network, the IdP must allow inbound connections from ODC. You can secure this setup by allowlisting the ODC identity egress IPs.
 
+Every scenario requires you to know the region where your ODC tenant is hosted, your Platform region. Streaming analytics and audit trail data also requires your Data platform region. To find both, refer to [View your ODC subscription and organization information](subscription-console.md#platform-regions).
+
 <div class="info" markdown="1">
 
 OutSystems tries to ensure that these IP addresses remain unchanged as much as possible, however, the list of public IPs may change over time due to infrastructure updates, though such changes would be rare and unexpected.
@@ -73,7 +75,7 @@ This method uses shared IP addresses. All apps running on ODC, for all customers
 
 </div>
 
-### ODC public runtime IP addresses
+### ODC public runtime IP addresses {#public-runtime-ips}
 
 Use the following lists to configure inbound access from your ODC apps to your systems. Each set of IP addresses corresponds to a specific region and stage type (Development, Non-production, or Production). This allows you to tailor your firewall rules according to your security posture and deployment needs.
 
@@ -81,7 +83,7 @@ For example, you may allowlist only the IPs for the Production stages in your OD
 
 Each region is presented in its own section, review only the ones relevant to your deployment.
 
-#### US East (North Virginia)
+#### US East (North Virginia) {#us-east}
 
 | Stage type | IP addresses |
 | ----- | ----- |
@@ -89,7 +91,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 3.82.131.249, 44.205.125.101, 44.205.77.32 |
 | Production | 3.216.214.63, 44.199.4.230, 44.205.78.121 |
 
-#### Canada (Central)
+#### Canada (Central) {#canada-central}
 
 | Stage type | IP addresses |
 | ----- | ----- |
@@ -97,7 +99,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 15.222.221.81, 3.96.85.203, 52.60.209.55 |
 | Production | 52.60.54.75, 15.156.196.113, 16.52.19.80 |
 
-#### South America (São Paulo)
+#### South America (São Paulo) {#south-america}
 
 | Stage | IP Addresses |
 | ----- | ----- |
@@ -105,7 +107,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 54.207.70.193, 54.232.227.39, 54.232.35.188 |
 | Production | 177.71.132.163, 54.233.150.19, 18.231.94.114 |
 
-#### Europe (London)
+#### Europe (London) {#europe-london}
 
 | Stage type | IP addresses |
 | ----- | ----- |
@@ -113,7 +115,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 18.133.40.32, 18.168.96.203, 52.56.82.205 |
 | Production | 18.134.166.61, 18.168.216.210, 52.56.140.63 |
 
-#### Europe (Ireland)
+#### Europe (Ireland) {#europe-ireland}
 
 | Stage type | IP addresses |
 | ----- | ----- |
@@ -121,7 +123,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 34.251.61.185, 52.18.84.11, 52.211.9.249 |
 | Production | 54.76.0.216, 54.72.139.76, 52.51.220.40 |
 
-#### Europe (Frankfurt)
+#### Europe (Frankfurt) {#europe-frankfurt}
 
 | Stage type | IP addresses |
 | ----- | ----- |
@@ -129,7 +131,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 3.126.108.4, 3.72.145.236, 3.74.85.23, 18.185.140.32, 18.198.162.123, 63.179.33.182, 3.75.117.98, 52.29.69.78, 63.179.168.109 |
 | Production | 18.157.156.208, 18.197.117.16, 3.74.248.145, 3.124.156.247, 63.178.172.204, 63.179.186.91, 3.72.147.63, 3.75.73.0, 3.77.83.8 |
 
-#### South Africa (Cape Town)
+#### South Africa (Cape Town) {#south-africa}
 
 | Stage type | IP addresses |
 | ----- | ----- |
@@ -137,7 +139,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 13.244.181.185, 13.247.253.92, 16.28.115.21 |
 | Production | 13.244.83.19, 13.245.107.229, 15.240.18.88 |
 
-#### Israel (Tel Aviv)
+#### Israel (Tel Aviv) {#israel-tel-aviv}
 
 | Stage | IP Addresses |
 | ----- | ----- |
@@ -145,7 +147,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 51.17.146.180, 51.17.116.166, 51.17.10.46 |
 | Production | 51.17.144.174, 51.16.151.171, 51.16.223.64 |
 
-#### Middle East (UAE)
+#### Middle East (UAE) {#middle-east-uae}
 
 | Stage | IP Addresses |
 | ----- | ----- |
@@ -153,7 +155,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 3.28.17.159, 3.29.44.203, 40.172.70.114 |
 | Production | 51.112.133.114, 51.112.112.13, 3.29.220.101 |
 
-#### Asia Pacific (Mumbai)
+#### Asia Pacific (Mumbai) {#asia-mumbai}
 
 | Stage | IP Addresses |
 | ----- | ----- |
@@ -161,7 +163,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 13.200.133.20, 13.232.13.75, 15.207.30.181 |
 | Production | 13.126.173.147, 15.207.216.212, 65.1.17.83 |
 
-#### Asia Pacific (Singapore)
+#### Asia Pacific (Singapore) {#asia-singapore}
 
 | Stage type | IP addresses |
 | ----- | ----- |
@@ -169,7 +171,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 18.139.252.98, 18.140.120.99, 3.0.140.149 |
 | Production | 122.248.255.128, 18.136.137.115, 18.136.156.104 |
 
-#### Asia Pacific (Seoul)
+#### Asia Pacific (Seoul) {#asia-seoul}
 
 | Stage | IP Addresses |
 | ----- | ----- |
@@ -177,7 +179,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 13.125.137.180, 3.36.212.44, 52.78.196.0 |
 | Production | 13.209.126.179, 3.37.161.90, 54.180.22.49 |
 
-#### Asia Pacific (Tokyo)
+#### Asia Pacific (Tokyo) {#asia-tokyo}
 
 | Stage | IP Addresses |
 | ----- | ----- |
@@ -185,7 +187,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 3.114.73.211, 54.65.22.77, 52.68.216.19 |
 | Production | 13.113.135.146, 18.177.235.172, 43.206.17.115 |
 
-#### Asia Pacific (Hong Kong)
+#### Asia Pacific (Hong Kong) {#asia-hong-kong}
 
 | Stage | IP Addresses |
 | ----- | ----- |
@@ -193,7 +195,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 43.198.188.11, 18.163.17.217, 43.199.52.53 |
 | Production | 43.199.192.1, 18.166.231.39, 54.46.28.133 |
 
-#### Asia Pacific (Sydney)
+#### Asia Pacific (Sydney) {#asia-sydney}
 
 | Stage | IP Addresses |
 | ----- | ----- |
@@ -201,7 +203,7 @@ Each region is presented in its own section, review only the ones relevant to yo
 | Non-production | 3.105.151.251, 3.24.144.50, 52.64.230.111 |
 | Production | 13.237.131.221, 3.24.7.98, 3.24.78.93 |
 
-#### Asia Pacific (Jakarta)
+#### Asia Pacific (Jakarta) {#asia-jakarta}
 
 | Stage | IP Addresses |
 | ----- | ----- |
