@@ -1,7 +1,7 @@
 ---
 guid: 9a0ba2bd-1a95-4d42-bbd4-45ef5d722e21
 locale: en-us
-summary: Learn how to use OutSystems APIs to programmatically deploy an asset to a target stage.
+summary: "OutSystems Developer Cloud (ODC) Deployments API: set asset configurations, trigger a Deploy operation, and monitor status for CI/CD automation."
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=4763-2&t=3FZzy4xrcBSUETGl-1
 coverage-type:
   - apply
@@ -12,10 +12,14 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: apis, deployment automation, ci/cd, outsystems, environment keys
+tags:
+  - CI/CD
+  - Deploy
+  - REST
 outsystems-tools:
   - odc portal
 helpids:
+isautopublish: true
 ---
 
 # Deploying your asset to the target stage
@@ -39,7 +43,7 @@ Before using the APIs to deploy your asset to a target stage, ensure that you ha
 
     ![Screenshot of the ODC Portal showing how to retrieve the environment (stage) key from the asset URL](images/environment-key-pl.png "Get the environment key")
 
-    You can also retrieve the environment key programmatically, using `GET /api/portfolios/v1/environments`.
+    You can also retrieve the environment key programmatically, using `GET /api/portfolios/v2/environments`.
 
     </div>
 

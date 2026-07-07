@@ -3,7 +3,6 @@ summary: OutSystems Developer Cloud (ODC) REST APIs reference index covering Use
 tags:
   - Authentication
   - Deploy
-  - Mobile app
   - Native App
   - REST
   - Web services
@@ -29,7 +28,8 @@ isautopublish: true
 Use these API reference documents to explore endpoints, request and response schemas, and examples:
 
 * [User and Access Management API](../identity-v1.md)
-* [Portfolio API](../portfolio-v1.md)
+* [Portfolio API v1](../portfolio-v1.md)
+* [Portfolio API v2](../portfolio-v2.md)
 * [Build Operations API](../build-v1.md)
 * [Native Mobile Build API](../native-mobile-builds-api-v1.md)
 * [Deployments API](../deployment-v1.md)

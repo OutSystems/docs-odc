@@ -865,7 +865,9 @@
     - href: eap/reference/apis/public-rest-apis/api-references.md
     - topics:
         - href: eap/reference/apis/identity-v1.md
+        - href: eap/reference/apis/portfolio-v2.md
         - href: eap/reference/apis/portfolio-v1.md
+        - href: eap/reference/apis/portfolio-v1-to-v2-migration.md
         - href: eap/reference/apis/build-v1.md
         - href: eap/reference/apis/native-mobile-builds-api-v1.md
         - href: eap/reference/apis/deployment-v1.md

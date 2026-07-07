@@ -54,7 +54,7 @@ For detailed information about the endpoints, refer to [User management API refe
 
 The portfolio management REST API enables you to view a list of deployed assets in each environment.
 
-For detailed information about the endpoints, refer to [Portfolio management API reference](../portfolio-v1.md).
+For detailed information about the endpoints, refer to [Portfolio management API reference](../portfolio-v2.md).
 
 ### Build operations
 
@@ -174,6 +174,6 @@ An **end-user role** is a set of permissions assigned to users who interact with
 
 * [User management API reference](../identity-v1.md)
 
-* [Portfolio management API reference](../portfolio-v1.md)
+* [Portfolio management API reference](../portfolio-v2.md)
 
 * [Native Mobile Build API reference](../native-mobile-builds-api-v1.md)

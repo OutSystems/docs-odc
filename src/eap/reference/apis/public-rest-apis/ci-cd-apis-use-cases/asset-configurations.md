@@ -1,8 +1,8 @@
 ---
 guid: 76297585-5efb-4b33-937d-e94a88ba6d8c
 locale: en-us
-summary: Learn how to use OutSystems APIs to review the configurations of your asset.
-figma:
+summary: OutSystems Developer Cloud (ODC) asset configurations API lets you review and store deployment configurations in your CI/CD pipeline before deploying.
+figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=4763-2
 coverage-type:
   - apply
 topic:
@@ -12,10 +12,14 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: outsystems apis, asset configuration, deployment automation, configuration management, ci/cd
+tags:
+  - CI/CD
+  - Deploy
+  - REST
 outsystems-tools:
   - odc portal
 helpids:
+isautopublish: true
 ---
 # Reviewing asset configurations
 
@@ -25,7 +29,7 @@ This article explains how to use OutSystems APIs to check the current configurat
 
 Before using the APIs to review asset configurations, ensure that you have:
 
-* [Generated an access token](../authentication/get-access-token.md) from an API client with this [permission](../authentication/create-api-client.md#edit-permissions-of-api-client): :
+* [Generated an access token](../authentication/get-access-token.md) from an API client with this [permission](../authentication/create-api-client.md#edit-permissions-of-api-client):
     * [Configuration management > View configurations](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/asset_configurations_api/#get-/environments/-environmentKey-/applications/-applicationKey-/revisions/deployed/configurations)
 * The [key of the asset](select-revision-build.md#prerequisites) to be deployed
 * The stage’s environment key for which you want to check the configurations
@@ -36,7 +40,7 @@ Before using the APIs to review asset configurations, ensure that you have:
 
     ![Screenshot of the ODC Portal showing how to retrieve the environment (stage) key from the asset URL](images/environment-key-pl.png "Get the environment key")
 
-    You can also retrieve the environment key programmatically, using `GET /api/portfolios/v1/environments`.
+    You can also retrieve the environment key programmatically, using `GET /api/portfolios/v2/environments`.
 
     </div>
 

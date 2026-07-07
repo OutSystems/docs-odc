@@ -31,7 +31,7 @@ The rate limits per organization are as follows:
 | API Domain | Domain-wide limit (requests per minute) | Specific endpoint limits (requests per minute) |
 | :--- | :--- | :--- |
 | [User and access management](../identity-v1.md) | 100 | `POST /users/bulk`: **5** |
-| [Portfolio](../portfolio-v1.md) | 100 | None |
+| [Portfolio](../portfolio-v2.md) | 100 | None |
 | [Build operations](https://www.outsystems.com/tk/redirect?g=a359bc7f-74a0-4723-9f13-ca851718dc89) | 100 | `POST` methods: **10** (per endpoint) |
 | [Deployments](https://www.outsystems.com/tk/redirect?g=acf7cd06-3fe1-4bd3-85e8-06cd11aa0a7d) | 100 | `POST` methods: **10** (per endpoint) |
 | [Asset repository](https://www.outsystems.com/tk/redirect?g=9598cb1d-a50e-48d7-a43a-6582e43fd48b) | 100 | `POST /assets`: **10** |
