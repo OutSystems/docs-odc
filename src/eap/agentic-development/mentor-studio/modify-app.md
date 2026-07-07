@@ -1,6 +1,13 @@
 ---
-summary: Modify an existing app in ODC Studio using Mentor to generate and update logic, screens, and data structures through conversation.
-tags: agentic development, code generation
+summary: "Mentor Studio in OutSystems Developer Cloud (ODC): use natural language prompts to add a name input and personalize a greeting in an existing app."
+tags:
+  - 1-Click Publish
+  - Agentic
+  - AI
+  - Mentor
+  - Mentor Studio
+  - Screens
+  - UI
 guid: 8d4c9f3e-a521-4b8f-9e7a-6f2d8c1b5a09
 locale: en-us
 app_type: reactive web apps
@@ -45,6 +52,12 @@ With your "Hello, world" app open in ODC Studio, follow these steps to edit the 
 1. In the Mentor panel, enter the following prompt: "Add an input field for the user's name and change the greeting to say Hello followed by the name they entered". Press **Enter** to confirm and Mentor starts working on the code.
 
     ![Entering a prompt in the Mentor panel to edit the app.](images/enter-prompt-edit-app-odcs.png "Enter prompt in Mentor Studio")
+
+    <div class="info" markdown="1">
+
+    Mentor uses the element you select and the view you have open in ODC Studio as context. To scope an edit to a specific element, select it first, then refer to it in your prompt, such as "Fix this error" or "Explain this logic."
+
+    </div>
 
 1. Review the response and optionally select **View changes** to see what Mentor edited.
 

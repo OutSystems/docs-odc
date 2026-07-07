@@ -1,6 +1,12 @@
 ---
-summary: Effective prompting strategies help Mentor generate and modify apps accurately across Mentor Web and Mentor Studio.
-tags: prompts, agentic development, best practices
+summary: "OutSystems Developer Cloud (ODC) Mentor prompts: use entity-first thinking and pattern vocabulary to generate and refine apps accurately."
+tags:
+  - Agentic
+  - AI
+  - Best Practices
+  - Mentor
+  - Mentor Studio
+  - Mentor Web
 guid: d7c3bf86-c4be-439e-b61a-bd413fba3c8e
 locale: en-us
 app_type: reactive web apps
@@ -48,6 +54,7 @@ Effective prompts share common characteristics: they're specific, structured, an
 * **Structure information logically.** Group related details together. Mention entities, then attributes, then relationships.
 * **Add role-specific details.** Mention roles and permissions when relevant to the task.
 * **Be specific, avoid ambiguity.** Instead of "make it better," specify "add email validation to the contact form."
+* **Use your selection in ODC Studio.** In Mentor Studio, the element you select and the view you have open act as context. Select an element, then refer to it directly, such as "Explain this" or "Fix this error."
 
 <div class="warning" markdown="1">
 

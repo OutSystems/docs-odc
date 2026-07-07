@@ -72,9 +72,8 @@ Mentor Studio modifies app elements but does not perform environment-level opera
 
 ### Context awareness
 
-Mentor Studio does not have full awareness of the current ODC Studio state.
+Mentor Studio has partial awareness of the ODC Studio state. For what Mentor reads from your selection and the open view, refer to [Use the current selection as context](mentor-studio/how-it-works.md#use-the-current-selection-as-context).
 
-* **No screen detection.** Mentor Studio does not detect the current screen view or active selection. Reference elements by name in prompts, such as "modify the ValidateEmail action" or "update the CustomerList screen."
 * **Conversation length.** Long iterations may reach the maximum conversation length. Start a new conversation if responses become inconsistent.
 * **No chat persistence.** Closing the app tab clears the conversation history.
 

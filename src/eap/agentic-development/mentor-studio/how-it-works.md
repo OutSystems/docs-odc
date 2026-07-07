@@ -7,7 +7,6 @@ tags:
   - Logic
   - Mentor
   - Mentor Studio
-  - Screens
 guid: 27f4f846-5c2d-44fd-b9a2-99f5d2770cb2
 locale: en-us
 app_type: reactive web apps
@@ -59,6 +58,19 @@ The Mentor panel includes several interaction options:
 * **Feedback icon.** Share detailed feedback about your experience. Describe the action, expected result, and actual outcome. This feedback helps the development team understand your usage patterns and prioritize improvements.
 
 ![ODC Studio workspace with the Mentor Studio chat panel open on the left and an app screen editor on the right, illustrating side-by-side development and conversation.](images/mentor-studio-ui-odcs.png "Mentor Studio panel in ODC Studio")
+
+### Use the current selection as context
+
+Mentor reads what you select and what you have open in ODC Studio, so you refer to your work instead of describing it. Select an element or open a view, then prompt Mentor with a direct reference to it.
+
+Mentor reads two kinds of context from ODC Studio:
+
+* **The selected element.** The element you select in the current view, such as a button on a screen or an If element in a logic flow.
+* **The open view.** The screen, action, or flow you have open, even when your focus is on an element inside it.
+
+To scope a request to your work, select the element first, then prompt Mentor with a direct reference. For example, open a logic flow and ask "Explain this logic," or select an element that shows an error and ask "Fix this error."
+
+You don't have to rely on the selection. To act on a different element, name it in your prompt, and Mentor uses the element you name.
 
 ## The workflow
 

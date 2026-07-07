@@ -30,7 +30,7 @@ This cookbook provides prompt examples for modifying apps with Mentor Studio. Ex
 
 ## Before you start
 
-Mentor doesn't detect the current screen or selection, so reference elements by name in every prompt. For example, "modify the ValidateEmail action" instead of "modify this action." After you add a public element through **Add public elements**, reference it by name the same way. Mentor can also find and add a public element when you reference one it locates in the tenant.
+Mentor reads the element you select and the view you have open in ODC Studio. Select an element, then refer to it directly, such as "modify this action." To act on a different element, name it in your prompt instead, such as "modify the ValidateEmail action." After you add a public element through **Add public elements**, reference it by name the same way. Mentor also finds and adds a public element when you reference one it locates in the tenant.
 
 ## Logic
 
@@ -85,6 +85,7 @@ Use these prompts to understand unfamiliar logic or get an overview of app struc
 
 * Basic: Explain what the `GetOrdersByStatus` Aggregate is doing, specifically the 'Only With' join between `Order` and `ShippingStatus`.
 * Detailed: Provide a high-level explanation of what the OrderManagement application does. What are the main flows?
+* With a selection: Select the logic flow, then ask "Explain this."
 
 ## Fix errors and warnings
 
