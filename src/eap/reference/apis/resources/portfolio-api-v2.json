@@ -1,0 +1,1412 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Portfolio API",
+    "description": "REST endpoints for retrieving information about assets and environments in your organization.\n",
+    "version": "v2"
+  },
+  "servers": [
+    {
+      "url": "https://ODC_PORTAL_DOMAIN/api/portfolios/v2",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/portfolios/v2",
+      "description": "Replace {odc-portal-domain} with the domain of your organization.",
+      "variables": {
+        "odc-portal-domain": {
+          "default": "ODC_PORTAL_DOMAIN",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/deployed-assets": {
+      "get": {
+        "tags": [
+          "deployed-assets"
+        ],
+        "summary": "Retrieves a list of deployed assets.",
+        "description": "Retrieves a list of deployed assets containing updated deployment status per environment (stage).\nURLs are constructed using the environment's default domain combined with the entry point URL.\n\nAPI client must have at least one permission. The result only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission.",
+        "operationId": "DeployedAssets_ListAssets",
+        "parameters": [
+          {
+            "name": "portfolioKey",
+            "in": "query",
+            "description": "Filter by portfolio key. Returns only assets deployed to environments belonging to this portfolio.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "query",
+            "description": "Environment key on which to filter, comma separated.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "Asset keys on which to filter, comma separated.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Asset types on which to filter, comma separated. Available values: WebApplication, MobileApplication, Workflow, Agent.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "nameContains",
+            "in": "query",
+            "description": "Filter by matching on the name, case-insensitive.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "permissionFilter",
+            "in": "query",
+            "description": "Filter by permission type. Format: 'PermissionType' or 'PermissionType.EnvironmentKey' for environment-specific permissions. Available values: AppViewSourceCode | AppDebug | AppChange | AppDelete | AppDeploy | AppRelease | AppMonitor | AppMonitorUserInfo | AppSecurityView | CodeQualityManage | CodeQualityView | AppUserView | AppAccessManage | AppGroupManage | CfgView | ConnConfig | AppCfgChange. Example: 'AppDeploy' or 'AppDeploy.123e4567-e89b-12d3-a456-426614174000'",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Max number of elements that should be returned in a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the last page, to get the following page with the same filters applied.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort order of the elements.\n-element1 for descending, element2 for ascending.\nFor nested sorting, the format is element1[key].element2 .\nMultiple orders joined by comma.\nExample: -element1,element2 to sort by element1 descending then by element2 ascending.\nSupported values for first order sorting: deployments (nested).\nFor nested sorting: deploymentDateTime.\nExample: deployments[environmentkey].deploymentDatetime .\nAttention: the sorting only applies to the assets, not to the deployments.\nThe deployments will always be sorted by the DeploymentDatetime, descending.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeployedAssetPagedListResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission. The result only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission."
+      }
+    },
+    "/environments": {
+      "get": {
+        "tags": [
+          "Environments"
+        ],
+        "summary": "Retrieves the list of environments (stages).",
+        "operationId": "Environments_ListEnvironments",
+        "parameters": [
+          {
+            "name": "portfolioKey",
+            "in": "query",
+            "description": "Optional portfolio key to filter environments by.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentListResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "The result only shows environments (stages) for which the API Client has **Stage > View stage** permission.",
+        "description": "\n\nThe result only shows environments (stages) for which the API Client has **Stage > View stage** permission."
+      },
+      "patch": {
+        "tags": [
+          "Environments"
+        ],
+        "summary": "Updates environment names and/or order",
+        "operationId": "Environments_UpdateEnvironments",
+        "requestBody": {
+          "description": "Batch update request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateEnvironmentsBatchRequest"
+                  }
+                ],
+                "description": "Batch request to update multiple environments"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateEnvironmentsBatchRequest"
+                  }
+                ],
+                "description": "Batch request to update multiple environments"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "Requires **Portfolio management > Manage stages** permission for environments when changing name only, and **Portfolio management > Manage portfolio** when changing order.",
+        "description": "\n\nRequires **Portfolio management > Manage stages** permission for environments when changing name only, and **Portfolio management > Manage portfolio** when changing order."
+      }
+    },
+    "/environments/{environmentKey}": {
+      "patch": {
+        "tags": [
+          "Environments"
+        ],
+        "summary": "Updates a single environment's name and/or order",
+        "operationId": "Environments_PatchEnvironment",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment key to update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Patch request with name and/or order",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchEnvironmentRequest"
+                  }
+                ],
+                "description": "Request to update a single environment's properties"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchEnvironmentRequest"
+                  }
+                ],
+                "description": "Request to update a single environment's properties"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "Requires **Portfolio management > Manage stages** permission for environments when changing name only, and **Portfolio management > Manage portfolio** when changing order.",
+        "description": "\n\nRequires **Portfolio management > Manage stages** permission for environments when changing name only, and **Portfolio management > Manage portfolio** when changing order."
+      }
+    },
+    "/libraries": {
+      "get": {
+        "tags": [
+          "Libraries"
+        ],
+        "summary": "Retrieves a list of libraries in the tenant portfolio.",
+        "description": "Retrieves all libraries available in the tenant portfolio, including their latest revision\nand all tagged revisions. Each library exposes the portfolio it belongs to and can be\nfiltered by portfolio key.\n\nAPI client must have at least one permission.",
+        "operationId": "Libraries_ListLibraries",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Max number of elements that should be returned in a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of the last page, to get the following page with the same filters applied.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "Filter by asset key(s), comma separated.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Filter by asset type(s), comma separated.\nAvailable values: LowCodeLibrary, ExtensionLibrary, ExternalLibrary, WidgetLibrary, MobileLibrary.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "nameContains",
+            "in": "query",
+            "description": "Filter by matching on the name, case-insensitive.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "permissionFilter",
+            "in": "query",
+            "description": "Filter by permission type. Format: 'PermissionType' or 'PermissionType.EnvironmentKey'.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort order. Format: Field:asc or Field:desc. Supported fields: Name, PublishDateTime.\nExample: sort=Name:asc or sort=PublishDateTime:desc.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/LibrarySortListSortDirectionValueTuple"
+              }
+            }
+          },
+          {
+            "name": "portfolioKey",
+            "in": "query",
+            "description": "Filter by portfolio key. Returns only libraries belonging to this portfolio.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "revisions",
+            "in": "query",
+            "description": "Which revisions to return per library: 'latest' (default), 'highestTag', or 'all'.\n'highestTag' selects the tagged revision with the highest SemVer (Major.Minor.Patch) version.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/LibraryRevisionsFilter"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryPagedListResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission."
+      }
+    },
+    "/portfolios": {
+      "get": {
+        "tags": [
+          "Portfolios"
+        ],
+        "summary": "Retrieves the list of portfolios.",
+        "operationId": "Portfolios_ListPortfolios",
+        "parameters": [
+          {
+            "name": "portfolioKey",
+            "in": "query",
+            "description": "Optional portfolio key to filter by.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Max number of elements per page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset for pagination.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PortfolioPagedListResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission.",
+        "description": "\n\nAPI client must have at least one permission."
+      }
+    },
+    "/portfolios/{portfolioKey}": {
+      "patch": {
+        "tags": [
+          "Portfolios"
+        ],
+        "summary": "Updates the portfolio's name",
+        "operationId": "Portfolios_PatchPortfolio",
+        "parameters": [
+          {
+            "name": "portfolioKey",
+            "in": "path",
+            "description": "The portfolio key to update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Patch request with new name",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchPortfolioRequest"
+                  }
+                ],
+                "additionalProperties": false,
+                "description": "Request to update a portfolio's name"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PatchPortfolioRequest"
+                  }
+                ],
+                "additionalProperties": false,
+                "description": "Request to update a portfolio's name"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "Requires **Portfolio management > Manage portfolio** permission.",
+        "description": "\n\nRequires **Portfolio management > Manage portfolio** permission."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DeployedAsset": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of asset (WebApplication, MobileApplication, Workflow).",
+            "nullable": true
+          },
+          "key": {
+            "type": "string",
+            "description": "The asset key.",
+            "format": "uuid"
+          },
+          "isBuiltIn": {
+            "type": "boolean",
+            "description": "Whether the asset is built-in."
+          },
+          "deployments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Deployment"
+            },
+            "description": "Where the asset is deployed and its details.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Deployed asset"
+      },
+      "DeployedAssetPagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeployedAsset"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "Deployment": {
+        "required": [
+          "buildKey",
+          "deploymentDateTime",
+          "deploymentKey",
+          "deploymentUserId",
+          "description",
+          "environmentKey",
+          "iconUrl",
+          "name",
+          "revision",
+          "tag",
+          "taggingDateTime",
+          "taggingUserKey",
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "environmentKey": {
+            "type": "string",
+            "description": "The environment key in which the asset is deployed.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "The asset name.",
+            "nullable": true
+          },
+          "revision": {
+            "type": "integer",
+            "description": "The asset revision.",
+            "format": "int32"
+          },
+          "buildKey": {
+            "type": "string",
+            "description": "The asset build key.",
+            "format": "uuid"
+          },
+          "deploymentKey": {
+            "type": "string",
+            "description": "The deployment key.",
+            "format": "uuid"
+          },
+          "deploymentDateTime": {
+            "type": "string",
+            "description": "The date at which the deployment occurred.",
+            "format": "date-time"
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the asset.",
+            "nullable": true
+          },
+          "iconUrl": {
+            "type": "string",
+            "description": "The icon of the asset.",
+            "nullable": true
+          },
+          "deploymentUserId": {
+            "type": "string",
+            "description": "The id of the user that did the deployment.",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "description": "The url for the deployment.",
+            "nullable": true
+          },
+          "tag": {
+            "type": "string",
+            "description": "The tag for this revision of the asset.",
+            "nullable": true
+          },
+          "taggingUserKey": {
+            "type": "string",
+            "description": "The id of the user that tagged the asset.",
+            "nullable": true
+          },
+          "taggingDateTime": {
+            "type": "string",
+            "description": "The date at which the asset was tagged.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "The portfolio key associated with the environment of the deployment.",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Deployment instance"
+      },
+      "Environment": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The environment key.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The environment name.",
+            "nullable": true
+          },
+          "builtinDomain": {
+            "type": "string",
+            "description": "The builtin domain.",
+            "nullable": true
+          },
+          "defaultDomain": {
+            "type": "string",
+            "description": "The default domain.",
+            "nullable": true
+          },
+          "purpose": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EnvironmentPurpose"
+              }
+            ],
+            "description": "The environment purpose.",
+            "nullable": true
+          },
+          "order": {
+            "type": "integer",
+            "description": "The environment order.",
+            "format": "int32"
+          },
+          "region": {
+            "type": "string",
+            "description": "The environment region.",
+            "nullable": true
+          },
+          "hosting": {
+            "type": "string",
+            "description": "The hosting type (oscloud, selfhosted).",
+            "nullable": true
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SelfHostedStateKind"
+              }
+            ],
+            "description": "The environment status.",
+            "nullable": true
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "The portfolio key associated with the environment.",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Environment"
+      },
+      "EnvironmentListResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Environment"
+            },
+            "description": "List of results.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a list of results."
+      },
+      "EnvironmentPurpose": {
+        "enum": [
+          "Development",
+          "NonProduction",
+          "Production"
+        ],
+        "type": "string"
+      },
+      "Library": {
+        "required": [
+          "portfolioKey",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The asset key.",
+            "format": "uuid"
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of library (LowCodeLibrary, ExtensionLibrary, ExternalLibrary, WidgetLibrary).",
+            "nullable": true
+          },
+          "isBuiltIn": {
+            "type": "boolean",
+            "description": "Whether the library is a built-in asset."
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "The portfolio key the library belongs to.",
+            "format": "uuid"
+          },
+          "revisions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LibraryRevision"
+            },
+            "description": "The library revisions (latest revision and all tagged revisions, deduplicated).",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Library asset with its available revisions."
+      },
+      "LibraryPagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Library"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "LibraryRevision": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "description": "The revision number.",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the library at this revision.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the library at this revision.",
+            "nullable": true
+          },
+          "iconUrl": {
+            "type": "string",
+            "description": "The pre-signed URL for the library icon.",
+            "nullable": true
+          },
+          "publishDateTime": {
+            "type": "string",
+            "description": "The date and time at which this revision was published (UTC).",
+            "format": "date-time"
+          },
+          "publishUserKey": {
+            "type": "string",
+            "description": "The key of the user who published this revision.",
+            "nullable": true
+          },
+          "tag": {
+            "type": "string",
+            "description": "The version tag applied to this revision, if any.",
+            "nullable": true
+          },
+          "taggingUserKey": {
+            "type": "string",
+            "description": "The key of the user who applied the version tag, if any.",
+            "nullable": true
+          },
+          "taggingDateTime": {
+            "type": "string",
+            "description": "The date and time at which the version tag was applied (UTC), if any.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isLatest": {
+            "type": "boolean",
+            "description": "Whether this is the latest revision of the library. Derived at read time as\n`revision == max(revision)` across the library's cached revisions; not a persisted flag."
+          }
+        },
+        "additionalProperties": false,
+        "description": "A specific revision of a library asset."
+      },
+      "LibraryRevisionsFilter": {
+        "enum": [
+          "Latest",
+          "HighestTag",
+          "All"
+        ],
+        "type": "string",
+        "description": "Controls which revisions of each library are returned by GET /libraries."
+      },
+      "LibrarySortListSortDirectionValueTuple": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "PageInfoWithTotals": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of results in the current page.",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limit of results per page.",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset of the current page of results.",
+            "format": "int32",
+            "nullable": true
+          },
+          "nextPageOffset": {
+            "type": "integer",
+            "description": "Offset of the next page of results.",
+            "format": "int32",
+            "nullable": true
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total of results.",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": "Total of result pages.",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains response page information including totals."
+      },
+      "PatchEnvironmentRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "Optional new environment name (min 1, max 50 characters)",
+            "nullable": true
+          },
+          "order": {
+            "type": "integer",
+            "description": "Optional new environment order",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "description": "Request to update a single environment's properties"
+      },
+      "PatchPortfolioRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "New portfolio name (min 1, max 50 characters)",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request to update a portfolio's name"
+      },
+      "Portfolio": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The portfolio key.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The portfolio name.",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The portfolio hosting type.",
+            "nullable": true
+          },
+          "isMainPortfolio": {
+            "type": "boolean",
+            "description": "Indicates whether this is the main portfolio where system assets are installed."
+          },
+          "nonProductionEnvironmentCount": {
+            "type": "integer",
+            "description": "Number of non-production environments in the portfolio. Null when not available.",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Portfolio"
+      },
+      "PortfolioPagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Portfolio"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code applicable to the problem.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation of the error.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem.",
+            "nullable": true
+          },
+          "traceId": {
+            "type": "string",
+            "description": "This field helps OutSystems support to track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster  troubleshooting."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagonose errors."
+          }
+        },
+        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+      },
+      "SelfHostedStateKind": {
+        "enum": [
+          "Pending",
+          "Configured",
+          "Deployed",
+          "MissingConfigurations",
+          "Ready",
+          "WakingUp",
+          "ScheduledForDeletion",
+          "Hibernated"
+        ],
+        "type": "string",
+        "description": "The state of a self-hosted environment"
+      },
+      "UpdateEnvironmentRequest": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The environment key to update",
+            "format": "uuid"
+          },
+          "name": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "Optional new environment name (min 1, max 50 characters)",
+            "nullable": true
+          },
+          "order": {
+            "type": "integer",
+            "description": "Optional new environment order",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "description": "Request to update environment properties"
+      },
+      "UpdateEnvironmentsBatchRequest": {
+        "required": [
+          "environments"
+        ],
+        "type": "object",
+        "properties": {
+          "environments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateEnvironmentRequest"
+            },
+            "description": "List of environment updates to apply",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Batch request to update multiple environments"
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "deployed-assets",
+      "description": ""
+    },
+    {
+      "name": "private",
+      "description": ""
+    },
+    {
+      "name": "Environments",
+      "description": ""
+    },
+    {
+      "name": "Libraries",
+      "description": ""
+    },
+    {
+      "name": "Portfolios",
+      "description": ""
+    }
+  ]
+}
