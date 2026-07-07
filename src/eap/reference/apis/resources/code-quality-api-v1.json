@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.3",
   "info": {
     "title": "Code Quality API",
     "description": "Provides APIs to submit code analysis requests and retrieve information about code quality findings, application scores, and analysis results.",
@@ -26,7 +26,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves the details of a code analysis request.",
-        "description": "Retrieves the current status and results of a code analysis request, including quality score and findings.\n\n\n\nExample: GET /code-quality/v1/code-analyses/be77b25f-c738-462f-8f19-7114fc4f9923\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
+        "description": "Retrieves the current status and results of a code analysis request, including quality score and findings.\n\nExample: GET /code-quality/v1/code-analyses/be77b25f-c738-462f-8f19-7114fc4f9923\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "CodeAnalysisControllerV_GetAnalysisRequestStatus",
         "parameters": [
           {
@@ -130,7 +130,7 @@
       "post": {
         "tags": [],
         "summary": "Submits a code analysis request for an asset revision.",
-        "description": "Initiates code analysis for a specific asset revision, returning an analysis key for status tracking.\n\n\n\nExample: POST /code-quality/v1/code-analyses\n\nAPI Client needs the **Analyze > Manage code quality findings** permission.",
+        "description": "Initiates code analysis for a specific asset revision, returning an analysis key for status tracking.\n\nExample: POST /code-quality/v1/code-analyses\n\nAPI Client needs the **Analyze > Manage code quality findings** permission.",
         "operationId": "CodeAnalysisControllerV_SubmitCodeAnalysisRequest",
         "requestBody": {
           "description": "The analysis request containing the asset key and revision to analyze",
@@ -221,7 +221,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves a list of code quality findings.",
-        "description": "Retrieves a paginated list of code quality findings with comprehensive filtering, sorting, and field selection capabilities.\n\n\n\nExample: GET /code-quality/v1/findings?assetKeys=abc123&severities=High&status=Open&limit=20\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
+        "description": "Retrieves a paginated list of code quality findings with comprehensive filtering, sorting, and field selection capabilities.\n\nExample: GET /code-quality/v1/findings?assetKeys=abc123&severities=High&status=Open&limit=20\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "FindingsControllerV_GetFindings",
         "parameters": [
           {
@@ -369,6 +369,17 @@
             "example": 100
           },
           {
+            "name": "PortfolioKey",
+            "in": "query",
+            "description": "Filter by portfolio key.",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "example": "12345678-1234-1234-1234-123456789abc"
+            },
+            "example": "12345678-1234-1234-1234-123456789abc"
+          },
+          {
             "name": "CreatedBy",
             "in": "query",
             "description": "Filter by creator user IDs.",
@@ -444,7 +455,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves quality metrics for assets.",
-        "description": "Retrieves quality metrics and findings distribution for assets, including quality scores and findings grouped by severity and status, with comparison to previous analysis.\n\n\n\nExample: GET /code-quality/v1/assets-quality-metrics?assetType=Application&limit=50&sort=-score\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
+        "description": "Retrieves quality metrics and findings distribution for assets, including quality scores and findings grouped by severity and status, with comparison to previous analysis.\n\nExample: GET /code-quality/v1/assets-quality-metrics?assetType=Application&limit=50&sort=-score\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "FindingsOverviewControllerV_GetAppsOverview",
         "parameters": [
           {
@@ -568,6 +579,17 @@
               "example": 100
             },
             "example": 100
+          },
+          {
+            "name": "PortfolioKey",
+            "in": "query",
+            "description": "Filter by portfolio key.",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "example": "12345678-1234-1234-1234-123456789abc"
+            },
+            "example": "12345678-1234-1234-1234-123456789abc"
           }
         ],
         "responses": {
@@ -634,7 +656,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves the analysis summary for an asset revision.",
-        "description": "Retrieves the analysis summary for a specific asset revision, including findings breakdown by severity and the quality score.\n\n\n\nExample: GET /code-quality/v1/assets/53fcbdc7-be3c-4532-866c-a296336133b0/revisions/8/analysis-summary\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
+        "description": "Retrieves the analysis summary for a specific asset revision, including findings breakdown by severity and the quality score.\n\nExample: GET /code-quality/v1/assets/53fcbdc7-be3c-4532-866c-a296336133b0/revisions/8/analysis-summary\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "FindingsOverviewControllerV_GetAssetRevisionFindingsSummary",
         "parameters": [
           {
@@ -721,7 +743,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves a multi-dimensional findings summary.",
-        "description": "Retrieves a multi-dimensional summary of findings, aggregated by customizable grouping parameters such as category, status, and severity.\n\n\n\nExample: GET /code-quality/v1/findings-summary?groupBy=Category,Status,Severity&categories=Security\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
+        "description": "Retrieves a multi-dimensional summary of findings, aggregated by customizable grouping parameters such as category, status, and severity.\n\nExample: GET /code-quality/v1/findings-summary?groupBy=Category,Status,Severity&categories=Security\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "FindingsOverviewControllerV_GetFindingsSummary",
         "parameters": [
           {
@@ -844,6 +866,17 @@
               "example": 100
             },
             "example": 100
+          },
+          {
+            "name": "PortfolioKey",
+            "in": "query",
+            "description": "Filter by portfolio key.",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "example": "12345678-1234-1234-1234-123456789abc"
+            },
+            "example": "12345678-1234-1234-1234-123456789abc"
           }
         ],
         "responses": {
@@ -910,7 +943,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves historical trend data for findings.",
-        "description": "Retrieves historical trend data for findings over time, showing how findings and quality scores evolved across analyses. Useful for visualizing trends and patterns over time.\n\n\n\nExample: GET /code-quality/v1/findings-trend?assetKeys=abc123&since=2024-01-01&to=2024-12-31\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
+        "description": "Retrieves historical trend data for findings over time, showing how findings and quality scores evolved across analyses. Useful for visualizing trends and patterns over time.\n\nExample: GET /code-quality/v1/findings-trend?assetKeys=abc123&since=2024-01-01&to=2024-12-31\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "FindingsOverviewControllerV_GetFindingsTrend",
         "parameters": [
           {
@@ -1023,6 +1056,17 @@
               "example": 100
             },
             "example": 100
+          },
+          {
+            "name": "PortfolioKey",
+            "in": "query",
+            "description": "Filter by portfolio key.",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "example": "12345678-1234-1234-1234-123456789abc"
+            },
+            "example": "12345678-1234-1234-1234-123456789abc"
           }
         ],
         "responses": {
@@ -1089,7 +1133,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves a list of code patterns.",
-        "description": "Returns a paginated list of all available code patterns that can be detected during code analysis, including their names, descriptions, and metadata.\n\n\n\nExample: GET /code-quality/v1/patterns?limit=50\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
+        "description": "Returns a paginated list of all available code patterns that can be detected during code analysis, including their names, descriptions, and metadata.\n\nExample: GET /code-quality/v1/patterns?limit=50\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "PatternsControllerV_GetPatterns",
         "parameters": [
           {
@@ -1179,7 +1223,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves details for a specific code pattern.",
-        "description": "Returns detailed information about a specific code pattern, including its description, category, severity, and detection rules.\n\n\n\nExample: GET /code-quality/v1/patterns/pattern-id-123\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
+        "description": "Returns detailed information about a specific code pattern, including its description, category, severity, and detection rules.\n\nExample: GET /code-quality/v1/patterns/pattern-id-123\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "PatternsControllerV_GetPatternsById",
         "parameters": [
           {
@@ -1256,7 +1300,7 @@
       "get": {
         "tags": [],
         "summary": "Retrieves the current synchronization status of Code Quality data.",
-        "description": "Retrieves the current synchronization status of Code Quality data, including the latest and last successful analysis details with metrics about new and resolved findings.\n\n\n\nExample: GET /code-quality/v1/analysis-status\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
+        "description": "Retrieves the current synchronization status of Code Quality data, including the latest and last successful analysis details with metrics about new and resolved findings.\n\nExample: GET /code-quality/v1/analysis-status\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "SyncControllerV_GetAnalysisStatus",
         "responses": {
           "200": {
@@ -1850,7 +1894,7 @@
           },
           "results": {
             "type": "object",
-            "description": "Hierarchical breakdown of findings grouped by the requested parameters (e.g., Category → Status → Severity).\n\nEach level contains either nested groups (as dictionaries) or leaf metrics with count information.\n\nThe structure depth and keys depend on the GroupBy parameter specified in the request.",
+            "description": "Hierarchical breakdown of findings grouped by the requested parameters (e.g., Category → Status → Severity).\nEach level contains either nested groups (as dictionaries) or leaf metrics with count information.\nThe structure depth and keys depend on the GroupBy parameter specified in the request.",
             "nullable": true
           }
         },
@@ -1909,32 +1953,32 @@
         "properties": {
           "openFindingsCount": {
             "type": "integer",
-            "description": "Represents the count of open findings for the specified day.\n\nThis property is used to track the number of findings that are still open on that day.",
+            "description": "Represents the count of open findings for the specified day.\nThis property is used to track the number of findings that are still open on that day.",
             "format": "int64"
           },
           "snoozedFindingsCount": {
             "type": "integer",
-            "description": "Represents the count of snoozed findings for the specified day.\n\nThis property is used to track the number of findings that are still snoozed on that day.",
+            "description": "Represents the count of snoozed findings for the specified day.\nThis property is used to track the number of findings that are still snoozed on that day.",
             "format": "int64"
           },
           "resolvedFindingsCount": {
             "type": "integer",
-            "description": "Represents the count of resolved findings for the specified day.\n\nThis property is used to track the number of findings that are still resolved on that day.",
+            "description": "Represents the count of resolved findings for the specified day.\nThis property is used to track the number of findings that are still resolved on that day.",
             "format": "int64"
           },
           "dismissedFindingsCount": {
             "type": "integer",
-            "description": "Represents the count of dismissed findings for the specified day.\n\nThis property is used to track the number of findings that are still dismissed on that day.",
+            "description": "Represents the count of dismissed findings for the specified day.\nThis property is used to track the number of findings that are still dismissed on that day.",
             "format": "int64"
           },
           "closedFindingsCount": {
             "type": "integer",
-            "description": "Represents the count of closed findings for the specified day.\n\nThis property is used to track the number of findings that have been closed on that day.",
+            "description": "Represents the count of closed findings for the specified day.\nThis property is used to track the number of findings that have been closed on that day.",
             "format": "int64"
           },
           "analysisDate": {
             "type": "string",
-            "description": "Represents the day of the findings trend data.\n\nThe format is typically \"YYYY-MM-DD\".",
+            "description": "Represents the day of the findings trend data.\nThe format is typically \"YYYY-MM-DD\".",
             "nullable": true
           }
         },
@@ -2066,8 +2110,9 @@
           },
           "nextPageOffset": {
             "type": "integer",
-            "description": "Offset of the next page of results.",
-            "format": "int32"
+            "description": "Offset of the next page of results. Null when there is no next page.",
+            "format": "int32",
+            "nullable": true
           },
           "totalResults": {
             "type": "integer",
