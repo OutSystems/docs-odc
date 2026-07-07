@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.3",
   "info": {
     "title": "Deployments API",
     "description": "REST endpoints for publishing and deploying assets in environments (stages) in your organization.\n",
@@ -71,6 +71,15 @@
             }
           },
           {
+            "name": "portfolioKey",
+            "in": "query",
+            "description": "Filter assets by portfolio key, if filled.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "operations",
             "in": "query",
             "description": "Filter deployments that contain a given operation, if filled.",
@@ -128,7 +137,7 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "Sort order of the elements.\n\n-element1 for descending, element2 for ascending.\n\nMultiple orders joined by comma.\n\nExample -element1,element2 to sort by element1 descending then by element2 ascending\n\nCurrently supported sort values: CreatedAt, UpdatedAt, ApplicationKey, AssetKey, ApplicationName, AssetName, FinishedAt\n\nDefault sort: -CreatedAt",
+            "description": "Sort order of the elements.\n-element1 for descending, element2 for ascending.\nMultiple orders joined by comma.\nExample -element1,element2 to sort by element1 descending then by element2 ascending\nCurrently supported sort values: CreatedAt, UpdatedAt, ApplicationKey, AssetKey, ApplicationName, AssetName, FinishedAt\nDefault sort: -CreatedAt",
             "schema": {
               "type": "string"
             }
@@ -183,7 +192,7 @@
           "deployment-operations"
         ],
         "summary": "Requests the creation or deletion of a deployment.",
-        "description": "Requests the creation of a deployment-operation which can be a Deployment, Undeploy or ApplyConfigs. It returns the created deployment operation.\n\nAPI Client needs the **Release management > Deploy apps** permission for the operation.",
+        "description": "Requests the creation of a deployment-operation which can be a Deployment, Undeploy or ApplyConfigs. It returns the created deployment operation.\n\nAPI Client needs the **Release management > Deploy assets** permission for the operation.",
         "operationId": "DeploymentOperations_Post",
         "requestBody": {
           "description": "Deployment operation request data",
@@ -263,7 +272,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Release management > Deploy apps** permission for the operation."
+        "x-os-permissions": "API Client needs the **Release management > Deploy assets** permission for the operation."
       }
     },
     "/deployment-operations/{operationKey}": {
@@ -482,6 +491,15 @@
             }
           },
           {
+            "name": "portfolioKey",
+            "in": "query",
+            "description": "Filter assets by portfolio key, if filled.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "createdDateSince",
             "in": "query",
             "description": "Filter assets created from one point in time on, if filled.",
@@ -520,7 +538,7 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "Sort order of the elements.\n\n-element1 for descending, element2 for ascending.\n\nMultiple orders joined by comma.\n\nExample -element1,element2 to sort by element1 descending then by element2 ascending\n\nCurrently supported sort values: CreatedAt, UpdatedAt, ApplicationKey, AssetKey, ApplicationName, AssetName, FinishedAt\n\nDefault sort: -CreatedAt",
+            "description": "Sort order of the elements.\n-element1 for descending, element2 for ascending.\nMultiple orders joined by comma.\nExample -element1,element2 to sort by element1 descending then by element2 ascending\nCurrently supported sort values: CreatedAt, UpdatedAt, ApplicationKey, AssetKey, ApplicationName, AssetName, FinishedAt\nDefault sort: -CreatedAt",
             "schema": {
               "type": "string"
             }
@@ -794,28 +812,28 @@
                 "$ref": "#/components/schemas/DeploymentOperationsType"
               }
             ],
-            "description": "Operation to be executed.\n\nMandatory: Deploy, Undeploy, ApplyConfigs."
+            "description": "Operation to be executed.\nMandatory: Deploy, Undeploy, ApplyConfigs."
           },
           "assetKey": {
             "type": "string",
-            "description": "Asset unique identifier.\n\nMandatory for Apply Configurations and Deployment.",
+            "description": "Asset unique identifier.\nMandatory for Apply Configurations and Deployment.",
             "format": "uuid"
           },
           "buildKey": {
             "type": "string",
-            "description": "Build unique identifier.\n\nMandatory for Deployment.",
+            "description": "Build unique identifier.\nMandatory for Deployment.",
             "format": "uuid",
             "nullable": true
           },
           "revision": {
             "type": "integer",
-            "description": "Revision identifier.\n\nMandatory for Apply Configurations and Deployment.",
+            "description": "Revision identifier.\nMandatory for Apply Configurations and Deployment.",
             "format": "int32",
             "nullable": true
           },
           "environmentKey": {
             "type": "string",
-            "description": "Environment Identifier.\n\nMandatory.",
+            "description": "Environment Identifier.\nMandatory.",
             "format": "uuid"
           }
         },
@@ -885,6 +903,12 @@
               }
             ],
             "description": "Executed Operation."
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "Portfolio Key.",
+            "format": "uuid",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -1093,7 +1117,7 @@
                 "$ref": "#/components/schemas/PublishOperationsType"
               }
             ],
-            "description": "Operation to be executed.\n\nMandatory: Publish."
+            "description": "Operation to be executed.\nMandatory: Publish."
           },
           "assetKey": {
             "type": "string",
@@ -1107,7 +1131,7 @@
           },
           "environmentKey": {
             "type": "string",
-            "description": "Unique environment identifier.\n\nOptional for the hotfix scenario.",
+            "description": "Unique environment identifier.\nOptional for the hotfix scenario.",
             "format": "uuid"
           }
         },
@@ -1157,6 +1181,12 @@
           "buildKey": {
             "type": "string",
             "description": "Unique identifier of the asset build.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "Unique identifier of the portfolio.",
             "format": "uuid",
             "nullable": true
           },
@@ -1255,12 +1285,18 @@
   ],
   "tags": [
     {
+      "name": "private",
+      "description": "Handles deployed applications"
+    },
+    {
       "name": "public",
       "description": ""
     },
     {
-      "name": "private",
-      "description": "Handles deployed applications"
+      "name": "deployment-operations"
+    },
+    {
+      "name": "publish-operations"
     }
   ]
 }
