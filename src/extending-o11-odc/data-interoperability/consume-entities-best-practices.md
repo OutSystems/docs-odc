@@ -5,13 +5,19 @@ summary: Learn the development best practices for consuming O11 entities in ODC 
 figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?node-id=2711-37
 coverage-type:
   - understand
+  - evaluate
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - Developer
   - Front-end developer
-tags: entities,data interoperability
+tags:
+  - Best Practices
+  - Data
+  - Entities
+  - Performance
+  - SQL
 outsystems-tools:
   - odc studio
 helpids:
@@ -44,12 +50,6 @@ Similarly to other [external data source integrations](../../eap/building-apps/d
 
 When combining O11 entities with other external data sources in your ODC app, be aware of the [transaction behavior in data mashup scenarios](../../eap/building-apps/data/fetch-data/transactions-data-mashup.md), especially when performing write operations before querying the combined data.
 
-<div class="info" markdown="1">
-
-[Data mashup with O11 Oracle entities](#oracle-mashup) is currently not supported.
-
-</div>
-
 If you require transactional consistency across multiple O11 records - for example, creating an Order and the Order Lines together - create a wrapper REST API in O11 that handles the transaction internally. Then, use [logic interoperability](../logic-interoperability/logic-interop.md) to consume that O11 logic in your ODC app.
 
 ## Performance
@@ -61,12 +61,6 @@ To ensure stability across both platforms:
 * **Design your O11 data model for performance:** Ensure proper indexing and normalization to handle queries efficiently. Refer to the [O11 data model best practices](https://success.outsystems.com/documentation/11/onboarding_developers/outsystems_platform_best_practices/#data-model) for more details.
 
 * **Write efficient queries in your ODC apps:** Optimize data fetching by selecting only necessary columns and limiting result sets. Avoid executing SQL queries inside logic loops, as this generates database communication overhead. For more details, refer to the best practices for [fetching and displaying data](../../eap/building-apps/ui/creating-screens/best-practices-fetch-display-data.md) and [querying data using SQL](../../eap/building-apps/data/fetch-data/sql/use-sql.md). When combining O11 entities with other external data sources in your ODC app, follow the [best practices for data mashup queries](../../eap/building-apps/data/fetch-data/queries.md).
-
-    <div class="info" markdown="1">
-
-    [Data mashup with O11 Oracle entities](#oracle-mashup) is currently not supported.
-
-    </div>
 
 * **Test your apps:** Conduct load testing to verify that your O11 database can handle the additional concurrent load from ODC apps without degradation. Refer to [Testing apps](../../eap/testing-apps/testing-apps.md) for further details.
 
@@ -108,8 +102,9 @@ When creating new records in runtime, the default values for **Email** and **Pho
 
 ![ODC app showing default values with quotation marks](images/consume-best-practices-default-values-diag.png "ODC app showing default values with quotation marks")
 
-#### Data mashup not supported {#oracle-mashup}
+#### Data mashup considerations {#oracle-mashup}
 
-Using [data mashup](../../eap/building-apps/data/fetch-data/data-mash.md) to combine O11 Oracle entities with other external systems isn't currently supported in ODC apps.
+When using [data mashup](../../eap/building-apps/data/fetch-data/data-mash.md) to combine O11 Oracle entities with other external systems, `OR` and `IN` conditions with empty string literals may not return the expected results. For example, the following queries may miss records with empty text values:
 
-Although basic queries might occasionally work, the system may not reliably handle complex queries in this setup.
+* `MyO11Entity.TextAttribute = "" or MyO11Entity.TextAttribute = "ABC"`
+* `MyO11Entity.TextAttribute in ("", "ABC")`
