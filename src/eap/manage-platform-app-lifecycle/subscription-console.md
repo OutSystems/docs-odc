@@ -92,7 +92,7 @@ The **Add-ons** tab provides visibility of the add-ons to which the organization
 
 ## Platform region and Data platform region {#platform-regions}
 
-ODC Portal shows two types of region information for your organization. Use them to verify data residency for compliance purposes and to allowlist the correct IP addresses for [streaming analytics and audit trail data](odc-public-ips.md#streaming-analytics-audit-trail).
+ODC Portal shows two types of region information for your organization. Use them to verify data residency for compliance purposes and to [allowlist the correct IP addresses](odc-public-ips.md).
 
 * **Platform region**. The geographical region where your ODC platform is hosted and executed.
 * **Data platform region**. The geographical region where your ODC operational data is hosted. This includes telemetry, logs, and analytics data.
