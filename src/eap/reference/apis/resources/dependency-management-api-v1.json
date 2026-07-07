@@ -21,11 +21,6 @@
       }
     }
   ],
-  "security": [
-    {
-      "bearerAuth": []
-    }
-  ],
   "paths": {
     "/deletion-analyses/{analysisKey}": {
       "get": {
@@ -1243,6 +1238,32 @@
         },
         "additionalProperties": false
       },
+      "ImpactedDomain": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Domain Key",
+            "nullable": true
+          },
+          "hostname": {
+            "type": "string",
+            "description": "Hostname of the domain",
+            "nullable": true
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "Environment key where the domain is configured",
+            "nullable": true
+          },
+          "environmentName": {
+            "type": "string",
+            "description": "Environment name where the domain is configured",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "IncompatibilityType": {
         "enum": [
           "None",
@@ -1285,40 +1306,26 @@
         "properties": {
           "type": {
             "type": "string",
-            "description": "A URI reference that identifies the problem type.",
             "nullable": true
           },
           "title": {
             "type": "string",
-            "description": "A short, human-readable summary of the problem.",
             "nullable": true
           },
           "status": {
             "type": "integer",
-            "description": "The HTTP status code applicable to the problem.",
             "format": "int32",
             "nullable": true
           },
           "detail": {
             "type": "string",
-            "description": "A human-readable explanation of the error.",
             "nullable": true
           },
           "instance": {
             "type": "string",
-            "description": "A URI that identifies the specific occurrence of the problem.",
             "nullable": true
-          },
-          "traceId": {
-            "type": "string",
-            "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
-          },
-          "errorCode": {
-            "type": "string",
-            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
           }
-        },
-        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+        }
       },
       "ProcessStatus": {
         "enum": [
@@ -1394,6 +1401,14 @@
             "description": "List of environments where application is deployed",
             "nullable": true
           },
+          "impactedDomains": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImpactedDomain"
+            },
+            "description": "List of impacted custom domains",
+            "nullable": true
+          },
           "impactedAssets": {
             "type": "array",
             "items": {
@@ -1436,17 +1451,7 @@
                 "$ref": "#/components/schemas/ProblemDetails"
               }
             ],
-            "properties": {
-              "traceId": {
-                "type": "string",
-                "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
-              },
-              "errorCode": {
-                "type": "string",
-                "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
-              }
-            },
-            "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs).",
+            "description": "Processing error, if any",
             "nullable": true
           },
           "report": {
@@ -1587,17 +1592,7 @@
                 "$ref": "#/components/schemas/ProblemDetails"
               }
             ],
-            "properties": {
-              "traceId": {
-                "type": "string",
-                "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
-              },
-              "errorCode": {
-                "type": "string",
-                "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
-              }
-            },
-            "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs).",
+            "description": "Processing error, if any",
             "nullable": true
           },
           "report": {
@@ -1641,6 +1636,16 @@
             "description": "Impacted application type",
             "nullable": true
           },
+          "portfolioKey": {
+            "type": "string",
+            "description": "Portfolio key for the impacted application",
+            "nullable": true
+          },
+          "portfolioName": {
+            "type": "string",
+            "description": "Portfolio name for the impacted application",
+            "nullable": true
+          },
           "assetKey": {
             "type": "string",
             "description": "Asset Key",
@@ -1669,6 +1674,16 @@
             "type": "integer",
             "description": "Element Application Revision",
             "format": "int32"
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "Portfolio key for the element",
+            "nullable": true
+          },
+          "portfolioName": {
+            "type": "string",
+            "description": "Portfolio name for the element",
+            "nullable": true
           },
           "assetKey": {
             "type": "string",
@@ -1766,6 +1781,11 @@
             "type": "string",
             "description": "Key (format: guid)."
           },
+          "portfolioKey": {
+            "type": "string",
+            "description": "Key of the portfolio this asset belongs to (format: guid).",
+            "nullable": true
+          },
           "revision": {
             "type": "integer",
             "description": "Revision number.",
@@ -1832,6 +1852,11 @@
             "minLength": 1,
             "type": "string",
             "description": "Key (format: guid)."
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "Key of the portfolio this asset belongs to (format: guid).",
+            "nullable": true
           },
           "revision": {
             "type": "integer",
@@ -1907,6 +1932,11 @@
             "minLength": 1,
             "type": "string",
             "description": "Key (format: guid)."
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "Key of the portfolio this asset belongs to (format: guid).",
+            "nullable": true
           },
           "revision": {
             "type": "integer",
@@ -1999,6 +2029,14 @@
             "description": "Filter if hidden elements should be included or not",
             "nullable": true
           },
+          "consumerPortfolioKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Filter by one or more portfolio keys",
+            "nullable": true
+          },
           "limit": {
             "type": "integer",
             "description": "Limits the number of returned elements",
@@ -2052,8 +2090,9 @@
           },
           "nextPageOffset": {
             "type": "integer",
-            "description": "Offset of the next page of results.",
-            "format": "int32"
+            "description": "Offset of the next page of results. Null when there is no next page.",
+            "format": "int32",
+            "nullable": true
           },
           "totalResults": {
             "type": "integer",
@@ -2262,10 +2301,23 @@
     "securitySchemes": {
       "bearerAuth": {
         "type": "http",
-        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "description": "Enter your bearer token",
         "scheme": "bearer",
         "bearerFormat": "JWT"
       }
     }
-  }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "private"
+    },
+    {
+      "name": "public"
+    }
+  ]
 }
