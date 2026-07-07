@@ -153,7 +153,7 @@
           {
             "name": "assetTypes",
             "in": "query",
-            "description": "Filter by one or more asset types, recognized values are [WebApplication, MobileApplication, LowCodeLibrary, ExtensionLibrary, ExternalConnection, ExternalLibrary, Workflow, WidgetLibrary, AIModelConnection, SearchServiceConnection, Agent, MCPConnection].",
+            "description": "Filter by one or more asset types, recognized values are [WebApplication, MobileApplication, LowCodeLibrary, ExtensionLibrary, ExternalConnection, ExternalLibrary, Workflow, WidgetLibrary, AIModelConnection, SearchServiceConnection, Agent, MCPConnection, A2AConnection, KnowledgeBase].",
             "schema": {
               "type": "array",
               "items": {
@@ -165,6 +165,17 @@
             "name": "assetKeys",
             "in": "query",
             "description": "Filter by one or more asset keys.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "portfolioKeys",
+            "in": "query",
+            "description": "Filter by one or more portfolio keys.",
             "schema": {
               "type": "array",
               "items": {
@@ -1426,6 +1437,14 @@
             }
           },
           {
+            "name": "commitMessage",
+            "in": "query",
+            "description": "Filters revisions based on whether their commit message contains a specific string.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "embed",
             "in": "query",
             "description": "Embedded resources to return with the asset revision. Recognized values are [releaseNote, icon, sourceCode, signature, metadata].",
@@ -1913,6 +1932,11 @@
             "type": "string",
             "description": "Key (format: guid)."
           },
+          "portfolioKey": {
+            "type": "string",
+            "description": "Key of the portfolio this asset belongs to (format: guid).",
+            "nullable": true
+          },
           "revision": {
             "type": "integer",
             "description": "Revision number.",
@@ -2157,6 +2181,11 @@
             "type": "string",
             "description": "Asset key (format: guid)."
           },
+          "portfolioKey": {
+            "type": "string",
+            "description": "Key of the portfolio this asset belongs to (format: guid).",
+            "nullable": true
+          },
           "revision": {
             "type": "integer",
             "description": "Revision number.",
@@ -2335,6 +2364,12 @@
           "commitMessage": {
             "type": "string",
             "description": "An optional commit message that can be populated when creating or updating an asset version.",
+            "nullable": true
+          },
+          "portfolioKey": {
+            "type": "string",
+            "description": "(Optional) The key of the portfolio to associate the asset with.\nFor new assets: If not provided, uses the main portfolio.\nFor existing assets: If provided, must match existing portfolio or an error is returned.",
+            "format": "uuid",
             "nullable": true
           },
           "fileUri": {
@@ -2583,6 +2618,27 @@
         "additionalProperties": false,
         "description": "Represents an upload response"
       }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "private"
+    },
+    {
+      "name": "public"
+    }
+  ]
 }
