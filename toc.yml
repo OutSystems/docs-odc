@@ -727,6 +727,7 @@
     - topics:
         - href: eap/manage-platform-app-lifecycle/platform-updates/postgres16-update.md
     - href: eap/manage-platform-app-lifecycle/rename-organization.md
+    - href: eap/manage-platform-app-lifecycle/reorder-stages.md
 # User management
 - href: eap/user-management/intro.md 
 - topics:

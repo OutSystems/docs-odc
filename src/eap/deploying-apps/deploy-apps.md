@@ -28,7 +28,7 @@ isautopublish: true
 
 # Deploying assets
 
-Use OutSystems Developer Cloud (ODC) Portal to deploy your assets (apps and workflows). In ODC, you deploy your assets to stages. A stage is a step within your delivery pipeline that includes runtime resources. By default, ODC includes two stages: development and production.
+Use OutSystems Developer Cloud (ODC) Portal to deploy your assets (apps and workflows). In ODC, you deploy your assets to stages. A stage is a step within your delivery pipeline that includes runtime resources. By default, ODC includes 3 stages: development, non-production, and production. You can add up to 10 non-production stages per portfolio between them, and [change their order](../manage-platform-app-lifecycle/reorder-stages.md).
 
 ODC has a single code repository. When you deploy an asset in ODC Studio, it is [containerized](../app-architecture/intro.md), deployed to the development stage, and a container image is created. When you're ready to deploy your asset to the next stage, your asset deploys without the need to recompile code again.
 

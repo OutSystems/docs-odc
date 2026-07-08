@@ -141,10 +141,9 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Asset management | Debug | Users can view, open and debug assets. | Organization <br/> Asset |
 | Asset management | Change | Users can view, open, debug and publish assets. | Organization <br/> Asset |
 | Asset management | Delete | Users can delete assets. | Organization <br/> Asset |
-| Portfolio management | Manage portfolio | Users can rename a portfolio and manage its settings. | Organization |
-| Portfolio management | Manage stage | Users can rename a stage and change stage order within a portfolio. | Organization |
+| Portfolio management | Manage portfolio | Users can rename a portfolio and reorder its stages. | Organization |
+| Portfolio management | Manage stages | Users can rename a stage within a portfolio. Necessary to configure self-hosted stages | Organization |
 | Portfolio management | View stage | View a given stage. | Organization |
-| Portfolio management | Manage stages | Manage the stage properties, including its name. Necessary to configure self-hosted stages. | Organization |
 | Release management | Deploy assets | Users can initiate asset deployments to a specified stage and undeploy from the production stage. | Organization <br/> Asset |
 | Release management | Release | Users can release an asset, assign a version number (1.0.0), and add release notes. | Organization <br/> Asset |
 | Monitoring | Access asset logs and traces | Users can view asset logs and traces in a given stage. | Organization <br/> Asset |

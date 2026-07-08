@@ -99,7 +99,7 @@ To check your own Platform region and Data platform region, refer to [View your 
 
 ### Runtime {#runtime}
 
-In ODC, the **runtime** is independent of the platform and comprises multiple **stages** that host and run deployed apps. Each stage is an isolated runtime environment. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
+In ODC, the **runtime** is independent of the platform and comprises multiple **stages** that host and run deployed apps. Each stage is an isolated runtime environment. Besides the default development and production stages, you can add up to 10 non-production stages per portfolio. Staging lets multiple teams deliver independently and in parallel, a foundational part of the **continuous integration** approach to software development.
 
 In a multi-portfolio organization, portfolios add a logical layer between your ODC organization and its runtime stages. Each portfolio has its own set of stages. This supports independent CI/CD delivery processes across portfolios.
 
