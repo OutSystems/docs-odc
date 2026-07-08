@@ -92,7 +92,7 @@ You can use multiple portfolios when different groups of assets need their own r
 
 An insurance company uses three portfolios to manage its assets:
 
-* **Customer portal portfolio**: Customer-facing apps that use a third-party identity provider on a public domain. This portfolio follows a weekly release schedule and applies specific IP filters and custom domains. A payments app in this portfolio requires dedicated database resources to meet compliance standards.
+* **Customer portal portfolio**: Customer-facing apps that use a third-party identity provider on a public domain. This portfolio follows a weekly release schedule and applies specific IP filters and custom domains. For compliance reasons, customer data cannot be mixed with other internal data.
 
 * **Employee apps portfolio**: Employee-facing apps that use corporate SSO on an internal domain. HR and operations share this portfolio and follow a monthly release schedule with a formal approval workflow.
 
@@ -127,7 +127,7 @@ The following table shows which assets are available across portfolios and which
 | --- | --- | --- |
 | AI models | No | AI models are portfolio-scoped. |
 | Agents | No | Agents are portfolio-scoped. |
-| Apps | No | Apps are portfolio-scoped. Service actions, entities, events, and other public elements are only reusable by other apps in the same portfolio.|
+| Apps | No | Apps are portfolio-scoped. Service actions, entities, events, and other public elements are only reusable by other apps in the same portfolio. |
 | Connections | No | Connections expose entities and actions that assets in the same portfolio consume. Each portfolio's stages have separate connection configurations. |
 | External libraries | Yes | External libraries are reusable across portfolios. |
 | Libraries | Yes | Libraries expose public elements that you reuse across portfolios. For more information, refer to [Libraries](../../building-apps/libraries/libraries.md). |
