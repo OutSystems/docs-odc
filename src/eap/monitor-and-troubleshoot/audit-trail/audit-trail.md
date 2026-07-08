@@ -3,7 +3,6 @@ helpids: 30635
 summary: OutSystems Developer Cloud (ODC)'s audit trail ensures compliance, aids troubleshooting, and tracks platform operations for effective incident response.
 tags:
   - Events
-  - IT Users
   - Logging
   - Monitoring
   - Roles
@@ -227,6 +226,18 @@ Get a detailed record of actions on your core app development resources, includi
 * DeleteSearchServiceConnection
 
 * DeleteMCPConnection
+
+### Native mobile build management
+
+ODC tracks the following native mobile build and configuration actions:
+
+* Create native build
+
+* Update mobile app iOS configuration
+
+* Update mobile app Android configuration
+
+* Update mobile app extensibility settings
 
 ### OutSystems 11 configuration management
 
