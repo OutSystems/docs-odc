@@ -1,6 +1,12 @@
 ---
-summary: Explore mobile plugin functionalities and their support in PWAs with OutSystems Developer Cloud (ODC).
-tags: mobile plugins, progressive web apps, native mobile features, security, firebase
+summary: "OutSystems Developer Cloud (ODC) mobile plugins: choose between Capacitor and Cordova in MABS 12 and integrate plugins via Forge or custom libraries."
+tags:
+  - Capacitor
+  - Cordova
+  - Forge
+  - Mobile app
+  - Native App
+  - Plugins
 locale: en-us
 guid: 55ef1d73-dac8-48e6-8b15-dc6990779660
 app_type: mobile apps, reactive web apps
@@ -16,6 +22,7 @@ coverage-type:
   - apply
 topic:
   - using-cordova-plugins
+isautopublish: true
 ---
 
 # Use mobile plugins
