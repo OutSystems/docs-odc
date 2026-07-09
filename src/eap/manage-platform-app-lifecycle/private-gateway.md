@@ -24,9 +24,9 @@ isautopublish: true
 
 # Configure a private gateway to your network
 
-Private Gateways is an OutSystems Developer Cloud (ODC) feature that lets you connect your apps to private data and private services ("endpoints") that aren't accessible by the internet. These endpoints may be in an on-premise network, a private cloud, or a public cloud.
+Private Gateways is an OutSystems Developer Cloud (ODC) feature that lets you connect your apps to private data and private services (endpoints) that aren't accessible by the internet. These endpoints may be in an on-premise network, a private cloud, or a public cloud.
 
-The complexity of a multitenant cloud-native platform means that ODC requires a modern solution over a traditional VPN in order to connect securely to private assets.
+ODC is cloud-native which means your apps don't run on servers. Instead, they run in containers that scale automatically and almost instantly to match the load. ODC is also multi-tenant, so containers and apps don't have a single, dedicated IP address that you can allowlist the traditional way. This means ODC requires a modern solution over a traditional VPN to connect securely to private assets.
 
 VPN limitations over a cloud-native infrastructure are overcome by Private Gateway. VPNs are often the main vector for data breaches often allowing unrestricted access to the company's network, are complex to configure and set up, and are rigid when it comes to failover.
 
