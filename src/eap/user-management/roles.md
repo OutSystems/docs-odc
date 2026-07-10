@@ -174,7 +174,7 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | End-user management | View end-users | View users with end-user roles. | Organization <br/> Asset |
 | End-user management | Manage end-user access | Users can invite users and grant or revoke end-user roles. | Organization <br/> Asset |
 | End-user management | Manage end-user groups | View, create, edit, and delete end-user groups and group mappings. | Organization |
-| Organization management | Manage organization | Users can edit the organization settings, including the organization name and domain. | Organization |
+| Organization management | Manage organization | Users can edit the organization domain as well as the organization display name. | Organization |
 | Organization management | View audit trail | This permission enables users to view the audit logs. | Organization |
 | Organization management | Manage audit trail stream | Users can view, create, edit, and delete audit trail streams. | Organization |
 | Organization management | Manage O11 configurations | Provides users access to OutSystems 11 configurations, allowing connectivity to the Conversion Assessment Tool on the O11 infrastructure and enabling Code Conversion and Data Migration. | Organization |
