@@ -1,6 +1,10 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers user management actions for identity providers, including password resets and user profile updates.
-tags: user management, password policy, account security, identity providers, authentication
+tags:
+  - Authentication
+  - End-user Authentication
+  - End-users
+  - IdP
 locale: en-us
 guid: 0889c9fd-98dc-489d-a8ed-bea68946f0ac
 app_type: mobile apps, reactive web apps
@@ -74,6 +78,8 @@ Finalizes the reset password operation, using a verification code that can be re
 **FinishResetPasswordResult**
 :   Type: [FinishResetPasswordResult](#finishpasswordresetresult)
     Result of the reset password action. Returns the failure reason if unsuccessful.
+
+**Note:** Remember that the password reset action is only supported for active users.
 
 ### FinishUserRegistration
 

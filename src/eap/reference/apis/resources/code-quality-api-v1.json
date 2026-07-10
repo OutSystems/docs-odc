@@ -1021,17 +1021,6 @@
             "example": "2022-12-31T23:59:59"
           },
           {
-            "name": "ScoreRanges",
-            "in": "query",
-            "description": "Filter by quality score ranges.",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
             "name": "Limit",
             "in": "query",
             "description": "Number of records to return per page.",

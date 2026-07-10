@@ -153,8 +153,6 @@ OutSystems is working to improve the data interoperability capability. Meanwhile
 
 * O11 static entities are available in ODC as regular read-only entities (doesn't apply to static entities defined in libraries, which can't be exposed). See [how to work with O11 static entities](consume-entities-best-practices.md#o11-static-entities).
 
-* [Data mashup with O11 Oracle entities and other external system](consume-entities-best-practices.md#oracle-mashup) in ODC apps is currently not supported.
-
 * An ODC tenant can only connect to one O11 infrastructure.
 
 * Data interoperability isn't yet supported for [ODC self-hosted](../../eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md).
