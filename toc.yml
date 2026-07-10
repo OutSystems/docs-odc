@@ -405,7 +405,9 @@
             # Customize system bars and edge-to-edge display
             - href: eap/building-apps/mobile/extensibility-configurations/customize-system-bars-edge-to-edge.md
             # Configure splash screen
-            - href: eap/building-apps/mobile/configure-splash-screen.md              
+            - href: eap/building-apps/mobile/configure-splash-screen.md
+            # Modify the app icon 
+            - href: eap/building-apps/mobile/modify-the-app-icon.md             
             # Intro to extensibility configurations
             - href: eap/building-apps/mobile/extensibility-configurations-json-schema.md
              # Universal extensibility configurations
@@ -427,6 +429,7 @@
               
             - href: eap/building-apps/mobile/migrate-cordova-schema.md
             - href: eap/building-apps/mobile/extensibility-configurations/troubleshooting-errors.md
+        
     #Mobile plug-ins
         - href: eap/integration-with-systems/mobile-plugins/intro.md
         - topics:

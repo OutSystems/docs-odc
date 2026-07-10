@@ -679,7 +679,7 @@ The target location for the resource in the form of a file path
 * Type: `string`
 * Placeholders: `extensibility settings`
 
-### `splashscreens`
+### `splashscreens` {#splash-screen}
 
 <div class="info" markdown="1">
 
