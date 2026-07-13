@@ -12,7 +12,8 @@ platform-version: odc
 audience:
   - Architect
   - Tech lead
-tags: hipaa compliance,healthcare applications,security,patient-centric,lifecycle management
+tags:
+  - Security
 outsystems-tools:
   - odc portal
   - odc studio
@@ -63,4 +64,4 @@ Read more about HIPAA in the [Health Insurance Portability and Accountability Ac
 
 * [ODC audit trail](../monitor-and-troubleshoot/audit-trail/audit-trail.md), a feature that logs developer actions at ODC Portal.
 
-Contact your account manager to purchase Sentry for ODC. To confirm that you're using Sentry for ODC, check your [Subscription console](../manage-platform-app-lifecycle/subscription-console.md). If not, contact your account manager.  
+Contact your account manager to purchase Sentry for ODC. To confirm that you're using Sentry for ODC, check your [Subscription page](../manage-platform-app-lifecycle/subscription-console.md) in ODC Portal. If not, contact your account manager.  

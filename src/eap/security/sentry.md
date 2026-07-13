@@ -12,7 +12,10 @@ audience:
   - Platform administrator
   - Architect
   - Tech lead
-tags: sentry, security, compliance, ip filters, audit trail, hipaa, pci
+tags:
+  - IP Filters
+  - Logging
+  - Security
 outsystems-tools:
   - odc portal
 helpids:
@@ -39,4 +42,4 @@ Sentry for ODC includes the following capabilities:
 
 ## Check your subscription
 
-To confirm that Sentry for ODC is active for your organization, check the [Subscription console](../manage-platform-app-lifecycle/subscription-console.md). If Sentry for ODC isn't listed, contact your OutSystems account manager.
+To confirm that Sentry for ODC is active for your organization, check the [Subscription page](../manage-platform-app-lifecycle/subscription-console.md) in ODC Portal. If Sentry for ODC isn't listed, contact your OutSystems account manager.
