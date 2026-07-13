@@ -108,6 +108,6 @@ To view your region information, in the ODC Portal go to **Management** > **Orga
 
 * **Data platform region**. The geographical region where your ODC operational data is hosted. This includes telemetry, logs, and analytics data. **Data platform region** is usually the same as **Platform region**, but it can differ, because the Data platform runs in a hub region shared by several customer regions. Refer to the [region mapping](platform-architecture/intro.md#data-platform) for your pairing.
 
-* **Platform region**. The region where your ODC Portal and build services are hosted. This is the physical location of your ODC Portal and the infrastructure that supports development, including source code storage and the [services that build your apps](platform-architecture/intro.md#platform).
+* **Platform region**. This is the physical location of the infrastructure that supports development, including source code storage and the [services that build your apps](platform-architecture/intro.md#platform).
 
 ![Organization screen showing the Runtime region, Data platform region, and Platform region fields](images/organization-region-pl.png "Runtime region, Data platform region, and Platform region")
