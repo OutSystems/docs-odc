@@ -13,6 +13,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+isautopublish: true
 ---
 
 # System actions
@@ -28,3 +29,4 @@ Here are the system actions available in ODC:
 * [User system actions](user.md)
 * [Workflows system actions](workflows.md)
 * [GetDefaultDomain server action](get-default-domain.md)
+* [ApplicationInvalidateCache server action](application-invalidate-cache.md)

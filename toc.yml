@@ -943,6 +943,7 @@
         - href: eap/reference/system-actions/user.md
         - href: eap/reference/system-actions/workflows.md
         - href: eap/reference/system-actions/get-default-domain.md
+        - href: eap/reference/system-actions/application-invalidate-cache.md
   # Built-in functions
     - href: eap/reference/built-in-functions/intro.md
     - topics:
