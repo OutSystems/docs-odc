@@ -35,7 +35,7 @@ This page describes the components and patterns available in each phase for Ment
 
 ## Generation capabilities
 
-During generation, Mentor Web converts natural language prompts or requirement documents into functional apps. Mentor Web analyzes input to identify entities, relationships, user roles, and UI requirements. It then applies design patterns and generates screens, data models, and authorization rules automatically.
+During generation, Mentor Web converts natural language prompts or requirement documents into functional apps. Mentor Web analyzes input to identify entities, relationships, user roles, and UI requirements. It then applies design patterns and generates screens, data models, and authorization rules. You review and adjust these in the blueprint before generation.
 
 ![Blueprint showing the generated data model with entities and attributes, screens, roles and permissions, and stateflows.](images/ai-capabilities-elements-pl.png "Generated app elements in the blueprint")
 

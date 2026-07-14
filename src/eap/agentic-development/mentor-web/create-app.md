@@ -38,7 +38,7 @@ Before creating an app, verify the following:
 * Access to an ODC organization with agentic development enabled.
 * If your app references external data, set up Data Fabric connections in ODC before you start. Mentor can reference connected entities during generation but cannot create connections.
 
-Agentic development is an emerging capability with some constraints. Keep these in mind when creating apps:
+Agentic development uses generative AI, so results vary and you refine as you go. Keep these constraints in mind when creating apps:
 
 * Closing or refreshing the browser loses the conversation and blueprint.
 * Conversations support approximately 10 prompts before you need to start a new conversation.

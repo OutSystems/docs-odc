@@ -30,7 +30,7 @@ isautopublish: true
 
 # Agentic development
 
-Building apps often starts with translating requirements into screens, data models, and logic, work that follows predictable patterns. OutSystems Agentic Development accelerates this by letting you describe app requirements in natural language and having ODC generate or modify the app structure for you. Agentic development works through two tools: Mentor Web for creating apps in ODC Portal and Mentor Studio for modifying apps in ODC Studio. You stay in control by reviewing proposed changes and refining them through follow-up prompts before applying anything.
+Building apps often starts with translating requirements into screens, data models, and logic, work that follows predictable patterns. OutSystems Agentic Development accelerates this by letting you describe app requirements in natural language and having ODC generate or modify the app structure for you. Agentic development works through two tools: Mentor Web for creating apps in ODC Portal and Mentor Studio for modifying apps in ODC Studio. You stay in control: you review Mentor's proposals, refine them through follow-up prompts, and review the result of each change.
 
 <div class="info" markdown="1">
 
@@ -100,7 +100,7 @@ Agentic development supports different phases of the software development lifecy
 
 ## When to use each tool
 
-Agentic development provides two tools for different stages of development. **Mentor Web** creates new apps and iterates on them through natural language in ODC Portal, targeting straightforward to moderate projects. **Mentor Studio** modifies apps of any complexity through conversation in the full development environment, including agents in Agent Workbench. Both tools follow OutSystems patterns for security, architecture, and code quality.
+Agentic development provides two tools for different stages of development. **Mentor Web** creates new apps and iterates on them through natural language in ODC Portal, targeting straightforward to moderate projects. **Mentor Studio** modifies apps of any complexity through conversation in the full development environment, including agents in Agent Workbench. Both tools work on the OutSystems Model, so the platform applies the same security, architecture, and code-quality standards to their output as to any OutSystems app.
 
 | Aspect | Mentor Web | Mentor Studio |
 | ------ | ---------- | ------------- |
@@ -116,7 +116,7 @@ For real-time logic suggestions during manual development in ODC Studio, refer t
 
 ## What AI can and cannot do
 
-Agentic development handles common app patterns but has constraints. Understanding these constraints helps you set realistic expectations and plan your development approach.
+Agentic development handles common app patterns, and its reach depends on which tool you use. Understanding this helps you set realistic expectations and plan your development approach.
 
 What AI handles:
 
@@ -126,15 +126,7 @@ What AI handles:
 * Building basic CRUD operations and navigation logic
 * Explaining code and suggesting fixes for errors
 
-What requires manual development:
-
-* Complex business logic and multi-step workflows
-* External system integrations (REST APIs, custom connectors)
-* Custom CSS, JavaScript, or advanced UI customization
-* Mobile apps
-* Performance optimization and advanced queries
-
-For the complete list of constraints, refer to [Known limitations](ai-limitations.md).
+Mentor Web focuses on common app patterns, while Mentor Studio works in the full development environment and handles greater complexity, including advanced logic and integrations. When a task goes beyond what the agents generate, you complete it in ODC Studio. For which tool fits your work, refer to [When to use each tool](#when-to-use-each-tool). For current constraints, refer to [Known limitations](ai-limitations.md).
 
 ## Security and data privacy
 
@@ -142,7 +134,7 @@ Agentic development follows the security and data handling policies that apply a
 
 * **No training on your data.** Prompts and requirement documents are not used to train third-party AI models. Contractual agreements with AI model providers ensure data protection.
 * **Prompt isolation.** User prompts are not injected into generated code. The AI agents interpret intent and produce app model structures, so prompt injection is not a concern.
-* **App security equivalence.** AI-generated apps follow the same security standards as manually built apps. The OutSystems compiler enforces security controls regardless of how the app model was created.
+* **App security equivalence.** The OutSystems compiler enforces the same security controls regardless of how the app model was created. The platform enforces the roles and permissions an app defines, so review the access the agents configure to confirm it matches your intent.
 * **Encryption.** Data is encrypted with tenant-specific keys both in transit and at rest.
 * **Data residency.** Agentic development uses the Data Platform, which may process data outside your ODC organization region. For more information, refer to [Data Platform](../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
 

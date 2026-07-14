@@ -42,13 +42,13 @@ Understanding how these components work together explains why explicit prompts p
 
 Agentic development uses AI agents that combine general-purpose Large Language Models with OutSystems-specific knowledge and instructions. These agents plan and carry out multi-step tasks across different parts of an app. They map natural language to OutSystems development patterns. When you write a prompt or upload a requirement document, the agents identify entities, relationships, roles, and UI patterns. In Mentor Web, this becomes a blueprint. In Mentor Studio, it becomes a set of proposed changes. You review both before changes are applied.
 
-The agents know common app structures: entities and their relationships, user roles and permissions, screen layouts, and business logic patterns. When your input matches these patterns, agentic development generates accurate structures. When input is unclear or uses unfamiliar terms, the agents interpret it as best they can based on context.
+The agents know common app structures: entities and their relationships, user roles and permissions, screen layouts, and business logic patterns. When your input matches these patterns, agentic development generates structures that fit them. When input is unclear or uses unfamiliar terms, the agents interpret it as best they can based on context.
 
-This is why explicit, structured prompts produce better results than vague descriptions. The agents work with pattern recognition, not inference of unstated requirements.
+This is why explicit, structured prompts produce better results than vague descriptions. The agents work primarily from patterns they recognize, so they may not infer requirements you leave unstated.
 
 ## Tenant context
 
-Mentor reads context from your development environment to produce more relevant results. This applies to new apps and to changes in existing apps. The context includes existing entities, public elements from other apps (such as actions and entities), Data Fabric connections, and app metadata. When you reference an element in a prompt, Mentor uses this context to generate code that fits correctly.
+Mentor reads context from your development environment to produce more relevant results. This applies to new apps and to changes in existing apps. The context includes existing entities, public elements from other apps (such as actions and entities), Data Fabric connections, and app metadata. When you reference an element in a prompt, Mentor uses this context to generate elements that build on it.
 
 Tenant context includes the public elements that other apps expose for reuse. Mentor references and reuses these public elements when generating or modifying an app, so you can build on existing assets without recreating them. For background on public elements and producer-consumer dependencies, refer to [Reuse elements across apps](../app-architecture/reuse-elements.md).
 
@@ -99,7 +99,7 @@ The diagram shows the components for app modification. When you enter a prompt i
 * **Context analysis.** Mentor reads the current app model, including entities, screens, actions, and relationships.
 * **Input.** A prompt expressing your intent: changes, explanations, code review, or implementation guidance.
 * **Interpretation.** The AI agents analyze the prompt in the context of the existing app structure.
-* **Proposed changes.** Mentor Studio presents the changes it plans to make for review, and applies them only after you accept.
+* **Proposed changes.** For complex requests, Mentor Studio presents the changes it plans to make and applies them after you accept. It applies simpler changes directly, and you review the result.
 * **App update.** After approval, Mentor applies the changes to the app model.
 * **Compilation.** When published, the compiler translates the updated app model into deployable code.
 

@@ -31,7 +31,7 @@ isautopublish: true
 
 The blueprint is a validation step that makes AI decisions transparent before generation. When you enter a prompt or upload a requirement document, Mentor Web analyzes the input and produces a visual representation of how it interpreted your requirements. The blueprint shows proposed entities, roles, screens, and relationships. You review these decisions, adjust what doesn't match your intent, and only then commit to generation.
 
-This transparency helps you trust the AI-assisted workflow. You see exactly what Mentor plans to build, so you can catch mistakes early. Fixing a blueprint is faster than fixing a generated app.
+The blueprint helps you trust the AI-assisted workflow: you see what Mentor plans to build, so you can catch mistakes early. Fixing a blueprint is faster than fixing a generated app.
 
 ![The blueprint is an intermediary representation between your requirements and app generation.](images/ai-app-gen-intermediary-representation-blueprint-pl.png "Blueprint as intermediary representation")
 

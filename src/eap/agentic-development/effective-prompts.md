@@ -44,7 +44,7 @@ A prompt is a natural language instruction that tells an AI system what to do. U
 
 Prompting shifts the interaction model from "select from options" to "describe what you want." This shift requires a different mindset, explored in [Thinking with AI](thinking-with-ai.md): instead of navigating menus, you communicate goals. The quality of your description directly determines the quality of the output.
 
-Mentor interprets prompts literally and matches them against patterns it recognizes. It doesn't read between the lines or infer unstated requirements. If you omit information, Mentor fills gaps with defaults or makes assumptions. Understanding this behavior helps you write prompts that produce predictable results.
+Mentor interprets prompts literally and matches them against patterns it recognizes, so state your requirements explicitly. If you omit information, Mentor fills gaps with defaults or makes assumptions that may not match your intent. Understanding this behavior helps you write prompts that produce predictable results.
 
 ## Writing clear prompts
 

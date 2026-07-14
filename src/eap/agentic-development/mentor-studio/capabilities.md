@@ -28,7 +28,7 @@ isautopublish: true
 
 # Capabilities and patterns for Mentor Studio
 
-Mentor Studio modifies existing apps through conversation. You describe goals in natural language, and Mentor generates or modifies elements within the open asset. Changes integrate with existing elements and follow OutSystems patterns for security, architecture, and code quality.
+Mentor Studio modifies existing apps through conversation. You describe goals in natural language, and Mentor generates or modifies elements within the open asset. Mentor generates changes that build on existing elements and apply OutSystems patterns. You review the result before continuing.
 
 This page describes what Mentor Studio edits and the types of tasks it supports. For capabilities available when creating new apps, refer to [Capabilities and patterns for Mentor Web](../mentor-web/capabilities.md).
 
@@ -40,7 +40,7 @@ Mentor Studio edits the elements the open asset supports. Each asset type has it
 * [Libraries](../../building-apps/libraries/libraries.md) covers general-purpose and mobile libraries.
 * [Agentic apps in ODC](../../building-apps/build-ai-powered-apps/agentic-apps.md) covers agentic apps. Mentor Studio edits agents in Agent Workbench, the ODC capability for building and managing agents.
 
-Generated code follows OutSystems conventions and integrates with the existing app model. Build mobile apps manually in ODC Studio.
+Mentor generates changes that follow OutSystems conventions and build on the existing app model. Build mobile apps manually in ODC Studio.
 
 ## Code analysis
 

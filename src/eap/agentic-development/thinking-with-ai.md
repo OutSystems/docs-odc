@@ -51,9 +51,9 @@ ODC functions as a partner that interprets and builds, rather than a canvas for 
 
 Agentic development functions as a specialized translator between natural language and the OutSystems app model. When given a prompt or requirement document, the AI identifies patterns, entities, relationships, user roles, UI layouts, and translates them into the OutSystems Model (the app model, not an AI model). Understanding how this translation works enables writing more effective prompts.
 
-The app model is a high-level abstraction representing an app's structure, data, logic, and UI. Agentic development works at this level, not with raw code. After you generate or modify the app model, the OutSystems compiler translates it into actual app code following OutSystems standards for security, performance, and architecture.
+The app model is a high-level abstraction representing an app's structure, data, logic, and UI. Agentic development works at this level rather than with raw code, apart from elements that hold code by nature, such as CSS or JavaScript. After you generate or modify the app model, the OutSystems compiler translates it into actual app code following OutSystems standards for security, performance, and architecture.
 
-The AI agents interpret input by matching it to recognized patterns. Descriptions that specify entities, roles, and relationships map directly to generated structures.
+The AI agents interpret input by matching it to recognized patterns. Descriptions that specify entities, roles, and relationships translate more reliably into generated structures.
 
 Agentic development is an accelerator, not a replacement. It handles repetitive scaffolding (creating entities, setting up screens, establishing basic authorization) so you can focus on unique requirements and complex logic that require human judgment.
 
@@ -61,7 +61,7 @@ Agentic development is an accelerator, not a replacement. It handles repetitive 
 
 Effective collaboration with agentic development requires understanding what each partner contributes. You provide clear specifications and intent. ODC provides pattern application and structure generation. Success depends on effective communication.
 
-**Be explicit.** Clear statements of requirements work best. Specify entities and attributes, define user roles and permissions, and describe UI patterns. The AI cannot infer unstated requirements or fill in missing details like a human colleague.
+**Be explicit.** Clear statements of requirements work best. Specify entities and attributes, define user roles and permissions, and describe UI patterns. The AI builds from what you state, so include the details a human colleague would otherwise infer.
 
 **Provide structure.** When the data model is known, define it up front. Specify entity relationships explicitly, "Customer has many Orders (One-to-Many), Order has many Products (Many-to-Many)." Include static entities for status or category fields. More structure in the prompt enables more accurate generation.
 
@@ -89,7 +89,7 @@ The iteration cycle follows three steps:
 
 Agentic development provides immediate visual feedback with sample data for evaluating each change before moving forward. This rapid iteration enables shaping the app toward requirements without writing code or navigating complex configuration screens.
 
-Agentic development excels at structural changes: entities, data models, roles, standard UI patterns. Custom business logic, complex aggregates, external system integrations, or performance optimization require transitioning to ODC Studio. For a breakdown of when to transition, refer to [When to use each tool](intro.md#when-to-use-each-tool).
+Agentic development excels at structural changes: entities, data models, roles, standard UI patterns. You build advanced logic, complex aggregates, and external integrations in ODC Studio, with Mentor Studio or manual development. For a breakdown of when to transition, refer to [When to use each tool](intro.md#when-to-use-each-tool).
 
 ## Match oversight to impact
 

@@ -28,7 +28,7 @@ isautopublish: true
 
 # Known limitations
 
-Agentic development is an emerging capability. Some limitations reflect the current state of AI code generation technology, which continues to evolve rapidly. Others are specific to how OutSystems has implemented AI assistance in ODC. As the technology matures and OutSystems refines its AI capabilities, OutSystems expects to address many of these limitations.
+Agentic development uses generative AI, so its output is non-deterministic and varies with task complexity. Some limitations come from how generative AI works; others are specific to how OutSystems has implemented AI assistance in ODC. Review results and refine as you go.
 
 This page documents current constraints for both app generation and development in ODC Studio. Review these limitations alongside the capabilities for [Mentor Web](mentor-web/capabilities.md) and [Mentor Studio](mentor-studio/capabilities.md) when planning projects that use agentic development.
 
@@ -79,7 +79,7 @@ Mentor Studio has partial awareness of the ODC Studio state. For what Mentor rea
 
 ### Reliability
 
-Mentor Studio can attempt any modification within a web app, but success varies by task complexity. Focused, atomic tasks, such as adding a single entity or creating a server action, tend to produce more consistent results than complex, multi-step changes. These limitations reflect the current state of AI code generation technology.
+Mentor Studio can attempt any modification within a web app, but success varies by task complexity. Focused, atomic tasks, such as adding a single entity or creating a server action, tend to produce more consistent results than complex, multi-step changes.
 
 * **Success reporting.** Mentor Studio occasionally reports changes as successful even when not applied. Review affected elements in ODC Studio after each request to confirm changes.
 * **Response latency.** Response times vary, even for straightforward tasks. Wait for Mentor Studio to finish before retrying the same request.
@@ -88,7 +88,7 @@ Mentor Studio can attempt any modification within a web app, but success varies 
 
 ## Related resources
 
-These limitations reflect the current state of AI-assisted development and will evolve over time. For a broader view of what agentic development supports today, the following resources describe capabilities and workflows for each tool.
+For a broader view of what agentic development supports, the following resources describe capabilities and workflows for each tool.
 
 * For what Mentor Web generates, including supported UI patterns and dashboard types, refer to [Capabilities and patterns for Mentor Web](mentor-web/capabilities.md).
 * For what Mentor Studio generates and modifies within existing apps, refer to [Capabilities and patterns for Mentor Studio](mentor-studio/capabilities.md).

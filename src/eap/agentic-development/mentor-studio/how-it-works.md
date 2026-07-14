@@ -30,9 +30,9 @@ isautopublish: true
 
 Mentor Studio brings conversational AI into ODC Studio. It works across the assets you build there: web apps, libraries, and agentic apps. You describe requirements in natural language, and Mentor Studio generates or modifies the elements each asset supports. The elements available depend on the asset type. For what Mentor Studio edits in each, refer to [Element coverage](capabilities.md#element-coverage).
 
-Mentor analyzes the app model and generates changes that integrate with the existing elements. Mentor also draws on tenant context, so it references and reuses public elements that other apps expose in your tenant. Mentor creates and modifies elements through conversation. Mentor enforces user permissions and follows OutSystems patterns when generating changes.
+Mentor analyzes the app model and generates changes that integrate with the existing elements. Mentor also draws on tenant context, so it references and reuses public elements that other apps expose in your tenant. Mentor creates and modifies elements through conversation. Mentor works within your user permissions and applies OutSystems patterns when generating changes.
 
-Mentor uses AI agents to process requests. When you describe a goal, Mentor analyzes the current app model, plans the required changes, and generates modifications that integrate with existing elements. This agent-based processing lets Mentor handle multi-step tasks and coordinate changes across different parts of the app. Mentor Studio works on the OutSystems app model rather than raw code, and draws on the Enterprise Context Graph for a high-fidelity view of your apps, data, and dependencies. For this architecture, refer to [Architecture](../architecture.md).
+Mentor uses AI agents to process requests. When you describe a goal, Mentor analyzes the current app model, plans the required changes, and generates modifications that build on existing elements. This agent-based processing lets Mentor handle multi-step tasks and coordinate changes across different parts of the app. Mentor Studio works on the OutSystems app model rather than raw code, apart from elements that hold code by nature such as CSS or JavaScript, and draws on the Enterprise Context Graph for a high-fidelity view of your apps, data, and dependencies. For this architecture, refer to [Architecture](../architecture.md).
 
 <div class="info" markdown="1">
 
@@ -144,7 +144,7 @@ Mentor Studio edits web apps, libraries, and agentic apps. Build mobile apps man
 
 </div>
 
-Apps edited with Mentor Studio are standard OutSystems apps. They follow the same compilation, deployment, security, and governance as apps built manually in ODC Studio.
+Apps edited with Mentor Studio are standard OutSystems apps. They follow the same compilation, deployment, and governance as apps built manually in ODC Studio.
 
 For real-time suggestions while building logic flows manually, [AI logic suggestions](../../building-apps/logic/ai-logic-suggestions.md) complements Mentor Studio by predicting and suggesting next steps as you develop.
 

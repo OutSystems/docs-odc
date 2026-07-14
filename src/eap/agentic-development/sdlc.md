@@ -34,17 +34,17 @@ Agentic development fits into OutSystems Developer Cloud as an accelerated entry
 
 If you already develop in ODC Studio, think of agentic development as an alternative starting point for new apps. Instead of beginning with blank templates and manually configuring screens, entities, and roles, you describe your requirements in natural language. ODC generates the app scaffolding, complete with data models, UI layouts, and security roles, which you then refine through prompts before transitioning to ODC Studio.
 
-This transition happens when your development needs move beyond the supported patterns. When you need custom client or server actions, advanced aggregates with complex filtering, or integrations with external systems through REST, you move to ODC Studio for more control.
+As your development needs grow beyond common patterns, you work in ODC Studio. There, Mentor Studio and manual development handle custom client or server actions, advanced aggregates with complex filtering, and external integrations.
 
 ### For O11 teams
 
-If you develop in OutSystems 11, you'll recognize familiar concepts. ODC still relies on visual development and model-driven architecture, with the OutSystems compiler continuing to ensure that generated code meets established standards. What changes is the interface for initial app creation. Instead of manually clicking through Service Studio to configure entities and screens, you describe your requirements conversationally, and ODC generates the foundation.
+If you develop in OutSystems 11, you'll recognize familiar concepts. ODC still relies on visual development and model-driven architecture, with the OutSystems compiler applying established standards to the generated model as it does to any app. What changes is the interface for initial app creation. Instead of manually clicking through Service Studio to configure entities and screens, you describe your requirements conversationally, and ODC generates the foundation.
 
 One difference to note: ODC uses a cloud-native, stage-based deployment model. Apps deploy through development, QA, and production stages using ODC deployment in Portal, which differs from the LifeTime-based deployment in O11.
 
 ## Generate and transition to ODC Studio
 
-The workflow follows the same generate-review-refine cycle described in [Thinking with AI](thinking-with-ai.md). You provide prompts or requirement documents, review the blueprint, generate the app, and refine through iteration. When your app needs capabilities beyond the supported patterns (custom actions, advanced aggregates, external integrations, or complex business logic), you transition to ODC Studio for the full development environment.
+The workflow follows the same generate-review-refine cycle described in [Thinking with AI](thinking-with-ai.md). You provide prompts or requirement documents, review the blueprint, generate the app, and refine through iteration. When your app needs capabilities beyond common patterns, such as custom actions, advanced aggregates, external integrations, or complex business logic, you build them in ODC Studio with Mentor Studio or manual development.
 
 ## Test, deploy, and maintain
 
