@@ -4,6 +4,7 @@ tags:
   - Capacitor
   - Cordova
   - Forge
+  - Libraries
   - Mobile app
   - Native App
   - Plugins
@@ -83,6 +84,8 @@ When working with the plugins:
 * Include the plugin license in your app to respect the license agreements of that plugin. These license agreements are usually placed in the About page of the app that uses them.
 
 ## Related resources
+
+* [Best practices for native integrations and plugins](../../building-apps/mobile/best-practices/best-practices-native-plugins.md)
 
 * [OutSystems supported mobile plugins](os-supported-plugins.md)
 

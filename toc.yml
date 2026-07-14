@@ -494,7 +494,7 @@
          # Progressive web app
         - href: eap/building-apps/mobile/pwa.md
         - href: eap/building-apps/mobile/privacy-updates-for-apple-app-store-submissions.md
-    
+        - href: eap/building-apps/mobile/best-practices/best-practices-native-plugins.md
     # Emails
     - href: eap/building-apps/sending-emails/intro.md
     - topics:

@@ -76,4 +76,6 @@ To install a supported plugin from Forge:
 
 ## Related resources
 
+* [Best practices for native integrations and plugins](../../building-apps/mobile/best-practices/best-practices-native-plugins.md)
+
 * [Mobile plugins](intro.md)

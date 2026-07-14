@@ -1,5 +1,5 @@
 ---
-summary: Implement a dual‑stack OutSystems plugin that works with Cordova  and Capacitor frameworks.
+summary: Dual-stack plugin for OutSystems Developer Cloud (ODC) lets you support both Cordova and Capacitor by routing calls based on the runtime framework.
 locale: en-us
 guid: 9c8d2f5d-7d8e-4f5f-b4a2-3a4f2a2a6c9d
 app_type: mobile apps
@@ -140,10 +140,12 @@ Some Cordova functionalities, such as plugin hooks and certain features in `plug
 
 ## Related resources
 
-For detailed information about Capacitor plugin structure, refer to [Capacitor plugin architecture](capacitor-plugin-architecture.md).
+Refer to the following resources for more information on native integrations:
 
-Explore these resources to learn more about using plugins in Capacitor apps:
+* [Capacitor plugin architecture](capacitor-plugin-architecture.md).
+
+* [Build a Capacitor plugin from scratch](build-capacitor-plugin.md)
 
 * [Adapt Cordova plugin for compatibility with Capacitor](../migrate-cordova-plugin.md)
   
-* [Build a Capacitor plugin from scratch](build-capacitor-plugin.md)
+* [Best practices for native integrations and plugins](../../../building-apps/mobile/best-practices/best-practices-native-plugins.md)

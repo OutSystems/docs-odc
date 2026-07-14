@@ -85,6 +85,8 @@ Here are the high-level steps involved in building a Capacitor plugin from scrat
 
 ## Related resources
 
+* [Best practices for native integrations and plugins](../../../building-apps/mobile/best-practices/best-practices-native-plugins.md)
+
 Explore these resources as you build your plugin:
 
 * [Set up Capacitor plugin project and implement web layer](setup-and-implementation.md)

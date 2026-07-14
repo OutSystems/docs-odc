@@ -1,7 +1,7 @@
 ---
 guid: 5c42a3de-543f-48f1-970a-be21fab0f28d
 locale: en-us
-summary: This article describes how to migrate a Cordova plugin to a Capacitor plugin
+summary: Cordova plugin migration to Capacitor in OutSystems Developer Cloud (ODC) by updating extensibility configs and build actions in MABS 12.
 figma:
 coverage-type:
   - understand
@@ -12,11 +12,17 @@ app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: plugin migration, cordova, capacitor, mobile development, outsystems plugins
+tags:
+  - Capacitor
+  - Cordova
+  - Libraries
+  - Mobile app
+  - Plugins
 outsystems-tools:
   - odc studio
   - odc portal
 helpids:
+isautopublish: true
 ---
 
 # Adapt Cordova plugin for compatibility with Capacitor
@@ -333,6 +339,8 @@ For some of the checks in the table above, you can use the official [Common Plug
 * `GetOperatingSystem` - Returns `Android`, `iOS`, or `Other`
 
 ## Related resources
+
+* [Best practices for native integrations and plugins](../../building-apps/mobile/best-practices/best-practices-native-plugins.md)
 
 Explore these resources to learn more about plugin integration
 

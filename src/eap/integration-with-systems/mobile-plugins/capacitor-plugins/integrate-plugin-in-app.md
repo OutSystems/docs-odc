@@ -12,6 +12,7 @@ platform-version: odc
 audience:
   - Developer
 tags:
+  - Android
   - Capacitor
   - JavaScript
   - Libraries
@@ -163,12 +164,13 @@ When integrating Capacitor plugins, keep the following security considerations i
 
 ## Related resources
 
-For detailed information about plugin structure, refer to [Capacitor plugin architecture](capacitor-plugin-architecture.md).
+Refer to the following resources for more information on integrating plugins into your mobile apps.
 
-For more information, refer to:
+* [Mobile libraries](../../../building-apps/libraries/libraries.md#mobile-libraries-mobile-libraries)
+For detailed information about plugin structure, refer to [Capacitor plugin architecture](capacitor-plugin-architecture.md).
 
 * [Universal extensibility configuration JSON schema](../../../building-apps/mobile/extensibility-configurations.md)
 
 * [Create mobile app package](../../../building-apps/mobile/creating-mobile-package.md)
 
-* [Mobile libraries](../../../building-apps/libraries/libraries.md#mobile-libraries-mobile-libraries)
+* [Best practices for native integrations and plugins](../../../building-apps/mobile/best-practices/best-practices-native-plugins.md)
