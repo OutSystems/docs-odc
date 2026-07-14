@@ -3,7 +3,6 @@ summary: Learn how to plan, prepare, and set up portfolios in OutSystems Develop
 tags:
   - Architecture
   - CI/CD
-  - Deploy
   - Development lifecycle
   - Libraries
   - REST
@@ -87,7 +86,7 @@ The following checklist includes some of the questions that help you evaluate wh
 | --- | --- | --- |
 | Do the assets share the same security and compliance requirements? | Yes | No |
 | Do you need to isolate end-user authentication (for example, employee-facing apps versus customer-facing apps) or network configuration between assets? | No | Yes |
-|Do the assets share the same release and certification workflow? | Yes | No |
+| Do the assets share the same release and certification workflow? | Yes | No |
 | Are the assets managed by the same ownership group or department? | Usually yes | Usually no |
 | Do the assets have different data isolation requirements? | No | Yes |
 | Do you need to prevent one group's database load from affecting the other? | No | Yes |
@@ -179,6 +178,12 @@ For details, refer to [User management with multiple portfolios](portfolios-user
 ## Portfolio setup
 
 Your existing assets remain in the main portfolio. The following steps prepare each portfolio for use:
+
+<div class="info" markdown="1">
+
+After you add a portfolio to your organization, its stages are provisioned separately. Until stage provisioning completes, stage-scoped features, for example, viewing or editing stage configurations, aren't available.
+
+</div>
 
 1. **Configure each portfolio.** Set up identity providers, custom domains, connections, IP filters, private gateways, and SMTP settings for each portfolio's stages.
 
