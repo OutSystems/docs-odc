@@ -146,6 +146,7 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Portfolio management | View stage | View a given stage. | Organization |
 | Release management | Deploy assets | Users can initiate asset deployments to a specified stage and undeploy from the production stage. | Organization <br/> Asset |
 | Release management | Release | Users can release an asset, assign a version number (1.0.0), and add release notes. | Organization <br/> Asset |
+| Mentor | Use | Users can use Mentor to generate apps in Mentor Web and modify apps in Mentor Studio. | Organization |
 | Monitoring | Access asset logs and traces | Users can view asset logs and traces in a given stage. | Organization <br/> Asset |
 | Monitoring | Access user information | Users can view user information connected to a given log or activity. | Organization <br/> Asset |
 | Analyze | Manage code quality findings | Users can comment and change the status of code quality findings. | Organization <br/> Asset |

@@ -38,7 +38,8 @@ For background on how Mentor Studio works, refer to [AI development in Mentor St
 
 To complete this tutorial, you need:
 
-* ODC Studio installed and connected to an ODC organization.
+* ODC Studio installed and connected to an ODC organization with agentic development enabled.
+* If your organization enforces Mentor access controls, confirm that your role includes the **Mentor** > **Use** permission. For more information, refer to [Roles and permissions for members (IT-users)](../../user-management/roles.md).
 * The [Hello World app](../../getting-started/hello-world.md). If you haven't created it yet, follow that tutorial first.
 
 ## Use prompts to modify your app

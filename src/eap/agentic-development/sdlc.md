@@ -1,6 +1,13 @@
 ---
 summary: Agentic development integrates into the ODC software development lifecycle across generation, testing, deployment, maintenance, and governance.
-tags: sdlc, software lifecycle, testing, deployment, governance, collaboration, maintenance
+tags:
+  - Agentic
+  - AI
+  - Deploy
+  - Development lifecycle
+  - Mentor
+  - Mentor Studio
+  - Testing
 guid: 7c3b8a4f-2d1e-4b9a-9e7f-6a5d3c2b1f0e
 locale: en-us
 app_type: reactive web apps
@@ -14,8 +21,8 @@ outsystems-tools:
 coverage-type:
   - understand
 audience:
-  - Front-end developer
   - Developer
+  - Platform administrator
 topic:
   - creating-apps
 isautopublish: true
@@ -60,9 +67,23 @@ From a governance perspective, apps created through agentic development are indi
 
 This consistency enables collaboration across teams. You can iterate on requirements using agentic development, describing changes conversationally while the AI handles implementation details. When implementation requires deeper technical work, you move to ODC Studio for complex logic. Architects review generated patterns and provide guidance just as they would for any app, ensuring the architecture aligns with organizational standards. Administrators manage deployment, monitoring, and governance through the same tools and processes they use for all ODC apps, maintaining consistency across your app portfolio.
 
+### Control who can use Mentor
+
+Beyond app-level governance, administrators control who can use the Mentor tools. Tenant administrators grant the **Mentor** > **Use** permission through organization roles in the ODC Portal. The built-in **Developer** role includes this permission by default. For custom roles, administrators add the permission explicitly.
+
+<div class="info" markdown="1">
+
+Enabling or disabling this permission has no effect on who can access Mentor Web or Mentor Studio. OutSystems is rolling out Mentor access enforcement in phases, starting with this permission so administrators can configure their custom roles ahead of enforcement.
+
+</div>
+
+Role changes that grant or revoke the **Mentor** > **Use** permission appear in your organization's audit trail alongside other role changes.
+
+For more information about the Mentor permission and how to assign it through roles, refer to [Roles and permissions for members (IT-users)](../user-management/roles.md). For more information about reviewing access changes, refer to [Audit trails](../monitor-and-troubleshoot/audit-trail/audit-trail.md).
+
 ## Related resources
 
-Agentic development integrates into existing processes without requiring changes to governance, testing, or deployment. The following resources cover the tools and concepts that support each phase of the lifecycle.
+Agentic development integrates into your existing testing and deployment processes, and introduces access controls for who can use Mentor. The following resources cover the tools and concepts that support each phase of the lifecycle.
 
 * For the conceptual shift to prompt-based development and iteration strategies, refer to [Thinking with AI](thinking-with-ai.md).
 * For an overview of both Mentor tools and guidance on when to use each, refer to [Introduction to agentic development](intro.md).

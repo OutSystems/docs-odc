@@ -6,8 +6,8 @@ tags:
   - Data Model
   - Mentor
   - Mentor Web
+  - Roles
   - Screens
-  - Web
 guid: b66ada45-7ffd-473e-a085-e706da1fe0d1
 locale: en-us
 app_type: reactive web apps
@@ -36,6 +36,7 @@ For a conceptual overview of phases and checkpoints, refer to [How AI app genera
 Before creating an app, verify the following:
 
 * Access to an ODC organization with agentic development enabled.
+* If your organization enforces Mentor access controls, confirm that your role includes the **Mentor** > **Use** permission. For more information, refer to [Roles and permissions for members (IT-users)](../../user-management/roles.md).
 * If your app references external data, set up Data Fabric connections in ODC before you start. Mentor can reference connected entities during generation but cannot create connections.
 
 Agentic development uses generative AI, so results vary and you refine as you go. Keep these constraints in mind when creating apps:
