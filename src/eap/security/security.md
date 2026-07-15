@@ -185,7 +185,13 @@ The patching process upgrades your apps, and the process can be:
 
 ##### Automatic patching
 
-To reinforce security and ensure that applications are free from vulnerabilities, runtime applications will be patched automatically for known vulnerabilities. You can choose to patch applications manually by performing a 1-click publish, which will automatically deploy the application using the latest patches. You can choose to instead allow the platform to do it automatically, without any downtime or disruption to running applications. Automatic patching will be scheduled based on severity. If an app is not manually patched (by performing a 1-click publish), ODC will ensure that all vulnerabilities are automatically patched. The timeframe varies according to the vulnerability's severity.
+To reinforce security and ensure that applications are free from vulnerabilities, runtime applications will be patched automatically for known vulnerabilities. You can choose to patch applications manually by performing a 1-click publish, which will automatically deploy the application using the latest patches. You can choose to instead allow the platform to do it automatically, without any downtime or disruption to running applications. Automatic patching will be scheduled based on severity. If an app is not manually patched (by performing a 1-click publish), ODC will ensure that all vulnerabilities are automatically patched. The timeframe varies according to the vulnerability's severity. Automatic patches are the equivalent of a publish in the Development stage and a deployment in the Test and Production stages.
+
+<div class="warning" markdown="1">
+
+Active timers with the schedule set to **When published** also run after an automatic patch, because ODC treats the patch as a publish or a deployment. Deactivate a timer before the automatic patch to prevent it from running. To control exactly when the timer runs instead, patch the app manually. For more information about timer schedules, refer to [Create and run Timers](../building-apps/timers/timer-create-run.md#set-the-timer-schedule).
+
+</div>
 
 To assess the severity of vulnerabilities, we use Common Vulnerability Scoring System (CVSS), an open industry standard. You can read more information about CVSS on the [Incident Response and Security Teams website](https://www.first.org/cvss/).
 
@@ -195,7 +201,7 @@ All the users with the Administrator built-in role in your ODC organization rece
 
 1. **Schedule email**: Provides details about the affected stages, the upgrade schedule, and links to more information about each vulnerability.
 1. **48-hour reminder email**: Reminder of the upcoming scheduled upgrade for the first stage to be patched
-1. **Upgrade started email:** Marks the commencement of the automatic upgrade process for the first stage to be patched. During the automatic upgrade process, no downtime for your apps is expected. Apps in your non-development stages are patched without creating new revisions. Apps in your development stages are patched by republishing with the same revision. [Libraries are packaged with apps](../app-architecture/intro.md#libraries) when an app is published, so their resulting code is patched as a part of the app, and no new revisions are created for libraries as a part of automatic patching.
+1. **Upgrade started email:** Marks the commencement of the automatic upgrade process for the first stage to be patched. During the automatic upgrade process, no downtime for your apps is expected. Apps in your non-development stages are patched by redeploying the current running revision, without creating a new one. Apps in your development stages are patched by republishing with the same revision. [Libraries are packaged with apps](../app-architecture/intro.md#libraries) when an app is published, so their resulting code is patched as a part of the app, and no new revisions are created for libraries as a part of automatic patching.
 1. **Upgrade completed email**: Confirms the successful completion of the automatic upgrade process for the last stage to be patched. A report detailing which apps were upgraded for each stage is attached to this email.
 
 ##### Manual patching
