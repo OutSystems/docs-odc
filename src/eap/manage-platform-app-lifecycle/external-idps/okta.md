@@ -51,7 +51,7 @@ ODC admins can configure Okta as an external IdP by going to the ODC Portal and 
 
 To open the **New provider** configuration screen, click the **Add Provider** > **OpenID Connect** button. Now follow these steps:
 
-1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
+1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include symbols or non-alphanumeric characters.
 
 1. Login to the [**Okta Portal**](https://login.okta.com/). In the **Admin Console**, go to the **Applications > Applications** screen and click **Create App Integration** to create a new app.
 
@@ -103,9 +103,9 @@ To add permitted redirects for the Okta provider, follow these steps:
 
 1. Select **General settings** and click **Edit**.
 
-1. From ODC Portal, for the Platform and/or each app stage you applied the Okta provider, copy the **Authentication** URL(s) and paste them as individual URIs in the **Sign-in redirect URIs** section in Okta Portal. You should copy the URL(s) for both the built-in domain and any active [custom domains](../custom-domains.md).
+1. From ODC Portal, for the Platform or each app stage you applied the Okta provider, copy the **Authentication** URL(s) and paste them as individual URIs in the **Sign-in redirect URIs** section in Okta Portal. You should copy the URL(s) for both the built-in domain and any active [custom domains](../domains/custom-domains.md).
 
-1. Now for the Platform and/or each app stage you applied the Okta provider, copy the **Logout** URL(s) and then paste them as individual URIs in the **Sign-out redirect URIs** section in Okta Portal. You should copy the URL(s) for both the built-in domain and any active [custom domains](../custom-domains.md).
+1. Now for the Platform or each app stage you applied the Okta provider, copy the **Logout** URL(s) and then paste them as individual URIs in the **Sign-out redirect URIs** section in Okta Portal. You should copy the URL(s) for both the built-in domain and any active [custom domains](../domains/custom-domains.md).
 
     ![Okta application settings with fields for 'Sign-in redirect URIs' and 'Sign-out redirect URIs'.](images/login-logout-uris-ok.png "Okta Login and Logout URIs")
 

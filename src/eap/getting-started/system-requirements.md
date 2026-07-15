@@ -1,13 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) system requirements for ODC Studio and ODC Portal, including hardware, OS support, browsers, and platform limits.
 tags:
+  - Events
   - External Authentication
   - External Databases
   - IdP
+  - IP Filters
   - Mentor
-  - Mobile app
   - OIDC
-  - Workflows
 locale: en-us
 guid: D940C32D-0409-4D49-B6FE-BB831E5EF12C
 app_type: mobile apps, reactive web apps
@@ -30,7 +30,7 @@ isautopublish: true
 
 This article provides recommendations for compatible tools and software versions that you can use with OutSystems Developer Cloud (ODC) Portal and ODC Studio.
 
-To access ODC Portal and connect to ODC Studio, ensure your local network allows access to `*.outsystems.dev` domains. For end-users to access ODC apps, their network must allow access to the `*.outsystems.app` domain or the [custom domain](../manage-platform-app-lifecycle/custom-domains.md) defined for each stage.
+To access ODC Portal and connect to ODC Studio, ensure your local network allows access to `*.outsystems.dev` domains. For end-users to access ODC apps, their network must allow access to the `*.outsystems.app` domain or the [custom domain](../manage-platform-app-lifecycle/domains/custom-domains.md) defined for each stage.
 
 <div class="info" markdown="1">
 

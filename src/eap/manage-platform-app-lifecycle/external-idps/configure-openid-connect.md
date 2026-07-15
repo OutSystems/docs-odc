@@ -29,9 +29,11 @@ isautopublish: true
 
 This article provides step-by-step instructions for adding an OpenID Connect (OIDC) identity provider in ODC.
 
+If you're adding [Microsoft Entra ID](azure-ad.md) or [Okta](okta.md), you can use the specific guides for detailed provider setup instructions.
+
 <div class="info" markdown="1">
 
-If you're adding [Microsoft Entra ID](azure-ad.md) or [Okta](okta.md), you can use the specific guides for detailed provider setup instructions.
+If you have OIDC providers configured and you plan to change the domain of a stage or your organization, your redirect URIs need updating. Read [Planning domain changes](../domains/domain-planning.md#oidc) for guidance.
 
 </div>
 

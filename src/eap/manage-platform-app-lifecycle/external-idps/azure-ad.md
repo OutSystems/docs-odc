@@ -60,7 +60,7 @@ ODC admins can configure Microsoft Entra ID as an external IdP by going to the O
 
 To launch the **New provider** configuration screen, click the **Add Provider** > **OpenID Connect** button. Now follow these steps:
 
-1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
+1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include symbols or non-alphanumeric characters.
 
 1. Log in to the [**Azure Portal**](https://portal.azure.com/) and create a new app registration in the Microsoft Entra ID screen. For guidance, refer to [Register an application in Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app).
 
@@ -104,7 +104,7 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 1. Go to the **Redirect URLs** tab, and copy the **Login URL** and **Logout URL** for the built-in domain.  
 
-   If you're using a [custom domain](../custom-domains.md), copy the corresponding **Login URL** and **Logout URL** as well.
+   If you're using a [custom domain](../domains/custom-domains.md), copy the corresponding **Login URL** and **Logout URL** as well.
 
     <div class="info" markdown="1">
 

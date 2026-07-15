@@ -8,11 +8,9 @@ locale: en-us
 app_type: mobile apps,reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3539-11
-content-type:
-  - procedure
 coverage-type:
-  - apply
   - understand
+  - apply
 topic:
   - users-in-os
   - user-types
@@ -22,7 +20,6 @@ audience:
   - Platform administrator
 outsystems-tools:
   - odc portal
-  - user management app
 helpids:
 isautopublish: true
 ---
@@ -62,7 +59,3 @@ ODC classifies users without an email address as internal users. You can impleme
     ![ODC Portal displaying the Internal End-User Rules section with domains listed and the Save button.](images/user-count-odc-pl.png "Internal End-User Rules Configuration")
 
 After saving your changes, the system starts the process of calculating the current internal and external end-users, which might take a few minutes. ODC recalculates your number of internal and external users every 24 hours.
-
-## Related resources
-
-* [Add custom domains for your apps](../manage-platform-app-lifecycle/custom-domains.md)

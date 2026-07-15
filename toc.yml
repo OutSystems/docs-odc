@@ -715,8 +715,13 @@
             - href: eap/manage-platform-app-lifecycle/self-hosted/sh-open-configurator.md
     - href: eap/manage-platform-app-lifecycle/configuration-management.md
     - href: eap/manage-platform-app-lifecycle/configure-app-settings.md
-    - href: eap/manage-platform-app-lifecycle/custom-domains.md
-    - href: eap/manage-platform-app-lifecycle/default-app-for-domain.md
+    - href: eap/manage-platform-app-lifecycle/domains/domains.md
+    - topics:
+        - href: eap/manage-platform-app-lifecycle/domains/change-subdomain.md
+        - href: eap/manage-platform-app-lifecycle/domains/domain-planning.md
+        - href: eap/manage-platform-app-lifecycle/domains/custom-domains.md
+        - topics:
+            - href: eap/manage-platform-app-lifecycle/domains/default-app-for-domain.md
     - href: eap/manage-platform-app-lifecycle/private-gateway.md
     - href: eap/manage-platform-app-lifecycle/odc-public-ips.md
     - href: eap/manage-platform-app-lifecycle/configure-emails.md

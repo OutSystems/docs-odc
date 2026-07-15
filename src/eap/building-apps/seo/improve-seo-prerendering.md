@@ -1,6 +1,12 @@
 ---
-summary: Improve SEO with prerendering.
-tags: seo, prerendering, outsystems, spa, core web vitals
+summary: OutSystems Developer Cloud (ODC) prerendering with Nginx and Prerender improves SEO for SPAs by serving fully rendered pages to search engine bots.
+tags:
+  - Domains
+  - Front-End
+  - JavaScript
+  - Optimization
+  - Performance
+  - Web
 guid: 3f649fec-07c4-4a49-843f-a61c22dbf3e5
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -10,9 +16,12 @@ coverage-type:
   - apply
 audience:
   - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - none
+isautopublish: true
 ---
+
 # Improve SEO with prerendering
 
 <div class="warning" markdown="1">
@@ -43,7 +52,7 @@ There are other pre-render solutions on the market. OutSystems recommends [Prere
 
 ### Custom domain
 
-To integrate an external prerender solution, you need a custom domain. For more information, refer to [Configure custom domains for apps](../../manage-platform-app-lifecycle/custom-domains.md).
+To integrate an external prerender solution, you need a custom domain. For more information, refer to [Configure custom domains for apps](../../manage-platform-app-lifecycle/domains/custom-domains.md).
 
 ### Prerender account
 
@@ -51,11 +60,11 @@ To configure your pre-render solution, you need an account with Prerender. Selec
 
 For more information on the criteria to consider when selecting a plan, refer to [Prerender usage and configuration](prerender-usage-config.md).
 
-### Reverse Proxy/CDN
+### Reverse proxy or CDN
 
 Prerender offers several options to integrate with your application. Integrating with ODC can be achieved using a [Reverse Proxy or CDN](https://docs.prerender.io/docs/integrations#main-content).
 
-## Integrating Prerender with Nginx Reverse Proxy
+## Integrating prerender with Nginx reverse proxy
 
 When a search engine or a social media bot requests a page, Prerender provides the response. If the requested page is already cached, a cached version is served. If not, Prerender fetches the page from your OutSystems app, renders its JavaScript, and serves the fully rendered page to the bot.
 
@@ -67,7 +76,7 @@ This process is subject to change. For any updates and additional information, r
 
 ### Domain
 
-The first step is to configure the custom domain. Use [Configure custom domains for apps](../../manage-platform-app-lifecycle/custom-domains.md) as a guide to configure custom domains. To work with a Reverse Proxy or CDN, update the domain DNS records to configure a CNAME or A record that directs to the selected Reverse Proxy or CDN.
+The first step is to configure the custom domain. Use [Configure custom domains for apps](../../manage-platform-app-lifecycle/domains/custom-domains.md) as a guide to configure custom domains. To work with a Reverse Proxy or CDN, update the domain DNS records to configure a CNAME or A record that directs to the selected Reverse Proxy or CDN.
 
 ### Domain and certificate configuration
 
@@ -151,7 +160,7 @@ Adjust the list to keep only the bots you need with a value of 1. For more detai
 
 To effectively use prerender technology, provide crawlers with a complete website structure through a `sitemap.xml` file.
 
-Ensure the file is available at the domain's root level. For instance, if the domain is example.com, the sitemap is example.com/sitemap.xml. To achieve this result, configure a working route using an ODC app and a reverse proxy or CDN.
+Ensure the file is available at the domain's root level (for example, `example.com/sitemap.xml`). To achieve this, configure a working route using an ODC app and a reverse proxy or CDN.
 
 Refer to [Generating sitemap and robots files](generating-sitemap-robot-files.md) on creating a sitemap file within an ODC app.
 
@@ -189,7 +198,7 @@ location = /sitemap.xml {
 
 To effectively use prerender technology, provide crawlers with access to a `robots.txt` file.
 
-Ensure the file is available at the domain's root level. For instance if the domain is example.com, the robots file should be at example.com/robots.txt. To achieve this result, configure a working route using an ODC app and a reverse proxy or CDN.
+Ensure the file is available at the domain's root level (for example, `example.com/robots.txt`). To achieve this, configure a working route using an ODC app and a reverse proxy or CDN.
 
 Refer to [Generating sitemap and robot files](./generating-sitemap-robot-files.md#robotstxt) on creating a robots file within an ODC app.
 
@@ -247,7 +256,7 @@ Logging in to the Prerender dashboard for the first time shows a modal window th
 
 All websites redirected to the prerendered version of your app are visible
 
-### Using Curl command
+### Using curl command
 
 You can mimic a request from a bot by using the curl command and compare it with a user request. Ensure that you target your Reverse Proxy or CDN URL and not the actual site directly.
 

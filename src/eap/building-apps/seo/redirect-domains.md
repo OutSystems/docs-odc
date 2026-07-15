@@ -13,6 +13,7 @@ coverage-type:
   - apply
 audience:
   - Developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal
@@ -22,7 +23,7 @@ isautopublish: true
 
 <div class="info" markdown="1">
 
-To set an app as the entry point for a custom domain root URL without a reverse proxy or CDN, refer to [Default app for a custom domain](../../manage-platform-app-lifecycle/default-app-for-domain.md).
+To set an app as the entry point for a custom domain root URL without a reverse proxy or CDN, refer to [Default app for a custom domain](../../manage-platform-app-lifecycle/domains/default-app-for-domain.md).
 
 </div>
 

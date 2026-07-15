@@ -1,7 +1,8 @@
 ---
-summary: Learn how to designate a default app for a custom domain in ODC so end-users can access your app directly at the root URL.
+summary: ODC default app for a custom domain loads a reactive web app at the root URL. Configure it and manage redirects in ODC Portal.
 tags:
   - Domains
+  - End-users
   - Web
 locale: en-us
 guid: c518c071-ef6a-4c10-b947-2fd93f6dc4d2
@@ -116,5 +117,5 @@ If you delete or undeploy the default app for a domain, ODC displays a warning. 
 For more information about custom domains and SEO configuration, refer to the following articles.
 
 * [Configure custom domains for apps](custom-domains.md)
-* [Generating sitemap and robots files](../building-apps/seo/generating-sitemap-robot-files.md)
-* [Redirect domains](../building-apps/seo/redirect-domains.md)
+* [Generating sitemap and robots files](../../building-apps/seo/generating-sitemap-robot-files.md)
+* [Redirect domains](../../building-apps/seo/redirect-domains.md)

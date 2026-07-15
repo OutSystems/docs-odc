@@ -30,6 +30,12 @@ This procedure applies to OpenID Connect (OIDC) providers, including social prov
 
 Redirect URIs tell the identity provider where to send users after login or logout. You must register these URIs in your IdP so ODC can complete authentication.
 
+<div class="info" markdown="1">
+
+If you plan to change the domain of a stage or your organization, redirect URIs must be updated for all affected OIDC providers. Read [Planning domain changes](../domains/domain-planning.md#oidc) for guidance.
+
+</div>
+
 ## Prerequisites
 
 Before you begin, ensure the following:
@@ -45,7 +51,7 @@ Before you begin, ensure the following:
 
 1. Go to the **Redirect URLs** tab, and copy the **Login URL** and **Logout URL** for the built-in domain.  
 
-   If you're using a [custom domain](../custom-domains.md), copy the corresponding **Login URL** and **Logout URL** as well.
+   If you're using a [custom domain](../domains/custom-domains.md), copy the corresponding **Login URL** and **Logout URL** as well.
 
     <div class="info" markdown="1">
 

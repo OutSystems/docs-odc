@@ -1,20 +1,24 @@
 ---
-summary: Explore the cloud-native network architecture and security features of OutSystems Developer Cloud (ODC) in this detailed overview.
-tags: cloud-native architecture, network security, content delivery network, web application firewall, custom domains
+summary: OutSystems Developer Cloud (ODC) network architecture covering CDN, WAF, load balancers, TLS encryption, and isolation for Platform and Runtime.
+tags:
+  - Architecture
+  - Infrastructure
+  - Microservices
+  - REST
+  - Security
 locale: en-us
 guid: e87fb27d-9186-436d-ac97-a2ea960c119d
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/wMgr3GDiuAdkPics5gzXx9/Cloud-native-architecture-of-OutSystems-Developer-Cloud?type=design&node-id=3001%3A1808&t=wS2nDUn4cr9EORu8-1
 platform-version: odc
 audience:
-  - Developer
-  - Front-end developer
-  - Platform administrator
   - Architect
+  - Platform administrator
 outsystems-tools:
   - none
 coverage-type:
   - understand
+isautopublish: true
 ---
 
 # Network architecture of OutSystems Developer Cloud
@@ -29,15 +33,15 @@ A secure cloud-native network connects the cloud-native architecture. The networ
 
 The following is an overview of the cloud technologies that OutSystems Developer Cloud (ODC) uses for networking and network security.
 
-### Content Delivery Network
+### Content delivery network
 
 The ODC CDN (Content Delivery Network) is a globally distributed set of servers that ensures a low network latency for routing requests. The CDN caches your apps' static files, reducing end-user load times. Files can be static or dynamic. Static files (such as images or JavaScript) don't change often. Dynamic files can change with each user interaction.
 
-The CDN verifies the public key certificate attached to the request: `outsystems.dev` for the Platform and `outsystems.app` or the [custom domain](../custom-domains.md) used for the Runtime.
+The CDN verifies the public key certificate attached to the request: `outsystems.dev` for the Platform and `outsystems.app` or the [custom domain](../domains/custom-domains.md) used for the Runtime.
 
-#### Web Application Firewall
+#### Web application firewall
 
-The Web Application Firewall (WAF) runs on the CDN and protects the Platform and the Runtime against common web exploits and bots.
+The web application firewall (WAF) runs on the CDN and protects the Platform and the Runtime from common web exploits and bots.
 
 For more information see [Security in OutSystems Developer Cloud](../../security/security.md#web-application-firewall).
 
@@ -45,7 +49,7 @@ For more information see [Security in OutSystems Developer Cloud](../../security
 
 The Identity Service verifies that each request comes from an [authenticated and authorized user](identity.md).
 
-### Load Balancer
+### Load balancer
 
 When the Platform Load Balancer receives a request, it routes it to the target endpoint of the target multi-tenant Platform service. The Load Balancer directs the request to a service container replica using the round-robin method.
 

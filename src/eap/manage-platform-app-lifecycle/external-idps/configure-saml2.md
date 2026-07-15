@@ -31,6 +31,12 @@ isautopublish: true
 
 This article provides step-by-step instructions for adding SAML 2.0 identity providers in OutSystems Developer Cloud (ODC).
 
+<div class="info" markdown="1">
+
+If you have SAML providers configured and you plan to change the domain of a stage or your organization, SAML authentication is affected. Read [Planning domain changes](../domains/domain-planning.md#saml) for migration steps.
+
+</div>
+
 ## Prerequisites
 
 Before you begin, make sure you have:
