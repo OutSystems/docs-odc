@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) employs secure-by-design principles, featuring multi-layered security and compliance with industry standards.
+summary: OutSystems Developer Cloud (ODC) security covers encryption, WAF, namespace isolation, vulnerability patching, and secure-by-design principles.
 tags:
   - Authentication
   - IdP
@@ -201,6 +201,32 @@ All the users with the Administrator built-in role in your ODC organization rece
 ##### Manual patching
 
 Republish the app to trigger an upgrade process for an affected app manually. Open the app in ODC Studio and press the 1-Click Publish button. This patches the app in the development stage. Promote the app to all other stages to ensure that the most secure version of the app is running in all stages.
+
+You can also opt to patch an asset directly in any non-development stage using OutSystems public APIs. To do this, follow these steps:
+
+1. [Generate an access token](../reference/apis/public-rest-apis/authentication/get-access-token.md) from an API client with the **Asset management > Open** permission.
+
+1. Call `POST /api/builds/v1/build-operations` to start a new release build for the app. Pass the build type, asset key, and asset revision in the body. Example:
+
+        {
+        "buildType": "Release",
+        "assetKey": "68ef84e5-9265-47b8-8612-b073b70e3e3e",
+        "assetRevision": 58
+        }
+
+    The response contains the build key, used in the next step.
+
+1. Using an API client with the **Release management > Deploy apps** permission, call `POST /api/deployments/v1/deployment-operations` to deploy the build to the target stage. Pass the operation, asset key, revision, the build key from the previous step, and the environment key of the target stage. Example:
+
+        {
+        "operation": "Deploy",
+        "assetKey": "68ef84e5-9265-47b8-8612-b073b70e3e3e",
+        "revision": 58,
+        "buildKey": "19f61bec-c780-4000-88ba-e7cef13b1501",
+        "environmentKey": "19f61bec-c780-4000-8e6c-43611841ec01"
+        }
+
+For more information, refer to [Deploying your asset to the target stage](../reference/apis/public-rest-apis/ci-cd-apis-use-cases/deploy-asset.md).
 
 ##### Malware scanning
 
