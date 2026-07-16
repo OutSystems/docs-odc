@@ -1093,6 +1093,14 @@
         - href: error/aisa/os-aisa-50002.md
         - href: error/aisa/os-aisa-50003.md
         - href: error/aisa/os-aisa-50301.md
+    # Errors Mentor Web
+    - href: error/aica/mentor-web-errors.md
+    - topics:
+        - href: error/aica/os-aica-42901.md
+        - href: error/aica/os-aica-50001.md
+        - href: error/aica/os-aica-50002.md
+        - href: error/aica/os-aica-50301.md
+        - href: error/aica/os-ide-core-50001.md
     # Errors Context Service
     - href: error/ctxs/context-service-errors.md
     - topics:

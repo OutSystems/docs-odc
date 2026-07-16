@@ -27,7 +27,7 @@ isautopublish: true
 
 # AI app generation in Mentor Web
 
-AI app generation in OutSystems follows a structured workflow that balances AI generation with human validation. The process transforms natural language requirements into working apps through iterative cycles of description, review, and refinement.
+AI app generation in OutSystems follows a structured workflow that balances AI generation with human validation. The process turns natural language requirements into working apps through cycles of description, review, and refinement.
 
 Use Mentor Web to turn requirements into a working app. To modify and extend an existing app, refer to [AI development in Mentor Studio](../mentor-studio/how-it-works.md).
 
@@ -53,7 +53,7 @@ The workflow begins with a description of the app to build. AI app generation ac
 
 **Prompts** are natural language descriptions suited for straightforward apps or quick iterations. A prompt such as "Create an order management app with customers, orders, and products" provides enough context to generate a starting point. Prompts work well for quickly exploring ideas or when the app structure is straightforward.
 
-**Requirement documents** are structured files that define data models, relationships, roles, and screen requirements explicitly. Requirement documents are suited for complex apps where precise control over the generated structure is needed. Documents reduce ambiguity by providing detailed specifications that ODC can interpret consistently. Supported formats include `.txt`, `.docx`, `.pdf`, and `.md`.
+**Requirement documents** are structured files that define data models, relationships, roles, and screen requirements. They work well for complex apps where you need precise control over the generated structure. Documents reduce confusion by providing detailed specs that ODC can read consistently. Supported formats include `.txt`, `.docx`, `.pdf`, and `.md`.
 
 For prompt patterns, refer to [Prompts for Mentor Web](prompts.md). For document structure, refer to [Use requirement documents](requirements-doc.md).
 
@@ -65,7 +65,7 @@ Don't include personally identifiable information (PII) in prompts. Use placehol
 
 ## Review the blueprint
 
-Before generation, Mentor Web displays a blueprint of the proposed app structure. The blueprint is a visual representation of how the AI interpreted the requirements, showing entities, roles, screens, and relationships. You verify the interpretation and make corrections before committing to generation.
+Before generation, Mentor Web displays a blueprint of the proposed app structure. The blueprint is a visual representation of how the AI read the requirements, showing entities, roles, screens, and relationships. You verify the reading and make corrections before committing to generation.
 
 The blueprint displays:
 
@@ -74,7 +74,7 @@ The blueprint displays:
 * Proposed screens and layouts
 * Stateflows for entities with lifecycle states
 
-You refine the blueprint through prompts. Mentor Web applies the changes you describe in natural language. Making corrections at this stage requires less effort than modifying a generated app since you adjust the specifications rather than implementation.
+You refine the blueprint through prompts. Mentor Web applies the changes you describe in natural language. Making changes at this stage takes less effort than modifying a generated app since you adjust the plan rather than the code.
 
 For more information, refer to [The blueprint](blueprint.md).
 
@@ -82,7 +82,7 @@ For more information, refer to [The blueprint](blueprint.md).
 
 ## Generate the app
 
-When the blueprint reflects the requirements, generation transforms the approved blueprint into a working ODC app with data model, screens, security roles, and basic logic. Mentor publishes the app to the development stage immediately after generation, so a data preview with sample data is ready the first time you open the app preview. The editor displays the generated screens for review before continuing.
+When the blueprint reflects the requirements, generation turns the approved blueprint into a working ODC app with data model, screens, security roles, and basic logic. Mentor publishes the app to the development stage after the generation, so a data preview with sample data is ready the first time you open the app preview. The editor displays the generated screens for review before continuing.
 
 The generated app includes:
 
@@ -97,7 +97,7 @@ The generated app follows the same ODC patterns and conventions as manually buil
 
 ## Refine with prompts
 
-After generation, the app can be improved through additional prompts in the editor. Each refinement applies changes incrementally to the existing app rather than regenerating from scratch. Each edit requires publishing to update the live app in the development stage. You can also reopen any existing app in Mentor Web later via **Portal** > **Apps** > right-click the app.
+After generation, the app can be improved through additional prompts in the editor. Each refinement applies changes to the existing app rather than regenerating from scratch. Each edit requires publishing to update the live app in the development stage. You can also reopen any existing app in Mentor Web later via **Portal** > **Apps** > right-click the app.
 
 Common refinements include:
 
@@ -109,7 +109,7 @@ Common refinements include:
 
 This iterative approach produces better results than specifying everything in the initial input. Starting with a foundation that captures the core requirements, then refining through focused prompts that address one aspect at a time, improves outcomes. Evaluating results after each change before continuing enables informed decisions.
 
-Refinement in the editor processes requests differently than initial generation. During generation, Mentor Web interprets requirements comprehensively to build the full app structure. During refinement, Mentor Web analyzes the existing app and applies targeted changes. This means some prompts that work well for generation may produce different results during refinement, and vice versa. During refinement, use focused prompts that address one change at a time rather than broad descriptions of the entire app.
+Refinement in the editor processes requests differently than initial generation. During generation, Mentor Web interprets requirements to build the app structure. During refinement, Mentor Web analyzes the existing app and applies targeted changes. This means some prompts that work well for generation may produce different results during refinement, and vice versa. During refinement, use focused prompts that address one change at a time rather than broad descriptions of the entire app.
 
 ![The editor showing generated screens with the Mentor panel open for refinement prompts.](images/ai-gen-app-refine-with-prompts-pl.png "Refine the generated app with prompts")
 
@@ -126,4 +126,5 @@ Each phase of the app generation workflow connects to deeper guidance on prompts
 * For the full list of UI patterns, dashboard types, and elements that Mentor Web generates, refer to [Capabilities and patterns for Mentor Web](capabilities.md).
 * For modifying existing apps in ODC Studio, refer to [AI development in Mentor Studio](../mentor-studio/how-it-works.md).
 * For step-by-step guidance on creating an app, refer to [Create an app with AI in ODC Portal](create-app.md).
+* For Mentor Web error codes and recommended actions, refer to [Mentor Web errors](../../../error/aica/mentor-web-errors.md).
 * [Agentic development](https://www.outsystems.com/tk/redirect?g=eb9a16f2-f6b9-4903-9be8-122a0188f113) online course: a video walkthrough of the Mentor Web workflow.
