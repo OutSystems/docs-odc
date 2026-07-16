@@ -43,7 +43,7 @@ To [implement a CSP](implement-csp.md), you define a policy in HTTP headers, set
 
 ## Understanding CSP in mobile apps
 
-ODC mobile apps are hybrid apps that combine web technologies with native capabilities. Hybrid apps use WebView components that function like embedded web browsers. Hybrid mobile apps are vulnerable to web-based attacks because WebView components can load and execute content similar to regular web browsers. CSP provides an additional security layer by restricting which scripts can run and which external sources can load content, protecting against cross-site scripting (XSS) attacks and unauthorized resource loading.
+ODC mobile apps are hybrid apps that combine web technologies with native capabilities. Hybrid apps use WebView components that function like embedded web browsers. Hybrid mobile apps are vulnerable to web-based attacks because WebView components can load and execute content similar to regular web browsers. CSP provides an additional security layer by restricting which scripts can run and which external sources can load content, protecting against cross-site scripting (XSS) attacks and unauthorized resource loading. For CSP configuration recommendations alongside other mobile app protections, refer to [Best practices for mobile app security](../building-apps/mobile/best-practices/best-practices-security.md#configure-csp).
 
 <div class="info" markdown="1">
 
@@ -134,3 +134,5 @@ Operational and security considerations are crucial when implementing a CSP. A p
 * [Implement content security policy](implement-csp.md)
   
 * [Impacts of removing unsafe directives](impacts-removing-unsafe-directives.md)
+
+* [Best practices for mobile app security](../building-apps/mobile/best-practices/best-practices-security.md)

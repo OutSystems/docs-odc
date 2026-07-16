@@ -1,6 +1,13 @@
 ---
 summary: Learn how to manage end-user roles in OutSystems Developer Cloud (ODC) to control access to app functionalities, screens, and data.
-tags: user role management, access control, security, outsystems developer cloud, user permissions
+tags:
+  - Authorization
+  - Best Practices
+  - End-users
+  - Logic
+  - Roles
+  - Screens
+  - Security
 locale: en-us
 guid: BDA3A144-0EB0-4C04-953F-9DED85A477FE
 app_type: mobile apps, reactive web apps
@@ -20,6 +27,7 @@ topic:
   - app-roles
   - create-app-role
   - assign-roles
+isautopublish: true
 ---
 
 # Secure your app with end-user roles
@@ -129,4 +137,5 @@ For example, add a filter to an aggregate with `CheckManagerRole() = True`. The 
 * [Manage end-user groups](end-users/groups.md)
 * [Create, activate, deactivate, and delete users](create-deactivate-and-delete-users.md)
 * [Best practices for logic](../building-apps/logic/best-practices-logic.md)
+* [Best practices for mobile app security](../building-apps/mobile/best-practices/best-practices-security.md)
 * [Role-based Security](https://learn.outsystems.com/training/journeys/role-based-security-575) online course

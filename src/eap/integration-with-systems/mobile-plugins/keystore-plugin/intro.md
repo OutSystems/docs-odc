@@ -1,6 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) features a Key Store Plugin for secure storage and management of sensitive information in mobile apps.
-tags: mobile development, secure storage, key management, plugin integration, security best practices
+tags:
+  - Android
+  - Authentication
+  - Cordova
+  - iOS
+  - Mobile app
+  - Plugins
+  - Security
 locale: en-us
 guid: 22f4fa5c-b7e7-4fd6-a629-e1e33e738e1a
 app_type: mobile apps, reactive web apps
@@ -16,7 +23,7 @@ coverage-type:
 isautopublish: true
 ---
 
-# Key Store Plugin
+# Key Store plugin
 
 <div class="info" markdown="1">
 
@@ -226,3 +233,7 @@ The table shows the compatibility of the KeyStore Plugin with the Mobile Apps Bu
 ## Known issues
 
 None.
+
+## Related resources
+
+* [Best practices for mobile app security](../../../building-apps/mobile/best-practices/best-practices-security.md)

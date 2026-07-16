@@ -176,6 +176,8 @@ For more details about the impacts of removing `unsafe-eval` and `unsafe-inline`
 
 ## Related resources
 
+* [Best practices for mobile app security](../building-apps/mobile/best-practices/best-practices-security.md)
+
 * [Impacts of removing unsafe directives](impacts-removing-unsafe-directives.md)
 
 * [Login failed when logging into an app using iOS devices](https://success.outsystems.com/support/troubleshooting/incident_models/incident_models_outsystems_developer_cloud/login_failed_when_logging_into_an_app_using_ios_devices/)

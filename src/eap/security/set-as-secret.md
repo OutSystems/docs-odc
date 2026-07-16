@@ -5,7 +5,9 @@ guid: 3a5f56e7-2515-4e97-914e-b8a503f82c7f
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-tags: secret management, security, encryption, application configuration, sensitive data protection
+tags:
+  - Security
+  - Settings
 audience:
   - Developer
   - Front-end developer
@@ -16,6 +18,7 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+isautopublish: true
 ---
 
 # Set as secret
@@ -54,4 +57,5 @@ To change a setting from non-secret to secret, follow the same process you used 
 
 ## Related resources
 
+* [Best practices for mobile app security](../building-apps/mobile/best-practices/best-practices-security.md)
 * [Settings](https://learn.outsystems.com/training/journeys/settings-370) online course

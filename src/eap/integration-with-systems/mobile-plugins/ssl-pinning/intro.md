@@ -8,6 +8,7 @@ platform-version: odc
 tags:
   - Capacitor
   - Cordova
+  - Forge
   - Mobile app
   - Native App
   - Plugins
@@ -218,9 +219,9 @@ The action returns the following two values:
 * Error: Error_structure.
   Message is displayed if there's an error during the request to the server. The values are the "SSLPinning found an issue with the configured certificate for the url!" (when there's a problem with the configured hash value) and "Message: SSLPinning found some problem with the request!" (a generic error that requires troubleshooting).
 
-### Test the SSL Pinning
+### Test the SSL Pinning plugin
 
-To test the mobile app with SSL Pinning, do the following:
+To test the mobile app with SSL Pinning plugin, do the following:
 
 1. Publish and generate the new version of your Mobile app with SSL Pinning.
 
@@ -398,3 +399,7 @@ If you plan to update your certificate, first release a new version of the app. 
 * **For Capacitor apps**: Update your build action JSON file.
 
 Do this before you update the certificate to give users enough time to update the app. This ensures that when you update the certificate, the app continues to work.
+
+## Related resources
+
+* [Best practices for mobile app security](../../../building-apps/mobile/best-practices/best-practices-security.md)

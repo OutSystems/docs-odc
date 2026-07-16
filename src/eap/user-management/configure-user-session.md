@@ -5,10 +5,15 @@ guid: 596ba2aa-7ea4-4498-9f65-242e0b24e047
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=4190-2
 platform-version: odc
-tags: session management, security, authentication, user management, compliance
+tags:
+  - Authentication
+  - End-user Authentication
+  - End-users
+  - Security
+  - Settings
+  - SSO
 audience:
   - Platform administrator
-  - Developer
 outsystems-tools:
   - odc portal
 coverage-type:
@@ -98,3 +103,5 @@ You can have multiple active sessions across different devices. There's no limit
 ## Related resources
 
 For more information about platform limits in ODC, refer to [Platform limits and constraints](../getting-started/system-requirements.md).
+
+* [Best practices for mobile app security](../building-apps/mobile/best-practices/best-practices-security.md)

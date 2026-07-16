@@ -1,7 +1,7 @@
 ---
 guid: db8d4114-cb07-40bd-8f3a-496c48a69b7c
 locale: en-us
-summary: Learn how to secure mobile app data using OutSystems Developer Cloud (ODC) for effective data protection.
+summary: "OutSystems Developer Cloud (ODC) mobile app data security: minimize local storage, use the KeyStore Plugin for secrets, and re-validate server-side."
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=8787-887&t=qtIULdJdAjY3VELJ-1
 coverage-type:
   - understand
@@ -11,10 +11,14 @@ app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: secure mobile data, mobile app security, data protection, app development
+tags:
+  - Best Practices
+  - Mobile app
+  - Security
 outsystems-tools:
   - forge
 helpids:
+isautopublish: true
 ---
 # Secure your mobile app's data
 
@@ -51,3 +55,7 @@ To safely store information in the keystore, you can use the [KeyStore Plugin](h
 Mandatory server-side validation ensures your logic processes trusted data and executes operations as expected.
 
 If a malicious user manipulates a request from your app to the server, they can bypass app-level validations and send incorrect requests. Failing to perform the required server-side validations may lead to data corruption where malicious data replaces real data. It can also result in data leakage by exposing information not intended for a specific user.
+
+## Related resources
+
+* [Best practices for mobile app security](../mobile/best-practices/best-practices-security.md)

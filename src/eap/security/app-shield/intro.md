@@ -1,6 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enhances mobile app security through the licensed AppShield plugin, integrating with MABS for runtime protection.
-tags: mobile app security, licensed plugins, build service integration, runtime protection, security hardening
+tags:
+  - Android
+  - iOS
+  - Lifecycle
+  - Mobile app
+  - Native App
+  - Plugins
+  - Security
 locale: en-us
 guid: 5b3d48c3-ddcb-461c-a05d-414fceeb1eb4
 app_type: mobile apps
@@ -16,6 +23,7 @@ coverage-type:
   - understand
   - apply
   - remember
+isautopublish: true
 ---
 
 # Harden the protection of mobile apps with AppShield
@@ -154,7 +162,7 @@ If your application still specifies the configuration on its extensibility confi
 
 Refer to the Configuration Reference section to know all available options.
 
-### Extensibility Configuration (Old method)
+### Using extensibility configuration
 
 Here is an example of the JSON for **Extensibility Configurations**. You can use different sections for iOS and Android.
 
@@ -261,7 +269,7 @@ One of the security features of **AppShield** is repackaging detection, which pr
 However, there are some situations where a re-signing of the application is desired and/or required (for example, the Google Play App Signing is required when uploading .aab to the Google Play Store).
 For those reasons, **AppShield** allows to whitelist certificates, so that a given signature is considered safe within the repackaging security analysis.
 
-### How to obtain the signing certificate { #obtain-the-signing-certificate }
+### How to obtain the signing certificate {#obtain-the-signing-certificate}
 
 #### For iOS
 
@@ -318,8 +326,12 @@ In the **Android and/or iOS section** of the [Extensibility Configurations JSON]
 
 After these changes steps, generate a new build of your mobile app.
 
-## Limitations { #limitations }
+## Limitations {#limitations}
 
 **AppShield** has the following limitations:
 
 * After MABS creates a build with the **AppShield** plugin active and signs the build, you can't sign that build again manually because the app would recognize that as a sign of tampering.
+
+## Related resources
+
+* [Best practices for mobile app security](../../building-apps/mobile/best-practices/best-practices-security.md)
