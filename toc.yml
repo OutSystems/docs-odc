@@ -80,7 +80,11 @@
                 - href: eap/building-apps/build-ai-powered-apps/agent-2-agent/using-agent-2-agent.md
             - href: eap/building-apps/build-ai-powered-apps/semantic-search/semantic-search-intro.md
             - topics:
-                - href: eap/building-apps/build-ai-powered-apps/semantic-search/using-semantic-search.md                 
+                - href: eap/building-apps/build-ai-powered-apps/semantic-search/using-semantic-search.md
+            - href: eap/building-apps/build-ai-powered-apps/knowledge-base/knowledge-bases-overview.md
+            - topics:
+                - href: eap/building-apps/build-ai-powered-apps/knowledge-base/create-manage-knowledge-base.md
+                - href: eap/building-apps/build-ai-powered-apps/knowledge-base/chunking-strategy-reference.md
             # MCPs and other tools
             - href: eap/building-apps/build-ai-powered-apps/tools/intro.md
             - topics:
