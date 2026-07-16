@@ -2,7 +2,6 @@
 summary: OutSystems Developer Cloud (ODC) features an HTTP library with actions for managing HTTP requests and responses.
 tags:
   - Libraries
-  - REST
   - Web services
 locale: en-us
 guid: 8ab99495-136e-4261-a791-bee1c58d4a79
@@ -80,7 +79,7 @@ RequestFiles
 :   Type: RecordList of [RequestFile](#Structure_RequestFile).  
     Record list of files submitted in the current HTTP request.
 
-### `Request_GetHeaders`
+### `Request_GetHeader`
 
 Returns the value of the specified header in the current HTTP request.
 
@@ -95,6 +94,16 @@ Name
 Value
 :   Type: Text.  
     The value of the specified header. If the header is not present or has no value, returns empty.
+
+### `Request_GetHeaders`
+
+Returns a collection of HTTP headers sent in the request.
+
+#### Outputs
+
+Headers
+:   Type: RequestHeader Record List
+    Record list of HTTP headers sent in the request.
 
 ### `Request_GetMethod`
 
