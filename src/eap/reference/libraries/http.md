@@ -102,8 +102,8 @@ Returns a collection of HTTP headers sent in the request.
 #### Outputs
 
 Headers
-:   Type: RequestHeader Record List
-    Record list of HTTP headers sent in the request.
+:   Type: RequestHeader Record List  
+Record list of HTTP headers sent in the request.
 
 ### `Request_GetMethod`
 
