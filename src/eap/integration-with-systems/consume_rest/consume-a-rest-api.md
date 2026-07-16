@@ -23,7 +23,9 @@ isautopublish: true
 
 # Consume one or more REST API methods
 
-Consuming [REST APIs](../../reference/apis/public-rest-apis/overview.md) in your app lets you integrate external data and functionality into your OutSystems Developer Cloud (ODC) apps. This allows your apps to interact with services provided by third-party platforms, internal microservices, or APIs exposed by other ODC libraries or apps. Before starting the consumption process in ODC Studio, ensure you have the details from the target API's documentation, including its base URL, required authentication methods, and the structure of relevant request and response parameters.
+Consuming [REST APIs](../../reference/apis/public-rest-apis/overview.md) in your app lets you integrate external data and functionality into your OutSystems Developer Cloud (ODC) apps. This allows your apps to interact with services provided by third-party platforms, internal microservices, or APIs exposed by other ODC libraries or apps.
+
+Before starting the consumption process in ODC Studio, ensure you have the API's base URL, required authentication methods, and the structure of its request and response parameters.
 
 <div class="info" markdown="1">
 
@@ -70,6 +72,12 @@ To consume a single REST API method, follow these steps:
 
     ![Headers and authentication tab in REST API consumption dialog in ODC Studio](images/rest-consume-headers-auth-odcs.png "Consume REST API Method - Headers Tab")
 
+    <div class="info" markdown="1">
+
+    Request header values must contain only ASCII characters.
+
+    </div>
+
 1. Enter the request and the response structures of the API. To enter these details, you can test the API and use the test result.
 
     <div class="info" markdown="1">
@@ -102,7 +110,7 @@ To consume a single REST API method, follow these steps:
 
 Once you have successfully added the API method, ODC Studio automatically [creates structures and API method](#what-odc-studio-creates-when-you-consume-a-rest-api) for the API.
 
-You can use the ODC portal to change the base URL at any time using the app configuration.
+You can use the ODC Portal to change the base URL at any time using the app configuration.
 
 ## Add several methods of a REST API {#all-methods}
 
@@ -126,7 +134,7 @@ To add several methods of a REST API, follow these steps:
 
     If you're importing an OpenAPI 3.0 specification file and the specification includes more than one base URL, choose the desired URL and click **Finish**.
 
-    At any point, from the ODC portal, you can change the base URL using the app configuration.
+    At any point, from the ODC Portal, you can change the base URL using the app configuration.
 
     </div>
 

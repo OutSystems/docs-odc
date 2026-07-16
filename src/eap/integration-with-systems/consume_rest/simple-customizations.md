@@ -17,6 +17,7 @@ coverage-type:
 topic:
   - webservice-authentication
   - customize-headers
+isautopublish: true
 ---
 
 # Customize API request and response headers
@@ -52,6 +53,12 @@ To customize the request before it's sent, follow these steps:
 1. Double-click the newly created action to edit it.
 
 1. Add your own logic to customize the request.
+
+    <div class="info" markdown="1">
+
+    Request header values must contain only ASCII characters.
+
+    </div>
 
 ### Example use case: Adding a header for token-based authentication
 
