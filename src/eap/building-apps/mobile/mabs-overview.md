@@ -30,13 +30,13 @@ MABS supports different versions. Each is designed to be compatible with specifi
 
 MABS versions earlier than 12.0 use Apache Cordova as its underlying hybrid framework.
 
-![Diagram showing the evolution of MABS framework support from Cordova-only to dual-stack support with Cordova and Capacitor.](images/mabs-framework-support-diag.png "MABS Framework Support Evolution")
+![Diagram showing MABS framework support across versions](images/mabs-framework-support-diag.png "MABS framework support")
 
-## Dual stack support in MABS 12
+## Dual stack support in MABS 12 and later
 
-MABS 12 supports building both **Cordova apps** and [**Capacitor apps**](https://capacitorjs.com/). From ODC Portal, while building the mobile package, you can [select the mobile framework](creating-mobile-package.md) Cordova or Capacitor. The default framework for MABS 12 is Capacitor.
+MABS 12 and later supports building both **Cordova apps** and [**Capacitor apps**](https://capacitorjs.com/). From ODC Portal, while building the mobile package, you can [select the mobile framework](creating-mobile-package.md) Cordova or Capacitor. The default framework is Capacitor.
 
-Here are some recommendations for building mobile apps using MABS 12:
+Here are some recommendations for building mobile apps using MABS 12 and later:
 
 * **For new apps:** To leverage the modern framework and its capabilities, use the Capacitor stack from the beginning and adapt or create any necessary plugins to work with it. For detailed information about what's changing from Cordova to Capacitor apps, refer to [Changes from Cordova to Capacitor apps](intro.md#changes-from-cordova-to-capacitor-apps-cordova-capacitor-changes).
   
@@ -62,4 +62,8 @@ Here are some related resources regarding extensibility configurations and plugi
 
 * [Building a Capacitor plugin from scratch](../../integration-with-systems/mobile-plugins/capacitor-plugins/build-capacitor-plugin.md)
 
-* [Adapt Cordova plugin for comptability with Capacitor](../../integration-with-systems/mobile-plugins/migrate-cordova-plugin.md)
+* [Adapt Cordova plugin for compatability with Capacitor](../../integration-with-systems/mobile-plugins/migrate-cordova-plugin.md)
+
+### Release notes
+
+To understand the new capabilities introduced in each version of MABS 12, refer to [MABS 12 release notes](https://success.outsystems.com/support/release_notes/mobile_apps_build_service_versions/mabs_12_release_notes/).
