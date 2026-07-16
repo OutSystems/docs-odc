@@ -31,7 +31,6 @@ The table below shows the chunking strategies available in ODC Knowledge Bases, 
 | --- | --- | --- | --- |
 | **Smart** | Uses a mix of recursive chunking with default separators | Mixed or inconsistently structured documents where neither fixed size nor headers alone work well | May cut sentences mid-thought if overlap is too small |
 | **Fixed-size** | Splits at a fixed token or character count, with optional configurable overlap between adjacent chunks | Large, uniform documents (reports, manuals) | May cut sentences mid-thought if overlap is too small |
-| **Sentence-based** | Splits at paragraph boundaries | Documents with clear paragraph structure | Chunk sizes vary widely; very long paragraphs create oversized chunks |
 | **Recursive** | Splits into chunks of a fixed token or character count, with optional overlap | Large, uniform documents (reports, manuals) | May cut sentences mid-thought if overlap is too small |
 | **By Page** | Splits into chunks of a fixed token or character count, with optional overlap | Large, uniform documents (reports, manuals) | May cut sentences mid-thought if overlap is too small |
 | **Recursive** | Splits into chunks of a fixed token or character count, with optional overlap | Large, uniform documents (reports, manuals) | May cut sentences mid-thought if overlap is too small |
