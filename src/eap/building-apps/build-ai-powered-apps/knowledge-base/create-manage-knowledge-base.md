@@ -61,6 +61,7 @@ The knowledge base is created and appears in the list. It's empty until you uplo
 1. In the data source details screen you can see a list of all files that exist on the data source, along with their ingestion status. To add new files, click **Upload files**.
     ![Data source details screen displaying file list with ingestion status and the Upload files button](images/upload-files-pl.png "Data Source Details with Upload")
 1. Select the files you want to upload and click **Upload**.
+
     ![File selection dialog for choosing files to upload to the knowledge base](images/upload-files-detail-pl.png "File Upload Selection Dialog")
 
     A notification appears in the bottom right corner of the portal indicating that the files are being processed.
