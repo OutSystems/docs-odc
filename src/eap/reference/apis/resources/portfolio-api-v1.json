@@ -28,7 +28,7 @@
           "deployed-assets"
         ],
         "summary": "Retrieves a list of deployed assets.",
-        "description": "Retrieves a list of deployed assets containing updated deployment status per environment (stage).\n\nThe result only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission.",
+        "description": "Retrieves a list of deployed assets containing updated deployment status per environment (stage).\nDeprecated since July 8, 2026. Use GET /portfolios/v2/deployed-assets instead.\nThis endpoint will be removed on or after January 8, 2027.\n\nThe result only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission.",
         "operationId": "DeployedAssets_ListAssets",
         "parameters": [
           {
@@ -163,6 +163,7 @@
             }
           }
         },
+        "deprecated": true,
         "x-os-permissions": "The result only shows assets in environments (stages) for which the API Client has **Stage > View stage** permission."
       }
     },
@@ -172,6 +173,7 @@
           "environments"
         ],
         "summary": "Retrieves the list of environments (stages).",
+        "description": "Deprecated since July 8, 2026. Use GET /portfolios/v2/environments instead. Note that V2's\nEnvironmentsController does not use the in-memory response caching this V1 endpoint has.\nThis endpoint will be removed on or after January 8, 2027.\n\nThe result only shows environments (stages) for which the API Client has **Stage > View stage** permission.",
         "operationId": "Environments_ListEnvironments",
         "responses": {
           "401": {
@@ -225,8 +227,8 @@
             }
           }
         },
-        "x-os-permissions": "The result only shows environments (stages) for which the API Client has **Stage > View stage** permission.",
-        "description": "\n\nThe result only shows environments (stages) for which the API Client has **Stage > View stage** permission."
+        "deprecated": true,
+        "x-os-permissions": "The result only shows environments (stages) for which the API Client has **Stage > View stage** permission."
       }
     }
   },
