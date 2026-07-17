@@ -70,7 +70,7 @@ Configuring SSO between your O11 and ODC apps involves the following key steps:
 
 ## Licensing {#licensing}
 
-When user interoperability is enabled between ODC and O11, you can manage your licensed end-user capacity on a shared basis across both platforms. Although each platform counts its end users separately, usage is measured based on the combined utilization across both platforms. For further details on how OutSystems counts end users, refer to [End users](https://www.outsystems.com/tk/redirect?g=907b0fd3-bc46-4391-aae2-673296d795d9).
+When user interoperability is enabled between ODC and O11, the same individual who uses apps on both platforms is tracked as an end user in each and contributes to the reported end-user count in each. Nonetheless, you only exceed your licensed capacity if usage in either individual platform surpasses its own limit - not the combined total across both. For further details on how OutSystems counts end users, refer to [End users](https://www.outsystems.com/tk/redirect?g=907b0fd3-bc46-4391-aae2-673296d795d9).
 
 ## Limitations {#limitations}
 
