@@ -66,7 +66,7 @@ An additional portfolio starts with default configurations. The following list i
 
 * **Custom domains**: Add your organization's domains to the additional portfolio's stages. Each custom domain must be unique to a portfolio and stage.
 
-* **Identity providers**: Assign IdPs to the additional portfolio's stages. By default, the built-in identity provider is assigned to all stages of the new portfolio. For more information, refer to [Identity provider management with multiple portfolios](portfolios-identity-providers.md).
+* **Identity providers**: Assign IdPs to the additional portfolio's stages. Existing IdP assignments from other portfolios don't apply automatically. For more information, refer to [Identity provider management with multiple portfolios](portfolios-identity-providers.md).
 
 * **Connections**: Configure external database connections, SAP connections, and other integrations for each stage in the portfolio.
 
