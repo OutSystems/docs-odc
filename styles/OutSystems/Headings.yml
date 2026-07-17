@@ -250,9 +250,11 @@ exceptions:
   - DOM
   - Excel
   - Okta
+  - Finder
   - Git
   - GitHub
   - Figma
+  - Gradle
   - Jira
   - Confluence
   - Google Play
@@ -312,6 +314,7 @@ exceptions:
   - APIs
   - CDN
   - Claude Code
+  - CLI
   - CI/CD
   - CICD
   - CI

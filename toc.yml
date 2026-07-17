@@ -494,6 +494,7 @@
         - topics:
             - href: eap/building-apps/mobile/mobile-build-types.md
             - href: eap/building-apps/mobile/mabs-overview.md
+            - href: eap/building-apps/mobile/using-capacitor-source-code.md
         - href: eap/building-apps/mobile/migrate-cordova-to-capacitor.md
          # Keeping apps up to date for your users
         - href: eap/building-apps/mobile/apps-up-to-date.md
