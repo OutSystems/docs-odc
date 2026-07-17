@@ -63,7 +63,7 @@ Apps created through agentic development are standard ODC apps and follow the sa
 
 ## Govern and collaborate
 
-From a governance perspective, apps created through agentic development are indistinguishable from apps built manually in ODC Studio. The OutSystems compiler enforces the same security, performance, and architecture standards regardless of how you created the underlying model. This means administrators apply the same quality gates, conduct the same code reviews, and perform the same security reviews. Architecture governance policies that apply to your manually created apps apply equally to AI-generated ones.
+From a governance perspective, apps created through agentic development are indistinguishable from apps built manually in ODC Studio. ODC enforces the same security, performance, and architecture standards regardless of how you created the underlying model. This means administrators apply the same quality gates, conduct the same code reviews, and perform the same security reviews. Architecture governance policies that apply to your manually created apps apply equally to AI-generated ones.
 
 This consistency enables collaboration across teams. You can iterate on requirements using agentic development, describing changes conversationally while the AI handles implementation details. When implementation requires deeper technical work, you move to ODC Studio for complex logic. Architects review generated patterns and provide guidance just as they would for any app, ensuring the architecture aligns with organizational standards. Administrators manage deployment, monitoring, and governance through the same tools and processes they use for all ODC apps, maintaining consistency across your app portfolio.
 

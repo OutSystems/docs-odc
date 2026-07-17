@@ -82,7 +82,7 @@ Assets created or modified through agentic development meet the same standards a
 * **Same platform standards as hand-built assets.** Because the agents work on the OutSystems Model, the platform applies the same security, performance, and architecture standards for every asset. AI-built assets run with the same rules as any other OutSystems asset, including data encryption and input validation. Review the roles and permissions the agents set to confirm they match your intent.
 * **Continuous evaluation.** OutSystems evaluates the coding agents using benchmarks for the quality and accuracy of their output, the reliability of their results, and their efficiency. These benchmarks track improvements across releases.
 
-For how agentic development secures and handles your data, refer to [Security and data privacy](intro.md#security-and-data-privacy).
+For the safeguards that protect agentic development, including data privacy, guardrails, and governance, refer to [Security and safeguards](security-safeguards.md).
 
 ## What the coding agents can and can't do
 

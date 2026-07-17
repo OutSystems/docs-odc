@@ -130,12 +130,10 @@ Mentor Web focuses on common app patterns, while Mentor Studio works in the full
 
 ## Security and data privacy
 
-Agentic development follows the security and data handling policies that apply across ODC:
+Agentic development follows the security and data handling policies that apply across ODC. The following points summarize how your data is handled:
 
-* **No training on your data.** Prompts and requirement documents are not used to train third-party AI models. Contractual agreements with AI model providers ensure data protection.
-* **Prompt isolation.** User prompts are not injected into generated code. The AI agents interpret intent and produce app model structures, so prompt injection is not a concern.
-* **App security equivalence.** The OutSystems compiler enforces the same security controls regardless of how the app model was created. The platform enforces the roles and permissions an app defines, so review the access the agents configure to confirm it matches your intent.
+* **No training on your data.** Prompts and requirement documents aren't used to train third-party AI models.
 * **Encryption.** Data is encrypted with tenant-specific keys both in transit and at rest.
 * **Data residency.** Agentic development uses the Data Platform, which may process data outside your ODC organization region. For more information, refer to [Data Platform](../manage-platform-app-lifecycle/platform-architecture/intro.md#data-platform).
 
-For technical details about how agentic development processes requests, refer to [Architecture](architecture.md). For organization-wide security documentation, compliance certifications, and policies, visit the [OutSystems Trust Center](https://security.outsystems.com/).
+For all safeguards that protect the Mentor coding agents, including data isolation, content filtering, output safety, and governance, refer to [Security and safeguards](security-safeguards.md). For technical details about how agentic development processes requests, refer to [Architecture](architecture.md). For organization-wide security documentation, compliance certifications, and policies, visit the [OutSystems Trust Center](https://security.outsystems.com/).
