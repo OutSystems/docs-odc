@@ -63,8 +63,7 @@ exceptions:
   - Workflows Editor
   - Workflows
   - PWA
-  - SPM
-  
+
 # Concepts
   - Action
   - Activity
@@ -162,7 +161,7 @@ exceptions:
   - RequestPart
   - Form URL
   - Create/Upgrade
-  
+
 # Events
   - On Click
   - On Initialize
@@ -226,6 +225,7 @@ exceptions:
   - Google Kubernetes Engine
   - GKE
   - Apple Developer
+  - APNs
   - AWS
   - AWS ECR
   - AWS Firehose
