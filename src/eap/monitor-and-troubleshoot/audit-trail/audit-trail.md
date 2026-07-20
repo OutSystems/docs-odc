@@ -4,6 +4,7 @@ summary: OutSystems Developer Cloud (ODC)'s audit trail ensures compliance, aids
 tags:
   - Events
   - Logging
+  - Mobile app
   - Monitoring
   - Roles
   - Security
@@ -244,6 +245,42 @@ ODC tracks the following native mobile build and configuration actions:
 Track changes to your configurations for [O11 and ODC platform interoperability](https://www.outsystems.com/tk/redirect?g=6d794961-6191-4e75-a22d-45b8f8b411e3).
 
 * Configure connection to O11 LifeTime environment
+
+### O11 infrastructure management
+
+Track changes to your OutSystems 11 infrastructure configurations.
+
+* CreateInfrastructure
+
+* UpdateInfrastructure
+
+* DeleteInfrastructure
+
+* UpdateEndUserMigrationSettings
+
+### O11 to ODC conversion
+
+Track actions performed during the conversion of OutSystems 11 assets to ODC.
+
+* ConvertCode
+
+* ExportSourceFiles
+
+* DownloadConvertedCode
+
+* MigrateData
+
+* CancelDataMigration
+
+### Secure connectivity management
+
+Track actions related to secure gateway connections between ODC stages and OutSystems 11 environments.
+
+* CreateSecureGateway
+
+* DeleteSecureGateway
+
+* RetrySecureGateway
 
 ## Understanding log attributes
 
