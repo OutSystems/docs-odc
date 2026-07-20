@@ -18,6 +18,7 @@ exceptions:
   - Case Management framework
   - CMf
   - Center
+  - Common plugin
   - Conversion Assessment Tool
   - DbCleaner
   - Integration Builder
@@ -63,7 +64,8 @@ exceptions:
   - Workflows Editor
   - Workflows
   - PWA
-
+  - SPM
+  
 # Concepts
   - Action
   - Activity
@@ -161,7 +163,7 @@ exceptions:
   - RequestPart
   - Form URL
   - Create/Upgrade
-
+  
 # Events
   - On Click
   - On Initialize
@@ -225,7 +227,6 @@ exceptions:
   - Google Kubernetes Engine
   - GKE
   - Apple Developer
-  - APNs
   - AWS
   - AWS ECR
   - AWS Firehose
@@ -250,11 +251,9 @@ exceptions:
   - DOM
   - Excel
   - Okta
-  - Finder
   - Git
   - GitHub
   - Figma
-  - Gradle
   - Jira
   - Confluence
   - Google Play
@@ -314,7 +313,6 @@ exceptions:
   - APIs
   - CDN
   - Claude Code
-  - CLI
   - CI/CD
   - CICD
   - CI
