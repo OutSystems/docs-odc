@@ -13,9 +13,7 @@ audience:
   - Platform administrator
   - Tech lead
 tags:
-  - Authentication
   - Data
-  - External Authentication
   - Infrastructure
   - Logic
   - Platform Server
@@ -32,6 +30,24 @@ isautopublish: true
 
 Before you set up O11 and ODC interoperability, make sure your O11 infrastructure and development tools meet the minimum version requirements for the capabilities you want to use.
 
+## O11-ODC connectivity {#connectivity}
+
+The following table lists the minimum **LifeTime** version required to connect your ODC organization to an O11 infrastructure:
+
+| Capability | Minimum LifeTime |
+| --- | --- |
+| Connect ODC organization to O11 infrastructure | 11.29.0 **\*** |
+
+<div class="info" markdown="1">
+
+**\*** **LifeTime 11.29.0** ensures connectivity through a LifeTime service account bound to your ODC organization. If you have a previous version of LifeTime, existing LifeTime service account access tokens continue to work until they expire. After that, you need to create a new service account access token for O11-ODC interoperability that is bound to your ODC organization.
+
+Creating or generating a new LifeTime service account access token for O11-ODC interoperability requires LifeTime 11.29.0 or later.
+
+After upgrading LifeTime to 11.29.0 or later, update your integration to use service accounts created with the new version. For the updated steps, refer to [Connect ODC to your O11 infrastructure](connect-o11-infrastructure.md).
+
+</div>
+
 ## Data interoperability {#data-interop}
 
 The following table lists the minimum **Platform Server** and **LifeTime** versions required for each data interoperability capability:
@@ -43,11 +59,7 @@ The following table lists the minimum **Platform Server** and **LifeTime** versi
 
 <div class="info" markdown="1">
 
-**\*** **LifeTime 11.29.0** ensures connectivity through a LifeTime service account bound to your ODC organization. If you have a previous version of LifeTime, existing LifeTime service account access tokens continue to work until they expire.
-
-Creating or generating a new LifeTime service account access token for data interoperability requires LifeTime 11.29.0 or later.
-
-After upgrading LifeTime to 11.29.0 or later, update your integration to use service accounts created with the new version. For the updated steps, see [Configure LifeTime access for ODC interoperability](data-interoperability/configure-connection.md#connect-o11-infrastructure).
+**\*** See the requirements for [O11-ODC connectivity](#connectivity).
 
 </div>
 
@@ -67,11 +79,12 @@ You can update the **Platform Server** version of your O11 environments incremen
 
 ## Logic interoperability {#logic-interop}
 
-The following table lists the minimum **Platform Server** version required for logic interoperability:
+The following table lists the minimum **Platform Server** and **LifeTime** versions required for logic interoperability:
 
-| Capability | Minimum Platform Server |
-| --- | --- |
-| Logic interoperability | 11.41.0 |
+| Capability | Minimum Platform Server | Minimum LifeTime |
+| --- | --- | --- |
+| Logic interoperability | 11.41.0 | - |
+| Consume O11 logic in ODC apps through secure private connection | 11.41.0 | 11.29.0 |
 
 Your development teams also need the following tool versions:
 

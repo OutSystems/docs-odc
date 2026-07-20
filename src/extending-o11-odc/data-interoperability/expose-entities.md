@@ -1,7 +1,7 @@
 ---
 guid: b85737dd-0e04-4f79-9912-766b85887843
 locale: en-us
-summary: Learn how to expose O11 entities to use in your ODC apps
+summary: "OutSystems 11 (O11) entity exposure to ODC via LifeTime: set up a baseline environment, select entities, and promote them across your pipeline."
 figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?node-id=1-89
 coverage-type:
   - apply
@@ -12,7 +12,11 @@ platform-version: odc
 audience:
   - Platform administrator
   - Tech lead
-tags: entities, data interoperability
+tags:
+  - Data
+  - Data Model
+  - Entities
+  - Infrastructure
 outsystems-tools:
   - lifetime
 helpids:
@@ -45,7 +49,7 @@ To reduce clutter and follow the least privilege principle, expose only the O11 
 
 </div>
 
-After exposing your O11 entities, you can then [configure the connection](configure-connection.md) from your ODC tenant to the O11 infrastructure so developers can reuse the exposed O11 entities in their ODC apps using ODC Studio.
+After exposing your O11 entities, you can then [configure the O11 connection](configure-connection.md) so developers can reuse the exposed O11 entities in their ODC apps using ODC Studio.
 
 While evolving and maintaining your applications, you can [update the definition of the exposed entities](#update-exposed) in the baseline environment and promote it again to the other environments in the pipeline.
 
@@ -190,7 +194,7 @@ After exposing in the baseline environment, you can now [promote your exposed O1
 
 ### User and Tenant entities exposed by default {#user-tenant}
 
-The O11 system entities **User** and **Tenant** are exposed to ODC by default as **read-only**. If you want use these entities in your ODC apps, you just need to [import them from your ODC connection](configure-connection.md#import-exposed).
+The O11 system entities **User** and **Tenant** are exposed to ODC by default, you don't need to expose them. To use them in your ODC apps, [import them from your O11 connection](configure-connection.md#import-exposed). These entities are exposed as **read-only**, and you can't change their access to allow writing.
 
 For security reasons, the following attributes are **not exposed to ODC**:
 
@@ -199,7 +203,7 @@ For security reasons, the following attributes are **not exposed to ODC**:
 
 <div class="info" markdown="1">
 
-If you have an O11 self-managed infrastructure, make sure the [required database operations](data-interop-self-managed.md#sys-entities) are performed by a database administrator before [importing these O11 system entities](configure-connection.md#import-exposed) from your ODC connection.
+If you have an O11 self-managed infrastructure, make sure the [required database operations](data-interop-self-managed.md#sys-entities) are performed by a database administrator before [importing these O11 system entities](configure-connection.md#import-exposed) from your O11 connection.
 
 </div>
 
@@ -283,6 +287,6 @@ To update the definition of the current exposed entities in the baseline environ
 
 The changes are immediately reflected in the database views of the baseline environment, and you can then [promote them to other environments](#promote).
 
-To reflect the changes in the ODC connection, [refresh the exposed entities](configure-connection.md#refresh-exposed) in the ODC Portal.
+To reflect the changes in the O11 data connection, [refresh the exposed entities](configure-connection.md#refresh-exposed) in the ODC Portal.
 
 For further details, see how to [handle O11 data model changes in ODC apps](handle-o11-data-model-changes.md).

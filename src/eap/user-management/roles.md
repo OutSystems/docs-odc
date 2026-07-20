@@ -178,7 +178,7 @@ Some permissions are automatically inherited by others to ensure consistent beha
 | Organization management | Manage organization | Users can edit the organization domain as well as the organization display name. | Organization |
 | Organization management | View audit trail | This permission enables users to view the audit logs. | Organization |
 | Organization management | Manage audit trail stream | Users can view, create, edit, and delete audit trail streams. | Organization |
-| Organization management | Manage O11 configurations | Provides users access to OutSystems 11 configurations, allowing connectivity to the Conversion Assessment Tool on the O11 infrastructure and enabling Code Conversion and Data Migration. | Organization |
+| Organization management | Manage O11 infrastructures | Provides users access to the OutSystems 11 infrastructures, to enable data and logic interoperability, and app conversions. | Organization |
 | Forge | Install/Update assets | Users can install or update assets from Forge. | Organization |
 | Forge | Submit/Edit assets | Users can submit assets to Forge and edit them. | Organization |
 | Support | Open support cases | Users can open and view their support cases. | Organization |

@@ -641,6 +641,9 @@
 - href: extending-o11-odc/extend-o11-odc.md
 - topics:
     - href: extending-o11-odc/version-requirements.md
+    - href: extending-o11-odc/connect-o11-infrastructure.md
+    - href: extending-o11-odc/troubleshooting.md
+
     # Data interoperability
     - href: extending-o11-odc/data-interoperability/data-interop.md
     - topics:
@@ -653,7 +656,9 @@
         - href: extending-o11-odc/data-interoperability/troubleshooting.md
     # Logic interoperability
     - href: extending-o11-odc/logic-interoperability/logic-interop.md
-    - topics: 
+    - topics:
+        - href: extending-o11-odc/logic-interoperability/logic-interop-secure-connection.md
+        - href: extending-o11-odc/logic-interoperability/logic-interop-reuse-o11-odc.md
         - href: extending-o11-odc/logic-interoperability/logic-interop-best-practices.md
     # User interoperability
     - href: extending-o11-odc/user-interoperability/intro.md
@@ -663,7 +668,6 @@
         - href: extending-o11-odc/user-interoperability/modify-odc-app.md
         - href: extending-o11-odc/user-interoperability/map-end-user-groups.md
         - href: extending-o11-odc/user-interoperability/troubleshooting.md
-
 
 # Security
 - href: eap/security/security.md

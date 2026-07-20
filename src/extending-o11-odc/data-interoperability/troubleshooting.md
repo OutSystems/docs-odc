@@ -29,15 +29,11 @@ isautopublish: true
 
 This page describes some common issues you may encounter when using data interoperability between ODC and O11, and how to solve them.
 
-## Failure in validation of organization ID
-
-When creating a new connection between your ODC and O11 infrastructure, if validation fails, the page displays an error message. Review the service account configuration in LifeTime to ensure that **Service account consumer** is set to **ODC** and that **ODC organization ID** matches the value in the ODC Portal. Refer to [Connect ODC to your O11 infrastructure](configure-connection.md#connect-o11-infrastructure) for more.
-
 ## Missing prerequisites in OutSystems 11 database connection {#missing-prerequisites}
 
 You get the error **Missing prerequisites** when opening the details of an OutSystems 11 connection in **ODC Portal > INTEGRATE > Connections**.
 
-![Missing prerequisites error in OutSystems 11 connection](images/troubleshooting-missing-prerequisites-pl.png "Missing prerequisites error in OutSystems 11 connection")
+![Missing prerequisites error in OutSystems 11 connection](images/troubleshooting-missing-prerequisites-pl.png "O11 Missing Prerequisites Error")
 
 This can happen in the following situations:
 
@@ -53,13 +49,13 @@ Make sure:
 
 * Your O11 infrastructure follow the [prerequisites for data interoperability](data-interop.md#prerequisites).
 
-* The connection from your ODC tenant to the O11 infrastructure is correctly configured. See [Connect ODC to your O11 infrastructure](configure-connection.md#connect-o11-infrastructure) for further details.
+* The connection from your ODC organization to the O11 infrastructure is correctly configured. Refer to [Connect ODC to your O11 infrastructure](../connect-o11-infrastructure.md) for further details.
 
 ## Connection in Failed state after token rotation
 
 In **ODC Portal > INTEGRATE > Connections**, an O11 connection shows the **Error connecting** status after the connection token has been rotated in O11 LifeTime.
 
-![Error in O11 connection in ODC Portal](images/troubleshooting-connection-error-retry-pl.png "Error in O11 connection in ODC Portal")
+![Error in O11 connection in ODC Portal](images/troubleshooting-connection-error-retry-pl.png "O11 Connection Error")
 
 This happens when ODC does not automatically detect the rotated token.
 
@@ -74,7 +70,7 @@ If the connection remains in the **Failed** state, ask the O11 LifeTime administ
 
 You get the error **Platform server version requirement** when accessing **Applications > Expose Entities** in the O11 LifeTime console.
 
-![Platform server version requirement error in LifeTime Expose Entities](images/troubleshooting-baseline-version-lt.png "Platform server version requirement error in LifeTime Expose Entities")
+![Platform server version requirement error in LifeTime Expose Entities](images/troubleshooting-baseline-version-lt.png "LifeTime Platform Server Version Error")
 
 This happens because the Platform Server version of your O11 environments is not supported for data interoperability.
 
@@ -86,7 +82,7 @@ To start [exposing your O11 entities to ODC](expose-entities.md), make sure the 
 
 When accessing **Applications > Expose Entities** in the O11 LifeTime console, you see the [baseline environment](expose-entities.md#configure-baseline) but the remaining environments of the pipeline are missing.
 
-![Missing environments in LifeTime Expose Entities](images/troubleshooting-missing-environments-lt.png "Missing environments in LifeTime Expose Entities")
+![Missing environments in LifeTime Expose Entities](images/troubleshooting-missing-environments-lt.png "Missing Environments in LifeTime")
 
 This happens because the Platform Server version of the remaining O11 environments in your pipeline is not supported for data interoperability.
 

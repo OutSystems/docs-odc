@@ -11,6 +11,7 @@ platform-version: odc
 audience:
   - Architect
   - Developer
+  - Platform administrator
   - Tech lead
 tags:
   - Architecture
@@ -39,13 +40,13 @@ This page provides a conceptual overview of data interoperability between ODC an
 
 Reusing your O11 data in ODC apps involves three key steps:
 
-1. [Expose entities in O11](expose-entities.md)
+1. [Expose O11 entities](expose-entities.md)
 
     In the LifeTime console, you select which app entities to expose. For each entity you expose, OutSystems creates a corresponding database view in your O11 database.
 
 1. [Configure O11 connection](configure-connection.md)
 
-    In the ODC Portal, you connect to your O11 environments and import the exposed O11 entities as external entities.
+    In the ODC Portal, you create an O11 data connection and import the exposed O11 entities as external entities.
 
 1. [Consume O11 data in ODC apps](consume-entities.md)
 
@@ -55,7 +56,7 @@ Reusing your O11 data in ODC apps involves three key steps:
 
 As part of the data interoperability setup, you map each ODC stage (Development, Test, and Production) to its corresponding O11 environment.
 
-If your O11 infrastructure pipeline has more environments than the number of stages in your ODC tenant, choose the O11 environments that best match the ODC stages in your development lifecycle.
+If your O11 infrastructure pipeline has more environments than the number of stages in your ODC organization, choose the O11 environments that best match the ODC stages in your development lifecycle.
 
 ![Diagram of data interoperability architecture](images/data-interoperability-architecture-diag.png "Data interoperability architecture")
 
@@ -107,7 +108,7 @@ Additionally, only IT users with the [required permissions](expose-entities.md#p
 
 ODC directly accesses the O11 database through automatically generated database views, ensuring high-performance access without intermediate service layers.
 
-However, to ensure your O11 applications continue to run smoothly alongside ODC apps and AI Agents, follow the standard high-load application best practices - writing efficient queries in ODC, monitoring your apps, or conducting performance tests.
+However, to ensure your O11 applications continue to run smoothly alongside ODC apps and AI Agents, follow the standard high-load application best practices - writing efficient queries in ODC, monitoring your apps, and conducting performance tests.
 
 ### Licensing {#licensing}
 
@@ -117,9 +118,9 @@ Consuming O11 entities in ODC apps or agents through the ODC Data Fabric connect
 
 The integration uses a specific lifecycle model to ensure consistency and safety from development through to production:
 
-* **Expose O11 entities a the baseline environment**
+* **Expose O11 entities in a baseline environment**
 
-    You manage the definition of all exposed entities in a O11 [**baseline environment**](expose-entities.md#configure-baseline) that is the single source where you define the set of entities that you want to expose. This is typically your O11 Development environment.
+    You manage the definition of all exposed entities in an O11 [**baseline environment**](expose-entities.md#configure-baseline) that is the single source where you define the set of entities that you want to expose. This is typically your O11 Development environment.
 
 * **Promote exposed entities to other environments**
 
@@ -139,11 +140,10 @@ Data interoperability **isn't supported** for the following infrastructure setup
 
 * O11 Personal environments
 * Partner's Cloud demo environments
-* O11 self-managed infrastructures using [multiple database catalogs and schemas](https://www.outsystems.com/tk/redirect?g=1c742c8a-449c-4828-865b-7295d2f90527)
 
 The following O11 entities **can't be exposed** to ODC:
 
-* System entities, except **User** and **Tenant**, which are [exposed by default as read-only](expose-entities.md#user-tenant) - you can only expose application entities
+* System entities, except **User** and **Tenant**, which are [exposed by default](expose-entities.md#user-tenant) - you can only expose application entities
 * Static entities defined in libraries
 * Local storage entities of mobile apps
 
@@ -153,11 +153,11 @@ OutSystems is working to improve the data interoperability capability. Meanwhile
 
 * O11 static entities are available in ODC as regular read-only entities (doesn't apply to static entities defined in libraries, which can't be exposed). See [how to work with O11 static entities](consume-entities-best-practices.md#o11-static-entities).
 
-* An ODC tenant can only connect to one O11 infrastructure.
+* Data interoperability isn't yet supported for the following infrastructure setup:
 
-* Data interoperability isn't yet supported for [ODC self-hosted](../../eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md).
-
-* Data interoperability isn't yet supported for hybrid O11 infrastructures.
+    * [ODC self-hosted](../../eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md)
+    * Hybrid O11 infrastructures
+    * O11 self-managed infrastructures using [multiple database catalogs and schemas](https://www.outsystems.com/tk/redirect?g=1c742c8a-449c-4828-865b-7295d2f90527)
 
 ## Prerequisites {#prerequisites}
 
@@ -168,13 +168,19 @@ Before you start, make sure the following requirements are met:
 * Your O11 infrastructure and environments meet the required **LifeTime** and **Platform Server** versions.
   Refer to [interoperability version requirements](../version-requirements.md#data-interop) for the full list.
 
-* The **O11 LifeTime environment** is accessible over HTTPS (TCP on port 443) from your ODC tenant.
+* The **O11 LifeTime environment** is accessible over HTTPS (TCP on port 443) from your ODC organization.
 
     * If you have an [internal network](https://www.outsystems.com/tk/redirect?g=2326f357-2f2a-4a5c-a05d-fb20edd7be5f) configured or other IP restrictions, make sure the O11 LifeTime environment allow inbound connections from the [ODC IP addresses](../../eap/manage-platform-app-lifecycle/odc-public-ips.md#platform-unification). For O11 cloud infrastructures, contact [OutSystems Support](https://www.outsystems.com/SupportPortal/CaseOpen/) to configure the required network connectivity.
 
 * If you have an **O11 self-managed infrastructure**, ensure the following:
 
-    * The databases of the [mapped O11 environments](#mapping) are accessible from your ODC tenant. The recommended approach is to [configure an ODC private gateway](../../eap/manage-platform-app-lifecycle/private-gateway.md). In alternative, you can allowlist the [ODC public IP addresses](../../eap/manage-platform-app-lifecycle/odc-public-ips.md#platform-unification) in your firewalls or access policies.
+    * The databases of the [mapped O11 environments](#mapping) are accessible from your ODC organization. The recommended approach is to [configure an ODC private gateway](../../eap/manage-platform-app-lifecycle/private-gateway.md). In alternative, you can allowlist the [ODC public IP addresses](../../eap/manage-platform-app-lifecycle/odc-public-ips.md#platform-unification) in your firewalls or access policies.
+
+        <div class="info" markdown="1">
+
+        If you already configured a private gateway for [logic interoperability](../logic-interoperability/logic-interop-secure-connection.md), configure a distinct reserved port for the data interoperability tunnel with your [Cloud Connector](https://github.com/OutSystems/cloud-connector#usage). Each tunnel requires its own reserved port.
+
+        </div>
 
     * Database administrator access to the databases of the mapped O11 environments to perform [the required database operations](data-interop-self-managed.md) at specific moments.
 

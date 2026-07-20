@@ -1,7 +1,7 @@
 ---
 guid: 500ca4f7-24b5-4b70-9534-8f2873b745dd
 locale: en-us
-summary: OutSystems Developer Cloud (ODC) O11 connection configuration in ODC Portal, covering infrastructure linking, connection creation, and entity import.
+summary: Learn how to configure O11 data connections in the ODC Portal.
 figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?node-id=2618-222
 coverage-type:
   - apply
@@ -26,19 +26,19 @@ isautopublish: true
 
 After [exposing your O11 entities](expose-entities.md), you need to configure the O11 connection to make those entities available in ODC.
 
-![Diagram of data interoperability process](images/data-interoperability-process-2-diag.png "Data interoperability process")
+![Diagram of data interoperability process](images/data-interoperability-process-2-diag.png "Data Interoperability Process")
 
-Start by [connecting ODC to your O11 infrastructure](#connect-o11-infrastructure). Then, you can [create data connections](#create-connection) to [import the O11 entities](#import-exposed) that developers can [use in their ODC apps](consume-entities.md).
+Configuring the O11 connection involves [creating the data connections](#create-connection) and [importing the O11 entities](#import-exposed) that developers can [use in their ODC apps](consume-entities.md).
 
 ## Prerequisites
 
 Before you start, ensure the following requirements are met:
 
+* The ODC organization [is already connected to your O11 infrastructure](../connect-o11-infrastructure.md).
+
 * You have LifeTime 11.29.0 or later installed.
 
 * The O11 entities you want to use in ODC have already [been exposed in LifeTime](expose-entities.md).
-
-* The user connecting ODC to the O11 infrastructure has the **Administrator** role.
 
 * The user creating the data connection has **Connection management > Create** permission.
 
@@ -52,40 +52,6 @@ Before you start, ensure the following requirements are met:
 
     * You have the details of the database connection (Server, Port, Database Name or Host, Port, Service Name), and database dedicated user (username and password) for each of the [O11 environments to map](data-interop.md#mapping).
 
-## Connect ODC to your O11 infrastructure {#connect-o11-infrastructure}
-
-<div class="info" markdown="1">
-
-This step requires the **Administrator** role and LifeTime 11.29.0 or later.
-
-</div>
-
-This is a one-time setup that establishes the link between your ODC organization and your O11 infrastructure.
-
-To prevent cross-organization access, ODC accepts only LifeTime service accounts that you bind to your ODC organization ID in LifeTime, and validates that binding when you save the configuration.
-
-For this configuration you have to switch between the ODC Portal and LifeTime to complete the setup. Follow these steps:
-
-1. In the ODC Portal, go to **OUTSYSTEMS 11 > Configurations**.
-
-1. Set the **URL** of the LifeTime environment you want to integrate with.
-
-1. Copy the **ODC organization ID** shown on the page.
-
-1. In LifeTime, [create a new service account](https://www.outsystems.com/tk/redirect?g=1f0c3b37-45b9-4a4d-b640-016dac5f5d6b) bound to your ODC organization:
-
-    1. Assign the **Administrator** role to the service account.
-
-    1. Set **Service account consumer** to **ODC**.
-
-    1. Paste the value you copied into the **ODC organization ID** field.
-
-    1. Save the service account and copy the generated authentication token.
-
-1. Back in the ODC Portal, paste the value into the **Authentication Token** field.
-
-1. Click **Save**. ODC validates the token against your ODC organization ID.
-
 ## Create an O11 data connection {#create-connection}
 
 <div class="info" markdown="1">
@@ -94,9 +60,7 @@ This step requires the **Connection management > Create** permission.
 
 </div>
 
-After linking your infrastructures, let's create the data connection to OutSystems 11.
-
-You can create different connections for your O11 infrastructure. For example:
+You can create different O11 data connections for your O11 infrastructure. For example:
 
 * You can group O11 entities from different business apps in different connections to be used by different teams in ODC.
 
@@ -110,7 +74,15 @@ To create the connection, follow these steps:
 
 1. Select the **OutSystems 11** provider.
 
-    ![Select OutSystems 11 as external data provider](images/configure-connection-o11-provider-pl.png "Select OutSystems 11 as external data provider")
+    ![Select OutSystems 11 as external data provider](images/configure-connection-o11-provider-pl.png "OutSystems 11 Provider Selection")
+
+1. If your ODC organization is connected to more than one O11 infrastructure, select the **Infrastructure** from the dropdown.
+
+    <div class="info" markdown="1">
+
+    If you have a single O11 infrastructure, this field is not shown. The connection is automatically linked to that infrastructure.
+
+    </div>
 
 1. Enter a unique **Name** and an optional **Description** for your connection.
 
@@ -130,7 +102,7 @@ To create the connection, follow these steps:
 
         ODC automatically handles the underlying complexity, such as creating the dedicated database users and connection details for each mapping.
 
-        ![Configure OutSystems 11 connection details](images/configure-connection-o11-details-pl.png "Configure OutSystems 11 connection details")
+        ![Configure OutSystems 11 connection details](images/configure-connection-o11-details-pl.png "OutSystems 11 Connection Details")
 
     * If you have an **O11 self-managed** infrastructure, in the **Setup by stage** section, provide the database connection details and test the connection for each ODC stage, similar to [creating connections to external data sources](../../eap/integration-with-systems/external-databases/create-connection-external-data.md):
 
@@ -146,7 +118,7 @@ To create the connection, follow these steps:
 
         </div>
 
-        ![Configure OutSystems 11 connection details for self-managed infrastructure](images/configure-connection-o11-details-self-managed-pl.png "Configure OutSystems 11 connection details for self-managed infrastructure")
+        ![Configure OutSystems 11 connection details for self-managed infrastructure](images/configure-connection-o11-details-self-managed-pl.png "Self-Managed Infrastructure Connection Details")
 
 1. Click **Save**. The system now begins the connection setup process in the background.
 
@@ -166,7 +138,7 @@ This step requires the **Configuration management > Configure connections** perm
 
 Once the connection is successfully created, you can import the exposed entities you want to use. The connection automatically preserves the familiar logical names from O11, so you can work with entities like `Customer` directly.
 
-![Select exposed O11 entities for OutSystems 11 connection](images/configure-connection-011-select-entities-pl.png "Select exposed O11 entities for OutSystems 11 connection")
+![Select exposed O11 entities for OutSystems 11 connection](images/configure-connection-011-select-entities-pl.png "O11 Exposed Entities Selection")
 
 Follow these steps to import the exposed entities:
 

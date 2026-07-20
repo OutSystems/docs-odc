@@ -1,7 +1,7 @@
 ---
 guid: 892fab92-4f45-413d-809e-0cb453e46039
 locale: en-us
-summary: Extend your existing O11 portfolio with new ODC cloud-native and AI-powered capabilities.
+summary: O11 and ODC interoperability overview covering data, logic, and user scenarios, with use cases to guide your extend-or-stay-in-O11 decision.
 figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?node-id=2805-525
 coverage-type:
   - evaluate
@@ -17,6 +17,7 @@ tags:
   - AI
   - Architecture
   - Data
+  - Extensions
   - Logic
   - REST
 outsystems-tools:
@@ -35,9 +36,9 @@ This interoperability approach enables you to maintain and evolve your core apps
 
 O11 and ODC interoperability covers three areas:
 
-* [Data interoperability](data-interoperability/data-interop.md): ODC apps access and write to O11 entities directly, without custom APIs
+* [Data interoperability](data-interoperability/data-interop.md): ODC apps read and write to O11 entities directly, without custom APIs
 
-* [Logic interoperability](logic-interoperability/logic-interop.md): O11 and ODC apps call each other's business logic via REST
+* [Logic interoperability](logic-interoperability/logic-interop.md): O11 and ODC apps reuse each other's business logic via REST
 
 * [User interoperability](user-interoperability/intro.md): End users authenticate once and navigate seamlessly between O11 and ODC apps without re-authenticating
 
@@ -57,7 +58,7 @@ Here are some scenarios where you can use ODC cloud-native capabilities to exten
 
 For any of the above scenarios, if end users navigate between O11 and ODC apps, user interoperability provides a seamless authentication experience.
 
-![Diagram of ODC and O11 interoperability](images/interoperability-odc-o11-diag.png "Diagram of ODC and O11 interoperability")
+![Diagram of ODC and O11 interoperability](images/interoperability-odc-o11-diag.png "ODC and O11 Interoperability Diagram")
 
 ## Use cases to keep evolving in O11
 
