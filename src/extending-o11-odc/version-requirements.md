@@ -54,8 +54,8 @@ The following table lists the minimum **Platform Server** and **LifeTime** versi
 
 | Capability | Minimum Platform Server | Minimum LifeTime |
 | --- | --- | --- |
-| - ODC read/write O11 data for SQL Server<br/>- ODC read O11 data for Oracle<br/>- Support for infrastructures with additional pipelines | 11.40.0 | 11.29.0 **\*** |
-| - ODC write O11 data for Oracle<br/>- User and Tenant system entities exposed to ODC | 11.41.0 | 11.29.0 **\*** |
+| - ODC read/write O11 data for SQL Server<br/>- ODC read O11 data for Oracle<br/>- Support for O11 infrastructures with additional pipelines | 11.40.0 | 11.29.0 **\*** |
+| - ODC write O11 data for Oracle<br/>- User and Tenant system entities exposed to ODC<br/>- Support for multiple O11 infrastructures | 11.41.0 | 11.29.0 **\*** |
 
 <div class="info" markdown="1">
 

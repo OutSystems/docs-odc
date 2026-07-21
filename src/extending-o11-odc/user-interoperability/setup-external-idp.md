@@ -30,7 +30,7 @@ isautopublish: true
 
 ![Diagram of user interoperability, step 1](images/user-interoperability-process-external-1-diag.png "User interoperability, step 1")
 
-This page describes how you set up [O11 and ODC single sign-on](intro.md) when your end users authenticate in your O11 apps using [external authentication](https://www.outsystems.com/tk/redirect?g=eaa92f05-a00d-4e75-a937-8c100b81d6df), such as **Entra ID** or **Okta**.
+This page describes how you set up [O11 and ODC single sign-on](intro.md) when your end users authenticate in your O11 apps using [external authentication](https://www.outsystems.com/tk/redirect?g=eaa92f05-a00d-4e75-a937-8c100b81d6df), such as **Microsoft Entra ID** or **Okta**.
 
 ## Prerequisites {#prerequisites}
 
@@ -38,7 +38,12 @@ To set up O11 and ODC single sign-on for an O11 external authentication scenario
 
 * Is centrally configured in the [O11 Users app](https://www.outsystems.com/tk/redirect?g=eaa92f05-a00d-4e75-a937-8c100b81d6df) to every O11 app that uses **Users** as its user provider.
 
-* Uses **OpenID Connect (OIDC)** or **SAML 2.0** method, which are the two main authentication protocols that ODC supports.
+* Uses an authentication protocol that ODC supports:
+
+    * **OpenID Connect (OIDC)** protocols, as such as Microsoft Entra ID or Okta
+    * **SAML 2.0**
+
+    Refer to [Configuring authentication with external identity providers](../../eap/manage-platform-app-lifecycle/external-idps/intro.md) for further details.
 
 ## Set up O11 external identity provider in ODC {#setup}
 

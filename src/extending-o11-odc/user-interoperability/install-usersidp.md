@@ -58,7 +58,13 @@ Like any external identity provider, the O11 Users app carries identity spoofing
 
 ## Limitations {#limitations}
 
-The UsersIdP component **isn't supported** for O11 apps using a user provider other than the built-in [Users app](https://www.outsystems.com/tk/redirect?g=2cbb2e7d-9936-4bb4-8791-240ade1d1ad6), or customized versions of the **Users** app.
+The **UsersIdP component** in only supported for:
+
+* End-user authentication configured as **Internal Only** in the [Users app](https://www.outsystems.com/tk/redirect?g=2cbb2e7d-9936-4bb4-8791-240ade1d1ad6)
+
+* The built-in **Users** app, it's not supported for customized versions of **Users**
+
+* O11 apps with **Users** as user provider
 
 ## Prerequisites {#prerequisites}
 

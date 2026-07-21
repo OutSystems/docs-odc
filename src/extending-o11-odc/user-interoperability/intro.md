@@ -34,13 +34,15 @@ A fragmented login experience across platforms can disrupt their workflow, so it
 
 ![Diagram of user interoperability](images/user-interoperability-diag.png "User interoperability")
 
-OutSystems provides single sign-on (SSO) capability so your end users can access apps on both O11 and ODC without re-authenticating. You have two approaches for user interoperability between O11 and ODC:
+OutSystems provides single sign-on (SSO) capability so your O11 end users can access apps on both O11 and ODC without re-authenticating. End users are managed in your O11 authentication provider, eliminating user duplication and reducing administrative overhead.
 
-* **O11 built-in authentication** - The built-in [Users app](https://www.outsystems.com/tk/redirect?g=2cbb2e7d-9936-4bb4-8791-240ade1d1ad6) is the authoritative source for end-user authentication, configured as an external OIDC identity provider for ODC. End users authenticate through O11 once, subsequent access to ODC apps is automatic if their O11 session remains active.
+There are two possible scenarios for O11 and ODC user interoperability, depending on how your O11 apps [authenticate end users](https://www.outsystems.com/tk/redirect?g=eaa92f05-a00d-4e75-a937-8c100b81d6df):
 
-* **External identity provider** - Both O11 and ODC federate with a central identity provider, such as Microsoft Entra or Okta. End users authenticate through the external system, not O11 or ODC directly.
+* **O11 built-in authentication** - If you configured end-user authentication as **Internal Only**, the built-in [Users app](https://www.outsystems.com/tk/redirect?g=2cbb2e7d-9936-4bb4-8791-240ade1d1ad6) is the authoritative source for end-user authentication, configured as an external OIDC identity provider for ODC. End users authenticate through O11 once, subsequent access to ODC apps is automatic if their O11 session remains active.
 
-In both cases, end users are managed in a single location, either in O11 or your external identity provider, eliminating user duplication and reducing administrative overhead.
+* **O11 external authentication** - If you configured end-user authentication to use an external method, such as Microsoft Entra or Okta, both O11 and ODC federate with that central identity provider. End users authenticate through the external system, not O11 or ODC directly.
+
+![O11 end-user authentication](images/user-interoperability-o11-auth-usr.png "O11 end-user authentication")
 
 Configuring SSO between your O11 and ODC apps involves the following key steps:
 
@@ -48,11 +50,11 @@ Configuring SSO between your O11 and ODC apps involves the following key steps:
 
 1. Set up single sign-on between both platforms
 
-    This setup depends on how your O11 apps [authenticate end users](https://www.outsystems.com/tk/redirect?g=eaa92f05-a00d-4e75-a937-8c100b81d6df):
+    This setup depends on how your O11 authentication scenario:
 
-    * If your O11 apps use the **Internal** built-in authentication, [use the UsersIdP component](install-usersidp.md) to configure your O11 environments as external OpenID Connect providers for your ODC organization.
+    * For **O11 built-in authentication**, [use the UsersIdP component](install-usersidp.md) to configure your O11 environments as external OpenID Connect providers for your ODC organization.
 
-    * If your O11 apps use an external identity provider, [configure the same IdP in ODC](setup-external-idp.md).
+    * For **O11 external authentication**, [configure the same IdP in ODC](setup-external-idp.md).
 
     <div class="info" markdown="1">
 
@@ -74,9 +76,13 @@ When user interoperability is enabled between ODC and O11, the same individual w
 
 ## Limitations {#limitations}
 
-You can't serve both your O11 and your ODC apps from the same address. As OutSystems 11 and ODC run on separate infrastructures, a subdomain (for example, `apps.company.com`) can point to only one of them.
+* The [UsersIdP component](install-usersidp.md) is only supported for **O11 built-in authentication**.
 
-OutSystems recommends using distinct subdomains for each platform - for example, `apps.company.com` for your O11 apps and `new.company.com` for your ODC apps. This preserves a consistent brand presence for end users while routing each request to the correct runtime.
+* For [O11 external authentication](setup-external-idp.md), user interoperability is only supported for the authentication protocols supported by ODC.
+
+* You can't serve both your O11 and your ODC apps from the same address. As OutSystems 11 and ODC run on separate infrastructures, a subdomain (for example, `apps.company.com`) can point to only one of them.
+
+    OutSystems recommends using distinct subdomains for each platform - for example, `apps.company.com` for your O11 apps and `new.company.com` for your ODC apps. This preserves a consistent brand presence for end users while routing each request to the correct runtime.
 
 ## Next steps {#next-steps}
 
