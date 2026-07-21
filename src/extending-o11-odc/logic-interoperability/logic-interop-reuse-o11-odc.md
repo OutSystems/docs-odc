@@ -78,3 +78,4 @@ Reusing your ODC logic in O11 apps for interoperability purposes involves two ke
     In Service Studio, define the intent of the integration by setting the REST API property **API Producer** to **ODC**.
 
     ![Set API Producer to ODC in Service Studio](images/logic-interoperability-api-producer-ss.png "Service Studio API Producer")
+
