@@ -1,6 +1,10 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports writing data to SAP O Data connection.
 tags:
+  - Data
+  - Entities
+  - External Databases
+  - Web services
 outsystems-tools:
 guid: 5f66d96c-a0ac-4b19-8211-a576a044468c
 locale: en-us
