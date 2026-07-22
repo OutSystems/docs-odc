@@ -10,5 +10,8 @@ coverage-type:
   - none
 outsystems-tools:
   - none
+audience:
+  - Developer
+  - Front-end developer
 ---
 # Utilities
