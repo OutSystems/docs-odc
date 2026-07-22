@@ -153,16 +153,34 @@ Use the following parameters when configuring Azure OpenAI model endpoints.
 
 ### Amazon Bedrock parameters
 
-Use these parameters when configuring Amazon Bedrock model endpoints.
+When adding an Amazon Bedrock connection, besides the name, you must select an **Authentication method**. This determines which fields you need to fill in below. **IAM Role** is the recommended method and is pre-selected for new connections and the following table shows the required parameters for IAM Role authentication. If you choose **Access Keys**, refer to the [Access keys](#access-keys) section for the required parameters.
+
+With IAM Role authentication, OutSystems doesn't store any AWS credentials. Access is granted through a trust relationship between your AWS account and OutSystems, using short-lived credentials that are issued and refreshed automatically at runtime.
+
+Before you configure this in the ODC Portal, you need to set up the IAM role and trust policy on the AWS side. For guidance:
+
+* [Creating a role for a third party (AWS IAM User Guide)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html). This explains the External ID condition your trust policy must include.
+* [Identity-based policy examples for Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html). This shows the minimum permissions your role needs to invoke Bedrock models.
+
+| Parameter | Description | Notes |
+|:---|:---|:---|
+| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Bedrock model connection. |
+| Authentication method | Select your desired authentication method.| Choose between **IAM Role** and **Access Keys**. IAM Role is recommended for security reasons. |
+| Role ARN | The Amazon Resource Name (ARN) of the IAM role you've configured in your AWS account to trust OutSystems.|Your role identifier must follow the policy format. Click on **Download policy** to view the required format. |
+| Model ID | The unique identifier for the specific Amazon Bedrock foundation model or its Amazon Resource Name (ARN). | For example, anthropic.claude-3-sonnet-20240229-v1:0. Refer to [AWS documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards.html) for model IDs. |
+| URL | The Invoke URL for Amazon Bedrock. | Ensure the AWS region matches your model's region; the URL typically follows the format `https://bedrock-runtime.[aws-region].amazonaws.com`. |
+| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | ODC assigns Priority 1 to the first endpoint by default. You can adjust priorities if multiple endpoints exist. |
+
+#### Access keys
+
+The following parameters are required when using **Access Keys** for authentication with Amazon Bedrock. This method is less secure than IAM Role authentication, as it involves storing long-lived credentials.
 
 | Parameter | Description | Notes |
 | :---- | :---- | :---- |
-| Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Bedrock model connection. |
-| Model ID | The unique identifier for the specific Amazon Bedrock foundation model or its Amazon Resource Name (ARN). | For example, anthropic.claude-3-sonnet-20240229-v1:0. Refer to [AWS documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html) for model IDs. |
 | Access key | The authentication access key ID for your AWS IAM user or role with permissions for Bedrock. | Obtain from the AWS console or security credentials. |
 | Secret key | The secret access key associated with the Access key for AWS authentication. | Obtain from the AWS console or security credentials. Treat this securely. |
-| URL | The Invoke URL for Amazon Bedrock. | Ensure the AWS region matches your model's region; the URL typically follows the format `https://bedrock-runtime.[aws-region].amazonaws.com`. |
-| Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | ODC assigns Priority 1 to the first endpoint by default. You can adjust priorities if multiple endpoints exist. |
+
+Keep in mind that IAM Role authentication is recommended over Access Keys, since it avoids storing long-lived credentials. Existing Access Key connections continue to work without changes; see [Migrate an Access Key connection to IAM Role] if you'd like to switch.
 
 ### Custom AI model parameters
 
