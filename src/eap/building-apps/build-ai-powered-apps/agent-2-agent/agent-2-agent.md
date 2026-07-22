@@ -7,6 +7,7 @@ app_type: reactive web apps
 platform-version: odc
 figma:
 coverage-type:
+  - understand
 topic:
 outsystems-tools:
   - odc studio

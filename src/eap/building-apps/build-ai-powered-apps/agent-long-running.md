@@ -9,6 +9,8 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&
 outsystems-tools:
   - odc studio
 coverage-type:
+  - apply
+  - unblock
 content-type:
 audience:
   - Developer

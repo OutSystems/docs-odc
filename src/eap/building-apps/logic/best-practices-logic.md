@@ -11,6 +11,9 @@ content-type:
 audience:
   - Developer
   - Front-end developer
+coverage-type:
+  - apply
+  - evaluate
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6404-238
 ---

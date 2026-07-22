@@ -9,6 +9,9 @@ content-type:
   - conceptual
   - procedure
 audience:
+coverage-type:
+  - understand
+  - apply
 platform-version: odc
 figma: https://www.figma.com/design/AOyPMm22N6JFaAYeejDoge/Configuration-management?node-id=3711-10&t=3EmFUNoGU0AIgLBT-1
 ---

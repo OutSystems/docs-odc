@@ -10,6 +10,9 @@ outsystems-tools:
     - odc studio
 audience:
     - Developer
+coverage-type:
+    - understand
+    - evaluate
 ---
 
 # Understanding CRUD operations in ODC
