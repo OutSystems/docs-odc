@@ -50,7 +50,8 @@ In both cases, you should protect your endpoints from unauthorized access. OutSy
 
 ## Performance
 
-When reusing business logic between O11 and ODC through REST APIs, app performance depends on the network latency between your O11 and ODC environments. This should be considered in your application design.
+When reusing business logic between O11 and ODC through REST APIs, app performance depends on the network latency between your O11 and ODC environments.
+This should be considered in your application design.
 
 ## Licensing {#licensing}
 
