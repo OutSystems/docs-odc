@@ -1,5 +1,5 @@
 ---
-summary: Learn how to migrate an existing Portfolio API v1 integration to v2, including updated URL paths, changed Environment fields, and new endpoints.
+summary: 'Portfolio API v1 to v2 migration in OutSystems Developer Cloud (ODC): update URL paths, handle removed Environment fields, and manage the January 2027 sunset.'
 locale: en-us
 guid: 8bb7022b-2e70-4f1d-b5ea-2807b7135e97
 app_type: mobile apps, reactive web apps
@@ -8,17 +8,25 @@ content-type:
   - procedure
 audience:
   - Developer
-  - Front-end developer
 figma:
 tags:
+  - Lifecycle
   - REST
   - Web services
 outsystems-tools:
   - odc portal
 isautopublish: true
+coverage-type:
+  - apply
 ---
 
 # Migrate from Portfolio API v1 to v2
+
+<div class="info" markdown="1">
+
+v1 is deprecated as of July 8, 2026 and will be removed on January 8, 2027. All v1 integrations must migrate to v2 before the sunset date.
+
+</div>
 
 Portfolio API v2 is a superset of v1. This guide covers only what you need to change to migrate an existing v1 integration. Anything not listed here behaves the same as v1: authentication, query parameters, pagination, error format, and the top-level `DeployedAsset` structure.
 
@@ -68,6 +76,24 @@ In v1, deployment URLs in `GET /deployed-assets` were built from the environment
 ## New optional field on `Deployment`
 
 Each `Deployment` (nested inside `DeployedAsset`) gains an optional `portfolioKey` field indicating the portfolio of the deployment's environment. This is a non-breaking addition. No action is required unless you want to use it.
+
+## How to detect deprecation and sunset
+
+Starting from the deprecation date, all responses from the v1 endpoints include the following headers you can monitor in your logs:
+
+```
+Deprecation: Wed, 08 Jul 2026 00:00:00 UTC
+Sunset: Fri, 08 Jan 2027 00:00:00 UTC
+```
+
+Consider adding alerting or log scanning on these headers to track migration progress in your service.
+
+## Timeline
+
+| Date | Event |
+| --- | --- |
+| **July 8, 2026** | v1 officially deprecated. `Deprecation` and `Sunset` headers added to all v1 responses. |
+| **January 8, 2027** | Sunset. v1 endpoints are removed and no longer available. All consumers must be migrated by this date. |
 
 ## Related resources
 
