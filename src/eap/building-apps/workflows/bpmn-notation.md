@@ -9,6 +9,9 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&
 api-render: false
 outsystems-tools:
   - none
+audience:
+  - Business analyst
+  - Developer
 coverage-type:
 content-type:
 topic:

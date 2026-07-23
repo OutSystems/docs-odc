@@ -3,6 +3,10 @@ guid: ba7abbe3-ff30-43d0-b799-1d788f4390f0
 locale: en-us
 summary: Implement AI integration for mobile and reactive web apps using OutSystems Developer Cloud (ODC).
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=8646-1385&t=gnLX1WsXFPXUEvhR-1
+audience:
+  - Architect
+  - Developer
+  - Tech lead
 coverage-type:
   - understand
   - remember

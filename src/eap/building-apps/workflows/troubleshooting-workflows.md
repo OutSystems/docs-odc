@@ -6,6 +6,8 @@ locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5860-10
+audience:
+  - Developer
 coverage-type:
   - apply
 outsystems-tools:

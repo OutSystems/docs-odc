@@ -6,6 +6,8 @@ locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
+audience:
+  - Developer
 coverage-type:
   - unblock
 outsystems-tools:
