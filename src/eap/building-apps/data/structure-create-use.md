@@ -5,7 +5,10 @@ guid: 0453b145-9d9c-4b7c-bf8f-f3a62af56a4f
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=5024%3A1029&mode=design&t=EwnGtDJiGAm6txO0-1
-tags: data modeling, outsystems developer cloud
+tags:
+  - Data
+  - Data Model
+  - REST
 audience:
   - Developer
   - Front-end developer
@@ -15,13 +18,14 @@ coverage-type:
   - apply
 topic:
   - compound-data
+isautopublish: true
 ---
 
 # Use structures and records to create compound data types
 
 During app development, consider using a variable to hold a collection of variables with various data types, grouped for logic efficiency. This approach is useful, for instance, when you assign values returned by an action without needing separate outputs for each value.
 
-In OutSystems, you can create structured values using structures or records. A structure is a reusable custom data type within your module, while a record is specific to a single variable that you can't use elsewhere.
+In OutSystems, you can create structured values using structures or records. A structure is a reusable custom data type defined within your module, while a record is specific to a single variable that you can't use elsewhere.
 
 In ODC, to declare and use a structure:
 
@@ -67,7 +71,7 @@ Since the data type that you assign to the output parameter is used here, you ca
 1. Filter the aggregate ensuring the Place.Id attribute matches the PlaceId parameter.
 1. Add a filter condition with `Place.Id = PlaceId`.
 
-   ![alt text](<images/filter-aggregate-odcs.png>)
+   ![Screenshot of the aggregate filter condition Place.Id = PlaceId configured in OutSystems ODC Studio.](<images/filter-aggregate-odcs.png> "Aggregate Filter Condition in ODC Studio")
 
 1. In the GetPlace method, add an output parameter called `PlaceInformation`.
 1. Set the PlaceInformation **Data Type** to **Record...**. A Text attribute is added to the variable.
