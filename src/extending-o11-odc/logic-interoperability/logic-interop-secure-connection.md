@@ -48,7 +48,7 @@ Before proceeding, make sure the following requirements are met:
 
 * You have the **Administrator** role in ODC Portal.
 
-Follow these steps to add a secure connection that enables your ODC apps to securely consume O11 REST APIs:
+Follow these steps to add a secure connection that enables ODC apps deployed to an **ODC stage** to securely consume O11 REST APIs exposed in an **O11 environment**:
 
 1. Log into the ODC Portal.
 
@@ -68,7 +68,7 @@ Follow these steps to add a secure connection that enables your ODC apps to secu
 
     The status shows **Adding** while the connection is being set up, and changes to **Active** when the connection is ready.
 
-The **Base URL** is the endpoint address that developers [use in ODC apps when consuming the O11 REST API](../../eap/integration-with-systems/consume_rest/intro.md) instead of the public O11 environment URL. Thus, after adding the secure connection, copy its **Base URL** and share it with the developers.
+The **Base URL** is the endpoint address that developers must [configure for the apps in each ODC stage](logic-interop-reuse-o11-odc.md#secure) instead of the public O11 environment URL. Thus, after adding the secure connection, copy its **Base URL** and share it with the developers.
 
 ![ODC Portal showing the created Secure connections from ODC stages to O11 environments](images/logic-interoperability-secure-connections-pl.png "Secure Connections in ODC Portal")
 

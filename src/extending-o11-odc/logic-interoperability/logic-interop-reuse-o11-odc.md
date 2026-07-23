@@ -15,6 +15,7 @@ audience:
 tags:
   - Logic
   - REST
+  - Security
 outsystems-tools:
   - odc studio
   - service studio
@@ -55,11 +56,17 @@ Reusing your O11 logic in ODC apps for interoperability purposes involves two ke
 
 ### Reusing O11 logic through a secure connection {#secure}
 
-After you deploy an ODC app consuming O11 logic, follow these steps if you want to route the REST API requests through a secure connection:
+After you deploy an ODC app consuming O11 logic to an ODC stage, follow these steps if you want to route the REST API requests through a secure connection:
 
-1. Make sure an administrator has already [created the secure connection](logic-interop-secure-connection.md) in the ODC Portal for the stages where the app is deployed, and provided you the secure **Base URL** to use in the REST integration.
+1. Make sure an administrator has already [created the secure connection](logic-interop-secure-connection.md) in the ODC Portal between the **stage** where the app is deployed and the **O11 environment** exposing the logic, and provided you the secure **Base URL** to use in the REST integration.
 
-1. [Adjust the configuration of your ODC app](../../eap/manage-platform-app-lifecycle/configuration-management.md#rest) for each stage by setting the URL of the **Consumed REST APIs** to the secure **Base URL**.
+1. [Adjust the configuration of your ODC app](../../eap/manage-platform-app-lifecycle/configuration-management.md#rest) for that ODC stage by setting the URL of the **Consumed REST APIs** to the secure **Base URL**.
+
+<div class="info" markdown="1">
+
+You must adjust the ODC app configuration for all stages where it's deployed. For each stage, use the secure **Base URL** of the secure connection created for that stage.
+
+</div>
 
 ## Reusing ODC logic in O11 {#reuse-odc-logic-o11}
 
@@ -78,4 +85,3 @@ Reusing your ODC logic in O11 apps for interoperability purposes involves two ke
     In Service Studio, define the intent of the integration by setting the REST API property **API Producer** to **ODC**.
 
     ![Set API Producer to ODC in Service Studio](images/logic-interoperability-api-producer-ss.png "Service Studio API Producer")
-
