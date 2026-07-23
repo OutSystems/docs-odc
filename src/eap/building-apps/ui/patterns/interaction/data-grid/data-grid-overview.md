@@ -11,6 +11,9 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 audience:
   - Front-end developer
   - Developer
+coverage-type:
+  - understand
+  - apply
 outsystems-tools:
   - odc portal
   - forge

@@ -12,6 +12,8 @@ audience:
   - Front-end developer
   - Developer
   - Platform administrator
+coverage-type:
+  - apply
 outsystems-tools:
   - odc studio
 ---

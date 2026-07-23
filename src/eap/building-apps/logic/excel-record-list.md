@@ -10,6 +10,7 @@ api-render: false
 outsystems-tools:
   - odc studio
 coverage-type:
+  - apply
 content-type:
 audience:
   - Developer
