@@ -1,6 +1,8 @@
 ---
 summary: Add AI models in OutSystems Developer Cloud (ODC) for mobile and reactive web apps.
-tags: ai models, mobile apps, reactive web apps
+tags:
+  - AI
+  - Mobile app
 guid: af45db6e-ac0f-4ab9-8e4a-4ba8fd559812
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -10,6 +12,7 @@ outsystems-tools:
   - odc studio
   - odc portal
 coverage-type:
+  - remember
   - understand
   - apply
 audience:
@@ -163,10 +166,10 @@ Before you configure this in the ODC Portal, you need to set up the IAM role and
 * [Identity-based policy examples for Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html). This shows the minimum permissions your role needs to invoke Bedrock models.
 
 | Parameter | Description | Notes |
-|:---|:---|:---|
+| :--- | :--- | :--- |
 | Name | User-defined, identifiable name for the endpoint instance. | Differentiates between multiple endpoints for the same Bedrock model connection. |
-| Authentication method | Select your desired authentication method.| Choose between **IAM Role** and **Access Keys**. IAM Role is recommended for security reasons. |
-| Role ARN | The Amazon Resource Name (ARN) of the IAM role you've configured in your AWS account to trust OutSystems.|Your role identifier must follow the policy format. Click on **Download policy** to view the required format. |
+| Authentication method | Select your desired authentication method. | Choose between **IAM Role** and **Access Keys**. IAM Role is recommended for security reasons. |
+| Role ARN | The Amazon Resource Name (ARN) of the IAM role you've configured in your AWS account to trust OutSystems. | Your role identifier must follow the policy format. Click on **Download policy** to view the required format. |
 | Model ID | The unique identifier for the specific Amazon Bedrock foundation model or its Amazon Resource Name (ARN). | For example, anthropic.claude-3-sonnet-20240229-v1:0. Refer to [AWS documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards.html) for model IDs. |
 | URL | The Invoke URL for Amazon Bedrock. | Ensure the AWS region matches your model's region; the URL typically follows the format `https://bedrock-runtime.[aws-region].amazonaws.com`. |
 | Priority | Determines the order of endpoints, with one being the highest. Lower-priority endpoints act as fallbacks. | ODC assigns Priority 1 to the first endpoint by default. You can adjust priorities if multiple endpoints exist. |
@@ -180,7 +183,7 @@ The following parameters are required when using **Access Keys** for authenticat
 | Access key | The authentication access key ID for your AWS IAM user or role with permissions for Bedrock. | Obtain from the AWS console or security credentials. |
 | Secret key | The secret access key associated with the Access key for AWS authentication. | Obtain from the AWS console or security credentials. Treat this securely. |
 
-Keep in mind that IAM Role authentication is recommended over Access Keys, since it avoids storing long-lived credentials. Existing Access Key connections continue to work without changes; see [Migrate an Access Key connection to IAM Role] if you'd like to switch.
+Keep in mind that IAM Role authentication is recommended over Access Keys, since it avoids storing long-lived credentials. Existing Access Key connections continue to work without changes; see [Migrate an Access Key connection to IAM Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-console.html) if you'd like to switch.
 
 ### Custom AI model parameters
 
