@@ -8,6 +8,7 @@ platform-version: odc
 tags:
   - Authentication
   - End-user Authentication
+  - End-users
   - External Authentication
   - IdP
   - OIDC
@@ -60,7 +61,7 @@ In a multi-portfolio organization, stage-level IdP assignments become portfolio-
 
 The following diagram shows an example setup.
 
-![External IdPs concept](images/external-idps-example-diag.png "External IdPs concept")
+![External IdPs concept](images/external-idps-example-diag.png "External IdP Scopes Example")
 
 You can assign more than one identity provider to the same scope. A single stage can have multiple active IdPs at once, including multiple custom external IdPs, and you can keep the built-in provider active. If you want users to authenticate only through external IdPs for a scope, remove the built-in identity provider assignment. For more information, refer to [Manage identity providers](manage-external-idps.md#remove-built-in-idp-assignment).
 
@@ -195,6 +196,33 @@ If an app doesn't include the pre-built login logic (for example, an older app c
 ### (Optional) Step 5: Add an end-user group mapping
 
 Mapping groups from your identity provider to end-user groups in ODC can automate the assignment of roles to end-users based on their group membership, streamlining access management. For more details about how these groups are mapped and for setup instructions and best practices, refer to [IdP and end-user group mapping](end-user-group-mapping.md).
+
+## Testing and validation best practices {#testing-and-validation}
+
+Before you deploy your external IdP to production, test the following integration scenarios to confirm the configuration is correct and to prevent authentication issues.
+
+### Verify mapped claims and attributes
+
+To confirm your identity provider claims map correctly, complete the following checks:
+
+* Confirm that claims and attributes from your identity provider are correctly mapped in your IdP configuration.
+
+* Inspect the IdP token and validate that the claims inside it match the claims defined in the portal.
+
+<div class="info" markdown="1">
+
+* Pay particular attention to attribute names and formats in your IdP. Mismatched or incorrectly mapped claims cause authentication failures or incomplete user profiles.
+
+</div>
+
+### Test end-to-end login flows
+
+To confirm that attributes pass through as expected, complete the following checks:
+
+* Perform complete login flows from your apps to confirm that attributes pass through as expected.
+* Verify that user attributes arrive correctly in ODC after authentication completes.
+* Test with different user types and groups in your IdP to catch potential mapping issues early.
+* Verify the username/email in the user profile matches what the IdP sends.
 
 ## Related resources
 
