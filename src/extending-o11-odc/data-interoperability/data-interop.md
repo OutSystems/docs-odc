@@ -42,11 +42,11 @@ Reusing your O11 data in ODC apps involves three key steps:
 
 1. [Expose O11 entities](expose-entities.md)
 
-    In the LifeTime console, you select which app entities to expose. For each entity you expose, OutSystems creates a corresponding database view in your O11 database.
+    In the LifeTime console of your O11 infrastructure, you select which app entities to expose. For each entity you expose, OutSystems creates a corresponding database view in your O11 database.
 
 1. [Configure O11 connection](configure-connection.md)
 
-    In the ODC Portal, you create an O11 data connection and import the exposed O11 entities as external entities.
+    In the ODC Portal, you create an O11 data connection to your O11 infrastructure and import the exposed O11 entities as external entities.
 
 1. [Consume O11 data in ODC apps](consume-entities.md)
 
@@ -54,7 +54,7 @@ Reusing your O11 data in ODC apps involves three key steps:
 
 ### Mapping O11 environments to ODC stages {#mapping}
 
-As part of the data interoperability setup, you map each ODC stage (Development, Test, and Production) to its corresponding O11 environment.
+As part of the data interoperability setup, you map each ODC stage (Development, Test, and Production) to its corresponding environment in your O11 infrastructure.
 
 If your O11 infrastructure pipeline has more environments than the number of stages in your ODC organization, choose the O11 environments that best match the ODC stages in your development lifecycle.
 
@@ -69,6 +69,10 @@ The following mapping rules apply:
 * For O11 infrastructures with additional pipelines, map your ODC stages to O11 environments of a single pipeline. For example, consider you have two O11 pipelines, **Finance** and **HR**. If you want to consume entities from both pipelines in your ODC apps, you need to [configure a separate O11 connection](configure-connection.md) to map each pipeline.
 
     ![Diagram of data interoperability architecture for additional pipelines](images/data-interoperability-architecture-pipelines-diag.png "Data interoperability architecture for additional pipelines")
+
+In case you have multiple O11 infrastructures exposing entities, you must [configure a different O11 connection](configure-connection.md) for each O11 infrastructure.
+
+![Diagram of data interoperability for multiple O11 infrastructures](images/data-interoperability-multiple-infrastructures-diag.png "Data interoperability for multiple O11 infrastructures")
 
 ### Security
 

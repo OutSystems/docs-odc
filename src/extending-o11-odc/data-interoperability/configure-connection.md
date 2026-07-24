@@ -28,15 +28,15 @@ After [exposing your O11 entities](expose-entities.md), you need to configure th
 
 ![Diagram of data interoperability process](images/data-interoperability-process-2-diag.png "Data Interoperability Process")
 
-Configuring the O11 connection involves [creating the data connections](#create-connection) and [importing the O11 entities](#import-exposed) that developers can [use in their ODC apps](consume-entities.md).
+Configuring the O11 connection involves [creating the data connection](#create-connection) and [importing the O11 entities](#import-exposed) that developers can [use in their ODC apps](consume-entities.md).
 
 ## Prerequisites
 
 Before you start, ensure the following requirements are met:
 
-* The ODC organization [is already connected to your O11 infrastructure](../connect-o11-infrastructure.md).
+* The ODC organization [is already connected to the O11 infrastructure](../connect-o11-infrastructure.md) exposing the entities.
 
-* You have LifeTime 11.29.0 or later installed.
+    In case you have multiple O11 infrastructures exposing entities, your ODC organization must have a connection to each O11 infrastructures.
 
 * The O11 entities you want to use in ODC have already [been exposed in LifeTime](expose-entities.md).
 
@@ -60,13 +60,15 @@ This step requires the **Connection management > Create** permission.
 
 </div>
 
-You can create different O11 data connections for your O11 infrastructure. For example:
+An O11 data connection connects to a unique O11 infrastructure. If you are exposing entities from multiple O11 infrastructures, create an O11 connection for each O11 infrastructure.
+
+You can create different O11 data connections for the same O11 infrastructure. For example:
 
 * You can group O11 entities from different business apps in different connections to be used by different teams in ODC.
 
 * If your O11 infrastructure has additional pipelines, create one connection per pipeline.
 
-To create the connection, follow these steps:
+To create the data connection, follow these steps:
 
 1. In the ODC Portal, go to **INTEGRATE > Connections**.
 

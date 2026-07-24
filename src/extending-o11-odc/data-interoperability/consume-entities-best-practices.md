@@ -1,7 +1,7 @@
 ---
 guid: d741a43a-8bcd-47e0-a9d5-d7a3da2cf8ea
 locale: en-us
-summary: Learn the development best practices for consuming O11 entities in ODC apps.
+summary: 'O11 entity consumption best practices for OutSystems Developer Cloud (ODC): SQL syntax, transactions, performance, and Oracle-specific behaviors.'
 figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?node-id=2711-37
 coverage-type:
   - understand
@@ -100,7 +100,7 @@ In aggregates, when filtering by an empty string and a single space at the same 
 
 When creating new records in runtime, the default values for **Email** and **Phone** types are being shown with quotation marks in the UI.
 
-![ODC app showing default values with quotation marks](images/consume-best-practices-default-values-diag.png "ODC app showing default values with quotation marks")
+![ODC app showing default values with quotation marks](images/consume-best-practices-default-values-sa.png "ODC app showing default values with quotation marks")
 
 #### Data mashup considerations {#oracle-mashup}
 

@@ -5,13 +5,20 @@ summary: Learn the best practices for handling O11 data model changes in your OD
 figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?node-id=2628-539
 coverage-type:
   - understand
+  - apply
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - Developer
   - Front-end developer
-tags: entities,data interoperability,app development
+tags:
+  - Data
+  - Data Model
+  - Deploy
+  - Development lifecycle
+  - Entities
+  - Lifecycle
 outsystems-tools:
   - odc studio
   - odc portal
@@ -32,9 +39,9 @@ Thus, when the O11 data model changes, the following actions are required to ref
 
 1. Update the dependencies in the ODC apps - Open your app in ODC Studio and update the dependencies to reflect the updated data model.
 
-![Process to reflect O11 data model changes in ODC apps](images/handle-o11-model-changes-diag.png "Process to reflect O11 data model changes in ODC apps")
+![Process to reflect O11 data model changes in ODC apps](images/handle-o11-model-changes-process-diag.png "O11 Data Model Changes Process")
 
-![Process to reflect O11 data model changes in ODC apps showing the tools](images/handle-o11-model-changes-lt-pl-odcs.png "Process to reflect O11 data model changes in ODC apps showing the tools")
+![Process to reflect O11 data model changes in ODC apps showing the tools](images/handle-o11-model-changes-lt.png "O11 Data Model Changes with Tools")
 
 However, to ensure your ODC app works correctly across all stages - development, QA, and production - you must promote the O11 data model changes to ODC apps following the development lifecycle. Here's the recommend order:
 
@@ -57,7 +64,7 @@ However, to ensure your ODC app works correctly across all stages - development,
 
 1. **[ODC]** Deploy the ODC app from QA to production stage.
 
-![Lifecycle for handling O11 data model changes in ODC apps](images/handle-o11-model-changes-lifecycle-lt-pl-odcs.png "Lifecycle for handling O11 data model changes in ODC apps")
+![Lifecycle for handling O11 data model changes in ODC apps](images/handle-o11-model-changes-lifecycle-diag.png "O11 Data Model Changes Lifecycle")
 
 <div class="info" markdown="1">
 
