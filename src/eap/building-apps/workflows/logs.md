@@ -15,6 +15,9 @@ audience:
   - Platform administrator
   - Developer
   - Product owner
+coverage-type:
+  - understand
+  - apply
 ---
 # Workflow logs
 

@@ -15,6 +15,9 @@ content-type:
 audience: 
   - Developer
   - Front-end developer
+coverage-type:
+  - understand
+  - evaluate
 ---
 
 # Implementing SLAs in workflows

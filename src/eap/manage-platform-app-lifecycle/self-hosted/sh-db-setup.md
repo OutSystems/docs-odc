@@ -4,6 +4,8 @@ locale: en-us
 summary: Learn how to prepare and configure a PostgreSQL database for your self-hosted OutSystems Developer Cloud (ODC) stage before connecting it during installation.
 figma:
 coverage-type:
+  - remember
+  - apply
 topic:
 app_type: reactive web apps, mobile apps
 platform-version: odc
