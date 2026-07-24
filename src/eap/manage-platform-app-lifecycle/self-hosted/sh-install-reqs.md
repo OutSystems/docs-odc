@@ -39,6 +39,8 @@ The system requirements are:
     * EKS on Kubernetes version 1.34. Refer to [EKS platform versions for Kubernetes version 1.34](https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html#platform-versions-1-34) for supported patch versions.
     * GKE version 1.34 (any 1.34.x-gke.y release). Refer to [GKE release notes](https://cloud.google.com/kubernetes-engine/docs/release-notes#current_versions) for available patch versions.
 
+* The cluster must be deployed on x86 architecture. ARM-based clusters are not supported.
+
 * The cluster must have at least 5 worker nodes each with 8 CPU cores, 32 GB of RAM, and 250 GB of disk space.
 
 * The cluster should only host [components installed via the self-hosted setup](sh-cluster-components.md) and applications deployed through ODC. Services not provided as part of the ODC self-hosted setup like databases, IdP, or APM should run outside the cluster. ODC services and apps may scale normally by adding pods. ODC platform components installed in the cluster are intended exclusively to support ODC runtime and must not be used by external applications or integrations.
