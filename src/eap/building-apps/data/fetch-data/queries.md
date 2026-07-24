@@ -1,5 +1,5 @@
 ---
-summary: Learn to write efficient queries in ODC using best practices for joins, filters, aggregates, and sorting.
+summary: OutSystems Developer Cloud (ODC) data mashup queries cover cross-database joins, equi-join conditions, filter patterns, and aggregate best practices.
 tags: database joins, query optimization, data retrieval, sql, relational databases
 guid: eb941889-6a5e-4e81-a570-80321841e5c1
 locale: en-us
@@ -12,7 +12,9 @@ audience:
 outsystems-tools:
   - odc studio
 coverage-type:
+  - apply
   - evaluate
+isautopublish: true
 ---
 
 # Writing better queries in data mashup
@@ -56,6 +58,7 @@ To write better queries, you need to understand the following joins:
 * Queries that work fine in ODC Studio data preview may fail in runtime due to exceeding the execution plan cost limit. This can happen because:
     * Test query limits the number of records, reducing plan cost.
     * Entities in QA or Production environments may have more records than those in the Development environment.
+* Refer to [understand Test Query results](test-query-runtime.md) for other differences between Test Query and runtime results.
 * In mashup queries, use With or Without instead of Only With.
 * Use aggregate functions (e.g., avg, count, sum) carefully in queries that combine data from different sources or handle large volumes of data in respective entities.
 * In a With or Without join, apply aggregate functions (e.g., avg, count, sum) to the left entity.

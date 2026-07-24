@@ -11,7 +11,14 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: sql queries, odc studio, advanced data operations, data retrieval
+tags:
+  - Aggregates
+  - Best Practices
+  - Data
+  - External Databases
+  - Performance
+  - Security
+  - SQL
 outsystems-tools:
   - odc studio
 isautopublish: true
@@ -48,6 +55,12 @@ You can use SQL nodes in server-side flows, including:
 This flexibility allows you to reuse SQL logic in different layers of your application.
 
 You can also test SQL queries directly in ODC Studio. This helps you validate the query and preview the results before using them in your logic.
+
+<div class="warning" markdown="1">
+
+**Test Query** and your published app run a SQL node through different paths, so Test Query results and runtime results can differ. Refer to [understand Test Query results](../test-query-runtime.md) before you rely on Test Query results in production.
+
+</div>
 
 <div class="warning" markdown="1">
 

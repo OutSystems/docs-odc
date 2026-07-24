@@ -172,6 +172,7 @@
                     - href: eap/building-apps/data/fetch-data/sql/stored-procedure.md
                     - href: eap/building-apps/data/fetch-data/sql/ansi-92-operators.md
                     - href: eap/building-apps/data/fetch-data/sql/ansi-92-data-types.md
+            - href: eap/building-apps/data/fetch-data/test-query-runtime.md
         # Best practices Data
         - href: eap/building-apps/data/data-best-practices/intro.md
         - topics:

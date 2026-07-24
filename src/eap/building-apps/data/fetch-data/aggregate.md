@@ -1,6 +1,13 @@
 ---
-summary: Learn to manage data with Aggregates in OutSystems Developer Cloud (ODC), supporting optimized client-side and server-side queries.
-tags: client-side aggregates, server-side aggregates, data management
+summary: OutSystems Developer Cloud (ODC) aggregates fetch entity data with optimized queries; create and configure them in Screens, Blocks, or Actions.
+tags:
+  - Aggregates
+  - Blocks
+  - Data
+  - Entities
+  - Mobile app
+  - Screens
+  - Web
 helpids: 17203
 locale: en-us
 guid: 0d8335b7-df99-40f3-8a9d-df0e5bd5ca18
@@ -18,6 +25,7 @@ coverage-type:
 topic:
   - aggregates
   - joins
+isautopublish: true
 ---
 
 # Query data using aggregates
@@ -25,6 +33,12 @@ topic:
 Aggregates allow you to fetch data using an optimized query, tailored to your usage. Aggregates automatically absorb changes in the data model and can load the local database's data from the server. They support combining several entities and advanced filtering, and bring only the attributes that are used on the screen or action. Attributes also abstract the underlying model for the developer, allowing attribute renaming and changes to the data type.  
 
 In OutSystems Developer Cloud (ODC), you can mash up data from different entities and distinct data sources in an aggregate. To learn more about data mashup, refer to [data mashup](data-mash.md).
+
+<div class="warning" markdown="1">
+
+**Test Query** and your published app run an aggregate through different paths, so Test Query results and runtime results can differ. Refer to [understand Test Query results](test-query-runtime.md) before you rely on Test Query results in production.
+
+</div>
 
 In Mobile and Web Apps, Aggregates can be client-side or server-side:
 
@@ -112,7 +126,7 @@ To learn more about writing better queries, refer to [writing better queries in 
 | ------ | ------------- | ----------- | -------------- | ------------- |
 | On After Fetch | Action executed after the Aggregate fetches data from the data source. | | | |
 
-## Runtime Properties
+## Runtime properties
 
 | Name | Description | Read Only | Type | Observations |
 | ------ | ------------- | ---------- | ------- | -------------- |
