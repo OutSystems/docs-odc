@@ -9,6 +9,8 @@ content-type:
 audience:
   - Developer
   - Platform administrator
+coverage-type:
+  - remember
 figma:
 api-render: true
 tags: asset management, rest api, api documentation, backend development, outsystems

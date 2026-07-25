@@ -9,6 +9,8 @@ content-type:
 audience:
   - Developer
   - Platform administrator
+coverage-type:
+  - remember
 figma:
 api-render: true
 tags: build operations api, rest api, endpoint details, backend development, full stack development

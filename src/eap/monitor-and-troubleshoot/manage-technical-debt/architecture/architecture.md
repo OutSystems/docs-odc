@@ -4,6 +4,7 @@ locale: en-us
 summary: OutSystems Developer Cloud (ODC) code analysis patterns for architecture issues.
 figma:
 coverage-type:
+  - understand
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc

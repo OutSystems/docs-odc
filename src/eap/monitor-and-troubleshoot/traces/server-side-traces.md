@@ -9,6 +9,9 @@ figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troublesh
 audience:
   - Developer
   - Front-end developer
+coverage-type:
+  - understand
+  - apply
 outsystems-tools:
   - odc studio
   - odc portal
