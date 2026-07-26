@@ -9,6 +9,8 @@ content-type:
 audience:
   - Developer
   - Platform administrator
+coverage-type:
+  - remember
 figma:
 api-render: true
 tags: user management api, access control, rest api, odc platform, api documentation

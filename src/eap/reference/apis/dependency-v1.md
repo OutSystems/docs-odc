@@ -9,6 +9,8 @@ content-type:
 audience:
   - Developer
   - Platform administrator
+coverage-type:
+  - remember
 figma:
 api-render: true
 tags: dependency management, rest api, backend development, odc portal, api reference

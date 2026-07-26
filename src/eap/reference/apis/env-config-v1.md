@@ -9,6 +9,8 @@ content-type:
 audience:
   - Developer
   - Platform administrator
+coverage-type:
+  - remember
 figma:
 api-render: true
 tags: environment configurations api, rest api reference, identity service api, odc environment settings, api specification

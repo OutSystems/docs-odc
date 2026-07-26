@@ -9,6 +9,8 @@ tags: api, external library management, mobile apps, reactive web apps, high-cod
 audience:
   - Developer
   - Front-end developer
+coverage-type:
+  - remember
 outsystems-tools:
   - odc studio
   - odc portal
