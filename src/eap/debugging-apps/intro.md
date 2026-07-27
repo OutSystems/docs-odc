@@ -1,6 +1,11 @@
 ---
 summary: Debug and troubleshoot apps in OutSystems Developer Cloud (ODC) using breakpoints, step-by-step execution, and runtime value inspection.
-tags: debugging techniques, application lifecycle management, cloud environments, software development, ide usage
+tags:
+  - Android
+  - Debugging
+  - iOS
+  - Mobile app
+  - Troubleshooting
 locale: en-us
 guid: bd64bfb4-afcf-4eb8-b87a-1923fd19524c
 app_type: mobile apps, reactive web apps
@@ -16,6 +21,7 @@ coverage-type:
   - apply
 topic:
   - debug-troubleshoot-app-logic
+isautopublish: true
 ---
 
 # Debugging apps
@@ -44,9 +50,9 @@ To debug your app, do the following in ODC Studio:
 
 1. Do some tasks in the app, up to a point when the execution runs into a breakpoint and suspends.
 
-1. When you switch to the ODC Studio window, the flow containing the element with the breakpoint shows on the canvas. ODC Studio selects the element with the breakpoint and marks is with the ![Icon indicating an active debug request on an element within ODC Studio](images/overlay-active-request.png "Debug Icon") debug icon.
+1. When you switch to the ODC Studio window, the flow containing the element with the breakpoint shows on the canvas. ODC Studio selects the element with the breakpoint and marks is with the ![Icon indicating an active debug request on an element within ODC Studio](images/overlay-active-request.png "Active Debug Request Icon") debug icon.
 
-1. The execution context shows in the **Threads** tab of the **Debugger** tab, marked with the ![Icon indicating an active debug request on an element within ODC Studio](images/overlay-active-request.png "Debug Icon") current thread icon, showing the current execution stack of the app elements. The **Debugger** tab also shows additional information you can explore.
+1. The execution context shows in the **Threads** tab of the **Debugger** tab, marked with the ![Icon indicating an active debug request on an element within ODC Studio](images/overlay-active-request.png "Active Debug Request Icon") current thread icon, showing the current execution stack of the app elements. The **Debugger** tab also shows additional information you can explore.
 
 1. After analyzing the runtime values at that execution point, you can continue running the app by:
 
@@ -57,6 +63,8 @@ To debug your app, do the following in ODC Studio:
 ## Mobile debugging scenarios {#mobile-debugging-scenarios}
 
 There are different ways of debugging a mobile app that help you discover, understand, and fix issues. You can debug your mobile app in one of the following ways:
+
+For recommendations on choosing the right tool for each testing and debugging scenario, refer to [Best practices for testing and debugging mobile apps](../building-apps/mobile/best-practices/best-practices-testing-debugging.md).
 
 ### Emulate the mobile app using the Google Chrome browser in your PC
 
@@ -113,5 +121,6 @@ When debugging an app and checking the values of the Date Time data type, keep i
 For more information about debugging, refer to the following resources:
 
 * [Inspect network traffic](inspect-network-traffic.md)
+* [Best practices for testing and debugging mobile apps](../building-apps/mobile/best-practices/best-practices-testing-debugging.md)
 * [Debug agentic apps](../building-apps/build-ai-powered-apps/debug-agentic-apps.md)
 * [Debugging in OutSystems](https://learn.outsystems.com/training/journeys/debugging-639) online course

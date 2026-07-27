@@ -1,6 +1,11 @@
 ---
-summary: Explore common issues and solutions for mobile app debugging with OutSystems Developer Cloud (ODC) in this technical guide.
-tags: mobile app debugging, connectivity issues, port configuration, android debugging, ios debugging
+summary: "OutSystems Developer Cloud (ODC) debugger connection issues: resolve Android ADB errors, iOS Web Inspector, device trust, and local port conflicts."
+tags:
+  - Android
+  - Debugging
+  - iOS
+  - Mobile app
+  - Troubleshooting
 locale: en-us
 guid: e482b9b0-c2f0-4636-8a9f-97aac1755ba6
 app_type: mobile apps
@@ -14,6 +19,7 @@ coverage-type:
   - unblock
 topic:
   - debug-troubleshoot-app-logic
+isautopublish: true
 ---
 
 # Troubleshoot debugger connection
@@ -27,6 +33,8 @@ Applies only to Mobile Apps.
 When trying to debug a mobile application using Google Chrome or a real device some issues can arise, like a firewall blocking local ports or a device not being discovered by ODC Studio.
 
 Below you can find a list of the most common problems that you may find when you are starting a mobile app debug session, and suggestions for fixing them.
+
+For general recommendations on testing and debugging mobile apps, refer to [Best practices for testing and debugging mobile apps](../building-apps/mobile/best-practices/best-practices-testing-debugging.md).
 
 ## Issues related with unavailable local ports
 
@@ -210,3 +218,4 @@ For more information about debugging, refer to the following resources:
 
 * [Debugging apps](intro.md)
 * [Inspect network traffic](inspect-network-traffic.md)
+* [Best practices for testing and debugging mobile apps](../building-apps/mobile/best-practices/best-practices-testing-debugging.md)

@@ -5,7 +5,6 @@ tags:
   - Capacitor
   - Cordova
   - iOS
-  - Logging
   - Mobile app
 locale: en-us
 guid: 4e816fa7-fffc-48c4-b205-13f7165d3775
@@ -44,6 +43,8 @@ Here's the overall process to make your app available to your users:
 1. Create your production mobile package.
 
 1. Distribute your app by submitting it as a package to an app store or sharing it internally for a direct download.
+
+For recommendations on testing and debugging your app throughout this process, refer to [Best practices for testing and debugging mobile apps](best-practices/best-practices-testing-debugging.md).
 
 <div class="warning" markdown="1">
 

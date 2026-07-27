@@ -1,6 +1,11 @@
 ---
-summary: Inspect network traffic in mobile and web apps using Chrome Developer Tools, Safari, and network proxy tools to debug and troubleshoot network requests.
-tags: debugging techniques, network inspection, chrome developer tools, mobile app debugging, network throttling
+summary: OutSystems Developer Cloud (ODC) network traffic inspection for mobile apps using Chrome DevTools, Safari, and proxy tools like HTTP Toolkit and Charles.
+tags:
+  - Android
+  - Debugging
+  - iOS
+  - Mobile app
+  - Troubleshooting
 guid: e77ce8d1-1b9e-53ce-a359-d7ed9e8ae53b
 locale: en-us
 app_type: mobile apps
@@ -15,6 +20,7 @@ coverage-type:
   - apply
 topic:
   - debug-troubleshoot-app-logic
+isautopublish: true
 ---
 
 # Inspect network traffic
@@ -45,6 +51,8 @@ To inspect network traffic in your apps, you can use the following options:
 
 Use network condition simulation to investigate bugs that occur only intermittently or under poor network conditions. Chrome Developer Tools allow you to simulate slow networks, while a tool like Charles also allows you to simulate an unreliable network (dropping packets).
 
+For recommendations on testing your mobile app under real-world network conditions, refer to [Best practices for testing and debugging mobile apps](../building-apps/mobile/best-practices/best-practices-testing-debugging.md#network-conditions).
+
 ### Using Chrome DevTools
 
 When inspecting an Android mobile app using the Chrome DevTools:
@@ -69,3 +77,4 @@ For more information about debugging, refer to the following resources:
 * [Debugging apps](intro.md)
 * [Set breakpoints](breakpoints.md)
 * [Debugger UI reference](debugger-ui-reference.md)
+* [Best practices for testing and debugging mobile apps](../building-apps/mobile/best-practices/best-practices-testing-debugging.md)

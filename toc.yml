@@ -503,7 +503,9 @@
          # Progressive web app
         - href: eap/building-apps/mobile/pwa.md
         - href: eap/building-apps/mobile/privacy-updates-for-apple-app-store-submissions.md
+        # Best practices
         - href: eap/building-apps/mobile/best-practices/best-practices-native-plugins.md
+        - href: eap/building-apps/mobile/best-practices/best-practices-testing-debugging.md        
         # Best practices
         - href: eap/building-apps/mobile/best-practices/best-practices-security.md
 

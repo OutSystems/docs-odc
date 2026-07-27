@@ -44,6 +44,8 @@ In a multi-portfolio organization, monitoring and logs are scoped per portfolio.
 
 Apps have associated logs. Logs are either automatically generated (a log generated when a timer fails to execute, for example) or triggered by app logic built by a developer (an [exception](../building-apps/handling-exceptions/handle-exceptions.md#exception-logs) triggered by the failure of an end-user to provide a required input, for example). Developers can also use the LogMessage system action.
 
+For recommendations on using LogMessage to diagnose production issues in mobile apps, refer to [Best practices for testing and debugging mobile apps](../building-apps/mobile/best-practices/best-practices-testing-debugging.md#client-side-logging).
+
 Each log has a level of severity: **Error**, **Warning**, and **Information**.
 
 ![Logs screen showing error logs from the development stage with filter options.](images/logs-screen-pl.png "Logs Screen")
@@ -107,6 +109,7 @@ You can access logs, traces, and metrics data up to four weeks old within the OD
 ## Related resources
 
 * [Streaming observability data](../monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md)
+* [Best practices for testing and debugging mobile apps](../building-apps/mobile/best-practices/best-practices-testing-debugging.md)
 * [Monitor assets with ODC Analytics](app-health.md)
 * [Manage technical debt in ODC](../monitor-and-troubleshoot/manage-technical-debt/managing-tech-debt.md)
 * [Traces](../monitor-and-troubleshoot/traces/intro.md)
