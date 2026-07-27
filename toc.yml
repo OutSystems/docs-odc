@@ -34,6 +34,7 @@
         - href: eap/agentic-development/mentor-studio/prompts.md
         - href: eap/agentic-development/mentor-studio/capabilities.md
     # Concepts
+    - href: eap/agentic-development/odc-ai-and-platform.md
     - href: eap/agentic-development/effective-prompts.md
     - href: eap/agentic-development/thinking-with-ai.md
     - href: eap/agentic-development/architecture.md

@@ -1,13 +1,13 @@
 ---
-summary: Agentic development in OutSystems Developer Cloud (ODC) shifts app creation from UI configuration to describing intent in natural language prompts.
+summary: Thinking with AI in OutSystems Developer Cloud (ODC) adds a natural-language layer on top of visual development. Describe intent, partner with Mentor, and iterate.
 tags:
   - Agentic
   - AI
   - Data Model
+  - Entities
   - Mentor
   - Mentor Studio
   - Mentor Web
-  - Roles
 guid: f3c8d2a1-7e4b-4d9c-8f2a-9b5c6e3d1a0f
 locale: en-us
 app_type: reactive web apps
@@ -30,56 +30,46 @@ isautopublish: true
 
 # Thinking with AI
 
-Agentic development requires a different mindset than traditional development tools. Instead of navigating menus and clicking through configuration screens, you describe requirements in natural language while ODC generates the structure. This shift from explicit control to describing intent in natural language changes the approach to app creation.
+Agentic development adds a layer on top of the development skills you already use. Instead of configuring each entity, screen, and property by hand, you describe requirements in natural language and ODC generates the structure. The model you work with stays the same: entities, screens, aggregates, and logic on the OutSystems Model. What changes is the interface to it, from direct configuration to describing intent and reviewing the result. For what the platform guarantees and what you validate in this workflow, refer to [Platform guarantees and AI interpretation](odc-ai-and-platform.md).
 
-## Understand the fundamental shift
+## Understand the shift
 
-Traditional development tools provide direct control through menus, forms, and drag-and-drop interfaces. Buttons add entities, widgets are dragged onto screens, and each property is configured explicitly. Agentic development inverts this model by describing intent while the AI handles implementation.
+ODC Studio gives you direct control over the app model. You add entities, drag widgets onto screens, set each property explicitly, and drop to custom code or integrations when you need them. Agentic development adds a layer above that control: you describe intent, and the AI proposes the implementation on the same model, which you then review.
 
-You describe intent, "Create a customer management app with contact details and role-based access," and ODC interprets that description to generate the structure. Large Language Models power this capability by understanding natural language and mapping requirements to OutSystems development patterns.
+You describe intent, "Create a customer management app with contact details and role-based access," and ODC interprets that description to generate the structure. Large Language Models provide this capability. They map natural-language requirements to OutSystems development patterns.
 
-This shift changes what you need to know:
+This shift adds to how you work:
 
 * **Your role**: articulate requirements clearly and understand recognized patterns.
 * **ODC's role**: interpret intent, apply patterns, and generate app structures.
 
-ODC functions as a partner that interprets and builds, rather than a canvas for direct control.
+ODC interprets your intent and builds the structure, alongside the visual editor you use for direct control.
 
-![Screenshot showing AI-suggested data model entities and roles in an app overview.](images/ai-mentor-suggest-data-model-pl.png "Adding new AI-suggested entity")
+![Screenshot showing AI-suggested data model entities and roles in an app overview.](images/ai-mentor-suggest-data-model-pl.png "AI-Suggested Data Model Entities and Roles")
 
 ## How agentic development works
 
-Agentic development functions as a specialized translator between natural language and the OutSystems app model. When given a prompt or requirement document, the AI identifies patterns, entities, relationships, user roles, UI layouts, and translates them into the OutSystems Model (the app model, not an AI model). Understanding how this translation works enables writing more effective prompts.
+Agentic development translates your natural language into the OutSystems Model. When you give a prompt or requirement document, the AI identifies patterns, entities, relationships, roles, and UI layouts, and expresses them in the model. It matches your input to recognized patterns, so descriptions that specify entities, roles, and relationships translate more reliably. Understanding this translation helps you write more effective prompts.
 
-The app model is a high-level abstraction representing an app's structure, data, logic, and UI. Agentic development works at this level rather than with raw code, apart from elements that hold code by nature, such as CSS or JavaScript. After you generate or modify the app model, the OutSystems compiler translates it into actual app code following OutSystems standards for security, performance, and architecture.
+The platform applies the same compiler and standards to this output as to any app, and you validate the interpretation. For the guarantees the platform provides and the interpretation you validate, refer to [Platform guarantees and AI interpretation](odc-ai-and-platform.md). For the components behind the translation, refer to [Architecture](architecture.md).
 
-The AI agents interpret input by matching it to recognized patterns. Descriptions that specify entities, roles, and relationships translate more reliably into generated structures.
-
-Agentic development is an accelerator, not a replacement. It handles repetitive scaffolding (creating entities, setting up screens, establishing basic authorization) so you can focus on unique requirements and complex logic that require human judgment.
+Agentic development accelerates app creation. It generates the repetitive scaffolding, such as creating entities, setting up screens, and establishing basic authorization, so you can focus on the requirements and logic that need your judgment.
 
 ## Partner with AI
 
-Effective collaboration with agentic development requires understanding what each partner contributes. You provide clear specifications and intent. ODC provides pattern application and structure generation. Success depends on effective communication.
+You and ODC each contribute to the result. You provide clear specifications and intent. ODC applies patterns and generates the structure. Clear, explicit prompts produce better results.
 
-**Be explicit.** Clear statements of requirements work best. Specify entities and attributes, define user roles and permissions, and describe UI patterns. The AI builds from what you state, so include the details a human colleague would otherwise infer.
+**Be explicit.** Clear statements of requirements work best. Specify entities and attributes, define user roles and permissions, and describe UI patterns. The AI builds only from what you state, so include the details it would otherwise have to assume.
 
-**Provide structure.** When the data model is known, define it up front. Specify entity relationships explicitly, "Customer has many Orders (One-to-Many), Order has many Products (Many-to-Many)." Include static entities for status or category fields. More structure in the prompt enables more accurate generation.
+**Provide structure.** When the data model is known, define it up front. Specify entity relationships explicitly, "Customer has many Orders (One-to-Many), Order has many Products (Many-to-Many)." Include static entities for status or category fields. More structure in the prompt produces more accurate generation.
 
 **Iterate incrementally.** Start with a foundation and refine through focused prompts. Make one change at a time and evaluate results before continuing. This approach works better with LLMs than attempting to specify everything perfectly up front.
 
-### Common mistakes
-
-The following table illustrates common prompting mistakes and how to fix them.
-
-| Ineffective prompt | Effective prompt | Why it works |
-| -------------------- | ----------------- | -------------- |
-| "Make a customer app" | "Create a customer management app with Customer entity (Name, Email, Phone, Company), card list view, Managers can edit all records, Sales Reps can view only" | Specifies data structure, UI pattern, and authorization rules |
-| "Make it better" | "Add email validation to the Contact form and change the list to a card layout" | States a concrete goal with specific elements |
-| "Add some security" | "Create Admin and Viewer roles. Admins can edit all records. Viewers have read-only access" | Defines roles and permissions explicitly |
+For concrete prompt examples and the mistakes to avoid, refer to [Effective prompts for Mentor](effective-prompts.md).
 
 ## Adopt an iteration mindset
 
-Working with AI follows a generate-review-refine cycle. LLMs interpret patterns probabilistically, meaning some variation in output is inherent to how they work. Refinement is part of the workflow, not a sign of failure. Plan for iteration from the start.
+Working with AI follows a generate-review-refine cycle. LLMs interpret patterns probabilistically, so some variation in output is expected. Refinement is a standard step in the workflow. Plan for iteration from the start.
 
 The iteration cycle follows three steps:
 
@@ -87,21 +77,21 @@ The iteration cycle follows three steps:
 * **Review what Mentor generated.** Check whether entities, relationships, and layouts match the intent.
 * **Refine incrementally.** Use focused prompts to adjust one aspect at a time: add an attribute, modify a role, change a layout.
 
-Agentic development provides immediate visual feedback with sample data for evaluating each change before moving forward. This rapid iteration enables shaping the app toward requirements without writing code or navigating complex configuration screens.
+Agentic development provides immediate visual feedback with sample data, so you evaluate each change before continuing. Through this rapid iteration, you refine the app toward its requirements without writing code or configuring screens by hand.
 
-Agentic development excels at structural changes: entities, data models, roles, standard UI patterns. You build advanced logic, complex aggregates, and external integrations in ODC Studio, with Mentor Studio or manual development. For a breakdown of when to transition, refer to [When to use each tool](intro.md#when-to-use-each-tool).
+Use agentic development for structural changes such as entities, data models, roles, and standard UI patterns. Build advanced logic, complex aggregates, and external integrations in ODC Studio, with Mentor Studio or manual development. For a breakdown of when to transition, refer to [When to use each tool](intro.md#when-to-use-each-tool).
 
 ## Match oversight to impact
 
 The effort you spend reviewing a change scales with its complexity and reach.
 
-A contained change, such as adding an attribute, affects a single element and is straightforward to verify after Mentor Studio applies it. A change that spans multiple elements, dependencies, or workflows affects more of the app, and an incorrect assumption propagates further. For changes of this kind, the Mentor tools present their intended work for review before applying it: the blueprint in Mentor Web, and proposed changes in Mentor Studio. Reviewing and accepting a proposal before Mentor applies it keeps the change supervised and verifiable.
+A contained change, such as adding an attribute, affects a single element, and you verify it directly after Mentor Studio applies it. A change that spans multiple elements, dependencies, or workflows affects more of the app, and an incorrect assumption propagates further. For changes of this kind, the Mentor tools present their intended work for review before applying it: the blueprint in Mentor Web, and proposed changes in Mentor Studio. Reviewing and accepting a proposal before Mentor applies it keeps the change supervised and verifiable.
 
-For how this works when modifying apps, refer to [AI development in Mentor Studio](mentor-studio/how-it-works.md).
+For the specific checks your development judgment maps to when you review a proposal, refer to [Review checks](odc-ai-and-platform.md#review-checks). For how this works when modifying apps, refer to [AI development in Mentor Studio](mentor-studio/how-it-works.md).
 
 ## Related resources
 
-This article covers the conceptual shift to prompt-based development. The following resources put these concepts into practice with specific prompt techniques, tool workflows, and architecture details.
+This article covers the mindset for prompt-based development. The following resources cover the prompt techniques, tool workflows, and architecture in detail.
 
 * For prompt strategies that improve AI responses across all Mentor tools, refer to [Effective prompts for Mentor](effective-prompts.md).
 * For the technical architecture behind agentic development, including AI agents and the OutSystems Model, refer to [Architecture](architecture.md).

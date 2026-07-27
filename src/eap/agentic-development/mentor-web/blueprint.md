@@ -3,10 +3,10 @@ summary: Mentor Web blueprint in OutSystems Developer Cloud (ODC) shows AI-inter
 tags:
   - Agentic
   - AI
-  - Data Model
   - Entities
   - Mentor
   - Mentor Web
+  - Roles
   - Screens
 guid: ba4f9725-3ca4-4644-8e69-742b0ee7068d
 locale: en-us
@@ -71,6 +71,8 @@ The picker is a UI shortcut. You can still set or change the theme through promp
 ## Resolve interpretation differences
 
 When the blueprint differs from intent, adjust it through prompts before generating. Common adjustments include adding entities the AI did not infer, changing data types, correcting relationship direction, or adding roles. Addressing differences at this stage takes less effort than fixing a generated app.
+
+For the checks that tell you whether the interpretation is right, such as verifying the data model and relationship cardinality, refer to [Review checks](../odc-ai-and-platform.md#review-checks).
 
 For complex apps, use a [requirement document](requirements-doc.md) instead of a prompt. Structured documents with explicit entity definitions produce more precise blueprints than natural language prompts alone.
 

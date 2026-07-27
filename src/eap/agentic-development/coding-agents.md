@@ -48,7 +48,7 @@ The coding agents work through a loop of four steps: gather context, plan, act, 
 1. **Gather context.** The agents read the OutSystems Model of the asset you're working on. They also read its logic, data model, dependencies, and integrations. This is part of the Enterprise Context Graph, which includes public elements from other assets in your tenant. For the components involved, refer to [Architecture](architecture.md).
 1. **Plan.** The agents interpret your intent and decide how to proceed. For a complex change, Mentor proposes a plan for you to review before it does the work. For a straightforward change, it proceeds directly.
 1. **Act.** The agents apply the changes to the model and show you what changed.
-1. **Verify.** You review what changed, and the OutSystems compiler enforces the same standards applied to every OutSystems asset when it's published.
+1. **Verify.** You review what changed, and the OutSystems compiler enforces the same standards applied to every OutSystems asset when it's published. For the checks your development judgment maps to when you review, refer to [Review checks](odc-ai-and-platform.md#review-checks).
 
 ## The model the agents work on
 
