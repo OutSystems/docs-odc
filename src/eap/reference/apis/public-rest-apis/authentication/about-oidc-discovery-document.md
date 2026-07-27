@@ -10,6 +10,9 @@ content-type:
   - conceptual
 audience:
   - Developer
+coverage-type:
+  - remember
+  - understand
 platform-version: odc
 figma:
 ---

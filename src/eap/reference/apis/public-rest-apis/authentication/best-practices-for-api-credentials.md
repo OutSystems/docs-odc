@@ -10,6 +10,8 @@ content-type:
   - best practice
 audience:
   - Developer
+coverage-type:
+  - evaluate
 platform-version: odc
 figma:
 ---

@@ -12,6 +12,8 @@ content-type:
 audience:
   - Developer
   - Platform administrator
+coverage-type:
+  - understand
 platform-version: odc
 figma:
 ---

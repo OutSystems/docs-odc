@@ -10,6 +10,8 @@ content-type:
   - procedure
 audience:
   - Developer
+coverage-type:
+  - apply
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=4711-44
 ---
