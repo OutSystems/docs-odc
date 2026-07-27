@@ -1740,7 +1740,6 @@
           {
             "name": "api-key",
             "in": "header",
-            "description": "Optional API key from header for authentication.",
             "schema": {
               "type": "string"
             }
