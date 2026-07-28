@@ -13,10 +13,11 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: code quality analysis, outsystems apis, asset revision, ai mentor system, tech debt basics
+tags: code quality analysis, outsystems apis, asset revision, code quality, tech debt basics
 outsystems-tools:
   - odc portal
 helpids:
+isautopublish: true
 ---
 # Evaluating code quality
 
@@ -27,8 +28,8 @@ OutSystems provides built-in [code quality analysis](https://www.outsystems.com/
 Before using [APIs](../../code-quality-api-v1.md) to retrieve the code quality analysis, ensure that you have:
 
 * [Generated an access token](../authentication/get-access-token.md) from an API client with these [permissions](../authentication/create-api-client.md#edit-permissions-of-api-client):  
-    * AI Mentor System > View Code Quality findings  
-    * AI Mentor System > Manage Code Quality findings (if you need to trigger a new analysis)  
+    * View code quality findings  
+    * Manage code quality findings (if you need to trigger a new analysis)  
 * The [key of the asset](select-revision-build.md#prerequisites) to be deployed
 * The [revision number](select-revision-build.md#select) you want to release
 

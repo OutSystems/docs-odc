@@ -1,6 +1,6 @@
 ---
-summary: Manage code quality and technical debt using OutSystems Developer Cloud (ODC) with AI Mentor System, prioritizing improvements and helping team development.
-tags: code quality, technical debt, best practices, security risks, ai mentor system
+summary: Manage code quality and technical debt using OutSystems Developer Cloud (ODC), prioritizing improvements and helping team development.
+tags: code quality, technical debt, best practices, security risks
 guid: 710897dc-5c3f-46af-a2a2-24f0bf6adb8a
 locale: en-us
 app_type: mobile apps, reactive web apps
@@ -14,6 +14,7 @@ outsystems-tools:
   - none
 topic:
   - manage-tech-debt
+isautopublish: true
 ---
 # Getting started with Code quality as a technical lead
 
