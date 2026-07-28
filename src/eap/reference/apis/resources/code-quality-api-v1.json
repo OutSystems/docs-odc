@@ -325,7 +325,7 @@
           {
             "name": "Since",
             "in": "query",
-            "description": "Start date for filtering findings by discovery time.",
+            "description": "Start date for filtering findings by discovery time. Default: if omitted, 14 days before `To` (or 14 days before now, if `To` is also omitted).",
             "schema": {
               "type": "string",
               "example": "2022-06-01T00:00:00"
@@ -335,7 +335,7 @@
           {
             "name": "To",
             "in": "query",
-            "description": "End date for filtering findings by discovery time.",
+            "description": "End date for filtering findings by discovery time. Default: if omitted, now (current UTC time).",
             "schema": {
               "type": "string",
               "example": "2022-12-31T23:59:59"
@@ -526,7 +526,7 @@
           {
             "name": "Since",
             "in": "query",
-            "description": "Start date for filtering findings by discovery time.",
+            "description": "Start date for filtering findings by discovery time. Default: if omitted, 14 days before `To` (or 14 days before now, if `To` is also omitted).",
             "schema": {
               "type": "string",
               "example": "2022-06-01T00:00:00"
@@ -536,7 +536,7 @@
           {
             "name": "To",
             "in": "query",
-            "description": "End date for filtering findings by discovery time.",
+            "description": "End date for filtering findings by discovery time. Default: if omitted, now (current UTC time).",
             "schema": {
               "type": "string",
               "example": "2022-12-31T23:59:59"
@@ -813,7 +813,7 @@
           {
             "name": "Since",
             "in": "query",
-            "description": "Start date for filtering findings by discovery time.",
+            "description": "Start date for filtering findings by discovery time. Default: if omitted, 14 days before `To` (or 14 days before now, if `To` is also omitted).",
             "schema": {
               "type": "string",
               "example": "2022-06-01T00:00:00"
@@ -823,7 +823,7 @@
           {
             "name": "To",
             "in": "query",
-            "description": "End date for filtering findings by discovery time.",
+            "description": "End date for filtering findings by discovery time. Default: if omitted, now (current UTC time).",
             "schema": {
               "type": "string",
               "example": "2022-12-31T23:59:59"
@@ -1003,7 +1003,7 @@
           {
             "name": "Since",
             "in": "query",
-            "description": "Start date for filtering findings by discovery time.",
+            "description": "Start date for filtering findings by discovery time. Default: if omitted, 14 days before `To` (or 14 days before now, if `To` is also omitted).",
             "schema": {
               "type": "string",
               "example": "2022-06-01T00:00:00"
@@ -1013,7 +1013,7 @@
           {
             "name": "To",
             "in": "query",
-            "description": "End date for filtering findings by discovery time.",
+            "description": "End date for filtering findings by discovery time. Default: if omitted, now (current UTC time).",
             "schema": {
               "type": "string",
               "example": "2022-12-31T23:59:59"
