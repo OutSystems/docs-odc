@@ -21,7 +21,7 @@ outsystems-tools:
   - odc portal
 isautopublish: true
 ---
-# Portfolio API v1
+# Portfolio API v1 - deprecated
 
 <style>
 #b3-b4-b1-InjectHTMLWrapper {height: auto!important}
