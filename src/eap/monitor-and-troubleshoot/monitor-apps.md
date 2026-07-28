@@ -1,6 +1,7 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offers comprehensive tools for monitoring and troubleshooting applications through logs and traces within its portal.
 tags:
+  - Debugging
   - Logging
   - Monitoring
   - Performance
@@ -42,7 +43,7 @@ In a multi-portfolio organization, monitoring and logs are scoped per portfolio.
 
 ## Logs
 
-Apps have associated logs. Logs are either automatically generated (a log generated when a timer fails to execute, for example) or triggered by app logic built by a developer (an [exception](../building-apps/handling-exceptions/handle-exceptions.md#exception-logs) triggered by the failure of an end-user to provide a required input, for example). Developers can also use the LogMessage system action.
+Apps have associated logs. ODC automatically generates some logs, for example when a timer fails to execute. App logic built by a developer triggers other logs, for example an [exception](../building-apps/handling-exceptions/handle-exceptions.md#exception-logs) triggered by the failure of an end-user to provide a required input. Developers can also use the LogMessage system action.
 
 For recommendations on using LogMessage to diagnose production issues in mobile apps, refer to [Best practices for testing and debugging mobile apps](../building-apps/mobile/best-practices/best-practices-testing-debugging.md#client-side-logging).
 
@@ -50,7 +51,7 @@ Each log has a level of severity: **Error**, **Warning**, and **Information**.
 
 ![Logs screen showing error logs from the development stage with filter options.](images/logs-screen-pl.png "Logs Screen")
 
-By default, when you open the **Logs** screen you see error logs from the development stage ordered by time in descending order. Use the filter inputs to filter logs by stage, asset (app or agent), severity, date/time, user, and message. You can filter logs by date back up to four weeks in an interval of up to two weeks.
+By default, when you open the **Logs** screen you see error logs from the development stage ordered by time in descending order. Use the filter inputs to filter logs by stage, asset (app or agent), severity, date/time, user, and message. You can filter logs by date back up to four weeks.
 
 <div class="info" markdown="1">
 
@@ -82,7 +83,7 @@ By default, when you open the **Traces** screen, you see traces from the develop
 
 ![Traces screen showing traces from the development stage with filter options.](images/traces-screen-pl.png "Traces Screen")
 
-Use the filter inputs to filter traces by stage, asset (app or agent), element type, trace status, total duration, date/time, and user. You can filter traces by date back up to four weeks in an interval of up to two weeks. When you filter by an agent, you see traces where that agent is the origin of the trace, meaning flows triggered by an Event Handler, a Timer, or a REST Expose. Traces where the agent runs as a span inside another app's trace aren't returned by the agent filter.
+Use the filter inputs to filter traces by stage, asset (app or agent), element type, trace status, total duration, date/time, and user. You can filter traces by date back up to four weeks. When you filter by an agent, you see traces where that agent is the origin of the trace. This means flows triggered by an Event Handler, a Timer, or a REST Expose. Traces where the agent runs as a span inside another app's trace aren't returned by the agent filter.
 
 When you click the embedded link of a trace's date/time, you open the detail page for that unique trace. On the left side of the screen you see each span of the trace in order of execution alongside its duration. A red circle with X next to a span indicates an error. If any span of a trace has an error then the status of the trace is **Error**. Otherwise the trace status is **OK**.
 
