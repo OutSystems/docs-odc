@@ -11,6 +11,8 @@ figma:
 audience:
   - Front-end developer
   - Business analyst
+coverage-type:
+  - remember
 outsystems-tools:
   - odc studio
 ---

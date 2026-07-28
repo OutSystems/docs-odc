@@ -10,6 +10,8 @@ content-type:
 figma:
 audience:
   - Developer
+coverage-type:
+  - remember
 outsystems-tools:
   - odc studio
 ---

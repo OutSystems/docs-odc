@@ -13,6 +13,10 @@ content-type:
   - procedure
 audience:
   - Developer
+coverage-type:
+  - remember
+  - understand
+  - apply
 ---
 
 # Page through lists of resources

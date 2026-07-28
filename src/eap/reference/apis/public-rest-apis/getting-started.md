@@ -10,6 +10,8 @@ content-type:
   - process
 audience:
   - Developer
+coverage-type:
+  - apply
 platform-version: odc
 figma:
 ---

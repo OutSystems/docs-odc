@@ -11,6 +11,10 @@ content-type:
 audience:
   - Platform administrator
   - Developer
+coverage-type:
+  - remember
+  - understand
+  - apply
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=3492-39
 ---
