@@ -546,13 +546,12 @@
           {
             "name": "ScoreRanges",
             "in": "query",
-            "description": "Filter by quality score ranges.",
+            "description": "Filter by quality score ranges. Default: includes all scores.",
             "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
+              "type": "string",
+              "example": "0-49,50-84,85-100"
+            },
+            "example": "\"0-49,50-84,85-100\""
           },
           {
             "name": "Limit",
@@ -833,13 +832,12 @@
           {
             "name": "ScoreRanges",
             "in": "query",
-            "description": "Filter by quality score ranges.",
+            "description": "Filter by quality score ranges. Default: includes all scores.",
             "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
+              "type": "string",
+              "example": "0-49,50-84,85-100"
+            },
+            "example": "\"0-49,50-84,85-100\""
           },
           {
             "name": "Limit",
@@ -958,17 +956,6 @@
             }
           },
           {
-            "name": "Scores",
-            "in": "query",
-            "description": "Filter by quality score ranges.",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
             "name": "AssetType",
             "in": "query",
             "description": "Filter by asset type.",
@@ -1019,6 +1006,16 @@
               "example": "2022-12-31T23:59:59"
             },
             "example": "2022-12-31T23:59:59"
+          },
+          {
+            "name": "ScoreRanges",
+            "in": "query",
+            "description": "Filter by quality score ranges. Default: includes all scores.",
+            "schema": {
+              "type": "string",
+              "example": "0-49,50-84,85-100"
+            },
+            "example": "\"0-49,50-84,85-100\""
           },
           {
             "name": "Limit",
