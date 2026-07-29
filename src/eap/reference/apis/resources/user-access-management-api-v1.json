@@ -1736,13 +1736,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "api-key",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1864,6 +1857,16 @@
           },
           "403": {
             "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
             "content": {
               "application/json": {
                 "schema": {
@@ -2240,6 +2243,16 @@
           },
           "404": {
             "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
             "content": {
               "application/json": {
                 "schema": {
@@ -6311,13 +6324,16 @@
   ],
   "tags": [
     {
+      "name": "private"
+    },
+    {
+      "name": "action-tokens"
+    },
+    {
       "name": "public"
     },
     {
       "name": "application-roles"
-    },
-    {
-      "name": "private"
     },
     {
       "name": "bcdr"
