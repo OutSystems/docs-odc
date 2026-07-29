@@ -1053,7 +1053,7 @@
                 "$ref": "#/components/schemas/MessageDetailsV1"
               }
             ],
-            "description": "Message detailed info.",
+            "description": "optional message details",
             "nullable": true
           }
         },
