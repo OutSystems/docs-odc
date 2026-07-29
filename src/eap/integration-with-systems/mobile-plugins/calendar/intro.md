@@ -1,6 +1,6 @@
 ---
-summary: Learn how to integrate contact access in your applications using the Calendar Plugin in OutSystems Developer Cloud (ODC).
-tags: calendar, contacts, plugin installation, error handling
+summary: OutSystems Developer Cloud (ODC) Calendar Plugin gives mobile apps access to device calendars to create, delete, find, and open events.
+tags: Capacitor, Cordova, Events, iOS, Mobile app, Plugins
 locale: en-us
 guid: 875e24dc-0128-413d-99fe-28347f52d210
 app_type: mobile apps
@@ -10,14 +10,18 @@ audience:
   - Front-end developer
 platform-version: odc
 coverage-type:
-  - none
+  - remember
+  - apply
 outsystems-tools:
   - odc studio
+isautopublish: true
 ---
 
 # Calendar plugin
 
 Use the calendar plugin to enable an app to access the calendar of a user's device.
+
+The Calendar plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check [cordova-outsystems-calendar](https://github.com/ionic-team/cordova-outsystems-calendar) and [capacitor-calendar](https://github.com/ionic-team/capacitor-calendar).
 
 <div class="info" markdown="1">
 
@@ -127,7 +131,7 @@ The following actions help you handle errors. Use these actions with **If** node
 
 ## Actions
 
-The following actions are available in the plugin. For more information, see [Calendar-PhoneGap-Plugin](https://github.com/OutSystems/Calendar-PhoneGap-Plugin/tree/outsystems).
+The following actions are available in the plugin. For more information, see [cordova-outsystems-calendar](https://github.com/ionic-team/cordova-outsystems-calendar) and [capacitor-calendar](https://github.com/ionic-team/capacitor-calendar).
 
 | Action                 | Description                                                                                 |
 | :--------------------- | :------------------------------------------------------------------------------------------ |
@@ -146,4 +150,5 @@ The table shows the compatibility of the Calendar Plugin with the Mobile Apps Bu
 
 | Plugin version  | Compatible with MABS version | Notes |
 | :-------------- | :--------------------------- | :---- |
+| 2.0.0 and later | MABS 11.2 and later.         |       |
 | 1.0.2 and later | MABS 11.0 and later.         |       |
