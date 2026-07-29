@@ -1,6 +1,11 @@
 ---
 summary: Learn how to integrate contact access in your applications using the Contacts Plugin in OutSystems Developer Cloud (ODC).
-tags: contacts, plugin installation, error handling
+tags:
+  - Capacitor
+  - Cordova
+  - iOS
+  - Mobile app
+  - Plugins
 locale: en-us
 guid: ba8514ce-511f-49b7-a432-1d2480091c3d
 platform-version: odc
@@ -17,11 +22,14 @@ coverage-type:
 topic:
   - using-cordova-plugins
   - using-capacitor-plugins
+isautopublish: true
 ---
 
 # Contacts plugin
 
 Use the contacts plugin to enable an application to access the contact list of a user's device.
+
+The Contacts plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check [cordova-outsystems-contacts](https://github.com/ionic-team/cordova-outsystems-contacts) and [capacitor-contacts](https://github.com/ionic-team/capacitor-contacts).
 
 <div class="info" markdown="1">
 
@@ -103,7 +111,9 @@ To let the user select a contact using the device's native contact picker, use t
 
 To remove a contact from the device's contact list, use the **RemoveFromContacts** action.
 
-You must provide the **Contact** input parameter. Typically, you first retrieve this contact by calling **FindContact** or **PickContact**.
+Starting on version 2.0.0 of the plugin, you can simply provide the **ContactId** input parameter. For older verisions, you must provide the **Contact** input parameter. Typically, you first retrieve this contact by calling **FindContact** or **PickContact**.
+
+If you are using version 2.0.0 or later but still wish to remove the contact by providing the full Contact object, you can use the **DEPRECATED_RemoveFromContacts** client action.
 
 ## Handling errors
 
@@ -121,7 +131,7 @@ The following actions help you handle errors. Use these actions with **If** node
 
 ## Actions
 
-The following actions are available in the plugin. For more information, see [cordova-plugin-contacts](https://github.com/OutSystems/cordova-plugin-contacts/tree/outsystems).
+The following actions are available in the plugin. For more information, see [cordova-outsystems-contacts](https://github.com/ionic-team/cordova-outsystems-contacts) and [capacitor-contacts](https://github.com/ionic-team/capacitor-contacts).
 
 | Action              | Description                                                                                 |
 | :------------------ | :------------------------------------------------------------------------------------------ |
@@ -137,4 +147,5 @@ The table shows the compatibility of the Contacts Plugin with the Mobile Apps Bu
 
 | Plugin version  | Compatible with MABS version | Notes |
 | :-------------- | :--------------------------- | :---- |
+| 2.0.0 and later | MABS 11.2 and later.         |       |
 | 1.0.3 and later | MABS 11.0 and later.         |       |
