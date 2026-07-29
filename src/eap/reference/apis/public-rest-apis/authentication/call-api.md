@@ -13,6 +13,8 @@ content-type:
   - procedure
 audience:
   - Developer
+coverage-type:
+  - apply
 platform-version: odc
 figma:
 isautopublish: true

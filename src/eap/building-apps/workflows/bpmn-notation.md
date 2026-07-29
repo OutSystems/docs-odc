@@ -13,6 +13,7 @@ audience:
   - Business analyst
   - Developer
 coverage-type:
+  - remember
 content-type:
 topic:
 ---

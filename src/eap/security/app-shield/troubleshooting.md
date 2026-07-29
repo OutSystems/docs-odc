@@ -7,6 +7,9 @@ app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
+coverage-type:
+  - remember
+  - unblock
 outsystems-tools:
   - odc studio
   - odc portal

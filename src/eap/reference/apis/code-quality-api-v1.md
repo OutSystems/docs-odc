@@ -9,6 +9,8 @@ tags: api, code quality, mobile apps, reactive web apps
 audience:
   - Developer
   - Tech lead
+coverage-type:
+  - remember
 outsystems-tools:
   - odc portal
 figma:

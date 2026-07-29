@@ -9,6 +9,8 @@ content-type:
   - conceptual
 audience:
   - Developer
+coverage-type:
+  - remember
 figma:
 outsystems-tools:
   - none
