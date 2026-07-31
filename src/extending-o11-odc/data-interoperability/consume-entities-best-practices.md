@@ -5,6 +5,7 @@ summary: 'O11 entity consumption best practices for OutSystems Developer Cloud (
 figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?node-id=2711-37
 coverage-type:
   - understand
+  - apply
   - evaluate
 topic:
 app_type: mobile apps,reactive web apps
@@ -13,9 +14,11 @@ audience:
   - Developer
   - Front-end developer
 tags:
+  - Aggregates
   - Best Practices
   - Data
   - Entities
+  - Multi-Tenant
   - Performance
   - SQL
 outsystems-tools:
@@ -41,6 +44,26 @@ Currently, when you expose a static entity from an O11 app, it becomes a regular
 <div class="info" markdown="1">
 
 **Auto-number** record identifiers (IDs) for an O11 static entity are not guaranteed to be the same across your different O11 environments. For these cases, avoid writing logic in ODC that compares with a specific hard-coded ID from an O11 static entity, as this can lead to unexpected behavior in different stages.
+
+</div>
+
+## Working with O11 multi-tenant entities {#o11-multi-tenant-entities}
+
+When you [import an O11 multi-tenant entity](configure-connection.md#import-exposed) into your ODC app, also import the **Tenant** [system entity](expose-entities.md#user-tenant). Multi-tenant entities expose a `Tenant_Id` attribute, and importing the Tenant entity lets you filter and join by tenant correctly in your business logic.
+
+Unlike O11, ODC doesn't automatically filter multi-tenant data based on the logged-in user's tenant. You must adapt your aggregates, SQL queries, and business logic in ODC Studio to filter and assign the tenant explicitly, for both read and write operations.
+
+### Reading multi-tenant data
+
+When querying a multi-tenant entity, join with the Tenant entity and filter by `Tenant_Id` or tenant name in your aggregates or SQL queries.
+
+### Writing multi-tenant data
+
+When creating or updating records in a multi-tenant entity, always assign the `Tenant_Id` field explicitly.
+
+<div class="warning" markdown="1">
+
+ODC doesn't provide safeguards, including in Advanced SQL nodes, to enforce or validate correct tenant filtering on multi-tenant data. A query or write operation that omits the tenant filter or assigns the wrong `Tenant_Id` can expose or corrupt data across tenants, so ensuring correct tenant filtering is your responsibility as the developer. This is consistent with how OutSystems handles any other external consumer of multi-tenant data.
 
 </div>
 
@@ -100,7 +123,7 @@ In aggregates, when filtering by an empty string and a single space at the same 
 
 When creating new records in runtime, the default values for **Email** and **Phone** types are being shown with quotation marks in the UI.
 
-![ODC app showing default values with quotation marks](images/consume-best-practices-default-values-sa.png "ODC app showing default values with quotation marks")
+![ODC app showing default values with quotation marks](images/consume-best-practices-default-values-sa.png "Email and Phone Default Values")
 
 #### Data mashup considerations {#oracle-mashup}
 
