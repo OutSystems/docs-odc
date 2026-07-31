@@ -44,7 +44,7 @@ You'll repeat this process for each additional stage you want to install.
 
 Before you can install a self-hosted stage, you need to provision the infrastructure that will host it. This means setting up the compute, storage, and networking resources required to run your applications reliably and securely.
 
-These components form the foundation of your self-hosted environment. Make sure your team has the necessary expertise in container orchestration and enterprise networking, and experience operating a production Kubernetes cluster (OpenShift, AKS, EKS, or GKE), including networking, storage, and RBAC, to provision and maintain this infrastructure. For complete specifications and requirements, see the [installation requirements](sh-install-reqs.md).
+These components form the foundation of your self-hosted environment. Make sure your team has the necessary expertise in container orchestration and enterprise networking, and experience operating a production Kubernetes cluster, including networking, storage, and RBAC, to provision and maintain this infrastructure. For complete specifications and requirements, see the [installation requirements](sh-install-reqs.md).
 
 ## Set up the database {#setup-db}
 

@@ -5,7 +5,6 @@ summary: OutSystems Developer Cloud (ODC) self-hosted stage installation using t
 figma: https://www.figma.com/design/la33iciyGndnV5JRqR359g/Managing-OutSystems-platform-and-apps?node-id=4675-11&t=MfYu1vKaiHm4pN3J-1
 coverage-type:
   - apply
-  - understand
 topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
@@ -13,6 +12,7 @@ audience:
   - Platform administrator
   - Tech lead
 tags:
+  - Authentication
   - Domains
   - IdP
   - Infrastructure
@@ -34,12 +34,13 @@ Review the system requirements in [System requirements to install Self-hosted OD
 
 Make sure you have:
 
-* **CLI access**: Install the CLI for your Kubernetes distribution on the machine where you run the Self-hosted configurator, then run the authentication command to set the cluster as the current context:
+* **CLI access**: Install the CLI for your Kubernetes distribution on the machine where you run the Self-hosted configurator, then run the authentication command to set the cluster as the current context. The following are common examples:
 
     * **OpenShift**: [OpenShift CLI (`oc`)](https://mirror.openshift.com/pub/openshift-v4/clients/oc/latest/). Run `oc login` to connect.
     * **AKS**: [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli). Run `az aks get-credentials` to configure cluster access.
     * **EKS**: [AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and [eksctl](https://eksctl.io). Run `aws eks update-kubeconfig` to configure cluster access.
     * **GKE**: [Google Cloud CLI](https://cloud.google.com/sdk/docs/install). Run `gcloud container clusters get-credentials` to configure cluster access.
+    * **Other distributions**: Refer to your distribution provider's documentation for CLI installation and authentication instructions.
 
 * **Auto-installed tools**: The Self-hosted configurator automatically installs the following tools during installation:
 

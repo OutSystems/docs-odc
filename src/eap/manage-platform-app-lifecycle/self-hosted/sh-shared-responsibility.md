@@ -33,7 +33,7 @@ In this model:
 
 This architecture enables customers to meet regulatory, integration, and operational requirements while continuing to benefit from OutSystems’ managed platform updates and support. At the same time, it introduces a clear operational boundary: **OutSystems manages the platform; customers manage the runtime infrastructure**.
 
-Self-hosted ODC stages can run on OpenShift, AKS, EKS, or GKE. This document covers the shared responsibility model across all supported distributions.
+Self-hosted ODC stages can run on any CNCF-conformant Kubernetes distribution. This document covers the shared responsibility model across all supported distributions.
 
 This article defines how responsibilities are split across that boundary. It's intended for:
 
@@ -120,7 +120,7 @@ To ensure a successful deployment, customers are responsible for maintaining a s
 
 Because the self-hosted stages depend on infrastructure components operated by the customer, teams must have the skills and experience to manage that environment. This includes:
 
-* Experience operating a production Kubernetes cluster (OpenShift, AKS, EKS, or GKE), including networking, storage, and RBAC.
+* Experience operating a production Kubernetes cluster, including networking, storage, and RBAC.
 * PostgreSQL database management.
 * Enterprise networking, including DNS, routing, and firewalls.
 

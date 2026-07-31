@@ -62,12 +62,12 @@ As cloud computing becomes more popular, self-hosted deployments continue to hol
 
 ## High-level system architecture {#architecture}
 
-The self-hosted deployment model allows customers to run application runtime stages on their own infrastructure, using Kubernetes clusters and PostgreSQL databases. Self-hosted ODC stages can run on OpenShift, AKS, EKS, or GKE. Customers are expected to have experience operating a production Kubernetes cluster (OpenShift, AKS, EKS, or GKE), including networking, storage, and RBAC, to manage and maintain these environments effectively. The architecture maintains a clear division of responsibilities:
+The self-hosted deployment model allows customers to run application runtime stages on their own infrastructure, using Kubernetes clusters and PostgreSQL databases. Self-hosted ODC stages can run on any CNCF-conformant Kubernetes distribution. The architecture maintains a clear division of responsibilities:
 
 * **OutSystems Cloud**: This section of the architecture is responsible for managing the **Portal**, **Platform services** (such as Identity, Deploy, Build, and other services), and the **Development runtime stage**. These components are hosted and maintained by OutSystems to ensure that the platform remains evergreen and continues to receive updates without customer intervention. OutSystems Cloud provides a stable and secure foundation for application development, allowing developers to focus on building features rather than maintaining infrastructure.
 
 * **Self-hosted infrastructure**: Customers have control over this environment, which includes managing the infrastructure, databases, and ensuring security. Hosts non-production and production runtime stages, including application data and end-user data, all of which is within the self-hosted boundary:
-    * Your organization should have experience operating a production Kubernetes cluster (OpenShift, AKS, EKS, or GKE), including networking, storage, and RBAC, to successfully manage and maintain these stages.
+    * Your organization should have experience operating a production Kubernetes cluster, including networking, storage, and RBAC, to successfully manage and maintain these stages.
     * Dedicated **Kubernetes clusters** host the runtime stages, such as **Test runtime stage** and **Production runtime stage**.
     * It also includes the necessary services like an OIDC-compliant **Identity Provider**, and **Application Performance Monitoring (APM)** tool and the runtime databases.
     * All app **data** and end-user data are managed within the self-hosted infrastructure boundary.
@@ -105,9 +105,9 @@ For a detailed description of each installed service and its role, see [Services
 
 In order to set up your self-hosted stages, ensure you have:
 
-* **Platform operations:** Customers must bring personnel with experience operating a production Kubernetes cluster (OpenShift, AKS, EKS, or GKE), including networking, storage, and RBAC, as well as experience with the required network, databases, identity provider, and application performance monitoring (APM) solutions. This ensures the self-hosted environment is properly set up, maintained, and integrated.
+* **Platform operations:** Customers must bring personnel with experience operating a production Kubernetes cluster, including networking, storage, and RBAC, as well as experience with the required network, databases, identity provider, and application performance monitoring (APM) solutions. This ensures the self-hosted environment is properly set up, maintained, and integrated.
 
-* **Infrastructure**: A self-managed Kubernetes cluster and PostgreSQL databases are required to support the runtime stages. Your team should have experience operating a production Kubernetes cluster (OpenShift, AKS, EKS, or GKE), including networking, storage, and RBAC. This knowledge is essential for maintaining the health, scalability, and reliability of the self-hosted environment. The infrastructure must be capable of handling production workloads, and it is recommended that customers provision sufficient resources to ensure high availability.
+* **Infrastructure**: A self-managed Kubernetes cluster and PostgreSQL databases are required to support the runtime stages. Your team should have experience operating a production Kubernetes cluster, including networking, storage, and RBAC. This knowledge is essential for maintaining the health, scalability, and reliability of the self-hosted environment. The infrastructure must be capable of handling production workloads, and it is recommended that customers provision sufficient resources to ensure high availability.
 
 * **Identity and security**: You must provide an external OIDC-compliant identity provider for end-user authentication across all stages, including the Development stage. For details, refer to [Identity providers in self-hosted tenants](../external-idps/intro.md#idp-self-hosted).
 

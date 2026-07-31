@@ -13,7 +13,7 @@ audience:
   - Tech lead
   - Architect
 tags:
-  - Authentication
+  - End-user Authentication
   - External Databases
   - IdP
   - Infrastructure
@@ -32,12 +32,7 @@ To run ODC Self-hosted, your infrastructure must meet specific baseline requirem
 
 The system requirements are:
 
-* A Kubernetes cluster on a supported distribution and version:
-
-    * OpenShift 4.20
-    * AKS on Kubernetes version 1.34. Refer to [AKS releases for Kubernetes 1.34](https://learn.microsoft.com/en-us/azure/aks/supported-kubernetes-versions) for supported patch versions.
-    * EKS on Kubernetes version 1.34. Refer to [EKS platform versions for Kubernetes version 1.34](https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html#platform-versions-1-34) for supported patch versions.
-    * GKE version 1.34 (any 1.34.x-gke.y release). Refer to [GKE release notes](https://cloud.google.com/kubernetes-engine/docs/release-notes#current_versions) for available patch versions.
+* A Kubernetes cluster running Kubernetes version 1.33 or 1.34 on any CNCF-conformant distribution (such as OpenShift, AKS, EKS, or GKE, for example). The version must be within your distribution vendor's standard support window. Refer to your distribution vendor's release documentation for available patch versions.
 
 * The cluster must be deployed on x86 architecture. ARM-based clusters are not supported.
 
@@ -137,17 +132,14 @@ The following table lists the inbound connectivity required for all distribution
 | Load balancer | Gloo ingress gateway | HTTP on the port you expose the Gloo ingress service on | Application traffic |
 | Load balancer | IDP address defined during setup | TCP 443 | Self-hosted IDP |
 
-The following table lists the inbound connectivity to the cluster API server. Only the row for your distribution applies:
+The following table lists the inbound connectivity to the cluster API server:
 
 | Source | Destination address | Protocol and ports | Destination description |
 | --- | --- | --- | --- |
-| Admin workstation | OpenShift API server `api.<cluster-domain>` | TCP 6443 | Self-hosted configurator |
-| Admin workstation | AKS API server address | TCP 443 | Self-hosted configurator |
-| Admin workstation | EKS API server endpoint | TCP 443 | Self-hosted configurator |
-| Admin workstation | GKE control plane endpoint | TCP 443 | Self-hosted configurator |
+| Admin workstation | Kubernetes API server endpoint (provided by your distribution) | TCP 443 or 6443 | Self-hosted configurator |
 
 * **Application traffic:** The load balancer must ensure traffic is delivered to the Gloo ingress gateway according to the instructions at [Configure inbound traffic for applications](sh-domain-config.md).
 
 * **Self-hosted IDP:** Your identity provider (IDP) used for authentication and authorization services across your apps. Its address is provided to your ODC Self-hosted setup [in this step](install-sh.md#setup-idps).
 
-* **Self-hosted configurator:** During the installation process for each stage, a script is used to install the Self-hosted configurator that handles the configuration of ODC on your cluster. The script runs on any Windows, Linux, or macOS machine (admin workstation) and connects to the cluster's API server using the kubeconfig context configured by your distribution CLI. This connection is only necessary during setup or when changing configurator settings such as the stage database connection details. Find the endpoint for your distribution in your cloud provider's console.
+* **Self-hosted configurator:** During the installation process for each stage, a script is used to install the Self-hosted configurator that handles the configuration of ODC on your cluster. The script runs on any Windows, Linux, or macOS machine (admin workstation) and connects to the cluster's API server using the kubeconfig context configured by your distribution CLI. This connection is only necessary during setup or when changing configurator settings such as the stage database connection details. Refer to your distribution's documentation for the API server endpoint.

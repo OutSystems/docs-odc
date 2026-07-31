@@ -27,7 +27,7 @@ isautopublish: true
 
 Self-hosted ODC uses a container registry to store and serve the application container images that run in your cluster. When you deploy an application, ODC builds a container image in the cloud and syncs it to this registry, making it available to your self-hosted stages.
 
-On OpenShift, you can let OutSystems services provision and manage an in-cluster registry, or you can provide your own. On all other supported distributions (AKS, EKS, GKE), you must provide a custom OCI-compliant registry.
+On OpenShift, you can let OutSystems services provision and manage an in-cluster registry, or you can provide your own. On all other distributions, you must provide a custom OCI-compliant registry.
 
 This article covers the requirements and configuration for a custom OCI registry in Self-hosted ODC. If you use the OutSystems-managed registry, available on OpenShift only, this article doesn't apply.
 
