@@ -15,6 +15,7 @@ audience:
 tags:
   - Agentic
   - AI
+  - Logging
   - Monitoring
   - Security
 outsystems-tools:
@@ -25,7 +26,7 @@ isautopublish: true
 
 # Agent guardrails
 
-Agent guardrails are a safety and governance layer designed to ensure your AI agents behave responsibly. They act as an interceptor between your agent and the AI model, monitoring both user inputs (prompts) and model outputs (responses) in real-time.
+Agent guardrails are a safety and governance layer designed to ensure your AI agents behave responsibly. They act as an interceptor between your agent and the AI model, monitoring both user inputs (prompts), system prompts, and model outputs (responses) in real-time.
 
 Guardrails serve different primary functions:
 
@@ -53,7 +54,7 @@ The ODC platform uses a predefined architecture to apply safety rules efficientl
 
 * **Deterministic assignment**: When you configure a policy in the ODC Portal, the platform generates a unique internal ID based on your specific settings.
 
-* **Runtime enforcement**: The system enforces these rules in real-time during agent execution.
+* **Runtime enforcement**: The system enforces these rules in real time during agent execution, exclusively on user inputs (prompts), system prompts, and AI model responses. It does not analyze or enforce rules on documents, images, or other files sent to the agent.
 
 To understand the runtime flow, consider the following steps:
 
@@ -103,7 +104,7 @@ To determine your ODC environment's region, refer to the information provided wh
 
 ## Guardrail filters
 
-You can configure different dimensions of protection. To ensure optimal performance and coverage, enabling a category implicitly covers multiple sub-types.
+You can configure different dimensions of protection. Guardrails apply only to user inputs (prompts), system prompts, and AI model responses. They don't analyze or enforce rules on documents, images, or other files sent to the agent, even when those files are used by the agent to generate a response. To ensure optimal performance and coverage, enabling a category implicitly covers multiple sub-types.
 
 ### Filter categories
 
