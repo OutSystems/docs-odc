@@ -49,7 +49,17 @@ From your provider, have the following ready:
 * SAML metadata URL or metadata XML file.
 * Provider configuration details (Entity ID, SSO URL, certificates).
 
-* Your identity provider's endpoints (metadata, SSO, and single logout URLs) must be reachable by ODC. ODC's identity broker contacts these endpoints during authentication. Either expose these endpoints publicly, or restrict access by allowlisting the ODC identity egress IP addresses in your firewall. For the list of IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp). For background on the network requirements and the protocol-based security model, refer to [Network considerations](intro.md#network-considerations).
+The following SAML endpoints must be reachable from ODC to your Identity Provider:
+
+* **Metadata endpoint** — Always required, unless metadata is uploaded as an XML file without a descriptor URL configured.
+
+    **Note:** If you upload metadata as an XML file, network reachability to the metadata endpoint is not required. ODC stores and uses the parsed values locally. However, if your XML includes a `metadataDescriptorUrl` with `useMetadataDescriptorUrl=true`, the endpoint must be reachable.
+
+* **SLO (Single Logout) endpoint** — Only required if backchannel logout is enabled in your IdP configuration.
+
+    **The SSO endpoint is NOT required to be reachable.** Users are redirected to the SSO endpoint via their browser (not through direct ODC-to-IdP calls), so network reachability from ODC to the SSO endpoint is not necessary.
+
+    For endpoints that require reachability, either expose them publicly or restrict access by allowlisting the ODC identity egress IP addresses in your firewall. For the list of IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp). For background on the network requirements and the protocol-based security model, refer to [Network considerations](intro.md#network-considerations).
 
 ## Add a SAML 2.0 provider
 
