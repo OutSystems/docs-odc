@@ -232,8 +232,10 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
-            }
+              },
+              "example": "12345678-1234-1234-1234-123456789abc,87654321-4321-4321-4321-cba987654321"
+            },
+            "example": "12345678-1234-1234-1234-123456789abc,87654321-4321-4321-4321-cba987654321"
           },
           {
             "name": "IsLatest",
@@ -253,8 +255,10 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
-            }
+              },
+              "example": "elementName,-discoveredOn"
+            },
+            "example": "elementName,-discoveredOn"
           },
           {
             "name": "Fields",
@@ -264,8 +268,10 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
-            }
+              },
+              "example": "id,elementName,severity,status"
+            },
+            "example": "id,elementName,severity,status"
           },
           {
             "name": "Categories",
@@ -275,8 +281,10 @@
               "type": "array",
               "items": {
                 "$ref": "#/components/schemas/Categories"
-              }
-            }
+              },
+              "example": "performance,security"
+            },
+            "example": "performance,security"
           },
           {
             "name": "Status",
@@ -286,8 +294,10 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
-            }
+              },
+              "example": "Open,Resolved"
+            },
+            "example": "Open,Resolved"
           },
           {
             "name": "AssetType",
@@ -297,8 +307,10 @@
               "type": "array",
               "items": {
                 "$ref": "#/components/schemas/AssetType"
-              }
-            }
+              },
+              "example": "WebApplication,MobileApplication"
+            },
+            "example": "WebApplication,MobileApplication"
           },
           {
             "name": "Severities",
@@ -308,8 +320,10 @@
               "type": "array",
               "items": {
                 "$ref": "#/components/schemas/FindingSeverity"
-              }
-            }
+              },
+              "example": "High,Critical"
+            },
+            "example": "High,Critical"
           },
           {
             "name": "PatternIds",
@@ -319,8 +333,10 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
-            }
+              },
+              "example": "BPT-001,SEC-042"
+            },
+            "example": "BPT-001,SEC-042"
           },
           {
             "name": "Since",
@@ -466,8 +482,10 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
-            }
+              },
+              "example": "12345678-1234-1234-1234-123456789abc,87654321-4321-4321-4321-cba987654321"
+            },
+            "example": "12345678-1234-1234-1234-123456789abc,87654321-4321-4321-4321-cba987654321"
           },
           {
             "name": "Sort",
@@ -477,8 +495,10 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
-            }
+              },
+              "example": "AssetName,-Score"
+            },
+            "example": "AssetName,-Score"
           },
           {
             "name": "Status",
@@ -488,8 +508,10 @@
               "type": "array",
               "items": {
                 "$ref": "#/components/schemas/FindingStatus"
-              }
-            }
+              },
+              "example": "Open,Resolved"
+            },
+            "example": "Open,Resolved"
           },
           {
             "name": "AssetType",
@@ -509,8 +531,10 @@
               "type": "array",
               "items": {
                 "$ref": "#/components/schemas/Categories"
-              }
-            }
+              },
+              "example": "performance,security"
+            },
+            "example": "performance,security"
           },
           {
             "name": "Severities",
@@ -520,8 +544,10 @@
               "type": "array",
               "items": {
                 "$ref": "#/components/schemas/FindingSeverity"
-              }
-            }
+              },
+              "example": "High,Critical"
+            },
+            "example": "High,Critical"
           },
           {
             "name": "Since",
@@ -753,8 +779,10 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
-            }
+              },
+              "example": "12345678-1234-1234-1234-123456789abc,87654321-4321-4321-4321-cba987654321"
+            },
+            "example": "12345678-1234-1234-1234-123456789abc,87654321-4321-4321-4321-cba987654321"
           },
           {
             "name": "GroupBy",
@@ -764,8 +792,10 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
-            }
+              },
+              "example": "Category,Status,Severity"
+            },
+            "example": "Category,Status,Severity"
           },
           {
             "name": "FetchChange",
@@ -795,8 +825,10 @@
               "type": "array",
               "items": {
                 "$ref": "#/components/schemas/Categories"
-              }
-            }
+              },
+              "example": "performance,security"
+            },
+            "example": "performance,security"
           },
           {
             "name": "Severities",
@@ -806,8 +838,10 @@
               "type": "array",
               "items": {
                 "$ref": "#/components/schemas/FindingSeverity"
-              }
-            }
+              },
+              "example": "High,Critical"
+            },
+            "example": "High,Critical"
           },
           {
             "name": "Since",
@@ -952,8 +986,10 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
-            }
+              },
+              "example": "12345678-1234-1234-1234-123456789abc,87654321-4321-4321-4321-cba987654321"
+            },
+            "example": "12345678-1234-1234-1234-123456789abc,87654321-4321-4321-4321-cba987654321"
           },
           {
             "name": "AssetType",
@@ -973,8 +1009,10 @@
               "type": "array",
               "items": {
                 "$ref": "#/components/schemas/Categories"
-              }
-            }
+              },
+              "example": "performance,security"
+            },
+            "example": "performance,security"
           },
           {
             "name": "Severities",
@@ -984,8 +1022,10 @@
               "type": "array",
               "items": {
                 "$ref": "#/components/schemas/FindingSeverity"
-              }
-            }
+              },
+              "example": "High,Critical"
+            },
+            "example": "High,Critical"
           },
           {
             "name": "Since",
@@ -2456,5 +2496,13 @@
         "bearerFormat": "JWT"
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "public"
+    },
+    {
+      "name": "private"
+    }
+  ]
 }
