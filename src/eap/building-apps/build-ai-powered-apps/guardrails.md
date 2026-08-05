@@ -114,7 +114,41 @@ You can configure different dimensions of protection. Guardrails apply only to u
 
 * **Harmful content filtering**: Blocks harmful categories such as hate speech, violence, and explicit material.
 
-### Action to take on detection
+## Custom guardrail policies
+
+Beyond the predefined filter categories, you can define custom guardrail policies tailored to your organization's compliance requirements and proprietary data formats. 
+* Platform administrators configure custom policies at the organizational level in **Management** > **Configure** > **Agent guardrails** in the ODC Portal. 
+* Developers configure custom policies for the agents they own in the agent's **Agent elements** tab.
+
+Three types of custom policies are available: denied topics, word filters, and custom PII patterns. Interventions triggered by custom policies are logged and traced the same way as other guardrail violations, and each is identifiable by the name of the triggering rule.
+
+### Denied topics
+
+Define topics that your agent should never discuss, for example, competitor products or subjects unrelated to your agent's purpose. Each denied topic requires a name and a natural-language description of the topic's scope. You can optionally add up to five sample phrases to improve detection accuracy.
+
+Topic detection evaluates the meaning and intent of a message, not just specific words. A topic raised through paraphrase or implication is blocked the same as a literal mention.
+
+The combined total of organizational and agent-level denied topics can't exceed 30 per agent.
+
+### Word filters
+
+Block specific words and phrases, such as competitor names or internal codenames, using exact, case-insensitive matching. Phrases of up to three words are supported per entry. Word variations, such as plurals, require a separate entry.
+
+You can manage word filter entries individually or upload them in bulk.
+
+The combined total of organizational and agent-level word filter entries can't exceed 10,000 per agent.
+
+### Custom PII patterns
+
+Detect sensitive data formats that the platform's built-in PII filters don't cover, such as internal employee IDs, account numbers, or other organization-specific identifiers. Each pattern requires a name and a regular expression. An optional description documents the pattern's purpose.
+
+When a pattern's action is set to **Mask**, detected content is replaced with a placeholder derived from the pattern's name. For example, a pattern named `EMPLOYEE_ID` produces `{EMPLOYEE_ID}` in the output, in logs, and in any downstream system that receives the masked content.
+
+The combined total of organizational and agent-level custom PII patterns can't exceed 50 per agent.
+
+<!-- WRITER NOTE (2026-07-13): unconfirmed whether the Basic/Enhanced regional coverage tiers described in "Regional availability and limitations" apply to custom PII regex patterns. Neither source document (VM5 PRD, Enterprise Guardrails HLD) addresses this. Confirm with engineering/PM before asserting either way, then remove this note. -->
+
+## Action to take on detection
 
 When the guardrail detects a violation, it performs one of the following actions based on your configuration:
 
@@ -129,6 +163,9 @@ When the guardrail detects a violation, it performs one of the following actions
 | **Prompt Attack Protection** | Yes | No | Yes |
 | **Personal Information Exposure** | Yes | Yes | Yes |
 | **Harmful Content Filtering** | Yes | No | Yes |
+| **Denied Topics** | Yes | No | No |
+| **Word Filters** | Yes | No | Yes |
+| **Custom PII Patterns** | Yes | Yes | Yes |
 
 ## Configuration
 
@@ -140,7 +177,9 @@ You manage guardrails directly in the ODC Portal. To balance governance with fle
 
 If there are baseline guardrails defined, you can make the guardrail stricter at the agent level, but not more lenient. For example, if you set a policy to "Log and continue" at the stage level, you can choose to "Block and raise exception" for a specific agent, but not the other way around.
 
-In a multi-portfolio organization, stage-level guardrails are configured separately for each portfolio's stages. For more information about portfolios, refer to [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md).
+The same rule applies to custom guardrail policies. The organizational baseline always applies in full, and agent-level denied topics, word filters, and custom PII patterns can only add further restriction on top, never remove or loosen it. In the agent's **Agent elements** tab, developers see the full effective set of custom policies: organizational entries appear alongside the agent's own, marked as inherited.
+
+In a multi-portfolio organization, stage-level guardrails, including custom guardrail policies, are configured separately for each portfolio's stages. For more information about portfolios, refer to [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md).
 
 The following diagram shows a possible guardrail configuration by stage:
 

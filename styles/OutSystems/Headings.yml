@@ -310,6 +310,7 @@ exceptions:
 # Industry
   - ATO
   - AI
+  - PII
   - API
   - ARIA
   - Accessible Rich Internet Applications
