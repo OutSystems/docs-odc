@@ -227,3 +227,4 @@ The data structure for returning a pending silent notification.
 * [Firebase plugins](intro.md)
 * [Firebase Cloud Messaging plugin using server actions](firebase-cloud-messaging-plugin-server-action.md)
 * [Firebase Cloud Messaging plugin using configurator APIs](firebase-cloud-messaging-plugin-configurator-api.md)
+* [Best practices for push notifications](../../../building-apps/mobile/best-practices/best-practices-push-notifications.md)

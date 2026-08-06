@@ -1,6 +1,13 @@
 ---
-summary: Learn how to implement and manage Firebase Cloud Messaging in OutSystems Developer Cloud (ODC) for mobile app notifications.
-tags: firebase, notifications, mobile app development, push notifications, plugin integration
+summary: 'Firebase Cloud Messaging plugin for ODC: set up server actions to send normal and silent push notifications to your mobile app users.'
+tags:
+  - Android
+  - Capacitor
+  - Forge
+  - iOS
+  - Libraries
+  - Mobile app
+  - Plugins
 locale: en-us
 guid: a8f7486e-a655-4da7-bed6-37d6867166b2
 app_type: mobile apps
@@ -15,6 +22,7 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+isautopublish: true
 ---
 
 # Firebase Cloud Messaging plugin using server actions
@@ -91,7 +99,7 @@ The following steps describe how to create a back-end notification service and h
 
 1. [Extend to your use case: authenticate your notification requests to FCM HTTP v1 REST API](#authenticate-push-notification-requests-to-fcm-http-v1-api).
 
-### Set up a back-end notification service
+### Set up a back-end notification service {#set-up-a-back-end-notification-service}
 
 <div class="info" markdown="1">
 
@@ -172,7 +180,7 @@ To send a notification to all users, or to all Android or iOS users, you need to
 
 Moreover, to send a notification specifically to all Android or iOS users, you should set the **SendToPlatform** structure attribute to one of the values in the **Platform** static entity that the plugin provides.
 
-![Image illustrating the configuration of Server Action call for Firebase Cloud Messaging](images/fcm-server-action-call.png "FCM Server Action Call Configuration")
+![Screenshot of the SendNotificationToUsers server action call configuration, showing the SendRequest parameter with SenderID and SendToPlatform attributes](images/fcm-server-action-call.png "FCM SendNotificationToUsers Call Configuration")
 
 Other available methods include **SendNotificationToTopics**, **SendSilentNotificationToUsers**, and **SendSilentNotificationToTopics**.
 
@@ -200,7 +208,7 @@ To learn more about how to use Timers, see the [documentation](https://success.o
 
 </div>
 
-## Enable basic notification functions in your app
+## Enable basic notification functions in your app {#enable-basic-notification-functions-in-your-app}
 
 This section describes some of the actions that you can use to leverage notification functions on your mobile app.
 
@@ -244,7 +252,7 @@ Finally, you might want to give the opportunity to your user to clear all the ap
 
 ![Screenshot of the action to clear all notifications in Firebase Messaging](images/firebase-messaging-with-clear-notifications-logic-odcs.png "Firebase Messaging Clear Notifications")
 
-### Enable notifications with custom actions
+### Enable notifications with custom actions {#enable-notifications-with-custom-actions}
 
 To enhance your notification with custom actions you must use the **Firebase Cloud Messaging Server Actions** library, using the **ActionList** parameter inside the **Notification** parameter on the **SendNotificationToTopics** or **SendNotificationToUsers** Server Actions.
 
@@ -260,7 +268,7 @@ We offer the following types of custom actions:
 
 * **Reply field** - Opens a text field that lets users send a text directly to the app.
 
-### Enable notifications with custom sounds
+### Enable notifications with custom sounds {#enable-notifications-with-custom-sounds}
 
 To enhance your notification with custom sounds, follow these steps:
 
@@ -278,7 +286,7 @@ It is important to note the following requirements for custom sounds:
 
 * The sounds.zip file should be included with the “Deploy Action” set to “Deploy to Target Directory”.
 
-## Enable notifications with a custom icon and icon color for Android devices
+## Enable notifications with a custom icon and icon color for Android devices {#enable-notifications-with-a-custom-icon-and-icon-color-for-android-devices}
 
 By default, a Cloud Messaging notification uses the app's launcher icon as the notification icon. However, for **Android** notifications, you can also define a custom icon and a custom icon color.
 To setup a custom icon and custom icon color for Android notifications, follow these steps:
@@ -365,7 +373,7 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 
 </div>
 
-## Manage the experience of in-app notifications using the Notifications block
+## Manage the experience of in-app notifications using the notifications block {#manage-the-experience-of-in-app-notifications-using-the-notifications-block}
 
 By default, a cloud messaging notification displays in the notification center. However, you can also display the notification in-app when the app is on the foreground. To enable this notification, you can use the **NotificationsHandler** block. This block triggers events that pass the parameters of both notifications and silent notifications to the context of the app.
 
@@ -373,13 +381,13 @@ You need to add this block to each screen that might handle the notification con
 
 Optionally, you can use the **NotificationDialog** block, which provides a notification dialog UI inside the app.
 
-## Manage the experience of custom actions using the Notifications block
+## Manage the experience of custom actions using the notifications block {#manage-the-experience-of-custom-actions-using-the-notifications-block}
 
 By default, a cloud messaging notification displays in the notification center. However, you can also display the notification in-app when the app is in the foreground. To enable this you can use the **NotificationsHandler** block, using **InternalRouteActionClicked** for custom actions. This block triggers events that pass the parameters of both notifications and silent notifications to the context of the app.
 
 Add this block to each screen that might handle the notification content.
 
-## Manage the experience of notification clicks
+## Manage the experience of notification clicks {#manage-the-experience-of-notification-clicks}
 
 When the end-user clicks on a notification in the notification center, the app opens by default. If you want your app to handle the notification click, you can use the **NotificationsHandler** block and define a handler for the **NotificationClicked** event.
 
@@ -488,7 +496,7 @@ Using the Cordova-based extensibiility configurations schema (for MABS versions 
 }
 ```
 
-## Using the plugin in Capacitor apps
+## Using the plugin in Capacitor apps {#using-the-plugin-in-capacitor-apps}
 
 If you want to update the notification channel name and description on Android for Capacitor apps, you should set the **NotificationChannelDefaultName** and **NotificationChannelDefaultDescription** extensibility settings on your application’s detail page on the ODC Portal, under the Mobile distribution tab.
 
@@ -550,7 +558,7 @@ To have a better idea of what BigQuery is and how to enable it within the Fireba
 
 The feature is disabled by default. To enable it, `SetDeliveryMetricsExportToBigQuery` needs to be called with its `Enable` input parameter set to `true`.
 
-## Authenticate push notification requests to FCM HTTP v1 API
+## Authenticate push notification requests to FCM HTTP v1 API {#authenticate-push-notification-requests-to-fcm-http-v1-api}
 
 Firebase Cloud Messaging offers a variety of uses cases with their HTTP v1 API which aren't covered by the Server Actions offered in the Firebase Cloud Messaging Server Actions library (and until version `2.3.5` of the Firebase Cloud Messaging Plugin), and as they can be very use-case specific. As such, our Server Actions won't ever fully cover 100% of the HTTP v1 API.
 
@@ -567,9 +575,9 @@ Nevertheless, starting from version `2.2.0` of the plugin, you can use the token
 
 As explained in the following [page](https://firebase.google.com/docs/cloud-messaging/understand-delivery?platform=ios#enable-message-delivery-data-export), there are two ways to enable the data export on iOS, one for [alert](https://firebase.google.com/docs/cloud-messaging/understand-delivery?platform=ios#enable_delivery_data_export_for_alert_notifications) and another for [background notifications](https://firebase.google.com/docs/cloud-messaging/understand-delivery?platform=ios#enable_delivery_data_export_for_background_notifications). On OutSystems mobile apps, it is not possible to enable data export for alert notifications, so you won't be able to enable the feature for all notifications.
 
-## Server actions reference
+## Server actions reference {#server-actions-reference}
 
-### GetAcessToken
+### `GetAcessToken` {#getacesstoken}
 
 Returns the Firebase Access Token of the Firebase Project defined in the OutSystems app settings. This token expires after one hour.
 
@@ -577,7 +585,7 @@ Returns the Firebase Access Token of the Firebase Project defined in the OutSyst
 | :-------- | :----- | :-------- | :---------------------------------------------------- |
 | Token     | Output | Text      | The generated access token. Expires after one hour.   |
 
-### SendNotificationToTopics
+### `SendNotificationToTopics`{#sendnotificationtotopics}
 
 Sends a notification to all users associated with a topic or group of topics.
 
@@ -587,7 +595,7 @@ Sends a notification to all users associated with a topic or group of topics.
 | SendRequest | Input  | SendToTopics Data Structure     | The notification to topics request. |
 | Response    | Output | FirebaseResponse Data Structure | The response sent by Firebase.      |
 
-### SendNotificationToUsers
+### `SendNotificationToUsers` {#sendnotificationtousers}
 
 Sends a notification to a user or group of users.
 
@@ -597,7 +605,7 @@ Sends a notification to a user or group of users.
 | SendRequest | Input  | SendToUsers Data Structure      | The notification to users request.  |
 | Response    | Output | FirebaseResponse Data Structure | The response sent by Firebase.      |
 
-### SendSilentNotificationToTopics
+### `SendSilentNotificationToTopics`
 
 Sends a silent notification to all users associated with a topic or group of topics.
 
@@ -607,9 +615,9 @@ Sends a silent notification to all users associated with a topic or group of top
 | SendRequest | Input  | SilentTopicNotification Data Structure | The silent notification to topic request.    |
 | Response    | Output | FirebaseResponse Data Structure        | The response sent by Firebase.               |
 
-### SendSilentNotificationToUsers
+### `SendSilentNotificationToUsers`
 
-SendSilentNotificationToUsers sends a silent notification to a user or group of users.
+`SendSilentNotificationToUsers` sends a silent notification to a user or group of users.
 
 | Parameter   | Type   | Data type                             | Description                                  |
 | :---------- | :----- | :------------------------------------ | :------------------------------------------- |
@@ -645,3 +653,9 @@ Starting on version 4.0.0 of the plugin, builds of your app can fail if:
 For both iOS and Android.
 
 Using the Firebase Cloud Messaging in combination with Firebase Performance requires v1.0.4 (or higher) of the latter.
+
+## Related resources
+
+Refer to the following resource for recommendations on implementing push notifications reliably.
+
+* [Best practices for push notifications](../../../building-apps/mobile/best-practices/best-practices-push-notifications.md)

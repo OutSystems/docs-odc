@@ -5,7 +5,13 @@ guid: 050c7d77-0418-4f38-9bb8-7b0275931b80
 app_type: mobile apps
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=4345-125&p=f&t=VeBxifb5s4k6YDSA-0
 platform-version: odc
-tags: mobile app development, firebase integration, plugin management, cloud services, cross-platform development
+tags:
+  - Capacitor
+  - Cordova
+  - Forge
+  - iOS
+  - Mobile app
+  - Plugins
 audience:
   - Developer
 outsystems-tools:
@@ -16,6 +22,7 @@ coverage-type:
   - apply
 topic:
   - using-cordova-plugins
+isautopublish: true
 ---
 
 # Firebase plugins
@@ -33,7 +40,7 @@ Firebase is a Google mobile development platform that speeds up the mobile app c
 * Performance Monitoring Plugin (Firebase)
 * Cloud Messaging Plugin (Firebase)
 
-## Prerequisites
+## Prerequisites {#prerequisites}
 
 To use the Firebase plugins, you must complete the following prerequisites:
 
@@ -74,7 +81,7 @@ To learn how to use the Firebase Cloud Messaging plugin using server actions, re
 
 </div>
 
-## Adding Google services configuration file
+## Adding Google services configuration file {#adding-google-services-configuration-file}
 
 You must provide the plugin configuration files as extensibility settings in the ODC Portal for an app using at least one of the Firebase Plugins. To add the Firebase configuration to your app, complete the following steps:
 
@@ -253,7 +260,7 @@ From the provided entity, users can select the event type  `ECommerceEvent`.
 
 You can also select the key for each parameter you want included in the event logging from the  `ECommerceEventParameterKey` entity.
 
-![Shows the `ECommerceEvent` parameters](images/firebase-analytics-log-ecommerce-parameters-odcs.png "Firebase Analytics LogECommerceEvent entity")
+![Shows the `ECommerceEvent` parameters](images/firebase-analytics-log-ecommerce-parameters-odcs.png "Firebase Analytics ECommerceEvent Parameters")
 
 For more information on which event requires which parameters, refer to [Google's documentation page regarding 'measure ecommerce'](https://developers.google.com/analytics/devguides/collection/ga4/ecommerce).
 
@@ -324,3 +331,9 @@ You can use the extensibility setting exposed by the plugin if:
 * You're using at least version 1.4.0 of the plugin in a Cordova app.
 
 You can set it to **False** in your app's detail page on the Portal under the **Mobile Distribution** tab to disable data collection.
+
+## Related resources
+
+Refer to the following resource for recommendations on implementing push notifications reliably.
+
+* [Best practices for push notifications](../../../building-apps/mobile/best-practices/best-practices-push-notifications.md)

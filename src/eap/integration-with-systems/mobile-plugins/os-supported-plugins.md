@@ -1,7 +1,7 @@
 ---
 guid: 7b6cb77f-a789-48ae-8070-1631b51722d8
 locale: en-us
-summary: This article provides a list of OutSystems supported mobile plugins that are ODC libraries that wrap the plugin.
+summary: 'OutSystems Developer Cloud (ODC) mobile plugins reference: browse Capacitor and Cordova supported plugins, check PWA compatibility, and install from Forge.'
 figma:
 coverage-type:
   - remember
@@ -18,6 +18,7 @@ tags:
   - Forge
   - Libraries
   - Mobile app
+  - Native App
   - Plugins
 outsystems-tools:
   - none
@@ -77,5 +78,7 @@ To install a supported plugin from Forge:
 ## Related resources
 
 * [Best practices for native integrations and plugins](../../building-apps/mobile/best-practices/best-practices-native-plugins.md)
+
+* [Best practices for push notifications](../../building-apps/mobile/best-practices/best-practices-push-notifications.md)
 
 * [Mobile plugins](intro.md)

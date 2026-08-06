@@ -509,6 +509,8 @@
         - href: eap/building-apps/mobile/best-practices/best-practices-testing-debugging.md        
         # Best practices
         - href: eap/building-apps/mobile/best-practices/best-practices-security.md
+        - href: eap/building-apps/mobile/best-practices/best-practices-push-notifications.md
+        
 
     # Emails
     - href: eap/building-apps/sending-emails/intro.md
