@@ -905,6 +905,7 @@
         - href: eap/reference/apis/asset-v1.md
         - href: eap/reference/apis/asset-config-v1.md
         - href: eap/reference/apis/env-config-v1.md
+        - href: eap/reference/apis/organization-v1.md
         - href: eap/reference/apis/code-quality-api-v1.md
         - href: eap/reference/apis/external-library-generation-api-v1.md
         - href: eap/reference/apis/subscription-v1.md 

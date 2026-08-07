@@ -1,0 +1,991 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Organization API",
+    "description": "REST endpoints for managing organization-level configurations in ODC.\n",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://ODC_PORTAL_DOMAIN/api/organization/v1",
+      "description": "Replace ODC_PORTAL_DOMAIN with the domain of your organization."
+    },
+    {
+      "url": "https://{odc-portal-domain}/api/organization/v1",
+      "description": "Replace {odc-portal-domain} with the domain of your organization.",
+      "variables": {
+        "{odc-portal-domain}": {
+          "default": "{odc-portal-domain}",
+          "description": "The domain of your organization"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/builtin-domains/availability": {
+      "post": {
+        "tags": [
+          "Built-In Domains"
+        ],
+        "summary": "Checks if the given built-in domain prefix is available for the organization (platform).",
+        "description": "Used to validate prefixes before creating a built-in domain.\n\nAPI client must have at least one permission.",
+        "operationId": "Organization_CheckBuiltinDomainAvailability",
+        "requestBody": {
+          "description": "The request containing the built-in domain prefix to check.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuiltinDomainAvailabilityRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuiltinDomainAvailabilityRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AvailabilityResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission."
+      }
+    },
+    "/builtin-domains/{builtinDomainPrefix}": {
+      "delete": {
+        "tags": [
+          "Built-In Domains"
+        ],
+        "summary": "Removes a built-in domain prefix from the organization.",
+        "description": "The primary prefix cannot be removed.\n\nAPI Client needs the **Organization management > Manage Organization** permission for the target environment (stage).",
+        "operationId": "Organization_Delete",
+        "parameters": [
+          {
+            "name": "builtinDomainPrefix",
+            "in": "path",
+            "description": "The built-in domain prefix to remove.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Organization management > Manage Organization** permission for the target environment (stage)."
+      },
+      "patch": {
+        "tags": [
+          "Built-In Domains"
+        ],
+        "summary": "Sets the given built-in domain prefix as primary for the organization, resetting all other prefixes to non-primary.",
+        "description": "The primary prefix is the default.\n\nAPI Client needs the **Organization management > Manage Organization** permission for the target environment (stage).",
+        "operationId": "Organization_Patch",
+        "parameters": [
+          {
+            "name": "builtinDomainPrefix",
+            "in": "path",
+            "description": "The built-in domain prefix to set as primary.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Organization management > Manage Organization** permission for the target environment (stage)."
+      }
+    },
+    "/builtin-domains": {
+      "get": {
+        "tags": [
+          "Built-In Domains"
+        ],
+        "summary": "Retrieves the list of built-in domain prefixes for the organization.",
+        "description": "Results are paginated.\n\nAPI client must have at least one permission.",
+        "operationId": "Organization_GetBuiltinDomains",
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuiltInDomainPrefixResponsePagedListResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission."
+      },
+      "post": {
+        "tags": [
+          "Built-In Domains"
+        ],
+        "summary": "Adds a new built-in domain prefix to the organization.",
+        "description": "Operates at organization scope.\n\nAPI Client needs the **Organization management > Manage Organization** permission for the target environment (stage).",
+        "operationId": "Organization_Post",
+        "requestBody": {
+          "description": "The request containing the built-in domain prefix to add.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuiltinDomainPrefixRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuiltinDomainPrefixRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Organization management > Manage Organization** permission for the target environment (stage)."
+      }
+    },
+    "/organization": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "summary": "Retrieves Organization information details.",
+        "description": "Returns details for the organization.\n\nAPI client must have at least one permission.",
+        "operationId": "Organization_GetOrganization",
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Organization"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API client must have at least one permission."
+      },
+      "patch": {
+        "tags": [
+          "Organization"
+        ],
+        "summary": "Renames the organization.",
+        "description": "Updates the organization display name only.\n\nAPI Client needs the **Organization management > Manage Organization** permission for the target environment (stage).",
+        "operationId": "Organization_PatchOrganization",
+        "requestBody": {
+          "description": "The request containing the new organization name.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/RenameOrganizationRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/RenameOrganizationRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Organization management > Manage Organization** permission for the target environment (stage)."
+      }
+    },
+    "/ip-filter-group": {
+      "get": {
+        "tags": [
+          "Platform IP Filters"
+        ],
+        "summary": "Retrieves the tenant's current Platform Access IP Filter Group configuration.",
+        "description": "Returns the default allow-all configuration when the group is not configured.\n\nAPI Client needs the **Organization management > Manage Organization** permission for the target environment (stage).",
+        "operationId": "Organization_GetPlatformIpFilterGroup",
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlatformIpFilterGroupResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Organization management > Manage Organization** permission for the target environment (stage)."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AvailabilityResponse": {
+        "type": "object",
+        "properties": {
+          "builtinDomainPrefix": {
+            "type": "string",
+            "description": "The built-in domain prefix that was checked for availability.",
+            "nullable": true
+          },
+          "builtinOsDomain": {
+            "type": "string",
+            "description": "The full OutSystems domain that would be created with this prefix.",
+            "nullable": true
+          },
+          "isAvailable": {
+            "type": "boolean",
+            "description": "Indicates whether the built-in domain prefix is available for use."
+          },
+          "message": {
+            "type": "string",
+            "description": "Optional message providing additional context (e.g., \"The subdomain is already in use\").",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BuiltInDomainPrefixResponse": {
+        "type": "object",
+        "properties": {
+          "builtinDomainPrefix": {
+            "type": "string",
+            "description": "The built-in domain prefix.",
+            "nullable": true
+          },
+          "builtinOsDomain": {
+            "type": "string",
+            "description": "The full OutSystems domain associated with this prefix.",
+            "nullable": true
+          },
+          "isPrimary": {
+            "type": "boolean",
+            "description": "Indicates whether this is the primary built-in domain."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response model containing information about a built-in domain prefix."
+      },
+      "BuiltInDomainPrefixResponsePagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuiltInDomainPrefixResponse"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "BuiltinDomainAvailabilityRequest": {
+        "type": "object",
+        "properties": {
+          "builtinDomainPrefix": {
+            "type": "string",
+            "description": "The built-in domain prefix to check for availability.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BuiltinDomainPrefixRequest": {
+        "type": "object",
+        "properties": {
+          "builtinDomainPrefix": {
+            "type": "string",
+            "description": "The built-in domain prefix to add.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IpFilterRuleAction": {
+        "enum": [
+          "ALLOW",
+          "DENY"
+        ],
+        "type": "string",
+        "description": "The action associated with a Platform IP Filter Group rule, or the group's default action."
+      },
+      "Organization": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Organization Id",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "Organization Name (e.g. ACME Corporation)",
+            "nullable": true
+          },
+          "ring": {
+            "type": "string",
+            "description": "Organization Ring (e.g. GA)",
+            "nullable": true
+          },
+          "assetPortfolioCount": {
+            "type": "integer",
+            "description": "Number of asset portfolios associated with the organization.",
+            "format": "int32",
+            "nullable": true
+          },
+          "platformRegion": {
+            "type": "string",
+            "description": "AWS region code where the tenant is hosted (e.g. us-east-1).",
+            "nullable": true
+          },
+          "dataPlatformRegion": {
+            "type": "string",
+            "description": "AWS region code where the tenant's data platform is hosted (e.g. eu-central-1).",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageInfoWithTotals": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of results in the current page.",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Limit of results per page.",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset of the current page of results.",
+            "format": "int32"
+          },
+          "nextPageOffset": {
+            "type": "integer",
+            "description": "Offset of the next page of results. Null when there is no next page.",
+            "format": "int32",
+            "nullable": true
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total of results.",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": "Total of result pages.",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains response page information including totals."
+      },
+      "PlatformIpFilterGroupResponse": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the group.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "defaultAction": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IpFilterRuleAction"
+              }
+            ],
+            "description": "Default action when a request matches no explicit rule: ALLOW or DENY."
+          },
+          "ipRules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PlatformIpFilterGroupRule"
+            },
+            "description": "The rules configured for this group.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "The tenant's current Platform Access IP Filter Group configuration."
+      },
+      "PlatformIpFilterGroupRule": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Unique within the group. Max 50 chars.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional. Max 250 chars.",
+            "nullable": true
+          },
+          "ranges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "CIDR ranges (IPv4/IPv6).",
+            "nullable": true
+          },
+          "action": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IpFilterRuleAction"
+              }
+            ],
+            "description": "Rule-level action: ALLOW or DENY. Each rule carries its own action, enabling mixed policies within the same group."
+          },
+          "isActive": {
+            "type": "boolean",
+            "description": "Enable/disable the rule without deleting it."
+          }
+        },
+        "additionalProperties": false,
+        "description": "A single rule within a Platform IP Filter Group."
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code applicable to the problem.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation of the error.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem.",
+            "nullable": true
+          },
+          "traceId": {
+            "type": "string",
+            "description": "This field helps OutSystems support track and investigate specific error occurrences. Providing this identifier when reporting an issue allows for more precise and faster troubleshooting."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "This error code serves the purpose to communicate with OutSystems Support and help diagnose errors."
+          }
+        },
+        "description": "A standardized error response as per RFC 7807 (Problem Details for HTTP APIs)."
+      },
+      "RenameOrganizationRequest": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The new name for the organization."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Enter your bearer token in the format 'Bearer {token}'",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Built-In Domains",
+      "description": "Manage built-in domain prefixes for organizations and environments."
+    },
+    {
+      "name": "public"
+    },
+    {
+      "name": "Organization",
+      "description": "Manage organization settings."
+    },
+    {
+      "name": "Platform IP Filters",
+      "description": "Public endpoints to manage organization"
+    },
+    {
+      "name": "Domains",
+      "description": "Manage custom domains for environments."
+    },
+    {
+      "name": "IP Filters",
+      "description": "Create, update, and delete IP filter groups and rules."
+    },
+    {
+      "name": "Private Gateways",
+      "description": "Activate, deactivate, and manage private gateways."
+    }
+  ]
+}
