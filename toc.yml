@@ -932,6 +932,7 @@
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/generated-code-sast.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/set-version-release-notes.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/asset-configurations.md
+        - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/apply-asset-configurations.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/deploy-asset.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/automating-mobile-builds-and-store-upload.md
         - href: eap/reference/apis/public-rest-apis/ci-cd-apis-use-cases/release-library.md

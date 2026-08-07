@@ -60,6 +60,7 @@ The following table maps each CI/CD step to the related API or action.
 | SAST analysis | Run static application security testing (SAST) on generated code | [Retrieve generated code for SAST analysis](generated-code-sast.md) |
 | Set version and notes | Define semantic version for production | [Set the release version and release notes](set-version-release-notes.md) |
 | Configure asset | Set stage-specific configurations | [Review asset configurations](asset-configurations.md) |
+| Apply configurations | Apply configurations without deploying code | [Applying asset configurations](apply-asset-configurations.md) |
 | Deploy | Deploy the asset to the target stage | [Deploy your asset to the target stage](deploy-asset.md) |
 | Build mobile packages and upload to app stores | Create store-ready iOS and Android app packages and upload them to the app stores | [Automating mobile builds and uploading to app stores](automating-mobile-builds-and-store-upload.md) |
 | Release library | Publish a library for reuse | [Release a library](release-library.md) |
