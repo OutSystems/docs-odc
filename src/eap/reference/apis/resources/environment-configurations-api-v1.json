@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Environment Configurations API",
-    "description": "REST endpoints for managing environment (stage) configurations in ODC. Covers custom domains, IP filters, and Private Gateways, enabling you to automate the same configurations available in ODC Portal.",
+    "description": "REST endpoints for managing environment (stage) configurations in ODC. Covers custom domains, IP filters, and Private Gateways, enabling you to automate the same configurations available in ODC Portal.\n",
     "version": "v1"
   },
   "servers": [
@@ -28,7 +28,7 @@
           "Domains"
         ],
         "summary": "Deletes a domain from an environment (stage).",
-        "description": "Deletes a domain from an environment (stage).\n\nAPI Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage).",
+        "description": "Removes the custom domain mapping.\n\nAPI Client needs the **Configuration management > Manage domains** permission for the target environment (stage).",
         "operationId": "Domains_Delete",
         "parameters": [
           {
@@ -95,14 +95,14 @@
             "description": "No Content"
           }
         },
-        "x-os-permissions": "API Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage)."
+        "x-os-permissions": "API Client needs the **Configuration management > Manage domains** permission for the target environment (stage)."
       },
       "get": {
         "tags": [
           "Domains"
         ],
         "summary": "Returns the details of a specific domain for the given environment (stage).",
-        "description": "Returns the details of a specific domain for the given environment (stage).\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "description": "Look up a domain by its key.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
         "operationId": "Domains_Get",
         "parameters": [
           {
@@ -183,7 +183,7 @@
           "Domains"
         ],
         "summary": "Patches the default app (App Domain) for the specified custom domain.",
-        "description": "Patches the default app (App Domain) for the specified custom domain.\n\nAPI Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage).",
+        "description": "Updates the default app and optional redirect setting for the domain. A null application key will clear the default app.\n\nAPI Client needs the **Configuration management > Manage domains** permission for the target environment (stage).",
         "operationId": "Domains_Patch",
         "parameters": [
           {
@@ -290,7 +290,7 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage)."
+        "x-os-permissions": "API Client needs the **Configuration management > Manage domains** permission for the target environment (stage)."
       }
     },
     "/environments/{environmentKey}/domains": {
@@ -299,7 +299,7 @@
           "Domains"
         ],
         "summary": "Returns a list of domains for a specific environment (stage).",
-        "description": "Returns a list of domains for a specific environment (stage).\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "description": "Results are paginated.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
         "operationId": "Domains_Get",
         "parameters": [
           {
@@ -389,7 +389,7 @@
           "Domains"
         ],
         "summary": "Creates a new domain for the specified environment (stage). You can provide the domain's hostname and name.",
-        "description": "Creates a new domain for the specified environment (stage). You can provide the domain's hostname and name.\n\nAPI Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage).",
+        "description": "Maps a customer-owned hostname to the environment.\n\nAPI Client needs the **Configuration management > Manage domains** permission for the target environment (stage).",
         "operationId": "Domains_Post",
         "parameters": [
           {
@@ -477,7 +477,284 @@
             }
           }
         },
-        "x-os-permissions": "API Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage)."
+        "x-os-permissions": "API Client needs the **Configuration management > Manage domains** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/builtin-domains/availability": {
+      "post": {
+        "tags": [
+          "Built-In Domains"
+        ],
+        "summary": "Checks if the given built-in domain prefix is available in the given environment (stage).",
+        "description": "Used to validate prefixes before creating a built-in domain.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "EnvironmentConfigurations_CheckBuiltinDomainAvailability",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment's key.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The request containing the built-in domain prefix to check.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuiltinDomainAvailabilityRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuiltinDomainAvailabilityRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AvailabilityResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/builtin-domains/{builtinDomainPrefix}": {
+      "delete": {
+        "tags": [
+          "Built-In Domains"
+        ],
+        "summary": "Removes a built-in domain prefix from the environment. The primary domain cannot be deleted.",
+        "description": "Other environments are not affected.\n\nAPI Client needs the **Configuration management > Manage domains** permission for the target environment (stage).",
+        "operationId": "EnvironmentConfigurations_Delete",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The key of the environment.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "builtinDomainPrefix",
+            "in": "path",
+            "description": "The built-in domain prefix to remove.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Manage domains** permission for the target environment (stage)."
+      },
+      "patch": {
+        "tags": [
+          "Built-In Domains"
+        ],
+        "summary": "Sets the given built-in domain prefix as primary for the environment, resetting all other prefixes to non-primary.",
+        "description": "The primary prefix is the default built-in domain in this environment.\n\nAPI Client needs the **Configuration management > Manage domains** permission for the target environment (stage).",
+        "operationId": "EnvironmentConfigurations_PatchPrimary",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The key of the environment.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "builtinDomainPrefix",
+            "in": "path",
+            "description": "The built-in domain prefix to set as primary.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Manage domains** permission for the target environment (stage)."
       }
     },
     "/environments/{environmentKey}/default-domain": {
@@ -486,7 +763,7 @@
           "Domains"
         ],
         "summary": "Retrieves the default domain for the given environment (stage).",
-        "description": "Retrieves the default domain for the given environment (stage).\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "description": "Returns the prefix currently configured as default.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
         "operationId": "EnvironmentConfigurations_Get",
         "parameters": [
           {
@@ -558,7 +835,7 @@
           "Domains"
         ],
         "summary": "Updates the default domain for the given environment (stage).",
-        "description": "Updates the default domain for the given environment (stage).\n\nAPI Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage).",
+        "description": "Applies to newly deployed applications.\n\nAPI Client needs the **Configuration management > Manage domains** permission for the target environment (stage).",
         "operationId": "EnvironmentConfigurations_Patch",
         "parameters": [
           {
@@ -639,16 +916,188 @@
             "description": "No Content"
           }
         },
-        "x-os-permissions": "API Client needs the **Configuration management > Manage custom domains** permission for the target environment (stage)."
+        "x-os-permissions": "API Client needs the **Configuration management > Manage domains** permission for the target environment (stage)."
+      }
+    },
+    "/environments/{environmentKey}/builtin-domains": {
+      "get": {
+        "tags": [
+          "Built-In Domains"
+        ],
+        "summary": "Retrieves the list of built-in domain prefixes for the given environment.",
+        "description": "Results are paginated.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "operationId": "EnvironmentConfigurations_GetBuiltinDomains",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The key of the environment.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuiltInDomainPrefixResponsePagedListResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > View configurations** permission for the target environment (stage)."
+      },
+      "post": {
+        "tags": [
+          "Built-In Domains"
+        ],
+        "summary": "Adds a new built-in domain prefix to the environment.",
+        "description": "Operates at environment scope.\n\nAPI Client needs the **Configuration management > Manage domains** permission for the target environment (stage).",
+        "operationId": "EnvironmentConfigurations_Post",
+        "parameters": [
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The key of the environment.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The request containing the built-in domain prefix to add.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuiltinDomainPrefixRequest"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BuiltinDomainPrefixRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-os-permissions": "API Client needs the **Configuration management > Manage domains** permission for the target environment (stage)."
       }
     },
     "/environments/{environmentKey}/ip-filter-groups/{ipFilterGroupKey}": {
       "delete": {
         "tags": [
-          "IP filters"
+          "IP Filters"
         ],
         "summary": "Deletes a specific IP filter group for an environment (stage).",
-        "description": "Deletes a specific IP filter group for an environment (stage).\n\nAPI Client needs the **Configuration management > Manage IP filters** permission for the target environment (stage).",
+        "description": "Bound applications lose this filter.\n\nAPI Client needs the **Configuration management > Manage IP filters** permission for the target environment (stage).",
         "operationId": "IpFilterGroups_Delete",
         "parameters": [
           {
@@ -729,10 +1178,10 @@
       },
       "get": {
         "tags": [
-          "IP filters"
+          "IP Filters"
         ],
         "summary": "Returns information about a specific IP filter group for an environment (stage).",
-        "description": "Returns information about a specific IP filter group for an environment (stage).\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "description": "Includes the IP ranges and bound applications.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
         "operationId": "IpFilterGroups_Get",
         "parameters": [
           {
@@ -810,10 +1259,10 @@
       },
       "patch": {
         "tags": [
-          "IP filters"
+          "IP Filters"
         ],
         "summary": "Updates an IP filter group for an environment (stage).",
-        "description": "Updates an IP filter group for an environment (stage).\n\nAPI Client needs the **Configuration management > Manage IP filters** permission for the target environment (stage).",
+        "description": "Updates IP ranges and application bindings.\n\nAPI Client needs the **Configuration management > Manage IP filters** permission for the target environment (stage).",
         "operationId": "IpFilterGroups_Patch",
         "parameters": [
           {
@@ -919,10 +1368,10 @@
     "/environments/{environmentKey}/ip-filter-groups": {
       "get": {
         "tags": [
-          "IP filters"
+          "IP Filters"
         ],
         "summary": "Returns the list of IP filter groups for an environment (stage).",
-        "description": "Returns the list of IP filter groups for an environment (stage).\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "description": "Optionally filter by application key.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
         "operationId": "IpFilterGroups_List",
         "parameters": [
           {
@@ -1002,10 +1451,10 @@
       },
       "post": {
         "tags": [
-          "IP filters"
+          "IP Filters"
         ],
         "summary": "Creates a new IP filter group in an environment (stage).",
-        "description": "Creates a new IP filter group in an environment (stage).\n\nAPI Client needs the **Configuration management > Manage IP filters** permission for the target environment (stage).",
+        "description": "Groups can be bound to one or more applications.\n\nAPI Client needs the **Configuration management > Manage IP filters** permission for the target environment (stage).",
         "operationId": "IpFilterGroups_Post",
         "parameters": [
           {
@@ -1109,10 +1558,10 @@
     "/environments/{environmentKey}/private-gateway/activation": {
       "post": {
         "tags": [
-          "Private gateways"
+          "Private Gateways"
         ],
         "summary": "Activates a private gateway.",
-        "description": "Activates a private gateway.\n\nAPI Client needs the **Configuration management > Manage private gateways** permission for the target environment (stage).",
+        "description": "Returns the token used by the gateway client.\n\nAPI Client needs the **Configuration management > Manage private gateways** permission for the target environment (stage).",
         "operationId": "PrivateGateway_Activation",
         "parameters": [
           {
@@ -1183,10 +1632,10 @@
     "/environments/{environmentKey}/private-gateway/deactivation": {
       "post": {
         "tags": [
-          "Private gateways"
+          "Private Gateways"
         ],
         "summary": "Deactivates a private gateway.",
-        "description": "Deactivates a private gateway.\n\nAPI Client needs the **Configuration management > Manage private gateways** permission for the target environment (stage).",
+        "description": "Routing through the gateway stops.\n\nAPI Client needs the **Configuration management > Manage private gateways** permission for the target environment (stage).",
         "operationId": "PrivateGateway_Deactivation",
         "parameters": [
           {
@@ -1257,10 +1706,10 @@
     "/environments/{environmentKey}/private-gateway": {
       "get": {
         "tags": [
-          "Private gateways"
+          "Private Gateways"
         ],
         "summary": "Gets the private gateway status.",
-        "description": "Gets the private gateway status.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
+        "description": "Returns whether the gateway is active.\n\nAPI Client needs the **Configuration management > View configurations** permission for the target environment (stage).",
         "operationId": "PrivateGateway_Get",
         "parameters": [
           {
@@ -1331,10 +1780,10 @@
     "/environments/{environmentKey}/private-gateway/key-rotation": {
       "post": {
         "tags": [
-          "Private gateways"
+          "Private Gateways"
         ],
         "summary": "Rotates the private gateway key.",
-        "description": "Rotates the private gateway key.\n\nAPI Client needs the **Configuration management > Manage private gateways** permission for the target environment (stage).",
+        "description": "Issues a new gateway token.\n\nAPI Client needs the **Configuration management > Manage private gateways** permission for the target environment (stage).",
         "operationId": "PrivateGateway_KeyRotation",
         "parameters": [
           {
@@ -1405,6 +1854,31 @@
   },
   "components": {
     "schemas": {
+      "AvailabilityResponse": {
+        "type": "object",
+        "properties": {
+          "builtinDomainPrefix": {
+            "type": "string",
+            "description": "The built-in domain prefix that was checked for availability.",
+            "nullable": true
+          },
+          "builtinOsDomain": {
+            "type": "string",
+            "description": "The full OutSystems domain that would be created with this prefix.",
+            "nullable": true
+          },
+          "isAvailable": {
+            "type": "boolean",
+            "description": "Indicates whether the built-in domain prefix is available for use."
+          },
+          "message": {
+            "type": "string",
+            "description": "Optional message providing additional context (e.g., \"The subdomain is already in use\").",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "BaseIpFilterGroup": {
         "type": "object",
         "properties": {
@@ -1440,6 +1914,75 @@
               "type": "string"
             },
             "description": "The list of all app keys that are explicitly assigned to this group.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BuiltInDomainPrefixResponse": {
+        "type": "object",
+        "properties": {
+          "builtinDomainPrefix": {
+            "type": "string",
+            "description": "The built-in domain prefix.",
+            "nullable": true
+          },
+          "builtinOsDomain": {
+            "type": "string",
+            "description": "The full OutSystems domain associated with this prefix.",
+            "nullable": true
+          },
+          "isPrimary": {
+            "type": "boolean",
+            "description": "Indicates whether this is the primary built-in domain."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response model containing information about a built-in domain prefix."
+      },
+      "BuiltInDomainPrefixResponsePagedListResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PageInfoWithTotals"
+              }
+            ],
+            "description": "Page information.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuiltInDomainPrefixResponse"
+            },
+            "description": "List of results.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response containing a paged set of results."
+      },
+      "BuiltinDomainAvailabilityRequest": {
+        "type": "object",
+        "properties": {
+          "builtinDomainPrefix": {
+            "type": "string",
+            "description": "The built-in domain prefix to check for availability.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BuiltinDomainPrefixRequest": {
+        "type": "object",
+        "properties": {
+          "builtinDomainPrefix": {
+            "type": "string",
+            "description": "The built-in domain prefix to add.",
             "nullable": true
           }
         },
@@ -1761,8 +2304,9 @@
           },
           "nextPageOffset": {
             "type": "integer",
-            "description": "Offset of the next page of results.",
-            "format": "int32"
+            "description": "Offset of the next page of results. Null when there is no next page.",
+            "format": "int32",
+            "nullable": true
           },
           "totalResults": {
             "type": "integer",
@@ -1946,12 +2490,27 @@
       "description": "Manage custom domains for environments."
     },
     {
-      "name": "IP filters",
+      "name": "public"
+    },
+    {
+      "name": "private",
+      "description": "Endpoints to manage environments"
+    },
+    {
+      "name": "Built-In Domains",
+      "description": "Manage built-in domain prefixes for organizations and environments."
+    },
+    {
+      "name": "IP Filters",
       "description": "Create, update, and delete IP filter groups and rules."
     },
     {
-      "name": "Private gateways",
+      "name": "Private Gateways",
       "description": "Activate, deactivate, and manage private gateways."
+    },
+    {
+      "name": "Organization",
+      "description": "Manage organization settings."
     }
   ]
 }
