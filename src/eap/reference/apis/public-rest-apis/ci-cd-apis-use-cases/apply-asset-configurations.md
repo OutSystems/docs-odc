@@ -16,7 +16,7 @@ tags:
   - CI/CD
   - Deploy
   - REST
-  - Site Properties
+  - Settings
 outsystems-tools:
   - odc portal
 helpids:
@@ -25,12 +25,12 @@ isautopublish: true
 
 # Applying asset configurations
 
-This article explains how to use OutSystems APIs to apply pending asset configurations to a running app without performing a full code deployment. This is useful when you need to update settings such as site properties, REST base URLs, or secret variables across different stages without redeploying the app code.
+This article explains how to use OutSystems APIs to apply pending asset configurations to a running app without performing a full code deployment. This is useful when you need to update settings such as REST base URLs or secret variables across different stages without redeploying the app code.
 
 In ODC, managing configurations is a two-step process:
 
-1. Update the configuration values for a specific environment.
-1. Apply the configurations to the running app revision.
+1. [Update the configuration values for a specific environment.](#update-asset-configurations)
+1. [Apply the configurations to the running app revision.](#apply-the-configurations)
 
 ## Prerequisites
 
@@ -48,7 +48,7 @@ Before using the APIs to apply asset configurations, ensure that you have:
 
     To get the environment key and asset key, go to **Portal** > **Apps**, and select an asset. Select the stage to which you want to apply configurations. In the URL, copy the environment (stage) key after `stageid=` and the asset key as shown in this example:
 
-    ![Screenshot of the ODC Portal showing how to retrieve the environment (stage) key and asset key from the asset URL](images/environment-key-pl.png "Get the environment and asset keys")
+    ![Screenshot of the ODC Portal showing how to retrieve the environment (stage) key and asset key from the asset URL](images/environment-key-pl.png "ODC Portal Asset URL Keys")
 
     You can also retrieve these keys programmatically using `GET /api/portfolios/v2/environments` and `GET /api/portfolios/v2/applications`.
 
