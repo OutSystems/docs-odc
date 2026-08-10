@@ -30,12 +30,6 @@ ODC is cloud-native which means your apps don't run on servers. Instead, they ru
 
 VPN limitations over a cloud-native infrastructure are overcome by Private Gateway. VPNs are often the main vector for data breaches often allowing unrestricted access to the company's network, are complex to configure and set up, and are rigid when it comes to failover.
 
-<div class="info" markdown="1">
-
-Private Gateway requires the [subscription](subscription-console.md) of an add-on to the ODC Platform edition. Please contact your OutSystems account team for more information.
-
-</div>
-
 Private Gateway is a secure-by-design solution for the cloud-native, multi-tenant OutSystems Developer Cloud (ODC). Its standout benefits include:
 
 * Provides fine-tuned control over what data is accessible. You can control the ingress while not exposing any private endpoints.
