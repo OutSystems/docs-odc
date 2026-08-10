@@ -1,6 +1,9 @@
 ---
 summary: Explore how to create and implement custom obfuscation rules for non-OutSystems plugins in OutSystems Developer Cloud (ODC).
-tags: code obfuscation, app security, mobile app development, plugin management, secure coding practices
+tags:
+  - Mobile app
+  - Plugins
+  - Security
 locale: en-us
 guid: e0c476d7-f1ae-405e-8b3b-1c0c43cd38f3
 app_type: mobile apps
@@ -16,6 +19,7 @@ coverage-type:
   - remember
 topic:
   - customize-mobile-apps
+isautopublish: true
 ---
 
 # Creating custom obfuscation rules
@@ -97,10 +101,14 @@ obfuscate class *;
 
 The following table shows how you can match classes, fields, and methods in an exclusion declaration to obfuscate specific parts of the app.
 
-| Class_operation (class_op) | Opposite of | Description                                        |
+| Class_operation (class_op) | Opposite of | Description |
 | -------------------------- | ----------- | -------------------------------------------------- |
-| match                      |             | Specify the rules to operate on a given class      |
-| preserve                   | obfuscate   | Specify a class member to exclude from obfuscation |
+| match | | Specify the rules to operate on a given class |
+| obfuscate | preserve | Specify a class member to select or exclude from obfuscation |
+| bind | unbind | Select classes or members to bind or exclude from binding. |
+| removeDebug | keepDebug | Select classes or members from which to remove or keep debug information. |
+| removeLines | keepLines | Select classes or members from which to remove or keep line numbers. |
+| removeSourceFile | keepSourceFile | Select classes from which to remove or keep the source file name. |
 
 ### Obfuscation syntax example
 
@@ -175,9 +183,9 @@ The following is a list of the specifiers with a short description.
 **return_type**
 :    void, primitive or fully qualified name of a java class. Supports wildcards.
 
-## Obfuscation Helper
+## Obfuscation helper
 
-Using the Obfuscation [Helper tool](https://enmobile11.outsystemsenterprise.com/ObfuscationHelper/), you can verify the syntax of your custom obfuscation rules and encode them in a base64 format. The Helper tool automatically checks your rules, encodes your script, and defines the value of your AppShieldObfuscationRules in the Extensibility Configuration.
+Using the [Obfuscation helper tool](https://enmobile11.outsystemsenterprise.com/ObfuscationHelper/), you can verify the syntax of your custom obfuscation rules and encode them in a base64 format. The Helper tool automatically checks your rules, encodes your script, and defines the value of your `AppShieldObfuscationRules` in the Extensibility Configuration.
 
 ## Additional syntax guidance
 
@@ -213,7 +221,7 @@ To enable custom code obfuscation, follow these steps to add a property to the E
 
 <div class="info" markdown="1">
 
-Optionally, you can use the [Obfuscation Helper](https://enmobile11.outsystemsenterprise.com/ObfuscationHelper/) to verify the syntax of your custom obfuscation rules and encode them in a base64 format.
+Optionally, you can use the [Obfuscation helper](https://enmobile11.outsystemsenterprise.com/ObfuscationHelper/) to verify the syntax of your custom obfuscation rules and encode them in a base64 format.
 
 </div>
 
@@ -223,6 +231,6 @@ After you add your AppShieldObfuscationRules preference and value, you must perf
 
 The code obfuscation process generates a mapping file that maps original names to obfuscated names. With this file, developers can de-obfuscate backtraces from the app. To get a mapping file, you need to contact OutSystems support.
 
-If you have a syntax error on your custom obfuscation rules, the base64 encoding of your file propagates the error, and the build fails. Verify the syntax of your custom obfuscation rules is correct. You can use Code Obfuscation Helper tool, which provides a validator for the syntax of your custom code obfuscation rules and an encoder to base64. If you write your code using the code editor, after each input, the validator runs. Upon completion, a success or error message displays.
+If you have a syntax error on your custom obfuscation rules, the base64 encoding of your file propagates the error, and the build fails. Verify the syntax of your custom obfuscation rules is correct. You can use Code Obfuscation helper tool, which provides a validator for the syntax of your custom code obfuscation rules and an encoder to base64. If you write your code using the code editor, after each input, the validator runs. Upon completion, a success or error message displays.
 
 If you have a runtime error caused by the obfuscation, have someone on your team review the device logs.

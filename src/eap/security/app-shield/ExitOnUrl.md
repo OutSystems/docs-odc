@@ -1,6 +1,9 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports configuring an "Exit URL" in mobile apps using AppShield for security-related shutdowns.
-tags: mobile app security, appshield, security configuration, extensibility configurations, json configuration
+tags:
+  - Mobile app
+  - Plugins
+  - Security
 locale: en-us
 guid: 4afd7e48-139b-4672-a1f9-ec8a1aadac75
 app_type: mobile apps
@@ -14,6 +17,7 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+isautopublish: true
 ---
 
 # Configuring an exit URL for a blocked app
@@ -109,49 +113,10 @@ More information about the AppShield and the Exit URL configuration.
 
 The app includes the following parameter information in the generated **Exit URL**.
 
-| Query Parameter | Description                                                                                 |
+| Query Parameter | Description |
 | --------------- | ------------------------------------------------------------------------------------------- |
-| %reason%        | The reason for the shutdown, in decimal. See other tables for explanations of these values. |
-| %manufacturer%  | The manufacturer of the device                                                              |
-| %model%         | The model name of the device                                                                |
-| %android%       | The Android API level of the device                                                         |
-| %ios%           | The iOS API level of the device                                                             |
-
-### Shutdown reasons for iOS
-
-A list of reasons for app shutdown in iOS devices.
-
-| Decimal | Explanation                                       |
-| ------- | ------------------------------------------------- |
-| 00      | Device is jailbroken/rooted                       |
-| 01      | Application is being debugged                     |
-| 02      | Application is modified or repackaged             |
-| 03      | A screenshot of the application was taken         |
-| 04      | An injected library was found in the process      |
-| 05      | A hooking framework was found in the process      |
-| 06      | A screen recording of the application was started |
-| 08      | Running on emulator                               |
-| 09      | Running with Developer Mode enabled               |
-
-### Shutdown reasons for Android
-
-A list of reasons for app shutdown in Android devices.
-
-| Decimal | Explanation |
-| ------- | ------------------------------------------------------------------------- |
-| 00 | Device is rooted |
-| 01 | Application is modified or repackaged<br />**Note**: Removed from AppShield version 1.4.0 because it was not guaranteed to be triggered. |
-| 02 | Application is being run in an emulator<br />**Note**: Removed from AppShield version 1.4.0 because it was not guaranteed to be triggered. |
-| 03 | Java debugger attached to app |
-| 04 | Untrusted keyboard detected |
-| 05 | Untrusted screen reader detected |
-| 06 | Native code hooks, possibly inserted by malicious app |
-| 08 | Shield could not read configuration file |
-| 09 | Problem with Native Debugger Protection |
-| 19 | Problem initializing Shield |
-| 1a | Developer options enabled on device |
-| 1b | Untrusted installer found on device |
-| 20 | App received termination signal |
-| 21 | Application crashed outside of Java-code, either native library or Shield |
-| 22 | Hooking frameworks detected |
-| 23 | Native debugger prevention not possible on this device |
+| %reason% | The reason for the shutdown, in decimal. Refer to [Troubleshooting AppShield Crashes](troubleshooting.md#shutdown-reasons) for explanations of these values. |
+| %manufacturer% | The manufacturer of the device |
+| %model% | The model name of the device |
+| %android% | The Android API level of the device |
+| %ios% | The iOS API level of the device |
