@@ -167,9 +167,6 @@ If you are performing a full deployment using the `Deploy` operation, the platfo
 Refer to the following resources for more information about asset configurations and deployments:
 
 * [Asset Configurations API reference](../../asset-config-v1.md) — Details about configuration types and endpoints.
-
 * [Deployments API reference](https://www.outsystems.com/tk/redirect?g=acf7cd06-3fe1-4bd3-85e8-06cd11aa0a7d) — Complete deployments API documentation.
-
 * [Reviewing asset configurations](asset-configurations.md) — Check available configurations before updating them.
-
 * [Deploying your asset to the target stage](deploy-asset.md) — Deploy code changes with automatic configuration updates.
