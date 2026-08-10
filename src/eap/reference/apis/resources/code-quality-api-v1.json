@@ -1328,6 +1328,17 @@
         "summary": "Retrieves the current synchronization status of Code Quality data.",
         "description": "Retrieves the current synchronization status of Code Quality data, including the latest and last successful analysis details with metrics about new and resolved findings.\n\nExample: GET /code-quality/v1/analysis-status\n\nAPI Client needs the **Analyze > View Code Quality findings** permission.",
         "operationId": "SyncControllerV_GetAnalysisStatus",
+        "parameters": [
+          {
+            "name": "portfolioKey",
+            "in": "query",
+            "description": "The portfolio identifier (optional)",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
