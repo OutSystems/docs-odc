@@ -1,6 +1,7 @@
 ---
 summary: Monitor resource capacity in OutSystems Developer Cloud (ODC) using the ODC Portal to optimize and track usage.
 tags:
+  - Best Practices
   - Monitoring
   - Optimization
   - Performance
@@ -43,7 +44,7 @@ You can use the ODC Portal to track resource consumption, understand current usa
 
 OutSystems recommends actively [monitoring](#monitor) and [optimizing your resource usage](#optimize) to ensure consistent app performance and a seamless user experience. Use the ODC Portal to track resource consumption, understand current usage, and identify available capacity.
 
-## Resource types and capacity limits
+## Resource types and capacity limits {#resource-type-capacity-limit}
 
 ODC enforces capacity limits per resource type. These limits apply at the stage level and define how much of each resource your subscription can use:
 
@@ -116,7 +117,7 @@ The dashboard prioritizes displaying stages with warnings or errors first rather
 
 </div>
 
-![A screenshot displaying various metrics in Subscription Portal](images/db-compute-exceed-capaciy-pl.png "Subscription Portal Metrics Overview")
+![Screenshot of the ODC Portal subscription dashboard showing resource capacity warnings and errors](images/db-compute-exceed-capaciy-pl.png "Subscription Dashboard Warnings and Errors")
 
 ODC alerts you when resource consumption approaches or exceeds limits:
 
@@ -150,7 +151,7 @@ When approaching or surpassing capacity limits, the following issues may occur:
 
 When resource consumption is at its limit and actions that consume further resources are performed (like publishing a new app, for example), ODC displays an error. You may see these errors in ODC Studio when publishing, in ODC Portal when deploying to the next stage, or when manually running a timer. Other errors may also show at app runtime. These errors are also recorded in the [ODC logs](../monitor-and-troubleshoot/monitor-apps.md#logs).
 
-![A screenshot displaying logs when execeeding compute instances](images/logs-exceeding-compute-pl.png "Compute Instance Metric Log")
+![Screenshot of ODC logs displaying errors when compute instance capacity is exceeded](images/logs-exceeding-compute-pl.png "ODC Logs Compute Instance Errors")
 
 <div class="info" markdown="1">
 

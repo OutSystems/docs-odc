@@ -223,12 +223,17 @@ The general platform limits are:
 | Member session (hours) | 12 | The maximum session duration for members (IT-users) accessing the ODC Portal and ODC Studio. This value can't be changed. |
 | Invitation verification token (days) | 7 | The maximum duration the verification token is valid for the user to complete their registration. |
 | Self-registration verification token (minutes) | 15 | The maximum duration within which the user can complete the self-registration process. |
-| Compute Instances (per app) | 16 | The maximum number of compute instances that can be consumed when scaling apps horizontally. |
+| Compute Instances (per app) | 16 | The maximum number of compute instances that can be consumed when scaling apps horizontally. Each stage also has an overall compute instances capacity limit, a cumulative total shared across all apps, agents, workflows, and timers in that stage. When other assets in the stage already consume most of that overall capacity, an app stops scaling once the stage-level limit is reached, even if it hasn't reached its own 16 CI limit. For more information, refer to [Monitor ODC resource capacity](capacity-limits.md#resource-type-capacity-limit). |
 | Analytics Stream connections | 5 | The maximum number of Analytics Stream connections that can exist simultaneously. |
 | Max IP Filter Rules | 20 | The maximum number of IP filter rules that can be added to each IP filter group. |
 | Max IP Addresses (per rule) | 20 | The maximum number of IP addresses that can be added to each IP filter rule. |
 | API clients | 35 | The maximum number of API clients that can be defined. |
 | Non-production stages | 10 | The maximum number of non-production stages that can be added to a portfolio. |
+
+<div class="info" markdown="1">
+
+The 16 CI **Compute Instances (per app)** limit is a ceiling, not a guarantee.
+</div>
 
 ### Logs and traces
 
