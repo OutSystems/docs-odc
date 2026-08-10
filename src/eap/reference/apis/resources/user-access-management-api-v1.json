@@ -6342,6 +6342,9 @@
       "name": "users"
     },
     {
+      "name": "environments"
+    },
+    {
       "name": "groups"
     },
     {
@@ -6364,6 +6367,9 @@
     },
     {
       "name": "subjects"
+    },
+    {
+      "name": "tenants"
     }
   ]
 }
