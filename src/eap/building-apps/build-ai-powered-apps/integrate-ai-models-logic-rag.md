@@ -1,7 +1,7 @@
 ---
 guid: 3bc7d939-90b0-4588-bf4c-d40da6e5c83f
 locale: en-us
-summary: Integrate AI models and search services in mobile and reactive web apps using OutSystems Developer Cloud (ODC).
+summary: AI model and search service calls in ODC Studio to prepare Request structures, chain Search actions, and implement RAG patterns.
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7387-413&p=f&t=qLWrpr4U9mwgQUkz-0
 coverage-type:
   - apply

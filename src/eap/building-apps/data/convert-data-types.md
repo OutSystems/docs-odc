@@ -1,5 +1,5 @@
 ---
-summary: Explore conversion functions in OutSystems Developer Cloud (ODC).
+summary: "OutSystems Developer Cloud (ODC) data type conversion: implicit rules and explicit functions like BooleanToInteger and TextToDate."
 tags: data type conversion, explicit conversion functions, implicit conversion functions
 locale: en-us
 guid: 62dd6548-d073-4ccb-90c1-8f4bfa4a0bfd
