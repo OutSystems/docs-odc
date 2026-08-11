@@ -35,7 +35,7 @@ To use the commands, on the CLI first navigate to your ODC Studio installation d
 
 And precede any command by `.\odcstudio.exe` and a space, for example: `.\odcstudio.exe -merge`.
 
-The syntax is composed of a **command** and it’s **arguments**. The command defines the functionality such as merging two apps. The arguments represent inputs necessary to each switch such as the version of the apps to be merged.
+The syntax is composed of a **command** and its **arguments**. The command defines the functionality such as merging two apps. The arguments represent inputs necessary to each switch such as the version of the apps to be merged.
 
 ## Summary of available commands
 
