@@ -1,7 +1,7 @@
 ---
 guid: 5332e43d-bd1c-4403-8f46-5cbdaf198318
 locale: en-us
-summary: Design AI systems with agentic patterns in OutSystems Developer Cloud (ODC), understanding sequential and loop agent patterns for task coordination.
+summary: Agentic patterns in ODC are blueprints for multi-agent AI systems, covering sequential, parallel, supervisor, hierarchical, and human-in-the-loop designs.
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=8733-89&t=dpsTJPtDSEXmwI6w-1
 coverage-type:
   - remember

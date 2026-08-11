@@ -1,5 +1,5 @@
 ---
-summary: Use requirement documents to provide a structured specification for apps with data models, roles, and screen requirements.
+summary: "OutSystems Developer Cloud (ODC) requirement documents: structure data models, roles, and screen layouts for accurate agentic app generation."
 tags: requirement documents, agentic development, app generation, best practices, documentation
 guid: da1fc397-5aff-4513-b531-df5f58c29af0
 locale: en-us

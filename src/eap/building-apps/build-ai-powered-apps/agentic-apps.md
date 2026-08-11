@@ -1,7 +1,7 @@
 ---
 guid: 24d5a0ea-68c8-4851-b7de-e0908c122862
 locale: en-us
-summary: Integrate AI capabilities in your apps using AI models or agents in OutSystems Developer Cloud (ODC) to build intelligent, autonomous applications.
+summary: Agentic apps in ODC use AI agents to automate multi-step workflows, with grounding, system prompts, state persistence, and external tools shaping agent behavior.
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7782-132&p=f&t=KL8VHzLPQQ7E5ZHx-0
 coverage-type:
   - understand
