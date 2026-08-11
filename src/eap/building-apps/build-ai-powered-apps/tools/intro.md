@@ -8,7 +8,6 @@ app_type: mobile apps,reactive web apps
 platform-version: odc
 coverage-type:
   - understand
-  - apply
 topic:
   - integration
 audience:

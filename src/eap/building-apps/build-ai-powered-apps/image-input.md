@@ -6,6 +6,7 @@ figma:
 coverage-type:
   - remember
   - understand
+  - apply
 topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
