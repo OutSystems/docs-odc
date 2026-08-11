@@ -1,5 +1,5 @@
 ---
-summary: Explore the architecture of the Identity Service in OutSystems Developer Cloud (ODC), focusing on authentication and authorization mechanisms.
+summary: ODC Identity Service architecture uses JWT and OIDC to delegate authentication to an IdP and enforce token-based authorization for platform and app access.
 tags:
   - Architecture
   - Authentication
@@ -14,9 +14,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/wMgr3GDiuAdkPics5gzXx9/Cloud-native-architecture-of-OutSystems-Developer-Cloud?type=design&node-id=3001%3A1809&t=wS2nDUn4cr9EORu8-1
 platform-version: odc
 audience:
-  - Developer
-  - Front-end developer
   - Architect
+  - Developer
   - Platform administrator
 outsystems-tools:
   - odc studio
@@ -73,7 +72,15 @@ ODC includes built-in protection against session fixation attacks, where an atta
 
 ### Token lifecycle and logout {#token-lifecycle-and-logout}
 
-Access tokens are short-lived, with a five-minute lifetime. When an access token expires, ODC uses the refresh token to silently issue a new access token, keeping the user's session active without interrupting the user. For more details, refer to [Configure user session](../../user-management/configure-user-session.md).
+The access tokens are short-lived JWTs with a five-minute lifetime and contain no Personally Identifiable Information (PII), apart from database keys and the data required by the ODC OIDC broker. When an access token expires, ODC uses the refresh token to silently issue a new access token. Refresh tokens are single-use: each time a refresh token is used, ODC immediately invalidates it and issues both a new access token and a new refresh token. If the same refresh token is used a second time, the entire session is invalidated as a protection against token reuse. For more details, refer to [Configure user session](../../user-management/configure-user-session.md).
+
+As of December 2025, ODC access tokens are being updated to remove PII. This change is applied progressively per tenant and takes effect after an identity environment configuration change. For example:
+
+* Assigning or updating an IdP
+* Adding or changing a custom domain
+* creating a client
+* Updating a secret
+* Publishing a mobile app
 
 When a user logs out, the platform immediately invalidates their session and refresh tokens, meaning no new access tokens can be issued and the user must re-authenticate. However, because access tokens are self-contained JWTs validated without a server lookup, the platform does not individually revoke them. Any access token issued just before logout will remain valid until its natural five-minute expiration. This brief window is standard, secure behavior for stateless validation, keeping exposure strictly limited.
 
