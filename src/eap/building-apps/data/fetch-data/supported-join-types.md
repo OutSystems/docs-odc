@@ -1,5 +1,5 @@
 ---
-summary: Explore the supported join types in OutSystems Developer Cloud (ODC) for combining data from multiple entities.
+summary: "OutSystems Developer Cloud (ODC) join types: Only With, With or Without, With, and cross joins for combining entity records in aggregates."
 tags: database operations, entity relationships, data aggregation, query optimization, data modeling
 locale: en-us
 guid: edee2ac8-5d4c-4423-9e26-cce4b0f45f4c

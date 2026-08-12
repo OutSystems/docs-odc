@@ -1,5 +1,5 @@
 ---
-summary: Learn how to synchronize data between a mobile app and the server, with offline support, using the accelerators and custom logic.
+summary: OutSystems Developer Cloud (ODC) offline data synchronization for mobile apps using accelerators, manual OnSync logic, and automatic or manual triggers.
 tags: offline data synchronization, mobile apps, accelerators, client-server sync, data consistency
 locale: en-us
 guid: 06c3cb30-b81d-4d6d-8e98-aef3c11d949c

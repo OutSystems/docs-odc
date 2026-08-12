@@ -1,5 +1,5 @@
 ---
-summary: Learn about the "Read/Write Data Last Write Wins" synchronization pattern in OutSystems Developer Cloud (ODC) for mobile app data consistency.
+summary: Read/Write Data Last Write Wins pattern in ODC syncs offline mobile data using last-write-wins conflict resolution and auto-generated sync actions.
 tags: data synchronization, conflict resolution, mobile app development, offline data handling, last write wins
 locale: en-us
 guid: e9dcceb5-b0e6-40de-a825-dfcda6d534e0

@@ -1,5 +1,5 @@
 ---
-summary: Commit changes to database before running aggregates to ensure the retrieval of newly inserted or updated records.
+summary: ODC data mashup transactions differ when mixing OutSystems and external entities; use CommitTransaction so aggregates retrieve updated data.
 locale: en-us
 guid: 4d56d131-ab84-401a-950f-ba81eebd716c
 app_type: mobile apps, reactive web apps
