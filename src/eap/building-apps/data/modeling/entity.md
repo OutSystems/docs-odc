@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) streamlines database modeling with entities, primary keys, and indexes for efficient data management.
+summary: ODC entities define your database model using Entity Identifiers, AutoNumber, sequential attributes, and indexes to structure and query app data.
 tags: database modeling, entity management, data management, primary keys, indexes
 locale: en-us
 guid: 7bf1d47d-7310-4ec8-a5db-a41b983bdb5b
