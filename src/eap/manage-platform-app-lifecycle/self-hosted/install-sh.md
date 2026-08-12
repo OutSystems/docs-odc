@@ -46,7 +46,7 @@ Make sure you have:
 
     * **macOS**: Homebrew, `jq`, `curl`, `kubectl`, `helm`
     * **Linux**: `jq`, `curl`, `kubectl`, `helm`
-    * **Windows**: `kubectl`, `helm`. PowerShell 5.0 or higher is required.
+    * **Windows**: `kubectl`, `helm`. PowerShell 5.1 or higher is required.
 * **ODC Portal permissions**: Make sure you have the **Manage stages** permission. The user who configures the identity provider (IdP) must have the **Manage authentication** permission. The user who receives the welcome email has the admin role, which includes all permissions.
 
 ## Set up access to the ODC Portal {#setup-access}
@@ -100,6 +100,12 @@ To open the self-hosted stage in the ODC Portal, follow these steps:
 To install the Self-hosted configurator, do the following:
 
 1. In a shell session with the target cluster set as the current context, run the copied command as an administrator.
+
+    <div class="info" markdown="1">
+
+    On Windows, the command format shown in the ODC Portal uses `powershell -Command "..."` syntax, which works in both Command Prompt (cmd.exe) and PowerShell. You can run this command from either shell.
+
+    </div>
 
     The command installs the **Self-hosted configurator**. After the installation completes, your browser automatically opens the **Log in to Self-hosted setup** page in the Self-hosted console.
 

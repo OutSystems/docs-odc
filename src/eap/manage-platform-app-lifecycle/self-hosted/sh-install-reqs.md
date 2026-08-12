@@ -19,6 +19,7 @@ tags:
   - Infrastructure
   - Monitoring
   - OIDC
+  - Security
 outsystems-tools:
   - self hosted configurator
 helpids: 30551, 30563
@@ -81,9 +82,10 @@ The following table lists the details of the necessary outbound connectivity fro
 
 | Source | Destination | Protocol and ports | Destination description |
 | --- | --- | --- | --- |
-| Namespace: `sh-registry` | `*.amazonaws.com` | TCP 443 | OutSystems Cloud container registry (default registry on OpenShift) |
 | Custom registry endpoint | `*.amazonaws.com` | TCP 443 | OutSystems Cloud container registry (custom registry) |
-| Namespaces: `sh-registry`, `flux-config`, `self-hosted-operator`, Stage namespaces | Custom registry endpoint | TCP 443 | Custom container registry deployments |
+| Namespace: `sh-registry` | `*.amazonaws.com` | TCP 443 | OutSystems Cloud container registry (default registry on OpenShift) |
+| Namespace: `sh-registry` | Custom registry endpoint | TCP 443 | Custom container registry |
+| Namespaces: `sh-registry`, `flux-config`, `self-hosted-operator`, Stage namespaces | Custom registry endpoint | TCP 443 | Custom container registry |
 | Namespace: `self-hosted-operator` | `<your-tenant>.outsystems.dev` | TCP 443 | OutSystems Cloud platform API |
 | Namespace: `nats-leaf` | `*.nats.stamp.outsystemscloudrd.net` | TCP 443 | OutSystems Cloud messaging |
 | Namespace: `outsystems-otel` | `https://logs-prod-036.grafana.net` <br/>`https://tempo-prod-26-prod-us-east-2.grafana.net` <br/>`https://prometheus-prod-56-prod-us-east-2.grafana.net` | TCP 4317 and 4318 | OutSystems Cloud monitoring platform |
@@ -91,13 +93,18 @@ The following table lists the details of the necessary outbound connectivity fro
 | Namespace `keycloak-aurora-cluster-1` | The address of the IDP you manage | TCP 443 | Self-hosted IDP |
 | Stage namespace | Stage database address defined during setup | TCP 5432 | Self-hosted stage database |
 | Namespace: `runtime-services` | All the stage’s database addresses defined during setup | TCP 5432 | Introspection over all self-hosted stage databases |
-| Cluster <br/> Admin workstation | public.ecr.aws/m5i8c6m7/ea | TCP 443 | Download Self-hosted configurator |
-| Namespace: `sh-registry` | Custom registry endpoint | TCP 443 | Custom container registry: image sync |
-| Worker nodes | Custom registry endpoint | TCP 443 | Custom container registry: image pulls |
+| All cluster worker nodes | `public.ecr.aws/j0s5s8b0/ga/*` | TCP 443 | Pull container images from OutSystems ECR |
+| Cluster <br/> Admin workstation | `public.ecr.aws/j0s5s8b0/ga/*` | TCP 443 | Download Self-hosted configurator and Helm charts |
+| Cluster <br/> Admin workstation | `outsystems.github.io` | TCP 443 | Download Self-hosted installer script |
+| Cluster <br/> Admin workstation | `dl.k8s.io` | TCP 443 | Download kubectl binary (optional) |
+| Cluster <br/> Admin workstation | `raw.githubusercontent.com` | TCP 443 | Download Helm installation script (optional) |
+| Cluster <br/> Admin workstation | Kubernetes API server endpoint | TCP 6443 (default), TCP 443 (EKS/AKS/GKE) | Connect to cluster API server |
+
+* **OutSystems Cloud container registry (custom registry)**: Applies to [custom registry configurations](sh-registry.md) on any supported distribution. The sync job pulls application images from the OutSystems Cloud registry on AWS ECR and then pushes them to your custom registry endpoint.
 
 * **OutSystems Cloud container registry (default registry on OpenShift)**: Applies to OpenShift clusters using the OutSystems-managed registry. Connecting to this endpoint keeps the in-cluster registry in sync with the OutSystems Cloud, so the latest app versions from the development stage are available for deployment to your self-hosted stages.
 
-* **OutSystems Cloud container registry (custom registry)**: Applies to [custom registry configurations](sh-registry.md) on any supported distribution. The sync job pulls application images from the OutSystems Cloud registry on AWS ECR and then pushes them to your custom registry endpoint.
+* **Custom container registry**: Applies to custom registry configurations. Multiple cluster components need to reach the custom registry endpoint: the sync job (`sh-registry`), the deployment controller (`flux-config`), the runtime pods in each stage namespace, and the operator (`self-hosted-operator`) for endpoint validation. If the custom registry runs inside the cluster, this connectivity is internal and no external firewall rules are needed. If it runs outside the cluster, ensure all four sources have outbound HTTPS access to the registry endpoint.
 
 * **OutSystems Cloud platform API**: Used to authenticate in the Self-hosted configurator when installing or configuring stages. Its destination is the address of your tenant as seen when you access Portal.
 
@@ -113,9 +120,15 @@ The following table lists the details of the necessary outbound connectivity fro
 
 * **Introspection over all self-hosted stage databases:** The database introspection service requires connectivity to all the stage databases to support ODC core functions such as generating database update scripts upon app deployment.
 
-* **Download Self-hosted configurator**: When installing a new self-hosted stage it’s necessary to download the Self-hosted configurator that will run in the cluster. Once the stage is fully installed this connectivity is no longer required.
+* **Pull container images from OutSystems ECR**: All worker nodes in the cluster must have outbound access to public.ecr.aws to pull container images required for ODC platform components and services. This connectivity is necessary throughout the lifecycle of the cluster, not just during installation. Without this access, pods will encounter ImagePullBackOff errors.
 
-* **Custom container registry**: Applies to custom registry configurations. Multiple cluster components need to reach the custom registry endpoint: the sync job (`sh-registry`), the deployment controller (`flux-config`), the runtime pods in each stage namespace, and the operator (`self-hosted-operator`) for endpoint validation. If the custom registry runs inside the cluster, this connectivity is internal and no external firewall rules are needed. If it runs outside the cluster (for example, AWS ECR, Azure ACR, or Google Artifact Registry), ensure all four sources have outbound HTTPS access to the registry endpoint.
+* **Download Self-hosted configurator and Helm charts**: When installing a new self-hosted stage, the admin workstation downloads the Self-hosted configurator and Helm charts. Once the stage is fully installed, this connectivity from the workstation is no longer required.
+
+* **Download kubectl binary**: The Self-hosted configurator installation script automatically downloads and installs kubectl if it's not already present in the admin workstation. This connectivity is only needed during the initial installation if kubectl is not pre-installed. If you manually install kubectl before running the configurator, this connectivity is not required.
+
+* **Download Helm installation script**: The Self-hosted configurator installation script automatically downloads and installs Helm if it's not already present in the admin workstation. This connectivity is only needed during the initial installation if Helm is not pre-installed. If you manually install Helm before running the configurator, this connectivity is not required.
+
+* **Connect to cluster API server**: The admin workstation must connect to the Kubernetes API server to run kubectl commands and install the Self-hosted configurator. The default port is 6443 for most distributions, but managed Kubernetes services like EKS, AKS, and GKE typically use port 443. Refer to your Kubernetes distribution's documentation for the exact API server endpoint and port.
 
 ### Inbound connectivity requirements {#inbound}
 
