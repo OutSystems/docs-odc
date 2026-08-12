@@ -4,8 +4,9 @@ locale: en-us
 summary: Understand SQL SELECT statement and WITH clause in OutSystems Developer Cloud (ODC) for executing mashup queries involving internal and external entities.
 figma:
 coverage-type:
-  - apply
+  - remember
   - understand
+  - apply
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
