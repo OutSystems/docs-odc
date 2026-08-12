@@ -875,7 +875,14 @@
     - topics: 
         - href: eap/monitor-and-troubleshoot/traces/server-side-traces.md
         - href: eap/monitor-and-troubleshoot/traces/client-side-traces.md
-    
+
+    - href: eap/monitor-and-troubleshoot/agent-monitoring/agent-monitoring-overview.md
+    - topics: 
+        - href: eap/monitor-and-troubleshoot/agent-monitoring/agent-cost-performance-analytics.md
+        - href: eap/monitor-and-troubleshoot/agent-monitoring/quality-signals.md        
+        - href: eap/monitor-and-troubleshoot/agent-monitoring/detailed-execution-traces.md
+        - href: eap/monitor-and-troubleshoot/agent-monitoring/view-a-production-trace.md
+
 # REST APIs 
 - href: eap/reference/apis/public-rest-apis/overview.md
 - topics:
