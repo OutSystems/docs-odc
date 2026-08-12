@@ -84,7 +84,6 @@ The following table lists the details of the necessary outbound connectivity fro
 | --- | --- | --- | --- |
 | Custom registry endpoint | `*.amazonaws.com` | TCP 443 | OutSystems Cloud container registry (custom registry) |
 | Namespace: `sh-registry` | `*.amazonaws.com` | TCP 443 | OutSystems Cloud container registry (default registry on OpenShift) |
-| Namespace: `sh-registry` | Custom registry endpoint | TCP 443 | Custom container registry |
 | Namespaces: `sh-registry`, `flux-config`, `self-hosted-operator`, Stage namespaces | Custom registry endpoint | TCP 443 | Custom container registry |
 | Namespace: `self-hosted-operator` | `<your-tenant>.outsystems.dev` | TCP 443 | OutSystems Cloud platform API |
 | Namespace: `nats-leaf` | `*.nats.stamp.outsystemscloudrd.net` | TCP 443 | OutSystems Cloud messaging |
