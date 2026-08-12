@@ -103,7 +103,7 @@ Authentication verifies a user’s identity before granting access. ODC supports
 
     <div class="info" markdown="1">
 
-    In self-hosted tenants, the built-in provider is only available for IT-user sign-in to the ODC Portal and ODC Studio. End-user authentication requires an external IdP for every stage.
+    In self-hosted tenants, the built-in IdP is only available for IT-user sign-in to the ODC Portal and ODC Studio. End-user authentication requires an external IdP for every stage.
 
     </div>
 
@@ -149,7 +149,7 @@ ODC organizes access into three scopes:
 
 These scopes define the level at which you can assign [roles](#authorization) and permissions to users, as well as configure [end-user groups](end-users/groups.md) and [Identity Providers (IdPs)](../../../build/eap/manage-platform-app-lifecycle/external-idps/intro.html). While roles are assigned at the organization or app level, app stage scope is mainly relevant when assigning permissions while creating [custom roles](roles.md) and when managing IdPs. In a multi-portfolio organization, some permissions become portfolio-scoped, adding a level between organization and stage. For more information, refer to [User management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md). Understanding these scopes helps you control what resources users can access and what actions they can perform, ensuring secure and efficient management.
 
-![Diagram illustrating organization and app scope](images/org-stage-app-scope-diag.png "Organization and App Scope in ODC")
+![Diagram illustrating organization, app stage, and app scope in ODC](images/org-stage-app-scope-diag.png "Organization, App Stage, and App Scope in ODC")
 
 ## Related resources
 

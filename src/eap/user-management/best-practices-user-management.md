@@ -2,10 +2,9 @@
 guid: 3474ca87-eabb-44e5-bee0-f938e1f488d3
 locale: en-us
 summary: Optimize user management with OutSystems Developer Cloud (ODC) by applying best practices like least privilege, avoiding lockouts, and using APIs.
-figma: 
+figma:
 coverage-type:
   - evaluate
-  - unblock
 topic:
   - lockout
 app_type: mobile apps, reactive web apps
@@ -13,10 +12,18 @@ platform-version: odc
 audience:
   - Tech lead
   - Platform administrator
-tags: user management,least privilege,api validation,api security,identity providers
+tags:
+  - Authentication
+  - Authorization
+  - Best Practices
+  - Groups
+  - IdP
+  - Roles
+  - Security
 outsystems-tools:
   - odc portal
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # Best practices for user management in ODC
@@ -25,7 +32,7 @@ User management in OutSystems Developer Cloud (ODC) is essential for securing yo
 
 ## Test external IdPs before removing the built-in IdP
 
-Switching authentication providers is a critical operation. Removing the built-in IdP assignment (to the organization for IT-users or to an app stage for end-users) without proper testing can result in a [lockout](../manage-platform-app-lifecycle/external-idps/intro.md#lockout), where no one can access either the ODC Portal and Studio, or the apps developed in ODC.
+Switching authentication providers is a critical operation. Removing the built-in identity provider (IdP) assignment (to the organization for IT-users or to an app stage for end-users) without proper testing can result in a [lockout](../manage-platform-app-lifecycle/external-idps/intro.md#lockout), where no one can access either the ODC Portal and Studio, or the apps developed in ODC.
 
 ### Recommendations
 

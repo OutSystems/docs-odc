@@ -29,11 +29,11 @@ isautopublish: true
 
 # Email verification and profile matching for external identity providers
 
-Use this article to choose email verification behavior and understand how ODC matches and creates user profiles when users authenticate with external identity providers.
+Use this article to choose email verification behavior and understand how ODC matches and creates user profiles when users authenticate with external identity providers (IdPs).
 
 ## Identity claims
 
-Identity providers issue claims (for example, email, email_verified, username, and subject/sub). ODC uses these to verify emails and to match external logins to ODC profiles. For claim mapping requirements and behavior, refer to [Claim mapping and profile matching](#claim-mapping-logic). For group-based access using claims, refer to [IdP and end-user group mapping](end-user-group-mapping.md).
+Identity providers (IdPs) issue claims (for example, email, email_verified, username, and subject/sub). ODC uses these to verify emails and to match external logins to ODC profiles. For claim mapping requirements and behavior, refer to [Claim mapping and profile matching](#claim-mapping-logic). For group-based access using claims, refer to [IdP and end-user group mapping](end-user-group-mapping.md).
 
 ## Email verification logic {#email-verification-logic}
 
@@ -103,7 +103,7 @@ Defines the fallback attribute ODC uses for matching:
 
 <div class="info" markdown="1">
 
-Email matching and username matching behave differently across identity providers. With email matching, if IdP A creates a user profile with a given email address, and the user later logs in with IdP B using the same email address, ODC recognizes the match and links both logins to the same profile. Username matching doesn't work across IdPs. You can pre-create a user for an IdP with username matching, and ODC matches them when they log in with that same IdP. However, if a user has the same username on IdP A and IdP B, ODC doesn't link them to the same profile.
+Email matching and username matching behave differently across IdPs. With email matching, if IdP A creates a user profile with a given email address, and the user later logs in with IdP B using the same email address, ODC recognizes the match and links both logins to the same profile. Username matching doesn't work across IdPs. You can pre-create a user for an IdP with username matching, and ODC matches them when they log in with that same IdP. However, if a user has the same username on IdP A and IdP B, ODC doesn't link them to the same profile.
 
 </div>
 
@@ -159,7 +159,7 @@ Common matching scenarios include:
 **Invited users, self-registered users, or API-created users**
 :   On the user’s first login with an IdP, ODC matches [invited users](../../user-management/create-deactivate-and-delete-users.md#creating-users), [self-registered users](../../building-apps/ui/self-registration/intro.md), and users created using the [User and access management API](../../reference/apis/identity-v1.md) to an existing ODC profile by using the [**User profile matching**](#user-profile-matching) setting of the IdP. If [auto-create users on login](#auto-create-users-on-login) is selected, after ODC creates the IdP profile, subsequent logins from the same IdP match by subject.
 
-    If you create a user using the API and include the IdP key and the user’s subject, ODC creates the user’s IdP profile before the first login. The first login then matches by subject. When you create users through the API, creating the user in the built-in identity provider is optional. This supports creation of users who log in with an external IdP and don't need a profile in the built-in identity provider.
+    If you create a user using the API and include the IdP key and the user’s subject, ODC creates the user’s IdP profile before the first login. The first login then matches by subject. When you create users through the API, creating the user in the built-in identity provider (IdP) is optional. This supports creation of users who log in with an external IdP and don't need a profile in the built-in IdP.
 
     For more information, refer to [Built-in authentication and password-based login](#built-in-authentication-password-sign-in).
 
@@ -207,19 +207,19 @@ For more information about other matching scenarios, refer to [User matching and
 
 ### Built-in authentication in combination with external IdPs {#built-in-authentication-password-sign-in}
 
-Built-in authentication uses the built-in identity provider. Users log in with an email address and a password.
+Built-in authentication uses the built-in IdP. Users log in with an email address and a password.
 
-A user that logs in through an external IdP doesn’t always have a built-in identity provider profile. Without that profile, the user can’t log in with built-in authentication or use **Forgot password?** to set a password.
+A user that logs in through an external IdP doesn’t always have a built-in IdP profile. Without that profile, the user can’t log in with built-in authentication or use **Forgot password?** to set a password.
 
 #### Users registered with an external IdP that log in with the built-in IdP {#external-idp-to-built-in}
 
-The following table shows when built-in identity provider login is available based on how you create the user.
+The following table shows when built-in IdP login is available based on how you create the user.
 
-| User creation method | Built-in identity provider login available? | Reason |
+| User creation method | Built-in identity provider (IdP) login available? | Reason |
 | :---- | :---- | :---- |
-| Auto-created via external IdP login only | No | ODC didn’t create a built-in identity provider profile, so the user didn’t set up a password. For a mitigation path, refer to [Enable built-in authentication for an external IdP user](../../user-management/create-deactivate-and-delete-users.md#enable-built-in-authentication). |
-| Created via [User and access management API](../../reference/apis/identity-v1.md) with `addToBuiltInIdentityProvider` set to `true` | Yes | ODC created the built-in identity provider profile at user creation time. |
-| [Invited via ODC Portal](../../user-management/create-deactivate-and-delete-users.md#creating-users), completed registration (followed the link in the invitation email and entered the verification code in the ODC Portal) and set up a password, then logged in through an external IdP | Yes | ODC created the built-in identity provider profile when the user completed registration. |
+| Auto-created via external IdP login only | No | ODC didn’t create a built-in IdP profile, so the user didn’t set up a password. For a mitigation path, refer to [Enable built-in authentication for an external IdP user](../../user-management/create-deactivate-and-delete-users.md#enable-built-in-authentication). |
+| Created via [User and access management API](../../reference/apis/identity-v1.md) with `addToBuiltInIdentityProvider` set to `true` | Yes | ODC created the built-in IdP profile at user creation time. |
+| [Invited via ODC Portal](../../user-management/create-deactivate-and-delete-users.md#creating-users), completed registration (followed the link in the invitation email and entered the verification code in the ODC Portal) and set up a password, then logged in through an external IdP | Yes | ODC created the built-in IdP profile when the user completed registration. |
 | Invited via ODC Portal, logged in through an external IdP before completing registration | No | The user hasn’t completed registration, so the user hasn’t set up a password. Completing registration sets up a password. |
 
 #### Users registered with the built-in IdP that log in with an external IdP
@@ -309,7 +309,7 @@ and the invalid permissions page displays.
 
 </div>
 
-### Email changes in external identity providers {#email-changes-external-idps}
+### Email changes in external IdP {#email-changes-external-idps}
 
 ODC matches returning users by subject first. Email changes affect how ODC matches the first login for an IdP that the user hasn’t used before.
 
@@ -345,5 +345,5 @@ Users who have logged in at least once with the IdP don't experience this issue 
 
 ## Related resources
 
-* [Configuring authentication with external identity providers](intro.md)
+* [Configuring authentication with external IdPs](intro.md)
 * [Manage identity providers](manage-external-idps.md)

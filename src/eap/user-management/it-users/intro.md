@@ -1,7 +1,7 @@
 ---
 guid: 543d1a8f-c7cf-4bdb-8b67-28634a6f750a
 locale: en-us
-summary: Learn how to manage the authorization and authentication of IT users in OutSystems Developer Cloud (ODC), including role assignments and access control.
+summary: 'ODC members (IT-users) authentication: set up built-in or external IdP auth, create members, and assign roles in the ODC Portal.'
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3885-162&t=Z9ZC4tpt2fDH1vlP-1
 coverage-type:
   - apply
@@ -59,7 +59,7 @@ Assigning an organization role doesn’t change where a user signs in.
 
 To sign in to the ODC Portal or ODC Studio through an external IdP, assign the IdP to the **Organization scope**. For more information, refer to [Scopes for assigning IdPs](../../manage-platform-app-lifecycle/external-idps/intro.md#scopes-for-assigning-idps).
 
-If the IdP isn’t assigned to the organization scope, the user can sign in through a different IdP assigned to the organization scope, or through the built-in identity provider (if the user has set up a password). For more information about enabling built-in authentication for existing users, refer to [Enable built-in authentication for an external IdP user](../create-deactivate-and-delete-users.md#enable-built-in-authentication).
+If the IdP isn’t assigned to the organization scope, the user can sign in through a different IdP assigned to the organization scope, or through the built-in identity provider (IdP) (if the user has set up a password). For more information about enabling built-in authentication for existing users, refer to [Enable built-in authentication for an external IdP user](../create-deactivate-and-delete-users.md#enable-built-in-authentication).
 
 Users that sign in through an external IdP manage their passwords in the identity provider. ODC doesn’t store external IdP passwords.
 

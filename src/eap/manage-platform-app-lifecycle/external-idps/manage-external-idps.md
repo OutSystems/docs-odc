@@ -31,7 +31,7 @@ isautopublish: true
 
 # Manage identity providers
 
-This article covers identity provider management in ODC. It explains how to replace, unassign, edit, or delete external IdPs, and how to remove the built-in identity provider assignment.
+This article covers identity provider management in ODC. It explains how to replace, unassign, edit, or delete external identity providers (IdPs), and how to remove the built-in identity provider assignment.
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ You must have the [**Manage authentication**](../../user-management/roles.md#per
 
 ## Replace an external IdP {#replace-idp}
 
-To replace an external identity provider (IdP) in ODC, follow these steps:
+To replace an external IdP in ODC, follow these steps:
 
 1. Complete steps 1–3 (up to and including **Assign an IdP**) in [Configuring and using an external IdP](intro.md#configuring-using-idp) for your new provider.
 
@@ -69,7 +69,7 @@ The issuer is a unique identifier for your external IdP. ODC relies on it to ass
 
 ## Unassign an external IdP {#unassign-idp}
 
-When you need to remove an existing external identity provider from your organization or apps, use the following options:
+When you need to remove an existing external IdP from your organization or apps, use the following options:
 
 * **OpenID Connect providers**: Use the **Manage assignments** button to modify or remove assignments.
 
@@ -131,6 +131,6 @@ To remove the built-in IdP assignment, follow these steps:
 
 ## Related resources
 
-* [Configuring authentication with external identity providers](intro.md)
-* [Assign an external identity provider](assign-idp.md)
+* [Configuring authentication with external IdP](intro.md)
+* [Assign an external IdP](assign-idp.md)
 * [Identity claims, email verification, and profile matching logic](identity-claims-email-verification.md)

@@ -10,6 +10,7 @@ audience:
 tags:
   - Authentication
   - End-users
+  - External Authentication
   - IdP
   - IT Users
   - Lifecycle
@@ -66,19 +67,31 @@ To manually register [members (IT-users)](intro.md#members-it-users), follow the
 
 1. Click **Invite user**.
 
-1. Enter the user’s email address, and then expand **Organization access**.
+1. Enter the user's email address. Then, under **User profile target**, choose where to create the user profile:
+    * **Built-in provider**: Users authenticate with email and password
+    * **Only external identity provider**: Users authenticate through configured external IdP (SAML, OIDC, etc.)
 
-1. Assign roles to the user. Choose a [scope](intro.md#organization-app-stage-and-app-scope):
+    ![Screenshot showing authentication option selection with Built-in Provider and External Identity Provider choices in the Invite user screen.](images/choose-authication-option-pl.png "Choose authentication option in ODC Portal")
+
+    <div class="info" markdown="1">
+
+    The available authentication options are determined by the identity providers enabled at the organization or stage level. If the built-in identity provider (IdP) provider is assigned at either the organization or stage level, the **Built-in provider** option is enabled. Similarly, if an external identity provider (IdP) is assigned, the corresponding option is enabled. Users are then created within the appropriate user profile and authenticated through the enabled identity provider.
+
+    </div>
+
+    **Key distinction:** Selecting **Built-in provider** creates a built-in IdP account for the user, who can also sign in through an external IdP if one is configured. Selecting **Only external identity provider** does not create a built-in IdP account, so the user can sign in only through the external IdP.
+
+1. Expand **Organization access**, and assign roles to the user. Choose a [scope](intro.md#organization-app-stage-and-app-scope):
 
     * **Organization**: Choose a role for the tenant.
 
-    * **Apps**: For each app, choose a role or leave it as **Unassigned** if you don't want to assign a role to the user for that app.
+    * **Assets**: For each asset, choose a role or leave it as **Unassigned** if you don't want to assign a role to the user for that asset.
 
       ![Screenshot of the Invite user screen in ODC Portal showing fields for email, organization access, and scope selection.](images/create-new-member-pl.png "Invite new member in ODC Portal")
 
     <div class="info" markdown="1">
 
-    For more details about how permissions are applied at the **organization** or **apps** scope, refer to [effective permissions](roles.md#effective-permissions-calculation) calculation.
+    For more details about how permissions are applied at the **organization** or **asset** scope, refer to [effective permissions](roles.md#effective-permissions-calculation) calculation.
 
     </div>
 
@@ -149,9 +162,9 @@ Here are some typical ways the user status can change:
 
 <div class="info" markdown="1">
 
-If a user was **Invited**, didn't complete the registration, and then signs in through an [external identity provider (IdP)](../manage-platform-app-lifecycle/external-idps/intro.md), ODC changes the user status to **Active**. The user can still complete the registration later to set up a password for built-in authentication.
+If a user was **Invited**, didn't complete the registration, and then signs in through an [external IdP](../manage-platform-app-lifecycle/external-idps/intro.md), ODC changes the user status to **Active**. The user can still complete the registration later to set up a password for built-in authentication.
 
-For more information, refer to [Built-in authentication in combination with external IdPs](../manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md#built-in-authentication-password-sign-in).
+For more information, refer to [built-in authentication in combination with external IdPs](../manage-platform-app-lifecycle/external-idps/identity-claims-email-verification.md#built-in-authentication-password-sign-in).
 
 </div>
 
@@ -185,7 +198,7 @@ Use this procedure when a user was created only after logging in with an externa
 
 To enable built-in authentication for an existing user, follow these steps:
 
-1. Create a built-in identity provider profile for the user by calling `POST /users` in the [User and access management API](../reference/apis/identity-v1.md) and setting `addToBuiltInIdentityProvider` to `true`.
+1. Create a built-in IdP profile for the user by calling `POST /users` in the [User and access management API](../reference/apis/identity-v1.md) and setting `addToBuiltInIdentityProvider` to `true`.
 
     Use the exact email address of the existing user profile.
 
@@ -226,7 +239,7 @@ To deactivate or activate a user, follow these steps:
 1. For each user you want to update, under **Actions**, click the three dots (**...**).
 1. Click **Deactivate user** or **Activate user** as appropriate, and then confirm the action.
 
-    ![Screenshot illustrating the deactivation of users in the ODC Portal with the Deactivate user option highlighted.](images/deactivate-pl.png "Deactivate users in ODC Portal")
+    ![Screenshot of the ODC Portal Users list with the three-dot Actions menu open and the Deactivate user option highlighted.](images/deactivate-pl.png "Deactivate User Option in ODC Portal")
 
     The user's status updates to **Inactive** or **Active** based on your action.
 
@@ -239,7 +252,7 @@ Deleting a user permanently removes their access and all related data from the s
 1. For each user you want to delete, under **Actions**, click the three dots (**...**).
 1. Click **Delete**, and then confirm the action.
 
-    ![Screenshot illustrating the deletion of users in the ODC Portal with the Delete user option highlighted.](images/delete-pl.png "Delete users in ODC Portal")
+    ![Screenshot of the ODC Portal Users list with the three-dot Actions menu open and the Delete option highlighted.](images/delete-pl.png "Delete User Option in ODC Portal")
 
 <div class="warning" markdown="1">
 

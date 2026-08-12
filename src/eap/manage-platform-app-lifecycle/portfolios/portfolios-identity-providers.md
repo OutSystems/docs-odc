@@ -1,5 +1,5 @@
 ---
-summary: Understand how identity provider management works in a multi-portfolio organization in OutSystems Developer Cloud (ODC).
+summary: ODC identity provider assignments are portfolio-scoped at the stage level for end-user authentication, while members authenticate at the organization level.
 tags:
   - Authentication
   - End-user Authentication
@@ -48,7 +48,7 @@ Each portfolio has its own set of stages (development, non-production, productio
 
 * IdP assignments don't carry over to stages in other portfolios. Set up IdPs for each portfolio's stages separately.
 
-Customer-facing portfolios often use a third-party IdP or social login, while internal portfolios typically use corporate SSO. If portfolios separate apps by department, region, or compliance boundary, each may need its own IdP. You can also assign different IdPs to different stages within the same portfolio, for example, the built-in IdP for development and an external IdP for production.
+Customer-facing portfolios often use a third-party IdP or social login, while internal portfolios typically use corporate SSO. If portfolios separate apps by department, region, or compliance boundary, each may need its own IdP. You can also assign different IdPs to different stages within the same portfolio, for example, the built-in identity provider (IdP) for development and an external identity provider (IdP) for production.
 
 Adding an external IdP and configuring redirect URIs are covered in [adding an external IdP](../external-idps/intro.md#add-an-external-idp) and [configuring redirect URIs](../external-idps/redirect-uris.md). During assignment, choose the stages in the portfolio or portfolios you want to assign the IdP to.
 
@@ -100,4 +100,4 @@ For more information about identity providers with portfolios, refer to:
 
 ### Identity providers
 
-* [Configuring authentication with external identity providers](../external-idps/intro.md)
+* [Configuring authentication with external IdP](../external-idps/intro.md)
