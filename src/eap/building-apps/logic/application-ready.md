@@ -13,6 +13,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+isautopublish: true
 ---
 
 # On Application Ready
@@ -31,4 +32,4 @@ To add the **On Application Ready** action to a Mobile or Web App do the followi
 
 1. Right-click the **Client Actions** node in the tree and select **Add System Event** > **On Application Ready**.
 
-    ![Screenshot showing the 'Add System Event' option in the context menu with 'On Application Ready' highlighted.](images/ss-add-system-event-reactive.png "Add System Event Option")
+    ![Screenshot showing the 'Add System Event' option in the context menu with 'On Application Ready' highlighted.](images/add-system-event-ready-odcs.png "Add System Event Option")

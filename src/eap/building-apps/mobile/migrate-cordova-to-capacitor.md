@@ -1,6 +1,11 @@
 ---
 summary: Learn how to migrate your existing Cordova mobile apps to Capacitor in OutSystems Developer Cloud (ODC).
-tags: mobile app migration, cordova to capacitor, capacitor migration, mobile runtime
+tags:
+  - Capacitor
+  - Cordova
+  - Mobile app
+  - Native App
+  - Plugins
 locale: en-us
 guid: fe0b5001-64c7-4d69-9a57-e98bac12cbbb
 app_type: mobile apps
@@ -15,6 +20,7 @@ coverage-type:
   - apply
   - understand
 helpids:
+isautopublish: true
 ---
 
 # Migrating Cordova apps to Capacitor
@@ -50,5 +56,7 @@ For more information, refer to the following:
 * [Migrate Cordova-based schema to the universal schema](migrate-cordova-schema.md)
 
 * [Adapt Cordova plugin for compatibility with Capacitor](../../integration-with-systems/mobile-plugins/migrate-cordova-plugin.md)
+
+* [Best practices for app lifecycle, navigation, and deep linking](best-practices/best-practices-app-lifecycle-navigation.md)
 
 * [Build actions](build-actions.md)

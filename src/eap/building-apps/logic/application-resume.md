@@ -1,6 +1,10 @@
 ---
-summary: Explore how to manage mobile app state with OutSystems Developer Cloud (ODC) by adding the On Application Resume action for network checks and more.
-tags: mobile app development, state management, mobile app lifecycle, system events, networking
+summary: On Application Resume ODC system event fires when a mobile app returns to foreground; add it in ODC Studio Logic tab to check network availability.
+tags:
+  - Events
+  - Lifecycle
+  - Logic
+  - Mobile app
 locale: en-us
 guid: 96c703ae-d97e-4ceb-b511-6524da0b7cf3
 app_type: mobile apps
@@ -14,6 +18,7 @@ coverage-type:
   - apply
 topic:
   - system-events
+isautopublish: true
 ---
 
 # On Application Resume
@@ -32,4 +37,8 @@ To add this action to a Mobile, do the following:
 
 1. Right-click the "Client Actions" node in the tree and select **Add System Event** > **On Application Resume**.
 
-    ![Screenshot showing how to add the On Application Resume system event in OutSystems Developer Cloud.](images/ss-add-system-event-reactive.png "Add On Application Resume System Event")
+    ![Screenshot showing how to add the On Application Resume system event in OutSystems Developer Cloud.](images/add-system-event-resume-odcs.png "Add On Application Resume System Event")
+
+## Related resources
+
+* [Best practices for app lifecycle, navigation, and deep linking](../mobile/best-practices/best-practices-app-lifecycle-navigation.md)

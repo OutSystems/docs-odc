@@ -1,8 +1,9 @@
 ---
-summary: OutSystems Developer Cloud (ODC) enables rapid development of mobile apps, including native apps, PWAs, and mobile backends.
+summary: ODC mobile apps support Capacitor and Cordova runtimes via MABS 12, enabling native iOS/Android apps, PWAs, and mobile backends with low-code.
 tags:
   - Capacitor
   - Cordova
+  - Forge
   - Mobile app
   - Native App
   - Plugins
@@ -100,3 +101,5 @@ For detailed information about migrating your Cordova apps to Capacitor, refer t
 * [Migrating Cordova apps to Capacitor](migrate-cordova-to-capacitor.md)
 
 * [Best practices for mobile app security](best-practices/best-practices-security.md)
+
+* [Best practices for app lifecycle, navigation, and deep linking](best-practices/best-practices-app-lifecycle-navigation.md)

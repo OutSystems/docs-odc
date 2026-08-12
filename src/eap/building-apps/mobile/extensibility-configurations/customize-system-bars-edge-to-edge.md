@@ -1,6 +1,12 @@
 ---
 summary: Customize system bars in mobile apps with edge-to-edge display for Android 16+ devices, covering both Cordova and Capacitor in ODC.
-tags: mobile apps, system bars, edge-to-edge, android 16, cordova, capacitor, safe area insets
+tags:
+  - Android
+  - Capacitor
+  - Cordova
+  - CSS
+  - Mobile app
+  - Troubleshooting
 locale: en-us
 guid: 4d346434-3ac0-50e0-82c6-03f62006b8d5
 app_type: mobile apps
@@ -457,3 +463,5 @@ For more information about mobile app configurations and CSS techniques, refer t
 * [Extensibility configurations reference](extensibility-app-reference.md)
   
 * [MDN: CSS env() function](https://developer.mozilla.org/en-US/docs/Web/CSS/env)
+
+* [Best practices for app lifecycle, navigation, and deep linking](../best-practices/best-practices-app-lifecycle-navigation.md)

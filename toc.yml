@@ -510,6 +510,7 @@
         # Best practices
         - href: eap/building-apps/mobile/best-practices/best-practices-security.md
         - href: eap/building-apps/mobile/best-practices/best-practices-push-notifications.md
+        - href: eap/building-apps/mobile/best-practices/best-practices-app-lifecycle-navigation.md
         
 
     # Emails

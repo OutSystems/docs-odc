@@ -219,6 +219,7 @@ Refer to the following best practices for related mobile app topics.
 
 * [Best practices for native integrations and plugins](best-practices-native-plugins.md)
 * [Best practices for testing and debugging mobile apps](best-practices-testing-debugging.md)
+* [Best practices for app lifecycle, navigation, and deep linking](best-practices-app-lifecycle-navigation.md)
 
 Refer to the following resource for creating and distributing mobile app packages.
 
