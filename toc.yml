@@ -792,9 +792,8 @@
 # Monitoring and troubleshooting
 - href: eap/monitor-and-troubleshoot/monitor-apps.md
 - topics:
-
     - href: eap/monitor-and-troubleshoot/app-health.md 
-# Analytics stream
+    # Analytics stream
     - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-overview.md
     - topics:
         - href: eap/monitor-and-troubleshoot/stream-app-analytics/stream-app-analytics-apm.md
@@ -870,12 +869,12 @@
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/sql-injection.md
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/visible-disabled-button.md
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/server-call-screen-accessible-everyone.md
-
+    # Traces
     - href: eap/monitor-and-troubleshoot/traces/intro.md
     - topics: 
         - href: eap/monitor-and-troubleshoot/traces/server-side-traces.md
         - href: eap/monitor-and-troubleshoot/traces/client-side-traces.md
-
+    # Agent monitoring
     - href: eap/monitor-and-troubleshoot/agent-monitoring/agent-monitoring-overview.md
     - topics: 
         - href: eap/monitor-and-troubleshoot/agent-monitoring/agent-cost-performance-analytics.md
