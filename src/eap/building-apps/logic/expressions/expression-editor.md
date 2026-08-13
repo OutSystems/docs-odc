@@ -1,6 +1,11 @@
 ---
 summary: Edit expressions in OutSystems Developer Cloud (ODC) Studio using its comprehensive expression editor with autocomplete and documentation features.
-tags: expression editing, user interface design, autocomplete features
+tags:
+  - Logic
+  - Mobile app
+  - Programming Model
+  - UI
+  - Widgets
 locale: en-us
 guid: 1ad176b7-bb78-41f9-ae4a-69d3e0e06a13
 app_type: mobile apps, reactive web apps

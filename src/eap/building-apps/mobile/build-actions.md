@@ -12,7 +12,12 @@ app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: Mobile,mobile app configuration,Extensibility
+tags:
+  - Android
+  - Capacitor
+  - iOS
+  - Mobile app
+  - Native App
 outsystems-tools:
   - odc studio
 helpids: 

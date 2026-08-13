@@ -12,7 +12,10 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: Mobile,mobile app extensibility,extensibility configuration
+tags:
+  - Cordova
+  - Mobile app
+  - Plugins
 outsystems-tools:
   - odc studio
 helpids: 

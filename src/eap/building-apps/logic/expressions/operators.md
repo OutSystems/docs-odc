@@ -1,6 +1,8 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports various operators for expressions, including arithmetic, logical, and comparison types.
-tags: expression operators, data types, arithmetic operations, operator overloading, type conversion
+tags:
+  - Logic
+  - SQL
 locale: en-us
 guid: ab45e99f-581c-4e59-a13b-0a23931a7e85
 app_type: mobile apps, reactive web apps

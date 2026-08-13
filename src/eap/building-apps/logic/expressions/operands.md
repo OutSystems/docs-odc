@@ -1,6 +1,9 @@
 ---
 summary: OutSystems Developer Cloud (ODC) provides a comprehensive guide on using operands, literals, variables, and functions in expressions.
-tags: expression editor, data types, coding practices, best practices
+tags:
+  - Data
+  - Logic
+  - Programming Model
 locale: en-us
 guid: 6c363890-b0af-4d1c-92ae-1cb346aa6f7d
 app_type: mobile apps, reactive web apps
