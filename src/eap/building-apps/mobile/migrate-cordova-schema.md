@@ -11,8 +11,9 @@ audience:
 outsystems-tools:
   - odc studio
 coverage-type:
-  - understand
   - remember
+  - understand
+  - apply
 helpids: 30735
 ---
 
