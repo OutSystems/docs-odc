@@ -1,6 +1,13 @@
 ---
-summary: Explore the Keyboard Plugin functionalities in OutSystems Developer Cloud (ODC), including client actions, web blocks, and error handling.
-tags: mobile development, keyboard, plugin integration, mobile app development, OutSystems api, error handling
+summary: 'Keyboard plugin reference for OutSystems Developer Cloud (ODC): client actions (Show, Hide, SetStyle), KeyboardEvents web block, and error codes.'
+tags:
+  - Android
+  - Capacitor
+  - Events
+  - iOS
+  - Mobile app
+  - Native App
+  - Plugins
 locale: en-us
 guid: 20a10b22-f55c-4ffa-aa89-d19f2cbaf911
 app_type: mobile apps
@@ -13,15 +20,16 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+isautopublish: true
 ---
 
 # Keyboard plugin reference
 
-## Plugin Elements
+## Plugin elements
 
-### Client Actions
+### Client actions
 
-#### CheckKeyboardPlugin
+#### `CheckKeyboardPlugin`
 
 Checks if the plugin is ready for use by the app.
 
@@ -48,7 +56,7 @@ Hides the keyboard.
 |Success|Output|Boolean|Whether or not the function to hide the keyboard was called.|
 |Error|Output|Error|Error in case hiding the keyboard fails.|
 
-#### SetAccesoryBarVisible (iOS only)
+#### `SetAccesoryBarVisible` (iOS only)
 
 Sets whether or not the accessory bar is visible in the keyboard. This is useful in forms with multiple inputs.
 
@@ -58,7 +66,7 @@ Sets whether or not the accessory bar is visible in the keyboard. This is useful
 |Success|Output|Boolean|Whether or not setting the accessory bar visibiity was successful.|
 |Error|Output|Error|Error in case setting the accessory bar visibility fails.|
 
-#### SetStyle (iOS only)
+#### `SetStyle` (iOS only)
 
 Sets the style of the keyboard.
 
@@ -70,11 +78,11 @@ Sets the style of the keyboard.
 
 ### Web Blocks
 
-#### KeyboardEvents
+#### `KeyboardEvents`
 
 A block that handles the **OnKeyboardWillShow**, **OnKeyboardDidShow**, **OnKeyboardWillHide**, and **OnKeyboardWillHide** events.
 
-##### OnKeyboardWillShow
+##### `OnKeyboardWillShow`
 
 The event triggered when the keyboard is about to be shown.
 
@@ -82,7 +90,7 @@ The event triggered when the keyboard is about to be shown.
 |---|---|---|---|
 |KeyboardHeight|Input|Integer|Height of the keyboard on the screen.|
 
-##### OnKeyboardDidShow
+##### `OnKeyboardDidShow`
 
 The event triggered when the keyboard is shown.
 
@@ -90,17 +98,17 @@ The event triggered when the keyboard is shown.
 |---|---|---|---|
 |KeyboardHeight|Input|Integer|Height of the keyboard on the screen.|
 
-##### OnKeyboardWillHide
+##### `OnKeyboardWillHide`
 
 The event triggered when the keyboard is about to be hidden.
 
-##### OnKeyboardDidHide
+##### `OnKeyboardDidHide`
 
 The event triggered when the keyboard is hidden.
 
 ### Data structures and static entities
 
-#### KeyboardStyle static entity
+#### `KeyboardStyle` Static entity
 
 The static entity for the **Style** parameter of the **SetStyle** client action. Available records are:
 
@@ -108,7 +116,7 @@ The static entity for the **Style** parameter of the **SetStyle** client action.
 * Dark
 * Default
 
-#### KeyboardError data structure
+#### `KeyboardError` Data structure
 
 The data structure for errors returned by the Keyboard plugin.
 
@@ -117,7 +125,7 @@ The data structure for errors returned by the Keyboard plugin.
 |ErrorCode|Text|Error code following the format OS-PLUG-KEYB-XXXX.|
 |ErrorMessage|Text|Error message corresponding to ErrorCode.|
 
-### Error Codes
+### Error codes
 
 |Code|Platform|Message|
 |---|---|---|
