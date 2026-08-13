@@ -65,7 +65,7 @@ When configuring an IP filter group, you must select its access control method:
 
 IP filter groups and their rules are stage-specific, operating independently for each app stage. Administrators can associate an app with only one IP filter group per stage. For operational flexibility, administrators can enable or disable individual IP filter rules within a group through rule activation without requiring deletion.
 
-End users whose IP address is blocked by an active filter rule receive a **403 Forbidden** error when attempting to access the application.
+End users whose IP address is blocked by an active filter rule receive a **403 Forbidden** response and the screen will display `RBAC: access denied` when attempting to access the application.
 
 <div class="info" markdown="1">
 
