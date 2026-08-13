@@ -1,5 +1,5 @@
 ---
-summary: Explore how to manage various types of exceptions including User, Database, and Security Exceptions in OutSystems Developer Cloud (ODC).
+summary: Exception handling in OutSystems Developer Cloud (ODC) covers exception types (User, Database, Security, Communication), hierarchy, messages, and logging.
 tags: exception handling, error management, application flow control, software robustness, debugging
 locale: en-us
 guid: ec639f37-b5ee-4ca4-974d-9096596614ae

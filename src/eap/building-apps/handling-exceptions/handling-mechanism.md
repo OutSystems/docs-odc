@@ -1,5 +1,5 @@
 ---
-summary: Explore exception handling in OutSystems Developer Cloud (ODC), covering UI flows, action flows, and integrations.
+summary: "ODC exception handling mechanism: how exceptions propagate through action flows, UI flows, and timers to reach the first matching handler."
 tags: exception handling, error logging, flow management, outsystems development, ui & action flows
 locale: en-us
 guid: 7f5c109f-a887-4f50-bd5d-ead38e50ff53

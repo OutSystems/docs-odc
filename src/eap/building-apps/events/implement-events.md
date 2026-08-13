@@ -1,7 +1,7 @@
 ---
 guid: 8517ea53-04e1-4f9d-b707-524259744ff9
 locale: en-us
-summary: In this article you will learn how to create events, trigger events, and handle events
+summary: ODC events let apps communicate asynchronously — create, trigger, and handle them in ODC Studio using server actions and event payloads.
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=3213-21341
 coverage-type:
   - apply

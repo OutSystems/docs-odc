@@ -1,7 +1,7 @@
 ---
 guid: 73db3695-0270-4495-915a-df56d5f993c1
 locale: en-us
-summary: In this article you will learn about ODC database events and how you can create them.
+summary: ODC database events trigger automatically on entity record changes after a successful transaction commit — set up OnCreate, OnUpdate, or OnDelete in ODC Studio.
 figma:
 coverage-type:
   - apply
