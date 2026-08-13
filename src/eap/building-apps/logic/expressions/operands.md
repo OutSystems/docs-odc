@@ -12,6 +12,7 @@ audience:
 outsystems-tools:
   - odc studio
 coverage-type:
+  - remember
   - understand
 topic:
   - operands

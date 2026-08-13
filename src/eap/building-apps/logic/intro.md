@@ -12,7 +12,7 @@ audience:
 outsystems-tools:
   - odc studio
 coverage-type:
-  - none
+  - understand
 ---
 
 # Application logic
