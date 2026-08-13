@@ -1,5 +1,5 @@
 ---
-summary: Utilize Extensibility Configurations in OutSystems Developer Cloud (ODC) for advanced mobile app customization.
+summary: ODC extensibility configurations universal JSON schema supports Capacitor and Cordova, with MABS version requirements for mobile app customization.
 tags: extensibility configurations, json configuration, mobile build service, mobile apps customization
 locale: en-us
 guid: 941e56cf-aacf-43bf-9d1c-f131565036e6

@@ -1,7 +1,7 @@
 ---
 guid: b48cee0f-0009-4515-9e87-673ba40db110
 locale: en-us
-summary: This artucles describes the legacy extensibility configuration JSON schema that can be used with Apache Cordova framework.
+summary: Cordova-based extensibility configuration JSON schema for OutSystems Developer Cloud (ODC) mobile apps, covering plugins, preferences, and resources.
 figma:
 coverage-type:
   - apply
