@@ -1,7 +1,7 @@
 ---
 guid: 9a0ba2bd-1a95-4d42-bbd4-45ef5d722e21
 locale: en-us
-summary: Learn how to use OutSystems APIs to programmatically deploy an asset to a target stage.
+summary: "OutSystems Developer Cloud (ODC) Deployments API: set asset configurations, trigger a Deploy operation, and monitor status for CI/CD automation."
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=4763-2&t=3FZzy4xrcBSUETGl-1
 coverage-type:
   - apply
@@ -10,12 +10,16 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - full stack developers
-  - tech leads
-tags: apis, deployment automation, ci/cd, outsystems, environment keys
+  - Developer
+  - Tech lead
+tags:
+  - CI/CD
+  - Deploy
+  - REST
 outsystems-tools:
   - odc portal
 helpids:
+isautopublish: true
 ---
 
 # Deploying your asset to the target stage
@@ -26,11 +30,11 @@ This article explains how to use OutSystems APIs to programmatically deploy an a
 
 Before using the APIs to deploy your asset to a target stage, ensure that you have:
 
-* [Generated an access token](../authentication/get-access-token.md) with these [permissions](../authentication/create-api-client.md#edit-permissions-of-api-client):
-    * [Configuration management \> Edit configurations](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/asset_configurations_api/#patch-/environments/-environmentKey-/applications/-applicationKey-/configurations)
+* [Generated an access token](../authentication/get-access-token.md) from an API client with these [permissions](../authentication/create-api-client.md#edit-permissions-of-api-client):
+    * [Configuration management > Edit configurations](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/asset_configurations_api/#patch-/environments/-environmentKey-/applications/-applicationKey-/configurations)
     * [Stage > View stage](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/deployments_api/#get-/deployment-operations)  
     * [Release management > Deploy apps](https://success.outsystems.com/documentation/outsystems_developer_cloud/odc_rest_apis/deployments_api/#post-/deployment-operations)
-* The [key of the build](select-revision-build.md) to be deployed
+* The [key of the  **Release** build](select-revision-build.md) to be deployed.
 * The environment key of the target stage
 
     <div class="info" markdown="1">
@@ -39,7 +43,7 @@ Before using the APIs to deploy your asset to a target stage, ensure that you ha
 
     ![Screenshot of the ODC Portal showing how to retrieve the environment (stage) key from the asset URL](images/environment-key-pl.png "Get the environment key")
 
-    You can also retrieve the environment key programmatically, using `GET /api/portfolios/v1/environments`.
+    You can also retrieve the environment key programmatically, using `GET /api/portfolios/v2/environments`.
 
     </div>
 
@@ -107,7 +111,13 @@ To deploy your asset to a target stage in your CI/CD pipeline, follow these step
         "revision": 1,  
         "environmentKey": "1ee11e11-1111-1111-e1ee-1e111e11eee1"  
         }
-        
+
+    <div class="info" markdown="1">
+
+    You can only deploy builds of type **Release**.
+
+    </div>
+
     If this API call is successful, the response should show the status as "Running". If this is not the case, check the [Deployments API reference](https://www.outsystems.com/tk/redirect?g=acf7cd06-3fe1-4bd3-85e8-06cd11aa0a7d) for more information on other statuses.
 
     The response also contains the operation key, necessary for the next step.  

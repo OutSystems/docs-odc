@@ -1,6 +1,9 @@
 ---
 summary: Discover how to call APIs in OutSystems Developer Cloud (ODC) using an access token, with step-by-step guidance for developers.
-tags: api access token, rest api, odc, token validation, api call example
+tags:
+  - Authentication
+  - OAuth
+  - REST
 outsystems-tools:
   - odc portal
 guid: 850e2e06-cdab-4e45-9ea6-2964c1a3a5ce
@@ -9,10 +12,12 @@ app_type: reactive web apps, mobile apps
 content-type:
   - procedure
 audience:
-  - full stack developers
-  - backend developers
+  - Developer
+coverage-type:
+  - apply
 platform-version: odc
 figma:
+isautopublish: true
 ---
 # Call API using the access token
 
@@ -70,4 +75,4 @@ To call an API using the access token, follow these steps:
 
 * [User management API reference](../../identity-v1.md)
 
-* [Portfolio API reference](../../portfolio-v1.md)
+* [Portfolio API reference](../../portfolio-v2.md)

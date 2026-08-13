@@ -10,9 +10,9 @@ coverage-type:
   - unblock
   - remember
 audience:
-  - mobile developers
-  - frontend developers
-  - platform administrators
+  - Developer
+  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - none
 ---

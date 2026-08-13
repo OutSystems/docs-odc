@@ -1,15 +1,16 @@
 ---
 summary: Explore best practices for documenting Forge assets in OutSystems Developer Cloud (ODC), including installation and setup guidelines.
-tags: visual aids, forge component, installation guide
+tags:
+  - Best Practices
+  - Forge
 locale: en-us
 guid: C5331351-418A-4B72-AB9E-0CBE317A97D9
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc portal
   - odc studio

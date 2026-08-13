@@ -8,8 +8,7 @@ guid: b7af3484-4044-4e5c-a1f7-680c5a8edce5
 locale: en-us
 app_type: mobile apps, reactive web apps
 audience:
-  - full stack developers
-  - ui designers
+  - Developer
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6274-150
 coverage-type:

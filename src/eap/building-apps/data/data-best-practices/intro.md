@@ -1,5 +1,5 @@
 ---
-summary: Learn the best practices for managing data in OutSystems.
+summary: "OutSystems Developer Cloud (ODC) data best practices: entity indexing, settings, binary data isolation, and purging strategies for scalable apps."
 tags: data management, best practices, settings, app configurations, security
 guid: 858e8c87-2c13-4803-b279-008726bb77ea
 locale: en-us
@@ -9,9 +9,9 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - evaluate
 audience:
-  - full stack developers
-  - platform administrators
-  - architects
+  - Developer
+  - Platform administrator
+  - Architect
 outsystems-tools:
   - odc portal
 ---

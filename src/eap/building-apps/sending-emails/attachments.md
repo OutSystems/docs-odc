@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A11325&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -119,8 +118,8 @@ More information related to attachments.
 
 Use the Attachment data structure to pass information about files between the logic elements that handle emails.
 
-| Name        | Data type   | Notes                                                                                                    |
+| Name | Data type | Notes |
 | ----------- | ----------- | -------------------------------------------------------------------------------------------------------- |
-| FileContent | Binary Data | Content that the platform embeds as the attachment.                                                      |
-| FileName    | Text        | The file name of the attachment to show in the email. For example, `"image.png"`.                        |
-| MimeType    | Text        | Media type identifier. For example, `"image/png"`. Enter to tell the email readers how to handle the content, as this can help prevent errors in some clients. Leave empty to let the email clients handle the detection. |
+| FileContent | Binary Data | Content that the platform embeds as the attachment. |
+| FileName | Text | The file name of the attachment to show in the email. For example, `"image.png"`. |
+| MimeType | Text | Media type identifier. For example, `"image/png"`. Enter to tell the email readers how to handle the content, as this can help prevent errors in some clients. Leave empty to let the email clients handle the detection. |

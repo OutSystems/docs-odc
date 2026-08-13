@@ -1,0 +1,151 @@
+---
+summary: Learn how to integrate contact access in your applications using the Contacts Plugin in OutSystems Developer Cloud (ODC).
+tags:
+  - Capacitor
+  - Cordova
+  - iOS
+  - Mobile app
+  - Plugins
+locale: en-us
+guid: ba8514ce-511f-49b7-a432-1d2480091c3d
+platform-version: odc
+figma:
+app_type: mobile apps
+audience:
+  - Developer
+  - Front-end developer
+outsystems-tools:
+  - odc studio
+coverage-type:
+  - apply
+  - remember
+topic:
+  - using-cordova-plugins
+  - using-capacitor-plugins
+isautopublish: true
+---
+
+# Contacts plugin
+
+Use the contacts plugin to enable an application to access the contact list of a user's device.
+
+The Contacts plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check [cordova-outsystems-contacts](https://github.com/ionic-team/cordova-outsystems-contacts) and [capacitor-contacts](https://github.com/ionic-team/capacitor-contacts).
+
+<div class="info" markdown="1">
+
+Refer to [Use mobile plugins](../intro.md#adding-plugins) to learn how to install and reference a plugin in your OutSystems apps.
+
+</div>
+
+## Add necessary permission (property list keys) for contact access (iOS only)
+
+To use the contacts plugin on iOS, provide the description for the property list key: **NSContactsUsageDescription**.
+
+From version 1.1.0, set the **ContactsUsageDescription** extensibility setting in your app's detail page in the Portal, under the **Mobile distribution** tab.
+
+If you don't explicitly set this setting, the default value is used.
+
+For plugin versions earlier than 1.1.0, set the iOS permission in your app's extensibility configurations file, as follows:
+
+(Recommended) Using the universal extensibility configurations schema:
+
+```json
+{
+  "appConfigurations": {
+    "permissions": {
+      "ios": {
+        "NSContactsUsageDescription": "We access your contacts to create or search them."
+      }
+    }
+  }
+}
+```
+
+Using the Cordova-based extensibility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "ios": [
+      {
+        "name": "NSContactsUsageDescription",
+        "value": "We access your contacts to create or search them."
+      }
+    ]
+  }
+}
+```
+
+If you don't explicitly set these descriptions, default values are used (the same shown in the example).
+
+## Using the plugin
+
+To use the Contacts plugin actions:
+
+1. In **ODC Studio**, go to **Logic** > **Client Actions** > **ContactsPlugin**.
+1. Drag the desired action to your logic flow.
+1. Handle the **Success** output to verify the action completed. If **False**, use the **Error** output to handle the failure.
+
+<div class="info" markdown="1">
+
+To prevent errors, check if the plugin is available with the action **CheckContactsPlugin** before calling any other client action.
+
+</div>
+
+## Add a contact
+
+To add a contact to the device's contact list, use the **AddToContacts** action. Set the **FirstName**, **LastName**, **Phone**, and **Email** input parameters.
+
+## Find a contact
+
+To search for a contact in the device's contact list, use the **FindContact** action:
+
+1. Set the **SearchParameter** (the text to search for) and **MultipleContacts** (to return one or all matches).
+1. The matching contacts are returned in the **Contacts** output list.
+
+## Pick a contact
+
+To let the user select a contact using the device's native contact picker, use the **PickContact** action. The selected contact is returned in the **Contact** output parameter.
+
+## Remove a contact
+
+To remove a contact from the device's contact list, use the **RemoveFromContacts** action.
+
+Starting on version 2.0.0 of the plugin, you can simply provide the **ContactId** input parameter. For older verisions, you must provide the **Contact** input parameter. Typically, you first retrieve this contact by calling **FindContact** or **PickContact**.
+
+If you are using version 2.0.0 or later but still wish to remove the contact by providing the full Contact object, you can use the **DEPRECATED_RemoveFromContacts** client action.
+
+## Handling errors
+
+Apps with the Contacts Plugin run on many Android or iOS devices, with different hardware and configurations. To ensure a good user experience and prevent the app from crashing, handle the errors within the app.
+
+The following actions help you handle errors. Use these actions with **If** nodes to check for errors and control how the app works.
+
+| Variable    | Action              | Description                                                                    |
+| :---------- | :------------------ | :----------------------------------------------------------------------------- |
+| IsAvailable | CheckContactsPlugin | True if the Contacts Plugin is available in the app.                           |
+| Success     | AddToContacts       | True adding a contact was successful.                                          |
+| Success     | FindContact         | True if finding contacts was successful.                                       |
+| Success     | PickContact         | True if picking a contact was successful.                                      |
+| Success     | RemoveFromContacts  | True if removing a contact was successful.                                     |
+
+## Actions
+
+The following actions are available in the plugin. For more information, see [cordova-outsystems-contacts](https://github.com/ionic-team/cordova-outsystems-contacts) and [capacitor-contacts](https://github.com/ionic-team/capacitor-contacts).
+
+| Action              | Description                                                                                 |
+| :------------------ | :------------------------------------------------------------------------------------------ |
+| CheckContactsPlugin | Checks if the Contacts Plugin is available in the app.                                      |
+| AddToContacts       | Use this action to add a contact to the device's address book.                              |
+| FindContact         | Use this action to search for a contact from the device's address book.                     |
+| PickContact         | Opens the device specific contact picker to pick a contact from the device's address book.  |
+| RemoveFromContacts  | Use this action to remove a contact from the device's address book.                         |
+
+## MABS compatibility
+
+The table shows the compatibility of the Contacts Plugin with the Mobile Apps Builds Service (MABS).
+
+| Plugin version  | Compatible with MABS version | Notes |
+| :-------------- | :--------------------------- | :---- |
+| 2.0.0 and later | MABS 11.2 and later.         |       |
+| 1.0.3 and later | MABS 11.0 and later.         |       |

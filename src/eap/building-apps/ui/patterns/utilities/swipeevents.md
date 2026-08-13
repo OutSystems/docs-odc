@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A21622&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -20,6 +19,12 @@ topic:
 ---
 
 # Swipe Events
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
 
 You can use the Swipe Events UI Pattern to enable swiping on a specific widget.
 
@@ -71,6 +76,6 @@ After following these steps and publishing the app, you can test the pattern in 
 
 ## Properties
 
-| **Property** |  **Description** |
-|---|---|
-| WidgetId (Text): Mandatory |  Element that's swipeable.  |
+| **Property** | **Description** |
+| --- | --- |
+| WidgetId (Text): Mandatory | Element that's swipeable. |

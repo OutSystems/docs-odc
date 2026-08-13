@@ -9,8 +9,8 @@ figma:
 coverage-type:
   - unblock
 audience:
-  - mobile developers
-  - frontend developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc portal
 ---

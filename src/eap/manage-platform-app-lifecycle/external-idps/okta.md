@@ -1,21 +1,26 @@
 ---
 summary: OutSystems Developer Cloud (ODC) allows admins to configure Okta as an external identity provider through its portal interface.
-tags: identity and access management, okta integration, oidc, security configuration, api management
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - OIDC
+  - Security
 locale: en-us
 guid: 0a284428-86c4-4b57-b912-b122674b69e4
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=design&node-id=3405%3A545&mode=design&t=Oyyu3fjPlmIYwh5h-1
 platform-version: odc
 audience:
-  - platform administrators
-  - frontend developers
-  - full stack developers
+  - Platform administrator
 outsystems-tools:
   - odc portal
 coverage-type:
   - apply
 topic:
   - external-idps
+isautopublish: true
 ---
 
 # Add Okta for use as an external identity provider
@@ -28,21 +33,25 @@ This page is provided as a reference. For the latest instructions about adding O
 
 ## Prerequisites
 
-<div class="info" markdown="1">
+* Review the [System considerations](intro.md#system-considerations) for external identity providers.
 
-Review the [System considerations](intro.md#system-considerations) for external identity providers.
+* You must have the [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 
-</div>
-
-You must have the [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
+* Your identity provider's endpoints (Discovery, JWKS, token, and userinfo) must be reachable by ODC. ODC validates tokens by retrieving signing keys from the JWKS endpoint. Either expose these endpoints publicly, or restrict access by allowlisting the ODC identity egress IP addresses in your firewall. For the list of IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp). For background on the network requirements and the protocol-based security model, refer to [Network considerations](intro.md#network-considerations).
 
 ## Configure Okta
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, you add an Okta provider once at the organization level and then assign it to stages in one or more portfolios. For more information about portfolio-scoped IdP assignment, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
+
+</div>
 
 ODC admins can configure Okta as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab.
 
 To open the **New provider** configuration screen, click the **Add Provider** > **OpenID Connect** button. Now follow these steps:
 
-1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
+1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include symbols or non-alphanumeric characters.
 
 1. Login to the [**Okta Portal**](https://login.okta.com/). In the **Admin Console**, go to the **Applications > Applications** screen and click **Create App Integration** to create a new app.
 
@@ -72,7 +81,15 @@ To open the **New provider** configuration screen, click the **Add Provider** > 
     ODC safely stores the configuration details in a secret manager.
     </div>
 
-1. Complete the configuration in ODC Portal by leaving the **PKCE** as the default value (**SHA-256**) and fields in **Claim Mapping** section as default values (**name**, **email**, **picture**) and clicking **Save**.
+1. Complete the configuration in the ODC Portal:
+    1. Confirm **PKCE** is set to **SHA-256**.
+    1. In the **Organization user email verification** section, choose one of the options for handling email verification.  
+    For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
+    1. In the **User profile matching** section, select the attribute (fallback option) ODC uses to match external logins to ODC profiles when a subject match isn't found.
+    For more information about the options and when to use each one, refer to [Profile matching for external IdPs](identity-claims-email-verification.md#profile-matching-external-idps).
+    1. Confirm the fields in the **Claim Mapping** section are set to the default values: **username**, **email**, **name**, and **picture**.
+    1. Click **Save**.  
+    The **Configuration** tab for the newly created IdP opens.
 
 ODC tests the configuration and on success adds Okta to the list of available providers. If the test fails, a notification with the error displays.
 
@@ -86,9 +103,9 @@ To add permitted redirects for the Okta provider, follow these steps:
 
 1. Select **General settings** and click **Edit**.
 
-1. From ODC Portal, for the Platform and/or each app stage you applied the Okta provider, copy the **Authentication** URL(s) and paste them as individual URIs in the **Sign-in redirect URIs** section in Okta Portal. You should copy the URL(s) for both the built-in domain and any active [custom domains](../custom-domains.md).
+1. From ODC Portal, for the Platform or each app stage you applied the Okta provider, copy the **Authentication** URL(s) and paste them as individual URIs in the **Sign-in redirect URIs** section in Okta Portal. You should copy the URL(s) for both the built-in domain and any active [custom domains](../domains/custom-domains.md).
 
-1. Now for the Platform and/or each app stage you applied the Okta provider, copy the **Logout** URL(s) and then paste them as individual URIs in the **Sign-out redirect URIs** section in Okta Portal. You should copy the URL(s) for both the built-in domain and any active [custom domains](../custom-domains.md).
+1. Now for the Platform or each app stage you applied the Okta provider, copy the **Logout** URL(s) and then paste them as individual URIs in the **Sign-out redirect URIs** section in Okta Portal. You should copy the URL(s) for both the built-in domain and any active [custom domains](../domains/custom-domains.md).
 
     ![Okta application settings with fields for 'Sign-in redirect URIs' and 'Sign-out redirect URIs'.](images/login-logout-uris-ok.png "Okta Login and Logout URIs")
 
@@ -126,7 +143,9 @@ To add permitted redirects for the Okta provider, follow these steps:
 
 ## Next step
 
-If you want to use the created IdP in your app, ensure that you modify the login and logout flows accordingly. For more information, refer to [Use external identity providers in an app](apps.md).
+* For end-users: [Use an IdP in your apps](intro.md#use-an-idp-in-your-apps)
+
+* Optional: [Add an end-user group mapping](end-user-group-mapping.md)
 
 ## Related resources
 

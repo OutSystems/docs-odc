@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=3101-12108
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
   - forge
@@ -18,6 +17,7 @@ coverage-type:
 topic:
   - webservice-authentication
   - customize-headers
+isautopublish: true
 ---
 
 # Customize API request and response headers
@@ -53,6 +53,12 @@ To customize the request before it's sent, follow these steps:
 1. Double-click the newly created action to edit it.
 
 1. Add your own logic to customize the request.
+
+    <div class="info" markdown="1">
+
+    Request header values must contain only ASCII characters.
+
+    </div>
 
 ### Example use case: Adding a header for token-based authentication
 

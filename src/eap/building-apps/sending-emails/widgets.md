@@ -1,21 +1,26 @@
 ---
 summary: Explore email widget capabilities in OutSystems Developer Cloud (ODC) for creating lightweight, secure emails compatible with most readers.
-tags: email design, widget implementation, ui components, email security, email compatibility
+tags:
+  - JavaScript
+  - Security
+  - Table
+  - UI
+  - Widgets
 locale: en-us
 guid: 665cc9c6-00e6-44f9-91ba-04f6de8fa936
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A11326&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
   - remember
 topic:
   - how-to-create-emails
+isautopublish: true
 ---
 
 # Widgets in emails
@@ -33,18 +38,18 @@ Use the Email widgets like you use the Screen widgets, with the following common
 
 You can use the following widgets in Emails.
 
-| Widget      | Description                                         | Notes                                                          |
+| Widget | Description | Notes |
 | ----------- | --------------------------------------------------- | -------------------------------------------------------------- |
-| Container   | Lets you arrange other widgets.                     |                                                                |
-| Expressions | Evaluates expressions and displays variable values. |                                                                |
-| If          | Shows content based on a condition.                 |                                                                |
-| Images      | Embeds an image.                                    | Using binary content from a database |
-| Link(*)        | Adds a navigational element.                        |                                                                |
-| List        | Shows records as items in a list.                   | To quickly create a list in a Mobile App, drag an Entity to Email.                                                                |
-| Table       | Shows records in columns and rows.                  | To quickly create a table in a Web App, drag an Entity to Email.                                                              |
+| Container | Lets you arrange other widgets. | |
+| Expressions | Evaluates expressions and displays variable values. | |
+| If | Shows content based on a condition. | |
+| Images | Embeds an image. | Using binary content from a database |
+| Link(*) | Adds a navigational element. | |
+| List | Shows records as items in a list. | To quickly create a list in a Mobile App, drag an Entity to Email. |
+| Table | Shows records in columns and rows. | To quickly create a table in a Web App, drag an Entity to Email. |
 
 <div class="info" markdown="1">
 
-(*) If your app is using a [custom domain](../../manage-platform-app-lifecycle/custom-domains.md) and you want to link to a screen in your app, you must link to the URL of the screen. For example, to link to screen `Screen1` in `App1` using custom domain `example.com`, you set the **OnClick** property to **RedirectToURL** with the expression `"https://example.com/App1/Screen1"`. You can find guidance on how to build an expression [here](../../building-apps/logic/expressions.md).
+(*) If your app uses a [custom domain](../../manage-platform-app-lifecycle/domains/custom-domains.md) and you want to link to an app screen, you must link to the URL of that screen. For example, to link to `Screen1` in `App1` using the custom domain `example.com`, set the **OnClick** property to **RedirectToURL** with the expression `"https://example.com/App1/Screen1"`. For guidance on building expressions, see [Expressions](../../building-apps/logic/expressions.md).
 
 </div>

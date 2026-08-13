@@ -1,6 +1,12 @@
 ---
-summary: Learn about the impacts of removing unsafe directives in reactive web apps
-tags: CSP, security, unsafe-inline, unsafe-eval
+summary: CSP unsafe directives removal in OutSystems Developer Cloud (ODC) impacts charts, data grids, maps, and mobile UI, with workarounds for each issue.
+tags:
+  - CSS
+  - JavaScript
+  - OutSystems UI
+  - Security
+  - UI
+  - UI Patterns
 guid: 6c2f1c26-58b9-46a6-ba0f-f7c432c6a4bc
 locale: en-us
 app_type: reactive web apps
@@ -8,15 +14,15 @@ platform-version: odc
 helpids: 30702
 figma:
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Front-end developer
+  - Platform administrator
 outsystems-tools:
   - odc portal
 coverage-type:
   - understand
-  - apply
+  - unblock
+isautopublish: true
 ---
 
 # Impacts of removing unsafe directives
@@ -31,41 +37,44 @@ This document examines the potential consequences of removing these directives a
 
 ## Impacts on OutSystems components
 
-### OutSystems Charts
+### OutSystems charts
 
 * **Issue**: Version 1 of the Charts component may experience runtime issues.
 
-    * **Recommendation**: Update to the latest version of the Charts component.
+    * **Recommendation**: Migrate each chart block to the new Charts component versions in your app (for example, replace `DonutChart_V1` with `DonutChart`). In ODC Studio you will see blocks with the '_V1' suffix and blocks without it; migrate your implementation to the non-suffixed blocks. For more information, see [Charts FAQs](https://charts.outsystems.com/).
 
 For more information about OutSystems Charts, refer to [OutSystems Charts](../reference/apis/chart-intro.md).
 
-### OutSystems Data Grid
+### OutSystems data grid
 
-* **Issue**: The **Calculated Column**  won't work.
-
+* **Versions earlier than 2.23.0**
+    * **Issue**: **Calculated Column** won't work.
     * **Workaround**: Avoid using **Calculated Columns**.
 
-For more inforamtion about OutSystems Data Grid, refer to [OutSystems Data Grid](../building-apps/ui/patterns/interaction/data-grid/data-grid-overview.md).
+* **Version 2.23.0 or higher**
+    * No known issues related to removing unsafe CSP directives.
 
-### OutSystems Maps
+For more information about OutSystems Data Grid, refer to [OutSystems Data Grid](../building-apps/ui/patterns/interaction/data-grid/data-grid-overview.md).
+
+### OutSystems maps
 
 The following table summarizes the OutSystems map and Leaflet map functionality when the unsafe CSP directives are removed.
 
-| Feature                      | Google Maps | Leaflet Maps |
-|------------------------------|-------------|--------------|
-| Loads the map | No functionality lost  |Image ``'<URL>'`` doesn't load because it violates the following CSP directive: "img-src 'self' data: blob: ". |
-| Map center |  No functionality lost |Not possible to view, as the map tiles are not visible. |
-| Change Map Center | No functionality lost |Not possible to view, as the map tiles are not visible. |
-| Marker | No functionality lost  |Marker is visible but map tiles are not. |
-| Marker: change (API)| No functionality lost |Marker is visible but map tiles are not. |
+| Feature | Google Maps | Leaflet Maps |
+| ------------------------------ | ------------- | -------------- |
+| Loads the map | No functionality lost | Image ``'<URL>'`` doesn't load because it violates the following CSP directive: "img-src 'self' data: blob: ". |
+| Map center | No functionality lost | Not possible to view, as the map tiles are not visible. |
+| Change Map Center | No functionality lost | Not possible to view, as the map tiles are not visible. |
+| Marker | No functionality lost | Marker is visible but map tiles are not. |
+| Marker: change (API) | No functionality lost | Marker is visible but map tiles are not. |
 | Marker: events | No events are triggered, and the elements cannot be interacted with. | Marker is visible but map tiles are not |
-| Localization |Not available in version 1.7.0 | Feature not available |
-| Shapes | No functionality lost |Not possible to view where as the map tiles are not visible. |
-| Shapes: change (API) | No functionality lost  |Not possible to view where as the map tiles are not visible. |
-| Shapes: events |No events are triggered, and the elements cannot be interacted with. | Not possible to view where as the map tiles are not visible. |
-| Drawing shapes |Drawing tools appear, but it’s not possible to draw any of them in the map | Not possible to view where as the map tiles are not visible. |
-| Drawing shapes: change (API) |  No functionality lost|Not possible to view shapes as the map tiles are not visible. |
-| Drawing shapes: events |No event is triggered |  Not possible to view where as the map tiles are not visible. |
+| Localization | Not available in version 1.7.0 | Feature not available |
+| Shapes | No functionality lost | Not possible to view where as the map tiles are not visible. |
+| Shapes: change (API) | No functionality lost | Not possible to view where as the map tiles are not visible. |
+| Shapes: events | No events are triggered, and the elements cannot be interacted with. | Not possible to view where as the map tiles are not visible. |
+| Drawing shapes | Drawing tools appear, but it’s not possible to draw any of them in the map | Not possible to view where as the map tiles are not visible. |
+| Drawing shapes: change (API) | No functionality lost | Not possible to view shapes as the map tiles are not visible. |
+| Drawing shapes: events | No event is triggered | Not possible to view where as the map tiles are not visible. |
 
 #### Google maps
 
@@ -87,22 +96,22 @@ For more information about OutSystems Maps, refer to [OutSystems Maps](../buildi
 
 ### Mobile UI
 
-<div class="info" markdown="1">
+* **Versions earlier than 1.1.1**
+    * **Issues**: Some patterns, such as **Icon**, **Card**, **Date Picker**, **Input OTP**, and **Text Area**, may lose some styling or some icons may fail to load in the application.
+    * **Workarounds**:
 
-Mobile UI is only available to Early Access Program (EAP) customers.
+        * **Card**: Add`'unsafe-inline'` to the `style-src` directive
 
-</div>
+        * **Date Picker**: Add `'unsafe-inline'` and `connect-src: data:` to the `style-src` directive
 
-* **Issues**: Some patterns, such as **Card**, **Date Picker**, **Input OTP**, and **Text Area**, may lose some styling.
+        * **Input OTP**: Add `'unsafe-inline'` to the `style-src` directive
 
-* **Workarounds**
+        * **Text Area**: Add `'unsafe-inline'` to the `style-src` directive
 
-    * **Card**: Add`'unsafe-inline'` to the `style-src` directive
+        * **Icon**: Add `'blob'` to the `connect-src` directive
 
-    * **Date Picker**: Add `'unsafe-inline'` and `connect-src: data:` to the `style-src` directive
+    Some patterns may break visually due to missing CSS. Adjust the CSP configuration as needed to restore functionality.
 
-    * **Input OTP**: Add `'unsafe-inline'` to the `style-src` directive
-
-    * **Text Area**: Add `'unsafe-inline'` to the `style-src` directive
-
-Some patterns may break visually due to missing CSS. Adjust the CSP configuration as needed to restore functionality.
+* **Version 1.1.1 or higher**
+    * **Issues**: **Icon** may fail to load in the application.
+    * **Workaround**: Add `'blob'` to the `connect-src` directive.

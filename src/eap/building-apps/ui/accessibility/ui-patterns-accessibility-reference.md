@@ -7,8 +7,7 @@ app_type: reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=4583-544&mode=design&t=iVonMVebdcf91Gwq-0
 platform-version: odc
 audience:
-  - frontend developers
-  - ui designers
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

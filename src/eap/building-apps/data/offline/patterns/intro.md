@@ -7,12 +7,13 @@ app_type: mobile apps
 platform-version: odc
 figma:
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
   - forge
 coverage-type:
-  - none
+  - remember
+  - understand
 topic:
   - data-synchronization
   - offline-synch

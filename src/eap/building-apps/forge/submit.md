@@ -1,20 +1,21 @@
 ---
 summary: Learn how to submit and manage reusable software assets to Forge using OutSystems Developer Cloud (ODC).
-tags: asset management, software repositories, asset submission, forge platform, outsystems best practices
+tags:
+  - Forge
+  - Libraries
 locale: en-us
 guid: c611c0a7-9a50-4c1d-9e8c-d51b7a237c3e
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/njWXlTZbh2jXc522APrwUf/Forge?type=design&node-id=2902%3A10&t=7VtW3Ksp7qzfotTh-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
 outsystems-tools:
   - forge
   - odc portal
 coverage-type:
   - apply
+isautopublish: true
 ---
 
 # Submit assets to Forge
@@ -34,19 +35,20 @@ To submit an asset, your asset must meet the following prerequisites:
 * Asset names must be unique. The name can't be the same as a name used for a previously submitted Forge asset.
 * Submit any dependencies first because you can’t proceed with submission if you’re missing a dependency.
 * Assets must have a short description and an icon that you can edit in the original asset.
+* Include the [required documentation](document.md) and best practices for your asset.
 * Assets must be versioned except for App Templates that are versioned by Forge. Versioning assets is slightly different for apps and libraries.
     * To version libraries, [release them](../libraries/libraries.md#release-library).
     * To version apps, [deploy them](../../deploying-apps/deploy-apps.md) from the Deployment console to production.
-* If it is an external library, the minimum requirement is .NET 8. The same applies to apps with dependencies on external libraries.
+* If it is an external library, it must target a [supported .NET version](../external-logic/upgrade-net.md). The same applies to apps with dependencies on external libraries.
 
 ## Submit an asset to Forge
 
-In ODC Portal, you can submit assets to Forge without needing to upload your assets. When you access Forge, in **All assets**, you can see all the assets available to install. And at **My assets**, the ones that are installed at your ODC organization, as well as the ones your organization submitted to Forge
+In ODC Portal, you can submit assets to Forge without needing to upload your assets. When you open Forge, you can browse assets available to install. You can also filter the list to show assets that are, for example, **Installed**, **Pre-installed**, or **Submitted to Forge**.
 
 By default, the asset name, icon, and short description are defined during development. If you want to change them later, you can create a new version with the changes and submit it. The short description displays on the asset's card
 
-1. Log into ODC Portal and select **All assets**, from the navigation menu. A list of assets available to install in your organization displays.  
-1. From the top right, click the **Submit to Forge** button. A list of assets developed in your organization displays. Assets that display as disabled don't meet the prerequisites. When you hover over an asset, a tooltip displays and provides guidance about how to enable the asset.
+1. Log into ODC Portal and open Forge. A list of assets available to install displays.  
+1. Click the **Submit to Forge** button. A list of assets developed in your organization displays. Assets that display as disabled don't meet the prerequisites. When you hover over an asset, a tooltip displays and provides guidance about how to enable the asset.
 1. From this list of assets, select the one you want to submit.
 1. Select the asset version.
 1. Click **Continue**. The wizard proceeds to **Analyze requirements & dependencies**.
@@ -55,7 +57,7 @@ By default, the asset name, icon, and short description are defined during devel
 
    <div class="info" markdown="1" >
 
-   When you are submitting Agentic apps, be aware that you can only submit Agent apps that use trial AI models. If you have a paid model, you need to adapt your app to use an Amazon Nova Pro or Claude 3.7 Sonnet trial models before you submit to Forge.
+   When you are submitting Agentic apps, be aware that you can only submit Agent apps that use trial AI models. If you have a paid model, you need to adapt your app to use an Amazon Nova Pro or Claude Haiku 4.5 trial models before you submit to Forge.
 
    </div>
 
@@ -71,7 +73,7 @@ By default, the asset name, icon, and short description are defined during devel
 
     <div class="info" markdown="1">
 
-    To check your submitted assets, go to **My assets** > **Submitted to Forge**.
+    To check assets you've submitted to Forge, in the **Filters** panel select **My assets** > **Submitted to Forge**.
 
     </div>
 

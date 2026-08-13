@@ -1,25 +1,30 @@
 ---
-summary: Social provider accelerator requirements for authentication in OutSystems Developer Cloud (ODC).
+summary: Social provider accelerators in OutSystems Developer Cloud (ODC) let you add Apple, Google, Facebook, or LinkedIn as an external IdP.
 locale: en-us
 guid: 3080f31e-088b-4278-a2b8-1134a5a40255
 app_type: mobile apps,reactive web apps
 platform-version: odc
-tags: authentication,identity provider,openid connect,security,social login
-figma: 
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - OAuth
+  - OIDC
+  - Security
+figma:
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Platform administrator
 topic:
   - external-idps
   - idp-saml
 outsystems-tools:
   - odc portal
 coverage-type:
+  - remember
   - apply
-  - understand
 helpids: 30711
+isautopublish: true
 ---
 
 # Add a social identity provider with accelerators
@@ -34,20 +39,24 @@ Before you begin, make sure you have:
 * The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 * A registered app in your social provider portal, with the required values for your provider ready (refer to [Social provider requirements](#social-provider-requirements); for example, Client ID and Client Secret).
 
-<div class="info" markdown="1">
+* Your identity provider's endpoints (Discovery, JWKS, token, and userinfo) must be reachable by ODC. ODC validates tokens by retrieving signing keys from the JWKS endpoint. Either expose these endpoints publicly, or restrict access by allowlisting the ODC identity egress IP addresses in your firewall. For the list of IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp). For background on the network requirements and the protocol-based security model, refer to [Network considerations](intro.md#network-considerations).
 
-When registering your web app in your identity provider’s portal, if you're prompted to provide redirect URIs, leave the fields empty or use placeholder URIs. You'll update these with the correct values in a later step of this guide.
-
-</div>
+* When registering your web app in your identity provider’s portal, if you're prompted to provide redirect URIs, leave the fields empty or use placeholder URIs. You'll update these with the correct values in a later step of this guide.
 
 ## Add a social provider with accelerators
 
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, you add a social identity provider once at the organization level and then assign it to stages in one or more portfolios. For more information about portfolio-scoped IdP assignment, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
+
+</div>
+
 To add a new social identity provider with accelerators, follow these steps:
 
-1. In the ODC Portal, go to **Manage** > **Identity providers**.
+1. In the ODC Portal, go to **Management** > **Govern** > **Identity providers**.
 1. To open the **New provider** configuration screen, click the **Add Provider** dropdown and select the social provider (Apple, Google, Facebook, or LinkedIn).
 1. Enter a name for the new provider in the **Provider name** field.
-1. Complete the configuration fields with the information required from your provider (refer to [Social provider requirements](#social-provider-requirements).
+1. Complete the configuration fields with the information required from your provider (refer to [Social provider requirements](#social-provider-requirements)).
 
     <div class="info" markdown="1">
 
@@ -55,7 +64,11 @@ To add a new social identity provider with accelerators, follow these steps:
 
     </div>
 
-1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
+1. In the **Organization user email verification** section, choose one of the options for handling email verification.  
+    For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
+
+1. In the **User profile matching** section, select the attribute (fallback option) ODC uses to match external logins to ODC profiles when a subject match isn't found.
+    For more information about the options and when to use each one, refer to [Profile matching for external IdPs](identity-claims-email-verification.md#profile-matching-external-idps).
 
 1. Click **Save**.
 
@@ -68,7 +81,7 @@ To add a new social provider using an accelerator, you need to get the following
 ### Apple
 
 | Accelerator field | Information required | Description |
-| ---|---|--- |
+| --- | --- | --- |
 | Client ID | Identifier | A public identifier your app on the provider side. It's a string type value available to any registered developer on Apple Developer. You can access the Identifier value on the Certificates, Identifiers, and Profiles pages of your app. |
 | Key ID | Key ID | Key ID corresponding to your Secret (`.p8`). |
 | Team ID | Team ID | Identifier of your team on Apple Developer. |
@@ -79,9 +92,9 @@ For further guidance, check [Configure app capabilities - About Sign in with App
 ## Google
 
 | Accelerator field | Information required | Description |
-| ---|---|--- |
+| --- | --- | --- |
 | Client ID | Client ID | A public identifier for your app on the provider side. It's a string type value available to any registered developer on the Google Cloud Platform. You can access the ClientID value on the OAuth Consent tab on your app's Credentials screen. |
-| Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on the Google Cloud Platform. In the **API & Services** product, you can access the **ClientID** value on the **Credentials** tab on your app's **Credentials** screen. For your app, select **Download OAuth client**.  |
+| Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on the Google Cloud Platform. In the **API & Services** product, you can access the **ClientID** value on the **Credentials** tab on your app's **Credentials** screen. For your app, select **Download OAuth client**. |
 
  You must have the **Identity Platform** API enabled in the Google Console.
 
@@ -90,7 +103,7 @@ For further guidance, check [Google Identity - Authentication](https://developer
 ### Facebook
 
 | Accelerator field | Information required | Description |
-| ---|---|--- |
+| --- | --- | --- |
 | App ID | App ID | A public identifier for your app on the provider side. It's a string type value available to any registered developer on Meta for Developers. You can access the AppID value in your app's settings. |
 | App Secret | App Secret | A confidential code known only to your app and the authorization server. It's a string type value available to any registered developer on Meta for Developers. You can access the **AppSecret** value in your app's settings. |
 
@@ -99,7 +112,7 @@ For further guidance, check [Facebook Login - Documentation - Facebook for Devel
 ### LinkedIn
 
 | Accelerator field | Information required | Description |
-| ---|---|--- |
+| --- | --- | --- |
 | Client ID | Client ID | A public identifier for your app on the provider side. It's a string-type value available to any registered developer on LinkedIn. You can access the **ClientID** value on the **Auth** tab on your app's Credentials screen. |
 | Client Secret | Client Secret | A confidential code known only to your app and the authorization server. It's a string-type value type value available to any registered developer on LinkedIn. You can access the **ClientSecret** value on the **Auth** tab on your app's **Credentials** screen. |
 

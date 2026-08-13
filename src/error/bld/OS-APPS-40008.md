@@ -9,10 +9,9 @@ figma:
 coverage-type:
   - unblock
 audience:
-  - mobile developers
-  - full stack developers
-  - architects
-  - tech leads
+  - Developer
+  - Architect
+  - Tech lead
 outsystems-tools:
   - none
 ---

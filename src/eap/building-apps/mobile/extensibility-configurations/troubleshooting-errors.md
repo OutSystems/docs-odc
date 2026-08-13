@@ -1,7 +1,7 @@
 ---
 guid: 9bc78152-dbc3-45e0-9a0f-6fe25601ea69
 locale: en-us
-summary: This article enables developers to troubleshoot common extensibility conifguration errors
+summary: "ODC mobile app extensibility configuration errors: fix Capacitor/Cordova framework mismatches and legacy JSON format issues."
 figma:
 coverage-type:
   - unblock
@@ -9,7 +9,7 @@ topic:
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 tags: troubleshooting, mobile app development, capacitor framework, cordova plugins, extensibility configuration
 outsystems-tools:
   - odc studio

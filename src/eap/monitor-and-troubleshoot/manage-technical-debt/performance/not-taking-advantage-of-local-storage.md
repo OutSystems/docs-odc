@@ -10,7 +10,7 @@ coverage-type:
   - unblock
   - remember
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
 ---

@@ -10,8 +10,8 @@ coverage-type:
   - unblock
   - remember
 audience:
-  - mobile developers
-  - frontend developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
   - odc portal

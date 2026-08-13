@@ -7,10 +7,8 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - backend developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -37,12 +35,12 @@ Ensure that the .NET type and `DataType` modifier are compatible according to th
 
 | C# type | OutSystems type | DataType modifier |
 | --- | --- | --- |
-| string | Text |     |
+| string | Text | |
 | string | Email | Email |
 | string | PhoneNumber | PhoneNumber |
-| decimal | Decimal |     |
+| decimal | Decimal | |
 | decimal | Currency | Currency |
-| DateTime | DateTime |     |
+| DateTime | DateTime | |
 | DateTime | Date | Date |
 | DateTime | Time | Time |
 

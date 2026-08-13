@@ -9,8 +9,10 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 outsystems-tools:
     - odc studio
 audience:
-    - full stack developers
-    - backend developers
+    - Developer
+coverage-type:
+    - understand
+    - evaluate
 ---
 
 # Understanding CRUD operations in ODC

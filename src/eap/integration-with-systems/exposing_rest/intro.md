@@ -1,15 +1,17 @@
 ---
 summary: OutSystems Developer Cloud (ODC) facilitates the exposure of methods through REST APIs with a defined execution flow.
-tags: rest apis, api development, authentication, api security, data serialization
+tags:
+  - Authentication
+  - REST
+  - Security
+  - Web services
 locale: en-us
 guid: 79ddbf86-371c-41cf-b9c9-45545b74957f
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A22105&t=enlFI20VRi6L4Uys-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -17,6 +19,7 @@ coverage-type:
 topic:
   - rest-webservice-data
   - define-methods
+isautopublish: true
 ---
 
 # Exposing REST APIs
@@ -29,7 +32,17 @@ If you want to **consume** a REST API, check [Consume REST APIs](../consume_rest
 
 </div>
 
-## REST API Method Flow
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, exposing a REST API is a common way to share data across portfolios. Apps in different portfolios don't share public elements from apps (service actions, entities).
+
+For more information, refer to [Asset portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md#whats-shared-and-portfolio-scoped).
+
+</div>
+
+For a high-level guidance on securing exposed REST APIs with JWT-based token authentication, refer to [Token-based authentication for exposed REST APIs](token-based-auth-expose-dev-pattern.md).
+
+## REST API method flow
 
 When a request to your REST API Method is received, OutSystems executes the following flow:
 

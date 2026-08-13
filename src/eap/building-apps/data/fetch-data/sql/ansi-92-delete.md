@@ -4,18 +4,20 @@ locale: en-us
 summary: Learn how to use the DELETE statement in ANSI-92 queries to remove records from an external entity in OutSystems Developer Cloud (ODC).
 figma:
 coverage-type:
-  - apply
   - remember
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - backend developers
-  - full stack developers
-  - tech leads
-tags: sql,delete statement,database,ansi-92,queries
+  - Developer
+tags:
+  - Data
+  - Entities
+  - External Databases
+  - SQL
 outsystems-tools:
   - odc studio
+isautopublish: true
 ---
 
 # DELETE statement in ANSI-92 queries
@@ -59,4 +61,4 @@ DELETE FROM {entity} WHERE {entity}.[id] = 1 OR {entity}.[id] = @dynamic;
 
 ### Known issues
 
-* Subqueries aren't supported in the `WHERE` clause
+* Subqueries and joins aren't supported in the `FROM` or `WHERE` clauses

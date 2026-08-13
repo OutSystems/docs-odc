@@ -1,29 +1,32 @@
 ---
 summary: OutSystems Developer Cloud (ODC) features Private Gateways, a secure solution for connecting apps to private network endpoints.
-tags: cloud infrastructure, security, connectivity, cloud-native solutions, multitenant architecture
+tags:
+  - Infrastructure
+  - Private Gateway
+  - REST
+  - Security
+  - Web services
 locale: en-us
 guid: 9a023d82-da5b-4164-8f3f-9d6c35444b50
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/AOyPMm22N6JFaAYeejDoge/Configuration-management?type=design&node-id=3001%3A1059&t=hXGTDybYCg38Lul5-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
-  - infrastructure managers
+  - Developer
+  - Platform administrator
 outsystems-tools:
   - none
 coverage-type:
   - understand
   - apply
+isautopublish: true
 ---
 
 # Configure a private gateway to your network
 
-Private Gateways is an OutSystems Developer Cloud (ODC) feature that lets you connect your apps to private data and private services ("endpoints") that aren't accessible by the internet. These endpoints may be in an on-premise network, a private cloud, or a public cloud.
+Private Gateways is an OutSystems Developer Cloud (ODC) feature that lets you connect your apps to private data and private services (endpoints) that aren't accessible by the internet. These endpoints may be in an on-premise network, a private cloud, or a public cloud.
 
-The complexity of a multitenant cloud-native platform means that ODC requires a modern solution over a traditional VPN in order to connect securely to private assets.
+ODC is cloud-native which means your apps don't run on servers. Instead, they run in containers that scale automatically and almost instantly to match the load. ODC is also multi-tenant, so containers and apps don't have a single, dedicated IP address that you can allowlist the traditional way. This means ODC requires a modern solution over a traditional VPN to connect securely to private assets.
 
 VPN limitations over a cloud-native infrastructure are overcome by Private Gateway. VPNs are often the main vector for data breaches often allowing unrestricted access to the company's network, are complex to configure and set up, and are rigid when it comes to failover.
 
@@ -31,14 +34,14 @@ Private Gateway is a secure-by-design solution for the cloud-native, multi-tenan
 
 * Provides fine-tuned control over what data is accessible. You can control the ingress while not exposing any private endpoints.
 * Highly flexible and configurable. For example, supports connecting to your private endpoints hosted in multi-tenant, multi-zone, or multi-region environments.
-* Strong scaling and failover capabilities.
+* Strong scaling and failover capabilities, with throughput tested in excess of 100 MB/s.
 * Apps and their data remain isolated.
 * Traffic and requests are unidirectional (only supports requests originating from ODC apps).
 
 There are two components to the Private Gateways feature.
 
 * The server component, **Private Gateway** hosted and managed by OutSystems. There is one instance of Server Gateway for each stage in your organization. By default a Private Gateway is inactive and you activate it in ODC Portal.
-* The client component, **Cloud Connector** installed and managed by you. You use the configuration generated on activating a Private Gateway to run Cloud Connector on system(s) in your private network(s). Your apps connect to the endpoints through a secure tunnel established between the endpoints and a Private Gateway. The Cloud Connector requires only outbound access to the internet in the private network(s) in which it's running. To learn more, refer to [OutSystems Cloud Connector.](https://github.com/OutSystems/cloud-connector)
+* The client component, **Cloud Connector** installed and managed by you. You use the configuration generated on activating a Private Gateway to run Cloud Connector on system(s) in your private network(s). Your apps connect to the endpoints through a secure tunnel established between the endpoints and a Private Gateway. Endpoints are identified by IP address or hostname/FQDN, so you connect to any service reachable from the machine running Cloud Connector. The Cloud Connector requires only outbound access to the internet in the private network(s) in which it's running. To learn more, refer to [OutSystems Cloud Connector.](https://github.com/OutSystems/cloud-connector)
 
 Common use cases include accessing data through a private REST API service, requesting internal services (SMTP, SMB, NFS,..), and [connecting to external databases](../integration-with-systems/external-databases/intro.md) in private networks.
 
@@ -46,7 +49,7 @@ A Private Gateway supports multiple tunnels and uses a load balancer to handle r
 
 <div class="info" markdown="1">
 
-Private Gateway requires the [subscription](subscription-console.md) of an add-on to the ODC Platform edition. Please contact your OutSystems account team for more information.
+If you have a Private Gateway configured and you plan to change the domain of a stage, the Cloud Connector must be reconfigured. Read [Planning domain changes](domains/domain-planning.md#private-gateways).
 
 </div>
 
@@ -56,9 +59,15 @@ The following diagram shows a sample ODC customer setup for a Private Gateway th
 
 Like the apps running in a stage, each Private Gateway benefits from automatic failover.
 
+<div class="info" markdown="1">
+
+You can also activate and deactivate a Private Gateway, retrieve its status, and rotate its key programmatically using the [Environment Configurations API](../reference/apis/env-config-v1.md).
+
+</div>
+
 ## Activate a Private Gateway
 
-To activate a Private Gateway, navigate to the **Private Gateways** tab in the ODC Portal. Then follow these steps.
+To activate a Private Gateway, in the ODC Portal go to **Management** > **Configure** > **Private gateways**. Then follow these steps.
 
 1. Select the tab of the stage for which you want to activate a Private Gateway. The **Status** shows **Inactive**.
 1. Click the Toggle icon to activate. It should only take a few seconds.

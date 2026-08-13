@@ -1,7 +1,7 @@
 ---
 guid: 24d5a0ea-68c8-4851-b7de-e0908c122862
 locale: en-us
-summary: Integrate AI capabilities in your apps using AI models or agents in OutSystems Developer Cloud (ODC) to build intelligent, autonomous applications.
+summary: Agentic apps in ODC use AI agents to automate multi-step workflows, with grounding, system prompts, state persistence, and external tools shaping agent behavior.
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7782-132&p=f&t=KL8VHzLPQQ7E5ZHx-0
 coverage-type:
   - understand
@@ -10,9 +10,8 @@ topic:
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:
-  - full stack developers
-  - tech leads
-  - backend developers
+  - Developer
+  - Tech lead
 tags: ai models,ai agents,integration,automation,odc studio
 outsystems-tools:
   - odc studio
@@ -26,6 +25,12 @@ In ODC Studio, you can integrate AI capabilities into your apps either by callin
 An **Agentic app** uses one or more AI agents to perform tasks, automate workflows, or handle complex multi‑step interactions. Unlike traditional apps that rely on direct user input for each step, agentic apps can act autonomously or semi‑autonomously—making decisions, invoking external tools, and coordinating logic. These apps consume the capabilities exposed by AI agents.
 
 ![Dropdown menu in ODC Studio showing options for creating different types of apps, with 'Agentic app' selected.](images/app-dropdown-odcs.png "ODC Studio App Type Selection")
+
+<div class="info" markdown="1">
+
+Like web and mobile apps, agentic apps use a specialized architecture where each app is deployed into its own isolated container. Libraries consumed by an agentic app are packaged directly inside that container. This means if multiple apps consume the same library, each receives its own independent copy at runtime. Refer to [App architecture](../../app-architecture/intro.md) for more information.
+
+</div>
 
 ## AI models
 

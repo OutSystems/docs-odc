@@ -14,10 +14,9 @@ coverage-type:
   - understand
 content-type: 
 audience:
-  - platform administrators
-  - infrastructure managers
-  - tech leads
-  - architects
+  - Platform administrator
+  - Tech lead
+  - Architect
 helpids: 
 ---
 

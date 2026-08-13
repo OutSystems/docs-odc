@@ -9,9 +9,9 @@ figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troublesh
 coverage-type:
   - evaluate
 audience:
-  - mobile developers
-  - frontend developers
-  - tech leads
+  - Developer
+  - Front-end developer
+  - Tech lead
 outsystems-tools:
   - none
 ---

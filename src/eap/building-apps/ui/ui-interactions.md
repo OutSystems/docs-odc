@@ -7,8 +7,8 @@ app_type: reactive web apps
 platform-version: odc
 figma:
 audience:
-  - frontend developers
-  - full stack developers
+  - Front-end developer
+  - Developer
 outsystems-tools:
   - odc studio
 coverage-type:

@@ -9,7 +9,8 @@ figma:
 coverage-type:
   - none
 audience:
-  - none
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
   - odc portal

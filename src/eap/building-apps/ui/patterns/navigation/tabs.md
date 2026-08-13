@@ -7,10 +7,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3208%3A18118&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - ui designers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -21,6 +19,12 @@ topic:
 ---
 
 # Tabs
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
 
 You can use the Tabs UI Pattern to divide content into meaningful sections. This pattern is useful when you want the user to be able to switch between sections within the same context while not having to not to navigate to different areas.
 
@@ -77,14 +81,14 @@ The following CSS code is an example of how to change the style of selected item
 
 ## Properties
 
-| Property                                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|-------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| TabsOrientation (Orientation Identifier): Optional    | Set the direction of the tabs. By default, the tabs are displayed horizontally.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| StartingTab (Integer): Optional                       | Set the index of the currently active tab. The index begins at 0.<br/>Examples<ul><li>Blank - The 1st tab is the active tab. This is the default.</li><li>1 - The 2nd tab is the active tab.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Height (Text): Optional                               | Height of the tabs container. <br/>Examples<ul><li>Auto - The tab height adjusts to the content. This is the default.</li><li>400px - The height of the tab is 400px.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| TabsVerticalPosition (Direction Identifier): Optional | Sets the position of the tabs. by default, the tabs appear on the left.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| OptionalConfigs.JustifyHeaders (Boolean): Optional    | If True, the Tabs are evenly distributed in the space available.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ExtendedClass (Text): Optional                        | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <br/>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1" "myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
+| Property | Description |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| TabsOrientation (Orientation Identifier): Optional | Set the direction of the tabs. By default, the tabs are displayed horizontally. |
+| StartingTab (Integer): Optional | Set the index of the currently active tab. The index begins at 0.<br/>Examples<ul><li>Blank - The 1st tab is the active tab. This is the default.</li><li>1 - The 2nd tab is the active tab.</li></ul> |
+| Height (Text): Optional | Height of the tabs container. <br/>Examples<ul><li>Auto - The tab height adjusts to the content. This is the default.</li><li>400px - The height of the tab is 400px.</li></ul> |
+| TabsVerticalPosition (Direction Identifier): Optional | Sets the position of the tabs. by default, the tabs appear on the left. |
+| OptionalConfigs.JustifyHeaders (Boolean): Optional | If True, the Tabs are evenly distributed in the space available. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <br/>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1" "myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
 
 <div class="info" markdown="1">
 
@@ -96,9 +100,9 @@ To ensure predictable behavior and avoid runtime issues, the Tabs component is d
 
 ### Tabs
 
-|Event| Description  |
-|---|---|
-|OnTabChange: Optional| Event triggered when switching Tabs. |
+| Event | Description |
+| --- | --- |
+| OnTabChange: Optional | Event triggered when switching Tabs. |
 
 ## Device and pattern compatibility
 

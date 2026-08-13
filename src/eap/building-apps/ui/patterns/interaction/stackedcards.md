@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A17757&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -21,9 +20,15 @@ topic:
 
 # Stacked Cards
 
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
+
 You can use Stacked Cards UI Pattern to add swipeable cards that can be dragged in multiple directions triggering events, such as deny, approve, and archive. This pattern is ideal when you want to individually scan multiple cards.
 
-   ![Example of Stacked Cards UI Pattern in a mobile app interface](images/stackedcards-1.png "Stacked Cards UI Pattern")
+![Example of Stacked Cards UI Pattern in a mobile app interface](images/stackedcards-1.png "Stacked Cards UI Pattern")
 
 ## How to use the Stacked Cards Pattern
 

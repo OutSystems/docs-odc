@@ -3,29 +3,38 @@ summary: Set up redirect URIs for OpenID Connect external identity providers in 
 locale: en-us
 guid: 52d83cda-27cb-4f02-aad6-c8b0876e5d10
 audience:
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Platform administrator
 platform-version: odc
 topic:
   - external-idps
   - idp-openidp
 coverage-type:
   - apply
-  - remember
-  - understand
 figma:
 app_type: reactive web apps,mobile apps
-tags: openid connect, external identity provider, identity management, redirect uris, authentication setup
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - OIDC
+  - SSO
 outsystems-tools:
   - odc portal
 helpids:
+isautopublish: true
 ---
 # Configure redirect URIs for an external IdP { #idp-configure-uri }
 
 This procedure applies to OpenID Connect (OIDC) providers, including social providers added with accelerators, because they use OIDC flows.
 
 Redirect URIs tell the identity provider where to send users after login or logout. You must register these URIs in your IdP so ODC can complete authentication.
+
+<div class="info" markdown="1">
+
+If you plan to change the domain of a stage or your organization, redirect URIs must be updated for all affected OIDC providers. Read [Planning domain changes](../domains/domain-planning.md#oidc) for guidance.
+
+</div>
 
 ## Prerequisites
 
@@ -36,17 +45,17 @@ Before you begin, ensure the following:
 
 ## Set up redirect URIs for your provider
 
-1. In the ODC Portal go to **Manage** > **Identity providers**.
+1. In the ODC Portal go to **Management** > **Govern** > **Identity providers**.
 
 1. Click the provider for which you want to configure the redirect URIs.
 
 1. Go to the **Redirect URLs** tab, and copy the **Login URL** and **Logout URL** for the built-in domain.  
 
-   If you're using a [custom domain](../custom-domains.md), copy the corresponding **Login URL** and **Logout URL** as well.
+   If you're using a [custom domain](../domains/custom-domains.md), copy the corresponding **Login URL** and **Logout URL** as well.
 
     <div class="info" markdown="1">
 
-    Copy the URLs for either your **Organization** or the app stage you want (for example, **Apps in Development**, **Apps in QA**, or **Apps in Production**). You can add more later.
+    Copy the URLs for either your **Organization** or the app stage you want (for example, **Apps in Development**, **Apps in QA**, or **Apps in Production**). You can add more later. In a multi-portfolio organization, copy the URLs for each stage you want the provider to cover.
 
     </div>
 

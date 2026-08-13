@@ -1,21 +1,29 @@
 ---
-summary: OutSystems Developer Cloud (ODC) employs secure-by-design principles, featuring multi-layered security and compliance with industry standards.
-tags: secure by design, owasp, security engineering principles, infrastructure as code, policy enforcement
+summary: OutSystems Developer Cloud (ODC) security covers encryption, WAF, namespace isolation, vulnerability patching, and secure-by-design principles.
+tags:
+  - Authentication
+  - IdP
+  - Monitoring
+  - OIDC
+  - OWASP
+  - Private Gateway
+  - Security
 locale: en-us
 guid: bffd8c9e-16b6-4458-a146-ddb6f8077e12
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/kw9RAhge7eEpiKLnvKnOek/Security-of-OutSystems-Developer-Cloud?type=design&node-id=3001%3A25&t=vm4lMbILR8ugorQK-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
-  - tech leads
+  - Architect
+  - Developer
+  - Front-end developer
+  - Platform administrator
+  - Tech lead
 outsystems-tools:
   - none
 coverage-type:
   - understand
+isautopublish: true
 ---
 
 # Security of OutSystems Developer Cloud
@@ -52,7 +60,7 @@ The network layer of ODC uses encryption, a WAF (Web Application Firewall), intr
 
 ### Encryption in transit
 
-All incoming requests to the [Platform services and Runtime](../manage-platform-app-lifecycle/platform-architecture/identity.md#Platform) terminate at an HTTPS endpoint via [Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security) and are end-to-end encrypted. ODC supports TLS 1.3.
+All incoming requests to the [Platform services and Runtime](../manage-platform-app-lifecycle/platform-architecture/identity.md#Platform) terminate at an HTTPS endpoint and are end-to-end encrypted. We implement [HTTP Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security) (HSTS) as a native default, which forces all browser communications over encrypted channels and prevents downgrade attacks. ODC supports TLS 1.3, ensuring high-performance encryption for all platform-wide communications.
 
 ### Web Application Firewall
 
@@ -119,6 +127,22 @@ Private Gateways is an ODC feature that lets you connect your apps to private da
 
 For more information see [Configure a private gateway to your network](../manage-platform-app-lifecycle/private-gateway.md).
 
+### Content security policy
+
+Content Security Policy (CSP) is a web security standard that protects your web, mobile, and progressive web apps from cross-site scripting (XSS) attacks and other code injection threats. CSP works by controlling which content sources browsers can load, blocking malicious scripts and unapproved resources before they can execute.
+
+ODC allows you to customize CSP directives per stage through the ODC Portal. You can configure policies as an allow list, permitting only specified content sources while blocking all others by default. This includes controlling where JavaScript, images, fonts, and other resources can load from.
+
+Key benefits of configuring CSP include:
+
+* **XSS attack prevention**: Stops unauthorized scripts from executing malicious actions
+* **Resource control**: Restricts loading of unapproved images, plugins, and frames
+* **Enhanced security posture**: Reduces vulnerabilities by enforcing stricter content loading policies
+
+For mobile apps built with MABS 12 or later, CSP policies automatically apply without requiring a new build.
+
+For more information about understanding and implementing CSP, refer to [Content security policy](configure-csp.md).
+
 ## Containers
 
 Each Platform service is built as a .NET, Linux-based container image. All the functionality a service provides is available as a microservice through an API, and each API is versioned to allow for seamless evergreen upgrades. When a developer publishes an app, it's built using the latest version of each Platform service, each of which incorporates the latest security updates.
@@ -148,7 +172,7 @@ A static code analysis tool scans [Platform service](../manage-platform-app-life
 
 Daily vulnerability scanning of the container registry covers the current version of the Platform service container images and all the deployed app images across all customer Runtime stages. When a vulnerability is detected, OutSystems security engineers fix it and release a new version of the affected Platform service(s) or app base container image.
 
-For the list of patches for known vulnerabilities, see **Portal** > **App security**. The app security screen shows the following:
+For the list of patches for known vulnerabilities, in the ODC Portal go to **Management** > **Maintain** > **Platform updates**, then select the **App security** tab. The app security screen shows the following:
 
 * The list of apps with known vulnerabilities
 * Classification of the vulnerabilities
@@ -161,7 +185,13 @@ The patching process upgrades your apps, and the process can be:
 
 ##### Automatic patching
 
-To reinforce security and ensure that applications are free from vulnerabilities, runtime applications will be patched automatically for known vulnerabilities. You can choose to patch applications manually by performing a 1-click publish, which will automatically deploy the application using the latest patches. You can choose to instead allow the platform to do it automatically, without any downtime or disruption to running applications. Automatic patching will be scheduled based on severity. If an app is not manually patched (by performing a 1-click publish), ODC will ensure that all vulnerabilities are automatically patched. The timeframe varies according to the vulnerability's severity.
+To reinforce security and ensure that applications are free from vulnerabilities, runtime applications will be patched automatically for known vulnerabilities. You can choose to patch applications manually by performing a 1-click publish, which will automatically deploy the application using the latest patches. You can choose to instead allow the platform to do it automatically, without any downtime or disruption to running applications. Automatic patching will be scheduled based on severity. If an app is not manually patched (by performing a 1-click publish), ODC will ensure that all vulnerabilities are automatically patched. The timeframe varies according to the vulnerability's severity. Automatic patches are the equivalent of a publish in the Development stage and a deployment in the Test and Production stages, and will apply existing updates to the application.
+
+<div class="warning" markdown="1">
+
+Active timers with the schedule set to **When published** also run after an automatic patch, because ODC treats the patch as a publish or a deployment. Deactivate a timer before the automatic patch to prevent it from running. To control exactly when the timer runs instead, patch the app manually. For more information about timer schedules, refer to [Create and run Timers](../building-apps/timers/timer-create-run.md#set-the-timer-schedule).
+
+</div>
 
 To assess the severity of vulnerabilities, we use Common Vulnerability Scoring System (CVSS), an open industry standard. You can read more information about CVSS on the [Incident Response and Security Teams website](https://www.first.org/cvss/).
 
@@ -171,12 +201,38 @@ All the users with the Administrator built-in role in your ODC organization rece
 
 1. **Schedule email**: Provides details about the affected stages, the upgrade schedule, and links to more information about each vulnerability.
 1. **48-hour reminder email**: Reminder of the upcoming scheduled upgrade for the first stage to be patched
-1. **Upgrade started email:** Marks the commencement of the automatic upgrade process for the first stage to be patched. During the automatic upgrade process, no downtime for your apps is expected. Apps in your non-development stages are patched without creating new revisions. Apps in your development stages are patched by republishing with the same revision. [Libraries are packaged with apps](../app-architecture/intro.md#libraries) when an app is published, so their resulting code is patched as a part of the app, and no new revisions are created for libraries as a part of automatic patching.
+1. **Upgrade started email:** Marks the commencement of the automatic upgrade process for the first stage to be patched. During the automatic upgrade process, no downtime for your apps is expected. Apps in your non-development stages are patched by redeploying the current running revision, without creating a new one. Apps in your development stages are patched by republishing with the same revision. [Libraries are packaged with apps](../app-architecture/intro.md#libraries) when an app is published, so their resulting code is patched as a part of the app, and no new revisions are created for libraries as a part of automatic patching.
 1. **Upgrade completed email**: Confirms the successful completion of the automatic upgrade process for the last stage to be patched. A report detailing which apps were upgraded for each stage is attached to this email.
 
 ##### Manual patching
 
 Republish the app to trigger an upgrade process for an affected app manually. Open the app in ODC Studio and press the 1-Click Publish button. This patches the app in the development stage. Promote the app to all other stages to ensure that the most secure version of the app is running in all stages.
+
+You can also opt to patch an asset directly in any non-development stage using OutSystems public APIs. To do this, follow these steps:
+
+1. [Generate an access token](../reference/apis/public-rest-apis/authentication/get-access-token.md) from an API client with the **Asset management > Open** permission.
+
+1. Call `POST /api/builds/v1/build-operations` to start a new release build for the app. Pass the build type, asset key, and asset revision in the body. Example:
+
+        {
+        "buildType": "Release",
+        "assetKey": "68ef84e5-9265-47b8-8612-b073b70e3e3e",
+        "assetRevision": 58
+        }
+
+    The response contains the build key, used in the next step.
+
+1. Using an API client with the **Release management > Deploy apps** permission, call `POST /api/deployments/v1/deployment-operations` to deploy the build to the target stage. Pass the operation, asset key, revision, the build key from the previous step, and the environment key of the target stage. Example:
+
+        {
+        "operation": "Deploy",
+        "assetKey": "68ef84e5-9265-47b8-8612-b073b70e3e3e",
+        "revision": 58,
+        "buildKey": "19f61bec-c780-4000-88ba-e7cef13b1501",
+        "environmentKey": "19f61bec-c780-4000-8e6c-43611841ec01"
+        }
+
+For more information, refer to [Deploying your asset to the target stage](../reference/apis/public-rest-apis/ci-cd-apis-use-cases/deploy-asset.md).
 
 ##### Malware scanning
 
@@ -206,7 +262,7 @@ A network namespace isolates each stage [within each organization's Runtime](#is
 
 Each Runtime stage has an isolated Amazon Aurora Serverless database. The database for the Production stage is designed to support high availability, with the ability to add a read replica in a different Availability Zone (AZ) to ensure immediate failover in the event of an AZ outage or failure.
 
-For more information see [Cloud-native architecture of OutSystems Developer Cloud](../manage-platform-app-lifecycle/platform-architecture/identity.md#runtime-data).
+For more information, see [Cloud-native architecture of OutSystems Developer Cloud](../manage-platform-app-lifecycle/platform-architecture/identity.md#runtime-data).
 
 ### Encryption at-rest
 
@@ -234,7 +290,7 @@ For more information, see the [User management article](../user-management/intro
 
 OutSystems maintains formal policies and procedures for managing security incidents. This ensures appropriate and prompt handling of any incident. The Security Incident Management Procedures outline the response to vulnerabilities in ODC infrastructure, security breaches, and incidents. The procedure explains the identification, reporting, and action taken for incidents.
 
-### OutSystems Security Operations Center
+### OutSystems security operations center
 
 OutSystems proactively monitors ODC infrastructure, events, and availability 24 hours a day, seven days a week. Any unexpected alert, including privacy breaches, either automatically detected or resulting from a human log review, triggers a Security Incident Response.
 
@@ -246,7 +302,7 @@ Customers can report suspected privacy or security incidents through the Support
 
 OutSystems created a public vulnerability policy to provide customers with guidance and information in the event of a vulnerability reported in an OutSystems product.
 
-For more information see [ODC vulnerability policy](https://success.outsystems.com/support/security/vulnerabilities/).
+For more information, see [ODC vulnerability policy](https://success.outsystems.com/support/security/vulnerabilities/).
 
 ---
 <div class="info" markdown="1">

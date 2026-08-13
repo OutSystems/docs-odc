@@ -1,5 +1,5 @@
 ---
-summary: Explore how to manage various types of exceptions including User, Database, and Security Exceptions in OutSystems Developer Cloud (ODC).
+summary: Exception handling in OutSystems Developer Cloud (ODC) covers exception types (User, Database, Security, Communication), hierarchy, messages, and logging.
 tags: exception handling, error management, application flow control, software robustness, debugging
 locale: en-us
 guid: ec639f37-b5ee-4ca4-974d-9096596614ae
@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21345&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -65,7 +64,7 @@ OutSystems can raise Database Exceptions whenever you are interacting with the d
 OutSystems can raise Security Exceptions whenever you have authentication or other security mechanisms in your application. Security Exceptions include:
 
 Invalid Login
-:   The login provided by the end-user isn't correct. This exception is raised by the Login and LoginPassword System Actions.
+:   Occurs when it is not possible to validate the login credentials provided by the end-user. It can occur in situations such as missing or wrong identity provider configurations, or the communication with the identity provider has failed.
 
 Not Registered
 :   The end-user is not registered and cannot access the current screen without registration. When you create new custom Roles in your app, OutSystems creates specific Role Exceptions under Not Registered Exception:
@@ -82,11 +81,11 @@ Communication Exceptions apply only to Web and Mobile Apps, and are raised whene
 
 Communication Exceptions are only raised by OutSystems — you can't raise these exceptions in your logic.
 
-## Exception Message
+## Exception message
 
 When OutSystems raises an exception, the **ExceptionMessage** property of the Exception Handler element is automatically filled in with a problem description. When you raise an exception in your logic, such as a User Exception, you must define the message in the **Exception Message** property of the Raise Exception element.
 
-## Exception Logs { #exception-logs }
+## Exception logs { #exception-logs }
 
 When you handle an exception in your app, you can use the **Log Error** property of the Exception Handler element to choose if OutSystems should log the exception or not. You can check for logged exceptions in ODC Portal.
 

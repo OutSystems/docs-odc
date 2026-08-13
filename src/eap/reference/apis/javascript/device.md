@@ -9,7 +9,7 @@ figma:
 coverage-type:
   - remember
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
 ---

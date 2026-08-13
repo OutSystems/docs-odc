@@ -7,8 +7,8 @@ platform-version: odc
 figma: https://www.figma.com/design/r2zu8cQscEuqfT3j3sfTjm/Testing-Apps?node-id=4602-13
 tags: selenium testing, automated testing, web testing, testing best practices, outsystems integration
 audience:
-  - frontend developers
-  - full stack developers
+  - Front-end developer
+  - Developer
 outsystems-tools:
   - odc studio
 coverage-type:

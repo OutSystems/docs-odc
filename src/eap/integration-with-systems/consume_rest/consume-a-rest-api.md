@@ -1,26 +1,31 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports consuming single or multiple REST API methods with Swagger integration.
-tags: swagger integration, rest api integration
+tags:
+  - Authentication
+  - REST
+  - Security
+  - Web services
 locale: en-us
 guid: 1901abf6-d016-4fc6-84df-c8ea2fe92003
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=3101-12106
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
 outsystems-tools:
   - odc studio
 coverage-type:
   - apply
 topic:
   - consume-refresh-methods
+isautopublish: true
 ---
 
 # Consume one or more REST API methods
 
-Consuming [ODC REST APIs](../../reference/apis/public-rest-apis/overview.md) in you app lets you integrate external data and functionality into your OutSystems Developer Cloud (ODC) apps. This allows your apps to interact with services provided by third-party platforms, internal microservices, or APIs exposed by other ODC libraries or apps. Before starting the consumption process in ODC Studio, ensure you have the details from the target API's documentation, including its base URL, required authentication methods, and the structure of relevant request and response parameters.
+Consuming [REST APIs](../../reference/apis/public-rest-apis/overview.md) in your app lets you integrate external data and functionality into your OutSystems Developer Cloud (ODC) apps. This allows your apps to interact with services provided by third-party platforms, internal microservices, or APIs exposed by other ODC libraries or apps.
+
+Before starting the consumption process in ODC Studio, ensure you have the API's base URL, required authentication methods, and the structure of its request and response parameters.
 
 <div class="info" markdown="1">
 
@@ -32,7 +37,7 @@ In ODC Studio you can add several methods of a REST API or add only a single API
 
 To modify the request and response of an API, refer to the [customization section](simple-customizations.md).
 
-## Add a single REST API method { #single-method }
+## Add a single REST API method {#single-method}
 
 You can consume a **single method** of a REST API, based on the example content provided for the request and response. For `POST` or `PUT` methods, you can specify the input parameters in the URL and the request structure in the body.
 
@@ -67,7 +72,19 @@ To consume a single REST API method, follow these steps:
 
     ![Headers and authentication tab in REST API consumption dialog in ODC Studio](images/rest-consume-headers-auth-odcs.png "Consume REST API Method - Headers Tab")
 
+    <div class="info" markdown="1">
+
+    Request header values must contain only ASCII characters.
+
+    </div>
+
 1. Enter the request and the response structures of the API. To enter these details, you can test the API and use the test result.
+
+    <div class="info" markdown="1">
+
+    Handling large responses can lead to slower ODC Studio performance.
+
+    </div>
 
     Alternatively, you can add the JSON structure or plain text example directly in the **Request** and **Response** fields.
 
@@ -91,11 +108,11 @@ To consume a single REST API method, follow these steps:
 
     ![Body tab in REST API consumption dialog showing request and response structure in ODC Studio](images/rest-consume-body-odcs.png "Consume REST API Method - Body Tab")
 
-Once you have successfully added the API method, ODC Studio automatically [creates structures and API method](#what-odc-studio-creates-when-you-import-a-rest-api) for the API.
+Once you have successfully added the API method, ODC Studio automatically [creates structures and API method](#what-odc-studio-creates-when-you-consume-a-rest-api) for the API.
 
-You can use the ODC portal to change the base URL at any time using the app configuration.
+You can use the ODC Portal to change the base URL at any time using the app configuration.
 
-## Add several methods of a REST API { #all-methods }
+## Add several methods of a REST API {#all-methods}
 
 You can consume multiple methods of a REST API, either all available methods or only the ones you select if that API is compliant with the [OpenAPI specification](https://swagger.io/specification/). REST APIs exposed by OutSystems are compliant with OpenAPI specification. You can import the OpenAPI specification either by providing a URL or by selecting a local file.
 
@@ -117,7 +134,7 @@ To add several methods of a REST API, follow these steps:
 
     If you're importing an OpenAPI 3.0 specification file and the specification includes more than one base URL, choose the desired URL and click **Finish**.
 
-    At any point, from the ODC portal, you can change the base URL using the app configuration.
+    At any point, from the ODC Portal, you can change the base URL using the app configuration.
 
     </div>
 
@@ -125,11 +142,11 @@ To add several methods of a REST API, follow these steps:
 
     ![Selection dialog for choosing REST API methods to import in ODC Studio](images/rest-consume-choose-methods-odcs.png "Select REST API methods to Import")
 
-Once you have successfully imported the OpenAPI specification file, ODC Studio automatically [creates structures and API methods](#what-odc-studio-creates-when-you-import-a-rest-api).
+Once you have successfully imported the OpenAPI specification file, ODC Studio automatically [creates structures and API methods](#what-odc-studio-creates-when-you-consume-a-rest-api).
 
 The API methods with its corresponding input and output parameters are listed under **Logic > Integrations > REST**.
 
-## What ODC Studio creates when you consume a REST API
+## What ODC Studio creates when you consume a REST API {#what-odc-studio-creates-when-you-consume-a-rest-api}
 
 When importing the REST API, ODC Studio does the following:
 
@@ -147,11 +164,13 @@ When importing the REST API, ODC Studio does the following:
 
 Once you have consumed the API in ODC Studio. You can modify the following details from the ODC Portal:
 
-* Base URL that you entered while consuming the API. Once the app is deployed to a different stage, the base URL can be be modified for that stage. For example,when you are building or testing your app in a dev environment, you must connect to a version of the REST API that is specifically designated for dev purposes, rather than the production version. Once the app is deployed to production you can modify the base URL and connect to production API.
+* Base URL that you entered while consuming the API. Once the app is deployed to a different stage, the base URL can be modified for that stage. For example,when you are building or testing your app in a dev environment, you must connect to a version of the REST API that is specifically designated for dev purposes, rather than the production version. Once the app is deployed to production you can modify the base URL and connect to production API.
   
 * Basic authentication details such as **username** and **password**. The authentication credentials can also be configured for every stage.
 
 <div class="info" markdown="1">
+
+In a multi-portfolio organization, each portfolio has its own stages. Configure the base URL and basic authentication credentials for the stages in the portfolio that contains the consuming app.
 
 For ODC REST APIs, you can keep the same base URL.
 
@@ -163,11 +182,23 @@ To configure the base URL and basic authentication credentials, follow these ste
 
 1. Click **Configuration > Consumed REST APIs**.
 
-1. Edit the details and click **Save**.
+1. Click the name of the API you want to configure.
 
-The newly configured base URL and authentication details now applies to the API for that stege.
+    ![Configuration page for consumed REST APIs in ODC Portal](images/rest-consume-no-ba-pl.png "Consumed REST APIs Configuration")
 
-## Use a REST API Method in your app { #use }
+1. Click the **Edit** button.
+
+    ![Edit button highlighted in consumed REST API details page in ODC Portal](images/rest-consume-details-pl.png "Edit Consumed REST API Details")
+
+1. Edit the details and click **Save**. After, you'll see a dialog informing you that configurations are being applied.
+
+    ![Basic authentication configuration details in ODC Portal](images/rest-consume-ba-config-pl.png "Basic Authentication Configuration")
+
+1. When the configurations are applied to the API for that stage, you can reload the page and see an indicator that shows Basic Authentication is now configured.
+
+    ![Indicator showing basic authentication is configured in ODC Portal](images/rest-consume-ba-pl.png "Basic Authentication Configured")
+
+## Use a REST API Method in your app {#use}
 
 OutSystems translates the methods exposed by a REST API into **OutSystems actions**, with the same semantics as any action created by you in ODC Studio.
 
@@ -187,7 +218,7 @@ You can now use the newly created methods in your application the same way you u
   
     ![Example of using REST API method output as a source record list in ODC Studio](images/rest-consume-use-method-2-odcs.png "Using REST API Method Output as Source Record List")
 
-## Using parameters in the URL query string { #using-params-query-string }
+## Using parameters in the URL query string {#using-params-query-string}
 
 OutSystems supports using input parameters in URL query string as name/value pairs, like in `key={value}`, where `value` is an input parameter. The URL query string is the part of the URL after the `?` (question mark) character.
 

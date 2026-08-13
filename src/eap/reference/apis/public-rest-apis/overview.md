@@ -1,6 +1,13 @@
 ---
-summary: This article provides an overview of the OutSystems Developer Cloud (ODC) REST APIs.
-tags: rest apis, authentication, user management, automation, oauth 2.0
+summary: OutSystems Developer Cloud (ODC) REST APIs for user management, deployments, builds, and code quality with OAuth 2.0 authentication.
+tags:
+  - Authentication
+  - Authorization
+  - Deploy
+  - OAuth
+  - OIDC
+  - REST
+  - Roles
 outsystems-tools:
   - odc portal
 guid: be12dc22-fd28-4edb-af36-1edda72bddc3
@@ -9,17 +16,21 @@ app_type: reactive web apps, mobile apps
 content-type:
   - conceptual
 audience:
-  - backend developers
-  - full stack developers
+  - Developer
+  - Platform administrator
+coverage-type:
+  - remember
+  - understand
 platform-version: odc
 figma:
+isautopublish: true
 ---
 
 # ODC REST APIs
 
-The OutSystems Developer Cloud (ODC) REST APIs allow you to create scripts, automation, and applications that leverage the resources of your ODC tenant, such as Users, Groups, App Roles, etc. You can use these APIs to automate and extend the built-in functionality provided with ODC.
+The OutSystems Developer Cloud (ODC) REST APIs allow you to create scripts, automation, and applications that leverage the resources of your ODC tenant, such as Users, Groups, and App Roles. You can use these APIs to automate and extend the built-in functionality provided with ODC.
 
-The ODC REST APIs uses the [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) protocol for authorization and authentication, which is based on the [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) framework. For detailed information about the authentication process, refer to [Using OAuth 2.0 to access public REST APIs](authentication/using-oauth-access-api.md).
+The ODC REST APIs use the [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) protocol for authorization and authentication, which is based on the [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) framework. For detailed information about the authentication process, refer to [Using OAuth 2.0 to access public REST APIs](authentication/using-oauth-access-api.md).
 
 ## Usage
 
@@ -43,9 +54,9 @@ For detailed information about the endpoints, refer to [User management API refe
 
 The portfolio management REST API enables you to view a list of deployed assets in each environment.
 
-For detailed information about the endpoints, refer to [Portfolio management API reference](../portfolio-v1.md).
+For detailed information about the endpoints, refer to [Portfolio management API reference](../portfolio-v2.md).
 
-### Build Operations
+### Build operations
 
 The Build Operations REST API enables you to programmatically manage build processes for your ODC assets. You can use this API to:
 
@@ -54,6 +65,18 @@ The Build Operations REST API enables you to programmatically manage build proce
 * Monitor the status and progress of ongoing builds.
 
 For detailed information about the endpoints, refer to [Build Operations API reference](../build-v1.md).
+
+### Native mobile builds
+
+The Native Mobile Build REST API enables you to build and manage native mobile app packages for your ODC apps. You can use this API to:
+
+* Review and update iOS and Android configurations, such as app identifiers and signing assets.
+
+* Validate if a new native build is required.
+
+* Start and monitor native build operations and retrieve download links.
+
+For detailed information about the endpoints, refer to [Native Mobile Build API reference](../native-mobile-builds-api-v1.md).
 
 ### Deployments
 
@@ -65,7 +88,7 @@ The Deployments REST API enables you to automate the deployment lifecycle of you
 
 For detailed information about the endpoints, refer to [Deployments API reference](../deployment-v1.md).
 
-### Dependency Management
+### Dependency management
 
 The Dependency Management REST API enables you to analyze and understand dependencies between assets before making changes. You can use this API to:
 
@@ -77,13 +100,13 @@ The Dependency Management REST API enables you to analyze and understand depende
 
 For detailed information about the endpoints, refer to [Dependency Management API reference](../dependency-v1.md).
 
-### Asset Repository
+### Asset repository
 
 The Asset Repository REST API enables you to access information about your ODC assets and manage their revisions.
 
 For detailed information about the endpoints, refer to [Asset Repository API reference](../asset-v1.md).
 
-### Asset Configurations
+### Asset configurations
 
 The Asset Configurations REST API enables you to manage configuration settings for your ODC environments and assets. You can use this API to:
 
@@ -92,6 +115,50 @@ The Asset Configurations REST API enables you to manage configuration settings f
 * Manage configuration settings for individual assets.
 
 For detailed information about the endpoints, refer to [Asset Configurations API reference](../asset-config-v1.md).
+
+### Environment configurations
+
+The Environment Configurations REST API helps you ensure consistent security and connectivity across your IT landscape. You can use this API to:
+
+* Manage IP filters.
+
+* Manage private gateways.
+
+* Manage custom domains.
+
+For detailed information about the endpoints, refer to [Environment configurations API reference](../env-config-v1.md).
+
+### External library generation
+
+The External Library Generation REST API enables you to generate and manage external libraries from high-code packages. You can use this API to:
+
+* Generate and manage external libraries from .NET packages to integrate high-code functionality into your ODC apps.
+
+* Retrieve information about your external libraries.
+
+For detailed information about the endpoints, refer to [External Library Generation API reference](../external-library-generation-api-v1.md).
+
+### Code quality
+
+The Code quality REST API enables you to analyze and monitor the technical debt of your ODC assets. You can use this API to:
+
+* Submit code analysis requests.
+
+* Retrieve detailed findings about architecture, security, performance, and maintainability issues.
+
+* Monitor quality scores and track trends over time to improve code standards.
+
+For detailed information about the endpoints, refer to [Code quality API reference](../code-quality-api-v1.md).
+
+### Subscription
+
+The Subscription REST API enables you to access subscription metrics, for example, application object count and consumption, and end-user capacity usage. You can use this API to:
+
+* Build custom alerting systems based on subscription usage metrics.
+
+* Automate internal cross-charging between business units.
+
+For detailed information about the endpoints, refer to [Subscription API reference](../subscription-v1.md).
 
 ## Terminology mapping between the ODC Portal and ODC APIs
 
@@ -107,4 +174,6 @@ An **end-user role** is a set of permissions assigned to users who interact with
 
 * [User management API reference](../identity-v1.md)
 
-* [Portfolio management API reference](../portfolio-v1.md)
+* [Portfolio management API reference](../portfolio-v2.md)
+
+* [Native Mobile Build API reference](../native-mobile-builds-api-v1.md)

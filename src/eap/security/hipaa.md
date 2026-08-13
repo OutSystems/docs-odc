@@ -2,7 +2,7 @@
 guid: f4d7879e-8b9f-4627-8dbb-c35060fc712e
 locale: en-us
 summary: Develop HIPAA-compliant healthcare apps on OutSystems Developer Cloud (ODC) with secure lifecycle management and patient-centric features.
-figma: 
+figma:
 coverage-type:
   - understand
   - apply
@@ -10,13 +10,15 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - architects
-  - tech leads
-tags: hipaa compliance,healthcare applications,security,patient-centric,lifecycle management
+  - Architect
+  - Tech lead
+tags:
+  - Security
 outsystems-tools:
   - odc portal
   - odc studio
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # HIPAA compliance with ODC
@@ -60,6 +62,6 @@ Read more about HIPAA in the [Health Insurance Portability and Accountability Ac
 
 * Attestation by an independent auditor that OutSystems technology, cloud hosting, policies and procedures ensure that PHI is handled correctly even in the unlikely event of a data breach. See additional details in the [OutSystems Trust Center](https://security.outsystems.com/).
 
-* [ODC audit trail](../monitor-and-troubleshoot/audit-trail.md), a feature that logs developer actions at ODC Portal.
+* [ODC audit trail](../monitor-and-troubleshoot/audit-trail/audit-trail.md), a feature that logs developer actions at ODC Portal.
 
-Contact your account manager to purchase ODC Sentry. To confirm that you're using ODC Sentry, check your [Subscription console](../manage-platform-app-lifecycle/subscription-console.md). If not, contact your account manager.  
+Contact your account manager to purchase Sentry for ODC. To confirm that you're using Sentry for ODC, check your [Subscription page](../manage-platform-app-lifecycle/subscription-console.md) in ODC Portal. If not, contact your account manager.  

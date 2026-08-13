@@ -9,9 +9,7 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - full stack developers
-  - mobile developers
-  - test engineers
+  - Developer
 tags: REST,rest api,logic encapsulation,libraries
 outsystems-tools:
   - odc studio

@@ -10,9 +10,9 @@ coverage-type:
   - unblock
   - remember
 audience:
-  - frontend developers
-  - full stack developers
-  - tech leads
+  - Front-end developer
+  - Developer
+  - Tech lead
 outsystems-tools:
   - none
 ---

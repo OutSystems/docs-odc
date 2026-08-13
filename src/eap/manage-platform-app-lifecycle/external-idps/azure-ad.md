@@ -1,22 +1,27 @@
 ---
 summary: Configure Microsoft Entra ID (formerly Azure AD) as an external identity provider in OutSystems Developer Cloud (ODC) using the ODC Portal.
-tags: azure ad, identity management, openid connect, single sign-on, app registration
+tags:
+  - Active Directory
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - OIDC
+  - SSO
 locale: en-us
 guid: fb6adbb0-7343-4858-8a87-e3f7d8693900
 app_type: mobile apps, reactive web apps
 figma:
 platform-version: odc
 audience:
-  - platform administrators
-  - full stack developers
-  - mobile developers
-  - frontend developers
+  - Platform administrator
 outsystems-tools:
   - odc portal
 coverage-type:
   - apply
 topic:
   - external-idps
+isautopublish: true
 ---
 
 # Add Microsoft Entra ID for use as external identity provider
@@ -41,15 +46,23 @@ Before you begin, make sure you have:
 * A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
 * The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
 
+* Your identity provider's endpoints (Discovery, JWKS, token, and userinfo) must be reachable by ODC. ODC validates tokens by retrieving signing keys from the JWKS endpoint. Either expose these endpoints publicly, or restrict access by allowlisting the ODC identity egress IP addresses in your firewall. For the list of IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp). For background on the network requirements and the protocol-based security model, refer to [Network considerations](intro.md#network-considerations).
+
 ## Configure Microsoft Entra ID
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, you add a Microsoft Entra ID provider once at the organization level and then assign it to stages in one or more portfolios. For more information about portfolio-scoped IdP assignment, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
+
+</div>
 
 ODC admins can configure Microsoft Entra ID as an external IdP by going to the ODC Portal and selecting the **Identity providers** tab.
 
 To launch the **New provider** configuration screen, click the **Add Provider** > **OpenID Connect** button. Now follow these steps:
 
-1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
+1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include symbols or non-alphanumeric characters.
 
-1. Login to the [**Azure Portal**](https://portal.azure.com/) and create a new app registration in the Microsoft Entra ID screen. For guidance, see Microsoft documentation [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app).
+1. Log in to the [**Azure Portal**](https://portal.azure.com/) and create a new app registration in the Microsoft Entra ID screen. For guidance, refer to [Register an application in Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app).
 
     <div class="info" markdown="1">
 
@@ -79,15 +92,19 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
     </div>
 
-1. Complete the configuration in ODC Portal by leaving the **PKCE** as the default value (**SHA-256**) and the fields in the **Claim Mapping** section as default values (**name**, **email**).
-
-1. In the ODC Portal, click **Save**. The **Configuration** tab for the newly created IdP opens.
+1. Complete the configuration in the ODC Portal:
+    1. Confirm **PKCE** is set to **SHA-256**.
+    1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
+    1. In the **User profile matching** section, select the attribute (fallback option) ODC uses to match external logins to ODC profiles when a subject match isn't found. For more information about the options and when to use each one, refer to [Profile matching for external IdPs](identity-claims-email-verification.md#profile-matching-external-idps).
+    1. Confirm the fields in the **Claim Mapping** section are set to the default values: **username**, **email**, **name**, and **picture**.
+    1. Click **Save**.  
+    The **Configuration** tab for the newly created IdP opens.
 
 1. Assign the newly created IdP either to your **Organization** or the app stage you want (for example, **Apps in Development**, **Apps in QA**, or **Apps in Production**). Refer to [Assign an external IdP](assign-idp.md).
 
 1. Go to the **Redirect URLs** tab, and copy the **Login URL** and **Logout URL** for the built-in domain.  
 
-   If you're using a [custom domain](../custom-domains.md), copy the corresponding **Login URL** and **Logout URL** as well.
+   If you're using a [custom domain](../domains/custom-domains.md), copy the corresponding **Login URL** and **Logout URL** as well.
 
     <div class="info" markdown="1">
 
@@ -117,9 +134,11 @@ To launch the **New provider** configuration screen, click the **Add Provider** 
 
 ## Next step
 
-If you want to use the created IdP in your app, make sure you modify the login and logout flows. Refer to [Use external identity providers in an app](apps.md).
+* For end-users: [Use an IdP in your apps](intro.md#use-an-idp-in-your-apps)
+
+* Optional: [Add an end-user group mapping](end-user-group-mapping.md)
 
 ## Related resources
 
-* [IdP and end-user group mapping](end-user-group-mapping.md).
-* [Configure authentication with external identity providers](intro.md).
+* [IdP and end-user group mapping](end-user-group-mapping.md)
+* [Configure authentication with external identity providers](intro.md)

@@ -7,7 +7,7 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 audience:
-  - platform administrators
+  - Platform administrator
 outsystems-tools:
   - ai agent builder
 coverage-type:

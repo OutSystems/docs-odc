@@ -7,7 +7,7 @@ app_type: mobile apps
 platform-version: odc
 figma:
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - forge
 coverage-type:
@@ -16,7 +16,7 @@ topic:
   - wrap-cordova-plugin
 ---
 
-# Using Cordova Plugins
+# Using Cordova plugins
 
 <div class="info" markdown="1">
 

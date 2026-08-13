@@ -1,14 +1,21 @@
 ---
-summary: OutSystems Developer Cloud (ODC) facilitates user management by assigning roles and permissions to control access to resources and apps.
+summary: OutSystems Developer Cloud (ODC) user management covers user types, authentication, roles, permissions, groups, and access scopes.
 locale: en-us
 guid: 9e0fb9b7-d2b0-419f-a5d8-5b5ed730da5e
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/KpEoUxciqaFLGLlZxo7Hiu/User-management?type=design&node-id=2449%3A32709&t=qXDLlqyCzAMXQgr0-1
 platform-version: odc
-tags: user management, access control, role-based access control, group management, permissions
+tags:
+  - Authentication
+  - Authorization
+  - End-user Authentication
+  - End-users
+  - Groups
+  - IT Users
+  - Roles
 audience:
-  - platform administrators
-  - full stack developers
+  - Developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal
@@ -21,6 +28,7 @@ topic:
   - user-groups
   - org-roles
   - permissions
+isautopublish: true
 ---
 
 # User management
@@ -37,20 +45,22 @@ This diagram illustrates the distinct categories of users within ODC and their t
 
 ODC supports three main types of users: Members (IT-users), End-users, and API clients.
 
-### Members (IT-users) { #members-it-users }
+### Members (IT-users) {#members-it-users}
 
 Members, such as administrators, developers, and architects, access the ODC Portal and ODC Studio to build, manage, and deploy apps. They can also have custom roles with specific permissions and don't count for licensing. These users aren't included in your licensed end-user count, so adding members doesn't affect your licensing limits.
 
 For more information, refer to [Managing members](it-users/intro.md).
 
-### End-users { #end-users }
+### End-users {#end-users}
 
 End-users interact with your web or mobile apps but don't access the ODC Portal or ODC Studio. They're typically external users or internal users with limited access.
 
 You can group end-users to simplify management. Internal and external end-user capacities are [licensed separately](https://www.outsystems.com/tk/redirect?g=907b0fd3-bc46-4391-aae2-673296d795d9). For details on classifying internal and external users, refer to [Classify Users in ODC](classify-users.md). For more information on how to manage end-users, refer to [Managing end-users](end-users/intro.md).
 
 <div class="info" markdown="1">
+
 A single user in ODC can act as both a member and an end-user, depending on their assigned roles.
+
 </div>
 
 ### API clients
@@ -59,7 +69,7 @@ API clients are non-human users that interact with ODC programmatically.
 
 For more information, refer to [ODC REST APIs](../reference/apis/public-rest-apis/overview.md), [About the API client](../reference/apis/public-rest-apis/authentication/about-api-client.md), and [Getting started with APIs](../reference/apis/public-rest-apis/getting-started.md).
 
-## Authentication and authorization in ODC { #authentication-and-authorization-in-odc }
+## Authentication and authorization in ODC {#authentication-and-authorization-in-odc}
 
 Authentication and authorization in ODC ensure secure access to resources by verifying user identities and defining what actions they can perform within the platform.
 
@@ -73,6 +83,10 @@ Authentication verifies a user’s identity before granting access. ODC supports
 
     Built-in authentication provides a simple and secure way to manage user access without relying on external identity providers.
 
+    ODC supports built-in authentication through Identity Service, the built-in identity provider (IdP). You can choose whether users authenticate through the built-in IdP for the organization or stage scope. To remove built-in authentication for a scope, remove the built-in IdP assignment in the ODC Portal under **Management** > **Govern** > **Identity providers**. IdP assignments apply to the organization or stage scope, not individual apps.
+
+    Test your external IdP setup before you remove the built-in IdP assignment to avoid lockouts. For more information, refer to [Avoid lockout scenarios](../manage-platform-app-lifecycle/external-idps/manage-external-idps.md#lockout).
+
     With built-in authentication:
 
     * Members can securely access the ODC Portal and ODC Studio, for managing apps and resources.
@@ -85,9 +99,15 @@ Authentication verifies a user’s identity before granting access. ODC supports
 
     * You can enforce password policies, such as complexity, to enhance security.
 
-    * ODC manages user sessions with a default timeout of 12 hours to ensure secure access.
+    * ODC manages user sessions with a default timeout of 12 hours. You can [configure session duration and idle timeout](configure-user-session.md) per stage to meet your security requirements.
 
-* **External Identity Providers (IdPs)**: Use third-party IdPs for authentication.  
+    <div class="info" markdown="1">
+
+    In self-hosted tenants, the built-in IdP is only available for IT-user sign-in to the ODC Portal and ODC Studio. End-user authentication requires an external IdP for every stage.
+
+    </div>
+
+* **External Identity Providers (IdPs)**: Use third-party IdPs for authentication. In self-hosted tenants, an external IdP is mandatory for end-user authentication in every stage, including the Development stage. For details, refer to [Identity providers in self-hosted tenants](../manage-platform-app-lifecycle/external-idps/intro.md#idp-self-hosted).
 
     For more information, refer to:
 
@@ -95,7 +115,7 @@ Authentication verifies a user’s identity before granting access. ODC supports
 
     * [Use external identity providers in an app](../manage-platform-app-lifecycle/external-idps/apps.md).
 
-### Authorization { #authorization }
+### Authorization {#authorization}
 
 Authorization determines what a user can do after authentication. It's managed through:
 
@@ -117,7 +137,7 @@ Authorization determines what a user can do after authentication. It's managed t
 
     For more information, refer to [Manage end-user groups](end-users/groups.md).
 
-## Organization, app stage, and app scope { #organization-app-stage-and-app-scope }
+## Organization, app stage, and app scope {#organization-app-stage-and-app-scope}
 
 ODC organizes access into three scopes:
 
@@ -127,9 +147,9 @@ ODC organizes access into three scopes:
 
 * **App scope**: Access to a specific application.
 
-These scopes define the level at which you can assign [roles](#authorization) and permissions to users, as well as configure [end-user groups](end-users/groups.md) and [Identity Providers (IdPs)](../../../build/eap/manage-platform-app-lifecycle/external-idps/intro.html). While roles are assigned at the organization or app level, app stage scope is mainly relevant when assigning permissions while creating [custom roles](roles.md) and when managing IdPs. Understanding these scopes helps you control what resources users can access and what actions they can perform, ensuring secure and efficient management.
+These scopes define the level at which you can assign [roles](#authorization) and permissions to users, as well as configure [end-user groups](end-users/groups.md) and [Identity Providers (IdPs)](../../../build/eap/manage-platform-app-lifecycle/external-idps/intro.html). While roles are assigned at the organization or app level, app stage scope is mainly relevant when assigning permissions while creating [custom roles](roles.md) and when managing IdPs. In a multi-portfolio organization, some permissions become portfolio-scoped, adding a level between organization and stage. For more information, refer to [User management with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-user-management.md). Understanding these scopes helps you control what resources users can access and what actions they can perform, ensuring secure and efficient management.
 
-![Diagram illustrating organization and app scope](images/org-stage-app-scope-diag.png "Organization and App Scope in ODC")
+![Diagram illustrating organization, app stage, and app scope in ODC](images/org-stage-app-scope-diag.png "Organization, App Stage, and App Scope in ODC")
 
 ## Related resources
 

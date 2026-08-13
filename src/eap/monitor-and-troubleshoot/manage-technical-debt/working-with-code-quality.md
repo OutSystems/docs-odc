@@ -10,8 +10,8 @@ coverage-type:
   - apply
   - remember
 audience:
-  - full stack developers
-  - tech leads
+  - Developer
+  - Tech lead
 outsystems-tools:
   - odc studio
   - odc portal

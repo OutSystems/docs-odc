@@ -12,11 +12,10 @@ coverage-type:
 figma: 
 content-type: 
   - procedure
-audience: 
-  - platform administrators
-  - infrastructure managers
-  - tech leads
-  - architects
+audience:
+  - Platform administrator
+  - Tech lead
+  - Architect
 ---
 
 # Stream observability data to Amazon S3

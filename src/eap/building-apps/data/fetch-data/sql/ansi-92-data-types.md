@@ -4,15 +4,15 @@ locale: en-us
 summary: OutSystems Developer Cloud (ODC) maps internal SQL types to external systems and supports type conversion with CAST expressions.
 figma: 
 coverage-type:
-  - apply
+  - remember
   - understand
+  - apply
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - backend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Platform administrator
 tags: sql types,data mapping,type conversion,null handling
 outsystems-tools:
   - odc portal

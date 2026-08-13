@@ -1,6 +1,13 @@
 ---
-summary: Learn to manage data with Aggregates in OutSystems Developer Cloud (ODC), supporting optimized client-side and server-side queries.
-tags: client-side aggregates, server-side aggregates, data management
+summary: OutSystems Developer Cloud (ODC) aggregates fetch entity data with optimized queries; create and configure them in Screens, Blocks, or Actions.
+tags:
+  - Aggregates
+  - Blocks
+  - Data
+  - Entities
+  - Mobile app
+  - Screens
+  - Web
 helpids: 17203
 locale: en-us
 guid: 0d8335b7-df99-40f3-8a9d-df0e5bd5ca18
@@ -8,9 +15,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7877&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -19,6 +25,7 @@ coverage-type:
 topic:
   - aggregates
   - joins
+isautopublish: true
 ---
 
 # Query data using aggregates
@@ -26,6 +33,12 @@ topic:
 Aggregates allow you to fetch data using an optimized query, tailored to your usage. Aggregates automatically absorb changes in the data model and can load the local database's data from the server. They support combining several entities and advanced filtering, and bring only the attributes that are used on the screen or action. Attributes also abstract the underlying model for the developer, allowing attribute renaming and changes to the data type.  
 
 In OutSystems Developer Cloud (ODC), you can mash up data from different entities and distinct data sources in an aggregate. To learn more about data mashup, refer to [data mashup](data-mash.md).
+
+<div class="warning" markdown="1">
+
+**Test Query** and your published app run an aggregate through different paths, so Test Query results and runtime results can differ. Refer to [understand Test Query results](test-query-runtime.md) before you rely on Test Query results in production.
+
+</div>
 
 In Mobile and Web Apps, Aggregates can be client-side or server-side:
 
@@ -98,29 +111,29 @@ To learn more about writing better queries, refer to [writing better queries in 
 ## Properties
 
 | Name | Description | Mandatory | Default value | Observations |
-|------|-------------|-----------|--------------|-------------|
-| Name | Identifies an element in the scope where it is defined, like a screen, action, or app. | Yes |   |   |
-| Description | Text that documents the element. |   |   | Useful for documentation purpose. The maximum size of this property is 2000 characters. |
-| Timeout ("Server Request Timeout" for Screen Aggregates) | Maximum time in seconds to wait for the Aggregate to return data before triggering a Communication Exception. Overrides the [default timeout defined at the app level](../../../getting-started/system-requirements.md#server-request-timeout). |   |   | Property doesn't exist for client-side Aggregates. There is a [maximum value](../../../getting-started/system-requirements.md#server-request-timeout). |
-| Max. Records | Maximum number of records read from the database. |   |   |  |
-| Cache in Minutes | Maximum time content or results are stored in memory. When undefined, nothing is cached. |   |   | Property not available in client actions. |
-| Start Index | Index of the first List item to iterate. Can be an expression. |   |   | The expression used in this property (if present) is evaluated before the web screen preparation. |
-| Fetch |   | Yes | At start |   |
+| ------ | ------------- | ----------- | -------------- | ------------- |
+| Name | Identifies an element in the scope where it is defined, like a screen, action, or app. | Yes | | |
+| Description | Text that documents the element. | | | Useful for documentation purpose. The maximum size of this property is 2000 characters. |
+| Timeout ("Server Request Timeout" for Screen Aggregates) | Maximum time in seconds to wait for the Aggregate to return data before triggering a Communication Exception. Overrides the [default timeout defined at the app level](../../../getting-started/system-requirements.md#server-request-timeout). | | | Property doesn't exist for client-side Aggregates. There is a [maximum value](../../../getting-started/system-requirements.md#server-request-timeout). |
+| Max. Records | Maximum number of records read from the database. | | | |
+| Cache in Minutes | Maximum time content or results are stored in memory. When undefined, nothing is cached. | | | Property not available in client actions. |
+| Start Index | Index of the first List item to iterate. Can be an expression. | | | The expression used in this property (if present) is evaluated before the web screen preparation. |
+| Fetch | | Yes | At start | |
 
 ### Events
 
 | Name | Description | Mandatory | Default value | Observations |
-|------|-------------|-----------|--------------|-------------|
-| On After Fetch | Action executed after the Aggregate fetches data from the data source. |   |   |   |
+| ------ | ------------- | ----------- | -------------- | ------------- |
+| On After Fetch | Action executed after the Aggregate fetches data from the data source. | | | |
 
-## Runtime Properties
+## Runtime properties
 
 | Name | Description | Read Only | Type | Observations |
-|------|-------------|----------|-------|--------------|
-| List | Collection of records returned by the performed query. |  | Record List |  |
-| Count | Number of records returned by the Count query. |  | Long Integer |  |
-| IsDataFetched | True when data has been fetched from the database and is ready to be used. | Yes | Boolean |  |
-| HasFetchError | True when there is an error during data fetch due to a server error or communication timeout. | Yes | Boolean |  |
+| ------ | ------------- | ---------- | ------- | -------------- |
+| List | Collection of records returned by the performed query. | | Record List | |
+| Count | Number of records returned by the Count query. | | Long Integer | |
+| IsDataFetched | True when data has been fetched from the database and is ready to be used. | Yes | Boolean | |
+| HasFetchError | True when there is an error during data fetch due to a server error or communication timeout. | Yes | Boolean | |
 
 ## Related resources
 

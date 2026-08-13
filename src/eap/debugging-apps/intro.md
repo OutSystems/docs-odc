@@ -1,15 +1,19 @@
 ---
 summary: Debug and troubleshoot apps in OutSystems Developer Cloud (ODC) using breakpoints, step-by-step execution, and runtime value inspection.
-tags: debugging techniques, application lifecycle management, cloud environments, software development, ide usage
+tags:
+  - Android
+  - Debugging
+  - iOS
+  - Mobile app
+  - Troubleshooting
 locale: en-us
 guid: bd64bfb4-afcf-4eb8-b87a-1923fd19524c
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/8RLmb1pp1PYm5xqtrnq5O8/Debugging-apps?type=design&node-id=2901%3A72&t=sdGPdlxTkpCARchu-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -17,6 +21,7 @@ coverage-type:
   - apply
 topic:
   - debug-troubleshoot-app-logic
+isautopublish: true
 ---
 
 # Debugging apps
@@ -45,9 +50,9 @@ To debug your app, do the following in ODC Studio:
 
 1. Do some tasks in the app, up to a point when the execution runs into a breakpoint and suspends.
 
-1. When you switch to the ODC Studio window, the flow containing the element with the breakpoint shows on the canvas. ODC Studio selects the element with the breakpoint and marks is with the ![Icon indicating an active debug request on an element within ODC Studio](images/overlay-active-request.png "Debug Icon") debug icon.
+1. When you switch to the ODC Studio window, the flow containing the element with the breakpoint shows on the canvas. ODC Studio selects the element with the breakpoint and marks is with the ![Icon indicating an active debug request on an element within ODC Studio](images/overlay-active-request.png "Active Debug Request Icon") debug icon.
 
-1. The execution context shows in the **Threads** tab of the **Debugger** tab, marked with the ![Icon indicating an active debug request on an element within ODC Studio](images/overlay-active-request.png "Debug Icon") current thread icon, showing the current execution stack of the app elements. The **Debugger** tab also shows additional information you can explore.
+1. The execution context shows in the **Threads** tab of the **Debugger** tab, marked with the ![Icon indicating an active debug request on an element within ODC Studio](images/overlay-active-request.png "Active Debug Request Icon") current thread icon, showing the current execution stack of the app elements. The **Debugger** tab also shows additional information you can explore.
 
 1. After analyzing the runtime values at that execution point, you can continue running the app by:
 
@@ -55,15 +60,17 @@ To debug your app, do the following in ODC Studio:
 
     * Right-clicking an element on the canvas (or in the app tree) and selecting the **Continue To Here** option in the context menu. The execution continues until it reaches that element on the canvas.
 
-## Mobile debugging scenarios { #mobile-debugging-scenarios }
+## Mobile debugging scenarios {#mobile-debugging-scenarios}
 
 There are different ways of debugging a mobile app that help you discover, understand, and fix issues. You can debug your mobile app in one of the following ways:
 
-**Emulate the mobile app using the Google Chrome browser in your PC**
+For recommendations on choosing the right tool for each testing and debugging scenario, refer to [Best practices for testing and debugging mobile apps](../building-apps/mobile/best-practices/best-practices-testing-debugging.md).
+
+### Emulate the mobile app using the Google Chrome browser in your PC
 
 Use the Chrome browser on your computer to debug your mobile app if you don't need to execute native plugins, as the native plugins can't run on a personal computer. This option is convenient to test the logic of the app. However, to check the performance or experience of the mobile app, test your app on a real device. Also consider this scenario if all the native plugins in the mobile app have action wrappers defined that return mock data when the plugin isn't available.
 
-**Install the mobile app on a device**
+#### Install the mobile app on a device
 
 Test the mobile app directly on a device as your users would run it. It's the best place to test the performance and experience of your app. You can do it on an iOS or Android device. Generate the native app package for your app in ODC Studio using the `Debug` (Android) or `Development` (iOS) build type, install it on the device, and follow the steps below according to your mobile device platform.
 
@@ -95,6 +102,12 @@ Test the mobile app directly on a device as your users would run it. It's the be
 
 If you need to troubleshoot app crashes, a plugin, or check the native code of apps, debug your apps with the mobile platform's native tools, such as Android Studio for Android and Xcode for iOS. Before debugging using the native tools, you must generate a mobile package with `Debug` (Android) or `Development` (iOS) build type.
 
+## Inspect network traffic
+
+You can inspect network requests and responses to troubleshoot issues with API calls, resource loading, or network performance. Use Chrome Developer Tools, Safari, or network proxy tools like HTTP Toolkit to monitor HTTP(S) traffic. You can also simulate degraded network conditions to test how your app behaves under poor connectivity.
+
+For more information, refer to [Inspect network traffic](inspect-network-traffic.md).
+
 ## Working with dates and times
 
 When debugging an app and checking the values of the Date Time data type, keep in mind the following:
@@ -105,4 +118,9 @@ When debugging an app and checking the values of the Date Time data type, keep i
 
 ## Related resources
 
+For more information about debugging, refer to the following resources:
+
+* [Inspect network traffic](inspect-network-traffic.md)
+* [Best practices for testing and debugging mobile apps](../building-apps/mobile/best-practices/best-practices-testing-debugging.md)
+* [Debug agentic apps](../building-apps/build-ai-powered-apps/debug-agentic-apps.md)
 * [Debugging in OutSystems](https://learn.outsystems.com/training/journeys/debugging-639) online course

@@ -1,20 +1,23 @@
 ---
-summary: Learn how to imlement a workflow in ODC Portal
-tags: workflow implementation, event-driven architecture, low-code development, workflow automation, odc platform
+summary: "OutSystems Developer Cloud (ODC) workflows: build with the workflow editor in ODC Portal, trigger via events, test instances, and deploy."
+tags:
+  - Deploy
+  - Events
+  - Testing
+  - Workflows
 locale: en-us
 guid: bf3e06e7-81ec-4d0c-bc77-00bb33dbe9ed
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5631-781
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
 outsystems-tools:
   - odc portal
   - workflow builder
 coverage-type:
   - apply
+isautopublish: true
 ---
 
 # Getting started
@@ -46,6 +49,12 @@ To implement a workflow, follow these steps:
 1. Click **Create workflow**.
 
     You are brought to the web-based workflow editor.
+
+    <div class="info" markdown="1">
+
+    In a multi-portfolio organization, the workflow is created in the currently selected portfolio. You can't move a workflow to a different portfolio after creation.
+
+    </div>
 
 1. Enter a name for the workflow.
 

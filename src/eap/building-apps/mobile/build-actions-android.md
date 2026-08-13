@@ -1,29 +1,39 @@
 ---
 guid: e694bb62-9815-4b62-9ed6-7ce9c35653a5
 locale: en-us
-summary: This articles provides reference information for Android Build Actions in mobile apps, including all available properties, actions, and configuration options.
-figma: 
+summary: Android build actions in OutSystems Developer Cloud (ODC). Reference for Capacitor app manifest, Gradle, XML, JSON, copy, code, and tar.
+figma:
 coverage-type:
   - remember
-  - understand
 topic:
   - customize-mobile-apps
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
-tags: Mobile,Android,Build Actions,Extensibility,Configuration
+  - Developer
+tags:
+  - Android
+  - Capacitor
+  - Mobile app
+  - Native App
 outsystems-tools:
   - odc studio
   - odc portal
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # Android build actions
 
-This article provides reference documentation for all Android build actions available in mobile app development. [Build Actions](build-actions.md) allow you to customize and configure Android mobile apps beyond the standard low-code capabilities such as modifying Android Manifest file, inserting new Gradle snippets.
+<div class="info" markdown="1">
 
-## appName
+Build actions are supported only for mobile apps that use Capacitor. Cordova-based mobile apps do not support build actions.
+
+</div>
+
+This article provides reference documentation for all Android build actions available in mobile app development. [Build Actions](build-actions.md) allow you to customize and configure Android mobile apps beyond the standard low-code capabilities such as modifying the **AndroidManifest.xml** file or inserting new Gradle snippets.
+
+## `appName`
 
 **Type**:
 
@@ -31,7 +41,7 @@ This article provides reference documentation for all Android build actions avai
 string
 ```
 
-**Description**: Updates the app display name, by changing the label attribute in the AndroidManifest.xml file, or setting the strings resource value when a resource value is referenced in the manifest.
+**Description**: Updates the app display name by changing the label attribute in the AndroidManifest.xml file or setting the strings resource value when a resource value is referenced in the manifest.
 
 **Conditional**: No
 
@@ -45,7 +55,7 @@ string
 }
 ```
 
-## manifest
+## `manifest`
 
 **Type**:
 
@@ -78,13 +88,25 @@ Array<
 >
 ```
 
-**Description**: Applies modifications against Android Manifest XML files.
+**Description**: Applies modifications against **AndroidManifest.xml** files.
 
 * `attrs`: Updates the attributes to the target XML element.
-* `merge`: Merges the given XML tree.
-* `inject`: Injects the given XML tree.
+* `merge`: Merges a single XML element into the target.
+* `inject`: Injects a single XML element under the target.
 * `deleteAttributes`: Deletes the given attributes.
 * `delete`: Deletes nodes selected targeted with provided xpath.
+
+<div class="info" markdown="1">
+
+The value of `inject` and `merge` is a single, well-formed XML element. Multiple sibling elements at the top level aren't supported. To apply several changes, declare one `manifest` entry per change.
+
+</div>
+
+<div class="info" markdown="1">
+
+`merge` expects a matching root node. The algorithm merges any node that matches with at least all of the supplied node's attributes, or appends any new children not found in the target. Attributes on the fragment root are part of the match key and aren't added to the target. To add or update attributes, use `attrs`.
+
+</div>
 
 **Conditional**: Yes
 
@@ -125,7 +147,35 @@ Array<
 }
 ```
 
-## gradle
+The following example adds three activity aliases by declaring one `manifest` entry per alias:
+
+```json
+{
+    "platforms": {
+        "android": {
+            "manifest": [
+                {
+                    "file": "AndroidManifest.xml",
+                    "target": "manifest/application",
+                    "inject": "<activity-alias android:name=\".AliasOne\" android:targetActivity=\".MainActivity\" />"
+                },
+                {
+                    "file": "AndroidManifest.xml",
+                    "target": "manifest/application",
+                    "inject": "<activity-alias android:name=\".AliasTwo\" android:targetActivity=\".MainActivity\" />"
+                },
+                {
+                    "file": "AndroidManifest.xml",
+                    "target": "manifest/application",
+                    "inject": "<activity-alias android:name=\".AliasThree\" android:targetActivity=\".MainActivity\" />"
+                }
+            ]
+        }
+    }
+}
+```
+
+## `gradle`
 
 **Type**:
 
@@ -248,7 +298,7 @@ Array<
 }
 ```
 
-## res
+## `res`
 
 **Type**:
 
@@ -297,7 +347,7 @@ Array<
 }
 ```
 
-## json
+## `json`
 
 **Type**:
 
@@ -348,7 +398,7 @@ Array<
 }
 ```
 
-## xml
+## `xml`
 
 **Type**:
 
@@ -417,7 +467,7 @@ Array<
 }
 ```
 
-## copy
+## `copy`
 
 **Type**:
 
@@ -452,7 +502,7 @@ Array<{ src: string; dest: string; }>
 }
 ```
 
-## code
+## `code`
 
 **Type**:
 
@@ -509,15 +559,15 @@ Array<
 }
 ```
 
-## tar
+## `tar`
 
 **Type**:
 
 ```TypeScript
-Array<{ src: string; dest: string; command: 'c' | 'r' | 'u' | 'x'; }>
+Array<{ src: string; dest: string; action: 'c' | 'r' | 'u' | 'x'; }>
 ```
 
-**Description**: Adds tar support to build actions.
+**Description**: Adds tar support to build actions
 
 **Conditional**: Yes
 
@@ -527,8 +577,8 @@ Array<{ src: string; dest: string; command: 'c' | 'r' | 'u' | 'x'; }>
         "android": {
             "tar": [
                 {
-                    "source": "files/FooBar.tar",
-                    "targetDir": "files/FooBar",
+                    "src": "files/FooBar.tar",
+                    "dest": "files/FooBar",
                     "action": "x"
                 }
             ]

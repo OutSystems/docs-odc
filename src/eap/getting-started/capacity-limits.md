@@ -1,6 +1,10 @@
 ---
 summary: Monitor resource capacity in OutSystems Developer Cloud (ODC) using the ODC Portal to optimize and track usage.
-tags: odc resource monitoring,capacity management,resource optimization,cloud resource allocation
+tags:
+  - Best Practices
+  - Monitoring
+  - Optimization
+  - Performance
 guid: 25a0f102-51ac-4d76-8376-72b14f0f6218
 locale: en-us
 app_type: mobile apps,reactive web apps
@@ -13,11 +17,12 @@ coverage-type:
   - remember
   - understand
 audience:
-  - platform administrators
-  - architects
-  - tech leads
+  - Architect
+  - Platform administrator
+  - Tech lead
 topic:
 helpids: 30559,30560,30561,30562
+isautopublish: true
 ---
 
 # Monitor ODC resource capacity
@@ -39,7 +44,7 @@ You can use the ODC Portal to track resource consumption, understand current usa
 
 OutSystems recommends actively [monitoring](#monitor) and [optimizing your resource usage](#optimize) to ensure consistent app performance and a seamless user experience. Use the ODC Portal to track resource consumption, understand current usage, and identify available capacity.
 
-## Resource types and capacity limits
+## Resource types and capacity limits {#resource-type-capacity-limit}
 
 ODC enforces capacity limits per resource type. These limits apply at the stage level and define how much of each resource your subscription can use:
 
@@ -58,7 +63,7 @@ ODC optimizes resource usage with [automatic scaling](../manage-platform-app-lif
 * **Production stage apps and agents** share the scaling behavior of non-production stages, but in subscriptions with high availability consume a minimum of 2 CIs to increase availability.
 * **Workflows and timers** on all stages consume CIs only while executing. Once they're finished executing the logic, they scale to zero immediately and don't incur cold-start delays. Multiple active instances of the **same** workflow revision share a single CI. However, if active instances belong to **different** revisions, each revision consumes a separate CI.
 
-## Monitoring resource consumption { #monitor }
+## Monitoring resource consumption {#monitor}
 
 ODC Portal helps you track resource usage trends to help you ensure that your apps maintain high performance and responsiveness during traffic spikes.
 
@@ -112,7 +117,7 @@ The dashboard prioritizes displaying stages with warnings or errors first rather
 
 </div>
 
-![A screenshot displaying various metrics in Subscription Portal](images/db-compute-exceed-capaciy-pl.png "Subscription Portal Metrics Overview")
+![Screenshot of the ODC Portal subscription dashboard showing resource capacity warnings and errors](images/db-compute-exceed-capaciy-pl.png "Subscription Dashboard Warnings and Errors")
 
 ODC alerts you when resource consumption approaches or exceeds limits:
 
@@ -121,7 +126,7 @@ ODC alerts you when resource consumption approaches or exceeds limits:
 
 For example, if you have reached the limit for the number of CIs, ODC displays an error notification and logs details about assets deployment failure.
 
-## Optimize consumption { #optimize }
+## Optimize consumption {#optimize}
 
 To ensure your assets don't consume more resources than necessary, it's important to take the most out of the subscribed resources. Make sure to:
 
@@ -131,18 +136,25 @@ To ensure your assets don't consume more resources than necessary, it's importan
 * Use [ODC logs and traces](../monitor-and-troubleshoot/monitor-apps.md) to identify and troubleshoot performance issues.
 * Remove unused assets by [deleting assets](../deleting-apps/intro.md) that are no longer needed or [undeploying assets](../deploying-apps/deploy-apps.md#undeploy-assets) from stages where they're not required.
 
-## What happens when you exceed a resource limit { #limits }
+## What happens when you exceed a resource limit {#limits}
 
 When approaching or surpassing capacity limits, the following issues may occur:
 
-* Compute instances: If you reach the CIs limit, you cannot
+* Compute instances: If you reach the CIs limit, you may not be able to:
     * Publish new apps and agents
     * Update existing ones with new revisions
     * Run workflows and timers
+    * Scale apps
 * Custom code execution duration: Calls to custom code libraries can cause errors and fail until the next day. This can lead to runtime errors in consumers.
 * Database compute and database storage: Apps and agents can experience performance issues, such as slower response times or timeout errors when accessing the database if there is insufficient capacity to accommodate all of the requests.
 * Analytics stream: You are warned when your organization's volume of streamed data is approaching the capacity limit.
 
 When resource consumption is at its limit and actions that consume further resources are performed (like publishing a new app, for example), ODC displays an error. You may see these errors in ODC Studio when publishing, in ODC Portal when deploying to the next stage, or when manually running a timer. Other errors may also show at app runtime. These errors are also recorded in the [ODC logs](../monitor-and-troubleshoot/monitor-apps.md#logs).
 
-![A screenshot displaying logs when execeeding compute instances](images/logs-exceeding-compute-pl.png "Compute Instance Metric Log")
+![Screenshot of ODC logs displaying errors when compute instance capacity is exceeded](images/logs-exceeding-compute-pl.png "ODC Logs Compute Instance Errors")
+
+<div class="info" markdown="1">
+
+[Automatic patching](../security/security.md#vulnerability-patching) of applications will cause a rolling update and temporary increased compute instance consumption. This process is exempt from compute instance limits.
+
+</div>

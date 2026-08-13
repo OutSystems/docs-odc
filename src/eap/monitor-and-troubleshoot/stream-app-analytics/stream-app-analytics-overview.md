@@ -1,7 +1,13 @@
 ---
 helpids: 30642, 30643
 summary: Stream observability data in real-time from OutSystems Developer Cloud (ODC) to various APM tools using OpenTelemetry framework.
-tags: observability,real-time monitoring,app performance,opentelemetry,apm tools
+tags:
+  - Debugging
+  - Logging
+  - Monitoring
+  - Performance
+  - Troubleshooting
+  - Workflows
 guid: 43e08fbf-f050-4946-aad2-289ab110be44
 locale: en-us
 app_type: mobile apps,reactive web apps
@@ -10,13 +16,13 @@ figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troublesh
 outsystems-tools:
   - odc portal
 coverage-type:
-  - apply
   - understand
-content-type: 
+content-type:
 audience:
-  - backend developers
-  - platform administrators
-  - tech leads
+  - Developer
+  - Platform administrator
+  - Tech lead
+isautopublish: true
 ---
 
 # Streaming observability data
@@ -29,9 +35,9 @@ This functionality uses the Data platform, which may process data outside your O
 
 </div>
 
-Streaming observability data is the process of continuously collecting and sending metric, log, and trace data to analysis and monitoring tools in near real-time. This gives you immediate insights into how your apps and systems are working. By streaming observability data in near real-time, you can proactively monitor, analyze, and respond to potential issues, ultimately enhancing app reliability and performance.
+Streaming observability data is the process of continuously collecting and sending metric, log, and trace data to analysis and monitoring tools in near real-time. This gives you immediate insights into how your apps, agents, workflows, and systems are working. By streaming observability data in near real-time, you can proactively monitor, analyze, and respond to potential issues, ultimately enhancing app reliability and performance.
 
-With ODC's **Analytics Stream** enabled, you can stream observability data from ODC apps to various third-party application performance monitoring (APM) tools, including Elastic Cloud, Datadog, Dynatrace, Splunk, New Relic, and Amazon S3. This real-time flow provides you with dynamic insights into app performance and behavior.
+With ODC's **Analytics Stream** enabled, you can stream observability data from ODC apps, agents, and workflows to various third-party application performance monitoring (APM) tools, including Elastic Cloud, Datadog, Dynatrace, Splunk, New Relic, and Amazon S3. This real-time flow provides you with dynamic insights into app performance and behavior.
 
 ODC adopts the [OpenTelemetry](https://opentelemetry.io/) standard to stream observability data to various APM tools. OpenTelemetry is an [open-source](https://github.com/open-telemetry) observability framework comprising a collection of tools, APIs, and SDKs that you can use to instrument, generate, collect, and export observability data to help analyze your apps' performance and behavior. OpenTelemetry is tool-agnostic, meaning it can be used with various commercial and open-source APM tools without significant configuration changes.
 
@@ -53,7 +59,7 @@ Before you start streaming observability data, ensure you have:
 
     * Controlled exposure: When the APM tool is on-premises, the endpoint is accessible through a firewall, a reverse proxy, or both in the customer’s DMZ, ensuring that the internal APM system is never directly exposed.
 
-    * IP allowlisting: Firewall rules can restrict inbound traffic to the specific egress IP addresses of the OutSystems data platform, reducing exposure to the broader internet. The list of IP addresses can be found [here](../../manage-platform-app-lifecycle/odc-public-ips.md).
+    * IP allowlisting: Firewall rules can restrict inbound traffic to the specific egress IP addresses of the OutSystems data platform, reducing exposure to the broader internet. For more information, refer to [Allowlisting ODC public IP addresses](../../manage-platform-app-lifecycle/odc-public-ips.md).
 
     * Auditing and monitoring: All traffic passes through the firewall or proxy layer, which can log, monitor, and rate-limit requests.
 
@@ -73,7 +79,7 @@ Streaming observability data is essential for:
 
 * **Availability optimization**: Continuously analyzing error, request, and cyclic job logs enables the immediate detection of outages, crashes, or failed service dependencies, facilitating swift resolution and improved reliability.
 
-* **Enhanced debugging:** Real-time insights into app behavior make it easier to trace errors, analyze failures, and quickly identify the root cause of issues during debugging.
+* **Enhanced debugging:** Real-time insights into app, agent, and workflow behavior make it easier to trace errors, analyze failures, and quickly identify the root cause of issues during debugging.
 
 * **Proactive monitoring and automated alerting:** By continuously analyzing logs, systems can detect anomalies, performance drops, or failures early and trigger automated alerts, enabling swift action before issues impact users.
 
@@ -81,11 +87,11 @@ Streaming observability data is essential for:
 
 ## Streaming observability data with OpenTelemetry
 
-ODC uses the [OpenTelemetry Protocol (OTLP)](https://opentelemetry.io/docs/specs/otel/protocol/), which defines the encoding, transport, and delivery mechanism of observability data generated by ODC apps and the ODC platform. Here's an overview of the process of collecting and streaming observability data.
+ODC uses the [OpenTelemetry Protocol (OTLP)](https://opentelemetry.io/docs/specs/otel/protocol/), which defines the encoding, transport, and delivery mechanism of observability data generated by ODC apps, agents, workflows, and the ODC platform. Here's an overview of the process of collecting and streaming observability data.
 
 ![Diagram showing the flow of observability data from ODC applications to APM tools via ingestion, processing, and delivery stages, including the use of OpenTelemetry Collector.](images/app-analytics-flow-diag.png "Overview of the process of collecting and streaming observability data")
 
-1. The apps generate observability data.
+1. The apps, agents, and workflows generate observability data.
 
 1. The OTLP messages are then exported in the binary format [Protobuf](https://protobuf.dev/) over HTTP or gRPC, depending on the transport protocol supported by the APM tool. The messages are sent to the APM tools in batches with multiple records every 100 ms and aren't compressed. The size of these messages varies between 1100 bytes and 1700 bytes.
 
@@ -97,7 +103,7 @@ ODC uses the [OpenTelemetry Protocol (OTLP)](https://opentelemetry.io/docs/specs
 
 </div>
 
-## Supported APM tools
+## Supported application performance monitoring tools
 
 ODC supports the following tools:
 
@@ -124,6 +130,7 @@ To ensure you can respond proactively to any issues, OutSystems advises you to s
 
 * Error logs
 * Information logs
+* [Workflow logs](../../building-apps/workflows/logs.md)
 
 For detailed information, refer to [Streamed log data](stream-app-analytics-log-ref.md).
 

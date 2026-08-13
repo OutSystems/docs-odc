@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) streamlines app development by auto-converting logical to physical data models in ODC Studio.
+summary: ODC data modeling covers the conceptual, logical, and physical model stages, plus entities, attributes, and relationships in ODC Studio.
 tags: data modeling, data integrity, application development, business requirements, data relationships
 locale: en-us
 guid: 5b4d315b-86c8-4c5d-964b-56b758aeee49
@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A2207&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

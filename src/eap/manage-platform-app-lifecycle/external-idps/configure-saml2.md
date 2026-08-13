@@ -4,12 +4,16 @@ locale: en-us
 guid: b5f8692d-68bf-41a1-89ec-5e8fc7069e31
 app_type: mobile apps,reactive web apps
 platform-version: odc
-tags: saml configuration,identity providers,single sign-on,authentication
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - SAML
+  - Security
+  - SSO
 audience:
-  - platform administrators
-  - full stack developers
-  - mobile developers
-  - frontend developers
+  - Platform administrator
 figma:
 outsystems-tools:
   - odc studio
@@ -20,11 +24,18 @@ topic:
   - external-idps
   - idp-saml
 helpids: 30672, 30673
+isautopublish: true
 ---
 
 # Add a SAML 2.0 identity provider
 
 This article provides step-by-step instructions for adding SAML 2.0 identity providers in OutSystems Developer Cloud (ODC).
+
+<div class="info" markdown="1">
+
+If you have SAML providers configured and you plan to change the domain of a stage or your organization, SAML authentication is affected. Read [Planning domain changes](../domains/domain-planning.md#saml) for migration steps.
+
+</div>
 
 ## Prerequisites
 
@@ -38,11 +49,23 @@ From your provider, have the following ready:
 * SAML metadata URL or metadata XML file.
 * Provider configuration details (Entity ID, SSO URL, certificates).
 
+The following SAML endpoints must be reachable from ODC to your Identity Provider:
+
+* **Metadata endpoint** — Always required, unless metadata is uploaded as an XML file without a descriptor URL configured.
+
+    **Note:** If you upload metadata as an XML file, network reachability to the metadata endpoint is not required. ODC stores and uses the parsed values locally. However, if your XML includes a `metadataDescriptorUrl` with `useMetadataDescriptorUrl=true`, the endpoint must be reachable.
+
+* **SLO (Single Logout) endpoint** — Only required if backchannel logout is enabled in your IdP configuration.
+
+    **The SSO endpoint is NOT required to be reachable.** Users are redirected to the SSO endpoint via their browser (not through direct ODC-to-IdP calls), so network reachability from ODC to the SSO endpoint is not necessary.
+
+    For endpoints that require reachability, either expose them publicly or restrict access by allowlisting the ODC identity egress IP addresses in your firewall. For the list of IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp). For background on the network requirements and the protocol-based security model, refer to [Network considerations](intro.md#network-considerations).
+
 ## Add a SAML 2.0 provider
 
 To add a SAML 2.0 provider in the ODC Portal:
 
-1. Go to **Manage** > **Identity providers**.
+1. Go to **Management** > **Govern** > **Identity providers**.
 1. Open the **Add provider** menu and choose **SAML 2.0**.
 
 After selecting **SAML 2.0**, complete these steps:
@@ -51,7 +74,7 @@ After selecting **SAML 2.0**, complete these steps:
 
 1. Enter a name for the new provider in the **Provider name** field.
 
-    This can be any name less than 255 characters and can't include special characters.
+    This can be any name less than 255 characters and must only include letters, numbers, and spaces.
 
 1. Click **Next**.
 
@@ -69,7 +92,7 @@ After selecting **SAML 2.0**, complete these steps:
 
     <div class="info" markdown="1">
 
-    You can't change the scope once the provider is configured.
+    You can't change the scope after you configure the provider. In a multi-portfolio organization, the stage you select belongs to one portfolio. Add a separate SAML 2.0 provider for each stage you want to cover.
 
     </div>
 
@@ -125,7 +148,7 @@ After selecting **SAML 2.0**, complete these steps:
 
     <div class="info" markdown="1">
 
-    For more details about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](identity-claims-email-verification.md#claim-mapping-logic).
+    For more information about claim mapping and profile matching, refer to [Claim mapping and profile matching](identity-claims-email-verification.md#claim-mapping-logic).
 
     </div>
 
@@ -141,7 +164,7 @@ After selecting **SAML 2.0**, complete these steps:
 
     <div class="info" markdown="1">
 
-    Changing any of these settings will modify the ``sp_metadata.xml`` file.
+    Changing any of these settings modifies the ``sp_metadata.xml`` file.
 
     </div>
 
@@ -150,7 +173,11 @@ After selecting **SAML 2.0**, complete these steps:
     * Want assertions signed
     * NameID policy format
 
-1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
+1. In the **Organization user email verification** section, choose one of the options for handling email verification.  
+    For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
+
+1. In the **User profile matching** section, select the attribute (fallback option) ODC uses to match external logins to ODC profiles when a subject match isn't found.
+    For more information about the options and when to use each one, refer to [Profile matching for external IdPs](identity-claims-email-verification.md#profile-matching-external-idps).
 
 1. Click **Next**.
 

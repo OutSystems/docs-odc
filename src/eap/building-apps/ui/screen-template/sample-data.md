@@ -7,9 +7,8 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=5541-727&t=perdH6hzwwYg6ePr-1
 tags: sample data management, prototyping, odc studio, screen templates, data import/export
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

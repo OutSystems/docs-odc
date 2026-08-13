@@ -7,7 +7,7 @@ app_type: mobile apps
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7488-2
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
   - forge

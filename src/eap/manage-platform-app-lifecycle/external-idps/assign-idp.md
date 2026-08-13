@@ -3,8 +3,7 @@ summary: Assign an external identity provider to your organization or app stages
 locale: en-us
 guid: 883c4583-27f6-4617-bcba-9cb26c4abd9e
 audience:
-  - platform administrators
-  - full stack developers
+  - Platform administrator
 platform-version: odc
 topic:
   - external-idps
@@ -12,13 +11,19 @@ topic:
   - idp-saml
 coverage-type:
   - apply
-  - understand
-figma: 
+figma:
 app_type: reactive web apps,mobile apps
-tags: authentication,identity provider,saml,external idp assignment,odc
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - OIDC
+  - SAML
 outsystems-tools:
   - odc portal
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # Assign an external identity provider
@@ -34,9 +39,15 @@ Before you begin, ensure the following:
 
 ## Assign an IdP to your organization or to a stage
 
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, assign IdPs to stages in the portfolio or portfolios you want to assign the IdP to. For more information, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
+
+</div>
+
 To assign an existing external IdP, follow these steps:
 
-1. In the ODC Portal go to **Manage** > **Identity providers**.
+1. In the ODC Portal go to **Management** > **Govern** > **Identity providers**.
 
 1. Click on the provider card you want to assign.
 
@@ -56,7 +67,7 @@ To assign an existing external IdP, follow these steps:
 
     <div class="info" markdown="1">
 
-    When you switch the IdP for your organization or apps, all signed-in users are automatically logged out and prompted to log in again.
+    When you switch the IdP for your organization or apps, all signed-in users are logged out within approximately 5 minutes (during their next refresh token cycle) and must log in again.
 
     For providers that use a client secret, changes can take up to 1 hour to take effect due to caching. During this time, ODC continues to use the old client secret. Keep the old client secret configured in your external IdP for at least 1 hour to prevent downtime.
 
@@ -76,13 +87,13 @@ When you assign a provider for the organization's use, you don't need to do anyt
 
 Choose your next step depending on your use case:
 
-* For end-users: [Use external identity providers (IdPs) in an app](apps.md)
+* For end-users: [Use an IdP in your apps](intro.md#use-an-idp-in-your-apps)
 
 * Optional: [Add an end-user group mapping](end-user-group-mapping.md)
 
 ## Related resources
 
-* [Manage external identity providers](manage-external-idps.md): Replace, unassign, edit, or delete IdPs
+* [Manage identity providers](manage-external-idps.md): Replace, unassign, edit, or delete external IdPs and remove the built-in identity provider assignment
 * [Identity claims, email verification, and profile matching logic](identity-claims-email-verification.md)
 * [Configuring authentication with external identity providers](intro.md)
 * [Set up redirect URIs](redirect-uris.md)

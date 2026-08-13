@@ -9,8 +9,7 @@ figma:
 coverage-type:
   - understand
 audience:
-  - full stack developers
-  - mobile developers
+  - Developer
 outsystems-tools:
   - none
 ---

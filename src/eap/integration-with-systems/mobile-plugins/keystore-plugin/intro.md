@@ -1,21 +1,29 @@
 ---
 summary: OutSystems Developer Cloud (ODC) features a Key Store Plugin for secure storage and management of sensitive information in mobile apps.
-tags: mobile development, secure storage, key management, plugin integration, security best practices
+tags:
+  - Android
+  - Authentication
+  - Cordova
+  - iOS
+  - Mobile app
+  - Plugins
+  - Security
 locale: en-us
 guid: 22f4fa5c-b7e7-4fd6-a629-e1e33e738e1a
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3303%3A22017&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
 coverage-type:
   - remember
   - apply
+isautopublish: true
 ---
 
-# Key Store Plugin
+# Key Store plugin
 
 <div class="info" markdown="1">
 
@@ -30,6 +38,14 @@ Use the Key Store Plugin to enable an application to securely store, get and rem
 See [Adding plugins](../intro.md) to learn how to install a plugin in your OutSystems apps.
 
 </div>
+
+## Add iOS permissions for the plugin
+
+From version 1.4.0, to use the **InvalidateOnBiometricChange** feature on iOS, provide a description for the following property list key:
+
+* **NSFaceIDUsageDescription**
+
+By default, **NSFaceIDUsageDescription** is set to "We use your facial features for authentication purposes." You can set your own description using the extensibility setting **FaceIdUsageDescription**. Set this in the **Mobile distribution** tab on your app's detail page in the Portal.
 
 ## Manage your secrets
 
@@ -88,12 +104,6 @@ Any value chosen for the KeyAuthentication variable doesn't affect the security 
 
 #### (Optional) Set the authentication dialog content (Android only)
 
-<div class="info" markdown="1">
-
-Applies to version 1.1.0 and higher.
-
-</div>
-
 You can set the content of the authentication dialog that appears to the end-user when accessing key-value pairs. More specifically, you can set values for the dialog's **title** and **subtitle**. For devices with an Android version below or equal to 10, you can also set the value for the **cancel button** (also known as **negative button**).
 
 <div class="info" markdown="1">
@@ -104,30 +114,85 @@ For Android versions 10 or lower, when using standard authentication methods (fo
 
 </div>
 
-To set the values for these fields, define the following Android preferences in your app's Extensibility Configurations:
+Use the plugin extensibility settings if:
+
+* You're using the plugin in a Capacitor app.
+* You're using plugin version 1.3.0 or later in a Cordova app.
+
+To customize the authentication dialog text, configure the following extensibility settings in the **Mobile distribution** tab of the ODC Portal:
+
+* **AuthPromptTitle**
+* **AuthPromptSubtitle**
+* **AuthPromptCancelButton**
+
+These settings have default values. Change them only if you need customization.
+
+If you're using a Cordova app with plugin version 1.2.8 or earlier, use the following configuration.
+
+Define the following Android preferences in the app extensibility configurations:
+
+(Recommended) Using the universal extensibility configurations schema:
 
 ```json
-        {
-            "preferences": {
-                "android": [
-                    {
-                        "name": "AuthPromptTitle",
-                        "value": "Authentication required"
-                    },
-                    {
-                        "name": "AuthPromptSubtitle",
-                        "value": "Please authenticate to continue"
-                    },
-                    {
-                        "name": "AuthPromptCancelButton",
-                        "value": "Cancel"
-                    }
-                ]
-            }
+{
+  "appConfigurations": {
+    "cordova": {
+      "preferences": {
+        "android": {
+          "AuthPromptTitle": "Authentication required",
+          "AuthPromptSubtitle": "Please authenticate to continue",
+          "AuthPromptCancelButton": "Cancel"
         }
+      }
+    }
+  }
+}
+```
+
+Using the Cordova-based extensibiility configurations schema (for MABS versions lower than 12):
+
+```json
+{
+  "preferences": {
+    "android": [
+      {
+        "name": "AuthPromptTitle",
+        "value": "Authentication required"
+      },
+      {
+        "name": "AuthPromptSubtitle",
+        "value": "Please authenticate to continue"
+      },
+      {
+      "name": "AuthPromptCancelButton",
+      "value": "Cancel"
+      }
+    ]
+  }
+}
 ```
 
 **Note:** These preferences are optional. If they're not set, then the values in the example above are used by default.
+
+### Invalidate secrets on biometric change
+
+<div class="info" markdown="1">
+
+Available from version 1.4.0.
+
+</div>
+
+You can set the **InvalidateOnBiometricChange** parameter in the **SetValue** client action to automatically invalidate a stored secret when the device's biometric configuration changes (for example, a new fingerprint is enrolled). This parameter only takes effect when **KeyAuthentication** is **True**.
+
+By default, secrets are not invalidated on biometric change (**False**). If **True**, the secret becomes inaccessible after a biometric change and you must set it again.
+
+<div class="info" markdown="1">
+
+Invalidation only applies to secrets saved with **InvalidateOnBiometricChange** set to **True**. Secrets previously saved without this flag are not affected.
+
+On Android, invalidation only occurs if the secret was saved with Class 3 (Strong) biometrics. If the secret was not saved with Class 3 biometrics, the **InvalidateOnBiometricChange** parameter is ignored.
+
+</div>
 
 ## Handling errors
 
@@ -135,12 +200,12 @@ The app with the KeyStore Plugin can run on many Android or iOS devices, with di
 
 The following actions can handle errors. Use the actions with the **If** nodes to check for errors and control how the app works.
 
-| Variable|Action|Description |
-| ---|---|--- |
-| IsAvailable|CheckKeyStorePlugin|True if the KeyStore Plugin is available in the app. |
-| Success|SetValue|True if there aren't errors while setting a new key-value pair. |
-| Success|GetValue|True if there aren't errors while getting a key-value pair. |
-| Success|RemoveKey|True if there aren't errors while removing a key-value pair. |
+| Variable    | Action              | Description                                                     |
+| :---------- | :------------------ | :-------------------------------------------------------------- |
+| IsAvailable | CheckKeyStorePlugin | True if the KeyStore Plugin is available in the app.            |
+| Success     | SetValue            | True if there aren't errors while setting a new key-value pair. |
+| Success     | GetValue            | True if there aren't errors while getting a key-value pair.     |
+| Success     | RemoveKey           | True if there aren't errors while removing a key-value pair.    |
 
 ## Reference
 
@@ -150,21 +215,25 @@ More information about the plugin.
 
 The KeyStore plugin uses a Cordova plugin. For more information check [cordova-plugin-secure-storage](https://github.com/OutSystems/cordova-plugin-secure-storage). The following actions are available in the plugin.
 
-| Action|Description|Available in PWA |
-| ---|---|--- |
-| CheckKeyStorePlugin|Checks if the KeyStore Plugin is available in the app.|Yes |
-| SetValue|Adds or sets the key with the value in the store.|Yes |
-| GetValue|Gets the value associated with the key from the store.|Yes |
-| RemoveKey|Removes the key and its associated value from the store.|Yes |
+| Action              | Description                                                   | Available in PWA |
+| :------------------ | :------------------------------------------------------------ | :--------------- |
+| CheckKeyStorePlugin | Checks if the KeyStore Plugin is available in the app.        | Yes              |
+| SetValue            | Adds or sets the key with the value in the store.             | Yes              |
+| GetValue            | Gets the value associated with the key from the store.        | Yes              |
+| RemoveKey           | Removes the key and its associated value from the store.      | Yes              |
 
 ### MABS compatibility
 
 The table shows the compatibility of the KeyStore Plugin with the Mobile Apps Builds Service (MABS).
 
-| Plugin version|Compatible with MABS version|Notes |
-| ---|---|-- |
-| 1.0.0 and later|MABS 9.0 and later.| |
+| Plugin version   | Compatible with MABS version | Notes |
+| :--------------- | :--------------------------- | :---- |
+| 1.0.0 and later  | MABS 9.0 and later.          |       |
 
 ## Known issues
 
 None.
+
+## Related resources
+
+* [Best practices for mobile app security](../../../building-apps/mobile/best-practices/best-practices-security.md)

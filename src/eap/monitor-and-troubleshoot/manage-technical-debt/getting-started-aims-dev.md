@@ -10,7 +10,7 @@ coverage-type:
   - understand
   - apply
 audience:
-  - full stack developers
+  - Developer
 outsystems-tools:
   - odc studio
 topic:
@@ -87,6 +87,7 @@ If you select **Snoozed**, a dialog also appears so you can select how long you 
 
 For detailed information about specific code patterns and best practices, refer to:
 
+* [Architecture findings](architecture/architecture.md)
 * [Performance findings](performance/performance.md)
 * [Maintainability findings](maintainability/maintainability.md)
 * [Security findings](security/security.md)

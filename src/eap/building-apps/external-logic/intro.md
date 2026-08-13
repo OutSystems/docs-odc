@@ -8,9 +8,7 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3325-22015&t=cNJuaJIMze8z5Tsy-0
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
 outsystems-tools:
   - odc studio
   - odc portal
@@ -19,6 +17,7 @@ coverage-type:
   - understand
 topic:
   - legacy-systems-integration
+isautopublish: true
 ---
 
 # Extend your apps with custom code
@@ -36,7 +35,7 @@ To create new external logic or update existing external logic using C#, follow 
 
 <div class="info" markdown="1">
 
-Ensure that you use .NET 8.0 framework to build your external logic in ODC.
+Ensure that you use the [supported .NET version](upgrade-net.md) to build your external logic in ODC.
 
 </div>
 
@@ -52,9 +51,17 @@ You don't need an  ODC organization account to use the SDK.
 
 ### Log your custom code
 
-You can also add logging capabilities directly into your custom C# code. To log your custom code and generate detailed logs including informational messages and errors, you must use the [**Microsoft.Extensions.Logging**](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger?view=net-8.0-pp) ILogger interface in your C# code. Additionally, you can create custom spans/activities for distributed tracing to better monitor the performance and behavior of your external logic. For detailed information about how to log your custom code and create spans, refer to [External library SDK README](README.md#build-external-logic-using-sdk).
+You can also add logging capabilities directly into your custom C# code. To log your custom code and generate detailed logs including informational messages and errors, you must use the [**Microsoft.Extensions.Logging**](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger) ILogger interface in your C# code. Additionally, you can create custom spans/activities for distributed tracing to better monitor the performance and behavior of your external logic. For detailed information about how to log your custom code and create spans, refer to [External library SDK README](README.md#build-external-logic-using-sdk).
 
 Once you build and publish the C# code as an ODC external library, the logs in your custom code can be accessed and viewed from the **ODC Portal** just like other [app logs](../../monitor-and-troubleshoot/monitor-apps.md). The logs help you monitor and troubleshoot your external logic effectively and ensure that your custom code behaves as expected.
+
+<div class="info" markdown="1">
+
+Don't use `Console.WriteLine` or similar methods for logging. Console logs aren't visible in the ODC Portal but can be accessed by OutSystems staff in lower level system logs.
+
+Ensure also that logs don't expose sensitive information, such as personal data or credentials, to comply with data protection regulations.
+
+</div>
 
 ## Upload and publish the external logic
 

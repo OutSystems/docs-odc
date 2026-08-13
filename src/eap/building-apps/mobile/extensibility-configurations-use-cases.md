@@ -1,22 +1,29 @@
 ---
 guid: 83738400-1f27-4729-9e11-c630d38ea933
 locale: en-us
-summary: This article explains the different app and library use cases of extensibility configurations JSON schema.
-figma: 
+summary: "OutSystems Developer Cloud (ODC) extensibility configurations use cases: app orientation, splash screens, deeplinks, plugin sources, and permissions."
+figma:
 coverage-type:
   - apply
-  - understand
-topic: 
+topic:
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
-tags: Mobile,Extensibility
+  - Developer
+tags:
+  - Android
+  - Capacitor
+  - Cordova
+  - iOS
+  - Libraries
+  - Mobile app
+  - Plugins
 outsystems-tools:
   - odc studio
-helpids: 
+helpids:
+isautopublish: true
 ---
-# Using extensibility configurations JSON schema
+# Using universal extensibility configurations JSON schema
 
 Extensibility configurations allows you to customize and enhance mobile app functionality beyond the default settings available in the **Mobile** tab. By leveraging JSON-based configurations, you can define runtime behaviors, modify build-time settings, and integrate advanced features tailored to specific app requirements.
 
@@ -82,16 +89,16 @@ Customize the splash screen to display a specific image, with different configur
 
 ```json
 {
-  "buildConfigurations": {
-    "splashscreens": {
-      "android": {
-        "logo": "$images.MyAppLogoFromAnotherDepartment"
-      },
-      "ios": {
-        "logo": "appIcon"
-      }
-    }
-  }
+  "buildConfigurations": {
+    "splashscreens": {
+      "android": {
+        "logo": "$images.MyAppLogoFromAnotherDepartment"
+      },
+      "ios": {
+        "logo": "appIcon"
+      }
+    }
+  }
 }
 ```
 
@@ -113,7 +120,25 @@ Enables advanced customization of the native mobile project using JSON files. Th
 }
 ```
 
-## Customize deeplink behavior
+### Enable SPM preview for iOS builds
+
+Opt into the Swift Package Manager (SPM) build toolchain for iOS Capacitor builds. Enable this setting to test your app against the SPM-based toolchain before it becomes the default, or if your app depends on an SPM-exclusive plugin.
+
+<div class="info" markdown="1">
+
+The `spmPreview` setting is a preview feature available in MABS 12.1 and later. When this flag is set to `true`, CocoaPods dependencies are not compatible. Test your app thoroughly before distributing production builds with this setting enabled.
+
+</div>
+
+```json
+{
+  "buildConfigurations": {
+    "spmPreview": true
+  }
+}
+```
+
+### Customize deeplink behavior
 
 In Capacitor, the default behavior for deeplinks is to navigate to the specified URL. To customize this behavior, you must define the `window.handleOpenURL` function. When this function is defined, the function is executed with the deeplink URL as its argument, instead of performing the default navigation.
 
@@ -125,9 +150,9 @@ window.handleOpenURL = function (url) {
 
 To apply this change for the users you must [publish and generate a new mobile application](creating-mobile-package.md) and distribute it.
 
-## Plugin configuration use cases
+## Plugin configuration use cases {plugin-use-cases}
 
-The [Library extensibility configuration reference](extensibility-configurations/extensibility-lib-reference.md) describes a JSON schema for libraries that wrap Cordova plugins, Capacitor plugins, or both.
+The [Library extensibility configuration reference](extensibility-configurations/extensibility-lib-reference.md) describes a JSON schema for mobile libraries that wrap Cordova plugins, Capacitor plugins, or both.
 
 `pluginConfigurations` for customizing plugin runtime behaviors
 
@@ -144,7 +169,28 @@ Specify the source from which a Cordova plugin is fetched for installation. This
   "buildConfigurations": {
     "cordova": {
       "source": {
-        "npm": "<npm_package_name_specifier>"
+        "npm": "cordova-plugin-camera"
+      }
+    }
+  }
+}
+```
+
+### Specify both Capacitor and Cordova plugin sources
+
+For dual-stack plugins, specify both Capacitor and Cordova plugin sources. The appropriate plugin is used based on the runtime selected for the mobile app.
+
+```json
+{
+  "buildConfigurations": {
+    "cordova": {
+      "source": {
+        "npm": "cordova-plugin-camera"
+      }
+    },
+    "capacitor": {
+      "source": {
+        "npm": "@capacitor/camera"
       }
     }
   }
@@ -225,7 +271,7 @@ Define variables required for installation within the buildConfigurations for a 
   "buildConfigurations": {
     "cordova": {
       "source": {
-        "npm": "<npm_package_name_specifier>",
+        "npm": "<npm plugin identifier>",
         "variables": {
           "stringVar": "varValue",
           "integerVar": 1,
@@ -289,3 +335,5 @@ For more information about app and library extensibility configurations:
 * [App extensibility configuration JSON schema](extensibility-configurations/extensibility-app-reference.md)
 
 * [Library (plugin) extensibility configuration JSON schema](extensibility-configurations/extensibility-lib-reference.md)
+
+* [Extensibility settings](configuring-mobile-apps.md#configure-extensibility-settings)

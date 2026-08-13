@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) provides a detailed sync framework for mobile apps, covering data synchronization between client and server actions.
+summary: "ODC sync framework reference for mobile apps: OnSync system event, OnSyncStart/Complete/Error screen events, and sync configuration properties."
 tags: data synchronization, offline support, mobile app development, client-server architecture, sync configuration
 locale: en-us
 guid: 265632d0-77ce-4f71-88a0-9c1e75074949
@@ -7,9 +7,8 @@ app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7933-17
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

@@ -10,9 +10,9 @@ coverage-type:
   - unblock
   - remember
 audience:
-  - backend developers
-  - platform administrators
-  - tech leads
+  - Developer
+  - Platform administrator
+  - Tech lead
 outsystems-tools:
   - odc studio
   - odc portal

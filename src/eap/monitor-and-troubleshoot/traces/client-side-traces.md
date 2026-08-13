@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3457-55&t=VbpYriya8ET1cuRr-1
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
   - odc portal
@@ -38,7 +37,7 @@ The following are different types of client-side traces:
 
 For more information, refer to [Traces](intro.md).
 
-## Enable client-side traces
+## Enable client-side traces {#enable-client-side}
 
 <div class="warning" markdown="1">
 
@@ -87,7 +86,7 @@ Screen traces monitor the rendering of a screen, whether it's the initial render
 * The user navigates to a new screen.
 * The internal state of a widget on the screen changes.
 
-## Considerations working with traces { #considerations }
+## Considerations working with traces {#considerations}
 
 Client-side spans are collected and stored on the client side and sent to the ODC data service in batches of up to 1000 spans. Trace requests are rate-limited, and all spans within trace requests that exceed these limits are discarded.
 

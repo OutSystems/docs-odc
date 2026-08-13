@@ -1,23 +1,30 @@
 ---
 summary: OutSystems Developer Cloud (ODC) simplifies app and library publishing with an automated 1-Click Publish feature.
-tags: application deployment, cloud infrastructure
+tags:
+  - 1-Click Publish
+  - Deploy
+  - Development lifecycle
+  - Libraries
+  - Lifecycle
 locale: en-us
 guid: 2c3f88e1-c53a-450d-9e36-ac83a7bf7a5d
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/file/B7ap11pZif6ZobXV6HC1xJ/Deploy-your-apps?type=design&node-id=3436%3A10&mode=design&t=4YrXFNtkgIwzVp3T-1
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
 outsystems-tools:
   - odc studio
   - odc portal
 coverage-type:
   - understand
+  - apply
+isautopublish: true
 ---
 
 # Understanding 1-Click Publish
+
+1-Click Publish compiles your code and deploys it to the Development stage. Each publish creates a new revision of your app or library. You can optionally add a message describing your changes when publishing.
 
 ## Publishing an app
 
@@ -29,6 +36,12 @@ OutSystems Developer Cloud (ODC) automates app publishing with its 1-Click Publi
 1. The ODC Deployment tool deploys the container image in the Kubernetes cluster using app configurations set in the ODC Portal. Simultaneously, the ODC Data tool starts executing the database scripts.
 
 ![Diagram illustrating the app publishing workflow after 1-Click Publish in ODC, showing steps from ODC Studio to Kubernetes deployment.](images/1-CP-ODC.png "App Publishing Workflow Diagram")
+
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, refer to [Asset deployment with multiple portfolios](../manage-platform-app-lifecycle/portfolios/portfolios-deploy-assets.md).
+
+</div>
 
 When you deploy your app from the Development stage to the QA stage, ODC follows these steps:
 
@@ -44,3 +57,18 @@ When you click the 1-Click Publish button to publish a library, ODC initiates th
 1. The ODC compiler stores the compiled library build and integrates it into the container image.
 
 Libraries within ODC do not handle data management or generate database scripts, as ODC doesn't deploy libraries into containers. Instead, libraries define static entities that function as enumerations without query capabilities.
+
+## Adding a message when publishing
+
+You can add a message when publishing to describe the changes you made. Messages help your team understand the intent behind each revision, improving traceability and collaboration.
+
+![Screenshot of ODC Studio showing the Publish dropdown with 1-Click Publish and 1-Click Publish with Message options](images/publish-with-comment-odcs.png "1-Click Publish with Message in ODC Studio")
+
+To publish with a message, do one of the following in ODC Studio:
+
+* Click the dropdown arrow on the **Publish** button and select **1-Click Publish with message**.
+* Press **Shift+F5** (Windows) or **Shift+Cmd+F5** (macOS).
+
+In the dialog that opens, type your message and publish. The message is optional and supports up to 2,000 characters. After publishing, the message becomes a permanent, read-only record of that revision.
+
+To review messages, open ODC Studio and go to **App** > **View revisions**.

@@ -7,9 +7,8 @@ app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7639&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -17,9 +16,11 @@ coverage-type:
   - apply
 topic:
   - using-cordova-plugins
+  - using-capacitor-plugins
+isautopublish: true
 ---
 
-# File Viewer plugin
+# File viewer plugin
 
 <div class="info" markdown="1">
 
@@ -83,7 +84,7 @@ The plugin can access only resources you deploy in the **resources** path. This 
 
 </div>
 
-## Example of using the File Viewer Plugin
+## Example of using the File viewer plugin
 
 Here is an example of how to use the File Viewer Plugin.
 
@@ -115,17 +116,17 @@ More information about parts of the plugin.
 
 ### Actions
 
-Here is the reference of the actions you can use from the File Viewer plugin. The File Viewer plugin uses Cordova and Capacitor plugins. For more information check out [cordova-outsystems-file-viewer](https://github.com/ionic-team/cordova-outsystems-file-viewer) and [capacitor/file-viewer](https://github.com/ionic-team/capacitor-file-viewer).
+Here is the reference of the actions you can use from the File Viewer plugin. The File Viewer plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check out [cordova-outsystems-file-viewer](https://github.com/ionic-team/cordova-outsystems-file-viewer) and [capacitor/file-viewer](https://github.com/ionic-team/capacitor-file-viewer).
 
-| Action                               | Description                                                                                  |
+| Action | Description |
 | ------------------------------------ | -------------------------------------------------------------------------------------------- |
-| **CheckFileViewerPlugin**            | Checks if the plugin is loaded.                                                              |
-| **OpenDocumentFromLocalPath**        | Opens a file stored in the local filesystem. For PWA, a file picker is opened.               |
-| **OpenDocumentFromResources**        | Opens a file from the app resources.                                                 |
-| **OpenDocumentFromUrl**              | Opens a file from a remote URL.                                                              |
+| **CheckFileViewerPlugin** | Checks if the plugin is loaded. |
+| **OpenDocumentFromLocalPath** | Opens a file stored in the local filesystem. For PWA, a file picker is opened. |
+| **OpenDocumentFromResources** | Opens a file from the app resources. |
+| **OpenDocumentFromUrl** | Opens a file from a remote URL. |
 | **PreviewMediaContentFromLocalPath** | iOS only. Opens media files in the device's local filesystem, using a built-in media player. |
-| **PreviewMediaContentFromResources** | iOS only. Opens media files from the app resources, using a built-in media player.   |
-| **PreviewMediaContentFromUrl**       | iOS only. Opens media files from a URL, using a built-in media player.                       |
+| **PreviewMediaContentFromResources** | iOS only. Opens media files from the app resources, using a built-in media player. |
+| **PreviewMediaContentFromUrl** | iOS only. Opens media files from a URL, using a built-in media player. |
 
 #### Deprecated Client Actions
 
@@ -137,22 +138,6 @@ The following client actions are still offered, but have been deprecated since v
 | **OpenDocument**        | Opens a remote file or a [file from the app resources](#working-with-app-resources). | Use **OpenDocumentFrom(X)** where (X) can be `LocalPath`, `Resources`, or `Url`.        |
 | **PreviewMediaContent** | iOS only. Action to preview media content.                                           | Use **PreviewMediaContentFrom(X)** where (X) can be `LocalPath`, `Resources`, or `Url`. |
 
-### Errors
+### Error codes
 
-Since version 2.0.0 of the Plugin, specific errors are returned on native platforms.
-
-| Error code        | Platform(s)      | Message                                                                                   |
-| ------------------| ---------------- | ----------------------------------------------------------------------------------------- |
-| OS-PLUG-FLVW-0001 | Android, iOS     | Cordova and Capacitor isn't defined.                                                        |
-| OS-PLUG-FLVW-0002 | Android, iOS     | The app is running with an old version of the plugin. Please create a new mobile package. |
-| OS-PLUG-FLVW-0003 | Android, iOS     | File Viewer Plugin is not loaded.                                                         |
-| OS-PLUG-FLVW-0004 | Android, iOS     | The file you are trying to open does not exist.                                           |
-| OS-PLUG-FLVW-0005 | Android, iOS     | The URL you are trying to open is malformed.                                              |
-| OS-PLUG-FLVW-0006 | Android, iOS     | Path of the file to open is either null or empty.                                         |
-| OS-PLUG-FLVW-0007 | Android, iOS     | URL to open is either null or empty.                                                      |
-| OS-PLUG-FLVW-0008 | Android, iOS     | Could not open the file.                                                                  |
-| OS-PLUG-FLVW-0009 | Android, iOS     | Invalid parameters.                                                                       |
-| OS-PLUG-FLVW-0010 | Android          | There is no app to open this file.                                                        |
-| OS-PLUG-FLVW-0011 | iOS              | Cordova / Capacitor bridge isn’t initialized.                                             |
-| OS-PLUG-FLVW-0012 | iOS              | The download failed.                                                                      |
-| OS-PLUG-FLVW-0013 | iOS              | The file has no extension.                                                                |
+For a complete list of mobile plugin errors, their causes, impact, and recommended solutions, refer to the [Mobile Plugins errors page](https://www.outsystems.com/tk/redirect?g=8ae41e18-fa7d-4cbe-a223-226a14abd8bf).

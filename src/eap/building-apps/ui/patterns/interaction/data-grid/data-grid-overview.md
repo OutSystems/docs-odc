@@ -9,13 +9,22 @@ content-type:
   - conceptual
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=6245-10
 audience:
-  - frontend developers
-  - full stack developers
+  - Front-end developer
+  - Developer
+coverage-type:
+  - understand
+  - apply
 outsystems-tools:
   - odc portal
   - forge
 ---
 # OutSystems Data Grid for ODC
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
+
+</div>
 
 The OutSystems Data Grid is a supported component available in Forge, that allows you to view, explore, and edit large amounts of data in a familiar spreadsheet interface.
 

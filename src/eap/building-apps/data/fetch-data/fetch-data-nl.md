@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A8546&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -59,7 +58,7 @@ Check the following examples on the best way to ask for data, depending on your 
 #### Get all data
 
 | You want | You ask |
-| ---|--- |
+| --- | --- |
 | **All employees** | `Find employees` |
 | **All orders** | `Show orders` |
 | **All orders and their descriptions**.<br/>Here, orders and their descriptions are kept in two different entities, Order and Order Details. | `Get Order and Order Details for orders that ship to ShippingLocation` |
@@ -67,7 +66,7 @@ Check the following examples on the best way to ask for data, depending on your 
 #### Get filtered data
 
 | You want | You ask |
-| ---|--- |
+| --- | --- |
 | **Employees who live in London** | `Find employees who live in London` |
 | **Sales managers in London** | `Employees who live in London and whose title is sales manager` |
 | **Orders and their descriptions that ship to London** | `Show Details for orders that ship to London` |
@@ -79,20 +78,20 @@ Check the following examples on the best way to ask for data, depending on your 
 #### Get sorted data
 
 | You want | You ask |
-| ---|--- |
+| --- | --- |
 | **Employees ordered by the city they live in** | `Get employees ordered by city` |
 | **Orders sorted by price from highest to lowest** | `Show orders sorted by price from high to low` |
 
 #### Get grouped data
 
 | You want | You ask |
-| ---|--- |
+| --- | --- |
 | **All employees grouped by the city they live in** | `Get employees grouped by city` |
 
 #### Get count or average
 
 | You want | You ask |
-| ---|--- |
+| --- | --- |
 | **How many employees exist** | `Count employees` |
 | **How many users exist** | `Total number of users` |
 | **How many orders have shipped to London** | `How many orders shipped to London` |

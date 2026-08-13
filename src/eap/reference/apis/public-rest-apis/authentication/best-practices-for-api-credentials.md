@@ -9,7 +9,9 @@ app_type: mobile apps, reactive web apps
 content-type:
   - best practice
 audience:
-  - full stack developers
+  - Developer
+coverage-type:
+  - evaluate
 platform-version: odc
 figma:
 ---

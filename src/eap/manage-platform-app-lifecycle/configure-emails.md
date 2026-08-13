@@ -1,15 +1,19 @@
 ---
 summary: Learn to configure and manage SMTP email settings in OutSystems Developer Cloud (ODC) for app stages.
-tags: email configuration, smtp settings, security multi-stage configuration, cloud services
+tags:
+  - Authentication
+  - OAuth
+  - Private Gateway
+  - Security
+  - Settings
+  - Testing
 locale: en-us
 guid: 48490651-74d0-459b-a0c4-4b40df93d56e
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 audience:
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal
@@ -18,9 +22,12 @@ coverage-type:
   - understand
 topic:
   - how-to-send-emails
+isautopublish: true
 ---
 
 # Configure SMTP settings for emails
+
+In a multi-portfolio organization, you configure SMTP settings per portfolio and stage. For more information, refer to [Configuration management with multiple portfolios](portfolios/portfolios-configurations.md).
 
 The ODC apps sends emails using SMTP. For secure SMTP authentication, ODC supports both basic username/password and the more modern OAuth 2.0 authorization framework. Given the increasing security risks associated with basic authentication many providers are phasing out username/password authentication in favor of OAuth 2.0.
 
@@ -45,7 +52,12 @@ To send emails, you must configure the SMTP settings for the emails in the ODC p
 
 ### Prerequisites
 
-Before configuring the SMTP settings for the email, ensure that you have the organization role that includes the **Manage Email Configurations** permission.
+Before configuring the SMTP settings for the email:
+
+* Ensure that you have the organization role that includes the **Manage Email Configurations** permission.
+* If your SMTP server is private ensure that it's reachable from your ODC apps:
+    * [Private gateway](private-gateway.md) is the recommended method to establish a private connection.
+    * As an alternative, [IP allowlisting](odc-public-ips.md) can also be used.
 
 ### Configure email settings
 
@@ -53,8 +65,9 @@ To configure the SMTP settings for the email, follow these steps:
 
 1. Go to ODC Portal.
 
-1. Select **CONFIGURE** > **Emails**.
-The Emails configurations page is displayed  
+1. Go to **Management** > **Configure** > **Emails**.
+
+    The Emails configurations page is displayed.
 
 1. Select the stage where you want to configure the email settings.
 

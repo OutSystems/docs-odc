@@ -9,8 +9,9 @@ content-type:
   - reference
 figma:
 audience:
-  - backend developers
-  - full stack developers
+  - Developer
+coverage-type:
+  - remember
 outsystems-tools:
   - odc studio
 ---

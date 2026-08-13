@@ -1,0 +1,157 @@
+---
+guid: 4c87877b-7066-40b0-878b-3c5ecd4f6902
+locale: en-us
+summary: "Self-hosted ODC system and network requirements: Kubernetes cluster specs, PostgreSQL, IDP, APM, and outbound/inbound connectivity needed before installation."
+figma: https://www.figma.com/design/la33iciyGndnV5JRqR359g/Managing-OutSystems-platform-and-apps?node-id=4714-13660
+coverage-type:
+  - remember
+topic:
+app_type: reactive web apps,mobile apps
+platform-version: odc
+audience:
+  - Platform administrator
+  - Tech lead
+  - Architect
+tags:
+  - End-user Authentication
+  - External Databases
+  - IdP
+  - Infrastructure
+  - Monitoring
+  - OIDC
+  - Security
+outsystems-tools:
+  - self hosted configurator
+helpids: 30551, 30563
+isautopublish: true
+---
+# System and network requirements for Self-hosted ODC
+
+To run ODC Self-hosted, your infrastructure must meet specific baseline requirements that ensure stability, security, and reliable operation. These requirements are divided into two main categories: system requirements that define the infrastructure components you need, and network requirements that establish the connectivity your cluster needs to communicate with both internal and external services. Make sure to assess and procure the necessary resources before starting the installation process.
+
+## System requirements {#system-reqs}
+
+The system requirements are:
+
+* A Kubernetes cluster running Kubernetes version 1.33 or 1.34 on any CNCF-conformant distribution (such as OpenShift, AKS, EKS, or GKE, for example). The version must be within your distribution vendor's standard support window. Refer to your distribution vendor's release documentation for available patch versions.
+
+* The cluster must be deployed on x86 architecture. ARM-based clusters are not supported.
+
+* The cluster must have at least 5 worker nodes each with 8 CPU cores, 32 GB of RAM, and 250 GB of disk space.
+
+* The cluster should only host [components installed via the self-hosted setup](sh-cluster-components.md) and applications deployed through ODC. Services not provided as part of the ODC self-hosted setup like databases, IdP, or APM should run outside the cluster. ODC services and apps may scale normally by adding pods. ODC platform components installed in the cluster are intended exclusively to support ODC runtime and must not be used by external applications or integrations.
+
+* The cluster must be able to provision at least 769 GB of persistent storage. The platform is storage-class agnostic. The installation process reserves this capacity through persistent volume claims (PVCs) for core services such as Vault, NATS, Keycloak, Redis, SeaweedFs, and internal PostgreSQL instances. The installation process creates these PVCs as it installs the services.
+
+* The cluster must be able to reach public endpoints and resolve public hostnames. Refer to the [network requirements](#network-reqs) for more details.
+
+* A PostgreSQL database on major version 16, on release 16.1 to 16.11. This database must be dedicated to the ODC runtime stage it is configured for and should not be used for other purposes. While you have full control over the application data, you must not alter the database schema or its underlying structure. Any manipulation of the schema could lead to application malfunction or data loss that OutSystems will not be able to recover or fix.
+
+* An external OIDC identity provider (IdP) for end-user authentication across all stages, including the Development stage. Refer to [Identity providers in self-hosted tenants](../external-idps/intro.md#idp-self-hosted) for configuration requirements.
+
+* An app monitoring (APM) tool compatible with OpenTelemetry to receive logs and traces.
+
+* An OCI-compliant container registry. This is required for all platforms except OpenShift, which provides its internal registry. For full requirements and provider details, refer to [Set up the custom OCI registry for self-hosted stages](sh-registry.md).
+
+* A load balancer is required to handle incoming traffic and expose the applications running in your self-hosted cluster to end users. For more details on load balancer setup, domain configuration, and TLS termination, refer to [Configure inbound traffic for applications](sh-domain-config.md).
+
+Once you have the necessary system components in place, you must ensure your infrastructure has the proper network connectivity to support ODC operations.
+
+## Network requirements {#network-reqs}
+
+The Self-hosted ODC setup requires outbound connectivity for ongoing operation, as it communicates with OutSystems cloud services. This ensures your infrastructure remains up-to-date, integrated, and observable.  
+Inbound connectivity is only required for end users to access the applications deployed on your cluster. A load balancer sits at the edge of the network and facilitates this communication, routing traffic.  
+The network requirements allow for zero trust principles. However, you have the flexibility to relax these principles by configuring connectivity rules at the cluster level, allowing all pods to communicate with the listed destinations, if desired.  
+The network diagram below highlights the main connectivity requirements for your Self-hosted ODC.
+
+![Diagram showing outbound and inbound TCP connections between the OutSystems cloud and a self-hosted cluster, including namespaces for registry, messaging, monitoring, operator, stage databases, APM, IDP, and the load balancer and admin workstation entry points.](images/sh-network-reqs-diag.png "Network connectivity diagram for Self-hosted ODC")
+
+### Outbound connectivity requirements {#outbound}
+
+The cluster requires outbound connectivity to endpoints both inside and outside your self-hosted network.  
+Inside your network, you have the databases serving applications on each stage, the IDP service and APM tools.
+Outside your network, you have OutSystems cloud services to ensure that your installation remains up-to-date, integrated, and observable. To reach these destinations, the cluster must be able to resolve public hostnames.
+
+<div class="info" markdown="1">
+
+Outbound HTTP/HTTPS traffic from the self-hosted cluster must be direct. Forward proxies between the cluster and any of its required external endpoints aren't supported since proxy traversal can introduce behaviors the platform doesn't account for.
+
+</div>
+
+The following table lists the details of the necessary outbound connectivity from the cluster:
+
+| Source | Destination | Protocol and ports | Destination description |
+| --- | --- | --- | --- |
+| Custom registry endpoint | `*.amazonaws.com` | TCP 443 | OutSystems Cloud container registry (custom registry) |
+| Namespace: `sh-registry` | `*.amazonaws.com` | TCP 443 | OutSystems Cloud container registry (default registry on OpenShift) |
+| Namespaces: `sh-registry`, `flux-config`, `self-hosted-operator`, Stage namespaces | Custom registry endpoint | TCP 443 | Custom container registry |
+| Namespace: `self-hosted-operator` | `<your-tenant>.outsystems.dev` | TCP 443 | OutSystems Cloud platform API |
+| Namespace: `nats-leaf` | `*.nats.stamp.outsystemscloudrd.net` | TCP 443 | OutSystems Cloud messaging |
+| Namespace: `outsystems-otel` | `https://logs-prod-036.grafana.net` <br/>`https://tempo-prod-26-prod-us-east-2.grafana.net` <br/>`https://prometheus-prod-56-prod-us-east-2.grafana.net` | TCP 4317 and 4318 | OutSystems Cloud monitoring platform |
+| Namespace: `outsystems-otel` | The address of the APM you manage | TCP 4317 and 4318 | Self-hosted APM |
+| Namespace `keycloak-aurora-cluster-1` | The address of the IDP you manage | TCP 443 | Self-hosted IDP |
+| Stage namespace | Stage database address defined during setup | TCP 5432 | Self-hosted stage database |
+| Namespace: `runtime-services` | All the stage’s database addresses defined during setup | TCP 5432 | Introspection over all self-hosted stage databases |
+| All cluster worker nodes | `public.ecr.aws/j0s5s8b0/ga/*` | TCP 443 | Pull container images from OutSystems ECR |
+| Cluster <br/> Admin workstation | `public.ecr.aws/j0s5s8b0/ga/*` | TCP 443 | Download Self-hosted configurator and Helm charts |
+| Cluster <br/> Admin workstation | `outsystems.github.io` | TCP 443 | Download Self-hosted installer script |
+| Cluster <br/> Admin workstation | `dl.k8s.io` | TCP 443 | Download kubectl binary (optional) |
+| Cluster <br/> Admin workstation | `raw.githubusercontent.com` | TCP 443 | Download Helm installation script (optional) |
+| Cluster <br/> Admin workstation | Kubernetes API server endpoint | TCP 6443 (default), TCP 443 (EKS/AKS/GKE) | Connect to cluster API server |
+
+* **OutSystems Cloud container registry (custom registry)**: Applies to [custom registry configurations](sh-registry.md) on any supported distribution. The sync job pulls application images from the OutSystems Cloud registry on AWS ECR and then pushes them to your custom registry endpoint.
+
+* **OutSystems Cloud container registry (default registry on OpenShift)**: Applies to OpenShift clusters using the OutSystems-managed registry. Connecting to this endpoint keeps the in-cluster registry in sync with the OutSystems Cloud, so the latest app versions from the development stage are available for deployment to your self-hosted stages.
+
+* **Custom container registry**: Applies to custom registry configurations. Multiple cluster components need to reach the custom registry endpoint: the sync job (`sh-registry`), the deployment controller (`flux-config`), the runtime pods in each stage namespace, and the operator (`self-hosted-operator`) for endpoint validation. If the custom registry runs inside the cluster, this connectivity is internal and no external firewall rules are needed. If it runs outside the cluster, ensure all four sources have outbound HTTPS access to the registry endpoint.
+
+* **OutSystems Cloud platform API**: Used to authenticate in the Self-hosted configurator when installing or configuring stages. Its destination is the address of your tenant as seen when you access Portal.
+
+* **OutSystems Cloud messaging:** Integrates the messaging systems of your self-hosted installation with their counterparts in the OutSystems Cloud, allowing for message interchange across all components.
+
+* **OutSystems Cloud monitoring platform:** Destination for logs, traces, and metrics generated by your self-hosted ODC services.  These endpoints use Grafana endpoints that don't have a fixed IP address, but Grafana has public DNS lookup services to resolve the hostnames. You could leverage this DNS lookup with your cluster's network policies to only allow outbound access from your cluster to the resolved IPs. This telemetry data is used exclusively by OutSystems to monitor platform health, proactively detect issues, and assist with troubleshooting. OutSystems doesn't collect your end-user data or business-logic data, and doesn't monitor your underlying Kubernetes cluster or hardware infrastructure. Both remain entirely under your control.
+
+* **Self-hosted APM:** This is the address of your APM tool of choice and it’s configured during setup [in this step](install-sh.md#setup-configurator). It’s the local destination for logs, traces and metrics generated by your self-hosted ODC apps.
+
+* **Self-hosted IDP:** This is the address of the identity provider (IDP) you manage, used for authentication and authorization services across your apps. Its address is provided to your Self-hosted ODC setup [in this step](install-sh.md#setup-idps).
+
+* **Self-hosted stage database:** Connectivity between the PostgreSQL database and its dedicated stage. Apps in a stage can only access that stage’s database, while the OutSystems services deployed in your cluster can access all stage databases. The database address for each stage is provided to the Self-hosted configurator during setup in [this step](install-sh.md#setup-configurator) and the stage namespaces are returned [just before domain configuration](install-sh.md#configure-domain).
+
+* **Introspection over all self-hosted stage databases:** The database introspection service requires connectivity to all the stage databases to support ODC core functions such as generating database update scripts upon app deployment.
+
+* **Pull container images from OutSystems ECR**: All worker nodes in the cluster must have outbound access to public.ecr.aws to pull container images required for ODC platform components and services. This connectivity is necessary throughout the lifecycle of the cluster, not just during installation. Without this access, pods will encounter ImagePullBackOff errors.
+
+* **Download Self-hosted configurator and Helm charts**: When installing a new self-hosted stage, the admin workstation downloads the Self-hosted configurator and Helm charts. Once the stage is fully installed, this connectivity from the workstation is no longer required.
+
+* **Download kubectl binary**: The Self-hosted configurator installation script automatically downloads and installs kubectl if it's not already present in the admin workstation. This connectivity is only needed during the initial installation if kubectl is not pre-installed. If you manually install kubectl before running the configurator, this connectivity is not required.
+
+* **Download Helm installation script**: The Self-hosted configurator installation script automatically downloads and installs Helm if it's not already present in the admin workstation. This connectivity is only needed during the initial installation if Helm is not pre-installed. If you manually install Helm before running the configurator, this connectivity is not required.
+
+* **Connect to cluster API server**: The admin workstation must connect to the Kubernetes API server to run kubectl commands and install the Self-hosted configurator. The default port is 6443 for most distributions, but managed Kubernetes services like EKS, AKS, and GKE typically use port 443. Refer to your Kubernetes distribution's documentation for the exact API server endpoint and port.
+
+### Inbound connectivity requirements {#inbound}
+
+While the self-hosted infrastructure primarily requires outbound connectivity, inbound connectivity is necessary for end users to access the apps deployed on your cluster. This is handled by a load balancer sitting at the edge of the self-hosted network.
+
+The load balancer must be configured with all the stage's domain certificates necessary to ensure TLS offload, handing off the traffic to the cluster via HTTP. For more details, refer to [Configure inbound app traffic](sh-domain-config.md).
+
+Another inbound access goes to the Self-hosted configurator during the setup and installation phase. After setup is done, this connectivity is no longer required.
+
+The following table lists the inbound connectivity required for all distributions:
+
+| Source | Destination address | Protocol and ports | Destination description |
+| --- | --- | --- | --- |
+| Load balancer | Gloo ingress gateway | HTTP on the port you expose the Gloo ingress service on | Application traffic |
+| Load balancer | IDP address defined during setup | TCP 443 | Self-hosted IDP |
+
+The following table lists the inbound connectivity to the cluster API server:
+
+| Source | Destination address | Protocol and ports | Destination description |
+| --- | --- | --- | --- |
+| Admin workstation | Kubernetes API server endpoint (provided by your distribution) | TCP 443 or 6443 | Self-hosted configurator |
+
+* **Application traffic:** The load balancer must ensure traffic is delivered to the Gloo ingress gateway according to the instructions at [Configure inbound traffic for applications](sh-domain-config.md).
+
+* **Self-hosted IDP:** Your identity provider (IDP) used for authentication and authorization services across your apps. Its address is provided to your ODC Self-hosted setup [in this step](install-sh.md#setup-idps).
+
+* **Self-hosted configurator:** During the installation process for each stage, a script is used to install the Self-hosted configurator that handles the configuration of ODC on your cluster. The script runs on any Windows, Linux, or macOS machine (admin workstation) and connects to the cluster's API server using the kubeconfig context configured by your distribution CLI. This connection is only necessary during setup or when changing configurator settings such as the stage database connection details. Refer to your distribution's documentation for the API server endpoint.

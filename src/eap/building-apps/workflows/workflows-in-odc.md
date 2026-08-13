@@ -1,23 +1,24 @@
 ---
-summary: Learn all about workflows in ODC
-tags: workflows, business process automation, workflow editor, process automation, outsystems developer cloud
+summary: OutSystems Developer Cloud (ODC) workflows automate business processes using a visual editor with event triggers, human activities, and decisions.
+tags:
+  - Business Processes
+  - Events
+  - Triggers
+  - Workflows
 locale: en-us
 guid: 70b986e2-cd07-48a6-92c0-e57751112bb7
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5633-900
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - ui designers
-  - business analysts
+  - Developer
 outsystems-tools:
   - odc portal
   - workflow builder
 coverage-type:
   - understand
   - evaluate
+isautopublish: true
 ---
 
 # Workflows in ODC
@@ -117,7 +118,38 @@ With revisions history, you can:
 
 * **View past workflow revisions**: Access the full history of all published workflow revisions, including revision number, publication date, and publisher
 
-* **Discard or restore workflow changes**: Easily discard unpublished workflow changes or restore the workflow to any previous published revision
+* **Discard or restore workflow changes**: Easily discard unpublished workflow changes or restore the workflow to any previous published revision.
+
+### Managing errors in workflow editor
+
+The workflow editor includes a centralized **notification** panel to help you identify, locate, and resolve issues in your workflows.
+
+#### Access the notification panel
+
+The editor tracks errors in real-time as you build. You can monitor and access them through the following UI elements:
+
+![Screenshot of the workflow editor in ODC, highlighting the notification panel with a list of errors and their details.](images/notification-panel-pl.png "Workflow Notification Panel")
+
+* **Notification icon**: Located in the workflow editor, this icon displays a numeric badge indicating the total number of errors currently in the workflow (1).
+* **Notification panel**: Click the **Notification** icon to expand the bar and reveal a detailed list of all active errors (2).
+
+#### Navigate and resolve errors
+
+The **notification** panel eliminates manual searching within large workflows. Interact with the panel to speed up your debugging process:
+
+* **Search and filter**: Use the search bar in the panel to find specific errors by **Activity**, **Property** or **Message**.
+* **Inspect details**: View the specific cause of the error.
+* **One-click navigation**: Click the **Open Notification Detail** icon next to any error. The editor automatically:
+    * Focuses and centers the affected node on the canvas.
+    * Opens the properties configuration panel.
+    * Highlights the specific property field that requires attention.
+* **Real-time updates**: As you resolve issues, such as selecting a missing event or fixing a broken expression, the error count in the notification badge decreases automatically.
+
+## Compare workflow revisions
+
+When a workflow has multiple published versions, you can compare any two revisions side by side. Color coding highlights additions, deletions, and modifications so you know exactly what to keep.
+
+[Learn more about compare workflow revisions](compare-versions.md).
 
 ## Key considerations for implementing workflows
 
@@ -136,6 +168,8 @@ Here are some points to consider as you implement workflows in ODC:
     In the development stage, you can only have instances running in the last five revisions. For example, if there are five revisions (revisions 1 to 5) in the development stage with active instances running in each one, once revision six is created, all active instances running in revision one are terminated immediately. There is no limit to the number of revision instances for the QA and production stages.
 
     </div>
+
+* **Workflows are portfolio-scoped**: If your organization uses [portfolios](../../manage-platform-app-lifecycle/portfolios/portfolios-overview.md), each workflow belongs to one portfolio. Workflows consume events, screens, roles, and service actions from apps in the same portfolio. To share logic across portfolios, use [libraries](../libraries/libraries.md).
 
 ## Known constraints
 

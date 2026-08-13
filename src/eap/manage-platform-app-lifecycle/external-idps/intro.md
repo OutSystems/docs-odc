@@ -5,29 +5,34 @@ guid: 5aa8692d-68bf-41a1-89ec-5e8fc7069e29
 app_type: mobile apps,reactive web apps
 figma: https://www.figma.com/design/KpEoUxciqaFLGLlZxo7Hiu/User-management?node-id=3405-24
 platform-version: odc
-tags: authentication,identity provider,openid connect,saml,security
+tags:
+  - Authentication
+  - End-user Authentication
+  - End-users
+  - External Authentication
+  - IdP
+  - OIDC
+  - SAML
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal
 coverage-type:
   - understand
   - apply
-  - remember
 topic:
   - external-idps
   - idp-openidp
   - idp-saml
 helpids: 30707
+isautopublish: true
 ---
 
 # Configuring authentication with external identity providers
 
-OutSystems Developer Cloud (ODC) comes bundled with Identity Service, a built-in Identity Provider (IdP). It provides authentication, authorization, and user management for your [organization](../platform-architecture/intro.md#platform) and apps. You access your organization's services through the ODC Portal and ODC Studio. As the default IdP, Identity Service is always available.
+OutSystems Developer Cloud (ODC) includes an Identity Service that acts as the central identity broker for your [organization](../platform-architecture/intro.md#platform) and apps. It handles authentication, authorization, and user management. The Identity Service includes a built-in identity provider (IdP) assigned by default, so authentication is available out of the box, and you can access your organization's services through the ODC Portal and ODC Studio.
 
 In addition, you can use an external, self-managed IdP as an authentication provider for your organization and your apps. ODC supports two main authentication protocols:
 
@@ -39,27 +44,68 @@ You can configure most commercial IdPs to support these standards.
 
 ODC also provides accelerators for [commonly used social providers](configure-social-accelerators.md) that use OpenID Connect for social authentication. These accelerators simplify the process of adding social login options for both your organization and your apps.
 
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, identity provider assignment is portfolio-scoped. For more information, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
+
+</div>
+
 ## Scopes for assigning IdPs {#scopes-for-assigning-idps}
 
 IdPs are assigned to the organization or to a stage, never to an individual app:
 
 * **Organization scope**: Members (IT-users) can sign in to the ODC Portal and ODC Studio with the IdP.
-* **Stage scope**: All apps in that stage can use the IdP for end-user sign-in, but each app must first implement the logic (update its login screen). Refer to [Use external identity providers in an app](apps.md).
+* **Stage scope**: All apps in that stage can use the IdP for end-user sign-in. For apps created with ODC Studio version 1.3.0 or later, the pre-built login screen automatically shows the IdPs assigned to the stage, so you usually don’t need to change the app’s login logic. For apps created before this behavior was introduced, or if you want to customize the default behavior, refer to [Step 4: Use an IdP in your apps (for end-users only)](#use-an-idp-in-your-apps).
+
+In a multi-portfolio organization, stage-level IdP assignments become portfolio-scoped. You assign an IdP to stages in one or more portfolios, and each portfolio can use different IdPs. For more information, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
 
 The following diagram shows an example setup.
 
-![External IdPs concept](images/external-idps-example-diag.png "External IdPs concept")
+![External IdPs concept](images/external-idps-example-diag.png "External IdP Scopes Example")
 
-You can assign more than one identity provider to the same scope. A single stage can have multiple active IdPs at once, including multiple custom external IdPs, and you can also keep the built-in provider active. If you want users associated with an external provider to retain their profile and associated roles, they should use the same email address as on the built-in provider. For more details, refer to [User matching and profile creation](identity-claims-email-verification.md#claim-mapping-logic).
+You can assign more than one identity provider to the same scope. A single stage can have multiple active IdPs at once, including multiple custom external IdPs, and you can keep the built-in provider active. If you want users to authenticate only through external IdPs for a scope, remove the built-in identity provider assignment. For more information, refer to [Manage identity providers](manage-external-idps.md#remove-built-in-idp-assignment).
+
+<div class="warning" markdown="1">
+
+In a self-hosted tenant, all stages require an external IdP for end-user authentication, including the Development stage. Refer to [Identity providers in self-hosted tenants](#idp-self-hosted).
+
+</div>
+
+If you want users associated with an external provider to retain their profile and associated roles, they should use the same email address as on the built-in provider. For more details, refer to [User matching and profile creation](identity-claims-email-verification.md#claim-mapping-logic).
 
 The way you configure scopes differs slightly depending on the authentication protocol:
 
 * **OpenID Connect providers**: You can apply the same IdP configuration to multiple scopes (both organization and any number of stages).
 * **SAML 2.0 providers**: You can only define one scope (organization **or** a specific stage) per configuration. However, you can still create and assign multiple SAML 2.0 providers to the same scope if needed.
 
-## System considerations { #system-considerations }
+## Identity providers in self-hosted tenants {#idp-self-hosted}
+
+In a self-hosted tenant, end users of every stage must authenticate through an external OIDC identity provider. This includes the Development stage, which runs in the OutSystems Cloud. If a stage has no external IdP assigned, the pre-built login screen has nothing to show and app authentication fails.
+
+The built-in provider is only available for IT-user sign-in to the ODC Portal and ODC Studio. It cannot be used for end-user authentication in any stage.
+
+Two separate OIDC connector configurations are required, one for each deployment context:
+
+* **For Cloud**: Assigned to the Development stage. Requires a client secret.
+* **For self-hosted**: Assigned to Test and Production stages. Does not require a client secret (public client).
+
+A connector created as one type cannot be assigned to stages of the other type.
+
+The same underlying IdP service can back both connectors. A common setup uses one IdP service with two app registrations: one for Development and one shared across Test and Production.
+
+To add each connector type, go to **ODC Portal** > **Management** > **Govern** > **Identity providers**. In the **Add Provider** dropdown, select **OpenID Connect** under the relevant section (**For Cloud** or **For self-hosted**). After adding both connectors, assign each to its corresponding stage.
+
+## System considerations {#system-considerations}
 
 ODC has the following limitations for external identity providers:
+
+### Network considerations {#network-considerations}
+
+The external IdP's endpoints (such as Discovery, JWKS, Token, UserInfo, SSO, and metadata) must be reachable by the ODC Identity broker. ODC's identity broker calls these endpoints to complete the authentication flow and validate tokens or assertions.
+
+The recommended approach is to make these endpoints reachable from the public internet. The security model is protocol-based. Trust comes from signed tokens and assertions, cryptographic validation against the IdP's signing keys, and HTTPS/TLS on all calls. ODC also enforces standard issuer, audience, and signature checks. Exposing the OIDC/SAML endpoints only exposes the metadata and validation surface defined by those standards, not the underlying directory or administrative interfaces of the IdP.
+
+If your IdP can't be exposed to the public internet, allowlist the ODC Identity IPs at your firewall instead. This way, only inbound traffic from ODC reaches the IdP endpoints. For the current list of Identity IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp).
 
 ### System considerations for OpenID Connect
 
@@ -71,7 +117,7 @@ ODC has the following limitations for external identity providers:
     Expected: https://login.microsoftonline.com/{tenantid}/v2.0
     ```
 
-* Only the `client_secret_post` authentication method is supported.
+* Only the `client_secret_post` authentication method is supported for providers used in cloud stages. In self-hosted tenants, providers configured **For self-hosted** are public clients and do not require a client secret.
 
 ### System considerations for SAML 2.0
 
@@ -84,13 +130,13 @@ For the supported external identity providers, refer to the [OutSystems system r
 
 </div>
 
-## Adding and using an external IdP { #configuring-using-idp }
+## Adding and using an external IdP {#configuring-using-idp}
 
 This section guides you through the process of adding, assigning, and using an external IdP in your apps.
 
 ### Step 1: Add an external IdP {#add-an-external-idp}
 
-ODC admins can configure an external IdP by navigating to the **ODC Portal** > **Manage** > **Identity providers** tab. A list of built-in providers and any external IdPs already added displays.
+ODC admins can configure an external IdP by navigating to the **ODC Portal** > **Management** > **Govern** > **Identity providers**. A list of built-in providers and any external IdPs already added displays.
 
 The configuration process depends on the authentication protocol your identity provider uses:
 
@@ -112,7 +158,7 @@ For specific guidance on popular providers, refer to:
 
 * [Okta (OpenID Connect)](okta.md)
 
-### Step 2: Configure the redirect URIs { #idp-configure-uri }
+### Step 2: Configure the redirect URIs {#idp-configure-uri}
 
 <div class="info" markdown="1">
 
@@ -122,22 +168,72 @@ Applies to OIDC only, including social providers with accelerators, as they use 
 
 Copy the Login and Logout URLs from the ODC Portal and paste them in your provider's portal. Refer to [Set up redirect URIs for an external IdP](redirect-uris.md) for full instructions.
 
-### Step 3: Assign an IdP { #assign-an-external-idp }
+### Step 3: Assign an external IdP {#assign-an-external-idp}
 
 Refer to the dedicated article for assignment steps: [Assign an external identity provider](assign-idp.md).
 
-### Step 4: Use an IdP in your apps (for end-users only)
+### Step 4: Use an external IdP in your apps (for end-users only) {#use-an-idp-in-your-apps}
 
-When you assign a provider for use by the apps, you need to create the logic in ODC Studio for each app you want to use it. For guidance on how to create the logic, refer to [Use external identity providers in an app](apps.md).
+After you assign a provider to a stage, apps in that stage can use it for end-user sign-in. For apps created with ODC Studio version 1.3.0 or later, the pre-built login screen already includes the IdPs assigned to the stage (for example, Development), so you typically don’t need to change any login logic in the app. Make sure that only the IdPs you want to expose to all apps in a stage are assigned to that stage.
+
+If you’re working with apps that were created before this built-in logic was added, or if you want to customize or override the default behavior, you can choose one of the following options:
+
+**Option 1: Do nothing (default behavior)**
+:   Rely on the pre-built login screen that ODC Studio provides. The login screen automatically lists the IdPs assigned to the app’s stage. You manage which IdPs are shown to end-users by assigning or unassigning them from the stage in the ODC Portal.
+
+**Option 2: Bypass the built-in login screen and redirect to an external provider**  
+   Use this option when you want to redirect users to a single external IdP while keeping the built-in login path so you can revert easily. For detailed steps, refer to [Bypass the built-in login screen and redirect to an external provider](apps-delete-login-screen.md).
+
+**Option 3: Modify the built-in login screen to add buttons for external provider login**  
+   Use this option when you want to keep the built-in login (for example, the built-in provider) and add one or more buttons for external IdPs, or when you want to customize how external providers appear. For detailed steps, refer to [Modify the built-in login screen to add buttons for external provider login](apps.md).
+
+<div class="info" markdown="1">
+
+If an app doesn't include the pre-built login logic (for example, an older app created before the pre-built login screen was available, or an app where the login flows were heavily customized), you can either follow Option 2 or Option 3 to implement or update the required login flows, or create a new app, inspect its pre-built login screen and related flows, and copy the relevant logic into your existing app.
+
+</div>
 
 ### (Optional) Step 5: Add an end-user group mapping
 
 Mapping groups from your identity provider to end-user groups in ODC can automate the assignment of roles to end-users based on their group membership, streamlining access management. For more details about how these groups are mapped and for setup instructions and best practices, refer to [IdP and end-user group mapping](end-user-group-mapping.md).
 
+## Testing and validation best practices {#testing-and-validation}
+
+Before you deploy your external IdP to production, test the following integration scenarios to confirm the configuration is correct and to prevent authentication issues.
+
+### Verify mapped claims and attributes
+
+To confirm your identity provider claims map correctly, complete the following checks:
+
+* Confirm that claims and attributes from your identity provider are correctly mapped in your IdP configuration.
+
+* Inspect the IdP token and validate that the claims inside it match the claims defined in the portal.
+
+<div class="info" markdown="1">
+
+* Pay particular attention to attribute names and formats in your IdP. Mismatched or incorrectly mapped claims cause authentication failures or incomplete user profiles.
+
+</div>
+
+### Test end-to-end login flows
+
+To confirm that attributes pass through as expected, complete the following checks:
+
+* Perform complete login flows from your apps to confirm that attributes pass through as expected.
+* Verify that user attributes arrive correctly in ODC after authentication completes.
+* Test with different user types and groups in your IdP to catch potential mapping issues early.
+* Verify the username/email in the user profile matches what the IdP sends.
+
 ## Related resources
 
-* [Manage external identity providers](manage-external-idps.md): Replace, unassign, edit, or delete IdPs
+* [Manage identity providers](manage-external-idps.md): Replace, unassign, edit, or delete external IdPs and remove the built-in identity provider assignment
+
 * [Identity claims, email verification, and profile matching logic](identity-claims-email-verification.md)
+
+* [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md)
+
 * [Best practices for user management](../../user-management/best-practices-user-management.md)
+
 * [Managing authorization and authentication for end-users](../../user-management/end-users/intro.md)
+
 * [Managing authorization and authentication for members (IT-users)](../../user-management/it-users/intro.md)

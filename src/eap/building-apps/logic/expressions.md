@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) provides tools for editing and displaying expressions in software development.
+summary: ODC expressions combine operands and operators; use the expression editor, inline editing, or Expression widget in ODC Studio to write and display results.
 tags: expression editing, data types and functions
 locale: en-us
 guid: 1e04dcf4-f498-4359-b2ae-399e64abdd9e
@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3214%3A21830&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

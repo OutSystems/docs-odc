@@ -7,9 +7,8 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -21,7 +20,7 @@ coverage-type:
 ## Actions
 
 | Action | Description |
-| ---|--- |
+| --- | --- |
 | TextDictionary_ContainsKey | Determines whether the Dictionary contains a specific key. |
 | TextDictionary_Create | Initializes a new instance of the Dictionary class. |
 | TextDictionary_Get | Retrieves an element with a specified key from the Dictionary. |

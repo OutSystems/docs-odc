@@ -7,9 +7,11 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3749-809&t=oLvR9wNssF7BzJFX-1
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
+coverage-type:
+  - understand
+  - apply
 outsystems-tools:
   - odc studio
   - odc portal
@@ -39,7 +41,7 @@ The following are different types of server-side traces:
 
 For more information, refer to [Traces](intro.md).
 
-## Turn server-side traces on or off
+## Turn server-side traces on or off {#turn-on-off}
 
 All apps have their server-side traces on by default. Follow these steps to turn server-side traces off or on:
 

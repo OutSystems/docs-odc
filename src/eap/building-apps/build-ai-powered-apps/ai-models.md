@@ -12,8 +12,9 @@ coverage-type:
   - understand
   - apply
 audience:
-  - mobile developers
-  - frontend developers
+  - Developer
+  - Front-end developer
+isautopublish: true
 ---
 
 # AI models and search services in ODC
@@ -24,7 +25,7 @@ You manage your AI model connections within ODC. This includes adding new connec
 
 Once an AI model connection is configured, you can create logic in ODC Studio to call the model. These calls can range from text prompts to complex input parameter interactions. This includes using features like tools associated with the LLM or specific parameters defined in the contract for custom model connections.
 
-In addition to directly interacting with AI models, ODC enables you to connect to AI search services like Azure AI Search, Amazon Kendra, or custom search providers. These services let you index your organization's specific knowledge base. By retrieving relevant information from this indexed content, you can provide context to AI models, enhancing the quality and grounding of their responses through a pattern known as Retrieval-Augmented Generation (RAG).
+To retrieve information from a configured knowledge base connection such as Azure AI Search, Amazon Kendra, or custom search providers, [you call a specific service action provided by ODC](add-ai-search-services.md). This action performs a semantic search, fetching data based on the meaning and intent of your query rather than just keywords. You typically use this retrieved data within your app logic by passing it as context to a configured AI model to enhance quality and grounding, effectively implementing the Retrieval-augmented generation (RAG) pattern.
 
 ![Diagram showing three steps: 1. Set up your AI Service (Cloud Provider), 2. Integrate AI models and search services (ODC Portal), 3. Add AI models and search services (ODC Studio).](images/steps-diag.png "Steps to Integrate AI Models and Search Services")
 
@@ -32,13 +33,19 @@ In addition to directly interacting with AI models, ODC enables you to connect t
 
 To help you quickly experiment with AI features without immediately setting up your model connection, ODC offers pre-configured trial models (provided via Azure OpenAI and Amazon Bedrock). You can add these models directly within ODC and call them from your apps running in the Development stage. Note that trial models via Azure OpenAI are limited to 100 calls per ODC tenant and trial models via Amazon Bedrock allow up to 1000 and are intended for initial testing or proof-of-value exploration before configuring your persistent AI model connection.
 
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, trial models are available only in the main portfolio.
+
+</div>
+
 ## Custom model connections { #custom-model-connections }
 
 Beyond native support for Azure OpenAI and Amazon Bedrock, ODC allows you to connect to other LLMs, such as those from different providers or your private models. This is achieved using the **Custom connection** option. To use this option, you must provide an intermediary web service called a connector that bridges ODC and your target LLM. This connector service must implement a specific API contract defined by OutSystems, which involves exposing a synchronous REST endpoint using the POST method for chat completions.
 
 When building your connector service, implement a supported authentication scheme and ensure its endpoint is accessible to ODC, potentially using a private gateway for non-public endpoints. The connector must process requests and format responses, including handling standard parameters like messages and temperature, according to the OutSystems API contract details. Your service should also return standard HTTP status codes for errors. Once your connector service is deployed and accessible, add it to the ODC Portal by selecting **Custom connection** as the provider type during the **Add AI model** process and entering your connector's URL and authentication details.
 
-![Screenshot of the 'Add AI model' interface in ODC Portal, showing options for Amazon Bedrock, Azure OpenAI, Custom connection, and trial models like GPT-4o and Claude 3.7 Sonnet.](images/custom-connection-pl.png "Add AI Model - Custom Connection")
+![Screenshot of the 'Add AI model' interface in ODC Portal, showing options for Amazon Bedrock, Azure OpenAI, Custom connection, and trial models like GPT-5 and Claude Haiku 4.5.](images/custom-connection-pl.png "Add AI Model - Custom Connection")
 
 For more information, download and inspect the [Swagger file](resources/swagger.json). Note that property names should use camelCase.
 

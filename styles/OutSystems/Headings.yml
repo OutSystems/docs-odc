@@ -3,7 +3,7 @@
 # Previous link: https://docs.microsoft.com/en-us/style-guide/capitalization
 extends: capitalization
 message: "'%s' should use sentence-style capitalization."
-level: warning
+level: error
 scope: heading
 match: $sentence
 indicators:
@@ -11,8 +11,16 @@ indicators:
   - '.'
 exceptions:
 # Product
+  - Application Objects
+  - AO
+  - Agent Workbench
+  - Agentic Systems Engineering
+  - Case Management framework
+  - CMf
   - Center
+  - Common plugin
   - Conversion Assessment Tool
+  - DbCleaner
   - Integration Builder
   - Service
   - Studio
@@ -20,14 +28,45 @@ exceptions:
   - Technical Preview
   - O11
   - ODC
+  - OSPTool
   - OutSystems
-  - Portal
+  - OutSystems Cloud
+  - OutSystems Developer Cloud
+  - OutSystems Model
+  - Personal Edition
+  - ODC Portal
   - Workflow Builder
   - AI Mentor Studio
   - AIMS
   - MABS
+  - Mentor
   - Mobile Apps Builder Service
   - UsersIdP
+  - Build Operations API
+  - Dependency Management API
+  - Data
+  - Call Agent
+  - StoreMemory
+  - Agent Workbench
+  - Asset Repository API
+  - Asset Configurations API
+  - Forge
+  - Self-hosted
+  - Cloud demo
+  - Data Fabric
+  - Integration Studio
+  - Platform Server
+  - Private Gateway
+  - 1-Click Publish
+  - TrueChange
+  - IdP
+  - IdPs
+  - Customer Portal
+  - Workflows Editor
+  - Workflows
+  - PWA
+  - SPM
+  
 # Concepts
   - Action
   - Activity
@@ -36,6 +75,7 @@ exceptions:
   - Ajax
   - App
   - Application
+  - App Auth Service
   - Area
   - Attribute
   - Block
@@ -44,14 +84,21 @@ exceptions:
   - Business Process
   - Callback
   - Client
+  - EC
   - Email
   - Entity
   - Entities
   - EPA_Taskbox
   - EPA_TaskboxExtension
   - Exception
+  - GetUserId
+  - HMAC
   - Identifier
+  - IDE
   - IT
+  - JWT
+  - JSON Web Keys
+  - JWK
   - Library
   - Local
   - Method
@@ -69,80 +116,292 @@ exceptions:
   - Refresh
   - Resource
   - Role
+  - RSA
+  - RAG
   - Screen
   - Server
   - Service
   - Session
-  - Site Property
   - SQL
+  - SVG
   - Static
   - Structure
   - Taskbox
+  - Task
+  - Epic
   - Template
   - Theme
   - Timer
   - Traditional
   - Variable
   - Web
+  - WCAG 2.2 AA
+  - Create/Upgrade
+  - JSON
+  - Cordova-based
+  - Cordova-only
+  - Cordova
+  - Capacitor
+  - Ad-Hoc
+  - In-House
+  - ViewState
+  - WorkflowNewCustomerLoan
+  - NSCameraUsageDescription
+  - Paula
+  - USB
+  - PC
+  - NaN
+  - EXTRACT
+  - AdvancedQuery
+  - Read-Only
+  - Read-Write
+  - LLM
+  - CSP
+  - Web Application Firewall
+  - Plugin Manager
+  - MediaResult data
+  - MediaMetadata data
+  - RequestPart
+  - Form URL
+  - Create/Upgrade
+  
 # Events
+  - On Click
   - On Initialize
   - On Ready
   - On Render
   - On After Fetch
   - On Parameters Changed
   - On Destroy
+  - On Application Ready
+  - On Application Resume
 # UI Patterns and Widgets
-  - Pattern
-  - Columns
+  - Action Sheet
+  - Animated Label
+  - Blank Slate
+  - Bottom Sheet
+  - Card Background
   - Carousel
   - Checkbox
   - Columns
   - Date Picker
+  - Dropdown Server Side
+  - Flip Content 
   - Gallery
+  - Inline SVG
   - Lightbox Image
   - Master Detail
+  - Progress Circle
   - Range Slider
   - Range Slider Interval
+  - Section Index
+  - Section Index Item
   - Split Screen
   - Stacked Cards
+  - Submenu
   - Swipe Events
   - Switch
+  - Tabs
+  - Tag
   - Touch Events
+  - User Avatar
+  - Wizard Item
 # Widgets
   - Widget
   - Link
   - List Item
 # Third Party
   - Active Directory
+  - Agency ATOs
+  - AgentFlow
+  - Agent Flow
+  - Amazon
+  - Amazon Elastic Kubernetes Service
+  - Amazon EKS
   - Amazon Kendra
   - Android
+  - Safari Web Inspector
+  - CALL
+  - Google
+  - Google Cloud
+  - Google Cloud GAR
+  - Google Kubernetes Engine
+  - GKE
   - Apple Developer
+  - AWS
+  - AWS ECR
+  - AWS Firehose
+  - FedRAMP
+  - JSON
+  - IIS
+  - IdP
+  - IdPs
   - Azure
+  - Azure ACR
+  - Azure Kubernetes Service
+  - AKS
+  - DOCX
+  - Markdown
+  - Mermaid
+  - Microsoft Entra
+  - Microsoft Entra ID
   - Cascading Style Sheets
   - CSS
   - Chrome
-  - Code
+  - DELETE
   - Docker
+  - DOM
   - Excel
+  - Okta
   - Git
+  - GitHub
+  - Figma
+  - Jira
+  - Confluence
   - Google Play
+  - HIPPA
   - iOS
   - Integrated Authentication
   - Kubernetes
-  - Package
-  - Store
-  - Tips
-  - Tricks
   - TypeScript
   - Windows
   - Visual Studio
+  - URI
+  - URIs
   - SAP
+  - SELECT
+  - XSS
+  - CSV
+  - Firebase Cloud Messaging plugin
+  - Firebase Performance
+  - Platform Tab in Oracle
+  - Privacy Policy file
+  - Health and Fitness plugin
+  - HealthKit
+  - Health Connect
+  - Firebase Analytics
+  - Firebase Crashlytics
+  - SSL Pinning plugin
+  - OneSignal plugin
+  - OpenTelemetry Collector
+  - Amazon Bedrock
+  - IBM
+  - GPT-4o
+  - Claude 3.7 Sonnet
+  - Claude Haiku 4.5
+  - Amazon Nova Pro
+  - Chrome DevTools
+  - Microsoft Visual Studio
+  - Visual Studio Code
+  - .NET
+  - NuGet
+  - Key Store plugin
+  - Camera plugin
+  - SAML
+  - Phosphor
+  - Font Awesome
+  - Oracle
+  - SQL Server
+  - MCP
+  - A2A
+  - INSERT
+  - UPSERT
+
 # Industry
-  - API
-  - IP
-  - FAQ
-  - TLS
+  - ATO
   - AI
+  - API
+  - ARIA
+  - Accessible Rich Internet Applications
+  - APIs
+  - CDN
+  - Claude Code
+  - CI/CD
+  - CICD
+  - CI
+  - DB2
+  - DEV
   - DNS
+  - DREAD
+  - DevOps
+  - EAP
+  - E2E
+  - FAQ
+  - FCM
+  - IP
+  - ID
+  - JavaScript
+  - macOS
+  - MCP
+  - MongoDB
+  - MySQL
+  - Nginx
+  - APM
+  - BDD
+  - RUM
   - TLS
+  - TLS
+  - UI
   - SAST
+  - REST
+  - HTML
+  - HTTP
+  - PR
+  - UI
+  - SMS
+  - SOAP
+  - SDK
+  - QA
+  - PRD
+  - SEO
+  - VPN
+  - URL
+  - XML
+  - README
+  - CPU
+  - SSL
+  - APNs
+# Country
+  - US East
+  - North Virginia
+  - Canada
+  - Central
+  - South America
+  - São Paulo
+  - Europe
+  - London
+  - Ireland
+  - Frankfurt
+  - South Africa
+  - Cape Town
+  - Middle East
+  - Tel Aviv
+  - UAE
+  - Asia Pacific
+  - Mumbai
+  - Singapore
+  - Seoul
+  - Tokyo
+  - Hong Kong
+  - Sydney
+  - Jakarta
+  - Europe
+  - London
+
+# Certifications and Boot Camps
+  - Associate Developer exam
+  - Boot Camp
+  - Mobile Developer specialization
+  - Front-end Developer specialization
+  - Tech Lead exam
+  - Platform Ops exam
+  - Delivery Specialist exam
+  - Web Developer Specialist exam
+
+# Errors
+  - \bOS-(?:[A-Z]+-){1,2}\d+\b
+
+# Jira issue keys
+# Allow Jira issue keys in titles (e.g., TK-12252, RPM-1) for vulnerability articles
+# Pattern: 1-10 uppercase letters, dash, 1-10 digits
+  - \b[A-Z]{1,10}-\d{1,10}\b

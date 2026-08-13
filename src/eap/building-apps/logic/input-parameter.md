@@ -6,11 +6,14 @@ guid: 4007d09b-8038-4fc4-ad49-8093c6a97650
 app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3213%3A21492&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
-tags: mobile apps, client actions, input parameters
+tags:
+  - Logic
+  - Mobile app
+  - Programming Model
+  - Screens
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:

@@ -1,19 +1,25 @@
 ---
-summary: Explore common issues and solutions for mobile app debugging with OutSystems Developer Cloud (ODC) in this technical guide.
-tags: mobile app debugging, connectivity issues, port configuration, android debugging, ios debugging
+summary: "OutSystems Developer Cloud (ODC) debugger connection issues: resolve Android ADB errors, iOS Web Inspector, device trust, and local port conflicts."
+tags:
+  - Android
+  - Debugging
+  - iOS
+  - Mobile app
+  - Troubleshooting
 locale: en-us
 guid: e482b9b0-c2f0-4636-8a9f-97aac1755ba6
 app_type: mobile apps
 figma: https://www.figma.com/file/8RLmb1pp1PYm5xqtrnq5O8/Debugging-apps?type=design&node-id=2901%3A74&t=sdGPdlxTkpCARchu-1
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
 coverage-type:
   - unblock
 topic:
   - debug-troubleshoot-app-logic
+isautopublish: true
 ---
 
 # Troubleshoot debugger connection
@@ -28,7 +34,9 @@ When trying to debug a mobile application using Google Chrome or a real device s
 
 Below you can find a list of the most common problems that you may find when you are starting a mobile app debug session, and suggestions for fixing them.
 
-## Issues Related With Unavailable Local Ports
+For general recommendations on testing and debugging mobile apps, refer to [Best practices for testing and debugging mobile apps](../building-apps/mobile/best-practices/best-practices-testing-debugging.md).
+
+## Issues related with unavailable local ports
 
 The mobile app debugger feature of ODC Studio requires one or two available local ports according to the debugging target:
 
@@ -40,7 +48,7 @@ When debugging on an iOS device
 
 If there are no available ports because they're in use or they're blocked (for example, by a firewall), you can't debug your mobile app in ODC Studio.
 
-## Issues While Connecting an Android Device
+## Issues while connecting an Android device
 
 Check the following sections for more information on how to solve these issues:
 
@@ -50,7 +58,7 @@ Check the following sections for more information on how to solve these issues:
 * [USB Debugging was not allowed in device](#usb-debugging-was-not-allowed-in-device)
 * [More than one Android device is connected to your PC](#more-than-one-android-device-is-connected-to-your-pc)
 
-### USB/Android Debugging not enabled in device { #usbandroid-debugging-not-enabled-in-device }
+### USB or Android debugging not enabled in device {#usbandroid-debugging-not-enabled-in-device}
 
 For the device to be detected by ODC Studio, you should start by having the USB debugging (or Android Debugging) option enabled.
 
@@ -60,7 +68,7 @@ For the device to be detected by ODC Studio, you should start by having the USB 
 
     **Note:** If you don't have the **Developer options** section in **Settings**, check how to [enable **Developer options**](https://developer.android.com/studio/debug/dev-options.html#enable) on your device.
 
-### Device not recognized by Windows { #device-not-recognized-by-windows }
+### Device not recognized by Windows {#device-not-recognized-by-windows}
 
 After ensuring that the USB debugging option is enabled, you should check if the device is detected by Windows and its drivers are correctly installed:
 
@@ -116,7 +124,7 @@ When the installation completes, press **Close** and check that the device appea
 
 ![Screenshot showing the Android device now recognized in Device Manager after successful driver installation](images/device-install-success.png "Successful Driver Installation")
 
-### Incompatible USB mode selected in device { #incompatible-usb-mode-selected-in-device }
+### Incompatible USB mode selected in device {#incompatible-usb-mode-selected-in-device}
 
 The USB mode which the device is configured to use when connecting to a PC can also cause issues in the device detection process.
 
@@ -131,7 +139,7 @@ First of all, check if you have any notification referring to the USB mode, like
 
 If you find these options, try to switch between them (`MTP`, `PTP` and `Camera` modes), disconnecting and reconnecting the device to the PC, and retrying the device discovery in ODC Studio.
 
-### USB Debugging was not allowed in device { #usb-debugging-was-not-allowed-in-device }
+### USB debugging not allowed in device {#usb-debugging-was-not-allowed-in-device}
 
 Whenever an Android device is connected to a PC, a request to allow USB Debugging is shown on the device. This request should be accepted so that ODC Studio can communicate with the device.
 
@@ -139,22 +147,22 @@ If you get a pop-up on your device like the one below, just tap **OK** and try a
 
 ![Pop-up on an Android device asking to allow USB Debugging with an OK button](images/device-allow-usb-debugging.png "Allow USB Debugging")
 
-### More than one Android device is connected to your PC { #more-than-one-android-device-is-connected-to-your-pc }
+### More than one Android device is connected to your PC {#more-than-one-android-device-is-connected-to-your-pc}
 
 Only one device from each platform (Android/iOS) can be connected to the PC for the device discovery process to run successfully.
 
 Ensure that you only have one Android device connected to your PC.
 
-## Issues While Connecting an iOS Device
+## Issues while connecting an iOS device
 
 Check the following sections for more information on how to solve these issues:
 
-* [Missing programs and/or libraries](#missing-programs-andor-libraries--missing-programs-andor-libraries)
+* [Missing programs and/or libraries](#missing-programs-andor-libraries)
 * [Web Inspector is not enabled on your device](#web-inspector-is-not-enabled-on-your-device)
 * [PC is not trusted for debugging](#pc-is-not-trusted-for-debugging)
 * [More than one iOS device is connected to your PC](#more-than-one-ios-device-is-connected-to-your-pc)
 
-### Missing programs and/or libraries { #missing-programs-and/or-libraries }
+### Missing programs and/or libraries {#missing-programs-andor-libraries}
 
 If you are running ODC Studio on Windows, one of the requirements for the debugger to work with iOS devices is to have iTunes installed.
 
@@ -162,13 +170,13 @@ If you are running ODC Studio on Windows, one of the requirements for the debugg
 
 **Note**: If you installed iTunes from the Microsoft Store, you must have iTunes running to be able to debug OutSystems mobile apps on iOS devices.
 
-### Web Inspector is not enabled on your device { #web-inspector-is-not-enabled-on-your-device }
+### Web inspector is not enabled on your device {#web-inspector-is-not-enabled-on-your-device}
 
-To ensure that your device is correctly detected you should make sure that the Web Inspector is enabled.
+To ensure that your device is correctly detected you should make sure that the Web inspector is enabled.
 
 Do the following:
 
-1. On your iOS mobile device tap Settings > Safari > Advanced.
+1. On your iOS mobile device tap **Settings > Safari > Advanced**.
 
 1. Make sure that the "Web Inspector" option is turned **on**.
 
@@ -178,7 +186,7 @@ Do the following:
 
 Server action cannot set cookies during a debug session. When configuring cookies in ODC Studio, ensure the debugger is turned off.
 
-### PC is not trusted for debugging { #pc-is-not-trusted-for-debugging }
+### PC not trusted for debugging {#pc-is-not-trusted-for-debugging}
 
 The final step to setup your device to be ready for debugging is to trust the PC so it can communicate with the device. To do so, tap **Trust** when the following pop-up appears on your device:
 
@@ -186,13 +194,13 @@ The final step to setup your device to be ready for debugging is to trust the PC
 
 Check [Apple Support](https://support.apple.com/en-us/HT202778) for more information on trusted computers.
 
-### More than one iOS device is connected to your PC { #more-than-one-ios-device-is-connected-to-your-pc }
+### More than one iOS device is connected to your PC {#more-than-one-ios-device-is-connected-to-your-pc}
 
 You can only connect one device from each platform (Android/iOS) to the PC for the device discovery process to run successfully.
 
 Ensure that you only have one iOS device connected to your PC.
 
-## Issues During App Detection by ODC Studio
+## Issues during app detection by ODC Studio
 
 When starting a new debug session using a device, and after the device has been correctly detected, ODC Studio starts to actively look for the mobile app that you are debugging.
 
@@ -203,3 +211,11 @@ If your app is still not detected, try performing each of the following steps in
 * Close all other running OutSystems mobile apps.
 * Close any browser app that could be running.
 * Close all running apps.
+
+## Related resources
+
+For more information about debugging, refer to the following resources:
+
+* [Debugging apps](intro.md)
+* [Inspect network traffic](inspect-network-traffic.md)
+* [Best practices for testing and debugging mobile apps](../building-apps/mobile/best-practices/best-practices-testing-debugging.md)

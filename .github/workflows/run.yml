@@ -8,111 +8,17 @@ on:
     - main
   pull_request:
     types: [opened, edited, synchronize, reopened, labeled, unlabeled, ready_for_review, converted_to_draft]
+  merge_group:
 
 concurrency:
   group: run-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  pr-info:
-    name: Pull Request / Info
-    runs-on: ubuntu-latest
-    steps:
-    - name: Find Pull Request
-      if: github.ref_name != github.event.repository.default_branch
-      id: PR
-      uses: 8BitJonny/gh-get-current-pr@3.0.0
-      with:
-        filterOutClosed: true
-        sha: ${{ github.event.pull_request.head.sha }}
-
-    - name: 'Pull Request'
-      if: steps.PR.outputs.number != ''
-      run: |
-        echo "::notice title=Pull Request ${{ '#' }}${{ steps.PR.outputs.number }}::This workflow execution is related to the Pull Request https://github.com/${{ github.repository }}/pull/${{ steps.PR.outputs.number }}" 
-
-    - name: Changed files
-      id: changed-files
-      if: github.ref_name != github.event.repository.default_branch && steps.PR.outputs.number != ''
-      run: |
-        echo "files<<EOF" >> $GITHUB_OUTPUT
-        gh pr diff ${{ steps.PR.outputs.number }} --repo ${{ github.repository }} --name-only >> $GITHUB_OUTPUT
-        echo "EOF" >> $GITHUB_OUTPUT
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Check auto-merge
-      uses: reitermarkus/automerge@v2
-      if: vars.ENABLE_AUTO_MERGE && steps.PR.outputs.number != ''
-      with:
-        pull-request: ${{ steps.PR.outputs.number }}
-        token: ${{ secrets.TOOLS_PAT }}
-        do-not-merge-labels: never-merge,do not merge
-        required-labels: auto-merge
-
-    outputs:
-      changed-files: ${{ steps.changed-files.outputs.files }}
-      pull-request: ${{ steps.PR.outputs.number }}
-      pull-request-title: ${{ steps.PR.outputs.pr_title }}
-      skip-jira: ${{ github.ref_name != github.event.repository.default_branch && contains(steps.PR.outputs.pr_labels, 'skip-jira') }}
-
-  jira:
-    name: "JIRA"
-    needs: [pr-info]
-    if: needs.pr-info.outputs.pull-request != ''
-    uses: ./.github/workflows/jira-issue-pr.yml
+  run:
+    name: Run
+    uses: OutSystems/tk-cicd/.github/workflows/run.yml@main
     secrets: inherit
     with:
-      pull-request: ${{ needs.pr-info.outputs.pull-request }}
-
-  visual-assets:
-    name: "Visual Assets"
-    needs: [pr-info]
-    if: needs.pr-info.outputs.pull-request != ''
-    uses: ./.github/workflows/visual-assets-pr.yml
-    secrets: inherit
-    with:
-      pull-request: ${{ needs.pr-info.outputs.pull-request }}
-      files: ${{ needs.pr-info.outputs.changed-files }}
-  
-  style-guide-validation:
-    name: Run style guide validation
-    needs: [pr-info]
-    if: needs.pr-info.outputs.changed-files != ''
-    uses: ./.github/workflows/style-guide-validation.yml
-    secrets: inherit
-
-  auto-fill:
-    if: github.event_name == 'pull_request'
-    uses: OutSystems/tk-cicd/.github/workflows/autofill-frontmatter.yml@main
-    with:
-      GITHUB_REPOSITORY: ${{ github.repository }}
-      PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
-      ACTION_TYPE: ${{ github.event.action }}  # Pass the action type (opened or synchronize)
-      BEFORE_SHA: ${{ github.event.before }}   # Pass the SHA of the commit before the synchronization
-      AFTER_SHA: ${{ github.event.after }}
-      BASE_BRANCH: ${{ github.event.pull_request.base.ref }}  # Base branch of the pull request
-      HEAD_BRANCH: ${{ github.event.pull_request.head.ref }}  # Head branch of the pull request 
-    secrets: inherit
-
-  frontmatter:
-    name: Frontmatter
-    uses: ./.github/workflows/validate-frontmatter.yml
-    secrets: inherit
-
-  validations:
-    name: Misc validations
-    needs: frontmatter
-    if: needs.frontmatter.result == 'success'
-    uses: ./.github/workflows/validations.yml
-    secrets: inherit
-    with:
-      GITHUB_REPOSITORY: ${{ github.repository }}
-      PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
-      TK_CICD_BRANCH: 'main'
-
-  tools:
-    name: Tools
-    needs: [pr-info, frontmatter]
-    uses: ./.github/workflows/build.yml
-    secrets: inherit
+      translations-event: docs-product
+      product-type: O11

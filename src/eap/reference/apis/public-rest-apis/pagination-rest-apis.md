@@ -12,7 +12,11 @@ content-type:
   - conceptual
   - procedure
 audience:
-  - full stack developers
+  - Developer
+coverage-type:
+  - remember
+  - understand
+  - apply
 ---
 
 # Page through lists of resources

@@ -7,23 +7,21 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3606%3A22095&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
 outsystems-tools:
   - odc studio
 coverage-type:
-  - apply
-  - evaluate
   - remember
+  - apply
   - unblock
 topic:
   - legacy-systems-integration
+isautopublish: true
 ---
 
 # External libraries SDK README
 
-The OutSystems External Libraries SDK allows you extend your ODC apps with custom C# code. The SDK supports modern .NET 8.0+ and integrates with your preferred IDE.
+The OutSystems External Libraries SDK allows you to extend your ODC apps with custom C# code. The SDK supports modern .NET and integrates with your preferred IDE.
 
 You decorate your C# code with SDK attributes that map directly to OutSystems visual language elements. This means you can expose your custom C# code as an ODC external library with reusable server actions and structures and use it across any ODC app. For detailed information, refer to [Extend your apps with custom code](intro.md).
 
@@ -33,7 +31,7 @@ Once you build and package your external code, you can upload it to the ODC Port
 
 ## Prerequisites
 
-* [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed.
+* [.NET 10.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) installed.
 
 * [NuGet](https://www.nuget.org/downloads) package manager installed.
 
@@ -47,13 +45,13 @@ You can start developing external logic for an ODC app from scratch or using one
 
 ### Build external logic from scratch
 
-To build external logic with C# using Microsoft Visual Studio 2022 with .NET 8.0, follow these steps:
+To build external logic with C# using Microsoft Visual Studio 2022, follow these steps:
 
 1. From the **Create a new project** window select the **Class Library** template.
 
-1. Give the project a name, for example `ClassLibrary1`. You must select **.NET 8.0 (Long-term support)** as the framework. Click **Create**.
+1. Give the project a name, for example `ClassLibrary1`. You must select the .NET LTS version listed in the [prerequisites](#prerequisites) as the framework. Click **Create**.
 
-1. From the **Solution Explorer** pane, right-click the project name and select **Manage NuGet packages...** Search for and install `OutSystems.ExternalLibraries.SDK`. If you want to enable logging in your C# code, install `Microsoft.Extensions.Logging` version 8.0.0. For tracing functionality, `System.Diagnostics` is part of the standard .NET library and is available by default.
+1. From the **Solution Explorer** pane, right-click the project name and select **Manage NuGet packages...** Search for and install `OutSystems.ExternalLibraries.SDK`. If you want to enable logging in your C# code, install `Microsoft.Extensions.Logging`. For tracing functionality, `System.Diagnostics` is part of the standard .NET library and is available by default.
 
 1. Create a public interface containing the methods you want to expose as server actions to your ODC apps and libraries. Then decorate it with the `OSInterface` attribute.
 
@@ -69,7 +67,7 @@ To build external logic with C# using Microsoft Visual Studio 2022 with .NET 8.0
             }
         }
 
-1. Create a public class implementing that interface. Optionally for logging your code, use [Microsoft Extension ILogger Interface](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger?view=net-8.0-pp). These logs can then be accessed from the ODC portal. You can also create custom spans/activities for distributed tracing by using the current activity source to monitor the performance and behavior of your external logic.
+1. Create a public class implementing that interface. Optionally for logging your code, use [Microsoft Extension ILogger Interface](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger). These logs can then be accessed from the ODC Portal. You can also create custom spans/activities for distributed tracing by using the current activity source to monitor the performance and behavior of your external logic.
 
 Here's an example of a class that uses Microsoft Extension ILogger Interface to log the code and creates custom spans for tracing.
 
@@ -144,18 +142,20 @@ For detailed information about errors, refer to [External libraries SDK errors](
 
     1. Right-click **{NAME_OF_SOLUTION}** and click **Open in Terminal**.
 
-    1. Execute `dotnet publish -c Release -r --no-self-contained`
+    1. Execute `dotnet publish -c Release --no-self-contained`
 
         The published code runs in a Linux container. If your library has runtime-specific dependencies then you should publish it specifying the runtime:
-        `dotnet publish -c Release linux-x64 --no-self-contained`
+        `dotnet publish -c Release -r linux-x64 --no-self-contained`
 
 1. Zip the contents of the publish output folder to the root of a ZIP file.
-     * For a cross-platform publish, the folder path is `./{NAME_OF_SOLUTION}/bin/Release/net8.0/publish/*`.
-     * For a `linux-x64` runtime-specific publish, the folder path is `./{NAME_OF_SOLUTION}/bin/Release/net8.0/linux-x64/publish/*`.
+     * For a cross-platform publish, the folder path is `./{NAME_OF_SOLUTION}/bin/Release/{TARGET_FRAMEWORK}/publish/*`.
+     * For a `linux-x64` runtime-specific publish, the folder path is `./{NAME_OF_SOLUTION}/bin/Release/{TARGET_FRAMEWORK}/linux-x64/publish/*`.
+
+    Replace `{TARGET_FRAMEWORK}` with the .NET target framework moniker, for example `net10.0`.
 
 1. Upload the ZIP file to the ODC Portal. For detailed information, refer to [Extend your apps with custom code](intro.md#upload-and-publish-the-external-logic).
 
-Once the external code is published and uploaded in ODC portal, you must
+Once the external code is published and uploaded in ODC Portal, you must
 create an external ODC library, publish, and release the library. For detailed information, refer to [Upload and publish the external logic](intro.md#upload-and-publish-the-external-logic). Once the external library is [released](intro.md#release-the-library), you can [consume the external logic](intro.md#consume-the-external-logic) across your ODC organization's apps and existing libraries.
 
 For detailed information about best practices, refer to [Best practices for using external libraries](best-practices.md).
@@ -192,7 +192,7 @@ For detailed information about errors, refer to [External libraries SDK errors](
 
 1. Upload the generated ZIP file to the ODC Portal. For detailed information, refer to [Extend your apps with custom code](intro.md#upload-and-publish-the-external-logic).
 
-Once the external code is published and uploaded in ODC portal, you must
+Once the external code is published and uploaded in ODC Portal, you must
 create an external ODC library, publish, and release the library. For detailed information, refer to [Upload and publish the external logic](intro.md#upload-and-publish-the-external-logic). Once the external library is [released](intro.md#release-the-library), you can [consume the external logic](intro.md#consume-the-external-logic) across your ODC organization's apps and existing libraries.
 
 For detailed information about best practices, refer to [Best practices for using external libraries](best-practices.md).
@@ -232,7 +232,7 @@ For detailed information about errors, refer to [External libraries SDK errors](
 
 1. Upload the generated ZIP file to the ODC Portal. For detailed information, refer to [Extend your apps with custom code](intro.md#upload-and-publish-the-external-logic).
 
-Once the external code is published and uploaded in ODC portal, you must
+Once the external code is published and uploaded in ODC Portal, you must
 create an external ODC library, publish, and release the library. For detailed information, refer to [Upload and publish the external logic](intro.md#upload-and-publish-the-external-logic). Once the external library is [released](intro.md#release-the-library), you can [consume the external logic](intro.md#consume-the-external-logic) across your ODC organization's apps and existing libraries.
 
 For detailed information about best practices, refer to [Best practices for using external libraries](best-practices.md).
@@ -248,7 +248,7 @@ The table below maps the .NET attributes exposed by the SDK to the corresponding
 | [`[OSParameter]`](REFERENCE.md#osparameterattribute-type) | Input/output parameter | DataType _(DataType)_<br></br>Description _(Description)_<br></br>OriginalName _(Source name used for key calculation)_ |
 | [`[OSStructure]`](REFERENCE.md#osstructureattribute-type) | Structure | Description _(Description)_<br></br>OriginalName _([Source Name used for the key calculation])_ |
 | [`[OSStructureField]`](REFERENCE.md#osstructurefieldattribute-type) | Structure attribute | DataType _(DataType)_<br></br>Description _(Description)_<br></br>Length (Length)<br></br>Decimals _(Decimals)_<br></br>IsMandatory _(IsMandatory)_<br></br>OriginalName _(Source name used for key calculation)_ |
-| [`[OSIgnore]`](REFERENCE.md#osignore-type)  |   | Use to decorate a public property/field within a .NET struct decorated with to specify that _it shouldn't be exposed as an OutSystems Structure Attribute._   |
+| [`[OSIgnore]`](REFERENCE.md#osignore-type) | | Use to decorate a public property/field within a .NET struct decorated with to specify that _it shouldn't be exposed as an OutSystems Structure Attribute._ |
 
 ## Troubleshooting
 

@@ -7,7 +7,7 @@ app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A7614&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
   - forge
@@ -16,6 +16,7 @@ coverage-type:
   - remember
 topic:
   - using-cordova-plugins
+  - using-capacitor-plugins
 ---
 
 # File Plugin version 2
@@ -93,6 +94,8 @@ Then, assign the **FilteredList** to a variable to use in your UI (5).
 
 ![Example of listing files in a directory using the ListDirectory action in OutSystems](images/list-files-mobile-v2-odc.png "List Files in Directory")
 
-## References
+## Reference
+
+The File Plugin is dual-stack, as it uses a Cordova plugin for Cordova apps, and a Capacitor plugin for Capacitor apps. For more information check[cordova-outsystems-file](https://github.com/ionic-team/cordova-outsystems-file) and [capacitor-filesystem](https://github.com/ionic-team/capacitor-filesystem).
 
 For more information on the plugin elements, refer to the [File Plugin version 2 reference page](file-plugin-ref.md).

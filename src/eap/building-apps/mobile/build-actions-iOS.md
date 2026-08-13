@@ -2,30 +2,40 @@
 guid: 3e9cca36-951b-4500-9ad3-8a930b13848e
 locale: en-us
 summary: This documents provides reference information for iOS build actions explaining the different settings and properties of the JSON file.
-figma: 
+figma:
 coverage-type:
   - remember
-  - understand
 topic:
   - customize-mobile-apps
 app_type: mobile apps
 platform-version: odc
 audience:
-  - mobile developers
-tags: Mobile,native mobile configuration,extensibility configuration
+  - Developer
+tags:
+  - Capacitor
+  - iOS
+  - Mobile app
+  - Native App
 outsystems-tools:
   - odc studio
   - odc portal
-helpids: 
+helpids:
+isautopublish: true
 ---
 
 # iOS build actions
 
-This article provides reference documentation for all iOS build actions available in mobile app development. [Build actions](build-actions.md) allow you to customize and configure iOS mobile apps beyond the standard low-code capabilities such as updating and modifying **Info.plist** file and setting specific build settings.
+<div class="info" markdown="1">
+
+Build actions are supported only for mobile apps that use Capacitor. Cordova-based mobile apps do not support build actions.
+
+</div>
+
+This article provides reference documentation for all iOS build actions available in mobile app development. [Build actions](build-actions.md) allow you to customize and configure iOS mobile apps beyond the standard low-code capabilities such as updating and modifying the **Info.plist** file and setting specific build settings.
 
 ## Targets and builds
 
-Build actions for iOS support different targets and builds. These are optional and specified as parent keys in the JSON. The following build actions example omits targets and builds, but they are always valid.
+Build actions for iOS support different targets and builds. These are optional and are specified as parent keys in the JSON. The following build actions example omits targets and builds, but they are always valid.
 
 ```json
 {
@@ -50,7 +60,7 @@ Build actions for iOS support different targets and builds. These are optional a
 
 ## Actions
 
-### displayName
+### `displayName`
 
 **Type**:
 
@@ -72,7 +82,7 @@ string
 }
 ```
 
-### productName
+### `productName`
 
 **Type**:
 
@@ -94,7 +104,7 @@ string
 }
 ```
 
-### buildSettings
+### `buildSettings`
 
 **Type**:
 
@@ -119,7 +129,7 @@ Record<string, string>
 }
 ```
 
-### buildPhases
+### `buildPhases`
 
 **Type**:
 
@@ -134,7 +144,7 @@ Array<{
 }>;
 ```
 
-**Description**: Sets build phases scripts to run. By default, values should be merge unless replace is set to `true` to overwrite the entire target object with a given comment.
+**Description**: Specifies custom shell scripts to run during the project build phases. By default, these scripts are added to the existing build phases. If `replace` is set to `true`, the build process uses the `comment` property as a unique identifier to find and overwrite an existing build phase with the new configuration.
 
 **Conditional**: Yes
 
@@ -158,7 +168,7 @@ Array<{
 }
 ```
 
-### plist
+### `plist`
 
 **Type**:
 
@@ -170,7 +180,7 @@ Array<{
 }>;
 ```
 
-**Description**: Updates the **Info.plist** file for the specified target and build, or default target and all builds when not specified. Or updates a given plist file if provided.
+**Description**: Updates the **Info.plist** file for the specified target and build, or default target and all builds when not specified. You can use it, for example, to define custom URL schemes (CFBundleURLSchemes) or add other key-value entries. You can also update a specific plist file if provided.
 
 By default, values should be merged unless replace is set to `true` to overwrite the entire target object.
 
@@ -206,7 +216,7 @@ By default, values should be merged unless replace is set to `true` to overwrite
 }
 ```
 
-### xcprivacy
+### `xcprivacy`
 
 **Type**:
 
@@ -217,7 +227,7 @@ Array<{
 }>;
 ```
 
-**Description**: Updates the PrivacyInfo.xcprivacy file for the specified target and build, or default target and all builds of not specified.
+**Description**: Updates the PrivacyInfo.xcprivacy file.
 
 By default, values are merged unless replace is set to `true` to overwrite the entire target object.
 
@@ -249,15 +259,15 @@ By default, values are merged unless replace is set to `true` to overwrite the e
 }
 ```
 
-### entitlements
+### `entitlements`
 
 **Type**:
 
 ```TypeScript
-Array<{
+{
   entries: Array<Record<string, boolean | string | string[]>>;
   replace?: boolean;
-}>;
+};
 ```
 
 **Description**: Updates the .entitlements file for the specified target and build, or the default target and all builds if not specified.
@@ -288,7 +298,7 @@ By default, values are merged unless replace is set to `true` to overwrite the e
 }
 ```
 
-### frameworks
+### `frameworks`
 
 **Type**:
 
@@ -309,13 +319,16 @@ Array<{
 {
     "platforms": {
         "ios": {
-            "frameworks": ["AudioToolbox.framework", "CoreServices.framework"]
+            "frameworks": [
+                { "name": "AudioToolbox.framework" },
+                { "name": "CoreServices.framework" }
+            ]
         }
     }
 }
 ```
 
-### json
+### `json`
 
 **Type**:
 
@@ -369,7 +382,7 @@ The operation supports two modes:
 }
 ```
 
-### xml
+### `xml`
 
 **Type**:
 
@@ -433,7 +446,7 @@ Array<
 }
 ```
 
-### copy
+### `copy`
 
 **Type**:
 
@@ -471,7 +484,7 @@ Array<{
 }
 ```
 
-### strings
+### `strings`
 
 **Type**:
 
@@ -515,7 +528,7 @@ It allows the direct definition of objects into the file using the `set` key, or
 }
 ```
 
-### xcconfig
+### `xcconfig`
 
 **Type**:
 
@@ -547,7 +560,7 @@ Array<{
 }
 ```
 
-### code
+### `code`
 
 **Type**:
 
@@ -573,7 +586,7 @@ Array<
 
 Adds a given source file and adds it to the project with `compilerFlags` if needed. It also allows direct replacement on files by setting a target and the replace text, or from patch files using the `patchFile` key.
 
-iOS also has the code action, but the type of the object is slightly different.
+Android also has the code action, but the type of the object is slightly different.
 
 **Conditional**: Yes
 
@@ -604,7 +617,7 @@ iOS also has the code action, but the type of the object is slightly different.
 }
 ```
 
-### tar
+### `tar`
 
 **Type**:
 
@@ -612,7 +625,7 @@ iOS also has the code action, but the type of the object is slightly different.
 Array<{
   src: string;
   dest: string;
-  command: 'c' | 'r' | 'u' | 'x';
+  action: 'c' | 'r' | 'u' | 'x';
 }>;
 ```
 
@@ -626,8 +639,8 @@ Array<{
         "ios": {
             "tar": [
                 {
-                    "source": "files/FooBar.tar",
-                    "targetDir": "files/FooBar",
+                    "src": "files/FooBar.tar",
+                    "dest": "files/FooBar",
                     "action": "x"
                 }
             ]

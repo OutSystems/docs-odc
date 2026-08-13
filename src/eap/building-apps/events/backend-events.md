@@ -8,8 +8,7 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7453-435
 tags: asynchronous communication, event handling, pub/sub model, task automation, data orchestration
 audience:
-  - backend developers
-  - full stack developers
+  - Developer
 outsystems-tools:
   - odc studio
   - odc portal
@@ -86,7 +85,7 @@ ODC events enable asynchronous processing in your app. When an event is triggere
 
 If an app triggers multiple events of the same type, they can be handled asynchronously and in parallel by one or more apps, with each event running independently in the background. For example, in an eCommerce app, during a flash sale, when multiple users place orders simultaneously, the app triggers multiple events of type **OnPurchaseStarted**. The **Inventory app** and **Fraud Detection app** handle these events independently, processing them in parallel. This ensures that stock is updated and fraud checks are performed asynchronously, allowing the system to handle high traffic efficiently.
 
-For detailed information about properties of ODC events, refer to [Properties of ODC evenst](events-properties.md).
+For detailed information about properties of ODC events, refer to [Properties of ODC events](events-properties.md).
 
 <div class="info" markdown="1">
 

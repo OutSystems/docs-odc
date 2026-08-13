@@ -9,8 +9,11 @@ figma:
 content-type:
   - reference
 audience:
-  - full stack developers
-  - platform administrators
+  - Developer
+  - Platform administrator
+coverage-type:
+  - remember
+  - understand
 outsystems-tools:
   - none
 ---

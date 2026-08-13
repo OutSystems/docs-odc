@@ -6,6 +6,7 @@ rules/
 config.yml
 .vscode/settings.json
 .DS_Store
+.idea/
 .aider*
 # Ignore all .vale.ini files anywhere in the repo
 **/.vale.ini
@@ -15,3 +16,20 @@ config.yml
 
 # Ignore all files inside the 'styles' folder
 styles/*
+
+# Ignore all files inside the '.vscode' folder
+.vscode/*
+# Ignore all mcp.json files anywhere in the repo
+**/mcp.json
+
+# Internal planning docs
+**/plan-*.md
+
+# Claude Code files
+CLAUDE.md
+PLAN.md
+.claude/skills/validate-screenshots/scripts/__pycache__/has_shadow.cpython-314.pyc
+.claude/settings.local.json
+
+# Ignore temp files
+temp/

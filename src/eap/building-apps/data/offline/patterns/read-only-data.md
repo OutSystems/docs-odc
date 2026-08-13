@@ -1,5 +1,5 @@
 ---
-summary: Learn about the Read-Only Data synchronization pattern in OutSystems Developer Cloud (ODC) for efficient mobile app data management.
+summary: Read-Only Data sync pattern in OutSystems Developer Cloud (ODC) downloads server data to device local storage without propagating device changes back.
 tags: data synchronization, offline data handling, local storage, performance optimization, outsystems patterns
 locale: en-us
 guid: abd5db07-779e-4597-9158-5ac68de2bae4
@@ -7,7 +7,7 @@ app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7907-1038
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
   - forge
@@ -47,7 +47,7 @@ Download and store locally only the minimum subset of data relevant to the user 
 
 </div>
 
-Download the [sample module for the Read-Only Data pattern](http://www.outsystems.com/forge/component/1638/Offline+Data+Sync+Patterns/), which uses companies as an example for data synchronization. The following sections explain how to automatically generate this synchronization pattern and provide detailed descriptions of the data model and logic used in the sample module.
+Explore the Forge component [Offline Data Sync Patterns - Read Only Simple](https://www.outsystems.com/forge/component-overview/16957/offline-data-sync-patterns-read-only-simple-odc), which uses companies as an example for data synchronization and examine the logic in your environment. The following sections explain the component's data model and logic.
 
 ## Automatically generate the pattern for an entity
 
@@ -77,7 +77,7 @@ The sample defines a database entity `Company` and its local storage counterpart
 
 ![Diagram of the Read-Only Data model showing the Database entity 'Company' and its Local Storage counterpart 'LocalCompany'](images/read-only-data-data-model-odcs.png "Read-Only Data Model")
 
-## OnSync Logic
+## OnSync logic
 
 Here’s how the `OnSync` client action works:
 

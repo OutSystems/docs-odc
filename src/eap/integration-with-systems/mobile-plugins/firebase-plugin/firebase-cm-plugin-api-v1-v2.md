@@ -1,32 +1,36 @@
 ---
-summary: Explore the OutSystems Developer Cloud (ODC) for managing and deploying cloud messaging configurator REST APIs for notifications.
+summary: Cloud Messaging Configurator REST API v1 and v2 endpoints for ODC, deprecated and replaced by Firebase Cloud Messaging Plugin Server Actions.
 locale: en-us
 guid: 2da53711-4885-4005-9224-d77d517efb50
 app_type: mobile apps
 figma:
 platform-version: odc
-tags: cloud messaging, api reference, notifications, deprecated features, firebase cloud messaging
+tags:
+  - Mobile app
+  - Plugins
+  - REST
+  - Web services
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+isautopublish: true
 ---
 
-# Cloud Messaging Configurator APIs
+# Cloud messaging configurator APIs
 
 <div class="info" markdown="1">
 
-The Cloud Messaging Configurator, version 0.1.2 and older, is deprecated. For more information, see [Firebase Cloud Messaging HTTP protocol](https://firebase.google.com/docs/cloud-messaging/http-server-ref). This means that the **v2** and **v1** endpoints are no longer be functional.
+The Cloud messaging configurator, version 0.1.2 and older, is deprecated. For more information, see [Firebase Cloud Messaging HTTP protocol](https://firebase.google.com/docs/cloud-messaging/http-server-ref). This means that the **v2** and **v1** endpoints are no longer be functional.
 
 To provide a better experience, the Configurator's REST APIs are replaced by Server Actions available on the Firebase Cloud Messaging Plugin. If you are consuming these APIs, you should replace them with server actions at the earliest. For detailed information about server actions, refer to Reference information for Server actions.
 
 </div>
 
-Use OutSystems' Cloud Messaging Configurator REST APIs to do the following:
+Use Cloud messaging configurator REST APIs to do the following:
 
 * Send notifications (normal or silent) to all users associated with a topic or group of topics.
 
@@ -34,11 +38,11 @@ Use OutSystems' Cloud Messaging Configurator REST APIs to do the following:
 
 Following are the versions of the Cloud Messaging Configurator REST API in OutSystem:
 
-* [v1 endpoint](#v1)
+* [Cloud messaging configurator v1 endpoints](#v1-apis)
 
-* [v2 endpoint](#v2)
+* [Cloud messaging configurator v2 endpoints](#v2-apis)
 
-## v1
+## Cloud messaging configurator v1 endpoints {#v1-apis}
 
 Following are the v1 versions of the Cloud Messaging Configurator REST API:
 
@@ -50,7 +54,7 @@ Following are the v1 versions of the Cloud Messaging Configurator REST API:
 
 * [SendSilentNotificationToUsers](#sendsilentnotificationtousers)
 
-### SendNotificationToTopics
+### `SendNotificationToTopics`
 
 Version: v1
 
@@ -60,20 +64,20 @@ Operation: `POST`
 
 Base URL: `/CloudMessagingConfigurator/rest/v1/notification/topics`
 
-**Request parameters**
+#### Request parameters
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | FCMServerKey | Text | Identifies the Firebase Cloud Messaging (FCM) Server Key. To send out a notification to users or user groups, you must enter a text value to authorize a connection to FCM. You can find this value in the Firebase Project Settings under the Cloud Messaging tab. |
 | SendToTopics | SendToTopicsV1 Data Structure | Identifies the topics that will receive the notification. |
 | Notification | NotificationV1 Data Structure | Identifies the notification parameters. |
 | ExtraDataList | ExtraDataItem List | Identifies the extra data for the notification. |
 | ShowIfAppOpen | Boolean | Identifies if the push notifications are shown as in-app messages and the app must be open when the device receives the notification ('True'), or not open ('False'). |
 
-**Response**
+#### Response
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | Message_id | Text | Displays the ID of an error, if applicable. |
 | Error | Text | Displays error information, or null if successful. |
 
@@ -105,7 +109,7 @@ Following is an example of a request.
 }
 ```
 
-### SendNotificationToUsers
+### `SendNotificationToUsers`
 
 Version: v1
 
@@ -115,22 +119,22 @@ Operation: `POST`
 
 Base URL: `/CloudMessagingConfigurator/rest/v1/notification/users`
 
-**Request parameters**
+#### Request parameters
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | FCMServerKey | Text | Identifies the Firebase Cloud Messaging (FCM) Server Key. To send out a notification to users or user groups, you must enter a text value to authorize a connection to FCM. You can find this value in the Firebase Project Settings under the Cloud Messaging tab. |
 | SendToPlatform | Text | Identifies the platform that will receive the notification. |
 | SendToUsers | Text List | Identifies a list of users that will receive notifications. If empty, the notification is sent to all platform users. |
 | SenderID | Text | Identifies the Sender ID. You can find this ID in the Firebase Project Settings under the Cloud Messaging tab. |
 | Notification | NotificationV1 Data Structure | Identifies the notification parameters. |
 | ExtraDataList | ExtraDataItem List | Identifies the extra data for the notification. |
-| ShowIfAppOpen | Boolean | Identifies if the push notifications are shown as in-app messages and the app must be open when the device receives the notification ('True'), or not open ('False').|
+| ShowIfAppOpen | Boolean | Identifies if the push notifications are shown as in-app messages and the app must be open when the device receives the notification ('True'), or not open ('False'). |
 
-**Response**
+#### Response
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | MulticastID | Text | Returns the Multicast ID. |
 | NoSuccess | Text | Returns the number of notifications successfully sent. |
 | NoError | Text | Returns the number of notifications not sent due to an error. |
@@ -160,7 +164,7 @@ Following is an example of a request.
 }
 ```
 
-### SendSilentNotificationToTopics
+### `SendSilentNotificationToTopics`
 
 Version: v1
 
@@ -170,19 +174,19 @@ Operation: `POST`
 
 Base URL: `/CloudMessagingConfigurator/rest/v1/notification/silent/topics`
 
-**Request parameters**
+#### Request parameters
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | FCMServerKey | Text | Identifies the Firebase Cloud Messaging (FCM) Server Key. To send out a notification to users or user groups, you must enter a text value to authorize a connection to FCM. You can find this value in the Firebase Project Settings under the Cloud Messaging tab. |
 | SendToTopics | SendToTopicsV1 Data Structure | Identifies the topics that will receive the notification. |
 | ExtraDataList | ExtraDataItem List | Identifies the extra data for the notification. |
 | TimeToLive | TimeToLive Data Structure | Identifies the expiration time to deliver the notification. If TimeValue for a specific TimeUnit is different than 0, the message persists and is delivered at the first opportunity until the expiration time is reached. |
 
-**Response**
+#### Response
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | Message_id | Text | Displays the ID of an error, if applicable. |
 | Error | Text | Displays error information, or null if successful. |
 
@@ -212,7 +216,7 @@ Following is an example of a request.
 
 ```
 
-### SendSilentNotificationToUsers
+### `SendSilentNotificationToUsers`
 
 Version: v1
 
@@ -222,10 +226,10 @@ Operation: `POST`
 
 Base URL: `/CloudMessagingConfigurator/rest/v1/notification/users`
 
-**Request parameters**
+#### Request parameters
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | FCMServerKey | Text | Identifies the Firebase Cloud Messaging (FCM) Server Key. To send out a notification to users or user groups, you must enter a text value to authorize a connection to FCM. You can find this value in the Firebase Project Settings under the Cloud Messaging tab. |
 | SendToUsers | Text List | Identifies a list of users that will receive notifications. If empty, the notification is sent to all platform users. |
 | SendToPlatform | Platform Identifier | Identifies the platform that will receive the notification. |
@@ -233,10 +237,10 @@ Base URL: `/CloudMessagingConfigurator/rest/v1/notification/users`
 | ExtraDataList | ExtraDataItem List | Identifies the extra data of the notification. |
 | TimeToLive | TimeToLive Data Structure | Identifies the expiration time to deliver the notification. If TimeValue for a specific TimeUnit is different than 0, the message persists and is delivered at the first opportunity until the expiration time is reached. |
 
-**Response**
+#### Response
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | MulticastID | Text | Returns the Multicast ID. |
 | NoSuccess | Text | Returns the number of notifications successfully sent. |
 | NoError | Text | Returns the number of notifications not sent due to an error. |
@@ -265,7 +269,7 @@ Following is an example of a request.
 }
 ```
 
-## v2
+## Cloud messaging configurator v2 endpoints {#v2-apis}
 
 Following are the v2 versions of the Cloud Messaging Configurator REST API:
 
@@ -273,7 +277,7 @@ Following are the v2 versions of the Cloud Messaging Configurator REST API:
 
 * [SendNotificationToUsers](#sendnotificationtousers-1)
 
-### SendNotificationToTopics
+### `SendNotificationToTopics`
 
 Version: v2
 
@@ -283,20 +287,20 @@ Operation: `POST`
 
 Base URL: `/CloudMessagingConfigurator/rest/v2/notification/topics`
 
-**Request parameters**
+#### Request parameters
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | FCMServerKey | Text | Identifies the Firebase Cloud Messaging (FCM) Server Key. To send out a notification to users or user groups, you must enter a text value to authorize a connection to FCM. You can find this value in the Firebase Project Settings under the Cloud Messaging tab. |
 | SendToTopics | SendToTopicsV2 Data Structure | Identifies the topics that will receive the notification. |
 | Notification | NotificationV2 Data Structure | Identifies the notification parameters. |
 | ExtraDataList | ExtraDataItem List | Identifies the extra data for the notification. |
-| ShowIfAppOpen | Boolean | Identifies if the push notifications are shown as in-app messages and the app must be open when the device receives the notification ('True'), or not open ('False').|
+| ShowIfAppOpen | Boolean | Identifies if the push notifications are shown as in-app messages and the app must be open when the device receives the notification ('True'), or not open ('False'). |
 
-**Response**
+#### Response
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | Message_id | Text | Displays the ID of an error, if applicable. |
 | Error | Text | Displays error information, or null if successful. |
 
@@ -384,7 +388,7 @@ Following is an example of a request.
 }
 ```
 
-### SendNotificationToUsers
+### `SendNotificationToUsers`
 
 Version: v2
 
@@ -394,22 +398,22 @@ Operation: `POST`
 
 Base URL: `/CloudMessagingConfigurator/rest/v2/notification/users`
 
-**Request parameters**
+#### Request parameters
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | FCMServerKey | Text | Identifies the Firebase Cloud Messaging (FCM) Server Key. To send out a notification to users or user groups, you must enter a text value to authorize a connection to FCM. You can find this value in the Firebase Project Settings under the Cloud Messaging tab. |
 | SendToPlatform | Text | Identifies the platform that will receive the notification. |
 | SendToUsers | Text List | Identifies a list of users that will receive notifications. If empty, the notification is sent to all platform users. |
 | SenderID | Text | Identifies the Sender ID. You can find this ID in the Firebase Project Settings under the Cloud Messaging tab. |
 | Notification | NotificationV2 Data Structure | Identifies the notification parameters. |
 | ExtraDataList | ExtraDataItem List | Identifies the extra data for the notification. |
-| ShowIfAppOpen | Boolean | Identifies if the push notifications are shown as in-app messages and the app must be open when the device receives the notification ('True'), or not open ('False').|
+| ShowIfAppOpen | Boolean | Identifies if the push notifications are shown as in-app messages and the app must be open when the device receives the notification ('True'), or not open ('False'). |
 
-**Response**
+#### Response
 
-|Parameter| Data Type | Description |
-|:--------|:----------|:------------|
+| Parameter | Data Type | Description |
+| :-------- | :---------- | :------------ |
 | MulticastID | Text | Returns the Multicast ID. |
 | NoSuccess | Text | Returns the number of notifications successfully sent. |
 | NoError | Text | Returns the number of notifications not sent due to an error. |

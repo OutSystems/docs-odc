@@ -1,5 +1,5 @@
 ---
-summary: Learn about the "Read/Write Data Last Write Wins" synchronization pattern in OutSystems Developer Cloud (ODC) for mobile app data consistency.
+summary: Read/Write Data Last Write Wins pattern in ODC syncs offline mobile data using last-write-wins conflict resolution and auto-generated sync actions.
 tags: data synchronization, conflict resolution, mobile app development, offline data handling, last write wins
 locale: en-us
 guid: e9dcceb5-b0e6-40de-a825-dfcda6d534e0
@@ -7,7 +7,7 @@ app_type: mobile apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7907-1049
 audience:
-  - mobile developers
+  - Developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -43,7 +43,7 @@ Here’s an overview of the Read/Write Data Last Write Wins pattern:
 
 1. ![Icon representing a mobile client in the Read/Write Data Last Write Wins pattern](images/icon-client.png "Client Icon") Deletes and recreates data in the local storage with the data received from the server.
 
-Download the [sample module for the Read/Write Data Last Write Wins pattern](http://www.outsystems.com/forge/component/1638/Offline+Data+Sync+Patterns/), which uses companies as an example for data synchronization. The following sections explain how to automatically generate this synchronization pattern and provide detailed descriptions of the data model and logic used in the sample module.
+Explore the Forge component [Offline Data Sync Patterns - R/W Last Wins](https://www.outsystems.com/forge/component-overview/16954/offline-data-sync-patterns-r-w-last-wins-odc), which uses companies as an example for data synchronization and examine the logic in your environment. The following sections explain how to automatically generate this synchronization pattern and provide detailed descriptions of the data model and logic used in the component.
 
 ## Automatically generate the pattern for an entity
 

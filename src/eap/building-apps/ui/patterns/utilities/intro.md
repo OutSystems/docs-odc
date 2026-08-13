@@ -8,9 +8,10 @@ platform-version: odc
 figma:
 coverage-type:
   - none
-audience:
-  - none
 outsystems-tools:
   - none
+audience:
+  - Developer
+  - Front-end developer
 ---
 # Utilities

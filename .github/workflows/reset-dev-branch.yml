@@ -1,0 +1,12 @@
+name: Reset Dev Documentation Branch
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 1'
+
+jobs:
+  reset-dev-branch:
+    name: Reset Dev Branch
+    uses: OutSystems/tk-cicd/.github/workflows/reset-dev-branch.yml@main
+    secrets: inherit

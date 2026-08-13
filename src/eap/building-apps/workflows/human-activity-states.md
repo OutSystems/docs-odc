@@ -10,7 +10,7 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
-  - full stack developers
+  - Developer
 tags: human activity states, low-code api, workflow management, runtime modifications, odc studio
 outsystems-tools:
   - odc studio

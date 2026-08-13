@@ -1,35 +1,39 @@
 ---
-summary: Learn how to configure external identity providers for authentication in OutSystems Developer Cloud (ODC), supporting OpenID Connect and social logins.
+summary: OpenID Connect (OIDC) identity provider setup in OutSystems Developer Cloud (ODC), covering discovery endpoint, credentials, PKCE, and claim mapping.
 locale: en-us
 guid: fbdf0874-6c92-41ec-8188-bc7b97bd7878
 app_type: mobile apps, reactive web apps
 platform-version: odc
-tags: authentication, identity provider, openid connect, security, social login
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - OIDC
+  - Security
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - platform administrators
+  - Platform administrator
 outsystems-tools:
   - odc studio
   - odc portal
 figma:
 coverage-type:
-  - understand
   - apply
-  - remember
 topic:
   - external-idps
   - idp-openidp
+isautopublish: true
 ---
 
 # Add an OpenID Connect identity provider
 
 This article provides step-by-step instructions for adding an OpenID Connect (OIDC) identity provider in ODC.
 
+If you're adding [Microsoft Entra ID](azure-ad.md) or [Okta](okta.md), you can use the specific guides for detailed provider setup instructions.
+
 <div class="info" markdown="1">
 
-If you're adding [Microsoft Entra ID](azure-ad.md) or [Okta](okta.md), you can use the specific guides for detailed provider setup instructions.
+If you have OIDC providers configured and you plan to change the domain of a stage or your organization, your redirect URIs need updating. Read [Planning domain changes](../domains/domain-planning.md#oidc) for guidance.
 
 </div>
 
@@ -38,7 +42,9 @@ If you're adding [Microsoft Entra ID](azure-ad.md) or [Okta](okta.md), you can u
 Before you begin, make sure you have:
 
 * A setup that meets ODC's [System considerations](intro.md#system-considerations) for external IdPs (for example, static issuer URIs and `client_secret_post`).
+
 * The [**Manage authentication**](../../user-management/roles.md#permissions-registry) permission.
+
 * A registered app in your provider portal, with the following values ready:
 
     * OpenID configuration URL (**Discovery endpoint**).
@@ -46,19 +52,25 @@ Before you begin, make sure you have:
 
     Some providers use different field names, such as **Application ID** for **Client ID** or **Value** for **Client secret**. Refer to the provider's documentation for guidance.
 
-<div class="info" markdown="1">
+* Your identity provider's endpoints (Discovery, JWKS, token, and userinfo) must be reachable by ODC. ODC validates tokens by retrieving signing keys from the JWKS endpoint. Either expose these endpoints publicly, or restrict access by allowlisting the ODC identity egress IP addresses in your firewall. For the list of IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp). For background on the network requirements and the protocol-based security model, refer to [Network considerations](intro.md#network-considerations).
 
-When registering your web application in your identity provider’s portal, if you're prompted to provide redirect URIs, leave the fields empty or use placeholder URIs. You’ll update these with the correct values in a later step of this guide.
-
-</div>
+* When registering your web app in your identity provider’s portal, if you're prompted to provide redirect URIs, leave the fields empty or use placeholder URIs. You’ll update these with the correct values in a later step of this guide.
 
 ## Add an OpenID Connect provider
 
+<div class="info" markdown="1">
+
+In a multi-portfolio organization, you add an OIDC provider once at the organization level and then assign it to stages in one or more portfolios. For more information about portfolio-scoped IdP assignment, refer to [Identity provider management with multiple portfolios](../portfolios/portfolios-identity-providers.md).
+
+</div>
+
 To add a new OpenID Connect provider, follow these steps:
 
-1. In the ODC Portal, go to **Manage** > **Identity providers**.
+1. In the ODC Portal, go to **Management** > **Govern** > **Identity providers**.
+
 1. To open the **New provider** configuration screen, click the **Add Provider** dropdown and select **OpenID Connect**.
-1. Enter a name for the new provider in the **Provider name** field. This can be any name less than 255 characters and can't include special characters.
+
+1. Enter a name for the new provider in the Provider name field. This can be any name less than 255 characters and must only include letters, numbers, and spaces.
 
 1. Enter the URL of the OpenID configuration in the **Discovery endpoint** field.
 
@@ -76,19 +88,28 @@ To add a new OpenID Connect provider, follow these steps:
 
 1. In the **Organization user email verification** section, choose one of the options for handling email verification. For more information about email verification methods, refer to [Email verification logic](identity-claims-email-verification.md#email-verification-logic).
 
+1. In the **User profile matching** section, select the attribute (fallback option) ODC uses to match external logins to ODC profiles when a subject match isn't found.
+    For more information about the options and when to use each one, refer to [Profile matching for external IdPs](identity-claims-email-verification.md#profile-matching-external-idps).
+
 1. Configure claim mapping in the **Claim Mapping** section.
 
     If your provider uses different attribute names, overwrite the prefilled **Username**, **Email**, **Name**, and **Photo URL** values. For more guidance, refer to your provider's support documentation.
 
     <div class="info" markdown="1">
 
-    For more details about mapping claims when configuring an IdP, refer to [Understand the user creation and claim mapping logic](identity-claims-email-verification.md#claim-mapping-logic).
+    For more information about claim mapping and profile matching, refer to [Claim mapping and profile matching](identity-claims-email-verification.md#claim-mapping-logic).
 
     </div>
 
 1. Click **Save**.
 
 ODC adds the provider to the list of available providers.
+
+<div class="warning" markdown="1">
+
+If you make any changes to the client secret after it has been applied, the changes may take up to one hour to take effect due to caching. During this period, the previously applied client secret remains in use. To prevent downtime, keep the old client secret configured in your external IdP for at least one hour after the change.
+
+</div>
 
 ## Next step
 

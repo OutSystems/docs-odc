@@ -7,9 +7,8 @@ app_type: mobile apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3203%3A13167&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - ui designers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -24,6 +23,12 @@ topic:
 <div class="info" markdown="1">
 
 Applies to Mobile Apps only.
+
+</div>
+
+<div class="info" markdown="1">
+
+Applies to the OutSystems UI framework only.
 
 </div>
 
@@ -87,8 +92,8 @@ After following these steps and publishing the app, you can test the pattern in 
 
 ## Properties
 
-| Property                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Shape (Shape Identifier): Optional | Set the Bottom Sheet shape. The predefined options are SoftRounded, Rounded, and Sharp. For example, Entities.Shape.Rounded inherits the rounded style. This is the default shape.                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ShowHandler (Boolean): Optional    | Set to True to display a handler above the Bottom Sheet. The default value is True.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| ExtendedClass (Text): Optional     | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <br/>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |
+| Property | Description |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Shape (Shape Identifier): Optional | Set the Bottom Sheet shape. The predefined options are SoftRounded, Rounded, and Sharp. For example, Entities.Shape.Rounded inherits the rounded style. This is the default shape. |
+| ShowHandler (Boolean): Optional | Set to True to display a handler above the Bottom Sheet. The default value is True. |
+| ExtendedClass (Text): Optional | Adds custom style classes to the Pattern. You define your custom style classes in your application using CSS. <br/>Examples <ul><li>Blank - No custom styles are added (default value).</li><li>"myclass" - Adds the ``myclass`` style to the UI styles being applied.</li><li>"myclass1 myclass2" - Adds the ``myclass1`` and ``myclass2`` styles to the UI styles being applied.</li></ul>You can also use the classes available on the OutSystems UI. |

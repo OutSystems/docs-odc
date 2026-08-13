@@ -13,15 +13,14 @@ topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
-  - backend developers
-  - full stack developers
-  - mobile developers
+  - Developer
 tags: rest apis, user management, role assignment, automation, access control
 outsystems-tools:
   - odc studio
 helpids:
+isautopublish: true
 ---
-# Creating a single user and assigning a role
+# Create a user and assign a role using REST APIs
 
 This use case outlines the steps to programmatically create a [new user](../../../../user-management/intro.md) and then assign a specific application role to that user in ODC Studio using ODC REST APIs. This is useful for automating user provisioning and access control.
 
@@ -45,11 +44,31 @@ To create a single user and assign a role to the user using ODC REST API, follow
 
       On successful execution of the API, a new user is created, and the API response contains the newly created **user's key (UUID)**. This key is used in the subsequent steps.  
 
+      <div class="info" markdown="1">
+
+      If you create the user using the API and want the user to set a password and finish the registration process, use the reset password flow. Call [**StartResetPassword**](../../../system-actions/user.md#startresetpassword) to send the verification code email, then call [**FinishResetPassword**](../../../system-actions/user.md#finishresetpassword) with the verification code and the new password.
+
+      For more information about resetting passwords, refer to [Passwords](../../../../user-management/passwords.md).
+
+      </div>
+
+1. If you have multiple apps with similar role names, get the `assetKey` (the key of your app):
+
+   `GET /assets`
+
+      Filter by `nameContains` to find your app.
+
+      On successful execution of the API, the response contains the **asset key (UUID)** of each app in the `key` field. Use the asset key that matches your app.
+
+      For details, refer to the [Asset Repository API reference](../../asset-v1.md).
+
 1. To get the application role key for a specific role, use:
 
-   `GET  /application-roles`
+   `GET /application-roles`
 
       And filter by `nameContains` to get the application role key for a specified role name.
+
+      If you have multiple apps with similar role names, also filter by `assetKey` (the key of your app).
 
       This application role key, along with the user key, is used in the next step to grant an application role to the user.
 

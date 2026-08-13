@@ -7,10 +7,8 @@ app_type: mobile apps, reactive web apps
 figma: https://www.figma.com/file/6G4tyYswfWPn5uJPDlBpvp/Building-apps?type=design&node-id=3101%3A10812&t=ZwHw8hXeFhwYsO5V-1
 platform-version: odc
 audience:
-  - mobile developers
-  - frontend developers
-  - full stack developers
-  - ui designers
+  - Developer
+  - Front-end developer
 outsystems-tools:
   - odc studio
 coverage-type:
@@ -18,6 +16,7 @@ coverage-type:
 topic:
   - reuse-ui
   - layouts
+isautopublish: true
 ---
 
 # Use Theme Library for app branding
@@ -44,9 +43,9 @@ If the **OutSystems UI** theme is unavailable, add a public element. Search for 
 
 ## Create the theme structure
 
-Open the OutSystems app that you want to use as the foundation for your new theme library. The following steps will guide you through copying the necessary elements from this app to your new theme library
+Open the OutSystems app that you want to use as the foundation for your new theme library. The following steps guide you through copying the necessary elements from this app to your new theme library.
 
-You create the theme structure in ODC Studio. In your app, go to the **Interface** tab. Inside the **UI Flows** folder, you will find a common flow. Open the common flow to find and copy the **Menu_Icon** block and the **RedirectToURL** to the new flow in the library.
+You create the theme structure in ODC Studio. In your app, go to the **Interface** tab. Inside the **UI Flows** folder, you find a common flow. Open the common flow to find and copy the **Menu_Icon** block and the **RedirectToURL** to the new flow in the library.
 
 ![Theme common components are available in Theme common flow](images/theme-common-flow-odcs.png "Theme common components are available in Theme common flow")
 
@@ -62,7 +61,7 @@ For errors related to the app title, add a placeholder instead of a block so you
 
 ![Layout placeholders and structure. Adding an ApplicationTitle placeholder](images/add-applicationtitle-placeholder-odcs.png "Layout placeholders and structure. Adding an ApplicationTitle placeholder")
 
-If you decide to use a placeholder, from the  **Layout_Top_Menu**, select **LayoutWrapper** > **Header2** > **Container** > **Container** after the **MenuIcon** block drag the placeholder in the block and in the styles property, inside the Layout section, remove one col, and in the margin-left, remove the content inside.
+If you decide to use a placeholder, in **Layout_Top_Menu**, select **LayoutWrapper** > **Header2** > **Container** > **Container**. After the **MenuIcon** block, drag the placeholder into the block. In the styles property, inside the Layout section, remove one col. In the margin-left, remove the content inside.
 
 ![Placeholder styles properties](images/placeholder-styles-properties-odcs.png "Placeholder styles properties")
 
@@ -107,10 +106,10 @@ After setting the layouts, you must set the **App_LayoutTopMenu** in the app the
 
 ## Extra placeholders
 
-Since you're adding extra placeholders, the default `ph` class to remove `divs` without content won’t work if the placeholder is empty. To make sure you can use the same behavior in the **OnReady** layout event, add the following script:
+Since you're adding extra placeholders, the default `placeholder-empty` class to remove `divs` without content won’t work if the placeholder is empty. To make sure you can use the same behavior in the **OnReady** layout event, add the following script:
 
 ```
-var emptyPh = document.querySelectorAll("ph:empty"); 
+var emptyPh = document.querySelectorAll("placeholder-empty:empty"); 
 emptyPh.forEach(function (a) {
     a.parentNode.remove();
 })
@@ -122,6 +121,12 @@ This script can be converted to a global client action and used in any layout.
 
 </div>
 
-![Global client action available in Theme to clean PH](images/global-client-action-available-odcs.png "Global client action available in Theme to clean PH")
+![Global client action available in Theme to clean placeholder-empty class](images/global-client-action-available-odcs.png "Global client action available in Theme to clean PH")
 
 ![How to use the Global client action to clean PH in the layouts](images/how-to-use-global-client-action-odcs.png "How to use the Global client action to clean PH in the layouts")
+
+<div class="warning" markdown="1">
+
+Starting with OutSystems UI version 2.28.0, the CSS class `ph` has been deprecated and replaced by `placeholder-empty`. This change was implemented to resolve naming collisions with the Phosphor icon library. Since Phosphor uses the `ph` prefix for its own iconography, the overlap caused styling conflicts and rendering issues across the platform. By transitioning to a more descriptive class name, you can use the icon library without interfering with built-in UI placeholders.
+
+</div>
