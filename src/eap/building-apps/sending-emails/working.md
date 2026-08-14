@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) enables email design and management through its ODC Studio interface.
+summary: ODC Studio emails let you create and customize email messages using UI Flows, widgets, and input parameters in OutSystems Developer Cloud (ODC).
 tags: email design, ui development
 locale: en-us
 guid: 4DB954E5-AD44-43A3-9FE0-1D29C5FBE109

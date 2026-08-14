@@ -1,5 +1,5 @@
 ---
-summary: SEO best practices.
+summary: ODC SEO best practices covering crawlability, URL standardization, canonical tags, and indexability requirements for OutSystems Developer Cloud (ODC) apps.
 tags: seo best practices, crawlability, url standardization, http status codes, outsystems reactive apps
 guid: e4937d41-b341-4d6b-bd84-7b7958672549
 locale: en-us

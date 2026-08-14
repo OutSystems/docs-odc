@@ -1,5 +1,5 @@
 ---
-summary: Explore how OutSystems Developer Cloud (ODC) facilitates email sending and triggering through its Studio interface.
+summary: ODC sending emails requires a server action with the Send Email node; add input parameters, set the To field, and trigger it from a client action for transactional flows.
 tags: email integration, automation, server actions, user notification, email templates
 locale: en-us
 guid: 895e64b5-eb2c-4b92-9673-8493aa306622
