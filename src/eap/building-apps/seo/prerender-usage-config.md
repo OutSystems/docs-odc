@@ -8,6 +8,7 @@ platform-version: odc
 figma:
 coverage-type:
   - remember
+  - apply
 audience:
   - Front-end developer
   - Platform administrator

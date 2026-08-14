@@ -13,6 +13,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+  - understand
   - evaluate
 ---
 
