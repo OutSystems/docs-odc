@@ -1,5 +1,5 @@
 ---
-summary: Learn the best practices for fetching and displaying data in OutSystems.
+summary: "OutSystems Developer Cloud (ODC) data fetching best practices: use aggregates, limit records, optimize SQL queries, and restrict sensitive data."
 tags: data fetching, aggregates, sql queries, data actions, asynchronous operations
 outsystems-tools:
   - odc studio

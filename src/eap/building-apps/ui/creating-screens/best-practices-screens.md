@@ -1,5 +1,5 @@
 ---
-summary: Learn the best practices for building screens in OutSystems.
+summary: ODC screen best practices cover widgets, CSS separation, image optimization, and role-based access in OutSystems Developer Cloud (ODC).
 tags: best practices, ui patterns, widgets, responsive design, accessibility
 guid: 569562bc-96a5-4fe5-bce1-2b06832bd14e
 locale: en-us
