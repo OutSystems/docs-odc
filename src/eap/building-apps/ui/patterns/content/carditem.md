@@ -1,6 +1,6 @@
 ---
 tags: ui patterns, mobile app development
-summary: Learn how to implement the Card Item UI Pattern in OutSystems Developer Cloud (ODC) to enhance mobile app interfaces.
+summary: Card Item UI Pattern in ODC lets you list items with images, icons, titles, descriptions, and actions using ODC Studio.
 locale: en-us
 guid: 0e53449a-f4be-400e-9736-d7d44cc30e7c
 app_type: mobile apps, reactive web apps

@@ -1,6 +1,6 @@
 ---
 tags: ui design patterns, mobile app development
-summary: Learn to enhance app interfaces using the Card Background UI Pattern in OutSystems Developer Cloud (ODC).
+summary: Card Background UI Pattern in ODC groups content blocks with a background image — set color, height, and custom styles in ODC Studio.
 locale: en-us
 guid: 8460d7b9-4aa2-410b-8869-635625d64a4f
 app_type: mobile apps, reactive web apps
