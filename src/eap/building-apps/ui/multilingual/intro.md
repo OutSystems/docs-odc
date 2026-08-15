@@ -1,5 +1,5 @@
 ---
-summary: Learn to build multilingual apps with language switching in OutSystems Developer Cloud (ODC), adhering to RFC 1766 standards.
+summary: Multilingual apps in OutSystems Developer Cloud (ODC) let you translate screens, messages, and static entities, with session-bound language switching.
 tags: internationalization, localization, user experience, language support, rfc standards
 locale: en-us
 guid: ab798636-66c7-4ca9-88df-313bfa5cf8ef
