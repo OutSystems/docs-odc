@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) features the Flip Content UI Pattern for interactive content display in applications.
+summary: Flip Content UI Pattern in OutSystems Developer Cloud (ODC) adds interactive flip cards with CardFront, CardBack, and FlipOnClick properties.
 tags: ui design, user experience, custom widgets, application development, interactive content
 locale: en-us
 guid: d87a061c-83e2-4b7f-b820-4e7f70267a38

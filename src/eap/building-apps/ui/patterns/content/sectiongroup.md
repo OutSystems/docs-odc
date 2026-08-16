@@ -1,6 +1,6 @@
 ---
 tags: ui patterns, widget implementation, application customization, ui design
-summary: Explore how to implement and customize the Section Group UI Pattern in OutSystems Developer Cloud (ODC) to enhance application interfaces.
+summary: Section Group UI Pattern in OutSystems Developer Cloud (ODC) lets you keep section headers sticky while scrolling by configuring HasStickyTitles in ODC Studio.
 locale: en-us
 guid: d179ae56-26b5-48d4-b426-85f8c4ded74e
 app_type: mobile apps, reactive web apps
