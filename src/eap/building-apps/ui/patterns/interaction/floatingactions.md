@@ -1,6 +1,6 @@
 ---
 tags: ui design, user interaction
-summary: Learn how to implement the Floating Actions UI Pattern in OutSystems Developer Cloud (ODC) to enhance user interface design.
+summary: ODC Floating Actions UI Pattern lets you add a floating button with expandable sub-actions to your screen, using IsExpanded and IsHover properties.
 locale: en-us
 guid: a246e3bb-4c75-4e3b-8a53-eb45a08996ae
 app_type: mobile apps, reactive web apps
