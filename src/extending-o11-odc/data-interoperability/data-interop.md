@@ -90,9 +90,17 @@ Application runtime communication depends on your O11 infrastructure setup:
 
 * For **OutSystems self-managed**, customers are responsible for:
 
-    * Enabling the network communication from the ODC stage to their O11 infrastructure. To ensure a secure connection, OutSystems recommends that customers [configure an ODC Private Gateway](../../eap/manage-platform-app-lifecycle/private-gateway.md).
+    * Enabling the network communication from the ODC stage to their O11 infrastructure:
 
-    * Creating a dedicated database user for each O11 environment, and managing the database permissions required for the integration. See [Data interoperability for O11 self-managed infrastructures](data-interop-self-managed.md) for further details.
+        * For an **ODC Cloud** organization, OutSystems recommends that customers configure an [ODC Private Gateway](../../eap/manage-platform-app-lifecycle/private-gateway.md) for a secure connection.
+
+        * For an **[ODC self-hosted](../../eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md)** organization:
+
+            * The Development stage runs on OutSystems Cloud, so OutSystems recommends that customers configure an [ODC Private Gateway](../../eap/manage-platform-app-lifecycle/private-gateway.md) for a secure connection.
+
+            * The Test and Production stages run on customer infrastructure, where Private Gateway isn't available. Customers are responsible for the network connectivity between their self-hosted cluster and their O11 self-managed infrastructure. Refer to [system and network requirements for self-hosted ODC](../../eap/manage-platform-app-lifecycle/self-hosted/sh-install-reqs.md#network-reqs) for further details.
+
+    * Creating a dedicated database user for each O11 environment, and managing the database permissions required for the integration. Refer to [data interoperability for O11 self-managed infrastructures](data-interop-self-managed.md) for further details.
 
 Platform communication from ODC to O11 LifeTime is established via a REST API over HTTPS, restricted by IP allowlisting, and bound to your ODC organization. ODC validates the organization ID when you configure the connection, preventing another ODC organization from connecting to your O11 infrastructure.
 
@@ -159,7 +167,7 @@ OutSystems is working to improve the data interoperability capability. Meanwhile
 
 * Data interoperability isn't yet supported for the following infrastructure setup:
 
-    * [ODC self-hosted](../../eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md)
+    * [ODC self-hosted](../../eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md) connected to an O11 Cloud infrastructure
     * Hybrid O11 infrastructures
     * O11 self-managed infrastructures using [multiple database catalogs and schemas](https://www.outsystems.com/tk/redirect?g=1c742c8a-449c-4828-865b-7295d2f90527)
 
@@ -167,7 +175,7 @@ OutSystems is working to improve the data interoperability capability. Meanwhile
 
 Before you start, make sure the following requirements are met:
 
-* You have an enterprise cloud or self-managed O11 infrastructure. Take into account the [limitations](#limitations) for the O11 infrastructure setup.
+* You have an enterprise cloud or self-managed O11 infrastructure. Take into account the [limitations](#limitations) for the O11 infrastructure setup. If your ODC organization uses [ODC self-hosted](../../eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md), your O11 infrastructure must be self-managed.
 
 * Your O11 infrastructure and environments meet the required **LifeTime** and **Platform Server** versions.
   Refer to [interoperability version requirements](../version-requirements.md#data-interop) for the full list.
@@ -178,13 +186,21 @@ Before you start, make sure the following requirements are met:
 
 * If you have an **O11 self-managed infrastructure**, ensure the following:
 
-    * The databases of the [mapped O11 environments](#mapping) are accessible from your ODC organization. The recommended approach is to [configure an ODC private gateway](../../eap/manage-platform-app-lifecycle/private-gateway.md). In alternative, you can allowlist the [ODC public IP addresses](../../eap/manage-platform-app-lifecycle/odc-public-ips.md#platform-unification) in your firewalls or access policies.
+    * You're responsible for ensuring the databases of the [mapped O11 environments](#mapping) are accessible from the ODC stage:
 
-        <div class="info" markdown="1">
+        * For an **ODC Cloud** organization, the recommended approach is to [configure an ODC private gateway](../../eap/manage-platform-app-lifecycle/private-gateway.md). Alternatively, you can allowlist the [ODC public IP addresses](../../eap/manage-platform-app-lifecycle/odc-public-ips.md#platform-unification) in your firewalls or access policies.
 
-        If you already configured a private gateway for [logic interoperability](../logic-interoperability/logic-interop-secure-connection.md), configure a distinct reserved port for the data interoperability tunnel with your [Cloud Connector](https://github.com/OutSystems/cloud-connector#usage). Each tunnel requires its own reserved port.
+            <div class="info" markdown="1">
 
-        </div>
+            If you already configured a private gateway for [logic interoperability](../logic-interoperability/logic-interop-secure-connection.md), configure a distinct reserved port for the data interoperability tunnel with your [Cloud Connector](https://github.com/OutSystems/cloud-connector#usage). Each tunnel requires its own reserved port.
+
+            </div>
+
+        * For an **[ODC self-hosted](../../eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md)** organization:
+
+            * The Development stage runs on OutSystems Cloud, so the recommended approach is to [configure an ODC private gateway](../../eap/manage-platform-app-lifecycle/private-gateway.md), or alternatively allowlist the [ODC public IP addresses](../../eap/manage-platform-app-lifecycle/odc-public-ips.md#platform-unification).
+
+            * The Test and Production stages run on customer infrastructure, where Private Gateway isn't available. You set up the network connectivity between your self-hosted cluster and the O11 self-managed databases. Refer to [system and network requirements for self-hosted ODC](../../eap/manage-platform-app-lifecycle/self-hosted/sh-install-reqs.md#network-reqs).
 
     * Database administrator access to the databases of the mapped O11 environments to perform [the required database operations](data-interop-self-managed.md) at specific moments.
 
