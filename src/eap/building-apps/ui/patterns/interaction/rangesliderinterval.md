@@ -1,6 +1,6 @@
 ---
 tags: ui design, nouislider library
-summary: Explore the Range Slider Interval Pattern in OutSystems Developer Cloud (ODC) for selecting values within a defined range using the noUiSlider library.
+summary: Range Slider Interval pattern in OutSystems Developer Cloud (ODC) lets you build a dual-handle slider for selecting value ranges using noUiSlider.
 locale: en-us
 guid: aa015998-a6e2-48bb-a0cc-2c53b4df2832
 app_type: mobile apps, reactive web apps

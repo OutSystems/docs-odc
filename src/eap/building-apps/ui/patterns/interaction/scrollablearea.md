@@ -1,6 +1,6 @@
 ---
 tags: ui patterns, ux design
-summary: OutSystems Developer Cloud (ODC) features a Scrollable Area Pattern for creating scrollable content blocks in applications.
+summary: ODC Scrollable Area Pattern lets you create scrollable content blocks with configurable orientation, dimensions, and scrollbar type.
 locale: en-us
 guid: 2cb523f7-81e5-4505-949b-801853c28f34
 app_type: mobile apps, reactive web apps
