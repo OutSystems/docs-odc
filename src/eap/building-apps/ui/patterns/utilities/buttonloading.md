@@ -1,6 +1,6 @@
 ---
 tags: ui components, ui patterns
-summary: Explore the Button Loading UI Pattern in OutSystems Developer Cloud (ODC) for enhanced user feedback.
+summary: Button Loading UI Pattern in ODC adds a loading spinner to a button, disabling it during action execution until the action completes.
 locale: en-us
 guid: a3269377-0c0c-440f-b194-d7409db9f481
 app_type: mobile apps, reactive web apps

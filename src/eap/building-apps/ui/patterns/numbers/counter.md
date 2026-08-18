@@ -1,6 +1,6 @@
 ---
 tags: ui components, data visualization
-summary: Learn how to use the Counter UI Pattern in OutSystems Developer Cloud (ODC) to display numerical data effectively.
+summary: Counter UI Pattern in ODC lets you display numerical notifications by binding aggregates to a widget and customizing height and orientation.
 locale: en-us
 guid: 7b33f1cb-f293-49c5-ad4a-8c781526acb7
 app_type: mobile apps, reactive web apps
