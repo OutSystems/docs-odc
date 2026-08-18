@@ -1,5 +1,5 @@
 ---
-summary: Learn to UI blocks across apps with OutSystems Developer Cloud (ODC) for efficient development.
+summary: ODC screen blocks reuse across apps by creating a public block in a library and adding it to mobile or web apps in ODC Studio.
 tags: ui development, component reusability
 locale: en-us
 guid: a62501dc-9ec8-41f6-add8-50b3e3934b8b

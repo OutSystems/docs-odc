@@ -1,6 +1,6 @@
 ---
 tags: ui patterns, customization, mobile development, event handling, frontend development
-summary: Explore touch event customization in mobile apps using OutSystems Developer Cloud (ODC).
+summary: Touch Events UI Pattern in OutSystems Developer Cloud (ODC) lets you enable touch events on widgets, use event.preventDefault(), and hide headers on scroll.
 locale: en-us
 guid: ab744c4d-12f5-4b92-aa63-0e2a91d693f0
 app_type: mobile apps, reactive web apps
