@@ -1,5 +1,12 @@
 ---
-tags: ui building, mobile app development, video integration, responsive design, user interface patterns
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Explore how to embed a native video player in your application using the Video UI pattern in OutSystems Developer Cloud (ODC).
 locale: en-us
 guid: c9dbb039-b648-4395-a19d-863c0fd4cfae

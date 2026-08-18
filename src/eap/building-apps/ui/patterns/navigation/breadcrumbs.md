@@ -1,5 +1,10 @@
 ---
-tags: ui patterns, navigation, user experience, web blocks, widgets
+tags:
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - UX
+  - Widgets
 summary: Learn how to implement and customize the Breadcrumbs UI Pattern in OutSystems Developer Cloud (ODC) to enhance app navigation.
 locale: en-us
 guid: 78642488-92c4-45ba-a5ff-65e0e79506a9

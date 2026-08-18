@@ -1,5 +1,12 @@
 ---
-tags: ui patterns, navigation design
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - UX
 summary: OutSystems Developer Cloud (ODC) features the Bottom Bar Item UI Pattern for easy navigation and feature access in applications.
 locale: en-us
 guid: a47f6440-0442-42ec-8674-e4cfb134957b
