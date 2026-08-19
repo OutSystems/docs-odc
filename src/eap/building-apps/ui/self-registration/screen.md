@@ -1,5 +1,5 @@
 ---
-summary: Learn how to create a self-registration screen in OutSystems Developer Cloud (ODC) by modifying a login screen to allow user sign-ups.
+summary: "OutSystems Developer Cloud (ODC) self-registration screen: build a Sign up screen in ODC Studio by copying and adapting the Login screen."
 tags: user interface design, user registration
 locale: en-us
 guid: cd42bc12-6d0b-4da8-95f5-1e704fc0bfff

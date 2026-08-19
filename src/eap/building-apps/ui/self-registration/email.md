@@ -1,5 +1,5 @@
 ---
-summary: This article provides a guide on creating an email to send a verification code using OutSystems Developer Cloud (ODC).
+summary: "ODC email verification code setup: copy the ResetPassword template in ODC Studio and configure the UserRegistration email for self-registration."
 tags: email templates, user authentication, configuration, user experience, application development
 locale: en-us
 guid: 8e30d486-dbf3-457c-87f8-4cd9e65b0156

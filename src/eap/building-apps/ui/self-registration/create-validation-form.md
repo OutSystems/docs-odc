@@ -1,5 +1,5 @@
 ---
-summary: This article provides a detailed guide on creating a verification code and password verification form using OutSystems Developer Cloud (ODC).
+summary: "ODC verification code and password form: add boolean visibility logic, password policy validation, and FinishUserRegistration to complete self-registration in ODC Studio."
 tags: user interface design,form validation,boolean logic,conditional rendering,email verification
 locale: en-us
 guid: 64EC5395-D2E9-494A-A556-9547438D74B9
