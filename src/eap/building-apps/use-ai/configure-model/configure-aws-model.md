@@ -1,5 +1,5 @@
 ---
-summary: Explore how to integrate Amazon Bedrock foundation AI models with OutSystems Developer Cloud (ODC) for enhanced AI capabilities.
+summary: "Amazon Bedrock in OutSystems Developer Cloud (ODC): request Anthropic Claude FM access, create an IAM user, and configure access keys for AI Agent Builder."
 tags: aws, artificial intelligence, amazon bedrock, foundation models, ai model customization
 locale: en-us
 guid: 6550169c-eb62-46d3-9181-68a71bed10f9
