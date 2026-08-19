@@ -1,6 +1,10 @@
 ---
 summary: OutSystems Developer Cloud (ODC) enables data editing directly within ODC Studio, facilitating real-time app testing and stakeholder demonstrations.
-tags: data management, entity management, app testing, stakeholder engagement, sample data
+tags:
+  - Data
+  - Data Model
+  - Entities
+  - Testing
 locale: en-us
 guid: 7d4d3bb7-5419-482d-8feb-747de019a7a0
 app_type: mobile apps, reactive web apps

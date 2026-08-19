@@ -5,7 +5,13 @@ locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&node-id=5541-727&t=perdH6hzwwYg6ePr-1
-tags: sample data management, prototyping, odc studio, screen templates, data import/export
+tags:
+  - Data
+  - Entities
+  - Logic
+  - Screens
+  - Templates
+  - Timers
 audience:
   - Developer
   - Front-end developer

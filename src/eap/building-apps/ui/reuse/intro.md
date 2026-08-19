@@ -1,6 +1,13 @@
 ---
 summary: Explore how OutSystems Developer Cloud (ODC) enhances UI reusability and maintainability through the use of blocks for common interface elements.
-tags: ui components, event handling
+tags:
+  - Blocks
+  - Events
+  - Front-End
+  - Mobile app
+  - Screens
+  - UI
+  - Widgets
 locale: en-us
 guid: b5909d7e-3f2e-4c0c-bf25-a312d12be834
 app_type: mobile apps, reactive web apps

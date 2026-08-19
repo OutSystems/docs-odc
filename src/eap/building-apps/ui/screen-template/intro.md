@@ -1,6 +1,12 @@
 ---
 summary: Explore how OutSystems Developer Cloud (ODC) utilizes Screen Templates to accelerate app development by providing predefined layouts and sample data.
-tags: screen design, outsystems ui framework
+tags:
+  - Layouts
+  - OutSystems UI
+  - Screens
+  - Templates
+  - UI
+  - Widgets
 locale: en-us
 guid: 3136da1f-dec0-4a0b-9403-59278cb8b247
 app_type: mobile apps, reactive web apps

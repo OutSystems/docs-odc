@@ -1,6 +1,9 @@
 ---
 summary: Learn how to set up user registration logic in OutSystems Developer Cloud (ODC) by configuring server actions and validating user inputs.
-tags: user registration, user input validation
+tags:
+  - Authentication
+  - End-user Authentication
+  - Logic
 locale: en-us
 guid: bf31e755-d3d7-49b2-9591-fd0d197db633
 app_type: mobile apps, reactive web apps

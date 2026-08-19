@@ -1,7 +1,10 @@
 ---
 helpids: 30547
 summary: In this article you will learn how to add custom data source to the AI Agent Builder app.
-tags: ai agent builder, custom data sources, database connectivity, data synchronization, api integration
+tags:
+  - AI
+  - Agentic
+  - External Databases
 guid: 58f21b67-9a0a-4636-8131-810ac77f6f8e
 locale: en-us
 app_type: mobile apps, reactive web apps
