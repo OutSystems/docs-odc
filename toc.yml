@@ -873,8 +873,9 @@
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/screen-aggregates-exposing-system-entities-on-anonymous-screens.md
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/sql-injection.md
             - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/visible-disabled-button.md
-            - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/server-call-screen-accessible-everyone.md
-    # Traces
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/server-call-exposed-on-anonymous-screen.md
+            - href: eap/monitor-and-troubleshoot/manage-technical-debt/security/database-operation-in-client-side.md
+
     - href: eap/monitor-and-troubleshoot/traces/intro.md
     - topics: 
         - href: eap/monitor-and-troubleshoot/traces/server-side-traces.md
