@@ -1,5 +1,5 @@
 ---
-summary: Learn how to add a conditional start to your workflow
+summary: ODC Conditional Start node lets you trigger event-driven flows within a workflow, including how to add, configure events, and set conditions.
 tags: conditional start, workflow automation, mobile apps, reactive web apps, event trigger
 locale: en-us
 guid: e1f87f6b-7684-4d69-b7f3-4e9bd0688be3

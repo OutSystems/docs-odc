@@ -1,6 +1,6 @@
 ---
 helpids: 30548
-summary: This article provides an overview to function calling.
+summary: ODC function calling lets your AI agent invoke external APIs and ODC app data to answer natural language queries via AI Agent Builder.
 tags: function calling, ai integration, api interaction, data retrieval, natural language processing
 guid: 7039dfeb-303e-42e9-8ae2-cf0763f47678
 locale: en-us

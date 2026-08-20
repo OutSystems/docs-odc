@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) facilitates the creation and integration of AI agents through its AI Agent Builder tool.
+summary: "AI Agent Builder on ODC: install from Forge, configure AI models, create agents, and integrate them into your app step by step."
 tags: ai integration, ai model management, authentication, forge applications, user permissions
 locale: en-us
 guid: 683e4fb2-5457-4952-8f98-0da719576379
