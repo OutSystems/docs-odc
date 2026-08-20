@@ -1,6 +1,8 @@
 ---
-summary: Learn about URL management functions in OutSystems Developer Cloud (ODC), including domain and URL path handling.
-tags: url handling, domain management, web development, app configuration, outsystems development
+summary: OutSystems Developer Cloud (ODC) URL built-in functions GetBookmarkableURL and GetOwnerURLPath, with availability, output, and custom URL patterns.
+tags:
+  - Logic
+  - Screens
 locale: en-us
 guid: add42ac6-eb89-4448-8b6e-84ceb8a921df
 app_type: mobile apps, reactive web apps
@@ -13,9 +15,12 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+isautopublish: true
 ---
 
 # URL
+
+> This reference lists the URL-related built-in functions currently available in OutSystems Developer Cloud (ODC). Functions documented here, such as GetBookmarkableURL and GetOwnerURLPath, are available in ODC Studio. Other URL functions that may exist in different OutSystems platforms (for example, GetDefaultDomain) might not be available in ODC.
 
 ## GetBookmarkableURL
 
@@ -38,6 +43,25 @@ Type: Text
 
 ```
 GetBookmarkableURL() = "https://my-org.outsystems.app/Customers/EditCustomer?CustomerId=1"
+```
+
+### Custom URLs
+
+If a screen has the **Custom URL** property set to **Yes**, `GetBookmarkableURL()` returns the URL with the screen's custom **Page Name** instead of the default screen name. The format of the returned URL depends on the screen's **URL Structure** property:
+
+* **Query string**: the custom page name replaces the screen name in the URL, and input parameters remain query string parameters.
+* **Path**: input parameters are embedded in the URL path, following the pattern defined in the **URL Pattern** property, using `{ParameterName}` placeholders.
+
+For example, take a screen with **Custom URL** set to **Yes** and **Page Name** set to `mycustompage`, with an input parameter named `CustomerId`. With **URL Structure** set to **Query string**, `GetBookmarkableURL()` returns a URL like this:
+
+```
+GetBookmarkableURL() = "https://my-org.outsystems.app/MyApp/mycustompage?CustomerId=1"
+```
+
+With **URL Structure** set to **Path** and **URL Pattern** set to `mycustompage/{CustomerId}`, `GetBookmarkableURL()` returns a URL like this:
+
+```
+GetBookmarkableURL() = "https://my-org.outsystems.app/MyApp/mycustompage/1"
 ```
 
 ## GetOwnerURLPath
