@@ -1,5 +1,5 @@
 ---
-summary: Learn how to add a human activity to your workflow
+summary: "OutSystems Developer Cloud (ODC) human activity workflow: configure task assignment, close-on events, and timeouts."
 tags: workflow management, user task assignment, application development, event handling, odc
 locale: en-us
 guid: 3252a375-0332-4979-8e52-3205215fd0fa

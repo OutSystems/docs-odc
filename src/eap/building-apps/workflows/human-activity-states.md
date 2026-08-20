@@ -1,7 +1,7 @@
 ---
 guid: 2adb5414-8d03-4300-a146-7c142baa88bf
 locale: en-us
-summary: This article provides details on different human activity states and transition between these states on executing the low-code APIs.
+summary: ODC human activity states — Running, Waiting, Open, Completed, Terminated, and Error — and how low-code APIs trigger transitions.
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7710-272
 coverage-type:
   - remember

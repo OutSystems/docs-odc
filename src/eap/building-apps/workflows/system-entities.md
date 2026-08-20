@@ -1,5 +1,5 @@
 ---
-summary: Learn about the system and static entities that are available in ODC Studio for workflows
+summary: OutSystems Developer Cloud (ODC) workflow system entities, including ActivityDefinition and ProcessInstance, and static entities for ODC Studio.
 tags: workflow management, system entities, process design, workflow execution, workflow automation
 locale: en-us
 guid: dad534b3-39c0-4907-a743-5509d867e111

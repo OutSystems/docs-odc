@@ -1,5 +1,5 @@
 ---
-summary: Lear more about the built-in fucntions availbale for workflows in ODC
+summary: ODC built-in functions available for workflows in ODC Studio, including Math, Text, Date and Time, and which groups are not supported.
 tags: workflow functions, logic implementation, built-in functions in workflows, outsystems development, workflow development
 guid: 2370adfe-ecfc-4e6a-ab9e-0f94b74ac148
 locale: en-us

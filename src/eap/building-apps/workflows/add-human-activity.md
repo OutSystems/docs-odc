@@ -1,5 +1,5 @@
 ---
-summary: Learn how to add a human activity to your workflow
+summary: ODC human activity in a workflow lets you assign manual tasks to users, trigger close-on events, build notifications, and implement SLAs.
 tags: workflow management, user task assignment, application development, event handling, odc
 locale: en-us
 guid: 9b6fcc2b-f38c-4225-b5a0-4989655f9545
