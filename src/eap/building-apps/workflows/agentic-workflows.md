@@ -6,6 +6,7 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&
 coverage-type:
   - remember
   - understand
+  - apply
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc

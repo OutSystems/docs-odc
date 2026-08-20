@@ -13,6 +13,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+  - understand
 ---
 
 # Go to a flow step in workflows
