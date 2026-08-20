@@ -1,6 +1,8 @@
 ---
-summary: "Business processes in OutSystems Developer Cloud (ODC) organize tasks into structured workflows, covering key benefits like automation and visibility, and common use cases."
-tags: business process management, workflow automation, process optimization, standardized procedures, change management
+summary: Learn about the benefits of incorporating business processes into your organization
+tags:
+  - Business Processes
+  - Workflows
 locale: en-us
 guid: bdc0cd98-9506-41da-8bee-21e97eb144b3
 app_type: mobile apps, reactive web apps
