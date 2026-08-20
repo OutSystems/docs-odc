@@ -504,13 +504,18 @@
          # Progressive web app
         - href: eap/building-apps/mobile/pwa.md
         - href: eap/building-apps/mobile/privacy-updates-for-apple-app-store-submissions.md
-        # Best practices
-        - href: eap/building-apps/mobile/best-practices/best-practices-native-plugins.md
-        - href: eap/building-apps/mobile/best-practices/best-practices-testing-debugging.md        
-        # Best practices
-        - href: eap/building-apps/mobile/best-practices/best-practices-security.md
-        - href: eap/building-apps/mobile/best-practices/best-practices-push-notifications.md
-        - href: eap/building-apps/mobile/best-practices/best-practices-app-lifecycle-navigation.md
+                     
+         # Best practices
+        - href: eap/building-apps/mobile/best-practices/intro.md
+        - topics:
+            - href: eap/building-apps/mobile/best-practices/best-practices-app-lifecycle-navigation.md
+            - href: eap/building-apps/mobile/best-practices/best-practices-native-plugins.md
+            - href: eap/building-apps/mobile/best-practices/loading-data-mobile.md
+            - href: eap/building-apps/mobile/best-practices/rendering-data-mobile.md
+            - href: eap/building-apps/mobile/best-practices/performance-optimization-mobile.md
+            - href: eap/building-apps/mobile/best-practices/best-practices-push-notifications.md
+            - href: eap/building-apps/mobile/best-practices/best-practices-security.md
+            - href: eap/building-apps/mobile/best-practices/best-practices-testing-debugging.md
         
 
     # Emails

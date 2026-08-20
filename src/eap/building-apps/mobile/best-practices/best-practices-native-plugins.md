@@ -4,6 +4,7 @@ locale: en-us
 summary: Apply these recommendations when selecting, integrating, and building Capacitor plugins in OutSystems Developer Cloud mobile apps.
 figma:
 coverage-type:
+  - apply
   - evaluate
 app_type: mobile apps
 platform-version: odc
@@ -30,7 +31,7 @@ Plugins give mobile apps access to native device capabilities, such as geolocati
 
 ## Use OutSystems-supported plugins before alternatives {#use-supported-plugins}
 
-OutSystems-supported plugins on Forge have been tested with all supported MABS versions, are actively maintained, and are backed by OutSystems support. They also come with guaranteed Capacitor compatibility. Reaching for community or custom plugins before checking Forge increases both maintenance effort and risk.
+[OutSystems-supported plugins](../../../integration-with-systems/mobile-plugins/os-supported-plugins.md) on Forge have been tested with all supported MABS versions, are actively maintained, and are backed by OutSystems support. They also come with guaranteed Capacitor compatibility. Reaching for community or custom plugins before checking Forge increases both maintenance effort and risk.
 
 ### Recommendation
 
