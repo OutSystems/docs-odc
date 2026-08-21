@@ -12,7 +12,8 @@ audience:
 outsystems-tools:
   - none
 coverage-type:
-  - none
+  - understand
+  - evaluate
 ---
 
 # Integration with external systems
