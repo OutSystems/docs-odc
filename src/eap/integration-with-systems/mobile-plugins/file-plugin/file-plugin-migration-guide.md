@@ -13,6 +13,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+  - apply
 ---
 
 # File Plugin migration guide from version 1 to version 2
