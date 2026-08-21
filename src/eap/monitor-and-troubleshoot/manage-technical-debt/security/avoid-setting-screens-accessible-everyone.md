@@ -11,7 +11,6 @@ coverage-type:
 audience:
   - Developer
   - Front-end developer
-  - Platform administrator
 outsystems-tools:
   - none
 ---
