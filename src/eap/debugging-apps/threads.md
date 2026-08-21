@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) supports thread management and debugging across various actions and events in web and mobile applications.
+summary: ODC Studio thread types behave differently at breakpoints, and you can abort or suspend executing server threads in your app.
 tags: thread management, debugging techniques, application performance, software development breakpoints
 locale: en-us
 guid: ab6189d5-3803-4f78-92ff-4072e356fc29

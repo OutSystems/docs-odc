@@ -1,5 +1,5 @@
 ---
-summary: This article provides a guide on configuring a HTTP proxy server in the operating system and ODC Studio for OutSystems Developer Cloud (ODC) connectivity.
+summary: HTTP proxy server configuration for ODC Studio on Windows and macOS, including OS-level settings and proxy authentication in ODC Studio preferences.
 tags: proxy configuration, http proxy, windows configuration, macos configuration, network settings
 locale: en-us
 guid: 00ad2577-20fe-41d3-8d0f-c6626c50b587

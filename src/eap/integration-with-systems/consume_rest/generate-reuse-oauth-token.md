@@ -1,7 +1,7 @@
 ---
 guid: d185cdff-480f-479b-b2e2-2a93b24bf92b
 locale: en-us
-summary: This article explains how to generate and reuse OAuth access token when you consume an external API that use OAuth 2.0 authorization.
+summary: "ODC OAuth 2.0 access token: get client credentials, store it encrypted, and reuse or refresh it for OutSystems Developer Cloud (ODC) REST API calls."
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=7721-1015
 coverage-type:
   - apply
