@@ -8,6 +8,8 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 platform-version: odc
 coverage-type:
 - understand
+topic:
+- dynamic-sort-setup
 audience:
   - Developer
 outsystems-tools:

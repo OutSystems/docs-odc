@@ -14,6 +14,7 @@ coverage-type:
   - apply
 figma: 
 topic:
+  - debug-agentic-apps
 helpids: 
 ---
 

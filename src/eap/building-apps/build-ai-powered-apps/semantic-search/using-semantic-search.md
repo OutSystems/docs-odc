@@ -7,6 +7,7 @@ coverage-type:
   - apply
   - remember
 topic:
+  - implement-semantic-search
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

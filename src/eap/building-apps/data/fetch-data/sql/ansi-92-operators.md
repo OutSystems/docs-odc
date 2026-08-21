@@ -7,6 +7,9 @@ coverage-type:
   - apply
   - remember
 topic:
+  - sql-null-behavior
+  - sql-operator-reference
+  - sql-type-conversion
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

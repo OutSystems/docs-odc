@@ -7,6 +7,8 @@ coverage-type:
   - understand
   - remember
 topic:
+  - ansi-92-syntax-basics
+  - sql-query-execution
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:

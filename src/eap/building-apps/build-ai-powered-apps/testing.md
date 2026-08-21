@@ -8,6 +8,8 @@ coverage-type:
   - apply
   - evaluate
 topic:
+  - test-agentic-app
+  - test-app-prerequisites
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

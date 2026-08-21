@@ -13,6 +13,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - aggregates
 ---
 
 # Fetch data from the database in OutSystems

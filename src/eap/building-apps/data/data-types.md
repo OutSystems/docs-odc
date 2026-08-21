@@ -13,6 +13,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - compound-data
+  - datetime-utc-behavior
+  - odc-data-types
 ---
 
 # Data types and conversions
