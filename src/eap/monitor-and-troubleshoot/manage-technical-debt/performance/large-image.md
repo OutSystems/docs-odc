@@ -1,5 +1,5 @@
 ---
-summary: Large images included in the app.
+summary: "Large images in OutSystems Developer Cloud (ODC) apps increase bandwidth usage and load time — reduce them below 150 KB for mobile and 500 KB for web."
 tags: image optimization, bandwidth management, app performance, mobile apps, web apps
 guid: 81471bb9-b81b-4f7e-90de-0b2d47e54074
 locale: en-us

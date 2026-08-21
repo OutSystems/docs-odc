@@ -1,5 +1,5 @@
 ---
-summary: The default timeout for server action requests is more than 10 seconds, or an explicit timeout in a server call is more than 10 seconds.
+summary: ODC long server request timeout findings occur when server action timeouts exceed 10 seconds, degrading user experience. Cache data in advance to fix it.
 tags: server requests, timeout settings, user experience, data processing, connectivity issues
 guid: d6a6ff38-316b-476d-a579-c9ac92b0079f
 locale: en-us

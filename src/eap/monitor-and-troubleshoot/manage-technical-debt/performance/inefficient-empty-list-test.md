@@ -1,5 +1,5 @@
 ---
-summary: Use the Count property of an Aggregate for SQL query to check if results were returned.
+summary: "OutSystems Developer Cloud (ODC) inefficient empty list test: use List.Empty instead of List.Count to avoid an extra query and improve performance."
 tags: count property, aggregate, sql query, performance, outsystems
 guid: 468193f3-a09a-4dfb-acc8-f14947476d95
 locale: en-us

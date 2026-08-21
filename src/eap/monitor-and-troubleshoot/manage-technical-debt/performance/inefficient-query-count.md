@@ -1,5 +1,5 @@
 ---
-summary: Counting query results using an inefficient query.
+summary: ODC inefficient query count happens when the Count property reruns a complex SQL query with joins — use a simplified query to fix it.
 tags: sql query optimization, performance improvement, data retrieval, database efficiency, troubleshooting
 guid: 0b899e99-db9d-4840-85ae-691656b8f0d8
 locale: en-us

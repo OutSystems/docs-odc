@@ -1,5 +1,5 @@
 ---
-summary: Large resources included in an app.
+summary: "OutSystems Developer Cloud (ODC) large resources slow down app publishing and downloading; reduce them below 150KB (mobile) or 500KB (web) or serve them externally."
 tags: large resources, app performance, publishing issues, mobile apps, reactive web apps
 guid: e93b4d71-951f-414f-affc-61c1d39c7f48
 locale: en-us
