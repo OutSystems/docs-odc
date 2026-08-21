@@ -10,6 +10,7 @@ topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
+  - Developer
   - Platform administrator
 tags: postgresql upgrade, runtime database, performance improvement, breaking changes, database management
 outsystems-tools:
