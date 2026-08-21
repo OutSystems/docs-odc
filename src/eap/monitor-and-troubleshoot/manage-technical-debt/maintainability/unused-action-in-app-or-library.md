@@ -1,5 +1,5 @@
 ---
-summary: An action that isn't used in an app or library and is also not exposed to other apps or libraries (non-public action).
+summary: Unused action in OutSystems Developer Cloud (ODC) apps or libraries increases code size and security risks. Delete it if not needed.
 tags: code maintenance, security risks, unused actions, non-public actions, mobile apps
 guid: 395ec5da-9a47-4849-9a22-cbaffa541e8e
 locale: en-us

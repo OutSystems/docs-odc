@@ -1,5 +1,5 @@
 ---
-summary: CSS in the screen's style sheet.
+summary: "CSS in the OutSystems Developer Cloud (ODC) screen style sheet causes maintenance issues and mobile flicker; centralize styles in the app's Theme."
 tags: css, screen style sheet, mobile apps, reactive web apps, maintenance
 guid: f798d7d6-0b99-40e3-aef6-fcc43ed598e0
 locale: en-us

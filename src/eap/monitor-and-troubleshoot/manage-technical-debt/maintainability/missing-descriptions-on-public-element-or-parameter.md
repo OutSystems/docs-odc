@@ -1,5 +1,5 @@
 ---
-summary: Required descriptions of modules, modules' public elements, and their related input/output parameters.
+summary: "ODC missing description on public elements and parameters: add descriptions to modules, entities, and parameters to resolve this finding."
 tags: module descriptions, public elements, input/output parameters, documentation practices, mobile apps
 guid: 1c910902-8db4-4b41-b00d-2bca550b7029
 locale: en-us
