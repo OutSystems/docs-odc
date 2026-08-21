@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) features an App health dashboard for monitoring and analyzing app performance metrics.
+summary: ODC Analytics dashboard monitors app performance, health scores, errors, response times, AI model usage, and agent metrics across stages.
 tags: performance monitoring, app health analysis, dashboard usage, error debugging, app performance metrics
 locale: en-us
 guid: e190d5fb-6b99-4d9b-a64f-a3b34be3588d

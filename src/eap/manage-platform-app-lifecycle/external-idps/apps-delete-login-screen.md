@@ -1,5 +1,5 @@
 ---
-summary: Add an alternate path in the login flow to redirect users to a single external identity provider, while keeping the built-in login for easy revert.
+summary: "OutSystems Developer Cloud (ODC) login flow bypass: redirect to a single external IdP in ODC Studio apps while keeping the built-in login path."
 tags: authentication, identity provider integration, user management, single sign-on
 helpids: 30500
 locale: en-us

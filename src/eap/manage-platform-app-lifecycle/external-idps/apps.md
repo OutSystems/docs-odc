@@ -1,5 +1,5 @@
 ---
-summary: Learn how to integrate external identity providers into your applications using OutSystems Developer Cloud (ODC) by modifying the built-in login screen and related flows.
+summary: "OutSystems Developer Cloud (ODC) external IdP login: add identity provider buttons and modify login/logout flows in ODC Studio apps."
 tags: authentication, identity provider integration, user management, single sign-on
 helpids: 30500
 locale: en-us
