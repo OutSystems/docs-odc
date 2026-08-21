@@ -7,7 +7,7 @@ app_type: mobile apps, reactive web apps
 platform-version: odc
 figma: https://www.figma.com/design/IStE4rx9SlrBLEK5OXk4nm/Monitor-and-troubleshoot-apps?node-id=3522-58&t=fro20soaPpjjIXwf-1
 coverage-type:
-  - evaluate
+  - unblock
 audience:
   - Developer
   - Front-end developer
