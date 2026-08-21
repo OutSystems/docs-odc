@@ -8,7 +8,6 @@ platform-version: odc
 figma:
 coverage-type:
   - unblock
-  - remember
 audience:
   - Developer
   - Front-end developer
