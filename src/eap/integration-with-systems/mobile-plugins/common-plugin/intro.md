@@ -1,5 +1,5 @@
 ---
-summary: Use the Common Plugin to access a set of common actions between all mobile apps.
+summary: "Common Plugin for OutSystems Developer Cloud (ODC) mobile apps: access device info, console logging, and manage plugin scopes with PluginManager."
 tags: plugin development, cordova integration, mobile app development, outsystems mobile, javascript modules
 locale: en-us
 guid: d5aea2d2-678e-4823-a1f2-26e1022244c3

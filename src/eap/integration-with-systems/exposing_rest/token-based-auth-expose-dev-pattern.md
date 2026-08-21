@@ -1,7 +1,7 @@
 ---
 guid: 941955cc-75d6-46d7-ba71-5fe9f89da4de
 locale: en-us
-summary: Learn a development pattern for securing exposed REST APIs in OutSystems Developer Cloud (ODC) using JWT-based token authentication.
+summary: "JWT authentication for OutSystems Developer Cloud (ODC) exposed REST APIs: design the OnAuthentication flow, validate claims, and select a token flow."
 coverage-type:
   - understand
   - evaluate
