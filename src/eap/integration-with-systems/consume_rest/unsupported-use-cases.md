@@ -1,5 +1,5 @@
 ---
-summary: Explore the limitations and workarounds for unsupported REST enum use cases in OutSystems Developer Cloud (ODC) as detailed in the technical documentation.
+summary: ODC REST API unsupported enum use cases for Static Entities, $ref parameters, header outputs, and oneOf, with Swagger spec workarounds.
 tags: rest api integration, static entities, swagger specification, enum handling, api development
 locale: en-us
 guid: 1f305f99-d43e-45e7-abc4-36f411f33745

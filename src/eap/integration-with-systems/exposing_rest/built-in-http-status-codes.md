@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) utilizes specific HTTP status codes for REST API interactions, detailed in the provided list.
+summary: "ODC REST API built-in HTTP status codes reference: 200, 400, 401, 403, 404, 405, 406, 415, and 500 with causes and how to set custom codes."
 tags: rest api, http status codes, api development, error handling, server response
 locale: en-us
 guid: dcb96e66-c362-42fd-a2b2-42515c06c07b

@@ -1,5 +1,5 @@
 ---
-summary: Learn how to effectively throw custom errors in exposed REST APIs using OutSystems Developer Cloud (ODC).
+summary: "OutSystems Developer Cloud (ODC) REST API custom error: use a User Exception and Raise Error element to return a custom HTTP status code."
 tags: error handling, rest api, http status codes, exception management, database transactions
 locale: en-us
 guid: e1d028a0-d688-4cbb-93c1-caecb302ee9a

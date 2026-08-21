@@ -1,5 +1,5 @@
 ---
-summary: Learn how to design and manage JWT signing keys and JSON Web Keys (JWK) for securing exposed REST APIs in OutSystems Developer Cloud (ODC).
+summary: "JSON Web Keys (JWK) and JWT signing in ODC: symmetric HMAC vs. asymmetric RSA/EC key management for securing exposed REST APIs."
 tags: jwt, json web keys, api security, key management, token-based authentication
 locale: en-us
 guid: 63f8b0fe-24f6-48bd-a3a8-90c372949aad
