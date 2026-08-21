@@ -1,5 +1,5 @@
 ---
-summary: Explore the InAppBrowser plugin in OutSystems ODC (ODC) for opening external URLs directly in your application.
+summary: InAppBrowser plugin for OutSystems Developer Cloud (ODC) lets you open URLs in a web view, system browser, or external browser in ODC mobile apps.
 guid: D766B8AE-907C-4EF5-A6FA-2B20CCBBD432
 locale: en-us
 app_type: mobile apps
