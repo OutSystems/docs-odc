@@ -1,5 +1,5 @@
 ---
-summary: Learn how OutSystems Developer Cloud (ODC) enables offline access and data synchronization for mobile apps and PWAs.
+summary: OutSystems Developer Cloud (ODC) offline data synchronization for mobile apps and PWAs uses SQLite and IndexedDB to store and sync data.
 tags: offline capabilities, data synchronization, progressive web apps, sqlite, indexeddb
 locale: en-us
 guid: 177de5fe-159e-4ac1-b6f3-4d8c921d0ac8

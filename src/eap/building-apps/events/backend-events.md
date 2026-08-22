@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) enables asynchronous communication and task automation via back-end events.
+summary: ODC event-driven architecture uses a pub/sub model for asynchronous parallel processing between loosely coupled apps in OutSystems Developer Cloud (ODC).
 helpids: 30518
 locale: en-us
 guid: 54254c98-5a1e-42c3-a280-fa2aae5c5abe

@@ -1,5 +1,5 @@
 ---
-summary: Learn about the Read-Only Data Optimized pattern in OutSystems Developer Cloud (ODC) for efficient data synchronization in mobile apps.
+summary: Read-Only Data Optimized pattern in ODC syncs only changed or deleted records to local storage using ModifiedOn and IsActive attributes.
 tags: data synchronization, offline data handling, performance optimization, mobile app development
 locale: en-us
 guid: 8a1bd1e8-dbf6-4747-a6a8-07a5cf586c8a
