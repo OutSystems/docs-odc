@@ -1,5 +1,5 @@
 ---
-summary: Manage transactions in OutSystems Developer Cloud (ODC) by controlling OutSystems and External requests.
+summary: ODC transactions in external entities are auto-committed per request; you control only the OutSystems database transaction using Exception Handlers.
 tags: external system integration, error handling, database operations, transaction management, service actions
 guid: 05934d09-1852-40c7-8b4f-cafd0f93f2a3
 locale: en-us
