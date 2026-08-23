@@ -1,5 +1,5 @@
 ---
-summary: OutSystems Developer Cloud (ODC) leverages container infrastructure to manage and execute timers for asynchronous tasks in applications.
+summary: ODC timers use container-based cron jobs to run asynchronous logic, with configurable timeout and automatic retries on failure.
 tags: timers, asynchronous tasks, container infrastructure, job scheduler, cron jobs
 locale: en-us
 guid: 94BE2885-0E48-4516-9CD1-6638F16E7F4E
