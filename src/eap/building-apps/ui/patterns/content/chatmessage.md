@@ -1,6 +1,6 @@
 ---
 tags: ui patterns, user interface design, chat applications, widgets, outsystems development
-summary: Learn how to integrate and customize the Chat Message UI Pattern in OutSystems Developer Cloud (ODC) for enhanced chat functionalities.
+summary: Chat Message UI Pattern in ODC lets you display conversational posts with avatars, text, and statuses in mobile and reactive web apps.
 locale: en-us
 guid: e2779043-5437-4ee5-aed8-03b1a2f1ff85
 app_type: mobile apps, reactive web apps
