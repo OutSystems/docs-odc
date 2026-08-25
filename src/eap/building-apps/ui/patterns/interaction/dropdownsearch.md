@@ -1,6 +1,6 @@
 ---
 tags: ui patterns, user interface design, data binding, widgets, employee management
-summary: OutSystems Developer Cloud (ODC) includes a Dropdown Search UI Pattern for searchable option selection in applications.
+summary: Dropdown Search UI Pattern in ODC lets you build a searchable dropdown with data binding, aggregates, and an OnChanged handler in ODC Studio.
 locale: en-us
 guid: 667dfcf6-b299-492b-8e93-655ad62ea91a
 app_type: mobile apps, reactive web apps
