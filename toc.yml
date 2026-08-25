@@ -580,6 +580,9 @@
         - href: eap/building-apps/seo/custom-404.md
         - href: eap/building-apps/seo/remove-ts-query-strings.md
 
+    # ODC Solutions
+        - href: eap/building-apps/solutions/introduction-to-solutions.md
+  
 # Debugging apps
 - href: eap/debugging-apps/intro.md
 - topics:
