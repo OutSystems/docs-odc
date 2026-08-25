@@ -1,11 +1,18 @@
 ---
-summary: Learn how to add fixed and variable data to charts using the OutSystems Developer Cloud (ODC).
-tags: chart implementation, data visualization, user interface components, data binding, application development
+summary: 'OutSystems Developer Cloud (ODC) charts: populate the DataPointList with fixed or variable data points and set up multiple series.'
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - Widgets
 locale: en-us
 guid: 773767d0-b1c3-4f06-a98c-b18205802786
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=10550-13
 audience:
   - Developer
   - Front-end developer
@@ -13,6 +20,7 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+isautopublish: true
 ---
 
 # Dynamic charts using fixed and variable data

@@ -1,11 +1,18 @@
 ---
 summary: Explore how to create and customize a Bar Chart using OutSystems Developer Cloud (ODC).
-tags: data visualization, chart customization
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - Widgets
 locale: en-us
 guid: ee86596b-1473-4fe8-8da5-1e65352a0997
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=10550-10
 audience:
   - Developer
   - Front-end developer
@@ -15,9 +22,10 @@ coverage-type:
   - apply
 topic:
   - add-widget-ui-pattern
+isautopublish: true
 ---
 
-# Bar Chart
+# Bar chart
 
 <div class="info" markdown="1">
 
@@ -57,4 +65,4 @@ This example shows how you can create a simple Bar Chart with a customized legen
 
 After following these steps, you can publish your module:
 
-![Image of the final result displaying a Bar Chart with a customized legend in the published module](images/chartbar-result.png "Final Bar Chart Result")
+![Screenshot of the final Bar Chart with a customized legend in the published module](images/chartbar-result.png "Final Bar Chart Result")

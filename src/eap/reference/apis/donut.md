@@ -1,11 +1,18 @@
 ---
-summary: Explore how to create a Donut Chart using OutSystems Developer Cloud (ODC).
-tags: mobile apps, data visualization, chart configuration
+summary: 'ODC Donut Chart setup: add DataPointList data points and customize the InnerSize property in OutSystems Developer Cloud (ODC).'
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - Widgets
 locale: en-us
 guid: 7dd162ba-bb5a-4c61-902d-d8738c122a54
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=10550-14
 audience:
   - Developer
   - Front-end developer
@@ -13,9 +20,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - apply
+isautopublish: true
 ---
 
-# Donut Chart
+# Donut chart
 
 <div class="info" markdown="1">
 
@@ -51,4 +59,4 @@ This example shows how you can create a simple Donut Chart.
 
 After following these steps, you can publish your module:
 
-![Image of the final Donut Chart pattern as it appears after publishing the module](images/chartdonut-result.png "Final Donut Chart Pattern Result")
+![Screenshot of the published Donut Chart displaying the configured data points and inner size](images/chartdonut-result.png "Published Donut Chart Result")

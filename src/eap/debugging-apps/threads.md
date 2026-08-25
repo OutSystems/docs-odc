@@ -1,11 +1,16 @@
 ---
 summary: ODC Studio thread types behave differently at breakpoints, and you can abort or suspend executing server threads in your app.
-tags: thread management, debugging techniques, application performance, software development breakpoints
+tags:
+  - Debugging
+  - Mobile app
+  - Timers
+  - Troubleshooting
+  - Web services
 locale: en-us
 guid: ab6189d5-3803-4f78-92ff-4072e356fc29
 app_type: mobile apps, reactive web apps
 platform-version: odc
-figma:
+figma: https://www.figma.com/design/8RLmb1pp1PYm5xqtrnq5O8/Debugging-apps?node-id=6604-32
 audience:
   - Developer
   - Front-end developer
@@ -16,6 +21,7 @@ coverage-type:
   - apply
 topic:
   - debug-troubleshoot-app-logic
+isautopublish: true
 ---
 
 # Threads
@@ -45,13 +51,13 @@ In this case, the Threads Tab inside the [Debugger Tab](debugger-ui-reference.md
 
 </div>
 
-## Abort an Executing Server Thread
+## Abort an executing server thread
 
 While debugging a server thread (corresponding to an action being performed in the server) you may abort its execution, terminating it.
 
 Use the ![Icon of the Abort Running Server Threads button in the debugger toolbar](images/toolbar-abort-button.png "Abort Running Server Threads Button") Abort Running Server Threads button available on the Debugger Toolbar or in the Debugger Menu.
 
-## Suspend All Executing Server Threads
+## Suspend all executing server threads
 
 If you feel that one or more server threads are taking longer than expected and something might be wrong, you can suspend their execution.
 
