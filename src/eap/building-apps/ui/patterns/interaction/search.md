@@ -1,5 +1,12 @@
 ---
-tags: ui patterns, search functionality, user experience, local variables, widgets
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - UX
+  - Widgets
 summary: OutSystems Developer Cloud (ODC) features a Search UI Pattern that enables users to find content within applications by entering queries.
 locale: en-us
 guid: 1914dd20-040d-4a96-8293-e35756cb8e6a

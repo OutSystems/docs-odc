@@ -1,5 +1,12 @@
 ---
-tags: ui patterns, outsystems development, application design, user experience, step-by-step guide
+tags:
+  - Front-End
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - UX
+  - Widgets
 summary: Learn how to create and manage a Wizard UI Pattern in OutSystems Developer Cloud (ODC) to streamline complex tasks into simpler steps.
 locale: en-us
 guid: 54acaa7b-794d-44d4-9b70-5cc2b4810ccc

@@ -1,6 +1,13 @@
 ---
-tags: ui patterns, widget configuration
-summary: "ODC Progress Bar UI pattern: add it to your app screen in ODC Studio, set the Progress property with a variable, and configure optional styles."
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - Screens
+  - UI
+  - UI Patterns
+  - Widgets
+summary: OutSystems Developer Cloud (ODC) features a Progress Bar UI pattern for visually tracking task completion percentages.
 locale: en-us
 guid: 9365cf5d-fdea-45fa-9e39-19089259a83b
 app_type: mobile apps, reactive web apps
