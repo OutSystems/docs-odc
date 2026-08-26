@@ -25,6 +25,7 @@ content-type:
 coverage-type:
   - understand
   - evaluate
+helpids: 30780
 isautopublish: true
 ---
 
@@ -59,7 +60,7 @@ Every solution is categorized into **Components** you customize for your core bu
 
 Components are what you customize for your specific needs. They are the core, primary assets that deliver direct business value and are yours to shape and control completely. After installation, your organization controls them within their license terms, and they follow an independent lifecycle based on your customization and deployment needs. Because they map directly to your business goals, they represent the assets you control and can customize:
 
-* **Applications**: Web and mobile user-facing applications.
+* **Apps**: Web and mobile user-facing apps.
 
 * **[Agents](https://success.outsystems.com/documentation/outsystems_developer_cloud/building_apps/build_ai_powered_apps/about_ai_agent_builder/)**: AI agents to perform tasks, automate workflows, or handle complex multi-step interactions.
 
@@ -151,13 +152,13 @@ graph TD
 
 ### Manage solution after installation
 
-After installation, solution components behave like standard assets in your organization. You deploy them independently to production, customize them for your specific needs, integrate them with other applications, monitor their performance using standard tools, and manage them with standard governance policies.
+After installation, solution components behave like standard assets in your organization. You deploy them independently to production, customize them for your specific needs, integrate them with other apps, monitor their performance using standard tools, and manage them with standard governance policies.
 
 When you modify a solution component, you own that modified version.
 
 Installed solution components appear in the following places:
 
 1. **Solutions console**, a centralized view of every solution installed in your organization.
-1. **Apps list**, where applications and libraries are available for use, deployable to environments, and manageable as standard assets.
+1. **Apps list**, where apps and libraries are available for use, deployable to environments, and manageable as standard assets.
 1. **Agents list**, where agentic apps are available for use and management.
 1. **Workflows list**, where workflows are available for use and management.
