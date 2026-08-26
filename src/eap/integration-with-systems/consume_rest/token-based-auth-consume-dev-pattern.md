@@ -1,7 +1,7 @@
 ---
 guid: 9f31b7c4-6a7a-4a43-8b45-3b0f0b7d7f22
 locale: en-us
-summary: Learn a development pattern for consuming REST APIs that use JWT-based token authentication in OutSystems Developer Cloud (ODC).
+summary: "ODC JWT token authentication pattern for consuming REST APIs: design a token manager library, attach tokens in OnBeforeRequest, and handle refresh on failure."
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=8700-1097
 coverage-type:
   - understand
