@@ -1,5 +1,5 @@
 ---
-summary: Explore the integration of health and fitness data using HealthKit and Google Health Connect in mobile apps with OutSystems Developer Cloud (ODC).
+summary: Health and Fitness Plugin for ODC lets you access HealthKit (iOS) and Health Connect (Android) data, request permissions, and query health metrics in mobile apps.
 tags: healthkit integration, health connect integration, mobile health data, plugin development, user permissions
 locale: en-us
 guid: a0e9b45a-9726-4804-8019-7abe52b3b813
