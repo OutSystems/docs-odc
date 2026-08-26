@@ -1,5 +1,5 @@
 ---
-summary: Configure email verification and profile matching logic for external identity providers in OutSystems Developer Cloud (ODC).
+summary: 'ODC email verification and profile matching for external identity providers: how ODC verifies emails and links logins to user profiles.'
 locale: en-us
 guid: bf560c9c-82b5-4c8a-ba11-09939bcc8d87
 audience:
@@ -22,6 +22,7 @@ tags:
   - IdP
   - OIDC
   - SAML
+  - Security
 outsystems-tools:
   - none
 isautopublish: true
@@ -154,6 +155,12 @@ You must map either the **Username** or **Email** field. If the IdP is (or will 
 
 </div>
 
+<div class="warning" markdown="1">
+
+Claims entered in ODC must match exactly what your identity provider specifies in their configuration. Any mismatch between the claim names will prevent the IdP from working correctly.
+
+</div>
+
 Common matching scenarios include:
 
 **Invited users, self-registered users, or API-created users**
@@ -240,11 +247,11 @@ For more information about invitations and user status scenarios, refer to [Invi
 
 The following flow details how ODC handles user login and profile matching when using an external IdP, based on IdP claims, IdP configuration, and ODC profile data.
 
-![User matching and profile creation flow phase 1](images/profile-match-flowchart-phase1-diag.png "User matching and profile creation flow phase 1")
+![Flowchart showing phase 1 of user matching and profile creation: determining whether the IdP email is verified](images/profile-match-flowchart-phase1-diag.png "Profile Matching Flow Phase 1, Email Verification")
 
-![User matching and profile creation flow phase 2](images/profile-match-flowchart-phase2-diag.png "User matching and profile creation flow phase 2")
+![Flowchart showing phase 2 of user matching and profile creation: identifying an existing ODC profile by subject or fallback matching](images/profile-match-flowchart-phase2-diag.png "Profile Matching Flow Phase 2, Profile Identification")
 
-![User matching and profile creation flow phase 3](images/profile-match-flowchart-phase3-diag.png "User matching and profile creation flow phase 3")
+![Flowchart showing phase 3 of user matching and profile creation: creating or updating profiles and completing login](images/profile-match-flowchart-phase3-diag.png "Profile Matching Flow Phase 3, Profile Creation")
 
 When users attempt to log in with an IdP, ODC processes the login in three phases:
 
