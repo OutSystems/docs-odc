@@ -61,12 +61,7 @@ REST integrations with any other external system follow the regular license cons
 
 ## Limitations {#limitations}
 
-Your ODC apps can consume O11 logic over a secure private connection. However, this secure connection **isn't supported** for the following scenarios:
-
-* Consuming ODC logic in O11 apps
-* [ODC self-hosted](../../eap/manage-platform-app-lifecycle/self-hosted/sh-overview.md)
-
-For the above scenarios, ensure a secure communication by [protecting your endpoints from unauthorized access](#security).
+Your ODC apps can consume O11 logic over a secure private connection. However, this secure connection **isn't supported** when **consuming ODC logic in O11 apps**. For this scenario, ensure a secure communication by [protecting your endpoints from unauthorized access](#security).
 
 ## Prerequisites {#prerequisites}
 
