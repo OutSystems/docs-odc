@@ -1,6 +1,7 @@
 ---
 summary: Stream observability data from OutSystems Developer Cloud (ODC) apps to New Relic using the Analytics Stream subscription.
-tags: observability data,new relic,apm tool,opentelemetry,api keys
+tags:
+  - Monitoring
 guid: 0142e89a-6164-41b9-bf04-3e41868496b8
 locale: en-us
 app_type: mobile apps,reactive web apps

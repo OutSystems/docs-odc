@@ -1,6 +1,8 @@
 ---
 summary: OutSystems Developer Cloud (ODC) code analysis patterns for security issues.
-tags: security, code analysis, fixing issues, impact assessment
+tags:
+  - Security
+  - Technical Debt
 locale: en-us
 guid: 6C067ED8-961F-4301-922B-9F1330F2147A
 app_type: mobile apps, reactive web apps

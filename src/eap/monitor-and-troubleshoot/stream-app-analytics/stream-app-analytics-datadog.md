@@ -1,6 +1,7 @@
 ---
 summary: Stream observability data from ODC apps to Datadog APM by configuring the OpenTelemetry Collector.
-tags: observability data,datadog,opentelemetry
+tags:
+  - Monitoring
 guid: 20f1240d-56e7-4a1a-a3db-a800e9799d6d
 locale: en-us
 app_type: mobile apps,reactive web apps

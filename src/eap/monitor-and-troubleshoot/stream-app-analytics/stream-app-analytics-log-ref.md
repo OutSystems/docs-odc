@@ -1,6 +1,10 @@
 ---
 summary: Log attributes streamed from OutSystems Developer Cloud (ODC) apps to APM tools include details like action name, app key, timer name, and trace ID.
-tags: log attributes,apm tools,app logging,trace id
+tags:
+  - Logging
+  - Monitoring
+  - Timers
+  - Troubleshooting
 guid: 277b6c56-aff5-4d8d-9fa7-9711ffd47c4d
 locale: en-us
 app_type: mobile apps,reactive web apps

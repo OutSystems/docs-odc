@@ -1,6 +1,8 @@
 ---
 summary: Stream observability data from OutSystems Developer Cloud (ODC) apps to Dynatrace with required subscriptions and API tokens.
-tags: observability data,dynatrace,api token,streaming setup,subscription
+tags:
+  - Logging
+  - Monitoring
 guid: 6dbc455b-8f0f-4b24-a10d-33c564d53835
 locale: en-us
 app_type: mobile apps,reactive web apps

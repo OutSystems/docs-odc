@@ -1,6 +1,7 @@
 ---
 summary: Stream observability data from ODC apps to Elastic APM tool by configuring Elastic URL and Secret token in OutSystems Developer Cloud (ODC).
-tags: observability data,elastic apm,streaming setup,opentelemetry
+tags:
+  - Monitoring
 guid: 02175353-584b-47e2-b2ba-fc50e64b86eb
 locale: en-us
 app_type: mobile apps,reactive web apps
