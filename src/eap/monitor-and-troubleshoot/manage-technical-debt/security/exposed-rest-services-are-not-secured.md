@@ -1,5 +1,5 @@
 ---
-summary: Exposed REST services should enforce authentication to protect against unauthorized access.
+summary: "OutSystems Developer Cloud (ODC) exposed REST services without authentication risk unauthorized access — set authentication to Basic or Custom to fix."
 tags: authentication, rest services, security, vulnerability
 guid: d669fc5b-08da-4bff-954f-cc007ade6174
 locale: en-us

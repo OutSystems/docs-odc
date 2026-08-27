@@ -1,5 +1,5 @@
 ---
-summary: Learn how to wrap Apache Cordova plugins into apps for mobile development using OutSystems Developer Cloud (ODC).
+summary: "Cordova plugins in OutSystems Developer Cloud (ODC): wrap them using Extensibility Configuration JSON, define variables, set preferences, and add custom hooks."
 tags: cordova plugins, mobile app development, app extensibility, plugin management, outsystems developer cloud
 locale: en-us
 guid: 3891dc3c-5286-413f-9a23-1bee7f313e6e
