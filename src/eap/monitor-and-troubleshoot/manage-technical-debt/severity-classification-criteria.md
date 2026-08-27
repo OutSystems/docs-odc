@@ -11,7 +11,6 @@ coverage-type:
 audience:
   - Developer
   - Tech lead
-  - Platform administrator
 outsystems-tools:
   - none
 topic:

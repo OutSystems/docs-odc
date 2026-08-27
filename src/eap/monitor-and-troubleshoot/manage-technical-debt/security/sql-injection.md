@@ -11,7 +11,6 @@ coverage-type:
   - remember
 audience:
   - Developer
-  - Platform administrator
   - Tech lead
 outsystems-tools:
   - odc studio
