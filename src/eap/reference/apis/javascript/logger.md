@@ -1,6 +1,6 @@
 ---
 tags: logging, error handling, mobile development, reactive web development, outsystems
-summary: OutSystems Developer Cloud (ODC) provides logging capabilities for Mobile and Reactive Web Apps, enabling both console and server-side logging in ODC Portal.
+summary: OutSystems Developer Cloud (ODC) Logger JavaScript API reference for Mobile and Reactive Web Apps, covering the log and error functions.
 locale: en-us
 guid: bdfd5092-a26c-4029-b211-276cefce2ae0
 app_type: mobile apps, reactive web apps
