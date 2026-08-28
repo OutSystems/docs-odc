@@ -229,6 +229,8 @@ The following table shows when built-in IdP login is available based on how you 
 | [Invited via ODC Portal](../../user-management/create-deactivate-and-delete-users.md#creating-users), completed registration (followed the link in the invitation email and entered the verification code in the ODC Portal) and set up a password, then logged in through an external IdP | Yes | ODC created the built-in IdP profile when the user completed registration. |
 | Invited via ODC Portal, logged in through an external IdP before completing registration | No | The user hasn’t completed registration, so the user hasn’t set up a password. Completing registration sets up a password. |
 
+For users created via API with `addToBuiltInIdentityProvider` set to `true`, ODC creates the user-IdP link only on the user’s first login through the built-in IdP. Until that login, the [User and access management API](../../reference/apis/identity-v1.md) doesn’t list the built-in IdP for the user.
+
 #### Users registered with the built-in IdP that log in with an external IdP
 
 If a user logs in with built-in authentication and later logs in with an external IdP, ODC first tries to match the external login to the existing ODC profile by subject. If there’s no subject match, ODC uses the [**User profile matching**](#user-profile-matching) setting as a fallback when the external IdP is assigned to the organization or stage where the user is logging in:

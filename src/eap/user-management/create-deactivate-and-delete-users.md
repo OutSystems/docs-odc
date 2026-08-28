@@ -228,6 +228,12 @@ To enable built-in authentication for an existing user, follow these steps:
 
     For more information, refer to [Passwords](passwords.md).
 
+<div class="info" markdown="1">
+
+`GET /users` and `GET /users/{key}` don't list the built-in identity provider (IdP) for the user until the user logs in through the built-in IdP for the first time. ODC creates the user-IdP link on that first login, not when you call `POST /users`.
+
+</div>
+
 ## Deactivate and activate users
 
 You can deactivate users to temporarily prevent them from accessing the ODC Portal, Studio, or any apps, while retaining their data and assignments for auditing or future reactivation. You can reactivate users at any time to restore their access.
