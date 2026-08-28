@@ -1,6 +1,8 @@
 ---
 summary: Stream observability data from OutSystems Developer Cloud (ODC) apps to Splunk APM by setting up the HTTP Event Collector and OpenTelemetry Collector.
-tags: observability data,streaming,splunk,opentelemetry
+tags:
+  - Logging
+  - Monitoring
 guid: 24060b42-fd25-47b6-a6ae-e3a85c46fc28
 locale: en-us
 app_type: mobile apps,reactive web apps

@@ -1,6 +1,9 @@
 ---
 summary: Avoid passing identity information from the client side to the server side as an action parameter.
-tags: identity security, rest api, authorization, client-side vulnerabilities, secure coding
+tags:
+  - Best Practices
+  - Security
+  - Technical Debt
 guid: 3d263380-1767-4bdc-a8be-00d7d4d0e8da
 locale: en-us
 app_type: mobile apps, reactive web apps

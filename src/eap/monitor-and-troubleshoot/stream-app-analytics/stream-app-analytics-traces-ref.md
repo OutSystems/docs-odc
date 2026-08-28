@@ -1,6 +1,9 @@
 ---
 summary: Stream trace span attributes from OutSystems Developer Cloud (ODC) to APM tools, including span ID, name, duration, and HTTP method.
-tags: trace span,apm tools,data type,execution duration
+tags:
+  - Monitoring
+  - Performance
+  - Troubleshooting
 guid: 5f974b57-1381-4552-b535-e127e122b9f1
 locale: en-us
 app_type: mobile apps,reactive web apps

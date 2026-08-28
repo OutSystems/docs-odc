@@ -1,6 +1,13 @@
 ---
 summary: A Screen Aggregate exposes System Entity data on a screen accessible by anyone.
-tags: screen aggregates, system entity, access control, security best practices, screen authorization
+tags:
+  - Aggregates
+  - Authorization
+  - Best Practices
+  - Roles
+  - Screens
+  - Security
+  - Technical Debt
 guid: 54d94ffd-dca4-41fb-8196-1071af65c1e4
 locale: en-us
 app_type: mobile apps, reactive web apps

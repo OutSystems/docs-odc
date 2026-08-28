@@ -1,6 +1,13 @@
 ---
 summary: Disabled button that is still visible.
-tags: button visibility, button enable property, security, ui best practices, frontend development
+tags:
+  - Best Practices
+  - Front-End
+  - Roles
+  - Screens
+  - Security
+  - Technical Debt
+  - UI
 guid: 80a844f0-57f8-43eb-af04-5e727cd3bb38
 locale: en-us
 app_type: mobile apps, reactive web apps
