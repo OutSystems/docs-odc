@@ -1,7 +1,7 @@
 ---
 guid: 9bb1a3bf-d025-407a-b8fd-5ff339494f9b
 locale: en-us
-summary: Learn how to use OutSystems APIs to programmatically retrieve the generated code of your assets for SAST analysis.
+summary: OutSystems Developer Cloud (ODC) Builds API lets you package and retrieve generated high-code from your assets for SAST analysis.
 figma:
 coverage-type:
   - apply

@@ -1,7 +1,7 @@
 ---
 guid: d4bc5676-5fc9-4729-94c1-519b07daa7e8
 locale: en-us
-summary: Learn how to use OutSystems APIs to programmatically set the release version and the release notes before deploying your asset to production.
+summary: OutSystems Developer Cloud (ODC) Asset Repository API lets you set a release version and release notes on a revision before deploying to production.
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=4766-2&t=Y641MIoDIVqm9IxN-1
 coverage-type:
   - apply

@@ -1,7 +1,7 @@
 ---
 guid: 60d22645-2be2-4f38-9884-ed1a9cc26f52
 locale: en-us
-summary: Learn how to use OutSystems APIs to grant organization roles to a user for a specific asset, which gives the requesting team access to a newly created asset.
+summary: "ODC asset permissions REST API: grant an organization role to a user for a specific asset by calling the OutSystems identity API."
 figma:
 coverage-type:
   - apply
