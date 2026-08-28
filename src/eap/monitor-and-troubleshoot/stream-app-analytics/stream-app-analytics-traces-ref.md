@@ -9,7 +9,6 @@ figma:
 outsystems-tools:
   - none
 coverage-type:
-  - apply
   - remember
 content-type:
 audience:

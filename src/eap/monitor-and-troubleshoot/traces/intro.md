@@ -14,7 +14,6 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
-  - evaluate
 ---
 
 # Traces
