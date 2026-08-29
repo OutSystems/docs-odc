@@ -1,5 +1,5 @@
 ---
-summary: Explore the extensive libraries and built-in functions in OutSystems Developer Cloud (ODC) for advanced app development.
+summary: "OutSystems Developer Cloud (ODC) language reference: built-in functions, libraries (BinaryData, Text, Security), and system actions for app logic."
 tags: libraries, binary data, data transformation, encoding, date time functions
 locale: en-us
 guid: f9d530c1-f9fa-4b08-9e75-5dfb984402da
