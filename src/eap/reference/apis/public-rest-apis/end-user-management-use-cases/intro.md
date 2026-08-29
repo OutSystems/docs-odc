@@ -10,7 +10,11 @@ app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: user management, access management, apis, rest api, user roles
+tags:
+  - End-users
+  - Libraries
+  - REST
+  - Roles
 outsystems-tools:
   - odc studio
   - odc portal

@@ -12,7 +12,9 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: templates, asset creation, asset repository, rest api, outsystems api
+tags:
+  - REST
+  - Templates
 outsystems-tools:
   - odc portal
 helpids:

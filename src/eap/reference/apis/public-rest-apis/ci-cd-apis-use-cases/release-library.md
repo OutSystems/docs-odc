@@ -12,7 +12,11 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: library release, api usage, outsystems apis, asset management, release management
+tags:
+  - CI/CD
+  - Deploy
+  - Libraries
+  - REST
 outsystems-tools:
   - odc portal
 helpids:

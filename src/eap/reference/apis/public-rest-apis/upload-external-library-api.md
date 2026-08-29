@@ -11,7 +11,11 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: external library upload, outsystems apis, odc assets, high-code libraries, programming external libraries
+tags:
+  - Libraries
+  - Logic
+  - REST
+  - Web services
 outsystems-tools:
   - odc portal
 helpids:
