@@ -1,7 +1,7 @@
 ---
 guid: e6cc2e02-ac14-4a8f-a6bc-accf84adf2b5
 locale: en-us
-summary: This articles provides a list of use cases for user and access management APIs.
+summary: OutSystems Developer Cloud (ODC) user and access management REST APIs for programmatically creating users, assigning roles, and managing permissions.
 figma:
 coverage-type:
   - remember
