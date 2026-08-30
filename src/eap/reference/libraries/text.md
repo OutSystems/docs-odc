@@ -1,6 +1,7 @@
 ---
 summary: OutSystems Developer Cloud (ODC) provides advanced text manipulation and formatting tools.
-tags: datetime formatting, regular expressions
+tags:
+  - Libraries
 locale: en-us
 guid: e6b6ad2d-c6c0-4a5e-8034-1b36411c04ef
 app_type: mobile apps, reactive web apps

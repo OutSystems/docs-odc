@@ -5,7 +5,9 @@ guid: 16E539CC-9F73-451D-B0A0-AA5CE1CAB8F4
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-tags: server-side logic, server actions, action properties, web development
+tags:
+  - Libraries
+  - Logic
 audience:
   - Developer
   - Architect

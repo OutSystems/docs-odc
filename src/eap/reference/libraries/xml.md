@@ -1,6 +1,7 @@
 ---
 summary: Explore XML manipulation features in OutSystems Developer Cloud (ODC), including creating, modifying, and querying XML documents and elements.
-tags: xml, xml manipulation, xml document handling, data interchange, xml parsing
+tags:
+  - Libraries
 locale: en-us
 guid: 2c67f5b6-b8b4-46ea-9217-493cffb20456
 app_type: mobile apps, reactive web apps
