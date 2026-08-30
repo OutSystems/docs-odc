@@ -55,19 +55,25 @@
           {
             "name": "assetKey",
             "in": "query",
-            "description": "Filter deployments that contain given asset unique identifier, if filled.",
+            "description": "Filter deployments that contain the given asset unique identifiers, if filled.\nAccepts a comma-separated list of asset keys (e.g. 'key1,key2'); a single value is also supported.",
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
             }
           },
           {
             "name": "revision",
             "in": "query",
-            "description": "Filter assets by revision number, if filled.",
+            "description": "Filter assets by revision numbers, if filled.\nAccepts a comma-separated list of revisions (e.g. '1,2,3'); a single value is also supported.",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
             }
           },
           {
@@ -1053,7 +1059,7 @@
                 "$ref": "#/components/schemas/MessageDetailsV1"
               }
             ],
-            "description": "optional message details",
+            "description": "Message detailed info.",
             "nullable": true
           }
         },
