@@ -10,7 +10,6 @@ coverage-type:
   - unblock
 audience:
   - Developer
-  - Platform administrator
 outsystems-tools:
   - none
 ---
