@@ -1,5 +1,5 @@
 ---
-summary: Explore authentication actions for built-in and external identity providers in OutSystems Developer Cloud (ODC).
+summary: CallAgentV2 service action in OutSystems Developer Cloud (ODC) integrates AI models with function calling to process prompts and generate responses.
 tags: ai integration, service actions, error handling, ai model integration, chatbot functionality
 locale: en-us
 guid: ba01fdf7-e6d1-42eb-b21a-e9a0f25ef405

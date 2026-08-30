@@ -1,5 +1,5 @@
 ---
-summary: Explore logic execution and properties in ODC with detailed guidelines on the different actions you have.
+summary: OutSystems Developer Cloud (ODC) logic actions include Client Actions, Server Actions, and Service Actions, all accessible from ODC Studio.
 locale: en-us
 guid: F524155C-B4F2-417F-8354-9883628332B0
 app_type: mobile apps, reactive web apps
