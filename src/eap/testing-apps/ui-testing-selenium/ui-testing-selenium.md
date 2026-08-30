@@ -1,5 +1,5 @@
 ---
-summary: Explore UI testing for web applications using Selenium and its integration with ODC in this detailed guide.
+summary: "Selenium UI testing in OutSystems Developer Cloud (ODC): use CSS selectors, custom IDs, and element locators for maintainable automated tests."
 guid: 5E2540C7-5E74-4EA9-8AD2-B3DA7B31F204
 locale: en-us
 app_type: mobile apps, reactive web apps

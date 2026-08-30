@@ -1,5 +1,5 @@
 ---
-summary: How to publish apps that exceed the 100 MB limit.
+summary: "OS-APPS-40008 in OutSystems Developer Cloud (ODC) occurs when an app or library exceeds 100 MB; remove unused resources or split into libraries."
 tags: application file size limit, publishing apps, odc app optimization, best practices, static resources management
 guid: e773a151-1a3f-4472-b718-9a6587a02eec
 locale: en-us
