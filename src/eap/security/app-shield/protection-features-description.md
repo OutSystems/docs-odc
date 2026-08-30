@@ -11,6 +11,7 @@ audience:
 outsystems-tools:
   - mobile plugins
 coverage-type:
+  - remember
   - understand
 ---
 
