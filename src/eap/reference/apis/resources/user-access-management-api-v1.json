@@ -2311,6 +2311,29 @@
             }
           },
           {
+            "name": "scopes",
+            "in": "query",
+            "description": "Optional. Comma-separated. `Organization` returns users with an Organization-scoped assignment of the role; `Asset` returns users with an Asset-scoped assignment. Both together (or omitted) returns all.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/OrganizationRoleAssignmentScope"
+              }
+            }
+          },
+          {
+            "name": "assetKeys",
+            "in": "query",
+            "description": "Optional. Comma-separated list of asset keys. Only returns users with an Asset-scoped assignment of the role for any of the specified assets.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          {
             "name": "limit",
             "in": "query",
             "description": "Maximum number of results returned. The value must be within 1 - 100 (both inclusive). The default value is 100.",
@@ -6340,6 +6363,9 @@
     },
     {
       "name": "users"
+    },
+    {
+      "name": "claims-normalization"
     },
     {
       "name": "environments"
