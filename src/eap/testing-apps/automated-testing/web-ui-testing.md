@@ -5,7 +5,12 @@ locale: en-us
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-tags: ui testing, scripted testing, exploratory testing, user experience testing, automated testing
+tags:
+  - Quality Assurance
+  - Testing
+  - UI
+  - UI Patterns
+  - Web
 audience:
   - Developer
   - Front-end developer

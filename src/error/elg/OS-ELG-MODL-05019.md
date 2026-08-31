@@ -1,6 +1,9 @@
 ---
 summary: The name '<Name>' is not supported as it has more than 50 characters.
-tags: error handling, troubleshooting, application deployment, name validation, external libraries
+tags:
+  - C#
+  - Libraries
+  - Troubleshooting
 guid: 8bce811a-085b-445d-bcbe-7a591e22fd0b
 locale: en-us
 app_type: mobile apps, reactive web apps

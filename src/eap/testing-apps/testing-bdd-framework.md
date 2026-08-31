@@ -1,6 +1,10 @@
 ---
 summary: Explore component testing in ODC using BDDFramework tools for automated testing of Actions and Services.
-tags: component testing, automated testing, bddframework, gherkin syntax, api testing
+tags:
+  - Forge
+  - Logic
+  - Quality Assurance
+  - Testing
 locale: en-us
 guid: 6969A397-CC0D-49E5-BF17-C2B71FDB7C91
 app_type: mobile apps, reactive web apps

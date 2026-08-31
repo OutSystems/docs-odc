@@ -5,7 +5,12 @@ guid: C450EB0E-75B8-433E-ADBC-38ED135F102D
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-tags: test automation, devops, agile methodology, application lifecycle management, quality assurance
+tags:
+  - Agile
+  - Development lifecycle
+  - Lifecycle
+  - Quality Assurance
+  - Testing
 audience:
   - Developer
 outsystems-tools:
