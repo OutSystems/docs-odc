@@ -1,5 +1,5 @@
 ---
-summary: The limit value for the paged request is incorrect. Check the documentation for further guidance. If the problem persists, let us know.
+summary: OS-FRGE-AST-40003 occurs in OutSystems Developer Cloud (ODC) when the paged request limit is outside the valid range of 1 to 1000.
 tags: error handling, pagination, api requests, data retrieval, outsystems support
 guid: 3e1e7caa-8cf1-11ed-a1eb-0242ac120002
 locale: en-us

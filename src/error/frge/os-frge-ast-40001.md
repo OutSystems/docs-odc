@@ -1,5 +1,5 @@
 ---
-summary: Request input has the following issue <message>.
+summary: OS-FRGE-AST-40001 error in OutSystems Developer Cloud (ODC) indicates a request input failure that prevents your request from completing.
 tags: error handling, mobile apps, reactive web apps, outsystems support
 guid: 50b20808-88ab-42cd-94a1-f3fbae79280c
 locale: en-us

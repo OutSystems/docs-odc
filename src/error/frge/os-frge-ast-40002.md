@@ -1,5 +1,5 @@
 ---
-summary: The sort value for listing assets is incorrect. Check the documentation for further guidance. If the problem persists, let us know.
+summary: "OS-FRGE-AST-40002 in OutSystems Developer Cloud (ODC) Forge: invalid sort value for listing assets. Use name, -name, publishedOn, or -publishedOn."
 tags: error handling, asset management, sorting mechanism, technical support, forge component
 guid: 145fcaf4-8cf1-11ed-a1eb-0242ac120002
 locale: en-us

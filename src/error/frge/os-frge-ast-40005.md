@@ -1,5 +1,5 @@
 ---
-summary: The asset identifier is incorrect <identifier>. Check the documentation for further guidance. If the problem persists, let us know.
+summary: OS-FRGE-AST-40005 in OutSystems Developer Cloud (ODC) means the asset identifier is not a valid GUID. Provide a valid GUID to fix it.
 tags: error codes, guid, troubleshooting, support, asset management
 guid: 5d2b89da-d325-4358-954b-23328d4397ac
 locale: en-us
