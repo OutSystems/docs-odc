@@ -30,7 +30,7 @@ ODC uses two domain types: built-in and custom. The organization domain is alway
 A built-in domain is automatically created by OutSystems when your ODC organization is provisioned. There are two types:
 
 * **Organization domain**: used to access the ODC Portal and ODC Studio. It follows the format `<subdomain>.outsystems.dev`.
-* **Stage domain**: used by end-users to access your apps on each stage. It follows the format `<subdomain>.outsystems.app`.
+* **Stage domain**: used by end-users to access your apps on each stage. It follows the format `<tenant>-<stage>-<counter>.outsystems.app`.
 
 Both are based on a subdomain assigned during provisioning. You can change this subdomain at any time from the ODC Portal. Each level is independent: changing the organization subdomain does not affect stage subdomains, and vice versa.
 
