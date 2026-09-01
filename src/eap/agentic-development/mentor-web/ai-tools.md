@@ -37,7 +37,7 @@ Access the [OutSystems Mentor Web prompt coach](https://gemini.google.com/gem/1t
 
 ## Requirement document generator
 
-Complex apps benefit from requirement documents rather than simple prompts. This generator is a prompt template you run through any AI assistant to transform meeting notes, user stories, or existing specs into structured documents that Mentor Web interprets consistently.
+Complex apps benefit from requirement documents. This generator is a prompt template you run through any AI assistant to transform meeting notes, user stories, or existing specs into structured documents that Mentor Web interprets consistently.
 
 ### When to use it
 

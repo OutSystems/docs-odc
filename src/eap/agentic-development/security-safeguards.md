@@ -1,9 +1,11 @@
 ---
 summary: "Mentor coding agents in OutSystems Developer Cloud (ODC) apply layered safeguards: data isolation, safe output, user approvals, and access governance."
 tags:
-  - Agentic
   - AI
+  - Agentic
   - Mentor
+  - Mentor Studio
+  - Roles
   - Security
 guid: 8ec0312c-41cd-4c37-8059-50d385cad7ef
 locale: en-us
@@ -57,14 +59,14 @@ To enforce your own guardrails on the AI agents you build and run, use the opt-i
 
 The way Mentor generates apps limits the risk in its output.
 
-* **Model, not raw code.** Mentor turns your prompts into changes to the OutSystems Model, expressed as standard OutSystems Markup Language (OML), rather than hand-written code.
+* **Model-based changes.** Mentor turns your prompts into changes to the OutSystems Model, expressed as standard OutSystems Markup Language (OML). This is different than working with raw code.
 * **Same standards as hand-built apps.** OutSystems Developer Cloud (ODC) enforces the same security, performance, and architecture standards regardless of how the model was created, including role-based access, encryption, and input validation.
 
 For how the model and the compiler fit together, refer to [Architecture](architecture.md).
 
 ## Human oversight and control
 
-You decide what Mentor applies. For a complex change, such as one that spans several entities, screens, and logic, Mentor proposes a plan and applies it only after you accept it. For a straightforward change, such as adding a single action, it applies the change directly. Proposed changes are transparent: you review them before Mentor applies them and compare your app before and after. You accept the change, reject it, or refine it with a follow-up prompt. For how planning and review work, refer to [Planning and your control](coding-agents.md#planning-and-your-control) and [Review and accept the plan](mentor-studio/how-it-works.md#review-and-accept-the-plan).
+You decide what Mentor applies. For a complex change, such as one that spans several entities, screens, and logic, Mentor proposes a plan and applies it only after you accept it. For a straightforward change, such as adding a single action, it applies the change directly. Proposed changes are transparent: you review them before Mentor applies them and compare your app before and after. You proceed with the change, review it first, discard it, or refine it with a follow-up prompt. For how planning and review work, refer to [Planning and your control](coding-agents.md#planning-and-your-control) and [Review and accept the plan](mentor-studio/how-it-works.md#review-and-accept-the-plan).
 
 ## Access and governance
 

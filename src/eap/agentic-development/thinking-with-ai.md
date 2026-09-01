@@ -1,5 +1,5 @@
 ---
-summary: Thinking with AI in OutSystems Developer Cloud (ODC) adds a natural-language layer on top of visual development. Describe intent, partner with Mentor, and iterate.
+summary: Agentic development in ODC uses natural language to generate app structures on the OutSystems Model, so you describe intent and refine with Mentor.
 tags:
   - Agentic
   - AI
@@ -30,7 +30,7 @@ isautopublish: true
 
 # Thinking with AI
 
-Agentic development adds a layer on top of the development skills you already use. Instead of configuring each entity, screen, and property by hand, you describe requirements in natural language and ODC generates the structure. The model you work with stays the same: entities, screens, aggregates, and logic on the OutSystems Model. What changes is the interface to it, from direct configuration to describing intent and reviewing the result. For what the platform guarantees and what you validate in this workflow, refer to [Platform guarantees and AI interpretation](odc-ai-and-platform.md).
+Agentic development adds a layer on top of the development skills you already use. You describe requirements in natural language, and ODC generates the structure. The model you work with stays the same: entities, screens, aggregates, and logic on the OutSystems Model. What changes is the interface to it, from direct configuration to describing intent and reviewing the result. For what the platform guarantees and what you validate in this workflow, refer to [Platform guarantees and AI interpretation](odc-ai-and-platform.md).
 
 ## Understand the shift
 

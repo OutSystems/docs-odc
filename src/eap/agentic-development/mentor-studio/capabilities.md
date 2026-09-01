@@ -1,12 +1,12 @@
 ---
 summary: Mentor Studio in OutSystems Developer Cloud (ODC) generates server actions, screens, entities, aggregates, and analyzes existing app code.
 tags:
-  - Agentic
+  - Aggregates
   - AI
   - Entities
-  - Logic
   - Mentor
   - Mentor Studio
+  - Screens
   - Technical Debt
 guid: 5abbc7b0-dedb-49ec-9af5-41e3220bb071
 locale: en-us
@@ -70,7 +70,7 @@ Mentor Studio supports a range of development tasks. The following table describ
 
 ## Reuse tenant public elements
 
-Mentor Studio reuses the public elements that other apps expose in your tenant, so you build on existing assets instead of recreating them. Reusable public elements include entities, actions, and the actions that call agents from agentic apps, such as a `CallAgent01_Intake` action exposed by a loan origination app.
+Mentor Studio reuses the public elements that other apps expose in your tenant, so you build on existing assets. Reusable public elements include entities, actions, and the actions that call agents from agentic apps, such as a `CallAgent01_Intake` action exposed by a loan origination app.
 
 The reliable path is to add the element yourself, then reference it:
 

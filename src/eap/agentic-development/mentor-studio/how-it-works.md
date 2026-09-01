@@ -1,10 +1,9 @@
 ---
-summary: Mentor Studio edits web apps, libraries, and agentic apps through conversation in ODC Studio, turning natural language into generated or modified elements.
+summary: Mentor Studio in ODC Studio uses AI agents to generate and modify web app, library, and agentic app elements from natural language prompts.
 tags:
   - Agentic
   - AI
   - Best Practices
-  - Logic
   - Mentor
   - Mentor Studio
 guid: 27f4f846-5c2d-44fd-b9a2-99f5d2770cb2
@@ -54,14 +53,14 @@ The Mentor panel includes several interaction options:
 
 * **Dock or undock.** Toggle the panel between docked in ODC Studio and a separate window. Use the dock icon in the panel header.
 * **Thumbs up or thumbs down.** Rate each response to help improve Mentor. Select thumbs up for helpful responses or thumbs down when the outcome doesn't meet expectations.
-* **View changes.** Open the **Review Mentor changes** dialog to compare your app before and after Mentor Studio applies changes. Refer to [Review changes](#review-changes).
+* **View changes.** Open the **Review changes** dialog to compare your app before and after Mentor Studio applies changes. Refer to [Review changes](#review-changes).
 * **Feedback icon.** Share detailed feedback about your experience. Describe the action, expected result, and actual outcome. This feedback helps the development team understand your usage patterns and prioritize improvements.
 
 ![ODC Studio workspace with the Mentor Studio chat panel open on the left and an app screen editor on the right, illustrating side-by-side development and conversation.](images/mentor-studio-ui-odcs.png "Mentor Studio panel in ODC Studio")
 
 ### Use the current selection as context
 
-Mentor reads what you select and what you have open in ODC Studio, so you refer to your work instead of describing it. Select an element or open a view, then prompt Mentor with a direct reference to it.
+Mentor reads what you select and what you have open in ODC Studio, so you can refer to your work directly. Select an element or open a view, then prompt Mentor with a direct reference to it.
 
 Mentor reads two kinds of context from ODC Studio:
 
@@ -79,7 +78,7 @@ Mentor Studio follows an iterative workflow. Describe a goal in natural language
 The workflow has four steps:
 
 1. **Describe the goal.** State your requirement in plain language, such as "add a comments feature to the Ticket entity" in a web app or "add a reusable date-formatting action" in a library.
-1. **Review the plan.** For complex requests, Mentor Studio proposes the changes it intends to make and waits for your decision before applying anything. For how to read a proposal and apply, reject, or refine it, refer to [Review and accept the plan](#review-and-accept-the-plan).
+1. **Review the plan.** For complex requests, Mentor Studio proposes the changes it intends to make and waits for your decision before applying anything. For how to read a proposal and proceed, review the changes first, or discard it, refer to [Review and accept the plan](#review-and-accept-the-plan).
 1. **Verify the changes.** After Mentor Studio applies the changes, review what changed and confirm the outcome. Refer to [Review changes](#review-changes).
 1. **Iterate.** Refine the result through follow-up prompts, or start a new conversation for a different requirement.
 
@@ -95,13 +94,13 @@ For how agentic development handles your data, including encryption, data reside
 
 ## Review and accept the plan
 
-For complex requests, Mentor Studio proposes the changes it plans to make and waits for you to accept them before applying anything. This step lets you review the intended work and its impact across the app before it modifies your app.
+For complex requests, Mentor Studio proposes the changes it plans to make and waits for you to decide before applying anything. Mentor Studio generates the proposed changes as a candidate revision alongside your current app. Nothing changes in your app until you merge that revision, either in full or element by element. This step lets you review the intended work and its impact across the app before it modifies your app.
 
-![Mentor Studio window displaying a proposed plan that lists steps to modify an employee app, with options to apply all or discard the planned changes.](images/mentor-studio-plan-odcs.png "Review plan in Mentor Studio")
+![Mentor Studio window displaying a proposed plan that lists steps to modify an employee app, with options to proceed, review the changes first, or discard the planned changes.](images/mentor-ai-review-changes-odcs.png "Review plan in Mentor Studio")
 
 ### When Mentor Studio proposes changes
 
-Mentor Studio proposes changes for complex requests instead of applying them directly.
+For complex requests, Mentor Studio proposes changes and waits for your review before applying them.
 
 A high-level request that spans multiple elements, dependencies, or workflows produces a plan. Mentor Studio applies a simpler request that affects a single element directly.
 
@@ -117,22 +116,25 @@ Mentor Studio collapses long lists. Expand the list to review every step before 
 
 ### Act on the plan
 
-After you review the plan, you decide what happens next:
+After you review the plan, choose one of the following options:
 
-* Inspect the steps and impact to confirm the change matches your intent.
-* Apply the changes to add them to your app.
-* Reject the changes to leave your app unchanged.
-* Refine your request through a follow-up prompt, and Mentor Studio revises the proposal.
+* **Proceed** to merge every proposed change into your app.
+* **Review changes first** to inspect the candidate revision element by element and choose what to merge, before anything changes in your app. This opens the same dialog described in [Review changes](#review-changes).
+* **Discard** to drop the candidate revision and leave your app unchanged.
+
+You can also refine your request through a follow-up prompt as an alternative, and Mentor Studio revises the proposal.
 
 ## Review changes
 
-After Mentor Studio applies changes, review what changed before you continue. Open the **Review Mentor changes** dialog by selecting **View changes** in the Mentor panel, or by asking Mentor Studio what changed, for example "Show me what changed in the CreateOrder action." Both open the same dialog.
+Review what Mentor Studio changed, either from **Review changes first** during plan confirmation, before anything merges into your app, or after Mentor Studio applies changes. To review after applying, select **View changes** in the Mentor panel, or ask Mentor Studio what changed, for example "Show me what changed in the CreateOrder action." Both open the same **Review changes** dialog.
 
-![Review Mentor changes dialog showing a side-by-side comparison of the app after and before Mentor changes, with modified elements highlighted in each revision tree.](images/mentor-ai-changes-verify-odcs.png "Review Mentor changes in Mentor Studio")
+![Review changes dialog showing your revision and Mentor's revision side by side, with a checkbox for each element and Merge and Discard actions.](images/mentor-ai-select-changes-odcs.png "Review changes dialog in Mentor Studio")
 
-The dialog shows a side-by-side comparison of your app, **After Mentor changes** on the left and **Before Mentor changes** on the right. It highlights the elements Mentor added or modified and shows the details of each element you select. Select the elements to keep from either revision to merge the result you want.
+The dialog shows **Your revision** on the left and **Mentor's revision** on the right. It highlights the elements Mentor added or modified and shows the details of each element you select. Select the checkbox next to an element to choose whether the result keeps your version or Mentor's version, then select **Merge** to apply your selection to your app, or **Discard** to drop the candidate revision entirely.
 
-![Compact diff summary panel listing four AI changes made by Mentor Studio, including changed and added elements, with a button to view detailed changes.](images/mentor-studio-ai-diff-changes-odcs.png "AI diff view of Mentor Studio changes")
+![Compact diff summary panel listing four AI changes made by Mentor Studio, including changed and added elements, with a button to view detailed changes.](images/mentor-ai-changes-verify-odcs.png "AI diff summary of Mentor Studio changes")
+
+The Mentor panel shows this compact summary after Mentor Studio applies a change. Select **View changes** to open the dialog.
 
 ## Capabilities
 

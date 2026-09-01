@@ -74,7 +74,7 @@ The blueprint displays:
 * Proposed screens and layouts
 * Stateflows for entities with lifecycle states
 
-You refine the blueprint through prompts. Mentor Web applies the changes you describe in natural language. Making changes at this stage takes less effort than modifying a generated app since you adjust the plan rather than the code.
+You refine the blueprint through prompts. Mentor Web applies the changes you describe in natural language. Making changes at this stage takes less effort than modifying a generated app, since you adjust the plan directly.
 
 For more information, refer to [The blueprint](blueprint.md).
 
@@ -97,7 +97,7 @@ The generated app follows the same ODC patterns and conventions as manually buil
 
 ## Refine with prompts
 
-After generation, the app can be improved through additional prompts in the editor. Each refinement applies changes to the existing app rather than regenerating from scratch. Each edit requires publishing to update the live app in the development stage. You can also reopen any existing app in Mentor Web later via **Portal** > **Apps** > right-click the app.
+After generation, the app can be improved through additional prompts in the editor. Each refinement applies changes incrementally to the existing app, preserving your prior work. Each edit requires publishing to update the live app in the development stage. You can also reopen any existing app in Mentor Web later via **Portal** > **Apps** > right-click the app.
 
 Common refinements include:
 
@@ -109,7 +109,7 @@ Common refinements include:
 
 This iterative approach produces better results than specifying everything in the initial input. Starting with a foundation that captures the core requirements, then refining through focused prompts that address one aspect at a time, improves outcomes. Evaluating results after each change before continuing enables informed decisions.
 
-Refinement in the editor processes requests differently than initial generation. During generation, Mentor Web interprets requirements to build the app structure. During refinement, Mentor Web analyzes the existing app and applies targeted changes. This means some prompts that work well for generation may produce different results during refinement, and vice versa. During refinement, use focused prompts that address one change at a time rather than broad descriptions of the entire app.
+Refinement in the editor processes requests differently than initial generation. During generation, Mentor Web interprets requirements to build the app structure. During refinement, Mentor Web analyzes the existing app and applies targeted changes. This means some prompts that work well for generation may produce different results during refinement, and vice versa. During refinement, use focused prompts that address one change at a time.
 
 ![The editor showing generated screens with the Mentor panel open for refinement prompts.](images/ai-gen-app-refine-with-prompts-pl.png "Refine the generated app with prompts")
 
