@@ -1,5 +1,5 @@
 ---
-summary: The asset version identifier is incorrect <identifier>. Check the documentation for further guidance. If the problem persists, let us know.
+summary: OS-FRGE-AST-40006 in OutSystems Developer Cloud (ODC) signals an invalid asset version identifier format; use major.minor.patch to resolve it.
 tags: error handling, version control, asset management, technical support, documentation
 guid: 970e4c74-04b9-4b3d-9ebd-bb1da1d0636d
 locale: en-us

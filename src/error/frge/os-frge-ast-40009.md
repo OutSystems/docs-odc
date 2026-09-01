@@ -1,5 +1,5 @@
 ---
-summary: The subtype is invalid. A subtype is only valid for LowCodeLibraries. If the problem persists, let us know.
+summary: "OS-FRGE-AST-40009 in OutSystems Developer Cloud (ODC) occurs when you use an invalid subtype; only LowCodeLibraries assets accept a subtype value."
 tags: error handling, lowcode development, outsystems platform, debugging, software troubleshooting
 guid: 79c4dee0-3d65-4c6e-b019-298cc672c961
 locale: en-us

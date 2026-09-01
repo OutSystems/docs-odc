@@ -1,5 +1,5 @@
 ---
-summary: The requested asset with key <assetKey> and version <assetVersion> doesn't exist. Check the documentation for further guidance. If the problem persists, let us know.
+summary: "OS-FRGE-AST-40402 error occurs when the requested Forge asset key or version doesn't exist in OutSystems Developer Cloud (ODC)."
 tags: error handling, asset management, outsystems forge, technical support, troubleshooting
 guid: 6226cf6a-666e-4b10-a6f2-95f345ed3137
 locale: en-us

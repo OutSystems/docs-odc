@@ -1,5 +1,5 @@
 ---
-summary: The version you're trying to submit already exists. Check the documentation for further guidance.
+summary: OS-FRGE-AST-40903 ODC Forge error occurs when the uploaded asset version already exists; upload a new version to resolve it.
 tags: version control, error handling, deployment, application lifecycle management, support
 guid: f43da329-4d7d-4a8d-9977-a8f418988c6d
 locale: en-us

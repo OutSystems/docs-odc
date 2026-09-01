@@ -1,5 +1,5 @@
 ---
-summary: The curation type is incorrect. Check the documentation for further guidance. If the problem persists, let us know.
+summary: OS-FRGE-AST-40008 error in OutSystems Developer Cloud (ODC) means an invalid curation value was used; valid values are None or Supported.
 tags: mobile apps, error handling, technical support, outsystems platform
 guid: 9270ae64-574a-4650-adba-1ef12c43b088
 locale: en-us
