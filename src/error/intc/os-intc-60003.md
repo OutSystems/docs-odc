@@ -1,5 +1,5 @@
 ---
-summary: Something went wrong. Try reloading the page. If the problem persists, open a support case
+summary: OS-INTC-60003 error in OutSystems Developer Cloud (ODC) occurs when an entity can't be found in a container during attribute name validation.
 tags: error handling, support cases, page reload issue, entity relationship problems, troubleshooting guide
 guid: 33195011-ff09-4f26-a177-8d044dee3c64
 locale: en-us

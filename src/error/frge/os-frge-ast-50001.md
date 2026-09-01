@@ -1,5 +1,5 @@
 ---
-summary: An error occurred on our side, and we’re not sure why. If the problem persists, let us know.
+summary: OS-FRGE-AST-50001 is an OutSystems Developer Cloud (ODC) internal error with no specific cause, blocking your request until the issue is resolved.
 tags: error handling, support, internal errors, debugging, mobile development
 guid: 4f7706c9-3888-4590-b06b-d5824cfc6c83
 locale: en-us

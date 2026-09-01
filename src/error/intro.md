@@ -1,5 +1,5 @@
 ---
-summary: This section provides guidance on how to fix ODC errors.
+summary: OutSystems Developer Cloud (ODC) errors organized by category and code, each with message, cause, impact, and recommended fix.
 tags: error handling, debugging, error codes, error resolution, error analysis
 locale: en-us
 guid: 52c2606c-3891-4057-acfa-962d709c3442

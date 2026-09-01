@@ -1,5 +1,5 @@
 ---
-summary: We are having problems connecting to Forge Core. If the problem persists, let us know.
+summary: OS-FRGE-AST-50003 in OutSystems Developer Cloud (ODC) indicates a Forge Core connectivity issue; retry later or contact OutSystems Support.
 tags: connectivity issues, troubleshooting, error messages, support, outsystems troubleshooting
 guid: ec516987-6251-4882-936c-b050c5567a1c
 locale: en-us

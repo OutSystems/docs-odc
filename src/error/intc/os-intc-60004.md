@@ -1,5 +1,5 @@
 ---
-summary: Something went wrong. Try reloading the page. If the problem persists, open a support case
+summary: OS-INTC-60004 in OutSystems Developer Cloud (ODC) occurs when fetching connection entities fails, leaving the connection stuck.
 tags: error handling, technical support, cloud services, application development, developer troubleshooting
 guid: 9ec0830c-403b-4c38-827a-a500c2cc84f9
 locale: en-us
