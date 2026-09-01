@@ -11,7 +11,14 @@ platform-version: odc
 audience:
   - Developer
   - Platform administrator
-tags: authorization,authentication,outsystems,end-users
+tags:
+  - Authentication
+  - Authorization
+  - End-user Authentication
+  - End-users
+  - External Authentication
+  - IdP
+  - Roles
 outsystems-tools:
   - odc portal
   - odc studio
