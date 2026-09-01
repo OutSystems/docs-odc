@@ -6,11 +6,9 @@ app_type: mobile apps,reactive web apps
 platform-version: odc
 tags:
   - Authentication
-  - End-user Authentication
   - External Authentication
   - IdP
   - SAML
-  - Security
   - SSO
 audience:
   - Platform administrator
@@ -60,6 +58,20 @@ The following SAML endpoints must be reachable from ODC to your Identity Provide
     **The SSO endpoint is NOT required to be reachable.** Users are redirected to the SSO endpoint via their browser (not through direct ODC-to-IdP calls), so network reachability from ODC to the SSO endpoint is not necessary.
 
     For endpoints that require reachability, either expose them publicly or restrict access by allowlisting the ODC identity egress IP addresses in your firewall. For the list of IPs, refer to [Allowlisting ODC public IP addresses](../odc-public-ips.md#authentication-external-idp). For background on the network requirements and the protocol-based security model, refer to [Network considerations](intro.md#network-considerations).
+
+## Before you configure single logout
+
+The **single logout service URL** is the identity provider endpoint that ODC uses to send a SAML logout request when a user signs out.
+
+Use this setting to enable **SAML single logout (SLO)** between ODC and your identity provider. With SLO configured, signing out of ODC can also sign the user out of the identity provider session, depending on how your identity provider is configured.
+
+Keep the following in mind:
+
+* The single logout URL is different from the single sign-on URL. The **single sign-on URL** is used during login, while the **single logout URL** is used during logout.
+* The single logout URL is only relevant if you want logout requests to be sent to the identity provider.
+* If you don't configure a working single logout endpoint, users can still sign in with SAML, but signing out of ODC might only end the ODC session. The user's session at the identity provider can remain active.
+* If the identity provider session remains active, the user might be able to sign in again without being prompted for credentials.
+* The exact logout experience also depends on your identity provider. Some providers require additional SLO configuration or support only specific bindings.
 
 ## Add a SAML 2.0 provider
 
@@ -123,6 +135,8 @@ After selecting **SAML 2.0**, complete these steps:
 
     You can import this data using an XML file or URL, or enter it manually.
 
+    The **single logout service URL** is optional unless you want ODC to send logout requests to your identity provider. If you configure it, make sure the endpoint is valid and supported by your provider. Otherwise, users might sign out of ODC but remain signed in to the identity provider.
+
 1. Click **Get metadata**.
 
 1. Enter the **claim mapping** details.
@@ -168,7 +182,7 @@ After selecting **SAML 2.0**, complete these steps:
 
     </div>
 
-    * HTTP-POST binding for Logout
+    * **HTTP-POST binding for Logout**: Changes the logout binding specified by ODC in the service provider metadata. Enable this option only if your identity provider supports SAML logout over HTTP-POST. If this option is disabled, ODC uses the default logout binding defined in the metadata.
     * HTTP-POST binding for AuthnRequests
     * Want assertions signed
     * NameID policy format
