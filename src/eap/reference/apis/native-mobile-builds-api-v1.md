@@ -16,7 +16,6 @@ api-render: true
 tags:
   - Android
   - CI/CD
-  - Deploy
   - iOS
   - Mobile app
   - Native App
