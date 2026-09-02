@@ -6,6 +6,7 @@ figma:
 coverage-type:
   - remember
 topic:
+  - icon-widget-ref
 app_type: reactive web apps
 platform-version: odc
 audience:

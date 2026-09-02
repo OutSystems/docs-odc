@@ -16,6 +16,9 @@ coverage-type:
   - apply
   - unblock
 isautopublish: true
+topic:
+  - enable-logic-suggestions
+  - use-ai-logic-suggestions
 ---
 
 # AI logic suggestions

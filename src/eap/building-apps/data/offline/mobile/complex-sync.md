@@ -13,6 +13,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - evaluate
+topic:
+  - complex-mobile-sync
 ---
 
 # Handling optimized complex synchronization on mobile devices

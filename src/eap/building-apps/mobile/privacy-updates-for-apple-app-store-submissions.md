@@ -14,6 +14,10 @@ coverage-type:
   - apply
   - understand
 isautopublish: true
+topic:
+  - apple-privacy-manifest
+  - configure-manifest-odc
+  - file-plugin-manifest
 ---
 # Privacy updates for Apple App Store submissions
 

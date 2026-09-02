@@ -7,6 +7,7 @@ coverage-type:
   - apply
   - remember
 topic:
+  - update-sql-statement
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

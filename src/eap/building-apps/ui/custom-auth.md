@@ -13,6 +13,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - remember
+topic:
+  - custom-auth-screens
 ---
 
 # Custom authentication flows
