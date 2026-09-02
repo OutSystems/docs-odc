@@ -14,6 +14,8 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - use-floating-content
 ---
 
 # Floating Content

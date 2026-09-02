@@ -14,6 +14,8 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - use-inline-svg-pattern
 ---
 
 # Inline SVG

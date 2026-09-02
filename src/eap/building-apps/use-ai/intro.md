@@ -14,6 +14,10 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - ai-agent-builder-access
+  - ai-agent-builder-overview
+  - ai-agent-builder-sample-apps
 ---
 
 # About AI Agent Builder

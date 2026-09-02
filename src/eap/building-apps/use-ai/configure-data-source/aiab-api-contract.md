@@ -13,6 +13,8 @@ outsystems-tools:
   - ai agent builder
 coverage-type:
   - remember
+topic:
+  - data-source-contract
 ---
 
 # Custom data source API contract
