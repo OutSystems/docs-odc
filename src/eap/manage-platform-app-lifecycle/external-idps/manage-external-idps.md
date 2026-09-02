@@ -10,16 +10,15 @@ topic:
   - idp-openidp
   - idp-saml
 coverage-type:
-  - apply
   - understand
+  - apply
+  - unblock
 tags:
   - Authentication
-  - End-user Authentication
   - External Authentication
   - IdP
   - OIDC
   - SAML
-  - Security
 outsystems-tools:
   - odc studio
   - odc portal
@@ -110,6 +109,13 @@ If you plan to remove the built-in IdP assignment from the **Identity providers*
 To avoid lockouts when changing providers, refer to [Replace an external IdP](#replace-idp).
 
 There are a few reasons why your external IdP might not be working correctly. It could be because you didn't set it up correctly or assign it to the appropriate stage. It could also be due to an issue on the provider's side.
+
+<div class="warning" markdown="1">
+
+Verify that your identity provider's SSO Session Max (or equivalent session timeout setting) is configured with sufficient duration to accommodate your complete login flow. Short timeout values can cause authentication failures, especially if your flow includes additional steps such as multi-factor authentication (MFA), user consent screens, or profile matching. If
+users experience intermittent login failures, check the IdP timeout settings before investigating other potential causes.
+
+</div>
 
 If you encounter a lockout scenario, open a support ticket. A support agent can sign in to the tenant and reactivate the built-in provider. This allows users to log in or reset passwords for accounts using the built-in provider.
 

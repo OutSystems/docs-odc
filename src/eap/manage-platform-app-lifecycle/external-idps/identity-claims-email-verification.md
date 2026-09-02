@@ -1,5 +1,5 @@
 ---
-summary: 'ODC email verification and profile matching for external identity providers: how ODC verifies emails and links logins to user profiles.'
+summary: 'OutSystems Developer Cloud (ODC) email verification for external IdPs: OIDC and SAML methods, claim mapping, and profile matching options.'
 locale: en-us
 guid: bf560c9c-82b5-4c8a-ba11-09939bcc8d87
 audience:
@@ -249,11 +249,26 @@ For more information about invitations and user status scenarios, refer to [Invi
 
 The following flow details how ODC handles user login and profile matching when using an external IdP, based on IdP claims, IdP configuration, and ODC profile data.
 
-![Flowchart showing phase 1 of user matching and profile creation: determining whether the IdP email is verified](images/profile-match-flowchart-phase1-diag.png "Profile Matching Flow Phase 1, Email Verification")
+![User matching and profile creation flow phase 1](images/profile-match-flowchart-phase1-diag.png "Profile Matching Flow, Phase 1")
 
-![Flowchart showing phase 2 of user matching and profile creation: identifying an existing ODC profile by subject or fallback matching](images/profile-match-flowchart-phase2-diag.png "Profile Matching Flow Phase 2, Profile Identification")
+![User matching and profile creation flow phase 2](images/profile-match-flowchart-phase2-diag.png "Profile Matching Flow, Phase 2")
 
-![Flowchart showing phase 3 of user matching and profile creation: creating or updating profiles and completing login](images/profile-match-flowchart-phase3-diag.png "Profile Matching Flow Phase 3, Profile Creation")
+![User matching and profile creation flow phase 3](images/profile-match-flowchart-phase3-diag.png "Profile Matching Flow, Phase 3")
+
+The three-phase login process must complete within the timeframe allowed by your identity
+provider's session timeout (SSO Session Max or equivalent setting). Each phase: email
+verification determination, profile identification, and profile creation—contributes to the total login duration.
+
+<div class="warning" markdown="1">
+
+Configure your identity provider's SSO Session Max with sufficient duration for the complete
+login flow. If the timeout is too short, users may experience authentication failures even
+when their IdP and ODC configuration are correct. This is particularly important if your
+flow includes multi-factor authentication (MFA), consent screens, or complex profile matching
+scenarios. If login failures occur intermittently, verify the IdP session timeout is
+adequate before investigating configuration issues.
+
+</div>
 
 When users attempt to log in with an IdP, ODC processes the login in three phases:
 
