@@ -13,7 +13,6 @@ topic:
   - integration
 audience:
   - Developer
-  - Tech lead
 outsystems-tools:
   - odc portal
   - odc studio
