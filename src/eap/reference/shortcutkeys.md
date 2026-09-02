@@ -1,6 +1,9 @@
 ---
 summary: Explore keyboard shortcuts for OutSystems Developer Cloud (ODC) across Windows and macOS platforms, enhancing productivity in application development.
-tags: keyboard shortcuts, productivity tools
+tags:
+  - 1-Click Publish
+  - Debugging
+  - Screens
 locale: en-us
 guid: f2cc2c52-ff68-4cfa-b4b9-a052d89051c4
 app_type: mobile apps, reactive web apps
