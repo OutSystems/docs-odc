@@ -1,7 +1,7 @@
 ---
 guid: 3e9cca36-951b-4500-9ad3-8a930b13848e
 locale: en-us
-summary: This documents provides reference information for iOS build actions explaining the different settings and properties of the JSON file.
+summary: iOS build actions in OutSystems Developer Cloud (ODC). Reference for Info.plist, entitlements, xcconfig, JSON, XML, copy, code, and tar operations.
 figma:
 coverage-type:
   - remember
