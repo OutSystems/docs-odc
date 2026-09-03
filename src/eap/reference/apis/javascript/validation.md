@@ -8,6 +8,8 @@ platform-version: odc
 figma:
 coverage-type:
   - remember
+topic:
+  - validate-widget-state
 audience:
   - Front-end developer
   - Developer

@@ -13,6 +13,9 @@ audience:
 outsystems-tools:
   - odc studio
   - odc portal
+topic:
+  - check-user-role-in-code
+  - get-authenticated-user-id
 ---
 # Roles
 

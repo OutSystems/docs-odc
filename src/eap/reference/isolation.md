@@ -13,6 +13,8 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - isolation-level-basics
 ---
 
 # Database transaction isolation level

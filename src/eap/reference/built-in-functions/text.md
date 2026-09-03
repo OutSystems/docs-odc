@@ -14,6 +14,9 @@ outsystems-tools:
 coverage-type:
   - remember
 isautopublish: true
+topic:
+  - built-in-text-functions
+  - prevent-injection-odc
 ---
 
 # Text
