@@ -16,6 +16,8 @@ outsystems-tools:
   - mentor studio
 coverage-type:
   - unblock
+topic:
+  - mentor-studio-errors
 isautopublish: true
 ---
 

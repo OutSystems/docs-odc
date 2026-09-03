@@ -13,6 +13,8 @@ outsystems-tools:
   - none
 coverage-type:
   - remember
+topic:
+  - built-in-date-functions
 ---
 
 # DateTime
