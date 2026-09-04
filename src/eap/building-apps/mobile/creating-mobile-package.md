@@ -34,6 +34,12 @@ MABS versions earlier than 12.0 use Apache Cordova as its underlying hybrid fram
 
 After creating a mobile app in ODC Studio, you can create a mobile app package in ODC Portal.
 
+<div class="info" markdown="1">
+
+To automate creating a mobile app package and its distribution in your CI/CD pipeline, refer to [Automating mobile builds and uploading to app stores](../../reference/apis/public-rest-apis/ci-cd-apis-use-cases/automating-mobile-builds-and-store-upload.md). This guide covers using OutSystems APIs to programmatically start builds, monitor progress, and upload packages to app stores.
+
+</div>
+
 Here's the overall process to make your app available to your users:
 
 1. Develop your app. You can quickly preview your app in a browser as you develop.
@@ -89,7 +95,7 @@ From the same screen, you can create an iOS or Android package. ODC can process 
 
 1. Select the **Mobile Apps Build Service (MABS) version**. You can select either the stable version or a particular MABS version. If you choose version **12.0**, then select either **Cordova** or **Capacitor** as the mobile framework. Ensure that all the plugins you use in the app are compatible with the chosen framework. For detailed information about dual stack support in MABS, refer to [Capacitor and Cordova support in MABS](mabs-overview.md).
 
-    ![Screenshot of the ODC Portal showing the configuration fields for creating an iOS package.](images/mabs-selection-pl.png "Create iOS or Android Package Configuration")
+    ![Screenshot of the ODC Portal showing the MABS version selection and Mobile Framework dropdown with Cordova and Capacitor options.](images/mabs-selection-pl.png "MABS Version and Framework Selection")
 
 1. Enter the **Version (Major, Minor, Patch)** number. If you want to modify the version, enter any version number that's equal to or higher than the previous version
 

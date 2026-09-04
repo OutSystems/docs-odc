@@ -17,6 +17,7 @@ tags:
   - CI/CD
   - iOS
   - Mobile app
+  - Monitoring
   - Native App
   - REST
 outsystems-tools:
@@ -36,6 +37,12 @@ This article explains how to use OutSystems APIs to automate these steps in a CI
 * Upload the mobile app packages to App Store Connect and Google Play by using your upload tool.
 
 A **mobile app package** is the iOS IPA or Android AAB/APK file that you upload to an app store. The API refers to the operation that generates it as a **native build**.
+
+<div class="info" markdown="1">
+
+This article automates the mobile app package creation process through CI/CD workflows. For an overview of how to manually create a package from the ODC Portal with its platform-specific configuration requirements, refer to [Create a mobile app package](../../../../building-apps/mobile/creating-mobile-package.md).
+
+</div>
 
 <div class="info" markdown="1">
 
@@ -248,22 +255,26 @@ Add an approval gate in your CI/CD pipeline before you upload a build to a produ
 
 Use these resources to learn more about authentication, CI/CD prerequisites, and uploading mobile app packages to the app stores:
 
-* **OutSystems APIs**
+### OutSystems APIs
 
-    * [Configure API access using an API client](../authentication/create-api-client.md)
+* [Configure API access using an API client](../authentication/create-api-client.md)
 
-    * [Get access token](../authentication/get-access-token.md)
+* [Get access token](../authentication/get-access-token.md)
 
-    * [Selecting the revision and build of your asset](select-revision-build.md)
+* [Selecting the revision and build of your asset](select-revision-build.md)
 
-    * [Deploying your asset to the target stage](deploy-asset.md)
+* [Deploying your asset to the target stage](deploy-asset.md)
 
-* **Official app store upload documentation**
+### Official app store upload documentation
 
-    * [Upload builds to App Store Connect](https://developer.apple.com/help/app-store-connect/manage-builds/upload-builds/)
+* [Upload builds to App Store Connect](https://developer.apple.com/help/app-store-connect/manage-builds/upload-builds/)
 
-    * [Google Play Developer API](https://developers.google.com/android-publisher)
+* [Google Play Developer API](https://developers.google.com/android-publisher)
 
-    * [Fastlane pilot action](https://docs.fastlane.tools/actions/pilot/)
+* [Fastlane pilot action](https://docs.fastlane.tools/actions/pilot/)
 
-    * [Fastlane supply action](https://docs.fastlane.tools/actions/supply/)
+* [Fastlane supply action](https://docs.fastlane.tools/actions/supply/)
+
+### Mobile app packages
+
+* [Create a mobile app package](../../../../building-apps/mobile/creating-mobile-package.md) - Learn about package creation requirements, signing assets, and build types
