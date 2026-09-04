@@ -607,6 +607,7 @@
     - href: eap/deploying-apps/deployment-inconsistencies.md
     - href: eap/deploying-apps/one-cp.md
     - href: eap/deploying-apps/rollback.md
+    - href: eap/deploying-apps/hotfixing-production-code.md
 
 # Integration with external systems
 - href: eap/integration-with-systems/intro.md
