@@ -1,6 +1,11 @@
 ---
-summary: Explore authentication actions for built-in and external identity providers in OutSystems Developer Cloud (ODC).
-tags: authentication, identity providers, user management, security, login
+summary: 'ODC authentication system actions: Login, Logout, GetExternalLoginURL, and GetExternalLogoutURL for built-in and external identity providers.'
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
+  - Security
 locale: en-us
 guid: af4a6d9d-0af3-434b-b3b9-daf8d49ad6f7
 app_type: mobile apps, reactive web apps
@@ -99,14 +104,14 @@ You must first add this action due to a temporary technical limitation. Navigate
 
 Returns the URL where the user can log out of an external identity provider, if one is configured, or "" otherwise.
 
-CallbackURL is the URL that the user will be redirected to after a successful logout.
+ReturnToURL is the URL that the user will be redirected to after a successful logout.
 If an IdentityProvider is configured for the current app and the user is currently logged in, the provider's logout URL is returned. Use a RedirectToURL node in your flow, after the action, to redirect the user to this URL to complete the logout.
 
 Throws an exception if no external identity provider is configured for the current app or if the user is not currently logged in with an external provider.
 
 #### Inputs
 
-**CallbackURL**
+**ReturnToURL**
 :   Type: Text.
     URL called after the logout process. The provider will redirect users to this URL after a successful logout.
 
