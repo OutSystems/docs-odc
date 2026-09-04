@@ -11,6 +11,8 @@ app_type: mobile apps, reactive web apps
 figma:
 coverage-type:
   - unblock
+topic:
+  - 1-click-publish-errors
 audience:
   - Developer
 outsystems-tools:

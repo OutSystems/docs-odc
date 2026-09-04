@@ -17,6 +17,8 @@ coverage-type:
   - remember
   - unblock
 isautopublish: true
+topic:
+  - context-service-errors
 ---
 
 # Context Service errors

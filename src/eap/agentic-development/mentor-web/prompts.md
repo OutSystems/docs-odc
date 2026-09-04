@@ -24,6 +24,10 @@ audience:
   - Developer
   - Front-end developer
 isautopublish: true
+topic:
+  - mentor-web-data-model-prompts
+  - theme-prompts
+  - ui-pattern-prompts
 ---
 
 # Prompts for Mentor Web
