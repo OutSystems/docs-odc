@@ -6,6 +6,9 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&
 coverage-type:
   - apply
 topic:
+  - add-additional-agents
+  - build-agent-flow
+  - consumer-app-workflow
 app_type: mobile apps, reactive web apps
 platform-version: odc
 audience:

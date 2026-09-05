@@ -7,6 +7,8 @@ coverage-type:
   - understand
   - apply
 topic:
+  - grant-db-access-entity-expose
+  - setup-interop-db-access
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

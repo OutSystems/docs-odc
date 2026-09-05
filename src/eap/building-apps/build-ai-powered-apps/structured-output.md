@@ -19,6 +19,8 @@ audience:
   - Developer
   - Tech lead
 topic:
+  - add-structured-output
+  - store-structured-output
 isautopublish: true
 ---
 # Structured output

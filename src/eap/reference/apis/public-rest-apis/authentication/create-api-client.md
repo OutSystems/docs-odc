@@ -18,6 +18,10 @@ audience:
   - Platform administrator
 coverage-type:
   - apply
+topic:
+  - copy-api-client-credentials
+  - create-api-client
+  - edit-api-client-permissions
 platform-version: odc
 figma: https://www.figma.com/design/eFzsh8ZIP5AIbRUyjeTV26/Reference?node-id=3497-27&t=Ee0vNUQza7lfj7Sy-1
 isautopublish: true

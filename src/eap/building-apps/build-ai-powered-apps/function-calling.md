@@ -7,6 +7,9 @@ coverage-type:
   - understand
   - apply
 topic:
+  - action-calling-overview
+  - configure-action-calling
+  - set-call-condition
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
