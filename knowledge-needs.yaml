@@ -256,6 +256,24 @@ knowledge-needs:
         (configuration overhead, performance overhead, security risks, lack of
         built-in product support), so they can choose the appropriate role
         model for their app.
+    - name: Hierarchical roles demo
+      id: hierarchical-roles-demo
+      description: Wants to implement the hierarchical roles authorization
+        approach in a demo sales application by restricting screen access
+        with Screen Roles, controlling displayed information with
+        HasAccessByFunctionId, and controlling available actions with
+        GetPermissionsByUserId, so they can apply the three authorization
+        scenarios (screen access, content visibility, action permissions)
+        using hierarchical roles in OutSystems 11.
+    - name: Implement hierarchical roles
+      id: hierarchical-roles-implementation
+      description: Wants to implement a hierarchical roles authorization solution in
+        OutSystems 11 by designing a supporting data model, structuring the app
+        architecture into layered modules, building BackOffice management
+        screens to manage functions and permissions, and creating server actions
+        for checking user permissions and function-level access, so they can
+        enforce granular, configurable authorization across their app without
+        relying on OutSystems' default static roles.
 - name: (Creating an Application) Architecture
   guid: 9ce4fe11-dcc9-4b0f-b3ea-545557accdec
   topics:
@@ -278,6 +296,13 @@ knowledge-needs:
       id: what-are-modules
     - name: Difference between applications and modules
       id: apps-vs-modules
+    - name: Clone a module
+      id: clone-a-module
+      description: 'Wants to clone a module and move it to another application
+        in OutSystems 11 Service Studio, using the Module menu''s Clone option
+        and the Independent Modules app''s Move action, so that a module built
+        in one app can be reused in another without recreating it from
+        scratch.'
   - name: Multi-tenant architecture
     id: multi-tenant-architecture
     description: Wants to understand what multi-tenancy is and how OutSystems 11
@@ -786,6 +811,16 @@ knowledge-needs:
       id: acls
     - name: Webservice authentication
       id: webservice-authentication
+    - name: Credential delegation
+      id: credential-delegation
+      description: Wants to enable Integrated Authentication credential delegation
+        from the browser through OutSystems to a consumed Web Reference, by setting
+        the Web Reference's Integrated Authentication property, ensuring
+        integrated-auth context in the calling screen/flow/block/action, and
+        configuring the OutSystems server as trusted for Kerberos delegation to the
+        Web Service server in Active Directory, in OutSystems 11, so that the Web
+        Service receives the client's actual domain credentials instead of the
+        application's service account.
     - name: Create API client
       id: create-api-client
       description: Wants to create an API client in the ODC portal, configuring its
@@ -1365,6 +1400,13 @@ knowledge-needs:
         Builder doesn't have a valid token to access the environment, by logging
         out and back in (or contacting support if the problem persists), in
         OutSystems 11, so that Workflow Builder can reconnect to the environment.
+    - name: WFB app architecture
+      id: wfb-app-architecture
+      description: Wants to understand the architecture of a Workflow Builder
+        generated app (built on Case Management Framework and Business Process
+        Technology, including logic, UI, and data model) and how IT can extend
+        it using Service Studio, in OutSystems 11, so that they can plan how to
+        hand off and evolve the app after publishing.
 - name: Component testing
   guid: 7e2fb431-16fd-487e-8c9b-77fe350b092b
   topics:
@@ -1510,6 +1552,12 @@ knowledge-needs:
         and handling structural changes introduced in O11 — so that a Silk-based
         Traditional Web App can be upgraded to the OutSystems 11 Web UI Framework
         without breaking existing screen behavior.
+    - name: Migrate CSS classes
+      id: migrate-css-classes
+      description: Wants to find the OutSystems Web UI CSS class equivalent for
+        each Silk Web UI CSS class (background colors, text colors, buttons, and
+        text styles), so that a Silk-based Traditional Web App keeps consistent
+        visual styling after migrating to the OutSystems 11 Web UI Framework.
 - name: Creating UI
   guid: a6b567df-2deb-4736-bd6d-cf144a9c6262
   topics:
@@ -1960,6 +2008,13 @@ knowledge-needs:
         HTTPRequestHandler API, in Service Studio for O11, so that they can
         trigger custom JavaScript behavior in response to events or during
         screen rendering.
+    - name: Set dynamic input value
+      id: set-dynamic-input-value
+      description: Wants to automatically update one input's value when another
+        input changes, using the On Change event, an Assign node, and an Ajax
+        Refresh, in Service Studio for OutSystems 11 Traditional Web Apps, so
+        that dependent form fields (for example, a date range) update without
+        requiring the user to manually re-enter data.
   - name: Using external JavaScript
     id: using-external-javascript
     subtopics:
@@ -3213,6 +3268,14 @@ knowledge-needs:
       id: idp-apple
     - name: External IDPs - OpenIDP
       id: idp-openidp
+    - name: External IDPs - Auth0
+      id: idp-auth0
+      description: Wants to integrate Auth0 as an external identity provider with
+        an OutSystems 11 (Traditional Web) application using the IdP Forge component
+        and the SAML protocol, including installing IdP, signing up for Auth0,
+        configuring the SAML connection and callback URL in Auth0, and mapping the
+        SAML configuration parameters between Auth0 and the IdP Configuration page,
+        so that end users can log in via Auth0 single sign-on.
     - name: Configure Okta IdP
       id: idp-okta
       description: Wants to register ODC as a trusted OIDC application in
@@ -3221,6 +3284,13 @@ knowledge-needs:
         as the Discovery endpoint, entering the Client ID/Secret, and
         confirming claim mapping, so that they can establish a secure OIDC
         handshake between ODC and Okta.
+    - name: Assign end-user app roles
+      id: assign-end-user-app-roles
+      description: Wants to assign Okta-authenticated end-users to an ODC
+        application's role (via Invite user or Manage roles in the ODC Portal
+        Users section) and set the deployment stage, so that role-based
+        access control (RBAC) grants them access to the app after external
+        IdP login.
     - name: Map AD Groups to Roles
       id: map-ad-groups-to-roles
       description: Wants to map Active Directory Groups to OutSystems Roles using
@@ -3608,6 +3678,14 @@ knowledge-needs:
   - name: Redis in-memory sessions
     id: redis-in-memory-sessions
     subtopics:
+    - name: Redis session overview
+      id: redis-session-overview
+      description: Wants to understand why OutSystems supports Redis for in-memory
+        session storage in Traditional Web Apps on self-managed infrastructures
+        — including the drawbacks of storing sessions as a serialized column in
+        a relational database and the difference between a single Redis Server
+        and a Redis Cluster configuration — so they can decide whether this advanced
+        scenario fits their factory before setting it up.
     - name: Redis software prerequisites
       id: redis-software-prereqs
       description: Wants to know which Platform Server and Redis Server versions
@@ -3620,6 +3698,13 @@ knowledge-needs:
         Redis infrastructure — covering both non-productive and production (Redis
         Cluster) environments — so they can provision servers with the right CPU,
         RAM, storage, and network capacity before deploying Redis for OutSystems.
+    - name: Redis HA architecture
+      id: redis-ha-architecture
+      description: Wants to understand the 3-node Master/Replica Redis Cluster
+        high-availability architecture for OutSystems 11 self-managed infrastructures,
+        including how crossed replica placement enables automatic failover to a
+        surviving server, so that they can reason about Redis Cluster resilience
+        before deploying it.
 - name: Log streaming (O11)
   guid: 7f3c2a1e-84d0-4b5f-a9c3-e1d06f82b347
   topics:
