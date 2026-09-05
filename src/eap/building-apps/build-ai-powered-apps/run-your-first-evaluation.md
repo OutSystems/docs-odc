@@ -6,6 +6,9 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id
 coverage-type:
   - apply
 topic:
+  - cancel-evaluation-run
+  - review-run-results
+  - run-agent-evaluation
 app_type: reactive web apps, mobile apps
 platform-version: odc
 audience:

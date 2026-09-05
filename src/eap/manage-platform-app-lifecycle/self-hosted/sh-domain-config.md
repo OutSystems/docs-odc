@@ -8,6 +8,9 @@ coverage-type:
   - understand
   - apply
 topic:
+  - configure-gloo-routing-headers
+  - configure-self-hosted-domains
+  - set-up-load-balancer-tls
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:

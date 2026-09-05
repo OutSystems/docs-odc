@@ -13,6 +13,9 @@ outsystems-tools:
 coverage-type:
   - apply
 isautopublish: true
+topic:
+  - authenticate-mtls-library
+  - custom-code-integration
 ---
 
 # Supporting mTLS in ODC

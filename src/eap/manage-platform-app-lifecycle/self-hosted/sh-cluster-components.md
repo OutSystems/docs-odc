@@ -6,6 +6,7 @@ figma: https://www.figma.com/design/la33iciyGndnV5JRqR359g/Managing-OutSystems-p
 coverage-type:
   - understand
 topic:
+  - cluster-services-overview
 app_type: reactive web apps, mobile apps
 platform-version: odc
 audience:
