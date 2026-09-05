@@ -661,6 +661,13 @@ knowledge-needs:
         in client-side Screen Actions logic in Mobile Apps and Reactive Web Apps,
         so that they know when and why the platform automatically reduces the data
         sent to the client.
+    - name: Database query slowdown
+      id: database-query-slowdown
+      description: Wants to diagnose and fix database queries that slow down after
+        deleting or updating a significant number of rows, by checking and updating
+        outdated table statistics and checking and defragmenting the table in
+        Oracle or SQL Server, in OutSystems 11, so that the query optimizer builds
+        accurate access plans and performance recovers.
   - name: Indexes
     id: indexes
   - name: Enforcing data integrity
@@ -736,6 +743,12 @@ knowledge-needs:
         ensuring only one class implements the OSInterface-decorated interface
         in their C# external library project, so that they can successfully
         publish the external library.'
+    - name: Authenticate mTLS library
+      id: authenticate-mtls-library
+      description: 'Wants to implement mutual TLS (mTLS) authentication in an
+        external library''s HTTP client, by loading a client certificate and
+        validating the server certificate, so that an OutSystems Developer
+        Cloud (ODC) app can securely consume a mTLS-protected REST API.'
     - name: Parse XML XPath
       id: parse-xml-xpath
       description: Wants to extract filtered data from an XML file using XPath expressions
@@ -833,6 +846,16 @@ knowledge-needs:
         API client immediately after creation, so they can configure them in their
         app to request an access token, since the credentials can't be retrieved
         again once the credentials page is left.
+    - name: Suspend API client
+      id: suspend-api-client
+      description: Wants to suspend access to an API client from the ODC portal,
+        so its secrets and access tokens immediately become invalid and can no
+        longer be used to access ODC REST APIs.
+    - name: Resume API client
+      id: resume-api-client
+      description: Wants to resume access to a suspended API client from the ODC
+        portal, so its secret and access token become valid again, or generate a
+        new secret if expired, restoring API access.
     - name: Edit API client permissions
       id: edit-api-client-permissions
       description: Wants to edit the permissions of an existing API client in the
@@ -1080,6 +1103,18 @@ knowledge-needs:
       id: config-app-after-deploy
     - name: App settings
       id: app-settings
+    - name: Configure app properties
+      id: configure-app-properties
+      description: Wants to configure an app, library, or mobile library's general
+        properties in ODC Studio, covering identity/branding details and
+        advanced behavior settings, so that the app looks and behaves as
+        intended.
+    - name: Customize validation messages
+      id: customize-validation-messages
+      description: Wants to customize the validation and upgrade messages shown to
+        end users of an app, library, or mobile library, by editing the Messages
+        settings page in ODC Studio, so that error and upgrade notifications match
+        the app's language, tone, or branding requirements.
     - name: Configure app settings before a deployment
       id: config-app-before-deploy
     - name: Factory Configuration overview
@@ -2555,6 +2590,57 @@ knowledge-needs:
         type and serializing the structured data before storing it in the
         Store Memory node, so that the structured response can be persisted
         and later deserialized on the consumer side.
+    - name: Create evaluation dataset
+      id: create-evaluation-dataset
+      description: Wants to create and upload a dataset for an agentic app
+        evaluation in the ODC Portal, pairing it with the agentic app and
+        service action being evaluated, downloading the JSON template, and
+        uploading test case JSON matching the service action's inputs,
+        expected outputs, and expected tool calls, so that the service
+        action can be benchmarked with structured test cases.
+    - name: Design dataset test cases
+      id: design-dataset-test-cases
+      description: Wants to design effective test cases for an agent evaluation dataset,
+        covering real user scenarios, one intent per row, stable expected
+        outputs, and data dependencies, and structure them as JSON that pairs
+        inputs with expected responses, guidance notes, and expected tool calls,
+        matching the service action contract, so that evaluation results give
+        clear, reliable regression signal.
+    - name: Edit evaluation dataset test cases
+      id: edit-evaluation-dataset-test-cases
+      description: Wants to edit test cases in a saved agent evaluation
+        dataset in the ODC Portal, so that the dataset stays accurate as
+        prompts, expected responses, or tools change.
+    - name: Export evaluation dataset JSON
+      id: export-evaluation-dataset-json
+      description: Wants to export a saved agent evaluation dataset as JSON
+        from the ODC Portal for backup or version control, so that they can
+        track and restore dataset changes over time.
+    - name: Configure evaluation setup and teardown actions
+      id: configure-evaluation-setup-teardown-actions
+      description: Wants to configure setup and teardown service actions for
+        an agent evaluation in the ODC Portal, so that each run starts from
+        a known state and cleans up after execution.
+    - name: Run agent evaluation
+      id: run-agent-evaluation
+      description: Wants to create and save an agent evaluation in the ODC
+        Portal by selecting a dataset and judge criteria, then start a run
+        against the linked service action, so that test cases are scored
+        and results become available for review.
+    - name: Cancel evaluation run
+      id: cancel-evaluation-run
+      description: Wants to cancel an in-progress agent evaluation run in
+        the ODC Portal, understanding that setup is aborted, in-progress
+        test cases stop, teardown still executes, and no scores are
+        returned, so that they can stop a run started with the wrong
+        dataset or one taking too long.
+    - name: Review run results
+      id: review-run-results
+      description: Wants to review agent evaluation results in the ODC
+        Portal by checking run statuses, overall and judge criteria scores,
+        dataset versions across runs, and failure details for setup or
+        teardown stages, so that they can interpret run outcomes and know
+        where to investigate failures.
   - name: Semantic Search
     id: semantic-search
     subtopics:
@@ -2762,6 +2848,24 @@ knowledge-needs:
         with time deltas, lightweight local database design, and minimizing server
         requests — so that the app performs efficiently and remains error-tolerant
         under demanding synchronization scenarios.
+  - name: Extensibility configurations
+    id: extensibility-configurations
+    subtopics:
+    - name: App extensibility config
+      id: app-extensibility-use-cases
+      description: Wants to customize a mobile app's runtime and build-time behavior beyond
+        the Mobile tab defaults, using the app extensibility configurations JSON
+        schema, so that functionality not exposed by the Mobile tab UI can be
+        configured.
+    - name: Library plugin config
+      id: plugin-extensibility-use-cases
+      description: Wants to customize a mobile library's plugin runtime and
+        build-time behavior, such as specifying Cordova and Capacitor plugin
+        sources, setting plugin preferences and configurations, declaring
+        permissions and usage descriptions, defining installation variables,
+        copying resources, and running build actions, using the library
+        extensibility configurations JSON schema, so that Cordova and
+        Capacitor plugins can be wrapped and configured for mobile apps.
   - name: OTA upgrade troubleshooting
     id: ota-upgrade-troubleshooting
     subtopics:
@@ -2771,6 +2875,13 @@ knowledge-needs:
         not found" error that leaves a mobile app stuck on the splash screen
         during an OTA upgrade, by reloading the app or reinstalling it, so
         that the app upgrade completes successfully.'
+    - name: Fix corrupt cache manifest
+      id: cache-manifest-corrupt-error
+      description: 'Wants to resolve the "Cache manifest file is corrupt or
+        invalid" error that causes a mobile app to stop working or fail to
+        start, typically caused by insufficient device disk space corrupting
+        the on-device cache manifest file, by checking available storage and
+        reinstalling the app, so that the app works again.'
     - name: Fix local entity type error
       id: fix-local-entity-type-error
       description: 'Wants to resolve the "Upgrade failed - rolling back to
@@ -2779,6 +2890,54 @@ knowledge-needs:
         when the device already holds data for that entity, by rolling back
         the app and clearing the cache/data or reinstalling on affected
         devices, so that the OTA upgrade completes successfully.'
+    - name: Database close error
+      id: database-close-error
+      description: 'Wants to understand the informative "failed to close
+        database ... cannot be closed while a transaction is in progress"
+        error that occurs when a mobile app closes its database connection
+        on window unload while a transaction is still running, so that they
+        can confirm it''s safe to ignore since it has no impact on the app.'
+    - name: Resource not found error
+      id: resource-not-found-error
+      description: 'Wants to understand the informative "Unable to find
+        resource <Resource>" error, visible only in Mobile Device Logs and
+        accessible through ADB, that occurs when WebView requests a resource
+        outside a cached frame or a locally-served Cordova plugin resource,
+        so that they can confirm it''s safe to ignore since it has no impact
+        on the end user.'
+    - name: InputStream cache error
+      id: inputstream-cache-error
+      description: 'Wants to resolve the "Could not get InputStream while
+        trying to get cache resource" error caused by a mobile app''s
+        WebView requesting a file missing from the device file system,
+        often due to low storage, which triggers the healing mechanism and
+        may leave the app unusable if healing fails, by checking device
+        storage, reloading the app, or reinstalling it, so that the cache
+        resource loads and the app works again.'
+    - name: Fix cache version switch error
+      id: switch-cache-version-error
+      description: 'Wants to resolve the "Unable to switch to cache version"
+        error caused by a state mismatch between the client runtime and the
+        native side during an OTA cache upgrade, by reloading the app or
+        checking device storage and reinstalling it, so that the mobile app
+        upgrades successfully.'
+    - name: Fix OTA download timeout
+      id: fix-ota-download-timeout
+      description: Wants to resolve the "Aborting resources download... The request timed
+        out" / "Upgrade failed - rolling back to the previous application
+        version" error caused by a mobile device's poor network connection or
+        large OTA resources exceeding the fixed per-resource download timeout,
+        by reloading the app to retry the OTA upgrade or, if the new resources
+        consistently fail, generating and distributing a new full application
+        package, so that the OTA upgrade completes successfully.
+    - name: OTA rollback behavior
+      id: ota-rollback-behavior
+      description: 'Wants to understand why a mobile app''s OTA upgrade rolls
+        back to the previously cached version on failure and why
+        already-downloaded resources are preserved via a checkpoint
+        mechanism so the next OTA attempt doesn''t redownload everything,
+        so they can anticipate runtime issues (like server action
+        mismatches) after a failed OTA upgrade.'
   - name: Customize Mobile apps
     id: customize-mobile-apps
     subtopics:
@@ -3346,6 +3505,13 @@ knowledge-needs:
       id: deleting-users
     - name: Updating Users
       id: updating-users
+    - name: Activate deactivated user
+      id: activate-deactivated-user
+      description: Wants to reactivate a deactivated end-user account in ODC,
+        using either the ODC Portal's Management > Users page (Activate User)
+        or the ODC user management APIs, so that the user can resolve the
+        OS-IDCO-AUTH-40101 error and resume authenticating through the
+        external IdP.
     - name: Self Registration
       id: self-registration
     - name: Users and Licensing
@@ -3698,6 +3864,44 @@ knowledge-needs:
         Redis infrastructure — covering both non-productive and production (Redis
         Cluster) environments — so they can provision servers with the right CPU,
         RAM, storage, and network capacity before deploying Redis for OutSystems.
+  - name: Self-hosted cluster services
+    id: self-hosted-cluster-services
+    subtopics:
+    - name: Cluster services overview
+      id: cluster-services-overview
+      description: Wants to understand what services are installed in an ODC self-hosted
+        Kubernetes cluster and why each is necessary, so that they can
+        understand the platform's architecture and their own operational
+        responsibilities versus OutSystems'.
+  - name: Self-hosted inbound traffic configuration
+    id: self-hosted-inbound-traffic
+    subtopics:
+    - name: Configure self-hosted domains
+      id: configure-self-hosted-domains
+      description: Wants to create and manage DNS domains for each self-hosted ODC
+        application stage that resolve to the load balancer's public address, so
+        that user requests can reach the load balancer over HTTPS.
+    - name: Set up load balancer TLS
+      id: set-up-load-balancer-tls
+      description: Wants to set up a layer 7 load balancer to terminate TLS for
+        self-hosted ODC domains and forward traffic to the Gloo ingress gateway
+        over HTTP, so that HTTPS access to apps stays secure while TLS management
+        is offloaded from the cluster.
+    - name: Configure Gloo routing headers
+      id: configure-gloo-routing-headers
+      description: Wants to configure the X-Forwarded-Host and X-OSEnvironment HTTP
+        headers at the load balancer, or another upstream proxy, so that Gloo can
+        identify the target runtime stage and route each inbound request correctly
+        in a self-hosted ODC cluster.
+  - name: Self-hosted configurator
+    id: self-hosted-configurator
+    subtopics:
+    - name: Reopen self-hosted configurator
+      id: reopen-self-hosted-configurator
+      description: Wants to reopen the Self-hosted configurator on an already-bootstrapped
+        ODC cluster via the ODC Portal's Self-hosted tab and configurator command,
+        so that they can update APM tool, stage database connection, or container
+        registry settings without rerunning the full installation wizard.
     - name: Redis HA architecture
       id: redis-ha-architecture
       description: Wants to understand the 3-node Master/Replica Redis Cluster
