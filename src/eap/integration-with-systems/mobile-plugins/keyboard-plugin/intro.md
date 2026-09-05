@@ -21,6 +21,10 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - control-device-keyboard
+  - customize-keyboard-appearance
+  - handle-keyboard-events
 isautopublish: true
 ---
 

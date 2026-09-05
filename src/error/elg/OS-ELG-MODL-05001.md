@@ -13,6 +13,8 @@ outsystems-tools:
 coverage-type:
   - unblock
 isautopublish: true
+topic:
+  - fix-invalid-assembly
 ---
 
 # OS-ELG-MODL-05001

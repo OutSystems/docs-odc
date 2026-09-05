@@ -7,6 +7,7 @@ coverage-type:
   - apply
   - understand
 topic:
+  - publish-with-message
 app_type: reactive web apps
 platform-version: odc
 audience:

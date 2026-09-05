@@ -16,6 +16,9 @@ outsystems-tools:
 coverage-type:
   - apply
 isautopublish: true
+topic:
+  - submit-asset-to-forge
+  - submit-new-forge-version
 ---
 
 # Submit assets to Forge
