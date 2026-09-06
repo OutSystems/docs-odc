@@ -12,6 +12,7 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
+  - rename-org-or-stage
 tags:
   - Settings
 isautopublish: true

@@ -16,6 +16,9 @@ audience:
 coverage-type:
   - remember
   - understand
+topic:
+  - handle-rate-limit-errors
+  - odc-api-rate-limits
 isautopublish: true
 summary: OutSystems Developer Cloud (ODC) API rate limits define per-domain and per-endpoint request caps, managing traffic for user, portfolio, build, and deployment APIs.
 ---

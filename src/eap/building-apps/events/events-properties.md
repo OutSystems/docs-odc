@@ -6,6 +6,7 @@ figma:
 coverage-type:
   - remember
 topic:
+  - odc-event-limits
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
