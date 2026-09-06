@@ -18,6 +18,10 @@ outsystems-tools:
   - odc portal
 coverage-type:
   - remember
+topic:
+  - passwords
+  - register-user-system-actions
+  - update-user-email
 isautopublish: true
 ---
 

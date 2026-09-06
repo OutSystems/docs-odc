@@ -7,6 +7,8 @@ coverage-type:
   - understand
   - apply
 topic:
+  - hipaa-compliance-requirements
+  - hipaa-odc-compliance
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

@@ -24,6 +24,10 @@ coverage-type:
   - apply
   - evaluate
 isautopublish: true
+topic:
+  - confirm-portfolio-structure
+  - identify-cross-portfolio-needs
+  - portfolio-boundary-design
 ---
 
 # Portfolio planning and setup
