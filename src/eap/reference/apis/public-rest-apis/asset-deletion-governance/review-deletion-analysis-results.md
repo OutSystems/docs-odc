@@ -14,7 +14,8 @@ audience:
   - Tech lead
   - Platform administrator
   - Developer
-tags: deletion analysis, dependency report, impact assessment, rest api, outsystems api
+tags:
+  - REST
 outsystems-tools:
   - odc portal
 helpids:

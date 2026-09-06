@@ -11,7 +11,9 @@ platform-version: odc
 audience:
   - Tech lead
   - Developer
-tags: semantic search, ai search, llm, vector embeddings, outsystems developer cloud
+tags:
+  - AI
+  - Multi-language
 outsystems-tools:
   - odc studio
   - odc portal
