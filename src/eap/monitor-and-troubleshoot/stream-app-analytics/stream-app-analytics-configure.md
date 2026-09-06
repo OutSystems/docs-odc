@@ -14,6 +14,9 @@ outsystems-tools:
 coverage-type:
   - apply
 content-type:
+topic:
+  - create-analytics-stream
+  - stream-status-meanings
 audience:
   - Platform administrator
 helpids: 30636

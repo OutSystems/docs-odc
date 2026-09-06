@@ -16,6 +16,10 @@ coverage-type:
   - remember
   - apply
 content-type:
+topic:
+  - config-app-after-deploy
+  - config-app-before-deploy
+  - use-settings-in-logic
 audience:
   - Developer
 isautopublish: true

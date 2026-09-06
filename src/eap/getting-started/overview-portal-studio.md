@@ -22,6 +22,9 @@ outsystems-tools:
 coverage-type:
   - remember
   - understand
+topic:
+  - odc-portal-overview
+  - odc-studio-overview
 isautopublish: true
 ---
 

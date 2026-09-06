@@ -20,6 +20,8 @@ outsystems-tools:
 coverage-type:
   - understand
 isautopublish: true
+topic:
+  - portfolio-deploy-scope
 ---
 
 # Asset deployment with multiple portfolios

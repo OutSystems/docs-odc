@@ -17,6 +17,9 @@ outsystems-tools:
   - odc studio
 coverage-type:
   - understand
+topic:
+  - clone-forge-asset
+  - forge-asset-ownership
 isautopublish: true
 ---
 
