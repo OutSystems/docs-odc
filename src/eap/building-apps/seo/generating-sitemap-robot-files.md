@@ -13,6 +13,9 @@ platform-version: odc
 figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?node-id=5895-800&node-type=canvas&t=zTqDJ1OjTTDkeMmV-0
 coverage-type:
   - apply
+topic:
+  - create-robots-txt-file
+  - generate-dynamic-sitemap
 audience:
   - Front-end developer
   - Developer
