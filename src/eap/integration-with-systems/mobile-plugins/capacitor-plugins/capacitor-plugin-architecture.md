@@ -8,6 +8,8 @@ coverage-type:
 content-type:
   - conceptual
 topic:
+  - capacitor-bridge-flow
+  - capacitor-plugin-layers
 app_type: mobile apps
 platform-version: odc
 audience:

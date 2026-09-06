@@ -21,6 +21,10 @@ coverage-type:
   - apply
 helpids: 30736, 30740
 isautopublish: true
+topic:
+  - library-revision-vs-version
+  - mobile-libraries-overview
+  - odc-library-overview
 ---
 
 # Libraries

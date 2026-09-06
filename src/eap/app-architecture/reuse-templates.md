@@ -19,6 +19,9 @@ outsystems-tools:
 coverage-type:
   - apply
 isautopublish: true
+topic:
+  - create-custom-app-template
+  - template-color-inheritance
 ---
 
 # Create a custom app template

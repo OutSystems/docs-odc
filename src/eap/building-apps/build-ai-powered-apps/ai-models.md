@@ -14,6 +14,10 @@ coverage-type:
 audience:
   - Developer
   - Front-end developer
+topic:
+  - custom-model-connections-odc
+  - manage-ai-model-connections
+  - search-services-rag
 isautopublish: true
 ---
 

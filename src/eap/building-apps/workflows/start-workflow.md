@@ -18,6 +18,9 @@ outsystems-tools:
 coverage-type:
   - apply
   - remember
+topic:
+  - configure-workflow-start
+  - workflow-instance-labels
 isautopublish: true
 ---
 

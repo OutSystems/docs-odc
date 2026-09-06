@@ -6,6 +6,8 @@ figma: https://www.figma.com/design/6G4tyYswfWPn5uJPDlBpvp/Building-apps?m=auto&
 coverage-type:
   - understand
 topic:
+  - agent-evaluations-overview
+  - evaluation-data-retention
 app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
