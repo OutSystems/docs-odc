@@ -19,6 +19,9 @@ audience:
   - Tech lead
 coverage-type:
   - apply
+topic:
+  - add-kb-server-action
+  - manage-kb-lifecycle
 ---
 # Create and manage a knowledge base in the ODC Portal
 

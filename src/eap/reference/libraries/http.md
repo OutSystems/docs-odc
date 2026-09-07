@@ -15,6 +15,8 @@ outsystems-tools:
 coverage-type:
   - remember
 isautopublish: true
+topic:
+  - http-library-actions
 ---
 
 # HTTP
