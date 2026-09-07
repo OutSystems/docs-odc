@@ -1,6 +1,7 @@
 ---
 summary: Explore how to customize REST API requests and responses using callbacks in OutSystems Developer Cloud (ODC).
-tags: rest api, api customization, callbacks, http headers, outsystems forge
+tags:
+  - REST
 locale: en-us
 guid: 182ad24a-5cfb-4a67-a9b2-b5c8dc83ef4c
 app_type: mobile apps, reactive web apps

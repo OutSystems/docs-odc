@@ -13,7 +13,12 @@ audience:
   - Developer
   - Architect
   - Tech lead
-tags: external libraries, best practices, private gateway, cloud connectivity, architecture
+tags:
+  - Architecture
+  - Best Practices
+  - Libraries
+  - Logging
+  - Private Gateway
 helpids:
 outsystems-tools:
   - none

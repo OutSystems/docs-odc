@@ -1,6 +1,12 @@
 ---
 summary: OutSystems Developer Cloud (ODC) accelerates CRUD operations with CRUD wrappers, enabling efficient data handling and faster development.
-tags: crud operations, data handling, outsystems, application development, crud wrappers
+tags:
+  - Best Practices
+  - Data
+  - Data Integrity
+  - Data Model
+  - Entities
+  - Logic
 guid: 27f0d3e2-f584-46a1-bb5a-adc6fe821a3d
 locale: en-us
 app_type: mobile apps, reactive web apps
