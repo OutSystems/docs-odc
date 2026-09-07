@@ -10,6 +10,10 @@ platform-version: odc
 figma:
 coverage-type:
   - understand
+topic:
+  - kb-region-data-residency-limits
+  - kb-stage-isolation
+  - knowledge-base-overview
 audience:
   - Tech lead
   - Developer

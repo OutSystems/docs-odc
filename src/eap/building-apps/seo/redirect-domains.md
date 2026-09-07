@@ -18,6 +18,8 @@ outsystems-tools:
   - odc studio
   - odc portal
 isautopublish: true
+topic:
+  - redirect-root-domain
 ---
 # Redirect domains
 

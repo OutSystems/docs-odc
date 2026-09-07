@@ -18,6 +18,8 @@ outsystems-tools:
   - none
 coverage-type:
   - understand
+topic:
+  - odc-network-architecture
 isautopublish: true
 ---
 
