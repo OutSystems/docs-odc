@@ -13,7 +13,7 @@ audience:
 outsystems-tools:
   - none
 coverage-type:
-  - none
+  - understand
 ---
 
 # Managing OutSystems platform and apps

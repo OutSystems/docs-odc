@@ -13,7 +13,7 @@ outsystems-tools:
   - odc studio
   - odc portal
 coverage-type:
-  - none
+  - understand
 isautopublish: true
 ---
 
