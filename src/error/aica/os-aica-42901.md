@@ -16,6 +16,8 @@ audience:
   - Front-end developer
 outsystems-tools:
   - mentor web
+topic:
+  - mentor-web-errors
 coverage-type:
   - unblock
 isautopublish: true

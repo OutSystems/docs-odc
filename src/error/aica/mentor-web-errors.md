@@ -20,6 +20,8 @@ coverage-type:
   - apply
   - unblock
 isautopublish: true
+topic:
+  - mentor-web-errors
 ---
 
 # Mentor Web errors
