@@ -13,13 +13,12 @@ platform-version: odc
 audience:
   - Tech lead
   - Developer
+  - Platform administrator
 tags:
   - Agentic
   - AI
   - Debugging
-  - Logging
   - Monitoring
-  - Quality Assurance
   - Troubleshooting
 outsystems-tools:
   - odc portal
@@ -39,6 +38,15 @@ Also, **note that agent traces are only available through the Analytics console.
 
 * Review [what's captured](#what-gets-captured) before enabling, since this feature stores prompt and response content that may include data your users entered.
 * You need to activate the **Show detailed execution data** for every agent that you desire to have monitoring and to view traces afterward.
+* Check whether detailed execution traces are available for your organization. Refer to [regional availability](#regional-availability).
+
+## Regional availability {#regional-availability}
+
+ODC stores detailed execution traces in the data platform region that serves your tenant, not necessarily in your tenant's own region. **Show Detailed Execution Data** is only available when your tenant's runtime region matches its data platform region. For example, organizations in Europe (Frankfurt) have access, because Frankfurt is also a data platform region, while organizations in Europe (London) don't, because their data platform region is Frankfurt.
+
+To check whether your organization qualifies, compare your **Runtime region** and **Data platform region** in the ODC Portal **Organization** page, as described in [Verify your regions for compliance and networking](../../manage-platform-app-lifecycle/subscription-console.md#platform-regions).
+
+If your runtime and data platform regions don't match, **Show Detailed Execution Data** isn't available for your organization. OutSystems is working on a mechanism for organizations in this situation to opt in to cross-region storage.
 
 ## Enable monitoring for the agent
 
