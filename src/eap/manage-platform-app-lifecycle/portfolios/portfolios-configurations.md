@@ -20,6 +20,9 @@ outsystems-tools:
 coverage-type:
   - remember
   - understand
+topic:
+  - asset-and-config-scope
+  - configure-new-portfolio
 isautopublish: true
 ---
 

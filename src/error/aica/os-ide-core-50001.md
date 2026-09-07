@@ -16,6 +16,8 @@ outsystems-tools:
   - mentor web
 coverage-type:
   - unblock
+topic:
+  - resolve-internal-error-odc
 isautopublish: true
 ---
 

@@ -6,6 +6,8 @@ figma: https://www.figma.com/design/epaiN2jasbbKgJA0iSYfZn/Extending-with-ODC?no
 coverage-type:
   - apply
 topic:
+  - connect-o11-infrastructure
+  - edit-remove-o11-infrastructure
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:

@@ -7,6 +7,9 @@ coverage-type:
   - apply
   - understand
 topic:
+  - expose-o11-entities
+  - promote-exposed-entities
+  - update-exposed-entities
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
