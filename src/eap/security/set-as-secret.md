@@ -18,6 +18,8 @@ outsystems-tools:
 coverage-type:
   - understand
   - apply
+topic:
+  - set-app-setting-secret
 isautopublish: true
 ---
 

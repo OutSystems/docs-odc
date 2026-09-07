@@ -19,6 +19,10 @@ outsystems-tools:
 coverage-type:
   - remember
   - apply
+topic:
+  - activate-csp-stage
+  - configure-csp-directive-values
+  - csp-default-required-values
 isautopublish: true
 ---
 
