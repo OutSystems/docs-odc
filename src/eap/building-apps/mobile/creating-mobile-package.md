@@ -93,9 +93,20 @@ From the same screen, you can create an iOS or Android package. ODC can process 
 
 1. (For Android package) Provide the Keystore details such as **Keystore** binary file, **Keystore password**, **Alias**, and **Alias password**.
 
-1. Select the **Mobile Apps Build Service (MABS) version**. You can select either the stable version or a particular MABS version. If you choose version **12.0**, then select either **Cordova** or **Capacitor** as the mobile framework. Ensure that all the plugins you use in the app are compatible with the chosen framework. For detailed information about dual stack support in MABS, refer to [Capacitor and Cordova support in MABS](mabs-overview.md).
+1. Select the **Mobile Apps Build Service (MABS) version**. Select either **Always use the latest stable version** or a specific MABS version.
+
+    * If you select the **Always use the latest stable version**, you cannot select the ODC framework; instead, ODC builds the package using the default framework associated with the latest stable version. For MABS 12.0 and later, the default framework is Capacitor.
+    * If you select a specific MABS version that is version 12.0 or later, you can choose **Cordova** or **Capacitor** as the mobile framework. Ensure that all the plugins you use in the app are compatible with the chosen framework.
+
+    For detailed information about dual stack support in MABS, refer to [Capacitor and Cordova support in MABS](mabs-overview.md).
 
     ![Screenshot of the ODC Portal showing the MABS version selection and Mobile Framework dropdown with Cordova and Capacitor options.](images/mabs-selection-pl.png "MABS Version and Framework Selection")
+
+    <div class="warning" markdown="1">
+
+    If your app or its plugins support only Cordova, package creation fails when you select **Always use the latest stable version**. Migrate your app to Capacitor before you use this option. For more information, refer to [Migrating Cordova apps to Capacitor](migrate-cordova-to-capacitor.md).
+  
+    </div>
 
 1. Enter the **Version (Major, Minor, Patch)** number. If you want to modify the version, enter any version number that's equal to or higher than the previous version
 

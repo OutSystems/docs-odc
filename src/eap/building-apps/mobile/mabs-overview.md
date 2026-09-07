@@ -18,8 +18,9 @@ audience:
 outsystems-tools:
   - odc portal
 coverage-type:
-  - understand
   - remember
+  - understand
+  - evaluate
 isautopublish: true
 ---
 # Capacitor and Cordova support in MABS
@@ -34,7 +35,13 @@ MABS versions earlier than 12.0 use Apache Cordova as its underlying hybrid fram
 
 ## Dual stack support in MABS 12 and later
 
-MABS 12 and later supports building both **Cordova apps** and [**Capacitor apps**](https://capacitorjs.com/). From ODC Portal, while building the mobile package, you can [select the mobile framework](creating-mobile-package.md) Cordova or Capacitor. The default framework is Capacitor.
+MABS 12 and later supports building both **Cordova apps** and [**Capacitor apps**](https://capacitorjs.com/).From ODC Portal, while building the mobile package, you can [select the mobile framework](creating-mobile-package.md) Cordova or Capacitor.
+
+<div class="warning" markdown="1">
+
+Selecting **Always use the latest stable version** defaults to the Capacitor framework for MABS 12.0 and later. Ensure that your app and its plugins are compatible with Capacitor to avoid package creation failures. For Cordova apps, OutSystems recommends [Migrating Cordova apps to Capacitor](migrate-cordova-to-capacitor.md) or select a specific MABS version and the framework manually.
+
+</div>
 
 Here are some recommendations for building mobile apps using MABS 12 and later:
 
