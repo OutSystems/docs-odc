@@ -1,6 +1,11 @@
 ---
 summary: OutSystems Developer Cloud (ODC) offline sync checklist with best practices for OnSync, conflict management, app design, and mobile performance.
-tags: offline data synchronization, performance optimization, best practices, mobile sync patterns, data management
+tags:
+  - Best Practices
+  - Data Synchronization
+  - Mobile app
+  - Optimization
+  - Performance
 locale: en-us
 guid: d3fe3f23-f7bf-443b-b37e-8e772fffe77a
 app_type: mobile apps

@@ -1,6 +1,9 @@
 ---
 summary: Read-Only Data sync pattern in OutSystems Developer Cloud (ODC) downloads server data to device local storage without propagating device changes back.
-tags: data synchronization, offline data handling, local storage, performance optimization, outsystems patterns
+tags:
+  - Data Synchronization
+  - Forge
+  - Mobile app
 locale: en-us
 guid: abd5db07-779e-4597-9158-5ac68de2bae4
 app_type: mobile apps

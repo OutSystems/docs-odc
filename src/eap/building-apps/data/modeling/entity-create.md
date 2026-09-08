@@ -1,6 +1,10 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) entity creation: add entities in ODC Studio via Entity Diagram or Data tab, define attributes, and enable local storage."
-tags: data modeling, local storage
+tags:
+  - Data
+  - Data Model
+  - Entities
+  - Table
 locale: en-us
 guid: d8cd27a9-fadb-404c-8998-648f3799934a
 app_type: mobile apps, reactive web apps
