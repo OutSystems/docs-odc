@@ -1,6 +1,8 @@
 ---
 summary: OutSystems Developer Cloud (ODC) workflow system entities, including ActivityDefinition and ProcessInstance, and static entities for ODC Studio.
-tags: workflow management, system entities, process design, workflow execution, workflow automation
+tags:
+  - Entities
+  - Workflows
 locale: en-us
 guid: dad534b3-39c0-4907-a743-5509d867e111
 app_type: mobile apps, reactive web apps

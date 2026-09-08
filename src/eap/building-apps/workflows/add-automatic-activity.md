@@ -1,6 +1,7 @@
 ---
 summary: ODC automatic activity lets you automate workflow tasks by invoking a service action in the AutomaticActivity node, with no human intervention required.
-tags: workflow automation, service actions, odc, workflow editor, automatic activities
+tags:
+  - Workflows
 locale: en-us
 guid: 2ed780f3-ca62-411b-97d4-252a201c7d80
 app_type: mobile apps, reactive web apps
