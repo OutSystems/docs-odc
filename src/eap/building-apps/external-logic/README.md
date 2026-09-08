@@ -1,6 +1,12 @@
 ---
 summary: OutSystems Developer Cloud (ODC) External Libraries SDK enables the extension of ODC apps with custom .NET code.
-tags: .net integration, custom code extension
+tags:
+  - .NET
+  - C#
+  - Libraries
+  - Logic
+  - Templates
+  - Troubleshooting
 locale: en-us
 guid: 955feaca-cda0-492f-9b84-d5c89281692e
 app_type: mobile apps, reactive web apps

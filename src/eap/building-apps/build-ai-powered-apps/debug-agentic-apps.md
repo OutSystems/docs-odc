@@ -2,7 +2,9 @@
 guid: ed88ebbf-ca57-4d12-aa89-436c27d72c2d
 locale: en-us
 summary: Debug end-to-end flows that call AI agents by running separate debugging sessions for your consumer app and agentic app in ODC Studio.
-tags: agentic apps,debugging,breakpoints,odc studio
+tags:
+  - Agentic
+  - Debugging
 platform-version: odc
 app_type: mobile apps,reactive web apps
 audience:
