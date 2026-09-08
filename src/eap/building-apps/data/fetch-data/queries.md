@@ -1,6 +1,13 @@
 ---
 summary: OutSystems Developer Cloud (ODC) data mashup queries cover cross-database joins, equi-join conditions, filter patterns, and aggregate best practices.
-tags: database joins, query optimization, data retrieval, sql, relational databases
+tags:
+  - Aggregates
+  - Best Practices
+  - Indexes
+  - Optimization
+  - Performance
+  - Sorting
+  - SQL
 guid: eb941889-6a5e-4e81-a570-80321841e5c1
 locale: en-us
 app_type: mobile apps, reactive web apps

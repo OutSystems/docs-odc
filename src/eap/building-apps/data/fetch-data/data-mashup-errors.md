@@ -1,6 +1,11 @@
 ---
 summary: 'OutSystems Developer Cloud (ODC) aggregate data mashup errors: identify record limit causes and fix sort and join query failures.'
-tags: data management, performance optimization, query optimization, error handling, database operations
+tags:
+  - Aggregates
+  - Optimization
+  - Performance
+  - Sorting
+  - Troubleshooting
 locale: en-us
 guid: d2a3bea8-77c9-46b1-9602-423267953830
 app_type: mobile apps, reactive web apps

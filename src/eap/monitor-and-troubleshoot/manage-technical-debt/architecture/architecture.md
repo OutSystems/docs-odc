@@ -11,7 +11,11 @@ platform-version: odc
 audience:
   - Architect
   - Developer
-tags: code analysis, architecture patterns, fixing issues, impact analysis, outsystems odc
+tags:
+  - Architecture
+  - Monitoring
+  - Technical Debt
+  - Troubleshooting
 outsystems-tools:
   - odc studio
   - odc portal

@@ -1,6 +1,10 @@
 ---
 summary: Learn how to implement SLA use cases into your workflows
-tags: workflow management, application development, event handling, odc
+tags:
+  - Best Practices
+  - Events
+  - Timers
+  - Workflows
 guid: 9510852b-5f77-405f-8df6-e899a8a42ddc
 locale: en-us
 app_type: mobile apps, reactive web apps

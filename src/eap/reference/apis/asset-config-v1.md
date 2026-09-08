@@ -13,7 +13,10 @@ coverage-type:
   - remember
 figma:
 api-render: true
-tags: asset configuration, rest api, endpoint documentation, odc platform, api reference
+tags:
+  - CI/CD
+  - Deploy
+  - REST
 outsystems-tools:
   - odc studio
   - odc portal

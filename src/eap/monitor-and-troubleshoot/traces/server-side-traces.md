@@ -1,6 +1,9 @@
 ---
 summary: OutSystems Developer Cloud(ODC) features server-side traces to monitor server-side elements
-tags: server-side performance, error handling, server-side monitoring, debugging techniques
+tags:
+  - Monitoring
+  - Performance
+  - Troubleshooting
 guid: 116ccfe6-45f1-420b-aca9-e4de767ae280
 locale: en-us
 app_type: mobile apps, reactive web apps

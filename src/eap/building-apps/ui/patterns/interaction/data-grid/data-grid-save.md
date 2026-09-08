@@ -1,5 +1,9 @@
 ---
-tags: data grid, data persistence, client actions, reactive web apps, outsystems
+tags:
+  - Data
+  - Logic
+  - OutSystems UI
+  - UI Patterns
 summary: Learn how to save edited data from the OutSystems Developer Cloud (ODC) Data Grid to a database using client and server actions.
 guid: 88b6a279-6564-4a07-a4be-854b86ca11da
 locale: en-us

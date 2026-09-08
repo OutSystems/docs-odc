@@ -12,7 +12,9 @@ platform-version: odc
 audience:
   - Platform administrator
   - Architect
-tags: postgresql configuration, self-hosted stages, database requirements, outsystems developer cloud, infrastructure setup
+tags:
+  - External Databases
+  - Infrastructure
 outsystems-tools:
   - self hosted console
 helpids:
