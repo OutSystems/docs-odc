@@ -1,5 +1,10 @@
 ---
-tags: ui design patterns, mobile app development, ui components, outsystems ui, user experience
+tags:
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: "Bottom Sheet UI pattern in ODC: add it to a mobile app screen, configure open/close actions, and customize its shape and handler properties."
 locale: en-us
 guid: b45a2a54-8dbe-44f4-8a96-63e5e26d5ae0

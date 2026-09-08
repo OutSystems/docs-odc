@@ -1,5 +1,9 @@
 ---
-tags: ui design, user interaction
+tags:
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: ODC Floating Actions UI Pattern lets you add a floating button with expandable sub-actions to your screen, using IsExpanded and IsHover properties.
 locale: en-us
 guid: a246e3bb-4c75-4e3b-8a53-eb45a08996ae

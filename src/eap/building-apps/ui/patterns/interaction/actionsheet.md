@@ -1,5 +1,10 @@
 ---
-tags: ui design, ui patterns, mobile app development, outsystems developer cloud
+tags:
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Action Sheet UI Pattern in ODC lets you add a bottom-sliding menu to mobile apps by configuring IsOpen and OnClose events in ODC Studio.
 locale: en-us
 guid: 7702c792-34d2-41e7-9bad-e9b88326a21e

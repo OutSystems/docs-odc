@@ -1,5 +1,11 @@
 ---
-tags: ui patterns, mobile app development
+tags:
+  - Front-End
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Card Item UI Pattern in ODC lets you list items with images, icons, titles, descriptions, and actions using ODC Studio.
 locale: en-us
 guid: 0e53449a-f4be-400e-9736-d7d44cc30e7c

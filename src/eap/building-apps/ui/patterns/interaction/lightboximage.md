@@ -1,5 +1,9 @@
 ---
-tags: ui patterns, image gallery, ux design, how-to, widgets
+tags:
+  - Front-End
+  - OutSystems UI
+  - UI Patterns
+  - Widgets
 summary: Lightbox Image UI Pattern in ODC opens thumbnail images in full screen mode, with step-by-step setup, grouping, zoom, and URL properties.
 locale: en-us
 guid: 575c188f-fb02-4d70-8241-4b3e4518d66c

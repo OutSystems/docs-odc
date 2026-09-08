@@ -1,5 +1,10 @@
 ---
-tags: ui design patterns, cards ui pattern
+tags:
+  - Front-End
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Card UI Pattern in OutSystems Developer Cloud (ODC) groups and highlights small content blocks. Add it in ODC Studio and customize padding and style properties.
 locale: en-us
 guid: 594f6cef-f632-40c4-9ffc-2204252e6dd2
