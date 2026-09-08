@@ -3,7 +3,9 @@ guid: 7a5bb4dd-9d82-48ef-9162-8f8a34d2d697
 summary: Overview of MCP tools and prebuilt connectors.
 locale: en-us
 figma:
-tags: integration, full stack development, tech leads, backend integration, cloud development
+tags:
+  - AI
+  - Agentic
 app_type: mobile apps,reactive web apps
 platform-version: odc
 coverage-type:

@@ -12,7 +12,14 @@ app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - Developer
-tags: sql, mashup queries, select statement, with clause, database queries
+tags:
+  - Aggregates
+  - Data
+  - Entities
+  - External Databases
+  - Pagination
+  - Sorting
+  - SQL
 outsystems-tools:
   - odc studio
   - odc portal
