@@ -1,6 +1,12 @@
 ---
 summary: ODC UI Flows group screens and blocks in ODC Studio, with built-in support for adding flows, setting themes, marking a default screen, and scaffolding screens.
-tags: ui design, application development
+tags:
+  - Blocks
+  - Layouts
+  - OutSystems UI
+  - Screens
+  - Themes
+  - UI
 locale: en-us
 guid: f7e6d4a4-7d1e-4593-9975-b8e160df3780
 app_type: mobile apps, reactive web apps

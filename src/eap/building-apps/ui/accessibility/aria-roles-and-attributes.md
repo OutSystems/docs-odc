@@ -1,6 +1,9 @@
 ---
 summary: ARIA roles and attributes in OutSystems Developer Cloud (ODC) let you add static, dynamic, and built-in accessibility properties in ODC Studio.
-tags: accessibility, aria, web development, assistive technology, user experience
+tags:
+  - Accessibility
+  - OutSystems UI
+  - UI Patterns
 locale: en-us
 guid: 2dd1e5f8-9198-4f04-bc61-6a62073113e5
 app_type: reactive web apps, mobile apps
