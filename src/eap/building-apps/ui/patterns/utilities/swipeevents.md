@@ -1,5 +1,10 @@
 ---
-tags: user interaction, mobile app development
+tags:
+  - Mobile app
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Swipe Events UI pattern in OutSystems Developer Cloud (ODC) lets you enable swipe gestures on widgets and trigger left/right swipe actions in mobile apps.
 locale: en-us
 guid: b8415514-3f04-45f1-a26c-0ef4049b4487

@@ -1,5 +1,9 @@
 ---
-tags: ui development, interface design
+tags:
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Mouse Events UI Pattern in OutSystems Developer Cloud (ODC) lets you track mouse movement and drag distance using OffsetX and OffsetY in ODC Studio.
 locale: en-us
 guid: c9b283f3-79d1-4ac0-93a4-1f1a7a2c50e7

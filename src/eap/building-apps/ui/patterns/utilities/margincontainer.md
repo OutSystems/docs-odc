@@ -1,5 +1,9 @@
 ---
-tags: ui design, ui patterns, app development tutorials for beginners
+tags:
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Margin Container UI Pattern in OutSystems Developer Cloud (ODC) adds symmetrical padding around a container using ODC Studio.
 locale: en-us
 guid: 7e38da14-e0fb-42d7-b677-5b18818c788f

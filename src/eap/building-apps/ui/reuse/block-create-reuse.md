@@ -1,6 +1,10 @@
 ---
 summary: ODC screen blocks reuse across apps by creating a public block in a library and adding it to mobile or web apps in ODC Studio.
-tags: ui development, component reusability
+tags:
+  - Blocks
+  - Libraries
+  - OutSystems UI
+  - UI
 locale: en-us
 guid: a62501dc-9ec8-41f6-add8-50b3e3934b8b
 app_type: mobile apps, reactive web apps

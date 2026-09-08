@@ -1,6 +1,11 @@
 ---
 summary: "ODC verification code and password form: add boolean visibility logic, password policy validation, and FinishUserRegistration to complete self-registration in ODC Studio."
-tags: user interface design,form validation,boolean logic,conditional rendering,email verification
+tags:
+  - Blocks
+  - Forms
+  - Screens
+  - UI
+  - Widgets
 locale: en-us
 guid: 64EC5395-D2E9-494A-A556-9547438D74B9
 app_type: mobile apps,reactive web apps
