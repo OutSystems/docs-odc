@@ -1,6 +1,8 @@
 ---
 summary: OutSystems Developer Cloud (ODC) leverages event-driven architecture for real-time data processing and app automation.
-tags: event-driven architecture, real-time data processing, app automation
+tags:
+  - Architecture
+  - Events
 locale: en-us
 guid: 5bfd1452-1ff8-4180-a437-65603671437b
 app_type: mobile apps, reactive web apps
