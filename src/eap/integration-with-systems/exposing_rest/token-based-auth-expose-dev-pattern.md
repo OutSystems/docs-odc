@@ -6,8 +6,10 @@ coverage-type:
   - understand
   - evaluate
 topic:
+  - choose-token-flow
+  - jwt-security-practices
   - rest-webservice-data
-  - authentication-mechanisms
+  - validate-jwt-onauthentication
 app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
