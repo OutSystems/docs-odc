@@ -13,7 +13,10 @@ coverage-type:
   - remember
 figma:
 api-render: true
-tags: user management api, access control, rest api, odc platform, api documentation
+tags:
+  - Authorization
+  - IT Users
+  - REST
 outsystems-tools:
   - odc studio
   - odc portal

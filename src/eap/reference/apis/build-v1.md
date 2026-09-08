@@ -13,7 +13,10 @@ coverage-type:
   - remember
 figma:
 api-render: true
-tags: build operations api, rest api, endpoint details, backend development, full stack development
+tags:
+  - CI/CD
+  - Deploy
+  - REST
 outsystems-tools:
   - odc studio
   - odc portal

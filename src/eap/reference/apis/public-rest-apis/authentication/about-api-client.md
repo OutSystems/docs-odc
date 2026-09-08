@@ -1,7 +1,11 @@
 ---
 helpids: 30566
 summary: Manage API access in OutSystems Developer Cloud (ODC) with the API client, enabling client account creation and role assignments.
-tags: api client management, access control, role assignment, odc rest apis, client credentials
+tags:
+  - Authentication
+  - Authorization
+  - REST
+  - Roles
 outsystems-tools:
   - odc portal
 guid: e693044a-aa9f-47c3-a7a4-9332c4f6fcc0

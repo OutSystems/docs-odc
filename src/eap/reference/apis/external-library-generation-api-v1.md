@@ -5,7 +5,11 @@ guid: 47875596-0618-4d20-824a-fbbaea2d353b
 app_type: mobile apps, reactive web apps
 platform-version: odc
 api-render: true
-tags: api, external library management, mobile apps, reactive web apps, high-code packages
+tags:
+  - Libraries
+  - Mobile app
+  - REST
+  - Web
 audience:
   - Developer
   - Front-end developer

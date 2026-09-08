@@ -13,7 +13,9 @@ coverage-type:
   - remember
 figma:
 api-render: true
-tags: dependency management, rest api, backend development, odc portal, api reference
+tags:
+  - REST
+  - Web services
 outsystems-tools:
   - odc studio
   - odc portal
