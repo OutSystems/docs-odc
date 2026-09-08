@@ -1,5 +1,8 @@
 ---
-tags: ui patterns, data retrieval, widget implementation, notifications, user management
+tags:
+  - OutSystems UI
+  - UI Patterns
+  - Widgets
 summary: Badge UI Pattern in OutSystems Developer Cloud (ODC) displays numerical info like unread messages or user counts in your apps.
 locale: en-us
 guid: d97db143-3239-44d4-bdf7-0c49483b6939

@@ -1,5 +1,9 @@
 ---
-tags: ui components, integration techniques
+tags:
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Range Slider UI Pattern in ODC lets you add a single-value slider to your app, set min/max values, and handle value changes with a client action.
 locale: en-us
 guid: 3004b9a7-ba25-42d8-8430-703d2be50470

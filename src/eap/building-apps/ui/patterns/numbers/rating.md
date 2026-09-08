@@ -1,5 +1,9 @@
 ---
-tags: ui components, user experience
+tags:
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Rating UI Pattern in ODC lets you add star, heart, or custom icon ratings — set RatingValue, RatingScale, IsEdit, and Size properties in ODC Studio.
 locale: en-us
 guid: 31fc8803-e23e-4f60-8731-2fc03e5a51bf

@@ -1,5 +1,10 @@
 ---
-tags: ui components, data visualization
+tags:
+  - Aggregates
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: Counter UI Pattern in ODC lets you display numerical notifications by binding aggregates to a widget and customizing height and orientation.
 locale: en-us
 guid: 7b33f1cb-f293-49c5-ad4a-8c781526acb7

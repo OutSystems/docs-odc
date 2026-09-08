@@ -1,5 +1,11 @@
 ---
-tags: user interface patterns, native apps, ui design, mobile app development, outsystems
+tags:
+  - Mobile app
+  - Native App
+  - OutSystems UI
+  - UI
+  - UI Patterns
+  - Widgets
 summary: "OutSystems Developer Cloud (ODC) Sidebar UI Pattern: add it in ODC Studio, configure properties, and toggle it using client actions."
 locale: en-us
 guid: 9bb5e9f0-3a33-4a07-951a-08fdb67267a1

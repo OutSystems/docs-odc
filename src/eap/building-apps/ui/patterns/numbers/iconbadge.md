@@ -1,5 +1,9 @@
 ---
-tags: user interface design, widget usage, data retrieval, notifications system, database manipulation
+tags:
+  - Aggregates
+  - OutSystems UI
+  - UI Patterns
+  - Widgets
 summary: Icon Badge UI Pattern in ODC lets you display numerical notifications like unread messages or user counts by binding an aggregate to the Number property.
 locale: en-us
 guid: 2d9289d9-8fce-4e29-bb0d-fb4d7b8dcdd9
