@@ -1,6 +1,10 @@
 ---
 summary: This article provides conceptual information about ODC REST API authentication and authorization.
-tags: api, authentication, authorization, oauth 2.0, openid connect
+tags:
+  - Authentication
+  - Authorization
+  - OAuth
+  - OIDC
 outsystems-tools:
   - odc studio
   - odc portal

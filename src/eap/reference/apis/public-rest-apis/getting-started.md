@@ -1,6 +1,9 @@
 ---
 summary: In this article you will learn how to make your first API call.
-tags: api, authentication, rest api, oauth 2.0, user management
+tags:
+  - Authentication
+  - OAuth
+  - REST
 outsystems-tools:
   - odc portal
 guid: 316cc17e-0e09-482e-87b1-e9e6d4f483ce

@@ -1,6 +1,9 @@
 ---
 summary: Manage code quality and technical debt using OutSystems Developer Cloud (ODC), prioritizing improvements and helping team development.
-tags: code quality, technical debt, best practices, security risks
+tags:
+  - Best Practices
+  - Security
+  - Technical Debt
 guid: 710897dc-5c3f-46af-a2a2-24f0bf6adb8a
 locale: en-us
 app_type: mobile apps, reactive web apps

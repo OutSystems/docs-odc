@@ -1,5 +1,11 @@
 ---
-tags: data grid, reactive web apps, mescius data grid, web development, data analytics
+tags:
+  - Blocks
+  - Data
+  - Front-End
+  - Table
+  - UI
+  - Widgets
 summary: Explore advanced grid functionalities in OutSystems Developer Cloud (ODC) for building dynamic, data-driven web apps.
 locale: en-us
 guid: c2487d47-2803-4309-9a02-ca8accab26ed

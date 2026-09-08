@@ -1,6 +1,10 @@
 ---
 summary: Configure OAuth 2.0 to access REST APIs with OutSystems Developer Cloud (ODC), obtain client credentials, generate access tokens, and authorize API calls.
-tags: oauth 2.0, api authorization, rest apis, access token, client credentials
+tags:
+  - Authentication
+  - Authorization
+  - OAuth
+  - REST
 outsystems-tools:
   - odc portal
 guid: 4dcce5be-a518-4401-8261-3588e95415ba

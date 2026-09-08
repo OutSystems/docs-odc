@@ -1,6 +1,10 @@
 ---
 summary: OutSystems Developer Cloud (ODC) supports BPMN practitioners with a comprehensive guide to process modeling notation and execution.
-tags: bpmn, business process modeling, process notation, workflows, odc
+tags:
+  - BPMN
+  - Business Processes
+  - Events
+  - Workflows
 guid: 7a860538-98c2-4264-b7fd-9d6aef199a8e
 locale: en-us
 app_type: mobile apps, reactive web apps
