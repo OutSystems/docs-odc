@@ -22,10 +22,8 @@ outsystems-tools:
   - odc portal
   - odc studio
 topic:
-  - authentication-mechanisms
-  - built-in-mechanisms
-  - external-auth-mechanisms
-  - user-roles
+  - builtin-member-workflow
+  - external-idp-member-workflow
 isautopublish: true
 ---
 
