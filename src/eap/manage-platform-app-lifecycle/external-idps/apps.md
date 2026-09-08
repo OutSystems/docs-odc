@@ -1,6 +1,10 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) external IdP login: add identity provider buttons and modify login/logout flows in ODC Studio apps."
-tags: authentication, identity provider integration, user management, single sign-on
+tags:
+  - Authentication
+  - End-user Authentication
+  - External Authentication
+  - IdP
 helpids: 30500
 locale: en-us
 guid: e2b2541f-80b6-49b7-8961-8b7ad2ad65f3

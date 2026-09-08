@@ -1,6 +1,11 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) login flow bypass: redirect to a single external IdP in ODC Studio apps while keeping the built-in login path."
-tags: authentication, identity provider integration, user management, single sign-on
+tags:
+  - Authentication
+  - External Authentication
+  - IdP
+  - OIDC
+  - SSO
 helpids: 30500
 locale: en-us
 guid: 1e9fd60c-9011-4047-bb85-d639e0ff4006

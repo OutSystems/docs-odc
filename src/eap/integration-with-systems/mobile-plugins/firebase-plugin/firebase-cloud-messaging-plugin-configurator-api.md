@@ -1,6 +1,11 @@
 ---
 summary: "Firebase Cloud Messaging plugin Configurator REST APIs (ODC): deprecated v1/v2 endpoints for push notifications in apps using plugin version 0.1.2 or older."
-tags: firebase, notifications, plugin integration, deprecation, migration
+tags:
+  - Android
+  - iOS
+  - Mobile app
+  - Plugins
+  - REST
 locale: en-us
 guid: 22d6edad-3a83-44f8-abbf-81e0b2d02041
 app_type: mobile apps

@@ -1,6 +1,8 @@
 ---
 summary: Code quality in ODC helps you as a developer solve findings, fix issues directly in ODC Studio, and manage finding statuses like Dismissed or Snoozed.
-tags: code quality, mentor, outsystems applications, odc studio, performance optimization
+tags:
+  - Technical Debt
+  - Troubleshooting
 guid: 5106A167-C080-4F57-96A3-75BFB73A33FB
 locale: en-us
 app_type: mobile apps, reactive web apps

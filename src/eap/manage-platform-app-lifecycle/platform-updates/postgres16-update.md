@@ -12,7 +12,12 @@ platform-version: odc
 audience:
   - Developer
   - Platform administrator
-tags: postgresql upgrade, runtime database, performance improvement, breaking changes, database management
+tags:
+  - Data Integrity
+  - Infrastructure
+  - Performance
+  - SQL
+  - Troubleshooting
 outsystems-tools:
   - odc portal
 helpids: 30744

@@ -1,6 +1,11 @@
 ---
 summary: An action with a high node count is hard to maintain, especially if it has no comments to explain the logic.
-tags: maintenance, flow logic, comments, troubleshooting, node count
+tags:
+  - Logic
+  - Modular Programming
+  - Refactoring
+  - Technical Debt
+  - Troubleshooting
 guid: 34e826d1-c93f-488e-8e42-524502cc0617
 locale: en-us
 app_type: mobile apps, reactive web apps
