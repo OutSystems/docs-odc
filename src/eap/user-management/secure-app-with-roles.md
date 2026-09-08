@@ -23,10 +23,11 @@ coverage-type:
   - apply
   - remember
 topic:
-  - secure-screen
   - app-roles
+  - assign-end-user-roles
   - create-app-role
-  - assign-roles
+  - restrict-logic-with-roles-odc
+  - secure-screen
 isautopublish: true
 ---
 
