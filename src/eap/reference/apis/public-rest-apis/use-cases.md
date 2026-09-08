@@ -1,6 +1,8 @@
 ---
 summary: This article provides a list of use cases for the ODC REST APIs.
-tags: rest apis, use cases, automation, odc
+tags:
+  - CI/CD
+  - REST
 guid: d3b941b4-bb78-4c6d-b8ce-1e21f5b2db8f
 locale: en-us
 app_type: mobile apps, reactive web apps

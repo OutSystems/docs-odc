@@ -1,6 +1,12 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) requirement documents: structure data models, roles, and screen layouts for accurate agentic app generation."
-tags: requirement documents, agentic development, app generation, best practices, documentation
+tags:
+  - Agentic
+  - Best Practices
+  - Data Model
+  - Entities
+  - Roles
+  - Screens
 guid: da1fc397-5aff-4513-b531-df5f58c29af0
 locale: en-us
 app_type: reactive web apps

@@ -13,7 +13,8 @@ coverage-type:
   - remember
 figma:
 api-render: true
-tags: organization api, rest api reference, odc organization settings, api specification
+tags:
+  - REST
 outsystems-tools:
   - odc studio
   - odc portal

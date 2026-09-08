@@ -12,7 +12,9 @@ app_type: reactive web apps,mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: ai models, image processing, multimodal ai, outsystems developer cloud, agentic apps
+tags:
+  - Agentic
+  - AI
 outsystems-tools:
   - odc studio
 helpids:

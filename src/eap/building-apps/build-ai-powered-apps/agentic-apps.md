@@ -12,7 +12,9 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: ai models,ai agents,integration,automation,odc studio
+tags:
+  - Agentic
+  - AI
 outsystems-tools:
   - odc studio
 helpids: 30646, 30647, 30649, 30650
