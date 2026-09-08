@@ -65,7 +65,7 @@ Required extensions:
 Each database must be dedicated to a single ODC runtime stage and can’t be shared with other applications or services.
 While you have full control over your application data, don’t modify the database schema or its underlying structure. Changing schema elements may cause application malfunction or data loss that OutSystems can’t recover or fix.
 
-For this setup, you must use the `postgres` user for the database connection, so make the `postgres` user is active.
+For this setup, you must use the `postgres` user for the database connection, so make sure the `postgres` user is active.
 
 ### Auto-scaling
 
