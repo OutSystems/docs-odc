@@ -21,7 +21,8 @@ coverage-type:
   - apply
   - understand
 topic:
-  - mobile-plugins
+  - build-dual-stack-plugin
+  - decide-dual-stack-need
 isautopublish: true
 ---
 
