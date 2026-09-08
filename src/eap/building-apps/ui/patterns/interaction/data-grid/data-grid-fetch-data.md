@@ -1,5 +1,12 @@
 ---
-tags: data grid, odc, data fetching, grid configuration, outsystems
+tags:
+  - Aggregates
+  - Data
+  - Forge
+  - Pagination
+  - Sorting
+  - UI Patterns
+  - Widgets
 summary: Learn to fetch and display data in the OutSystems Data Grid (ODC) for reactive web apps, including configuration and customization properties.
 guid: f7f7cc5c-680f-47c3-ba1f-d4346729745a
 locale: en-us

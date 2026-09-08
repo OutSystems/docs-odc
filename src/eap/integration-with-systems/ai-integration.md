@@ -13,7 +13,9 @@ coverage-type:
 topic:
 app_type: mobile apps,reactive web apps
 platform-version: odc
-tags: ai integration, mobile apps, reactive web apps
+tags:
+  - Agentic
+  - AI
 outsystems-tools:
   - odc studio
 helpids:

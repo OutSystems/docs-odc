@@ -1,5 +1,8 @@
 ---
-tags: data grid, data manipulation, virtual scrolling, data sorting, reactive web apps
+tags:
+  - Forge
+  - Sorting
+  - UI Patterns
 summary: OutSystems Developer Cloud (ODC) features the Data Grid component for efficient data manipulation with sorting and virtual scrolling.
 guid: 6a6a95ca-68c9-4a3b-93af-9c0adc940149
 locale: en-us
