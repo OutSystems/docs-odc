@@ -65,7 +65,7 @@ The following table lists the minimum **Platform Server** and **LifeTime** versi
 
 <div class="info" markdown="1">
 
-Version requirements are only part of the setup. For the full list of data interoperability prerequisites, including network and other infrastructure requirements, refer to [data interoperability prerequisites](data-interoperability/data-interop.md#prerequisites). For O11 connectivity to work properly, all O11 environments must be running Platform Server 11.41.0 or higher.
+Version requirements are only part of the setup. For the full list of data interoperability prerequisites, including network and other infrastructure requirements, refer to [data interoperability prerequisites](data-interoperability/data-interop.md#prerequisites).
 
 </div>
 
