@@ -1,6 +1,7 @@
 ---
 summary: "OutSystems Developer Cloud (ODC) REST API custom error: use a User Exception and Raise Error element to return a custom HTTP status code."
-tags: error handling, rest api, http status codes, exception management, database transactions
+tags:
+  - REST
 locale: en-us
 guid: e1d028a0-d688-4cbb-93c1-caecb302ee9a
 app_type: mobile apps, reactive web apps

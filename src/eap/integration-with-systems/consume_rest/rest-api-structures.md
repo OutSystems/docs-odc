@@ -1,6 +1,7 @@
 ---
 summary: REST API Structures in OutSystems Developer Cloud (ODC) are auto-generated from consumed methods, with reuse rules and REST-to-OutSystems data type mapping explained.
-tags: rest api integration, automated structure generation, api development, structure reuse, data mapping
+tags:
+  - REST
 locale: en-us
 guid: f2d563a1-be66-42d3-b56f-ebfc33c32c9c
 app_type: mobile apps, reactive web apps

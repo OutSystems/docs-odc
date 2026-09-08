@@ -11,7 +11,11 @@ app_type: mobile apps,reactive web apps
 platform-version: odc
 audience:
   - Developer
-tags: oauth 2.0, access token, api authentication, rest api, authorization grant
+tags:
+  - Authentication
+  - Authorization
+  - OAuth
+  - REST
 outsystems-tools:
   - odc studio
 helpids:

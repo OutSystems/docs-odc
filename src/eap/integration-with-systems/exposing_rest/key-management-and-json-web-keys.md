@@ -1,6 +1,10 @@
 ---
 summary: "JSON Web Keys (JWK) and JWT signing in ODC: symmetric HMAC vs. asymmetric RSA/EC key management for securing exposed REST APIs."
-tags: jwt, json web keys, api security, key management, token-based authentication
+tags:
+  - Authentication
+  - Best Practices
+  - REST
+  - Security
 locale: en-us
 guid: 63f8b0fe-24f6-48bd-a3a8-90c372949aad
 app_type: mobile apps,reactive web apps

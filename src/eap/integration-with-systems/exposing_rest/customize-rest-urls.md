@@ -1,6 +1,7 @@
 ---
 summary: "ODC REST API URL customization: set URL Path in ODC Studio to create clean endpoints for collections, resources, and sub-collections."
-tags: rest apis, url customization, api development, endpoint configuration, restful services
+tags:
+  - REST
 locale: en-us
 guid: 745374fa-efb6-4f96-a488-10a1830f519c
 app_type: mobile apps, reactive web apps
