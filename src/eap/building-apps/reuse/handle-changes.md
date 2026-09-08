@@ -5,7 +5,11 @@ guid: 80bb4604-c06b-48c7-8e8b-382416c95368
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-tags: versioning, change management, dependency management, reusability, breaking changes
+tags:
+  - Best Practices
+  - Entities
+  - Modular Programming
+  - Screens
 audience:
   - Developer
   - Front-end developer

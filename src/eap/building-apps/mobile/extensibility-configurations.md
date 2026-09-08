@@ -1,6 +1,9 @@
 ---
 summary: ODC extensibility configurations universal JSON schema supports Capacitor and Cordova, with MABS version requirements for mobile app customization.
-tags: extensibility configurations, json configuration, mobile build service, mobile apps customization
+tags:
+  - Capacitor
+  - Cordova
+  - Mobile app
 locale: en-us
 guid: 941e56cf-aacf-43bf-9d1c-f131565036e6
 app_type: mobile apps

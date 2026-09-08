@@ -10,7 +10,11 @@ app_type: mobile apps
 platform-version: odc
 audience:
   - Developer
-tags: troubleshooting, mobile app development, capacitor framework, cordova plugins, extensibility configuration
+tags:
+  - Capacitor
+  - Cordova
+  - Mobile app
+  - Troubleshooting
 outsystems-tools:
   - odc studio
 helpids:

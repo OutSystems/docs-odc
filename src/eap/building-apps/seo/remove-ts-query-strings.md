@@ -1,6 +1,8 @@
 ---
 summary: Removing _ts from query strings.
-tags: seo, query string, caching, reverse proxy, cdn
+tags:
+  - Caching
+  - Performance
 guid: 70399158-64c3-4630-91ee-46c3bb17ead7
 locale: en-us
 app_type: mobile apps, reactive web apps
