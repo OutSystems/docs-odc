@@ -19,8 +19,10 @@ outsystems-tools:
 coverage-type:
   - apply
 topic:
+  - add-saml-provider-odc
   - external-idps
-  - idp-saml
+  - saml-endpoint-access
+  - saml-single-logout
 helpids: 30672, 30673
 isautopublish: true
 ---
