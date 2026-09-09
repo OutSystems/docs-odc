@@ -1,6 +1,9 @@
 ---
 summary: OS-DFQE-40004 in OutSystems Developer Cloud (ODC) covers connection test failures for SQL Server, Oracle, SAP OData, and Salesforce.
-tags: database configuration, error handling, sql server, connection issues
+tags:
+  - External Databases
+  - SQL
+  - Troubleshooting
 guid: 8e453a94-9438-4613-ae63-ef702970fd77
 locale: en-us
 app_type: mobile apps, reactive web apps
