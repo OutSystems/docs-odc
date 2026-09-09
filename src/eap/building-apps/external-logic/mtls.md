@@ -1,6 +1,11 @@
 ---
 summary: Learn how to extend your code using mTLS APIs in OutSystems Developer Cloud (ODC) with a detailed guide on creating and consuming a mTLS service library.
-tags: mtls, rest apis, .net development, c# programming, software development kits (sdks)
+tags:
+  - .NET
+  - Authentication
+  - C#
+  - Extensions
+  - REST
 locale: en-us
 guid: e7dd9dd2-dccf-4da1-8eb3-f94dd1982534
 app_type: mobile apps, reactive web apps

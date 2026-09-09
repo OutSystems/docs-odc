@@ -1,6 +1,10 @@
 ---
 summary: File does not contain a valid compiled external library, or the compiled assembly was not built using a supported .NET version.
-tags: .net integration, assembly validation, mobile app development, application publishing, troubleshooting
+tags:
+  - .NET
+  - C#
+  - Libraries
+  - Troubleshooting
 guid: 007f935e-fade-46ab-8058-61d57f294bc1
 locale: en-us
 app_type: mobile apps, reactive web apps

@@ -10,7 +10,9 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: AI,Agentic
+tags:
+  - Agentic
+  - AI
 outsystems-tools:
   - odc portal
 helpids:

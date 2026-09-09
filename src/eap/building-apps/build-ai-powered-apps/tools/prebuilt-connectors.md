@@ -3,7 +3,9 @@ guid: 4af631fd-a285-4f52-84eb-3b3e2a6d5f00
 summary: Integrate popular external services using prebuilt connectors in OutSystems Developer Cloud (ODC) with guided setup, validation, and simplified authentication.
 locale: en-us
 figma:
-tags: integration, api connectors, prebuilt connectors, authentication, outsystems developer cloud
+tags:
+  - Agentic
+  - Authentication
 app_type: mobile apps,reactive web apps
 platform-version: odc
 coverage-type:
