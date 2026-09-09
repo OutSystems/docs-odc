@@ -1,6 +1,11 @@
 ---
 summary: The struct decorated with OSStructure '<StructureName>' contains a public property/field that uses an unsupported parameter type '<ParameterType>'.
-tags: c# programming, structs, external library publishing, error handling, .net framework
+tags:
+  - .NET
+  - C#
+  - Extensions
+  - Libraries
+  - Troubleshooting
 guid: d9196bdf-4c67-44a1-bc6f-3dc0031eb260
 locale: en-us
 app_type: mobile apps, reactive web apps

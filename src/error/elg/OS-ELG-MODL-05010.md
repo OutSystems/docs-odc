@@ -1,6 +1,9 @@
 ---
 summary: The struct decorated with OSStructure '<StructName>' is not public.
-tags: c# programming, software development, public access modifier, code modification, error resolution
+tags:
+  - C#
+  - Libraries
+  - Troubleshooting
 guid: 22aaeb98-4f58-4b37-ae14-eaf8502aabe7
 locale: en-us
 app_type: mobile apps, reactive web apps

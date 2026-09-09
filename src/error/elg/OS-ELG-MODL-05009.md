@@ -1,6 +1,9 @@
 ---
 summary: The resource name '<FileName>' provided for the element '<ElementName>' IconResourceName was not found.
-tags: c# development, embedded resources
+tags:
+  - C#
+  - Libraries
+  - Troubleshooting
 guid: 2b02449a-aa62-4d65-9871-9113efa4c301
 locale: en-us
 app_type: mobile apps, reactive web apps
