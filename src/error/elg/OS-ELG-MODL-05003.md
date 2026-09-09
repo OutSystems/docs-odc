@@ -1,6 +1,10 @@
 ---
 summary: More than one OSInterface attribute found in your file '<InterfaceNames>'. Make sure only one interface decorated with OSInterface is defined.
-tags: c# error resolution, osinterface attribute, external library publishing, code fixes, outsystems support
+tags:
+  - C#
+  - Extensions
+  - Libraries
+  - Troubleshooting
 guid: 6cf42628-a470-4c43-9624-3d003cc8435d
 locale: en-us
 app_type: mobile apps, reactive web apps

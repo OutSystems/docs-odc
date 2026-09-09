@@ -1,6 +1,9 @@
 ---
 summary: No OSInterface found in your file. Make sure only one interface decorated with OSInterface is defined.
-tags: api design, c# programming, library development, error handling, technical support
+tags:
+  - C#
+  - Libraries
+  - Troubleshooting
 guid: 7a5decd1-2274-4335-9170-d1ccfbf39604
 locale: en-us
 app_type: mobile apps, reactive web apps

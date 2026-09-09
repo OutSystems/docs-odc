@@ -1,6 +1,9 @@
 ---
 summary: OS-BLD-FE-40001 bundle error in OutSystems Developer Cloud (ODC) occurs when JavaScript Nodes violate Strict Mode; fix to unblock publishing.
-tags: javascript, strict mode, error handling, mobile app development, web development
+tags:
+  - Front-End
+  - JavaScript
+  - Troubleshooting
 guid: dbeab3f4-4b7e-472d-be22-7650d42b0258
 locale: en-us
 platform-version: odc
