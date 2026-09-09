@@ -16,8 +16,9 @@ figma:
 audience:
   - Platform administrator
 topic:
+  - add-social-accelerator
   - external-idps
-  - idp-saml
+  - social-accelerator-info
 outsystems-tools:
   - odc portal
 coverage-type:
