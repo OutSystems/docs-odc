@@ -1,6 +1,9 @@
 ---
 summary: No class implementing the interface decorated with OSInterface '<InterfaceName>' found in your file.
-tags: mobile apps, c# development, error handling
+tags:
+  - C#
+  - Extensions
+  - Troubleshooting
 guid: f23fd77e-9324-48f7-be5a-4cf607f25202
 locale: en-us
 app_type: mobile apps, reactive web apps

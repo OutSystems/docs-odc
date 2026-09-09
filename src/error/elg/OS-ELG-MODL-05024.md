@@ -1,6 +1,10 @@
 ---
 summary: The struct <StructName> used as <UsageName> is missing OSStructure decoration.
-tags: error resolution, c# development, code decoration, struct usage, outsystems development
+tags:
+  - C#
+  - Extensions
+  - Libraries
+  - Troubleshooting
 guid: faf619e7-0281-4f21-9038-bf9ae4e8e1e4
 locale: en-us
 app_type: mobile apps, reactive web apps

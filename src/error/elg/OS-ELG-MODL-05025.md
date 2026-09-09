@@ -1,6 +1,10 @@
 ---
 summary: More than one object with name <ObjectName> was found.
-tags: error handling, .net integration, c# development, external libraries, code structuring
+tags:
+  - .NET
+  - C#
+  - Libraries
+  - Troubleshooting
 guid: cbbd399f-76f8-489d-a4ad-8e06dc61c3a3
 locale: en-us
 app_type: mobile apps, reactive web apps
