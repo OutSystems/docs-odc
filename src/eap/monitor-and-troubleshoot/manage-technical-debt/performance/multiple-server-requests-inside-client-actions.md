@@ -1,6 +1,11 @@
 ---
 summary: ODC multiple server requests inside Client Actions increase latency — consolidate Aggregates and Server Actions into one Server Action to reduce round trips.
-tags: server requests, aggregates, client actions, latency reduction, best practices
+tags:
+  - Aggregates
+  - Best Practices
+  - Optimization
+  - Performance
+  - Troubleshooting
 guid: e23a842d-a31b-4cb8-850a-f6612d1f0c16
 locale: en-us
 app_type: mobile apps, reactive web apps

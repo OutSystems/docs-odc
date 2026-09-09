@@ -1,6 +1,11 @@
 ---
 summary: Inline CSS style in OutSystems Developer Cloud (ODC) apps causes maintenance issues; move styles to the app style guide or screen level instead.
-tags: css best practices, inline styles, html maintenance, web design, application styling
+tags:
+  - Best Practices
+  - CSS
+  - Front-End
+  - Style Guides
+  - Technical Debt
 guid: 76e4d096-b330-4c9e-b94d-a23d18a9bf8d
 locale: en-us
 app_type: mobile apps, reactive web apps

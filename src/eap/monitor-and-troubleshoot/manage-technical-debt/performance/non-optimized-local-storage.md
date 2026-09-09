@@ -1,6 +1,10 @@
 ---
 summary: ODC Local Storage over-complexity forces multiple joins in client aggregates, degrading mobile app performance; simplify local entities to fix it.
-tags: local storage optimization, mobile performance, client aggregates, data modeling, app performance improvement
+tags:
+  - Mobile app
+  - Optimization
+  - Performance
+  - Technical Debt
 guid: 3d1e42c4-4ce3-4d68-876b-7f64a4c85d7e
 locale: en-us
 app_type: mobile apps
