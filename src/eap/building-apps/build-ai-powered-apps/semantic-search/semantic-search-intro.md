@@ -1,10 +1,11 @@
 ---
 guid: fda3c696-646f-4935-908f-cb175a85c55f
 locale: en-us
-summary: Implement AI-powered semantic search in ODC apps using LLMs and vector embeddings to understand user intent, context, and meaning for accurate search results.
+summary: Implement AI-powered semantic search in ODC apps using vector embeddings to understand user intent, context, and meaning for accurate search results.
 figma:
 coverage-type:
   - understand
+  - evaluate
 topic:
 app_type: reactive web apps,mobile apps
 platform-version: odc
@@ -13,6 +14,8 @@ audience:
   - Developer
 tags:
   - AI
+  - Entities
+  - Indexes
   - Multi-language
 outsystems-tools:
   - odc studio
@@ -28,39 +31,34 @@ Semantic search is in Beta. For more information about Beta features, refer to [
 
 </div>
 
-Semantic search is essential for many AI-powered apps. In ODC, you can implement semantic search using Large Language Models (LLMS) and search services, but relying on third-party tools often adds complexity to app development.
-
-With the semantic search, you can, in **all** ODC apps, have semantic search over your app data. This means that you can have a semantic search on top of your entities. This is possible because ODC semantic search mechanism uses the power of LLMs to create vector embeddings of your data and then uses these embeddings to perform semantic search.
+ODC provides built-in semantic search over your app data in every app, removing the need for external search services.
 
 ## What's semantic search?
 
-Semantic search streamlines data exploration by eliminating the constraints of keyword-based queries. By transforming queries into vector embeddings, the system captures the underlying meaning of the text to identify and return the best conceptual matches.  
+Semantic search eliminates the constraints of keyword-based queries. It converts words into vector embeddings, stores them in a vector database, and matches them by proximity to return the best conceptual matches.
 
-There are some core principles behind semantic search:  
+Semantic search relies on three core principles:  
 
 * **Intent**: The specific goals or tasks users aim to achieve.
 * **Context**: The situational relationships between words in a dataset.  
 * **Meaning**: The deeper understanding of synonyms and linguistic associations.  
 
-To accomplish this, semantic search uses the capabilities of LLMs together with a vector database to index chunked content.
-
 ## When should you use semantic search
 
-Deciding to use semantic search depends on your business needs, but semantic search is particularly effective for:  
+Semantic search performs particularly well for:  
 
-* **Chatbots**: Leverage natural language understanding to navigate user intent and context, overcoming the limitations of traditional keyword matching.  
+* **Chatbots**: Applies natural language understanding to navigate user intent and context, overcoming the limitations of traditional keyword matching.  
 * **Recommendation engines**: Excels at identifying conceptual relationships and synonyms to surface relevant products or content, particularly in e-commerce environments.  
 
-Conversely, scenarios requiring absolute precision, such as serial numbers and error codes, aren't suitable for semantic search.
-Also, note that semantic search in ODC supports only text attributes. If your search needs to include other types of data, semantic search isn't the best option.
+Semantic search excels at conceptual, meaning-based matching over text attributes. Scenarios that require absolute precision, such as serial numbers and error codes, call for exact keyword matching.
 
 ## The importance of chunking in semantic search
 
-To understand the importance of chunking, consider how semantic search processes data. Semantic search doesn't read text line by line; it converts text into vectors that represent its meaning.
+To understand the importance of chunking, consider how semantic search processes data: it converts text into vectors that represent its meaning.
 
-To work effectively, don't turn large datasets into a single vector, as this obscures the meaning for the LLM. Chunking is fundamental as it allows you to break the data into smaller, meaningful pieces so the search engine can find what’s inside.
+A single vector for a large dataset obscures its meaning. Chunking breaks the data into smaller, meaningful pieces, letting the search engine find what's inside.
 
-In ODC case, you are able to select the entities and their attributes that are subjected to semantic search and use different methods for the content chunking, namely:
+In ODC, you select the entities and attributes to include in semantic search, and choose a chunking method for each:
 
 * **Smart chunking (default)**: Adapts automatically to the specific content found within searchable fields. This chunking method combines recursive chunking with default separators.
 
@@ -68,13 +66,32 @@ In ODC case, you are able to select the entities and their attributes that are s
 * **Sentence-based**: With this chunking method, you explicitly define how many sentences your chunks are allowed to have, and also the maximum number of characters and overlap for your chunks.
 * **Recursive chunking**: Defines character limits and overlaps while prioritizing a hierarchy of specific characters as delimiters.  
 
+## Indexing lifecycle
+
+Semantic search keeps vector embeddings synchronized with your entity data at two points: when you publish your app, and while your app runs.
+
+### Initial indexing at publish
+
+Publishing an app with searchable entities creates the embedding schema and the database triggers that keep future embeddings in sync. The initial indexing time depends on the amount of data in the entity: the semantic search service processes records in batches, so entities with more data take longer to index.
+
+### Runtime indexing
+
+After publish, semantic search keeps embeddings synchronized with your entity data as your app runs. Creating, updating, or deleting a record in a searchable entity generates, updates, or deletes that record's embeddings automatically.
+
+### Full reindex
+
+Some actions trigger a full reindex, covering every existing record in an entity:
+
+* Enabling semantic search on an attribute for the first time.
+* Changing the chunking configuration on an attribute that already has semantic search enabled.
+
 ## Regional availability and limitations
 
 Semantic search relies on cloud AI infrastructure. Due to regional differences in service availability, semantic search functions differently in the way it handles data, depending on where your ODC environment is hosted.
 
 <div class="info" markdown="1">
 
-**Semantic search is available for all customers in all regions.** We recommend that you read this section carefully, as there are some regional constraints.
+**Semantic search is available for all customers in all regions.** This section covers regional constraints that might affect your environment.
 
 </div>
 
@@ -82,14 +99,14 @@ Semantic search relies on cloud AI infrastructure. Due to regional differences i
 
 ODC semantic search triggers cross-region data transfers in the following regions:
 
-* Cape Town (af-south-1)
-* Hong Kong (ap-east-1)
-* Jakarta (ap-southeast-3)
-* Singapore (ap-southeast-1)
-* Tel Aviv (il-central-1)
-* UAE (me-central-1)
+* Cape Town (`af-south-1`)
+* Hong Kong (`ap-east-1`)
+* Jakarta (`ap-southeast-3`)
+* Singapore (`ap-southeast-1`)
+* Tel Aviv (`il-central-1`)
+* UAE (`me-central-1`)
 
-To maintain data residency compliance, avoid deploying semantic search within these territories. In case you still want to use semantic search in one of these regions, note that the data will be routed to the European region (eu-central-1) and then back to your region. However, no data is stored outside of your region. This constraint is due to the embedding model not being deployed in these regions.
+To maintain data residency compliance, deploy semantic search outside these territories. If you use semantic search in one of these regions, requests route through the European region (`eu-central-1`) for processing, then return to your region. Storage remains within your region throughout. This limitation exists because the embedding model is available only in supported regions.
 
 <div class="info" markdown="1">
 
@@ -99,7 +116,7 @@ To determine your ODC environment's region, refer to the information provided wh
 
 ### Usage of multiple languages
 
-Semantic search over app data supports most languages. Still, the following languages have dictionaries that usually enable better results:
+Semantic search over app data supports most languages. The following languages have dictionaries that improve result accuracy:
 
 * English
 * Czech
@@ -117,4 +134,4 @@ Semantic search over app data supports most languages. Still, the following lang
 * Spanish
 * Swedish
 
-These dictionaries address language-specific nuances, such as acronyms, cultural context, and other details, enabling the system to understand phrases better. In all other languages, punctuation is used to divide sentences, which might lead to less accurate results. Also, note that if the system doesn't identify the language, it defaults to English.
+These dictionaries address language-specific nuances, such as acronyms and cultural context, improving how the system interprets phrases. In all other languages, punctuation divides sentences instead, which might lead to less accurate results. The system recognizes supported languages automatically and defaults to English for the rest.
