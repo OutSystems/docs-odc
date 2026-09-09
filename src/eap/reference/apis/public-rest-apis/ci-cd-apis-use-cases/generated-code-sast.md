@@ -12,7 +12,10 @@ platform-version: odc
 audience:
   - Developer
   - Tech lead
-tags: sast analysis, code retrieval, outsystems apis, security testing, high-code generation
+tags:
+  - CI/CD
+  - REST
+  - Security
 outsystems-tools:
   - odc studio
   - odc portal

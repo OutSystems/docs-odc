@@ -12,7 +12,10 @@ platform-version: odc
 audience:
   - Developer
   - Platform administrator
-tags: asset permissions, organization roles, access management, rest api, outsystems api
+tags:
+  - Authorization
+  - REST
+  - Roles
 outsystems-tools:
   - odc portal
 helpids:

@@ -1,6 +1,10 @@
 ---
 summary: Monitor and analyze timer logs in OutSystems Developer Cloud (ODC) through the ODC Portal to track execution times and troubleshoot issues effectively.
-tags: monitoring, performance optimization, cloud services, troubleshooting, timer management
+tags:
+  - Logging
+  - Monitoring
+  - Timers
+  - Troubleshooting
 locale: en-us
 guid: 95C30236-ADCA-464E-AD86-A3437E9F3FEF
 app_type: mobile apps, reactive web apps

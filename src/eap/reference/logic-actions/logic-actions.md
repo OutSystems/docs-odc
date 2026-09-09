@@ -5,7 +5,8 @@ guid: F524155C-B4F2-417F-8354-9883628332B0
 app_type: mobile apps, reactive web apps
 platform-version: odc
 figma:
-tags: client-side logic, exposed actions, session variables, entity/structure restrictions, action properties, server-side logic, server actions
+tags:
+  - Logic
 audience:
   - Developer
   - Front-end developer
