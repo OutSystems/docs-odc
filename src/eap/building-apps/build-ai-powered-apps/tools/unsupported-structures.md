@@ -13,7 +13,9 @@ coverage-type:
   - understand
   - apply
 topic:
-  - integration
+  - fix-unsupported-mcp-tool
+  - mcp-omitted-fields
+  - mcp-unavailable-patterns
 audience:
   - Developer
   - Tech lead
